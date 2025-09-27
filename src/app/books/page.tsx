@@ -23,7 +23,7 @@ export default function BooksPage() {
           <div
             key={book.id}
             className="cursor-pointer hover:scale-105 transition-transform text-center"
-            onClick={() => router.push(`/reader/${book.id}`)}
+            onClick={() => router.push(`/books/${book.id}`)}
           >
             <img src={book.cover} alt={book.title} className="w-32 h-32 mx-auto mb-4" />
             <p className="text-lg font-medium">{book.title}</p>
