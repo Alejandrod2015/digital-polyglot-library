@@ -6,13 +6,23 @@ export default function BooksPage() {
   const router = useRouter();
 
   const books = [
-    {
-      id: 'short-stories-mexican',
-      title: 'Short Stories in Mexican Spanish',
-      cover: '/globe.svg', // Usa una imagen real cuando la tengas
-    },
-    // Puedes añadir más libros aquí
-  ];
+  {
+    id: 'short-stories-mexican',
+    title: 'Short Stories in Mexican Spanish',
+    cover: '/globe.svg',
+  },
+  {
+    id: 'short-stories-spain',
+    title: 'Short Stories in Castilian Spanish',
+    cover: '/globe.svg',
+  },
+  {
+    id: 'short-stories-argentina',
+    title: 'Short Stories in Rioplatense Spanish',
+    cover: '/globe.svg',
+  },
+];
+
 
   return (
     <main className="min-h-screen bg-black text-white p-8">
