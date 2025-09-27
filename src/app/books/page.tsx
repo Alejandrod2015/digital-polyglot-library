@@ -9,17 +9,17 @@ export default function BooksPage() {
   {
     id: 'short-stories-mexican',
     title: 'Short Stories in Mexican Spanish',
-    cover: '/globe.svg',
+    cover: '/public/covers/sss_mexico.jpg',
   },
   {
     id: 'short-stories-spain',
     title: 'Short Stories in Castilian Spanish',
-    cover: '/globe.svg',
+    cover: '/public/covers/sss_spain.jpg',
   },
   {
     id: 'short-stories-argentina',
     title: 'Short Stories in Rioplatense Spanish',
-    cover: '/globe.svg',
+    cover: '/public/covers/sss_argentina.jpg',
   },
 ];
 
@@ -35,7 +35,11 @@ export default function BooksPage() {
             className="cursor-pointer hover:scale-105 transition-transform text-center"
             onClick={() => router.push(`/books/${book.id}`)}
           >
-            <img src={book.cover} alt={book.title} className="w-32 h-32 mx-auto mb-4" />
+            <img
+              src={book.cover}
+              alt={book.title}
+              className="w-full h-48 object-cover rounded-lg shadow-md"
+            />
             <p className="text-lg font-medium">{book.title}</p>
           </div>
         ))}
