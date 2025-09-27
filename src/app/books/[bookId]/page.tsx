@@ -17,12 +17,17 @@ export default function ReaderPage() {
   const params = useParams();
   const { bookId } = params;
 
-  const book = booksMap[bookId as string];
-  if (!book) return notFound();
-
+  // Inicializar hooks aquí — SIEMPRE fuera de condiciones
   const [selectedStoryId, setSelectedStoryId] = useState('1');
-  const story = book.stories.find((s) => s.id === selectedStoryId);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const book = booksMap[bookId as string];
+  if (!book) {
+    notFound(); // Ahora se permite llamar sin return
+    return null; // obligatorio para que no siga el render
+  }
+
+  const story = book.stories.find((s) => s.id === selectedStoryId);
 
   const handlePlay = () => {
     audioRef.current?.play();
