@@ -4,14 +4,17 @@ import { useRef, useState } from 'react';
 import { useParams, notFound } from 'next/navigation';
 
 import { mexicanShortStories } from '@/data/books/short-stories-mexican';
-// Aquí importarás más libros:
-import { spanishShortStories } from '@/data/books/short-stories-spain'; // si tienes otro libro
+import { spanishShortStories } from '@/data/books/short-stories-spain';
+import { argentinianShortStories } from '@/data/books/short-stories-argentina';
+
 
 // Mapa con todos los libros disponibles
 const booksMap: Record<string, typeof mexicanShortStories> = {
   'short-stories-mexican': mexicanShortStories,
-  'short-stories-spain': spanishShortStories, // añade más libros aquí
+  'short-stories-spain': spanishShortStories,
+  'short-stories-argentina': argentinianShortStories,
 };
+
 
 export default function ReaderPage() {
   const params = useParams();
