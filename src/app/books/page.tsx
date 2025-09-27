@@ -9,17 +9,17 @@ export default function BooksPage() {
   {
     id: 'short-stories-mexican',
     title: 'Short Stories in Mexican Spanish',
-    cover: '/public/covers/sss_mexico.jpg',
+    cover: '/covers/sss_mexico.jpg',
   },
   {
     id: 'short-stories-spain',
     title: 'Short Stories in Castilian Spanish',
-    cover: '/public/covers/sss_spain.jpg',
+    cover: '/covers/sss_spain.jpg',
   },
   {
     id: 'short-stories-argentina',
     title: 'Short Stories in Rioplatense Spanish',
-    cover: '/public/covers/sss_argentina.jpg',
+    cover: '/covers/sss_argentina.jpg',
   },
 ];
 
