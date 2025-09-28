@@ -1,7 +1,7 @@
 // middleware.ts
-import { WithClerkMiddleware } from '@clerk/nextjs/server';
+import { withClerkMiddleware } from '@clerk/nextjs/server';
 
-export default clerkMiddleware();
+export default withClerkMiddleware();
 
 export const config = {
   matcher: [
@@ -9,7 +9,3 @@ export const config = {
     '/((?!_next|.*\\..*|api).*)',
   ],
 };
-function clerkMiddleware() {
-  throw new Error('Function not implemented.');
-}
-
