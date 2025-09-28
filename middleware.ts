@@ -1,11 +1,13 @@
 // middleware.ts
-import { withClerkMiddleware } from '@clerk/nextjs/server';
+import { authMiddleware } from "@clerk/nextjs";
 
-export default withClerkMiddleware();
+export default authMiddleware({
+  publicRoutes: ["/", "/books(.*)"], // rutas accesibles sin login
+});
 
 export const config = {
   matcher: [
-    // Habilita Clerk para todas las rutas excepto archivos estáticos y API
-    '/((?!_next|.*\\..*|api).*)',
+    // Aplica Clerk en todas las rutas excepto archivos estáticos y API
+    "/((?!_next|.*\\..*|api).*)",
   ],
 };
