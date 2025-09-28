@@ -1,19 +1,17 @@
-import { authMiddleware } from "@clerk/nextjs";
+import { WithClerkMiddleware } from '@clerk/nextjs/server';
 
-export default authMiddleware({
-  publicRoutes: [
-    '/',         // Página pública
-    '/books',    // Lista de libros
-    '/sign-in',  // Inicio de sesión
-    '/sign-up',  // Registro
-  ],
-});
+export default clerkMiddleware();
 
 export const config = {
   matcher: [
     /*
-     * Protege todas las rutas excepto las públicas
+     * Protecting all routes except static files and Next.js internals
      */
-    '/((?!api|_next|.*\\..*).*)',
+    '/((?!.*\\..*|_next|api).*)',
+    '/',
   ],
 };
+function clerkMiddleware() {
+  throw new Error('Function not implemented.');
+}
+
