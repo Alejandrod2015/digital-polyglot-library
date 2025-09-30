@@ -53,7 +53,17 @@ export default function ReaderPage() {
   const [noteStatus, setNoteStatus] = useState<NoteStatus>('idle');
   const [saved, setSaved] = useState(false);
 
-  // ✅ useEffect aquí, antes del if (!book)
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar si es móvil
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // ✅ useEffect audio
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -129,22 +139,7 @@ export default function ReaderPage() {
     return words.slice(start, end).join(' ');
   };
 
-  const handleParagraphSelection = async (e: React.MouseEvent<HTMLParagraphElement>) => {
-    const sel = window.getSelection();
-    const raw = sel?.toString().trim();
-    if (!raw) return;
-
-    const wordsSelected = raw.split(/\s+/).length;
-    if (wordsSelected > 5) {
-      setSelectedWord(null);
-      setSaved(false);
-      setContextTranslation('Please select only a word or a short phrase (max 5 words).');
-      setWordTranslations([]);
-      setCulturalNote(null);
-      setNoteStatus('idle');
-      return;
-    }
-
+  const processWord = async (raw: string, paragraphText: string) => {
     const word = stripPunct(raw).toLowerCase();
     if (!word) return;
 
@@ -155,7 +150,6 @@ export default function ReaderPage() {
     setCulturalNote(null);
     setNoteStatus('loading');
 
-    const paragraphText = e.currentTarget.textContent || word;
     const snippet = buildSnippet(paragraphText, word);
 
     try {
@@ -202,6 +196,32 @@ export default function ReaderPage() {
       });
   };
 
+  const handleParagraphSelection = async (e: React.PointerEvent<HTMLParagraphElement>) => {
+    const sel = window.getSelection();
+    const raw = sel?.toString().trim();
+    if (!raw) return;
+    await processWord(raw, e.currentTarget.textContent || raw);
+  };
+
+  const handleWordTap = (word: string, paragraphText: string) => {
+    processWord(word, paragraphText);
+  };
+
+  const renderSelectableText = (text: string) => {
+    if (isMobile) {
+      return text.split(/\s+/).map((word, i, arr) => (
+        <span
+          key={i}
+          onClick={() => handleWordTap(word, arr.join(' '))}
+          className="cursor-pointer hover:bg-yellow-400 hover:text-black px-1 rounded"
+        >
+          {word}{' '}
+        </span>
+      ));
+    }
+    return text;
+  };
+
   const saveToFavorites = () => {
     if (!selectedWord) return;
     const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
@@ -235,11 +255,17 @@ export default function ReaderPage() {
       <>
         <h2 className="text-2xl font-bold mt-6">{story.title}</h2>
 
-        <p className="mt-2 select-text" onPointerUp={handleParagraphSelection}>
-          {selectedWord ? highlightWord(story.text, selectedWord) : story.text}
+        <p
+          className="mt-2 select-text"
+          onPointerUp={!isMobile ? handleParagraphSelection : undefined}
+        >
+          {selectedWord ? highlightWord(story.text, selectedWord) : renderSelectableText(story.text)}
         </p>
-        <p className="italic mt-2 select-text" onPointerUp={handleParagraphSelection}>
-          {selectedWord ? highlightWord(story.dialogue, selectedWord) : story.dialogue}
+        <p
+          className="italic mt-2 select-text"
+          onPointerUp={!isMobile ? handleParagraphSelection : undefined}
+        >
+          {selectedWord ? highlightWord(story.dialogue, selectedWord) : renderSelectableText(story.dialogue)}
         </p>
 
         {/* Panel vocab */}
