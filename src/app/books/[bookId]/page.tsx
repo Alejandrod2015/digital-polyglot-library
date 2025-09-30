@@ -209,17 +209,24 @@ export default function ReaderPage() {
 
   const renderSelectableText = (text: string) => {
     if (isMobile) {
-      return text.split(/\s+/).map((word, i, arr) => (
-        <span
-          key={i}
-          onClick={() => handleWordTap(word, arr.join(' '))}
-          className="cursor-pointer hover:bg-yellow-400 hover:text-black px-1 rounded"
-        >
-          {word}{' '}
-        </span>
-      ));
+      return text.split(/\s+/).map((word, i, arr) => {
+        const clean = stripPunct(word).toLowerCase();
+        const isSelected = selectedWord === clean;
+        return (
+          <span
+            key={i}
+            onClick={() => handleWordTap(word, arr.join(' '))}
+            className={`cursor-pointer px-1 rounded ${
+              isSelected ? 'bg-yellow-400 text-black' : 'hover:bg-yellow-300 hover:text-black'
+            }`}
+          >
+            {word}{' '}
+          </span>
+        );
+      });
     }
-    return text;
+    // Desktop: texto normal con highlight
+    return selectedWord ? highlightWord(text, selectedWord) : text;
   };
 
   const saveToFavorites = () => {
@@ -259,13 +266,13 @@ export default function ReaderPage() {
           className="mt-2 select-text"
           onPointerUp={!isMobile ? handleParagraphSelection : undefined}
         >
-          {selectedWord ? highlightWord(story.text, selectedWord) : renderSelectableText(story.text)}
+          {renderSelectableText(story.text)}
         </p>
         <p
           className="italic mt-2 select-text"
           onPointerUp={!isMobile ? handleParagraphSelection : undefined}
         >
-          {selectedWord ? highlightWord(story.dialogue, selectedWord) : renderSelectableText(story.dialogue)}
+          {renderSelectableText(story.dialogue)}
         </p>
 
         {/* Panel vocab */}
