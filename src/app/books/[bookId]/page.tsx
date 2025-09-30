@@ -235,10 +235,10 @@ export default function ReaderPage() {
       <>
         <h2 className="text-2xl font-bold mt-6">{story.title}</h2>
 
-        <p className="mt-2 select-text" onMouseUp={handleParagraphSelection}>
+        <p className="mt-2 select-text" onPointerUp={handleParagraphSelection}>
           {selectedWord ? highlightWord(story.text, selectedWord) : story.text}
         </p>
-        <p className="italic mt-2 select-text" onMouseUp={handleParagraphSelection}>
+        <p className="italic mt-2 select-text" onPointerUp={handleParagraphSelection}>
           {selectedWord ? highlightWord(story.dialogue, selectedWord) : story.dialogue}
         </p>
 
