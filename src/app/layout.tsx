@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
-import Navbar from "../components/Navbar"; // ruta relativa para evitar problemas
+import Navbar from "../components/Navbar"; // 👈 asegúrate de que está aquí
 
 export const metadata: Metadata = {
   title: "Digital Polyglot",
@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="bg-black text-white">
         <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
           <Navbar />
-          <main className="p-6">{children}</main>
+          <main className="pt-16 p-6">{children}</main>
         </ClerkProvider>
       </body>
     </html>

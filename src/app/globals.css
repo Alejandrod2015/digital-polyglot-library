@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Fondo oscuro inspirado en tu azul marino */
+  --background: #0d1b2a;
 
-@theme inline {
+  /* Texto claro para contraste */
+  --foreground: #ffffff;
+
+  /* Variables adicionales */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* ya no necesitamos el prefers-color-scheme,
+   porque queremos siempre fondo oscuro.
+   Lo puedes eliminar o comentar */
+   
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ✅ Todos los botones y selects tendrán cursor de mano automáticamente */
+button,
+select,
+[role="button"] {
+  cursor: pointer;
 }

@@ -21,6 +21,11 @@ export default function BooksPage() {
     title: 'Short Stories in Rioplatense Spanish',
     cover: '/covers/sss_argentina.jpg',
   },
+    {
+    id: 'ss-de-germany',
+    title: 'Short Stories in German',
+    cover: '/covers/ss-de-germany.jpg',
+  },
 ];
 
 
