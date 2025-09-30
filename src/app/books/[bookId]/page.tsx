@@ -16,10 +16,8 @@ const booksMap: Record<string, typeof mexicanShortStories> = {
   'ss-de-germany': ssGermany,
 };
 
-// Limpia puntuación para detectar la palabra
 const stripPunct = (s: string) => s.replace(/[.,!?;:()"'«»¿¡]/g, '');
 
-// Resalta una palabra en un texto
 const highlightWord = (text: string, word: string) => {
   if (!word) return text;
   const regex = new RegExp(`(${word})`, 'i');
@@ -40,7 +38,7 @@ type NoteStatus = 'idle' | 'loading' | 'ready' | 'none' | 'error';
 export default function ReaderPage() {
   const { bookId } = useParams();
 
-  // ✅ Hooks siempre al inicio
+  // ✅ Hooks arriba
   const [selectedStoryId, setSelectedStoryId] = useState('1');
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -55,16 +53,7 @@ export default function ReaderPage() {
   const [noteStatus, setNoteStatus] = useState<NoteStatus>('idle');
   const [saved, setSaved] = useState(false);
 
-  // Ahora sí podemos validar el book
-  const book = booksMap[bookId as string];
-  if (!book) {
-    notFound();
-    return null;
-  }
-
-  const story = book.stories.find((s) => s.id === selectedStoryId)!;
-
-  // Audio progress tracking
+  // ✅ useEffect aquí, antes del if (!book)
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -81,6 +70,16 @@ export default function ReaderPage() {
     };
   }, []);
 
+  // Validación del libro después de hooks
+  const book = booksMap[bookId as string];
+  if (!book) {
+    notFound();
+    return null;
+  }
+
+  const story = book.stories.find((s) => s.id === selectedStoryId)!;
+
+  // --- funciones de audio ---
   const togglePlay = () => {
     const a = audioRef.current;
     if (!a) return;
@@ -120,7 +119,7 @@ export default function ReaderPage() {
     return `${minutes}:${seconds}`;
   };
 
-  // Vocab helpers
+  // --- funciones de vocab ---
   const buildSnippet = (paragraphText: string, word: string) => {
     const words = paragraphText.split(/\s+/);
     const idx = words.findIndex((w) => stripPunct(w).toLowerCase().includes(word));
@@ -159,7 +158,6 @@ export default function ReaderPage() {
     const paragraphText = e.currentTarget.textContent || word;
     const snippet = buildSnippet(paragraphText, word);
 
-    // DeepL translation
     try {
       const res = await fetch('/api/translate', {
         method: 'POST',
@@ -180,7 +178,6 @@ export default function ReaderPage() {
       setWordTranslations([]);
     }
 
-    // Cultural note
     fetch('/api/cultural-note', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -213,6 +210,7 @@ export default function ReaderPage() {
     setSaved(true);
   };
 
+  // --- JSX ---
   return (
     <div className="p-8 max-w-2xl mx-auto space-y-6 text-white">
       <h1 className="text-3xl font-bold text-center">{book.title}</h1>
@@ -253,7 +251,7 @@ export default function ReaderPage() {
               </p>
             )}
 
-            {wordTranslations && wordTranslations.length > 0 && (
+            {wordTranslations.length > 0 && (
               <p className="text-blue-400">Word translations → {wordTranslations.join(', ')}</p>
             )}
 
@@ -263,7 +261,6 @@ export default function ReaderPage() {
               </p>
             )}
 
-            {/* Nota cultural */}
             <div className="mt-3">
               {noteStatus === 'loading' && <div className="h-5 w-3/4 rounded bg-white/10 animate-pulse" />}
 
@@ -303,7 +300,6 @@ export default function ReaderPage() {
         <div className="mt-6 bg-black/80 p-4 rounded-xl shadow-2xl backdrop-blur">
           <audio ref={audioRef} src={`${book.audioFolder}/${story.audio}`} />
 
-          {/* Progress bar */}
           <div className="flex items-center gap-2 text-sm text-gray-300">
             <span>{formatTime(progress)}</span>
             <input
@@ -317,7 +313,6 @@ export default function ReaderPage() {
             <span>{formatTime(duration)}</span>
           </div>
 
-          {/* Controls */}
           <div className="flex justify-center items-center gap-6 mt-4">
             <button onClick={() => skip(-15)} className="relative p-2 rounded hover:bg-gray-800">
               <RotateCcw className="w-10 h-10" />
@@ -337,7 +332,6 @@ export default function ReaderPage() {
             </button>
           </div>
 
-          {/* Speed control */}
           <div className="flex justify-center mt-3">
             <select
               value={speed}

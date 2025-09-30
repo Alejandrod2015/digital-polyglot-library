@@ -1,33 +1,33 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function BooksPage() {
   const router = useRouter();
 
   const books = [
-  {
-    id: 'short-stories-mexican',
-    title: 'Short Stories in Mexican Spanish',
-    cover: '/covers/sss_mexico.jpg',
-  },
-  {
-    id: 'short-stories-spain',
-    title: 'Short Stories in Castilian Spanish',
-    cover: '/covers/sss_spain.jpg',
-  },
-  {
-    id: 'short-stories-argentina',
-    title: 'Short Stories in Rioplatense Spanish',
-    cover: '/covers/sss_argentina.jpg',
-  },
     {
-    id: 'ss-de-germany',
-    title: 'Short Stories in German',
-    cover: '/covers/ss-de-germany.jpg',
-  },
-];
-
+      id: 'short-stories-mexican',
+      title: 'Short Stories in Mexican Spanish',
+      cover: '/covers/sss_mexico.jpg',
+    },
+    {
+      id: 'short-stories-spain',
+      title: 'Short Stories in Castilian Spanish',
+      cover: '/covers/sss_spain.jpg',
+    },
+    {
+      id: 'short-stories-argentina',
+      title: 'Short Stories in Rioplatense Spanish',
+      cover: '/covers/sss_argentina.jpg',
+    },
+    {
+      id: 'ss-de-germany',
+      title: 'Short Stories in German',
+      cover: '/covers/ss-de-germany.jpg',
+    },
+  ];
 
   return (
     <main className="min-h-screen bg-black text-white p-8">
@@ -40,12 +40,16 @@ export default function BooksPage() {
             className="cursor-pointer hover:scale-105 transition-transform text-center"
             onClick={() => router.push(`/books/${book.id}`)}
           >
-            <img
-              src={book.cover}
-              alt={book.title}
-              className="w-full h-48 object-cover rounded-lg shadow-md"
-            />
-            <p className="text-lg font-medium">{book.title}</p>
+            <div className="relative w-full h-48">
+              <Image
+                src={book.cover}
+                alt={book.title}
+                fill
+                className="object-cover rounded-lg shadow-md"
+                priority
+              />
+            </div>
+            <p className="text-lg font-medium mt-2">{book.title}</p>
           </div>
         ))}
       </div>
