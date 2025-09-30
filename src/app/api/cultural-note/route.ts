@@ -8,7 +8,7 @@ const client = new OpenAI();
 
 export async function POST(req: Request) {
   try {
-    const { word = "" } = await req.json();
+    const { word = "" } = await req.json() as { word?: string };
 
     if (!word) {
       return NextResponse.json(
@@ -39,7 +39,7 @@ Word: "${word}"
       messages: [{ role: "user", content: prompt }],
       response_format: { type: "json_object" },
       temperature: 0.4,
-      max_tokens: 120, // fuerza brevedad
+      max_tokens: 120,
     });
 
     const content = completion.choices[0]?.message?.content || "{}";
@@ -48,13 +48,18 @@ Word: "${word}"
     return NextResponse.json({
       culturalNote: parsed.culturalNote || "",
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Error in /api/cultural-note:", err);
+
+    let message = "Unknown error";
+    if (err instanceof Error) {
+      message = err.message;
+    }
 
     return NextResponse.json(
       {
         error: "Cultural note generation failed",
-        details: err.message || err.toString(),
+        details: message,
       },
       { status: 500 }
     );

@@ -1,8 +1,19 @@
 import { NextResponse } from 'next/server';
 
+type DeeplTranslation = {
+  text: string;
+};
+
+type DeeplResponse = {
+  translations?: DeeplTranslation[];
+};
+
 export async function POST(req: Request) {
   try {
-    const { word, snippet } = await req.json();
+    const { word, snippet } = (await req.json()) as {
+      word?: string;
+      snippet?: string;
+    };
 
     if (!word && !snippet) {
       return NextResponse.json({ contextTranslation: null, wordTranslations: [] });
@@ -26,18 +37,31 @@ export async function POST(req: Request) {
     });
 
     if (!deeplRes.ok) {
-      return NextResponse.json({ error: 'DeepL request failed' }, { status: deeplRes.status });
+      return NextResponse.json(
+        { error: 'DeepL request failed' },
+        { status: deeplRes.status }
+      );
     }
 
-    const data = await deeplRes.json();
-    const translations = data.translations?.map((t: any) => t.text) || [];
+    const data = (await deeplRes.json()) as DeeplResponse;
+    const translations = data.translations?.map((t) => t.text) || [];
 
     return NextResponse.json({
       wordTranslations: translations.length > 0 ? [translations[0]] : [],
-      contextTranslation: translations.length > 1 ? translations[1] : translations[0] || null,
+      contextTranslation:
+        translations.length > 1 ? translations[1] : translations[0] || null,
     });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error(err);
-    return NextResponse.json({ error: 'Translation failed' }, { status: 500 });
+
+    let message = 'Unknown error';
+    if (err instanceof Error) {
+      message = err.message;
+    }
+
+    return NextResponse.json(
+      { error: 'Translation failed', details: message },
+      { status: 500 }
+    );
   }
 }
