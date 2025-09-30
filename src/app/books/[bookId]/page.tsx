@@ -39,19 +39,32 @@ type NoteStatus = 'idle' | 'loading' | 'ready' | 'none' | 'error';
 
 export default function ReaderPage() {
   const { bookId } = useParams();
-  const book = booksMap[bookId as string];
-  if (!book) { notFound(); return null; }
 
+  // ✅ Hooks siempre al inicio
   const [selectedStoryId, setSelectedStoryId] = useState('1');
-  const story = book.stories.find((s) => s.id === selectedStoryId)!;
-
-  // Audio
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
+  const [selectedWord, setSelectedWord] = useState<string | null>(null);
+  const [contextTranslation, setContextTranslation] = useState<string | null>(null);
+  const [wordTranslations, setWordTranslations] = useState<string[]>([]);
+  const [culturalNote, setCulturalNote] = useState<string | null>(null);
+  const [noteStatus, setNoteStatus] = useState<NoteStatus>('idle');
+  const [saved, setSaved] = useState(false);
+
+  // Ahora sí podemos validar el book
+  const book = booksMap[bookId as string];
+  if (!book) {
+    notFound();
+    return null;
+  }
+
+  const story = book.stories.find((s) => s.id === selectedStoryId)!;
+
+  // Audio progress tracking
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -69,8 +82,15 @@ export default function ReaderPage() {
   }, []);
 
   const togglePlay = () => {
-    const a = audioRef.current; if (!a) return;
-    if (isPlaying) { a.pause(); setIsPlaying(false); } else { a.play(); setIsPlaying(true); }
+    const a = audioRef.current;
+    if (!a) return;
+    if (isPlaying) {
+      a.pause();
+      setIsPlaying(false);
+    } else {
+      a.play();
+      setIsPlaying(true);
+    }
   };
 
   const changeSpeed = (v: number) => {
@@ -94,20 +114,13 @@ export default function ReaderPage() {
   };
 
   const formatTime = (sec: number) => {
-    if (!sec || isNaN(sec)) return "0:00";
+    if (!sec || isNaN(sec)) return '0:00';
     const minutes = Math.floor(sec / 60);
     const seconds = Math.floor(sec % 60).toString().padStart(2, '0');
     return `${minutes}:${seconds}`;
   };
 
-  // Vocab
-  const [selectedWord, setSelectedWord] = useState<string | null>(null);
-  const [contextTranslation, setContextTranslation] = useState<string | null>(null);
-  const [wordTranslations, setWordTranslations] = useState<string[]>([]);
-  const [culturalNote, setCulturalNote] = useState<string | null>(null);
-  const [noteStatus, setNoteStatus] = useState<NoteStatus>('idle');
-  const [saved, setSaved] = useState(false);
-
+  // Vocab helpers
   const buildSnippet = (paragraphText: string, word: string) => {
     const words = paragraphText.split(/\s+/);
     const idx = words.findIndex((w) => stripPunct(w).toLowerCase().includes(word));
@@ -126,7 +139,7 @@ export default function ReaderPage() {
     if (wordsSelected > 5) {
       setSelectedWord(null);
       setSaved(false);
-      setContextTranslation("Please select only a word or a short phrase (max 5 words).");
+      setContextTranslation('Please select only a word or a short phrase (max 5 words).');
       setWordTranslations([]);
       setCulturalNote(null);
       setNoteStatus('idle');
@@ -211,7 +224,9 @@ export default function ReaderPage() {
           <button
             key={s.id}
             onClick={() => setSelectedStoryId(s.id)}
-            className={`w-full text-left px-4 py-2 rounded ${s.id === selectedStoryId ? 'bg-blue-700 text-white' : 'bg-gray-800 hover:bg-gray-700'}`}
+            className={`w-full text-left px-4 py-2 rounded ${
+              s.id === selectedStoryId ? 'bg-blue-700 text-white' : 'bg-gray-800 hover:bg-gray-700'
+            }`}
           >
             {s.title}
           </button>
@@ -239,27 +254,21 @@ export default function ReaderPage() {
             )}
 
             {wordTranslations && wordTranslations.length > 0 && (
-              <p className="text-blue-400">
-                Word translations → {wordTranslations.join(", ")}
-              </p>
+              <p className="text-blue-400">Word translations → {wordTranslations.join(', ')}</p>
             )}
 
             {contextTranslation && (
-              <p className={contextTranslation.startsWith("Please") ? "text-yellow-400" : "text-green-400"}>
-                {contextTranslation.startsWith("Please") ? contextTranslation : <>Context → {contextTranslation}</>}
+              <p className={contextTranslation.startsWith('Please') ? 'text-yellow-400' : 'text-green-400'}>
+                {contextTranslation.startsWith('Please') ? contextTranslation : <>Context → {contextTranslation}</>}
               </p>
             )}
 
             {/* Nota cultural */}
             <div className="mt-3">
-              {noteStatus === 'loading' && (
-                <div className="h-5 w-3/4 rounded bg-white/10 animate-pulse" />
-              )}
+              {noteStatus === 'loading' && <div className="h-5 w-3/4 rounded bg-white/10 animate-pulse" />}
 
               {noteStatus === 'ready' && culturalNote && (
-                <p className="text-purple-300">
-                  Cultural note → {culturalNote}
-                </p>
+                <p className="text-purple-300">Cultural note → {culturalNote}</p>
               )}
 
               {noteStatus === 'none' && (
@@ -277,10 +286,12 @@ export default function ReaderPage() {
               )}
             </div>
 
-            {selectedWord && !contextTranslation?.startsWith("Please") && (
+            {selectedWord && !contextTranslation?.startsWith('Please') && (
               <button
                 onClick={saveToFavorites}
-                className={`px-4 py-2 rounded mt-2 transition-colors ${saved ? 'bg-green-600 text-white' : 'bg-[#e8b632] text-black hover:bg-yellow-500'}`}
+                className={`px-4 py-2 rounded mt-2 transition-colors ${
+                  saved ? 'bg-green-600 text-white' : 'bg-[#e8b632] text-black hover:bg-yellow-500'
+                }`}
               >
                 {saved ? 'Saved!' : 'Add to Favorites'}
               </button>
@@ -308,14 +319,9 @@ export default function ReaderPage() {
 
           {/* Controls */}
           <div className="flex justify-center items-center gap-6 mt-4">
-            <button
-              onClick={() => skip(-15)}
-              className="relative p-2 rounded hover:bg-gray-800"
-            >
+            <button onClick={() => skip(-15)} className="relative p-2 rounded hover:bg-gray-800">
               <RotateCcw className="w-10 h-10" />
-              <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold">
-                15
-              </span>
+              <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold">15</span>
             </button>
 
             <button
@@ -325,14 +331,9 @@ export default function ReaderPage() {
               {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
             </button>
 
-            <button
-              onClick={() => skip(15)}
-              className="relative p-2 rounded hover:bg-gray-800"
-            >
+            <button onClick={() => skip(15)} className="relative p-2 rounded hover:bg-gray-800">
               <RotateCw className="w-10 h-10" />
-              <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold">
-                15
-              </span>
+              <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold">15</span>
             </button>
           </div>
 
