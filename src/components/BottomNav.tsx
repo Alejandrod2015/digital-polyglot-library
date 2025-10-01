@@ -14,7 +14,7 @@ export default function Navbar() {
     }`;
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#1b263b] shadow-md z-50">
+    <nav className="fixed top-0 left-0 w-full bg-[#0D1B2A] shadow-md z-50">
       <div className="flex justify-center gap-6 py-3">
         <Link href="/books" className={linkClasses('/books')}>
           📚 Library

@@ -23,6 +23,7 @@ The user will provide a word in any language.
 
 Your task:
 - If the word has cultural, historical, or regional significance in the language provided (food, festivals, idioms, customs, cultural objects), provide a VERY short cultural note in English.
+- Don't add a note if the word is a common noun, verb, adjective, or adverb without special cultural meaning.
 - The note must be maximum 2 sentences, with simple wording, no longer than 3 lines.
 - If the word has no notable cultural significance, return an empty string.
 

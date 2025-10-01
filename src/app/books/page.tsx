@@ -30,7 +30,7 @@ export default function BooksPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white p-8">
+    <main className="min-h-screen bg-[#0D1B2A] text-white p-8">
       <h1 className="text-3xl font-bold mb-6 text-center">Elige un libro</h1>
 
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 justify-items-center">

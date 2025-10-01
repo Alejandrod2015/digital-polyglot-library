@@ -38,7 +38,6 @@ type NoteStatus = 'idle' | 'loading' | 'ready' | 'none' | 'error';
 export default function ReaderPage() {
   const { bookId } = useParams();
 
-  // ✅ Hooks arriba
   const [selectedStoryId, setSelectedStoryId] = useState('1');
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -52,10 +51,10 @@ export default function ReaderPage() {
   const [culturalNote, setCulturalNote] = useState<string | null>(null);
   const [noteStatus, setNoteStatus] = useState<NoteStatus>('idle');
   const [saved, setSaved] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detectar si es móvil
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -63,7 +62,6 @@ export default function ReaderPage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // ✅ useEffect audio
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -80,7 +78,6 @@ export default function ReaderPage() {
     };
   }, []);
 
-  // Validación del libro después de hooks
   const book = booksMap[bookId as string];
   if (!book) {
     notFound();
@@ -89,7 +86,6 @@ export default function ReaderPage() {
 
   const story = book.stories.find((s) => s.id === selectedStoryId)!;
 
-  // --- funciones de audio ---
   const togglePlay = () => {
     const a = audioRef.current;
     if (!a) return;
@@ -129,7 +125,6 @@ export default function ReaderPage() {
     return `${minutes}:${seconds}`;
   };
 
-  // --- funciones de vocab ---
   const buildSnippet = (paragraphText: string, word: string) => {
     const words = paragraphText.split(/\s+/);
     const idx = words.findIndex((w) => stripPunct(w).toLowerCase().includes(word));
@@ -200,6 +195,14 @@ export default function ReaderPage() {
     const sel = window.getSelection();
     const raw = sel?.toString().trim();
     if (!raw) return;
+
+    const words = raw.split(/\s+/);
+    if (words.length > 5) {
+      setErrorMessage("Please select a maximum of 5 words.");
+      return;
+    }
+
+    setErrorMessage(null);
     await processWord(raw, e.currentTarget.textContent || raw);
   };
 
@@ -225,7 +228,6 @@ export default function ReaderPage() {
         );
       });
     }
-    // Desktop: texto normal con highlight
     return selectedWord ? highlightWord(text, selectedWord) : text;
   };
 
@@ -237,12 +239,10 @@ export default function ReaderPage() {
     setSaved(true);
   };
 
-  // --- JSX ---
   return (
     <div className="p-8 max-w-2xl mx-auto space-y-6 text-white">
       <h1 className="text-3xl font-bold text-center">{book.title}</h1>
 
-      {/* Menú historias */}
       <div className="space-y-2">
         <h2 className="text-lg font-semibold">Select a story:</h2>
         {book.stories.map((s) => (
@@ -258,7 +258,6 @@ export default function ReaderPage() {
         ))}
       </div>
 
-      {/* Contenido */}
       <>
         <h2 className="text-2xl font-bold mt-6">{story.title}</h2>
 
@@ -276,109 +275,82 @@ export default function ReaderPage() {
         </p>
 
         {/* Panel vocab */}
-        {(selectedWord || contextTranslation || noteStatus !== 'idle') && (
+        {(selectedWord || contextTranslation || noteStatus !== 'idle' || errorMessage) && (
           <div className="mt-6 p-4 bg-[#1b263b] rounded-xl shadow-md space-y-2">
-            {selectedWord && (
-              <p className="font-bold">
-                Selected word: <span className="text-yellow-400">{selectedWord}</span>
+            {errorMessage && (
+              <p className="text-red-400 text-sm flex items-center gap-2">
+                ⚠️ {errorMessage}
               </p>
             )}
 
-            {wordTranslations.length > 0 && (
-              <p className="text-blue-400">Word translations → {wordTranslations.join(', ')}</p>
-            )}
+            {!errorMessage && (
+              <>
+                {selectedWord && (
+                  <p className="font-bold">
+                    Selected word: <span className="text-yellow-400">{selectedWord}</span>
+                  </p>
+                )}
 
-            {contextTranslation && (
-              <p className={contextTranslation.startsWith('Please') ? 'text-yellow-400' : 'text-green-400'}>
-                {contextTranslation.startsWith('Please') ? contextTranslation : <>Context → {contextTranslation}</>}
-              </p>
-            )}
+                {wordTranslations.length > 0 && (
+                  <p className="text-blue-400">
+                    Word translations → {wordTranslations.join(', ')}
+                  </p>
+                )}
 
-            <div className="mt-3">
-              {noteStatus === 'loading' && <div className="h-5 w-3/4 rounded bg-white/10 animate-pulse" />}
+                {contextTranslation && (
+                  <p
+                    className={
+                      contextTranslation.startsWith('Please')
+                        ? 'text-yellow-400'
+                        : 'text-green-400'
+                    }
+                  >
+                    {contextTranslation.startsWith('Please')
+                      ? contextTranslation
+                      : <>Context → {contextTranslation}</>}
+                  </p>
+                )}
 
-              {noteStatus === 'ready' && culturalNote && (
-                <p className="text-purple-300">Cultural note → {culturalNote}</p>
-              )}
+                <div className="mt-3">
+                  {noteStatus === 'loading' && (
+                    <div className="h-5 w-3/4 rounded bg-white/10 animate-pulse" />
+                  )}
 
-              {noteStatus === 'none' && (
-                <span className="inline-flex items-center gap-2 text-xs text-gray-400 bg-white/5 px-2 py-1 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-400" />
-                  No cultural note
-                </span>
-              )}
+                  {noteStatus === 'ready' && culturalNote && (
+                    <p className="text-purple-300">Cultural note → {culturalNote}</p>
+                  )}
 
-              {noteStatus === 'error' && (
-                <span className="inline-flex items-center gap-2 text-xs text-red-300 bg-red-500/10 px-2 py-1 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-300" />
-                  Cultural note unavailable
-                </span>
-              )}
-            </div>
+                  {noteStatus === 'none' && (
+                    <span className="inline-flex items-center gap-2 text-xs text-gray-400 bg-white/5 px-2 py-1 rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gray-400" />
+                      No cultural note
+                    </span>
+                  )}
 
-            {selectedWord && !contextTranslation?.startsWith('Please') && (
-              <button
-                onClick={saveToFavorites}
-                className={`px-4 py-2 rounded mt-2 transition-colors ${
-                  saved ? 'bg-green-600 text-white' : 'bg-[#e8b632] text-black hover:bg-yellow-500'
-                }`}
-              >
-                {saved ? 'Saved!' : 'Add to Favorites'}
-              </button>
+                  {noteStatus === 'error' && (
+                    <span className="inline-flex items-center gap-2 text-xs text-red-300 bg-red-500/10 px-2 py-1 rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-300" />
+                      Cultural note unavailable
+                    </span>
+                  )}
+                </div>
+
+                {selectedWord && !contextTranslation?.startsWith('Please') && (
+                  <button
+                    onClick={saveToFavorites}
+                    className={`px-4 py-2 rounded mt-2 transition-colors ${
+                      saved
+                        ? 'bg-green-600 text-white'
+                        : 'bg-[#e8b632] text-black hover:bg-yellow-500'
+                    }`}
+                  >
+                    {saved ? 'Saved!' : 'Add to Favorites'}
+                  </button>
+                )}
+              </>
             )}
           </div>
         )}
-
-        {/* Audio Player */}
-        <div className="mt-6 bg-black/80 p-4 rounded-xl shadow-2xl backdrop-blur">
-          <audio ref={audioRef} src={`${book.audioFolder}/${story.audio}`} />
-
-          <div className="flex items-center gap-2 text-sm text-gray-300">
-            <span>{formatTime(progress)}</span>
-            <input
-              type="range"
-              min={0}
-              max={duration || 0}
-              value={progress}
-              onChange={handleSeek}
-              className="w-full accent-blue-500"
-            />
-            <span>{formatTime(duration)}</span>
-          </div>
-
-          <div className="flex justify-center items-center gap-6 mt-4">
-            <button onClick={() => skip(-15)} className="relative p-2 rounded hover:bg-gray-800">
-              <RotateCcw className="w-10 h-10" />
-              <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold">15</span>
-            </button>
-
-            <button
-              onClick={togglePlay}
-              className="p-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white"
-            >
-              {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
-            </button>
-
-            <button onClick={() => skip(15)} className="relative p-2 rounded hover:bg-gray-800">
-              <RotateCw className="w-10 h-10" />
-              <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold">15</span>
-            </button>
-          </div>
-
-          <div className="flex justify-center mt-3">
-            <select
-              value={speed}
-              onChange={(e) => changeSpeed(Number(e.target.value))}
-              className="bg-gray-800 px-2 py-1 rounded"
-            >
-              <option value={0.5}>0.5x</option>
-              <option value={0.75}>0.75x</option>
-              <option value={1}>1x</option>
-              <option value={1.25}>1.25x</option>
-              <option value={1.5}>1.5x</option>
-            </select>
-          </div>
-        </div>
       </>
     </div>
   );
