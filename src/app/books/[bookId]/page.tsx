@@ -1,14 +1,11 @@
 import { books } from "@/data/books";
 import Link from "next/link";
-import Image from "next/image";
 
-type BookPageProps = {
-  params: {
-    bookId: string;
-  };
-};
+interface Props {
+  params: { bookId: string };
+}
 
-export default function BookPage({ params }: BookPageProps) {
+export default function BookPage({ params }: Props) {
   const { bookId } = params;
   const book = books[bookId];
 
@@ -20,13 +17,6 @@ export default function BookPage({ params }: BookPageProps) {
     <div className="flex flex-col items-center text-center p-8">
       <h1 className="text-3xl font-bold mb-4">{book.title}</h1>
       <p className="max-w-2xl text-lg mb-6">{book.description}</p>
-      <Image
-        src="/globe.svg"
-        alt="Book cover"
-        width={160}
-        height={160}
-        className="w-40 h-40 mb-6"
-      />
 
       <Link
         href={`/books/${bookId}/stories`}
@@ -38,7 +28,6 @@ export default function BookPage({ params }: BookPageProps) {
   );
 }
 
-// ✅ Necesario para que Next.js genere las rutas estáticas en build
 export function generateStaticParams() {
   return Object.keys(books).map((id) => ({ bookId: id }));
 }
