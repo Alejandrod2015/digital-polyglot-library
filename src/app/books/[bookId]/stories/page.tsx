@@ -1,10 +1,10 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, notFound } from 'next/navigation';
 import { useAudio } from '@/context/AudioContext';
-import { books } from "@/data/books";
-import type { Story } from "@/types/books";
+import { books } from '@/data/books';
+import type { Story } from '@/types/books';
 
 const stripPunct = (s: string) => s.replace(/[.,!?;:()"'«»¿¡]/g, '');
 
@@ -14,9 +14,7 @@ const highlightWord = (text: string, word: string) => {
   const parts = text.split(regex);
   return parts.map((part, i) =>
     regex.test(part) ? (
-      <span key={i} className="bg-yellow-400 text-black px-1 rounded">
-        {part}
-      </span>
+      <span key={i} className="bg-yellow-400 text-black px-1 rounded">{part}</span>
     ) : (
       part
     )
@@ -30,11 +28,6 @@ export default function ReaderPage() {
   const { setCurrentAudio } = useAudio();
 
   const [selectedStoryId, setSelectedStoryId] = useState('1');
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [speed, setSpeed] = useState(1);
-  const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
 
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [contextTranslation, setContextTranslation] = useState<string | null>(null);
@@ -46,6 +39,7 @@ export default function ReaderPage() {
 
   const [isMobile, setIsMobile] = useState(false);
 
+  // Detectar mobile
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -53,84 +47,28 @@ export default function ReaderPage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const updateProgress = () => setProgress(audio.currentTime);
-    const setDur = () => setDuration(audio.duration);
-
-    audio.addEventListener('timeupdate', updateProgress);
-    audio.addEventListener('loadedmetadata', setDur);
-
-    return () => {
-      audio.removeEventListener('timeupdate', updateProgress);
-      audio.removeEventListener('loadedmetadata', setDur);
-    };
-  }, []);
-
   const book = books[bookId as string];
+  const story = book?.stories.find((s) => s.id === selectedStoryId);
+
+  // Fijar el audio en contexto para PlayerWrapper/Player
+  useEffect(() => {
+    if (book && story) {
+      setCurrentAudio(`${book.audioFolder}/${story.audio}`);
+    }
+  }, [book, story, setCurrentAudio]);
+
+  // Returns condicionales después de los hooks
   if (!book) {
     notFound();
     return null;
   }
-
-  const story = book.stories.find((s) => s.id === selectedStoryId);
-
-  // ✅ Inicializar el player con la primera historia al cargar la página
-useEffect(() => {
-  if (story) {
-    const audioPath = `${book.audioFolder}/${story.audio}`;
-    setCurrentAudio(audioPath);
-  }
-}, [story, book, setCurrentAudio]);
-
 
   if (!story) {
     return <div className="p-8 text-center">No se encontró la historia seleccionada.</div>;
   }
 
   const handleStorySelect = (id: string) => {
-  setSelectedStoryId(id);
-};
-
-  const togglePlay = () => {
-    const a = audioRef.current;
-    if (!a) return;
-    if (isPlaying) {
-      a.pause();
-      setIsPlaying(false);
-    } else {
-      a.play();
-      setIsPlaying(true);
-    }
-  };
-
-  const changeSpeed = (v: number) => {
-    if (audioRef.current) {
-      audioRef.current.playbackRate = v;
-      setSpeed(v);
-    }
-  };
-
-  const skip = (sec: number) => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime + sec);
-    }
-  };
-
-  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = Number(e.target.value);
-      setProgress(Number(e.target.value));
-    }
-  };
-
-  const formatTime = (sec: number) => {
-    if (!sec || isNaN(sec)) return '0:00';
-    const minutes = Math.floor(sec / 60);
-    const seconds = Math.floor(sec % 60).toString().padStart(2, '0');
-    return `${minutes}:${seconds}`;
+    setSelectedStoryId(id);
   };
 
   const buildSnippet = (paragraphText: string, word: string) => {
@@ -206,7 +144,7 @@ useEffect(() => {
 
     const words = raw.split(/\s+/);
     if (words.length > 5) {
-      setErrorMessage("Please select a maximum of 5 words.");
+      setErrorMessage('Please select a maximum of 5 words.');
       return;
     }
 
@@ -227,9 +165,7 @@ useEffect(() => {
           <span
             key={i}
             onClick={() => handleWordTap(word, arr.join(' '))}
-            className={`cursor-pointer px-1 rounded ${
-              isSelected ? 'bg-yellow-400 text-black' : 'hover:bg-yellow-300 hover:text-black'
-            }`}
+            className={`cursor-pointer px-1 rounded ${isSelected ? 'bg-yellow-400 text-black' : 'hover:bg-yellow-300 hover:text-black'}`}
           >
             {word}{' '}
           </span>
@@ -257,11 +193,7 @@ useEffect(() => {
           <button
             key={s.id}
             onClick={() => handleStorySelect(s.id)}
-            className={`w-full text-left px-4 py-2 rounded ${
-              s.id === selectedStoryId
-                ? 'bg-blue-700 text-white'
-                : 'bg-gray-800 hover:bg-gray-700'
-            }`}
+            className={`w-full text-left px-4 py-2 rounded ${s.id === selectedStoryId ? 'bg-blue-700 text-white' : 'bg-gray-800 hover:bg-gray-700'}`}
           >
             {s.title}
           </button>
@@ -284,84 +216,59 @@ useEffect(() => {
         {renderSelectableText(story.dialogue)}
       </p>
 
-      {/* Panel vocab */}
-{(selectedWord || contextTranslation || noteStatus !== 'idle' || errorMessage) && (
-  <div className="mt-6 p-4 bg-[#1b263b] rounded-xl shadow-md space-y-2">
-    {errorMessage && (
-      <p className="text-red-400 text-sm flex items-center gap-2">
-        ⚠️ {errorMessage}
-      </p>
-    )}
-
-    {!errorMessage && (
-      <>
-        {selectedWord && (
-          <p className="font-bold">
-            Selected word: <span className="text-yellow-400">{selectedWord}</span>
-          </p>
-        )}
-
-        {wordTranslations.length > 0 && (
-          <p className="text-blue-400">
-            Word translations → {wordTranslations.join(', ')}
-          </p>
-        )}
-
-        {contextTranslation && (
-          <p
-            className={
-              contextTranslation.startsWith('Please')
-                ? 'text-yellow-400'
-                : 'text-green-400'
-            }
-          >
-            {contextTranslation.startsWith('Please')
-              ? contextTranslation
-              : <>Context → {contextTranslation}</>}
-          </p>
-        )}
-
-        <div className="mt-3">
-          {noteStatus === 'loading' && (
-            <div className="h-5 w-3/4 rounded bg-white/10 animate-pulse" />
+      {(selectedWord || contextTranslation || noteStatus !== 'idle' || errorMessage) && (
+        <div className="mt-6 p-4 bg-[#1b263b] rounded-xl shadow-md space-y-2">
+          {errorMessage && (
+            <p className="text-red-400 text-sm flex items-center gap-2">⚠️ {errorMessage}</p>
           )}
 
-          {noteStatus === 'ready' && culturalNote && (
-            <p className="text-purple-300">Cultural note → {culturalNote}</p>
-          )}
+          {!errorMessage && (
+            <>
+              {selectedWord && (
+                <p className="font-bold">
+                  Selected word: <span className="text-yellow-400">{selectedWord}</span>
+                </p>
+              )}
 
-          {noteStatus === 'none' && (
-            <span className="inline-flex items-center gap-2 text-xs text-gray-400 bg-white/5 px-2 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-gray-400" />
-              No cultural note
-            </span>
-          )}
+              {wordTranslations.length > 0 && (
+                <p className="text-blue-400">Word translations → {wordTranslations.join(', ')}</p>
+              )}
 
-          {noteStatus === 'error' && (
-            <span className="inline-flex items-center gap-2 text-xs text-red-300 bg-red-500/10 px-2 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-300" />
-              Cultural note unavailable
-            </span>
+              {contextTranslation && (
+                <p className={contextTranslation.startsWith('Please') ? 'text-yellow-400' : 'text-green-400'}>
+                  {contextTranslation.startsWith('Please') ? contextTranslation : <>Context → {contextTranslation}</>}
+                </p>
+              )}
+
+              <div className="mt-3">
+                {noteStatus === 'loading' && <div className="h-5 w-3/4 rounded bg-white/10 animate-pulse" />}
+                {noteStatus === 'ready' && culturalNote && <p className="text-purple-300">Cultural note → {culturalNote}</p>}
+                {noteStatus === 'none' && (
+                  <span className="inline-flex items-center gap-2 text-xs text-gray-400 bg-white/5 px-2 py-1 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400" />
+                    No cultural note
+                  </span>
+                )}
+                {noteStatus === 'error' && (
+                  <span className="inline-flex items-center gap-2 text-xs text-red-300 bg-red-500/10 px-2 py-1 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-300" />
+                    Cultural note unavailable
+                  </span>
+                )}
+              </div>
+
+              {selectedWord && !contextTranslation?.startsWith('Please') && (
+                <button
+                  onClick={saveToFavorites}
+                  className={`px-4 py-2 rounded mt-2 transition-colors ${saved ? 'bg-green-600 text-white' : 'bg-[#e8b632] text-black hover:bg-yellow-500'}`}
+                >
+                  {saved ? 'Saved!' : 'Add to Favorites'}
+                </button>
+              )}
+            </>
           )}
         </div>
-
-        {selectedWord && !contextTranslation?.startsWith('Please') && (
-          <button
-            onClick={saveToFavorites}
-            className={`px-4 py-2 rounded mt-2 transition-colors ${
-              saved
-                ? 'bg-green-600 text-white'
-                : 'bg-[#e8b632] text-black hover:bg-yellow-500'
-            }`}
-          >
-            {saved ? 'Saved!' : 'Add to Favorites'}
-          </button>
-        )}
-      </>
-    )}
-  </div>
-)}
-
+      )}
     </div>
   );
 }
