@@ -5,6 +5,7 @@ import { useParams, notFound } from 'next/navigation';
 import { books } from '@/data/books';
 import type { Story } from '@/types/books';
 import Player from "@/components/Player";
+import StoryContent from "@/components/StoryContent";
 
 
 const stripPunct = (s: string) => s.replace(/[.,!?;:()"'«»¿¡]/g, '');
@@ -179,7 +180,7 @@ export default function ReaderPage() {
   };
 
   return (
-    <div className="p-8 max-w-2xl mx-auto space-y-6 text-white">
+    <div className="p-8 max-w-2xl mx-auto space-y-6 text-foreground">
       <h1 className="text-3xl font-bold text-center">{book.title}</h1>
 
       <div className="space-y-2">
@@ -188,7 +189,7 @@ export default function ReaderPage() {
           <button
             key={s.id}
             onClick={() => handleStorySelect(s.id)}
-            className={`w-full text-left px-4 py-2 rounded ${s.id === selectedStoryId ? 'bg-blue-700 text-white' : 'bg-gray-800 hover:bg-gray-700'}`}
+            className={`w-full text-left px-4 py-2 rounded ${s.id === selectedStoryId ? 'bg-blue-700 text-foreground' : 'bg-gray-800 hover:bg-gray-700'}`}
           >
             {s.title}
           </button>
@@ -197,13 +198,14 @@ export default function ReaderPage() {
 
       <h2 className="text-2xl font-bold mt-6">{story.title}</h2>
 
-      <p
-        className="mt-2 select-text"
-        onPointerUp={!isMobile ? handleParagraphSelection : undefined}
-      >
-        {renderSelectableText(story.text)}
-      </p>
+      <StoryContent
+        text={story.text}
+        sentencesPerParagraph={3}
+        onParagraphSelect={!isMobile ? handleParagraphSelection : undefined}
+        renderWord={(t) => renderSelectableText(t)}
+      />
 
+      {/* diálogo aún lo dejas abajo (luego lo estilizamos en el siguiente paso) */}
       <p
         className="italic mt-2 select-text"
         onPointerUp={!isMobile ? handleParagraphSelection : undefined}
@@ -260,7 +262,7 @@ export default function ReaderPage() {
               {selectedWord && !contextTranslation?.startsWith('Please') && (
                 <button
                   onClick={saveToFavorites}
-                  className={`px-4 py-2 rounded mt-2 transition-colors ${saved ? 'bg-green-600 text-white' : 'bg-[#e8b632] text-black hover:bg-yellow-500'}`}
+                  className={`px-4 py-2 rounded mt-2 transition-colors ${saved ? 'bg-green-600 text-foreground' : 'bg-[#e8b632] text-black hover:bg-yellow-500'}`}
                 >
                   {saved ? 'Saved!' : 'Add to Favorites'}
                 </button>

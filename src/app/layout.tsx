@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-[#0D1B2A]">
-      <body className="bg-[#0D1B2A] text-white">
+    <html lang="en" className="bg-[#121212]">
+      <body className="bg-[#121212] text-[#E0E0E0]">
         <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
           <div className="flex h-screen w-screen">
             {/* Sidebar fijo en desktop */}
