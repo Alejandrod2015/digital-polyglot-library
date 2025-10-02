@@ -25,6 +25,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-[#121212]">
+
+        <head>
+      {/* Android: status bar oscura */}
+      <meta name="theme-color" content="#121212" />
+      {/* iOS: status bar translúcida */}
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    </head>
+
+
       <body className="bg-[#121212] text-[#E0E0E0]">
         <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
           <div className="flex h-screen w-screen">
