@@ -2,11 +2,11 @@ import { books } from "@/data/books";
 import Link from "next/link";
 import Image from "next/image";
 
-interface BookPageProps {
+type BookPageProps = {
   params: {
     bookId: string;
   };
-}
+};
 
 export default function BookPage({ params }: BookPageProps) {
   const { bookId } = params;
@@ -38,4 +38,7 @@ export default function BookPage({ params }: BookPageProps) {
   );
 }
 
-// ✅ Necesario para que Next.js
+// ✅ Necesario para que Next.js genere las rutas estáticas en build
+export function generateStaticParams() {
+  return Object.keys(books).map((id) => ({ bookId: id }));
+}
