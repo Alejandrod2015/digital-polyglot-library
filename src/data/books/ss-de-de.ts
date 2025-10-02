@@ -6,7 +6,7 @@ export const ssDeDe: Book = {
   subtitle: "Discover Hamburg’s vibrant nightlife through language",
   description: "A short story set in the vibrant nightlife of Hamburg.", // sinopsis
   cover: "/covers/ss-de-de.jpg", // 👈 asegúrate de tener esta portada en /public/covers
-  theme: ["Cultura", "Vida urbana", "Alemania"],
+  theme: ["Culture", "Urban life", "Hamburg"],
   level: "intermediate",
   audioFolder: "/audio/ss-de-de", // 👈 carpeta real en /public/audio
   stories: [

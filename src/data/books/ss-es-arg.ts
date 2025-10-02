@@ -3,7 +3,11 @@ import { Book } from "@/types/books";
 export const ssEsArg: Book = {
   id: "ss-es-arg", // 👈 ahora coincide con la carpeta y con el import en index.ts
   title: "Short Stories in Argentinian Spanish",
+  subtitle: "Experience Buenos Aires through its cafés, tango and traditions",
   description: "A collection of short stories from Argentina.",
+  cover: "/covers/ss-es-arg.jpg", // 👈 asegúrate de tener esta portada en /public/covers
+  theme: ["Culture", "Buenos Aires", "Tango"],
+  level: "intermediate",
   audioFolder: "/audio/ss-es-arg", // 👈 apunta a la carpeta correcta
   stories: [
     {

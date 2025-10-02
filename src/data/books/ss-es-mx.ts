@@ -3,7 +3,11 @@ import { Book } from "@/types/books";
 export const ssEsMx: Book = {
   id: "ss-es-mx", // 👈 coincide con la carpeta y la convención
   title: "Short Stories in Mexican Spanish",
+  subtitle: "Explore Mexico’s streets, flavors and traditions through language",
   description: "A collection of short stories from Mexico.",
+  cover: "/covers/ss-es-mx.jpg", // 👈 asegúrate de tener esta portada en /public/covers
+  theme: ["Culture", "Food", "Mexico City"],
+  level: "basic",
   audioFolder: "/audio/ss-es-mx", // 👈 apunta a la carpeta correcta
   stories: [
     {

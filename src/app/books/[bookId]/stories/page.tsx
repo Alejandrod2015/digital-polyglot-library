@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, notFound } from 'next/navigation';
-import { useAudio } from '@/context/AudioContext';
 import { books } from '@/data/books';
 import type { Story } from '@/types/books';
+import Player from "@/components/Player";
+
 
 const stripPunct = (s: string) => s.replace(/[.,!?;:()"'«»¿¡]/g, '');
 
@@ -25,7 +26,7 @@ type NoteStatus = 'idle' | 'loading' | 'ready' | 'none' | 'error';
 
 export default function ReaderPage() {
   const { bookId } = useParams();
-  const { setCurrentAudio } = useAudio();
+//  const { setCurrentAudio } = useAudio();
 
   const [selectedStoryId, setSelectedStoryId] = useState('1');
 
@@ -50,12 +51,6 @@ export default function ReaderPage() {
   const book = books[bookId as string];
   const story = book?.stories.find((s) => s.id === selectedStoryId);
 
-  // Fijar el audio en contexto para PlayerWrapper/Player
-  useEffect(() => {
-    if (book && story) {
-      setCurrentAudio(`${book.audioFolder}/${story.audio}`);
-    }
-  }, [book, story, setCurrentAudio]);
 
   // Returns condicionales después de los hooks
   if (!book) {
@@ -215,6 +210,11 @@ export default function ReaderPage() {
       >
         {renderSelectableText(story.dialogue)}
       </p>
+
+      <div className="mt-6">
+      <Player src={`${book.audioFolder}/${story.audio}`} />
+      </div>      
+
 
       {(selectedWord || contextTranslation || noteStatus !== 'idle' || errorMessage) && (
         <div className="mt-6 p-4 bg-[#1b263b] rounded-xl shadow-md space-y-2">

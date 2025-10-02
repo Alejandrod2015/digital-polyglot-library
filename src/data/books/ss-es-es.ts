@@ -3,7 +3,11 @@ import { Book } from "@/types/books";
 export const ssEsEs: Book = {
   id: "ss-es-es", // 👈 ahora coincide con la carpeta /audio/ss-es-es
   title: "Short Stories in Spanish from Spain",
+  subtitle: "Discover Spain’s culture through everyday stories",
   description: "A collection of short stories from Spain.",
+  cover: "/covers/ss-es-es.jpg", // 👈 asegúrate de tener esta portada en /public/covers
+  theme: ["Culture", "Daily life", "Spain"],
+  level: "basic",
   audioFolder: "/audio/ss-es-es", // 👈 apunta a la carpeta correcta
   stories: [
     {

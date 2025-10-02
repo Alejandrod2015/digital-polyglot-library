@@ -1,9 +1,8 @@
 import { books } from "@/data/books";
 import Link from "next/link";
-import Image from "next/image";
 import { LEVEL_LABELS } from "@/types/books";
+import Cover from "@/components/Cover";
 
-// 👇 Tipado correcto para Next.js App Router
 type BookPageProps = {
   params: {
     bookId: string;
@@ -12,7 +11,7 @@ type BookPageProps = {
 
 export default function BookPage({ params }: BookPageProps) {
   const { bookId } = params;
-  const book = books[bookId];
+  const book = books[bookId]; // ✅ acceso correcto
 
   if (!book) {
     return <div className="p-8 text-center">Libro no encontrado.</div>;
@@ -20,18 +19,14 @@ export default function BookPage({ params }: BookPageProps) {
 
   return (
     <div className="max-w-5xl mx-auto p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-      {/* Portada: arriba en mobile, derecha en desktop */}
+      {/* Portada */}
       <div className="flex justify-center md:justify-end order-1 md:order-2">
-        <Image
-          src={book.cover || "/globe.svg"}
-          alt={`Portada de ${book.title}`}
-          width={240}
-          height={320}
-          className="rounded-2xl shadow-lg object-cover"
-        />
+        <div className="w-[240px] aspect-[2/3]">
+          <Cover src={book.cover} alt={`Portada de ${book.title}`} />
+        </div>
       </div>
 
-      {/* Texto: debajo en mobile, izquierda en desktop */}
+      {/* Info */}
       <div className="md:col-span-2 text-left order-2 md:order-1">
         <h1 className="text-3xl font-bold mb-2 text-white">{book.title}</h1>
 
@@ -60,40 +55,36 @@ export default function BookPage({ params }: BookPageProps) {
           )}
         </div>
 
+        {/* Botón principal → primera sección */}
         <Link
-          href={`/books/${bookId}/stories`}
+          href={`/books/${bookId}/sections/${book.stories[0].id}`}
           className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700"
         >
           Start reading
         </Link>
-        
-        {/* Historias incluidas */}
-        <div className="mt-10">
-        <h2 className="text-2xl font-semibold mb-4 text-white">Historias incluidas</h2>
-        <ul className="space-y-3">
-            {book.stories.map((story) => (
-            <li
-                key={story.id}
-                className="p-4 bg-gray-800 rounded-xl flex justify-between items-center"
-            >
-                <span className="text-gray-200">{story.title}</span>
-                <Link
-                href={`/books/${bookId}/stories?storyId=${story.id}`}
-                className="text-blue-400 hover:text-blue-200 text-sm"
-                >
-                Leer →
-                </Link>
-            </li>
-            ))}
-        </ul>
-        </div>
 
+        {/* Tabla de contenidos */}
+        <div className="mt-10">
+          <h2 className="text-2xl font-semibold mb-4 text-white">Table of contents</h2>
+          <ul className="space-y-3">
+            {book.stories.map((story) => (
+              <li key={story.id}>
+                <Link
+                  href={`/books/${bookId}/sections/${story.id}`}
+                  className="block p-4 bg-gray-800 rounded-xl text-gray-200 hover:bg-gray-700"
+                >
+                  {story.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
 }
 
-// ✅ Para que Next.js genere las rutas estáticas
+// ✅ Generación de rutas estáticas para cada libro
 export function generateStaticParams() {
   return Object.keys(books).map((id) => ({ bookId: id }));
 }

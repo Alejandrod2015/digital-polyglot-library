@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import {
   BookOpen,
   Star,
@@ -15,9 +16,17 @@ interface SidebarProps {
 export default function Sidebar({ onClose }: SidebarProps) {
   return (
     <div className="flex flex-col h-full w-full bg-[#0B132B] text-white p-6">
-      {/* Logo / título */}
-      <div className="mb-10">
-        <h1 className="text-2xl font-bold tracking-wide">Digital Polyglot</h1>
+      {/* Logo */}
+      <div className="mb-5 flex justify-center">
+        <Link href="/" onClick={onClose}>
+          <Image
+            src="/digital-polyglot-logo.png" // asegúrate de que está en /public
+            alt="Digital Polyglot"
+            width={180}   // 👈 ajusta el tamaño
+            height={180}
+            priority
+          />
+        </Link>
       </div>
 
       {/* Navegación */}
