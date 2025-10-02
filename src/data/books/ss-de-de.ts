@@ -3,7 +3,11 @@ import { Book } from "@/types/books";
 export const ssDeDe: Book = {
   id: "ss-de-de", // 👈 coincide con la carpeta y con el import en index.ts
   title: "Short Stories in German from Hamburg",
-  description: "A short story set in the vibrant nightlife of Hamburg.",
+  subtitle: "Discover Hamburg’s vibrant nightlife through language",
+  description: "A short story set in the vibrant nightlife of Hamburg.", // sinopsis
+  cover: "/covers/ss-de-de.jpg", // 👈 asegúrate de tener esta portada en /public/covers
+  theme: ["Cultura", "Vida urbana", "Alemania"],
+  level: "intermediate",
   audioFolder: "/audio/ss-de-de", // 👈 carpeta real en /public/audio
   stories: [
     {
