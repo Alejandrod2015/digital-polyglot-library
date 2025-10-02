@@ -28,7 +28,7 @@ export default function RootLayout({
 
         <head>
       {/* Android: status bar oscura */}
-      <meta name="theme-color" content="#121212" />
+      <meta name="theme-color" content="#0D1B2A" />
       {/* iOS: status bar translúcida */}
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     </head>
