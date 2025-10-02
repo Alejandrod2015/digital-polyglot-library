@@ -2,7 +2,13 @@ import { books } from "@/data/books";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function BookPage({ params }: { params: { bookId: string } }) {
+interface BookPageProps {
+  params: {
+    bookId: string;
+  };
+}
+
+export default function BookPage({ params }: BookPageProps) {
   const { bookId } = params;
   const book = books[bookId];
 
@@ -17,8 +23,8 @@ export default function BookPage({ params }: { params: { bookId: string } }) {
       <Image
         src="/globe.svg"
         alt="Book cover"
-        width={160}   // 👈 ancho real de la imagen
-        height={160}  // 👈 alto real de la imagen
+        width={160}
+        height={160}
         className="w-40 h-40 mb-6"
       />
 
@@ -32,7 +38,4 @@ export default function BookPage({ params }: { params: { bookId: string } }) {
   );
 }
 
-// ✅ Necesario para que Next.js/Vercel genere las rutas dinámicas
-export function generateStaticParams() {
-  return Object.keys(books).map((id) => ({ bookId: id }));
-}
+// ✅ Necesario para que Next.js
