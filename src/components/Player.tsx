@@ -3,12 +3,27 @@
 import { useRef, useState, useEffect } from "react";
 import { Play, Pause, RotateCcw, RotateCw } from "lucide-react";
 
-export default function Player() {
+interface PlayerProps {
+  src: string; // 👈 recibimos el audio dinámico
+}
+
+export default function Player({ src }: PlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  // 🔄 cada vez que cambia el src, reiniciamos el player
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.pause();
+      audio.load();
+      setIsPlaying(false);
+      setProgress(0);
+    }
+  }, [src]);
 
   // sincronizar progreso
   useEffect(() => {
@@ -71,7 +86,8 @@ export default function Player() {
 
   return (
     <div className="bg-black/80 p-4 rounded-t-xl shadow-2xl backdrop-blur w-full">
-      <audio ref={audioRef} src="/audio/Audiobook_test.mp3" />
+      {/* 👇 ahora el src es dinámico */}
+      <audio ref={audioRef} src={src} />
 
       {/* Barra de progreso */}
       <div className="flex items-center gap-2 text-sm text-gray-300">
@@ -116,7 +132,7 @@ export default function Player() {
           </span>
         </button>
 
-        {/* Selector de velocidad al lado */}
+        {/* Selector de velocidad */}
         <select
           value={speed}
           onChange={(e) => changeSpeed(Number(e.target.value))}

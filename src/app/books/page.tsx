@@ -8,22 +8,22 @@ export default function BooksPage() {
 
   const books = [
     {
-      id: 'short-stories-mexican',
+      id: 'ss-es-mx',
       title: 'Short Stories in Mexican Spanish',
       cover: '/covers/sss_mexico.jpg',
     },
     {
-      id: 'short-stories-spain',
+      id: 'ss-es-es',
       title: 'Short Stories in Castilian Spanish',
       cover: '/covers/sss_spain.jpg',
     },
     {
-      id: 'short-stories-argentina',
+      id: 'ss-es-arg',
       title: 'Short Stories in Rioplatense Spanish',
       cover: '/covers/sss_argentina.jpg',
     },
     {
-      id: 'ss-de-germany',
+      id: 'ss-de-de',
       title: 'Short Stories in German',
       cover: '/covers/ss-de-germany.jpg',
     },

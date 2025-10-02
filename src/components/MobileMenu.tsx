@@ -1,11 +1,17 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Sidebar from "./Sidebar";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // 👇 Cierra el sidebar automáticamente cuando cambia la ruta
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <div className="md:hidden">
@@ -25,7 +31,7 @@ export default function MobileMenu() {
         />
       )}
 
-      {/* Drawer lateral */}
+      {/* Sidebar deslizante */}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-[#0B132B] z-30 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
@@ -39,7 +45,7 @@ export default function MobileMenu() {
           <X size={28} />
         </button>
 
-        {/* Reutilizamos Sidebar */}
+        {/* Sidebar (links normales, sin onClose necesario) */}
         <Sidebar />
       </div>
     </div>
