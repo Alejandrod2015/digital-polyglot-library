@@ -4,14 +4,14 @@ import { LEVEL_LABELS } from "@/types/books";
 import Cover from "@/components/Cover";
 
 type BookPageProps = {
-  params: {
+  params: Promise<{
     bookId: string;
-  };
+  }>;
 };
 
-export default function BookPage({ params }: BookPageProps) {
-  const { bookId } = params;
-  const book = books[bookId]; // ✅ acceso correcto
+export default async function BookPage({ params }: BookPageProps) {
+  const { bookId } = await params; // 👈 ahora sí funciona
+  const book = books[bookId];
 
   if (!book) {
     return <div className="p-8 text-center">Libro no encontrado.</div>;
