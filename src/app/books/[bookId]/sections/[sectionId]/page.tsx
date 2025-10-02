@@ -2,14 +2,14 @@ import { notFound } from "next/navigation";
 import { books } from "@/data/books";
 
 interface SectionPageProps {
-  params: {
+  params: Promise<{
     bookId: string;
     sectionId: string;
-  };
+  }>;
 }
 
-export default function SectionPage({ params }: SectionPageProps) {
-  const { bookId, sectionId } = params;
+export default async function SectionPage({ params }: SectionPageProps) {
+  const { bookId, sectionId } = await params; // 👈 desestructuramos del Promise
 
   // books es un objeto, no un array
   const book = books[bookId];
