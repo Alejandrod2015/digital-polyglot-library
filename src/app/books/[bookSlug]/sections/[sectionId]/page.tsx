@@ -29,7 +29,6 @@ export default async function SectionPage({ params }: SectionPageProps) {
 />
 
         <blockquote className="italic border-l-4 border-blue-500 pl-4 mb-6 max-w-[60ch] mx-auto text-gray-400 leading-8 sm:leading-9">
-        {section.dialogue}
         </blockquote>
 
       </div>
