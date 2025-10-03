@@ -2,13 +2,19 @@
 
 export type Level = "basic" | "intermediate" | "advanced";
 
+export interface VocabItem {
+  word: string;          // palabra tal cual aparece en el texto
+  translation: string;   // traducción breve
+  note?: string;         // opcional: matiz/nota cultural/ejemplo
+}
+
 export interface Story {
   id: string;
   slug: string;
   title: string;
   text: string;
-  dialogue: string;
   audio: string;
+  vocab?: VocabItem[];
 }
 
 export interface Book {

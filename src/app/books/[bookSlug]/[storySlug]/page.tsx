@@ -1,5 +1,7 @@
 import { books } from "@/data/books";
 import Player from "@/components/Player";
+import VocabPanel from "@/components/VocabPanel";
+
 
 type StoryPageProps = {
   params: {
@@ -24,28 +26,29 @@ export default function StoryPage({ params }: StoryPageProps) {
   }
 
   return (
-  <div className="max-w-3xl mx-auto p-8 text-gray-100 pb-40">
-    {/* 👆 agregamos padding-bottom para que el texto no quede escondido detrás del player */}
+    <div className="max-w-3xl mx-auto p-8 text-gray-100 pb-40">
+      {/* 👆 padding-bottom para que no tape el player */}
 
-    <h1 className="text-3xl font-bold mb-4">{story.title}</h1>
+      <h1 className="text-3xl font-bold mb-4">{story.title}</h1>
 
-    {/* Renderiza el HTML de la historia */}
-    <div
-      className="max-w-none mb-8
-    [&>p]:mb-6 [&>p]:text-gray-300 [&>p]:text-lg [&>p]:leading-relaxed
-    [&>blockquote]:mb-6 [&>blockquote]:text-gray-300 [&>blockquote]:text-lg 
-    [&>blockquote]:leading-relaxed [&>blockquote]:not-italic [&>blockquote]:font-normal 
-    [&>blockquote]:border-none"
-      dangerouslySetInnerHTML={{ __html: story.text }}
-    />
+      {/* Renderiza el HTML de la historia */}
+      <div
+        className="max-w-none mb-8
+        [&>p]:mb-6 [&>p]:text-gray-300 [&>p]:text-lg [&>p]:leading-relaxed
+        [&>blockquote]:mb-6 [&>blockquote]:text-gray-300 [&>blockquote]:text-lg [&>blockquote]:leading-relaxed [&>blockquote]:not-italic [&>blockquote]:font-normal [&>blockquote]:border-none
+        [&_.vocab-word]:bg-yellow-400/60 [&_.vocab-word]:px-0.5 [&_.vocab-word]:rounded [&_.vocab-word]:cursor-pointer"
+        dangerouslySetInnerHTML={{ __html: story.text }}
+      />
 
-    {/* 🎧 Player fijo en la parte inferior */}
-    <div className="fixed bottom-0 left-0 right-0 z-50">
-      <Player src={`${book.audioFolder}/${story.audio}`} />
+      {/* 📚 Panel de vocabulario (client-only) */}
+      <VocabPanel story={story} />
+
+      {/* 🎧 Player fijo */}
+      <div className="fixed bottom-0 left-0 right-0 z-50">
+        <Player src={`${book.audioFolder}/${story.audio}`} />
+      </div>
     </div>
-  </div>
-);
-
+  );
 }
 
 // ✅ Genera rutas estáticas para todas las historias

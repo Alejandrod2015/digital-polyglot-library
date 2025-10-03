@@ -217,7 +217,6 @@ export default function ReaderPage() {
         onMouseUp={!isMobile ? handleParagraphSelection : undefined}
       >
 
-        {renderSelectableText(story.dialogue)}
       </p>
 
       <div className="mt-6">
