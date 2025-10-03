@@ -4,13 +4,13 @@ import { LEVEL_LABELS } from "@/types/books";
 import Cover from "@/components/Cover";
 
 type BookPageProps = {
-  params: {
-    bookSlug: string;
-  };
+  params: Promise<{ bookSlug: string }>;
 };
 
-export default function BookPage({ params }: BookPageProps) {
-  const { bookSlug } = params;
+
+export default async function BookPage({ params }: BookPageProps) {
+  const { bookSlug } = await params;
+
 
   const book = Object.values(books).find((b) => b.slug === bookSlug);
 
@@ -35,7 +35,7 @@ export default function BookPage({ params }: BookPageProps) {
           <h2 className="text-xl text-gray-200 mb-4">{book.subtitle}</h2>
         )}
 
-        <p className="text-lg text-white mb-6">{book.description}</p>
+        <p className="text-lg text-gray-400 mb-6">{book.description}</p>
 
         {/* Etiquetas */}
         <div className="flex flex-wrap gap-2 mb-6">
