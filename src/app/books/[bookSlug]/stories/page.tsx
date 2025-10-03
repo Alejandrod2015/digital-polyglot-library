@@ -110,10 +110,16 @@ export default function ReaderPage() {
     }
 
     fetch('/api/cultural-note', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ word }),
-    })
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    word,
+    snippet,
+    bookId,
+    storyId: selectedStoryId,
+  }),
+})
+
       .then(async (noteRes) => {
         if (!noteRes.ok) throw new Error('cultural-note error');
         const noteData = await noteRes.json();
@@ -133,7 +139,7 @@ export default function ReaderPage() {
       });
   };
 
-  const handleParagraphSelection = async (e: React.PointerEvent<HTMLParagraphElement>) => {
+  const handleParagraphSelection = async (e: React.MouseEvent<HTMLParagraphElement>) => {
     const sel = window.getSelection();
     const raw = sel?.toString().trim();
     if (!raw) return;
@@ -208,8 +214,9 @@ export default function ReaderPage() {
       {/* diálogo aún lo dejas abajo (luego lo estilizamos en el siguiente paso) */}
       <p
         className="italic mt-2 select-text"
-        onPointerUp={!isMobile ? handleParagraphSelection : undefined}
+        onMouseUp={!isMobile ? handleParagraphSelection : undefined}
       >
+
         {renderSelectableText(story.dialogue)}
       </p>
 

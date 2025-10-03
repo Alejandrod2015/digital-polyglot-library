@@ -1,16 +1,11 @@
 // src/components/StoryContent.tsx
 import * as React from "react";
 
-/**
- * Divide un bloque largo en párrafos de N oraciones y aplica tipografía legible,
- * manteniendo la interacción de selección de palabras y resaltando diálogos.
- */
 export type StoryContentProps = {
   text: string;
-  /** Oraciones por párrafo. 2–4 suele funcionar bien. */
   sentencesPerParagraph?: number;
   className?: string;
-  onParagraphSelect?: (e: React.PointerEvent<HTMLParagraphElement>) => void;
+  onParagraphSelect?: (e: React.MouseEvent<HTMLParagraphElement>) => void;
   renderWord?: (t: string) => React.ReactNode;
 };
 
@@ -18,12 +13,17 @@ function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
+// 🔑 Nueva función: elimina etiquetas HTML
+function stripHtml(raw: string): string {
+  return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
 function splitSentences(raw: string): string[] {
-  // Normaliza saltos de línea a espacios únicos
   const text = raw.replace(/\s*\n+\s*/g, " ").trim();
   if (!text) return [];
-  // Separa por signos de fin de frase, respetando comillas comunes
-  const parts = text.split(/(?<=([.!?…]|\u203D|\u2047|\u2049)["»”’]?)(?:\s+|$)/u);
+  const parts = text.split(
+    /(?<=([.!?…]|\u203D|\u2047|\u2049)["»”’]?)(?:\s+|$)/u
+  );
   return parts.map((s) => s.trim()).filter(Boolean);
 }
 
@@ -33,20 +33,16 @@ function chunk<T>(arr: T[], size: number): T[][] {
   return out;
 }
 
-// ————————————————————————————————————————————————
-// Detección robusta de diálogos
-// Cubre comillas alemanas „…“ (U+201E U+201C), comillas tipográficas “…”/”…”
-// así como comillas latinas «…» y comillas rectas "...".
-const DIALOGUE_REGEX = /(„[\s\S]*?[“”]|[“”][\s\S]*?[“”]|«[\s\S]*?»|"[\s\S]*?")/gu;
+const DIALOGUE_REGEX =
+  /(„[\s\S]*?[“”]|[“”][\s\S]*?[“”]|«[\s\S]*?»|"[\s\S]*?")/gu;
 
 function renderWithDialogues(
   paragraph: string,
   renderWord: (t: string) => React.ReactNode
 ) {
-  // split con grupo capturante → intercala [narración, diálogo, narración, diálogo, ...]
   const segments = paragraph.split(DIALOGUE_REGEX);
   return segments.map((seg, idx) => {
-    const isDialogue = idx % 2 === 1; // por el grupo capturante del split
+    const isDialogue = idx % 2 === 1;
     if (isDialogue) {
       return (
         <span
@@ -68,7 +64,10 @@ export default function StoryContent({
   onParagraphSelect,
   renderWord = (t) => t,
 }: StoryContentProps) {
-  const sentences = React.useMemo(() => splitSentences(text), [text]);
+  // 👉 usamos stripHtml aquí
+  const cleanText = React.useMemo(() => stripHtml(text), [text]);
+
+  const sentences = React.useMemo(() => splitSentences(cleanText), [cleanText]);
   const paragraphs = React.useMemo(
     () =>
       chunk(
@@ -80,22 +79,19 @@ export default function StoryContent({
 
   return (
     <div
-  className={cx(
-    "mx-auto max-w-[70ch] text-base sm:text-lg leading-7 sm:leading-8 tracking-[0.005em]",
-    // tono más suave, parecido a la sinopsis
-    "text-slate-700 dark:text-slate-300",
-    // espacio generoso entre párrafos
-    "space-y-5 sm:space-y-6",
-    className
-  )}
->
+      className={cx(
+        "mx-auto max-w-[70ch] text-base sm:text-lg leading-7 sm:leading-8 tracking-[0.005em]",
+        "text-slate-700 dark:text-slate-300",
+        "space-y-5 sm:space-y-6",
+        className
+      )}
+    >
       {paragraphs.map((para, i) => (
         <p
           key={i}
-          onPointerUp={onParagraphSelect}
+          onMouseUp={onParagraphSelect}
           className={cx(
             "select-text antialiased",
-            // Drop cap solo para el primer párrafo
             "first:first-letter:float-left first:first-letter:mr-3",
             "first:first-letter:text-5xl first:first-letter:leading-[0.85] first:first-letter:font-semibold",
             "first:first-letter:text-sky-700 dark:first:first-letter:text-sky-400"
@@ -107,15 +103,3 @@ export default function StoryContent({
     </div>
   );
 }
-
-// ————————————————————————————————————————————————————————————————
-// USO en la página de historias
-// Archivo: src/app/books/[bookId]/stories/page.tsx (fragmento)
-/*
-<StoryContent
-  text={story.text}
-  sentencesPerParagraph={3}
-  onParagraphSelect={!isMobile ? handleParagraphSelection : undefined}
-  renderWord={(t) => renderSelectableText(t)}
-/>
-*/

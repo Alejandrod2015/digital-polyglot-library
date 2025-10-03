@@ -19,7 +19,7 @@ export default function FavoritesPage() {
   };
 
   return (
-    <div className="p-8 max-w-2xl mx-auto text-black">
+    <div className="p-8 max-w-2xl mx-auto text-white">
       <h1 className="text-3xl font-bold mb-6">⭐ Favorites</h1>
 
       {favorites.length === 0 ? (

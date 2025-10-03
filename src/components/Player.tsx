@@ -138,11 +138,11 @@ export default function Player({ src }: PlayerProps) {
           onChange={(e) => changeSpeed(Number(e.target.value))}
           className="bg-gray-800 px-2 py-1 rounded text-sm"
         >
-          <option value={0.5}>0.5x</option>
-          <option value={0.75}>0.75x</option>
+          <option value={0.75}>0.5x</option>
+          <option value={0.9}>0.75x</option>
           <option value={1}>1x</option>
-          <option value={1.25}>1.25x</option>
-          <option value={1.5}>1.5x</option>
+          <option value={1.1}>1.25x</option>
+          <option value={1.25}>1.5x</option>
         </select>
       </div>
     </div>

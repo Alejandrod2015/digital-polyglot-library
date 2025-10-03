@@ -4,6 +4,7 @@ export type Level = "basic" | "intermediate" | "advanced";
 
 export interface Story {
   id: string;
+  slug: string;
   title: string;
   text: string;
   dialogue: string;
@@ -12,6 +13,7 @@ export interface Story {
 
 export interface Book {
   id: string;
+  slug: string;
   title: string;
   description: string; // usado como sinopsis
 

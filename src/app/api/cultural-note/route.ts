@@ -3,12 +3,11 @@ import OpenAI from "openai";
 
 export const runtime = "nodejs";
 
-// El cliente ya toma la clave de process.env.OPENAI_API_KEY
 const client = new OpenAI();
 
 export async function POST(req: Request) {
   try {
-    const { word = "" } = await req.json() as { word?: string };
+    const { word = "", snippet = "", bookId = "", storyId = "" } = await req.json();
 
     if (!word) {
       return NextResponse.json(
@@ -19,20 +18,22 @@ export async function POST(req: Request) {
 
     const prompt = `
 You are a cultural and linguistic assistant.
-The user will provide a word in any language.
+The user will provide a word and its context (book + story + snippet).
 
 Your task:
-- If the word has cultural, historical, or regional significance in the language provided (food, festivals, idioms, customs, cultural objects), provide a VERY short cultural note in English.
+- If the word has cultural, historical, or regional significance in the given language or context (food, festivals, idioms, customs, cultural objects), provide a VERY short cultural note in English.
 - Don't add a note if the word is a common noun, verb, adjective, or adverb without special cultural meaning.
-- The note must be maximum 2 sentences, with simple wording, no longer than 3 lines.
+- The note must be maximum 2 sentences, simple wording, no longer than 3 lines.
 - If the word has no notable cultural significance, return an empty string.
+
+Word: "${word}"
+Context snippet: "${snippet}"
+Book: "${bookId}", Story: "${storyId}"
 
 Return ONLY valid JSON in this exact format:
 {
   "culturalNote": "..."
 }
-
-Word: "${word}"
 `;
 
     const completion = await client.chat.completions.create({

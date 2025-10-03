@@ -4,14 +4,15 @@ import { LEVEL_LABELS } from "@/types/books";
 import Cover from "@/components/Cover";
 
 type BookPageProps = {
-  params: Promise<{
-    bookId: string;
-  }>;
+  params: {
+    bookSlug: string;
+  };
 };
 
-export default async function BookPage({ params }: BookPageProps) {
-  const { bookId } = await params; // 👈 ahora sí funciona
-  const book = books[bookId];
+export default function BookPage({ params }: BookPageProps) {
+  const { bookSlug } = params;
+
+  const book = Object.values(books).find((b) => b.slug === bookSlug);
 
   if (!book) {
     return <div className="p-8 text-center">Libro no encontrado.</div>;
@@ -34,7 +35,7 @@ export default async function BookPage({ params }: BookPageProps) {
           <h2 className="text-xl text-gray-200 mb-4">{book.subtitle}</h2>
         )}
 
-        <p className="text-lg text-gray-400 mb-6">{book.description}</p>
+        <p className="text-lg text-white mb-6">{book.description}</p>
 
         {/* Etiquetas */}
         <div className="flex flex-wrap gap-2 mb-6">
@@ -55,9 +56,9 @@ export default async function BookPage({ params }: BookPageProps) {
           )}
         </div>
 
-        {/* Botón principal → primera sección */}
+        {/* Botón principal → primera historia */}
         <Link
-          href={`/books/${bookId}/sections/${book.stories[0].id}`}
+          href={`/books/${book.slug}/${book.stories[0].slug}`}
           className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700"
         >
           Start reading
@@ -70,7 +71,7 @@ export default async function BookPage({ params }: BookPageProps) {
             {book.stories.map((story) => (
               <li key={story.id}>
                 <Link
-                  href={`/books/${bookId}/sections/${story.id}`}
+                  href={`/books/${book.slug}/${story.slug}`}
                   className="block p-4 bg-gray-800 rounded-xl text-gray-200 hover:bg-gray-700"
                 >
                   {story.title}
@@ -84,7 +85,7 @@ export default async function BookPage({ params }: BookPageProps) {
   );
 }
 
-// ✅ Generación de rutas estáticas para cada libro
+// ✅ Generación de rutas estáticas
 export function generateStaticParams() {
-  return Object.keys(books).map((id) => ({ bookId: id }));
+  return Object.values(books).map((book) => ({ bookSlug: book.slug }));
 }
