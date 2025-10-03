@@ -2,16 +2,13 @@ import { books } from "@/data/books";
 import Player from "@/components/Player";
 import VocabPanel from "@/components/VocabPanel";
 
-
 type StoryPageProps = {
-  params: {
-    bookSlug: string;
-    storySlug: string;
-  };
+  params: Promise<{ bookSlug: string; storySlug: string }>;
 };
 
-export default function StoryPage({ params }: StoryPageProps) {
-  const { bookSlug, storySlug } = params;
+export default async function StoryPage({ params }: StoryPageProps) {
+  // 👇 Ahora usamos await porque params es una Promise en Next.js 15
+  const { bookSlug, storySlug } = await params;
 
   // Buscar el libro por slug
   const book = Object.values(books).find((b) => b.slug === bookSlug);
@@ -28,7 +25,6 @@ export default function StoryPage({ params }: StoryPageProps) {
   return (
     <div className="max-w-3xl mx-auto p-8 text-gray-100 pb-40">
       {/* 👆 padding-bottom para que no tape el player */}
-
       <h1 className="text-3xl font-bold mb-4">{story.title}</h1>
 
       {/* Renderiza el HTML de la historia */}
