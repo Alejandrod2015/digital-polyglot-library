@@ -8,7 +8,7 @@ export const ssEsEs: Book = {
   description: "A collection of short stories from Spain.",
   cover: "/covers/ss-es-es.jpg", // 👈 asegúrate de tener esta portada en /public/covers
   theme: ["Culture", "Daily life", "Spain"],
-  level: "basic",
+  level: "intermediate",
   audioFolder: "/audio/ss-es-es", // 👈 apunta a la carpeta correcta
   stories: [
     {

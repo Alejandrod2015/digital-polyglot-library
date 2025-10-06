@@ -8,7 +8,7 @@ export const ssEsMx: Book = {
   description: "A collection of short stories from Mexico.",
   cover: "/covers/ss-es-mx.jpg", // 👈 asegúrate de tener esta portada en /public/covers
   theme: ["Culture", "Food", "Mexico City"],
-  level: "basic",
+  level: "beginner",
   audioFolder: "/audio/ss-es-mx", // 👈 apunta a la carpeta correcta
   stories: [
     {

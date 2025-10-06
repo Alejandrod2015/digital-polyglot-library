@@ -4,6 +4,11 @@ import { useState, useEffect } from "react";
 import { X, Heart } from "lucide-react";
 import { VocabItem } from "@/types/books";
 
+type FavoriteItem = {
+  word: string;
+  translation: string;
+};
+
 interface VocabPanelProps {
   story: {
     id: string;
@@ -42,7 +47,7 @@ export default function VocabPanel({ story }: VocabPanelProps) {
     if (!selectedWord) return;
     try {
       const stored = JSON.parse(localStorage.getItem("favorites") || "[]");
-      setIsFav(stored.some((f: any) => f.word === selectedWord));
+      setIsFav((stored as FavoriteItem[]).some((f) => f.word === selectedWord));
     } catch {
       setIsFav(false);
     }
@@ -55,7 +60,7 @@ export default function VocabPanel({ story }: VocabPanelProps) {
 
       if (isFav) {
         // Remove from favorites
-        const updated = stored.filter((f: any) => f.word !== selectedWord);
+        const updated = (stored as FavoriteItem[]).filter((f) => f.word !== selectedWord);
         localStorage.setItem("favorites", JSON.stringify(updated));
         setIsFav(false);
       } else {

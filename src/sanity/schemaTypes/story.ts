@@ -1,6 +1,8 @@
 import { defineField, defineType } from "sanity";
 import type { InputProps } from "sanity";
 import React from "react";
+import StoryGeneratorInput from "../components/StoryGeneratorInput";
+
 
 export const story = defineType({
   name: "story",
@@ -10,18 +12,20 @@ export const story = defineType({
   fields: [
     // 🧠 Botón generador (puedes mover este bloque al inicio para verlo arriba)
     defineField({
-      name: "generate",
-      title: "🪄 Generate Story",
-      type: "string",
-      readOnly: true,
-      components: {
-        input: (props: InputProps) => {
-          const StoryGenerator =
-            require("../components/StoryGeneratorInput").default;
-          return React.createElement(StoryGenerator, props as any);
-        },
-      },
-    }),
+  name: "generate",
+  title: "🪄 Generate Story",
+  type: "string",
+  readOnly: true,
+  components: {
+  input: (props: InputProps) => {
+    void props; // evita 'unused var' sin pasar props
+    return React.createElement(StoryGeneratorInput);
+  },
+},
+
+}),
+
+
 
     defineField({
       name: "title",

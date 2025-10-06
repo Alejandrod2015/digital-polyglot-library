@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
-  const { title, text } = await req.json();
+  const { text } = await req.json();
+
 
   const prompt = `You are a creative assistant for a language-learning app.
 Generate a short, catchy title in the same language as the story content.

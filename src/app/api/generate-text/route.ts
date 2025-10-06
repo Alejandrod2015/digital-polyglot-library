@@ -51,11 +51,13 @@ Keep it simple, natural, and educational.
     }
 
     return NextResponse.json({ content });
-  } catch (error: any) {
+    } catch (error) {
     console.error("Error generating text:", error);
+    const err = error as Error;
     return NextResponse.json(
-      { error: "Failed to generate story", details: error.message },
+      { error: "Failed to generate story", details: err.message },
       { status: 500 }
     );
   }
+
 }
