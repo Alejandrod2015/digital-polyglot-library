@@ -2,28 +2,22 @@
 
 import { Book, Story } from "@/types/books";
 import { useEffect } from "react";
-import Player from "@/components/Player"; // ajusta si está en otra ruta
+import Player from "@/components/Player";
 
 export default function StoryReaderClient({ book, story }: { book: Book; story: Story }) {
-  // Subir al inicio cuando cambie de historia
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [story.slug]);
 
   return (
-    <div className="text-gray-100 pb-32"> {/* padding-bottom para que el texto no quede detrás del player */}
-      {/* Título */}
-      <h2 className="text-3xl font-bold mb-6 text-white tracking-tight">
-        {story.title}
-      </h2>
-
-      {/* Texto */}
+    <div className="text-gray-100">
+      {/* 🔹 Solo texto de la historia */}
       <div
         className="space-y-4 text-lg leading-relaxed text-gray-200"
         dangerouslySetInnerHTML={{ __html: story.text }}
       />
 
-      {/* Player fijo */}
+      {/* 🔹 Player fijo */}
       <div className="fixed bottom-0 left-0 w-full z-50">
         <Player
           src={story.audio || `/audio/${book.slug}/${story.slug}.mp3`}

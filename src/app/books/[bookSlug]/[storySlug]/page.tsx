@@ -1,6 +1,5 @@
 import { books } from "@/data/books";
 import StoryReaderClient from "../StoryReaderClient";
-import { LEVEL_LABELS } from "@/types/books";
 
 type StoryPageProps = {
   params: Promise<{ bookSlug: string; storySlug: string }>;
@@ -17,16 +16,14 @@ export default async function StoryPage({ params }: StoryPageProps) {
   }
 
   return (
-  <div className="max-w-5xl mx-auto p-8">
-    {book.level && (
-      <span className="inline-block px-3 py-1 bg-blue-600 text-white text-sm rounded-full">
-        {LEVEL_LABELS[book.level]}
-      </span>
-    )}
-    <StoryReaderClient book={book} story={story} />
-  </div>
-);
+    <div className="max-w-5xl mx-auto p-8 pb-32">
+      {/* ✅ ÚNICO título */}
+      <h1 className="text-3xl font-bold mb-6 text-white">{story.title}</h1>
 
+      {/* ✅ Solo el lector (sin repetir el título) */}
+      <StoryReaderClient book={book} story={story} />
+    </div>
+  );
 }
 
 export function generateStaticParams() {
