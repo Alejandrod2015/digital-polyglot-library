@@ -23,7 +23,7 @@ export default function ReaderClient({ book }: { book: Book }) {
   };
 
   type NoteStatus = 'idle' | 'loading' | 'ready' | 'none' | 'error';
-  const [selectedStoryId, setSelectedStoryId] = useState<string>('1');
+  const [selectedStoryId, setSelectedStoryId] = useState<string>(book.stories[0]?.id || '');
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [/* contextTranslation */, setContextTranslation] = useState<string | null>(null);
   const [/* wordTranslations */, setWordTranslations] = useState<string[]>([]);

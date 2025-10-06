@@ -81,11 +81,12 @@ export default async function BookPage({ params }: BookPageProps) {
 
          {/* Botón principal → primera historia */}
          <Link
-           href={`/books/${book.slug}/${book.stories[0].slug}`}
-           className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700"
-         >
-           Start reading
-         </Link>
+          href={`/books/${book.slug}/${book.stories[0].slug}`}
+          className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700"
+        >
+          Start reading
+        </Link>
+
 
 
          {/* Tabla de contenidos */}
@@ -95,11 +96,12 @@ export default async function BookPage({ params }: BookPageProps) {
              {book.stories.map((story) => (
                <li key={story.id}>
                  <Link
-                   href={`/books/${book.slug}/${story.slug}`}
-                   className="block p-4 bg-gray-800 rounded-xl text-gray-200 hover:bg-gray-700"
-                 >
-                   {story.title}
-                 </Link>
+                  href={`/books/${book.slug}/${story.slug}`}
+                  className="block p-4 bg-gray-800 rounded-xl text-gray-200 hover:bg-gray-700"
+                >
+                  {story.title}
+                </Link>
+
                </li>
              ))}
            </ul>

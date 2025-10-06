@@ -1,4 +1,4 @@
-import ReaderClient from './ReaderClient';
+import ReaderClient from '../ReaderClient';
 import { books } from '@/data/books';
 
 // params es Promise en este wrapper de servidor
