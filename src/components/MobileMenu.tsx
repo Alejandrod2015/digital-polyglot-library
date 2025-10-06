@@ -1,18 +1,48 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { Menu, X, ChevronDown, ArrowLeft } from "lucide-react";
 import Sidebar from "./Sidebar";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
+  // Detecta si estamos en modo lectura (tiene storySlug en la URL)
+  const isStoryPage = /^\/books\/[^/]+\/[^/]+$/.test(pathname || "");
+  // Detecta si estamos en página de libro (pero no historia)
+  const isBookPage = /^\/books\/[^/]+$/.test(pathname || "");
+
   // 👇 Cierra el sidebar automáticamente cuando cambia la ruta
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
+  if (isStoryPage) {
+    // 👉 En modo historia: mostrar chevron hacia abajo (solo en mobile)
+    const bookSlug = pathname?.split("/")[2];
+    return (
+      <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
+        <Link href={`/books/${bookSlug}`} className="text-white">
+          <ChevronDown size={28} />
+        </Link>
+      </div>
+    );
+  }
+
+  if (isBookPage) {
+    // 👉 En página de libro: mostrar flecha al listado de libros (solo en mobile)
+    return (
+      <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
+        <Link href="/books" className="text-white">
+          <ArrowLeft size={28} />
+        </Link>
+      </div>
+    );
+  }
+
+  // 👉 En cualquier otra página: mostrar hamburguesa normal (solo en mobile)
   return (
     <div className="md:hidden">
       {/* Botón hamburguesa */}
@@ -45,7 +75,7 @@ export default function MobileMenu() {
           <X size={28} />
         </button>
 
-        {/* Sidebar (links normales, sin onClose necesario) */}
+        {/* Sidebar */}
         <Sidebar />
       </div>
     </div>

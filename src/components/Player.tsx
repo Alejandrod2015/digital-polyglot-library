@@ -1,20 +1,45 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { Play, Pause, RotateCcw, RotateCw } from "lucide-react";
+import Link from "next/link";
+import {
+  Play,
+  Pause,
+  RotateCcw,
+  RotateCw,
+  SkipBack,
+  SkipForward,
+} from "lucide-react";
+import { books } from "@/data/books";
 
 interface PlayerProps {
-  src: string; // 👈 recibimos el audio dinámico
+  src: string;
+  bookSlug: string;
+  storySlug: string;
 }
 
-export default function Player({ src }: PlayerProps) {
+export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  // 🔄 cada vez que cambia el src, reiniciamos el player
+  // localizar libro e historias
+  const book = Object.values(books).find((b) => b.slug === bookSlug);
+  const stories = book?.stories || [];
+
+  // encontrar historia actual
+  const currentIndex = stories.findIndex(
+    (s) => s.slug === storySlug || s.id === storySlug
+  );
+  const prevStory = currentIndex > 0 ? stories[currentIndex - 1] : null;
+  const nextStory =
+    currentIndex >= 0 && currentIndex < stories.length - 1
+      ? stories[currentIndex + 1]
+      : null;
+
+  // reiniciar audio cuando cambia el src
   useEffect(() => {
     const audio = audioRef.current;
     if (audio) {
@@ -86,10 +111,10 @@ export default function Player({ src }: PlayerProps) {
 
   return (
     <div className="bg-black/80 p-4 rounded-t-xl shadow-2xl backdrop-blur w-full">
-      {/* 👇 ahora el src es dinámico */}
+      {/* audio */}
       <audio ref={audioRef} src={src} />
 
-      {/* Barra de progreso */}
+      {/* barra de progreso */}
       <div className="flex items-center gap-2 text-sm text-gray-300">
         <span>{formatTime(progress)}</span>
         <input
@@ -103,18 +128,32 @@ export default function Player({ src }: PlayerProps) {
         <span>{formatTime(duration)}</span>
       </div>
 
-      {/* Botones + selector de velocidad */}
+      {/* controles + navegación */}
       <div className="flex justify-center items-center gap-6 mt-4">
+        {/* historia anterior */}
+        {prevStory ? (
+          <Link
+            href={`/books/${bookSlug}/${prevStory.slug}`}
+            className="p-2 rounded hover:bg-gray-800"
+          >
+            <SkipBack className="w-8 h-8" />
+          </Link>
+        ) : (
+          <div className="w-8 h-8" />
+        )}
+
+        {/* retroceder 15s */}
         <button
           onClick={() => skip(-15)}
           className="relative p-2 rounded hover:bg-gray-800"
         >
-          <RotateCcw className="w-10 h-10" />
-          <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold">
+          <RotateCcw className="w-8 h-8" />
+          <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold">
             15
           </span>
         </button>
 
+        {/* play / pause */}
         <button
           onClick={togglePlay}
           className="p-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white"
@@ -122,27 +161,42 @@ export default function Player({ src }: PlayerProps) {
           {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
         </button>
 
+        {/* avanzar 15s */}
         <button
           onClick={() => skip(15)}
           className="relative p-2 rounded hover:bg-gray-800"
         >
-          <RotateCw className="w-10 h-10" />
-          <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold">
+          <RotateCw className="w-8 h-8" />
+          <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold">
             15
           </span>
         </button>
 
-        {/* Selector de velocidad */}
+        {/* historia siguiente */}
+        {nextStory ? (
+          <Link
+            href={`/books/${bookSlug}/${nextStory.slug}`}
+            className="p-2 rounded hover:bg-gray-800"
+          >
+            <SkipForward className="w-8 h-8" />
+          </Link>
+        ) : (
+          <div className="w-8 h-8" />
+        )}
+      </div>
+
+      {/* velocidad */}
+      <div className="flex justify-center mt-3">
         <select
           value={speed}
           onChange={(e) => changeSpeed(Number(e.target.value))}
           className="bg-gray-800 px-2 py-1 rounded text-sm"
         >
-          <option value={0.75}>0.5x</option>
-          <option value={0.9}>0.75x</option>
+          <option value={0.75}>0.75x</option>
+          <option value={0.85}>0.85x</option>
           <option value={1}>1x</option>
-          <option value={1.1}>1.25x</option>
-          <option value={1.25}>1.5x</option>
+          <option value={1.15}>1.15x</option>
+          <option value={1.25}>1.25x</option>
         </select>
       </div>
     </div>

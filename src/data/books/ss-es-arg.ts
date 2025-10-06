@@ -16,16 +16,7 @@ export const ssEsArg: Book = {
       slug: "cafe-en-palermo", // 👈 nuevo
       title: "1. Café en Palermo",
       text: "Buenos Aires despierta con el aroma a café y medialunas en una mañana porteña.",
-      dialogue: "Martín: Che, ¿nos juntamos en el café de siempre?",
       audio: "ss-es-arg_1.mp3", // 👈 archivo de audio para Argentina
-    },
-    {
-      id: "2",
-      slug: "caminito-en-la-boca", // 👈 nuevo
-      title: "2. Caminito en La Boca",
-      text: "Los colores vivos de las casas contrastan con los pasos de los bailarines de tango.",
-      dialogue: "Guía: Este barrio respira historia y arte.",
-      audio: "ss-es-arg_2.mp3", // 👈 asegúrate de tener este archivo
     },
   ],
 };

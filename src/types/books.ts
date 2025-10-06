@@ -1,10 +1,10 @@
 // /src/types/books.ts
 
-export type Level = "basic" | "intermediate" | "advanced";
+export type Level = "beginner" | "intermediate" | "advanced";
 
 export interface VocabItem {
   word: string;          // palabra tal cual aparece en el texto
-  translation: string;   // traducción breve
+  definition: string;   // definición breve
   note?: string;         // opcional: matiz/nota cultural/ejemplo
 }
 
@@ -15,6 +15,8 @@ export interface Story {
   text: string;
   audio: string;
   vocab?: VocabItem[];
+  isFree?: boolean;      // NUEVO: marca de historia gratuita
+  tags?: string[];       // NUEVO: etiquetas para futuras campañas
 }
 
 export interface Book {
@@ -35,7 +37,7 @@ export interface Book {
 
 // Labels útiles para mostrar en UI
 export const LEVEL_LABELS: Record<Level, string> = {
-  basic: "Basic",
+  beginner: "Beginner",
   intermediate: "Intermediate",
   advanced: "Advanced",
 };

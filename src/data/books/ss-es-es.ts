@@ -16,16 +16,7 @@ export const ssEsEs: Book = {
       slug: "paseo-por-la-gran-via", // 👈 nuevo
       title: "1. Paseo por la Gran Vía",
       text: "Es una tarde luminosa en Madrid. Las terrazas están llenas y el bullicio llena el aire.",
-      dialogue: "Lucía: ¡Vamos por unas tapas!",
       audio: "ss-es-es_1.mp3", // 👈 archivo dentro de /audio/ss-es-es
-    },
-    {
-      id: "2",
-      slug: "en-el-mercado-de-valencia", // 👈 nuevo
-      title: "2. En el Mercado de Valencia",
-      text: "El aroma de naranjas frescas invade el mercado mientras los vendedores gritan sus ofertas.",
-      dialogue: "Vendedor: ¡Naranjas recién cortadas!",
-      audio: "ss-es-es_2.mp3", // 👈 asegúrate de tener este archivo
     },
   ],
 };

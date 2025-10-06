@@ -35,7 +35,11 @@ export default async function SectionPage({ params }: SectionPageProps) {
 
       {/* Player fijo en la parte inferior */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
-        <Player src={`${book.audioFolder}/${section.audio}`} />
+        <Player
+    src={`${book.audioFolder}/${section.audio}`}
+    bookSlug={book.slug}
+    storySlug={section.slug}
+  />
       </div>
     </div>
   );
