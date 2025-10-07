@@ -1,4 +1,3 @@
-// src/components/StoryContent.tsx
 import * as React from "react";
 
 export type StoryContentProps = {
@@ -13,7 +12,6 @@ function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
-// 🔑 Nueva función: elimina etiquetas HTML
 function stripHtml(raw: string): string {
   return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -64,42 +62,36 @@ export default function StoryContent({
   onParagraphSelect,
   renderWord = (t) => t,
 }: StoryContentProps) {
-  // 👉 usamos stripHtml aquí
-  const cleanText = React.useMemo(() => stripHtml(text), [text]);
+  // ✅ Hooks: todos al inicio, sin condicionales
+  const hasHtml = React.useMemo(
+    () => /<\s*span[^>]*class=["']vocab-word["']/.test(text),
+    [text]
+  );
 
-  const sentences = React.useMemo(() => splitSentences(cleanText), [cleanText]);
+  const cleanedText = React.useMemo(() => stripHtml(text), [text]);
+  const sentences = React.useMemo(() => splitSentences(cleanedText), [cleanedText]);
   const paragraphs = React.useMemo(
-    () =>
-      chunk(
-        sentences,
-        Math.max(1, Math.min(6, sentencesPerParagraph))
-      ).map((p) => p.join(" ")),
+    () => chunk(sentences, Math.max(1, Math.min(6, sentencesPerParagraph))).map((p) => p.join(" ")),
     [sentences, sentencesPerParagraph]
   );
 
+  // ✅ Un solo return — sin early return antes de hooks
   return (
     <div
       className={cx(
         "mx-auto max-w-[70ch] text-base sm:text-lg leading-7 sm:leading-8 tracking-[0.005em]",
-        "text-slate-700 dark:text-slate-300",
-        "space-y-5 sm:space-y-6",
+        "text-slate-200",
+        "prose prose-invert prose-p:my-4 prose-blockquote:italic prose-blockquote:text-sky-400",
         className
       )}
-    >
-      {paragraphs.map((para, i) => (
-        <p
-          key={i}
-          onMouseUp={onParagraphSelect}
-          className={cx(
-            "select-text antialiased",
-            "first:first-letter:float-left first:first-letter:mr-3",
-            "first:first-letter:text-5xl first:first-letter:leading-[0.85] first:first-letter:font-semibold",
-            "first:first-letter:text-sky-700 dark:first:first-letter:text-sky-400"
-          )}
-        >
-          {renderWithDialogues(para, renderWord)}
-        </p>
-      ))}
-    </div>
+      onMouseUp={onParagraphSelect}
+      {...(hasHtml
+        ? { dangerouslySetInnerHTML: { __html: text } }
+        : {
+            children: paragraphs.map((para, i) => (
+              <p key={i}>{renderWithDialogues(para, renderWord)}</p>
+            )),
+          })}
+    />
   );
 }

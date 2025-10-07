@@ -17,7 +17,7 @@
 /* ya no necesitamos el prefers-color-scheme,
    porque queremos siempre fondo oscuro.
    Lo puedes eliminar o comentar */
-   
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -36,4 +36,18 @@ button,
 select,
 [role="button"] {
   cursor: pointer;
+}
+
+/* === ✅ VOCABULARY HIGHLIGHT === */
+.vocab-word {
+  background-color: rgba(255, 221, 85, 0.35); /* Amarillo translúcido */
+  border-radius: 0.25rem;
+  padding: 0 0.15em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.vocab-word:hover {
+  background-color: rgba(255, 221, 85, 0.85);
+  color: #000; /* Texto legible al pasar el cursor */
 }

@@ -1,5 +1,9 @@
+// src/app/books/[bookSlug]/[storySlug]/page.tsx
+// src/app/books/[bookSlug]/[storySlug]/page.tsx
 import { books } from "@/data/books";
 import StoryReaderClient from "../StoryReaderClient";
+import VocabPanel from "@/components/VocabPanel";
+
 
 type StoryPageProps = {
   params: Promise<{ bookSlug: string; storySlug: string }>;
@@ -17,11 +21,13 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
   return (
     <div className="max-w-5xl mx-auto p-8 pb-32">
-      {/* ✅ ÚNICO título */}
       <h1 className="text-3xl font-bold mb-6 text-white">{story.title}</h1>
 
-      {/* ✅ Solo el lector (sin repetir el título) */}
+      {/* Usa el client que ya tienes en /src/app/books/StoryReaderClient.tsx */}
       <StoryReaderClient book={book} story={story} />
+
+      {/* Panel de vocabulario (escucha clicks globales) */}
+      <VocabPanel story={story} />
     </div>
   );
 }

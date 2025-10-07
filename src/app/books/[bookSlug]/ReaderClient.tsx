@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import type { Book, Story } from '@/types/books';
 import Player from '@/components/Player';
 import StoryContent from '@/components/StoryContent';
+import VocabPanel from "@/components/VocabPanel";
 
 export default function ReaderClient({ book }: { book: Book }) {
   const stripPunct = (s: string) => s.replace(/[.,!?;:()"'«»¿¡]/g, '');
@@ -184,12 +185,15 @@ export default function ReaderClient({ book }: { book: Book }) {
 
       <h2 className="text-2xl font-bold mt-6">{story.title}</h2>
 
-      <StoryContent
+            <StoryContent
         text={story.text}
         sentencesPerParagraph={3}
         onParagraphSelect={!isMobile ? handleParagraphSelection : undefined}
         renderWord={(t) => renderSelectableText(t)}
       />
+
+      {/* ✅ Montamos el panel de vocabulario */}
+      <VocabPanel story={story} />
 
       <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
         <Player src={`${book.audioFolder}/${story.audio}`} bookSlug={book.slug} storySlug={story.slug} />
