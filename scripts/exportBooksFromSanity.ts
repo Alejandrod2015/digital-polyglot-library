@@ -52,7 +52,11 @@ async function exportBooks() {
     theme,
     level,
     // 🖼️ URL de portada si existe
-    "cover": coalesce(cover.asset->url, "/covers/default.jpg"),
+    "cover": select(
+      defined(cover.asset->url) => cover.asset->url,
+      defined(cover.asset->_ref) => "MISSING_ASSET_REF",
+      "/covers/default.jpg"
+    ),
     // stories
     "stories": *[
       _type == "story" && references(^._id) && published == true
@@ -61,7 +65,7 @@ async function exportBooks() {
       title,
       text,
       "slug": coalesce(slug.current, _id),
-      "audio": audio.asset->originalFilename,
+      "audio": coalesce(audio.asset->url, ""),
       vocabRaw,
       isFree
     }

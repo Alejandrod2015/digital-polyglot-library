@@ -5,11 +5,41 @@ import { useFormValue, useClient } from 'sanity'
 import { Button, Card, Text, Stack, Spinner } from '@sanity/ui'
 import { SparklesIcon } from '@sanity/icons'
 
+type GenPayload = {
+  title: string
+  text: string
+  vocab: Array<{ word: string; definition: string }>
+}
+
+type VocabItem = { word: string; definition: string }
+
+function isVocabItem(v: unknown): v is VocabItem {
+  if (typeof v !== 'object' || v === null) return false
+  const obj = v as Record<string, unknown>
+  return typeof obj.word === 'string' && typeof obj.definition === 'string'
+}
+
+function isGenPayload(x: unknown): x is GenPayload {
+  if (typeof x !== 'object' || x === null) return false
+  const obj = x as Record<string, unknown>
+  return (
+    typeof obj.title === 'string' &&
+    typeof obj.text === 'string' &&
+    Array.isArray(obj.vocab) &&
+    obj.vocab.every(isVocabItem)
+  )
+}
+
 export default function StoryGeneratorInput() {
-  // id del doc (draft o published)
   const formId = useFormValue(['_id']) as string | undefined
-  // 👇 referencia al libro relacionado (para el endpoint)
   const bookRef = useFormValue(['book', '_ref']) as string | undefined
+
+  // 🆕 nuevos valores del formulario
+  const language = useFormValue(['language']) as string | undefined
+  const region = useFormValue(['region']) as string | undefined
+  const level = useFormValue(['level']) as string | undefined
+  const focus = useFormValue(['focus']) as string | undefined
+  const topic = useFormValue(['topic']) as string | undefined
 
   const client = useClient({ apiVersion: '2024-05-01' })
 
@@ -27,12 +57,25 @@ export default function StoryGeneratorInput() {
         throw new Error('Tip: escribe algo en “Title” y pulsa Save una vez para crear el borrador.')
       }
 
-      const body = {
-        language: 'German',
-        level: 'intermediate',
-        theme: 'Hamburg nightlife and culture',
-        includeFree: true,
-        bookId: bookRef ?? null, // 👈 ahora se envía al endpoint
+      // 🧩 cuerpo dinámico para el endpoint
+      const body: {
+        language: string
+        level: string
+        focus: string
+        topic: string
+        bookId: string | null
+        region?: string
+      } = {
+        language: language ?? 'Spanish',
+        level: level ?? 'beginner',
+        focus: focus ?? 'verbs',
+        topic: topic ?? 'daily life',
+        bookId: bookRef ?? null,
+      }
+
+      // Solo incluir región si existe
+      if (region && region.trim() !== '') {
+        body.region = region
       }
 
       const res = await fetch('/api/generate-text', {
@@ -43,34 +86,47 @@ export default function StoryGeneratorInput() {
       if (!res.ok) throw new Error('Failed to generate content')
 
       const data = await res.json()
-      const content = data.content || ''
+      const raw = String(data.content ?? '')
 
-      const titleMatch = content.match(/Title:\s*(.*)/i)
-      const vocabMatch = content.match(/vocab:\s*\[([\s\S]*)\]/i)
-      const storyText = content.replace(/Title:.*|vocab:\s*\[[\s\S]*\]/gi, '').trim()
-      const title = titleMatch ? titleMatch[1].trim() : 'Untitled'
-      const vocab = vocabMatch ? `[${vocabMatch[1].trim()}]` : ''
+      let parsedUnknown: unknown
+      try {
+        parsedUnknown = JSON.parse(raw)
+      } catch {
+        throw new Error('La respuesta no tiene un formato JSON válido.')
+      }
+
+      if (!isGenPayload(parsedUnknown)) {
+        throw new Error('JSON inválido: faltan title/text/vocab o tipos incorrectos.')
+      }
 
       const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
 
+      // 🪶 Guardar resultado en el borrador
       await client
         .patch(targetId)
+        // si NO hay región seleccionada, elimínala del doc (no autocomplete)
+        .unset(!region || region.trim() === '' ? ['region'] : [])
+        // guarda campos generados
         .set({
-          title,
-          text: storyText,
-          vocabRaw: vocab,
-          level: 'intermediate',
-          theme: ['Culture', 'Urban life', 'Hamburg'],
-          isFree: true,
+          title: parsedUnknown.title?.trim() || 'Untitled',
+          text: parsedUnknown.text?.trim() ?? '',
+          vocabRaw: JSON.stringify(parsedUnknown.vocab, null, 2),
+          // metadatos (sin forzar región)
+          language: language ?? 'spanish',
+          level: level ?? 'beginner',
+          // usa claves en inglés para focus por consistencia con el endpoint
+          focus: focus ?? 'verbs',
+          topic: topic ?? 'daily life',
         })
+        // si SÍ hay región, guárdala
+        .set(region && region.trim() !== '' ? { region } : {})
         .commit()
 
-      setMsg('Story escrita en el borrador ✓ — revisa y pulsa Publish cuando quieras.')
+      setMsg('✓ Historia generada en el borrador — revisa y pulsa Publish cuando quieras.')
     } catch (err) {
-  const error = err as Error;
-  setError(error.message);
-}
- finally {
+      const e = err as Error
+      setError(e.message)
+    } finally {
       setLoading(false)
     }
   }

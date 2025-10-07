@@ -3,30 +3,154 @@ import type { InputProps } from "sanity";
 import React from "react";
 import StoryGeneratorInput from "../components/StoryGeneratorInput";
 
-
 export const story = defineType({
   name: "story",
   title: "Story",
   type: "document",
 
   fields: [
-    // 🧠 Botón generador (puedes mover este bloque al inicio para verlo arriba)
+    //
+    // 🧭 INPUT SECTION — configuración previa a la generación
+    //
     defineField({
-  name: "generate",
-  title: "🪄 Generate Story",
-  type: "string",
-  readOnly: true,
-  components: {
-  input: (props: InputProps) => {
-    void props; // evita 'unused var' sin pasar props
-    return React.createElement(StoryGeneratorInput);
-  },
-},
+      name: "language",
+      title: "Language",
+      type: "string",
+      options: {
+        list: [
+          { title: "Spanish", value: "spanish" },
+          { title: "English", value: "english" },
+          { title: "Portuguese", value: "portuguese" },
+          { title: "French", value: "french" },
+          { title: "Italian", value: "italian" },
+          { title: "German", value: "german" },
+        ],
+      },
+    }),
 
+    // DESPUÉS
+defineField({
+  name: "region_es",
+  title: "Region",
+  type: "string",
+  hidden: ({document}) => document?.language !== "spanish",
+  options: {
+    list: [
+      { title: "Spain", value: "spain" },
+      { title: "Colombia", value: "colombia" },
+      { title: "Mexico", value: "mexico" },
+      { title: "Argentina", value: "argentina" },
+      { title: "Chile", value: "chile" },
+      { title: "Peru", value: "peru" },
+    ],
+  },
+  description: "Optional.",
+}),
+
+defineField({
+  name: "region_en",
+  title: "Region",
+  type: "string",
+  hidden: ({document}) => document?.language !== "english",
+  options: {
+    list: [
+      { title: "United States", value: "usa" },
+      { title: "United Kingdom", value: "uk" },
+      { title: "Australia", value: "australia" },
+      { title: "Canada", value: "canada" },
+    ],
+  },
+  description: "Optional.",
+}),
+
+defineField({
+  name: "region_de",
+  title: "Region",
+  type: "string",
+  hidden: ({document}) => document?.language !== "german",
+  options: { list: [{ title: "Germany", value: "germany" }] },
+  description: "Optional.",
+}),
+
+defineField({
+  name: "region_fr",
+  title: "Region",
+  type: "string",
+  hidden: ({document}) => document?.language !== "french",
+  options: { list: [{ title: "France", value: "france" }] },
+  description: "Optional.",
+}),
+
+defineField({
+  name: "region_it",
+  title: "Region",
+  type: "string",
+  hidden: ({document}) => document?.language !== "italian",
+  options: { list: [{ title: "Italy", value: "italy" }] },
+  description: "Optional.",
+}),
+
+defineField({
+  name: "region_pt",
+  title: "Region",
+  type: "string",
+  hidden: ({document}) => document?.language !== "portuguese",
+  options: { list: [{ title: "Brazil", value: "brazil" }] },
+  description: "Optional.",
 }),
 
 
+    defineField({
+      name: "level",
+      title: "Level",
+      type: "string",
+      options: {
+        list: [
+          { title: "Beginner", value: "beginner" },
+          { title: "Intermediate", value: "intermediate" },
+          { title: "Advanced", value: "advanced" },
+        ],
+      },
+    }),
 
+    defineField({
+      name: "focus",
+      title: "Focus",
+      type: "string",
+      options: {
+        list: [
+          { title: "Adjectives", value: "adjectives" },
+          { title: "Verbs", value: "verbs" },
+          { title: "Nouns", value: "nouns" },
+          { title: "Expressions", value: "expressions" },
+          { title: "Slang", value: "slang" },
+        ],
+      },
+    }),
+
+    defineField({
+      name: "topic",
+      title: "Topic",
+      type: "string",
+      description: "Free text topic for the story theme.",
+    }),
+
+    defineField({
+      name: "generate",
+      title: "🪄 Generate Story",
+      type: "string",
+      readOnly: true,
+      components: {
+        input: (props: InputProps) => {
+          void props; // evita 'unused var'
+          return React.createElement(StoryGeneratorInput);
+        },
+      },
+    }),
+
+    //
+    // 🪶 OUTPUT SECTION — resultado generado y metadatos
+    //
     defineField({
       name: "title",
       title: "Title",
@@ -64,20 +188,8 @@ export const story = defineType({
       title: "Free Story",
       type: "boolean",
       initialValue: false,
-      description: "Mark true if this story should be freely available to all users.",
-    }),
-
-    defineField({
-      name: "level",
-      title: "Difficulty Level",
-      type: "string",
-      options: {
-        list: [
-          { title: "Beginner", value: "beginner" },
-          { title: "Intermediate", value: "intermediate" },
-          { title: "Advanced", value: "advanced" },
-        ],
-      },
+      description:
+        "Mark true if this story should be freely available to all users.",
     }),
 
     defineField({
@@ -89,21 +201,20 @@ export const story = defineType({
     }),
 
     defineField({
-  name: "audio",
-  title: "Audio File",
-  type: "file",
-  options: {
-    storeOriginalFilename: true, // guarda el nombre original
-  },
-  fields: [
-    {
-      name: "caption",
-      type: "string",
-      title: "Caption",
-    },
-  ],
-}),
-
+      name: "audio",
+      title: "Audio File",
+      type: "file",
+      options: {
+        storeOriginalFilename: true,
+      },
+      fields: [
+        {
+          name: "caption",
+          type: "string",
+          title: "Caption",
+        },
+      ],
+    }),
 
     defineField({
       name: "book",
