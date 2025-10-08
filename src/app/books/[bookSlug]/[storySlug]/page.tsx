@@ -1,9 +1,10 @@
+
 // src/app/books/[bookSlug]/[storySlug]/page.tsx
-// src/app/books/[bookSlug]/[storySlug]/page.tsx
+
 import { books } from "@/data/books";
 import StoryReaderClient from "../StoryReaderClient";
 import VocabPanel from "@/components/VocabPanel";
-
+import { currentUser } from "@clerk/nextjs/server"; // 👈 nuevo import
 
 type StoryPageProps = {
   params: Promise<{ bookSlug: string; storySlug: string }>;
@@ -17,6 +18,33 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
   if (!book || !story) {
     return <div className="p-8 text-center">Historia no encontrada.</div>;
+  }
+
+  // 🔐 Verificar plan de usuario con Clerk
+  const user = await currentUser();
+  const userPlan = (user?.publicMetadata?.plan as string | undefined) ?? "free";
+
+  // Reglas de acceso por nivel
+  const canAccess =
+    story.isFree ||
+    userPlan === "premium" ||
+    userPlan === "polyglot";
+
+  if (!canAccess) {
+    return (
+      <div className="p-8 text-center">
+        <h2 className="text-2xl font-semibold mb-4">Contenido Premium 🔒</h2>
+        <p className="mb-6 text-gray-300">
+          Esta historia está disponible solo para usuarios Premium o Polyglot.
+        </p>
+        <a
+          href="/upgrade"
+          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-500 transition"
+        >
+          Actualizar tu plan
+        </a>
+      </div>
+    );
   }
 
   return (

@@ -1,10 +1,10 @@
 import { Book } from "@/types/books";
 
-export const librodeprueba: Book = {
-  id: "libro-de-prueba",
-  slug: "libro-de-prueba",
-  title: "Libro de prueba",
-  description: "Descripción de prueba",
+export const colloquialgermanstories: Book = {
+  id: "colloquial-german-stories",
+  slug: "colloquial-german-stories",
+  title: "Colloquial German Stories",
+  description: "Colloquial German Stories helps you learn the real German spoken every day. Through 20 fun short stories, you’ll pick up slang, idioms, and natural expressions while discovering German culture. Perfect for learners who want to sound authentic and understand the language beyond textbooks.",
   cover: "https://cdn.sanity.io/images/9u7ilulp/production/f3944f3e85b1c9b135692c034b1bb1c0a7098a70-8456x11825.jpg",
   theme: [],
   level: "beginner",

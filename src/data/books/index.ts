@@ -1,6 +1,8 @@
 import type { Book } from "@/types/books";
-import { librodeprueba } from "./libro-de-prueba";
+import { colloquialgermanstories } from "./colloquial-german-stories";
+import { shortstoriesinperuvianspanish } from "./short-stories-in-peruvian-spanish";
 
 export const books: Record<string, Book> = {
-  [librodeprueba.id]: librodeprueba,
+  [colloquialgermanstories.id]: colloquialgermanstories,
+  [shortstoriesinperuvianspanish.id]: shortstoriesinperuvianspanish,
 };

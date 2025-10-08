@@ -13,7 +13,7 @@ export default function StoryReaderClient({ book, story }: { book: Book; story: 
     <div className="text-gray-100">
       {/* 🔹 Solo texto de la historia */}
       <div
-        className="space-y-4 text-lg leading-relaxed text-gray-200"
+        className="space-y-4 text-xl leading-relaxed text-gray-200"
         dangerouslySetInnerHTML={{ __html: story.text }}
       />
 

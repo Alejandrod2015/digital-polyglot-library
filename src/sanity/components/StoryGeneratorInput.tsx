@@ -34,7 +34,7 @@ export default function StoryGeneratorInput() {
   const formId = useFormValue(['_id']) as string | undefined
   const bookRef = useFormValue(['book', '_ref']) as string | undefined
 
-  // 🆕 nuevos valores del formulario
+  // 🆕 new form values
   const language = useFormValue(['language']) as string | undefined
   const region = useFormValue(['region']) as string | undefined
   const level = useFormValue(['level']) as string | undefined
@@ -54,10 +54,10 @@ export default function StoryGeneratorInput() {
       setError(null)
 
       if (!formId) {
-        throw new Error('Tip: escribe algo en “Title” y pulsa Save una vez para crear el borrador.')
+        throw new Error('Tip: enter something in “Title” and click Save once to create a draft.')
       }
 
-      // 🧩 cuerpo dinámico para el endpoint
+      // 🧩 dynamic body for the API endpoint
       const body: {
         language: string
         level: string
@@ -73,7 +73,7 @@ export default function StoryGeneratorInput() {
         bookId: bookRef ?? null,
       }
 
-      // Solo incluir región si existe
+      // include region only if provided
       if (region && region.trim() !== '') {
         body.region = region
       }
@@ -83,7 +83,7 @@ export default function StoryGeneratorInput() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })
-      if (!res.ok) throw new Error('Failed to generate content')
+      if (!res.ok) throw new Error('Failed to generate content.')
 
       const data = await res.json()
       const raw = String(data.content ?? '')
@@ -92,37 +92,37 @@ export default function StoryGeneratorInput() {
       try {
         parsedUnknown = JSON.parse(raw)
       } catch {
-        throw new Error('La respuesta no tiene un formato JSON válido.')
+        throw new Error('The response is not valid JSON.')
       }
 
       if (!isGenPayload(parsedUnknown)) {
-        throw new Error('JSON inválido: faltan title/text/vocab o tipos incorrectos.')
+        throw new Error('Invalid JSON: missing title/text/vocab or incorrect types.')
       }
 
       const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
 
-      // 🪶 Guardar resultado en el borrador
+      // 🪶 save result in the draft
       await client
         .patch(targetId)
-        // si NO hay región seleccionada, elimínala del doc (no autocomplete)
+        // if no region selected, remove it (do not autocomplete)
         .unset(!region || region.trim() === '' ? ['region'] : [])
-        // guarda campos generados
+        // save generated fields
         .set({
           title: parsedUnknown.title?.trim() || 'Untitled',
           text: parsedUnknown.text?.trim() ?? '',
           vocabRaw: JSON.stringify(parsedUnknown.vocab, null, 2),
-          // metadatos (sin forzar región)
+          // metadata (without forcing region)
           language: language ?? 'spanish',
           level: level ?? 'beginner',
-          // usa claves en inglés para focus por consistencia con el endpoint
+          // use English keys for focus consistency with the API
           focus: focus ?? 'verbs',
           topic: topic ?? 'daily life',
         })
-        // si SÍ hay región, guárdala
+        // if region exists, store it
         .set(region && region.trim() !== '' ? { region } : {})
         .commit()
 
-      setMsg('✓ Historia generada en el borrador — revisa y pulsa Publish cuando quieras.')
+      setMsg('✓ Story generated in draft — review and click Publish when ready.')
     } catch (err) {
       const e = err as Error
       setError(e.message)
