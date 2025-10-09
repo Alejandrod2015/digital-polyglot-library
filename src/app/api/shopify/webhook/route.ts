@@ -94,6 +94,14 @@ export async function POST(req: Request) {
     // 1️⃣ Leer cuerpo bruto
     const rawBody = await req.text();
     console.log("🔍 RAW BODY (primeros 500 chars):", rawBody.slice(0, 500));
+
+    try {
+        const parsed = JSON.parse(rawBody);
+        console.log("🧩 LINE ITEMS:", parsed.line_items);
+        } catch {
+        console.log("⚠️ No se pudo parsear JSON");
+        }
+
     const receivedHmac = req.headers.get("X-Shopify-Hmac-Sha256");
     console.log("🔑 HMAC recibido:", receivedHmac);
 
