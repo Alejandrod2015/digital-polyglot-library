@@ -54,7 +54,7 @@ async function getUserByEmail(email: string): Promise<ClerkUser | null> {
   });
 
   if (!res.ok) {
-    console.error("Clerk GET users failed:", res.status, await res.text());
+    console.error("❌ Clerk GET users failed:", res.status, await res.text());
     return null;
   }
 
@@ -79,7 +79,7 @@ async function patchUserMetadata(userId: string, nextPublic: Record<string, unkn
 
   if (!res.ok) {
     const body = await res.text();
-    throw new Error(`Clerk PATCH metadata failed: ${res.status} ${body}`);
+    throw new Error(`❌ Clerk PATCH metadata failed: ${res.status} ${body}`);
   }
 }
 
@@ -87,37 +87,47 @@ async function patchUserMetadata(userId: string, nextPublic: Record<string, unkn
 export async function POST(req: Request) {
   try {
     if (!CLERK_SECRET_KEY || !SHOPIFY_WEBHOOK_SECRET) {
+      console.log("❌ Falta CLERK_SECRET_KEY o SHOPIFY_WEBHOOK_SECRET");
       return NextResponse.json({ error: "Missing env vars" }, { status: 500 });
     }
 
     // 1️⃣ Leer cuerpo bruto
     const rawBody = await req.text();
+    console.log("🔍 RAW BODY (primeros 500 chars):", rawBody.slice(0, 500));
     const receivedHmac = req.headers.get("X-Shopify-Hmac-Sha256");
+    console.log("🔑 HMAC recibido:", receivedHmac);
 
     // 2️⃣ Validar HMAC
     const isValid = verifyShopifyHmac(rawBody, receivedHmac);
+    console.log("🧾 HMAC válido:", isValid);
     if (!isValid) {
-      console.warn("Shopify HMAC invalid");
+      console.warn("🚫 Shopify HMAC invalid");
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     // 3️⃣ Parsear JSON validado
     const parsed = JSON.parse(rawBody) as unknown;
     const email = pickEmail(parsed);
+    console.log("📧 Email detectado:", email);
     if (!email) {
+      console.warn("🚫 No se encontró email en el payload");
       return NextResponse.json({ error: "Missing email" }, { status: 400 });
     }
 
     const line_items = pickLineItems(parsed);
+    console.log("🛒 Line items detectados:", line_items);
     const purchasedBooks = line_items.map(i => i.sku ?? i.handle ?? "").filter(Boolean);
+    console.log("📚 Libros detectados:", purchasedBooks);
     if (purchasedBooks.length === 0) {
+      console.warn("🚫 No se detectaron identificadores válidos de libro");
       return NextResponse.json({ message: "No valid book identifiers found" });
     }
 
     // 4️⃣ Buscar usuario en Clerk
     const user = await getUserByEmail(email);
+    console.log("👤 Usuario encontrado:", user?.id);
     if (!user) {
-      console.warn(`User not found for email: ${email}`);
+      console.warn(`🚫 User not found for email: ${email}`);
       return NextResponse.json({ message: "User not found" });
     }
 
@@ -126,15 +136,17 @@ export async function POST(req: Request) {
       ? (user.public_metadata!.books as string[])
       : [];
     const updatedBooks = Array.from(new Set([...currentBooks, ...purchasedBooks]));
+    console.log("✅ Libros finales del usuario:", updatedBooks);
 
     await patchUserMetadata(user.id, {
       ...(user.public_metadata ?? {}),
       books: updatedBooks,
     });
 
+    console.log("🎉 Metadata actualizada en Clerk para:", email);
     return NextResponse.json({ message: "User books updated", updatedBooks });
   } catch (err) {
-    console.error("Shopify webhook error:", err);
+    console.error("💥 Shopify webhook error:", err);
     return NextResponse.json({ error: "Internal error" }, { status: 500 });
   }
 }
