@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
+import { shopifybundles } from "@/data/shopifybundles";
 
 const CLERK_API_URL = process.env.CLERK_API_URL ?? "https://api.clerk.com";
 const CLERK_SECRET_KEY = process.env.CLERK_SECRET_KEY;
@@ -96,11 +97,11 @@ export async function POST(req: Request) {
     console.log("🔍 RAW BODY (primeros 500 chars):", rawBody.slice(0, 500));
 
     try {
-        const parsed = JSON.parse(rawBody);
-        console.log("🧩 LINE ITEMS:", parsed.line_items);
-        } catch {
-        console.log("⚠️ No se pudo parsear JSON");
-        }
+      const parsed = JSON.parse(rawBody);
+      console.log("🧩 LINE ITEMS:", parsed.line_items);
+    } catch {
+      console.log("⚠️ No se pudo parsear JSON");
+    }
 
     const receivedHmac = req.headers.get("X-Shopify-Hmac-Sha256");
     console.log("🔑 HMAC recibido:", receivedHmac);
@@ -124,7 +125,17 @@ export async function POST(req: Request) {
 
     const line_items = pickLineItems(parsed);
     console.log("🛒 Line items detectados:", line_items);
-    const purchasedBooks = line_items.map(i => i.sku ?? i.handle ?? "").filter(Boolean);
+
+    const purchasedBooks = line_items
+      .flatMap(i => {
+        const code = (i.sku ?? i.handle ?? "").trim();
+        if (!code) return [];
+        // Si el SKU corresponde a un bundle, expandimos sus libros
+        if (shopifybundles[code]) return shopifybundles[code];
+        return [code];
+      })
+      .filter(Boolean);
+
     console.log("📚 Libros detectados:", purchasedBooks);
     if (purchasedBooks.length === 0) {
       console.warn("🚫 No se detectaron identificadores válidos de libro");
