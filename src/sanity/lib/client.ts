@@ -1,10 +1,13 @@
+/**
+ * Cliente Sanity universal.
+ * Compatible con Next.js (local / Vercel) y Sanity Cloud.
+ */
+
 import { createClient } from 'next-sanity'
 
-import { apiVersion, dataset, projectId } from '../env'
-
 export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  projectId: '9u7ilulp',
+  dataset: 'production',
+  apiVersion: '2025-10-05',
+  useCdn: true,
 })

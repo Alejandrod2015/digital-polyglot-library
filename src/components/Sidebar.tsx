@@ -100,13 +100,17 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Star size={22} /> Favorites
         </Link>
 
-        <Link
-          href="/freebies"
-          onClick={onClose}
-          className="flex items-center gap-3 hover:text-green-400 transition-colors"
-        >
-          <Gift size={22} /> Freebies
-        </Link>
+        {/*
+  🚫 Deprecated link — freebies page moved to /deprecated
+  <Link
+    href="/freebies"
+    onClick={onClose}
+    className="flex items-center gap-3 hover:text-green-400 transition-colors"
+  >
+    <Gift size={22} /> Freebies
+  </Link>
+*/}
+
 
         <Link
           href="/story-of-the-day"

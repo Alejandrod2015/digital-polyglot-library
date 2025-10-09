@@ -1,0 +1,408 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "id",
+        "type": "slug",
+        "title": "Book ID"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "name": "cover",
+        "type": "image",
+        "title": "Cover Image"
+      },
+      {
+        "name": "audioFolder",
+        "type": "string"
+      },
+      {
+        "initialValue": false,
+        "name": "published",
+        "type": "boolean"
+      }
+    ],
+    "name": "book",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Spanish",
+              "value": "spanish"
+            },
+            {
+              "title": "English",
+              "value": "english"
+            },
+            {
+              "title": "Portuguese",
+              "value": "portuguese"
+            },
+            {
+              "title": "French",
+              "value": "french"
+            },
+            {
+              "title": "Italian",
+              "value": "italian"
+            },
+            {
+              "title": "German",
+              "value": "german"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Spain",
+              "value": "spain"
+            },
+            {
+              "title": "Colombia",
+              "value": "colombia"
+            },
+            {
+              "title": "Mexico",
+              "value": "mexico"
+            },
+            {
+              "title": "Argentina",
+              "value": "argentina"
+            },
+            {
+              "title": "Chile",
+              "value": "chile"
+            },
+            {
+              "title": "Peru",
+              "value": "peru"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_es",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "United States",
+              "value": "usa"
+            },
+            {
+              "title": "United Kingdom",
+              "value": "uk"
+            },
+            {
+              "title": "Australia",
+              "value": "australia"
+            },
+            {
+              "title": "Canada",
+              "value": "canada"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_en",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Germany",
+              "value": "germany"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_de",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "France",
+              "value": "france"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_fr",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Italy",
+              "value": "italy"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_it",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Brazil",
+              "value": "brazil"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_pt",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Beginner",
+              "value": "beginner"
+            },
+            {
+              "title": "Intermediate",
+              "value": "intermediate"
+            },
+            {
+              "title": "Advanced",
+              "value": "advanced"
+            }
+          ]
+        },
+        "name": "level",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Adjectives",
+              "value": "adjectives"
+            },
+            {
+              "title": "Verbs",
+              "value": "verbs"
+            },
+            {
+              "title": "Nouns",
+              "value": "nouns"
+            },
+            {
+              "title": "Expressions",
+              "value": "expressions"
+            },
+            {
+              "title": "Slang",
+              "value": "slang"
+            }
+          ]
+        },
+        "name": "focus",
+        "type": "string"
+      },
+      {
+        "description": "Free text topic for the story theme.",
+        "name": "topic",
+        "type": "string"
+      },
+      {
+        "readOnly": true,
+        "name": "generate",
+        "type": "string",
+        "title": "🪄 Generate Story"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "name": "text",
+        "type": "text",
+        "title": "Main Text"
+      },
+      {
+        "rows": 10,
+        "description": "This field stores the vocabulary list generated by ChatGPT. The system will parse it automatically.",
+        "name": "vocabRaw",
+        "type": "text",
+        "title": "Vocabulary (raw JSON or text)"
+      },
+      {
+        "initialValue": false,
+        "description": "Mark true if this story should be freely available to all users.",
+        "name": "isFree",
+        "type": "boolean",
+        "title": "Free Story"
+      },
+      {
+        "description": "Cultural or contextual topics covered by the story.",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "theme",
+        "type": "array",
+        "title": "Theme / Topics"
+      },
+      {
+        "options": {
+          "storeOriginalFilename": true
+        },
+        "fields": [
+          {
+            "name": "caption",
+            "type": "string"
+          }
+        ],
+        "name": "audio",
+        "type": "file",
+        "title": "Audio File"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "to": [
+          {
+            "type": "book"
+          }
+        ],
+        "name": "book",
+        "type": "reference",
+        "title": "Related Book"
+      },
+      {
+        "initialValue": false,
+        "name": "published",
+        "type": "boolean"
+      }
+    ],
+    "name": "story",
+    "type": "document"
+  }
+]

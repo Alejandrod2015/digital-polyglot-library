@@ -48,7 +48,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
 export async function generateStaticParams() {
   return Object.values(books).flatMap((book) =>
     book.stories.map((story) => ({
-      bookId: book.id,
+      bookSlug: book.slug,
       sectionId: story.id,
     }))
   );
