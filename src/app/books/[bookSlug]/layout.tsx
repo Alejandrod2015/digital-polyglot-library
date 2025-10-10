@@ -1,9 +1,13 @@
-export default function BookLayout({
+import AccessClient from './AccessClient';
+
+export default async function BookLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ bookSlug: string }>;
 }) {
-  // Este layout actúa como “barrera” entre la página del libro y sus historias.
-  // No renderiza contenido del libro, solo los children.
-  return <>{children}</>;
+  const { bookSlug } = await params;
+
+  return <AccessClient bookSlug={bookSlug}>{children}</AccessClient>;
 }

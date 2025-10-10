@@ -59,6 +59,44 @@ export const shortstoriesincolombianspanish: Book = {
       }
     ],
     "isFree": false
+  },
+  {
+    "id": "buscando-empleo",
+    "slug": "buscando-empleo",
+    "title": "Buscando empleo",
+    "text": "<p>En Manizales, una ciudad colombiana rodeada de montañas, se encuentra Diego, un joven recién graduado de la universidad. La historia sigue sus desafíos mientras busca empleo en un mercado laboral competitivo. Las expectativas familiares y las <span class=\"vocab-word\" data-word=\"Presiones\">presiones</span> sociales son temas clave a medida que enfrenta la realidad de la vida después de la universidad. Diego está sentado en la mesa de una cafetería, hojeando su currículum.</p> <blockquote>Diego: ¿Qué hago, <span class=\"vocab-word\" data-word=\"Mono\">mono</span>? La verdad, estoy sintiendo mucho <span class=\"vocab-word\" data-word=\"Desanimes\">desánimo</span>. Toda esta situación de buscar trabajo está matándome.</blockquote> <blockquote>Julia: Tranquilo, <span class=\"vocab-word\" data-word=\"Pelado\">pelado</span>. Todos pasamos por eso después de graduarnos. Solo necesitas encontrar la oportunidad <span class=\"vocab-word\" data-word=\"Adecuada\">adecuada</span>.</blockquote> <blockquote>Diego: Pero mis papás están esperando que consiga algo pronto. Siento que los estoy <span class=\"vocab-word\" data-word=\"Decepcionado\">decepcionando</span>.</blockquote> <blockquote>Julia: No eres el único. Todos sentimos esa presión. Pero, ¿has considerado ampliar tu búsqueda? Tal vez haya oportunidades que no has explorado.</blockquote> <p>Diego y Julia están revisando las ofertas de trabajo.</p> <blockquote>Diego: Esto está difícil. ¿Tienes alguna idea de cuánta competencia hay?</blockquote> <blockquote>Julia: Sí, es una ciudad grande, llena de gente buscando trabajo. Pero no te <span class=\"vocab-word\" data-word=\"Desanimes\">desanimes</span>, <span class=\"vocab-word\" data-word=\"Pelado\">pelado</span>. Vamos a encontrar algo.</blockquote> <p>Después de algunos días, Diego consiguió ser llamado para una entrevista de trabajo para un puesto en una empresa de tecnología.</p> <blockquote>Entrevistador: Cuéntame, Diego, ¿por qué crees que eres la persona adecuada para este puesto?</blockquote> <blockquote>Diego: Bueno, me gradué con honores y tengo experiencia en proyectos similares durante la universidad. Además, me considero una persona comprometida y dispuesta a aprender.</blockquote> <blockquote>Entrevistador: Bien, te llamaremos si eres seleccionado. Hay muchos candidatos fuertes.</blockquote> <p>Diego y Julia se reúnen después de la entrevista.</p> <blockquote>Julia: ¿Cómo fue?</blockquote> <blockquote>Diego: No sé, <span class=\"vocab-word\" data-word=\"Mono\">mono</span>. Siento que podría haber ido mejor. ¿Y si no consigo nada?</blockquote> <blockquote>Julia: No pienses así. La verdad es que esto es una montaña rusa, y a veces hay que enfrentarse a varias entrevistas antes de conseguir algo.</blockquote> <p>Después de varios días y de varias entrevistas, Diego finalmente recibe una oferta de trabajo.</p> <blockquote>Diego: ¡<span class=\"vocab-word\" data-word=\"Mono\">Mono</span>, lo logramos! Me ofrecieron el puesto en la empresa de tecnología. ¡No puedo creerlo!</blockquote> <blockquote>Julia: ¡Te lo dije, <span class=\"vocab-word\" data-word=\"Pelado\">pelado</span>! Ahora, a celebrar en grande. Esta victoria merece un buen brindis.</blockquote> <p>Diego y Julia están brindando con jugo de <span class=\"vocab-word\" data-word=\"Guayaba\">guayaba</span>.</p> <blockquote>Diego: Gracias, <span class=\"vocab-word\" data-word=\"Mono\">mono</span>, por estar siempre ahí. No sé qué haría sin ti y tus sabios consejos.</blockquote> <blockquote>Julia: (riéndose) No hay problema, <span class=\"vocab-word\" data-word=\"Pelado\">pelado</span>. Estoy aquí para apoyarte en las buenas y en las malas. ¡A tu éxito y al futuro!</blockquote> <blockquote>Diego: ¡A nuestro éxito y a seguir enfrentando los desafíos con actitud positiva!</blockquote> <p>Ambos levantan sus vasos y brindan por las experiencias que les ha traído la vida después de la universidad.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Presiones",
+        "definition": "Influences or forces that push someone to act in a certain way."
+      },
+      {
+        "word": "Mono",
+        "definition": "Colloquial term to refer to a friend or companion."
+      },
+      {
+        "word": "Pelado",
+        "definition": "Young person or boy."
+      },
+      {
+        "word": "Decepcionado",
+        "definition": "Feeling of disappointment or unhappiness."
+      },
+      {
+        "word": "Desanimes",
+        "definition": "Expression used to tell someone not to lose hope."
+      },
+      {
+        "word": "Adecuada",
+        "definition": "Something that meets requirements or expectations."
+      },
+      {
+        "word": "Guayaba",
+        "definition": "A tropical fruit with soft and sweet pulp."
+      }
+    ],
+    "isFree": false
   }
 ]
 };
