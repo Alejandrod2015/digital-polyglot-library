@@ -150,7 +150,6 @@ export const colloquialgermanstories: Book = {
         "definition": "to wait"
       }
     ],
-    "isFree": false
   },
   {
     "id": "5b9f24d1-ea42-418d-8a74-45389e1cd43f",
@@ -240,7 +239,6 @@ export const colloquialgermanstories: Book = {
         "definition": "mobile phone"
       }
     ],
-    "isFree": false
   }
 ]
 };

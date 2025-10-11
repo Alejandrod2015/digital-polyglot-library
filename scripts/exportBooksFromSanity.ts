@@ -66,8 +66,7 @@ async function exportBooks() {
       text,
       "slug": coalesce(slug.current, _id),
       "audio": coalesce(audio.asset->url, ""),
-      vocabRaw,
-      isFree
+      vocabRaw
     }
   }`
 );
@@ -88,7 +87,6 @@ async function exportBooks() {
     text?: string;
     audio?: string;
     vocabRaw?: unknown;
-    isFree?: boolean;
   };
 
   const outDir = path.join(process.cwd(), "src/data/books");
@@ -109,7 +107,6 @@ async function exportBooks() {
       text: s.text ?? "",
       audio: s.audio ?? "",
       vocab: normalizeVocab(s.vocabRaw),
-      isFree: !!s.isFree,
     })) ?? [];
 
     const content = `import { Book } from "@/types/books";

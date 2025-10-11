@@ -15,7 +15,6 @@ export interface Story {
   text: string;
   audio: string;
   vocab?: VocabItem[];
-  isFree?: boolean;      // NUEVO: marca de historia gratuita
   tags?: string[];       // NUEVO: etiquetas para futuras campañas
 }
 

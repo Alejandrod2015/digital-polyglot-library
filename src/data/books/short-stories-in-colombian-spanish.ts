@@ -57,8 +57,7 @@ export const shortstoriesincolombianspanish: Book = {
         "word": "Rincón",
         "definition": "A corner or secluded place in a room."
       }
-    ],
-    "isFree": false
+    ]
   },
   {
     "id": "buscando-empleo",
@@ -95,8 +94,7 @@ export const shortstoriesincolombianspanish: Book = {
         "word": "Guayaba",
         "definition": "A tropical fruit with soft and sweet pulp."
       }
-    ],
-    "isFree": false
+    ]
   }
 ]
 };

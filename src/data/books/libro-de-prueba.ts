@@ -149,8 +149,7 @@ export const librodeprueba: Book = {
         "word": "warten",
         "definition": "to wait"
       }
-    ],
-    "isFree": true
+    ]
   },
   {
     "id": "5b9f24d1-ea42-418d-8a74-45389e1cd43f",
@@ -239,8 +238,7 @@ export const librodeprueba: Book = {
         "word": "Handy",
         "definition": "mobile phone"
       }
-    ],
-    "isFree": false
+    ]
   }
 ]
 };

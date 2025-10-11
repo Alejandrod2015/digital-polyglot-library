@@ -10,7 +10,6 @@ export async function getStoriesByBookId(bookId: string) {
     slug,
     text,
     vocabRaw,
-    isFree,
     level,
     theme,
     "bookTitle": book->title

@@ -89,8 +89,7 @@ export const shortstoriesinperuvianspanish: Book = {
         "word": "hermosa",
         "definition": "beautiful"
       }
-    ],
-    "isFree": false
+    ]
   }
 ]
 };

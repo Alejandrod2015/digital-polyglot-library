@@ -344,13 +344,6 @@
         "title": "Vocabulary (raw JSON or text)"
       },
       {
-        "initialValue": false,
-        "description": "Mark true if this story should be freely available to all users.",
-        "name": "isFree",
-        "type": "boolean",
-        "title": "Free Story"
-      },
-      {
         "description": "Cultural or contextual topics covered by the story.",
         "of": [
           {
