@@ -1,13 +1,5 @@
 // /src/data/freeStories.ts
-
-import { createClient } from 'next-sanity';
-
-const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  apiVersion: '2025-01-01',
-  useCdn: true,
-});
+import { client } from '@/sanity/lib/client';
 
 /**
  * Obtiene los slugs de las historias promocionales desde Sanity.
