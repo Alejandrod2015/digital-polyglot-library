@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { X, Heart } from "lucide-react";
 import { VocabItem } from "@/types/books";
+import { useUser } from "@clerk/nextjs";
 
 type FavoriteItem = { word: string; translation: string };
 
@@ -52,23 +53,52 @@ export default function VocabPanel({ story }: VocabPanelProps) {
     }
   }, [selectedWord]);
 
-  const toggleFavorite = () => {
-    if (!selectedWord) return;
-    try {
+  const { user } = useUser();
+
+const toggleFavorite = async () => {
+  if (!selectedWord) return;
+
+  const newItem = { word: selectedWord, translation: definition ?? "" };
+
+  try {
+    if (user) {
+      // 🔹 Usuario logueado → usar backend
+      if (isFav) {
+        await fetch("/api/favorites", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include", // 👈 necesario para Clerk
+      body: JSON.stringify({ word: selectedWord }),
+    });
+
+        setIsFav(false);
+      } else {
+        await fetch("/api/favorites", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include", // 👈 envía cookies de Clerk
+      body: JSON.stringify(newItem),
+    });
+
+        setIsFav(true);
+      }
+    } else {
+      // 🔹 Usuario anónimo → usar localStorage
       const stored = JSON.parse(localStorage.getItem("favorites") || "[]") as FavoriteItem[];
       if (isFav) {
         const updated = stored.filter((f) => f.word !== selectedWord);
         localStorage.setItem("favorites", JSON.stringify(updated));
         setIsFav(false);
       } else {
-        const updated = [...stored, { word: selectedWord, translation: definition ?? "" }];
+        const updated = [...stored, newItem];
         localStorage.setItem("favorites", JSON.stringify(updated));
         setIsFav(true);
       }
-    } catch {
-      /* noop */
     }
-  };
+  } catch (err) {
+    console.error("Error updating favorites:", err);
+  }
+};
 
   if (!selectedWord) return null;
 

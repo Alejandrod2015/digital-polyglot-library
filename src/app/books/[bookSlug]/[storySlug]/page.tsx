@@ -1,10 +1,13 @@
-
 // src/app/books/[bookSlug]/[storySlug]/page.tsx
+import { books } from '@/data/books';
+import VocabPanel from '@/components/VocabPanel';
+import { currentUser } from '@clerk/nextjs/server';
+import Player from '@/components/Player';
+import StoryAccessInfo from './StoryAccessInfo';
+import { getStoriesReadCount } from '@/utils/readingLimits';
+import { getFreeStorySlugs } from '@/data/freeStories';
 
-import { books } from "@/data/books";
-import StoryReaderClient from "../StoryReaderClient";
-import VocabPanel from "@/components/VocabPanel";
-import { currentUser } from "@clerk/nextjs/server"; // 👈 nuevo import
+type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
 
 type StoryPageProps = {
   params: Promise<{ bookSlug: string; storySlug: string }>;
@@ -12,7 +15,6 @@ type StoryPageProps = {
 
 export default async function StoryPage({ params }: StoryPageProps) {
   const { bookSlug, storySlug } = await params;
-
   const book = Object.values(books).find((b) => b.slug === bookSlug);
   const story = book?.stories.find((s) => s.slug === storySlug);
 
@@ -20,41 +22,87 @@ export default async function StoryPage({ params }: StoryPageProps) {
     return <div className="p-8 text-center">Historia no encontrada.</div>;
   }
 
-  // 🔐 Verificar plan de usuario con Clerk
   const user = await currentUser();
-  const userPlan = (user?.publicMetadata?.plan as string | undefined) ?? "free";
+  const userPlan = (user?.publicMetadata?.plan as UserPlan) || 'free';
 
-  // Reglas de acceso por nivel
-  const canAccess =
-    story.isFree ||
-    userPlan === "premium" ||
-    userPlan === "polyglot";
+  const booksMeta = user?.publicMetadata?.books;
+  const ownedBooks = Array.isArray(booksMeta)
+    ? (booksMeta as unknown[]).filter((x): x is string => typeof x === 'string')
+    : [];
+  const ownsThisBook = ownedBooks.includes(book.slug);
 
-  if (!canAccess) {
-    return (
-      <div className="p-8 text-center">
-        <h2 className="text-2xl font-semibold mb-4">Contenido Premium 🔒</h2>
-        <p className="mb-6 text-gray-300">
-          Esta historia está disponible solo para usuarios Premium o Polyglot.
-        </p>
-        <a
-          href="/upgrade"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-500 transition"
-        >
-          Actualizar tu plan
-        </a>
-      </div>
-    );
+  // 🔐 Acceso completo dinámico según plan y progreso
+  const promotionalSlugs = await getFreeStorySlugs();
+
+  let hasFullAccess =
+    (userPlan === 'free' && promotionalSlugs.includes(story.slug)) ||
+    userPlan === 'premium' ||
+    userPlan === 'polyglot' ||
+    ownsThisBook;
+
+  // 🔓 Usuarios free/basic también acceden mientras no hayan llegado a su límite
+  if (!hasFullAccess && (userPlan === 'free' || userPlan === 'basic')) {
+    const limit = userPlan === 'free' ? 10 : 1;
+    const readCount = getStoriesReadCount(userPlan);
+    if (readCount < limit) {
+      hasFullAccess = true;
+    }
   }
 
+  const paragraphs = story.text
+    .split(/<\/p>/)
+    .filter(Boolean)
+    .map((p) => p + '</p>');
+
+  const visibleCount = hasFullAccess
+    ? paragraphs.length
+    : Math.max(1, Math.ceil(paragraphs.length * 0.2));
+
+  const visibleText = paragraphs.slice(0, visibleCount).join('');
+
   return (
-    <div className="max-w-5xl mx-auto p-8 pb-32">
+    <div className="relative max-w-5xl mx-auto p-8 pb-32 text-foreground">
       <h1 className="text-3xl font-bold mb-6 text-white">{story.title}</h1>
 
-      {/* Usa el client que ya tienes en /src/app/books/StoryReaderClient.tsx */}
-      <StoryReaderClient book={book} story={story} />
+      {/* Contador de lecturas */}
+      <StoryAccessInfo storyId={story.id} userPlan={userPlan} />
 
-      {/* Panel de vocabulario (escucha clicks globales) */}
+      {/* Texto visible */}
+      <div
+        className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-400 space-y-6 relative"
+        dangerouslySetInnerHTML={{ __html: visibleText }}
+      />
+
+      {!hasFullAccess && (
+        <div className="absolute inset-x-0 bottom-0 min-h-[30vh] flex flex-col justify-end items-center bg-gradient-to-t from-background/95 via-background/70 to-transparent pb-12 sm:pb-16">
+          <div className="backdrop-blur-sm p-4 text-center max-w-sm mx-auto">
+            <p className="text-gray-300 mb-3 text-sm sm:text-base">
+              Estás leyendo una vista previa. Desbloquea la historia completa para continuar.
+            </p>
+            <a
+              href="/upgrade"
+              className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition"
+            >
+              Desbloquear historia completa
+            </a>
+          </div>
+        </div>
+      )}
+
+      {hasFullAccess ? (
+        <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
+          <Player
+            src={`${book.audioFolder}/${story.audio}`}
+            bookSlug={book.slug}
+            storySlug={story.slug}
+          />
+        </div>
+      ) : (
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-black/80 backdrop-blur border-t border-gray-800 text-center py-6 text-gray-400">
+          🔒 El audio está disponible solo para usuarios con acceso al libro o plan Premium.
+        </div>
+      )}
+
       <VocabPanel story={story} />
     </div>
   );

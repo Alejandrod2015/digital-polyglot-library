@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Favorite {
+  id          String   @id @default(cuid())
+  userId      String
+  word        String
+  translation String
+  createdAt   DateTime @default(now())
+
+  @@index([userId])
+  @@unique([userId, word], name: "userId_word") // 👈 nombre explícito para la clave compuesta
+}

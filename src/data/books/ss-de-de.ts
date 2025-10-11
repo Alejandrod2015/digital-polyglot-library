@@ -99,8 +99,7 @@ vocab: [
   { word: "prostet", definition: "to toast with drinks" },
 ],
 
-      audio: "ss-de-de_1.mp3",
-      isFree: true   // ← NUEVO
+      audio: "ss-de-de_1.mp3"
     },
 
 
@@ -159,7 +158,6 @@ vocab: [
           { word: "nächstes Mal bring ich den Kaffee", definition: "next time I’ll bring the coffee." },
           { word: "nach Sommer, Zucker und neuen Geschichten", definition: "smelling like summer, sugar, and new stories." },
      ],
-     isFree: true,
      audio: "ss-de-de_2.mp3",
 },
 

@@ -1,13 +1,11 @@
-import AccessClient from './AccessClient';
+// src/app/books/[bookSlug]/layout.tsx
 
-export default async function BookLayout({
+export default function BookLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ bookSlug: string }>;
 }) {
-  const { bookSlug } = await params;
-
-  return <AccessClient bookSlug={bookSlug}>{children}</AccessClient>;
+  // Hacemos pública la página del libro.
+  // La verificación de acceso solo se aplica dentro de las historias.
+  return <>{children}</>;
 }

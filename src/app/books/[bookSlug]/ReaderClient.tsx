@@ -4,9 +4,14 @@ import { useState, useEffect } from 'react';
 import type { Book, Story } from '@/types/books';
 import Player from '@/components/Player';
 import StoryContent from '@/components/StoryContent';
-import VocabPanel from "@/components/VocabPanel";
+import VocabPanel from '@/components/VocabPanel';
+import { getStoriesReadCount, getStoriesLimit, addStoryToHistory } from '@/utils/readingLimits';
 
-export default function ReaderClient({ book }: { book: Book }) {
+
+type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
+
+export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; userPlan?: UserPlan }) {
+  console.log('🟢 Plan del usuario:', userPlan);
   const stripPunct = (s: string) => s.replace(/[.,!?;:()"'«»¿¡]/g, '');
   const highlightWord = (text: string, word: string) => {
     if (!word) return text;
@@ -34,6 +39,8 @@ export default function ReaderClient({ book }: { book: Book }) {
   const [/* errorMessage */, setErrorMessage] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
+
+  // Control de modo móvil
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -43,9 +50,62 @@ export default function ReaderClient({ book }: { book: Book }) {
 
   const story = book.stories.find((s) => s.id === selectedStoryId);
 
+  // --- Registro de lectura ---
+  useEffect(() => {
+    if (!story || !userPlan) return;
+
+    if (userPlan === 'free' || userPlan === 'basic') {
+      const readCount = getStoriesReadCount(userPlan);
+      const limit = userPlan === 'free' ? 10 : 1;
+      const overLimit = readCount >= limit;
+
+      if (overLimit) {
+        alert(
+          userPlan === 'free'
+            ? 'Has alcanzado el límite de 10 historias gratuitas.'
+            : 'Has leído tu historia diaria como usuario Basic.'
+        );
+      } else {
+        addStoryToHistory(story.id);
+      }
+    }
+  }, [story?.id, userPlan]);
+
+  // --- Estado de límites ---
+const [limitReached, setLimitReached] = useState(false);
+const [storiesLeft, setStoriesLeft] = useState<number | null>(null);
+
+useEffect(() => {
+  if (typeof window === 'undefined') return;
+
+  if (userPlan === 'free' || userPlan === 'basic') {
+    const count = getStoriesReadCount(userPlan);
+    const limit = getStoriesLimit(userPlan);
+    setStoriesLeft(Math.max(0, limit - count));
+    setLimitReached(count >= limit);
+  } else {
+    setLimitReached(false);
+    setStoriesLeft(null);
+  }
+}, [userPlan, story?.id]);
 
   if (!story) {
     return <div className="p-8 text-center">No se encontró la historia seleccionada.</div>;
+  }
+
+  if (limitReached) {
+    return (
+      <div className="p-8 text-center text-red-400 space-y-4">
+        <h2 className="text-2xl font-bold">
+          {userPlan === 'free'
+            ? 'Has alcanzado el límite de 10 historias gratuitas.'
+            : 'Has leído tu historia diaria como usuario Basic.'}
+        </h2>
+        <p className="text-foreground">
+          Actualiza tu plan para seguir disfrutando de más historias completas y audio.
+        </p>
+      </div>
+    );
   }
 
   const handleStorySelect = (id: string) => setSelectedStoryId(id);
@@ -156,20 +216,23 @@ export default function ReaderClient({ book }: { book: Book }) {
     return selectedWord ? highlightWord(text, selectedWord) : text;
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const saveToFavorites = () => {
-    if (!selectedWord) return;
-    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-    favorites.push({ word: selectedWord });
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    setSaved(true);
-  };
-
   return (
     <div className="p-8 max-w-2xl mx-auto space-y-6 text-foreground">
       <h1 className="text-3xl font-bold text-center">{book.title}</h1>
+
       <div className="space-y-2">
         <h2 className="text-lg font-semibold">Select a story:</h2>
+
+        {(userPlan === 'free' || userPlan === 'basic') && storiesLeft !== null && (
+          <p className="text-sm text-gray-400">
+            {userPlan === 'free'
+              ? `Te quedan ${storiesLeft} de 10 historias gratuitas.`
+              : storiesLeft === 0
+                ? 'Ya leíste tu historia diaria.'
+                : `Te queda ${storiesLeft} historia disponible hoy.`}
+          </p>
+        )}
+
         {book.stories.map((s: Story) => (
           <button
             key={s.id}
@@ -185,14 +248,13 @@ export default function ReaderClient({ book }: { book: Book }) {
 
       <h2 className="text-2xl font-bold mt-6">{story.title}</h2>
 
-            <StoryContent
+      <StoryContent
         text={story.text}
         sentencesPerParagraph={3}
         onParagraphSelect={!isMobile ? handleParagraphSelection : undefined}
         renderWord={(t) => renderSelectableText(t)}
       />
 
-      {/* ✅ Montamos el panel de vocabulario */}
       <VocabPanel story={story} />
 
       <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
