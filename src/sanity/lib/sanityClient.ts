@@ -7,9 +7,11 @@ if (
   console.error("❌ Missing Sanity environment variables");
 }
 
+// DESPUÉS
 export const sanityClient = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "",
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION ?? "2024-05-01",
-  useCdn: false, // ⚠️ evita usar CDN en generación estática
+  projectId: '9u7ilulp',
+  dataset: 'production',
+  apiVersion: '2025-10-05',
+  useCdn: false,
 });
+

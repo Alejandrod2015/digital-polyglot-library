@@ -1,37 +1,32 @@
-// /src/app/api/favorites/route.ts
-export const runtime = "nodejs"; // Fuerza ejecución en servidor Node
-export const dynamic = "force-dynamic"; // Evita que Next lo ejecute durante el build
+export const runtime = "nodejs"; // fuerza ejecución en servidor Node
 
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
+import { PrismaClient } from "@/generated/prisma";
 
-// 🧩 Lazy-load de Prisma (evita errores en build)
-let prisma: import("@prisma/client").PrismaClient;
-
-function getPrisma() {
-  if (!prisma) {
-    const { PrismaClient } = require("@prisma/client");
-    prisma = new PrismaClient();
-  }
-  return prisma;
+// Prisma en singleton para evitar múltiples conexiones en desarrollo
+declare global {
+  // eslint-disable-next-line no-var
+  var __prisma__: PrismaClient | undefined;
 }
+const prisma = globalThis.__prisma__ ?? new PrismaClient();
+if (process.env.NODE_ENV !== "production") globalThis.__prisma__ = prisma;
 
-// 🔍 Tipos
+// Tipado y type guard para validar el cuerpo del request
 type FavoriteBody = { word: string; translation: string };
-
 function isFavoriteBody(x: unknown): x is FavoriteBody {
   if (!x || typeof x !== "object") return false;
   const o = x as Record<string, unknown>;
   return typeof o.word === "string" && typeof o.translation === "string";
 }
 
-// 🧠 GET → Obtener todos los favoritos del usuario logueado
+// 🧠 GET → obtener todos los favoritos del usuario logueado
 export async function GET(req: NextRequest): Promise<Response> {
   const { userId } = getAuth(req);
   if (!userId)
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const favorites = await getPrisma().favorite.findMany({
+  const favorites = await prisma.favorite.findMany({
     where: { userId },
     orderBy: { createdAt: "desc" },
   });
@@ -39,7 +34,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   return NextResponse.json(favorites);
 }
 
-// 💾 POST → Agregar o actualizar un favorito
+// 💾 POST → agregar o actualizar un favorito
 export async function POST(req: NextRequest): Promise<Response> {
   const { userId } = getAuth(req);
   if (!userId)
@@ -51,26 +46,30 @@ export async function POST(req: NextRequest): Promise<Response> {
   }
 
   const { word, translation } = json;
-  const db = getPrisma();
 
-  const existing = await db.favorite.findFirst({
-    where: { userId, word },
-    select: { id: true },
-  });
+  try {
+    const existing = await prisma.favorite.findFirst({
+      where: { userId, word },
+      select: { id: true },
+    });
 
-  const favorite = existing
-    ? await db.favorite.update({
-        where: { id: existing.id },
-        data: { translation },
-      })
-    : await db.favorite.create({
-        data: { userId, word, translation },
-      });
+    const favorite = existing
+      ? await prisma.favorite.update({
+          where: { id: existing.id },
+          data: { translation },
+        })
+      : await prisma.favorite.create({
+          data: { userId, word, translation },
+        });
 
-  return NextResponse.json(favorite, { status: 201 });
+    return NextResponse.json(favorite, { status: 201 });
+  } catch (err: unknown) {
+    console.error("❌ Error en POST /api/favorites:", err);
+    return NextResponse.json({ error: "Database error" }, { status: 500 });
+  }
 }
 
-// ❌ DELETE → Eliminar un favorito del usuario
+// ❌ DELETE → eliminar un favorito
 export async function DELETE(req: NextRequest): Promise<Response> {
   const { userId } = getAuth(req);
   if (!userId)
@@ -83,9 +82,13 @@ export async function DELETE(req: NextRequest): Promise<Response> {
     return NextResponse.json({ error: "Missing word" }, { status: 400 });
   }
 
-  await getPrisma().favorite.deleteMany({
-    where: { userId, word },
-  });
-
-  return NextResponse.json({ success: true });
+  try {
+    await prisma.favorite.deleteMany({
+      where: { userId, word },
+    });
+    return NextResponse.json({ success: true });
+  } catch (err: unknown) {
+    console.error("❌ Error en DELETE /api/favorites:", err);
+    return NextResponse.json({ error: "Database error" }, { status: 500 });
+  }
 }

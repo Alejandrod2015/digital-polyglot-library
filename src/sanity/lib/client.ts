@@ -6,9 +6,11 @@ function mustGet(name: 'NEXT_PUBLIC_SANITY_PROJECT_ID' | 'NEXT_PUBLIC_SANITY_DAT
   return v;
 }
 
+// DESPUÉS
 export const client = createClient({
-  projectId: mustGet('NEXT_PUBLIC_SANITY_PROJECT_ID'),
-  dataset: mustGet('NEXT_PUBLIC_SANITY_DATASET'),
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-05-01',
+  projectId: '9u7ilulp',
+  dataset: 'production',
+  apiVersion: '2025-10-05',
   useCdn: true,
 });
+
