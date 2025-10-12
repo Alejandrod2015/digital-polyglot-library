@@ -55,6 +55,7 @@ async function exportBooks() {
       region,
       topic,
       formality,
+      storeUrl, // 🛒 nuevo campo
       // 🖼️ URL de portada
       "cover": select(
         defined(cover.asset->url) => cover.asset->url,
@@ -113,6 +114,7 @@ export const ${constName}: Book = {
   topic: ${JSON.stringify(b.topic ?? "")},
   formality: ${JSON.stringify(b.formality ?? "neutral")},
   audioFolder: ${JSON.stringify(b.audioFolder ?? "")},
+  storeUrl: ${JSON.stringify(b.storeUrl ?? "")},
   stories: ${JSON.stringify(stories, null, 2)}
 };
 `;

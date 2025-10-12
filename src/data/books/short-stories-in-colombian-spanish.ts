@@ -13,6 +13,7 @@ export const shortstoriesincolombianspanish: Book = {
   topic: "Daily life",
   formality: "informal",
   audioFolder: "",
+  storeUrl: "https://shop.digitalpolyglot.com/products/short-stories-in-colombian-spanish?utm_source=Book-page&utm_medium=App&utm_campaign=Book-page&utm_content=sss-co",
   stories: [
   {
     "id": "la-abuela",

@@ -43,6 +43,20 @@ export const book = defineType({
       type: "string",
     }),
 
+    // 🛒 Enlace al libro físico en tienda
+    defineField({
+      name: "storeUrl",
+      title: "Physical Book URL",
+      type: "url",
+      description:
+        "Optional: link to the physical version of this book in the online store.",
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: false,
+          scheme: ["http", "https"],
+        }),
+    }),
+
     // 🌍 Metadatos lingüísticos
     defineField({
       name: "language",

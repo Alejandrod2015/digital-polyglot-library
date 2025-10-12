@@ -40,6 +40,7 @@ export interface Book extends BookMetadata {
   audioFolder: string;
   stories: Story[];
   published?: boolean;
+  storeUrl?: string;    // 🔗 Enlace opcional al libro físico en tienda
 }
 
 /** Etiquetas de nivel para mostrar en UI */

@@ -13,6 +13,7 @@ export const colloquialgermanstories: Book = {
   topic: "Daily life",
   formality: "informal",
   audioFolder: "public/audio/ss-de-de",
+  storeUrl: "",
   stories: [
   {
     "id": "bier-mit-freunden",
