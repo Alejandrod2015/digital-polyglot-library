@@ -1,22 +1,144 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { books } from '@/data/books';
+import Cover from '@/components/Cover';
+import { useEffect, useState } from 'react';
+
+type ContinueItem = { id: string; title: string; cover: string };
 
 export default function Home() {
   const router = useRouter();
+  const allBooks = Object.values(books);
+
+  // Recupera progreso local
+  const [continueListening, setContinueListening] = useState<ContinueItem[]>([]);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('dp_continue_listening_v1');
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) {
+        setContinueListening(
+          parsed.filter(
+            (i) => typeof i?.id === 'string' && typeof i?.cover === 'string'
+          )
+        );
+      }
+    } catch {
+      // ignora datos corruptos
+    }
+  }, []);
+
+  // Utilidad para capitalizar la primera letra
+  const capitalize = (value?: string) =>
+    value ? value.charAt(0).toUpperCase() + value.slice(1) : '—';
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6 text-center">
-      <h1 className="text-4xl md:text-5xl font-bold mb-6">Bienvenido a Digital Polyglot</h1>
-      <p className="text-lg md:text-xl mb-8 max-w-md">
-        Selecciona un libro para comenzar a leer y escuchar historias.
-      </p>
-      <button
-        onClick={() => router.push('/books')}
-        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded"
-      >
-        Ver libros
-      </button>
+    <main className="min-h-screen bg-[#0D1B2A] text-white flex flex-col items-center justify-center px-8 pb-28 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10">
+
+      {/* New Releases */}
+      <section className="mb-12 text-center w-full max-w-5xl">
+        <h2 className="text-2xl font-semibold mb-6">New Releases</h2>
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 place-items-center">
+          {allBooks.slice(0, 5).map((book) => (
+            <div
+              key={book.id}
+              onClick={() =>
+  router.push(`/books/${book.slug}?from=home`)
+}
+
+              className="flex items-center gap-6 w-full max-w-[480px] bg-white/5 rounded-2xl p-5 cursor-pointer hover:bg-white/10 hover:shadow-md transition-all duration-200"
+            >
+              <div className="w-[38%] sm:w-[35%] md:w-[120px] flex-shrink-0">
+                <Cover src={book.cover ?? '/covers/default.jpg'} alt={book.title} />
+              </div>
+
+              <div className="flex flex-col justify-center text-left flex-1 text-white">
+                <h3 className="font-semibold text-lg leading-snug mb-2 line-clamp-2">
+                  {book.title}
+                </h3>
+
+                <div className="space-y-1 text-sm text-white/80">
+                  <p>
+                    <span className="font-medium text-white">Language:</span>{' '}
+                    {capitalize(book.language)}
+                  </p>
+                  <p>
+                    <span className="font-medium text-white">Level:</span>{' '}
+                    {capitalize(book.level)}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Picked for you */}
+      <section className="mb-12 text-center w-full max-w-5xl">
+        <h2 className="text-2xl font-semibold mb-6">Picked for you</h2>
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 place-items-center">
+          {allBooks.slice(-5).map((book) => (
+            <div
+              key={book.id}
+              onClick={() =>
+  router.push(`/books/${book.slug}?from=home`)
+}
+
+              className="flex items-center gap-6 w-full max-w-[480px] bg-white/5 rounded-2xl p-5 cursor-pointer hover:bg-white/10 hover:shadow-md transition-all duration-200"
+            >
+              <div className="w-[38%] sm:w-[35%] md:w-[120px] flex-shrink-0">
+                <Cover src={book.cover ?? '/covers/default.jpg'} alt={book.title} />
+              </div>
+
+              <div className="flex flex-col justify-center text-left flex-1 text-white">
+                <h3 className="font-semibold text-lg leading-snug mb-2 line-clamp-2">
+                  {book.title}
+                </h3>
+
+                <div className="space-y-1 text-sm text-white/80">
+                  <p>
+                    <span className="font-medium text-white">Language:</span>{' '}
+                    {capitalize(book.language)}
+                  </p>
+                  <p>
+                    <span className="font-medium text-white">Level:</span>{' '}
+                    {capitalize(book.level)}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Continue listening */}
+      {continueListening.length > 0 && (
+        <section className="w-full max-w-5xl text-center">
+          <h2 className="text-2xl font-semibold mb-6">Continue listening</h2>
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 place-items-center">
+            {continueListening.map((item) => (
+              <div
+                key={item.id}
+                onClick={() => router.push(`/books/${item.id}?from=home`)}
+                className="flex items-center gap-6 w-full max-w-[480px] bg-white/5 rounded-2xl p-5 cursor-pointer hover:bg-white/10 hover:shadow-md transition-all duration-200"
+              >
+                <div className="w-[38%] sm:w-[35%] md:w-[120px] flex-shrink-0">
+                  <Cover src={item.cover} alt={item.title} />
+                </div>
+
+                <div className="flex flex-col justify-center text-left flex-1 text-white">
+                  <h3 className="font-semibold text-lg leading-snug mb-2 line-clamp-2">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

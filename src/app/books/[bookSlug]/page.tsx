@@ -1,3 +1,4 @@
+// ANTES
 import { books } from "@/data/books";
 import Link from "next/link";
 import { LEVEL_LABELS } from "@/types/books";
@@ -5,12 +6,30 @@ import Cover from "@/components/Cover";
 import { ArrowLeft } from "lucide-react";
 import { getFreeStorySlugs } from '@/data/freeStories';
 
+// DESPUÉS
 type BookPageProps = {
   params: Promise<{ bookSlug: string }>;
+  searchParams: Promise<{ from?: string }>;
 };
 
-export default async function BookPage({ params }: BookPageProps) {
+export default async function BookPage({ params, searchParams }: BookPageProps) {
   const { bookSlug } = await params;
+  const { from } = await searchParams;
+
+  // decide destino del Back según “etapa” de origen
+  const backHref =
+    from === 'home' ? '/' :
+    from === 'favorites' ? '/favorites' :
+    '/books';
+
+  const backLabel =
+    from === 'home' ? 'Back to home' :
+    from === 'favorites' ? 'Back to favorites' :
+    'Back to all books';
+
+  // helper para propagar ?from en enlaces internos
+  const withFrom = (url: string) => (from ? `${url}?from=${from}` : url);
+
   const book = Object.values(books).find((b) => b.slug === bookSlug);
 
   if (!book) {
@@ -21,16 +40,15 @@ export default async function BookPage({ params }: BookPageProps) {
 
   return (
     <div className="max-w-5xl mx-auto p-8">
-      {/* Flecha atrás solo visible en desktop */}
       <div className="hidden md:block mb-6">
-        <Link
-          href="/books"
-          className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-gray-700"
-        >
-          <ArrowLeft className="h-5 w-5" />
-          <span>Back to all books</span>
-        </Link>
-      </div>
+  <Link
+    href={backHref}
+    className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-gray-700"
+  >
+    <ArrowLeft className="h-5 w-5" />
+    <span>{backLabel}</span>
+  </Link>
+</div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Portada */}
@@ -71,7 +89,7 @@ export default async function BookPage({ params }: BookPageProps) {
             )}
           </div>
 
-          {/* Botón principal → primera historia */}
+                    {/* Botón principal → primera historia */}
           <Link
             href={`/books/${book.slug}/${book.stories[0].slug}`}
             className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700"
@@ -111,6 +129,20 @@ export default async function BookPage({ params }: BookPageProps) {
               })}
             </ul>
           </div>
+
+{/* Botón para comprar el libro físico */}
+          {book.storeUrl && (
+            <Link
+              href={book.storeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 px-6 py-3 bg-amber-500 text-black font-semibold rounded-xl shadow hover:bg-amber-600 transition-colors"
+            >
+              🛒 Buy physical book
+            </Link>
+          )}
+
+
         </div>
       </div>
     </div>

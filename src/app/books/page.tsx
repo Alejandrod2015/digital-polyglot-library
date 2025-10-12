@@ -1,3 +1,4 @@
+// DESPUÉS: /src/app/books/page.tsx
 'use client';
 
 import { useRouter } from 'next/navigation';
@@ -19,10 +20,10 @@ export default function BooksPage() {
           <div
             key={book.slug}
             className="cursor-pointer hover:scale-105 transition-transform text-center"
-            onClick={() => router.push(`/books/${book.slug}`)}
+            onClick={() => router.push(`/books/${book.slug}?from=books`)}
           >
             <div className="w-[220px] h-[330px] flex items-center justify-center bg-[#0D1B2A] rounded-xl shadow-lg overflow-hidden">
-              <Cover src={book.cover ?? ""} alt={book.title} className="w-[220px]" />
+              <Cover src={book.cover ?? '/covers/default.jpg'} alt={book.title} className="w-[220px]" />
             </div>
             <p className="text-lg font-medium mt-2">{book.title}</p>
           </div>
