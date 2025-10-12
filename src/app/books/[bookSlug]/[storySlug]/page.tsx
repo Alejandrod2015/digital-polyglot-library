@@ -69,7 +69,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
       {/* Texto visible */}
       <div
-        className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-400 space-y-6 relative"
+        className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6 relative"
         dangerouslySetInnerHTML={{ __html: visibleText }}
       />
 
