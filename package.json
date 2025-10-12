@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "prisma generate && next dev",
     "dev:web": "next dev",
     "dev:studio": "sanity dev --host",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "export:sanity": "tsx scripts/exportBooksFromSanity.ts"
