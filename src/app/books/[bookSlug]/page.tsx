@@ -5,6 +5,8 @@ import { LEVEL_LABELS } from "@/types/books";
 import Cover from "@/components/Cover";
 import { ArrowLeft } from "lucide-react";
 import { getFreeStorySlugs } from '@/data/freeStories';
+import AddToLibraryButton from '@/components/AddToLibraryButton';
+
 
 // DESPUÉS
 type BookPageProps = {
@@ -96,6 +98,16 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
           >
             Start reading
           </Link>
+
+            <div className="mt-4">
+  <AddToLibraryButton
+    bookId={book.slug}
+    title={book.title}
+    coverUrl={typeof book.cover === 'string' && book.cover.length > 0 ? book.cover : '/covers/default.jpg'}
+  />
+</div>
+
+
 
           {/* Tabla de contenidos */}
           <div className="mt-10">

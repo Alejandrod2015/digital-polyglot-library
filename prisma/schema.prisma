@@ -16,5 +16,17 @@ model Favorite {
   createdAt   DateTime @default(now())
 
   @@index([userId])
-  @@unique([userId, word], name: "userId_word") // 👈 nombre explícito para la clave compuesta
+  @@unique([userId, word], name: "userId_word")
+}
+
+model LibraryBook {
+  id        String   @id @default(cuid())
+  userId    String
+  bookId    String
+  title     String
+  coverUrl  String
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@unique([userId, bookId], name: "userId_bookId")
 }

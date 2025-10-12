@@ -2,9 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  BookOpen,
+  Home,
+  Compass,
   Star,
-  Gift,
+  BookOpen,
   BookMarked,
   Settings,
   LogIn,
@@ -50,8 +51,8 @@ function SignInButtonCustom({ onClose }: { onClose?: () => void }) {
     if (typeof onClose === "function") onClose();
     openSignIn({
       appearance: { layout: { shimmer: true } },
-      afterSignInUrl: "/books",
-      afterSignUpUrl: "/books",
+      afterSignInUrl: "/explore",
+      afterSignUpUrl: "/explore",
     });
   };
 
@@ -73,9 +74,9 @@ export default function Sidebar({ onClose }: SidebarProps) {
       <div className="mb-5 flex justify-center">
         <Link href="/" onClick={onClose}>
           <Image
-            src="/digital-polyglot-logo.png" // asegúrate de que está en /public
+            src="/digital-polyglot-logo.png"
             alt="Digital Polyglot"
-            width={180}   // 👈 ajusta el tamaño
+            width={180}
             height={180}
             priority
           />
@@ -85,11 +86,19 @@ export default function Sidebar({ onClose }: SidebarProps) {
       {/* Navegación */}
       <nav className="flex flex-col space-y-6 text-lg font-medium">
         <Link
-          href="/books"
+          href="/"
+          onClick={onClose}
+          className="flex items-center gap-3 hover:text-sky-400 transition-colors"
+        >
+          <Home size={22} /> Home
+        </Link>
+
+        <Link
+          href="/explore"
           onClick={onClose}
           className="flex items-center gap-3 hover:text-blue-400 transition-colors"
         >
-          <BookOpen size={22} /> Books
+          <Compass size={22} /> Explore
         </Link>
 
         <Link
@@ -100,17 +109,13 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Star size={22} /> Favorites
         </Link>
 
-        {/*
-  🚫 Deprecated link — freebies page moved to /deprecated
-  <Link
-    href="/freebies"
-    onClick={onClose}
-    className="flex items-center gap-3 hover:text-green-400 transition-colors"
-  >
-    <Gift size={22} /> Freebies
-  </Link>
-*/}
-
+        <Link
+          href="/my-library"
+          onClick={onClose}
+          className="flex items-center gap-3 hover:text-emerald-400 transition-colors"
+        >
+          <BookOpen size={22} /> My Library
+        </Link>
 
         <Link
           href="/story-of-the-day"
@@ -129,7 +134,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         </Link>
       </nav>
 
-      {/* Auth controls (añadido) */}
+      {/* Auth controls */}
       <div className="mt-8 space-y-3">
         <SignedOut>
           <SignInButtonCustom onClose={onClose} />
