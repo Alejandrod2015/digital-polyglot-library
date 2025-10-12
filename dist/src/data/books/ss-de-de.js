@@ -1,24 +1,22 @@
-import { Book } from "@/types/books";
-
-export const ssDeDe: Book = {
-  id: "ss-de-de", // 👈 coincide con la carpeta y con el import en index.ts
-  slug: "short-stories-german-hamburg", // 👈 nuevo slug SEO-friendly
-  title: "Short Stories in German from Hamburg",
-  subtitle: "Discover Hamburg’s vibrant nightlife through language",
-  description:
-    "A relaxed Friday night turns into an unforgettable experience when three friends, a local from Hamburg, a newcomer to the city, and a curious visitor from Spain, dive into the nightlife of the famous Reeperbahn. Between bars, clubs, music, and late-night currywurst, they not only discover the city but also each other. The story is told in the first person by one of the friends, a local from Hamburg, offering a personal and down-to-earth perspective on the night and what his friends might be feeling or thinking.",
-  cover: "/covers/ss-de-de.jpg", // 👈 asegúrate de tener esta portada en /public/covers
-  theme: ["Culture", "Urban life", "Hamburg"],
-  level: "intermediate",
-  audioFolder: "/audio/ss-de-de", // 👈 carpeta real en /public/audio
-  stories: [
-    {
-      id: "1",
-      slug: "hamburger-nachtleben", // 👈 nuevo
-      title: "1. Hamburger Nachtleben",
-
-
-text: `
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ssDeDe = void 0;
+exports.ssDeDe = {
+    id: "ss-de-de", // 👈 coincide con la carpeta y con el import en index.ts
+    slug: "short-stories-german-hamburg", // 👈 nuevo slug SEO-friendly
+    title: "Short Stories in German from Hamburg",
+    subtitle: "Discover Hamburg’s vibrant nightlife through language",
+    description: "A relaxed Friday night turns into an unforgettable experience when three friends, a local from Hamburg, a newcomer to the city, and a curious visitor from Spain, dive into the nightlife of the famous Reeperbahn. Between bars, clubs, music, and late-night currywurst, they not only discover the city but also each other. The story is told in the first person by one of the friends, a local from Hamburg, offering a personal and down-to-earth perspective on the night and what his friends might be feeling or thinking.",
+    cover: "/covers/ss-de-de.jpg", // 👈 asegúrate de tener esta portada en /public/covers
+    theme: ["Culture", "Urban life", "Hamburg"],
+    level: "intermediate",
+    audioFolder: "/audio/ss-de-de", // 👈 carpeta real en /public/audio
+    stories: [
+        {
+            id: "1",
+            slug: "hamburger-nachtleben", // 👈 nuevo
+            title: "1. Hamburger Nachtleben",
+            text: `
 <p>Ein ruhiger Abend wird zu einem kleinen Abenteuer, als Laura, eine junge Hamburgerin, mit ihrem Freund Niko und Lea, einer Spanierin, die gerade neu in der Stadt ist, loszieht. Zwischen Bars, Musik und Currywurst führt uns Laura durch eine Nacht voller erster Eindrücke, Lachen und der besonderen Energie des bekanntesten Viertels der Stadt.</p>
 
 <p>Es war Freitagabend und ich hatte einfach <span class="vocab-word" data-word="Bock">Bock</span>, rauszugehen. Die Woche war lang, das Wetter halbwegs okay – typisch Hamburg eben – und mein Kumpel Niko hatte 'ne Idee:</p>
@@ -75,39 +73,35 @@ text: `
 
 <p>Lea nickt mit vollem Mund. „Beste Idee!“</p>
 `,
-
-vocab: [
-  { word: "Bock", definition: "to feel like doing something" },
-  { word: "lass mal", definition: "let's do something" },
-  { word: "echte Hamburg", definition: "the real Hamburg experience" },
-  { word: "auf’m Kiez", definition: "in the famous party district of Hamburg" },
-  { word: "aus’m Kiosk", definition: "from the kiosk" },
-  { word: "vorglühen", definition: "to drink alcohol before going out" },
-  { word: "was geht", definition: "what's up" },
-  { word: "geb ihm 'nen Check", definition: "to give him a fist bump or handshake" },
-  { word: "Hamburger Slang", definition: "local dialect or style of speaking in Hamburg" },
-  { word: "Festival-Style", definition: "a style of clothing like at music festivals" },
-  { word: "geht’s ab", definition: "it's going to be wild or exciting" },
-  { word: "Gelaber", definition: "chatter or casual talk" },
-  { word: "Lass mal 'ne Runde machen", definition: "let's walk around" },
-  { word: "bescheuert", definition: "silly or crazy" },
-  { word: "Crush", definition: "a romantic attraction" },
-  { word: "gut drauf", definition: "in a good mood" },
-  { word: "mega", definition: "really great" },
-  { word: "Imbiss", definition: "snack stand or small fast-food place" },
-  { word: "Kiez", definition: "local word for neighborhood, often the nightlife area" },
-  { word: "prostet", definition: "to toast with drinks" },
-],
-
-      audio: "ss-de-de_1.mp3"
-    },
-
-
-  {
-     id: "2",
-     slug: "ein-date-im-schanzenpark",
-     title: "2. Ein Date im Schanzenpark",
-     text: `
+            vocab: [
+                { word: "Bock", definition: "to feel like doing something" },
+                { word: "lass mal", definition: "let's do something" },
+                { word: "echte Hamburg", definition: "the real Hamburg experience" },
+                { word: "auf’m Kiez", definition: "in the famous party district of Hamburg" },
+                { word: "aus’m Kiosk", definition: "from the kiosk" },
+                { word: "vorglühen", definition: "to drink alcohol before going out" },
+                { word: "was geht", definition: "what's up" },
+                { word: "geb ihm 'nen Check", definition: "to give him a fist bump or handshake" },
+                { word: "Hamburger Slang", definition: "local dialect or style of speaking in Hamburg" },
+                { word: "Festival-Style", definition: "a style of clothing like at music festivals" },
+                { word: "geht’s ab", definition: "it's going to be wild or exciting" },
+                { word: "Gelaber", definition: "chatter or casual talk" },
+                { word: "Lass mal 'ne Runde machen", definition: "let's walk around" },
+                { word: "bescheuert", definition: "silly or crazy" },
+                { word: "Crush", definition: "a romantic attraction" },
+                { word: "gut drauf", definition: "in a good mood" },
+                { word: "mega", definition: "really great" },
+                { word: "Imbiss", definition: "snack stand or small fast-food place" },
+                { word: "Kiez", definition: "local word for neighborhood, often the nightlife area" },
+                { word: "prostet", definition: "to toast with drinks" },
+            ],
+            audio: "ss-de-de_1.mp3"
+        },
+        {
+            id: "2",
+            slug: "ein-date-im-schanzenpark",
+            title: "2. Ein Date im Schanzenpark",
+            text: `
 
 <p><span class="vocab-word" data-word="Lina war nervös">Lina war nervös</span>, als sie in den Schanzenpark ging. Sie hatte Max vor zwei Wochen auf einer Party kennengelernt. Er war witzig, ein bisschen chaotisch, und hatte diesen <span class="vocab-word" data-word="Blick, der gleichzeitig neugierig und freundlich war">Blick, der gleichzeitig neugierig und freundlich war</span>. Jetzt würden sie sich zum ersten Mal <span class="vocab-word" data-word="nur zu zweit">nur zu zweit</span> treffen.</p>
 
@@ -134,35 +128,31 @@ vocab: [
 
 <p>Sie lachten, und der Abend roch <span class="vocab-word" data-word="nach Sommer, Zucker und neuen Geschichten">nach Sommer, Zucker und neuen Geschichten</span>.</p>
 `,
-     vocab: [
-          { word: "Lina war nervös", definition: "Lina was nervous." },
-          { word: "Blick, der gleichzeitig neugierig und freundlich war", definition: "Look that was both curious and friendly." },
-          { word: "nur zu zweit", definition: "only the two of them; just the two together." },
-          { word: "nach Gras und Pizza", definition: "smelling like grass and pizza." },
-          { word: "selbst gebacken", definition: "homemade; baked by oneself." },
-          { word: "Bitte schmecken sie ihm", definition: "Please let him like them (referring to cookies)." },
-          { word: "Na, schon lange hier?", definition: "So, have you been here long? (casual greeting)." },
-          { word: "Nur ein bisschen", definition: "Just a little." },
-          { word: "Total überteuert", definition: "Way too expensive." },
-          { word: "doppelt so gut", definition: "twice as good." },
-          { word: "verrückten Kunden", definition: "crazy or eccentric customers." },
-          { word: "schwieg einer, während der andere einfach in die Sonne blinzelte", definition: "one stayed silent while the other squinted into the sun." },
-          { word: "Oh, guck mal", definition: "Hey, look." },
-          { word: "wie der Hund", definition: "like the dog (used to compare affection)." },
-          { word: "gingen sie ein Stück durch den Park", definition: "they walked a bit through the park." },
-          { word: "nahm Linas Hand", definition: "took Lina’s hand." },
-          { word: "Weißt du", definition: "You know (used in casual speech)." },
-          { word: "einfach nett", definition: "simply nice; pleasantly easygoing." },
-          { word: "machen wir’s nochmal", definition: "let’s do it again." },
-          { word: "Gleicher Ort, gleiche Kekse", definition: "same place, same cookies." },
-          { word: "nächstes Mal bring ich den Kaffee", definition: "next time I’ll bring the coffee." },
-          { word: "nach Sommer, Zucker und neuen Geschichten", definition: "smelling like summer, sugar, and new stories." },
-     ],
-     audio: "ss-de-de_2.mp3",
-},
-
-
-
-
-  ],
+            vocab: [
+                { word: "Lina war nervös", definition: "Lina was nervous." },
+                { word: "Blick, der gleichzeitig neugierig und freundlich war", definition: "Look that was both curious and friendly." },
+                { word: "nur zu zweit", definition: "only the two of them; just the two together." },
+                { word: "nach Gras und Pizza", definition: "smelling like grass and pizza." },
+                { word: "selbst gebacken", definition: "homemade; baked by oneself." },
+                { word: "Bitte schmecken sie ihm", definition: "Please let him like them (referring to cookies)." },
+                { word: "Na, schon lange hier?", definition: "So, have you been here long? (casual greeting)." },
+                { word: "Nur ein bisschen", definition: "Just a little." },
+                { word: "Total überteuert", definition: "Way too expensive." },
+                { word: "doppelt so gut", definition: "twice as good." },
+                { word: "verrückten Kunden", definition: "crazy or eccentric customers." },
+                { word: "schwieg einer, während der andere einfach in die Sonne blinzelte", definition: "one stayed silent while the other squinted into the sun." },
+                { word: "Oh, guck mal", definition: "Hey, look." },
+                { word: "wie der Hund", definition: "like the dog (used to compare affection)." },
+                { word: "gingen sie ein Stück durch den Park", definition: "they walked a bit through the park." },
+                { word: "nahm Linas Hand", definition: "took Lina’s hand." },
+                { word: "Weißt du", definition: "You know (used in casual speech)." },
+                { word: "einfach nett", definition: "simply nice; pleasantly easygoing." },
+                { word: "machen wir’s nochmal", definition: "let’s do it again." },
+                { word: "Gleicher Ort, gleiche Kekse", definition: "same place, same cookies." },
+                { word: "nächstes Mal bring ich den Kaffee", definition: "next time I’ll bring the coffee." },
+                { word: "nach Sommer, Zucker und neuen Geschichten", definition: "smelling like summer, sugar, and new stories." },
+            ],
+            audio: "ss-de-de_2.mp3",
+        },
+    ],
 };

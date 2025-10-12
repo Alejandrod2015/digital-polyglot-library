@@ -7,7 +7,11 @@ export const colloquialgermanstories: Book = {
   description: "Colloquial German Stories helps you learn the real German spoken every day. Through 20 fun short stories, you’ll pick up slang, idioms, and natural expressions while discovering German culture. Perfect for learners who want to sound authentic and understand the language beyond textbooks.",
   cover: "https://cdn.sanity.io/images/9u7ilulp/production/f3944f3e85b1c9b135692c034b1bb1c0a7098a70-8456x11825.jpg",
   theme: [],
-  level: "beginner",
+  level: "intermediate",
+  language: "german",
+  region: "usa",
+  topic: "Daily life",
+  formality: "informal",
   audioFolder: "public/audio/ss-de-de",
   stories: [
   {
@@ -149,7 +153,7 @@ export const colloquialgermanstories: Book = {
         "word": "warten",
         "definition": "to wait"
       }
-    ],
+    ]
   },
   {
     "id": "5b9f24d1-ea42-418d-8a74-45389e1cd43f",
@@ -238,7 +242,7 @@ export const colloquialgermanstories: Book = {
         "word": "Handy",
         "definition": "mobile phone"
       }
-    ],
+    ]
   }
 ]
 };

@@ -7,7 +7,11 @@ export const shortstoriesincolombianspanish: Book = {
   description: "Discover the beauty of Colombian culture while enhancing your Spanish with Short Stories in Colombian Spanish. This engaging collection features 20 brief tales showcasing daily life in Colombia, with dialogues and vocabulary that bring you closer to fluency. Dive into Colombian Spanish through interactive exercises and immerse yourself in the country’s diverse traditions and language nuances.",
   cover: "https://cdn.sanity.io/images/9u7ilulp/production/70100a24c9b7b88387a520b7f3d3e396799244e8-1410x2000.jpg",
   theme: [],
-  level: "beginner",
+  level: "intermediate",
+  language: "spanish",
+  region: "colombia",
+  topic: "Daily life",
+  formality: "informal",
   audioFolder: "",
   stories: [
   {

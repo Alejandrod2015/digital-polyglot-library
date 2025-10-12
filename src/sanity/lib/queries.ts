@@ -1,18 +1,52 @@
-// src/lib/queries.ts
+// /src/sanity/lib/queries.ts
 import { sanityClient } from "./sanityClient";
 import { groq } from "next-sanity";
 
-// 🧠 Consulta GROQ para traer historias de un libro específico
+/**
+ * 🧠 Trae historias publicadas de un libro específico
+ * - Hereda metadatos del libro (idioma, región, nivel, enfoque, tema)
+ * - Garantiza orden cronológico estable
+ */
 export async function getStoriesByBookId(bookId: string) {
-  const query = groq`*[_type == "story" && book->_id == $bookId && published == true]{
+  const query = groq`*[
+    _type == "story" &&
+    book->_id == $bookId &&
+    published == true
+  ]{
     _id,
     title,
     slug,
     text,
     vocabRaw,
-    level,
     theme,
-    "bookTitle": book->title
+
+    // 🧩 Herencia de metadatos desde el libro
+    "language": coalesce(language, book->language),
+    "region": coalesce(
+      region_es,
+      region_en,
+      region_fr,
+      region_it,
+      region_pt,
+      region_de,
+      book->region_es,
+      book->region_en,
+      book->region_fr,
+      book->region_it,
+      book->region_pt,
+      book->region_de
+    ),
+    "level": coalesce(level, book->level),
+    "focus": coalesce(focus, book->focus),
+    "topic": coalesce(topic, book->topic),
+
+    // 📖 Información básica del libro
+    "book": {
+      "id": book->_id,
+      "title": book->title,
+      "slug": book->slug.current,
+      "cover": book->cover.asset->url
+    }
   } | order(_createdAt asc)`;
 
   return await sanityClient.fetch(query, { bookId });

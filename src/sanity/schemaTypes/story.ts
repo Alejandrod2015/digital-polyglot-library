@@ -1,3 +1,4 @@
+// /src/sanity/schemaTypes/story.ts
 import { defineField, defineType } from "sanity";
 import type { InputProps } from "sanity";
 import React from "react";
@@ -9,6 +10,86 @@ export const story = defineType({
   type: "document",
 
   fields: [
+    //
+    // 📘 RELACIÓN CON LIBRO — aparece primero
+    //
+    defineField({
+      name: "book",
+      title: "Related Book",
+      type: "reference",
+      to: [{ type: "book" }],
+      validation: (Rule) => Rule.required(),
+      description: "Select the book this story belongs to (required).",
+    }),
+
+    //
+    // 🔄 AUTO-HERENCIA DE METADATOS DEL LIBRO
+    //
+    defineField({
+  name: "syncBookMetadata",
+  title: "Sync Book Metadata",
+  type: "string",
+  hidden: true,
+  components: {
+    input: function SyncBookMetadataComponent(props) {
+      const { document, onChange } = props as any;
+
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      React.useEffect(() => {
+        const run = async () => {
+          const bookRef = document?.book?._ref;
+          if (!bookRef) return;
+
+          try {
+            const query = `*[_type == "book" && _id == $id][0]{
+              language, region, level, topic, formality
+            }`;
+
+            const response = await fetch("/api/sanity-query", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ query, params: { id: bookRef } }),
+            });
+
+            const { result: bookData } = await response.json();
+            if (!bookData) return;
+
+            const b = bookData;
+            const regionFieldMap: Record<string, string> = {
+              spanish: "region_es",
+              english: "region_en",
+              german: "region_de",
+              french: "region_fr",
+              italian: "region_it",
+              portuguese: "region_pt",
+            };
+
+            const regionField = regionFieldMap[b.language];
+
+            const patch = [
+              { type: "set", path: ["language"], value: b.language },
+              { type: "set", path: ["level"], value: b.level },
+              { type: "set", path: ["topic"], value: b.topic },
+              { type: "set", path: ["formality"], value: b.formality },
+            ];
+
+            if (regionField)
+              patch.push({ type: "set", path: [regionField], value: b.region });
+
+            patch.forEach((p) => onChange(p));
+          } catch (err) {
+            console.error("Error syncing book metadata:", err);
+          }
+        };
+
+        run();
+      }, [document?.book?._ref, onChange]);
+
+      return null;
+    },
+  },
+}),
+
     //
     // 🧭 INPUT SECTION — configuración previa a la generación
     //
@@ -112,6 +193,21 @@ export const story = defineType({
     }),
 
     defineField({
+      name: "formality",
+      title: "Formality",
+      type: "string",
+      options: {
+        list: [
+          { title: "Informal", value: "informal" },
+          { title: "Neutral", value: "neutral" },
+          { title: "Formal", value: "formal" },
+        ],
+      },
+      initialValue: "neutral",
+      description: "Formality level inherited from the book.",
+    }),
+
+    defineField({
       name: "focus",
       title: "Focus",
       type: "string",
@@ -133,6 +229,9 @@ export const story = defineType({
       description: "Free text topic for the story theme.",
     }),
 
+    //
+    // 🪄 GENERADOR CON CHATGPT — separado y sin sincronización
+    //
     defineField({
       name: "generate",
       title: "🪄 Generate Story",
@@ -206,14 +305,6 @@ export const story = defineType({
     }),
 
     defineField({
-      name: "book",
-      title: "Related Book",
-      type: "reference",
-      to: [{ type: "book" }],
-      validation: (Rule) => Rule.required(),
-    }),
-
-    defineField({
       name: "published",
       title: "Published",
       type: "boolean",
@@ -221,7 +312,6 @@ export const story = defineType({
     }),
   ],
 
-  // 🧹 Preview limpia — sin 'isFree'
   preview: {
     select: { title: "title", level: "level" },
     prepare({ title, level }) {
