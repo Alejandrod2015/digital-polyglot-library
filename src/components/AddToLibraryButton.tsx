@@ -51,16 +51,18 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
     try {
       if (inLibrary) {
         await fetch('/api/library', {
-          method: 'DELETE',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ bookId }),
-        });
+  method: 'DELETE',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ type: 'book', bookId }),
+});
+
       } else {
         await fetch('/api/library', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ bookId, title, coverUrl }),
-        });
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ type: 'book', bookId, title, coverUrl }),
+});
+
       }
     } catch (err) {
       console.error('Error toggling library:', err);

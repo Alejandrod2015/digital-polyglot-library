@@ -102,19 +102,19 @@ export default function Sidebar({ onClose }: SidebarProps) {
         </Link>
 
         <Link
-          href="/favorites"
-          onClick={onClose}
-          className="flex items-center gap-3 hover:text-yellow-400 transition-colors"
-        >
-          <Star size={22} /> Favorites
-        </Link>
-
-        <Link
           href="/my-library"
           onClick={onClose}
           className="flex items-center gap-3 hover:text-emerald-400 transition-colors"
         >
           <BookOpen size={22} /> My Library
+        </Link>
+
+        <Link
+          href="/favorites"
+          onClick={onClose}
+          className="flex items-center gap-3 hover:text-yellow-400 transition-colors"
+        >
+          <Star size={22} /> Favorites
         </Link>
 
         <Link
