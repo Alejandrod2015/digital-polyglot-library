@@ -1,0 +1,663 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "id",
+        "type": "slug",
+        "title": "Book ID"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "name": "cover",
+        "type": "image",
+        "title": "Cover Image"
+      },
+      {
+        "name": "audioFolder",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Optional: link to the physical version of this book in the online store.",
+        "name": "storeUrl",
+        "type": "url",
+        "title": "Physical Book URL"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Spanish",
+              "value": "spanish"
+            },
+            {
+              "title": "English",
+              "value": "english"
+            },
+            {
+              "title": "Portuguese",
+              "value": "portuguese"
+            },
+            {
+              "title": "French",
+              "value": "french"
+            },
+            {
+              "title": "Italian",
+              "value": "italian"
+            },
+            {
+              "title": "German",
+              "value": "german"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "spanish",
+                  "english",
+                  "portuguese",
+                  "french",
+                  "italian",
+                  "german"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Spain",
+              "value": "spain"
+            },
+            {
+              "title": "Mexico",
+              "value": "mexico"
+            },
+            {
+              "title": "Argentina",
+              "value": "argentina"
+            },
+            {
+              "title": "Colombia",
+              "value": "colombia"
+            },
+            {
+              "title": "Chile",
+              "value": "chile"
+            },
+            {
+              "title": "Peru",
+              "value": "peru"
+            },
+            {
+              "title": "USA",
+              "value": "usa"
+            },
+            {
+              "title": "UK",
+              "value": "uk"
+            },
+            {
+              "title": "Canada",
+              "value": "canada"
+            },
+            {
+              "title": "Australia",
+              "value": "australia"
+            },
+            {
+              "title": "France",
+              "value": "france"
+            },
+            {
+              "title": "Germany",
+              "value": "germany"
+            },
+            {
+              "title": "Italy",
+              "value": "italy"
+            },
+            {
+              "title": "Brazil",
+              "value": "brazil"
+            }
+          ]
+        },
+        "description": "Optional: region variant or accent used in the book.",
+        "name": "region",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Beginner (A1-A2)",
+              "value": "beginner"
+            },
+            {
+              "title": "Intermediate (B1-B2)",
+              "value": "intermediate"
+            },
+            {
+              "title": "Advanced (C1-C2)",
+              "value": "advanced"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "beginner",
+                  "intermediate",
+                  "advanced"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "level",
+        "type": "string"
+      },
+      {
+        "description": "Main subject or theme of the book (e.g., Travel, Food).",
+        "name": "topic",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Informal",
+              "value": "informal"
+            },
+            {
+              "title": "Neutral",
+              "value": "neutral"
+            },
+            {
+              "title": "Formal",
+              "value": "formal"
+            }
+          ]
+        },
+        "initialValue": "neutral",
+        "name": "formality",
+        "type": "string"
+      },
+      {
+        "initialValue": false,
+        "name": "published",
+        "type": "boolean"
+      }
+    ],
+    "name": "book",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Select the book this story belongs to (required).",
+        "to": [
+          {
+            "type": "book"
+          }
+        ],
+        "name": "book",
+        "type": "reference",
+        "title": "Related Book"
+      },
+      {
+        "hidden": true,
+        "name": "syncBookMetadata",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Spanish",
+              "value": "spanish"
+            },
+            {
+              "title": "English",
+              "value": "english"
+            },
+            {
+              "title": "Portuguese",
+              "value": "portuguese"
+            },
+            {
+              "title": "French",
+              "value": "french"
+            },
+            {
+              "title": "Italian",
+              "value": "italian"
+            },
+            {
+              "title": "German",
+              "value": "german"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Spain",
+              "value": "spain"
+            },
+            {
+              "title": "Colombia",
+              "value": "colombia"
+            },
+            {
+              "title": "Mexico",
+              "value": "mexico"
+            },
+            {
+              "title": "Argentina",
+              "value": "argentina"
+            },
+            {
+              "title": "Chile",
+              "value": "chile"
+            },
+            {
+              "title": "Peru",
+              "value": "peru"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_es",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "United States",
+              "value": "usa"
+            },
+            {
+              "title": "United Kingdom",
+              "value": "uk"
+            },
+            {
+              "title": "Australia",
+              "value": "australia"
+            },
+            {
+              "title": "Canada",
+              "value": "canada"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_en",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Germany",
+              "value": "germany"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_de",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "France",
+              "value": "france"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_fr",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Italy",
+              "value": "italy"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_it",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Brazil",
+              "value": "brazil"
+            }
+          ]
+        },
+        "description": "Optional.",
+        "hidden": "conditional",
+        "name": "region_pt",
+        "type": "string",
+        "title": "Region"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Beginner",
+              "value": "beginner"
+            },
+            {
+              "title": "Intermediate",
+              "value": "intermediate"
+            },
+            {
+              "title": "Advanced",
+              "value": "advanced"
+            }
+          ]
+        },
+        "name": "level",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Informal",
+              "value": "informal"
+            },
+            {
+              "title": "Neutral",
+              "value": "neutral"
+            },
+            {
+              "title": "Formal",
+              "value": "formal"
+            }
+          ]
+        },
+        "initialValue": "neutral",
+        "description": "Formality level inherited from the book.",
+        "name": "formality",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Adjectives",
+              "value": "adjectives"
+            },
+            {
+              "title": "Verbs",
+              "value": "verbs"
+            },
+            {
+              "title": "Nouns",
+              "value": "nouns"
+            },
+            {
+              "title": "Expressions",
+              "value": "expressions"
+            },
+            {
+              "title": "Slang",
+              "value": "slang"
+            }
+          ]
+        },
+        "name": "focus",
+        "type": "string"
+      },
+      {
+        "description": "Free text topic for the story theme.",
+        "name": "topic",
+        "type": "string"
+      },
+      {
+        "readOnly": true,
+        "name": "generate",
+        "type": "string",
+        "title": "🪄 Generate Story"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "name": "text",
+        "type": "text",
+        "title": "Main Text"
+      },
+      {
+        "rows": 10,
+        "description": "This field stores the vocabulary list generated by ChatGPT. The system will parse it automatically.",
+        "name": "vocabRaw",
+        "type": "text",
+        "title": "Vocabulary (raw JSON or text)"
+      },
+      {
+        "description": "Cultural or contextual topics covered by the story.",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "theme",
+        "type": "array",
+        "title": "Theme / Topics"
+      },
+      {
+        "options": {
+          "storeOriginalFilename": true
+        },
+        "fields": [
+          {
+            "name": "caption",
+            "type": "string"
+          }
+        ],
+        "name": "audio",
+        "type": "file",
+        "title": "Audio File"
+      },
+      {
+        "initialValue": false,
+        "name": "published",
+        "type": "boolean"
+      }
+    ],
+    "name": "story",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "description": "Selecciona las historias que estarán disponibles gratuitamente para usuarios free.",
+        "of": [
+          {
+            "to": [
+              {
+                "type": "story"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to story"
+          }
+        ],
+        "name": "promotionalStories",
+        "type": "array",
+        "title": "Historias promocionales"
+      }
+    ],
+    "name": "marketingSettings",
+    "type": "document"
+  }
+]

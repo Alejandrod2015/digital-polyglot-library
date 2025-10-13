@@ -22,8 +22,33 @@ export default function VocabPanel({ story }: VocabPanelProps) {
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [definition, setDefinition] = useState<string | null>(null);
   const [isFav, setIsFav] = useState(false);
+  const [loadedFavs, setLoadedFavs] = useState<FavoriteItem[]>([]);
+  const { user, isLoaded } = useUser();
 
-  // Detecta clicks incluso si el target es un TextNode
+  // ✅ Cargar favoritos una vez al montar (solo si usuario logueado)
+  useEffect(() => {
+    const loadFavorites = async () => {
+      try {
+        if (user) {
+          const res = await fetch("/api/favorites", { cache: "no-store" });
+          if (res.ok) {
+            const favs = (await res.json()) as FavoriteItem[];
+            setLoadedFavs(favs);
+          }
+        } else {
+          const stored = localStorage.getItem("favorites");
+          const favs = stored ? (JSON.parse(stored) as FavoriteItem[]) : [];
+          setLoadedFavs(favs);
+        }
+      } catch (err) {
+        console.error("Error loading favorites:", err);
+        setLoadedFavs([]);
+      }
+    };
+    if (isLoaded) void loadFavorites();
+  }, [user, isLoaded]);
+
+  // Detecta clics sobre palabras con clase .vocab-word
   useEffect(() => {
     const handler = (e: Event) => {
       const el = (e.target as HTMLElement | null)?.closest?.(
@@ -37,68 +62,46 @@ export default function VocabPanel({ story }: VocabPanelProps) {
       setSelectedWord(word);
       const item = story.vocab?.find((v) => v.word === word);
       setDefinition(item?.definition ?? null);
+
+      // ✅ verificar si ya está en favoritos
+      setIsFav(loadedFavs.some((f) => f.word === word));
     };
 
     document.addEventListener("click", handler);
     return () => document.removeEventListener("click", handler);
-  }, [story]);
+  }, [story, loadedFavs]);
 
-  useEffect(() => {
-    if (!selectedWord) return;
-    try {
-      const stored = JSON.parse(localStorage.getItem("favorites") || "[]") as FavoriteItem[];
-      setIsFav(stored.some((f) => f.word === selectedWord));
-    } catch {
-      setIsFav(false);
-    }
-  }, [selectedWord]);
-
-  const { user } = useUser();
-
-const toggleFavorite = async () => {
+  const toggleFavorite = async () => {
   if (!selectedWord) return;
-
   const newItem = { word: selectedWord, translation: definition ?? "" };
+
+  // ✅ Cambio inmediato (optimistic UI)
+  const prevFav = isFav;
+  setIsFav(!isFav);
 
   try {
     if (user) {
-      // 🔹 Usuario logueado → usar backend
-      if (isFav) {
-        await fetch("/api/favorites", {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include", // 👈 necesario para Clerk
-      body: JSON.stringify({ word: selectedWord }),
-    });
-
-        setIsFav(false);
-      } else {
-        await fetch("/api/favorites", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include", // 👈 envía cookies de Clerk
-      body: JSON.stringify(newItem),
-    });
-
-        setIsFav(true);
-      }
+      const res = await fetch("/api/favorites", {
+        method: isFav ? "DELETE" : "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify(isFav ? { word: selectedWord } : newItem),
+      });
+      if (!res.ok) throw new Error("Network error");
     } else {
-      // 🔹 Usuario anónimo → usar localStorage
-      const stored = JSON.parse(localStorage.getItem("favorites") || "[]") as FavoriteItem[];
-      if (isFav) {
-        const updated = stored.filter((f) => f.word !== selectedWord);
-        localStorage.setItem("favorites", JSON.stringify(updated));
-        setIsFav(false);
-      } else {
-        const updated = [...stored, newItem];
-        localStorage.setItem("favorites", JSON.stringify(updated));
-        setIsFav(true);
-      }
+      const updated = isFav
+        ? loadedFavs.filter((f) => f.word !== selectedWord)
+        : [...loadedFavs, newItem];
+      localStorage.setItem("favorites", JSON.stringify(updated));
+      setLoadedFavs(updated);
     }
   } catch (err) {
     console.error("Error updating favorites:", err);
+    // 🚫 Revertir si falla
+    setIsFav(prevFav);
   }
 };
+
 
   if (!selectedWord) return null;
 
@@ -128,10 +131,16 @@ const toggleFavorite = async () => {
         <button
           onClick={toggleFavorite}
           className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 transition ${
-            isFav ? "bg-red-600 hover:bg-red-700" : "bg-blue-600 hover:bg-blue-700"
+            isFav
+              ? "bg-red-600 hover:bg-red-700"
+              : "bg-blue-600 hover:bg-blue-700"
           } text-white`}
         >
-          <Heart className={`w-4 h-4 ${isFav ? "fill-red-400 text-red-400" : "text-white"}`} />
+          <Heart
+            className={`w-4 h-4 ${
+              isFav ? "fill-red-400 text-red-400" : "text-white"
+            }`}
+          />
           {isFav ? "Remove from Favorites" : "Add to Favorites"}
         </button>
       </div>

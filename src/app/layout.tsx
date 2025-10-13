@@ -25,19 +25,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-[#121212]">
-      <head>
-        {/* Android: status bar oscura */}
-        <meta name="theme-color" content="#0D1B2A" />
-        {/* iOS: status bar translúcida */}
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
-      </head>
+    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+      <html lang="en" className="bg-[#121212]">
+        <head>
+          <meta name="theme-color" content="#0D1B2A" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+          />
+          {/* 🚫 Evitar flash durante hidratación */}
+          <style>{`
+            html { background-color: #121212; }
+            body { opacity: 0; transition: none; }
+          `}</style>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.addEventListener('DOMContentLoaded', () => {
+                  document.body.style.opacity = '1';
+                });
+              `,
+            }}
+          />
+        </head>
 
-      <body className="bg-[#121212] text-[#E0E0E0]">
-        <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+        <body className="bg-[#121212] text-[#E0E0E0]">
           <div className="flex h-screen w-screen">
             {/* Sidebar fijo en desktop */}
             <aside className="hidden md:flex md:w-64 bg-[#0B132B] fixed top-0 left-0 bottom-0 z-20">
@@ -47,17 +59,16 @@ export default function RootLayout({
             {/* Botón menú lateral solo en móvil */}
             <MobileMenu />
 
-            {/* Contenido principal */}
+            {/* Contenido principal (shell persistente) */}
             <div className="flex-1 flex flex-col md:ml-64">
-              {/* 👇 Componente cliente para manejar navegación atrás */}
               <BackNavigationHandler />
               <main className="flex-1 overflow-y-auto p-6 pb-40 md:pb-32">
                 {children}
               </main>
             </div>
           </div>
-        </ClerkProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

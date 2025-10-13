@@ -1,15 +1,16 @@
 'use client'
 
-/**
- * This route mounts the Sanity Studio inside Next.js.
- * It must be a Client Component because the Studio uses React context and browser APIs.
- * See: https://github.com/sanity-io/next-sanity
- */
+import dynamic from 'next/dynamic'
 
-import { NextStudio } from 'next-sanity/studio'
+// Evita que Next.js intente hacer SSR del Studio
+const NextStudio = dynamic(
+  () => import('next-sanity/studio').then(mod => mod.NextStudio),
+  { ssr: false }
+)
+
+// Importa la config directamente
 import config from '../../../../sanity.config'
 
-// ✅ Client-only render — no SSR, no metadata exports
 export default function StudioPage() {
   return <NextStudio config={config} />
 }

@@ -5,6 +5,7 @@ import Cover from "@/components/Cover";
 import { getFreeStorySlugs } from "@/data/freeStories";
 import AddToLibraryButton from "@/components/AddToLibraryButton";
 import BackButton from "@/components/BackButton";
+import { Play } from "lucide-react";
 
 type BookPageProps = {
   params: Promise<{ bookSlug: string }>;
@@ -48,45 +49,57 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
           <p className="text-lg text-gray-400 mb-6">{book.description}</p>
 
           {/* Etiquetas */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {book.theme &&
-              (Array.isArray(book.theme) ? book.theme : [book.theme]).map(
-                (t, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap"
-                  >
-                    {t}
-                  </span>
-                )
-              )}
+<div className="flex flex-wrap gap-2 mb-6">
+  {book.language && (
+    <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
+      {book.language}
+    </span>
+  )}
+  {book.level && (
+    <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
+      {LEVEL_LABELS[book.level]}
+    </span>
+  )}
+  {book.region && (
+    <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
+      {book.region}
+    </span>
+  )}
+  {book.topic && (
+    <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
+      {book.topic}
+    </span>
+  )}
+  {book.formality && (
+    <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
+      {book.formality}
+    </span>
+  )}
+</div>
 
-            {book.level && (
-              <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full whitespace-nowrap">
-                {LEVEL_LABELS[book.level]}
-              </span>
-            )}
-          </div>
 
-          {/* Botón principal → primera historia */}
-          <Link
-            href={`/books/${book.slug}/${book.stories[0].slug}`}
-            className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700"
-          >
-            Start reading
-          </Link>
 
-          <div className="mt-4">
-            <AddToLibraryButton
-              bookId={book.slug}
-              title={book.title}
-              coverUrl={
-                typeof book.cover === "string" && book.cover.length > 0
-                  ? book.cover
-                  : "/covers/default.jpg"
-              }
-            />
-          </div>
+          {/* Botones principales en una fila */}
+          <div className="flex flex-wrap items-center gap-4">
+  <Link
+  href={`/books/${book.slug}/${book.stories[0].slug}`}
+  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+>
+  <Play className="h-5 w-5" />
+  Start reading
+</Link>
+
+  <AddToLibraryButton
+    bookId={book.slug}
+    title={book.title}
+    coverUrl={
+      typeof book.cover === "string" && book.cover.length > 0
+        ? book.cover
+        : "/covers/default.jpg"
+    }
+  />
+</div>
+
 
           {/* Tabla de contenidos */}
           <div className="mt-10">
@@ -100,7 +113,7 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
                   <li key={story.id}>
                     <Link
                       href={`/books/${book.slug}/${story.slug}`}
-                      className="block p-4 bg-gray-800 rounded-xl text-gray-200 hover:bg-gray-700 relative"
+                      className="block p-4 bg-gray-800 rounded-xl text-gray-200 hover:bg-gray-700 relative transition-colors"
                     >
                       <span>{story.title}</span>
                       {isPromo && (

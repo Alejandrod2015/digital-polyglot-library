@@ -13,17 +13,16 @@ export const structure: StructureResolver = (S) =>
           S.documentTypeList("book")
             .title("Books")
             // Al entrar en un libro, mostramos solo sus historias
-            .child((bookId) =>
-              S.documentList()
-                .title("Stories in this Book")
-                .filter('_type == "story" && references($bookId)')
-                .params({ bookId })
-                // ✨ Asegura que el botón nativo "Create new document"
-                // cree una historia ya vinculada al libro actual
-                .initialValueTemplates([
-                  S.initialValueTemplateItem("story-from-book", { bookId }),
-                ])
-            )
+            .child((bookId: string) =>
+  S.documentList()
+    .title("Stories in this Book")
+    .filter('_type == "story" && references($bookId)')
+    .params({ bookId })
+    .initialValueTemplates([
+      S.initialValueTemplateItem("story-from-book", { bookId }),
+    ])
+)
+
         ),
 
       S.divider(),

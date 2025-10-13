@@ -1,3 +1,4 @@
+// sanity.config.ts
 // @ts-nocheck
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
@@ -11,8 +12,8 @@ const projectId = '9u7ilulp'
 const dataset = 'production'
 const apiVersion = '2025-10-05'
 
-// --- Normalizamos tipos ---
-const types = Array.isArray(schema) ? schema : schema.types
+// Normaliza: array o { types }
+const types = Array.isArray(schema) ? schema : schema?.types ?? []
 
 export default defineConfig({
   name: 'digital-polyglot-studio',
@@ -31,12 +32,10 @@ export default defineConfig({
 
   plugins: [
     structureTool({
-      name: 'content-structure',
       title: 'Content Structure',
       structure,
     }),
-    visionTool({ defaultApiVersion: apiVersion }),
+    // En v4 la opción es `apiVersion`
+    visionTool({ apiVersion }),
   ],
-
-  apiVersion,
 })
