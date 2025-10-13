@@ -26,7 +26,7 @@ export default function ExplorePage() {
 
   return (
     <div className="max-w-5xl mx-auto p-8 text-white">
-      <h1 className="text-3xl font-bold mb-8">🌍 Explore</h1>
+      <h1 className="text-3xl font-bold mb-8">Explore</h1>
 
       {/* Filtros por idioma */}
       <div className="flex flex-wrap gap-3 mb-10">

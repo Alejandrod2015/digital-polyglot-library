@@ -1,3 +1,5 @@
+// /prisma/schema.prisma
+
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
@@ -29,4 +31,17 @@ model LibraryBook {
 
   @@index([userId])
   @@unique([userId, bookId], name: "userId_bookId")
+}
+
+model LibraryStory {
+  id        String   @id @default(cuid())
+  userId    String
+  storyId   String
+  title     String
+  coverUrl  String
+  bookId    String
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@unique([userId, storyId], name: "userId_storyId")
 }

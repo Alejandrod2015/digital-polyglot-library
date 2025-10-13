@@ -1,4 +1,3 @@
-// src/app/books/[bookSlug]/[storySlug]/page.tsx
 import { books } from '@/data/books';
 import VocabPanel from '@/components/VocabPanel';
 import { currentUser } from '@clerk/nextjs/server';
@@ -6,6 +5,7 @@ import Player from '@/components/Player';
 import StoryAccessInfo from './StoryAccessInfo';
 import { getStoriesReadCount } from '@/utils/readingLimits';
 import { getFreeStorySlugs } from '@/data/freeStories';
+import AddStoryToLibraryButton from '@/components/AddStoryToLibraryButton'; // 👈 nuevo import
 
 type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
 
@@ -31,7 +31,6 @@ export default async function StoryPage({ params }: StoryPageProps) {
     : [];
   const ownsThisBook = ownedBooks.includes(book.slug);
 
-  // 🔐 Acceso completo dinámico según plan y progreso
   const promotionalSlugs = await getFreeStorySlugs();
 
   let hasFullAccess =
@@ -40,7 +39,6 @@ export default async function StoryPage({ params }: StoryPageProps) {
     userPlan === 'polyglot' ||
     ownsThisBook;
 
-  // 🔓 Usuarios free/basic también acceden mientras no hayan llegado a su límite
   if (!hasFullAccess && (userPlan === 'free' || userPlan === 'basic')) {
     const limit = userPlan === 'free' ? 10 : 1;
     const readCount = getStoriesReadCount(userPlan);
@@ -60,9 +58,29 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
   const visibleText = paragraphs.slice(0, visibleCount).join('');
 
+  // ✅ usa cover del libro si la historia no tiene propia
+  const rawCover =
+  (story as { coverUrl?: string })?.coverUrl ??
+  (book as { coverUrl?: string; cover?: string })?.coverUrl ??
+  (book as { cover?: string })?.cover ??
+  '/covers/default.jpg';
+
+const coverUrl = rawCover.startsWith('https://cdn.sanity.io/')
+  ? `${rawCover}?w=800&fit=crop&auto=format`
+  : rawCover;
+
   return (
     <div className="relative max-w-5xl mx-auto p-8 pb-32 text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-white">{story.title}</h1>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
+        <h1 className="text-3xl font-bold text-white">{story.title}</h1>
+        {/* 👇 nuevo botón */}
+        <AddStoryToLibraryButton
+          storyId={story.id}
+          bookId={book.id}
+          title={story.title}
+          coverUrl={coverUrl}
+        />
+      </div>
 
       {/* Contador de lecturas */}
       <StoryAccessInfo storyId={story.id} userPlan={userPlan} />

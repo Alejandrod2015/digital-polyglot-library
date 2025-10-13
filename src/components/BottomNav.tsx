@@ -20,7 +20,7 @@ export default function BottomNav() {
           📚 Library
         </Link>
         <Link href="/favorites" className={linkClasses("/favorites")}>
-          ⭐ Favorites
+          Favorites
         </Link>
         <Link href="/settings" className={linkClasses("/settings")}>
           ⚙️ Settings

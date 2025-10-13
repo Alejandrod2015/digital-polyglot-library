@@ -74,7 +74,7 @@ export default function FavoritesPage() {
 
   return (
     <div className="p-8 max-w-2xl mx-auto text-white">
-      <h1 className="text-3xl font-bold mb-6">⭐ Favorites</h1>
+      <h1 className="text-3xl font-bold mb-6">Favorites</h1>
 
       {favorites.length === 0 ? (
         <p className="text-gray-400">
@@ -92,11 +92,26 @@ export default function FavoritesPage() {
                 <p className="text-green-400">{fav.translation}</p>
               </div>
               <button
-                onClick={() => removeFavorite(fav.word)}
-                className="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded"
-              >
-                🗑 Remove
-              </button>
+  onClick={() => removeFavorite(fav.word)}
+  className="flex items-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-4 w-4"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.8}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7h6m2 0H7m3-3h4a1 1 0 011 1v1H8V5a1 1 0 011-1z"
+    />
+  </svg>
+  Remove
+</button>
+
             </li>
           ))}
         </ul>
