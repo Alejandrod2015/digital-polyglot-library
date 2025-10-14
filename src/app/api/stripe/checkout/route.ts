@@ -4,6 +4,9 @@ import { auth } from "@clerk/nextjs/server";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
+// No usar Edge runtime (Clerk falla con auth en Edge)
+export const runtime = "nodejs";
+
 type AuthReturn = {
   userId: string | null;
 };

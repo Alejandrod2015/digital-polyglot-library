@@ -9,10 +9,12 @@ export default function PlansPage() {
     try {
       setLoading(priceId);
       const res = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId }),
-      });
+  method: 'POST',
+  credentials: 'include', // 🔥 necesario para que Clerk envíe la cookie de sesión
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ priceId }),
+});
+
 
       const data = await res.json();
       if (data.url) {
