@@ -27,6 +27,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sanity": "^4.10.2",
+    "stripe": "^19.1.0",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
