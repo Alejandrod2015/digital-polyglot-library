@@ -13,7 +13,10 @@ type AuthReturn = {
 
 export async function POST(req: Request) {
   try {
-    const { userId } = auth() as unknown as AuthReturn;
+    const { userId } = await auth();
+
+    console.log("🧩 Clerk auth() result:", auth());
+
 
     if (!userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
