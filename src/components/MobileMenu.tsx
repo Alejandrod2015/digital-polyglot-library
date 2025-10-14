@@ -32,15 +32,30 @@ export default function MobileMenu() {
   }
 
   if (isBookPage) {
-    // 👉 En página de libro: mostrar flecha al listado de libros (solo en mobile)
-    return (
-      <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
-        <Link href="/books" className="text-white">
-          <ArrowLeft size={28} />
-        </Link>
-      </div>
-    );
-  }
+  // 👉 En página de libro: volver al último origen (home, explore, etc.)
+  const { getLastSection } = require("@/lib/navigationMemory");
+  const destinations: Record<string, string> = {
+    home: "/",
+    "my-library": "/my-library",
+    favorites: "/favorites",
+    explore: "/explore",
+    settings: "/settings",
+  };
+  const last = getLastSection();
+  const target = destinations[last || "home"];
+
+  return (
+    <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
+      <button
+        onClick={() => (window.location.href = target)}
+        className="text-white"
+      >
+        <ArrowLeft size={28} />
+      </button>
+    </div>
+  );
+}
+
 
   // 👉 En cualquier otra página: mostrar hamburguesa normal (solo en mobile)
   return (

@@ -1,22 +1,33 @@
 'use client';
 
 import { useState } from 'react';
+import { useUser } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
 
 export default function PlansPage() {
+  const { isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
   const [loading, setLoading] = useState<string | null>(null);
 
   const handleSubscribe = async (priceId: string) => {
+    // 🔒 Si el usuario no está logueado, redirigir al login de Clerk con retorno a /plans
+    if (isLoaded && !isSignedIn) {
+      router.push(`/sign-in?redirect_url=/plans`);
+      return;
+    }
+
     try {
       setLoading(priceId);
-      const res = await fetch('/api/stripe/checkout', {
-  method: 'POST',
-  credentials: 'include',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ priceId }),
-});
 
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId }),
+      });
 
       const data = await res.json();
+
       if (data.url) {
         window.location.href = data.url;
       } else {
@@ -29,6 +40,9 @@ export default function PlansPage() {
       setLoading(null);
     }
   };
+
+  // ⏳ Esperar a que Clerk cargue el estado de sesión
+  if (!isLoaded) return null;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-6 bg-gray-950 text-white">
