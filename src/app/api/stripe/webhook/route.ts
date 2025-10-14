@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { clerkClient } from "@clerk/nextjs/server";
+import { createClerkClient } from "@clerk/backend";
 
-console.log("🧠 clerkClient:", clerkClient);
+const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
@@ -35,8 +35,8 @@ export async function POST(req: Request) {
         if (priceId === "price_1SI5Wv6ytrKVzptQkzfg7emI") plan = "polyglot";
 
         if (plan) {
-          await (clerkClient as any).users.updateUser(userId, {
-            publicMetadata: { plan }, // 👈 Usa el mismo campo existente
+          await clerkClient.users.updateUserMetadata(userId, {
+            publicMetadata: { plan },
           });
           console.log(`✅ Updated user ${userId} to plan: ${plan}`);
         } else {
