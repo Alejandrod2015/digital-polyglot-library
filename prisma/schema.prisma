@@ -1,5 +1,3 @@
-// /prisma/schema.prisma
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
@@ -44,4 +42,22 @@ model LibraryStory {
 
   @@index([userId])
   @@unique([userId, storyId], name: "userId_storyId")
+}
+
+model ClaimToken {
+  id             String    @id @default(cuid())
+  token          String    @unique
+  buyerEmail     String
+  recipientEmail String?
+  books          String[]
+  redeemedBy     String?
+  redeemedAt     DateTime?
+  createdAt      DateTime  @default(now())
+  expiresAt      DateTime?
+
+  @@map("dp_claim_tokens_v1")
+  @@index([buyerEmail])
+  @@index([recipientEmail])
+  @@index([redeemedBy])
+  @@index([createdAt])
 }

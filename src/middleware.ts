@@ -6,9 +6,10 @@ export default clerkMiddleware(async (auth, req) => {
 
   // ⚡ Excluir solo rutas que deben ejecutarse sin Clerk
   // Mantener Stripe Checkout autenticado (necesita userId)
-  if (url.startsWith("/api/favorites")) {
+  if (url.startsWith("/api/favorites") || url.startsWith("/api/claims")) {
     return NextResponse.next();
   }
+
 
   const res = NextResponse.next();
   res.headers.set("x-clerk-mw", "1");

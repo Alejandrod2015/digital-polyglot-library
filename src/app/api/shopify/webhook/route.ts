@@ -1,20 +1,18 @@
+// src/app/api/shopify/webhook/route.ts
+
 import { NextResponse } from "next/server";
 import crypto from "crypto";
+import { PrismaClient } from "@/generated/prisma";
 import { shopifybundles } from "@/data/shopifybundles";
 
-const CLERK_API_URL = process.env.CLERK_API_URL ?? "https://api.clerk.com";
-const CLERK_SECRET_KEY = process.env.CLERK_SECRET_KEY;
+const prisma = new PrismaClient();
+
 const SHOPIFY_WEBHOOK_SECRET = process.env.SHOPIFY_WEBHOOK_SECRET;
 
 interface ShopifyWebhookPayload {
   email?: string;
   customer?: { email?: string };
   line_items?: Array<{ title?: string; handle?: string; sku?: string }>;
-}
-
-interface ClerkUser {
-  id: string;
-  public_metadata?: Record<string, unknown>;
 }
 
 // --- 🔐 HMAC validation ---
@@ -46,50 +44,12 @@ function pickLineItems(obj: unknown): Array<{ sku?: string; handle?: string }> {
   return Array.isArray(o.line_items) ? o.line_items : [];
 }
 
-// --- 🧠 Clerk helpers (REST, no SDK) ---
-async function getUserByEmail(email: string): Promise<ClerkUser | null> {
-  const url = `${CLERK_API_URL}/v1/users?email_address=${encodeURIComponent(email)}`;
-  const res = await fetch(url, {
-    headers: { Authorization: `Bearer ${CLERK_SECRET_KEY}` },
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    console.error("❌ Clerk GET users failed:", res.status, await res.text());
-    return null;
-  }
-
-  const data: unknown = await res.json();
-  if (Array.isArray(data)) return (data[0] as ClerkUser) ?? null;
-  if (data && typeof data === "object" && Array.isArray((data as { data?: ClerkUser[] }).data)) {
-    return (data as { data: ClerkUser[] }).data[0] ?? null;
-  }
-  return null;
-}
-
-async function patchUserMetadata(userId: string, nextPublic: Record<string, unknown>) {
-  const url = `${CLERK_API_URL}/v1/users/${userId}/metadata`;
-  const res = await fetch(url, {
-    method: "PATCH",
-    headers: {
-      Authorization: `Bearer ${CLERK_SECRET_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ public_metadata: nextPublic }),
-  });
-
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`❌ Clerk PATCH metadata failed: ${res.status} ${body}`);
-  }
-}
-
 // --- 🚀 Webhook endpoint ---
 export async function POST(req: Request) {
   try {
-    if (!CLERK_SECRET_KEY || !SHOPIFY_WEBHOOK_SECRET) {
-      console.log("❌ Falta CLERK_SECRET_KEY o SHOPIFY_WEBHOOK_SECRET");
-      return NextResponse.json({ error: "Missing env vars" }, { status: 500 });
+    if (!SHOPIFY_WEBHOOK_SECRET) {
+      console.error("❌ Falta SHOPIFY_WEBHOOK_SECRET");
+      return NextResponse.json({ error: "Missing env var" }, { status: 500 });
     }
 
     // 1️⃣ Leer cuerpo bruto
@@ -142,60 +102,28 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "No valid book identifiers found" });
     }
 
-    // 4️⃣ Buscar usuario en Clerk
-    
-    let user = await getUserByEmail(email);
-console.log("👤 Usuario encontrado:", user?.id);
+    // 4️⃣ Crear registro de compra (ClaimToken)
+    const token = crypto.randomBytes(24).toString("base64url");
+    const buyerEmail = email;
+    const recipientEmail = email; // por ahora asumimos que comprador = lector
 
-// 🆕 Crear usuario automáticamente si no existe o no tiene id
-if (!user || typeof user.id !== "string" || !user.id) {
-  console.log(`🪄 Usuario no encontrado, creando nuevo en Clerk para: ${email}`);
-  const createRes = await fetch(`${CLERK_API_URL}/v1/users`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${CLERK_SECRET_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email_address: [email],
-      public_metadata: { books: purchasedBooks },
-    }),
-  });
-
-  if (!createRes.ok) {
-    console.error("❌ Clerk user creation failed:", createRes.status, await createRes.text());
-    return NextResponse.json({ message: "User creation failed" }, { status: 500 });
-  }
-
-  const newUser: unknown = await createRes.json();
-  if (
-    newUser &&
-    typeof newUser === "object" &&
-    "id" in newUser &&
-    typeof (newUser as { id: unknown }).id === "string"
-  ) {
-    user = newUser as ClerkUser;
-    console.log("✅ Usuario creado en Clerk:", user.id);
-  } else {
-    console.error("❌ Clerk creation response inválida:", newUser);
-    return NextResponse.json({ message: "Invalid Clerk response" }, { status: 500 });
-  }
-}
-
-    // 5️⃣ Fusionar libros y actualizar metadata
-    const currentBooks = Array.isArray(user.public_metadata?.books)
-      ? (user.public_metadata!.books as string[])
-      : [];
-    const updatedBooks = Array.from(new Set([...currentBooks, ...purchasedBooks]));
-    console.log("✅ Libros finales del usuario:", updatedBooks);
-
-    await patchUserMetadata(user.id, {
-      ...(user.public_metadata ?? {}),
-      books: updatedBooks,
+    // Delegate correcto: prisma.claimToken (según Prisma ModelName ClaimToken)
+    const claim = await prisma.claimToken.create({
+      data: {
+        token,
+        buyerEmail,
+        recipientEmail,
+        books: purchasedBooks,
+      },
     });
 
-    console.log("🎉 Metadata actualizada en Clerk para:", email);
-    return NextResponse.json({ message: "User books updated", updatedBooks });
+    console.log("🎟️ Claim creado:", claim);
+
+    return NextResponse.json({
+      message: "Claim token created",
+      token: claim.token,
+      books: claim.books,
+    });
   } catch (err) {
     console.error("💥 Shopify webhook error:", err);
     return NextResponse.json({ error: "Internal error" }, { status: 500 });
