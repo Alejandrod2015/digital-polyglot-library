@@ -8,13 +8,14 @@ const prisma = new PrismaClient();
 
 export async function GET(
   _req: Request,
-  { params }: { params: { token: string } }
+  context: { params: Promise<{ token: string }> }
 ) {
   try {
+    const { params } = await context;
+    const { token } = await params;
     const { userId } = await auth();
-    console.log("🔑 Clerk userId:", userId);
 
-    const token = params.token;
+    console.log("🔑 Clerk userId:", userId);
     console.log("🎟️ Claim request recibido:", token);
 
     // 1️⃣ Buscar token en la base de datos
