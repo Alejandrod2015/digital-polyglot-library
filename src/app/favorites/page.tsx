@@ -97,7 +97,7 @@ export default function FavoritesPage() {
         >
           {favorites.length === 0 ? (
             <p className="text-gray-400">
-              {user ? 'Aún no tienes favoritos guardados.' : 'No favorites saved yet.'}
+              {user ? 'No favorites saved yet.' : 'No favorites saved yet.'}
             </p>
           ) : (
             <ul className="space-y-4">

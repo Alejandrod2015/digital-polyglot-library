@@ -74,7 +74,7 @@ export default function MyLibraryPage() {
 
   return (
     <div className="p-8 max-w-4xl mx-auto text-white">
-      <h1 className="text-3xl font-bold mb-6">📚 My Library</h1>
+      <h1 className="text-3xl font-bold mb-6">My Library</h1>
 
       <div className="flex gap-4 mb-6">
         <button

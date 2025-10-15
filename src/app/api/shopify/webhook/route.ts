@@ -143,12 +143,44 @@ export async function POST(req: Request) {
     }
 
     // 4️⃣ Buscar usuario en Clerk
-    const user = await getUserByEmail(email);
-    console.log("👤 Usuario encontrado:", user?.id);
-    if (!user) {
-      console.warn(`🚫 User not found for email: ${email}`);
-      return NextResponse.json({ message: "User not found" });
-    }
+    
+    let user = await getUserByEmail(email);
+console.log("👤 Usuario encontrado:", user?.id);
+
+// 🆕 Crear usuario automáticamente si no existe o no tiene id
+if (!user || typeof user.id !== "string" || !user.id) {
+  console.log(`🪄 Usuario no encontrado, creando nuevo en Clerk para: ${email}`);
+  const createRes = await fetch(`${CLERK_API_URL}/v1/users`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${CLERK_SECRET_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email_address: [email],
+      public_metadata: { books: purchasedBooks },
+    }),
+  });
+
+  if (!createRes.ok) {
+    console.error("❌ Clerk user creation failed:", createRes.status, await createRes.text());
+    return NextResponse.json({ message: "User creation failed" }, { status: 500 });
+  }
+
+  const newUser: unknown = await createRes.json();
+  if (
+    newUser &&
+    typeof newUser === "object" &&
+    "id" in newUser &&
+    typeof (newUser as { id: unknown }).id === "string"
+  ) {
+    user = newUser as ClerkUser;
+    console.log("✅ Usuario creado en Clerk:", user.id);
+  } else {
+    console.error("❌ Clerk creation response inválida:", newUser);
+    return NextResponse.json({ message: "Invalid Clerk response" }, { status: 500 });
+  }
+}
 
     // 5️⃣ Fusionar libros y actualizar metadata
     const currentBooks = Array.isArray(user.public_metadata?.books)
