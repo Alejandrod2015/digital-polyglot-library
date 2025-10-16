@@ -1,14 +1,20 @@
-export {};
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useAuth, UserButton } from "@clerk/nextjs";
 
-type Book = { title: string; cover: string };
+type Book = {
+  id: string;
+  title: string;
+  cover: string;
+  description?: string;
+};
+
 type ClaimState =
   | { status: "loading" }
-  | { status: "success"; books: Book[] }
+  | { status: "success"; books: Book[]; message: string }
   | { status: "error"; message: string };
 
 export default function ClaimClient({ token }: { token: string }) {
@@ -33,10 +39,17 @@ export default function ClaimClient({ token }: { token: string }) {
           return;
         }
 
-        setState({ status: "success", books: data.books || [] });
-      } catch {
+        setState({
+          status: "success",
+          books: data.books || [],
+          message: data.message || "Books added to your account",
+        });
+      } catch (err) {
         if (!cancelled) {
-          setState({ status: "error", message: "Network or server error" });
+          setState({
+            status: "error",
+            message: "Network or server error",
+          });
         }
       }
     }
@@ -50,7 +63,7 @@ export default function ClaimClient({ token }: { token: string }) {
   if (state.status === "loading") {
     return (
       <main className="min-h-screen flex items-center justify-center bg-[#0D1B2A] text-white">
-        <p className="text-lg">Validating your claim...</p>
+        <p className="text-lg animate-pulse">Validating your claim...</p>
       </main>
     );
   }
@@ -70,15 +83,17 @@ export default function ClaimClient({ token }: { token: string }) {
     );
   }
 
+  const message = state.message.includes("already")
+    ? "📚 You’ve already claimed these books."
+    : "✅ Books added to your account!";
+
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-[#0D1B2A] text-white px-8 text-center">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-[#0D1B2A] text-white px-8 text-center relative">
       <div className="absolute top-4 right-4">
         <UserButton afterSignOutUrl="/" />
       </div>
 
-      <h1 className="text-3xl font-semibold mb-4">
-        ✅ Books added to your account!
-      </h1>
+      <h1 className="text-3xl font-semibold mb-4">{message}</h1>
       <p className="text-white/80 mb-8">
         {isSignedIn
           ? "You can now find these books in your library."
@@ -87,31 +102,32 @@ export default function ClaimClient({ token }: { token: string }) {
 
       <div className="grid gap-6 sm:grid-cols-2 max-w-3xl">
         {state.books.map((book) => (
-          <div
-            key={book.title}
-            className="bg-white/10 rounded-2xl p-4 flex flex-col items-center"
+          <Link
+            key={book.id}
+            href={`/books/${book.id}`}
+            className="bg-white/10 rounded-2xl p-4 flex flex-col items-center hover:bg-white/20 transition"
           >
             <Image
               src={book.cover}
               alt={book.title}
               width={128}
               height={192}
-              className="rounded-lg mb-3 object-cover"
+              className="rounded-lg mb-3 object-cover shadow"
             />
             <p className="font-medium">{book.title}</p>
-          </div>
+          </Link>
         ))}
       </div>
 
       <a
         href={
           isSignedIn
-            ? "https://reader.digitalpolyglot.com/"
+            ? "https://reader.digitalpolyglot.com/my-library"
             : "https://reader.digitalpolyglot.com/sign-in"
         }
         className="mt-10 px-6 py-2 bg-white text-[#0D1B2A] rounded-xl hover:bg-gray-200 transition"
       >
-        {isSignedIn ? "Go to My Library" : "Sign in to view library"}
+        {isSignedIn ? "Go to My Library" : "Sign in to view your library"}
       </a>
     </main>
   );

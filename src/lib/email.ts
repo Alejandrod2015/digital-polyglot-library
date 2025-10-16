@@ -51,7 +51,7 @@ export async function sendClaimEmail({
     <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
       <tr>
         <td align="center">
-          <table role="presentation" cellpadding="0" cellspacing="0" width="560" 
+          <table role="presentation" cellpadding="0" cellspacing="0" width="560"
                  style="width:560px;max-width:560px;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             
             <tr>
@@ -68,12 +68,12 @@ export async function sendClaimEmail({
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#111827;line-height:1.6;">
                   
                   <h1 style="margin:0 0 8px;font-size:20px;">📚 Your books are ready!</h1>
-                  <p style="margin:0 0 16px;color:#374151;">Click below to add them to your Library and start reading.</p>
+                  <p style="margin:0 0 16px;color:#374151;">Click below to add them to your Library and start reading instantly.</p>
 
                   <p style="margin:12px 0 24px;text-align:center;">
                     <a href="${claimUrl}" 
                        style="background:#0ea5e9;color:#ffffff;padding:14px 24px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:600;">
-                      View your books in your Library
+                      View all books in your Library
                     </a>
                   </p>
 
@@ -82,13 +82,13 @@ export async function sendClaimEmail({
                   ${items
                     .map(
                       (b) => `
-                      <a href="${baseUrl}/books/${b.id}" target="_blank" 
+                      <a href="${baseUrl}/claim/${token}?book=${b.id}" target="_blank"
                          style="text-decoration:none;color:inherit;display:block;">
-                        <table role="presentation" cellpadding="0" cellspacing="0" width="100%" 
+                        <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
                                style="margin:12px 0;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
                           <tr>
                             <td width="110" style="padding:10px;">
-                              <img src="${b.cover}" alt="${b.title}" width="90" height="130" 
+                              <img src="${b.cover}" alt="${b.title}" width="90" height="130"
                                    style="border-radius:8px;display:block;object-fit:cover;">
                             </td>
                             <td style="padding:10px 12px;vertical-align:top;">
@@ -110,8 +110,8 @@ export async function sendClaimEmail({
                   <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
 
                   <p style="font-size:12px;color:#6B7280;margin:0;text-align:center;">
-                    This is a transactional email for your Digital Polyglot purchase.  
-                    If you need help, reply to this message or visit  
+                    This is a transactional email for your Digital Polyglot purchase.<br/>
+                    If you need help, reply to this message or visit 
                     <a href="https://reader.digitalpolyglot.com/support" style="color:#0ea5e9;">our support page</a>.
                   </p>
                 </div>
