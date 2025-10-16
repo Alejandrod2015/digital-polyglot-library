@@ -116,19 +116,23 @@ export async function POST(req: Request) {
         books: purchasedBooks,
       },
     });
+    
+console.log("🎟️ Claim creado:", claim);
 
-    console.log("🎟️ Claim creado:", claim);
+const emailResult = await sendClaimEmail({
+  to: recipientEmail,
+  token: claim.token,
+  books: claim.books,
+});
 
-    try {
-      await sendClaimEmail({
-        to: recipientEmail,
-        token: claim.token,
-        books: claim.books,
-      });
-      console.log("📧 Email enviado correctamente a", recipientEmail);
-    } catch (emailErr) {
-      console.error("⚠️ Error enviando correo:", emailErr);
-    }
+if (emailResult === "sent") {
+  console.log("📧 Email enviado correctamente a", recipientEmail);
+} else if (emailResult === "skipped") {
+  console.warn("⚠️ Email no enviado: faltan variables de entorno (RESEND_API_KEY / EMAIL_FROM)");
+} else {
+  console.error("❌ Falló el envío de correo para", recipientEmail);
+}
+
 
     return NextResponse.json({
       message: "Claim token created",
