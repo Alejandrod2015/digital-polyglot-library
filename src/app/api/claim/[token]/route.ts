@@ -11,7 +11,6 @@ const CLERK_SECRET_KEY = process.env.CLERK_SECRET_KEY;
 async function patchUserMetadata(userId: string, books: string[]) {
   if (!CLERK_SECRET_KEY) throw new Error("Missing CLERK_SECRET_KEY");
 
-  // Obtener metadata actual del usuario
   const getRes = await fetch(`${CLERK_API_URL}/v1/users/${userId}`, {
     headers: { Authorization: `Bearer ${CLERK_SECRET_KEY}` },
   });
@@ -28,7 +27,6 @@ async function patchUserMetadata(userId: string, books: string[]) {
 
   const updatedBooks = Array.from(new Set([...currentBooks, ...books]));
 
-  // Actualizar metadata
   const patchRes = await fetch(`${CLERK_API_URL}/v1/users/${userId}/metadata`, {
     method: "PATCH",
     headers: {
@@ -78,10 +76,30 @@ export async function GET(
     console.log("✅ Token redimido:", updated.token, "por:", userId ?? "invitado");
 
     if (userId) {
+      // 🔹 Actualiza Clerk
       await patchUserMetadata(userId, updated.books);
+
+      // 🔹 Sincroniza también la biblioteca local (My Library)
+      try {
+        for (const bookId of updated.books) {
+          const meta = bookCatalog[bookId];
+          await prisma.libraryBook.upsert({
+            where: { userId_bookId: { userId, bookId } },
+            update: {},
+            create: {
+              userId,
+              bookId,
+              title: meta?.title ?? bookId,
+              coverUrl: meta?.cover ?? "/covers/default.jpg",
+            },
+          });
+        }
+        console.log("📚 My Library updated for:", userId);
+      } catch (libErr) {
+        console.error("⚠️ Error updating My Library:", libErr);
+      }
     }
 
-    // Mapear libros con detalles desde bookCatalog
     const detailedBooks = updated.books.map((id) => ({
       id,
       ...(bookCatalog[id] ?? { title: id, cover: "", description: "" }),
