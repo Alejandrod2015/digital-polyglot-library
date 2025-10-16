@@ -1,3 +1,4 @@
+// /src/lib/email.ts
 import { Resend } from "resend";
 import { books as bookCatalog } from "@/data/books-basic";
 
@@ -12,7 +13,8 @@ export async function sendClaimEmail({
 }): Promise<"sent" | "skipped" | "failed"> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM;
-  const baseUrl = process.env.APP_BASE_URL ?? "https://reader.digitalpolyglot.com";
+  const baseUrl =
+    process.env.APP_BASE_URL ?? "https://reader.digitalpolyglot.com";
   const replyTo = "support@digitalpolyglot.com";
 
   if (!apiKey || !from) {
@@ -25,13 +27,14 @@ export async function sendClaimEmail({
   const items = books.map((id) => {
     const meta = bookCatalog[id];
     const title = meta?.title ?? id;
-    const cover = meta?.cover ?? "https://cdn.digitalpolyglot.com/covers/default.jpg";
+    const cover =
+      meta?.cover ?? "https://cdn.digitalpolyglot.com/covers/default.jpg";
     const description = meta?.description ?? "";
     return { id, title, cover, description };
   });
 
   const subject = "Your Digital Polyglot books are ready!";
-  const preheader = "Open your books and start reading instantly.";
+  const preheader = "Access your books instantly and start reading.";
   const text = [
     "Your Digital Polyglot purchase is ready.",
     `Access your books: ${claimUrl}`,
@@ -58,7 +61,7 @@ export async function sendClaimEmail({
               <td style="background:#0D1B2A;padding:20px 24px;">
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#E5E7EB;font-size:14px;letter-spacing:.02em;">
                   <strong style="color:#fff;font-size:16px;">Digital Polyglot</strong><br/>
-                  Access your purchase
+                  Your digital library for Spanish learners
                 </div>
               </td>
             </tr>
@@ -68,12 +71,14 @@ export async function sendClaimEmail({
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#111827;line-height:1.6;">
                   
                   <h1 style="margin:0 0 8px;font-size:20px;">📚 Your books are ready!</h1>
-                  <p style="margin:0 0 16px;color:#374151;">Click below to add them to your Library and start reading instantly.</p>
+                  <p style="margin:0 0 16px;color:#374151;">
+                    Click below to add them to your Library and start reading instantly.
+                  </p>
 
                   <p style="margin:12px 0 24px;text-align:center;">
-                    <a href="${claimUrl}" 
+                    <a href="${claimUrl}"
                        style="background:#0ea5e9;color:#ffffff;padding:14px 24px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:600;">
-                      View all books in your Library
+                      View your books in your Library
                     </a>
                   </p>
 
@@ -82,13 +87,13 @@ export async function sendClaimEmail({
                   ${items
                     .map(
                       (b) => `
-                      <a href="${baseUrl}/claim/${token}?book=${b.id}" target="_blank"
+                      <a href="${baseUrl}/claim/${token}?book=${b.id}" target="_blank" 
                          style="text-decoration:none;color:inherit;display:block;">
-                        <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
+                        <table role="presentation" cellpadding="0" cellspacing="0" width="100%" 
                                style="margin:12px 0;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
                           <tr>
                             <td width="110" style="padding:10px;">
-                              <img src="${b.cover}" alt="${b.title}" width="90" height="130"
+                              <img src="${b.cover}" alt="${b.title}" width="90" height="130" 
                                    style="border-radius:8px;display:block;object-fit:cover;">
                             </td>
                             <td style="padding:10px 12px;vertical-align:top;">
@@ -111,7 +116,7 @@ export async function sendClaimEmail({
 
                   <p style="font-size:12px;color:#6B7280;margin:0;text-align:center;">
                     This is a transactional email for your Digital Polyglot purchase.<br/>
-                    If you need help, reply to this message or visit 
+                    If you need help, reply to this message or visit
                     <a href="https://reader.digitalpolyglot.com/support" style="color:#0ea5e9;">our support page</a>.
                   </p>
                 </div>
@@ -125,6 +130,7 @@ export async function sendClaimEmail({
                 </div>
               </td>
             </tr>
+
           </table>
         </td>
       </tr>
@@ -140,7 +146,7 @@ export async function sendClaimEmail({
       subject,
       html,
       text,
-      replyTo, // ✅ camelCase correcto
+      replyTo,
       tags: [{ name: "type", value: "transactional" }],
     });
     return "sent";

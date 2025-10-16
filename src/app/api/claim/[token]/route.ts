@@ -65,14 +65,22 @@ export async function GET(
     // ♻️ Token idempotente
     let redeemed = claim;
     if (!claim.redeemedAt) {
-      redeemed = await prisma.claimToken.update({
-        where: { token },
-        data: { redeemedAt: new Date(), redeemedBy: userId },
-      });
-      console.log("✅ Token redimido por:", userId);
-    } else {
-      console.log("♻️ Token ya redimido previamente.");
-    }
+  redeemed = await prisma.claimToken.update({
+    where: { token },
+    data: { redeemedAt: new Date(), redeemedBy: userId },
+  });
+  console.log("✅ Token redimido por:", userId);
+} else {
+  // ⚡ Reasignar el token al nuevo usuario logueado si fuera necesario
+  if (!claim.redeemedBy && userId) {
+    await prisma.claimToken.update({
+      where: { token },
+      data: { redeemedBy: userId },
+    });
+    console.log("🔁 Token re-asignado a:", userId);
+  }
+  console.log("♻️ Token ya redimido previamente.");
+}
 
     // 🔹 Sincroniza Clerk + My Library
     try {
