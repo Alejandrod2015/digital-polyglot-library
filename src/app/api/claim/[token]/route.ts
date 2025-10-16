@@ -41,13 +41,12 @@ export async function GET(
   try {
     const url = new URL(req.url);
     const bookSlug = url.searchParams.get("book") ?? null;
-
     const { params } = await context;
     const { token } = await params;
     const { userId } = await auth();
 
-    console.log("🔑 Clerk userId:", userId);
-    console.log("🎟️ Claim request recibido:", token);
+    console.log("🎟️ Claim recibido:", token);
+    console.log("🔑 Clerk userId:", userId ?? "no-session");
 
     const claim = await prisma.claimToken.findUnique({ where: { token } });
 
@@ -56,46 +55,48 @@ export async function GET(
       return NextResponse.json({ error: "Invalid token" }, { status: 404 });
     }
 
-    // ♻️ Idempotente: si ya fue usado, no falla
+    // 🚪 Si no hay sesión activa, redirige a sign-in conservando el token
+    if (!userId) {
+      const signInUrl = `${url.origin}/sign-in?redirect_url=/claim/${token}`;
+      console.log("🔁 Redirigiendo a login:", signInUrl);
+      return NextResponse.redirect(signInUrl);
+    }
+
+    // ♻️ Token idempotente
     let redeemed = claim;
     if (!claim.redeemedAt) {
       redeemed = await prisma.claimToken.update({
         where: { token },
-        data: {
-          redeemedAt: new Date(),
-          ...(userId ? { redeemedBy: userId } : {}),
-        },
+        data: { redeemedAt: new Date(), redeemedBy: userId },
       });
-      console.log("✅ Token redimido:", redeemed.token, "por:", userId ?? "invitado");
+      console.log("✅ Token redimido por:", userId);
     } else {
       console.log("♻️ Token ya redimido previamente.");
     }
 
-    // 🔹 Sincroniza Clerk + My Library si hay usuario autenticado
-    if (userId) {
-      try {
-        await patchUserMetadata(userId, redeemed.books);
+    // 🔹 Sincroniza Clerk + My Library
+    try {
+      await patchUserMetadata(userId, redeemed.books);
 
-        for (const bookId of redeemed.books) {
-          const meta = bookCatalog[bookId];
-          await prisma.libraryBook.upsert({
-            where: { userId_bookId: { userId, bookId } },
-            update: {},
-            create: {
-              userId,
-              bookId,
-              title: meta?.title ?? bookId,
-              coverUrl: meta?.cover ?? "/covers/default.jpg",
-            },
-          });
-        }
-        console.log("📚 My Library sincronizada para:", userId);
-      } catch (libErr) {
-        console.error("⚠️ Error actualizando My Library:", libErr);
+      for (const bookId of redeemed.books) {
+        const meta = bookCatalog[bookId];
+        await prisma.libraryBook.upsert({
+          where: { userId_bookId: { userId, bookId } },
+          update: {},
+          create: {
+            userId,
+            bookId,
+            title: meta?.title ?? bookId,
+            coverUrl: meta?.cover ?? "/covers/default.jpg",
+          },
+        });
       }
+      console.log("📚 My Library sincronizada para:", userId);
+    } catch (libErr) {
+      console.error("⚠️ Error actualizando My Library:", libErr);
     }
 
-    // 🚀 Si llega con ?book=slug válido, redirige al libro
+    // 🚀 Redirige al libro si venía con ?book=slug válido
     if (bookSlug && bookCatalog[bookSlug]) {
       console.log("➡️ Redirigiendo al libro:", bookSlug);
       return NextResponse.redirect(`${url.origin}/books/${bookSlug}`);
@@ -108,11 +109,9 @@ export async function GET(
     }));
 
     return NextResponse.json({
-      message: userId
-        ? "Books added to your account"
-        : "Claim redeemed successfully (no Clerk user)",
+      message: "Books added to your account",
       books: detailedBooks,
-      redeemedBy: userId ?? null,
+      redeemedBy: userId,
     });
   } catch (err) {
     console.error("💥 Error en claim:", err);
