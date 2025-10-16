@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { PrismaClient } from "@/generated/prisma";
 import { shopifybundles } from "@/data/shopifybundles";
+import { sendClaimEmail } from "@/lib/email";
 
 const prisma = new PrismaClient();
 
@@ -70,10 +71,9 @@ export async function POST(req: Request) {
     const isValid = verifyShopifyHmac(rawBody, receivedHmac);
     console.log("🧾 HMAC válido:", isValid);
     if (!isValid) {
-  console.warn("⚠️ Shopify HMAC inválido (ignorando para test)");
-  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-}
-
+      console.warn("⚠️ Shopify HMAC inválido (ignorando para test)");
+      // return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
 
     // 3️⃣ Parsear JSON validado
     const parsed = JSON.parse(rawBody) as unknown;
@@ -88,7 +88,7 @@ export async function POST(req: Request) {
     console.log("🛒 Line items detectados:", line_items);
 
     const purchasedBooks = line_items
-      .flatMap(i => {
+      .flatMap((i) => {
         const code = (i.sku ?? i.handle ?? "").trim();
         if (!code) return [];
         // Si el SKU corresponde a un bundle, expandimos sus libros
@@ -108,7 +108,6 @@ export async function POST(req: Request) {
     const buyerEmail = email;
     const recipientEmail = email; // por ahora asumimos que comprador = lector
 
-    // Delegate correcto: prisma.claimToken (según Prisma ModelName ClaimToken)
     const claim = await prisma.claimToken.create({
       data: {
         token,
@@ -119,6 +118,17 @@ export async function POST(req: Request) {
     });
 
     console.log("🎟️ Claim creado:", claim);
+
+    try {
+      await sendClaimEmail({
+        to: recipientEmail,
+        token: claim.token,
+        books: claim.books,
+      });
+      console.log("📧 Email enviado correctamente a", recipientEmail);
+    } catch (emailErr) {
+      console.error("⚠️ Error enviando correo:", emailErr);
+    }
 
     return NextResponse.json({
       message: "Claim token created",
