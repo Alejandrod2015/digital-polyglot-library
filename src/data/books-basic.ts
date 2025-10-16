@@ -1,4 +1,4 @@
-export const booksData: Record<
+export const books: Record<
   string,
   { title: string; cover: string; description?: string }
 > = {

@@ -1,8 +1,7 @@
-// src/app/api/claims/[token]/route.ts
-
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@/generated/prisma";
 import { auth } from "@clerk/nextjs/server";
+import { books as bookCatalog } from "@/data/books-basic";
 
 const prisma = new PrismaClient();
 
@@ -12,7 +11,7 @@ const CLERK_SECRET_KEY = process.env.CLERK_SECRET_KEY;
 async function patchUserMetadata(userId: string, books: string[]) {
   if (!CLERK_SECRET_KEY) throw new Error("Missing CLERK_SECRET_KEY");
 
-  // 1️⃣ Obtener metadata actual
+  // Obtener metadata actual del usuario
   const getRes = await fetch(`${CLERK_API_URL}/v1/users/${userId}`, {
     headers: { Authorization: `Bearer ${CLERK_SECRET_KEY}` },
   });
@@ -29,7 +28,7 @@ async function patchUserMetadata(userId: string, books: string[]) {
 
   const updatedBooks = Array.from(new Set([...currentBooks, ...books]));
 
-  // 2️⃣ Actualizar metadata
+  // Actualizar metadata
   const patchRes = await fetch(`${CLERK_API_URL}/v1/users/${userId}/metadata`, {
     method: "PATCH",
     headers: {
@@ -58,22 +57,16 @@ export async function GET(
     console.log("🔑 Clerk userId:", userId);
     console.log("🎟️ Claim request recibido:", token);
 
-    // 1️⃣ Buscar token en la base de datos
-    const claim = await prisma.claimToken.findUnique({
-      where: { token },
-    });
+    const claim = await prisma.claimToken.findUnique({ where: { token } });
 
     if (!claim) {
-      console.warn("🚫 Token no encontrado:", token);
       return NextResponse.json({ error: "Invalid token" }, { status: 404 });
     }
 
     if (claim.redeemedAt) {
-      console.warn("⚠️ Token ya utilizado:", token);
       return NextResponse.json({ error: "Token already used" }, { status: 410 });
     }
 
-    // 2️⃣ Marcar como redimido (con userId si existe)
     const updated = await prisma.claimToken.update({
       where: { token },
       data: {
@@ -84,17 +77,21 @@ export async function GET(
 
     console.log("✅ Token redimido:", updated.token, "por:", userId ?? "invitado");
 
-    // 3️⃣ Si hay sesión Clerk, actualizar metadata
     if (userId) {
       await patchUserMetadata(userId, updated.books);
     }
 
-    // 4️⃣ Responder con los libros
+    // Mapear libros con detalles desde bookCatalog
+    const detailedBooks = updated.books.map((id) => ({
+      id,
+      ...(bookCatalog[id] ?? { title: id, cover: "", description: "" }),
+    }));
+
     return NextResponse.json({
       message: userId
         ? "Books added to your account"
         : "Claim redeemed successfully (no Clerk user)",
-      books: updated.books,
+      books: detailedBooks,
       redeemedBy: userId ?? null,
     });
   } catch (err) {

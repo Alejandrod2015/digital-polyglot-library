@@ -71,7 +71,7 @@ export async function POST(req: Request) {
     console.log("🧾 HMAC válido:", isValid);
     if (!isValid) {
   console.warn("⚠️ Shopify HMAC inválido (ignorando para test)");
-  // return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 }
 
 
