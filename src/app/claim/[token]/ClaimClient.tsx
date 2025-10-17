@@ -1,14 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useAuth, UserButton } from "@clerk/nextjs";
 
 type Book = {
   id: string;
   title: string;
-  cover: string;
+  cover?: string;
   description?: string;
 };
 
@@ -44,7 +43,7 @@ export default function ClaimClient({ token }: { token: string }) {
           books: data.books || [],
           message: data.message || "Books added to your account",
         });
-      } catch (err) {
+      } catch {
         if (!cancelled) {
           setState({
             status: "error",
@@ -83,8 +82,9 @@ export default function ClaimClient({ token }: { token: string }) {
     );
   }
 
-  const message = state.message.includes("already")
-    ? "📚 You’ve already claimed these books."
+  const isAlreadyUsed = state.message.toLowerCase().includes("already");
+  const message = isAlreadyUsed
+    ? "📚 These books were already added to your library."
     : "✅ Books added to your account!";
 
   return (
@@ -102,20 +102,23 @@ export default function ClaimClient({ token }: { token: string }) {
 
       <div className="grid gap-6 sm:grid-cols-2 max-w-3xl">
         {state.books.map((book) => (
-          <Link
+          <div
             key={book.id}
-            href={`/books/${book.id}`}
-            className="bg-white/10 rounded-2xl p-4 flex flex-col items-center hover:bg-white/20 transition"
+            className="bg-white/10 rounded-2xl p-4 flex flex-col items-center"
           >
             <Image
-              src={book.cover}
+              src={
+                book.cover && book.cover.trim() !== ""
+                  ? book.cover
+                  : "/covers/default.jpg"
+              }
               alt={book.title}
               width={128}
               height={192}
-              className="rounded-lg mb-3 object-cover shadow"
+              className="rounded-lg mb-3 object-cover"
             />
             <p className="font-medium">{book.title}</p>
-          </Link>
+          </div>
         ))}
       </div>
 

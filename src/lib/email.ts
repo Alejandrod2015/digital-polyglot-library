@@ -1,7 +1,11 @@
 // /src/lib/email.ts
 import { Resend } from "resend";
-import { books as bookCatalog } from "@/data/books-basic";
+import { getBookTitle } from "@/lib/books";
 
+/**
+ * Envía un correo de redención de libros usando Resend.
+ * Los datos (títulos) se obtienen directamente desde Sanity.
+ */
 export async function sendClaimEmail({
   to,
   token,
@@ -13,8 +17,7 @@ export async function sendClaimEmail({
 }): Promise<"sent" | "skipped" | "failed"> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM;
-  const baseUrl =
-    process.env.APP_BASE_URL ?? "https://reader.digitalpolyglot.com";
+  const baseUrl = process.env.APP_BASE_URL ?? "https://reader.digitalpolyglot.com";
   const replyTo = "support@digitalpolyglot.com";
 
   if (!apiKey || !from) {
@@ -22,25 +25,19 @@ export async function sendClaimEmail({
     return "skipped";
   }
 
+  // 🔹 Obtiene los títulos reales desde Sanity
+  const titles = await Promise.all(books.map((slug) => getBookTitle(slug)));
+
   const claimUrl = `${baseUrl}/claim/${token}`;
-
-  const items = books.map((id) => {
-    const meta = bookCatalog[id];
-    const title = meta?.title ?? id;
-    const cover =
-      meta?.cover ?? "https://cdn.digitalpolyglot.com/covers/default.jpg";
-    const description = meta?.description ?? "";
-    return { id, title, cover, description };
-  });
-
   const subject = "Your Digital Polyglot books are ready!";
   const preheader = "Access your books instantly and start reading.";
+
   const text = [
     "Your Digital Polyglot purchase is ready.",
     `Access your books: ${claimUrl}`,
     "",
     "Purchased books:",
-    ...items.map((b) => `• ${b.title}`),
+    ...titles.map((t) => `• ${t}`),
     "",
     "If you didn’t make this purchase, please ignore this email or contact support.",
   ].join("\n");
@@ -59,7 +56,7 @@ export async function sendClaimEmail({
             
             <tr>
               <td style="background:#0D1B2A;padding:20px 24px;">
-                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#E5E7EB;font-size:14px;letter-spacing:.02em;">
+                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#E5E7EB;font-size:14px;">
                   <strong style="color:#fff;font-size:16px;">Digital Polyglot</strong><br/>
                   Your digital library for Spanish learners
                 </div>
@@ -70,47 +67,22 @@ export async function sendClaimEmail({
               <td style="padding:24px;">
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#111827;line-height:1.6;">
                   
-                  <h1 style="margin:0 0 8px;font-size:20px;">📚 Your books are ready!</h1>
-                  <p style="margin:0 0 16px;color:#374151;">
-                    Click below to add them to your Library and start reading instantly.
+                  <h1 style="margin:0 0 12px;font-size:22px;">📚 Your books are ready!</h1>
+                  <p style="margin:0 0 20px;color:#374151;">
+                    If this was a gift, you can forward this email to the recipient so they can access their books.
                   </p>
 
-                  <p style="margin:12px 0 24px;text-align:center;">
+                  <p style="margin:12px 0 28px;text-align:center;">
                     <a href="${claimUrl}"
                        style="background:#0ea5e9;color:#ffffff;padding:14px 24px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:600;">
-                      View your books in your Library
+                      Access your books
                     </a>
                   </p>
 
-                  <div style="margin:8px 0 4px;font-weight:600;">Purchased books</div>
-
-                  ${items
-                    .map(
-                      (b) => `
-                      <a href="${baseUrl}/claim/${token}?book=${b.id}" target="_blank" 
-                         style="text-decoration:none;color:inherit;display:block;">
-                        <table role="presentation" cellpadding="0" cellspacing="0" width="100%" 
-                               style="margin:12px 0;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
-                          <tr>
-                            <td width="110" style="padding:10px;">
-                              <img src="${b.cover}" alt="${b.title}" width="90" height="130" 
-                                   style="border-radius:8px;display:block;object-fit:cover;">
-                            </td>
-                            <td style="padding:10px 12px;vertical-align:top;">
-                              <div style="font-weight:600;color:#0ea5e9;margin:0 0 4px;">
-                                ${b.title}
-                              </div>
-                              ${
-                                b.description
-                                  ? `<div style="font-size:13px;color:#6B7280;margin:0;">${b.description}</div>`
-                                  : ""
-                              }
-                            </td>
-                          </tr>
-                        </table>
-                      </a>`
-                    )
-                    .join("")}
+                  <p style="margin:0 0 12px;font-weight:600;">Purchased books:</p>
+                  <ul style="margin:0 0 20px;padding-left:20px;color:#374151;">
+                    ${titles.map((t) => `<li>${t}</li>`).join("")}
+                  </ul>
 
                   <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
 
@@ -149,6 +121,7 @@ export async function sendClaimEmail({
       replyTo,
       tags: [{ name: "type", value: "transactional" }],
     });
+    console.log(`📨 Email de redención enviado a ${to}`);
     return "sent";
   } catch (err) {
     console.error("❌ Error enviando email con Resend:", err);
