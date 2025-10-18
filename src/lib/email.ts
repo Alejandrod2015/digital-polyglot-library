@@ -1,10 +1,23 @@
 // /src/lib/email.ts
 import { Resend } from "resend";
-import { getBookTitle } from "@/lib/books";
+import { client as sanityClient } from "@/sanity/lib/client";
 
 /**
- * Envía un correo de redención de libros usando Resend.
- * Los datos (títulos) se obtienen directamente desde Sanity.
+ * Gets the book title from Sanity by its slug.
+ */
+async function getBookTitle(slug: string): Promise<string> {
+  try {
+    const query = `*[_type == "book" && slug.current == $slug][0]{ title }`;
+    const result = await sanityClient.fetch<{ title?: string } | null>(query, { slug });
+    return result?.title ?? slug;
+  } catch (err) {
+    console.error("⚠️ Error fetching title from Sanity for:", slug, err);
+    return slug;
+  }
+}
+
+/**
+ * Sends the email with the access link to the books.
  */
 export async function sendClaimEmail({
   to,
@@ -21,25 +34,25 @@ export async function sendClaimEmail({
   const replyTo = "support@digitalpolyglot.com";
 
   if (!apiKey || !from) {
-    console.warn("⚠️ RESEND_API_KEY o EMAIL_FROM no definida, se omite envío de correo");
+    console.warn("⚠️ RESEND_API_KEY or EMAIL_FROM not defined, skipping email send");
     return "skipped";
   }
 
-  // 🔹 Obtiene los títulos reales desde Sanity
+  // 🔹 Get titles from Sanity
   const titles = await Promise.all(books.map((slug) => getBookTitle(slug)));
-
   const claimUrl = `${baseUrl}/claim/${token}`;
-  const subject = "Your Digital Polyglot books are ready!";
-  const preheader = "Access your books instantly and start reading.";
+
+  const subject = "Your Digital Polyglot books are ready 📚";
+  const preheader = "Access your books and start reading instantly.";
 
   const text = [
-    "Your Digital Polyglot purchase is ready.",
-    `Access your books: ${claimUrl}`,
+    "Your Digital Polyglot books are ready.",
+    `Access them with this link: ${claimUrl}`,
     "",
-    "Purchased books:",
+    "Included books:",
     ...titles.map((t) => `• ${t}`),
     "",
-    "If you didn’t make this purchase, please ignore this email or contact support.",
+    "If you didn’t make this purchase, ignore this message or contact us at support@digitalpolyglot.com.",
   ].join("\n");
 
   const html = `
@@ -58,7 +71,7 @@ export async function sendClaimEmail({
               <td style="background:#0D1B2A;padding:20px 24px;">
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#E5E7EB;font-size:14px;">
                   <strong style="color:#fff;font-size:16px;">Digital Polyglot</strong><br/>
-                  Your digital library for Spanish learners
+                  Your digital library for learning Spanish
                 </div>
               </td>
             </tr>
@@ -67,19 +80,19 @@ export async function sendClaimEmail({
               <td style="padding:24px;">
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#111827;line-height:1.6;">
                   
-                  <h1 style="margin:0 0 12px;font-size:22px;">📚 Your books are ready!</h1>
+                  <h1 style="margin:0 0 12px;font-size:22px;">📚 Your books are ready</h1>
                   <p style="margin:0 0 20px;color:#374151;">
-                    If this was a gift, you can forward this email to the recipient so they can access their books.
+                    If this was a gift, you can forward this email to the intended recipient so they can access the books.
                   </p>
 
                   <p style="margin:12px 0 28px;text-align:center;">
                     <a href="${claimUrl}"
                        style="background:#0ea5e9;color:#ffffff;padding:14px 24px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:600;">
-                      Access your books
+                      Open my books
                     </a>
                   </p>
 
-                  <p style="margin:0 0 12px;font-weight:600;">Purchased books:</p>
+                  <p style="margin:0 0 12px;font-weight:600;">Included books:</p>
                   <ul style="margin:0 0 20px;padding-left:20px;color:#374151;">
                     ${titles.map((t) => `<li>${t}</li>`).join("")}
                   </ul>
@@ -87,7 +100,7 @@ export async function sendClaimEmail({
                   <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
 
                   <p style="font-size:12px;color:#6B7280;margin:0;text-align:center;">
-                    This is a transactional email for your Digital Polyglot purchase.<br/>
+                    This is a transactional email from Digital Polyglot.<br/>
                     If you need help, reply to this message or visit
                     <a href="https://reader.digitalpolyglot.com/support" style="color:#0ea5e9;">our support page</a>.
                   </p>
@@ -121,10 +134,11 @@ export async function sendClaimEmail({
       replyTo,
       tags: [{ name: "type", value: "transactional" }],
     });
-    console.log(`📨 Email de redención enviado a ${to}`);
+
+    console.log(`📧 Claim email sent to ${to}`);
     return "sent";
   } catch (err) {
-    console.error("❌ Error enviando email con Resend:", err);
+    console.error("❌ Error sending email with Resend:", err);
     return "failed";
   }
 }

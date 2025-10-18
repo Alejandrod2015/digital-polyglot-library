@@ -13,7 +13,7 @@ const prisma = new PrismaClient();
 async function patchUserMetadata(userId: string, books: string[]): Promise<void> {
   const clerkSecret = process.env.CLERK_SECRET_KEY;
   if (!clerkSecret) {
-    console.error("❌ Missing CLERK_SECRET_KEY");
+    console.error("❌ Falta CLERK_SECRET_KEY");
     return;
   }
 
@@ -30,14 +30,14 @@ async function patchUserMetadata(userId: string, books: string[]): Promise<void>
       publicMetadata: { books: updatedBooks },
     });
 
-    console.log("✅ Clerk metadata updated for:", userId, updatedBooks);
+    console.log("✅ Clerk metadata actualizada para:", userId, updatedBooks);
   } catch (err: any) {
-    console.error("💥 Clerk metadata update failed:", err?.message || err);
+    console.error("💥 Error actualizando metadata en Clerk:", err?.message || err);
   }
 }
 
 /**
- * Handler principal de redención de token
+ * Endpoint principal de redención de enlaces
  */
 export async function GET(
   req: Request,
@@ -48,35 +48,54 @@ export async function GET(
     const { token } = await params;
     const { userId } = await auth();
 
-    console.log("🎟️ Claim recibido:", token);
-    console.log("🔑 Clerk userId:", userId ?? "no-session");
+    console.log("🎟️ Solicitud de redención:", token);
+    console.log("🔑 Usuario Clerk:", userId ?? "sin sesión");
 
     const claim = await prisma.claimToken.findUnique({ where: { token } });
 
     if (!claim) {
-      console.warn("🚫 Token inválido o inexistente");
-      return NextResponse.json({ error: "Invalid token" }, { status: 404 });
+      console.warn("🚫 Enlace inválido o inexistente");
+      return NextResponse.json(
+        { error: "Este enlace de acceso no es válido o ha expirado." },
+        { status: 404 }
+      );
     }
 
-    // ♻️ Token idempotente
+    // 🔒 Si ya fue usado por otro usuario → bloquear
+    if (claim.redeemedBy && claim.redeemedBy !== userId) {
+      console.warn(`🚫 Enlace ya usado por otro usuario (${claim.redeemedBy})`);
+      return NextResponse.json(
+        {
+          error:
+            "Este enlace de acceso ya fue usado. Si crees que es un error, escríbenos a support@digitalpolyglot.com.",
+        },
+        { status: 410 }
+      );
+    }
+
+    // ✅ Si no ha sido redimido, marcarlo
     let redeemed = claim;
     if (!claim.redeemedAt) {
       redeemed = await prisma.claimToken.update({
         where: { token },
-        data: { redeemedAt: new Date(), redeemedBy: userId ?? null },
+        data: {
+          redeemedAt: new Date(),
+          redeemedBy: userId ?? null,
+        },
       });
-      console.log("✅ Token redimido por:", userId ?? "invitado");
+      console.log("✅ Enlace redimido por:", userId ?? "invitado");
     } else if (!claim.redeemedBy && userId) {
-      await prisma.claimToken.update({
+      // Si se usó sin sesión antes, ahora lo asignamos al usuario actual
+      redeemed = await prisma.claimToken.update({
         where: { token },
         data: { redeemedBy: userId },
       });
-      console.log("🔁 Token re-asignado a:", userId);
+      console.log("🔁 Enlace asignado a usuario:", userId);
     } else {
-      console.log("♻️ Token ya redimido previamente.");
+      console.log("♻️ Enlace ya redimido previamente por este usuario.");
     }
 
-    // 🔹 Si hay sesión, sincroniza Clerk + My Library
+    // 🧩 Si hay sesión, sincronizar Clerk + My Library
     if (userId) {
       try {
         await patchUserMetadata(userId, redeemed.books);
@@ -85,7 +104,7 @@ export async function GET(
           const meta = await getBookMeta(bookId);
           await prisma.libraryBook.upsert({
             where: { userId_bookId: { userId, bookId } },
-            update: {},
+            update: {}, // idempotente
             create: {
               userId,
               bookId,
@@ -94,13 +113,14 @@ export async function GET(
             },
           });
         }
+
         console.log("📚 My Library sincronizada para:", userId);
       } catch (libErr) {
         console.error("⚠️ Error actualizando My Library:", libErr);
       }
     }
 
-    // 🎨 Devuelve detalles de libros desde Sanity
+    // 🖼️ Obtener detalles de los libros desde Sanity
     const detailedBooks = await Promise.all(
       redeemed.books.map(async (slug) => ({
         id: slug,
@@ -110,13 +130,19 @@ export async function GET(
 
     return NextResponse.json({
       message: claim.redeemedAt
-        ? "Books already in your account"
-        : "Books added to your account",
+        ? "Estos libros ya están en tu cuenta."
+        : "Libros agregados correctamente a tu cuenta.",
       books: detailedBooks,
       redeemedBy: userId ?? null,
     });
   } catch (err) {
-    console.error("💥 Error en claim:", err);
-    return NextResponse.json({ error: "Internal error" }, { status: 500 });
+    console.error("💥 Error en el proceso de redención:", err);
+    return NextResponse.json(
+      {
+        error:
+          "Ocurrió un error interno al procesar tu solicitud. Intenta nuevamente más tarde.",
+      },
+      { status: 500 }
+    );
   }
 }

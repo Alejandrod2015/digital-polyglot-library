@@ -28,9 +28,17 @@ export async function getBookMeta(slug: string) {
       };
     }
 
+    // 🔧 Asegura que el cover sea una URL válida y no una cadena vacía
+        const validCover =
+    book.cover
+        ? book.cover.startsWith("http")
+        ? book.cover
+        : `https://cdn.sanity.io${book.cover}`
+        : "/covers/default.jpg";
+
     return {
       title: book.title ?? slug,
-      cover: book.cover ?? "/covers/default.jpg",
+      cover: validCover,
       description: book.description ?? "",
     };
   } catch (err) {
