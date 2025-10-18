@@ -72,7 +72,7 @@ export default function ClaimClient({ token }: { token: string }) {
   if (state.status === "error") {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center bg-[#0D1B2A] text-white px-6 text-center">
-        <h1 className="text-2xl font-semibold mb-3">This access link has already been used</h1>
+        <h1 className="text-2xl font-semibold mb-3">This access link has already been used.</h1>
         <p className="text-white/80 mb-6">{state.message}</p>
         <a
           href="https://reader.digitalpolyglot.com/"

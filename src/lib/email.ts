@@ -71,7 +71,7 @@ export async function sendClaimEmail({
               <td style="background:#0D1B2A;padding:20px 24px;">
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#E5E7EB;font-size:14px;">
                   <strong style="color:#fff;font-size:16px;">Digital Polyglot</strong><br/>
-                  Your digital library for learning Spanish
+                  Your digital library for language learning
                 </div>
               </td>
             </tr>
@@ -101,8 +101,8 @@ export async function sendClaimEmail({
 
                   <p style="font-size:12px;color:#6B7280;margin:0;text-align:center;">
                     This is a transactional email from Digital Polyglot.<br/>
-                    If you need help, reply to this message or visit
-                    <a href="https://reader.digitalpolyglot.com/support" style="color:#0ea5e9;">our support page</a>.
+                    If you need help, write to
+                    <a href="mailto:support@digitalpolyglot.com" style="color:#0ea5e9;">support@digitalpolyglot.com</a>.
                   </p>
                 </div>
               </td>

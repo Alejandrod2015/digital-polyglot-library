@@ -20,19 +20,28 @@ async function patchUserMetadata(userId: string, books: string[]): Promise<void>
   const clerkClient = createClerkClient({ secretKey: clerkSecret });
 
   try {
+    // 1) Lee el metadata actual
     const user = await clerkClient.users.getUser(userId);
-    const currentBooks = Array.isArray(user.publicMetadata?.books)
-      ? (user.publicMetadata.books as string[])
+    const existingMeta = (user.publicMetadata ?? {}) as Record<string, unknown>;
+
+    const currentBooks = Array.isArray(existingMeta.books)
+      ? (existingMeta.books as string[])
       : [];
 
-    const updatedBooks = [...new Set([...currentBooks, ...books])];
-    await clerkClient.users.updateUser(userId, {
-      publicMetadata: { books: updatedBooks },
-    });
+    // 2) Fusiona libros sin perder otras claves (plan/membership/etc.)
+    const updatedBooks = Array.from(new Set([...currentBooks, ...books]));
+    const newMeta: Record<string, unknown> = {
+      ...existingMeta,
+      books: updatedBooks,
+    };
 
-    console.log("✅ Clerk metadata actualizada para:", userId, updatedBooks);
-  } catch (err: any) {
-    console.error("💥 Error actualizando metadata en Clerk:", err?.message || err);
+    // 3) Actualiza Clerk preservando el resto de publicMetadata
+    await clerkClient.users.updateUser(userId, { publicMetadata: newMeta });
+
+    console.log("✅ Clerk metadata fusionada para:", userId, newMeta);
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("💥 Error actualizando metadata en Clerk:", msg);
   }
 }
 
