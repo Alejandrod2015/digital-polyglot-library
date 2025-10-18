@@ -13,6 +13,14 @@
  *   "bundle-handle": ["book-slug-1", "book-slug-2", ...],
  */
 
-export const shopifybundles: Record<string, string[]> = {};
+export const shopifybundles: Record<string, string[]> = {
+
+"colombian-spanish-essentials": [
+   "colombian-spanish-phrasebook",
+   "short-stories-in-colombian-spanish",
+ ],
+
+
+};
 
 export default shopifybundles;
