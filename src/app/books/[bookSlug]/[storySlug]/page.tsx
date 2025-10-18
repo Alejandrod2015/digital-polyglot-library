@@ -110,7 +110,11 @@ const coverUrl = rawCover.startsWith('https://cdn.sanity.io/')
       {hasFullAccess ? (
         <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
           <Player
-            src={`${book.audioFolder}/${story.audio}`}
+            src={
+              story.audio.startsWith("http")
+                ? story.audio
+                : `${book.audioFolder?.replace(/\/$/, "") ?? ""}/${story.audio}`
+            }
             bookSlug={book.slug}
             storySlug={story.slug}
           />
