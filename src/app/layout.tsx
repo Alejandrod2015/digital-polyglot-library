@@ -33,20 +33,6 @@ export default function RootLayout({
             name="apple-mobile-web-app-status-bar-style"
             content="black-translucent"
           />
-          {/* 🚫 Evitar flash durante hidratación */}
-          <style>{`
-            html { background-color: #121212; }
-            body { opacity: 0; transition: none; }
-          `}</style>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.addEventListener('DOMContentLoaded', () => {
-                  document.body.style.opacity = '1';
-                });
-              `,
-            }}
-          />
         </head>
 
         <body className="bg-[#121212] text-[#E0E0E0]">

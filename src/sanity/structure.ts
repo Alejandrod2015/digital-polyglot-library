@@ -1,5 +1,5 @@
 // /src/sanity/structure.ts
-import type { StructureResolver } from "sanity/structure";
+import { StructureResolver } from "sanity/structure";
 
 export const structure: StructureResolver = (S) =>
   S.list()
@@ -12,22 +12,20 @@ export const structure: StructureResolver = (S) =>
         .child(
           S.documentTypeList("book")
             .title("Books")
-            // Al entrar en un libro, mostramos solo sus historias
             .child((bookId: string) =>
-  S.documentList()
-    .title("Stories in this Book")
-    .filter('_type == "story" && references($bookId)')
-    .params({ bookId })
-    .initialValueTemplates([
-      S.initialValueTemplateItem("story-from-book", { bookId }),
-    ])
-)
-
+              S.documentList()
+                .title("Stories in this Book")
+                .filter('_type == "story" && references($bookId)')
+                .params({ bookId })
+                .initialValueTemplates([
+                  S.initialValueTemplateItem("story-from-book", { bookId }),
+                ])
+            )
         ),
 
       S.divider(),
 
-      // 📚 Todos los libros (publicados o no)
+      // 📚 Todos los libros
       S.listItem()
         .title("📚 All Books")
         .schemaType("book")
@@ -58,4 +56,16 @@ export const structure: StructureResolver = (S) =>
         .title("📄 All Stories")
         .schemaType("story")
         .child(S.documentTypeList("story").title("All Stories")),
+
+      S.divider(),
+
+      // ⚙️ Configuración de marketing (singleton)
+      S.listItem()
+        .title("⚙️ Marketing Settings")
+        .child(
+          S.document()
+            .schemaType("marketingSettings")
+            .documentId("marketingSettings")
+            .title("Marketing Settings")
+        ),
     ]);

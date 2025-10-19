@@ -14,7 +14,17 @@ export const marketingSettings = defineType({
       type: "array",
       of: [{ type: "reference", to: [{ type: "story" }] }],
       description:
-        "Selecciona las historias que estarán disponibles gratuitamente para usuarios free. Solo la primera será la 'Story of the Week'.",
+        "Selecciona manualmente las historias que estarán disponibles gratuitamente para usuarios free. Solo la primera será la 'Story of the Week'. Si está vacío, el sistema elegirá una automáticamente.",
+    }),
+    defineField({
+      name: "usedStories",
+      title: "Historias ya usadas (automático)",
+      type: "array",
+      of: [{ type: "string" }],
+      readOnly: true,
+      hidden: true,
+      description:
+        "Registro interno de historias ya elegidas automáticamente para no repetirlas hasta agotar todas.",
     }),
   ],
   preview: {

@@ -1,5 +1,5 @@
 // /src/sanity/lib/queries.ts
-import { sanityClient } from "./sanityClient";
+import { client } from "./client";
 import { groq } from "next-sanity";
 
 /**
@@ -47,7 +47,7 @@ export async function getStoriesByBookId(bookId: string) {
       "slug": book->slug.current,
       "cover": book->cover.asset->url
     }
-  } | order(_createdAt asc)`;
+  ] | order(_createdAt asc)`;
 
-  return await sanityClient.fetch(query, { bookId });
+  return await client.fetch(query, { bookId });
 }

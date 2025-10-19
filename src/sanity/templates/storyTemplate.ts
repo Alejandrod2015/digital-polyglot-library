@@ -1,5 +1,5 @@
 // /src/sanity/templates/storyTemplate.ts
-import { sanityClient } from "../lib/sanityClient";
+import { client } from "../lib/client";
 import { groq } from "next-sanity";
 
 export const storyTemplate = {
@@ -22,7 +22,7 @@ export const storyTemplate = {
       topic,
       formality
     }`;
-    const bookData = await sanityClient.fetch(query, { id: params.bookId });
+    const bookData = await client.fetch(query, { id: params.bookId });
 
     // según el idioma, asignamos la región al campo correcto
     const regionMap: Record<string, string> = {
