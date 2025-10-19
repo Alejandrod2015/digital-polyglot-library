@@ -118,11 +118,11 @@ export default function Sidebar({ onClose }: SidebarProps) {
         </Link>
 
         <Link
-          href="/story-of-the-day"
+          href="/story-of-the-week"
           onClick={onClose}
           className="flex items-center gap-3 hover:text-pink-400 transition-colors"
         >
-          <BookMarked size={22} /> Story of the Day
+          <BookMarked size={22} /> Story of the Week
         </Link>
 
         <Link
