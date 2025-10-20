@@ -59,13 +59,13 @@ export const structure: StructureResolver = (S) =>
 
       S.divider(),
 
-      // ⚙️ Configuración de marketing (singleton)
+      // 📅 Story Scheduler (nuevo singleton)
       S.listItem()
-        .title("⚙️ Marketing Settings")
+        .title("📅 Story Scheduler")
         .child(
           S.document()
-            .schemaType("marketingSettings")
-            .documentId("marketingSettings")
-            .title("Marketing Settings")
+            .schemaType("storyScheduler")
+            .documentId("storyScheduler")
+            .title("Story Scheduler")
         ),
     ]);

@@ -1,34 +1,23 @@
-import { getFreeStorySlugs } from "@/data/freeStories";
+// /src/app/story-of-the-week/page.tsx
+import { getFeaturedStory } from "@/lib/getFeaturedStory";
 import { getBookMeta } from "@/lib/books";
-import { client as sanityClient } from "@/sanity/lib/client";
+import { updateStoryOfTheWeek } from "@/sanity/actions/updateStoryOfTheWeek";
 import Link from "next/link";
 import Image from "next/image";
+import { client } from "@/sanity/lib/client";
 
 export const dynamic = "force-dynamic";
 
-type SanityBook = {
-  slug: { current: string } | string;
-  title?: string;
-  cover?: string;
-  description?: string;
-  language?: string;
-  level?: string;
-  topic?: string;
-};
-
-type StoryWithBook = {
-  title: string;
-  language?: string;
-  level?: string;
-  focus?: string;
-  theme?: string[];
-  book?: SanityBook;
-};
-
 export default async function StoryOfTheWeekPage() {
-  const freeSlugs = await getFreeStorySlugs();
+  const tz = Intl.DateTimeFormat().resolvedOptions?.().timeZone || "UTC";
 
-  if (!freeSlugs.length) {
+  // 🧠 1. Asegurar que siempre exista historia semanal y próxima
+  await updateStoryOfTheWeek();
+
+  // 🧩 2. Obtener la historia actual destacada
+  const featured = await getFeaturedStory("week", tz);
+
+  if (!featured) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center p-8 text-gray-300 bg-[#0D1B2A]">
         <p>No hay una historia destacada esta semana.</p>
@@ -42,18 +31,15 @@ export default async function StoryOfTheWeekPage() {
     );
   }
 
-  const targetSlug = freeSlugs[0];
-
-  const story = await sanityClient.fetch<StoryWithBook | null>(
+  // 🔍 3. Obtener datos completos de la historia
+  const story = await client.fetch(
     `*[_type == "story" && slug.current == $slug][0]{
       title,
-      language,
-      level,
+      "slug": slug.current,
       focus,
-      theme,
       book->{
-        slug,
         title,
+        "slug": slug.current,
         "cover": coalesce(cover.asset->url, "/covers/default.jpg"),
         description,
         language,
@@ -61,7 +47,7 @@ export default async function StoryOfTheWeekPage() {
         topic
       }
     }`,
-    { slug: targetSlug }
+    { slug: featured.slug }
   );
 
   if (!story || !story.book) {
@@ -79,10 +65,8 @@ export default async function StoryOfTheWeekPage() {
   }
 
   const book = story.book;
-  const slugValue =
-    typeof book.slug === "string" ? book.slug : book.slug.current;
-  const meta = await getBookMeta(slugValue);
-  const coverUrl = meta.cover || "/covers/default.jpg";
+  const meta = await getBookMeta(book.slug);
+  const coverUrl = book.cover || meta.cover || "/covers/default.jpg";
 
   return (
     <div className="min-h-screen bg-[#0D1B2A] text-white flex flex-col items-center justify-center px-4 sm:px-8 py-12">
@@ -111,7 +95,7 @@ export default async function StoryOfTheWeekPage() {
           <p className="text-gray-400 text-sm mb-6">
             From{" "}
             <span className="text-white font-medium">
-              {meta.title}
+              {book.title || meta.title}
             </span>
           </p>
 
@@ -139,16 +123,17 @@ export default async function StoryOfTheWeekPage() {
             )}
           </div>
 
-          {/* Descripción del libro */}
+          {/* Descripción */}
           <p className="text-gray-300 leading-relaxed mb-8">
-            {meta.description ||
-              `From the book "${meta.title}", this story invites you to explore language and culture through authentic storytelling.`}
+            {book.description ||
+              meta.description ||
+              `From the book "${book.title || meta.title}", this story invites you to explore language and culture through authentic storytelling.`}
           </p>
 
           {/* Botones */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
             <Link
-              href={`/books/${slugValue}/${targetSlug}`}
+              href={`/books/${book.slug}/${story.slug}`}
               className="px-6 py-3 bg-sky-600 hover:bg-sky-700 rounded-xl font-medium transition text-center"
             >
               Read for free

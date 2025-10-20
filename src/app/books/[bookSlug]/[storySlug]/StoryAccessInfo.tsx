@@ -31,8 +31,8 @@ export default function StoryAccessInfo({
 
   const baseText =
     userPlan === 'free'
-      ? `Te quedan ${storiesLeft ?? 0} de 10 historias gratuitas.`
-      : `Te queda ${storiesLeft ?? 0} historia disponible hoy.`;
+      ? `You have ${storiesLeft ?? 0} of 10 free stories left.`
+      : `You have ${storiesLeft ?? 0} stories available today.`;
 
   return (
     <div
@@ -45,7 +45,7 @@ export default function StoryAccessInfo({
       {/* 🕐 Mostrar mensaje adicional solo si es BASIC y ya llegó al límite */}
       {userPlan === 'basic' && limitReached && (
         <p className="text-xs text-gray-500 mt-1 italic">
-          Vuelve mañana para desbloquear una nueva historia.
+          Come back tomorrow to unlock a new story.
         </p>
       )}
     </div>

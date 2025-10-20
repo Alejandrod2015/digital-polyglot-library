@@ -1,8 +1,9 @@
-import { type SchemaTypeDefinition } from 'sanity';
-import { book } from './book';
-import { story } from './story';
-import { marketingSettings } from './marketingSettings';
+// /src/sanity/schemaTypes/index.ts
+import { type SchemaTypeDefinition } from "sanity";
+import { book } from "./book";
+import { story } from "./story";
+import { storyScheduler } from "./storyScheduler";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [book, story, marketingSettings],
+  types: [book, story, storyScheduler],
 };

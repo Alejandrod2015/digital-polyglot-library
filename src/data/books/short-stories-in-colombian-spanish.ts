@@ -100,6 +100,67 @@ export const shortstoriesincolombianspanish: Book = {
         "definition": "A tropical fruit with soft and sweet pulp."
       }
     ]
+  },
+  {
+    "id": "el-reto-universitario",
+    "slug": "el-reto-universitario",
+    "title": "El reto universitario",
+    "text": "<p>Sonia, una joven <span class=\"vocab-word\" data-word=\"Indígena Wayuu\">indígena wayuu</span> de La Guajira, se enfrenta a desafíos culturales y económicos en su búsqueda por obtener una educación universitaria. Ignacio, su amigo y <span class=\"vocab-word\" data-word=\"Confidente\">confidente</span>, la apoya en su lucha por igualdad de oportunidades y superación personal. Sonia está sentada en la <span class=\"vocab-word\" data-word=\"Hamaca\">hamaca</span> de su hogar, mirando al horizonte. Ignacio se acerca.</p> <blockquote>Sonia: ¡Ignacio! No sé cómo decirlo, pero quiero más para mí y para mi comunidad. Quiero estudiar en la universidad.</blockquote> <blockquote>Ignacio: ¡Claro que sí, Sonia! Tienes todo el derecho. Pero sabes que no será fácil.</blockquote> <p>Días después, Sonia e Ignacio visitan la universidad para obtener información sobre los procesos de admisión.</p> <blockquote>Ignacio: Aquí estamos, Sonia. Este es el primer paso para alcanzar tus sueños.</blockquote> <blockquote>Sonia: ¿Crees que <span class=\"vocab-word\" data-word=\"Encajamos\">encajamos</span> aquí? Somos diferentes, Ignacio.</blockquote> <blockquote>Ignacio: Somos diferentes, pero eso no significa que no <span class=\"vocab-word\" data-word=\"Pertenecemos\">pertenecemos</span>. ¡Vamos a averiguar qué se necesita para ingresar!</blockquote> <p>Después de obtener información, Sonia es aceptada en el proceso y se enfrenta a una entrevista de admisión, donde debe explicar sus raíces <span class=\"vocab-word\" data-word=\"Wayuu\">wayuu</span> y la realidad de La Guajira.</p> <blockquote>Entrevistador: Sonia, cuéntanos sobre tu comunidad <span class=\"vocab-word\" data-word=\"Wayuu\">wayuu</span> y por qué quieres estudiar aquí.</blockquote> <blockquote>Sonia: (Con determinación) Quiero aprender para regresar y cambiar la realidad en La Guajira. Quiero ser la voz de aquellos que no pueden llegar hasta aquí.</blockquote> <p>Sonia es aceptada en la universidad, sin embargo, se encuentra con desafíos económicos para <span class=\"vocab-word\" data-word=\"Costear\">costear</span> los estudios.</p> <blockquote>Ignacio: <span class=\"vocab-word\" data-word=\"Gonorrea\">Gonorrea</span>, Sonia, esto es <span class=\"vocab-word\" data-word=\"Caro\">caro</span>. Pero no te preocupes, encontraremos una manera.</blockquote> <blockquote>Sonia: No hay límite para lo que podemos lograr, si nos esforzamos juntos.</blockquote> <p>En el primer día de clases, Sonia e Ignacio observan todo sorprendidos e ilusionados.</p> <blockquote>Sonia: Esto es <span class=\"vocab-word\" data-word=\"Surreal\">surreal</span>. ¿Te das cuenta de lo lejos que hemos llegado?</blockquote> <blockquote>Ignacio: Lo logramos, <span class=\"vocab-word\" data-word=\"Ñera\">ñera</span>. Pero esto es solo el principio.</blockquote> <p>Los años pasaron y Sonia regresó a La Guajira después de obtener su <span class=\"vocab-word\" data-word=\"Título\">título</span>. Conversa con Ignacio.</p> <blockquote>Sonia: Regresé, pero siento que tengo una responsabilidad aún mayor ahora.</blockquote> <blockquote>Ignacio: No olvidemos de dónde venimos ni a quienes representamos.</blockquote> <p>Sonia, con su <span class=\"vocab-word\" data-word=\"Título\">título</span> en mano, habla ante su comunidad.</p> <blockquote>Sonia: Puedo ser la primera, pero no seré la última. Juntos, podemos cambiar nuestras vidas y nuestras historias.</blockquote> <blockquote>Ignacio: ¡Eso es! ¡Sí se puede!</blockquote> <p>En La Guajira, Sonia e Ignacio demostraron que la igualdad de oportunidades es posible, incluso en contextos <span class=\"vocab-word\" data-word=\"Desafiantes\">desafiantes</span>. Su historia inspiró a otros a perseguir sus sueños.</p>",
+    "audio": "https://cdn.sanity.io/files/9u7ilulp/production/cbb56648af23e220e0d9e6259d89a472b4bccdd8.mp3",
+    "vocab": [
+      {
+        "word": "Indígena Wayuu",
+        "definition": "Member of the Wayuu indigenous people from the La Guajira region in Colombia."
+      },
+      {
+        "word": "Confidente",
+        "definition": "A person you trust with secrets or private thoughts."
+      },
+      {
+        "word": "Hamaca",
+        "definition": "A hanging bed or seat made of fabric, common in tropical areas."
+      },
+      {
+        "word": "Encajamos",
+        "definition": "To fit or adapt well into a situation."
+      },
+      {
+        "word": "Pertenecemos",
+        "definition": "To be part of a group or community."
+      },
+      {
+        "word": "Wayuu",
+        "definition": "An indigenous people of the La Guajira Peninsula in Colombia and Venezuela."
+      },
+      {
+        "word": "Costear",
+        "definition": "To pay or cover the expenses of something."
+      },
+      {
+        "word": "Gonorrea",
+        "definition": "Colloquial expression used to show surprise or annoyance."
+      },
+      {
+        "word": "Caro",
+        "definition": "Something that has a high cost or value."
+      },
+      {
+        "word": "Surreal",
+        "definition": "Something unreal or extraordinary."
+      },
+      {
+        "word": "Ñera",
+        "definition": "Colloquial term to refer to a person, often a friend."
+      },
+      {
+        "word": "Título",
+        "definition": "A document that certifies the completion of studies or an official position."
+      },
+      {
+        "word": "Desafiantes",
+        "definition": "That which challenges or presents difficulties."
+      }
+    ]
   }
 ]
 };

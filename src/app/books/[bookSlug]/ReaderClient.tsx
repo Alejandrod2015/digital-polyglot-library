@@ -11,7 +11,7 @@ import { getStoriesReadCount, getStoriesLimit, addStoryToHistory } from '@/utils
 type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
 
 export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; userPlan?: UserPlan }) {
-  console.log('🟢 Plan del usuario:', userPlan);
+  console.log('🟢 User plan:', userPlan);
   const stripPunct = (s: string) => s.replace(/[.,!?;:()"'«»¿¡]/g, '');
   const highlightWord = (text: string, word: string) => {
     if (!word) return text;
@@ -62,8 +62,8 @@ export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; 
       if (overLimit) {
         alert(
           userPlan === 'free'
-            ? 'Has alcanzado el límite de 10 historias gratuitas.'
-            : 'Has leído tu historia diaria como usuario Basic.'
+            ? "You've reached the limit of 10 free stories."
+            : "You've read your daily story as a Basic user."
         );
       } else {
         addStoryToHistory(story.id);
@@ -90,7 +90,7 @@ useEffect(() => {
 }, [userPlan, story?.id]);
 
   if (!story) {
-    return <div className="p-8 text-center">No se encontró la historia seleccionada.</div>;
+    return <div className="p-8 text-center">Selected story not found.</div>;
   }
 
   if (limitReached) {
@@ -98,11 +98,11 @@ useEffect(() => {
       <div className="p-8 text-center text-red-400 space-y-4">
         <h2 className="text-2xl font-bold">
           {userPlan === 'free'
-            ? 'Has alcanzado el límite de 10 historias gratuitas.'
-            : 'Has leído tu historia diaria como usuario Basic.'}
+            ? "You've reached the limit of 10 free stories."
+            : "You've read your daily story as a Basic user."}
         </h2>
         <p className="text-foreground">
-          Actualiza tu plan para seguir disfrutando de más historias completas y audio.
+          Upgrade your plan to continue enjoying full stories and audio.
         </p>
       </div>
     );
@@ -226,10 +226,10 @@ useEffect(() => {
         {(userPlan === 'free' || userPlan === 'basic') && storiesLeft !== null && (
           <p className="text-sm text-gray-400">
             {userPlan === 'free'
-              ? `Te quedan ${storiesLeft} de 10 historias gratuitas.`
+              ? `You have ${storiesLeft} of 10 free stories left.`
               : storiesLeft === 0
-                ? 'Ya leíste tu historia diaria.'
-                : `Te queda ${storiesLeft} historia disponible hoy.`}
+                ? "You've already read your daily story."
+                : `You have ${storiesLeft} story available today.`}
           </p>
         )}
 
