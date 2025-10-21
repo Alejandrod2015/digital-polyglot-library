@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // /src/sanity/schemaTypes/storyScheduler.ts
 import { defineType, defineField } from "sanity";
 
@@ -8,7 +9,8 @@ export const storyScheduler = defineType({
 
   // @ts-ignore — propiedad interna de Sanity usada para singletons
   __experimental_actions: ["update", "publish"],
-  // @ts-ignore
+
+  // @ts-ignore — opción no documentada pero funcional
   options: { singleton: true },
 
   fields: [
