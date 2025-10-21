@@ -3,9 +3,9 @@ import VocabPanel from '@/components/VocabPanel';
 import { currentUser } from '@clerk/nextjs/server';
 import Player from '@/components/Player';
 import StoryAccessInfo from './StoryAccessInfo';
-import { getStoriesReadCount } from '@/utils/readingLimits';
-import { getFreeStorySlugs } from '@/data/freeStories';
-import AddStoryToLibraryButton from '@/components/AddStoryToLibraryButton'; // 👈 nuevo import
+import AddStoryToLibraryButton from '@/components/AddStoryToLibraryButton';
+import StoryClientGate from './StoryClientGate';
+import { getFeaturedStory } from '@/lib/getFeaturedStory';
 
 type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
 
@@ -31,21 +31,20 @@ export default async function StoryPage({ params }: StoryPageProps) {
     : [];
   const ownsThisBook = ownedBooks.includes(book.slug);
 
-  const promotionalSlugs = await getFreeStorySlugs();
+  // 👇 obtenemos historia destacada semanal y diaria
+  const weeklyStory = await getFeaturedStory('week');
+  const dailyStory = await getFeaturedStory('day');
 
-  let hasFullAccess =
-    (userPlan === 'free' && promotionalSlugs.includes(story.slug)) ||
+  const isWeeklyStory = weeklyStory?.slug === story.slug;
+  const isDailyStory = dailyStory?.slug === story.slug;
+
+  // 🔐 lógica de acceso unificada
+  const hasFullAccess =
+    isWeeklyStory ||
+    isDailyStory ||
     userPlan === 'premium' ||
     userPlan === 'polyglot' ||
     ownsThisBook;
-
-  if (!hasFullAccess && (userPlan === 'free' || userPlan === 'basic')) {
-    const limit = userPlan === 'free' ? 10 : 1;
-    const readCount = getStoriesReadCount(userPlan);
-    if (readCount < limit) {
-      hasFullAccess = true;
-    }
-  }
 
   const paragraphs = story.text
     .split(/<\/p>/)
@@ -60,20 +59,19 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
   // ✅ usa cover del libro si la historia no tiene propia
   const rawCover =
-  (story as { coverUrl?: string })?.coverUrl ??
-  (book as { coverUrl?: string; cover?: string })?.coverUrl ??
-  (book as { cover?: string })?.cover ??
-  '/covers/default.jpg';
+    (story as { coverUrl?: string })?.coverUrl ??
+    (book as { coverUrl?: string; cover?: string })?.coverUrl ??
+    (book as { cover?: string })?.cover ??
+    '/covers/default.jpg';
 
-const coverUrl = rawCover.startsWith('https://cdn.sanity.io/')
-  ? `${rawCover}?w=800&fit=crop&auto=format`
-  : rawCover;
+  const coverUrl = rawCover.startsWith('https://cdn.sanity.io/')
+    ? `${rawCover}?w=800&fit=crop&auto=format`
+    : rawCover;
 
   return (
     <div className="relative max-w-5xl mx-auto p-8 pb-32 text-foreground">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
         <h1 className="text-3xl font-bold text-white">{story.title}</h1>
-        {/* 👇 nuevo botón */}
         <AddStoryToLibraryButton
           storyId={story.id}
           bookId={book.id}
@@ -85,45 +83,64 @@ const coverUrl = rawCover.startsWith('https://cdn.sanity.io/')
       {/* Contador de lecturas */}
       <StoryAccessInfo storyId={story.id} userPlan={userPlan} />
 
-      {/* Texto visible */}
-      <div
-        className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6 relative"
-        dangerouslySetInnerHTML={{ __html: visibleText }}
+      {/* Texto y audio controlados por el mismo gate */}
+      <StoryClientGate
+        plan={userPlan}
+        forceAllow={hasFullAccess}
+        fallback={
+  <div className="relative">
+    {/* Degradado sobre el final del texto */}
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/90 to-transparent z-10" />
+
+    {/* CTA mucho más abajo, completamente fuera del texto */}
+    <div className="absolute inset-x-0 bottom-[-8rem] flex flex-col items-center justify-end pb-12 text-center z-20">
+      <p className="text-gray-200 text-xl sm:text-xl mb-3 drop-shadow">
+        Unlock full access to all stories.
+      </p>
+      <a
+        href="/plans"
+        className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
+      >
+        Upgrade
+      </a>
+    </div>
+
+    {/* 🎧 Player siempre visible */}
+    <div className="fixed bottom-0 left-0 right-0 z-30 md:ml-64">
+      <Player
+        src={
+          story.audio.startsWith('http')
+            ? story.audio
+            : `${book.audioFolder?.replace(/\/$/, '') ?? ''}/${story.audio}`
+        }
+        bookSlug={book.slug}
+        storySlug={story.slug}
       />
+    </div>
+  </div>
+}
 
-      {!hasFullAccess && (
-        <div className="absolute inset-x-0 bottom-0 min-h-[30vh] flex flex-col justify-end items-center bg-gradient-to-t from-background/95 via-background/70 to-transparent pb-12 sm:pb-16">
-          <div className="backdrop-blur-sm p-4 text-center max-w-sm mx-auto">
-            <p className="text-gray-300 mb-3 text-sm sm:text-base">
-              Estás leyendo una vista previa. Desbloquea la historia completa para continuar.
-            </p>
-            <a
-              href="/upgrade"
-              className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition"
-            >
-              Desbloquear historia completa
-            </a>
-          </div>
-        </div>
-      )}
 
-      {hasFullAccess ? (
+      >
+        {/* Texto visible */}
+        <div
+          className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6 relative"
+          dangerouslySetInnerHTML={{ __html: visibleText }}
+        />
+
+        {/* 🎧 El audio se muestra solo si la historia está disponible */}
         <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
           <Player
             src={
-              story.audio.startsWith("http")
+              story.audio.startsWith('http')
                 ? story.audio
-                : `${book.audioFolder?.replace(/\/$/, "") ?? ""}/${story.audio}`
+                : `${book.audioFolder?.replace(/\/$/, '') ?? ''}/${story.audio}`
             }
             bookSlug={book.slug}
             storySlug={story.slug}
           />
         </div>
-      ) : (
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-black/80 backdrop-blur border-t border-gray-800 text-center py-6 text-gray-400">
-          🔒 El audio está disponible solo para usuarios con acceso al libro o plan Premium.
-        </div>
-      )}
+      </StoryClientGate>
 
       <VocabPanel story={story} />
     </div>

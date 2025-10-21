@@ -86,7 +86,6 @@ export async function updateStoryOfTheWeek(
   }
 }
 
-
   // ❌ Si el modo automático está desactivado → no hacer nada
   if (!autoSelect) {
     console.log(`ℹ️ Auto-select for ${period} is disabled.`);

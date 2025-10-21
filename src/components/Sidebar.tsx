@@ -117,21 +117,28 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Star size={22} /> Favorites
         </Link>
 
-        <Link
-          href="/story-of-the-day"
-          onClick={onClose}
-          className="flex items-center gap-3 hover:text-pink-400 transition-colors"
-        >
-          <BookMarked size={22} /> Story of the Day
-        </Link>
+                {/* Mostrar solo si el plan NO es premium ni polyglot */}
+        {(!["premium", "polyglot"].includes(
+          ((useUser().user?.publicMetadata?.plan as string) || "free")
+        )) && (
+          <>
+            <Link
+              href="/story-of-the-day"
+              onClick={onClose}
+              className="flex items-center gap-3 hover:text-pink-400 transition-colors"
+            >
+              <BookMarked size={22} /> Story of the Day
+            </Link>
 
-        <Link
-          href="/story-of-the-week"
-          onClick={onClose}
-          className="flex items-center gap-3 hover:text-pink-400 transition-colors"
-        >
-          <BookMarked size={22} /> Story of the Week
-        </Link>
+            <Link
+              href="/story-of-the-week"
+              onClick={onClose}
+              className="flex items-center gap-3 hover:text-pink-400 transition-colors"
+            >
+              <BookMarked size={22} /> Story of the Week
+            </Link>
+          </>
+        )}
 
         <Link
           href="/settings"

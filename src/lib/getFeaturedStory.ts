@@ -35,16 +35,16 @@ export async function getFeaturedStory(
     } | null>(
       `*[_type == "storyScheduler"][0]{
         currentWeeklyStory->{
-          "slug": select(published == true => slug, null)
+          "slug": slug.current
         },
         nextWeeklyStory->{
-          "slug": select(published == true => slug, null)
+          "slug": slug.current
         },
         currentDailyStory->{
-          "slug": select(published == true => slug, null)
+          "slug": slug.current
         },
         nextDailyStory->{
-          "slug": select(published == true => slug, null)
+          "slug": slug.current
         },
         autoSelectWeekly,
         autoSelectDaily
@@ -58,10 +58,10 @@ export async function getFeaturedStory(
 
     // --- LÓGICA SEMANAL ---
     if (period === "week") {
-      const current = scheduler.currentWeeklyStory?.slug?.current;
+      const current = scheduler.currentWeeklyStory?.slug;
       if (current) return { slug: current, period, periodKey: key };
 
-      const next = scheduler.nextWeeklyStory?.slug?.current;
+      const next = scheduler.nextWeeklyStory?.slug;
       if (next) return { slug: next, period, periodKey: key };
 
       if (scheduler.autoSelectWeekly) {
@@ -72,13 +72,11 @@ export async function getFeaturedStory(
 
     // --- LÓGICA DIARIA ---
     if (period === "day") {
-      const current = scheduler.currentDailyStory?.slug?.current;
-
-      // ✅ Solo usar next si NO existe current definido en Sanity
+      const current = scheduler.currentDailyStory?.slug;
       if (current) return { slug: current, period, periodKey: key };
 
-      const next = scheduler.nextDailyStory?.slug?.current;
-      if (!current && next) return { slug: next, period, periodKey: key };
+      const next = scheduler.nextDailyStory?.slug;
+      if (next) return { slug: next, period, periodKey: key };
 
       if (scheduler.autoSelectDaily) {
         return await fallbackStory(period, key);
@@ -98,9 +96,9 @@ export async function getFeaturedStory(
  * para seleccionar una historia publicada, sin escribir en Sanity.
  */
 async function fallbackStory(period: "day" | "week", key: string) {
-  const stories = await client.fetch<{ slug?: { current?: string } }[]>(
+  const stories = await client.fetch<{ slug?: string }[]>(
     `*[_type == "story" && published == true && defined(slug.current)]{
-      "slug": slug
+      "slug": slug.current
     }`
   );
 
@@ -108,7 +106,7 @@ async function fallbackStory(period: "day" | "week", key: string) {
 
   const seed = [...key].reduce((a, c) => a + c.charCodeAt(0), 0);
   const index = seed % stories.length;
-  const slug = stories[index].slug?.current;
+  const slug = stories[index].slug;
 
   return slug ? { slug, period, periodKey: key } : null;
 }

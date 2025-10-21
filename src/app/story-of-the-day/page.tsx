@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import Image from "next/image";
 
+
 export const dynamic = "force-dynamic";
 
 export default async function StoryOfTheDayPage() {

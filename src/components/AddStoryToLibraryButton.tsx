@@ -19,18 +19,31 @@ export default function AddStoryToLibraryButton({ storyId, bookId, title, coverU
 
   useEffect(() => {
     if (!isLoaded) return;
+
+    const key = `dp_library_stories_${user?.id ?? 'guest'}`;
+    const cached = localStorage.getItem(key);
+    if (cached) {
+      try {
+        const ids = JSON.parse(cached) as string[];
+        if (ids.includes(storyId)) setInLibrary(true);
+      } catch {
+        /* ignore parse error */
+      }
+    }
+
     if (!user) {
-      setInLibrary(false);
       setChecking(false);
       return;
     }
 
     (async () => {
       try {
-        const res = await fetch('/api/library?type=story');
+        const res = await fetch('/api/library?type=story', { cache: 'no-store' });
         if (res.ok) {
           const stories = (await res.json()) as { storyId: string }[];
-          if (stories.some((s) => s.storyId === storyId)) setInLibrary(true);
+          const ids = stories.map((s) => s.storyId);
+          localStorage.setItem(key, JSON.stringify(ids));
+          setInLibrary(ids.includes(storyId));
         }
       } catch (err) {
         console.error('Error checking story in library:', err);
@@ -42,11 +55,26 @@ export default function AddStoryToLibraryButton({ storyId, bookId, title, coverU
 
   const toggleLibrary = async () => {
     if (!user) {
-      openSignIn({ afterSignInUrl: `/books/${bookId}/${storyId}`, afterSignUpUrl: `/books/${bookId}/${storyId}` });
+      openSignIn({
+        afterSignInUrl: `/books/${bookId}/${storyId}`,
+        afterSignUpUrl: `/books/${bookId}/${storyId}`,
+      });
       return;
     }
 
-    setInLibrary((prev) => !prev);
+    const key = `dp_library_stories_${user.id}`;
+    setInLibrary((prev) => {
+      const next = !prev;
+      try {
+        const cached = localStorage.getItem(key);
+        const ids = cached ? (JSON.parse(cached) as string[]) : [];
+        const updated = next ? [...new Set([...ids, storyId])] : ids.filter((id) => id !== storyId);
+        localStorage.setItem(key, JSON.stringify(updated));
+      } catch {
+        /* ignore cache errors */
+      }
+      return next;
+    });
 
     try {
       if (inLibrary) {

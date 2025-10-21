@@ -18,8 +18,19 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
 
   useEffect(() => {
     if (!isLoaded) return;
+
+    const key = `dp_library_books_${user?.id ?? 'guest'}`;
+    const cached = localStorage.getItem(key);
+    if (cached) {
+      try {
+        const ids = JSON.parse(cached) as string[];
+        if (ids.includes(bookId)) setInLibrary(true);
+      } catch {
+        /* ignore parse error */
+      }
+    }
+
     if (!user) {
-      setInLibrary(false);
       setChecking(false);
       return;
     }
@@ -27,10 +38,12 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
     // Consulta en segundo plano sin bloquear la UI
     (async () => {
       try {
-        const res = await fetch('/api/library');
+        const res = await fetch('/api/library', { cache: 'no-store' });
         if (res.ok) {
           const books = (await res.json()) as { bookId: string }[];
-          if (books.some((b) => b.bookId === bookId)) setInLibrary(true);
+          const ids = books.map((b) => b.bookId);
+          localStorage.setItem(key, JSON.stringify(ids));
+          setInLibrary(ids.includes(bookId));
         }
       } catch (err) {
         console.error('Error checking library:', err);
@@ -46,23 +59,33 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
       return;
     }
 
-    setInLibrary((prev) => !prev); // respuesta inmediata
+    const key = `dp_library_books_${user.id}`;
+    setInLibrary((prev) => {
+      const next = !prev;
+      try {
+        const cached = localStorage.getItem(key);
+        const ids = cached ? (JSON.parse(cached) as string[]) : [];
+        const updated = next ? [...new Set([...ids, bookId])] : ids.filter((id) => id !== bookId);
+        localStorage.setItem(key, JSON.stringify(updated));
+      } catch {
+        /* ignore cache errors */
+      }
+      return next;
+    });
 
     try {
       if (inLibrary) {
         await fetch('/api/library', {
-  method: 'DELETE',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ type: 'book', bookId }),
-});
-
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type: 'book', bookId }),
+        });
       } else {
         await fetch('/api/library', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ type: 'book', bookId, title, coverUrl }),
-});
-
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type: 'book', bookId, title, coverUrl }),
+        });
       }
     } catch (err) {
       console.error('Error toggling library:', err);
