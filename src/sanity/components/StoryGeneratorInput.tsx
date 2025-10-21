@@ -34,7 +34,7 @@ export default function StoryGeneratorInput() {
   const formId = useFormValue(['_id']) as string | undefined
   const bookRef = useFormValue(['book', '_ref']) as string | undefined
 
-  // 🆕 new form values
+  // new form values
   const language = useFormValue(['language']) as string | undefined
   const region = useFormValue(['region']) as string | undefined
   const level = useFormValue(['level']) as string | undefined
