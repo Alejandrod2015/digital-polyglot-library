@@ -34,10 +34,18 @@ export async function getFeaturedStory(
       autoSelectDaily?: boolean;
     } | null>(
       `*[_type == "storyScheduler"][0]{
-        currentWeeklyStory->{ "slug": slug },
-        nextWeeklyStory->{ "slug": slug },
-        currentDailyStory->{ "slug": slug },
-        nextDailyStory->{ "slug": slug },
+        currentWeeklyStory->{
+          "slug": select(published == true => slug, null)
+        },
+        nextWeeklyStory->{
+          "slug": select(published == true => slug, null)
+        },
+        currentDailyStory->{
+          "slug": select(published == true => slug, null)
+        },
+        nextDailyStory->{
+          "slug": select(published == true => slug, null)
+        },
         autoSelectWeekly,
         autoSelectDaily
       }`
@@ -50,24 +58,27 @@ export async function getFeaturedStory(
 
     // --- LÓGICA SEMANAL ---
     if (period === "week") {
-  const current = scheduler.currentWeeklyStory?.slug?.current;
-  if (current) return { slug: current, period, periodKey: key };
+      const current = scheduler.currentWeeklyStory?.slug?.current;
+      if (current) return { slug: current, period, periodKey: key };
 
-  const next = scheduler.nextWeeklyStory?.slug?.current;
-  if (next) return { slug: next, period, periodKey: key };
+      const next = scheduler.nextWeeklyStory?.slug?.current;
+      if (next) return { slug: next, period, periodKey: key };
 
-  if (scheduler.autoSelectWeekly) {
-    return await fallbackStory(period, key);
-  }
-  return null;
-}
+      if (scheduler.autoSelectWeekly) {
+        return await fallbackStory(period, key);
+      }
+      return null;
+    }
 
     // --- LÓGICA DIARIA ---
     if (period === "day") {
-      const slug =
-        scheduler.currentDailyStory?.slug?.current ||
-        scheduler.nextDailyStory?.slug?.current;
-      if (slug) return { slug, period, periodKey: key };
+      const current = scheduler.currentDailyStory?.slug?.current;
+
+      // ✅ Solo usar next si NO existe current definido en Sanity
+      if (current) return { slug: current, period, periodKey: key };
+
+      const next = scheduler.nextDailyStory?.slug?.current;
+      if (!current && next) return { slug: next, period, periodKey: key };
 
       if (scheduler.autoSelectDaily) {
         return await fallbackStory(period, key);
@@ -88,7 +99,9 @@ export async function getFeaturedStory(
  */
 async function fallbackStory(period: "day" | "week", key: string) {
   const stories = await client.fetch<{ slug?: { current?: string } }[]>(
-    `*[_type == "story" && defined(slug.current)]{ "slug": slug }`
+    `*[_type == "story" && published == true && defined(slug.current)]{
+      "slug": slug
+    }`
   );
 
   if (!stories.length) return null;

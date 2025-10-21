@@ -53,25 +53,35 @@ export async function updateStoryOfTheWeek(
   }
 
   // 🔍 Determinar si es modo semanal o diario
-  const autoSelect =
-    period === "week"
-      ? scheduler.autoSelectWeekly
-      : scheduler.autoSelectDaily;
+  const isWeekly = period === "week";
+  const autoSelect = isWeekly
+    ? scheduler.autoSelectWeekly
+    : scheduler.autoSelectDaily;
 
-  const currentField =
-    period === "week" ? "currentWeeklyStory" : "currentDailyStory";
-  const nextField =
-    period === "week" ? "nextWeeklyStory" : "nextDailyStory";
-  const usedField =
-    period === "week" ? "usedWeeklyStories" : "usedDailyStories";
+  const currentField = isWeekly
+    ? "currentWeeklyStory"
+    : "currentDailyStory";
+  const nextField = isWeekly
+    ? "nextWeeklyStory"
+    : "nextDailyStory";
+  const usedField = isWeekly
+    ? "usedWeeklyStories"
+    : "usedDailyStories";
+  const updatedAtField = isWeekly
+    ? "weeklyUpdatedAt"
+    : "dailyUpdatedAt";
 
-  // Si hay historia manual actual → respetarla
+  // ✅ Si hay historia manual actual → respetarla
   if (scheduler[currentField]?.["_id"]) {
+    console.log(`ℹ️ ${period}ly story already set manually — skipping auto.`);
     return scheduler[currentField];
   }
 
-  // --- Selección automática ---
-  if (!autoSelect) return scheduler[currentField] || null;
+  // ❌ Si el modo automático está desactivado → no hacer nada
+  if (!autoSelect) {
+    console.log(`ℹ️ Auto-select for ${period} is disabled.`);
+    return scheduler[currentField] || null;
+  }
 
   // 🧩 Obtener todas las historias publicadas
   const allStories = await client.fetch<{ _id: string }[]>(
@@ -83,15 +93,13 @@ export async function updateStoryOfTheWeek(
     return null;
   }
 
+  // 🧠 Evitar repetir hasta agotar todas
   const used = new Set(scheduler[usedField] ?? []);
   const pool = allStories.filter((s) => !used.has(s._id));
-
-  // Si ya se usaron todas, reiniciamos el ciclo
   const available = pool.length > 0 ? pool : allStories;
-  const pick = available[Math.floor(Math.random() * available.length)]._id;
 
-  const newUsed =
-    pool.length > 0 ? [...used, pick] : [pick]; // reinicia si se agotaron
+  const pick = available[Math.floor(Math.random() * available.length)]._id;
+  const newUsed = pool.length > 0 ? [...used, pick] : [pick];
 
   // 🧾 Actualizar el documento en Sanity
   await writeClient
@@ -99,7 +107,7 @@ export async function updateStoryOfTheWeek(
     .set({
       [currentField]: { _type: "reference", _ref: pick },
       [usedField]: newUsed,
-      [`${period}lyUpdatedAt`]: new Date().toISOString(),
+      [updatedAtField]: new Date().toISOString(),
     })
     .commit({ autoGenerateArrayKeys: true });
 
@@ -120,7 +128,7 @@ export async function updateStoryOfTheWeek(
   }
 
   console.log(
-    `✅ ${period === "week" ? "Story of the Week" : "Story of the Day"} actualizada (${periodKey})`
+    `✅ ${isWeekly ? "Story of the Week" : "Story of the Day"} actualizada (${periodKey})`
   );
 
   return { _id: pick, period, periodKey };
