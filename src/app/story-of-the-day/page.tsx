@@ -1,6 +1,5 @@
 // /src/app/story-of-the-day/page.tsx
 import { getFeaturedStory } from "@/lib/getFeaturedStory";
-import { updateStoryOfTheWeek } from "@/sanity/actions/updateStoryOfTheWeek";
 import { getBookMeta } from "@/lib/books";
 import { client } from "@/sanity/lib/client";
 import Link from "next/link";
@@ -9,12 +8,10 @@ import Image from "next/image";
 export const dynamic = "force-dynamic";
 
 export default async function StoryOfTheDayPage() {
-  const tz = Intl.DateTimeFormat().resolvedOptions?.().timeZone || "UTC";
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
 
-  // Asegura que haya historia diaria activa
-  await updateStoryOfTheWeek(tz, "day");
-
-  // Obtiene la historia destacada del día
+  // 🚫 Ya no se llama a updateStoryOfTheWeek aquí.
+  // La actualización automática se maneja solo por el cron.
   const featured = await getFeaturedStory("day", tz);
 
   if (!featured) {
@@ -98,6 +95,7 @@ export default async function StoryOfTheDayPage() {
             </span>
           </p>
 
+          {/* Etiquetas dinámicas */}
           <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-6">
             {book.language && (
               <span className="px-3 py-1 rounded-full bg-blue-600/20 text-blue-200 text-xs sm:text-sm capitalize">
@@ -121,12 +119,14 @@ export default async function StoryOfTheDayPage() {
             )}
           </div>
 
+          {/* Descripción */}
           <p className="text-gray-300 leading-relaxed mb-8">
             {book.description ||
               meta.description ||
               `From the book "${book.title || meta.title}", this story invites you to explore language and culture through authentic storytelling.`}
           </p>
 
+          {/* Botones */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
             <Link
               href={`/books/${book.slug}/${story.slug}`}

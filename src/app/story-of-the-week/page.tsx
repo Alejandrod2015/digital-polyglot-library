@@ -1,7 +1,6 @@
 // /src/app/story-of-the-week/page.tsx
 import { getFeaturedStory } from "@/lib/getFeaturedStory";
 import { getBookMeta } from "@/lib/books";
-import { updateStoryOfTheWeek } from "@/sanity/actions/updateStoryOfTheWeek";
 import Link from "next/link";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
@@ -9,10 +8,10 @@ import { client } from "@/sanity/lib/client";
 export const dynamic = "force-dynamic";
 
 export default async function StoryOfTheWeekPage() {
-  const tz = Intl.DateTimeFormat().resolvedOptions?.().timeZone || "UTC";
-await updateStoryOfTheWeek(tz, "week");
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
 
-  // 🧩 2. Obtener la historia actual destacada
+  // 🚫 Ya no se llama a updateStoryOfTheWeek aquí.
+  // La actualización automática se maneja solo por el cron.
   const featured = await getFeaturedStory("week", tz);
 
   if (!featured) {
@@ -29,7 +28,6 @@ await updateStoryOfTheWeek(tz, "week");
     );
   }
 
-  // 🔍 3. Obtener datos completos de la historia
   const story = await client.fetch(
     `*[_type == "story" && slug.current == $slug][0]{
       title,
