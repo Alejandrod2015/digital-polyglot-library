@@ -1,29 +1,30 @@
 // /src/app/api/story-of-the-week/route.ts
-import { NextRequest, NextResponse } from "next/server";
-import { client } from "@/sanity/lib/client";
+import { NextResponse } from "next/server";
 import { updateStoryOfTheWeek } from "@/sanity/actions/updateStoryOfTheWeek";
+import { getFeaturedStory } from "@/lib/getFeaturedStory";
+import { client } from "@/sanity/lib/client";
 
-export const runtime = "nodejs";
-
-export async function GET(req: NextRequest) {
+/**
+ * API endpoint: obtiene o actualiza la Story of the Week
+ * Puede llamarse desde el frontend o como Cron Job.
+ */
+export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const tz = searchParams.get("tz") || "UTC";
 
-    // 🔄 Actualiza (o mantiene) la historia semanal
-    const current = await updateStoryOfTheWeek(tz, "week");
+    // 🔁 Actualiza si corresponde (solo si no hay historia o si es Cron)
+    await updateStoryOfTheWeek(tz, "week");
 
-    if (!current?._id) {
-      return NextResponse.json(
-        { error: "No se pudo determinar la historia semanal." },
-        { status: 404 }
-      );
+    // 🧩 Obtiene la historia destacada actual
+    const featured = await getFeaturedStory("week", tz);
+    if (!featured?.slug) {
+      return NextResponse.json({ ok: false, message: "No featured story found." }, { status: 404 });
     }
 
-    // 🔍 Obtener historia con su libro asociado
+    // 📖 Datos completos de la historia
     const story = await client.fetch(
-      `*[_type == "story" && _id == $id][0]{
-        _id,
+      `*[_type == "story" && slug.current == $slug][0]{
         title,
         "slug": slug.current,
         focus,
@@ -37,28 +38,16 @@ export async function GET(req: NextRequest) {
           topic
         }
       }`,
-      { id: current._id }
+      { slug: featured.slug }
     );
 
     if (!story) {
-      return NextResponse.json(
-        { error: "La historia seleccionada no existe." },
-        { status: 404 }
-      );
+      return NextResponse.json({ ok: false, message: "Story not found." }, { status: 404 });
     }
 
-        return NextResponse.json({
-      ok: true,
-      story,
-      period: (current as any).period,
-      periodKey: (current as any).periodKey,
-    });
-
+    return NextResponse.json({ ok: true, featured, story });
   } catch (err) {
-    console.error("💥 Error en /api/story-of-the-week:", err);
-    return NextResponse.json(
-      { error: "Error interno al obtener la historia semanal." },
-      { status: 500 }
-    );
+    console.error("💥 Error in /api/story-of-the-week:", err);
+    return NextResponse.json({ ok: false, error: (err as Error).message }, { status: 500 });
   }
 }

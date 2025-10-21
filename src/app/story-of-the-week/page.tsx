@@ -10,9 +10,7 @@ export const dynamic = "force-dynamic";
 
 export default async function StoryOfTheWeekPage() {
   const tz = Intl.DateTimeFormat().resolvedOptions?.().timeZone || "UTC";
-
-  // 🧠 1. Asegurar que siempre exista historia semanal y próxima
-  await updateStoryOfTheWeek();
+await updateStoryOfTheWeek(tz, "week");
 
   // 🧩 2. Obtener la historia actual destacada
   const featured = await getFeaturedStory("week", tz);

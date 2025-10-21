@@ -50,16 +50,17 @@ export async function getFeaturedStory(
 
     // --- LÓGICA SEMANAL ---
     if (period === "week") {
-      const slug =
-        scheduler.currentWeeklyStory?.slug?.current ||
-        scheduler.nextWeeklyStory?.slug?.current;
-      if (slug) return { slug, period, periodKey: key };
+  const current = scheduler.currentWeeklyStory?.slug?.current;
+  if (current) return { slug: current, period, periodKey: key };
 
-      if (scheduler.autoSelectWeekly) {
-        return await fallbackStory(period, key);
-      }
-      return null;
-    }
+  const next = scheduler.nextWeeklyStory?.slug?.current;
+  if (next) return { slug: next, period, periodKey: key };
+
+  if (scheduler.autoSelectWeekly) {
+    return await fallbackStory(period, key);
+  }
+  return null;
+}
 
     // --- LÓGICA DIARIA ---
     if (period === "day") {
