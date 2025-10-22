@@ -1,7 +1,8 @@
+// DESPUÉS
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getStoriesReadCount, addStoryToHistory } from '@/utils/readingLimits';
+import { getStoriesReadCount, getStoriesLimit } from '@/utils/readingLimits';
 
 type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
 
@@ -19,12 +20,11 @@ export default function StoryAccessInfo({
     if (userPlan !== 'free' && userPlan !== 'basic') return;
 
     const count = getStoriesReadCount(userPlan);
-    const limit = userPlan === 'free' ? 10 : 1;
+    const limit = getStoriesLimit(userPlan);
     const reached = count >= limit;
+
     setLimitReached(reached);
     setStoriesLeft(Math.max(0, limit - count));
-
-    if (!reached) addStoryToHistory(storyId);
   }, [storyId, userPlan]);
 
   if (userPlan !== 'free' && userPlan !== 'basic') return null;
@@ -42,7 +42,6 @@ export default function StoryAccessInfo({
     >
       <p>{baseText}</p>
 
-      {/* 🕐 Mostrar mensaje adicional solo si es BASIC y ya llegó al límite */}
       {userPlan === 'basic' && limitReached && (
         <p className="text-xs text-gray-500 mt-1 italic">
           Come back tomorrow to unlock a new story.

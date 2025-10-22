@@ -67,6 +67,24 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
     };
   }, []);
 
+  // reproducir automáticamente la siguiente historia cuando termina el audio
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleEnded = () => {
+      if (nextStory) {
+        window.location.href = `/books/${bookSlug}/${nextStory.slug}`;
+      } else {
+        setIsPlaying(false);
+        setProgress(0);
+      }
+    };
+
+    audio.addEventListener("ended", handleEnded);
+    return () => audio.removeEventListener("ended", handleEnded);
+  }, [nextStory, bookSlug]);
+
   const togglePlay = () => {
     const a = audioRef.current;
     if (!a) return;

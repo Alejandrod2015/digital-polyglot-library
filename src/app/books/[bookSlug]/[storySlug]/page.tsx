@@ -46,16 +46,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
     userPlan === 'polyglot' ||
     ownsThisBook;
 
-  const paragraphs = story.text
-    .split(/<\/p>/)
-    .filter(Boolean)
-    .map((p) => p + '</p>');
-
-  const visibleCount = hasFullAccess
-    ? paragraphs.length
-    : Math.max(1, Math.ceil(paragraphs.length * 0.2));
-
-  const visibleText = paragraphs.slice(0, visibleCount).join('');
+  const visibleText = story.text;
 
   // ✅ usa cover del libro si la historia no tiene propia
   const rawCover =
@@ -86,13 +77,11 @@ export default async function StoryPage({ params }: StoryPageProps) {
       {/* Texto y audio controlados por el mismo gate */}
       <StoryClientGate
         plan={userPlan}
+        storyId={story.id}
         forceAllow={hasFullAccess}
         fallback={
   <div className="relative">
-    {/* Degradado sobre el final del texto */}
     <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/90 to-transparent z-10" />
-
-    {/* CTA mucho más abajo, completamente fuera del texto */}
     <div className="absolute inset-x-0 bottom-[-8rem] flex flex-col items-center justify-end pb-12 text-center z-20">
       <p className="text-gray-200 text-xl sm:text-xl mb-3 drop-shadow">
         Unlock full access to all stories.
@@ -104,8 +93,6 @@ export default async function StoryPage({ params }: StoryPageProps) {
         Upgrade
       </a>
     </div>
-
-    {/* 🎧 Player siempre visible */}
     <div className="fixed bottom-0 left-0 right-0 z-30 md:ml-64">
       <Player
         src={
@@ -119,9 +106,9 @@ export default async function StoryPage({ params }: StoryPageProps) {
     </div>
   </div>
 }
-
-
       >
+
+
         {/* Texto visible */}
         <div
           className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6 relative"
