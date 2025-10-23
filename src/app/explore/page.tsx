@@ -7,6 +7,7 @@ import Cover from '@/components/Cover';
 
 type UserStory = {
   id: string;
+  slug: string; // ✅ agregado
   title: string;
   language: string;
   level: string;
@@ -18,7 +19,7 @@ export default function ExplorePage() {
   const [polyglotStories, setPolyglotStories] = useState<UserStory[]>([]);
   const [loadingStories, setLoadingStories] = useState(true);
 
-  // Cargar historias Polyglot desde la API
+  // 🔹 Cargar historias Polyglot desde la API
   useEffect(() => {
     async function fetchStories() {
       try {
@@ -35,7 +36,7 @@ export default function ExplorePage() {
     fetchStories();
   }, []);
 
-  // Agrupar libros por idioma
+  // 🔹 Agrupar libros por idioma
   const groupedByLanguage: Record<string, typeof books[keyof typeof books][]> = {};
   Object.values(books).forEach((book) => {
     const lang = book.language || 'Unknown';
@@ -45,7 +46,7 @@ export default function ExplorePage() {
 
   const languages = Object.keys(groupedByLanguage).sort();
 
-  // Filtrar según el idioma seleccionado
+  // 🔹 Filtrar según el idioma seleccionado
   const visibleBooks = useMemo(() => {
     if (selectedLang === 'All') return Object.values(books);
     return groupedByLanguage[selectedLang] ?? [];
@@ -99,7 +100,7 @@ export default function ExplorePage() {
             {polyglotStories.map((story) => (
               <Link
                 key={story.id}
-                href={`/stories/${story.id}`}
+                href={`/stories/${story.slug}`} // ✅ antes usaba story.id
                 className="flex bg-[#141A33] hover:bg-[#1B2347] transition-colors rounded-2xl overflow-hidden shadow-lg"
               >
                 <div className="p-5 flex flex-col justify-center text-left">
@@ -107,7 +108,7 @@ export default function ExplorePage() {
                     {story.title}
                   </h3>
                   <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
-                    {story.text?.replace(/<[^>]+>/g, "").slice(0, 120) ?? ""}...
+                    {story.text?.replace(/<[^>]+>/g, '').slice(0, 120) ?? ''}...
                   </p>
                   <div className="mt-3 text-sm text-gray-400 space-y-1">
                     {story.language && (
@@ -123,7 +124,7 @@ export default function ExplorePage() {
                         <span className="font-semibold text-gray-300">
                           Level:
                         </span>{' '}
-                          {story.level}
+                        {story.level}
                       </p>
                     )}
                   </div>

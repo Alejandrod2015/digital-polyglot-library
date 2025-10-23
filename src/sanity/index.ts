@@ -15,5 +15,5 @@ export const sanityWriteClient = createClient({
   dataset,
   apiVersion,
   useCdn: false, // ❗ no usar CDN al escribir
-  token: process.env.SANITY_WRITE_TOKEN, // ❗ requiere permisos de "create" y "write"
+  token: process.env.SANITY_API_WRITE_TOKEN,
 });

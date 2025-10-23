@@ -3,13 +3,11 @@
 import { useState } from "react";
 import VocabPanel from "@/components/VocabPanel";
 
-type VocabItem = {
-  word: string;
-  definition: string;
-};
+type VocabItem = { word: string; definition: string };
 
 type StoryData = {
   id: string;
+  slug: string;
   title: string;
   text: string;
   vocab?: VocabItem[] | null;
@@ -18,11 +16,7 @@ type StoryData = {
   level?: string | null;
 };
 
-interface StoryReaderClientProps {
-  story: StoryData;
-}
-
-export default function StoryReaderClient({ story }: StoryReaderClientProps) {
+export default function StoryReaderClient({ story }: { story: StoryData }) {
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [definition, setDefinition] = useState<string | null>(null);
 
@@ -34,7 +28,6 @@ export default function StoryReaderClient({ story }: StoryReaderClientProps) {
 
   return (
     <div className="relative">
-      {/* === Texto principal con estilo idéntico a storySlug === */}
       <div
         className="
           space-y-4
@@ -54,23 +47,24 @@ export default function StoryReaderClient({ story }: StoryReaderClientProps) {
         dangerouslySetInnerHTML={{ __html: story.text }}
       />
 
-      {/* === Panel de vocabulario === */}
       {selectedWord && (
-        <VocabPanel
-          story={{
-            id: story.id,
-            slug: story.id, // compatibilidad con prop esperada
-            title: story.title,
-            vocab: story.vocab ?? undefined,
-          }}
-          initialWord={selectedWord}
-          initialDefinition={definition}
-          onClose={() => {
-            setSelectedWord(null);
-            setDefinition(null);
-          }}
-        />
-      )}
+  <VocabPanel
+    key={selectedWord} // 🔹 fuerza un remount al cambiar la palabra
+    story={{
+      id: story.id,
+      slug: story.slug,
+      title: story.title,
+      vocab: story.vocab ?? undefined,
+    }}
+    initialWord={selectedWord}
+    initialDefinition={definition}
+    onClose={() => {
+      setSelectedWord(null);
+      setDefinition(null);
+    }}
+  />
+)}
+
     </div>
   );
 }

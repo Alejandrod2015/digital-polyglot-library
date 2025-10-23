@@ -66,13 +66,13 @@ export default function CreatePage() {
       });
 
       const data = await res.json();
-
       if (!res.ok) throw new Error(data.error || 'Story generation failed');
 
       setResponse(data);
       setStatus('generating_audio');
 
-      const maxWait = 40;
+      // Esperar hasta que se genere el audio, pero sin bloquear la vista
+      const maxWait = 90;
       const interval = 3000;
       let elapsed = 0;
       let storyWithAudio: unknown = null;
@@ -80,12 +80,10 @@ export default function CreatePage() {
       while (elapsed < maxWait * 1000) {
         const check = await fetch(`/api/user-stories?id=${data.story.id}`);
         const json = await check.json();
-
         if (json.story?.audioUrl) {
           storyWithAudio = json.story;
           break;
         }
-
         await new Promise((r) => setTimeout(r, interval));
         elapsed += interval;
       }
@@ -94,7 +92,9 @@ export default function CreatePage() {
         setResponse({ story: storyWithAudio });
         setStatus('done');
       } else {
-        throw new Error('Audio generation timed out');
+        // incluso si el audio no llega a tiempo, mostramos el texto
+        setResponse(data);
+        setStatus('done');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -116,6 +116,7 @@ export default function CreatePage() {
         onSubmit={handleSubmit}
         className="space-y-4 bg-[#0D1B2A] p-6 rounded-xl border border-gray-700"
       >
+        {/* --- Campos del formulario --- */}
         <div>
           <label className="block text-sm text-gray-300 mb-1">Language</label>
           <select
@@ -229,6 +230,7 @@ export default function CreatePage() {
         </button>
       </form>
 
+      {/* --- Vista previa del texto generado --- */}
       {response && (response as any).story && status === 'done' && (
         <StoryPreview story={(response as any).story} />
       )}
@@ -255,6 +257,11 @@ function StoryPreview({ story }: { story: any }) {
     setDefinition(item?.definition ?? null);
   };
 
+  // 🔹 Mostrar solo los primeros 2 párrafos o 400 caracteres
+  const previewText = story.text
+    ? story.text.split("</p>").slice(0, 1).join("</p>") + "</p>"
+    : '';
+
   return (
     <div className="mt-10 bg-[#1B263B] border border-gray-700 rounded-xl p-6">
       <h2 className="text-2xl font-bold mb-2 text-emerald-400">{story.title}</h2>
@@ -264,7 +271,7 @@ function StoryPreview({ story }: { story: any }) {
 
       <div className="relative">
         <StoryContent
-          text={story.text}
+          text={previewText}
           sentencesPerParagraph={3}
           renderWord={(word) => (
             <span
@@ -288,10 +295,7 @@ function StoryPreview({ story }: { story: any }) {
         )}
       </div>
 
-      <div className="flex items-center justify-between mt-4">
-        {story.audioUrl && (
-          <audio controls src={story.audioUrl} className="flex-1 mr-4 rounded-md" />
-        )}
+      <div className="flex justify-end mt-6">
         <Link
           href={`/stories/${story.slug}`}
           className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md transition font-medium"
