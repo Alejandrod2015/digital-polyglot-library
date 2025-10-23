@@ -61,3 +61,24 @@ model ClaimToken {
   @@index([redeemedBy])
   @@index([createdAt])
 }
+
+model UserStory {
+  id            String   @id @default(cuid())
+  userId        String
+  title         String
+  text          String
+  vocab         Json
+  audioUrl      String?
+  audioFilename String?     // ← nuevo campo
+  language      String
+  region        String?
+  level         String
+  focus         String?
+  topic         String
+  public        Boolean  @default(true)
+  createdAt     DateTime @default(now())
+
+  @@map("dp_user_stories_v1")
+  @@index([userId])
+  @@index([createdAt])
+}

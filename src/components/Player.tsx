@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import {
   Play,
@@ -25,6 +25,14 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
+  // convertir assetId en URL reproducible si es necesario
+  const resolvedSrc = useMemo(() => {
+    if (!src) return "";
+    if (src.startsWith("http")) return src; // ya es URL
+    // Sanity asset ID → URL pública
+    return `https://cdn.sanity.io/files/9u7ilulp/production/${src}.mp3`;
+  }, [src]);
+
   // localizar libro e historias
   const book = Object.values(books).find((b) => b.slug === bookSlug);
   const stories = book?.stories || [];
@@ -48,7 +56,7 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
       setIsPlaying(false);
       setProgress(0);
     }
-  }, [src]);
+  }, [resolvedSrc]);
 
   // sincronizar progreso
   useEffect(() => {
@@ -92,7 +100,7 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
       a.pause();
       setIsPlaying(false);
     } else {
-      a.play();
+      a.play().catch((err) => console.error("[audio] play failed", err));
       setIsPlaying(true);
     }
   };
@@ -130,7 +138,7 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
   return (
     <div className="bg-black/80 p-4 rounded-t-xl shadow-2xl backdrop-blur w-full">
       {/* audio */}
-      <audio ref={audioRef} src={src} />
+      <audio ref={audioRef} src={resolvedSrc} preload="metadata" />
 
       {/* barra de progreso */}
       <div className="flex items-center gap-2 text-sm text-gray-300">
@@ -148,7 +156,6 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
 
       {/* controles + navegación */}
       <div className="flex justify-center items-center gap-6 mt-4">
-        {/* historia anterior */}
         {prevStory ? (
           <Link
             href={`/books/${bookSlug}/${prevStory.slug}`}
@@ -160,7 +167,6 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
           <div className="w-8 h-8" />
         )}
 
-        {/* retroceder 15s */}
         <button
           onClick={() => skip(-15)}
           className="relative p-2 rounded hover:bg-gray-800"
@@ -171,7 +177,6 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
           </span>
         </button>
 
-        {/* play / pause */}
         <button
           onClick={togglePlay}
           className="p-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white"
@@ -179,7 +184,6 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
           {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
         </button>
 
-        {/* avanzar 15s */}
         <button
           onClick={() => skip(15)}
           className="relative p-2 rounded hover:bg-gray-800"
@@ -190,7 +194,6 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
           </span>
         </button>
 
-        {/* historia siguiente */}
         {nextStory ? (
           <Link
             href={`/books/${bookSlug}/${nextStory.slug}`}
@@ -203,7 +206,6 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
         )}
       </div>
 
-      {/* velocidad */}
       <div className="flex justify-center mt-3">
         <select
           value={speed}

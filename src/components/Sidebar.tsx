@@ -10,6 +10,7 @@ import {
   Settings,
   LogIn,
   LogOut,
+  PenLine,
 } from "lucide-react";
 import {
   SignedIn,
@@ -20,7 +21,7 @@ import {
   useClerk,
 } from "@clerk/nextjs";
 
-type Plan = "free" | "premium" | "polyglot";
+type Plan = "free" | "basic" | "premium" | "polyglot";
 
 interface SidebarProps {
   onClose?: () => void;
@@ -31,6 +32,7 @@ function PlanBadge() {
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
   const styles: Record<Plan, string> = {
     free: "bg-gray-700/60 text-gray-200",
+    basic: "bg-blue-600/30 text-blue-200",
     premium: "bg-yellow-600/30 text-yellow-200",
     polyglot: "bg-emerald-600/30 text-emerald-200",
   };
@@ -68,6 +70,9 @@ function SignInButtonCustom({ onClose }: { onClose?: () => void }) {
 }
 
 export default function Sidebar({ onClose }: SidebarProps) {
+  const { user } = useUser();
+  const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
+
   return (
     <div className="flex flex-col h-full w-full bg-[#0B132B] text-white p-6">
       {/* Logo */}
@@ -117,10 +122,19 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Star size={22} /> Favorites
         </Link>
 
-                {/* Mostrar solo si el plan NO es premium ni polyglot */}
-        {(!["premium", "polyglot"].includes(
-          ((useUser().user?.publicMetadata?.plan as string) || "free")
-        )) && (
+        {/* Mostrar solo si el plan es polyglot */}
+        {plan === "polyglot" && (
+          <Link
+            href="/create"
+            onClick={onClose}
+            className="flex items-center gap-3 hover:text-emerald-400 transition-colors"
+          >
+            <PenLine size={22} /> Create
+          </Link>
+        )}
+
+        {/* Mostrar solo si el plan NO es premium, basic ni polyglot */}
+        {!["premium", "basic", "polyglot"].includes(plan) && (
           <>
             <Link
               href="/story-of-the-day"

@@ -1,10 +1,10 @@
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import { generateAndUploadAudio } from "@/lib/elevenlabs";
+import { PrismaClient } from "@/generated/prisma";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!,
-});
+const prisma = new PrismaClient();
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
 type StoryJSON = {
   title: string;
@@ -24,13 +24,18 @@ function isValidStoryJSON(data: unknown): data is StoryJSON {
 
 export async function POST(req: Request) {
   try {
-    let body = {};
-    try {
-      body = await req.json();
-    } catch {
-      return NextResponse.json({ error: "Invalid or missing JSON body" }, { status: 400 });
+    const { userId } = (await auth()) ?? { userId: null };
+    if (!userId) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    const user = await currentUser();
+    const plan = (user?.publicMetadata?.plan as string) ?? "free";
+    if (plan !== "polyglot") {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
+    const body = await req.json();
     const {
       language = "Spanish",
       region,
@@ -46,7 +51,6 @@ export async function POST(req: Request) {
     };
 
     const regionClause = region ? `, specifically from ${region}` : "";
-
     const prompt = `
 You are an expert language teacher and long story writer.
 Write a long engaging story for a ${level} student learning ${language}${regionClause}.
@@ -85,12 +89,15 @@ Return ONLY valid JSON:
       return NextResponse.json({ error: "No content returned from OpenAI" }, { status: 502 });
     }
 
+    // Parse response JSON safely (some models return double-encoded strings)
     let parsed: unknown;
     try {
-      parsed = JSON.parse(content);
+      const maybeJSON = JSON.parse(content);
+      parsed =
+        typeof maybeJSON === "string" ? JSON.parse(maybeJSON) : maybeJSON;
     } catch {
       return NextResponse.json(
-        { error: "Invalid JSON format returned from model", raw: content },
+        { error: "Invalid JSON returned from model", raw: content },
         { status: 500 }
       );
     }
@@ -102,25 +109,70 @@ Return ONLY valid JSON:
       );
     }
 
-    const { title, text } = parsed as StoryJSON;
+    const { title, text, vocab } = parsed as StoryJSON;
 
-    // 🔊 Generar y subir audio
-    let audioAssetUrl: string | null = null;
+    // 🔹 Guardar historia inmediatamente (sin audio)
+    // Normalizar nivel para mantener consistencia
+const normalizedLevel = (() => {
+  const l = (level || "").toLowerCase();
+  if (l === "basic") return "Beginner";
+  if (l === "elementary") return "Beginner";
+  if (l === "intermediate") return "Intermediate";
+  if (l === "advanced") return "Advanced";
+  return "Beginner"; // fallback seguro
+})();
+
+const savedStory = await prisma.userStory.create({
+  data: {
+    userId,
+    title,
+    text,
+    vocab,
+    language,
+    region,
+    level: normalizedLevel,
+    focus,
+    topic,
+    public: true,
+  },
+});
+
+    // 🔹 Iniciar generación de audio en segundo plano
     try {
-      console.log("[api] generate-text called with", language, region);
-      const audioResult = await generateAndUploadAudio(text, title, language, region);
-      audioAssetUrl = audioResult ? audioResult.url : null;
-    } catch (e) {
-      console.error("[audio] generation/upload failed:", e);
+      let appUrl: string;
+
+      if (process.env.NEXT_PUBLIC_APP_URL) {
+        appUrl = process.env.NEXT_PUBLIC_APP_URL;
+      } else if (process.env.VERCEL_URL) {
+        appUrl = `https://${process.env.VERCEL_URL}`;
+      } else {
+        appUrl = "http://localhost:3000";
+      }
+
+      fetch(`${appUrl}/api/audio/generate`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          storyId: savedStory.id,
+          text,
+          title,
+          language,
+          region,
+        }),
+      }).catch((err) => console.error("[background audio job failed]", err));
+    } catch (err) {
+      console.error("[background job launch failed]", err);
     }
 
-    // ✅ Devolver respuesta limpia y consistente
-    return NextResponse.json({ content, audioAssetUrl });
-  } catch (error) {
-    console.error("Error generating text:", error);
-    const err = error as Error;
+    return NextResponse.json({
+      message: "Story generated successfully",
+      story: savedStory,
+    });
+  } catch (error: any) {
+    console.error("💥 ERROR in /api/user/generate-story");
+    console.error("Full error object:", JSON.stringify(error, null, 2));
     return NextResponse.json(
-      { error: "Failed to generate story", details: err.message },
+      { error: "Failed to generate story", details: error?.message || "Unknown error" },
       { status: 500 }
     );
   }

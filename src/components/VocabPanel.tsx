@@ -12,20 +12,26 @@ interface VocabPanelProps {
     id: string;
     slug: string;
     title: string;
-    text: string;
-    audio: string;
     vocab?: VocabItem[];
   };
+  initialWord?: string | null;
+  initialDefinition?: string | null;
+  onClose?: () => void;
 }
 
-export default function VocabPanel({ story }: VocabPanelProps) {
-  const [selectedWord, setSelectedWord] = useState<string | null>(null);
-  const [definition, setDefinition] = useState<string | null>(null);
+export default function VocabPanel({
+  story,
+  initialWord = null,
+  initialDefinition = null,
+  onClose,
+}: VocabPanelProps) {
+  const [selectedWord, setSelectedWord] = useState(initialWord);
+  const [definition, setDefinition] = useState(initialDefinition);
   const [isFav, setIsFav] = useState(false);
   const [loadedFavs, setLoadedFavs] = useState<FavoriteItem[]>([]);
   const { user, isLoaded } = useUser();
 
-  // ✅ Cargar favoritos una vez al montar (solo si usuario logueado)
+  // 🔹 Cargar favoritos una vez al montar
   useEffect(() => {
     const loadFavorites = async () => {
       try {
@@ -48,60 +54,43 @@ export default function VocabPanel({ story }: VocabPanelProps) {
     if (isLoaded) void loadFavorites();
   }, [user, isLoaded]);
 
-  // Detecta clics sobre palabras con clase .vocab-word
+  // 🔹 Actualiza el estado cuando cambia la palabra inicial
   useEffect(() => {
-    const handler = (e: Event) => {
-      const el = (e.target as HTMLElement | null)?.closest?.(
-        ".vocab-word"
-      ) as HTMLElement | null;
-      if (!el) return;
-
-      const word = el.dataset.word ?? "";
-      if (!word) return;
-
-      setSelectedWord(word);
-      const item = story.vocab?.find((v) => v.word === word);
-      setDefinition(item?.definition ?? null);
-
-      // ✅ verificar si ya está en favoritos
-      setIsFav(loadedFavs.some((f) => f.word === word));
-    };
-
-    document.addEventListener("click", handler);
-    return () => document.removeEventListener("click", handler);
-  }, [story, loadedFavs]);
-
-  const toggleFavorite = async () => {
-  if (!selectedWord) return;
-  const newItem = { word: selectedWord, translation: definition ?? "" };
-
-  // ✅ Cambio inmediato (optimistic UI)
-  const prevFav = isFav;
-  setIsFav(!isFav);
-
-  try {
-    if (user) {
-      const res = await fetch("/api/favorites", {
-        method: isFav ? "DELETE" : "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(isFav ? { word: selectedWord } : newItem),
-      });
-      if (!res.ok) throw new Error("Network error");
-    } else {
-      const updated = isFav
-        ? loadedFavs.filter((f) => f.word !== selectedWord)
-        : [...loadedFavs, newItem];
-      localStorage.setItem("favorites", JSON.stringify(updated));
-      setLoadedFavs(updated);
+    if (initialWord) {
+      setSelectedWord(initialWord);
+      setDefinition(initialDefinition);
+      setIsFav(loadedFavs.some((f) => f.word === initialWord));
     }
-  } catch (err) {
-    console.error("Error updating favorites:", err);
-    // 🚫 Revertir si falla
-    setIsFav(prevFav);
-  }
-};
+  }, [initialWord, initialDefinition, loadedFavs]);
 
+  // 🔹 Alternar favoritos
+  const toggleFavorite = async () => {
+    if (!selectedWord) return;
+    const newItem = { word: selectedWord, translation: definition ?? "" };
+    const prevFav = isFav;
+    setIsFav(!isFav);
+
+    try {
+      if (user) {
+        const res = await fetch("/api/favorites", {
+          method: isFav ? "DELETE" : "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify(isFav ? { word: selectedWord } : newItem),
+        });
+        if (!res.ok) throw new Error("Network error");
+      } else {
+        const updated = isFav
+          ? loadedFavs.filter((f) => f.word !== selectedWord)
+          : [...loadedFavs, newItem];
+        localStorage.setItem("favorites", JSON.stringify(updated));
+        setLoadedFavs(updated);
+      }
+    } catch (err) {
+      console.error("Error updating favorites:", err);
+      setIsFav(prevFav);
+    }
+  };
 
   if (!selectedWord) return null;
 
@@ -114,6 +103,7 @@ export default function VocabPanel({ story }: VocabPanelProps) {
             setSelectedWord(null);
             setDefinition(null);
             setIsFav(false);
+            if (onClose) onClose();
           }}
           aria-label="Close vocab panel"
         >
