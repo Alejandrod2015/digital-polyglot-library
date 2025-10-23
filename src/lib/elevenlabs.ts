@@ -1,5 +1,5 @@
 // /src/lib/elevenlabs.ts
-import { writeClient } from "@/sanity/lib/client";
+import { sanityWriteClient } from "@/sanity";
 
 export async function generateAndUploadAudio(
   storyText: string,
@@ -8,7 +8,7 @@ export async function generateAndUploadAudio(
   region?: string
 ): Promise<{ url: string; filename: string } | null> {
   try {
-    // 🔹 Limpiar etiquetas HTML para que ElevenLabs lea texto puro
+    // 🔹 Limpiar etiquetas HTML para enviar texto limpio a ElevenLabs
     const plainText = storyText
       .replace(/<[^>]+>/g, " ")
       .replace(/\s+/g, " ")
@@ -16,7 +16,7 @@ export async function generateAndUploadAudio(
 
     const apiKey = process.env.ELEVENLABS_API_KEY;
     if (!apiKey) {
-      console.warn("[elevenlabs] Missing ELEVENLABS_API_KEY");
+      console.error("[elevenlabs] ❌ Missing ELEVENLABS_API_KEY");
       return null;
     }
 
@@ -26,14 +26,15 @@ export async function generateAndUploadAudio(
         colombia: "b2htR0pMe28pYwCY9gnP", // Sofía (Colombia)
         mexico: "htFfPSZGJwjBv1CL0aMD", // Antonio (México)
         argentina: "p7AwDmKvTdoHTBuueGvP", // Malena (Argentina)
-        default: "JddqVF50ZSIR7SRbJE6u", // Valeria (LATAM)
+        peru: "JddqVF50ZSIR7SRbJE6u", // Valeria (LATAM)
+        default: "JddqVF50ZSIR7SRbJE6u",
       },
       German: {
         germany: "K5ZVtkkBnuPY6YqXs70E", // Simon
         default: "K5ZVtkkBnuPY6YqXs70E",
       },
       English: {
-        default: "21m00Tcm4TlvDq8ikWAM", // fallback general
+        default: "21m00Tcm4TlvDq8ikWAM", // Rachel
       },
     };
 
@@ -50,14 +51,10 @@ export async function generateAndUploadAudio(
       voicesByLangRegion.English.default;
 
     console.log(
-      "[elevenlabs] Using voice",
-      selectedVoice,
-      "for",
-      normalizedLang,
-      normalizedRegion
+      `[elevenlabs] 🎙 Using voice ${selectedVoice} for ${normalizedLang} (${normalizedRegion})`
     );
 
-    // Generar audio con ElevenLabs
+    // 🧠 Llamar a ElevenLabs API
     const response = await fetch(
       `https://api.elevenlabs.io/v1/text-to-speech/${selectedVoice}`,
       {
@@ -75,41 +72,42 @@ export async function generateAndUploadAudio(
     );
 
     if (!response.ok) {
-      console.error("[elevenlabs] Error generating audio:", await response.text());
+      const errText = await response.text();
+      console.error("[elevenlabs] ❌ Error generating audio:", errText);
       return null;
     }
 
     const arrayBuffer = await response.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
-    // 🔹 Generar nombre de archivo legible y único
+    // 📁 Crear nombre de archivo seguro
     const safeTitle = title.replace(/[^\w\s-]/g, "").replace(/\s+/g, "_");
-    const timestamp = Date.now();
-    const filename = `${safeTitle}_${timestamp}.mp3`;
+    const filename = `${safeTitle}_${Date.now()}.mp3`;
 
-    // 🔹 Subir a Sanity
-    const asset = await writeClient.assets.upload("file", buffer, {
+    console.log("[elevenlabs] ⬆ Uploading to Sanity...");
+
+    // ✅ Subir archivo MP3 a Sanity con permisos de escritura
+    const asset = await sanityWriteClient.assets.upload("file", buffer, {
       filename,
       contentType: "audio/mpeg",
     });
 
-    if (!asset) {
-      console.error("[elevenlabs] Upload failed — no asset object returned");
+    if (!asset?._id) {
+      console.error("[elevenlabs] ❌ Sanity upload failed (no asset returned)");
       return null;
     }
 
-    // 🧩 Construir URL pública (más confiable que asset.url)
+    // 🧩 Construir URL pública desde asset ID
     const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "9u7ilulp";
     const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
     const fileId = asset._id.replace("file-", "").replace("-mp3", "");
     const url = `https://cdn.sanity.io/files/${projectId}/${dataset}/${fileId}.mp3`;
 
-    console.log("[elevenlabs] Uploaded audio:", filename, "→", url);
+    console.log("[elevenlabs] ✅ Audio uploaded:", filename, "→", url);
 
-    // ✅ Devolver ambos valores
     return { url, filename };
   } catch (err) {
-    console.error("[elevenlabs] Failed to generate/upload audio:", err);
+    console.error("[elevenlabs] 💥 Failed to generate/upload audio:", err);
     return null;
   }
 }
