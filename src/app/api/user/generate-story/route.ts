@@ -2,9 +2,12 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { PrismaClient } from "@/generated/prisma";
+import slugify from "slugify";
+import { customAlphabet } from "nanoid";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 6);
 
 type StoryJSON = {
   title: string;
@@ -22,6 +25,31 @@ function isValidStoryJSON(data: unknown): data is StoryJSON {
   );
 }
 
+// 🔹 Normaliza el HTML para mantener formato igual al de Sanity
+function normalizeStoryHtml(html: string): string {
+  // Envuelve cada bloque <blockquote> en <p> si no lo tiene
+  const withParagraphs = html.replace(
+    /<blockquote>([\s\S]*?)<\/blockquote>/gi,
+    (_m, inner: string) => {
+      const hasP = /<\s*p\b/i.test(inner);
+      const wrapped = hasP ? inner : `<p>${inner.trim()}</p>`;
+      return `<blockquote>${wrapped}</blockquote>`;
+    }
+  );
+
+  // Si no hay blockquotes, garantiza que los párrafos estén dentro de <p>
+  if (!withParagraphs.includes("<p>")) {
+    const chunks = withParagraphs
+      .split(/\n{2,}/)
+      .map((c) => c.trim())
+      .filter(Boolean)
+      .map((c) => `<p>${c}</p>`);
+    return chunks.join("");
+  }
+
+  return withParagraphs;
+}
+
 export async function POST(req: Request) {
   try {
     const { userId } = (await auth()) ?? { userId: null };
@@ -35,14 +63,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    const body = await req.json();
-    const {
-      language = "Spanish",
-      region,
-      level = "intermediate",
-      focus = "verbs",
-      topic = "daily life",
-    } = body as {
+    const body = (await req.json()) as {
       language?: string;
       region?: string;
       level?: string;
@@ -50,7 +71,16 @@ export async function POST(req: Request) {
       topic?: string;
     };
 
+    const {
+      language = "Spanish",
+      region,
+      level = "intermediate",
+      focus = "verbs",
+      topic = "daily life",
+    } = body;
+
     const regionClause = region ? `, specifically from ${region}` : "";
+
     const prompt = `
 You are an expert language teacher and long story writer.
 Write a long engaging story for a ${level} student learning ${language}${regionClause}.
@@ -89,7 +119,7 @@ Return ONLY valid JSON:
       return NextResponse.json({ error: "No content returned from OpenAI" }, { status: 502 });
     }
 
-    // Parse response JSON safely (some models return double-encoded strings)
+    // Parse response JSON safely
     let parsed: unknown;
     try {
       const maybeJSON = JSON.parse(content);
@@ -111,50 +141,50 @@ Return ONLY valid JSON:
 
     const { title, text, vocab } = parsed as StoryJSON;
 
-    // 🔹 Guardar historia inmediatamente (sin audio)
-    // Normalizar nivel para mantener consistencia
-const normalizedLevel = (() => {
-  const l = (level || "").toLowerCase();
-  if (l === "basic") return "Beginner";
-  if (l === "elementary") return "Beginner";
-  if (l === "intermediate") return "Intermediate";
-  if (l === "advanced") return "Advanced";
-  return "Beginner"; // fallback seguro
-})();
+    // 🔹 Normalizar texto HTML para formato consistente
+    const normalizedText = normalizeStoryHtml(text);
 
-const savedStory = await prisma.userStory.create({
-  data: {
-    userId,
-    title,
-    text,
-    vocab,
-    language,
-    region,
-    level: normalizedLevel,
-    focus,
-    topic,
-    public: true,
-  },
-});
+    // Normalizar nivel
+    const normalizedLevel = (() => {
+      const l = (level || "").toLowerCase();
+      if (l === "basic" || l === "elementary") return "Beginner";
+      if (l === "intermediate") return "Intermediate";
+      if (l === "advanced") return "Advanced";
+      return "Beginner";
+    })();
 
-    // 🔹 Iniciar generación de audio en segundo plano
+    // Generar slug único
+    const baseSlug = slugify(title, { lower: true, strict: true }).slice(0, 80);
+    const uniqueSlug = `${baseSlug}-${nanoid()}`;
+
+    const savedStory = await prisma.userStory.create({
+      data: {
+        userId,
+        title,
+        slug: uniqueSlug,
+        text: normalizedText,
+        vocab,
+        language,
+        region,
+        level: normalizedLevel,
+        focus,
+        topic,
+        public: true,
+      },
+    });
+
+    // 🔹 Generación de audio en segundo plano
     try {
-      let appUrl: string;
-
-      if (process.env.NEXT_PUBLIC_APP_URL) {
-        appUrl = process.env.NEXT_PUBLIC_APP_URL;
-      } else if (process.env.VERCEL_URL) {
-        appUrl = `https://${process.env.VERCEL_URL}`;
-      } else {
-        appUrl = "http://localhost:3000";
-      }
+      const appUrl =
+        process.env.NEXT_PUBLIC_APP_URL ||
+        (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
       fetch(`${appUrl}/api/audio/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           storyId: savedStory.id,
-          text,
+          text: normalizedText,
           title,
           language,
           region,
@@ -166,13 +196,24 @@ const savedStory = await prisma.userStory.create({
 
     return NextResponse.json({
       message: "Story generated successfully",
-      story: savedStory,
+      story: {
+        id: savedStory.id,
+        slug: savedStory.slug,
+        title: savedStory.title,
+        text: savedStory.text,
+        vocab: savedStory.vocab,
+        language: savedStory.language,
+        region: savedStory.region,
+        level: savedStory.level,
+        focus: savedStory.focus,
+        topic: savedStory.topic,
+      },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("💥 ERROR in /api/user/generate-story");
     console.error("Full error object:", JSON.stringify(error, null, 2));
     return NextResponse.json(
-      { error: "Failed to generate story", details: error?.message || "Unknown error" },
+      { error: "Failed to generate story", details: error instanceof Error ? error.message : "Unknown error" },
       { status: 500 }
     );
   }

@@ -3,7 +3,9 @@
 import { useUser } from '@clerk/nextjs';
 import { useState } from 'react';
 import Link from 'next/link';
-import { PenLine } from 'lucide-react';
+import { PenLine, Loader2, Music, CheckCircle } from 'lucide-react';
+import StoryContent from '@/components/StoryContent';
+import VocabPanel from '@/components/VocabPanel';
 
 type Plan = 'free' | 'basic' | 'premium' | 'polyglot';
 
@@ -27,11 +29,10 @@ export default function CreatePage() {
   const [level, setLevel] = useState('');
   const [focus, setFocus] = useState('');
   const [topic, setTopic] = useState('');
-  const [response, setResponse] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState<unknown>(null);
+  const [status, setStatus] = useState<'idle' | 'generating_text' | 'generating_audio' | 'done'>('idle');
 
   if (!isLoaded) return null;
-
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? 'free';
 
   if (plan !== 'polyglot') {
@@ -53,7 +54,7 @@ export default function CreatePage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setLoading(true);
+    setStatus('generating_text');
     setResponse(null);
 
     try {
@@ -63,18 +64,46 @@ export default function CreatePage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
+
       const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || 'Story generation failed');
+
       setResponse(data);
+      setStatus('generating_audio');
+
+      const maxWait = 40;
+      const interval = 3000;
+      let elapsed = 0;
+      let storyWithAudio: unknown = null;
+
+      while (elapsed < maxWait * 1000) {
+        const check = await fetch(`/api/user-stories?id=${data.story.id}`);
+        const json = await check.json();
+
+        if (json.story?.audioUrl) {
+          storyWithAudio = json.story;
+          break;
+        }
+
+        await new Promise((r) => setTimeout(r, interval));
+        elapsed += interval;
+      }
+
+      if (storyWithAudio) {
+        setResponse({ story: storyWithAudio });
+        setStatus('done');
+      } else {
+        throw new Error('Audio generation timed out');
+      }
     } catch (error) {
       console.error('Error:', error);
-      setResponse({ error: 'Request failed' });
-    } finally {
-      setLoading(false);
+      setResponse({ error: (error as Error).message });
+      setStatus('idle');
     }
   }
 
-  const availableRegions =
-    regionsByLanguage[language as keyof typeof regionsByLanguage] || [];
+  const availableRegions = regionsByLanguage[language as keyof typeof regionsByLanguage] || [];
 
   return (
     <div className="max-w-3xl mx-auto py-12 px-4 text-gray-100">
@@ -87,7 +116,6 @@ export default function CreatePage() {
         onSubmit={handleSubmit}
         className="space-y-4 bg-[#0D1B2A] p-6 rounded-xl border border-gray-700"
       >
-        {/* Language */}
         <div>
           <label className="block text-sm text-gray-300 mb-1">Language</label>
           <select
@@ -108,12 +136,9 @@ export default function CreatePage() {
           </select>
         </div>
 
-        {/* Region (optional, depends on language) */}
         {availableRegions.length > 0 && (
           <div>
-            <label className="block text-sm text-gray-300 mb-1">
-              Region (optional)
-            </label>
+            <label className="block text-sm text-gray-300 mb-1">Region (optional)</label>
             <select
               value={region}
               onChange={(e) => setRegion(e.target.value)}
@@ -129,7 +154,6 @@ export default function CreatePage() {
           </div>
         )}
 
-        {/* Level */}
         <div>
           <label className="block text-sm text-gray-300 mb-1">Level</label>
           <select
@@ -147,7 +171,6 @@ export default function CreatePage() {
           </select>
         </div>
 
-        {/* Focus */}
         <div>
           <label className="block text-sm text-gray-300 mb-1">Focus</label>
           <select
@@ -165,7 +188,6 @@ export default function CreatePage() {
           </select>
         </div>
 
-        {/* Topic */}
         <div>
           <label className="block text-sm text-gray-300 mb-1">Topic</label>
           <select
@@ -185,57 +207,98 @@ export default function CreatePage() {
 
         <button
           type="submit"
-          disabled={loading}
-          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 rounded-md transition"
+          disabled={status === 'generating_text' || status === 'generating_audio'}
+          className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 rounded-md transition"
         >
-          {loading ? 'Generating...' : 'Generate Story'}
+          {status === 'idle' && 'Generate Story'}
+          {status === 'generating_text' && (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" /> Generating story...
+            </>
+          )}
+          {status === 'generating_audio' && (
+            <>
+              <Music className="w-5 h-5 animate-pulse" /> Generating audio...
+            </>
+          )}
+          {status === 'done' && (
+            <>
+              <CheckCircle className="w-5 h-5 text-green-400" /> Story ready!
+            </>
+          )}
         </button>
       </form>
 
-            {response && response.story && (
-  <div className="mt-10 bg-[#1B263B] border border-gray-700 rounded-xl p-6">
-    <h2 className="text-2xl font-bold mb-2 text-emerald-400">
-      {response.story.title}
-    </h2>
-
-    <p className="text-sm text-gray-400 mb-4">
-      {response.story.language} • {response.story.level} •{" "}
-      {response.story.region || "General"}
-    </p>
-
-    <blockquote
-      className="text-gray-200 italic line-clamp-3 leading-relaxed mb-6"
-      dangerouslySetInnerHTML={{ __html: response.story.text }}
-    />
-
-    <div className="flex items-center justify-between mt-4">
-      {response.story.audioUrl && (
-        <audio
-          controls
-          src={response.story.audioUrl}
-          className="flex-1 mr-4 rounded-md"
-        />
+      {response && (response as any).story && status === 'done' && (
+        <StoryPreview story={(response as any).story} />
       )}
-      <Link
-        href={`/stories/${response.story.id}`}
-        className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md transition font-medium"
-      >
-        Read full story →
-      </Link>
-    </div>
-  </div>
-)}
 
-      {/* Mostrar error si existe */}
-      {response && response.error && (
+      {(response as any)?.error && (
         <div className="mt-8 border border-red-700 rounded-xl p-6 bg-red-900/40">
           <h2 className="text-lg font-semibold mb-2 text-red-400">Error</h2>
           <pre className="text-sm text-gray-200 whitespace-pre-wrap">
-            {JSON.stringify(response.error, null, 2)}
+            {JSON.stringify((response as any).error, null, 2)}
           </pre>
         </div>
       )}
+    </div>
+  );
+}
 
+function StoryPreview({ story }: { story: any }) {
+  const [selectedWord, setSelectedWord] = useState<string | null>(null);
+  const [definition, setDefinition] = useState<string | null>(null);
+
+  const handleWordClick = (word: string) => {
+    const item = story.vocab?.find((v: any) => v.word === word);
+    setSelectedWord(word);
+    setDefinition(item?.definition ?? null);
+  };
+
+  return (
+    <div className="mt-10 bg-[#1B263B] border border-gray-700 rounded-xl p-6">
+      <h2 className="text-2xl font-bold mb-2 text-emerald-400">{story.title}</h2>
+      <p className="text-sm text-gray-400 mb-4">
+        {story.language} • {story.level} • {story.region || 'General'}
+      </p>
+
+      <div className="relative">
+        <StoryContent
+          text={story.text}
+          sentencesPerParagraph={3}
+          renderWord={(word) => (
+            <span
+              onClick={() => handleWordClick(word)}
+              className="vocab-word cursor-pointer text-emerald-400 hover:text-emerald-300"
+            >
+              {word}
+            </span>
+          )}
+        />
+        {selectedWord && (
+          <VocabPanel
+            story={story}
+            initialWord={selectedWord}
+            initialDefinition={definition}
+            onClose={() => {
+              setSelectedWord(null);
+              setDefinition(null);
+            }}
+          />
+        )}
+      </div>
+
+      <div className="flex items-center justify-between mt-4">
+        {story.audioUrl && (
+          <audio controls src={story.audioUrl} className="flex-1 mr-4 rounded-md" />
+        )}
+        <Link
+          href={`/stories/${story.slug}`}
+          className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md transition font-medium"
+        >
+          Read full story →
+        </Link>
+      </div>
     </div>
   );
 }

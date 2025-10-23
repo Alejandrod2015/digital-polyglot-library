@@ -1787,6 +1787,123 @@ export const colloquialgermanstories: Book = {
         "definition": "incredible"
       }
     ]
+  },
+  {
+    "id": "eine-tour-in-berlin",
+    "slug": "eine-tour-in-berlin",
+    "title": "Eine Tour in Berlin",
+    "text": "<blockquote>Max ist ein junger Mann. Er lebt in einer kleinen Stadt in Deutschland. Jeden Morgen <span class='vocab-word' data-word='stehen'>steht</span> er früh auf. Sein Wecker <span class='vocab-word' data-word='läuten'>läutet</span> um 6 Uhr. Max <span class='vocab-word' data-word='fühlen'>fühlt</span> sich manchmal müde, aber er <span class='vocab-word' data-word='wissen'>weiß</span>, dass er zur Arbeit <span class='vocab-word' data-word='gehen'>gehen</span> muss.</blockquote> <blockquote>Max <span class='vocab-word' data-word='arbeiten'>arbeitet</span> in einem kleinen Büro. Er <span class='vocab-word' data-word='helfen'>hilft</span> Kunden mit ihren Fragen. Manchmal <span class='vocab-word' data-word='fragen'>fragen</span> die Kunden viele Dinge. Max <span class='vocab-word' data-word='müssen'>muss</span> oft <span class='vocab-word' data-word='antworten'>antworten</span>, und das macht ihm Spaß. Er <span class='vocab-word' data-word='lieben'>liebt</span> seinen Job.</blockquote> <blockquote>Eines Tages <span class='vocab-word' data-word='kommen'>kam</span> eine neue Kollegin ins Büro. Ihr Name ist Anna. Max <span class='vocab-word' data-word='denken'>denkt</span>, dass sie nett ist. Sie <span class='vocab-word' data-word='lachen'>lacht</span> viel und <span class='vocab-word' data-word='bringen'>bringt</span> gute Ideen. Max <span class='vocab-word' data-word='freuen'>freut</span> sich, mit Anna <span class='vocab-word' data-word='arbeiten'>zu arbeiten</span>.</blockquote> <blockquote>Max und Anna <span class='vocab-word' data-word='planen'>planen</span> ein Projekt. Sie <span class='vocab-word' data-word='denken'>denken</span>, dass es wichtig ist. Sie <span class='vocab-word' data-word='diskutieren'>diskutieren</span> viele Details. Max <span class='vocab-word' data-word='sehen'>sieht</span>, dass Anna sehr klug ist. „Wir <span class='vocab-word' data-word='können'>können</span> das schaffen“, <span class='vocab-word' data-word='sagen'>sagt</span> er zu ihr.</blockquote> <blockquote>In der Mittagspause <span class='vocab-word' data-word='essen'>essen</span> Max und Anna zusammen. Sie <span class='vocab-word' data-word='teilen'>teilen</span> ihre Ideen über die Arbeit. Max <span class='vocab-word' data-word='erzählen'>erzählt</span> von seinen Hobbys. Anna <span class='vocab-word' data-word='erklären'>erklärt</span>, dass sie gerne Bücher <span class='vocab-word' data-word='lesen'>liest</span>.</blockquote> <blockquote>Nach der Arbeit <span class='vocab-word' data-word='gehen'>geht</span> Max oft ins Fitnessstudio. Er <span class='vocab-word' data-word='trainieren'>trainiert</span>, um fit zu bleiben. Manchmal <span class='vocab-word' data-word='fühlen'>fühlt</span> er sich müde, aber das <span class='vocab-word' data-word='sein'>ist</span> gut für seine Gesundheit. Max <span class='vocab-word' data-word='glauben'>glaubt</span>, dass Arbeit und Fitness wichtig sind.</blockquote> <blockquote>Am Freitag <span class='vocab-word' data-word='freuen'>freut</span> sich Max auf das Wochenende. Er <span class='vocab-word' data-word='planen'>plant</span> immer etwas mit seinen Freunden. Sie <span class='vocab-word' data-word='besuchen'>besuchen</span> oft das Kino oder <span class='vocab-word' data-word='essen'>essen</span> zusammen. Max <span class='vocab-word' data-word='denken'>denkt</span> daran, wie wichtig die Arbeit ist, aber auch die Freizeit.</blockquote> <blockquote>Am Sonntag <span class='vocab-word' data-word='entspannen'>entspannt</span> sich Max. Er <span class='vocab-word' data-word='lesen'>liest</span> ein Buch und <span class='vocab-word' data-word='träumen'>träumt</span> von der nächsten Woche. Max <span class='vocab-word' data-word='freuen'>freut</span> sich schon auf die neue Arbeit mit Anna. Er <span class='vocab-word' data-word='glauben'>glaubt</span>, dass sie gemeinsam viel erreichen <span class='vocab-word' data-word='können'>können</span>.</blockquote>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "sonniger",
+        "definition": "sunny"
+      },
+      {
+        "word": "aufgeregt",
+        "definition": "excited"
+      },
+      {
+        "word": "kulturellen",
+        "definition": "cultural"
+      },
+      {
+        "word": "historischen",
+        "definition": "historical"
+      },
+      {
+        "word": "wunderschönes",
+        "definition": "beautiful"
+      },
+      {
+        "word": "majestätischen",
+        "definition": "majestic"
+      },
+      {
+        "word": "historischen",
+        "definition": "historical"
+      },
+      {
+        "word": "interessante",
+        "definition": "interesting"
+      },
+      {
+        "word": "grün",
+        "definition": "green"
+      },
+      {
+        "word": "friedlich",
+        "definition": "peaceful"
+      },
+      {
+        "word": "entspannte",
+        "definition": "relaxed"
+      },
+      {
+        "word": "künstlerischen",
+        "definition": "artistic"
+      },
+      {
+        "word": "abwechslungsreichen",
+        "definition": "varied"
+      },
+      {
+        "word": "kreatives",
+        "definition": "creative"
+      },
+      {
+        "word": "moderne",
+        "definition": "modern"
+      },
+      {
+        "word": "Café",
+        "definition": "café"
+      },
+      {
+        "word": "leckeren",
+        "definition": "delicious"
+      },
+      {
+        "word": "Käsekuchen",
+        "definition": "cheesecake"
+      },
+      {
+        "word": "schokoladiges",
+        "definition": "chocolatey"
+      },
+      {
+        "word": "lebhaften",
+        "definition": "lively"
+      },
+      {
+        "word": "vielfältige",
+        "definition": "diverse"
+      },
+      {
+        "word": "atemberaubende",
+        "definition": "breathtaking"
+      },
+      {
+        "word": "spannend",
+        "definition": "exciting"
+      },
+      {
+        "word": "glänzend",
+        "definition": "shiny"
+      },
+      {
+        "word": "unvergesslichsten",
+        "definition": "most unforgettable"
+      },
+      {
+        "word": "zufrieden",
+        "definition": "satisfied"
+      },
+      {
+        "word": "besonders",
+        "definition": "special"
+      }
+    ]
   }
 ]
 };

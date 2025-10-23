@@ -107,7 +107,7 @@ export default function ExplorePage() {
                     {story.title}
                   </h3>
                   <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
-                    {story.text.replace(/<[^>]+>/g, '').slice(0, 160)}...
+                    {story.text?.replace(/<[^>]+>/g, "").slice(0, 120) ?? ""}...
                   </p>
                   <div className="mt-3 text-sm text-gray-400 space-y-1">
                     {story.language && (

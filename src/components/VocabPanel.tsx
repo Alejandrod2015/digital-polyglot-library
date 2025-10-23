@@ -55,13 +55,27 @@ export default function VocabPanel({
   }, [user, isLoaded]);
 
   // 🔹 Actualiza el estado cuando cambia la palabra inicial
-  useEffect(() => {
-    if (initialWord) {
-      setSelectedWord(initialWord);
-      setDefinition(initialDefinition);
-      setIsFav(loadedFavs.some((f) => f.word === initialWord));
-    }
-  }, [initialWord, initialDefinition, loadedFavs]);
+  // 🔹 Detecta clics sobre palabras con clase .vocab-word
+useEffect(() => {
+  const handler = (e: Event) => {
+    const el = (e.target as HTMLElement | null)?.closest?.(
+      ".vocab-word"
+    ) as HTMLElement | null;
+    if (!el) return;
+
+    const word = el.dataset.word ?? "";
+    if (!word) return;
+
+    setSelectedWord(word);
+    const item = story.vocab?.find((v) => v.word === word);
+    setDefinition(item?.definition ?? null);
+    setIsFav(loadedFavs.some((f) => f.word === word));
+  };
+
+  document.addEventListener("click", handler);
+  return () => document.removeEventListener("click", handler);
+}, [story, loadedFavs]);
+
 
   // 🔹 Alternar favoritos
   const toggleFavorite = async () => {

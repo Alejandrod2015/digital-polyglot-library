@@ -1,0 +1,76 @@
+"use client";
+
+import { useState } from "react";
+import VocabPanel from "@/components/VocabPanel";
+
+type VocabItem = {
+  word: string;
+  definition: string;
+};
+
+type StoryData = {
+  id: string;
+  title: string;
+  text: string;
+  vocab?: VocabItem[] | null;
+  audioUrl?: string | null;
+  language?: string | null;
+  level?: string | null;
+};
+
+interface StoryReaderClientProps {
+  story: StoryData;
+}
+
+export default function StoryReaderClient({ story }: StoryReaderClientProps) {
+  const [selectedWord, setSelectedWord] = useState<string | null>(null);
+  const [definition, setDefinition] = useState<string | null>(null);
+
+  const handleWordClick = (word: string) => {
+    const item = story.vocab?.find((v) => v.word === word);
+    setSelectedWord(word);
+    setDefinition(item?.definition ?? null);
+  };
+
+  return (
+    <div className="relative">
+      {/* === Texto principal con estilo idéntico a storySlug === */}
+      <div
+        className="
+          space-y-4
+          text-xl
+          leading-relaxed
+          text-gray-200
+          mx-auto
+          max-w-[70ch]
+        "
+        onClick={(e) => {
+          const target = (e.target as HTMLElement).closest(".vocab-word") as HTMLElement | null;
+          if (target) {
+            const word = target.dataset.word ?? "";
+            if (word) handleWordClick(word);
+          }
+        }}
+        dangerouslySetInnerHTML={{ __html: story.text }}
+      />
+
+      {/* === Panel de vocabulario === */}
+      {selectedWord && (
+        <VocabPanel
+          story={{
+            id: story.id,
+            slug: story.id, // compatibilidad con prop esperada
+            title: story.title,
+            vocab: story.vocab ?? undefined,
+          }}
+          initialWord={selectedWord}
+          initialDefinition={definition}
+          onClose={() => {
+            setSelectedWord(null);
+            setDefinition(null);
+          }}
+        />
+      )}
+    </div>
+  );
+}

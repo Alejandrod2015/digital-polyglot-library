@@ -66,10 +66,11 @@ model UserStory {
   id            String   @id @default(cuid())
   userId        String
   title         String
+  slug          String   @unique
   text          String
   vocab         Json
   audioUrl      String?
-  audioFilename String?     // ← nuevo campo
+  audioFilename String?
   language      String
   region        String?
   level         String
