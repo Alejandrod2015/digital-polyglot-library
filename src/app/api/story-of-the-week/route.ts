@@ -1,6 +1,6 @@
 // /src/app/api/story-of-the-week/route.ts
 import { NextResponse } from "next/server";
-import { updateStoryOfTheWeek } from "@/sanity/actions/updateStoryOfTheWeek";
+import { updateFeaturedStory } from "@/sanity/actions/updateFeaturedStory";
 import { getFeaturedStory } from "@/lib/getFeaturedStory";
 import { client } from "@/sanity/lib/client";
 
@@ -14,7 +14,7 @@ export async function GET(req: Request) {
     const tz = searchParams.get("tz") || "UTC";
 
     // 🔁 Actualiza si corresponde (solo si no hay historia o si es Cron)
-    await updateStoryOfTheWeek(tz, "week");
+    await updateFeaturedStory(tz, "week");
 
     // 🧩 Obtiene la historia destacada actual
     const featured = await getFeaturedStory("week", tz);

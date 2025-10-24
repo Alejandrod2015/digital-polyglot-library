@@ -133,25 +133,25 @@ export default function Sidebar({ onClose }: SidebarProps) {
           </Link>
         )}
 
-        {/* Mostrar solo si el plan NO es premium, basic ni polyglot */}
-        {!["premium", "basic", "polyglot"].includes(plan) && (
-          <>
-            <Link
-              href="/story-of-the-day"
-              onClick={onClose}
-              className="flex items-center gap-3 hover:text-pink-400 transition-colors"
-            >
-              <BookMarked size={22} /> Story of the Day
-            </Link>
+                {/* Mostrar opciones de historia destacada según plan */}
+        {plan === "free" && (
+          <Link
+            href="/story-of-the-week"
+            onClick={onClose}
+            className="flex items-center gap-3 hover:text-pink-400 transition-colors"
+          >
+            <BookMarked size={22} /> Story of the Week
+          </Link>
+        )}
 
-            <Link
-              href="/story-of-the-week"
-              onClick={onClose}
-              className="flex items-center gap-3 hover:text-pink-400 transition-colors"
-            >
-              <BookMarked size={22} /> Story of the Week
-            </Link>
-          </>
+        {plan === "basic" && (
+          <Link
+            href="/story-of-the-day"
+            onClick={onClose}
+            className="flex items-center gap-3 hover:text-pink-400 transition-colors"
+          >
+            <BookMarked size={22} /> Story of the Day
+          </Link>
         )}
 
         <Link

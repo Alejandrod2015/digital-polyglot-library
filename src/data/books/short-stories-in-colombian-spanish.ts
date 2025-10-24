@@ -8,7 +8,7 @@ export const shortstoriesincolombianspanish: Book = {
   cover: "https://cdn.sanity.io/images/9u7ilulp/production/70100a24c9b7b88387a520b7f3d3e396799244e8-1410x2000.jpg",
   theme: [],
   level: "intermediate",
-  language: "spanish",
+  language: "Spanish",
   region: "colombia",
   topic: "Daily life",
   formality: "informal",

@@ -54,7 +54,24 @@ export function clearBonusStories() {
   localStorage.removeItem(BONUS_KEY);
 }
 
-// 📊 Contador de historias leídas según plan
+/* ========================================================================
+   🔒 SISTEMA DE LÍMITES DE LECTURA (CONGELADO TEMPORALMENTE)
+   - Mantenemos el código comentado por si se reactiva en el futuro.
+   - Las funciones activas a continuación ignoran límites, pero preservan historial.
+   ======================================================================== */
+
+// 📊 Versión activa (sin límites reales)
+export function getStoriesReadCount(plan: UserPlan): number {
+  const history = getReadingHistory();
+  return history.length; // solo informativo
+}
+
+export function getStoriesLimit(plan: UserPlan): number {
+  return Infinity; // sin límites activos
+}
+
+/* 
+// 📊 Versión original (guardar para reactivación futura)
 export function getStoriesReadCount(plan: UserPlan): number {
   const history = getReadingHistory();
   if (plan === 'basic') {
@@ -62,11 +79,10 @@ export function getStoriesReadCount(plan: UserPlan): number {
     const todayCount = history.filter((s) => s.date.startsWith(today)).length;
     const totalCount = history.length;
     const bonus = hasBonusStories() ? 10 : 0;
-    // Límite diario 1, pero tiene 10 historias de bienvenida hasta gastarlas
     if (totalCount < bonus) {
-      return totalCount; // aún usando su bono
+      return totalCount;
     }
-    return todayCount; // después del bono, aplica límite diario
+    return todayCount;
   }
   if (plan === 'free') {
     return history.length;
@@ -78,8 +94,9 @@ export function getStoriesLimit(plan: UserPlan): number {
   if (plan === 'basic') {
     const bonus = hasBonusStories() ? 10 : 0;
     const history = getReadingHistory();
-    return history.length < bonus ? bonus : 1; // usa el bono hasta agotarlo
+    return history.length < bonus ? bonus : 1;
   }
   if (plan === 'free') return 10;
   return Infinity;
 }
+*/

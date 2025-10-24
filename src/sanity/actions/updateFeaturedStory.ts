@@ -1,16 +1,11 @@
-// /src/sanity/actions/updateStoryOfTheWeek.ts
+// /src/sanity/actions/updateFeaturedStory.ts
 import { writeClient, client } from "@/sanity/lib/client";
 
 /**
- * Actualiza automáticamente la historia semanal o diaria,
- * eligiendo una historia nueva entre las publicadas y
- * evitando repetir hasta agotar todas.
- *
- * Si hay una historia manual, se respeta solo durante el mismo
- * período (día o semana). Al cambiar el período, el sistema
- * vuelve a seleccionar automáticamente.
+ * Actualiza automáticamente la historia destacada semanal o diaria.
+ * Evita repeticiones y mantiene programada la siguiente.
  */
-export async function updateStoryOfTheWeek(
+export async function updateFeaturedStory(
   tz: string = "UTC",
   period: "week" | "day" = "week"
 ) {
@@ -129,9 +124,12 @@ export async function updateStoryOfTheWeek(
   const isEmptyNext =
     !nextValue || (typeof nextValue === "object" && !("_id" in nextValue));
 
-  // 🧩 Generar siguiente historia automáticamente si falta
-  if (isEmptyNext) {
-    const remaining = available.filter((s) => s._id !== pick);
+    // 🧩 Generar siguiente historia automáticamente si falta o coincide con la actual
+    const currentNextId =
+    scheduler[nextField]?._id || updated?.[nextField]?._id || null;
+
+  if (isEmptyNext || currentNextId === pick) {
+    const remaining = allStories.filter((s) => s._id !== pick);
     const nextPick =
       remaining.length > 0
         ? remaining[Math.floor(Math.random() * remaining.length)]._id
@@ -144,7 +142,7 @@ export async function updateStoryOfTheWeek(
       })
       .commit({ autoGenerateArrayKeys: true });
 
-    console.log(`🔮 Nueva ${period}ly next story generada automáticamente.`);
+    console.log(`🔮 Nueva ${period}ly next story generada automáticamente (sin repetir la actual).`);
   }
 
   console.log(

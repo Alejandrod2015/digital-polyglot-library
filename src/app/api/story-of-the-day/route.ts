@@ -1,6 +1,6 @@
 // /src/app/api/story-of-the-day/route.ts
 import { NextResponse } from "next/server";
-import { updateStoryOfTheWeek } from "@/sanity/actions/updateStoryOfTheWeek";
+import { updateFeaturedStory } from "@/sanity/actions/updateFeaturedStory";
 import { getFeaturedStory } from "@/lib/getFeaturedStory";
 import { client } from "@/sanity/lib/client";
 
@@ -10,7 +10,7 @@ export async function GET(req: Request) {
     const tz = searchParams.get("tz") || "UTC";
 
     // Actualiza/asegura la historia del día
-    await updateStoryOfTheWeek(tz, "day");
+    await updateFeaturedStory(tz, "day");
 
     // Obtiene la historia destacada del día
     const featured = await getFeaturedStory("day", tz);

@@ -28,7 +28,7 @@ export default function StoryAccessInfo({
   }, [storyId, userPlan]);
 
   if (userPlan !== 'free' && userPlan !== 'basic') return null;
-
+/*
   const baseText =
     userPlan === 'free'
       ? `You have ${storiesLeft ?? 0} of 10 free stories left.`
@@ -49,4 +49,7 @@ export default function StoryAccessInfo({
       )}
     </div>
   );
+ */  
+return null;
+
 }

@@ -223,7 +223,7 @@ useEffect(() => {
       <div className="space-y-2">
         <h2 className="text-lg font-semibold">Select a story:</h2>
 
-        {(userPlan === 'free' || userPlan === 'basic') && storiesLeft !== null && (
+        {/*(userPlan === 'free' || userPlan === 'basic') && storiesLeft !== null && (
           <p className="text-sm text-gray-400">
             {userPlan === 'free'
               ? `You have ${storiesLeft} of 10 free stories left.`
@@ -231,7 +231,7 @@ useEffect(() => {
                 ? "You've already read your daily story."
                 : `You have ${storiesLeft} story available today.`}
           </p>
-        )}
+        )*/}
 
         {book.stories.map((s: Story) => (
           <button

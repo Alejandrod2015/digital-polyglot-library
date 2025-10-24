@@ -10,7 +10,7 @@ dotenv.config({ path: ".env.local" });
 console.log("🔍 ENV CHECK");
 console.log("projectId:", process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
 console.log("dataset:", process.env.NEXT_PUBLIC_SANITY_DATASET);
-console.log("token:", process.env.SANITY_API_TOKEN ? "✅ Loaded" : "❌ Missing");
+console.log("token:", process.env.SANITY_API_WRITE_TOKEN ? "✅ Loaded" : "❌ Missing");
 
 if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANITY_DATASET) {
   console.error("❌ Missing environment variables. Check .env or .env.local");
@@ -20,7 +20,7 @@ if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANIT
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  token: process.env.SANITY_API_TOKEN!,
+  token: process.env.SANITY_API_WRITE_TOKEN!,
   apiVersion: "2024-10-01",
   useCdn: false,
 });

@@ -1,10 +1,10 @@
 // /src/app/api/cron/update-story-of-the-day/route.ts
 import { NextResponse } from "next/server";
-import { updateStoryOfTheWeek } from "@/sanity/actions/updateStoryOfTheWeek";
+import { updateFeaturedStory } from "@/sanity/actions/updateFeaturedStory";
 
 export async function GET() {
   try {
-    await updateStoryOfTheWeek("UTC", "day");
+    await updateFeaturedStory("UTC", "day");
     return NextResponse.json({ ok: true, message: "Story of the Day updated." });
   } catch (err) {
     console.error("💥 Error in daily cron:", err);

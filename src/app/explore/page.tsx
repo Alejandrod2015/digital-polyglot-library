@@ -5,9 +5,13 @@ import Link from 'next/link';
 import { books } from '@/data/books';
 import Cover from '@/components/Cover';
 
+const capitalize = (value?: string) =>
+  value ? value.charAt(0).toUpperCase() + value.slice(1) : '—';
+
+
 type UserStory = {
   id: string;
-  slug: string; // ✅ agregado
+  slug: string;
   title: string;
   language: string;
   level: string;
@@ -83,7 +87,54 @@ export default function ExplorePage() {
         ))}
       </div>
 
-      {/* Historias Polyglot */}
+      {/* Libros editoriales */}
+      <h2 className="text-2xl font-semibold mb-6 text-blue-400">Books</h2>
+      {visibleBooks.length === 0 ? (
+        <p className="text-gray-400">No books available for this language.</p>
+      ) : (
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 mb-16">
+          {visibleBooks.map((book) => (
+            <Link
+              key={book.slug}
+              href={`/books/${book.slug}?from=explore`}
+              className="flex bg-[#141A33] hover:bg-[#1B2347] transition-colors rounded-2xl overflow-hidden shadow-lg"
+            >
+              <div className="w-40 flex-shrink-0">
+                <Cover src={book.cover} alt={book.title} />
+              </div>
+
+              <div className="p-5 flex flex-col justify-center text-left">
+                <h3 className="text-xl font-semibold mb-2 text-white">
+                  {book.title}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
+                  {book.description}
+                </p>
+                <div className="mt-3 text-sm text-gray-400 space-y-1">
+                  {book.language && (
+                    <p>
+                      <span className="font-semibold text-gray-300">
+                        Language:
+                      </span>{' '}
+                      {capitalize(book.language)}
+                    </p>
+                  )}
+                  {book.level && (
+                    <p>
+                      <span className="font-semibold text-gray-300">
+                        Level:
+                      </span>{' '}
+                      {capitalize(book.level)}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {/* Historias Polyglot — ahora después de los libros */}
       <div className="mb-16">
         <h2 className="text-2xl font-semibold mb-6 text-emerald-400">
           Polyglot Stories
@@ -100,7 +151,7 @@ export default function ExplorePage() {
             {polyglotStories.map((story) => (
               <Link
                 key={story.id}
-                href={`/stories/${story.slug}`} // ✅ antes usaba story.id
+                href={`/stories/${story.slug}`}
                 className="flex bg-[#141A33] hover:bg-[#1B2347] transition-colors rounded-2xl overflow-hidden shadow-lg"
               >
                 <div className="p-5 flex flex-col justify-center text-left">
@@ -134,53 +185,6 @@ export default function ExplorePage() {
           </div>
         )}
       </div>
-
-      {/* Libros editoriales */}
-      <h2 className="text-2xl font-semibold mb-6 text-blue-400">Books</h2>
-      {visibleBooks.length === 0 ? (
-        <p className="text-gray-400">No books available for this language.</p>
-      ) : (
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
-          {visibleBooks.map((book) => (
-            <Link
-              key={book.slug}
-              href={`/books/${book.slug}?from=explore`}
-              className="flex bg-[#141A33] hover:bg-[#1B2347] transition-colors rounded-2xl overflow-hidden shadow-lg"
-            >
-              <div className="w-40 flex-shrink-0">
-                <Cover src={book.cover} alt={book.title} />
-              </div>
-
-              <div className="p-5 flex flex-col justify-center text-left">
-                <h3 className="text-xl font-semibold mb-2 text-white">
-                  {book.title}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
-                  {book.description}
-                </p>
-                <div className="mt-3 text-sm text-gray-400 space-y-1">
-                  {book.language && (
-                    <p>
-                      <span className="font-semibold text-gray-300">
-                        Language:
-                      </span>{' '}
-                      {book.language}
-                    </p>
-                  )}
-                  {book.level && (
-                    <p>
-                      <span className="font-semibold text-gray-300">
-                        Level:
-                      </span>{' '}
-                      {book.level}
-                    </p>
-                  )}
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      )}
     </div>
   );
 }

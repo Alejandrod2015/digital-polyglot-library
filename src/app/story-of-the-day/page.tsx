@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 export default async function StoryOfTheDayPage() {
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
 
-  // 🚫 Ya no se llama a updateStoryOfTheWeek aquí.
+  // 🚫 Ya no se llama a updateFeaturedStory aquí.
   // La actualización automática se maneja solo por el cron.
   const featured = await getFeaturedStory("day", tz);
 
