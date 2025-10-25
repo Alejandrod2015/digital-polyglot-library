@@ -83,7 +83,7 @@ export async function POST(req: Request) {
 
     const prompt = `
 You are an expert language teacher and long story writer.
-Write a long engaging story for a ${level} student learning ${language}${regionClause}.
+Write a long engaging story in ${language}${regionClause} for a ${level} student.
 The topic of the story is "${topic}".
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Wrap each paragraph inside <blockquote> ... </blockquote>.

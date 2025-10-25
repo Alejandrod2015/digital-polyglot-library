@@ -51,3 +51,13 @@ select,
   background-color: rgba(255, 221, 85, 0.85);
   color: #000; /* Texto legible al pasar el cursor */
 }
+
+/* 🔹 Mejora la experiencia de scroll en los carruseles */
+.embla {
+  scroll-behavior: smooth;
+}
+
+.snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}

@@ -36,6 +36,10 @@ export async function generateAndUploadAudio(
       English: {
         default: "21m00Tcm4TlvDq8ikWAM", // Rachel
       },
+      Italian: {
+        italy: "W71zT1VwIFFx3mMGH2uZ", // Marcotrox
+        default: "gfKKsLN1k0oYYN9n2dXX", // Violetta
+      },
     };
 
     // Normalizar idioma y región
