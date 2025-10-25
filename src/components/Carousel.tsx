@@ -77,7 +77,7 @@ export default function Carousel<T>({
           {items.map((item, i) => (
             <div
               key={i}
-              className="snap-start flex-shrink-0 w-[80%] sm:w-[60%]"
+              className="snap-start flex-shr80%] sm:w-[60%]"
             >
               {renderItem(item, i)}
             </div>
