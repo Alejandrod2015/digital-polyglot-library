@@ -87,42 +87,45 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
        <p className="text-gray-400">No books available for this language.</p>
      ) : (
        <Carousel
-         items={visibleBooks}
-         className="mb-16"
-         renderItem={(book) => (
-           <Link
-             key={book.slug}
-             href={`/books/${book.slug}?from=explore`}
-             className="flex items-center gap-6 bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md w-full h-full p-5"
-           >
-             <div className="w-[35%] sm:w-[30%] md:w-[120px] flex-shrink-0">
-               <Cover src={book.cover} alt={book.title} />
-             </div>
-             <div className="flex flex-col justify-center text-left flex-1">
-               <h3 className="font-semibold text-lg leading-snug mb-2 text-white line-clamp-2">
-                 {book.title}
-               </h3>
-               <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
-                 {book.description}
-               </p>
-               <div className="space-y-1 text-sm text-white/80 mt-3">
-                 {book.language && (
-                   <p>
-                     <span className="font-medium text-white">Language:</span>{' '}
-                     {capitalize(book.language)}
-                   </p>
-                 )}
-                 {book.level && (
-                   <p>
-                     <span className="font-medium text-white">Level:</span>{' '}
-                     {capitalize(book.level)}
-                   </p>
-                 )}
-               </div>
-             </div>
-           </Link>
-         )}
-       />
+  items={visibleBooks}
+  className="mb-16"
+  renderItem={(book) => (
+    <Link
+      key={book.slug}
+      href={`/books/${book.slug}?from=explore`}
+      className="flex items-center gap-6 bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full p-5 flex-shrink-0"
+      style={{ width: '100%' }} // asegura comportamiento consistente sin forzar scroll
+    >
+      <div className="w-[35%] sm:w-[30%] md:w-[120px] flex-shrink-0">
+        <Cover src={book.cover} alt={book.title} />
+      </div>
+
+      <div className="flex flex-col justify-center text-left flex-1 min-w-0">
+        <h3 className="font-semibold text-lg leading-snug mb-2 text-white line-clamp-2">
+          {book.title}
+        </h3>
+        <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
+          {book.description}
+        </p>
+        <div className="space-y-1 text-sm text-white/80 mt-3">
+          {book.language && (
+            <p>
+              <span className="font-medium text-white">Language:</span>{' '}
+              {capitalize(book.language)}
+            </p>
+          )}
+          {book.level && (
+            <p>
+              <span className="font-medium text-white">Level:</span>{' '}
+              {capitalize(book.level)}
+            </p>
+          )}
+        </div>
+      </div>
+    </Link>
+  )}
+/>
+
      )}
 
 
