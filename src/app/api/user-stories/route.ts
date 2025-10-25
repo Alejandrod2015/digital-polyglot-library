@@ -1,14 +1,14 @@
-import { NextResponse } from "next/server";
-import { PrismaClient } from "@/generated/prisma";
+import { NextResponse } from 'next/server';
+import { PrismaClient } from '@/generated/prisma';
 
 const prisma = new PrismaClient();
 
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
-    const storyId = searchParams.get("id");
+    const storyId = searchParams.get('id');
 
-    // Si viene un id → devolver solo esa historia
+    // 🔹 Si viene un id → devolver solo esa historia
     if (storyId) {
       const story = await prisma.userStory.findUnique({
         where: { id: storyId },
@@ -28,22 +28,24 @@ export async function GET(req: Request) {
         },
       });
 
+      await prisma.$disconnect();
+
       if (!story) {
-        return NextResponse.json({ error: "Story not found" }, { status: 404 });
+        return NextResponse.json({ error: 'Story not found' }, { status: 404 });
       }
 
       return NextResponse.json({ story });
     }
 
-    // Si no hay id → devolver lista general
+    // 🔹 Si no hay id → devolver lista general
     const stories = await prisma.userStory.findMany({
       where: { public: true },
-      orderBy: { createdAt: "desc" },
+      orderBy: { createdAt: 'desc' },
       select: {
         id: true,
         title: true,
         slug: true,
-        text: true,            // ✅ ahora también se envía el texto
+        text: true, // ✅ se incluye texto
         language: true,
         level: true,
         region: true,
@@ -52,12 +54,15 @@ export async function GET(req: Request) {
       },
     });
 
+    await prisma.$disconnect();
+
     return NextResponse.json({ stories });
   } catch (error) {
-    console.error("Error fetching user stories:", error);
+    console.error('Error fetching user stories:', error);
+    await prisma.$disconnect();
     return NextResponse.json(
-      { error: "Failed to load stories" },
-      { status: 500 }
+      { error: 'Failed to load stories' },
+      { status: 500 },
     );
   }
 }

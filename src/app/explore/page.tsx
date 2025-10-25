@@ -1,30 +1,21 @@
 import ExploreClient from './ExploreClient';
+import { getPublicUserStories } from '@/lib/userStories';
 
-export const revalidate = 600; // ♻️ revalida cada 10 minutos
+export const revalidate = 600;
 
 export default async function ExplorePage() {
-  // ✅ Detectar entorno y construir la URL base correcta
-  let baseUrl: string;
+  // Traemos las historias desde Prisma
+  const stories = await getPublicUserStories();
 
-  if (process.env.VERCEL_URL) {
-    baseUrl = `https://${process.env.VERCEL_URL}`;
-  } else if (process.env.NEXT_PUBLIC_BASE_URL) {
-    baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  } else {
-    baseUrl = 'http://localhost:3000'; // desarrollo local
-  }
+  // Convertimos nulls → strings vacíos y mantenemos solo los campos usados
+  const polyglotStories = stories.map((s) => ({
+    id: s.id,
+    slug: s.slug,
+    title: s.title,
+    language: s.language ?? '',
+    level: s.level ?? '',
+    text: s.text ?? '',
+  }));
 
-  let data: { stories: any[] } = { stories: [] };
-
-  try {
-    const res = await fetch(`${baseUrl}/api/user-stories`, {
-      next: { revalidate: 600 },
-    });
-
-    if (res.ok) data = await res.json();
-  } catch (error) {
-    console.error('Error fetching stories:', error);
-  }
-
-  return <ExploreClient polyglotStories={data.stories || []} />;
+  return <ExploreClient polyglotStories={polyglotStories} />;
 }
