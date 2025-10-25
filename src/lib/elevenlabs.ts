@@ -30,7 +30,7 @@ export async function generateAndUploadAudio(
         default: "JddqVF50ZSIR7SRbJE6u",
       },
       German: {
-        germany: "K5ZVtkkBnuPY6YqXs70E", // Simon
+        germany: "Ww7Sq9tx9CCOiNOwWgsx", // Carl
         default: "K5ZVtkkBnuPY6YqXs70E",
       },
       English: {
