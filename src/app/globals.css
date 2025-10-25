@@ -3,8 +3,6 @@
 :root {
   /* Fondo oscuro inspirado en tu azul marino */
   --background: #0d1b2a;
-
-  /* Texto claro para contraste */
   --foreground: #ffffff;
 
   /* Variables adicionales */
@@ -13,17 +11,6 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
-/* ya no necesitamos el prefers-color-scheme,
-   porque queremos siempre fondo oscuro.
-   Lo puedes eliminar o comentar */
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   background: var(--background);
@@ -40,7 +27,7 @@ select,
 
 /* === ✅ VOCABULARY HIGHLIGHT === */
 .vocab-word {
-  background-color: rgba(255, 221, 85, 0.35); /* Amarillo translúcido */
+  background-color: rgba(255, 221, 85, 0.35);
   border-radius: 0.25rem;
   padding: 0 0.15em;
   cursor: pointer;
@@ -49,15 +36,50 @@ select,
 
 .vocab-word:hover {
   background-color: rgba(255, 221, 85, 0.85);
-  color: #000; /* Texto legible al pasar el cursor */
+  color: #000;
 }
 
-/* 🔹 Mejora la experiencia de scroll en los carruseles */
+/* === 🔹 CARRUSELES === */
+
+/* Mejora la experiencia de scroll */
 .embla {
   scroll-behavior: smooth;
 }
 
+/* Snap horizontal suave y táctil */
 .snap-x {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+}
+
+/* Evita ensanchamiento del documento y rebotes */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Oculta scrollbars horizontales en carruseles */
+.embla,
+.embla__viewport,
+.embla__container {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE y Edge antiguos */
+}
+
+.embla::-webkit-scrollbar,
+.embla__viewport::-webkit-scrollbar,
+.embla__container::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Edge moderno */
+}
+
+/* Clase utilitaria para eliminar scrollbars en todo (móvil y desktop) */
+.hide-scrollbar {
+  -ms-overflow-style: none;   /* IE y Edge */
+  scrollbar-width: none;      /* Firefox */
+  overscroll-behavior-x: contain;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Edge moderno, iOS */
 }

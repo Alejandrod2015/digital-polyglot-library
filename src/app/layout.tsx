@@ -4,6 +4,15 @@ import "./globals.css";
 import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
+import type { Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
+};
 
 export const metadata: Metadata = {
   title: "Digital Polyglot",
