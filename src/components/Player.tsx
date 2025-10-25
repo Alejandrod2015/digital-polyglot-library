@@ -12,6 +12,24 @@ import {
 } from "lucide-react";
 import { books } from "@/data/books";
 
+// --- Wake Lock setup (mantener pantalla encendida) ---
+type WakeLockSentinel = {
+  released: boolean;
+  release: () => Promise<void>;
+  addEventListener: (type: "release", listener: () => void) => void;
+  removeEventListener: (type: "release", listener: () => void) => void;
+};
+type NavigatorWithWakeLock = Navigator & {
+  wakeLock: { request: (type: "screen") => Promise<WakeLockSentinel> };
+};
+function getWakeLockNavigator(): NavigatorWithWakeLock | null {
+  if (typeof navigator === "undefined") return null;
+  return "wakeLock" in navigator
+    ? (navigator as NavigatorWithWakeLock)
+    : null;
+}
+
+
 interface PlayerProps {
   src: string;
   bookSlug: string;
@@ -24,6 +42,36 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
   const [speed, setSpeed] = useState(1);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  // Wake Lock
+const wakeLockRef = useRef<WakeLockSentinel | null>(null);
+const navWL = getWakeLockNavigator();
+
+const requestWakeLock = async () => {
+  try {
+    if (!navWL) return;
+    if (wakeLockRef.current) return;
+    wakeLockRef.current = await navWL.wakeLock.request("screen");
+    const onRelease = () => {
+      wakeLockRef.current = null;
+    };
+    wakeLockRef.current.addEventListener("release", onRelease);
+  } catch {
+    // navegador no soporta o permisos denegados
+  }
+};
+
+const releaseWakeLock = async () => {
+  try {
+    if (wakeLockRef.current && !wakeLockRef.current.released) {
+      await wakeLockRef.current.release();
+    }
+  } catch {
+    // ignorar
+  } finally {
+    wakeLockRef.current = null;
+  }
+};
 
   // convertir assetId en URL reproducible si es necesario
   const resolvedSrc = useMemo(() => {
@@ -76,32 +124,38 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
   }, []);
 
   // reproducir automáticamente la siguiente historia cuando termina el audio
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
+useEffect(() => {
+  const audio = audioRef.current;
+  if (!audio) return;
 
-    const handleEnded = () => {
-      if (nextStory) {
-        window.location.href = `/books/${bookSlug}/${nextStory.slug}`;
-      } else {
-        setIsPlaying(false);
-        setProgress(0);
-      }
-    };
+  const handleEnded = () => {
+    void releaseWakeLock(); // 🔹 liberar wake lock al terminar
+    if (nextStory) {
+      window.location.href = `/books/${bookSlug}/${nextStory.slug}`;
+    } else {
+      setIsPlaying(false);
+      setProgress(0);
+    }
+  };
 
-    audio.addEventListener("ended", handleEnded);
-    return () => audio.removeEventListener("ended", handleEnded);
-  }, [nextStory, bookSlug]);
+  audio.addEventListener("ended", handleEnded);
+  return () => audio.removeEventListener("ended", handleEnded);
+}, [nextStory, bookSlug]);
 
-  const togglePlay = () => {
+    const togglePlay = () => {
     const a = audioRef.current;
     if (!a) return;
     if (isPlaying) {
       a.pause();
       setIsPlaying(false);
+      void releaseWakeLock(); // 🔹 liberar
     } else {
-      a.play().catch((err) => console.error("[audio] play failed", err));
-      setIsPlaying(true);
+      a.play()
+        .then(() => {
+          setIsPlaying(true);
+          void requestWakeLock(); // 🔹 activar
+        })
+        .catch((err) => console.error("[audio] play failed", err));
     }
   };
 
@@ -134,6 +188,13 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
     const seconds = Math.floor(sec % 60).toString().padStart(2, "0");
     return `${minutes}:${seconds}`;
   };
+
+  // Liberar Wake Lock al desmontar
+  useEffect(() => {
+    return () => {
+      void releaseWakeLock();
+    };
+  }, []);
 
   return (
     <div className="bg-black/80 p-4 rounded-t-xl shadow-2xl backdrop-blur w-full">
