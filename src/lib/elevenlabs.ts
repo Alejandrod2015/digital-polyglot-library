@@ -31,7 +31,7 @@ export async function generateAndUploadAudio(
       },
       German: {
         germany: "Ww7Sq9tx9CCOiNOwWgsx", // Carl
-        default: "K5ZVtkkBnuPY6YqXs70E",
+        default: "Ww7Sq9tx9CCOiNOwWgsx", // Carl
       },
       English: {
         default: "21m00Tcm4TlvDq8ikWAM", // Rachel
