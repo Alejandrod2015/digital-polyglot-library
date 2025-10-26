@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 export type StoryContentProps = {
@@ -32,7 +34,7 @@ function chunk<T>(arr: T[], size: number): T[][] {
 }
 
 const DIALOGUE_REGEX =
-  /(„[\s\S]*?[“”]|[“”][\s\S]*?[“”]|«[\s\S]*?»|"[\s\S]*?")/gu;
+  /(„[\s\S]*?[“”]|[“”][\s\S]*?»|"[\s\S]*?")/gu;
 
 function renderWithDialogues(
   paragraph: string,
@@ -62,26 +64,55 @@ export default function StoryContent({
   onParagraphSelect,
   renderWord = (t) => t,
 }: StoryContentProps) {
-  // ✅ Hooks: todos al inicio, sin condicionales
   const hasHtml = React.useMemo(
     () => /<\s*span[^>]*class=["']vocab-word["']/.test(text),
     [text]
   );
 
   const cleanedText = React.useMemo(() => stripHtml(text), [text]);
-  const sentences = React.useMemo(() => splitSentences(cleanedText), [cleanedText]);
+  const sentences = React.useMemo(
+    () => splitSentences(cleanedText),
+    [cleanedText]
+  );
   const paragraphs = React.useMemo(
-    () => chunk(sentences, Math.max(1, Math.min(6, sentencesPerParagraph))).map((p) => p.join(" ")),
+    () =>
+      chunk(sentences, Math.max(1, Math.min(6, sentencesPerParagraph))).map((p) =>
+        p.join(" ")
+      ),
     [sentences, sentencesPerParagraph]
   );
 
-  // ✅ Un solo return — sin early return antes de hooks
+  // 🔹 Auto-scroll sincronizado con el progreso del audio
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const handleAudioProgress = (e: Event) => {
+      const custom = e as CustomEvent<number>;
+      const ratio = Math.min(1, Math.max(0, custom.detail));
+      const el = containerRef.current;
+      if (!el) return;
+
+      const maxScroll = el.scrollHeight - el.clientHeight;
+      const scrollTop = ratio * maxScroll;
+
+      el.scrollTo({
+        top: scrollTop,
+        behavior: "smooth",
+      });
+    };
+
+    window.addEventListener("audio-progress", handleAudioProgress);
+    return () => window.removeEventListener("audio-progress", handleAudioProgress);
+  }, []);
+
+  // ✅ Estilos restaurados + ocultar scrollbar sin romper scroll
   return (
     <div
+      ref={containerRef}
       className={cx(
-        "mx-auto max-w-[70ch] text-base sm:text-lg leading-7 sm:leading-8 tracking-[0.005em]",
-        "text-slate-200",
+        "mx-auto max-w-[65ch] h-[80vh] overflow-y-scroll scroll-smooth text-xl leading-relaxed text-gray-200 space-y-6",
         "prose prose-invert prose-p:my-4 prose-blockquote:italic prose-blockquote:text-sky-400",
+        "no-scrollbar", // 🔹 oculta la barra
         className
       )}
       onMouseUp={onParagraphSelect}

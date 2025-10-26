@@ -8,7 +8,7 @@ export const colloquialgermanstories: Book = {
   cover: "https://cdn.sanity.io/images/9u7ilulp/production/f3944f3e85b1c9b135692c034b1bb1c0a7098a70-8456x11825.jpg",
   theme: [],
   level: "intermediate",
-  language: "German",
+  language: "german",
   region: "usa",
   topic: "Daily life",
   formality: "informal",

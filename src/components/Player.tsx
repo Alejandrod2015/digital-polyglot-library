@@ -111,8 +111,19 @@ const releaseWakeLock = async () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const updateProgress = () => setProgress(audio.currentTime);
+    const updateProgress = () => {
+
+      console.log("[Player] timeupdate", audio.currentTime, audio.duration);
+
+      setProgress(audio.currentTime);
+      const ratio = audio.duration ? audio.currentTime / audio.duration : 0;
+      window.dispatchEvent(new CustomEvent("audio-progress", { detail: ratio }));
+    };
+
     const setDur = () => setDuration(audio.duration);
+
+    console.log("[Player] metadata loaded, duration =", audio.duration);
+
 
     audio.addEventListener("timeupdate", updateProgress);
     audio.addEventListener("loadedmetadata", setDur);

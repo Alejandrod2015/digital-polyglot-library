@@ -8,7 +8,7 @@ export const shortstoriesincolombianspanish: Book = {
   cover: "https://cdn.sanity.io/images/9u7ilulp/production/70100a24c9b7b88387a520b7f3d3e396799244e8-1410x2000.jpg",
   theme: [],
   level: "intermediate",
-  language: "Spanish",
+  language: "spanish",
   region: "colombia",
   topic: "Daily life",
   formality: "informal",
@@ -228,6 +228,777 @@ export const shortstoriesincolombianspanish: Book = {
       {
         "word": "Bacano",
         "definition": "Colombian slang meaning cool, great, or awesome."
+      }
+    ]
+  },
+  {
+    "id": "el-voluntariado",
+    "slug": "el-voluntariado",
+    "title": "El voluntariado ",
+    "text": "<p>En las afueras de Cartagena, Colombia, Ángel, un joven voluntario comprometido con la comunidad, se encuentra trabajando en proyectos para <span class=\"vocab-word\" data-word=\"Abordar\">abordar</span> la pobreza y la falta de acceso a la educación. Romina, una <span class=\"vocab-word\" data-word=\"Residente\">residente</span> local, se acerca para conversar sobre los cambios que han experimentado en la comunidad. La escena se desarrolla en una pequeña plaza donde los niños juegan y los adultos participan en actividades comunitarias.</p> <blockquote>Ángel: ¡Hola, Romina! ¿Cómo va todo por aquí?</blockquote> <blockquote>Romina: ¡Hola, Ángel! Gracias a Dios, hemos tenido algunos cambios gracias a tus proyectos.</blockquote> <blockquote>Ángel: ¡Es una <span class=\"vocab-word\" data-word=\"Chimba\">chimba</span>, me alegra escuchar eso! Pero aún hay mucho por hacer.</blockquote> <blockquote>Romina: Sí, pero la escuela que construyeron ha sido genial para los niños. Ahora tienen un lugar decente para estudiar.</blockquote> <blockquote>Ángel: Eso me llena de alegría. La educación es la semilla que puede cambiarlo todo.</blockquote> <blockquote>Romina: Además, los <span class=\"vocab-word\" data-word=\"Taller\">talleres</span> que organizan han dado a la gente nuevas habilidades. Mi esposo aprendió a reparar bicicletas y ahora tiene su propio <span class=\"vocab-word\" data-word=\"Taller\">taller</span>.</blockquote> <blockquote>Ángel: ¡Eso es genial! Los talleres están pensados para <span class=\"vocab-word\" data-word=\"Empoderar\">empoderar</span> a la comunidad.</blockquote> <p>En la plaza, algunos niños juegan con una pelota improvisada mientras otros observan las actividades comunitarias.</p> <blockquote>Romina: Y lo del comedor comunitario ha sido una bendición, Ángel. Muchas familias han dejado de pasar hambre.</blockquote> <blockquote>Ángel: La falta de acceso a alimentos es un problema que nadie debería enfrentar. Estamos tratando de asegurarnos de que todos tengan algo en el plato.</blockquote> <blockquote>Romina: Gracias a Dios por personas como tú, Ángel. Antes, éramos como sardinos <span class=\"vocab-word\" data-word=\"Apretados\">apretados</span> en la <span class=\"vocab-word\" data-word=\"Lata\">lata</span>, pero ahora hay más esperanza.</blockquote> <blockquote>Ángel: No es solo mi trabajo, Romina. Es un esfuerzo conjunto de la comunidad.</blockquote> <p>Romina señala hacia un <span class=\"vocab-word\" data-word=\"Mural\">mural</span> colorido que adorna una pared cercana.</p> <blockquote>Romina: Y ese mural, ¿también es parte de tu proyecto?</blockquote> <blockquote>Ángel: Sí, lo pintamos con los niños y algunos artistas locales. Queríamos darle vida y color a la plaza.</blockquote> <blockquote>Romina: ¡Me encanta! Los niños lo disfrutan mucho.</blockquote> <blockquote>Ángel: Y eso es lo más importante. Queremos que este lugar sea un espacio donde los niños puedan crecer, aprender y soñar.</blockquote> <p>En ese momento, un grupo de niños se acerca a Ángel y Romina.</p> <blockquote>Niño 1: ¡Ángel, Ángel! ¿Hoy hay <span class=\"vocab-word\" data-word=\"Taller\">taller</span> de arte?</blockquote> <blockquote>Ángel: ¡Claro, parcerito! Vamos a preparar los materiales. ¿Quién más se apunta?</blockquote> <blockquote>Niño 2: ¡Yo, yo!</blockquote> <p>Romina observa con una sonrisa mientras Ángel organiza el taller con entusiasmo.</p> <blockquote>Romina: Realmente has logrado mucho aquí, Ángel.</blockquote> <blockquote>Ángel: Gracias, Romina. Pero siempre hay más por hacer. Queremos construir una biblioteca y mejorar las <span class=\"vocab-word\" data-word=\"Instalaciones\">instalaciones</span> deportivas para los jóvenes.</blockquote> <blockquote>Romina: ¡Eso suena maravilloso! Cada cambio es como una semilla que crece y se convierte en algo hermoso.</blockquote> <blockquote>Ángel: Exacto, Romina. Y tú también formas parte de esto. La comunidad es fuerte cuando todos trabajamos juntos.</blockquote> <p>Romina y Ángel continúan conversando mientras los niños <span class=\"vocab-word\" data-word=\"Se suman\">se suman</span> al taller de arte. La plaza está llena de vida y risas, mostrando cómo el servicio social puede sembrar esperanza y transformar comunidades enteras.</p>",
+    "audio": "https://cdn.sanity.io/files/9u7ilulp/production/8ebcbe45f2e47e20e83e50646124bcf6d259be82.mp3",
+    "vocab": [
+      {
+        "word": "Abordar",
+        "definition": "To approach or deal with a topic or situation."
+      },
+      {
+        "word": "Residente",
+        "definition": "A person who lives in a specific place."
+      },
+      {
+        "word": "Chimba",
+        "definition": "Colombian slang for something great, cool, or impressive."
+      },
+      {
+        "word": "Empoderar",
+        "definition": "To give power or confidence to someone."
+      },
+      {
+        "word": "Apretados",
+        "definition": "In a tight space with little room."
+      },
+      {
+        "word": "Lata",
+        "definition": "A round metal container or can."
+      },
+      {
+        "word": "Mural",
+        "definition": "Artwork painted on a wall or other large surface."
+      },
+      {
+        "word": "Taller",
+        "definition": "Workshop or place where manual or artistic work is done."
+      },
+      {
+        "word": "Instalaciones",
+        "definition": "Physical spaces or facilities used for a specific purpose."
+      },
+      {
+        "word": "Se suman",
+        "definition": "To join or take part in something."
+      }
+    ]
+  },
+  {
+    "id": "el-recolector-de-cafe",
+    "slug": "el-recolector-de-cafe",
+    "title": "El recolector de café ",
+    "text": "<p>La historia se desarrolla en una pequeña finca cafetera ubicada en las verdes montañas de Risaralda, Colombia. Alejandro, un experimentado recolector de café, comparte sus <span class=\"vocab-word\" data-word=\"Vivencia\">vivencias</span> con Laura, una periodista interesada en conocer la realidad de los trabajadores del campo. El aroma a café fresco llena el aire, y se escuchan los sonidos de la naturaleza en el fondo. Alejandro, con <span class=\"vocab-word\" data-word=\"Manos curtidas\">manos curtidas</span> y un <span class=\"vocab-word\" data-word=\"Sombrero de ala ancha\">sombrero de ala ancha</span>, se sienta frente a ella.</p> <blockquote>Laura: Alejandro, cuéntame más sobre tu trabajo en la cosecha de café. ¿Cómo afecta tu vida?</blockquote> <blockquote>Alejandro: Ay, señorita Laura, el café es vida para nosotros. Desde que sale el sol hasta que se esconde, estamos en el <span class=\"vocab-word\" data-word=\"Cafetal\">cafetal</span>. La temporada de cosecha, esa sí que marca el ritmo de nuestras vidas.</blockquote> <blockquote>Laura: ¿Cómo es eso?</blockquote> <blockquote>Alejandro: Verá, cuando empieza la temporada, nos <span class=\"vocab-word\" data-word=\"Levantarse con el gallo\">levantamos con el gallo</span>, antes de que el sol se asome. No hay tiempo para <span class=\"vocab-word\" data-word=\"Flojera\">flojera</span>. Las <span class=\"vocab-word\" data-word=\"Manos curtidas\">manos</span> se nos ponen como piedra de tanto coger granos, pero eso es la realidad de ser <span class=\"vocab-word\" data-word=\"Caficultor\">caficultor</span>.</blockquote> <blockquote>Laura: ¿Y cómo impacta eso en su día a día?</blockquote> <blockquote>Alejandro: Pues, mire, en la cosecha todo cambia. No hay descanso. Las horas se estiran como una <span class=\"vocab-word\" data-word=\"Loma\">loma</span> sin final. Y la plata que ganamos en esa época es lo que nos sostiene durante el resto del año.</blockquote> <blockquote>Laura: Ya veo.</blockquote> <blockquote>Alejandro: Es cuando más se siente el peso del trabajo, pero también es cuando más se agradece el fruto de la tierra.</blockquote> <blockquote>Laura: ¿Y cómo ven ustedes el impacto del café en la economía colombiana?</blockquote> <blockquote>Alejandro: El café es el <span class=\"vocab-word\" data-word=\"Oro negro\">oro negro</span> de Colombia, señorita. Lo que recogemos aquí, en estas <span class=\"vocab-word\" data-word=\"Laderas\">laderas</span>, va a parar a tazas de todo el mundo. Es un orgullo, pero también hay que decir que el precio a veces no es justo.</blockquote> <blockquote>Laura: ¿Cómo se llevan con la <span class=\"vocab-word\" data-word=\"Incertidumbre\">incertidumbre</span> de los precios?</blockquote> <blockquote>Alejandro: Eso es lo que más duele, señorita Laura. Uno nunca sabe si el próximo año va a ser bueno o malo en términos de precios. Y ahí estamos, jugándonosla con la cosecha. Pero lo que sí sé es que este café es de calidad, y deberíamos recibir lo justo por ello.</blockquote> <blockquote>Laura: ¿Qué cambiaría para mejorar la situación de los caficultores?</blockquote> <blockquote>Alejandro: Necesitamos más apoyo, más respaldo. Los gobiernos hablan mucho, pero a veces parece que nos olvidan. Menos trámites, más ayuda real. Que se valore nuestro esfuerzo y no se quede solo en discursos bonitos.</blockquote> <blockquote>Laura: ¿Y cómo ve el futuro de la caficultura en Colombia?</blockquote> <blockquote>Alejandro: Somos cafeteros de corazón, señorita. El café <span class=\"vocab-word\" data-word=\"Corre por nuestras venas\">corre por nuestras venas</span>. A pesar de las dificultades, siempre vamos a seguir cultivando esta tierra. Pero necesitamos que se nos reconozca, que se nos respalde. El futuro será lo que nosotros hagamos de él.</blockquote> <blockquote>Laura: Entiendo, Alejandro. Gracias por compartir su historia.</blockquote> <blockquote>Alejandro: Gracias a usted, señorita Laura, por escucharnos. El café es nuestra vida, y siempre estaremos aquí, en las montañas de Risaralda, luchando por un mejor mañana.</blockquote> <p>La entrevista revela la dura realidad de los caficultores en Colombia, destacando la importancia de su trabajo en la economía y la necesidad de un mayor apoyo y reconocimiento. La esperanza y el compromiso de Alejandro reflejan en los trabajadores del campo en busca de un futuro más justo.</p>",
+    "audio": "https://cdn.sanity.io/files/9u7ilulp/production/ff71ad8f8f9849215b3b30b8271c18810420ad23.mp3",
+    "vocab": [
+      {
+        "word": "Vivencia",
+        "definition": "Life experience or personal story."
+      },
+      {
+        "word": "Manos curtidas",
+        "definition": "Hands hardened by physical or manual work."
+      },
+      {
+        "word": "Sombrero de ala ancha",
+        "definition": "Wide-brimmed hat used for sun protection."
+      },
+      {
+        "word": "Cafetal",
+        "definition": "Coffee plantation."
+      },
+      {
+        "word": "Levantarse con el gallo",
+        "definition": "To wake up very early in the morning."
+      },
+      {
+        "word": "Flojera",
+        "definition": "Laziness or lack of motivation to work."
+      },
+      {
+        "word": "Caficultor",
+        "definition": "Person who grows or cultivates coffee."
+      },
+      {
+        "word": "Loma",
+        "definition": "Small hill or slope of land."
+      },
+      {
+        "word": "Oro negro",
+        "definition": "Colloquial term for petroleum; used metaphorically for something valuable."
+      },
+      {
+        "word": "Laderas",
+        "definition": "Slopes or sides of a hill or mountain."
+      },
+      {
+        "word": "Incertidumbre",
+        "definition": "Lack of certainty or assurance about the future."
+      },
+      {
+        "word": "Corre por nuestras venas",
+        "definition": "Expression meaning something is a deep part of one’s identity or culture."
+      }
+    ]
+  },
+  {
+    "id": "el-artista-callejero",
+    "slug": "el-artista-callejero",
+    "title": "El artista callejero",
+    "text": "<p>Las calles de Bogotá servían de lienzo para Fernando, un artista callejero que con sus aerosoles y pinceles transformaba <span class=\"vocab-word\" data-word=\"Muros\">muros</span> grises en obras de arte cargadas de mensajes sociales y políticos. Esperanza, una joven estudiante de periodismo, se encontraba fascinada por su trabajo y su valentía. En un <span class=\"vocab-word\" data-word=\"Callejón\">callejón</span> del centro de la ciudad, Fernando daba los <span class=\"vocab-word\" data-word=\"Últimos toques\">últimos toques</span> a un mural que denunciaba la corrupción política.</p> <blockquote>Esperanza: Me encanta tu trabajo, Fernando. Tus murales son como un grito en la pared, una forma de despertar conciencias.</blockquote> <blockquote>Fernando: Gracias, Esperanza. Es importante que el arte tenga un mensaje, que no sea solo decoración. Hay que usar el talento para hablar por los que no tienen voz.</blockquote> <p>La fama de Fernando <span class=\"vocab-word\" data-word=\"Crecer como la espuma\">crecía como la espuma</span>. Sus murales aparecían por toda la ciudad, generando reacciones encontradas. Algunos los aplaudían, considerándolos una forma de expresión legítima, mientras que otros los criticaban, <span class=\"vocab-word\" data-word=\"Tildándolos\">tildándolos</span> de vandalismo.</p> <blockquote>Un hombre trajeado: ¡Esto es un insulto! ¡No se puede permitir que estos <span class=\"vocab-word\" data-word=\"Gamines\">gamines</span> <span class=\"vocab-word\" data-word=\"Manchen\">manchen</span> las paredes de la ciudad!</blockquote> <blockquote>Una mujer joven: ¡Por fin alguien que dice las cosas como son! Este arte callejero es una plaga.</blockquote> <blockquote>Fernando: ¡Mienten! Es una forma de expresión.</blockquote> <p>Un día, mientras Fernando pintaba un mural sobre la violencia de género, fue <span class=\"vocab-word\" data-word=\"Interceptado\">interceptado</span> por la policía.</p> <blockquote>Policía: ¡Alto ahí! Queda usted detenido por vandalismo.</blockquote> <blockquote>Fernando: ¡Pero esto es arte! ¡Estoy expresando mi opinión!</blockquote> <blockquote>Policía: No me importa lo que sea. No tiene permiso para pintar en esta pared.</blockquote> <p>Esperanza, al enterarse de la detención de Fernando, se movilizó para ayudarlo. <span class=\"vocab-word\" data-word=\"Convocó\">Convocó</span> a través de las redes sociales a una protesta pacífica en apoyo al artista.</p> <blockquote>Esperanza: ¡No podemos permitir que los <span class=\"vocab-word\" data-word=\"Tombos\">tombos</span> callen la voz de Fernando! Su arte es una expresión legítima del sentir del pueblo.</blockquote> <blockquote>Manifestante 1: ¡El arte callejero es cultura, no crimen!</blockquote> <blockquote>Manifestante 2: ¡Libertad para Fernando!</blockquote> <blockquote>Manifestante 3: ¡Saquen a Fernando ya de esa <span class=\"vocab-word\" data-word=\"Carceleta\">carceleta</span>!</blockquote> <p>Fernando fue liberado y se le permitió continuar con su trabajo, siempre que obtuviera los permisos correspondientes. Su arte se convirtió en un símbolo de la lucha por la libertad de expresión y un referente para las nuevas generaciones de artistas urbanos.</p> <blockquote>Fernando: Gracias a todos por su apoyo. Esto demuestra que el arte tiene poder, que puede cambiar las cosas.</blockquote> <blockquote>Esperanza: Tu trabajo ha inspirado a muchos, Fernando. Nos has enseñado que el arte es una herramienta para transformar el mundo.</blockquote> <p>Los murales de Fernando se convirtieron en parte del paisaje urbano de Bogotá, recordándole a la sociedad que el arte también denuncia, cuestiona y transforma. Su legado inspiró a otros artistas a usar su talento para expresar sus ideas y luchar por un mundo mejor.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Muros",
+        "definition": "Walls or vertical structures that divide or surround a space."
+      },
+      {
+        "word": "Callejón",
+        "definition": "Narrow passage between buildings or lots."
+      },
+      {
+        "word": "Últimos toques",
+        "definition": "Final details or finishing touches."
+      },
+      {
+        "word": "Crecer como la espuma",
+        "definition": "To grow or increase very quickly."
+      },
+      {
+        "word": "Tildándolos",
+        "definition": "Labeling or characterizing them in a certain way."
+      },
+      {
+        "word": "Gamines",
+        "definition": "Street children or homeless youth."
+      },
+      {
+        "word": "Manchen",
+        "definition": "To dirty or stain something."
+      },
+      {
+        "word": "Interceptado",
+        "definition": "Stopped or detained by authorities."
+      },
+      {
+        "word": "Convocó",
+        "definition": "Called or gathered people for a meeting or event."
+      },
+      {
+        "word": "Tombos",
+        "definition": "Colloquial term for the police in Colombia."
+      },
+      {
+        "word": "Carceleta",
+        "definition": "Small jail or temporary detention center."
+      }
+    ]
+  },
+  {
+    "id": "futbol-aficionado",
+    "slug": "futbol-aficionado",
+    "title": "Fútbol aficionado",
+    "text": "<p>En la <span class=\"vocab-word\" data-word=\"Vereda\">vereda</span> La Esperanza, un pequeño pueblo colombiano, Miguel y Lucía se preparaban para un nuevo desafío: el torneo de fútbol aficionado. Miguel, con su camiseta roja <span class=\"vocab-word\" data-word=\"Desteñidas\">desteñida</span> y <span class=\"vocab-word\" data-word=\"Botas\">botas</span> embarradas, daba indicaciones a sus compañeros. Lucía, la capitana del equipo, observaba atentamente, lista para entrar al campo.</p> <blockquote>Miguel: ¡Muchachos, vamos a <span class=\"vocab-word\" data-word=\"Darle con todo\">darle con todo</span>! Hoy nos jugamos el honor de La Esperanza.</blockquote> <blockquote>Juancho: ¡Tranquilo, <span class=\"vocab-word\" data-word=\"Mijo\">mijo</span>! Estos <span class=\"vocab-word\" data-word=\"Manes\">manes</span> no nos van a ganar.</blockquote> <blockquote>Pedro: ¡Eso sí! Tenemos que meterles más goles que a una <span class=\"vocab-word\" data-word=\"Piñata\">piñata</span>.</blockquote> <blockquote>Lucía: ¡Bien dicho, Pedro! Salgamos a la cancha <span class=\"vocab-word\" data-word=\"Con garra\">con garra</span> y corazón. ¡Somos el Once de la Vereda y vamos a dejar el nombre en alto!</blockquote> <p>El partido comenzó con un buen ritmo. El Once de la Vereda dominaba el juego, pero el equipo rival no se rendía. Miguel, con su habilidad, <span class=\"vocab-word\" data-word=\"Regateaba\">regateaba</span> a los defensas como si fueran <span class=\"vocab-word\" data-word=\"Conos\">conos</span>.</p> <blockquote>Doña Carmen: ¡Vamos, mija Lucía! ¡Dele duro a esos <span class=\"vocab-word\" data-word=\"Pelaos\">pelaos</span>!</blockquote> <blockquote>Don José: ¡Ese es mi <span class=\"vocab-word\" data-word=\"Muchacho\">muchacho</span>, Miguel! ¡Métele un golazo!</blockquote> <p>La tensión crecía con cada minuto que pasaba. El marcador estaba empatado y el tiempo se agotaba. De repente, Miguel recibió un pase en profundidad y se lanzó en una carrera imparable hacia el arco rival.</p> <blockquote>Persona 1: ¡Vamos Miguel, confiamos en ti!</blockquote> <blockquote>Persona 2: ¡Vamos por ese golazo!</blockquote> <blockquote>Tribuna: ¡Goooooool!</blockquote> <p>El partido finalizó con la victoria del Once de la Vereda. Los jugadores se abrazaban entre sí, empapados de sudor y alegría. Miguel, con los ojos llenos de lágrimas, levantó la copa de campeón. Lucía, a su lado, sonreía con orgullo.</p> <blockquote>Miguel: ¡Lo logramos! ¡Somos los campeones!</blockquote> <blockquote>Lucía: ¡Gracias a todos por su esfuerzo! Este triunfo es de la vereda La Esperanza.</blockquote> <p>La noche llegó a La Esperanza, pero la celebración no se detenía. En la plaza del pueblo, se <span class=\"vocab-word\" data-word=\"Improviso\">improvisó</span> una fiesta con música, baile y <span class=\"vocab-word\" data-word=\"Comida criolla\">comida criolla</span>. Los jugadores del Once de la Vereda eran los héroes del momento, recibiendo felicitaciones y abrazos de sus vecinos.</p> <blockquote>Don Alberto: ¡Estos muchachos son un orgullo para la vereda!</blockquote> <blockquote>Doña María: ¡El fútbol nos une y nos hace sentir orgullosos de ser de La Esperanza!</blockquote> <blockquote>Lucía: Muchas gracias por todo su apoyo, es muy chimba sentir que logramos algo.</blockquote> <blockquote>Miguel: ¡Estamos preparados para seguir cosechando más logros!</blockquote> <p>El Once de la Vereda no solo ganó un torneo de fútbol. Demostró que la pasión por el deporte puede unir a una comunidad y crear un sentimiento de identidad y pertenencia.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Vereda",
+        "definition": "Small rural community or village."
+      },
+      {
+        "word": "Desteñidas",
+        "definition": "Faded or discolored, usually referring to fabric."
+      },
+      {
+        "word": "Botas",
+        "definition": "Footwear that covers the foot and part of the leg."
+      },
+      {
+        "word": "Darle con todo",
+        "definition": "To give one’s all or make a great effort."
+      },
+      {
+        "word": "Mijo",
+        "definition": "Affectionate term meaning 'my son' or 'dear one'."
+      },
+      {
+        "word": "Manes",
+        "definition": "Colloquial term for people or guys."
+      },
+      {
+        "word": "Piñata",
+        "definition": "Decorative container filled with sweets, broken during celebrations."
+      },
+      {
+        "word": "Con garra",
+        "definition": "With determination and effort."
+      },
+      {
+        "word": "Regateaba",
+        "definition": "Action of dodging or dribbling past opponents in sports."
+      },
+      {
+        "word": "Conos",
+        "definition": "Traffic cones or markers used for training or games."
+      },
+      {
+        "word": "Pelaos",
+        "definition": "Colloquial term for kids or young people."
+      },
+      {
+        "word": "Muchacho",
+        "definition": "Young man or boy."
+      },
+      {
+        "word": "Comida criolla",
+        "definition": "Traditional or regional food."
+      },
+      {
+        "word": "Improviso",
+        "definition": "To do something spontaneously or without preparation."
+      }
+    ]
+  },
+  {
+    "id": "la-maestra",
+    "slug": "la-maestra",
+    "title": "La maestra",
+    "text": "<p>Patricia, una joven maestra llega a la comunidad indígena de El Remanso, ubicada en la profundidad de la selva colombiana. Su compromiso con la educación la impulsa a enfrentar los desafíos de enseñar en una escuela rural con escasos recursos. Patricia, con su vestido floreado y un <span class=\"vocab-word\" data-word=\"Sombrero de paja\">sombrero de paja</span> para protegerse del sol, se encuentra frente a un grupo de niños indígenas que la miran con curiosidad.</p> <blockquote>Patricia: ¡Buenos días, niños! ¿Cómo están hoy?</blockquote> <blockquote>Niños: (En coro) ¡Buenos días, <span class=\"vocab-word\" data-word=\"Profe\">profe</span>!</blockquote> <blockquote>Patricia: ¡Me alegra mucho verlos! Hoy vamos a aprender cosas nuevas. ¿Están preparados?</blockquote> <blockquote>Niños: ¡Sííí!</blockquote> <blockquote>Patricia: ¡Excelente! Primero, vamos a repasar las letras del <span class=\"vocab-word\" data-word=\"Abecedario\">abecedario</span>.</blockquote> <p>Patricia comienza a escribir las letras en la pizarra, usando una <span class=\"vocab-word\" data-word=\"Tiza\">tiza</span> que se <span class=\"vocab-word\" data-word=\"Desmorona\">desmorona</span> entre sus dedos. Los niños la siguen con atención, algunos repitiendo las letras en voz baja.</p> <blockquote>Niño 1: ¡Profe, yo ya sé las letras!</blockquote> <blockquote>Patricia: ¡Qué bacano! ¿Puedes decirme la letra que sigue después de la \"M\"?</blockquote> <blockquote>Niño 1: La \"N\".</blockquote> <blockquote>Patricia: ¡Correcto! ¿Y después de la \"N\"?</blockquote> <blockquote>Niño 1: La \"Ñ\".</blockquote> <blockquote>Patricia: ¡Excelente! Me alegra que estés aprendiendo.</blockquote> <p>Patricia continúa la clase, enseñando a los niños a leer y escribir palabras sencillas. Usa materiales naturales como hojas, ramas y piedras para crear juegos educativos.</p> <blockquote>Niño 2: Profe, ¿y cuándo vamos a aprender a usar el <span class=\"vocab-word\" data-word=\"Computador\">computador</span>?</blockquote> <blockquote>Patricia: Me encantaría enseñarles a usar el computador, pero por ahora no tenemos uno en la escuela.</blockquote> <blockquote>Niño 2: <span class=\"vocab-word\" data-word=\"¡Qué raye!\">¡Qué raye!</span></blockquote> <blockquote>Patricia: Pero no se <span class=\"vocab-word\" data-word=\"Bajoneen\">bajoneen</span>, hay muchas otras cosas que podemos aprender. Les puedo enseñar sobre la naturaleza, sobre las culturas indígenas, sobre la importancia de cuidar el medio ambiente.</blockquote> <blockquote>Niños: ¡Nos <span class=\"vocab-word\" data-word=\"Ponerse las pilas\">pondremos las pilas</span> todos!</blockquote> <blockquote>Patricia: Lo importante es que sigan aprendiendo y nunca dejen de tener curiosidad por el mundo.</blockquote> <blockquote>Niños: ¡Sí, profe!</blockquote> <p>Al final del día, Patricia se despide de sus alumnos con un fuerte abrazo. A pesar de las dificultades, siente la satisfacción de estar haciendo una diferencia en la vida de estos niños.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Sombrero de paja",
+        "definition": "Type of hat made from straw."
+      },
+      {
+        "word": "Profe",
+        "definition": "Colloquial term for teacher or professor."
+      },
+      {
+        "word": "Abecedario",
+        "definition": "Series of letters arranged in alphabetical order."
+      },
+      {
+        "word": "Tiza",
+        "definition": "Chalk used for writing on blackboards."
+      },
+      {
+        "word": "Desmorona",
+        "definition": "To crumble or fall apart into small pieces."
+      },
+      {
+        "word": "Computador",
+        "definition": "Term used in some regions for computer."
+      },
+      {
+        "word": "¡Qué raye!",
+        "definition": "Expression of surprise or disbelief."
+      },
+      {
+        "word": "Bajoneen",
+        "definition": "To feel down or discouraged."
+      },
+      {
+        "word": "Ponerse las pilas",
+        "definition": "To get active or make an extra effort."
+      }
+    ]
+  },
+  {
+    "id": "emprendimiento-en-medellin",
+    "slug": "emprendimiento-en-medellin",
+    "title": "Emprendimiento en Medellín",
+    "text": "<p>Fernando, un joven <span class=\"vocab-word\" data-word=\"Paisa\">paisa</span> de 25 años, con sueños de grandeza y una mente inquieta, se embarca en la aventura de crear su propia empresa de software en Medellín. Su ciudad natal es un campo de batalla para los emprendedores, donde la competencia es feroz y los recursos escasos.</p> <blockquote>Fernando: (Pasa la mano por su frente sudorosa, mientras observa la pantalla del computador llena de código) ¡Este algoritmo <span class=\"vocab-word\" data-word=\"Me tiene frito\">me tiene frito</span>! Llevo horas intentando que funcione y nada.</blockquote> <blockquote>Elena: Tranquilo, Fer, no te exijas tanto. <span class=\"vocab-word\" data-word=\"Roma no se construyó en un día\">Roma no se construyó en un día</span>.</blockquote> <blockquote>Fernando: Lo sé, pero es que… la competencia está <span class=\"vocab-word\" data-word=\"Pisándonos los talones\">pisándonos los talones</span>. Si no lanzamos nuestro software pronto, <span class=\"vocab-word\" data-word=\"Nos van a comer vivos\">nos van a comer vivos</span>.</blockquote> <blockquote>Elena: Tienes razón, pero no podemos salir con un producto <span class=\"vocab-word\" data-word=\"A medias\">a medias</span>. Hay que asegurarnos de que sea perfecto.</blockquote> <blockquote>Fernando: Tienes razón. Además, todavía nos falta el tema de la financiación. No podemos seguir viviendo de ahorros.</blockquote> <blockquote>Elena: No te preocupes, yo me estoy moviendo con algunos inversionistas. Tengo una cita la próxima semana con un tipo que parece interesado.</blockquote> <blockquote>Fernando: ¡Excelente! Ojalá que se concrete, mientras tanto, seguiré <span class=\"vocab-word\" data-word=\"Camellando\">camellando</span> en el prototipo.</blockquote> <blockquote>Elena: Confía en mí, Fer. Esta jugada la vamos a ganar, sigamos <span class=\"vocab-word\" data-word=\"Pa'delante\">pa’delante</span>.</blockquote> <p>Días después, se encuentran en una reunión con un potencial inversionista.</p> <blockquote>Inversionista: (Observa con detenimiento el prototipo del software) Interesante, muy interesante. Me gusta la idea, tiene potencial.</blockquote> <blockquote>Fernando: Como puede ver, nuestro software es único en el mercado. Ofrece una solución innovadora a los problemas que enfrentan las empresas en la actualidad.</blockquote> <blockquote>Inversionista: Veo que han trabajado duro. Sin embargo, hay algunos aspectos que me preocupan. La competencia en este sector es muy fuerte y todavía no tienen un historial probado.</blockquote> <blockquote>Elena: Somos conscientes de los desafíos, pero estamos seguros de nuestro producto y de nuestro equipo. Tenemos la experiencia y la determinación para tener éxito.</blockquote> <blockquote>Inversionista: Me <span class=\"vocab-word\" data-word=\"Convencen\">convencen</span>. Estoy dispuesto a invertir en su empresa.</blockquote> <blockquote>Fernando y Elena: ¡Muchas gracias!</blockquote> <p>Meses después, se hará oficial el lanzamiento del software en un evento en Plaza Mayor.</p> <blockquote>Fernando: Buenas noches a todos. Para nosotros es un placer presentarles nuestro nuevo software, una herramienta que revolucionará la forma en que las empresas hacen negocios.</blockquote> <blockquote>Elena: (Hace una demostración del software) Como pueden ver, nuestro software es fácil de usar y ofrece una amplia <span class=\"vocab-word\" data-word=\"Gama\">gama</span> de funciones que se adaptan a las necesidades de cualquier empresa.</blockquote> <p>Las horas pasan, los amigos y socios ahora se encuentran en una reunión privada.</p> <blockquote>Fernando: No puedo creer lo lejos que hemos llegado.</blockquote> <blockquote>Elena: Te lo dije, Fer. Solo era cuestión de tiempo y esfuerzo.</blockquote> <blockquote>Fernando: (Se dirige al equipo) <span class=\"vocab-word\" data-word=\"Brindemos\">Brindemos</span> por esto, por nuestro trabajo, por nuestra empresa. ¡Salud!</blockquote> <blockquote>Todos: ¡Salud!</blockquote> <p>Fernando y Elena lograron convertir su sueño en realidad, demostrando que con esfuerzo, perseverancia y trabajo en equipo, los sueños también pueden transformarse en grandes logros.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Paisa",
+        "definition": "Person from the Antioquia region of Colombia."
+      },
+      {
+        "word": "Me tiene frito",
+        "definition": "Expression meaning being tired or annoyed by something."
+      },
+      {
+        "word": "Roma no se construyó en un día",
+        "definition": "Saying meaning that great things take time to achieve."
+      },
+      {
+        "word": "Pisándonos los talones",
+        "definition": "Being very close to catching or overtaking someone."
+      },
+      {
+        "word": "Nos van a comer vivos",
+        "definition": "Expression meaning being in a difficult or threatening situation."
+      },
+      {
+        "word": "A medias",
+        "definition": "Done incompletely or partially."
+      },
+      {
+        "word": "Camellando",
+        "definition": "Colombian slang for working hard."
+      },
+      {
+        "word": "Pa'delante",
+        "definition": "Colloquial term meaning 'forward' or 'keep going'."
+      },
+      {
+        "word": "Convencen",
+        "definition": "To persuade or make someone agree or believe something."
+      },
+      {
+        "word": "Gama",
+        "definition": "Range or variety of options."
+      },
+      {
+        "word": "Brindemos",
+        "definition": "To make a toast, usually with drinks in celebration."
+      }
+    ]
+  },
+  {
+    "id": "en-el-barrio-de-cali",
+    "slug": "en-el-barrio-de-cali",
+    "title": "En el barrio de Cali",
+    "text": "<p>Cali, Colombia. Un barrio popular vibrante y lleno de vida. Los aromas a café recién hecho se mezclan con el <span class=\"vocab-word\" data-word=\"Bullicio\">bullicio</span> de la mañana. En un pequeño parque, bajo la sombra de un árbol de mango, se reúnen tres amigos inseparables: Cristina, Juan y Giselle.</p> <blockquote>Cristina: ¡Buenos días, <span class=\"vocab-word\" data-word=\"Parceros\">parceros</span>! ¿Ya desayunaron?</blockquote> <blockquote>Juan: ¡Buenos días, Cris! Apenas me levantaba. ¿Trajiste mangos? ¡Qué rico!</blockquote> <blockquote>Giselle: ¡Hola, vecinos! ¿Y ese olor a <span class=\"vocab-word\" data-word=\"Pandebono\">pandebono</span> tan delicioso?</blockquote> <blockquote>Cristina: (Ríe) ¡Adivinaron! Mi mamá preparó una <span class=\"vocab-word\" data-word=\"Tanda\">tanda</span> para el desayuno. ¿Quieren un poco?</blockquote> <blockquote>Juan: ¡Yo sí, por favor! Me muero de hambre.</blockquote> <blockquote>Giselle: ¡Yo también! Y un cafecito para acompañarlo.</blockquote> <blockquote>Cristina: ¡Listo!</blockquote> <blockquote>Juan: (Mordiendo un pandebono) ¡Uff, qué rico! Tu mamá cocina <span class=\"vocab-word\" data-word=\"Como los dioses\">como los dioses</span>.</blockquote> <blockquote>Giselle: ¡Y este café está perfecto! Me ayuda después de la <span class=\"vocab-word\" data-word=\"Trasnochada\">trasnochada</span>.</blockquote> <blockquote>Cristina: ¿Y a qué hora llegaste anoche? ¿Te fue bien en la <span class=\"vocab-word\" data-word=\"Rumba\">rumba</span>?</blockquote> <blockquote>Giselle: ¡Sí, estuvo chévere! Bailamos hasta que nos dolieron los pies. Pero hoy tengo que madrugar para ir al mercado.</blockquote> <blockquote>Juan: ¿Y qué vas a vender hoy?</blockquote> <blockquote>Giselle: De todo un poco: frutas, verduras, especias... Lo que me traigan los campesinos.</blockquote> <blockquote>Cristina: ¡Mucha suerte! Yo tengo que ir a la biblioteca a <span class=\"vocab-word\" data-word=\"Devolver\">devolver</span> unos libros. Luego me toca ayudar a mi mamá con la limpieza de la casa.</blockquote> <blockquote>Juan: Y yo tengo que ir a trabajar. Me toca turno doble en el taller.</blockquote> <blockquote>Giselle: ¡Ánimo, parceros! Que tengan un buen día.</blockquote> <blockquote>Cristina y Juan: ¡Igualmente, Giselle!</blockquote> <p>Los tres amigos se despiden con un abrazo y se van por sus caminos separados. Más tarde, en el mercado:</p> <blockquote>Cliente: ¿Me da medio <span class=\"vocab-word\" data-word=\"Kilo\">kilo</span> de tomates, por favor?</blockquote> <blockquote>Giselle: ¡Claro que sí! Aquí tiene.</blockquote> <blockquote>Cliente: ¿Y tiene <span class=\"vocab-word\" data-word=\"Cilantro\">cilantro</span>?</blockquote> <blockquote>Giselle: ¡Sí, por supuesto! Aquí le tengo un <span class=\"vocab-word\" data-word=\"Manojito\">manojito</span> bien fresco.</blockquote> <p>Giselle observa a los demás vendedores del mercado. Algunos <span class=\"vocab-word\" data-word=\"Pregonan\">pregonan</span> sus productos, otros conversan animadamente entre sí. En la biblioteca, Cristina iba llegando a devolver el libro.</p> <blockquote>Cristina: (Devolviendo los libros a la <span class=\"vocab-word\" data-word=\"Bibliotecaria\">bibliotecaria</span>) Buenas tardes, ¿me puede recomendar un libro sobre la historia de Cali?</blockquote> <blockquote>Bibliotecaria: ¡Claro que sí! Aquí tiene algunos títulos que podrían interesarle.</blockquote> <p>Cristina se sienta en una mesa y comienza a leer uno de los libros. A su alrededor, otras personas estudian, leen o trabajan en silencio. En el taller, Juan está a unos minutos de tener su descanso.</p> <blockquote>Juan: ¡Este trabajo es duro, pero me gusta! Me siento orgulloso de lo que hago.</blockquote> <p>Juan se concentra en su trabajo, mientras sus compañeros de taller bromean y conversan. El taller es un lugar donde se respira <span class=\"vocab-word\" data-word=\"Camaradería\">camaradería</span> y esfuerzo.</p> <blockquote>Juan: Me siento afortunado de tener estos amigos y este trabajo. La vida en Cali no es fácil, pero hay muchas cosas por las que estar agradecido.</blockquote> <p>Al final del día, los tres amigos se reúnen de nuevo en el parque.</p> <blockquote>Cristina: ¿Cómo les fue hoy?</blockquote> <blockquote>Giselle: ¡Uf, vendí casi todo! Estoy agotada, pero contenta.</blockquote> <blockquote>Juan: Yo también estoy cansado, pero satisfecho. Terminamos un proyecto importante en el taller.</blockquote> <blockquote>Cristina: ¡Me alegra que les haya ido bien! Yo aprendí mucho sobre la historia de Cali. Este libro es fascinante.</blockquote> <p>Los amigos comparten sus experiencias del día mientras comen pan de bono y toman café. La noche cae sobre el barrio, y las luces de las casas se encienden una a una.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Bullicio",
+        "definition": "Noise or bustle made by a group of people."
+      },
+      {
+        "word": "Parceros",
+        "definition": "Colombian slang for friends or buddies."
+      },
+      {
+        "word": "Pandebono",
+        "definition": "Traditional Colombian bread roll made with cheese."
+      },
+      {
+        "word": "Tanda",
+        "definition": "Batch or portion of food prepared at once."
+      },
+      {
+        "word": "Como los dioses",
+        "definition": "Expression meaning to do something excellently or perfectly."
+      },
+      {
+        "word": "Trasnochada",
+        "definition": "Act of staying up late or overnight."
+      },
+      {
+        "word": "Rumba",
+        "definition": "Party or lively celebration."
+      },
+      {
+        "word": "Devolver",
+        "definition": "To return something to its original place or owner."
+      },
+      {
+        "word": "Kilo",
+        "definition": "Unit of weight equal to one thousand grams."
+      },
+      {
+        "word": "Cilantro",
+        "definition": "Aromatic herb commonly used in cooking."
+      },
+      {
+        "word": "Manojito",
+        "definition": "Small bunch or bundle of items."
+      },
+      {
+        "word": "Pregonan",
+        "definition": "To announce or advertise something publicly."
+      },
+      {
+        "word": "Bibliotecaria",
+        "definition": "Person in charge of or working in a library."
+      },
+      {
+        "word": "Camaradería",
+        "definition": "Feeling of friendship and mutual support among people."
+      }
+    ]
+  },
+  {
+    "id": "pescando-en-la-costa-caribena",
+    "slug": "pescando-en-la-costa-caribena",
+    "title": "Pescando en la costa caribeña",
+    "text": "<p>La Ciénaga Grande de Santa Marta, Colombia. Un ecosistema único donde se mezclan agua dulce y salada, hogar de una gran variedad de peces y aves.</p> <blockquote>Eduardo: (Ajustando las redes) ¡Buenos días, <span class=\"vocab-word\" data-word=\"Mija\">mija</span>! ¿Lista para otra <span class=\"vocab-word\" data-word=\"Faena\">faena</span>?</blockquote> <blockquote>Ángela: ¡Buenos días, tío! Siempre lista. ¿Y el pescado? ¿Hay buen <span class=\"vocab-word\" data-word=\"Pique\">pique</span> hoy?</blockquote> <blockquote>Eduardo: No como antes, mija. La Ciénaga ya no es la misma.</blockquote> <blockquote>Ángela: ¿Qué pasa, tío? ¿Notaste algo extraño?</blockquote> <blockquote>Eduardo: Sí, mija. Los peces <span class=\"vocab-word\" data-word=\"Escasean\">escasean</span>, las aguas se calientan y los turistas contaminan. La Ciénaga está <span class=\"vocab-word\" data-word=\"Maluca\">maluca</span>.</blockquote> <blockquote>Ángela: ¡Esos <span class=\"vocab-word\" data-word=\"Jueputas\">jueputas</span> turistas! No respetan nada. <span class=\"vocab-word\" data-word=\"Arrojan\">Arrojan</span> basura, contaminan el agua y espantan a los peces.</blockquote> <blockquote>Eduardo: No es solo eso, mija. El clima también ha cambiado. Las lluvias son más intensas y los veranos más secos. La Ciénaga no se recupera.</blockquote> <blockquote>Ángela: ¡Tenemos que hacer algo, tío! No podemos permitir que la Ciénaga muera. Es nuestro hogar, el sustento de nuestras familias.</blockquote> <blockquote>Eduardo: Tienes razón, mija. Hay que luchar por la Ciénaga. Debemos unir a la comunidad y buscar soluciones.</blockquote> <blockquote>Ángela: ¡Yo me apunto! Podemos organizar talleres, hablar con las autoridades, crear conciencia entre los turistas. ¡Juntos podemos salvar la Ciénaga!</blockquote> <blockquote>Eduardo: (Sonriendo) ¡Esa es la actitud, mija! La Ciénaga nos necesita. Unidos, podemos darle la batalla a la adversidad.</blockquote> <p>En las semanas siguientes, Ángela y Eduardo organizan jornadas de limpieza, siembran <span class=\"vocab-word\" data-word=\"Mangle\">mangle</span> para proteger las costas, y educan a los turistas sobre la importancia de la Ciénaga. Sin embargo, algunos pescadores se resisten al cambio y las autoridades no siempre escuchan.</p> <blockquote>Ángela: <span class=\"vocab-word\" data-word=\"¡Ave María!\">¡Ave María!</span> Me parece una <span class=\"vocab-word\" data-word=\"Barbaridad\">barbaridad</span> que no todos nos quieran apoyar, cuando el beneficio es para la comunidad.</blockquote> <p>Sin embargo, la determinación de Ángela y Eduardo contagia a la comunidad. Poco a poco, la Ciénaga comienza a recuperarse. Un día Ángela y Eduardo se sienten orgullosos de lo que han logrado. La lucha no ha terminado, pero saben que la Ciénaga está en buenas manos.</p> <blockquote>Ángela: ¡Lo logramos, tío! La Ciénaga está sanando.</blockquote> <blockquote>Eduardo: Sí, mija. Gracias a tu esfuerzo y al de la comunidad. La Ciénaga tiene futuro.</blockquote> <p>Juntos, Ángela y Eduardo, junto a la comunidad, se convierten en guardianes de la Ciénaga Grande de Santa Marta, un ecosistema único que palpita con vida gracias a la conexión profunda entre la naturaleza y las personas.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Mija",
+        "definition": "Colloquial term meaning 'my daughter' or used affectionately to address a woman."
+      },
+      {
+        "word": "Faena",
+        "definition": "Task or day’s work, especially physical or manual labor."
+      },
+      {
+        "word": "Pique",
+        "definition": "Fishing luck or level of catch activity."
+      },
+      {
+        "word": "Escasean",
+        "definition": "To be scarce or in short supply."
+      },
+      {
+        "word": "Maluca",
+        "definition": "Colombian slang for something unpleasant or difficult."
+      },
+      {
+        "word": "Jueputas",
+        "definition": "Colloquial expression showing anger or frustration."
+      },
+      {
+        "word": "Arrojan",
+        "definition": "To throw or cast something away."
+      },
+      {
+        "word": "Mangle",
+        "definition": "Type of coastal vegetation that grows in tropical wetlands."
+      },
+      {
+        "word": "¡Ave María!",
+        "definition": "Expression of surprise, amazement, or frustration."
+      },
+      {
+        "word": "Barbaridad",
+        "definition": "An outrageous or inappropriate act or comment."
+      }
+    ]
+  },
+  {
+    "id": "el-aspirante-a-musico",
+    "slug": "el-aspirante-a-musico",
+    "title": "El aspirante a músico ",
+    "text": "<p>Barranquilla, Colombia. La ciudad donde el sol brilla con intensidad y la música corre por las venas de sus habitantes. En un barrio popular, vive Miguel, un joven con un talento para la música y con el sueño de convertirse en un artista reconocido. Sin embargo, las dificultades económicas y las expectativas familiares tradicionales amenazan con apagar su <span class=\"vocab-word\" data-word=\"Llama\">llama</span>.</p> <blockquote>Jorge: ¿Hasta cuándo vas a seguir con esa <span class=\"vocab-word\" data-word=\"Vaina\">vaina</span> de la música, mijo? Ya te he dicho que eso no da pa' comer.</blockquote> <blockquote>Miguel: (Sin apartar la vista de su trabajo) Pero papá, yo amo la música, es lo que me apasiona.</blockquote> <blockquote>Jorge: La pasión no llena la <span class=\"vocab-word\" data-word=\"Barriga\">barriga</span>, mijo. Necesitas un trabajo de verdad, algo que te dé un futuro.</blockquote> <blockquote>Miguel: Pero yo quiero ser músico, papá. Quiero componer, quiero tocar en escenarios, quiero que la gente escuche mi música.</blockquote> <blockquote>Jorge: (Suspirando) Los sueños están muy bonitos, mijo, pero la realidad es otra. Hay que ser realistas.</blockquote> <blockquote>Miguel: Yo no voy a renunciar a mi sueño, papá. Voy a luchar por él, cueste lo que cueste.</blockquote> <blockquote>Jorge: Está bien, mijo. Pero no quiero que me <span class=\"vocab-word\" data-word=\"Sacar la piedra\">saques la piedra</span> o me vengas a llorar cuando las cosas se pongan difíciles.</blockquote> <blockquote>Miguel: No lo haré, papá. Te lo prometo.</blockquote> <blockquote>Jorge: Te quiero, mijo. Solo quiero lo mejor para ti.</blockquote> <blockquote>Miguel: Yo también te quiero, papá.</blockquote> <p>Miguel vuelve a su trabajo, con la mente llena de dudas y preocupaciones. Pronto cae la noche y Miguel se está preparando para tocar en un bar local, como hace todos los días.</p> <blockquote>Miguel: (Pensativo) Haré todo lo que esté en mis manos para cumplir mi sueño, no me bajonearé.</blockquote> <p>Su presentación empieza, cantando <span class=\"vocab-word\" data-word=\"Covers\">covers</span> de artistas colombianos populares. A medida que los minutos pasan, se empiezan a oír los gritos emocionados de los espectadores.</p> <blockquote>Espectador 1: (Gritando) ¡Eso sí es música! ¡Ese pelao tiene talento!</blockquote> <blockquote>Espectador 2: ¡Tiene una voz que llega al alma!</blockquote> <blockquote>Miguel: ¡Gracias! ¡Muchas gracias!</blockquote> <p>Al finalizar la canción, el público aplaude con entusiasmo. Miguel sabe que no está solo, que hay personas que aprecian su talento y que comparten su sueño.</p> <blockquote>Miguel: (En voz baja) Algún día, mi música se escuchará en todo el mundo. Algún día, mi sueño se hará realidad.</blockquote>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Llama",
+        "definition": "Spirit or inner spark that drives passion or determination."
+      },
+      {
+        "word": "Vaina",
+        "definition": "Colloquial term in Colombia meaning 'thing' or 'situation'."
+      },
+      {
+        "word": "Barriga",
+        "definition": "Part of the body that contains the stomach; belly."
+      },
+      {
+        "word": "Sacar la piedra",
+        "definition": "Colombian expression meaning to annoy or irritate someone."
+      },
+      {
+        "word": "Covers",
+        "definition": "Versions of songs performed by artists other than the original."
+      }
+    ]
+  },
+  {
+    "id": "la-vida-en-un-pueblo-del-amazonas",
+    "slug": "la-vida-en-un-pueblo-del-amazonas",
+    "title": "La vida en un pueblo del Amazonas ",
+    "text": "<p>La comunidad indígena Yacaré habita a <span class=\"vocab-word\" data-word=\"Orillas\">orillas</span> del río Amazonas, en Colombia. Su vida gira <span class=\"vocab-word\" data-word=\"En torno\">en torno</span> a la naturaleza, la pesca, la agricultura y la sabiduría <span class=\"vocab-word\" data-word=\"Ancestral\">ancestral</span>. Sin embargo, la llegada de la tecnología y el desarrollo económico amenazan con cambiar su estilo de vida tradicional.</p> <blockquote>Emilio: (Sentado en el suelo, <span class=\"vocab-word\" data-word=\"Tallando\">tallando</span> un adorno de madera) Oiga, señorita Isabel, ¿y pa' qué necesita tanta información sobre nuestras costumbres?</blockquote> <blockquote>Isabel: Emilio, estoy aquí para aprender sobre su cultura y cómo viven en armonía con la naturaleza. Su conocimiento es muy valioso para mí.</blockquote> <blockquote>Emilio: Pero las cosas están cambiando. Los jóvenes de ahora ya no están <span class=\"vocab-word\" data-word=\"Amañados\">amañados</span> a este lugar, ya no quieren saber de nuestras tradiciones. Solo les interesa el celular y la música de la ciudad.</blockquote> <blockquote>Isabel: Es cierto que la <span class=\"vocab-word\" data-word=\"Modernidad\">modernidad</span> tiene su impacto, pero también hay oportunidades para que las comunidades indígenas se <span class=\"vocab-word\" data-word=\"Beneficien\">beneficien</span> del desarrollo sin perder su identidad.</blockquote> <blockquote>Emilio: ¿Y cómo se supone que vamos a hacer eso? Si hasta el río está contaminado por las empresas <span class=\"vocab-word\" data-word=\"Petroleras\">petroleras</span>.</blockquote> <blockquote>Isabel: Precisamente, por eso es importante que ustedes alcen su voz y exijan que se respeten sus derechos y el medio ambiente. La comunidad Yacaré tiene mucho que enseñarle al mundo.</blockquote> <blockquote>Emilio: Tiene razón, señorita. No podemos quedarnos <span class=\"vocab-word\" data-word=\"De brazos cruzados\">de brazos cruzados</span>. Debemos luchar por defender nuestro territorio y nuestras tradiciones.</blockquote> <blockquote>Isabel: Me alegra escuchar eso, Emilio. Yo puedo ayudarles a crear conciencia sobre la importancia de la <span class=\"vocab-word\" data-word=\"Preservación\">preservación</span> del medio ambiente y la cultura indígena.</blockquote> <blockquote>Emilio: ¿Y cómo lo haría?</blockquote> <blockquote>Isabel: Podemos utilizar las redes sociales y las organizaciones ambientales para difundir su mensaje. También podemos camellar juntos en proyectos de desarrollo sostenible.</blockquote> <blockquote>Emilio: ¡Eso me parece muy bien! Estoy seguro de que juntos podemos lograr mucho.</blockquote> <blockquote>Isabel: Estoy segura de eso también, Emilio. La clave está en el diálogo, la colaboración y el respeto mutuo.</blockquote> <p>Los días pasaron y, con ayuda de Isabel, la comunidad ha empezado a transmitir su mensaje.</p> <blockquote>Emilio: (Mostrando un video en su celular a los ancianos de la comunidad) Miren, aquí está la entrevista que me hicieron en la radio sobre la importancia de proteger el río.</blockquote> <blockquote>Anciano: ¡Muy bien, Emilio! Me alegra que estés usando la tecnología para defender nuestras tradiciones.</blockquote> <blockquote>Isabel: Y este es el <span class=\"vocab-word\" data-word=\"Folleto\">folleto</span> que diseñamos para informar a la comunidad sobre los proyectos de desarrollo sostenible.</blockquote> <blockquote>Mujer indígena: ¡Excelente trabajo, Isabel! Es importante que todos comprendamos la importancia de cuidar el medio ambiente.</blockquote> <blockquote>Emilio: Gracias por su ayuda, señorita. Usted nos ha enseñado que podemos usar la modernidad para fortalecer nuestras tradiciones.</blockquote> <blockquote>Isabel: Y ustedes me han enseñado que la sabiduría ancestral y la conexión con la naturaleza son fundamentales para el futuro del planeta.</blockquote> <p>La historia de Emilio e Isabel nos muestra que la interacción entre la vida tradicional y la modernidad puede ser positiva y enriquecedora.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Orillas",
+        "definition": "Areas near the edge of a river, lake, or sea."
+      },
+      {
+        "word": "Ancestral",
+        "definition": "Related to the traditions or practices of one's ancestors."
+      },
+      {
+        "word": "En torno",
+        "definition": "Around or in relation to something."
+      },
+      {
+        "word": "Tallando",
+        "definition": "Carving or shaping something, usually wood."
+      },
+      {
+        "word": "Amañados",
+        "definition": "Accustomed or used to someone or something."
+      },
+      {
+        "word": "Modernidad",
+        "definition": "Characteristics or tendencies of the modern era."
+      },
+      {
+        "word": "Beneficien",
+        "definition": "To bring advantages or benefits to someone or something."
+      },
+      {
+        "word": "Petroleras",
+        "definition": "Companies related to the extraction or production of oil."
+      },
+      {
+        "word": "De brazos cruzados",
+        "definition": "Expression meaning to remain passive or do nothing."
+      },
+      {
+        "word": "Preservación",
+        "definition": "Act of protecting or maintaining something in its original state."
+      },
+      {
+        "word": "Folleto",
+        "definition": "Printed material containing brief information about a topic."
+      }
+    ]
+  },
+  {
+    "id": "el-taxista",
+    "slug": "el-taxista",
+    "title": "El taxista",
+    "text": "<p>Cartagena de Indias, una ciudad colonial vibrante y caótica. <span class=\"vocab-word\" data-word=\"El sol raja\">El sol raja</span> las piedras mientras el tráfico ruge. Entre el mar de taxis amarillos, Antonio, un hombre curtido por el sol y la brisa salada, conduce su <span class=\"vocab-word\" data-word=\"Destartalado\">destartalado</span> Chevrolet Spark.</p> <blockquote>Antonio: ¡Taxi! ¿Pa' dónde va, <span class=\"vocab-word\" data-word=\"Mi llave\">mi llave</span>?</blockquote> <blockquote>Pedro: Al Pie de la Popa, mijo. <span class=\"vocab-word\" data-word=\"Apure\">Apure</span> que tengo un vuelo que me espera.</blockquote> <blockquote>Antonio: ¡Tranquilo, don Pedro! En un <span class=\"vocab-word\" data-word=\"Santimén\">santiamén</span> lo llevo.</blockquote> <blockquote>Pedro: ¿Y cuánto <span class=\"vocab-word\" data-word=\"Cobra\">cobra</span>?</blockquote> <blockquote>Antonio: Depende del tráfico, mi llave. Pero no se preocupe, no le voy a cobrar caro.</blockquote> <blockquote>Pedro: ¡Menos mal! Es que estos taxistas de Cartagena son unos <span class=\"vocab-word\" data-word=\"Bandidos\">bandidos</span>.</blockquote> <blockquote>Antonio: (Ríe) No todos, mi llave. Hay de todo como en <span class=\"vocab-word\" data-word=\"Botica\">botica</span>.</blockquote> <p>En el camino, pasajero y taxista conversan de diferentes temas.</p> <blockquote>Pedro: ¿Y usted lleva mucho tiempo manejando taxi?</blockquote> <blockquote>Antonio: Uff, como unos 15 años, mi llave. He visto de todo en este <span class=\"vocab-word\" data-word=\"Oficio\">oficio</span>.</blockquote> <blockquote>Pedro: ¿Y qué tal le ha ido?</blockquote> <blockquote>Antonio: No me quejo. Hay días buenos y días malos. Pero uno se va acostumbrando a la <span class=\"vocab-word\" data-word=\"Maña\">maña</span>.</blockquote> <blockquote>Pedro: ¿Y ha tenido algún <span class=\"vocab-word\" data-word=\"Susto\">susto</span>?</blockquote> <blockquote>Antonio: ¡Uy, sí! Como no. Una vez me <span class=\"vocab-word\" data-word=\"Atracaron\">atracaron</span> unos pelaos en un callejón oscuro. Me quitaron todo, hasta el radio del carro.</blockquote> <blockquote>Pedro: <span class=\"vocab-word\" data-word=\"¡Qué bárbaro!\">¡Qué bárbaro!</span></blockquote> <blockquote>Antonio: Sí, mi llave. Pero gracias a Dios no me pasó nada grave.</blockquote> <blockquote>Pedro: ¿Y qué le gusta más de ser taxista?</blockquote> <blockquote>Antonio: Lo que más me gusta es conocer gente. He conocido a personas de todas partes del mundo. Y cada uno tiene una historia que contar.</blockquote> <blockquote>Pedro: Eso sí es interesante.</blockquote> <p>Llegan al Pie de la Popa.</p> <blockquote>Antonio: Aquí estamos, mi llave.</blockquote> <blockquote>Pedro: ¡Muchas gracias por la carrera!</blockquote> <blockquote>Antonio: No hay de qué, mi llave. Que tenga un buen viaje.</blockquote> <blockquote>Pedro: ¿<span class=\"vocab-word\" data-word=\"¿Cuánto le debo?\">Cuánto le debo</span>?</blockquote> <blockquote>Antonio: Son 15 mil pesos, mi llave.</blockquote> <blockquote>Pedro: Aquí tiene.</blockquote> <blockquote>Antonio: ¡Muchas gracias!</blockquote> <blockquote>Pedro: ¡Hasta luego!</blockquote> <blockquote>Antonio: ¡Hasta pronto!</blockquote> <p>Pedro se va y Antonio se queda solo en el taxi. Suspira y mira hacia el cielo. Sabe que la vida de taxista no es fácil, pero también sabe que es una vida llena de aventuras y sorpresas.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "El sol raja",
+        "definition": "Expression meaning it is extremely hot."
+      },
+      {
+        "word": "Destartalado",
+        "definition": "In poor condition or run-down."
+      },
+      {
+        "word": "Mi llave",
+        "definition": "Colombian slang meaning 'my friend' or 'buddy'."
+      },
+      {
+        "word": "Apure",
+        "definition": "Expression used to tell someone to hurry up."
+      },
+      {
+        "word": "Santimén",
+        "definition": "Colloquial form of 'santiamén', meaning 'in a flash' or 'very quickly'."
+      },
+      {
+        "word": "Cobra",
+        "definition": "Act of receiving payment for a service or product."
+      },
+      {
+        "word": "Bandidos",
+        "definition": "People who commit illegal acts; bandits."
+      },
+      {
+        "word": "Botica",
+        "definition": "Old term for a pharmacy; used in expressions meaning 'a bit of everything'."
+      },
+      {
+        "word": "Oficio",
+        "definition": "Occupation or trade."
+      },
+      {
+        "word": "Maña",
+        "definition": "Skill or knack developed through experience."
+      },
+      {
+        "word": "Susto",
+        "definition": "Strong emotion caused by fear or surprise."
+      },
+      {
+        "word": "Atracaron",
+        "definition": "They robbed violently or assaulted someone."
+      },
+      {
+        "word": "¡Qué bárbaro!",
+        "definition": "Expression of amazement or disbelief."
+      },
+      {
+        "word": "¿Cuánto le debo?",
+        "definition": "Phrase used to ask the cost of a service or item."
+      }
+    ]
+  },
+  {
+    "id": "el-estudiante-universitario",
+    "slug": "el-estudiante-universitario",
+    "title": "El estudiante universitario",
+    "text": "<p>Un pequeño apartamento de dos habitaciones. La luz del sol se filtra por las <span class=\"vocab-word\" data-word=\"Redijas\">rendijas</span> de las ventanas. Mauricio, con ojeras y visiblemente cansado, se toma un café mientras <span class=\"vocab-word\" data-word=\"Hojea\">hojea</span> un libro de cálculo. Carmen, con <span class=\"vocab-word\" data-word=\"Delantal\">delantal</span> y manos en la cintura, lo observa desde la cocina.</p> <blockquote>Carmen: ¿Mijo, y hasta qué hora vas a estar con esos libros? Mañana tienes que madrugar pa' la universidad y no has dormido nada.</blockquote> <blockquote>Mauricio: Ya casi termino, mamá. Tengo que estudiar para el <span class=\"vocab-word\" data-word=\"Parcial\">parcial</span> de cálculo, si no me va bien me <span class=\"vocab-word\" data-word=\"Joden\">joden</span> la carrera.</blockquote> <blockquote>Carmen: Yo sé que estás estresado, mijo, pero no te exijas tanto. La vida no es solo estudiar.</blockquote> <blockquote>Mauricio: Es que si no estudio, ¿cómo voy a salir adelante? <span class=\"vocab-word\" data-word=\"Usted\">Usted</span> sabe que la U pública es dura y con el <span class=\"vocab-word\" data-word=\"Rebusque\">rebusque</span> que tengo no me alcanza pa' todo.</blockquote> <blockquote>Carmen: Eso sí es verdad. Yo quisiera poder ayudarte más, pero con lo que gano vendiendo empanadas no es mucho.</blockquote> <blockquote>Mauricio: No se preocupe, mamá, yo voy a salir adelante. Usted confíe en mí.</blockquote> <blockquote>Carmen: Te quiero mucho, mijo. Y recuerda que siempre voy a estar aquí para apoyarte en lo que necesites.</blockquote> <blockquote>Mauricio: Gracias, mamá.</blockquote> <p>Mauricio camina por el campus universitario con un grupo de amigos.</p> <blockquote>Camilo: ¿Qué hubo, <span class=\"vocab-word\" data-word=\"Man\">parcero</span>? ¿Preparado para el examen de cálculo?</blockquote> <blockquote>Mauricio: No sé, <span class=\"vocab-word\" data-word=\"Man\">man</span>. Esa vaina está <span class=\"vocab-word\" data-word=\"Rechimba\">rechimba</span>.</blockquote> <blockquote>Natalia: Tranquilo, Mauricio. Si estudiaste bien, no vas a tener problemas.</blockquote> <blockquote>Andrés: O si no, siempre podemos copiarle a la nerd de Mariana.</blockquote> <blockquote>Mauricio: No sean gamines, <span class=\"vocab-word\" data-word=\"Man\">manes</span>. Esa vaina no es de juego. Si nos pillan nos echan de la U.</blockquote> <blockquote>Camilo: Tranquilo, mijo, que yo tengo un plan B.</blockquote> <blockquote>Mauricio: ¿Y cuál es?</blockquote> <blockquote>Camilo: (Saca un pequeño libro de su bolsillo) El \"<span class=\"vocab-word\" data-word=\"Copi-fácil\">Copi-fácil</span>\", parcero.</blockquote> <blockquote>Mauricio: Ustedes sí son <span class=\"vocab-word\" data-word=\"Verracos\">verracos</span>, manes.</blockquote> <p>Un mes después, Mauricio se encuentra en la biblioteca de la universidad, estudiando con Natalia. Ambos se concentran en sus libros y apuntes.</p> <blockquote>Natalia: Ya casi terminamos. Creo que ya estamos listos para el examen.</blockquote> <blockquote>Mauricio: Sí, yo también lo creo. He estado estudiando mucho y me siento más seguro.</blockquote> <blockquote>Natalia: Me alegro mucho por ti, Mauricio. Sabía que podías hacerlo.</blockquote> <blockquote>Mauricio: Gracias, Natalia. Tu apoyo ha sido muy importante para mí.</blockquote> <p>Día del examen de cálculo. Mauricio está sentado en el aula, junto a sus compañeros. Todos se ven nerviosos. El profesor ingresa al aula y comienza a <span class=\"vocab-word\" data-word=\"Repartir\">repartir</span> los exámenes.</p> <blockquote>Mauricio: Tranquilo, Mauricio. Tú puedes hacerlo.</blockquote> <p>Dos semanas después. Los resultados del examen están publicados. Mauricio se acerca con cautela al <span class=\"vocab-word\" data-word=\"Tablón\">tablón</span> de anuncios. Busca su nombre y encuentra una nota: Aprobado. Mauricio está sentado en la mesa, cenando con su madre.</p> <blockquote>Carmen: ¿Y cómo te fue en el examen de cálculo, mijo?</blockquote> <blockquote>Mauricio: ¡Saqué una A, mamá!</blockquote> <blockquote>Carmen: ¡Ay, mijo! ¡Qué alegría! Estoy tan orgullosa de ti.</blockquote> <blockquote>Mauricio: Gracias, mamá. Esto no habría sido posible sin tu apoyo.</blockquote> <blockquote>Carmen: Tú eres el que ha hecho todo el esfuerzo, mijo. Yo solo te he acompañado en el camino.</blockquote> <blockquote>Mauricio: Te quiero mucho, mamá.</blockquote> <blockquote>Carmen: Y yo te quiero más, mijo.</blockquote> <p>Mauricio y Carmen se sonríen, con la satisfacción de haber superado juntos un desafío.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Redijas",
+        "definition": "Small openings or slits through which light passes."
+      },
+      {
+        "word": "Hojea",
+        "definition": "To browse or flip through the pages of a book or document."
+      },
+      {
+        "word": "Delantal",
+        "definition": "Garment worn over clothes to protect them while cooking or working."
+      },
+      {
+        "word": "Parcial",
+        "definition": "Exam or test covering a portion of the course material."
+      },
+      {
+        "word": "Joden",
+        "definition": "Colloquial expression meaning to bother or cause trouble."
+      },
+      {
+        "word": "Usted",
+        "definition": "Formal way to address someone in Colombian Spanish, often used even with close family."
+      },
+      {
+        "word": "Rebusque",
+        "definition": "Colombian term for informal or side work done to earn money."
+      },
+      {
+        "word": "Man",
+        "definition": "Slang term for 'dude' or 'friend'."
+      },
+      {
+        "word": "Rechimba",
+        "definition": "Colombian slang meaning something awesome or very cool."
+      },
+      {
+        "word": "Copi-fácil",
+        "definition": "Place where photocopies or prints are made easily."
+      },
+      {
+        "word": "Verracos",
+        "definition": "Brave, bold, or daring people."
+      },
+      {
+        "word": "Repartir",
+        "definition": "To distribute or hand out something to several people."
+      },
+      {
+        "word": "Tablón",
+        "definition": "Flat surface or board used to display information."
+      }
+    ]
+  },
+  {
+    "id": "rutina-de-trabajo",
+    "slug": "rutina-de-trabajo",
+    "title": "Rutina de trabajo",
+    "text": "<p>María, una mujer de 38 años, madre soltera de dos niños, trabaja como <span class=\"vocab-word\" data-word=\"Empleada doméstica\">empleada doméstica</span> en una lujosa casa del Poblado, un exclusivo sector de Medellín. Se levanta de la cama con un ligero dolor de espalda, producto de la <span class=\"vocab-word\" data-word=\"Jornada\">jornada</span> del día anterior. Se prepara un <span class=\"vocab-word\" data-word=\"Café aguado\">café aguado</span> y un pan con <span class=\"vocab-word\" data-word=\"Arequipe\">arequipe</span> mientras revisa su celular.</p> <blockquote>María: (Suspira) Ojalá que la señora Laura no esté tan exigente hoy.</blockquote> <p>María se viste con un vestido azul y un <span class=\"vocab-word\" data-word=\"Mandil\">mandil</span> blanco. Toma su bolso y se dirige a la parada del autobús. María viaja en un autobús <span class=\"vocab-word\" data-word=\"Abarrotado\">abarrotado</span> de gente.</p> <blockquote>Señora: ¿Usted trabaja en El Poblado, mija?</blockquote> <blockquote>María: Sí, señora. ¿Y usted?</blockquote> <blockquote>Señora: Yo también. Trabajo como niñera en una casa de la Loma de los Bernal.</blockquote> <blockquote>María: ¡Qué bueno! Ese sector es muy bonito.</blockquote> <blockquote>Señora: Sí, pero el trabajo es duro. Hay que aguantar las exigencias de los <span class=\"vocab-word\" data-word=\"Patrones\">patrones</span>.</blockquote> <blockquote>María: Eso sí es verdad. A mí me toca <span class=\"vocab-word\" data-word=\"Lidiar\">lidiar</span> con la señora Laura, que es bastante <span class=\"vocab-word\" data-word=\"Quisquillosa\">quisquillosa</span>.</blockquote> <blockquote>Señora: Ánimo, mija. La vida nos pone estas pruebas para que seamos más fuertes.</blockquote> <blockquote>María: Gracias, señora. Usted sí que sabe hablar bonito.</blockquote> <p>María se baja del autobús y camina hacia la casa donde trabaja. Es una mansión de tres pisos con piscina, jardín y garaje para dos carros. María toca el <span class=\"vocab-word\" data-word=\"Timbre\">timbre</span> y la recibe la señora Laura.</p> <blockquote>Señora Laura: Buenos días, María. ¿Llegó puntual?</blockquote> <blockquote>María: Sí, señora Laura. Buenos días.</blockquote> <blockquote>Señora Laura: Perfecto. Entre y póngase a trabajar. Hoy hay mucho que hacer.</blockquote> <blockquote>María: Sí, señora.</blockquote> <p>María comienza su jornada de trabajo. Limpia la casa, lava los platos, plancha la ropa y hace las compras. La señora Laura la observa constantemente y le hace comentarios sobre su trabajo.</p> <blockquote>Señora Laura: María, ¿ya limpió el baño del segundo piso?</blockquote> <blockquote>María: Sí, señora Laura. Ya está listo.</blockquote> <blockquote>Señora Laura: ¿Y el polvo de las lámparas? No lo veo muy bien.</blockquote> <blockquote>María: (Disculpándose) Lo siento, señora Laura. Enseguida lo hago.</blockquote> <p>María trabaja sin parar hasta la hora del almuerzo. Come una empanada fría que trajo de su casa y luego continúa con su trabajo. En la tarde, María termina de limpiar la casa y se prepara para irse. La señora Laura le da el dinero del día.</p> <blockquote>Señora Laura: Aquí tiene su pago, María.</blockquote> <blockquote>María: Gracias, señora Laura.</blockquote> <blockquote>Señora Laura: ¿Y sus hijos? ¿Cómo están?</blockquote> <blockquote>María: Bien, señora Laura. Gracias por preguntar.</blockquote> <blockquote>Señora Laura: Asegúrese de que estudien y hagan sus tareas. La educación es lo único que les va a sacar adelante en la vida.</blockquote> <blockquote>María: Sí, señora Laura. Yo me esfuerzo para darles lo mejor.</blockquote> <p>María se despide de la señora Laura y se va a casa. Llega cansada y con dolor de pies. Sin embargo, tiene una sonrisa en su rostro. Sabe que su trabajo duro le dará a sus hijos la oportunidad de tener un futuro mejor.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Empleada doméstica",
+        "definition": "Person hired to perform household tasks such as cleaning, cooking, and laundry."
+      },
+      {
+        "word": "Jornada",
+        "definition": "Workday or period of daily work."
+      },
+      {
+        "word": "Café aguado",
+        "definition": "Weak or diluted coffee."
+      },
+      {
+        "word": "Arequipe",
+        "definition": "Traditional Colombian sweet similar to caramel or dulce de leche."
+      },
+      {
+        "word": "Mandil",
+        "definition": "Apron worn to protect clothing while working."
+      },
+      {
+        "word": "Abarrotado",
+        "definition": "Very crowded or packed with people."
+      },
+      {
+        "word": "Patrones",
+        "definition": "Employers or bosses who have workers under their supervision."
+      },
+      {
+        "word": "Lidiar",
+        "definition": "To deal with or handle a difficult situation."
+      },
+      {
+        "word": "Quisquillosa",
+        "definition": "Person who is overly demanding or difficult to please."
+      },
+      {
+        "word": "Timbre",
+        "definition": "Device that makes a sound to announce someone's arrival or call attention."
+      }
+    ]
+  },
+  {
+    "id": "la-familia-cafetera",
+    "slug": "la-familia-cafetera",
+    "title": "La familia cafetera",
+    "text": "<p>El sol de la mañana se filtraba entre las hojas de plátano, iluminando la pequeña <span class=\"vocab-word\" data-word=\"Parcela\">parcela</span> de café en la que Alejandro, un hombre de 50, revisaba las <span class=\"vocab-word\" data-word=\"Matas\">matas</span> con una mirada preocupada. A su lado, Marina, su esposa, de 48 años y con la fuerza inquebrantable de las mujeres campesinas, preparaba el almuerzo en un <span class=\"vocab-word\" data-word=\"Fogón\">fogón</span> de leña.</p> <blockquote>Alejandro: Este año el café está más berraco que nunca. La cosecha es escasa y los precios bajan cada vez más.</blockquote> <blockquote>Marina: Ni me lo digas, Alejandro. Ya no sé cómo vamos a hacer para pagar las cuentas y sacar adelante a los muchachos.</blockquote> <blockquote>Alejandro: (Golpea la tierra con el <span class=\"vocab-word\" data-word=\"Azadón\">azadón</span>) Yo tampoco, Marina. Esta tradición cafetera que tanto nos ha costado levantar se nos está viniendo abajo.</blockquote> <blockquote>Marina: No te desanimes, <span class=\"vocab-word\" data-word=\"Viejo\">viejo</span>. Siempre hemos encontrado la manera de salir adelante.</blockquote> <blockquote>Alejandro: Sí, pero esta vez es diferente. Los jóvenes no quieren saber nada del café. Buscan otras oportunidades en la ciudad, donde creen que la vida es más fácil.</blockquote> <blockquote>Marina: Es verdad. Juan ya se fue a estudiar a Medellín y Mariana quiere seguir sus pasos. No sé cómo vamos a <span class=\"vocab-word\" data-word=\"Convencerlos\">convencerlos</span> de que se queden aquí, en su tierra.</blockquote> <blockquote>Alejandro: Tenemos que hablar con ellos, Marina. Hacerles entender que esto no solo es un trabajo, sino una <span class=\"vocab-word\" data-word=\"Herencia\">herencia</span>, una forma de vida.</blockquote> <blockquote>Marina: Tienes razón. Debemos recordarles el orgullo que significa trabajar la tierra que nos vio nacer, el valor de cultivar un producto que nos identifica como colombianos.</blockquote> <blockquote>Alejandro: Y quién sabe, tal vez con el tiempo, ellos encuentren la pasión por el café que nosotros sentimos y decidan continuar con la tradición familiar.</blockquote> <blockquote>Marina: No lo dudo, Alejandro. La sangre cafetera corre por sus venas, tarde o temprano lo sentirán.</blockquote> <blockquote>Alejandro: Mientras tanto, seguiremos luchando por mantener este legado, por nuestro futuro y el de nuestros hijos.</blockquote> <blockquote>Marina: Juntos, como siempre lo hemos hecho, Alejandro.</blockquote> <p>En los días siguientes, Alejandro y Marina conversaron con Juan y Mariana sobre la importancia del café en sus vidas.</p> <blockquote>Alejandro: Sabemos que existen dificultades, pero también es satisfactorio vivir de lo que nos da la madre tierra.</blockquote> <blockquote>Marina: De generación en generación nos hemos esforzado para vivir una vida digna a partir del café.</blockquote> <p>Las palabras de sus padres calaron hondo en los corazones de los jóvenes. Juan y Mariana comprendieron que el café era mucho más que un simple producto, era una parte de su identidad y la de su familia.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Parcela",
+        "definition": "Small piece of land used for agriculture."
+      },
+      {
+        "word": "Matas",
+        "definition": "Small plants or shrubs."
+      },
+      {
+        "word": "Fogón",
+        "definition": "Place used for cooking, especially outdoors or using firewood."
+      },
+      {
+        "word": "Azadón",
+        "definition": "Agricultural tool used for digging or tilling the soil."
+      },
+      {
+        "word": "Viejo",
+        "definition": "Colloquial term of endearment used to refer to a person, regardless of age."
+      },
+      {
+        "word": "Convencerlos",
+        "definition": "To persuade or make someone accept something."
+      },
+      {
+        "word": "Herencia",
+        "definition": "Assets or values passed down from one generation to another."
+      }
+    ]
+  },
+  {
+    "id": "el-vendedor-ambulante",
+    "slug": "el-vendedor-ambulante",
+    "title": "El vendedor ambulante ",
+    "text": "<p>Diego lleva 10 años vendiendo <span class=\"vocab-word\" data-word=\"Arepas\">arepas</span> en las calles de Bogotá. Su pequeño negocio, ubicado en una esquina concurrida del centro de la ciudad, le permite ganarse el <span class=\"vocab-word\" data-word=\"Sustento\">sustento</span> diario para él y su familia. Sin embargo, Diego enfrenta una constante lucha contra las dificultades económicas, las regulaciones gubernamentales y las <span class=\"vocab-word\" data-word=\"Complejidades\">complejidades</span> de las relaciones personales.</p> <blockquote>Javier: (Acercándose al carrito de arepas) ¡Buenos días, don Diego! <span class=\"vocab-word\" data-word=\"¿Me regalas...?\">¿Me regalas...?</span> una arepita?</blockquote> <blockquote>Diego: ¡Buenos días, Javier! ¡Claro que sí! Aquí te tengo una calientita, rellena de queso y <span class=\"vocab-word\" data-word=\"Hogao\">hogao</span>.</blockquote> <blockquote>Javier: ¡Deliciosa como siempre, don Diego! Usted sí sabe cómo alegrar el desayuno.</blockquote> <blockquote>Diego: ¡Gracias, Javier! Me alegra que te guste. ¿Y cómo amaneciste hoy?</blockquote> <blockquote>Javier: Pues regular, don Diego. <span class=\"vocab-word\" data-word=\"La calle está dura\">La calle está dura</span> por estos lados.</blockquote> <blockquote>Diego: Sí, Javier, la situación es difícil para todos. Pero no te desanimes, hay que seguir echándole pa'lante.</blockquote> <blockquote>Javier: Eso sí, don Diego. Usted siempre con esa energía positiva.</blockquote> <blockquote>Diego: ¡Es que uno no puede dejarse vencer por las dificultades! Hay que ser como las arepas, siempre calientes y con una sonrisa en la cara.</blockquote> <blockquote>Javier: ¡Tiene razón, don Diego! Me voy con más ánimo para el trabajo.</blockquote> <blockquote>Diego: ¡Así me gusta, Javier! Que tengas un buen día.</blockquote> <p>Más tarde, mientras Diego atiende a sus clientes, un inspector de la policía se acerca al carrito de arepas.</p> <blockquote>Inspector: Buenos días, señor. ¿Tiene los permisos <span class=\"vocab-word\" data-word=\"En regla\">en regla</span> para vender en este espacio público?</blockquote> <blockquote>Diego: Buenos días, señor inspector. Sí, tengo todos los papeles en regla. Aquí le muestro mi permiso de vendedor ambulante y el certificado de manipulación de alimentos.</blockquote> <blockquote>Inspector: Muy bien, todo parece estar en orden. Pero tenga cuidado, hay muchos vendedores ilegales en la zona y no queremos tener problemas.</blockquote> <blockquote>Diego: Sí, señor inspector, lo entiendo. Yo siempre cumplo con las normas.</blockquote> <blockquote>Inspector: (Con un tono severo) Asegúrese de hacerlo, señor. De lo contrario, se le <span class=\"vocab-word\" data-word=\"Confiscará\">confiscará</span> la mercancía y se le aplicará una multa.</blockquote> <blockquote>Diego: Sí, señor inspector.</blockquote> <p>Al final del día, Diego se encuentra cansado, pero con la satisfacción de haber trabajado duro. Cuenta las ganancias del día, que no son muchas, pero le permiten cubrir las necesidades básicas de su familia.</p>",
+    "audio": "",
+    "vocab": [
+      {
+        "word": "Arepas",
+        "definition": "Traditional Colombian food made from corn dough, often grilled or fried."
+      },
+      {
+        "word": "Sustento",
+        "definition": "Means of livelihood or source of income."
+      },
+      {
+        "word": "Complejidades",
+        "definition": "Complicated or difficult aspects of something."
+      },
+      {
+        "word": "¿Me regalas...?",
+        "definition": "Colloquial Colombian expression meaning 'Can I buy...?' or 'Please give me...'"
+      },
+      {
+        "word": "Hogao",
+        "definition": "Colombian sauce made with tomato and onion, often used as a topping."
+      },
+      {
+        "word": "La calle está dura",
+        "definition": "Expression meaning that life or work conditions are difficult."
+      },
+      {
+        "word": "En regla",
+        "definition": "In compliance with rules or regulations."
+      },
+      {
+        "word": "Confiscará",
+        "definition": "To seize or take possession of something as a legal penalty or punishment."
       }
     ]
   }

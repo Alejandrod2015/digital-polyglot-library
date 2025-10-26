@@ -83,3 +83,12 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;              /* Chrome, Safari, Edge moderno, iOS */
 }
+
+/* 🔹 Oculta scrollbar visual, mantiene scroll funcional */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}

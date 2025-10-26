@@ -6,6 +6,7 @@ import StoryAccessInfo from './StoryAccessInfo';
 import AddStoryToLibraryButton from '@/components/AddStoryToLibraryButton';
 import StoryClientGate from './StoryClientGate';
 import { getFeaturedStory } from '@/lib/getFeaturedStory';
+import StoryContent from '@/components/StoryContent';
 
 type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
 
@@ -74,54 +75,53 @@ export default async function StoryPage({ params }: StoryPageProps) {
       <StoryAccessInfo storyId={story.id} userPlan={userPlan} />
 
       <StoryClientGate
-        plan={userPlan}
-        storyId={story.id}
-        forceAllow={hasFullAccess}
-        fallback={
-          <div className="relative">
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/90 to-transparent z-10" />
-            <div className="absolute inset-x-0 bottom-[-8rem] flex flex-col items-center justify-end pb-12 text-center z-20">
-              <p className="text-gray-200 text-xl sm:text-xl mb-3 drop-shadow">
-                Unlock full access to all stories.
-              </p>
-              <a
-                href="/plans"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
-              >
-                Upgrade
-              </a>
-            </div>
-            <div className="fixed bottom-0 left-0 right-0 z-30 md:ml-64">
-              <Player
-                src={
-                  story.audio.startsWith('http')
-                    ? story.audio
-                    : `${book.audioFolder?.replace(/\/$/, '') ?? ''}/${story.audio}`
-                }
-                bookSlug={book.slug}
-                storySlug={story.slug}
-              />
-            </div>
-          </div>
-        }
-      >
-        <div
-          className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6 relative"
-          dangerouslySetInnerHTML={{ __html: visibleText }}
+  plan={userPlan}
+  storyId={story.id}
+  forceAllow={hasFullAccess}
+  fallback={
+    <div className="relative">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/90 to-transparent z-10" />
+      <div className="absolute inset-x-0 bottom-[-8rem] flex flex-col items-center justify-end pb-12 text-center z-20">
+        <p className="text-gray-200 text-xl sm:text-xl mb-3 drop-shadow">
+          Unlock full access to all stories.
+        </p>
+        <a
+          href="/plans"
+          className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
+        >
+          Upgrade
+        </a>
+      </div>
+      <div className="fixed bottom-0 left-0 right-0 z-30 md:ml-64">
+        <Player
+          src={
+            story.audio.startsWith('http')
+              ? story.audio
+              : `${book.audioFolder?.replace(/\/$/, '') ?? ''}/${story.audio}`
+          }
+          bookSlug={book.slug}
+          storySlug={story.slug}
         />
+      </div>
+    </div>
+  }
+>
+  <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6 relative">
+    <StoryContent text={visibleText} sentencesPerParagraph={3} />
+  </div>
 
-        <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
-          <Player
-            src={
-              story.audio.startsWith('http')
-                ? story.audio
-                : `${book.audioFolder?.replace(/\/$/, '') ?? ''}/${story.audio}`
-            }
-            bookSlug={book.slug}
-            storySlug={story.slug}
-          />
-        </div>
-      </StoryClientGate>
+  <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
+    <Player
+      src={
+        story.audio.startsWith('http')
+          ? story.audio
+          : `${book.audioFolder?.replace(/\/$/, '') ?? ''}/${story.audio}`
+      }
+      bookSlug={book.slug}
+      storySlug={story.slug}
+    />
+  </div>
+</StoryClientGate>
 
       <VocabPanel story={story} />
     </div>
