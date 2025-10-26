@@ -9,9 +9,16 @@ type Props = {
   bookId: string;
   title: string;
   coverUrl: string;
+  variant?: 'default' | 'icon';
 };
 
-export default function AddStoryToLibraryButton({ storyId, bookId, title, coverUrl }: Props) {
+export default function AddStoryToLibraryButton({
+  storyId,
+  bookId,
+  title,
+  coverUrl,
+  variant = 'default',
+}: Props) {
   const { user, isLoaded } = useUser();
   const { openSignIn } = useClerk();
   const [inLibrary, setInLibrary] = useState(false);
@@ -94,6 +101,23 @@ export default function AddStoryToLibraryButton({ storyId, bookId, title, coverU
       console.error('Error toggling story library:', err);
     }
   };
+
+  if (variant === 'icon') {
+    return (
+      <button
+        onClick={toggleLibrary}
+        disabled={!isLoaded || checking}
+        className={`p-2 rounded-full transition ${
+  inLibrary
+    ? 'bg-emerald-600/20 text-emerald-400'
+    : 'hover:bg-emerald-600/20 text-gray-400 hover:text-emerald-400'
+}`}
+        title={inLibrary ? 'In your library' : 'Add to library'}
+      >
+        {inLibrary ? <BookmarkCheck size={28} /> : <BookmarkPlus size={28} />}
+      </button>
+    );
+  }
 
   return (
     <button

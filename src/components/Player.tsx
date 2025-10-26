@@ -9,10 +9,10 @@ import {
   RotateCw,
   SkipBack,
   SkipForward,
+  ChevronUp,
 } from "lucide-react";
 import { books } from "@/data/books";
 
-// --- Wake Lock setup (mantener pantalla encendida) ---
 type WakeLockSentinel = {
   released: boolean;
   release: () => Promise<void>;
@@ -29,7 +29,6 @@ function getWakeLockNavigator(): NavigatorWithWakeLock | null {
     : null;
 }
 
-
 interface PlayerProps {
   src: string;
   bookSlug: string;
@@ -40,52 +39,45 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
+  const [showSpeedMenu, setShowSpeedMenu] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  // Wake Lock
-const wakeLockRef = useRef<WakeLockSentinel | null>(null);
-const navWL = getWakeLockNavigator();
+  const wakeLockRef = useRef<WakeLockSentinel | null>(null);
+  const navWL = getWakeLockNavigator();
 
-const requestWakeLock = async () => {
-  try {
-    if (!navWL) return;
-    if (wakeLockRef.current) return;
-    wakeLockRef.current = await navWL.wakeLock.request("screen");
-    const onRelease = () => {
-      wakeLockRef.current = null;
-    };
-    wakeLockRef.current.addEventListener("release", onRelease);
-  } catch {
-    // navegador no soporta o permisos denegados
-  }
-};
-
-const releaseWakeLock = async () => {
-  try {
-    if (wakeLockRef.current && !wakeLockRef.current.released) {
-      await wakeLockRef.current.release();
+  const requestWakeLock = async () => {
+    try {
+      if (!navWL) return;
+      if (wakeLockRef.current) return;
+      wakeLockRef.current = await navWL.wakeLock.request("screen");
+      const onRelease = () => (wakeLockRef.current = null);
+      wakeLockRef.current.addEventListener("release", onRelease);
+    } catch {
+      // ignorar
     }
-  } catch {
-    // ignorar
-  } finally {
-    wakeLockRef.current = null;
-  }
-};
+  };
 
-  // convertir assetId en URL reproducible si es necesario
+  const releaseWakeLock = async () => {
+    try {
+      if (wakeLockRef.current && !wakeLockRef.current.released) {
+        await wakeLockRef.current.release();
+      }
+    } catch {
+      // ignorar
+    } finally {
+      wakeLockRef.current = null;
+    }
+  };
+
   const resolvedSrc = useMemo(() => {
     if (!src) return "";
-    if (src.startsWith("http")) return src; // ya es URL
-    // Sanity asset ID → URL pública
+    if (src.startsWith("http")) return src;
     return `https://cdn.sanity.io/files/9u7ilulp/production/${src}.mp3`;
   }, [src]);
 
-  // localizar libro e historias
   const book = Object.values(books).find((b) => b.slug === bookSlug);
   const stories = book?.stories || [];
-
-  // encontrar historia actual
   const currentIndex = stories.findIndex(
     (s) => s.slug === storySlug || s.id === storySlug
   );
@@ -95,7 +87,6 @@ const releaseWakeLock = async () => {
       ? stories[currentIndex + 1]
       : null;
 
-  // reiniciar audio cuando cambia el src
   useEffect(() => {
     const audio = audioRef.current;
     if (audio) {
@@ -106,24 +97,17 @@ const releaseWakeLock = async () => {
     }
   }, [resolvedSrc]);
 
-  // sincronizar progreso
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
     const updateProgress = () => {
-
-      console.log("[Player] timeupdate", audio.currentTime, audio.duration);
-
       setProgress(audio.currentTime);
       const ratio = audio.duration ? audio.currentTime / audio.duration : 0;
       window.dispatchEvent(new CustomEvent("audio-progress", { detail: ratio }));
     };
 
     const setDur = () => setDuration(audio.duration);
-
-    console.log("[Player] metadata loaded, duration =", audio.duration);
-
 
     audio.addEventListener("timeupdate", updateProgress);
     audio.addEventListener("loadedmetadata", setDur);
@@ -134,46 +118,38 @@ const releaseWakeLock = async () => {
     };
   }, []);
 
-  // reproducir automáticamente la siguiente historia cuando termina el audio
-useEffect(() => {
-  const audio = audioRef.current;
-  if (!audio) return;
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  const handleEnded = () => {
-    void releaseWakeLock(); // 🔹 liberar wake lock al terminar
-    if (nextStory) {
-      window.location.href = `/books/${bookSlug}/${nextStory.slug}`;
-    } else {
-      setIsPlaying(false);
-      setProgress(0);
-    }
-  };
+    const handleEnded = () => {
+      void releaseWakeLock();
+      if (nextStory) {
+        window.location.href = `/books/${bookSlug}/${nextStory.slug}`;
+      } else {
+        setIsPlaying(false);
+        setProgress(0);
+      }
+    };
 
-  audio.addEventListener("ended", handleEnded);
-  return () => audio.removeEventListener("ended", handleEnded);
-}, [nextStory, bookSlug]);
+    audio.addEventListener("ended", handleEnded);
+    return () => audio.removeEventListener("ended", handleEnded);
+  }, [nextStory, bookSlug]);
 
-    const togglePlay = () => {
+  const togglePlay = () => {
     const a = audioRef.current;
     if (!a) return;
     if (isPlaying) {
       a.pause();
       setIsPlaying(false);
-      void releaseWakeLock(); // 🔹 liberar
+      void releaseWakeLock();
     } else {
       a.play()
         .then(() => {
           setIsPlaying(true);
-          void requestWakeLock(); // 🔹 activar
+          void requestWakeLock();
         })
         .catch((err) => console.error("[audio] play failed", err));
-    }
-  };
-
-  const changeSpeed = (v: number) => {
-    if (audioRef.current) {
-      audioRef.current.playbackRate = v;
-      setSpeed(v);
     }
   };
 
@@ -183,6 +159,14 @@ useEffect(() => {
         0,
         audioRef.current.currentTime + sec
       );
+    }
+  };
+
+  const changeSpeed = (v: number) => {
+    if (audioRef.current) {
+      audioRef.current.playbackRate = v;
+      setSpeed(v);
+      setShowSpeedMenu(false);
     }
   };
 
@@ -200,96 +184,105 @@ useEffect(() => {
     return `${minutes}:${seconds}`;
   };
 
-  // Liberar Wake Lock al desmontar
-  useEffect(() => {
-    return () => {
-      void releaseWakeLock();
-    };
-  }, []);
-
   return (
-    <div className="bg-black/80 p-4 rounded-t-xl shadow-2xl backdrop-blur w-full">
-      {/* audio */}
+    <div className="bg-black/80 px-4 py-3 rounded-t-xl shadow-2xl backdrop-blur w-full relative">
       <audio ref={audioRef} src={resolvedSrc} preload="metadata" />
 
       {/* barra de progreso */}
-      <div className="flex items-center gap-2 text-sm text-gray-300">
-        <span>{formatTime(progress)}</span>
+      <div className="flex items-center gap-2 text-sm text-gray-300 mb-2">
+        <span className="w-10 text-right">{formatTime(progress)}</span>
         <input
           type="range"
           min={0}
           max={duration || 0}
           value={progress}
           onChange={handleSeek}
-          className="w-full accent-blue-500"
+          className="w-full accent-blue-500 h-1.5"
         />
-        <span>{formatTime(duration)}</span>
+        <span className="w-10">{formatTime(duration)}</span>
       </div>
 
-      {/* controles + navegación */}
-      <div className="flex justify-center items-center gap-6 mt-4">
-        {prevStory ? (
+      {/* controles compactos */}
+      <div className="flex justify-center items-center gap-4 relative">
+        {prevStory && (
           <Link
             href={`/books/${bookSlug}/${prevStory.slug}`}
-            className="p-2 rounded hover:bg-gray-800"
+            className="p-1.5 rounded hover:bg-gray-800"
           >
-            <SkipBack className="w-8 h-8" />
+            <SkipBack className="w-6 h-6" />
           </Link>
-        ) : (
-          <div className="w-8 h-8" />
         )}
 
         <button
           onClick={() => skip(-15)}
-          className="relative p-2 rounded hover:bg-gray-800"
+          className="relative p-1.5 rounded hover:bg-gray-800"
         >
-          <RotateCcw className="w-8 h-8" />
-          <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold">
+          <RotateCcw className="w-6 h-6" />
+          <span className="absolute inset-0 flex items-center justify-center text-[8px] font-bold">
             15
           </span>
         </button>
 
         <button
           onClick={togglePlay}
-          className="p-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white"
+          className="p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white mx-2"
         >
-          {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
+          {isPlaying ? (
+            <Pause className="w-5 h-5" />
+          ) : (
+            <Play className="w-5 h-5" />
+          )}
         </button>
 
         <button
           onClick={() => skip(15)}
-          className="relative p-2 rounded hover:bg-gray-800"
+          className="relative p-1.5 rounded hover:bg-gray-800"
         >
-          <RotateCw className="w-8 h-8" />
-          <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold">
+          <RotateCw className="w-6 h-6" />
+          <span className="absolute inset-0 flex items-center justify-center text-[8px] font-bold">
             15
           </span>
         </button>
 
-        {nextStory ? (
+        {nextStory && (
           <Link
             href={`/books/${bookSlug}/${nextStory.slug}`}
-            className="p-2 rounded hover:bg-gray-800"
+            className="p-1.5 rounded hover:bg-gray-800"
           >
-            <SkipForward className="w-8 h-8" />
+            <SkipForward className="w-6 h-6" />
           </Link>
-        ) : (
-          <div className="w-8 h-8" />
         )}
-      </div>
 
-      <div className="flex justify-center mt-3">
-        <select
-          value={speed}
-          onChange={(e) => changeSpeed(Number(e.target.value))}
-          className="bg-gray-800 px-2 py-1 rounded text-sm"
-        >
-          <option value={0.75}>0.75x</option>
-          <option value={0.85}>0.85x</option>
-          <option value={1}>1x</option>
-          <option value={1.15}>1.15x</option>
-          <option value={1.25}>1.25x</option>
-        </select>
+        {/* Selector personalizado */}
+        <div className="ml-2 relative">
+          <button
+            onClick={() => setShowSpeedMenu((v) => !v)}
+            className="bg-gray-800 text-sm rounded px-2 py-1 flex items-center gap-1 hover:bg-gray-700"
+          >
+            {speed.toFixed(2).replace(/\.00$/, "")}x
+            <ChevronUp
+              className={`w-3 h-3 transition-transform ${
+                showSpeedMenu ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          {showSpeedMenu && (
+            <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-900 border border-gray-700 rounded-lg shadow-lg py-1 text-sm z-50">
+              {[0.75, 0.85, 1, 1.15, 1.25].map((v) => (
+                <button
+                  key={v}
+                  onClick={() => changeSpeed(v)}
+                  className={`block w-full text-left px-4 py-1 hover:bg-gray-700 ${
+                    v === speed ? "text-blue-400" : "text-white"
+                  }`}
+                >
+                  {v.toFixed(2).replace(/\.00$/, "")}x
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

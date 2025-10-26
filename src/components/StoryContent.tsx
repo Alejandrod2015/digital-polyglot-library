@@ -82,37 +82,49 @@ export default function StoryContent({
     [sentences, sentencesPerParagraph]
   );
 
-  // 🔹 Auto-scroll sincronizado con el progreso del audio
   const containerRef = React.useRef<HTMLDivElement>(null);
 
+  // ✅ Scroll sincronizado con progreso del audio
   React.useEffect(() => {
+    const TITLE_MARGIN = 150;
+    const BOTTOM_MARGIN = 380;
+
     const handleAudioProgress = (e: Event) => {
       const custom = e as CustomEvent<number>;
       const ratio = Math.min(1, Math.max(0, custom.detail));
       const el = containerRef.current;
       if (!el) return;
 
-      const maxScroll = el.scrollHeight - el.clientHeight;
-      const scrollTop = ratio * maxScroll;
+      const mainEl = document.querySelector("main");
+      if (!mainEl) return;
 
-      el.scrollTo({
-        top: scrollTop,
+      const rect = el.getBoundingClientRect();
+      const offsetTop = rect.top + mainEl.scrollTop;
+
+      const maxScroll =
+        el.scrollHeight - (mainEl.clientHeight - BOTTOM_MARGIN);
+
+      const base = Math.max(0, offsetTop - TITLE_MARGIN);
+      const target = base + ratio * maxScroll;
+
+      mainEl.scrollTo({
+        top: target,
         behavior: "smooth",
       });
     };
 
     window.addEventListener("audio-progress", handleAudioProgress);
-    return () => window.removeEventListener("audio-progress", handleAudioProgress);
+    return () =>
+      window.removeEventListener("audio-progress", handleAudioProgress);
   }, []);
 
-  // ✅ Estilos restaurados + ocultar scrollbar sin romper scroll
   return (
     <div
       ref={containerRef}
       className={cx(
-        "mx-auto max-w-[65ch] h-[80vh] overflow-y-scroll scroll-smooth text-xl leading-relaxed text-gray-200 space-y-6",
+        "mx-auto max-w-[65ch] text-xl leading-relaxed text-gray-200 space-y-6",
         "prose prose-invert prose-p:my-4 prose-blockquote:italic prose-blockquote:text-sky-400",
-        "no-scrollbar", // 🔹 oculta la barra
+        "no-scrollbar scroll-smooth",
         className
       )}
       onMouseUp={onParagraphSelect}
