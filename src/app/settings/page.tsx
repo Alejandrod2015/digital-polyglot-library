@@ -85,7 +85,7 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0B132B] text-white p-6">
+    <div className="min-h-screen bg-[#0D1B2A] text-white p-6">
       <h1 className="text-2xl font-semibold mb-6">Language Preferences</h1>
 
       {isFree ? (
@@ -130,6 +130,10 @@ export default function SettingsPage() {
       >
         {saving ? "Saving..." : "Save Preferences"}
       </button>
+{/* Copyright */}
+      <div className="mt-80 mb-6 text-center text-xs text-gray-400 opacity-70">
+  © {new Date().getFullYear()} Digital Polyglot
+</div>
 
       {message && <p className="mt-4 text-sm text-gray-300">{message}</p>}
     </div>

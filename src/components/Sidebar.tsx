@@ -73,11 +73,22 @@ export default function Sidebar({ onClose }: SidebarProps) {
   const { user } = useUser();
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
 
+  // Helper to handle link clicks
+  const handleNavClick = (href: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof onClose === "function") onClose();
+
+    // If already on the same route, force reload
+    if (window.location.pathname === href) {
+      e.preventDefault();
+      window.location.href = href;
+    }
+  };
+
   return (
     <div className="flex flex-col h-full w-full bg-[#0B132B] text-white p-6">
       {/* Logo */}
       <div className="mb-5 flex justify-center">
-        <Link href="/" onClick={onClose}>
+        <Link href="/" onClick={(e) => handleNavClick("/", e)}>
           <Image
             src="/digital-polyglot-logo.png"
             alt="Digital Polyglot"
@@ -88,11 +99,11 @@ export default function Sidebar({ onClose }: SidebarProps) {
         </Link>
       </div>
 
-      {/* Navegación */}
+      {/* Navigation */}
       <nav className="flex flex-col space-y-6 text-lg font-medium">
         <Link
           href="/"
-          onClick={onClose}
+          onClick={(e) => handleNavClick("/", e)}
           className="flex items-center gap-3 hover:text-sky-400 transition-colors"
         >
           <Home size={22} /> Home
@@ -100,7 +111,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
 
         <Link
           href="/explore"
-          onClick={onClose}
+          onClick={(e) => handleNavClick("/explore", e)}
           className="flex items-center gap-3 hover:text-blue-400 transition-colors"
         >
           <Compass size={22} /> Explore
@@ -108,7 +119,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
 
         <Link
           href="/my-library"
-          onClick={onClose}
+          onClick={(e) => handleNavClick("/my-library", e)}
           className="flex items-center gap-3 hover:text-emerald-400 transition-colors"
         >
           <BookOpen size={22} /> My Library
@@ -116,28 +127,28 @@ export default function Sidebar({ onClose }: SidebarProps) {
 
         <Link
           href="/favorites"
-          onClick={onClose}
+          onClick={(e) => handleNavClick("/favorites", e)}
           className="flex items-center gap-3 hover:text-yellow-400 transition-colors"
         >
           <Star size={22} /> Favorites
         </Link>
 
-        {/* Mostrar solo si el plan es polyglot */}
+        {/* Polyglot plan only */}
         {plan === "polyglot" && (
           <Link
             href="/create"
-            onClick={onClose}
+            onClick={(e) => handleNavClick("/create", e)}
             className="flex items-center gap-3 hover:text-emerald-400 transition-colors"
           >
             <PenLine size={22} /> Create
           </Link>
         )}
 
-                {/* Mostrar opciones de historia destacada según plan */}
+        {/* Free / Basic plan special stories */}
         {plan === "free" && (
           <Link
             href="/story-of-the-week"
-            onClick={onClose}
+            onClick={(e) => handleNavClick("/story-of-the-week", e)}
             className="flex items-center gap-3 hover:text-pink-400 transition-colors"
           >
             <BookMarked size={22} /> Story of the Week
@@ -147,7 +158,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         {plan === "basic" && (
           <Link
             href="/story-of-the-day"
-            onClick={onClose}
+            onClick={(e) => handleNavClick("/story-of-the-day", e)}
             className="flex items-center gap-3 hover:text-pink-400 transition-colors"
           >
             <BookMarked size={22} /> Story of the Day
@@ -156,7 +167,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
 
         <Link
           href="/settings"
-          onClick={onClose}
+          onClick={(e) => handleNavClick("/settings", e)}
           className="flex items-center gap-3 hover:text-gray-400 transition-colors"
         >
           <Settings size={22} /> Settings
@@ -184,11 +195,6 @@ export default function Sidebar({ onClose }: SidebarProps) {
             </button>
           </SignOutButton>
         </SignedIn>
-      </div>
-
-      {/* Footer */}
-      <div className="mt-auto text-xs text-gray-400">
-        © {new Date().getFullYear()} Digital Polyglot
       </div>
     </div>
   );

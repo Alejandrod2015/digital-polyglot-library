@@ -1,26 +1,41 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu, X, ChevronDown, ArrowLeft } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowLeft, MessageSquare } from "lucide-react";
 import Sidebar from "./Sidebar";
+import * as Sentry from "@sentry/nextjs";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  // Detecta si estamos en modo lectura (tiene storySlug en la URL)
   const isStoryPage = /^\/books\/[^/]+\/[^/]+$/.test(pathname || "");
-  // Detecta si estamos en página de libro (pero no historia)
   const isBookPage = /^\/books\/[^/]+$/.test(pathname || "");
 
-  // 👇 Cierra el sidebar automáticamente cuando cambia la ruta
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
+  const handleFeedback = (): void => {
+    const eventId =
+      Sentry.lastEventId() ||
+      Sentry.captureException(new Error("User feedback (mobile menu)"));
+
+    const sentryRuntime = Sentry as unknown as {
+      showReportDialog?: (options?: Record<string, unknown>) => void;
+    };
+
+    if (typeof sentryRuntime.showReportDialog === "function") {
+      sentryRuntime.showReportDialog({ eventId });
+      return;
+    }
+
+    alert("Feedback module not ready. Please reload and try again.");
+  };
+
   if (isStoryPage) {
-    // 👉 En modo historia: mostrar chevron hacia abajo (solo en mobile)
     const bookSlug = pathname?.split("/")[2];
     return (
       <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
@@ -32,35 +47,31 @@ export default function MobileMenu() {
   }
 
   if (isBookPage) {
-  // 👉 En página de libro: volver al último origen (home, explore, etc.)
-  const { getLastSection } = require("@/lib/navigationMemory");
-  const destinations: Record<string, string> = {
-    home: "/",
-    "my-library": "/my-library",
-    favorites: "/favorites",
-    explore: "/explore",
-    settings: "/settings",
-  };
-  const last = getLastSection();
-  const target = destinations[last || "home"];
+    const { getLastSection } = require("@/lib/navigationMemory");
+    const destinations: Record<string, string> = {
+      home: "/",
+      "my-library": "/my-library",
+      favorites: "/favorites",
+      explore: "/explore",
+      settings: "/settings",
+    };
+    const last = getLastSection();
+    const target = destinations[last || "home"];
 
-  return (
-    <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
-      <button
-        onClick={() => (window.location.href = target)}
-        className="text-white"
-      >
-        <ArrowLeft size={28} />
-      </button>
-    </div>
-  );
-}
+    return (
+      <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
+        <button
+          onClick={() => (window.location.href = target)}
+          className="text-white"
+        >
+          <ArrowLeft size={28} />
+        </button>
+      </div>
+    );
+  }
 
-
-  // 👉 En cualquier otra página: mostrar hamburguesa normal (solo en mobile)
   return (
     <div className="md:hidden">
-      {/* Botón hamburguesa */}
       <button
         onClick={() => setOpen(true)}
         className="p-4 text-white fixed top-0 left-0 z-30"
@@ -68,7 +79,6 @@ export default function MobileMenu() {
         <Menu size={28} />
       </button>
 
-      {/* Overlay oscuro */}
       {open && (
         <div
           onClick={() => setOpen(false)}
@@ -76,13 +86,11 @@ export default function MobileMenu() {
         />
       )}
 
-      {/* Sidebar deslizante */}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-[#0B132B] z-30 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Botón cerrar */}
         <button
           onClick={() => setOpen(false)}
           className="absolute top-4 right-4 text-white"
@@ -90,8 +98,22 @@ export default function MobileMenu() {
           <X size={28} />
         </button>
 
-        {/* Sidebar */}
-        <Sidebar />
+        <div className="flex flex-col h-full justify-between">
+          <div className="pt-12">
+            <Sidebar />
+          </div>
+
+          {/* Centered Feedback button */}
+          <div className="border-t border-gray-700 py-4">
+            <button
+              onClick={handleFeedback}
+              className="mx-auto flex items-center gap-2 text-gray-300 hover:text-white transition"
+            >
+              <MessageSquare size={22} />
+              <span>Feedback</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -4,14 +4,16 @@ import "./globals.css";
 import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
-import type { Viewport } from 'next';
+import FeedbackButton from "@/components/FeedbackButton";
+import "../../sentry.client.config"; // ensures Sentry loads on the client
+import type { Viewport } from "next";
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  viewportFit: 'cover',
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -46,22 +48,26 @@ export default function RootLayout({
 
         <body className="bg-[#121212] text-[#E0E0E0]">
           <div className="flex h-screen w-screen">
-            {/* Sidebar fijo en desktop */}
+            {/* Sidebar (desktop only) */}
             <aside className="hidden md:flex md:w-64 bg-[#0B132B] fixed top-0 left-0 bottom-0 z-20">
               <Sidebar />
             </aside>
 
-            {/* Botón menú lateral solo en móvil */}
+            {/* Mobile sidebar button */}
             <MobileMenu />
 
-            {/* Contenido principal (shell persistente) */}
+            {/* Main content area */}
             <div className="flex-1 flex flex-col md:ml-64">
               <BackNavigationHandler />
-              <main className="flex-1 overflow-y-auto p-6 pb-40 md:pb-32">
+              <main className="flex-1 overflow-y-auto p-6 pb-[env(safe-area-inset-bottom)]">
+
                 {children}
               </main>
             </div>
           </div>
+
+          {/* Floating feedback button */}
+          <FeedbackButton />
         </body>
       </html>
     </ClerkProvider>
