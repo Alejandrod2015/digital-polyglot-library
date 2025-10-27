@@ -38,17 +38,19 @@ export default function Home() {
 
   // 🔹 Filtrar libros por idioma seleccionado (coincidencia exacta por nombre)
   const filteredBooks = useMemo(() => {
-    if (
-      Array.isArray(targetLanguages) &&
-      targetLanguages.every((i) => typeof i === "string") &&
-      targetLanguages.length > 0
-    ) {
-      return allBooks.filter((b) =>
-        targetLanguages.includes(b.language ?? "")
-      );
-    }
-    return allBooks;
-  }, [allBooks, targetLanguages]);
+  if (
+    Array.isArray(targetLanguages) &&
+    targetLanguages.every((i) => typeof i === "string") &&
+    targetLanguages.length > 0
+  ) {
+    const langs = targetLanguages.map((l) => l.toLowerCase());
+    return allBooks.filter((b) => {
+      const lang = (b.language ?? "").toLowerCase();
+      return langs.includes(lang);
+    });
+  }
+  return allBooks;
+}, [allBooks, targetLanguages])
 
   const capitalize = (value?: string) =>
     value ? value.charAt(0).toUpperCase() + value.slice(1) : "—";

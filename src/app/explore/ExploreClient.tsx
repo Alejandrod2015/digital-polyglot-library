@@ -31,29 +31,33 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
   // 🔹 Filtro unificado: aplica tanto a historias como a libros
   const { filteredBooks, filteredStories } = useMemo(() => {
-    const allBooks = Object.values(books);
+  const allBooks = Object.values(books);
 
-    if (
-      Array.isArray(targetLanguages) &&
-      targetLanguages.every((i) => typeof i === "string") &&
-      targetLanguages.length > 0
-    ) {
-      const langs = new Set(targetLanguages);
-      return {
-        filteredBooks: allBooks.filter(
-          (b) => typeof b.language === "string" && langs.has(b.language)
-        ),
-        filteredStories: polyglotStories.filter(
-          (s) => typeof s.language === "string" && langs.has(s.language)
-        ),
-      };
-    }
-
+  if (
+    Array.isArray(targetLanguages) &&
+    targetLanguages.every((i) => typeof i === "string") &&
+    targetLanguages.length > 0
+  ) {
+    const langs = new Set(targetLanguages.map((l) => l.toLowerCase()));
     return {
-      filteredBooks: Object.values(books),
-      filteredStories: polyglotStories,
+      filteredBooks: allBooks.filter(
+        (b) =>
+          typeof b.language === "string" &&
+          langs.has(b.language.toLowerCase())
+      ),
+      filteredStories: polyglotStories.filter(
+        (s) =>
+          typeof s.language === "string" &&
+          langs.has(s.language.toLowerCase())
+      ),
     };
-  }, [polyglotStories, targetLanguages]);
+  }
+
+  return {
+    filteredBooks: Object.values(books),
+    filteredStories: polyglotStories,
+  };
+}, [polyglotStories, targetLanguages]);
 
   return (
     <div className="max-w-6xl mx-auto p-8 text-white">

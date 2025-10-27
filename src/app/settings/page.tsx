@@ -130,10 +130,6 @@ export default function SettingsPage() {
       >
         {saving ? "Saving..." : "Save Preferences"}
       </button>
-{/* Copyright */}
-      <div className="mt-80 mb-6 text-center text-xs text-gray-400 opacity-70">
-  © {new Date().getFullYear()} Digital Polyglot
-</div>
 
       {message && <p className="mt-4 text-sm text-gray-300">{message}</p>}
     </div>
