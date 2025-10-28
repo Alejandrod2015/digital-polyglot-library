@@ -1,3 +1,6 @@
+// /src/components/StoryContent.tsx
+// ✅ Versión adaptativa: mantiene autoscroll funcional tras el cambio de layout
+
 "use client";
 
 import * as React from "react";
@@ -84,7 +87,7 @@ export default function StoryContent({
 
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  // ✅ Scroll sincronizado con progreso del audio
+  // ✅ Scroll sincronizado con progreso del audio (adaptativo: main o body)
   React.useEffect(() => {
     const TITLE_MARGIN = 150;
     const BOTTOM_MARGIN = 380;
@@ -96,18 +99,20 @@ export default function StoryContent({
       if (!el) return;
 
       const mainEl = document.querySelector("main");
-      if (!mainEl) return;
+      const scrollTarget =
+        mainEl && mainEl.scrollHeight > mainEl.clientHeight
+          ? mainEl
+          : document.scrollingElement || document.documentElement;
 
       const rect = el.getBoundingClientRect();
-      const offsetTop = rect.top + mainEl.scrollTop;
-
+      const offsetTop = rect.top + (scrollTarget.scrollTop || 0);
       const maxScroll =
-        el.scrollHeight - (mainEl.clientHeight - BOTTOM_MARGIN);
+        el.scrollHeight - (scrollTarget.clientHeight - BOTTOM_MARGIN);
 
       const base = Math.max(0, offsetTop - TITLE_MARGIN);
       const target = base + ratio * maxScroll;
 
-      mainEl.scrollTo({
+      scrollTarget.scrollTo({
         top: target,
         behavior: "smooth",
       });

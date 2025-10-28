@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+// /src/app/layout.tsx
+
+import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
 import FeedbackButton from "@/components/FeedbackButton";
-import "../../sentry.client.config"; // ensures Sentry loads on the client
-import type { Viewport } from "next";
+import "../../sentry.client.config";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -46,27 +47,21 @@ export default function RootLayout({
           />
         </head>
 
-        <body className="bg-[#121212] text-[#E0E0E0]">
-          <div className="flex h-screen w-screen">
-            {/* Sidebar (desktop only) */}
-            <aside className="hidden md:flex md:w-64 bg-[#0B132B] fixed top-0 left-0 bottom-0 z-20">
-              <Sidebar />
-            </aside>
+        {/* ✅ layout estable: usa min-h-screen, no h-screen */}
+        <body className="bg-[#121212] text-[#E0E0E0] min-h-screen flex flex-col">
+          {/* Sidebar (desktop) */}
+          <aside className="hidden md:flex md:w-64 bg-[#0B132B] fixed top-0 left-0 bottom-0 z-20">
+            <Sidebar />
+          </aside>
 
-            {/* Mobile sidebar button */}
-            <MobileMenu />
+          <MobileMenu />
+          <BackNavigationHandler />
 
-            {/* Main content area */}
-            <div className="flex-1 flex flex-col md:ml-64">
-              <BackNavigationHandler />
-              <main className="flex-1 overflow-y-auto p-6 pb-[env(safe-area-inset-bottom)]">
+          {/* Main content scrollable */}
+          <main className="flex-1 md:ml-64 p-6 pb-[env(safe-area-inset-bottom)] overflow-y-auto">
+            {children}
+          </main>
 
-                {children}
-              </main>
-            </div>
-          </div>
-
-          {/* Floating feedback button */}
           <FeedbackButton />
         </body>
       </html>

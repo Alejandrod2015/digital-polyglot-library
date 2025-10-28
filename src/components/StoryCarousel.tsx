@@ -18,7 +18,7 @@ type CarouselProps<T> = {
  * - Mobile (<768px): scroll nativo con momentum (sin JS, sin flechas)
  * - Desktop (≥768px): Embla con flechas y 3 visibles
  */
-export default function Carousel<T>({
+export default function StoryCarousel<T>({
   items,
   renderItem,
   className,

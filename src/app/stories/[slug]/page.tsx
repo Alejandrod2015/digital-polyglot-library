@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import StoryReaderClient from "./StoryReaderClient";
 import { currentUser } from "@clerk/nextjs/server";
 import { getFeaturedStory } from "@/lib/getFeaturedStory";
+import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 
 const prisma = new PrismaClient();
 
@@ -44,25 +45,33 @@ export default async function StoryPage({ params }: StoryPageProps) {
     (plan === "basic" && (isWeeklyStory || isDailyStory)) ||
     (plan === "free" && isWeeklyStory);
 
-  // 🧩 Si no tiene acceso completo, truncar texto
   const displayText = hasFullAccess
     ? story.text
     : `${story.text.slice(0, 1000)}…`;
 
-  return (
-    <div className="max-w-4xl mx-auto p-8 text-white pb-32">
-      <h1 className="text-3xl font-bold mb-4">{story.title}</h1>
+  const coverUrl = "/covers/default.jpg"; // 🔹 placeholder simple, ajustable
 
-      <div className="text-sm text-gray-400 mb-6 space-x-4">
-        <span>
-          <strong>Language:</strong> {story.language}
-        </span>
-        <span>
-          <strong>Level:</strong> {story.level}
-        </span>
+  return (
+    <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground bg-[#0D1B2A]">
+      {/* Título */}
+      <div className="relative mb-7 pt-2">
+        <h1 className="text-4xl font-bold text-white text-center">
+          {story.title}
+        </h1>
       </div>
 
-      {/* 🧩 Mostrar texto truncado si no hay acceso */}
+      {/* Botón de guardar en la biblioteca */}
+      <div className="absolute top-[-14px] -right-2 sm:top-0 sm:right-0">
+        <AddStoryToLibraryButton
+          storyId={story.id}
+          bookId="polyglot"
+          title={story.title}
+          coverUrl={coverUrl}
+          variant="icon"
+        />
+      </div>
+
+      {/* Texto principal */}
       <div className="relative">
         <StoryReaderClient
           story={{
@@ -78,7 +87,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
           }}
         />
 
-        {/* 🧩 Mostrar degradado + botón si no tiene acceso */}
+        {/* Fallback si no tiene acceso */}
         {!hasFullAccess && (
           <>
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/90 to-transparent z-10" />
@@ -97,8 +106,9 @@ export default async function StoryPage({ params }: StoryPageProps) {
         )}
       </div>
 
+      {/* Player fijo al fondo */}
       {story.audioUrl && (
-        <div className="fixed bottom-0 left-0 right-0 z-40 md:ml-64">
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0D1B2A] shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
           <Player
             src={story.audioUrl}
             bookSlug="polyglot"
