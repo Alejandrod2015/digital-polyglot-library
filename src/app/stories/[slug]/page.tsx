@@ -49,7 +49,11 @@ export default async function StoryPage({ params }: StoryPageProps) {
     ? story.text
     : `${story.text.slice(0, 1000)}…`;
 
-  const coverUrl = "/covers/default.jpg"; // 🔹 placeholder simple, ajustable
+  const coverUrl = story.coverUrl ?? "/covers/default.png";
+
+  if (typeof story.coverUrl !== "string") {
+  console.warn(`[story-page] Missing coverUrl for ${story.slug}`);
+}
 
   return (
     <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground bg-[#0D1B2A]">

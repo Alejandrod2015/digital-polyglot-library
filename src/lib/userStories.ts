@@ -1,4 +1,5 @@
-import { PrismaClient } from '@/generated/prisma';
+// /src/lib/userStories.ts
+import { PrismaClient } from "@/generated/prisma";
 
 const prisma = new PrismaClient();
 
@@ -11,13 +12,15 @@ export type PublicUserStory = {
   region: string | null;
   text: string | null;
   audioUrl: string | null;
+  coverUrl: string | null;
+  coverFilename: string | null;
   createdAt: Date;
 };
 
 export async function getPublicUserStories(): Promise<PublicUserStory[]> {
   const stories = await prisma.userStory.findMany({
     where: { public: true },
-    orderBy: { createdAt: 'desc' },
+    orderBy: { createdAt: "desc" },
     select: {
       id: true,
       slug: true,
@@ -27,15 +30,18 @@ export async function getPublicUserStories(): Promise<PublicUserStory[]> {
       region: true,
       text: true,
       audioUrl: true,
+      coverUrl: true,
+      coverFilename: true,
       createdAt: true,
     },
   });
 
-  // Prisma ya retorna tipos correctos; devolvemos tal cual.
   return stories;
 }
 
-export async function getUserStoryById(id: string): Promise<PublicUserStory | null> {
+export async function getUserStoryById(
+  id: string
+): Promise<PublicUserStory | null> {
   const story = await prisma.userStory.findUnique({
     where: { id },
     select: {
@@ -47,8 +53,11 @@ export async function getUserStoryById(id: string): Promise<PublicUserStory | nu
       region: true,
       text: true,
       audioUrl: true,
+      coverUrl: true,
+      coverFilename: true,
       createdAt: true,
     },
   });
+
   return story;
 }

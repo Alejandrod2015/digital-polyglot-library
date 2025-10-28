@@ -4,6 +4,7 @@ import OpenAI from "openai";
 import { PrismaClient } from "@/generated/prisma";
 import slugify from "slugify";
 import { customAlphabet } from "nanoid";
+import { generateAndUploadCover } from "@/lib/dalle";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
@@ -123,8 +124,7 @@ Return ONLY valid JSON:
     let parsed: unknown;
     try {
       const maybeJSON = JSON.parse(content);
-      parsed =
-        typeof maybeJSON === "string" ? JSON.parse(maybeJSON) : maybeJSON;
+      parsed = typeof maybeJSON === "string" ? JSON.parse(maybeJSON) : maybeJSON;
     } catch {
       return NextResponse.json(
         { error: "Invalid JSON returned from model", raw: content },
@@ -172,6 +172,32 @@ Return ONLY valid JSON:
         public: true,
       },
     });
+
+    // 🔹 Generación de portada (DALL·E) en segundo plano
+    (async () => {
+      try {
+        const cover = await generateAndUploadCover({
+          title,
+          language,
+          region,
+          topic,
+          level: normalizedLevel,
+          text: normalizedText,
+        });
+
+        if (cover && cover.url && cover.filename) {
+          await prisma.userStory.update({
+            where: { id: savedStory.id },
+            data: {
+              coverUrl: cover.url,
+              coverFilename: cover.filename,
+            },
+          });
+        }
+      } catch (e: unknown) {
+        console.error("[cover] Failed to generate/upload cover:", e);
+      }
+    })();
 
     // 🔹 Generación de audio en segundo plano
     try {

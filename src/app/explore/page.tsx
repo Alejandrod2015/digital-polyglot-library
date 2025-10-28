@@ -1,20 +1,22 @@
-import ExploreClient from './ExploreClient';
-import { getPublicUserStories } from '@/lib/userStories';
+import ExploreClient from "./ExploreClient";
+import { getPublicUserStories } from "@/lib/userStories";
 
 export const revalidate = 600;
 
 export default async function ExplorePage() {
-  // Traemos las historias desde Prisma
   const stories = await getPublicUserStories();
 
-  // Convertimos nulls → strings vacíos y mantenemos solo los campos usados
+  // Aseguramos serialización completa (Next ignora Date, nulls o undefined)
   const polyglotStories = stories.map((s) => ({
     id: s.id,
     slug: s.slug,
-    title: s.title,
-    language: s.language ?? '',
-    level: s.level ?? '',
-    text: s.text ?? '',
+    title: s.title ?? "",
+    language: s.language ?? "",
+    level: s.level ?? "",
+    text: s.text ?? "",
+    coverUrl: s.coverUrl && s.coverUrl.trim() !== "" 
+      ? s.coverUrl 
+      : "/covers/default.png",
   }));
 
   return <ExploreClient polyglotStories={polyglotStories} />;

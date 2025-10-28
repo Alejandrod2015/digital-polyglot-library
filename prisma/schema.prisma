@@ -77,6 +77,8 @@ model UserStory {
   focus         String?
   topic         String
   public        Boolean  @default(true)
+  coverUrl      String?
+  coverFilename String?
   createdAt     DateTime @default(now())
 
   @@map("dp_user_stories_v1")

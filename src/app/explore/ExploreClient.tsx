@@ -25,6 +25,7 @@ type UserStory = {
   language: string;
   level: string;
   text: string;
+  coverUrl?: string;
 };
 
 type ExploreClientProps = {
@@ -113,40 +114,51 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
               items={safeStories}
               renderItem={(story) => (
                 <Link
-                  key={story.id}
-                  href={`/stories/${story.slug}`}
-                  className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
-                >
-                  <div className="p-5 flex flex-col justify-between flex-1 text-left">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2 text-white">
-                        {story.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
-                        {story.text?.replace(/<[^>]+>/g, "").slice(0, 120) ?? ""}
-                        ...
-                      </p>
-                    </div>
-                    <div className="mt-3 text-sm text-gray-400 space-y-1">
-                      {story.language && (
-                        <p>
-                          <span className="font-semibold text-gray-300">
-                            Language:
-                          </span>{" "}
-                          {story.language}
-                        </p>
-                      )}
-                      {story.level && (
-                        <p>
-                          <span className="font-semibold text-gray-300">
-                            Level:
-                          </span>{" "}
-                          {story.level}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </Link>
+  key={story.id}
+  href={`/stories/${story.slug}`}
+  className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
+>
+  {/* 🔹 Imagen de portada */}
+  <div className="w-full h-48 bg-gray-800">
+    <img
+      src={story.coverUrl || "/covers/default.png"}
+      alt={story.title}
+      className="object-cover w-full h-full"
+    />
+  </div>
+
+  <div className="p-5 flex flex-col justify-between flex-1 text-left">
+    <div>
+      <h3 className="text-xl font-semibold mb-2 text-white">
+        {story.title}
+      </h3>
+      <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
+        {story.text?.replace(/<[^>]+>/g, "").slice(0, 120) ?? ""}
+        ...
+      </p>
+    </div>
+    <div className="mt-3 text-sm text-gray-400 space-y-1">
+      {story.language && (
+        <p>
+          <span className="font-semibold text-gray-300">
+            Language:
+          </span>{" "}
+          {story.language}
+        </p>
+      )}
+      {story.level && (
+        <p>
+          <span className="font-semibold text-gray-300">
+            Level:
+          </span>{" "}
+          {story.level}
+        </p>
+      )}
+    </div>
+  </div>
+</Link>
+
+
               )}
             />
           </div>
