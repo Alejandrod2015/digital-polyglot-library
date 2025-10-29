@@ -174,30 +174,28 @@ Return ONLY valid JSON:
     });
 
     // 🔹 Generación de portada (DALL·E) en segundo plano
-    (async () => {
-      try {
-        const cover = await generateAndUploadCover({
-          title,
-          language,
-          region,
-          topic,
-          level: normalizedLevel,
-          text: normalizedText,
-        });
+    try {
+  const cover = await generateAndUploadCover({
+    title,
+    language,
+    region,
+    topic,
+    level: normalizedLevel,
+    text: normalizedText,
+  });
 
-        if (cover && cover.url && cover.filename) {
-          await prisma.userStory.update({
-            where: { id: savedStory.id },
-            data: {
-              coverUrl: cover.url,
-              coverFilename: cover.filename,
-            },
-          });
-        }
-      } catch (e: unknown) {
-        console.error("[cover] Failed to generate/upload cover:", e);
-      }
-    })();
+  if (cover && cover.url && cover.filename) {
+    await prisma.userStory.update({
+      where: { id: savedStory.id },
+      data: {
+        coverUrl: cover.url,
+        coverFilename: cover.filename,
+      },
+    });
+  }
+} catch (e: unknown) {
+  console.error("[cover] Failed to generate/upload cover:", e);
+}
 
     // 🔹 Generación de audio en segundo plano
     try {

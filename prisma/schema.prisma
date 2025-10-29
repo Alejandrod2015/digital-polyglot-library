@@ -85,3 +85,34 @@ model UserStory {
   @@index([userId])
   @@index([createdAt])
 }
+
+model UserMetric {
+  id         String   @id @default(cuid())
+  userId     String
+  bookSlug   String?
+  storySlug  String
+  eventType  String   // "audio_play", "audio_pause", "audio_complete", "scroll", etc.
+  value      Float?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+
+  @@map("dp_user_metrics_v1")
+  @@index([userId])
+  @@index([storySlug])
+  @@index([createdAt])
+}
+
+model WeeklyMetricsSnapshot {
+  id             String   @id @default(cuid())
+  weekStart      DateTime
+  weekEnd        DateTime
+  totalPlays     Int
+  totalCompletions Int
+  avgCompletionRate Float
+  avgDuration    Float?
+  createdAt      DateTime @default(now())
+
+  @@map("dp_weekly_metrics_v1")
+  @@index([weekStart])
+  @@index([weekEnd])
+}

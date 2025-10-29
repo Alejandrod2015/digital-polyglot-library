@@ -13,6 +13,24 @@ import {
 } from "lucide-react";
 import { books } from "@/data/books";
 
+// ✅ nuevo helper para tracking
+async function trackMetric(
+  storySlug: string,
+  bookSlug: string,
+  eventType: string,
+  value?: number
+) {
+  try {
+    await fetch("/api/metrics", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ storySlug, bookSlug, eventType, value }),
+    });
+  } catch {
+    // silencioso
+  }
+}
+
 type WakeLockSentinel = {
   released: boolean;
   release: () => Promise<void>;
@@ -87,6 +105,11 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
       ? stories[currentIndex + 1]
       : null;
 
+  // ✅ tracking: carga de audio
+  useEffect(() => {
+    void trackMetric(storySlug, bookSlug, "audio_load");
+  }, [storySlug, bookSlug]);
+
   useEffect(() => {
     const audio = audioRef.current;
     if (audio) {
@@ -122,7 +145,8 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const handleEnded = () => {
+    const handleEnded = async () => {
+      await trackMetric(storySlug, bookSlug, "audio_complete", duration);
       void releaseWakeLock();
       if (nextStory) {
         window.location.href = `/books/${bookSlug}/${nextStory.slug}`;
@@ -134,20 +158,22 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
 
     audio.addEventListener("ended", handleEnded);
     return () => audio.removeEventListener("ended", handleEnded);
-  }, [nextStory, bookSlug]);
+  }, [nextStory, bookSlug, storySlug, duration]);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     const a = audioRef.current;
     if (!a) return;
     if (isPlaying) {
       a.pause();
       setIsPlaying(false);
       void releaseWakeLock();
+      await trackMetric(storySlug, bookSlug, "audio_pause", progress);
     } else {
       a.play()
-        .then(() => {
+        .then(async () => {
           setIsPlaying(true);
           void requestWakeLock();
+          await trackMetric(storySlug, bookSlug, "audio_play");
         })
         .catch((err) => console.error("[audio] play failed", err));
     }
@@ -167,13 +193,16 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
       audioRef.current.playbackRate = v;
       setSpeed(v);
       setShowSpeedMenu(false);
+      void trackMetric(storySlug, bookSlug, "speed_change", v);
     }
   };
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (audioRef.current) {
-      audioRef.current.currentTime = Number(e.target.value);
-      setProgress(Number(e.target.value));
+      const newTime = Number(e.target.value);
+      audioRef.current.currentTime = newTime;
+      setProgress(newTime);
+      void trackMetric(storySlug, bookSlug, "seek", newTime);
     }
   };
 
