@@ -1,6 +1,6 @@
 // /src/lib/dalle.ts
 import OpenAI from "openai";
-import { writeClient } from "@/sanity/lib/client";
+import { sanityWriteClient as writeClient } from "@/sanity";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
