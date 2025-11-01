@@ -1,4 +1,4 @@
-// src/app/api/metrics-proxy/route.ts
+// src/app/api/metricsproxy/route.ts
 export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
