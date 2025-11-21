@@ -54,28 +54,50 @@ export default function VocabPanel({
     if (isLoaded) void loadFavorites();
   }, [user, isLoaded]);
 
-  // 🔹 Actualiza el estado cuando cambia la palabra inicial
   // 🔹 Detecta clics sobre palabras con clase .vocab-word
-useEffect(() => {
-  const handler = (e: Event) => {
-    const el = (e.target as HTMLElement | null)?.closest?.(
-      ".vocab-word"
-    ) as HTMLElement | null;
-    if (!el) return;
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const el = (e.target as HTMLElement | null)?.closest?.(
+        ".vocab-word"
+      ) as HTMLElement | null;
+      if (!el) return;
 
-    const word = el.dataset.word ?? "";
-    if (!word) return;
+      const word = el.dataset.word ?? "";
+      if (!word) return;
 
-    setSelectedWord(word);
-    const item = story.vocab?.find((v) => v.word === word);
-    setDefinition(item?.definition ?? null);
-    setIsFav(loadedFavs.some((f) => f.word === word));
-  };
+      setSelectedWord(word);
+      const item = story.vocab?.find((v) => v.word === word);
+      setDefinition(item?.definition ?? null);
+      setIsFav(loadedFavs.some((f) => f.word === word));
+    };
 
-  document.addEventListener("click", handler);
-  return () => document.removeEventListener("click", handler);
-}, [story, loadedFavs]);
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, [story, loadedFavs]);
 
+  // 🔹 Cierra el panel al hacer tap/clic fuera (ignorando las .vocab-word)
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+
+      // No cerrar si el clic viene de una palabra de vocabulario
+      if (target.closest(".vocab-word")) return;
+
+      const panel = document.querySelector("#vocab-panel") as HTMLElement | null;
+      if (!panel) return;
+
+      if (!panel.contains(target)) {
+        setSelectedWord(null);
+        setDefinition(null);
+        setIsFav(false);
+        if (onClose) onClose();
+      }
+    };
+
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, [onClose]);
 
   // 🔹 Alternar favoritos
   const toggleFavorite = async () => {
@@ -109,7 +131,10 @@ useEffect(() => {
   if (!selectedWord) return null;
 
   return (
-    <div className="fixed bottom-40 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-gray-800 text-white p-4 rounded-xl shadow-xl z-[60]">
+    <div
+      id="vocab-panel"
+      className="fixed bottom-24 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-gray-800 text-white p-4 rounded-xl shadow-xl z-[60]"
+    >
       <div className="flex justify-between items-center mb-2">
         <h3 className="text-xl font-bold">{selectedWord}</h3>
         <button

@@ -1,82 +1,85 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 type Props = {
   plan: 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
   storyId: string;
-  children: React.ReactNode;
-  fallback: React.ReactNode;
+  children: ReactNode;
+  fallback: ReactNode;
   forceAllow?: boolean;
 };
 
 /**
- * StoryClientGate — versión limpia y visual:
- * - Si `forceAllow` es true → muestra todo.
- * - Si no → muestra 20 % del texto + degradado + fallback (estilo Medium).
+ * StoryClientGate — versión visual con fade:
+ * - Si `forceAllow` es true → muestra TODO el contenido sin bloqueo.
+ * - Si no → muestra el contenido completo dentro de un contenedor recortado con fade + fallback.
  */
 export default function StoryClientGate({
-  plan,
-  storyId,
+  plan, // eslint-disable-line @typescript-eslint/no-unused-vars
+  storyId, // eslint-disable-line @typescript-eslint/no-unused-vars
   children,
   fallback,
   forceAllow = false,
 }: Props) {
-  const [allowed, setAllowed] = useState(false);
-  const [truncatedContent, setTruncatedContent] = useState<React.ReactNode>(children);
+
+  const [highlight, setHighlight] = useState(false);
 
   useEffect(() => {
-    if (forceAllow) {
-      setAllowed(true);
-      setTruncatedContent(children);
-      return;
+    let timeoutId: number | undefined;
+
+    const onLockedPlay = () => {
+      if (forceAllow) return;
+      setHighlight(true);
+      if (timeoutId !== undefined) {
+        window.clearTimeout(timeoutId);
+      }
+      timeoutId = window.setTimeout(() => {
+        setHighlight(false);
+      }, 600);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("audio-locked-play", onLockedPlay);
     }
 
-    const childArray = Array.isArray(children) ? children : [children];
-    const truncated = childArray.map((child) => {
-      if (
-        typeof child === 'object' &&
-        child !== null &&
-        'props' in child &&
-        'dangerouslySetInnerHTML' in (child as any).props
-      ) {
-        const html = (child as any).props.dangerouslySetInnerHTML.__html as string;
-        const partial = html.slice(0, 700);
-
-      // evita cortar dentro de una etiqueta abierta (muy raro pero seguro)
-      const safePartial = partial.endsWith('<')
-        ? partial.slice(0, -1)
-        : partial;
-
-      // cierra etiquetas abiertas si hace falta
-      const fixedPartial = safePartial.replace(/<([^>]+)?$/, '');
-
-      // añade puntos suspensivos
-      const finalHtml = `${fixedPartial}…`;
-
-      return {
-        ...child,
-        props: { ...child.props, dangerouslySetInnerHTML: { __html: finalHtml } },
-      };
-
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("audio-locked-play", onLockedPlay);
       }
-      return child;
-    });
+      if (timeoutId !== undefined) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [forceAllow]);
 
-    setAllowed(false);
-    setTruncatedContent(truncated);
-  }, [plan, forceAllow, storyId, children]);
 
-    return (
+  // Si el usuario tiene acceso completo, no hacemos nada especial.
+  if (forceAllow) {
+    return <>{children}</>;
+  }
+
+  return (
     <div className="relative">
-      {truncatedContent}
+      {/* Contenido completo, pero recortado visualmente con max-height + overflow-hidden */}
+      <div className="relative max-h-[40vh] overflow-hidden">
+        {children}
 
-      {!allowed && !forceAllow && (
-        // Deja que el 'fallback' controle su propio layout (horizontal),
-        // sin contenedores extra ni estilos que lo fuercen a columna.
-        <>{fallback}</>
-      )}
+        {/* Fade overlay que hace desaparecer el texto hacia el fondo */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/90 to-transparent z-10" />
+      </div>
+
+            {/* Fallback (botón Upgrade, mensaje, etc.) debajo del área recortada */}
+      <div
+  className={`relative z-20 -mt-12${
+    highlight ? " animate-pulse motion-safe:animate-pulse" : ""
+  }`}
+>
+  {fallback}
+</div>
+
+
+
     </div>
   );
-
 }

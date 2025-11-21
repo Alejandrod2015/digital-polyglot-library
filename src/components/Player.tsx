@@ -51,9 +51,10 @@ interface PlayerProps {
   src: string;
   bookSlug: string;
   storySlug: string;
+  canPlay?: boolean;
 }
 
-export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
+export default function Player({ src, bookSlug, storySlug, canPlay = true }: PlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
@@ -160,9 +161,18 @@ export default function Player({ src, bookSlug, storySlug }: PlayerProps) {
     return () => audio.removeEventListener("ended", handleEnded);
   }, [nextStory, bookSlug, storySlug, duration]);
 
-  const togglePlay = async () => {
+    const togglePlay = async () => {
     const a = audioRef.current;
     if (!a) return;
+
+    // 🔒 Si no tiene permiso para reproducir, avisamos al gate y salimos.
+    if (!canPlay) {
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("audio-locked-play"));
+      }
+      return;
+    }
+
     if (isPlaying) {
       a.pause();
       setIsPlaying(false);

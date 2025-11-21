@@ -37,7 +37,7 @@ export default function PlansPage() {
      if (data.url) {
        window.location.href = data.url;
      } else {
-       alert('Error creating checkout session');
+       alert(data.error || 'Error creating checkout session');
      }
    } catch (err) {
      console.error(err);
@@ -58,17 +58,43 @@ export default function PlansPage() {
      </h1>
 
 
-     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl w-full">
-       {/* PREMIUM */}
+     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl w-full">
+       {/* BASIC */}
+       <div className="relative bg-gray-900 border border-gray-700/40 rounded-3xl p-8 text-center shadow-lg hover:shadow-gray-700/30 transition-all duration-300">
+  <h2 className="text-2xl font-bold text-gray-200 mb-3">Basic</h2>
+  <p className="text-4xl font-extrabold mb-2">
+    €0
+  </p>
+  <p className="text-gray-400 text-sm mb-8">
+    Enjoy one story per day and access weekly highlights.
+  </p>
+
+  {isSignedIn ? (
+    <button
+      disabled
+      className="w-full py-3 rounded-xl bg-gray-800 font-semibold text-gray-400 cursor-default"
+    >
+      Current Plan
+    </button>
+  ) : (
+    <button
+      onClick={() => router.push('/sign-up')}
+      className="w-full py-3 rounded-xl bg-gray-700 font-semibold hover:bg-gray-800 transition"
+    >
+      Join for Free
+    </button>
+  )}
+</div>
+
+       {/* PREMIUM MONTHLY */}
        <div className="relative bg-gray-900 border border-indigo-700/40 rounded-3xl p-8 text-center shadow-lg hover:shadow-indigo-700/30 transition-all duration-300">
-         <h2 className="text-2xl font-bold text-indigo-300 mb-3">Premium</h2>
+         <h2 className="text-2xl font-bold text-indigo-300 mb-3">Premium Monthly</h2>
          <p className="text-4xl font-extrabold mb-2">
            €14.99<span className="text-lg font-medium">/mo</span>
          </p>
          <p className="text-gray-400 text-sm mb-8">
            Unlock all stories and enjoy personalized recommendations.
          </p>
-
 
          <button
            onClick={() => handleSubscribe('price_1SI5WW6ytrKVzptQW7CBTx2G')}
@@ -77,35 +103,31 @@ export default function PlansPage() {
          >
            {loading === 'price_1SI5WW6ytrKVzptQW7CBTx2G'
              ? 'Processing...'
-             : 'Subscribe to Premium'}
+             : 'Subscribe to Premium Monthly'}
          </button>
        </div>
 
-
-       {/* POLYGLOT */}
-       <div className="relative bg-gray-900 border border-emerald-700/40 rounded-3xl p-8 text-center shadow-lg hover:shadow-emerald-700/30 transition-all duration-300">
-         <div className="absolute -top-4 right-4 bg-emerald-500 text-black text-xs font-bold px-3 py-1 rounded-full">
+       {/* PREMIUM YEARLY */}
+       <div className="relative bg-gray-900 border border-indigo-500/40 rounded-3xl p-8 text-center shadow-lg hover:shadow-indigo-500/30 transition-all duration-300">
+         <div className="absolute -top-4 right-4 bg-indigo-500 text-black text-xs font-bold px-3 py-1 rounded-full">
            Best Value
          </div>
-
-
-         <h2 className="text-2xl font-bold text-emerald-300 mb-3">Polyglot</h2>
+         <h2 className="text-2xl font-bold text-indigo-200 mb-3">Premium Annual</h2>
          <p className="text-4xl font-extrabold mb-2">
-           €24.99<span className="text-lg font-medium">/mo</span>
+           €149<span className="text-lg font-medium">/yr</span>
          </p>
          <p className="text-gray-400 text-sm mb-8">
-           Includes everything in Premium plus advanced AI story creation.
+           Get full access for a year and save two months.
          </p>
 
-
          <button
-           onClick={() => handleSubscribe('price_1SI5Wv6ytrKVzptQkzfg7emI')}
-           disabled={loading === 'price_1SI5Wv6ytrKVzptQkzfg7emI'}
-           className="w-full py-3 rounded-xl bg-emerald-600 font-semibold hover:bg-emerald-700 transition disabled:opacity-60"
+           onClick={() => handleSubscribe('price_1SVmJt6ytrKVzptQrinkGA6I')}
+           disabled={loading === 'price_1SVmJt6ytrKVzptQrinkGA6I'}
+           className="w-full py-3 rounded-xl bg-indigo-500 font-semibold hover:bg-indigo-600 transition disabled:opacity-60"
          >
-           {loading === 'price_1SI5Wv6ytrKVzptQkzfg7emI'
+           {loading === 'price_1SVmJt6ytrKVzptQrinkGA6I'
              ? 'Processing...'
-             : 'Subscribe to Polyglot'}
+             : 'Subscribe to Premium Annual'}
          </button>
        </div>
      </div>

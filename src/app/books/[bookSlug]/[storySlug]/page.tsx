@@ -80,28 +80,36 @@ export default async function StoryPage({ params }: StoryPageProps) {
       <StoryAccessInfo storyId={story.id} userPlan={userPlan} />
 
       {/* Texto principal con control de acceso */}
-      <StoryClientGate
-        plan={userPlan}
-        storyId={story.id}
-        forceAllow={hasFullAccess}
-        fallback={
-          <div className="relative text-center text-gray-300 py-16">
-            <p className="mb-4 text-xl">Unlock full access to all stories.</p>
-            <a
-              href="/plans"
-              className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
-            >
-              Upgrade
-            </a>
-          </div>
-        }
+<StoryClientGate
+  plan={userPlan}
+  storyId={story.id}
+  forceAllow={hasFullAccess}
+  fallback={
+    <div className="relative text-center text-gray-300 py-16">
+      <p className="mb-4 text-xl">Unlock full access to all stories.</p>
+      <a
+        href="/plans"
+        className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
       >
-        <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6">
-          <StoryContent text={visibleText} sentencesPerParagraph={3} />
-        </div>
-      </StoryClientGate>
+        Upgrade
+      </a>
+    </div>
+  }
+>
+  {hasFullAccess ? (
+    <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6">
+      <StoryContent text={visibleText} sentencesPerParagraph={3} />
+    </div>
+  ) : (
+    <div
+      className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6"
+      dangerouslySetInnerHTML={{ __html: visibleText }}
+    />
+  )}
+</StoryClientGate>
 
-      {/* Player fijo visible en viewport global */}
+
+                  {/* Player fijo visible en viewport global */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0D1B2A] shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
         <Player
           src={
@@ -111,8 +119,10 @@ export default async function StoryPage({ params }: StoryPageProps) {
           }
           bookSlug={book.slug}
           storySlug={story.slug}
+          canPlay={hasFullAccess}
         />
       </div>
+
 
       <VocabPanel story={story} />
     </div>
