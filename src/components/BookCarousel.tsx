@@ -1,6 +1,3 @@
-// /src/components/BookCarousel.tsx
-// ANTES → DESPUÉS
-
 "use client";
 
 import Link from "next/link";
@@ -17,22 +14,22 @@ type Book = {
   language?: string;
   level?: string;
   cover?: string;
+  bookId: string; // Necesario para eliminar
 };
 
 type BookCarouselProps = {
   items?: Book[];
   className?: string;
   options?: EmblaOptionsType;
+  renderActions?: (book: Book) => React.ReactNode;
 };
 
 export default function BookCarousel({
   items = [],
   className,
   options,
+  renderActions,
 }: BookCarouselProps) {
-
-  // ✅ Un único carrusel (Embla) para todos los breakpoints
-  //    → sin ramas condicionales móvil/desktop, sin parpadeos.
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",
@@ -65,7 +62,7 @@ export default function BookCarousel({
 
   return (
     <div className={cn("relative w-full flex items-center gap-3", className)}>
-      {/* Flecha izquierda (solo desktop) */}
+      {/* Flecha izquierda */}
       <button
         type="button"
         onClick={scrollPrev}
@@ -79,39 +76,47 @@ export default function BookCarousel({
         <ChevronLeft className="w-5 h-5 text-white" />
       </button>
 
-      {/* Viewport Embla */}
+      {/* Embla Viewport */}
       <div className="overflow-hidden w-full" ref={emblaRef}>
-        <div className="flex gap-4 will-change-transform px-1">
+        <div className="flex gap-6 will-change-transform px-0">
+
           {items.map((book) => (
             <div
               key={book.slug}
-              // 🔹 Móvil: 2 por pantalla → 45%
-              // 🔹 Desktop: ~3 por pantalla → 31%
-              className="flex-[0_0_45%] md:flex-[0_0_31%] snap-start"
+              className="flex-[0_0_45%] sm:flex-[0_0_30%] md:flex-[0_0_23%] lg:flex-[0_0_22%] xl:flex-[0_0_20%] snap-start"
             >
-              <Link
-                href={`/books/${book.slug}?from=explore`}
-                className="block bg-white/5 hover:bg-white/10 rounded-2xl p-3 md:p-4 transition-all"
-              >
-                {/* Mantener 2:3 sin que crezca a ancho completo del viewport */}
-                <div className="aspect-[2/3] rounded-2xl overflow-hidden">
-                  <Cover src={book.cover} alt={book.title} className="w-full" />
-                </div>
-                <div className="mt-2 md:mt-3 text-left">
-                  <p className="text-sm md:text-base font-semibold text-white line-clamp-2">
-                    {book.title}
-                  </p>
-                  <p className="text-xs md:text-sm text-gray-400">
-                    {book.language} · {book.level}
-                  </p>
-                </div>
-              </Link>
+              <div className="bg-white/5 hover:bg-white/10 rounded-2xl overflow-hidden shadow-md transition-all flex flex-col h-full">
+
+                {/* Enlace + portada */}
+                <Link href={`/books/${book.slug}?from=my-library`} className="flex flex-col flex-1">
+                  <div className="aspect-[2/3] w-full">
+                    <Cover src={book.cover} alt={book.title} className="w-full" />
+                  </div>
+
+                  <div className="p-4 text-left flex-1">
+                    <p className="text-base font-semibold text-white line-clamp-2">
+                      {book.title}
+                    </p>
+                    <p className="text-sm text-gray-400 mt-1">
+                      {book.language} · {book.level}
+                    </p>
+                  </div>
+                </Link>
+
+                {/* Botón Remove abajo con borde superior */}
+                {renderActions && (
+                  <div className="border-t border-white/10 p-3">
+                    {renderActions(book)}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
+
         </div>
       </div>
 
-      {/* Flecha derecha (solo desktop) */}
+      {/* Flecha derecha */}
       <button
         type="button"
         onClick={scrollNext}

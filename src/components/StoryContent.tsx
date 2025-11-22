@@ -85,7 +85,8 @@ export default function StoryContent({
     [sentences, sentencesPerParagraph]
   );
 
-  const containerRef = React.useRef<HTMLDivElement>(null);
+    const containerRef = React.useRef<HTMLDivElement>(null);
+  const scrollStartRef = React.useRef<number | null>(null);
 
   // ✅ Scroll sincronizado con progreso del audio (adaptativo: main o body)
   React.useEffect(() => {
@@ -104,13 +105,24 @@ export default function StoryContent({
           ? mainEl
           : document.scrollingElement || document.documentElement;
 
+      const currentScrollTop = scrollTarget.scrollTop || 0;
+
+      // Guardamos desde dónde empezamos a hacer autoscroll
+      if (scrollStartRef.current === null) {
+        scrollStartRef.current = currentScrollTop;
+      }
+
       const rect = el.getBoundingClientRect();
-      const offsetTop = rect.top + (scrollTarget.scrollTop || 0);
+      const offsetTop = rect.top + currentScrollTop;
       const maxScroll =
         el.scrollHeight - (scrollTarget.clientHeight - BOTTOM_MARGIN);
 
-      const base = Math.max(0, offsetTop - TITLE_MARGIN);
-      const target = base + ratio * maxScroll;
+      const startScroll = scrollStartRef.current;
+      const endBase = Math.max(0, offsetTop - TITLE_MARGIN);
+      const endScroll = endBase + maxScroll;
+
+      // Interpolamos entre posición inicial y final según el progreso del audio
+      const target = startScroll + ratio * (endScroll - startScroll);
 
       scrollTarget.scrollTo({
         top: target,
@@ -119,9 +131,12 @@ export default function StoryContent({
     };
 
     window.addEventListener("audio-progress", handleAudioProgress);
-    return () =>
+    return () => {
+      scrollStartRef.current = null;
       window.removeEventListener("audio-progress", handleAudioProgress);
+    };
   }, []);
+
 
   return (
     <div

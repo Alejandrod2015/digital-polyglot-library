@@ -40,6 +40,10 @@ export async function generateAndUploadAudio(
         italy: "W71zT1VwIFFx3mMGH2uZ", // Marcotrox
         default: "gfKKsLN1k0oYYN9n2dXX", // Violetta
       },
+      French: {
+        france: "sANWqF1bCMzR6eyZbCGw", // Marie
+        default: "sANWqF1bCMzR6eyZbCGw", // Marie
+      },
     };
 
     // Normalizar idioma y región

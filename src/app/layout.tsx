@@ -58,7 +58,7 @@ export default function RootLayout({
           <BackNavigationHandler />
 
           {/* Main content scrollable */}
-          <main className="flex-1 md:ml-64 p-6 pb-[env(safe-area-inset-bottom)] overflow-y-auto">
+          <main className="flex-1 md:ml-64 px-1 py-6 pb-[env(safe-area-inset-bottom)] overflow-y-auto">
             {children}
           </main>
 

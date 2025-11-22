@@ -69,7 +69,7 @@ export default function StoryCarousel<T>({
     return (
       <div className={cn('relative w-full flex flex-col gap-3', className)}>
         <div
-          className="hide-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory px-1 scroll-smooth"
+          className="hide-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory px-0 scroll-smooth"
           style={{
             WebkitOverflowScrolling: 'touch',
           }}
@@ -104,14 +104,16 @@ export default function StoryCarousel<T>({
       </button>
 
       <div className="overflow-hidden w-full" ref={emblaRef}>
-        <div className="flex gap-6 will-change-transform">
+        <div className="flex gap-0 will-change-transform">
           {items.map((item, i) => (
             <div
-              key={i}
-              className="flex-shrink-0 snap-start w-[31%] transition-none"
-            >
-              {renderItem(item, i)}
-            </div>
+  key={i}
+  className="flex-shrink-0 snap-start w-[24%] !mx-0 !px-0 transition-none"
+  style={{ margin: 0, padding: 0 }}
+>
+  {renderItem(item, i)}
+</div>
+
           ))}
         </div>
       </div>

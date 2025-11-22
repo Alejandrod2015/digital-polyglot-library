@@ -59,7 +59,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
     : rawCover;
 
   return (
-    <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground bg-[#0D1B2A]">
+    <div className="relative max-w-5xl mx-auto pt-10 px-8 pb-[8rem] text-foreground bg-[#0D1B2A]">
       {/* Título */}
       <div className="relative mb-7 pt-2">
         <h1 className="text-4xl font-bold text-white text-center">{story.title}</h1>
