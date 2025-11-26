@@ -39,6 +39,7 @@ type StoryItem = {
   bookSlug: string;
   storySlug: string;
   title: string;
+  bookTitle: string;
   language: string;
   level: string;
   coverUrl?: string;
@@ -182,14 +183,16 @@ export default function MyLibraryClient() {
         bookSlug: bookMeta.slug,
         storySlug: storyMeta.slug,
         title: item.title || storyMeta.title,
+        bookTitle: bookMeta.title,
         language:
-          typeof storyMeta.language === "string"
-            ? storyMeta.language
-            : (bookMeta.language as string),
-        level:
-          typeof storyMeta.level === "string"
-            ? storyMeta.level
-            : (bookMeta.level as string),
+        typeof storyMeta.language === "string"
+          ? capitalize(storyMeta.language)
+          : capitalize(bookMeta.language),
+
+      level:
+        typeof storyMeta.level === "string"
+          ? capitalize(storyMeta.level)
+          : capitalize(bookMeta.level),
         coverUrl:
           item.coverUrl && item.coverUrl.trim() !== ""
             ? item.coverUrl
@@ -205,7 +208,6 @@ export default function MyLibraryClient() {
   // ------------------------------
   return (
     <div className="w-full mx-auto px-3 sm:px-4 lg:px-6 py-8 text-white">
-
       <h1 className="text-3xl font-bold mb-6">My Library</h1>
 
       {/* SKELETON */}
@@ -286,6 +288,9 @@ export default function MyLibraryClient() {
                           <h3 className="text-xl font-semibold mb-2 text-white">
                             {story.title}
                           </h3>
+                          <p className="text-sm text-blue-300">
+                            {story.bookTitle}
+                          </p>
                           {/* No tenemos resumen aquí, así que omitimos el párrafo de texto */}
                         </div>
                         <div className="mt-3 text-sm text-gray-400 space-y-1">

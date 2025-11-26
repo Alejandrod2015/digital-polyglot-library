@@ -89,7 +89,7 @@ export async function POST(req: Request) {
 
     const purchasedBooks = line_items
       .flatMap((i) => {
-        const code = (i.sku ?? i.handle ?? "").trim();
+        const code = (i.sku ?? "").trim();
         if (!code) return [];
         // Si el SKU corresponde a un bundle, expandimos sus libros
         if (shopifybundles[code]) return shopifybundles[code];

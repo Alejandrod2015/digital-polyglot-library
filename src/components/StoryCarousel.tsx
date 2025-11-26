@@ -104,19 +104,18 @@ export default function StoryCarousel<T>({
       </button>
 
       <div className="overflow-hidden w-full" ref={emblaRef}>
-        <div className="flex gap-0 will-change-transform">
-          {items.map((item, i) => (
-            <div
-  key={i}
-  className="flex-shrink-0 snap-start w-[24%] !mx-0 !px-0 transition-none"
-  style={{ margin: 0, padding: 0 }}
->
-  {renderItem(item, i)}
+  <div className="flex gap-4 will-change-transform">
+    {items.map((item, i) => (
+      <div
+        key={i}
+        className="flex-shrink-0 snap-start w-[24%] transition-none"
+      >
+        {renderItem(item, i)}
+      </div>
+    ))}
+  </div>
 </div>
 
-          ))}
-        </div>
-      </div>
 
       {/* Flecha derecha */}
       <button
