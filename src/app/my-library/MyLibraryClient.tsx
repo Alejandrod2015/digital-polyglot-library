@@ -235,7 +235,7 @@ export default function MyLibraryClient() {
             </h2>
 
             {bookCarouselItems.length === 0 ? (
-              <p className="text-gray-400">You haven’t saved any books yet.</p>
+              <p className="text-gray-400">You don’t have any saved books right now.</p>
             ) : (
               <BookCarousel
                 items={bookCarouselItems}
@@ -260,7 +260,7 @@ export default function MyLibraryClient() {
 
             {storyItems.length === 0 ? (
               <p className="text-gray-400">
-                You haven’t saved any stories yet.
+                You don’t have any saved stories right now.
               </p>
             ) : (
               <StoryCarousel<StoryItem>
