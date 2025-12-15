@@ -102,21 +102,27 @@ export default function VocabPanel({
   // 🔹 Alternar favoritos
   const toggleFavorite = async () => {
     if (!selectedWord) return;
-    const newItem = { word: selectedWord, translation: definition ?? "" };
+    const newItem: FavoriteItem = { word: selectedWord, translation: definition ?? "" };
     const prevFav = isFav;
     setIsFav(!isFav);
 
     try {
       if (user) {
         const res = await fetch("/api/favorites", {
-          method: isFav ? "DELETE" : "POST",
+          method: prevFav ? "DELETE" : "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include",
-          body: JSON.stringify(isFav ? { word: selectedWord } : newItem),
+          body: JSON.stringify(prevFav ? { word: selectedWord } : newItem),
         });
         if (!res.ok) throw new Error("Network error");
+
+        setLoadedFavs((prev) =>
+          prevFav
+            ? prev.filter((f) => f.word === selectedWord ? false : true)
+            : [...prev, newItem]
+        );
       } else {
-        const updated = isFav
+        const updated = prevFav
           ? loadedFavs.filter((f) => f.word !== selectedWord)
           : [...loadedFavs, newItem];
         localStorage.setItem("favorites", JSON.stringify(updated));
