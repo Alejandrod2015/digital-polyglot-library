@@ -412,43 +412,43 @@ export const spanishshortstorieson20mexicanwonders: Book = {
     "vocab": [
       {
         "word": "Marimba",
-        "definition": "Instrumento musical de percusión tradicional en Chiapas."
+        "definition": "A traditional wooden percussion instrument used in folk music."
       },
       {
         "word": "Sanadora",
-        "definition": "Persona que usa conocimientos ancestrales para curar."
+        "definition": "A person who uses ancestral knowledge and medicinal plants to heal."
       },
       {
         "word": "Tradición",
-        "definition": "Costumbres transmitidas de generación en generación."
+        "definition": "Customs and beliefs passed from one generation to another."
       },
       {
         "word": "Cultura",
-        "definition": "Manifestaciones artísticas y conocimientos de un pueblo."
+        "definition": "Artistic expressions and knowledge that identify a community."
       },
       {
         "word": "Artesanías",
-        "definition": "Objetos hechos a mano representativos de una cultura."
+        "definition": "Handmade objects that represent local culture and traditions."
       },
       {
         "word": "Raíces",
-        "definition": "Origen o ascendencia cultural."
+        "definition": "The cultural origin or ancestry of a person or community."
       },
       {
         "word": "Ceremonia del fuego",
-        "definition": "Ritual en el que se enciende una hoguera para pedir protección y conexión con ancestros."
+        "definition": "A ritual where a fire is lit to ask for protection and connection with ancestors."
       },
       {
         "word": "Espíritus",
-        "definition": "Seres sobrenaturales vinculados a ancestros y naturaleza."
+        "definition": "Supernatural beings that represent ancestors or natural forces."
       },
       {
         "word": "Inspiración",
-        "definition": "Estimulación creativa o motivadora."
+        "definition": "The process where something awakens creativity and motivation."
       },
       {
         "word": "Esencia",
-        "definition": "Naturaleza o cualidad intrínseca de algo."
+        "definition": "The core nature or fundamental quality of something."
       }
     ]
   },
@@ -461,43 +461,43 @@ export const spanishshortstorieson20mexicanwonders: Book = {
     "vocab": [
       {
         "word": "Mariposa",
-        "definition": "Insecto con alas grandes y de colores vivos; en este caso, la monarca."
+        "definition": "An insect with large, often colorful wings, such as the monarch butterfly."
       },
       {
         "word": "Cambio climático",
-        "definition": "Variaciones globales del clima que afectan a los ecosistemas."
+        "definition": "Changes in the global climate caused by natural and human factors."
       },
       {
         "word": "Deforestación",
-        "definition": "Tala o destrucción de árboles que afecta los ecosistemas."
+        "definition": "The cutting down or destruction of trees that harms ecosystems."
       },
       {
         "word": "Hibernación",
-        "definition": "Estado de descanso prolongado durante el invierno."
+        "definition": "A long period of rest during winter used by some animals."
       },
       {
         "word": "Migración",
-        "definition": "Desplazamiento de un lugar a otro."
+        "definition": "Movement from one place to another to find better living conditions."
       },
       {
         "word": "Ciclo migratorio",
-        "definition": "Ruta repetida de una especie durante su ciclo de vida."
+        "definition": "A repeated route and movement pattern used by species during their life cycle."
       },
       {
         "word": "Conservación",
-        "definition": "Protección del medio ambiente y recursos naturales."
+        "definition": "The protection and care of the environment and natural resources."
       },
       {
         "word": "Ecosistema",
-        "definition": "Comunidad de seres vivos que interactúan con su entorno."
+        "definition": "A community of living things interacting with their physical environment."
       },
       {
         "word": "Reforestación",
-        "definition": "Plantación de árboles en zonas taladas."
+        "definition": "The planting of trees in areas where forests were destroyed."
       },
       {
         "word": "Voluntariado",
-        "definition": "Trabajo gratuito para ayudar en distintas causas."
+        "definition": "Unpaid work done to help people, communities, or causes."
       }
     ]
   },
@@ -510,43 +510,43 @@ export const spanishshortstorieson20mexicanwonders: Book = {
     "vocab": [
       {
         "word": "Templo",
-        "definition": "Edificio religioso, en este caso de la época azteca."
+        "definition": "A religious building used for worship."
       },
       {
         "word": "Tenochtitlán",
-        "definition": "Capital del Imperio Azteca, ubicada en lo que hoy es Ciudad de México."
+        "definition": "The capital city of the Aztec Empire, located in present-day Mexico City."
       },
       {
         "word": "Tlatoani",
-        "definition": "Gobernante o líder supremo de los aztecas."
+        "definition": "The supreme ruler or leader of the Aztecs."
       },
       {
         "word": "Energías",
-        "definition": "Fuerzas o vibraciones supuestamente presentes en lugares sagrados."
+        "definition": "Believed forces or vibrations present in sacred places."
       },
       {
         "word": "Dioses",
-        "definition": "Deidades o seres supremos de la mitología azteca."
+        "definition": "Supreme beings worshipped in Aztec mythology."
       },
       {
         "word": "Arqueología",
-        "definition": "Ciencia que estudia sociedades antiguas a través de sus restos materiales."
+        "definition": "The study of ancient societies through their physical remains."
       },
       {
         "word": "Inscripciones",
-        "definition": "Escrituras o grabados hechos en piedra u otros materiales."
+        "definition": "Words or symbols carved into stone or other materials."
       },
       {
         "word": "Civilización",
-        "definition": "Sociedad con organización, cultura y tecnología avanzadas."
+        "definition": "An organized society with advanced culture and technology."
       },
       {
         "word": "Símbolos",
-        "definition": "Figuras o signos que representan ideas o creencias."
+        "definition": "Signs or figures that represent ideas or beliefs."
       },
       {
         "word": "Imperio Azteca",
-        "definition": "Gran civilización mesoamericana con centro en Tenochtitlán."
+        "definition": "A large Mesoamerican civilization centered in Tenochtitlán."
       }
     ]
   },
@@ -608,43 +608,43 @@ export const spanishshortstorieson20mexicanwonders: Book = {
     "vocab": [
       {
         "word": "Cantaritos",
-        "definition": "Vasos o jarras de barro típicos de México, usados para bebidas."
+        "definition": "Traditional clay cups or jugs used for drinks in Mexico."
       },
       {
         "word": "Tradiciones",
-        "definition": "Costumbres transmitidas de generación en generación, como las historias y fiestas en Xochimilco."
+        "definition": "Customs passed down from one generation to another."
       },
       {
         "word": "Xochimilco",
-        "definition": "Área de canales en la Ciudad de México famosa por sus trajineras y leyendas."
+        "definition": "A canal area in Mexico City famous for its boats and legends."
       },
       {
         "word": "Energías",
-        "definition": "Creencia en vibraciones o fuerzas que se sienten en lugares antiguos o especiales."
+        "definition": "Believed forces or vibrations felt in special or ancient places."
       },
       {
         "word": "Cultura",
-        "definition": "Conjunto de prácticas y creencias que identifican a un grupo, como las de Xochimilco."
+        "definition": "Shared beliefs, customs, and practices of a group of people."
       },
       {
         "word": "Chinampas",
-        "definition": "Islas flotantes creadas para el cultivo, una técnica agrícola de origen mexica."
+        "definition": "Man-made floating islands used for farming."
       },
       {
         "word": "Mexicas",
-        "definition": "Pueblo indígena de México, conocido por construir Tenochtitlán y sus avances en agricultura."
+        "definition": "An Indigenous people who built Tenochtitlán and developed advanced agriculture."
       },
       {
         "word": "Naturaleza",
-        "definition": "Entorno natural, fundamental en la identidad de Xochimilco."
+        "definition": "Everything related to the natural environment."
       },
       {
         "word": "Música",
-        "definition": "Sonidos y ritmos tradicionales que acompañan las fiestas en trajineras."
+        "definition": "Sounds and rhythms played during celebrations and festivals."
       },
       {
         "word": "Leyendas",
-        "definition": "Relatos tradicionales que explican sucesos o lugares misteriosos, como la Isla de las Muñecas."
+        "definition": "Traditional stories that explain mysterious places or events."
       }
     ]
   },

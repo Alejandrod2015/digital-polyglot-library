@@ -4,6 +4,8 @@ import { PrismaClient } from "@/generated/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { createClerkClient } from "@clerk/backend";
 import { getBookMeta } from "@/lib/books";
+import { revalidateTag } from "next/cache";
+
 
 const prisma = new PrismaClient();
 
@@ -110,20 +112,23 @@ export async function GET(
         await patchUserMetadata(userId, redeemed.books);
 
         for (const bookId of redeemed.books) {
-          const meta = await getBookMeta(bookId);
-          await prisma.libraryBook.upsert({
-            where: { userId_bookId: { userId, bookId } },
-            update: {}, // idempotente
-            create: {
-              userId,
-              bookId,
-              title: meta.title,
-              coverUrl: meta.cover,
-            },
-          });
-        }
+        const meta = await getBookMeta(bookId);
+        await prisma.libraryBook.upsert({
+          where: { userId_bookId: { userId, bookId } },
+          update: {}, // idempotente
+          create: {
+            userId,
+            bookId,
+            title: meta.title,
+            coverUrl: meta.cover,
+          },
+        });
+      }
 
-        console.log("📚 My Library sincronizada para:", userId);
+      // 🔥 INVALIDAR CACHE DE LA BIBLIOTECA DEL USUARIO
+      revalidateTag("library-by-user");
+
+      console.log("📚 My Library sincronizada para:", userId);
       } catch (libErr) {
         console.error("⚠️ Error actualizando My Library:", libErr);
       }
