@@ -19,88 +19,124 @@ export const colloquialgermanstories: Book = {
       "id": "auf-einen-kaffee-oder-was",
       "slug": "auf-einen-kaffee-oder-was",
       "title": "Auf einen Kaffee, oder was?",
-      "text": "<p>In einem kleinen Berliner Kiezcafé versucht Mara, ihre Gedanken zu ordnen, bevor sie eine Freundin trifft, die immer zu spät kommt und nie ohne Neuigkeiten erscheint. Zwischen klappernden Tassen, dem Duft frisch gemahlener Bohnen und dem leisen Stimmengewirr am Tresen merkt Mara, dass ein „kurzer Kaffee“ schnell zum Feierabendgespräch werden kann, in dem Entscheidungen plötzlich unausweichlich wirken.</p>\n\n<p>Mara schiebt die Tür auf und versucht ruhig zu wirken.</p>\n<blockquote>Ich komme nur <span class=\"vocab-word\" data-word=\"Auf einen Kaffee\">Auf einen Kaffee</span>, sagt sie sich.</blockquote>\n<blockquote>Dann bin ich wieder weg.</blockquote>\n\n<p>Tom hinter der Bar sieht ihren Blick und versteht sofort. Sie steht da wie jemand <span class=\"vocab-word\" data-word=\"Auf dem Sprung\">Auf dem Sprung</span>, und trotzdem hängt Müdigkeit an ihr.</p>\n<blockquote>Bitte heute <span class=\"vocab-word\" data-word=\"Ohne Stress\">Ohne Stress</span>, denkt sie. Nur einmal nicht.</blockquote>\n\n<p>Am Nebentisch redet ein Mann, als wäre er schon <span class=\"vocab-word\" data-word=\"Fix und fertig\">Fix und fertig</span>. Mara hört es, obwohl sie nicht hören will.</p>\n<blockquote>Ich habe <span class=\"vocab-word\" data-word=\"Keine Lust\">Keine Lust</span> auf fremde Probleme, denkt sie, und schaut schnell wieder weg.</blockquote>\n\n<p>Das Handy vibriert. Juli schreibt:</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Ich bin gleich da\">Ich bin gleich da</span>.</blockquote>\n<p>Mara atmet aus.</p>\n<blockquote>Bei ihr ist <span class=\"vocab-word\" data-word=\"Gleich\">Gleich</span> kein Zeitpunkt, denkt Mara.</blockquote>\n<p>Sie trinkt einen Schluck.</p>\n<blockquote>Okay, <span class=\"vocab-word\" data-word=\"Passt schon\">Passt schon</span>. Ich bleibe nett.</blockquote>\n\n<p>Tom stellt ein Glas Wasser dazu und sagt nur:</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Mal sehen\">Mal sehen</span>.</blockquote>\n<p>Mara versteht, was er meint.</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Mal sehen\">Mal sehen</span>, ob ich heute ruhig bleibe.</blockquote>\n\n<p>Dann kommt Juli rein, zu schnell, mit rotem Gesicht. In ihren Augen steht <span class=\"vocab-word\" data-word=\"Durcheinander\">Durcheinander</span>.</p>\n<blockquote>Ich bin wieder zu spät, denkt sie. Bitte sei nicht sauer.</blockquote>\n\n<p>Juli setzt sich, und die Worte kommen sofort. Neues Jobangebot, andere Stadt, Entscheidung heute.</p>\n<blockquote>Das ist <span class=\"vocab-word\" data-word=\"Alles auf einmal\">Alles auf einmal</span>, denkt Juli. Warum muss das heute sein?</blockquote>\n\n<p>Mara spürt, wie es in ihrem Kopf drückt.</p>\n<blockquote>Mein <span class=\"vocab-word\" data-word=\"Kopf voll\">Kopf voll</span> und jetzt noch das, denkt sie.</blockquote>\n<p>Sie sieht Juli an und merkt: Juli will es eigentlich.</p>\n\n<p>Juli sagt leise, dass sie <span class=\"vocab-word\" data-word=\"Bammel haben\">Bammel hat</span>.</p>\n<blockquote>Wenn ich scheitere, reden alle, denkt sie. Wenn ich bleibe, bin ich später traurig.</blockquote>\n\n<p>Mara bleibt ruhig.</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Ehrlich gesagt\">Ehrlich gesagt</span>: Du willst gehen, denkt sie, und sagt es auch.</blockquote>\n<p>Juli zuckt kurz, aber sie hört zu.</p>\n\n<p>Juli zeigt ihr das Handy. Noch eine Nachricht vom Chef. Mara wird plötzlich klar.</p>\n<blockquote>Jetzt <span class=\"vocab-word\" data-word=\"Grenzen setzen\">Grenzen setzen</span>, denkt sie. Nicht laut, nur klar.</blockquote>\n\n<p>Juli atmet aus.</p>\n<blockquote>Vielleicht ist es doch <span class=\"vocab-word\" data-word=\"In Ordnung\">In Ordnung</span>, denkt sie. Vielleicht darf ich kurz Ruhe haben.</blockquote>\n\n<p>Sie tippt eine Antwort, löscht sie wieder, tippt neu.</p>\n<blockquote>Das ist <span class=\"vocab-word\" data-word=\"Gar nicht so einfach\">Gar nicht so einfach</span>, denkt sie. Ich will es richtig machen.</blockquote>\n\n<p>Mara nickt langsam.</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Jetzt oder nie\">Jetzt oder nie</span>, denkt sie. Du musst nicht perfekt sein, nur ehrlich.</blockquote>\n\n<p>Juli drückt auf Senden. Ihre Hand zittert.</p>\n<blockquote>Okay. Ich hab mich <span class=\"vocab-word\" data-word=\"Sich was trauen\">Sich was trauen</span> lassen, denkt sie, und lächelt endlich.</blockquote>\n\n<p>Mara lächelt auch.</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Macht nix\">Macht nix</span>, denkt sie über den Regen draußen. Wichtig ist nur, dass du es versucht hast.</blockquote>\n\n<p>Im Café ist es immer noch nur Kaffee. Aber für Juli fühlt es sich an wie ein Anfang.</p>",
+      "text": "<p>In einem kleinen Berliner <span class=\"vocab-word\" data-word=\"Kiez\">Kiez</span><span class=\"vocab-word\" data-word=\"Kiezcafé\">café</span> versucht Mara, ihre <span class=\"vocab-word\" data-word=\"Gedanken ordnen\">Gedanken zu ordnen</span>, bevor sie eine Freundin trifft, die immer zu spät kommt und nie ohne <span class=\"vocab-word\" data-word=\"Neuigkeiten\">Neuigkeiten</span> erscheint. Zwischen <span class=\"vocab-word\" data-word=\"Klappernde Tassen\">klappernden Tassen</span>, dem <span class=\"vocab-word\" data-word=\"Duft\">Duft</span> <span class=\"vocab-word\" data-word=\"Frisch gemahlen\">frisch gemahlener</span> Bohnen und dem leisen <span class=\"vocab-word\" data-word=\"Stimmengewirr\">Stimmengewirr</span> am <span class=\"vocab-word\" data-word=\"Tresen\">Tresen</span> merkt Mara, dass ein <span class=\"vocab-word\" data-word=\"Kurzer Kaffee\">kurzer Kaffee</span> schnell zum <span class=\"vocab-word\" data-word=\"Feierabendgespräch\">Feierabendgespräch</span> werden kann, in dem Entscheidungen plötzlich <span class=\"vocab-word\" data-word=\"Unausweichlich\">unausweichlich</span> wirken.</p>\n\n<p>Mara schiebt die Tür auf und versucht <span class=\"vocab-word\" data-word=\"Ruhig wirken\">ruhig zu wirken</span>.</p>\n<blockquote>Ich komme nur <span class=\"vocab-word\" data-word=\"Auf einen Kaffee\">Auf einen Kaffee</span>, sagt sie sich.</blockquote>\n<blockquote>Dann bin ich wieder weg.</blockquote>\n\n<p>Tom hinter der Bar sieht ihren Blick und versteht sofort. Sie steht da wie jemand <span class=\"vocab-word\" data-word=\"Auf dem Sprung\">Auf dem Sprung</span>, und trotzdem hängt Müdigkeit an ihr.</p>\n\n<p>Am Nebentisch redet ein Mann, als wäre er schon <span class=\"vocab-word\" data-word=\"Fix und fertig\">Fix und fertig</span>. Mara hört es, obwohl sie nicht hören will.</p>\n<blockquote>Ich habe <span class=\"vocab-word\" data-word=\"Keine Lust\">Keine Lust</span> auf fremde Probleme, denkt sie, und schaut schnell wieder weg.</blockquote>\n\n<p>Dann kommt Juli rein, zu schnell, mit rotem Gesicht. In ihren Augen steht <span class=\"vocab-word\" data-word=\"Durcheinander\">Durcheinander</span>.</p>\n<blockquote>Ich bin wieder zu spät, denkt sie. Bitte sei nicht sauer.</blockquote>\n\n<p>Juli setzt sich, und die Worte kommen sofort. Neues Jobangebot, andere Stadt, Entscheidung heute.</p>\n<blockquote>Das ist <span class=\"vocab-word\" data-word=\"Alles auf einmal\">Alles auf einmal</span>, denkt Juli. Warum muss das heute sein?</blockquote>\n\n<p>Mara spürt, wie es in ihrem Kopf drückt.</p>\n<blockquote>Mein <span class=\"vocab-word\" data-word=\"Kopf voll\">Kopf voll</span> und jetzt noch das, denkt sie.</blockquote>\n\n<p>Juli sagt leise, dass sie <span class=\"vocab-word\" data-word=\"Bammel haben\">Bammel hat</span>.</p>\n\n<p>Mara bleibt ruhig.</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Ehrlich gesagt\">Ehrlich gesagt</span>: Du willst gehen, sagt sie.</blockquote>\n\n<p>Juli muss kurz <span class=\"vocab-word\" data-word=\"Zucken\">zucken</span>, aber sie hört zu.</p>\n\n<p>Noch eine Nachricht vom Chef. Mara wird es <span class=\"vocab-word\" data-word=\"Plötzlich klar\">plötzlich klar</span>.</p>\n<blockquote>Jetzt <span class=\"vocab-word\" data-word=\"Grenzen setzen\">Grenzen setzen</span>, denkt sie.</blockquote>\n\n<p>Juli tippt eine Antwort.</p>\n<blockquote>Das ist <span class=\"vocab-word\" data-word=\"Gar nicht so einfach\">gar nicht so einfach</span>, denkt sie.</blockquote>\n\n<p>Mara nickt langsam.</p>\n<blockquote>Du musst nicht perfekt sein, nur ehrlich.</blockquote>\n\n<p>Juli drückt auf Senden. Ihre Hand beginnt zu <span class=\"vocab-word\" data-word=\"Zittern\">zittern</span>.</p>\n<blockquote>Okay. Ich habe mich <span class=\"vocab-word\" data-word=\"Sich was trauen\">was getraut</span>, denkt sie.</blockquote>\n\n<p>Mara lächelt.</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Macht nix\">Macht nix</span>. Wichtig ist nur, dass du es versucht hast.</blockquote>\n\n<p>Im Café ist es immer noch nur Kaffee. Aber für Juli fühlt es sich an wie ein Anfang.</p>",
       "audio": "https://cdn.sanity.io/files/9u7ilulp/production/1e734108a5d8fd1f7606aef77709ba2f52a74ea7.mp3",
       "vocab": [
-        {
-          "word": "Alles auf einmal",
-          "definition": "Used when many things happen at the same time and feel overwhelming."
-        },
-        {
-          "word": "Auf dem Sprung",
-          "definition": "Describes someone who is about to leave or is in a hurry."
-        },
         {
           "word": "Auf einen Kaffee",
           "definition": "An informal way to suggest meeting for a coffee, often implying a casual chat."
         },
         {
-          "word": "Bammel haben",
-          "definition": "To feel nervous or scared about doing something."
+          "word": "Kiez",
+          "definition": "A neighborhood area with a strong local identity, especially associated with Berlin."
         },
         {
-          "word": "Durcheinander",
-          "definition": "A state of confusion or disorder, mentally or physically."
+          "word": "Kiezcafé",
+          "definition": "A neighborhood café with a familiar, local vibe."
         },
         {
-          "word": "Ehrlich gesagt",
-          "definition": "Used to introduce a frank, honest opinion."
+          "word": "Neuigkeiten",
+          "definition": "Personal updates or new information someone brings to a meeting."
+        },
+        {
+          "word": "Gedanken ordnen",
+          "definition": "To sort out your thoughts and get mental clarity."
+        },
+        {
+          "word": "Klappernde Tassen",
+          "definition": "The clinking or rattling sound of cups, used to set a busy café atmosphere."
+        },
+        {
+          "word": "Duft",
+          "definition": "A noticeable smell, often pleasant, like coffee or fresh food."
+        },
+        {
+          "word": "Frisch gemahlen",
+          "definition": "Ground very recently, used especially for coffee beans."
+        },
+        {
+          "word": "Stimmengewirr",
+          "definition": "A mixture of voices speaking at once; background chatter."
+        },
+        {
+          "word": "Tresen",
+          "definition": "The counter in a café or bar where people order and talk."
+        },
+        {
+          "word": "Kurzer Kaffee",
+          "definition": "A quick coffee, often said even when it does not stay short."
+        },
+        {
+          "word": "Feierabendgespräch",
+          "definition": "A relaxed end-of-day conversation, winding down after work."
+        },
+        {
+          "word": "Unausweichlich",
+          "definition": "Inevitable; something that feels like it cannot be avoided."
+        },
+        {
+          "word": "Ruhig wirken",
+          "definition": "To appear calm on the outside."
+        },
+        {
+          "word": "Auf dem Sprung",
+          "definition": "About to leave; in a hurry."
         },
         {
           "word": "Fix und fertig",
           "definition": "Completely exhausted, physically or mentally."
         },
         {
+          "word": "Keine Lust",
+          "definition": "Not feeling like doing something; lacking motivation."
+        },
+        {
+          "word": "Durcheinander",
+          "definition": "Confused or chaotic, mentally or in a situation."
+        },
+        {
+          "word": "Alles auf einmal",
+          "definition": "When many things happen at the same time and feel overwhelming."
+        },
+        {
+          "word": "Kopf voll",
+          "definition": "Feeling mentally overloaded; too many thoughts at once."
+        },
+        {
+          "word": "Bammel haben",
+          "definition": "To feel nervous or scared about doing something."
+        },
+        {
+          "word": "Ehrlich gesagt",
+          "definition": "Used to introduce a frank, honest opinion."
+        },
+        {
+          "word": "Grenzen setzen",
+          "definition": "To set boundaries and make limits clear to other people."
+        },
+        {
           "word": "Gar nicht so einfach",
           "definition": "Said when something is harder than it seems."
         },
         {
-          "word": "Gleich",
-          "definition": "Used to mean soon, often vaguely rather than as an exact time."
+          "word": "Zucken",
+          "definition": "A quick flinch or twitch, a small involuntary reaction."
         },
         {
-          "word": "Grenzen setzen",
-          "definition": "To set boundaries and make limits clear to others."
+          "word": "Plötzlich klar",
+          "definition": "Suddenly it becomes clear; you understand at once."
         },
         {
-          "word": "Ich bin gleich da",
-          "definition": "A common phrase meaning you will arrive very soon, sometimes used optimistically."
-        },
-        {
-          "word": "In Ordnung",
-          "definition": "Means something is acceptable or fine, often to reassure someone."
-        },
-        {
-          "word": "Kopf voll",
-          "definition": "Feeling mentally overloaded, with too many thoughts at once."
-        },
-        {
-          "word": "Keine Lust",
-          "definition": "Not feeling like doing something, lacking motivation or desire."
-        },
-        {
-          "word": "Mal sehen",
-          "definition": "Used to postpone a decision or to say we will see."
-        },
-        {
-          "word": "Macht nix",
-          "definition": "Informal reassurance meaning it does not matter or no big deal."
-        },
-        {
-          "word": "Ohne Stress",
-          "definition": "Used to calm someone down, meaning no pressure or take it easy."
-        },
-        {
-          "word": "Passt schon",
-          "definition": "Informal way to say something is fine or will work out, often downplaying a problem."
+          "word": "Zittern",
+          "definition": "Small uncontrollable shaking, often from fear or stress."
         },
         {
           "word": "Sich was trauen",
-          "definition": "To dare to do something, especially something bold or uncomfortable."
+          "definition": "To dare to do something bold or uncomfortable."
         },
         {
-          "word": "Jetzt oder nie",
-          "definition": "Used to express that this is the decisive moment and it must be done now."
+          "word": "Macht nix",
+          "definition": "Informal reassurance meaning no big deal."
         }
       ]
     }
