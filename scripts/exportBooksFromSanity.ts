@@ -4,46 +4,208 @@ import { groq } from "next-sanity";
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
+import crypto from "crypto";
 
 dotenv.config({ path: ".env" });
 dotenv.config({ path: ".env.local" });
 
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+
+if (!projectId || !dataset) {
+  console.error("❌ Missing NEXT_PUBLIC_SANITY_PROJECT_ID or NEXT_PUBLIC_SANITY_DATASET");
+  process.exit(1);
+}
+
 const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  projectId,
+  dataset,
   apiVersion: "2024-10-01",
   useCdn: false,
 });
 
-// Helpers
-const toConstName = (raw: string) => {
-  let s = (raw || "book").replace(/[^a-zA-Z0-9]/g, "");
-  if (!s) s = "book";
-  if (/^\d/.test(s)) s = "b" + s;
-  return s;
+type RawStory = {
+  _id?: string;
+  title?: string;
+  text?: string;
+  slug?: string;
+  audio?: string;
+  vocabRaw?: unknown;
+  _updatedAt?: string;
 };
 
-const normalizeVocab = (v: unknown): any[] => {
-  if (!v) return [];
+type RawBook = {
+  _id?: string;
+  _updatedAt?: string;
+  title?: string;
+  description?: string;
+  id?: string;
+  slug?: string;
+  audioFolder?: string;
+  theme?: unknown;
+  level?: string;
+  language?: string;
+  region?: string;
+  topic?: string;
+  formality?: string;
+  storeUrl?: string;
+  cover?: string;
+  stories?: RawStory[];
+};
+
+type ExportedStory = {
+  id: string;
+  slug: string;
+  title: string;
+  text: string;
+  audio: string;
+  vocab: unknown[];
+};
+
+type ExportedBook = {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  cover: string;
+  theme: unknown;
+  level: string;
+  language: string;
+  region?: string;
+  topic: string;
+  formality: string;
+  audioFolder: string;
+  storeUrl: string;
+  stories: ExportedStory[];
+};
+
+type ExportState = {
+  lastRunAt: string;
+};
+
+type ExportMeta = {
+  ranAt: string;
+  since: string | null;
+  changedBookIds: string[];
+};
+
+const OUT_DIR = path.join(process.cwd(), "src/data/books");
+const INDEX_PATH = path.join(OUT_DIR, "index.ts");
+const STATE_PATH = path.join(OUT_DIR, ".export-state.json");
+const META_PATH = path.join(OUT_DIR, ".export-meta.json");
+
+function sha256(input: string): string {
+  return crypto.createHash("sha256").update(input).digest("hex");
+}
+
+function readJsonFile<T>(filePath: string): T | null {
+  try {
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf8");
+    const parsed: unknown = JSON.parse(raw);
+    return parsed as T;
+  } catch {
+    return null;
+  }
+}
+
+function writeJsonFile(filePath: string, value: unknown) {
+  fs.writeFileSync(filePath, JSON.stringify(value, null, 2) + "\n", "utf8");
+}
+
+function isRecord(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v);
+}
+
+function normalizeVocab(v: unknown): unknown[] {
   if (Array.isArray(v)) return v;
   if (typeof v === "string") {
     try {
-      const parsed = JSON.parse(v);
+      const parsed: unknown = JSON.parse(v);
       return Array.isArray(parsed) ? parsed : [];
     } catch {
       return [];
     }
   }
   return [];
+}
+
+function toConstName(raw: string): string {
+  let s = (raw || "book").replace(/[^a-zA-Z0-9]/g, "");
+  if (!s) s = "book";
+  if (/^\d/.test(s)) s = "b" + s;
+  return s;
+}
+
+function safeString(v: unknown, fallback = ""): string {
+  return typeof v === "string" ? v : fallback;
+}
+
+function ensureDir(dir: string) {
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+}
+
+function writeIfChanged(filePath: string, content: string): boolean {
+  const next = content.endsWith("\n") ? content : content + "\n";
+  if (fs.existsSync(filePath)) {
+    const prev = fs.readFileSync(filePath, "utf8");
+    if (sha256(prev) === sha256(next)) return false;
+  }
+  fs.writeFileSync(filePath, next, "utf8");
+  return true;
+}
+
+function listBookFiles(): string[] {
+  if (!fs.existsSync(OUT_DIR)) return [];
+  return fs
+    .readdirSync(OUT_DIR)
+    .filter((f) => f.endsWith(".ts") && f !== "index.ts" && !f.startsWith("."))
+    .sort((a, b) => a.localeCompare(b));
+}
+
+function buildIndexFromFiles(): void {
+  const files = listBookFiles();
+
+  const imports: string[] = [];
+  const entries: string[] = [];
+
+  for (const fileName of files) {
+    const id = fileName.replace(/\.ts$/, "");
+    const constName = toConstName(id);
+    imports.push(`import { ${constName} } from "./${id}";`);
+    entries.push(`  [${constName}.id]: ${constName},`);
+  }
+
+  const indexContent = `import type { Book } from "@/types/books";
+${imports.join("\n")}
+
+export const books: Record<string, Book> = {
+${entries.join("\n")}
 };
+`;
+
+  writeIfChanged(INDEX_PATH, indexContent);
+}
+
+function getSinceIso(): string | null {
+  const state = readJsonFile<ExportState>(STATE_PATH);
+  if (!state || !isRecord(state) || typeof state.lastRunAt !== "string") return null;
+  return state.lastRunAt;
+}
 
 async function exportBooks() {
   console.log("📚 Fetching books from Sanity...");
 
-  // 🚀 Ahora traemos también metadatos lingüísticos del libro
-  const rawBooks = await client.fetch(
-    groq`*[_type == "book" && published == true]{
+  ensureDir(OUT_DIR);
+
+  const since = getSinceIso();
+  const query = groq`*[_type == "book" && published == true && (
+      $since == null ||
+      _updatedAt > $since ||
+      count(*[_type == "story" && references(^._id) && published == true && _updatedAt > $since]) > 0
+    )]{
       _id,
+      _updatedAt,
       title,
       description,
       "id": coalesce(id.current, slug.current, _id),
@@ -55,99 +217,98 @@ async function exportBooks() {
       region,
       topic,
       formality,
-      storeUrl, // 🛒 nuevo campo
-      // 🖼️ URL de portada
+      storeUrl,
       "cover": select(
         defined(cover.asset->url) => cover.asset->url,
         "/covers/default.jpg"
       ),
-      // 🪶 historias asociadas
       "stories": *[_type == "story" && references(^._id) && published == true] | order(_createdAt asc) {
         _id,
+        _updatedAt,
         title,
         text,
         "slug": coalesce(slug.current, _id),
         "audio": coalesce(audio.asset->url, ""),
         vocabRaw
       }
-    }`
-  );
+    }`;
 
-  if (!rawBooks?.length) {
-    console.log("⚠️ No published books found in Sanity.");
+  const rawBooks = await client.fetch<unknown>(query, { since });
+
+  const list: RawBook[] = Array.isArray(rawBooks) ? (rawBooks as RawBook[]) : [];
+  if (list.length === 0) {
+    console.log("⚠️ No changed published books found in Sanity.");
+    const ranAt = new Date().toISOString();
+    writeJsonFile(STATE_PATH, { lastRunAt: ranAt } satisfies ExportState);
+    writeJsonFile(META_PATH, { ranAt, since, changedBookIds: [] } satisfies ExportMeta);
     return;
   }
 
-  const outDir = path.join(process.cwd(), "src/data/books");
-  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-
-  const generated: { fileName: string; constName: string }[] = [];
-
-  for (const b of rawBooks as any[]) {
-    const bookId: string = b.id || b._id || "unknown";
-    const bookSlug: string = b.slug || bookId;
+  const changedBookIds: string[] = [];
+  for (const b of list) {
+    const bookId = safeString(b.id, safeString(b._id, "unknown"));
+    const bookSlug = safeString(b.slug, bookId);
     const constName = toConstName(bookId);
     const fileName = `${bookId}.ts`;
 
-    const stories =
-      (b.stories ?? []).map((s: any, i: number) => ({
-        id: String(s.slug || s._id || i + 1),
-        slug: String(s.slug || s._id || `story-${i + 1}`),
-        title: s.title ?? `Story ${i + 1}`,
-        text: s.text ?? "",
-        audio: s.audio ?? "",
+    const storiesRaw: RawStory[] = Array.isArray(b.stories) ? b.stories : [];
+    const stories: ExportedStory[] = storiesRaw.map((s, i) => {
+      const sSlug = safeString(s.slug, safeString(s._id, `story-${i + 1}`));
+      return {
+        id: sSlug,
+        slug: sSlug,
+        title: safeString(s.title, `Story ${i + 1}`),
+        text: safeString(s.text, ""),
+        audio: safeString(s.audio, ""),
         vocab: normalizeVocab(s.vocabRaw),
-      })) ?? [];
+      };
+    });
+
+    const exported: ExportedBook = {
+      id: bookId,
+      slug: bookSlug,
+      title: safeString(b.title, ""),
+      description: safeString(b.description, ""),
+      cover: safeString(b.cover, "/covers/default.jpg"),
+      theme: b.theme ?? [],
+      level: safeString(b.level, "beginner"),
+      language: safeString(b.language, "english"),
+      region: typeof b.region === "string" && b.region.length > 0 ? b.region : undefined,
+      topic: safeString(b.topic, ""),
+      formality: safeString(b.formality, "neutral"),
+      audioFolder: safeString(b.audioFolder, ""),
+      storeUrl: safeString(b.storeUrl, ""),
+      stories,
+    };
 
     const content = `import { Book } from "@/types/books";
 
-export const ${constName}: Book = {
-  id: ${JSON.stringify(bookId)},
-  slug: ${JSON.stringify(bookSlug)},
-  title: ${JSON.stringify(b.title ?? "")},
-  description: ${JSON.stringify(b.description ?? "")},
-  cover: ${JSON.stringify(b.cover ?? "/covers/default.jpg")},
-  theme: ${JSON.stringify(b.theme ?? [])},
-  level: ${JSON.stringify(b.level ?? "beginner")},
-  language: ${JSON.stringify(b.language ?? "english")},
-  region: ${JSON.stringify(b.region ?? "usa")},
-  topic: ${JSON.stringify(b.topic ?? "")},
-  formality: ${JSON.stringify(b.formality ?? "neutral")},
-  audioFolder: ${JSON.stringify(b.audioFolder ?? "")},
-  storeUrl: ${JSON.stringify(b.storeUrl ?? "")},
-  stories: ${JSON.stringify(stories, null, 2)}
-};
+export const ${constName}: Book = ${JSON.stringify(exported, null, 2)};
 `;
 
-    fs.writeFileSync(path.join(outDir, fileName), content);
-    generated.push({ fileName, constName });
-    console.log(`✅ Exported → ${path.join("src/data/books", fileName)}`);
+    const wrote = writeIfChanged(path.join(OUT_DIR, fileName), content);
+    if (wrote) {
+      console.log(`✅ Exported → ${path.join("src/data/books", fileName)}`);
+    } else {
+      console.log(`↩️  Unchanged → ${path.join("src/data/books", fileName)}`);
+    }
+
+    changedBookIds.push(bookId);
   }
 
-  // 🔁 Rebuild index.ts
-  const indexPath = path.join(outDir, "index.ts");
-  const importLines = generated
-    .map((g) => `import { ${g.constName} } from "./${g.fileName.replace(/\.ts$/, "")}";`)
-    .join("\n");
+  buildIndexFromFiles();
 
-  const entries = generated
-    .map((g) => `  [${g.constName}.id]: ${g.constName},`)
-    .join("\n");
+  const ranAt = new Date().toISOString();
+  writeJsonFile(STATE_PATH, { lastRunAt: ranAt } satisfies ExportState);
+  writeJsonFile(META_PATH, { ranAt, since, changedBookIds } satisfies ExportMeta);
 
-  const indexContent = `import type { Book } from "@/types/books";
-${importLines}
-
-export const books: Record<string, Book> = {
-${entries}
-};
-`;
-
-  fs.writeFileSync(indexPath, indexContent);
   console.log(`🧩 Rebuilt → src/data/books/index.ts`);
-  console.log("\n✨ Export completed successfully!");
+  console.log(`✨ Export completed successfully! (changed: ${changedBookIds.length})`);
 }
 
-exportBooks().catch((err) => {
-  console.error("❌ Export failed:", err?.stack || err?.message || String(err));
+exportBooks().catch((err: unknown) => {
+  const message =
+    err instanceof Error ? err.stack ?? err.message : typeof err === "string" ? err : "Unknown error";
+  console.error("❌ Export failed:", message);
   process.exit(1);
 });
