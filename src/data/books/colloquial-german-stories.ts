@@ -144,9 +144,66 @@ export const colloquialgermanstories: Book = {
       "id": "u-bahn-chaos-am-montagmorgen",
       "slug": "u-bahn-chaos-am-montagmorgen",
       "title": "U-Bahn-Chaos am Montagmorgen",
-      "text": "<p>Am Montagmorgen steht Lina am <span class=\"vocab-word\" data-word=\"Bahnsteig\">Bahnsteig</span> und will einfach nur pünktlich zur Arbeit. In der U-Bahn ist sie schnell <span class=\"vocab-word\" data-word=\"eingeklemmt\">eingeklemmt</span> im <span class=\"vocab-word\" data-word=\"Gedränge\">Gedränge</span>, dann kommt die erste <span class=\"vocab-word\" data-word=\"Durchsage\">Durchsage</span>: Störung, Verspätung, vielleicht sogar <span class=\"vocab-word\" data-word=\"Ausfall\">Ausfall</span>. Die Leute werden genervt, niemand weiß, wie lange sie feststecken. Zwischen Fremden entsteht kurz echte Hilfe, und Lina merkt, dass so ein Chaos Entscheidungen plötzlich sehr dringend macht.</p>\n<p>Lina steht im <span class=\"vocab-word\" data-word=\"Waggon\">Waggon</span> und spürt sofort, dass der Morgen <span class=\"vocab-word\" data-word=\"kippt\">kippt</span>.</p>\n<blockquote>Bitte nicht heute, denkt sie. Nicht schon wieder so ein Start.</blockquote>\n<p>Die Türen schließen, und sie ist fast <span class=\"vocab-word\" data-word=\"eingeklemmt\">eingeklemmt</span> zwischen Jacken und Ellbogen. Vor ihr schiebt sich ein <span class=\"vocab-word\" data-word=\"Gedränge\">Gedränge</span>, das keinen Platz für gute Laune lässt.</p>\n<blockquote>Wenn ich jetzt etwas sage, wird es nur schlimmer, sagt sie sich.</blockquote>\n<p>Dann kommt eine <span class=\"vocab-word\" data-word=\"Durchsage\">Durchsage</span>, diese neutrale Stimme, die immer so tut, als wäre alles ganz normal. Es fällt das Wort <span class=\"vocab-word\" data-word=\"Signalstörung\">Signalstörung</span>, und Lina merkt, wie es in ihr <span class=\"vocab-word\" data-word=\"knirscht\">knirscht</span>. Das klingt nach Ärger. Das klingt nach warten.</p>\n<p>Der Zug rollt noch ein Stück und bleibt dann stehen. Ein kurzer Halt wird ein <span class=\"vocab-word\" data-word=\"Ausfall\">Ausfall</span>, still und <span class=\"vocab-word\" data-word=\"hartnäckig\">hartnäckig</span>.</p>\n<blockquote>Das wird eine halbe Ewigkeit, denkt Lina, obwohl sie die Uhr nicht sehen will.</blockquote>\n<p>Als die Türen aufgehen, drückt die Menge hinaus. Lina landet draußen und schaut automatisch zur <span class=\"vocab-word\" data-word=\"Anzeigetafel\">Anzeigetafel</span>. Dort blinken Hinweise, und plötzlich steht da auch <span class=\"vocab-word\" data-word=\"Ersatzverkehr\">Ersatzverkehr</span>.</p>\n<blockquote>Natürlich. Genau das brauche ich jetzt, denkt sie.</blockquote>\n<p>Neben ihr taucht ihr <span class=\"vocab-word\" data-word=\"Sitznachbar\">Sitznachbar</span> von vorhin auf, nur ohne Sitz und ohne Eile im Gesicht. Lina macht ein kleines <span class=\"vocab-word\" data-word=\"Augenrollen\">Augenrollen</span>, mehr in sich hinein als nach außen. Der wirkt, als hätte er Zeit im Überfluss.</p>\n<p>Er sagt etwas Ruhiges, als wäre der <span class=\"vocab-word\" data-word=\"Stillstand\">Stillstand</span> nur ein Umweg. Lina ist schon genervt, aber sie hört trotzdem zu.</p>\n<blockquote>Warum höre ich zu. Weil ich nichts anderes tun kann, denkt sie.</blockquote>\n<p>Ihr Blick fällt auf den Handy-<span class=\"vocab-word\" data-word=\"Akku\">Akku</span>, der gefährlich niedrig ist.</p>\n<blockquote>Nicht auch das noch, denkt sie. Wenn der jetzt stirbt, stehe ich komplett im Dunkeln.</blockquote>\n<p>Hinter ihnen wird es laut, ein kleiner <span class=\"vocab-word\" data-word=\"Ausraster\">Ausraster</span> mitten auf dem <span class=\"vocab-word\" data-word=\"Bahnsteig\">Bahnsteig</span>. Jemand fängt an, andere Leute <span class=\"vocab-word\" data-word=\"anzuschnauzen\">anzuschnauzen</span>, als könnte man damit die Bahn reparieren. Lina merkt, wie ihr Magen fest wird.</p>\n<blockquote>Nicht reinziehen lassen, sagt sie sich. Einmal durchatmen.</blockquote>\n<p>Sie atmet langsam, zählt, und versucht, den Kopf wieder zu sortieren.</p>\n<p>Dann sagt Lina einen Satz, der nett gemeint ist, aber falsch landet. Ein Blick, ein Ton, und schon ist alles missverstanden.</p>\n<blockquote>Super. Jetzt habe ich auch noch Streit produziert, denkt sie.</blockquote>\n<p>Der Mann hebt kurz die Hand und macht es kleiner, nicht größer. Er erklärt ruhig, dass man am nächsten <span class=\"vocab-word\" data-word=\"Knotenpunkt\">Knotenpunkt</span> besser umsteigen kann. Lina merkt, wie sich die Spannung löst, als hätte jemand einen Knoten aufgemacht.</p>\n<p>Eine Frau neben Lina macht Platz, ohne etwas zu sagen. Es ist nur eine Bewegung, aber sie fühlt sich an wie ein stilles Zeichen.</p>\n<blockquote>Okay. Wir sind nicht alle gegeneinander, denkt Lina.</blockquote>\n<p>Als endlich wieder eine Bahn einfährt, wirkt sie nicht wie Rettung, eher wie ein neuer Versuch. Lina steigt ein, steht wieder dicht, aber innerlich leiser.</p>\n<blockquote>Das Chaos ist nicht weg, denkt sie. Es ist nur gerade <span class=\"vocab-word\" data-word=\"unausweichlich\">unausweichlich</span>.</blockquote>\n<p>Und trotzdem bleibt ein Gedanke hängen: Mit ein bisschen Geduld kommt man vielleicht doch durch diesen Morgen.</p>",
+      "text": "<p>Am Montagmorgen steht Lina am <span class=\"vocab-word\" data-word=\"Bahnsteig\">Bahnsteig</span> und will einfach nur pünktlich zur Arbeit. In der U-Bahn ist sie schnell eingeklemmt im <span class=\"vocab-word\" data-word=\"Gedränge\">Gedränge</span>, dann kommt die erste <span class=\"vocab-word\" data-word=\"Durchsage\">Durchsage</span>: Störung, Verspätung, vielleicht sogar <span class=\"vocab-word\" data-word=\"Ausfall\">Ausfall</span>. Die Leute werden genervt, niemand weiß, wie lange sie feststecken. Zwischen Fremden entsteht kurz echte Hilfe, und Lina merkt, dass so ein Chaos Entscheidungen plötzlich sehr dringend macht.</p>\n\n<p>Lina steht im <span class=\"vocab-word\" data-word=\"Waggon\">Waggon</span> und spürt sofort, dass der Morgen kippt. Bitte nicht heute, denkt sie. Nicht schon wieder so ein Start.</p>\n\n<blockquote>Bitte nicht heute.</blockquote>\n<blockquote>Nicht schon wieder so ein Start.</blockquote>\n\n<p>Die Türen schließen, und sie ist fast eingeklemmt zwischen Jacken und Ellbogen. Vor ihr schiebt sich ein <span class=\"vocab-word\" data-word=\"Gedränge\">Gedränge</span>, das keinen Platz für gute Laune lässt.</p>\n\n<blockquote>Wenn ich jetzt etwas sage, wird es nur schlimmer.</blockquote>\n\n<p>Dann kommt eine <span class=\"vocab-word\" data-word=\"Durchsage\">Durchsage</span>, diese neutrale Stimme, die immer so tut, als wäre alles ganz normal. Es fällt das Wort <span class=\"vocab-word\" data-word=\"Signalstörung\">Signalstörung</span>, und Lina merkt, wie es in ihr knirscht. Das klingt nach Ärger. Das klingt nach warten.</p>\n\n<p>Der Zug rollt noch ein Stück und bleibt dann stehen. Ein kurzer Halt wird ein <span class=\"vocab-word\" data-word=\"Ausfall\">Ausfall</span>, still und hartnäckig.</p>\n\n<blockquote>Das wird eine halbe Ewigkeit.</blockquote>\n\n<p>Als die Türen aufgehen, drückt die Menge hinaus. Lina landet draußen und schaut automatisch zur <span class=\"vocab-word\" data-word=\"Anzeigetafel\">Anzeigetafel</span>. Dort blinken Hinweise, und plötzlich steht da auch <span class=\"vocab-word\" data-word=\"Ersatzverkehr\">Ersatzverkehr</span>.</p>\n\n<blockquote>Natürlich. Genau das brauche ich jetzt.</blockquote>\n\n<p>Neben ihr taucht ihr <span class=\"vocab-word\" data-word=\"Sitznachbar\">Sitznachbar</span> von vorhin auf, nur ohne Sitz und ohne Eile im Gesicht. Lina macht ein kleines <span class=\"vocab-word\" data-word=\"Augenrollen\">Augenrollen</span>, mehr in sich hinein als nach außen.</p>\n\n<blockquote>Der wirkt, als hätte er Zeit im Überfluss.</blockquote>\n\n<p>Er sagt etwas Ruhiges, als wäre der <span class=\"vocab-word\" data-word=\"Stillstand\">Stillstand</span> nur ein Umweg. Lina ist schon genervt, aber sie hört trotzdem zu.</p>\n\n<blockquote>Warum höre ich zu. Weil ich nichts anderes tun kann.</blockquote>\n\n<p>Ihr Blick fällt auf den Handy-<span class=\"vocab-word\" data-word=\"Akku\">Akku</span>, der gefährlich niedrig ist.</p>\n\n<blockquote>Nicht auch das noch. Wenn der jetzt stirbt, stehe ich komplett im Dunkeln.</blockquote>\n\n<p>Hinter ihnen wird es laut, ein kleiner <span class=\"vocab-word\" data-word=\"Ausraster\">Ausraster</span> mitten auf dem <span class=\"vocab-word\" data-word=\"Bahnsteig\">Bahnsteig</span>. Jemand fängt an, andere Leute anzuschnauzen, als könnte man damit die Bahn reparieren. Lina merkt, wie ihr Magen fest wird.</p>\n\n<blockquote>Nicht reinziehen lassen. Einmal durchatmen.</blockquote>\n\n<p>Sie atmet langsam, zählt, und versucht, den Kopf wieder zu sortieren.</p>\n\n<p>Dann sagt Lina einen Satz, der nett gemeint ist, aber falsch landet. Ein Blick, ein Ton, und schon ist alles missverstanden.</p>\n\n<blockquote>Super. Jetzt habe ich auch noch Streit produziert.</blockquote>\n\n<p>Der Mann hebt kurz die Hand und macht es kleiner, nicht größer. Er erklärt ruhig, dass man am nächsten <span class=\"vocab-word\" data-word=\"Knotenpunkt\">Knotenpunkt</span> besser umsteigen kann. Lina merkt, wie sich die Spannung löst, als hätte jemand einen Knoten aufgemacht.</p>\n\n<p>Eine Frau neben Lina macht Platz, ohne etwas zu sagen. Es ist nur eine Bewegung, aber sie fühlt sich an wie ein stilles Zeichen.</p>\n\n<blockquote>Okay. Wir sind nicht alle gegeneinander.</blockquote>\n\n<p>Als endlich wieder eine Bahn einfährt, wirkt sie nicht wie Rettung, eher wie ein neuer Versuch. Lina steigt ein, steht wieder dicht, aber innerlich leiser.</p>\n\n<p>Das Chaos ist nicht weg, denkt sie. Es ist nur gerade unausweichlich. Und trotzdem bleibt ein Gedanke hängen: Mit ein bisschen Geduld kommt man vielleicht doch durch diesen Morgen.</p>",
       "audio": "https://cdn.sanity.io/files/9u7ilulp/production/397484b14aeec18f85856e9a9db0ecc6ffef32e7.mp3",
-      "vocab": []
+      "vocab": [
+        {
+          "word": "Bahnsteig",
+          "definition": "The platform in a train or subway station where passengers board and exit vehicles."
+        },
+        {
+          "word": "Gedränge",
+          "definition": "A dense, pushing crowd where people are pressed closely together."
+        },
+        {
+          "word": "Durchsage",
+          "definition": "An official spoken announcement made over a public address system in a station or vehicle."
+        },
+        {
+          "word": "Ausfall",
+          "definition": "The cancellation or complete failure of a scheduled transport service."
+        },
+        {
+          "word": "Waggon",
+          "definition": "A single passenger car that forms part of a train or subway consist."
+        },
+        {
+          "word": "Signalstörung",
+          "definition": "A technical fault in the railway signalling system that causes delays or service interruptions."
+        },
+        {
+          "word": "Anzeigetafel",
+          "definition": "A display board in a station showing departure times, platform numbers, and service updates."
+        },
+        {
+          "word": "Ersatzverkehr",
+          "definition": "A replacement transport service put in place when the regular line is suspended."
+        },
+        {
+          "word": "Sitznachbar",
+          "definition": "The person sitting next to you on public transport or in any shared seating situation."
+        },
+        {
+          "word": "Augenrollen",
+          "definition": "The act of rolling one's eyes as a non-verbal expression of frustration or disbelief."
+        },
+        {
+          "word": "Stillstand",
+          "definition": "A complete standstill; a state in which all movement or progress has stopped."
+        },
+        {
+          "word": "Akku",
+          "definition": "Short for Akkumulator; the rechargeable battery in a mobile phone or other portable device."
+        },
+        {
+          "word": "Ausraster",
+          "definition": "A sudden emotional outburst or loss of composure in a public or social setting."
+        },
+        {
+          "word": "Knotenpunkt",
+          "definition": "A major interchange or hub where several transport lines or routes converge."
+        }
+      ]
     }
   ]
 };
