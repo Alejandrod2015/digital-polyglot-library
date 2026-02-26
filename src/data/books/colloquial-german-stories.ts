@@ -144,12 +144,20 @@ export const colloquialgermanstories: Book = {
       "id": "u-bahn-chaos-am-montagmorgen",
       "slug": "u-bahn-chaos-am-montagmorgen",
       "title": "U-Bahn-Chaos am Montagmorgen",
-      "text": "<p>Am Montagmorgen steht Lina am <span class=\"vocab-word\" data-word=\"Bahnsteig\">Bahnsteig</span> und will einfach nur pünktlich zur Arbeit. In der U-Bahn ist sie schnell eingeklemmt im <span class=\"vocab-word\" data-word=\"Gedränge\">Gedränge</span>, dann kommt die erste <span class=\"vocab-word\" data-word=\"Durchsage\">Durchsage</span>: Störung, Verspätung, vielleicht sogar <span class=\"vocab-word\" data-word=\"Ausfall\">Ausfall</span>. Die Leute werden genervt, niemand weiß, wie lange sie feststecken. Zwischen Fremden entsteht kurz echte Hilfe, und Lina merkt, dass so ein Chaos Entscheidungen plötzlich sehr dringend macht.</p>\n\n<p>Lina steht im <span class=\"vocab-word\" data-word=\"Waggon\">Waggon</span> und spürt sofort, dass der Morgen kippt. Bitte nicht heute, denkt sie. Nicht schon wieder so ein Start.</p>\n\n<blockquote>Bitte nicht heute.</blockquote>\n<blockquote>Nicht schon wieder so ein Start.</blockquote>\n\n<p>Die Türen schließen, und sie ist fast eingeklemmt zwischen Jacken und Ellbogen. Vor ihr schiebt sich ein <span class=\"vocab-word\" data-word=\"Gedränge\">Gedränge</span>, das keinen Platz für gute Laune lässt.</p>\n\n<blockquote>Wenn ich jetzt etwas sage, wird es nur schlimmer.</blockquote>\n\n<p>Dann kommt eine <span class=\"vocab-word\" data-word=\"Durchsage\">Durchsage</span>, diese neutrale Stimme, die immer so tut, als wäre alles ganz normal. Es fällt das Wort <span class=\"vocab-word\" data-word=\"Signalstörung\">Signalstörung</span>, und Lina merkt, wie es in ihr knirscht. Das klingt nach Ärger. Das klingt nach warten.</p>\n\n<p>Der Zug rollt noch ein Stück und bleibt dann stehen. Ein kurzer Halt wird ein <span class=\"vocab-word\" data-word=\"Ausfall\">Ausfall</span>, still und hartnäckig.</p>\n\n<blockquote>Das wird eine halbe Ewigkeit.</blockquote>\n\n<p>Als die Türen aufgehen, drückt die Menge hinaus. Lina landet draußen und schaut automatisch zur <span class=\"vocab-word\" data-word=\"Anzeigetafel\">Anzeigetafel</span>. Dort blinken Hinweise, und plötzlich steht da auch <span class=\"vocab-word\" data-word=\"Ersatzverkehr\">Ersatzverkehr</span>.</p>\n\n<blockquote>Natürlich. Genau das brauche ich jetzt.</blockquote>\n\n<p>Neben ihr taucht ihr <span class=\"vocab-word\" data-word=\"Sitznachbar\">Sitznachbar</span> von vorhin auf, nur ohne Sitz und ohne Eile im Gesicht. Lina macht ein kleines <span class=\"vocab-word\" data-word=\"Augenrollen\">Augenrollen</span>, mehr in sich hinein als nach außen.</p>\n\n<blockquote>Der wirkt, als hätte er Zeit im Überfluss.</blockquote>\n\n<p>Er sagt etwas Ruhiges, als wäre der <span class=\"vocab-word\" data-word=\"Stillstand\">Stillstand</span> nur ein Umweg. Lina ist schon genervt, aber sie hört trotzdem zu.</p>\n\n<blockquote>Warum höre ich zu. Weil ich nichts anderes tun kann.</blockquote>\n\n<p>Ihr Blick fällt auf den Handy-<span class=\"vocab-word\" data-word=\"Akku\">Akku</span>, der gefährlich niedrig ist.</p>\n\n<blockquote>Nicht auch das noch. Wenn der jetzt stirbt, stehe ich komplett im Dunkeln.</blockquote>\n\n<p>Hinter ihnen wird es laut, ein kleiner <span class=\"vocab-word\" data-word=\"Ausraster\">Ausraster</span> mitten auf dem <span class=\"vocab-word\" data-word=\"Bahnsteig\">Bahnsteig</span>. Jemand fängt an, andere Leute anzuschnauzen, als könnte man damit die Bahn reparieren. Lina merkt, wie ihr Magen fest wird.</p>\n\n<blockquote>Nicht reinziehen lassen. Einmal durchatmen.</blockquote>\n\n<p>Sie atmet langsam, zählt, und versucht, den Kopf wieder zu sortieren.</p>\n\n<p>Dann sagt Lina einen Satz, der nett gemeint ist, aber falsch landet. Ein Blick, ein Ton, und schon ist alles missverstanden.</p>\n\n<blockquote>Super. Jetzt habe ich auch noch Streit produziert.</blockquote>\n\n<p>Der Mann hebt kurz die Hand und macht es kleiner, nicht größer. Er erklärt ruhig, dass man am nächsten <span class=\"vocab-word\" data-word=\"Knotenpunkt\">Knotenpunkt</span> besser umsteigen kann. Lina merkt, wie sich die Spannung löst, als hätte jemand einen Knoten aufgemacht.</p>\n\n<p>Eine Frau neben Lina macht Platz, ohne etwas zu sagen. Es ist nur eine Bewegung, aber sie fühlt sich an wie ein stilles Zeichen.</p>\n\n<blockquote>Okay. Wir sind nicht alle gegeneinander.</blockquote>\n\n<p>Als endlich wieder eine Bahn einfährt, wirkt sie nicht wie Rettung, eher wie ein neuer Versuch. Lina steigt ein, steht wieder dicht, aber innerlich leiser.</p>\n\n<p>Das Chaos ist nicht weg, denkt sie. Es ist nur gerade unausweichlich. Und trotzdem bleibt ein Gedanke hängen: Mit ein bisschen Geduld kommt man vielleicht doch durch diesen Morgen.</p>",
+      "text": "<p>Am Montagmorgen steht Lina am <span class=\"vocab-word\" data-word=\"Bahnsteig\">Bahnsteig</span> und will einfach nur pünktlich zur Arbeit. In der U-Bahn ist sie schnell <span class=\"vocab-word\" data-word=\"Eingeklemmt\">eingeklemmt</span> im <span class=\"vocab-word\" data-word=\"Gedränge\">Gedränge</span>, dann kommt die erste <span class=\"vocab-word\" data-word=\"Durchsage\">Durchsage</span>: Störung, Verspätung, vielleicht sogar <span class=\"vocab-word\" data-word=\"Ausfall\">Ausfall</span>. Die Leute werden genervt, niemand weiß, wie lange sie feststecken. Zwischen Fremden entsteht kurz echte Hilfe, und Lina merkt, dass so ein Chaos Entscheidungen plötzlich sehr dringend macht.</p>\n\n<p>Lina steht im <span class=\"vocab-word\" data-word=\"Waggon\">Waggon</span> und spürt sofort, dass der Morgen <span class=\"vocab-word\" data-word=\"Kippen\">kippt</span>. Bitte nicht heute, denkt sie. Nicht schon wieder so ein Start.</p>\n\n<blockquote>Bitte nicht heute.</blockquote>\n<blockquote>Nicht schon wieder so ein Start.</blockquote>\n\n<p>Die Türen schließen, und sie ist fast <span class=\"vocab-word\" data-word=\"Eingeklemmt\">eingeklemmt</span> zwischen Jacken und Ellbogen. Vor ihr schiebt sich ein <span class=\"vocab-word\" data-word=\"Gedränge\">Gedränge</span>, das keinen Platz für gute Laune lässt.</p>\n\n<blockquote>Wenn ich jetzt etwas sage, wird es nur schlimmer.</blockquote>\n\n<p>Dann kommt eine <span class=\"vocab-word\" data-word=\"Durchsage\">Durchsage</span>, diese neutrale Stimme, die immer so tut, als wäre alles ganz normal. Es fällt das Wort <span class=\"vocab-word\" data-word=\"Signalstörung\">Signalstörung</span>, und Lina merkt, wie es in ihr <span class=\"vocab-word\" data-word=\"Knirschen\">knirscht</span>. Das klingt nach Ärger. Das klingt nach warten.</p>\n\n<p>Der Zug rollt noch ein Stück und bleibt dann stehen. Ein kurzer Halt wird ein <span class=\"vocab-word\" data-word=\"Ausfall\">Ausfall</span>, still und <span class=\"vocab-word\" data-word=\"Hartnäckig\">hartnäckig</span>. Das wird eine halbe Ewigkeit, denkt Lina, obwohl sie die Uhr nicht sehen will.</p>\n\n<p>Als die Türen aufgehen, drückt die Menge hinaus. Lina landet draußen und schaut automatisch zur <span class=\"vocab-word\" data-word=\"Anzeigetafel\">Anzeigetafel</span>. Dort blinken Hinweise, und plötzlich steht da auch <span class=\"vocab-word\" data-word=\"Ersatzverkehr\">Ersatzverkehr</span>. Natürlich. Genau das brauche ich jetzt, denkt sie.</p>\n\n<p>Neben ihr taucht ihr <span class=\"vocab-word\" data-word=\"Sitznachbar\">Sitznachbar</span> von vorhin auf, nur ohne Sitz und ohne Eile im Gesicht. Lina macht ein kleines <span class=\"vocab-word\" data-word=\"Augenrollen\">Augenrollen</span>, mehr in sich hinein als nach außen. Der wirkt, als hätte er Zeit im Überfluss.</p>\n\n<p>Er sagt etwas Ruhiges, als wäre der <span class=\"vocab-word\" data-word=\"Stillstand\">Stillstand</span> nur ein Umweg. Lina ist schon genervt, aber sie hört trotzdem zu. Warum höre ich zu. Weil ich nichts anderes tun kann, denkt sie.</p>\n\n<p>Ihr Blick fällt auf den Handy-<span class=\"vocab-word\" data-word=\"Akku\">Akku</span>, der gefährlich niedrig ist. Nicht auch das noch, denkt sie. Wenn der jetzt stirbt, stehe ich komplett im Dunkeln.</p>\n\n<p>Hinter ihnen wird es laut, ein kleiner <span class=\"vocab-word\" data-word=\"Ausraster\">Ausraster</span> mitten auf dem <span class=\"vocab-word\" data-word=\"Bahnsteig\">Bahnsteig</span>. Jemand fängt an, andere Leute <span class=\"vocab-word\" data-word=\"Anzuschnauzen\">anzuschnauzen</span>, als könnte man damit die Bahn reparieren. Lina merkt, wie ihr Magen fest wird.</p>\n\n<p>Nicht reinziehen lassen, sagt sie sich. Einmal durchatmen. Sie atmet langsam, zählt, und versucht, den Kopf wieder zu sortieren.</p>\n\n<p>Dann sagt Lina einen Satz, der nett gemeint ist, aber falsch landet. Ein Blick, ein Ton, und schon ist alles missverstanden. Super. Jetzt habe ich auch noch Streit produziert, denkt sie.</p>\n\n<p>Der Mann hebt kurz die Hand und macht es kleiner, nicht größer. Er erklärt ruhig, dass man am nächsten <span class=\"vocab-word\" data-word=\"Knotenpunkt\">Knotenpunkt</span> besser umsteigen kann. Lina merkt, wie sich die Spannung löst, als hätte jemand einen Knoten aufgemacht.</p>\n\n<p>Eine Frau neben Lina macht Platz, ohne etwas zu sagen. Es ist nur eine Bewegung, aber sie fühlt sich an wie ein stilles Zeichen. Okay. Wir sind nicht alle gegeneinander, denkt Lina.</p>\n\n<p>Als endlich wieder eine Bahn einfährt, wirkt sie nicht wie Rettung, eher wie ein neuer Versuch. Lina steigt ein, steht wieder dicht, aber innerlich leiser.</p>\n\n<p>Das Chaos ist nicht weg, denkt sie. Es ist nur gerade <span class=\"vocab-word\" data-word=\"Unausweichlich\">unausweichlich</span>. Und trotzdem bleibt ein Gedanke hängen: Mit ein bisschen Geduld kommt man vielleicht doch durch diesen Morgen.</p>",
       "audio": "https://cdn.sanity.io/files/9u7ilulp/production/397484b14aeec18f85856e9a9db0ecc6ffef32e7.mp3",
       "vocab": [
         {
-          "word": "Bahnsteig",
-          "definition": "The platform in a train or subway station where passengers board and exit vehicles."
+          "word": "Waggon",
+          "definition": "A single passenger car that forms part of a train or subway consist."
+        },
+        {
+          "word": "Kippen",
+          "definition": "To tip over or shift suddenly; used here to describe a situation turning bad unexpectedly."
+        },
+        {
+          "word": "Eingeklemmt",
+          "definition": "Squeezed or wedged tightly between objects or people, with no room to move."
         },
         {
           "word": "Gedränge",
@@ -160,16 +168,20 @@ export const colloquialgermanstories: Book = {
           "definition": "An official spoken announcement made over a public address system in a station or vehicle."
         },
         {
+          "word": "Signalstörung",
+          "definition": "A technical fault in the railway signalling system that causes delays or service interruptions."
+        },
+        {
+          "word": "Knirschen",
+          "definition": "To grind or creak; used figuratively here to describe inner tension or discomfort."
+        },
+        {
           "word": "Ausfall",
           "definition": "The cancellation or complete failure of a scheduled transport service."
         },
         {
-          "word": "Waggon",
-          "definition": "A single passenger car that forms part of a train or subway consist."
-        },
-        {
-          "word": "Signalstörung",
-          "definition": "A technical fault in the railway signalling system that causes delays or service interruptions."
+          "word": "Hartnäckig",
+          "definition": "Stubbornly persistent; describes something that refuses to go away or be resolved quickly."
         },
         {
           "word": "Anzeigetafel",
@@ -200,8 +212,20 @@ export const colloquialgermanstories: Book = {
           "definition": "A sudden emotional outburst or loss of composure in a public or social setting."
         },
         {
+          "word": "Bahnsteig",
+          "definition": "The platform in a train or subway station where passengers board and exit vehicles."
+        },
+        {
+          "word": "Anzuschnauzen",
+          "definition": "To snap or bark at someone aggressively, often out of frustration or impatience."
+        },
+        {
           "word": "Knotenpunkt",
           "definition": "A major interchange or hub where several transport lines or routes converge."
+        },
+        {
+          "word": "Unausweichlich",
+          "definition": "Impossible to avoid or escape; inevitable, used here to describe unavoidable chaos."
         }
       ]
     }
