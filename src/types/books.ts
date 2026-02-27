@@ -3,9 +3,9 @@
 export type Level = "beginner" | "intermediate" | "advanced";
 
 export interface VocabItem {
-  word: string;        // Palabra tal cual aparece en el texto
-  definition: string;  // Definición breve
-  note?: string;       // Nota cultural o ejemplo opcional
+  word: string; // Palabra tal cual aparece en el texto
+  definition: string; // Definición breve
+  note?: string; // Nota cultural o ejemplo opcional
 }
 
 /** 🧭 Metadatos lingüísticos comunes entre libros e historias */
@@ -23,9 +23,13 @@ export interface Story extends Partial<BookMetadata> {
   title: string;
   text: string;
   audio: string;
+
+  /** 🖼️ Cover opcional por historia (Sanity -> export estático) */
+  cover?: string;
+
   vocab?: VocabItem[];
   tags?: string[]; // Etiquetas o temas adicionales
-  book?: Book;     // 🔧 Ahora opcional para evitar errores en data local
+  book?: Book; // 🔧 Ahora opcional para evitar errores en data local
   overrideMetadata?: boolean;
 }
 
@@ -33,14 +37,17 @@ export interface Book extends BookMetadata {
   id: string;
   slug: string;
   title: string;
-  description: string;  // Sinopsis
-  subtitle?: string;    // Subtítulo opcional
-  cover?: string;       // Ruta a /public/covers/...
+  description: string; // Sinopsis
+  subtitle?: string; // Subtítulo opcional
+
+  /** Cover del libro (Sanity -> export estático) */
+  cover?: string;
+
   theme?: string | string[];
   audioFolder: string;
   stories: Story[];
   published?: boolean;
-  storeUrl?: string;    // 🔗 Enlace opcional al libro físico en tienda
+  storeUrl?: string; // 🔗 Enlace opcional al libro físico en tienda
 }
 
 /** Etiquetas de nivel para mostrar en UI */

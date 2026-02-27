@@ -1,14 +1,14 @@
-import { books } from '@/data/books';
-import VocabPanel from '@/components/VocabPanel';
-import { currentUser } from '@clerk/nextjs/server';
-import Player from '@/components/Player';
-import StoryAccessInfo from './StoryAccessInfo';
-import AddStoryToLibraryButton from '@/components/AddStoryToLibraryButton';
-import StoryClientGate from './StoryClientGate';
-import { getFeaturedStory } from '@/lib/getFeaturedStory';
-import StoryContent from '@/components/StoryContent';
+import { books } from "@/data/books";
+import VocabPanel from "@/components/VocabPanel";
+import { currentUser } from "@clerk/nextjs/server";
+import Player from "@/components/Player";
+import StoryAccessInfo from "./StoryAccessInfo";
+import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
+import StoryClientGate from "./StoryClientGate";
+import { getFeaturedStory } from "@/lib/getFeaturedStory";
+import StoryContent from "@/components/StoryContent";
 
-type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
+type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
 
 type StoryPageProps = {
   params: Promise<{ bookSlug: string; storySlug: string }>;
@@ -24,37 +24,33 @@ export default async function StoryPage({ params }: StoryPageProps) {
   }
 
   const user = await currentUser();
-  const userPlan = (user?.publicMetadata?.plan as UserPlan) || 'free';
+  const userPlan = (user?.publicMetadata?.plan as UserPlan) || "free";
 
   const booksMeta = user?.publicMetadata?.books;
   const ownedBooks = Array.isArray(booksMeta)
-    ? (booksMeta as unknown[]).filter((x): x is string => typeof x === 'string')
+    ? (booksMeta as unknown[]).filter((x): x is string => typeof x === "string")
     : [];
   const ownsThisBook = ownedBooks.includes(book.slug);
 
-  const weeklyStory = await getFeaturedStory('week');
-  const dailyStory = await getFeaturedStory('day');
+  const weeklyStory = await getFeaturedStory("week");
+  const dailyStory = await getFeaturedStory("day");
 
   const isWeeklyStory = weeklyStory?.slug === story.slug;
   const isDailyStory = dailyStory?.slug === story.slug;
 
   const hasFullAccess =
-    userPlan === 'premium' ||
-    userPlan === 'polyglot' ||
-    userPlan === 'owner' ||
+    userPlan === "premium" ||
+    userPlan === "polyglot" ||
+    userPlan === "owner" ||
     ownsThisBook ||
-    (userPlan === 'basic' && (isWeeklyStory || isDailyStory)) ||
-    (userPlan === 'free' && isWeeklyStory);
+    (userPlan === "basic" && (isWeeklyStory || isDailyStory)) ||
+    (userPlan === "free" && isWeeklyStory);
 
   const visibleText = story.text;
 
-  const rawCover =
-    (story as { coverUrl?: string })?.coverUrl ??
-    (book as { coverUrl?: string; cover?: string })?.coverUrl ??
-    (book as { cover?: string })?.cover ??
-    '/covers/default.jpg';
+  const rawCover = story.cover ?? book.cover ?? "/covers/default.jpg";
 
-  const coverUrl = rawCover.startsWith('https://cdn.sanity.io/')
+  const coverUrl = rawCover.startsWith("https://cdn.sanity.io/")
     ? `${rawCover}?w=800&fit=crop&auto=format`
     : rawCover;
 
@@ -80,49 +76,47 @@ export default async function StoryPage({ params }: StoryPageProps) {
       <StoryAccessInfo storyId={story.id} userPlan={userPlan} />
 
       {/* Texto principal con control de acceso */}
-<StoryClientGate
-  plan={userPlan}
-  storyId={story.id}
-  forceAllow={hasFullAccess}
-  fallback={
-    <div className="relative text-center text-gray-300 py-16">
-      <p className="mb-4 text-xl">Unlock full access to all stories.</p>
-      <a
-        href="/plans"
-        className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
+      <StoryClientGate
+        plan={userPlan}
+        storyId={story.id}
+        forceAllow={hasFullAccess}
+        fallback={
+          <div className="relative text-center text-gray-300 py-16">
+            <p className="mb-4 text-xl">Unlock full access to all stories.</p>
+            <a
+              href="/plans"
+              className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
+            >
+              Upgrade
+            </a>
+          </div>
+        }
       >
-        Upgrade
-      </a>
-    </div>
-  }
->
-  {hasFullAccess ? (
-    <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6">
-      <StoryContent text={visibleText} sentencesPerParagraph={3} />
-    </div>
-  ) : (
-    <div
-      className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6"
-      dangerouslySetInnerHTML={{ __html: visibleText }}
-    />
-  )}
-</StoryClientGate>
+        {hasFullAccess ? (
+          <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6">
+            <StoryContent text={visibleText} sentencesPerParagraph={3} />
+          </div>
+        ) : (
+          <div
+            className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6"
+            dangerouslySetInnerHTML={{ __html: visibleText }}
+          />
+        )}
+      </StoryClientGate>
 
-
-                  {/* Player fijo visible en viewport global */}
+      {/* Player fijo visible en viewport global */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0D1B2A] shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
         <Player
           src={
-            story.audio.startsWith('http')
+            story.audio.startsWith("http")
               ? story.audio
-              : `${book.audioFolder?.replace(/\/$/, '') ?? ''}/${story.audio}`
+              : `${book.audioFolder?.replace(/\/$/, "") ?? ""}/${story.audio}`
           }
           bookSlug={book.slug}
           storySlug={story.slug}
           canPlay={hasFullAccess}
         />
       </div>
-
 
       <VocabPanel story={story} />
     </div>

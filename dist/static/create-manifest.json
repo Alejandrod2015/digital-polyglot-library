@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "createdAt": "2026-02-22T17:00:55.346Z",
+  "createdAt": "2026-02-27T11:44:29.651Z",
   "workspaces": [
     {
       "name": "digital-polyglot-studio",
@@ -12,7 +12,7 @@
       "mediaLibrary": {
         "enabled": false
       },
-      "schema": "89270b58.create-schema.json",
+      "schema": "5492d18a.create-schema.json",
       "tools": "f4ad8bb7.create-tools.json"
     }
   ]

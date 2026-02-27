@@ -6,7 +6,6 @@ export const dynamic = "force-dynamic";
 export default async function ExplorePage() {
   const stories = await getPublicUserStories();
 
-  // Aseguramos serialización completa (Next ignora Date, nulls o undefined)
   const polyglotStories = stories.map((s) => ({
     id: s.id,
     slug: s.slug,
@@ -14,9 +13,10 @@ export default async function ExplorePage() {
     language: s.language ?? "",
     level: s.level ?? "",
     text: s.text ?? "",
-    coverUrl: s.coverUrl && s.coverUrl.trim() !== "" 
-      ? s.coverUrl 
-      : "/covers/default.png",
+    coverUrl:
+      typeof s.coverUrl === "string" && s.coverUrl.trim() !== ""
+        ? s.coverUrl
+        : "/covers/default.jpg",
   }));
 
   return <ExploreClient polyglotStories={polyglotStories} />;

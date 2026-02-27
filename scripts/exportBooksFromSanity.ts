@@ -30,6 +30,7 @@ type RawStory = {
   text?: string;
   slug?: string;
   audio?: string;
+  cover?: string;
   vocabRaw?: unknown;
   _updatedAt?: string;
 };
@@ -59,6 +60,7 @@ type ExportedStory = {
   title: string;
   text: string;
   audio: string;
+  cover?: string;
   vocab: unknown[];
 };
 
@@ -229,6 +231,10 @@ async function exportBooks() {
         text,
         "slug": coalesce(slug.current, _id),
         "audio": coalesce(audio.asset->url, ""),
+        "cover": select(
+          defined(cover.asset->url) => cover.asset->url,
+          null
+        ),
         vocabRaw
       }
     }`;
@@ -254,12 +260,16 @@ async function exportBooks() {
     const storiesRaw: RawStory[] = Array.isArray(b.stories) ? b.stories : [];
     const stories: ExportedStory[] = storiesRaw.map((s, i) => {
       const sSlug = safeString(s.slug, safeString(s._id, `story-${i + 1}`));
+      const sCover =
+        typeof s.cover === "string" && s.cover.length > 0 ? s.cover : undefined;
+
       return {
         id: sSlug,
         slug: sSlug,
         title: safeString(s.title, `Story ${i + 1}`),
         text: safeString(s.text, ""),
         audio: safeString(s.audio, ""),
+        ...(sCover ? { cover: sCover } : {}),
         vocab: normalizeVocab(s.vocabRaw),
       };
     });

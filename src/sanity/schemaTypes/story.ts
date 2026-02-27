@@ -4,6 +4,35 @@ import type { InputProps } from "sanity";
 import React from "react";
 import StoryGeneratorInput from "../components/StoryGeneratorInput";
 
+type SetPatch = {
+  type: "set";
+  path: (string | number)[];
+  value: unknown;
+};
+
+type SyncInputProps = {
+  document?: unknown;
+  onChange: (patch: SetPatch) => void;
+};
+
+function isRecord(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v);
+}
+
+function getBookRefId(doc: unknown): string | null {
+  if (!isRecord(doc)) return null;
+  const book = doc.book;
+  if (!isRecord(book)) return null;
+  const ref = book._ref;
+  return typeof ref === "string" && ref.length > 0 ? ref : null;
+}
+
+function getLanguage(doc: unknown): string | null {
+  if (!isRecord(doc)) return null;
+  const language = doc.language;
+  return typeof language === "string" && language.length > 0 ? language : null;
+}
+
 export const story = defineType({
   name: "story",
   title: "Story",
@@ -26,69 +55,83 @@ export const story = defineType({
     // 🔄 AUTO-HERENCIA DE METADATOS DEL LIBRO
     //
     defineField({
-  name: "syncBookMetadata",
-  title: "Sync Book Metadata",
-  type: "string",
-  hidden: true,
-  components: {
-    input: function SyncBookMetadataComponent(props) {
-      const { document, onChange } = props as any;
+      name: "syncBookMetadata",
+      title: "Sync Book Metadata",
+      type: "string",
+      hidden: true,
+      components: {
+        input: function SyncBookMetadataComponent(props: unknown) {
+          const { document, onChange } = props as SyncInputProps;
 
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      React.useEffect(() => {
-        const run = async () => {
-          const bookRef = document?.book?._ref;
-          if (!bookRef) return;
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          React.useEffect(() => {
+            const run = async () => {
+              const bookRef = getBookRefId(document);
+              if (!bookRef) return;
 
-          try {
-            const query = `*[_type == "book" && _id == $id][0]{
-              language, region, level, topic, formality
-            }`;
+              try {
+                const query = `*[_type == "book" && _id == $id][0]{
+                  language, region, level, topic, formality
+                }`;
 
-            const response = await fetch("/api/sanity-query", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ query, params: { id: bookRef } }),
-            });
+                const response = await fetch("/api/sanity-query", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ query, params: { id: bookRef } }),
+                });
 
-            const { result: bookData } = await response.json();
-            if (!bookData) return;
+                const json: unknown = await response.json();
+                if (!isRecord(json)) return;
 
-            const b = bookData;
-            const regionFieldMap: Record<string, string> = {
-              spanish: "region_es",
-              english: "region_en",
-              german: "region_de",
-              french: "region_fr",
-              italian: "region_it",
-              portuguese: "region_pt",
+                const result = json.result;
+                if (!isRecord(result)) return;
+
+                const b = result;
+
+                const regionFieldMap: Record<string, string> = {
+                  spanish: "region_es",
+                  english: "region_en",
+                  german: "region_de",
+                  french: "region_fr",
+                  italian: "region_it",
+                  portuguese: "region_pt",
+                };
+
+                const lang = typeof b.language === "string" ? b.language : null;
+                const regionField = lang ? regionFieldMap[lang] : undefined;
+
+                const patch: SetPatch[] = [];
+
+                if (typeof b.language === "string") {
+                  patch.push({ type: "set", path: ["language"], value: b.language });
+                }
+                if (typeof b.level === "string") {
+                  patch.push({ type: "set", path: ["level"], value: b.level });
+                }
+                if (typeof b.topic === "string") {
+                  patch.push({ type: "set", path: ["topic"], value: b.topic });
+                }
+                if (typeof b.formality === "string") {
+                  patch.push({ type: "set", path: ["formality"], value: b.formality });
+                }
+
+                if (regionField && typeof b.region === "string") {
+                  patch.push({ type: "set", path: [regionField], value: b.region });
+                }
+
+                patch.forEach((p) => onChange(p));
+              } catch (err) {
+                console.error("Error syncing book metadata:", err);
+              }
             };
 
-            const regionField = regionFieldMap[b.language];
+            void run();
+          }, [document, onChange]);
 
-            const patch = [
-              { type: "set", path: ["language"], value: b.language },
-              { type: "set", path: ["level"], value: b.level },
-              { type: "set", path: ["topic"], value: b.topic },
-              { type: "set", path: ["formality"], value: b.formality },
-            ];
-
-            if (regionField)
-              patch.push({ type: "set", path: [regionField], value: b.region });
-
-            patch.forEach((p) => onChange(p));
-          } catch (err) {
-            console.error("Error syncing book metadata:", err);
-          }
-        };
-
-        run();
-      }, [document?.book?._ref, onChange]);
-
-      return null;
-    },
-  },
-}),
+          return null;
+        },
+      },
+    }),
 
     //
     // 🧭 INPUT SECTION — configuración previa a la generación
@@ -113,7 +156,7 @@ export const story = defineType({
       name: "region_es",
       title: "Region",
       type: "string",
-      hidden: ({ document }) => document?.language !== "spanish",
+      hidden: ({ document }) => getLanguage(document) !== "spanish",
       options: {
         list: [
           { title: "Spain", value: "spain" },
@@ -131,7 +174,7 @@ export const story = defineType({
       name: "region_en",
       title: "Region",
       type: "string",
-      hidden: ({ document }) => document?.language !== "english",
+      hidden: ({ document }) => getLanguage(document) !== "english",
       options: {
         list: [
           { title: "United States", value: "usa" },
@@ -147,7 +190,7 @@ export const story = defineType({
       name: "region_de",
       title: "Region",
       type: "string",
-      hidden: ({ document }) => document?.language !== "german",
+      hidden: ({ document }) => getLanguage(document) !== "german",
       options: { list: [{ title: "Germany", value: "germany" }] },
       description: "Optional.",
     }),
@@ -156,7 +199,7 @@ export const story = defineType({
       name: "region_fr",
       title: "Region",
       type: "string",
-      hidden: ({ document }) => document?.language !== "french",
+      hidden: ({ document }) => getLanguage(document) !== "french",
       options: { list: [{ title: "France", value: "france" }] },
       description: "Optional.",
     }),
@@ -165,7 +208,7 @@ export const story = defineType({
       name: "region_it",
       title: "Region",
       type: "string",
-      hidden: ({ document }) => document?.language !== "italian",
+      hidden: ({ document }) => getLanguage(document) !== "italian",
       options: { list: [{ title: "Italy", value: "italy" }] },
       description: "Optional.",
     }),
@@ -174,7 +217,7 @@ export const story = defineType({
       name: "region_pt",
       title: "Region",
       type: "string",
-      hidden: ({ document }) => document?.language !== "portuguese",
+      hidden: ({ document }) => getLanguage(document) !== "portuguese",
       options: { list: [{ title: "Brazil", value: "brazil" }] },
       description: "Optional.",
     }),
@@ -246,6 +289,16 @@ export const story = defineType({
     }),
 
     //
+    // 🖼️ COVER — editable desde Sanity (para historias de libros)
+    //
+    defineField({
+      name: "cover",
+      title: "Cover Image",
+      type: "image",
+      options: { hotspot: true },
+    }),
+
+    //
     // 🪶 OUTPUT SECTION — resultado generado y metadatos
     //
     defineField({
@@ -313,12 +366,13 @@ export const story = defineType({
   ],
 
   preview: {
-    select: { title: "title", level: "level" },
-    prepare({ title, level }) {
+    select: { title: "title", level: "level", media: "cover" },
+    prepare({ title, level, media }) {
       const subtitle = level ? `Level: ${level}` : null;
       return {
         title: title || "Untitled Story",
         subtitle: subtitle || "No level assigned",
+        media,
       };
     },
   },
