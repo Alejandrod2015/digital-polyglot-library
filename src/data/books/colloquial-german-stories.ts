@@ -21,7 +21,7 @@ export const colloquialgermanstories: Book = {
       "title": "Auf einen Kaffee, oder was?",
       "text": "<p>In einem kleinen Berliner <span class=\"vocab-word\" data-word=\"Kiez\">Kiez</span><span class=\"vocab-word\" data-word=\"Kiezcafé\">café</span> versucht Mara, ihre <span class=\"vocab-word\" data-word=\"Gedanken ordnen\">Gedanken zu ordnen</span>, bevor sie eine Freundin trifft, die immer zu spät kommt und nie ohne <span class=\"vocab-word\" data-word=\"Neuigkeiten\">Neuigkeiten</span> erscheint. Zwischen <span class=\"vocab-word\" data-word=\"Klappernde Tassen\">klappernden Tassen</span>, dem <span class=\"vocab-word\" data-word=\"Duft\">Duft</span> <span class=\"vocab-word\" data-word=\"Frisch gemahlen\">frisch gemahlener</span> Bohnen und dem leisen <span class=\"vocab-word\" data-word=\"Stimmengewirr\">Stimmengewirr</span> am <span class=\"vocab-word\" data-word=\"Tresen\">Tresen</span> merkt Mara, dass ein <span class=\"vocab-word\" data-word=\"Kurzer Kaffee\">kurzer Kaffee</span> schnell zum <span class=\"vocab-word\" data-word=\"Feierabendgespräch\">Feierabendgespräch</span> werden kann, in dem Entscheidungen plötzlich <span class=\"vocab-word\" data-word=\"Unausweichlich\">unausweichlich</span> wirken.</p>\n\n<p>Mara schiebt die Tür auf und versucht <span class=\"vocab-word\" data-word=\"Ruhig wirken\">ruhig zu wirken</span>.</p>\n<blockquote>Ich komme nur <span class=\"vocab-word\" data-word=\"Auf einen Kaffee\">Auf einen Kaffee</span>, sagt sie sich.</blockquote>\n<blockquote>Dann bin ich wieder weg.</blockquote>\n\n<p>Tom hinter der Bar sieht ihren Blick und versteht sofort. Sie steht da wie jemand <span class=\"vocab-word\" data-word=\"Auf dem Sprung\">Auf dem Sprung</span>, und trotzdem hängt Müdigkeit an ihr.</p>\n\n<p>Am Nebentisch redet ein Mann, als wäre er schon <span class=\"vocab-word\" data-word=\"Fix und fertig\">Fix und fertig</span>. Mara hört es, obwohl sie nicht hören will.</p>\n<blockquote>Ich habe <span class=\"vocab-word\" data-word=\"Keine Lust\">Keine Lust</span> auf fremde Probleme, denkt sie, und schaut schnell wieder weg.</blockquote>\n\n<p>Dann kommt Juli rein, zu schnell, mit rotem Gesicht. In ihren Augen steht <span class=\"vocab-word\" data-word=\"Durcheinander\">Durcheinander</span>.</p>\n<blockquote>Ich bin wieder zu spät, denkt sie. Bitte sei nicht sauer.</blockquote>\n\n<p>Juli setzt sich, und die Worte kommen sofort. Neues Jobangebot, andere Stadt, Entscheidung heute.</p>\n<blockquote>Das ist <span class=\"vocab-word\" data-word=\"Alles auf einmal\">Alles auf einmal</span>, denkt Juli. Warum muss das heute sein?</blockquote>\n\n<p>Mara spürt, wie es in ihrem Kopf drückt.</p>\n<blockquote>Mein <span class=\"vocab-word\" data-word=\"Kopf voll\">Kopf voll</span> und jetzt noch das, denkt sie.</blockquote>\n\n<p>Juli sagt leise, dass sie <span class=\"vocab-word\" data-word=\"Bammel haben\">Bammel hat</span>.</p>\n\n<p>Mara bleibt ruhig.</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Ehrlich gesagt\">Ehrlich gesagt</span>: Du willst gehen, sagt sie.</blockquote>\n\n<p>Juli muss kurz <span class=\"vocab-word\" data-word=\"Zucken\">zucken</span>, aber sie hört zu.</p>\n\n<p>Noch eine Nachricht vom Chef. Mara wird es <span class=\"vocab-word\" data-word=\"Plötzlich klar\">plötzlich klar</span>.</p>\n<blockquote>Jetzt <span class=\"vocab-word\" data-word=\"Grenzen setzen\">Grenzen setzen</span>, denkt sie.</blockquote>\n\n<p>Juli tippt eine Antwort.</p>\n<blockquote>Das ist <span class=\"vocab-word\" data-word=\"Gar nicht so einfach\">gar nicht so einfach</span>, denkt sie.</blockquote>\n\n<p>Mara nickt langsam.</p>\n<blockquote>Du musst nicht perfekt sein, nur ehrlich.</blockquote>\n\n<p>Juli drückt auf Senden. Ihre Hand beginnt zu <span class=\"vocab-word\" data-word=\"Zittern\">zittern</span>.</p>\n<blockquote>Okay. Ich habe mich <span class=\"vocab-word\" data-word=\"Sich was trauen\">was getraut</span>, denkt sie.</blockquote>\n\n<p>Mara lächelt.</p>\n<blockquote><span class=\"vocab-word\" data-word=\"Macht nix\">Macht nix</span>. Wichtig ist nur, dass du es versucht hast.</blockquote>\n\n<p>Im Café ist es immer noch nur Kaffee. Aber für Juli fühlt es sich an wie ein Anfang.</p>",
       "audio": "https://cdn.sanity.io/files/9u7ilulp/production/1e734108a5d8fd1f7606aef77709ba2f52a74ea7.mp3",
-      "cover": "https://cdn.sanity.io/images/9u7ilulp/production/34fc335d5434805ccc4fd508efa24bff848416cd-1536x1024.png",
+      "cover": "https://cdn.sanity.io/images/9u7ilulp/production/c1c648451c66564d9db760001ee5af9070610fc2-1536x1024.png",
       "vocab": [
         {
           "word": "Auf einen Kaffee",
@@ -228,6 +228,214 @@ export const colloquialgermanstories: Book = {
         {
           "word": "Unausweichlich",
           "definition": "Impossible to avoid or escape; inevitable, used here to describe unavoidable chaos."
+        }
+      ]
+    },
+    {
+      "id": "wg-kueche-grosse-gefuehle",
+      "slug": "wg-kueche-grosse-gefuehle",
+      "title": "WG-Küche, große Gefühle",
+      "text": "<p>In einer kleinen Berliner WG-Küche <span class=\"vocab-word\" data-word=\"verändert\">verändert</span> ein <span class=\"vocab-word\" data-word=\"gewöhnlicher\">gewöhnlicher</span> Abend alles. Mia, eine junge Studentin, kocht <span class=\"vocab-word\" data-word=\"vertraut\">vertraut</span> und ruhig, als ihr Mitbewohner Jonas <span class=\"vocab-word\" data-word=\"unerwartet\">unerwartet</span> nach Hause kommt. Jonas <span class=\"vocab-word\" data-word=\"gesteht\">gesteht</span> Mia etwas Wichtiges, aber er schweigt über eine <span class=\"vocab-word\" data-word=\"komplizierte Wahrheit\">komplizierte Wahrheit</span>: Mias beste Freundin Laura ist ebenfalls verliebt in ihn. Eine <span class=\"vocab-word\" data-word=\"Entscheidung\">Entscheidung</span> muss getroffen werden.</p>\n<p>Die Küche roch nach Knoblauch und heißem <span class=\"vocab-word\" data-word=\"Dampf\">Dampf</span>. Mia rührte in der Sauce, barfuß auf kalten Fliesen, und tat so, als wäre der Abend nur ein weiterer in dieser Berliner WG.</p>\n<p>Der Schlüssel drehte sich. Jonas kam rein, zu früh, mit Jacke und <span class=\"vocab-word\" data-word=\"Straßenkälte\">Straßenkälte</span> im Gesicht.</p>\n<blockquote>„Du bist zurück“, sagte Mia.</blockquote>\n<blockquote>„Ja.“ Er ließ den Rucksack fallen, als wäre er zu schwer. „Ich muss mit dir reden.“</blockquote>\n<p>Mia stellte den Löffel ab. „Dann rede.“</p>\n<p>Jonas blieb am <span class=\"vocab-word\" data-word=\"Türrahmen\">Türrahmen</span> stehen. Seine Finger suchten eine Naht an der Jacke, zogen daran, ließen los.</p>\n<blockquote>„Ich mag dich“, sagte er.</blockquote>\n<p>Mia lachte kurz, ohne Wärme. „Magst du. Das sagt man hier schnell.“</p>\n<blockquote>„Nicht so.“ Seine Stimme <span class=\"vocab-word\" data-word=\"zitterte\">zitterte</span> kaum, aber es war genug. „Ich meine… richtig.“</blockquote>\n<p>Mia spürte, wie ihr Herz einen Schritt machte und gleich wieder zurück. „Seit wann?“</p>\n<p>„Seit länger.“ Jonas’ Blick hing an ihr, als müsste er sich <span class=\"vocab-word\" data-word=\"festhalten\">festhalten</span>. „Ich wollte es nicht sagen, weil ich Angst hatte, dass dann alles <span class=\"vocab-word\" data-word=\"kippt\">kippt</span>.“</p>\n<p>„Und jetzt kippt es nicht?“ Mia hörte sich selbst, wie sie nach Luft klang.</p>\n<p>Jonas schloss kurz die Augen. „Es kippt sowieso.“</p>\n<p>Sie wartete. In dem Warten lag schon etwas <span class=\"vocab-word\" data-word=\"Scharfes\">Scharfes</span>.</p>\n<p>„Was ist passiert?“ fragte sie.</p>\n<p>Er öffnete die Augen wieder, und da war Schuld, die nicht nur ihr gehörte. „Laura.“</p>\n<p>Mias Hand <span class=\"vocab-word\" data-word=\"verkrampfte\">verkrampfte</span> sich am Schürzenstoff. „Was ist mit Laura.“</p>\n<p>Jonas’ Mund blieb einen Moment offen, als würde er gegen den Satz <span class=\"vocab-word\" data-word=\"ankämpfen\">ankämpfen</span>. Dann kam er doch, leise, wie ein <span class=\"vocab-word\" data-word=\"Geständnis\">Geständnis</span>, das man nicht zurücknehmen kann.</p>\n<blockquote>„Sie ist auch in mich verliebt.“</blockquote>\n<p>Mia sah ihn an, als hätte jemand das Licht anders eingestellt. „Hat sie dir das gesagt?“</p>\n<p>„Ja.“ Jonas schluckte. „Und ich habe nichts gesagt. Zu ihr. Zu dir. Ich habe nur… <span class=\"vocab-word\" data-word=\"geschwiegen\">geschwiegen</span>.“</p>\n<p>Mia drehte den Herd aus. Das Zischen wurde kleiner, und plötzlich war da Stille, in der jedes Detail zu laut war: der Kühlschrank, die Heizung, Jonas’ Atem.</p>\n<p>„Warum sagst du mir das jetzt?“ fragte sie.</p>\n<p>„Weil ich nicht mehr so tun kann, als wäre alles neutral“, sagte Jonas. „Und weil ich dich nicht <span class=\"vocab-word\" data-word=\"anlügen\">anlügen</span> will.“</p>\n<p>„Du hast mich nicht angelogen“, sagte Mia, und merkte, wie dünn der Satz war. „Du hast nur… <span class=\"vocab-word\" data-word=\"weggelassen\">weggelassen</span>.“</p>\n<p>Jonas trat einen Schritt näher. „Mia, ich—“</p>\n<p>„Nein.“ Sie hob die Hand, nicht hart, eher wie eine Bitte. „Wenn du jetzt weiterredest, wird es ein Moment, den ich nie wieder loswerde.“</p>\n<p>Er blieb stehen.</p>\n<p>Mia atmete langsam aus. Sie dachte an Laura, an ihr Lachen im Flur, an dieses <span class=\"vocab-word\" data-word=\"Selbstverständliche\">Selbstverständliche</span> zwischen ihnen, diese Treue, die man nicht erklären muss.</p>\n<p>„Du musst dich entscheiden“, sagte Mia. „Aber nicht zwischen zwei Mädchen. Zwischen Ehrlichkeit und <span class=\"vocab-word\" data-word=\"Bequemlichkeit\">Bequemlichkeit</span>.“</p>\n<p>Jonas’ Gesicht wurde blass. „Ich will ehrlich sein.“</p>\n<p>„Dann fang damit an.“ Mia nahm den Kochlöffel wieder in die Hand, als wäre er ein <span class=\"vocab-word\" data-word=\"Anker\">Anker</span>. „Geh zu ihr. Sag es ihr. Heute. Und dann komm zurück und sag mir, was du wirklich willst. Ohne <span class=\"vocab-word\" data-word=\"Ausreden\">Ausreden</span>, ohne Schweigen.“</p>\n<p>Jonas nickte, einmal, als würde es weh tun. „Okay.“</p>\n<p>Als die Tür hinter ihm ins Schloss fiel, rührte Mia weiter. Die Sauce duftete noch genauso wie vorher, aber der Abend war nicht mehr derselbe.</p>",
+      "audio": "https://cdn.sanity.io/files/9u7ilulp/production/92ba0bb3a13079924260380eda3b74fa8ccdecc3.mp3",
+      "cover": "https://cdn.sanity.io/images/9u7ilulp/production/35fbec9369a1a0d2e4325c772f378064806f8878-1536x1024.png",
+      "vocab": [
+        {
+          "word": "verändert",
+          "definition": "changes something completely or strongly."
+        },
+        {
+          "word": "gewöhnlicher",
+          "definition": "normal and not special."
+        },
+        {
+          "word": "vertraut",
+          "definition": "familiar and comfortable because you know it well."
+        },
+        {
+          "word": "unerwartet",
+          "definition": "happening without warning or surprise."
+        },
+        {
+          "word": "gesteht",
+          "definition": "admits something personal or serious."
+        },
+        {
+          "word": "komplizierte Wahrheit",
+          "definition": "a truth that is difficult and complex."
+        },
+        {
+          "word": "Entscheidung",
+          "definition": "a choice that you make after thinking."
+        },
+        {
+          "word": "Dampf",
+          "definition": "hot steam rising from something."
+        },
+        {
+          "word": "Straßenkälte",
+          "definition": "the cold feeling from being outside on the street."
+        },
+        {
+          "word": "Türrahmen",
+          "definition": "the frame around a door."
+        },
+        {
+          "word": "zitterte",
+          "definition": "shook slightly, often because of emotion or cold."
+        },
+        {
+          "word": "festhalten",
+          "definition": "to hold on tightly to something."
+        },
+        {
+          "word": "kippt",
+          "definition": "falls over or changes suddenly in a negative way."
+        },
+        {
+          "word": "Scharfes",
+          "definition": "something sharp in a physical or emotional sense."
+        },
+        {
+          "word": "verkrampfte",
+          "definition": "tightened suddenly because of tension or stress."
+        },
+        {
+          "word": "ankämpfen",
+          "definition": "to struggle internally against something."
+        },
+        {
+          "word": "Geständnis",
+          "definition": "an admission of something difficult or secret."
+        },
+        {
+          "word": "geschwiegen",
+          "definition": "remained silent and said nothing."
+        },
+        {
+          "word": "anlügen",
+          "definition": "to lie directly to someone."
+        },
+        {
+          "word": "weggelassen",
+          "definition": "left something out on purpose."
+        },
+        {
+          "word": "Selbstverständliche",
+          "definition": "something that feels natural and does not need explanation."
+        },
+        {
+          "word": "Bequemlichkeit",
+          "definition": "comfort that makes things easy but not always right."
+        },
+        {
+          "word": "Anker",
+          "definition": "something that gives stability or emotional support."
+        },
+        {
+          "word": "Ausreden",
+          "definition": "excuses used to avoid responsibility."
+        }
+      ]
+    },
+    {
+      "id": "spaeti-um-drei-die-letzte-mate",
+      "slug": "spaeti-um-drei-die-letzte-mate",
+      "title": "Späti um drei: Die letzte Mate",
+      "text": "<p>In einem <span class=\"vocab-word\" data-word=\"Berliner Kiez\">Berliner Kiez</span>, zwischen <span class=\"vocab-word\" data-word=\"flackernden Neonröhren\">flackernden Neonröhren</span> und Graffiti, treffen sich zwei junge Erwachsene in einem Späti, als die Nacht schon dünn geworden ist. Zwischen Mate-Flaschen und dem leisen <span class=\"vocab-word\" data-word=\"Brummen\">Brummen</span> des Kühlschranks geraten <span class=\"vocab-word\" data-word=\"unausgesprochene Wahrheiten\">unausgesprochene Wahrheiten</span> ins <span class=\"vocab-word\" data-word=\"Wanken\">Wanken</span>. Während draußen die Stadt nie ganz schläft, müssen sie entscheiden, ob sie bleiben oder endlich gehen.</p>\n<p>Der Asphalt glänzte noch vom Regen, und das <span class=\"vocab-word\" data-word=\"Neonlicht\">Neonlicht</span> des Spätis zitterte in den Pfützen wie eine müde Erinnerung. Drinnen roch es nach kaltem Kaffee, Staub und dieser <span class=\"vocab-word\" data-word=\"süß-herben Mate\">süß-herben Mate</span>, die seit Stunden in der Kühlung wartete. Es war drei Uhr, diese <span class=\"vocab-word\" data-word=\"fragile Stunde\">fragile Stunde</span>, in der selbst Berlin kurz innehält.</p>\n<blockquote>„Du weißt schon, dass das die letzte ist, oder?“ fragte Mira, während sie die Flasche hochhielt.</blockquote>\n<blockquote>„Die letzte Mate oder die letzte Nacht?“ murmelte Jonas und rieb sich über die Stirn.</blockquote>\n<p>Mira <span class=\"vocab-word\" data-word=\"schnaubte\">schnaubte</span> leise. „Mach keine Witze. Ich meine es ernst.“</p>\n<p>Jonas trat näher an die Kühlung, als bräuchte er das Summen im Rücken. „Ich fahre morgen nach Leipzig. Ich habe dir doch davon erzählt.“</p>\n<p>„Erzählt, ja. Aber nie gefragt, was ich davon halte.“</p>\n<p>Zwischen ihnen <span class=\"vocab-word\" data-word=\"klirrte\">klirrte</span> Glas, als Mira die Flasche auf den Tresen stellte. Der Verkäufer <span class=\"vocab-word\" data-word=\"döste\">döste</span> hinter einer Zeitung, <span class=\"vocab-word\" data-word=\"ungerührt\">ungerührt</span> vom Kiezdrama.</p>\n<p>„Was hättest du gesagt?“ Jonas’ Stimme war rau. „Bleib? Für dich?“</p>\n<p>Mira sah ihn lange an. Draußen fuhr eine Tram vorbei, ihr <span class=\"vocab-word\" data-word=\"metallisches Kreischen\">metallisches Kreischen</span> schnitt durch die Nacht. „Ich hätte gesagt: Frag mich, ob ich mitkomme.“</p>\n<p>Jonas’ Lachen war kurz und <span class=\"vocab-word\" data-word=\"ungläubig\">ungläubig</span>. „Du? Du liebst doch diesen Kiez. Deine WG, deine Stammkneipe, deine Leute.“</p>\n<p>„Ich liebe nicht den Ort“, sagte Mira leise. „Ich liebe, wer ich hier mit dir war.“</p>\n<p>Stille. Nur das leise Zischen der Kühlung und das ferne <span class=\"vocab-word\" data-word=\"Murmeln\">Murmeln</span> einer Gruppe, die lachend vorbeizog.</p>\n<p>Jonas griff nach der Mate, öffnete sie, nahm einen Schluck und <span class=\"vocab-word\" data-word=\"verzog das Gesicht\">verzog das Gesicht</span>. „Warm“, sagte er.</p>\n<p>„Wie wir“, antwortete Mira.</p>\n<p>Er sah sie an, diesmal ohne Ausweichen. „Ich hatte Angst“, gab er zu. „Wenn ich dich frage und du nein sagst, bleibt mir nichts. Und wenn du ja sagst… dann muss ich <span class=\"vocab-word\" data-word=\"ernst machen\">ernst machen</span>.“</p>\n<p>Mira trat einen Schritt näher. „Ich habe auch Angst. Vor Leipzig. Vor dem <span class=\"vocab-word\" data-word=\"Neuanfang\">Neuanfang</span>. Vor dem, was passiert, wenn wir es nicht versuchen.“</p>\n<p>Jonas stellte die Flasche zwischen sie. „Also? Teilen wir sie?“</p>\n<p>Sie nahm sie ihm aus der Hand, trank und spürte die <span class=\"vocab-word\" data-word=\"bittere Süße\">bittere Süße</span> auf der Zunge. „Wir teilen sie“, sagte sie. „Aber nicht als Abschied.“</p>\n<p>Draußen begann der Himmel sich grau zu färben. Die erste U-Bahn <span class=\"vocab-word\" data-word=\"rumpelte\">rumpelte</span> unter der Straße, ein Versprechen von Morgen.</p>\n<p>Jonas legte ein paar Münzen auf den Tresen. „Zwei Tickets nach Leipzig“, sagte er leise. „Nicht nur für mich.“</p>\n<p>Mira lächelte, <span class=\"vocab-word\" data-word=\"unsicher\">unsicher</span>, aber <span class=\"vocab-word\" data-word=\"entschlossen\">entschlossen</span>. „Dann ist es keine letzte Mate“, flüsterte sie. „Nur die erste von etwas anderem.“</p>\n<p>Und als sie gemeinsam hinaus in die kühle Berliner <span class=\"vocab-word\" data-word=\"Dämmerung\">Dämmerung</span> traten, wirkte selbst das flackernde Neonlicht plötzlich wie ein Aufbruch.</p>",
+      "audio": "https://cdn.sanity.io/files/9u7ilulp/production/36e926fed728f57dc41d10353f66b3feb9704534.mp3",
+      "cover": "https://cdn.sanity.io/images/9u7ilulp/production/8dfa843fe140ef7fcaa0d288c9d16be679124538-1536x1024.png",
+      "vocab": [
+        {
+          "word": "Berliner Kiez",
+          "definition": "a neighborhood area in Berlin with its own local character."
+        },
+        {
+          "word": "flackernden Neonröhren",
+          "definition": "flickering neon tubes that give unstable light."
+        },
+        {
+          "word": "Brummen",
+          "definition": "a low continuous humming sound."
+        },
+        {
+          "word": "unausgesprochene Wahrheiten",
+          "definition": "truths that are felt but not said aloud."
+        },
+        {
+          "word": "Wanken",
+          "definition": "an unstable state; beginning to shake or fall."
+        },
+        {
+          "word": "Neonlicht",
+          "definition": "bright artificial light from neon lamps."
+        },
+        {
+          "word": "süß-herben Mate",
+          "definition": "mate drink with a mix of sweet and bitter taste."
+        },
+        {
+          "word": "fragile Stunde",
+          "definition": "a delicate and emotionally sensitive hour."
+        },
+        {
+          "word": "schnaubte",
+          "definition": "made a short, strong breath sound to show emotion."
+        },
+        {
+          "word": "klirrte",
+          "definition": "made a sharp ringing sound like glass hitting glass."
+        },
+        {
+          "word": "döste",
+          "definition": "rested lightly, almost sleeping."
+        },
+        {
+          "word": "ungerührt",
+          "definition": "not emotionally affected; calm and unmoved."
+        },
+        {
+          "word": "metallisches Kreischen",
+          "definition": "a high, sharp metal screeching sound."
+        },
+        {
+          "word": "ungläubig",
+          "definition": "not able or willing to believe something."
+        },
+        {
+          "word": "Murmeln",
+          "definition": "a low, unclear speaking sound."
+        },
+        {
+          "word": "verzog das Gesicht",
+          "definition": "twisted the face to show dislike or discomfort."
+        },
+        {
+          "word": "ernst machen",
+          "definition": "to become serious and truly commit to something."
+        },
+        {
+          "word": "Neuanfang",
+          "definition": "a fresh start or new beginning."
+        },
+        {
+          "word": "bittere Süße",
+          "definition": "a taste or feeling that is both bitter and sweet."
+        },
+        {
+          "word": "rumpelte",
+          "definition": "moved with a heavy, noisy shaking sound."
+        },
+        {
+          "word": "unsicher",
+          "definition": "not feeling confident or certain."
+        },
+        {
+          "word": "entschlossen",
+          "definition": "firmly decided and determined."
+        },
+        {
+          "word": "Dämmerung",
+          "definition": "the time of day when light is fading or beginning."
         }
       ]
     }
