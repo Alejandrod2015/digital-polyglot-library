@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import StoryBackLink from "@/components/StoryBackLink";
 
 type Props = {
   children: React.ReactNode;
@@ -14,13 +13,7 @@ export default async function StoryLayout({ children, params }: Props) {
       {/* Botón de volver (desktop) */}
       <div className="hidden md:block">
         <div className="mx-auto max-w-4xl px-6 pt-6">
-          <Link
-            href={`/books/${bookSlug}`}
-            className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-gray-700"
-          >
-            <ArrowLeft className="h-5 w-5" />
-            <span>Back to book</span>
-          </Link>
+          <StoryBackLink bookSlug={bookSlug} />
         </div>
       </div>
 

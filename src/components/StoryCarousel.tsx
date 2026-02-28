@@ -11,6 +11,7 @@ type CarouselProps<T> = {
   renderItem: (item: T, index: number) => React.ReactNode;
   className?: string;
   options?: EmblaOptionsType;
+  centerMobile?: boolean;
 };
 
 /**
@@ -23,6 +24,7 @@ export default function StoryCarousel<T>({
   renderItem,
   className,
   options,
+  centerMobile = false,
 }: CarouselProps<T>) {
   const [isDesktop, setIsDesktop] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -69,19 +71,37 @@ export default function StoryCarousel<T>({
     return (
       <div className={cn('relative w-full flex flex-col gap-3', className)}>
         <div
-          className="hide-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory px-0 scroll-smooth"
+          className={cn(
+            "hide-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth",
+            centerMobile ? "px-0" : "px-0"
+          )}
           style={{
             WebkitOverflowScrolling: 'touch',
           }}
         >
+          {centerMobile ? (
+            <div
+              aria-hidden="true"
+              className="flex-shrink-0 w-[15%] sm:w-[22.5%]"
+            />
+          ) : null}
           {items.map((item, i) => (
             <div
               key={i}
-              className="snap-start flex-shrink-0 w-[70%] sm:w-[55%]"
+              className={cn(
+                "flex-shrink-0 w-[70%] sm:w-[55%]",
+                centerMobile ? "snap-center" : "snap-start"
+              )}
             >
               {renderItem(item, i)}
             </div>
           ))}
+          {centerMobile ? (
+            <div
+              aria-hidden="true"
+              className="flex-shrink-0 w-[15%] sm:w-[22.5%]"
+            />
+          ) : null}
         </div>
       </div>
     );

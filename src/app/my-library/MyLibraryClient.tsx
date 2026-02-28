@@ -313,7 +313,7 @@ export default function MyLibraryClient() {
                renderItem={(story) => (
                  <div className="flex flex-col h-full scale-[0.94] origin-top">
                    <Link
-                     href={`/books/${story.bookSlug}/${story.storySlug}?from=my-library`}
+                     href={`/books/${story.bookSlug}/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`}
                      className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
                    >
                      {/* 🔹 Imagen de portada (igual que Explore) */}

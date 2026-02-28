@@ -104,6 +104,8 @@ type ExploreSearchProps = {
     coverUrl?: string;
   }>;
   className?: string;
+  returnTo?: string;
+  returnLabel?: string;
 };
 
 export default function ExploreSearch({
@@ -111,6 +113,8 @@ export default function ExploreSearch({
   bookStories,
   polyglotStories,
   className,
+  returnTo,
+  returnLabel,
 }: ExploreSearchProps) {
   const [query, setQuery] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
@@ -127,6 +131,15 @@ export default function ExploreSearch({
 
     const maxItems = 10;
     const results: Array<{ s: Suggestion; score: number }> = [];
+
+    const withReturnContext = (href: string): string => {
+      if (!returnTo) return href;
+      const [base, existingQuery = ""] = href.split("?");
+      const params = new URLSearchParams(existingQuery);
+      params.set("returnTo", returnTo);
+      if (returnLabel) params.set("returnLabel", returnLabel);
+      return `${base}?${params.toString()}`;
+    };
 
     // Books (from unknown[])
     for (const b of books) {
@@ -153,7 +166,7 @@ export default function ExploreSearch({
           kind: "book",
           id: `book:${slug}`,
           title,
-          href: `/books/${slug}`,
+          href: withReturnContext(`/books/${slug}`),
           subtitle: [language, level].filter(Boolean).join(" · "),
           coverUrl,
         },
@@ -183,7 +196,7 @@ export default function ExploreSearch({
           kind: "bookStory",
           id: `bookStory:${bs.bookSlug}:${bs.storySlug}`,
           title: bs.storyTitle || "Untitled story",
-          href: `/books/${bs.bookSlug}/${bs.storySlug}`,
+          href: withReturnContext(`/books/${bs.bookSlug}/${bs.storySlug}`),
           subtitle: [bs.bookTitle || bs.bookSlug, bs.language, bs.level]
             .filter(Boolean)
             .join(" · "),
@@ -214,7 +227,7 @@ export default function ExploreSearch({
           kind: "polyglotStory",
           id: `polyglot:${ps.slug}`,
           title: ps.title,
-          href: `/stories/${ps.slug}`,
+          href: withReturnContext(`/stories/${ps.slug}`),
           subtitle: [ps.language, ps.level].filter(Boolean).join(" · "),
           coverUrl,
         },
@@ -235,7 +248,7 @@ export default function ExploreSearch({
     }
 
     return out;
-  }, [query, books, bookStories, polyglotStories]);
+  }, [query, books, bookStories, polyglotStories, returnTo, returnLabel]);
 
   useEffect(() => {
     const handleDown = (e: MouseEvent) => {

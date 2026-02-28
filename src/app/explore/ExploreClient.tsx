@@ -319,6 +319,19 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   const hasAnyFilteredContent =
     safeBooks.length > 0 || safePreviewBookStories.length > 0 || safePolyglotStories.length > 0;
 
+  const currentExplorePath = (() => {
+    const q = searchParams.toString();
+    return q ? `${pathname}?${q}` : pathname;
+  })();
+
+  const withReturnContext = (href: string) => {
+    const [base, existingQuery = ""] = href.split("?");
+    const params = new URLSearchParams(existingQuery);
+    params.set("returnTo", currentExplorePath);
+    params.set("returnLabel", "Explore");
+    return `${base}?${params.toString()}`;
+  };
+
   const setTopicInUrl = (topicKey: string) => {
     const params = new URLSearchParams(searchParams.toString());
 
@@ -342,6 +355,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
           books={safeBooks}
           bookStories={safeAllFilteredBookStories}
           polyglotStories={safePolyglotStories}
+          returnTo={currentExplorePath}
+          returnLabel="Explore"
         />
 
         <div className="mb-10">
@@ -405,7 +420,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                 renderItem={(s) => (
                   <Link
                     key={s.id}
-                    href={`/books/${s.bookSlug}/${s.storySlug}`}
+                    href={withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`)}
                     className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
                   >
                     <div className="w-full h-48 bg-gray-800">
@@ -491,7 +506,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                 renderItem={(story) => (
                   <Link
                     key={story.id}
-                    href={`/stories/${story.slug}`}
+                    href={withReturnContext(`/stories/${story.slug}`)}
                     className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
                   >
                     <div className="w-full h-48 bg-gray-800">

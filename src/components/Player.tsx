@@ -47,6 +47,16 @@ function getWakeLockNavigator(): NavigatorWithWakeLock | null {
     : null;
 }
 
+function stripHtml(input: string): string {
+  return input.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function estimateReadMinutes(text: string): number {
+  const words = stripHtml(text).split(/\s+/).filter(Boolean).length;
+  // 180 wpm average reading speed
+  return Math.max(1, Math.ceil(words / 180));
+}
+
 interface PlayerProps {
   src: string;
   bookSlug: string;
@@ -105,6 +115,77 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
     currentIndex >= 0 && currentIndex < stories.length - 1
       ? stories[currentIndex + 1]
       : null;
+  const currentStory = currentIndex >= 0 ? stories[currentIndex] : null;
+
+  const rememberContinueListening = () => {
+    // Solo guardamos libros reales para evitar rutas inválidas (ej. polyglot).
+    if (!book) return;
+    if (!currentStory) return;
+    if (typeof window === "undefined") return;
+
+    const key = "dp_continue_listening_v1";
+    const storyCover =
+      typeof currentStory.cover === "string" && currentStory.cover.trim() !== ""
+        ? currentStory.cover
+        : null;
+    const cover =
+      storyCover ??
+      (typeof book.cover === "string" && book.cover.trim() !== ""
+        ? book.cover
+        : "/covers/default.jpg");
+    const current = {
+      bookSlug: book.slug,
+      storySlug: currentStory.slug,
+      title: currentStory.title,
+      bookTitle: book.title,
+      cover,
+      language: currentStory.language ?? book.language,
+      level: currentStory.level ?? book.level,
+      topic: currentStory.topic ?? book.topic,
+      readMinutes: estimateReadMinutes(currentStory.text ?? ""),
+      audioDurationSec:
+        Number.isFinite(duration) && duration > 0 ? Math.round(duration) : undefined,
+    };
+
+    try {
+      const raw = window.localStorage.getItem(key);
+      const parsed: unknown = raw ? JSON.parse(raw) : [];
+      const list = Array.isArray(parsed) ? parsed : [];
+
+      const safe = list.filter(
+        (i): i is {
+          bookSlug: string;
+          storySlug: string;
+          title: string;
+          bookTitle: string;
+          cover: string;
+          language?: string;
+          level?: string;
+          topic?: string;
+          readMinutes?: number;
+          audioDurationSec?: number;
+        } => {
+        if (typeof i !== "object" || i === null) return false;
+        const r = i as Record<string, unknown>;
+        return (
+          typeof r.bookSlug === "string" &&
+          typeof r.storySlug === "string" &&
+          typeof r.title === "string" &&
+          typeof r.bookTitle === "string" &&
+          typeof r.cover === "string"
+        );
+      }
+      );
+
+      const deduped = safe.filter(
+        (i) => !(i.bookSlug === current.bookSlug && i.storySlug === current.storySlug)
+      );
+      const next = [current, ...deduped].slice(0, 8);
+      window.localStorage.setItem(key, JSON.stringify(next));
+    } catch {
+      // silencioso
+    }
+  };
 
   // ✅ tracking: carga de audio
   useEffect(() => {
@@ -182,6 +263,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       a.play()
         .then(async () => {
           setIsPlaying(true);
+          rememberContinueListening();
           void requestWakeLock();
           await trackMetric(storySlug, bookSlug, "audio_play");
         })
