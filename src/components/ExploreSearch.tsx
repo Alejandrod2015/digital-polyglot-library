@@ -99,6 +99,7 @@ type ExploreSearchProps = {
     title: string;
     language: string;
     level: string;
+    topic?: string;
     text: string;
     coverUrl?: string;
   }>;
@@ -201,7 +202,9 @@ export default function ExploreSearch({
 
       const textPreview = summarize(ps.text ?? "", 90);
       const hay = normalize(
-        [ps.title, ps.slug, ps.language, ps.level, textPreview].filter(Boolean).join(" · ")
+        [ps.title, ps.slug, ps.language, ps.level, ps.topic, textPreview]
+          .filter(Boolean)
+          .join(" · ")
       );
       const sc = scoreMatch(hay, tokens);
       if (sc <= 0) continue;

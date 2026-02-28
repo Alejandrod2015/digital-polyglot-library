@@ -9,6 +9,7 @@ export type PublicUserStory = {
   title: string;
   language: string | null;
   level: string | null;
+  topic: string | null;
   region: string | null;
   text: string | null;
   audioUrl: string | null;
@@ -27,6 +28,7 @@ export async function getPublicUserStories(): Promise<PublicUserStory[]> {
       title: true,
       language: true,
       level: true,
+      topic: true,
       region: true,
       text: true,
       audioUrl: true,
@@ -50,6 +52,7 @@ export async function getUserStoryById(
       title: true,
       language: true,
       level: true,
+      topic: true,
       region: true,
       text: true,
       audioUrl: true,

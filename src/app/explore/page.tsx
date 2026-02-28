@@ -12,6 +12,7 @@ export default async function ExplorePage() {
     title: s.title ?? "",
     language: s.language ?? "",
     level: s.level ?? "",
+    topic: s.topic ?? "",
     text: s.text ?? "",
     coverUrl:
       typeof s.coverUrl === "string" && s.coverUrl.trim() !== ""

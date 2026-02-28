@@ -7,6 +7,7 @@ import { useUser } from "@clerk/nextjs";
 import { useMemo } from "react";
 import dynamic from "next/dynamic";
 import ExploreSearch from "@/components/ExploreSearch";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const BookCarousel = dynamic(() => import("@/components/BookCarousel"), {
   ssr: false,
@@ -21,6 +22,7 @@ type UserStory = {
   title: string;
   language: string;
   level: string;
+  topic?: string;
   text: string;
   coverUrl?: string;
 };
@@ -38,6 +40,13 @@ type BookStoryItem = {
   language: string;
   level: string;
   coverUrl: string;
+  topics: string[];
+};
+
+type TopicChip = {
+  key: string;
+  label: string;
+  count: number;
 };
 
 function isRecord(x: unknown): x is Record<string, unknown> {
@@ -65,6 +74,52 @@ function normalizeCoverUrl(raw: string | null | undefined): string {
   return v;
 }
 
+function normalizeTopicKey(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function toTopicList(value: unknown): string[] {
+  const values: string[] = [];
+
+  if (typeof value === "string") {
+    const cleaned = value.trim();
+    if (cleaned) values.push(cleaned);
+  }
+
+  if (Array.isArray(value)) {
+    for (const entry of value) {
+      if (typeof entry !== "string") continue;
+      const cleaned = entry.trim();
+      if (cleaned) values.push(cleaned);
+    }
+  }
+
+  const seen = new Set<string>();
+  const out: string[] = [];
+
+  for (const item of values) {
+    const key = normalizeTopicKey(item);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(item);
+  }
+
+  return out;
+}
+
+function extractBookTopics(book: Record<string, unknown>): string[] {
+  return toTopicList([
+    ...(toTopicList(book["topic"])),
+    ...(toTopicList(book["theme"])),
+    ...(toTopicList(book["tags"])),
+  ]);
+}
+
 function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
   const out: BookStoryItem[] = [];
 
@@ -76,6 +131,7 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
     const language = getString(b, "language") ?? "";
     const level = getString(b, "level") ?? "";
     const bookCover = normalizeCoverUrl(getString(b, "cover"));
+    const bookTopics = extractBookTopics(b);
 
     if (!bookSlug) continue;
 
@@ -86,6 +142,12 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
       const storyTitle = getString(story, "title") ?? "";
       const storyCover = normalizeCoverUrl(getString(story, "cover"));
       const coverUrl = storyCover !== "/covers/default.jpg" ? storyCover : bookCover;
+      const storyTopics = toTopicList([
+        ...(toTopicList(story["topic"])),
+        ...(toTopicList(story["theme"])),
+        ...(toTopicList(story["tags"])),
+      ]);
+      const topics = toTopicList([...storyTopics, ...bookTopics]);
 
       if (!storySlug) return;
 
@@ -98,6 +160,7 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
         language,
         level,
         coverUrl,
+        topics,
       });
     };
 
@@ -121,50 +184,130 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
   return out;
 }
 
+function matchesTopic(topics: string[], topicKey: string): boolean {
+  if (!topicKey) return true;
+  return topics.some((topic) => normalizeTopicKey(topic) === topicKey);
+}
+
 export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   const { user } = useUser();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
-  const targetLanguages = (user?.publicMetadata?.targetLanguages as unknown) ?? [];
+  const topicFromUrl = searchParams.get("topic") ?? "";
+  const selectedTopicKey = normalizeTopicKey(topicFromUrl);
 
-  const { filteredBooks, filteredPolyglotStories, allFilteredBookStories, previewBookStories } =
-    useMemo(() => {
-      const allBooks = Object.values(books) as unknown[];
-      const allBookStories = extractBookStories(allBooks);
+  const rawTargetLanguages = user?.publicMetadata?.targetLanguages as unknown;
+  const targetLanguages = useMemo(() => rawTargetLanguages ?? [], [rawTargetLanguages]);
 
-      const langs =
-        isStringArray(targetLanguages) && targetLanguages.length > 0
-          ? new Set(targetLanguages.map((l) => l.toLowerCase()))
-          : null;
+  const {
+    filteredBooks,
+    filteredPolyglotStories,
+    allFilteredBookStories,
+    previewBookStories,
+    topicChips,
+    selectedTopicLabel,
+  } = useMemo(() => {
+    const allBooks = Object.values(books) as unknown[];
+    const allBookStories = extractBookStories(allBooks);
 
-      const filteredB = langs
-        ? allBooks.filter((book) => {
-            if (!isRecord(book)) return false;
-            const lang = getString(book, "language");
-            return typeof lang === "string" && langs.has(lang.toLowerCase());
-          })
-        : allBooks;
+    const langs =
+      isStringArray(targetLanguages) && targetLanguages.length > 0
+        ? new Set(targetLanguages.map((l) => l.toLowerCase()))
+        : null;
 
-      const filteredS = langs
-        ? polyglotStories.filter(
-            (s) => typeof s.language === "string" && langs.has(s.language.toLowerCase())
-          )
-        : polyglotStories;
+    const languageFilteredBooks = langs
+      ? allBooks.filter((book) => {
+          if (!isRecord(book)) return false;
+          const lang = getString(book, "language");
+          return typeof lang === "string" && langs.has(lang.toLowerCase());
+        })
+      : allBooks;
 
-      const filteredBookS = langs
-        ? allBookStories.filter(
-            (s) => typeof s.language === "string" && langs.has(s.language.toLowerCase())
-          )
-        : allBookStories;
+    const languageFilteredPolyglotStories = langs
+      ? polyglotStories.filter(
+          (s) => typeof s.language === "string" && langs.has(s.language.toLowerCase())
+        )
+      : polyglotStories;
 
-      const preview = filteredBookS.slice(0, 18);
+    const languageFilteredBookStories = langs
+      ? allBookStories.filter(
+          (s) => typeof s.language === "string" && langs.has(s.language.toLowerCase())
+        )
+      : allBookStories;
 
-      return {
-        filteredBooks: filteredB,
-        filteredPolyglotStories: filteredS,
-        allFilteredBookStories: filteredBookS,
-        previewBookStories: preview,
-      };
-    }, [polyglotStories, targetLanguages]);
+    const topicMap = new Map<string, { label: string; count: number }>();
+
+    const addTopics = (topics: string[]) => {
+      const local = new Set<string>();
+      for (const topic of topics) {
+        const key = normalizeTopicKey(topic);
+        if (!key || local.has(key)) continue;
+        local.add(key);
+
+        const existing = topicMap.get(key);
+        if (existing) {
+          existing.count += 1;
+          continue;
+        }
+
+        topicMap.set(key, { label: topic.trim(), count: 1 });
+      }
+    };
+
+    for (const book of languageFilteredBooks) {
+      if (!isRecord(book)) continue;
+      addTopics(extractBookTopics(book));
+    }
+
+    for (const story of languageFilteredBookStories) {
+      addTopics(story.topics);
+    }
+
+    for (const story of languageFilteredPolyglotStories) {
+      addTopics(toTopicList(story.topic));
+    }
+
+    const chips: TopicChip[] = Array.from(topicMap.entries())
+      .map(([key, value]) => ({
+        key,
+        label: value.label,
+        count: value.count,
+      }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+
+    const selectedLabel =
+      chips.find((chip) => chip.key === selectedTopicKey)?.label || topicFromUrl.trim() || null;
+
+    const topicFilteredBooks = selectedTopicKey
+      ? languageFilteredBooks.filter((book) => {
+          if (!isRecord(book)) return false;
+          return matchesTopic(extractBookTopics(book), selectedTopicKey);
+        })
+      : languageFilteredBooks;
+
+    const topicFilteredBookStories = selectedTopicKey
+      ? languageFilteredBookStories.filter((story) => matchesTopic(story.topics, selectedTopicKey))
+      : languageFilteredBookStories;
+
+    const topicFilteredPolyglotStories = selectedTopicKey
+      ? languageFilteredPolyglotStories.filter((story) =>
+          matchesTopic(toTopicList(story.topic), selectedTopicKey)
+        )
+      : languageFilteredPolyglotStories;
+
+    const preview = topicFilteredBookStories.slice(0, 18);
+
+    return {
+      filteredBooks: topicFilteredBooks,
+      filteredPolyglotStories: topicFilteredPolyglotStories,
+      allFilteredBookStories: topicFilteredBookStories,
+      previewBookStories: preview,
+      topicChips: chips,
+      selectedTopicLabel: selectedLabel,
+    };
+  }, [polyglotStories, targetLanguages, selectedTopicKey, topicFromUrl]);
 
   const safeBooks = Array.isArray(filteredBooks) ? filteredBooks : [];
   const safePolyglotStories = Array.isArray(filteredPolyglotStories) ? filteredPolyglotStories : [];
@@ -173,26 +316,87 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     ? allFilteredBookStories
     : [];
 
+  const hasAnyFilteredContent =
+    safeBooks.length > 0 || safePreviewBookStories.length > 0 || safePolyglotStories.length > 0;
+
+  const setTopicInUrl = (topicKey: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (topicKey) {
+      params.set("topic", topicKey);
+    } else {
+      params.delete("topic");
+    }
+
+    const next = params.toString();
+    router.replace(next ? `${pathname}?${next}` : pathname, { scroll: false });
+  };
+
   return (
     <div className="-mx-4">
       <div className="max-w-6xl mx-auto p-8 text-white">
         <h1 className="text-3xl font-bold mb-6">Explore</h1>
 
         <ExploreSearch
-          className="mb-10"
+          className="mb-5"
           books={safeBooks}
           bookStories={safeAllFilteredBookStories}
           polyglotStories={safePolyglotStories}
         />
+
+        <div className="mb-10">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setTopicInUrl("")}
+              className={[
+                "rounded-full border px-3 py-1.5 text-xs transition-colors",
+                !selectedTopicKey
+                  ? "border-white/35 bg-white/15 text-white"
+                  : "border-white/15 bg-white/5 text-white/80 hover:bg-white/10",
+              ].join(" ")}
+            >
+              All topics
+            </button>
+
+            {topicChips.map((chip) => {
+              const isActive = chip.key === selectedTopicKey;
+
+              return (
+                <button
+                  key={chip.key}
+                  type="button"
+                  onClick={() => setTopicInUrl(chip.key)}
+                  className={[
+                    "rounded-full border px-3 py-1.5 text-xs transition-colors",
+                    isActive
+                      ? "border-emerald-300/70 bg-emerald-300/20 text-emerald-100"
+                      : "border-white/15 bg-white/5 text-white/80 hover:bg-white/10",
+                  ].join(" ")}
+                >
+                  {chip.label} ({chip.count})
+                </button>
+              );
+            })}
+          </div>
+
+          {selectedTopicKey && !hasAnyFilteredContent ? (
+            <p className="mt-3 text-sm text-gray-300">
+              No content found for topic <span className="text-white">{selectedTopicLabel}</span>.
+            </p>
+          ) : null}
+        </div>
 
         <div className="mb-16">
           <h2 className="text-2xl font-semibold mb-6 text-emerald-400">Book Stories</h2>
 
           {safePreviewBookStories.length === 0 ? (
             <div className="h-[240px] flex items-center justify-center text-gray-400 bg-white/5 rounded-2xl">
-              {isStringArray(targetLanguages) && targetLanguages.length > 0
-                ? "No book stories found in your selected languages."
-                : "No book stories available."}
+              {selectedTopicKey
+                ? `No book stories found for ${selectedTopicLabel ?? "this topic"}.`
+                : isStringArray(targetLanguages) && targetLanguages.length > 0
+                  ? "No book stories found in your selected languages."
+                  : "No book stories available."}
             </div>
           ) : (
             <div className="min-h-[240px]">
@@ -236,9 +440,11 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         <h2 className="text-2xl font-semibold mb-6 text-blue-400">Books</h2>
         {safeBooks.length === 0 ? (
           <p className="text-gray-400">
-            {isStringArray(targetLanguages) && targetLanguages.length > 0
-              ? "No books found in your selected languages."
-              : "No books available."}
+            {selectedTopicKey
+              ? `No books found for ${selectedTopicLabel ?? "this topic"}.`
+              : isStringArray(targetLanguages) && targetLanguages.length > 0
+                ? "No books found in your selected languages."
+                : "No books available."}
           </p>
         ) : (
           <BookCarousel
@@ -272,9 +478,11 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
           {safePolyglotStories.length === 0 ? (
             <div className="h-[320px] flex items-center justify-center text-gray-400 bg-white/5 rounded-2xl">
-              {isStringArray(targetLanguages) && targetLanguages.length > 0
-                ? "No stories found in your selected languages."
-                : "No Polyglot stories have been published yet."}
+              {selectedTopicKey
+                ? `No stories found for ${selectedTopicLabel ?? "this topic"}.`
+                : isStringArray(targetLanguages) && targetLanguages.length > 0
+                  ? "No stories found in your selected languages."
+                  : "No Polyglot stories have been published yet."}
             </div>
           ) : (
             <div className="min-h-[320px]">
