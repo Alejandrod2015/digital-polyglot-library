@@ -308,7 +308,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
   };
 
   return (
-    <div className="bg-black/80 px-4 py-3 rounded-t-xl shadow-2xl backdrop-blur w-full relative">
+    <div className="bg-[var(--bg-player)] border-t border-[var(--player-border-top)] px-4 py-3 rounded-t-xl shadow-2xl backdrop-blur w-full relative">
       <audio ref={audioRef} src={resolvedSrc} preload="metadata" />
 
       {/* barra de progreso */}

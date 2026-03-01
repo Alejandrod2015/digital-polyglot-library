@@ -4,6 +4,10 @@
   /* Brand palette: deep blue base + white accent */
   --background: #0b1220;
   --surface: #111a2b;
+  --bg-sidebar: #071326;
+  --bg-content: #0b1e36;
+  --bg-player: rgba(7, 16, 30, 0.94);
+  --player-border-top: rgba(255, 255, 255, 0.14);
   --foreground: #e6eaf2;
   --muted: #9aa7bd;
   --primary: #2563eb;

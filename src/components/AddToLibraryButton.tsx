@@ -15,6 +15,7 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
   const { openSignIn } = useClerk();
   const [inLibrary, setInLibrary] = useState(false);
   const [checking, setChecking] = useState(true);
+  const [celebrate, setCelebrate] = useState(false);
 
   useEffect(() => {
     if (!isLoaded) return;
@@ -60,6 +61,11 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
     }
 
     const key = `dp_library_books_${user.id}`;
+    const adding = !inLibrary;
+    if (adding) {
+      setCelebrate(true);
+      window.setTimeout(() => setCelebrate(false), 550);
+    }
     setInLibrary((prev) => {
       const next = !prev;
       try {
@@ -98,9 +104,9 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
       disabled={!isLoaded || checking}
       className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-colors ${
         inLibrary
-          ? 'bg-blue-600 hover:bg-blue-700 text-white'
+          ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
           : 'bg-gray-700 hover:bg-gray-600 text-gray-200'
-      }`}
+      } ${celebrate ? 'scale-[1.03]' : 'scale-100'} duration-200`}
     >
       {inLibrary ? <BookmarkCheck className="h-5 w-5" /> : <BookmarkPlus className="h-5 w-5" />}
       {inLibrary ? 'In My Library' : 'Add to My Library'}

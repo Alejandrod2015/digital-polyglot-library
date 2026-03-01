@@ -12,11 +12,46 @@ declare global {
 const prisma = globalThis.__prisma__ ?? new PrismaClient();
 if (process.env.NODE_ENV !== "production") globalThis.__prisma__ = prisma;
 
-type FavoriteBody = { word: string; translation: string };
+type FavoriteBody = {
+  word: string;
+  translation: string;
+  exampleSentence?: string;
+  storySlug?: string;
+  storyTitle?: string;
+  sourcePath?: string;
+  language?: string;
+};
 function isFavoriteBody(x: unknown): x is FavoriteBody {
   if (!x || typeof x !== "object") return false;
   const o = x as Record<string, unknown>;
-  return typeof o.word === "string" && typeof o.translation === "string";
+  const optionalString = (v: unknown) => v === undefined || typeof v === "string";
+  return (
+    typeof o.word === "string" &&
+    typeof o.translation === "string" &&
+    optionalString(o.exampleSentence) &&
+    optionalString(o.storySlug) &&
+    optionalString(o.storyTitle) &&
+    optionalString(o.sourcePath) &&
+    optionalString(o.language)
+  );
+}
+
+type FavoriteReviewBody = {
+  word: string;
+  nextReviewAt: string;
+  lastReviewedAt: string;
+  streak: number;
+};
+function isFavoriteReviewBody(x: unknown): x is FavoriteReviewBody {
+  if (!x || typeof x !== "object") return false;
+  const o = x as Record<string, unknown>;
+  return (
+    typeof o.word === "string" &&
+    typeof o.nextReviewAt === "string" &&
+    typeof o.lastReviewedAt === "string" &&
+    typeof o.streak === "number" &&
+    Number.isFinite(o.streak)
+  );
 }
 
 // ✅ cache con tag por usuario
@@ -55,7 +90,15 @@ export async function POST(req: NextRequest): Promise<Response> {
   if (!isFavoriteBody(json))
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
 
-  const { word, translation } = json;
+  const {
+    word,
+    translation,
+    exampleSentence,
+    storySlug,
+    storyTitle,
+    sourcePath,
+    language,
+  } = json;
 
   try {
     const existing = await prisma.favorite.findFirst({
@@ -66,10 +109,26 @@ export async function POST(req: NextRequest): Promise<Response> {
     const favorite = existing
       ? await prisma.favorite.update({
           where: { id: existing.id },
-          data: { translation },
+          data: {
+            translation,
+            exampleSentence: exampleSentence ?? null,
+            storySlug: storySlug ?? null,
+            storyTitle: storyTitle ?? null,
+            sourcePath: sourcePath ?? null,
+            language: language ?? null,
+          },
         })
       : await prisma.favorite.create({
-          data: { userId, word, translation },
+          data: {
+            userId,
+            word,
+            translation,
+            exampleSentence: exampleSentence ?? null,
+            storySlug: storySlug ?? null,
+            storyTitle: storyTitle ?? null,
+            sourcePath: sourcePath ?? null,
+            language: language ?? null,
+          },
         });
 
     // ✅ invalidar cache del tag
@@ -105,6 +164,49 @@ export async function DELETE(req: NextRequest): Promise<Response> {
     return NextResponse.json({ success: true });
   } catch (err: unknown) {
     console.error("❌ Error en DELETE /api/favorites:", err);
+    return NextResponse.json({ error: "Database error" }, { status: 500 });
+  }
+}
+
+// 📝 PATCH (SRS review progress)
+export async function PATCH(req: NextRequest): Promise<Response> {
+  const { userId } = getAuth(req);
+  if (!userId)
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const json: unknown = await req.json();
+  if (!isFavoriteReviewBody(json))
+    return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+
+  const { word, nextReviewAt, lastReviewedAt, streak } = json;
+  const parsedNext = new Date(nextReviewAt);
+  const parsedLast = new Date(lastReviewedAt);
+  if (Number.isNaN(parsedNext.getTime()) || Number.isNaN(parsedLast.getTime())) {
+    return NextResponse.json({ error: "Invalid datetime" }, { status: 400 });
+  }
+
+  try {
+    const existing = await prisma.favorite.findFirst({
+      where: { userId, word },
+      select: { id: true },
+    });
+    if (!existing) {
+      return NextResponse.json({ error: "Favorite not found" }, { status: 404 });
+    }
+
+    const updated = await prisma.favorite.update({
+      where: { id: existing.id },
+      data: {
+        nextReviewAt: parsedNext,
+        lastReviewedAt: parsedLast,
+        streak: Math.max(0, Math.floor(streak)),
+      },
+    });
+
+    revalidateTag("favorites-by-user");
+    return NextResponse.json(updated);
+  } catch (err: unknown) {
+    console.error("❌ Error en PATCH /api/favorites:", err);
     return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
 }

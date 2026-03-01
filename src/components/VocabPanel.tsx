@@ -1,17 +1,26 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { X, Heart } from "lucide-react";
 import { VocabItem } from "@/types/books";
 import { useUser } from "@clerk/nextjs";
 
-type FavoriteItem = { word: string; translation: string };
+type FavoriteItem = {
+  word: string;
+  translation: string;
+  exampleSentence?: string;
+  storySlug?: string;
+  storyTitle?: string;
+  sourcePath?: string;
+  language?: string;
+};
 
 interface VocabPanelProps {
   story: {
     id: string;
     slug: string;
     title: string;
+    language?: string | null;
     vocab?: VocabItem[];
   };
   initialWord?: string | null;
@@ -27,32 +36,60 @@ export default function VocabPanel({
 }: VocabPanelProps) {
   const [selectedWord, setSelectedWord] = useState(initialWord);
   const [definition, setDefinition] = useState(initialDefinition);
+  const [selectedSentence, setSelectedSentence] = useState<string | undefined>(undefined);
+  const [selectedSourcePath, setSelectedSourcePath] = useState<string | undefined>(undefined);
   const [isFav, setIsFav] = useState(false);
   const [loadedFavs, setLoadedFavs] = useState<FavoriteItem[]>([]);
   const { user, isLoaded } = useUser();
 
+  const persistFavoritesCache = useCallback((items: FavoriteItem[]) => {
+    const userCacheKey = `dp_favorites_${user?.id ?? "guest"}`;
+    try {
+      localStorage.setItem(userCacheKey, JSON.stringify(items));
+      // legacy fallback to keep other views in sync
+      localStorage.setItem("favorites", JSON.stringify(items));
+    } catch {
+      // ignore storage errors
+    }
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("favorites-updated"));
+    }
+  }, [user?.id]);
+
   // 🔹 Cargar favoritos una vez al montar
   useEffect(() => {
     const loadFavorites = async () => {
+      const userCacheKey = `dp_favorites_${user?.id ?? "guest"}`;
+      const readCache = (): FavoriteItem[] => {
+        try {
+          const raw = localStorage.getItem(userCacheKey);
+          return raw ? (JSON.parse(raw) as FavoriteItem[]) : [];
+        } catch {
+          return [];
+        }
+      };
+
       try {
         if (user) {
           const res = await fetch("/api/favorites", { cache: "no-store" });
           if (res.ok) {
             const favs = (await res.json()) as FavoriteItem[];
             setLoadedFavs(favs);
+            persistFavoritesCache(favs);
+          } else {
+            setLoadedFavs(readCache());
           }
         } else {
-          const stored = localStorage.getItem("favorites");
-          const favs = stored ? (JSON.parse(stored) as FavoriteItem[]) : [];
+          const favs = readCache();
           setLoadedFavs(favs);
         }
       } catch (err) {
         console.error("Error loading favorites:", err);
-        setLoadedFavs([]);
+        setLoadedFavs(readCache());
       }
     };
     if (isLoaded) void loadFavorites();
-  }, [user, isLoaded]);
+  }, [user, isLoaded, persistFavoritesCache]);
 
   // 🔹 Detecta clics sobre palabras con clase .vocab-word
   useEffect(() => {
@@ -64,10 +101,16 @@ export default function VocabPanel({
 
       const word = el.dataset.word ?? "";
       if (!word) return;
+      const sentenceNode = el.closest("p, blockquote");
+      const sentence = sentenceNode?.textContent?.trim() ?? undefined;
 
       setSelectedWord(word);
       const item = story.vocab?.find((v) => v.word === word);
       setDefinition(item?.definition ?? null);
+      setSelectedSentence(sentence);
+      setSelectedSourcePath(
+        typeof window !== "undefined" ? window.location.pathname : undefined
+      );
       setIsFav(loadedFavs.some((f) => f.word === word));
     };
 
@@ -90,6 +133,8 @@ export default function VocabPanel({
       if (!panel.contains(target)) {
         setSelectedWord(null);
         setDefinition(null);
+        setSelectedSentence(undefined);
+        setSelectedSourcePath(undefined);
         setIsFav(false);
         if (onClose) onClose();
       }
@@ -102,11 +147,26 @@ export default function VocabPanel({
   // 🔹 Alternar favoritos
   const toggleFavorite = async () => {
     if (!selectedWord) return;
-    const newItem: FavoriteItem = { word: selectedWord, translation: definition ?? "" };
+    const newItem: FavoriteItem = {
+      word: selectedWord,
+      translation: definition ?? "",
+      exampleSentence: selectedSentence,
+      storySlug: story.slug,
+      storyTitle: story.title,
+      sourcePath: selectedSourcePath,
+      language: story.language ?? undefined,
+    };
     const prevFav = isFav;
-    setIsFav(!isFav);
+    const nextFav = !isFav;
+    setIsFav(nextFav);
 
     try {
+      const optimistic = prevFav
+        ? loadedFavs.filter((f) => f.word !== selectedWord)
+        : [...loadedFavs, newItem];
+      setLoadedFavs(optimistic);
+      persistFavoritesCache(optimistic);
+
       if (user) {
         const res = await fetch("/api/favorites", {
           method: prevFav ? "DELETE" : "POST",
@@ -115,22 +175,12 @@ export default function VocabPanel({
           body: JSON.stringify(prevFav ? { word: selectedWord } : newItem),
         });
         if (!res.ok) throw new Error("Network error");
-
-        setLoadedFavs((prev) =>
-          prevFav
-            ? prev.filter((f) => f.word === selectedWord ? false : true)
-            : [...prev, newItem]
-        );
       } else {
-        const updated = prevFav
-          ? loadedFavs.filter((f) => f.word !== selectedWord)
-          : [...loadedFavs, newItem];
-        localStorage.setItem("favorites", JSON.stringify(updated));
-        setLoadedFavs(updated);
+        persistFavoritesCache(optimistic);
       }
     } catch (err) {
       console.error("Error updating favorites:", err);
-      setIsFav(prevFav);
+      // Keep local optimistic state so action still feels responsive offline.
     }
   };
 
@@ -147,6 +197,8 @@ export default function VocabPanel({
           onClick={() => {
             setSelectedWord(null);
             setDefinition(null);
+            setSelectedSentence(undefined);
+            setSelectedSourcePath(undefined);
             setIsFav(false);
             if (onClose) onClose();
           }}

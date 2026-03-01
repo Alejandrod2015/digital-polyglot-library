@@ -10,7 +10,7 @@ import {
   Settings,
   LogIn,
   LogOut,
-  PenLine,
+  Sparkles,
 } from "lucide-react";
 import {
   SignedIn,
@@ -77,8 +77,10 @@ export default function Sidebar({ onClose }: SidebarProps) {
     if (typeof onClose === "function") onClose();
   };
 
+  const navLinkClass = "flex items-center gap-3 text-gray-200 hover:text-white transition-colors";
+
   return (
-    <div className="flex flex-col h-full w-full bg-[#0B132B] text-white p-6">
+    <div className="flex flex-col h-full w-full bg-[var(--bg-sidebar)] text-white p-6">
       {/* Logo */}
       <div className="mb-5 flex justify-center">
         <Link href="/" onClick={handleNavClick}>
@@ -97,7 +99,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/"
           onClick={handleNavClick}
-          className="flex items-center gap-3 hover:text-sky-400 transition-colors"
+          className={navLinkClass}
         >
           <Home size={22} /> Home
         </Link>
@@ -105,7 +107,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/explore"
           onClick={handleNavClick}
-          className="flex items-center gap-3 hover:text-blue-400 transition-colors"
+          className={navLinkClass}
         >
           <Compass size={22} /> Explore
         </Link>
@@ -113,7 +115,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/my-library"
           onClick={handleNavClick}
-          className="flex items-center gap-3 hover:text-white transition-colors"
+          className={navLinkClass}
         >
           <BookOpen size={22} /> My Library
         </Link>
@@ -121,7 +123,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/favorites"
           onClick={handleNavClick}
-          className="flex items-center gap-3 hover:text-white transition-colors"
+          className={navLinkClass}
         >
           <Star size={22} /> Favorites
         </Link>
@@ -131,9 +133,9 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Link
             href="/create"
             onClick={handleNavClick}
-            className="flex items-center gap-3 hover:text-white transition-colors"
+            className={navLinkClass}
           >
-            <PenLine size={22} /> Create
+            <Sparkles size={22} /> Create
           </Link>
         )}
 
@@ -142,7 +144,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Link
             href="/story-of-the-week"
             onClick={handleNavClick}
-            className="flex items-center gap-3 hover:text-pink-400 transition-colors"
+            className={navLinkClass}
           >
             <BookMarked size={22} /> Story of the Week
           </Link>
@@ -152,7 +154,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Link
             href="/story-of-the-day"
             onClick={handleNavClick}
-            className="flex items-center gap-3 hover:text-pink-400 transition-colors"
+            className={navLinkClass}
           >
             <BookMarked size={22} /> Story of the Day
           </Link>
@@ -161,7 +163,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/settings"
           onClick={handleNavClick}
-          className="flex items-center gap-3 hover:text-gray-400 transition-colors"
+          className={navLinkClass}
         >
           <Settings size={22} /> Settings
         </Link>

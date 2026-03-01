@@ -88,7 +88,7 @@ export default function MobileMenu() {
       )}
 
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-[#0B132B] z-30 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-64 bg-[var(--bg-sidebar)] z-30 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >

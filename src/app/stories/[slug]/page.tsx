@@ -124,7 +124,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
       {/* Player fijo al fondo */}
       {story.audioUrl && (
-  <div className="fixed bottom-0 left-0 right-0 z-50 bg-[var(--background)] shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
+  <div className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
     <Player
       src={story.audioUrl}
       bookSlug="polyglot"

@@ -13,7 +13,15 @@ model Favorite {
   userId      String
   word        String
   translation String
+  exampleSentence String?
+  storySlug   String?
+  storyTitle  String?
+  sourcePath  String?
+  language    String?
   createdAt   DateTime @default(now())
+  nextReviewAt DateTime?
+  lastReviewedAt DateTime?
+  streak      Int      @default(0)
 
   @@index([userId])
   @@unique([userId, word], name: "userId_word")

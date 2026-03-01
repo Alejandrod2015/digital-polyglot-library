@@ -349,7 +349,7 @@ export default function HomeClient({
   );
 
   return (
-    <main className="min-h-screen bg-[#0D1B2A] text-white flex flex-col items-center px-8 pb-28 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10">
+    <div className="min-h-full w-full text-white flex flex-col items-center px-8 pb-28">
       {/* Continue listening */}
       {continueListening.length > 0 && (
         <section className="w-full max-w-5xl text-center pt-10 mb-12">
@@ -522,6 +522,6 @@ export default function HomeClient({
         </div>
       </section>
 
-    </main>
+    </div>
   );
 }

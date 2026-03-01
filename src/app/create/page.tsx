@@ -3,7 +3,7 @@
 import { useUser } from '@clerk/nextjs';
 import { useState } from 'react';
 import Link from 'next/link';
-import { PenLine, Loader2, Music, CheckCircle } from 'lucide-react';
+import { Sparkles, Loader2, Music, CheckCircle } from 'lucide-react';
 import StoryContent from '@/components/StoryContent';
 import VocabPanel from '@/components/VocabPanel';
 
@@ -108,7 +108,7 @@ export default function CreatePage() {
   return (
     <div className="max-w-3xl mx-auto py-12 px-4 text-gray-100">
       <div className="flex items-center gap-3 mb-8">
-        <PenLine className="h-7 w-7 text-white" />
+        <Sparkles className="h-7 w-7 text-white" />
         <h1 className="text-3xl font-bold text-white">Create a Story</h1>
       </div>
 

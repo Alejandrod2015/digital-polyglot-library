@@ -26,6 +26,7 @@ export default function AddStoryToLibraryButton({
  const { openSignIn } = useClerk();
  const [inLibrary, setInLibrary] = useState(false);
  const [checking, setChecking] = useState(true);
+ const [celebrate, setCelebrate] = useState(false);
 
 
  useEffect(() => {
@@ -79,6 +80,11 @@ export default function AddStoryToLibraryButton({
 
 
    const key = `dp_library_stories_${user.id}`;
+   const adding = !inLibrary;
+   if (adding) {
+     setCelebrate(true);
+     window.setTimeout(() => setCelebrate(false), 550);
+   }
    setInLibrary((prev) => {
      const next = !prev;
      try {
@@ -118,13 +124,16 @@ export default function AddStoryToLibraryButton({
      <button
        onClick={toggleLibrary}
        disabled={!isLoaded || checking}
-       className={`p-2 rounded-full transition ${
- inLibrary
-   ? 'bg-white/10 text-white'
-   : 'hover:bg-white/10 text-gray-400 hover:text-white'
-}`}
+       className={`relative p-2 rounded-full transition ${
+         inLibrary
+           ? 'bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-400/35'
+           : 'hover:bg-white/10 text-gray-400 hover:text-white'
+       } ${celebrate ? 'scale-110' : 'scale-100'} duration-200`}
        title={inLibrary ? 'In your library' : 'Add to library'}
      >
+       {celebrate ? (
+         <span className="pointer-events-none absolute -inset-1 rounded-full border border-emerald-300/70 animate-ping" />
+       ) : null}
        {inLibrary ? <BookmarkCheck size={28} /> : <BookmarkPlus size={28} />}
      </button>
    );
@@ -137,9 +146,9 @@ export default function AddStoryToLibraryButton({
      disabled={!isLoaded || checking}
      className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-colors ${
        inLibrary
-         ? 'bg-blue-600 hover:bg-blue-700 text-white'
+         ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
          : 'bg-gray-700 hover:bg-gray-600 text-gray-200'
-     }`}
+     } ${celebrate ? 'scale-[1.03]' : 'scale-100'} duration-200`}
    >
      {inLibrary ? <BookmarkCheck className="h-5 w-5" /> : <BookmarkPlus className="h-5 w-5" />}
      {inLibrary ? 'In My Library' : 'Add to My Library'}

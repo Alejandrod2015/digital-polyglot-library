@@ -13,7 +13,7 @@ export default async function StoryLayout({ children, params }: Props) {
   const fallbackHref = `/books/${bookSlug}`;
 
   return (
-    <div className="flex flex-col min-h-full bg-[var(--background)] text-foreground">
+    <div className="flex flex-col min-h-full text-foreground">
       {/* Botón de volver (desktop) */}
       <div className="hidden md:block">
         <div className="mx-auto max-w-4xl px-6 pt-6">
