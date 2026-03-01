@@ -37,6 +37,10 @@ export default function CoverGeneratorInput() {
   const [error, setError] = useState<string | null>(null)
 
   const synopsis = toSynopsis(synopsisField) || toSynopsis(text)
+  const apiBase =
+    typeof window !== 'undefined' && window.location.hostname === 'localhost'
+      ? ''
+      : 'https://reader.digitalpolyglot.com'
 
   async function generateCover() {
     try {
@@ -52,7 +56,7 @@ export default function CoverGeneratorInput() {
         throw new Error('Add a synopsis (or story text) before generating the cover.')
       }
 
-      const res = await fetch('/api/sanity/generate-cover', {
+      const res = await fetch(`${apiBase}/api/sanity/generate-cover`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -66,7 +70,12 @@ export default function CoverGeneratorInput() {
         }),
       })
 
-      const data = (await res.json()) as { error?: string; details?: string }
+      let data: { error?: string; details?: string } = {}
+      try {
+        data = (await res.json()) as { error?: string; details?: string }
+      } catch {
+        throw new Error('The server did not return valid JSON. Please try again.')
+      }
       if (!res.ok) {
         throw new Error(data.error || data.details || 'Failed to generate cover.')
       }
@@ -114,4 +123,3 @@ export default function CoverGeneratorInput() {
     </Stack>
   )
 }
-

@@ -6,6 +6,24 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
 });
 
+const ALLOWED_ORIGINS = new Set([
+  "https://www.sanity.io",
+  "http://localhost:3000",
+  "http://localhost:3333",
+  "http://127.0.0.1:3000",
+  "http://127.0.0.1:3333",
+]);
+
+function buildCorsHeaders(origin: string | null): Record<string, string> {
+  const allowOrigin = origin && ALLOWED_ORIGINS.has(origin) ? origin : "https://www.sanity.io";
+  return {
+    "Access-Control-Allow-Origin": allowOrigin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    Vary: "Origin",
+  };
+}
+
 type GenerateCoverBody = {
   documentId?: string;
   title?: string;
@@ -28,13 +46,26 @@ function sanitizeFileChunk(input: string): string {
     .slice(0, 80);
 }
 
+export async function OPTIONS(req: Request) {
+  const origin = req.headers.get("origin");
+  return new NextResponse(null, {
+    status: 204,
+    headers: buildCorsHeaders(origin),
+  });
+}
+
 export async function POST(req: Request) {
+  const origin = req.headers.get("origin");
+  const corsHeaders = buildCorsHeaders(origin);
   try {
     let body: GenerateCoverBody;
     try {
       body = (await req.json()) as GenerateCoverBody;
     } catch {
-      return NextResponse.json({ error: "Invalid or missing JSON body" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Invalid or missing JSON body" },
+        { status: 400, headers: corsHeaders }
+      );
     }
 
     const documentId = typeof body.documentId === "string" ? body.documentId.trim() : "";
@@ -48,14 +79,14 @@ export async function POST(req: Request) {
     if (!documentId) {
       return NextResponse.json(
         { error: "Missing documentId. Save the draft once and try again." },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
     if (!synopsisRaw) {
       return NextResponse.json(
         { error: "Missing synopsis. Add a synopsis (or story text) before generating the cover." },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
@@ -95,7 +126,10 @@ export async function POST(req: Request) {
         : null;
 
     if (!imageBase64) {
-      return NextResponse.json({ error: "No image data returned from OpenAI." }, { status: 502 });
+      return NextResponse.json(
+        { error: "No image data returned from OpenAI." },
+        { status: 502, headers: corsHeaders }
+      );
     }
 
     const fileBase = sanitizeFileChunk(title || "story-cover");
@@ -117,16 +151,21 @@ export async function POST(req: Request) {
       },
     }).commit({ autoGenerateArrayKeys: true });
 
-    return NextResponse.json({
-      ok: true,
-      assetId: asset._id,
-      url: typeof asset.url === "string" ? asset.url : null,
-      filename,
-    });
+    return NextResponse.json(
+      {
+        ok: true,
+        assetId: asset._id,
+        url: typeof asset.url === "string" ? asset.url : null,
+        filename,
+      },
+      { headers: corsHeaders }
+    );
   } catch (error) {
     console.error("[sanity/generate-cover] Failed:", error);
     const message = error instanceof Error ? error.message : "Unknown error";
-    return NextResponse.json({ error: "Failed to generate cover", details: message }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to generate cover", details: message },
+      { status: 500, headers: corsHeaders }
+    );
   }
 }
-
