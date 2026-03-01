@@ -6,9 +6,9 @@ import { useUser } from "@clerk/nextjs";
 import { books } from "@/data/books";
 import Skeleton from "@/components/Skeleton";
 import StoryCarousel from "@/components/StoryCarousel";
-import BookCarousel from "@/components/BookCarousel";
+import ReleaseCarousel from "@/components/ReleaseCarousel";
+import BookHorizontalCard from "@/components/BookHorizontalCard";
 import Link from "next/link";
-import Cover from "@/components/Cover";
 
 
 type LibraryBook = {
@@ -34,6 +34,7 @@ type BookCarouselItem = {
  language?: string;
  level?: string;
  cover?: string;
+ description?: string;
  bookId: string;
 };
 
@@ -47,6 +48,7 @@ type StoryItem = {
  bookTitle: string;
  language: string;
  level: string;
+ topic?: string;
  coverUrl?: string;
 };
 
@@ -54,12 +56,30 @@ type StoryItem = {
 const capitalize = (v?: string) =>
  v ? v.charAt(0).toUpperCase() + v.slice(1) : "—";
 
+const capitalizeWords = (value?: string) =>
+ value
+   ? value
+       .split(/\s+/)
+       .filter(Boolean)
+       .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+       .join(" ")
+   : "—";
+
+const formatAudioDuration = (totalSeconds?: number) => {
+ if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:--";
+ const rounded = Math.floor(totalSeconds);
+ const minutes = Math.floor(rounded / 60);
+ const seconds = rounded % 60;
+ return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+};
+
 
 export default function MyLibraryClient() {
  const { user, isLoaded } = useUser();
  const [booksList, setBooksList] = useState<LibraryBook[]>([]);
  const [stories, setStories] = useState<LibraryStory[]>([]);
  const [loading, setLoading] = useState(true);
+ const [storyDurations, setStoryDurations] = useState<Record<string, number>>({});
 
 
  // ------------------------------
@@ -176,6 +196,7 @@ export default function MyLibraryClient() {
        level:
          typeof meta.level === "string" ? capitalize(meta.level) : undefined,
        cover: meta.cover,
+       description: typeof meta.description === "string" ? meta.description : undefined,
        bookId: item.bookId,
      });
    }
@@ -234,6 +255,12 @@ export default function MyLibraryClient() {
          typeof storyMeta.level === "string"
            ? capitalize(storyMeta.level)
            : capitalize(bookMeta.level),
+       topic:
+         typeof storyMeta.topic === "string"
+           ? storyMeta.topic
+           : typeof bookMeta.topic === "string"
+             ? bookMeta.topic
+             : undefined,
        coverUrl: storyCover ?? savedCover ?? bookCover,
      });
    }
@@ -241,6 +268,76 @@ export default function MyLibraryClient() {
 
    return arr;
  }, [stories, allBooks]);
+
+ useEffect(() => {
+   if (storyItems.length === 0) return;
+
+   const unresolved = storyItems.filter((story) => {
+     const key = `${story.bookSlug}:${story.storySlug}`;
+     return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0);
+   });
+   if (unresolved.length === 0) return;
+
+   let cancelled = false;
+
+   const loadDuration = (story: StoryItem) =>
+     new Promise<{ key: string; durationSec?: number }>((resolve) => {
+       const key = `${story.bookSlug}:${story.storySlug}`;
+       const bookMeta = allBooks.find((b) => b.slug === story.bookSlug);
+       const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
+       const rawSrc = storyMeta?.audio;
+       if (!rawSrc || typeof rawSrc !== "string") {
+         resolve({ key });
+         return;
+       }
+
+       const src = rawSrc.startsWith("http")
+         ? rawSrc
+         : `https://cdn.sanity.io/files/9u7ilulp/production/${rawSrc}.mp3`;
+
+       const audio = new Audio();
+       audio.preload = "metadata";
+
+       const done = (durationSec?: number) => {
+         audio.removeAttribute("src");
+         audio.load();
+         resolve({ key, durationSec });
+       };
+
+       const timeout = window.setTimeout(() => done(undefined), 6000);
+       audio.onloadedmetadata = () => {
+         window.clearTimeout(timeout);
+         const duration =
+           Number.isFinite(audio.duration) && audio.duration > 0
+             ? Math.round(audio.duration)
+             : undefined;
+         done(duration);
+       };
+       audio.onerror = () => {
+         window.clearTimeout(timeout);
+         done(undefined);
+       };
+
+       audio.src = src;
+     });
+
+   Promise.all(unresolved.map(loadDuration)).then((resolved) => {
+     if (cancelled || resolved.length === 0) return;
+     setStoryDurations((prev) => {
+       const next = { ...prev };
+       for (const result of resolved) {
+         if (result.durationSec && result.durationSec > 0) {
+           next[result.key] = result.durationSec;
+         }
+       }
+       return next;
+     });
+   });
+
+   return () => {
+     cancelled = true;
+   };
+ }, [storyItems, storyDurations, allBooks]);
 
 
  // ------------------------------
@@ -280,18 +377,56 @@ export default function MyLibraryClient() {
            {bookCarouselItems.length === 0 ? (
              <p className="text-gray-400">You don’t have any saved books right now.</p>
            ) : (
-             <BookCarousel
-               items={bookCarouselItems}
-               renderActions={(book) => (
-                 <button
-                   type="button"
-                   onClick={() => removeItem("books", book.bookId)}
-                   className="text-sm text-red-400 hover:text-red-500 font-medium"
-                 >
-                   Remove
-                 </button>
-               )}
-             />
+             <>
+               <div className="md:hidden min-h-[240px]">
+                 <StoryCarousel
+                   items={bookCarouselItems}
+                   renderItem={(book) => (
+                     <div className="flex flex-col h-full">
+                       <BookHorizontalCard
+                         href={`/books/${book.slug}?from=my-library`}
+                         title={book.title}
+                         cover={book.cover}
+                         meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
+                         description={book.description}
+                       />
+                       <button
+                         type="button"
+                         onClick={() => removeItem("books", book.bookId)}
+                         className="flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium border-t border-white/5 py-2"
+                       >
+                         Remove
+                       </button>
+                     </div>
+                   )}
+                 />
+               </div>
+
+               <div className="hidden md:block">
+                 <ReleaseCarousel
+                   items={bookCarouselItems}
+                   itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
+                   renderItem={(book) => (
+                     <div className="flex flex-col h-full">
+                       <BookHorizontalCard
+                         href={`/books/${book.slug}?from=my-library`}
+                         title={book.title}
+                         cover={book.cover}
+                         meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
+                         description={book.description}
+                       />
+                       <button
+                         type="button"
+                         onClick={() => removeItem("books", book.bookId)}
+                         className="flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium border-t border-white/5 py-2"
+                       >
+                         Remove
+                       </button>
+                     </div>
+                   )}
+                 />
+               </div>
+             </>
            )}
          </section>
 
@@ -334,28 +469,20 @@ export default function MyLibraryClient() {
                          <h3 className="text-xl font-semibold mb-2 text-white">
                            {story.title}
                          </h3>
-                         <p className="text-sm text-blue-300">
+                       <p className="text-sm text-blue-300">
                            {story.bookTitle}
                          </p>
-                         {/* No tenemos resumen aquí, así que omitimos el párrafo de texto */}
                        </div>
                        <div className="mt-3 text-sm text-gray-400 space-y-1">
-                         {story.language && (
-                           <p>
-                             <span className="font-semibold text-gray-300">
-                               Language:
-                             </span>{" "}
-                             {story.language}
-                           </p>
-                         )}
-                         {story.level && (
-                           <p>
-                             <span className="font-semibold text-gray-300">
-                               Level:
-                             </span>{" "}
-                             {story.level}
-                           </p>
-                         )}
+                         <p>
+                           {story.language} · {story.level}
+                         </p>
+                         <p>
+                           {formatAudioDuration(
+                             storyDurations[`${story.bookSlug}:${story.storySlug}`]
+                           )}{" "}
+                           · {capitalizeWords(story.topic)}
+                         </p>
                        </div>
                      </div>
                    </Link>

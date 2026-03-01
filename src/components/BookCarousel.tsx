@@ -14,6 +14,7 @@ type Book = {
   language?: string;
   level?: string;
   cover?: string;
+  description?: string;
   bookId: string; // Necesario para eliminar
 };
 
@@ -22,13 +23,26 @@ type BookCarouselProps = {
   className?: string;
   options?: EmblaOptionsType;
   renderActions?: (book: Book) => React.ReactNode;
+  hrefForBook?: (book: Book) => string;
 };
+
+function stripHtml(input?: string): string {
+  return (input ?? "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+}
+
+function excerpt(text?: string, max = 132): string {
+  const clean = stripHtml(text);
+  if (!clean) return "";
+  if (clean.length <= max) return clean;
+  return `${clean.slice(0, max).trimEnd()}...`;
+}
 
 export default function BookCarousel({
   items = [],
   className,
   options,
   renderActions,
+  hrefForBook,
 }: BookCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
@@ -88,18 +102,26 @@ export default function BookCarousel({
               <div className="bg-white/5 hover:bg-white/10 rounded-2xl overflow-hidden shadow-md transition-all flex flex-col h-full">
 
                 {/* Enlace + portada */}
-                <Link href={`/books/${book.slug}?from=my-library`} className="flex flex-col flex-1">
-                  <div className="aspect-[2/3] w-full">
-                    <Cover src={book.cover} alt={book.title} className="w-full" />
+                <Link
+                  href={hrefForBook ? hrefForBook(book) : `/books/${book.slug}?from=my-library`}
+                  className="flex items-center gap-5 p-5 flex-1 min-h-[220px] md:min-h-[230px]"
+                >
+                  <div className="w-[34%] max-w-[122px] flex-shrink-0">
+                    <Cover src={book.cover} alt={book.title} />
                   </div>
 
-                  <div className="p-4 text-left flex-1">
+                  <div className="text-left flex-1">
                     <p className="text-base font-semibold text-white line-clamp-2">
                       {book.title}
                     </p>
                     <p className="text-sm text-gray-400 mt-1">
                       {book.language} · {book.level}
                     </p>
+                    {book.description ? (
+                      <p className="text-sm text-white/60 mt-2 line-clamp-3">
+                        {excerpt(book.description, 132)}
+                      </p>
+                    ) : null}
                   </div>
                 </Link>
 

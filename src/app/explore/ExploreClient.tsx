@@ -3,18 +3,32 @@
 import Link from "next/link";
 import { books } from "@/data/books";
 import StoryCarousel from "@/components/StoryCarousel";
+import ReleaseCarousel from "@/components/ReleaseCarousel";
+import BookHorizontalCard from "@/components/BookHorizontalCard";
 import { useUser } from "@clerk/nextjs";
-import { useMemo } from "react";
-import dynamic from "next/dynamic";
+import { useEffect, useMemo, useState } from "react";
 import ExploreSearch from "@/components/ExploreSearch";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const BookCarousel = dynamic(() => import("@/components/BookCarousel"), {
-  ssr: false,
-});
-
 const capitalize = (value?: string) =>
   value ? value.charAt(0).toUpperCase() + value.slice(1) : "—";
+
+const capitalizeWords = (value?: string) =>
+  value
+    ? value
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(" ")
+    : "—";
+
+const formatAudioDuration = (totalSeconds?: number) => {
+  if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:--";
+  const rounded = Math.floor(totalSeconds);
+  const minutes = Math.floor(rounded / 60);
+  const seconds = rounded % 60;
+  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+};
 
 type UserStory = {
   id: string;
@@ -309,12 +323,84 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     };
   }, [polyglotStories, targetLanguages, selectedTopicKey, topicFromUrl]);
 
+  const [storyDurations, setStoryDurations] = useState<Record<string, number>>({});
+
   const safeBooks = Array.isArray(filteredBooks) ? filteredBooks : [];
   const safePolyglotStories = Array.isArray(filteredPolyglotStories) ? filteredPolyglotStories : [];
   const safePreviewBookStories = Array.isArray(previewBookStories) ? previewBookStories : [];
   const safeAllFilteredBookStories = Array.isArray(allFilteredBookStories)
     ? allFilteredBookStories
     : [];
+
+  useEffect(() => {
+    if (safePreviewBookStories.length === 0) return;
+
+    const unresolved = safePreviewBookStories.filter((story) => {
+      const key = `${story.bookSlug}:${story.storySlug}`;
+      return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0);
+    });
+    if (unresolved.length === 0) return;
+
+    let cancelled = false;
+
+    const loadDuration = (story: BookStoryItem) =>
+      new Promise<{ key: string; durationSec?: number }>((resolve) => {
+        const key = `${story.bookSlug}:${story.storySlug}`;
+        const bookMeta = Object.values(books).find((b) => b.slug === story.bookSlug);
+        const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
+        const rawSrc = storyMeta?.audio;
+        if (!rawSrc || typeof rawSrc !== "string") {
+          resolve({ key });
+          return;
+        }
+
+        const src = rawSrc.startsWith("http")
+          ? rawSrc
+          : `https://cdn.sanity.io/files/9u7ilulp/production/${rawSrc}.mp3`;
+
+        const audio = new Audio();
+        audio.preload = "metadata";
+
+        const done = (durationSec?: number) => {
+          audio.removeAttribute("src");
+          audio.load();
+          resolve({ key, durationSec });
+        };
+
+        const timeout = window.setTimeout(() => done(undefined), 6000);
+        audio.onloadedmetadata = () => {
+          window.clearTimeout(timeout);
+          const duration =
+            Number.isFinite(audio.duration) && audio.duration > 0
+              ? Math.round(audio.duration)
+              : undefined;
+          done(duration);
+        };
+        audio.onerror = () => {
+          window.clearTimeout(timeout);
+          done(undefined);
+        };
+
+        audio.src = src;
+      });
+
+    Promise.all(unresolved.map(loadDuration)).then((resolved) => {
+      if (cancelled || resolved.length === 0) return;
+      setStoryDurations((prev) => {
+        const next = { ...prev };
+        for (const result of resolved) {
+          if (result.durationSec && result.durationSec > 0) {
+            next[result.key] = result.durationSec;
+          }
+        }
+        return next;
+      });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [safePreviewBookStories, storyDurations]);
 
   const hasAnyFilteredContent =
     safeBooks.length > 0 || safePreviewBookStories.length > 0 || safePolyglotStories.length > 0;
@@ -476,6 +562,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       <p className="mt-3 text-sm text-gray-400">
                         {capitalize(s.language)} · {capitalize(s.level)}
                       </p>
+                      <p className="text-sm text-gray-400">
+                        {formatAudioDuration(storyDurations[`${s.bookSlug}:${s.storySlug}`])} ·{" "}
+                        {capitalizeWords(s.topics[0])}
+                      </p>
                     </div>
                   </Link>
                 )}
@@ -502,30 +592,58 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                 : "No books available."}
           </p>
         ) : (
-          <BookCarousel
-            className="mb-16"
-            items={safeBooks.map((book) => {
-              if (!isRecord(book)) {
-                return {
-                  slug: "",
-                  title: "",
-                  language: "—",
-                  level: "—",
-                  cover: "/covers/default.jpg",
-                  bookId: "",
-                };
-              }
+          <>
+            <div className="md:hidden min-h-[240px] mb-16">
+              <StoryCarousel
+                items={safeBooks}
+                renderItem={(bookUnknown) => {
+                  if (!isRecord(bookUnknown)) return null;
+                  const slug = getString(bookUnknown, "slug") ?? "";
+                  const title = getString(bookUnknown, "title") ?? "";
+                  const language = capitalize(getString(bookUnknown, "language") ?? undefined);
+                  const level = capitalize(getString(bookUnknown, "level") ?? undefined);
+                  const cover = normalizeCoverUrl(getString(bookUnknown, "cover"));
+                  const description = getString(bookUnknown, "description") ?? undefined;
+                  if (!slug) return null;
+                  return (
+                    <BookHorizontalCard
+                      href={withReturnContext(`/books/${slug}`)}
+                      title={title}
+                      cover={cover}
+                      meta={`${language} · ${level}`}
+                      description={description}
+                    />
+                  );
+                }}
+              />
+            </div>
 
-              const slug = getString(book, "slug") ?? "";
-              const title = getString(book, "title") ?? "";
-              const language = capitalize(getString(book, "language") ?? undefined);
-              const level = capitalize(getString(book, "level") ?? undefined);
-              const cover = normalizeCoverUrl(getString(book, "cover"));
-              const bookId = getString(book, "id") ?? "";
-
-              return { slug, title, language, level, cover, bookId };
-            })}
-          />
+            <div className="hidden md:block mb-16">
+              <ReleaseCarousel
+                items={safeBooks}
+                itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
+                renderItem={(bookUnknown) => {
+                  if (!isRecord(bookUnknown)) return null;
+                  const slug = getString(bookUnknown, "slug") ?? "";
+                  const title = getString(bookUnknown, "title") ?? "";
+                  const language = capitalize(getString(bookUnknown, "language") ?? undefined);
+                  const level = capitalize(getString(bookUnknown, "level") ?? undefined);
+                  const cover = normalizeCoverUrl(getString(bookUnknown, "cover"));
+                  const description = getString(bookUnknown, "description") ?? undefined;
+                  if (!slug) return null;
+                  return (
+                    <BookHorizontalCard
+                      href={withReturnContext(`/books/${slug}`)}
+                      title={title}
+                      cover={cover}
+                      meta={`${language} · ${level}`}
+                      description={description}
+                    />
+                  );
+                }}
+              />
+            </div>
+          </>
         )}
 
         <div className="mb-16">

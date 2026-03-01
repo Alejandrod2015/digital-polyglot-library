@@ -9,6 +9,7 @@ import { cn } from "@/utils";
 type Props<T> = {
   items: T[];
   className?: string;
+  itemClassName?: string;
   options?: EmblaOptionsType;
   renderItem: (item: T) => React.ReactNode;
 };
@@ -16,6 +17,7 @@ type Props<T> = {
 export default function ReleaseCarousel<T>({
   items,
   className,
+  itemClassName,
   options,
   renderItem,
 }: Props<T>) {
@@ -69,7 +71,10 @@ export default function ReleaseCarousel<T>({
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="flex-[0_0_45%] sm:flex-[0_0_30%] md:flex-[0_0_23%] lg:flex-[0_0_22%] xl:flex-[0_0_20%] snap-start"
+              className={cn(
+                "flex-[0_0_45%] sm:flex-[0_0_30%] md:flex-[0_0_23%] lg:flex-[0_0_22%] xl:flex-[0_0_20%] snap-start",
+                itemClassName
+              )}
             >
               {renderItem(item)}
             </div>

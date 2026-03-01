@@ -3,9 +3,9 @@
 import { useMemo, useEffect, useState } from "react";
 import { useAuth, useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import Cover from "@/components/Cover";
 import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
+import BookHorizontalCard from "@/components/BookHorizontalCard";
 import { books } from "@/data/books";
 
 type LatestBook = {
@@ -14,6 +14,7 @@ type LatestBook = {
   language?: string;
   level?: string;
   cover?: string;
+  description?: string;
 };
 
 type LatestStory = {
@@ -46,18 +47,38 @@ type ContinueItem = {
   topic?: string;
   readMinutes?: number;
   audioDurationSec?: number;
+  progressSec?: number;
+};
+
+type ContinueMobileCard = {
+  kind: "continue" | "recommendation";
+  item: ContinueItem;
+  reason?: string;
 };
 
 type ContinueListeningApiItem = {
   bookSlug: string;
   storySlug: string;
   lastPlayedAt: string;
+  progressSec?: number;
+  audioDurationSec?: number;
 };
 
 type Props = {
   latestBooks: LatestBook[];
   latestStories: LatestStory[];
   latestPolyglotStories: LatestPolyglotStory[];
+  featuredWeekSlug: string | null;
+  featuredDaySlug: string | null;
+  initialPlan: string;
+  initialTargetLanguages: string[];
+  initialContinueListening: Array<{
+    bookSlug: string;
+    storySlug: string;
+    progressSec?: number;
+    audioDurationSec?: number;
+  }>;
+  continueLoadedOnServer: boolean;
 };
 
 const MOBILE_LIMIT = 6;
@@ -99,40 +120,76 @@ function formatAudioDuration(totalSeconds?: number): string {
   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
-function VerticalCard(props: {
-  title: string;
-  cover?: string;
-  meta?: string;
-  href: string;
-}) {
-  const { title, cover, meta, href } = props;
-
-  return (
-    <Link
-      href={href}
-      className="bg-white/5 hover:bg-white/10 rounded-2xl overflow-hidden shadow-md transition-all flex flex-col h-full cursor-pointer"
-    >
-      <div className="aspect-[2/3] w-full">
-        <Cover src={cover ?? "/covers/default.jpg"} alt={title} className="w-full" />
-      </div>
-
-      <div className="p-4 text-left flex-1">
-        <p className="text-base font-semibold text-white line-clamp-2">{title}</p>
-        {meta ? <p className="text-sm text-gray-400 mt-1">{meta}</p> : null}
-      </div>
-    </Link>
-  );
+function formatRemainingDuration(totalSeconds?: number, progressSec?: number): string {
+  if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:-- left";
+  const safeProgress =
+    typeof progressSec === "number" && Number.isFinite(progressSec) && progressSec > 0
+      ? progressSec
+      : 0;
+  const remaining = Math.max(0, Math.floor(totalSeconds - safeProgress));
+  const minutes = Math.floor(remaining / 60);
+  const seconds = remaining % 60;
+  return `${minutes}:${seconds.toString().padStart(2, "0")} left`;
 }
 
 export default function HomeClient({
   latestBooks,
   latestStories,
   latestPolyglotStories,
+  featuredWeekSlug,
+  featuredDaySlug,
+  initialPlan,
+  initialTargetLanguages,
+  initialContinueListening,
+  continueLoadedOnServer,
 }: Props) {
-  const { user } = useUser();
-  const { userId } = useAuth();
+  const { user, isLoaded } = useUser();
+  const { userId, isLoaded: isAuthLoaded } = useAuth();
 
-  const [continueListening, setContinueListening] = useState<ContinueItem[]>([]);
+  const [continueListening, setContinueListening] = useState<ContinueItem[]>(() =>
+    initialContinueListening
+      .map((item) => {
+        const bookMeta = Object.values(books).find((b) => b.slug === item.bookSlug);
+        if (!bookMeta) return null;
+        const storyMeta = bookMeta.stories.find((s) => s.slug === item.storySlug);
+        if (!storyMeta) return null;
+        const storyCover =
+          typeof storyMeta.cover === "string" && storyMeta.cover.trim() !== ""
+            ? storyMeta.cover
+            : null;
+        const cover =
+          storyCover ??
+          (typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
+            ? bookMeta.cover
+            : "/covers/default.jpg");
+
+        return {
+          bookSlug: bookMeta.slug,
+          storySlug: storyMeta.slug,
+          title: storyMeta.title,
+          bookTitle: bookMeta.title,
+          cover,
+          language: storyMeta.language ?? bookMeta.language,
+          level: storyMeta.level ?? bookMeta.level,
+          topic: storyMeta.topic ?? bookMeta.topic,
+          readMinutes: estimateReadMinutes(storyMeta.text ?? ""),
+          progressSec:
+            typeof item.progressSec === "number" && Number.isFinite(item.progressSec)
+              ? item.progressSec
+              : undefined,
+          audioDurationSec:
+            typeof item.audioDurationSec === "number" && Number.isFinite(item.audioDurationSec)
+              ? item.audioDurationSec
+              : undefined,
+        } as ContinueItem;
+      })
+      .filter((item): item is ContinueItem => item !== null)
+  );
+  const [continueRefreshTick, setContinueRefreshTick] = useState(0);
+  const [continueInitialized, setContinueInitialized] = useState(continueLoadedOnServer);
+  const plan = isLoaded
+    ? (user?.publicMetadata?.plan as string | undefined) ?? "free"
+    : initialPlan;
 
   const toContinueItem = (bookSlug: string, storySlug: string): ContinueItem | null => {
     const bookMeta = Object.values(books).find((b) => b.slug === bookSlug);
@@ -167,6 +224,9 @@ export default function HomeClient({
     let cancelled = false;
 
     const loadContinueListening = async () => {
+      const finish = () => {
+        if (!cancelled) setContinueInitialized(true);
+      };
       let localSafe: ContinueItem[] = [];
 
       try {
@@ -206,6 +266,10 @@ export default function HomeClient({
                   typeof r.audioDurationSec === "number" && Number.isFinite(r.audioDurationSec)
                     ? r.audioDurationSec
                     : undefined;
+                const progressSec =
+                  typeof r.progressSec === "number" && Number.isFinite(r.progressSec)
+                    ? r.progressSec
+                    : undefined;
 
                 return {
                   bookSlug: r.bookSlug,
@@ -218,6 +282,7 @@ export default function HomeClient({
                   topic,
                   readMinutes,
                   audioDurationSec,
+                  progressSec,
                 };
               })
               .filter((i): i is ContinueItem => i !== null);
@@ -227,12 +292,13 @@ export default function HomeClient({
         // ignora datos corruptos
       }
 
-      // Siempre mostramos lo local de inmediato para evitar flicker/desaparición.
-      if (!cancelled) {
-        setContinueListening(localSafe);
+      if (!userId) {
+        if (!cancelled) {
+          setContinueListening(localSafe);
+        }
+        finish();
+        return;
       }
-
-      if (!userId) return;
 
       // Sincroniza historial local previo del dispositivo al backend.
       if (localSafe.length > 0) {
@@ -244,6 +310,8 @@ export default function HomeClient({
               items: localSafe.map((item) => ({
                 bookSlug: item.bookSlug,
                 storySlug: item.storySlug,
+                progressSec: item.progressSec,
+                audioDurationSec: item.audioDurationSec,
               })),
             }),
           });
@@ -259,18 +327,48 @@ export default function HomeClient({
         const remote = (await res.json()) as ContinueListeningApiItem[];
         if (!Array.isArray(remote)) return;
 
+        const localByKey = new Map(
+          localSafe.map((item) => [`${item.bookSlug}:${item.storySlug}`, item] as const)
+        );
+
         const hydrated = remote
-          .map((item) => toContinueItem(item.bookSlug, item.storySlug))
+          .map((item) => {
+            const hydratedItem = toContinueItem(item.bookSlug, item.storySlug);
+            if (!hydratedItem) return null;
+            return {
+              ...hydratedItem,
+              progressSec:
+                typeof item.progressSec === "number" && Number.isFinite(item.progressSec)
+                  ? item.progressSec
+                  : undefined,
+              audioDurationSec:
+                typeof item.audioDurationSec === "number" && Number.isFinite(item.audioDurationSec)
+                  ? item.audioDurationSec
+                  : undefined,
+            };
+          })
           .filter((item): item is ContinueItem => item !== null);
 
+        const merged = hydrated.map((item) => {
+          const key = `${item.bookSlug}:${item.storySlug}`;
+          const local = localByKey.get(key);
+          if (!local) return item;
+          return {
+            ...item,
+            audioDurationSec: item.audioDurationSec ?? local.audioDurationSec,
+            progressSec: item.progressSec ?? local.progressSec,
+          };
+        });
+
         if (cancelled) return;
-        // Solo reemplazamos si hay datos remotos o si no había nada local.
-        if (hydrated.length > 0 || localSafe.length === 0) {
-          setContinueListening(hydrated);
-          localStorage.setItem("dp_continue_listening_v1", JSON.stringify(hydrated));
-        }
+        setContinueListening(merged);
+        localStorage.setItem("dp_continue_listening_v1", JSON.stringify(merged));
       } catch {
-        // mantiene fallback local
+        if (!cancelled) {
+          setContinueListening([]);
+        }
+      } finally {
+        finish();
       }
     };
 
@@ -279,7 +377,33 @@ export default function HomeClient({
     return () => {
       cancelled = true;
     };
-  }, [userId]);
+  }, [userId, continueRefreshTick]);
+
+  const isPersonalizationReady = isAuthLoaded && isLoaded && continueInitialized;
+
+  useEffect(() => {
+    const refresh = () => setContinueRefreshTick((v) => v + 1);
+
+    const handleContinueListeningUpdated = () => refresh();
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === "dp_continue_listening_v1") refresh();
+    };
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") refresh();
+    };
+
+    window.addEventListener("continue-listening-updated", handleContinueListeningUpdated);
+    window.addEventListener("storage", handleStorage);
+    window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", handleVisibility);
+
+    return () => {
+      window.removeEventListener("continue-listening-updated", handleContinueListeningUpdated);
+      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", handleVisibility);
+    };
+  }, []);
 
   useEffect(() => {
     if (continueListening.length === 0) return;
@@ -360,7 +484,9 @@ export default function HomeClient({
     };
   }, [continueListening]);
 
-  const targetLanguagesUnknown = (user?.publicMetadata?.targetLanguages ?? []) as unknown;
+  const targetLanguagesUnknown = isLoaded
+    ? (user?.publicMetadata?.targetLanguages as unknown)
+    : (initialTargetLanguages as unknown);
 
   const languageFilter = useMemo(() => {
     if (!isStringArray(targetLanguagesUnknown) || targetLanguagesUnknown.length === 0)
@@ -387,6 +513,87 @@ export default function HomeClient({
 
   const storiesForHome = filteredStories.slice(0, DESKTOP_LIMIT);
   const polyglotForHome = filteredPolyglot.slice(0, DESKTOP_LIMIT);
+  const [latestStoryDurations, setLatestStoryDurations] = useState<Record<string, number>>({});
+
+  const latestStoryTopicByKey = useMemo(() => {
+    const topicByKey: Record<string, string | undefined> = {};
+    for (const story of storiesForHome) {
+      const bookMeta = Object.values(books).find((b) => b.slug === story.bookSlug);
+      const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
+      topicByKey[`${story.bookSlug}:${story.storySlug}`] = storyMeta?.topic ?? bookMeta?.topic;
+    }
+    return topicByKey;
+  }, [storiesForHome]);
+
+  useEffect(() => {
+    if (storiesForHome.length === 0) return;
+
+    const unresolved = storiesForHome.filter((story) => {
+      const key = `${story.bookSlug}:${story.storySlug}`;
+      return !(typeof latestStoryDurations[key] === "number" && latestStoryDurations[key] > 0);
+    });
+    if (unresolved.length === 0) return;
+
+    let cancelled = false;
+
+    const loadDuration = (story: LatestStory) =>
+      new Promise<{ key: string; durationSec?: number }>((resolve) => {
+        const key = `${story.bookSlug}:${story.storySlug}`;
+        const bookMeta = Object.values(books).find((b) => b.slug === story.bookSlug);
+        const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
+        const rawSrc = storyMeta?.audio;
+        if (!rawSrc || typeof rawSrc !== "string") {
+          resolve({ key });
+          return;
+        }
+
+        const src = rawSrc.startsWith("http")
+          ? rawSrc
+          : `https://cdn.sanity.io/files/9u7ilulp/production/${rawSrc}.mp3`;
+
+        const audio = new Audio();
+        audio.preload = "metadata";
+
+        const done = (durationSec?: number) => {
+          audio.removeAttribute("src");
+          audio.load();
+          resolve({ key, durationSec });
+        };
+
+        const timeout = window.setTimeout(() => done(undefined), 6000);
+        audio.onloadedmetadata = () => {
+          window.clearTimeout(timeout);
+          const duration =
+            Number.isFinite(audio.duration) && audio.duration > 0
+              ? Math.round(audio.duration)
+              : undefined;
+          done(duration);
+        };
+        audio.onerror = () => {
+          window.clearTimeout(timeout);
+          done(undefined);
+        };
+
+        audio.src = src;
+      });
+
+    Promise.all(unresolved.map(loadDuration)).then((resolved) => {
+      if (cancelled || resolved.length === 0) return;
+      setLatestStoryDurations((prev) => {
+        const next = { ...prev };
+        for (const result of resolved) {
+          if (result.durationSec && result.durationSec > 0) {
+            next[result.key] = result.durationSec;
+          }
+        }
+        return next;
+      });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [storiesForHome, latestStoryDurations]);
 
   const withReturnContext = (href: string) => {
     const [base, existingQuery = ""] = href.split("?");
@@ -397,6 +604,89 @@ export default function HomeClient({
     return `${base}?${params.toString()}`;
   };
 
+  const featuredFreeStory = useMemo(() => {
+    const targetSlug =
+      plan === "basic"
+        ? featuredDaySlug ?? featuredWeekSlug
+        : plan === "free"
+          ? featuredWeekSlug
+          : null;
+    if (!targetSlug) return null;
+
+    for (const book of Object.values(books)) {
+      const story = book.stories.find((s) => s.slug === targetSlug);
+      if (!story) continue;
+      return {
+        label: plan === "basic" ? "Story of the Day" : "Story of the Week",
+        href: withReturnContext(`/books/${book.slug}/${story.slug}`),
+        title: story.title,
+        bookTitle: book.title,
+        cover:
+          typeof story.cover === "string" && story.cover.trim() !== ""
+            ? story.cover
+            : typeof book.cover === "string" && book.cover.trim() !== ""
+              ? book.cover
+              : "/covers/default.jpg",
+        language: story.language ?? book.language,
+        level: story.level ?? book.level,
+        topic: story.topic ?? book.topic,
+      };
+    }
+    return null;
+  }, [plan, featuredDaySlug, featuredWeekSlug]);
+
+  const mobileContinueCards = useMemo<ContinueMobileCard[]>(() => {
+    if (continueListening.length === 0) return [];
+
+    const baseCards: ContinueMobileCard[] = continueListening.map((item) => ({
+      kind: "continue",
+      item,
+    }));
+
+    if (continueListening.length !== 1) return baseCards;
+
+    const base = continueListening[0];
+    const baseKey = `${base.bookSlug}:${base.storySlug}`;
+    const baseLanguage = (base.language ?? "").toLowerCase();
+    const baseTopic = (base.topic ?? "").toLowerCase();
+
+    const candidates = storiesForHome
+      .filter((s) => `${s.bookSlug}:${s.storySlug}` !== baseKey)
+      .map((s) => {
+        const bookMeta = Object.values(books).find((b) => b.slug === s.bookSlug);
+        const storyMeta = bookMeta?.stories.find((st) => st.slug === s.storySlug);
+        const topic = (storyMeta?.topic ?? bookMeta?.topic ?? "").toLowerCase();
+        const language = (s.language ?? storyMeta?.language ?? bookMeta?.language ?? "").toLowerCase();
+
+        let score = 0;
+        if (s.bookSlug === base.bookSlug) score += 4;
+        if (language && language === baseLanguage) score += 3;
+        if (topic && baseTopic && topic === baseTopic) score += 5;
+
+        const recommendation: ContinueItem = {
+          bookSlug: s.bookSlug,
+          storySlug: s.storySlug,
+          title: s.storyTitle,
+          bookTitle: s.bookTitle,
+          cover: s.coverUrl,
+          language: s.language ?? storyMeta?.language ?? bookMeta?.language,
+          level: s.level ?? storyMeta?.level ?? bookMeta?.level,
+          topic: storyMeta?.topic ?? bookMeta?.topic,
+        };
+
+        return { score, recommendation };
+      })
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 2)
+      .map((entry) => ({
+        kind: "recommendation" as const,
+        item: entry.recommendation,
+        reason: "Recommended for you",
+      }));
+
+    return [...baseCards, ...candidates];
+  }, [continueListening, storiesForHome]);
+
   const continueDesktopCardWidthClass =
     continueListening.length === 1
       ? "w-[420px] lg:w-[460px]"
@@ -404,7 +694,10 @@ export default function HomeClient({
         ? "w-[360px] lg:w-[400px]"
         : "w-[320px] lg:w-[340px]";
 
-  const renderContinueCard = (item: ContinueItem) => (
+  const renderContinueCard = (
+    item: ContinueItem,
+    options?: { recommendation?: boolean; reason?: string }
+  ) => (
     <Link
       key={`${item.bookSlug}:${item.storySlug}`}
       href={withReturnContext(`/books/${item.bookSlug}/${item.storySlug}`)}
@@ -420,6 +713,11 @@ export default function HomeClient({
 
       <div className="p-5 flex flex-col justify-between flex-1 text-left">
         <div>
+          {options?.recommendation ? (
+            <p className="inline-flex text-[11px] font-semibold uppercase tracking-[0.08em] text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 rounded-full px-2 py-0.5 mb-2">
+              {options.reason ?? "Recommended"}
+            </p>
+          ) : null}
           <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
             {item.title}
           </h3>
@@ -433,7 +731,8 @@ export default function HomeClient({
             {capitalize(item.language)} · {capitalize(item.level)}
           </p>
           <p>
-            {formatAudioDuration(item.audioDurationSec)} · {capitalizeWords(item.topic)}
+            {formatRemainingDuration(item.audioDurationSec, item.progressSec)} ·{" "}
+            {capitalizeWords(item.topic)}
           </p>
         </div>
       </div>
@@ -442,16 +741,59 @@ export default function HomeClient({
 
   return (
     <div className="min-h-full w-full text-white flex flex-col items-center px-8 pb-28">
+      <>
+      {/* Free featured story for free/basic users */}
+      {isPersonalizationReady && featuredFreeStory && continueListening.length === 0 && (
+        <section className="w-full max-w-5xl text-center pt-10 mb-12">
+          <p className="text-xs uppercase tracking-[0.18em] text-sky-300 mb-3">
+            {featuredFreeStory.label}
+          </p>
+          <h2 className="text-2xl font-semibold mb-6">Your free story</h2>
+          <div className="max-w-[520px] mx-auto">
+            <Link
+              href={featuredFreeStory.href}
+              className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+            >
+              <div className="w-full h-48 bg-gray-800">
+                <img
+                  src={featuredFreeStory.cover}
+                  alt={featuredFreeStory.title}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="p-5 flex flex-col justify-between flex-1 text-left">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
+                    {featuredFreeStory.title}
+                  </h3>
+                  <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">
+                    {featuredFreeStory.bookTitle}
+                  </p>
+                </div>
+                <p className="mt-3 text-sm text-gray-400">
+                  {capitalize(featuredFreeStory.language)} · {capitalize(featuredFreeStory.level)} ·{" "}
+                  {capitalizeWords(featuredFreeStory.topic)}
+                </p>
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* Continue listening */}
-      {continueListening.length > 0 && (
+      {isPersonalizationReady && continueListening.length > 0 && (
         <section className="w-full max-w-5xl text-center pt-10 mb-12">
           <h2 className="text-2xl font-semibold mb-6">Continue listening</h2>
 
           <div className="md:hidden min-h-[240px]">
             <StoryCarousel
-              items={continueListening}
-              centerMobile
-              renderItem={(item) => renderContinueCard(item)}
+              items={mobileContinueCards}
+              renderItem={(entry) =>
+                renderContinueCard(entry.item, {
+                  recommendation: entry.kind === "recommendation",
+                  reason: entry.reason,
+                })
+              }
             />
           </div>
 
@@ -479,46 +821,73 @@ export default function HomeClient({
         </section>
       )}
 
+      {isPersonalizationReady && featuredFreeStory && continueListening.length > 0 && (
+        <section className="w-full max-w-5xl text-center mb-12">
+          <p className="text-xs uppercase tracking-[0.18em] text-sky-300 mb-3">
+            {featuredFreeStory.label}
+          </p>
+          <h2 className="text-2xl font-semibold mb-6">Your free story</h2>
+          <div className="max-w-[520px] mx-auto">
+            <Link
+              href={featuredFreeStory.href}
+              className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+            >
+              <div className="w-full h-48 bg-gray-800">
+                <img
+                  src={featuredFreeStory.cover}
+                  alt={featuredFreeStory.title}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="p-5 flex flex-col justify-between flex-1 text-left">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
+                    {featuredFreeStory.title}
+                  </h3>
+                  <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">
+                    {featuredFreeStory.bookTitle}
+                  </p>
+                </div>
+                <p className="mt-3 text-sm text-gray-400">
+                  {capitalize(featuredFreeStory.language)} · {capitalize(featuredFreeStory.level)} ·{" "}
+                  {capitalizeWords(featuredFreeStory.topic)}
+                </p>
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* Latest Books */}
       <section className="mb-12 text-center w-full max-w-5xl">
         <h2 className="text-2xl font-semibold mb-6 text-white">Latest Books</h2>
 
-        <div className="grid md:hidden gap-8 grid-cols-1 sm:grid-cols-2 place-items-center">
-          {filteredBooks.slice(0, MOBILE_LIMIT).map((book) => (
-            <Link
-              key={book.slug}
-              href={`/books/${book.slug}?from=home`}
-              className="flex items-center gap-6 w-full max-w-[480px] bg-white/5 rounded-2xl p-5 cursor-pointer hover:bg-white/10 hover:shadow-md transition-all duration-200"
-            >
-              <div className="w-[38%] sm:w-[35%] md:w-[120px] flex-shrink-0">
-                <Cover src={book.cover ?? "/covers/default.jpg"} alt={book.title} />
-              </div>
-              <div className="flex flex-col justify-center text-left flex-1 text-white">
-                <h3 className="font-semibold text-lg leading-snug mb-2 line-clamp-2">
-                  {book.title}
-                </h3>
-                <div className="space-y-1 text-sm text-white/80">
-                  <p>
-                    <span className="font-medium text-white">Language:</span>{" "}
-                    {capitalize(book.language)}
-                  </p>
-                  <p>
-                    <span className="font-medium text-white">Level:</span> {capitalize(book.level)}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+        <div className="md:hidden min-h-[240px]">
+          <StoryCarousel
+            items={filteredBooks.slice(0, MOBILE_LIMIT)}
+            renderItem={(book) => (
+              <BookHorizontalCard
+                key={book.slug}
+                href={`/books/${book.slug}?from=home`}
+                title={book.title}
+                cover={book.cover}
+                meta={`${capitalize(book.language)} · ${capitalize(book.level)}`}
+                description={book.description}
+              />
+            )}
+          />
         </div>
 
         <div className="hidden md:block">
           <ReleaseCarousel
             items={filteredBooks.slice(0, DESKTOP_LIMIT)}
+            itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
             renderItem={(book) => (
-              <VerticalCard
+              <BookHorizontalCard
                 title={book.title}
                 cover={book.cover}
                 meta={`${capitalize(book.language)} · ${capitalize(book.level)}`}
+                description={book.description}
                 href={`/books/${book.slug}?from=home`}
               />
             )}
@@ -533,7 +902,11 @@ export default function HomeClient({
         <div className="min-h-[240px]">
           <StoryCarousel
             items={storiesForHome}
-            renderItem={(s) => (
+            renderItem={(s) => {
+              const key = `${s.bookSlug}:${s.storySlug}`;
+              const topic = latestStoryTopicByKey[key];
+              const durationSec = latestStoryDurations[key];
+              return (
               <Link
                 key={`${s.bookSlug}:${s.storySlug}`}
                 href={withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`)}
@@ -557,12 +930,18 @@ export default function HomeClient({
                     </p>
                   </div>
 
-                  <p className="mt-3 text-sm text-gray-400">
-                    {capitalize(s.language)} · {capitalize(s.level)}
-                  </p>
+                  <div className="mt-3 text-sm text-gray-400 space-y-1">
+                    <p>
+                      {capitalize(s.language)} · {capitalize(s.level)}
+                    </p>
+                    <p>
+                      {formatAudioDuration(durationSec)} · {capitalizeWords(topic)}
+                    </p>
+                  </div>
                 </div>
               </Link>
-            )}
+              );
+            }}
           />
         </div>
 
@@ -613,7 +992,7 @@ export default function HomeClient({
           />
         </div>
       </section>
-
+      </>
     </div>
   );
 }

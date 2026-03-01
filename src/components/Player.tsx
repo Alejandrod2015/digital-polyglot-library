@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect, useMemo } from "react";
+import { useRef, useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -32,13 +32,41 @@ async function trackMetric(
   }
 }
 
-async function syncContinueListening(storySlug: string, bookSlug: string) {
+async function syncContinueListening(
+  storySlug: string,
+  bookSlug: string,
+  progressSec?: number,
+  audioDurationSec?: number
+) {
+  if (bookSlug === "polyglot") return;
   try {
     await fetch("/api/continue-listening", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ storySlug, bookSlug }),
+      body: JSON.stringify({ storySlug, bookSlug, progressSec, audioDurationSec }),
     });
+  } catch {
+    // silencioso
+  }
+}
+
+function syncContinueListeningBeacon(
+  storySlug: string,
+  bookSlug: string,
+  progressSec?: number,
+  audioDurationSec?: number
+) {
+  if (bookSlug === "polyglot") return;
+  if (typeof navigator === "undefined" || typeof navigator.sendBeacon !== "function") return;
+  try {
+    const payload = JSON.stringify({
+      storySlug,
+      bookSlug,
+      progressSec,
+      audioDurationSec,
+    });
+    const blob = new Blob([payload], { type: "application/json" });
+    navigator.sendBeacon("/api/continue-listening", blob);
   } catch {
     // silencioso
   }
@@ -130,8 +158,9 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       ? stories[currentIndex + 1]
       : null;
   const currentStory = currentIndex >= 0 ? stories[currentIndex] : null;
+  const canTrackContinueListening = Boolean(book && currentStory);
 
-  const rememberContinueListening = () => {
+  const rememberContinueListening = useCallback((overrideProgressSec?: number) => {
     // Solo guardamos libros reales para evitar rutas inválidas (ej. polyglot).
     if (!book) return;
     if (!currentStory) return;
@@ -147,6 +176,14 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       (typeof book.cover === "string" && book.cover.trim() !== ""
         ? book.cover
         : "/covers/default.jpg");
+    const liveProgress = audioRef.current?.currentTime;
+    const resolvedProgress =
+      Number.isFinite(overrideProgressSec)
+        ? (overrideProgressSec as number)
+        : Number.isFinite(liveProgress)
+          ? (liveProgress as number)
+          : 0;
+
     const current = {
       bookSlug: book.slug,
       storySlug: currentStory.slug,
@@ -159,6 +196,10 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       readMinutes: estimateReadMinutes(currentStory.text ?? ""),
       audioDurationSec:
         Number.isFinite(duration) && duration > 0 ? Math.round(duration) : undefined,
+      progressSec:
+        Number.isFinite(resolvedProgress)
+          ? Math.max(0, Math.round(resolvedProgress))
+          : 0,
     };
 
     try {
@@ -178,6 +219,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
           topic?: string;
           readMinutes?: number;
           audioDurationSec?: number;
+          progressSec?: number;
         } => {
         if (typeof i !== "object" || i === null) return false;
         const r = i as Record<string, unknown>;
@@ -196,10 +238,19 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       );
       const next = [current, ...deduped].slice(0, 8);
       window.localStorage.setItem(key, JSON.stringify(next));
+      window.dispatchEvent(
+        new CustomEvent("continue-listening-updated", {
+          detail: {
+            bookSlug: current.bookSlug,
+            storySlug: current.storySlug,
+            progressSec: current.progressSec,
+          },
+        })
+      );
     } catch {
       // silencioso
     }
-  };
+  }, [book, currentStory, duration]);
 
   // ✅ tracking: carga de audio
   useEffect(() => {
@@ -238,6 +289,55 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
   }, []);
 
   useEffect(() => {
+    if (!isPlaying || !canTrackContinueListening) return;
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const interval = window.setInterval(() => {
+      rememberContinueListening(audio.currentTime);
+      void syncContinueListening(
+        storySlug,
+        bookSlug,
+        audio.currentTime,
+        Number.isFinite(audio.duration) ? audio.duration : duration
+      );
+    }, 5000);
+
+    const persistNow = () => {
+      const currentProgress = audio.currentTime;
+      const currentDuration =
+        Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : duration;
+      rememberContinueListening(audio.currentTime);
+      syncContinueListeningBeacon(storySlug, bookSlug, currentProgress, currentDuration);
+      void syncContinueListening(storySlug, bookSlug, currentProgress, currentDuration);
+    };
+
+    window.addEventListener("pagehide", persistNow);
+    document.addEventListener("visibilitychange", persistNow);
+
+    return () => {
+      window.clearInterval(interval);
+      window.removeEventListener("pagehide", persistNow);
+      document.removeEventListener("visibilitychange", persistNow);
+    };
+  }, [isPlaying, duration, bookSlug, storySlug, rememberContinueListening, canTrackContinueListening]);
+
+  useEffect(() => {
+    if (!canTrackContinueListening) return;
+    const audioElement = audioRef.current;
+    return () => {
+      const currentProgress = audioElement?.currentTime ?? progress;
+      const currentDuration =
+        audioElement && Number.isFinite(audioElement.duration) && audioElement.duration > 0
+          ? audioElement.duration
+          : duration;
+      rememberContinueListening(currentProgress);
+      syncContinueListeningBeacon(storySlug, bookSlug, currentProgress, currentDuration);
+      void syncContinueListening(storySlug, bookSlug, currentProgress, currentDuration);
+    };
+  }, [storySlug, bookSlug, progress, duration, rememberContinueListening, canTrackContinueListening]);
+
+  useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -270,6 +370,13 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
 
     if (isPlaying) {
       a.pause();
+      rememberContinueListening(a.currentTime);
+      void syncContinueListening(
+        storySlug,
+        bookSlug,
+        a.currentTime,
+        Number.isFinite(a.duration) ? a.duration : duration
+      );
       setIsPlaying(false);
       void releaseWakeLock();
       await trackMetric(storySlug, bookSlug, "audio_pause", progress);
@@ -277,8 +384,13 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       a.play()
         .then(async () => {
           setIsPlaying(true);
-          rememberContinueListening();
-          void syncContinueListening(storySlug, bookSlug);
+          rememberContinueListening(a.currentTime);
+          void syncContinueListening(
+            storySlug,
+            bookSlug,
+            a.currentTime,
+            Number.isFinite(a.duration) ? a.duration : duration
+          );
           void requestWakeLock();
           await trackMetric(storySlug, bookSlug, "audio_play");
         })

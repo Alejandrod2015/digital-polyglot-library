@@ -8,6 +8,7 @@ export type LatestBook = {
   language?: string;
   level?: string;
   cover?: string;
+  description?: string;
 };
 
 export type LatestStory = {
@@ -59,6 +60,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
   const booksQuery = `*[_type == "book" && published == true] | order(_createdAt desc)[0...$limit]{
     "slug": slug.current,
     title,
+    description,
     language,
     level,
     "cover": coalesce(cover.asset->url, "/covers/default.jpg")
