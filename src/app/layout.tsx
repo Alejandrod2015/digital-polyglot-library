@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import "./globals.css";
 import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
+import MobileTabBar from "@/components/MobileTabBar";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
 import FeedbackButton from "@/components/FeedbackButton";
 import NavigationTimingTracker from "@/components/NavigationTimingTracker";
@@ -63,10 +64,11 @@ export default function RootLayout({
           </Suspense>
 
           {/* Main content scrollable */}
-          <main className="flex-1 md:ml-64 px-1 py-6 pb-[env(safe-area-inset-bottom)] overflow-y-auto bg-[var(--bg-content)]">
+          <main className="flex-1 md:ml-64 px-1 py-6 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-[env(safe-area-inset-bottom)] overflow-y-auto bg-[var(--bg-content)]">
             {children}
           </main>
 
+          <MobileTabBar />
           <FeedbackButton />
         </body>
       </html>

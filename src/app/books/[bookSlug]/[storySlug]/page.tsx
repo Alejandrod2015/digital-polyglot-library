@@ -74,11 +74,11 @@ export default async function StoryPage({ params }: StoryPageProps) {
       {/* Cover de historia (solo si existe) */}
       {storyCoverUrl ? (
         <div className="mb-7">
-          <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-[#102746]">
+          <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-[#102746] lg:max-h-[240px]">
             <img
               src={storyCoverUrl}
               alt={story.title}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover lg:h-[240px]"
             />
           </div>
         </div>
