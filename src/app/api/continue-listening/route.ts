@@ -102,7 +102,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           progressSec: true,
           audioDurationSec: true,
         },
-        orderBy: { lastPlayedAt: "desc" },
+        orderBy: [{ lastPlayedAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
         take: 8,
       });
     } catch (err) {
@@ -119,7 +119,7 @@ export async function GET(req: NextRequest): Promise<Response> {
             createdAt: true,
             metadata: true,
           },
-          orderBy: { createdAt: "desc" },
+          orderBy: [{ createdAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
           take: 200,
         });
 
@@ -163,7 +163,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           storySlug: true,
           lastPlayedAt: true,
         },
-        orderBy: { lastPlayedAt: "desc" },
+        orderBy: [{ lastPlayedAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
         take: 8,
       });
     }

@@ -3,6 +3,7 @@ import { defineField, defineType } from "sanity";
 import type { InputProps } from "sanity";
 import React from "react";
 import StoryGeneratorInput from "../components/StoryGeneratorInput";
+import CoverGeneratorInput from "../components/CoverGeneratorInput";
 
 type SetPatch = {
   type: "set";
@@ -272,6 +273,15 @@ export const story = defineType({
       description: "Free text topic for the story theme.",
     }),
 
+    defineField({
+      name: "synopsis",
+      title: "Synopsis",
+      type: "text",
+      rows: 4,
+      description:
+        "Short synopsis used to generate the cover image. If empty, the story text will be used.",
+    }),
+
     //
     // 🪄 GENERADOR CON CHATGPT — separado y sin sincronización
     //
@@ -296,6 +306,16 @@ export const story = defineType({
       title: "Cover Image",
       type: "image",
       options: { hotspot: true },
+    }),
+
+    defineField({
+      name: "generateCover",
+      title: "🖼️ Generate Cover",
+      type: "string",
+      readOnly: true,
+      components: {
+        input: () => React.createElement(CoverGeneratorInput),
+      },
     }),
 
     //

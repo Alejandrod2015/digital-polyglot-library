@@ -31,7 +31,7 @@ export default async function HomePage() {
           progressSec: true,
           audioDurationSec: true,
         },
-        orderBy: { lastPlayedAt: "desc" },
+        orderBy: [{ lastPlayedAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
         take: 8,
       });
     } catch (err) {
@@ -48,7 +48,7 @@ export default async function HomePage() {
             createdAt: true,
             metadata: true,
           },
-          orderBy: { createdAt: "desc" },
+          orderBy: [{ createdAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
           take: 200,
         });
 
@@ -95,7 +95,7 @@ export default async function HomePage() {
             bookSlug: true,
             storySlug: true,
           },
-          orderBy: { lastPlayedAt: "desc" },
+          orderBy: [{ lastPlayedAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
           take: 8,
         });
         return rows.map((row) => ({

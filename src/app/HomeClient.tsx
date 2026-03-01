@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useEffect, useState } from "react";
+import { useMemo, useEffect, useRef, useState } from "react";
 import { useAuth, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import StoryCarousel from "@/components/StoryCarousel";
@@ -187,6 +187,7 @@ export default function HomeClient({
   );
   const [continueRefreshTick, setContinueRefreshTick] = useState(0);
   const [continueInitialized, setContinueInitialized] = useState(continueLoadedOnServer);
+  const hasSyncedLocalContinueForUserRef = useRef<string | null>(null);
   const plan = isLoaded
     ? (user?.publicMetadata?.plan as string | undefined) ?? "free"
     : initialPlan;
@@ -300,8 +301,11 @@ export default function HomeClient({
         return;
       }
 
-      // Sincroniza historial local previo del dispositivo al backend.
-      if (localSafe.length > 0) {
+      // Sincroniza historial local previo del dispositivo al backend solo una vez por usuario.
+      if (
+        localSafe.length > 0 &&
+        hasSyncedLocalContinueForUserRef.current !== userId
+      ) {
         try {
           await fetch("/api/continue-listening", {
             method: "POST",
@@ -315,6 +319,7 @@ export default function HomeClient({
               })),
             }),
           });
+          hasSyncedLocalContinueForUserRef.current = userId;
         } catch {
           // silencioso
         }
