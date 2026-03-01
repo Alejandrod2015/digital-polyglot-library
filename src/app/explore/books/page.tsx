@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { books } from "@/data/books";
 import { currentUser } from "@clerk/nextjs/server";
+import type { Book } from "@/types/books";
 
 type ExploreBooksPageProps = {
   searchParams: Promise<{ topic?: string }>;
@@ -30,8 +31,8 @@ function toTopicList(value: unknown): string[] {
   return [];
 }
 
-function extractBookTopics(book: Record<string, unknown>): string[] {
-  return [...toTopicList(book["topic"]), ...toTopicList(book["theme"]), ...toTopicList(book["tags"])];
+function extractBookTopics(book: Book): string[] {
+  return [...toTopicList(book.topic), ...toTopicList(book.theme)];
 }
 
 export default async function ExploreBooksPage({ searchParams }: ExploreBooksPageProps) {
@@ -45,11 +46,10 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
       ? new Set(targetLanguagesUnknown.map((l) => l.toLowerCase()))
       : null;
 
-  const allBooks = Object.values(books) as Array<Record<string, unknown>>;
+  const allBooks = Object.values(books) as Book[];
   const filteredByLanguage = targetLanguages
     ? allBooks.filter((book) => {
-        const lang = book["language"];
-        return typeof lang === "string" && targetLanguages.has(lang.toLowerCase());
+        return typeof book.language === "string" && targetLanguages.has(book.language.toLowerCase());
       })
     : allBooks;
 
@@ -73,11 +73,14 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
       ) : (
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {filteredBooks.map((book) => {
-            const slug = typeof book["slug"] === "string" ? book["slug"] : "";
-            const title = typeof book["title"] === "string" ? book["title"] : "Untitled book";
-            const cover = typeof book["cover"] === "string" ? book["cover"] : "/covers/default.jpg";
-            const language = typeof book["language"] === "string" ? book["language"] : "—";
-            const level = typeof book["level"] === "string" ? book["level"] : "—";
+            const slug = book.slug;
+            const title = book.title || "Untitled book";
+            const cover =
+              typeof book.cover === "string" && book.cover.trim() !== ""
+                ? book.cover
+                : "/covers/default.jpg";
+            const language = book.language || "—";
+            const level = book.level || "—";
 
             return (
               <Link

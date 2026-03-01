@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { books } from "@/data/books";
 import { currentUser } from "@clerk/nextjs/server";
+import type { Book, Story } from "@/types/books";
 
 type ExploreStoriesPageProps = {
   searchParams: Promise<{ topic?: string }>;
@@ -45,35 +46,41 @@ function toTopicList(value: unknown): string[] {
 function extractStories(): StoryItem[] {
   const out: StoryItem[] = [];
 
-  for (const book of Object.values(books) as Array<Record<string, unknown>>) {
-    const bookSlug = typeof book["slug"] === "string" ? book["slug"] : "";
+  for (const book of Object.values(books) as Book[]) {
+    const bookSlug = book.slug;
     if (!bookSlug) continue;
 
-    const bookTitle = typeof book["title"] === "string" ? book["title"] : bookSlug;
-    const bookLanguage = typeof book["language"] === "string" ? book["language"] : "";
-    const bookLevel = typeof book["level"] === "string" ? book["level"] : "";
-    const bookCover = typeof book["cover"] === "string" ? book["cover"] : "/covers/default.jpg";
+    const bookTitle = book.title || bookSlug;
+    const bookLanguage = typeof book.language === "string" ? book.language : "";
+    const bookLevel = typeof book.level === "string" ? book.level : "";
+    const bookCover =
+      typeof book.cover === "string" && book.cover.trim() !== ""
+        ? book.cover
+        : "/covers/default.jpg";
     const bookTopics = [
-      ...toTopicList(book["topic"]),
-      ...toTopicList(book["theme"]),
-      ...toTopicList(book["tags"]),
+      ...toTopicList(book.topic),
+      ...toTopicList(book.theme),
     ];
 
-    const stories = book["stories"];
-    if (!Array.isArray(stories)) continue;
+    const stories = Array.isArray(book.stories) ? book.stories : [];
 
-    stories.forEach((story, idx) => {
-      if (typeof story !== "object" || story === null) return;
-      const s = story as Record<string, unknown>;
-      const storySlug = typeof s["slug"] === "string" ? s["slug"] : "";
+    stories.forEach((story: Story, idx) => {
+      const storySlug = typeof story.slug === "string" ? story.slug : "";
       if (!storySlug) return;
 
-      const storyTitle = typeof s["title"] === "string" ? s["title"] : "Untitled story";
-      const storyLanguage = typeof s["language"] === "string" ? s["language"] : bookLanguage;
-      const storyLevel = typeof s["level"] === "string" ? s["level"] : bookLevel;
+      const storyTitle = typeof story.title === "string" ? story.title : "Untitled story";
+      const storyLanguage =
+        typeof story.language === "string" ? story.language : bookLanguage;
+      const storyLevel = typeof story.level === "string" ? story.level : bookLevel;
       const storyCover =
-        typeof s["cover"] === "string" && s["cover"].trim() !== "" ? s["cover"] : bookCover;
-      const storyTopics = [...toTopicList(s["topic"]), ...toTopicList(s["tags"]), ...bookTopics];
+        typeof story.cover === "string" && story.cover.trim() !== ""
+          ? story.cover
+          : bookCover;
+      const storyTopics = [
+        ...toTopicList(story.topic),
+        ...toTopicList(story.tags),
+        ...bookTopics,
+      ];
 
       out.push({
         id: `${bookSlug}:${storySlug}:${idx}`,

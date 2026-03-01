@@ -2,6 +2,7 @@
 
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Suspense } from "react";
 import "./globals.css";
 import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
@@ -57,7 +58,9 @@ export default function RootLayout({
 
           <MobileMenu />
           <BackNavigationHandler />
-          <NavigationTimingTracker />
+          <Suspense fallback={null}>
+            <NavigationTimingTracker />
+          </Suspense>
 
           {/* Main content scrollable */}
           <main className="flex-1 md:ml-64 px-1 py-6 pb-[env(safe-area-inset-bottom)] overflow-y-auto">

@@ -54,6 +54,9 @@ export default async function StoryPage({ params }: StoryPageProps) {
   const coverUrl = rawCover.startsWith("https://cdn.sanity.io/")
     ? `${rawCover}?w=800&fit=crop&auto=format`
     : rawCover;
+  const signInHref = `/sign-in?redirect_url=${encodeURIComponent(
+    `/books/${book.slug}/${story.slug}`
+  )}`;
 
   return (
     <div className="relative max-w-5xl mx-auto pt-10 px-8 pb-[8rem] text-foreground bg-[#0D1B2A]">
@@ -84,12 +87,22 @@ export default async function StoryPage({ params }: StoryPageProps) {
         fallback={
           <div className="relative text-center text-gray-300 py-16">
             <p className="mb-4 text-xl">Unlock full access to all stories.</p>
-            <a
-              href="/plans"
-              className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
-            >
-              Upgrade
-            </a>
+            <div className="flex items-center justify-center gap-3">
+              {!userId ? (
+                <a
+                  href={signInHref}
+                  className="inline-block px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-medium font-medium rounded-xl shadow-lg transition"
+                >
+                  Sign in
+                </a>
+              ) : null}
+              <a
+                href="/plans"
+                className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
+              >
+                Upgrade
+              </a>
+            </div>
           </div>
         }
       >

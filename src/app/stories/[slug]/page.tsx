@@ -49,6 +49,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
     : `${story.text.slice(0, 1000)}…`;
 
   const coverUrl = story.coverUrl ?? "/covers/default.png";
+  const signInHref = `/sign-in?redirect_url=${encodeURIComponent(`/stories/${story.slug}`)}`;
 
   if (typeof story.coverUrl !== "string") {
   console.warn(`[story-page] Missing coverUrl for ${story.slug}`);
@@ -98,12 +99,22 @@ export default async function StoryPage({ params }: StoryPageProps) {
               <p className="text-gray-200 text-xl sm:text-xl mb-3 drop-shadow">
                 Unlock full access to all stories.
               </p>
-              <a
-                href="/plans"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
-              >
-                Upgrade
-              </a>
+              <div className="flex items-center gap-3">
+                {!userId ? (
+                  <a
+                    href={signInHref}
+                    className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-medium font-medium rounded-xl shadow-lg transition"
+                  >
+                    Sign in
+                  </a>
+                ) : null}
+                <a
+                  href="/plans"
+                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
+                >
+                  Upgrade
+                </a>
+              </div>
             </div>
           </>
         )}
