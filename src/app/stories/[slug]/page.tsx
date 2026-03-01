@@ -1,12 +1,10 @@
-import { PrismaClient } from "@/generated/prisma";
+import { prisma } from "@/lib/prisma";
 import Player from "@/components/Player";
 import { notFound } from "next/navigation";
 import StoryReaderClient from "./StoryReaderClient";
-import { currentUser } from "@clerk/nextjs/server";
-import { getFeaturedStory } from "@/lib/getFeaturedStory";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
-
-const prisma = new PrismaClient();
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -23,7 +21,11 @@ export default async function StoryPage({ params }: StoryPageProps) {
     notFound();
   }
 
-  const user = await currentUser();
+  const { userId } = await auth();
+  const [user, featured] = await Promise.all([
+    userId ? currentUser() : Promise.resolve(null),
+    getFeaturedStories(),
+  ]);
   const plan =
     (user?.publicMetadata?.plan as
       | "free"
@@ -32,11 +34,8 @@ export default async function StoryPage({ params }: StoryPageProps) {
       | "polyglot"
       | "owner") || "free";
 
-  const weeklyStory = await getFeaturedStory("week");
-  const dailyStory = await getFeaturedStory("day");
-
-  const isWeeklyStory = weeklyStory?.slug === story.slug;
-  const isDailyStory = dailyStory?.slug === story.slug;
+  const isWeeklyStory = featured.week?.slug === story.slug;
+  const isDailyStory = featured.day?.slug === story.slug;
 
   const hasFullAccess =
     plan === "premium" ||

@@ -323,6 +323,30 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     const q = searchParams.toString();
     return q ? `${pathname}?${q}` : pathname;
   })();
+  const seeAllStoriesHref = (() => {
+    const params = new URLSearchParams();
+    if (topicFromUrl.trim()) {
+      params.set("topic", topicFromUrl.trim());
+    }
+    const q = params.toString();
+    return q ? `/explore/stories?${q}` : "/explore/stories";
+  })();
+  const seeAllBooksHref = (() => {
+    const params = new URLSearchParams();
+    if (topicFromUrl.trim()) {
+      params.set("topic", topicFromUrl.trim());
+    }
+    const q = params.toString();
+    return q ? `/explore/books?${q}` : "/explore/books";
+  })();
+  const seeAllPolyglotStoriesHref = (() => {
+    const params = new URLSearchParams();
+    if (topicFromUrl.trim()) {
+      params.set("topic", topicFromUrl.trim());
+    }
+    const q = params.toString();
+    return q ? `/explore/polyglot-stories?${q}` : "/explore/polyglot-stories";
+  })();
 
   const withReturnContext = (href: string) => {
     const [base, existingQuery = ""] = href.split("?");
@@ -403,15 +427,23 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6 text-emerald-400">Book Stories</h2>
+          <div className="mb-6 flex items-center justify-between gap-4">
+            <h2 className="text-2xl font-semibold text-emerald-400">Stories</h2>
+            <Link
+              href={seeAllStoriesHref}
+              className="text-sm font-medium text-emerald-300 hover:text-emerald-200 transition-colors"
+            >
+              See all
+            </Link>
+          </div>
 
           {safePreviewBookStories.length === 0 ? (
             <div className="h-[240px] flex items-center justify-center text-gray-400 bg-white/5 rounded-2xl">
               {selectedTopicKey
-                ? `No book stories found for ${selectedTopicLabel ?? "this topic"}.`
+                ? `No stories found for ${selectedTopicLabel ?? "this topic"}.`
                 : isStringArray(targetLanguages) && targetLanguages.length > 0
-                  ? "No book stories found in your selected languages."
-                  : "No book stories available."}
+                  ? "No stories found in your selected languages."
+                  : "No stories available."}
             </div>
           ) : (
             <div className="min-h-[240px]">
@@ -452,7 +484,15 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
           )}
         </div>
 
-        <h2 className="text-2xl font-semibold mb-6 text-blue-400">Books</h2>
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <h2 className="text-2xl font-semibold text-blue-400">Books</h2>
+          <Link
+            href={seeAllBooksHref}
+            className="text-sm font-medium text-blue-300 hover:text-blue-200 transition-colors"
+          >
+            See all
+          </Link>
+        </div>
         {safeBooks.length === 0 ? (
           <p className="text-gray-400">
             {selectedTopicKey
@@ -489,7 +529,15 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         )}
 
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6 text-emerald-400">Polyglot Stories</h2>
+          <div className="mb-6 flex items-center justify-between gap-4">
+            <h2 className="text-2xl font-semibold text-emerald-400">Polyglot Stories</h2>
+            <Link
+              href={seeAllPolyglotStoriesHref}
+              className="text-sm font-medium text-emerald-300 hover:text-emerald-200 transition-colors"
+            >
+              See all
+            </Link>
+          </div>
 
           {safePolyglotStories.length === 0 ? (
             <div className="h-[320px] flex items-center justify-center text-gray-400 bg-white/5 rounded-2xl">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ChevronDown, ArrowLeft, MessageSquare } from "lucide-react";
 import Sidebar from "./Sidebar";
@@ -10,6 +10,7 @@ import * as Sentry from "@sentry/nextjs";
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const isStoryPage = /^\/books\/[^/]+\/[^/]+$/.test(pathname || "");
   const isBookPage = /^\/books\/[^/]+$/.test(pathname || "");
@@ -61,7 +62,7 @@ export default function MobileMenu() {
     return (
       <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
         <button
-          onClick={() => (window.location.href = target)}
+          onClick={() => router.push(target)}
           className="text-white"
         >
           <ArrowLeft size={28} />

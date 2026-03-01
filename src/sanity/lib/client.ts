@@ -24,7 +24,7 @@ export const client = createClient({
   projectId: safeEnv("NEXT_PUBLIC_SANITY_PROJECT_ID", FALLBACK.projectId),
   dataset: safeEnv("NEXT_PUBLIC_SANITY_DATASET", FALLBACK.dataset),
   apiVersion: safeEnv("NEXT_PUBLIC_SANITY_API_VERSION", FALLBACK.apiVersion),
-  useCdn: false,              // ❗ evita cachear drafts o contenido en vivo
+  useCdn: true,               // ✅ acelera lecturas públicas
   perspective: "published",   // ✅ solo documentos publicados
 });
 

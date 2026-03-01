@@ -1,11 +1,11 @@
 import { books } from "@/data/books";
 import VocabPanel from "@/components/VocabPanel";
-import { currentUser } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import Player from "@/components/Player";
 import StoryAccessInfo from "./StoryAccessInfo";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 import StoryClientGate from "./StoryClientGate";
-import { getFeaturedStory } from "@/lib/getFeaturedStory";
+import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import StoryContent from "@/components/StoryContent";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
@@ -23,7 +23,11 @@ export default async function StoryPage({ params }: StoryPageProps) {
     return <div className="p-8 text-center">Historia no encontrada.</div>;
   }
 
-  const user = await currentUser();
+  const { userId } = await auth();
+  const [user, featured] = await Promise.all([
+    userId ? currentUser() : Promise.resolve(null),
+    getFeaturedStories(),
+  ]);
   const userPlan = (user?.publicMetadata?.plan as UserPlan) || "free";
 
   const booksMeta = user?.publicMetadata?.books;
@@ -32,11 +36,8 @@ export default async function StoryPage({ params }: StoryPageProps) {
     : [];
   const ownsThisBook = ownedBooks.includes(book.slug);
 
-  const weeklyStory = await getFeaturedStory("week");
-  const dailyStory = await getFeaturedStory("day");
-
-  const isWeeklyStory = weeklyStory?.slug === story.slug;
-  const isDailyStory = dailyStory?.slug === story.slug;
+  const isWeeklyStory = featured.week?.slug === story.slug;
+  const isDailyStory = featured.day?.slug === story.slug;
 
   const hasFullAccess =
     userPlan === "premium" ||

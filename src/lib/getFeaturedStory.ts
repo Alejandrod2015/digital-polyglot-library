@@ -1,5 +1,7 @@
 // /src/lib/getFeaturedStory.ts
 import { client } from "@/sanity/lib/client";
+import { unstable_cache } from "next/cache";
+import { cache } from "react";
 
 /**
  * Obtiene la historia destacada (semanal o diaria)
@@ -25,31 +27,7 @@ export async function getFeaturedStory(
         : local.toISOString().slice(0, 10);
 
     // 🧠 Obtener documento único de configuración
-    const scheduler = await client.fetch<{
-      currentWeeklyStory?: { slug?: { current?: string } } | null;
-      nextWeeklyStory?: { slug?: { current?: string } } | null;
-      currentDailyStory?: { slug?: { current?: string } } | null;
-      nextDailyStory?: { slug?: { current?: string } } | null;
-      autoSelectWeekly?: boolean;
-      autoSelectDaily?: boolean;
-    } | null>(
-      `*[_type == "storyScheduler"][0]{
-        currentWeeklyStory->{
-          "slug": slug.current
-        },
-        nextWeeklyStory->{
-          "slug": slug.current
-        },
-        currentDailyStory->{
-          "slug": slug.current
-        },
-        nextDailyStory->{
-          "slug": slug.current
-        },
-        autoSelectWeekly,
-        autoSelectDaily
-      }`
-    );
+    const scheduler = await getStoryScheduler();
 
     if (!scheduler) {
       console.warn("⚠️ No se encontró storyScheduler en Sanity.");
@@ -91,16 +69,20 @@ export async function getFeaturedStory(
   }
 }
 
+export const getFeaturedStories = cache(async (tz: string = "UTC") => {
+  const [week, day] = await Promise.all([
+    getFeaturedStory("week", tz),
+    getFeaturedStory("day", tz),
+  ]);
+  return { week, day };
+});
+
 /**
  * 🌀 Fallback determinista: usa la fecha (día/semana) como semilla
  * para seleccionar una historia publicada, sin escribir en Sanity.
  */
 async function fallbackStory(period: "day" | "week", key: string) {
-  const stories = await client.fetch<{ slug?: string }[]>(
-    `*[_type == "story" && published == true && defined(slug.current)]{
-      "slug": slug.current
-    }`
-  );
+  const stories = await getPublishedStorySlugs();
 
   if (!stories.length) return null;
 
@@ -110,3 +92,47 @@ async function fallbackStory(period: "day" | "week", key: string) {
 
   return slug ? { slug, period, periodKey: key } : null;
 }
+
+type StoryScheduler = {
+  currentWeeklyStory?: { slug?: string } | null;
+  nextWeeklyStory?: { slug?: string } | null;
+  currentDailyStory?: { slug?: string } | null;
+  nextDailyStory?: { slug?: string } | null;
+  autoSelectWeekly?: boolean;
+  autoSelectDaily?: boolean;
+} | null;
+
+const getStoryScheduler = unstable_cache(
+  async (): Promise<StoryScheduler> =>
+    client.fetch<StoryScheduler>(
+      `*[_type == "storyScheduler"][0]{
+        currentWeeklyStory->{
+          "slug": slug.current
+        },
+        nextWeeklyStory->{
+          "slug": slug.current
+        },
+        currentDailyStory->{
+          "slug": slug.current
+        },
+        nextDailyStory->{
+          "slug": slug.current
+        },
+        autoSelectWeekly,
+        autoSelectDaily
+      }`
+    ),
+  ["featured-story-scheduler-v1"],
+  { revalidate: 300, tags: ["story-scheduler"] }
+);
+
+const getPublishedStorySlugs = unstable_cache(
+  async (): Promise<{ slug?: string }[]> =>
+    client.fetch<{ slug?: string }[]>(
+      `*[_type == "story" && published == true && defined(slug.current)]{
+        "slug": slug.current
+      }`
+    ),
+  ["featured-story-slugs-v1"],
+  { revalidate: 300, tags: ["stories"] }
+);

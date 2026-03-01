@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type BookSuggestion = {
@@ -116,6 +117,7 @@ export default function ExploreSearch({
   returnTo,
   returnLabel,
 }: ExploreSearchProps) {
+  const router = useRouter();
   const [query, setQuery] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
@@ -301,8 +303,7 @@ export default function ExploreSearch({
     if (e.key === "Enter") {
       if (activeIndex < 0 || activeIndex >= suggestions.length) return;
       const s = suggestions[activeIndex];
-      // simulate click via setting location (no router needed)
-      window.location.assign(s.href);
+      router.push(s.href);
     }
   };
 
@@ -374,7 +375,7 @@ export default function ExploreSearch({
                   s.kind === "book"
                     ? "Book"
                     : s.kind === "bookStory"
-                    ? "Book story"
+                    ? "Story"
                     : "Story";
 
                 return (

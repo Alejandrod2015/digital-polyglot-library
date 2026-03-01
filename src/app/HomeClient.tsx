@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
 import Cover from "@/components/Cover";
 import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
@@ -97,13 +97,13 @@ function VerticalCard(props: {
   title: string;
   cover?: string;
   meta?: string;
-  onClick: () => void;
+  href: string;
 }) {
-  const { title, cover, meta, onClick } = props;
+  const { title, cover, meta, href } = props;
 
   return (
-    <div
-      onClick={onClick}
+    <Link
+      href={href}
       className="bg-white/5 hover:bg-white/10 rounded-2xl overflow-hidden shadow-md transition-all flex flex-col h-full cursor-pointer"
     >
       <div className="aspect-[2/3] w-full">
@@ -114,7 +114,7 @@ function VerticalCard(props: {
         <p className="text-base font-semibold text-white line-clamp-2">{title}</p>
         {meta ? <p className="text-sm text-gray-400 mt-1">{meta}</p> : null}
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -123,7 +123,6 @@ export default function HomeClient({
   latestStories,
   latestPolyglotStories,
 }: Props) {
-  const router = useRouter();
   const { user } = useUser();
 
   const [continueListening, setContinueListening] = useState<ContinueItem[]>([]);
@@ -314,11 +313,9 @@ export default function HomeClient({
         : "w-[320px] lg:w-[340px]";
 
   const renderContinueCard = (item: ContinueItem) => (
-    <div
+    <Link
       key={`${item.bookSlug}:${item.storySlug}`}
-      onClick={() =>
-        router.push(withReturnContext(`/books/${item.bookSlug}/${item.storySlug}`))
-      }
+      href={withReturnContext(`/books/${item.bookSlug}/${item.storySlug}`)}
       className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
     >
       <div className="w-full h-48 bg-gray-800">
@@ -348,7 +345,7 @@ export default function HomeClient({
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 
   return (
@@ -396,9 +393,9 @@ export default function HomeClient({
 
         <div className="grid md:hidden gap-8 grid-cols-1 sm:grid-cols-2 place-items-center">
           {filteredBooks.slice(0, MOBILE_LIMIT).map((book) => (
-            <div
+            <Link
               key={book.slug}
-              onClick={() => router.push(`/books/${book.slug}?from=home`)}
+              href={`/books/${book.slug}?from=home`}
               className="flex items-center gap-6 w-full max-w-[480px] bg-white/5 rounded-2xl p-5 cursor-pointer hover:bg-white/10 hover:shadow-md transition-all duration-200"
             >
               <div className="w-[38%] sm:w-[35%] md:w-[120px] flex-shrink-0">
@@ -418,7 +415,7 @@ export default function HomeClient({
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -430,26 +427,24 @@ export default function HomeClient({
                 title={book.title}
                 cover={book.cover}
                 meta={`${capitalize(book.language)} · ${capitalize(book.level)}`}
-                onClick={() => router.push(`/books/${book.slug}?from=home`)}
+                href={`/books/${book.slug}?from=home`}
               />
             )}
           />
         </div>
       </section>
 
-      {/* Latest Book Stories (mismas dimensiones que Explore) */}
+      {/* Latest Stories (mismas dimensiones que Explore) */}
       <section className="mb-12 text-center w-full max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-6 text-emerald-400">Latest Book Stories</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-emerald-400">Latest Stories</h2>
 
         <div className="min-h-[240px]">
           <StoryCarousel
             items={storiesForHome}
             renderItem={(s) => (
-              <div
+              <Link
                 key={`${s.bookSlug}:${s.storySlug}`}
-                onClick={() =>
-                  router.push(withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`))
-                }
+                href={withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`)}
                 className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
               >
                 <div className="w-full h-48 bg-gray-800">
@@ -474,7 +469,7 @@ export default function HomeClient({
                     {capitalize(s.language)} · {capitalize(s.level)}
                   </p>
                 </div>
-              </div>
+              </Link>
             )}
           />
         </div>
@@ -492,9 +487,9 @@ export default function HomeClient({
           <StoryCarousel
             items={polyglotForHome}
             renderItem={(story) => (
-              <div
+              <Link
                 key={story.slug}
-                onClick={() => router.push(withReturnContext(`/stories/${story.slug}`))}
+                href={withReturnContext(`/stories/${story.slug}`)}
                 className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
               >
                 <div className="w-full h-48 bg-gray-800">
@@ -521,7 +516,7 @@ export default function HomeClient({
                     {capitalize(story.language)} · {capitalize(story.level)}
                   </p>
                 </div>
-              </div>
+              </Link>
             )}
           />
         </div>

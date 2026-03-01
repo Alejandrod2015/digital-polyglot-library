@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect, useMemo } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   Play,
   Pause,
@@ -65,6 +66,7 @@ interface PlayerProps {
 }
 
 export default function Player({ src, bookSlug, storySlug, canPlay = true }: PlayerProps) {
+  const router = useRouter();
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
@@ -231,7 +233,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       await trackMetric(storySlug, bookSlug, "audio_complete", duration);
       void releaseWakeLock();
       if (nextStory) {
-        window.location.href = `/books/${bookSlug}/${nextStory.slug}`;
+        router.push(`/books/${bookSlug}/${nextStory.slug}`);
       } else {
         setIsPlaying(false);
         setProgress(0);
@@ -240,7 +242,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
 
     audio.addEventListener("ended", handleEnded);
     return () => audio.removeEventListener("ended", handleEnded);
-  }, [nextStory, bookSlug, storySlug, duration]);
+  }, [nextStory, bookSlug, storySlug, duration, router]);
 
     const togglePlay = async () => {
     const a = audioRef.current;

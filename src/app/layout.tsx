@@ -7,6 +7,7 @@ import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
 import FeedbackButton from "@/components/FeedbackButton";
+import NavigationTimingTracker from "@/components/NavigationTimingTracker";
 import "../../sentry.client.config";
 
 export const viewport: Viewport = {
@@ -56,6 +57,7 @@ export default function RootLayout({
 
           <MobileMenu />
           <BackNavigationHandler />
+          <NavigationTimingTracker />
 
           {/* Main content scrollable */}
           <main className="flex-1 md:ml-64 px-1 py-6 pb-[env(safe-area-inset-bottom)] overflow-y-auto">

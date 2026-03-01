@@ -77,7 +77,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
   const [booksRaw, storiesRaw, polyglotRaw] = await Promise.all([
     sanityClient.fetch<unknown>(booksQuery, { limit }),
     sanityClient.fetch<unknown>(storiesQuery, { limit }),
-    getPublicUserStories(),
+    getPublicUserStories({ limit }),
   ]);
 
   const latestBooks = Array.isArray(booksRaw) ? booksRaw.filter(isLatestBook) : [];

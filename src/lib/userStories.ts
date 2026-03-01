@@ -1,7 +1,6 @@
 // /src/lib/userStories.ts
-import { PrismaClient } from "@/generated/prisma";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
+import { unstable_cache } from "next/cache";
 
 export type PublicUserStory = {
   id: string;
@@ -18,27 +17,36 @@ export type PublicUserStory = {
   createdAt: Date;
 };
 
-export async function getPublicUserStories(): Promise<PublicUserStory[]> {
-  const stories = await prisma.userStory.findMany({
-    where: { public: true },
-    orderBy: { createdAt: "desc" },
-    select: {
-      id: true,
-      slug: true,
-      title: true,
-      language: true,
-      level: true,
-      topic: true,
-      region: true,
-      text: true,
-      audioUrl: true,
-      coverUrl: true,
-      coverFilename: true,
-      createdAt: true,
-    },
-  });
+const getPublicUserStoriesCached = unstable_cache(
+  async (limit: number | null): Promise<PublicUserStory[]> =>
+    prisma.userStory.findMany({
+      where: { public: true },
+      orderBy: { createdAt: "desc" },
+      ...(typeof limit === "number" ? { take: limit } : {}),
+      select: {
+        id: true,
+        slug: true,
+        title: true,
+        language: true,
+        level: true,
+        topic: true,
+        region: true,
+        text: true,
+        audioUrl: true,
+        coverUrl: true,
+        coverFilename: true,
+        createdAt: true,
+      },
+    }),
+  ["public-user-stories-v2"],
+  { revalidate: 60, tags: ["public-user-stories"] }
+);
 
-  return stories;
+export async function getPublicUserStories(opts?: {
+  limit?: number;
+}): Promise<PublicUserStory[]> {
+  const limit = typeof opts?.limit === "number" ? opts.limit : null;
+  return getPublicUserStoriesCached(limit);
 }
 
 export async function getUserStoryById(
