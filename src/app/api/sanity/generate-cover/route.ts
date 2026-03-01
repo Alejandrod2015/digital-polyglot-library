@@ -14,8 +14,19 @@ const ALLOWED_ORIGINS = new Set([
   "http://127.0.0.1:3333",
 ]);
 
+function isAllowedOrigin(origin: string | null): origin is string {
+  if (!origin) return false;
+  if (ALLOWED_ORIGINS.has(origin)) return true;
+  try {
+    const url = new URL(origin);
+    return url.protocol === "https:" && url.hostname.endsWith(".sanity.studio");
+  } catch {
+    return false;
+  }
+}
+
 function buildCorsHeaders(origin: string | null): Record<string, string> {
-  const allowOrigin = origin && ALLOWED_ORIGINS.has(origin) ? origin : "https://www.sanity.io";
+  const allowOrigin = isAllowedOrigin(origin) ? origin : "https://www.sanity.io";
   return {
     "Access-Control-Allow-Origin": allowOrigin,
     "Access-Control-Allow-Methods": "POST, OPTIONS",
