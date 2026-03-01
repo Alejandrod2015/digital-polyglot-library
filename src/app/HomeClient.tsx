@@ -332,7 +332,7 @@ export default function HomeClient({
         const remote = (await res.json()) as ContinueListeningApiItem[];
         if (!Array.isArray(remote)) return;
 
-        const localByKey = new Map(
+        const localByKey: Map<string, ContinueItem> = new Map(
           localSafe.map((item) => [`${item.bookSlug}:${item.storySlug}`, item] as const)
         );
 
