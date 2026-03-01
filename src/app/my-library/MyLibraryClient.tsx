@@ -8,7 +8,8 @@ import Skeleton from "@/components/Skeleton";
 import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
-import Link from "next/link";
+import StoryVerticalCard from "@/components/StoryVerticalCard";
+import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
 
 
 type LibraryBook = {
@@ -52,18 +53,6 @@ type StoryItem = {
  coverUrl?: string;
 };
 
-
-const capitalize = (v?: string) =>
- v ? v.charAt(0).toUpperCase() + v.slice(1) : "—";
-
-const capitalizeWords = (value?: string) =>
- value
-   ? value
-       .split(/\s+/)
-       .filter(Boolean)
-       .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-       .join(" ")
-   : "—";
 
 const formatAudioDuration = (totalSeconds?: number) => {
  if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:--";
@@ -192,9 +181,9 @@ export default function MyLibraryClient() {
        slug: meta.slug,
        title: meta.title,
        language:
-         typeof meta.language === "string" ? capitalize(meta.language) : undefined,
+         typeof meta.language === "string" ? formatLanguage(meta.language) : undefined,
        level:
-         typeof meta.level === "string" ? capitalize(meta.level) : undefined,
+         typeof meta.level === "string" ? formatLevel(meta.level) : undefined,
        cover: meta.cover,
        description: typeof meta.description === "string" ? meta.description : undefined,
        bookId: item.bookId,
@@ -249,12 +238,12 @@ export default function MyLibraryClient() {
        bookTitle: bookMeta.title,
        language:
          typeof storyMeta.language === "string"
-           ? capitalize(storyMeta.language)
-           : capitalize(bookMeta.language),
+           ? formatLanguage(storyMeta.language)
+           : formatLanguage(bookMeta.language),
        level:
          typeof storyMeta.level === "string"
-           ? capitalize(storyMeta.level)
-           : capitalize(bookMeta.level),
+           ? formatLevel(storyMeta.level)
+           : formatLevel(bookMeta.level),
        topic:
          typeof storyMeta.topic === "string"
            ? storyMeta.topic
@@ -446,56 +435,25 @@ export default function MyLibraryClient() {
              <StoryCarousel<StoryItem>
                items={storyItems}
                renderItem={(story) => (
-                 <div className="flex flex-col h-full scale-[0.94] origin-top">
-                   <Link
-                     href={`/books/${story.bookSlug}/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`}
-                     className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
-                   >
-                     {/* 🔹 Imagen de portada (igual que Explore) */}
-                     <div className="w-full h-48 bg-gray-800">
-                       <img
-                         src={story.coverUrl || "/covers/default.png"}
-                         alt={story.title}
-                         className="object-cover w-full h-full"
-                         onError={(e) => {
-                           e.currentTarget.src = "/covers/default.png";
-                         }}
-                       />
-                     </div>
-
-
-                     <div className="p-5 flex flex-col justify-between flex-1 text-left">
-                       <div>
-                         <h3 className="text-xl font-semibold mb-2 text-white">
-                           {story.title}
-                         </h3>
-                       <p className="text-sm text-blue-300">
-                           {story.bookTitle}
-                         </p>
-                       </div>
-                       <div className="mt-3 text-sm text-gray-400 space-y-1">
-                         <p>
-                           {story.language} · {story.level}
-                         </p>
-                         <p>
-                           {formatAudioDuration(
-                             storyDurations[`${story.bookSlug}:${story.storySlug}`]
-                           )}{" "}
-                           · {capitalizeWords(story.topic)}
-                         </p>
-                       </div>
-                     </div>
-                   </Link>
-
-
-                   <button
-                     type="button"
-                     onClick={() => removeItem("stories", story.storyId)}
-                     className="flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium border-t border-white/5 py-2"
-                   >
-                     Remove
-                   </button>
-                 </div>
+                 <StoryVerticalCard
+                   href={`/books/${story.bookSlug}/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`}
+                   title={story.title}
+                   coverUrl={story.coverUrl || "/covers/default.png"}
+                   subtitle={story.bookTitle}
+                   meta={`${formatLanguage(story.language)} · ${formatLevel(story.level)}`}
+                   metaSecondary={`${formatAudioDuration(
+                     storyDurations[`${story.bookSlug}:${story.storySlug}`]
+                   )} · ${formatTopic(story.topic)}`}
+                   footer={
+                     <button
+                       type="button"
+                       onClick={() => removeItem("stories", story.storyId)}
+                       className="w-full flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium"
+                     >
+                       Remove
+                     </button>
+                   }
+                 />
                )}
              />
            )}

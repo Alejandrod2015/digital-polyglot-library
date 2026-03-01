@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   Play,
   Pause,
@@ -107,6 +107,7 @@ interface PlayerProps {
 
 export default function Player({ src, bookSlug, storySlug, canPlay = true }: PlayerProps) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
@@ -159,6 +160,22 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       : null;
   const currentStory = currentIndex >= 0 ? stories[currentIndex] : null;
   const canTrackContinueListening = Boolean(book && currentStory);
+  const navigationSuffix = useMemo(() => {
+    const params = new URLSearchParams();
+    const returnTo = searchParams.get("returnTo");
+    const returnLabel = searchParams.get("returnLabel");
+    const from = searchParams.get("from");
+
+    if (returnTo && returnTo.startsWith("/") && !returnTo.startsWith("//")) {
+      params.set("returnTo", returnTo);
+      if (returnLabel?.trim()) params.set("returnLabel", returnLabel.trim());
+    } else if (from?.trim()) {
+      params.set("from", from.trim());
+    }
+
+    const qs = params.toString();
+    return qs ? `?${qs}` : "";
+  }, [searchParams]);
 
   const rememberContinueListening = useCallback((overrideProgressSec?: number) => {
     // Solo guardamos libros reales para evitar rutas inválidas (ej. polyglot).
@@ -345,7 +362,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       await trackMetric(storySlug, bookSlug, "audio_complete", duration);
       void releaseWakeLock();
       if (nextStory) {
-        router.push(`/books/${bookSlug}/${nextStory.slug}`);
+        router.push(`/books/${bookSlug}/${nextStory.slug}${navigationSuffix}`);
       } else {
         setIsPlaying(false);
         setProgress(0);
@@ -354,7 +371,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
 
     audio.addEventListener("ended", handleEnded);
     return () => audio.removeEventListener("ended", handleEnded);
-  }, [nextStory, bookSlug, storySlug, duration, router]);
+  }, [nextStory, bookSlug, storySlug, duration, navigationSuffix, router]);
 
     const togglePlay = async () => {
     const a = audioRef.current;
@@ -454,7 +471,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
       <div className="flex justify-center items-center gap-4 relative">
         {prevStory && (
           <Link
-            href={`/books/${bookSlug}/${prevStory.slug}`}
+            href={`/books/${bookSlug}/${prevStory.slug}${navigationSuffix}`}
             className="p-1.5 rounded hover:bg-gray-800"
           >
             <SkipBack className="w-6 h-6" />
@@ -494,7 +511,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
 
         {nextStory && (
           <Link
-            href={`/books/${bookSlug}/${nextStory.slug}`}
+            href={`/books/${bookSlug}/${nextStory.slug}${navigationSuffix}`}
             className="p-1.5 rounded hover:bg-gray-800"
           >
             <SkipForward className="w-6 h-6" />

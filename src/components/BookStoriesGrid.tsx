@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { LEVEL_LABELS, type Book, type Story } from "@/types/books";
+import { type Book, type Story } from "@/types/books";
+import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
 
 type ContinueLocalItem = {
   bookSlug: string;
@@ -32,15 +33,6 @@ function truncate(input: string, max = 90): string {
   return `${input.slice(0, max).trimEnd()}...`;
 }
 
-function capitalizeWords(value?: string): string {
-  if (!value) return "—";
-  return value
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
-}
-
 function isContinueLocalItem(x: unknown): x is ContinueLocalItem {
   if (!x || typeof x !== "object") return false;
   const r = x as Record<string, unknown>;
@@ -56,9 +48,16 @@ function isReadingHistoryItem(x: unknown): x is ReadingHistoryItem {
 type Props = {
   book: Book;
   stories: Story[];
+  hrefSuffix?: string;
+  replaceNavigation?: boolean;
 };
 
-export default function BookStoriesGrid({ book, stories }: Props) {
+export default function BookStoriesGrid({
+  book,
+  stories,
+  hrefSuffix = "",
+  replaceNavigation = false,
+}: Props) {
   const [continueMap, setContinueMap] = useState<Map<string, ContinueLocalItem>>(new Map());
   const [readingSet, setReadingSet] = useState<Set<string>>(new Set());
 
@@ -159,7 +158,8 @@ export default function BookStoriesGrid({ book, stories }: Props) {
         return (
           <Link
             key={story.id}
-            href={`/books/${book.slug}/${story.slug}`}
+            href={`/books/${book.slug}/${story.slug}${hrefSuffix}`}
+            replace={replaceNavigation}
             className="flex flex-col overflow-hidden rounded-xl bg-white/5 text-gray-100 hover:bg-white/10 transition-colors"
           >
             <div className="relative w-full aspect-[16/10] bg-[#102746]">
@@ -191,10 +191,10 @@ export default function BookStoriesGrid({ book, stories }: Props) {
               <p className="mt-1 text-xs text-gray-400 line-clamp-1">{excerpt}</p>
 
               <p className="mt-2 text-xs text-gray-300">
-                {capitalizeWords(storyLanguage)} · {storyLevel ? LEVEL_LABELS[storyLevel] : "—"}
+                {formatLanguage(storyLanguage)} · {formatLevel(storyLevel)}
               </p>
               <p className="mt-1 text-xs text-gray-400">
-                {readMinutes} min read · {capitalizeWords(storyTopic)}
+                {readMinutes} min read · {formatTopic(storyTopic)}
               </p>
 
               <p className="mt-2 text-xs font-medium text-sky-300">
@@ -207,4 +207,3 @@ export default function BookStoriesGrid({ book, stories }: Props) {
     </div>
   );
 }
-

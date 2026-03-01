@@ -7,6 +7,7 @@ import type { EmblaOptionsType } from "embla-carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/utils";
 import Cover from "@/components/Cover";
+import { formatLanguage, formatLevel } from "@/lib/displayFormat";
 
 type Book = {
   slug: string;
@@ -115,7 +116,7 @@ export default function BookCarousel({
                       {book.title}
                     </p>
                     <p className="text-sm text-gray-400 mt-1">
-                      {book.language} · {book.level}
+                      {formatLanguage(book.language)} · {formatLevel(book.level)}
                     </p>
                     {book.description ? (
                       <p className="text-sm text-white/60 mt-2 line-clamp-3">

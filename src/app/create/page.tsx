@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Sparkles, Loader2, Music, CheckCircle } from 'lucide-react';
 import StoryContent from '@/components/StoryContent';
 import VocabPanel from '@/components/VocabPanel';
+import { formatLanguage, formatLevel, toTitleCase } from '@/lib/displayFormat';
 
 type Plan = 'free' | 'basic' | 'premium' | 'polyglot';
 
@@ -266,7 +267,7 @@ function StoryPreview({ story }: { story: any }) {
     <div className="mt-10 bg-[#1B263B] border border-gray-700 rounded-xl p-6">
       <h2 className="text-2xl font-bold mb-2 text-white">{story.title}</h2>
       <p className="text-sm text-gray-400 mb-4">
-        {story.language} • {story.level} • {story.region || 'General'}
+        {formatLanguage(story.language)} • {formatLevel(story.level)} • {toTitleCase(story.region || 'General')}
       </p>
 
       <div className="relative">

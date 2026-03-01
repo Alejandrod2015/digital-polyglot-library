@@ -6,7 +6,6 @@ import Link from "next/link";
 import {
   Menu,
   X,
-  ChevronDown,
   ArrowLeft,
   MessageSquare,
   Settings,
@@ -52,14 +51,7 @@ export default function MobileMenu() {
   };
 
   if (isStoryPage) {
-    const bookSlug = pathname?.split("/")[2];
-    return (
-      <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
-        <Link href={`/books/${bookSlug}`} className="text-white">
-          <ChevronDown size={28} />
-        </Link>
-      </div>
-    );
+    return null;
   }
 
   if (isBookPage) {

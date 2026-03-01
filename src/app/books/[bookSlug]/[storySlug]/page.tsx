@@ -85,7 +85,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
       ) : null}
 
       {/* Botón de guardar */}
-      <div className="absolute top-[-14px] -right-2 sm:top-0 sm:right-0">
+      <div className="absolute top-0 right-2">
         <AddStoryToLibraryButton
           storyId={story.id}
           bookId={book.id}

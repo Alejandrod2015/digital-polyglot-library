@@ -4,6 +4,7 @@ import { getBookMeta } from "@/lib/books";
 import Link from "next/link";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
+import { formatLanguage, formatLevel, formatTopic, toTitleCase } from "@/lib/displayFormat";
 
 export const dynamic = "force-dynamic";
 
@@ -98,23 +99,23 @@ export default async function StoryOfTheWeekPage() {
           {/* Etiquetas dinámicas */}
           <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-6">
             {book.language && (
-              <span className="px-3 py-1 rounded-full bg-blue-600/20 text-blue-200 text-xs sm:text-sm capitalize">
-                {book.language}
+              <span className="px-3 py-1 rounded-full bg-blue-600/20 text-blue-200 text-xs sm:text-sm">
+                {formatLanguage(book.language)}
               </span>
             )}
             {book.level && (
-              <span className="px-3 py-1 rounded-full bg-white/10 text-gray-200 text-xs sm:text-sm capitalize">
-                Level: {book.level}
+              <span className="px-3 py-1 rounded-full bg-white/10 text-gray-200 text-xs sm:text-sm">
+                Level: {formatLevel(book.level)}
               </span>
             )}
             {book.topic && (
-              <span className="px-3 py-1 rounded-full bg-pink-600/20 text-pink-200 text-xs sm:text-sm capitalize">
-                Theme: {book.topic}
+              <span className="px-3 py-1 rounded-full bg-pink-600/20 text-pink-200 text-xs sm:text-sm">
+                Theme: {formatTopic(book.topic)}
               </span>
             )}
             {story.focus && (
-              <span className="px-3 py-1 rounded-full bg-white/10 text-gray-200 text-xs sm:text-sm capitalize">
-                Focus: {story.focus}
+              <span className="px-3 py-1 rounded-full bg-white/10 text-gray-200 text-xs sm:text-sm">
+                Focus: {toTitleCase(story.focus)}
               </span>
             )}
           </div>

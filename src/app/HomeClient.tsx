@@ -7,6 +7,7 @@ import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
 import { books } from "@/data/books";
+import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
 
 type LatestBook = {
   slug: string;
@@ -64,6 +65,29 @@ type ContinueListeningApiItem = {
   audioDurationSec?: number;
 };
 
+type FavoriteSignalItem = {
+  word: string;
+  language?: string;
+};
+
+type RecommendedStoryItem = {
+  key: string;
+  storyId: string;
+  storySlug: string;
+  storyTitle: string;
+  bookSlug: string;
+  bookId: string;
+  bookTitle: string;
+  coverUrl: string;
+  language?: string;
+  level?: string;
+  topic?: string;
+  audioSrc?: string;
+  text?: string;
+  reason: string;
+  score: number;
+};
+
 type Props = {
   latestBooks: LatestBook[];
   latestStories: LatestStory[];
@@ -88,8 +112,8 @@ function isStringArray(v: unknown): v is string[] {
   return Array.isArray(v) && v.every((i) => typeof i === "string");
 }
 
-function capitalize(value?: string) {
-  return value ? value.charAt(0).toUpperCase() + value.slice(1) : "—";
+function normalizeKey(value?: string): string {
+  return (value ?? "").toLowerCase().trim();
 }
 
 function stripHtml(input: string): string {
@@ -101,15 +125,6 @@ function estimateReadMinutes(text?: string): number {
     .split(/\s+/)
     .filter(Boolean).length;
   return Math.max(1, Math.ceil(words / 180));
-}
-
-function capitalizeWords(value?: string) {
-  if (!value) return "—";
-  return value
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
 }
 
 function formatAudioDuration(totalSeconds?: number): string {
@@ -188,6 +203,13 @@ export default function HomeClient({
   const [continueRefreshTick, setContinueRefreshTick] = useState(0);
   const [continueInitialized, setContinueInitialized] = useState(continueLoadedOnServer);
   const hasSyncedLocalContinueForUserRef = useRef<string | null>(null);
+  const [favoriteSignals, setFavoriteSignals] = useState<FavoriteSignalItem[]>([]);
+  const [savedBookIds, setSavedBookIds] = useState<Set<string>>(new Set());
+  const [savedStoryIds, setSavedStoryIds] = useState<Set<string>>(new Set());
+  const [readingHistoryStoryIds, setReadingHistoryStoryIds] = useState<Set<string>>(new Set());
+  const [recommendedStoryDurations, setRecommendedStoryDurations] = useState<Record<string, number>>(
+    {}
+  );
   const plan = isLoaded
     ? (user?.publicMetadata?.plan as string | undefined) ?? "free"
     : initialPlan;
@@ -489,6 +511,107 @@ export default function HomeClient({
     };
   }, [continueListening]);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadPersonalizationSignals = async () => {
+      if (!userId || (plan !== "premium" && plan !== "polyglot")) {
+        if (!cancelled) {
+          setFavoriteSignals([]);
+          setSavedBookIds(new Set());
+          setSavedStoryIds(new Set());
+          setReadingHistoryStoryIds(new Set());
+        }
+        return;
+      }
+
+      try {
+        const [favoritesRes, libraryBooksRes, libraryStoriesRes] = await Promise.all([
+          fetch("/api/favorites", { cache: "no-store" }),
+          fetch("/api/library?type=book", { cache: "no-store" }),
+          fetch("/api/library?type=story", { cache: "no-store" }),
+        ]);
+
+        if (cancelled) return;
+
+        if (favoritesRes.ok) {
+          const raw: unknown = await favoritesRes.json();
+          if (Array.isArray(raw)) {
+            const parsed = raw
+              .map((row): FavoriteSignalItem | null => {
+                if (typeof row !== "object" || row === null) return null;
+                const record = row as Record<string, unknown>;
+                if (typeof record.word !== "string") return null;
+                return {
+                  word: record.word,
+                  language: typeof record.language === "string" ? record.language : undefined,
+                };
+              })
+              .filter((item): item is FavoriteSignalItem => item !== null);
+            setFavoriteSignals(parsed);
+          }
+        }
+
+        if (libraryBooksRes.ok) {
+          const raw: unknown = await libraryBooksRes.json();
+          if (Array.isArray(raw)) {
+            const ids = raw
+              .map((row) => {
+                if (typeof row !== "object" || row === null) return null;
+                const record = row as Record<string, unknown>;
+                return typeof record.bookId === "string" ? record.bookId : null;
+              })
+              .filter((id): id is string => !!id);
+            setSavedBookIds(new Set(ids));
+          }
+        }
+
+        if (libraryStoriesRes.ok) {
+          const raw: unknown = await libraryStoriesRes.json();
+          if (Array.isArray(raw)) {
+            const ids = raw
+              .map((row) => {
+                if (typeof row !== "object" || row === null) return null;
+                const record = row as Record<string, unknown>;
+                return typeof record.storyId === "string" ? record.storyId : null;
+              })
+              .filter((id): id is string => !!id);
+            setSavedStoryIds(new Set(ids));
+          }
+        }
+      } catch {
+        if (!cancelled) {
+          setFavoriteSignals([]);
+          setSavedBookIds(new Set());
+          setSavedStoryIds(new Set());
+        }
+      }
+
+      try {
+        const raw = localStorage.getItem("dp_reading_history_v1");
+        const parsed: unknown = raw ? JSON.parse(raw) : [];
+        if (!cancelled && Array.isArray(parsed)) {
+          const ids = parsed
+            .map((row) => {
+              if (typeof row !== "object" || row === null) return null;
+              const record = row as Record<string, unknown>;
+              return typeof record.storyId === "string" ? record.storyId : null;
+            })
+            .filter((id): id is string => !!id);
+          setReadingHistoryStoryIds(new Set(ids));
+        }
+      } catch {
+        if (!cancelled) setReadingHistoryStoryIds(new Set());
+      }
+    };
+
+    void loadPersonalizationSignals();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [plan, userId]);
+
   const targetLanguagesUnknown = isLoaded
     ? (user?.publicMetadata?.targetLanguages as unknown)
     : (initialTargetLanguages as unknown);
@@ -519,6 +642,8 @@ export default function HomeClient({
   const storiesForHome = filteredStories.slice(0, DESKTOP_LIMIT);
   const polyglotForHome = filteredPolyglot.slice(0, DESKTOP_LIMIT);
   const [latestStoryDurations, setLatestStoryDurations] = useState<Record<string, number>>({});
+  const canShowPersonalizedRecommendations =
+    isPersonalizationReady && (plan === "premium" || plan === "polyglot");
 
   const latestStoryTopicByKey = useMemo(() => {
     const topicByKey: Record<string, string | undefined> = {};
@@ -529,6 +654,149 @@ export default function HomeClient({
     }
     return topicByKey;
   }, [storiesForHome]);
+
+  const recommendedStories = useMemo<RecommendedStoryItem[]>(() => {
+    if (!canShowPersonalizedRecommendations) return [];
+
+    const continueSet = new Set(
+      continueListening.map((item) => `${item.bookSlug}:${item.storySlug}`)
+    );
+
+    const preferredLanguageSet = new Set<string>();
+    if (languageFilter) {
+      for (const lang of languageFilter) preferredLanguageSet.add(lang);
+    }
+    for (const favorite of favoriteSignals) {
+      if (favorite.language) preferredLanguageSet.add(normalizeKey(favorite.language));
+    }
+
+    const preferredLevelSet = new Set<string>();
+    const topicWeights = new Map<string, number>();
+
+    for (const entry of continueListening) {
+      if (entry.level) preferredLevelSet.add(normalizeKey(entry.level));
+      if (entry.topic) {
+        const key = normalizeKey(entry.topic);
+        topicWeights.set(key, (topicWeights.get(key) ?? 0) + 2);
+      }
+    }
+
+    for (const bookMeta of Object.values(books)) {
+      if (!savedBookIds.has(bookMeta.id) && !savedBookIds.has(bookMeta.slug)) continue;
+      if (bookMeta.level) preferredLevelSet.add(normalizeKey(bookMeta.level));
+      if (bookMeta.topic) {
+        const key = normalizeKey(bookMeta.topic);
+        topicWeights.set(key, (topicWeights.get(key) ?? 0) + 2);
+      }
+    }
+
+    for (const favorite of favoriteSignals) {
+      const key = normalizeKey(favorite.word);
+      if (key.length < 3) continue;
+      topicWeights.set(key, (topicWeights.get(key) ?? 0) + 1);
+    }
+
+    const favoriteWords = favoriteSignals
+      .map((f) => normalizeKey(f.word))
+      .filter((w) => w.length >= 4)
+      .slice(0, 40);
+
+    const candidates: RecommendedStoryItem[] = [];
+
+    for (const bookMeta of Object.values(books)) {
+      const bookSaved = savedBookIds.has(bookMeta.id) || savedBookIds.has(bookMeta.slug);
+      for (const story of bookMeta.stories) {
+        const key = `${bookMeta.slug}:${story.slug}`;
+        const storySaved =
+          savedStoryIds.has(story.id) ||
+          savedStoryIds.has(story.slug) ||
+          savedStoryIds.has(key);
+        const alreadyRead = readingHistoryStoryIds.has(story.id) || readingHistoryStoryIds.has(story.slug);
+        const inContinue = continueSet.has(key);
+        if (storySaved || alreadyRead || inContinue) continue;
+
+        const language = story.language ?? bookMeta.language;
+        const level = story.level ?? bookMeta.level;
+        const topic = story.topic ?? bookMeta.topic;
+        const text = stripHtml(story.text ?? "").toLowerCase();
+        const coverUrl =
+          typeof story.cover === "string" && story.cover.trim() !== ""
+            ? story.cover
+            : typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
+              ? bookMeta.cover
+              : "/covers/default.jpg";
+        const rawAudio = typeof story.audio === "string" ? story.audio.trim() : "";
+        const audioSrc = rawAudio
+          ? rawAudio.startsWith("http")
+            ? rawAudio
+            : `https://cdn.sanity.io/files/9u7ilulp/production/${rawAudio}.mp3`
+          : undefined;
+
+        let score = 0;
+        let reason = "Picked for your profile";
+
+        if (bookSaved) {
+          score += 14;
+          reason = "From a book in your library";
+        }
+        if (language && preferredLanguageSet.has(normalizeKey(language))) {
+          score += 8;
+          if (reason === "Picked for your profile") reason = "Matches your language focus";
+        }
+        if (level && preferredLevelSet.has(normalizeKey(level))) {
+          score += 5;
+          if (reason === "Picked for your profile") reason = "Matches your current level";
+        }
+        if (topic) {
+          const topicKey = normalizeKey(topic);
+          const topicScore = topicWeights.get(topicKey) ?? 0;
+          if (topicScore > 0) {
+            score += Math.min(10, topicScore * 2);
+            reason = `More ${formatTopic(topic)}`;
+          }
+        }
+
+        let vocabMatches = 0;
+        for (const word of favoriteWords) {
+          if (text.includes(word)) vocabMatches += 1;
+        }
+        if (vocabMatches > 0) {
+          score += Math.min(12, vocabMatches * 2);
+          if (!bookSaved && vocabMatches >= 2) reason = "Contains words you saved";
+        }
+
+        if (score <= 0) continue;
+
+        candidates.push({
+          key,
+          storyId: story.id,
+          storySlug: story.slug,
+          storyTitle: story.title,
+          bookSlug: bookMeta.slug,
+          bookId: bookMeta.id,
+          bookTitle: bookMeta.title,
+          coverUrl,
+          language,
+          level,
+          topic,
+          audioSrc,
+          text: story.text,
+          reason,
+          score,
+        });
+      }
+    }
+
+    return candidates.sort((a, b) => b.score - a.score).slice(0, 12);
+  }, [
+    canShowPersonalizedRecommendations,
+    continueListening,
+    favoriteSignals,
+    languageFilter,
+    readingHistoryStoryIds,
+    savedBookIds,
+    savedStoryIds,
+  ]);
 
   useEffect(() => {
     if (storiesForHome.length === 0) return;
@@ -599,6 +867,70 @@ export default function HomeClient({
       cancelled = true;
     };
   }, [storiesForHome, latestStoryDurations]);
+
+  useEffect(() => {
+    if (recommendedStories.length === 0) return;
+
+    const unresolved = recommendedStories.filter((story) => {
+      return (
+        !!story.audioSrc &&
+        !(typeof recommendedStoryDurations[story.key] === "number" && recommendedStoryDurations[story.key] > 0)
+      );
+    });
+    if (unresolved.length === 0) return;
+
+    let cancelled = false;
+
+    const loadDuration = (story: RecommendedStoryItem) =>
+      new Promise<{ key: string; durationSec?: number }>((resolve) => {
+        if (!story.audioSrc) {
+          resolve({ key: story.key });
+          return;
+        }
+
+        const audio = new Audio();
+        audio.preload = "metadata";
+
+        const done = (durationSec?: number) => {
+          audio.removeAttribute("src");
+          audio.load();
+          resolve({ key: story.key, durationSec });
+        };
+
+        const timeout = window.setTimeout(() => done(undefined), 6000);
+        audio.onloadedmetadata = () => {
+          window.clearTimeout(timeout);
+          const duration =
+            Number.isFinite(audio.duration) && audio.duration > 0
+              ? Math.round(audio.duration)
+              : undefined;
+          done(duration);
+        };
+        audio.onerror = () => {
+          window.clearTimeout(timeout);
+          done(undefined);
+        };
+
+        audio.src = story.audioSrc;
+      });
+
+    Promise.all(unresolved.map(loadDuration)).then((resolved) => {
+      if (cancelled || resolved.length === 0) return;
+      setRecommendedStoryDurations((prev) => {
+        const next = { ...prev };
+        for (const result of resolved) {
+          if (result.durationSec && result.durationSec > 0) {
+            next[result.key] = result.durationSec;
+          }
+        }
+        return next;
+      });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [recommendedStories, recommendedStoryDurations]);
 
   const withReturnContext = (href: string) => {
     const [base, existingQuery = ""] = href.split("?");
@@ -733,11 +1065,11 @@ export default function HomeClient({
 
         <div className="mt-3 text-sm text-gray-400 space-y-1">
           <p>
-            {capitalize(item.language)} · {capitalize(item.level)}
+            {formatLanguage(item.language)} · {formatLevel(item.level)}
           </p>
           <p>
             {formatRemainingDuration(item.audioDurationSec, item.progressSec)} ·{" "}
-            {capitalizeWords(item.topic)}
+            {formatTopic(item.topic)}
           </p>
         </div>
       </div>
@@ -776,8 +1108,8 @@ export default function HomeClient({
                   </p>
                 </div>
                 <p className="mt-3 text-sm text-gray-400">
-                  {capitalize(featuredFreeStory.language)} · {capitalize(featuredFreeStory.level)} ·{" "}
-                  {capitalizeWords(featuredFreeStory.topic)}
+                  {formatLanguage(featuredFreeStory.language)} · {formatLevel(featuredFreeStory.level)} ·{" "}
+                  {formatTopic(featuredFreeStory.topic)}
                 </p>
               </div>
             </Link>
@@ -854,11 +1186,67 @@ export default function HomeClient({
                   </p>
                 </div>
                 <p className="mt-3 text-sm text-gray-400">
-                  {capitalize(featuredFreeStory.language)} · {capitalize(featuredFreeStory.level)} ·{" "}
-                  {capitalizeWords(featuredFreeStory.topic)}
+                  {formatLanguage(featuredFreeStory.language)} · {formatLevel(featuredFreeStory.level)} ·{" "}
+                  {formatTopic(featuredFreeStory.topic)}
                 </p>
               </div>
             </Link>
+          </div>
+        </section>
+      )}
+
+      {canShowPersonalizedRecommendations && recommendedStories.length > 0 && (
+        <section className="mb-12 text-center w-full max-w-5xl">
+          <div className="mb-6">
+            <p className="text-xs uppercase tracking-[0.18em] text-emerald-300 mb-2">
+              Premium personalization
+            </p>
+            <h2 className="text-2xl font-semibold text-white">Recommended for you</h2>
+          </div>
+
+          <div className="min-h-[320px]">
+            <StoryCarousel
+              items={recommendedStories}
+              renderItem={(story) => (
+                <Link
+                  key={story.key}
+                  href={withReturnContext(`/books/${story.bookSlug}/${story.storySlug}`)}
+                  className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+                >
+                  <div className="w-full h-48 bg-gray-800">
+                    <img
+                      src={story.coverUrl}
+                      alt={story.storyTitle}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+
+                  <div className="p-5 flex flex-col justify-between flex-1 text-left">
+                    <div>
+                      <p className="inline-flex text-[11px] font-semibold uppercase tracking-[0.08em] text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 rounded-full px-2 py-0.5 mb-2">
+                        {story.reason}
+                      </p>
+                      <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
+                        {story.storyTitle}
+                      </h3>
+                      <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">
+                        {story.bookTitle}
+                      </p>
+                    </div>
+
+                    <div className="mt-3 text-sm text-gray-400 space-y-1">
+                      <p>
+                        {formatLanguage(story.language)} · {formatLevel(story.level)}
+                      </p>
+                      <p>
+                        {formatAudioDuration(recommendedStoryDurations[story.key])} ·{" "}
+                        {formatTopic(story.topic)}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              )}
+            />
           </div>
         </section>
       )}
@@ -876,7 +1264,7 @@ export default function HomeClient({
                 href={`/books/${book.slug}?from=home`}
                 title={book.title}
                 cover={book.cover}
-                meta={`${capitalize(book.language)} · ${capitalize(book.level)}`}
+                meta={`${formatLanguage(book.language)} · ${formatLevel(book.level)}`}
                 description={book.description}
               />
             )}
@@ -891,7 +1279,7 @@ export default function HomeClient({
               <BookHorizontalCard
                 title={book.title}
                 cover={book.cover}
-                meta={`${capitalize(book.language)} · ${capitalize(book.level)}`}
+                meta={`${formatLanguage(book.language)} · ${formatLevel(book.level)}`}
                 description={book.description}
                 href={`/books/${book.slug}?from=home`}
               />
@@ -937,10 +1325,10 @@ export default function HomeClient({
 
                   <div className="mt-3 text-sm text-gray-400 space-y-1">
                     <p>
-                      {capitalize(s.language)} · {capitalize(s.level)}
+                      {formatLanguage(s.language)} · {formatLevel(s.level)}
                     </p>
                     <p>
-                      {formatAudioDuration(durationSec)} · {capitalizeWords(topic)}
+                      {formatAudioDuration(durationSec)} · {formatTopic(topic)}
                     </p>
                   </div>
                 </div>
@@ -989,7 +1377,7 @@ export default function HomeClient({
                   </div>
 
                   <p className="mt-3 text-sm text-gray-400">
-                    {capitalize(story.language)} · {capitalize(story.level)}
+                    {formatLanguage(story.language)} · {formatLevel(story.level)}
                   </p>
                 </div>
               </Link>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { formatLanguage, formatLevel } from "@/lib/displayFormat";
 
 type BookSuggestion = {
   kind: "book";
@@ -169,7 +170,7 @@ export default function ExploreSearch({
           id: `book:${slug}`,
           title,
           href: withReturnContext(`/books/${slug}`),
-          subtitle: [language, level].filter(Boolean).join(" · "),
+          subtitle: [formatLanguage(language), formatLevel(level)].join(" · "),
           coverUrl,
         },
         score: sc,
@@ -199,7 +200,11 @@ export default function ExploreSearch({
           id: `bookStory:${bs.bookSlug}:${bs.storySlug}`,
           title: bs.storyTitle || "Untitled story",
           href: withReturnContext(`/books/${bs.bookSlug}/${bs.storySlug}`),
-          subtitle: [bs.bookTitle || bs.bookSlug, bs.language, bs.level]
+          subtitle: [
+            bs.bookTitle || bs.bookSlug,
+            formatLanguage(bs.language),
+            formatLevel(bs.level),
+          ]
             .filter(Boolean)
             .join(" · "),
           coverUrl: bs.coverUrl || "/covers/default.jpg",
@@ -230,7 +235,7 @@ export default function ExploreSearch({
           id: `polyglot:${ps.slug}`,
           title: ps.title,
           href: withReturnContext(`/stories/${ps.slug}`),
-          subtitle: [ps.language, ps.level].filter(Boolean).join(" · "),
+          subtitle: [formatLanguage(ps.language), formatLevel(ps.level)].join(" · "),
           coverUrl,
         },
         score: sc,

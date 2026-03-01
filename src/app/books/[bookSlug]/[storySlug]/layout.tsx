@@ -1,5 +1,4 @@
 import StoryBackLink from "@/components/StoryBackLink";
-import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Suspense } from "react";
 
@@ -10,22 +9,20 @@ type Props = {
 
 export default async function StoryLayout({ children, params }: Props) {
   const { bookSlug } = await params;
-  const fallbackHref = `/books/${bookSlug}`;
 
   return (
     <div className="flex flex-col min-h-full text-foreground">
-      {/* Botón de volver (desktop) */}
-      <div className="hidden md:block">
-        <div className="mx-auto max-w-4xl px-6 pt-6">
+      {/* Botón de volver (mobile + desktop) */}
+      <div className="block">
+        <div className="mx-auto max-w-4xl px-4 pt-4 md:px-6 md:pt-6">
           <Suspense
             fallback={
-                <Link
-                href={fallbackHref}
-                className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-gray-200 hover:bg-white/10 hover:text-white"
+              <div
+                className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-gray-300/80"
               >
                 <ArrowLeft className="h-5 w-5" />
-                <span>Back to book</span>
-              </Link>
+                <span>Back</span>
+              </div>
             }
           >
             <StoryBackLink bookSlug={bookSlug} />

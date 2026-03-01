@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
+import { formatLanguage } from '@/lib/displayFormat';
 
 type FavoriteItem = {
   word: string;
@@ -410,7 +411,7 @@ export default function FavoritesPage() {
                     <div className="mt-2 flex items-center gap-2">
                       {fav.language ? (
                         <span className="text-[11px] px-2 py-0.5 rounded-full bg-white/10 text-gray-300">
-                          {fav.language}
+                          {formatLanguage(fav.language)}
                         </span>
                       ) : null}
                       {fav.sourcePath ? (

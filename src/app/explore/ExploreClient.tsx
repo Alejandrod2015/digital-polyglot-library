@@ -9,18 +9,7 @@ import { useUser } from "@clerk/nextjs";
 import { useEffect, useMemo, useState } from "react";
 import ExploreSearch from "@/components/ExploreSearch";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
-const capitalize = (value?: string) =>
-  value ? value.charAt(0).toUpperCase() + value.slice(1) : "—";
-
-const capitalizeWords = (value?: string) =>
-  value
-    ? value
-        .split(/\s+/)
-        .filter(Boolean)
-        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-        .join(" ")
-    : "—";
+import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
 
 const formatAudioDuration = (totalSeconds?: number) => {
   if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:--";
@@ -560,11 +549,11 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       </div>
 
                       <p className="mt-3 text-sm text-gray-400">
-                        {capitalize(s.language)} · {capitalize(s.level)}
+                        {formatLanguage(s.language)} · {formatLevel(s.level)}
                       </p>
                       <p className="text-sm text-gray-400">
                         {formatAudioDuration(storyDurations[`${s.bookSlug}:${s.storySlug}`])} ·{" "}
-                        {capitalizeWords(s.topics[0])}
+                        {formatTopic(s.topics[0])}
                       </p>
                     </div>
                   </Link>
@@ -600,8 +589,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                   if (!isRecord(bookUnknown)) return null;
                   const slug = getString(bookUnknown, "slug") ?? "";
                   const title = getString(bookUnknown, "title") ?? "";
-                  const language = capitalize(getString(bookUnknown, "language") ?? undefined);
-                  const level = capitalize(getString(bookUnknown, "level") ?? undefined);
+                  const language = formatLanguage(getString(bookUnknown, "language") ?? undefined);
+                  const level = formatLevel(getString(bookUnknown, "level") ?? undefined);
                   const cover = normalizeCoverUrl(getString(bookUnknown, "cover"));
                   const description = getString(bookUnknown, "description") ?? undefined;
                   if (!slug) return null;
@@ -626,8 +615,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                   if (!isRecord(bookUnknown)) return null;
                   const slug = getString(bookUnknown, "slug") ?? "";
                   const title = getString(bookUnknown, "title") ?? "";
-                  const language = capitalize(getString(bookUnknown, "language") ?? undefined);
-                  const level = capitalize(getString(bookUnknown, "level") ?? undefined);
+                  const language = formatLanguage(getString(bookUnknown, "language") ?? undefined);
+                  const level = formatLevel(getString(bookUnknown, "level") ?? undefined);
                   const cover = normalizeCoverUrl(getString(bookUnknown, "cover"));
                   const description = getString(bookUnknown, "description") ?? undefined;
                   if (!slug) return null;
@@ -696,7 +685,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       </div>
 
                       <p className="mt-3 text-sm text-gray-400">
-                        {capitalize(story.language)} · {capitalize(story.level)}
+                        {formatLanguage(story.language)} · {formatLevel(story.level)}
                       </p>
                     </div>
                   </Link>

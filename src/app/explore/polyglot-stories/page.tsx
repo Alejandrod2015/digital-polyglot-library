@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { currentUser } from "@clerk/nextjs/server";
 import { getPublicUserStories } from "@/lib/userStories";
+import StoryVerticalCard from "@/components/StoryVerticalCard";
+import { formatLanguage, formatLevel } from "@/lib/displayFormat";
 
 type ExplorePolyglotStoriesPageProps = {
   searchParams: Promise<{ topic?: string }>;
@@ -69,26 +71,14 @@ export default async function ExplorePolyglotStoriesPage({
       ) : (
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {filteredStories.map((story) => (
-            <Link
+            <StoryVerticalCard
               key={story.id}
               href={`/stories/${story.slug}?returnTo=/explore/polyglot-stories&returnLabel=Polyglot%20Stories`}
-              className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md"
-            >
-              <div className="w-full h-48 bg-gray-800">
-                <img src={story.coverUrl} alt={story.title} className="object-cover w-full h-full" />
-              </div>
-              <div className="p-5 flex flex-col justify-between flex-1">
-                <div>
-                  <h2 className="text-xl font-semibold line-clamp-2">{story.title}</h2>
-                  <p className="mt-2 text-sm text-gray-300 line-clamp-3">
-                    {stripHtml(story.text).slice(0, 140)}...
-                  </p>
-                </div>
-                <p className="mt-3 text-sm text-gray-400">
-                  {story.language || "—"} · {story.level || "—"}
-                </p>
-              </div>
-            </Link>
+              title={story.title}
+              coverUrl={story.coverUrl}
+              excerpt={`${stripHtml(story.text).slice(0, 140)}...`}
+              meta={`${formatLanguage(story.language)} · ${formatLevel(story.level)}`}
+            />
           ))}
         </div>
       )}

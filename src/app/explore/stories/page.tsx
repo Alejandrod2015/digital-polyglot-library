@@ -2,6 +2,7 @@ import Link from "next/link";
 import { books } from "@/data/books";
 import { currentUser } from "@clerk/nextjs/server";
 import type { Book, Story } from "@/types/books";
+import ExploreStoryCardsClient from "@/components/ExploreStoryCardsClient";
 
 type ExploreStoriesPageProps = {
   searchParams: Promise<{ topic?: string }>;
@@ -16,6 +17,8 @@ type StoryItem = {
   language: string;
   level: string;
   coverUrl: string;
+  audioSrc?: string;
+  topic?: string;
   topics: string[];
 };
 
@@ -76,6 +79,12 @@ function extractStories(): StoryItem[] {
         typeof story.cover === "string" && story.cover.trim() !== ""
           ? story.cover
           : bookCover;
+      const rawAudio = typeof story.audio === "string" ? story.audio.trim() : "";
+      const storyAudio = rawAudio
+        ? rawAudio.startsWith("http")
+          ? rawAudio
+          : `https://cdn.sanity.io/files/9u7ilulp/production/${rawAudio}.mp3`
+        : undefined;
       const storyTopics = [
         ...toTopicList(story.topic),
         ...toTopicList(story.tags),
@@ -91,6 +100,8 @@ function extractStories(): StoryItem[] {
         language: storyLanguage,
         level: storyLevel,
         coverUrl: storyCover,
+        audioSrc: storyAudio,
+        topic: typeof story.topic === "string" ? story.topic : book.topic,
         topics: storyTopics,
       });
     });
@@ -132,32 +143,19 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
       {filteredStories.length === 0 ? (
         <p className="text-gray-400">No stories found.</p>
       ) : (
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredStories.map((story) => (
-            <Link
-              key={story.id}
-              href={`/books/${story.bookSlug}/${story.storySlug}?returnTo=/explore/stories&returnLabel=All%20Stories`}
-              className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md"
-            >
-              <div className="w-full h-48 bg-gray-800">
-                <img
-                  src={story.coverUrl || "/covers/default.jpg"}
-                  alt={story.storyTitle}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="p-5 flex flex-col justify-between flex-1">
-                <div>
-                  <h2 className="text-xl font-semibold line-clamp-2">{story.storyTitle}</h2>
-                  <p className="mt-1 text-sm text-sky-300 line-clamp-1">{story.bookTitle}</p>
-                </div>
-                <p className="mt-3 text-sm text-gray-400">
-                  {story.language || "—"} · {story.level || "—"}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <ExploreStoryCardsClient
+          items={filteredStories.map((story) => ({
+            id: story.id,
+            href: `/books/${story.bookSlug}/${story.storySlug}?returnTo=/explore/stories&returnLabel=All%20Stories`,
+            title: story.storyTitle,
+            subtitle: story.bookTitle,
+            coverUrl: story.coverUrl,
+            language: story.language,
+            level: story.level,
+            topic: story.topic,
+            audioSrc: story.audioSrc,
+          }))}
+        />
       )}
     </div>
   );

@@ -1,15 +1,15 @@
 import { books } from "@/data/books";
 import Link from "next/link";
-import { LEVEL_LABELS } from "@/types/books";
 import Cover from "@/components/Cover";
 import AddToLibraryButton from "@/components/AddToLibraryButton";
 import BackButton from "@/components/BackButton";
 import BookStoriesGrid from "@/components/BookStoriesGrid";
 import { Play, ShoppingBag } from "lucide-react";
+import { formatLanguage, formatLevel, formatTopic, toTitleCase } from "@/lib/displayFormat";
 
 type BookPageProps = {
   params: Promise<{ bookSlug: string }>;
-  searchParams: Promise<{ from?: string }>;
+  searchParams: Promise<{ from?: string; returnTo?: string; returnLabel?: string }>;
 };
 
 function toExternalUrl(url: string): string {
@@ -19,14 +19,28 @@ function toExternalUrl(url: string): string {
   return `https://${trimmed}`;
 }
 
+function isSafeInternalPath(path: string): boolean {
+  return path.startsWith("/") && !path.startsWith("//");
+}
+
 export default async function BookPage({ params, searchParams }: BookPageProps) {
   const { bookSlug } = await params;
-  const { from } = await searchParams;
+  const { from, returnTo, returnLabel } = await searchParams;
 
   const book = Object.values(books).find((b) => b.slug === bookSlug);
   if (!book) {
     return <div className="p-8 text-center">Libro no encontrado.</div>;
   }
+
+  const storyNavParams = new URLSearchParams();
+  if (returnTo && isSafeInternalPath(returnTo)) {
+    storyNavParams.set("returnTo", returnTo);
+    if (returnLabel?.trim()) storyNavParams.set("returnLabel", returnLabel.trim());
+  } else if (from?.trim()) {
+    storyNavParams.set("from", from.trim());
+  }
+  const storyNavSuffix = storyNavParams.toString() ? `?${storyNavParams.toString()}` : "";
+  const replaceStoryNavigation = storyNavSuffix.length > 0;
 
   return (
     <div className="max-w-5xl mx-auto p-8">
@@ -56,28 +70,28 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
           {/* Etiquetas (mantiene el estilo original) */}
           <div className="flex flex-wrap gap-2 mb-6">
             {book.language && (
-              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
-                {book.language}
+              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap">
+                {formatLanguage(book.language)}
               </span>
             )}
             {book.level && (
-              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
-                {LEVEL_LABELS[book.level]}
+              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap">
+                {formatLevel(book.level)}
               </span>
             )}
             {book.region && (
-              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
-                {book.region}
+              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap">
+                {toTitleCase(book.region)}
               </span>
             )}
             {book.topic && (
-              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
-                {book.topic}
+              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap">
+                {formatTopic(book.topic)}
               </span>
             )}
             {book.formality && (
-              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap capitalize">
-                {book.formality}
+              <span className="px-3 py-1 bg-gray-700 text-gray-100 text-sm rounded-full whitespace-nowrap">
+                {toTitleCase(book.formality)}
               </span>
             )}
           </div>
@@ -85,7 +99,8 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
           {/* Botones principales en una fila */}
           <div className="flex flex-wrap items-center gap-4 mb-10">
             <Link
-              href={`/books/${book.slug}/${book.stories[0].slug}`}
+              href={`/books/${book.slug}/${book.stories[0].slug}${storyNavSuffix}`}
+              replace={replaceStoryNavigation}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium bg-blue-600 hover:bg-blue-700 text-white transition-colors"
             >
               <Play className="h-5 w-5" />
@@ -124,7 +139,12 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
               {book.stories.length} stories in this book
             </p>
 
-            <BookStoriesGrid book={book} stories={book.stories} />
+            <BookStoriesGrid
+              book={book}
+              stories={book.stories}
+              hrefSuffix={storyNavSuffix}
+              replaceNavigation={replaceStoryNavigation}
+            />
           </div>
         </div>
       </div>

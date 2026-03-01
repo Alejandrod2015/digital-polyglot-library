@@ -2,6 +2,8 @@ import Link from "next/link";
 import { books } from "@/data/books";
 import { currentUser } from "@clerk/nextjs/server";
 import type { Book } from "@/types/books";
+import BookHorizontalCard from "@/components/BookHorizontalCard";
+import { formatLanguage, formatLevel } from "@/lib/displayFormat";
 
 type ExploreBooksPageProps = {
   searchParams: Promise<{ topic?: string }>;
@@ -71,7 +73,7 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
       {filteredBooks.length === 0 ? (
         <p className="text-gray-400">No books found.</p>
       ) : (
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
           {filteredBooks.map((book) => {
             const slug = book.slug;
             const title = book.title || "Untitled book";
@@ -79,25 +81,19 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
               typeof book.cover === "string" && book.cover.trim() !== ""
                 ? book.cover
                 : "/covers/default.jpg";
-            const language = book.language || "—";
-            const level = book.level || "—";
+            const language = formatLanguage(book.language);
+            const level = formatLevel(book.level);
+            const meta = `${language} · ${level}`;
 
             return (
-              <Link
+              <BookHorizontalCard
                 key={slug || title}
-                href={`/books/${slug}`}
-                className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md"
-              >
-                <div className="w-full h-52 bg-gray-800">
-                  <img src={cover} alt={title} className="object-cover w-full h-full" />
-                </div>
-                <div className="p-4">
-                  <h2 className="text-lg font-semibold line-clamp-2">{title}</h2>
-                  <p className="mt-2 text-sm text-gray-400">
-                    {language} · {level}
-                  </p>
-                </div>
-              </Link>
+                title={title}
+                cover={cover}
+                meta={meta}
+                description={book.description}
+                href={`/books/${slug}?returnTo=/explore/books&returnLabel=All%20Books`}
+              />
             );
           })}
         </div>
