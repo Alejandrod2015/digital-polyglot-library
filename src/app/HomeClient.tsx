@@ -340,17 +340,17 @@ export default function HomeClient({
           .map((item) => {
             const hydratedItem = toContinueItem(item.bookSlug, item.storySlug);
             if (!hydratedItem) return null;
-            return {
-              ...hydratedItem,
-              progressSec:
-                typeof item.progressSec === "number" && Number.isFinite(item.progressSec)
-                  ? item.progressSec
-                  : undefined,
-              audioDurationSec:
-                typeof item.audioDurationSec === "number" && Number.isFinite(item.audioDurationSec)
-                  ? item.audioDurationSec
-                  : undefined,
-            };
+            const next: ContinueItem = { ...hydratedItem };
+            if (typeof item.progressSec === "number" && Number.isFinite(item.progressSec)) {
+              next.progressSec = item.progressSec;
+            }
+            if (
+              typeof item.audioDurationSec === "number" &&
+              Number.isFinite(item.audioDurationSec)
+            ) {
+              next.audioDurationSec = item.audioDurationSec;
+            }
+            return next;
           })
           .filter((item): item is ContinueItem => item !== null);
 
