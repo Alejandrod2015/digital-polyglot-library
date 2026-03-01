@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useUser } from '@clerk/nextjs';
+import { useAuth, useUser } from '@clerk/nextjs';
 
 type FavoriteItem = {
   word: string;
@@ -105,6 +105,7 @@ function formatNextReview(meta?: SrsMeta): string {
 
 export default function FavoritesPage() {
   const { user, isLoaded } = useUser();
+  const { userId } = useAuth();
   const [favorites, setFavorites] = useState<FavoriteItem[]>([]);
   const [srsMap, setSrsMap] = useState<SrsMap>({});
   const [isReady, setIsReady] = useState(false); // controla visibilidad final
@@ -116,7 +117,7 @@ export default function FavoritesPage() {
   useEffect(() => {
     const load = async () => {
       // 1️⃣ Cargar de localStorage inmediatamente
-      const localFavs = loadFavoritesCache(user?.id);
+      const localFavs = loadFavoritesCache(userId ?? undefined);
       setFavorites(localFavs);
 
       // 2️⃣ Sincronizar backend (en segundo plano)
@@ -143,7 +144,7 @@ export default function FavoritesPage() {
 
           localStorage.removeItem('favorites');
           setFavorites(merged);
-          saveFavoritesCache(user?.id, merged);
+          saveFavoritesCache(userId ?? undefined, merged);
 
           const remoteSrs: SrsMap = {};
           for (const fav of remoteFavs) {
@@ -166,7 +167,7 @@ export default function FavoritesPage() {
           // no romper UI
         }
       } else {
-        const map = loadSrsMap(user?.id);
+        const map = loadSrsMap(userId ?? undefined);
         setSrsMap(map);
       }
 
@@ -175,11 +176,11 @@ export default function FavoritesPage() {
     };
 
     void load();
-  }, [user, isLoaded]);
+  }, [user, isLoaded, userId]);
 
   useEffect(() => {
     const refreshFromCache = () => {
-      const cached = loadFavoritesCache(user?.id);
+      const cached = loadFavoritesCache(userId ?? undefined);
       setFavorites(cached);
     };
     window.addEventListener('favorites-updated', refreshFromCache);
@@ -188,12 +189,12 @@ export default function FavoritesPage() {
       window.removeEventListener('favorites-updated', refreshFromCache);
       window.removeEventListener('storage', refreshFromCache);
     };
-  }, [user?.id]);
+  }, [userId]);
 
   useEffect(() => {
     if (!isLoaded) return;
-    saveSrsMap(user?.id, srsMap);
-  }, [srsMap, user, isLoaded]);
+    saveSrsMap(userId ?? undefined, srsMap);
+  }, [srsMap, userId, isLoaded]);
 
   const now = Date.now();
   const dueFavorites = favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
@@ -203,7 +204,7 @@ export default function FavoritesPage() {
   const removeFavorite = async (word: string) => {
     const updated = favorites.filter((f) => f.word !== word);
     setFavorites(updated);
-    saveFavoritesCache(user?.id, updated);
+    saveFavoritesCache(userId ?? undefined, updated);
     const key = normalizeWord(word);
     setSrsMap((prev) => {
       if (!prev[key]) return prev;
