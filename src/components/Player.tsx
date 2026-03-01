@@ -32,6 +32,18 @@ async function trackMetric(
   }
 }
 
+async function syncContinueListening(storySlug: string, bookSlug: string) {
+  try {
+    await fetch("/api/continue-listening", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ storySlug, bookSlug }),
+    });
+  } catch {
+    // silencioso
+  }
+}
+
 type WakeLockSentinel = {
   released: boolean;
   release: () => Promise<void>;
@@ -266,6 +278,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
         .then(async () => {
           setIsPlaying(true);
           rememberContinueListening();
+          void syncContinueListening(storySlug, bookSlug);
           void requestWakeLock();
           await trackMetric(storySlug, bookSlug, "audio_play");
         })

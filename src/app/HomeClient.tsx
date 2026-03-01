@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useEffect, useState } from "react";
-import { useUser } from "@clerk/nextjs";
+import { useAuth, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import Cover from "@/components/Cover";
 import StoryCarousel from "@/components/StoryCarousel";
@@ -46,6 +46,12 @@ type ContinueItem = {
   topic?: string;
   readMinutes?: number;
   audioDurationSec?: number;
+};
+
+type ContinueListeningApiItem = {
+  bookSlug: string;
+  storySlug: string;
+  lastPlayedAt: string;
 };
 
 type Props = {
@@ -124,70 +130,159 @@ export default function HomeClient({
   latestPolyglotStories,
 }: Props) {
   const { user } = useUser();
+  const { userId } = useAuth();
 
   const [continueListening, setContinueListening] = useState<ContinueItem[]>([]);
 
+  const toContinueItem = (bookSlug: string, storySlug: string): ContinueItem | null => {
+    const bookMeta = Object.values(books).find((b) => b.slug === bookSlug);
+    if (!bookMeta) return null;
+    const storyMeta = bookMeta.stories.find((s) => s.slug === storySlug);
+    if (!storyMeta) return null;
+
+    const storyCover =
+      typeof storyMeta.cover === "string" && storyMeta.cover.trim() !== ""
+        ? storyMeta.cover
+        : null;
+    const cover =
+      storyCover ??
+      (typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
+        ? bookMeta.cover
+        : "/covers/default.jpg");
+
+    return {
+      bookSlug: bookMeta.slug,
+      storySlug: storyMeta.slug,
+      title: storyMeta.title,
+      bookTitle: bookMeta.title,
+      cover,
+      language: storyMeta.language ?? bookMeta.language,
+      level: storyMeta.level ?? bookMeta.level,
+      topic: storyMeta.topic ?? bookMeta.topic,
+      readMinutes: estimateReadMinutes(storyMeta.text ?? ""),
+    };
+  };
+
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem("dp_continue_listening_v1");
-      if (!raw) return;
+    let cancelled = false;
 
-      const parsed: unknown = JSON.parse(raw);
-      if (!Array.isArray(parsed)) return;
+    const loadContinueListening = async () => {
+      let localSafe: ContinueItem[] = [];
 
-      const safe = parsed
-        .map((i: unknown): ContinueItem | null => {
-          if (typeof i !== "object" || i === null) return null;
-          const r = i as Record<string, unknown>;
-          if (
-            typeof r.bookSlug !== "string" ||
-            typeof r.storySlug !== "string" ||
-            typeof r.title !== "string" ||
-            typeof r.bookTitle !== "string" ||
-            typeof r.cover !== "string"
-          ) {
-            return null;
+      try {
+        const raw = localStorage.getItem("dp_continue_listening_v1");
+        if (raw) {
+          const parsed: unknown = JSON.parse(raw);
+          if (Array.isArray(parsed)) {
+            localSafe = parsed
+              .map((i: unknown): ContinueItem | null => {
+                if (typeof i !== "object" || i === null) return null;
+                const r = i as Record<string, unknown>;
+                if (
+                  typeof r.bookSlug !== "string" ||
+                  typeof r.storySlug !== "string" ||
+                  typeof r.title !== "string" ||
+                  typeof r.bookTitle !== "string" ||
+                  typeof r.cover !== "string"
+                ) {
+                  return null;
+                }
+
+                const bookMeta = Object.values(books).find((b) => b.slug === r.bookSlug);
+                const storyMeta = bookMeta?.stories.find((s) => s.slug === r.storySlug);
+                const language =
+                  typeof r.language === "string"
+                    ? r.language
+                    : storyMeta?.language ?? bookMeta?.language;
+                const level =
+                  typeof r.level === "string" ? r.level : storyMeta?.level ?? bookMeta?.level;
+                const topic =
+                  typeof r.topic === "string" ? r.topic : storyMeta?.topic ?? bookMeta?.topic;
+                const readMinutes =
+                  typeof r.readMinutes === "number" && Number.isFinite(r.readMinutes)
+                    ? r.readMinutes
+                    : estimateReadMinutes(storyMeta?.text);
+                const audioDurationSec =
+                  typeof r.audioDurationSec === "number" && Number.isFinite(r.audioDurationSec)
+                    ? r.audioDurationSec
+                    : undefined;
+
+                return {
+                  bookSlug: r.bookSlug,
+                  storySlug: r.storySlug,
+                  title: r.title,
+                  bookTitle: r.bookTitle,
+                  cover: r.cover,
+                  language,
+                  level,
+                  topic,
+                  readMinutes,
+                  audioDurationSec,
+                };
+              })
+              .filter((i): i is ContinueItem => i !== null);
           }
+        }
+      } catch {
+        // ignora datos corruptos
+      }
 
-          const bookMeta = Object.values(books).find((b) => b.slug === r.bookSlug);
-          const storyMeta = bookMeta?.stories.find((s) => s.slug === r.storySlug);
-          const language =
-            typeof r.language === "string"
-              ? r.language
-              : storyMeta?.language ?? bookMeta?.language;
-          const level =
-            typeof r.level === "string" ? r.level : storyMeta?.level ?? bookMeta?.level;
-          const topic =
-            typeof r.topic === "string" ? r.topic : storyMeta?.topic ?? bookMeta?.topic;
-          const readMinutes =
-            typeof r.readMinutes === "number" && Number.isFinite(r.readMinutes)
-              ? r.readMinutes
-              : estimateReadMinutes(storyMeta?.text);
-          const audioDurationSec =
-            typeof r.audioDurationSec === "number" && Number.isFinite(r.audioDurationSec)
-              ? r.audioDurationSec
-              : undefined;
+      if (!userId) {
+        if (!cancelled) {
+          setContinueListening(localSafe);
+        }
+        return;
+      }
 
-          return {
-            bookSlug: r.bookSlug,
-            storySlug: r.storySlug,
-            title: r.title,
-            bookTitle: r.bookTitle,
-            cover: r.cover,
-            language,
-            level,
-            topic,
-            readMinutes,
-            audioDurationSec,
-          };
-        })
-        .filter((i): i is ContinueItem => i !== null);
+      // Sincroniza historial local previo del dispositivo al backend.
+      if (localSafe.length > 0) {
+        try {
+          await fetch("/api/continue-listening", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              items: localSafe.map((item) => ({
+                bookSlug: item.bookSlug,
+                storySlug: item.storySlug,
+              })),
+            }),
+          });
+        } catch {
+          // silencioso
+        }
+      }
 
-      setContinueListening(safe);
-    } catch {
-      // ignora datos corruptos
-    }
-  }, []);
+      try {
+        const res = await fetch("/api/continue-listening", { cache: "no-store" });
+        if (!res.ok) {
+          if (!cancelled) setContinueListening([]);
+          return;
+        }
+
+        const remote = (await res.json()) as ContinueListeningApiItem[];
+        if (!Array.isArray(remote)) {
+          if (!cancelled) setContinueListening([]);
+          return;
+        }
+
+        const hydrated = remote
+          .map((item) => toContinueItem(item.bookSlug, item.storySlug))
+          .filter((item): item is ContinueItem => item !== null);
+
+        if (cancelled) return;
+        setContinueListening(hydrated);
+        localStorage.setItem("dp_continue_listening_v1", JSON.stringify(hydrated));
+      } catch {
+        if (!cancelled) setContinueListening([]);
+      }
+    };
+
+    void loadContinueListening();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [userId]);
 
   useEffect(() => {
     if (continueListening.length === 0) return;

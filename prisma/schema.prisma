@@ -110,6 +110,21 @@ model UserMetric {
   @@index([createdAt])
 }
 
+model ContinueListeningEntry {
+  id           String   @id @default(cuid())
+  userId       String
+  bookSlug     String
+  storySlug    String
+  lastPlayedAt DateTime @default(now())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("dp_continue_listening_v1")
+  @@unique([userId, bookSlug, storySlug], name: "userId_bookSlug_storySlug")
+  @@index([userId])
+  @@index([lastPlayedAt])
+}
+
 model WeeklyMetricsSnapshot {
   id             String   @id @default(cuid())
   weekStart      DateTime
