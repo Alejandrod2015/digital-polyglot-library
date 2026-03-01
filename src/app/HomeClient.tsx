@@ -227,12 +227,12 @@ export default function HomeClient({
         // ignora datos corruptos
       }
 
-      if (!userId) {
-        if (!cancelled) {
-          setContinueListening(localSafe);
-        }
-        return;
+      // Siempre mostramos lo local de inmediato para evitar flicker/desaparición.
+      if (!cancelled) {
+        setContinueListening(localSafe);
       }
+
+      if (!userId) return;
 
       // Sincroniza historial local previo del dispositivo al backend.
       if (localSafe.length > 0) {
@@ -254,26 +254,23 @@ export default function HomeClient({
 
       try {
         const res = await fetch("/api/continue-listening", { cache: "no-store" });
-        if (!res.ok) {
-          if (!cancelled) setContinueListening([]);
-          return;
-        }
+        if (!res.ok) return;
 
         const remote = (await res.json()) as ContinueListeningApiItem[];
-        if (!Array.isArray(remote)) {
-          if (!cancelled) setContinueListening([]);
-          return;
-        }
+        if (!Array.isArray(remote)) return;
 
         const hydrated = remote
           .map((item) => toContinueItem(item.bookSlug, item.storySlug))
           .filter((item): item is ContinueItem => item !== null);
 
         if (cancelled) return;
-        setContinueListening(hydrated);
-        localStorage.setItem("dp_continue_listening_v1", JSON.stringify(hydrated));
+        // Solo reemplazamos si hay datos remotos o si no había nada local.
+        if (hydrated.length > 0 || localSafe.length === 0) {
+          setContinueListening(hydrated);
+          localStorage.setItem("dp_continue_listening_v1", JSON.stringify(hydrated));
+        }
       } catch {
-        if (!cancelled) setContinueListening([]);
+        // mantiene fallback local
       }
     };
 
