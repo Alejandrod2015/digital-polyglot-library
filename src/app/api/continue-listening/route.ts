@@ -191,7 +191,19 @@ export async function POST(req: NextRequest): Promise<Response> {
   }
 
   try {
-    const json: unknown = await req.json();
+    const rawBody = await req.text();
+    if (!rawBody || rawBody.trim() === "") {
+      // Algunos clientes/beacons pueden enviar POST vacío al cerrar/cambiar pestaña.
+      return NextResponse.json({ success: true, ignored: true });
+    }
+
+    let json: unknown;
+    try {
+      json = JSON.parse(rawBody) as unknown;
+    } catch {
+      return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
+    }
+
     const pairs = parseBody(json);
     if (!pairs) {
       return NextResponse.json({ error: "Invalid body" }, { status: 400 });

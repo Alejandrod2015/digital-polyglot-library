@@ -50,8 +50,12 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
   const visibleText = story.text;
 
+  const storyCover = typeof story.cover === "string" && story.cover.trim() !== "" ? story.cover : null;
   const rawCover = story.cover ?? book.cover ?? "/covers/default.jpg";
 
+  const storyCoverUrl = storyCover?.startsWith("https://cdn.sanity.io/")
+    ? `${storyCover}?w=1200&fit=crop&auto=format`
+    : storyCover;
   const coverUrl = rawCover.startsWith("https://cdn.sanity.io/")
     ? `${rawCover}?w=800&fit=crop&auto=format`
     : rawCover;
@@ -66,6 +70,19 @@ export default async function StoryPage({ params }: StoryPageProps) {
       <div className="relative mb-7 pt-2">
         <h1 className="text-4xl font-bold text-white text-center">{story.title}</h1>
       </div>
+
+      {/* Cover de historia (solo si existe) */}
+      {storyCoverUrl ? (
+        <div className="mb-7">
+          <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-[#102746]">
+            <img
+              src={storyCoverUrl}
+              alt={story.title}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      ) : null}
 
       {/* Botón de guardar */}
       <div className="absolute top-[-14px] -right-2 sm:top-0 sm:right-0">

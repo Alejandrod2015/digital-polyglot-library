@@ -4,12 +4,20 @@ import { LEVEL_LABELS } from "@/types/books";
 import Cover from "@/components/Cover";
 import AddToLibraryButton from "@/components/AddToLibraryButton";
 import BackButton from "@/components/BackButton";
+import BookStoriesGrid from "@/components/BookStoriesGrid";
 import { Play, ShoppingBag } from "lucide-react";
 
 type BookPageProps = {
   params: Promise<{ bookSlug: string }>;
   searchParams: Promise<{ from?: string }>;
 };
+
+function toExternalUrl(url: string): string {
+  const trimmed = url.trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+}
 
 export default async function BookPage({ params, searchParams }: BookPageProps) {
   const { bookSlug } = await params;
@@ -95,37 +103,28 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
             />
 
             {book.storeUrl && (
-              <Link
-                href={book.storeUrl}
+              <a
+                href={toExternalUrl(book.storeUrl)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium bg-amber-500 hover:bg-amber-600 text-white transition-colors"
               >
                 <ShoppingBag className="h-5 w-5" />
                 Buy physical book
-              </Link>
+              </a>
             )}
           </div>
 
           {/* Tabla de contenidos */}
           <div className="mt-8">
             <h2 className="text-2xl font-semibold mb-4 text-white">
-              Table of contents
+              Stories
             </h2>
-            <ul className="space-y-3">
-              {book.stories.map((story) => {
-                return (
-                  <li key={story.id}>
-                    <Link
-                      href={`/books/${book.slug}/${story.slug}`}
-                      className="block p-4 bg-gray-800 rounded-xl text-gray-200 hover:bg-gray-700 transition-colors"
-                    >
-                      <span>{story.title}</span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+            <p className="text-sm text-gray-400 mb-4">
+              {book.stories.length} stories in this book
+            </p>
+
+            <BookStoriesGrid book={book} stories={book.stories} />
           </div>
         </div>
       </div>
