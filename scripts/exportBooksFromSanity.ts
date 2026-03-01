@@ -5,6 +5,12 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import crypto from "crypto";
+import {
+  inferBookTopicFromStoryTopics,
+  inferTopicFromText,
+  isGenericTopic,
+  topTopics,
+} from "../src/lib/topicClassifier";
 
 dotenv.config({ path: ".env" });
 dotenv.config({ path: ".env.local" });
@@ -31,6 +37,8 @@ type RawStory = {
   slug?: string;
   audio?: string;
   cover?: string;
+  topic?: string;
+  tags?: unknown;
   vocabRaw?: unknown;
   _updatedAt?: string;
 };
@@ -60,6 +68,8 @@ type ExportedStory = {
   title: string;
   text: string;
   audio: string;
+  topic: string;
+  tags?: string[];
   cover?: string;
   vocab: unknown[];
 };
@@ -141,6 +151,14 @@ function toConstName(raw: string): string {
 
 function safeString(v: unknown, fallback = ""): string {
   return typeof v === "string" ? v : fallback;
+}
+
+function toStringArray(v: unknown): string[] {
+  if (!Array.isArray(v)) return [];
+  return v
+    .filter((item): item is string => typeof item === "string")
+    .map((item) => item.trim())
+    .filter(Boolean);
 }
 
 function ensureDir(dir: string) {
@@ -229,6 +247,8 @@ async function exportBooks() {
         _updatedAt,
         title,
         text,
+        topic,
+        tags,
         "slug": coalesce(slug.current, _id),
         "audio": coalesce(audio.asset->url, ""),
         "cover": select(
@@ -262,6 +282,21 @@ async function exportBooks() {
       const sSlug = safeString(s.slug, safeString(s._id, `story-${i + 1}`));
       const sCover =
         typeof s.cover === "string" && s.cover.length > 0 ? s.cover : undefined;
+      const inferredStoryTopic = inferTopicFromText({
+        title: safeString(s.title, ""),
+        text: safeString(s.text, ""),
+        existingTopic: safeString(s.topic, ""),
+        fallback: inferTopicFromText({
+          title: safeString(b.title, ""),
+          description: safeString(b.description, ""),
+          existingTopic: safeString(b.topic, ""),
+          fallback: "Daily life",
+        }),
+      });
+      const tags = toStringArray(s.tags);
+      if (!tags.some((tag) => tag.toLowerCase() === inferredStoryTopic.toLowerCase())) {
+        tags.unshift(inferredStoryTopic);
+      }
 
       return {
         id: sSlug,
@@ -269,10 +304,25 @@ async function exportBooks() {
         title: safeString(s.title, `Story ${i + 1}`),
         text: safeString(s.text, ""),
         audio: safeString(s.audio, ""),
+        topic: inferredStoryTopic,
+        ...(tags.length > 0 ? { tags } : {}),
         ...(sCover ? { cover: sCover } : {}),
         vocab: normalizeVocab(s.vocabRaw),
       };
     });
+
+    const storyTopics = stories.map((s) => s.topic).filter(Boolean);
+    const inferredBookTopic = inferBookTopicFromStoryTopics(storyTopics, {
+      title: safeString(b.title, ""),
+      description: safeString(b.description, ""),
+      existingTopic: safeString(b.topic, ""),
+    });
+    const inferredThemes = topTopics(storyTopics, 3);
+    const existingTheme = toStringArray(b.theme);
+    const resolvedTheme =
+      existingTheme.length > 0 && !existingTheme.every((t) => isGenericTopic(t))
+        ? existingTheme
+        : inferredThemes;
 
     const exported: ExportedBook = {
       id: bookId,
@@ -280,11 +330,11 @@ async function exportBooks() {
       title: safeString(b.title, ""),
       description: safeString(b.description, ""),
       cover: safeString(b.cover, "/covers/default.jpg"),
-      theme: b.theme ?? [],
+      theme: resolvedTheme,
       level: safeString(b.level, "beginner"),
       language: safeString(b.language, "english"),
       region: typeof b.region === "string" && b.region.length > 0 ? b.region : undefined,
-      topic: safeString(b.topic, ""),
+      topic: inferredBookTopic,
       formality: safeString(b.formality, "neutral"),
       audioFolder: safeString(b.audioFolder, ""),
       storeUrl: safeString(b.storeUrl, ""),

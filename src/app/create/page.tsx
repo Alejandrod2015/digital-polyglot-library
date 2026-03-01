@@ -108,7 +108,7 @@ export default function CreatePage() {
   return (
     <div className="max-w-3xl mx-auto py-12 px-4 text-gray-100">
       <div className="flex items-center gap-3 mb-8">
-        <PenLine className="h-7 w-7 text-emerald-400" />
+        <PenLine className="h-7 w-7 text-white" />
         <h1 className="text-3xl font-bold text-white">Create a Story</h1>
       </div>
 
@@ -209,7 +209,7 @@ export default function CreatePage() {
         <button
           type="submit"
           disabled={status === 'generating_text' || status === 'generating_audio'}
-          className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 rounded-md transition"
+          className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-md transition"
         >
           {status === 'idle' && 'Generate Story'}
           {status === 'generating_text' && (
@@ -224,7 +224,7 @@ export default function CreatePage() {
           )}
           {status === 'done' && (
             <>
-              <CheckCircle className="w-5 h-5 text-green-400" /> Story ready!
+              <CheckCircle className="w-5 h-5 text-white" /> Story ready!
             </>
           )}
         </button>
@@ -264,7 +264,7 @@ function StoryPreview({ story }: { story: any }) {
 
   return (
     <div className="mt-10 bg-[#1B263B] border border-gray-700 rounded-xl p-6">
-      <h2 className="text-2xl font-bold mb-2 text-emerald-400">{story.title}</h2>
+      <h2 className="text-2xl font-bold mb-2 text-white">{story.title}</h2>
       <p className="text-sm text-gray-400 mb-4">
         {story.language} • {story.level} • {story.region || 'General'}
       </p>
@@ -276,7 +276,7 @@ function StoryPreview({ story }: { story: any }) {
           renderWord={(word) => (
             <span
               onClick={() => handleWordClick(word)}
-              className="vocab-word cursor-pointer text-emerald-400 hover:text-emerald-300"
+              className="vocab-word cursor-pointer text-yellow-300 hover:text-yellow-200"
             >
               {word}
             </span>
@@ -298,7 +298,7 @@ function StoryPreview({ story }: { story: any }) {
       <div className="flex justify-end mt-6">
         <Link
           href={`/stories/${story.slug}`}
-          className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md transition font-medium"
+          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition font-medium"
         >
           Read full story →
         </Link>

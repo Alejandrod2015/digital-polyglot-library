@@ -21,7 +21,7 @@ export default function SuccessPage() {
           ✅
         </motion.div>
 
-        <h1 className="text-4xl font-extrabold mb-2 bg-gradient-to-r from-emerald-400 to-indigo-400 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-extrabold mb-2 bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent">
           Payment successful!
         </h1>
 

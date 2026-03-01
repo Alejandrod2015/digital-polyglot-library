@@ -298,7 +298,7 @@ export default function MyLibraryClient() {
 
          {/* STORIES */}
          <section className="mb-16">
-           <h2 className="text-2xl font-semibold mb-6 text-emerald-400">
+           <h2 className="text-2xl font-semibold mb-6 text-white">
              Your Saved Stories
            </h2>
 

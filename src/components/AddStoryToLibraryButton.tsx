@@ -120,8 +120,8 @@ export default function AddStoryToLibraryButton({
        disabled={!isLoaded || checking}
        className={`p-2 rounded-full transition ${
  inLibrary
-   ? 'bg-emerald-600/20 text-emerald-400'
-   : 'hover:bg-emerald-600/20 text-gray-400 hover:text-emerald-400'
+   ? 'bg-white/10 text-white'
+   : 'hover:bg-white/10 text-gray-400 hover:text-white'
 }`}
        title={inLibrary ? 'In your library' : 'Add to library'}
      >
@@ -137,7 +137,7 @@ export default function AddStoryToLibraryButton({
      disabled={!isLoaded || checking}
      className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-colors ${
        inLibrary
-         ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+         ? 'bg-blue-600 hover:bg-blue-700 text-white'
          : 'bg-gray-700 hover:bg-gray-600 text-gray-200'
      }`}
    >

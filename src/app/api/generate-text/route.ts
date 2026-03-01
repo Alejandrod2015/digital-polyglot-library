@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
+import { inferTopicFromText } from "@/lib/topicClassifier";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -36,7 +37,7 @@ export async function POST(req: Request) {
       region,
       level = "intermediate",
       focus = "verbs",
-      topic = "daily life",
+      topic = "",
     } = body as {
       language?: string;
       region?: string;
@@ -47,10 +48,11 @@ export async function POST(req: Request) {
 
     const regionClause = region ? `, specifically from ${region}` : "";
 
+    const resolvedRequestedTopic = typeof topic === "string" ? topic.trim() : "";
     const prompt = `
 You are an expert language teacher and long story writer.
 Write a long engaging story for a ${level} student learning ${language}${regionClause}.
-The topic of the story is "${topic}".
+${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Wrap each paragraph inside <blockquote> ... </blockquote>.
 
@@ -103,6 +105,12 @@ Return ONLY valid JSON:
     }
 
     const { title, text } = parsed as StoryJSON;
+    const inferredTopic = inferTopicFromText({
+      title,
+      text,
+      existingTopic: resolvedRequestedTopic,
+      fallback: "Daily life",
+    });
 
     // 🔊 Generar y subir audio
     let audioAssetUrl: string | null = null;
@@ -115,7 +123,7 @@ Return ONLY valid JSON:
     }
 
     // ✅ Devolver respuesta limpia y consistente
-    return NextResponse.json({ content, audioAssetUrl });
+    return NextResponse.json({ content, audioAssetUrl, topic: inferredTopic });
   } catch (error) {
     console.error("Error generating text:", error);
     const err = error as Error;

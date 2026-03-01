@@ -108,7 +108,7 @@ export default function FavoritesPage() {
                 >
                   <div>
                     <p className="font-bold">{fav.word}</p>
-                    <p className="text-green-400">{fav.translation}</p>
+                    <p className="text-white">{fav.translation}</p>
                   </div>
                   <button
                     onClick={() => removeFavorite(fav.word)}

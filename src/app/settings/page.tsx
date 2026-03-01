@@ -89,7 +89,7 @@ export default function SettingsPage() {
       <h1 className="text-2xl font-semibold mb-6">Language Preferences</h1>
 
       {isFree ? (
-        <p className="mb-6 text-yellow-400 bg-yellow-800/30 p-3 rounded-xl text-sm max-w-md">
+        <p className="mb-6 text-white bg-white/10 p-3 rounded-xl text-sm max-w-md">
           Your current plan (<span className="font-semibold">Free</span>) doesn’t allow changing language preferences. 
           Log in or upgrade your plan to customize your learning languages.
         </p>
@@ -110,7 +110,7 @@ export default function SettingsPage() {
             onClick={() => toggleLanguage(lang.code)}
             className={`rounded-xl px-4 py-2 font-medium border transition-colors ${
               selected.includes(lang.code)
-                ? "bg-emerald-600 border-emerald-500"
+                ? "bg-blue-600 border-blue-500"
                 : "bg-gray-800 border-gray-700 hover:bg-gray-700"
             }`}
           >

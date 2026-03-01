@@ -98,7 +98,7 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
       disabled={!isLoaded || checking}
       className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-colors ${
         inLibrary
-          ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+          ? 'bg-blue-600 hover:bg-blue-700 text-white'
           : 'bg-gray-700 hover:bg-gray-600 text-gray-200'
       }`}
     >

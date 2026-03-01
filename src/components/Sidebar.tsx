@@ -33,8 +33,8 @@ function PlanBadge() {
   const styles: Record<Plan, string> = {
     free: "bg-gray-700/60 text-gray-200",
     basic: "bg-blue-600/30 text-blue-200",
-    premium: "bg-yellow-600/30 text-yellow-200",
-    polyglot: "bg-emerald-600/30 text-emerald-200",
+    premium: "bg-white/10 text-gray-200",
+    polyglot: "bg-white/10 text-gray-200",
   };
   return (
     <span
@@ -113,7 +113,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/my-library"
           onClick={handleNavClick}
-          className="flex items-center gap-3 hover:text-emerald-400 transition-colors"
+          className="flex items-center gap-3 hover:text-white transition-colors"
         >
           <BookOpen size={22} /> My Library
         </Link>
@@ -121,7 +121,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/favorites"
           onClick={handleNavClick}
-          className="flex items-center gap-3 hover:text-yellow-400 transition-colors"
+          className="flex items-center gap-3 hover:text-white transition-colors"
         >
           <Star size={22} /> Favorites
         </Link>
@@ -131,7 +131,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Link
             href="/create"
             onClick={handleNavClick}
-            className="flex items-center gap-3 hover:text-emerald-400 transition-colors"
+            className="flex items-center gap-3 hover:text-white transition-colors"
           >
             <PenLine size={22} /> Create
           </Link>

@@ -101,7 +101,7 @@ function PlansInner() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-gray-950 to-black text-white px-6 py-16">
-      <h1 className="text-4xl font-extrabold mb-12 text-center bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent">
+      <h1 className="text-4xl font-extrabold mb-12 text-center bg-gradient-to-r from-indigo-400 to-white bg-clip-text text-transparent">
         Choose your plan
       </h1>
 

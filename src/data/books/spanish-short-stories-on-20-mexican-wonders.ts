@@ -6,11 +6,15 @@ export const spanishshortstorieson20mexicanwonders: Book = {
   "title": "Spanish Short Stories on 20 Mexican Wonders",
   "description": "Discover the wonders of Mexico through engaging and authentic short dialogues!\n\nThis book presents 20 fun, easy-to-follow conversations that showcase Mexican culture, traditions, and everyday situations. Improve your Spanish vocabulary, learn cultural nuances, and gain confidence speaking Spanish through real-life scenarios. Ideal for beginners and intermediate learners seeking practical and immersive learning.",
   "cover": "https://cdn.sanity.io/images/9u7ilulp/production/235629aa1d2668fa0a23e3eb6a08e5d93e6555c1-6741x9464.jpg",
-  "theme": [],
+  "theme": [
+    "Culture & Traditions",
+    "Family & Community",
+    "History & Places"
+  ],
   "level": "intermediate",
   "language": "spanish",
   "region": "mexico",
-  "topic": "Daily life",
+  "topic": "Culture & Traditions",
   "formality": "neutral",
   "audioFolder": "",
   "storeUrl": "https://shop.digitalpolyglot.com/products/spanish-short-stories-on-mexican-wonders?variant=56017679286607",
@@ -58,6 +62,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "cochinita",
           "definition": "Diminutive of 'cochina', used to refer to pork in the dish 'cochinita pibil'."
         }
+      ],
+      "topic": "Food & Cooking",
+      "tags": [
+        "Food & Cooking"
       ]
     },
     {
@@ -107,6 +115,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Espiritual",
           "definition": "Related to the sacred or beliefs about the soul and gods."
         }
+      ],
+      "topic": "Technology & Media",
+      "tags": [
+        "Technology & Media"
       ]
     },
     {
@@ -156,6 +168,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Volar",
           "definition": "Ritual movement performed by the voladores as they descend spinning from the pole."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -205,6 +221,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "cucharón",
           "definition": "Large ladle used to serve liquid foods."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     },
     {
@@ -254,6 +274,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "astrónomos",
           "definition": "Scientists who study celestial bodies like the sun, stars, and planets."
         }
+      ],
+      "topic": "Relationships",
+      "tags": [
+        "Relationships"
       ]
     },
     {
@@ -303,6 +327,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Equilibrio",
           "definition": "Harmony between forces or worlds."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     },
     {
@@ -352,6 +380,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Pétalos",
           "definition": "Flower parts used to create paths guiding spirits."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     },
     {
@@ -401,6 +433,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Barrica",
           "definition": "Wooden barrel used to age tequila."
         }
+      ],
+      "topic": "History & Places",
+      "tags": [
+        "History & Places"
       ]
     },
     {
@@ -450,6 +486,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Esencia",
           "definition": "The core nature or fundamental quality of something."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -499,6 +539,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Voluntariado",
           "definition": "Unpaid work done to help people, communities, or causes."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     },
     {
@@ -548,6 +592,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Imperio Azteca",
           "definition": "A large Mesoamerican civilization centered in Tenochtitlán."
         }
+      ],
+      "topic": "History & Places",
+      "tags": [
+        "History & Places"
       ]
     },
     {
@@ -597,6 +645,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Esencia",
           "definition": "Intrinsic nature of something, such as the value of traditional tamales."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -646,6 +698,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Leyendas",
           "definition": "Traditional stories that explain mysterious places or events."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -695,6 +751,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "cultura",
           "definition": "The shared customs, beliefs, and expressions of a group of people."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -744,6 +804,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "espíritus",
           "definition": "Spirits of loved ones who return during Día de Muertos."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     },
     {
@@ -793,6 +857,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "misticismo",
           "definition": "Mystical beliefs or the sense of mystery surrounding something."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     },
     {
@@ -842,6 +910,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "bahía",
           "definition": "Bay; a coastal body of water that forms a natural shelter."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     },
     {
@@ -891,6 +963,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "mole",
           "definition": "Traditional Mexican sauce made from chiles, spices, and chocolate."
         }
+      ],
+      "topic": "Work & Career",
+      "tags": [
+        "Work & Career"
       ]
     },
     {
@@ -940,6 +1016,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "verso",
           "definition": "Line of a song or poem expressing an idea or emotion."
         }
+      ],
+      "topic": "History & Places",
+      "tags": [
+        "History & Places"
       ]
     },
     {
@@ -989,6 +1069,10 @@ export const spanishshortstorieson20mexicanwonders: Book = {
           "word": "Ofrendas",
           "definition": "Sacred objects left for gods during religious ceremonies."
         }
+      ],
+      "topic": "History & Places",
+      "tags": [
+        "History & Places"
       ]
     }
   ]

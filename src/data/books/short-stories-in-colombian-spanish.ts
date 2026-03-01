@@ -6,11 +6,15 @@ export const shortstoriesincolombianspanish: Book = {
   "title": "Short Stories in Colombian Spanish",
   "description": "Discover the beauty of Colombian culture while enhancing your Spanish with Short Stories in Colombian Spanish. This engaging collection features 20 brief tales showcasing daily life in Colombia, with dialogues and vocabulary that bring you closer to fluency. Dive into Colombian Spanish through interactive exercises and immerse yourself in the country’s diverse traditions and language nuances.",
   "cover": "https://cdn.sanity.io/images/9u7ilulp/production/70100a24c9b7b88387a520b7f3d3e396799244e8-1410x2000.jpg",
-  "theme": [],
+  "theme": [
+    "Family & Community",
+    "Work & Career",
+    "Food & Cooking"
+  ],
   "level": "intermediate",
   "language": "spanish",
   "region": "colombia",
-  "topic": "Daily life",
+  "topic": "Family & Community",
   "formality": "informal",
   "audioFolder": "",
   "storeUrl": "https://shop.digitalpolyglot.com/products/short-stories-in-colombian-spanish?utm_source=Book-page&utm_medium=App&utm_campaign=Book-page&utm_content=sss-co",
@@ -62,6 +66,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Rincón",
           "definition": "Ángulo o lugar apartado en una habitación o espacio."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     },
     {
@@ -99,6 +107,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Guayaba",
           "definition": "Tropical fruit with soft and sweet pulp."
         }
+      ],
+      "topic": "Work & Career",
+      "tags": [
+        "Work & Career"
       ]
     },
     {
@@ -160,6 +172,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Desafiantes",
           "definition": "Something that is difficult or challenging."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     },
     {
@@ -221,6 +237,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Manos a la obra",
           "definition": "To start working on something immediately."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     },
     {
@@ -282,6 +302,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Bacano",
           "definition": "Something that is cool, great, or admirable."
         }
+      ],
+      "topic": "Travel & Transportation",
+      "tags": [
+        "Travel & Transportation"
       ]
     },
     {
@@ -331,6 +355,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Se suman",
           "definition": "To join or take part in something."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     },
     {
@@ -388,6 +416,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Corre por nuestras venas",
           "definition": "Something that is deeply part of our identity or culture."
         }
+      ],
+      "topic": "Food & Cooking",
+      "tags": [
+        "Food & Cooking"
       ]
     },
     {
@@ -441,6 +473,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Carceleta",
           "definition": "A jail or holding cell."
         }
+      ],
+      "topic": "Work & Career",
+      "tags": [
+        "Work & Career"
       ]
     },
     {
@@ -506,6 +542,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Improvisó",
           "definition": "To do something without previous preparation."
         }
+      ],
+      "topic": "Food & Cooking",
+      "tags": [
+        "Food & Cooking"
       ]
     },
     {
@@ -551,6 +591,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Ponernos las pilas",
           "definition": "To get into action or make a greater effort."
         }
+      ],
+      "topic": "School & Learning",
+      "tags": [
+        "School & Learning"
       ]
     },
     {
@@ -604,6 +648,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Brindemos",
           "definition": "To make a toast, usually with drinks."
         }
+      ],
+      "topic": "Health & Wellness",
+      "tags": [
+        "Health & Wellness"
       ]
     },
     {
@@ -669,6 +717,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Camaradería",
           "definition": "A feeling of friendship and teamwork."
         }
+      ],
+      "topic": "Food & Cooking",
+      "tags": [
+        "Food & Cooking"
       ]
     },
     {
@@ -718,6 +770,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Barbaridad",
           "definition": "An inappropriate or exaggerated action or comment."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     },
     {
@@ -747,6 +803,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Covers",
           "definition": "Songs performed by artists different from the original performer."
         }
+      ],
+      "topic": "Work & Career",
+      "tags": [
+        "Work & Career"
       ]
     },
     {
@@ -800,6 +860,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Folleto",
           "definition": "A printed material containing brief information on a topic."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     },
     {
@@ -865,6 +929,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "¿Cuánto le debo?",
           "definition": "A question asking how much must be paid for a service or product."
         }
+      ],
+      "topic": "History & Places",
+      "tags": [
+        "History & Places"
       ]
     },
     {
@@ -926,6 +994,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Tablón",
           "definition": "A long, flat surface, often wooden."
         }
+      ],
+      "topic": "School & Learning",
+      "tags": [
+        "School & Learning"
       ]
     },
     {
@@ -975,6 +1047,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Timbre",
           "definition": "A device that emits a sound to signal something, like a doorbell."
         }
+      ],
+      "topic": "Work & Career",
+      "tags": [
+        "Work & Career"
       ]
     },
     {
@@ -1012,6 +1088,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Herencia",
           "definition": "Goods or traits passed down through generations."
         }
+      ],
+      "topic": "Food & Cooking",
+      "tags": [
+        "Food & Cooking"
       ]
     },
     {
@@ -1053,6 +1133,10 @@ export const shortstoriesincolombianspanish: Book = {
           "word": "Confiscará",
           "definition": "To take possession of something as a legal measure or punishment."
         }
+      ],
+      "topic": "Family & Community",
+      "tags": [
+        "Family & Community"
       ]
     }
   ]

@@ -6,11 +6,15 @@ export const colloquialgermanstories: Book = {
   "title": "Colloquial German Stories",
   "description": "Colloquial German Stories offers a dynamic way to absorb German through engaging narratives while strengthening vocabulary and comprehension skills.\n\nThis book presents carefully crafted short stories that balance natural, everyday German with accessible structures. Each text is designed to expose readers to authentic expressions, sentence flow, and cultural insights, making the learning process both practical and enjoyable. With a focus on colloquial usage, it provides an effective bridge between textbook German and real-life conversations.",
   "cover": "https://cdn.sanity.io/images/9u7ilulp/production/6e5846dcee12cba20bdc109eb3a3202853d3d31e-1410x2000.jpg",
-  "theme": [],
+  "theme": [
+    "Food & Cooking",
+    "Travel & Transportation",
+    "Relationships"
+  ],
   "level": "intermediate",
   "language": "german",
   "region": "germany",
-  "topic": "Daily life",
+  "topic": "Food & Cooking",
   "formality": "informal",
   "audioFolder": "",
   "storeUrl": "https://shop.digitalpolyglot.com/products/colloquial-german-stories?utm_source=Book-page&utm_medium=App&utm_campaign=Book-page&utm_content=ss-de-colloquial",
@@ -139,6 +143,10 @@ export const colloquialgermanstories: Book = {
           "word": "Macht nix",
           "definition": "Informal reassurance meaning no big deal."
         }
+      ],
+      "topic": "Food & Cooking",
+      "tags": [
+        "Food & Cooking"
       ]
     },
     {
@@ -229,6 +237,10 @@ export const colloquialgermanstories: Book = {
           "word": "Unausweichlich",
           "definition": "Impossible to avoid or escape; inevitable, used here to describe unavoidable chaos."
         }
+      ],
+      "topic": "Travel & Transportation",
+      "tags": [
+        "Travel & Transportation"
       ]
     },
     {
@@ -335,6 +347,10 @@ export const colloquialgermanstories: Book = {
           "word": "Ausreden",
           "definition": "excuses used to avoid responsibility."
         }
+      ],
+      "topic": "Food & Cooking",
+      "tags": [
+        "Food & Cooking"
       ]
     },
     {
@@ -437,6 +453,10 @@ export const colloquialgermanstories: Book = {
           "word": "Dämmerung",
           "definition": "the time of day when light is fading or beginning."
         }
+      ],
+      "topic": "Relationships",
+      "tags": [
+        "Relationships"
       ]
     }
   ]

@@ -409,7 +409,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                   className={[
                     "rounded-full border px-3 py-1.5 text-xs transition-colors",
                     isActive
-                      ? "border-emerald-300/70 bg-emerald-300/20 text-emerald-100"
+                      ? "border-white/30 bg-white/10 text-white"
                       : "border-white/15 bg-white/5 text-white/80 hover:bg-white/10",
                   ].join(" ")}
                 >
@@ -428,10 +428,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
         <div className="mb-16">
           <div className="mb-6 flex items-center justify-between gap-4">
-            <h2 className="text-2xl font-semibold text-emerald-400">Stories</h2>
+            <h2 className="text-2xl font-semibold text-white">Stories</h2>
             <Link
               href={seeAllStoriesHref}
-              className="text-sm font-medium text-emerald-300 hover:text-emerald-200 transition-colors"
+              className="text-sm font-medium text-gray-200 hover:text-white transition-colors"
             >
               See all
             </Link>
@@ -485,10 +485,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         </div>
 
         <div className="mb-6 flex items-center justify-between gap-4">
-          <h2 className="text-2xl font-semibold text-blue-400">Books</h2>
+          <h2 className="text-2xl font-semibold text-white">Books</h2>
           <Link
             href={seeAllBooksHref}
-            className="text-sm font-medium text-blue-300 hover:text-blue-200 transition-colors"
+            className="text-sm font-medium text-gray-200 hover:text-white transition-colors"
           >
             See all
           </Link>
@@ -530,10 +530,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
         <div className="mb-16">
           <div className="mb-6 flex items-center justify-between gap-4">
-            <h2 className="text-2xl font-semibold text-emerald-400">Polyglot Stories</h2>
+            <h2 className="text-2xl font-semibold text-white">Polyglot Stories</h2>
             <Link
               href={seeAllPolyglotStoriesHref}
-              className="text-sm font-medium text-emerald-300 hover:text-emerald-200 transition-colors"
+              className="text-sm font-medium text-gray-200 hover:text-white transition-colors"
             >
               See all
             </Link>

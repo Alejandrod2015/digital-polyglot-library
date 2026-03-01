@@ -7,6 +7,7 @@ import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 import StoryClientGate from "./StoryClientGate";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import StoryContent from "@/components/StoryContent";
+import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
 
@@ -59,7 +60,8 @@ export default async function StoryPage({ params }: StoryPageProps) {
   )}`;
 
   return (
-    <div className="relative max-w-5xl mx-auto pt-10 px-8 pb-[8rem] text-foreground bg-[#0D1B2A]">
+    <div className="relative max-w-5xl mx-auto pt-10 px-8 pb-[8rem] text-foreground">
+      <ScrollToTopOnPathChange />
       {/* Título */}
       <div className="relative mb-7 pt-2">
         <h1 className="text-4xl font-bold text-white text-center">{story.title}</h1>
@@ -119,7 +121,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
       </StoryClientGate>
 
       {/* Player fijo visible en viewport global */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0D1B2A] shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-[var(--background)] shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
         <Player
           src={
             story.audio.startsWith("http")

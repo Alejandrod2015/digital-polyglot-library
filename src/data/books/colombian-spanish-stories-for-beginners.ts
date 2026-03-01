@@ -6,11 +6,15 @@ export const colombianspanishstoriesforbeginners: Book = {
   "title": "Colombian Spanish Stories for Beginners",
   "description": "Colombian Spanish Stories for Beginners is your gateway to learning Spanish while immersing yourself in the culture and daily life of Colombia. Through engaging narratives, this book helps you develop conversational Spanish skills in a natural and enjoyable way.\n\n20 Beginner-Friendly Stories: Simple and engaging tales set in authentic Colombian settings.\n\nVocabulary Lists: Clear explanations after each story to expand your word bank.\n100 Exercises: Practice and reinforce your knowledge with comprehension and grammar activities.\nCultural Insights: Learn about Colombian traditions, lifestyle, and everyday expressions.\nSpanish Dialogues: Practice common scenarios like greetings, ordering food, and asking for directions.\nColombian Slang: Discover real expressions that make your Spanish sound authentic.",
   "cover": "https://cdn.sanity.io/images/9u7ilulp/production/0577a9b9deba611ca2af702a12ac07aa3aa64e9f-6740x9505.jpg",
-  "theme": [],
+  "theme": [
+    "Culture & Traditions",
+    "Nature & Environment",
+    "Money & Shopping"
+  ],
   "level": "beginner",
   "language": "spanish",
   "region": "colombia",
-  "topic": "",
+  "topic": "Culture & Traditions",
   "formality": "neutral",
   "audioFolder": "",
   "storeUrl": "https://shop.digitalpolyglot.com/products/colombian-spanish-stories-for-beginners?utm_source=Book-page&utm_medium=App&utm_campaign=Book-page&utm_content=sss-co-beginners",
@@ -63,6 +67,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Tierrita",
           "definition": "A loving way to refer to one’s homeland."
         }
+      ],
+      "topic": "Money & Shopping",
+      "tags": [
+        "Money & Shopping"
       ]
     },
     {
@@ -112,6 +120,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Sagrado",
           "definition": "Considered holy or very important in a culture."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -161,6 +173,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Águila harpía",
           "definition": "A very large bird of prey from the Amazon jungle."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -210,6 +226,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Tradición",
           "definition": "Customs passed down through generations."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -259,6 +279,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Diario",
           "definition": "A book where personal experiences are written."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -308,6 +332,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Alma",
           "definition": "Care and passion put into work."
         }
+      ],
+      "topic": "Food & Cooking",
+      "tags": [
+        "Food & Cooking"
       ]
     },
     {
@@ -357,6 +385,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Alma",
           "definition": "The festive spirit and energy of the celebration."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -406,6 +438,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Equilibrio",
           "definition": "A state of harmony between humans and nature."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     },
     {
@@ -455,6 +491,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Turístico",
           "definition": "Related to tourism or leisure travel."
         }
+      ],
+      "topic": "Travel & Transportation",
+      "tags": [
+        "Travel & Transportation"
       ]
     },
     {
@@ -504,6 +544,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Raíces",
           "definition": "A person's cultural or family origins."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -553,6 +597,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Luna llena",
           "definition": "The phase of the moon when it appears completely round."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -602,6 +650,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Ciclo",
           "definition": "A natural process that repeats over time."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     },
     {
@@ -651,6 +703,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Misterioso",
           "definition": "Something strange or hard to explain."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     },
     {
@@ -700,6 +756,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Tradición",
           "definition": "A custom passed from one generation to another."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -749,6 +809,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Montañas",
           "definition": "Natural high land areas around a place."
         }
+      ],
+      "topic": "History & Places",
+      "tags": [
+        "History & Places"
       ]
     },
     {
@@ -798,6 +862,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Sagrado",
           "definition": "Something considered holy or very important."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     },
     {
@@ -847,6 +915,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Rescate",
           "definition": "The act of saving someone from danger."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     },
     {
@@ -896,6 +968,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Eco",
           "definition": "A sound that repeats after bouncing off a surface."
         }
+      ],
+      "topic": "Mystery & Crime",
+      "tags": [
+        "Mystery & Crime"
       ]
     },
     {
@@ -938,6 +1014,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Brisa",
           "definition": "A light and gentle wind."
         }
+      ],
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
       ]
     },
     {
@@ -988,6 +1068,10 @@ export const colombianspanishstoriesforbeginners: Book = {
           "word": "Montes",
           "definition": "Groups of mountains or hills."
         }
+      ],
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
       ]
     }
   ]

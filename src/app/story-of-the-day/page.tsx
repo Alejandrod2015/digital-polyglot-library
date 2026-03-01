@@ -104,7 +104,7 @@ export default async function StoryOfTheDayPage() {
               </span>
             )}
             {book.level && (
-              <span className="px-3 py-1 rounded-full bg-emerald-600/20 text-emerald-200 text-xs sm:text-sm capitalize">
+              <span className="px-3 py-1 rounded-full bg-white/10 text-gray-200 text-xs sm:text-sm capitalize">
                 Level: {book.level}
               </span>
             )}
@@ -114,7 +114,7 @@ export default async function StoryOfTheDayPage() {
               </span>
             )}
             {story.focus && (
-              <span className="px-3 py-1 rounded-full bg-yellow-600/20 text-yellow-200 text-xs sm:text-sm capitalize">
+              <span className="px-3 py-1 rounded-full bg-white/10 text-gray-200 text-xs sm:text-sm capitalize">
                 Focus: {story.focus}
               </span>
             )}

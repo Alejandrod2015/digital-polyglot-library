@@ -5,6 +5,7 @@ import StoryReaderClient from "./StoryReaderClient";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
+import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -56,7 +57,8 @@ export default async function StoryPage({ params }: StoryPageProps) {
 }
 
   return (
-    <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground bg-[#0D1B2A]">
+    <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground">
+      <ScrollToTopOnPathChange />
       {/* Título */}
       <div className="relative mb-7 pt-2">
         <h1 className="text-4xl font-bold text-white text-center">
@@ -94,7 +96,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
         {/* Fallback si no tiene acceso */}
         {!hasFullAccess && (
           <>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/90 to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--background)] via-[rgba(11,18,32,0.9)] to-transparent z-10" />
             <div className="absolute inset-x-0 bottom-[-8rem] flex flex-col items-center justify-end pb-12 text-center z-20">
               <p className="text-gray-200 text-xl sm:text-xl mb-3 drop-shadow">
                 Unlock full access to all stories.
@@ -122,7 +124,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
       {/* Player fijo al fondo */}
       {story.audioUrl && (
-  <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0D1B2A] shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
+  <div className="fixed bottom-0 left-0 right-0 z-50 bg-[var(--background)] shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
     <Player
       src={story.audioUrl}
       bookSlug="polyglot"

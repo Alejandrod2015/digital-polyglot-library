@@ -5,6 +5,7 @@ import { PrismaClient } from "@/generated/prisma";
 import slugify from "slugify";
 import { customAlphabet } from "nanoid";
 import { generateAndUploadCover } from "@/lib/dalle";
+import { inferTopicFromText } from "@/lib/topicClassifier";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
@@ -77,15 +78,16 @@ export async function POST(req: Request) {
       region,
       level = "intermediate",
       focus = "verbs",
-      topic = "daily life",
+      topic = "",
     } = body;
+    const requestedTopic = typeof topic === "string" ? topic.trim() : "";
 
     const regionClause = region ? `, specifically from ${region}` : "";
 
     const prompt = `
 You are an expert language teacher and long story writer.
 Write a long engaging story in ${language}${regionClause} for a ${level} student.
-The topic of the story is "${topic}".
+${requestedTopic ? `The topic of the story is "${requestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Wrap each paragraph inside <blockquote> ... </blockquote>.
 
@@ -157,6 +159,13 @@ Return ONLY valid JSON:
     const baseSlug = slugify(title, { lower: true, strict: true }).slice(0, 80);
     const uniqueSlug = `${baseSlug}-${nanoid()}`;
 
+    const inferredTopic = inferTopicFromText({
+      title,
+      text: normalizedText,
+      existingTopic: requestedTopic,
+      fallback: "Daily life",
+    });
+
     const savedStory = await prisma.userStory.create({
       data: {
         userId,
@@ -168,7 +177,7 @@ Return ONLY valid JSON:
         region,
         level: normalizedLevel,
         focus,
-        topic,
+        topic: inferredTopic,
         public: true,
       },
     });
@@ -179,7 +188,7 @@ Return ONLY valid JSON:
     title,
     language,
     region,
-    topic,
+    topic: inferredTopic,
     level: normalizedLevel,
     text: normalizedText,
   });

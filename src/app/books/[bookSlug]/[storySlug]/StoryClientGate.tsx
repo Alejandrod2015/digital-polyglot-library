@@ -66,7 +66,7 @@ export default function StoryClientGate({
         {children}
 
         {/* Fade overlay que hace desaparecer el texto hacia el fondo */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/90 to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--background)] via-[rgba(11,18,32,0.9)] to-transparent z-10" />
       </div>
 
             {/* Fallback (botón Upgrade, mensaje, etc.) debajo del área recortada */}

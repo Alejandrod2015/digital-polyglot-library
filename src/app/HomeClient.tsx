@@ -389,7 +389,7 @@ export default function HomeClient({
 
       {/* Latest Books */}
       <section className="mb-12 text-center w-full max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-6">Latest Books</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-white">Latest Books</h2>
 
         <div className="grid md:hidden gap-8 grid-cols-1 sm:grid-cols-2 place-items-center">
           {filteredBooks.slice(0, MOBILE_LIMIT).map((book) => (
@@ -436,7 +436,7 @@ export default function HomeClient({
 
       {/* Latest Stories (mismas dimensiones que Explore) */}
       <section className="mb-12 text-center w-full max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-6 text-emerald-400">Latest Stories</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-white">Latest Stories</h2>
 
         <div className="min-h-[240px]">
           <StoryCarousel
@@ -481,7 +481,7 @@ export default function HomeClient({
 
       {/* Latest Polyglot Stories (mismas dimensiones que Explore) */}
       <section className="mb-12 text-center w-full max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-6 text-emerald-400">Latest Polyglot Stories</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-white">Latest Polyglot Stories</h2>
 
         <div className="min-h-[320px]">
           <StoryCarousel

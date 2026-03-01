@@ -40,9 +40,9 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
-      <html lang="en" className="bg-[#121212]">
+      <html lang="en" className="bg-[var(--background)]">
         <head>
-          <meta name="theme-color" content="#0D1B2A" />
+          <meta name="theme-color" content="#0B1220" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="black-translucent"
@@ -50,9 +50,9 @@ export default function RootLayout({
         </head>
 
         {/* ✅ layout estable: usa min-h-screen, no h-screen */}
-        <body className="bg-[#121212] text-[#E0E0E0] min-h-screen flex flex-col">
+        <body className="bg-[var(--background)] text-[var(--foreground)] min-h-screen flex flex-col">
           {/* Sidebar (desktop) */}
-          <aside className="hidden md:flex md:w-64 bg-[#0B132B] fixed top-0 left-0 bottom-0 z-20">
+          <aside className="hidden md:flex md:w-64 bg-[var(--surface)] fixed top-0 left-0 bottom-0 z-20">
             <Sidebar />
           </aside>
 

@@ -80,7 +80,7 @@ export default function StoryGeneratorInput() {
         language: language ?? 'Spanish',
         level: level ?? 'beginner',
         focus: focus ?? 'verbs',
-        topic: topic ?? 'daily life',
+        topic: topic?.trim() ?? '',
         bookId: bookRef ?? null,
       }
 
@@ -127,7 +127,7 @@ export default function StoryGeneratorInput() {
           language: language ?? 'spanish',
           level: level ?? 'beginner',
           focus: focus ?? 'verbs',
-          topic: topic ?? 'daily life',
+          topic: topic?.trim() || data.topic || null,
         })
         .set(region && region.trim() !== '' ? { [regionKey]: region } : {})
 
