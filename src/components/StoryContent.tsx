@@ -14,6 +14,12 @@ export type StoryContentProps = {
   vocab?: Array<{ word: string }>;
 };
 
+const MAX_HIGHLIGHT_WORDS = 30;
+const MAX_HIGHLIGHT_WORD_LENGTH = 48;
+const MAX_HIGHLIGHT_WORD_TOKENS = 4;
+const MAX_REGEX_SOURCE_LENGTH = 1400;
+const MAX_TEXT_LENGTH_FOR_HIGHLIGHT = 25000;
+
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
@@ -53,15 +59,36 @@ function extractLegacyDataWords(html: string): string[] {
   return Array.from(new Set(out));
 }
 
+function normalizeVocabForHighlight(vocab: Array<{ word: string }>): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+
+  for (const item of vocab) {
+    const raw = typeof item?.word === "string" ? item.word.trim() : "";
+    if (!raw) continue;
+    if (raw.length < 3 || raw.length > MAX_HIGHLIGHT_WORD_LENGTH) continue;
+    if (/[<>[\]{}]/.test(raw)) continue;
+    const tokenCount = raw.split(/\s+/).filter(Boolean).length;
+    if (tokenCount > MAX_HIGHLIGHT_WORD_TOKENS) continue;
+
+    const key = raw.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(raw);
+    if (out.length >= MAX_HIGHLIGHT_WORDS) break;
+  }
+
+  return out;
+}
+
 function highlightVocabulary(
   text: string,
   vocab: Array<{ word: string }>,
   renderWord: (t: string) => React.ReactNode
 ) {
-  const cleanWords = vocab
-    .map((v) => v.word?.trim())
-    .filter((w): w is string => typeof w === "string" && w.length >= 3)
-    .slice(0, 40);
+  if (text.length > MAX_TEXT_LENGTH_FOR_HIGHLIGHT) return renderWord(text);
+
+  const cleanWords = normalizeVocabForHighlight(vocab);
 
   if (cleanWords.length === 0) return renderWord(text);
 
@@ -71,11 +98,18 @@ function highlightVocabulary(
     .sort((a, b) => b.length - a.length)
     .map((w) => escapeRegex(w));
   if (alternatives.length === 0) return renderWord(text);
+  const regexSource = alternatives.join("|");
+  if (regexSource.length > MAX_REGEX_SOURCE_LENGTH) return renderWord(text);
 
-  const regex = new RegExp(
-    `(^|[^\\p{L}\\p{N}_])(${alternatives.join("|")})(?=$|[^\\p{L}\\p{N}_])`,
-    "giu"
-  );
+  let regex: RegExp;
+  try {
+    regex = new RegExp(
+      `(^|[^\\p{L}\\p{N}_])(${regexSource})(?=$|[^\\p{L}\\p{N}_])`,
+      "giu"
+    );
+  } catch {
+    return renderWord(text);
+  }
 
   const nodes: React.ReactNode[] = [];
   let lastIndex = 0;
@@ -156,6 +190,10 @@ export default function StoryContent({
           .map((item) => item.word?.trim().toLowerCase())
           .filter((word): word is string => typeof word === "string" && word.length > 0)
       ),
+    [vocab]
+  );
+  const safeVocab = React.useMemo(
+    () => normalizeVocabForHighlight(vocab).map((word) => ({ word })),
     [vocab]
   );
 
@@ -244,7 +282,7 @@ export default function StoryContent({
         ? { dangerouslySetInnerHTML: { __html: text } }
         : {
             children: paragraphs.map((para, i) => (
-              <p key={i}>{renderWithDialogues(para, renderWord, vocab)}</p>
+              <p key={i}>{renderWithDialogues(para, renderWord, safeVocab)}</p>
             )),
           })}
     />

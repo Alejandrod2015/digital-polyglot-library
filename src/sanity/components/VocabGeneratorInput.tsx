@@ -11,6 +11,10 @@ type VocabItem = {
   type?: string
 }
 
+const MAX_WORD_LENGTH = 48
+const MAX_WORD_TOKENS = 4
+const MAX_DEFINITION_WORDS = 36
+
 function isVocabItem(value: unknown): value is VocabItem {
   if (!value || typeof value !== 'object') return false
   const row = value as Record<string, unknown>
@@ -19,6 +23,49 @@ function isVocabItem(value: unknown): value is VocabItem {
 
 function stripHtml(text: string): string {
   return text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+}
+
+function escapeRegex(input: string): string {
+  return input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function appearsInText(text: string, phrase: string): boolean {
+  const clean = phrase.trim()
+  if (!clean) return false
+  const re = new RegExp(
+    `(^|[^\\p{L}\\p{N}_])${escapeRegex(clean)}(?=$|[^\\p{L}\\p{N}_])`,
+    'iu'
+  )
+  return re.test(text)
+}
+
+function normalizeRows(rows: VocabItem[], text: string): VocabItem[] {
+  const seen = new Set<string>()
+  const out: VocabItem[] = []
+
+  for (const row of rows) {
+    const word = row.word.trim()
+    const definition = row.definition.replace(/\s+/g, ' ').trim()
+    if (!word || !definition) continue
+    if (word.length < 3 || word.length > MAX_WORD_LENGTH) continue
+    if (/[<>[\]{}]/.test(word)) continue
+    const tokenCount = word.split(/\s+/).filter(Boolean).length
+    if (tokenCount > MAX_WORD_TOKENS) continue
+    if (!appearsInText(text, word)) continue
+    const definitionWordCount = definition.split(/\s+/).filter(Boolean).length
+    if (definitionWordCount < 4 || definitionWordCount > MAX_DEFINITION_WORDS) continue
+
+    const key = word.toLowerCase()
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push({
+      word,
+      definition,
+      ...(typeof row.type === 'string' && row.type.trim() ? { type: row.type.trim() } : {}),
+    })
+  }
+
+  return out
 }
 
 export default function VocabGeneratorInput() {
@@ -84,7 +131,8 @@ export default function VocabGeneratorInput() {
         throw new Error(payload.error || payload.details || 'Failed to generate vocabulary.')
       }
 
-      const rows = Array.isArray(payload.vocab) ? payload.vocab.filter(isVocabItem) : []
+      const rowsRaw = Array.isArray(payload.vocab) ? payload.vocab.filter(isVocabItem) : []
+      const rows = normalizeRows(rowsRaw, cleanedText).slice(0, 25)
       if (rows.length < 20) {
         throw new Error('The model returned fewer than 20 valid vocab items. Try again.')
       }
