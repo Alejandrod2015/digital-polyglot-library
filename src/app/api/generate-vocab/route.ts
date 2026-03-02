@@ -27,6 +27,14 @@ function toIntInRange(value: unknown, fallback: number, min: number, max: number
   return Math.max(min, Math.min(max, rounded));
 }
 
+function computeDynamicVocabRange(text: string): { minItems: number; maxItems: number } {
+  const words = wordCount(text);
+  const target = Math.max(18, Math.min(45, Math.round(words / 16)));
+  const minItems = Math.max(15, Math.min(40, target - 4));
+  const maxItems = Math.max(minItems, Math.min(45, target + 3));
+  return { minItems, maxItems };
+}
+
 function clampItems(items: VocabItem[], minItems: number, maxItems: number): VocabItem[] {
   if (items.length > maxItems) return items.slice(0, maxItems);
   return items;
@@ -40,7 +48,8 @@ function wordCount(text: string): number {
 }
 
 function hasDetailedDefinition(definition: string): boolean {
-  return wordCount(definition) >= 6;
+  const wc = wordCount(definition);
+  return wc >= 6 && wc <= 18;
 }
 
 function isLikelyDirectTranslation(definition: string): boolean {
@@ -56,6 +65,16 @@ function isLikelyDirectTranslation(definition: string): boolean {
 
 function hasPedagogicalDefinition(definition: string): boolean {
   return hasDetailedDefinition(definition) && !isLikelyDirectTranslation(definition);
+}
+
+function normalizeDefinition(definition: string): string {
+  const compact = definition
+    .replace(/\s+/g, " ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/([.!?])(?:\s*[.!?]){1,}$/g, "$1")
+    .trim();
+  if (!compact) return compact;
+  return compact[0].toUpperCase() + compact.slice(1);
 }
 
 function stripHtml(text: string): string {
@@ -85,12 +104,13 @@ function normalizeVocab(raw: unknown, normalizedText: string): VocabItem[] {
     if (!row || typeof row !== "object") continue;
     const record = row as Record<string, unknown>;
     const word = typeof record.word === "string" ? record.word.trim() : "";
-    const definition =
+    const rawDefinition =
       typeof record.definition === "string"
         ? record.definition.trim()
         : typeof record.meaning === "string"
           ? record.meaning.trim()
           : "";
+    const definition = normalizeDefinition(rawDefinition);
     const type = typeof record.type === "string" ? record.type.trim() : undefined;
     if (!word || !definition) continue;
     if (!appearsInText(normalizedText, word)) continue;
@@ -198,6 +218,8 @@ Task:
 - Prefer high-learning-value items (contextual, frequent, reusable, idiomatic when relevant).
 - Do not include duplicates.
 - Avoid ultra-generic items unless they are essential to the story meaning.
+- Start each definition with a capital letter.
+- Definitions must explain usage/nuance, not just translate the word.
 ${candidateBlock}
 `;
 
@@ -248,8 +270,15 @@ export async function POST(req: Request) {
     const level = typeof body.level === "string" && body.level.trim() ? body.level : "intermediate";
     const focus = typeof body.focus === "string" && body.focus.trim() ? body.focus : "verbs";
     const topic = typeof body.topic === "string" ? body.topic.trim() : "";
-    const minItems = toIntInRange(body.minItems, 20, 10, 40);
-    const maxItems = toIntInRange(body.maxItems, 25, minItems, 50);
+    const dynamicRange = computeDynamicVocabRange(text);
+    const hasCustomMin = typeof body.minItems === "number" && Number.isFinite(body.minItems);
+    const hasCustomMax = typeof body.maxItems === "number" && Number.isFinite(body.maxItems);
+    const minItems = hasCustomMin
+      ? toIntInRange(body.minItems, dynamicRange.minItems, 10, 40)
+      : dynamicRange.minItems;
+    const maxItems = hasCustomMax
+      ? toIntInRange(body.maxItems, dynamicRange.maxItems, minItems, 45)
+      : Math.max(minItems, dynamicRange.maxItems);
 
     let vocab = await requestVocabFromModel({
       text,
@@ -312,6 +341,7 @@ Rules:
 - Explain practical meaning in context, not a one-word gloss.
 - DO NOT translate directly. Avoid outputs like "to go", "cheese", "to smile".
 - Mention how the word is typically used or what nuance it carries.
+- Start each definition with a capital letter.
 Return ONLY valid JSON array with same items.
 `;
       const response = await openai.chat.completions.create({
@@ -341,6 +371,7 @@ Rules:
 - Each definition must be 8-18 words.
 - Explain meaning in English with context/usage nuance.
 - Never return direct translation equivalents.
+- Start each definition with a capital letter.
 Return ONLY valid JSON array.
 `;
       const response = await openai.chat.completions.create({
@@ -392,6 +423,8 @@ Return ONLY valid JSON array.
       focus,
       minItems,
       maxItems,
+      recommendedMinItems: dynamicRange.minItems,
+      recommendedMaxItems: dynamicRange.maxItems,
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";

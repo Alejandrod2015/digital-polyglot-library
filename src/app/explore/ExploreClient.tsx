@@ -326,7 +326,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     const unresolved = safePreviewBookStories.filter((story) => {
       const key = `${story.bookSlug}:${story.storySlug}`;
-      return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0);
+      const bookMeta = Object.values(books).find((b) => b.slug === story.bookSlug);
+      const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
+      const hasAudio = typeof storyMeta?.audio === "string" && storyMeta.audio.trim() !== "";
+      return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0) && hasAudio;
     });
     if (unresolved.length === 0) return;
 
@@ -376,13 +379,15 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     Promise.all(unresolved.map(loadDuration)).then((resolved) => {
       if (cancelled || resolved.length === 0) return;
       setStoryDurations((prev) => {
+        let changed = false;
         const next = { ...prev };
         for (const result of resolved) {
-          if (result.durationSec && result.durationSec > 0) {
+          if (result.durationSec && result.durationSec > 0 && next[result.key] !== result.durationSec) {
             next[result.key] = result.durationSec;
+            changed = true;
           }
         }
-        return next;
+        return changed ? next : prev;
       });
     });
 

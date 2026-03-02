@@ -82,13 +82,15 @@ export default function ExploreStoryCardsClient({ items }: Props) {
     Promise.all(unresolved.map(loadDuration)).then((resolved) => {
       if (cancelled || resolved.length === 0) return;
       setDurations((prev) => {
+        let changed = false;
         const next = { ...prev };
         for (const result of resolved) {
-          if (result.durationSec && result.durationSec > 0) {
+          if (result.durationSec && result.durationSec > 0 && next[result.id] !== result.durationSec) {
             next[result.id] = result.durationSec;
+            changed = true;
           }
         }
-        return next;
+        return changed ? next : prev;
       });
     });
 

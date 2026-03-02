@@ -9,6 +9,7 @@ import {
   ArrowLeft,
   MessageSquare,
   Settings,
+  ChartNoAxesColumn,
   BookMarked,
   CreditCard,
   LogIn,
@@ -110,6 +111,15 @@ export default function MobileMenu() {
           <div className="pt-16 px-6">
             <nav className="flex flex-col gap-5 text-base">
               <SignedIn>
+                <Link
+                  href="/progress"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex items-center gap-3 text-gray-200 hover:text-white"
+                >
+                  <ChartNoAxesColumn size={20} />
+                  Progress
+                </Link>
+
                 <Link
                   href="/settings"
                   onClick={() => setOpen(false)}

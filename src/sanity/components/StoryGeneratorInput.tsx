@@ -3,40 +3,28 @@
 import { useState } from 'react'
 import { useFormValue, useClient } from 'sanity'
 import { Button, Card, Text, Stack, Spinner, Flex } from '@sanity/ui'
-import { SparklesIcon, PlayIcon } from '@sanity/icons'
+import { SparklesIcon } from '@sanity/icons'
 
 type GenPayload = {
   title: string
   text: string
-  vocab: Array<{ word: string; definition: string }>
-}
-
-type VocabItem = { word: string; definition: string }
-
-function isVocabItem(v: unknown): v is VocabItem {
-  if (typeof v !== 'object' || v === null) return false
-  const obj = v as Record<string, unknown>
-  return typeof obj.word === 'string' && typeof obj.definition === 'string'
 }
 
 function isGenPayload(x: unknown): x is GenPayload {
   if (typeof x !== 'object' || x === null) return false
   const obj = x as Record<string, unknown>
-  return (
-    typeof obj.title === 'string' &&
-    typeof obj.text === 'string' &&
-    Array.isArray(obj.vocab) &&
-    obj.vocab.every(isVocabItem)
-  )
+  return typeof obj.title === 'string' && typeof obj.text === 'string'
 }
 
 export default function StoryGeneratorInput() {
   const formId = useFormValue(['_id']) as string | undefined
+  const currentTitle = useFormValue(['title']) as string | undefined
   const bookRef = useFormValue(['book', '_ref']) as string | undefined
   const language = useFormValue(['language']) as string | undefined
   const level = useFormValue(['level']) as string | undefined
   const focus = useFormValue(['focus']) as string | undefined
   const topic = useFormValue(['topic']) as string | undefined
+  const synopsis = useFormValue(['synopsis']) as string | undefined
 
   // ✅ Detección automática del campo regional según idioma
   const regionKeyByLang = {
@@ -63,7 +51,7 @@ export default function StoryGeneratorInput() {
       ? ''
       : 'https://reader.digitalpolyglot.com'
 
-  async function generateStory(withAudio: boolean) {
+  async function generateStory() {
     try {
       setLoading(true)
       setMsg(null)
@@ -78,6 +66,7 @@ export default function StoryGeneratorInput() {
         level: string
         focus: string
         topic: string
+        synopsis: string
         bookId: string | null
         region?: string
       } = {
@@ -85,6 +74,7 @@ export default function StoryGeneratorInput() {
         level: level ?? 'beginner',
         focus: focus ?? 'verbs',
         topic: topic?.trim() ?? '',
+        synopsis: synopsis?.trim() ?? '',
         bookId: bookRef ?? null,
       }
 
@@ -92,8 +82,7 @@ export default function StoryGeneratorInput() {
         body.region = region
       }
 
-      // ✅ si withAudio=true, se añade flag en query
-      const res = await fetch(`${apiBase}/api/generate-text${withAudio ? '?withAudio=true' : ''}`, {
+      const res = await fetch(`${apiBase}/api/generate-text`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
@@ -105,7 +94,6 @@ export default function StoryGeneratorInput() {
         details?: string
         content?: string
         topic?: string
-        audioAssetId?: string
       } = {}
       try {
         data = rawResponse ? (JSON.parse(rawResponse) as typeof data) : {}
@@ -125,8 +113,9 @@ export default function StoryGeneratorInput() {
       }
 
       if (!isGenPayload(parsedUnknown)) {
-        throw new Error('Invalid JSON: missing title/text/vocab or incorrect types.')
+        throw new Error('Invalid JSON: missing title/text or incorrect types.')
       }
+      const hasExistingTitle = typeof currentTitle === 'string' && currentTitle.trim() !== ''
 
       const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
       const patch = client.patch(targetId)
@@ -139,28 +128,21 @@ export default function StoryGeneratorInput() {
       // 🪶 Guardar resultado en el draft
       patch
         .set({
-          title: parsedUnknown.title?.trim() || 'Untitled',
           text: parsedUnknown.text?.trim() ?? '',
-          vocabRaw: JSON.stringify(parsedUnknown.vocab, null, 2),
           language: language ?? 'spanish',
           level: level ?? 'beginner',
           focus: focus ?? 'verbs',
           topic: topic?.trim() || data.topic || null,
         })
+        .set(
+          hasExistingTitle
+            ? {}
+            : { title: parsedUnknown.title?.trim() || 'Untitled' }
+        )
         .set(region && region.trim() !== '' ? { [regionKey]: region } : {})
 
-      // si hay audio generado, asignarlo al campo audio
-      if (withAudio && data.audioAssetId) {
-        patch.set({
-          audio: {
-            _type: 'file',
-            asset: { _type: 'reference', _ref: data.audioAssetId },
-          },
-        })
-      }
-
       await patch.commit()
-      setMsg(`✓ Story generated${withAudio ? ' with audio' : ''} — review and click Publish when ready.`)
+      setMsg('✓ Story generated — review and click Publish when ready.')
     } catch (err) {
       const e = err as Error
       setError(e.message)
@@ -178,14 +160,7 @@ export default function StoryGeneratorInput() {
             text={loading ? 'Generating...' : 'Generate Story'}
             tone="primary"
             disabled={loading}
-            onClick={() => generateStory(false)}
-          />
-          <Button
-            icon={PlayIcon}
-            text={loading ? 'Generating...' : 'Generate Story + Audio'}
-            tone="positive"
-            disabled={loading}
-            onClick={() => generateStory(true)}
+            onClick={() => generateStory()}
           />
         </Flex>
       </Card>

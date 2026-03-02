@@ -473,115 +473,281 @@ export const colloquialgermanstories: Book = {
       "id": "baustelle-vor-der-haustuer",
       "slug": "baustelle-vor-der-haustuer",
       "title": "Baustelle vor der Haustür",
-      "text": "In einer engen Altbaustraße in Berlin beginnt der Tag mit dem Dröhnen einer Baustelle direkt vor der Haustür. Zwischen Staub, Bauzäunen und grantigen Nachbarn geraten zwei Menschen aneinander, die unterschiedlicher kaum sein könnten. Während die Stadt sich erneuert, werden auch ihre eigenen Risse sichtbar.",
-      "audio": "",
+      "text": "In einer engen Altbaustraße in Berlin begann der Tag mit einem unerträglichen Dröhnen. Der Lärm von Bohrern und Hämmern drang durch Mias Fenster und riss sie aus ihrem Schlaf. \"Kann das nicht einmal aufhören?\" dachte sie genervt, während sie sich das Kopfkissen über die Ohren drückte. Doch der Lärm verstummte nicht.\n\nJonas, der Bauleiter, stand draußen mit einem Plan in der Hand. \"Wir müssen schneller arbeiten!\" rief er zu seinen Arbeitern. Die Zeit drängte, und er fühlte den Druck, das Projekt rechtzeitig abzuschließen. \"Wenn ich das nicht schaffe, verliere ich meinen Job!\"\n\nMia schlüpfte aus dem Bett, frustriert über den Lärm und den Staub, der durch die offenen Fenster strömte. \"Die Stadt erneuert sich, aber ich kann hier nicht einmal in Ruhe frühstücken!\" dachte sie, während sie in die Küche ging. Sie bereitete sich einen Kaffee und schüttelte den Kopf über die Baustelle vor der Tür.\n\n\"Guten Morgen!\" rief ihre Nachbarin, Frau Schneider, aus der Wohnung gegenüber. \"Hast du auch den Lärm? Man könnte meinen, die bauen ein ganz neues Gebäude!\"\n\n\"Ja, genau!\" erwiderte Mia gereizt. \"So kann man den Tag nicht beginnen!\"\n\nDie beiden Frauen schüttelten frustriert den Kopf, während sie dem Lärm lauschten. Plötzlich hörte Mia ein lautes Krachen. \"Was ist jetzt schon wieder passiert?\" Sie öffnete das Fenster und sah, wie ein Gerüst umgefallen war.\n\n\"Jonas! Achte darauf!\" schrie sie hinaus. Er blickte nach oben, seine Stirn in Falten gelegt. \"Keine Panik, alles unter Kontrolle!\" Doch seine Stimme klang angespannt.\n\nIn seinem Inneren brodelte es. \"Ich kann mir keinen Fehler leisten!\", dachte er, während er weiter die Anweisungen gab. Die Nachbarn beobachteten das Geschehen mit Missmut.\n\n\"Das ist nicht mehr mein Zuhause!\" murmelte Mia zu sich selbst. Die ständigen Bauarbeiten schienen die Luft zu verpesten. \"Ich sollte umziehen!\" Doch der Gedanke fühlte sich wie ein Versagen an.\n\nDie Stunden vergingen, und der Lärm wurde unerträglich. Mia schnappte sich ihre Jacke und verließ die Wohnung. \"Ich muss frische Luft schnappen!\" dachte sie, während sie die Straße entlang ging.\n\nJonas sah, wie sie vorbeiging. Ein Teil von ihm wollte sie ansprechen, doch er ließ es bleiben. \"Sie wird nie verstehen, was ich durchmache\", dachte er, während er mit einem weiteren Arbeiter diskutierte.\n\nAls Mia in ein Café eintrat, atmete sie tief ein. Der Geruch von frisch gebrühtem Kaffee beruhigte sie ein wenig. \"Vielleicht sollte ich einfach Geduld haben\", überlegte sie.\n\nDoch der Gedanke, dass die Baustelle ewig dauern könnte, ließ ihr Herz schwer werden. \"Diese Stadt verändert sich, aber ich fühle mich verloren\", dachte sie.\n\nJonas hingegen kämpfte mit seinen eigenen Ängsten. Der Lärm um ihn herum wurde zum Echo seiner eigenen Unsicherheiten. \"Was, wenn ich das alles nicht schaffe?\" fragte er sich.\n\nUnd während die Stadt sich erneuerte, blieben Mia und Jonas in ihren wachsenden Rissen gefangen. Jeder einzelne Tag war ein Kampf zwischen dem Wunsch nach Ruhe und dem Drang, weiterzumachen.",
+      "audio": "https://cdn.sanity.io/files/9u7ilulp/production/8a2923d0cea6967d255cf5ad6c456f3404903f49.mp3",
       "createdAt": "2026-03-02T12:29:11Z",
-      "updatedAt": "2026-03-02T19:54:18Z",
-      "topic": "History & Places",
+      "updatedAt": "2026-03-02T22:42:35Z",
+      "topic": "Food & Cooking",
       "tags": [
-        "History & Places"
+        "Food & Cooking"
       ],
-      "cover": "https://cdn.sanity.io/images/9u7ilulp/production/b6fed4bd9c09f2d6797fdd0c42a33fa9b9770a0b-1536x1024.png",
+      "cover": "https://cdn.sanity.io/images/9u7ilulp/production/9e8e3bc449c81b0a23f099ab135eb6c8e3040ab5-1536x1024.png",
       "vocab": [
         {
-          "word": "beginnt",
-          "definition": "to start or commence something, often used for daily routines.",
+          "word": "beginnen",
+          "definition": "To start something, often used for events or activities.",
           "type": "verb"
         },
         {
           "word": "dröhnen",
-          "definition": "to roar or rumble loudly, often used for machinery or noise.",
+          "definition": "To drone or make a loud, continuous noise, often irritating.",
           "type": "verb"
         },
         {
-          "word": "geraten",
-          "definition": "to get into a situation, often unexpectedly or undesirably.",
+          "word": "aufhören",
+          "definition": "To stop doing something, often used for actions or noises.",
           "type": "verb"
         },
         {
-          "word": "erneuert",
-          "definition": "to renew or renovate, often used in the context of cities or buildings.",
+          "word": "arbeiten",
+          "definition": "To work, commonly used for tasks or jobs.",
           "type": "verb"
         },
         {
-          "word": "sichtbar",
-          "definition": "to become visible or apparent, often used for changes or issues.",
+          "word": "schnappen",
+          "definition": "To grab or snatch quickly, often used for actions done in haste.",
           "type": "verb"
         },
         {
-          "word": "könnten",
-          "definition": "could or might, used to express possibility or potential.",
+          "word": "begann",
+          "definition": "Started the day or an event, indicating initiation.",
           "type": "verb"
         },
         {
-          "word": "sein",
-          "definition": "to be, a fundamental verb used to describe existence or identity.",
+          "word": "drang",
+          "definition": "Pushed through, often used for sounds or feelings intruding.",
           "type": "verb"
         },
         {
-          "word": "werden",
-          "definition": "to become, indicating a change of state or condition.",
+          "word": "riss",
+          "definition": "Tore someone from sleep or a state, indicating abruptness.",
           "type": "verb"
         },
         {
-          "word": "zwischen",
-          "definition": "between, used to indicate a position or relationship among things.",
-          "type": "connector"
+          "word": "drückte",
+          "definition": "Pressed something against another, often for comfort or noise reduction.",
+          "type": "verb"
         },
         {
-          "word": "altbaustraße",
-          "definition": "old building street, often characterized by historical architecture.",
-          "type": "noun"
+          "word": "verstummte",
+          "definition": "Silenced or ceased, often used for sounds that stop suddenly.",
+          "type": "verb"
         },
         {
-          "word": "stadt",
-          "definition": "city, a large human settlement with complex structures.",
-          "type": "noun"
+          "word": "schlüpfte",
+          "definition": "Slipped out, often used for leaving a place quietly.",
+          "type": "verb"
         },
         {
-          "word": "staub",
-          "definition": "dust, fine particles often found in the air or on surfaces.",
-          "type": "noun"
+          "word": "überlegte",
+          "definition": "Considered or thought about something, indicating contemplation.",
+          "type": "verb"
         },
         {
-          "word": "bauzäunen",
-          "definition": "construction fences, barriers used to secure building sites.",
-          "type": "noun"
+          "word": "hörte",
+          "definition": "Heard something, indicating perception of sound.",
+          "type": "verb"
         },
         {
-          "word": "grantigen",
-          "definition": "grumpy or irritable, often used to describe people's moods.",
-          "type": "adjective"
+          "word": "öffnete",
+          "definition": "Opened something, often used for doors or windows.",
+          "type": "verb"
         },
         {
-          "word": "menschen",
-          "definition": "people, referring to human beings in general.",
-          "type": "noun"
+          "word": "blickte",
+          "definition": "Looked or glanced at something, indicating observation.",
+          "type": "verb"
         },
         {
-          "word": "einer",
-          "definition": "one, used to refer to a single item or person.",
-          "type": "other"
+          "word": "schrie",
+          "definition": "Screamed or shouted, often used for urgent communication.",
+          "type": "verb"
         },
         {
-          "word": "zwei",
-          "definition": "two, indicating a quantity of items or people.",
-          "type": "other"
+          "word": "gab",
+          "definition": "Gave instructions or information, indicating communication.",
+          "type": "verb"
         },
         {
-          "word": "kaum",
-          "definition": "hardly or barely, used to indicate a small degree.",
-          "type": "adverb"
+          "word": "murmelte",
+          "definition": "Murmured or spoke softly, often indicating frustration or secrecy.",
+          "type": "verb"
         },
         {
-          "word": "eigenen",
-          "definition": "own, used to indicate possession or individuality.",
-          "type": "adjective"
+          "word": "verließ",
+          "definition": "Left a place, indicating departure or exit.",
+          "type": "verb"
         },
         {
-          "word": "risse",
-          "definition": "cracks, often referring to physical damage or flaws.",
-          "type": "noun"
+          "word": "schnappte",
+          "definition": "Snatched or grabbed quickly, often used for urgency.",
+          "type": "verb"
+        },
+        {
+          "word": "kämpfte",
+          "definition": "Fought or struggled, often used for emotional or physical battles.",
+          "type": "verb"
+        },
+        {
+          "word": "vergingen",
+          "definition": "Passed or elapsed, often used for time.",
+          "type": "verb"
+        },
+        {
+          "word": "verpesten",
+          "definition": "Polluted or contaminated, often used for air or environment.",
+          "type": "verb"
+        },
+        {
+          "word": "bleiben",
+          "definition": "To stay or remain in a place or state.",
+          "type": "verb"
+        },
+        {
+          "word": "wollte",
+          "definition": "Wanted to do something, indicating desire or intention.",
+          "type": "verb"
+        }
+      ]
+    },
+    {
+      "id": "kleinanzeigen-deal-mit-ueberraschung",
+      "slug": "kleinanzeigen-deal-mit-ueberraschung",
+      "title": "Kleinanzeigen-Deal mit Überraschung",
+      "text": "Lea las die Anzeige noch einmal. Ein Smartphone zum Spottpreis. Ihre Neugier wuchs, während sie mit dem Finger über den Bildschirm wischte.\n\n\"Wo ist der Haken?\" dachte sie. Doch die Neugier überwog. Sie antwortete schnell und vereinbarte ein Treffen mit dem Verkäufer Sami an der nahegelegenen U-Bahn-Station.\n\nAm vereinbarten Tag spürte sie ein leichtes Kribbeln in ihrem Bauch. Nervosität? Aufregung? Vielleicht beides. Als sie an der U-Bahn ankam, entdeckte sie einen schlanken jungen Mann, der unruhig von einem Fuß auf den anderen trat.\n\n\"Bist du Lea?\" fragte er mit zitternder Stimme.\n\n\"Ja, genau! Und du bist Sami?\" erwiderte sie und musterte ihn skeptisch. Er nickte hastig und hielt ihr ein kleines Paket entgegen.\n\n\"Hier, das Handy. Alles in Ordnung!\"\n\nLea nahm das Paket und spürte sofort, dass es leicht war. \"Hä? Ist das alles?\" dachte sie, aber sie lächelte freundlich.\n\n\"Danke!\" sagte sie und wollte sich schnell zurückziehen, bevor Sami noch etwas hinzufügen konnte.\n\nZu Hause riss sie das Paket auf. Neben dem Smartphone fand sie einen alten Schlüssel und eine Notiz, die eine Adresse zeigte.\n\nWas war das? fragte sie sich, während sie den Schlüssel in die Hand nahm.\n\nPlötzlich vibrierte ihr Handy. Es war Sami: \"Lea! Du hast das Falsche bekommen! Der Schlüssel, er gehört nicht zum Handy!\"\n\nLeas Herz schlug schneller. \"Was meinst du mit 'falsch'?\" dachte sie, während Panik in ihr aufstieg.\n\n\"Komm zurück! Bitte! Das war nicht der Deal!\" flehte er.\n\nSie spürte, wie sich ihre Gedanken überschlagen. \"Der echte Deal war nie das Handy! Was steckt hier wirklich dahinter?\"\n\nLea fühlte sich auf einmal wie in einem Krimi. Der Schlüssel in ihrer Hand war wie ein Rätsel. Was würde sie mit ihm machen?\n\nSie wusste, dass sie zurückgehen musste, aber gleichzeitig war da diese unaufhörliche Neugier. \"Soll ich wirklich gehen? Oder soll ich herausfinden, was es mit diesem Schlüssel auf sich hat?\"\n\nWährend sie darüber nachdachte, wuchs der Drang, die Adresse aufzusuchen. Sie entschied sich, mutig zu sein. \"Ich gehe!\"\n\nSie zog ihre Jacke an und nahm den Schlüssel mit. \"Was kann schon passieren?\" fragte sie sich und spürte ein aufregendes Kribbeln, das sie antrieb.\n\nLea verließ die Wohnung und machte sich auf den Weg zur Adresse. Die Stadt schien lebendiger als je zuvor, und sie fühlte sich wie die Hauptfigur in einem Abenteuer. Was würde sie finden?",
+      "audio": "",
+      "createdAt": "2026-03-02T22:47:17Z",
+      "updatedAt": "2026-03-02T22:51:10Z",
+      "topic": "Technology & Media",
+      "tags": [
+        "Technology & Media"
+      ],
+      "cover": "https://cdn.sanity.io/images/9u7ilulp/production/42de109371370a5fe02d6e494c7b2f91e0b82c7d-1536x1024.png",
+      "vocab": [
+        {
+          "word": "überschlagen",
+          "definition": "To quickly jump between thoughts or ideas without deep focus.",
+          "type": "verb"
+        },
+        {
+          "word": "gehen",
+          "definition": "To move from one location to another, often on foot.",
+          "type": "verb"
+        },
+        {
+          "word": "machen",
+          "definition": "To perform an action or create something tangible or intangible.",
+          "type": "verb"
+        },
+        {
+          "word": "finden",
+          "definition": "To locate something that was previously lost or not visible.",
+          "type": "verb"
+        },
+        {
+          "word": "las",
+          "definition": "To engage with written material for comprehension or enjoyment.",
+          "type": "verb"
+        },
+        {
+          "word": "wuchs",
+          "definition": "To increase in size, quantity, or intensity over time.",
+          "type": "verb"
+        },
+        {
+          "word": "wischte",
+          "definition": "To move a finger or object across a surface, like a screen.",
+          "type": "verb"
+        },
+        {
+          "word": "dachte",
+          "definition": "To engage in mental activity, reflecting on ideas or situations.",
+          "type": "verb"
+        },
+        {
+          "word": "überwog",
+          "definition": "To be more important or influential than another factor or element.",
+          "type": "verb"
+        },
+        {
+          "word": "antwortete",
+          "definition": "To provide a reply or reaction to a question or statement.",
+          "type": "verb"
+        },
+        {
+          "word": "vereinbarte",
+          "definition": "To come to an agreement about a future meeting or arrangement.",
+          "type": "verb"
+        },
+        {
+          "word": "spürte",
+          "definition": "To detect or experience something through physical or emotional senses.",
+          "type": "verb"
+        },
+        {
+          "word": "fragte",
+          "definition": "To inquire or seek clarification on a particular topic or issue.",
+          "type": "verb"
+        },
+        {
+          "word": "nickte",
+          "definition": "To indicate agreement or acknowledgment by moving the head up and down.",
+          "type": "verb"
+        },
+        {
+          "word": "hielt",
+          "definition": "To grasp or support something physically in one's hand.",
+          "type": "verb"
+        },
+        {
+          "word": "nahm",
+          "definition": "To accept or acquire something into one's possession or control.",
+          "type": "verb"
+        },
+        {
+          "word": "vibrierte",
+          "definition": "To shake or oscillate, often as a signal or alert.",
+          "type": "verb"
+        },
+        {
+          "word": "schlug",
+          "definition": "To strike or hit, often used in the context of a heartbeat.",
+          "type": "verb"
+        },
+        {
+          "word": "meinst",
+          "definition": "To convey a specific meaning or intention in conversation.",
+          "type": "verb"
+        },
+        {
+          "word": "flehte",
+          "definition": "To urgently request or beg for something with deep emotion.",
+          "type": "verb"
+        },
+        {
+          "word": "wusste",
+          "definition": "To possess knowledge or awareness about a particular subject.",
+          "type": "verb"
+        },
+        {
+          "word": "musste",
+          "definition": "To be required to perform an action due to necessity.",
+          "type": "verb"
+        },
+        {
+          "word": "entschied",
+          "definition": "To make a determination or choice among options available.",
+          "type": "verb"
+        },
+        {
+          "word": "zog",
+          "definition": "To exert force to pull something closer or towards oneself.",
+          "type": "verb"
+        },
+        {
+          "word": "verließ",
+          "definition": "To exit or depart from a specific location or situation.",
+          "type": "verb"
         }
       ]
     }

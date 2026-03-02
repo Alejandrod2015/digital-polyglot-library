@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { inferTopicFromText } from "@/lib/topicClassifier";
 
 const openai = new OpenAI({
@@ -10,17 +9,52 @@ const openai = new OpenAI({
 type StoryJSON = {
   title: string;
   text: string;
-  vocab: { word: string; definition: string }[];
 };
+
+const TARGET_WORDS_MIN = 340;
+const TARGET_WORDS_MAX = 460;
+const HARD_WORDS_MAX = 500;
+
+function sanitizeGeneratedStoryText(input: string): string {
+  return input
+    .replace(/\r\n?/g, "\n")
+    .replace(/\\n/g, "\n")
+    .replace(/\\t/g, " ")
+    .replace(/\\"/g, '"')
+    .replace(/[ \t]+/g, " ")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/([.!?])(?:\s*[.!?]){1,}/g, "$1")
+    .trim();
+}
 
 function isValidStoryJSON(data: unknown): data is StoryJSON {
   return (
     typeof data === "object" &&
     data !== null &&
     typeof (data as StoryJSON).title === "string" &&
-    typeof (data as StoryJSON).text === "string" &&
-    Array.isArray((data as StoryJSON).vocab)
+    typeof (data as StoryJSON).text === "string"
   );
+}
+
+function countWords(text: string): number {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
+function truncateToWordLimit(text: string, maxWords: number): string {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (words.length <= maxWords) return text.trim();
+  const sliced = words.slice(0, maxWords).join(" ").trim();
+  const lastPunctuation = Math.max(
+    sliced.lastIndexOf("."),
+    sliced.lastIndexOf("!"),
+    sliced.lastIndexOf("?")
+  );
+  if (lastPunctuation > Math.floor(sliced.length * 0.7)) {
+    return sliced.slice(0, lastPunctuation + 1).trim();
+  }
+  return `${sliced}.`;
 }
 
 export async function POST(req: Request) {
@@ -38,38 +72,43 @@ export async function POST(req: Request) {
       level = "intermediate",
       focus = "verbs",
       topic = "",
+      synopsis = "",
     } = body as {
       language?: string;
       region?: string;
       level?: string;
       focus?: string;
       topic?: string;
+      synopsis?: string;
     };
 
     const regionClause = region ? `, specifically from ${region}` : "";
 
     const resolvedRequestedTopic = typeof topic === "string" ? topic.trim() : "";
+    const resolvedSynopsis = typeof synopsis === "string" ? synopsis.trim() : "";
     const prompt = `
 You are an expert language teacher and long story writer.
 Write a long engaging story for a ${level} student learning ${language}${regionClause}.
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
-All vocabulary definitions must be written in clear English, regardless of the story language.
-Wrap each paragraph inside <blockquote> ... </blockquote>.
+${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 
 Requirements:
-Use a close third-person narrator who sometimes slips into the characters’ own thoughts and feelings, so the narration flows naturally between observation and inner voice.
-
-Words to wrap:
-- Wrap around 25-30 different items that naturally fit in the story, marking only the first occurrence of each with
-<span class='vocab-word' data-word='original-word'>original-word</span>.
-- The amount of items you wrap should be the same as the amount of items in the vocab list.
-- Prioritize ${focus.toLowerCase()} when choosing words and expressions to wrap.
+Use a close third-person narrator with strong internal focalization.
+- The narrator is NOT a character.
+- Most of the story should be experienced from inside the characters' perspective (thoughts, sensations, doubts, intentions, quick judgments).
+- Keep the prose mainly in third person, but use first-person phrasing only inside dialogue or brief inner-thought moments when natural.
+- Prioritize ${focus.toLowerCase()} in lexical choices and situations, but DO NOT output a vocabulary list.
+- Keep the narrative specific and vivid (concrete scenes, actions, and consequences), not generic.
+- Output plain text only for the story body. No HTML tags, no markdown, no XML.
+- Keep paragraphs short and dynamic (usually 1-3 sentences per paragraph).
+- Avoid long expository narrator blocks; reduce detached description and increase character-centered viewpoint.
+- Include frequent dialogue beats and immediate reactions to keep pacing lively.
+- Length target: ${TARGET_WORDS_MIN}-${TARGET_WORDS_MAX} words, hard maximum ${HARD_WORDS_MAX} words.
 
 Return ONLY valid JSON:
 {
   "title": "string",
-  "text": "string",
-  "vocab": [{ "word": "string", "definition": "string" }]
+  "text": "string"
 }
 `;
 
@@ -104,7 +143,14 @@ Return ONLY valid JSON:
       );
     }
 
-    const { title, text } = parsed as StoryJSON;
+    const raw = parsed as StoryJSON;
+    const title = raw.title.trim() || "Untitled";
+    const sanitized = sanitizeGeneratedStoryText(raw.text);
+    const text =
+      countWords(sanitized) > HARD_WORDS_MAX
+        ? truncateToWordLimit(sanitized, HARD_WORDS_MAX)
+        : sanitized;
+    const sanitizedContent = JSON.stringify({ title, text });
     const inferredTopic = inferTopicFromText({
       title,
       text,
@@ -112,18 +158,7 @@ Return ONLY valid JSON:
       fallback: "Daily life",
     });
 
-    // 🔊 Generar y subir audio
-    let audioAssetUrl: string | null = null;
-    try {
-      console.log("[api] generate-text called with", language, region);
-      const audioResult = await generateAndUploadAudio(text, title, language, region);
-      audioAssetUrl = audioResult ? audioResult.url : null;
-    } catch (e) {
-      console.error("[audio] generation/upload failed:", e);
-    }
-
-    // ✅ Devolver respuesta limpia y consistente
-    return NextResponse.json({ content, audioAssetUrl, topic: inferredTopic });
+    return NextResponse.json({ content: sanitizedContent, topic: inferredTopic });
   } catch (error) {
     console.error("Error generating text:", error);
     const err = error as Error;

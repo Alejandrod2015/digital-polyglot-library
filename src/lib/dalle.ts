@@ -28,11 +28,14 @@ export async function generateAndUploadCover({
 Minimal editorial illustration inspired by a story titled "${title}".
 Language: ${language}${region ? `, region: ${region}` : ""}.
 Topic: ${topic}. Level: ${level}.
-Visual direction: minimal illustration with realistic color grading.
-Use plausible real-world tones: medium saturation, balanced contrast, natural ambient light.
+Visual direction: minimal illustration with realistic and natural color grading.
+Prioritize believable local color for each element (skin, sky, clothing, buildings, streets).
+Use medium to medium-high saturation so colors look slightly more vivid, but still natural.
+Use daylight-neutral white balance (about 5200K-6000K), never sepia/amber washed.
 Skin, clothing, architecture, and street surfaces should look physically believable.
-Avoid yellow cast, but also avoid cyan/magenta duotone and neon looks.
+Avoid yellow/ochre/sepia cast, and also avoid cyan/magenta duotone and neon looks.
 No heavy cinematic filters, no single-color wash, no exaggerated tint.
+If sky appears, render a natural daytime blue; if people appear, render realistic skin tones.
 Flat clean shapes, soft gradients, modern composition, high visual clarity.
 No text, no logos, no frame, no watermarks.
 Story context reference: ${shortText}

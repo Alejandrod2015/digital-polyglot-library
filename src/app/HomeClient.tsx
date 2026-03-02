@@ -225,6 +225,7 @@ export default function HomeClient({
   const [continueRefreshTick, setContinueRefreshTick] = useState(0);
   const [continueInitialized, setContinueInitialized] = useState(continueLoadedOnServer);
   const hasSyncedLocalContinueForUserRef = useRef<string | null>(null);
+  const lastContinueRefreshAtRef = useRef(0);
   const [favoriteSignals, setFavoriteSignals] = useState<FavoriteSignalItem[]>([]);
   const [savedBookIds, setSavedBookIds] = useState<Set<string>>(new Set());
   const [savedStoryIds, setSavedStoryIds] = useState<Set<string>>(new Set());
@@ -414,7 +415,10 @@ export default function HomeClient({
 
         if (cancelled) return;
         setContinueListening(merged);
-        localStorage.setItem("dp_continue_listening_v1", JSON.stringify(merged));
+        const nextRaw = JSON.stringify(merged);
+        if (localStorage.getItem("dp_continue_listening_v1") !== nextRaw) {
+          localStorage.setItem("dp_continue_listening_v1", nextRaw);
+        }
       } catch {
         if (!cancelled) {
           setContinueListening([]);
@@ -434,11 +438,16 @@ export default function HomeClient({
   const isPersonalizationReady = isAuthLoaded && isLoaded && continueInitialized;
 
   useEffect(() => {
-    const refresh = () => setContinueRefreshTick((v) => v + 1);
+    const refresh = () => {
+      const now = Date.now();
+      if (now - lastContinueRefreshAtRef.current < 1500) return;
+      lastContinueRefreshAtRef.current = now;
+      setContinueRefreshTick((v) => v + 1);
+    };
 
     const handleContinueListeningUpdated = () => refresh();
     const handleStorage = (e: StorageEvent) => {
-      if (e.key === "dp_continue_listening_v1") refresh();
+      if (e.key === "dp_continue_listening_v1" && e.newValue !== e.oldValue) refresh();
     };
     const handleVisibility = () => {
       if (document.visibilityState === "visible") refresh();
@@ -835,7 +844,10 @@ export default function HomeClient({
 
     const unresolved = storiesForHome.filter((story) => {
       const key = `${story.bookSlug}:${story.storySlug}`;
-      return !(typeof latestStoryDurations[key] === "number" && latestStoryDurations[key] > 0);
+      return (
+        !(typeof latestStoryDurations[key] === "number" && latestStoryDurations[key] > 0) &&
+        hasAudioSource(story.bookSlug, story.storySlug)
+      );
     });
     if (unresolved.length === 0) return;
 
@@ -885,13 +897,15 @@ export default function HomeClient({
     Promise.all(unresolved.map(loadDuration)).then((resolved) => {
       if (cancelled || resolved.length === 0) return;
       setLatestStoryDurations((prev) => {
+        let changed = false;
         const next = { ...prev };
         for (const result of resolved) {
-          if (result.durationSec && result.durationSec > 0) {
+          if (result.durationSec && result.durationSec > 0 && next[result.key] !== result.durationSec) {
             next[result.key] = result.durationSec;
+            changed = true;
           }
         }
-        return next;
+        return changed ? next : prev;
       });
     });
 
@@ -949,13 +963,15 @@ export default function HomeClient({
     Promise.all(unresolved.map(loadDuration)).then((resolved) => {
       if (cancelled || resolved.length === 0) return;
       setRecommendedStoryDurations((prev) => {
+        let changed = false;
         const next = { ...prev };
         for (const result of resolved) {
-          if (result.durationSec && result.durationSec > 0) {
+          if (result.durationSec && result.durationSec > 0 && next[result.key] !== result.durationSec) {
             next[result.key] = result.durationSec;
+            changed = true;
           }
         }
-        return next;
+        return changed ? next : prev;
       });
     });
 

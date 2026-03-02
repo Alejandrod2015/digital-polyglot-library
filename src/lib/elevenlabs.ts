@@ -6,7 +6,7 @@ export async function generateAndUploadAudio(
   title: string,
   language?: string,
   region?: string
-): Promise<{ url: string; filename: string } | null> {
+): Promise<{ url: string; filename: string; assetId: string } | null> {
   try {
     // 🔹 Limpiar etiquetas HTML para enviar texto limpio a ElevenLabs
     const plainText = storyText
@@ -113,7 +113,7 @@ export async function generateAndUploadAudio(
 
     console.log("[elevenlabs] ✅ Audio uploaded:", filename, "→", url);
 
-    return { url, filename };
+    return { url, filename, assetId: asset._id };
   } catch (err) {
     console.error("[elevenlabs] 💥 Failed to generate/upload audio:", err);
     return null;

@@ -28,13 +28,40 @@ function stripHtml(raw: string): string {
   return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+function sanitizePlainStoryText(raw: string): string {
+  return raw
+    .replace(/\r\n?/g, "\n")
+    .replace(/\\n/g, "\n")
+    .replace(/\\t/g, " ")
+    .replace(/\\"/g, '"')
+    .replace(/[ \t]+/g, " ")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/([.!?])(?:\s*[.!?]){1,}/g, "$1")
+    .trim();
+}
+
 function splitSentences(raw: string): string[] {
   const text = raw.replace(/\s*\n+\s*/g, " ").trim();
   if (!text) return [];
-  const parts = text.split(
-    /(?<=([.!?…]|\u203D|\u2047|\u2049)["»”’]?)(?:\s+|$)/u
-  );
-  return parts.map((s) => s.trim()).filter(Boolean);
+  const parts = text.split(/(?<=[.!?…\u203D\u2047\u2049]["»”’]?)(?:\s+|$)/u);
+  const clean = parts
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0)
+    .filter((s) => /[\p{L}\p{N}]/u.test(s));
+
+  const merged: string[] = [];
+  for (const segment of clean) {
+    const shouldAttachToPrev =
+      merged.length > 0 && /^[\s,"'“”„«»)\]]*[\p{Ll}]/u.test(segment);
+    if (shouldAttachToPrev) {
+      merged[merged.length - 1] = `${merged[merged.length - 1]} ${segment}`;
+      continue;
+    }
+    merged.push(segment);
+  }
+  return merged;
 }
 
 function chunk<T>(arr: T[], size: number): T[][] {
@@ -145,31 +172,6 @@ function highlightVocabulary(
   return nodes.length > 0 ? nodes : renderWord(text);
 }
 
-const DIALOGUE_REGEX =
-  /(„[\s\S]*?[“”]|[“”][\s\S]*?»|"[\s\S]*?")/gu;
-
-function renderWithDialogues(
-  paragraph: string,
-  renderWord: (t: string) => React.ReactNode,
-  vocab: Array<{ word: string }>
-) {
-  const segments = paragraph.split(DIALOGUE_REGEX);
-  return segments.map((seg, idx) => {
-    const isDialogue = idx % 2 === 1;
-    if (isDialogue) {
-      return (
-        <span
-          key={idx}
-          className="block my-3 pl-4 border-l-4 border-sky-500 bg-sky-500/10 rounded-r-lg italic"
-        >
-          {highlightVocabulary(seg, vocab, renderWord)}
-        </span>
-      );
-    }
-    return <span key={idx}>{highlightVocabulary(seg, vocab, renderWord)}</span>;
-  });
-}
-
 export default function StoryContent({
   text,
   sentencesPerParagraph = 3,
@@ -208,7 +210,10 @@ export default function StoryContent({
     }
   }, [hasHtml, legacyWords, vocabSet]);
 
-  const cleanedText = React.useMemo(() => (hasHtml ? "" : stripHtml(text)), [hasHtml, text]);
+  const cleanedText = React.useMemo(
+    () => (hasHtml ? "" : sanitizePlainStoryText(stripHtml(text))),
+    [hasHtml, text]
+  );
   const sentences = React.useMemo(() => (hasHtml ? [] : splitSentences(cleanedText)), [hasHtml, cleanedText]);
   const paragraphs = React.useMemo(() => {
     if (hasHtml) return [];
@@ -282,7 +287,7 @@ export default function StoryContent({
         ? { dangerouslySetInnerHTML: { __html: text } }
         : {
             children: paragraphs.map((para, i) => (
-              <p key={i}>{renderWithDialogues(para, renderWord, safeVocab)}</p>
+              <p key={i}>{highlightVocabulary(para, safeVocab, renderWord)}</p>
             )),
           })}
     />

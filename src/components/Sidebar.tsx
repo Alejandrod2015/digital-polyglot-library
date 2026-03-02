@@ -7,6 +7,7 @@ import {
   Star,
   BookOpen,
   BookMarked,
+  ChartNoAxesColumn,
   Settings,
   LogIn,
   LogOut,
@@ -126,6 +127,14 @@ export default function Sidebar({ onClose }: SidebarProps) {
           className={navLinkClass}
         >
           <Star size={22} /> Favorites
+        </Link>
+
+        <Link
+          href="/progress"
+          onClick={handleNavClick}
+          className={navLinkClass}
+        >
+          <ChartNoAxesColumn size={22} /> Progress
         </Link>
 
         {/* Polyglot plan only */}

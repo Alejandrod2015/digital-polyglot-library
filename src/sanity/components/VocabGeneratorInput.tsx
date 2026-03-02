@@ -109,8 +109,6 @@ export default function VocabGeneratorInput() {
           level: level ?? 'intermediate',
           focus: focus ?? 'verbs',
           topic: topic ?? '',
-          minItems: 20,
-          maxItems: 25,
         }),
       })
 
@@ -118,6 +116,8 @@ export default function VocabGeneratorInput() {
       let payload: {
         vocab?: unknown
         generatedCount?: number
+        minItems?: number
+        maxItems?: number
         error?: string
         details?: string
       } = {}
@@ -132,9 +132,17 @@ export default function VocabGeneratorInput() {
       }
 
       const rowsRaw = Array.isArray(payload.vocab) ? payload.vocab.filter(isVocabItem) : []
-      const rows = normalizeRows(rowsRaw, cleanedText).slice(0, 25)
-      if (rows.length < 20) {
-        throw new Error('The model returned fewer than 20 valid vocab items. Try again.')
+      const minItems =
+        typeof payload.minItems === 'number' && Number.isFinite(payload.minItems)
+          ? payload.minItems
+          : 20
+      const maxItems =
+        typeof payload.maxItems === 'number' && Number.isFinite(payload.maxItems)
+          ? payload.maxItems
+          : 25
+      const rows = normalizeRows(rowsRaw, cleanedText).slice(0, maxItems)
+      if (rows.length < minItems) {
+        throw new Error(`The model returned fewer than ${minItems} valid vocab items. Try again.`)
       }
 
       const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
@@ -168,7 +176,7 @@ export default function VocabGeneratorInput() {
           {loading ? (
             <Flex align="center" gap={2}>
               <Spinner muted />
-              <Text size={1}>Extracting 20-25 items from story text...</Text>
+              <Text size={1}>Extracting vocabulary from story text...</Text>
             </Flex>
           ) : null}
         </Flex>

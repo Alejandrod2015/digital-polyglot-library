@@ -27,10 +27,12 @@ export default function StoryVerticalCard({
   footer,
 }: StoryVerticalCardProps) {
   return (
-    <div className={`flex flex-col h-full ${className}`}>
+    <div
+      className={`flex flex-col h-full rounded-2xl overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-200 shadow-md ${className}`}
+    >
       <Link
         href={href}
-        className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
+        className="flex flex-col h-full"
       >
         <div className="w-full h-48 bg-gray-800">
           <img
@@ -58,8 +60,7 @@ export default function StoryVerticalCard({
         </div>
       </Link>
 
-      {footer ? <div className="border-t border-white/5 py-2">{footer}</div> : null}
+      {footer ? <div className="border-t border-white/10 px-3 py-2">{footer}</div> : null}
     </div>
   );
 }
-

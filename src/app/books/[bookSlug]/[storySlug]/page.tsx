@@ -55,6 +55,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
     (userPlan === "free" && isWeeklyStory);
 
   const visibleText = story.text;
+  const hasStoryAudio = typeof story.audio === "string" && story.audio.trim() !== "";
 
   const storyCover = typeof story.cover === "string" && story.cover.trim() !== "" ? story.cover : null;
   const rawCover = story.cover ?? book.cover ?? "/covers/default.jpg";
@@ -144,28 +145,30 @@ export default async function StoryPage({ params }: StoryPageProps) {
       </StoryClientGate>
 
       {/* Player fijo visible en viewport global */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
-        <Player
-          src={
-            story.audio.startsWith("http")
-              ? story.audio
-              : `${book.audioFolder?.replace(/\/$/, "") ?? ""}/${story.audio}`
-          }
-          bookSlug={book.slug}
-          storySlug={story.slug}
-          canPlay={hasFullAccess}
-          prevStorySlug={prevStorySlug}
-          nextStorySlug={nextStorySlug}
-          continueMeta={{
-            title: story.title,
-            bookTitle: book.title,
-            cover: rawCover,
-            language: story.language ?? book.language,
-            level: story.level ?? book.level,
-            topic: story.topic ?? book.topic,
-          }}
-        />
-      </div>
+      {hasStoryAudio ? (
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
+          <Player
+            src={
+              story.audio.startsWith("http")
+                ? story.audio
+                : `${book.audioFolder?.replace(/\/$/, "") ?? ""}/${story.audio}`
+            }
+            bookSlug={book.slug}
+            storySlug={story.slug}
+            canPlay={hasFullAccess}
+            prevStorySlug={prevStorySlug}
+            nextStorySlug={nextStorySlug}
+            continueMeta={{
+              title: story.title,
+              bookTitle: book.title,
+              cover: rawCover,
+              language: story.language ?? book.language,
+              level: story.level ?? book.level,
+              topic: story.topic ?? book.topic,
+            }}
+          />
+        </div>
+      ) : null}
 
       <VocabPanel story={story} />
     </div>

@@ -151,10 +151,14 @@ export default function Player({
   };
 
   const resolvedSrc = useMemo(() => {
-    if (!src) return "";
-    if (src.startsWith("http")) return src;
-    return `https://cdn.sanity.io/files/9u7ilulp/production/${src}.mp3`;
+    const normalized = typeof src === "string" ? src.trim() : "";
+    if (!normalized) return "";
+    if (normalized.startsWith("http")) return normalized;
+    const sanitized = normalized.replace(/^\/+/, "");
+    if (!sanitized) return "";
+    return `https://cdn.sanity.io/files/9u7ilulp/production/${sanitized}.mp3`;
   }, [src]);
+  const hasPlayableAudio = resolvedSrc.length > 0;
 
   const canTrackContinueListening = Boolean(continueMeta);
   const navigationSuffix = useMemo(() => {
@@ -175,6 +179,7 @@ export default function Player({
   }, [searchParams]);
 
   const rememberContinueListening = useCallback((overrideProgressSec?: number) => {
+    if (!hasPlayableAudio) return;
     if (!continueMeta) return;
     if (typeof window === "undefined") return;
 
@@ -260,14 +265,16 @@ export default function Player({
     } catch {
       // silencioso
     }
-  }, [bookSlug, continueMeta, duration, storySlug]);
+  }, [bookSlug, continueMeta, duration, hasPlayableAudio, storySlug]);
 
   // ✅ tracking: carga de audio
   useEffect(() => {
+    if (!hasPlayableAudio) return;
     void trackMetric(storySlug, bookSlug, "audio_load");
-  }, [storySlug, bookSlug]);
+  }, [hasPlayableAudio, storySlug, bookSlug]);
 
   useEffect(() => {
+    if (!hasPlayableAudio) return;
     const audio = audioRef.current;
     if (audio) {
       audio.pause();
@@ -275,9 +282,10 @@ export default function Player({
       setIsPlaying(false);
       setProgress(0);
     }
-  }, [resolvedSrc]);
+  }, [hasPlayableAudio, resolvedSrc]);
 
   useEffect(() => {
+    if (!hasPlayableAudio) return;
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -296,10 +304,10 @@ export default function Player({
       audio.removeEventListener("timeupdate", updateProgress);
       audio.removeEventListener("loadedmetadata", setDur);
     };
-  }, []);
+  }, [hasPlayableAudio]);
 
   useEffect(() => {
-    if (!isPlaying || !canTrackContinueListening) return;
+    if (!hasPlayableAudio || !isPlaying || !canTrackContinueListening) return;
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -330,10 +338,18 @@ export default function Player({
       window.removeEventListener("pagehide", persistNow);
       document.removeEventListener("visibilitychange", persistNow);
     };
-  }, [isPlaying, duration, bookSlug, storySlug, rememberContinueListening, canTrackContinueListening]);
+  }, [
+    hasPlayableAudio,
+    isPlaying,
+    duration,
+    bookSlug,
+    storySlug,
+    rememberContinueListening,
+    canTrackContinueListening,
+  ]);
 
   useEffect(() => {
-    if (!canTrackContinueListening) return;
+    if (!hasPlayableAudio || !canTrackContinueListening) return;
     const audioElement = audioRef.current;
     return () => {
       const currentProgress = audioElement?.currentTime ?? progress;
@@ -345,9 +361,18 @@ export default function Player({
       syncContinueListeningBeacon(storySlug, bookSlug, currentProgress, currentDuration);
       void syncContinueListening(storySlug, bookSlug, currentProgress, currentDuration);
     };
-  }, [storySlug, bookSlug, progress, duration, rememberContinueListening, canTrackContinueListening]);
+  }, [
+    hasPlayableAudio,
+    storySlug,
+    bookSlug,
+    progress,
+    duration,
+    rememberContinueListening,
+    canTrackContinueListening,
+  ]);
 
   useEffect(() => {
+    if (!hasPlayableAudio) return;
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -364,11 +389,12 @@ export default function Player({
 
     audio.addEventListener("ended", handleEnded);
     return () => audio.removeEventListener("ended", handleEnded);
-  }, [nextStorySlug, bookSlug, storySlug, duration, navigationSuffix, router]);
+  }, [hasPlayableAudio, nextStorySlug, bookSlug, storySlug, duration, navigationSuffix, router]);
 
     const togglePlay = async () => {
     const a = audioRef.current;
     if (!a) return;
+    if (!hasPlayableAudio) return;
 
     // 🔒 Si no tiene permiso para reproducir, avisamos al gate y salimos.
     if (!canPlay) {
@@ -409,6 +435,7 @@ export default function Player({
   };
 
   const skip = (sec: number) => {
+    if (!hasPlayableAudio) return;
     if (audioRef.current) {
       audioRef.current.currentTime = Math.max(
         0,
@@ -418,6 +445,7 @@ export default function Player({
   };
 
   const changeSpeed = (v: number) => {
+    if (!hasPlayableAudio) return;
     if (audioRef.current) {
       audioRef.current.playbackRate = v;
       setSpeed(v);
@@ -427,6 +455,7 @@ export default function Player({
   };
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!hasPlayableAudio) return;
     if (audioRef.current) {
       const newTime = Number(e.target.value);
       audioRef.current.currentTime = newTime;
@@ -441,6 +470,10 @@ export default function Player({
     const seconds = Math.floor(sec % 60).toString().padStart(2, "0");
     return `${minutes}:${seconds}`;
   };
+
+  if (!hasPlayableAudio) {
+    return null;
+  }
 
   return (
     <div className="bg-[var(--bg-player)] border-t border-[var(--player-border-top)] px-4 py-3 rounded-t-xl shadow-2xl backdrop-blur w-full relative">

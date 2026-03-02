@@ -5,6 +5,8 @@ import React from "react";
 import StoryGeneratorInput from "../components/StoryGeneratorInput";
 import CoverGeneratorInput from "../components/CoverGeneratorInput";
 import VocabGeneratorInput from "../components/VocabGeneratorInput";
+import AudioGeneratorInput from "../components/AudioGeneratorInput";
+import StoryTextInput from "../components/StoryTextInput";
 
 type SetPatch = {
   type: "set";
@@ -35,7 +37,8 @@ function getLanguage(doc: unknown): string | null {
   return typeof language === "string" && language.length > 0 ? language : null;
 }
 
-const MAX_TEXT_CHARS = 30000;
+const MAX_TEXT_CHARS = 3800;
+const MAX_TEXT_WORDS = 500;
 const MAX_VOCAB_ITEMS = 40;
 const MAX_VOCAB_WORD_LENGTH = 48;
 const MAX_VOCAB_WORD_TOKENS = 4;
@@ -80,6 +83,10 @@ function validateVocabRaw(value: unknown): true | string {
   }
 
   return true;
+}
+
+function countWords(value: string): number {
+  return value.trim().split(/\s+/).filter(Boolean).length;
 }
 
 export const story = defineType({
@@ -390,6 +397,11 @@ export const story = defineType({
       name: "text",
       title: "Main Text",
       type: "text",
+      description:
+        "Target max length: about 3-3.5 minutes of audio (~500 words). Keep concise and dynamic.",
+      components: {
+        input: (props: InputProps) => React.createElement(StoryTextInput, props),
+      },
       validation: (Rule) =>
         Rule.required().custom((value) => {
           if (typeof value !== "string" || value.trim() === "") {
@@ -397,6 +409,9 @@ export const story = defineType({
           }
           if (value.length > MAX_TEXT_CHARS) {
             return `Main Text is too long (max ${MAX_TEXT_CHARS} characters).`;
+          }
+          if (countWords(value) > MAX_TEXT_WORDS) {
+            return `Main Text is too long for ~4 min audio (max ${MAX_TEXT_WORDS} words).`;
           }
           if (/<\s*script\b/i.test(value)) {
             return "Main Text cannot contain <script> tags.";
@@ -431,6 +446,16 @@ export const story = defineType({
       type: "array",
       of: [{ type: "string" }],
       description: "Cultural or contextual topics covered by the story.",
+    }),
+
+    defineField({
+      name: "generateAudio",
+      title: "🎙️ Generate Audio",
+      type: "string",
+      readOnly: true,
+      components: {
+        input: () => React.createElement(AudioGeneratorInput),
+      },
     }),
 
     defineField({

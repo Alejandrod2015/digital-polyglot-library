@@ -263,7 +263,10 @@ export default function MyLibraryClient() {
 
    const unresolved = storyItems.filter((story) => {
      const key = `${story.bookSlug}:${story.storySlug}`;
-     return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0);
+     const bookMeta = allBooks.find((b) => b.slug === story.bookSlug);
+     const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
+     const hasAudio = typeof storyMeta?.audio === "string" && storyMeta.audio.trim() !== "";
+     return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0) && hasAudio;
    });
    if (unresolved.length === 0) return;
 
@@ -313,13 +316,15 @@ export default function MyLibraryClient() {
    Promise.all(unresolved.map(loadDuration)).then((resolved) => {
      if (cancelled || resolved.length === 0) return;
      setStoryDurations((prev) => {
+       let changed = false;
        const next = { ...prev };
        for (const result of resolved) {
-         if (result.durationSec && result.durationSec > 0) {
+         if (result.durationSec && result.durationSec > 0 && next[result.key] !== result.durationSec) {
            next[result.key] = result.durationSec;
+           changed = true;
          }
        }
-       return next;
+       return changed ? next : prev;
      });
    });
 
@@ -371,22 +376,22 @@ export default function MyLibraryClient() {
                  <StoryCarousel
                    items={bookCarouselItems}
                    renderItem={(book) => (
-                     <div className="flex flex-col h-full">
-                       <BookHorizontalCard
-                         href={`/books/${book.slug}?from=my-library`}
-                         title={book.title}
-                         cover={book.cover}
-                         meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
-                         description={book.description}
-                       />
-                       <button
-                         type="button"
-                         onClick={() => removeItem("books", book.bookId)}
-                         className="flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium border-t border-white/5 py-2"
-                       >
-                         Remove
-                       </button>
-                     </div>
+                     <BookHorizontalCard
+                       href={`/books/${book.slug}?from=my-library`}
+                       title={book.title}
+                       cover={book.cover}
+                       meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
+                       description={book.description}
+                       footer={
+                         <button
+                           type="button"
+                           onClick={() => removeItem("books", book.bookId)}
+                           className="w-full flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium"
+                         >
+                           Remove
+                         </button>
+                       }
+                     />
                    )}
                  />
                </div>
@@ -396,22 +401,22 @@ export default function MyLibraryClient() {
                    items={bookCarouselItems}
                    itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
                    renderItem={(book) => (
-                     <div className="flex flex-col h-full">
-                       <BookHorizontalCard
-                         href={`/books/${book.slug}?from=my-library`}
-                         title={book.title}
-                         cover={book.cover}
-                         meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
-                         description={book.description}
-                       />
-                       <button
-                         type="button"
-                         onClick={() => removeItem("books", book.bookId)}
-                         className="flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium border-t border-white/5 py-2"
-                       >
-                         Remove
-                       </button>
-                     </div>
+                     <BookHorizontalCard
+                       href={`/books/${book.slug}?from=my-library`}
+                       title={book.title}
+                       cover={book.cover}
+                       meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
+                       description={book.description}
+                       footer={
+                         <button
+                           type="button"
+                           onClick={() => removeItem("books", book.bookId)}
+                           className="w-full flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium"
+                         >
+                           Remove
+                         </button>
+                       }
+                     />
                    )}
                  />
                </div>

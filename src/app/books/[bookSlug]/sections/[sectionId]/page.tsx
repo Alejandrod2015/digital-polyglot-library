@@ -17,6 +17,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
 
   const section = book.stories.find((s) => s.id === sectionId);
   if (!section) return notFound();
+  const hasSectionAudio = typeof section.audio === "string" && section.audio.trim() !== "";
   const sectionIndex = book.stories.findIndex((s) => s.id === sectionId);
   const prevStorySlug = sectionIndex > 0 ? book.stories[sectionIndex - 1]?.slug ?? null : null;
   const nextStorySlug =
@@ -40,23 +41,25 @@ export default async function SectionPage({ params }: SectionPageProps) {
       </div>
 
       {/* Player fijo en la parte inferior */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
-        <Player
-          src={`${book.audioFolder}/${section.audio}`}
-          bookSlug={book.slug}
-          storySlug={section.slug}
-          prevStorySlug={prevStorySlug}
-          nextStorySlug={nextStorySlug}
-          continueMeta={{
-            title: section.title,
-            bookTitle: book.title,
-            cover: section.cover ?? book.cover ?? "/covers/default.jpg",
-            language: section.language ?? book.language,
-            level: section.level ?? book.level,
-            topic: section.topic ?? book.topic,
-          }}
-        />
-      </div>
+      {hasSectionAudio ? (
+        <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
+          <Player
+            src={`${book.audioFolder}/${section.audio}`}
+            bookSlug={book.slug}
+            storySlug={section.slug}
+            prevStorySlug={prevStorySlug}
+            nextStorySlug={nextStorySlug}
+            continueMeta={{
+              title: section.title,
+              bookTitle: book.title,
+              cover: section.cover ?? book.cover ?? "/covers/default.jpg",
+              language: section.language ?? book.language,
+              level: section.level ?? book.level,
+              topic: section.topic ?? book.topic,
+            }}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

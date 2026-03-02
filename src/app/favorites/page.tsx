@@ -112,6 +112,7 @@ export default function FavoritesPage() {
   const [isReady, setIsReady] = useState(false); // controla visibilidad final
   const [practiceMode, setPracticeMode] = useState(false);
   const [practiceOnlyDue, setPracticeOnlyDue] = useState(true);
+  const [practiceQueue, setPracticeQueue] = useState<FavoriteItem[]>([]);
   const [practiceIndex, setPracticeIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
 
@@ -199,7 +200,6 @@ export default function FavoritesPage() {
 
   const now = Date.now();
   const dueFavorites = favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
-  const practiceQueue = (practiceOnlyDue ? dueFavorites : favorites).slice();
   const currentPractice = practiceQueue[practiceIndex] ?? null;
 
   const removeFavorite = async (word: string) => {
@@ -226,8 +226,10 @@ export default function FavoritesPage() {
   };
 
   const startPractice = (onlyDue: boolean) => {
+    const snapshot = (onlyDue ? dueFavorites : favorites).slice();
     setPracticeOnlyDue(onlyDue);
-    setPracticeMode(true);
+    setPracticeQueue(snapshot);
+    setPracticeMode(snapshot.length > 0);
     setPracticeIndex(0);
     setRevealed(false);
   };
@@ -271,6 +273,7 @@ export default function FavoritesPage() {
       return;
     }
     setPracticeMode(false);
+    setPracticeQueue([]);
     setPracticeIndex(0);
   };
 

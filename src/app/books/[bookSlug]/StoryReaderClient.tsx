@@ -7,6 +7,7 @@ import StoryContent from "@/components/StoryContent";
 
 export default function StoryReaderClient({ book, story }: { book: Book; story: Story }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const hasStoryAudio = typeof story.audio === "string" && story.audio.trim() !== "";
   const currentIndex = book.stories.findIndex((s) => s.slug === story.slug || s.id === story.id);
   const prevStorySlug = currentIndex > 0 ? book.stories[currentIndex - 1]?.slug ?? null : null;
   const nextStorySlug =
@@ -73,23 +74,25 @@ export default function StoryReaderClient({ book, story }: { book: Book; story: 
       </div>
 
       {/* 🔹 Player fijo */}
-      <div className="fixed bottom-0 left-0 w-full z-50">
-        <Player
-          src={story.audio || `/audio/${book.slug}/${story.slug}.mp3`}
-          bookSlug={book.slug}
-          storySlug={story.slug}
-          prevStorySlug={prevStorySlug}
-          nextStorySlug={nextStorySlug}
-          continueMeta={{
-            title: story.title,
-            bookTitle: book.title,
-            cover: story.cover ?? book.cover ?? "/covers/default.jpg",
-            language: story.language ?? book.language,
-            level: story.level ?? book.level,
-            topic: story.topic ?? book.topic,
-          }}
-        />
-      </div>
+      {hasStoryAudio ? (
+        <div className="fixed bottom-0 left-0 w-full z-50">
+          <Player
+            src={story.audio}
+            bookSlug={book.slug}
+            storySlug={story.slug}
+            prevStorySlug={prevStorySlug}
+            nextStorySlug={nextStorySlug}
+            continueMeta={{
+              title: story.title,
+              bookTitle: book.title,
+              cover: story.cover ?? book.cover ?? "/covers/default.jpg",
+              language: story.language ?? book.language,
+              level: story.level ?? book.level,
+              topic: story.topic ?? book.topic,
+            }}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }
