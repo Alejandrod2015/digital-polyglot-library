@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import VocabPanel from "@/components/VocabPanel";
+import StoryContent from "@/components/StoryContent";
 
 type VocabItem = { word: string; definition: string };
 
@@ -82,10 +83,16 @@ useEffect(() => {
   return (
     <div className="relative">
       <div
-  ref={containerRef}
-  className="mx-auto max-w-[65ch] text-xl leading-relaxed text-gray-200 space-y-6"
-  dangerouslySetInnerHTML={{ __html: story.text }}
-/>
+        ref={containerRef}
+        className="mx-auto max-w-[65ch]"
+      >
+        <StoryContent
+          text={story.text}
+          sentencesPerParagraph={3}
+          vocab={story.vocab ?? []}
+          className="text-xl leading-relaxed text-gray-200 space-y-6"
+        />
+      </div>
 
 
       {selectedWord && (

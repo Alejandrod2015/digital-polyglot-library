@@ -3,9 +3,16 @@
 import { Book, Story } from "@/types/books";
 import { useEffect, useRef } from "react";
 import Player from "@/components/Player";
+import StoryContent from "@/components/StoryContent";
 
 export default function StoryReaderClient({ book, story }: { book: Book; story: Story }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const currentIndex = book.stories.findIndex((s) => s.slug === story.slug || s.id === story.id);
+  const prevStorySlug = currentIndex > 0 ? book.stories[currentIndex - 1]?.slug ?? null : null;
+  const nextStorySlug =
+    currentIndex >= 0 && currentIndex < book.stories.length - 1
+      ? book.stories[currentIndex + 1]?.slug ?? null
+      : null;
 
   // ✅ Auto-scroll sincronizado con progreso del audio (funciona con el nuevo layout)
   useEffect(() => {
@@ -56,9 +63,14 @@ export default function StoryReaderClient({ book, story }: { book: Book; story: 
       {/* 🔹 Texto principal */}
       <div
         ref={containerRef}
-        className="space-y-4 text-xl leading-relaxed text-gray-200"
-        dangerouslySetInnerHTML={{ __html: story.text }}
-      />
+      >
+        <StoryContent
+          text={story.text}
+          sentencesPerParagraph={3}
+          vocab={story.vocab ?? []}
+          className="space-y-4 text-xl leading-relaxed text-gray-200"
+        />
+      </div>
 
       {/* 🔹 Player fijo */}
       <div className="fixed bottom-0 left-0 w-full z-50">
@@ -66,6 +78,16 @@ export default function StoryReaderClient({ book, story }: { book: Book; story: 
           src={story.audio || `/audio/${book.slug}/${story.slug}.mp3`}
           bookSlug={book.slug}
           storySlug={story.slug}
+          prevStorySlug={prevStorySlug}
+          nextStorySlug={nextStorySlug}
+          continueMeta={{
+            title: story.title,
+            bookTitle: book.title,
+            cover: story.cover ?? book.cover ?? "/covers/default.jpg",
+            language: story.language ?? book.language,
+            level: story.level ?? book.level,
+            topic: story.topic ?? book.topic,
+          }}
         />
       </div>
     </div>

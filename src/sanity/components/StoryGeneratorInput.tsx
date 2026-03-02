@@ -58,6 +58,10 @@ export default function StoryGeneratorInput() {
   const [loading, setLoading] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const apiBase =
+    typeof window !== 'undefined' && window.location.hostname === 'localhost'
+      ? ''
+      : 'https://reader.digitalpolyglot.com'
 
   async function generateStory(withAudio: boolean) {
     try {
@@ -89,14 +93,28 @@ export default function StoryGeneratorInput() {
       }
 
       // ✅ si withAudio=true, se añade flag en query
-      const res = await fetch(`/api/generate-text${withAudio ? '?withAudio=true' : ''}`, {
+      const res = await fetch(`${apiBase}/api/generate-text${withAudio ? '?withAudio=true' : ''}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })
 
-      if (!res.ok) throw new Error('Failed to generate content.')
-      const data = await res.json()
+      const rawResponse = await res.text()
+      let data: {
+        error?: string
+        details?: string
+        content?: string
+        topic?: string
+        audioAssetId?: string
+      } = {}
+      try {
+        data = rawResponse ? (JSON.parse(rawResponse) as typeof data) : {}
+      } catch {
+        throw new Error(`Unexpected response from server: ${rawResponse.slice(0, 120)}`)
+      }
+      if (!res.ok) {
+        throw new Error(data.error || data.details || 'Failed to generate content.')
+      }
       const raw = String(data.content ?? '')
 
       let parsedUnknown: unknown

@@ -49,6 +49,7 @@ export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; 
   }, []);
 
   const story = book.stories.find((s) => s.id === selectedStoryId);
+  const currentIndex = book.stories.findIndex((s) => s.id === selectedStoryId);
 
   // --- Registro de lectura ---
   useEffect(() => {
@@ -258,7 +259,25 @@ useEffect(() => {
       <VocabPanel story={story} />
 
       <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
-        <Player src={`${book.audioFolder}/${story.audio}`} bookSlug={book.slug} storySlug={story.slug} />
+        <Player
+          src={`${book.audioFolder}/${story.audio}`}
+          bookSlug={book.slug}
+          storySlug={story.slug}
+          prevStorySlug={currentIndex > 0 ? book.stories[currentIndex - 1]?.slug ?? null : null}
+          nextStorySlug={
+            currentIndex >= 0 && currentIndex < book.stories.length - 1
+              ? book.stories[currentIndex + 1]?.slug ?? null
+              : null
+          }
+          continueMeta={{
+            title: story.title,
+            bookTitle: book.title,
+            cover: story.cover ?? book.cover ?? "/covers/default.jpg",
+            language: story.language ?? book.language,
+            level: story.level ?? book.level,
+            topic: story.topic ?? book.topic,
+          }}
+        />
       </div>
     </div>
   );

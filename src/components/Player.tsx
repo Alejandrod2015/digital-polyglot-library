@@ -12,7 +12,6 @@ import {
   SkipForward,
   ChevronUp,
 } from "lucide-react";
-import { books } from "@/data/books";
 
 // ✅ nuevo helper para tracking
 async function trackMetric(
@@ -88,24 +87,33 @@ function getWakeLockNavigator(): NavigatorWithWakeLock | null {
     : null;
 }
 
-function stripHtml(input: string): string {
-  return input.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-}
-
-function estimateReadMinutes(text: string): number {
-  const words = stripHtml(text).split(/\s+/).filter(Boolean).length;
-  // 180 wpm average reading speed
-  return Math.max(1, Math.ceil(words / 180));
-}
-
 interface PlayerProps {
   src: string;
   bookSlug: string;
   storySlug: string;
   canPlay?: boolean;
+  prevStorySlug?: string | null;
+  nextStorySlug?: string | null;
+  continueMeta?: {
+    title: string;
+    bookTitle: string;
+    cover?: string;
+    language?: string;
+    level?: string;
+    topic?: string;
+    readMinutes?: number;
+  };
 }
 
-export default function Player({ src, bookSlug, storySlug, canPlay = true }: PlayerProps) {
+export default function Player({
+  src,
+  bookSlug,
+  storySlug,
+  canPlay = true,
+  prevStorySlug = null,
+  nextStorySlug = null,
+  continueMeta,
+}: PlayerProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -148,18 +156,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
     return `https://cdn.sanity.io/files/9u7ilulp/production/${src}.mp3`;
   }, [src]);
 
-  const book = Object.values(books).find((b) => b.slug === bookSlug);
-  const stories = book?.stories || [];
-  const currentIndex = stories.findIndex(
-    (s) => s.slug === storySlug || s.id === storySlug
-  );
-  const prevStory = currentIndex > 0 ? stories[currentIndex - 1] : null;
-  const nextStory =
-    currentIndex >= 0 && currentIndex < stories.length - 1
-      ? stories[currentIndex + 1]
-      : null;
-  const currentStory = currentIndex >= 0 ? stories[currentIndex] : null;
-  const canTrackContinueListening = Boolean(book && currentStory);
+  const canTrackContinueListening = Boolean(continueMeta);
   const navigationSuffix = useMemo(() => {
     const params = new URLSearchParams();
     const returnTo = searchParams.get("returnTo");
@@ -178,21 +175,14 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
   }, [searchParams]);
 
   const rememberContinueListening = useCallback((overrideProgressSec?: number) => {
-    // Solo guardamos libros reales para evitar rutas inválidas (ej. polyglot).
-    if (!book) return;
-    if (!currentStory) return;
+    if (!continueMeta) return;
     if (typeof window === "undefined") return;
 
     const key = "dp_continue_listening_v1";
-    const storyCover =
-      typeof currentStory.cover === "string" && currentStory.cover.trim() !== ""
-        ? currentStory.cover
-        : null;
     const cover =
-      storyCover ??
-      (typeof book.cover === "string" && book.cover.trim() !== ""
-        ? book.cover
-        : "/covers/default.jpg");
+      typeof continueMeta.cover === "string" && continueMeta.cover.trim() !== ""
+        ? continueMeta.cover
+        : "/covers/default.jpg";
     const liveProgress = audioRef.current?.currentTime;
     const resolvedProgress =
       Number.isFinite(overrideProgressSec)
@@ -202,15 +192,18 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
           : 0;
 
     const current = {
-      bookSlug: book.slug,
-      storySlug: currentStory.slug,
-      title: currentStory.title,
-      bookTitle: book.title,
+      bookSlug,
+      storySlug,
+      title: continueMeta.title,
+      bookTitle: continueMeta.bookTitle,
       cover,
-      language: currentStory.language ?? book.language,
-      level: currentStory.level ?? book.level,
-      topic: currentStory.topic ?? book.topic,
-      readMinutes: estimateReadMinutes(currentStory.text ?? ""),
+      language: continueMeta.language,
+      level: continueMeta.level,
+      topic: continueMeta.topic,
+      readMinutes:
+        typeof continueMeta.readMinutes === "number" && Number.isFinite(continueMeta.readMinutes)
+          ? continueMeta.readMinutes
+          : undefined,
       audioDurationSec:
         Number.isFinite(duration) && duration > 0 ? Math.round(duration) : undefined,
       progressSec:
@@ -267,7 +260,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
     } catch {
       // silencioso
     }
-  }, [book, currentStory, duration]);
+  }, [bookSlug, continueMeta, duration, storySlug]);
 
   // ✅ tracking: carga de audio
   useEffect(() => {
@@ -361,8 +354,8 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
     const handleEnded = async () => {
       await trackMetric(storySlug, bookSlug, "audio_complete", duration);
       void releaseWakeLock();
-      if (nextStory) {
-        router.push(`/books/${bookSlug}/${nextStory.slug}${navigationSuffix}`);
+      if (nextStorySlug) {
+        router.push(`/books/${bookSlug}/${nextStorySlug}${navigationSuffix}`);
       } else {
         setIsPlaying(false);
         setProgress(0);
@@ -371,7 +364,7 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
 
     audio.addEventListener("ended", handleEnded);
     return () => audio.removeEventListener("ended", handleEnded);
-  }, [nextStory, bookSlug, storySlug, duration, navigationSuffix, router]);
+  }, [nextStorySlug, bookSlug, storySlug, duration, navigationSuffix, router]);
 
     const togglePlay = async () => {
     const a = audioRef.current;
@@ -469,9 +462,9 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
 
       {/* controles compactos */}
       <div className="flex justify-center items-center gap-4 relative">
-        {prevStory && (
+        {prevStorySlug && (
           <Link
-            href={`/books/${bookSlug}/${prevStory.slug}${navigationSuffix}`}
+            href={`/books/${bookSlug}/${prevStorySlug}${navigationSuffix}`}
             className="p-1.5 rounded hover:bg-gray-800"
           >
             <SkipBack className="w-6 h-6" />
@@ -509,9 +502,9 @@ export default function Player({ src, bookSlug, storySlug, canPlay = true }: Pla
           </span>
         </button>
 
-        {nextStory && (
+        {nextStorySlug && (
           <Link
-            href={`/books/${bookSlug}/${nextStory.slug}${navigationSuffix}`}
+            href={`/books/${bookSlug}/${nextStorySlug}${navigationSuffix}`}
             className="p-1.5 rounded hover:bg-gray-800"
           >
             <SkipForward className="w-6 h-6" />

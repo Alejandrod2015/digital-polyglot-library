@@ -24,13 +24,18 @@ export async function generateAndUploadCover({
   try {
     const shortText = text.replace(/<[^>]+>/g, " ").slice(0, 400);
 
-    const regionClause = region ? ` (${region})` : "";
     const prompt = `
-Minimal flat illustration inspired by a story titled "${title}".
+Minimal editorial illustration inspired by a story titled "${title}".
 Language: ${language}${region ? `, region: ${region}` : ""}.
 Topic: ${topic}. Level: ${level}.
-Cool balanced colors (sky blues, greens, neutrals), matte texture, clean geometric shapes.
-No text, no logos, no frame, no warm filter, no orange tint.
+Visual direction: minimal illustration with realistic color grading.
+Use plausible real-world tones: medium saturation, balanced contrast, natural ambient light.
+Skin, clothing, architecture, and street surfaces should look physically believable.
+Avoid yellow cast, but also avoid cyan/magenta duotone and neon looks.
+No heavy cinematic filters, no single-color wash, no exaggerated tint.
+Flat clean shapes, soft gradients, modern composition, high visual clarity.
+No text, no logos, no frame, no watermarks.
+Story context reference: ${shortText}
 `;
 
 

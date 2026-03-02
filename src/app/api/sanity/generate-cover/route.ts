@@ -112,12 +112,20 @@ export async function POST(req: Request) {
       .join(" ");
 
     const prompt = [
-      "Ilustracion minimalista.",
-      "Dimensiones 1536 x 1024.",
-      "Basa la ilustracion en la siguiente sinopsis.",
+      "Ilustracion editorial minimalista y moderna.",
+      "Formato horizontal 1536x1024.",
+      "Estilo visual: minimalista con color realista y natural.",
+      "Usa una paleta plausible de luz diurna real: colores moderados, saturacion media, contraste equilibrado.",
+      "Tonos de piel, ropa, calles y edificios deben verse creibles y fisicos.",
+      "Iluminacion y sombras suaves, coherentes con una escena real.",
+      "Evita gradaciones artificiales, neones, duotonos, filtros cinematograficos agresivos o tintes globales.",
+      "No dominante amarilla, pero tampoco dominante cian/magenta.",
+      "Fondo con gradientes suaves y bloques geometricos limpios; pocos elementos, bien jerarquizados.",
+      "Composicion limpia, legible y contemporanea.",
+      "Sin texto, sin logos, sin letras, sin marcos, sin marca de agua.",
+      "Basa la ilustracion en la siguiente sinopsis:",
       synopsis,
       contextLine,
-      "Sin texto, sin logos, sin marcos. Composicion limpia.",
     ]
       .filter(Boolean)
       .join("\n\n");

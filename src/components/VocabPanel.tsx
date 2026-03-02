@@ -103,15 +103,21 @@ export default function VocabPanel({
       if (!word) return;
       const sentenceNode = el.closest("p, blockquote");
       const sentence = sentenceNode?.textContent?.trim() ?? undefined;
+      const normalizedWord = word.trim().toLowerCase();
 
       setSelectedWord(word);
-      const item = story.vocab?.find((v) => v.word === word);
+      const item = story.vocab?.find((v) => {
+        const vocabWord = typeof v.word === "string" ? v.word.trim().toLowerCase() : "";
+        return vocabWord === normalizedWord;
+      });
       setDefinition(item?.definition ?? null);
       setSelectedSentence(sentence);
       setSelectedSourcePath(
         typeof window !== "undefined" ? window.location.pathname : undefined
       );
-      setIsFav(loadedFavs.some((f) => f.word === word));
+      setIsFav(
+        loadedFavs.some((f) => (f.word ?? "").trim().toLowerCase() === normalizedWord)
+      );
     };
 
     document.addEventListener("click", handler);

@@ -107,6 +107,7 @@ type Props = {
 
 const MOBILE_LIMIT = 6;
 const DESKTOP_LIMIT = 10;
+const CONTINUE_COMPLETION_RATIO = 0.95;
 
 function isStringArray(v: unknown): v is string[] {
   return Array.isArray(v) && v.every((i) => typeof i === "string");
@@ -145,6 +146,19 @@ function formatRemainingDuration(totalSeconds?: number, progressSec?: number): s
   const minutes = Math.floor(remaining / 60);
   const seconds = remaining % 60;
   return `${minutes}:${seconds.toString().padStart(2, "0")} left`;
+}
+
+function isCompletedFromAudio(progressSec?: number, audioDurationSec?: number): boolean {
+  if (
+    typeof progressSec !== "number" ||
+    !Number.isFinite(progressSec) ||
+    typeof audioDurationSec !== "number" ||
+    !Number.isFinite(audioDurationSec) ||
+    audioDurationSec <= 0
+  ) {
+    return false;
+  }
+  return progressSec >= audioDurationSec * CONTINUE_COMPLETION_RATIO;
 }
 
 export default function HomeClient({
@@ -199,6 +213,7 @@ export default function HomeClient({
         } as ContinueItem;
       })
       .filter((item): item is ContinueItem => item !== null)
+      .filter((item) => !isCompletedFromAudio(item.progressSec, item.audioDurationSec))
   );
   const [continueRefreshTick, setContinueRefreshTick] = useState(0);
   const [continueInitialized, setContinueInitialized] = useState(continueLoadedOnServer);
@@ -308,7 +323,8 @@ export default function HomeClient({
                   progressSec,
                 };
               })
-              .filter((i): i is ContinueItem => i !== null);
+              .filter((i): i is ContinueItem => i !== null)
+              .filter((item) => !isCompletedFromAudio(item.progressSec, item.audioDurationSec));
           }
         }
       } catch {
@@ -376,7 +392,8 @@ export default function HomeClient({
           })
           .filter((item): item is ContinueItem => item !== null);
 
-        const merged = hydrated.map((item) => {
+        const merged = hydrated
+          .map((item) => {
           const key = `${item.bookSlug}:${item.storySlug}`;
           const local = localByKey.get(key);
           if (!local) return item;
@@ -385,7 +402,8 @@ export default function HomeClient({
             audioDurationSec: item.audioDurationSec ?? local.audioDurationSec,
             progressSec: item.progressSec ?? local.progressSec,
           };
-        });
+          })
+          .filter((item) => !isCompletedFromAudio(item.progressSec, item.audioDurationSec));
 
         if (cancelled) return;
         setContinueListening(merged);

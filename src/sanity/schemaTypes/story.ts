@@ -4,6 +4,7 @@ import type { InputProps } from "sanity";
 import React from "react";
 import StoryGeneratorInput from "../components/StoryGeneratorInput";
 import CoverGeneratorInput from "../components/CoverGeneratorInput";
+import VocabGeneratorInput from "../components/VocabGeneratorInput";
 
 type SetPatch = {
   type: "set";
@@ -342,6 +343,16 @@ export const story = defineType({
       name: "text",
       title: "Main Text",
       type: "text",
+    }),
+
+    defineField({
+      name: "generateVocab",
+      title: "🧠 Generate Vocabulary",
+      type: "string",
+      readOnly: true,
+      components: {
+        input: () => React.createElement(VocabGeneratorInput),
+      },
     }),
 
     defineField({

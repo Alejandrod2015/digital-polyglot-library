@@ -39,6 +39,12 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
   const isWeeklyStory = featured.week?.slug === story.slug;
   const isDailyStory = featured.day?.slug === story.slug;
+  const storyIndex = book.stories.findIndex((s) => s.slug === story.slug || s.id === story.id);
+  const prevStorySlug = storyIndex > 0 ? book.stories[storyIndex - 1]?.slug ?? null : null;
+  const nextStorySlug =
+    storyIndex >= 0 && storyIndex < book.stories.length - 1
+      ? book.stories[storyIndex + 1]?.slug ?? null
+      : null;
 
   const hasFullAccess =
     userPlan === "premium" ||
@@ -127,7 +133,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
       >
         {hasFullAccess ? (
           <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6">
-            <StoryContent text={visibleText} sentencesPerParagraph={3} />
+            <StoryContent text={visibleText} sentencesPerParagraph={3} vocab={story.vocab ?? []} />
           </div>
         ) : (
           <div
@@ -148,6 +154,16 @@ export default async function StoryPage({ params }: StoryPageProps) {
           bookSlug={book.slug}
           storySlug={story.slug}
           canPlay={hasFullAccess}
+          prevStorySlug={prevStorySlug}
+          nextStorySlug={nextStorySlug}
+          continueMeta={{
+            title: story.title,
+            bookTitle: book.title,
+            cover: rawCover,
+            language: story.language ?? book.language,
+            level: story.level ?? book.level,
+            topic: story.topic ?? book.topic,
+          }}
         />
       </div>
 

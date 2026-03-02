@@ -6,6 +6,31 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
+const CONTINUE_COMPLETION_RATIO = 0.95;
+
+function isCompletedFromAudio(progressSec?: number | null, audioDurationSec?: number | null): boolean {
+  if (
+    typeof progressSec !== "number" ||
+    !Number.isFinite(progressSec) ||
+    typeof audioDurationSec !== "number" ||
+    !Number.isFinite(audioDurationSec) ||
+    audioDurationSec <= 0
+  ) {
+    return false;
+  }
+  return progressSec >= audioDurationSec * CONTINUE_COMPLETION_RATIO;
+}
+
+async function hasContinueListeningTable(): Promise<boolean> {
+  try {
+    const rows = await prisma.$queryRaw<Array<{ regclass: string | null }>>`
+      SELECT to_regclass('public.dp_continue_listening_v1')::text AS regclass
+    `;
+    return Array.isArray(rows) && rows.length > 0 && typeof rows[0]?.regclass === "string";
+  } catch {
+    return true;
+  }
+}
 
 export default async function HomePage() {
   const { userId } = await auth();
@@ -22,8 +47,59 @@ export default async function HomePage() {
 
   const loadContinueRows = async () => {
     if (!userId) return [];
+    const hasTable = await hasContinueListeningTable();
+    if (!hasTable) {
+      const metrics = await prisma.userMetric.findMany({
+        where: {
+          userId,
+          eventType: { in: ["continue_listening", "audio_play"] },
+          AND: [{ bookSlug: { not: null } }, { bookSlug: { not: "polyglot" } }],
+        },
+        select: {
+          bookSlug: true,
+          storySlug: true,
+          createdAt: true,
+          metadata: true,
+        },
+        orderBy: [{ createdAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
+        take: 200,
+      });
+
+      const seen = new Set<string>();
+      const rows: Array<{
+        bookSlug: string;
+        storySlug: string;
+        progressSec: number | null;
+        audioDurationSec: number | null;
+      }> = [];
+
+      for (const metric of metrics) {
+        if (!metric.bookSlug) continue;
+        const key = `${metric.bookSlug}:${metric.storySlug}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+
+        const meta =
+          metric.metadata && typeof metric.metadata === "object"
+            ? (metric.metadata as Record<string, unknown>)
+            : null;
+
+        rows.push({
+          bookSlug: metric.bookSlug,
+          storySlug: metric.storySlug,
+          progressSec:
+            meta && typeof meta.progressSec === "number" ? Math.round(meta.progressSec) : null,
+          audioDurationSec:
+            meta && typeof meta.audioDurationSec === "number" ? Math.round(meta.audioDurationSec) : null,
+        });
+
+        if (rows.length >= 8) break;
+      }
+
+      return rows.filter((row) => !isCompletedFromAudio(row.progressSec, row.audioDurationSec));
+    }
     try {
-      return await prisma.continueListeningEntry.findMany({
+      const rows = await prisma.continueListeningEntry.findMany({
         where: { userId, bookSlug: { not: "polyglot" } },
         select: {
           bookSlug: true,
@@ -34,6 +110,7 @@ export default async function HomePage() {
         orderBy: [{ lastPlayedAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
         take: 8,
       });
+      return rows.filter((row) => !isCompletedFromAudio(row.progressSec, row.audioDurationSec));
     } catch (err) {
       if (isMissingContinueTableError(err)) {
         const metrics = await prisma.userMetric.findMany({
@@ -85,7 +162,7 @@ export default async function HomePage() {
           if (rows.length >= 8) break;
         }
 
-        return rows;
+        return rows.filter((row) => !isCompletedFromAudio(row.progressSec, row.audioDurationSec));
       }
       // Fallback para clientes Prisma desactualizados (sin progress/audioDuration).
       try {
@@ -98,11 +175,13 @@ export default async function HomePage() {
           orderBy: [{ lastPlayedAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
           take: 8,
         });
-        return rows.map((row) => ({
-          ...row,
-          progressSec: null,
-          audioDurationSec: null,
-        }));
+        return rows
+          .map((row) => ({
+            ...row,
+            progressSec: null,
+            audioDurationSec: null,
+          }))
+          .filter((row) => !isCompletedFromAudio(row.progressSec, row.audioDurationSec));
       } catch (fallbackErr) {
         if (isMissingContinueTableError(fallbackErr)) return [];
         throw fallbackErr;

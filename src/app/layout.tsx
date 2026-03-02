@@ -18,6 +18,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   viewportFit: "cover",
+  themeColor: "#0b1e36",
 };
 
 export const metadata: Metadata = {
@@ -41,9 +42,9 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
-      <html lang="en" className="bg-[var(--background)]">
+      <html lang="en" className="bg-[var(--bg-content)]">
         <head>
-          <meta name="theme-color" content="#0B1220" />
+          <meta name="theme-color" content="#0b1e36" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="black-translucent"
@@ -51,7 +52,7 @@ export default function RootLayout({
         </head>
 
         {/* ✅ layout estable: usa min-h-screen, no h-screen */}
-        <body className="bg-[var(--background)] text-[var(--foreground)] min-h-screen flex flex-col">
+        <body className="bg-[var(--bg-content)] text-[var(--foreground)] min-h-screen flex flex-col">
           {/* Sidebar (desktop) */}
           <aside className="hidden md:flex md:w-64 bg-[var(--bg-sidebar)] fixed top-0 left-0 bottom-0 z-20">
             <Sidebar />

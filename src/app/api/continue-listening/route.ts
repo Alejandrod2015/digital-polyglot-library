@@ -3,6 +3,7 @@ export const runtime = "nodejs";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+const CONTINUE_COMPLETION_RATIO = 0.95;
 
 type ContinueListeningRow = {
   bookSlug: string;
@@ -34,6 +35,19 @@ type ContinuePayloadItem = {
   progressSec?: number;
   audioDurationSec?: number;
 };
+
+function isCompletedFromAudio(progressSec?: number, audioDurationSec?: number): boolean {
+  if (
+    typeof progressSec !== "number" ||
+    !Number.isFinite(progressSec) ||
+    typeof audioDurationSec !== "number" ||
+    !Number.isFinite(audioDurationSec) ||
+    audioDurationSec <= 0
+  ) {
+    return false;
+  }
+  return progressSec >= audioDurationSec * CONTINUE_COMPLETION_RATIO;
+}
 
 function isValidPair(x: unknown): x is ContinuePayloadItem {
   if (!x || typeof x !== "object") return false;
@@ -71,6 +85,18 @@ function isMissingContinueTableError(err: unknown): boolean {
   );
 }
 
+async function hasContinueListeningTable(): Promise<boolean> {
+  try {
+    const rows = await prisma.$queryRaw<Array<{ regclass: string | null }>>`
+      SELECT to_regclass('public.dp_continue_listening_v1')::text AS regclass
+    `;
+    return Array.isArray(rows) && rows.length > 0 && typeof rows[0]?.regclass === "string";
+  } catch {
+    // If introspection fails, keep existing behavior and let regular query/catch flow handle it.
+    return true;
+  }
+}
+
 export async function GET(req: NextRequest): Promise<Response> {
   const { userId } = getAuth(req);
   if (!userId) {
@@ -78,6 +104,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   }
 
   try {
+    const hasTable = await hasContinueListeningTable();
     let rows:
       | Array<{
           bookSlug: string;
@@ -91,6 +118,56 @@ export async function GET(req: NextRequest): Promise<Response> {
           storySlug: string;
           lastPlayedAt: Date;
         }>;
+
+    if (!hasTable) {
+      const metrics = await prisma.userMetric.findMany({
+        where: {
+          userId,
+          eventType: { in: ["continue_listening", "audio_play"] },
+          bookSlug: { not: null },
+        },
+        select: {
+          bookSlug: true,
+          storySlug: true,
+          createdAt: true,
+          metadata: true,
+        },
+        orderBy: [{ createdAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
+        take: 200,
+      });
+
+      const seen = new Set<string>();
+      const items: ContinueListeningRow[] = [];
+      for (const metric of metrics) {
+        if (!metric.bookSlug) continue;
+        const key = `${metric.bookSlug}:${metric.storySlug}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+
+        const meta =
+          metric.metadata && typeof metric.metadata === "object"
+            ? (metric.metadata as Record<string, unknown>)
+            : null;
+
+        items.push({
+          bookSlug: metric.bookSlug,
+          storySlug: metric.storySlug,
+          lastPlayedAt: metric.createdAt.toISOString(),
+          progressSec:
+            meta && typeof meta.progressSec === "number" ? Math.round(meta.progressSec) : undefined,
+          audioDurationSec:
+            meta && typeof meta.audioDurationSec === "number"
+              ? Math.round(meta.audioDurationSec)
+              : undefined,
+        });
+
+        if (items.length >= 8) break;
+      }
+
+      return NextResponse.json(
+        items.filter((item) => !isCompletedFromAudio(item.progressSec, item.audioDurationSec))
+      );
+    }
 
     try {
       rows = await prisma.continueListeningEntry.findMany({
@@ -107,53 +184,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       });
     } catch (err) {
       if (isMissingContinueTableError(err)) {
-        const metrics = await prisma.userMetric.findMany({
-          where: {
-            userId,
-            eventType: { in: ["continue_listening", "audio_play"] },
-            bookSlug: { not: null },
-          },
-          select: {
-            bookSlug: true,
-            storySlug: true,
-            createdAt: true,
-            metadata: true,
-          },
-          orderBy: [{ createdAt: "desc" }, { bookSlug: "asc" }, { storySlug: "asc" }],
-          take: 200,
-        });
-
-        const seen = new Set<string>();
-        const items: ContinueListeningRow[] = [];
-        for (const metric of metrics) {
-          if (!metric.bookSlug) continue;
-          const key = `${metric.bookSlug}:${metric.storySlug}`;
-          if (seen.has(key)) continue;
-          seen.add(key);
-
-          const meta =
-            metric.metadata && typeof metric.metadata === "object"
-              ? (metric.metadata as Record<string, unknown>)
-              : null;
-
-          items.push({
-            bookSlug: metric.bookSlug,
-            storySlug: metric.storySlug,
-            lastPlayedAt: metric.createdAt.toISOString(),
-            progressSec:
-              meta && typeof meta.progressSec === "number"
-                ? Math.round(meta.progressSec)
-                : undefined,
-            audioDurationSec:
-              meta && typeof meta.audioDurationSec === "number"
-                ? Math.round(meta.audioDurationSec)
-                : undefined,
-          });
-
-          if (items.length >= 8) break;
-        }
-
-        return NextResponse.json(items);
+        return NextResponse.json([]);
       }
       // Fallback para clientes Prisma desactualizados.
       rows = await prisma.continueListeningEntry.findMany({
@@ -168,14 +199,16 @@ export async function GET(req: NextRequest): Promise<Response> {
       });
     }
 
-    const items: ContinueListeningRow[] = rows.map((row) => ({
-      bookSlug: row.bookSlug,
-      storySlug: row.storySlug,
-      lastPlayedAt: row.lastPlayedAt.toISOString(),
-      progressSec: "progressSec" in row ? row.progressSec ?? undefined : undefined,
-      audioDurationSec:
-        "audioDurationSec" in row ? row.audioDurationSec ?? undefined : undefined,
-    }));
+    const items: ContinueListeningRow[] = rows
+      .map((row) => ({
+        bookSlug: row.bookSlug,
+        storySlug: row.storySlug,
+        lastPlayedAt: row.lastPlayedAt.toISOString(),
+        progressSec: "progressSec" in row ? row.progressSec ?? undefined : undefined,
+        audioDurationSec:
+          "audioDurationSec" in row ? row.audioDurationSec ?? undefined : undefined,
+      }))
+      .filter((item) => !isCompletedFromAudio(item.progressSec, item.audioDurationSec));
 
     return NextResponse.json(items);
   } catch (err) {
@@ -210,10 +243,49 @@ export async function POST(req: NextRequest): Promise<Response> {
     }
 
     const limited = pairs.slice(0, 20);
+    const completed = limited.filter((pair) =>
+      isCompletedFromAudio(pair.progressSec, pair.audioDurationSec)
+    );
+    const active = limited.filter(
+      (pair) => !isCompletedFromAudio(pair.progressSec, pair.audioDurationSec)
+    );
+    const hasTable = await hasContinueListeningTable();
     const nowMs = Date.now();
+
+    if (!hasTable) {
+      await prisma.userMetric.createMany({
+        data: active.map((pair) => ({
+          userId,
+          bookSlug: pair.bookSlug,
+          storySlug: pair.storySlug,
+          eventType: "continue_listening",
+          metadata: {
+            progressSec:
+              typeof pair.progressSec === "number" && Number.isFinite(pair.progressSec)
+                ? Math.max(0, Math.round(pair.progressSec))
+                : null,
+            audioDurationSec:
+              typeof pair.audioDurationSec === "number" && Number.isFinite(pair.audioDurationSec)
+                ? Math.max(0, Math.round(pair.audioDurationSec))
+                : null,
+          },
+        })),
+      });
+      return NextResponse.json({ success: true, degraded: true });
+    }
+
     try {
-      await prisma.$transaction(
-        limited.map((pair, index) =>
+      const operations = [
+        ...completed.map((pair) =>
+          prisma.continueListeningEntry.deleteMany({
+            where: {
+              userId,
+              bookSlug: pair.bookSlug,
+              storySlug: pair.storySlug,
+            },
+          })
+        ),
+        ...active.map((pair, index) =>
           prisma.continueListeningEntry.upsert({
             where: {
               userId_bookSlug_storySlug: {
@@ -248,12 +320,15 @@ export async function POST(req: NextRequest): Promise<Response> {
                   : undefined,
             },
           })
-        )
-      );
+        ),
+      ];
+      if (operations.length > 0) {
+        await prisma.$transaction(operations);
+      }
     } catch (err) {
       if (isMissingContinueTableError(err)) {
         await prisma.userMetric.createMany({
-          data: limited.map((pair) => ({
+          data: active.map((pair) => ({
             userId,
             bookSlug: pair.bookSlug,
             storySlug: pair.storySlug,
