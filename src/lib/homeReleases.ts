@@ -1,5 +1,5 @@
 // /src/lib/homeReleases.ts
-import { sanityClient } from "@/sanity";
+import { books } from "@/data/books";
 import { getPublicUserStories } from "@/lib/userStories";
 
 export type LatestBook = {
@@ -36,20 +36,9 @@ function isRecord(v: unknown): v is Record<string, unknown> {
   return typeof v === "object" && v !== null && !Array.isArray(v);
 }
 
-function isLatestBook(v: unknown): v is LatestBook {
-  if (!isRecord(v)) return false;
-  return typeof v.slug === "string" && typeof v.title === "string";
-}
-
-function isLatestStory(v: unknown): v is LatestStory {
-  if (!isRecord(v)) return false;
-  return (
-    typeof v.bookSlug === "string" &&
-    typeof v.bookTitle === "string" &&
-    typeof v.storySlug === "string" &&
-    typeof v.storyTitle === "string" &&
-    typeof v.coverUrl === "string"
-  );
+function isLatestPolyglotStory(x: unknown): x is LatestPolyglotStory {
+  if (!isRecord(x)) return false;
+  return typeof x.slug === "string" && typeof x.title === "string";
 }
 
 export async function getLatestHomeReleases({ limit }: Options): Promise<{
@@ -57,63 +46,63 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
   latestStories: LatestStory[];
   latestPolyglotStories: LatestPolyglotStory[];
 }> {
-  const booksQuery = `*[_type == "book" && published == true] | order(_createdAt desc)[0...$limit]{
-    "slug": slug.current,
-    title,
-    description,
-    language,
-    level,
-    "cover": coalesce(cover.asset->url, "/covers/default.jpg")
-  }`;
+  const allBooks = Object.values(books);
 
-  const storiesQuery = `*[_type == "story" && published == true] | order(_createdAt desc)[0...$limit]{
-    "bookSlug": book->slug.current,
-    "bookTitle": coalesce(book->title, book->slug.current),
-    "storySlug": slug.current,
-    "storyTitle": coalesce(title, "Untitled story"),
-    language,
-    level,
-    "coverUrl": coalesce(cover.asset->url, book->cover.asset->url, "/covers/default.jpg")
-  }`;
+  const latestBooks: LatestBook[] = allBooks
+    .slice()
+    .reverse()
+    .slice(0, limit)
+    .map((book) => ({
+      slug: book.slug,
+      title: book.title,
+      language: book.language,
+      level: book.level,
+      cover: book.cover ?? "/covers/default.jpg",
+      description: book.description,
+    }));
 
-  const [booksRaw, storiesRaw, polyglotRaw] = await Promise.all([
-    sanityClient.fetch<unknown>(booksQuery, { limit }),
-    sanityClient.fetch<unknown>(storiesQuery, { limit }),
-    getPublicUserStories({ limit }),
-  ]);
+  const latestStories: LatestStory[] = allBooks
+    .slice()
+    .reverse()
+    .flatMap((book) =>
+      (book.stories ?? []).slice().reverse().map((story) => ({
+        bookSlug: book.slug,
+        bookTitle: book.title,
+        storySlug: story.slug,
+        storyTitle: story.title,
+        language: story.language ?? book.language,
+        level: story.level ?? book.level,
+        coverUrl: story.cover ?? book.cover ?? "/covers/default.jpg",
+      }))
+    )
+    .slice(0, limit);
 
-  const latestBooks = Array.isArray(booksRaw) ? booksRaw.filter(isLatestBook) : [];
-  const latestStories = Array.isArray(storiesRaw) ? storiesRaw.filter(isLatestStory) : [];
+  const polyglotRaw = await getPublicUserStories({ limit });
 
-function isLatestPolyglotStory(x: unknown): x is LatestPolyglotStory {
-  if (!isRecord(x)) return false;
-  return typeof x.slug === "string" && typeof x.title === "string";
-}
+  const latestPolyglotStories: LatestPolyglotStory[] = Array.isArray(polyglotRaw)
+    ? polyglotRaw
+        .map((s: unknown) => {
+          if (!isRecord(s)) return null;
 
-const latestPolyglotStories: LatestPolyglotStory[] = Array.isArray(polyglotRaw)
-  ? polyglotRaw
-      .map((s: unknown) => {
-        if (!isRecord(s)) return null;
+          const slug = typeof s.slug === "string" ? s.slug : null;
+          if (!slug) return null;
 
-        const slug = typeof s.slug === "string" ? s.slug : null;
-        if (!slug) return null;
+          const title = typeof s.title === "string" ? s.title : "";
+          const language = typeof s.language === "string" ? s.language : undefined;
+          const level = typeof s.level === "string" ? s.level : undefined;
+          const text = typeof s.text === "string" ? s.text : undefined;
 
-        const title = typeof s.title === "string" ? s.title : "";
-        const language = typeof s.language === "string" ? s.language : undefined;
-        const level = typeof s.level === "string" ? s.level : undefined;
-        const text = typeof s.text === "string" ? s.text : undefined;
+          const coverUrl =
+            typeof s.coverUrl === "string" && s.coverUrl.trim() !== ""
+              ? s.coverUrl
+              : "/covers/default.jpg";
 
-        const coverUrl =
-          typeof s.coverUrl === "string" && s.coverUrl.trim() !== ""
-            ? s.coverUrl
-            : "/covers/default.jpg";
-
-        const out: LatestPolyglotStory = { slug, title, language, level, text, coverUrl };
-        return out;
-      })
-      .filter(isLatestPolyglotStory)
-      .slice(0, limit)
-  : [];
+          const out: LatestPolyglotStory = { slug, title, language, level, text, coverUrl };
+          return out;
+        })
+        .filter(isLatestPolyglotStory)
+        .slice(0, limit)
+    : [];
 
   return { latestBooks, latestStories, latestPolyglotStories };
 }

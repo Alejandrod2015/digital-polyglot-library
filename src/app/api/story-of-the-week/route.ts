@@ -1,46 +1,21 @@
 // /src/app/api/story-of-the-week/route.ts
 import { NextResponse } from "next/server";
-import { updateFeaturedStory } from "@/sanity/actions/updateFeaturedStory";
-import { getFeaturedStory } from "@/lib/getFeaturedStory";
-import { client } from "@/sanity/lib/client";
+import { getFeaturedStory, getFeaturedStoryDataBySlug } from "@/lib/getFeaturedStory";
 
 /**
- * API endpoint: obtiene o actualiza la Story of the Week
- * Puede llamarse desde el frontend o como Cron Job.
+ * API endpoint: obtiene Story of the Week desde contenido estático exportado.
  */
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const tz = searchParams.get("tz") || "UTC";
 
-    // 🔁 Actualiza si corresponde (solo si no hay historia o si es Cron)
-    await updateFeaturedStory(tz, "week");
-
-    // 🧩 Obtiene la historia destacada actual
     const featured = await getFeaturedStory("week", tz);
     if (!featured?.slug) {
       return NextResponse.json({ ok: false, message: "No featured story found." }, { status: 404 });
     }
 
-    // 📖 Datos completos de la historia
-    const story = await client.fetch(
-      `*[_type == "story" && slug.current == $slug][0]{
-        title,
-        "slug": slug.current,
-        focus,
-        book->{
-          title,
-          "slug": slug.current,
-          "cover": coalesce(cover.asset->url, "/covers/default.jpg"),
-          description,
-          language,
-          level,
-          topic
-        }
-      }`,
-      { slug: featured.slug }
-    );
-
+    const story = getFeaturedStoryDataBySlug(featured.slug);
     if (!story) {
       return NextResponse.json({ ok: false, message: "Story not found." }, { status: 404 });
     }
