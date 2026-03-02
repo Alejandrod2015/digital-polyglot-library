@@ -32,6 +32,7 @@ const client = createClient({
 
 type RawStory = {
   _id?: string;
+  _createdAt?: string;
   title?: string;
   text?: string;
   slug?: string;
@@ -45,6 +46,7 @@ type RawStory = {
 
 type RawBook = {
   _id?: string;
+  _createdAt?: string;
   _updatedAt?: string;
   title?: string;
   description?: string;
@@ -68,6 +70,8 @@ type ExportedStory = {
   title: string;
   text: string;
   audio: string;
+  createdAt?: string;
+  updatedAt?: string;
   topic: string;
   tags?: string[];
   cover?: string;
@@ -79,6 +83,8 @@ type ExportedBook = {
   slug: string;
   title: string;
   description: string;
+  createdAt?: string;
+  updatedAt?: string;
   cover: string;
   theme: unknown;
   level: string;
@@ -225,6 +231,7 @@ async function exportBooks() {
       count(*[_type == "story" && references(^._id) && published == true && _updatedAt > $since]) > 0
     )]{
       _id,
+      _createdAt,
       _updatedAt,
       title,
       description,
@@ -244,6 +251,7 @@ async function exportBooks() {
       ),
       "stories": *[_type == "story" && references(^._id) && published == true] | order(_createdAt asc) {
         _id,
+        _createdAt,
         _updatedAt,
         title,
         text,
@@ -304,6 +312,8 @@ async function exportBooks() {
         title: safeString(s.title, `Story ${i + 1}`),
         text: safeString(s.text, ""),
         audio: safeString(s.audio, ""),
+        createdAt: typeof s._createdAt === "string" ? s._createdAt : undefined,
+        updatedAt: typeof s._updatedAt === "string" ? s._updatedAt : undefined,
         topic: inferredStoryTopic,
         ...(tags.length > 0 ? { tags } : {}),
         ...(sCover ? { cover: sCover } : {}),
@@ -329,6 +339,8 @@ async function exportBooks() {
       slug: bookSlug,
       title: safeString(b.title, ""),
       description: safeString(b.description, ""),
+      createdAt: typeof b._createdAt === "string" ? b._createdAt : undefined,
+      updatedAt: typeof b._updatedAt === "string" ? b._updatedAt : undefined,
       cover: safeString(b.cover, "/covers/default.jpg"),
       theme: resolvedTheme,
       level: safeString(b.level, "beginner"),

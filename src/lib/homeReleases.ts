@@ -41,6 +41,12 @@ function isLatestPolyglotStory(x: unknown): x is LatestPolyglotStory {
   return typeof x.slug === "string" && typeof x.title === "string";
 }
 
+function toTimestamp(value?: string): number {
+  if (!value) return 0;
+  const t = Date.parse(value);
+  return Number.isFinite(t) ? t : 0;
+}
+
 export async function getLatestHomeReleases({ limit }: Options): Promise<{
   latestBooks: LatestBook[];
   latestStories: LatestStory[];
@@ -50,7 +56,11 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
 
   const latestBooks: LatestBook[] = allBooks
     .slice()
-    .reverse()
+    .sort((a, b) => {
+      const aTs = Math.max(toTimestamp(a.updatedAt), toTimestamp(a.createdAt));
+      const bTs = Math.max(toTimestamp(b.updatedAt), toTimestamp(b.createdAt));
+      return bTs - aTs;
+    })
     .slice(0, limit)
     .map((book) => ({
       slug: book.slug,
@@ -63,9 +73,9 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
 
   const latestStories: LatestStory[] = allBooks
     .slice()
-    .reverse()
-    .flatMap((book) =>
-      (book.stories ?? []).slice().reverse().map((story) => ({
+    .flatMap((book) => {
+      const bookTs = Math.max(toTimestamp(book.updatedAt), toTimestamp(book.createdAt));
+      return (book.stories ?? []).map((story) => ({
         bookSlug: book.slug,
         bookTitle: book.title,
         storySlug: story.slug,
@@ -73,9 +83,16 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
         language: story.language ?? book.language,
         level: story.level ?? book.level,
         coverUrl: story.cover ?? book.cover ?? "/covers/default.jpg",
-      }))
-    )
-    .slice(0, limit);
+        _ts: Math.max(
+          toTimestamp(story.updatedAt),
+          toTimestamp(story.createdAt),
+          bookTs
+        ),
+      }));
+    })
+    .sort((a, b) => b._ts - a._ts)
+    .slice(0, limit)
+    .map(({ _ts, ...item }) => item);
 
   const polyglotRaw = await getPublicUserStories({ limit });
 

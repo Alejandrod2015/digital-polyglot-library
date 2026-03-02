@@ -5,6 +5,7 @@ export type Level = "beginner" | "intermediate" | "advanced";
 export interface VocabItem {
   word: string; // Palabra tal cual aparece en el texto
   definition: string; // Definición breve
+  type?: string; // categoría gramatical opcional
   note?: string; // Nota cultural o ejemplo opcional
 }
 
@@ -23,6 +24,8 @@ export interface Story extends Partial<BookMetadata> {
   title: string;
   text: string;
   audio: string;
+  createdAt?: string;
+  updatedAt?: string;
 
   /** 🖼️ Cover opcional por historia (Sanity -> export estático) */
   cover?: string;
@@ -39,6 +42,8 @@ export interface Book extends BookMetadata {
   title: string;
   description: string; // Sinopsis
   subtitle?: string; // Subtítulo opcional
+  createdAt?: string;
+  updatedAt?: string;
 
   /** Cover del libro (Sanity -> export estático) */
   cover?: string;

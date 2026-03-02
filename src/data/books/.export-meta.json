@@ -1,10 +1,7 @@
 {
-  "ranAt": "2026-03-02T17:20:08.478Z",
-  "since": null,
+  "ranAt": "2026-03-02T20:01:26.938Z",
+  "since": "2026-03-02T17:20:08.478Z",
   "changedBookIds": [
-    "spanish-short-stories-on-20-mexican-wonders",
-    "colombian-spanish-stories-for-beginners",
-    "short-stories-in-colombian-spanish",
     "colloquial-german-stories"
   ]
 }

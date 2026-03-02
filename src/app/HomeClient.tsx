@@ -161,6 +161,13 @@ function isCompletedFromAudio(progressSec?: number, audioDurationSec?: number): 
   return progressSec >= audioDurationSec * CONTINUE_COMPLETION_RATIO;
 }
 
+function hasAudioSource(bookSlug: string, storySlug: string): boolean {
+  const bookMeta = Object.values(books).find((b) => b.slug === bookSlug);
+  const storyMeta = bookMeta?.stories.find((s) => s.slug === storySlug);
+  const rawSrc = typeof storyMeta?.audio === "string" ? storyMeta.audio.trim() : "";
+  return rawSrc.length > 0;
+}
+
 export default function HomeClient({
   latestBooks,
   latestStories,
@@ -454,7 +461,9 @@ export default function HomeClient({
     if (continueListening.length === 0) return;
 
     const unresolved = continueListening.filter(
-      (item) => !(typeof item.audioDurationSec === "number" && item.audioDurationSec > 0)
+      (item) =>
+        !(typeof item.audioDurationSec === "number" && item.audioDurationSec > 0) &&
+        hasAudioSource(item.bookSlug, item.storySlug)
     );
     if (unresolved.length === 0) return;
 
@@ -507,12 +516,17 @@ export default function HomeClient({
       if (resolved.length === 0) return;
 
       setContinueListening((prev) => {
+        let changed = false;
         const next = prev.map((item) => {
           const key = `${item.bookSlug}:${item.storySlug}`;
           const found = resolved.find((r) => r.key === key);
           if (!found || !found.durationSec) return item;
+          if (item.audioDurationSec === found.durationSec) return item;
+          changed = true;
           return { ...item, audioDurationSec: found.durationSec };
         });
+
+        if (!changed) return prev;
 
         try {
           localStorage.setItem("dp_continue_listening_v1", JSON.stringify(next));
