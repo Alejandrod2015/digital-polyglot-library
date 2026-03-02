@@ -52,7 +52,7 @@ export default function RootLayout({
         </head>
 
         {/* ✅ layout estable: usa min-h-screen, no h-screen */}
-        <body className="bg-[var(--bg-content)] text-[var(--foreground)] min-h-screen flex flex-col">
+        <body className="bg-[var(--bg-content)] text-[var(--foreground)] min-h-screen flex flex-col pt-[env(safe-area-inset-top)]">
           {/* Sidebar (desktop) */}
           <aside className="hidden md:flex md:w-64 bg-[var(--bg-sidebar)] fixed top-0 left-0 bottom-0 z-20">
             <Sidebar />
@@ -65,7 +65,7 @@ export default function RootLayout({
           </Suspense>
 
           {/* Main content scrollable */}
-          <main className="flex-1 md:ml-64 px-1 py-6 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-[env(safe-area-inset-bottom)] overflow-y-auto bg-[var(--bg-content)]">
+          <main className="no-scrollbar flex-1 md:ml-64 px-1 py-6 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-[env(safe-area-inset-bottom)] overflow-y-auto bg-[var(--bg-content)]">
             {children}
           </main>
 
