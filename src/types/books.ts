@@ -5,6 +5,7 @@ export type Level = "beginner" | "intermediate" | "advanced";
 export interface VocabItem {
   word: string; // Palabra tal cual aparece en el texto
   definition: string; // Definición breve
+  type?: string; // Tipo gramatical opcional (verb, noun, expression, etc.)
   note?: string; // Nota cultural o ejemplo opcional
 }
 
