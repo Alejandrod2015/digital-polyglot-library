@@ -27,7 +27,9 @@ export default function MobileMenu() {
   const { user } = useUser();
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
 
-  const isStoryPage = /^\/books\/[^/]+\/[^/]+$/.test(pathname || "");
+  const isBookStoryPage = /^\/books\/[^/]+\/[^/]+$/.test(pathname || "");
+  const isPolyglotStoryPage = /^\/stories\/[^/]+$/.test(pathname || "");
+  const isStoryPage = isBookStoryPage || isPolyglotStoryPage;
   const isBookPage = /^\/books\/[^/]+$/.test(pathname || "");
 
   useEffect(() => {

@@ -604,6 +604,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       href={withReturnContext(`/books/${slug}`)}
                       title={title}
                       cover={cover}
+                      level={getString(bookUnknown, "level") ?? undefined}
                       meta={`${language} · ${level}`}
                       description={description}
                     />
@@ -630,6 +631,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       href={withReturnContext(`/books/${slug}`)}
                       title={title}
                       cover={cover}
+                      level={getString(bookUnknown, "level") ?? undefined}
                       meta={`${language} · ${level}`}
                       description={description}
                     />

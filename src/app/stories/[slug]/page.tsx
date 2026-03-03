@@ -6,6 +6,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
+import LevelBadge from "@/components/LevelBadge";
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -59,15 +60,8 @@ export default async function StoryPage({ params }: StoryPageProps) {
   return (
     <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground">
       <ScrollToTopOnPathChange />
-      {/* Título */}
-      <div className="relative mb-7 pt-2">
-        <h1 className="text-4xl font-bold text-white text-center">
-          {story.title}
-        </h1>
-      </div>
-
       {/* Botón de guardar en la biblioteca */}
-      <div className="absolute top-[-14px] -right-2 sm:top-0 sm:right-0">
+      <div className="absolute top-[-2.75rem] right-6 z-30 sm:right-8">
         <AddStoryToLibraryButton
           storyId={story.id}
           bookId="polyglot"
@@ -75,6 +69,16 @@ export default async function StoryPage({ params }: StoryPageProps) {
           coverUrl={coverUrl}
           variant="icon"
         />
+      </div>
+
+      {/* Título */}
+      <div className="relative mb-7 pt-2">
+        <h1 className="text-4xl font-bold text-white text-center">
+          {story.title}
+        </h1>
+        <div className="mt-3 flex justify-center">
+          <LevelBadge level={story.level ?? undefined} />
+        </div>
       </div>
 
       {/* Texto principal */}

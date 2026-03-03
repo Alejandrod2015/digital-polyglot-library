@@ -71,6 +71,7 @@ export async function POST(req: Request) {
       level?: string;
       focus?: string;
       topic?: string;
+      customTopic?: string;
     };
 
     const {
@@ -79,26 +80,38 @@ export async function POST(req: Request) {
       level = "intermediate",
       focus = "verbs",
       topic = "",
+      customTopic = "",
     } = body;
     const requestedTopic = typeof topic === "string" ? topic.trim() : "";
+    const customTopicResolved =
+      typeof customTopic === "string" ? customTopic.trim().slice(0, 120) : "";
+    const resolvedTopic = customTopicResolved || requestedTopic;
 
     const regionClause = region ? `, specifically from ${region}` : "";
 
     const prompt = `
-You are an expert language teacher and long story writer.
-Write a long engaging story in ${language}${regionClause} for a ${level} student.
-${requestedTopic ? `The topic of the story is "${requestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
+You are an expert fiction writer and language teacher.
+Write a vivid, modern story in ${language}${regionClause} for a ${level} student.
+${resolvedTopic ? `The topic is "${resolvedTopic}".` : "Choose a concrete, modern topic that fits the level."}
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Wrap each paragraph inside <blockquote> ... </blockquote>.
 
 Requirements:
-Use a close third-person narrator who sometimes slips into the characters’ own thoughts and feelings, so the narration flows naturally between observation and inner voice.
+Use close third-person narration with natural internal perspective and sharp scene dynamics.
 
 Words to wrap:
 - Wrap around 25-30 different items that naturally fit in the story, marking only the first occurrence of each with
 <span class='vocab-word' data-word='original-word'>original-word</span>.
 - The amount of items you wrap should be the same as the amount of items in the vocab list.
 - Prioritize ${focus.toLowerCase()} when choosing words and expressions to wrap.
+
+Narrative quality rules:
+- Avoid childish/fable tone. Do NOT start with "Once upon a time", "Érase una vez", or equivalents.
+- Avoid generic moral-of-the-story endings.
+- Open with immediate action or tension in the first 2-3 lines.
+- Include realistic dialogue and specific details (places, constraints, consequences).
+- Keep the story for adult learners: natural, grounded, and emotionally believable.
+- Keep title short and specific (max 7 words), avoid clichés like "The Mystery of..." unless truly justified.
 
 Return ONLY valid JSON:
 {
@@ -112,7 +125,11 @@ Return ONLY valid JSON:
       model: "gpt-4o-mini",
       temperature: 0.8,
       messages: [
-        { role: "system", content: "You are a creative story generator for language learners." },
+        {
+          role: "system",
+          content:
+            "You are a high-quality fiction writer for language learners. Avoid repetitive, childish, and formulaic storytelling.",
+        },
         { role: "user", content: prompt },
       ],
     });
@@ -162,7 +179,7 @@ Return ONLY valid JSON:
     const inferredTopic = inferTopicFromText({
       title,
       text: normalizedText,
-      existingTopic: requestedTopic,
+      existingTopic: resolvedTopic,
       fallback: "Daily life",
     });
 

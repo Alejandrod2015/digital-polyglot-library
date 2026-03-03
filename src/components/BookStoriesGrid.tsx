@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { type Book, type Story } from "@/types/books";
 import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
+import LevelBadge from "@/components/LevelBadge";
 
 type ContinueLocalItem = {
   bookSlug: string;
@@ -187,6 +188,7 @@ export default function BookStoriesGrid({
             </div>
 
             <div className="p-3">
+              <LevelBadge level={storyLevel} className="mb-2" />
               <h3 className="font-semibold text-base leading-snug line-clamp-2">{story.title}</h3>
               <p className="mt-1 text-xs text-gray-400 line-clamp-1">{excerpt}</p>
 

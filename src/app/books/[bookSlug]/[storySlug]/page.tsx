@@ -8,6 +8,7 @@ import StoryClientGate from "./StoryClientGate";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import StoryContent from "@/components/StoryContent";
 import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
+import LevelBadge from "@/components/LevelBadge";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
 
@@ -71,11 +72,25 @@ export default async function StoryPage({ params }: StoryPageProps) {
   )}`;
 
   return (
-    <div className="relative max-w-5xl mx-auto pt-10 px-8 pb-[8rem] text-foreground">
+    <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground">
       <ScrollToTopOnPathChange />
+      {/* Botón de guardar */}
+      <div className="absolute top-[-2.75rem] right-6 z-30 sm:right-8">
+        <AddStoryToLibraryButton
+          storyId={story.id}
+          bookId={book.id}
+          title={story.title}
+          coverUrl={coverUrl}
+          variant="icon"
+        />
+      </div>
+
       {/* Título */}
       <div className="relative mb-7 pt-2">
         <h1 className="text-4xl font-bold text-white text-center">{story.title}</h1>
+        <div className="mt-3 flex justify-center">
+          <LevelBadge level={story.level ?? book.level} />
+        </div>
       </div>
 
       {/* Cover de historia (solo si existe) */}
@@ -90,17 +105,6 @@ export default async function StoryPage({ params }: StoryPageProps) {
           </div>
         </div>
       ) : null}
-
-      {/* Botón de guardar */}
-      <div className="absolute top-0 right-2">
-        <AddStoryToLibraryButton
-          storyId={story.id}
-          bookId={book.id}
-          title={story.title}
-          coverUrl={coverUrl}
-          variant="icon"
-        />
-      </div>
 
       {/* Info de acceso */}
       <StoryAccessInfo storyId={story.id} userPlan={userPlan} />

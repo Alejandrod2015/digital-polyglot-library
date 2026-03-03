@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@/generated/prisma';
+import { auth } from '@clerk/nextjs/server';
 
 const prisma = new PrismaClient();
 
@@ -7,6 +8,8 @@ export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const storyId = searchParams.get('id');
+    const mine = searchParams.get('mine') === '1';
+    const latestForCreate = searchParams.get('latestForCreate') === '1';
 
     // 🔹 Si viene un id → devolver solo esa historia
     if (storyId) {
@@ -35,6 +38,58 @@ export async function GET(req: Request) {
       }
 
       return NextResponse.json({ story });
+    }
+
+    if (mine && latestForCreate) {
+      const { userId } = await auth();
+      if (!userId) {
+        await prisma.$disconnect();
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      }
+
+      const language = searchParams.get('language')?.trim();
+      const level = searchParams.get('level')?.trim();
+      const focus = searchParams.get('focus')?.trim();
+      const topic = searchParams.get('topic')?.trim();
+      const region = searchParams.get('region')?.trim();
+      const sinceRaw = searchParams.get('since');
+
+      const sinceDate =
+        sinceRaw && !Number.isNaN(Number(sinceRaw))
+          ? new Date(Number(sinceRaw))
+          : null;
+
+      const story = await prisma.userStory.findFirst({
+        where: {
+          userId,
+          ...(language ? { language } : {}),
+          ...(level ? { level } : {}),
+          ...(focus ? { focus } : {}),
+          ...(topic ? { topic } : {}),
+          ...(region ? { region } : {}),
+          ...(sinceDate && !Number.isNaN(sinceDate.getTime())
+            ? { createdAt: { gte: sinceDate } }
+            : {}),
+        },
+        orderBy: { createdAt: 'desc' },
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          text: true,
+          language: true,
+          region: true,
+          level: true,
+          focus: true,
+          topic: true,
+          audioUrl: true,
+          audioFilename: true,
+          createdAt: true,
+        },
+      });
+
+      await prisma.$disconnect();
+      return NextResponse.json({ story: story ?? null });
     }
 
     // 🔹 Si no hay id → devolver lista general

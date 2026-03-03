@@ -108,6 +108,7 @@ export default function ExploreStoryCardsClient({ items }: Props) {
           title={story.title}
           subtitle={story.subtitle}
           coverUrl={story.coverUrl}
+          level={story.level}
           meta={`${formatLanguage(story.language)} · ${formatLevel(story.level)}`}
           metaSecondary={`${formatAudioDuration(durations[story.id])} · ${formatTopic(story.topic)}`}
         />

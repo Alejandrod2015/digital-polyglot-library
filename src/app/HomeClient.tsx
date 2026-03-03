@@ -1312,6 +1312,7 @@ export default function HomeClient({
                 href={`/books/${book.slug}?from=home`}
                 title={book.title}
                 cover={book.cover}
+                level={book.level}
                 meta={`${formatLanguage(book.language)} · ${formatLevel(book.level)}`}
                 description={book.description}
               />
@@ -1327,6 +1328,7 @@ export default function HomeClient({
               <BookHorizontalCard
                 title={book.title}
                 cover={book.cover}
+                level={book.level}
                 meta={`${formatLanguage(book.language)} · ${formatLevel(book.level)}`}
                 description={book.description}
                 href={`/books/${book.slug}?from=home`}

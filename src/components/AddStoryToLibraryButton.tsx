@@ -124,7 +124,7 @@ export default function AddStoryToLibraryButton({
      <button
        onClick={toggleLibrary}
        disabled={!isLoaded || checking}
-       className={`relative p-2 rounded-full transition ${
+       className={`relative p-2.5 rounded-full transition ${
          inLibrary
            ? 'bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-400/35'
            : 'hover:bg-white/10 text-gray-400 hover:text-white'
@@ -134,7 +134,7 @@ export default function AddStoryToLibraryButton({
        {celebrate ? (
          <span className="pointer-events-none absolute -inset-1 rounded-full border border-emerald-300/70 animate-ping" />
        ) : null}
-       {inLibrary ? <BookmarkCheck size={28} /> : <BookmarkPlus size={28} />}
+       {inLibrary ? <BookmarkCheck size={32} /> : <BookmarkPlus size={32} />}
      </button>
    );
  }

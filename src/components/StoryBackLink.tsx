@@ -5,7 +5,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
 type StoryBackLinkProps = {
-  bookSlug: string;
+  bookSlug?: string;
+  fallbackHref?: string;
+  fallbackLabel?: string;
 };
 
 type BackConfig = {
@@ -25,7 +27,11 @@ function getLabelFromPath(pathname: string): string {
   return "Back";
 }
 
-export default function StoryBackLink({ bookSlug }: StoryBackLinkProps) {
+export default function StoryBackLink({
+  bookSlug,
+  fallbackHref,
+  fallbackLabel,
+}: StoryBackLinkProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -97,8 +103,12 @@ export default function StoryBackLink({ bookSlug }: StoryBackLinkProps) {
 
     if (referrerBack) return referrerBack;
 
-    return { href: `/books/${bookSlug}`, label: "Back to book" };
-  }, [bookSlug, referrerBack, searchParams]);
+    if (bookSlug) return { href: `/books/${bookSlug}`, label: "Back to book" };
+    return {
+      href: fallbackHref ?? "/explore",
+      label: fallbackLabel ?? "Back to Explore",
+    };
+  }, [bookSlug, fallbackHref, fallbackLabel, referrerBack, searchParams]);
 
   const handleBack = () => {
     const returnTo = searchParams.get("returnTo");

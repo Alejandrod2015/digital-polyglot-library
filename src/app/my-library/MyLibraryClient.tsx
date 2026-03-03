@@ -380,6 +380,7 @@ export default function MyLibraryClient() {
                        href={`/books/${book.slug}?from=my-library`}
                        title={book.title}
                        cover={book.cover}
+                       level={book.level}
                        meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
                        description={book.description}
                        footer={
@@ -405,6 +406,7 @@ export default function MyLibraryClient() {
                        href={`/books/${book.slug}?from=my-library`}
                        title={book.title}
                        cover={book.cover}
+                       level={book.level}
                        meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
                        description={book.description}
                        footer={
@@ -445,6 +447,7 @@ export default function MyLibraryClient() {
                    title={story.title}
                    coverUrl={story.coverUrl || "/covers/default.png"}
                    subtitle={story.bookTitle}
+                   level={story.level}
                    meta={`${formatLanguage(story.language)} · ${formatLevel(story.level)}`}
                    metaSecondary={`${formatAudioDuration(
                      storyDurations[`${story.bookSlug}:${story.storySlug}`]
