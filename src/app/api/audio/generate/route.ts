@@ -40,6 +40,7 @@ export async function POST(req: Request) {
       data: {
         audioUrl: audioResult.url,
         audioFilename: audioResult.filename || null,
+        public: true,
       },
     });
 

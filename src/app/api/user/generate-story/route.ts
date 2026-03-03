@@ -195,7 +195,7 @@ Return ONLY valid JSON:
         level: normalizedLevel,
         focus,
         topic: inferredTopic,
-        public: true,
+        public: false,
       },
     });
 
