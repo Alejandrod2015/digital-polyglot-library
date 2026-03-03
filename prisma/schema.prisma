@@ -79,6 +79,7 @@ model UserStory {
   vocab         Json
   audioUrl      String?
   audioFilename String?
+  audioStatus   String   @default("pending")
   language      String
   region        String?
   level         String

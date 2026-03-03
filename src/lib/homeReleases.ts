@@ -41,10 +41,15 @@ function isLatestPolyglotStory(x: unknown): x is LatestPolyglotStory {
   return typeof x.slug === "string" && typeof x.title === "string";
 }
 
-function toTimestamp(value?: string): number {
-  if (!value) return 0;
+function toTimestamp(value: unknown): number {
+  if (typeof value !== "string" || !value) return 0;
   const t = Date.parse(value);
   return Number.isFinite(t) ? t : 0;
+}
+
+function getEntityTimestamp(entity: unknown): number {
+  if (!isRecord(entity)) return 0;
+  return Math.max(toTimestamp(entity.updatedAt), toTimestamp(entity.createdAt));
 }
 
 export async function getLatestHomeReleases({ limit }: Options): Promise<{
@@ -57,8 +62,8 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
   const latestBooks: LatestBook[] = allBooks
     .slice()
     .sort((a, b) => {
-      const aTs = Math.max(toTimestamp(a.updatedAt), toTimestamp(a.createdAt));
-      const bTs = Math.max(toTimestamp(b.updatedAt), toTimestamp(b.createdAt));
+      const aTs = getEntityTimestamp(a);
+      const bTs = getEntityTimestamp(b);
       return bTs - aTs;
     })
     .slice(0, limit)
@@ -74,7 +79,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
   const latestStories: LatestStory[] = allBooks
     .slice()
     .flatMap((book) => {
-      const bookTs = Math.max(toTimestamp(book.updatedAt), toTimestamp(book.createdAt));
+      const bookTs = getEntityTimestamp(book);
       return (book.stories ?? []).map((story) => ({
         bookSlug: book.slug,
         bookTitle: book.title,
@@ -84,8 +89,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
         level: story.level ?? book.level,
         coverUrl: story.cover ?? book.cover ?? "/covers/default.jpg",
         _ts: Math.max(
-          toTimestamp(story.updatedAt),
-          toTimestamp(story.createdAt),
+          getEntityTimestamp(story),
           bookTs
         ),
       }));
