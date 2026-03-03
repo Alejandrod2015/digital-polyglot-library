@@ -3,8 +3,17 @@ import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { prisma } from "@/lib/prisma";
 
 export async function POST(req: Request) {
+  let storyId: string | undefined;
   try {
-    const { storyId, text, title, language, region } = await req.json();
+    const body = await req.json() as {
+      storyId?: string;
+      text?: string;
+      title?: string;
+      language?: string;
+      region?: string;
+    };
+    storyId = body.storyId;
+    const { text, title, language, region } = body;
 
     if (!storyId || !text || !title) {
       return NextResponse.json(
