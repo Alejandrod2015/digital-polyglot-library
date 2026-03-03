@@ -90,6 +90,7 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
                 key={slug || title}
                 title={title}
                 cover={cover}
+                level={book.level}
                 meta={meta}
                 description={book.description}
                 href={`/books/${slug}?returnTo=/explore/books&returnLabel=All%20Books`}

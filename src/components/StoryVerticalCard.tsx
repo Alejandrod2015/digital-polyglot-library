@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
+import LevelBadge from "@/components/LevelBadge";
 
 type StoryVerticalCardProps = {
   href: string;
@@ -11,6 +12,7 @@ type StoryVerticalCardProps = {
   excerpt?: string;
   meta?: string;
   metaSecondary?: string;
+  level?: string;
   className?: string;
   footer?: ReactNode;
 };
@@ -23,6 +25,7 @@ export default function StoryVerticalCard({
   excerpt,
   meta,
   metaSecondary,
+  level,
   className = "",
   footer,
 }: StoryVerticalCardProps) {
@@ -42,6 +45,9 @@ export default function StoryVerticalCard({
 
         <div className="p-5 flex flex-col justify-between flex-1 text-left">
           <div>
+            <div className="mb-2">
+              <LevelBadge level={level} />
+            </div>
             <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">{title}</h3>
             {subtitle ? (
               <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">{subtitle}</p>

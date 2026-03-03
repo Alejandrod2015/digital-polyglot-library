@@ -76,6 +76,7 @@ export default async function ExplorePolyglotStoriesPage({
               href={`/stories/${story.slug}?returnTo=/explore/polyglot-stories&returnLabel=Polyglot%20Stories`}
               title={story.title}
               coverUrl={story.coverUrl}
+              level={story.level}
               excerpt={`${stripHtml(story.text).slice(0, 140)}...`}
               meta={`${formatLanguage(story.language)} · ${formatLevel(story.level)}`}
             />
