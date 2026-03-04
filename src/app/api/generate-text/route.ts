@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { inferTopicFromText } from "@/lib/topicClassifier";
+import { improveVocabDefinitions } from "@/lib/vocabQuality";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -9,6 +11,7 @@ const openai = new OpenAI({
 type StoryJSON = {
   title: string;
   text: string;
+  vocab: { word: string; definition: string; type?: string }[];
 };
 
 const TARGET_WORDS_MIN = 340;
@@ -27,15 +30,6 @@ function sanitizeGeneratedStoryText(input: string): string {
     .replace(/\s+([,.;:!?])/g, "$1")
     .replace(/([.!?])(?:\s*[.!?]){1,}/g, "$1")
     .trim();
-}
-
-function isValidStoryJSON(data: unknown): data is StoryJSON {
-  return (
-    typeof data === "object" &&
-    data !== null &&
-    typeof (data as StoryJSON).title === "string" &&
-    typeof (data as StoryJSON).text === "string"
-  );
 }
 
 function countWords(text: string): number {
@@ -57,6 +51,23 @@ function truncateToWordLimit(text: string, maxWords: number): string {
   return `${sliced}.`;
 }
 
+function isValidStoryJSON(data: unknown): data is StoryJSON {
+  return (
+    typeof data === "object" &&
+    data !== null &&
+    typeof (data as StoryJSON).title === "string" &&
+    typeof (data as StoryJSON).text === "string" &&
+    Array.isArray((data as StoryJSON).vocab)
+  );
+}
+
+function parseStoryPayload(content: string): unknown {
+  const trimmed = content.trim();
+  const maybeFence = trimmed.replace(/^```json\s*/i, "").replace(/```$/i, "").trim();
+  const parsed = JSON.parse(maybeFence) as unknown;
+  return typeof parsed === "string" ? (JSON.parse(parsed) as unknown) : parsed;
+}
+
 export async function POST(req: Request) {
   try {
     let body = {};
@@ -65,6 +76,8 @@ export async function POST(req: Request) {
     } catch {
       return NextResponse.json({ error: "Invalid or missing JSON body" }, { status: 400 });
     }
+
+    const withAudio = new URL(req.url).searchParams.get("withAudio") === "true";
 
     const {
       language = "Spanish",
@@ -91,15 +104,18 @@ You are an expert language teacher and long story writer.
 Write a long engaging story for a ${level} student learning ${language}${regionClause}.
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
+All vocabulary definitions must be written in clear English, regardless of the story language.
+Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
+Never return one-word literal translations.
+Wrap each paragraph inside <blockquote> ... </blockquote>.
 
 Requirements:
 Use a close third-person narrator with strong internal focalization.
 - The narrator is NOT a character.
 - Most of the story should be experienced from inside the characters' perspective (thoughts, sensations, doubts, intentions, quick judgments).
 - Keep the prose mainly in third person, but use first-person phrasing only inside dialogue or brief inner-thought moments when natural.
-- Prioritize ${focus.toLowerCase()} in lexical choices and situations, but DO NOT output a vocabulary list.
+- Prioritize ${focus.toLowerCase()} in lexical choices and situations.
 - Keep the narrative specific and vivid (concrete scenes, actions, and consequences), not generic.
-- Output plain text only for the story body. No HTML tags, no markdown, no XML.
 - Keep paragraphs short and dynamic (usually 1-3 sentences per paragraph).
 - Avoid long expository narrator blocks; reduce detached description and increase character-centered viewpoint.
 - Include frequent dialogue beats and immediate reactions to keep pacing lively.
@@ -108,7 +124,8 @@ Use a close third-person narrator with strong internal focalization.
 Return ONLY valid JSON:
 {
   "title": "string",
-  "text": "string"
+  "text": "string",
+  "vocab": [{ "word": "string", "definition": "string" }]
 }
 `;
 
@@ -128,7 +145,7 @@ Return ONLY valid JSON:
 
     let parsed: unknown;
     try {
-      parsed = JSON.parse(content);
+      parsed = parseStoryPayload(content);
     } catch {
       return NextResponse.json(
         { error: "Invalid JSON format returned from model", raw: content },
@@ -150,7 +167,16 @@ Return ONLY valid JSON:
       countWords(sanitized) > HARD_WORDS_MAX
         ? truncateToWordLimit(sanitized, HARD_WORDS_MAX)
         : sanitized;
-    const sanitizedContent = JSON.stringify({ title, text });
+
+    const improvedVocab = await improveVocabDefinitions(openai, {
+      items: raw.vocab,
+      language,
+      level,
+      focus,
+      topic: resolvedRequestedTopic,
+      text,
+    });
+
     const inferredTopic = inferTopicFromText({
       title,
       text,
@@ -158,7 +184,27 @@ Return ONLY valid JSON:
       fallback: "Daily life",
     });
 
-    return NextResponse.json({ content: sanitizedContent, topic: inferredTopic });
+    const normalizedPayload: StoryJSON = { title, text, vocab: improvedVocab };
+
+    let audioAssetUrl: string | null = null;
+    let audioAssetId: string | null = null;
+    if (withAudio) {
+      try {
+        console.log("[api] generate-text called with", language, region);
+        const audioResult = await generateAndUploadAudio(text, title, language, region);
+        audioAssetUrl = audioResult ? audioResult.url : null;
+        audioAssetId = audioResult ? audioResult.assetId : null;
+      } catch (e) {
+        console.error("[audio] generation/upload failed:", e);
+      }
+    }
+
+    return NextResponse.json({
+      content: JSON.stringify(normalizedPayload),
+      audioAssetUrl,
+      audioAssetId,
+      topic: inferredTopic,
+    });
   } catch (error) {
     console.error("Error generating text:", error);
     const err = error as Error;

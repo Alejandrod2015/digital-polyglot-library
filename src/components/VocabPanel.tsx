@@ -15,6 +15,30 @@ type FavoriteItem = {
   language?: string;
 };
 
+const MAX_CONTEXT_CHARS = 160;
+
+function compactSpaces(value: string): string {
+  return value.replace(/\s+/g, " ").trim();
+}
+
+function shortenContext(raw: string | undefined, word: string): string | undefined {
+  if (!raw) return undefined;
+  const clean = compactSpaces(raw);
+  if (!clean) return undefined;
+
+  const normalizedWord = compactSpaces(word).toLowerCase();
+  const sentences = clean
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  const bestSentence =
+    sentences.find((s) => s.toLowerCase().includes(normalizedWord)) ?? sentences[0] ?? clean;
+
+  if (bestSentence.length <= MAX_CONTEXT_CHARS) return bestSentence;
+  return `${bestSentence.slice(0, MAX_CONTEXT_CHARS - 1).trimEnd()}…`;
+}
+
 interface VocabPanelProps {
   story: {
     id: string;
@@ -102,7 +126,7 @@ export default function VocabPanel({
       const word = el.dataset.word ?? "";
       if (!word) return;
       const sentenceNode = el.closest("p, blockquote");
-      const sentence = sentenceNode?.textContent?.trim() ?? undefined;
+      const sentence = shortenContext(sentenceNode?.textContent ?? undefined, word);
       const normalizedWord = word.trim().toLowerCase();
 
       setSelectedWord(word);
