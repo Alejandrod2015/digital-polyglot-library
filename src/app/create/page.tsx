@@ -3,7 +3,7 @@
 import { useUser } from '@clerk/nextjs';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, Loader2, Music, CheckCircle } from 'lucide-react';
+import { Sparkles, Loader2, Music, CheckCircle, X } from 'lucide-react';
 import StoryContent from '@/components/StoryContent';
 import VocabPanel from '@/components/VocabPanel';
 import { formatLanguage, formatLevel, toTitleCase } from '@/lib/displayFormat';
@@ -39,26 +39,23 @@ type CreateRequestPayload = {
   customTopic?: string;
 };
 
-type CreateDraft = {
-  language: string;
-  region: string;
-  level: string;
-  focus: string;
-  focusMore: string;
-  topic: string;
-  topicMore: string;
-  customTopic: string;
-  showMoreFocus: boolean;
-  showMoreTopics: boolean;
-  updatedAt: number;
-};
-
 type PendingCreate = {
   payload: CreateRequestPayload;
   startedAt: number;
   storyId?: string;
   lastKnownStory?: GeneratedStory;
 };
+
+type FavoriteItem = {
+  word: string;
+  translation: string;
+  exampleSentence?: string | null;
+  nextReviewAt?: string | null;
+  lastReviewedAt?: string | null;
+  streak?: number | null;
+};
+
+type ReviewScore = 'again' | 'hard' | 'easy';
 
 const regionsByLanguage: Record<string, string[]> = {
   Spanish: ['Colombia', 'Mexico', 'Argentina', 'Peru', 'Spain', 'Chile', 'Other'],
@@ -110,8 +107,9 @@ const topicExtended = [
   'Conflict resolution',
 ];
 const CUSTOM_TOPIC_MAX = 120;
-const CREATE_DRAFT_TTL_MS = 1000 * 60 * 60 * 24 * 3;
 const CREATE_PENDING_TTL_MS = 1000 * 60 * 30;
+const RECOVERY_LOOKUP_WINDOW_MS = 1000 * 45;
+const RECOVERY_LOOKUP_INTERVAL_MS = 2500;
 
 function readJson<T>(key: string): T | null {
   if (typeof window === 'undefined') return null;
@@ -152,6 +150,24 @@ function isStory(value: unknown): value is GeneratedStory {
   return typeof story.id === 'string' && typeof story.slug === 'string' && typeof story.title === 'string';
 }
 
+function normalizeWord(word: string): string {
+  return word.trim().toLowerCase();
+}
+
+function computeNextReview(score: ReviewScore, streak: number): { nextReviewAt: number; streak: number } {
+  const now = Date.now();
+  if (score === 'again') {
+    return { nextReviewAt: now + 10 * 60 * 1000, streak: 0 };
+  }
+  if (score === 'hard') {
+    const nextStreak = Math.max(1, streak);
+    return { nextReviewAt: now + 24 * 60 * 60 * 1000, streak: nextStreak };
+  }
+  const nextStreak = streak + 1;
+  const days = nextStreak >= 4 ? 14 : nextStreak >= 2 ? 7 : 3;
+  return { nextReviewAt: now + days * 24 * 60 * 60 * 1000, streak: nextStreak };
+}
+
 export default function CreatePage() {
   const { user, isLoaded } = useUser();
 
@@ -167,14 +183,19 @@ export default function CreatePage() {
   const [showMoreTopics, setShowMoreTopics] = useState(false);
   const [response, setResponse] = useState<CreateApiResponse | null>(null);
   const [status, setStatus] = useState<CreateStatus>('idle');
-  const [draftNotice, setDraftNotice] = useState<string | null>(null);
   const [resumeNotice, setResumeNotice] = useState<string | null>(null);
+  const [resumeChecked, setResumeChecked] = useState(false);
+  const [favorites, setFavorites] = useState<FavoriteItem[]>([]);
+  const [practiceQueue, setPracticeQueue] = useState<FavoriteItem[]>([]);
+  const [practiceIndex, setPracticeIndex] = useState(0);
+  const [revealed, setRevealed] = useState(false);
+  const [practiceVisible, setPracticeVisible] = useState(false);
+  const [practiceCompleted, setPracticeCompleted] = useState(false);
 
-  const didHydrateDraftRef = useRef(false);
   const didTryResumeRef = useRef(false);
+  const didInitPracticeRef = useRef(false);
 
   const userStorageScope = user?.id ?? 'guest';
-  const draftKey = useMemo(() => `dp_create_draft_v2_${userStorageScope}`, [userStorageScope]);
   const pendingKey = useMemo(() => `dp_create_pending_v2_${userStorageScope}`, [userStorageScope]);
 
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? 'free';
@@ -232,11 +253,13 @@ export default function CreatePage() {
   const finishAsDone = useCallback((story: GeneratedStory) => {
     setResponse({ story });
     setStatus('done');
+    setResumeNotice(null);
     removeKey(pendingKey);
   }, [pendingKey]);
 
   const runGeneration = useCallback(
     async (payload: CreateRequestPayload) => {
+      if (status === 'generating_text' || status === 'generating_audio') return;
       setStatus('generating_text');
       setResponse(null);
       setResumeNotice(null);
@@ -275,7 +298,7 @@ export default function CreatePage() {
         removeKey(pendingKey);
       }
     },
-    [finishAsDone, pendingKey, pollAudioUntilReady]
+    [finishAsDone, pendingKey, pollAudioUntilReady, status]
   );
 
   const handleSubmit = useCallback(
@@ -287,60 +310,23 @@ export default function CreatePage() {
   );
 
   useEffect(() => {
-    if (!isLoaded || didHydrateDraftRef.current) return;
-    didHydrateDraftRef.current = true;
-
-    const saved = readJson<CreateDraft>(draftKey);
-    if (!saved) return;
-    if (!isFresh(saved.updatedAt, CREATE_DRAFT_TTL_MS)) {
-      removeKey(draftKey);
-      return;
-    }
-
-    setLanguage(saved.language || '');
-    setRegion(saved.region || '');
-    setLevel(saved.level || '');
-    setFocus(saved.focus || '');
-    setFocusMore(saved.focusMore || '');
-    setTopic(saved.topic || '');
-    setTopicMore(saved.topicMore || '');
-    setCustomTopic(saved.customTopic || '');
-    setShowMoreFocus(Boolean(saved.showMoreFocus));
-    setShowMoreTopics(Boolean(saved.showMoreTopics));
-    setDraftNotice('Recovered your draft.');
-  }, [draftKey, isLoaded]);
-
-  useEffect(() => {
-    if (!didHydrateDraftRef.current) return;
-
-    const draft: CreateDraft = {
-      language,
-      region,
-      level,
-      focus,
-      focusMore,
-      topic,
-      topicMore,
-      customTopic,
-      showMoreFocus,
-      showMoreTopics,
-      updatedAt: Date.now(),
+    if (!isLoaded || !user) return;
+    let cancelled = false;
+    const loadFavorites = async () => {
+      try {
+        const res = await fetch('/api/favorites', { cache: 'no-store' });
+        if (!res.ok) return;
+        const data = (await res.json()) as FavoriteItem[];
+        if (!cancelled && Array.isArray(data)) setFavorites(data);
+      } catch {
+        // ignore favorites loading errors
+      }
     };
-
-    writeJson(draftKey, draft);
-  }, [
-    customTopic,
-    draftKey,
-    focus,
-    focusMore,
-    language,
-    level,
-    region,
-    showMoreFocus,
-    showMoreTopics,
-    topic,
-    topicMore,
-  ]);
+    void loadFavorites();
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoaded, user]);
 
   useEffect(() => {
     if (!isLoaded || !user || didTryResumeRef.current) return;
@@ -348,13 +334,18 @@ export default function CreatePage() {
 
     const restore = async () => {
       const pending = readJson<PendingCreate>(pendingKey);
-      if (!pending) return;
-
-      if (!isFresh(pending.startedAt, CREATE_PENDING_TTL_MS)) {
-        removeKey(pendingKey);
+      if (!pending) {
+        setResumeChecked(true);
         return;
       }
 
+      if (!isFresh(pending.startedAt, CREATE_PENDING_TTL_MS)) {
+        removeKey(pendingKey);
+        setResumeChecked(true);
+        return;
+      }
+
+      setStatus('generating_text');
       setResumeNotice('Resuming your previous story generation...');
 
       try {
@@ -366,32 +357,128 @@ export default function CreatePage() {
             setResponse({ story: json.story });
             const ready = await pollAudioUntilReady(json.story);
             finishAsDone(ready);
-            setResumeNotice('Recovered your generated story.');
+            setResumeChecked(true);
             return;
           }
         }
 
-        const recovered = await findRecoveredStory(pending);
+        const startedLookupAt = Date.now();
+        let recovered = await findRecoveredStory(pending);
+        while (!recovered && Date.now() - startedLookupAt < RECOVERY_LOOKUP_WINDOW_MS) {
+          await new Promise((r) => setTimeout(r, RECOVERY_LOOKUP_INTERVAL_MS));
+          recovered = await findRecoveredStory(pending);
+        }
+
         if (recovered) {
           setStatus('generating_audio');
           setResponse({ story: recovered });
           const ready = await pollAudioUntilReady(recovered);
           finishAsDone(ready);
-          setResumeNotice('Recovered your generated story.');
+          setResumeChecked(true);
           return;
         }
 
         removeKey(pendingKey);
         setStatus('idle');
-        setResumeNotice('Previous generation was interrupted. You can generate again with your saved draft.');
+        setResumeNotice('Previous generation could not be resumed. You can generate again.');
+        setResumeChecked(true);
       } catch {
         setStatus('idle');
-        setResumeNotice('Could not resume automatically. Your draft is safe.');
+        setResumeNotice('Could not resume automatically.');
+        setResumeChecked(true);
       }
     };
 
     void restore();
   }, [findRecoveredStory, finishAsDone, isLoaded, pendingKey, pollAudioUntilReady, user]);
+
+  const shuffleWords = useCallback((items: FavoriteItem[]) => {
+    const arr = [...items];
+    for (let i = arr.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }, []);
+
+  const restartPractice = useCallback(() => {
+    if (practiceQueue.length === 0) return;
+    setPracticeQueue((prev) => shuffleWords(prev));
+    setPracticeIndex(0);
+    setRevealed(false);
+    setPracticeCompleted(false);
+  }, [practiceQueue.length, shuffleWords]);
+
+  useEffect(() => {
+    const generating = status === 'generating_text' || status === 'generating_audio';
+    if (!generating) {
+      didInitPracticeRef.current = false;
+      setPracticeVisible(false);
+      setPracticeCompleted(false);
+      return;
+    }
+    if (didInitPracticeRef.current) return;
+    didInitPracticeRef.current = true;
+    if (favorites.length === 0) return;
+
+    const unique = Array.from(
+      new Map(
+        favorites.map((fav) => [normalizeWord(fav.word), fav] as const)
+      ).values()
+    );
+    setPracticeQueue(shuffleWords(unique));
+    setPracticeIndex(0);
+    setRevealed(false);
+    setPracticeCompleted(false);
+    setPracticeVisible(true);
+  }, [favorites, shuffleWords, status]);
+
+  const currentPractice = practiceQueue[practiceIndex] ?? null;
+  const handlePracticeScore = useCallback(
+    async (score: ReviewScore) => {
+      const current = currentPractice;
+      if (!current || !user) return;
+      const streak = typeof current.streak === 'number' ? current.streak : 0;
+      const next = computeNextReview(score, streak);
+      const lastReviewedAt = Date.now();
+
+      try {
+        await fetch('/api/favorites', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            word: current.word,
+            nextReviewAt: new Date(next.nextReviewAt).toISOString(),
+            lastReviewedAt: new Date(lastReviewedAt).toISOString(),
+            streak: next.streak,
+          }),
+        });
+      } catch {
+        // ignore update failures during generation
+      }
+
+      setFavorites((prev) =>
+        prev.map((fav) =>
+          normalizeWord(fav.word) === normalizeWord(current.word)
+            ? {
+                ...fav,
+                nextReviewAt: new Date(next.nextReviewAt).toISOString(),
+                lastReviewedAt: new Date(lastReviewedAt).toISOString(),
+                streak: next.streak,
+              }
+            : fav
+        )
+      );
+
+      setRevealed(false);
+      setPracticeIndex((idx) => {
+        if (idx + 1 < practiceQueue.length) return idx + 1;
+        setPracticeCompleted(true);
+        return idx;
+      });
+    },
+    [currentPractice, practiceQueue.length, user]
+  );
 
   if (!isLoaded) return null;
 
@@ -418,12 +505,6 @@ export default function CreatePage() {
         <Sparkles className="h-7 w-7 text-white" />
         <h1 className="text-3xl font-bold text-white">Create a Story</h1>
       </div>
-
-      {draftNotice ? (
-        <div className="mb-4 rounded-lg border border-sky-500/40 bg-sky-900/20 px-4 py-3 text-sm text-sky-100">
-          {draftNotice}
-        </div>
-      ) : null}
 
       {resumeNotice ? (
         <div className="mb-4 rounded-lg border border-emerald-500/40 bg-emerald-900/20 px-4 py-3 text-sm text-emerald-100">
@@ -585,10 +666,15 @@ export default function CreatePage() {
 
         <button
           type="submit"
-          disabled={status === 'generating_text' || status === 'generating_audio'}
+          disabled={!resumeChecked || status === 'generating_text' || status === 'generating_audio'}
           className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-md transition disabled:opacity-70"
         >
-          {status === 'idle' && 'Generate Story'}
+          {!resumeChecked && (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" /> Checking previous generation...
+            </>
+          )}
+          {resumeChecked && status === 'idle' && 'Generate Story'}
           {status === 'generating_text' && (
             <>
               <Loader2 className="w-5 h-5 animate-spin" /> Generating story...
@@ -606,6 +692,112 @@ export default function CreatePage() {
           )}
         </button>
       </form>
+
+      {(status === 'generating_text' || status === 'generating_audio') &&
+      !practiceVisible &&
+      practiceQueue.length > 0 ? (
+        <button
+          type="button"
+          onClick={() => setPracticeVisible(true)}
+          className="fixed bottom-24 right-4 z-40 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-lg hover:bg-blue-700"
+        >
+          Show practice
+        </button>
+      ) : null}
+
+      {(status === 'generating_text' || status === 'generating_audio') &&
+      practiceVisible &&
+      practiceQueue.length > 0 ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="w-full max-w-md rounded-2xl border border-white/10 bg-[#0D1B2A] p-5 shadow-2xl">
+            <div className="mb-4 flex items-center justify-between">
+              <p className="text-xs uppercase tracking-wide text-gray-400">
+                Practice while we generate your story
+              </p>
+              <button
+                type="button"
+                onClick={() => setPracticeVisible(false)}
+                className="rounded-md p-1 text-gray-300 hover:bg-white/10 hover:text-white"
+                aria-label="Close practice"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            {practiceCompleted || !currentPractice ? (
+              <div className="space-y-4">
+                <p className="text-lg font-semibold text-white">
+                  Great job. No more words in this session.
+                </p>
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={restartPractice}
+                    className="rounded-lg bg-white/10 px-3 py-2 text-sm font-medium text-white hover:bg-white/20"
+                  >
+                    Review again
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setPracticeVisible(false)}
+                    className="rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <>
+                <p className="mb-2 text-xs text-gray-400">
+                  {practiceIndex + 1}/{practiceQueue.length}
+                </p>
+                <p className="mb-4 text-3xl font-semibold">{currentPractice.word}</p>
+                {revealed ? (
+                  <>
+                    <p className="mb-4 text-lg text-gray-200">{currentPractice.translation}</p>
+                    {currentPractice.exampleSentence ? (
+                      <p className="mb-4 border-l-2 border-white/20 pl-3 text-sm italic text-gray-300">
+                        {currentPractice.exampleSentence}
+                      </p>
+                    ) : null}
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        onClick={() => handlePracticeScore('again')}
+                        className="rounded-lg bg-red-600/90 px-3 py-2 text-sm font-medium text-white hover:bg-red-600"
+                      >
+                        Again
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handlePracticeScore('hard')}
+                        className="rounded-lg bg-amber-600/90 px-3 py-2 text-sm font-medium text-white hover:bg-amber-600"
+                      >
+                        Hard
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handlePracticeScore('easy')}
+                        className="rounded-lg bg-emerald-600/90 px-3 py-2 text-sm font-medium text-white hover:bg-emerald-600"
+                      >
+                        Easy
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setRevealed(true)}
+                    className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+                  >
+                    Reveal answer
+                  </button>
+                )}
+              </>
+            )}
+          </div>
+        </div>
+      ) : null}
 
       {response?.story && status === 'done' && <StoryPreview story={response.story} />}
 

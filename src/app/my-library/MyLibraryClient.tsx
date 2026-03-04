@@ -26,6 +26,11 @@ type LibraryStory = {
  bookId: string;
  title: string;
  coverUrl: string;
+ storySlug?: string;
+ language?: string;
+ level?: string;
+ topic?: string;
+ audioUrl?: string | null;
 };
 
 
@@ -51,6 +56,7 @@ type StoryItem = {
  level: string;
  topic?: string;
  coverUrl?: string;
+ audioUrl?: string | null;
 };
 
 
@@ -204,7 +210,26 @@ export default function MyLibraryClient() {
 
    for (const item of stories) {
      const bookMeta = allBooks.find((b) => b.id === item.bookId);
-     if (!bookMeta) continue;
+     if (!bookMeta) {
+       if (item.bookId !== "polyglot" || !item.storySlug) continue;
+       arr.push({
+         id: item.id,
+         storyId: item.storyId,
+         bookSlug: "polyglot",
+         storySlug: item.storySlug,
+         title: item.title,
+         bookTitle: "Polyglot Stories",
+         language: formatLanguage(item.language),
+         level: formatLevel(item.level),
+         topic: item.topic,
+         coverUrl:
+           typeof item.coverUrl === "string" && item.coverUrl.trim() !== ""
+             ? item.coverUrl
+             : "/covers/default.jpg",
+         audioUrl: item.audioUrl ?? null,
+       });
+       continue;
+     }
 
 
      const storyMeta = bookMeta.stories.find((s) => s.id === item.storyId);
@@ -251,6 +276,7 @@ export default function MyLibraryClient() {
              ? bookMeta.topic
              : undefined,
        coverUrl: storyCover ?? savedCover ?? bookCover,
+       audioUrl: typeof storyMeta.audio === "string" ? storyMeta.audio : null,
      });
    }
 
@@ -263,6 +289,11 @@ export default function MyLibraryClient() {
 
    const unresolved = storyItems.filter((story) => {
      const key = `${story.bookSlug}:${story.storySlug}`;
+     if (story.bookSlug === "polyglot") {
+       const hasPolyglotAudio =
+         typeof story.audioUrl === "string" && story.audioUrl.trim() !== "";
+       return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0) && hasPolyglotAudio;
+     }
      const bookMeta = allBooks.find((b) => b.slug === story.bookSlug);
      const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
      const hasAudio = typeof storyMeta?.audio === "string" && storyMeta.audio.trim() !== "";
@@ -275,9 +306,12 @@ export default function MyLibraryClient() {
    const loadDuration = (story: StoryItem) =>
      new Promise<{ key: string; durationSec?: number }>((resolve) => {
        const key = `${story.bookSlug}:${story.storySlug}`;
-       const bookMeta = allBooks.find((b) => b.slug === story.bookSlug);
-       const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
-       const rawSrc = storyMeta?.audio;
+       const rawSrc =
+         story.bookSlug === "polyglot"
+           ? story.audioUrl
+           : allBooks
+               .find((b) => b.slug === story.bookSlug)
+               ?.stories.find((s) => s.slug === story.storySlug)?.audio;
        if (!rawSrc || typeof rawSrc !== "string") {
          resolve({ key });
          return;
@@ -439,11 +473,15 @@ export default function MyLibraryClient() {
                You don’t have any saved stories right now.
              </p>
            ) : (
-             <StoryCarousel<StoryItem>
+               <StoryCarousel<StoryItem>
                items={storyItems}
                renderItem={(story) => (
                  <StoryVerticalCard
-                   href={`/books/${story.bookSlug}/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`}
+                   href={
+                     story.bookSlug === "polyglot"
+                       ? `/stories/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
+                       : `/books/${story.bookSlug}/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
+                   }
                    title={story.title}
                    coverUrl={story.coverUrl || "/covers/default.png"}
                    subtitle={story.bookTitle}

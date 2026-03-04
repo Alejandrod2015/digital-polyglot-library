@@ -49,9 +49,44 @@ function isLibraryBody(x: unknown): x is LibraryBody {
 const getLibraryCached = unstable_cache(
   async (userId: string, type: LibraryType) => {
     if (type === "story") {
-      return prisma.libraryStory.findMany({
+      const rows = await prisma.libraryStory.findMany({
         where: { userId },
         orderBy: { createdAt: "desc" },
+      });
+
+      const polyglotIds = rows
+        .filter((row) => row.bookId === "polyglot")
+        .map((row) => row.storyId);
+
+      if (polyglotIds.length === 0) return rows;
+
+      const polyglotStories = await prisma.userStory.findMany({
+        where: { id: { in: polyglotIds } },
+        select: {
+          id: true,
+          slug: true,
+          language: true,
+          level: true,
+          topic: true,
+          coverUrl: true,
+          audioUrl: true,
+        },
+      });
+
+      const byId = new Map(polyglotStories.map((s) => [s.id, s]));
+      return rows.map((row) => {
+        if (row.bookId !== "polyglot") return row;
+        const story = byId.get(row.storyId);
+        if (!story) return row;
+        return {
+          ...row,
+          storySlug: story.slug,
+          language: story.language,
+          level: story.level,
+          topic: story.topic,
+          audioUrl: story.audioUrl,
+          coverUrl: story.coverUrl ?? row.coverUrl,
+        };
       });
     }
     return prisma.libraryBook.findMany({

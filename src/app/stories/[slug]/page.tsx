@@ -53,6 +53,33 @@ export default async function StoryPage({ params }: StoryPageProps) {
   const coverUrl = story.coverUrl ?? "/covers/default.png";
   const signInHref = `/sign-in?redirect_url=${encodeURIComponent(`/stories/${story.slug}`)}`;
 
+  if (userId) {
+    try {
+      await prisma.libraryStory.upsert({
+        where: {
+          userId_storyId: {
+            userId,
+            storyId: story.id,
+          },
+        },
+        update: {
+          title: story.title,
+          coverUrl,
+          bookId: "polyglot",
+        },
+        create: {
+          userId,
+          storyId: story.id,
+          title: story.title,
+          coverUrl,
+          bookId: "polyglot",
+        },
+      });
+    } catch (err) {
+      console.error("[stories/:slug] Failed to auto-save polyglot story", err);
+    }
+  }
+
   if (typeof story.coverUrl !== "string") {
   console.warn(`[story-page] Missing coverUrl for ${story.slug}`);
 }
