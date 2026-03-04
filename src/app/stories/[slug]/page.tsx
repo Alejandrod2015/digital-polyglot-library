@@ -1,16 +1,38 @@
 import { prisma } from "@/lib/prisma";
 import Player from "@/components/Player";
 import { notFound } from "next/navigation";
-import StoryReaderClient from "./StoryReaderClient";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 import LevelBadge from "@/components/LevelBadge";
+import StoryContent from "@/components/StoryContent";
+import VocabPanel from "@/components/VocabPanel";
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+function normalizePolyglotStoryText(input: string): string {
+  if (!input) return input;
+
+  const hasHtml = /<[^>]+>/.test(input);
+  if (!hasHtml) {
+    return input
+      .split(/\n+/)
+      .map((line) => line.trim())
+      .filter((line) => !/^[.?!,:;'"“”„«»\-–—]+$/.test(line))
+      .join("\n\n");
+  }
+
+  return input
+    .replace(/<p>\s*[.?!,:;'"“”„«»\-–—]+\s*<\/p>/gi, "")
+    .replace(/<blockquote>\s*<p>\s*[.?!,:;'"“”„«»\-–—]+\s*<\/p>/gi, "<blockquote>")
+    .replace(/<p>\s*[.?!,:;'"“”„«»\-–—]+\s*<\/p>\s*<blockquote/gi, "<blockquote")
+    .replace(/<\/blockquote>\s*<p>\s*[.?!,:;'"“”„«»\-–—]+\s*<\/p>/gi, "</blockquote>")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
 
 export default async function StoryPage({ params }: StoryPageProps) {
   const { slug } = await params;
@@ -49,7 +71,14 @@ export default async function StoryPage({ params }: StoryPageProps) {
   const displayText = hasFullAccess
     ? story.text
     : `${story.text.slice(0, 1000)}…`;
+  const normalizedText = normalizePolyglotStoryText(displayText);
 
+  const storyCoverUrl =
+    typeof story.coverUrl === "string" && story.coverUrl.trim() !== ""
+      ? story.coverUrl.startsWith("https://cdn.sanity.io/")
+        ? `${story.coverUrl}?w=1200&fit=crop&auto=format`
+        : story.coverUrl
+      : null;
   const coverUrl = story.coverUrl ?? "/covers/default.png";
   const signInHref = `/sign-in?redirect_url=${encodeURIComponent(`/stories/${story.slug}`)}`;
 
@@ -108,21 +137,35 @@ export default async function StoryPage({ params }: StoryPageProps) {
         </div>
       </div>
 
+      {/* Cover de historia (solo si existe) */}
+      {storyCoverUrl ? (
+        <div className="mb-7">
+          <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-[#102746] lg:max-h-[240px]">
+            <img
+              src={storyCoverUrl}
+              alt={story.title}
+              className="w-full h-auto object-cover lg:h-[240px]"
+            />
+          </div>
+        </div>
+      ) : null}
+
       {/* Texto principal */}
       <div className="relative">
-        <StoryReaderClient
-          story={{
-            id: story.id,
-            title: story.title,
-            text: displayText,
-            vocab:
-              (story.vocab as { word: string; definition: string }[]) ?? [],
-            audioUrl: story.audioUrl ?? null,
-            language: story.language ?? null,
-            level: story.level ?? null,
-            slug: story.slug,
-          }}
-        />
+        {hasFullAccess ? (
+          <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6">
+            <StoryContent
+              text={normalizedText}
+              sentencesPerParagraph={3}
+              vocab={(story.vocab as { word: string; definition: string }[]) ?? []}
+            />
+          </div>
+        ) : (
+          <div
+            className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6"
+            dangerouslySetInnerHTML={{ __html: normalizedText }}
+          />
+        )}
 
         {/* Fallback si no tiene acceso */}
         {!hasFullAccess && (
@@ -164,6 +207,16 @@ export default async function StoryPage({ params }: StoryPageProps) {
     />
   </div>
 )}
+
+      <VocabPanel
+        story={{
+          id: story.id,
+          slug: story.slug,
+          title: story.title,
+          language: story.language ?? undefined,
+          vocab: (story.vocab as { word: string; definition: string }[]) ?? [],
+        }}
+      />
 
     </div>
   );

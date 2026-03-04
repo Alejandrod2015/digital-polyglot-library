@@ -6,6 +6,7 @@ import slugify from "slugify";
 import { customAlphabet } from "nanoid";
 import { generateAndUploadCover } from "@/lib/dalle";
 import { inferTopicFromText } from "@/lib/topicClassifier";
+import { improveVocabDefinitions } from "@/lib/vocabQuality";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
@@ -14,7 +15,7 @@ const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 6);
 type StoryJSON = {
   title: string;
   text: string;
-  vocab: { word: string; definition: string }[];
+  vocab: { word: string; definition: string; type?: string }[];
 };
 
 function isValidStoryJSON(data: unknown): data is StoryJSON {
@@ -94,6 +95,8 @@ You are an expert fiction writer and language teacher.
 Write a vivid, modern story in ${language}${regionClause} for a ${level} student.
 ${resolvedTopic ? `The topic is "${resolvedTopic}".` : "Choose a concrete, modern topic that fits the level."}
 All vocabulary definitions must be written in clear English, regardless of the story language.
+Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
+Never return one-word literal translations.
 Wrap each paragraph inside <blockquote> ... </blockquote>.
 
 Requirements:
@@ -162,6 +165,14 @@ Return ONLY valid JSON:
 
     // 🔹 Normalizar texto HTML para formato consistente
     const normalizedText = normalizeStoryHtml(text);
+    const improvedVocab = await improveVocabDefinitions(openai, {
+      items: vocab,
+      language,
+      level,
+      focus,
+      topic: resolvedTopic,
+      text: normalizedText,
+    });
 
     // Normalizar nivel
     const normalizedLevel = (() => {
@@ -189,7 +200,7 @@ Return ONLY valid JSON:
         title,
         slug: uniqueSlug,
         text: normalizedText,
-        vocab,
+        vocab: improvedVocab,
         language,
         region,
         level: normalizedLevel,

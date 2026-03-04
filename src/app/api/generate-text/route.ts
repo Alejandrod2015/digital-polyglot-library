@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { inferTopicFromText } from "@/lib/topicClassifier";
+import { improveVocabDefinitions } from "@/lib/vocabQuality";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -10,7 +11,7 @@ const openai = new OpenAI({
 type StoryJSON = {
   title: string;
   text: string;
-  vocab: { word: string; definition: string }[];
+  vocab: { word: string; definition: string; type?: string }[];
 };
 
 function isValidStoryJSON(data: unknown): data is StoryJSON {
@@ -21,6 +22,13 @@ function isValidStoryJSON(data: unknown): data is StoryJSON {
     typeof (data as StoryJSON).text === "string" &&
     Array.isArray((data as StoryJSON).vocab)
   );
+}
+
+function parseStoryPayload(content: string): unknown {
+  const trimmed = content.trim();
+  const maybeFence = trimmed.replace(/^```json\s*/i, "").replace(/```$/i, "").trim();
+  const parsed = JSON.parse(maybeFence) as unknown;
+  return typeof parsed === "string" ? (JSON.parse(parsed) as unknown) : parsed;
 }
 
 export async function POST(req: Request) {
@@ -54,6 +62,8 @@ You are an expert language teacher and long story writer.
 Write a long engaging story for a ${level} student learning ${language}${regionClause}.
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 All vocabulary definitions must be written in clear English, regardless of the story language.
+Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
+Never return one-word literal translations.
 Wrap each paragraph inside <blockquote> ... </blockquote>.
 
 Requirements:
@@ -89,7 +99,7 @@ Return ONLY valid JSON:
 
     let parsed: unknown;
     try {
-      parsed = JSON.parse(content);
+      parsed = parseStoryPayload(content);
     } catch {
       return NextResponse.json(
         { error: "Invalid JSON format returned from model", raw: content },
@@ -104,13 +114,22 @@ Return ONLY valid JSON:
       );
     }
 
-    const { title, text } = parsed as StoryJSON;
+    const { title, text, vocab } = parsed as StoryJSON;
+    const improvedVocab = await improveVocabDefinitions(openai, {
+      items: vocab,
+      language,
+      level,
+      focus,
+      topic: resolvedRequestedTopic,
+      text,
+    });
     const inferredTopic = inferTopicFromText({
       title,
       text,
       existingTopic: resolvedRequestedTopic,
       fallback: "Daily life",
     });
+    const normalizedPayload: StoryJSON = { title, text, vocab: improvedVocab };
 
     // 🔊 Generar y subir audio
     let audioAssetUrl: string | null = null;
@@ -123,7 +142,11 @@ Return ONLY valid JSON:
     }
 
     // ✅ Devolver respuesta limpia y consistente
-    return NextResponse.json({ content, audioAssetUrl, topic: inferredTopic });
+    return NextResponse.json({
+      content: JSON.stringify(normalizedPayload),
+      audioAssetUrl,
+      topic: inferredTopic,
+    });
   } catch (error) {
     console.error("Error generating text:", error);
     const err = error as Error;

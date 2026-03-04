@@ -10,7 +10,6 @@ import MobileTabBar from "@/components/MobileTabBar";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
 import FeedbackButton from "@/components/FeedbackButton";
 import NavigationTimingTracker from "@/components/NavigationTimingTracker";
-import "../../sentry.client.config";
 
 export const viewport: Viewport = {
   width: "device-width",
