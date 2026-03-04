@@ -5,11 +5,14 @@ import { books } from "@/data/books";
 import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
+import LevelBadge from "@/components/LevelBadge";
+import LanguageBadge from "@/components/LanguageBadge";
 import { useUser } from "@clerk/nextjs";
 import { useEffect, useMemo, useState } from "react";
 import ExploreSearch from "@/components/ExploreSearch";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
+import { formatTopic } from "@/lib/displayFormat";
+import { getBookCardMeta } from "@/lib/bookCardMeta";
 
 const formatAudioDuration = (totalSeconds?: number) => {
   if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:--";
@@ -203,6 +206,13 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
   const rawTargetLanguages = user?.publicMetadata?.targetLanguages as unknown;
   const targetLanguages = useMemo(() => rawTargetLanguages ?? [], [rawTargetLanguages]);
+  const bookMetaBySlug = useMemo(() => {
+    const map = new Map<string, { statsLine?: string; topicsLine?: string }>();
+    for (const book of Object.values(books)) {
+      map.set(book.slug, getBookCardMeta(book));
+    }
+    return map;
+  }, []);
 
   const {
     filteredBooks,
@@ -311,6 +321,14 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
       selectedTopicLabel: selectedLabel,
     };
   }, [polyglotStories, targetLanguages, selectedTopicKey, topicFromUrl]);
+
+  const topicRows = useMemo(() => {
+    const rows: TopicChip[][] = [[], [], []];
+    topicChips.forEach((chip, index) => {
+      rows[index % 3].push(chip);
+    });
+    return rows;
+  }, [topicChips]);
 
   const [storyDurations, setStoryDurations] = useState<Record<string, number>>({});
 
@@ -451,7 +469,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
   return (
     <div className="-mx-4">
-      <div className="max-w-6xl mx-auto p-8 text-white">
+      <div className="max-w-6xl mx-auto p-8 text-[var(--foreground)]">
         <h1 className="text-3xl font-bold mb-6">Explore</h1>
 
         <ExploreSearch
@@ -464,61 +482,85 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         />
 
         <div className="mb-10">
-          <div className="flex flex-wrap items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setTopicInUrl("")}
-              className={[
-                "rounded-full border px-3 py-1.5 text-xs transition-colors",
-                !selectedTopicKey
-                  ? "border-white/35 bg-white/15 text-white"
-                  : "border-white/15 bg-white/5 text-white/80 hover:bg-white/10",
-              ].join(" ")}
-            >
-              All topics
-            </button>
-
-            {topicChips.map((chip) => {
-              const isActive = chip.key === selectedTopicKey;
-
-              return (
+          <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <div className="min-w-max pr-4 space-y-2">
+              <div className="flex flex-nowrap items-center gap-2">
                 <button
-                  key={chip.key}
                   type="button"
-                  onClick={() => setTopicInUrl(chip.key)}
+                  onClick={() => setTopicInUrl("")}
                   className={[
-                    "rounded-full border px-3 py-1.5 text-xs transition-colors",
-                    isActive
-                      ? "border-white/30 bg-white/10 text-white"
-                      : "border-white/15 bg-white/5 text-white/80 hover:bg-white/10",
+                    "rounded-full border px-3 py-1.5 text-xs transition-colors whitespace-nowrap",
+                    !selectedTopicKey
+                      ? "border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--foreground)]"
+                      : "border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]",
                   ].join(" ")}
                 >
-                  {chip.label} ({chip.count})
+                  All topics
                 </button>
-              );
-            })}
+                {topicRows[0].map((chip) => {
+                  const isActive = chip.key === selectedTopicKey;
+                  return (
+                    <button
+                      key={chip.key}
+                      type="button"
+                      onClick={() => setTopicInUrl(chip.key)}
+                      className={[
+                        "rounded-full border px-3 py-1.5 text-xs transition-colors whitespace-nowrap",
+                        isActive
+                          ? "border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--foreground)]"
+                          : "border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]",
+                      ].join(" ")}
+                    >
+                      {chip.label} ({chip.count})
+                    </button>
+                  );
+                })}
+              </div>
+              {topicRows.slice(1).map((row, rowIndex) => (
+                <div key={`topic-row-${rowIndex + 2}`} className="flex flex-nowrap items-center gap-2">
+                  {row.map((chip) => {
+                    const isActive = chip.key === selectedTopicKey;
+                    return (
+                      <button
+                        key={chip.key}
+                        type="button"
+                        onClick={() => setTopicInUrl(chip.key)}
+                        className={[
+                          "rounded-full border px-3 py-1.5 text-xs transition-colors whitespace-nowrap",
+                          isActive
+                            ? "border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--foreground)]"
+                            : "border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]",
+                        ].join(" ")}
+                      >
+                        {chip.label} ({chip.count})
+                      </button>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
           </div>
 
           {selectedTopicKey && !hasAnyFilteredContent ? (
-            <p className="mt-3 text-sm text-gray-300">
-              No content found for topic <span className="text-white">{selectedTopicLabel}</span>.
+            <p className="mt-3 text-sm text-[var(--muted)]">
+              No content found for topic <span className="text-[var(--foreground)]">{selectedTopicLabel}</span>.
             </p>
           ) : null}
         </div>
 
-        <div className="mb-16">
-          <div className="mb-6 flex items-center justify-between gap-4">
-            <h2 className="text-2xl font-semibold text-white">Stories</h2>
+        <div className="mb-10 md:mb-12">
+          <div className="mb-5 flex items-center justify-between gap-4">
+            <h2 className="text-2xl font-semibold text-[var(--foreground)]">Stories</h2>
             <Link
               href={seeAllStoriesHref}
-              className="text-sm font-medium text-gray-200 hover:text-white transition-colors"
+              className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
             >
               See all
             </Link>
           </div>
 
           {safePreviewBookStories.length === 0 ? (
-            <div className="h-[240px] flex items-center justify-center text-gray-400 bg-white/5 rounded-2xl">
+            <div className="h-[240px] flex items-center justify-center text-[var(--muted)] bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl">
               {selectedTopicKey
                 ? `No stories found for ${selectedTopicLabel ?? "this topic"}.`
                 : isStringArray(targetLanguages) && targetLanguages.length > 0
@@ -526,16 +568,16 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                   : "No stories available."}
             </div>
           ) : (
-            <div className="min-h-[240px]">
+            <div>
               <StoryCarousel
                 items={safePreviewBookStories}
                 renderItem={(s) => (
                   <Link
                     key={s.id}
                     href={withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`)}
-                    className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
+                    className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
                   >
-                    <div className="w-full h-48 bg-gray-800">
+                    <div className="w-full h-48 bg-[color:var(--surface)]">
                       <img
                         src={s.coverUrl}
                         alt={s.storyTitle}
@@ -545,18 +587,19 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
                     <div className="p-5 flex flex-col justify-between flex-1 text-left">
                       <div>
-                        <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
+                        <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                           {s.storyTitle || "Untitled story"}
                         </h3>
-                        <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">
+                        <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
                           {s.bookTitle || s.bookSlug}
                         </p>
                       </div>
 
-                      <p className="mt-3 text-sm text-gray-400">
-                        {formatLanguage(s.language)} · {formatLevel(s.level)}
-                      </p>
-                      <p className="text-sm text-gray-400">
+                      <div className="mt-3 flex items-center gap-2">
+                        <LevelBadge level={s.level} />
+                        <LanguageBadge language={s.language} />
+                      </div>
+                      <p className="text-sm text-[var(--muted)]">
                         {formatAudioDuration(storyDurations[`${s.bookSlug}:${s.storySlug}`])} ·{" "}
                         {formatTopic(s.topics[0])}
                       </p>
@@ -568,17 +611,17 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
           )}
         </div>
 
-        <div className="mb-6 flex items-center justify-between gap-4">
-          <h2 className="text-2xl font-semibold text-white">Books</h2>
+        <div className="mb-5 flex items-center justify-between gap-4">
+          <h2 className="text-2xl font-semibold text-[var(--foreground)]">Books</h2>
           <Link
             href={seeAllBooksHref}
-            className="text-sm font-medium text-gray-200 hover:text-white transition-colors"
+            className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
           >
             See all
           </Link>
         </div>
         {safeBooks.length === 0 ? (
-          <p className="text-gray-400">
+          <p className="text-[var(--muted)]">
             {selectedTopicKey
               ? `No books found for ${selectedTopicLabel ?? "this topic"}.`
               : isStringArray(targetLanguages) && targetLanguages.length > 0
@@ -587,15 +630,14 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
           </p>
         ) : (
           <>
-            <div className="md:hidden min-h-[240px] mb-16">
+            <div className="md:hidden mb-10 md:mb-12">
               <StoryCarousel
                 items={safeBooks}
+                mobileItemClassName="w-[82%] sm:w-[62%]"
                 renderItem={(bookUnknown) => {
                   if (!isRecord(bookUnknown)) return null;
                   const slug = getString(bookUnknown, "slug") ?? "";
                   const title = getString(bookUnknown, "title") ?? "";
-                  const language = formatLanguage(getString(bookUnknown, "language") ?? undefined);
-                  const level = formatLevel(getString(bookUnknown, "level") ?? undefined);
                   const cover = normalizeCoverUrl(getString(bookUnknown, "cover"));
                   const description = getString(bookUnknown, "description") ?? undefined;
                   if (!slug) return null;
@@ -605,7 +647,9 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       title={title}
                       cover={cover}
                       level={getString(bookUnknown, "level") ?? undefined}
-                      meta={`${language} · ${level}`}
+                      language={getString(bookUnknown, "language") ?? undefined}
+                      statsLine={bookMetaBySlug.get(slug)?.statsLine}
+                      topicsLine={bookMetaBySlug.get(slug)?.topicsLine}
                       description={description}
                     />
                   );
@@ -613,7 +657,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
               />
             </div>
 
-            <div className="hidden md:block mb-16">
+            <div className="hidden md:block mb-10 md:mb-12">
               <ReleaseCarousel
                 items={safeBooks}
                 itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
@@ -621,8 +665,6 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                   if (!isRecord(bookUnknown)) return null;
                   const slug = getString(bookUnknown, "slug") ?? "";
                   const title = getString(bookUnknown, "title") ?? "";
-                  const language = formatLanguage(getString(bookUnknown, "language") ?? undefined);
-                  const level = formatLevel(getString(bookUnknown, "level") ?? undefined);
                   const cover = normalizeCoverUrl(getString(bookUnknown, "cover"));
                   const description = getString(bookUnknown, "description") ?? undefined;
                   if (!slug) return null;
@@ -632,7 +674,9 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       title={title}
                       cover={cover}
                       level={getString(bookUnknown, "level") ?? undefined}
-                      meta={`${language} · ${level}`}
+                      language={getString(bookUnknown, "language") ?? undefined}
+                      statsLine={bookMetaBySlug.get(slug)?.statsLine}
+                      topicsLine={bookMetaBySlug.get(slug)?.topicsLine}
                       description={description}
                     />
                   );
@@ -642,19 +686,19 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
           </>
         )}
 
-        <div className="mb-16">
-          <div className="mb-6 flex items-center justify-between gap-4">
-            <h2 className="text-2xl font-semibold text-white">Polyglot Stories</h2>
+        <div className="mb-10 md:mb-12">
+          <div className="mb-5 flex items-center justify-between gap-4">
+            <h2 className="text-2xl font-semibold text-[var(--foreground)]">Polyglot Stories</h2>
             <Link
               href={seeAllPolyglotStoriesHref}
-              className="text-sm font-medium text-gray-200 hover:text-white transition-colors"
+              className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
             >
               See all
             </Link>
           </div>
 
           {safePolyglotStories.length === 0 ? (
-            <div className="h-[320px] flex items-center justify-center text-gray-400 bg-white/5 rounded-2xl">
+            <div className="h-[320px] flex items-center justify-center text-[var(--muted)] bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl">
               {selectedTopicKey
                 ? `No stories found for ${selectedTopicLabel ?? "this topic"}.`
                 : isStringArray(targetLanguages) && targetLanguages.length > 0
@@ -662,16 +706,16 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                   : "No Polyglot stories have been published yet."}
             </div>
           ) : (
-            <div className="min-h-[320px]">
+            <div>
               <StoryCarousel
                 items={safePolyglotStories}
                 renderItem={(story) => (
                   <Link
                     key={story.id}
                     href={withReturnContext(`/stories/${story.slug}`)}
-                    className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
+                    className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full"
                   >
-                    <div className="w-full h-48 bg-gray-800">
+                    <div className="w-full h-48 bg-[color:var(--surface)]">
                       <img
                         src={
                           typeof story.coverUrl === "string" && story.coverUrl.trim() !== ""
@@ -685,15 +729,16 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
                     <div className="p-5 flex flex-col justify-between flex-1 text-left">
                       <div>
-                        <h3 className="text-xl font-semibold mb-2 text-white">{story.title}</h3>
-                        <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
+                        <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)]">{story.title}</h3>
+                        <p className="text-[var(--muted)] text-sm leading-relaxed line-clamp-3">
                           {(story.text ?? "").replace(/<[^>]+>/g, "").slice(0, 120)}...
                         </p>
                       </div>
 
-                      <p className="mt-3 text-sm text-gray-400">
-                        {formatLanguage(story.language)} · {formatLevel(story.level)}
-                      </p>
+                      <div className="mt-3 flex items-center gap-2">
+                        <LevelBadge level={story.level} />
+                        <LanguageBadge language={story.language} />
+                      </div>
                     </div>
                   </Link>
                 )}

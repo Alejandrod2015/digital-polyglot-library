@@ -7,7 +7,8 @@ import type { EmblaOptionsType } from "embla-carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/utils";
 import Cover from "@/components/Cover";
-import { formatLanguage, formatLevel } from "@/lib/displayFormat";
+import LevelBadge from "@/components/LevelBadge";
+import LanguageBadge from "@/components/LanguageBadge";
 
 type Book = {
   slug: string;
@@ -112,11 +113,12 @@ export default function BookCarousel({
                   </div>
 
                   <div className="text-left flex-1">
+                    <div className="mb-2 flex items-center gap-2">
+                      <LevelBadge level={book.level} />
+                      <LanguageBadge language={book.language} />
+                    </div>
                     <p className="text-base font-semibold text-white line-clamp-2">
                       {book.title}
-                    </p>
-                    <p className="text-sm text-gray-400 mt-1">
-                      {formatLanguage(book.language)} · {formatLevel(book.level)}
                     </p>
                     {book.description ? (
                       <p className="text-sm text-white/60 mt-2 line-clamp-3">

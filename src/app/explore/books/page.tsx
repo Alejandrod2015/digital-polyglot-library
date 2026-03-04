@@ -3,7 +3,7 @@ import { books } from "@/data/books";
 import { currentUser } from "@clerk/nextjs/server";
 import type { Book } from "@/types/books";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
-import { formatLanguage, formatLevel } from "@/lib/displayFormat";
+import { getBookCardMeta } from "@/lib/bookCardMeta";
 
 type ExploreBooksPageProps = {
   searchParams: Promise<{ topic?: string }>;
@@ -62,16 +62,16 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
     : filteredByLanguage;
 
   return (
-    <div className="max-w-6xl mx-auto p-8 text-white">
-      <div className="mb-8 flex items-center justify-between gap-4">
+    <div className="max-w-6xl mx-auto p-8 text-[var(--foreground)]">
+      <div className="mb-6 md:mb-8 flex items-center justify-between gap-4">
         <h1 className="text-3xl font-bold">All Books</h1>
-        <Link href="/explore" className="text-sm text-blue-300 hover:text-blue-200">
+        <Link href="/explore" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)]">
           Back to Explore
         </Link>
       </div>
 
       {filteredBooks.length === 0 ? (
-        <p className="text-gray-400">No books found.</p>
+        <p className="text-[var(--muted)]">No books found.</p>
       ) : (
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
           {filteredBooks.map((book) => {
@@ -81,17 +81,15 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
               typeof book.cover === "string" && book.cover.trim() !== ""
                 ? book.cover
                 : "/covers/default.jpg";
-            const language = formatLanguage(book.language);
-            const level = formatLevel(book.level);
-            const meta = `${language} · ${level}`;
-
             return (
               <BookHorizontalCard
                 key={slug || title}
                 title={title}
                 cover={cover}
                 level={book.level}
-                meta={meta}
+                language={book.language}
+                statsLine={getBookCardMeta(book).statsLine}
+                topicsLine={getBookCardMeta(book).topicsLine}
                 description={book.description}
                 href={`/books/${slug}?returnTo=/explore/books&returnLabel=All%20Books`}
               />

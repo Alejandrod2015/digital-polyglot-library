@@ -40,7 +40,8 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
     storyNavParams.set("from", from.trim());
   }
   const storyNavSuffix = storyNavParams.toString() ? `?${storyNavParams.toString()}` : "";
-  const replaceStoryNavigation = storyNavSuffix.length > 0;
+  // Keep book page in browser history so back gesture/button returns to the book first.
+  const replaceStoryNavigation = false;
 
   return (
     <div className="max-w-5xl mx-auto p-8">

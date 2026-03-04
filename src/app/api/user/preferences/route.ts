@@ -7,15 +7,44 @@ const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
 });
 
+const ALLOWED_LANGUAGES = new Set([
+  "English",
+  "Spanish",
+  "French",
+  "German",
+  "Italian",
+  "Portuguese",
+  "Japanese",
+  "Korean",
+  "Chinese",
+]);
+const MAX_SELECTION = 3;
+
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((v) => typeof v === "string");
 }
 
 function normalize(langs: string[]): string[] {
+  const aliases: Record<string, string> = {
+    english: "English",
+    spanish: "Spanish",
+    french: "French",
+    german: "German",
+    italian: "Italian",
+    portuguese: "Portuguese",
+    japanese: "Japanese",
+    korean: "Korean",
+    chinese: "Chinese",
+  };
+
   const seen = new Set<string>();
   for (const raw of langs) {
-    const t = raw.trim();
-    if (t.length > 0) seen.add(t);
+    const key = raw.trim().toLowerCase();
+    const canonical = aliases[key];
+    if (!canonical) continue;
+    if (!ALLOWED_LANGUAGES.has(canonical)) continue;
+    seen.add(canonical);
+    if (seen.size >= MAX_SELECTION) break;
   }
   return Array.from(seen);
 }
@@ -42,6 +71,13 @@ export async function POST(req: Request) {
     const user = await clerkClient.users.getUser(userId);
     const existing =
       (user.publicMetadata as Record<string, unknown>) ?? {};
+    const plan = (existing.plan as string | undefined) ?? "free";
+    if (plan === "free") {
+      return NextResponse.json(
+        { error: "Upgrade required to update language preferences" },
+        { status: 403 }
+      );
+    }
 
     // 2) Escribir: fusionar pero sobrescribir targetLanguages con normalized
     const updatedMetadata = {

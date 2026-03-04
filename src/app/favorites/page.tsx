@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
-import { formatLanguage } from '@/lib/displayFormat';
+import { formatLanguageCode } from '@/lib/displayFormat';
 
 type FavoriteItem = {
   word: string;
@@ -278,25 +278,25 @@ export default function FavoritesPage() {
   };
 
   return (
-    <div className="p-8 max-w-2xl mx-auto text-white">
-      <div className="mb-6 flex items-end justify-between gap-4">
+    <div className="p-6 sm:p-8 max-w-2xl mx-auto text-[var(--foreground)]">
+      <div className="mb-6 flex items-end justify-between gap-3">
         <div>
           <h1 className="text-3xl font-bold">Favorites</h1>
-          <p className="text-sm text-gray-400 mt-1">
+          <p className="text-sm text-[var(--muted)] mt-1">
             {dueFavorites.length} due today · {favorites.length} total
           </p>
         </div>
         {favorites.length > 0 ? (
-          <div className="flex gap-2">
+          <div className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-1">
             <button
               onClick={() => startPractice(true)}
-              className="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium transition-colors"
+              className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold transition-colors"
             >
               Practice due
             </button>
             <button
               onClick={() => startPractice(false)}
-              className="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition-colors"
+              className="px-3 py-1.5 rounded-lg bg-transparent hover:bg-[var(--card-bg-hover)] text-[var(--foreground)] text-sm font-semibold transition-colors"
             >
               Practice all
             </button>
@@ -305,23 +305,23 @@ export default function FavoritesPage() {
       </div>
 
       {practiceMode && currentPractice ? (
-        <div className="mb-6 rounded-2xl border border-white/10 bg-white/5 p-5">
-          <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">
+        <div className="mb-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5">
+          <p className="text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
             Practice {practiceIndex + 1}/{practiceQueue.length}
           </p>
           <p className="text-3xl font-semibold mb-4">{currentPractice.word}</p>
           {revealed ? (
             <>
-              <p className="text-lg text-gray-200 mb-4">{currentPractice.translation}</p>
+              <p className="text-lg text-[var(--foreground)]/92 mb-4">{currentPractice.translation}</p>
               {currentPractice.exampleSentence ? (
-                <p className="text-sm text-gray-300 mb-4 italic border-l-2 border-white/20 pl-3">
+                <p className="text-sm text-[var(--muted)] mb-4 italic border-l-2 border-[var(--card-border)] pl-3">
                   {currentPractice.exampleSentence}
                 </p>
               ) : null}
               {currentPractice.sourcePath ? (
                 <a
                   href={currentPractice.sourcePath}
-                  className="inline-flex mb-4 text-sm text-blue-300 hover:text-blue-200"
+                  className="inline-flex mb-4 text-sm text-[var(--primary)] hover:opacity-85"
                 >
                   Open story
                 </a>
@@ -367,10 +367,17 @@ export default function FavoritesPage() {
           }`}
         >
           <div className="space-y-4">
-            <div className="h-16 bg-gray-800 rounded animate-pulse" />
-            <div className="h-16 bg-gray-800 rounded animate-pulse" />
-            <div className="h-16 bg-gray-800 rounded animate-pulse" />
-            <div className="h-16 bg-gray-800 rounded animate-pulse" />
+            {Array.from({ length: 4 }).map((_, idx) => (
+              <div
+                key={`fav-skeleton-${idx}`}
+                className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 animate-pulse"
+              >
+                <div className="h-5 w-40 rounded bg-[var(--card-bg-hover)] mb-2" />
+                <div className="h-4 w-11/12 rounded bg-[var(--card-bg-hover)] mb-2" />
+                <div className="h-4 w-9/12 rounded bg-[var(--card-bg-hover)] mb-3" />
+                <div className="h-3 w-24 rounded bg-[var(--card-bg-hover)]" />
+              </div>
+            ))}
           </div>
         </div>
 
@@ -381,9 +388,7 @@ export default function FavoritesPage() {
           }`}
         >
           {favorites.length === 0 ? (
-            <p className="text-gray-400">
-              {user ? 'No favorites saved yet.' : 'No favorites saved yet.'}
-            </p>
+            <p className="text-[var(--muted)]">No favorites saved yet.</p>
           ) : (
             <ul className="space-y-4">
               {favorites.map((fav) => {
@@ -392,61 +397,66 @@ export default function FavoritesPage() {
                 return (
                 <li
                   key={fav.word}
-                  className="bg-gray-800 p-4 rounded-lg shadow flex justify-between items-center"
+                  className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-sm p-4 sm:p-5 shadow-[0_12px_28px_rgba(2,8,23,0.18)]"
                 >
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <p className="font-bold">{fav.word}</p>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <p className="font-bold text-2xl leading-tight">{fav.word}</p>
+                        {fav.language ? (
+                          <span className="text-[11px] px-2 py-0.5 rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]">
+                            {formatLanguageCode(fav.language)}
+                          </span>
+                        ) : null}
                       <span
                         className={`text-[11px] px-2 py-0.5 rounded-full ${
-                          due ? 'bg-emerald-500/20 text-emerald-300' : 'bg-white/10 text-gray-300'
+                          due ? 'bg-emerald-500/20 text-emerald-300' : 'bg-[var(--chip-bg)] text-[var(--chip-text)]'
                         }`}
                       >
                         {due ? 'Due today' : formatNextReview(meta)}
                       </span>
-                    </div>
-                    <p className="text-white">{fav.translation}</p>
-                    {fav.exampleSentence ? (
-                      <p className="text-sm text-gray-300 mt-1 line-clamp-2 italic">
-                        {fav.exampleSentence}
+                      </div>
+                      <p className="text-[var(--foreground)] text-[1.03rem] leading-relaxed mt-1 line-clamp-2">
+                        {fav.translation}
                       </p>
-                    ) : null}
-                    <div className="mt-2 flex items-center gap-2">
-                      {fav.language ? (
-                        <span className="text-[11px] px-2 py-0.5 rounded-full bg-white/10 text-gray-300">
-                          {formatLanguage(fav.language)}
-                        </span>
+                      {fav.exampleSentence ? (
+                        <p className="text-[0.98rem] text-[var(--muted)] mt-1.5 line-clamp-2 italic">
+                          {fav.exampleSentence}
+                        </p>
                       ) : null}
+                      <div className="mt-3 flex items-center gap-2">
                       {fav.sourcePath ? (
                         <a
                           href={fav.sourcePath}
-                          className="text-xs text-blue-300 hover:text-blue-200"
+                          className="text-sm text-[var(--primary)] hover:opacity-85 transition-colors"
                         >
                           Open story
                         </a>
                       ) : null}
                     </div>
-                  </div>
-                  <button
-                    onClick={() => removeFavorite(fav.word)}
-                    className="flex items-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={1.8}
+                    </div>
+                    <button
+                      onClick={() => removeFavorite(fav.word)}
+                      aria-label={`Remove ${fav.word}`}
+                      className="shrink-0 rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] p-2 text-[var(--muted)] hover:text-red-400 hover:border-red-400/30 hover:bg-red-500/10 transition-colors"
+                      title="Remove"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7h6m2 0H7m3-3h4a1 1 0 011 1v1H8V5a1 1 0 011-1z"
-                      />
-                    </svg>
-                    Remove
-                  </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.8}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7h6m2 0H7m3-3h4a1 1 0 011 1v1H8V5a1 1 0 011-1z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                 </li>
               )})}
             </ul>

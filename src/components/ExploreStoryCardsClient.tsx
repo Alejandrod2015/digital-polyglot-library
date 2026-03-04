@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import StoryVerticalCard from "@/components/StoryVerticalCard";
-import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
+import { formatTopic } from "@/lib/displayFormat";
 
 type ExploreStoryCardItem = {
   id: string;
@@ -109,7 +109,7 @@ export default function ExploreStoryCardsClient({ items }: Props) {
           subtitle={story.subtitle}
           coverUrl={story.coverUrl}
           level={story.level}
-          meta={`${formatLanguage(story.language)} · ${formatLevel(story.level)}`}
+          language={story.language}
           metaSecondary={`${formatAudioDuration(durations[story.id])} · ${formatTopic(story.topic)}`}
         />
       ))}

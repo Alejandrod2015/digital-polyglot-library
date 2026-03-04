@@ -73,7 +73,7 @@ export default function MobileMenu() {
       <div className="fixed top-0 left-0 z-30 p-4 md:hidden">
         <button
           onClick={() => router.push(target)}
-          className="text-white"
+          className="text-[var(--foreground)]"
         >
           <ArrowLeft size={28} />
         </button>
@@ -85,26 +85,23 @@ export default function MobileMenu() {
     <div className="md:hidden">
       <button
         onClick={() => setOpen(true)}
-        className="p-4 text-white fixed top-0 right-0 z-30"
+        className="p-4 text-[var(--foreground)] fixed top-0 right-0 z-30"
       >
         <Menu size={28} />
       </button>
 
       {open && (
-        <div
-          onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black bg-opacity-50 z-20"
-        />
+        <div onClick={() => setOpen(false)} className="fixed inset-0 bg-black/50 z-20" />
       )}
 
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-[var(--bg-sidebar)] z-30 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-64 bg-[var(--nav-bg)] text-[var(--foreground)] z-30 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <button
           onClick={() => setOpen(false)}
-          className="absolute top-4 right-4 text-white"
+          className="absolute top-4 right-4 text-[var(--foreground)]"
         >
           <X size={28} />
         </button>
@@ -116,7 +113,7 @@ export default function MobileMenu() {
                 <Link
                   href="/progress"
                   onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-3 text-gray-200 hover:text-white"
+                  className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                 >
                   <ChartNoAxesColumn size={20} />
                   Progress
@@ -125,7 +122,7 @@ export default function MobileMenu() {
                 <Link
                   href="/settings"
                   onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-3 text-gray-200 hover:text-white"
+                  className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                 >
                   <Settings size={20} />
                   Settings
@@ -135,7 +132,7 @@ export default function MobileMenu() {
                   <Link
                     href="/story-of-the-week"
                     onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-3 text-gray-200 hover:text-white"
+                    className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                   >
                     <BookMarked size={20} />
                     Story of the Week
@@ -146,7 +143,7 @@ export default function MobileMenu() {
                   <Link
                     href="/story-of-the-day"
                     onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-3 text-gray-200 hover:text-white"
+                    className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                   >
                     <BookMarked size={20} />
                     Story of the Day
@@ -157,7 +154,7 @@ export default function MobileMenu() {
                   <Link
                     href="/plans"
                     onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-3 text-gray-200 hover:text-white"
+                    className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                   >
                     <CreditCard size={20} />
                     Upgrade
@@ -167,7 +164,7 @@ export default function MobileMenu() {
                 <SignOutButton>
                   <button
                     onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-3 text-gray-200 hover:text-white text-left"
+                    className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)] text-left"
                   >
                     <LogOut size={20} />
                     Sign out
@@ -179,7 +176,7 @@ export default function MobileMenu() {
                 <Link
                   href="/sign-in"
                   onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-3 text-gray-200 hover:text-white"
+                  className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                 >
                   <LogIn size={20} />
                   Sign in
@@ -189,10 +186,10 @@ export default function MobileMenu() {
           </div>
 
           {/* Centered Feedback button */}
-          <div className="border-t border-gray-700 py-4 px-6 space-y-4">
+          <div className="border-t border-[var(--nav-border)] py-4 px-6 space-y-4">
             <button
               onClick={handleFeedback}
-              className="w-full inline-flex items-center justify-center gap-2 text-gray-300 hover:text-white transition"
+              className="w-full inline-flex items-center justify-center gap-2 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)] transition"
             >
               <MessageSquare size={22} />
               <span>Feedback</span>

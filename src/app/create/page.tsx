@@ -28,6 +28,7 @@ type GeneratedStory = {
 type CreateApiResponse = {
   story?: GeneratedStory;
   error?: string;
+  details?: string;
 };
 
 type CreateRequestPayload = {
@@ -278,7 +279,18 @@ export default function CreatePage() {
         });
 
         const data = (await res.json()) as CreateApiResponse;
-        if (!res.ok || !data.story) throw new Error(data.error || 'Story generation failed');
+        if (!res.ok || !data.story) {
+          const rawMessage = `${data.error ?? ""} ${data.details ?? ""}`.toLowerCase();
+          const isProviderOrQuotaError =
+            rawMessage.includes("insufficient_quota") ||
+            rawMessage.includes("rate limit") ||
+            rawMessage.includes("openai") ||
+            rawMessage.includes("temporarily unavailable");
+          const safeMessage = isProviderOrQuotaError
+            ? "Story generation is temporarily unavailable. Please try again shortly."
+            : (data.error || "Story generation failed");
+          throw new Error(safeMessage);
+        }
 
         setStatus('generating_audio');
         setResponse({ story: data.story });
@@ -484,7 +496,7 @@ export default function CreatePage() {
 
   if (plan !== 'polyglot') {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-center text-gray-300">
+      <div className="min-h-screen flex flex-col items-center justify-center text-center text-[var(--muted)]">
         <h2 className="text-2xl font-semibold mb-4">Restricted Access</h2>
         <p className="max-w-md mb-4">
           This section is only available to users with a Polyglot plan.
@@ -500,10 +512,10 @@ export default function CreatePage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto py-12 px-4 text-gray-100">
+    <div className="max-w-3xl mx-auto py-12 px-4 text-[var(--foreground)]">
       <div className="flex items-center gap-3 mb-8">
-        <Sparkles className="h-7 w-7 text-white" />
-        <h1 className="text-3xl font-bold text-white">Create a Story</h1>
+        <Sparkles className="h-7 w-7 text-[var(--foreground)]" />
+        <h1 className="text-3xl font-bold text-[var(--foreground)]">Create a Story</h1>
       </div>
 
       {resumeNotice ? (
@@ -514,10 +526,10 @@ export default function CreatePage() {
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-4 bg-[#0D1B2A] p-6 rounded-xl border border-gray-700"
+        className="space-y-4 bg-[var(--surface)] p-6 rounded-xl border border-[var(--card-border)]"
       >
         <div>
-          <label className="block text-sm text-gray-300 mb-1">Language</label>
+          <label className="block text-sm text-[var(--muted)] mb-1">Language</label>
           <select
             value={language}
             onChange={(e) => {
@@ -525,7 +537,7 @@ export default function CreatePage() {
               setRegion('');
             }}
             required
-            className="w-full rounded-md bg-[#1B263B] text-white p-2 focus:outline-none"
+            className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
           >
             <option value="">Select language</option>
             {Object.keys(regionsByLanguage).map((lang) => (
@@ -538,11 +550,11 @@ export default function CreatePage() {
 
         {availableRegions.length > 0 && (
           <div>
-            <label className="block text-sm text-gray-300 mb-1">Region (optional)</label>
+            <label className="block text-sm text-[var(--muted)] mb-1">Region (optional)</label>
             <select
               value={region}
               onChange={(e) => setRegion(e.target.value)}
-              className="w-full rounded-md bg-[#1B263B] text-white p-2 focus:outline-none"
+              className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
             >
               <option value="">No region</option>
               {availableRegions.map((r) => (
@@ -555,12 +567,12 @@ export default function CreatePage() {
         )}
 
         <div>
-          <label className="block text-sm text-gray-300 mb-1">Level</label>
+          <label className="block text-sm text-[var(--muted)] mb-1">Level</label>
           <select
             value={level}
             onChange={(e) => setLevel(e.target.value)}
             required
-            className="w-full rounded-md bg-[#1B263B] text-white p-2 focus:outline-none"
+            className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
           >
             <option value="">Select level</option>
             {levels.map((lvl) => (
@@ -572,12 +584,12 @@ export default function CreatePage() {
         </div>
 
         <div>
-          <label className="block text-sm text-gray-300 mb-1">Focus</label>
+          <label className="block text-sm text-[var(--muted)] mb-1">Focus</label>
           <select
             value={focus}
             onChange={(e) => setFocus(e.target.value)}
             required
-            className="w-full rounded-md bg-[#1B263B] text-white p-2 focus:outline-none"
+            className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
           >
             <option value="">Select focus</option>
             {focusCore.map((f) => (
@@ -589,7 +601,7 @@ export default function CreatePage() {
           <button
             type="button"
             onClick={() => setShowMoreFocus((v) => !v)}
-            className="mt-2 text-xs text-sky-300 hover:text-sky-200"
+            className="mt-2 text-xs text-[var(--primary)] hover:opacity-85"
           >
             {showMoreFocus ? 'Hide more focus options' : 'More focus options'}
           </button>
@@ -597,7 +609,7 @@ export default function CreatePage() {
             <select
               value={focusMore}
               onChange={(e) => setFocusMore(e.target.value)}
-              className="mt-2 w-full rounded-md bg-[#1B263B] text-white p-2 focus:outline-none"
+              className="mt-2 w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
             >
               <option value="">No extra focus</option>
               {focusExtended.map((f) => (
@@ -610,12 +622,12 @@ export default function CreatePage() {
         </div>
 
         <div>
-          <label className="block text-sm text-gray-300 mb-1">Topic</label>
+          <label className="block text-sm text-[var(--muted)] mb-1">Topic</label>
           <select
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
             required
-            className="w-full rounded-md bg-[#1B263B] text-white p-2 focus:outline-none"
+            className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
           >
             <option value="">Select topic</option>
             {topicCore.map((t) => (
@@ -627,7 +639,7 @@ export default function CreatePage() {
           <button
             type="button"
             onClick={() => setShowMoreTopics((v) => !v)}
-            className="mt-2 text-xs text-sky-300 hover:text-sky-200"
+            className="mt-2 text-xs text-[var(--primary)] hover:opacity-85"
           >
             {showMoreTopics ? 'Hide more topic options' : 'More topic options'}
           </button>
@@ -635,7 +647,7 @@ export default function CreatePage() {
             <select
               value={topicMore}
               onChange={(e) => setTopicMore(e.target.value)}
-              className="mt-2 w-full rounded-md bg-[#1B263B] text-white p-2 focus:outline-none"
+              className="mt-2 w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
             >
               <option value="">No extra topic</option>
               {topicExtended.map((t) => (
@@ -648,7 +660,7 @@ export default function CreatePage() {
         </div>
 
         <div>
-          <label className="block text-sm text-gray-300 mb-1">
+          <label className="block text-sm text-[var(--muted)] mb-1">
             Custom topic (optional, max {CUSTOM_TOPIC_MAX} chars)
           </label>
           <input
@@ -657,9 +669,9 @@ export default function CreatePage() {
             onChange={(e) => setCustomTopic(e.target.value.slice(0, CUSTOM_TOPIC_MAX))}
             maxLength={CUSTOM_TOPIC_MAX}
             placeholder="e.g. Two coworkers negotiating deadlines in Berlin"
-            className="w-full rounded-md bg-[#1B263B] text-white p-2 focus:outline-none"
+            className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
           />
-          <p className="mt-1 text-xs text-gray-400 text-right">
+          <p className="mt-1 text-xs text-[var(--muted)] text-right">
             {customTopic.length}/{CUSTOM_TOPIC_MAX}
           </p>
         </div>
@@ -709,15 +721,15 @@ export default function CreatePage() {
       practiceVisible &&
       practiceQueue.length > 0 ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="w-full max-w-md rounded-2xl border border-white/10 bg-[#0D1B2A] p-5 shadow-2xl">
+          <div className="w-full max-w-md rounded-2xl border border-[var(--card-border)] bg-[var(--surface)] p-5 shadow-2xl">
             <div className="mb-4 flex items-center justify-between">
-              <p className="text-xs uppercase tracking-wide text-gray-400">
+              <p className="text-xs uppercase tracking-wide text-[var(--muted)]">
                 Practice while we generate your story
               </p>
               <button
                 type="button"
                 onClick={() => setPracticeVisible(false)}
-                className="rounded-md p-1 text-gray-300 hover:bg-white/10 hover:text-white"
+                className="rounded-md p-1 text-[var(--muted)] hover:bg-[var(--card-bg-hover)] hover:text-[var(--foreground)]"
                 aria-label="Close practice"
               >
                 <X className="h-4 w-4" />
@@ -726,14 +738,14 @@ export default function CreatePage() {
 
             {practiceCompleted || !currentPractice ? (
               <div className="space-y-4">
-                <p className="text-lg font-semibold text-white">
+                <p className="text-lg font-semibold text-[var(--foreground)]">
                   Great job. No more words in this session.
                 </p>
                 <div className="flex gap-2">
                   <button
                     type="button"
                     onClick={restartPractice}
-                    className="rounded-lg bg-white/10 px-3 py-2 text-sm font-medium text-white hover:bg-white/20"
+                    className="rounded-lg bg-[var(--card-bg)] px-3 py-2 text-sm font-medium text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
                   >
                     Review again
                   </button>
@@ -748,15 +760,15 @@ export default function CreatePage() {
               </div>
             ) : (
               <>
-                <p className="mb-2 text-xs text-gray-400">
+                <p className="mb-2 text-xs text-[var(--muted)]">
                   {practiceIndex + 1}/{practiceQueue.length}
                 </p>
                 <p className="mb-4 text-3xl font-semibold">{currentPractice.word}</p>
                 {revealed ? (
                   <>
-                    <p className="mb-4 text-lg text-gray-200">{currentPractice.translation}</p>
+                    <p className="mb-4 text-lg text-[var(--foreground)]/92">{currentPractice.translation}</p>
                     {currentPractice.exampleSentence ? (
-                      <p className="mb-4 border-l-2 border-white/20 pl-3 text-sm italic text-gray-300">
+                      <p className="mb-4 border-l-2 border-[var(--card-border)] pl-3 text-sm italic text-[var(--muted)]">
                         {currentPractice.exampleSentence}
                       </p>
                     ) : null}
@@ -804,7 +816,7 @@ export default function CreatePage() {
       {response?.error && (
         <div className="mt-8 border border-red-700 rounded-xl p-6 bg-red-900/40">
           <h2 className="text-lg font-semibold mb-2 text-red-400">Error</h2>
-          <pre className="text-sm text-gray-200 whitespace-pre-wrap">{response.error}</pre>
+          <pre className="text-sm text-[var(--foreground)] whitespace-pre-wrap">{response.error}</pre>
         </div>
       )}
     </div>
@@ -824,9 +836,9 @@ function StoryPreview({ story }: { story: GeneratedStory }) {
   const previewText = story.text ? `${story.text.split('</p>').slice(0, 1).join('</p>')}</p>` : '';
 
   return (
-    <div className="mt-10 bg-[#1B263B] border border-gray-700 rounded-xl p-6">
-      <h2 className="text-2xl font-bold mb-2 text-white">{story.title}</h2>
-      <p className="text-sm text-gray-400 mb-4">
+    <div className="mt-10 bg-[var(--surface)] border border-[var(--card-border)] rounded-xl p-6">
+      <h2 className="text-2xl font-bold mb-2 text-[var(--foreground)]">{story.title}</h2>
+      <p className="text-sm text-[var(--muted)] mb-4">
         {formatLanguage(story.language || '')} • {formatLevel(story.level || '')} •{' '}
         {toTitleCase(story.region || 'General')}
       </p>

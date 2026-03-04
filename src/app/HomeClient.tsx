@@ -6,8 +6,11 @@ import Link from "next/link";
 import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
+import LevelBadge from "@/components/LevelBadge";
+import LanguageBadge from "@/components/LanguageBadge";
 import { books } from "@/data/books";
-import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
+import { formatTopic } from "@/lib/displayFormat";
+import { getBookCardMeta } from "@/lib/bookCardMeta";
 
 type LatestBook = {
   slug: string;
@@ -668,6 +671,14 @@ export default function HomeClient({
     return latestBooks.filter((b) => languageFilter.has((b.language ?? "").toLowerCase()));
   }, [latestBooks, languageFilter]);
 
+  const bookMetaBySlug = useMemo(() => {
+    const map = new Map<string, { statsLine?: string; topicsLine?: string }>();
+    for (const book of Object.values(books)) {
+      map.set(book.slug, getBookCardMeta(book));
+    }
+    return map;
+  }, []);
+
   const filteredStories = useMemo(() => {
     if (!languageFilter) return latestStories;
     return latestStories.filter((s) => languageFilter.has((s.language ?? "").toLowerCase()));
@@ -1086,9 +1097,9 @@ export default function HomeClient({
     <Link
       key={`${item.bookSlug}:${item.storySlug}`}
       href={withReturnContext(`/books/${item.bookSlug}/${item.storySlug}`)}
-      className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+      className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
     >
-      <div className="w-full h-48 bg-gray-800">
+      <div className="w-full h-48 bg-[color:var(--surface)]">
         <img
           src={item.cover}
           alt={item.title}
@@ -1099,22 +1110,23 @@ export default function HomeClient({
       <div className="p-5 flex flex-col justify-between flex-1 text-left">
         <div>
           {options?.recommendation ? (
-            <p className="inline-flex text-[11px] font-semibold uppercase tracking-[0.08em] text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 rounded-full px-2 py-0.5 mb-2">
+            <p className="inline-flex text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--foreground)] bg-[var(--chip-bg)] border border-[var(--chip-border)] rounded-full px-2 py-0.5 mb-2">
               {options.reason ?? "Recommended"}
             </p>
           ) : null}
-          <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
+          <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
             {item.title}
           </h3>
-          <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">
+          <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
             {item.bookTitle}
           </p>
         </div>
 
-        <div className="mt-3 text-sm text-gray-400 space-y-1">
-          <p>
-            {formatLanguage(item.language)} · {formatLevel(item.level)}
-          </p>
+        <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
+          <div className="flex items-center gap-2">
+            <LevelBadge level={item.level} />
+            <LanguageBadge language={item.language} />
+          </div>
           <p>
             {formatRemainingDuration(item.audioDurationSec, item.progressSec)} ·{" "}
             {formatTopic(item.topic)}
@@ -1125,21 +1137,21 @@ export default function HomeClient({
   );
 
   return (
-    <div className="min-h-full w-full text-white flex flex-col items-center px-8 pb-28">
+    <div className="min-h-full w-full flex flex-col items-center px-8 pb-28">
       <>
       {/* Free featured story for free/basic users */}
       {isPersonalizationReady && featuredFreeStory && continueListening.length === 0 && (
-        <section className="w-full max-w-5xl text-center pt-10 mb-12">
-          <p className="text-xs uppercase tracking-[0.18em] text-sky-300 mb-3">
+        <section className="w-full max-w-5xl text-center pt-8 md:pt-10 mb-10 md:mb-12">
+          <p className="text-xs uppercase tracking-[0.18em] text-[var(--primary)] mb-3">
             {featuredFreeStory.label}
           </p>
-          <h2 className="text-2xl font-semibold mb-6">Your free story</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Your free story</h2>
           <div className="max-w-[520px] mx-auto">
             <Link
               href={featuredFreeStory.href}
-              className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+              className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
             >
-              <div className="w-full h-48 bg-gray-800">
+              <div className="w-full h-48 bg-[color:var(--surface)]">
                 <img
                   src={featuredFreeStory.cover}
                   alt={featuredFreeStory.title}
@@ -1148,17 +1160,20 @@ export default function HomeClient({
               </div>
               <div className="p-5 flex flex-col justify-between flex-1 text-left">
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
+                  <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                     {featuredFreeStory.title}
                   </h3>
-                  <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">
+                  <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
                     {featuredFreeStory.bookTitle}
                   </p>
                 </div>
-                <p className="mt-3 text-sm text-gray-400">
-                  {formatLanguage(featuredFreeStory.language)} · {formatLevel(featuredFreeStory.level)} ·{" "}
-                  {formatTopic(featuredFreeStory.topic)}
-                </p>
+                <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
+                  <div className="flex items-center gap-2">
+                    <LevelBadge level={featuredFreeStory.level} />
+                    <LanguageBadge language={featuredFreeStory.language} />
+                  </div>
+                  <p>{formatTopic(featuredFreeStory.topic)}</p>
+                </div>
               </div>
             </Link>
           </div>
@@ -1167,10 +1182,10 @@ export default function HomeClient({
 
       {/* Continue listening */}
       {isPersonalizationReady && continueListening.length > 0 && (
-        <section className="w-full max-w-5xl text-center pt-10 mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Continue listening</h2>
+        <section className="w-full max-w-5xl text-center pt-8 md:pt-10 mb-10 md:mb-12">
+          <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Continue listening</h2>
 
-          <div className="md:hidden min-h-[240px]">
+          <div className="md:hidden">
             <StoryCarousel
               items={mobileContinueCards}
               renderItem={(entry) =>
@@ -1195,7 +1210,7 @@ export default function HomeClient({
                 ))}
               </div>
             ) : (
-              <div className="min-h-[240px]">
+              <div>
                 <StoryCarousel
                   items={continueListening}
                   renderItem={(item) => renderContinueCard(item)}
@@ -1207,17 +1222,17 @@ export default function HomeClient({
       )}
 
       {isPersonalizationReady && featuredFreeStory && continueListening.length > 0 && (
-        <section className="w-full max-w-5xl text-center mb-12">
-          <p className="text-xs uppercase tracking-[0.18em] text-sky-300 mb-3">
+        <section className="w-full max-w-5xl text-center mb-10 md:mb-12">
+          <p className="text-xs uppercase tracking-[0.18em] text-[var(--primary)] mb-3">
             {featuredFreeStory.label}
           </p>
-          <h2 className="text-2xl font-semibold mb-6">Your free story</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Your free story</h2>
           <div className="max-w-[520px] mx-auto">
             <Link
               href={featuredFreeStory.href}
-              className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+              className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
             >
-              <div className="w-full h-48 bg-gray-800">
+              <div className="w-full h-48 bg-[color:var(--surface)]">
                 <img
                   src={featuredFreeStory.cover}
                   alt={featuredFreeStory.title}
@@ -1226,17 +1241,20 @@ export default function HomeClient({
               </div>
               <div className="p-5 flex flex-col justify-between flex-1 text-left">
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
+                  <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                     {featuredFreeStory.title}
                   </h3>
-                  <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">
+                  <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
                     {featuredFreeStory.bookTitle}
                   </p>
                 </div>
-                <p className="mt-3 text-sm text-gray-400">
-                  {formatLanguage(featuredFreeStory.language)} · {formatLevel(featuredFreeStory.level)} ·{" "}
-                  {formatTopic(featuredFreeStory.topic)}
-                </p>
+                <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
+                  <div className="flex items-center gap-2">
+                    <LevelBadge level={featuredFreeStory.level} />
+                    <LanguageBadge language={featuredFreeStory.language} />
+                  </div>
+                  <p>{formatTopic(featuredFreeStory.topic)}</p>
+                </div>
               </div>
             </Link>
           </div>
@@ -1244,24 +1262,24 @@ export default function HomeClient({
       )}
 
       {canShowPersonalizedRecommendations && recommendedStories.length > 0 && (
-        <section className="mb-12 text-center w-full max-w-5xl">
+        <section className="mb-10 md:mb-12 text-center w-full max-w-5xl">
           <div className="mb-6">
-            <p className="text-xs uppercase tracking-[0.18em] text-emerald-300 mb-2">
+            <p className="text-xs uppercase tracking-[0.18em] text-[var(--primary)] mb-2">
               Premium personalization
             </p>
-            <h2 className="text-2xl font-semibold text-white">Recommended for you</h2>
+            <h2 className="text-2xl font-semibold text-[var(--foreground)]">Recommended for you</h2>
           </div>
 
-          <div className="min-h-[320px]">
+          <div>
             <StoryCarousel
               items={recommendedStories}
               renderItem={(story) => (
                 <Link
                   key={story.key}
                   href={withReturnContext(`/books/${story.bookSlug}/${story.storySlug}`)}
-                  className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+                  className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
                 >
-                  <div className="w-full h-48 bg-gray-800">
+                  <div className="w-full h-48 bg-[color:var(--surface)]">
                     <img
                       src={story.coverUrl}
                       alt={story.storyTitle}
@@ -1271,21 +1289,22 @@ export default function HomeClient({
 
                   <div className="p-5 flex flex-col justify-between flex-1 text-left">
                     <div>
-                      <p className="inline-flex text-[11px] font-semibold uppercase tracking-[0.08em] text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 rounded-full px-2 py-0.5 mb-2">
+                      <p className="inline-flex text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--foreground)] bg-[var(--chip-bg)] border border-[var(--chip-border)] rounded-full px-2 py-0.5 mb-2">
                         {story.reason}
                       </p>
-                      <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
+                      <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                         {story.storyTitle}
                       </h3>
-                      <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">
+                      <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
                         {story.bookTitle}
                       </p>
                     </div>
 
-                    <div className="mt-3 text-sm text-gray-400 space-y-1">
-                      <p>
-                        {formatLanguage(story.language)} · {formatLevel(story.level)}
-                      </p>
+                    <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
+                      <div className="flex items-center gap-2">
+                        <LevelBadge level={story.level} />
+                        <LanguageBadge language={story.language} />
+                      </div>
                       <p>
                         {formatAudioDuration(recommendedStoryDurations[story.key])} ·{" "}
                         {formatTopic(story.topic)}
@@ -1300,12 +1319,13 @@ export default function HomeClient({
       )}
 
       {/* Latest Books */}
-      <section className="mb-12 text-center w-full max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-6 text-white">Latest Books</h2>
+      <section className="mb-10 md:mb-12 text-center w-full max-w-5xl">
+        <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Latest Books</h2>
 
-        <div className="md:hidden min-h-[240px]">
+        <div className="md:hidden">
           <StoryCarousel
             items={filteredBooks.slice(0, MOBILE_LIMIT)}
+            mobileItemClassName="w-[82%] sm:w-[62%]"
             renderItem={(book) => (
               <BookHorizontalCard
                 key={book.slug}
@@ -1313,7 +1333,9 @@ export default function HomeClient({
                 title={book.title}
                 cover={book.cover}
                 level={book.level}
-                meta={`${formatLanguage(book.language)} · ${formatLevel(book.level)}`}
+                language={book.language}
+                statsLine={bookMetaBySlug.get(book.slug)?.statsLine}
+                topicsLine={bookMetaBySlug.get(book.slug)?.topicsLine}
                 description={book.description}
               />
             )}
@@ -1329,7 +1351,9 @@ export default function HomeClient({
                 title={book.title}
                 cover={book.cover}
                 level={book.level}
-                meta={`${formatLanguage(book.language)} · ${formatLevel(book.level)}`}
+                language={book.language}
+                statsLine={bookMetaBySlug.get(book.slug)?.statsLine}
+                topicsLine={bookMetaBySlug.get(book.slug)?.topicsLine}
                 description={book.description}
                 href={`/books/${book.slug}?from=home`}
               />
@@ -1339,10 +1363,10 @@ export default function HomeClient({
       </section>
 
       {/* Latest Stories (mismas dimensiones que Explore) */}
-      <section className="mb-12 text-center w-full max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-6 text-white">Latest Stories</h2>
+      <section className="mb-10 md:mb-12 text-center w-full max-w-5xl">
+        <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Latest Stories</h2>
 
-        <div className="min-h-[240px]">
+        <div>
           <StoryCarousel
             items={storiesForHome}
             renderItem={(s) => {
@@ -1353,9 +1377,9 @@ export default function HomeClient({
               <Link
                 key={`${s.bookSlug}:${s.storySlug}`}
                 href={withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`)}
-                className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+                className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
               >
-                <div className="w-full h-48 bg-gray-800">
+                <div className="w-full h-48 bg-[color:var(--surface)]">
                   <img
                     src={s.coverUrl}
                     alt={s.storyTitle}
@@ -1365,18 +1389,19 @@ export default function HomeClient({
 
                 <div className="p-5 flex flex-col justify-between flex-1 text-left">
                   <div>
-                    <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">
+                    <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                       {s.storyTitle || "Untitled story"}
                     </h3>
-                    <p className="text-sky-300 text-sm leading-relaxed line-clamp-1">
+                    <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
                       {s.bookTitle || s.bookSlug}
                     </p>
                   </div>
 
-                  <div className="mt-3 text-sm text-gray-400 space-y-1">
-                    <p>
-                      {formatLanguage(s.language)} · {formatLevel(s.level)}
-                    </p>
+                  <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
+                    <div className="flex items-center gap-2">
+                      <LevelBadge level={s.level} />
+                      <LanguageBadge language={s.language} />
+                    </div>
                     <p>
                       {formatAudioDuration(durationSec)} · {formatTopic(topic)}
                     </p>
@@ -1388,25 +1413,25 @@ export default function HomeClient({
           />
         </div>
 
-        <div className="md:hidden mt-4 text-white/60 text-sm">
+        <div className="md:hidden mt-4 text-[var(--muted)] text-sm">
           Showing {Math.min(MOBILE_LIMIT, storiesForHome.length)} of {storiesForHome.length}
         </div>
       </section>
 
       {/* Latest Polyglot Stories (mismas dimensiones que Explore) */}
-      <section className="mb-12 text-center w-full max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-6 text-white">Latest Polyglot Stories</h2>
+      <section className="mb-10 md:mb-12 text-center w-full max-w-5xl">
+        <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Latest Polyglot Stories</h2>
 
-        <div className="min-h-[320px]">
+        <div>
           <StoryCarousel
             items={polyglotForHome}
             renderItem={(story) => (
               <Link
                 key={story.slug}
                 href={withReturnContext(`/stories/${story.slug}`)}
-                className="flex flex-col bg-white/5 hover:bg-white/10 transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+                className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
               >
-                <div className="w-full h-48 bg-gray-800">
+                <div className="w-full h-48 bg-[color:var(--surface)]">
                   <img
                     src={
                       typeof story.coverUrl === "string" && story.coverUrl.trim() !== ""
@@ -1420,15 +1445,18 @@ export default function HomeClient({
 
                 <div className="p-5 flex flex-col justify-between flex-1 text-left">
                   <div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">{story.title}</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
+                    <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)]">{story.title}</h3>
+                    <p className="text-[var(--muted)] text-sm leading-relaxed line-clamp-3">
                       {stripHtml(story.text ?? "").slice(0, 120)}...
                     </p>
                   </div>
 
-                  <p className="mt-3 text-sm text-gray-400">
-                    {formatLanguage(story.language)} · {formatLevel(story.level)}
-                  </p>
+                  <div className="mt-3">
+                    <div className="flex items-center gap-2">
+                      <LevelBadge level={story.level} />
+                      <LanguageBadge language={story.language} />
+                    </div>
+                  </div>
                 </div>
               </Link>
             )}

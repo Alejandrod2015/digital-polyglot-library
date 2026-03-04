@@ -13,6 +13,35 @@ type StoryPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+type SafeVocabItem = { word: string; definition: string };
+
+function normalizePolyglotVocab(raw: unknown): SafeVocabItem[] {
+  const coerce = (input: unknown): SafeVocabItem[] => {
+    if (!input) return [];
+    if (Array.isArray(input)) {
+      return input
+        .map((item) => {
+          if (!item || typeof item !== "object") return null;
+          const record = item as Record<string, unknown>;
+          const word = typeof record.word === "string" ? record.word.trim() : "";
+          const definition = typeof record.definition === "string" ? record.definition.trim() : "";
+          if (!word || !definition) return null;
+          return { word, definition };
+        })
+        .filter((item): item is SafeVocabItem => item !== null);
+    }
+    if (typeof input === "string") {
+      try {
+        return coerce(JSON.parse(input) as unknown);
+      } catch {
+        return [];
+      }
+    }
+    return [];
+  };
+  return coerce(raw);
+}
+
 function normalizePolyglotStoryText(input: string): string {
   if (!input) return input;
 
@@ -72,6 +101,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
     ? story.text
     : `${story.text.slice(0, 1000)}…`;
   const normalizedText = normalizePolyglotStoryText(displayText);
+  const safeVocab = normalizePolyglotVocab(story.vocab);
 
   const storyCoverUrl =
     typeof story.coverUrl === "string" && story.coverUrl.trim() !== ""
@@ -157,7 +187,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
             <StoryContent
               text={normalizedText}
               sentencesPerParagraph={3}
-              vocab={(story.vocab as { word: string; definition: string }[]) ?? []}
+              vocab={safeVocab}
             />
           </div>
         ) : (
@@ -214,7 +244,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
           slug: story.slug,
           title: story.title,
           language: story.language ?? undefined,
-          vocab: (story.vocab as { word: string; definition: string }[]) ?? [],
+          vocab: safeVocab,
         }}
       />
 

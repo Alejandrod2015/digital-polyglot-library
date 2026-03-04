@@ -4,12 +4,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { books } from "@/data/books";
-import Skeleton from "@/components/Skeleton";
 import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
 import StoryVerticalCard from "@/components/StoryVerticalCard";
 import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
+import { getBookCardMeta } from "@/lib/bookCardMeta";
 
 
 type LibraryBook = {
@@ -41,6 +41,8 @@ type BookCarouselItem = {
  level?: string;
  cover?: string;
  description?: string;
+ statsLine?: string;
+ topicsLine?: string;
  bookId: string;
 };
 
@@ -192,6 +194,8 @@ export default function MyLibraryClient() {
          typeof meta.level === "string" ? formatLevel(meta.level) : undefined,
        cover: meta.cover,
        description: typeof meta.description === "string" ? meta.description : undefined,
+       statsLine: getBookCardMeta(meta).statsLine,
+       topicsLine: getBookCardMeta(meta).topicsLine,
        bookId: item.bookId,
      });
    }
@@ -372,22 +376,54 @@ export default function MyLibraryClient() {
  // UI
  // ------------------------------
  return (
-   <div className="w-full mx-auto px-3 sm:px-4 lg:px-6 py-8 text-white">
+   <div className="w-full mx-auto px-3 sm:px-4 lg:px-6 py-8 text-[var(--foreground)]">
      <h1 className="text-3xl font-bold mb-6">My Library</h1>
 
 
      {/* SKELETON */}
      {loading && (
-       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 place-items-center">
-         {Array.from({ length: 6 }).map((_, i) => (
-           <div
-             key={i}
-             className="bg-white/5 p-4 rounded-2xl shadow animate-pulse w-full max-w-[240px]"
-           >
-             <div className="w-full h-48 bg-white/10 rounded-xl mb-3" />
-             <Skeleton lines={2} />
+       <div className="space-y-10 md:space-y-12">
+         <section>
+           <div className="h-8 w-44 rounded bg-[var(--card-bg)] animate-pulse mb-6" />
+           <div className="flex gap-4 overflow-x-auto pb-2">
+             {Array.from({ length: 3 }).map((_, i) => (
+               <div
+                 key={`book-skeleton-${i}`}
+                 className="min-w-[320px] max-w-[380px] w-[90vw] md:w-[46%] rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-3 animate-pulse"
+               >
+                 <div className="flex gap-3">
+                   <div className="h-28 w-24 rounded-xl bg-[var(--card-bg-hover)] shrink-0" />
+                   <div className="flex-1 space-y-2">
+                     <div className="h-5 w-3/4 rounded bg-[var(--card-bg-hover)]" />
+                     <div className="h-4 w-1/2 rounded bg-[var(--card-bg-hover)]" />
+                     <div className="h-4 w-full rounded bg-[var(--card-bg-hover)]" />
+                     <div className="h-4 w-5/6 rounded bg-[var(--card-bg-hover)]" />
+                   </div>
+                 </div>
+                 <div className="h-9 w-full rounded-lg bg-[var(--card-bg-hover)] mt-3" />
+               </div>
+             ))}
            </div>
-         ))}
+         </section>
+
+         <section>
+           <div className="h-8 w-56 rounded bg-[var(--card-bg)] animate-pulse mb-6" />
+           <div className="flex gap-4 overflow-x-auto pb-2">
+             {Array.from({ length: 4 }).map((_, i) => (
+               <div
+                 key={`story-skeleton-${i}`}
+                 className="min-w-[220px] max-w-[240px] w-[58vw] sm:w-[42vw] md:w-[220px] rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-3 animate-pulse"
+               >
+                 <div className="aspect-[3/4] w-full rounded-xl bg-[var(--card-bg-hover)] mb-3" />
+                 <div className="h-5 w-4/5 rounded bg-[var(--card-bg-hover)] mb-2" />
+                 <div className="h-4 w-2/3 rounded bg-[var(--card-bg-hover)] mb-3" />
+                 <div className="h-4 w-full rounded bg-[var(--card-bg-hover)] mb-2" />
+                 <div className="h-4 w-5/6 rounded bg-[var(--card-bg-hover)] mb-3" />
+                 <div className="h-9 w-full rounded-lg bg-[var(--card-bg-hover)]" />
+               </div>
+             ))}
+           </div>
+         </section>
        </div>
      )}
 
@@ -396,32 +432,35 @@ export default function MyLibraryClient() {
      {!loading && (
        <>
          {/* BOOKS */}
-         <section className="mb-16">
-           <h2 className="text-2xl font-semibold mb-6 text-blue-400">
+         <section className="mb-10 md:mb-12">
+           <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">
              Your Books
            </h2>
 
 
            {bookCarouselItems.length === 0 ? (
-             <p className="text-gray-400">You don’t have any saved books right now.</p>
+             <p className="text-[var(--muted)]">You don’t have any saved books right now.</p>
            ) : (
              <>
-               <div className="md:hidden min-h-[240px]">
+               <div className="md:hidden">
                  <StoryCarousel
                    items={bookCarouselItems}
+                   mobileItemClassName="w-[82%] sm:w-[62%]"
                    renderItem={(book) => (
                      <BookHorizontalCard
                        href={`/books/${book.slug}?from=my-library`}
                        title={book.title}
                        cover={book.cover}
                        level={book.level}
-                       meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
+                       language={book.language}
+                       statsLine={book.statsLine}
+                       topicsLine={book.topicsLine}
                        description={book.description}
                        footer={
                          <button
                            type="button"
                            onClick={() => removeItem("books", book.bookId)}
-                           className="w-full flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium"
+                           className="w-full flex items-center justify-center gap-2 text-[var(--muted)] hover:text-red-500 transition-colors text-sm font-medium"
                          >
                            Remove
                          </button>
@@ -441,13 +480,15 @@ export default function MyLibraryClient() {
                        title={book.title}
                        cover={book.cover}
                        level={book.level}
-                       meta={`${book.language ?? "—"} · ${book.level ?? "—"}`}
+                       language={book.language}
+                       statsLine={book.statsLine}
+                       topicsLine={book.topicsLine}
                        description={book.description}
                        footer={
                          <button
                            type="button"
                            onClick={() => removeItem("books", book.bookId)}
-                           className="w-full flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium"
+                           className="w-full flex items-center justify-center gap-2 text-[var(--muted)] hover:text-red-500 transition-colors text-sm font-medium"
                          >
                            Remove
                          </button>
@@ -462,14 +503,14 @@ export default function MyLibraryClient() {
 
 
          {/* STORIES */}
-         <section className="mb-16">
-           <h2 className="text-2xl font-semibold mb-6 text-white">
+         <section className="mb-10 md:mb-12">
+           <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">
              Your Saved Stories
            </h2>
 
 
            {storyItems.length === 0 ? (
-             <p className="text-gray-400">
+             <p className="text-[var(--muted)]">
                You don’t have any saved stories right now.
              </p>
            ) : (
@@ -486,7 +527,7 @@ export default function MyLibraryClient() {
                    coverUrl={story.coverUrl || "/covers/default.png"}
                    subtitle={story.bookTitle}
                    level={story.level}
-                   meta={`${formatLanguage(story.language)} · ${formatLevel(story.level)}`}
+                   language={story.language}
                    metaSecondary={`${formatAudioDuration(
                      storyDurations[`${story.bookSlug}:${story.storySlug}`]
                    )} · ${formatTopic(story.topic)}`}
@@ -494,7 +535,7 @@ export default function MyLibraryClient() {
                      <button
                        type="button"
                        onClick={() => removeItem("stories", story.storyId)}
-                       className="w-full flex items-center justify-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-sm font-medium"
+                       className="w-full flex items-center justify-center gap-2 text-[var(--muted)] hover:text-red-500 transition-colors text-sm font-medium"
                      >
                        Remove
                      </button>

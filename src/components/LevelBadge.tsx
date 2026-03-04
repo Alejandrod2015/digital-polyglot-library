@@ -18,10 +18,13 @@ function normalizeLevel(level?: string): "beginner" | "intermediate" | "advanced
 }
 
 const levelStyles: Record<ReturnType<typeof normalizeLevel>, string> = {
-  beginner: "bg-emerald-500/15 border-emerald-400/40 text-emerald-200",
-  intermediate: "bg-amber-500/15 border-amber-400/40 text-amber-200",
-  advanced: "bg-rose-500/15 border-rose-400/40 text-rose-200",
-  unknown: "bg-white/10 border-white/20 text-white/80",
+  beginner:
+    "bg-[var(--badge-beginner-bg)] border-[var(--badge-beginner-border)] text-[var(--badge-beginner-text)]",
+  intermediate:
+    "bg-[var(--badge-intermediate-bg)] border-[var(--badge-intermediate-border)] text-[var(--badge-intermediate-text)]",
+  advanced:
+    "bg-[var(--badge-advanced-bg)] border-[var(--badge-advanced-border)] text-[var(--badge-advanced-text)]",
+  unknown: "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)]",
 };
 
 export default function LevelBadge({ level, className = "" }: LevelBadgeProps) {
@@ -38,4 +41,3 @@ export default function LevelBadge({ level, className = "" }: LevelBadgeProps) {
     </span>
   );
 }
-

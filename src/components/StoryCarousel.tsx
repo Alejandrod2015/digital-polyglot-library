@@ -12,6 +12,7 @@ type CarouselProps<T> = {
   className?: string;
   options?: EmblaOptionsType;
   centerMobile?: boolean;
+  mobileItemClassName?: string;
 };
 
 /**
@@ -25,6 +26,7 @@ export default function StoryCarousel<T>({
   className,
   options,
   centerMobile = false,
+  mobileItemClassName = "w-[70%] sm:w-[55%]",
 }: CarouselProps<T>) {
   const [isDesktop, setIsDesktop] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -89,7 +91,8 @@ export default function StoryCarousel<T>({
             <div
               key={i}
               className={cn(
-                "flex-shrink-0 w-[70%] sm:w-[55%]",
+                "flex-shrink-0",
+                mobileItemClassName,
                 centerMobile ? "snap-center" : "snap-start"
               )}
             >

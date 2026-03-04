@@ -10,6 +10,7 @@ import MobileTabBar from "@/components/MobileTabBar";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
 import FeedbackButton from "@/components/FeedbackButton";
 import NavigationTimingTracker from "@/components/NavigationTimingTracker";
+import ThemeController from "@/components/ThemeController";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -58,6 +59,7 @@ export default function RootLayout({
           </aside>
 
           <MobileMenu />
+          <ThemeController />
           <BackNavigationHandler />
           <Suspense fallback={null}>
             <NavigationTimingTracker />

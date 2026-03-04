@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand palette: deep blue base + white accent */
+  /* Dark theme defaults */
   --background: #0b1220;
   --surface: #111a2b;
   --bg-sidebar: #071326;
@@ -15,11 +15,140 @@
   --accent: #ffffff;
   --accent-hover: #e5e7eb;
   --accent-soft: rgba(255, 255, 255, 0.2);
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --card-bg-hover: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.14);
+  --chip-bg: rgba(255, 255, 255, 0.08);
+  --chip-border: rgba(255, 255, 255, 0.22);
+  --chip-text: #d6deea;
+  --nav-bg: rgba(7, 19, 38, 0.96);
+  --nav-border: rgba(255, 255, 255, 0.12);
+  --nav-text: #e6eaf2;
+  --nav-text-muted: #9aa7bd;
+  --badge-beginner-bg: rgba(16, 185, 129, 0.22);
+  --badge-beginner-border: rgba(52, 211, 153, 0.45);
+  --badge-beginner-text: #9cf0ce;
+  --badge-intermediate-bg: rgba(245, 158, 11, 0.2);
+  --badge-intermediate-border: rgba(251, 191, 36, 0.42);
+  --badge-intermediate-text: #ffd68a;
+  --badge-advanced-bg: rgba(244, 63, 94, 0.18);
+  --badge-advanced-border: rgba(251, 113, 133, 0.4);
+  --badge-advanced-text: #fec3cf;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Explicit dark */
+:root[data-theme="dark"] {
+  --background: #0b1220;
+  --surface: #111a2b;
+  --bg-sidebar: #071326;
+  --bg-content: #0b1e36;
+  --bg-player: rgba(7, 16, 30, 0.94);
+  --player-border-top: rgba(255, 255, 255, 0.14);
+  --foreground: #e6eaf2;
+  --muted: #9aa7bd;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #ffffff;
+  --accent-hover: #e5e7eb;
+  --accent-soft: rgba(255, 255, 255, 0.2);
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --card-bg-hover: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.14);
+  --chip-bg: rgba(255, 255, 255, 0.08);
+  --chip-border: rgba(255, 255, 255, 0.22);
+  --chip-text: #d6deea;
+  --nav-bg: rgba(7, 19, 38, 0.96);
+  --nav-border: rgba(255, 255, 255, 0.12);
+  --nav-text: #e6eaf2;
+  --nav-text-muted: #9aa7bd;
+  --badge-beginner-bg: rgba(16, 185, 129, 0.22);
+  --badge-beginner-border: rgba(52, 211, 153, 0.45);
+  --badge-beginner-text: #9cf0ce;
+  --badge-intermediate-bg: rgba(245, 158, 11, 0.2);
+  --badge-intermediate-border: rgba(251, 191, 36, 0.42);
+  --badge-intermediate-text: #ffd68a;
+  --badge-advanced-bg: rgba(244, 63, 94, 0.18);
+  --badge-advanced-border: rgba(251, 113, 133, 0.4);
+  --badge-advanced-text: #fec3cf;
+}
+
+/* Explicit light */
+:root[data-theme="light"] {
+  --background: #eef3fb;
+  --surface: #f7f9fd;
+  --bg-sidebar: #e2ecfa;
+  --bg-content: #eef3fb;
+  --bg-player: rgba(238, 243, 251, 0.96);
+  --player-border-top: rgba(15, 23, 42, 0.16);
+  --foreground: #0f1d33;
+  --muted: #4d5c74;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #0f1d33;
+  --accent-hover: #334155;
+  --accent-soft: rgba(37, 99, 235, 0.2);
+  --card-bg: rgba(15, 29, 51, 0.06);
+  --card-bg-hover: rgba(15, 29, 51, 0.1);
+  --card-border: rgba(15, 29, 51, 0.14);
+  --chip-bg: rgba(15, 29, 51, 0.08);
+  --chip-border: rgba(15, 29, 51, 0.22);
+  --chip-text: #2f415d;
+  --nav-bg: rgba(226, 236, 250, 0.96);
+  --nav-border: rgba(15, 29, 51, 0.12);
+  --nav-text: #0f1d33;
+  --nav-text-muted: #4d5c74;
+  --badge-beginner-bg: rgba(16, 185, 129, 0.14);
+  --badge-beginner-border: rgba(5, 150, 105, 0.3);
+  --badge-beginner-text: #0f766e;
+  --badge-intermediate-bg: rgba(245, 158, 11, 0.14);
+  --badge-intermediate-border: rgba(217, 119, 6, 0.3);
+  --badge-intermediate-text: #9a5a00;
+  --badge-advanced-bg: rgba(244, 63, 94, 0.12);
+  --badge-advanced-border: rgba(225, 29, 72, 0.28);
+  --badge-advanced-text: #be123c;
+}
+
+/* System theme (when no explicit data-theme is set) */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --background: #eef3fb;
+    --surface: #f7f9fd;
+    --bg-sidebar: #e2ecfa;
+    --bg-content: #eef3fb;
+    --bg-player: rgba(238, 243, 251, 0.96);
+    --player-border-top: rgba(15, 23, 42, 0.16);
+    --foreground: #0f1d33;
+    --muted: #4d5c74;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --accent: #0f1d33;
+    --accent-hover: #334155;
+    --accent-soft: rgba(37, 99, 235, 0.2);
+    --card-bg: rgba(15, 29, 51, 0.06);
+    --card-bg-hover: rgba(15, 29, 51, 0.1);
+    --card-border: rgba(15, 29, 51, 0.14);
+    --chip-bg: rgba(15, 29, 51, 0.08);
+    --chip-border: rgba(15, 29, 51, 0.22);
+    --chip-text: #2f415d;
+    --nav-bg: rgba(226, 236, 250, 0.96);
+    --nav-border: rgba(15, 29, 51, 0.12);
+    --nav-text: #0f1d33;
+    --nav-text-muted: #4d5c74;
+    --badge-beginner-bg: rgba(16, 185, 129, 0.14);
+    --badge-beginner-border: rgba(5, 150, 105, 0.3);
+    --badge-beginner-text: #0f766e;
+    --badge-intermediate-bg: rgba(245, 158, 11, 0.14);
+    --badge-intermediate-border: rgba(217, 119, 6, 0.3);
+    --badge-intermediate-text: #9a5a00;
+    --badge-advanced-bg: rgba(244, 63, 94, 0.12);
+    --badge-advanced-border: rgba(225, 29, 72, 0.28);
+    --badge-advanced-text: #be123c;
+  }
 }
 
 body {
@@ -85,6 +214,29 @@ body {
   width: 0;
   height: 0;
   display: none;
+}
+
+/* Sidebar logo theme variants */
+.dp-logo-light {
+  display: none;
+}
+
+:root[data-theme="light"] .dp-logo-dark {
+  display: none;
+}
+
+:root[data-theme="light"] .dp-logo-light {
+  display: block;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .dp-logo-dark {
+    display: none;
+  }
+
+  :root:not([data-theme]) .dp-logo-light {
+    display: block;
+  }
 }
 
 /* Oculta scrollbars horizontales en carruseles */

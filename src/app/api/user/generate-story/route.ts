@@ -273,6 +273,34 @@ Return ONLY valid JSON:
   } catch (error: unknown) {
     console.error("💥 ERROR in /api/user/generate-story");
     console.error("Full error object:", JSON.stringify(error, null, 2));
+    const maybe = error as {
+      code?: string;
+      type?: string;
+      status?: number;
+      message?: string;
+      error?: { code?: string; message?: string; type?: string };
+    };
+    const code = maybe?.code ?? maybe?.error?.code;
+    const type = maybe?.type ?? maybe?.error?.type;
+
+    if (code === "insufficient_quota" || type === "insufficient_quota") {
+      return NextResponse.json(
+        {
+          error: "Story generation is temporarily unavailable. Please try again shortly.",
+        },
+        { status: 429 }
+      );
+    }
+
+    if (maybe?.status === 429) {
+      return NextResponse.json(
+        {
+          error: "Story generation is temporarily unavailable. Please try again shortly.",
+        },
+        { status: 429 }
+      );
+    }
+
     return NextResponse.json(
       { error: "Failed to generate story", details: error instanceof Error ? error.message : "Unknown error" },
       { status: 500 }

@@ -133,9 +133,11 @@ function clampProgress(progressSec?: number, audioDurationSec?: number): number 
 function computeFromContinueRows(rows: ContinueRow[], weekStart: Date) {
   const progressByStory = new Map<string, number>();
   const completedStories = new Set<string>();
+  const activeDayKeys = new Set<string>();
   let weeklySeconds = 0;
 
   for (const row of rows) {
+    activeDayKeys.add(toUtcDayKey(row.updatedAt));
     const key = storyKey(row.bookSlug, row.storySlug);
     const progress = clampProgress(row.progressSec ?? undefined, row.audioDurationSec ?? undefined);
     const current = progressByStory.get(key) ?? 0;
@@ -149,7 +151,7 @@ function computeFromContinueRows(rows: ContinueRow[], weekStart: Date) {
   }
 
   const totalSeconds = [...progressByStory.values()].reduce((sum, v) => sum + v, 0);
-  return { totalSeconds, weeklySeconds, completedStories };
+  return { totalSeconds, weeklySeconds, completedStories, activeDayKeys };
 }
 
 function computeFromMetrics(rows: MetricRow[], weekStart: Date) {
@@ -254,20 +256,26 @@ export async function GET(req: NextRequest): Promise<Response> {
       ),
     ]);
 
-    const hasContinueRows = continueRows.length > 0;
     const metricsComputed = computeFromMetrics(metrics, weekStart);
     const continueComputed = computeFromContinueRows(continueRows, weekStart);
 
-    const totalListeningSec = hasContinueRows
-      ? continueComputed.totalSeconds
-      : metricsComputed.totalSeconds;
-    const weeklyListeningSec = hasContinueRows
-      ? Math.max(0, Math.min(continueComputed.weeklySeconds, continueComputed.totalSeconds))
-      : metricsComputed.weeklySeconds;
-    const completedStories = hasContinueRows
-      ? continueComputed.completedStories
-      : metricsComputed.completedStories;
-    const activeDayKeys = metricsComputed.activeDayKeys;
+    // Merge both sources so progress remains stable even if one source is temporarily sparse.
+    const totalListeningSec = Math.max(
+      metricsComputed.totalSeconds,
+      continueComputed.totalSeconds
+    );
+    const weeklyListeningSec = Math.max(
+      metricsComputed.weeklySeconds,
+      Math.max(0, Math.min(continueComputed.weeklySeconds, continueComputed.totalSeconds))
+    );
+    const completedStories = new Set<string>([
+      ...metricsComputed.completedStories,
+      ...continueComputed.completedStories,
+    ]);
+    const activeDayKeys = new Set<string>([
+      ...metricsComputed.activeDayKeys,
+      ...continueComputed.activeDayKeys,
+    ]);
 
     const bookById = new Map(Object.values(books).map((b) => [b.id, b] as const));
     let finishedBooks = 0;

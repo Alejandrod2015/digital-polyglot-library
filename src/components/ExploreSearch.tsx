@@ -322,8 +322,8 @@ export default function ExploreSearch({
   return (
     <div ref={rootRef} className={className}>
       <div className="relative">
-        <div className="flex items-center gap-3 rounded-2xl bg-white/5 border border-white/10 px-4 py-3 shadow-sm focus-within:border-white/25 focus-within:bg-white/7">
-          <span aria-hidden="true" className="text-white/60">
+        <div className="flex items-center gap-3 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] px-4 py-3 shadow-sm focus-within:border-[var(--chip-border)] focus-within:bg-[var(--card-bg-hover)]">
+          <span aria-hidden="true" className="text-[var(--muted)]">
             {/* magnifier */}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path
@@ -349,7 +349,7 @@ export default function ExploreSearch({
               if (query.trim().length >= 2 && suggestions.length > 0) setOpen(true);
             }}
             placeholder="Search"
-            className="w-full bg-transparent outline-none text-white placeholder:text-white/40"
+            className="w-full bg-transparent outline-none text-[var(--foreground)] placeholder:text-[var(--muted)]"
             autoComplete="off"
             spellCheck={false}
           />
@@ -362,17 +362,17 @@ export default function ExploreSearch({
               setActiveIndex(-1);
               inputRef.current?.focus();
             }}
-            className="text-xs text-white/60 hover:text-white/90 px-2 py-1 rounded-lg hover:bg-white/10"
+            className="text-xs text-[var(--muted)] hover:text-[var(--foreground)] px-2 py-1 rounded-lg hover:bg-[var(--card-bg-hover)]"
             aria-label="Clear search"
           >
             Clear
           </button>
         </div>
 
-        <p className="mt-2 text-xs text-white/45">{hint}</p>
+        <p className="mt-2 text-xs text-[var(--muted)]">{hint}</p>
 
         {open ? (
-          <div className="absolute z-50 mt-3 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0b0f19]/95 backdrop-blur shadow-2xl">
+          <div className="absolute z-50 mt-3 w-full overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--nav-bg)] backdrop-blur shadow-2xl">
             <div className="max-h-[420px] overflow-auto">
               {suggestions.map((s, idx) => {
                 const isActive = idx === activeIndex;
@@ -389,7 +389,7 @@ export default function ExploreSearch({
                     href={s.href}
                     className={[
                       "flex items-center gap-4 px-4 py-3 transition-colors",
-                      isActive ? "bg-white/10" : "hover:bg-white/5",
+                      isActive ? "bg-[var(--card-bg-hover)]" : "hover:bg-[var(--card-bg)]",
                     ].join(" ")}
                     onMouseEnter={() => setActiveIndex(idx)}
                     onClick={() => {
@@ -397,7 +397,7 @@ export default function ExploreSearch({
                       setActiveIndex(-1);
                     }}
                   >
-                    <div className="h-12 w-12 rounded-xl overflow-hidden bg-white/5 flex-none">
+                    <div className="h-12 w-12 rounded-xl overflow-hidden bg-[var(--card-bg)] flex-none">
                       <img
                         src={s.coverUrl}
                         alt={s.title}
@@ -407,15 +407,15 @@ export default function ExploreSearch({
 
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <p className="text-sm font-semibold text-white truncate">{s.title}</p>
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-white/70 flex-none">
+                        <p className="text-sm font-semibold text-[var(--foreground)] truncate">{s.title}</p>
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--chip-bg)] text-[var(--chip-text)] border border-[var(--chip-border)] flex-none">
                           {badge}
                         </span>
                       </div>
-                      <p className="text-xs text-white/55 truncate">{s.subtitle}</p>
+                      <p className="text-xs text-[var(--muted)] truncate">{s.subtitle}</p>
                     </div>
 
-                    <span aria-hidden="true" className="text-white/35">
+                    <span aria-hidden="true" className="text-[var(--muted)]">
                       {/* arrow */}
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                         <path
@@ -432,7 +432,7 @@ export default function ExploreSearch({
               })}
             </div>
 
-            <div className="px-4 py-3 border-t border-white/10 text-xs text-white/45">
+            <div className="px-4 py-3 border-t border-[var(--card-border)] text-xs text-[var(--muted)]">
               Tip: use ↑ ↓ and Enter
             </div>
           </div>

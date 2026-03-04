@@ -53,7 +53,7 @@ export default function MobileTabBar() {
       ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-white/10 bg-[var(--bg-sidebar)]/95 backdrop-blur">
+    <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur">
       <ul className="grid grid-cols-5">
         {tabs.map((tab) => {
           const active =
@@ -67,7 +67,7 @@ export default function MobileTabBar() {
               <Link
                 href={tab.href}
                 className={`flex flex-col items-center justify-center py-2.5 text-[11px] transition-colors ${
-                  active ? "text-white" : "text-gray-400 hover:text-gray-200"
+                  active ? "text-[var(--nav-text)]" : "text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                 }`}
               >
                 <Icon size={20} strokeWidth={active ? 2.4 : 2} />
