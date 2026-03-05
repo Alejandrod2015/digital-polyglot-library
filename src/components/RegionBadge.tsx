@@ -1,14 +1,14 @@
 "use client";
 
-import { formatLanguageCode } from "@/lib/displayFormat";
+import { toTitleCase } from "@/lib/displayFormat";
 
-type LanguageBadgeProps = {
-  language?: string;
+type RegionBadgeProps = {
+  region?: string | null;
   className?: string;
 };
 
-export default function LanguageBadge({ language, className = "" }: LanguageBadgeProps) {
-  const label = formatLanguageCode(language);
+export default function RegionBadge({ region, className = "" }: RegionBadgeProps) {
+  const label = toTitleCase(region ?? undefined);
   if (label === "—") return null;
 
   return (

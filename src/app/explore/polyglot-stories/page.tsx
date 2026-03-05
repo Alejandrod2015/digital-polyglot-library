@@ -43,6 +43,7 @@ export default async function ExplorePolyglotStoriesPage({
     slug: s.slug,
     title: s.title ?? "Untitled story",
     language: s.language ?? "",
+    region: s.region ?? "",
     level: s.level ?? "",
     topic: s.topic ?? "",
     text: s.text ?? "",
@@ -77,6 +78,7 @@ export default async function ExplorePolyglotStoriesPage({
               coverUrl={story.coverUrl}
               level={story.level}
               language={story.language}
+              region={story.region}
               excerpt={`${stripHtml(story.text).slice(0, 140)}...`}
             />
           ))}

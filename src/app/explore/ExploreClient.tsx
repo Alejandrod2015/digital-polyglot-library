@@ -7,6 +7,7 @@ import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
+import RegionBadge from "@/components/RegionBadge";
 import { useUser } from "@clerk/nextjs";
 import { useEffect, useMemo, useState } from "react";
 import ExploreSearch from "@/components/ExploreSearch";
@@ -27,6 +28,7 @@ type UserStory = {
   slug: string;
   title: string;
   language: string;
+  region?: string;
   level: string;
   topic?: string;
   text: string;
@@ -44,6 +46,7 @@ type BookStoryItem = {
   storySlug: string;
   storyTitle: string;
   language: string;
+  region?: string;
   level: string;
   coverUrl: string;
   topics: string[];
@@ -135,6 +138,7 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
     const bookSlug = getString(b, "slug");
     const bookTitle = getString(b, "title") ?? "";
     const language = getString(b, "language") ?? "";
+    const region = getString(b, "region") ?? "";
     const level = getString(b, "level") ?? "";
     const bookCover = normalizeCoverUrl(getString(b, "cover"));
     const bookTopics = extractBookTopics(b);
@@ -146,6 +150,9 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
 
       const storySlug = getString(story, "slug");
       const storyTitle = getString(story, "title") ?? "";
+      const storyLanguage = getString(story, "language") ?? language;
+      const storyRegion = getString(story, "region") ?? region;
+      const storyLevel = getString(story, "level") ?? level;
       const storyCover = normalizeCoverUrl(getString(story, "cover"));
       const coverUrl = storyCover !== "/covers/default.jpg" ? storyCover : bookCover;
       const storyTopics = toTopicList([
@@ -163,8 +170,9 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
         bookTitle,
         storySlug,
         storyTitle,
-        language,
-        level,
+        language: storyLanguage,
+        region: storyRegion || undefined,
+        level: storyLevel,
         coverUrl,
         topics,
       });
@@ -585,7 +593,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       />
                     </div>
 
-                    <div className="p-5 flex flex-col justify-between flex-1 text-left">
+                    <div className="p-5 flex flex-col flex-1 text-left">
                       <div>
                         <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                           {s.storyTitle || "Untitled story"}
@@ -595,9 +603,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                         </p>
                       </div>
 
-                      <div className="mt-3 flex items-center gap-2">
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
                         <LevelBadge level={s.level} />
                         <LanguageBadge language={s.language} />
+                        <RegionBadge region={s.region} />
                       </div>
                       <p className="text-sm text-[var(--muted)]">
                         {formatAudioDuration(storyDurations[`${s.bookSlug}:${s.storySlug}`])} ·{" "}
@@ -648,6 +657,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       cover={cover}
                       level={getString(bookUnknown, "level") ?? undefined}
                       language={getString(bookUnknown, "language") ?? undefined}
+                      region={getString(bookUnknown, "region") ?? undefined}
                       statsLine={bookMetaBySlug.get(slug)?.statsLine}
                       topicsLine={bookMetaBySlug.get(slug)?.topicsLine}
                       description={description}
@@ -675,6 +685,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       cover={cover}
                       level={getString(bookUnknown, "level") ?? undefined}
                       language={getString(bookUnknown, "language") ?? undefined}
+                      region={getString(bookUnknown, "region") ?? undefined}
                       statsLine={bookMetaBySlug.get(slug)?.statsLine}
                       topicsLine={bookMetaBySlug.get(slug)?.topicsLine}
                       description={description}
@@ -727,7 +738,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       />
                     </div>
 
-                    <div className="p-5 flex flex-col justify-between flex-1 text-left">
+                    <div className="p-5 flex flex-col flex-1 text-left">
                       <div>
                         <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)]">{story.title}</h3>
                         <p className="text-[var(--muted)] text-sm leading-relaxed line-clamp-3">
@@ -735,9 +746,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                         </p>
                       </div>
 
-                      <div className="mt-3 flex items-center gap-2">
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
                         <LevelBadge level={story.level} />
                         <LanguageBadge language={story.language} />
+                        <RegionBadge region={story.region} />
                       </div>
                     </div>
                   </Link>

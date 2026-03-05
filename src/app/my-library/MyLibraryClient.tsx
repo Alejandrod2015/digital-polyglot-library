@@ -28,6 +28,7 @@ type LibraryStory = {
  coverUrl: string;
  storySlug?: string;
  language?: string;
+ region?: string;
  level?: string;
  topic?: string;
  audioUrl?: string | null;
@@ -38,6 +39,7 @@ type BookCarouselItem = {
  slug: string;
  title: string;
  language?: string;
+ region?: string;
  level?: string;
  cover?: string;
  description?: string;
@@ -55,6 +57,7 @@ type StoryItem = {
  title: string;
  bookTitle: string;
  language: string;
+ region?: string;
  level: string;
  topic?: string;
  coverUrl?: string;
@@ -190,6 +193,7 @@ export default function MyLibraryClient() {
        title: meta.title,
        language:
          typeof meta.language === "string" ? formatLanguage(meta.language) : undefined,
+       region: typeof meta.region === "string" ? meta.region : undefined,
        level:
          typeof meta.level === "string" ? formatLevel(meta.level) : undefined,
        cover: meta.cover,
@@ -224,6 +228,7 @@ export default function MyLibraryClient() {
          title: item.title,
          bookTitle: "Polyglot Stories",
          language: formatLanguage(item.language),
+         region: item.region,
          level: formatLevel(item.level),
          topic: item.topic,
          coverUrl:
@@ -269,6 +274,10 @@ export default function MyLibraryClient() {
          typeof storyMeta.language === "string"
            ? formatLanguage(storyMeta.language)
            : formatLanguage(bookMeta.language),
+       region:
+         typeof storyMeta.region === "string" && storyMeta.region.trim() !== ""
+           ? storyMeta.region
+           : bookMeta.region,
        level:
          typeof storyMeta.level === "string"
            ? formatLevel(storyMeta.level)
@@ -453,6 +462,7 @@ export default function MyLibraryClient() {
                        cover={book.cover}
                        level={book.level}
                        language={book.language}
+                       region={book.region}
                        statsLine={book.statsLine}
                        topicsLine={book.topicsLine}
                        description={book.description}
@@ -481,6 +491,7 @@ export default function MyLibraryClient() {
                        cover={book.cover}
                        level={book.level}
                        language={book.language}
+                       region={book.region}
                        statsLine={book.statsLine}
                        topicsLine={book.topicsLine}
                        description={book.description}
@@ -528,6 +539,7 @@ export default function MyLibraryClient() {
                    subtitle={story.bookTitle}
                    level={story.level}
                    language={story.language}
+                   region={story.region}
                    metaSecondary={`${formatAudioDuration(
                      storyDurations[`${story.bookSlug}:${story.storySlug}`]
                    )} · ${formatTopic(story.topic)}`}

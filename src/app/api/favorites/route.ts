@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { unstable_cache, revalidateTag } from "next/cache";
 import { PrismaClient } from "@/generated/prisma";
 import { normalizeVocabType } from "@/lib/vocabTypes";
+import { books } from "@/data/books";
 
 declare global {
   // eslint-disable-next-line no-var
@@ -12,6 +13,37 @@ declare global {
 }
 const prisma = globalThis.__prisma__ ?? new PrismaClient();
 if (process.env.NODE_ENV !== "production") globalThis.__prisma__ = prisma;
+
+const bookLanguageBySlug = new Map<string, string>();
+const storyLanguageBySlug = new Map<string, string>();
+for (const book of Object.values(books)) {
+  const lang = typeof book.language === "string" ? book.language.trim() : "";
+  if (!lang) continue;
+  if (typeof book.slug === "string" && book.slug.trim()) {
+    bookLanguageBySlug.set(book.slug.trim().toLowerCase(), lang);
+  }
+  for (const story of book.stories ?? []) {
+    if (typeof story.slug === "string" && story.slug.trim()) {
+      storyLanguageBySlug.set(story.slug.trim().toLowerCase(), lang);
+    }
+  }
+}
+
+function inferLanguageFromSourcePath(sourcePath?: string | null): string | null {
+  if (!sourcePath || typeof sourcePath !== "string") return null;
+  const raw = sourcePath.trim();
+  if (!raw) return null;
+  try {
+    const path = raw.startsWith("http") ? new URL(raw).pathname : raw;
+    const parts = path.split("/").filter(Boolean);
+    if (parts[0] === "books" && parts[1]) {
+      return bookLanguageBySlug.get(parts[1].toLowerCase()) ?? null;
+    }
+  } catch {
+    // ignore malformed path
+  }
+  return null;
+}
 
 type FavoriteBody = {
   word: string;
@@ -76,14 +108,63 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   try {
     const favorites = await getFavoritesCached(userId);
-    const normalized = favorites.map((fav) => ({
-      ...fav,
-      wordType:
-        normalizeVocabType(fav.wordType, {
-          word: fav.word,
-          definition: fav.translation,
-        }) ?? null,
-    }));
+    const missingLanguageStorySlugs = Array.from(
+      new Set(
+        favorites
+          .filter((fav) => !(typeof fav.language === "string" && fav.language.trim()))
+          .map((fav) => (typeof fav.storySlug === "string" ? fav.storySlug.trim().toLowerCase() : ""))
+          .filter(Boolean)
+      )
+    );
+
+    const userStoriesBySlug = new Map<string, string>();
+    if (missingLanguageStorySlugs.length > 0) {
+      const userStories = await prisma.userStory.findMany({
+        where: { slug: { in: missingLanguageStorySlugs } },
+        select: { slug: true, language: true },
+      });
+      for (const story of userStories) {
+        if (typeof story.slug === "string" && typeof story.language === "string" && story.language.trim()) {
+          userStoriesBySlug.set(story.slug.trim().toLowerCase(), story.language);
+        }
+      }
+    }
+
+    const backfillOps: Array<Promise<unknown>> = [];
+    const normalized = favorites.map((fav) => {
+      const currentLanguage = typeof fav.language === "string" ? fav.language.trim() : "";
+      const inferredLanguage =
+        currentLanguage ||
+        (typeof fav.storySlug === "string" ? storyLanguageBySlug.get(fav.storySlug.trim().toLowerCase()) ?? "" : "") ||
+        (typeof fav.storySlug === "string" ? userStoriesBySlug.get(fav.storySlug.trim().toLowerCase()) ?? "" : "") ||
+        inferLanguageFromSourcePath(fav.sourcePath) ||
+        "";
+
+      if (!currentLanguage && inferredLanguage) {
+        backfillOps.push(
+          prisma.favorite.update({
+            where: { id: fav.id },
+            data: { language: inferredLanguage },
+          })
+        );
+      }
+
+      return {
+        ...fav,
+        language: inferredLanguage || null,
+        wordType:
+          normalizeVocabType(fav.wordType, {
+            word: fav.word,
+            definition: fav.translation,
+          }) ?? null,
+      };
+    });
+
+    if (backfillOps.length > 0) {
+      await Promise.allSettled(backfillOps);
+      revalidateTag("favorites-by-user");
+    }
+
     return NextResponse.json(normalized);
   } catch (err: unknown) {
     console.error("❌ Error en GET /api/favorites:", err);

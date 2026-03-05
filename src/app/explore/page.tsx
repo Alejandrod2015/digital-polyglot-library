@@ -11,6 +11,7 @@ export default async function ExplorePage() {
     slug: s.slug,
     title: s.title ?? "",
     language: s.language ?? "",
+    region: s.region ?? "",
     level: s.level ?? "",
     topic: s.topic ?? "",
     text: s.text ?? "",

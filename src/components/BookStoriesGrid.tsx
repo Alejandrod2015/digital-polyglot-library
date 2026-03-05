@@ -6,6 +6,7 @@ import { type Book, type Story } from "@/types/books";
 import { formatTopic } from "@/lib/displayFormat";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
+import RegionBadge from "@/components/RegionBadge";
 
 type ContinueLocalItem = {
   bookSlug: string;
@@ -151,6 +152,7 @@ export default function BookStoriesGrid({
               : "/covers/default.jpg";
 
         const storyLanguage = story.language ?? book.language;
+        const storyRegion = story.region ?? book.region;
         const storyLevel = story.level ?? book.level;
         const storyTopic = story.topic ?? book.topic;
         const readMinutes = estimateReadMinutes(story.text ?? "");
@@ -189,9 +191,10 @@ export default function BookStoriesGrid({
             </div>
 
             <div className="p-3">
-              <div className="mb-2 flex items-center gap-2">
+              <div className="mb-2 flex flex-wrap items-center gap-2">
                 <LevelBadge level={storyLevel} />
                 <LanguageBadge language={storyLanguage} />
+                <RegionBadge region={storyRegion} />
               </div>
               <h3 className="font-semibold text-base leading-snug line-clamp-2">{story.title}</h3>
               <p className="mt-1 text-xs text-gray-400 line-clamp-1">{excerpt}</p>

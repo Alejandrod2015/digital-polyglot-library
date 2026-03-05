@@ -5,6 +5,7 @@ import Cover from "@/components/Cover";
 import type { ReactNode } from "react";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
+import RegionBadge from "@/components/RegionBadge";
 
 function stripHtml(input?: string): string {
   return (input ?? "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
@@ -21,6 +22,7 @@ type BookHorizontalCardProps = {
   title: string;
   cover?: string;
   language?: string;
+  region?: string;
   meta?: string;
   statsLine?: string;
   topicsLine?: string;
@@ -34,6 +36,7 @@ export default function BookHorizontalCard({
   title,
   cover,
   language,
+  region,
   meta,
   statsLine,
   topicsLine,
@@ -53,9 +56,10 @@ export default function BookHorizontalCard({
         </div>
 
         <div className="flex flex-col justify-start text-left flex-1 text-[var(--foreground)] min-w-0">
-          <div className="mb-1 md:mb-2 flex items-center gap-2">
+          <div className="mb-1 md:mb-2 flex flex-wrap items-center gap-2">
             <LevelBadge level={level} />
             <LanguageBadge language={language} />
+            <RegionBadge region={region} />
           </div>
           <p className="font-semibold text-[1.05rem] leading-tight mb-1.5 md:mb-2 line-clamp-3 md:line-clamp-2">
             {title}

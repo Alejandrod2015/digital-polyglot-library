@@ -88,6 +88,7 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
                 cover={cover}
                 level={book.level}
                 language={book.language}
+                region={book.region}
                 statsLine={getBookCardMeta(book).statsLine}
                 topicsLine={getBookCardMeta(book).topicsLine}
                 description={book.description}

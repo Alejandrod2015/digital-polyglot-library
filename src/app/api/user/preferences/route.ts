@@ -19,9 +19,31 @@ const ALLOWED_LANGUAGES = new Set([
   "Chinese",
 ]);
 const MAX_SELECTION = 3;
+const MAX_INTERESTS = 12;
 
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((v) => typeof v === "string");
+}
+
+function normalizeInterests(interests: string[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const raw of interests) {
+    const cleaned = raw.trim().replace(/\s+/g, " ");
+    if (!cleaned) continue;
+    const key = cleaned.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(cleaned);
+    if (out.length >= MAX_INTERESTS) break;
+  }
+  return out;
+}
+
+function sameSet(a: string[], b: string[]): boolean {
+  if (a.length !== b.length) return false;
+  const bSet = new Set(b);
+  return a.every((item) => bSet.has(item));
 }
 
 function normalize(langs: string[]): string[] {
@@ -57,22 +79,45 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
+    const hasTargetLanguages = Object.prototype.hasOwnProperty.call(body ?? {}, "targetLanguages");
+    const hasInterests = Object.prototype.hasOwnProperty.call(body ?? {}, "interests");
     const targetLanguages = body?.targetLanguages;
-    if (!isStringArray(targetLanguages)) {
+    const interests = body?.interests;
+
+    if (hasTargetLanguages && !isStringArray(targetLanguages)) {
       return NextResponse.json(
         { error: "Invalid targetLanguages: expected string[]" },
         { status: 400 }
       );
     }
-
-    const normalized = normalize(targetLanguages);
+    if (hasInterests && !isStringArray(interests)) {
+      return NextResponse.json(
+        { error: "Invalid interests: expected string[]" },
+        { status: 400 }
+      );
+    }
 
     // 1) Leer metadatos actuales
     const user = await clerkClient.users.getUser(userId);
     const existing =
       (user.publicMetadata as Record<string, unknown>) ?? {};
+    const existingTargetLanguages = isStringArray(existing.targetLanguages)
+      ? normalize(existing.targetLanguages)
+      : [];
+    const existingInterests = isStringArray(existing.interests)
+      ? normalizeInterests(existing.interests)
+      : [];
+
+    const normalizedTargetLanguages = hasTargetLanguages
+      ? normalize(targetLanguages)
+      : existingTargetLanguages;
+    const normalizedInterests = hasInterests
+      ? normalizeInterests(interests)
+      : existingInterests;
+
     const plan = (existing.plan as string | undefined) ?? "free";
-    if (plan === "free") {
+    const targetLanguagesChanged = !sameSet(normalizedTargetLanguages, existingTargetLanguages);
+    if (plan === "free" && targetLanguagesChanged) {
       return NextResponse.json(
         { error: "Upgrade required to update language preferences" },
         { status: 403 }
@@ -82,7 +127,8 @@ export async function POST(req: Request) {
     // 2) Escribir: fusionar pero sobrescribir targetLanguages con normalized
     const updatedMetadata = {
       ...existing,
-      targetLanguages: normalized,
+      targetLanguages: normalizedTargetLanguages,
+      interests: normalizedInterests,
     };
 
     await clerkClient.users.updateUserMetadata(userId, {
@@ -96,8 +142,11 @@ export async function POST(req: Request) {
     const finalTL = Array.isArray(finalMeta.targetLanguages)
       ? finalMeta.targetLanguages.filter((x): x is string => typeof x === "string")
       : [];
+    const finalInterests = Array.isArray(finalMeta.interests)
+      ? finalMeta.interests.filter((x): x is string => typeof x === "string")
+      : [];
 
-    return new NextResponse(JSON.stringify({ targetLanguages: finalTL }), {
+    return new NextResponse(JSON.stringify({ targetLanguages: finalTL, interests: finalInterests }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",

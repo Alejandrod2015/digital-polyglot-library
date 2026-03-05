@@ -8,6 +8,7 @@ import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
+import RegionBadge from "@/components/RegionBadge";
 import { books } from "@/data/books";
 import { formatTopic } from "@/lib/displayFormat";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
@@ -16,6 +17,7 @@ type LatestBook = {
   slug: string;
   title: string;
   language?: string;
+  region?: string;
   level?: string;
   cover?: string;
   description?: string;
@@ -27,6 +29,7 @@ type LatestStory = {
   storySlug: string;
   storyTitle: string;
   language?: string;
+  region?: string;
   level?: string;
   coverUrl: string;
 };
@@ -35,6 +38,7 @@ type LatestPolyglotStory = {
   slug: string;
   title: string;
   language?: string;
+  region?: string;
   level?: string;
   text?: string;
   coverUrl?: string;
@@ -47,6 +51,7 @@ type ContinueItem = {
   bookTitle: string;
   cover: string;
   language?: string;
+  region?: string;
   level?: string;
   topic?: string;
   readMinutes?: number;
@@ -71,6 +76,9 @@ type ContinueListeningApiItem = {
 type FavoriteSignalItem = {
   word: string;
   language?: string;
+  wordType?: string;
+  nextReviewAt?: string | null;
+  streak?: number;
 };
 
 type RecommendedStoryItem = {
@@ -83,6 +91,7 @@ type RecommendedStoryItem = {
   bookTitle: string;
   coverUrl: string;
   language?: string;
+  region?: string;
   level?: string;
   topic?: string;
   audioSrc?: string;
@@ -99,6 +108,7 @@ type Props = {
   featuredDaySlug: string | null;
   initialPlan: string;
   initialTargetLanguages: string[];
+  initialInterests: string[];
   initialContinueListening: Array<{
     bookSlug: string;
     storySlug: string;
@@ -118,6 +128,21 @@ function isStringArray(v: unknown): v is string[] {
 
 function normalizeKey(value?: string): string {
   return (value ?? "").toLowerCase().trim();
+}
+
+function normalizeForMatch(value?: string): string {
+  return (value ?? "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function tokenizeForMatch(value?: string): Set<string> {
+  const normalized = normalizeForMatch(value);
+  if (!normalized) return new Set();
+  const tokens = normalized.split(/[^\p{L}\p{N}]+/u).filter((token) => token.length >= 2);
+  return new Set(tokens);
 }
 
 function stripHtml(input: string): string {
@@ -179,6 +204,7 @@ export default function HomeClient({
   featuredDaySlug,
   initialPlan,
   initialTargetLanguages,
+  initialInterests,
   initialContinueListening,
   continueLoadedOnServer,
 }: Props) {
@@ -209,6 +235,7 @@ export default function HomeClient({
           bookTitle: bookMeta.title,
           cover,
           language: storyMeta.language ?? bookMeta.language,
+          region: storyMeta.region ?? bookMeta.region,
           level: storyMeta.level ?? bookMeta.level,
           topic: storyMeta.topic ?? bookMeta.topic,
           readMinutes: estimateReadMinutes(storyMeta.text ?? ""),
@@ -263,6 +290,7 @@ export default function HomeClient({
       bookTitle: bookMeta.title,
       cover,
       language: storyMeta.language ?? bookMeta.language,
+      region: storyMeta.region ?? bookMeta.region,
       level: storyMeta.level ?? bookMeta.level,
       topic: storyMeta.topic ?? bookMeta.topic,
       readMinutes: estimateReadMinutes(storyMeta.text ?? ""),
@@ -303,6 +331,10 @@ export default function HomeClient({
                   typeof r.language === "string"
                     ? r.language
                     : storyMeta?.language ?? bookMeta?.language;
+                const region =
+                  typeof r.region === "string"
+                    ? r.region
+                    : storyMeta?.region ?? bookMeta?.region;
                 const level =
                   typeof r.level === "string" ? r.level : storyMeta?.level ?? bookMeta?.level;
                 const topic =
@@ -327,6 +359,7 @@ export default function HomeClient({
                   bookTitle: r.bookTitle,
                   cover: r.cover,
                   language,
+                  region,
                   level,
                   topic,
                   readMinutes,
@@ -589,6 +622,12 @@ export default function HomeClient({
                 return {
                   word: record.word,
                   language: typeof record.language === "string" ? record.language : undefined,
+                  wordType: typeof record.wordType === "string" ? record.wordType : undefined,
+                  nextReviewAt:
+                    typeof record.nextReviewAt === "string" || record.nextReviewAt === null
+                      ? (record.nextReviewAt as string | null)
+                      : undefined,
+                  streak: typeof record.streak === "number" ? record.streak : undefined,
                 };
               })
               .filter((item): item is FavoriteSignalItem => item !== null);
@@ -659,12 +698,23 @@ export default function HomeClient({
   const targetLanguagesUnknown = isLoaded
     ? (user?.publicMetadata?.targetLanguages as unknown)
     : (initialTargetLanguages as unknown);
+  const interestsUnknown = isLoaded
+    ? (user?.publicMetadata?.interests as unknown)
+    : (initialInterests as unknown);
 
   const languageFilter = useMemo(() => {
     if (!isStringArray(targetLanguagesUnknown) || targetLanguagesUnknown.length === 0)
       return null;
     return new Set(targetLanguagesUnknown.map((l) => l.toLowerCase()));
   }, [targetLanguagesUnknown]);
+  const interestFilter = useMemo(() => {
+    if (!isStringArray(interestsUnknown) || interestsUnknown.length === 0) return null;
+    const normalized = interestsUnknown
+      .map((item) => normalizeForMatch(item))
+      .filter((item) => item.length >= 2);
+    if (normalized.length === 0) return null;
+    return new Set(normalized);
+  }, [interestsUnknown]);
 
   const filteredBooks = useMemo(() => {
     if (!languageFilter) return latestBooks;
@@ -723,10 +773,12 @@ export default function HomeClient({
     }
 
     const preferredLevelSet = new Set<string>();
+    const preferredRegionSet = new Set<string>();
     const topicWeights = new Map<string, number>();
 
     for (const entry of continueListening) {
       if (entry.level) preferredLevelSet.add(normalizeKey(entry.level));
+      if (entry.region) preferredRegionSet.add(normalizeKey(entry.region));
       if (entry.topic) {
         const key = normalizeKey(entry.topic);
         topicWeights.set(key, (topicWeights.get(key) ?? 0) + 2);
@@ -736,22 +788,43 @@ export default function HomeClient({
     for (const bookMeta of Object.values(books)) {
       if (!savedBookIds.has(bookMeta.id) && !savedBookIds.has(bookMeta.slug)) continue;
       if (bookMeta.level) preferredLevelSet.add(normalizeKey(bookMeta.level));
+      if (bookMeta.region) preferredRegionSet.add(normalizeKey(bookMeta.region));
       if (bookMeta.topic) {
         const key = normalizeKey(bookMeta.topic);
         topicWeights.set(key, (topicWeights.get(key) ?? 0) + 2);
       }
     }
 
-    for (const favorite of favoriteSignals) {
-      const key = normalizeKey(favorite.word);
-      if (key.length < 3) continue;
-      topicWeights.set(key, (topicWeights.get(key) ?? 0) + 1);
-    }
+    const now = Date.now();
+    const favoriteProfiles = favoriteSignals
+      .map((favorite) => {
+        const wordRaw = typeof favorite.word === "string" ? favorite.word.trim() : "";
+        if (!wordRaw) return null;
+        const normalizedWord = normalizeForMatch(wordRaw);
+        if (normalizedWord.length < 3) return null;
+        const isExpression = /\s|-/.test(normalizedWord);
+        const dueAt =
+          typeof favorite.nextReviewAt === "string" ? Date.parse(favorite.nextReviewAt) : Number.NaN;
+        const isDue = Number.isFinite(dueAt) && dueAt <= now;
+        const streak = typeof favorite.streak === "number" && Number.isFinite(favorite.streak)
+          ? favorite.streak
+          : 0;
+        const difficultyBoost = favorite.wordType === "expression" ? 2 : 1;
+        return {
+          word: normalizedWord,
+          language: normalizeForMatch(favorite.language),
+          isExpression,
+          isDue,
+          streak,
+          difficultyBoost,
+        };
+      })
+      .filter((item): item is NonNullable<typeof item> => item !== null)
+      .slice(0, 120);
 
-    const favoriteWords = favoriteSignals
-      .map((f) => normalizeKey(f.word))
-      .filter((w) => w.length >= 4)
-      .slice(0, 40);
+    for (const favorite of favoriteProfiles) {
+      topicWeights.set(favorite.word, (topicWeights.get(favorite.word) ?? 0) + favorite.difficultyBoost);
+    }
 
     const candidates: RecommendedStoryItem[] = [];
 
@@ -768,9 +841,11 @@ export default function HomeClient({
         if (storySaved || alreadyRead || inContinue) continue;
 
         const language = story.language ?? bookMeta.language;
+        const region = story.region ?? bookMeta.region;
         const level = story.level ?? bookMeta.level;
         const topic = story.topic ?? bookMeta.topic;
-        const text = stripHtml(story.text ?? "").toLowerCase();
+        const normalizedText = normalizeForMatch(stripHtml(story.text ?? ""));
+        const textTokens = tokenizeForMatch(story.text ?? "");
         const coverUrl =
           typeof story.cover === "string" && story.cover.trim() !== ""
             ? story.cover
@@ -799,6 +874,31 @@ export default function HomeClient({
           score += 5;
           if (reason === "Picked for your profile") reason = "Matches your current level";
         }
+        if (region && preferredRegionSet.has(normalizeKey(region))) {
+          score += 4;
+          if (reason === "Picked for your profile") reason = "Matches your region focus";
+        }
+        if (interestFilter && interestFilter.size > 0) {
+          const topicKey = normalizeForMatch(topic);
+          let interestMatches = 0;
+          if (topicKey) {
+            for (const interest of interestFilter) {
+              if (topicKey.includes(interest) || interest.includes(topicKey)) {
+                interestMatches += 1;
+              }
+            }
+          }
+          if (interestMatches === 0) {
+            for (const interest of interestFilter) {
+              if (normalizedText.includes(interest)) interestMatches += 1;
+              if (interestMatches >= 2) break;
+            }
+          }
+          if (interestMatches > 0) {
+            score += Math.min(12, interestMatches * 6);
+            if (reason === "Picked for your profile") reason = "Matches your interests";
+          }
+        }
         if (topic) {
           const topicKey = normalizeKey(topic);
           const topicScore = topicWeights.get(topicKey) ?? 0;
@@ -809,10 +909,26 @@ export default function HomeClient({
         }
 
         let vocabMatches = 0;
-        for (const word of favoriteWords) {
-          if (text.includes(word)) vocabMatches += 1;
+        let dueMatches = 0;
+        let weakMatches = 0;
+        const languageKey = normalizeForMatch(language);
+        for (const favorite of favoriteProfiles) {
+          if (favorite.language && languageKey && favorite.language !== languageKey) continue;
+          const hasMatch = favorite.isExpression
+            ? normalizedText.includes(favorite.word)
+            : textTokens.has(favorite.word);
+          if (!hasMatch) continue;
+          vocabMatches += 1;
+          if (favorite.isDue) dueMatches += 1;
+          if (favorite.streak <= 2) weakMatches += 1;
         }
-        if (vocabMatches > 0) {
+        if (dueMatches > 0) {
+          score += Math.min(24, dueMatches * 6);
+          reason = "Practice your due words";
+        } else if (weakMatches > 0) {
+          score += Math.min(18, weakMatches * 4);
+          if (!bookSaved) reason = "Strengthen your weak vocabulary";
+        } else if (vocabMatches > 0) {
           score += Math.min(12, vocabMatches * 2);
           if (!bookSaved && vocabMatches >= 2) reason = "Contains words you saved";
         }
@@ -829,6 +945,7 @@ export default function HomeClient({
           bookTitle: bookMeta.title,
           coverUrl,
           language,
+          region,
           level,
           topic,
           audioSrc,
@@ -844,6 +961,7 @@ export default function HomeClient({
     canShowPersonalizedRecommendations,
     continueListening,
     favoriteSignals,
+    interestFilter,
     languageFilter,
     readingHistoryStoryIds,
     savedBookIds,
@@ -1024,6 +1142,7 @@ export default function HomeClient({
               ? book.cover
               : "/covers/default.jpg",
         language: story.language ?? book.language,
+        region: story.region ?? book.region,
         level: story.level ?? book.level,
         topic: story.topic ?? book.topic,
       };
@@ -1066,6 +1185,7 @@ export default function HomeClient({
           bookTitle: s.bookTitle,
           cover: s.coverUrl,
           language: s.language ?? storyMeta?.language ?? bookMeta?.language,
+          region: s.region ?? storyMeta?.region ?? bookMeta?.region,
           level: s.level ?? storyMeta?.level ?? bookMeta?.level,
           topic: storyMeta?.topic ?? bookMeta?.topic,
         };
@@ -1107,7 +1227,7 @@ export default function HomeClient({
         />
       </div>
 
-      <div className="p-5 flex flex-col justify-between flex-1 text-left">
+      <div className="p-5 flex flex-col flex-1 text-left">
         <div>
           {options?.recommendation ? (
             <p className="inline-flex text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--foreground)] bg-[var(--chip-bg)] border border-[var(--chip-border)] rounded-full px-2 py-0.5 mb-2">
@@ -1123,9 +1243,10 @@ export default function HomeClient({
         </div>
 
         <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <LevelBadge level={item.level} />
             <LanguageBadge language={item.language} />
+            <RegionBadge region={item.region} />
           </div>
           <p>
             {formatRemainingDuration(item.audioDurationSec, item.progressSec)} ·{" "}
@@ -1158,7 +1279,7 @@ export default function HomeClient({
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="p-5 flex flex-col justify-between flex-1 text-left">
+              <div className="p-5 flex flex-col flex-1 text-left">
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                     {featuredFreeStory.title}
@@ -1168,9 +1289,10 @@ export default function HomeClient({
                   </p>
                 </div>
                 <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <LevelBadge level={featuredFreeStory.level} />
                     <LanguageBadge language={featuredFreeStory.language} />
+                    <RegionBadge region={featuredFreeStory.region} />
                   </div>
                   <p>{formatTopic(featuredFreeStory.topic)}</p>
                 </div>
@@ -1239,7 +1361,7 @@ export default function HomeClient({
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="p-5 flex flex-col justify-between flex-1 text-left">
+              <div className="p-5 flex flex-col flex-1 text-left">
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                     {featuredFreeStory.title}
@@ -1249,9 +1371,10 @@ export default function HomeClient({
                   </p>
                 </div>
                 <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <LevelBadge level={featuredFreeStory.level} />
                     <LanguageBadge language={featuredFreeStory.language} />
+                    <RegionBadge region={featuredFreeStory.region} />
                   </div>
                   <p>{formatTopic(featuredFreeStory.topic)}</p>
                 </div>
@@ -1287,7 +1410,7 @@ export default function HomeClient({
                     />
                   </div>
 
-                  <div className="p-5 flex flex-col justify-between flex-1 text-left">
+                  <div className="p-5 flex flex-col flex-1 text-left">
                     <div>
                       <p className="inline-flex text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--foreground)] bg-[var(--chip-bg)] border border-[var(--chip-border)] rounded-full px-2 py-0.5 mb-2">
                         {story.reason}
@@ -1301,9 +1424,10 @@ export default function HomeClient({
                     </div>
 
                     <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap items-center gap-2">
                         <LevelBadge level={story.level} />
                         <LanguageBadge language={story.language} />
+                        <RegionBadge region={story.region} />
                       </div>
                       <p>
                         {formatAudioDuration(recommendedStoryDurations[story.key])} ·{" "}
@@ -1334,6 +1458,7 @@ export default function HomeClient({
                 cover={book.cover}
                 level={book.level}
                 language={book.language}
+                region={book.region}
                 statsLine={bookMetaBySlug.get(book.slug)?.statsLine}
                 topicsLine={bookMetaBySlug.get(book.slug)?.topicsLine}
                 description={book.description}
@@ -1352,6 +1477,7 @@ export default function HomeClient({
                 cover={book.cover}
                 level={book.level}
                 language={book.language}
+                region={book.region}
                 statsLine={bookMetaBySlug.get(book.slug)?.statsLine}
                 topicsLine={bookMetaBySlug.get(book.slug)?.topicsLine}
                 description={book.description}
@@ -1387,7 +1513,7 @@ export default function HomeClient({
                   />
                 </div>
 
-                <div className="p-5 flex flex-col justify-between flex-1 text-left">
+                <div className="p-5 flex flex-col flex-1 text-left">
                   <div>
                     <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                       {s.storyTitle || "Untitled story"}
@@ -1398,9 +1524,10 @@ export default function HomeClient({
                   </div>
 
                   <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
                       <LevelBadge level={s.level} />
                       <LanguageBadge language={s.language} />
+                      <RegionBadge region={s.region} />
                     </div>
                     <p>
                       {formatAudioDuration(durationSec)} · {formatTopic(topic)}
@@ -1443,7 +1570,7 @@ export default function HomeClient({
                   />
                 </div>
 
-                <div className="p-5 flex flex-col justify-between flex-1 text-left">
+                <div className="p-5 flex flex-col flex-1 text-left">
                   <div>
                     <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)]">{story.title}</h3>
                     <p className="text-[var(--muted)] text-sm leading-relaxed line-clamp-3">
@@ -1452,9 +1579,10 @@ export default function HomeClient({
                   </div>
 
                   <div className="mt-3">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
                       <LevelBadge level={story.level} />
                       <LanguageBadge language={story.language} />
+                      <RegionBadge region={story.region} />
                     </div>
                   </div>
                 </div>

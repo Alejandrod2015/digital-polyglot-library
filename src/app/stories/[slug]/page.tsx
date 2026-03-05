@@ -6,6 +6,8 @@ import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 import LevelBadge from "@/components/LevelBadge";
+import LanguageBadge from "@/components/LanguageBadge";
+import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
 import VocabPanel from "@/components/VocabPanel";
 
@@ -160,11 +162,13 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
       {/* Título */}
       <div className="relative mb-7 pt-2">
-        <h1 className="text-4xl font-bold text-white text-center">
+        <h1 className="text-4xl font-bold text-[var(--foreground)] text-center">
           {story.title}
         </h1>
-        <div className="mt-3 flex justify-center">
+        <div className="mt-3 flex flex-wrap justify-center gap-2">
           <LevelBadge level={story.level ?? undefined} />
+          <LanguageBadge language={story.language ?? undefined} />
+          <RegionBadge region={story.region ?? undefined} />
         </div>
       </div>
 
@@ -184,7 +188,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
       {/* Texto principal */}
       <div className="relative">
         {hasFullAccess ? (
-          <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6">
+          <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
             <StoryContent
               text={normalizedText}
               sentencesPerParagraph={3}
@@ -193,7 +197,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
           </div>
         ) : (
           <div
-            className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6"
+            className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6"
             dangerouslySetInnerHTML={{ __html: normalizedText }}
           />
         )}
@@ -203,7 +207,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
           <>
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--background)] via-[rgba(11,18,32,0.9)] to-transparent z-10" />
             <div className="absolute inset-x-0 bottom-[-8rem] flex flex-col items-center justify-end pb-12 text-center z-20">
-              <p className="text-gray-200 text-xl sm:text-xl mb-3 drop-shadow">
+              <p className="text-[var(--foreground)] text-xl sm:text-xl mb-3 drop-shadow">
                 Unlock full access to all stories.
               </p>
               <div className="flex items-center gap-3">

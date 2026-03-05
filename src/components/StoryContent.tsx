@@ -277,8 +277,8 @@ export default function StoryContent({
     <div
       ref={containerRef}
       className={cx(
-        "mx-auto max-w-[65ch] text-xl leading-relaxed text-gray-200 space-y-6",
-        "prose prose-invert prose-p:my-4 prose-blockquote:italic prose-blockquote:text-sky-400",
+        "mx-auto max-w-[65ch] text-xl leading-relaxed text-[var(--foreground)] space-y-6",
+        "[&_p]:my-4 [&_blockquote]:italic [&_blockquote]:text-[var(--primary)]",
         "no-scrollbar scroll-smooth",
         className
       )}

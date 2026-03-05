@@ -6,6 +6,7 @@ export type LatestBook = {
   slug: string;
   title: string;
   language?: string;
+  region?: string;
   level?: string;
   cover?: string;
   description?: string;
@@ -17,6 +18,7 @@ export type LatestStory = {
   storySlug: string;
   storyTitle: string;
   language?: string;
+  region?: string;
   level?: string;
   coverUrl: string;
 };
@@ -25,6 +27,7 @@ export type LatestPolyglotStory = {
   slug: string;
   title: string;
   language?: string;
+  region?: string;
   level?: string;
   text?: string;
   coverUrl?: string;
@@ -71,6 +74,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
       slug: book.slug,
       title: book.title,
       language: book.language,
+      region: book.region,
       level: book.level,
       cover: book.cover ?? "/covers/default.jpg",
       description: book.description,
@@ -86,6 +90,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
         storySlug: story.slug,
         storyTitle: story.title,
         language: story.language ?? book.language,
+        region: story.region ?? book.region,
         level: story.level ?? book.level,
         coverUrl: story.cover ?? book.cover ?? "/covers/default.jpg",
         _ts: Math.max(
@@ -110,6 +115,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
 
           const title = typeof s.title === "string" ? s.title : "";
           const language = typeof s.language === "string" ? s.language : undefined;
+          const region = typeof s.region === "string" ? s.region : undefined;
           const level = typeof s.level === "string" ? s.level : undefined;
           const text = typeof s.text === "string" ? s.text : undefined;
 
@@ -118,7 +124,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
               ? s.coverUrl
               : "/covers/default.jpg";
 
-          const out: LatestPolyglotStory = { slug, title, language, level, text, coverUrl };
+          const out: LatestPolyglotStory = { slug, title, language, region, level, text, coverUrl };
           return out;
         })
         .filter(isLatestPolyglotStory)

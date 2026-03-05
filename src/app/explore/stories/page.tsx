@@ -15,6 +15,7 @@ type StoryItem = {
   storySlug: string;
   storyTitle: string;
   language: string;
+  region?: string;
   level: string;
   coverUrl: string;
   audioSrc?: string;
@@ -74,6 +75,12 @@ function extractStories(): StoryItem[] {
       const storyTitle = typeof story.title === "string" ? story.title : "Untitled story";
       const storyLanguage =
         typeof story.language === "string" ? story.language : bookLanguage;
+      const storyRegion =
+        typeof story.region === "string" && story.region.trim() !== ""
+          ? story.region
+          : typeof book.region === "string"
+            ? book.region
+            : undefined;
       const storyLevel = typeof story.level === "string" ? story.level : bookLevel;
       const storyCover =
         typeof story.cover === "string" && story.cover.trim() !== ""
@@ -98,6 +105,7 @@ function extractStories(): StoryItem[] {
         storySlug,
         storyTitle,
         language: storyLanguage,
+        region: storyRegion,
         level: storyLevel,
         coverUrl: storyCover,
         audioSrc: storyAudio,
@@ -151,6 +159,7 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
             subtitle: story.bookTitle,
             coverUrl: story.coverUrl,
             language: story.language,
+            region: story.region,
             level: story.level,
             topic: story.topic,
             audioSrc: story.audioSrc,

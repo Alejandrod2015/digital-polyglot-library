@@ -11,6 +11,7 @@ import BackNavigationHandler from "@/components/BackNavigationHandler";
 import FeedbackButton from "@/components/FeedbackButton";
 import NavigationTimingTracker from "@/components/NavigationTimingTracker";
 import ThemeController from "@/components/ThemeController";
+import GA4Tracker from "@/components/GA4Tracker";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -61,6 +62,9 @@ export default function RootLayout({
           <MobileMenu />
           <ThemeController />
           <BackNavigationHandler />
+          <Suspense fallback={null}>
+            <GA4Tracker />
+          </Suspense>
           <Suspense fallback={null}>
             <NavigationTimingTracker />
           </Suspense>
