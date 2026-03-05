@@ -13,7 +13,7 @@ export default function LanguageBadge({ language, className = "" }: LanguageBadg
 
   return (
     <span
-      className={`inline-flex items-center rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] px-2 py-0.5 text-[11px] font-semibold tracking-[0.02em] text-[var(--chip-text)] ${className}`}
+      className={`inline-flex h-5 items-center rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] px-2 text-[11px] font-semibold leading-none tracking-[0.02em] text-[var(--chip-text)] ${className}`}
     >
       {label}
     </span>

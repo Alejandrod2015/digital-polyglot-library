@@ -4,6 +4,7 @@ import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { unstable_cache, revalidateTag } from "next/cache";
 import { PrismaClient } from "@/generated/prisma";
+import { normalizeVocabType } from "@/lib/vocabTypes";
 
 declare global {
   // eslint-disable-next-line no-var
@@ -15,6 +16,7 @@ if (process.env.NODE_ENV !== "production") globalThis.__prisma__ = prisma;
 type FavoriteBody = {
   word: string;
   translation: string;
+  wordType?: string;
   exampleSentence?: string;
   storySlug?: string;
   storyTitle?: string;
@@ -28,6 +30,7 @@ function isFavoriteBody(x: unknown): x is FavoriteBody {
   return (
     typeof o.word === "string" &&
     typeof o.translation === "string" &&
+    optionalString(o.wordType) &&
     optionalString(o.exampleSentence) &&
     optionalString(o.storySlug) &&
     optionalString(o.storyTitle) &&
@@ -73,7 +76,15 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   try {
     const favorites = await getFavoritesCached(userId);
-    return NextResponse.json(favorites);
+    const normalized = favorites.map((fav) => ({
+      ...fav,
+      wordType:
+        normalizeVocabType(fav.wordType, {
+          word: fav.word,
+          definition: fav.translation,
+        }) ?? null,
+    }));
+    return NextResponse.json(normalized);
   } catch (err: unknown) {
     console.error("❌ Error en GET /api/favorites:", err);
     return NextResponse.json({ error: "Database error" }, { status: 500 });
@@ -93,12 +104,18 @@ export async function POST(req: NextRequest): Promise<Response> {
   const {
     word,
     translation,
+    wordType,
     exampleSentence,
     storySlug,
     storyTitle,
     sourcePath,
     language,
   } = json;
+
+  const normalizedWordType = normalizeVocabType(wordType, {
+    word,
+    definition: translation,
+  });
 
   try {
     const existing = await prisma.favorite.findFirst({
@@ -111,6 +128,7 @@ export async function POST(req: NextRequest): Promise<Response> {
           where: { id: existing.id },
           data: {
             translation,
+            wordType: normalizedWordType,
             exampleSentence: exampleSentence ?? null,
             storySlug: storySlug ?? null,
             storyTitle: storyTitle ?? null,
@@ -123,6 +141,7 @@ export async function POST(req: NextRequest): Promise<Response> {
             userId,
             word,
             translation,
+            wordType: normalizedWordType,
             exampleSentence: exampleSentence ?? null,
             storySlug: storySlug ?? null,
             storyTitle: storyTitle ?? null,

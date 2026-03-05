@@ -3,10 +3,17 @@
 import { useEffect, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
 import { formatLanguageCode } from '@/lib/displayFormat';
+import {
+  VOCAB_TYPE_ORDER,
+  VocabTypeKey,
+  getVocabTypeLabel,
+  normalizeVocabType,
+} from '@/lib/vocabTypes';
 
 type FavoriteItem = {
   word: string;
   translation: string;
+  wordType?: string | null;
   exampleSentence?: string | null;
   storySlug?: string | null;
   storyTitle?: string | null;
@@ -115,6 +122,7 @@ export default function FavoritesPage() {
   const [practiceQueue, setPracticeQueue] = useState<FavoriteItem[]>([]);
   const [practiceIndex, setPracticeIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
+  const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
 
   useEffect(() => {
     const load = async () => {
@@ -201,6 +209,12 @@ export default function FavoritesPage() {
   const now = Date.now();
   const dueFavorites = favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
   const currentPractice = practiceQueue[practiceIndex] ?? null;
+  const favoriteTypeCounts = favorites.reduce<Record<VocabTypeKey, number>>((acc, fav) => {
+    const key = normalizeVocabType(fav.wordType, { word: fav.word, definition: fav.translation }) ?? 'other';
+    acc[key] = (acc[key] ?? 0) + 1;
+    return acc;
+  }, {} as Record<VocabTypeKey, number>);
+  const availablePracticeTypes = VOCAB_TYPE_ORDER.filter((key) => (favoriteTypeCounts[key] ?? 0) > 0);
 
   const removeFavorite = async (word: string) => {
     const updated = favorites.filter((f) => f.word !== word);
@@ -226,7 +240,15 @@ export default function FavoritesPage() {
   };
 
   const startPractice = (onlyDue: boolean) => {
-    const snapshot = (onlyDue ? dueFavorites : favorites).slice();
+    const source = onlyDue ? dueFavorites : favorites;
+    const snapshot = source.filter((fav) => {
+      if (practiceType === 'all') return true;
+      const normalized = normalizeVocabType(fav.wordType, {
+        word: fav.word,
+        definition: fav.translation,
+      }) ?? 'other';
+      return normalized === practiceType;
+    });
     setPracticeOnlyDue(onlyDue);
     setPracticeQueue(snapshot);
     setPracticeMode(snapshot.length > 0);
@@ -287,19 +309,48 @@ export default function FavoritesPage() {
           </p>
         </div>
         {favorites.length > 0 ? (
-          <div className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-1">
-            <button
-              onClick={() => startPractice(true)}
-              className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold transition-colors"
-            >
-              Practice due
-            </button>
-            <button
-              onClick={() => startPractice(false)}
-              className="px-3 py-1.5 rounded-lg bg-transparent hover:bg-[var(--card-bg-hover)] text-[var(--foreground)] text-sm font-semibold transition-colors"
-            >
-              Practice all
-            </button>
+          <div className="flex flex-col items-end gap-2">
+            <div className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-1">
+              <button
+                onClick={() => startPractice(true)}
+                className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold transition-colors"
+              >
+                Practice due
+              </button>
+              <button
+                onClick={() => startPractice(false)}
+                className="px-3 py-1.5 rounded-lg bg-transparent hover:bg-[var(--card-bg-hover)] text-[var(--foreground)] text-sm font-semibold transition-colors"
+              >
+                Practice all
+              </button>
+            </div>
+            <div className="flex max-w-full flex-wrap justify-end gap-1.5">
+              <button
+                type="button"
+                onClick={() => setPracticeType('all')}
+                className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-colors ${
+                  practiceType === 'all'
+                    ? 'border-blue-500/40 bg-blue-500/15 text-blue-300'
+                    : 'border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]'
+                }`}
+              >
+                All types
+              </button>
+              {availablePracticeTypes.map((type) => (
+                <button
+                  key={type}
+                  type="button"
+                  onClick={() => setPracticeType(type)}
+                  className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-colors ${
+                    practiceType === type
+                      ? 'border-blue-500/40 bg-blue-500/15 text-blue-300'
+                      : 'border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]'
+                  }`}
+                >
+                  {getVocabTypeLabel(type)} ({favoriteTypeCounts[type] ?? 0})
+                </button>
+              ))}
+            </div>
           </div>
         ) : null}
       </div>
@@ -308,8 +359,19 @@ export default function FavoritesPage() {
         <div className="mb-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5">
           <p className="text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
             Practice {practiceIndex + 1}/{practiceQueue.length}
+            {practiceType !== 'all' ? ` · ${getVocabTypeLabel(practiceType)}` : ''}
           </p>
           <p className="text-3xl font-semibold mb-4">{currentPractice.word}</p>
+          <div className="mb-3">
+            <span className="rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] px-2 py-0.5 text-[11px] text-[var(--chip-text)]">
+              {getVocabTypeLabel(
+                normalizeVocabType(currentPractice.wordType, {
+                  word: currentPractice.word,
+                  definition: currentPractice.translation,
+                }) ?? 'other'
+              )}
+            </span>
+          </div>
           {revealed ? (
             <>
               <p className="text-lg text-[var(--foreground)]/92 mb-4">{currentPractice.translation}</p>
@@ -403,6 +465,14 @@ export default function FavoritesPage() {
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <p className="font-bold text-2xl leading-tight">{fav.word}</p>
+                        <span className="text-[11px] px-2 py-0.5 rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]">
+                          {getVocabTypeLabel(
+                            normalizeVocabType(fav.wordType, {
+                              word: fav.word,
+                              definition: fav.translation,
+                            }) ?? 'other'
+                          )}
+                        </span>
                         {fav.language ? (
                           <span className="text-[11px] px-2 py-0.5 rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]">
                             {formatLanguageCode(fav.language)}

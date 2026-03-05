@@ -11,7 +11,7 @@ import { formatLanguage, formatLevel, toTitleCase } from '@/lib/displayFormat';
 type Plan = 'free' | 'basic' | 'premium' | 'polyglot';
 type CreateStatus = 'idle' | 'generating_text' | 'generating_audio' | 'done';
 
-type VocabItem = { word: string; definition: string };
+type VocabItem = { word: string; definition: string; type?: string };
 
 type GeneratedStory = {
   id: string;
@@ -50,6 +50,7 @@ type PendingCreate = {
 type FavoriteItem = {
   word: string;
   translation: string;
+  wordType?: string | null;
   exampleSentence?: string | null;
   nextReviewAt?: string | null;
   lastReviewedAt?: string | null;
@@ -192,6 +193,8 @@ export default function CreatePage() {
   const [revealed, setRevealed] = useState(false);
   const [practiceVisible, setPracticeVisible] = useState(false);
   const [practiceCompleted, setPracticeCompleted] = useState(false);
+  const [practiceModalMounted, setPracticeModalMounted] = useState(false);
+  const [practiceModalOpen, setPracticeModalOpen] = useState(false);
 
   const didTryResumeRef = useRef(false);
   const didInitPracticeRef = useRef(false);
@@ -446,6 +449,22 @@ export default function CreatePage() {
   }, [favorites, shuffleWords, status]);
 
   const currentPractice = practiceQueue[practiceIndex] ?? null;
+  const isGenerating = status === 'generating_text' || status === 'generating_audio';
+  const shouldShowPracticeModal = isGenerating && practiceVisible && practiceQueue.length > 0;
+
+  useEffect(() => {
+    if (shouldShowPracticeModal) {
+      setPracticeModalMounted(true);
+      const openTimer = window.setTimeout(() => setPracticeModalOpen(true), 10);
+      return () => window.clearTimeout(openTimer);
+    }
+
+    setPracticeModalOpen(false);
+    if (!practiceModalMounted) return;
+    const closeTimer = window.setTimeout(() => setPracticeModalMounted(false), 220);
+    return () => window.clearTimeout(closeTimer);
+  }, [practiceModalMounted, shouldShowPracticeModal]);
+
   const handlePracticeScore = useCallback(
     async (score: ReviewScore) => {
       const current = currentPractice;
@@ -705,9 +724,7 @@ export default function CreatePage() {
         </button>
       </form>
 
-      {(status === 'generating_text' || status === 'generating_audio') &&
-      !practiceVisible &&
-      practiceQueue.length > 0 ? (
+      {isGenerating && !practiceVisible && practiceQueue.length > 0 ? (
         <button
           type="button"
           onClick={() => setPracticeVisible(true)}
@@ -717,11 +734,17 @@ export default function CreatePage() {
         </button>
       ) : null}
 
-      {(status === 'generating_text' || status === 'generating_audio') &&
-      practiceVisible &&
-      practiceQueue.length > 0 ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="w-full max-w-md rounded-2xl border border-[var(--card-border)] bg-[var(--surface)] p-5 shadow-2xl">
+      {practiceModalMounted ? (
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 transition-opacity duration-200 ease-out ${
+            practiceModalOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
+          }`}
+        >
+          <div
+            className={`w-full max-w-md rounded-2xl border border-[var(--card-border)] bg-[var(--surface)] p-5 shadow-2xl transition-all duration-200 ease-out ${
+              practiceModalOpen ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-2 scale-[0.98] opacity-0'
+            }`}
+          >
             <div className="mb-4 flex items-center justify-between">
               <p className="text-xs uppercase tracking-wide text-[var(--muted)]">
                 Practice while we generate your story
