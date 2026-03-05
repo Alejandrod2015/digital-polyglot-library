@@ -3,6 +3,7 @@
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Suspense } from "react";
+import { headers } from "next/headers";
 import "./globals.css";
 import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
@@ -36,11 +37,17 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  const isMetricsView = pathname.startsWith("/studio/metrics");
+  const mainClassName = isMetricsView
+    ? "no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 px-1 py-6 overflow-y-auto bg-[var(--bg-content)]"
+    : "no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 md:ml-64 px-1 py-6 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-[env(safe-area-inset-bottom)] overflow-y-auto bg-[var(--bg-content)]";
+
   return (
     <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <html lang="en" className="bg-[var(--bg-content)]">
@@ -54,14 +61,18 @@ export default function RootLayout({
 
         {/* ✅ layout estable: usa min-h-screen, no h-screen */}
         <body className="bg-[var(--bg-content)] text-[var(--foreground)] min-h-screen flex flex-col pt-[env(safe-area-inset-top)]">
-          {/* Sidebar (desktop) */}
-          <aside className="hidden md:flex md:w-64 bg-[var(--bg-sidebar)] fixed top-0 left-0 bottom-0 z-20">
-            <Sidebar />
-          </aside>
+          {!isMetricsView ? (
+            <>
+              {/* Sidebar (desktop) */}
+              <aside className="hidden md:flex md:w-64 bg-[var(--bg-sidebar)] fixed top-0 left-0 bottom-0 z-20">
+                <Sidebar />
+              </aside>
 
-          <MobileMenu />
-          <ThemeController />
-          <BackNavigationHandler />
+              <MobileMenu />
+              <ThemeController />
+              <BackNavigationHandler />
+            </>
+          ) : null}
           <Suspense fallback={null}>
             <GA4Tracker />
           </Suspense>
@@ -70,12 +81,16 @@ export default function RootLayout({
           </Suspense>
 
           {/* Main content scrollable */}
-          <main className="no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 md:ml-64 px-1 py-6 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-[env(safe-area-inset-bottom)] overflow-y-auto bg-[var(--bg-content)]">
+          <main className={mainClassName}>
             {children}
           </main>
 
-          <MobileTabBar />
-          <FeedbackButton />
+          {!isMetricsView ? (
+            <>
+              <MobileTabBar />
+              <FeedbackButton />
+            </>
+          ) : null}
         </body>
       </html>
     </ClerkProvider>

@@ -10,8 +10,13 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.next();
   }
 
-
-  const res = NextResponse.next();
+  const requestHeaders = new Headers(req.headers);
+  requestHeaders.set("x-pathname", url);
+  const res = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
   res.headers.set("x-clerk-mw", "1");
   return res;
 });

@@ -3,6 +3,7 @@ export const runtime = "nodejs";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { isMetricsAccessAllowed } from "@/lib/metricsAccess";
 
 type AggregateRow = {
   storySlug: string;
@@ -20,6 +21,9 @@ export async function GET(req: NextRequest): Promise<Response> {
   const { userId } = getAuth(req);
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  if (!isMetricsAccessAllowed(req)) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
   try {

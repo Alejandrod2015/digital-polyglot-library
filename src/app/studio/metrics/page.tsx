@@ -70,21 +70,47 @@ export default function MetricsDashboard() {
   const [days, setDays] = useState("30");
   const [bookSlug, setBookSlug] = useState("");
   const [storySlug, setStorySlug] = useState("");
+  const [accessKey, setAccessKey] = useState("");
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem("dp_metrics_access_key") ?? "";
+      if (saved) setAccessKey(saved);
+    } catch {
+      // ignore
+    }
+  }, []);
 
   async function loadMetrics() {
     setLoading(true);
+    setErrorMessage(null);
     try {
       const qs = new URLSearchParams();
       qs.set("days", days);
       if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
       if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
-      const res = await fetch(`/api/metrics/dashboard?${qs.toString()}`);
+      const res = await fetch(`/api/metrics/dashboard?${qs.toString()}`, {
+        headers: accessKey.trim() ? { "x-metrics-key": accessKey.trim() } : undefined,
+      });
       if (!res.ok) throw new Error(`Error ${res.status}`);
       const json = (await res.json()) as DashboardData;
       setData(json);
+      try {
+        if (accessKey.trim()) {
+          window.localStorage.setItem("dp_metrics_access_key", accessKey.trim());
+        }
+      } catch {
+        // ignore
+      }
     } catch (err) {
-      console.error("❌ Error cargando dashboard de métricas:", err);
+      const message =
+        err instanceof Error && err.message.includes("403")
+          ? "Forbidden: invalid or missing access key."
+          : "Failed to load metrics dashboard.";
+      setErrorMessage(message);
+      console.error("Error loading metrics dashboard:", err);
       setData(EMPTY_DATA);
     } finally {
       setLoading(false);
@@ -99,11 +125,11 @@ export default function MetricsDashboard() {
   const kpis = [
     { label: "DAU", value: data.kpis.dau },
     { label: "WAU", value: data.kpis.wau },
-    { label: "Reproducciones", value: data.kpis.plays },
-    { label: "Completados", value: data.kpis.completions },
-    { label: "Completion rate", value: `${data.kpis.completionRate}%` },
-    { label: "Historias únicas", value: data.kpis.uniqueStories },
-    { label: "Libros únicos", value: data.kpis.uniqueBooks },
+    { label: "Plays", value: data.kpis.plays },
+    { label: "Completions", value: data.kpis.completions },
+    { label: "Completion Rate", value: `${data.kpis.completionRate}%` },
+    { label: "Unique Stories", value: data.kpis.uniqueStories },
+    { label: "Unique Books", value: data.kpis.uniqueBooks },
   ];
 
   return (
@@ -112,39 +138,46 @@ export default function MetricsDashboard() {
         <CardContent className="pt-6">
           <h1 className="text-2xl font-semibold">Internal Metrics</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Visualización interna de uso y progreso por audio.
+            Internal usage and listening progress dashboard.
           </p>
 
-          <div className="mt-4 grid gap-3 md:grid-cols-4">
+          <div className="mt-4 grid gap-3 md:grid-cols-5">
             <select
               value={days}
               onChange={(e) => setDays(e.target.value)}
               className="h-10 rounded-md border border-input bg-background px-3 text-sm"
             >
-              <option value="7">Últimos 7 días</option>
-              <option value="30">Últimos 30 días</option>
-              <option value="90">Últimos 90 días</option>
-              <option value="180">Últimos 180 días</option>
+              <option value="7">Last 7 days</option>
+              <option value="30">Last 30 days</option>
+              <option value="90">Last 90 days</option>
+              <option value="180">Last 180 days</option>
             </select>
             <input
               value={bookSlug}
               onChange={(e) => setBookSlug(e.target.value)}
-              placeholder="Filtrar por bookSlug"
+              placeholder="Filter by bookSlug"
               className="h-10 rounded-md border border-input bg-background px-3 text-sm"
             />
             <input
               value={storySlug}
               onChange={(e) => setStorySlug(e.target.value)}
-              placeholder="Filtrar por storySlug"
+              placeholder="Filter by storySlug"
+              className="h-10 rounded-md border border-input bg-background px-3 text-sm"
+            />
+            <input
+              value={accessKey}
+              onChange={(e) => setAccessKey(e.target.value)}
+              placeholder="Access key"
               className="h-10 rounded-md border border-input bg-background px-3 text-sm"
             />
             <button
               onClick={() => void loadMetrics()}
               className="h-10 rounded-md bg-blue-600 px-4 text-sm font-medium text-white hover:bg-blue-500"
             >
-              {loading ? "Cargando..." : "Actualizar"}
+              {loading ? "Loading..." : "Refresh"}
             </button>
           </div>
+          {errorMessage ? <p className="mt-3 text-sm text-red-500">{errorMessage}</p> : null}
         </CardContent>
       </Card>
 
@@ -161,7 +194,7 @@ export default function MetricsDashboard() {
 
       <Card className="border border-border bg-card">
         <CardContent className="pt-6">
-          <h2 className="text-lg font-semibold mb-4">Tendencia diaria (plays vs completions)</h2>
+          <h2 className="text-lg font-semibold mb-4">Daily trend (plays vs completions)</h2>
           <ResponsiveContainer width="100%" height={320}>
             <LineChart data={data.daily}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -177,7 +210,7 @@ export default function MetricsDashboard() {
 
       <Card className="border border-border bg-card">
         <CardContent>
-          <h2 className="text-lg font-semibold mb-4">Top historias por uso</h2>
+          <h2 className="text-lg font-semibold mb-4">Top stories by usage</h2>
 
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={data.topStories}>
@@ -200,7 +233,7 @@ export default function MetricsDashboard() {
 
       <Card className="border border-border bg-card">
         <CardContent className="pt-6">
-          <h2 className="text-lg font-semibold mb-4">Top libros por uso</h2>
+          <h2 className="text-lg font-semibold mb-4">Top books by usage</h2>
           <div className="space-y-2">
             {data.topBooks.map((book) => (
               <div
@@ -214,7 +247,7 @@ export default function MetricsDashboard() {
               </div>
             ))}
             {data.topBooks.length === 0 ? (
-              <p className="text-sm text-muted-foreground">Sin datos para ese filtro.</p>
+              <p className="text-sm text-muted-foreground">No data for current filters.</p>
             ) : null}
           </div>
         </CardContent>
