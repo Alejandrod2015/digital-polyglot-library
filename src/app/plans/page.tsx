@@ -23,6 +23,25 @@ function PlansInner() {
   const plan: Plan =
     (user?.publicMetadata?.plan as Plan | undefined) ?? 'free';
 
+  const trackMetric = async (eventType: string, value?: number) => {
+    if (!isSignedIn) return;
+    try {
+      await fetch('/api/metrics', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          storySlug: '__plans__',
+          bookSlug: 'billing',
+          eventType,
+          value,
+        }),
+      });
+    } catch {
+      // noop
+    }
+  };
+
   // 1) Si ya es premium/polyglot/owner → HOME
   useEffect(() => {
     if (!isLoaded) return;
@@ -37,6 +56,7 @@ function PlansInner() {
   const goToCheckout = async (priceId: string) => {
     try {
       setLoading(priceId);
+      await trackMetric('checkout_started');
 
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',
@@ -54,6 +74,7 @@ function PlansInner() {
         typeof (data as { url?: unknown }).url === 'string' &&
         (data as { url: string }).url.length > 0
       ) {
+        await trackMetric('checkout_redirected');
         window.location.href = (data as { url: string }).url;
         return;
       }
@@ -66,9 +87,11 @@ function PlansInner() {
           ? (data as { error: string }).error
           : 'Error creating checkout session';
 
+      await trackMetric('checkout_failed');
       alert(errorMsg);
     } catch (err) {
       console.error(err);
+      await trackMetric('checkout_failed');
       alert('Unexpected error');
     } finally {
       setLoading(null);
@@ -94,6 +117,13 @@ function PlansInner() {
   };
 
   // 4) Volvió del sign-in → auto checkout
+  useEffect(() => {
+    if (!isLoaded) return;
+    if (!isSignedIn) return;
+    void trackMetric('plans_viewed');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoaded, isSignedIn]);
+
   useEffect(() => {
     if (!isLoaded) return;
     if (!isSignedIn) return;

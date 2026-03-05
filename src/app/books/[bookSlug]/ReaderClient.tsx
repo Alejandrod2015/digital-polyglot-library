@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import type { Book, Story } from '@/types/books';
 import Player from '@/components/Player';
@@ -51,6 +52,21 @@ export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; 
   const story = book.stories.find((s) => s.id === selectedStoryId);
   const currentIndex = book.stories.findIndex((s) => s.id === selectedStoryId);
   const hasStoryAudio = typeof story?.audio === "string" && story.audio.trim() !== "";
+  const trackUpgradeCta = async (source: string) => {
+    try {
+      await fetch('/api/metrics', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          storySlug: `__upgrade_${source}__`,
+          bookSlug: book.slug,
+          eventType: 'upgrade_cta_clicked',
+        }),
+      });
+    } catch {
+      // noop
+    }
+  };
 
   // --- Registro de lectura ---
   useEffect(() => {
@@ -106,6 +122,21 @@ useEffect(() => {
         <p className="text-foreground">
           Upgrade your plan to continue enjoying full stories and audio.
         </p>
+        <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <Link
+            href="/plans"
+            onClick={() => void trackUpgradeCta('reader_limit')}
+            className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-blue-700"
+          >
+            Upgrade
+          </Link>
+          <Link
+            href="/explore"
+            className="inline-flex items-center justify-center rounded-xl border border-[var(--chip-border)] bg-[var(--chip-bg)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:opacity-90"
+          >
+            Maybe later
+          </Link>
+        </div>
       </div>
     );
   }

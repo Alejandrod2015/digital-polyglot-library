@@ -136,6 +136,12 @@ export default async function StoryPage({ params }: StoryPageProps) {
               >
                 Upgrade
               </a>
+              <a
+                href="/explore"
+                className="inline-block px-6 py-3 border border-[var(--chip-border)] bg-[var(--chip-bg)] hover:opacity-90 text-[var(--foreground)] text-medium font-medium rounded-xl transition"
+              >
+                Maybe later
+              </a>
             </div>
           </div>
         }

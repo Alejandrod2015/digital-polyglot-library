@@ -80,6 +80,28 @@ type DashboardResponse = {
     bookSlug: string;
     saves: number;
   }>;
+  trialFunnel: {
+    started: number;
+    startedWithPm: number;
+    day1Active: number;
+    converted: number;
+    canceled: number;
+    conversionRate: number;
+    day1ActivationRate: number;
+    cancelRate: number;
+  };
+  checkoutFunnel: {
+    plansViewed: number;
+    checkoutStarted: number;
+    checkoutRedirected: number;
+    checkoutFailed: number;
+    checkoutStartRate: number;
+    checkoutRedirectRate: number;
+  };
+  upgradeCtaSources: Array<{
+    source: string;
+    clicks: number;
+  }>;
 };
 
 function parseDays(raw: string | null): number {
@@ -126,6 +148,9 @@ export async function GET(req: NextRequest): Promise<Response> {
     savedBookRows,
     savedStoriesTotal,
     savedBooksTotal,
+    trialFunnelRows,
+    checkoutFunnelRows,
+    upgradeCtaRows,
   ] =
     await Promise.all([
     prisma.userMetric.findMany({
@@ -221,6 +246,45 @@ export async function GET(req: NextRequest): Promise<Response> {
         createdAt: { gte: from, lte: to },
         ...(bookSlug ? { bookId: bookSlug } : {}),
       },
+    }),
+    prisma.userMetric.groupBy({
+      by: ["eventType"],
+      where: {
+        createdAt: { gte: from, lte: to },
+        storySlug: "__plans__",
+        bookSlug: "billing",
+        eventType: {
+          in: [
+            "trial_started",
+            "trial_started_with_pm",
+            "trial_day_1_active",
+            "trial_converted",
+            "trial_canceled",
+          ],
+        },
+      },
+      _count: { _all: true },
+    }),
+    prisma.userMetric.groupBy({
+      by: ["eventType"],
+      where: {
+        createdAt: { gte: from, lte: to },
+        storySlug: "__plans__",
+        bookSlug: "billing",
+        eventType: {
+          in: ["plans_viewed", "checkout_started", "checkout_redirected", "checkout_failed"],
+        },
+      },
+      _count: { _all: true },
+    }),
+    prisma.userMetric.groupBy({
+      by: ["storySlug"],
+      where: {
+        createdAt: { gte: from, lte: to },
+        eventType: "upgrade_cta_clicked",
+        storySlug: { startsWith: "__upgrade_" },
+      },
+      _count: { _all: true },
     }),
     ]);
 
@@ -348,6 +412,57 @@ export async function GET(req: NextRequest): Promise<Response> {
   const savedStories = savedStoriesTotal;
   const savedBooks = savedBooksTotal;
 
+  const trialCounts = {
+    started: 0,
+    startedWithPm: 0,
+    day1Active: 0,
+    converted: 0,
+    canceled: 0,
+  };
+  for (const row of trialFunnelRows as Array<{ eventType: string; _count: { _all: number } }>) {
+    if (row.eventType === "trial_started") trialCounts.started = row._count._all;
+    if (row.eventType === "trial_started_with_pm") trialCounts.startedWithPm = row._count._all;
+    if (row.eventType === "trial_day_1_active") trialCounts.day1Active = row._count._all;
+    if (row.eventType === "trial_converted") trialCounts.converted = row._count._all;
+    if (row.eventType === "trial_canceled") trialCounts.canceled = row._count._all;
+  }
+  const conversionRate =
+    trialCounts.started > 0 ? Math.round((trialCounts.converted / trialCounts.started) * 100) : 0;
+  const day1ActivationRate =
+    trialCounts.started > 0 ? Math.round((trialCounts.day1Active / trialCounts.started) * 100) : 0;
+  const cancelRate =
+    trialCounts.started > 0 ? Math.round((trialCounts.canceled / trialCounts.started) * 100) : 0;
+
+  const checkoutCounts = {
+    plansViewed: 0,
+    checkoutStarted: 0,
+    checkoutRedirected: 0,
+    checkoutFailed: 0,
+  };
+  for (const row of checkoutFunnelRows as Array<{ eventType: string; _count: { _all: number } }>) {
+    if (row.eventType === "plans_viewed") checkoutCounts.plansViewed = row._count._all;
+    if (row.eventType === "checkout_started") checkoutCounts.checkoutStarted = row._count._all;
+    if (row.eventType === "checkout_redirected") checkoutCounts.checkoutRedirected = row._count._all;
+    if (row.eventType === "checkout_failed") checkoutCounts.checkoutFailed = row._count._all;
+  }
+  const checkoutStartRate =
+    checkoutCounts.plansViewed > 0
+      ? Math.round((checkoutCounts.checkoutStarted / checkoutCounts.plansViewed) * 100)
+      : 0;
+  const checkoutRedirectRate =
+    checkoutCounts.checkoutStarted > 0
+      ? Math.round((checkoutCounts.checkoutRedirected / checkoutCounts.checkoutStarted) * 100)
+      : 0;
+
+  const upgradeCtaSources = (
+    upgradeCtaRows as Array<{ storySlug: string; _count: { _all: number } }>
+  )
+    .map((row) => ({
+      source: row.storySlug.replace("__upgrade_", "").replace(/__$/, ""),
+      clicks: row._count._all,
+    }))
+    .sort((a, b) => b.clicks - a.clicks);
+
   const payload: DashboardResponse = {
     range: {
       from: from.toISOString(),
@@ -374,6 +489,25 @@ export async function GET(req: NextRequest): Promise<Response> {
     topStoriesByMinutes,
     topSavedStories,
     topSavedBooks,
+    trialFunnel: {
+      started: trialCounts.started,
+      startedWithPm: trialCounts.startedWithPm,
+      day1Active: trialCounts.day1Active,
+      converted: trialCounts.converted,
+      canceled: trialCounts.canceled,
+      conversionRate,
+      day1ActivationRate,
+      cancelRate,
+    },
+    checkoutFunnel: {
+      plansViewed: checkoutCounts.plansViewed,
+      checkoutStarted: checkoutCounts.checkoutStarted,
+      checkoutRedirected: checkoutCounts.checkoutRedirected,
+      checkoutFailed: checkoutCounts.checkoutFailed,
+      checkoutStartRate,
+      checkoutRedirectRate,
+    },
+    upgradeCtaSources,
   };
 
   return NextResponse.json(payload);

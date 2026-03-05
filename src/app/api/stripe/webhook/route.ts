@@ -43,12 +43,18 @@ export async function POST(req: Request) {
             typeof subscription.trial_end === "number"
               ? new Date(subscription.trial_end * 1000).toISOString()
               : null;
+          const stripeCustomerId =
+            typeof session.customer === "string" ? session.customer : null;
           await clerkClient.users.updateUserMetadata(userId, {
             publicMetadata: {
               plan,
               trialStartedAt: new Date().toISOString(),
               trialEndsAt: trialEndIso,
               trialStatus: subscription.status === "trialing" ? "trialing" : "active",
+            },
+            privateMetadata: {
+              stripeCustomerId,
+              stripeSubscriptionId: subscriptionId,
             },
           });
           console.log(`✅ Updated user ${userId} to plan: ${plan}`);

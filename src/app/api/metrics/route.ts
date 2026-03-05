@@ -24,6 +24,11 @@ const ALLOWED_EVENT_TYPES = new Set([
   "trial_converted",
   "trial_canceled",
   "trial_day_1_active",
+  "plans_viewed",
+  "checkout_started",
+  "checkout_redirected",
+  "checkout_failed",
+  "upgrade_cta_clicked",
 ]);
 
 function isMetricBody(x: unknown): x is MetricBody {

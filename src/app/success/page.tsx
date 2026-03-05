@@ -22,19 +22,27 @@ export default function SuccessPage() {
         </motion.div>
 
         <h1 className="text-4xl font-extrabold mb-2 bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent">
-          Payment successful!
+          You are in. Start here.
         </h1>
 
         <p className="text-gray-400 max-w-md mx-auto mb-10">
-          Your subscription is now active. You can close this page or return to start exploring all stories.
+          Your trial is active now. Begin with recommended stories to get value fast, then save what you like to My Library.
         </p>
 
-        <Link
-          href="/"
-          className="inline-block px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 font-semibold transition shadow-lg"
-        >
-          Go back to Digital Polyglot
-        </Link>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href="/explore/stories"
+            className="inline-block px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 font-semibold transition shadow-lg"
+          >
+            Start with Recommended Stories
+          </Link>
+          <Link
+            href="/my-library"
+            className="inline-block px-8 py-3 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 font-semibold transition"
+          >
+            Go to My Library
+          </Link>
+        </div>
       </motion.div>
     </div>
   );

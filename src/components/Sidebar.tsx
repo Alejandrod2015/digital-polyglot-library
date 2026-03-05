@@ -74,6 +74,22 @@ export default function Sidebar({ onClose }: SidebarProps) {
   const { user } = useUser();
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
 
+  const trackUpgradeCta = async (source: string) => {
+    try {
+      await fetch("/api/metrics", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          storySlug: `__upgrade_${source}__`,
+          bookSlug: "__plans__",
+          eventType: "upgrade_cta_clicked",
+        }),
+      });
+    } catch {
+      // noop
+    }
+  };
+
   const handleNavClick = () => {
     if (typeof onClose === "function") onClose();
   };
@@ -146,6 +162,19 @@ export default function Sidebar({ onClose }: SidebarProps) {
         >
           <ChartNoAxesColumn size={22} /> Progress
         </Link>
+
+        {(plan === "free" || plan === "basic") && (
+          <Link
+            href="/plans"
+            onClick={() => {
+              void trackUpgradeCta("sidebar");
+              handleNavClick();
+            }}
+            className="flex items-center gap-3 text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            <Sparkles size={22} /> Upgrade
+          </Link>
+        )}
 
         {/* Polyglot plan only */}
         {plan === "polyglot" && (

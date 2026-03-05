@@ -78,6 +78,7 @@ export default function SettingsPage() {
   const [status, setStatus] = useState<SaveStatus>("idle");
   const [hint, setHint] = useState("");
   const [themePref, setThemePref] = useState<ThemePref>("system");
+  const [billingLoading, setBillingLoading] = useState(false);
 
   const plan = (user?.publicMetadata?.plan as Plan) ?? "free";
   const isFree = plan === "free";
@@ -216,6 +217,23 @@ export default function SettingsPage() {
     setHint("Theme updated.");
   };
 
+  const openBillingPortal = async () => {
+    try {
+      setBillingLoading(true);
+      const res = await fetch("/api/stripe/portal", { method: "POST" });
+      const data = (await res.json()) as { url?: string; error?: string };
+      if (!res.ok || !data.url) {
+        throw new Error(data.error || "Could not open billing portal.");
+      }
+      window.location.href = data.url;
+    } catch (err) {
+      console.error(err);
+      setHint("Could not open billing portal.");
+    } finally {
+      setBillingLoading(false);
+    }
+  };
+
   if (!isLoaded) {
     return (
       <div className="min-h-screen text-[var(--foreground)] p-6">
@@ -249,6 +267,22 @@ export default function SettingsPage() {
           >
             Upgrade plan
           </Link>
+        </div>
+      ) : null}
+
+      {!isFree ? (
+        <div className="mb-6 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 text-sm text-[var(--foreground)]">
+          <p className="mb-3">
+            Manage your trial/subscription, payment method, and cancellation in Stripe Billing.
+          </p>
+          <button
+            type="button"
+            onClick={openBillingPortal}
+            disabled={billingLoading}
+            className="inline-flex rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90 transition disabled:opacity-60"
+          >
+            {billingLoading ? "Opening..." : "Manage subscription"}
+          </button>
         </div>
       ) : null}
 

@@ -77,6 +77,28 @@ type DashboardData = {
     bookSlug: string;
     saves: number;
   }>;
+  trialFunnel: {
+    started: number;
+    startedWithPm: number;
+    day1Active: number;
+    converted: number;
+    canceled: number;
+    conversionRate: number;
+    day1ActivationRate: number;
+    cancelRate: number;
+  };
+  checkoutFunnel: {
+    plansViewed: number;
+    checkoutStarted: number;
+    checkoutRedirected: number;
+    checkoutFailed: number;
+    checkoutStartRate: number;
+    checkoutRedirectRate: number;
+  };
+  upgradeCtaSources: Array<{
+    source: string;
+    clicks: number;
+  }>;
 };
 
 const EMPTY_DATA: DashboardData = {
@@ -101,6 +123,25 @@ const EMPTY_DATA: DashboardData = {
   topStoriesByMinutes: [],
   topSavedStories: [],
   topSavedBooks: [],
+  trialFunnel: {
+    started: 0,
+    startedWithPm: 0,
+    day1Active: 0,
+    converted: 0,
+    canceled: 0,
+    conversionRate: 0,
+    day1ActivationRate: 0,
+    cancelRate: 0,
+  },
+  checkoutFunnel: {
+    plansViewed: 0,
+    checkoutStarted: 0,
+    checkoutRedirected: 0,
+    checkoutFailed: 0,
+    checkoutStartRate: 0,
+    checkoutRedirectRate: 0,
+  },
+  upgradeCtaSources: [],
 };
 
 export default function MetricsDashboard() {
@@ -356,10 +397,38 @@ export default function MetricsDashboard() {
 
     if (section === "acquisition") {
       return (
-        <EmptySection
-          title="Acquisition"
-          description="Use GA4 UTM/campaign events here. Recommended next step: ingest source/medium and landing page into internal metrics."
-        />
+        <div className="grid gap-4 md:grid-cols-4">
+          <Card className="border border-border bg-card">
+            <CardContent className="pt-6">
+              <p className="text-sm text-muted-foreground">Plans viewed</p>
+              <p className="mt-2 text-2xl font-semibold">{data.checkoutFunnel.plansViewed}</p>
+            </CardContent>
+          </Card>
+          <Card className="border border-border bg-card">
+            <CardContent className="pt-6">
+              <p className="text-sm text-muted-foreground">Checkout started</p>
+              <p className="mt-2 text-2xl font-semibold">{data.checkoutFunnel.checkoutStarted}</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                {data.checkoutFunnel.checkoutStartRate}% from plans view
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="border border-border bg-card">
+            <CardContent className="pt-6">
+              <p className="text-sm text-muted-foreground">Checkout redirect success</p>
+              <p className="mt-2 text-2xl font-semibold">{data.checkoutFunnel.checkoutRedirected}</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                {data.checkoutFunnel.checkoutRedirectRate}% from checkout start
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="border border-border bg-card">
+            <CardContent className="pt-6">
+              <p className="text-sm text-muted-foreground">Checkout failed</p>
+              <p className="mt-2 text-2xl font-semibold">{data.checkoutFunnel.checkoutFailed}</p>
+            </CardContent>
+          </Card>
+        </div>
       );
     }
 
@@ -383,10 +452,63 @@ export default function MetricsDashboard() {
 
     if (section === "funnels") {
       return (
-        <EmptySection
-          title="Funnels"
-          description="Define and monitor key journey steps: Home -> Story Open -> Play -> Complete -> Favorite -> Subscribe."
-        />
+        <div className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-4">
+            <Card className="border border-border bg-card">
+              <CardContent className="pt-6">
+                <p className="text-sm text-muted-foreground">Trial Started</p>
+                <p className="mt-2 text-2xl font-semibold">{data.trialFunnel.started}</p>
+              </CardContent>
+            </Card>
+            <Card className="border border-border bg-card">
+              <CardContent className="pt-6">
+                <p className="text-sm text-muted-foreground">Day-1 Active</p>
+                <p className="mt-2 text-2xl font-semibold">{data.trialFunnel.day1Active}</p>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {data.trialFunnel.day1ActivationRate}% activation
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border border-border bg-card">
+              <CardContent className="pt-6">
+                <p className="text-sm text-muted-foreground">Converted</p>
+                <p className="mt-2 text-2xl font-semibold">{data.trialFunnel.converted}</p>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {data.trialFunnel.conversionRate}% conversion
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border border-border bg-card">
+              <CardContent className="pt-6">
+                <p className="text-sm text-muted-foreground">Canceled</p>
+                <p className="mt-2 text-2xl font-semibold">{data.trialFunnel.canceled}</p>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {data.trialFunnel.cancelRate}% cancel rate
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="border border-border bg-card">
+            <CardContent className="pt-6">
+              <h2 className="text-lg font-semibold mb-4">Upgrade CTA performance by source</h2>
+              <div className="space-y-2">
+                {data.upgradeCtaSources.map((row) => (
+                  <div
+                    key={row.source}
+                    className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
+                  >
+                    <span className="font-medium">{row.source}</span>
+                    <span className="text-muted-foreground">{row.clicks} clicks</span>
+                  </div>
+                ))}
+                {data.upgradeCtaSources.length === 0 ? (
+                  <p className="text-sm text-muted-foreground">No CTA clicks for current filters.</p>
+                ) : null}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       );
     }
 
