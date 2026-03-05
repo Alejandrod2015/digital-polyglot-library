@@ -9,11 +9,13 @@ import { cn } from "@/utils";
 import Cover from "@/components/Cover";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
+import RegionBadge from "@/components/RegionBadge";
 
 type Book = {
   slug: string;
   title: string;
   language?: string;
+  region?: string;
   level?: string;
   cover?: string;
   description?: string;
@@ -116,6 +118,7 @@ export default function BookCarousel({
                     <div className="mb-2 flex items-center gap-2">
                       <LevelBadge level={book.level} />
                       <LanguageBadge language={book.language} />
+                      <RegionBadge region={book.region} />
                     </div>
                     <p className="text-base font-semibold text-white line-clamp-2">
                       {book.title}

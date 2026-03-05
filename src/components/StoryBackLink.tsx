@@ -140,7 +140,7 @@ export default function StoryBackLink({
       type="button"
       onClick={handleBack}
       aria-label={back.label}
-      className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-white md:text-blue-600 hover:bg-white/10 md:hover:bg-blue-50 hover:text-white md:hover:text-blue-700 dark:md:hover:bg-gray-700"
+      className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-white hover:bg-white/10 hover:text-white"
     >
       <ArrowLeft className="h-5 w-5" />
       <span className="hidden md:inline">{back.label}</span>

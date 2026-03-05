@@ -43,6 +43,7 @@ export default async function ExplorePolyglotStoriesPage({
     slug: s.slug,
     title: s.title ?? "Untitled story",
     language: s.language ?? "",
+    region: s.region ?? "",
     level: s.level ?? "",
     topic: s.topic ?? "",
     text: s.text ?? "",
@@ -60,7 +61,7 @@ export default async function ExplorePolyglotStoriesPage({
     <div className="max-w-6xl mx-auto p-8 text-[var(--foreground)]">
       <div className="mb-6 md:mb-8 flex items-center justify-between gap-4">
         <h1 className="text-3xl font-bold">All Polyglot Stories</h1>
-        <Link href="/explore" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)]">
+        <Link href="/explore" className="text-sm text-white/90 hover:text-white">
           Back to Explore
         </Link>
       </div>
@@ -77,6 +78,7 @@ export default async function ExplorePolyglotStoriesPage({
               coverUrl={story.coverUrl}
               level={story.level}
               language={story.language}
+              region={story.region}
               excerpt={`${stripHtml(story.text).slice(0, 140)}...`}
             />
           ))}

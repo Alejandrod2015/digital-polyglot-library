@@ -9,6 +9,8 @@ import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import StoryContent from "@/components/StoryContent";
 import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 import LevelBadge from "@/components/LevelBadge";
+import LanguageBadge from "@/components/LanguageBadge";
+import RegionBadge from "@/components/RegionBadge";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
 
@@ -87,9 +89,11 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
       {/* Título */}
       <div className="relative mb-7 pt-2">
-        <h1 className="text-4xl font-bold text-white text-center">{story.title}</h1>
-        <div className="mt-3 flex justify-center">
+        <h1 className="text-4xl font-bold text-[var(--foreground)] text-center">{story.title}</h1>
+        <div className="mt-3 flex flex-wrap justify-center gap-2">
           <LevelBadge level={story.level ?? book.level} />
+          <LanguageBadge language={story.language ?? book.language} />
+          <RegionBadge region={story.region ?? book.region} />
         </div>
       </div>
 
@@ -115,8 +119,8 @@ export default async function StoryPage({ params }: StoryPageProps) {
         storyId={story.id}
         forceAllow={hasFullAccess}
         fallback={
-          <div className="relative text-center text-gray-300 py-16">
-            <p className="mb-4 text-xl">Unlock full access to all stories.</p>
+          <div className="relative text-center text-[var(--muted)] py-16">
+            <p className="mb-4 text-xl text-[var(--foreground)]">Unlock full access to all stories.</p>
             <div className="flex items-center justify-center gap-3">
               {!userId ? (
                 <a
@@ -137,12 +141,12 @@ export default async function StoryPage({ params }: StoryPageProps) {
         }
       >
         {hasFullAccess ? (
-          <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6">
+          <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
             <StoryContent text={visibleText} sentencesPerParagraph={3} vocab={story.vocab ?? []} />
           </div>
         ) : (
           <div
-            className="max-w-[65ch] mx-auto text-xl leading-relaxed text-gray-200 space-y-6"
+            className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6"
             dangerouslySetInnerHTML={{ __html: visibleText }}
           />
         )}

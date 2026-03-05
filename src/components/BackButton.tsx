@@ -23,7 +23,7 @@ export default function BackButton() {
   return (
     <button
       onClick={() => router.push(target)}
-      className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-gray-700 transition-colors"
+      className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-white hover:bg-white/10 hover:text-white transition-colors"
     >
       <ArrowLeft className="h-5 w-5" />
       <span>Back</span>

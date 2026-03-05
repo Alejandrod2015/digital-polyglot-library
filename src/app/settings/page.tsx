@@ -22,7 +22,22 @@ const LANGUAGES: LanguageOption[] = [
 ];
 
 const MAX_SELECTION = 3;
+const MAX_INTERESTS = 12;
 const THEME_KEY = "dp_theme_pref";
+const SUGGESTED_INTERESTS = [
+  "Coffee",
+  "Sustainability",
+  "Food",
+  "Travel",
+  "Business",
+  "Technology",
+  "Health",
+  "Art",
+  "Nature",
+  "History",
+  "Music",
+  "Sports",
+];
 
 function toStringArray(x: unknown): string[] {
   return Array.isArray(x) ? x.filter((v): v is string => typeof v === "string") : [];
@@ -30,6 +45,21 @@ function toStringArray(x: unknown): string[] {
 
 function normalizeSelection(items: string[]): string[] {
   return Array.from(new Set(items.map((x) => x.trim()).filter(Boolean)));
+}
+
+function normalizeInterests(items: string[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const item of items) {
+    const cleaned = item.trim().replace(/\s+/g, " ");
+    if (!cleaned) continue;
+    const key = cleaned.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(cleaned);
+    if (out.length >= MAX_INTERESTS) break;
+  }
+  return out;
 }
 
 function equalsSet(a: string[], b: string[]): boolean {
@@ -42,6 +72,9 @@ export default function SettingsPage() {
   const { user, isLoaded } = useUser();
   const [selected, setSelected] = useState<string[]>([]);
   const [persisted, setPersisted] = useState<string[]>([]);
+  const [interests, setInterests] = useState<string[]>([]);
+  const [persistedInterests, setPersistedInterests] = useState<string[]>([]);
+  const [interestInput, setInterestInput] = useState("");
   const [status, setStatus] = useState<SaveStatus>("idle");
   const [hint, setHint] = useState("");
   const [themePref, setThemePref] = useState<ThemePref>("system");
@@ -49,13 +82,19 @@ export default function SettingsPage() {
   const plan = (user?.publicMetadata?.plan as Plan) ?? "free";
   const isFree = plan === "free";
 
-  const dirty = useMemo(() => !equalsSet(selected, persisted), [selected, persisted]);
+  const dirty = useMemo(
+    () => !equalsSet(selected, persisted) || !equalsSet(interests, persistedInterests),
+    [selected, persisted, interests, persistedInterests]
+  );
 
   useEffect(() => {
     if (!isLoaded) return;
     const current = normalizeSelection(toStringArray(user?.publicMetadata?.targetLanguages));
+    const currentInterests = normalizeInterests(toStringArray(user?.publicMetadata?.interests));
     setSelected(current);
     setPersisted(current);
+    setInterests(currentInterests);
+    setPersistedInterests(currentInterests);
     setStatus("idle");
     setHint("");
   }, [isLoaded, user]);
@@ -81,19 +120,26 @@ export default function SettingsPage() {
     try {
       setStatus("saving");
       const payload = normalizeSelection(selected).slice(0, MAX_SELECTION);
+      const payloadInterests = normalizeInterests(interests);
       const res = await fetch("/api/user/preferences", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ targetLanguages: payload }),
+        body: JSON.stringify({ targetLanguages: payload, interests: payloadInterests }),
       });
       if (!res.ok) throw new Error(`Error ${res.status}`);
 
       const data: unknown = await res.json();
+      const record = data as Record<string, unknown>;
       const serverTL = normalizeSelection(
-        toStringArray((data as Record<string, unknown>)?.targetLanguages)
+        toStringArray(record?.targetLanguages)
+      );
+      const serverInterests = normalizeInterests(
+        toStringArray(record?.interests)
       );
       setSelected(serverTL);
       setPersisted(serverTL);
+      setInterests(serverInterests);
+      setPersistedInterests(serverInterests);
       setStatus("saved");
       await user?.reload();
     } catch (err) {
@@ -103,13 +149,36 @@ export default function SettingsPage() {
     }
   };
 
+  const toggleInterest = (value: string) => {
+    const nextValue = value.trim().replace(/\s+/g, " ");
+    if (!nextValue) return;
+    setInterests((prev) => {
+      const current = normalizeInterests(prev);
+      const has = current.some((item) => item.toLowerCase() === nextValue.toLowerCase());
+      if (has) return current.filter((item) => item.toLowerCase() !== nextValue.toLowerCase());
+      if (current.length >= MAX_INTERESTS) {
+        setHint(`You can select up to ${MAX_INTERESTS} interests.`);
+        return current;
+      }
+      return normalizeInterests([...current, nextValue]);
+    });
+    if (status === "saved") setStatus("idle");
+  };
+
+  const addCustomInterest = () => {
+    const nextValue = interestInput.trim().replace(/\s+/g, " ");
+    if (!nextValue) return;
+    toggleInterest(nextValue);
+    setInterestInput("");
+  };
+
   useEffect(() => {
     if (isFree || !dirty) return;
     const timer = window.setTimeout(() => {
       void savePreferences();
     }, 800);
     return () => window.clearTimeout(timer);
-  }, [dirty, selected, isFree]);
+  }, [dirty, selected, interests, isFree]);
 
   const toggleLanguage = (code: string) => {
     if (isFree) {
@@ -163,7 +232,7 @@ export default function SettingsPage() {
 
   return (
     <div className="min-h-screen text-[var(--foreground)] p-6 pb-24">
-      <h1 className="text-2xl font-semibold mb-2">Language Preferences</h1>
+      <h1 className="text-2xl font-semibold mb-2">Preferences</h1>
       <p className="text-[var(--muted)] mb-5 text-sm">
         We use this to personalize Home, Explore, and recommendations.
       </p>
@@ -238,6 +307,72 @@ export default function SettingsPage() {
         </div>
       </section>
 
+      <section className="mt-7">
+        <div className="flex items-center justify-between gap-3 mb-3">
+          <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Interests</h2>
+          <span className="text-xs text-[var(--muted)]">
+            {interests.length}/{MAX_INTERESTS}
+          </span>
+        </div>
+        <div className="mb-3 flex flex-wrap gap-2">
+          {SUGGESTED_INTERESTS.map((interest) => {
+            const active = interests.some((item) => item.toLowerCase() === interest.toLowerCase());
+            return (
+              <button
+                key={interest}
+                type="button"
+                onClick={() => toggleInterest(interest)}
+                className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+                  active
+                    ? "bg-[var(--primary)] border-[var(--primary)] text-white"
+                    : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
+                }`}
+              >
+                {interest}
+              </button>
+            );
+          })}
+        </div>
+        <div className="mb-3 flex items-center gap-2">
+          <input
+            value={interestInput}
+            onChange={(e) => setInterestInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                addCustomInterest();
+              }
+            }}
+            placeholder="Add custom interest (e.g. urbanism)"
+            className="flex-1 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2 text-sm text-[var(--foreground)] outline-none focus:border-[var(--primary)]"
+          />
+          <button
+            type="button"
+            onClick={addCustomInterest}
+            className="rounded-xl bg-[var(--primary)] px-3 py-2 text-sm font-semibold text-white hover:opacity-90"
+          >
+            Add
+          </button>
+        </div>
+        {interests.length > 0 ? (
+          <div className="flex flex-wrap gap-2">
+            {interests.map((interest) => (
+              <button
+                key={interest}
+                type="button"
+                onClick={() => toggleInterest(interest)}
+                className="rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] px-3 py-1 text-sm text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
+                title="Remove interest"
+              >
+                {interest} ×
+              </button>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm text-[var(--muted)]">No interests selected yet.</p>
+        )}
+      </section>
+
       <div className="sticky bottom-[4.75rem] mt-6">
         <div className="rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)]/95 backdrop-blur px-4 py-2 text-sm text-[var(--foreground)]/90">
           {status === "saving" ? "Saving changes..." : null}
@@ -245,7 +380,11 @@ export default function SettingsPage() {
           {status === "error" ? "Could not save" : null}
           {status === "idle" && dirty ? "Unsaved changes" : null}
           {status === "idle" && !dirty ? "Preferences are up to date" : null}
-          {hint ? <span className="ml-2 text-amber-200">{hint}</span> : null}
+          {hint ? (
+            <span className="ml-2 font-medium text-[var(--primary)]">
+              {hint}
+            </span>
+          ) : null}
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { auth } from "@clerk/nextjs/server";
+import { prisma } from "@/lib/prisma";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
@@ -34,8 +35,36 @@ export async function POST(req: Request) {
       payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
       client_reference_id: userId,
+      subscription_data: {
+        trial_period_days: 14,
+        metadata: {
+          clerkUserId: userId,
+          checkoutType: "trial_with_pm",
+          priceId,
+        },
+      },
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success`,
       cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/plans`,
+    });
+
+    // Internal business events for funnel visibility
+    await prisma.userMetric.createMany({
+      data: [
+        {
+          userId,
+          storySlug: "__plans__",
+          bookSlug: "billing",
+          eventType: "trial_started",
+          value: 14,
+        },
+        {
+          userId,
+          storySlug: "__plans__",
+          bookSlug: "billing",
+          eventType: "trial_started_with_pm",
+          value: 14,
+        },
+      ],
     });
 
     return NextResponse.json({ url: session.url });

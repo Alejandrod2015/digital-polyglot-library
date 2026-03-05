@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
+import RegionBadge from "@/components/RegionBadge";
 
 type StoryVerticalCardProps = {
   href: string;
@@ -15,6 +16,7 @@ type StoryVerticalCardProps = {
   metaSecondary?: string;
   level?: string;
   language?: string;
+  region?: string;
   className?: string;
   footer?: ReactNode;
 };
@@ -29,6 +31,7 @@ export default function StoryVerticalCard({
   metaSecondary,
   level,
   language,
+  region,
   className = "",
   footer,
 }: StoryVerticalCardProps) {
@@ -48,11 +51,12 @@ export default function StoryVerticalCard({
           />
         </div>
 
-        <div className="p-5 flex flex-col justify-between flex-1 text-left">
+        <div className="p-5 flex flex-col flex-1 text-left">
           <div>
-            <div className="mb-2 flex items-center gap-2">
+            <div className="mb-2 flex flex-wrap items-center gap-2">
               <LevelBadge level={level} />
               <LanguageBadge language={language} />
+              <RegionBadge region={region} />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">{title}</h3>
             {subtitle ? (

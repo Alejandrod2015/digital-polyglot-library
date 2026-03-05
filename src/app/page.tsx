@@ -203,6 +203,11 @@ export default async function HomePage() {
         (lang): lang is string => typeof lang === "string"
       )
     : [];
+  const initialInterests = Array.isArray(user?.publicMetadata?.interests)
+    ? (user?.publicMetadata?.interests as string[]).filter(
+        (interest): interest is string => typeof interest === "string"
+      )
+    : [];
 
   return (
     <HomeClient
@@ -213,6 +218,7 @@ export default async function HomePage() {
       featuredDaySlug={featured.day?.slug ?? null}
       initialPlan={initialPlan}
       initialTargetLanguages={initialTargetLanguages}
+      initialInterests={initialInterests}
       initialContinueListening={continueRows.map((row) => ({
         bookSlug: row.bookSlug,
         storySlug: row.storySlug,

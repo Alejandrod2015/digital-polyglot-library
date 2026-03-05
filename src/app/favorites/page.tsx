@@ -35,6 +35,70 @@ function normalizeWord(word: string): string {
   return word.trim().toLowerCase();
 }
 
+function getFavoriteType(fav: FavoriteItem): VocabTypeKey {
+  return (
+    normalizeVocabType(fav.wordType, {
+      word: fav.word,
+      definition: fav.translation,
+    }) ?? 'other'
+  );
+}
+
+function shuffleArray<T>(items: T[]): T[] {
+  const next = [...items];
+  for (let i = next.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [next[i], next[j]] = [next[j], next[i]];
+  }
+  return next;
+}
+
+function normalizeTokenValue(value?: string | null): string | null {
+  if (!value) return null;
+  const clean = value.trim().toLowerCase();
+  return clean.length > 0 ? clean : null;
+}
+
+function areWordsRelated(a: FavoriteItem, b: FavoriteItem): boolean {
+  const typeA = getFavoriteType(a);
+  const typeB = getFavoriteType(b);
+  if (typeA === typeB) return true;
+
+  const storyA = normalizeTokenValue(a.storySlug);
+  const storyB = normalizeTokenValue(b.storySlug);
+  if (storyA && storyB && storyA === storyB) return true;
+
+  const langA = normalizeTokenValue(a.language);
+  const langB = normalizeTokenValue(b.language);
+  if (langA && langB && langA === langB) return true;
+
+  return false;
+}
+
+function mergeFavoriteItem(remote: FavoriteItem, local: FavoriteItem): FavoriteItem {
+  const pickString = (
+    preferred?: string | null,
+    fallback?: string | null
+  ): string | null | undefined => {
+    const a = typeof preferred === 'string' ? preferred.trim() : '';
+    if (a) return preferred;
+    const b = typeof fallback === 'string' ? fallback.trim() : '';
+    if (b) return fallback;
+    return preferred ?? fallback ?? undefined;
+  };
+
+  return {
+    ...remote,
+    translation: pickString(remote.translation, local.translation) ?? '',
+    wordType: pickString(remote.wordType, local.wordType) ?? null,
+    exampleSentence: pickString(remote.exampleSentence, local.exampleSentence) ?? null,
+    storySlug: pickString(remote.storySlug, local.storySlug) ?? null,
+    storyTitle: pickString(remote.storyTitle, local.storyTitle) ?? null,
+    sourcePath: pickString(remote.sourcePath, local.sourcePath) ?? null,
+    language: pickString(remote.language, local.language) ?? null,
+  };
+}
+
 function getSrsKey(userId?: string): string {
   return `dp_favorites_srs_${userId ?? 'guest'}`;
 }
@@ -118,11 +182,17 @@ export default function FavoritesPage() {
   const [srsMap, setSrsMap] = useState<SrsMap>({});
   const [isReady, setIsReady] = useState(false); // controla visibilidad final
   const [practiceMode, setPracticeMode] = useState(false);
-  const [practiceOnlyDue, setPracticeOnlyDue] = useState(true);
+  const [practiceModeKind, setPracticeModeKind] = useState<'due' | 'all' | 'related'>('due');
   const [practiceQueue, setPracticeQueue] = useState<FavoriteItem[]>([]);
   const [practiceIndex, setPracticeIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
+  const getPracticeModeTabClass = (mode: 'due' | 'all' | 'related') =>
+    `px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${
+      practiceModeKind === mode
+        ? "bg-blue-600 text-white"
+        : "bg-transparent hover:bg-[var(--card-bg-hover)] text-[var(--foreground)]"
+    }`;
 
   useEffect(() => {
     const load = async () => {
@@ -135,9 +205,14 @@ export default function FavoritesPage() {
         try {
           const res = await fetch('/api/favorites', { cache: 'no-store' });
           const remoteFavs = res.ok ? ((await res.json()) as FavoriteItem[]) : [];
+          const localByWord = new Map(localFavs.map((fav) => [normalizeWord(fav.word), fav] as const));
+          const mergedRemote = remoteFavs.map((remote) => {
+            const local = localByWord.get(normalizeWord(remote.word));
+            return local ? mergeFavoriteItem(remote, local) : remote;
+          });
           const merged = [
-            ...remoteFavs,
-            ...localFavs.filter((f) => !remoteFavs.some((r) => r.word === f.word)),
+            ...mergedRemote,
+            ...localFavs.filter((f) => !remoteFavs.some((r) => normalizeWord(r.word) === normalizeWord(f.word))),
           ];
 
           await Promise.all(
@@ -210,7 +285,7 @@ export default function FavoritesPage() {
   const dueFavorites = favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
   const currentPractice = practiceQueue[practiceIndex] ?? null;
   const favoriteTypeCounts = favorites.reduce<Record<VocabTypeKey, number>>((acc, fav) => {
-    const key = normalizeVocabType(fav.wordType, { word: fav.word, definition: fav.translation }) ?? 'other';
+    const key = getFavoriteType(fav);
     acc[key] = (acc[key] ?? 0) + 1;
     return acc;
   }, {} as Record<VocabTypeKey, number>);
@@ -243,15 +318,65 @@ export default function FavoritesPage() {
     const source = onlyDue ? dueFavorites : favorites;
     const snapshot = source.filter((fav) => {
       if (practiceType === 'all') return true;
-      const normalized = normalizeVocabType(fav.wordType, {
-        word: fav.word,
-        definition: fav.translation,
-      }) ?? 'other';
+      const normalized = getFavoriteType(fav);
       return normalized === practiceType;
     });
-    setPracticeOnlyDue(onlyDue);
+    setPracticeModeKind(onlyDue ? 'due' : 'all');
     setPracticeQueue(snapshot);
     setPracticeMode(snapshot.length > 0);
+    setPracticeIndex(0);
+    setRevealed(false);
+  };
+
+  const startRelatedPractice = () => {
+    const base = favorites.filter((fav) => {
+      if (practiceType === 'all') return true;
+      return getFavoriteType(fav) === practiceType;
+    });
+
+    if (base.length === 0) {
+      setPracticeQueue([]);
+      setPracticeMode(false);
+      setPracticeIndex(0);
+      setRevealed(false);
+      return;
+    }
+
+    const duePool = base.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
+    const relatedPool = base.filter((candidate) => {
+      const candidateKey = normalizeWord(candidate.word);
+      return base.some((seed) => {
+        const seedKey = normalizeWord(seed.word);
+        if (seedKey === candidateKey) return false;
+        return areWordsRelated(seed, candidate);
+      });
+    });
+
+    const dueRelated = duePool.filter((due) =>
+      relatedPool.some((related) => normalizeWord(related.word) === normalizeWord(due.word))
+    );
+
+    const dueShuffled = shuffleArray(dueRelated);
+    const relatedShuffled = shuffleArray(
+      relatedPool.filter(
+        (fav) => !dueRelated.some((due) => normalizeWord(due.word) === normalizeWord(fav.word))
+      )
+    );
+    const maxQueue = 20;
+    const dueTarget = Math.min(dueShuffled.length, Math.max(4, Math.ceil(maxQueue * 0.5)));
+    const relatedTarget = Math.min(relatedShuffled.length, maxQueue - dueTarget);
+    const selectedDue = dueShuffled.slice(0, dueTarget);
+    const selectedRelated = relatedShuffled.slice(0, relatedTarget);
+    const fallback =
+      selectedDue.length + selectedRelated.length > 0
+        ? []
+        : shuffleArray(base).slice(0, Math.min(maxQueue, base.length));
+
+    const relatedSet = shuffleArray([...selectedDue, ...selectedRelated, ...fallback]);
+
+    setPracticeModeKind('related');
+    setPracticeQueue(relatedSet);
+    setPracticeMode(relatedSet.length > 0);
     setPracticeIndex(0);
     setRevealed(false);
   };
@@ -313,15 +438,21 @@ export default function FavoritesPage() {
             <div className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-1">
               <button
                 onClick={() => startPractice(true)}
-                className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold transition-colors"
+                className={getPracticeModeTabClass('due')}
               >
                 Practice due
               </button>
               <button
                 onClick={() => startPractice(false)}
-                className="px-3 py-1.5 rounded-lg bg-transparent hover:bg-[var(--card-bg-hover)] text-[var(--foreground)] text-sm font-semibold transition-colors"
+                className={getPracticeModeTabClass('all')}
               >
                 Practice all
+              </button>
+              <button
+                onClick={startRelatedPractice}
+                className={getPracticeModeTabClass('related')}
+              >
+                Practice related
               </button>
             </div>
             <div className="flex max-w-full flex-wrap justify-end gap-1.5">
@@ -360,6 +491,11 @@ export default function FavoritesPage() {
           <p className="text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
             Practice {practiceIndex + 1}/{practiceQueue.length}
             {practiceType !== 'all' ? ` · ${getVocabTypeLabel(practiceType)}` : ''}
+            {practiceModeKind === 'related'
+              ? ' · Related'
+              : practiceModeKind === 'due'
+                ? ' · Due'
+                : ' · All'}
           </p>
           <p className="text-3xl font-semibold mb-4">{currentPractice.word}</p>
           <div className="mb-3">
@@ -479,8 +615,10 @@ export default function FavoritesPage() {
                           </span>
                         ) : null}
                       <span
-                        className={`text-[11px] px-2 py-0.5 rounded-full ${
-                          due ? 'bg-emerald-500/20 text-emerald-300' : 'bg-[var(--chip-bg)] text-[var(--chip-text)]'
+                        className={`text-[11px] px-2 py-0.5 rounded-full border ${
+                          due
+                            ? 'border-emerald-500/40 bg-emerald-500/18 text-[var(--foreground)] font-medium'
+                            : 'border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]'
                         }`}
                       >
                         {due ? 'Due today' : formatNextReview(meta)}

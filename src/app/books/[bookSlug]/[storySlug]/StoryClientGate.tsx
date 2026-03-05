@@ -65,21 +65,24 @@ export default function StoryClientGate({
       <div className="relative max-h-[40vh] overflow-hidden">
         {children}
 
-        {/* Fade overlay que hace desaparecer el texto hacia el fondo */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--background)] via-[rgba(11,18,32,0.9)] to-transparent z-10" />
+        {/* Fade overlay adaptado al tema para evitar contraste raro en claro */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-56 z-10"
+          style={{
+            background:
+              "linear-gradient(to top, var(--bg-content) 26%, color-mix(in srgb, var(--bg-content) 78%, transparent) 62%, transparent 100%)",
+          }}
+        />
       </div>
 
-            {/* Fallback (botón Upgrade, mensaje, etc.) debajo del área recortada */}
+      {/* Fallback (botón Upgrade, mensaje, etc.) debajo del área recortada */}
       <div
-  className={`relative z-20 -mt-12${
-    highlight ? " animate-pulse motion-safe:animate-pulse" : ""
-  }`}
->
-  {fallback}
-</div>
-
-
-
+        className={`relative z-20 -mt-10 ${
+          highlight ? "animate-pulse motion-safe:animate-pulse" : ""
+        }`}
+      >
+        {fallback}
+      </div>
     </div>
   );
 }

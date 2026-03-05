@@ -476,11 +476,11 @@ export default function Player({
   }
 
   return (
-    <div className="bg-[var(--bg-player)] border-t border-[var(--player-border-top)] px-4 py-3 rounded-t-xl shadow-2xl backdrop-blur w-full relative">
+    <div className="bg-[var(--bg-player)] border-t border-[var(--player-border-top)] px-4 py-3 rounded-t-xl shadow-2xl backdrop-blur w-full relative text-[var(--foreground)]">
       <audio ref={audioRef} src={resolvedSrc} preload="metadata" />
 
       {/* barra de progreso */}
-      <div className="flex items-center gap-2 text-sm text-gray-300 mb-2">
+      <div className="flex items-center gap-2 text-sm text-[var(--muted)] mb-2">
         <span className="w-10 text-right">{formatTime(progress)}</span>
         <input
           type="range"
@@ -498,7 +498,7 @@ export default function Player({
         {prevStorySlug && (
           <Link
             href={`/books/${bookSlug}/${prevStorySlug}${navigationSuffix}`}
-            className="p-1.5 rounded hover:bg-gray-800"
+            className="p-1.5 rounded hover:bg-[var(--card-bg-hover)]"
           >
             <SkipBack className="w-6 h-6" />
           </Link>
@@ -506,7 +506,7 @@ export default function Player({
 
         <button
           onClick={() => skip(-15)}
-          className="relative p-1.5 rounded hover:bg-gray-800"
+          className="relative p-1.5 rounded hover:bg-[var(--card-bg-hover)]"
         >
           <RotateCcw className="w-6 h-6" />
           <span className="absolute inset-0 flex items-center justify-center text-[8px] font-bold">
@@ -527,7 +527,7 @@ export default function Player({
 
         <button
           onClick={() => skip(15)}
-          className="relative p-1.5 rounded hover:bg-gray-800"
+          className="relative p-1.5 rounded hover:bg-[var(--card-bg-hover)]"
         >
           <RotateCw className="w-6 h-6" />
           <span className="absolute inset-0 flex items-center justify-center text-[8px] font-bold">
@@ -538,7 +538,7 @@ export default function Player({
         {nextStorySlug && (
           <Link
             href={`/books/${bookSlug}/${nextStorySlug}${navigationSuffix}`}
-            className="p-1.5 rounded hover:bg-gray-800"
+            className="p-1.5 rounded hover:bg-[var(--card-bg-hover)]"
           >
             <SkipForward className="w-6 h-6" />
           </Link>
@@ -548,7 +548,7 @@ export default function Player({
         <div className="ml-2 relative">
           <button
             onClick={() => setShowSpeedMenu((v) => !v)}
-            className="bg-gray-800 text-sm rounded px-2 py-1 flex items-center gap-1 hover:bg-gray-700"
+            className="bg-[var(--chip-bg)] border border-[var(--chip-border)] text-[var(--foreground)] text-sm rounded px-2 py-1 flex items-center gap-1 hover:bg-[var(--card-bg-hover)]"
           >
             {speed.toFixed(2).replace(/\.00$/, "")}x
             <ChevronUp
@@ -559,13 +559,13 @@ export default function Player({
           </button>
 
           {showSpeedMenu && (
-            <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-900 border border-gray-700 rounded-lg shadow-lg py-1 text-sm z-50">
+            <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-[var(--surface)] border border-[var(--card-border)] rounded-lg shadow-lg py-1 text-sm z-50">
               {[0.75, 0.85, 1, 1.15, 1.25].map((v) => (
                 <button
                   key={v}
                   onClick={() => changeSpeed(v)}
-                  className={`block w-full text-left px-4 py-1 hover:bg-gray-700 ${
-                    v === speed ? "text-blue-400" : "text-white"
+                  className={`block w-full text-left px-4 py-1 hover:bg-[var(--card-bg-hover)] ${
+                    v === speed ? "text-[var(--primary)]" : "text-[var(--foreground)]"
                   }`}
                 >
                   {v.toFixed(2).replace(/\.00$/, "")}x

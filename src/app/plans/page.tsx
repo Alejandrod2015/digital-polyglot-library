@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { useRouter, useSearchParams } from 'next/navigation';
 import type { Plan } from '@/lib/access';
@@ -10,6 +10,15 @@ function PlansInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState<string | null>(null);
+  const chargeDate = useMemo(() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 14);
+    return new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    }).format(d);
+  }, []);
 
   const plan: Plan =
     (user?.publicMetadata?.plan as Plan | undefined) ?? 'free';
@@ -104,6 +113,10 @@ function PlansInner() {
       <h1 className="text-4xl font-extrabold mb-12 text-center bg-gradient-to-r from-indigo-400 to-white bg-clip-text text-transparent">
         Choose your plan
       </h1>
+      <p className="mb-8 max-w-2xl text-center text-sm text-indigo-100/90">
+        Start a 14-day Premium trial with payment method. You will be charged on{' '}
+        <span className="font-semibold text-white">{chargeDate}</span> unless you cancel before then.
+      </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl w-full">
         {/* BASIC */}
@@ -140,7 +153,7 @@ function PlansInner() {
             €14.99<span className="text-lg font-medium">/mo</span>
           </p>
           <p className="text-gray-400 text-sm mb-8">
-            Unlock all stories and enjoy personalized recommendations.
+            14-day free trial, then €14.99/month. Full access to stories, audio, and recommendations.
           </p>
 
           <button
@@ -152,7 +165,7 @@ function PlansInner() {
           >
             {loading === 'price_1SbP7r6ytrKVzptQaTBIuAaZ'
               ? 'Processing...'
-              : 'Subscribe to Premium Monthly'}
+              : 'Start 14-day trial'}
           </button>
         </div>
 
@@ -168,7 +181,7 @@ function PlansInner() {
             €149<span className="text-lg font-medium">/yr</span>
           </p>
           <p className="text-gray-400 text-sm mb-8">
-            Get full access for a year and save two months.
+            14-day free trial, then €149/year. Full access and best annual value.
           </p>
 
           <button
@@ -180,13 +193,13 @@ function PlansInner() {
           >
             {loading === 'price_1SbP9H6ytrKVzptQQTz9v1hd'
               ? 'Processing...'
-              : 'Subscribe to Premium Annual'}
+              : 'Start 14-day trial'}
           </button>
         </div>
       </div>
 
       <p className="mt-10 text-gray-500 text-sm text-center">
-        You can upgrade or cancel anytime. No hidden fees.
+        Payment method required for trial. Cancel anytime before {chargeDate} to avoid charges.
       </p>
     </div>
   );

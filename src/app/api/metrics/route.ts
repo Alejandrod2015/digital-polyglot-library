@@ -11,6 +11,21 @@ type MetricBody = {
   value?: number;
 };
 
+const ALLOWED_EVENT_TYPES = new Set([
+  "audio_load",
+  "audio_play",
+  "audio_pause",
+  "audio_complete",
+  "speed_change",
+  "seek",
+  "continue_listening",
+  "trial_started",
+  "trial_started_with_pm",
+  "trial_converted",
+  "trial_canceled",
+  "trial_day_1_active",
+]);
+
 function isMetricBody(x: unknown): x is MetricBody {
   if (!x || typeof x !== "object") return false;
   const o = x as Record<string, unknown>;
@@ -35,6 +50,9 @@ export async function POST(req: NextRequest): Promise<Response> {
 
   try {
     const { storySlug, bookSlug, eventType, value } = json;
+    if (!ALLOWED_EVENT_TYPES.has(eventType)) {
+      return NextResponse.json({ error: "Invalid eventType" }, { status: 400 });
+    }
 
     await prisma.userMetric.create({
       data: {

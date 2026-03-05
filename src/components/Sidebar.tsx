@@ -54,8 +54,8 @@ function SignInButtonCustom({ onClose }: { onClose?: () => void }) {
     if (typeof onClose === "function") onClose();
     openSignIn({
       appearance: { layout: { shimmer: true } },
-      afterSignInUrl: "/explore",
-      afterSignUpUrl: "/explore",
+      afterSignInUrl: "/auth/post-login",
+      afterSignUpUrl: "/auth/post-login",
     });
   };
 

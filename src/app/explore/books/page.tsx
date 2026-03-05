@@ -65,7 +65,7 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
     <div className="max-w-6xl mx-auto p-8 text-[var(--foreground)]">
       <div className="mb-6 md:mb-8 flex items-center justify-between gap-4">
         <h1 className="text-3xl font-bold">All Books</h1>
-        <Link href="/explore" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)]">
+        <Link href="/explore" className="text-sm text-white/90 hover:text-white">
           Back to Explore
         </Link>
       </div>
@@ -88,6 +88,7 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
                 cover={cover}
                 level={book.level}
                 language={book.language}
+                region={book.region}
                 statsLine={getBookCardMeta(book).statsLine}
                 topicsLine={getBookCardMeta(book).topicsLine}
                 description={book.description}
