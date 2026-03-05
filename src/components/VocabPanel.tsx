@@ -4,10 +4,12 @@ import { useState, useEffect, useCallback } from "react";
 import { X, Heart } from "lucide-react";
 import { VocabItem } from "@/types/books";
 import { useUser } from "@clerk/nextjs";
+import { normalizeVocabType } from "@/lib/vocabTypes";
 
 type FavoriteItem = {
   word: string;
   translation: string;
+  wordType?: string | null;
   exampleSentence?: string;
   storySlug?: string;
   storyTitle?: string;
@@ -180,6 +182,11 @@ export default function VocabPanel({
     const newItem: FavoriteItem = {
       word: selectedWord,
       translation: definition ?? "",
+      wordType:
+        normalizeVocabType(
+          story.vocab?.find((v) => v.word === selectedWord)?.type,
+          { word: selectedWord, definition: definition ?? "" }
+        ) ?? null,
       exampleSentence: selectedSentence,
       storySlug: story.slug,
       storyTitle: story.title,

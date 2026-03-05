@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import VocabPanel from "@/components/VocabPanel";
 import StoryContent from "@/components/StoryContent";
 
-type VocabItem = { word: string; definition: string };
+type VocabItem = { word: string; definition: string; type?: string };
 
 type StoryData = {
   id: string;

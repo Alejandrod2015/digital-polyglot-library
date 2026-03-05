@@ -33,7 +33,7 @@ export default function LevelBadge({ level, className = "" }: LevelBadgeProps) {
 
   return (
     <span
-      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-semibold tracking-[0.02em] ${levelStyles[normalizeLevel(
+      className={`inline-flex h-5 items-center rounded-full border px-2 text-[11px] font-semibold leading-none tracking-[0.02em] ${levelStyles[normalizeLevel(
         level
       )]} ${className}`}
     >

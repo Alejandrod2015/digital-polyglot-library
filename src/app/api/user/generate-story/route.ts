@@ -18,6 +18,175 @@ type StoryJSON = {
   vocab: { word: string; definition: string; type?: string }[];
 };
 
+type StoryVocabItem = StoryJSON["vocab"][number];
+
+const MIN_VOCAB_ITEMS = 25;
+const MAX_GENERATION_ATTEMPTS = 3;
+const UNIVERSAL_ANGLICISMS = new Set([
+  "internet",
+  "online",
+  "email",
+  "e-mail",
+  "wifi",
+  "wi-fi",
+  "smartphone",
+  "laptop",
+  "marketing",
+  "software",
+  "hardware",
+  "podcast",
+  "streaming",
+  "influencer",
+  "hashtag",
+  "startup",
+  "feedback",
+  "deadline",
+  "meeting",
+  "briefing",
+  "chat",
+  "coach",
+  "shopping",
+  "app",
+  "apps",
+]);
+
+const SIMPLE_WORDS_BY_LANGUAGE: Record<string, Set<string>> = {
+  spanish: new Set([
+    "el",
+    "la",
+    "los",
+    "las",
+    "un",
+    "una",
+    "unos",
+    "unas",
+    "de",
+    "del",
+    "y",
+    "o",
+    "en",
+    "con",
+    "por",
+    "para",
+    "es",
+    "son",
+    "ser",
+    "estar",
+    "tener",
+    "hacer",
+    "ir",
+    "muy",
+    "bien",
+    "mal",
+    "casa",
+    "día",
+    "noche",
+    "hola",
+    "gracias",
+  ]),
+  french: new Set([
+    "le",
+    "la",
+    "les",
+    "un",
+    "une",
+    "des",
+    "de",
+    "du",
+    "et",
+    "ou",
+    "dans",
+    "avec",
+    "pour",
+    "est",
+    "sont",
+    "être",
+    "avoir",
+    "faire",
+    "aller",
+    "très",
+    "bien",
+    "bonjour",
+    "merci",
+  ]),
+  german: new Set([
+    "der",
+    "die",
+    "das",
+    "ein",
+    "eine",
+    "und",
+    "oder",
+    "in",
+    "mit",
+    "für",
+    "ist",
+    "sind",
+    "sein",
+    "haben",
+    "machen",
+    "gehen",
+    "sehr",
+    "gut",
+    "hallo",
+    "danke",
+  ]),
+  italian: new Set([
+    "il",
+    "lo",
+    "la",
+    "i",
+    "gli",
+    "le",
+    "un",
+    "una",
+    "e",
+    "o",
+    "di",
+    "del",
+    "in",
+    "con",
+    "per",
+    "è",
+    "sono",
+    "essere",
+    "avere",
+    "fare",
+    "andare",
+    "molto",
+    "bene",
+    "ciao",
+    "grazie",
+  ]),
+  portuguese: new Set([
+    "o",
+    "a",
+    "os",
+    "as",
+    "um",
+    "uma",
+    "de",
+    "do",
+    "da",
+    "e",
+    "ou",
+    "em",
+    "com",
+    "para",
+    "é",
+    "são",
+    "ser",
+    "estar",
+    "ter",
+    "fazer",
+    "ir",
+    "muito",
+    "bem",
+    "olá",
+    "obrigado",
+  ]),
+};
+
 function isValidStoryJSON(data: unknown): data is StoryJSON {
   return (
     typeof data === "object" &&
@@ -51,6 +220,204 @@ function normalizeStoryHtml(html: string): string {
   }
 
   return withParagraphs;
+}
+
+function unwrapRemovedVocabSpans(text: string, wordsToRemove: Set<string>): string {
+  if (wordsToRemove.size === 0) return text;
+  return text.replace(
+    /<span\s+[^>]*class=['"]vocab-word['"][^>]*data-word=['"]([^'"]+)['"][^>]*>(.*?)<\/span>/giu,
+    (match: string, rawWord: string, inner: string) => {
+      const key = normalizeToken(rawWord);
+      if (!key || !wordsToRemove.has(key)) return match;
+      return inner;
+    }
+  );
+}
+
+function parseModelJson(content: string): unknown {
+  const trimmed = content.trim();
+  const withoutFence = trimmed.replace(/^```json\s*/i, "").replace(/```$/i, "").trim();
+  try {
+    return JSON.parse(withoutFence) as unknown;
+  } catch {
+    const arrayStart = withoutFence.indexOf("[");
+    const arrayEnd = withoutFence.lastIndexOf("]");
+    if (arrayStart >= 0 && arrayEnd > arrayStart) {
+      return JSON.parse(withoutFence.slice(arrayStart, arrayEnd + 1)) as unknown;
+    }
+    const start = withoutFence.indexOf("{");
+    const end = withoutFence.lastIndexOf("}");
+    if (start >= 0 && end > start) {
+      return JSON.parse(withoutFence.slice(start, end + 1)) as unknown;
+    }
+    throw new Error("Model did not return valid JSON.");
+  }
+}
+
+function normalizeToken(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "");
+}
+
+function splitWordTokens(word: string): string[] {
+  return normalizeToken(word)
+    .split(/[\s\-_/]+/g)
+    .map((token) => token.trim())
+    .filter(Boolean);
+}
+
+function isUniversalAnglicism(word: string, language: string): boolean {
+  if (normalizeToken(language) === "english") return false;
+  const normalized = normalizeToken(word);
+  if (!normalized) return false;
+  if (UNIVERSAL_ANGLICISMS.has(normalized)) return true;
+  return splitWordTokens(word).some((token) => UNIVERSAL_ANGLICISMS.has(token));
+}
+
+function isSimpleWord(word: string, language: string): boolean {
+  const languageKey = normalizeToken(language);
+  const simpleWords = SIMPLE_WORDS_BY_LANGUAGE[languageKey];
+  const tokens = splitWordTokens(word);
+  if (tokens.length === 0) return true;
+  if (tokens.length === 1 && tokens[0].length <= 3) return true;
+  if (!simpleWords) return false;
+  return tokens.every((token) => simpleWords.has(token));
+}
+
+function isLikelyComplexWord(item: StoryVocabItem, language: string): boolean {
+  const tokens = splitWordTokens(item.word);
+  const type = normalizeToken(item.type ?? "");
+  if (isUniversalAnglicism(item.word, language)) return false;
+  if (isSimpleWord(item.word, language)) return false;
+  if (tokens.length >= 2) return true;
+  if ((item.word ?? "").trim().length >= 8) return true;
+  if (type === "expression") return true;
+  if (type === "adjective" || type === "adverb") return true;
+  return false;
+}
+
+function sanitizeVocab(items: StoryVocabItem[]): StoryVocabItem[] {
+  const out: StoryVocabItem[] = [];
+  const seen = new Set<string>();
+
+  for (const item of items) {
+    if (!item || typeof item !== "object") continue;
+    const word = typeof item.word === "string" ? item.word.trim() : "";
+    const definition = typeof item.definition === "string" ? item.definition.trim() : "";
+    const type = typeof item.type === "string" ? item.type.trim() : undefined;
+    if (!word || !definition) continue;
+    const key = normalizeToken(word);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(type ? { word, definition, type } : { word, definition });
+  }
+
+  return out;
+}
+
+function analyzeVocab(items: StoryVocabItem[], language: string): {
+  total: number;
+  complexCount: number;
+  simpleCount: number;
+  anglicismCount: number;
+  score: number;
+} {
+  let complexCount = 0;
+  let simpleCount = 0;
+  let anglicismCount = 0;
+
+  for (const item of items) {
+    if (isUniversalAnglicism(item.word, language)) {
+      anglicismCount += 1;
+      continue;
+    }
+    if (isSimpleWord(item.word, language)) {
+      simpleCount += 1;
+      continue;
+    }
+    if (isLikelyComplexWord(item, language)) {
+      complexCount += 1;
+      continue;
+    }
+    simpleCount += 1;
+  }
+
+  const total = items.length;
+  const score = total * 8 + complexCount * 3 - simpleCount * 4 - anglicismCount * 8;
+  return { total, complexCount, simpleCount, anglicismCount, score };
+}
+
+function isVocabAcceptable(items: StoryVocabItem[], language: string): boolean {
+  const stats = analyzeVocab(items, language);
+  if (stats.total < MIN_VOCAB_ITEMS) return false;
+  if (stats.anglicismCount > 0) return false;
+  return stats.complexCount >= Math.max(15, Math.floor(stats.total * 0.6));
+}
+
+async function generateComplexVocabFill(
+  openaiClient: OpenAI,
+  args: {
+    text: string;
+    language: string;
+    level: string;
+    focus: string;
+    topic: string;
+    existingVocab: StoryVocabItem[];
+    needed: number;
+  }
+): Promise<StoryVocabItem[]> {
+  const { text, language, level, focus, topic, existingVocab, needed } = args;
+  if (needed <= 0) return [];
+
+  const existingWords = existingVocab.map((item) => item.word);
+  const prompt = `
+Select exactly ${needed} additional vocabulary items from this story text.
+
+Context:
+- Language: ${language}
+- Level: ${level}
+- Focus: ${focus}
+- Topic: ${topic || "general"}
+
+Rules:
+- Return ONLY advanced or less frequent words/expressions useful for learners.
+- Exclude globally known anglicisms such as internet, marketing, smartphone, software, meeting.
+- Exclude extremely basic function words and beginner vocabulary.
+- Do not repeat these existing words: ${JSON.stringify(existingWords)}.
+- Keep words exactly as they appear in the story.
+- Definitions must be in English, 8-18 words, pedagogical and contextual.
+- Return ONLY valid JSON array:
+[{"word":"...","definition":"...","type":"verb|noun|adjective|adverb|expression"}]
+
+Story text:
+${text.slice(0, 9000)}
+`;
+
+  try {
+    const response = await openaiClient.chat.completions.create({
+      model: "gpt-4o-mini",
+      temperature: 0.25,
+      messages: [
+        { role: "system", content: "You extract challenging vocabulary from a story. Output JSON only." },
+        { role: "user", content: prompt },
+      ],
+    });
+    const content = response.choices[0]?.message?.content?.trim();
+    if (!content) return [];
+    const parsed = parseModelJson(content);
+    const rows = Array.isArray(parsed) ? parsed : [];
+    const normalized = sanitizeVocab(rows as StoryVocabItem[]);
+    return normalized.filter(
+      (item) => !isUniversalAnglicism(item.word, language) && !isSimpleWord(item.word, language)
+    );
+  } catch (error) {
+    console.warn("[vocab] fill pass failed", error);
+    return [];
+  }
 }
 
 export async function POST(req: Request) {
@@ -90,7 +457,7 @@ export async function POST(req: Request) {
 
     const regionClause = region ? `, specifically from ${region}` : "";
 
-    const prompt = `
+    const basePrompt = `
 You are an expert fiction writer and language teacher.
 Write a vivid, modern story in ${language}${regionClause} for a ${level} student.
 ${resolvedTopic ? `The topic is "${resolvedTopic}".` : "Choose a concrete, modern topic that fits the level."}
@@ -103,10 +470,13 @@ Requirements:
 Use close third-person narration with natural internal perspective and sharp scene dynamics.
 
 Words to wrap:
-- Wrap around 25-30 different items that naturally fit in the story, marking only the first occurrence of each with
+- Wrap EXACTLY ${MIN_VOCAB_ITEMS} different items that naturally fit in the story, marking only the first occurrence of each with
 <span class='vocab-word' data-word='original-word'>original-word</span>.
-- The amount of items you wrap should be the same as the amount of items in the vocab list.
+- The amount of wrapped items MUST be exactly the same as the vocab list size.
 - Prioritize ${focus.toLowerCase()} when choosing words and expressions to wrap.
+- Prefer less frequent, nuanced, and pedagogically rich items over basic beginner words.
+- Avoid globally known anglicisms (internet, marketing, smartphone, software, meeting, etc.) unless unavoidable.
+- Include a strong mix of verbs, adjectives/adverbs, and multi-word expressions.
 
 Narrative quality rules:
 - Avoid childish/fable tone. Do NOT start with "Once upon a time", "Érase una vez", or equivalents.
@@ -120,59 +490,127 @@ Return ONLY valid JSON:
 {
   "title": "string",
   "text": "string",
-  "vocab": [{ "word": "string", "definition": "string" }]
+  "vocab": [{ "word": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression" }]
 }
 `;
 
-    const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      temperature: 0.8,
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are a high-quality fiction writer for language learners. Avoid repetitive, childish, and formulaic storytelling.",
-        },
-        { role: "user", content: prompt },
-      ],
-    });
+    let selectedStory: StoryJSON | null = null;
+    let bestScore = Number.NEGATIVE_INFINITY;
+    let bestCandidate: StoryJSON | null = null;
+    let previousFeedback = "";
 
-    const content = response.choices[0]?.message?.content?.trim();
-    if (!content) {
-      return NextResponse.json({ error: "No content returned from OpenAI" }, { status: 502 });
+    for (let attempt = 0; attempt < MAX_GENERATION_ATTEMPTS; attempt += 1) {
+      const retryClause =
+        attempt === 0
+          ? ""
+          : `\nRetry constraints (must fix): ${previousFeedback || "Use more advanced, non-anglicized vocabulary and keep exactly 25 items."}`;
+      const prompt = `${basePrompt}${retryClause}`;
+
+      const response = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        temperature: attempt === 0 ? 0.8 : 0.6,
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a high-quality fiction writer for language learners. Avoid repetitive, childish, and formulaic storytelling.",
+          },
+          { role: "user", content: prompt },
+        ],
+      });
+
+      const content = response.choices[0]?.message?.content?.trim();
+      if (!content) continue;
+
+      let parsed: unknown;
+      try {
+        parsed = parseModelJson(content);
+      } catch {
+        continue;
+      }
+      if (!isValidStoryJSON(parsed)) continue;
+
+      const candidate = parsed as StoryJSON;
+      const cleanedVocab = sanitizeVocab(candidate.vocab);
+      const stats = analyzeVocab(cleanedVocab, language);
+      if (stats.score > bestScore) {
+        bestScore = stats.score;
+        bestCandidate = { ...candidate, vocab: cleanedVocab };
+      }
+      if (isVocabAcceptable(cleanedVocab, language)) {
+        selectedStory = { ...candidate, vocab: cleanedVocab };
+        break;
+      }
+
+      previousFeedback = `Returned ${stats.total} items, with ${stats.simpleCount} basic items and ${stats.anglicismCount} anglicisms.`;
     }
 
-    // Parse response JSON safely
-    let parsed: unknown;
-    try {
-      const maybeJSON = JSON.parse(content);
-      parsed = typeof maybeJSON === "string" ? JSON.parse(maybeJSON) : maybeJSON;
-    } catch {
-      return NextResponse.json(
-        { error: "Invalid JSON returned from model", raw: content },
-        { status: 500 }
-      );
+    if (!selectedStory && bestCandidate) {
+      selectedStory = bestCandidate;
+    }
+    if (!selectedStory) {
+      return NextResponse.json({ error: "No valid story returned from model" }, { status: 502 });
     }
 
-    if (!isValidStoryJSON(parsed)) {
-      return NextResponse.json(
-        { error: "Invalid structure in model output", raw: parsed },
-        { status: 500 }
-      );
-    }
-
-    const { title, text, vocab } = parsed as StoryJSON;
+    const { title, text, vocab } = selectedStory;
 
     // 🔹 Normalizar texto HTML para formato consistente
-    const normalizedText = normalizeStoryHtml(text);
+    let normalizedText = normalizeStoryHtml(text);
+    let curatedVocab = sanitizeVocab(vocab);
+
+    const disallowedKeys = new Set<string>();
+    for (const item of curatedVocab) {
+      if (isUniversalAnglicism(item.word, language) || isSimpleWord(item.word, language)) {
+        disallowedKeys.add(normalizeToken(item.word));
+      }
+    }
+    if (disallowedKeys.size > 0) {
+      curatedVocab = curatedVocab.filter((item) => !disallowedKeys.has(normalizeToken(item.word)));
+      normalizedText = unwrapRemovedVocabSpans(normalizedText, disallowedKeys);
+    }
+
+    if (curatedVocab.length < MIN_VOCAB_ITEMS) {
+      const missing = MIN_VOCAB_ITEMS - curatedVocab.length;
+      const filled = await generateComplexVocabFill(openai, {
+        text: normalizedText,
+        language,
+        level,
+        focus,
+        topic: resolvedTopic,
+        existingVocab: curatedVocab,
+        needed: missing,
+      });
+      curatedVocab = sanitizeVocab([...curatedVocab, ...filled]);
+    }
+
     const improvedVocab = await improveVocabDefinitions(openai, {
-      items: vocab,
+      items: curatedVocab,
       language,
       level,
       focus,
       topic: resolvedTopic,
       text: normalizedText,
     });
+    let finalVocab = sanitizeVocab(improvedVocab as StoryVocabItem[]);
+    if (finalVocab.length < MIN_VOCAB_ITEMS) {
+      const missing = MIN_VOCAB_ITEMS - finalVocab.length;
+      const filled = await generateComplexVocabFill(openai, {
+        text: normalizedText,
+        language,
+        level,
+        focus,
+        topic: resolvedTopic,
+        existingVocab: finalVocab,
+        needed: missing,
+      });
+      finalVocab = sanitizeVocab([...finalVocab, ...filled]);
+    }
+    if (finalVocab.length < MIN_VOCAB_ITEMS) {
+      return NextResponse.json(
+        { error: `Could not assemble at least ${MIN_VOCAB_ITEMS} high-quality vocabulary items` },
+        { status: 502 }
+      );
+    }
 
     // Normalizar nivel
     const normalizedLevel = (() => {
@@ -200,7 +638,7 @@ Return ONLY valid JSON:
         title,
         slug: uniqueSlug,
         text: normalizedText,
-        vocab: improvedVocab,
+        vocab: finalVocab,
         language,
         region,
         level: normalizedLevel,

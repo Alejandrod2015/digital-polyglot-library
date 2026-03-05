@@ -13,6 +13,7 @@ model Favorite {
   userId      String
   word        String
   translation String
+  wordType    String?
   exampleSentence String?
   storySlug   String?
   storyTitle  String?

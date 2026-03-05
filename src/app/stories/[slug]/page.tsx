@@ -13,7 +13,7 @@ type StoryPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-type SafeVocabItem = { word: string; definition: string };
+type SafeVocabItem = { word: string; definition: string; type?: string };
 
 function normalizePolyglotVocab(raw: unknown): SafeVocabItem[] {
   const coerce = (input: unknown): SafeVocabItem[] => {
@@ -25,8 +25,9 @@ function normalizePolyglotVocab(raw: unknown): SafeVocabItem[] {
           const record = item as Record<string, unknown>;
           const word = typeof record.word === "string" ? record.word.trim() : "";
           const definition = typeof record.definition === "string" ? record.definition.trim() : "";
+          const type = typeof record.type === "string" ? record.type.trim() : "";
           if (!word || !definition) return null;
-          return { word, definition };
+          return { word, definition, ...(type ? { type } : {}) };
         })
         .filter((item): item is SafeVocabItem => item !== null);
     }

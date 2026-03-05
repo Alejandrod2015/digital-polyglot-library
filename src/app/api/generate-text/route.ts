@@ -125,7 +125,7 @@ Return ONLY valid JSON:
 {
   "title": "string",
   "text": "string",
-  "vocab": [{ "word": "string", "definition": "string" }]
+  "vocab": [{ "word": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression" }]
 }
 `;
 
