@@ -205,9 +205,15 @@ export default async function StoryPage({ params }: StoryPageProps) {
         {/* Fallback si no tiene acceso */}
         {!hasFullAccess && (
           <>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--background)] via-[rgba(11,18,32,0.9)] to-transparent z-10" />
-            <div className="absolute inset-x-0 bottom-[-8rem] flex flex-col items-center justify-end pb-12 text-center z-20">
-              <p className="text-[var(--foreground)] text-xl sm:text-xl mb-3 drop-shadow">
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-56 z-10"
+              style={{
+                background:
+                  "linear-gradient(to top, var(--bg-content) 26%, color-mix(in srgb, var(--bg-content) 78%, transparent) 62%, transparent 100%)",
+              }}
+            />
+            <div className="relative z-20 -mt-10 pt-4 pb-10 flex flex-col items-center text-center">
+              <p className="text-[var(--foreground)] text-xl sm:text-xl mb-3">
                 Unlock full access to all stories.
               </p>
               <div className="flex items-center gap-3">

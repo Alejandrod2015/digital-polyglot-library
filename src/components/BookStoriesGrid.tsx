@@ -53,6 +53,7 @@ type Props = {
   stories: Story[];
   hrefSuffix?: string;
   replaceNavigation?: boolean;
+  dense?: boolean;
 };
 
 export default function BookStoriesGrid({
@@ -60,6 +61,7 @@ export default function BookStoriesGrid({
   stories,
   hrefSuffix = "",
   replaceNavigation = false,
+  dense = false,
 }: Props) {
   const [continueMap, setContinueMap] = useState<Map<string, ContinueLocalItem>>(new Map());
   const [readingSet, setReadingSet] = useState<Set<string>>(new Set());
@@ -142,7 +144,7 @@ export default function BookStoriesGrid({
   }, [book.slug, continueMap, readingSet, stories]);
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2">
+    <div className={dense ? "grid gap-3 sm:grid-cols-2 xl:grid-cols-3" : "grid gap-3 sm:grid-cols-2"}>
       {stories.map((story, idx) => {
         const storyCover =
           typeof story.cover === "string" && story.cover.trim() !== ""
@@ -164,7 +166,7 @@ export default function BookStoriesGrid({
             key={story.id}
             href={`/books/${book.slug}/${story.slug}${hrefSuffix}`}
             replace={replaceNavigation}
-            className="flex flex-col overflow-hidden rounded-xl bg-white/5 text-gray-100 hover:bg-white/10 transition-colors"
+            className="flex flex-col overflow-hidden rounded-xl bg-white/5 text-gray-100 hover:bg-white/10 transition-colors h-full"
           >
             <div className="relative w-full aspect-[16/10] bg-[#102746]">
               <img
@@ -190,13 +192,15 @@ export default function BookStoriesGrid({
               )}
             </div>
 
-            <div className="p-3">
+            <div className={dense ? "p-2.5" : "p-3"}>
               <div className="mb-2 flex flex-wrap items-center gap-2">
                 <LevelBadge level={storyLevel} />
                 <LanguageBadge language={storyLanguage} />
                 <RegionBadge region={storyRegion} />
               </div>
-              <h3 className="font-semibold text-base leading-snug line-clamp-2">{story.title}</h3>
+              <h3 className={dense ? "font-semibold text-[15px] leading-snug line-clamp-2" : "font-semibold text-base leading-snug line-clamp-2"}>
+                {story.title}
+              </h3>
               <p className="mt-1 text-xs text-gray-400 line-clamp-1">{excerpt}</p>
 
               <p className="mt-1 text-xs text-gray-400">

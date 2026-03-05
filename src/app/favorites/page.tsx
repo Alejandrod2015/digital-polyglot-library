@@ -53,6 +53,28 @@ function shuffleArray<T>(items: T[]): T[] {
   return next;
 }
 
+function normalizeTokenValue(value?: string | null): string | null {
+  if (!value) return null;
+  const clean = value.trim().toLowerCase();
+  return clean.length > 0 ? clean : null;
+}
+
+function areWordsRelated(a: FavoriteItem, b: FavoriteItem): boolean {
+  const typeA = getFavoriteType(a);
+  const typeB = getFavoriteType(b);
+  if (typeA === typeB) return true;
+
+  const storyA = normalizeTokenValue(a.storySlug);
+  const storyB = normalizeTokenValue(b.storySlug);
+  if (storyA && storyB && storyA === storyB) return true;
+
+  const langA = normalizeTokenValue(a.language);
+  const langB = normalizeTokenValue(b.language);
+  if (langA && langB && langA === langB) return true;
+
+  return false;
+}
+
 function mergeFavoriteItem(remote: FavoriteItem, local: FavoriteItem): FavoriteItem {
   const pickString = (
     preferred?: string | null,
@@ -160,11 +182,17 @@ export default function FavoritesPage() {
   const [srsMap, setSrsMap] = useState<SrsMap>({});
   const [isReady, setIsReady] = useState(false); // controla visibilidad final
   const [practiceMode, setPracticeMode] = useState(false);
-  const [practiceModeKind, setPracticeModeKind] = useState<'due' | 'all' | 'mix'>('due');
+  const [practiceModeKind, setPracticeModeKind] = useState<'due' | 'all' | 'related'>('due');
   const [practiceQueue, setPracticeQueue] = useState<FavoriteItem[]>([]);
   const [practiceIndex, setPracticeIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
+  const getPracticeModeTabClass = (mode: 'due' | 'all' | 'related') =>
+    `px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${
+      practiceModeKind === mode
+        ? "bg-blue-600 text-white"
+        : "bg-transparent hover:bg-[var(--card-bg-hover)] text-[var(--foreground)]"
+    }`;
 
   useEffect(() => {
     const load = async () => {
@@ -300,7 +328,7 @@ export default function FavoritesPage() {
     setRevealed(false);
   };
 
-  const startPracticeMix = () => {
+  const startRelatedPractice = () => {
     const base = favorites.filter((fav) => {
       if (practiceType === 'all') return true;
       return getFavoriteType(fav) === practiceType;
@@ -315,18 +343,27 @@ export default function FavoritesPage() {
     }
 
     const duePool = base.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
-    const dueTypeSet = new Set(duePool.map(getFavoriteType));
-    const relatedPool = base.filter((fav) => {
-      if (duePool.some((due) => normalizeWord(due.word) === normalizeWord(fav.word))) return false;
-      if (practiceType !== 'all') return true;
-      if (dueTypeSet.size === 0) return true;
-      return dueTypeSet.has(getFavoriteType(fav));
+    const relatedPool = base.filter((candidate) => {
+      const candidateKey = normalizeWord(candidate.word);
+      return base.some((seed) => {
+        const seedKey = normalizeWord(seed.word);
+        if (seedKey === candidateKey) return false;
+        return areWordsRelated(seed, candidate);
+      });
     });
 
-    const dueShuffled = shuffleArray(duePool);
-    const relatedShuffled = shuffleArray(relatedPool);
+    const dueRelated = duePool.filter((due) =>
+      relatedPool.some((related) => normalizeWord(related.word) === normalizeWord(due.word))
+    );
+
+    const dueShuffled = shuffleArray(dueRelated);
+    const relatedShuffled = shuffleArray(
+      relatedPool.filter(
+        (fav) => !dueRelated.some((due) => normalizeWord(due.word) === normalizeWord(fav.word))
+      )
+    );
     const maxQueue = 20;
-    const dueTarget = Math.min(dueShuffled.length, Math.max(4, Math.ceil(maxQueue * 0.6)));
+    const dueTarget = Math.min(dueShuffled.length, Math.max(4, Math.ceil(maxQueue * 0.5)));
     const relatedTarget = Math.min(relatedShuffled.length, maxQueue - dueTarget);
     const selectedDue = dueShuffled.slice(0, dueTarget);
     const selectedRelated = relatedShuffled.slice(0, relatedTarget);
@@ -335,11 +372,11 @@ export default function FavoritesPage() {
         ? []
         : shuffleArray(base).slice(0, Math.min(maxQueue, base.length));
 
-    const mixed = shuffleArray([...selectedDue, ...selectedRelated, ...fallback]);
+    const relatedSet = shuffleArray([...selectedDue, ...selectedRelated, ...fallback]);
 
-    setPracticeModeKind('mix');
-    setPracticeQueue(mixed);
-    setPracticeMode(mixed.length > 0);
+    setPracticeModeKind('related');
+    setPracticeQueue(relatedSet);
+    setPracticeMode(relatedSet.length > 0);
     setPracticeIndex(0);
     setRevealed(false);
   };
@@ -401,21 +438,21 @@ export default function FavoritesPage() {
             <div className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-1">
               <button
                 onClick={() => startPractice(true)}
-                className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold transition-colors"
+                className={getPracticeModeTabClass('due')}
               >
                 Practice due
               </button>
               <button
                 onClick={() => startPractice(false)}
-                className="px-3 py-1.5 rounded-lg bg-transparent hover:bg-[var(--card-bg-hover)] text-[var(--foreground)] text-sm font-semibold transition-colors"
+                className={getPracticeModeTabClass('all')}
               >
                 Practice all
               </button>
               <button
-                onClick={startPracticeMix}
-                className="px-3 py-1.5 rounded-lg bg-transparent hover:bg-[var(--card-bg-hover)] text-[var(--foreground)] text-sm font-semibold transition-colors"
+                onClick={startRelatedPractice}
+                className={getPracticeModeTabClass('related')}
               >
-                Practice mix
+                Practice related
               </button>
             </div>
             <div className="flex max-w-full flex-wrap justify-end gap-1.5">
@@ -454,7 +491,11 @@ export default function FavoritesPage() {
           <p className="text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
             Practice {practiceIndex + 1}/{practiceQueue.length}
             {practiceType !== 'all' ? ` · ${getVocabTypeLabel(practiceType)}` : ''}
-            {practiceModeKind === 'mix' ? ' · Mix' : practiceModeKind === 'due' ? ' · Due' : ' · All'}
+            {practiceModeKind === 'related'
+              ? ' · Related'
+              : practiceModeKind === 'due'
+                ? ' · Due'
+                : ' · All'}
           </p>
           <p className="text-3xl font-semibold mb-4">{currentPractice.word}</p>
           <div className="mb-3">

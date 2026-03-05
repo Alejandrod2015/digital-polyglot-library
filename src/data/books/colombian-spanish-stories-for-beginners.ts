@@ -750,6 +750,62 @@ export const colombianspanishstoriesforbeginners: Book = {
       ]
     },
     {
+      "id": "el-festival-de-la-arepa",
+      "slug": "el-festival-de-la-arepa",
+      "title": "El festival de la arepa",
+      "text": "<p>El pequeño pueblo de <span class=\"vocab-word\" data-word=\"Santandereana\">Santander</span> está decorado con banderines de colores que cuelgan de las casas, mientras los puestos de comida llenan las calles con el aroma a maíz asado. En el centro de la plaza, se escucha música tradicional, y la gente se reúne para celebrar el famoso <span class=\"vocab-word\" data-word=\"Festival de la Arepa\">Festival de la Arepa</span>. Julián y Sofía caminan entre la multitud, sorprendidos por la variedad de <span class=\"vocab-word\" data-word=\"Arepa\">arepas</span> que ven en cada esquina.</p>\n\n<blockquote>Julián: ¡Sofía, mira cuántas clases de arepas hay! No sabía que había tantas versiones.</blockquote>\n\n<blockquote>Sofía: Yo tampoco. Sabía de la arepa de maíz blanco y la de choclo, pero aquí tienen de todo. Mira, esa tiene carne, queso y hasta <span class=\"vocab-word\" data-word=\"Chicharrón\">chicharrón</span>.</blockquote>\n\n<blockquote>Doña Gladys: ¡Vengan, muchachos! Si quieren aprender a hacer una verdadera arepa santandereana, este es el lugar.</blockquote>\n\n<blockquote>Sofía: ¡Eso es justo lo que queríamos! Siempre hemos comido arepas, pero nunca hemos aprendido a hacerlas. ¿Nos enseña?</blockquote>\n\n<blockquote>Doña Gladys: Por supuesto. La clave está en la <span class=\"vocab-word\" data-word=\"Masa\">masa</span> y en ponerle amor. Primero, deben <span class=\"vocab-word\" data-word=\"Moler\">moler</span> el maíz. Luego, lo mezclamos con un poco de sal y agua, amasamos bien y le damos forma.</blockquote>\n\n<blockquote>Julián: ¡Eso parece fácil!</blockquote>\n\n<blockquote>Doña Gladys: Parece fácil, pero no lo es. La arepa necesita paciencia. Después, la cocinamos en una <span class=\"vocab-word\" data-word=\"Parrilla\">parrilla</span> o en el <span class=\"vocab-word\" data-word=\"Fogón\">fogón</span>, hasta que esté dorada y crujiente por fuera, pero suave por dentro.</blockquote>\n\n<blockquote>Sofía: ¿Y siempre se come así sola?</blockquote>\n\n<blockquote>Doña Gladys: No siempre. Aquí le ponemos de todo: carne, queso, <span class=\"vocab-word\" data-word=\"Hogao\">hogao</span>. Pero la arepa tradicional santandereana es simple.</blockquote>\n\n<blockquote>Julián: ¡Quiero intentarlo! ¿Puedo hacer una?</blockquote>\n\n<blockquote>Doña Gladys: Claro que sí. Toma la masa y empieza a darle forma.</blockquote>\n\n<blockquote>Sofía: ¡Te está quedando bien, Julián! Parece que tienes talento para esto.</blockquote>\n\n<blockquote>Julián: Bueno, no es tan difícil. Solo hay que encontrar el equilibrio.</blockquote>\n\n<blockquote>Doña Gladys: Exactamente. El truco es la práctica. El <span class=\"vocab-word\" data-word=\"Festival de la Arepa\">Festival de la Arepa</span> es nuestra manera de celebrar esa <span class=\"vocab-word\" data-word=\"Tradición\">tradición</span>. Este plato nos une como comunidad.</blockquote>\n\n<blockquote>Sofía: Es increíble cómo un plato tan sencillo puede tener tanta historia detrás.</blockquote>\n\n<blockquote>Doña Gladys: La arepa no es solo un alimento, es un símbolo de nuestra identidad.</blockquote>\n\n<blockquote>Julián: Ya está lista mi arepa. ¿Cómo me quedó?</blockquote>\n\n<blockquote>Doña Gladys: Te quedó muy bien para ser tu primera vez. Ahora, solo falta cocinarla.</blockquote>\n\n<p>Julián y Sofía se sientan a disfrutar de sus arepas mientras la música sigue sonando en la plaza. El festival continúa, lleno de vida y tradición.</p>",
+      "audio": "https://cdn.sanity.io/files/9u7ilulp/production/069a15f2e80a9940d1eb2e7b8515060fcd16b0d2.mp3",
+      "createdAt": "2026-01-19T04:30:01Z",
+      "updatedAt": "2026-03-05T16:32:14Z",
+      "topic": "Culture & Traditions",
+      "tags": [
+        "Culture & Traditions"
+      ],
+      "cover": "https://cdn.sanity.io/images/9u7ilulp/production/27a576145a939861a1a6c11d32e7205d9f636120-1536x1024.png",
+      "vocab": [
+        {
+          "word": "Festival de la Arepa",
+          "definition": "A celebration in Santander focused on making and eating arepas."
+        },
+        {
+          "word": "Arepa",
+          "definition": "A traditional food made from corn, common in Colombia."
+        },
+        {
+          "word": "Santandereana",
+          "definition": "Related to the region of Santander in Colombia."
+        },
+        {
+          "word": "Chicharrón",
+          "definition": "Fried pork meat often used as food or filling."
+        },
+        {
+          "word": "Moler",
+          "definition": "To crush corn into flour or dough."
+        },
+        {
+          "word": "Hogao",
+          "definition": "A Colombian sauce made with tomato and onion."
+        },
+        {
+          "word": "Masa",
+          "definition": "Corn dough mixed with water and salt."
+        },
+        {
+          "word": "Fogón",
+          "definition": "A traditional stove used for cooking with fire."
+        },
+        {
+          "word": "Parrilla",
+          "definition": "A grill used to cook food."
+        },
+        {
+          "word": "Tradición",
+          "definition": "A custom passed from one generation to another."
+        }
+      ]
+    },
+    {
       "id": "el-viaje-a-villa-de-leyva",
       "slug": "el-viaje-a-villa-de-leyva",
       "title": "El viaje a Villa de Leyva",

@@ -196,6 +196,23 @@ function hasAudioSource(bookSlug: string, storySlug: string): boolean {
   return rawSrc.length > 0;
 }
 
+async function trackBusinessMetric(eventType: string, value?: number) {
+  try {
+    await fetch("/api/metrics", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        storySlug: "__plans__",
+        bookSlug: "billing",
+        eventType,
+        value,
+      }),
+    });
+  } catch {
+    // silent
+  }
+}
+
 export default function HomeClient({
   latestBooks,
   latestStories,
@@ -266,6 +283,9 @@ export default function HomeClient({
   const plan = isLoaded
     ? (user?.publicMetadata?.plan as string | undefined) ?? "free"
     : initialPlan;
+  const trialStartedAt = isLoaded
+    ? (user?.publicMetadata?.trialStartedAt as string | undefined)
+    : undefined;
 
   const toContinueItem = (bookSlug: string, storySlug: string): ContinueItem | null => {
     const bookMeta = Object.values(books).find((b) => b.slug === bookSlug);
@@ -296,6 +316,23 @@ export default function HomeClient({
       readMinutes: estimateReadMinutes(storyMeta.text ?? ""),
     };
   };
+
+  useEffect(() => {
+    if (!isLoaded || !userId) return;
+    if (plan !== "premium" && plan !== "polyglot") return;
+    if (!trialStartedAt) return;
+    if (typeof window === "undefined") return;
+
+    const startedAt = new Date(trialStartedAt);
+    if (Number.isNaN(startedAt.getTime())) return;
+    if (Date.now() - startedAt.getTime() < 24 * 60 * 60 * 1000) return;
+
+    const key = `dp_trial_day1_active_sent_v1:${userId}`;
+    if (window.localStorage.getItem(key) === "1") return;
+
+    void trackBusinessMetric("trial_day_1_active", 1);
+    window.localStorage.setItem(key, "1");
+  }, [isLoaded, userId, plan, trialStartedAt]);
 
   useEffect(() => {
     let cancelled = false;

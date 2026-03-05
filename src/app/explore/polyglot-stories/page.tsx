@@ -61,7 +61,7 @@ export default async function ExplorePolyglotStoriesPage({
     <div className="max-w-6xl mx-auto p-8 text-[var(--foreground)]">
       <div className="mb-6 md:mb-8 flex items-center justify-between gap-4">
         <h1 className="text-3xl font-bold">All Polyglot Stories</h1>
-        <Link href="/explore" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)]">
+        <Link href="/explore" className="text-sm text-white/90 hover:text-white">
           Back to Explore
         </Link>
       </div>

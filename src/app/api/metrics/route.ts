@@ -19,6 +19,11 @@ const ALLOWED_EVENT_TYPES = new Set([
   "speed_change",
   "seek",
   "continue_listening",
+  "trial_started",
+  "trial_started_with_pm",
+  "trial_converted",
+  "trial_canceled",
+  "trial_day_1_active",
 ]);
 
 function isMetricBody(x: unknown): x is MetricBody {

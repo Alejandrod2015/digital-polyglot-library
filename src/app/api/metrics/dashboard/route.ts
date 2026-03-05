@@ -13,6 +13,22 @@ type EventRow = {
   createdAt: Date;
 };
 
+type ProgressRow = {
+  userId: string;
+  storySlug: string;
+  value: number | null;
+};
+
+type SavedStoryRow = {
+  storyId: string;
+  _count: { _all: number };
+};
+
+type SavedBookRow = {
+  bookId: string;
+  _count: { _all: number };
+};
+
 type DashboardResponse = {
   range: {
     from: string;
@@ -22,11 +38,16 @@ type DashboardResponse = {
   kpis: {
     dau: number;
     wau: number;
+    activeUsersInRange: number;
     plays: number;
     completions: number;
     completionRate: number;
     uniqueStories: number;
     uniqueBooks: number;
+    avgMinutesPerActiveUser: number;
+    totalListenedMinutes: number;
+    savedStories: number;
+    savedBooks: number;
   };
   daily: Array<{
     date: string;
@@ -45,6 +66,19 @@ type DashboardResponse = {
     plays: number;
     completions: number;
     completionRate: number;
+  }>;
+  topStoriesByMinutes: Array<{
+    storySlug: string;
+    listenedMinutes: number;
+    listeners: number;
+  }>;
+  topSavedStories: Array<{
+    storySlug: string;
+    saves: number;
+  }>;
+  topSavedBooks: Array<{
+    bookSlug: string;
+    saves: number;
   }>;
 };
 
@@ -82,7 +116,18 @@ export async function GET(req: NextRequest): Promise<Response> {
   const storySlug = search.get("storySlug")?.trim() || null;
   const bookSlug = search.get("bookSlug")?.trim() || null;
 
-  const [events, dauRows, wauRows] = await Promise.all([
+  const [
+    events,
+    dauRows,
+    wauRows,
+    progressRows,
+    activeUsersRows,
+    savedStoryRows,
+    savedBookRows,
+    savedStoriesTotal,
+    savedBooksTotal,
+  ] =
+    await Promise.all([
     prisma.userMetric.findMany({
       where: {
         createdAt: { gte: from, lte: to },
@@ -118,7 +163,66 @@ export async function GET(req: NextRequest): Promise<Response> {
       distinct: ["userId"],
       select: { userId: true },
     }),
-  ]);
+    prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: from, lte: to },
+        eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
+        value: { not: null },
+        ...(storySlug ? { storySlug } : {}),
+        ...(bookSlug ? { bookSlug } : {}),
+      },
+      select: {
+        userId: true,
+        storySlug: true,
+        value: true,
+      },
+      orderBy: { createdAt: "asc" },
+      take: 50000,
+    }),
+    prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: from, lte: to },
+        ...(storySlug ? { storySlug } : {}),
+        ...(bookSlug ? { bookSlug } : {}),
+      },
+      distinct: ["userId"],
+      select: { userId: true },
+    }),
+    prisma.libraryStory.groupBy({
+      by: ["storyId"],
+      where: {
+        createdAt: { gte: from, lte: to },
+        ...(storySlug ? { storyId: storySlug } : {}),
+        ...(bookSlug ? { bookId: bookSlug } : {}),
+      },
+      _count: { _all: true },
+      orderBy: { _count: { storyId: "desc" } },
+      take: 20,
+    }),
+    prisma.libraryBook.groupBy({
+      by: ["bookId"],
+      where: {
+        createdAt: { gte: from, lte: to },
+        ...(bookSlug ? { bookId: bookSlug } : {}),
+      },
+      _count: { _all: true },
+      orderBy: { _count: { bookId: "desc" } },
+      take: 20,
+    }),
+    prisma.libraryStory.count({
+      where: {
+        createdAt: { gte: from, lte: to },
+        ...(storySlug ? { storyId: storySlug } : {}),
+        ...(bookSlug ? { bookId: bookSlug } : {}),
+      },
+    }),
+    prisma.libraryBook.count({
+      where: {
+        createdAt: { gte: from, lte: to },
+        ...(bookSlug ? { bookId: bookSlug } : {}),
+      },
+    }),
+    ]);
 
   const plays = events.filter((e) => e.eventType === "audio_play").length;
   const completions = events.filter((e) => e.eventType === "audio_complete").length;
@@ -127,6 +231,9 @@ export async function GET(req: NextRequest): Promise<Response> {
   const byDay = new Map<string, { plays: number; completions: number }>();
   const byStory = new Map<string, { plays: number; completions: number }>();
   const byBook = new Map<string, { plays: number; completions: number }>();
+  const byUserStoryMaxSeconds = new Map<string, number>();
+  const byStorySeconds = new Map<string, number>();
+  const byStoryListeners = new Map<string, Set<string>>();
 
   for (const row of events as EventRow[]) {
     const dayKey = toDayKey(row.createdAt);
@@ -154,6 +261,37 @@ export async function GET(req: NextRequest): Promise<Response> {
     byDay.set(dayKey, day);
     byStory.set(row.storySlug, story);
   }
+
+  // Aggregate listened seconds by taking max progress per user+story in range
+  // to avoid over-counting repeated pause/continue events.
+  for (const row of progressRows as ProgressRow[]) {
+    const value = typeof row.value === "number" ? row.value : 0;
+    if (!Number.isFinite(value) || value <= 0) continue;
+    const key = `${row.userId}::${row.storySlug}`;
+    const prev = byUserStoryMaxSeconds.get(key) ?? 0;
+    if (value > prev) {
+      byUserStoryMaxSeconds.set(key, value);
+    }
+  }
+
+  for (const [key, seconds] of byUserStoryMaxSeconds.entries()) {
+    const [uid, slug] = key.split("::");
+    byStorySeconds.set(slug, (byStorySeconds.get(slug) ?? 0) + seconds);
+    const listeners = byStoryListeners.get(slug) ?? new Set<string>();
+    listeners.add(uid);
+    byStoryListeners.set(slug, listeners);
+  }
+
+  const totalListenedSeconds = Array.from(byUserStoryMaxSeconds.values()).reduce(
+    (sum, seconds) => sum + seconds,
+    0
+  );
+  const totalListenedMinutes = Math.round((totalListenedSeconds / 60) * 10) / 10;
+  const activeUsersInRange = activeUsersRows.length;
+  const avgMinutesPerActiveUser =
+    activeUsersInRange > 0
+      ? Math.round(((totalListenedSeconds / activeUsersInRange) / 60) * 10) / 10
+      : 0;
 
   const daily = Array.from(byDay.entries())
     .map(([date, v]) => ({
@@ -184,6 +322,32 @@ export async function GET(req: NextRequest): Promise<Response> {
     .sort((a, b) => b.plays - a.plays)
     .slice(0, 10);
 
+  const topStoriesByMinutes = Array.from(byStorySeconds.entries())
+    .map(([storySlugValue, listenedSeconds]) => ({
+      storySlug: storySlugValue,
+      listenedMinutes: Math.round((listenedSeconds / 60) * 10) / 10,
+      listeners: byStoryListeners.get(storySlugValue)?.size ?? 0,
+    }))
+    .sort((a, b) => b.listenedMinutes - a.listenedMinutes)
+    .slice(0, 10);
+
+  const topSavedStories = (savedStoryRows as SavedStoryRow[])
+    .map((row) => ({
+      storySlug: row.storyId,
+      saves: row._count._all,
+    }))
+    .slice(0, 10);
+
+  const topSavedBooks = (savedBookRows as SavedBookRow[])
+    .map((row) => ({
+      bookSlug: row.bookId,
+      saves: row._count._all,
+    }))
+    .slice(0, 10);
+
+  const savedStories = savedStoriesTotal;
+  const savedBooks = savedBooksTotal;
+
   const payload: DashboardResponse = {
     range: {
       from: from.toISOString(),
@@ -193,15 +357,23 @@ export async function GET(req: NextRequest): Promise<Response> {
     kpis: {
       dau: dauRows.length,
       wau: wauRows.length,
+      activeUsersInRange,
       plays,
       completions,
       completionRate,
       uniqueStories: byStory.size,
       uniqueBooks: byBook.size,
+      avgMinutesPerActiveUser,
+      totalListenedMinutes,
+      savedStories,
+      savedBooks,
     },
     daily,
     topStories,
     topBooks,
+    topStoriesByMinutes,
+    topSavedStories,
+    topSavedBooks,
   };
 
   return NextResponse.json(payload);

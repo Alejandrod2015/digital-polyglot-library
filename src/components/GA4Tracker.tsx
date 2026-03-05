@@ -3,18 +3,25 @@
 import { useEffect, useMemo } from "react";
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
 import { GA4_MEASUREMENT_ID } from "@/lib/ga4";
 
 declare global {
   interface Window {
     dataLayer: unknown[];
     gtag?: (...args: unknown[]) => void;
+    [key: `ga-disable-${string}`]: boolean | undefined;
   }
 }
 
 export default function GA4Tracker() {
+  const { user, isLoaded } = useUser();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const isInternalUser =
+    Boolean(user?.publicMetadata?.internalUser) ||
+    Boolean(user?.publicMetadata?.isInternal) ||
+    Boolean(user?.publicMetadata?.analyticsExcluded);
 
   const pagePath = useMemo(() => {
     const query = searchParams?.toString();
@@ -22,16 +29,21 @@ export default function GA4Tracker() {
   }, [pathname, searchParams]);
 
   useEffect(() => {
+    if (!isLoaded) return;
     if (!GA4_MEASUREMENT_ID) return;
+    if (typeof window !== "undefined") {
+      window[`ga-disable-${GA4_MEASUREMENT_ID}`] = isInternalUser;
+    }
+    if (isInternalUser) return;
     if (typeof window === "undefined" || typeof window.gtag !== "function") return;
     window.gtag("event", "page_view", {
       page_path: pagePath,
       page_location: window.location.href,
       page_title: document.title,
     });
-  }, [pagePath]);
+  }, [isLoaded, isInternalUser, pagePath]);
 
-  if (!GA4_MEASUREMENT_ID) return null;
+  if (!GA4_MEASUREMENT_ID || !isLoaded || isInternalUser) return null;
 
   return (
     <>
@@ -54,4 +66,3 @@ export default function GA4Tracker() {
     </>
   );
 }
-
