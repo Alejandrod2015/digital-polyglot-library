@@ -69,11 +69,11 @@ export default function AddStoryToLibraryButton({
  }, [user, isLoaded, storyId]);
 
 
- const toggleLibrary = async () => {
+  const toggleLibrary = async () => {
    if (!user) {
      openSignIn({
-       afterSignInUrl: `/books/${bookId}/${storyId}`,
-       afterSignUpUrl: `/books/${bookId}/${storyId}`,
+       fallbackRedirectUrl: `/books/${bookId}/${storyId}`,
+       forceRedirectUrl: `/books/${bookId}/${storyId}`,
      });
      return;
    }

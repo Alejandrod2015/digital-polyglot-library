@@ -130,12 +130,6 @@ useEffect(() => {
           >
             Upgrade
           </Link>
-          <Link
-            href="/explore"
-            className="inline-flex items-center justify-center rounded-xl border border-[var(--chip-border)] bg-[var(--chip-bg)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:opacity-90"
-          >
-            Maybe later
-          </Link>
         </div>
       </div>
     );

@@ -11,7 +11,7 @@ import {
   Settings,
   ChartNoAxesColumn,
   BookMarked,
-  CreditCard,
+  Crown,
   LogIn,
   LogOut,
 } from "lucide-react";
@@ -26,6 +26,22 @@ export default function MobileMenu() {
   const router = useRouter();
   const { user } = useUser();
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
+
+  const trackUpgradeCta = async (source: string) => {
+    try {
+      await fetch("/api/metrics", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          storySlug: `__upgrade_${source}__`,
+          bookSlug: "__plans__",
+          eventType: "upgrade_cta_clicked",
+        }),
+      });
+    } catch {
+      // noop
+    }
+  };
 
   const isBookStoryPage = /^\/books\/[^/]+\/[^/]+$/.test(pathname || "");
   const isPolyglotStoryPage = /^\/stories\/[^/]+$/.test(pathname || "");
@@ -153,10 +169,13 @@ export default function MobileMenu() {
                 {(plan === "free" || plan === "basic") && (
                   <Link
                     href="/plans"
-                    onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
+                    onClick={() => {
+                      void trackUpgradeCta("mobile_menu");
+                      setOpen(false);
+                    }}
+                    className="inline-flex items-center gap-3 text-amber-300 hover:text-amber-200"
                   >
-                    <CreditCard size={20} />
+                    <Crown size={20} />
                     Upgrade
                   </Link>
                 )}

@@ -100,11 +100,25 @@ export default async function StoryPage({ params }: StoryPageProps) {
       {/* Cover de historia (solo si existe) */}
       {storyCoverUrl ? (
         <div className="mb-7">
-          <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-[#102746] lg:max-h-[240px]">
+          <div className="relative mx-auto w-full max-w-3xl h-[220px] lg:h-[240px] overflow-hidden rounded-2xl border border-white/10 bg-[#102746]">
+            {/* Backdrop blur based on the same cover so empty areas look intentional */}
+            <img
+              src={storyCoverUrl}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-65"
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, color-mix(in srgb, var(--bg-content) 16%, transparent) 0%, color-mix(in srgb, var(--bg-content) 54%, transparent) 100%)",
+              }}
+            />
             <img
               src={storyCoverUrl}
               alt={story.title}
-              className="w-full h-auto object-cover lg:h-[240px]"
+              className="relative z-10 w-full h-full object-contain p-1.5 sm:p-2"
             />
           </div>
         </div>
@@ -135,12 +149,6 @@ export default async function StoryPage({ params }: StoryPageProps) {
                 className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-medium font-medium rounded-xl shadow-lg transition"
               >
                 Upgrade
-              </a>
-              <a
-                href="/explore"
-                className="inline-block px-6 py-3 border border-[var(--chip-border)] bg-[var(--chip-bg)] hover:opacity-90 text-[var(--foreground)] text-medium font-medium rounded-xl transition"
-              >
-                Maybe later
               </a>
             </div>
           </div>

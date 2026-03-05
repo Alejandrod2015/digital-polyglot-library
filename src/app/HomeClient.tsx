@@ -1309,11 +1309,11 @@ export default function HomeClient({
               href={featuredFreeStory.href}
               className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
             >
-              <div className="w-full h-48 bg-[color:var(--surface)]">
+              <div className="w-full aspect-[16/10] bg-[color:var(--surface)]">
                 <img
                   src={featuredFreeStory.cover}
                   alt={featuredFreeStory.title}
-                  className="object-cover w-full h-full"
+                  className="object-contain w-full h-full"
                 />
               </div>
               <div className="p-5 flex flex-col flex-1 text-left">
@@ -1391,11 +1391,11 @@ export default function HomeClient({
               href={featuredFreeStory.href}
               className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
             >
-              <div className="w-full h-48 bg-[color:var(--surface)]">
+              <div className="w-full aspect-[16/10] bg-[color:var(--surface)]">
                 <img
                   src={featuredFreeStory.cover}
                   alt={featuredFreeStory.title}
-                  className="object-cover w-full h-full"
+                  className="object-contain w-full h-full"
                 />
               </div>
               <div className="p-5 flex flex-col flex-1 text-left">

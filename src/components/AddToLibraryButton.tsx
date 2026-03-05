@@ -56,7 +56,10 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
 
   const toggleLibrary = async () => {
     if (!user) {
-      openSignIn({ afterSignInUrl: `/books/${bookId}`, afterSignUpUrl: `/books/${bookId}` });
+      openSignIn({
+        fallbackRedirectUrl: `/books/${bookId}`,
+        forceRedirectUrl: `/books/${bookId}`,
+      });
       return;
     }
 

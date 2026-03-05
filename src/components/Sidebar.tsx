@@ -12,6 +12,7 @@ import {
   LogIn,
   LogOut,
   Sparkles,
+  Crown,
 } from "lucide-react";
 import {
   SignedIn,
@@ -53,9 +54,8 @@ function SignInButtonCustom({ onClose }: { onClose?: () => void }) {
   const handleClick = () => {
     if (typeof onClose === "function") onClose();
     openSignIn({
-      appearance: { layout: { shimmer: true } },
-      afterSignInUrl: "/auth/post-login",
-      afterSignUpUrl: "/auth/post-login",
+      fallbackRedirectUrl: "/auth/post-login",
+      forceRedirectUrl: "/auth/post-login",
     });
   };
 
@@ -170,9 +170,9 @@ export default function Sidebar({ onClose }: SidebarProps) {
               void trackUpgradeCta("sidebar");
               handleNavClick();
             }}
-            className="flex items-center gap-3 text-blue-400 hover:text-blue-300 transition-colors"
+            className="flex items-center gap-3 text-amber-300 hover:text-amber-200 transition-colors"
           >
-            <Sparkles size={22} /> Upgrade
+            <Crown size={22} /> Upgrade
           </Link>
         )}
 

@@ -1,4 +1,5 @@
 import { SignIn } from "@clerk/nextjs";
+import { clerkAppearance } from "@/lib/clerkAppearance";
 
 type SignInPageProps = {
   searchParams: Promise<{
@@ -24,6 +25,7 @@ export default async function Page({ searchParams }: SignInPageProps) {
   return (
     <main className="flex justify-center items-center min-h-screen">
       <SignIn
+        appearance={clerkAppearance}
         forceRedirectUrl={safeRedirect}
         fallbackRedirectUrl="/auth/post-login"
         signUpFallbackRedirectUrl="/auth/post-login"
