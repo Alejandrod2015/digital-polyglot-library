@@ -213,6 +213,16 @@ export default function Sidebar({ onClose }: SidebarProps) {
           </Link>
         )}
 
+        {(!user || plan === "free" || plan === "basic") && (
+          <Link
+            href="/plans"
+            onClick={handleNavClick}
+            className="flex items-center gap-3 text-amber-300/90 hover:text-amber-200 transition-colors"
+          >
+            <Crown size={22} /> Upgrade
+          </Link>
+        )}
+
         <Link
           href="/settings"
           onClick={handleNavClick}

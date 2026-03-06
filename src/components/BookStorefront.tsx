@@ -6,6 +6,10 @@ import { Play, ShoppingBag, Star } from "lucide-react";
 import Cover from "@/components/Cover";
 import AddToLibraryButton from "@/components/AddToLibraryButton";
 import BookStoriesGrid from "@/components/BookStoriesGrid";
+import BookHorizontalCard from "@/components/BookHorizontalCard";
+import ReleaseCarousel from "@/components/ReleaseCarousel";
+import StoryCarousel from "@/components/StoryCarousel";
+import StoryVerticalCard from "@/components/StoryVerticalCard";
 import { type Book, type Story } from "@/types/books";
 import { formatLanguage, formatLevel, formatTopic, toTitleCase } from "@/lib/displayFormat";
 
@@ -37,6 +41,10 @@ function toExternalUrl(url: string): string {
 function getStoryTopic(story: Story, book: Book): string {
   const raw = story.topic ?? book.topic ?? "General";
   return formatTopic(raw);
+}
+
+function normalizeMatch(value?: string): string {
+  return (value ?? "").trim().toLowerCase();
 }
 
 export default function BookStorefront({
@@ -109,6 +117,76 @@ export default function BookStorefront({
     return Array.from(map.values())
       .sort((a, b) => b.count - a.count || a.word.localeCompare(b.word))
       .slice(0, 40);
+  }, [book]);
+
+  const relatedBooks = useMemo<BookCarouselItem[]>(() => {
+    const currentLanguage = normalizeMatch(book.language);
+    const currentLevel = normalizeMatch(book.level);
+    const currentRegion = normalizeMatch(book.region);
+    const currentTopic = normalizeMatch(formatTopic(book.topic));
+
+    return allBooks
+      .filter((candidate) => candidate.slug !== book.slug)
+      .map((candidate) => {
+        let score = 0;
+        if (normalizeMatch(candidate.language) === currentLanguage) score += 4;
+        if (normalizeMatch(candidate.level) === currentLevel) score += 2;
+        if (normalizeMatch(candidate.region) === currentRegion && currentRegion) score += 1;
+        if (normalizeMatch(formatTopic(candidate.topic)) === currentTopic && currentTopic) score += 3;
+
+        return {
+          score,
+          item: {
+            slug: candidate.slug,
+            title: candidate.title,
+            language:
+              typeof candidate.language === "string" ? formatLanguage(candidate.language) : undefined,
+            region: typeof candidate.region === "string" ? candidate.region : undefined,
+            level:
+              typeof candidate.level === "string" ? formatLevel(candidate.level) : undefined,
+            cover: candidate.cover,
+            description:
+              typeof candidate.description === "string" ? candidate.description : undefined,
+            statsLine: getBookCardMeta(candidate).statsLine,
+            topicsLine: getBookCardMeta(candidate).topicsLine,
+            bookId: candidate.id,
+          },
+        };
+      })
+      .filter((entry) => entry.score >= 4)
+      .sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title))
+      .slice(0, 4)
+      .map((entry) => entry.item);
+  }, [book]);
+
+  const suggestedStories = useMemo(() => {
+    const currentLanguage = normalizeMatch(book.language);
+    const currentLevel = normalizeMatch(book.level);
+    const currentTopic = normalizeMatch(formatTopic(book.topic));
+
+    return allBooks
+      .filter((candidate) => candidate.slug !== book.slug)
+      .flatMap((candidate) =>
+        candidate.stories.map((story) => {
+          let score = 0;
+          const storyLanguage = normalizeMatch(story.language ?? candidate.language);
+          const storyLevel = normalizeMatch(story.level ?? candidate.level);
+          const storyTopic = normalizeMatch(formatTopic(story.topic ?? candidate.topic));
+
+          if (storyLanguage === currentLanguage) score += 4;
+          if (storyLevel === currentLevel) score += 2;
+          if (storyTopic === currentTopic && currentTopic) score += 3;
+
+          return {
+            score,
+            story,
+            candidate,
+          };
+        })
+      )
+      .filter((entry) => entry.score >= 5)
+      .sort((a, b) => b.score - a.score || a.story.title.localeCompare(b.story.title))
+      .slice(0, 6);
   }, [book]);
 
   const tabs: Array<{ key: TabKey; label: string }> = [
@@ -323,6 +401,68 @@ export default function BookStorefront({
           </div>
         ) : null}
       </section>
+
+      {tab === "stories" && (relatedBooks.length > 0 || suggestedStories.length > 0) ? (
+        <section className="mt-8 space-y-8">
+          {suggestedStories.length > 0 ? (
+            <div>
+              <div className="mb-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--primary)] mb-2">
+                  Suggested Stories
+                </p>
+                <h3 className="text-2xl font-semibold text-[var(--foreground)]">
+                  More stories in your lane
+                </h3>
+              </div>
+              <StoryCarousel
+                items={suggestedStories}
+                renderItem={({ story, candidate }) => (
+                  <StoryVerticalCard
+                    href={`/books/${candidate.slug}/${story.slug}${storyNavSuffix}`}
+                    title={story.title}
+                    coverUrl={story.cover ?? candidate.cover ?? "/covers/default.jpg"}
+                    subtitle={candidate.title}
+                    level={formatLevel(story.level ?? candidate.level)}
+                    language={formatLanguage(story.language ?? candidate.language)}
+                    region={story.region ?? candidate.region}
+                    metaSecondary={formatTopic(story.topic ?? candidate.topic)}
+                  />
+                )}
+              />
+            </div>
+          ) : null}
+
+          {relatedBooks.length > 0 ? (
+            <div>
+              <div className="mb-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--primary)] mb-2">
+                  Suggested Books
+                </p>
+                <h3 className="text-2xl font-semibold text-[var(--foreground)]">
+                  Similar books to explore next
+                </h3>
+              </div>
+              <ReleaseCarousel
+                items={relatedBooks}
+                itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
+                renderItem={(relatedBook) => (
+                  <BookHorizontalCard
+                    href={`/books/${relatedBook.slug}`}
+                    title={relatedBook.title}
+                    cover={relatedBook.cover}
+                    level={relatedBook.level}
+                    language={relatedBook.language}
+                    region={relatedBook.region}
+                    statsLine={relatedBook.statsLine}
+                    topicsLine={relatedBook.topicsLine}
+                    description={relatedBook.description}
+                  />
+                )}
+              />
+            </div>
+          ) : null}
+        </section>
+      ) : null}
 
       {firstStoryHref ? (
         <div className="fixed md:hidden inset-x-0 bottom-0 z-30 border-t border-white/10 bg-[#0b1325]/95 backdrop-blur p-3">

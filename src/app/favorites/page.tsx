@@ -239,13 +239,25 @@ export default function FavoritesPage() {
     }`;
 
   useEffect(() => {
+    let cancelled = false;
+    let readyTimer: number | undefined;
+
     const load = async () => {
+      if (!isLoaded) {
+        setIsReady(false);
+        return;
+      }
+
+      const scopedUserId = user?.id ?? userId ?? undefined;
+
       // 1️⃣ Cargar de localStorage inmediatamente
-      const localFavs = loadFavoritesCache(userId ?? undefined);
-      setFavorites(localFavs);
+      const localFavs = loadFavoritesCache(scopedUserId);
+      if (!cancelled) {
+        setFavorites(localFavs);
+      }
 
       // 2️⃣ Sincronizar backend (en segundo plano)
-      if (isLoaded && user) {
+      if (user) {
         try {
           const res = await fetch('/api/favorites', { cache: 'no-store' });
           const remoteFavs = res.ok ? ((await res.json()) as FavoriteItem[]) : [];
@@ -272,8 +284,10 @@ export default function FavoritesPage() {
           );
 
           localStorage.removeItem('favorites');
-          setFavorites(merged);
-          saveFavoritesCache(userId ?? undefined, merged);
+          if (!cancelled) {
+            setFavorites(merged);
+          }
+          saveFavoritesCache(scopedUserId, merged);
 
           const remoteSrs: SrsMap = {};
           for (const fav of remoteFavs) {
@@ -291,20 +305,35 @@ export default function FavoritesPage() {
               streak: typeof fav.streak === 'number' ? fav.streak : 0,
             };
           }
-          setSrsMap(remoteSrs);
+          if (!cancelled) {
+            setSrsMap(remoteSrs);
+          }
         } catch {
           // no romper UI
         }
       } else {
-        const map = loadSrsMap(userId ?? undefined);
-        setSrsMap(map);
+        const map = loadSrsMap(scopedUserId);
+        if (!cancelled) {
+          setSrsMap(map);
+        }
       }
 
       // 3️⃣ Mostrar el contenido tras pequeño delay para evitar flicker
-      setTimeout(() => setIsReady(true), 250);
+      readyTimer = window.setTimeout(() => {
+        if (!cancelled) {
+          setIsReady(true);
+        }
+      }, 250);
     };
 
     void load();
+
+    return () => {
+      cancelled = true;
+      if (typeof readyTimer === 'number') {
+        window.clearTimeout(readyTimer);
+      }
+    };
   }, [user, isLoaded, userId]);
 
   useEffect(() => {

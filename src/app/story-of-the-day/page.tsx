@@ -41,8 +41,8 @@ export default async function StoryOfTheDayPage() {
     <div className="min-h-screen bg-[#0D1B2A] text-white flex flex-col items-center justify-center px-4 sm:px-8 py-12">
       <div className="max-w-5xl w-full bg-white/5 rounded-3xl shadow-xl p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-10 border border-white/10">
         <div className="w-full sm:w-1/3 flex justify-center">
-          <div className="relative aspect-[3/4] w-56 sm:w-64 rounded-xl overflow-hidden shadow-lg border border-white/10">
-            <Image src={coverUrl} alt={story.title} fill className="object-cover" />
+          <div className="relative aspect-[3/4] w-56 sm:w-64 rounded-xl overflow-hidden shadow-lg border border-white/10 bg-[#102746]">
+            <Image src={coverUrl} alt={story.title} fill className="object-contain" />
           </div>
         </div>
 

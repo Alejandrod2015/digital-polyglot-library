@@ -11,15 +11,15 @@ export const clerkAppearance = {
   },
   layout: {
     shimmer: true,
-    socialButtonsVariant: "iconButton" as const,
+    socialButtonsVariant: "blockButton" as const,
   },
   elements: {
     card: "bg-[#0b1e36]/95 border border-white/10 shadow-2xl backdrop-blur-xl",
     headerTitle: "text-white text-2xl font-semibold",
     headerSubtitle: "text-[#9fb1c8]",
     socialButtonsBlockButton:
-      "bg-[#133153] border border-white/10 text-white hover:bg-[#183c66] transition",
-    socialButtonsBlockButtonText: "text-white",
+      "bg-[#133153] border border-white/10 !text-white hover:bg-[#183c66] transition [&_span]:!text-white [&_p]:!text-white [&_div]:!text-white",
+    socialButtonsBlockButtonText: "!text-white",
     formButtonPrimary:
       "bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-md transition",
     formFieldLabel: "text-[#c6d3e5]",
