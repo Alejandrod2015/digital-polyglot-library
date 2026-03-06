@@ -73,14 +73,9 @@ export default function AddStoryToLibraryButton({
   const toggleLibrary = async () => {
    if (!user) {
      openSignIn({
-<<<<<<< HEAD
+       appearance: clerkAppearance,
        fallbackRedirectUrl: `/books/${bookId}/${storyId}`,
        forceRedirectUrl: `/books/${bookId}/${storyId}`,
-=======
-       appearance: clerkAppearance,
-       afterSignInUrl: `/books/${bookId}/${storyId}`,
-       afterSignUpUrl: `/books/${bookId}/${storyId}`,
->>>>>>> 85ceed7 (Unify Clerk modal appearance)
      });
      return;
    }

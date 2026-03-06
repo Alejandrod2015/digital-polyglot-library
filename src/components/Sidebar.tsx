@@ -55,14 +55,9 @@ function SignInButtonCustom({ onClose }: { onClose?: () => void }) {
   const handleClick = () => {
     if (typeof onClose === "function") onClose();
     openSignIn({
-<<<<<<< HEAD
+      appearance: clerkAppearance,
       fallbackRedirectUrl: "/auth/post-login",
       forceRedirectUrl: "/auth/post-login",
-=======
-      appearance: clerkAppearance,
-      afterSignInUrl: "/auth/post-login",
-      afterSignUpUrl: "/auth/post-login",
->>>>>>> 85ceed7 (Unify Clerk modal appearance)
     });
   };
 

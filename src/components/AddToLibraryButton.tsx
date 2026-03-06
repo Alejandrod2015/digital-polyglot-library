@@ -58,14 +58,9 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
   const toggleLibrary = async () => {
     if (!user) {
       openSignIn({
-<<<<<<< HEAD
+        appearance: clerkAppearance,
         fallbackRedirectUrl: `/books/${bookId}`,
         forceRedirectUrl: `/books/${bookId}`,
-=======
-        appearance: clerkAppearance,
-        afterSignInUrl: `/books/${bookId}`,
-        afterSignUpUrl: `/books/${bookId}`,
->>>>>>> 85ceed7 (Unify Clerk modal appearance)
       });
       return;
     }
