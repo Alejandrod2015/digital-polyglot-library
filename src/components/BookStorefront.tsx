@@ -10,11 +10,26 @@ import BookHorizontalCard from "@/components/BookHorizontalCard";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import StoryCarousel from "@/components/StoryCarousel";
 import StoryVerticalCard from "@/components/StoryVerticalCard";
+import { books } from "@/data/books";
+import { getBookCardMeta } from "@/lib/bookCardMeta";
 import { type Book, type Story } from "@/types/books";
 import { formatLanguage, formatLevel, formatTopic, toTitleCase } from "@/lib/displayFormat";
 
 type TabKey = "stories" | "vocab" | "reviews" | "about";
 type SortKey = "recommended" | "shortest" | "longest" | "title";
+
+type BookCarouselItem = {
+  slug: string;
+  title: string;
+  language?: string;
+  region?: string;
+  level?: string;
+  cover?: string;
+  description?: string;
+  statsLine?: string;
+  topicsLine?: string;
+  bookId: string;
+};
 
 type Props = {
   book: Book;
@@ -57,6 +72,7 @@ export default function BookStorefront({
   const [topicFilter, setTopicFilter] = useState("all");
   const [sortKey, setSortKey] = useState<SortKey>("recommended");
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const allBooks = useMemo(() => Object.values(books), []);
   const firstStoryHref = book.stories[0]?.slug
     ? `/books/${book.slug}/${book.stories[0].slug}${storyNavSuffix}`
     : null;
