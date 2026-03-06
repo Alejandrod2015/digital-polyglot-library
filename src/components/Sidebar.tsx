@@ -22,6 +22,7 @@ import {
   useUser,
   useClerk,
 } from "@clerk/nextjs";
+import { clerkAppearance } from "../lib/clerkAppearance";
 
 type Plan = "free" | "basic" | "premium" | "polyglot";
 
@@ -54,8 +55,14 @@ function SignInButtonCustom({ onClose }: { onClose?: () => void }) {
   const handleClick = () => {
     if (typeof onClose === "function") onClose();
     openSignIn({
+<<<<<<< HEAD
       fallbackRedirectUrl: "/auth/post-login",
       forceRedirectUrl: "/auth/post-login",
+=======
+      appearance: clerkAppearance,
+      afterSignInUrl: "/auth/post-login",
+      afterSignUpUrl: "/auth/post-login",
+>>>>>>> 85ceed7 (Unify Clerk modal appearance)
     });
   };
 

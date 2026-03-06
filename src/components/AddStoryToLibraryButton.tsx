@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { useUser, useClerk } from '@clerk/nextjs';
 import { BookmarkPlus, BookmarkCheck } from 'lucide-react';
+import { clerkAppearance } from '../lib/clerkAppearance';
 
 
 type Props = {
@@ -72,8 +73,14 @@ export default function AddStoryToLibraryButton({
   const toggleLibrary = async () => {
    if (!user) {
      openSignIn({
+<<<<<<< HEAD
        fallbackRedirectUrl: `/books/${bookId}/${storyId}`,
        forceRedirectUrl: `/books/${bookId}/${storyId}`,
+=======
+       appearance: clerkAppearance,
+       afterSignInUrl: `/books/${bookId}/${storyId}`,
+       afterSignUpUrl: `/books/${bookId}/${storyId}`,
+>>>>>>> 85ceed7 (Unify Clerk modal appearance)
      });
      return;
    }
