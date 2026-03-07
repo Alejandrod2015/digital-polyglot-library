@@ -242,6 +242,19 @@ export default function FavoritesPage() {
         return;
       }
 
+      if (!user) {
+        if (!cancelled) {
+          setFavorites([]);
+          setSrsMap({});
+        }
+        readyTimer = window.setTimeout(() => {
+          if (!cancelled) {
+            setIsReady(true);
+          }
+        }, 250);
+        return;
+      }
+
       const scopedUserId = user?.id ?? userId ?? undefined;
 
       // 1️⃣ Cargar de localStorage inmediatamente
@@ -332,6 +345,10 @@ export default function FavoritesPage() {
 
   useEffect(() => {
     const refreshFromCache = () => {
+      if (!user) {
+        setFavorites([]);
+        return;
+      }
       const cached = loadFavoritesCache(userId ?? undefined);
       setFavorites(cached);
     };
@@ -758,10 +775,39 @@ export default function FavoritesPage() {
             isReady ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {favorites.length === 0 ? (
-            <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5">
-              <p className="text-lg font-semibold text-[var(--foreground)]">
-                No favorites saved yet.
+        {!user ? (
+          <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5">
+            <p className="text-lg font-semibold text-[var(--foreground)]">
+              Sign in to save words and review them here.
+            </p>
+            <p className="mt-2 text-sm text-[var(--muted)]">
+              Your saved vocabulary will appear here once you start reading and adding words to favorites.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href="/sign-in?redirect_url=%2Ffavorites"
+                className="inline-flex rounded-lg bg-[var(--primary)] px-3 py-2 text-sm font-semibold text-white hover:opacity-90 transition"
+              >
+                Sign in
+              </Link>
+              <Link
+                href="/explore/stories"
+                className="inline-flex rounded-lg border border-[var(--card-border)] bg-[var(--bg-content)] px-3 py-2 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)] transition"
+              >
+                Explore stories
+              </Link>
+              <Link
+                href="/explore/books"
+                className="inline-flex rounded-lg border border-[var(--card-border)] bg-[var(--bg-content)] px-3 py-2 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)] transition"
+              >
+                Browse books
+              </Link>
+            </div>
+          </div>
+        ) : favorites.length === 0 ? (
+          <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5">
+            <p className="text-lg font-semibold text-[var(--foreground)]">
+              No favorites saved yet.
               </p>
               <p className="mt-2 text-sm text-[var(--muted)]">
                 Save words while reading and they will show up here for review.
