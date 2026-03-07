@@ -168,19 +168,6 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <ChartNoAxesColumn size={22} /> Progress
         </Link>
 
-        {(plan === "free" || plan === "basic") && (
-          <Link
-            href="/plans"
-            onClick={() => {
-              void trackUpgradeCta("sidebar");
-              handleNavClick();
-            }}
-            className="flex items-center gap-3 text-amber-300 hover:text-amber-200 transition-colors"
-          >
-            <Crown size={22} /> Upgrade
-          </Link>
-        )}
-
         {/* Polyglot plan only */}
         {plan === "polyglot" && (
           <Link
