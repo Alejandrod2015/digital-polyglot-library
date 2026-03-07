@@ -1,8 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
 import { formatLanguageCode } from '@/lib/displayFormat';
+import { formatLanguage, formatLevel, formatTopic } from '@/lib/displayFormat';
+import { books } from '@/data/books';
+import { getBookCardMeta } from '@/lib/bookCardMeta';
+import StoryCarousel from '@/components/StoryCarousel';
+import ReleaseCarousel from '@/components/ReleaseCarousel';
+import BookHorizontalCard from '@/components/BookHorizontalCard';
+import StoryVerticalCard from '@/components/StoryVerticalCard';
 import {
   VOCAB_TYPE_ORDER,
   VocabTypeKey,
@@ -30,6 +37,29 @@ type SrsMeta = {
   streak: number;
 };
 type SrsMap = Record<string, SrsMeta>;
+type SuggestedBook = {
+  slug: string;
+  title: string;
+  language?: string;
+  region?: string;
+  level?: string;
+  cover?: string;
+  description?: string;
+  statsLine?: string;
+  topicsLine?: string;
+};
+type SuggestedStory = {
+  id: string;
+  bookSlug: string;
+  storySlug: string;
+  title: string;
+  bookTitle: string;
+  language: string;
+  region?: string;
+  level: string;
+  topic?: string;
+  coverUrl?: string;
+};
 
 function normalizeWord(word: string): string {
   return word.trim().toLowerCase();
@@ -175,6 +205,10 @@ function formatNextReview(meta?: SrsMeta): string {
   return `In ${days}d`;
 }
 
+function normalizeMatch(value?: string | null): string {
+  return value?.trim().toLowerCase() ?? '';
+}
+
 export default function FavoritesPage() {
   const { user, isLoaded } = useUser();
   const { userId } = useAuth();
@@ -187,6 +221,16 @@ export default function FavoritesPage() {
   const [practiceIndex, setPracticeIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
+  const allBooks = useMemo(() => Object.values(books), []);
+  const targetLanguages = useMemo(
+    () =>
+      Array.isArray(user?.publicMetadata?.targetLanguages)
+        ? (user?.publicMetadata?.targetLanguages as unknown[])
+            .filter((value): value is string => typeof value === 'string')
+            .map((value) => normalizeMatch(value))
+        : [],
+    [user]
+  );
   const getPracticeModeTabClass = (mode: 'due' | 'all' | 'related') =>
     `px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${
       practiceModeKind === mode
@@ -290,6 +334,74 @@ export default function FavoritesPage() {
     return acc;
   }, {} as Record<VocabTypeKey, number>);
   const availablePracticeTypes = VOCAB_TYPE_ORDER.filter((key) => (favoriteTypeCounts[key] ?? 0) > 0);
+  const suggestedBooks = useMemo<SuggestedBook[]>(
+    () =>
+      allBooks
+        .map((bookMeta) => ({
+          item: {
+            slug: bookMeta.slug,
+            title: bookMeta.title,
+            language:
+              typeof bookMeta.language === 'string' ? formatLanguage(bookMeta.language) : undefined,
+            region: typeof bookMeta.region === 'string' ? bookMeta.region : undefined,
+            level: typeof bookMeta.level === 'string' ? formatLevel(bookMeta.level) : undefined,
+            cover: bookMeta.cover,
+            description:
+              typeof bookMeta.description === 'string' ? bookMeta.description : undefined,
+            statsLine: getBookCardMeta(bookMeta).statsLine,
+            topicsLine: getBookCardMeta(bookMeta).topicsLine,
+          },
+          score: targetLanguages.includes(normalizeMatch(bookMeta.language)) ? 2 : 0,
+        }))
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 4)
+        .map(({ item }) => item),
+    [allBooks, targetLanguages]
+  );
+  const suggestedStories = useMemo<SuggestedStory[]>(
+    () =>
+      allBooks
+        .flatMap((bookMeta) =>
+          bookMeta.stories.map((storyMeta) => {
+            const languageValue =
+              typeof storyMeta.language === 'string' ? storyMeta.language : bookMeta.language;
+            return {
+              item: {
+                id: `${bookMeta.id}:${storyMeta.id}`,
+                bookSlug: bookMeta.slug,
+                storySlug: storyMeta.slug,
+                title: storyMeta.title,
+                bookTitle: bookMeta.title,
+                language: formatLanguage(languageValue),
+                region:
+                  typeof storyMeta.region === 'string' && storyMeta.region.trim() !== ''
+                    ? storyMeta.region
+                    : bookMeta.region,
+                level: formatLevel(
+                  typeof storyMeta.level === 'string' ? storyMeta.level : bookMeta.level
+                ),
+                topic:
+                  typeof storyMeta.topic === 'string'
+                    ? storyMeta.topic
+                    : typeof bookMeta.topic === 'string'
+                      ? bookMeta.topic
+                      : undefined,
+                coverUrl:
+                  typeof storyMeta.cover === 'string' && storyMeta.cover.trim() !== ''
+                    ? storyMeta.cover
+                    : typeof bookMeta.cover === 'string' && bookMeta.cover.trim() !== ''
+                      ? bookMeta.cover
+                      : '/covers/default.jpg',
+              },
+              score: targetLanguages.includes(normalizeMatch(languageValue)) ? 2 : 0,
+            };
+          })
+        )
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 8)
+        .map(({ item }) => item),
+    [allBooks, targetLanguages]
+  );
 
   const removeFavorite = async (word: string) => {
     const updated = favorites.filter((f) => f.word !== word);
@@ -586,7 +698,62 @@ export default function FavoritesPage() {
           }`}
         >
           {favorites.length === 0 ? (
-            <p className="text-[var(--muted)]">No favorites saved yet.</p>
+            <div className="space-y-8">
+              <div>
+                <p className="text-[var(--muted)]">No favorites saved yet.</p>
+                <p className="mt-2 text-sm text-[var(--muted)]">
+                  Save words from stories to review them later, or start with something worth reading below.
+                </p>
+              </div>
+
+              {suggestedStories.length > 0 ? (
+                <section>
+                  <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+                    Suggested stories
+                  </h2>
+                  <StoryCarousel<SuggestedStory>
+                    items={suggestedStories}
+                    renderItem={(story) => (
+                      <StoryVerticalCard
+                        href={`/books/${story.bookSlug}/${story.storySlug}?from=favorites`}
+                        title={story.title}
+                        coverUrl={story.coverUrl || '/covers/default.png'}
+                        subtitle={story.bookTitle}
+                        level={story.level}
+                        language={story.language}
+                        region={story.region}
+                        metaSecondary={formatTopic(story.topic)}
+                      />
+                    )}
+                  />
+                </section>
+              ) : null}
+
+              {suggestedBooks.length > 0 ? (
+                <section>
+                  <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+                    Suggested books
+                  </h2>
+                  <ReleaseCarousel
+                    items={suggestedBooks}
+                    itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
+                    renderItem={(book) => (
+                      <BookHorizontalCard
+                        href={`/books/${book.slug}?from=favorites`}
+                        title={book.title}
+                        cover={book.cover}
+                        level={book.level}
+                        language={book.language}
+                        region={book.region}
+                        statsLine={book.statsLine}
+                        topicsLine={book.topicsLine}
+                        description={book.description}
+                      />
+                    )}
+                  />
+                </section>
+              ) : null}
+            </div>
           ) : (
             <ul className="space-y-4">
               {favorites.map((fav) => {

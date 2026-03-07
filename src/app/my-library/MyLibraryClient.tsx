@@ -73,6 +73,10 @@ const formatAudioDuration = (totalSeconds?: number) => {
  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 };
 
+function normalizeMatch(value?: string | null): string {
+ return value?.trim().toLowerCase() ?? "";
+}
+
 
 export default function MyLibraryClient() {
  const { user, isLoaded } = useUser();
@@ -174,6 +178,15 @@ export default function MyLibraryClient() {
 
 
  const allBooks = useMemo(() => Object.values(books), []);
+ const targetLanguages = useMemo(
+   () =>
+     Array.isArray(user?.publicMetadata?.targetLanguages)
+       ? (user?.publicMetadata?.targetLanguages as unknown[])
+           .filter((value): value is string => typeof value === "string")
+           .map((value) => normalizeMatch(value))
+       : [],
+   [user]
+ );
 
 
  // ------------------------------
@@ -296,6 +309,85 @@ export default function MyLibraryClient() {
 
    return arr;
  }, [stories, allBooks]);
+
+ const suggestedBooks = useMemo<BookCarouselItem[]>(() => {
+   const savedBookIds = new Set(booksList.map((item) => item.bookId));
+
+   return allBooks
+     .map((bookMeta) => {
+       const languageScore = targetLanguages.includes(normalizeMatch(bookMeta.language)) ? 2 : 0;
+       return {
+         item: {
+           slug: bookMeta.slug,
+           title: bookMeta.title,
+           language:
+             typeof bookMeta.language === "string" ? formatLanguage(bookMeta.language) : undefined,
+           region: typeof bookMeta.region === "string" ? bookMeta.region : undefined,
+           level: typeof bookMeta.level === "string" ? formatLevel(bookMeta.level) : undefined,
+           cover: bookMeta.cover,
+           description:
+             typeof bookMeta.description === "string" ? bookMeta.description : undefined,
+           statsLine: getBookCardMeta(bookMeta).statsLine,
+           topicsLine: getBookCardMeta(bookMeta).topicsLine,
+           bookId: bookMeta.id,
+         },
+         score: languageScore,
+       };
+     })
+     .filter(({ item }) => !savedBookIds.has(item.bookId))
+     .sort((a, b) => b.score - a.score)
+     .slice(0, 4)
+     .map(({ item }) => item);
+ }, [allBooks, booksList, targetLanguages]);
+
+ const suggestedStories = useMemo<StoryItem[]>(() => {
+   const savedStoryIds = new Set(stories.map((item) => item.storyId));
+
+   return allBooks
+     .flatMap((bookMeta) =>
+       bookMeta.stories.map((storyMeta) => {
+         const languageValue =
+           typeof storyMeta.language === "string" ? storyMeta.language : bookMeta.language;
+         const languageScore = targetLanguages.includes(normalizeMatch(languageValue)) ? 2 : 0;
+         return {
+           item: {
+             id: `${bookMeta.id}:${storyMeta.id}`,
+             storyId: storyMeta.id,
+             bookSlug: bookMeta.slug,
+             storySlug: storyMeta.slug,
+             title: storyMeta.title,
+             bookTitle: bookMeta.title,
+             language: formatLanguage(languageValue),
+             region:
+               typeof storyMeta.region === "string" && storyMeta.region.trim() !== ""
+                 ? storyMeta.region
+                 : bookMeta.region,
+             level: formatLevel(
+               typeof storyMeta.level === "string" ? storyMeta.level : bookMeta.level
+             ),
+             topic:
+               typeof storyMeta.topic === "string"
+                 ? storyMeta.topic
+                 : typeof bookMeta.topic === "string"
+                   ? bookMeta.topic
+                   : undefined,
+             coverUrl:
+               typeof storyMeta.cover === "string" && storyMeta.cover.trim() !== ""
+                 ? storyMeta.cover
+                 : typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
+                   ? bookMeta.cover
+                   : "/covers/default.jpg",
+             audioUrl: typeof storyMeta.audio === "string" ? storyMeta.audio : null,
+           },
+           score: languageScore,
+         };
+       })
+     )
+     .filter(({ item }) => !savedStoryIds.has(item.storyId))
+     .sort((a, b) => b.score - a.score)
+     .slice(0, 8)
+     .map(({ item }) => item);
+ }, [allBooks, stories, targetLanguages]);
 
  useEffect(() => {
    if (storyItems.length === 0) return;
@@ -443,12 +535,59 @@ export default function MyLibraryClient() {
          {/* BOOKS */}
          <section className="mb-10 md:mb-12">
            <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">
-             Your Books
+             Saved Books
            </h2>
 
 
            {bookCarouselItems.length === 0 ? (
-             <p className="text-[var(--muted)]">You don’t have any saved books right now.</p>
+             <div className="space-y-5">
+               <p className="text-[var(--muted)]">You haven’t saved any books yet.</p>
+               {suggestedBooks.length > 0 ? (
+                 <div>
+                   <p className="mb-3 text-sm font-medium text-[var(--foreground)]/90">
+                     Suggested books
+                   </p>
+                   <div className="md:hidden">
+                     <StoryCarousel
+                       items={suggestedBooks}
+                       mobileItemClassName="w-[82%] sm:w-[62%]"
+                       renderItem={(book) => (
+                         <BookHorizontalCard
+                           href={`/books/${book.slug}?from=my-library`}
+                           title={book.title}
+                           cover={book.cover}
+                           level={book.level}
+                           language={book.language}
+                           region={book.region}
+                           statsLine={book.statsLine}
+                           topicsLine={book.topicsLine}
+                           description={book.description}
+                         />
+                       )}
+                     />
+                   </div>
+                   <div className="hidden md:block">
+                     <ReleaseCarousel
+                       items={suggestedBooks}
+                       itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
+                       renderItem={(book) => (
+                         <BookHorizontalCard
+                           href={`/books/${book.slug}?from=my-library`}
+                           title={book.title}
+                           cover={book.cover}
+                           level={book.level}
+                           language={book.language}
+                           region={book.region}
+                           statsLine={book.statsLine}
+                           topicsLine={book.topicsLine}
+                           description={book.description}
+                         />
+                       )}
+                     />
+                   </div>
+                 </div>
+               ) : null}
+             </div>
            ) : (
              <>
                <div className="md:hidden">
@@ -516,14 +655,38 @@ export default function MyLibraryClient() {
          {/* STORIES */}
          <section className="mb-10 md:mb-12">
            <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">
-             Your Saved Stories
+             Saved Stories
            </h2>
 
 
            {storyItems.length === 0 ? (
-             <p className="text-[var(--muted)]">
-               You don’t have any saved stories right now.
-             </p>
+             <div className="space-y-5">
+               <p className="text-[var(--muted)]">
+                 You haven’t saved any stories yet.
+               </p>
+               {suggestedStories.length > 0 ? (
+                 <div>
+                   <p className="mb-3 text-sm font-medium text-[var(--foreground)]/90">
+                     Suggested stories
+                   </p>
+                   <StoryCarousel<StoryItem>
+                     items={suggestedStories}
+                     renderItem={(story) => (
+                       <StoryVerticalCard
+                         href={`/books/${story.bookSlug}/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`}
+                         title={story.title}
+                         coverUrl={story.coverUrl || "/covers/default.png"}
+                         subtitle={story.bookTitle}
+                         level={story.level}
+                         language={story.language}
+                         region={story.region}
+                         metaSecondary={formatTopic(story.topic)}
+                       />
+                     )}
+                   />
+                 </div>
+               ) : null}
+             </div>
            ) : (
                <StoryCarousel<StoryItem>
                items={storyItems}

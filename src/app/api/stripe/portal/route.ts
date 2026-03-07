@@ -16,12 +16,62 @@ export async function POST() {
     }
 
     const user = await clerkClient.users.getUser(userId);
-    const customerId = user.privateMetadata?.stripeCustomerId;
+    const privateMetadata = user.privateMetadata as Record<string, unknown> | undefined;
+    const plan = user.publicMetadata?.plan;
+    const email = user.emailAddresses[0]?.emailAddress;
+    const privateCustomerId = privateMetadata?.stripeCustomerId;
+    const privateSubscriptionId = privateMetadata?.stripeSubscriptionId;
+
+    let customerId =
+      typeof privateCustomerId === "string" && privateCustomerId.trim().length > 0
+        ? privateCustomerId
+        : null;
+
+    if (!customerId && typeof privateSubscriptionId === "string" && privateSubscriptionId.trim()) {
+      try {
+        const subscription = await stripe.subscriptions.retrieve(privateSubscriptionId);
+        customerId =
+          typeof subscription.customer === "string" && subscription.customer.trim().length > 0
+            ? subscription.customer
+            : null;
+      } catch (err) {
+        console.warn("STRIPE PORTAL: failed to recover customer from subscription", err);
+      }
+    }
+
+    if (!customerId && email) {
+      try {
+        const customers = await stripe.customers.list({ email, limit: 1 });
+        customerId = customers.data[0]?.id ?? null;
+      } catch (err) {
+        console.warn("STRIPE PORTAL: failed to recover customer from email", err);
+      }
+    }
+
+    if (customerId && customerId !== privateCustomerId) {
+      await clerkClient.users.updateUserMetadata(userId, {
+        privateMetadata: {
+          ...privateMetadata,
+          stripeCustomerId: customerId,
+        },
+      });
+    }
 
     if (typeof customerId !== "string" || customerId.trim().length === 0) {
+      const isPaidPlan =
+        plan === "premium" || plan === "polyglot" || plan === "owner";
+
       return NextResponse.json(
-        { error: "No Stripe customer found for this account." },
-        { status: 400 }
+        isPaidPlan
+          ? {
+              error:
+                "We couldn't find your Stripe billing record yet. Please contact support.",
+            }
+          : {
+              error: "No active subscription found for this account.",
+              fallbackUrl: "/plans",
+            },
+        { status: 404 }
       );
     }
 

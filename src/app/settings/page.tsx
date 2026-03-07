@@ -68,6 +68,22 @@ function equalsSet(a: string[], b: string[]): boolean {
   return a.every((item) => bSet.has(item));
 }
 
+function formatPlanLabel(plan: Plan): string {
+  switch (plan) {
+    case "basic":
+      return "Basic";
+    case "premium":
+      return "Premium";
+    case "polyglot":
+      return "Polyglot";
+    case "owner":
+      return "Owner";
+    case "free":
+    default:
+      return "Free";
+  }
+}
+
 export default function SettingsPage() {
   const { user, isLoaded } = useUser();
   const [selected, setSelected] = useState<string[]>([]);
@@ -79,9 +95,12 @@ export default function SettingsPage() {
   const [hint, setHint] = useState("");
   const [themePref, setThemePref] = useState<ThemePref>("system");
   const [billingLoading, setBillingLoading] = useState(false);
+  const [billingError, setBillingError] = useState("");
 
   const plan = (user?.publicMetadata?.plan as Plan) ?? "free";
   const isFree = plan === "free";
+  const hasPaidPlan = plan === "premium" || plan === "polyglot" || plan === "owner";
+  const planLabel = formatPlanLabel(plan);
 
   const dirty = useMemo(
     () => !equalsSet(selected, persisted) || !equalsSet(interests, persistedInterests),
@@ -220,15 +239,20 @@ export default function SettingsPage() {
   const openBillingPortal = async () => {
     try {
       setBillingLoading(true);
+      setBillingError("");
       const res = await fetch("/api/stripe/portal", { method: "POST" });
-      const data = (await res.json()) as { url?: string; error?: string };
+      const data = (await res.json()) as { url?: string; error?: string; fallbackUrl?: string };
       if (!res.ok || !data.url) {
+        if (data.fallbackUrl) {
+          window.location.href = data.fallbackUrl;
+          return;
+        }
         throw new Error(data.error || "Could not open billing portal.");
       }
       window.location.href = data.url;
     } catch (err) {
       console.error(err);
-      setHint("Could not open billing portal.");
+      setBillingError(err instanceof Error ? err.message : "Could not open billing portal.");
     } finally {
       setBillingLoading(false);
     }
@@ -250,41 +274,50 @@ export default function SettingsPage() {
 
   return (
     <div className="min-h-screen text-[var(--foreground)] p-6 pb-24">
-      <h1 className="text-2xl font-semibold mb-2">Preferences</h1>
+      <h1 className="text-2xl font-semibold mb-2">Settings</h1>
       <p className="text-[var(--muted)] mb-5 text-sm">
         We use this to personalize Home, Explore, and recommendations.
       </p>
 
-      {isFree ? (
-        <div className="mb-6 rounded-xl border border-amber-500/30 bg-amber-400/15 p-4 text-sm text-[var(--foreground)]">
-          <p className="mb-3">
-            You are on <span className="font-semibold">Free</span>. Language personalization is
-            available on paid plans.
-          </p>
-          <Link
-            href="/plans"
-            className="inline-flex rounded-lg bg-amber-400/90 px-3 py-1.5 text-[13px] font-semibold text-[#1b1b1b] hover:bg-amber-300 transition-colors"
-          >
-            Upgrade plan
-          </Link>
+      <section className="mb-6 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 text-sm text-[var(--foreground)]">
+        <div className="mb-4 flex items-start justify-between gap-3">
+          <div>
+            <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Billing</h2>
+            <p className="mt-2 text-base font-semibold">Current plan: {planLabel}</p>
+            <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
+              Manage your plan from here. Free users can review available options. Paid users can
+              update their plan, payment method, or cancellation settings in Stripe Billing.
+            </p>
+          </div>
         </div>
-      ) : null}
 
-      {!isFree ? (
-        <div className="mb-6 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 text-sm text-[var(--foreground)]">
-          <p className="mb-3">
-            Manage your trial/subscription, payment method, and cancellation in Stripe Billing.
-          </p>
-          <button
-            type="button"
-            onClick={openBillingPortal}
-            disabled={billingLoading}
-            className="inline-flex rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90 transition disabled:opacity-60"
-          >
-            {billingLoading ? "Opening..." : "Manage subscription"}
-          </button>
+        <div className="flex flex-wrap items-center gap-3">
+          {hasPaidPlan ? (
+            <button
+              type="button"
+              onClick={openBillingPortal}
+              disabled={billingLoading}
+              className="inline-flex rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90 transition disabled:opacity-60"
+            >
+              {billingLoading ? "Opening..." : "Manage billing"}
+            </button>
+          ) : (
+            <Link
+              href="/plans"
+              className="inline-flex rounded-lg bg-amber-400/90 px-3 py-1.5 text-[13px] font-semibold text-[#1b1b1b] hover:bg-amber-300 transition-colors"
+            >
+              See plans
+            </Link>
+          )}
+          {billingError ? <span className="text-[13px] text-amber-300">{billingError}</span> : null}
         </div>
-      ) : null}
+
+        {isFree ? (
+          <p className="mt-3 text-xs text-[var(--muted)]">
+            Language personalization and the full reading experience are available on paid plans.
+          </p>
+        ) : null}
+      </section>
 
       <section className="mb-6">
         <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Appearance</h2>
@@ -413,7 +446,7 @@ export default function SettingsPage() {
           {status === "saved" ? "Saved" : null}
           {status === "error" ? "Could not save" : null}
           {status === "idle" && dirty ? "Unsaved changes" : null}
-          {status === "idle" && !dirty ? "Preferences are up to date" : null}
+          {status === "idle" && !dirty ? "Settings are up to date" : null}
           {hint ? (
             <span className="ml-2 font-medium text-[var(--primary)]">
               {hint}

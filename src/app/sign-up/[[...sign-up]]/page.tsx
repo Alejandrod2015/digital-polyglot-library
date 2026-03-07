@@ -28,7 +28,8 @@ export default async function Page({ searchParams }: SignUpPageProps) {
         appearance={clerkAppearance}
         forceRedirectUrl={safeRedirect}
         fallbackRedirectUrl="/auth/post-login"
-        signInFallbackRedirectUrl="/auth/post-login"
+        signInForceRedirectUrl={safeRedirect}
+        signInFallbackRedirectUrl={safeRedirect ?? "/auth/post-login"}
       />
     </main>
   );

@@ -1,5 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import PostLoginRedirect from "./redirect-client";
 
 export default async function PostLoginPage() {
   const { userId } = await auth();
@@ -8,7 +9,5 @@ export default async function PostLoginPage() {
     redirect("/sign-in");
   }
 
-  // Keep auth callback route minimal and stable.
-  // We avoid DB work here to prevent callback breakage.
-  redirect("/explore");
+  return <PostLoginRedirect />;
 }

@@ -138,99 +138,239 @@ function PlansInner() {
 
   if (!isLoaded) return null;
 
+  const monthlyPriceId = 'price_1SbP7r6ytrKVzptQaTBIuAaZ';
+  const annualPriceId = 'price_1SbP9H6ytrKVzptQQTz9v1hd';
+  const comparisonRows = [
+    ['Stories and books', 'Limited free access', 'Full access', 'Full access'],
+    ['Audio narration', 'Weekly highlights only', 'Included', 'Included'],
+    ['Saved library and favorites', 'Basic access', 'Included', 'Included'],
+    ['Personalized recommendations', 'Limited', 'Included', 'Included'],
+    ['Billing', 'Free forever', 'Monthly after trial', 'Annual after trial'],
+  ] as const;
+  const faqs = [
+    {
+      question: 'When will I be charged?',
+      answer: `After your 14-day free trial ends, on ${chargeDate}, unless you cancel before then.`,
+    },
+    {
+      question: 'Can I cancel during the trial?',
+      answer: 'Yes. You can cancel anytime before the charge date and you will not be billed.',
+    },
+    {
+      question: 'Do I need a payment method?',
+      answer: 'Yes. A payment method is required to start either trial.',
+    },
+    {
+      question: 'What stays free?',
+      answer: 'The free plan still includes limited daily access, weekly highlights, and a lightweight library.',
+    },
+  ] as const;
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-gray-950 to-black text-white px-6 py-16">
-      <h1 className="text-4xl font-extrabold mb-12 text-center bg-gradient-to-r from-indigo-400 to-white bg-clip-text text-transparent">
-        Choose your plan
-      </h1>
-      <p className="mb-8 max-w-2xl text-center text-sm text-indigo-100/90">
-        Start a 14-day Premium trial with payment method. You will be charged on{' '}
-        <span className="font-semibold text-white">{chargeDate}</span> unless you cancel before then.
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl w-full">
-        {/* BASIC */}
-        <div className="relative bg-gray-900 border border-gray-700/40 rounded-3xl p-8 text-center shadow-lg hover:shadow-gray-700/30 transition-all duration-300">
-          <h2 className="text-2xl font-bold text-gray-200 mb-3">Basic</h2>
-          <p className="text-4xl font-extrabold mb-2">€0</p>
-          <p className="text-gray-400 text-sm mb-8">
-            Enjoy one story per day and access weekly highlights.
-          </p>
-
-          {isSignedIn ? (
-            <button
-              disabled
-              className="w-full py-3 rounded-xl bg-gray-800 font-semibold text-gray-400 cursor-default"
-            >
-              Current Plan
-            </button>
-          ) : (
-            <button
-              onClick={() => router.push('/sign-up')}
-              className="w-full py-3 rounded-xl bg-gray-700 font-semibold hover:bg-gray-800 transition"
-            >
-              Join for Free
-            </button>
-          )}
-        </div>
-
-        {/* PREMIUM MONTHLY */}
-        <div className="relative bg-gray-900 border border-indigo-700/40 rounded-3xl p-8 text-center shadow-lg hover:shadow-indigo-700/30 transition-all duration-300">
-          <h2 className="text-2xl font-bold text-indigo-300 mb-3">
-            Premium Monthly
-          </h2>
-          <p className="text-4xl font-extrabold mb-2">
-            €14.99<span className="text-lg font-medium">/mo</span>
-          </p>
-          <p className="text-gray-400 text-sm mb-8">
-            14-day free trial, then €14.99/month. Full access to stories, audio, and recommendations.
-          </p>
-
-          <button
-            onClick={() =>
-              handleSubscribe('price_1SbP7r6ytrKVzptQaTBIuAaZ')
-            }
-            disabled={loading === 'price_1SbP7r6ytrKVzptQaTBIuAaZ'}
-            className="w-full py-3 rounded-xl bg-indigo-600 font-semibold hover:bg-indigo-700 transition disabled:opacity-60"
-          >
-            {loading === 'price_1SbP7r6ytrKVzptQaTBIuAaZ'
-              ? 'Processing...'
-              : 'Start 14-day trial'}
-          </button>
-        </div>
-
-        {/* PREMIUM YEARLY */}
-        <div className="relative bg-gray-900 border border-indigo-500/40 rounded-3xl p-8 text-center shadow-lg hover:shadow-indigo-500/30 transition-all duration-300">
-          <div className="absolute -top-4 right-4 bg-indigo-500 text-black text-xs font-bold px-3 py-1 rounded-full">
-            Best Value
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#1c4fa1_0%,#0d2647_32%,#061324_100%)] text-white px-4 py-8 sm:px-6 sm:py-10">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6">
+        <section className="rounded-[2rem] border border-white/10 bg-white/5 px-6 py-7 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1.25fr_0.95fr] lg:items-end">
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-blue-200/80">
+                Premium access
+              </p>
+              <h1 className="max-w-3xl text-3xl font-semibold leading-tight sm:text-4xl">
+                Learn with stories you will actually finish.
+              </h1>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-blue-100/78 sm:text-base">
+                Unlock full story access, audio narration, saved library, and personalized
+                recommendations. Start with a 14-day free trial and choose the plan that fits your rhythm.
+              </p>
+            </div>
+            <div className="grid gap-3 rounded-[1.5rem] border border-white/10 bg-[#08172b]/80 p-4 text-sm text-blue-50/90 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-blue-200/75">Trial</p>
+                <p className="mt-2 text-xl font-semibold">14 days free</p>
+                <p className="mt-1 text-blue-100/70">Try either plan before any charge.</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-blue-200/75">Charge date</p>
+                <p className="mt-2 text-xl font-semibold">{chargeDate}</p>
+                <p className="mt-1 text-blue-100/70">Cancel before then to avoid charges.</p>
+              </div>
+            </div>
           </div>
-          <h2 className="text-2xl font-bold text-indigo-200 mb-3">
-            Premium Annual
-          </h2>
-          <p className="text-4xl font-extrabold mb-2">
-            €149<span className="text-lg font-medium">/yr</span>
-          </p>
-          <p className="text-gray-400 text-sm mb-8">
-            14-day free trial, then €149/year. Full access and best annual value.
-          </p>
+        </section>
 
-          <button
-            onClick={() =>
-              handleSubscribe('price_1SbP9H6ytrKVzptQQTz9v1hd')
-            }
-            disabled={loading === 'price_1SbP9H6ytrKVzptQQTz9v1hd'}
-            className="w-full py-3 rounded-xl bg-indigo-500 font-semibold hover:bg-indigo-600 transition disabled:opacity-60"
-          >
-            {loading === 'price_1SbP9H6ytrKVzptQQTz9v1hd'
-              ? 'Processing...'
-              : 'Start 14-day trial'}
-          </button>
-        </div>
+        <section className="grid gap-4 lg:grid-cols-[1fr_1fr_0.8fr]">
+          <article className="rounded-[1.75rem] border border-white/10 bg-[#09182c]/85 p-5 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200/70">
+              Premium monthly
+            </p>
+            <div className="mt-3 flex items-end gap-2">
+              <span className="text-4xl font-semibold">€14.99</span>
+              <span className="pb-1 text-sm text-blue-100/70">/month</span>
+            </div>
+            <p className="mt-3 min-h-12 text-sm leading-6 text-blue-100/76">
+              Best if you want flexibility and full access without a longer commitment.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-blue-50/88">
+              <li>Full access to stories and books</li>
+              <li>Audio narration and reading tools</li>
+              <li>Personalized recommendations</li>
+            </ul>
+            <button
+              onClick={() => handleSubscribe(monthlyPriceId)}
+              disabled={loading === monthlyPriceId}
+              className="mt-5 w-full rounded-xl bg-[#2563eb] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#1d4ed8] disabled:opacity-60"
+            >
+              {loading === monthlyPriceId ? 'Processing...' : 'Start free trial'}
+            </button>
+            <p className="mt-3 text-xs text-blue-100/55">
+              Then €14.99/month after the trial ends.
+            </p>
+          </article>
+
+          <article className="relative rounded-[1.75rem] border border-[#6ea8ff]/45 bg-[linear-gradient(180deg,rgba(36,92,185,0.28),rgba(8,24,44,0.94))] p-5 shadow-[0_22px_70px_rgba(37,99,235,0.22)]">
+            <div className="absolute right-4 top-4 rounded-full border border-[#9cc3ff]/35 bg-[#8eb8ff] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0d2140]">
+              Best value
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-100/80">
+              Premium annual
+            </p>
+            <div className="mt-3 flex items-end gap-2">
+              <span className="text-4xl font-semibold">€149</span>
+              <span className="pb-1 text-sm text-blue-100/75">/year</span>
+            </div>
+            <p className="mt-3 min-h-12 text-sm leading-6 text-blue-50/82">
+              Best if you plan to practice consistently and want the strongest value over time.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-blue-50/92">
+              <li>Everything in Premium Monthly</li>
+              <li>Lower effective monthly cost</li>
+              <li>Clear default plan for steady learners</li>
+            </ul>
+            <button
+              onClick={() => handleSubscribe(annualPriceId)}
+              disabled={loading === annualPriceId}
+              className="mt-5 w-full rounded-xl bg-white px-4 py-3 text-sm font-semibold text-[#0d2140] transition hover:bg-blue-50 disabled:opacity-60"
+            >
+              {loading === annualPriceId ? 'Processing...' : 'Start free trial'}
+            </button>
+            <p className="mt-3 text-xs text-blue-100/65">
+              Then €149/year after the trial ends.
+            </p>
+          </article>
+
+          <aside className="rounded-[1.75rem] border border-amber-300/20 bg-[linear-gradient(180deg,rgba(255,202,85,0.08),rgba(8,24,44,0.92))] p-5 shadow-[0_18px_60px_rgba(0,0,0,0.24)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/85">
+              Free access
+            </p>
+            <div className="mt-3 flex items-end gap-2">
+              <span className="text-4xl font-semibold">€0</span>
+              <span className="pb-1 text-sm text-amber-100/75">forever</span>
+            </div>
+            <p className="mt-3 text-sm leading-6 text-blue-100/74">
+              Good for browsing, trying a daily story, and seeing how the library feels before upgrading.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-blue-50/88">
+              <li>Limited daily access</li>
+              <li>Weekly highlighted story</li>
+              <li>Lightweight library and favorites</li>
+            </ul>
+            {isSignedIn ? (
+              <button
+                disabled
+                className="mt-5 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-blue-100/55"
+              >
+                Current plan
+              </button>
+            ) : (
+              <button
+                onClick={() => router.push('/sign-up?redirect_url=%2Fplans')}
+                className="mt-5 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Join for free
+              </button>
+            )}
+          </aside>
+        </section>
+
+        <section className="rounded-[1.75rem] border border-white/10 bg-[#08172b]/82 p-4 shadow-[0_18px_60px_rgba(0,0,0,0.22)] sm:p-5">
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200/75">
+                Compare plans
+              </p>
+              <h2 className="mt-1 text-xl font-semibold">What changes when you upgrade</h2>
+            </div>
+            <p className="text-xs text-blue-100/55">
+              Payment method required. Cancel anytime before {chargeDate}.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-white/10">
+            <div className="grid grid-cols-[1.2fr_0.9fr_0.9fr_0.9fr] bg-white/5 px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-blue-200/75">
+              <div>Feature</div>
+              <div>Free</div>
+              <div>Monthly</div>
+              <div>Annual</div>
+            </div>
+            {comparisonRows.map(([label, free, monthly, annual], idx) => (
+              <div
+                key={label}
+                className={`grid grid-cols-[1.2fr_0.9fr_0.9fr_0.9fr] px-4 py-3 text-sm ${
+                  idx % 2 === 0 ? 'bg-white/[0.03]' : 'bg-transparent'
+                }`}
+              >
+                <div className="font-medium text-white/92">{label}</div>
+                <div className="text-blue-100/62">{free}</div>
+                <div className="text-blue-50/86">{monthly}</div>
+                <div className="text-blue-50/92">{annual}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[1.75rem] border border-white/10 bg-[#08172b]/82 p-5 shadow-[0_18px_60px_rgba(0,0,0,0.22)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200/75">
+              Before you start
+            </p>
+            <h2 className="mt-1 text-xl font-semibold">Short answers to the usual questions</h2>
+            <div className="mt-4 space-y-4">
+              {faqs.map((item) => (
+                <div key={item.question} className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
+                  <p className="font-semibold text-white/94">{item.question}</p>
+                  <p className="mt-1 text-sm leading-6 text-blue-100/72">{item.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(8,24,44,0.9))] p-5 shadow-[0_18px_60px_rgba(0,0,0,0.22)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200/75">
+              Why upgrade
+            </p>
+            <h2 className="mt-1 text-xl font-semibold">Built for consistent reading, not one-off sessions</h2>
+            <div className="mt-4 space-y-3 text-sm leading-6 text-blue-50/86">
+              <p>Save the stories you want to finish, keep audio nearby, and let the app adapt to your target languages and interests.</p>
+              <p>The annual plan is the clearest fit if you already know you want regular practice. Monthly stays there if you prefer flexibility.</p>
+            </div>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <button
+                onClick={() => handleSubscribe(monthlyPriceId)}
+                disabled={loading === monthlyPriceId}
+                className="rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10 disabled:opacity-60"
+              >
+                {loading === monthlyPriceId ? 'Processing...' : 'Start free trial'}
+              </button>
+              <button
+                onClick={() => handleSubscribe(annualPriceId)}
+                disabled={loading === annualPriceId}
+                className="rounded-xl bg-[#2563eb] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#1d4ed8] disabled:opacity-60"
+              >
+                {loading === annualPriceId ? 'Processing...' : 'Start free trial'}
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
-
-      <p className="mt-10 text-gray-500 text-sm text-center">
-        Payment method required for trial. Cancel anytime before {chargeDate} to avoid charges.
-      </p>
     </div>
   );
 }

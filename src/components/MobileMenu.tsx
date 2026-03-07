@@ -193,7 +193,9 @@ export default function MobileMenu() {
 
               <SignedOut>
                 <Link
-                  href="/sign-in"
+                  href={`/sign-in?redirect_url=${encodeURIComponent(
+                    pathname && pathname !== "/auth/post-login" ? pathname : "/"
+                  )}`}
                   onClick={() => setOpen(false)}
                   className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                 >

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   Home,
   Compass,
@@ -51,13 +52,15 @@ function PlanBadge() {
 
 function SignInButtonCustom({ onClose }: { onClose?: () => void }) {
   const { openSignIn } = useClerk();
+  const pathname = usePathname();
 
   const handleClick = () => {
     if (typeof onClose === "function") onClose();
+    const redirectTarget = pathname && pathname !== "/auth/post-login" ? pathname : "/";
     openSignIn({
       appearance: clerkAppearance,
-      fallbackRedirectUrl: "/auth/post-login",
-      forceRedirectUrl: "/auth/post-login",
+      fallbackRedirectUrl: redirectTarget,
+      forceRedirectUrl: redirectTarget,
     });
   };
 
