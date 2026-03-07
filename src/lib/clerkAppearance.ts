@@ -18,7 +18,7 @@ export const clerkAppearance = {
     headerTitle: "text-white text-2xl font-semibold",
     headerSubtitle: "text-[#9fb1c8]",
     socialButtonsBlockButton:
-      "bg-[#133153] border border-white/10 !text-white hover:bg-[#183c66] transition [&_span]:!text-white [&_p]:!text-white [&_div]:!text-white",
+      "bg-[#133153] border border-white/10 !text-white hover:bg-[#183c66] transition [&_*]:!text-white",
     socialButtonsBlockButtonText: "!text-white",
     formButtonPrimary:
       "bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-md transition",

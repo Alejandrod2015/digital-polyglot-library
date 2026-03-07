@@ -175,11 +175,31 @@ export default async function StoryPage({ params }: StoryPageProps) {
       {/* Cover de historia (solo si existe) */}
       {storyCoverUrl ? (
         <div className="mb-7">
-          <div className="mx-auto flex h-[220px] w-full max-w-3xl items-center justify-center overflow-hidden rounded-2xl bg-[#102746] lg:h-[240px]">
+          <div className="mx-auto w-full max-w-3xl md:hidden overflow-hidden rounded-2xl border border-white/10 bg-[#102746]">
             <img
               src={storyCoverUrl}
               alt={story.title}
-              className="h-full w-full object-contain"
+              className="block w-full h-auto object-contain"
+            />
+          </div>
+          <div className="relative mx-auto hidden w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-[#102746] md:block h-[220px] lg:h-[240px]">
+            <img
+              src={storyCoverUrl}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-65"
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, color-mix(in srgb, var(--bg-content) 16%, transparent) 0%, color-mix(in srgb, var(--bg-content) 54%, transparent) 100%)",
+              }}
+            />
+            <img
+              src={storyCoverUrl}
+              alt={story.title}
+              className="relative z-10 block w-full h-full object-contain"
             />
           </div>
         </div>
