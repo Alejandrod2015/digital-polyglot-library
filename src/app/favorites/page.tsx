@@ -1,21 +1,50 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
-import { formatLanguageCode } from '@/lib/displayFormat';
-import { formatLanguage, formatLevel, formatTopic } from '@/lib/displayFormat';
 import { books } from '@/data/books';
-import { getBookCardMeta } from '@/lib/bookCardMeta';
-import StoryCarousel from '@/components/StoryCarousel';
-import ReleaseCarousel from '@/components/ReleaseCarousel';
-import BookHorizontalCard from '@/components/BookHorizontalCard';
-import StoryVerticalCard from '@/components/StoryVerticalCard';
+import { formatLanguageCode } from '@/lib/displayFormat';
 import {
   VOCAB_TYPE_ORDER,
   VocabTypeKey,
   getVocabTypeLabel,
   normalizeVocabType,
 } from '@/lib/vocabTypes';
+
+const MIN_RELATED_PRACTICE_ITEMS = 3;
+const RELATED_PRACTICE_MAX = 20;
+const RELATED_DEFINITION_STOPWORDS = new Set([
+  'a',
+  'an',
+  'and',
+  'as',
+  'at',
+  'be',
+  'by',
+  'de',
+  'del',
+  'der',
+  'die',
+  'el',
+  'en',
+  'for',
+  'from',
+  'in',
+  'la',
+  'las',
+  'los',
+  'mit',
+  'of',
+  'on',
+  'or',
+  'the',
+  'to',
+  'un',
+  'una',
+  'und',
+  'with',
+]);
 
 type FavoriteItem = {
   word: string;
@@ -37,29 +66,6 @@ type SrsMeta = {
   streak: number;
 };
 type SrsMap = Record<string, SrsMeta>;
-type SuggestedBook = {
-  slug: string;
-  title: string;
-  language?: string;
-  region?: string;
-  level?: string;
-  cover?: string;
-  description?: string;
-  statsLine?: string;
-  topicsLine?: string;
-};
-type SuggestedStory = {
-  id: string;
-  bookSlug: string;
-  storySlug: string;
-  title: string;
-  bookTitle: string;
-  language: string;
-  region?: string;
-  level: string;
-  topic?: string;
-  coverUrl?: string;
-};
 
 function normalizeWord(word: string): string {
   return word.trim().toLowerCase();
@@ -89,20 +95,22 @@ function normalizeTokenValue(value?: string | null): string | null {
   return clean.length > 0 ? clean : null;
 }
 
-function areWordsRelated(a: FavoriteItem, b: FavoriteItem): boolean {
-  const typeA = getFavoriteType(a);
-  const typeB = getFavoriteType(b);
-  if (typeA === typeB) return true;
+function getDefinitionTokens(value?: string | null): string[] {
+  if (!value) return [];
+  return value
+    .toLowerCase()
+    .split(/[^a-záéíóúüñäöß]+/i)
+    .map((token) => token.trim())
+    .filter((token) => token.length >= 4 && !RELATED_DEFINITION_STOPWORDS.has(token));
+}
 
-  const storyA = normalizeTokenValue(a.storySlug);
-  const storyB = normalizeTokenValue(b.storySlug);
-  if (storyA && storyB && storyA === storyB) return true;
+function getWordStem(value: string): string {
+  const normalized = normalizeWord(value).replace(/[^a-záéíóúüñäöß]+/gi, '');
+  return normalized.slice(0, 5);
+}
 
-  const langA = normalizeTokenValue(a.language);
-  const langB = normalizeTokenValue(b.language);
-  if (langA && langB && langA === langB) return true;
-
-  return false;
+function getFavoriteIdentity(item: Pick<FavoriteItem, 'word' | 'language'>): string {
+  return `${normalizeWord(item.word)}::${normalizeTokenValue(item.language) ?? ''}`;
 }
 
 function mergeFavoriteItem(remote: FavoriteItem, local: FavoriteItem): FavoriteItem {
@@ -205,10 +213,6 @@ function formatNextReview(meta?: SrsMeta): string {
   return `In ${days}d`;
 }
 
-function normalizeMatch(value?: string | null): string {
-  return value?.trim().toLowerCase() ?? '';
-}
-
 export default function FavoritesPage() {
   const { user, isLoaded } = useUser();
   const { userId } = useAuth();
@@ -221,16 +225,6 @@ export default function FavoritesPage() {
   const [practiceIndex, setPracticeIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
-  const allBooks = useMemo(() => Object.values(books), []);
-  const targetLanguages = useMemo(
-    () =>
-      Array.isArray(user?.publicMetadata?.targetLanguages)
-        ? (user?.publicMetadata?.targetLanguages as unknown[])
-            .filter((value): value is string => typeof value === 'string')
-            .map((value) => normalizeMatch(value))
-        : [],
-    [user]
-  );
   const getPracticeModeTabClass = (mode: 'due' | 'all' | 'related') =>
     `px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${
       practiceModeKind === mode
@@ -357,80 +351,92 @@ export default function FavoritesPage() {
   const now = Date.now();
   const dueFavorites = favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
   const currentPractice = practiceQueue[practiceIndex] ?? null;
+  const favoriteIdentitySet = useMemo(
+    () => new Set(favorites.map((fav) => getFavoriteIdentity(fav))),
+    [favorites]
+  );
+  const allCatalogRelatedItems = useMemo<FavoriteItem[]>(() => {
+    const items: FavoriteItem[] = [];
+
+    for (const book of Object.values(books)) {
+      for (const story of book.stories ?? []) {
+        for (const vocab of story.vocab ?? []) {
+          if (!vocab.word || !vocab.definition) continue;
+          items.push({
+            word: vocab.word,
+            translation: vocab.definition,
+            wordType:
+              normalizeVocabType(vocab.type, {
+                word: vocab.word,
+                definition: vocab.definition,
+              }) ?? null,
+            exampleSentence: typeof vocab.note === 'string' ? vocab.note : null,
+            storySlug: story.slug,
+            storyTitle: story.title,
+            sourcePath: `/books/${book.slug}/${story.slug}`,
+            language: story.language ?? book.language ?? null,
+          });
+        }
+      }
+    }
+
+    return items;
+  }, []);
   const favoriteTypeCounts = favorites.reduce<Record<VocabTypeKey, number>>((acc, fav) => {
     const key = getFavoriteType(fav);
     acc[key] = (acc[key] ?? 0) + 1;
     return acc;
   }, {} as Record<VocabTypeKey, number>);
   const availablePracticeTypes = VOCAB_TYPE_ORDER.filter((key) => (favoriteTypeCounts[key] ?? 0) > 0);
-  const suggestedBooks = useMemo<SuggestedBook[]>(
-    () =>
-      allBooks
-        .map((bookMeta) => ({
-          item: {
-            slug: bookMeta.slug,
-            title: bookMeta.title,
-            language:
-              typeof bookMeta.language === 'string' ? formatLanguage(bookMeta.language) : undefined,
-            region: typeof bookMeta.region === 'string' ? bookMeta.region : undefined,
-            level: typeof bookMeta.level === 'string' ? formatLevel(bookMeta.level) : undefined,
-            cover: bookMeta.cover,
-            description:
-              typeof bookMeta.description === 'string' ? bookMeta.description : undefined,
-            statsLine: getBookCardMeta(bookMeta).statsLine,
-            topicsLine: getBookCardMeta(bookMeta).topicsLine,
-          },
-          score: targetLanguages.includes(normalizeMatch(bookMeta.language)) ? 2 : 0,
-        }))
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 4)
-        .map(({ item }) => item),
-    [allBooks, targetLanguages]
-  );
-  const suggestedStories = useMemo<SuggestedStory[]>(
-    () =>
-      allBooks
-        .flatMap((bookMeta) =>
-          bookMeta.stories.map((storyMeta) => {
-            const languageValue =
-              typeof storyMeta.language === 'string' ? storyMeta.language : bookMeta.language;
-            return {
-              item: {
-                id: `${bookMeta.id}:${storyMeta.id}`,
-                bookSlug: bookMeta.slug,
-                storySlug: storyMeta.slug,
-                title: storyMeta.title,
-                bookTitle: bookMeta.title,
-                language: formatLanguage(languageValue),
-                region:
-                  typeof storyMeta.region === 'string' && storyMeta.region.trim() !== ''
-                    ? storyMeta.region
-                    : bookMeta.region,
-                level: formatLevel(
-                  typeof storyMeta.level === 'string' ? storyMeta.level : bookMeta.level
-                ),
-                topic:
-                  typeof storyMeta.topic === 'string'
-                    ? storyMeta.topic
-                    : typeof bookMeta.topic === 'string'
-                      ? bookMeta.topic
-                      : undefined,
-                coverUrl:
-                  typeof storyMeta.cover === 'string' && storyMeta.cover.trim() !== ''
-                    ? storyMeta.cover
-                    : typeof bookMeta.cover === 'string' && bookMeta.cover.trim() !== ''
-                      ? bookMeta.cover
-                      : '/covers/default.jpg',
-              },
-              score: targetLanguages.includes(normalizeMatch(languageValue)) ? 2 : 0,
-            };
-          })
-        )
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 8)
-        .map(({ item }) => item),
-    [allBooks, targetLanguages]
-  );
+  const relatedPracticeCandidates = useMemo(() => {
+    const base = favorites.filter((fav) => {
+      if (practiceType === 'all') return true;
+      return getFavoriteType(fav) === practiceType;
+    });
+
+    if (base.length === 0) return [];
+
+    const scored = new Map<string, { item: FavoriteItem; score: number }>();
+
+    for (const seed of base) {
+      const seedLanguage = normalizeTokenValue(seed.language);
+      const seedStory = normalizeTokenValue(seed.storySlug);
+      const seedType = getFavoriteType(seed);
+      const seedDefinitionTokens = new Set(getDefinitionTokens(seed.translation));
+      const seedStem = getWordStem(seed.word);
+
+      for (const candidate of allCatalogRelatedItems) {
+        const candidateLanguage = normalizeTokenValue(candidate.language);
+        if (!seedLanguage || candidateLanguage !== seedLanguage) continue;
+        if (favoriteIdentitySet.has(getFavoriteIdentity(candidate))) continue;
+        if (seedStory && normalizeTokenValue(candidate.storySlug) === seedStory) continue;
+
+        const candidateType = getFavoriteType(candidate);
+        const candidateTokens = getDefinitionTokens(candidate.translation);
+        const sharedDefinitionTokens = candidateTokens.filter((token) => seedDefinitionTokens.has(token));
+        const candidateStem = getWordStem(candidate.word);
+
+        let score = 0;
+        if (candidateType === seedType) score += 3;
+        if (sharedDefinitionTokens.length > 0) score += Math.min(4, sharedDefinitionTokens.length * 2);
+        if (seedStem.length >= 4 && candidateStem.length >= 4 && seedStem === candidateStem) score += 2;
+
+        if (score < 4) continue;
+
+        const key = `${getFavoriteIdentity(candidate)}::${normalizeTokenValue(candidate.storySlug) ?? ''}`;
+        const existing = scored.get(key);
+        if (!existing || score > existing.score) {
+          scored.set(key, { item: candidate, score });
+        }
+      }
+    }
+
+    return [...scored.values()]
+      .sort((a, b) => b.score - a.score || a.item.word.localeCompare(b.item.word))
+      .slice(0, RELATED_PRACTICE_MAX)
+      .map((entry) => entry.item);
+  }, [allCatalogRelatedItems, favoriteIdentitySet, favorites, practiceType]);
+  const relatedPracticeAvailable = relatedPracticeCandidates.length >= MIN_RELATED_PRACTICE_ITEMS;
 
   const removeFavorite = async (word: string) => {
     const updated = favorites.filter((f) => f.word !== word);
@@ -455,6 +461,30 @@ export default function FavoritesPage() {
     }
   };
 
+  const saveRelatedFavorite = async (item: FavoriteItem) => {
+    const identity = getFavoriteIdentity(item);
+    if (favoriteIdentitySet.has(identity)) return;
+
+    const updated = [...favorites, item];
+    setFavorites(updated);
+    saveFavoritesCache(userId ?? undefined, updated);
+
+    try {
+      if (user) {
+        const res = await fetch('/api/favorites', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(item),
+        });
+        if (!res.ok) throw new Error('Network error');
+      } else {
+        saveFavoritesCache(undefined, updated);
+      }
+    } catch (err) {
+      console.error('Error saving related favorite:', err);
+    }
+  };
+
   const startPractice = (onlyDue: boolean) => {
     const source = onlyDue ? dueFavorites : favorites;
     const snapshot = source.filter((fav) => {
@@ -470,50 +500,14 @@ export default function FavoritesPage() {
   };
 
   const startRelatedPractice = () => {
-    const base = favorites.filter((fav) => {
-      if (practiceType === 'all') return true;
-      return getFavoriteType(fav) === practiceType;
-    });
-
-    if (base.length === 0) {
+    if (relatedPracticeCandidates.length < MIN_RELATED_PRACTICE_ITEMS) {
       setPracticeQueue([]);
       setPracticeMode(false);
       setPracticeIndex(0);
       setRevealed(false);
       return;
     }
-
-    const duePool = base.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
-    const relatedPool = base.filter((candidate) => {
-      const candidateKey = normalizeWord(candidate.word);
-      return base.some((seed) => {
-        const seedKey = normalizeWord(seed.word);
-        if (seedKey === candidateKey) return false;
-        return areWordsRelated(seed, candidate);
-      });
-    });
-
-    const dueRelated = duePool.filter((due) =>
-      relatedPool.some((related) => normalizeWord(related.word) === normalizeWord(due.word))
-    );
-
-    const dueShuffled = shuffleArray(dueRelated);
-    const relatedShuffled = shuffleArray(
-      relatedPool.filter(
-        (fav) => !dueRelated.some((due) => normalizeWord(due.word) === normalizeWord(fav.word))
-      )
-    );
-    const maxQueue = 20;
-    const dueTarget = Math.min(dueShuffled.length, Math.max(4, Math.ceil(maxQueue * 0.5)));
-    const relatedTarget = Math.min(relatedShuffled.length, maxQueue - dueTarget);
-    const selectedDue = dueShuffled.slice(0, dueTarget);
-    const selectedRelated = relatedShuffled.slice(0, relatedTarget);
-    const fallback =
-      selectedDue.length + selectedRelated.length > 0
-        ? []
-        : shuffleArray(base).slice(0, Math.min(maxQueue, base.length));
-
-    const relatedSet = shuffleArray([...selectedDue, ...selectedRelated, ...fallback]);
+    const relatedSet = shuffleArray(relatedPracticeCandidates);
 
     setPracticeModeKind('related');
     setPracticeQueue(relatedSet);
@@ -524,6 +518,32 @@ export default function FavoritesPage() {
 
   const rateCurrent = async (score: ReviewScore) => {
     if (!currentPractice) return;
+    const isSavedFavorite = favoriteIdentitySet.has(getFavoriteIdentity(currentPractice));
+
+    if (!isSavedFavorite && practiceModeKind === 'related') {
+      const hasNext = practiceIndex + 1 < practiceQueue.length;
+      const shouldRepeat = score === 'again' || score === 'hard';
+      const repeatedQueue = shouldRepeat ? [...practiceQueue, currentPractice] : practiceQueue;
+
+      setPracticeQueue(repeatedQueue);
+      setRevealed(false);
+
+      if (hasNext) {
+        setPracticeIndex((idx) => idx + 1);
+        return;
+      }
+
+      if (shouldRepeat && repeatedQueue.length > practiceQueue.length) {
+        setPracticeIndex((idx) => idx + 1);
+        return;
+      }
+
+      setPracticeMode(false);
+      setPracticeQueue([]);
+      setPracticeIndex(0);
+      return;
+    }
+
     const key = normalizeWord(currentPractice.word);
     const prev = srsMap[key];
     const next = computeNextReview(score, prev?.streak ?? 0);
@@ -589,12 +609,14 @@ export default function FavoritesPage() {
               >
                 Practice all
               </button>
-              <button
-                onClick={startRelatedPractice}
-                className={getPracticeModeTabClass('related')}
-              >
-                Practice related
-              </button>
+              {relatedPracticeAvailable ? (
+                <button
+                  onClick={startRelatedPractice}
+                  className={getPracticeModeTabClass('related')}
+                >
+                  Practice related
+                </button>
+              ) : null}
             </div>
             <div className="flex max-w-full flex-wrap justify-end gap-1.5">
               <button
@@ -665,6 +687,16 @@ export default function FavoritesPage() {
                   Open story
                 </a>
               ) : null}
+              {!favoriteIdentitySet.has(getFavoriteIdentity(currentPractice)) ? (
+                <div className="mb-4">
+                  <button
+                    onClick={() => void saveRelatedFavorite(currentPractice)}
+                    className="rounded-lg border border-[var(--card-border)] bg-[var(--bg-content)] px-3 py-2 text-sm font-semibold text-[var(--foreground)] transition hover:bg-[var(--card-bg-hover)]"
+                  >
+                    Save to Favorites
+                  </button>
+                </div>
+              ) : null}
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => rateCurrent('again')}
@@ -727,61 +759,27 @@ export default function FavoritesPage() {
           }`}
         >
           {favorites.length === 0 ? (
-            <div className="space-y-8">
-              <div>
-                <p className="text-[var(--muted)]">No favorites saved yet.</p>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  Save words from stories to review them later, or start with something worth reading below.
-                </p>
+            <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5">
+              <p className="text-lg font-semibold text-[var(--foreground)]">
+                No favorites saved yet.
+              </p>
+              <p className="mt-2 text-sm text-[var(--muted)]">
+                Save words while reading and they will show up here for review.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link
+                  href="/explore/stories"
+                  className="inline-flex rounded-lg bg-[var(--primary)] px-3 py-2 text-sm font-semibold text-white hover:opacity-90 transition"
+                >
+                  Explore stories
+                </Link>
+                <Link
+                  href="/explore/books"
+                  className="inline-flex rounded-lg border border-[var(--card-border)] bg-[var(--bg-content)] px-3 py-2 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)] transition"
+                >
+                  Browse books
+                </Link>
               </div>
-
-              {suggestedStories.length > 0 ? (
-                <section>
-                  <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-                    Suggested stories
-                  </h2>
-                  <StoryCarousel<SuggestedStory>
-                    items={suggestedStories}
-                    renderItem={(story) => (
-                      <StoryVerticalCard
-                        href={`/books/${story.bookSlug}/${story.storySlug}?from=favorites`}
-                        title={story.title}
-                        coverUrl={story.coverUrl || '/covers/default.png'}
-                        subtitle={story.bookTitle}
-                        level={story.level}
-                        language={story.language}
-                        region={story.region}
-                        metaSecondary={formatTopic(story.topic)}
-                      />
-                    )}
-                  />
-                </section>
-              ) : null}
-
-              {suggestedBooks.length > 0 ? (
-                <section>
-                  <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-                    Suggested books
-                  </h2>
-                  <ReleaseCarousel
-                    items={suggestedBooks}
-                    itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
-                    renderItem={(book) => (
-                      <BookHorizontalCard
-                        href={`/books/${book.slug}?from=favorites`}
-                        title={book.title}
-                        cover={book.cover}
-                        level={book.level}
-                        language={book.language}
-                        region={book.region}
-                        statsLine={book.statsLine}
-                        topicsLine={book.topicsLine}
-                        description={book.description}
-                      />
-                    )}
-                  />
-                </section>
-              ) : null}
             </div>
           ) : (
             <ul className="space-y-4">

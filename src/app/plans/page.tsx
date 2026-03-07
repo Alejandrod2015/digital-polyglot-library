@@ -167,8 +167,12 @@ function PlansInner() {
   ] as const;
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#1c4fa1_0%,#0d2647_32%,#061324_100%)] text-white px-4 py-8 sm:px-6 sm:py-10">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6">
+    <div className="relative min-h-full overflow-hidden px-4 py-8 text-white sm:px-6 sm:py-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.28),rgba(37,99,235,0.08)_45%,transparent_72%)]"
+      />
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-6">
         <section className="rounded-[2rem] border border-white/10 bg-white/5 px-6 py-7 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-8">
           <div className="grid gap-6 lg:grid-cols-[1.25fr_0.95fr] lg:items-end">
             <div>
