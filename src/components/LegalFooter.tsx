@@ -2,10 +2,9 @@ import Link from "next/link";
 
 export default function LegalFooter() {
   return (
-    <footer className="border-t border-white/5 bg-[#06182d] px-4 py-4 text-xs text-blue-100/60 sm:px-6">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <p>Digital Polyglot · Alberto Alejandro Del Carpio Olemar</p>
-        <div className="flex flex-wrap gap-x-4 gap-y-1">
+    <footer className="border-t border-white/5 bg-[#06182d] px-4 py-3 text-[11px] text-blue-100/55 sm:px-6">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-center">
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
           <Link href="/impressum" className="hover:text-white">
             Impressum
           </Link>

@@ -397,6 +397,47 @@ export default function SettingsPage() {
         </div>
       </section>
 
+      <section className="mb-6">
+        <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Legal</h2>
+        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
+          <p className="text-sm text-[var(--muted)]">
+            Legal information, privacy details, subscription terms, and data deletion instructions.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <Link
+              href="/impressum"
+              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Impressum
+            </Link>
+            <Link
+              href="/privacy"
+              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/cookies"
+              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Cookies
+            </Link>
+            <Link
+              href="/terms"
+              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/data-deletion"
+              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Data deletion
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <p className="mb-3 text-xs text-[var(--muted)]">
         Selected: {selected.length}/{MAX_SELECTION}
       </p>
