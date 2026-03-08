@@ -13,6 +13,7 @@ type StoryData = {
   text: string;
   vocab?: VocabItem[] | null;
   audioUrl?: string | null;
+  audioStatus?: string | null;
   language?: string | null;
   level?: string | null;
 };

@@ -9,7 +9,8 @@ import VocabPanel from '@/components/VocabPanel';
 import { formatLanguage, formatLevel, toTitleCase } from '@/lib/displayFormat';
 
 type Plan = 'free' | 'basic' | 'premium' | 'polyglot';
-type CreateStatus = 'idle' | 'generating_text' | 'generating_audio' | 'done';
+type CreateStatus = 'idle' | 'generating_text' | 'generating_audio' | 'done' | 'audio_failed';
+type AudioStatus = 'pending' | 'generating' | 'ready' | 'failed';
 
 type VocabItem = { word: string; definition: string; type?: string };
 
@@ -23,6 +24,7 @@ type GeneratedStory = {
   region?: string | null;
   level?: string;
   audioUrl?: string | null;
+  audioStatus?: AudioStatus | null;
 };
 
 type CreateApiResponse = {
@@ -112,6 +114,7 @@ const CUSTOM_TOPIC_MAX = 120;
 const CREATE_PENDING_TTL_MS = 1000 * 60 * 30;
 const RECOVERY_LOOKUP_WINDOW_MS = 1000 * 45;
 const RECOVERY_LOOKUP_INTERVAL_MS = 2500;
+const AUDIO_DELAY_NOTICE_MS = 20_000;
 
 function readJson<T>(key: string): T | null {
   if (typeof window === 'undefined') return null;
@@ -150,6 +153,11 @@ function isStory(value: unknown): value is GeneratedStory {
   if (!value || typeof value !== 'object') return false;
   const story = value as Partial<GeneratedStory>;
   return typeof story.id === 'string' && typeof story.slug === 'string' && typeof story.title === 'string';
+}
+
+function isAudioReady(story: GeneratedStory | null | undefined): boolean {
+  if (!story) return false;
+  return !!story.audioUrl || story.audioStatus === 'ready';
 }
 
 function normalizeWord(word: string): string {
@@ -195,6 +203,7 @@ export default function CreatePage() {
   const [practiceCompleted, setPracticeCompleted] = useState(false);
   const [practiceModalMounted, setPracticeModalMounted] = useState(false);
   const [practiceModalOpen, setPracticeModalOpen] = useState(false);
+  const [showComeBackLater, setShowComeBackLater] = useState(false);
 
   const didTryResumeRef = useRef(false);
   const didInitPracticeRef = useRef(false);
@@ -220,14 +229,18 @@ export default function CreatePage() {
   }, [customTopic, focus, focusMore, language, level, region, topic, topicMore]);
 
   const pollAudioUntilReady = useCallback(async (story: GeneratedStory): Promise<GeneratedStory> => {
-    const maxWaitMs = 90_000;
+    const maxWaitMs = 1000 * 60 * 3;
     const intervalMs = 3000;
     const startedAt = Date.now();
 
     while (Date.now() - startedAt < maxWaitMs) {
       const check = await fetch(`/api/user-stories?id=${story.id}`, { cache: 'no-store' });
       const json = (await check.json()) as { story?: GeneratedStory };
-      if (json.story?.audioUrl) return json.story;
+      if (json.story && isStory(json.story)) {
+        setResponse({ story: json.story });
+      }
+      if (json.story?.audioStatus === 'failed') return json.story;
+      if (json.story && isAudioReady(json.story)) return json.story;
       await new Promise((r) => setTimeout(r, intervalMs));
     }
 
@@ -258,8 +271,16 @@ export default function CreatePage() {
     setResponse({ story });
     setStatus('done');
     setResumeNotice(null);
+    setShowComeBackLater(false);
     removeKey(pendingKey);
   }, [pendingKey]);
+
+  const handleComeBackLater = useCallback(() => {
+    setStatus('idle');
+    setShowComeBackLater(false);
+    setResumeNotice('Audio is still being prepared. You can come back later and we will resume automatically.');
+    setResponse(null);
+  }, []);
 
   const runGeneration = useCallback(
     async (payload: CreateRequestPayload) => {
@@ -305,7 +326,20 @@ export default function CreatePage() {
         } satisfies PendingCreate);
 
         const storyWithAudio = await pollAudioUntilReady(data.story);
-        finishAsDone(storyWithAudio);
+        if (storyWithAudio.audioStatus === 'failed') {
+          setResponse({ story: storyWithAudio });
+          setStatus('audio_failed');
+          removeKey(pendingKey);
+          return;
+        }
+
+        if (isAudioReady(storyWithAudio)) {
+          finishAsDone(storyWithAudio);
+          return;
+        }
+
+        setResponse({ story: storyWithAudio });
+        setStatus('generating_audio');
       } catch (error) {
         console.error('Error:', error);
         setResponse({ error: (error as Error).message });
@@ -371,7 +405,16 @@ export default function CreatePage() {
             setStatus('generating_audio');
             setResponse({ story: json.story });
             const ready = await pollAudioUntilReady(json.story);
-            finishAsDone(ready);
+            if (ready.audioStatus === 'failed') {
+              setResponse({ story: ready });
+              setStatus('audio_failed');
+              removeKey(pendingKey);
+            } else if (isAudioReady(ready)) {
+              finishAsDone(ready);
+            } else {
+              setResponse({ story: ready });
+              setStatus('generating_audio');
+            }
             setResumeChecked(true);
             return;
           }
@@ -388,7 +431,16 @@ export default function CreatePage() {
           setStatus('generating_audio');
           setResponse({ story: recovered });
           const ready = await pollAudioUntilReady(recovered);
-          finishAsDone(ready);
+          if (ready.audioStatus === 'failed') {
+            setResponse({ story: ready });
+            setStatus('audio_failed');
+            removeKey(pendingKey);
+          } else if (isAudioReady(ready)) {
+            finishAsDone(ready);
+          } else {
+            setResponse({ story: ready });
+            setStatus('generating_audio');
+          }
           setResumeChecked(true);
           return;
         }
@@ -406,6 +458,19 @@ export default function CreatePage() {
 
     void restore();
   }, [findRecoveredStory, finishAsDone, isLoaded, pendingKey, pollAudioUntilReady, user]);
+
+  useEffect(() => {
+    if (status !== 'generating_audio') {
+      setShowComeBackLater(false);
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      setShowComeBackLater(true);
+    }, AUDIO_DELAY_NOTICE_MS);
+
+    return () => window.clearTimeout(timer);
+  }, [status]);
 
   const shuffleWords = useCallback((items: FavoriteItem[]) => {
     const arr = [...items];
@@ -721,7 +786,28 @@ export default function CreatePage() {
               <CheckCircle className="w-5 h-5 text-white" /> Story ready!
             </>
           )}
+          {status === 'audio_failed' && (
+            <>
+              <CheckCircle className="w-5 h-5 text-white" /> Story ready · audio unavailable
+            </>
+          )}
         </button>
+
+        {status === 'generating_audio' && showComeBackLater ? (
+          <div className="mt-3 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-[var(--foreground)]">
+            <p className="font-medium">Audio is taking longer than usual.</p>
+            <p className="mt-1 text-[var(--muted)]">
+              We are still preparing your narration. You can keep this tab open or come back later.
+            </p>
+            <button
+              type="button"
+              onClick={handleComeBackLater}
+              className="mt-3 inline-flex rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-2 text-sm font-medium text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              I&apos;ll come back later
+            </button>
+          </div>
+        ) : null}
       </form>
 
       {isGenerating && !practiceVisible && practiceQueue.length > 0 ? (
@@ -834,7 +920,9 @@ export default function CreatePage() {
         </div>
       ) : null}
 
-      {response?.story && status === 'done' && <StoryPreview story={response.story} />}
+      {response?.story && (status === 'done' || status === 'audio_failed') && (
+        <StoryPreview story={response.story} />
+      )}
 
       {response?.error && (
         <div className="mt-8 border border-red-700 rounded-xl p-6 bg-red-900/40">
@@ -865,6 +953,18 @@ function StoryPreview({ story }: { story: GeneratedStory }) {
         {formatLanguage(story.language || '')} • {formatLevel(story.level || '')} •{' '}
         {toTitleCase(story.region || 'General')}
       </p>
+
+      {!isAudioReady(story) ? (
+        <div className="mb-4 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-[var(--muted)]">
+          Audio is still being prepared. You can start reading now and come back in a moment for narration.
+        </div>
+      ) : null}
+
+      {story.audioStatus === 'failed' ? (
+        <div className="mb-4 rounded-xl border border-amber-400/20 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">
+          The story is ready, but audio could not be generated this time.
+        </div>
+      ) : null}
 
       <div className="relative">
         <StoryContent

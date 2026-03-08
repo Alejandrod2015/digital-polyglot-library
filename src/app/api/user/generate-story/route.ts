@@ -639,6 +639,7 @@ Return ONLY valid JSON:
         slug: uniqueSlug,
         text: normalizedText,
         vocab: finalVocab,
+        audioStatus: "pending",
         language,
         region,
         level: normalizedLevel,
@@ -706,6 +707,7 @@ Return ONLY valid JSON:
         level: savedStory.level,
         focus: savedStory.focus,
         topic: savedStory.topic,
+        audioStatus: savedStory.audioStatus,
       },
     });
   } catch (error: unknown) {
