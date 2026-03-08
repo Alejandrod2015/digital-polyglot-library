@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
+import { getCookieConsentKey } from "@/components/CookieConsentBanner";
 
 type LanguageOption = { code: string; name: string };
 type Plan = "free" | "basic" | "premium" | "polyglot" | "owner" | undefined;
@@ -94,6 +95,7 @@ export default function SettingsPage() {
   const [status, setStatus] = useState<SaveStatus>("idle");
   const [hint, setHint] = useState("");
   const [themePref, setThemePref] = useState<ThemePref>("system");
+  const [analyticsConsent, setAnalyticsConsent] = useState<"accepted" | "rejected" | "unset">("unset");
   const [billingLoading, setBillingLoading] = useState(false);
   const [billingError, setBillingError] = useState("");
 
@@ -126,6 +128,16 @@ export default function SettingsPage() {
       return;
     }
     setThemePref("system");
+  }, []);
+
+  useEffect(() => {
+    const key = getCookieConsentKey();
+    const stored = localStorage.getItem(key);
+    if (stored === "accepted" || stored === "rejected") {
+      setAnalyticsConsent(stored);
+    } else {
+      setAnalyticsConsent("unset");
+    }
   }, []);
 
   useEffect(() => {
@@ -236,6 +248,14 @@ export default function SettingsPage() {
     setHint("Theme updated.");
   };
 
+  const updateAnalyticsConsent = (next: "accepted" | "rejected") => {
+    const key = getCookieConsentKey();
+    localStorage.setItem(key, next);
+    window.dispatchEvent(new CustomEvent("dp-cookie-consent", { detail: next }));
+    setAnalyticsConsent(next);
+    setHint("Cookie preference updated.");
+  };
+
   const openBillingPortal = async () => {
     try {
       setBillingLoading(true);
@@ -336,6 +356,44 @@ export default function SettingsPage() {
               {mode === "system" ? "System" : mode === "dark" ? "Dark" : "Light"}
             </button>
           ))}
+        </div>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Privacy & cookies</h2>
+        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
+          <p className="text-sm text-[var(--foreground)]">
+            Analytics cookies are currently{" "}
+            <span className="font-semibold">
+              {analyticsConsent === "accepted"
+                ? "accepted"
+                : analyticsConsent === "rejected"
+                ? "rejected"
+                : "not chosen yet"}
+            </span>.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => updateAnalyticsConsent("accepted")}
+              className="rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90"
+            >
+              Allow analytics
+            </button>
+            <button
+              type="button"
+              onClick={() => updateAnalyticsConsent("rejected")}
+              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Reject analytics
+            </button>
+            <Link
+              href="/cookies"
+              className="rounded-lg border border-[var(--card-border)] bg-transparent px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Read Cookie Policy
+            </Link>
+          </div>
         </div>
       </section>
 

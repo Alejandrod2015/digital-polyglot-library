@@ -27,13 +27,20 @@ export default function PrivacyPage() {
       <section className="mt-8">
         <h2 className="text-xl font-semibold">1) Data Controller</h2>
         <p className="mt-3 text-[15px] leading-7">
+          Alberto Alejandro Del Carpio Olemar
+          <br />
           Digital Polyglot
           <br />
-          Heußweg 3, 20257, DE
+          Heußweg 3, 20257 Hamburg, Germany
           <br />
           Questions or requests:{" "}
           <a className="text-[var(--primary)] hover:underline" href="mailto:support@digitalpolyglot.com">
             support@digitalpolyglot.com
+          </a>
+          <br />
+          Legal contact:{" "}
+          <a className="text-[var(--primary)] hover:underline" href="mailto:contact@digitalpolyglot.com">
+            contact@digitalpolyglot.com
           </a>
         </p>
       </section>
@@ -101,7 +108,9 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-semibold">8) Retention</h2>
         <p className="mt-3 text-[15px] leading-7">
           We retain personal data only as long as needed to provide Services, support your account,
-          comply with legal obligations, and resolve disputes.
+          comply with legal obligations, and resolve disputes. Operational account and learning data
+          are normally kept for the lifetime of the account unless deletion is requested. Billing
+          and tax-related records may be retained longer where required by law.
         </p>
       </section>
 
@@ -115,6 +124,10 @@ export default function PrivacyPage() {
             support@digitalpolyglot.com
           </a>
           .
+        </p>
+        <p className="mt-3 text-[15px] leading-7">
+          If you are in the EEA/UK, you may also have the right to lodge a complaint with your
+          local supervisory authority.
         </p>
       </section>
 

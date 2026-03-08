@@ -21,13 +21,17 @@ export default function TermsPage() {
       <section className="mt-8">
         <h2 className="text-xl font-semibold">1) Operator</h2>
         <p className="mt-3 text-[15px] leading-7">
+          Alberto Alejandro Del Carpio Olemar
+          <br />
           Digital Polyglot
           <br />
-          Heußweg 3, 20257, DE
+          Sole proprietor / Einzelunternehmen
           <br />
-          Contact:{" "}
-          <a className="text-[var(--primary)] hover:underline" href="mailto:support@digitalpolyglot.com">
-            support@digitalpolyglot.com
+          Heußweg 3, 20257 Hamburg, Germany
+          <br />
+          Legal contact:{" "}
+          <a className="text-[var(--primary)] hover:underline" href="mailto:contact@digitalpolyglot.com">
+            contact@digitalpolyglot.com
           </a>
         </p>
       </section>
@@ -105,7 +109,17 @@ export default function TermsPage() {
       </section>
 
       <section className="mt-8">
-        <h2 className="text-xl font-semibold">10) Governing law</h2>
+        <h2 className="text-xl font-semibold">10) Refunds and store links</h2>
+        <p className="mt-3 text-[15px] leading-7">
+          App subscriptions are governed by applicable consumer law and the billing/payment rules
+          that apply to the subscription flow used for the purchase. Physical products bought via
+          external store links are subject to the refund and return policy of that store, not this
+          app.
+        </p>
+      </section>
+
+      <section className="mt-8">
+        <h2 className="text-xl font-semibold">11) Governing law</h2>
         <p className="mt-3 text-[15px] leading-7">
           These terms are governed by the laws of Germany, without limiting any mandatory consumer
           protections that apply in your country of residence.
@@ -113,7 +127,7 @@ export default function TermsPage() {
       </section>
 
       <section className="mt-8">
-        <h2 className="text-xl font-semibold">11) Contact</h2>
+        <h2 className="text-xl font-semibold">12) Contact</h2>
         <p className="mt-3 text-[15px] leading-7">
           Questions:{" "}
           <a className="text-[var(--primary)] hover:underline" href="mailto:support@digitalpolyglot.com">
