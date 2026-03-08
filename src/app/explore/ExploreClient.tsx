@@ -58,6 +58,12 @@ type TopicChip = {
   count: number;
 };
 
+type FilterChip = {
+  key: string;
+  label: string;
+  count: number;
+};
+
 function isRecord(x: unknown): x is Record<string, unknown> {
   return typeof x === "object" && x !== null;
 }
@@ -211,6 +217,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
   const topicFromUrl = searchParams.get("topic") ?? "";
   const selectedTopicKey = normalizeTopicKey(topicFromUrl);
+  const languageFromUrl = searchParams.get("language") ?? "";
+  const selectedLanguageKey = normalizeTopicKey(languageFromUrl);
+  const regionFromUrl = searchParams.get("region") ?? "";
+  const selectedRegionKey = normalizeTopicKey(regionFromUrl);
 
   const rawTargetLanguages = user?.publicMetadata?.targetLanguages as unknown;
   const targetLanguages = useMemo(() => rawTargetLanguages ?? [], [rawTargetLanguages]);
@@ -227,6 +237,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     filteredPolyglotStories,
     allFilteredBookStories,
     previewBookStories,
+    languageChips,
+    regionChips,
+    selectedLanguageLabel,
+    selectedRegionLabel,
     topicChips,
     selectedTopicLabel,
   } = useMemo(() => {
@@ -258,7 +272,24 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         )
       : allBookStories;
 
+    const languageMap = new Map<string, { label: string; count: number }>();
+    const regionMap = new Map<string, { label: string; count: number }>();
     const topicMap = new Map<string, { label: string; count: number }>();
+
+    const addFilterValue = (
+      map: Map<string, { label: string; count: number }>,
+      value: string | undefined | null
+    ) => {
+      const label = typeof value === "string" ? value.trim() : "";
+      const key = normalizeTopicKey(label);
+      if (!key) return;
+      const existing = map.get(key);
+      if (existing) {
+        existing.count += 1;
+        return;
+      }
+      map.set(key, { label, count: 1 });
+    };
 
     const addTopics = (topics: string[]) => {
       const local = new Set<string>();
@@ -279,16 +310,67 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     for (const book of languageFilteredBooks) {
       if (!isRecord(book)) continue;
+      addFilterValue(languageMap, getString(book, "language"));
+      addFilterValue(regionMap, getString(book, "region"));
       addTopics(extractBookTopics(book));
     }
 
     for (const story of languageFilteredBookStories) {
+      addFilterValue(languageMap, story.language);
+      addFilterValue(regionMap, story.region);
       addTopics(story.topics);
     }
 
     for (const story of languageFilteredPolyglotStories) {
+      addFilterValue(languageMap, story.language);
+      addFilterValue(regionMap, story.region);
       addTopics(toTopicList(story.topic));
     }
+
+    const languageOptions: FilterChip[] = Array.from(languageMap.entries())
+      .map(([key, value]) => ({ key, label: value.label, count: value.count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+
+    const languageSelectedLabel =
+      languageOptions.find((chip) => chip.key === selectedLanguageKey)?.label ||
+      languageFromUrl.trim() ||
+      null;
+
+    const languageSelectedBooks = selectedLanguageKey
+      ? languageFilteredBooks.filter((book) => {
+          if (!isRecord(book)) return false;
+          return normalizeTopicKey(getString(book, "language") ?? "") === selectedLanguageKey;
+        })
+      : languageFilteredBooks;
+
+    const languageSelectedBookStories = selectedLanguageKey
+      ? languageFilteredBookStories.filter(
+          (story) => normalizeTopicKey(story.language ?? "") === selectedLanguageKey
+        )
+      : languageFilteredBookStories;
+
+    const languageSelectedPolyglotStories = selectedLanguageKey
+      ? languageFilteredPolyglotStories.filter(
+          (story) => normalizeTopicKey(story.language ?? "") === selectedLanguageKey
+        )
+      : languageFilteredPolyglotStories;
+
+    const regionMapAfterLanguage = new Map<string, { label: string; count: number }>();
+    for (const book of languageSelectedBooks) {
+      if (!isRecord(book)) continue;
+      addFilterValue(regionMapAfterLanguage, getString(book, "region"));
+    }
+    for (const story of languageSelectedBookStories) addFilterValue(regionMapAfterLanguage, story.region);
+    for (const story of languageSelectedPolyglotStories) addFilterValue(regionMapAfterLanguage, story.region);
+
+    const regionOptions: FilterChip[] = Array.from(regionMapAfterLanguage.entries())
+      .map(([key, value]) => ({ key, label: value.label, count: value.count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+
+    const regionSelectedLabel =
+      regionOptions.find((chip) => chip.key === selectedRegionKey)?.label ||
+      regionFromUrl.trim() ||
+      null;
 
     const chips: TopicChip[] = Array.from(topicMap.entries())
       .map(([key, value]) => ({
@@ -301,22 +383,41 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     const selectedLabel =
       chips.find((chip) => chip.key === selectedTopicKey)?.label || topicFromUrl.trim() || null;
 
+    const regionFilteredBooks = selectedRegionKey
+      ? languageSelectedBooks.filter((book) => {
+          if (!isRecord(book)) return false;
+          return normalizeTopicKey(getString(book, "region") ?? "") === selectedRegionKey;
+        })
+      : languageSelectedBooks;
+
+    const regionFilteredBookStories = selectedRegionKey
+      ? languageSelectedBookStories.filter(
+          (story) => normalizeTopicKey(story.region ?? "") === selectedRegionKey
+        )
+      : languageSelectedBookStories;
+
+    const regionFilteredPolyglotStories = selectedRegionKey
+      ? languageSelectedPolyglotStories.filter(
+          (story) => normalizeTopicKey(story.region ?? "") === selectedRegionKey
+        )
+      : languageSelectedPolyglotStories;
+
     const topicFilteredBooks = selectedTopicKey
-      ? languageFilteredBooks.filter((book) => {
+      ? regionFilteredBooks.filter((book) => {
           if (!isRecord(book)) return false;
           return matchesTopic(extractBookTopics(book), selectedTopicKey);
         })
-      : languageFilteredBooks;
+      : regionFilteredBooks;
 
     const topicFilteredBookStories = selectedTopicKey
-      ? languageFilteredBookStories.filter((story) => matchesTopic(story.topics, selectedTopicKey))
-      : languageFilteredBookStories;
+      ? regionFilteredBookStories.filter((story) => matchesTopic(story.topics, selectedTopicKey))
+      : regionFilteredBookStories;
 
     const topicFilteredPolyglotStories = selectedTopicKey
-      ? languageFilteredPolyglotStories.filter((story) =>
+      ? regionFilteredPolyglotStories.filter((story) =>
           matchesTopic(toTopicList(story.topic), selectedTopicKey)
         )
-      : languageFilteredPolyglotStories;
+      : regionFilteredPolyglotStories;
 
     const preview = topicFilteredBookStories.slice(0, 18);
 
@@ -325,10 +426,23 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
       filteredPolyglotStories: topicFilteredPolyglotStories,
       allFilteredBookStories: topicFilteredBookStories,
       previewBookStories: preview,
+      languageChips: languageOptions,
+      regionChips: regionOptions,
+      selectedLanguageLabel: languageSelectedLabel,
+      selectedRegionLabel: regionSelectedLabel,
       topicChips: chips,
       selectedTopicLabel: selectedLabel,
     };
-  }, [polyglotStories, targetLanguages, selectedTopicKey, topicFromUrl]);
+  }, [
+    polyglotStories,
+    targetLanguages,
+    selectedLanguageKey,
+    selectedRegionKey,
+    selectedTopicKey,
+    languageFromUrl,
+    regionFromUrl,
+    topicFromUrl,
+  ]);
 
   const topicRows = useMemo(() => {
     const rows: TopicChip[][] = [[], [], []];
@@ -431,6 +545,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   })();
   const seeAllStoriesHref = (() => {
     const params = new URLSearchParams();
+    if (languageFromUrl.trim()) params.set("language", languageFromUrl.trim());
+    if (regionFromUrl.trim()) params.set("region", regionFromUrl.trim());
     if (topicFromUrl.trim()) {
       params.set("topic", topicFromUrl.trim());
     }
@@ -439,6 +555,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   })();
   const seeAllBooksHref = (() => {
     const params = new URLSearchParams();
+    if (languageFromUrl.trim()) params.set("language", languageFromUrl.trim());
+    if (regionFromUrl.trim()) params.set("region", regionFromUrl.trim());
     if (topicFromUrl.trim()) {
       params.set("topic", topicFromUrl.trim());
     }
@@ -447,6 +565,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   })();
   const seeAllPolyglotStoriesHref = (() => {
     const params = new URLSearchParams();
+    if (languageFromUrl.trim()) params.set("language", languageFromUrl.trim());
+    if (regionFromUrl.trim()) params.set("region", regionFromUrl.trim());
     if (topicFromUrl.trim()) {
       params.set("topic", topicFromUrl.trim());
     }
@@ -462,13 +582,17 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     return `${base}?${params.toString()}`;
   };
 
-  const setTopicInUrl = (topicKey: string) => {
+  const setFilterInUrl = (name: "language" | "region" | "topic", value: string) => {
     const params = new URLSearchParams(searchParams.toString());
 
-    if (topicKey) {
-      params.set("topic", topicKey);
+    if (value) {
+      params.set(name, value);
     } else {
-      params.delete("topic");
+      params.delete(name);
+    }
+
+    if (name === "language" && !value) {
+      params.delete("region");
     }
 
     const next = params.toString();
@@ -490,12 +614,52 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         />
 
         <div className="mb-10">
+          <div className="mb-5 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex min-w-max items-end gap-3 pr-4">
+            <label className="block min-w-[240px] flex-1">
+              <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                Language
+              </span>
+              <select
+                value={selectedLanguageLabel}
+                onChange={(event) => setFilterInUrl("language", event.target.value)}
+                className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40"
+              >
+                <option value="">All languages</option>
+                {languageChips.map((chip) => (
+                  <option key={chip.key} value={chip.label}>
+                    {chip.label} ({chip.count})
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="block min-w-[220px] flex-1">
+              <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                Region
+              </span>
+              <select
+                value={selectedRegionLabel}
+                onChange={(event) => setFilterInUrl("region", event.target.value)}
+                className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40"
+              >
+                <option value="">All regions</option>
+                {regionChips.map((chip) => (
+                  <option key={chip.key} value={chip.label}>
+                    {chip.label} ({chip.count})
+                  </option>
+                ))}
+              </select>
+            </label>
+            </div>
+          </div>
+
           <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <div className="min-w-max pr-4 space-y-2">
+            <div className="min-w-max space-y-2 pr-4">
               <div className="flex flex-nowrap items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => setTopicInUrl("")}
+                  onClick={() => setFilterInUrl("topic", "")}
                   className={[
                     "rounded-full border px-3 py-1.5 text-xs transition-colors whitespace-nowrap",
                     !selectedTopicKey
@@ -511,7 +675,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                     <button
                       key={chip.key}
                       type="button"
-                      onClick={() => setTopicInUrl(chip.key)}
+                      onClick={() => setFilterInUrl("topic", chip.key)}
                       className={[
                         "rounded-full border px-3 py-1.5 text-xs transition-colors whitespace-nowrap",
                         isActive
@@ -532,7 +696,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                       <button
                         key={chip.key}
                         type="button"
-                        onClick={() => setTopicInUrl(chip.key)}
+                        onClick={() => setFilterInUrl("topic", chip.key)}
                         className={[
                           "rounded-full border px-3 py-1.5 text-xs transition-colors whitespace-nowrap",
                           isActive
@@ -549,9 +713,19 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
             </div>
           </div>
 
-          {selectedTopicKey && !hasAnyFilteredContent ? (
+          {(selectedLanguageKey || selectedRegionKey || selectedTopicKey) && !hasAnyFilteredContent ? (
             <p className="mt-3 text-sm text-[var(--muted)]">
-              No content found for topic <span className="text-[var(--foreground)]">{selectedTopicLabel}</span>.
+              No content found
+              {selectedLanguageKey ? (
+                <> in <span className="text-[var(--foreground)]">{selectedLanguageLabel}</span></>
+              ) : null}
+              {selectedRegionKey ? (
+                <> for <span className="text-[var(--foreground)]">{selectedRegionLabel}</span></>
+              ) : null}
+              {selectedTopicKey ? (
+                <> on <span className="text-[var(--foreground)]">{selectedTopicLabel}</span></>
+              ) : null}
+              .
             </p>
           ) : null}
         </div>

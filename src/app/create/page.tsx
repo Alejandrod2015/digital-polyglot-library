@@ -71,44 +71,29 @@ const regionsByLanguage: Record<string, string[]> = {
 };
 
 const levels = ['Beginner', 'Intermediate', 'Advanced'];
-const focusCore = ['Verbs', 'Phrases', 'Conversation', 'Grammar', 'Vocabulary', 'Listening'];
-const focusExtended = [
-  'Connectors',
-  'Prepositions',
-  'Past tense',
-  'Future plans',
-  'Formal vs informal',
-  'Idioms',
-  'Phrasal verbs',
-  'Workplace language',
-  'Negotiation language',
-  'Everyday slang',
+const focusOptions = [
+  'Everyday conversation',
+  'Useful phrases',
+  'Verbs in context',
+  'Idioms & expressions',
+  'Colloquial speech',
+  'Storytelling in the past',
+  'Future plans & intentions',
+  'Formal situations',
 ];
-const topicCore = [
+const topicOptions = [
   'Daily life',
-  'Work',
-  'Travel',
-  'Relationships',
-  'Money',
-  'Health',
-  'Culture',
-  'Technology',
-];
-const topicExtended = [
-  'Dating',
-  'Bureaucracy',
-  'Housing',
-  'Job interviews',
-  'Office politics',
-  'Health system',
-  'Money stress',
-  'Small business',
-  'Digital life',
-  'Social media',
-  'Legal paperwork',
-  'Immigration',
-  'Neighbors',
-  'Conflict resolution',
+  'Travel & transport',
+  'Food & restaurants',
+  'Work & study',
+  'Family & relationships',
+  'Culture & traditions',
+  'Friendship & conflict',
+  'Housing & neighbors',
+  'Health & wellbeing',
+  'Money & shopping',
+  'City life',
+  'Nature & places',
 ];
 const CUSTOM_TOPIC_MAX = 120;
 const CREATE_PENDING_TTL_MS = 1000 * 60 * 30;
@@ -185,12 +170,8 @@ export default function CreatePage() {
   const [region, setRegion] = useState('');
   const [level, setLevel] = useState('');
   const [focus, setFocus] = useState('');
-  const [focusMore, setFocusMore] = useState('');
   const [topic, setTopic] = useState('');
-  const [topicMore, setTopicMore] = useState('');
   const [customTopic, setCustomTopic] = useState('');
-  const [showMoreFocus, setShowMoreFocus] = useState(false);
-  const [showMoreTopics, setShowMoreTopics] = useState(false);
   const [response, setResponse] = useState<CreateApiResponse | null>(null);
   const [status, setStatus] = useState<CreateStatus>('idle');
   const [resumeNotice, setResumeNotice] = useState<string | null>(null);
@@ -216,8 +197,8 @@ export default function CreatePage() {
   const availableRegions = regionsByLanguage[language as keyof typeof regionsByLanguage] || [];
 
   const buildPayload = useCallback((): CreateRequestPayload => {
-    const resolvedFocus = (focusMore || focus).trim();
-    const resolvedTopic = (customTopic.trim() || topicMore || topic).trim();
+    const resolvedFocus = focus.trim();
+    const resolvedTopic = (customTopic.trim() || topic).trim();
     return {
       language,
       region,
@@ -226,7 +207,7 @@ export default function CreatePage() {
       topic: resolvedTopic,
       customTopic: customTopic.trim() || undefined,
     };
-  }, [customTopic, focus, focusMore, language, level, region, topic, topicMore]);
+  }, [customTopic, focus, language, level, region, topic]);
 
   const pollAudioUntilReady = useCallback(async (story: GeneratedStory): Promise<GeneratedStory> => {
     const maxWaitMs = 1000 * 60 * 3;
@@ -676,33 +657,12 @@ export default function CreatePage() {
             className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
           >
             <option value="">Select focus</option>
-            {focusCore.map((f) => (
+            {focusOptions.map((f) => (
               <option key={f} value={f}>
                 {f}
               </option>
             ))}
           </select>
-          <button
-            type="button"
-            onClick={() => setShowMoreFocus((v) => !v)}
-            className="mt-2 text-xs text-[var(--primary)] hover:opacity-85"
-          >
-            {showMoreFocus ? 'Hide more focus options' : 'More focus options'}
-          </button>
-          {showMoreFocus && (
-            <select
-              value={focusMore}
-              onChange={(e) => setFocusMore(e.target.value)}
-              className="mt-2 w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
-            >
-              <option value="">No extra focus</option>
-              {focusExtended.map((f) => (
-                <option key={f} value={f}>
-                  {f}
-                </option>
-              ))}
-            </select>
-          )}
         </div>
 
         <div>
@@ -714,33 +674,12 @@ export default function CreatePage() {
             className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
           >
             <option value="">Select topic</option>
-            {topicCore.map((t) => (
+            {topicOptions.map((t) => (
               <option key={t} value={t}>
                 {t}
               </option>
             ))}
           </select>
-          <button
-            type="button"
-            onClick={() => setShowMoreTopics((v) => !v)}
-            className="mt-2 text-xs text-[var(--primary)] hover:opacity-85"
-          >
-            {showMoreTopics ? 'Hide more topic options' : 'More topic options'}
-          </button>
-          {showMoreTopics && (
-            <select
-              value={topicMore}
-              onChange={(e) => setTopicMore(e.target.value)}
-              className="mt-2 w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
-            >
-              <option value="">No extra topic</option>
-              {topicExtended.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
-          )}
         </div>
 
         <div>

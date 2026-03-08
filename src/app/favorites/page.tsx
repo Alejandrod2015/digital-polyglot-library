@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
 import { books } from '@/data/books';
 import { formatLanguageCode } from '@/lib/displayFormat';
@@ -223,10 +223,9 @@ export default function FavoritesPage() {
   const [practiceModeKind, setPracticeModeKind] = useState<'due' | 'all' | 'related'>('due');
   const [practiceQueue, setPracticeQueue] = useState<FavoriteItem[]>([]);
   const [practiceIndex, setPracticeIndex] = useState(0);
-  const [revealed, setRevealed] = useState(false);
+  const [relatedScoresByKey, setRelatedScoresByKey] = useState<Record<string, ReviewScore>>({});
+  const [revealedPracticeKeys, setRevealedPracticeKeys] = useState<string[]>([]);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
-  const [savedRelatedIdentity, setSavedRelatedIdentity] = useState<string | null>(null);
-  const savedRelatedTimerRef = useRef<number | null>(null);
   const getPracticeModeTabClass = (mode: 'due' | 'all' | 'related') =>
     `px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${
       practiceModeKind === mode
@@ -367,18 +366,14 @@ export default function FavoritesPage() {
     saveSrsMap(userId ?? undefined, srsMap);
   }, [srsMap, userId, isLoaded]);
 
-  useEffect(() => {
-    return () => {
-      if (savedRelatedTimerRef.current !== null) {
-        window.clearTimeout(savedRelatedTimerRef.current);
-      }
-    };
-  }, []);
-
   const now = Date.now();
   const dueFavorites = favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
   const currentPractice = practiceQueue[practiceIndex] ?? null;
   const currentPracticeIdentity = currentPractice ? getFavoriteIdentity(currentPractice) : null;
+  const currentPracticeKey =
+    currentPracticeIdentity ? `${currentPracticeIdentity}::${practiceIndex}` : null;
+  const revealed = currentPracticeKey ? revealedPracticeKeys.includes(currentPracticeKey) : false;
+  const relatedScore = currentPracticeKey ? relatedScoresByKey[currentPracticeKey] ?? null : null;
   const favoriteIdentitySet = useMemo(
     () => new Set(favorites.map((fav) => getFavoriteIdentity(fav))),
     [favorites]
@@ -493,15 +488,6 @@ export default function FavoritesPage() {
     const identity = getFavoriteIdentity(item);
     if (favoriteIdentitySet.has(identity)) return;
 
-    setSavedRelatedIdentity(identity);
-    if (savedRelatedTimerRef.current !== null) {
-      window.clearTimeout(savedRelatedTimerRef.current);
-    }
-    savedRelatedTimerRef.current = window.setTimeout(() => {
-      setSavedRelatedIdentity((current) => (current === identity ? null : current));
-      savedRelatedTimerRef.current = null;
-    }, 1400);
-
     const updated = [...favorites, item];
     setFavorites(updated);
     saveFavoritesCache(userId ?? undefined, updated);
@@ -542,13 +528,6 @@ export default function FavoritesPage() {
       console.error('Error removing related favorite:', err);
     }
 
-    if (savedRelatedIdentity === identity) {
-      setSavedRelatedIdentity(null);
-    }
-    if (savedRelatedTimerRef.current !== null) {
-      window.clearTimeout(savedRelatedTimerRef.current);
-      savedRelatedTimerRef.current = null;
-    }
   };
 
   const startPractice = (onlyDue: boolean) => {
@@ -562,7 +541,8 @@ export default function FavoritesPage() {
     setPracticeQueue(snapshot);
     setPracticeMode(snapshot.length > 0);
     setPracticeIndex(0);
-    setRevealed(false);
+    setRelatedScoresByKey({});
+    setRevealedPracticeKeys([]);
   };
 
   const startRelatedPractice = () => {
@@ -570,7 +550,7 @@ export default function FavoritesPage() {
       setPracticeQueue([]);
       setPracticeMode(false);
       setPracticeIndex(0);
-      setRevealed(false);
+      setRevealedPracticeKeys([]);
       return;
     }
     const relatedSet = shuffleArray(relatedPracticeCandidates);
@@ -579,34 +559,24 @@ export default function FavoritesPage() {
     setPracticeQueue(relatedSet);
     setPracticeMode(relatedSet.length > 0);
     setPracticeIndex(0);
-    setRevealed(false);
+    setRelatedScoresByKey({});
+    setRevealedPracticeKeys([]);
   };
 
   const rateCurrent = async (score: ReviewScore) => {
     if (!currentPractice) return;
     const isSavedFavorite = favoriteIdentitySet.has(getFavoriteIdentity(currentPractice));
 
+    if (practiceModeKind === 'related') {
+      if (currentPracticeKey) {
+        setRelatedScoresByKey((map) => ({ ...map, [currentPracticeKey]: score }));
+      }
+      if (!isSavedFavorite) {
+        return;
+      }
+    }
+
     if (!isSavedFavorite && practiceModeKind === 'related') {
-      const hasNext = practiceIndex + 1 < practiceQueue.length;
-      const shouldRepeat = score === 'again' || score === 'hard';
-      const repeatedQueue = shouldRepeat ? [...practiceQueue, currentPractice] : practiceQueue;
-
-      setPracticeQueue(repeatedQueue);
-      setRevealed(false);
-
-      if (hasNext) {
-        setPracticeIndex((idx) => idx + 1);
-        return;
-      }
-
-      if (shouldRepeat && repeatedQueue.length > practiceQueue.length) {
-        setPracticeIndex((idx) => idx + 1);
-        return;
-      }
-
-      setPracticeMode(false);
-      setPracticeQueue([]);
-      setPracticeIndex(0);
       return;
     }
 
@@ -640,7 +610,10 @@ export default function FavoritesPage() {
       }
     }
 
-    setRevealed(false);
+    if (practiceModeKind === 'related') {
+      return;
+    }
+
     const hasNext = practiceIndex + 1 < practiceQueue.length;
     if (hasNext) {
       setPracticeIndex((idx) => idx + 1);
@@ -649,6 +622,34 @@ export default function FavoritesPage() {
     setPracticeMode(false);
     setPracticeQueue([]);
     setPracticeIndex(0);
+    setRelatedScoresByKey({});
+    setRevealedPracticeKeys([]);
+  };
+
+  const goToNextRelated = () => {
+    if (!currentPractice || practiceModeKind !== 'related') return;
+
+    const shouldRepeat = relatedScore === 'again' || relatedScore === 'hard';
+    const repeatedQueue = shouldRepeat ? [...practiceQueue, currentPractice] : practiceQueue;
+    const hasNext = practiceIndex + 1 < repeatedQueue.length;
+
+    setPracticeQueue(repeatedQueue);
+
+    if (hasNext) {
+      setPracticeIndex((idx) => idx + 1);
+      return;
+    }
+
+    setPracticeMode(false);
+    setPracticeQueue([]);
+    setPracticeIndex(0);
+    setRelatedScoresByKey({});
+    setRevealedPracticeKeys([]);
+  };
+
+  const goToPreviousRelated = () => {
+    if (practiceModeKind !== 'related' || practiceIndex === 0) return;
+    setPracticeIndex((idx) => Math.max(0, idx - 1));
   };
 
   return (
@@ -716,8 +717,9 @@ export default function FavoritesPage() {
       </div>
 
       {practiceMode && currentPractice ? (
-        <div className="mb-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5">
-          <p className="text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
+        <div className="mb-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 sm:p-5">
+          <div className="mb-3 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--muted)]">
+            <span>
             Practice {practiceIndex + 1}/{practiceQueue.length}
             {practiceType !== 'all' ? ` · ${getVocabTypeLabel(practiceType)}` : ''}
             {practiceModeKind === 'related'
@@ -725,9 +727,7 @@ export default function FavoritesPage() {
               : practiceModeKind === 'due'
                 ? ' · Due'
                 : ' · All'}
-          </p>
-          <p className="text-3xl font-semibold mb-4">{currentPractice.word}</p>
-          <div className="mb-3">
+            </span>
             <span className="rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] px-2 py-0.5 text-[11px] text-[var(--chip-text)]">
               {getVocabTypeLabel(
                 normalizeVocabType(currentPractice.wordType, {
@@ -737,42 +737,37 @@ export default function FavoritesPage() {
               )}
             </span>
           </div>
+          <p className="text-[2.2rem] leading-none font-semibold mb-3">{currentPractice.word}</p>
           {revealed ? (
             <>
-              <p className="text-lg text-[var(--foreground)]/92 mb-4">{currentPractice.translation}</p>
+              <p className="text-xl text-[var(--foreground)]/92 mb-3">{currentPractice.translation}</p>
               {currentPractice.exampleSentence ? (
-                <p className="text-sm text-[var(--muted)] mb-4 italic border-l-2 border-[var(--card-border)] pl-3">
+                <p className="text-sm text-[var(--muted)] mb-3 italic border-l-2 border-[var(--card-border)] pl-3">
                   {currentPractice.exampleSentence}
                 </p>
               ) : null}
               {currentPractice.sourcePath ? (
                 <a
                   href={currentPractice.sourcePath}
-                  className="inline-flex mb-4 text-sm text-[var(--primary)] hover:opacity-85"
+                  className="inline-flex mb-3 text-sm text-[var(--primary)] hover:opacity-85"
                 >
                   Open story
                 </a>
               ) : null}
               {!favoriteIdentitySet.has(getFavoriteIdentity(currentPractice)) ? (
-                <div className="mb-4">
+                <div className="mb-3">
                   <button
                     onClick={() => void saveRelatedFavorite(currentPractice)}
-                    className={`rounded-lg border px-3 py-2 text-sm font-semibold transition ${
-                      savedRelatedIdentity === currentPracticeIdentity
-                        ? 'border-emerald-400/35 bg-emerald-500/12 text-emerald-300'
-                        : 'border-[var(--card-border)] bg-[var(--bg-content)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]'
-                    }`}
+                    className="rounded-lg border border-[#6ea98d] bg-[#4e7f69] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#588b73]"
                   >
-                    {savedRelatedIdentity === currentPracticeIdentity
-                      ? 'Saved to Favorites'
-                      : 'Save to Favorites'}
+                    Save to Favorites
                   </button>
                 </div>
               ) : (
-                <div className="mb-4">
+                <div className="mb-3">
                   <button
                     onClick={() => void removeRelatedFavorite(currentPractice)}
-                    className="rounded-lg border border-red-400/35 bg-red-500/12 px-3 py-2 text-sm font-semibold text-red-300 transition hover:bg-red-500/18"
+                    className="rounded-lg border border-[#b88392] bg-[#8d5d69] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#996672]"
                   >
                     Remove from Favorites
                   </button>
@@ -781,32 +776,66 @@ export default function FavoritesPage() {
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => rateCurrent('again')}
-                  className="px-3 py-2 rounded-lg bg-red-600/90 hover:bg-red-600 text-white text-sm font-medium transition-colors"
+                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
+                    relatedScore === 'again'
+                      ? 'border-[#aa6f80] bg-[#9a6574] text-white'
+                      : 'border-[#d9b8c2] bg-[#fbf1f4] text-[#6b5660] hover:bg-[#f7e6ec]'
+                  }`}
                 >
                   Again
                 </button>
                 <button
                   onClick={() => rateCurrent('hard')}
-                  className="px-3 py-2 rounded-lg bg-amber-600/90 hover:bg-amber-600 text-white text-sm font-medium transition-colors"
+                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
+                    relatedScore === 'hard'
+                      ? 'border-[#ad9560] bg-[#9b8558] text-white'
+                      : 'border-[#decea8] bg-[#faf4e2] text-[#74664a] hover:bg-[#f5edd5]'
+                  }`}
                 >
-                  Hard
+                  Tricky
                 </button>
                 <button
                   onClick={() => rateCurrent('easy')}
-                  className="px-3 py-2 rounded-lg bg-emerald-600/90 hover:bg-emerald-600 text-white text-sm font-medium transition-colors"
+                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
+                    relatedScore === 'easy'
+                      ? 'border-[#79a08a] bg-[#6d927e] text-white'
+                      : 'border-[#b9d7c7] bg-[#eef7f2] text-[#586e63] hover:bg-[#e2f1e9]'
+                  }`}
                 >
-                  Easy
+                  Clear
                 </button>
               </div>
             </>
           ) : (
             <button
-              onClick={() => setRevealed(true)}
+              onClick={() => {
+                if (!currentPracticeKey) return;
+                setRevealedPracticeKeys((keys) =>
+                  keys.includes(currentPracticeKey) ? keys : [...keys, currentPracticeKey]
+                );
+              }}
               className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors"
             >
               Reveal answer
             </button>
           )}
+          {practiceModeKind === 'related' ? (
+            <div className="mt-3 flex items-center justify-end gap-2">
+              <button
+                onClick={goToPreviousRelated}
+                disabled={practiceIndex === 0}
+                className="px-3 py-2 rounded-lg border border-[#284565] bg-[#132d4a] text-[#dce7f5] text-sm font-medium transition-colors hover:bg-[#183756] disabled:cursor-not-allowed disabled:opacity-45"
+              >
+                Previous
+              </button>
+              <button
+                onClick={goToNextRelated}
+                className="px-3 py-2 rounded-lg border border-[#315884] bg-[#1b3f67] text-[#edf4ff] text-sm font-medium transition-colors hover:bg-[#224a76]"
+              >
+                Next
+              </button>
+            </div>
+          ) : null}
         </div>
       ) : null}
 
