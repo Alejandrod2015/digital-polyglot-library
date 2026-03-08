@@ -3,13 +3,17 @@
 import { Suspense, useEffect, useMemo, useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import type { Plan } from '@/lib/access';
+
+const LEGAL_ACCEPTANCE_KEY = 'dp_checkout_legal_acceptance_v1';
 
 function PlansInner() {
   const { isSignedIn, isLoaded, user } = useUser();
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState<string | null>(null);
+  const [legalAccepted, setLegalAccepted] = useState(false);
   const chargeDate = useMemo(() => {
     const d = new Date();
     d.setDate(d.getDate() + 14);
@@ -22,6 +26,20 @@ function PlansInner() {
 
   const plan: Plan =
     (user?.publicMetadata?.plan as Plan | undefined) ?? 'free';
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    setLegalAccepted(window.localStorage.getItem(LEGAL_ACCEPTANCE_KEY) === '1');
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (legalAccepted) {
+      window.localStorage.setItem(LEGAL_ACCEPTANCE_KEY, '1');
+    } else {
+      window.localStorage.removeItem(LEGAL_ACCEPTANCE_KEY);
+    }
+  }, [legalAccepted]);
 
   const trackMetric = async (eventType: string, value?: number) => {
     if (!isSignedIn) return;
@@ -101,6 +119,10 @@ function PlansInner() {
   // 3) Click en plan
   const handleSubscribe = (priceId: string) => {
     if (!isLoaded) return;
+    if (!legalAccepted) {
+      alert('Please confirm the legal terms before continuing.');
+      return;
+    }
 
     // No logueado → sign-in con redirect URL ENCODEADA
     if (!isSignedIn) {
@@ -131,10 +153,10 @@ function PlansInner() {
     const auto = searchParams.get('autoCheckout');
     const priceId = searchParams.get('priceId');
 
-    if (auto === '1' && priceId) {
+    if (auto === '1' && priceId && legalAccepted) {
       void goToCheckout(priceId);
     }
-  }, [isLoaded, isSignedIn, searchParams]);
+  }, [isLoaded, isSignedIn, legalAccepted, searchParams]);
 
   if (!isLoaded) return null;
 
@@ -371,6 +393,32 @@ function PlansInner() {
               >
                 {loading === annualPriceId ? 'Processing...' : 'Start free trial'}
               </button>
+            </div>
+            <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+              <label className="flex items-start gap-3 text-sm leading-6 text-blue-50/86">
+                <input
+                  type="checkbox"
+                  checked={legalAccepted}
+                  onChange={(e) => setLegalAccepted(e.target.checked)}
+                  className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-[#2563eb]"
+                />
+                <span>
+                  I agree to the{" "}
+                  <Link href="/terms" className="text-white underline underline-offset-2">
+                    Terms of Service
+                  </Link>
+                  {" "}and{" "}
+                  <Link href="/privacy" className="text-white underline underline-offset-2">
+                    Privacy Policy
+                  </Link>
+                  . I understand the subscription renews automatically until cancelled, and that
+                  digital access begins immediately once the trial/subscription starts.
+                </span>
+              </label>
+              <p className="mt-3 text-xs leading-5 text-blue-100/60">
+                Consumer rights may vary by country. See our Terms for details about billing,
+                cancellation, and digital-service withdrawal information.
+              </p>
             </div>
           </div>
         </section>
