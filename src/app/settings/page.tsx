@@ -359,85 +359,6 @@ export default function SettingsPage() {
         </div>
       </section>
 
-      <section className="mb-6">
-        <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Privacy & cookies</h2>
-        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
-          <p className="text-sm text-[var(--foreground)]">
-            Analytics cookies are currently{" "}
-            <span className="font-semibold">
-              {analyticsConsent === "accepted"
-                ? "accepted"
-                : analyticsConsent === "rejected"
-                ? "rejected"
-                : "not chosen yet"}
-            </span>.
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => updateAnalyticsConsent("accepted")}
-              className="rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90"
-            >
-              Allow analytics
-            </button>
-            <button
-              type="button"
-              onClick={() => updateAnalyticsConsent("rejected")}
-              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Reject analytics
-            </button>
-            <Link
-              href="/cookies"
-              className="rounded-lg border border-[var(--card-border)] bg-transparent px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Read Cookie Policy
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-6">
-        <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Legal</h2>
-        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
-          <p className="text-sm text-[var(--muted)]">
-            Legal information, privacy details, subscription terms, and data deletion instructions.
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <Link
-              href="/impressum"
-              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Impressum
-            </Link>
-            <Link
-              href="/privacy"
-              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Privacy
-            </Link>
-            <Link
-              href="/cookies"
-              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Cookies
-            </Link>
-            <Link
-              href="/terms"
-              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Terms
-            </Link>
-            <Link
-              href="/data-deletion"
-              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Data deletion
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <p className="mb-3 text-xs text-[var(--muted)]">
         Selected: {selected.length}/{MAX_SELECTION}
       </p>
@@ -537,6 +458,44 @@ export default function SettingsPage() {
         ) : (
           <p className="text-sm text-[var(--muted)]">No interests selected yet.</p>
         )}
+      </section>
+
+      <section className="mt-7 mb-6">
+        <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Privacy & cookies</h2>
+        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
+          <p className="text-sm text-[var(--foreground)]">
+            Analytics cookies are currently{" "}
+            <span className="font-semibold">
+              {analyticsConsent === "accepted"
+                ? "accepted"
+                : analyticsConsent === "rejected"
+                ? "rejected"
+                : "not chosen yet"}
+            </span>.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => updateAnalyticsConsent("accepted")}
+              className="rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90"
+            >
+              Allow analytics
+            </button>
+            <button
+              type="button"
+              onClick={() => updateAnalyticsConsent("rejected")}
+              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Reject analytics
+            </button>
+            <Link
+              href="/cookies"
+              className="rounded-lg border border-[var(--card-border)] bg-transparent px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Read Cookie Policy
+            </Link>
+          </div>
+        </div>
       </section>
 
       <div className="sticky bottom-[4.75rem] mt-6">

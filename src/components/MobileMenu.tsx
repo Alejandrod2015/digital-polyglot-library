@@ -122,8 +122,8 @@ export default function MobileMenu() {
           <X size={28} />
         </button>
 
-        <div className="flex flex-col h-full justify-between">
-          <div className="pt-16 px-6">
+        <div className="flex h-full flex-col">
+          <div className="flex-1 overflow-y-auto px-6 pt-16">
             <nav className="flex flex-col gap-5 text-base">
               <SignedIn>
                 <Link
@@ -206,17 +206,12 @@ export default function MobileMenu() {
             </nav>
           </div>
 
-          {/* Centered Feedback button */}
-          <div className="border-t border-[var(--nav-border)] py-4 px-6 space-y-4">
-            <button
-              onClick={handleFeedback}
-              className="w-full inline-flex items-center justify-center gap-2 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)] transition"
-            >
-              <MessageSquare size={22} />
-              <span>Feedback</span>
-            </button>
-            <div className="pt-2 text-center text-[11px] text-[var(--nav-text-muted)]/80">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+          <div className="mt-auto border-t border-[var(--nav-border)] px-6 pb-[calc(5rem+env(safe-area-inset-bottom))] pt-4">
+            <div className="rounded-2xl border border-[var(--nav-border)] bg-white/[0.03] px-4 py-3">
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--nav-text-muted)]/70">
+                Legal
+              </p>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[12px] text-[var(--nav-text-muted)]/85">
                 <Link href="/impressum" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
                   Impressum
                 </Link>
@@ -229,11 +224,23 @@ export default function MobileMenu() {
                 <Link href="/terms" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
                   Terms
                 </Link>
-                <Link href="/data-deletion" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
+                <Link
+                  href="/data-deletion"
+                  onClick={() => setOpen(false)}
+                  className="col-span-2 hover:text-[var(--nav-text)]"
+                >
                   Data deletion
                 </Link>
               </div>
             </div>
+
+            <button
+              onClick={handleFeedback}
+              className="mt-4 w-full inline-flex items-center justify-center gap-2 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)] transition"
+            >
+              <MessageSquare size={22} />
+              <span>Feedback</span>
+            </button>
           </div>
         </div>
       </div>
