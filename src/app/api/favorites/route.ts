@@ -58,7 +58,8 @@ type FavoriteBody = {
 function isFavoriteBody(x: unknown): x is FavoriteBody {
   if (!x || typeof x !== "object") return false;
   const o = x as Record<string, unknown>;
-  const optionalString = (v: unknown) => v === undefined || typeof v === "string";
+  const optionalString = (v: unknown) =>
+    v === undefined || v === null || typeof v === "string";
   return (
     typeof o.word === "string" &&
     typeof o.translation === "string" &&
