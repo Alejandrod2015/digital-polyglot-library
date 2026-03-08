@@ -616,41 +616,41 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         <div className="mb-10">
           <div className="mb-5 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <div className="flex min-w-max items-end gap-3 pr-4">
-            <label className="block min-w-[240px] flex-1">
-              <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
-                Language
-              </span>
-              <select
-                value={selectedLanguageLabel}
-                onChange={(event) => setFilterInUrl("language", event.target.value)}
-                className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40"
-              >
-                <option value="">All languages</option>
-                {languageChips.map((chip) => (
-                  <option key={chip.key} value={chip.label}>
-                    {chip.label} ({chip.count})
-                  </option>
-                ))}
-              </select>
-            </label>
+              <label className="block min-w-[240px] flex-1">
+                <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                  Language
+                </span>
+                <select
+                  value={selectedLanguageLabel ?? ""}
+                  onChange={(event) => setFilterInUrl("language", event.target.value)}
+                  className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40"
+                >
+                  <option value="">All languages</option>
+                  {languageChips.map((chip) => (
+                    <option key={chip.key} value={chip.label}>
+                      {chip.label} ({chip.count})
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-            <label className="block min-w-[220px] flex-1">
-              <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
-                Region
-              </span>
-              <select
-                value={selectedRegionLabel}
-                onChange={(event) => setFilterInUrl("region", event.target.value)}
-                className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40"
-              >
-                <option value="">All regions</option>
-                {regionChips.map((chip) => (
-                  <option key={chip.key} value={chip.label}>
-                    {chip.label} ({chip.count})
-                  </option>
-                ))}
-              </select>
-            </label>
+              <label className="block min-w-[220px] flex-1">
+                <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                  Region
+                </span>
+                <select
+                  value={selectedRegionLabel ?? ""}
+                  onChange={(event) => setFilterInUrl("region", event.target.value)}
+                  className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40"
+                >
+                  <option value="">All regions</option>
+                  {regionChips.map((chip) => (
+                    <option key={chip.key} value={chip.label}>
+                      {chip.label} ({chip.count})
+                    </option>
+                  ))}
+                </select>
+              </label>
             </div>
           </div>
 
