@@ -118,6 +118,17 @@ export async function saveOfflineBook(
   });
 }
 
+export async function hasOfflineBook(userId: string, bookId: string): Promise<boolean> {
+  const result = await withStore(BOOK_STORE, "readonly", async (store) => {
+    const record = (await requestToPromise(
+      store.get(getBookKey(userId, bookId))
+    )) as OfflineBookRecord | undefined;
+    return Boolean(record);
+  });
+
+  return Boolean(result);
+}
+
 export async function removeOfflineBook(userId: string, bookId: string) {
   await withStore(BOOK_STORE, "readwrite", async (store) => {
     await requestToPromise(store.delete(getBookKey(userId, bookId)));
@@ -152,6 +163,17 @@ export async function saveOfflineStory(
     await requestToPromise(store.put(record));
     return null;
   });
+}
+
+export async function hasOfflineStory(userId: string, storyId: string): Promise<boolean> {
+  const result = await withStore(STORY_STORE, "readonly", async (store) => {
+    const record = (await requestToPromise(
+      store.get(getStoryKey(userId, storyId))
+    )) as OfflineStoryRecord | undefined;
+    return Boolean(record);
+  });
+
+  return Boolean(result);
 }
 
 export async function removeOfflineStory(userId: string, storyId: string) {

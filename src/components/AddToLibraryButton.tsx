@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useUser, useClerk } from '@clerk/nextjs';
-import { BookmarkPlus, BookmarkCheck } from 'lucide-react';
+import { ArrowDown, BookmarkPlus, BookmarkCheck } from 'lucide-react';
 import { clerkAppearance } from '../lib/clerkAppearance';
 import { books } from '@/data/books';
-import { removeOfflineBook, saveOfflineBook } from '@/lib/offlineLibrary';
+import { hasOfflineBook, removeOfflineBook, saveOfflineBook } from '@/lib/offlineLibrary';
 
 type Props = {
   bookId: string;
@@ -17,6 +17,7 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
   const { user, isLoaded } = useUser();
   const { openSignIn } = useClerk();
   const [inLibrary, setInLibrary] = useState(false);
+  const [savedOffline, setSavedOffline] = useState(false);
   const [checking, setChecking] = useState(true);
   const [celebrate, setCelebrate] = useState(false);
 
@@ -35,6 +36,7 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
     }
 
     if (!user) {
+      setSavedOffline(false);
       setChecking(false);
       return;
     }
@@ -42,6 +44,7 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
     // Consulta en segundo plano sin bloquear la UI
     (async () => {
       try {
+        setSavedOffline(await hasOfflineBook(user.id, bookId));
         const res = await fetch('/api/library', { cache: 'no-store' });
         if (res.ok) {
           const books = (await res.json()) as { bookId: string }[];
@@ -94,6 +97,7 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
           body: JSON.stringify({ type: 'book', bookId }),
         });
         await removeOfflineBook(user.id, bookId);
+        setSavedOffline(false);
       } else {
         await fetch('/api/library', {
           method: 'POST',
@@ -107,6 +111,7 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
           coverUrl,
           bookData,
         });
+        setSavedOffline(true);
       }
     } catch (err) {
       console.error('Error toggling library:', err);
@@ -125,6 +130,7 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
     >
       {inLibrary ? <BookmarkCheck className="h-5 w-5" /> : <BookmarkPlus className="h-5 w-5" />}
       {inLibrary ? 'In My Library' : 'Add to My Library'}
+      {savedOffline ? <ArrowDown className="h-4 w-4 opacity-90" aria-label="Saved on this device" /> : null}
     </button>
   );
 }

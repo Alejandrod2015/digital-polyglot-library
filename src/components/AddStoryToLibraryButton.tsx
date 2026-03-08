@@ -3,10 +3,10 @@
 
 import { useState, useEffect } from 'react';
 import { useUser, useClerk } from '@clerk/nextjs';
-import { BookmarkPlus, BookmarkCheck } from 'lucide-react';
+import { ArrowDown, BookmarkPlus, BookmarkCheck } from 'lucide-react';
 import { clerkAppearance } from '../lib/clerkAppearance';
 import { books } from '@/data/books';
-import { removeOfflineStory, saveOfflineStory } from '@/lib/offlineLibrary';
+import { hasOfflineStory, removeOfflineStory, saveOfflineStory } from '@/lib/offlineLibrary';
 
 
 type Props = {
@@ -28,6 +28,7 @@ export default function AddStoryToLibraryButton({
  const { user, isLoaded } = useUser();
  const { openSignIn } = useClerk();
  const [inLibrary, setInLibrary] = useState(false);
+ const [savedOffline, setSavedOffline] = useState(false);
  const [checking, setChecking] = useState(true);
  const [celebrate, setCelebrate] = useState(false);
 
@@ -49,6 +50,7 @@ export default function AddStoryToLibraryButton({
 
 
    if (!user) {
+     setSavedOffline(false);
      setChecking(false);
      return;
    }
@@ -56,6 +58,7 @@ export default function AddStoryToLibraryButton({
 
    (async () => {
      try {
+       setSavedOffline(await hasOfflineStory(user.id, storyId));
        const res = await fetch('/api/library?type=story', { cache: 'no-store' });
        if (res.ok) {
          const stories = (await res.json()) as { storyId: string }[];
@@ -111,6 +114,7 @@ export default function AddStoryToLibraryButton({
          body: JSON.stringify({ type: 'story', storyId }),
        });
        await removeOfflineStory(user.id, storyId);
+       setSavedOffline(false);
      } else {
        await fetch('/api/library', {
          method: 'POST',
@@ -133,6 +137,7 @@ export default function AddStoryToLibraryButton({
          audioUrl: typeof story?.audio === 'string' ? story.audio : null,
          storyData: story,
        });
+       setSavedOffline(true);
      }
    } catch (err) {
      console.error('Error toggling story library:', err);
@@ -155,6 +160,11 @@ export default function AddStoryToLibraryButton({
        {celebrate ? (
          <span className="pointer-events-none absolute -inset-1 rounded-full border border-emerald-300/70 animate-ping" />
        ) : null}
+       {savedOffline ? (
+         <span className="pointer-events-none absolute -right-1 -bottom-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white ring-2 ring-[#0b2345]">
+           <ArrowDown size={12} />
+         </span>
+       ) : null}
        {inLibrary ? <BookmarkCheck size={32} /> : <BookmarkPlus size={32} />}
      </button>
    );
@@ -173,6 +183,7 @@ export default function AddStoryToLibraryButton({
    >
      {inLibrary ? <BookmarkCheck className="h-5 w-5" /> : <BookmarkPlus className="h-5 w-5" />}
      {inLibrary ? 'In My Library' : 'Add to My Library'}
+     {savedOffline ? <ArrowDown className="h-4 w-4 opacity-90" aria-label="Saved on this device" /> : null}
    </button>
  );
 }
