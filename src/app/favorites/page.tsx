@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
 import { books } from '@/data/books';
 import { formatLanguageCode } from '@/lib/displayFormat';
@@ -225,6 +225,8 @@ export default function FavoritesPage() {
   const [practiceIndex, setPracticeIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
+  const [savedRelatedIdentity, setSavedRelatedIdentity] = useState<string | null>(null);
+  const savedRelatedTimerRef = useRef<number | null>(null);
   const getPracticeModeTabClass = (mode: 'due' | 'all' | 'related') =>
     `px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${
       practiceModeKind === mode
@@ -365,9 +367,18 @@ export default function FavoritesPage() {
     saveSrsMap(userId ?? undefined, srsMap);
   }, [srsMap, userId, isLoaded]);
 
+  useEffect(() => {
+    return () => {
+      if (savedRelatedTimerRef.current !== null) {
+        window.clearTimeout(savedRelatedTimerRef.current);
+      }
+    };
+  }, []);
+
   const now = Date.now();
   const dueFavorites = favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
   const currentPractice = practiceQueue[practiceIndex] ?? null;
+  const currentPracticeIdentity = currentPractice ? getFavoriteIdentity(currentPractice) : null;
   const favoriteIdentitySet = useMemo(
     () => new Set(favorites.map((fav) => getFavoriteIdentity(fav))),
     [favorites]
@@ -482,6 +493,15 @@ export default function FavoritesPage() {
     const identity = getFavoriteIdentity(item);
     if (favoriteIdentitySet.has(identity)) return;
 
+    setSavedRelatedIdentity(identity);
+    if (savedRelatedTimerRef.current !== null) {
+      window.clearTimeout(savedRelatedTimerRef.current);
+    }
+    savedRelatedTimerRef.current = window.setTimeout(() => {
+      setSavedRelatedIdentity((current) => (current === identity ? null : current));
+      savedRelatedTimerRef.current = null;
+    }, 1400);
+
     const updated = [...favorites, item];
     setFavorites(updated);
     saveFavoritesCache(userId ?? undefined, updated);
@@ -499,6 +519,35 @@ export default function FavoritesPage() {
       }
     } catch (err) {
       console.error('Error saving related favorite:', err);
+    }
+  };
+
+  const removeRelatedFavorite = async (item: FavoriteItem) => {
+    const identity = getFavoriteIdentity(item);
+    const updated = favorites.filter((fav) => getFavoriteIdentity(fav) !== identity);
+    setFavorites(updated);
+    saveFavoritesCache(userId ?? undefined, updated);
+
+    try {
+      if (user) {
+        await fetch('/api/favorites', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ word: item.word }),
+        });
+      } else {
+        saveFavoritesCache(undefined, updated);
+      }
+    } catch (err) {
+      console.error('Error removing related favorite:', err);
+    }
+
+    if (savedRelatedIdentity === identity) {
+      setSavedRelatedIdentity(null);
+    }
+    if (savedRelatedTimerRef.current !== null) {
+      window.clearTimeout(savedRelatedTimerRef.current);
+      savedRelatedTimerRef.current = null;
     }
   };
 
@@ -708,12 +757,27 @@ export default function FavoritesPage() {
                 <div className="mb-4">
                   <button
                     onClick={() => void saveRelatedFavorite(currentPractice)}
-                    className="rounded-lg border border-[var(--card-border)] bg-[var(--bg-content)] px-3 py-2 text-sm font-semibold text-[var(--foreground)] transition hover:bg-[var(--card-bg-hover)]"
+                    className={`rounded-lg border px-3 py-2 text-sm font-semibold transition ${
+                      savedRelatedIdentity === currentPracticeIdentity
+                        ? 'border-emerald-400/35 bg-emerald-500/12 text-emerald-300'
+                        : 'border-[var(--card-border)] bg-[var(--bg-content)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]'
+                    }`}
                   >
-                    Save to Favorites
+                    {savedRelatedIdentity === currentPracticeIdentity
+                      ? 'Saved to Favorites'
+                      : 'Save to Favorites'}
                   </button>
                 </div>
-              ) : null}
+              ) : (
+                <div className="mb-4">
+                  <button
+                    onClick={() => void removeRelatedFavorite(currentPractice)}
+                    className="rounded-lg border border-red-400/35 bg-red-500/12 px-3 py-2 text-sm font-semibold text-red-300 transition hover:bg-red-500/18"
+                  >
+                    Remove from Favorites
+                  </button>
+                </div>
+              )}
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => rateCurrent('again')}

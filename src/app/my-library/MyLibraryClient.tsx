@@ -10,6 +10,14 @@ import BookHorizontalCard from "@/components/BookHorizontalCard";
 import StoryVerticalCard from "@/components/StoryVerticalCard";
 import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
+import {
+  listOfflineBooks,
+  listOfflineStories,
+  removeOfflineBook,
+  removeOfflineStory,
+  saveOfflineBook,
+  saveOfflineStory,
+} from "@/lib/offlineLibrary";
 
 
 type LibraryBook = {
@@ -84,6 +92,7 @@ export default function MyLibraryClient() {
  const [stories, setStories] = useState<LibraryStory[]>([]);
  const [loading, setLoading] = useState(true);
  const [storyDurations, setStoryDurations] = useState<Record<string, number>>({});
+ const allBooks = useMemo(() => Object.values(books), []);
 
 
  // ------------------------------
@@ -101,6 +110,38 @@ export default function MyLibraryClient() {
        return;
      }
 
+     const offlineBooks = await listOfflineBooks(user.id);
+     const offlineStories = await listOfflineStories(user.id);
+
+     if (offlineBooks.length > 0) {
+       setBooksList(
+         offlineBooks.map((item, index) => ({
+           id: `offline-book-${item.bookId}-${index}`,
+           bookId: item.bookId,
+           title: item.title,
+           coverUrl: item.coverUrl,
+         }))
+       );
+     }
+
+     if (offlineStories.length > 0) {
+       setStories(
+         offlineStories.map((item, index) => ({
+           id: `offline-story-${item.storyId}-${index}`,
+           storyId: item.storyId,
+           bookId: item.bookId,
+           title: item.title,
+           coverUrl: item.coverUrl,
+           storySlug: item.storySlug,
+           language: item.language,
+           region: item.region,
+           level: item.level,
+           topic: item.topic,
+           audioUrl: item.audioUrl,
+         }))
+       );
+     }
+
 
      try {
        const [booksRes, storiesRes] = await Promise.all([
@@ -114,8 +155,7 @@ export default function MyLibraryClient() {
 
 
        if (Array.isArray(rawBooks)) {
-         setBooksList(
-           rawBooks.filter(
+         const normalizedBooks = rawBooks.filter(
              (b): b is LibraryBook =>
                typeof b === "object" &&
                b !== null &&
@@ -123,14 +163,24 @@ export default function MyLibraryClient() {
                typeof (b as LibraryBook).bookId === "string" &&
                typeof (b as LibraryBook).title === "string" &&
                typeof (b as LibraryBook).coverUrl === "string"
-           )
+           );
+         setBooksList(normalizedBooks);
+         await Promise.all(
+           normalizedBooks.map(async (item) => {
+             const bookMeta = allBooks.find((book) => book.id === item.bookId);
+             await saveOfflineBook(user.id, {
+               bookId: item.bookId,
+               title: item.title,
+               coverUrl: item.coverUrl,
+               bookData: bookMeta,
+             });
+           })
          );
        }
 
 
        if (Array.isArray(rawStories)) {
-         setStories(
-           rawStories.filter(
+         const normalizedStories = rawStories.filter(
              (s): s is LibraryStory =>
                typeof s === "object" &&
                s !== null &&
@@ -139,12 +189,37 @@ export default function MyLibraryClient() {
                typeof (s as LibraryStory).bookId === "string" &&
                typeof (s as LibraryStory).title === "string" &&
                typeof (s as LibraryStory).coverUrl === "string"
-           )
+           );
+         setStories(normalizedStories);
+         await Promise.all(
+           normalizedStories.map(async (item) => {
+             const bookMeta = allBooks.find((book) => book.id === item.bookId);
+             const storyMeta = bookMeta?.stories.find((story) => story.id === item.storyId);
+             await saveOfflineStory(user.id, {
+               storyId: item.storyId,
+               bookId: item.bookId,
+               title: item.title,
+               coverUrl: item.coverUrl,
+               storySlug: item.storySlug ?? storyMeta?.slug,
+               bookSlug: bookMeta?.slug,
+               language: item.language ?? storyMeta?.language ?? bookMeta?.language,
+               region: item.region ?? storyMeta?.region ?? bookMeta?.region,
+               level: item.level ?? storyMeta?.level ?? bookMeta?.level,
+               topic:
+                 item.topic ??
+                 storyMeta?.topic ??
+                 (typeof bookMeta?.topic === "string" ? bookMeta.topic : undefined),
+               audioUrl:
+                 item.audioUrl ??
+                 (typeof storyMeta?.audio === "string" ? storyMeta.audio : null),
+               storyData: storyMeta,
+             });
+           })
          );
        }
      } catch {
-       setBooksList([]);
-       setStories([]);
+       if (offlineBooks.length === 0) setBooksList([]);
+       if (offlineStories.length === 0) setStories([]);
      } finally {
        setTimeout(() => setLoading(false), 150);
      }
@@ -152,7 +227,7 @@ export default function MyLibraryClient() {
 
 
    void load();
- }, [user, isLoaded]);
+ }, [user, isLoaded, allBooks]);
 
 
  // ------------------------------
@@ -161,6 +236,9 @@ export default function MyLibraryClient() {
  const removeItem = async (type: "books" | "stories", id: string) => {
    if (type === "books") {
      setBooksList((prev) => prev.filter((b) => b.bookId !== id));
+     if (user?.id) {
+       await removeOfflineBook(user.id, id);
+     }
      await fetch("/api/library", {
        method: "DELETE",
        headers: { "Content-Type": "application/json" },
@@ -168,6 +246,9 @@ export default function MyLibraryClient() {
      });
    } else {
      setStories((prev) => prev.filter((s) => s.storyId !== id));
+     if (user?.id) {
+       await removeOfflineStory(user.id, id);
+     }
      await fetch("/api/library", {
        method: "DELETE",
        headers: { "Content-Type": "application/json" },
@@ -175,9 +256,6 @@ export default function MyLibraryClient() {
      });
    }
  };
-
-
- const allBooks = useMemo(() => Object.values(books), []);
  const targetLanguages = useMemo(
    () =>
      Array.isArray(user?.publicMetadata?.targetLanguages)
