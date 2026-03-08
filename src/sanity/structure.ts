@@ -52,11 +52,11 @@ export const structure: StructureResolver = (S) =>
         ),
 
       S.listItem()
-        .title("🧭 Published Standalone Stories")
+        .title("🧭 Published Individual Stories")
         .schemaType("standaloneStory")
         .child(
           S.documentList()
-            .title("Published Standalone Stories")
+            .title("Published Individual Stories")
             .filter('_type == "standaloneStory" && published == true')
         ),
 
@@ -67,9 +67,9 @@ export const structure: StructureResolver = (S) =>
         .child(S.documentTypeList("story").title("All Stories")),
 
       S.listItem()
-        .title("🧭 All Standalone Stories")
+        .title("🧭 All Individual Stories")
         .schemaType("standaloneStory")
-        .child(S.documentTypeList("standaloneStory").title("All Standalone Stories")),
+        .child(S.documentTypeList("standaloneStory").title("All Individual Stories")),
 
       S.divider(),
 

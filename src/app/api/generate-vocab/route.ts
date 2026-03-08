@@ -68,6 +68,10 @@ function clampItems(items: VocabItem[], minItems: number, maxItems: number): Voc
   return items;
 }
 
+function computeSoftMinimum(minItems: number): number {
+  return Math.max(12, minItems - 4);
+}
+
 function wordCount(text: string): number {
   return text
     .trim()
@@ -465,26 +469,46 @@ Return ONLY valid JSON array.
       }
     }
 
-    const finalLowQuality = vocab.filter((item) => !hasPedagogicalDefinition(item.definition)).length;
-    if (finalLowQuality > 0) {
-      return NextResponse.json(
-        {
-          error:
-            "Generated definitions still look like translations instead of explanations. Try again.",
-          generatedCount: vocab.length,
-          lowQualityDefinitions: finalLowQuality,
-          vocab,
-        },
-        { status: 422 }
-      );
+    const lowQualityVocab = vocab.filter((item) => !hasPedagogicalDefinition(item.definition));
+    if (lowQualityVocab.length > 0) {
+      vocab = vocab.filter((item) => hasPedagogicalDefinition(item.definition));
     }
 
     vocab = clampItems(vocab, minItems, maxItems);
+
     if (vocab.length < minItems) {
+      const remainingMin = Math.max(4, minItems - vocab.length);
+      const remainingMax = Math.max(remainingMin, Math.min(maxItems, vocab.length + remainingMin + 4));
+      const candidates = extractCandidateWords(text, 550).filter(
+        (token) => !vocab.some((item) => item.word.toLowerCase() === token.toLowerCase())
+      );
+      const rescue = await requestVocabFromModel({
+        text,
+        language,
+        level,
+        focus: `${focus} (final rescue pass, prioritize missing high-value items)`,
+        topic,
+        minItems: remainingMin,
+        maxItems: remainingMax,
+        candidates,
+        detailedDefinitions: true,
+      });
+      vocab = mergeVocab(vocab, rescue).filter(
+        (item) =>
+          hasPedagogicalDefinition(item.definition) &&
+          !isDiscouragedTransparentWord(item.word, language) &&
+          !isInvalidMultiwordVocab(item.word, { type: item.type, storyText: text })
+      );
+      vocab = clampItems(vocab, minItems, maxItems);
+    }
+
+    const softMinItems = computeSoftMinimum(minItems);
+    if (vocab.length < softMinItems) {
       return NextResponse.json(
         {
-          error: `Could not extract the minimum required vocabulary (${minItems}).`,
+          error: `Could not extract enough high-quality vocabulary (target: ${minItems}, minimum usable: ${softMinItems}).`,
           generatedCount: vocab.length,
+          filteredLowQualityCount: lowQualityVocab.length,
           vocab,
         },
         { status: 422 }
@@ -494,6 +518,9 @@ Return ONLY valid JSON array.
     return NextResponse.json({
       vocab,
       generatedCount: vocab.length,
+      filteredLowQualityCount: lowQualityVocab.length,
+      relaxedMinimumApplied: vocab.length < minItems,
+      minimumUsableItems: softMinItems,
       focus,
       minItems,
       maxItems,

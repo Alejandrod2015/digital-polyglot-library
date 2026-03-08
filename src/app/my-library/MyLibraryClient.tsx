@@ -317,7 +317,7 @@ export default function MyLibraryClient() {
          bookSlug: item.bookId,
          storySlug: item.storySlug,
          title: item.title,
-         bookTitle: item.bookId === "standalone" ? "Standalone Stories" : "Polyglot Stories",
+         bookTitle: item.bookId === "standalone" ? "Individual Stories" : "Polyglot Stories",
          language: formatLanguage(item.language),
          region: item.region,
          level: formatLevel(item.level),
@@ -561,48 +561,23 @@ export default function MyLibraryClient() {
 
      {/* SKELETON */}
      {loading && (
-       <div className="space-y-10 md:space-y-12">
-         <section>
-           <div className="h-8 w-44 rounded bg-[var(--card-bg)] animate-pulse mb-6" />
-           <div className="flex gap-4 overflow-x-auto pb-2">
-             {Array.from({ length: 3 }).map((_, i) => (
-               <div
-                 key={`book-skeleton-${i}`}
-                 className="min-w-[320px] max-w-[380px] w-[90vw] md:w-[46%] rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-3 animate-pulse"
-               >
-                 <div className="flex gap-3">
-                   <div className="h-28 w-24 rounded-xl bg-[var(--card-bg-hover)] shrink-0" />
-                   <div className="flex-1 space-y-2">
-                     <div className="h-5 w-3/4 rounded bg-[var(--card-bg-hover)]" />
-                     <div className="h-4 w-1/2 rounded bg-[var(--card-bg-hover)]" />
-                     <div className="h-4 w-full rounded bg-[var(--card-bg-hover)]" />
-                     <div className="h-4 w-5/6 rounded bg-[var(--card-bg-hover)]" />
-                   </div>
-                 </div>
-                 <div className="h-9 w-full rounded-lg bg-[var(--card-bg-hover)] mt-3" />
-               </div>
-             ))}
-           </div>
-         </section>
-
-         <section>
-           <div className="h-8 w-56 rounded bg-[var(--card-bg)] animate-pulse mb-6" />
-           <div className="flex gap-4 overflow-x-auto pb-2">
-             {Array.from({ length: 4 }).map((_, i) => (
-               <div
-                 key={`story-skeleton-${i}`}
-                 className="min-w-[220px] max-w-[240px] w-[58vw] sm:w-[42vw] md:w-[220px] rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-3 animate-pulse"
-               >
-                 <div className="aspect-[3/4] w-full rounded-xl bg-[var(--card-bg-hover)] mb-3" />
-                 <div className="h-5 w-4/5 rounded bg-[var(--card-bg-hover)] mb-2" />
-                 <div className="h-4 w-2/3 rounded bg-[var(--card-bg-hover)] mb-3" />
-                 <div className="h-4 w-full rounded bg-[var(--card-bg-hover)] mb-2" />
-                 <div className="h-4 w-5/6 rounded bg-[var(--card-bg-hover)] mb-3" />
-                 <div className="h-9 w-full rounded-lg bg-[var(--card-bg-hover)]" />
-               </div>
-             ))}
-           </div>
-         </section>
+       <div className="space-y-6">
+         <div className="h-8 w-44 rounded bg-[var(--card-bg)] animate-pulse" />
+         <div className="flex gap-4 overflow-x-auto pb-2">
+           {Array.from({ length: 4 }).map((_, i) => (
+             <div
+               key={`library-skeleton-${i}`}
+               className="min-w-[240px] max-w-[320px] w-[72vw] sm:w-[42vw] md:w-[280px] rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-3 animate-pulse"
+             >
+               <div className="aspect-[3/4] w-full rounded-xl bg-[var(--card-bg-hover)] mb-3" />
+               <div className="h-5 w-4/5 rounded bg-[var(--card-bg-hover)] mb-2" />
+               <div className="h-4 w-2/3 rounded bg-[var(--card-bg-hover)] mb-3" />
+               <div className="h-4 w-full rounded bg-[var(--card-bg-hover)] mb-2" />
+               <div className="h-4 w-5/6 rounded bg-[var(--card-bg-hover)] mb-3" />
+               <div className="h-9 w-full rounded-lg bg-[var(--card-bg-hover)]" />
+             </div>
+           ))}
+         </div>
        </div>
      )}
 

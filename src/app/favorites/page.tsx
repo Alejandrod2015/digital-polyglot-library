@@ -223,7 +223,7 @@ export default function FavoritesPage() {
   const [practiceModeKind, setPracticeModeKind] = useState<'due' | 'all' | 'related'>('due');
   const [practiceQueue, setPracticeQueue] = useState<FavoriteItem[]>([]);
   const [practiceIndex, setPracticeIndex] = useState(0);
-  const [relatedScoresByKey, setRelatedScoresByKey] = useState<Record<string, ReviewScore>>({});
+  const [practiceScoresByKey, setPracticeScoresByKey] = useState<Record<string, ReviewScore>>({});
   const [revealedPracticeKeys, setRevealedPracticeKeys] = useState<string[]>([]);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
   const getPracticeModeTabClass = (mode: 'due' | 'all' | 'related') =>
@@ -373,7 +373,7 @@ export default function FavoritesPage() {
   const currentPracticeKey =
     currentPracticeIdentity ? `${currentPracticeIdentity}::${practiceIndex}` : null;
   const revealed = currentPracticeKey ? revealedPracticeKeys.includes(currentPracticeKey) : false;
-  const relatedScore = currentPracticeKey ? relatedScoresByKey[currentPracticeKey] ?? null : null;
+  const practiceScore = currentPracticeKey ? practiceScoresByKey[currentPracticeKey] ?? null : null;
   const favoriteIdentitySet = useMemo(
     () => new Set(favorites.map((fav) => getFavoriteIdentity(fav))),
     [favorites]
@@ -541,7 +541,7 @@ export default function FavoritesPage() {
     setPracticeQueue(snapshot);
     setPracticeMode(snapshot.length > 0);
     setPracticeIndex(0);
-    setRelatedScoresByKey({});
+    setPracticeScoresByKey({});
     setRevealedPracticeKeys([]);
   };
 
@@ -559,7 +559,7 @@ export default function FavoritesPage() {
     setPracticeQueue(relatedSet);
     setPracticeMode(relatedSet.length > 0);
     setPracticeIndex(0);
-    setRelatedScoresByKey({});
+    setPracticeScoresByKey({});
     setRevealedPracticeKeys([]);
   };
 
@@ -569,7 +569,7 @@ export default function FavoritesPage() {
 
     if (practiceModeKind === 'related') {
       if (currentPracticeKey) {
-        setRelatedScoresByKey((map) => ({ ...map, [currentPracticeKey]: score }));
+        setPracticeScoresByKey((map) => ({ ...map, [currentPracticeKey]: score }));
       }
       if (!isSavedFavorite) {
         return;
@@ -610,26 +610,20 @@ export default function FavoritesPage() {
       }
     }
 
-    if (practiceModeKind === 'related') {
-      return;
-    }
+  };
 
-    const hasNext = practiceIndex + 1 < practiceQueue.length;
-    if (hasNext) {
-      setPracticeIndex((idx) => idx + 1);
-      return;
-    }
+  const finishPractice = () => {
     setPracticeMode(false);
     setPracticeQueue([]);
     setPracticeIndex(0);
-    setRelatedScoresByKey({});
+    setPracticeScoresByKey({});
     setRevealedPracticeKeys([]);
   };
 
-  const goToNextRelated = () => {
-    if (!currentPractice || practiceModeKind !== 'related') return;
+  const goToNextPractice = () => {
+    if (!currentPractice) return;
 
-    const shouldRepeat = relatedScore === 'again' || relatedScore === 'hard';
+    const shouldRepeat = practiceModeKind === 'related' && (practiceScore === 'again' || practiceScore === 'hard');
     const repeatedQueue = shouldRepeat ? [...practiceQueue, currentPractice] : practiceQueue;
     const hasNext = practiceIndex + 1 < repeatedQueue.length;
 
@@ -640,15 +634,11 @@ export default function FavoritesPage() {
       return;
     }
 
-    setPracticeMode(false);
-    setPracticeQueue([]);
-    setPracticeIndex(0);
-    setRelatedScoresByKey({});
-    setRevealedPracticeKeys([]);
+    finishPractice();
   };
 
-  const goToPreviousRelated = () => {
-    if (practiceModeKind !== 'related' || practiceIndex === 0) return;
+  const goToPreviousPractice = () => {
+    if (practiceIndex === 0) return;
     setPracticeIndex((idx) => Math.max(0, idx - 1));
   };
 
@@ -777,7 +767,7 @@ export default function FavoritesPage() {
                 <button
                   onClick={() => rateCurrent('again')}
                   className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
-                    relatedScore === 'again'
+                    practiceScore === 'again'
                       ? 'border-[#aa6f80] bg-[#9a6574] text-white'
                       : 'border-[#d9b8c2] bg-[#fbf1f4] text-[#6b5660] hover:bg-[#f7e6ec]'
                   }`}
@@ -787,7 +777,7 @@ export default function FavoritesPage() {
                 <button
                   onClick={() => rateCurrent('hard')}
                   className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
-                    relatedScore === 'hard'
+                    practiceScore === 'hard'
                       ? 'border-[#ad9560] bg-[#9b8558] text-white'
                       : 'border-[#decea8] bg-[#faf4e2] text-[#74664a] hover:bg-[#f5edd5]'
                   }`}
@@ -797,7 +787,7 @@ export default function FavoritesPage() {
                 <button
                   onClick={() => rateCurrent('easy')}
                   className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
-                    relatedScore === 'easy'
+                    practiceScore === 'easy'
                       ? 'border-[#79a08a] bg-[#6d927e] text-white'
                       : 'border-[#b9d7c7] bg-[#eef7f2] text-[#586e63] hover:bg-[#e2f1e9]'
                   }`}
@@ -819,23 +809,21 @@ export default function FavoritesPage() {
               Reveal answer
             </button>
           )}
-          {practiceModeKind === 'related' ? (
-            <div className="mt-3 flex items-center justify-end gap-2">
-              <button
-                onClick={goToPreviousRelated}
-                disabled={practiceIndex === 0}
-                className="px-3 py-2 rounded-lg border border-[#284565] bg-[#132d4a] text-[#dce7f5] text-sm font-medium transition-colors hover:bg-[#183756] disabled:cursor-not-allowed disabled:opacity-45"
-              >
-                Previous
-              </button>
-              <button
-                onClick={goToNextRelated}
-                className="px-3 py-2 rounded-lg border border-[#315884] bg-[#1b3f67] text-[#edf4ff] text-sm font-medium transition-colors hover:bg-[#224a76]"
-              >
-                Next
-              </button>
-            </div>
-          ) : null}
+          <div className="mt-3 flex items-center justify-end gap-2">
+            <button
+              onClick={goToPreviousPractice}
+              disabled={practiceIndex === 0}
+              className="px-3 py-2 rounded-lg border border-[#284565] bg-[#132d4a] text-[#dce7f5] text-sm font-medium transition-colors hover:bg-[#183756] disabled:cursor-not-allowed disabled:opacity-45"
+            >
+              Previous
+            </button>
+            <button
+              onClick={goToNextPractice}
+              className="px-3 py-2 rounded-lg border border-[#315884] bg-[#1b3f67] text-[#edf4ff] text-sm font-medium transition-colors hover:bg-[#224a76]"
+            >
+              Next
+            </button>
+          </div>
         </div>
       ) : null}
 

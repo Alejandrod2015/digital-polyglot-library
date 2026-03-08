@@ -1,6 +1,67 @@
 // /src/lib/elevenlabs.ts
 import { sanityWriteClient } from "@/sanity";
 
+function hashSeed(input: string): number {
+  let hash = 0;
+  for (let i = 0; i < input.length; i += 1) {
+    hash = (hash * 31 + input.charCodeAt(i)) >>> 0;
+  }
+  return hash;
+}
+
+function normalizeLanguageName(value?: string): string {
+  const raw = (value ?? "English").trim().toLowerCase();
+  if (!raw) return "English";
+
+  const aliases: Record<string, string> = {
+    english: "English",
+    spanish: "Spanish",
+    german: "German",
+    italian: "Italian",
+    french: "French",
+    français: "French",
+    francais: "French",
+    portuguese: "Portuguese",
+    português: "Portuguese",
+    portugues: "Portuguese",
+  };
+
+  return aliases[raw] ?? `${raw.charAt(0).toUpperCase()}${raw.slice(1)}`;
+}
+
+function normalizeRegionName(value?: string): string {
+  const raw = (value ?? "").trim().toLowerCase();
+  if (!raw) return "default";
+
+  const aliases: Record<string, string> = {
+    colombia: "colombia",
+    mexico: "mexico",
+    méxico: "mexico",
+    argentina: "argentina",
+    peru: "peru",
+    perú: "peru",
+    germany: "germany",
+    deutschland: "germany",
+    italy: "italy",
+    italia: "italy",
+    france: "france",
+    francia: "france",
+    brazil: "brazil",
+    brasil: "brazil",
+    portugal: "portugal",
+  };
+
+  return aliases[raw] ?? raw;
+}
+
+function selectVoiceId(candidates: string[], seed: string): string {
+  if (candidates.length === 0) {
+    throw new Error("No voice candidates provided");
+  }
+  if (candidates.length === 1) return candidates[0];
+  return candidates[hashSeed(seed) % candidates.length];
+}
+
 function buildAudioNarrationText(title: string, storyText: string): string {
   const plainTitle = title.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
   const plainStory = storyText.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
@@ -35,42 +96,54 @@ export async function generateAndUploadAudio(
     }
 
     // 🔊 Selección automática de voz según idioma y región
-    const voicesByLangRegion: Record<string, Record<string, string>> = {
+    const voicesByLangRegion: Record<string, Record<string, string[]>> = {
       Spanish: {
-        colombia: "b2htR0pMe28pYwCY9gnP", // Sofía (Colombia)
-        mexico: "htFfPSZGJwjBv1CL0aMD", // Antonio (México)
-        argentina: "p7AwDmKvTdoHTBuueGvP", // Malena (Argentina)
-        peru: "JddqVF50ZSIR7SRbJE6u", // Valeria (LATAM)
-        default: "JddqVF50ZSIR7SRbJE6u",
+        colombia: ["b2htR0pMe28pYwCY9gnP"], // Sofía (Colombia)
+        mexico: ["htFfPSZGJwjBv1CL0aMD"], // Antonio (México)
+        argentina: ["p7AwDmKvTdoHTBuueGvP"], // Malena (Argentina)
+        peru: ["JddqVF50ZSIR7SRbJE6u"], // Valeria (LATAM)
+        default: ["JddqVF50ZSIR7SRbJE6u"],
       },
       German: {
-        germany: "Ww7Sq9tx9CCOiNOwWgsx", // Carl
-        default: "Ww7Sq9tx9CCOiNOwWgsx", // Carl
+        germany: ["Ww7Sq9tx9CCOiNOwWgsx"], // Carl
+        default: ["Ww7Sq9tx9CCOiNOwWgsx"], // Carl
       },
       English: {
-        default: "21m00Tcm4TlvDq8ikWAM", // Rachel
+        default: ["21m00Tcm4TlvDq8ikWAM"], // Rachel
       },
       Italian: {
-        italy: "W71zT1VwIFFx3mMGH2uZ", // Marcotrox
-        default: "gfKKsLN1k0oYYN9n2dXX", // Violetta
+        italy: ["W71zT1VwIFFx3mMGH2uZ"], // Marcotrox
+        default: ["gfKKsLN1k0oYYN9n2dXX"], // Violetta
       },
       French: {
-        france: "sANWqF1bCMzR6eyZbCGw", // Marie
-        default: "sANWqF1bCMzR6eyZbCGw", // Marie
+        france: [
+          "sANWqF1bCMzR6eyZbCGw", // Marie
+          "kENkNtk0xyzG09WW40xE", // Marcel
+          "IPgYtHTNLjC7Bq7IPHrm", // Alexandre
+        ],
+        default: [
+          "sANWqF1bCMzR6eyZbCGw", // Marie
+          "kENkNtk0xyzG09WW40xE", // Marcel
+          "IPgYtHTNLjC7Bq7IPHrm", // Alexandre
+        ],
+      },
+      Portuguese: {
+        brazil: ["aU2vcrnwi348Gnc2Y1si"], // José
+        portugal: ["5tqq6ewvJtcNtaffrqUJ"], // Duarte
+        default: ["aU2vcrnwi348Gnc2Y1si", "5tqq6ewvJtcNtaffrqUJ"],
       },
     };
 
     // Normalizar idioma y región
-    const normalizedLang =
-      (language ?? "English").trim().charAt(0).toUpperCase() +
-      (language ?? "English").trim().slice(1).toLowerCase();
-    const normalizedRegion = region?.toLowerCase().trim() || "default";
+    const normalizedLang = normalizeLanguageName(language);
+    const normalizedRegion = normalizeRegionName(region);
 
     // Seleccionar voz
-    const selectedVoice =
+    const voiceCandidates =
       voicesByLangRegion[normalizedLang]?.[normalizedRegion] ||
       voicesByLangRegion[normalizedLang]?.default ||
       voicesByLangRegion.English.default;
+    const selectedVoice = selectVoiceId(voiceCandidates, `${normalizedLang}:${normalizedRegion}:${title}`);
 
     console.log(
       `[elevenlabs] 🎙 Using voice ${selectedVoice} for ${normalizedLang} (${normalizedRegion})`
