@@ -10,12 +10,14 @@ import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
 import VocabPanel from "@/components/VocabPanel";
+import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 type SafeVocabItem = { word: string; definition: string; type?: string };
+type StorySource = "polyglot" | "standalone";
 
 function normalizePolyglotVocab(raw: unknown): SafeVocabItem[] {
   const coerce = (input: unknown): SafeVocabItem[] => {
@@ -69,13 +71,43 @@ function normalizePolyglotStoryText(input: string): string {
 export default async function StoryPage({ params }: StoryPageProps) {
   const { slug } = await params;
 
-  const story = await prisma.userStory.findUnique({
+  const polyglotStory = await prisma.userStory.findUnique({
     where: { slug },
   });
+  const standaloneStory = polyglotStory ? null : await getStandaloneStoryBySlug(slug);
 
-  if (!story) {
+  if (!polyglotStory && !standaloneStory) {
     notFound();
   }
+
+  const source: StorySource = polyglotStory ? "polyglot" : "standalone";
+  const story = polyglotStory
+    ? {
+        id: polyglotStory.id,
+        slug: polyglotStory.slug,
+        title: polyglotStory.title,
+        text: polyglotStory.text,
+        vocab: polyglotStory.vocab,
+        audioUrl: polyglotStory.audioUrl,
+        audioStatus: polyglotStory.audioStatus,
+        language: polyglotStory.language,
+        region: polyglotStory.region,
+        level: polyglotStory.level,
+        coverUrl: polyglotStory.coverUrl,
+      }
+    : {
+        id: standaloneStory!.id,
+        slug: standaloneStory!.slug,
+        title: standaloneStory!.title,
+        text: standaloneStory!.text,
+        vocab: standaloneStory!.vocabRaw,
+        audioUrl: standaloneStory!.audioUrl,
+        audioStatus: null,
+        language: standaloneStory!.language,
+        region: standaloneStory!.region,
+        level: standaloneStory!.level,
+        coverUrl: standaloneStory!.coverUrl,
+      };
 
   const { userId } = await auth();
   const [user, featured] = await Promise.all([
@@ -94,11 +126,13 @@ export default async function StoryPage({ params }: StoryPageProps) {
   const isDailyStory = featured.day?.slug === story.slug;
 
   const hasFullAccess =
-    plan === "premium" ||
-    plan === "polyglot" ||
-    plan === "owner" ||
-    (plan === "basic" && (isWeeklyStory || isDailyStory)) ||
-    (plan === "free" && isWeeklyStory);
+    source === "standalone"
+      ? true
+      : plan === "premium" ||
+        plan === "polyglot" ||
+        plan === "owner" ||
+        (plan === "basic" && (isWeeklyStory || isDailyStory)) ||
+        (plan === "free" && isWeeklyStory);
 
   const displayText = hasFullAccess
     ? story.text
@@ -127,18 +161,18 @@ export default async function StoryPage({ params }: StoryPageProps) {
         update: {
           title: story.title,
           coverUrl,
-          bookId: "polyglot",
+          bookId: source,
         },
         create: {
           userId,
           storyId: story.id,
           title: story.title,
           coverUrl,
-          bookId: "polyglot",
+          bookId: source,
         },
       });
     } catch (err) {
-      console.error("[stories/:slug] Failed to auto-save polyglot story", err);
+      console.error("[stories/:slug] Failed to auto-save independent story", err);
     }
   }
 
@@ -153,9 +187,16 @@ export default async function StoryPage({ params }: StoryPageProps) {
       <div className="absolute top-[-2.75rem] right-6 z-30 sm:right-8">
         <AddStoryToLibraryButton
           storyId={story.id}
-          bookId="polyglot"
+          bookId={source}
           title={story.title}
           coverUrl={coverUrl}
+          storySlug={story.slug}
+          bookSlug={source}
+          language={story.language ?? undefined}
+          region={story.region ?? undefined}
+          level={story.level ?? undefined}
+          audioUrl={story.audioUrl ?? null}
+          redirectHref={`/stories/${story.slug}`}
           variant="icon"
         />
       </div>
@@ -262,20 +303,20 @@ export default async function StoryPage({ params }: StoryPageProps) {
   <div className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
     <Player
       src={story.audioUrl}
-      bookSlug="polyglot"
+      bookSlug={source}
       storySlug={story.slug}
       canPlay={hasFullAccess}
     />
   </div>
 )}
 
-      {!story.audioUrl && story.audioStatus !== "failed" ? (
+      {!story.audioUrl && source === "polyglot" && story.audioStatus !== "failed" ? (
         <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#081a31]/95 px-4 py-3 text-center text-sm text-blue-100/85 backdrop-blur">
           Audio is still being prepared. You can start reading now.
         </div>
       ) : null}
 
-      {!story.audioUrl && story.audioStatus === "failed" ? (
+      {!story.audioUrl && source === "polyglot" && story.audioStatus === "failed" ? (
         <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-amber-400/20 bg-[#2b1d10]/95 px-4 py-3 text-center text-sm text-amber-100 backdrop-blur">
           This story is ready to read, but audio is currently unavailable.
         </div>

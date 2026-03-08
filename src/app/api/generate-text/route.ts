@@ -3,6 +3,7 @@ import OpenAI from "openai";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { inferTopicFromText } from "@/lib/topicClassifier";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
+import { isInvalidMultiwordVocab, normalizeToken } from "@/lib/vocabSelection";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -61,6 +62,28 @@ function isValidStoryJSON(data: unknown): data is StoryJSON {
   );
 }
 
+function sanitizeGeneratedVocab(
+  items: StoryJSON["vocab"],
+  storyText: string
+): StoryJSON["vocab"] {
+  const seen = new Set<string>();
+  const out: StoryJSON["vocab"] = [];
+
+  for (const item of items) {
+    const word = typeof item.word === "string" ? item.word.trim() : "";
+    const definition = typeof item.definition === "string" ? item.definition.trim() : "";
+    const type = typeof item.type === "string" ? item.type.trim() : undefined;
+    if (!word || !definition) continue;
+    if (isInvalidMultiwordVocab(word, { type, storyText })) continue;
+    const key = normalizeToken(word);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(type ? { word, definition, type } : { word, definition });
+  }
+
+  return out;
+}
+
 function parseStoryPayload(content: string): unknown {
   const trimmed = content.trim();
   const maybeFence = trimmed.replace(/^```json\s*/i, "").replace(/```$/i, "").trim();
@@ -107,6 +130,7 @@ ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and kee
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
 Never return one-word literal translations.
+Never begin a definition with a direct gloss plus comma/colon (for example: "To change, ..." or "Important, ...").
 Wrap each paragraph inside <blockquote> ... </blockquote>.
 
 Requirements:
@@ -115,6 +139,13 @@ Use a close third-person narrator with strong internal focalization.
 - Most of the story should be experienced from inside the characters' perspective (thoughts, sensations, doubts, intentions, quick judgments).
 - Keep the prose mainly in third person, but use first-person phrasing only inside dialogue or brief inner-thought moments when natural.
 - Prioritize ${focus.toLowerCase()} in lexical choices and situations.
+- Prefer useful multi-word expressions, discourse markers, nuanced verbs, and culturally specific phrases.
+- Single words are preferred.
+- If you return more than one word, it must be a short lexicalized expression, discourse marker, or idiom (usually 2-3 words).
+- Good examples: "de repente", "por fin", "al menos".
+- Bad examples: "con cada ensayo", "buenos momentos", "manos temblando", "sazonar correctamente", "mostrar lo que somos".
+- Never include arbitrary sentence fragments or descriptive chunks like "con cada ensayo", "forma de contar historias", or "mostrar lo que somos".
+- Avoid transparent international/basic cognates such as "importante", "normal", "general", "social", or their direct equivalents unless essential.
 - Keep the narrative specific and vivid (concrete scenes, actions, and consequences), not generic.
 - Keep paragraphs short and dynamic (usually 1-3 sentences per paragraph).
 - Avoid long expository narrator blocks; reduce detached description and increase character-centered viewpoint.
@@ -169,7 +200,7 @@ Return ONLY valid JSON:
         : sanitized;
 
     const improvedVocab = await improveVocabDefinitions(openai, {
-      items: raw.vocab,
+      items: sanitizeGeneratedVocab(raw.vocab, text),
       language,
       level,
       focus,

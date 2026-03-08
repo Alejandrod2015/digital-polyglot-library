@@ -14,6 +14,14 @@ type Props = {
  bookId: string;
  title: string;
  coverUrl: string;
+ storySlug?: string;
+ bookSlug?: string;
+ language?: string;
+ region?: string | null;
+ level?: string;
+ topic?: string;
+ audioUrl?: string | null;
+ redirectHref?: string;
  variant?: 'default' | 'icon';
 };
 
@@ -23,6 +31,14 @@ export default function AddStoryToLibraryButton({
  bookId,
  title,
  coverUrl,
+ storySlug,
+ bookSlug,
+ language,
+ region,
+ level,
+ topic,
+ audioUrl,
+ redirectHref,
  variant = 'default',
 }: Props) {
  const { user, isLoaded } = useUser();
@@ -74,10 +90,11 @@ export default function AddStoryToLibraryButton({
 
   const toggleLibrary = async () => {
    if (!user) {
+     const fallbackHref = redirectHref ?? `/books/${bookId}/${storyId}`;
      openSignIn({
        appearance: clerkAppearance,
-       fallbackRedirectUrl: `/books/${bookId}/${storyId}`,
-       forceRedirectUrl: `/books/${bookId}/${storyId}`,
+       fallbackRedirectUrl: fallbackHref,
+       forceRedirectUrl: fallbackHref,
      });
      return;
    }
@@ -124,13 +141,13 @@ export default function AddStoryToLibraryButton({
          bookId,
          title,
          coverUrl,
-         storySlug: story?.slug,
-         bookSlug: book?.slug,
-         language: story?.language ?? book?.language,
-         region: story?.region ?? book?.region,
-         level: story?.level ?? book?.level,
-         topic: story?.topic ?? (typeof book?.topic === 'string' ? book.topic : undefined),
-         audioUrl: typeof story?.audio === 'string' ? story.audio : null,
+         storySlug: storySlug ?? story?.slug,
+         bookSlug: bookSlug ?? book?.slug,
+         language: language ?? story?.language ?? book?.language,
+         region: region ?? story?.region ?? book?.region,
+         level: level ?? story?.level ?? book?.level,
+         topic: topic ?? story?.topic ?? (typeof book?.topic === 'string' ? book.topic : undefined),
+         audioUrl: audioUrl ?? (typeof story?.audio === 'string' ? story.audio : null),
          storyData: story,
        });
      }

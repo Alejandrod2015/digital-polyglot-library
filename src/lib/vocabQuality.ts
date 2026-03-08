@@ -25,6 +25,18 @@ function isLikelyDirectTranslation(definition: string): boolean {
   if (/^to\s+[a-z][a-z'\-\s]*$/i.test(normalized) && wc <= 4) return true;
   if (/^(a|an|the)\s+[a-z][a-z'\-\s]*$/i.test(normalized) && wc <= 4) return true;
   if (/^[a-z][a-z'\-]*$/i.test(normalized)) return true;
+  const firstClause = normalized.split(/[,:;—-]/, 1)[0]?.trim() ?? "";
+  const firstClauseWords = wordCount(firstClause);
+  if (
+    /[,:;—-]/.test(normalized) &&
+    firstClauseWords > 0 &&
+    firstClauseWords <= 4 &&
+    (/^to\s+[a-z][a-z'\-\s]*$/i.test(firstClause) ||
+      /^(a|an|the)\s+[a-z][a-z'\-\s]*$/i.test(firstClause) ||
+      /^[a-z][a-z'\-\s]*$/i.test(firstClause))
+  ) {
+    return true;
+  }
   return false;
 }
 
@@ -110,6 +122,8 @@ Rules:
 - Definition must be 8-18 words.
 - Explain practical meaning/usage nuance in context, not one-word gloss.
 - NEVER return direct translation equivalents.
+- NEVER start with a literal gloss followed by punctuation, such as "To change, ..." or "Important, ...".
+- Start directly with an explanation such as "Used to...", "Describes...", "Refers to...", or "Said when...".
 - Return ONLY a valid JSON array with objects: { "word", "definition", "type?" }.
 `;
 
@@ -141,6 +155,7 @@ Rules:
 - Each definition must be 8-18 words.
 - Explain meaning in English with usage nuance from the story context.
 - Never return direct translation equivalents.
+- Never begin with a direct gloss plus comma/colon.
 - Return ONLY valid JSON array.
 `;
 

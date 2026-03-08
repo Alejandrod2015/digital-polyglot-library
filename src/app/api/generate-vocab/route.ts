@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
 
 type VocabItem = {
   word: string;
@@ -15,6 +16,33 @@ type GenerateVocabBody = {
   topic?: string;
   minItems?: number;
   maxItems?: number;
+};
+
+const DISCOURAGED_VOCAB_BY_LANGUAGE: Record<string, Set<string>> = {
+  spanish: new Set([
+    "importante",
+    "normal",
+    "general",
+    "social",
+    "natural",
+    "especial",
+    "popular",
+    "formal",
+    "local",
+    "real",
+    "personal",
+  ]),
+  german: new Set([
+    "wichtig",
+    "normal",
+    "allgemein",
+    "sozial",
+    "naturlich",
+    "speziell",
+    "lokal",
+    "real",
+    "personlich",
+  ]),
 };
 
 const openai = new OpenAI({
@@ -60,11 +88,30 @@ function isLikelyDirectTranslation(definition: string): boolean {
   if (/^to\s+[a-z][a-z'\-\s]*$/i.test(normalized) && wc <= 4) return true;
   if (/^(a|an|the)\s+[a-z][a-z'\-\s]*$/i.test(normalized) && wc <= 4) return true;
   if (/^[a-z][a-z'\-]*$/i.test(normalized)) return true;
+  const firstClause = normalized.split(/[,:;—-]/, 1)[0]?.trim() ?? "";
+  const firstClauseWords = wordCount(firstClause);
+  if (
+    /[,:;—-]/.test(normalized) &&
+    firstClauseWords > 0 &&
+    firstClauseWords <= 4 &&
+    (/^to\s+[a-z][a-z'\-\s]*$/i.test(firstClause) ||
+      /^(a|an|the)\s+[a-z][a-z'\-\s]*$/i.test(firstClause) ||
+      /^[a-z][a-z'\-\s]*$/i.test(firstClause))
+  ) {
+    return true;
+  }
   return false;
 }
 
 function hasPedagogicalDefinition(definition: string): boolean {
   return hasDetailedDefinition(definition) && !isLikelyDirectTranslation(definition);
+}
+
+function isDiscouragedTransparentWord(word: string, language: string): boolean {
+  const discouraged = DISCOURAGED_VOCAB_BY_LANGUAGE[normalizeToken(language)];
+  if (!discouraged) return false;
+  const tokens = splitWordTokens(word);
+  return tokens.length > 0 && tokens.every((token) => discouraged.has(token));
 }
 
 function normalizeDefinition(definition: string): string {
@@ -95,7 +142,7 @@ function appearsInText(text: string, phrase: string): boolean {
   return pattern.test(text);
 }
 
-function normalizeVocab(raw: unknown, normalizedText: string): VocabItem[] {
+function normalizeVocab(raw: unknown, normalizedText: string, language?: string): VocabItem[] {
   const rows = Array.isArray(raw) ? raw : [];
   const output: VocabItem[] = [];
   const seen = new Set<string>();
@@ -117,6 +164,8 @@ function normalizeVocab(raw: unknown, normalizedText: string): VocabItem[] {
     const key = word.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
+    if (language && isDiscouragedTransparentWord(word, language)) continue;
+    if (isInvalidMultiwordVocab(word, { type, storyText: normalizedText })) continue;
     output.push({ word, definition, ...(type ? { type } : {}) });
   }
 
@@ -218,8 +267,15 @@ Task:
 - Prefer high-learning-value items (contextual, frequent, reusable, idiomatic when relevant).
 - Do not include duplicates.
 - Avoid ultra-generic items unless they are essential to the story meaning.
+- Strongly prefer multi-word expressions, discourse markers, nuanced verbs, and culturally grounded phrases over obvious cognates.
+- Avoid transparent international/basic items such as "importante", "normal", "general", "social", or their direct equivalents unless part of a fixed expression.
+- Single words are preferred.
+- If you return more than one word, it must be a short lexicalized expression, discourse marker, or idiom (usually 2-3 words).
+- Good examples: "de repente", "por fin", "al menos".
+- Bad examples: "con cada ensayo", "buenos momentos", "manos temblando", "sazonar correctamente", "mostrar lo que somos".
 - Start each definition with a capital letter.
 - Definitions must explain usage/nuance, not just translate the word.
+- Definitions must not begin with a literal gloss followed by a comma or colon.
 ${candidateBlock}
 `;
 
@@ -241,7 +297,7 @@ ${candidateBlock}
   const content = response.choices[0]?.message?.content?.trim();
   if (!content) throw new Error("Empty response from model.");
   const parsed = parseModelResponse(content);
-  return normalizeVocab(parsed, text);
+  return normalizeVocab(parsed, text, language);
 }
 
 export async function POST(req: Request) {
@@ -290,6 +346,11 @@ export async function POST(req: Request) {
       maxItems,
       detailedDefinitions: true,
     });
+    vocab = vocab.filter(
+      (item) =>
+        !isDiscouragedTransparentWord(item.word, language) &&
+        !isInvalidMultiwordVocab(item.word, { type: item.type, storyText: text })
+    );
 
     const lowQualityDefinitions = vocab.filter((item) => !hasPedagogicalDefinition(item.definition)).length;
     if (vocab.length < minItems || lowQualityDefinitions > Math.floor(vocab.length * 0.35)) {
@@ -307,6 +368,11 @@ export async function POST(req: Request) {
         detailedDefinitions: true,
       });
       vocab = mergeVocab(vocab, refill);
+      vocab = vocab.filter(
+        (item) =>
+          !isDiscouragedTransparentWord(item.word, language) &&
+          !isInvalidMultiwordVocab(item.word, { type: item.type, storyText: text })
+      );
     }
 
     if (vocab.length < minItems) {
@@ -328,6 +394,11 @@ export async function POST(req: Request) {
         detailedDefinitions: true,
       });
       vocab = mergeVocab(vocab, refill);
+      vocab = vocab.filter(
+        (item) =>
+          !isDiscouragedTransparentWord(item.word, language) &&
+          !isInvalidMultiwordVocab(item.word, { type: item.type, storyText: text })
+      );
     }
 
     // Prefer richer definitions if the model returned ultra-short glosses.
@@ -340,6 +411,7 @@ Rules:
 - Definition must be 6-18 words.
 - Explain practical meaning in context, not a one-word gloss.
 - DO NOT translate directly. Avoid outputs like "to go", "cheese", "to smile".
+- Do not begin with a direct gloss plus comma/colon, like "To change, ..." or "Important, ...".
 - Mention how the word is typically used or what nuance it carries.
 - Start each definition with a capital letter.
 Return ONLY valid JSON array with same items.
@@ -354,7 +426,7 @@ Return ONLY valid JSON array with same items.
       });
       const content = response.choices[0]?.message?.content?.trim();
       if (content) {
-        const rewritten = normalizeVocab(parseModelResponse(content), text);
+        const rewritten = normalizeVocab(parseModelResponse(content), text, language);
         if (rewritten.length > 0) {
           vocab = replaceDefinitions(vocab, rewritten);
         }
@@ -371,6 +443,7 @@ Rules:
 - Each definition must be 8-18 words.
 - Explain meaning in English with context/usage nuance.
 - Never return direct translation equivalents.
+- Never begin with a direct gloss plus comma/colon.
 - Start each definition with a capital letter.
 Return ONLY valid JSON array.
 `;
@@ -384,7 +457,7 @@ Return ONLY valid JSON array.
       });
       const content = response.choices[0]?.message?.content?.trim();
       if (content) {
-        const rewritten = normalizeVocab(parseModelResponse(content), text);
+        const rewritten = normalizeVocab(parseModelResponse(content), text, language);
         if (rewritten.length > 0) {
           vocab = replaceDefinitions(vocab, rewritten);
         }

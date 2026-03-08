@@ -31,6 +31,7 @@ type UserStory = {
   region?: string;
   level: string;
   topic?: string;
+  themes?: string[];
   text: string;
   coverUrl?: string;
 };
@@ -324,7 +325,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     for (const story of languageFilteredPolyglotStories) {
       addFilterValue(languageMap, story.language);
       addFilterValue(regionMap, story.region);
-      addTopics(toTopicList(story.topic));
+      addTopics([...toTopicList(story.topic), ...toTopicList(story.themes)]);
     }
 
     const languageOptions: FilterChip[] = Array.from(languageMap.entries())
@@ -415,7 +416,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     const topicFilteredPolyglotStories = selectedTopicKey
       ? regionFilteredPolyglotStories.filter((story) =>
-          matchesTopic(toTopicList(story.topic), selectedTopicKey)
+          matchesTopic([...toTopicList(story.topic), ...toTopicList(story.themes)], selectedTopicKey)
         )
       : regionFilteredPolyglotStories;
 
@@ -873,7 +874,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
         <div className="mb-10 md:mb-12">
           <div className="mb-5 flex items-center justify-between gap-4">
-            <h2 className="text-2xl font-semibold text-[var(--foreground)]">Polyglot Stories</h2>
+            <h2 className="text-2xl font-semibold text-[var(--foreground)]">Individual Stories</h2>
             <Link
               href={seeAllPolyglotStoriesHref}
               className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
@@ -888,7 +889,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                 ? `No stories found for ${selectedTopicLabel ?? "this topic"}.`
                 : isStringArray(targetLanguages) && targetLanguages.length > 0
                   ? "No stories found in your selected languages."
-                  : "No Polyglot stories have been published yet."}
+                  : "No individual stories have been published yet."}
             </div>
           ) : (
             <div>

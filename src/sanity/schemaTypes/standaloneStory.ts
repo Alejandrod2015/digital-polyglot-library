@@ -1,4 +1,3 @@
-// /src/sanity/schemaTypes/story.ts
 import { defineField, defineType } from "sanity";
 import type { InputProps } from "sanity";
 import React from "react";
@@ -9,27 +8,8 @@ import AudioGeneratorInput from "../components/AudioGeneratorInput";
 import StoryTextInput from "../components/StoryTextInput";
 import AutoSlugInput from "../components/AutoSlugInput";
 
-type SetPatch = {
-  type: "set";
-  path: (string | number)[];
-  value: unknown;
-};
-
-type SyncInputProps = {
-  document?: unknown;
-  onChange: (patch: SetPatch) => void;
-};
-
 function isRecord(v: unknown): v is Record<string, unknown> {
   return typeof v === "object" && v !== null && !Array.isArray(v);
-}
-
-function getBookRefId(doc: unknown): string | null {
-  if (!isRecord(doc)) return null;
-  const book = doc.book;
-  if (!isRecord(book)) return null;
-  const ref = book._ref;
-  return typeof ref === "string" && ref.length > 0 ? ref : null;
 }
 
 function getLanguage(doc: unknown): string | null {
@@ -90,109 +70,11 @@ function countWords(value: string): number {
   return value.trim().split(/\s+/).filter(Boolean).length;
 }
 
-export const story = defineType({
-  name: "story",
-  title: "Story",
+export const standaloneStory = defineType({
+  name: "standaloneStory",
+  title: "Standalone Story",
   type: "document",
-
   fields: [
-    //
-    // 📘 RELACIÓN CON LIBRO — aparece primero
-    //
-    defineField({
-      name: "book",
-      title: "Related Book",
-      type: "reference",
-      to: [{ type: "book" }],
-      validation: (Rule) => Rule.required(),
-      description: "Select the book this story belongs to (required).",
-    }),
-
-    //
-    // 🔄 AUTO-HERENCIA DE METADATOS DEL LIBRO
-    //
-    defineField({
-      name: "syncBookMetadata",
-      title: "Sync Book Metadata",
-      type: "string",
-      hidden: true,
-      components: {
-        input: function SyncBookMetadataComponent(props: unknown) {
-          const { document, onChange } = props as SyncInputProps;
-
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          React.useEffect(() => {
-            const run = async () => {
-              const bookRef = getBookRefId(document);
-              if (!bookRef) return;
-
-              try {
-                const query = `*[_type == "book" && _id == $id][0]{
-                  language, region, level, topic, formality
-                }`;
-
-                const response = await fetch("/api/sanity-query", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ query, params: { id: bookRef } }),
-                });
-
-                const json: unknown = await response.json();
-                if (!isRecord(json)) return;
-
-                const result = json.result;
-                if (!isRecord(result)) return;
-
-                const b = result;
-
-                const regionFieldMap: Record<string, string> = {
-                  spanish: "region_es",
-                  english: "region_en",
-                  german: "region_de",
-                  french: "region_fr",
-                  italian: "region_it",
-                  portuguese: "region_pt",
-                };
-
-                const lang = typeof b.language === "string" ? b.language : null;
-                const regionField = lang ? regionFieldMap[lang] : undefined;
-
-                const patch: SetPatch[] = [];
-
-                if (typeof b.language === "string") {
-                  patch.push({ type: "set", path: ["language"], value: b.language });
-                }
-                if (typeof b.level === "string") {
-                  patch.push({ type: "set", path: ["level"], value: b.level });
-                }
-                if (typeof b.topic === "string") {
-                  patch.push({ type: "set", path: ["topic"], value: b.topic });
-                }
-                if (typeof b.formality === "string") {
-                  patch.push({ type: "set", path: ["formality"], value: b.formality });
-                }
-
-                if (regionField && typeof b.region === "string") {
-                  patch.push({ type: "set", path: [regionField], value: b.region });
-                }
-
-                patch.forEach((p) => onChange(p));
-              } catch (err) {
-                console.error("Error syncing book metadata:", err);
-              }
-            };
-
-            void run();
-          }, [document, onChange]);
-
-          return null;
-        },
-      },
-    }),
-
-    //
-    // 🧭 INPUT SECTION — configuración previa a la generación
-    //
     defineField({
       name: "language",
       title: "Language",
@@ -226,7 +108,6 @@ export const story = defineType({
       },
       description: "Optional.",
     }),
-
     defineField({
       name: "region_en",
       title: "Region",
@@ -242,7 +123,6 @@ export const story = defineType({
       },
       description: "Optional.",
     }),
-
     defineField({
       name: "region_de",
       title: "Region",
@@ -251,7 +131,6 @@ export const story = defineType({
       options: { list: [{ title: "Germany", value: "germany" }] },
       description: "Optional.",
     }),
-
     defineField({
       name: "region_fr",
       title: "Region",
@@ -260,7 +139,6 @@ export const story = defineType({
       options: { list: [{ title: "France", value: "france" }] },
       description: "Optional.",
     }),
-
     defineField({
       name: "region_it",
       title: "Region",
@@ -269,7 +147,6 @@ export const story = defineType({
       options: { list: [{ title: "Italy", value: "italy" }] },
       description: "Optional.",
     }),
-
     defineField({
       name: "region_pt",
       title: "Region",
@@ -304,7 +181,7 @@ export const story = defineType({
         ],
       },
       initialValue: "neutral",
-      description: "Formality level inherited from the book.",
+      description: "Use this for the overall register of the story.",
     }),
 
     defineField({
@@ -343,7 +220,6 @@ export const story = defineType({
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: "slug",
       title: "Slug",
@@ -362,13 +238,9 @@ export const story = defineType({
       title: "Synopsis",
       type: "text",
       rows: 4,
-      description:
-        "Short synopsis used to generate the cover image. If empty, the story text will be used.",
+      description: "Short synopsis used to guide the story and cover generation.",
     }),
 
-    //
-    // 🪄 GENERADOR CON CHATGPT — separado y sin sincronización
-    //
     defineField({
       name: "generate",
       title: "🪄 Generate Story",
@@ -382,9 +254,6 @@ export const story = defineType({
       },
     }),
 
-    //
-    // 🖼️ COVER — editable desde Sanity (para historias de libros)
-    //
     defineField({
       name: "text",
       title: "Main Text",
@@ -421,7 +290,6 @@ export const story = defineType({
         input: () => React.createElement(VocabGeneratorInput),
       },
     }),
-
     defineField({
       name: "vocabRaw",
       title: "Vocabulary (raw JSON or text)",
@@ -431,7 +299,6 @@ export const story = defineType({
       rows: 10,
       validation: (Rule) => Rule.custom((value) => validateVocabRaw(value)),
     }),
-
     defineField({
       name: "generateCover",
       title: "🖼️ Generate Cover",
@@ -441,14 +308,12 @@ export const story = defineType({
         input: () => React.createElement(CoverGeneratorInput),
       },
     }),
-
     defineField({
       name: "cover",
       title: "Cover Image",
       type: "image",
       options: { hotspot: true },
     }),
-
     defineField({
       name: "generateAudio",
       title: "🎙️ Generate Audio",
@@ -458,7 +323,6 @@ export const story = defineType({
         input: () => React.createElement(AudioGeneratorInput),
       },
     }),
-
     defineField({
       name: "audio",
       title: "Audio File",
@@ -486,10 +350,10 @@ export const story = defineType({
   preview: {
     select: { title: "title", level: "level", media: "cover" },
     prepare({ title, level, media }) {
-      const subtitle = level ? `Level: ${level}` : null;
+      const subtitle = level ? `Standalone • Level: ${level}` : "Standalone story";
       return {
         title: title || "Untitled Story",
-        subtitle: subtitle || "No level assigned",
+        subtitle,
         media,
       };
     },

@@ -44,6 +44,8 @@ export default function StoryGeneratorInput() {
   const client = useClient({ apiVersion: '2024-05-01' })
 
   const [loading, setLoading] = useState(false)
+  const [synopsisLoading, setSynopsisLoading] = useState(false)
+  const [titleLoading, setTitleLoading] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const apiBase =
@@ -151,23 +153,175 @@ export default function StoryGeneratorInput() {
     }
   }
 
+  async function generateSynopsis() {
+    try {
+      setSynopsisLoading(true)
+      setMsg(null)
+      setError(null)
+
+      if (!formId) {
+        throw new Error('Tip: enter something in “Title” and click Save once to create a draft.')
+      }
+
+      const title = currentTitle?.trim() ?? ''
+      if (!title) {
+        throw new Error('Add a title first so the synopsis has something concrete to build from.')
+      }
+
+      const body: {
+        title: string
+        language: string
+        level: string
+        focus: string
+        topic: string
+        region?: string
+      } = {
+        title,
+        language: language ?? 'Spanish',
+        level: level ?? 'beginner',
+        focus: focus ?? 'verbs',
+        topic: topic?.trim() ?? '',
+      }
+
+      if (region && region.trim() !== '') {
+        body.region = region
+      }
+
+      const res = await fetch(`${apiBase}/api/generate-synopsis`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+
+      const rawResponse = await res.text()
+      let data: { error?: string; result?: string } = {}
+      try {
+        data = rawResponse ? (JSON.parse(rawResponse) as typeof data) : {}
+      } catch {
+        throw new Error(`Unexpected response from server: ${rawResponse.slice(0, 120)}`)
+      }
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to generate synopsis.')
+      }
+
+      const nextSynopsis = String(data.result ?? '').trim()
+      if (!nextSynopsis) {
+        throw new Error('No synopsis was returned.')
+      }
+
+      const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
+      await client.patch(targetId).set({ synopsis: nextSynopsis }).commit()
+      setMsg('✓ Synopsis generated — review it before generating the story.')
+    } catch (err) {
+      const e = err as Error
+      setError(e.message)
+    } finally {
+      setSynopsisLoading(false)
+    }
+  }
+
+  async function generateTitle() {
+    try {
+      setTitleLoading(true)
+      setMsg(null)
+      setError(null)
+
+      if (!formId) {
+        throw new Error('Tip: click Save once to create a draft before generating a title.')
+      }
+
+      const body: {
+        documentId: string
+        language: string
+        level: string
+        topic: string
+        synopsis: string
+        region?: string
+      } = {
+        documentId: formId.replace(/^drafts\./, ''),
+        language: language ?? 'Spanish',
+        level: level ?? 'beginner',
+        topic: topic?.trim() ?? '',
+        synopsis: synopsis?.trim() ?? '',
+      }
+
+      if (region && region.trim() !== '') {
+        body.region = region
+      }
+
+      const res = await fetch(`${apiBase}/api/generate-title`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+
+      const rawResponse = await res.text()
+      let data: { error?: string; result?: string } = {}
+      try {
+        data = rawResponse ? (JSON.parse(rawResponse) as typeof data) : {}
+      } catch {
+        throw new Error(`Unexpected response from server: ${rawResponse.slice(0, 120)}`)
+      }
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to generate title.')
+      }
+
+      const nextTitle = String(data.result ?? '').trim()
+      if (!nextTitle) {
+        throw new Error('No title was returned.')
+      }
+
+      const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
+      await client.patch(targetId).set({ title: nextTitle }).commit()
+      setMsg('✓ Title generated — slug will update automatically.')
+    } catch (err) {
+      const e = err as Error
+      setError(e.message)
+    } finally {
+      setTitleLoading(false)
+    }
+  }
+
   return (
     <Stack space={3}>
       <Card padding={3}>
         <Flex gap={3}>
           <Button
             icon={SparklesIcon}
+            text={titleLoading ? 'Generating title...' : 'Generate Title'}
+            mode="ghost"
+            disabled={loading || synopsisLoading || titleLoading}
+            onClick={() => generateTitle()}
+          />
+          <Button
+            icon={SparklesIcon}
+            text={synopsisLoading ? 'Generating synopsis...' : 'Generate Synopsis'}
+            mode="ghost"
+            disabled={loading || synopsisLoading || titleLoading}
+            onClick={() => generateSynopsis()}
+          />
+          <Button
+            icon={SparklesIcon}
             text={loading ? 'Generating...' : 'Generate Story'}
             tone="primary"
-            disabled={loading}
+            disabled={loading || synopsisLoading || titleLoading}
             onClick={() => generateStory()}
           />
         </Flex>
       </Card>
 
-      {loading && (
+      {(loading || synopsisLoading || titleLoading) && (
         <Card padding={3}>
-          <Spinner muted /> <Text>Generating story...</Text>
+          <Spinner muted />{" "}
+          <Text>
+            {titleLoading
+              ? 'Generating title...'
+              : synopsisLoading
+                ? 'Generating synopsis...'
+                : 'Generating story...'}
+          </Text>
         </Card>
       )}
 

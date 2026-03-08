@@ -1,5 +1,6 @@
 // /src/lib/homeReleases.ts
 import { books } from "@/data/books";
+import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
 import { getPublicUserStories } from "@/lib/userStories";
 
 export type LatestBook = {
@@ -21,6 +22,8 @@ export type LatestStory = {
   region?: string;
   level?: string;
   coverUrl: string;
+  audioUrl?: string;
+  topic?: string;
 };
 
 export type LatestPolyglotStory = {
@@ -80,7 +83,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
       description: book.description,
     }));
 
-  const latestStories: LatestStory[] = allBooks
+  const bookStories: Array<LatestStory & { _ts: number }> = allBooks
     .slice()
     .flatMap((book) => {
       const bookTs = getEntityTimestamp(book);
@@ -93,12 +96,37 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
         region: story.region ?? book.region,
         level: story.level ?? book.level,
         coverUrl: story.cover ?? book.cover ?? "/covers/default.jpg",
+        audioUrl:
+          typeof story.audio === "string" && story.audio.trim() !== ""
+            ? story.audio
+            : undefined,
+        topic: story.topic ?? book.topic,
         _ts: Math.max(
           getEntityTimestamp(story),
           bookTs
         ),
       }));
     })
+    .sort((a, b) => b._ts - a._ts);
+
+  const standaloneStories = await getPublishedStandaloneStories();
+
+  const latestStories: LatestStory[] = [
+    ...bookStories,
+    ...standaloneStories.map((story) => ({
+      bookSlug: "standalone",
+      bookTitle: "Individual Stories",
+      storySlug: story.slug,
+      storyTitle: story.title,
+      language: story.language ?? undefined,
+      region: story.region ?? undefined,
+      level: story.level ?? undefined,
+      coverUrl: story.coverUrl || "/covers/default.jpg",
+      audioUrl: story.audioUrl ?? undefined,
+      topic: story.topic ?? undefined,
+      _ts: toTimestamp(story.createdAt),
+    })),
+  ]
     .sort((a, b) => b._ts - a._ts)
     .slice(0, limit)
     .map(({ _ts, ...item }) => item);
