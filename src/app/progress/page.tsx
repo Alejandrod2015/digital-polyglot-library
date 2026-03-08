@@ -12,6 +12,11 @@ type ProgressPayload = {
   wordsLearned: number;
   weeklyGoalMinutes: number;
   weeklyMinutesListened: number;
+  weeklyGoalStories: number;
+  weeklyStoriesFinished: number;
+  monthlyStoriesFinished: number;
+  storyStreakDays: number;
+  regionsExplored: number;
   streakDays: number;
 };
 
@@ -20,10 +25,10 @@ function clamp(value: number, min: number, max: number): number {
 }
 
 function motivationalLine(progress: ProgressPayload): string {
-  if (progress.streakDays >= 7) return "Strong momentum. Keep the streak alive.";
-  if (progress.weeklyMinutesListened >= progress.weeklyGoalMinutes) return "Weekly goal reached. Excellent consistency.";
-  if (progress.minutesListened >= 120) return "You are building real listening endurance.";
-  return "Small sessions add up. Keep going this week.";
+  if (progress.storyStreakDays >= 7) return "Your reading habit is real now. Protect the streak.";
+  if (progress.weeklyStoriesFinished >= progress.weeklyGoalStories) return "Weekly story goal reached. Strong consistency.";
+  if (progress.regionsExplored >= 3) return "You are expanding your atlas, not just finishing stories.";
+  return "One finished story a day is enough to keep momentum.";
 }
 
 export default function ProgressPage() {
@@ -63,8 +68,8 @@ export default function ProgressPage() {
 
   const weeklyPercent = useMemo(() => {
     if (!progress) return 0;
-    if (!progress.weeklyGoalMinutes) return 0;
-    return clamp((progress.weeklyMinutesListened / progress.weeklyGoalMinutes) * 100, 0, 100);
+    if (!progress.weeklyGoalStories) return 0;
+    return clamp((progress.weeklyStoriesFinished / progress.weeklyGoalStories) * 100, 0, 100);
   }, [progress]);
 
   if (!isLoaded || loading) {
@@ -108,13 +113,27 @@ export default function ProgressPage() {
     <div className="p-8 max-w-6xl mx-auto text-[var(--foreground)]">
       <h1 className="text-3xl font-bold mb-6">Your Progress</h1>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-        <div className="rounded-2xl bg-[var(--card-bg)] p-5 border border-[var(--card-border)]">
-          <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-2">
-            <Clock3 size={16} /> Minutes listened
-          </div>
-          <p className="text-3xl font-semibold">{progress.minutesListened}</p>
+      <div className="rounded-2xl bg-[var(--card-bg)] p-6 border border-[var(--card-border)] mb-6">
+        <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-2">
+          <Flame size={16} /> Story streak
         </div>
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <p className="text-5xl font-semibold leading-none">{progress.storyStreakDays}</p>
+            <p className="text-sm text-[var(--muted)] mt-2">
+              {progress.storyStreakDays === 1 ? "day in a row" : "days in a row"} with a finished story
+            </p>
+          </div>
+          <div className="text-right">
+            <p className="text-sm text-[var(--muted)] mb-1">This week</p>
+            <p className="text-lg font-medium">
+              {progress.weeklyStoriesFinished} / {progress.weeklyGoalStories} stories
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
         <div className="rounded-2xl bg-[var(--card-bg)] p-5 border border-[var(--card-border)]">
           <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-2">
             <BookCheck size={16} /> Stories finished
@@ -123,33 +142,63 @@ export default function ProgressPage() {
         </div>
         <div className="rounded-2xl bg-[var(--card-bg)] p-5 border border-[var(--card-border)]">
           <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-2">
-            <BookOpenCheck size={16} /> Books finished
+            <Clock3 size={16} /> Minutes listened
           </div>
-          <p className="text-3xl font-semibold">{progress.booksFinished}</p>
+          <p className="text-3xl font-semibold">{progress.minutesListened}</p>
         </div>
         <div className="rounded-2xl bg-[var(--card-bg)] p-5 border border-[var(--card-border)]">
           <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-2">
-            <Star size={16} /> Words learned
+            <BookOpenCheck size={16} /> This month
           </div>
-          <p className="text-3xl font-semibold">{progress.wordsLearned}</p>
+          <p className="text-3xl font-semibold">{progress.monthlyStoriesFinished}</p>
+        </div>
+        <div className="rounded-2xl bg-[var(--card-bg)] p-5 border border-[var(--card-border)]">
+          <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-2">
+            <Star size={16} /> Regions explored
+          </div>
+          <p className="text-3xl font-semibold">{progress.regionsExplored}</p>
         </div>
       </div>
 
-      <div className="rounded-2xl bg-[var(--card-bg)] p-6 border border-[var(--card-border)]">
-        <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-2">
-          <Flame size={16} /> Weekly motivation
+      <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+        <div className="rounded-2xl bg-[var(--card-bg)] p-6 border border-[var(--card-border)]">
+          <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-2">
+            <Flame size={16} /> Weekly story goal
+          </div>
+          <p className="text-lg font-medium mb-4">{motivationalLine(progress)}</p>
+          <p className="text-sm text-[var(--muted)] mb-2">
+            {progress.weeklyStoriesFinished} / {progress.weeklyGoalStories} stories this week
+          </p>
+          <div className="h-2 rounded-full bg-[var(--card-bg-hover)] overflow-hidden mb-3">
+            <div
+              className="h-full bg-sky-400 transition-all"
+              style={{ width: `${weeklyPercent}%` }}
+            />
+          </div>
+          <p className="text-sm text-[var(--muted)]">
+            Listening this week: {progress.weeklyMinutesListened} / {progress.weeklyGoalMinutes} min
+          </p>
         </div>
-        <p className="text-lg font-medium mb-4">{motivationalLine(progress)}</p>
-        <p className="text-sm text-[var(--muted)] mb-2">
-          {progress.weeklyMinutesListened} / {progress.weeklyGoalMinutes} min this week
-        </p>
-        <div className="h-2 rounded-full bg-[var(--card-bg-hover)] overflow-hidden mb-3">
-          <div
-            className="h-full bg-sky-400 transition-all"
-            style={{ width: `${weeklyPercent}%` }}
-          />
+
+        <div className="rounded-2xl bg-[var(--card-bg)] p-6 border border-[var(--card-border)]">
+          <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-3">
+            <BookOpenCheck size={16} /> Milestones
+          </div>
+          <div className="space-y-3 text-sm">
+            <div className="flex items-center justify-between">
+              <span className="text-[var(--muted)]">Books finished</span>
+              <span className="font-medium">{progress.booksFinished}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-[var(--muted)]">Words saved</span>
+              <span className="font-medium">{progress.wordsLearned}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-[var(--muted)]">Any activity streak</span>
+              <span className="font-medium">{progress.streakDays} day(s)</span>
+            </div>
+          </div>
         </div>
-        <p className="text-sm text-[var(--muted)]">Current streak: {progress.streakDays} day(s)</p>
       </div>
     </div>
   );

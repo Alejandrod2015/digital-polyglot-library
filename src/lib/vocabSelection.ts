@@ -3,7 +3,7 @@ type MultiwordOptions = {
   type?: string;
 };
 
-const ALLOWED_MULTIWORD_TYPES = new Set(["expression", "connector", "slang"]);
+const ALLOWED_MULTIWORD_TYPES = new Set(["expression", "slang"]);
 
 export function normalizeToken(value: string): string {
   return value
@@ -55,6 +55,19 @@ function isLikelySentenceFragment(tokens: string[], storyText: string): boolean 
   return false;
 }
 
+function looksLikeFixedShortExpression(tokens: string[]): boolean {
+  if (tokens.length <= 1 || tokens.length > 3) return false;
+
+  const shortTokenCount = tokens.filter((token) => token.length <= 3).length;
+  if (shortTokenCount === 0) return false;
+
+  if (tokens.length === 2) {
+    return shortTokenCount >= 1;
+  }
+
+  return shortTokenCount >= 2;
+}
+
 export function isInvalidMultiwordVocab(word: string, options: MultiwordOptions = {}): boolean {
   const tokens = splitWordTokens(word);
   if (tokens.length <= 1) return false;
@@ -64,8 +77,8 @@ export function isInvalidMultiwordVocab(word: string, options: MultiwordOptions 
   const normalizedType = normalizeToken(options.type ?? "");
   if (!ALLOWED_MULTIWORD_TYPES.has(normalizedType)) return true;
 
-  // Prefer very short lexicalized expressions like "de repente" over generic collocations.
-  if (tokens.length >= 2 && !tokens.some((token) => token.length <= 3)) return true;
+  // Keep only short fixed expressions, not generic compositional chunks.
+  if (!looksLikeFixedShortExpression(tokens)) return true;
 
   if (options.storyText && isLikelySentenceFragment(tokens, options.storyText)) {
     return true;

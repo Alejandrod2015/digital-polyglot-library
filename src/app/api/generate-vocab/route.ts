@@ -263,16 +263,17 @@ Task:
       ? "clear English explanation with 6-18 words, including nuance or typical usage in context"
       : "concise English definition"
   }
-  - "type": one label among ["verb","noun","adjective","expression","slang","connector","other"]
+  - "type": one label among ["verb","noun","adjective","expression","slang","other"]
 - Prefer high-learning-value items (contextual, frequent, reusable, idiomatic when relevant).
 - Do not include duplicates.
 - Avoid ultra-generic items unless they are essential to the story meaning.
-- Strongly prefer multi-word expressions, discourse markers, nuanced verbs, and culturally grounded phrases over obvious cognates.
+- Strongly prefer short fixed expressions, nuanced verbs, and culturally grounded phrases over obvious cognates.
 - Avoid transparent international/basic items such as "importante", "normal", "general", "social", or their direct equivalents unless part of a fixed expression.
 - Single words are preferred.
-- If you return more than one word, it must be a short lexicalized expression, discourse marker, or idiom (usually 2-3 words).
+- If you return more than one word, it must be a short lexicalized expression or idiom (usually 2-3 words).
+- Any multi-word item MUST use type "expression".
 - Good examples: "de repente", "por fin", "al menos".
-- Bad examples: "con cada ensayo", "buenos momentos", "manos temblando", "sazonar correctamente", "mostrar lo que somos".
+- Bad examples: "con cada ensayo", "buenos momentos", "manos temblando", "sazonar correctamente", "mostrar lo que somos", "llenaba de emoción".
 - Start each definition with a capital letter.
 - Definitions must explain usage/nuance, not just translate the word.
 - Definitions must not begin with a literal gloss followed by a comma or colon.

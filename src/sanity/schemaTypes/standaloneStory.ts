@@ -19,6 +19,7 @@ function getLanguage(doc: unknown): string | null {
 }
 
 const MAX_TEXT_CHARS = 3800;
+const MIN_TEXT_WORDS = 260;
 const MAX_TEXT_WORDS = 500;
 const MAX_VOCAB_ITEMS = 40;
 const MAX_VOCAB_WORD_LENGTH = 48;
@@ -259,7 +260,7 @@ export const standaloneStory = defineType({
       title: "Main Text",
       type: "text",
       description:
-        "Target max length: about 3-3.5 minutes of audio (~500 words). Keep concise and dynamic.",
+        "Target length: about 2-3 minutes of audio (roughly 260-500 words). Keep it concise and dynamic.",
       components: {
         input: (props: InputProps) => React.createElement(StoryTextInput, props),
       },
@@ -271,8 +272,11 @@ export const standaloneStory = defineType({
           if (value.length > MAX_TEXT_CHARS) {
             return `Main Text is too long (max ${MAX_TEXT_CHARS} characters).`;
           }
+          if (countWords(value) < MIN_TEXT_WORDS) {
+            return `Main Text is too short for ~2 minutes of audio (min ${MIN_TEXT_WORDS} words).`;
+          }
           if (countWords(value) > MAX_TEXT_WORDS) {
-            return `Main Text is too long for ~4 min audio (max ${MAX_TEXT_WORDS} words).`;
+            return `Main Text is too long for ~3 minutes of audio (max ${MAX_TEXT_WORDS} words).`;
           }
           if (/<\s*script\b/i.test(value)) {
             return "Main Text cannot contain <script> tags.";

@@ -8,6 +8,13 @@ import { generateAndUploadCover } from "@/lib/dalle";
 import { inferTopicFromText } from "@/lib/topicClassifier";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
+import {
+  HARD_STORY_WORDS_MAX,
+  MIN_STORY_WORDS,
+  TARGET_STORY_WORDS_MAX,
+  TARGET_STORY_WORDS_MIN,
+  countStoryWords,
+} from "@/lib/storyLength";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
@@ -250,6 +257,21 @@ function normalizeStoryHtml(html: string): string {
   return withParagraphs;
 }
 
+function truncateToWordLimit(text: string, maxWords: number): string {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (words.length <= maxWords) return text.trim();
+  const sliced = words.slice(0, maxWords).join(" ").trim();
+  const lastPunctuation = Math.max(
+    sliced.lastIndexOf("."),
+    sliced.lastIndexOf("!"),
+    sliced.lastIndexOf("?")
+  );
+  if (lastPunctuation > Math.floor(sliced.length * 0.7)) {
+    return sliced.slice(0, lastPunctuation + 1).trim();
+  }
+  return `${sliced}.`;
+}
+
 function unwrapRemovedVocabSpans(text: string, wordsToRemove: Set<string>): string {
   if (wordsToRemove.size === 0) return text;
   return text.replace(
@@ -411,9 +433,10 @@ Context:
 
 Rules:
 - Return ONLY advanced or less frequent words/expressions useful for learners.
-- Strongly prefer multi-word expressions, discourse markers, nuanced verbs, and culturally grounded phrases.
+- Strongly prefer short fixed expressions, nuanced verbs, and culturally grounded phrases.
 - Single words are preferred.
-- If you return more than one word, it must be a short fixed expression, idiom, phrasal verb, or discourse marker (usually 2-3 words).
+- If you return more than one word, it must be a short fixed expression or idiom (usually 2-3 words).
+- Any multi-word item MUST use type "expression".
 - Never return arbitrary sentence fragments or descriptive chunks like "con cada ensayo" or "mostrar lo que somos".
 - Exclude globally known anglicisms such as internet, marketing, smartphone, software, meeting.
 - Exclude transparent/basic cognates such as "importante", "normal", "general", "social", or direct equivalents.
@@ -422,7 +445,7 @@ Rules:
 - Keep words exactly as they appear in the story.
 - Definitions must be in English, 8-18 words, pedagogical and contextual.
 - Return ONLY valid JSON array:
-[{"word":"...","definition":"...","type":"verb|noun|adjective|adverb|expression"}]
+[{"word":"...","definition":"...","type":"verb|noun|adjective|adverb|expression|slang"}]
 
 Story text:
 ${text.slice(0, 9000)}
@@ -510,7 +533,8 @@ Words to wrap:
 <span class='vocab-word' data-word='original-word'>original-word</span>.
 - The amount of wrapped items MUST be exactly the same as the vocab list size.
 - Single words are preferred.
-- Multi-word items are allowed ONLY if they are short lexicalized expressions, discourse markers, or idioms.
+- Multi-word items are allowed ONLY if they are short lexicalized expressions or idioms.
+- Any multi-word item MUST use type "expression".
 - Good examples: "de repente", "por fin", "al menos".
 - Bad examples: "con cada ensayo", "buenos momentos", "manos temblando", "sazonar correctamente", "mostrar lo que somos".
 - Prioritize ${focus.toLowerCase()} when choosing words and expressions to wrap.
@@ -527,12 +551,15 @@ Narrative quality rules:
 - Include realistic dialogue and specific details (places, constraints, consequences).
 - Keep the story for adult learners: natural, grounded, and emotionally believable.
 - Keep title short and specific (max 7 words), avoid clichés like "The Mystery of..." unless truly justified.
+- Length target: ${TARGET_STORY_WORDS_MIN}-${TARGET_STORY_WORDS_MAX} words.
+- Absolute minimum: ${MIN_STORY_WORDS} words.
+- Hard maximum: ${HARD_STORY_WORDS_MAX} words.
 
 Return ONLY valid JSON:
 {
   "title": "string",
   "text": "string",
-  "vocab": [{ "word": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression" }]
+  "vocab": [{ "word": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang" }]
 }
 `;
 
@@ -573,14 +600,25 @@ Return ONLY valid JSON:
       if (!isValidStoryJSON(parsed)) continue;
 
       const candidate = parsed as StoryJSON;
+      const normalizedCandidateText = normalizeStoryHtml(candidate.text);
+      const boundedCandidateText =
+        countStoryWords(normalizedCandidateText) > HARD_STORY_WORDS_MAX
+          ? truncateToWordLimit(normalizedCandidateText, HARD_STORY_WORDS_MAX)
+          : normalizedCandidateText;
+
+      if (countStoryWords(boundedCandidateText) < MIN_STORY_WORDS) {
+        previousFeedback = `Story is below the minimum length of ${MIN_STORY_WORDS} words.`;
+        continue;
+      }
+
       const cleanedVocab = sanitizeVocab(candidate.vocab);
       const stats = analyzeVocab(cleanedVocab, language);
       if (stats.score > bestScore) {
         bestScore = stats.score;
-        bestCandidate = { ...candidate, vocab: cleanedVocab };
+        bestCandidate = { ...candidate, text: boundedCandidateText, vocab: cleanedVocab };
       }
       if (isVocabAcceptable(cleanedVocab, language)) {
-        selectedStory = { ...candidate, vocab: cleanedVocab };
+        selectedStory = { ...candidate, text: boundedCandidateText, vocab: cleanedVocab };
         break;
       }
 

@@ -7,6 +7,7 @@ import { books } from "@/data/books";
 
 const COMPLETE_RATIO = 0.95;
 const WEEKLY_GOAL_MINUTES = 60;
+const WEEKLY_GOAL_STORIES = 5;
 
 type ContinueMeta = {
   progressSec?: number;
@@ -28,6 +29,11 @@ type ContinueRow = {
   progressSec: number | null;
   audioDurationSec: number | null;
   updatedAt: Date;
+};
+
+type UserStoryRegionRow = {
+  slug: string;
+  region: string | null;
 };
 
 function toNumber(x: unknown): number | undefined {
@@ -64,6 +70,13 @@ function getStartOfWeekUtc(base = new Date()): Date {
   return d;
 }
 
+function getStartOfMonthUtc(base = new Date()): Date {
+  const d = new Date(base);
+  d.setUTCDate(1);
+  d.setUTCHours(0, 0, 0, 0);
+  return d;
+}
+
 function toUtcDayKey(date: Date): string {
   const y = date.getUTCFullYear();
   const m = `${date.getUTCMonth() + 1}`.padStart(2, "0");
@@ -88,6 +101,10 @@ function getStreakFromDates(activeDayKeys: Set<string>, now = new Date()): numbe
 function roundMinutes(seconds: number): number {
   if (!Number.isFinite(seconds) || seconds <= 0) return 0;
   return Math.round(seconds / 60);
+}
+
+function getStoryStreakFromDates(completedDayKeys: Set<string>, now = new Date()): number {
+  return getStreakFromDates(completedDayKeys, now);
 }
 
 function isMissingTableError(err: unknown): boolean {
@@ -134,6 +151,7 @@ function computeFromContinueRows(rows: ContinueRow[], weekStart: Date) {
   const progressByStory = new Map<string, number>();
   const completedStories = new Set<string>();
   const activeDayKeys = new Set<string>();
+  const completedEvents = new Map<string, Date>();
   let weeklySeconds = 0;
 
   for (const row of rows) {
@@ -144,6 +162,8 @@ function computeFromContinueRows(rows: ContinueRow[], weekStart: Date) {
     if (progress > current) progressByStory.set(key, progress);
     if (isCompleted(row.progressSec ?? undefined, row.audioDurationSec ?? undefined)) {
       completedStories.add(key);
+      const previous = completedEvents.get(key);
+      if (!previous || row.updatedAt > previous) completedEvents.set(key, row.updatedAt);
     }
     if (row.updatedAt >= weekStart) {
       weeklySeconds += progress;
@@ -151,7 +171,7 @@ function computeFromContinueRows(rows: ContinueRow[], weekStart: Date) {
   }
 
   const totalSeconds = [...progressByStory.values()].reduce((sum, v) => sum + v, 0);
-  return { totalSeconds, weeklySeconds, completedStories, activeDayKeys };
+  return { totalSeconds, weeklySeconds, completedStories, activeDayKeys, completedEvents };
 }
 
 function computeFromMetrics(rows: MetricRow[], weekStart: Date) {
@@ -160,6 +180,7 @@ function computeFromMetrics(rows: MetricRow[], weekStart: Date) {
   const bestProgress = new Map<string, number>();
   const completedStories = new Set<string>();
   const activeDayKeys = new Set<string>();
+  const completedEvents = new Map<string, Date>();
   let totalSeconds = 0;
   let weeklySeconds = 0;
 
@@ -171,11 +192,17 @@ function computeFromMetrics(rows: MetricRow[], weekStart: Date) {
     if (row.eventType === "continue_listening") {
       const meta = parseContinueMeta(row.metadata);
       progress = clampProgress(meta.progressSec, meta.audioDurationSec);
-      if (isCompleted(meta.progressSec, meta.audioDurationSec)) completedStories.add(key);
+      if (isCompleted(meta.progressSec, meta.audioDurationSec)) {
+        completedStories.add(key);
+        const previous = completedEvents.get(key);
+        if (!previous || row.createdAt > previous) completedEvents.set(key, row.createdAt);
+      }
     } else if (row.eventType === "audio_complete") {
       const duration = typeof row.value === "number" && Number.isFinite(row.value) ? row.value : 0;
       progress = Math.max(0, duration);
       completedStories.add(key);
+      const previous = completedEvents.get(key);
+      if (!previous || row.createdAt > previous) completedEvents.set(key, row.createdAt);
     } else {
       continue;
     }
@@ -192,7 +219,7 @@ function computeFromMetrics(rows: MetricRow[], weekStart: Date) {
     if (progress > best) bestProgress.set(key, progress);
   }
 
-  return { totalSeconds, weeklySeconds, completedStories, activeDayKeys };
+  return { totalSeconds, weeklySeconds, completedStories, activeDayKeys, completedEvents };
 }
 
 export async function GET(req: NextRequest): Promise<Response> {
@@ -203,8 +230,9 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   try {
     const weekStart = getStartOfWeekUtc();
+    const monthStart = getStartOfMonthUtc();
 
-    const [metrics, continueRows, libraryBooks, favoritesCount] = await Promise.all([
+    const [metrics, continueRows, libraryBooks, favoritesCount, publicUserStories] = await Promise.all([
       safeQuery(
         "userMetric",
         prisma.userMetric.findMany({
@@ -254,6 +282,17 @@ export async function GET(req: NextRequest): Promise<Response> {
         }),
         0
       ),
+      safeQuery(
+        "userStory",
+        prisma.userStory.findMany({
+          where: { userId },
+          select: {
+            slug: true,
+            region: true,
+          },
+        }),
+        [] as UserStoryRegionRow[]
+      ),
     ]);
 
     const metricsComputed = computeFromMetrics(metrics, weekStart);
@@ -272,13 +311,21 @@ export async function GET(req: NextRequest): Promise<Response> {
       ...metricsComputed.completedStories,
       ...continueComputed.completedStories,
     ]);
+    const completionEvents = new Map<string, Date>([
+      ...metricsComputed.completedEvents,
+      ...continueComputed.completedEvents,
+    ]);
     const activeDayKeys = new Set<string>([
       ...metricsComputed.activeDayKeys,
       ...continueComputed.activeDayKeys,
     ]);
+    const completionDayKeys = new Set(
+      [...completionEvents.values()].map((date) => toUtcDayKey(date))
+    );
 
     const bookById = new Map(Object.values(books).map((b) => [b.id, b] as const));
     let finishedBooks = 0;
+    const exploredRegions = new Set<string>();
     for (const lb of libraryBooks) {
       const bookMeta = bookById.get(lb.bookId);
       if (!bookMeta) continue;
@@ -290,7 +337,21 @@ export async function GET(req: NextRequest): Promise<Response> {
       if (allCompleted) finishedBooks += 1;
     }
 
-    const streakDays = getStreakFromDates(activeDayKeys);
+    for (const key of completedStories) {
+      const [bookSlug, storySlug] = key.split(":");
+      if (bookSlug) {
+        const matchedBook = Object.values(books).find((book) => book.slug === bookSlug);
+        if (matchedBook?.region) exploredRegions.add(String(matchedBook.region));
+        continue;
+      }
+      const matchedStory = publicUserStories.find((story) => story.slug === storySlug);
+      if (matchedStory?.region) exploredRegions.add(String(matchedStory.region));
+    }
+
+    const weeklyStoriesFinished = [...completionEvents.values()].filter((date) => date >= weekStart).length;
+    const monthlyStoriesFinished = [...completionEvents.values()].filter((date) => date >= monthStart).length;
+    const storyStreakDays = getStoryStreakFromDates(completionDayKeys);
+    const streakDays = Math.max(getStreakFromDates(activeDayKeys), storyStreakDays);
 
     return NextResponse.json({
       minutesListened: roundMinutes(totalListeningSec),
@@ -299,6 +360,11 @@ export async function GET(req: NextRequest): Promise<Response> {
       wordsLearned: favoritesCount,
       weeklyGoalMinutes: WEEKLY_GOAL_MINUTES,
       weeklyMinutesListened: roundMinutes(weeklyListeningSec),
+      weeklyGoalStories: WEEKLY_GOAL_STORIES,
+      weeklyStoriesFinished,
+      monthlyStoriesFinished,
+      storyStreakDays,
+      regionsExplored: exploredRegions.size,
       streakDays,
     });
   } catch (err) {
