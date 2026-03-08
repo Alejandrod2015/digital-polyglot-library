@@ -223,8 +223,14 @@ export default function MobileMenu() {
                 <Link href="/privacy" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
                   Privacy
                 </Link>
+                <Link href="/cookies" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
+                  Cookies
+                </Link>
                 <Link href="/terms" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
                   Terms
+                </Link>
+                <Link href="/data-deletion" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
+                  Data deletion
                 </Link>
               </div>
             </div>

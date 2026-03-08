@@ -240,6 +240,26 @@ export default function Sidebar({ onClose }: SidebarProps) {
             </button>
           </SignOutButton>
         </SignedIn>
+
+        <div className="border-t border-[var(--nav-border)] pt-3 text-[11px] text-[var(--nav-text-muted)]/80">
+          <div className="flex flex-wrap gap-x-3 gap-y-1">
+            <Link href="/impressum" onClick={handleNavClick} className="hover:text-[var(--nav-text)]">
+              Impressum
+            </Link>
+            <Link href="/privacy" onClick={handleNavClick} className="hover:text-[var(--nav-text)]">
+              Privacy
+            </Link>
+            <Link href="/cookies" onClick={handleNavClick} className="hover:text-[var(--nav-text)]">
+              Cookies
+            </Link>
+            <Link href="/terms" onClick={handleNavClick} className="hover:text-[var(--nav-text)]">
+              Terms
+            </Link>
+            <Link href="/data-deletion" onClick={handleNavClick} className="hover:text-[var(--nav-text)]">
+              Data deletion
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

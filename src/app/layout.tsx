@@ -14,7 +14,6 @@ import NavigationTimingTracker from "@/components/NavigationTimingTracker";
 import ThemeController from "@/components/ThemeController";
 import GA4Tracker from "@/components/GA4Tracker";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
-import LegalFooter from "@/components/LegalFooter";
 import { clerkAppearance } from "@/lib/clerkAppearance";
 
 export const viewport: Viewport = {
@@ -100,7 +99,6 @@ export default async function RootLayout({
           <main className={mainClassName}>
             {children}
           </main>
-          <LegalFooter />
           <CookieConsentBanner />
 
           {!isMetricsView && !isAuthFlowView ? (
