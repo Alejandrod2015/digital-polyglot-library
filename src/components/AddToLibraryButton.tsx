@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useUser, useClerk } from '@clerk/nextjs';
 import { BookmarkPlus, BookmarkCheck } from 'lucide-react';
 import { clerkAppearance } from '../lib/clerkAppearance';
+import { books } from '@/data/books';
+import { removeOfflineBook, saveOfflineBook } from '@/lib/offlineLibrary';
 
 type Props = {
   bookId: string;
@@ -91,11 +93,19 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ type: 'book', bookId }),
         });
+        await removeOfflineBook(user.id, bookId);
       } else {
         await fetch('/api/library', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ type: 'book', bookId, title, coverUrl }),
+        });
+        const bookData = books[bookId];
+        await saveOfflineBook(user.id, {
+          bookId,
+          title,
+          coverUrl,
+          bookData,
         });
       }
     } catch (err) {

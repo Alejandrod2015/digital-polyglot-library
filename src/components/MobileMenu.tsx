@@ -215,7 +215,25 @@ export default function MobileMenu() {
               <MessageSquare size={22} />
               <span>Feedback</span>
             </button>
-
+            <div className="pt-2 text-center text-[11px] text-[var(--nav-text-muted)]/80">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                <Link href="/impressum" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
+                  Impressum
+                </Link>
+                <Link href="/privacy" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
+                  Privacy
+                </Link>
+                <Link href="/cookies" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
+                  Cookies
+                </Link>
+                <Link href="/terms" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
+                  Terms
+                </Link>
+                <Link href="/data-deletion" onClick={() => setOpen(false)} className="hover:text-[var(--nav-text)]">
+                  Data deletion
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

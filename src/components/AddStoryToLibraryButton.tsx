@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import { useUser, useClerk } from '@clerk/nextjs';
 import { BookmarkPlus, BookmarkCheck } from 'lucide-react';
 import { clerkAppearance } from '../lib/clerkAppearance';
+import { books } from '@/data/books';
+import { removeOfflineStory, saveOfflineStory } from '@/lib/offlineLibrary';
 
 
 type Props = {
@@ -108,11 +110,28 @@ export default function AddStoryToLibraryButton({
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({ type: 'story', storyId }),
        });
+       await removeOfflineStory(user.id, storyId);
      } else {
        await fetch('/api/library', {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({ type: 'story', storyId, bookId, title, coverUrl }),
+       });
+       const book = books[bookId];
+       const story = book?.stories.find((item) => item.id === storyId);
+       await saveOfflineStory(user.id, {
+         storyId,
+         bookId,
+         title,
+         coverUrl,
+         storySlug: story?.slug,
+         bookSlug: book?.slug,
+         language: story?.language ?? book?.language,
+         region: story?.region ?? book?.region,
+         level: story?.level ?? book?.level,
+         topic: story?.topic ?? (typeof book?.topic === 'string' ? book.topic : undefined),
+         audioUrl: typeof story?.audio === 'string' ? story.audio : null,
+         storyData: story,
        });
      }
    } catch (err) {
