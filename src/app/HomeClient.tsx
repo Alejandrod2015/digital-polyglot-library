@@ -32,6 +32,8 @@ type LatestStory = {
   region?: string;
   level?: string;
   coverUrl: string;
+  audioUrl?: string;
+  topic?: string;
 };
 
 type LatestPolyglotStory = {
@@ -189,7 +191,9 @@ function isCompletedFromAudio(progressSec?: number, audioDurationSec?: number): 
   return progressSec >= audioDurationSec * CONTINUE_COMPLETION_RATIO;
 }
 
-function hasAudioSource(bookSlug: string, storySlug: string): boolean {
+function hasAudioSource(bookSlug: string, storySlug: string, audioUrl?: string): boolean {
+  if (typeof audioUrl === "string" && audioUrl.trim() !== "") return true;
+  if (bookSlug === "standalone") return false;
   const bookMeta = Object.values(books).find((b) => b.slug === bookSlug);
   const storyMeta = bookMeta?.stories.find((s) => s.slug === storySlug);
   const rawSrc = typeof storyMeta?.audio === "string" ? storyMeta.audio.trim() : "";
@@ -787,6 +791,10 @@ export default function HomeClient({
   const latestStoryTopicByKey = useMemo(() => {
     const topicByKey: Record<string, string | undefined> = {};
     for (const story of storiesForHome) {
+      if (story.bookSlug === "standalone") {
+        topicByKey[`${story.bookSlug}:${story.storySlug}`] = story.topic;
+        continue;
+      }
       const bookMeta = Object.values(books).find((b) => b.slug === story.bookSlug);
       const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
       topicByKey[`${story.bookSlug}:${story.storySlug}`] = storyMeta?.topic ?? bookMeta?.topic;
@@ -1012,7 +1020,7 @@ export default function HomeClient({
       const key = `${story.bookSlug}:${story.storySlug}`;
       return (
         !(typeof latestStoryDurations[key] === "number" && latestStoryDurations[key] > 0) &&
-        hasAudioSource(story.bookSlug, story.storySlug)
+        hasAudioSource(story.bookSlug, story.storySlug, story.audioUrl)
       );
     });
     if (unresolved.length === 0) return;
@@ -1022,6 +1030,40 @@ export default function HomeClient({
     const loadDuration = (story: LatestStory) =>
       new Promise<{ key: string; durationSec?: number }>((resolve) => {
         const key = `${story.bookSlug}:${story.storySlug}`;
+        if (story.bookSlug === "standalone") {
+          const rawSrc = typeof story.audioUrl === "string" ? story.audioUrl.trim() : "";
+          if (!rawSrc) {
+            resolve({ key });
+            return;
+          }
+
+          const audio = new Audio();
+          audio.preload = "metadata";
+
+          const done = (durationSec?: number) => {
+            audio.removeAttribute("src");
+            audio.load();
+            resolve({ key, durationSec });
+          };
+
+          const timeout = window.setTimeout(() => done(undefined), 6000);
+          audio.onloadedmetadata = () => {
+            window.clearTimeout(timeout);
+            const duration =
+              Number.isFinite(audio.duration) && audio.duration > 0
+                ? Math.round(audio.duration)
+                : undefined;
+            done(duration);
+          };
+          audio.onerror = () => {
+            window.clearTimeout(timeout);
+            done(undefined);
+          };
+
+          audio.src = rawSrc;
+          return;
+        }
+
         const bookMeta = Object.values(books).find((b) => b.slug === story.bookSlug);
         const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
         const rawSrc = storyMeta?.audio;
@@ -1539,7 +1581,11 @@ export default function HomeClient({
               return (
               <Link
                 key={`${s.bookSlug}:${s.storySlug}`}
-                href={withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`)}
+                href={
+                  s.bookSlug === "standalone"
+                    ? withReturnContext(`/stories/${s.storySlug}`)
+                    : withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`)
+                }
                 className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
               >
                 <div className="w-full h-48 bg-[color:var(--surface)]">

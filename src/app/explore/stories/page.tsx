@@ -3,9 +3,10 @@ import { books } from "@/data/books";
 import { currentUser } from "@clerk/nextjs/server";
 import type { Book, Story } from "@/types/books";
 import ExploreStoryCardsClient from "@/components/ExploreStoryCardsClient";
+import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
 
 type ExploreStoriesPageProps = {
-  searchParams: Promise<{ topic?: string }>;
+  searchParams: Promise<{ topic?: string; language?: string; region?: string }>;
 };
 
 type StoryItem = {
@@ -119,8 +120,10 @@ function extractStories(): StoryItem[] {
 }
 
 export default async function ExploreStoriesPage({ searchParams }: ExploreStoriesPageProps) {
-  const { topic } = await searchParams;
+  const { topic, language, region } = await searchParams;
   const topicKey = normalizeTopicKey(topic ?? "");
+  const languageKey = normalizeTopicKey(language ?? "");
+  const regionKey = normalizeTopicKey(region ?? "");
 
   const user = await currentUser();
   const targetLanguagesUnknown = (user?.publicMetadata?.targetLanguages as unknown) ?? [];
@@ -129,15 +132,38 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
       ? new Set(targetLanguagesUnknown.map((l) => l.toLowerCase()))
       : null;
 
-  const allStories = extractStories();
+  const standaloneStories = await getPublishedStandaloneStories();
+  const allStories = [
+    ...extractStories(),
+    ...standaloneStories.map((story) => ({
+      id: `standalone:${story.id}`,
+      bookSlug: "standalone",
+      bookTitle: "Standalone Stories",
+      storySlug: story.slug,
+      storyTitle: story.title || "Untitled story",
+      language: story.language ?? "",
+      region: story.region ?? undefined,
+      level: story.level ?? "",
+      coverUrl: story.coverUrl?.trim() ? story.coverUrl : "/covers/default.jpg",
+      audioSrc: story.audioUrl ?? undefined,
+      topic: story.topic ?? undefined,
+      topics: [...toTopicList(story.topic), ...toTopicList(story.theme)],
+    })),
+  ];
   const filteredByLanguage = targetLanguages
     ? allStories.filter((s) => targetLanguages.has((s.language ?? "").toLowerCase()))
     : allStories;
+  const languageFilteredStories = languageKey
+    ? filteredByLanguage.filter((s) => normalizeTopicKey(s.language ?? "") === languageKey)
+    : filteredByLanguage;
+  const regionFilteredStories = regionKey
+    ? languageFilteredStories.filter((s) => normalizeTopicKey(s.region ?? "") === regionKey)
+    : languageFilteredStories;
   const filteredStories = topicKey
-    ? filteredByLanguage.filter((s) =>
+    ? regionFilteredStories.filter((s) =>
         s.topics.some((t) => normalizeTopicKey(t) === topicKey)
       )
-    : filteredByLanguage;
+    : regionFilteredStories;
 
   return (
     <div className="max-w-6xl mx-auto p-8 text-[var(--foreground)]">
@@ -154,7 +180,10 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
         <ExploreStoryCardsClient
           items={filteredStories.map((story) => ({
             id: story.id,
-            href: `/books/${story.bookSlug}/${story.storySlug}?returnTo=/explore/stories&returnLabel=All%20Stories`,
+            href:
+              story.bookSlug === "standalone"
+                ? `/stories/${story.storySlug}?returnTo=/explore/stories&returnLabel=All%20Stories`
+                : `/books/${story.bookSlug}/${story.storySlug}?returnTo=/explore/stories&returnLabel=All%20Stories`,
             title: story.storyTitle,
             subtitle: story.bookTitle,
             coverUrl: story.coverUrl,

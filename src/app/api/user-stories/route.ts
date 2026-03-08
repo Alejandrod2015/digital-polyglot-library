@@ -27,6 +27,7 @@ export async function GET(req: Request) {
           topic: true,
           audioUrl: true,
           audioFilename: true,
+          audioStatus: true,
           createdAt: true,
         },
       });
@@ -84,6 +85,7 @@ export async function GET(req: Request) {
           topic: true,
           audioUrl: true,
           audioFilename: true,
+          audioStatus: true,
           createdAt: true,
         },
       });
@@ -105,6 +107,7 @@ export async function GET(req: Request) {
         level: true,
         region: true,
         audioUrl: true,
+        audioStatus: true,
         createdAt: true,
       },
     });

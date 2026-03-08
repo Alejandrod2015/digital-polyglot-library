@@ -310,14 +310,14 @@ export default function MyLibraryClient() {
    for (const item of stories) {
      const bookMeta = allBooks.find((b) => b.id === item.bookId);
      if (!bookMeta) {
-       if (item.bookId !== "polyglot" || !item.storySlug) continue;
+       if ((item.bookId !== "polyglot" && item.bookId !== "standalone") || !item.storySlug) continue;
        arr.push({
          id: item.id,
          storyId: item.storyId,
-         bookSlug: "polyglot",
+         bookSlug: item.bookId,
          storySlug: item.storySlug,
          title: item.title,
-         bookTitle: "Polyglot Stories",
+         bookTitle: item.bookId === "standalone" ? "Standalone Stories" : "Polyglot Stories",
          language: formatLanguage(item.language),
          region: item.region,
          level: formatLevel(item.level),
@@ -472,7 +472,7 @@ export default function MyLibraryClient() {
 
    const unresolved = storyItems.filter((story) => {
      const key = `${story.bookSlug}:${story.storySlug}`;
-     if (story.bookSlug === "polyglot") {
+     if (story.bookSlug === "polyglot" || story.bookSlug === "standalone") {
        const hasPolyglotAudio =
          typeof story.audioUrl === "string" && story.audioUrl.trim() !== "";
        return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0) && hasPolyglotAudio;
@@ -490,7 +490,7 @@ export default function MyLibraryClient() {
      new Promise<{ key: string; durationSec?: number }>((resolve) => {
        const key = `${story.bookSlug}:${story.storySlug}`;
        const rawSrc =
-         story.bookSlug === "polyglot"
+         story.bookSlug === "polyglot" || story.bookSlug === "standalone"
            ? story.audioUrl
            : allBooks
                .find((b) => b.slug === story.bookSlug)
@@ -771,7 +771,7 @@ export default function MyLibraryClient() {
                renderItem={(story) => (
                  <StoryVerticalCard
                    href={
-                     story.bookSlug === "polyglot"
+                     story.bookSlug === "polyglot" || story.bookSlug === "standalone"
                        ? `/stories/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
                        : `/books/${story.bookSlug}/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
                    }

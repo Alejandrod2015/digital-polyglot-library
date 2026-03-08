@@ -92,6 +92,7 @@ type ExploreSearchProps = {
     storySlug: string;
     storyTitle: string;
     language: string;
+    region?: string;
     level: string;
     coverUrl: string;
   }>;
@@ -100,6 +101,7 @@ type ExploreSearchProps = {
     slug: string;
     title: string;
     language: string;
+    region?: string;
     level: string;
     topic?: string;
     text: string;
@@ -160,7 +162,8 @@ export default function ExploreSearch({
           ? coverRaw
           : "/covers/default.jpg";
 
-      const hay = normalize([title, slug, language, level].filter(Boolean).join(" · "));
+      const region = getString(b, "region") ?? "";
+      const hay = normalize([title, slug, language, region, level].filter(Boolean).join(" · "));
       const sc = scoreMatch(hay, tokens);
       if (sc <= 0) continue;
 
@@ -170,7 +173,7 @@ export default function ExploreSearch({
           id: `book:${slug}`,
           title,
           href: withReturnContext(`/books/${slug}`),
-          subtitle: [formatLanguage(language), formatLevel(level)].join(" · "),
+          subtitle: [formatLanguage(language), region, formatLevel(level)].filter(Boolean).join(" · "),
           coverUrl,
         },
         score: sc,
@@ -186,6 +189,7 @@ export default function ExploreSearch({
           bs.bookTitle,
           bs.bookSlug,
           bs.language,
+          bs.region,
           bs.level,
         ]
           .filter(Boolean)
@@ -203,6 +207,7 @@ export default function ExploreSearch({
           subtitle: [
             bs.bookTitle || bs.bookSlug,
             formatLanguage(bs.language),
+            bs.region,
             formatLevel(bs.level),
           ]
             .filter(Boolean)
@@ -222,7 +227,7 @@ export default function ExploreSearch({
 
       const textPreview = summarize(ps.text ?? "", 90);
       const hay = normalize(
-        [ps.title, ps.slug, ps.language, ps.level, ps.topic, textPreview]
+        [ps.title, ps.slug, ps.language, ps.region, ps.level, ps.topic, textPreview]
           .filter(Boolean)
           .join(" · ")
       );
@@ -235,7 +240,7 @@ export default function ExploreSearch({
           id: `polyglot:${ps.slug}`,
           title: ps.title,
           href: withReturnContext(`/stories/${ps.slug}`),
-          subtitle: [formatLanguage(ps.language), formatLevel(ps.level)].join(" · "),
+          subtitle: [formatLanguage(ps.language), ps.region, formatLevel(ps.level)].filter(Boolean).join(" · "),
           coverUrl,
         },
         score: sc,

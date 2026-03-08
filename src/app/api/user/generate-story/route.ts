@@ -7,6 +7,14 @@ import { customAlphabet } from "nanoid";
 import { generateAndUploadCover } from "@/lib/dalle";
 import { inferTopicFromText } from "@/lib/topicClassifier";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
+import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
+import {
+  HARD_STORY_WORDS_MAX,
+  MIN_STORY_WORDS,
+  TARGET_STORY_WORDS_MAX,
+  TARGET_STORY_WORDS_MIN,
+  countStoryWords,
+} from "@/lib/storyLength";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
@@ -187,6 +195,33 @@ const SIMPLE_WORDS_BY_LANGUAGE: Record<string, Set<string>> = {
   ]),
 };
 
+const DISCOURAGED_VOCAB_BY_LANGUAGE: Record<string, Set<string>> = {
+  spanish: new Set([
+    "importante",
+    "normal",
+    "general",
+    "social",
+    "natural",
+    "especial",
+    "popular",
+    "formal",
+    "local",
+    "real",
+    "personal",
+  ]),
+  german: new Set([
+    "wichtig",
+    "normal",
+    "allgemein",
+    "sozial",
+    "naturlich",
+    "speziell",
+    "lokal",
+    "real",
+    "personlich",
+  ]),
+};
+
 function isValidStoryJSON(data: unknown): data is StoryJSON {
   return (
     typeof data === "object" &&
@@ -222,6 +257,21 @@ function normalizeStoryHtml(html: string): string {
   return withParagraphs;
 }
 
+function truncateToWordLimit(text: string, maxWords: number): string {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (words.length <= maxWords) return text.trim();
+  const sliced = words.slice(0, maxWords).join(" ").trim();
+  const lastPunctuation = Math.max(
+    sliced.lastIndexOf("."),
+    sliced.lastIndexOf("!"),
+    sliced.lastIndexOf("?")
+  );
+  if (lastPunctuation > Math.floor(sliced.length * 0.7)) {
+    return sliced.slice(0, lastPunctuation + 1).trim();
+  }
+  return `${sliced}.`;
+}
+
 function unwrapRemovedVocabSpans(text: string, wordsToRemove: Set<string>): string {
   if (wordsToRemove.size === 0) return text;
   return text.replace(
@@ -254,22 +304,6 @@ function parseModelJson(content: string): unknown {
   }
 }
 
-function normalizeToken(value: string): string {
-  return value
-    .trim()
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "");
-}
-
-function splitWordTokens(word: string): string[] {
-  return normalizeToken(word)
-    .split(/[\s\-_/]+/g)
-    .map((token) => token.trim())
-    .filter(Boolean);
-}
-
 function isUniversalAnglicism(word: string, language: string): boolean {
   if (normalizeToken(language) === "english") return false;
   const normalized = normalizeToken(word);
@@ -288,11 +322,21 @@ function isSimpleWord(word: string, language: string): boolean {
   return tokens.every((token) => simpleWords.has(token));
 }
 
+function isDiscouragedTransparentWord(word: string, language: string): boolean {
+  const languageKey = normalizeToken(language);
+  const discouraged = DISCOURAGED_VOCAB_BY_LANGUAGE[languageKey];
+  if (!discouraged) return false;
+  const tokens = splitWordTokens(word);
+  return tokens.length > 0 && tokens.every((token) => discouraged.has(token));
+}
+
 function isLikelyComplexWord(item: StoryVocabItem, language: string): boolean {
   const tokens = splitWordTokens(item.word);
   const type = normalizeToken(item.type ?? "");
   if (isUniversalAnglicism(item.word, language)) return false;
   if (isSimpleWord(item.word, language)) return false;
+  if (isDiscouragedTransparentWord(item.word, language)) return false;
+  if (isInvalidMultiwordVocab(item.word, { type: item.type })) return false;
   if (tokens.length >= 2) return true;
   if ((item.word ?? "").trim().length >= 8) return true;
   if (type === "expression") return true;
@@ -335,7 +379,11 @@ function analyzeVocab(items: StoryVocabItem[], language: string): {
       anglicismCount += 1;
       continue;
     }
-    if (isSimpleWord(item.word, language)) {
+    if (
+      isSimpleWord(item.word, language) ||
+      isDiscouragedTransparentWord(item.word, language) ||
+      isInvalidMultiwordVocab(item.word, { type: item.type })
+    ) {
       simpleCount += 1;
       continue;
     }
@@ -385,13 +433,19 @@ Context:
 
 Rules:
 - Return ONLY advanced or less frequent words/expressions useful for learners.
+- Strongly prefer short fixed expressions, nuanced verbs, and culturally grounded phrases.
+- Single words are preferred.
+- If you return more than one word, it must be a short fixed expression or idiom (usually 2-3 words).
+- Any multi-word item MUST use type "expression".
+- Never return arbitrary sentence fragments or descriptive chunks like "con cada ensayo" or "mostrar lo que somos".
 - Exclude globally known anglicisms such as internet, marketing, smartphone, software, meeting.
+- Exclude transparent/basic cognates such as "importante", "normal", "general", "social", or direct equivalents.
 - Exclude extremely basic function words and beginner vocabulary.
 - Do not repeat these existing words: ${JSON.stringify(existingWords)}.
 - Keep words exactly as they appear in the story.
 - Definitions must be in English, 8-18 words, pedagogical and contextual.
 - Return ONLY valid JSON array:
-[{"word":"...","definition":"...","type":"verb|noun|adjective|adverb|expression"}]
+[{"word":"...","definition":"...","type":"verb|noun|adjective|adverb|expression|slang"}]
 
 Story text:
 ${text.slice(0, 9000)}
@@ -412,7 +466,11 @@ ${text.slice(0, 9000)}
     const rows = Array.isArray(parsed) ? parsed : [];
     const normalized = sanitizeVocab(rows as StoryVocabItem[]);
     return normalized.filter(
-      (item) => !isUniversalAnglicism(item.word, language) && !isSimpleWord(item.word, language)
+      (item) =>
+        !isUniversalAnglicism(item.word, language) &&
+        !isSimpleWord(item.word, language) &&
+        !isDiscouragedTransparentWord(item.word, language) &&
+        !isInvalidMultiwordVocab(item.word, { type: item.type, storyText: text })
     );
   } catch (error) {
     console.warn("[vocab] fill pass failed", error);
@@ -464,6 +522,7 @@ ${resolvedTopic ? `The topic is "${resolvedTopic}".` : "Choose a concrete, moder
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
 Never return one-word literal translations.
+Never begin a definition with a direct gloss plus comma/colon, such as "To change, ..." or "Important, ...".
 Wrap each paragraph inside <blockquote> ... </blockquote>.
 
 Requirements:
@@ -473,9 +532,16 @@ Words to wrap:
 - Wrap EXACTLY ${MIN_VOCAB_ITEMS} different items that naturally fit in the story, marking only the first occurrence of each with
 <span class='vocab-word' data-word='original-word'>original-word</span>.
 - The amount of wrapped items MUST be exactly the same as the vocab list size.
+- Single words are preferred.
+- Multi-word items are allowed ONLY if they are short lexicalized expressions or idioms.
+- Any multi-word item MUST use type "expression".
+- Good examples: "de repente", "por fin", "al menos".
+- Bad examples: "con cada ensayo", "buenos momentos", "manos temblando", "sazonar correctamente", "mostrar lo que somos".
 - Prioritize ${focus.toLowerCase()} when choosing words and expressions to wrap.
 - Prefer less frequent, nuanced, and pedagogically rich items over basic beginner words.
+- Prefer useful multi-word expressions, discourse markers, nuanced verbs, and culturally grounded phrases.
 - Avoid globally known anglicisms (internet, marketing, smartphone, software, meeting, etc.) unless unavoidable.
+- Avoid transparent/basic cognates such as "importante", "normal", "general", "social", or their direct equivalents unless they are part of a fixed expression.
 - Include a strong mix of verbs, adjectives/adverbs, and multi-word expressions.
 
 Narrative quality rules:
@@ -485,12 +551,15 @@ Narrative quality rules:
 - Include realistic dialogue and specific details (places, constraints, consequences).
 - Keep the story for adult learners: natural, grounded, and emotionally believable.
 - Keep title short and specific (max 7 words), avoid clichés like "The Mystery of..." unless truly justified.
+- Length target: ${TARGET_STORY_WORDS_MIN}-${TARGET_STORY_WORDS_MAX} words.
+- Absolute minimum: ${MIN_STORY_WORDS} words.
+- Hard maximum: ${HARD_STORY_WORDS_MAX} words.
 
 Return ONLY valid JSON:
 {
   "title": "string",
   "text": "string",
-  "vocab": [{ "word": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression" }]
+  "vocab": [{ "word": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang" }]
 }
 `;
 
@@ -531,14 +600,25 @@ Return ONLY valid JSON:
       if (!isValidStoryJSON(parsed)) continue;
 
       const candidate = parsed as StoryJSON;
+      const normalizedCandidateText = normalizeStoryHtml(candidate.text);
+      const boundedCandidateText =
+        countStoryWords(normalizedCandidateText) > HARD_STORY_WORDS_MAX
+          ? truncateToWordLimit(normalizedCandidateText, HARD_STORY_WORDS_MAX)
+          : normalizedCandidateText;
+
+      if (countStoryWords(boundedCandidateText) < MIN_STORY_WORDS) {
+        previousFeedback = `Story is below the minimum length of ${MIN_STORY_WORDS} words.`;
+        continue;
+      }
+
       const cleanedVocab = sanitizeVocab(candidate.vocab);
       const stats = analyzeVocab(cleanedVocab, language);
       if (stats.score > bestScore) {
         bestScore = stats.score;
-        bestCandidate = { ...candidate, vocab: cleanedVocab };
+        bestCandidate = { ...candidate, text: boundedCandidateText, vocab: cleanedVocab };
       }
       if (isVocabAcceptable(cleanedVocab, language)) {
-        selectedStory = { ...candidate, vocab: cleanedVocab };
+        selectedStory = { ...candidate, text: boundedCandidateText, vocab: cleanedVocab };
         break;
       }
 
@@ -560,7 +640,12 @@ Return ONLY valid JSON:
 
     const disallowedKeys = new Set<string>();
     for (const item of curatedVocab) {
-      if (isUniversalAnglicism(item.word, language) || isSimpleWord(item.word, language)) {
+      if (
+        isUniversalAnglicism(item.word, language) ||
+        isSimpleWord(item.word, language) ||
+        isDiscouragedTransparentWord(item.word, language) ||
+        isInvalidMultiwordVocab(item.word, { type: item.type, storyText: normalizedText })
+      ) {
         disallowedKeys.add(normalizeToken(item.word));
       }
     }
@@ -639,6 +724,7 @@ Return ONLY valid JSON:
         slug: uniqueSlug,
         text: normalizedText,
         vocab: finalVocab,
+        audioStatus: "pending",
         language,
         region,
         level: normalizedLevel,
@@ -706,6 +792,7 @@ Return ONLY valid JSON:
         level: savedStory.level,
         focus: savedStory.focus,
         topic: savedStory.topic,
+        audioStatus: savedStory.audioStatus,
       },
     });
   } catch (error: unknown) {

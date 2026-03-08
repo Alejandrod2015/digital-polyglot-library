@@ -1,6 +1,23 @@
 // /src/lib/elevenlabs.ts
 import { sanityWriteClient } from "@/sanity";
 
+function buildAudioNarrationText(title: string, storyText: string): string {
+  const plainTitle = title.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  const plainStory = storyText.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+
+  const titleWithPause =
+    plainTitle.length === 0
+      ? ""
+      : /[.!?…:]$/.test(plainTitle)
+        ? plainTitle
+        : `${plainTitle}.`;
+
+  if (!titleWithPause) return plainStory;
+  if (!plainStory) return titleWithPause;
+
+  return `${titleWithPause}\n\n${plainStory}`;
+}
+
 export async function generateAndUploadAudio(
   storyText: string,
   title: string,
@@ -8,11 +25,8 @@ export async function generateAndUploadAudio(
   region?: string
 ): Promise<{ url: string; filename: string; assetId: string } | null> {
   try {
-    // 🔹 Limpiar etiquetas HTML para enviar texto limpio a ElevenLabs
-    const plainText = storyText
-      .replace(/<[^>]+>/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
+    // 🔹 El audio debe narrar primero el título, luego hacer una pausa y empezar la historia.
+    const narrationText = buildAudioNarrationText(title, storyText);
 
     const apiKey = process.env.ELEVENLABS_API_KEY;
     if (!apiKey) {
@@ -72,7 +86,7 @@ export async function generateAndUploadAudio(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          text: plainText,
+          text: narrationText,
           model_id: "eleven_multilingual_v2",
           voice_settings: { stability: 0.5, similarity_boost: 0.8 },
         }),
