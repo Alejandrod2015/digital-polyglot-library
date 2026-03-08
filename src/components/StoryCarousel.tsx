@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaOptionsType } from 'embla-carousel';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -28,10 +28,6 @@ export default function StoryCarousel<T>({
   centerMobile = false,
   mobileItemClassName = "w-[70%] sm:w-[55%]",
 }: CarouselProps<T>) {
-  const [isDesktop, setIsDesktop] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return window.matchMedia('(min-width: 768px)').matches;
-  });
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: 'start',
@@ -42,15 +38,6 @@ export default function StoryCarousel<T>({
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
-  // Detect viewport before paint after hydration so the carousel doesn't swap layouts visibly.
-  useLayoutEffect(() => {
-    const mql = window.matchMedia('(min-width: 768px)');
-    setIsDesktop(mql.matches);
-    const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mql.addEventListener('change', listener);
-    return () => mql.removeEventListener('change', listener);
-  }, []);
-
   const updateButtons = useCallback(() => {
     if (!emblaApi) return;
     setCanScrollPrev(emblaApi.canScrollPrev());
@@ -58,7 +45,7 @@ export default function StoryCarousel<T>({
   }, [emblaApi]);
 
   useEffect(() => {
-    if (!emblaApi || !isDesktop) return;
+    if (!emblaApi) return;
     updateButtons();
     emblaApi.on('select', updateButtons);
     emblaApi.on('reInit', updateButtons);
@@ -66,21 +53,20 @@ export default function StoryCarousel<T>({
       emblaApi.off('select', updateButtons);
       emblaApi.off('reInit', updateButtons);
     };
-  }, [emblaApi, isDesktop, updateButtons]);
+  }, [emblaApi, updateButtons]);
 
   useEffect(() => {
-    if (!emblaApi || !isDesktop) return;
+    if (!emblaApi) return;
     emblaApi.reInit();
     updateButtons();
-  }, [emblaApi, isDesktop, items.length, updateButtons]);
+  }, [emblaApi, items.length, updateButtons]);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
-  // 🔹 MOBILE → scroll nativo (permite vertical + horizontal)
-  if (!isDesktop) {
-    return (
-      <div className={cn('relative w-full flex flex-col gap-3', className)}>
+  return (
+    <div className={cn('relative w-full', className)}>
+      <div className="md:hidden">
         <div
           className={cn(
             "hide-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth",
@@ -116,51 +102,45 @@ export default function StoryCarousel<T>({
           ) : null}
         </div>
       </div>
-    );
-  }
 
-  // 🔹 DESKTOP → carrusel Embla
-  return (
-    <div className={cn('relative w-full flex items-center gap-3', className)}>
-      {/* Flecha izquierda */}
-      <button
-        type="button"
-        onClick={scrollPrev}
-        disabled={!canScrollPrev}
-        className={cn(
-          'hidden md:flex flex-shrink-0 p-2 bg-[#1B2347] rounded-full shadow-lg transition-opacity',
-          canScrollPrev ? 'opacity-100' : 'opacity-40 cursor-default'
-        )}
-      >
-        <ChevronLeft className="w-5 h-5 text-white" />
-      </button>
+      <div className="relative hidden w-full items-center gap-3 md:flex">
+        <button
+          type="button"
+          onClick={scrollPrev}
+          disabled={!canScrollPrev}
+          className={cn(
+            'flex flex-shrink-0 p-2 bg-[#1B2347] rounded-full shadow-lg transition-opacity',
+            canScrollPrev ? 'opacity-100' : 'opacity-40 cursor-default'
+          )}
+        >
+          <ChevronLeft className="w-5 h-5 text-white" />
+        </button>
 
-      <div className="overflow-hidden w-full" ref={emblaRef}>
-  <div className="flex gap-4 will-change-transform">
-    {items.map((item, i) => (
-      <div
-        key={i}
-        className="flex-shrink-0 snap-start w-[24%] transition-none"
-      >
-        {renderItem(item, i)}
+        <div className="overflow-hidden w-full" ref={emblaRef}>
+          <div className="flex gap-4 will-change-transform">
+            {items.map((item, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 snap-start w-[24%] transition-none"
+              >
+                {renderItem(item, i)}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={scrollNext}
+          disabled={!canScrollNext}
+          className={cn(
+            'flex flex-shrink-0 p-2 bg-[#1B2347] rounded-full shadow-lg transition-opacity',
+            canScrollNext ? 'opacity-100' : 'opacity-40 cursor-default'
+          )}
+        >
+          <ChevronRight className="w-5 h-5 text-white" />
+        </button>
       </div>
-    ))}
-  </div>
-</div>
-
-
-      {/* Flecha derecha */}
-      <button
-        type="button"
-        onClick={scrollNext}
-        disabled={!canScrollNext}
-        className={cn(
-          'hidden md:flex flex-shrink-0 p-2 bg-[#1B2347] rounded-full shadow-lg transition-opacity',
-          canScrollNext ? 'opacity-100' : 'opacity-40 cursor-default'
-        )}
-      >
-        <ChevronRight className="w-5 h-5 text-white" />
-      </button>
     </div>
   );
 }
