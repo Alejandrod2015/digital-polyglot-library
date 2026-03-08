@@ -138,7 +138,7 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
     ...standaloneStories.map((story) => ({
       id: `standalone:${story.id}`,
       bookSlug: "standalone",
-      bookTitle: "Standalone Stories",
+      bookTitle: "Individual Stories",
       storySlug: story.slug,
       storyTitle: story.title || "Untitled story",
       language: story.language ?? "",

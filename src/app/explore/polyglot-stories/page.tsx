@@ -108,7 +108,7 @@ export default async function ExplorePolyglotStoriesPage({
           {filteredStories.map((story) => (
             <StoryVerticalCard
               key={story.id}
-              href={`/stories/${story.slug}?returnTo=/explore/polyglot-stories&returnLabel=Independent%20Stories`}
+              href={`/stories/${story.slug}?returnTo=/explore/polyglot-stories&returnLabel=Individual%20Stories`}
               title={story.title}
               coverUrl={story.coverUrl}
               level={story.level}

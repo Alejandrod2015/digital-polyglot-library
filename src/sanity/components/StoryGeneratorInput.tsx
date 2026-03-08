@@ -10,10 +10,26 @@ type GenPayload = {
   text: string
 }
 
+type VocabItem = {
+  word: string
+  definition: string
+  type?: string
+}
+
 function isGenPayload(x: unknown): x is GenPayload {
   if (typeof x !== 'object' || x === null) return false
   const obj = x as Record<string, unknown>
   return typeof obj.title === 'string' && typeof obj.text === 'string'
+}
+
+function isVocabItem(value: unknown): value is VocabItem {
+  if (!value || typeof value !== 'object') return false
+  const row = value as Record<string, unknown>
+  return typeof row.word === 'string' && typeof row.definition === 'string'
+}
+
+function stripHtml(text: string): string {
+  return text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
 }
 
 export default function StoryGeneratorInput() {
@@ -25,6 +41,7 @@ export default function StoryGeneratorInput() {
   const focus = useFormValue(['focus']) as string | undefined
   const topic = useFormValue(['topic']) as string | undefined
   const synopsis = useFormValue(['synopsis']) as string | undefined
+  const text = useFormValue(['text']) as string | undefined
 
   // ✅ Detección automática del campo regional según idioma
   const regionKeyByLang = {
@@ -46,6 +63,7 @@ export default function StoryGeneratorInput() {
   const [loading, setLoading] = useState(false)
   const [synopsisLoading, setSynopsisLoading] = useState(false)
   const [titleLoading, setTitleLoading] = useState(false)
+  const [assetsLoading, setAssetsLoading] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const apiBase =
@@ -284,6 +302,139 @@ export default function StoryGeneratorInput() {
     }
   }
 
+  async function generateAssets() {
+    try {
+      setAssetsLoading(true)
+      setMsg(null)
+      setError(null)
+
+      if (!formId) {
+        throw new Error('Save the draft once before generating assets.')
+      }
+
+      const cleanTitle = currentTitle?.trim() ?? ''
+      const cleanStoryText = stripHtml(text ?? '')
+      const cleanSynopsis = synopsis?.trim() || cleanStoryText
+
+      if (!cleanTitle) {
+        throw new Error('Add a title before generating assets.')
+      }
+      if (!cleanStoryText) {
+        throw new Error('Generate or add story text before generating assets.')
+      }
+      if (!cleanSynopsis) {
+        throw new Error('Add a synopsis or story text before generating assets.')
+      }
+
+      const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
+
+      const vocabTask = (async () => {
+        const res = await fetch(`${apiBase}/api/generate-vocab`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            text: cleanStoryText,
+            language: language ?? 'spanish',
+            level: level ?? 'intermediate',
+            focus: focus ?? 'verbs',
+            topic: topic ?? '',
+          }),
+        })
+
+        const raw = await res.text()
+        let payload: { vocab?: unknown; error?: string; details?: string } = {}
+        try {
+          payload = raw ? (JSON.parse(raw) as typeof payload) : {}
+        } catch {
+          throw new Error(`Vocabulary: unexpected response ${raw.slice(0, 120)}`)
+        }
+        if (!res.ok) {
+          throw new Error(payload.error || payload.details || 'Vocabulary generation failed.')
+        }
+
+        const rows = Array.isArray(payload.vocab) ? payload.vocab.filter(isVocabItem) : []
+        if (rows.length === 0) {
+          throw new Error('Vocabulary: no usable items returned.')
+        }
+
+        await client.patch(targetId).set({ vocabRaw: JSON.stringify(rows, null, 2) }).commit()
+        return `Vocabulary (${rows.length})`
+      })()
+
+      const coverTask = (async () => {
+        const res = await fetch(`${apiBase}/api/sanity/generate-cover`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            provider: 'flux',
+            documentId: formId,
+            title: cleanTitle,
+            synopsis: cleanSynopsis,
+            language: typeof language === 'string' ? language : '',
+            region: typeof region === 'string' ? region : '',
+            topic: typeof topic === 'string' ? topic : '',
+            level: typeof level === 'string' ? level : '',
+          }),
+        })
+
+        let data: { error?: string; details?: string } = {}
+        try {
+          data = (await res.json()) as { error?: string; details?: string }
+        } catch {
+          throw new Error('Cover: server did not return valid JSON.')
+        }
+        if (!res.ok) {
+          throw new Error(data.error || data.details || 'Cover generation failed.')
+        }
+        return 'Cover (Flux)'
+      })()
+
+      const audioTask = (async () => {
+        const res = await fetch(`${apiBase}/api/sanity/generate-audio`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            documentId: formId,
+            title: cleanTitle,
+            text: text?.trim() ?? '',
+            language: typeof language === 'string' ? language : '',
+            region: typeof region === 'string' ? region : '',
+          }),
+        })
+
+        let data: { error?: string; details?: string } = {}
+        try {
+          data = (await res.json()) as { error?: string; details?: string }
+        } catch {
+          throw new Error('Audio: server did not return valid JSON.')
+        }
+        if (!res.ok) {
+          throw new Error(data.error || data.details || 'Audio generation failed.')
+        }
+        return 'Audio'
+      })()
+
+      const results = await Promise.allSettled([vocabTask, coverTask, audioTask])
+      const successes = results
+        .filter((result): result is PromiseFulfilledResult<string> => result.status === 'fulfilled')
+        .map((result) => result.value)
+      const failures = results
+        .filter((result): result is PromiseRejectedResult => result.status === 'rejected')
+        .map((result) => result.reason instanceof Error ? result.reason.message : String(result.reason))
+
+      if (successes.length > 0) {
+        setMsg(`✓ Generated: ${successes.join(', ')}${failures.length > 0 ? `. Failed: ${failures.join(' · ')}` : '.'}`)
+      } else {
+        throw new Error(failures.join(' · ') || 'Asset generation failed.')
+      }
+    } catch (err) {
+      const e = err as Error
+      setError(e.message)
+    } finally {
+      setAssetsLoading(false)
+    }
+  }
+
   return (
     <Stack space={3}>
       <Card padding={3}>
@@ -292,31 +443,40 @@ export default function StoryGeneratorInput() {
             icon={SparklesIcon}
             text={titleLoading ? 'Generating title...' : 'Generate Title'}
             mode="ghost"
-            disabled={loading || synopsisLoading || titleLoading}
+            disabled={loading || synopsisLoading || titleLoading || assetsLoading}
             onClick={() => generateTitle()}
           />
           <Button
             icon={SparklesIcon}
             text={synopsisLoading ? 'Generating synopsis...' : 'Generate Synopsis'}
             mode="ghost"
-            disabled={loading || synopsisLoading || titleLoading}
+            disabled={loading || synopsisLoading || titleLoading || assetsLoading}
             onClick={() => generateSynopsis()}
           />
           <Button
             icon={SparklesIcon}
             text={loading ? 'Generating...' : 'Generate Story'}
             tone="primary"
-            disabled={loading || synopsisLoading || titleLoading}
+            disabled={loading || synopsisLoading || titleLoading || assetsLoading}
             onClick={() => generateStory()}
+          />
+          <Button
+            icon={SparklesIcon}
+            text={assetsLoading ? 'Generating assets...' : 'Generate Assets (Vocabulary + Cover + Audio)'}
+            tone="positive"
+            disabled={loading || synopsisLoading || titleLoading || assetsLoading}
+            onClick={() => void generateAssets()}
           />
         </Flex>
       </Card>
 
-      {(loading || synopsisLoading || titleLoading) && (
+      {(loading || synopsisLoading || titleLoading || assetsLoading) && (
         <Card padding={3}>
           <Spinner muted />{" "}
           <Text>
-            {titleLoading
+            {assetsLoading
+              ? 'Generating vocabulary, cover, and audio in parallel...'
+              : titleLoading
               ? 'Generating title...'
               : synopsisLoading
                 ? 'Generating synopsis...'

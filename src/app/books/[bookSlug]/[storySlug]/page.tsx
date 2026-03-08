@@ -1,5 +1,6 @@
 import { books } from "@/data/books";
 import VocabPanel from "@/components/VocabPanel";
+import Image from "next/image";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import Player from "@/components/Player";
 import StoryAccessInfo from "./StoryAccessInfo";
@@ -64,8 +65,11 @@ export default async function StoryPage({ params }: StoryPageProps) {
   const rawCover = story.cover ?? book.cover ?? "/covers/default.jpg";
 
   const storyCoverUrl = storyCover?.startsWith("https://cdn.sanity.io/")
-    ? `${storyCover}?w=1200&fit=crop&auto=format`
+    ? `${storyCover}?auto=format`
     : storyCover;
+  const storyCoverBlurUrl = storyCover?.startsWith("https://cdn.sanity.io/")
+    ? `${storyCover}?w=160&blur=40&auto=format`
+    : storyCoverUrl;
   const coverUrl = rawCover.startsWith("https://cdn.sanity.io/")
     ? `${rawCover}?w=800&fit=crop&auto=format`
     : rawCover;
@@ -100,32 +104,45 @@ export default async function StoryPage({ params }: StoryPageProps) {
       {/* Cover de historia (solo si existe) */}
       {storyCoverUrl ? (
         <div className="mb-7">
-          <div className="mx-auto w-full max-w-3xl md:hidden overflow-hidden rounded-2xl border border-white/10 bg-[#102746]">
-            <img
-              src={storyCoverUrl}
-              alt={story.title}
-              className="block w-full h-auto object-contain"
-            />
-          </div>
-          <div className="relative mx-auto hidden w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-[#102746] md:block h-[220px] lg:h-[240px]">
-            <img
-              src={storyCoverUrl}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-65"
-            />
+          <div className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-[#102746] md:h-[220px] lg:h-[240px]">
+            <div className="relative w-full md:hidden aspect-[16/10]">
+              <Image
+                src={storyCoverUrl}
+                alt={story.title}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 0px"
+                className="object-contain"
+              />
+            </div>
+            <div className="absolute inset-0 hidden md:block">
+              <Image
+                src={storyCoverBlurUrl ?? storyCoverUrl}
+                alt=""
+                aria-hidden="true"
+                fill
+                priority
+                sizes="(max-width: 1024px) 896px, 960px"
+                className="object-cover scale-110 blur-2xl opacity-65"
+              />
+            </div>
             <div
-              className="absolute inset-0"
+              className="absolute inset-0 hidden md:block"
               style={{
                 background:
                   "linear-gradient(180deg, color-mix(in srgb, var(--bg-content) 16%, transparent) 0%, color-mix(in srgb, var(--bg-content) 54%, transparent) 100%)",
               }}
             />
-            <img
-              src={storyCoverUrl}
-              alt={story.title}
-              className="relative z-10 block w-full h-full object-contain"
-            />
+            <div className="relative z-10 hidden h-full w-full md:block">
+              <Image
+                src={storyCoverUrl}
+                alt={story.title}
+                fill
+                priority
+                sizes="(max-width: 1024px) 896px, 960px"
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       ) : null}
