@@ -16,7 +16,40 @@ export function toTitleCase(value?: string, fallback = FALLBACK): string {
 }
 
 export function formatLanguage(value?: string): string {
-  return toTitleCase(value);
+  if (!value) return FALLBACK;
+  const normalized = normalizeWhitespace(value).toLowerCase();
+
+  const table: Record<string, string> = {
+    english: "English",
+    ingles: "English",
+    "inglés": "English",
+    spanish: "Spanish",
+    espanol: "Spanish",
+    "español": "Spanish",
+    french: "French",
+    frances: "French",
+    "francés": "French",
+    german: "German",
+    aleman: "German",
+    "alemán": "German",
+    italian: "Italian",
+    italiano: "Italian",
+    portuguese: "Portuguese",
+    portugues: "Portuguese",
+    "portugués": "Portuguese",
+    japanese: "Japanese",
+    japones: "Japanese",
+    "japonés": "Japanese",
+    korean: "Korean",
+    chinese: "Chinese",
+    russian: "Russian",
+    arabic: "Arabic",
+    dutch: "Dutch",
+    polish: "Polish",
+    turkish: "Turkish",
+  };
+
+  return table[normalized] ?? toTitleCase(value);
 }
 
 export function formatLanguageCode(value?: string): string {

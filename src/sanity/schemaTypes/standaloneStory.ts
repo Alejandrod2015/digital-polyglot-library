@@ -269,9 +269,6 @@ export const standaloneStory = defineType({
           if (typeof value !== "string" || value.trim() === "") {
             return "Main Text is required.";
           }
-          if (value.length > MAX_TEXT_CHARS) {
-            return `Main Text is too long (max ${MAX_TEXT_CHARS} characters).`;
-          }
           if (countWords(value) < MIN_TEXT_WORDS) {
             return `Main Text is too short for ~2 minutes of audio (min ${MIN_TEXT_WORDS} words).`;
           }

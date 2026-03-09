@@ -13,13 +13,15 @@ import {
   ChevronUp,
 } from "lucide-react";
 
-// ✅ nuevo helper para tracking
+const TRACKED_PLAYER_EVENTS = new Set(["audio_play", "audio_complete"]);
+
 async function trackMetric(
   storySlug: string,
   bookSlug: string,
   eventType: string,
   value?: number
 ) {
+  if (!TRACKED_PLAYER_EVENTS.has(eventType)) return;
   try {
     await fetch("/api/metrics", {
       method: "POST",
@@ -270,7 +272,7 @@ export default function Player({
   // ✅ tracking: carga de audio
   useEffect(() => {
     if (!hasPlayableAudio) return;
-    void trackMetric(storySlug, bookSlug, "audio_load");
+    // Skip noisy load tracking on Hobby.
   }, [hasPlayableAudio, storySlug, bookSlug]);
 
   useEffect(() => {
@@ -415,7 +417,6 @@ export default function Player({
       );
       setIsPlaying(false);
       void releaseWakeLock();
-      await trackMetric(storySlug, bookSlug, "audio_pause", progress);
     } else {
       a.play()
         .then(async () => {
@@ -450,7 +451,6 @@ export default function Player({
       audioRef.current.playbackRate = v;
       setSpeed(v);
       setShowSpeedMenu(false);
-      void trackMetric(storySlug, bookSlug, "speed_change", v);
     }
   };
 
@@ -460,7 +460,6 @@ export default function Player({
       const newTime = Number(e.target.value);
       audioRef.current.currentTime = newTime;
       setProgress(newTime);
-      void trackMetric(storySlug, bookSlug, "seek", newTime);
     }
   };
 

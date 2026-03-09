@@ -49,3 +49,12 @@ export function canAccessFeaturedStory(opts: {
 
   return false;
 }
+
+export function canUseOfflineAccess(plan: Plan): boolean {
+  return (
+    plan === "basic" ||
+    plan === "premium" ||
+    plan === "polyglot" ||
+    plan === "owner"
+  );
+}

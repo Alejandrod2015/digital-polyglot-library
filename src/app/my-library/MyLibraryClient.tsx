@@ -10,6 +10,7 @@ import BookHorizontalCard from "@/components/BookHorizontalCard";
 import StoryVerticalCard from "@/components/StoryVerticalCard";
 import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
+import { canUseOfflineAccess, type Plan } from "@/lib/access";
 import {
   listOfflineBooks,
   listOfflineStories,
@@ -88,6 +89,8 @@ function normalizeMatch(value?: string | null): string {
 
 export default function MyLibraryClient() {
  const { user, isLoaded } = useUser();
+ const plan: Plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
+ const hasOfflineAccess = canUseOfflineAccess(plan);
  const [booksList, setBooksList] = useState<LibraryBook[]>([]);
  const [stories, setStories] = useState<LibraryStory[]>([]);
  const [loading, setLoading] = useState(true);
@@ -110,8 +113,8 @@ export default function MyLibraryClient() {
        return;
      }
 
-     const offlineBooks = await listOfflineBooks(user.id);
-     const offlineStories = await listOfflineStories(user.id);
+     const offlineBooks = hasOfflineAccess ? await listOfflineBooks(user.id) : [];
+     const offlineStories = hasOfflineAccess ? await listOfflineStories(user.id) : [];
 
      if (offlineBooks.length > 0) {
        setBooksList(
@@ -165,17 +168,19 @@ export default function MyLibraryClient() {
                typeof (b as LibraryBook).coverUrl === "string"
            );
          setBooksList(normalizedBooks);
-         await Promise.all(
-           normalizedBooks.map(async (item) => {
-             const bookMeta = allBooks.find((book) => book.id === item.bookId);
-             await saveOfflineBook(user.id, {
-               bookId: item.bookId,
-               title: item.title,
-               coverUrl: item.coverUrl,
-               bookData: bookMeta,
-             });
-           })
-         );
+         if (hasOfflineAccess) {
+           await Promise.all(
+             normalizedBooks.map(async (item) => {
+               const bookMeta = allBooks.find((book) => book.id === item.bookId);
+               await saveOfflineBook(user.id, {
+                 bookId: item.bookId,
+                 title: item.title,
+                 coverUrl: item.coverUrl,
+                 bookData: bookMeta,
+               });
+             })
+           );
+         }
        }
 
 
@@ -191,31 +196,33 @@ export default function MyLibraryClient() {
                typeof (s as LibraryStory).coverUrl === "string"
            );
          setStories(normalizedStories);
-         await Promise.all(
-           normalizedStories.map(async (item) => {
-             const bookMeta = allBooks.find((book) => book.id === item.bookId);
-             const storyMeta = bookMeta?.stories.find((story) => story.id === item.storyId);
-             await saveOfflineStory(user.id, {
-               storyId: item.storyId,
-               bookId: item.bookId,
-               title: item.title,
-               coverUrl: item.coverUrl,
-               storySlug: item.storySlug ?? storyMeta?.slug,
-               bookSlug: bookMeta?.slug,
-               language: item.language ?? storyMeta?.language ?? bookMeta?.language,
-               region: item.region ?? storyMeta?.region ?? bookMeta?.region,
-               level: item.level ?? storyMeta?.level ?? bookMeta?.level,
-               topic:
-                 item.topic ??
-                 storyMeta?.topic ??
-                 (typeof bookMeta?.topic === "string" ? bookMeta.topic : undefined),
-               audioUrl:
-                 item.audioUrl ??
-                 (typeof storyMeta?.audio === "string" ? storyMeta.audio : null),
-               storyData: storyMeta,
-             });
-           })
-         );
+         if (hasOfflineAccess) {
+           await Promise.all(
+             normalizedStories.map(async (item) => {
+               const bookMeta = allBooks.find((book) => book.id === item.bookId);
+               const storyMeta = bookMeta?.stories.find((story) => story.id === item.storyId);
+               await saveOfflineStory(user.id, {
+                 storyId: item.storyId,
+                 bookId: item.bookId,
+                 title: item.title,
+                 coverUrl: item.coverUrl,
+                 storySlug: item.storySlug ?? storyMeta?.slug,
+                 bookSlug: bookMeta?.slug,
+                 language: item.language ?? storyMeta?.language ?? bookMeta?.language,
+                 region: item.region ?? storyMeta?.region ?? bookMeta?.region,
+                 level: item.level ?? storyMeta?.level ?? bookMeta?.level,
+                 topic:
+                   item.topic ??
+                   storyMeta?.topic ??
+                   (typeof bookMeta?.topic === "string" ? bookMeta.topic : undefined),
+                 audioUrl:
+                   item.audioUrl ??
+                   (typeof storyMeta?.audio === "string" ? storyMeta.audio : null),
+                 storyData: storyMeta,
+               });
+             })
+           );
+         }
        }
      } catch {
        if (offlineBooks.length === 0) setBooksList([]);
@@ -227,7 +234,7 @@ export default function MyLibraryClient() {
 
 
    void load();
- }, [user, isLoaded, allBooks]);
+ }, [user, isLoaded, allBooks, hasOfflineAccess]);
 
 
  // ------------------------------

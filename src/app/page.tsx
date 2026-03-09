@@ -219,6 +219,7 @@ export default async function HomePage() {
       initialPlan={initialPlan}
       initialTargetLanguages={initialTargetLanguages}
       initialInterests={initialInterests}
+      initialHasUser={Boolean(userId)}
       initialContinueListening={continueRows.map((row) => ({
         bookSlug: row.bookSlug,
         storySlug: row.storySlug,

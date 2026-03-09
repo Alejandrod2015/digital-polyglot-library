@@ -12,7 +12,7 @@ import { useUser } from "@clerk/nextjs";
 import { useEffect, useMemo, useState } from "react";
 import ExploreSearch from "@/components/ExploreSearch";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { formatTopic } from "@/lib/displayFormat";
+import { formatLanguage, formatTopic } from "@/lib/displayFormat";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
 
 const formatAudioDuration = (totalSeconds?: number) => {
@@ -219,12 +219,20 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   const topicFromUrl = searchParams.get("topic") ?? "";
   const selectedTopicKey = normalizeTopicKey(topicFromUrl);
   const languageFromUrl = searchParams.get("language") ?? "";
-  const selectedLanguageKey = normalizeTopicKey(languageFromUrl);
   const regionFromUrl = searchParams.get("region") ?? "";
-  const selectedRegionKey = normalizeTopicKey(regionFromUrl);
 
   const rawTargetLanguages = user?.publicMetadata?.targetLanguages as unknown;
   const targetLanguages = useMemo(() => rawTargetLanguages ?? [], [rawTargetLanguages]);
+  const preferredRegionRaw = user?.publicMetadata?.preferredRegion as unknown;
+  const preferredRegion = typeof preferredRegionRaw === "string" ? preferredRegionRaw.trim() : "";
+  const fallbackLanguage = useMemo(() => {
+    if (!isStringArray(targetLanguages) || targetLanguages.length === 0) return "";
+    return typeof targetLanguages[0] === "string" ? targetLanguages[0].trim() : "";
+  }, [targetLanguages]);
+  const effectiveLanguageValue = languageFromUrl.trim() || fallbackLanguage;
+  const effectiveRegionValue = regionFromUrl.trim() || preferredRegion;
+  const selectedLanguageKey = normalizeTopicKey(effectiveLanguageValue);
+  const selectedRegionKey = normalizeTopicKey(effectiveRegionValue);
   const bookMetaBySlug = useMemo(() => {
     const map = new Map<string, { statsLine?: string; topicsLine?: string }>();
     for (const book of Object.values(books)) {
@@ -279,9 +287,11 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     const addFilterValue = (
       map: Map<string, { label: string; count: number }>,
-      value: string | undefined | null
+      value: string | undefined | null,
+      formatter?: (value: string) => string
     ) => {
-      const label = typeof value === "string" ? value.trim() : "";
+      const raw = typeof value === "string" ? value.trim() : "";
+      const label = raw ? (formatter ? formatter(raw) : raw) : "";
       const key = normalizeTopicKey(label);
       if (!key) return;
       const existing = map.get(key);
@@ -311,19 +321,19 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     for (const book of languageFilteredBooks) {
       if (!isRecord(book)) continue;
-      addFilterValue(languageMap, getString(book, "language"));
+      addFilterValue(languageMap, getString(book, "language"), formatLanguage);
       addFilterValue(regionMap, getString(book, "region"));
       addTopics(extractBookTopics(book));
     }
 
     for (const story of languageFilteredBookStories) {
-      addFilterValue(languageMap, story.language);
+      addFilterValue(languageMap, story.language, formatLanguage);
       addFilterValue(regionMap, story.region);
       addTopics(story.topics);
     }
 
     for (const story of languageFilteredPolyglotStories) {
-      addFilterValue(languageMap, story.language);
+      addFilterValue(languageMap, story.language, formatLanguage);
       addFilterValue(regionMap, story.region);
       addTopics([...toTopicList(story.topic), ...toTopicList(story.themes)]);
     }
@@ -334,7 +344,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     const languageSelectedLabel =
       languageOptions.find((chip) => chip.key === selectedLanguageKey)?.label ||
-      languageFromUrl.trim() ||
+      effectiveLanguageValue ||
       null;
 
     const languageSelectedBooks = selectedLanguageKey
@@ -370,7 +380,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     const regionSelectedLabel =
       regionOptions.find((chip) => chip.key === selectedRegionKey)?.label ||
-      regionFromUrl.trim() ||
+      effectiveRegionValue ||
       null;
 
     const chips: TopicChip[] = Array.from(topicMap.entries())
@@ -440,8 +450,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     selectedLanguageKey,
     selectedRegionKey,
     selectedTopicKey,
-    languageFromUrl,
-    regionFromUrl,
+    effectiveLanguageValue,
+    effectiveRegionValue,
     topicFromUrl,
   ]);
 
@@ -546,8 +556,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   })();
   const seeAllStoriesHref = (() => {
     const params = new URLSearchParams();
-    if (languageFromUrl.trim()) params.set("language", languageFromUrl.trim());
-    if (regionFromUrl.trim()) params.set("region", regionFromUrl.trim());
+    if (effectiveLanguageValue) params.set("language", effectiveLanguageValue);
+    if (effectiveRegionValue) params.set("region", effectiveRegionValue);
     if (topicFromUrl.trim()) {
       params.set("topic", topicFromUrl.trim());
     }
@@ -556,8 +566,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   })();
   const seeAllBooksHref = (() => {
     const params = new URLSearchParams();
-    if (languageFromUrl.trim()) params.set("language", languageFromUrl.trim());
-    if (regionFromUrl.trim()) params.set("region", regionFromUrl.trim());
+    if (effectiveLanguageValue) params.set("language", effectiveLanguageValue);
+    if (effectiveRegionValue) params.set("region", effectiveRegionValue);
     if (topicFromUrl.trim()) {
       params.set("topic", topicFromUrl.trim());
     }
@@ -566,8 +576,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   })();
   const seeAllPolyglotStoriesHref = (() => {
     const params = new URLSearchParams();
-    if (languageFromUrl.trim()) params.set("language", languageFromUrl.trim());
-    if (regionFromUrl.trim()) params.set("region", regionFromUrl.trim());
+    if (effectiveLanguageValue) params.set("language", effectiveLanguageValue);
+    if (effectiveRegionValue) params.set("region", effectiveRegionValue);
     if (topicFromUrl.trim()) {
       params.set("topic", topicFromUrl.trim());
     }
