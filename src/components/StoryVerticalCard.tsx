@@ -37,11 +37,11 @@ export default function StoryVerticalCard({
 }: StoryVerticalCardProps) {
   return (
     <div
-      className={`flex flex-col h-full rounded-2xl overflow-hidden border border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] transition-all duration-200 shadow-md ${className}`}
+      className={`flex flex-col rounded-2xl overflow-hidden border border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] transition-all duration-200 shadow-md ${className}`}
     >
       <Link
         href={href}
-        className="flex flex-col h-full"
+        className="flex flex-col"
       >
         <div className="w-full h-48 bg-[var(--surface)]">
           <img
@@ -51,7 +51,7 @@ export default function StoryVerticalCard({
           />
         </div>
 
-        <div className="p-5 flex flex-col flex-1 text-left">
+        <div className="p-5 text-left">
           <div>
             <div className="mb-2 flex flex-wrap items-center gap-2">
               <LevelBadge level={level} />

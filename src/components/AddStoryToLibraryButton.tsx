@@ -7,6 +7,7 @@ import { BookmarkPlus, BookmarkCheck } from 'lucide-react';
 import { clerkAppearance } from '../lib/clerkAppearance';
 import { books } from '@/data/books';
 import { removeOfflineStory, saveOfflineStory } from '@/lib/offlineLibrary';
+import { canUseOfflineAccess, type Plan } from '@/lib/access';
 
 
 type Props = {
@@ -46,6 +47,8 @@ export default function AddStoryToLibraryButton({
  const [inLibrary, setInLibrary] = useState(false);
  const [checking, setChecking] = useState(true);
  const [celebrate, setCelebrate] = useState(false);
+ const plan: Plan = (user?.publicMetadata?.plan as Plan | undefined) ?? 'free';
+ const hasOfflineAccess = canUseOfflineAccess(plan);
 
 
  useEffect(() => {
@@ -134,22 +137,24 @@ export default function AddStoryToLibraryButton({
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({ type: 'story', storyId, bookId, title, coverUrl }),
        });
-       const book = books[bookId];
-       const story = book?.stories.find((item) => item.id === storyId);
-       await saveOfflineStory(user.id, {
-         storyId,
-         bookId,
-         title,
-         coverUrl,
-         storySlug: storySlug ?? story?.slug,
-         bookSlug: bookSlug ?? book?.slug,
-         language: language ?? story?.language ?? book?.language,
-         region: region ?? story?.region ?? book?.region,
-         level: level ?? story?.level ?? book?.level,
-         topic: topic ?? story?.topic ?? (typeof book?.topic === 'string' ? book.topic : undefined),
-         audioUrl: audioUrl ?? (typeof story?.audio === 'string' ? story.audio : null),
-         storyData: story,
-       });
+       if (hasOfflineAccess) {
+         const book = books[bookId];
+         const story = book?.stories.find((item) => item.id === storyId);
+         await saveOfflineStory(user.id, {
+           storyId,
+           bookId,
+           title,
+           coverUrl,
+           storySlug: storySlug ?? story?.slug,
+           bookSlug: bookSlug ?? book?.slug,
+           language: language ?? story?.language ?? book?.language,
+           region: region ?? story?.region ?? book?.region,
+           level: level ?? story?.level ?? book?.level,
+           topic: topic ?? story?.topic ?? (typeof book?.topic === 'string' ? book.topic : undefined),
+           audioUrl: audioUrl ?? (typeof story?.audio === 'string' ? story.audio : null),
+           storyData: story,
+         });
+       }
      }
    } catch (err) {
      console.error('Error toggling story library:', err);

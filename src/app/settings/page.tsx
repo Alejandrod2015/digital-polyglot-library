@@ -25,6 +25,19 @@ const LANGUAGES: LanguageOption[] = [
 const MAX_SELECTION = 3;
 const MAX_INTERESTS = 12;
 const THEME_KEY = "dp_theme_pref";
+const LEVEL_OPTIONS = ["Beginner", "Intermediate", "Advanced"] as const;
+const REGION_OPTIONS = [
+  "Colombia",
+  "Mexico",
+  "Argentina",
+  "Peru",
+  "Germany",
+  "France",
+  "Brazil",
+  "Portugal",
+  "Italy",
+  "Spain",
+] as const;
 const SUGGESTED_INTERESTS = [
   "Coffee",
   "Sustainability",
@@ -92,6 +105,10 @@ export default function SettingsPage() {
   const [interests, setInterests] = useState<string[]>([]);
   const [persistedInterests, setPersistedInterests] = useState<string[]>([]);
   const [interestInput, setInterestInput] = useState("");
+  const [preferredLevel, setPreferredLevel] = useState("");
+  const [persistedPreferredLevel, setPersistedPreferredLevel] = useState("");
+  const [preferredRegion, setPreferredRegion] = useState("");
+  const [persistedPreferredRegion, setPersistedPreferredRegion] = useState("");
   const [status, setStatus] = useState<SaveStatus>("idle");
   const [hint, setHint] = useState("");
   const [themePref, setThemePref] = useState<ThemePref>("system");
@@ -100,23 +117,34 @@ export default function SettingsPage() {
   const [billingError, setBillingError] = useState("");
 
   const plan = (user?.publicMetadata?.plan as Plan) ?? "free";
-  const isFree = plan === "free";
   const hasPaidPlan = plan === "premium" || plan === "polyglot" || plan === "owner";
   const planLabel = formatPlanLabel(plan);
 
   const dirty = useMemo(
-    () => !equalsSet(selected, persisted) || !equalsSet(interests, persistedInterests),
-    [selected, persisted, interests, persistedInterests]
+    () =>
+      !equalsSet(selected, persisted) ||
+      !equalsSet(interests, persistedInterests) ||
+      preferredLevel !== persistedPreferredLevel ||
+      preferredRegion !== persistedPreferredRegion,
+    [selected, persisted, interests, persistedInterests, preferredLevel, persistedPreferredLevel, preferredRegion, persistedPreferredRegion]
   );
 
   useEffect(() => {
     if (!isLoaded) return;
     const current = normalizeSelection(toStringArray(user?.publicMetadata?.targetLanguages));
     const currentInterests = normalizeInterests(toStringArray(user?.publicMetadata?.interests));
+    const currentLevel =
+      typeof user?.publicMetadata?.preferredLevel === "string" ? user.publicMetadata.preferredLevel : "";
+    const currentRegion =
+      typeof user?.publicMetadata?.preferredRegion === "string" ? user.publicMetadata.preferredRegion : "";
     setSelected(current);
     setPersisted(current);
     setInterests(currentInterests);
     setPersistedInterests(currentInterests);
+    setPreferredLevel(currentLevel);
+    setPersistedPreferredLevel(currentLevel);
+    setPreferredRegion(currentRegion);
+    setPersistedPreferredRegion(currentRegion);
     setStatus("idle");
     setHint("");
   }, [isLoaded, user]);
@@ -147,7 +175,12 @@ export default function SettingsPage() {
   }, [hint]);
 
   const savePreferences = async () => {
-    if (isFree || !dirty) return;
+    if (!user) {
+      setStatus("error");
+      setHint("Sign in to save your preferences.");
+      return;
+    }
+    if (!dirty) return;
 
     try {
       setStatus("saving");
@@ -156,7 +189,12 @@ export default function SettingsPage() {
       const res = await fetch("/api/user/preferences", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ targetLanguages: payload, interests: payloadInterests }),
+        body: JSON.stringify({
+          targetLanguages: payload,
+          interests: payloadInterests,
+          preferredLevel: preferredLevel || null,
+          preferredRegion: preferredRegion || null,
+        }),
       });
       if (!res.ok) throw new Error(`Error ${res.status}`);
 
@@ -168,10 +206,18 @@ export default function SettingsPage() {
       const serverInterests = normalizeInterests(
         toStringArray(record?.interests)
       );
+      const serverPreferredLevel =
+        typeof record?.preferredLevel === "string" ? record.preferredLevel : "";
+      const serverPreferredRegion =
+        typeof record?.preferredRegion === "string" ? record.preferredRegion : "";
       setSelected(serverTL);
       setPersisted(serverTL);
       setInterests(serverInterests);
       setPersistedInterests(serverInterests);
+      setPreferredLevel(serverPreferredLevel);
+      setPersistedPreferredLevel(serverPreferredLevel);
+      setPreferredRegion(serverPreferredRegion);
+      setPersistedPreferredRegion(serverPreferredRegion);
       setStatus("saved");
       await user?.reload();
     } catch (err) {
@@ -205,19 +251,14 @@ export default function SettingsPage() {
   };
 
   useEffect(() => {
-    if (isFree || !dirty) return;
+    if (!dirty) return;
     const timer = window.setTimeout(() => {
       void savePreferences();
     }, 800);
     return () => window.clearTimeout(timer);
-  }, [dirty, selected, interests, isFree]);
+  }, [dirty, selected, interests, preferredLevel, preferredRegion]);
 
   const toggleLanguage = (code: string) => {
-    if (isFree) {
-      setHint("Upgrade to save language preferences.");
-      return;
-    }
-
     setSelected((prev) => {
       if (prev.includes(code)) return prev.filter((c) => c !== code);
       if (prev.length >= MAX_SELECTION) {
@@ -292,6 +333,23 @@ export default function SettingsPage() {
     );
   }
 
+  if (!user) {
+    return (
+      <div className="min-h-screen p-6 pb-24 text-[var(--foreground)]">
+        <h1 className="mb-2 text-2xl font-semibold">Settings</h1>
+        <p className="mb-5 text-sm text-[var(--muted)]">
+          Sign in to save your language, level, region, and interest preferences.
+        </p>
+        <Link
+          href="/sign-in?redirect_url=/settings"
+          className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+        >
+          Sign in
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen text-[var(--foreground)] p-6 pb-24">
       <h1 className="text-2xl font-semibold mb-2">Settings</h1>
@@ -332,11 +390,6 @@ export default function SettingsPage() {
           {billingError ? <span className="text-[13px] text-amber-300">{billingError}</span> : null}
         </div>
 
-        {isFree ? (
-          <p className="mt-3 text-xs text-[var(--muted)]">
-            Language personalization and the full reading experience are available on paid plans.
-          </p>
-        ) : null}
       </section>
 
       <section className="mb-6">
@@ -391,6 +444,40 @@ export default function SettingsPage() {
               </button>
             );
           })}
+        </div>
+      </section>
+
+      <section className="mt-7 grid gap-4 sm:grid-cols-2">
+        <div>
+          <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Level</h2>
+          <select
+            value={preferredLevel}
+            onChange={(e) => setPreferredLevel(e.target.value)}
+            className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2.5 text-sm text-[var(--foreground)] outline-none focus:border-[var(--primary)]"
+          >
+            <option value="">No level preference</option>
+            {LEVEL_OPTIONS.map((level) => (
+              <option key={level} value={level}>
+                {level}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Region</h2>
+          <select
+            value={preferredRegion}
+            onChange={(e) => setPreferredRegion(e.target.value)}
+            className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2.5 text-sm text-[var(--foreground)] outline-none focus:border-[var(--primary)]"
+          >
+            <option value="">No region preference</option>
+            {REGION_OPTIONS.map((region) => (
+              <option key={region} value={region}>
+                {region}
+              </option>
+            ))}
+          </select>
         </div>
       </section>
 

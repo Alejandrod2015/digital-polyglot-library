@@ -165,6 +165,7 @@ function PlansInner() {
   const comparisonRows = [
     ['Stories and books', 'Limited free access', 'Full access', 'Full access'],
     ['Audio narration', 'Weekly highlights only', 'Included', 'Included'],
+    ['Offline access', 'Not included', 'Included', 'Included'],
     ['Saved library and favorites', 'Basic access', 'Included', 'Included'],
     ['Personalized recommendations', 'Limited', 'Included', 'Included'],
     ['Billing', 'Free forever', 'Monthly after trial', 'Annual after trial'],
@@ -239,6 +240,7 @@ function PlansInner() {
             <ul className="mt-4 space-y-2 text-sm text-blue-50/88">
               <li>Full access to stories and books</li>
               <li>Audio narration and reading tools</li>
+              <li>Offline access on your device</li>
               <li>Personalized recommendations</li>
             </ul>
             <button
@@ -269,6 +271,7 @@ function PlansInner() {
             </p>
             <ul className="mt-4 space-y-2 text-sm text-blue-50/92">
               <li>Everything in Premium Monthly</li>
+              <li>Offline access on your device</li>
               <li>Lower effective monthly cost</li>
               <li>Clear default plan for steady learners</li>
             </ul>
@@ -299,6 +302,7 @@ function PlansInner() {
               <li>Limited daily access</li>
               <li>Weekly highlighted story</li>
               <li>Lightweight library and favorites</li>
+              <li>No offline access</li>
             </ul>
             {isSignedIn ? (
               <button
@@ -375,7 +379,7 @@ function PlansInner() {
             </p>
             <h2 className="mt-1 text-xl font-semibold">Built for consistent reading, not one-off sessions</h2>
             <div className="mt-4 space-y-3 text-sm leading-6 text-blue-50/86">
-              <p>Save the stories you want to finish, keep audio nearby, and let the app adapt to your target languages and interests.</p>
+              <p>Save the stories you want to finish, keep audio nearby, unlock offline access, and let the app adapt to your target languages and interests.</p>
               <p>The annual plan is the clearest fit if you already know you want regular practice. Monthly stays there if you prefer flexibility.</p>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">

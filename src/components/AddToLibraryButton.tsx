@@ -6,6 +6,7 @@ import { BookmarkPlus, BookmarkCheck } from 'lucide-react';
 import { clerkAppearance } from '../lib/clerkAppearance';
 import { books } from '@/data/books';
 import { removeOfflineBook, saveOfflineBook } from '@/lib/offlineLibrary';
+import { canUseOfflineAccess, type Plan } from '@/lib/access';
 
 type Props = {
   bookId: string;
@@ -19,6 +20,8 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
   const [inLibrary, setInLibrary] = useState(false);
   const [checking, setChecking] = useState(true);
   const [celebrate, setCelebrate] = useState(false);
+  const plan: Plan = (user?.publicMetadata?.plan as Plan | undefined) ?? 'free';
+  const hasOfflineAccess = canUseOfflineAccess(plan);
 
   useEffect(() => {
     if (!isLoaded) return;
@@ -100,13 +103,15 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ type: 'book', bookId, title, coverUrl }),
         });
-        const bookData = books[bookId];
-        await saveOfflineBook(user.id, {
-          bookId,
-          title,
-          coverUrl,
-          bookData,
-        });
+        if (hasOfflineAccess) {
+          const bookData = books[bookId];
+          await saveOfflineBook(user.id, {
+            bookId,
+            title,
+            coverUrl,
+            bookData,
+          });
+        }
       }
     } catch (err) {
       console.error('Error toggling library:', err);

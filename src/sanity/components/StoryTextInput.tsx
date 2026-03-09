@@ -24,7 +24,9 @@ export default function StoryTextInput(props: InputProps) {
 
   const charsLeft = MAX_TEXT_CHARS - chars
   const wordsLeft = MAX_TEXT_WORDS - words
-  const overLimit = charsLeft < 0 || wordsLeft < 0
+  const overChars = charsLeft < 0
+  const overWords = wordsLeft < 0
+  const overLimit = overChars || overWords
 
   return (
     <Stack space={3}>
@@ -33,6 +35,16 @@ export default function StoryTextInput(props: InputProps) {
         <Text size={1} muted={!overLimit}>
           {`${chars}/${MAX_TEXT_CHARS} chars · ${words}/${MAX_TEXT_WORDS} words · ~${estMinutes.toFixed(1)} min audio`}
         </Text>
+        {overChars ? (
+          <Text size={1} style={{marginTop: '0.35rem'}}>
+            Character count warning only. It will not block publishing.
+          </Text>
+        ) : null}
+        {overWords ? (
+          <Text size={1} style={{marginTop: '0.35rem'}}>
+            Word count still blocks publishing above {MAX_TEXT_WORDS} words.
+          </Text>
+        ) : null}
       </Card>
     </Stack>
   )

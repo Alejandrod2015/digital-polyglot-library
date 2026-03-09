@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Play, ShoppingBag, Star } from "lucide-react";
 import Cover from "@/components/Cover";
@@ -72,6 +72,7 @@ export default function BookStorefront({
   const [topicFilter, setTopicFilter] = useState("all");
   const [sortKey, setSortKey] = useState<SortKey>("recommended");
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [continueStorySlug, setContinueStorySlug] = useState<string | null>(null);
   const allBooks = useMemo(() => Object.values(books), []);
   const firstStoryHref = book.stories[0]?.slug
     ? `/books/${book.slug}/${book.stories[0].slug}${storyNavSuffix}`
@@ -83,6 +84,58 @@ export default function BookStorefront({
     shouldShowDescriptionToggle && !descriptionExpanded
       ? `${cleanDescription.slice(0, DESCRIPTION_LIMIT).trimEnd()}...`
       : cleanDescription;
+
+  useEffect(() => {
+    const loadContinueStory = () => {
+      try {
+        const raw = localStorage.getItem("dp_continue_listening_v1");
+        const parsed: unknown = raw ? JSON.parse(raw) : [];
+        if (!Array.isArray(parsed)) {
+          setContinueStorySlug(null);
+          return;
+        }
+
+        const match = parsed.find((item) => {
+          if (!item || typeof item !== "object") return false;
+          const row = item as Record<string, unknown>;
+          return (
+            row.bookSlug === book.slug &&
+            typeof row.storySlug === "string" &&
+            typeof row.progressSec === "number" &&
+            Number.isFinite(row.progressSec) &&
+            row.progressSec > 5
+          );
+        }) as { storySlug?: string } | undefined;
+
+        const nextSlug =
+          typeof match?.storySlug === "string" &&
+          book.stories.some((story) => story.slug === match.storySlug)
+            ? match.storySlug
+            : null;
+
+        setContinueStorySlug(nextSlug);
+      } catch {
+        setContinueStorySlug(null);
+      }
+    };
+
+    loadContinueStory();
+    window.addEventListener("continue-listening-updated", loadContinueStory);
+    window.addEventListener("focus", loadContinueStory);
+
+    return () => {
+      window.removeEventListener("continue-listening-updated", loadContinueStory);
+      window.removeEventListener("focus", loadContinueStory);
+    };
+  }, [book.slug, book.stories]);
+
+  const continueStory = useMemo(
+    () => book.stories.find((story) => story.slug === continueStorySlug) ?? null,
+    [book.stories, continueStorySlug]
+  );
+  const continueStoryHref = continueStory
+    ? `/books/${book.slug}/${continueStory.slug}${storyNavSuffix}`
+    : null;
 
   const topics = useMemo(() => {
     const set = new Set<string>();
@@ -312,6 +365,30 @@ export default function BookStorefront({
               </a>
             ) : null}
           </div>
+
+          {continueStory && continueStoryHref ? (
+            <div className="mt-5 rounded-2xl border border-sky-400/25 bg-[linear-gradient(180deg,rgba(56,189,248,0.12),rgba(255,255,255,0.04))] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300/85">
+                Continue where you left off
+              </p>
+              <div className="mt-3 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="text-lg font-semibold text-white">{continueStory.title}</p>
+                  <p className="mt-1 text-sm text-gray-300">
+                    Jump straight back into this story instead of searching for it in the list.
+                  </p>
+                </div>
+                <Link
+                  href={continueStoryHref}
+                  replace={replaceStoryNavigation}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-sky-400"
+                >
+                  <Play className="h-5 w-5" />
+                  Continue story
+                </Link>
+              </div>
+            </div>
+          ) : null}
         </div>
       </section>
 

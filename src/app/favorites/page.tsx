@@ -757,7 +757,7 @@ export default function FavoritesPage() {
                 <div className="mb-3">
                   <button
                     onClick={() => void removeRelatedFavorite(currentPractice)}
-                    className="rounded-lg border border-[#b88392] bg-[#8d5d69] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#996672]"
+                    className="rounded-lg border border-[#d28fa0] bg-[#b96e83] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#c3798f]"
                   >
                     Remove from Favorites
                   </button>
@@ -768,8 +768,8 @@ export default function FavoritesPage() {
                   onClick={() => rateCurrent('again')}
                   className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
                     practiceScore === 'again'
-                      ? 'border-[#aa6f80] bg-[#9a6574] text-white'
-                      : 'border-[#d9b8c2] bg-[#fbf1f4] text-[#6b5660] hover:bg-[#f7e6ec]'
+                      ? 'border-[#cf879b] bg-[#b96e83] text-white'
+                      : 'border-[#e7c1cb] bg-[#fdeef2] text-[#8a5563] hover:bg-[#fadfe7]'
                   }`}
                 >
                   Again
@@ -778,8 +778,8 @@ export default function FavoritesPage() {
                   onClick={() => rateCurrent('hard')}
                   className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
                     practiceScore === 'hard'
-                      ? 'border-[#ad9560] bg-[#9b8558] text-white'
-                      : 'border-[#decea8] bg-[#faf4e2] text-[#74664a] hover:bg-[#f5edd5]'
+                      ? 'border-[#d8b35f] bg-[#c49b43] text-white'
+                      : 'border-[#ead7a0] bg-[#fff6d9] text-[#8a7341] hover:bg-[#fdf0c1]'
                   }`}
                 >
                   Tricky
@@ -788,8 +788,8 @@ export default function FavoritesPage() {
                   onClick={() => rateCurrent('easy')}
                   className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
                     practiceScore === 'easy'
-                      ? 'border-[#79a08a] bg-[#6d927e] text-white'
-                      : 'border-[#b9d7c7] bg-[#eef7f2] text-[#586e63] hover:bg-[#e2f1e9]'
+                      ? 'border-[#7bb89b] bg-[#5fa07f] text-white'
+                      : 'border-[#b9e0cb] bg-[#ebfaf1] text-[#4f7a62] hover:bg-[#d8f4e4]'
                   }`}
                 >
                   Clear

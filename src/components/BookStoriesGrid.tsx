@@ -190,7 +190,7 @@ export default function BookStoriesGrid({
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
-  const renderStoryCard = (story: Story, idx: number) => {
+  const renderStoryCard = (story: Story, originalIndex: number) => {
     const storyCover =
       typeof story.cover === "string" && story.cover.trim() !== ""
         ? story.cover
@@ -211,7 +211,7 @@ export default function BookStoriesGrid({
         key={story.id}
         href={`/books/${book.slug}/${story.slug}${hrefSuffix}`}
         replace={replaceNavigation}
-        className="flex h-full flex-col overflow-hidden rounded-xl bg-white/5 text-gray-100 transition-colors hover:bg-white/10"
+        className="flex flex-col overflow-hidden rounded-xl bg-white/5 text-gray-100 transition-colors hover:bg-white/10"
       >
         <div className="relative w-full aspect-[16/10] bg-[#102746]">
           <img
@@ -221,7 +221,7 @@ export default function BookStoriesGrid({
           />
 
           <span className="absolute left-2 top-2 rounded-md bg-black/55 px-2 py-1 text-[11px] font-medium text-white">
-            Story {idx + 1}
+            Story {originalIndex + 1}
           </span>
 
           {status === "completed" && (
