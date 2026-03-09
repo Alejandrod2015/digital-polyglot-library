@@ -352,10 +352,19 @@ export function buildPracticeSession(
   const exercises: PracticeExercise[] = [];
 
   if (mode === "match") {
+    let remaining = uniqueByWord(source);
     for (let i = 0; i < 3 && exercises.length < 10; i += 1) {
-      const exercise = createMatchMeaningExercise(shuffle(source));
+      const exercise = createMatchMeaningExercise(shuffle(remaining));
       if (exercise && !exercises.some((existing) => existing.id === exercise.id)) {
         exercises.push(exercise);
+        const usedKeys = new Set(
+          exercise.pairs.map(
+            (pair) => `${normalizeKey(remaining.find((item) => item.word === pair.word)?.language)}::${normalizeKey(pair.word)}`
+          )
+        );
+        remaining = remaining.filter(
+          (item) => !usedKeys.has(`${normalizeKey(item.language)}::${normalizeKey(item.word)}`)
+        );
       }
     }
     return exercises;

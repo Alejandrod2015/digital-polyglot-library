@@ -8,6 +8,7 @@ import {
   buildPracticeSession,
   getDuePracticeItems,
   getSpeechSynthesisLang,
+  PracticeExercise,
   PracticeFavoriteItem,
   PracticeMode,
 } from "@/lib/practiceExercises";
@@ -77,6 +78,8 @@ export default function PracticePage() {
   const [revealedIds, setRevealedIds] = useState<string[]>([]);
   const [score, setScore] = useState(0);
   const [sessionComplete, setSessionComplete] = useState(false);
+  const [streak, setStreak] = useState(0);
+  const [lastResult, setLastResult] = useState<"correct" | "wrong" | null>(null);
 
   useEffect(() => {
     if (!isLoaded) return;
@@ -122,8 +125,13 @@ export default function PracticePage() {
   const dueCount = useMemo(() => getDuePracticeItems(favorites).length, [favorites]);
   const revealed = currentExercise ? revealedIds.includes(currentExercise.id) : false;
   const activeSession = selectedMode !== null;
+  const completedExerciseCount = sessionComplete ? exercises.length : revealedIds.length;
   const progressPercent =
-    exercises.length > 0 ? Math.min(100, ((sessionComplete ? exercises.length : exerciseIndex) / exercises.length) * 100) : 0;
+    exercises.length > 0 ? Math.min(100, (completedExerciseCount / exercises.length) * 100) : 0;
+  const matchSolvedPerfectly =
+    currentExercise?.type === "match_meaning" &&
+    revealed &&
+    currentExercise.pairs.every((pair) => matchAnswers[pair.word] === pair.answer);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -143,13 +151,23 @@ export default function PracticePage() {
     setRevealedIds([]);
     setScore(0);
     setSessionComplete(false);
+    setStreak(0);
+    setLastResult(null);
   }, [selectedMode, favorites.length]);
 
   useEffect(() => {
     setSelectedOption(null);
     setMatchAnswers({});
     setActiveMatchWord(null);
+    setLastResult(null);
   }, [exerciseIndex]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !activeSession) return;
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [activeSession, exerciseIndex, sessionComplete]);
 
   const revealCurrent = () => {
     if (!currentExercise) return;
@@ -162,6 +180,11 @@ export default function PracticePage() {
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
+      setStreak((prev) => prev + 1);
+      setLastResult("correct");
+    } else {
+      setStreak(0);
+      setLastResult("wrong");
     }
   };
 
@@ -223,6 +246,16 @@ export default function PracticePage() {
 
   const contextTextClass =
     "text-xs leading-6 text-[var(--muted)]/75 sm:text-sm";
+
+  const getCorrectAnswerText = (exercise: PracticeExercise | null) => {
+    if (!exercise) return "";
+    if (exercise.type === "match_meaning") {
+      return exercise.pairs.map((pair) => `${pair.word} — ${pair.answer}`).join(" · ");
+    }
+    return exercise.answer;
+  };
+
+  const correctAnswerText = getCorrectAnswerText(currentExercise);
   const modeCards: Array<{
     mode: PracticeMode;
     title: string;
@@ -339,25 +372,33 @@ export default function PracticePage() {
 
   if (activeSession) {
     return (
-      <div className="min-h-screen px-4 py-4 pb-8 text-[var(--foreground)] sm:px-6 sm:py-6">
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-6 flex items-center gap-4">
+      <>
+        <div className="min-h-screen px-4 py-3 pb-6 text-[var(--foreground)] sm:px-5 sm:py-4">
+          <div className="mx-auto max-w-5xl">
+          <div className="mb-4 flex items-center gap-3">
             <button
               type="button"
               onClick={() => setSelectedMode(null)}
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
               aria-label="Close practice"
             >
               <X size={20} />
             </button>
             <div className="min-w-0 flex-1">
-              <div className="h-4 overflow-hidden rounded-full bg-white/12">
+              {streak > 1 ? (
+                <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-lime-300">
+                  {streak} in a row
+                </p>
+              ) : null}
+              <div className="h-3 overflow-hidden rounded-full bg-white/12">
                 <div
-                  className="h-full rounded-full bg-[var(--primary)] transition-[width] duration-300"
+                  className={`h-full rounded-full bg-[var(--primary)] transition-[width] duration-300 ${
+                    lastResult === "correct" && revealed ? "animate-pulse" : ""
+                  }`}
                   style={{ width: `${progressPercent}%` }}
                 />
               </div>
-              <div className="mt-2 flex items-center justify-between gap-3">
+              <div className="mt-1.5 flex items-center justify-between gap-3">
                 <p className="truncate text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
                   {modeCards.find((card) => card.mode === selectedMode)?.title ?? "Practice"}
                 </p>
@@ -481,15 +522,15 @@ export default function PracticePage() {
           `}</style>
         </div>
       ) : currentExercise ? (
-        <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md sm:p-6">
-          <p className="mb-5 text-lg font-semibold">{currentExercise.prompt}</p>
+        <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 shadow-md sm:p-5">
+          <p className="mb-4 text-base font-semibold sm:text-lg">{currentExercise.prompt}</p>
 
           {currentExercise.type === "fill_blank" ? (
             <>
               <div className={contextBlockClass}>
                 <p className={contextTextClass}>{currentExercise.sentence}</p>
               </div>
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-2.5 sm:grid-cols-2">
                 {currentExercise.options.map((option) => {
                   const isSelected = selectedOption === option;
                   const isCorrect = revealed && option === currentExercise.answer;
@@ -500,7 +541,7 @@ export default function PracticePage() {
                       type="button"
                       onClick={() => setSelectedOption(option)}
                       disabled={revealed}
-                      className={`rounded-2xl border px-4 py-3 text-left text-sm transition-colors ${
+                      className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
                         isCorrect
                           ? "border-emerald-400 bg-emerald-400 text-slate-950"
                           : isWrong
@@ -520,18 +561,18 @@ export default function PracticePage() {
 
           {currentExercise.type === "meaning_in_context" ? (
             <>
-              <div className="mb-4">
+              <div className="mb-3">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
                   Target word
                 </p>
-                <p className="text-[2.3rem] font-semibold leading-none tracking-tight sm:text-[3rem]">
+                <p className="text-[2rem] font-semibold leading-none tracking-tight sm:text-[2.65rem]">
                   {currentExercise.word}
                 </p>
               </div>
               <div className={contextBlockClass}>
                 <p className={contextTextClass}>{currentExercise.sentence}</p>
               </div>
-              <div className="grid gap-3">
+              <div className="grid gap-2.5">
                 {currentExercise.options.map((option) => {
                   const isSelected = selectedOption === option;
                   const isCorrect = revealed && option === currentExercise.answer;
@@ -542,7 +583,7 @@ export default function PracticePage() {
                       type="button"
                       onClick={() => setSelectedOption(option)}
                       disabled={revealed}
-                      className={`rounded-2xl border px-4 py-3 text-left text-sm transition-colors ${
+                      className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
                         isCorrect
                           ? "border-emerald-400 bg-emerald-400 text-slate-950"
                           : isWrong
@@ -565,7 +606,7 @@ export default function PracticePage() {
               <div className={contextBlockClass}>
                 <p className={contextTextClass}>{currentExercise.sentence}</p>
               </div>
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-2.5 sm:grid-cols-2">
                 {currentExercise.options.map((option) => {
                   const isSelected = selectedOption === option;
                   const isCorrect = revealed && option === currentExercise.answer;
@@ -576,7 +617,7 @@ export default function PracticePage() {
                       type="button"
                       onClick={() => setSelectedOption(option)}
                       disabled={revealed}
-                      className={`rounded-2xl border px-4 py-3 text-left text-sm transition-colors ${
+                      className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
                         isCorrect
                           ? "border-emerald-400 bg-emerald-400 text-slate-950"
                           : isWrong
@@ -599,11 +640,11 @@ export default function PracticePage() {
               <button
                 type="button"
                 onClick={playListenPrompt}
-                className="mb-5 inline-flex rounded-2xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+                className="mb-4 inline-flex rounded-2xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
               >
                 Play audio
               </button>
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-2.5 sm:grid-cols-2">
                 {currentExercise.options.map((option) => {
                   const isSelected = selectedOption === option;
                   const isCorrect = revealed && option === currentExercise.answer;
@@ -614,7 +655,7 @@ export default function PracticePage() {
                       type="button"
                       onClick={() => setSelectedOption(option)}
                       disabled={revealed}
-                      className={`rounded-2xl border px-4 py-3 text-left text-sm transition-colors ${
+                      className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
                         isCorrect
                           ? "border-emerald-400 bg-emerald-400 text-slate-950"
                           : isWrong
@@ -633,111 +674,126 @@ export default function PracticePage() {
           ) : null}
 
           {currentExercise.type === "match_meaning" ? (
-            <div className="grid gap-4 lg:grid-cols-2">
-              <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] p-4">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
-                  Words
-                </p>
-                <div className="space-y-3">
-                  {currentExercise.pairs.map((pair) => {
-                    const currentValue = matchAnswers[pair.word] ?? "";
-                    const matchColor = matchColorClasses[
-                      currentExercise.pairs.findIndex((candidate) => candidate.word === pair.word) %
-                        matchColorClasses.length
-                    ];
-                    const isActive = activeMatchWord === pair.word;
-                    const isCorrect = revealed && currentValue === pair.answer;
-                    const isWrong = revealed && currentValue && currentValue !== pair.answer;
-                    return (
-                      <button
-                        key={pair.word}
-                        type="button"
-                        onClick={() => {
-                          if (revealed) return;
-                          if (currentValue) {
-                            unassignMatchWord(pair.word);
-                            return;
-                          }
-                          setActiveMatchWord((prev) => (prev === pair.word ? null : pair.word));
-                        }}
-                        className={`w-full rounded-2xl border px-4 py-3 text-left transition ${
-                          isCorrect
-                            ? "border-emerald-400 bg-emerald-400 text-slate-950"
-                            : isWrong
-                              ? "border-rose-400 bg-rose-400 text-slate-950"
-                              : currentValue
-                                ? matchColor
-                              : isActive
-                                ? matchColor
-                                : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
-                        }`}
-                      >
-                        <p className="text-lg font-semibold tracking-tight">{pair.word}</p>
-                        {revealed && currentValue !== pair.answer ? (
-                          <p className="mt-2 text-xs text-emerald-300">Correct: {pair.answer}</p>
-                        ) : null}
-                      </button>
-                    );
-                  })}
+            <div className="space-y-3">
+              {matchSolvedPerfectly ? (
+                <div className="rounded-2xl border border-emerald-300/35 bg-emerald-300/12 px-4 py-2.5 text-emerald-100">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200/90">
+                    Perfect match
+                  </p>
+                  <p className="mt-1 text-xs sm:text-sm text-emerald-50/90">
+                    Every word matched cleanly on this exercise.
+                  </p>
                 </div>
-              </div>
+              ) : null}
 
-              <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] p-4">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
-                  Meanings
-                </p>
-                <div className="space-y-3">
-                  {currentExercise.pairs[0]?.options.map((meaning) => {
-                    const assignedWord =
-                      Object.entries(matchAnswers).find(([, assignedMeaning]) => assignedMeaning === meaning)?.[0] ?? null;
-                    const isAssigned = Boolean(assignedWord);
-                    const assignedIndex = assignedWord
-                      ? currentExercise.pairs.findIndex((pair) => pair.word === assignedWord)
-                      : -1;
-                    const assignedPair =
-                      assignedWord != null
-                        ? currentExercise.pairs.find((pair) => pair.word === assignedWord) ?? null
-                        : null;
-                    const isCorrect = revealed && assignedPair?.answer === meaning;
-                    const isWrong = revealed && isAssigned && assignedPair?.answer !== meaning;
-                    const matchColor =
-                      assignedIndex >= 0
-                        ? matchColorClasses[assignedIndex % matchColorClasses.length]
-                        : "";
-                    return (
-                      <button
-                        key={meaning}
-                        type="button"
-                        onClick={() => {
-                          if (revealed) return;
-                          if (assignedWord) {
-                            unassignMatchWord(assignedWord);
-                            return;
-                          }
-                          assignMatchMeaning(meaning);
-                        }}
-                        disabled={revealed || (!activeMatchWord && !assignedWord)}
-                        className={`w-full rounded-2xl border px-4 py-3 text-left transition ${
-                          isCorrect
-                            ? "border-emerald-400 bg-emerald-400 text-slate-950"
-                            : isWrong
-                              ? "border-rose-400 bg-rose-400 text-slate-950"
-                              : isAssigned
-                            ? matchColor
-                            : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
-                        } disabled:opacity-100`}
-                      >
-                        <p className="text-sm leading-6">{meaning}</p>
-                      </button>
-                    );
-                  })}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="min-w-0">
+                  <p className="mb-2 px-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+                    Words
+                  </p>
+                  <div className="space-y-2">
+                    {currentExercise.pairs.map((pair) => {
+                      const currentValue = matchAnswers[pair.word] ?? "";
+                      const matchColor = matchColorClasses[
+                        currentExercise.pairs.findIndex((candidate) => candidate.word === pair.word) %
+                          matchColorClasses.length
+                      ];
+                      const isActive = activeMatchWord === pair.word;
+                      const isCorrect = revealed && currentValue === pair.answer;
+                      const isWrong = revealed && currentValue && currentValue !== pair.answer;
+                      return (
+                        <button
+                          key={pair.word}
+                          type="button"
+                          onClick={() => {
+                            if (revealed) return;
+                            if (currentValue) {
+                              unassignMatchWord(pair.word);
+                              return;
+                            }
+                            setActiveMatchWord((prev) => (prev === pair.word ? null : pair.word));
+                          }}
+                          className={`w-full rounded-xl border px-3 py-3 text-left transition ${
+                            isCorrect
+                              ? matchColor
+                              : isWrong
+                                ? "border-rose-400 bg-rose-400 text-slate-950"
+                                : currentValue
+                                  ? matchColor
+                                  : isActive
+                                    ? matchColor
+                                    : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
+                          }`}
+                        >
+                          <p className="text-base font-semibold tracking-tight sm:text-lg">{pair.word}</p>
+                          {revealed && currentValue !== pair.answer ? (
+                            <p className="mt-1 text-[11px] font-medium leading-4 text-slate-900/70">
+                              Answer: {pair.answer}
+                            </p>
+                          ) : null}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <p className="mb-2 px-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+                    Meanings
+                  </p>
+                  <div className="space-y-2">
+                    {currentExercise.pairs[0]?.options.map((meaning) => {
+                      const assignedWord =
+                        Object.entries(matchAnswers).find(([, assignedMeaning]) => assignedMeaning === meaning)?.[0] ?? null;
+                      const isAssigned = Boolean(assignedWord);
+                      const assignedIndex = assignedWord
+                        ? currentExercise.pairs.findIndex((pair) => pair.word === assignedWord)
+                        : -1;
+                      const assignedPair =
+                        assignedWord != null
+                          ? currentExercise.pairs.find((pair) => pair.word === assignedWord) ?? null
+                          : null;
+                      const isCorrect = revealed && assignedPair?.answer === meaning;
+                      const isWrong = revealed && isAssigned && assignedPair?.answer !== meaning;
+                      const matchColor =
+                        assignedIndex >= 0
+                          ? matchColorClasses[assignedIndex % matchColorClasses.length]
+                          : "";
+                      return (
+                        <button
+                          key={meaning}
+                          type="button"
+                          onClick={() => {
+                            if (revealed) return;
+                            if (assignedWord) {
+                              unassignMatchWord(assignedWord);
+                              return;
+                            }
+                            assignMatchMeaning(meaning);
+                          }}
+                          disabled={revealed || (!activeMatchWord && !assignedWord)}
+                          className={`w-full rounded-xl border px-3 py-3 text-left transition ${
+                            isCorrect
+                              ? matchColor
+                              : isWrong
+                                ? "border-rose-400 bg-rose-400 text-slate-950"
+                                : isAssigned
+                                  ? matchColor
+                                  : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
+                          } disabled:opacity-100`}
+                        >
+                          <p className="text-xs leading-5 sm:text-sm sm:leading-6">{meaning}</p>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
           ) : null}
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            {!revealed ? (
+          {!revealed ? (
+            <div className="mt-4 flex flex-wrap items-center gap-2.5">
               <button
                 type="button"
                 onClick={revealCurrent}
@@ -750,32 +806,23 @@ export default function PracticePage() {
               >
                 Check answer
               </button>
-            ) : (
+
               <button
                 type="button"
-                onClick={goNext}
-                disabled={exerciseIndex >= exercises.length - 1}
-                className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-50"
+                onClick={restart}
+                className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
               >
-                Next
+                Restart session
               </button>
-            )}
 
-            <button
-              type="button"
-              onClick={restart}
-              className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Restart session
-            </button>
-
-            <Link
-              href="/favorites"
-              className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Open favorites
-            </Link>
-          </div>
+              <Link
+                href="/favorites"
+                className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+              >
+                Open favorites
+              </Link>
+            </div>
+          ) : null}
         </div>
       ) : (
         <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-md">
@@ -800,8 +847,64 @@ export default function PracticePage() {
           </div>
         </div>
       )}
+
+          {revealed && currentExercise ? (
+            <div
+              className={`sticky bottom-0 mt-4 rounded-3xl border px-4 py-4 shadow-xl ${
+                lastResult === "correct"
+                  ? "border-lime-300/30 bg-lime-300/14"
+                  : "border-rose-300/30 bg-rose-300/14"
+              }`}
+            >
+              <div className="mb-3 flex items-start justify-between gap-4">
+                <div>
+                  <p
+                    className={`text-2xl font-bold tracking-tight sm:text-3xl ${
+                      lastResult === "correct" ? "text-lime-300" : "text-rose-300"
+                    }`}
+                  >
+                    {lastResult === "correct"
+                      ? streak > 1
+                        ? "Awesome!"
+                        : "Good job!"
+                      : currentExercise.type === "match_meaning"
+                        ? "Review the corrected matches above"
+                        : "Correct answer:"}
+                  </p>
+                  {lastResult === "wrong" && currentExercise.type !== "match_meaning" ? (
+                    <p className="mt-1.5 max-w-3xl text-sm leading-6 text-rose-50">
+                      {correctAnswerText}
+                    </p>
+                  ) : null}
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2.5">
+                <button
+                  type="button"
+                  onClick={goNext}
+                  className={`inline-flex min-w-[150px] justify-center rounded-2xl px-4 py-2.5 text-sm font-extrabold uppercase tracking-[0.18em] ${
+                    lastResult === "correct"
+                      ? "bg-lime-400 text-slate-950 hover:bg-lime-300"
+                      : "bg-rose-400 text-slate-950 hover:bg-rose-300"
+                  }`}
+                >
+                  {exerciseIndex >= exercises.length - 1 ? "Finish" : "Continue"}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={restart}
+                  className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+                >
+                  Restart session
+                </button>
+              </div>
+            </div>
+            ) : null}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
