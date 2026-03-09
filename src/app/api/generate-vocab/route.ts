@@ -57,9 +57,9 @@ function toIntInRange(value: unknown, fallback: number, min: number, max: number
 
 function computeDynamicVocabRange(text: string): { minItems: number; maxItems: number } {
   const words = wordCount(text);
-  const target = Math.max(18, Math.min(45, Math.round(words / 16)));
-  const minItems = Math.max(15, Math.min(40, target - 4));
-  const maxItems = Math.max(minItems, Math.min(45, target + 3));
+  const target = Math.max(14, Math.min(28, Math.round(words / 24)));
+  const minItems = Math.max(12, Math.min(24, target));
+  const maxItems = Math.max(minItems, Math.min(32, target + 4));
   return { minItems, maxItems };
 }
 
@@ -69,7 +69,7 @@ function clampItems(items: VocabItem[], minItems: number, maxItems: number): Voc
 }
 
 function computeSoftMinimum(minItems: number): number {
-  return Math.max(12, minItems - 4);
+  return Math.max(10, minItems - 3);
 }
 
 function wordCount(text: string): number {
@@ -365,7 +365,7 @@ export async function POST(req: Request) {
         text,
         language,
         level,
-        focus: `${focus} (strictly provide at least ${minItems} high-value items)`,
+        focus: `${focus} (strictly provide at least ${minItems} high-value items; prioritize concrete verbs, nouns, adjectives, and only short fixed expressions when clearly useful)`,
         topic,
         minItems,
         maxItems,
@@ -391,7 +391,7 @@ export async function POST(req: Request) {
         text,
         language,
         level,
-        focus: `${focus} (fill missing items)`,
+        focus: `${focus} (fill missing items with practical, reusable vocabulary; prefer strong single words over weak expressions)`,
         topic,
         minItems: remainingMin,
         maxItems: remainingMax,
@@ -486,7 +486,7 @@ Return ONLY valid JSON array.
         text,
         language,
         level,
-        focus: `${focus} (final rescue pass, prioritize missing high-value items)`,
+        focus: `${focus} (final rescue pass, prioritize concrete and reusable vocabulary; avoid abstract cognates and avoid expressions unless clearly lexicalized)`,
         topic,
         minItems: remainingMin,
         maxItems: remainingMax,

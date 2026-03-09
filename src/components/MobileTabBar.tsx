@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { BookOpen, Compass, Home, LogIn, Settings, Sparkles, Star } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 
@@ -23,10 +24,24 @@ function isHiddenPath(pathname: string): boolean {
 export default function MobileTabBar() {
   const pathname = usePathname() || "/";
   const { user } = useUser();
+  const [practiceActive, setPracticeActive] = useState(false);
   const isSignedIn = Boolean(user);
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
 
-  if (isStoryReaderPath(pathname) || isHiddenPath(pathname)) return null;
+  useEffect(() => {
+    const readPracticeState = () => {
+      if (typeof document === "undefined") return;
+      setPracticeActive(document.body.dataset.practiceActive === "true");
+    };
+
+    readPracticeState();
+    window.addEventListener("practice-session-visibility-change", readPracticeState);
+    return () => {
+      window.removeEventListener("practice-session-visibility-change", readPracticeState);
+    };
+  }, []);
+
+  if (isStoryReaderPath(pathname) || isHiddenPath(pathname) || practiceActive) return null;
 
   const tabs = isSignedIn
     ? plan === "polyglot"

@@ -96,6 +96,10 @@ export function formatTopic(value?: string): string {
   return toTitleCase(value);
 }
 
+export function formatRegion(value?: string): string {
+  return toTitleCase(value);
+}
+
 export function formatLevel(value?: string): string {
   if (!value) return FALLBACK;
   const key = value.toLowerCase() as Level;

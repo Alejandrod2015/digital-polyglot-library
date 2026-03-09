@@ -23,6 +23,7 @@ type Plan = "free" | "basic" | "premium" | "polyglot";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const [practiceActive, setPracticeActive] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const { user } = useUser();
@@ -53,6 +54,19 @@ export default function MobileMenu() {
     setOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const readPracticeState = () => {
+      if (typeof document === "undefined") return;
+      setPracticeActive(document.body.dataset.practiceActive === "true");
+    };
+
+    readPracticeState();
+    window.addEventListener("practice-session-visibility-change", readPracticeState);
+    return () => {
+      window.removeEventListener("practice-session-visibility-change", readPracticeState);
+    };
+  }, []);
+
   const handleFeedback = (): void => {
     const eventId =
       Sentry.lastEventId() ||
@@ -70,7 +84,7 @@ export default function MobileMenu() {
     alert("Feedback module not ready. Please reload and try again.");
   };
 
-  if (isStoryPage) {
+  if (isStoryPage || practiceActive) {
     return null;
   }
 

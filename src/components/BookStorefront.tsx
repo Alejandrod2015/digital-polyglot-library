@@ -13,7 +13,7 @@ import StoryVerticalCard from "@/components/StoryVerticalCard";
 import { books } from "@/data/books";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
 import { type Book, type Story } from "@/types/books";
-import { formatLanguage, formatLevel, formatTopic, toTitleCase } from "@/lib/displayFormat";
+import { formatLanguage, formatLevel, formatRegion, formatTopic } from "@/lib/displayFormat";
 
 type TabKey = "stories" | "vocab" | "reviews" | "about";
 type SortKey = "recommended" | "shortest" | "longest" | "title";
@@ -291,7 +291,7 @@ export default function BookStorefront({
             <span className="px-2.5 py-0.5 rounded-full bg-gray-700/80 text-gray-100 text-xs">{formatLevel(book.level)}</span>
             {book.region ? (
               <span className="px-2.5 py-0.5 rounded-full bg-gray-700/80 text-gray-100 text-xs">
-                {toTitleCase(book.region)}
+                {formatRegion(book.region)}
               </span>
             ) : null}
             {book.topic ? (

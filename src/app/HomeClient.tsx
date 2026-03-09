@@ -1855,7 +1855,7 @@ export default function HomeClient({
               <Link
                 key={story.key}
                 href={story.href}
-                className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
+                className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md cursor-pointer"
               >
                 <div className="w-full h-48 bg-[color:var(--surface)]">
                   <img
@@ -1865,7 +1865,7 @@ export default function HomeClient({
                   />
                 </div>
 
-                <div className="p-5 flex flex-col flex-1 text-left">
+                <div className="p-5 flex flex-col text-left">
                   <div>
                     <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
                       {story.title}
@@ -1875,13 +1875,12 @@ export default function HomeClient({
                     </p>
                   </div>
 
-                  <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
+                  <div className="mt-3 text-sm text-[var(--muted)]">
                     <div className="flex flex-wrap items-center gap-2">
                       <LevelBadge level={story.level} />
                       <LanguageBadge language={story.language} />
                       <RegionBadge region={story.region} />
                     </div>
-                    <p>{story.detail}</p>
                   </div>
                 </div>
               </Link>

@@ -2,16 +2,26 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import {
   buildPracticeSession,
   getDuePracticeItems,
   getSpeechSynthesisLang,
   PracticeFavoriteItem,
-  PracticeSourceMode,
+  PracticeMode,
 } from "@/lib/practiceExercises";
 
 type LoadState = "loading" | "ready" | "error";
+
+const matchColorClasses = [
+  "border-sky-400 bg-sky-400/18 text-sky-100",
+  "border-emerald-400 bg-emerald-400/18 text-emerald-100",
+  "border-amber-300 bg-amber-300/18 text-amber-100",
+  "border-fuchsia-400 bg-fuchsia-400/18 text-fuchsia-100",
+  "border-cyan-300 bg-cyan-300/18 text-cyan-100",
+  "border-rose-400 bg-rose-400/18 text-rose-100",
+];
 
 function getCompletionTone(score: number, total: number) {
   const ratio = total > 0 ? score / total : 0;
@@ -59,10 +69,11 @@ export default function PracticePage() {
   const { user, isLoaded } = useUser();
   const [favorites, setFavorites] = useState<PracticeFavoriteItem[]>([]);
   const [loadState, setLoadState] = useState<LoadState>("loading");
-  const [sourceMode, setSourceMode] = useState<PracticeSourceMode>("due");
+  const [selectedMode, setSelectedMode] = useState<PracticeMode | null>(null);
   const [exerciseIndex, setExerciseIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [matchAnswers, setMatchAnswers] = useState<Record<string, string>>({});
+  const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
   const [revealedIds, setRevealedIds] = useState<string[]>([]);
   const [score, setScore] = useState(0);
   const [sessionComplete, setSessionComplete] = useState(false);
@@ -103,23 +114,41 @@ export default function PracticePage() {
     };
   }, [isLoaded, user]);
 
-  const exercises = useMemo(() => buildPracticeSession(favorites, sourceMode), [favorites, sourceMode]);
+  const exercises = useMemo(
+    () => (selectedMode ? buildPracticeSession(favorites, selectedMode) : []),
+    [favorites, selectedMode]
+  );
   const currentExercise = exercises[exerciseIndex] ?? null;
   const dueCount = useMemo(() => getDuePracticeItems(favorites).length, [favorites]);
   const revealed = currentExercise ? revealedIds.includes(currentExercise.id) : false;
+  const activeSession = selectedMode !== null;
+  const progressPercent =
+    exercises.length > 0 ? Math.min(100, ((sessionComplete ? exercises.length : exerciseIndex) / exercises.length) * 100) : 0;
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.dataset.practiceActive = activeSession ? "true" : "false";
+    window.dispatchEvent(new Event("practice-session-visibility-change"));
+    return () => {
+      document.body.dataset.practiceActive = "false";
+      window.dispatchEvent(new Event("practice-session-visibility-change"));
+    };
+  }, [activeSession]);
 
   useEffect(() => {
     setExerciseIndex(0);
     setSelectedOption(null);
     setMatchAnswers({});
+    setActiveMatchWord(null);
     setRevealedIds([]);
     setScore(0);
     setSessionComplete(false);
-  }, [sourceMode, favorites.length]);
+  }, [selectedMode, favorites.length]);
 
   useEffect(() => {
     setSelectedOption(null);
     setMatchAnswers({});
+    setActiveMatchWord(null);
   }, [exerciseIndex]);
 
   const revealCurrent = () => {
@@ -163,18 +192,74 @@ export default function PracticePage() {
     window.speechSynthesis.speak(utterance);
   };
 
-  const sourceButtonClass = (mode: PracticeSourceMode) =>
-    `rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
-      sourceMode === mode
-        ? "bg-blue-600 text-white"
-        : "bg-[var(--card-bg)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-    }`;
+  const assignMatchMeaning = (meaning: string) => {
+    if (!currentExercise || currentExercise.type !== "match_meaning" || !activeMatchWord || revealed) return;
+
+    setMatchAnswers((prev) => {
+      const next = { ...prev };
+      for (const [word, assignedMeaning] of Object.entries(next)) {
+        if (assignedMeaning === meaning) {
+          delete next[word];
+        }
+      }
+      next[activeMatchWord] = meaning;
+      return next;
+    });
+    setActiveMatchWord(null);
+  };
+
+  const unassignMatchWord = (word: string) => {
+    setMatchAnswers((prev) => {
+      if (!prev[word]) return prev;
+      const next = { ...prev };
+      delete next[word];
+      return next;
+    });
+    setActiveMatchWord((prev) => (prev === word ? null : prev));
+  };
 
   const contextBlockClass =
     "mb-5 rounded-2xl border border-white/6 bg-white/[0.03] px-4 py-3";
 
   const contextTextClass =
     "text-xs leading-6 text-[var(--muted)]/75 sm:text-sm";
+  const modeCards: Array<{
+    mode: PracticeMode;
+    title: string;
+    detail: string;
+    caption: string;
+  }> = [
+    {
+      mode: "meaning",
+      title: "Meaning",
+      detail: "Choose the meaning that fits a word in context.",
+      caption: "Best for locking in definitions with real usage.",
+    },
+    {
+      mode: "context",
+      title: "Context",
+      detail: "Complete short sentences with the right word or expression.",
+      caption: "Best for recall and sentence-level usage.",
+    },
+    {
+      mode: "natural",
+      title: "Natural usage",
+      detail: "Spot the expression that sounds right in real language.",
+      caption: "Best for phrases, connectors, and colloquial language.",
+    },
+    {
+      mode: "listening",
+      title: "Listening",
+      detail: "Hear a word and choose what was said.",
+      caption: "Best for audio recognition and fast review.",
+    },
+    {
+      mode: "match",
+      title: "Match",
+      detail: "Match saved words to their meanings in quick sets.",
+      caption: "Best for fast warm-up rounds.",
+    },
+  ];
   const completionTone = getCompletionTone(score, exercises.length);
   const completionBursts = useMemo(
     () => [
@@ -252,52 +337,38 @@ export default function PracticePage() {
     );
   }
 
-  if (exercises.length === 0) {
+  if (activeSession) {
     return (
-      <div className="min-h-screen p-6 pb-24 text-[var(--foreground)]">
-        <h1 className="mb-2 text-3xl font-bold">Practice</h1>
-        <p className="mb-5 text-sm text-[var(--muted)]">
-          You need a few more saved words with context before these exercises can be generated.
-        </p>
-        <Link
-          href="/favorites"
-          className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
-        >
-          Review favorites
-        </Link>
-      </div>
-    );
-  }
+      <div className="min-h-screen px-4 py-4 pb-8 text-[var(--foreground)] sm:px-6 sm:py-6">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-6 flex items-center gap-4">
+            <button
+              type="button"
+              onClick={() => setSelectedMode(null)}
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+              aria-label="Close practice"
+            >
+              <X size={20} />
+            </button>
+            <div className="min-w-0 flex-1">
+              <div className="h-4 overflow-hidden rounded-full bg-white/12">
+                <div
+                  className="h-full rounded-full bg-[var(--primary)] transition-[width] duration-300"
+                  style={{ width: `${progressPercent}%` }}
+                />
+              </div>
+              <div className="mt-2 flex items-center justify-between gap-3">
+                <p className="truncate text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
+                  {modeCards.find((card) => card.mode === selectedMode)?.title ?? "Practice"}
+                </p>
+                <p className="shrink-0 text-xs text-[var(--muted)]">
+                  {sessionComplete ? "Complete" : `${exerciseIndex + 1}/${exercises.length}`}
+                </p>
+              </div>
+            </div>
+          </div>
 
-  return (
-    <div className="min-h-screen p-6 pb-24 text-[var(--foreground)]">
-      <div className="mb-6">
-        <h1 className="mb-2 text-3xl font-bold">Practice</h1>
-        <p className="text-sm text-[var(--muted)]">
-          Work through vocabulary with context, natural usage, listening, and matching.
-        </p>
-      </div>
-
-      <div className="mb-5 flex flex-wrap items-center gap-3">
-        <button type="button" onClick={() => setSourceMode("due")} className={sourceButtonClass("due")}>
-          Due words ({dueCount})
-        </button>
-        <button type="button" onClick={() => setSourceMode("all")} className={sourceButtonClass("all")}>
-          Saved words ({favorites.length})
-        </button>
-        <div className="ml-auto rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2 text-sm text-[var(--muted)]">
-          Score {score}/{revealedIds.length}
-        </div>
-      </div>
-
-      <div className="mb-3 flex items-center justify-between text-sm text-[var(--muted)]">
-        <span>
-          Exercise {exerciseIndex + 1}/{exercises.length}
-        </span>
-        <span className="capitalize">{currentExercise?.type.replaceAll("_", " ")}</span>
-      </div>
-
-      {sessionComplete ? (
+          {sessionComplete ? (
         <div
           className="relative overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-md"
           style={{ animation: "fade-in 220ms ease-out" }}
@@ -410,7 +481,7 @@ export default function PracticePage() {
           `}</style>
         </div>
       ) : currentExercise ? (
-        <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md">
+        <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md sm:p-6">
           <p className="mb-5 text-lg font-semibold">{currentExercise.prompt}</p>
 
           {currentExercise.type === "fill_blank" ? (
@@ -562,41 +633,106 @@ export default function PracticePage() {
           ) : null}
 
           {currentExercise.type === "match_meaning" ? (
-            <div className="space-y-3">
-              {currentExercise.pairs.map((pair) => {
-                const currentValue = matchAnswers[pair.word] ?? "";
-                const isCorrect = revealed && currentValue === pair.answer;
-                const isWrong = revealed && currentValue && currentValue !== pair.answer;
-                return (
-                  <div key={pair.word} className="rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] p-4">
-                    <p className="mb-2 text-lg font-semibold tracking-tight">{pair.word}</p>
-                    <select
-                      value={currentValue}
-                      onChange={(event) =>
-                        setMatchAnswers((prev) => ({ ...prev, [pair.word]: event.target.value }))
-                      }
-                      disabled={revealed}
-                      className={`w-full rounded-xl border px-3 py-2 text-sm outline-none ${
-                        isCorrect
-                          ? "border-emerald-400 bg-emerald-400 text-slate-950"
-                          : isWrong
-                            ? "border-rose-400 bg-rose-400 text-slate-950"
-                            : "border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--foreground)]"
-                      }`}
-                    >
-                      <option value="">Choose meaning</option>
-                      {pair.options.map((option) => (
-                        <option key={`${pair.word}:${option}`} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                    {revealed && currentValue !== pair.answer ? (
-                      <p className="mt-2 text-xs text-emerald-300">Correct: {pair.answer}</p>
-                    ) : null}
-                  </div>
-                );
-              })}
+            <div className="grid gap-4 lg:grid-cols-2">
+              <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] p-4">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+                  Words
+                </p>
+                <div className="space-y-3">
+                  {currentExercise.pairs.map((pair) => {
+                    const currentValue = matchAnswers[pair.word] ?? "";
+                    const matchColor = matchColorClasses[
+                      currentExercise.pairs.findIndex((candidate) => candidate.word === pair.word) %
+                        matchColorClasses.length
+                    ];
+                    const isActive = activeMatchWord === pair.word;
+                    const isCorrect = revealed && currentValue === pair.answer;
+                    const isWrong = revealed && currentValue && currentValue !== pair.answer;
+                    return (
+                      <button
+                        key={pair.word}
+                        type="button"
+                        onClick={() => {
+                          if (revealed) return;
+                          if (currentValue) {
+                            unassignMatchWord(pair.word);
+                            return;
+                          }
+                          setActiveMatchWord((prev) => (prev === pair.word ? null : pair.word));
+                        }}
+                        className={`w-full rounded-2xl border px-4 py-3 text-left transition ${
+                          isCorrect
+                            ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                            : isWrong
+                              ? "border-rose-400 bg-rose-400 text-slate-950"
+                              : currentValue
+                                ? matchColor
+                              : isActive
+                                ? matchColor
+                                : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
+                        }`}
+                      >
+                        <p className="text-lg font-semibold tracking-tight">{pair.word}</p>
+                        {revealed && currentValue !== pair.answer ? (
+                          <p className="mt-2 text-xs text-emerald-300">Correct: {pair.answer}</p>
+                        ) : null}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] p-4">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+                  Meanings
+                </p>
+                <div className="space-y-3">
+                  {currentExercise.pairs[0]?.options.map((meaning) => {
+                    const assignedWord =
+                      Object.entries(matchAnswers).find(([, assignedMeaning]) => assignedMeaning === meaning)?.[0] ?? null;
+                    const isAssigned = Boolean(assignedWord);
+                    const assignedIndex = assignedWord
+                      ? currentExercise.pairs.findIndex((pair) => pair.word === assignedWord)
+                      : -1;
+                    const assignedPair =
+                      assignedWord != null
+                        ? currentExercise.pairs.find((pair) => pair.word === assignedWord) ?? null
+                        : null;
+                    const isCorrect = revealed && assignedPair?.answer === meaning;
+                    const isWrong = revealed && isAssigned && assignedPair?.answer !== meaning;
+                    const matchColor =
+                      assignedIndex >= 0
+                        ? matchColorClasses[assignedIndex % matchColorClasses.length]
+                        : "";
+                    return (
+                      <button
+                        key={meaning}
+                        type="button"
+                        onClick={() => {
+                          if (revealed) return;
+                          if (assignedWord) {
+                            unassignMatchWord(assignedWord);
+                            return;
+                          }
+                          assignMatchMeaning(meaning);
+                        }}
+                        disabled={revealed || (!activeMatchWord && !assignedWord)}
+                        className={`w-full rounded-2xl border px-4 py-3 text-left transition ${
+                          isCorrect
+                            ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                            : isWrong
+                              ? "border-rose-400 bg-rose-400 text-slate-950"
+                              : isAssigned
+                            ? matchColor
+                            : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
+                        } disabled:opacity-100`}
+                      >
+                        <p className="text-sm leading-6">{meaning}</p>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           ) : null}
 
@@ -641,7 +777,68 @@ export default function PracticePage() {
             </Link>
           </div>
         </div>
-      ) : null}
+      ) : (
+        <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-md">
+          <h2 className="text-2xl font-semibold tracking-tight">Not enough words yet</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+            This mode needs a few more saved words with clear context before it can generate a useful session.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <Link
+              href="/favorites"
+              className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+            >
+              Open favorites
+            </Link>
+            <button
+              type="button"
+              onClick={() => setSelectedMode(null)}
+              className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              Choose another mode
+            </button>
+          </div>
+        </div>
+      )}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen p-6 pb-24 text-[var(--foreground)]">
+      <div className="mb-6">
+        <h1 className="mb-2 text-3xl font-bold">Practice</h1>
+        <p className="text-sm text-[var(--muted)]">
+          Choose how you want to practice, then focus on one short session at a time.
+        </p>
+      </div>
+      <div className="mb-5 flex items-center gap-3 text-sm text-[var(--muted)]">
+        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2">
+          Due words {dueCount}
+        </div>
+        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2">
+          Saved words {favorites.length}
+        </div>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {modeCards.map((card) => (
+          <button
+            key={card.mode}
+            type="button"
+            onClick={() => setSelectedMode(card.mode)}
+            className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 text-left shadow-md transition hover:bg-[var(--card-bg-hover)]"
+          >
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
+              Practice mode
+            </p>
+            <h2 className="text-2xl font-semibold tracking-tight">{card.title}</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--foreground)]/88">{card.detail}</p>
+            <p className="mt-5 text-xs leading-5 text-[var(--muted)]">{card.caption}</p>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

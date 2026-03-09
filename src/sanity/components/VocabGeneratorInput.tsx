@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useClient, useFormValue } from 'sanity'
 import { Button, Card, Flex, Spinner, Stack, Text } from '@sanity/ui'
 import { SparklesIcon } from '@sanity/icons'
+import { getSanityTargetId } from '@/sanity/lib/getSanityTargetId'
 
 type VocabItem = {
   word: string
@@ -118,6 +119,7 @@ export default function VocabGeneratorInput() {
         generatedCount?: number
         minItems?: number
         maxItems?: number
+        minimumUsableItems?: number
         error?: string
         details?: string
       } = {}
@@ -125,10 +127,6 @@ export default function VocabGeneratorInput() {
         payload = raw ? (JSON.parse(raw) as typeof payload) : {}
       } catch {
         throw new Error(`Unexpected response from server: ${raw.slice(0, 120)}`)
-      }
-
-      if (!res.ok) {
-        throw new Error(payload.error || payload.details || 'Failed to generate vocabulary.')
       }
 
       const rowsRaw = Array.isArray(payload.vocab) ? payload.vocab.filter(isVocabItem) : []
@@ -140,12 +138,26 @@ export default function VocabGeneratorInput() {
         typeof payload.maxItems === 'number' && Number.isFinite(payload.maxItems)
           ? payload.maxItems
           : 25
+      const minimumUsableItems =
+        typeof payload.minimumUsableItems === 'number' && Number.isFinite(payload.minimumUsableItems)
+          ? payload.minimumUsableItems
+          : Math.max(12, minItems - 4)
       const rows = normalizeRows(rowsRaw, cleanedText).slice(0, maxItems)
-      if (rows.length < minItems) {
-        throw new Error(`The model returned fewer than ${minItems} valid vocab items. Try again.`)
+
+      if (!res.ok) {
+        // The API can return 422 with a still-usable rescued set.
+        if (res.status !== 422 || rows.length < minimumUsableItems) {
+          throw new Error(payload.error || payload.details || 'Failed to generate vocabulary.')
+        }
       }
 
-      const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
+      if (rows.length < minimumUsableItems) {
+        throw new Error(
+          `The model returned fewer than ${minimumUsableItems} usable vocab items. Try again.`
+        )
+      }
+
+      const targetId = await getSanityTargetId(client, formId)
       await client
         .patch(targetId)
         .set({
@@ -153,7 +165,11 @@ export default function VocabGeneratorInput() {
         })
         .commit()
 
-      setMsg(`Vocabulary generated and saved (${rows.length} items).`)
+      setMsg(
+        res.ok
+          ? `Vocabulary generated and saved (${rows.length} items).`
+          : `Vocabulary generated and saved (${rows.length} items, rescued set).`
+      )
     } catch (err) {
       const e = err as Error
       setError(e.message)
