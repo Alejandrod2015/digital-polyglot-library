@@ -1344,7 +1344,6 @@ export default function HomeClient({
 
   const dailyLoop = useMemo(() => {
     const primaryContinue = continueListening[0] ?? null;
-<<<<<<< HEAD
     const nextStory: DailyLoopStory | null = !isPersonalizationSettled
       ? null
       : recommendedStories[0]
@@ -1368,18 +1367,6 @@ export default function HomeClient({
             }`,
           }
         : null;
-=======
-    const nextStory: DailyLoopStory | null = polyglotForHome[0]
-      ? {
-          href: withReturnContext(`/stories/${polyglotForHome[0].slug}`),
-          title: polyglotForHome[0].title,
-          label: "Explore a new voice",
-          detail: `${polyglotForHome[0].language ?? "Polyglot"} · ${
-            polyglotForHome[0].region ?? "New region"
-          }`,
-        }
-      : null;
->>>>>>> feature/revision
 
     const primary = primaryContinue
       ? {
@@ -1410,7 +1397,6 @@ export default function HomeClient({
 
     return {
       primary,
-<<<<<<< HEAD
       practiceHref: userId ? "/favorites" : signInHref,
       practiceLabel: !isPersonalizationSettled
         ? "Preparing your practice"
@@ -1440,27 +1426,6 @@ export default function HomeClient({
     recommendedStories,
     signInHref,
     userId,
-=======
-      practiceHref: hasSession ? "/favorites" : signInHref,
-      practiceLabel: hasSession ? "Open your practice" : "Start saving words",
-      practiceDetail:
-        hasSession
-          ? "Review due words and saved expressions"
-          : "Tap words while reading so they build up here",
-      progressHref: hasSession ? "/progress" : "/explore",
-      progressLabel: hasSession ? "Protect your streak" : "Build your reading habit",
-      progressDetail: hasSession
-        ? "One finished story is enough to keep momentum"
-        : "Short daily reading works better than long sessions",
-      nextStory,
-    };
-  }, [
-    continueListening,
-    featuredFreeStory,
-    hasSession,
-    polyglotForHome,
-    signInHref,
->>>>>>> feature/revision
   ]);
 
   const mobileContinueCards = useMemo<ContinueMobileCard[]>(() => {
@@ -1621,7 +1586,6 @@ export default function HomeClient({
                 </p>
               </Link>
 
-<<<<<<< HEAD
               {dailyLoop.showLoadingSecondary ? (
                 <div className="rounded-[22px] border border-white/10 bg-white/5 p-4">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-200/72">
@@ -1631,9 +1595,6 @@ export default function HomeClient({
                   <div className="mt-2 h-4 w-2/3 animate-pulse rounded bg-white/10" />
                 </div>
               ) : dailyLoop.nextStory ? (
-=======
-              {dailyLoop.nextStory ? (
->>>>>>> feature/revision
                 <Link
                   href={dailyLoop.nextStory.href}
                   className="rounded-[22px] border border-white/10 bg-white/5 p-4 transition hover:bg-white/8"
