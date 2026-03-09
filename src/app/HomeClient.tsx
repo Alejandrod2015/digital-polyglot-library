@@ -102,6 +102,39 @@ type RecommendedStoryItem = {
   score: number;
 };
 
+type DailyLoopStory = {
+  href: string;
+  title: string;
+  label: string;
+  detail: string;
+};
+
+type HomeStoryCard =
+  | {
+      kind: "catalog";
+      key: string;
+      href: string;
+      title: string;
+      subtitle: string;
+      coverUrl: string;
+      level?: string;
+      language?: string;
+      region?: string;
+      detail: string;
+    }
+  | {
+      kind: "polyglot";
+      key: string;
+      href: string;
+      title: string;
+      subtitle: string;
+      coverUrl: string;
+      level?: string;
+      language?: string;
+      region?: string;
+      detail: string;
+    };
+
 type Props = {
   latestBooks: LatestBook[];
   latestStories: LatestStory[];
@@ -281,6 +314,7 @@ export default function HomeClient({
   const [savedBookIds, setSavedBookIds] = useState<Set<string>>(new Set());
   const [savedStoryIds, setSavedStoryIds] = useState<Set<string>>(new Set());
   const [readingHistoryStoryIds, setReadingHistoryStoryIds] = useState<Set<string>>(new Set());
+  const [personalizationSignalsLoaded, setPersonalizationSignalsLoaded] = useState(false);
   const [recommendedStoryDurations, setRecommendedStoryDurations] = useState<Record<string, number>>(
     {}
   );
@@ -639,8 +673,13 @@ export default function HomeClient({
           setSavedBookIds(new Set());
           setSavedStoryIds(new Set());
           setReadingHistoryStoryIds(new Set());
+          setPersonalizationSignalsLoaded(true);
         }
         return;
+      }
+
+      if (!cancelled) {
+        setPersonalizationSignalsLoaded(false);
       }
 
       try {
@@ -726,6 +765,8 @@ export default function HomeClient({
         }
       } catch {
         if (!cancelled) setReadingHistoryStoryIds(new Set());
+      } finally {
+        if (!cancelled) setPersonalizationSignalsLoaded(true);
       }
     };
 
@@ -782,11 +823,22 @@ export default function HomeClient({
     );
   }, [latestPolyglotStories, languageFilter]);
 
+  const withReturnContext = (href: string) => {
+    const [base, existingQuery = ""] = href.split("?");
+    const params = new URLSearchParams(existingQuery);
+    params.set("returnTo", "/");
+    params.set("returnLabel", "Home");
+    params.set("from", "home");
+    return `${base}?${params.toString()}`;
+  };
+
   const storiesForHome = filteredStories.slice(0, DESKTOP_LIMIT);
   const polyglotForHome = filteredPolyglot.slice(0, DESKTOP_LIMIT);
   const [latestStoryDurations, setLatestStoryDurations] = useState<Record<string, number>>({});
   const canShowPersonalizedRecommendations =
     isPersonalizationReady && (plan === "premium" || plan === "polyglot");
+  const isPersonalizationSettled =
+    !canShowPersonalizedRecommendations || personalizationSignalsLoaded;
 
   const latestStoryTopicByKey = useMemo(() => {
     const topicByKey: Record<string, string | undefined> = {};
@@ -801,6 +853,54 @@ export default function HomeClient({
     }
     return topicByKey;
   }, [storiesForHome]);
+
+  const latestHomeStories = useMemo<HomeStoryCard[]>(() => {
+    const catalogCards = storiesForHome.map((s) => {
+      const key = `${s.bookSlug}:${s.storySlug}`;
+      return {
+        kind: "catalog" as const,
+        key,
+        href:
+          s.bookSlug === "standalone"
+            ? withReturnContext(`/stories/${s.storySlug}`)
+            : withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`),
+        title: s.storyTitle || "Untitled story",
+        subtitle: s.bookTitle || s.bookSlug,
+        coverUrl: s.coverUrl,
+        level: s.level,
+        language: s.language,
+        region: s.region,
+        detail: `${formatAudioDuration(latestStoryDurations[key])} · ${formatTopic(
+          latestStoryTopicByKey[key]
+        )}`,
+      };
+    });
+
+    const polyglotCards = polyglotForHome.map((story) => ({
+      kind: "polyglot" as const,
+      key: story.slug,
+      href: withReturnContext(`/stories/${story.slug}`),
+      title: story.title,
+      subtitle: "Individual Story",
+      coverUrl:
+        typeof story.coverUrl === "string" && story.coverUrl.trim() !== ""
+          ? story.coverUrl
+          : "/covers/default.jpg",
+      level: story.level,
+      language: story.language,
+      region: story.region,
+      detail: stripHtml(story.text ?? "").slice(0, 120).trim()
+        ? `${stripHtml(story.text ?? "").slice(0, 120).trim()}...`
+        : "Fresh polyglot story",
+    }));
+
+    return [...catalogCards, ...polyglotCards];
+  }, [
+    latestStoryDurations,
+    latestStoryTopicByKey,
+    polyglotForHome,
+    storiesForHome,
+  ]);
 
   const recommendedStories = useMemo<RecommendedStoryItem[]>(() => {
     if (!canShowPersonalizedRecommendations) return [];
@@ -1188,15 +1288,6 @@ export default function HomeClient({
     };
   }, [recommendedStories, recommendedStoryDurations]);
 
-  const withReturnContext = (href: string) => {
-    const [base, existingQuery = ""] = href.split("?");
-    const params = new URLSearchParams(existingQuery);
-    params.set("returnTo", "/");
-    params.set("returnLabel", "Home");
-    params.set("from", "home");
-    return `${base}?${params.toString()}`;
-  };
-
   const featuredFreeStory = useMemo(() => {
     const targetSlug =
       plan === "basic"
@@ -1228,6 +1319,98 @@ export default function HomeClient({
     }
     return null;
   }, [plan, featuredDaySlug, featuredWeekSlug]);
+
+  const signInHref = useMemo(() => {
+    const params = new URLSearchParams();
+    params.set("redirect_url", "/");
+    return `/sign-in?${params.toString()}`;
+  }, []);
+
+  const dailyLoop = useMemo(() => {
+    const primaryContinue = continueListening[0] ?? null;
+    const nextStory: DailyLoopStory | null = !isPersonalizationSettled
+      ? null
+      : recommendedStories[0]
+      ? {
+          href: withReturnContext(
+            `/books/${recommendedStories[0].bookSlug}/${recommendedStories[0].storySlug}`
+          ),
+          title: recommendedStories[0].storyTitle,
+          label: recommendedStories[0].reason,
+          detail: `${recommendedStories[0].language ?? "Story"} · ${
+            recommendedStories[0].region ?? "New region"
+          }`,
+        }
+      : polyglotForHome[0]
+        ? {
+            href: withReturnContext(`/stories/${polyglotForHome[0].slug}`),
+            title: polyglotForHome[0].title,
+            label: "Explore a new voice",
+            detail: `${polyglotForHome[0].language ?? "Polyglot"} · ${
+              polyglotForHome[0].region ?? "New region"
+            }`,
+          }
+        : null;
+
+    const primary = primaryContinue
+      ? {
+          eyebrow: "Pick up where you left off",
+          title: primaryContinue.title,
+          subtitle: `${primaryContinue.bookTitle} · ${formatRemainingDuration(
+            primaryContinue.audioDurationSec,
+            primaryContinue.progressSec
+          )}`,
+          href: withReturnContext(`/books/${primaryContinue.bookSlug}/${primaryContinue.storySlug}`),
+          cta: "Continue story",
+        }
+      : featuredFreeStory
+        ? {
+            eyebrow: featuredFreeStory.label,
+            title: featuredFreeStory.title,
+            subtitle: `${featuredFreeStory.bookTitle} · ${formatTopic(featuredFreeStory.topic)}`,
+            href: featuredFreeStory.href,
+            cta: "Start today's story",
+          }
+        : {
+            eyebrow: "Daily reading loop",
+            title: "Read one short story today",
+            subtitle: "Keep the habit alive in a few minutes.",
+            href: "/explore",
+            cta: "Explore stories",
+          };
+
+    return {
+      primary,
+      practiceHref: userId ? "/favorites" : signInHref,
+      practiceLabel: !isPersonalizationSettled
+        ? "Preparing your practice"
+        : favoriteSignals.length > 0
+          ? "Practice your saved words"
+          : "Start saving words",
+      practiceDetail:
+        !isPersonalizationSettled
+          ? "Loading your due words and next step"
+          : favoriteSignals.length > 0
+          ? `${Math.min(5, favoriteSignals.length)} quick words to review today`
+          : "Tap words while reading so they build up here",
+      progressHref: userId ? "/progress" : "/explore",
+      progressLabel: userId ? "Protect your streak" : "Build your reading habit",
+      progressDetail: userId
+        ? "One finished story is enough to keep momentum"
+        : "Short daily reading works better than long sessions",
+      nextStory,
+      showLoadingSecondary: !isPersonalizationSettled,
+    };
+  }, [
+    continueListening,
+    favoriteSignals.length,
+    featuredFreeStory,
+    isPersonalizationSettled,
+    polyglotForHome,
+    recommendedStories,
+    signInHref,
+    userId,
+  ]);
 
   const mobileContinueCards = useMemo<ContinueMobileCard[]>(() => {
     if (continueListening.length === 0) return [];
@@ -1339,6 +1522,83 @@ export default function HomeClient({
   return (
     <div className="min-h-full w-full flex flex-col items-center px-8 pb-28">
       <>
+      <section className="w-full max-w-5xl pt-8 md:pt-10 mb-10 md:mb-12">
+        <div className="rounded-[28px] border border-[#2b4767] bg-[linear-gradient(180deg,#173250_0%,#112742_100%)] p-5 shadow-[0_20px_60px_rgba(6,17,38,0.32)] sm:p-6">
+          <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-200/75">
+                Daily loop
+              </p>
+              <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8dc7ff]">
+                {dailyLoop.primary.eyebrow}
+              </p>
+              <h2 className="mt-2 text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">
+                {dailyLoop.primary.title}
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-200/88 sm:text-base">
+                {dailyLoop.primary.subtitle}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link
+                  href={dailyLoop.primary.href}
+                  className="inline-flex items-center rounded-xl bg-[#4aa8ff] px-4 py-2.5 text-sm font-semibold text-[#071321] transition hover:bg-[#79c0ff]"
+                >
+                  {dailyLoop.primary.cta}
+                </Link>
+                <Link
+                  href={dailyLoop.progressHref}
+                  className="inline-flex items-center rounded-xl border border-white/12 bg-white/6 px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] transition hover:bg-white/10"
+                >
+                  {dailyLoop.progressLabel}
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid gap-3">
+              <Link
+                href={dailyLoop.practiceHref}
+                className="rounded-[22px] border border-white/10 bg-white/5 p-4 transition hover:bg-white/8"
+              >
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-200/72">
+                  Quick practice
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-[var(--foreground)]">
+                  {dailyLoop.practiceLabel}
+                </h3>
+                <p className="mt-1 text-sm leading-6 text-slate-300/90">
+                  {dailyLoop.practiceDetail}
+                </p>
+              </Link>
+
+              {dailyLoop.showLoadingSecondary ? (
+                <div className="rounded-[22px] border border-white/10 bg-white/5 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-200/72">
+                    Preparing your next step
+                  </p>
+                  <div className="mt-3 h-5 w-3/4 animate-pulse rounded bg-white/10" />
+                  <div className="mt-2 h-4 w-2/3 animate-pulse rounded bg-white/10" />
+                </div>
+              ) : dailyLoop.nextStory ? (
+                <Link
+                  href={dailyLoop.nextStory.href}
+                  className="rounded-[22px] border border-white/10 bg-white/5 p-4 transition hover:bg-white/8"
+                >
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-200/72">
+                    {dailyLoop.nextStory.label}
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold text-[var(--foreground)]">
+                    {dailyLoop.nextStory.title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-6 text-slate-300/90">
+                    {dailyLoop.nextStory.detail}
+                  </p>
+                </Link>
+              ) : null}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Free featured story for free/basic users */}
       {isPersonalizationReady && featuredFreeStory && continueListening.length === 0 && (
         <section className="w-full max-w-5xl text-center pt-8 md:pt-10 mb-10 md:mb-12">
@@ -1567,31 +1827,24 @@ export default function HomeClient({
         </div>
       </section>
 
-      {/* Latest Stories (mismas dimensiones que Explore) */}
+      {/* Latest Stories */}
       <section className="mb-10 md:mb-12 text-center w-full max-w-5xl">
         <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Latest Stories</h2>
 
         <div>
           <StoryCarousel
-            items={storiesForHome}
-            renderItem={(s) => {
-              const key = `${s.bookSlug}:${s.storySlug}`;
-              const topic = latestStoryTopicByKey[key];
-              const durationSec = latestStoryDurations[key];
+            items={latestHomeStories}
+            renderItem={(story) => {
               return (
               <Link
-                key={`${s.bookSlug}:${s.storySlug}`}
-                href={
-                  s.bookSlug === "standalone"
-                    ? withReturnContext(`/stories/${s.storySlug}`)
-                    : withReturnContext(`/books/${s.bookSlug}/${s.storySlug}`)
-                }
+                key={story.key}
+                href={story.href}
                 className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
               >
                 <div className="w-full h-48 bg-[color:var(--surface)]">
                   <img
-                    src={s.coverUrl}
-                    alt={s.storyTitle}
+                    src={story.coverUrl}
+                    alt={story.title}
                     className="object-cover w-full h-full"
                   />
                 </div>
@@ -1599,22 +1852,20 @@ export default function HomeClient({
                 <div className="p-5 flex flex-col flex-1 text-left">
                   <div>
                     <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
-                      {s.storyTitle || "Untitled story"}
+                      {story.title}
                     </h3>
                     <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
-                      {s.bookTitle || s.bookSlug}
+                      {story.subtitle}
                     </p>
                   </div>
 
                   <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
                     <div className="flex flex-wrap items-center gap-2">
-                      <LevelBadge level={s.level} />
-                      <LanguageBadge language={s.language} />
-                      <RegionBadge region={s.region} />
+                      <LevelBadge level={story.level} />
+                      <LanguageBadge language={story.language} />
+                      <RegionBadge region={story.region} />
                     </div>
-                    <p>
-                      {formatAudioDuration(durationSec)} · {formatTopic(topic)}
-                    </p>
+                    <p>{story.detail}</p>
                   </div>
                 </div>
               </Link>
@@ -1624,54 +1875,7 @@ export default function HomeClient({
         </div>
 
         <div className="md:hidden mt-4 text-[var(--muted)] text-sm">
-          Showing {Math.min(MOBILE_LIMIT, storiesForHome.length)} of {storiesForHome.length}
-        </div>
-      </section>
-
-      {/* Latest Polyglot Stories (mismas dimensiones que Explore) */}
-      <section className="mb-10 md:mb-12 text-center w-full max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Latest Polyglot Stories</h2>
-
-        <div>
-          <StoryCarousel
-            items={polyglotForHome}
-            renderItem={(story) => (
-              <Link
-                key={story.slug}
-                href={withReturnContext(`/stories/${story.slug}`)}
-                className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
-              >
-                <div className="w-full h-48 bg-[color:var(--surface)]">
-                  <img
-                    src={
-                      typeof story.coverUrl === "string" && story.coverUrl.trim() !== ""
-                        ? story.coverUrl
-                        : "/covers/default.jpg"
-                    }
-                    alt={story.title}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-
-                <div className="p-5 flex flex-col flex-1 text-left">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)]">{story.title}</h3>
-                    <p className="text-[var(--muted)] text-sm leading-relaxed line-clamp-3">
-                      {stripHtml(story.text ?? "").slice(0, 120)}...
-                    </p>
-                  </div>
-
-                  <div className="mt-3">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <LevelBadge level={story.level} />
-                      <LanguageBadge language={story.language} />
-                      <RegionBadge region={story.region} />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            )}
-          />
+          Showing {Math.min(MOBILE_LIMIT, latestHomeStories.length)} of {latestHomeStories.length}
         </div>
       </section>
       </>
