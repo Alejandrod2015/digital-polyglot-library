@@ -12,7 +12,7 @@ import { useUser } from "@clerk/nextjs";
 import { useEffect, useMemo, useState } from "react";
 import ExploreSearch from "@/components/ExploreSearch";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { formatTopic } from "@/lib/displayFormat";
+import { formatLanguage, formatTopic } from "@/lib/displayFormat";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
 
 const formatAudioDuration = (totalSeconds?: number) => {
@@ -287,7 +287,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     const addFilterValue = (
       map: Map<string, { label: string; count: number }>,
-      value: string | undefined | null
+      value: string | undefined | null,
+      formatter?: (value?: string) => string
     ) => {
       const label = typeof value === "string" ? value.trim() : "";
       const key = normalizeTopicKey(label);
@@ -297,7 +298,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         existing.count += 1;
         return;
       }
-      map.set(key, { label, count: 1 });
+      map.set(key, { label: formatter ? formatter(label) : label, count: 1 });
     };
 
     const addTopics = (topics: string[]) => {
@@ -319,19 +320,19 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     for (const book of languageFilteredBooks) {
       if (!isRecord(book)) continue;
-      addFilterValue(languageMap, getString(book, "language"));
+      addFilterValue(languageMap, getString(book, "language"), formatLanguage);
       addFilterValue(regionMap, getString(book, "region"));
       addTopics(extractBookTopics(book));
     }
 
     for (const story of languageFilteredBookStories) {
-      addFilterValue(languageMap, story.language);
+      addFilterValue(languageMap, story.language, formatLanguage);
       addFilterValue(regionMap, story.region);
       addTopics(story.topics);
     }
 
     for (const story of languageFilteredPolyglotStories) {
-      addFilterValue(languageMap, story.language);
+      addFilterValue(languageMap, story.language, formatLanguage);
       addFilterValue(regionMap, story.region);
       addTopics([...toTopicList(story.topic), ...toTopicList(story.themes)]);
     }

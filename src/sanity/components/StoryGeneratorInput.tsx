@@ -342,23 +342,38 @@ export default function StoryGeneratorInput() {
         })
 
         const raw = await res.text()
-        let payload: { vocab?: unknown; error?: string; details?: string } = {}
+        let payload: {
+          vocab?: unknown
+          error?: string
+          details?: string
+          generatedCount?: number
+          minimumUsableItems?: number
+        } = {}
         try {
           payload = raw ? (JSON.parse(raw) as typeof payload) : {}
         } catch {
           throw new Error(`Vocabulary: unexpected response ${raw.slice(0, 120)}`)
         }
-        if (!res.ok) {
-          throw new Error(payload.error || payload.details || 'Vocabulary generation failed.')
-        }
 
         const rows = Array.isArray(payload.vocab) ? payload.vocab.filter(isVocabItem) : []
+        const minimumUsableItems =
+          typeof payload.minimumUsableItems === 'number' && Number.isFinite(payload.minimumUsableItems)
+            ? payload.minimumUsableItems
+            : 1
+
+        if (!res.ok) {
+          // The vocab API can return 422 with a still-usable rescued set.
+          if (res.status !== 422 || rows.length < minimumUsableItems) {
+            throw new Error(payload.error || payload.details || 'Vocabulary generation failed.')
+          }
+        }
+
         if (rows.length === 0) {
           throw new Error('Vocabulary: no usable items returned.')
         }
 
         await client.patch(targetId).set({ vocabRaw: JSON.stringify(rows, null, 2) }).commit()
-        return `Vocabulary (${rows.length})`
+        return res.ok ? `Vocabulary (${rows.length})` : `Vocabulary (${rows.length}, rescued set)`
       })()
 
       const coverTask = (async () => {
