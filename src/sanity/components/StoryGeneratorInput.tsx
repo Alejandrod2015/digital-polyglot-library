@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useFormValue, useClient } from 'sanity'
 import { Button, Card, Text, Stack, Spinner, Flex } from '@sanity/ui'
 import { SparklesIcon } from '@sanity/icons'
+import { getSanityTargetId } from '@/sanity/lib/getSanityTargetId'
 
 type GenPayload = {
   title: string
@@ -42,6 +43,9 @@ export default function StoryGeneratorInput() {
   const topic = useFormValue(['topic']) as string | undefined
   const synopsis = useFormValue(['synopsis']) as string | undefined
   const text = useFormValue(['text']) as string | undefined
+  const vocabRaw = useFormValue(['vocabRaw']) as string | undefined
+  const coverAssetRef = useFormValue(['cover', 'asset', '_ref']) as string | undefined
+  const audioAssetRef = useFormValue(['audio', 'asset', '_ref']) as string | undefined
 
   // ✅ Detección automática del campo regional según idioma
   const regionKeyByLang = {
@@ -137,7 +141,7 @@ export default function StoryGeneratorInput() {
       }
       const hasExistingTitle = typeof currentTitle === 'string' && currentTitle.trim() !== ''
 
-      const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
+      const targetId = await getSanityTargetId(client, formId)
       const patch = client.patch(targetId)
 
       // eliminar campo regional vacío
@@ -228,7 +232,7 @@ export default function StoryGeneratorInput() {
         throw new Error('No synopsis was returned.')
       }
 
-      const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
+      const targetId = await getSanityTargetId(client, formId)
       await client.patch(targetId).set({ synopsis: nextSynopsis }).commit()
       setMsg('✓ Synopsis generated — review it before generating the story.')
     } catch (err) {
@@ -291,7 +295,7 @@ export default function StoryGeneratorInput() {
         throw new Error('No title was returned.')
       }
 
-      const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
+      const targetId = await getSanityTargetId(client, formId)
       await client.patch(targetId).set({ title: nextTitle }).commit()
       setMsg('✓ Title generated — slug will update automatically.')
     } catch (err) {
@@ -315,6 +319,9 @@ export default function StoryGeneratorInput() {
       const cleanTitle = currentTitle?.trim() ?? ''
       const cleanStoryText = stripHtml(text ?? '')
       const cleanSynopsis = synopsis?.trim() || cleanStoryText
+      const hasExistingVocab = typeof vocabRaw === 'string' && vocabRaw.trim().length > 0
+      const hasExistingCover = typeof coverAssetRef === 'string' && coverAssetRef.trim().length > 0
+      const hasExistingAudio = typeof audioAssetRef === 'string' && audioAssetRef.trim().length > 0
 
       if (!cleanTitle) {
         throw new Error('Add a title before generating assets.')
@@ -326,110 +333,127 @@ export default function StoryGeneratorInput() {
         throw new Error('Add a synopsis or story text before generating assets.')
       }
 
-      const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
+      const targetId = await getSanityTargetId(client, formId)
+      const tasks: Array<Promise<string>> = []
 
-      const vocabTask = (async () => {
-        const res = await fetch(`${apiBase}/api/generate-vocab`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            text: cleanStoryText,
-            language: language ?? 'spanish',
-            level: level ?? 'intermediate',
-            focus: focus ?? 'verbs',
-            topic: topic ?? '',
-          }),
-        })
+      if (!hasExistingVocab) {
+        tasks.push((async () => {
+          const res = await fetch(`${apiBase}/api/generate-vocab`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              text: cleanStoryText,
+              language: language ?? 'spanish',
+              level: level ?? 'intermediate',
+              focus: focus ?? 'verbs',
+              topic: topic ?? '',
+            }),
+          })
 
-        const raw = await res.text()
-        let payload: {
-          vocab?: unknown
-          error?: string
-          details?: string
-          generatedCount?: number
-          minimumUsableItems?: number
-        } = {}
-        try {
-          payload = raw ? (JSON.parse(raw) as typeof payload) : {}
-        } catch {
-          throw new Error(`Vocabulary: unexpected response ${raw.slice(0, 120)}`)
-        }
-
-        const rows = Array.isArray(payload.vocab) ? payload.vocab.filter(isVocabItem) : []
-        const minimumUsableItems =
-          typeof payload.minimumUsableItems === 'number' && Number.isFinite(payload.minimumUsableItems)
-            ? payload.minimumUsableItems
-            : 1
-
-        if (!res.ok) {
-          // The vocab API can return 422 with a still-usable rescued set.
-          if (res.status !== 422 || rows.length < minimumUsableItems) {
-            throw new Error(payload.error || payload.details || 'Vocabulary generation failed.')
+          const raw = await res.text()
+          let payload: {
+            vocab?: unknown
+            error?: string
+            details?: string
+            generatedCount?: number
+            minimumUsableItems?: number
+          } = {}
+          try {
+            payload = raw ? (JSON.parse(raw) as typeof payload) : {}
+          } catch {
+            throw new Error(`Vocabulary: unexpected response ${raw.slice(0, 120)}`)
           }
-        }
 
-        if (rows.length === 0) {
-          throw new Error('Vocabulary: no usable items returned.')
-        }
+          const rows = Array.isArray(payload.vocab) ? payload.vocab.filter(isVocabItem) : []
+          const minimumUsableItems =
+            typeof payload.minimumUsableItems === 'number' && Number.isFinite(payload.minimumUsableItems)
+              ? payload.minimumUsableItems
+              : 1
 
-        await client.patch(targetId).set({ vocabRaw: JSON.stringify(rows, null, 2) }).commit()
-        return res.ok ? `Vocabulary (${rows.length})` : `Vocabulary (${rows.length}, rescued set)`
-      })()
+          if (!res.ok) {
+            // The vocab API can return 422 with a still-usable rescued set.
+            if (res.status !== 422 || rows.length < minimumUsableItems) {
+              throw new Error(payload.error || payload.details || 'Vocabulary generation failed.')
+            }
+          }
 
-      const coverTask = (async () => {
-        const res = await fetch(`${apiBase}/api/sanity/generate-cover`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            provider: 'flux',
-            documentId: formId,
-            title: cleanTitle,
-            synopsis: cleanSynopsis,
-            language: typeof language === 'string' ? language : '',
-            region: typeof region === 'string' ? region : '',
-            topic: typeof topic === 'string' ? topic : '',
-            level: typeof level === 'string' ? level : '',
-          }),
-        })
+          if (rows.length === 0) {
+            throw new Error('Vocabulary: no usable items returned.')
+          }
 
-        let data: { error?: string; details?: string } = {}
-        try {
-          data = (await res.json()) as { error?: string; details?: string }
-        } catch {
-          throw new Error('Cover: server did not return valid JSON.')
-        }
-        if (!res.ok) {
-          throw new Error(data.error || data.details || 'Cover generation failed.')
-        }
-        return 'Cover (Flux)'
-      })()
+          await client.patch(targetId).set({ vocabRaw: JSON.stringify(rows, null, 2) }).commit()
+          return res.ok ? `Vocabulary (${rows.length})` : `Vocabulary (${rows.length}, rescued set)`
+        })())
+      }
 
-      const audioTask = (async () => {
-        const res = await fetch(`${apiBase}/api/sanity/generate-audio`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            documentId: formId,
-            title: cleanTitle,
-            text: text?.trim() ?? '',
-            language: typeof language === 'string' ? language : '',
-            region: typeof region === 'string' ? region : '',
-          }),
-        })
+      if (!hasExistingCover) {
+        tasks.push((async () => {
+          const res = await fetch(`${apiBase}/api/sanity/generate-cover`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              provider: 'flux',
+              documentId: formId,
+              title: cleanTitle,
+              synopsis: cleanSynopsis,
+              language: typeof language === 'string' ? language : '',
+              region: typeof region === 'string' ? region : '',
+              topic: typeof topic === 'string' ? topic : '',
+              level: typeof level === 'string' ? level : '',
+            }),
+          })
 
-        let data: { error?: string; details?: string } = {}
-        try {
-          data = (await res.json()) as { error?: string; details?: string }
-        } catch {
-          throw new Error('Audio: server did not return valid JSON.')
-        }
-        if (!res.ok) {
-          throw new Error(data.error || data.details || 'Audio generation failed.')
-        }
-        return 'Audio'
-      })()
+          let data: { error?: string; details?: string } = {}
+          try {
+            data = (await res.json()) as { error?: string; details?: string }
+          } catch {
+            throw new Error('Cover: server did not return valid JSON.')
+          }
+          if (!res.ok) {
+            throw new Error(data.error || data.details || 'Cover generation failed.')
+          }
+          return 'Cover (Flux)'
+        })())
+      }
 
-      const results = await Promise.allSettled([vocabTask, coverTask, audioTask])
+      if (!hasExistingAudio) {
+        tasks.push((async () => {
+          const res = await fetch(`${apiBase}/api/sanity/generate-audio`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              documentId: formId,
+              title: cleanTitle,
+              text: cleanStoryText,
+              language: typeof language === 'string' ? language : '',
+              region: typeof region === 'string' ? region : '',
+            }),
+          })
+
+          let data: { error?: string; details?: string } = {}
+          try {
+            data = (await res.json()) as { error?: string; details?: string }
+          } catch {
+            throw new Error('Audio: server did not return valid JSON.')
+          }
+          if (!res.ok) {
+            throw new Error(data.error || data.details || 'Audio generation failed.')
+          }
+          return 'Audio'
+        })())
+      }
+
+      const skipped: string[] = []
+      if (hasExistingVocab) skipped.push('Vocabulary')
+      if (hasExistingCover) skipped.push('Cover')
+      if (hasExistingAudio) skipped.push('Audio')
+
+      if (tasks.length === 0) {
+        setMsg('✓ All assets already exist. Use the individual buttons if you want to regenerate one.')
+        return
+      }
+
+      const results = await Promise.allSettled(tasks)
       const successes = results
         .filter((result): result is PromiseFulfilledResult<string> => result.status === 'fulfilled')
         .map((result) => result.value)
@@ -438,7 +462,8 @@ export default function StoryGeneratorInput() {
         .map((result) => result.reason instanceof Error ? result.reason.message : String(result.reason))
 
       if (successes.length > 0) {
-        setMsg(`✓ Generated: ${successes.join(', ')}${failures.length > 0 ? `. Failed: ${failures.join(' · ')}` : '.'}`)
+        const skippedMsg = skipped.length > 0 ? `. Skipped existing: ${skipped.join(', ')}` : ''
+        setMsg(`✓ Generated: ${successes.join(', ')}${skippedMsg}${failures.length > 0 ? `. Failed: ${failures.join(' · ')}` : '.'}`)
       } else {
         throw new Error(failures.join(' · ') || 'Asset generation failed.')
       }

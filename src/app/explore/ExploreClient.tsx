@@ -12,8 +12,9 @@ import { useUser } from "@clerk/nextjs";
 import { useEffect, useMemo, useState } from "react";
 import ExploreSearch from "@/components/ExploreSearch";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { formatLanguage, formatTopic } from "@/lib/displayFormat";
+import { formatLanguage, formatRegion, formatTopic } from "@/lib/displayFormat";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
+import { ChevronDown } from "lucide-react";
 
 const formatAudioDuration = (totalSeconds?: number) => {
   if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:--";
@@ -321,19 +322,19 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     for (const book of languageFilteredBooks) {
       if (!isRecord(book)) continue;
       addFilterValue(languageMap, getString(book, "language"), formatLanguage);
-      addFilterValue(regionMap, getString(book, "region"));
+      addFilterValue(regionMap, getString(book, "region"), formatRegion);
       addTopics(extractBookTopics(book));
     }
 
     for (const story of languageFilteredBookStories) {
       addFilterValue(languageMap, story.language, formatLanguage);
-      addFilterValue(regionMap, story.region);
+      addFilterValue(regionMap, story.region, formatRegion);
       addTopics(story.topics);
     }
 
     for (const story of languageFilteredPolyglotStories) {
       addFilterValue(languageMap, story.language, formatLanguage);
-      addFilterValue(regionMap, story.region);
+      addFilterValue(regionMap, story.region, formatRegion);
       addTopics([...toTopicList(story.topic), ...toTopicList(story.themes)]);
     }
 
@@ -368,10 +369,10 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     const regionMapAfterLanguage = new Map<string, { label: string; count: number }>();
     for (const book of languageSelectedBooks) {
       if (!isRecord(book)) continue;
-      addFilterValue(regionMapAfterLanguage, getString(book, "region"));
+      addFilterValue(regionMapAfterLanguage, getString(book, "region"), formatRegion);
     }
-    for (const story of languageSelectedBookStories) addFilterValue(regionMapAfterLanguage, story.region);
-    for (const story of languageSelectedPolyglotStories) addFilterValue(regionMapAfterLanguage, story.region);
+    for (const story of languageSelectedBookStories) addFilterValue(regionMapAfterLanguage, story.region, formatRegion);
+    for (const story of languageSelectedPolyglotStories) addFilterValue(regionMapAfterLanguage, story.region, formatRegion);
 
     const regionOptions: FilterChip[] = Array.from(regionMapAfterLanguage.entries())
       .map(([key, value]) => ({ key, label: value.label, count: value.count }))
@@ -625,41 +626,47 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
         <div className="mb-10">
           <div className="mb-5 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <div className="flex min-w-max items-end gap-3 pr-4">
-              <label className="block min-w-[240px] flex-1">
+            <div className="flex min-w-max items-end gap-2 pr-4 md:gap-3">
+              <label className="block min-w-[170px] flex-1 sm:min-w-[190px] md:min-w-[240px]">
                 <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
                   Language
                 </span>
-                <select
-                  value={selectedLanguageLabel ?? ""}
-                  onChange={(event) => setFilterInUrl("language", event.target.value)}
-                  className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40"
-                >
-                  <option value="">All languages</option>
-                  {languageChips.map((chip) => (
-                    <option key={chip.key} value={chip.label}>
-                      {chip.label} ({chip.count})
-                    </option>
-                  ))}
-                </select>
+                <div className="relative">
+                  <select
+                    value={selectedLanguageLabel ?? ""}
+                    onChange={(event) => setFilterInUrl("language", event.target.value)}
+                    className="w-full appearance-none rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-3 pr-11 py-2 text-[13px] font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40 md:px-4 md:pr-12 md:py-2.5 md:text-sm"
+                  >
+                    <option value="">All languages</option>
+                    {languageChips.map((chip) => (
+                      <option key={chip.key} value={chip.label}>
+                        {chip.label} ({chip.count})
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--muted)] md:right-4" />
+                </div>
               </label>
 
-              <label className="block min-w-[220px] flex-1">
+              <label className="block min-w-[160px] flex-1 sm:min-w-[180px] md:min-w-[220px]">
                 <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
                   Region
                 </span>
-                <select
-                  value={selectedRegionLabel ?? ""}
-                  onChange={(event) => setFilterInUrl("region", event.target.value)}
-                  className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40"
-                >
-                  <option value="">All regions</option>
-                  {regionChips.map((chip) => (
-                    <option key={chip.key} value={chip.label}>
-                      {chip.label} ({chip.count})
-                    </option>
-                  ))}
-                </select>
+                <div className="relative">
+                  <select
+                    value={selectedRegionLabel ?? ""}
+                    onChange={(event) => setFilterInUrl("region", event.target.value)}
+                    className="w-full appearance-none rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-3 pr-11 py-2 text-[13px] font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40 md:px-4 md:pr-12 md:py-2.5 md:text-sm"
+                  >
+                    <option value="">All regions</option>
+                    {regionChips.map((chip) => (
+                      <option key={chip.key} value={chip.label}>
+                        {chip.label} ({chip.count})
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--muted)] md:right-4" />
+                </div>
               </label>
             </div>
           </div>

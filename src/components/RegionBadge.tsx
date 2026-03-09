@@ -1,6 +1,6 @@
 "use client";
 
-import { toTitleCase } from "@/lib/displayFormat";
+import { formatRegion } from "@/lib/displayFormat";
 
 type RegionBadgeProps = {
   region?: string | null;
@@ -8,7 +8,7 @@ type RegionBadgeProps = {
 };
 
 export default function RegionBadge({ region, className = "" }: RegionBadgeProps) {
-  const label = toTitleCase(region ?? undefined);
+  const label = formatRegion(region ?? undefined);
   if (label === "—") return null;
 
   return (

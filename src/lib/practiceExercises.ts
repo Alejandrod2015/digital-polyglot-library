@@ -13,7 +13,12 @@ export type PracticeFavoriteItem = {
   nextReviewAt?: string | null;
 };
 
-export type PracticeSourceMode = "due" | "all";
+export type PracticeMode =
+  | "meaning"
+  | "context"
+  | "natural"
+  | "listening"
+  | "match";
 
 export type FillBlankExercise = {
   id: string;
@@ -328,57 +333,49 @@ export function getDuePracticeItems(items: PracticeFavoriteItem[]): PracticeFavo
   });
 }
 
+function getPracticeSource(items: PracticeFavoriteItem[]): PracticeFavoriteItem[] {
+  const due = uniqueByWord(getDuePracticeItems(items));
+  const all = uniqueByWord(items);
+  if (due.length === 0) return all;
+  const dueKeys = new Set(due.map((item) => `${normalizeKey(item.language)}::${normalizeKey(item.word)}`));
+  return [...due, ...all.filter((item) => !dueKeys.has(`${normalizeKey(item.language)}::${normalizeKey(item.word)}`))];
+}
+
 export function buildPracticeSession(
   items: PracticeFavoriteItem[],
-  mode: PracticeSourceMode
+  mode: PracticeMode
 ): PracticeExercise[] {
-  const source = uniqueByWord(mode === "due" ? getDuePracticeItems(items) : items);
+  const source = getPracticeSource(items);
   if (source.length === 0) return [];
 
   const languageAwarePool = uniqueByWord([...source, ...catalogPool]);
   const exercises: PracticeExercise[] = [];
 
-  const fillCandidate = source.find((item) => createFillBlankExercise(item, languageAwarePool));
-  if (fillCandidate) {
-    const exercise = createFillBlankExercise(fillCandidate, languageAwarePool);
-    if (exercise) exercises.push(exercise);
+  if (mode === "match") {
+    for (let i = 0; i < 3 && exercises.length < 10; i += 1) {
+      const exercise = createMatchMeaningExercise(shuffle(source));
+      if (exercise && !exercises.some((existing) => existing.id === exercise.id)) {
+        exercises.push(exercise);
+      }
+    }
+    return exercises;
   }
 
-  const meaningCandidate = source.find((item) => createMeaningContextExercise(item, languageAwarePool));
-  if (meaningCandidate) {
-    const exercise = createMeaningContextExercise(meaningCandidate, languageAwarePool);
-    if (exercise) exercises.push(exercise);
-  }
-
-  const naturalCandidate = source.find((item) => createNaturalExpressionExercise(item, languageAwarePool));
-  if (naturalCandidate) {
-    const exercise = createNaturalExpressionExercise(naturalCandidate, languageAwarePool);
-    if (exercise) exercises.push(exercise);
-  }
-
-  const listenCandidate = source.find((item) => createListenChooseExercise(item, languageAwarePool));
-  if (listenCandidate) {
-    const exercise = createListenChooseExercise(listenCandidate, languageAwarePool);
-    if (exercise) exercises.push(exercise);
-  }
-
-  const matchExercise = createMatchMeaningExercise(source);
-  if (matchExercise) exercises.push(matchExercise);
+  const builder =
+    mode === "meaning"
+      ? createMeaningContextExercise
+      : mode === "context"
+        ? createFillBlankExercise
+        : mode === "natural"
+          ? createNaturalExpressionExercise
+          : createListenChooseExercise;
 
   for (const item of source) {
-    if (exercises.length >= 12) break;
-    const candidates = [
-      createFillBlankExercise(item, languageAwarePool),
-      createMeaningContextExercise(item, languageAwarePool),
-      createNaturalExpressionExercise(item, languageAwarePool),
-      createListenChooseExercise(item, languageAwarePool),
-    ].filter((exercise): exercise is Exclude<PracticeExercise, MatchMeaningExercise> => Boolean(exercise));
-
-    for (const candidate of candidates) {
-      if (exercises.some((exercise) => exercise.id === candidate.id)) continue;
-      exercises.push(candidate);
-      if (exercises.length >= 12) break;
-    }
+    if (exercises.length >= 10) break;
+    const exercise = builder(item, languageAwarePool);
+    if (!exercise) continue;
+    if (exercises.some((existing) => existing.id === exercise.id)) continue;
+    exercises.push(exercise);
   }
 
   return exercises;

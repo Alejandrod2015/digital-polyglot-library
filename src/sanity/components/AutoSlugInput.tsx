@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import type { InputProps } from 'sanity'
 import { useClient, useFormValue } from 'sanity'
 import slugify from 'slugify'
+import { getSanityTargetId } from '@/sanity/lib/getSanityTargetId'
 
 type SlugValue = {
   current?: string
@@ -28,13 +29,15 @@ export default function AutoSlugInput(props: InputProps) {
     }
     if (lastAppliedRef.current === nextSlug) return
 
-    const targetId = formId.startsWith('drafts.') ? formId : `drafts.${formId}`
     lastAppliedRef.current = nextSlug
 
-    client
-      .patch(targetId)
-      .set({ slug: { _type: 'slug', current: nextSlug } })
-      .commit()
+    void getSanityTargetId(client, formId)
+      .then((targetId) =>
+        client
+          .patch(targetId)
+          .set({ slug: { _type: 'slug', current: nextSlug } })
+          .commit()
+      )
       .catch(() => {
         lastAppliedRef.current = null
       })
