@@ -316,6 +316,7 @@ export default function HomeClient({
   const [savedBookIds, setSavedBookIds] = useState<Set<string>>(new Set());
   const [savedStoryIds, setSavedStoryIds] = useState<Set<string>>(new Set());
   const [readingHistoryStoryIds, setReadingHistoryStoryIds] = useState<Set<string>>(new Set());
+  const [personalizationSignalsLoaded, setPersonalizationSignalsLoaded] = useState(false);
   const [recommendedStoryDurations, setRecommendedStoryDurations] = useState<Record<string, number>>(
     {}
   );
@@ -675,8 +676,13 @@ export default function HomeClient({
           setSavedBookIds(new Set());
           setSavedStoryIds(new Set());
           setReadingHistoryStoryIds(new Set());
+          setPersonalizationSignalsLoaded(true);
         }
         return;
+      }
+
+      if (!cancelled) {
+        setPersonalizationSignalsLoaded(false);
       }
 
       try {
@@ -762,6 +768,8 @@ export default function HomeClient({
         }
       } catch {
         if (!cancelled) setReadingHistoryStoryIds(new Set());
+      } finally {
+        if (!cancelled) setPersonalizationSignalsLoaded(true);
       }
     };
 
@@ -840,6 +848,8 @@ export default function HomeClient({
   const [latestStoryDurations, setLatestStoryDurations] = useState<Record<string, number>>({});
   const canShowPersonalizedRecommendations =
     isPersonalizationReady && (plan === "premium" || plan === "polyglot");
+  const isPersonalizationSettled =
+    !canShowPersonalizedRecommendations || personalizationSignalsLoaded;
 
   const latestStoryTopicByKey = useMemo(() => {
     const topicByKey: Record<string, string | undefined> = {};
@@ -1334,16 +1344,29 @@ export default function HomeClient({
 
   const dailyLoop = useMemo(() => {
     const primaryContinue = continueListening[0] ?? null;
-    const nextStory: DailyLoopStory | null = polyglotForHome[0]
+    const nextStory: DailyLoopStory | null = !isPersonalizationSettled
+      ? null
+      : recommendedStories[0]
       ? {
-          href: withReturnContext(`/stories/${polyglotForHome[0].slug}`),
-          title: polyglotForHome[0].title,
-          label: "Explore a new voice",
-          detail: `${polyglotForHome[0].language ?? "Polyglot"} · ${
-            polyglotForHome[0].region ?? "New region"
+          href: withReturnContext(
+            `/books/${recommendedStories[0].bookSlug}/${recommendedStories[0].storySlug}`
+          ),
+          title: recommendedStories[0].storyTitle,
+          label: recommendedStories[0].reason,
+          detail: `${recommendedStories[0].language ?? "Story"} · ${
+            recommendedStories[0].region ?? "New region"
           }`,
         }
-      : null;
+      : polyglotForHome[0]
+        ? {
+            href: withReturnContext(`/stories/${polyglotForHome[0].slug}`),
+            title: polyglotForHome[0].title,
+            label: "Explore a new voice",
+            detail: `${polyglotForHome[0].language ?? "Polyglot"} · ${
+              polyglotForHome[0].region ?? "New region"
+            }`,
+          }
+        : null;
 
     const primary = primaryContinue
       ? {
@@ -1374,25 +1397,35 @@ export default function HomeClient({
 
     return {
       primary,
-      practiceHref: hasSession ? "/favorites" : signInHref,
-      practiceLabel: hasSession ? "Open your practice" : "Start saving words",
+      practiceHref: userId ? "/favorites" : signInHref,
+      practiceLabel: !isPersonalizationSettled
+        ? "Preparing your practice"
+        : favoriteSignals.length > 0
+          ? "Practice your saved words"
+          : "Start saving words",
       practiceDetail:
-        hasSession
-          ? "Review due words and saved expressions"
+        !isPersonalizationSettled
+          ? "Loading your due words and next step"
+          : favoriteSignals.length > 0
+          ? `${Math.min(5, favoriteSignals.length)} quick words to review today`
           : "Tap words while reading so they build up here",
-      progressHref: hasSession ? "/progress" : "/explore",
-      progressLabel: hasSession ? "Protect your streak" : "Build your reading habit",
-      progressDetail: hasSession
+      progressHref: userId ? "/progress" : "/explore",
+      progressLabel: userId ? "Protect your streak" : "Build your reading habit",
+      progressDetail: userId
         ? "One finished story is enough to keep momentum"
         : "Short daily reading works better than long sessions",
       nextStory,
+      showLoadingSecondary: !isPersonalizationSettled,
     };
   }, [
     continueListening,
+    favoriteSignals.length,
     featuredFreeStory,
-    hasSession,
+    isPersonalizationSettled,
     polyglotForHome,
+    recommendedStories,
     signInHref,
+    userId,
   ]);
 
   const mobileContinueCards = useMemo<ContinueMobileCard[]>(() => {
@@ -1553,7 +1586,15 @@ export default function HomeClient({
                 </p>
               </Link>
 
-              {dailyLoop.nextStory ? (
+              {dailyLoop.showLoadingSecondary ? (
+                <div className="rounded-[22px] border border-white/10 bg-white/5 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-200/72">
+                    Preparing your next step
+                  </p>
+                  <div className="mt-3 h-5 w-3/4 animate-pulse rounded bg-white/10" />
+                  <div className="mt-2 h-4 w-2/3 animate-pulse rounded bg-white/10" />
+                </div>
+              ) : dailyLoop.nextStory ? (
                 <Link
                   href={dailyLoop.nextStory.href}
                   className="rounded-[22px] border border-white/10 bg-white/5 p-4 transition hover:bg-white/8"
