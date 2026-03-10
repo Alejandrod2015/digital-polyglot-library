@@ -1,19 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { X } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Volume2, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import {
   buildPracticeSession,
   getDuePracticeItems,
   getSpeechSynthesisLang,
+  PracticeAudioClip,
   PracticeExercise,
   PracticeFavoriteItem,
   PracticeMode,
 } from "@/lib/practiceExercises";
+import {
+  coerceAudioSegments,
+  findBestAudioSegment,
+  type AudioSegment,
+} from "@/lib/audioSegments";
 
 type LoadState = "loading" | "ready" | "error";
+type UserStoryAudioData = {
+  audioUrl: string | null;
+  audioSegments: AudioSegment[];
+};
 
 const matchColorClasses = [
   "border-sky-400 bg-sky-400/18 text-sky-100",
@@ -23,6 +33,11 @@ const matchColorClasses = [
   "border-cyan-300 bg-cyan-300/18 text-cyan-100",
   "border-rose-400 bg-rose-400/18 text-rose-100",
 ];
+
+const CLIP_START_PADDING_SEC = 0.08;
+const CLIP_END_TRIM_SEC = 0.5;
+
+type FeedbackTone = "correct" | "wrong";
 
 function getCompletionTone(score: number, total: number) {
   const ratio = total > 0 ? score / total : 0;
@@ -80,11 +95,22 @@ export default function PracticePage() {
   const [sessionComplete, setSessionComplete] = useState(false);
   const [streak, setStreak] = useState(0);
   const [lastResult, setLastResult] = useState<"correct" | "wrong" | null>(null);
+  const [playingClipId, setPlayingClipId] = useState<string | null>(null);
+  const [userStoryAudioBySlug, setUserStoryAudioBySlug] = useState<Record<string, UserStoryAudioData>>({});
+  const clipAudioRef = useRef<HTMLAudioElement | null>(null);
+  const clipStopAtRef = useRef<number | null>(null);
+  const clipTimeHandlerRef = useRef<(() => void) | null>(null);
+  const feedbackAudioContextRef = useRef<AudioContext | null>(null);
+  const feedbackSoundRefs = useRef<Record<FeedbackTone, HTMLAudioElement | null>>({
+    correct: null,
+    wrong: null,
+  });
 
   useEffect(() => {
     if (!isLoaded) return;
     if (!user) {
       setFavorites([]);
+      setUserStoryAudioBySlug({});
       setLoadState("ready");
       return;
     }
@@ -117,6 +143,57 @@ export default function PracticePage() {
     };
   }, [isLoaded, user]);
 
+  useEffect(() => {
+    const storySlugs = Array.from(
+      new Set(
+        favorites
+          .map((favorite) => (typeof favorite.storySlug === "string" ? favorite.storySlug.trim() : ""))
+          .filter(Boolean)
+      )
+    );
+
+    if (storySlugs.length === 0) {
+      setUserStoryAudioBySlug({});
+      return;
+    }
+
+    let cancelled = false;
+
+    const loadStoryAudio = async () => {
+      try {
+        const res = await fetch(`/api/user-stories?slugs=${encodeURIComponent(storySlugs.join(","))}`, {
+          cache: "no-store",
+        });
+        if (!res.ok) throw new Error(`Error ${res.status}`);
+        const data = (await res.json()) as {
+          stories?: Array<{ slug?: string; audioUrl?: string | null; audioSegments?: unknown }>;
+        };
+
+        if (cancelled) return;
+
+        const next: Record<string, UserStoryAudioData> = {};
+        for (const story of data.stories ?? []) {
+          const slug = typeof story.slug === "string" ? story.slug.trim().toLowerCase() : "";
+          if (!slug) continue;
+          next[slug] = {
+            audioUrl: typeof story.audioUrl === "string" ? story.audioUrl : null,
+            audioSegments: coerceAudioSegments(story.audioSegments),
+          };
+        }
+        setUserStoryAudioBySlug(next);
+      } catch (error) {
+        console.error("[practice] failed to load user story audio segments", error);
+        if (!cancelled) setUserStoryAudioBySlug({});
+      }
+    };
+
+    void loadStoryAudio();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [favorites]);
+
   const exercises = useMemo(
     () => (selectedMode ? buildPracticeSession(favorites, selectedMode) : []),
     [favorites, selectedMode]
@@ -128,10 +205,12 @@ export default function PracticePage() {
   const completedExerciseCount = sessionComplete ? exercises.length : revealedIds.length;
   const progressPercent =
     exercises.length > 0 ? Math.min(100, (completedExerciseCount / exercises.length) * 100) : 0;
-  const matchSolvedPerfectly =
-    currentExercise?.type === "match_meaning" &&
-    revealed &&
-    currentExercise.pairs.every((pair) => matchAnswers[pair.word] === pair.answer);
+  const showFeedback = Boolean(revealed && currentExercise);
+  const canSubmitAnswer = currentExercise
+    ? currentExercise.type === "match_meaning"
+      ? currentExercise.pairs.every((pair) => Boolean(matchAnswers[pair.word]))
+      : Boolean(selectedOption)
+    : false;
 
   const openSession = useCallback((mode: PracticeMode) => {
     if (typeof window !== "undefined") {
@@ -188,6 +267,7 @@ export default function PracticePage() {
     setMatchAnswers({});
     setActiveMatchWord(null);
     setLastResult(null);
+    setPlayingClipId(null);
   }, [exerciseIndex]);
 
   useEffect(() => {
@@ -196,6 +276,96 @@ export default function PracticePage() {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   }, [activeSession, exerciseIndex, sessionComplete]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const correct = new Audio("/sounds/practice-correct.wav");
+      const wrong = new Audio("/sounds/practice-wrong.wav");
+      correct.preload = "auto";
+      wrong.preload = "auto";
+      feedbackSoundRefs.current.correct = correct;
+      feedbackSoundRefs.current.wrong = wrong;
+    }
+
+    const feedbackSounds = feedbackSoundRefs.current;
+
+    return () => {
+      const audio = clipAudioRef.current;
+      if (audio && clipTimeHandlerRef.current) {
+        audio.removeEventListener("timeupdate", clipTimeHandlerRef.current);
+      }
+      audio?.pause();
+      feedbackSounds.correct?.pause();
+      feedbackSounds.wrong?.pause();
+      feedbackAudioContextRef.current?.close().catch(() => {});
+    };
+  }, []);
+
+  const playGeneratedFeedbackTone = useCallback((tone: FeedbackTone) => {
+    if (typeof window === "undefined") return;
+    const AudioContextClass = window.AudioContext || (window as typeof window & {
+      webkitAudioContext?: typeof AudioContext;
+    }).webkitAudioContext;
+
+    if (!AudioContextClass) return;
+
+    const context =
+      feedbackAudioContextRef.current && feedbackAudioContextRef.current.state !== "closed"
+        ? feedbackAudioContextRef.current
+        : new AudioContextClass();
+    feedbackAudioContextRef.current = context;
+
+    if (context.state === "suspended") {
+      void context.resume().catch(() => {});
+    }
+
+    const now = context.currentTime;
+    const master = context.createGain();
+    master.connect(context.destination);
+    master.gain.setValueAtTime(0.0001, now);
+    master.gain.exponentialRampToValueAtTime(tone === "correct" ? 0.08 : 0.055, now + 0.02);
+    master.gain.exponentialRampToValueAtTime(0.0001, now + (tone === "correct" ? 0.34 : 0.28));
+
+    const notes =
+      tone === "correct"
+        ? [
+            { frequency: 660, start: 0, end: 0.12, type: "triangle" as OscillatorType },
+            { frequency: 880, start: 0.1, end: 0.24, type: "sine" as OscillatorType },
+            { frequency: 1046, start: 0.22, end: 0.34, type: "sine" as OscillatorType },
+          ]
+        : [
+            { frequency: 320, start: 0, end: 0.12, type: "sawtooth" as OscillatorType },
+            { frequency: 240, start: 0.1, end: 0.28, type: "triangle" as OscillatorType },
+          ];
+
+    for (const note of notes) {
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      oscillator.type = note.type;
+      oscillator.frequency.setValueAtTime(note.frequency, now + note.start);
+      gain.gain.setValueAtTime(0.0001, now + note.start);
+      gain.gain.exponentialRampToValueAtTime(tone === "correct" ? 0.85 : 0.65, now + note.start + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + note.end);
+      oscillator.connect(gain);
+      gain.connect(master);
+      oscillator.start(now + note.start);
+      oscillator.stop(now + note.end);
+    }
+  }, []);
+
+  const playFeedbackSound = useCallback((tone: FeedbackTone) => {
+    if (typeof window === "undefined") return;
+    const sound = feedbackSoundRefs.current[tone];
+    if (sound) {
+      sound.currentTime = 0;
+      void sound.play().catch(() => {
+        playGeneratedFeedbackTone(tone);
+      });
+      return;
+    }
+
+    playGeneratedFeedbackTone(tone);
+  }, [playGeneratedFeedbackTone]);
 
   const revealCurrent = () => {
     if (!currentExercise) return;
@@ -210,11 +380,106 @@ export default function PracticePage() {
       setScore((prev) => prev + 1);
       setStreak((prev) => prev + 1);
       setLastResult("correct");
+      playFeedbackSound("correct");
     } else {
       setStreak(0);
       setLastResult("wrong");
+      playFeedbackSound("wrong");
     }
   };
+
+  const stopClipPlayback = useCallback(() => {
+    const audio = clipAudioRef.current;
+    if (audio && clipTimeHandlerRef.current) {
+      audio.removeEventListener("timeupdate", clipTimeHandlerRef.current);
+    }
+    if (audio) {
+      audio.pause();
+    }
+    clipStopAtRef.current = null;
+    clipTimeHandlerRef.current = null;
+    setPlayingClipId(null);
+  }, []);
+
+  useEffect(() => {
+    stopClipPlayback();
+  }, [exerciseIndex, stopClipPlayback]);
+
+  const playExactContextClip = useCallback(
+    async (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
+      if (!clip || typeof window === "undefined") return;
+      const storyAudio = userStoryAudioBySlug[clip.storySlug.toLowerCase()];
+      const segment = storyAudio ? findBestAudioSegment(storyAudio.audioSegments, clip.sentence) : null;
+      if (!storyAudio?.audioUrl || !segment) return;
+
+      const audio = clipAudioRef.current ?? new Audio();
+      clipAudioRef.current = audio;
+
+      if (clipTimeHandlerRef.current) {
+        audio.removeEventListener("timeupdate", clipTimeHandlerRef.current);
+        clipTimeHandlerRef.current = null;
+      }
+
+      if (audio.src !== storyAudio.audioUrl) {
+        audio.src = storyAudio.audioUrl;
+      }
+
+      const startPlayback = async () => {
+        const clipStartSec = Math.max(0, segment.startSec - CLIP_START_PADDING_SEC);
+        const clipEndSec =
+          Number.isFinite(audio.duration) && audio.duration > 0
+            ? Math.min(audio.duration, Math.max(clipStartSec + 0.2, segment.endSec - CLIP_END_TRIM_SEC))
+            : Math.max(clipStartSec + 0.2, segment.endSec - CLIP_END_TRIM_SEC);
+
+        clipStopAtRef.current = clipEndSec;
+        audio.currentTime = clipStartSec;
+
+        const onTimeUpdate = () => {
+          if (clipStopAtRef.current == null) return;
+          if (audio.currentTime >= clipStopAtRef.current) {
+            stopClipPlayback();
+          }
+        };
+
+        clipTimeHandlerRef.current = onTimeUpdate;
+        audio.addEventListener("timeupdate", onTimeUpdate);
+        setPlayingClipId(clipOwnerId);
+        await audio.play();
+      };
+
+      try {
+        if (!Number.isFinite(audio.duration) || audio.duration <= 0) {
+          await new Promise<void>((resolve, reject) => {
+            const onLoaded = () => {
+              audio.removeEventListener("loadedmetadata", onLoaded);
+              audio.removeEventListener("error", onError);
+              resolve();
+            };
+            const onError = () => {
+              audio.removeEventListener("loadedmetadata", onLoaded);
+              audio.removeEventListener("error", onError);
+              reject(new Error("Could not load clip metadata"));
+            };
+            audio.addEventListener("loadedmetadata", onLoaded, { once: true });
+            audio.addEventListener("error", onError, { once: true });
+            audio.load();
+          });
+        }
+
+        if (playingClipId === clipOwnerId) {
+          stopClipPlayback();
+          return;
+        }
+
+        stopClipPlayback();
+        await startPlayback();
+      } catch (error) {
+        console.error("[practice] clip playback failed", error);
+        stopClipPlayback();
+      }
+    },
+    [playingClipId, stopClipPlayback, userStoryAudioBySlug]
+  );
 
   const goNext = () => {
     if (exerciseIndex < exercises.length - 1) {
@@ -274,6 +539,33 @@ export default function PracticePage() {
 
   const contextTextClass =
     "text-xs leading-6 text-[var(--muted)]/75 sm:text-sm";
+
+  const renderContextBlock = (
+    sentence: string,
+    clip: PracticeAudioClip | null | undefined,
+    clipOwnerId: string
+  ) => {
+    const storyAudio = clip ? userStoryAudioBySlug[clip.storySlug.toLowerCase()] : null;
+    const exactSegment = clip && storyAudio ? findBestAudioSegment(storyAudio.audioSegments, clip.sentence) : null;
+
+    return (
+      <div className={contextBlockClass}>
+        <div className="flex items-start justify-between gap-3">
+          <p className={`${contextTextClass} flex-1`}>{sentence}</p>
+          {clip && storyAudio?.audioUrl && exactSegment ? (
+          <button
+            type="button"
+            onClick={() => void playExactContextClip(clipOwnerId, clip)}
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--foreground)] transition hover:bg-white/10"
+          >
+            <Volume2 size={14} />
+            {playingClipId === clipOwnerId ? "Stop" : "Play"}
+          </button>
+          ) : null}
+        </div>
+      </div>
+    );
+  };
 
   const getCorrectAnswerText = (exercise: PracticeExercise | null) => {
     if (!exercise) return "";
@@ -400,10 +692,9 @@ export default function PracticePage() {
 
   if (activeSession) {
     return (
-      <>
-        <div className="min-h-screen px-4 py-3 pb-6 text-[var(--foreground)] sm:px-5 sm:py-4">
-          <div className="mx-auto max-w-5xl">
-          <div className="mb-4 flex items-center gap-3">
+      <div className="-mx-1 -my-6 box-border h-[calc(100dvh-env(safe-area-inset-top))] overflow-hidden px-4 py-2.5 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] text-[var(--foreground)] sm:px-5 sm:py-4 sm:pb-[calc(env(safe-area-inset-bottom)+1rem)]">
+        <div className="mx-auto grid h-full max-w-5xl grid-rows-[auto_minmax(0,1fr)_auto] gap-2 sm:grid-rows-[auto_minmax(0,1fr)_144px]">
+          <div className="flex items-center gap-3">
             <button
               type="button"
               onClick={closeSession}
@@ -413,11 +704,15 @@ export default function PracticePage() {
               <X size={20} />
             </button>
             <div className="min-w-0 flex-1">
-              {streak > 1 ? (
-                <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-lime-300">
-                  {streak} in a row
+              <div className="mb-1.5 h-5">
+                <p
+                  className={`text-[11px] font-bold uppercase tracking-[0.2em] text-lime-300 transition-opacity duration-150 ${
+                    streak > 1 ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  {streak > 1 ? `${streak} in a row` : "\u00a0"}
                 </p>
-              ) : null}
+              </div>
               <div className="h-3 overflow-hidden rounded-full bg-white/12">
                 <div
                   className={`h-full rounded-full bg-[var(--primary)] transition-[width] duration-300 ${
@@ -437,473 +732,482 @@ export default function PracticePage() {
             </div>
           </div>
 
-          {sessionComplete ? (
-        <div
-          className="relative overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-md"
-          style={{ animation: "fade-in 220ms ease-out" }}
-        >
-          <div
-            aria-hidden="true"
-            className={`pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b ${completionTone.accent}`}
-          />
-          {completionBursts.map((burst, index) => (
-            <span
-              key={`burst-${index}`}
-              aria-hidden="true"
-              className={`pointer-events-none absolute rounded-full ${burst.size} ${burst.color}`}
-              style={{
-                left: burst.left,
-                top: burst.top,
-                animation: `completion-pop 900ms ease-out ${burst.delay} both`,
-              }}
-            />
-          ))}
-
-          <div className="relative">
-            <div
-              className={`mb-4 inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 ${completionTone.pill}`}
-              style={{ animation: "fade-in 260ms ease-out" }}
-            >
-              {completionTone.badge}
-            </div>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Session complete</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)] sm:text-base">
-              {completionTone.line}
-            </p>
-
-            <div className="mt-6 flex flex-wrap items-end gap-4 rounded-[1.75rem] border border-white/8 bg-white/[0.03] px-5 py-5">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
-                  Final score
-                </p>
-                <p
-                  className={`mt-2 text-6xl font-bold leading-none sm:text-7xl ${completionTone.scoreColor}`}
-                  style={{ animation: "score-pop 260ms ease-out" }}
-                >
-                  {score}/{exercises.length}
-                </p>
-              </div>
-              <div className="pb-1 text-sm leading-6 text-[var(--muted)]">
-                <p>You finished all {exercises.length} exercises in this set.</p>
-                <p>{score === exercises.length ? "No misses this round." : `${exercises.length - score} to revisit next time.`}</p>
-              </div>
-            </div>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <button
-                type="button"
-                onClick={restart}
-                className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+          <div className="min-h-0 overflow-y-auto overscroll-contain pr-1">
+            {sessionComplete ? (
+              <div
+                className="relative h-full overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-md"
+                style={{ animation: "fade-in 220ms ease-out" }}
               >
-                Practice 10 more
-              </button>
-              <Link
-                href="/favorites"
-                className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-              >
-                Open favorites
-              </Link>
-              <Link
-                href="/"
-                className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-              >
-                Back to home
-              </Link>
-            </div>
-          </div>
+                <div
+                  aria-hidden="true"
+                  className={`pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b ${completionTone.accent}`}
+                />
+                {completionBursts.map((burst, index) => (
+                  <span
+                    key={`burst-${index}`}
+                    aria-hidden="true"
+                    className={`pointer-events-none absolute rounded-full ${burst.size} ${burst.color}`}
+                    style={{
+                      left: burst.left,
+                      top: burst.top,
+                      animation: `completion-pop 900ms ease-out ${burst.delay} both`,
+                    }}
+                  />
+                ))}
 
-          <style jsx global>{`
-            @keyframes completion-pop {
-              0% {
-                opacity: 0;
-                transform: translateY(8px) scale(0.5);
-              }
-              60% {
-                opacity: 1;
-                transform: translateY(-6px) scale(1.08);
-              }
-              100% {
-                opacity: 0;
-                transform: translateY(-16px) scale(0.95);
-              }
-            }
-            @keyframes score-pop {
-              0% {
-                opacity: 0;
-                transform: translateY(12px) scale(0.96);
-              }
-              100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-              }
-            }
-            @keyframes fade-in {
-              0% {
-                opacity: 0;
-                transform: translateY(10px);
-              }
-              100% {
-                opacity: 1;
-                transform: translateY(0);
-              }
-            }
-          `}</style>
-        </div>
-      ) : currentExercise ? (
-        <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 shadow-md sm:p-5">
-          <p className="mb-4 text-base font-semibold sm:text-lg">{currentExercise.prompt}</p>
-
-          {currentExercise.type === "fill_blank" ? (
-            <>
-              <div className={contextBlockClass}>
-                <p className={contextTextClass}>{currentExercise.sentence}</p>
-              </div>
-              <div className="grid gap-2.5 sm:grid-cols-2">
-                {currentExercise.options.map((option) => {
-                  const isSelected = selectedOption === option;
-                  const isCorrect = revealed && option === currentExercise.answer;
-                  const isWrong = revealed && isSelected && option !== currentExercise.answer;
-                  return (
-                    <button
-                      key={option}
-                      type="button"
-                      onClick={() => setSelectedOption(option)}
-                      disabled={revealed}
-                      className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
-                        isCorrect
-                          ? "border-emerald-400 bg-emerald-400 text-slate-950"
-                          : isWrong
-                            ? "border-rose-400 bg-rose-400 text-slate-950"
-                            : isSelected
-                              ? "border-blue-400 bg-blue-500/20"
-                              : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
-                      }`}
-                    >
-                      {option}
-                    </button>
-                  );
-                })}
-              </div>
-            </>
-          ) : null}
-
-          {currentExercise.type === "meaning_in_context" ? (
-            <>
-              <div className="mb-3">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
-                  Target word
-                </p>
-                <p className="text-[2rem] font-semibold leading-none tracking-tight sm:text-[2.65rem]">
-                  {currentExercise.word}
-                </p>
-              </div>
-              <div className={contextBlockClass}>
-                <p className={contextTextClass}>{currentExercise.sentence}</p>
-              </div>
-              <div className="grid gap-2.5">
-                {currentExercise.options.map((option) => {
-                  const isSelected = selectedOption === option;
-                  const isCorrect = revealed && option === currentExercise.answer;
-                  const isWrong = revealed && isSelected && option !== currentExercise.answer;
-                  return (
-                    <button
-                      key={option}
-                      type="button"
-                      onClick={() => setSelectedOption(option)}
-                      disabled={revealed}
-                      className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
-                        isCorrect
-                          ? "border-emerald-400 bg-emerald-400 text-slate-950"
-                          : isWrong
-                            ? "border-rose-400 bg-rose-400 text-slate-950"
-                            : isSelected
-                              ? "border-blue-400 bg-blue-500/20"
-                              : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
-                      }`}
-                    >
-                      {option}
-                    </button>
-                  );
-                })}
-              </div>
-            </>
-          ) : null}
-
-          {currentExercise.type === "natural_expression" ? (
-            <>
-              <div className={contextBlockClass}>
-                <p className={contextTextClass}>{currentExercise.sentence}</p>
-              </div>
-              <div className="grid gap-2.5 sm:grid-cols-2">
-                {currentExercise.options.map((option) => {
-                  const isSelected = selectedOption === option;
-                  const isCorrect = revealed && option === currentExercise.answer;
-                  const isWrong = revealed && isSelected && option !== currentExercise.answer;
-                  return (
-                    <button
-                      key={option}
-                      type="button"
-                      onClick={() => setSelectedOption(option)}
-                      disabled={revealed}
-                      className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
-                        isCorrect
-                          ? "border-emerald-400 bg-emerald-400 text-slate-950"
-                          : isWrong
-                            ? "border-rose-400 bg-rose-400 text-slate-950"
-                            : isSelected
-                              ? "border-blue-400 bg-blue-500/20"
-                              : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
-                      }`}
-                    >
-                      {option}
-                    </button>
-                  );
-                })}
-              </div>
-            </>
-          ) : null}
-
-          {currentExercise.type === "listen_choose" ? (
-            <>
-              <button
-                type="button"
-                onClick={playListenPrompt}
-                className="mb-4 inline-flex rounded-2xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
-              >
-                Play audio
-              </button>
-              <div className="grid gap-2.5 sm:grid-cols-2">
-                {currentExercise.options.map((option) => {
-                  const isSelected = selectedOption === option;
-                  const isCorrect = revealed && option === currentExercise.answer;
-                  const isWrong = revealed && isSelected && option !== currentExercise.answer;
-                  return (
-                    <button
-                      key={option}
-                      type="button"
-                      onClick={() => setSelectedOption(option)}
-                      disabled={revealed}
-                      className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
-                        isCorrect
-                          ? "border-emerald-400 bg-emerald-400 text-slate-950"
-                          : isWrong
-                            ? "border-rose-400 bg-rose-400 text-slate-950"
-                            : isSelected
-                              ? "border-blue-400 bg-blue-500/20"
-                              : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
-                      }`}
-                    >
-                      {option}
-                    </button>
-                  );
-                })}
-              </div>
-            </>
-          ) : null}
-
-          {currentExercise.type === "match_meaning" ? (
-            <div className="space-y-3">
-              <div>
-                <div className="mb-2 grid grid-cols-2 gap-3">
-                  <p className="px-1 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
-                    Words
+                <div className="relative flex h-full flex-col">
+                  <div
+                    className={`mb-4 inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 ${completionTone.pill}`}
+                    style={{ animation: "fade-in 260ms ease-out" }}
+                  >
+                    {completionTone.badge}
+                  </div>
+                  <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Session complete</h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)] sm:text-base">
+                    {completionTone.line}
                   </p>
-                  <p className="px-1 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
-                    Meanings
-                  </p>
+                  <div className="mt-6 flex flex-wrap items-end gap-4 rounded-[1.75rem] border border-white/8 bg-white/[0.03] px-5 py-5">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+                        Final score
+                      </p>
+                      <p
+                        className={`mt-2 text-6xl font-bold leading-none sm:text-7xl ${completionTone.scoreColor}`}
+                        style={{ animation: "score-pop 260ms ease-out" }}
+                      >
+                        {score}/{exercises.length}
+                      </p>
+                    </div>
+                    <div className="pb-1 text-sm leading-6 text-[var(--muted)]">
+                      <p>You finished all {exercises.length} exercises in this set.</p>
+                      <p>{score === exercises.length ? "No misses this round." : `${exercises.length - score} to revisit next time.`}</p>
+                    </div>
+                  </div>
+                  <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
+                    <button
+                      type="button"
+                      onClick={restart}
+                      className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+                    >
+                      Practice 10 more
+                    </button>
+                    <Link
+                      href="/favorites"
+                      className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+                    >
+                      Open favorites
+                    </Link>
+                    <Link
+                      href="/"
+                      className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+                    >
+                      Back to home
+                    </Link>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  {currentExercise.pairs.map((pair, index) => {
-                    const meaning = currentExercise.pairs[0]?.options[index];
-                    const currentValue = matchAnswers[pair.word] ?? "";
-                    const matchColor =
-                      matchColorClasses[index % matchColorClasses.length];
-                    const isActive = activeMatchWord === pair.word;
-                    const isCorrect = revealed && currentValue === pair.answer;
-                    const isWrong = revealed && currentValue && currentValue !== pair.answer;
-                    const assignedWord =
-                      meaning != null
-                        ? Object.entries(matchAnswers).find(([, assignedMeaning]) => assignedMeaning === meaning)?.[0] ?? null
-                        : null;
-                    const isAssigned = Boolean(assignedWord);
-                    const assignedIndex = assignedWord
-                      ? currentExercise.pairs.findIndex((candidate) => candidate.word === assignedWord)
-                      : -1;
-                    const assignedPair =
-                      assignedWord != null
-                        ? currentExercise.pairs.find((candidate) => candidate.word === assignedWord) ?? null
-                        : null;
-                    const meaningColor =
-                      assignedIndex >= 0
-                        ? matchColorClasses[assignedIndex % matchColorClasses.length]
-                        : "";
-                    const meaningIsCorrect = revealed && assignedPair?.answer === meaning;
-                    const meaningIsWrong = revealed && isAssigned && assignedPair?.answer !== meaning;
 
-                    return (
-                      <div key={`${pair.word}-${meaning ?? index}`} className="grid grid-cols-2 gap-3">
-                        <button
-                          type="button"
-                          onClick={() => {
-                            if (revealed) return;
-                            if (currentValue) {
-                              unassignMatchWord(pair.word);
-                              return;
-                            }
-                            setActiveMatchWord((prev) => (prev === pair.word ? null : pair.word));
-                          }}
-                          className={`flex min-h-[88px] w-full items-center justify-center rounded-xl border px-3 py-3 text-center transition ${
-                            isCorrect
-                              ? matchColor
-                              : isWrong
-                                ? "border-rose-400 bg-rose-400 text-slate-950"
-                                : currentValue
+                <style jsx global>{`
+                  @keyframes completion-pop {
+                    0% {
+                      opacity: 0;
+                      transform: translateY(8px) scale(0.5);
+                    }
+                    60% {
+                      opacity: 1;
+                      transform: translateY(-6px) scale(1.08);
+                    }
+                    100% {
+                      opacity: 0;
+                      transform: translateY(-16px) scale(0.95);
+                    }
+                  }
+                  @keyframes score-pop {
+                    0% {
+                      opacity: 0;
+                      transform: translateY(12px) scale(0.96);
+                    }
+                    100% {
+                      opacity: 1;
+                      transform: translateY(0) scale(1);
+                    }
+                  }
+                  @keyframes fade-in {
+                    0% {
+                      opacity: 0;
+                      transform: translateY(10px);
+                    }
+                    100% {
+                      opacity: 1;
+                      transform: translateY(0);
+                    }
+                  }
+                `}</style>
+              </div>
+            ) : currentExercise ? (
+              <div className="flex h-full min-h-0 flex-col rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-[clamp(0.65rem,1.3vw,0.9rem)] shadow-md">
+                <p className="mb-[clamp(0.35rem,0.9vh,0.6rem)] shrink-0 text-[clamp(1.15rem,2.4vw,1.8rem)] font-semibold leading-tight tracking-tight">
+                  {currentExercise.prompt}
+                </p>
+
+                {currentExercise.type === "fill_blank" ? (
+                  <div className="flex min-h-0 flex-1 flex-col">
+                    {renderContextBlock(
+                      currentExercise.sentence,
+                      currentExercise.audioClip,
+                      currentExercise.id
+                    )}
+                    <div className="grid flex-1 auto-rows-fr gap-2.5 sm:grid-cols-2">
+                      {currentExercise.options.map((option) => {
+                        const isSelected = selectedOption === option;
+                        const isCorrect = revealed && option === currentExercise.answer;
+                        const isWrong = revealed && isSelected && option !== currentExercise.answer;
+                        return (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() => setSelectedOption(option)}
+                            disabled={revealed}
+                            className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
+                              isCorrect
+                                ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                                : isWrong
+                                  ? "border-rose-400 bg-rose-400 text-slate-950"
+                                  : isSelected
+                                    ? "border-blue-400 bg-blue-500/20"
+                                    : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
+                            }`}
+                          >
+                            {option}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ) : null}
+
+                {currentExercise.type === "meaning_in_context" ? (
+                  <div className="flex min-h-0 flex-1 flex-col">
+                    <div className="mb-3 shrink-0">
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
+                        Target word
+                      </p>
+                      <p className="text-[clamp(2rem,4vw,2.65rem)] font-semibold leading-none tracking-tight">
+                        {currentExercise.word}
+                      </p>
+                    </div>
+                    {renderContextBlock(
+                      currentExercise.sentence,
+                      currentExercise.audioClip,
+                      currentExercise.id
+                    )}
+                    <div className="grid flex-1 auto-rows-fr gap-2.5">
+                      {currentExercise.options.map((option) => {
+                        const isSelected = selectedOption === option;
+                        const isCorrect = revealed && option === currentExercise.answer;
+                        const isWrong = revealed && isSelected && option !== currentExercise.answer;
+                        return (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() => setSelectedOption(option)}
+                            disabled={revealed}
+                            className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
+                              isCorrect
+                                ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                                : isWrong
+                                  ? "border-rose-400 bg-rose-400 text-slate-950"
+                                  : isSelected
+                                    ? "border-blue-400 bg-blue-500/20"
+                                    : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
+                            }`}
+                          >
+                            {option}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ) : null}
+
+                {currentExercise.type === "natural_expression" ? (
+                  <div className="flex min-h-0 flex-1 flex-col">
+                    {renderContextBlock(
+                      currentExercise.sentence,
+                      currentExercise.audioClip,
+                      currentExercise.id
+                    )}
+                    <div className="grid flex-1 auto-rows-fr gap-2.5 sm:grid-cols-2">
+                      {currentExercise.options.map((option) => {
+                        const isSelected = selectedOption === option;
+                        const isCorrect = revealed && option === currentExercise.answer;
+                        const isWrong = revealed && isSelected && option !== currentExercise.answer;
+                        return (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() => setSelectedOption(option)}
+                            disabled={revealed}
+                            className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
+                              isCorrect
+                                ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                                : isWrong
+                                  ? "border-rose-400 bg-rose-400 text-slate-950"
+                                  : isSelected
+                                    ? "border-blue-400 bg-blue-500/20"
+                                    : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
+                            }`}
+                          >
+                            {option}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ) : null}
+
+                {currentExercise.type === "listen_choose" ? (
+                  <div className="flex min-h-0 flex-1 flex-col">
+                    <button
+                      type="button"
+                      onClick={playListenPrompt}
+                      className="mb-4 inline-flex shrink-0 rounded-2xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+                    >
+                      Play audio
+                    </button>
+                    <div className="grid flex-1 auto-rows-fr gap-2.5 sm:grid-cols-2">
+                      {currentExercise.options.map((option) => {
+                        const isSelected = selectedOption === option;
+                        const isCorrect = revealed && option === currentExercise.answer;
+                        const isWrong = revealed && isSelected && option !== currentExercise.answer;
+                        return (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() => setSelectedOption(option)}
+                            disabled={revealed}
+                            className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
+                              isCorrect
+                                ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                                : isWrong
+                                  ? "border-rose-400 bg-rose-400 text-slate-950"
+                                  : isSelected
+                                    ? "border-blue-400 bg-blue-500/20"
+                                    : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
+                            }`}
+                          >
+                            {option}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ) : null}
+
+                {currentExercise.type === "match_meaning" ? (
+                  <div className="flex min-h-0 flex-1 flex-col">
+                    <div className="mb-[clamp(0.2rem,0.6vh,0.45rem)] grid shrink-0 grid-cols-2 gap-[clamp(0.35rem,0.7vw,0.55rem)]">
+                      <p className="px-1 text-center text-[clamp(0.68rem,1.1vw,0.8rem)] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                        Words
+                      </p>
+                      <p className="px-1 text-center text-[clamp(0.68rem,1.1vw,0.8rem)] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                        Meanings
+                      </p>
+                    </div>
+                    <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-4 gap-[clamp(0.35rem,0.7vw,0.55rem)]">
+                      {currentExercise.pairs.map((pair, index) => {
+                        const meaning = currentExercise.pairs[0]?.options[index];
+                        const currentValue = matchAnswers[pair.word] ?? "";
+                        const matchColor = matchColorClasses[index % matchColorClasses.length];
+                        const isActive = activeMatchWord === pair.word;
+                        const isCorrect = revealed && currentValue === pair.answer;
+                        const isWrong = revealed && currentValue && currentValue !== pair.answer;
+                        const assignedWord =
+                          meaning != null
+                            ? Object.entries(matchAnswers).find(([, assignedMeaning]) => assignedMeaning === meaning)?.[0] ?? null
+                            : null;
+                        const isAssigned = Boolean(assignedWord);
+                        const assignedIndex = assignedWord
+                          ? currentExercise.pairs.findIndex((candidate) => candidate.word === assignedWord)
+                          : -1;
+                        const assignedPair =
+                          assignedWord != null
+                            ? currentExercise.pairs.find((candidate) => candidate.word === assignedWord) ?? null
+                            : null;
+                        const meaningColor =
+                          assignedIndex >= 0
+                            ? matchColorClasses[assignedIndex % matchColorClasses.length]
+                            : "";
+                        const meaningIsCorrect = revealed && assignedPair?.answer === meaning;
+                        const meaningIsWrong = revealed && isAssigned && assignedPair?.answer !== meaning;
+
+                        return (
+                          <div key={`${pair.word}-${meaning ?? index}`} className="contents">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                if (revealed) return;
+                                if (currentValue) {
+                                  unassignMatchWord(pair.word);
+                                  return;
+                                }
+                                setActiveMatchWord((prev) => (prev === pair.word ? null : pair.word));
+                              }}
+                              className={`flex h-full min-h-0 w-full items-center justify-center rounded-[1.2rem] border px-[clamp(0.4rem,0.8vw,0.7rem)] py-[clamp(0.4rem,0.8vw,0.7rem)] text-center transition ${
+                                isCorrect
                                   ? matchColor
-                                  : isActive
-                                    ? matchColor
-                                    : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
-                          }`}
-                        >
-                          <div>
-                            <p className="text-base font-semibold tracking-tight sm:text-lg">{pair.word}</p>
-                            {revealed && currentValue !== pair.answer ? (
-                              <div className="mt-2 rounded-lg border border-slate-950/12 bg-slate-950/8 px-2.5 py-2">
-                                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900/65">
-                                  Correct
-                                </p>
-                                <p className="mt-1 text-xs font-semibold leading-4 text-slate-950">
-                                  {pair.answer}
+                                  : isWrong
+                                    ? "border-rose-400 bg-rose-400 text-slate-950"
+                                    : currentValue
+                                      ? matchColor
+                                      : isActive
+                                        ? matchColor
+                                        : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
+                              }`}
+                            >
+                              <div>
+                                <p className="text-[clamp(0.95rem,1.6vw,1.55rem)] font-semibold tracking-tight">
+                                  {pair.word}
                                 </p>
                               </div>
-                            ) : null}
-                          </div>
-                        </button>
+                            </button>
 
-                        {meaning ? (
-                          <button
-                            type="button"
-                            onClick={() => {
-                              if (revealed) return;
-                              if (assignedWord) {
-                                unassignMatchWord(assignedWord);
-                                return;
-                              }
-                              assignMatchMeaning(meaning);
-                            }}
-                            disabled={revealed || (!activeMatchWord && !assignedWord)}
-                            className={`flex min-h-[88px] w-full items-center justify-center rounded-xl border px-3 py-3 text-center transition ${
-                              meaningIsCorrect
-                                ? meaningColor
-                                : meaningIsWrong
-                                  ? "border-rose-400 bg-rose-400 text-slate-950"
-                                  : isAssigned
+                            {meaning ? (
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  if (revealed) return;
+                                  if (assignedWord) {
+                                    unassignMatchWord(assignedWord);
+                                    return;
+                                  }
+                                  assignMatchMeaning(meaning);
+                                }}
+                                disabled={revealed || (!activeMatchWord && !assignedWord)}
+                                className={`flex h-full min-h-0 w-full items-center justify-center rounded-[1.2rem] border px-[clamp(0.4rem,0.8vw,0.7rem)] py-[clamp(0.4rem,0.8vw,0.7rem)] text-center transition ${
+                                  meaningIsCorrect
                                     ? meaningColor
-                                    : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
-                            } disabled:opacity-100`}
-                          >
-                            <p className="text-xs leading-5 sm:text-sm sm:leading-6">{meaning}</p>
-                          </button>
-                        ) : (
-                          <div />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
+                                    : meaningIsWrong
+                                      ? "border-rose-400 bg-rose-400 text-slate-950"
+                                      : isAssigned
+                                        ? meaningColor
+                                        : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
+                                } disabled:opacity-100`}
+                              >
+                                <p className="text-[clamp(0.76rem,1.12vw,0.94rem)] leading-[1.22]">
+                                  {meaning}
+                                </p>
+                              </button>
+                            ) : (
+                              <div />
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ) : null}
               </div>
-            </div>
-          ) : null}
-
-          {!revealed ? (
-            <div className="mt-5 flex items-center justify-center">
-              <button
-                type="button"
-                onClick={revealCurrent}
-                disabled={
-                  currentExercise.type === "match_meaning"
-                    ? currentExercise.pairs.some((pair) => !matchAnswers[pair.word])
-                    : !selectedOption
-                }
-                className="inline-flex min-w-[180px] justify-center rounded-xl bg-[var(--primary)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-50"
-              >
-                Check answer
-              </button>
-            </div>
-          ) : null}
-        </div>
-      ) : (
-        <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-md">
-          <h2 className="text-2xl font-semibold tracking-tight">Not enough words yet</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-            This mode needs a few more saved words with clear context before it can generate a useful session.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <Link
-              href="/favorites"
-              className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
-            >
-              Open favorites
-            </Link>
-            <button
-              type="button"
-              onClick={closeSession}
-              className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Choose another mode
-            </button>
-          </div>
-        </div>
-      )}
-
-          {revealed && currentExercise ? (
-            <div
-              className={`sticky bottom-0 mt-4 rounded-3xl border px-4 py-4 shadow-xl ${
-                lastResult === "correct"
-                  ? "border-lime-300/30 bg-lime-300/14"
-                  : "border-rose-300/30 bg-rose-300/14"
-              }`}
-            >
-              <div className="mb-3 flex items-start justify-between gap-4">
-                <div>
-                  <p
-                    className={`text-2xl font-bold tracking-tight sm:text-3xl ${
-                      lastResult === "correct" ? "text-lime-300" : "text-rose-300"
-                    }`}
+            ) : (
+              <div className="h-full rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-md">
+                <h2 className="text-2xl font-semibold tracking-tight">Not enough words yet</h2>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+                  This mode needs a few more saved words with clear context before it can generate a useful session.
+                </p>
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <Link
+                    href="/favorites"
+                    className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
                   >
-                    {lastResult === "correct"
-                      ? streak > 1
-                        ? "Awesome!"
-                        : "Good job!"
-                      : currentExercise.type === "match_meaning"
-                        ? "Check the corrected pairs above"
-                        : "Correct answer:"}
-                  </p>
-                  {lastResult === "wrong" && currentExercise.type !== "match_meaning" ? (
-                    <p className="mt-1.5 max-w-3xl text-sm leading-6 text-rose-50">
-                      {correctAnswerText}
-                    </p>
-                  ) : null}
+                    Open favorites
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={closeSession}
+                    className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+                  >
+                    Choose another mode
+                  </button>
                 </div>
               </div>
+            )}
+          </div>
 
-              <div className="flex flex-wrap items-center gap-2.5">
-                <button
-                  type="button"
-                  onClick={goNext}
-                  className={`inline-flex min-w-[150px] justify-center rounded-2xl px-4 py-2.5 text-sm font-extrabold uppercase tracking-[0.18em] ${
-                    lastResult === "correct"
-                      ? "bg-lime-400 text-slate-950 hover:bg-lime-300"
-                      : "bg-rose-400 text-slate-950 hover:bg-rose-300"
-                  }`}
-                >
-                  {exerciseIndex >= exercises.length - 1 ? "Finish" : "Continue"}
-                </button>
+          <div
+            className={`min-h-[112px] overflow-hidden rounded-3xl border px-4 py-2 shadow-xl sm:min-h-0 sm:px-4 sm:py-2 ${
+              sessionComplete || !currentExercise
+                ? "border-transparent bg-transparent shadow-none"
+                : showFeedback
+                  ? lastResult === "correct"
+                    ? "border-lime-300/30 bg-lime-300/14"
+                    : "border-rose-300/30 bg-rose-300/14"
+                  : "border-[var(--card-border)] bg-[var(--card-bg)]"
+            }`}
+          >
+            {!sessionComplete && currentExercise ? (
+              <div className="flex h-full flex-col">
+                {showFeedback ? (
+                  <>
+                    <div className="min-h-0 flex-1">
+                      <p
+                        className={`text-lg font-bold tracking-tight sm:text-2xl ${
+                          lastResult === "correct" ? "text-lime-300" : "text-rose-300"
+                        }`}
+                      >
+                        {lastResult === "correct"
+                          ? streak > 1
+                            ? "Awesome!"
+                            : "Good job!"
+                          : currentExercise.type === "match_meaning"
+                            ? "Check the corrected pairs above"
+                            : "Correct answer:"}
+                      </p>
+                      {lastResult === "wrong" && currentExercise.type !== "match_meaning" ? (
+                        <p className="mt-1 hidden max-w-3xl text-sm leading-5 text-rose-50 sm:block">
+                          {correctAnswerText}
+                        </p>
+                      ) : null}
+                    </div>
+                    <div className="mt-1 flex items-center">
+                      <button
+                        type="button"
+                        onClick={goNext}
+                        className={`inline-flex min-w-[128px] justify-center rounded-lg px-4 py-1 text-[13px] font-extrabold uppercase tracking-[0.16em] ${
+                          lastResult === "correct"
+                            ? "bg-lime-400 text-slate-950 hover:bg-lime-300"
+                            : "bg-rose-400 text-slate-950 hover:bg-rose-300"
+                        }`}
+                      >
+                        {exerciseIndex >= exercises.length - 1 ? "Finish" : "Continue"}
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="min-h-0 flex-1">
+                      <p className="text-lg font-bold tracking-tight text-[var(--foreground)] sm:text-xl">
+                        Ready?
+                      </p>
+                      <p className="mt-1 hidden text-sm leading-5 text-[var(--muted)] sm:block">
+                        Choose your answer, then check it here.
+                      </p>
+                    </div>
+                    <div className="mt-1 flex items-center">
+                      <button
+                        type="button"
+                        onClick={revealCurrent}
+                        disabled={!canSubmitAnswer}
+                        className="inline-flex min-w-[136px] justify-center rounded-lg bg-[var(--primary)] px-4 py-1 text-[13px] font-semibold text-white hover:opacity-90 disabled:opacity-50"
+                      >
+                        Check answer
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
-            </div>
             ) : null}
           </div>
         </div>
-      </>
+      </div>
     );
   }
 

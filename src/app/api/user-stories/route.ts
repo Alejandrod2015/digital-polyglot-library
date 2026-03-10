@@ -8,8 +8,41 @@ export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const storyId = searchParams.get('id');
+    const slugsParam = searchParams.get('slugs');
     const mine = searchParams.get('mine') === '1';
     const latestForCreate = searchParams.get('latestForCreate') === '1';
+
+    if (slugsParam) {
+      const { userId } = await auth();
+      const slugs = Array.from(
+        new Set(
+          slugsParam
+            .split(',')
+            .map((slug) => slug.trim())
+            .filter(Boolean)
+        )
+      );
+
+      if (slugs.length === 0) {
+        await prisma.$disconnect();
+        return NextResponse.json({ stories: [] });
+      }
+
+      const stories = await prisma.userStory.findMany({
+        where: {
+          slug: { in: slugs },
+          ...(userId ? { OR: [{ public: true }, { userId }] } : { public: true }),
+        },
+        select: {
+          slug: true,
+          audioUrl: true,
+          audioSegments: true,
+        },
+      });
+
+      await prisma.$disconnect();
+      return NextResponse.json({ stories });
+    }
 
     // 🔹 Si viene un id → devolver solo esa historia
     if (storyId) {
@@ -26,6 +59,7 @@ export async function GET(req: Request) {
           focus: true,
           topic: true,
           audioUrl: true,
+          audioSegments: true,
           audioFilename: true,
           audioStatus: true,
           createdAt: true,
@@ -84,6 +118,7 @@ export async function GET(req: Request) {
           focus: true,
           topic: true,
           audioUrl: true,
+          audioSegments: true,
           audioFilename: true,
           audioStatus: true,
           createdAt: true,
@@ -107,6 +142,7 @@ export async function GET(req: Request) {
         level: true,
         region: true,
         audioUrl: true,
+        audioSegments: true,
         audioStatus: true,
         createdAt: true,
       },

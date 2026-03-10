@@ -25,6 +25,8 @@ export type FillBlankExercise = {
   type: "fill_blank";
   prompt: string;
   sentence: string;
+  storySlug?: string | null;
+  audioClip?: PracticeAudioClip | null;
   options: string[];
   answer: string;
 };
@@ -35,6 +37,8 @@ export type MeaningContextExercise = {
   prompt: string;
   word: string;
   sentence: string;
+  storySlug?: string | null;
+  audioClip?: PracticeAudioClip | null;
   options: string[];
   answer: string;
 };
@@ -44,6 +48,8 @@ export type NaturalExpressionExercise = {
   type: "natural_expression";
   prompt: string;
   sentence: string;
+  storySlug?: string | null;
+  audioClip?: PracticeAudioClip | null;
   options: string[];
   answer: string;
 };
@@ -67,6 +73,11 @@ export type MatchMeaningExercise = {
     answer: string;
     options: string[];
   }>;
+};
+
+export type PracticeAudioClip = {
+  storySlug: string;
+  sentence: string;
 };
 
 export type PracticeExercise =
@@ -219,6 +230,15 @@ function shortenSentence(sentence: string): string {
   return `${words.slice(0, 14).join(" ")}...`;
 }
 
+function buildAudioClip(item: PracticeFavoriteItem, sentence: string): PracticeAudioClip | null {
+  const storySlug = normalizeText(item.storySlug);
+  if (!storySlug) return null;
+  return {
+    storySlug,
+    sentence,
+  };
+}
+
 function isExpression(item: PracticeFavoriteItem): boolean {
   const normalizedType = normalizeVocabType(item.wordType, {
     word: item.word,
@@ -240,6 +260,8 @@ function createFillBlankExercise(
     type: "fill_blank",
     prompt: "Complete the sentence with the right word or expression.",
     sentence,
+    storySlug: item.storySlug ?? null,
+    audioClip: buildAudioClip(item, sentence),
     options,
     answer: item.word,
   };
@@ -262,6 +284,8 @@ function createMeaningContextExercise(
     prompt: "Choose the meaning that fits this word in context.",
     word: item.word,
     sentence,
+    storySlug: item.storySlug ?? null,
+    audioClip: buildAudioClip(item, sentence),
     options,
     answer: item.translation,
   };
@@ -282,6 +306,8 @@ function createNaturalExpressionExercise(
     type: "natural_expression",
     prompt: "Which expression sounds natural here?",
     sentence,
+    storySlug: item.storySlug ?? null,
+    audioClip: buildAudioClip(item, sentence),
     options,
     answer: item.word,
   };

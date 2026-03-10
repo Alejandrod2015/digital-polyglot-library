@@ -46,6 +46,7 @@ export async function POST(req: Request) {
       where: { id: storyId },
       data: {
         audioUrl: audioResult.url,
+        audioSegments: audioResult.audioSegments,
         audioFilename: audioResult.filename || null,
         audioStatus: "ready",
       },
@@ -56,6 +57,7 @@ export async function POST(req: Request) {
     return NextResponse.json({
       message: "Audio generated",
       audioUrl: audioResult.url,
+      audioSegments: audioResult.audioSegments,
       filename: audioResult.filename,
     });
   } catch (error) {

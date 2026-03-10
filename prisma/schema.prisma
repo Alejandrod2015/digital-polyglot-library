@@ -80,6 +80,7 @@ model UserStory {
   text          String
   vocab         Json
   audioUrl      String?
+  audioSegments Json?
   audioFilename String?
   audioStatus   String   @default("pending")
   language      String
