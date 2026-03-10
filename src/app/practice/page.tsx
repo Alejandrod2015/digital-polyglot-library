@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import {
@@ -133,6 +133,21 @@ export default function PracticePage() {
     revealed &&
     currentExercise.pairs.every((pair) => matchAnswers[pair.word] === pair.answer);
 
+  const openSession = useCallback((mode: PracticeMode) => {
+    if (typeof window !== "undefined") {
+      window.history.pushState({ practiceSession: true }, "", window.location.href);
+    }
+    setSelectedMode(mode);
+  }, []);
+
+  const closeSession = useCallback(() => {
+    if (typeof window !== "undefined" && window.history.state?.practiceSession) {
+      window.history.back();
+      return;
+    }
+    setSelectedMode(null);
+  }, []);
+
   useEffect(() => {
     if (typeof document === "undefined") return;
     document.body.dataset.practiceActive = activeSession ? "true" : "false";
@@ -140,6 +155,19 @@ export default function PracticePage() {
     return () => {
       document.body.dataset.practiceActive = "false";
       window.dispatchEvent(new Event("practice-session-visibility-change"));
+    };
+  }, [activeSession]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !activeSession) return;
+
+    const handlePopState = () => {
+      setSelectedMode(null);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
     };
   }, [activeSession]);
 
@@ -378,7 +406,7 @@ export default function PracticePage() {
           <div className="mb-4 flex items-center gap-3">
             <button
               type="button"
-              onClick={() => setSelectedMode(null)}
+              onClick={closeSession}
               className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
               aria-label="Close practice"
             >
@@ -675,35 +703,46 @@ export default function PracticePage() {
 
           {currentExercise.type === "match_meaning" ? (
             <div className="space-y-3">
-              {matchSolvedPerfectly ? (
-                <div className="rounded-2xl border border-emerald-300/35 bg-emerald-300/12 px-4 py-2.5 text-emerald-100">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200/90">
-                    Perfect match
-                  </p>
-                  <p className="mt-1 text-xs sm:text-sm text-emerald-50/90">
-                    Every word matched cleanly on this exercise.
-                  </p>
-                </div>
-              ) : null}
-
-              <div className="grid grid-cols-2 gap-3">
-                <div className="min-w-0">
-                  <p className="mb-2 px-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+              <div>
+                <div className="mb-2 grid grid-cols-2 gap-3">
+                  <p className="px-1 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
                     Words
                   </p>
-                  <div className="space-y-2">
-                    {currentExercise.pairs.map((pair) => {
-                      const currentValue = matchAnswers[pair.word] ?? "";
-                      const matchColor = matchColorClasses[
-                        currentExercise.pairs.findIndex((candidate) => candidate.word === pair.word) %
-                          matchColorClasses.length
-                      ];
-                      const isActive = activeMatchWord === pair.word;
-                      const isCorrect = revealed && currentValue === pair.answer;
-                      const isWrong = revealed && currentValue && currentValue !== pair.answer;
-                      return (
+                  <p className="px-1 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+                    Meanings
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  {currentExercise.pairs.map((pair, index) => {
+                    const meaning = currentExercise.pairs[0]?.options[index];
+                    const currentValue = matchAnswers[pair.word] ?? "";
+                    const matchColor =
+                      matchColorClasses[index % matchColorClasses.length];
+                    const isActive = activeMatchWord === pair.word;
+                    const isCorrect = revealed && currentValue === pair.answer;
+                    const isWrong = revealed && currentValue && currentValue !== pair.answer;
+                    const assignedWord =
+                      meaning != null
+                        ? Object.entries(matchAnswers).find(([, assignedMeaning]) => assignedMeaning === meaning)?.[0] ?? null
+                        : null;
+                    const isAssigned = Boolean(assignedWord);
+                    const assignedIndex = assignedWord
+                      ? currentExercise.pairs.findIndex((candidate) => candidate.word === assignedWord)
+                      : -1;
+                    const assignedPair =
+                      assignedWord != null
+                        ? currentExercise.pairs.find((candidate) => candidate.word === assignedWord) ?? null
+                        : null;
+                    const meaningColor =
+                      assignedIndex >= 0
+                        ? matchColorClasses[assignedIndex % matchColorClasses.length]
+                        : "";
+                    const meaningIsCorrect = revealed && assignedPair?.answer === meaning;
+                    const meaningIsWrong = revealed && isAssigned && assignedPair?.answer !== meaning;
+
+                    return (
+                      <div key={`${pair.word}-${meaning ?? index}`} className="grid grid-cols-2 gap-3">
                         <button
-                          key={pair.word}
                           type="button"
                           onClick={() => {
                             if (revealed) return;
@@ -713,7 +752,7 @@ export default function PracticePage() {
                             }
                             setActiveMatchWord((prev) => (prev === pair.word ? null : pair.word));
                           }}
-                          className={`w-full rounded-xl border px-3 py-3 text-left transition ${
+                          className={`flex min-h-[88px] w-full items-center justify-center rounded-xl border px-3 py-3 text-center transition ${
                             isCorrect
                               ? matchColor
                               : isWrong
@@ -725,75 +764,58 @@ export default function PracticePage() {
                                     : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
                           }`}
                         >
-                          <p className="text-base font-semibold tracking-tight sm:text-lg">{pair.word}</p>
-                          {revealed && currentValue !== pair.answer ? (
-                            <p className="mt-1 text-[11px] font-medium leading-4 text-slate-900/70">
-                              Answer: {pair.answer}
-                            </p>
-                          ) : null}
+                          <div>
+                            <p className="text-base font-semibold tracking-tight sm:text-lg">{pair.word}</p>
+                            {revealed && currentValue !== pair.answer ? (
+                              <div className="mt-2 rounded-lg border border-slate-950/12 bg-slate-950/8 px-2.5 py-2">
+                                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900/65">
+                                  Correct
+                                </p>
+                                <p className="mt-1 text-xs font-semibold leading-4 text-slate-950">
+                                  {pair.answer}
+                                </p>
+                              </div>
+                            ) : null}
+                          </div>
                         </button>
-                      );
-                    })}
-                  </div>
-                </div>
 
-                <div className="min-w-0">
-                  <p className="mb-2 px-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
-                    Meanings
-                  </p>
-                  <div className="space-y-2">
-                    {currentExercise.pairs[0]?.options.map((meaning) => {
-                      const assignedWord =
-                        Object.entries(matchAnswers).find(([, assignedMeaning]) => assignedMeaning === meaning)?.[0] ?? null;
-                      const isAssigned = Boolean(assignedWord);
-                      const assignedIndex = assignedWord
-                        ? currentExercise.pairs.findIndex((pair) => pair.word === assignedWord)
-                        : -1;
-                      const assignedPair =
-                        assignedWord != null
-                          ? currentExercise.pairs.find((pair) => pair.word === assignedWord) ?? null
-                          : null;
-                      const isCorrect = revealed && assignedPair?.answer === meaning;
-                      const isWrong = revealed && isAssigned && assignedPair?.answer !== meaning;
-                      const matchColor =
-                        assignedIndex >= 0
-                          ? matchColorClasses[assignedIndex % matchColorClasses.length]
-                          : "";
-                      return (
-                        <button
-                          key={meaning}
-                          type="button"
-                          onClick={() => {
-                            if (revealed) return;
-                            if (assignedWord) {
-                              unassignMatchWord(assignedWord);
-                              return;
-                            }
-                            assignMatchMeaning(meaning);
-                          }}
-                          disabled={revealed || (!activeMatchWord && !assignedWord)}
-                          className={`w-full rounded-xl border px-3 py-3 text-left transition ${
-                            isCorrect
-                              ? matchColor
-                              : isWrong
-                                ? "border-rose-400 bg-rose-400 text-slate-950"
-                                : isAssigned
-                                  ? matchColor
-                                  : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
-                          } disabled:opacity-100`}
-                        >
-                          <p className="text-xs leading-5 sm:text-sm sm:leading-6">{meaning}</p>
-                        </button>
-                      );
-                    })}
-                  </div>
+                        {meaning ? (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              if (revealed) return;
+                              if (assignedWord) {
+                                unassignMatchWord(assignedWord);
+                                return;
+                              }
+                              assignMatchMeaning(meaning);
+                            }}
+                            disabled={revealed || (!activeMatchWord && !assignedWord)}
+                            className={`flex min-h-[88px] w-full items-center justify-center rounded-xl border px-3 py-3 text-center transition ${
+                              meaningIsCorrect
+                                ? meaningColor
+                                : meaningIsWrong
+                                  ? "border-rose-400 bg-rose-400 text-slate-950"
+                                  : isAssigned
+                                    ? meaningColor
+                                    : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
+                            } disabled:opacity-100`}
+                          >
+                            <p className="text-xs leading-5 sm:text-sm sm:leading-6">{meaning}</p>
+                          </button>
+                        ) : (
+                          <div />
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           ) : null}
 
           {!revealed ? (
-            <div className="mt-4 flex flex-wrap items-center gap-2.5">
+            <div className="mt-5 flex items-center justify-center">
               <button
                 type="button"
                 onClick={revealCurrent}
@@ -802,25 +824,10 @@ export default function PracticePage() {
                     ? currentExercise.pairs.some((pair) => !matchAnswers[pair.word])
                     : !selectedOption
                 }
-                className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-50"
+                className="inline-flex min-w-[180px] justify-center rounded-xl bg-[var(--primary)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-50"
               >
                 Check answer
               </button>
-
-              <button
-                type="button"
-                onClick={restart}
-                className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-              >
-                Restart session
-              </button>
-
-              <Link
-                href="/favorites"
-                className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-              >
-                Open favorites
-              </Link>
             </div>
           ) : null}
         </div>
@@ -839,7 +846,7 @@ export default function PracticePage() {
             </Link>
             <button
               type="button"
-              onClick={() => setSelectedMode(null)}
+              onClick={closeSession}
               className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
             >
               Choose another mode
@@ -868,7 +875,7 @@ export default function PracticePage() {
                         ? "Awesome!"
                         : "Good job!"
                       : currentExercise.type === "match_meaning"
-                        ? "Review the corrected matches above"
+                        ? "Check the corrected pairs above"
                         : "Correct answer:"}
                   </p>
                   {lastResult === "wrong" && currentExercise.type !== "match_meaning" ? (
@@ -890,14 +897,6 @@ export default function PracticePage() {
                   }`}
                 >
                   {exerciseIndex >= exercises.length - 1 ? "Finish" : "Continue"}
-                </button>
-
-                <button
-                  type="button"
-                  onClick={restart}
-                  className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-                >
-                  Restart session
                 </button>
               </div>
             </div>
@@ -930,7 +929,7 @@ export default function PracticePage() {
           <button
             key={card.mode}
             type="button"
-            onClick={() => setSelectedMode(card.mode)}
+            onClick={() => openSession(card.mode)}
             className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 text-left shadow-md transition hover:bg-[var(--card-bg-hover)]"
           >
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
