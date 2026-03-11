@@ -257,6 +257,29 @@ function normalizeStoryHtml(html: string): string {
   return withParagraphs;
 }
 
+function stripHtmlTags(value: string): string {
+  return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function hasInlineGlossaryExplanation(text: string): boolean {
+  const plainText = stripHtmlTags(text);
+  if (!plainText) return false;
+
+  const patterns = [
+    /\b[bB]edeutet,\s+dass\b/u,
+    /\b[bB]edeutet\s+dass\b/u,
+    /\bhei[sß]t,\s+dass\b/u,
+    /\bhei[sß]t,\s+mit\b/u,
+    /\bim\s+Sinne\s+von\b/u,
+    /\bmeans?\s+that\b/iu,
+    /\bmeans?\b.{0,24}\bused to\b/iu,
+    /\brefers?\s+to\b/iu,
+    /\bdescribes?\b.{0,24}\bthat\b/iu,
+  ];
+
+  return patterns.some((pattern) => pattern.test(plainText));
+}
+
 function truncateToWordLimit(text: string, maxWords: number): string {
   const words = text.trim().split(/\s+/).filter(Boolean);
   if (words.length <= maxWords) return text.trim();
@@ -527,6 +550,9 @@ Wrap each paragraph inside <blockquote> ... </blockquote>.
 
 Requirements:
 Use close third-person narration with natural internal perspective and sharp scene dynamics.
+Do NOT explain vocabulary inside the story text itself.
+Do NOT add glossary-like appositions such as "X bedeutet, dass...", "X heißt...", "X means...", or "X refers to...".
+The story body must read like natural narrative only, never like a lesson, dictionary, annotation, or teacher aside.
 
 Words to wrap:
 - Wrap EXACTLY ${MIN_VOCAB_ITEMS} different items that naturally fit in the story, marking only the first occurrence of each with
@@ -611,6 +637,12 @@ Return ONLY valid JSON:
         continue;
       }
 
+      if (hasInlineGlossaryExplanation(boundedCandidateText)) {
+        previousFeedback =
+          "Story text contains inline glossary explanations like 'X bedeutet, dass...' and must be pure narrative.";
+        continue;
+      }
+
       const cleanedVocab = sanitizeVocab(candidate.vocab);
       const stats = analyzeVocab(cleanedVocab, language);
       if (stats.score > bestScore) {
@@ -636,6 +668,12 @@ Return ONLY valid JSON:
 
     // 🔹 Normalizar texto HTML para formato consistente
     let normalizedText = normalizeStoryHtml(text);
+    if (hasInlineGlossaryExplanation(normalizedText)) {
+      return NextResponse.json(
+        { error: "Generated story contains inline glossary explanations and was rejected." },
+        { status: 502 }
+      );
+    }
     let curatedVocab = sanitizeVocab(vocab);
 
     const disallowedKeys = new Set<string>();
