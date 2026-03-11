@@ -56,6 +56,7 @@ export async function GET(req: Request) {
           language: true,
           region: true,
           level: true,
+          cefrLevel: true,
           focus: true,
           topic: true,
           audioUrl: true,
@@ -83,6 +84,7 @@ export async function GET(req: Request) {
       }
 
       const language = searchParams.get('language')?.trim();
+      const cefrLevel = searchParams.get('cefrLevel')?.trim();
       const level = searchParams.get('level')?.trim();
       const focus = searchParams.get('focus')?.trim();
       const topic = searchParams.get('topic')?.trim();
@@ -98,6 +100,7 @@ export async function GET(req: Request) {
         where: {
           userId,
           ...(language ? { language } : {}),
+          ...(cefrLevel ? { cefrLevel } : {}),
           ...(level ? { level } : {}),
           ...(focus ? { focus } : {}),
           ...(topic ? { topic } : {}),
@@ -115,6 +118,7 @@ export async function GET(req: Request) {
           language: true,
           region: true,
           level: true,
+          cefrLevel: true,
           focus: true,
           topic: true,
           audioUrl: true,
@@ -140,6 +144,7 @@ export async function GET(req: Request) {
         text: true, // ✅ se incluye texto
         language: true,
         level: true,
+        cefrLevel: true,
         region: true,
         audioUrl: true,
         audioSegments: true,

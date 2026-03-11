@@ -211,6 +211,42 @@ function getCompletionTone(score: number, total: number) {
   };
 }
 
+function scoreSpeechVoice(voice: SpeechSynthesisVoice, lang: string) {
+  const voiceLang = (voice.lang ?? "").toLowerCase();
+  const targetLang = lang.toLowerCase();
+  const targetBase = targetLang.split("-")[0];
+  const voiceName = (voice.name ?? "").toLowerCase();
+
+  if (!voiceLang.startsWith(targetBase)) return Number.NEGATIVE_INFINITY;
+
+  let score = 0;
+
+  if (voiceLang === targetLang) score += 140;
+  else if (voiceLang.startsWith(targetLang)) score += 120;
+  else score += 80;
+
+  if (/google/.test(voiceName)) score += 120;
+  if (/microsoft/.test(voiceName)) score += 105;
+  if (/neural|natural|premium|enhanced|wavenet/.test(voiceName)) score += 90;
+  if (!voice.localService) score += 40;
+  if (/desktop/.test(voiceName)) score += 25;
+
+  if (/compact|eloquence|whisper|novelty|bubbles|trinoids|zarvox/i.test(voice.name ?? "")) {
+    score -= 180;
+  }
+
+  return score;
+}
+
+function selectPreferredSpeechVoice(voices: SpeechSynthesisVoice[], lang: string) {
+  const ranked = voices
+    .map((voice) => ({ voice, score: scoreSpeechVoice(voice, lang) }))
+    .filter((entry) => Number.isFinite(entry.score))
+    .sort((a, b) => b.score - a.score);
+
+  return ranked[0]?.voice ?? null;
+}
+
 export default function PracticePage() {
   const { user, isLoaded } = useUser();
   const [favorites, setFavorites] = useState<PracticeFavoriteItem[]>([]);
@@ -717,30 +753,52 @@ export default function PracticePage() {
     }
 
     synth.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
     const lang = getSpeechSynthesisLang(language);
-    utterance.lang = lang;
-    utterance.rate = 0.92;
-
-    const voices = synth.getVoices();
-    const preferredVoice =
-      voices.find((voice) => voice.lang?.toLowerCase().startsWith(lang.toLowerCase()) && /google|microsoft|natural|neural/i.test(voice.name)) ??
-      voices.find((voice) => voice.lang?.toLowerCase().startsWith(lang.toLowerCase())) ??
-      null;
-
-    if (preferredVoice) {
-      utterance.voice = preferredVoice;
-    }
-
-    utterance.onend = () => {
-      setSpeakingClipId((current) => (current === clipOwnerId ? null : current));
-    };
-    utterance.onerror = () => {
-      setSpeakingClipId((current) => (current === clipOwnerId ? null : current));
-    };
 
     setSpeakingClipId(clipOwnerId);
-    synth.speak(utterance);
+
+    let didSpeak = false;
+    const speak = () => {
+      if (didSpeak) return;
+      didSpeak = true;
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = lang;
+      utterance.rate = 0.92;
+
+      const preferredVoice = selectPreferredSpeechVoice(synth.getVoices(), lang);
+      if (preferredVoice) {
+        utterance.voice = preferredVoice;
+      }
+
+      utterance.onend = () => {
+        setSpeakingClipId((current) => (current === clipOwnerId ? null : current));
+      };
+      utterance.onerror = () => {
+        setSpeakingClipId((current) => (current === clipOwnerId ? null : current));
+      };
+
+      synth.cancel();
+      synth.speak(utterance);
+    };
+
+    if (synth.getVoices().length > 0) {
+      speak();
+      return;
+    }
+
+    const handleVoicesChanged = () => {
+      synth.removeEventListener?.("voiceschanged", handleVoicesChanged);
+      speak();
+    };
+
+    synth.addEventListener?.("voiceschanged", handleVoicesChanged);
+    window.setTimeout(() => {
+      synth.removeEventListener?.("voiceschanged", handleVoicesChanged);
+      if (!didSpeak) {
+        speak();
+      }
+    }, 180);
   }, [speakingClipId]);
 
   const playListenPrompt = useCallback(() => {

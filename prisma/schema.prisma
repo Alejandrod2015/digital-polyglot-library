@@ -86,6 +86,7 @@ model UserStory {
   language      String
   region        String?
   level         String
+  cefrLevel     String?
   focus         String?
   topic         String
   public        Boolean  @default(true)

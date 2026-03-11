@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
 import { buildSanityCorsHeaders } from "@/lib/sanityCors";
+import { cefrPromptLabel } from "@/lib/cefr";
 
 type VocabItem = {
   word: string;
@@ -12,6 +13,7 @@ type VocabItem = {
 type GenerateVocabBody = {
   text?: string;
   language?: string;
+  cefrLevel?: string;
   level?: string;
   focus?: string;
   topic?: string;
@@ -228,6 +230,7 @@ function parseModelResponse(content: string): unknown {
 async function requestVocabFromModel(args: {
   text: string;
   language: string;
+  cefrLevel?: string;
   level: string;
   focus: string;
   topic: string;
@@ -239,6 +242,7 @@ async function requestVocabFromModel(args: {
   const {
     text,
     language,
+    cefrLevel,
     level,
     focus,
     topic,
@@ -259,7 +263,7 @@ Task:
 - Extract between ${minItems} and ${maxItems} useful words/phrases from the story.
 - Prioritize this focus: "${focus}".
 - Story language: ${language}.
-- Learner level: ${level}.
+- Learner level: ${cefrPromptLabel(cefrLevel, level)}.
 - Story topic/context: ${topic || "general"}.
 - Each item must have:
   - "word": exact form as it appears in the story text
@@ -333,6 +337,7 @@ export async function POST(req: Request) {
 
     const language = typeof body.language === "string" && body.language.trim() ? body.language : "Spanish";
     const level = typeof body.level === "string" && body.level.trim() ? body.level : "intermediate";
+    const cefrLevel = typeof body.cefrLevel === "string" && body.cefrLevel.trim() ? body.cefrLevel : undefined;
     const focus = typeof body.focus === "string" && body.focus.trim() ? body.focus : "verbs";
     const topic = typeof body.topic === "string" ? body.topic.trim() : "";
     const dynamicRange = computeDynamicVocabRange(text);
@@ -348,6 +353,7 @@ export async function POST(req: Request) {
     let vocab = await requestVocabFromModel({
       text,
       language,
+      cefrLevel,
       level,
       focus,
       topic,
@@ -368,6 +374,7 @@ export async function POST(req: Request) {
       const refill = await requestVocabFromModel({
         text,
         language,
+        cefrLevel,
         level,
         focus: `${focus} (strictly provide at least ${minItems} high-value items; prioritize concrete verbs, nouns, adjectives, and only short fixed expressions when clearly useful)`,
         topic,
@@ -394,6 +401,7 @@ export async function POST(req: Request) {
       const refill = await requestVocabFromModel({
         text,
         language,
+        cefrLevel,
         level,
         focus: `${focus} (fill missing items with practical, reusable vocabulary; prefer strong single words over weak expressions)`,
         topic,
@@ -489,6 +497,7 @@ Return ONLY valid JSON array.
       const rescue = await requestVocabFromModel({
         text,
         language,
+        cefrLevel,
         level,
         focus: `${focus} (final rescue pass, prioritize concrete and reusable vocabulary; avoid abstract cognates and avoid expressions unless clearly lexicalized)`,
         topic,

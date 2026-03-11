@@ -159,7 +159,7 @@ export const standaloneStory = defineType({
 
     defineField({
       name: "level",
-      title: "Level",
+      title: "Broad level",
       type: "string",
       options: {
         list: [
@@ -168,6 +168,24 @@ export const standaloneStory = defineType({
           { title: "Advanced", value: "advanced" },
         ],
       },
+      description: "Legacy broad difficulty bucket. Prefer CEFR level for precise progression.",
+    }),
+
+    defineField({
+      name: "cefrLevel",
+      title: "CEFR level",
+      type: "string",
+      options: {
+        list: [
+          { title: "A1", value: "a1" },
+          { title: "A2", value: "a2" },
+          { title: "B1", value: "b1" },
+          { title: "B2", value: "b2" },
+          { title: "C1", value: "c1" },
+          { title: "C2", value: "c2" },
+        ],
+      },
+      description: "Precise CEFR level for Atlas and learner progression.",
     }),
 
     defineField({

@@ -5,6 +5,7 @@ import { useFormValue, useClient } from 'sanity'
 import { Button, Card, Text, Stack, Spinner, Flex } from '@sanity/ui'
 import { SparklesIcon } from '@sanity/icons'
 import { getSanityTargetId } from '../lib/getSanityTargetId'
+import { broadLevelFromCefr } from '../../lib/cefr'
 
 type GenPayload = {
   title: string
@@ -38,6 +39,7 @@ export default function StoryGeneratorInput() {
   const currentTitle = useFormValue(['title']) as string | undefined
   const bookRef = useFormValue(['book', '_ref']) as string | undefined
   const language = useFormValue(['language']) as string | undefined
+  const cefrLevel = useFormValue(['cefrLevel']) as string | undefined
   const level = useFormValue(['level']) as string | undefined
   const focus = useFormValue(['focus']) as string | undefined
   const topic = useFormValue(['topic']) as string | undefined
@@ -74,6 +76,8 @@ export default function StoryGeneratorInput() {
     typeof window !== 'undefined' && window.location.hostname === 'localhost'
       ? ''
       : 'https://reader.digitalpolyglot.com'
+  const resolvedCefrLevel = typeof cefrLevel === 'string' ? cefrLevel : ''
+  const resolvedBroadLevel = broadLevelFromCefr(resolvedCefrLevel) ?? level ?? 'beginner'
 
   async function generateStory() {
     try {
@@ -87,6 +91,7 @@ export default function StoryGeneratorInput() {
 
       const body: {
         language: string
+        cefrLevel: string
         level: string
         focus: string
         topic: string
@@ -95,7 +100,8 @@ export default function StoryGeneratorInput() {
         region?: string
       } = {
         language: language ?? 'Spanish',
-        level: level ?? 'beginner',
+        cefrLevel: resolvedCefrLevel,
+        level: resolvedBroadLevel,
         focus: focus ?? 'verbs',
         topic: topic?.trim() ?? '',
         synopsis: synopsis?.trim() ?? '',
@@ -154,7 +160,8 @@ export default function StoryGeneratorInput() {
         .set({
           text: parsedUnknown.text?.trim() ?? '',
           language: language ?? 'spanish',
-          level: level ?? 'beginner',
+          level: resolvedBroadLevel,
+          cefrLevel: resolvedCefrLevel || undefined,
           focus: focus ?? 'verbs',
           topic: topic?.trim() || data.topic || null,
         })
@@ -193,6 +200,7 @@ export default function StoryGeneratorInput() {
       const body: {
         title: string
         language: string
+        cefrLevel: string
         level: string
         focus: string
         topic: string
@@ -200,7 +208,8 @@ export default function StoryGeneratorInput() {
       } = {
         title,
         language: language ?? 'Spanish',
-        level: level ?? 'beginner',
+        cefrLevel: resolvedCefrLevel,
+        level: resolvedBroadLevel,
         focus: focus ?? 'verbs',
         topic: topic?.trim() ?? '',
       }
@@ -256,6 +265,7 @@ export default function StoryGeneratorInput() {
       const body: {
         documentId: string
         language: string
+        cefrLevel: string
         level: string
         topic: string
         synopsis: string
@@ -263,7 +273,8 @@ export default function StoryGeneratorInput() {
       } = {
         documentId: formId.replace(/^drafts\./, ''),
         language: language ?? 'Spanish',
-        level: level ?? 'beginner',
+        cefrLevel: resolvedCefrLevel,
+        level: resolvedBroadLevel,
         topic: topic?.trim() ?? '',
         synopsis: synopsis?.trim() ?? '',
       }
@@ -344,7 +355,8 @@ export default function StoryGeneratorInput() {
             body: JSON.stringify({
               text: cleanStoryText,
               language: language ?? 'spanish',
-              level: level ?? 'intermediate',
+              cefrLevel: resolvedCefrLevel,
+              level: resolvedBroadLevel,
               focus: focus ?? 'verbs',
               topic: topic ?? '',
             }),
@@ -399,7 +411,7 @@ export default function StoryGeneratorInput() {
               language: typeof language === 'string' ? language : '',
               region: typeof region === 'string' ? region : '',
               topic: typeof topic === 'string' ? topic : '',
-              level: typeof level === 'string' ? level : '',
+              level: resolvedBroadLevel,
             }),
           })
 

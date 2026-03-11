@@ -12,6 +12,7 @@ import {
   TARGET_STORY_WORDS_MIN,
   countStoryWords,
 } from "@/lib/storyLength";
+import { cefrPromptLabel } from "@/lib/cefr";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -113,6 +114,7 @@ export async function POST(req: Request) {
     const {
       language = "Spanish",
       region,
+      cefrLevel,
       level = "intermediate",
       focus = "verbs",
       topic = "",
@@ -120,11 +122,13 @@ export async function POST(req: Request) {
     } = body as {
       language?: string;
       region?: string;
+      cefrLevel?: string;
       level?: string;
       focus?: string;
       topic?: string;
       synopsis?: string;
     };
+    const learnerProfile = cefrPromptLabel(cefrLevel, level);
 
     const regionClause = region ? `, specifically from ${region}` : "";
 
@@ -141,7 +145,7 @@ export async function POST(req: Request) {
 
       const prompt = `
 You are an expert language teacher and long story writer.
-Write a long engaging story for a ${level} student learning ${language}${regionClause}.
+Write a long engaging story for a ${learnerProfile} learner studying ${language}${regionClause}.
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 All vocabulary definitions must be written in clear English, regardless of the story language.
@@ -225,7 +229,7 @@ Return ONLY valid JSON:
       const improvedVocab = await improveVocabDefinitions(openai, {
         items: sanitizeGeneratedVocab(raw.vocab, text),
         language,
-        level,
+        level: learnerProfile,
         focus,
         topic: resolvedRequestedTopic,
         text,

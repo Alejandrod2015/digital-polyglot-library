@@ -6,7 +6,6 @@ import {
   Home,
   Compass,
   Star,
-  BookOpen,
   BookMarked,
   ChartNoAxesColumn,
   Brain,
@@ -146,11 +145,11 @@ export default function Sidebar({ onClose }: SidebarProps) {
         </Link>
 
         <Link
-          href="/my-library"
+          href="/practice"
           onClick={handleNavClick}
           className={navLinkClass}
         >
-          <BookOpen size={22} /> My Library
+          <Brain size={22} /> Practice
         </Link>
 
         <Link
@@ -159,14 +158,6 @@ export default function Sidebar({ onClose }: SidebarProps) {
           className={navLinkClass}
         >
           <Star size={22} /> Favorites
-        </Link>
-
-        <Link
-          href="/practice"
-          onClick={handleNavClick}
-          className={navLinkClass}
-        >
-          <Brain size={22} /> Practice
         </Link>
 
         <Link

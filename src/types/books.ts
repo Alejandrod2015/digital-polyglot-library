@@ -1,6 +1,7 @@
 // /src/types/books.ts
 
 export type Level = "beginner" | "intermediate" | "advanced";
+export type CefrLevel = "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
 
 export interface VocabItem {
   word: string; // Palabra tal cual aparece en el texto
@@ -14,6 +15,7 @@ export interface BookMetadata {
   language: string;
   region?: string;
   level: Level;
+  cefrLevel?: CefrLevel;
   topic?: string;
   formality?: "informal" | "neutral" | "formal";
 }
@@ -60,4 +62,13 @@ export const LEVEL_LABELS: Record<Level, string> = {
   beginner: "Beginner",
   intermediate: "Intermediate",
   advanced: "Advanced",
+};
+
+export const CEFR_LEVEL_LABELS: Record<CefrLevel, string> = {
+  a1: "A1",
+  a2: "A2",
+  b1: "B1",
+  b2: "B2",
+  c1: "C1",
+  c2: "C2",
 };

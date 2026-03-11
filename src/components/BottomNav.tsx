@@ -16,8 +16,8 @@ export default function BottomNav() {
   return (
     <nav className="fixed bottom-0 left-0 w-full bg-[#0D1B2A] shadow-md z-10">
       <div className="flex justify-center gap-6 py-3">
-        <Link href="/books" className={linkClasses("/books")}>
-          📚 Library
+        <Link href="/practice" className={linkClasses("/practice")}>
+          🧠 Practice
         </Link>
         <Link href="/favorites" className={linkClasses("/favorites")}>
           Favorites

@@ -5,6 +5,7 @@ import { useClient, useFormValue } from 'sanity'
 import { Button, Card, Flex, Spinner, Stack, Text } from '@sanity/ui'
 import { SparklesIcon } from '@sanity/icons'
 import { getSanityTargetId } from '../lib/getSanityTargetId'
+import { broadLevelFromCefr } from '../../lib/cefr'
 
 type VocabItem = {
   word: string
@@ -73,6 +74,7 @@ export default function VocabGeneratorInput() {
   const formId = useFormValue(['_id']) as string | undefined
   const text = useFormValue(['text']) as string | undefined
   const language = useFormValue(['language']) as string | undefined
+  const cefrLevel = useFormValue(['cefrLevel']) as string | undefined
   const level = useFormValue(['level']) as string | undefined
   const focus = useFormValue(['focus']) as string | undefined
   const topic = useFormValue(['topic']) as string | undefined
@@ -85,6 +87,8 @@ export default function VocabGeneratorInput() {
     typeof window !== 'undefined' && window.location.hostname === 'localhost'
       ? ''
       : 'https://reader.digitalpolyglot.com'
+  const resolvedCefrLevel = typeof cefrLevel === 'string' ? cefrLevel : ''
+  const resolvedBroadLevel = broadLevelFromCefr(resolvedCefrLevel) ?? level ?? 'intermediate'
 
   async function generateVocab() {
     try {
@@ -107,7 +111,8 @@ export default function VocabGeneratorInput() {
         body: JSON.stringify({
           text: cleanedText,
           language: language ?? 'spanish',
-          level: level ?? 'intermediate',
+          cefrLevel: resolvedCefrLevel,
+          level: resolvedBroadLevel,
           focus: focus ?? 'verbs',
           topic: topic ?? '',
         }),

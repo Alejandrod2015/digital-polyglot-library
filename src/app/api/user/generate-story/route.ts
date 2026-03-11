@@ -15,6 +15,7 @@ import {
   TARGET_STORY_WORDS_MIN,
   countStoryWords,
 } from "@/lib/storyLength";
+import { broadLevelFromCefr, cefrPromptLabel, normalizeCefrLevel, normalizeBroadLevel } from "@/lib/cefr";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
@@ -436,13 +437,14 @@ async function generateComplexVocabFill(
     text: string;
     language: string;
     level: string;
+    cefrLevel?: string;
     focus: string;
     topic: string;
     existingVocab: StoryVocabItem[];
     needed: number;
   }
 ): Promise<StoryVocabItem[]> {
-  const { text, language, level, focus, topic, existingVocab, needed } = args;
+  const { text, language, level, cefrLevel, focus, topic, existingVocab, needed } = args;
   if (needed <= 0) return [];
 
   const existingWords = existingVocab.map((item) => item.word);
@@ -451,7 +453,7 @@ Select exactly ${needed} additional vocabulary items from this story text.
 
 Context:
 - Language: ${language}
-- Level: ${level}
+- Level: ${cefrPromptLabel(cefrLevel, level)}
 - Focus: ${focus}
 - Topic: ${topic || "general"}
 
@@ -518,6 +520,7 @@ export async function POST(req: Request) {
     const body = (await req.json()) as {
       language?: string;
       region?: string;
+      cefrLevel?: string;
       level?: string;
       focus?: string;
       topic?: string;
@@ -527,11 +530,15 @@ export async function POST(req: Request) {
     const {
       language = "Spanish",
       region,
+      cefrLevel,
       level = "intermediate",
       focus = "verbs",
       topic = "",
       customTopic = "",
     } = body;
+    const normalizedCefrLevel = normalizeCefrLevel(cefrLevel);
+    const normalizedBroadLevel = broadLevelFromCefr(normalizedCefrLevel) ?? normalizeBroadLevel(level) ?? "beginner";
+    const learnerProfile = cefrPromptLabel(normalizedCefrLevel, normalizedBroadLevel);
     const requestedTopic = typeof topic === "string" ? topic.trim() : "";
     const customTopicResolved =
       typeof customTopic === "string" ? customTopic.trim().slice(0, 120) : "";
@@ -541,7 +548,7 @@ export async function POST(req: Request) {
 
     const basePrompt = `
 You are an expert fiction writer and language teacher.
-Write a vivid, modern story in ${language}${regionClause} for a ${level} student.
+Write a vivid, modern story in ${language}${regionClause} for a ${learnerProfile} learner.
 ${resolvedTopic ? `The topic is "${resolvedTopic}".` : "Choose a concrete, modern topic that fits the level."}
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
@@ -698,7 +705,8 @@ Return ONLY valid JSON:
       const filled = await generateComplexVocabFill(openai, {
         text: normalizedText,
         language,
-        level,
+        level: learnerProfile,
+        cefrLevel: normalizedCefrLevel ?? undefined,
         focus,
         topic: resolvedTopic,
         existingVocab: curatedVocab,
@@ -710,7 +718,7 @@ Return ONLY valid JSON:
     const improvedVocab = await improveVocabDefinitions(openai, {
       items: curatedVocab,
       language,
-      level,
+      level: learnerProfile,
       focus,
       topic: resolvedTopic,
       text: normalizedText,
@@ -721,7 +729,8 @@ Return ONLY valid JSON:
       const filled = await generateComplexVocabFill(openai, {
         text: normalizedText,
         language,
-        level,
+        level: learnerProfile,
+        cefrLevel: normalizedCefrLevel ?? undefined,
         focus,
         topic: resolvedTopic,
         existingVocab: finalVocab,
@@ -737,13 +746,12 @@ Return ONLY valid JSON:
     }
 
     // Normalizar nivel
-    const normalizedLevel = (() => {
-      const l = (level || "").toLowerCase();
-      if (l === "basic" || l === "elementary") return "Beginner";
-      if (l === "intermediate") return "Intermediate";
-      if (l === "advanced") return "Advanced";
-      return "Beginner";
-    })();
+    const normalizedLevel =
+      normalizedBroadLevel === "advanced"
+        ? "Advanced"
+        : normalizedBroadLevel === "intermediate"
+          ? "Intermediate"
+          : "Beginner";
 
     // Generar slug único
     const baseSlug = slugify(title, { lower: true, strict: true }).slice(0, 80);
@@ -767,6 +775,7 @@ Return ONLY valid JSON:
         language,
         region,
         level: normalizedLevel,
+        cefrLevel: normalizedCefrLevel,
         focus,
         topic: inferredTopic,
         public: true,
@@ -829,6 +838,7 @@ Return ONLY valid JSON:
         language: savedStory.language,
         region: savedStory.region,
         level: savedStory.level,
+        cefrLevel: savedStory.cefrLevel,
         focus: savedStory.focus,
         topic: savedStory.topic,
         audioStatus: savedStory.audioStatus,

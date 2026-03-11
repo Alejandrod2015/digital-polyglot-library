@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { Sparkles, Loader2, Music, CheckCircle, X } from 'lucide-react';
 import StoryContent from '@/components/StoryContent';
 import VocabPanel from '@/components/VocabPanel';
-import { formatLanguage, formatLevel, toTitleCase } from '@/lib/displayFormat';
+import { broadLevelFromCefr } from '@/lib/cefr';
+import { formatCefrLevel, formatLanguage, formatLevel, toTitleCase } from '@/lib/displayFormat';
 
 type Plan = 'free' | 'basic' | 'premium' | 'polyglot';
 type CreateStatus = 'idle' | 'generating_text' | 'generating_audio' | 'done' | 'audio_failed';
@@ -23,6 +24,7 @@ type GeneratedStory = {
   language?: string;
   region?: string | null;
   level?: string;
+  cefrLevel?: string;
   audioUrl?: string | null;
   audioStatus?: AudioStatus | null;
   audioSegments?: unknown;
@@ -37,6 +39,7 @@ type CreateApiResponse = {
 type CreateRequestPayload = {
   language: string;
   region: string;
+  cefrLevel: string;
   level: string;
   focus: string;
   topic: string;
@@ -71,7 +74,7 @@ const regionsByLanguage: Record<string, string[]> = {
   Portuguese: ['Portugal', 'Brazil', 'Other'],
 };
 
-const levels = ['Beginner', 'Intermediate', 'Advanced'];
+const cefrLevels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const focusOptions = [
   'Everyday conversation',
   'Useful phrases',
@@ -169,7 +172,7 @@ export default function CreatePage() {
 
   const [language, setLanguage] = useState('');
   const [region, setRegion] = useState('');
-  const [level, setLevel] = useState('');
+  const [cefrLevel, setCefrLevel] = useState('');
   const [focus, setFocus] = useState('');
   const [topic, setTopic] = useState('');
   const [customTopic, setCustomTopic] = useState('');
@@ -200,15 +203,17 @@ export default function CreatePage() {
   const buildPayload = useCallback((): CreateRequestPayload => {
     const resolvedFocus = focus.trim();
     const resolvedTopic = (customTopic.trim() || topic).trim();
+    const broadLevel = broadLevelFromCefr(cefrLevel) ?? 'beginner';
     return {
       language,
       region,
-      level,
+      cefrLevel,
+      level: broadLevel,
       focus: resolvedFocus,
       topic: resolvedTopic,
       customTopic: customTopic.trim() || undefined,
     };
-  }, [customTopic, focus, language, level, region, topic]);
+  }, [cefrLevel, customTopic, focus, language, region, topic]);
 
   const pollAudioUntilReady = useCallback(async (story: GeneratedStory): Promise<GeneratedStory> => {
     const maxWaitMs = 1000 * 60 * 3;
@@ -230,12 +235,13 @@ export default function CreatePage() {
   }, []);
 
   const findRecoveredStory = useCallback(async (pending: PendingCreate): Promise<GeneratedStory | null> => {
-    const params = new URLSearchParams({
-      mine: '1',
-      latestForCreate: '1',
-      language: pending.payload.language,
-      level: pending.payload.level,
-      focus: pending.payload.focus,
+      const params = new URLSearchParams({
+        mine: '1',
+        latestForCreate: '1',
+        language: pending.payload.language,
+        cefrLevel: pending.payload.cefrLevel,
+        level: pending.payload.level,
+        focus: pending.payload.focus,
       topic: pending.payload.topic,
       since: String(pending.startedAt),
     });
@@ -633,15 +639,15 @@ export default function CreatePage() {
         )}
 
         <div>
-          <label className="block text-sm text-[var(--muted)] mb-1">Level</label>
+          <label className="block text-sm text-[var(--muted)] mb-1">CEFR level</label>
           <select
-            value={level}
-            onChange={(e) => setLevel(e.target.value)}
+            value={cefrLevel}
+            onChange={(e) => setCefrLevel(e.target.value)}
             required
             className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
           >
-            <option value="">Select level</option>
-            {levels.map((lvl) => (
+            <option value="">Select CEFR level</option>
+            {cefrLevels.map((lvl) => (
               <option key={lvl} value={lvl}>
                 {lvl}
               </option>
@@ -881,7 +887,7 @@ function StoryPreview({ story }: { story: GeneratedStory }) {
     <div className="mt-10 bg-[var(--surface)] border border-[var(--card-border)] rounded-xl p-6">
       <h2 className="text-2xl font-bold mb-2 text-[var(--foreground)]">{story.title}</h2>
       <p className="text-sm text-[var(--muted)] mb-4">
-        {formatLanguage(story.language || '')} • {formatLevel(story.level || '')} •{' '}
+        {formatLanguage(story.language || '')} • {story.cefrLevel ? formatCefrLevel(story.cefrLevel) : formatLevel(story.level || '')} •{' '}
         {toTitleCase(story.region || 'General')}
       </p>
 

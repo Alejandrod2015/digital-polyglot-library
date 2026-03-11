@@ -1,4 +1,4 @@
-import { LEVEL_LABELS, type Level } from "@/types/books";
+import { CEFR_LEVEL_LABELS, LEVEL_LABELS, type CefrLevel, type Level } from "@/types/books";
 
 const FALLBACK = "—";
 
@@ -107,4 +107,13 @@ export function formatLevel(value?: string): string {
     return LEVEL_LABELS[key];
   }
   return toTitleCase(value);
+}
+
+export function formatCefrLevel(value?: string): string {
+  if (!value) return FALLBACK;
+  const key = value.toLowerCase() as CefrLevel;
+  if (key in CEFR_LEVEL_LABELS) {
+    return CEFR_LEVEL_LABELS[key];
+  }
+  return value.toUpperCase();
 }

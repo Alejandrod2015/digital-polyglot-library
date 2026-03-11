@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BookOpen, Compass, Home, LogIn, Settings, Sparkles, Star } from "lucide-react";
+import { Brain, Compass, Home, LogIn, Settings, Sparkles, Star } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 
 type Plan = "free" | "basic" | "premium" | "polyglot";
@@ -48,21 +48,21 @@ export default function MobileTabBar() {
       ? [
           { href: "/", label: "Home", icon: Home },
           { href: "/explore", label: "Explore", icon: Compass },
-          { href: "/my-library", label: "Library", icon: BookOpen },
+          { href: "/practice", label: "Practice", icon: Brain },
           { href: "/favorites", label: "Favorites", icon: Star },
           { href: "/create", label: "Create", icon: Sparkles },
         ]
       : [
           { href: "/", label: "Home", icon: Home },
           { href: "/explore", label: "Explore", icon: Compass },
-          { href: "/my-library", label: "Library", icon: BookOpen },
+          { href: "/practice", label: "Practice", icon: Brain },
           { href: "/favorites", label: "Favorites", icon: Star },
           { href: "/settings", label: "Settings", icon: Settings },
         ]
     : [
         { href: "/", label: "Home", icon: Home },
         { href: "/explore", label: "Explore", icon: Compass },
-        { href: "/my-library", label: "Library", icon: BookOpen },
+        { href: "/practice", label: "Practice", icon: Brain },
         { href: "/favorites", label: "Favorites", icon: Star },
         { href: "/sign-in", label: "Sign in", icon: LogIn },
       ];

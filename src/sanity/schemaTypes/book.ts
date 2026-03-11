@@ -102,7 +102,7 @@ export const book = defineType({
 
     defineField({
       name: "level",
-      title: "Level",
+      title: "Broad level",
       type: "string",
       options: {
         list: [
@@ -112,6 +112,24 @@ export const book = defineType({
         ],
       },
       validation: (Rule) => Rule.required(),
+      description: "Legacy broad difficulty bucket. Use CEFR level below for precise placement.",
+    }),
+
+    defineField({
+      name: "cefrLevel",
+      title: "CEFR level",
+      type: "string",
+      options: {
+        list: [
+          { title: "A1", value: "a1" },
+          { title: "A2", value: "a2" },
+          { title: "B1", value: "b1" },
+          { title: "B2", value: "b2" },
+          { title: "C1", value: "c1" },
+          { title: "C2", value: "c2" },
+        ],
+      },
+      description: "Precise CEFR level used by Atlas and progression features.",
     }),
 
     defineField({
