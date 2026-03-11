@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { inferTopicFromText } from "@/lib/topicClassifier";
+import { buildSanityCorsHeaders } from "@/lib/sanityCors";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
 import { isInvalidMultiwordVocab, normalizeToken } from "@/lib/vocabSelection";
 import {
@@ -93,12 +94,18 @@ function parseStoryPayload(content: string): unknown {
 }
 
 export async function POST(req: Request) {
+  const origin = req.headers.get("origin");
+  const corsHeaders = buildSanityCorsHeaders(origin);
+
   try {
     let body = {};
     try {
       body = await req.json();
     } catch {
-      return NextResponse.json({ error: "Invalid or missing JSON body" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Invalid or missing JSON body" },
+        { status: 400, headers: corsHeaders }
+      );
     }
 
     const withAudio = new URL(req.url).searchParams.get("withAudio") === "true";
@@ -234,7 +241,7 @@ Return ONLY valid JSON:
           error: `Could not generate a story of at least ${MIN_STORY_WORDS} words.`,
           details: previousFeedback || "Generation did not satisfy the minimum length.",
         },
-        { status: 502 }
+        { status: 502, headers: corsHeaders }
       );
     }
 
@@ -263,13 +270,21 @@ Return ONLY valid JSON:
       audioAssetUrl,
       audioAssetId,
       topic: inferredTopic,
-    });
+    }, { headers: corsHeaders });
   } catch (error) {
     console.error("Error generating text:", error);
     const err = error as Error;
     return NextResponse.json(
       { error: "Failed to generate story", details: err.message },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
+}
+
+export async function OPTIONS(req: Request) {
+  const origin = req.headers.get("origin");
+  return new NextResponse(null, {
+    status: 204,
+    headers: buildSanityCorsHeaders(origin),
+  });
 }

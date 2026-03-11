@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useFormValue, useClient } from 'sanity'
 import { Button, Card, Text, Stack, Spinner, Flex } from '@sanity/ui'
 import { SparklesIcon } from '@sanity/icons'
-import { getSanityTargetId } from '@/sanity/lib/getSanityTargetId'
+import { getSanityTargetId } from '../lib/getSanityTargetId'
 
 type GenPayload = {
   title: string

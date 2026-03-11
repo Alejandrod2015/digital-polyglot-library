@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useClient, useFormValue } from 'sanity'
 import { Button, Card, Flex, Spinner, Stack, Text } from '@sanity/ui'
 import { SparklesIcon } from '@sanity/icons'
-import { getSanityTargetId } from '@/sanity/lib/getSanityTargetId'
+import { getSanityTargetId } from '../lib/getSanityTargetId'
 
 type VocabItem = {
   word: string

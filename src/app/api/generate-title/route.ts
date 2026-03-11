@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
+import { buildSanityCorsHeaders } from "@/lib/sanityCors";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -63,6 +64,9 @@ async function getExistingGeneratedTitles(documentId?: string): Promise<string[]
 }
 
 export async function POST(req: Request) {
+  const origin = req.headers.get("origin");
+  const corsHeaders = buildSanityCorsHeaders(origin);
+
   try {
     const body = (await req.json()) as Body;
 
@@ -115,15 +119,26 @@ ${retryBlock}
       const cleaned = candidate.replace(/^["'“”]+|["'“”]+$/g, "").trim();
       if (!cleaned) continue;
       if (!tooSimilarToExisting(cleaned, existingTitles)) {
-        return NextResponse.json({ result: cleaned });
+        return NextResponse.json({ result: cleaned }, { headers: corsHeaders });
       }
 
       feedback = cleaned;
     }
 
-    return NextResponse.json({ error: "Could not generate a sufficiently distinct title." }, { status: 422 });
+    return NextResponse.json(
+      { error: "Could not generate a sufficiently distinct title." },
+      { status: 422, headers: corsHeaders }
+    );
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500, headers: corsHeaders });
   }
+}
+
+export async function OPTIONS(req: Request) {
+  const origin = req.headers.get("origin");
+  return new NextResponse(null, {
+    status: 204,
+    headers: buildSanityCorsHeaders(origin),
+  });
 }

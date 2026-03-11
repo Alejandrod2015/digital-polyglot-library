@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { buildSanityCorsHeaders } from "@/lib/sanityCors";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -15,6 +16,9 @@ type Body = {
 };
 
 export async function POST(req: Request) {
+  const origin = req.headers.get("origin");
+  const corsHeaders = buildSanityCorsHeaders(origin);
+
   try {
     const body = (await req.json()) as Body;
 
@@ -26,7 +30,7 @@ export async function POST(req: Request) {
     const topic = typeof body.topic === "string" ? body.topic.trim() : "";
 
     if (!title) {
-      return NextResponse.json({ error: "Missing title" }, { status: 400 });
+      return NextResponse.json({ error: "Missing title" }, { status: 400, headers: corsHeaders });
     }
 
     const regionClause = region ? ` Set it specifically in ${region}.` : "";
@@ -64,12 +68,20 @@ Return ONLY the synopsis text.
 
     const result = response.choices[0]?.message?.content?.trim();
     if (!result) {
-      return NextResponse.json({ error: "No synopsis returned" }, { status: 502 });
+      return NextResponse.json({ error: "No synopsis returned" }, { status: 502, headers: corsHeaders });
     }
 
-    return NextResponse.json({ result });
+    return NextResponse.json({ result }, { headers: corsHeaders });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500, headers: corsHeaders });
   }
+}
+
+export async function OPTIONS(req: Request) {
+  const origin = req.headers.get("origin");
+  return new NextResponse(null, {
+    status: 204,
+    headers: buildSanityCorsHeaders(origin),
+  });
 }
