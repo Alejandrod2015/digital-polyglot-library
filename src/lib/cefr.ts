@@ -1,4 +1,4 @@
-import { CEFR_LEVEL_LABELS, type CefrLevel, type Level } from "@/types/books";
+import { CEFR_LEVEL_LABELS, type CefrLevel, type Level } from "../types/books";
 
 const BROAD_TO_CEFR_FALLBACK: Record<Level, CefrLevel> = {
   beginner: "a1",
