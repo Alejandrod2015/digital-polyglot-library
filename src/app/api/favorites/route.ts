@@ -6,6 +6,9 @@ import { unstable_cache, revalidateTag } from "next/cache";
 import { PrismaClient } from "@/generated/prisma";
 import { normalizeVocabType } from "@/lib/vocabTypes";
 import { books } from "@/data/books";
+import { findBestAudioSegment } from "@/lib/audioSegments";
+import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegments";
+import { getSegmentIdFromSourcePath, isStandaloneSourcePath } from "@/lib/storySource";
 
 declare global {
   // eslint-disable-next-line no-var
@@ -43,6 +46,18 @@ function inferLanguageFromSourcePath(sourcePath?: string | null): string | null 
     // ignore malformed path
   }
   return null;
+}
+
+function withSegmentId(sourcePath: string, segmentId: string): string {
+  try {
+    const url = sourcePath.startsWith("http")
+      ? new URL(sourcePath)
+      : new URL(sourcePath, "https://example.local");
+    url.searchParams.set("segmentId", segmentId);
+    return sourcePath.startsWith("http") ? url.toString() : `${url.pathname}${url.search}`;
+  } catch {
+    return sourcePath;
+  }
 }
 
 type FavoriteBody = {
@@ -150,9 +165,39 @@ export async function GET(req: NextRequest): Promise<Response> {
         );
       }
 
+      let resolvedSourcePath = fav.sourcePath;
+      const existingSegmentId = getSegmentIdFromSourcePath(fav.sourcePath);
+      const canBackfillStandaloneSegment =
+        !existingSegmentId &&
+        isStandaloneSourcePath(fav.sourcePath, fav.storySlug) &&
+        typeof fav.storySlug === "string" &&
+        fav.storySlug.trim() &&
+        typeof fav.exampleSentence === "string" &&
+        fav.exampleSentence.trim() &&
+        typeof fav.word === "string" &&
+        fav.word.trim();
+
+      if (canBackfillStandaloneSegment) {
+        const segments = getStandaloneStoryAudioSegments(fav.storySlug!);
+        const segment = findBestAudioSegment(segments, fav.exampleSentence!, {
+          targetWord: fav.word,
+        });
+
+        if (segment && typeof fav.sourcePath === "string") {
+          resolvedSourcePath = withSegmentId(fav.sourcePath, segment.id);
+          backfillOps.push(
+            prisma.favorite.update({
+              where: { id: fav.id },
+              data: { sourcePath: resolvedSourcePath },
+            })
+          );
+        }
+      }
+
       return {
         ...fav,
         language: inferredLanguage || null,
+        sourcePath: resolvedSourcePath,
         wordType:
           normalizeVocabType(fav.wordType, {
             word: fav.word,

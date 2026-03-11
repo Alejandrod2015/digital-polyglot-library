@@ -28,7 +28,8 @@ type StoryJSON = {
 
 type StoryVocabItem = StoryJSON["vocab"][number];
 
-const MIN_VOCAB_ITEMS = 25;
+const TARGET_VOCAB_ITEMS = 22;
+const MIN_VOCAB_ITEMS_HARD = 8;
 const MAX_GENERATION_ATTEMPTS = 3;
 const UNIVERSAL_ANGLICISMS = new Set([
   "internet",
@@ -424,7 +425,7 @@ function analyzeVocab(items: StoryVocabItem[], language: string): {
 
 function isVocabAcceptable(items: StoryVocabItem[], language: string): boolean {
   const stats = analyzeVocab(items, language);
-  if (stats.total < MIN_VOCAB_ITEMS) return false;
+  if (stats.total < Math.max(12, Math.floor(TARGET_VOCAB_ITEMS * 0.65))) return false;
   if (stats.anglicismCount > 0) return false;
   return stats.complexCount >= Math.max(15, Math.floor(stats.total * 0.6));
 }
@@ -555,7 +556,7 @@ Do NOT add glossary-like appositions such as "X bedeutet, dass...", "X heißt...
 The story body must read like natural narrative only, never like a lesson, dictionary, annotation, or teacher aside.
 
 Words to wrap:
-- Wrap EXACTLY ${MIN_VOCAB_ITEMS} different items that naturally fit in the story, marking only the first occurrence of each with
+- Aim for ${TARGET_VOCAB_ITEMS} different items, and try to stay above 20 whenever natural, marking only the first occurrence of each with
 <span class='vocab-word' data-word='original-word'>original-word</span>.
 - The amount of wrapped items MUST be exactly the same as the vocab list size.
 - Single words are preferred.
@@ -598,7 +599,7 @@ Return ONLY valid JSON:
       const retryClause =
         attempt === 0
           ? ""
-          : `\nRetry constraints (must fix): ${previousFeedback || "Use more advanced, non-anglicized vocabulary and keep exactly 25 items."}`;
+          : `\nRetry constraints (must fix): ${previousFeedback || "Use more advanced, non-anglicized vocabulary and aim for more than 20 items."}`;
       const prompt = `${basePrompt}${retryClause}`;
 
       const response = await openai.chat.completions.create({
@@ -692,8 +693,8 @@ Return ONLY valid JSON:
       normalizedText = unwrapRemovedVocabSpans(normalizedText, disallowedKeys);
     }
 
-    if (curatedVocab.length < MIN_VOCAB_ITEMS) {
-      const missing = MIN_VOCAB_ITEMS - curatedVocab.length;
+    if (curatedVocab.length < TARGET_VOCAB_ITEMS) {
+      const missing = TARGET_VOCAB_ITEMS - curatedVocab.length;
       const filled = await generateComplexVocabFill(openai, {
         text: normalizedText,
         language,
@@ -715,8 +716,8 @@ Return ONLY valid JSON:
       text: normalizedText,
     });
     let finalVocab = sanitizeVocab(improvedVocab as StoryVocabItem[]);
-    if (finalVocab.length < MIN_VOCAB_ITEMS) {
-      const missing = MIN_VOCAB_ITEMS - finalVocab.length;
+    if (finalVocab.length < TARGET_VOCAB_ITEMS) {
+      const missing = TARGET_VOCAB_ITEMS - finalVocab.length;
       const filled = await generateComplexVocabFill(openai, {
         text: normalizedText,
         language,
@@ -728,9 +729,9 @@ Return ONLY valid JSON:
       });
       finalVocab = sanitizeVocab([...finalVocab, ...filled]);
     }
-    if (finalVocab.length < MIN_VOCAB_ITEMS) {
+    if (finalVocab.length < MIN_VOCAB_ITEMS_HARD) {
       return NextResponse.json(
-        { error: `Could not assemble at least ${MIN_VOCAB_ITEMS} high-quality vocabulary items` },
+        { error: `Could not assemble enough high-quality vocabulary items (minimum safety floor: ${MIN_VOCAB_ITEMS_HARD})` },
         { status: 502 }
       );
     }

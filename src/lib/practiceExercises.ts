@@ -1,5 +1,7 @@
 import { books } from "@/data/books";
+import { splitStoryTextIntoSentences } from "@/lib/audioSegments";
 import { normalizeVocabType } from "@/lib/vocabTypes";
+import { getSegmentIdFromSourcePath, getStorySource, isStandaloneSourcePath } from "@/lib/storySource";
 
 export type PracticeFavoriteItem = {
   word: string;
@@ -78,6 +80,10 @@ export type MatchMeaningExercise = {
 export type PracticeAudioClip = {
   storySlug: string;
   sentence: string;
+  storySource: "user" | "standalone";
+  language?: string | null;
+  targetWord?: string | null;
+  segmentId?: string | null;
 };
 
 export type PracticeExercise =
@@ -197,12 +203,31 @@ function getDistractorMeanings(
 }
 
 function getSentenceWithBlank(item: PracticeFavoriteItem): string | null {
-  const sentence = normalizeText(item.exampleSentence);
+  const sentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
+    ? getContextSentence(item)
+    : normalizeText(item.exampleSentence);
   const word = normalizeText(item.word);
   if (!sentence || !word) return null;
   const pattern = new RegExp(escapeRegExp(word), "i");
   if (!pattern.test(sentence)) return null;
   return shortenSentence(sentence.replace(pattern, "_____"));
+}
+
+function getContextSentence(item: PracticeFavoriteItem): string {
+  const sentence = normalizeText(item.exampleSentence);
+  if (!sentence) return "";
+
+  const sentences = splitStoryTextIntoSentences(sentence);
+  if (sentences.length <= 1) return sentence;
+
+  const word = normalizeText(item.word).toLowerCase();
+  if (!word) return sentences[0] ?? sentence;
+
+  return (
+    sentences.find((candidate) => candidate.toLowerCase().includes(word)) ??
+    sentences[0] ??
+    sentence
+  );
 }
 
 function shortenSentence(sentence: string): string {
@@ -236,6 +261,10 @@ function buildAudioClip(item: PracticeFavoriteItem, sentence: string): PracticeA
   return {
     storySlug,
     sentence,
+    storySource: getStorySource(item.sourcePath, item.storySlug),
+    language: item.language ?? null,
+    targetWord: normalizeText(item.word) || null,
+    segmentId: getSegmentIdFromSourcePath(item.sourcePath),
   };
 }
 
@@ -251,8 +280,9 @@ function createFillBlankExercise(
   item: PracticeFavoriteItem,
   pool: PracticeFavoriteItem[]
 ): FillBlankExercise | null {
+  const fullSentence = getContextSentence(item);
   const sentence = getSentenceWithBlank(item);
-  if (!sentence) return null;
+  if (!sentence || !fullSentence) return null;
   const options = shuffle([item.word, ...getDistractorWords(item, getLanguagePool(item.language, pool))]);
   if (options.length < 4) return null;
   return {
@@ -261,7 +291,7 @@ function createFillBlankExercise(
     prompt: "Complete the sentence with the right word or expression.",
     sentence,
     storySlug: item.storySlug ?? null,
-    audioClip: buildAudioClip(item, sentence),
+    audioClip: buildAudioClip(item, fullSentence),
     options,
     answer: item.word,
   };
@@ -271,7 +301,10 @@ function createMeaningContextExercise(
   item: PracticeFavoriteItem,
   pool: PracticeFavoriteItem[]
 ): MeaningContextExercise | null {
-  const sentence = shortenSentence(normalizeText(item.exampleSentence));
+  const fullSentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
+    ? getContextSentence(item)
+    : normalizeText(item.exampleSentence);
+  const sentence = shortenSentence(fullSentence);
   if (!sentence) return null;
   const options = shuffle([
     item.translation,
@@ -285,7 +318,7 @@ function createMeaningContextExercise(
     word: item.word,
     sentence,
     storySlug: item.storySlug ?? null,
-    audioClip: buildAudioClip(item, sentence),
+    audioClip: buildAudioClip(item, isStandaloneSourcePath(item.sourcePath, item.storySlug) ? fullSentence : sentence),
     options,
     answer: item.translation,
   };
@@ -297,7 +330,10 @@ function createNaturalExpressionExercise(
 ): NaturalExpressionExercise | null {
   if (!isExpression(item)) return null;
   const sentence = getSentenceWithBlank(item);
-  if (!sentence) return null;
+  const fullSentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
+    ? getContextSentence(item)
+    : normalizeText(item.exampleSentence);
+  if (!sentence || !fullSentence) return null;
   const expressionPool = getLanguagePool(item.language, pool).filter((candidate) => isExpression(candidate));
   const options = shuffle([item.word, ...getDistractorWords(item, expressionPool)]);
   if (options.length < 4) return null;
@@ -307,7 +343,7 @@ function createNaturalExpressionExercise(
     prompt: "Which expression sounds natural here?",
     sentence,
     storySlug: item.storySlug ?? null,
-    audioClip: buildAudioClip(item, sentence),
+    audioClip: buildAudioClip(item, isStandaloneSourcePath(item.sourcePath, item.storySlug) ? fullSentence : sentence),
     options,
     answer: item.word,
   };

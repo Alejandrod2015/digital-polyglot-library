@@ -16,14 +16,47 @@ import {
 import {
   coerceAudioSegments,
   findBestAudioSegment,
+  findBestAudioSegmentLegacy,
   type AudioSegment,
 } from "@/lib/audioSegments";
+import { isStandaloneSourcePath } from "@/lib/storySource";
 
 type LoadState = "loading" | "ready" | "error";
-type UserStoryAudioData = {
+type StoryAudioData = {
   audioUrl: string | null;
   audioSegments: AudioSegment[];
 };
+
+function normalizeStorySlug(value: string | null | undefined): string {
+  return typeof value === "string" ? value.trim().toLowerCase() : "";
+}
+
+function findSegmentForClip(
+  storyAudio: StoryAudioData | null | undefined,
+  clip: PracticeAudioClip | null | undefined
+): AudioSegment | null {
+  if (!storyAudio || !clip) return null;
+  if (clip.storySource !== "standalone") {
+    return findBestAudioSegmentLegacy(storyAudio.audioSegments, clip.sentence);
+  }
+  const segmentId = typeof clip.segmentId === "string" ? clip.segmentId.trim() : "";
+
+  const exactById =
+    segmentId
+      ? storyAudio.audioSegments.find((segment) => segment.id === segmentId) ?? null
+      : null;
+
+  if (exactById) return exactById;
+
+  return findBestAudioSegment(storyAudio.audioSegments, clip.sentence, {
+    targetWord: clip.targetWord,
+    mode: "strict",
+  });
+}
+
+function isStandaloneFavorite(item: PracticeFavoriteItem): boolean {
+  return isStandaloneSourcePath(item.sourcePath, item.storySlug);
+}
 
 const matchColorClasses = [
   "border-sky-400 bg-sky-400/18 text-sky-100",
@@ -96,7 +129,9 @@ export default function PracticePage() {
   const [streak, setStreak] = useState(0);
   const [lastResult, setLastResult] = useState<"correct" | "wrong" | null>(null);
   const [playingClipId, setPlayingClipId] = useState<string | null>(null);
-  const [userStoryAudioBySlug, setUserStoryAudioBySlug] = useState<Record<string, UserStoryAudioData>>({});
+  const [speakingClipId, setSpeakingClipId] = useState<string | null>(null);
+  const [userStoryAudioBySlug, setUserStoryAudioBySlug] = useState<Record<string, StoryAudioData>>({});
+  const [standaloneStoryAudioBySlug, setStandaloneStoryAudioBySlug] = useState<Record<string, StoryAudioData>>({});
   const clipAudioRef = useRef<HTMLAudioElement | null>(null);
   const clipStopAtRef = useRef<number | null>(null);
   const clipTimeHandlerRef = useRef<(() => void) | null>(null);
@@ -111,6 +146,7 @@ export default function PracticePage() {
     if (!user) {
       setFavorites([]);
       setUserStoryAudioBySlug({});
+      setStandaloneStoryAudioBySlug({});
       setLoadState("ready");
       return;
     }
@@ -144,24 +180,38 @@ export default function PracticePage() {
   }, [isLoaded, user]);
 
   useEffect(() => {
-    const storySlugs = Array.from(
+    const userStorySlugs = Array.from(
       new Set(
         favorites
+          .filter((favorite) => !isStandaloneFavorite(favorite))
           .map((favorite) => (typeof favorite.storySlug === "string" ? favorite.storySlug.trim() : ""))
           .filter(Boolean)
       )
     );
 
-    if (storySlugs.length === 0) {
+    if (userStorySlugs.length === 0) {
       setUserStoryAudioBySlug({});
-      return;
+    }
+
+    const standaloneStorySlugs = Array.from(
+      new Set(
+        favorites
+          .filter((favorite) => isStandaloneFavorite(favorite))
+          .map((favorite) => (typeof favorite.storySlug === "string" ? favorite.storySlug.trim() : ""))
+          .filter(Boolean)
+      )
+    );
+
+    if (standaloneStorySlugs.length === 0) {
+      setStandaloneStoryAudioBySlug({});
     }
 
     let cancelled = false;
 
-    const loadStoryAudio = async () => {
+    const loadUserStoryAudio = async () => {
+      if (userStorySlugs.length === 0) return;
       try {
-        const res = await fetch(`/api/user-stories?slugs=${encodeURIComponent(storySlugs.join(","))}`, {
+        const res = await fetch(`/api/user-stories?slugs=${encodeURIComponent(userStorySlugs.join(","))}`, {
           cache: "no-store",
         });
         if (!res.ok) throw new Error(`Error ${res.status}`);
@@ -171,9 +221,9 @@ export default function PracticePage() {
 
         if (cancelled) return;
 
-        const next: Record<string, UserStoryAudioData> = {};
+        const next: Record<string, StoryAudioData> = {};
         for (const story of data.stories ?? []) {
-          const slug = typeof story.slug === "string" ? story.slug.trim().toLowerCase() : "";
+          const slug = normalizeStorySlug(story.slug);
           if (!slug) continue;
           next[slug] = {
             audioUrl: typeof story.audioUrl === "string" ? story.audioUrl : null,
@@ -187,7 +237,38 @@ export default function PracticePage() {
       }
     };
 
-    void loadStoryAudio();
+    const loadStandaloneStoryAudio = async () => {
+      if (standaloneStorySlugs.length === 0) return;
+      try {
+        const res = await fetch(
+          `/api/standalone-story-audio?slugs=${encodeURIComponent(standaloneStorySlugs.join(","))}`,
+          { cache: "no-store" }
+        );
+        if (!res.ok) throw new Error(`Error ${res.status}`);
+        const data = (await res.json()) as {
+          stories?: Array<{ slug?: string; audioUrl?: string | null; audioSegments?: unknown }>;
+        };
+
+        if (cancelled) return;
+
+        const next: Record<string, StoryAudioData> = {};
+        for (const story of data.stories ?? []) {
+          const slug = normalizeStorySlug(story.slug);
+          if (!slug) continue;
+          next[slug] = {
+            audioUrl: typeof story.audioUrl === "string" ? story.audioUrl : null,
+            audioSegments: coerceAudioSegments(story.audioSegments),
+          };
+        }
+        setStandaloneStoryAudioBySlug(next);
+      } catch (error) {
+        console.error("[practice] failed to load standalone story audio segments", error);
+        if (!cancelled) setStandaloneStoryAudioBySlug({});
+      }
+    };
+
+    void loadUserStoryAudio();
+    void loadStandaloneStoryAudio();
 
     return () => {
       cancelled = true;
@@ -268,6 +349,10 @@ export default function PracticePage() {
     setActiveMatchWord(null);
     setLastResult(null);
     setPlayingClipId(null);
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+    setSpeakingClipId(null);
   }, [exerciseIndex]);
 
   useEffect(() => {
@@ -408,8 +493,12 @@ export default function PracticePage() {
   const playExactContextClip = useCallback(
     async (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
       if (!clip || typeof window === "undefined") return;
-      const storyAudio = userStoryAudioBySlug[clip.storySlug.toLowerCase()];
-      const segment = storyAudio ? findBestAudioSegment(storyAudio.audioSegments, clip.sentence) : null;
+      const normalizedSlug = normalizeStorySlug(clip.storySlug);
+      const storyAudio =
+        clip.storySource === "standalone"
+          ? standaloneStoryAudioBySlug[normalizedSlug]
+          : userStoryAudioBySlug[normalizedSlug];
+      const segment = findSegmentForClip(storyAudio, clip);
       if (!storyAudio?.audioUrl || !segment) return;
 
       const audio = clipAudioRef.current ?? new Audio();
@@ -425,11 +514,34 @@ export default function PracticePage() {
       }
 
       const startPlayback = async () => {
-        const clipStartSec = Math.max(0, segment.startSec - CLIP_START_PADDING_SEC);
+        const isStandaloneClip = clip.storySource === "standalone";
+        const directClipUrl =
+          isStandaloneClip && typeof segment.clipUrl === "string" && segment.clipUrl.trim()
+            ? segment.clipUrl.trim()
+            : null;
+
+        if (directClipUrl) {
+          clipStopAtRef.current = null;
+          if (audio.src !== directClipUrl) {
+            audio.src = directClipUrl;
+          }
+          audio.currentTime = 0;
+          setPlayingClipId(clipOwnerId);
+          await audio.play();
+          return;
+        }
+
+        const rawStartSec = isStandaloneClip
+          ? segment.startSec
+          : Math.max(0, segment.startSec - CLIP_START_PADDING_SEC);
+        const rawEndSec = isStandaloneClip
+          ? segment.endSec
+          : Math.max(rawStartSec + 0.2, segment.endSec - CLIP_END_TRIM_SEC);
+        const clipStartSec = Math.max(0, rawStartSec);
         const clipEndSec =
           Number.isFinite(audio.duration) && audio.duration > 0
-            ? Math.min(audio.duration, Math.max(clipStartSec + 0.2, segment.endSec - CLIP_END_TRIM_SEC))
-            : Math.max(clipStartSec + 0.2, segment.endSec - CLIP_END_TRIM_SEC);
+            ? Math.min(audio.duration, rawEndSec)
+            : rawEndSec;
 
         clipStopAtRef.current = clipEndSec;
         audio.currentTime = clipStartSec;
@@ -478,8 +590,9 @@ export default function PracticePage() {
         stopClipPlayback();
       }
     },
-    [playingClipId, stopClipPlayback, userStoryAudioBySlug]
+    [playingClipId, standaloneStoryAudioBySlug, stopClipPlayback, userStoryAudioBySlug]
   );
+  void playExactContextClip;
 
   const goNext = () => {
     if (exerciseIndex < exercises.length - 1) {
@@ -507,6 +620,43 @@ export default function PracticePage() {
     utterance.rate = 0.9;
     window.speechSynthesis.speak(utterance);
   };
+
+  const playTtsContextClip = useCallback((clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
+    if (!clip || clip.storySource !== "user" || typeof window === "undefined" || !("speechSynthesis" in window)) return;
+
+    const synth = window.speechSynthesis;
+    if (speakingClipId === clipOwnerId) {
+      synth.cancel();
+      setSpeakingClipId(null);
+      return;
+    }
+
+    synth.cancel();
+    const utterance = new SpeechSynthesisUtterance(clip.sentence);
+    const lang = getSpeechSynthesisLang(clip.language);
+    utterance.lang = lang;
+    utterance.rate = 0.92;
+
+    const voices = synth.getVoices();
+    const preferredVoice =
+      voices.find((voice) => voice.lang?.toLowerCase().startsWith(lang.toLowerCase()) && /google|microsoft|natural|neural/i.test(voice.name)) ??
+      voices.find((voice) => voice.lang?.toLowerCase().startsWith(lang.toLowerCase())) ??
+      null;
+
+    if (preferredVoice) {
+      utterance.voice = preferredVoice;
+    }
+
+    utterance.onend = () => {
+      setSpeakingClipId((current) => (current === clipOwnerId ? null : current));
+    };
+    utterance.onerror = () => {
+      setSpeakingClipId((current) => (current === clipOwnerId ? null : current));
+    };
+
+    setSpeakingClipId(clipOwnerId);
+    synth.speak(utterance);
+  }, [speakingClipId]);
 
   const assignMatchMeaning = (meaning: string) => {
     if (!currentExercise || currentExercise.type !== "match_meaning" || !activeMatchWord || revealed) return;
@@ -545,23 +695,44 @@ export default function PracticePage() {
     clip: PracticeAudioClip | null | undefined,
     clipOwnerId: string
   ) => {
-    const storyAudio = clip ? userStoryAudioBySlug[clip.storySlug.toLowerCase()] : null;
-    const exactSegment = clip && storyAudio ? findBestAudioSegment(storyAudio.audioSegments, clip.sentence) : null;
+    const normalizedSlug = clip ? normalizeStorySlug(clip.storySlug) : "";
+    const storyAudio = clip
+      ? clip.storySource === "standalone"
+        ? standaloneStoryAudioBySlug[normalizedSlug]
+        : userStoryAudioBySlug[normalizedSlug]
+      : null;
+    const exactSegment = findSegmentForClip(storyAudio, clip);
+
+    if (process.env.NODE_ENV !== "production" && clip) {
+      console.debug("[practice] context clip resolution", {
+        clipOwnerId,
+        storySlug: clip.storySlug,
+        storySource: clip.storySource,
+        targetWord: clip.targetWord ?? null,
+        segmentId: clip.segmentId ?? null,
+        sentence: clip.sentence,
+        hasStoryAudio: Boolean(storyAudio?.audioUrl),
+        audioSegmentCount: storyAudio?.audioSegments.length ?? 0,
+        resolvedSegmentId: exactSegment?.id ?? null,
+      });
+    }
 
     return (
       <div className={contextBlockClass}>
         <div className="flex items-start justify-between gap-3">
           <p className={`${contextTextClass} flex-1`}>{sentence}</p>
-          {clip && storyAudio?.audioUrl && exactSegment ? (
-          <button
-            type="button"
-            onClick={() => void playExactContextClip(clipOwnerId, clip)}
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--foreground)] transition hover:bg-white/10"
-          >
-            <Volume2 size={14} />
-            {playingClipId === clipOwnerId ? "Stop" : "Play"}
-          </button>
-          ) : null}
+          <div className="flex shrink-0 items-center gap-2">
+            {clip && clip.storySource === "user" ? (
+              <button
+                type="button"
+                onClick={() => playTtsContextClip(clipOwnerId, clip)}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--foreground)] transition hover:bg-white/10"
+              >
+                <Volume2 size={14} />
+                {speakingClipId === clipOwnerId ? "Stop" : "Play"}
+              </button>
+            ) : null}
+          </div>
         </div>
       </div>
     );

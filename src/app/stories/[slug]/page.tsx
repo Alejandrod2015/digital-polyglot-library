@@ -12,6 +12,7 @@ import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
 import VocabPanel from "@/components/VocabPanel";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
+import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegments";
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -95,6 +96,8 @@ export default async function StoryPage({ params }: StoryPageProps) {
         region: polyglotStory.region,
         level: polyglotStory.level,
         coverUrl: polyglotStory.coverUrl,
+        source,
+        audioSegments: polyglotStory.audioSegments,
       }
     : {
         id: standaloneStory!.id,
@@ -108,6 +111,8 @@ export default async function StoryPage({ params }: StoryPageProps) {
         region: standaloneStory!.region,
         level: standaloneStory!.level,
         coverUrl: standaloneStory!.coverUrl,
+        source,
+        audioSegments: getStandaloneStoryAudioSegments(standaloneStory!.slug),
       };
 
   const { userId } = await auth();

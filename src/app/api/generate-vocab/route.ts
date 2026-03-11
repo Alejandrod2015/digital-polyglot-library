@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
+import { buildSanityCorsHeaders } from "@/lib/sanityCors";
 
 type VocabItem = {
   word: string;
@@ -306,16 +307,19 @@ ${candidateBlock}
 }
 
 export async function POST(req: Request) {
+  const origin = req.headers.get("origin");
+  const corsHeaders = buildSanityCorsHeaders(origin);
+
   try {
     if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json({ error: "Missing OPENAI_API_KEY" }, { status: 500 });
+      return NextResponse.json({ error: "Missing OPENAI_API_KEY" }, { status: 500, headers: corsHeaders });
     }
 
     let body: GenerateVocabBody = {};
     try {
       body = (await req.json()) as GenerateVocabBody;
     } catch {
-      return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
+      return NextResponse.json({ error: "Invalid JSON body" }, { status: 400, headers: corsHeaders });
     }
 
     const rawText = typeof body.text === "string" ? body.text : "";
@@ -323,7 +327,7 @@ export async function POST(req: Request) {
     if (!text || text.length < 120) {
       return NextResponse.json(
         { error: "Story text is too short. Add more content before generating vocabulary." },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
@@ -511,7 +515,7 @@ Return ONLY valid JSON array.
           filteredLowQualityCount: lowQualityVocab.length,
           vocab,
         },
-        { status: 422 }
+        { status: 422, headers: corsHeaders }
       );
     }
 
@@ -526,10 +530,21 @@ Return ONLY valid JSON array.
       maxItems,
       recommendedMinItems: dynamicRange.minItems,
       recommendedMaxItems: dynamicRange.maxItems,
-    });
+    }, { headers: corsHeaders });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
     console.error("Error in POST /api/generate-vocab:", error);
-    return NextResponse.json({ error: "Failed to generate vocabulary", details: message }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to generate vocabulary", details: message },
+      { status: 500, headers: corsHeaders }
+    );
   }
+}
+
+export async function OPTIONS(req: Request) {
+  const origin = req.headers.get("origin");
+  return new NextResponse(null, {
+    status: 204,
+    headers: buildSanityCorsHeaders(origin),
+  });
 }

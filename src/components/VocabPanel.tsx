@@ -5,6 +5,11 @@ import { X, Heart } from "lucide-react";
 import { VocabItem } from "@/types/books";
 import { useUser } from "@clerk/nextjs";
 import { normalizeVocabType } from "@/lib/vocabTypes";
+import {
+  coerceAudioSegments,
+  findBestAudioSegment,
+  splitStoryTextIntoSentences,
+} from "@/lib/audioSegments";
 
 type FavoriteItem = {
   word: string;
@@ -17,11 +22,24 @@ type FavoriteItem = {
   language?: string;
 };
 
-const MAX_CONTEXT_CHARS = 160;
-
 function compactSpaces(value: string): string {
   return value.replace(/\s+/g, " ").trim();
 }
+
+function getContextSentence(raw: string | undefined, word: string): string | undefined {
+  if (!raw) return undefined;
+  const clean = compactSpaces(raw);
+  if (!clean) return undefined;
+
+  const normalizedWord = compactSpaces(word).toLowerCase();
+  const sentences = splitStoryTextIntoSentences(clean);
+
+  const bestSentence =
+    sentences.find((s) => s.toLowerCase().includes(normalizedWord)) ?? sentences[0] ?? clean;
+  return bestSentence || undefined;
+}
+
+const MAX_CONTEXT_CHARS = 160;
 
 function shortenContext(raw: string | undefined, word: string): string | undefined {
   if (!raw) return undefined;
@@ -47,7 +65,9 @@ interface VocabPanelProps {
     slug: string;
     title: string;
     language?: string | null;
+    source?: "polyglot" | "standalone";
     vocab?: VocabItem[];
+    audioSegments?: unknown;
   };
   initialWord?: string | null;
   initialDefinition?: string | null;
@@ -67,6 +87,46 @@ export default function VocabPanel({
   const [isFav, setIsFav] = useState(false);
   const [loadedFavs, setLoadedFavs] = useState<FavoriteItem[]>([]);
   const { user, isLoaded } = useUser();
+  const storyAudioSegments = coerceAudioSegments(story.audioSegments);
+
+  const buildSourcePath = useCallback(
+    (sentence: string | undefined, word: string): string | undefined => {
+      if (typeof window === "undefined") return undefined;
+
+      if (story.source !== "standalone") {
+        if (process.env.NODE_ENV !== "production") {
+          console.debug("[vocab-panel] polyglot source path", {
+            storySlug: story.slug,
+            word,
+            sentence,
+            sourcePath: window.location.pathname,
+          });
+        }
+        return window.location.pathname;
+      }
+
+      const path = `${window.location.pathname}?source=${story.source ?? "polyglot"}`;
+      if (!sentence) return path;
+
+      const segment = findBestAudioSegment(storyAudioSegments, sentence, {
+        targetWord: story.source === "standalone" ? word : null,
+      });
+      if (process.env.NODE_ENV !== "production") {
+        console.debug("[vocab-panel] standalone segment lookup", {
+          storySlug: story.slug,
+          word,
+          sentence,
+          segmentId: segment?.id ?? null,
+        });
+      }
+      if (!segment) return path;
+
+      const url = new URL(path, window.location.origin);
+      url.searchParams.set("segmentId", segment.id);
+      return `${url.pathname}${url.search}`;
+    },
+    [story.source, storyAudioSegments]
+  );
 
   const persistFavoritesCache = useCallback((items: FavoriteItem[]) => {
     const userCacheKey = `dp_favorites_${user?.id ?? "guest"}`;
@@ -128,7 +188,10 @@ export default function VocabPanel({
       const word = el.dataset.word ?? "";
       if (!word) return;
       const sentenceNode = el.closest("p, blockquote");
-      const sentence = shortenContext(sentenceNode?.textContent ?? undefined, word);
+      const sentence =
+        story.source === "standalone"
+          ? getContextSentence(sentenceNode?.textContent ?? undefined, word)
+          : shortenContext(sentenceNode?.textContent ?? undefined, word);
       const normalizedWord = word.trim().toLowerCase();
 
       setSelectedWord(word);
@@ -138,9 +201,15 @@ export default function VocabPanel({
       });
       setDefinition(item?.definition ?? null);
       setSelectedSentence(sentence);
-      setSelectedSourcePath(
-        typeof window !== "undefined" ? window.location.pathname : undefined
-      );
+      setSelectedSourcePath(buildSourcePath(sentence, word));
+      if (process.env.NODE_ENV !== "production") {
+        console.debug("[vocab-panel] selected vocab word", {
+          storySlug: story.slug,
+          source: story.source ?? "polyglot",
+          word,
+          sentence,
+        });
+      }
       setIsFav(
         loadedFavs.some((f) => (f.word ?? "").trim().toLowerCase() === normalizedWord)
       );
@@ -148,7 +217,7 @@ export default function VocabPanel({
 
     document.addEventListener("click", handler);
     return () => document.removeEventListener("click", handler);
-  }, [story, loadedFavs]);
+  }, [buildSourcePath, story, loadedFavs]);
 
   // 🔹 Cierra el panel al hacer tap/clic fuera (ignorando las .vocab-word)
   useEffect(() => {
@@ -193,6 +262,9 @@ export default function VocabPanel({
       sourcePath: selectedSourcePath,
       language: story.language ?? undefined,
     };
+    if (process.env.NODE_ENV !== "production") {
+      console.debug("[vocab-panel] saving favorite", newItem);
+    }
     const prevFav = isFav;
     const nextFav = !isFav;
     setIsFav(nextFav);

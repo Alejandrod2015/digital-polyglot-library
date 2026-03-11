@@ -81,3 +81,19 @@ export async function getStandaloneStoriesByIds(
 
   return client.fetch<PublicStandaloneStory[]>(query, { ids });
 }
+
+export async function getStandaloneStoriesBySlugs(
+  slugs: string[]
+): Promise<PublicStandaloneStory[]> {
+  if (slugs.length === 0) return [];
+
+  const query = groq`*[
+    _type == "standaloneStory" &&
+    published == true &&
+    slug.current in $slugs
+  ]{
+    ${standaloneStoryFields}
+  }`;
+
+  return client.fetch<PublicStandaloneStory[]>(query, { slugs });
+}

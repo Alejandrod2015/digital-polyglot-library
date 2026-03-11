@@ -25,6 +25,7 @@ type GeneratedStory = {
   level?: string;
   audioUrl?: string | null;
   audioStatus?: AudioStatus | null;
+  audioSegments?: unknown;
 };
 
 type CreateApiResponse = {
@@ -874,16 +875,7 @@ export default function CreatePage() {
 }
 
 function StoryPreview({ story }: { story: GeneratedStory }) {
-  const [selectedWord, setSelectedWord] = useState<string | null>(null);
-  const [definition, setDefinition] = useState<string | null>(null);
-
-  const handleWordClick = (word: string) => {
-    const item = story.vocab?.find((v) => v.word === word);
-    setSelectedWord(word);
-    setDefinition(item?.definition ?? null);
-  };
-
-  const previewText = story.text ? `${story.text.split('</p>').slice(0, 1).join('</p>')}</p>` : '';
+  const previewText = story.text;
 
   return (
     <div className="mt-10 bg-[var(--surface)] border border-[var(--card-border)] rounded-xl p-6">
@@ -909,26 +901,9 @@ function StoryPreview({ story }: { story: GeneratedStory }) {
         <StoryContent
           text={previewText}
           sentencesPerParagraph={3}
-          renderWord={(word) => (
-            <span
-              onClick={() => handleWordClick(word)}
-              className="vocab-word cursor-pointer text-yellow-300 hover:text-yellow-200"
-            >
-              {word}
-            </span>
-          )}
+          vocab={story.vocab ?? []}
         />
-        {selectedWord && (
-          <VocabPanel
-            story={story}
-            initialWord={selectedWord}
-            initialDefinition={definition}
-            onClose={() => {
-              setSelectedWord(null);
-              setDefinition(null);
-            }}
-          />
-        )}
+        <VocabPanel story={{ ...story, source: 'polyglot' }} />
       </div>
 
       <div className="flex justify-end mt-6">
