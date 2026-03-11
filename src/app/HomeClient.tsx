@@ -102,13 +102,6 @@ type RecommendedStoryItem = {
   score: number;
 };
 
-type DailyLoopStory = {
-  href: string;
-  title: string;
-  label: string;
-  detail: string;
-};
-
 type HomeStoryCard =
   | {
       kind: "catalog";
@@ -316,7 +309,7 @@ export default function HomeClient({
   const [savedBookIds, setSavedBookIds] = useState<Set<string>>(new Set());
   const [savedStoryIds, setSavedStoryIds] = useState<Set<string>>(new Set());
   const [readingHistoryStoryIds, setReadingHistoryStoryIds] = useState<Set<string>>(new Set());
-  const [personalizationSignalsLoaded, setPersonalizationSignalsLoaded] = useState(false);
+  const [, setPersonalizationSignalsLoaded] = useState(false);
   const [recommendedStoryDurations, setRecommendedStoryDurations] = useState<Record<string, number>>(
     {}
   );
@@ -848,8 +841,6 @@ export default function HomeClient({
   const [latestStoryDurations, setLatestStoryDurations] = useState<Record<string, number>>({});
   const canShowPersonalizedRecommendations =
     isPersonalizationReady && (plan === "premium" || plan === "polyglot");
-  const isPersonalizationSettled =
-    !canShowPersonalizedRecommendations || personalizationSignalsLoaded;
 
   const latestStoryTopicByKey = useMemo(() => {
     const topicByKey: Record<string, string | undefined> = {};
@@ -1336,98 +1327,6 @@ export default function HomeClient({
     return null;
   }, [plan, featuredDaySlug, featuredWeekSlug]);
 
-  const signInHref = useMemo(() => {
-    const params = new URLSearchParams();
-    params.set("redirect_url", "/");
-    return `/sign-in?${params.toString()}`;
-  }, []);
-
-  const dailyLoop = useMemo(() => {
-    const primaryContinue = continueListening[0] ?? null;
-    const nextStory: DailyLoopStory | null = !isPersonalizationSettled
-      ? null
-      : recommendedStories[0]
-      ? {
-          href: withReturnContext(
-            `/books/${recommendedStories[0].bookSlug}/${recommendedStories[0].storySlug}`
-          ),
-          title: recommendedStories[0].storyTitle,
-          label: recommendedStories[0].reason,
-          detail: `${recommendedStories[0].language ?? "Story"} · ${
-            recommendedStories[0].region ?? "New region"
-          }`,
-        }
-      : polyglotForHome[0]
-        ? {
-            href: withReturnContext(`/stories/${polyglotForHome[0].slug}`),
-            title: polyglotForHome[0].title,
-            label: "Explore a new voice",
-            detail: `${polyglotForHome[0].language ?? "Polyglot"} · ${
-              polyglotForHome[0].region ?? "New region"
-            }`,
-          }
-        : null;
-
-    const primary = primaryContinue
-      ? {
-          eyebrow: "Pick up where you left off",
-          title: primaryContinue.title,
-          subtitle: `${primaryContinue.bookTitle} · ${formatRemainingDuration(
-            primaryContinue.audioDurationSec,
-            primaryContinue.progressSec
-          )}`,
-          href: withReturnContext(`/books/${primaryContinue.bookSlug}/${primaryContinue.storySlug}`),
-          cta: "Continue story",
-        }
-      : featuredFreeStory
-        ? {
-            eyebrow: featuredFreeStory.label,
-            title: featuredFreeStory.title,
-            subtitle: `${featuredFreeStory.bookTitle} · ${formatTopic(featuredFreeStory.topic)}`,
-            href: featuredFreeStory.href,
-            cta: "Start today's story",
-          }
-        : {
-            eyebrow: "Daily reading loop",
-            title: "Read one short story today",
-            subtitle: "Keep the habit alive in a few minutes.",
-            href: "/explore",
-            cta: "Explore stories",
-          };
-
-    return {
-      primary,
-      practiceHref: userId ? "/favorites" : signInHref,
-      practiceLabel: !isPersonalizationSettled
-        ? "Preparing your practice"
-        : favoriteSignals.length > 0
-          ? "Practice your saved words"
-          : "Start saving words",
-      practiceDetail:
-        !isPersonalizationSettled
-          ? "Loading your due words and next step"
-          : favoriteSignals.length > 0
-          ? `${Math.min(5, favoriteSignals.length)} quick words to review today`
-          : "Tap words while reading so they build up here",
-      progressHref: userId ? "/progress" : "/explore",
-      progressLabel: userId ? "Protect your streak" : "Build your reading habit",
-      progressDetail: userId
-        ? "One finished story is enough to keep momentum"
-        : "Short daily reading works better than long sessions",
-      nextStory,
-      showLoadingSecondary: !isPersonalizationSettled,
-    };
-  }, [
-    continueListening,
-    favoriteSignals.length,
-    featuredFreeStory,
-    isPersonalizationSettled,
-    polyglotForHome,
-    recommendedStories,
-    signInHref,
-    userId,
-  ]);
-
   const mobileContinueCards = useMemo<ContinueMobileCard[]>(() => {
     if (continueListening.length === 0) return [];
 
@@ -1538,83 +1437,6 @@ export default function HomeClient({
   return (
     <div className="min-h-full w-full flex flex-col items-center px-8 pb-28">
       <>
-      <section className="w-full max-w-5xl pt-8 md:pt-10 mb-10 md:mb-12">
-        <div className="rounded-[28px] border border-[#2b4767] bg-[linear-gradient(180deg,#173250_0%,#112742_100%)] p-5 shadow-[0_20px_60px_rgba(6,17,38,0.32)] sm:p-6">
-          <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-200/75">
-                Daily loop
-              </p>
-              <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8dc7ff]">
-                {dailyLoop.primary.eyebrow}
-              </p>
-              <h2 className="mt-2 text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">
-                {dailyLoop.primary.title}
-              </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-200/88 sm:text-base">
-                {dailyLoop.primary.subtitle}
-              </p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <Link
-                  href={dailyLoop.primary.href}
-                  className="inline-flex items-center rounded-xl bg-[#4aa8ff] px-4 py-2.5 text-sm font-semibold text-[#071321] transition hover:bg-[#79c0ff]"
-                >
-                  {dailyLoop.primary.cta}
-                </Link>
-                <Link
-                  href={dailyLoop.progressHref}
-                  className="inline-flex items-center rounded-xl border border-white/12 bg-white/6 px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] transition hover:bg-white/10"
-                >
-                  {dailyLoop.progressLabel}
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid gap-3">
-              <Link
-                href={dailyLoop.practiceHref}
-                className="rounded-[22px] border border-white/10 bg-white/5 p-4 transition hover:bg-white/8"
-              >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-200/72">
-                  Quick practice
-                </p>
-                <h3 className="mt-2 text-lg font-semibold text-[var(--foreground)]">
-                  {dailyLoop.practiceLabel}
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-300/90">
-                  {dailyLoop.practiceDetail}
-                </p>
-              </Link>
-
-              {dailyLoop.showLoadingSecondary ? (
-                <div className="rounded-[22px] border border-white/10 bg-white/5 p-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-200/72">
-                    Preparing your next step
-                  </p>
-                  <div className="mt-3 h-5 w-3/4 animate-pulse rounded bg-white/10" />
-                  <div className="mt-2 h-4 w-2/3 animate-pulse rounded bg-white/10" />
-                </div>
-              ) : dailyLoop.nextStory ? (
-                <Link
-                  href={dailyLoop.nextStory.href}
-                  className="rounded-[22px] border border-white/10 bg-white/5 p-4 transition hover:bg-white/8"
-                >
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-200/72">
-                    {dailyLoop.nextStory.label}
-                  </p>
-                  <h3 className="mt-2 text-lg font-semibold text-[var(--foreground)]">
-                    {dailyLoop.nextStory.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-300/90">
-                    {dailyLoop.nextStory.detail}
-                  </p>
-                </Link>
-              ) : null}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Free featured story for free/basic users */}
       {isPersonalizationReady && featuredFreeStory && continueListening.length === 0 && (
         <section className="w-full max-w-5xl text-center pt-8 md:pt-10 mb-10 md:mb-12">

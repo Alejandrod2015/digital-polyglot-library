@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Volume2, X } from "lucide-react";
+import {
+  BookOpenText,
+  Headphones,
+  MessageCircleMore,
+  Shapes,
+  Sparkles,
+  Volume2,
+  X,
+  type LucideIcon,
+} from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import {
   buildPracticeSession,
-  getDuePracticeItems,
   getSpeechSynthesisLang,
   PracticeAudioClip,
   PracticeExercise,
@@ -66,6 +74,95 @@ const matchColorClasses = [
   "border-cyan-300 bg-cyan-300/18 text-cyan-100",
   "border-rose-400 bg-rose-400/18 text-rose-100",
 ];
+
+const modeThemeByMode: Record<
+  PracticeMode,
+  {
+    title: string;
+    eyebrow: string;
+    detail: string;
+    caption: string;
+    icon: LucideIcon;
+    iconClass: string;
+    badgeClass: string;
+    panelGlow: string;
+    accentBar: string;
+    shellClass: string;
+    orbClass: string;
+    buttonClass: string;
+  }
+> = {
+  meaning: {
+    title: "Meaning",
+    eyebrow: "Word quest",
+    detail: "Choose the meaning that fits a word in context.",
+    caption: "Best for locking in definitions with real usage.",
+    icon: Sparkles,
+    iconClass: "bg-amber-300/18 text-amber-100 ring-1 ring-amber-200/30",
+    badgeClass: "border-amber-200/30 bg-amber-300/12 text-amber-100",
+    panelGlow: "from-amber-200/14 via-transparent",
+    accentBar: "from-amber-300 via-yellow-200 to-orange-200",
+    shellClass: "border-amber-200/20 bg-[linear-gradient(180deg,rgba(72,74,47,0.92),rgba(49,58,46,0.96))]",
+    orbClass: "bg-[radial-gradient(circle,rgba(252,211,77,0.34),transparent_68%)]",
+    buttonClass: "bg-amber-300 text-slate-950 shadow-[0_8px_20px_rgba(252,211,77,0.22)]",
+  },
+  context: {
+    title: "Context",
+    eyebrow: "Sentence run",
+    detail: "Complete short sentences with the right word or expression.",
+    caption: "Best for recall and sentence-level usage.",
+    icon: MessageCircleMore,
+    iconClass: "bg-emerald-300/18 text-emerald-100 ring-1 ring-emerald-200/30",
+    badgeClass: "border-emerald-200/30 bg-emerald-300/12 text-emerald-100",
+    panelGlow: "from-emerald-200/14 via-transparent",
+    accentBar: "from-emerald-300 via-teal-200 to-cyan-200",
+    shellClass: "border-emerald-200/20 bg-[linear-gradient(180deg,rgba(39,78,71,0.94),rgba(34,62,64,0.98))]",
+    orbClass: "bg-[radial-gradient(circle,rgba(110,231,183,0.28),transparent_68%)]",
+    buttonClass: "bg-emerald-300 text-slate-950 shadow-[0_8px_20px_rgba(110,231,183,0.2)]",
+  },
+  natural: {
+    title: "Natural usage",
+    eyebrow: "Phrase flow",
+    detail: "Spot the expression that sounds right in real language.",
+    caption: "Best for phrases, connectors, and colloquial language.",
+    icon: BookOpenText,
+    iconClass: "bg-sky-300/18 text-sky-100 ring-1 ring-sky-200/30",
+    badgeClass: "border-sky-200/30 bg-sky-300/12 text-sky-100",
+    panelGlow: "from-sky-200/14 via-transparent",
+    accentBar: "from-sky-300 via-cyan-200 to-blue-200",
+    shellClass: "border-sky-200/20 bg-[linear-gradient(180deg,rgba(40,73,101,0.94),rgba(31,53,83,0.98))]",
+    orbClass: "bg-[radial-gradient(circle,rgba(125,211,252,0.28),transparent_68%)]",
+    buttonClass: "bg-sky-300 text-slate-950 shadow-[0_8px_20px_rgba(125,211,252,0.18)]",
+  },
+  listening: {
+    title: "Listening",
+    eyebrow: "Sound check",
+    detail: "Hear a word and choose what was said.",
+    caption: "Best for audio recognition and fast review.",
+    icon: Headphones,
+    iconClass: "bg-fuchsia-300/18 text-fuchsia-100 ring-1 ring-fuchsia-200/30",
+    badgeClass: "border-fuchsia-200/30 bg-fuchsia-300/12 text-fuchsia-100",
+    panelGlow: "from-fuchsia-200/14 via-transparent",
+    accentBar: "from-fuchsia-300 via-pink-200 to-rose-200",
+    shellClass: "border-fuchsia-200/20 bg-[linear-gradient(180deg,rgba(80,54,91,0.94),rgba(64,42,84,0.98))]",
+    orbClass: "bg-[radial-gradient(circle,rgba(244,114,182,0.28),transparent_68%)]",
+    buttonClass: "bg-fuchsia-300 text-slate-950 shadow-[0_8px_20px_rgba(244,114,182,0.2)]",
+  },
+  match: {
+    title: "Match",
+    eyebrow: "Pair rush",
+    detail: "Match saved words to their meanings in quick sets.",
+    caption: "Best for fast warm-up rounds.",
+    icon: Shapes,
+    iconClass: "bg-cyan-300/18 text-cyan-100 ring-1 ring-cyan-200/30",
+    badgeClass: "border-cyan-200/30 bg-cyan-300/12 text-cyan-100",
+    panelGlow: "from-cyan-200/14 via-transparent",
+    accentBar: "from-cyan-300 via-sky-200 to-indigo-200",
+    shellClass: "border-cyan-200/20 bg-[linear-gradient(180deg,rgba(38,80,92,0.94),rgba(31,62,79,0.98))]",
+    orbClass: "bg-[radial-gradient(circle,rgba(103,232,249,0.28),transparent_68%)]",
+    buttonClass: "bg-cyan-300 text-slate-950 shadow-[0_8px_20px_rgba(103,232,249,0.2)]",
+  },
+};
 
 const CLIP_START_PADDING_SEC = 0.08;
 const CLIP_END_TRIM_SEC = 0.5;
@@ -280,7 +377,6 @@ export default function PracticePage() {
     [favorites, selectedMode]
   );
   const currentExercise = exercises[exerciseIndex] ?? null;
-  const dueCount = useMemo(() => getDuePracticeItems(favorites).length, [favorites]);
   const revealed = currentExercise ? revealedIds.includes(currentExercise.id) : false;
   const activeSession = selectedMode !== null;
   const completedExerciseCount = sessionComplete ? exercises.length : revealedIds.length;
@@ -611,19 +707,8 @@ export default function PracticePage() {
     setSessionComplete(false);
   };
 
-  const playListenPrompt = () => {
-    if (!currentExercise || currentExercise.type !== "listen_choose") return;
+  const playSpeechText = useCallback((clipOwnerId: string, text: string, language: string | null | undefined) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(currentExercise.speechText);
-    utterance.lang = getSpeechSynthesisLang(currentExercise.language);
-    utterance.rate = 0.9;
-    window.speechSynthesis.speak(utterance);
-  };
-
-  const playTtsContextClip = useCallback((clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
-    if (!clip || clip.storySource !== "user" || typeof window === "undefined" || !("speechSynthesis" in window)) return;
-
     const synth = window.speechSynthesis;
     if (speakingClipId === clipOwnerId) {
       synth.cancel();
@@ -632,8 +717,8 @@ export default function PracticePage() {
     }
 
     synth.cancel();
-    const utterance = new SpeechSynthesisUtterance(clip.sentence);
-    const lang = getSpeechSynthesisLang(clip.language);
+    const utterance = new SpeechSynthesisUtterance(text);
+    const lang = getSpeechSynthesisLang(language);
     utterance.lang = lang;
     utterance.rate = 0.92;
 
@@ -657,6 +742,16 @@ export default function PracticePage() {
     setSpeakingClipId(clipOwnerId);
     synth.speak(utterance);
   }, [speakingClipId]);
+
+  const playListenPrompt = useCallback(() => {
+    if (!currentExercise || currentExercise.type !== "listen_choose") return;
+    playSpeechText(currentExercise.id, currentExercise.speechText, currentExercise.language);
+  }, [currentExercise, playSpeechText]);
+
+  const playTtsContextClip = useCallback((clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
+    if (!clip || clip.storySource !== "user") return;
+    playSpeechText(clipOwnerId, clip.sentence, clip.language);
+  }, [playSpeechText]);
 
   const assignMatchMeaning = (meaning: string) => {
     if (!currentExercise || currentExercise.type !== "match_meaning" || !activeMatchWord || revealed) return;
@@ -689,6 +784,9 @@ export default function PracticePage() {
 
   const contextTextClass =
     "text-xs leading-6 text-[var(--muted)]/75 sm:text-sm";
+
+  const answerButtonBase =
+    "flex min-h-[88px] w-full items-center rounded-[1.45rem] border px-5 py-4 text-left text-[1.05rem] font-semibold leading-snug tracking-tight transition-colors sm:min-h-[92px]";
 
   const renderContextBlock = (
     sentence: string,
@@ -726,7 +824,7 @@ export default function PracticePage() {
               <button
                 type="button"
                 onClick={() => playTtsContextClip(clipOwnerId, clip)}
-                className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--foreground)] transition hover:bg-white/10"
+                className="inline-flex min-w-[124px] items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--foreground)] transition hover:bg-white/10"
               >
                 <Volume2 size={14} />
                 {speakingClipId === clipOwnerId ? "Stop" : "Play"}
@@ -747,43 +845,13 @@ export default function PracticePage() {
   };
 
   const correctAnswerText = getCorrectAnswerText(currentExercise);
-  const modeCards: Array<{
-    mode: PracticeMode;
-    title: string;
-    detail: string;
-    caption: string;
-  }> = [
-    {
-      mode: "meaning",
-      title: "Meaning",
-      detail: "Choose the meaning that fits a word in context.",
-      caption: "Best for locking in definitions with real usage.",
-    },
-    {
-      mode: "context",
-      title: "Context",
-      detail: "Complete short sentences with the right word or expression.",
-      caption: "Best for recall and sentence-level usage.",
-    },
-    {
-      mode: "natural",
-      title: "Natural usage",
-      detail: "Spot the expression that sounds right in real language.",
-      caption: "Best for phrases, connectors, and colloquial language.",
-    },
-    {
-      mode: "listening",
-      title: "Listening",
-      detail: "Hear a word and choose what was said.",
-      caption: "Best for audio recognition and fast review.",
-    },
-    {
-      mode: "match",
-      title: "Match",
-      detail: "Match saved words to their meanings in quick sets.",
-      caption: "Best for fast warm-up rounds.",
-    },
-  ];
+  const modeCards = (Object.entries(modeThemeByMode) as Array<
+    [PracticeMode, (typeof modeThemeByMode)[PracticeMode]]
+  >).map(([mode, theme]) => ({
+    mode,
+    ...theme,
+  }));
+  const activeModeTheme = selectedMode ? modeThemeByMode[selectedMode] : null;
   const completionTone = getCompletionTone(score, exercises.length);
   const completionBursts = useMemo(
     () => [
@@ -877,7 +945,7 @@ export default function PracticePage() {
             <div className="min-w-0 flex-1">
               <div className="mb-1.5 h-5">
                 <p
-                  className={`text-[11px] font-bold uppercase tracking-[0.2em] text-lime-300 transition-opacity duration-150 ${
+                  className={`text-[11px] font-bold uppercase tracking-[0.2em] text-amber-200 transition-opacity duration-150 ${
                     streak > 1 ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -893,12 +961,21 @@ export default function PracticePage() {
                 />
               </div>
               <div className="mt-1.5 flex items-center justify-between gap-3">
-                <p className="truncate text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
-                  {modeCards.find((card) => card.mode === selectedMode)?.title ?? "Practice"}
-                </p>
-                <p className="shrink-0 text-xs text-[var(--muted)]">
-                  {sessionComplete ? "Complete" : `${exerciseIndex + 1}/${exercises.length}`}
-                </p>
+                <div className="flex min-w-0 items-center gap-2">
+                  {activeModeTheme ? (
+                    <span
+                      className={`inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-2xl ${activeModeTheme.iconClass}`}
+                    >
+                      <activeModeTheme.icon size={15} />
+                    </span>
+                  ) : null}
+                  <p className="truncate text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
+                    {activeModeTheme?.title ?? "Practice"}
+                  </p>
+                </div>
+                {!sessionComplete ? (
+                  <p className="shrink-0 text-xs text-[var(--muted)]">{`${exerciseIndex + 1}/${exercises.length}`}</p>
+                ) : null}
               </div>
             </div>
           </div>
@@ -906,12 +983,12 @@ export default function PracticePage() {
           <div className="min-h-0 overflow-y-auto overscroll-contain pr-1">
             {sessionComplete ? (
               <div
-                className="relative h-full overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-md"
+                className="relative h-full overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md sm:p-6"
                 style={{ animation: "fade-in 220ms ease-out" }}
               >
                 <div
                   aria-hidden="true"
-                  className={`pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b ${completionTone.accent}`}
+                  className={`pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b ${completionTone.accent}`}
                 />
                 {completionBursts.map((burst, index) => (
                   <span
@@ -928,51 +1005,65 @@ export default function PracticePage() {
 
                 <div className="relative flex h-full flex-col">
                   <div
-                    className={`mb-4 inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 ${completionTone.pill}`}
+                    className={`mb-3 inline-flex w-fit rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 ${completionTone.pill}`}
                     style={{ animation: "fade-in 260ms ease-out" }}
                   >
-                    {completionTone.badge}
+                    {score === exercises.length ? "Perfect round" : completionTone.badge}
                   </div>
-                  <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Session complete</h2>
-                  <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)] sm:text-base">
-                    {completionTone.line}
-                  </p>
-                  <div className="mt-6 flex flex-wrap items-end gap-4 rounded-[1.75rem] border border-white/8 bg-white/[0.03] px-5 py-5">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
-                        Final score
-                      </p>
-                      <p
-                        className={`mt-2 text-6xl font-bold leading-none sm:text-7xl ${completionTone.scoreColor}`}
-                        style={{ animation: "score-pop 260ms ease-out" }}
-                      >
-                        {score}/{exercises.length}
-                      </p>
+                  <div className="rounded-[1.8rem] border border-white/8 bg-white/[0.035] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                    <div className="flex items-end justify-between gap-4">
+                      <div>
+                        <p
+                          className={`text-6xl font-black leading-none tracking-tight sm:text-7xl ${completionTone.scoreColor}`}
+                          style={{ animation: "score-pop 260ms ease-out" }}
+                        >
+                          {score}/{exercises.length}
+                        </p>
+                        <h2 className="mt-3 text-[2rem] font-semibold tracking-tight sm:text-[2.4rem]">
+                          {score === exercises.length ? "Flawless finish" : "Round complete"}
+                        </h2>
+                        <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)] sm:text-base">
+                          {score === exercises.length
+                            ? "No misses. Keep the streak alive."
+                            : `${exercises.length - score} to revisit next time.`}
+                        </p>
+                      </div>
+                      {score === exercises.length ? (
+                        <div className="hidden shrink-0 rounded-[1.4rem] border border-emerald-200/20 bg-emerald-300/10 px-4 py-3 text-right sm:block">
+                          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-100/80">
+                            Bonus
+                          </p>
+                          <p className="mt-1 text-2xl font-black text-emerald-200">+10 XP</p>
+                        </div>
+                      ) : null}
                     </div>
-                    <div className="pb-1 text-sm leading-6 text-[var(--muted)]">
-                      <p>You finished all {exercises.length} exercises in this set.</p>
-                      <p>{score === exercises.length ? "No misses this round." : `${exercises.length - score} to revisit next time.`}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/80">
+                        {exercises.length} prompts cleared
+                      </span>
+                      <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/80">
+                        {score === exercises.length ? "No misses" : `${score} correct`}
+                      </span>
+                      {streak > 1 ? (
+                        <span className="rounded-full border border-amber-200/20 bg-amber-200/10 px-3 py-1 text-[11px] font-semibold text-amber-100">
+                          {streak} in a row
+                        </span>
+                      ) : null}
                     </div>
                   </div>
-                  <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
+                  <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
                     <button
                       type="button"
                       onClick={restart}
-                      className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+                      className="inline-flex min-w-[172px] justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-black text-white shadow-[0_14px_28px_rgba(47,103,238,0.24)] hover:opacity-90"
                     >
                       Practice 10 more
                     </button>
                     <Link
                       href="/favorites"
-                      className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+                      className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
                     >
-                      Open favorites
-                    </Link>
-                    <Link
-                      href="/"
-                      className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-                    >
-                      Back to home
+                      Review favorites
                     </Link>
                   </div>
                 </div>
@@ -1015,7 +1106,19 @@ export default function PracticePage() {
                 `}</style>
               </div>
             ) : currentExercise ? (
-              <div className="flex h-full min-h-0 flex-col rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-[clamp(0.65rem,1.3vw,0.9rem)] shadow-md">
+              <div className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-[clamp(0.65rem,1.3vw,0.9rem)] shadow-md">
+                {activeModeTheme ? (
+                  <>
+                    <div
+                      aria-hidden="true"
+                      className={`pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b ${activeModeTheme.panelGlow}`}
+                    />
+                    <div
+                      aria-hidden="true"
+                      className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${activeModeTheme.accentBar}`}
+                    />
+                  </>
+                ) : null}
                 <p className="mb-[clamp(0.35rem,0.9vh,0.6rem)] shrink-0 text-[clamp(1.15rem,2.4vw,1.8rem)] font-semibold leading-tight tracking-tight">
                   {currentExercise.prompt}
                 </p>
@@ -1038,9 +1141,9 @@ export default function PracticePage() {
                             type="button"
                             onClick={() => setSelectedOption(option)}
                             disabled={revealed}
-                            className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
+                            className={`${answerButtonBase} ${
                               isCorrect
-                                ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                                ? "border-emerald-300 bg-emerald-300 text-slate-950"
                                 : isWrong
                                   ? "border-rose-400 bg-rose-400 text-slate-950"
                                   : isSelected
@@ -1082,9 +1185,9 @@ export default function PracticePage() {
                             type="button"
                             onClick={() => setSelectedOption(option)}
                             disabled={revealed}
-                            className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
+                            className={`${answerButtonBase} ${
                               isCorrect
-                                ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                                ? "border-emerald-300 bg-emerald-300 text-slate-950"
                                 : isWrong
                                   ? "border-rose-400 bg-rose-400 text-slate-950"
                                   : isSelected
@@ -1118,9 +1221,9 @@ export default function PracticePage() {
                             type="button"
                             onClick={() => setSelectedOption(option)}
                             disabled={revealed}
-                            className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
+                            className={`${answerButtonBase} ${
                               isCorrect
-                                ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                                ? "border-emerald-300 bg-emerald-300 text-slate-950"
                                 : isWrong
                                   ? "border-rose-400 bg-rose-400 text-slate-950"
                                   : isSelected
@@ -1141,9 +1244,10 @@ export default function PracticePage() {
                     <button
                       type="button"
                       onClick={playListenPrompt}
-                      className="mb-4 inline-flex shrink-0 rounded-2xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+                      className="mx-auto mb-4 inline-flex min-w-[124px] shrink-0 items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--foreground)] transition hover:bg-white/10"
                     >
-                      Play audio
+                      <Volume2 size={14} />
+                      {speakingClipId === currentExercise.id ? "Stop" : "Play"}
                     </button>
                     <div className="grid flex-1 auto-rows-fr gap-2.5 sm:grid-cols-2">
                       {currentExercise.options.map((option) => {
@@ -1156,9 +1260,9 @@ export default function PracticePage() {
                             type="button"
                             onClick={() => setSelectedOption(option)}
                             disabled={revealed}
-                            className={`rounded-2xl border px-4 py-2.5 text-left text-sm transition-colors ${
+                            className={`${answerButtonBase} ${
                               isCorrect
-                                ? "border-emerald-400 bg-emerald-400 text-slate-950"
+                                ? "border-emerald-300 bg-emerald-300 text-slate-950"
                                 : isWrong
                                   ? "border-rose-400 bg-rose-400 text-slate-950"
                                   : isSelected
@@ -1309,7 +1413,7 @@ export default function PracticePage() {
                 ? "border-transparent bg-transparent shadow-none"
                 : showFeedback
                   ? lastResult === "correct"
-                    ? "border-lime-300/30 bg-lime-300/14"
+                    ? "border-emerald-300/30 bg-emerald-300/12"
                     : "border-rose-300/30 bg-rose-300/14"
                   : "border-[var(--card-border)] bg-[var(--card-bg)]"
             }`}
@@ -1321,7 +1425,7 @@ export default function PracticePage() {
                     <div className="min-h-0 flex-1">
                       <p
                         className={`text-lg font-bold tracking-tight sm:text-2xl ${
-                          lastResult === "correct" ? "text-lime-300" : "text-rose-300"
+                          lastResult === "correct" ? "text-emerald-200" : "text-rose-300"
                         }`}
                       >
                         {lastResult === "correct"
@@ -1338,14 +1442,14 @@ export default function PracticePage() {
                         </p>
                       ) : null}
                     </div>
-                    <div className="mt-1 flex items-center">
+                    <div className="mt-1 flex items-center justify-center">
                       <button
                         type="button"
                         onClick={goNext}
-                        className={`inline-flex min-w-[128px] justify-center rounded-lg px-4 py-1 text-[13px] font-extrabold uppercase tracking-[0.16em] ${
+                        className={`inline-flex min-w-[152px] justify-center rounded-full px-5 py-2 text-[12px] font-black uppercase tracking-[0.16em] shadow-[0_10px_24px_rgba(0,0,0,0.18)] ${
                           lastResult === "correct"
-                            ? "bg-lime-400 text-slate-950 hover:bg-lime-300"
-                            : "bg-rose-400 text-slate-950 hover:bg-rose-300"
+                            ? "bg-emerald-300 text-slate-950 shadow-[0_10px_24px_rgba(110,231,183,0.22)] hover:bg-emerald-200"
+                            : "bg-rose-400 text-slate-950 shadow-[0_10px_24px_rgba(251,113,133,0.2)] hover:bg-rose-300"
                         }`}
                       >
                         {exerciseIndex >= exercises.length - 1 ? "Finish" : "Continue"}
@@ -1367,7 +1471,7 @@ export default function PracticePage() {
                         type="button"
                         onClick={revealCurrent}
                         disabled={!canSubmitAnswer}
-                        className="inline-flex min-w-[136px] justify-center rounded-lg bg-[var(--primary)] px-4 py-1 text-[13px] font-semibold text-white hover:opacity-90 disabled:opacity-50"
+                        className="mx-auto inline-flex min-w-[152px] justify-center rounded-full bg-[var(--primary)] px-5 py-2 text-[12px] font-black uppercase tracking-[0.16em] text-white shadow-[0_10px_24px_rgba(0,0,0,0.18)] transition hover:opacity-90 disabled:opacity-45 disabled:shadow-none"
                       >
                         Check answer
                       </button>
@@ -1383,36 +1487,63 @@ export default function PracticePage() {
   }
 
   return (
-    <div className="min-h-screen p-6 pb-24 text-[var(--foreground)]">
-      <div className="mb-6">
-        <h1 className="mb-2 text-3xl font-bold">Practice</h1>
-        <p className="text-sm text-[var(--muted)]">
-          Choose how you want to practice, then focus on one short session at a time.
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(248,220,154,0.08),transparent_28%),linear-gradient(180deg,#042349_0%,#062148_45%,#031a3d_100%)] p-4 pb-24 text-[var(--foreground)] sm:p-6 sm:pb-24">
+      <div className="mb-4 px-1 sm:mb-6">
+        <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[rgba(255,246,214,0.86)]">
+          <Sparkles size={13} />
+          Pick a mode
+        </div>
+        <h1 className="text-[2rem] font-black tracking-tight text-white sm:text-[2.5rem]">
+          Practice
+        </h1>
+        <p className="mt-1 max-w-xl text-sm leading-6 text-[rgba(226,232,244,0.78)] sm:text-base">
+          Five quick ways to review. Tap one and jump straight in.
         </p>
       </div>
-      <div className="mb-5 flex items-center gap-3 text-sm text-[var(--muted)]">
-        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2">
-          Due words {dueCount}
-        </div>
-        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2">
-          Saved words {favorites.length}
-        </div>
-      </div>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-2 xl:grid-cols-3">
         {modeCards.map((card) => (
           <button
             key={card.mode}
             type="button"
             onClick={() => openSession(card.mode)}
-            className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 text-left shadow-md transition hover:bg-[var(--card-bg-hover)]"
+            className={`group relative overflow-hidden rounded-[1.8rem] border p-4 text-left transition active:scale-[0.99] sm:rounded-[2rem] sm:p-5 ${card.shellClass}`}
           >
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
-              Practice mode
-            </p>
-            <h2 className="text-2xl font-semibold tracking-tight">{card.title}</h2>
-            <p className="mt-3 text-sm leading-6 text-[var(--foreground)]/88">{card.detail}</p>
-            <p className="mt-5 text-xs leading-5 text-[var(--muted)]">{card.caption}</p>
+            <div
+              aria-hidden="true"
+              className={`pointer-events-none absolute -right-8 -top-6 h-24 w-24 rounded-full ${card.orbClass} sm:h-28 sm:w-28`}
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-4 bottom-3 h-5 rounded-full bg-black/15 blur-xl"
+            />
+            <div className="relative">
+              <div className="mb-4 flex items-start justify-between gap-2">
+                <div>
+                  <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/58">
+                    {card.eyebrow}
+                  </p>
+                  <h2 className="text-[1.7rem] font-black leading-none tracking-tight text-white sm:text-[1.95rem]">
+                    {card.title}
+                  </h2>
+                </div>
+                <span
+                  className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[1.2rem] ${card.iconClass} sm:h-12 sm:w-12`}
+                >
+                  <card.icon size={20} />
+                </span>
+              </div>
+              <p className="text-[12px] leading-5 text-white/84 sm:text-[13px]">
+                {card.detail}
+              </p>
+              <div className="mt-4 flex items-center justify-end gap-2">
+                <span
+                  className={`inline-flex shrink-0 rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em] ${card.buttonClass}`}
+                >
+                  Play
+                </span>
+              </div>
+            </div>
           </button>
         ))}
       </div>
