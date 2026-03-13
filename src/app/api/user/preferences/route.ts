@@ -2,6 +2,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { createClerkClient } from "@clerk/backend";
 import { NextResponse } from "next/server";
+import { VARIANT_OPTIONS_BY_LANGUAGE, normalizeVariant } from "@/lib/languageVariant";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -32,6 +33,9 @@ const ALLOWED_REGIONS = new Set([
   "Italy",
   "Spain",
 ]);
+const ALLOWED_VARIANTS = new Set(
+  Object.values(VARIANT_OPTIONS_BY_LANGUAGE).flatMap((options) => options.map((option) => option.value))
+);
 
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((v) => typeof v === "string");
@@ -105,6 +109,14 @@ function normalizeRegion(value: unknown): string | null {
   return normalized && ALLOWED_REGIONS.has(normalized) ? normalized : null;
 }
 
+function normalizeVariantPreference(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const normalized = normalizeVariant(value);
+  return normalized && ALLOWED_VARIANTS.has(normalized as (typeof VARIANT_OPTIONS_BY_LANGUAGE)[keyof typeof VARIANT_OPTIONS_BY_LANGUAGE][number]["value"])
+    ? normalized
+    : null;
+}
+
 export async function POST(req: Request) {
   try {
     const { userId } = await auth();
@@ -117,10 +129,12 @@ export async function POST(req: Request) {
     const hasInterests = Object.prototype.hasOwnProperty.call(body ?? {}, "interests");
     const hasPreferredLevel = Object.prototype.hasOwnProperty.call(body ?? {}, "preferredLevel");
     const hasPreferredRegion = Object.prototype.hasOwnProperty.call(body ?? {}, "preferredRegion");
+    const hasPreferredVariant = Object.prototype.hasOwnProperty.call(body ?? {}, "preferredVariant");
     const targetLanguages = body?.targetLanguages;
     const interests = body?.interests;
     const preferredLevel = body?.preferredLevel;
     const preferredRegion = body?.preferredRegion;
+    const preferredVariant = body?.preferredVariant;
 
     if (hasTargetLanguages && !isStringArray(targetLanguages)) {
       return NextResponse.json(
@@ -139,6 +153,9 @@ export async function POST(req: Request) {
     }
     if (hasPreferredRegion && preferredRegion !== null && typeof preferredRegion !== "string") {
       return NextResponse.json({ error: "Invalid preferredRegion: expected string|null" }, { status: 400 });
+    }
+    if (hasPreferredVariant && preferredVariant !== null && typeof preferredVariant !== "string") {
+      return NextResponse.json({ error: "Invalid preferredVariant: expected string|null" }, { status: 400 });
     }
 
     // 1) Leer metadatos actuales
@@ -168,6 +185,11 @@ export async function POST(req: Request) {
       : typeof existing.preferredRegion === "string"
         ? normalizeRegion(existing.preferredRegion)
         : null;
+    const normalizedPreferredVariant = hasPreferredVariant
+      ? normalizeVariantPreference(preferredVariant)
+      : typeof existing.preferredVariant === "string"
+        ? normalizeVariantPreference(existing.preferredVariant)
+        : null;
 
     const updatedMetadata: Record<string, unknown> = {
       ...existing,
@@ -185,6 +207,12 @@ export async function POST(req: Request) {
       updatedMetadata.preferredRegion = normalizedPreferredRegion;
     } else {
       delete updatedMetadata.preferredRegion;
+    }
+
+    if (normalizedPreferredVariant) {
+      updatedMetadata.preferredVariant = normalizedPreferredVariant;
+    } else {
+      delete updatedMetadata.preferredVariant;
     }
 
     await clerkClient.users.updateUserMetadata(userId, {
@@ -205,6 +233,8 @@ export async function POST(req: Request) {
       typeof finalMeta.preferredLevel === "string" ? finalMeta.preferredLevel : null;
     const finalPreferredRegion =
       typeof finalMeta.preferredRegion === "string" ? finalMeta.preferredRegion : null;
+    const finalPreferredVariant =
+      typeof finalMeta.preferredVariant === "string" ? finalMeta.preferredVariant : null;
 
     return new NextResponse(
       JSON.stringify({
@@ -212,6 +242,7 @@ export async function POST(req: Request) {
         interests: finalInterests,
         preferredLevel: finalPreferredLevel,
         preferredRegion: finalPreferredRegion,
+        preferredVariant: finalPreferredVariant,
       }),
       {
       status: 200,

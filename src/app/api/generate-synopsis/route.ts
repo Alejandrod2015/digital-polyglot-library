@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { buildSanityCorsHeaders } from "@/lib/sanityCors";
 import { cefrPromptLabel } from "@/lib/cefr";
+import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -10,6 +11,7 @@ const openai = new OpenAI({
 type Body = {
   title?: string;
   language?: string;
+  variant?: string;
   region?: string;
   cefrLevel?: string;
   level?: string;
@@ -26,12 +28,14 @@ export async function POST(req: Request) {
 
     const title = typeof body.title === "string" ? body.title.trim() : "";
     const language = typeof body.language === "string" && body.language.trim() ? body.language.trim() : "Spanish";
+    const variant = typeof body.variant === "string" ? body.variant.trim() : "";
     const region = typeof body.region === "string" ? body.region.trim() : "";
     const level = typeof body.level === "string" && body.level.trim() ? body.level.trim() : "intermediate";
     const cefrLevel = typeof body.cefrLevel === "string" && body.cefrLevel.trim() ? body.cefrLevel.trim() : "";
     const focus = typeof body.focus === "string" && body.focus.trim() ? body.focus.trim() : "Everyday conversation";
     const topic = typeof body.topic === "string" ? body.topic.trim() : "";
     const learnerProfile = cefrPromptLabel(cefrLevel, level);
+    const variantClause = buildVariantPromptClause(language, normalizeVariant(variant));
 
     if (!title) {
       return NextResponse.json({ error: "Missing title" }, { status: 400, headers: corsHeaders });
@@ -45,6 +49,7 @@ You write short story synopses for a language-learning app.
 
 Write one concise synopsis in English based on this story title: "${title}".
 The final story will be in ${language} for a ${learnerProfile} learner.${regionClause}${topicClause}
+${variantClause}
 The learning focus is: "${focus}".
 
 Requirements:

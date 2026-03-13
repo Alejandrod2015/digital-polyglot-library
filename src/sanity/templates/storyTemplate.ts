@@ -19,8 +19,7 @@ export const storyTemplate = {
       language,
       region,
       level,
-      topic,
-      formality
+      topic
     }`;
     const bookData = await client.fetch(query, { id: params.bookId });
 
@@ -43,7 +42,6 @@ export const storyTemplate = {
       [regionField ?? "region_es"]: bookData?.region || null, // coloca la región en el campo correspondiente
       level: bookData?.level || null,
       topic: bookData?.topic || null,
-      formality: bookData?.formality || "neutral",
     };
   },
 } as const;

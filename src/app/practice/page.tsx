@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   BookOpenText,
@@ -33,6 +34,24 @@ type LoadState = "loading" | "ready" | "error";
 type StoryAudioData = {
   audioUrl: string | null;
   audioSegments: AudioSegment[];
+};
+
+type JourneyPracticeSource = {
+  variantId?: string | null;
+  level?: {
+    id: string;
+    title: string;
+    subtitle: string;
+  } | null;
+  topic?: {
+    id: string;
+    slug: string;
+    label: string;
+    storyCount: number;
+  } | null;
+  items: PracticeFavoriteItem[];
+  exercises?: PracticeExercise[];
+  checkpointToken?: string;
 };
 
 function normalizeStorySlug(value: string | null | undefined): string {
@@ -166,6 +185,7 @@ const modeThemeByMode: Record<
 
 const CLIP_START_PADDING_SEC = 0.08;
 const CLIP_END_TRIM_SEC = 0.5;
+const CHECKPOINT_PASS_THRESHOLD = 0.8;
 
 type FeedbackTone = "correct" | "wrong";
 
@@ -249,7 +269,9 @@ function selectPreferredSpeechVoice(voices: SpeechSynthesisVoice[], lang: string
 
 export default function PracticePage() {
   const { user, isLoaded } = useUser();
+  const searchParams = useSearchParams();
   const [favorites, setFavorites] = useState<PracticeFavoriteItem[]>([]);
+  const [prefabExercises, setPrefabExercises] = useState<PracticeExercise[]>([]);
   const [loadState, setLoadState] = useState<LoadState>("loading");
   const [selectedMode, setSelectedMode] = useState<PracticeMode | null>(null);
   const [exerciseIndex, setExerciseIndex] = useState(0);
@@ -273,11 +295,25 @@ export default function PracticePage() {
     correct: null,
     wrong: null,
   });
+  const practiceSource = searchParams.get("source");
+  const journeyVariant = searchParams.get("variant");
+  const journeyLevelId = searchParams.get("levelId");
+  const journeyTopicId = searchParams.get("topicId");
+  const isJourneyCheckpoint = searchParams.get("checkpoint") === "1";
+  const isJourneyPractice = practiceSource === "journey" && Boolean(journeyLevelId) && Boolean(journeyTopicId);
+  const journeyReturnHref =
+    isJourneyPractice && journeyLevelId && journeyTopicId
+      ? `/journey/${journeyLevelId}/${journeyTopicId}${journeyVariant ? `?variant=${encodeURIComponent(journeyVariant)}` : ""}`
+      : null;
+  const [checkpointSaveState, setCheckpointSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  const [checkpointToken, setCheckpointToken] = useState<string | null>(null);
+  const [checkpointResponses, setCheckpointResponses] = useState<Record<string, string>>({});
 
   useEffect(() => {
     if (!isLoaded) return;
     if (!user) {
       setFavorites([]);
+      setPrefabExercises([]);
       setUserStoryAudioBySlug({});
       setStandaloneStoryAudioBySlug({});
       setLoadState("ready");
@@ -289,17 +325,27 @@ export default function PracticePage() {
     const load = async () => {
       try {
         setLoadState("loading");
-        const res = await fetch("/api/favorites", { cache: "no-store" });
+        const requestUrl =
+          isJourneyPractice && journeyLevelId && journeyTopicId
+            ? `/api/journey/practice?levelId=${encodeURIComponent(journeyLevelId)}&topicId=${encodeURIComponent(
+                journeyTopicId
+              )}${journeyVariant ? `&variant=${encodeURIComponent(journeyVariant)}` : ""}${isJourneyCheckpoint ? "&kind=checkpoint" : ""}`
+            : "/api/favorites";
+        const res = await fetch(requestUrl, { cache: "no-store" });
         if (!res.ok) throw new Error(`Error ${res.status}`);
-        const data = (await res.json()) as PracticeFavoriteItem[];
+        const data = (await res.json()) as PracticeFavoriteItem[] | JourneyPracticeSource;
         if (!cancelled) {
-          setFavorites(Array.isArray(data) ? data : []);
+          setFavorites(Array.isArray(data) ? data : Array.isArray(data.items) ? data.items : []);
+          setPrefabExercises(!Array.isArray(data) && Array.isArray(data.exercises) ? data.exercises : []);
+          setCheckpointToken(!Array.isArray(data) && typeof data.checkpointToken === "string" ? data.checkpointToken : null);
           setLoadState("ready");
         }
       } catch (error) {
         console.error(error);
         if (!cancelled) {
           setFavorites([]);
+          setPrefabExercises([]);
+          setCheckpointToken(null);
           setLoadState("error");
         }
       }
@@ -310,7 +356,7 @@ export default function PracticePage() {
     return () => {
       cancelled = true;
     };
-  }, [isLoaded, user]);
+  }, [isLoaded, isJourneyCheckpoint, isJourneyPractice, journeyLevelId, journeyTopicId, journeyVariant, user]);
 
   useEffect(() => {
     const userStorySlugs = Array.from(
@@ -408,13 +454,13 @@ export default function PracticePage() {
     };
   }, [favorites]);
 
-  const exercises = useMemo(
-    () => (selectedMode ? buildPracticeSession(favorites, selectedMode) : []),
-    [favorites, selectedMode]
-  );
+  const exercises = useMemo(() => {
+    if (isJourneyCheckpoint) return prefabExercises;
+    return selectedMode ? buildPracticeSession(favorites, selectedMode) : [];
+  }, [favorites, isJourneyCheckpoint, prefabExercises, selectedMode]);
   const currentExercise = exercises[exerciseIndex] ?? null;
   const revealed = currentExercise ? revealedIds.includes(currentExercise.id) : false;
-  const activeSession = selectedMode !== null;
+  const activeSession = selectedMode !== null || (isJourneyCheckpoint && exercises.length > 0);
   const completedExerciseCount = sessionComplete ? exercises.length : revealedIds.length;
   const progressPercent =
     exercises.length > 0 ? Math.min(100, (completedExerciseCount / exercises.length) * 100) : 0;
@@ -433,12 +479,16 @@ export default function PracticePage() {
   }, []);
 
   const closeSession = useCallback(() => {
+    if (isJourneyPractice && journeyReturnHref) {
+      window.location.href = journeyReturnHref;
+      return;
+    }
     if (typeof window !== "undefined" && window.history.state?.practiceSession) {
       window.history.back();
       return;
     }
     setSelectedMode(null);
-  }, []);
+  }, [isJourneyPractice, journeyReturnHref]);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -473,7 +523,9 @@ export default function PracticePage() {
     setSessionComplete(false);
     setStreak(0);
     setLastResult(null);
-  }, [selectedMode, favorites.length]);
+    setCheckpointSaveState("idle");
+    setCheckpointResponses({});
+  }, [favorites.length, prefabExercises.length, selectedMode]);
 
   useEffect(() => {
     setSelectedOption(null);
@@ -741,6 +793,8 @@ export default function PracticePage() {
     setRevealedIds([]);
     setScore(0);
     setSessionComplete(false);
+    setCheckpointSaveState("idle");
+    setCheckpointResponses({});
   };
 
   const playSpeechText = useCallback((clipOwnerId: string, text: string, language: string | null | undefined) => {
@@ -827,6 +881,20 @@ export default function PracticePage() {
     setActiveMatchWord(null);
   };
 
+  const chooseOption = (option: string) => {
+    setSelectedOption(option);
+    if (
+      isJourneyCheckpoint &&
+      currentExercise &&
+      currentExercise.type !== "match_meaning"
+    ) {
+      setCheckpointResponses((current) => ({
+        ...current,
+        [currentExercise.id]: option,
+      }));
+    }
+  };
+
   const unassignMatchWord = (word: string) => {
     setMatchAnswers((prev) => {
       if (!prev[word]) return prev;
@@ -909,8 +977,25 @@ export default function PracticePage() {
     mode,
     ...theme,
   }));
-  const activeModeTheme = selectedMode ? modeThemeByMode[selectedMode] : null;
+  const inferredModeFromExercise: PracticeMode | null =
+    currentExercise?.type === "meaning_in_context"
+      ? "meaning"
+      : currentExercise?.type === "fill_blank"
+        ? "context"
+        : currentExercise?.type === "natural_expression"
+          ? "natural"
+          : currentExercise?.type === "listen_choose"
+            ? "listening"
+            : currentExercise?.type === "match_meaning"
+              ? "match"
+              : null;
+  const activeModeTheme = selectedMode
+    ? modeThemeByMode[selectedMode]
+    : inferredModeFromExercise
+      ? modeThemeByMode[inferredModeFromExercise]
+      : null;
   const completionTone = getCompletionTone(score, exercises.length);
+  const checkpointPassed = exercises.length > 0 && score / exercises.length >= CHECKPOINT_PASS_THRESHOLD;
   const completionBursts = useMemo(
     () => [
       { left: "8%", top: "18%", delay: "0ms", size: "h-2.5 w-2.5", color: "bg-emerald-300/80" },
@@ -924,6 +1009,60 @@ export default function PracticePage() {
     ],
     []
   );
+
+  useEffect(() => {
+    if (!isJourneyCheckpoint || !sessionComplete || checkpointSaveState === "saving" || checkpointSaveState === "saved") {
+      return;
+    }
+    if (!journeyLevelId || !journeyTopicId || !checkpointPassed || !checkpointToken) return;
+
+    let cancelled = false;
+
+    const saveCheckpoint = async () => {
+      try {
+        setCheckpointSaveState("saving");
+        const res = await fetch("/api/journey/checkpoint", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            token: checkpointToken,
+            responses: checkpointResponses,
+          }),
+        });
+
+        if (!res.ok) {
+          throw new Error("Failed to save checkpoint");
+        }
+
+        if (!cancelled) {
+          setCheckpointSaveState("saved");
+        }
+      } catch (error) {
+        console.error("[practice] failed to save journey checkpoint", error);
+        if (!cancelled) {
+          setCheckpointSaveState("error");
+        }
+      }
+    };
+
+    void saveCheckpoint();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    checkpointPassed,
+    checkpointSaveState,
+    exercises.length,
+    isJourneyCheckpoint,
+    journeyLevelId,
+    journeyTopicId,
+    journeyVariant,
+    checkpointResponses,
+    checkpointToken,
+    score,
+    sessionComplete,
+  ]);
 
   if (!isLoaded || loadState === "loading") {
     return (
@@ -967,15 +1106,26 @@ export default function PracticePage() {
       <div className="min-h-screen p-6 pb-24 text-[var(--foreground)]">
         <h1 className="mb-2 text-3xl font-bold">Practice</h1>
         <p className="mb-5 text-sm text-[var(--muted)]">
-          Save words while reading and they will appear here as exercises.
+          {isJourneyPractice
+            ? "This topic does not have enough practice items yet."
+            : "Save words while reading and they will appear here as exercises."}
         </p>
         <div className="flex flex-wrap gap-3">
-          <Link
-            href="/explore"
-            className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
-          >
-            Explore stories
-          </Link>
+          {isJourneyPractice && journeyReturnHref ? (
+            <Link
+              href={journeyReturnHref}
+              className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+            >
+              Back to topic
+            </Link>
+          ) : (
+            <Link
+              href="/explore"
+              className="inline-flex rounded-xl bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+            >
+              Explore stories
+            </Link>
+          )}
           <Link
             href="/favorites"
             className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-4 py-2.5 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
@@ -1066,7 +1216,13 @@ export default function PracticePage() {
                     className={`mb-3 inline-flex w-fit rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 ${completionTone.pill}`}
                     style={{ animation: "fade-in 260ms ease-out" }}
                   >
-                    {score === exercises.length ? "Perfect round" : completionTone.badge}
+                    {isJourneyCheckpoint
+                      ? checkpointPassed
+                        ? "Checkpoint cleared"
+                        : "Checkpoint result"
+                      : score === exercises.length
+                        ? "Perfect round"
+                        : completionTone.badge}
                   </div>
                   <div className="rounded-[1.8rem] border border-white/8 bg-white/[0.035] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
                     <div className="flex items-end justify-between gap-4">
@@ -1078,12 +1234,24 @@ export default function PracticePage() {
                           {score}/{exercises.length}
                         </p>
                         <h2 className="mt-3 text-[2rem] font-semibold tracking-tight sm:text-[2.4rem]">
-                          {score === exercises.length ? "Flawless finish" : "Round complete"}
+                          {isJourneyCheckpoint
+                            ? checkpointPassed
+                              ? "Topic unlocked"
+                              : "Try once more"
+                            : score === exercises.length
+                              ? "Flawless finish"
+                              : "Round complete"}
                         </h2>
                         <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)] sm:text-base">
-                          {score === exercises.length
-                            ? "No misses. Keep the streak alive."
-                            : `${exercises.length - score} to revisit next time.`}
+                          {isJourneyCheckpoint
+                            ? checkpointPassed
+                              ? checkpointSaveState === "saved"
+                                ? "Checkpoint passed. You can continue to the next topic."
+                                : "Checkpoint passed. Saving your progress..."
+                              : `${Math.max(0, Math.ceil(CHECKPOINT_PASS_THRESHOLD * exercises.length) - score)} more correct answers needed to pass.`
+                            : score === exercises.length
+                              ? "No misses. Keep the streak alive."
+                              : `${exercises.length - score} to revisit next time.`}
                         </p>
                       </div>
                       {score === exercises.length ? (
@@ -1115,14 +1283,23 @@ export default function PracticePage() {
                       onClick={restart}
                       className="inline-flex min-w-[172px] justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-black text-white shadow-[0_14px_28px_rgba(47,103,238,0.24)] hover:opacity-90"
                     >
-                      Practice 10 more
+                      {isJourneyCheckpoint ? "Retry checkpoint" : "Practice 10 more"}
                     </button>
-                    <Link
-                      href="/favorites"
-                      className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-                    >
-                      Review favorites
-                    </Link>
+                    {isJourneyPractice && journeyReturnHref ? (
+                      <Link
+                        href={journeyReturnHref}
+                        className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+                      >
+                        {isJourneyCheckpoint && checkpointPassed ? "Continue journey" : "Back to topic"}
+                      </Link>
+                    ) : (
+                      <Link
+                        href="/favorites"
+                        className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+                      >
+                        Review favorites
+                      </Link>
+                    )}
                   </div>
                 </div>
 
@@ -1197,7 +1374,7 @@ export default function PracticePage() {
                           <button
                             key={option}
                             type="button"
-                            onClick={() => setSelectedOption(option)}
+                            onClick={() => chooseOption(option)}
                             disabled={revealed}
                             className={`${answerButtonBase} ${
                               isCorrect
@@ -1241,7 +1418,7 @@ export default function PracticePage() {
                           <button
                             key={option}
                             type="button"
-                            onClick={() => setSelectedOption(option)}
+                            onClick={() => chooseOption(option)}
                             disabled={revealed}
                             className={`${answerButtonBase} ${
                               isCorrect
@@ -1277,7 +1454,7 @@ export default function PracticePage() {
                           <button
                             key={option}
                             type="button"
-                            onClick={() => setSelectedOption(option)}
+                            onClick={() => chooseOption(option)}
                             disabled={revealed}
                             className={`${answerButtonBase} ${
                               isCorrect
@@ -1316,7 +1493,7 @@ export default function PracticePage() {
                           <button
                             key={option}
                             type="button"
-                            onClick={() => setSelectedOption(option)}
+                            onClick={() => chooseOption(option)}
                             disabled={revealed}
                             className={`${answerButtonBase} ${
                               isCorrect

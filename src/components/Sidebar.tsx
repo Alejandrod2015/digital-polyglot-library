@@ -153,6 +153,14 @@ export default function Sidebar({ onClose }: SidebarProps) {
         </Link>
 
         <Link
+          href="/my-library"
+          onClick={handleNavClick}
+          className={navLinkClass}
+        >
+          <BookMarked size={22} /> My Library
+        </Link>
+
+        <Link
           href="/favorites"
           onClick={handleNavClick}
           className={navLinkClass}

@@ -208,6 +208,10 @@ export default async function HomePage() {
         (interest): interest is string => typeof interest === "string"
       )
     : [];
+  const initialPreferredVariant =
+    typeof user?.publicMetadata?.preferredVariant === "string"
+      ? user.publicMetadata.preferredVariant
+      : "";
 
   return (
     <HomeClient
@@ -219,6 +223,7 @@ export default async function HomePage() {
       initialPlan={initialPlan}
       initialTargetLanguages={initialTargetLanguages}
       initialInterests={initialInterests}
+      initialPreferredVariant={initialPreferredVariant}
       initialHasUser={Boolean(userId)}
       initialContinueListening={continueRows.map((row) => ({
         bookSlug: row.bookSlug,

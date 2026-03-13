@@ -4,9 +4,12 @@ import React from "react";
 import StoryGeneratorInput from "../components/StoryGeneratorInput";
 import CoverGeneratorInput from "../components/CoverGeneratorInput";
 import VocabGeneratorInput from "../components/VocabGeneratorInput";
+import VocabValidatorInput from "../components/VocabValidatorInput";
 import AudioGeneratorInput from "../components/AudioGeneratorInput";
 import StoryTextInput from "../components/StoryTextInput";
 import AutoSlugInput from "../components/AutoSlugInput";
+import StoryVocabQualityInput from "../components/StoryVocabQualityInput";
+import JourneyTopicInput from "../components/JourneyTopicInput";
 
 function isRecord(v: unknown): v is Record<string, unknown> {
   return typeof v === "object" && v !== null && !Array.isArray(v);
@@ -93,6 +96,28 @@ export const standaloneStory = defineType({
     }),
 
     defineField({
+      name: "variant",
+      title: "Variant",
+      type: "string",
+      options: {
+        list: [
+          { title: "LATAM", value: "latam" },
+          { title: "Spain", value: "spain" },
+          { title: "US", value: "us" },
+          { title: "UK", value: "uk" },
+          { title: "Brazil", value: "brazil" },
+          { title: "Portugal", value: "portugal" },
+          { title: "Germany", value: "germany" },
+          { title: "Austria", value: "austria" },
+          { title: "France", value: "france" },
+          { title: "Canada (French)", value: "canada-fr" },
+          { title: "Italy", value: "italy" },
+        ],
+      },
+      description: "Pedagogical track used for curriculum and learner paths.",
+    }),
+
+    defineField({
       name: "region_es",
       title: "Region",
       type: "string",
@@ -161,6 +186,7 @@ export const standaloneStory = defineType({
       name: "level",
       title: "Broad level",
       type: "string",
+      hidden: true,
       options: {
         list: [
           { title: "Beginner", value: "beginner" },
@@ -185,22 +211,7 @@ export const standaloneStory = defineType({
           { title: "C2", value: "c2" },
         ],
       },
-      description: "Precise CEFR level for Atlas and learner progression.",
-    }),
-
-    defineField({
-      name: "formality",
-      title: "Formality",
-      type: "string",
-      options: {
-        list: [
-          { title: "Informal", value: "informal" },
-          { title: "Neutral", value: "neutral" },
-          { title: "Formal", value: "formal" },
-        ],
-      },
-      initialValue: "neutral",
-      description: "Use this for the overall register of the story.",
+      description: "Precise CEFR level for Journey and learner progression.",
     }),
 
     defineField({
@@ -213,24 +224,44 @@ export const standaloneStory = defineType({
           { title: "Verbs", value: "verbs" },
           { title: "Nouns", value: "nouns" },
           { title: "Expressions", value: "expressions" },
-          { title: "Slang", value: "slang" },
+          { title: "Mixed", value: "mixed" },
         ],
       },
     }),
 
     defineField({
       name: "topic",
-      title: "Topic",
+      title: "Prompt topic",
       type: "string",
-      description: "Free text topic for the story theme.",
+      description: "Optional free-text topic to guide generation. This does not place the story inside Journey.",
     }),
 
     defineField({
-      name: "theme",
-      title: "Theme / Topics",
-      type: "array",
-      of: [{ type: "string" }],
-      description: "Cultural or contextual topics covered by the story.",
+      name: "journeyEligible",
+      title: "Show in Journey",
+      type: "boolean",
+      initialValue: false,
+      description: "Enable this only for stories that should appear inside the learner Journey.",
+    }),
+
+    defineField({
+      name: "journeyTopic",
+      title: "Journey topic",
+      type: "string",
+      hidden: ({ document }) => !Boolean((document as { journeyEligible?: boolean } | undefined)?.journeyEligible),
+      components: {
+        input: JourneyTopicInput,
+      },
+      description: "Curriculum topic slug used by Journey. Options depend on variant and CEFR level.",
+    }),
+
+    defineField({
+      name: "journeyOrder",
+      title: "Journey order",
+      type: "number",
+      hidden: ({ document }) => !Boolean((document as { journeyEligible?: boolean } | undefined)?.journeyEligible),
+      description: "Order inside the Journey topic. Lower numbers appear first.",
+      validation: (Rule) => Rule.integer().min(1),
     }),
 
     defineField({
@@ -301,12 +332,38 @@ export const standaloneStory = defineType({
     }),
 
     defineField({
+      name: "checkStoryVocabQuality",
+      title: "🔎 Check Story Vocabulary Quality",
+      type: "string",
+      readOnly: true,
+      components: {
+        input: () => React.createElement(StoryVocabQualityInput),
+      },
+    }),
+    defineField({
+      name: "storyVocabQualityRaw",
+      title: "Story vocabulary quality report",
+      type: "text",
+      description: "Auto-generated lexical quality check for the story text.",
+      rows: 8,
+      readOnly: true,
+    }),
+    defineField({
       name: "generateVocab",
       title: "🧠 Generate Vocabulary",
       type: "string",
       readOnly: true,
       components: {
         input: () => React.createElement(VocabGeneratorInput),
+      },
+    }),
+    defineField({
+      name: "validateVocab",
+      title: "✅ Validate & Fix Vocabulary",
+      type: "string",
+      readOnly: true,
+      components: {
+        input: () => React.createElement(VocabValidatorInput),
       },
     }),
     defineField({
@@ -317,6 +374,14 @@ export const standaloneStory = defineType({
         "This field stores the vocabulary list generated by ChatGPT. The system will parse it automatically.",
       rows: 10,
       validation: (Rule) => Rule.custom((value) => validateVocabRaw(value)),
+    }),
+    defineField({
+      name: "vocabValidationRaw",
+      title: "Vocabulary validation report",
+      type: "text",
+      description: "Auto-generated validation summary for the current vocabulary list.",
+      rows: 8,
+      readOnly: true,
     }),
     defineField({
       name: "generateCover",
@@ -367,9 +432,14 @@ export const standaloneStory = defineType({
   ],
 
   preview: {
-    select: { title: "title", level: "level", media: "cover" },
-    prepare({ title, level, media }) {
-      const subtitle = level ? `Standalone • Level: ${level}` : "Standalone story";
+    select: { title: "title", cefrLevel: "cefrLevel", level: "level", media: "cover" },
+    prepare({ title, cefrLevel, level, media }) {
+      const subtitle =
+        typeof cefrLevel === "string" && cefrLevel
+          ? `Standalone • CEFR ${cefrLevel.toUpperCase()}`
+          : level
+            ? `Standalone • Level: ${level}`
+            : "Standalone story";
       return {
         title: title || "Untitled Story",
         subtitle,

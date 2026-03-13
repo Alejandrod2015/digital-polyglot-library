@@ -2,6 +2,7 @@
 
 export type Level = "beginner" | "intermediate" | "advanced";
 export type CefrLevel = "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
+export type Variant = string;
 
 export interface VocabItem {
   word: string; // Palabra tal cual aparece en el texto
@@ -13,6 +14,7 @@ export interface VocabItem {
 /** 🧭 Metadatos lingüísticos comunes entre libros e historias */
 export interface BookMetadata {
   language: string;
+  variant?: Variant;
   region?: string;
   level: Level;
   cefrLevel?: CefrLevel;

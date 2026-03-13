@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { getCookieConsentKey } from "@/components/CookieConsentBanner";
+import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel } from "@/lib/languageVariant";
 
 type LanguageOption = { code: string; name: string };
 type Plan = "free" | "basic" | "premium" | "polyglot" | "owner" | undefined;
@@ -109,6 +110,8 @@ export default function SettingsPage() {
   const [persistedPreferredLevel, setPersistedPreferredLevel] = useState("");
   const [preferredRegion, setPreferredRegion] = useState("");
   const [persistedPreferredRegion, setPersistedPreferredRegion] = useState("");
+  const [preferredVariant, setPreferredVariant] = useState("");
+  const [persistedPreferredVariant, setPersistedPreferredVariant] = useState("");
   const [status, setStatus] = useState<SaveStatus>("idle");
   const [hint, setHint] = useState("");
   const [themePref, setThemePref] = useState<ThemePref>("system");
@@ -125,9 +128,15 @@ export default function SettingsPage() {
       !equalsSet(selected, persisted) ||
       !equalsSet(interests, persistedInterests) ||
       preferredLevel !== persistedPreferredLevel ||
-      preferredRegion !== persistedPreferredRegion,
-    [selected, persisted, interests, persistedInterests, preferredLevel, persistedPreferredLevel, preferredRegion, persistedPreferredRegion]
+      preferredRegion !== persistedPreferredRegion ||
+      preferredVariant !== persistedPreferredVariant,
+    [selected, persisted, interests, persistedInterests, preferredLevel, persistedPreferredLevel, preferredRegion, persistedPreferredRegion, preferredVariant, persistedPreferredVariant]
   );
+
+  const primaryLanguage = selected[0] ?? "";
+  const availableVariants = useMemo(() => {
+    return VARIANT_OPTIONS_BY_LANGUAGE[primaryLanguage.trim().toLowerCase()] ?? [];
+  }, [primaryLanguage]);
 
   useEffect(() => {
     if (!isLoaded) return;
@@ -137,6 +146,8 @@ export default function SettingsPage() {
       typeof user?.publicMetadata?.preferredLevel === "string" ? user.publicMetadata.preferredLevel : "";
     const currentRegion =
       typeof user?.publicMetadata?.preferredRegion === "string" ? user.publicMetadata.preferredRegion : "";
+    const currentVariant =
+      typeof user?.publicMetadata?.preferredVariant === "string" ? user.publicMetadata.preferredVariant : "";
     setSelected(current);
     setPersisted(current);
     setInterests(currentInterests);
@@ -145,9 +156,18 @@ export default function SettingsPage() {
     setPersistedPreferredLevel(currentLevel);
     setPreferredRegion(currentRegion);
     setPersistedPreferredRegion(currentRegion);
+    setPreferredVariant(currentVariant);
+    setPersistedPreferredVariant(currentVariant);
     setStatus("idle");
     setHint("");
   }, [isLoaded, user]);
+
+  useEffect(() => {
+    if (!availableVariants.some((option) => option.value === preferredVariant)) {
+      setPreferredVariant("");
+      if (status === "saved") setStatus("idle");
+    }
+  }, [availableVariants, preferredVariant, status]);
 
   useEffect(() => {
     const stored = localStorage.getItem(THEME_KEY);
@@ -194,6 +214,7 @@ export default function SettingsPage() {
           interests: payloadInterests,
           preferredLevel: preferredLevel || null,
           preferredRegion: preferredRegion || null,
+          preferredVariant: preferredVariant || null,
         }),
       });
       if (!res.ok) throw new Error(`Error ${res.status}`);
@@ -210,6 +231,8 @@ export default function SettingsPage() {
         typeof record?.preferredLevel === "string" ? record.preferredLevel : "";
       const serverPreferredRegion =
         typeof record?.preferredRegion === "string" ? record.preferredRegion : "";
+      const serverPreferredVariant =
+        typeof record?.preferredVariant === "string" ? record.preferredVariant : "";
       setSelected(serverTL);
       setPersisted(serverTL);
       setInterests(serverInterests);
@@ -218,6 +241,8 @@ export default function SettingsPage() {
       setPersistedPreferredLevel(serverPreferredLevel);
       setPreferredRegion(serverPreferredRegion);
       setPersistedPreferredRegion(serverPreferredRegion);
+      setPreferredVariant(serverPreferredVariant);
+      setPersistedPreferredVariant(serverPreferredVariant);
       setStatus("saved");
       await user?.reload();
     } catch (err) {
@@ -256,7 +281,7 @@ export default function SettingsPage() {
       void savePreferences();
     }, 800);
     return () => window.clearTimeout(timer);
-  }, [dirty, selected, interests, preferredLevel, preferredRegion]);
+  }, [dirty, selected, interests, preferredLevel, preferredRegion, preferredVariant]);
 
   const toggleLanguage = (code: string) => {
     setSelected((prev) => {
@@ -338,7 +363,7 @@ export default function SettingsPage() {
       <div className="min-h-screen p-6 pb-24 text-[var(--foreground)]">
         <h1 className="mb-2 text-2xl font-semibold">Settings</h1>
         <p className="mb-5 text-sm text-[var(--muted)]">
-          Sign in to save your language, level, region, and interest preferences.
+          Sign in to save your language, level, variant, region, and interest preferences.
         </p>
         <Link
           href="/sign-in?redirect_url=/settings"
@@ -447,7 +472,7 @@ export default function SettingsPage() {
         </div>
       </section>
 
-      <section className="mt-7 grid gap-4 sm:grid-cols-2">
+      <section className="mt-7 grid gap-4 sm:grid-cols-3">
         <div>
           <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Level</h2>
           <select
@@ -459,6 +484,25 @@ export default function SettingsPage() {
             {LEVEL_OPTIONS.map((level) => (
               <option key={level} value={level}>
                 {level}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Variant</h2>
+          <select
+            value={preferredVariant}
+            onChange={(e) => setPreferredVariant(e.target.value)}
+            disabled={availableVariants.length === 0}
+            className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2.5 text-sm text-[var(--foreground)] outline-none focus:border-[var(--primary)] disabled:opacity-50"
+          >
+            <option value="">
+              {availableVariants.length > 0 ? "No variant preference" : "No variants for selected language"}
+            </option>
+            {availableVariants.map((variant) => (
+              <option key={variant.value} value={variant.value}>
+                {formatVariantLabel(variant.value) ?? variant.label}
               </option>
             ))}
           </select>

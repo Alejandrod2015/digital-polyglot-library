@@ -76,6 +76,28 @@ export const book = defineType({
     }),
 
     defineField({
+      name: "variant",
+      title: "Variant",
+      type: "string",
+      options: {
+        list: [
+          { title: "LATAM", value: "latam" },
+          { title: "Spain", value: "spain" },
+          { title: "US", value: "us" },
+          { title: "UK", value: "uk" },
+          { title: "Brazil", value: "brazil" },
+          { title: "Portugal", value: "portugal" },
+          { title: "Germany", value: "germany" },
+          { title: "Austria", value: "austria" },
+          { title: "France", value: "france" },
+          { title: "Canada (French)", value: "canada-fr" },
+          { title: "Italy", value: "italy" },
+        ],
+      },
+      description: "Pedagogical language track, separate from the exact region of the content.",
+    }),
+
+    defineField({
       name: "region",
       title: "Region",
       type: "string",
@@ -104,6 +126,7 @@ export const book = defineType({
       name: "level",
       title: "Broad level",
       type: "string",
+      hidden: true,
       options: {
         list: [
           { title: "Beginner (A1-A2)", value: "beginner" },
@@ -129,7 +152,7 @@ export const book = defineType({
           { title: "C2", value: "c2" },
         ],
       },
-      description: "Precise CEFR level used by Atlas and progression features.",
+      description: "Precise CEFR level used by Journey and progression features.",
     }),
 
     defineField({
@@ -137,20 +160,6 @@ export const book = defineType({
       title: "Topic",
       type: "string",
       description: "Main subject or theme of the book (e.g., Travel, Food).",
-    }),
-
-    defineField({
-      name: "formality",
-      title: "Formality",
-      type: "string",
-      options: {
-        list: [
-          { title: "Informal", value: "informal" },
-          { title: "Neutral", value: "neutral" },
-          { title: "Formal", value: "formal" },
-        ],
-      },
-      initialValue: "neutral",
     }),
 
     defineField({

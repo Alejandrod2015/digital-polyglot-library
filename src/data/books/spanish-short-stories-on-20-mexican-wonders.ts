@@ -13,7 +13,9 @@ export const spanishshortstorieson20mexicanwonders: Book = {
     "Family & Community",
     "History & Places"
   ],
+  "variant": "latam",
   "level": "intermediate",
+  "cefrLevel": "b1",
   "language": "spanish",
   "region": "mexico",
   "topic": "Culture & Traditions",

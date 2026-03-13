@@ -11,7 +11,9 @@ export const colloquialgermanstories: Book = {
     "Travel & Transportation",
     "Love"
   ],
+  "variant": "germany",
   "level": "intermediate",
+  "cefrLevel": "b1",
   "language": "german",
   "region": "germany",
   "topic": "Food & Cooking",

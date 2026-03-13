@@ -27,7 +27,7 @@ function clamp(value: number, min: number, max: number): number {
 function motivationalLine(progress: ProgressPayload): string {
   if (progress.storyStreakDays >= 7) return "Your reading habit is real now. Protect the streak.";
   if (progress.weeklyStoriesFinished >= progress.weeklyGoalStories) return "Weekly story goal reached. Strong consistency.";
-  if (progress.regionsExplored >= 3) return "You are expanding your atlas, not just finishing stories.";
+  if (progress.regionsExplored >= 3) return "You are expanding your learning journey, not just finishing stories.";
   return "One finished story a day is enough to keep momentum.";
 }
 
@@ -102,7 +102,7 @@ export default function ProgressPage() {
         accent: "bg-[#ff8a5b]",
       },
       {
-        label: "Atlas",
+        label: "Pathfinder",
         description: "Explore 3 regions",
         current: progress.regionsExplored,
         target: 3,
@@ -213,7 +213,7 @@ export default function ProgressPage() {
                 <p className="mt-1 text-xs text-slate-300">stories finished</p>
               </div>
               <div className="rounded-[22px] border border-[#34516f] bg-[#18314d] p-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Atlas</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Regions</p>
                 <p className="mt-2 text-3xl font-bold">{progress.regionsExplored}</p>
                 <p className="mt-1 text-xs text-slate-300">regions explored</p>
               </div>

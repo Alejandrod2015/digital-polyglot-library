@@ -11,7 +11,6 @@ import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegme
 import { getSegmentIdFromSourcePath, isStandaloneSourcePath } from "@/lib/storySource";
 
 declare global {
-  // eslint-disable-next-line no-var
   var __prisma__: PrismaClient | undefined;
 }
 const prisma = globalThis.__prisma__ ?? new PrismaClient();
@@ -198,6 +197,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         ...fav,
         language: inferredLanguage || null,
         sourcePath: resolvedSourcePath,
+        practiceSource: "user_saved" as const,
         wordType:
           normalizeVocabType(fav.wordType, {
             word: fav.word,

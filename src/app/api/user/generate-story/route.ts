@@ -16,6 +16,7 @@ import {
   countStoryWords,
 } from "@/lib/storyLength";
 import { broadLevelFromCefr, cefrPromptLabel, normalizeCefrLevel, normalizeBroadLevel } from "@/lib/cefr";
+import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
@@ -519,6 +520,7 @@ export async function POST(req: Request) {
 
     const body = (await req.json()) as {
       language?: string;
+      variant?: string;
       region?: string;
       cefrLevel?: string;
       level?: string;
@@ -529,6 +531,7 @@ export async function POST(req: Request) {
 
     const {
       language = "Spanish",
+      variant,
       region,
       cefrLevel,
       level = "intermediate",
@@ -538,6 +541,7 @@ export async function POST(req: Request) {
     } = body;
     const normalizedCefrLevel = normalizeCefrLevel(cefrLevel);
     const normalizedBroadLevel = broadLevelFromCefr(normalizedCefrLevel) ?? normalizeBroadLevel(level) ?? "beginner";
+    const normalizedVariant = normalizeVariant(variant);
     const learnerProfile = cefrPromptLabel(normalizedCefrLevel, normalizedBroadLevel);
     const requestedTopic = typeof topic === "string" ? topic.trim() : "";
     const customTopicResolved =
@@ -545,11 +549,13 @@ export async function POST(req: Request) {
     const resolvedTopic = customTopicResolved || requestedTopic;
 
     const regionClause = region ? `, specifically from ${region}` : "";
+    const variantClause = buildVariantPromptClause(language, normalizedVariant);
 
     const basePrompt = `
 You are an expert fiction writer and language teacher.
 Write a vivid, modern story in ${language}${regionClause} for a ${learnerProfile} learner.
 ${resolvedTopic ? `The topic is "${resolvedTopic}".` : "Choose a concrete, modern topic that fits the level."}
+${variantClause}
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
 Never return one-word literal translations.
@@ -773,6 +779,7 @@ Return ONLY valid JSON:
         vocab: finalVocab,
         audioStatus: "pending",
         language,
+        variant: normalizedVariant,
         region,
         level: normalizedLevel,
         cefrLevel: normalizedCefrLevel,
@@ -820,6 +827,7 @@ Return ONLY valid JSON:
           text: normalizedText,
           title,
           language,
+          variant: normalizedVariant,
           region,
         }),
       }).catch((err) => console.error("[background audio job failed]", err));
@@ -836,6 +844,7 @@ Return ONLY valid JSON:
         text: savedStory.text,
         vocab: savedStory.vocab,
         language: savedStory.language,
+        variant: savedStory.variant,
         region: savedStory.region,
         level: savedStory.level,
         cefrLevel: savedStory.cefrLevel,

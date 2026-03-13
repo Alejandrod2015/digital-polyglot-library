@@ -74,6 +74,7 @@ export default function VocabGeneratorInput() {
   const formId = useFormValue(['_id']) as string | undefined
   const text = useFormValue(['text']) as string | undefined
   const language = useFormValue(['language']) as string | undefined
+  const variant = useFormValue(['variant']) as string | undefined
   const cefrLevel = useFormValue(['cefrLevel']) as string | undefined
   const level = useFormValue(['level']) as string | undefined
   const focus = useFormValue(['focus']) as string | undefined
@@ -111,6 +112,7 @@ export default function VocabGeneratorInput() {
         body: JSON.stringify({
           text: cleanedText,
           language: language ?? 'spanish',
+          variant: variant?.trim() || undefined,
           cefrLevel: resolvedCefrLevel,
           level: resolvedBroadLevel,
           focus: focus ?? 'verbs',
@@ -167,6 +169,7 @@ export default function VocabGeneratorInput() {
         .patch(targetId)
         .set({
           vocabRaw: JSON.stringify(rows, null, 2),
+          vocabValidationRaw: '',
         })
         .commit()
 

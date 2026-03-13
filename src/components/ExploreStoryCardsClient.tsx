@@ -11,6 +11,7 @@ type ExploreStoryCardItem = {
   subtitle: string;
   coverUrl: string;
   language: string;
+  variant?: string;
   region?: string;
   level: string;
   topic?: string;
@@ -111,6 +112,7 @@ export default function ExploreStoryCardsClient({ items }: Props) {
           coverUrl={story.coverUrl}
           level={story.level}
           language={story.language}
+          variant={story.variant}
           region={story.region}
           metaSecondary={`${formatAudioDuration(durations[story.id])} · ${formatTopic(story.topic)}`}
         />

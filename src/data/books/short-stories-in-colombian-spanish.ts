@@ -13,7 +13,9 @@ export const shortstoriesincolombianspanish: Book = {
     "Work & Career",
     "Food & Cooking"
   ],
+  "variant": "latam",
   "level": "intermediate",
+  "cefrLevel": "b1",
   "language": "spanish",
   "region": "colombia",
   "topic": "Family & Community",

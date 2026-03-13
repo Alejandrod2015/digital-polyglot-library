@@ -1,6 +1,8 @@
 import { unstable_cache } from "next/cache";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
+import { resolveContentVariant } from "@/lib/languageVariant";
+import type { CefrLevel, Level } from "@/types/books";
 
 export type PublicStandaloneStory = {
   id: string;
@@ -10,10 +12,15 @@ export type PublicStandaloneStory = {
   vocabRaw: string | null;
   theme: string[];
   language: string | null;
+  variant: string | null;
   region: string | null;
   level: string | null;
+  cefrLevel: string | null;
   focus: string | null;
   topic: string | null;
+  journeyEligible: boolean | null;
+  journeyTopic: string | null;
+  journeyOrder: number | null;
   coverUrl: string | null;
   audioUrl: string | null;
   createdAt: string;
@@ -27,14 +34,46 @@ const standaloneStoryFields = `
   vocabRaw,
   "theme": coalesce(theme, []),
   language,
+  variant,
   "region": coalesce(region_es, region_en, region_fr, region_it, region_pt, region_de),
   level,
+  cefrLevel,
   focus,
   topic,
+  journeyEligible,
+  journeyTopic,
+  journeyOrder,
   "coverUrl": cover.asset->url,
   "audioUrl": audio.asset->url,
   "createdAt": _createdAt
 `;
+
+const legacyLevelFallback: Record<Level, CefrLevel> = {
+  beginner: "a1",
+  intermediate: "b1",
+  advanced: "c1",
+};
+
+function normalizeStandaloneStory(story: PublicStandaloneStory): PublicStandaloneStory {
+  const resolvedLevel =
+    typeof story.level === "string" &&
+    ["beginner", "intermediate", "advanced"].includes(story.level)
+      ? (story.level as Level)
+      : null;
+
+  return {
+    ...story,
+    variant:
+      resolveContentVariant({
+        language: story.language,
+        variant: story.variant,
+        region: story.region,
+      }) ?? null,
+    cefrLevel:
+      story.cefrLevel ??
+      (resolvedLevel ? legacyLevelFallback[resolvedLevel] : null),
+  };
+}
 
 const getPublishedStandaloneStoriesCached = unstable_cache(
   async (): Promise<PublicStandaloneStory[]> => {
@@ -42,7 +81,8 @@ const getPublishedStandaloneStoriesCached = unstable_cache(
       ${standaloneStoryFields}
     }`;
 
-    return client.fetch<PublicStandaloneStory[]>(query);
+    const stories = await client.fetch<PublicStandaloneStory[]>(query);
+    return stories.map(normalizeStandaloneStory);
   },
   ["published-standalone-stories-v1"],
   { revalidate: 60, tags: ["published-standalone-stories"] }
@@ -63,7 +103,8 @@ export async function getStandaloneStoryBySlug(
     ${standaloneStoryFields}
   }`;
 
-  return client.fetch<PublicStandaloneStory | null>(query, { slug });
+  const story = await client.fetch<PublicStandaloneStory | null>(query, { slug });
+  return story ? normalizeStandaloneStory(story) : null;
 }
 
 export async function getStandaloneStoriesByIds(
@@ -79,7 +120,8 @@ export async function getStandaloneStoriesByIds(
     ${standaloneStoryFields}
   }`;
 
-  return client.fetch<PublicStandaloneStory[]>(query, { ids });
+  const stories = await client.fetch<PublicStandaloneStory[]>(query, { ids });
+  return stories.map(normalizeStandaloneStory);
 }
 
 export async function getStandaloneStoriesBySlugs(
@@ -95,5 +137,6 @@ export async function getStandaloneStoriesBySlugs(
     ${standaloneStoryFields}
   }`;
 
-  return client.fetch<PublicStandaloneStory[]>(query, { slugs });
+  const stories = await client.fetch<PublicStandaloneStory[]>(query, { slugs });
+  return stories.map(normalizeStandaloneStory);
 }

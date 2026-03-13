@@ -13,6 +13,7 @@ export type PracticeFavoriteItem = {
   sourcePath?: string | null;
   language?: string | null;
   nextReviewAt?: string | null;
+  practiceSource?: "curriculum" | "user_saved" | "both" | null;
 };
 
 export type PracticeMode =
@@ -114,16 +115,60 @@ function shuffle<T>(items: T[]): T[] {
   return next;
 }
 
-function uniqueByWord(items: PracticeFavoriteItem[]): PracticeFavoriteItem[] {
-  const seen = new Set<string>();
-  const out: PracticeFavoriteItem[] = [];
+function mergePracticeSource(
+  current?: PracticeFavoriteItem["practiceSource"],
+  incoming?: PracticeFavoriteItem["practiceSource"]
+): PracticeFavoriteItem["practiceSource"] {
+  if (current === "both" || incoming === "both") return "both";
+  if (!current) return incoming ?? null;
+  if (!incoming) return current;
+  return current === incoming ? current : "both";
+}
+
+function pickPreferredValue(current?: string | null, incoming?: string | null): string | null | undefined {
+  const currentText = normalizeText(current);
+  const incomingText = normalizeText(incoming);
+  if (!currentText) return incomingText || current || incoming;
+  if (!incomingText) return current;
+  return incomingText.length > currentText.length ? incoming : current;
+}
+
+function mergePracticeItem(current: PracticeFavoriteItem, incoming: PracticeFavoriteItem): PracticeFavoriteItem {
+  const currentNextReviewAt = current.nextReviewAt ? Date.parse(current.nextReviewAt) : Number.NaN;
+  const incomingNextReviewAt = incoming.nextReviewAt ? Date.parse(incoming.nextReviewAt) : Number.NaN;
+
+  return {
+    ...current,
+    translation: pickPreferredValue(current.translation, incoming.translation) ?? current.translation,
+    wordType: pickPreferredValue(current.wordType, incoming.wordType) ?? current.wordType,
+    exampleSentence: pickPreferredValue(current.exampleSentence, incoming.exampleSentence) ?? current.exampleSentence,
+    storySlug: pickPreferredValue(current.storySlug, incoming.storySlug) ?? current.storySlug,
+    storyTitle: pickPreferredValue(current.storyTitle, incoming.storyTitle) ?? current.storyTitle,
+    sourcePath: pickPreferredValue(current.sourcePath, incoming.sourcePath) ?? current.sourcePath,
+    language: pickPreferredValue(current.language, incoming.language) ?? current.language,
+    nextReviewAt:
+      Number.isFinite(currentNextReviewAt) && Number.isFinite(incomingNextReviewAt)
+        ? currentNextReviewAt <= incomingNextReviewAt
+          ? current.nextReviewAt
+          : incoming.nextReviewAt
+        : current.nextReviewAt ?? incoming.nextReviewAt ?? null,
+    practiceSource: mergePracticeSource(current.practiceSource, incoming.practiceSource),
+  };
+}
+
+export function mergePracticeItemsByWord(items: PracticeFavoriteItem[]): PracticeFavoriteItem[] {
+  const merged = new Map<string, PracticeFavoriteItem>();
   for (const item of items) {
     const key = `${normalizeKey(item.language)}::${normalizeKey(item.word)}`;
-    if (!normalizeText(item.word) || seen.has(key)) continue;
-    seen.add(key);
-    out.push(item);
+    if (!normalizeText(item.word)) continue;
+    const existing = merged.get(key);
+    merged.set(key, existing ? mergePracticeItem(existing, item) : item);
   }
-  return out;
+  return Array.from(merged.values());
+}
+
+function uniqueByWord(items: PracticeFavoriteItem[]): PracticeFavoriteItem[] {
+  return mergePracticeItemsByWord(items);
 }
 
 function inferCatalogPool(): PracticeFavoriteItem[] {
@@ -147,6 +192,7 @@ function inferCatalogPool(): PracticeFavoriteItem[] {
           storyTitle: normalizeText(story.title) || null,
           sourcePath: `/books/${book.slug}/${story.slug}`,
           language: normalizeText(story.language || book.language) || null,
+          practiceSource: "curriculum",
         });
       }
     }
@@ -396,11 +442,37 @@ export function getDuePracticeItems(items: PracticeFavoriteItem[]): PracticeFavo
 }
 
 function getPracticeSource(items: PracticeFavoriteItem[]): PracticeFavoriteItem[] {
-  const due = uniqueByWord(getDuePracticeItems(items));
   const all = uniqueByWord(items);
+  const due = uniqueByWord(getDuePracticeItems(all));
   if (due.length === 0) return all;
   const dueKeys = new Set(due.map((item) => `${normalizeKey(item.language)}::${normalizeKey(item.word)}`));
-  return [...due, ...all.filter((item) => !dueKeys.has(`${normalizeKey(item.language)}::${normalizeKey(item.word)}`))];
+  const sourceWeight = (item: PracticeFavoriteItem) => {
+    switch (item.practiceSource) {
+      case "both":
+        return 3;
+      case "curriculum":
+      case "user_saved":
+        return 2;
+      default:
+        return 1;
+    }
+  };
+  const sortByPriority = (pool: PracticeFavoriteItem[]) =>
+    [...pool].sort((a, b) => {
+      const weightDiff = sourceWeight(b) - sourceWeight(a);
+      if (weightDiff !== 0) return weightDiff;
+      const aReview = a.nextReviewAt ? Date.parse(a.nextReviewAt) : Number.NaN;
+      const bReview = b.nextReviewAt ? Date.parse(b.nextReviewAt) : Number.NaN;
+      if (Number.isFinite(aReview) && Number.isFinite(bReview) && aReview !== bReview) {
+        return aReview - bReview;
+      }
+      return a.word.localeCompare(b.word);
+    });
+
+  return [
+    ...sortByPriority(due),
+    ...sortByPriority(all.filter((item) => !dueKeys.has(`${normalizeKey(item.language)}::${normalizeKey(item.word)}`))),
+  ];
 }
 
 export function buildPracticeSession(
@@ -450,6 +522,79 @@ export function buildPracticeSession(
   }
 
   return exercises;
+}
+
+function getExerciseAnchor(exercise: PracticeExercise): string {
+  switch (exercise.type) {
+    case "meaning_in_context":
+      return normalizeKey(exercise.word);
+    case "fill_blank":
+    case "natural_expression":
+    case "listen_choose":
+      return normalizeKey(exercise.answer);
+    case "match_meaning":
+      return normalizeKey(exercise.pairs.map((pair) => pair.word).join("|"));
+  }
+}
+
+export function buildMixedPracticeSession(
+  items: PracticeFavoriteItem[],
+  plan: PracticeMode[],
+  maxExercises = 10
+): PracticeExercise[] {
+  const sessionsByMode = new Map<PracticeMode, PracticeExercise[]>(
+    plan.map((mode) => [mode, buildPracticeSession(items, mode)])
+  );
+  const nextIndexByMode = new Map<PracticeMode, number>(plan.map((mode) => [mode, 0]));
+  const usedAnchors = new Set<string>();
+  const exercises: PracticeExercise[] = [];
+
+  for (const mode of plan) {
+    if (exercises.length >= maxExercises) break;
+    const session = sessionsByMode.get(mode) ?? [];
+    let index = nextIndexByMode.get(mode) ?? 0;
+
+    while (index < session.length) {
+      const candidate = session[index];
+      index += 1;
+      const anchor = getExerciseAnchor(candidate);
+      if (usedAnchors.has(anchor)) continue;
+      usedAnchors.add(anchor);
+      exercises.push(candidate);
+      break;
+    }
+
+    nextIndexByMode.set(mode, index);
+  }
+
+  if (exercises.length >= maxExercises) return exercises.slice(0, maxExercises);
+
+  for (const mode of [("meaning" as const), ("context" as const), ("natural" as const), ("listening" as const)]) {
+    if (exercises.length >= maxExercises) break;
+    const session = sessionsByMode.get(mode) ?? [];
+    let index = nextIndexByMode.get(mode) ?? 0;
+
+    while (index < session.length && exercises.length < maxExercises) {
+      const candidate = session[index];
+      index += 1;
+      const anchor = getExerciseAnchor(candidate);
+      if (usedAnchors.has(anchor)) continue;
+      usedAnchors.add(anchor);
+      exercises.push(candidate);
+    }
+
+    nextIndexByMode.set(mode, index);
+  }
+
+  return exercises;
+}
+
+export function buildTopicCheckpointPracticeSession(items: PracticeFavoriteItem[]): PracticeExercise[] {
+  return buildMixedPracticeSession(
+    items,
+    ["meaning", "context", "listening", "meaning", "context", "listening", "natural", "meaning"],
+    8
+  );
 }
 
 export function getSpeechSynthesisLang(language?: string | null): string {

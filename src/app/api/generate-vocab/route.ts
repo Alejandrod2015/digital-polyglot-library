@@ -3,6 +3,7 @@ import OpenAI from "openai";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
 import { buildSanityCorsHeaders } from "@/lib/sanityCors";
 import { cefrPromptLabel } from "@/lib/cefr";
+import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 
 type VocabItem = {
   word: string;
@@ -13,6 +14,7 @@ type VocabItem = {
 type GenerateVocabBody = {
   text?: string;
   language?: string;
+  variant?: string;
   cefrLevel?: string;
   level?: string;
   focus?: string;
@@ -230,6 +232,7 @@ function parseModelResponse(content: string): unknown {
 async function requestVocabFromModel(args: {
   text: string;
   language: string;
+  variant?: string;
   cefrLevel?: string;
   level: string;
   focus: string;
@@ -242,6 +245,7 @@ async function requestVocabFromModel(args: {
   const {
     text,
     language,
+    variant,
     cefrLevel,
     level,
     focus,
@@ -255,6 +259,7 @@ async function requestVocabFromModel(args: {
   const candidateBlock = hasCandidates
     ? `\nUse ONLY words/phrases from this exact candidate list:\n${candidates.join(", ")}\n`
     : "";
+  const variantClause = buildVariantPromptClause(language, normalizeVariant(variant));
   const prompt = `
 You extract study vocabulary from language-learning stories.
 
@@ -265,6 +270,7 @@ Task:
 - Story language: ${language}.
 - Learner level: ${cefrPromptLabel(cefrLevel, level)}.
 - Story topic/context: ${topic || "general"}.
+${variantClause}
 - Each item must have:
   - "word": exact form as it appears in the story text
   - "definition": ${
@@ -336,6 +342,7 @@ export async function POST(req: Request) {
     }
 
     const language = typeof body.language === "string" && body.language.trim() ? body.language : "Spanish";
+    const variant = typeof body.variant === "string" && body.variant.trim() ? body.variant : undefined;
     const level = typeof body.level === "string" && body.level.trim() ? body.level : "intermediate";
     const cefrLevel = typeof body.cefrLevel === "string" && body.cefrLevel.trim() ? body.cefrLevel : undefined;
     const focus = typeof body.focus === "string" && body.focus.trim() ? body.focus : "verbs";
@@ -353,6 +360,7 @@ export async function POST(req: Request) {
     let vocab = await requestVocabFromModel({
       text,
       language,
+      variant,
       cefrLevel,
       level,
       focus,
@@ -374,6 +382,7 @@ export async function POST(req: Request) {
       const refill = await requestVocabFromModel({
         text,
         language,
+        variant,
         cefrLevel,
         level,
         focus: `${focus} (strictly provide at least ${minItems} high-value items; prioritize concrete verbs, nouns, adjectives, and only short fixed expressions when clearly useful)`,
@@ -401,6 +410,7 @@ export async function POST(req: Request) {
       const refill = await requestVocabFromModel({
         text,
         language,
+        variant,
         cefrLevel,
         level,
         focus: `${focus} (fill missing items with practical, reusable vocabulary; prefer strong single words over weak expressions)`,
@@ -497,6 +507,7 @@ Return ONLY valid JSON array.
       const rescue = await requestVocabFromModel({
         text,
         language,
+        variant,
         cefrLevel,
         level,
         focus: `${focus} (final rescue pass, prioritize concrete and reusable vocabulary; avoid abstract cognates and avoid expressions unless clearly lexicalized)`,

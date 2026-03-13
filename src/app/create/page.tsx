@@ -7,7 +7,8 @@ import { Sparkles, Loader2, Music, CheckCircle, X } from 'lucide-react';
 import StoryContent from '@/components/StoryContent';
 import VocabPanel from '@/components/VocabPanel';
 import { broadLevelFromCefr } from '@/lib/cefr';
-import { formatCefrLevel, formatLanguage, formatLevel, toTitleCase } from '@/lib/displayFormat';
+import { formatCefrLevel, formatLanguage, formatLevel, formatVariant, toTitleCase } from '@/lib/displayFormat';
+import { VARIANT_OPTIONS_BY_LANGUAGE } from '@/lib/languageVariant';
 
 type Plan = 'free' | 'basic' | 'premium' | 'polyglot';
 type CreateStatus = 'idle' | 'generating_text' | 'generating_audio' | 'done' | 'audio_failed';
@@ -22,6 +23,7 @@ type GeneratedStory = {
   text: string;
   vocab?: VocabItem[];
   language?: string;
+  variant?: string | null;
   region?: string | null;
   level?: string;
   cefrLevel?: string;
@@ -38,6 +40,7 @@ type CreateApiResponse = {
 
 type CreateRequestPayload = {
   language: string;
+  variant: string;
   region: string;
   cefrLevel: string;
   level: string;
@@ -76,14 +79,11 @@ const regionsByLanguage: Record<string, string[]> = {
 
 const cefrLevels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const focusOptions = [
-  'Everyday conversation',
-  'Useful phrases',
-  'Verbs in context',
-  'Idioms & expressions',
-  'Colloquial speech',
-  'Storytelling in the past',
-  'Future plans & intentions',
-  'Formal situations',
+  'Adjectives',
+  'Verbs',
+  'Nouns',
+  'Expressions',
+  'Mixed',
 ];
 const topicOptions = [
   'Daily life',
@@ -171,6 +171,7 @@ export default function CreatePage() {
   const { user, isLoaded } = useUser();
 
   const [language, setLanguage] = useState('');
+  const [variant, setVariant] = useState('');
   const [region, setRegion] = useState('');
   const [cefrLevel, setCefrLevel] = useState('');
   const [focus, setFocus] = useState('');
@@ -199,6 +200,7 @@ export default function CreatePage() {
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? 'free';
 
   const availableRegions = regionsByLanguage[language as keyof typeof regionsByLanguage] || [];
+  const availableVariants = VARIANT_OPTIONS_BY_LANGUAGE[language.toLowerCase()] || [];
 
   const buildPayload = useCallback((): CreateRequestPayload => {
     const resolvedFocus = focus.trim();
@@ -206,6 +208,7 @@ export default function CreatePage() {
     const broadLevel = broadLevelFromCefr(cefrLevel) ?? 'beginner';
     return {
       language,
+      variant,
       region,
       cefrLevel,
       level: broadLevel,
@@ -213,7 +216,23 @@ export default function CreatePage() {
       topic: resolvedTopic,
       customTopic: customTopic.trim() || undefined,
     };
-  }, [cefrLevel, customTopic, focus, language, region, topic]);
+  }, [cefrLevel, customTopic, focus, language, region, topic, variant]);
+
+  useEffect(() => {
+    if (!language) {
+      setVariant('');
+      return;
+    }
+    const nextVariants = VARIANT_OPTIONS_BY_LANGUAGE[language.toLowerCase()] || [];
+    if (nextVariants.length === 0) {
+      setVariant('');
+      return;
+    }
+    const variantValues = nextVariants.map((entry) => entry.value);
+    if (!variantValues.includes(variant as typeof variantValues[number])) {
+      setVariant(nextVariants[0].value);
+    }
+  }, [language, variant]);
 
   const pollAudioUntilReady = useCallback(async (story: GeneratedStory): Promise<GeneratedStory> => {
     const maxWaitMs = 1000 * 60 * 3;
@@ -247,6 +266,7 @@ export default function CreatePage() {
     });
 
     if (pending.payload.region) params.set('region', pending.payload.region);
+    if (pending.payload.variant) params.set('variant', pending.payload.variant);
 
     const res = await fetch(`/api/user-stories?${params.toString()}`, { cache: 'no-store' });
     if (!res.ok) return null;
@@ -606,6 +626,7 @@ export default function CreatePage() {
             value={language}
             onChange={(e) => {
               setLanguage(e.target.value);
+              setVariant('');
               setRegion('');
             }}
             required
@@ -619,6 +640,24 @@ export default function CreatePage() {
             ))}
           </select>
         </div>
+
+        {availableVariants.length > 0 && (
+          <div>
+            <label className="block text-sm text-[var(--muted)] mb-1">Variant</label>
+            <select
+              value={variant}
+              onChange={(e) => setVariant(e.target.value)}
+              required
+              className="w-full rounded-md bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--card-border)] p-2 focus:outline-none"
+            >
+              {availableVariants.map((nextVariant) => (
+                <option key={nextVariant.value} value={nextVariant.value}>
+                  {nextVariant.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         {availableRegions.length > 0 && (
           <div>
@@ -888,7 +927,7 @@ function StoryPreview({ story }: { story: GeneratedStory }) {
       <h2 className="text-2xl font-bold mb-2 text-[var(--foreground)]">{story.title}</h2>
       <p className="text-sm text-[var(--muted)] mb-4">
         {formatLanguage(story.language || '')} • {story.cefrLevel ? formatCefrLevel(story.cefrLevel) : formatLevel(story.level || '')} •{' '}
-        {toTitleCase(story.region || 'General')}
+        {story.variant ? formatVariant(story.variant) : 'General'} • {toTitleCase(story.region || 'General')}
       </p>
 
       {!isAudioReady(story) ? (

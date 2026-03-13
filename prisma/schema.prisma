@@ -84,6 +84,7 @@ model UserStory {
   audioFilename String?
   audioStatus   String   @default("pending")
   language      String
+  variant       String?
   region        String?
   level         String
   cefrLevel     String?

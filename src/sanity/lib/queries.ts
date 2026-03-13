@@ -22,6 +22,7 @@ export async function getStoriesByBookId(bookId: string) {
 
     // 🧩 Herencia de metadatos desde el libro
     "language": coalesce(language, book->language),
+    "variant": coalesce(variant, book->variant),
     "region": coalesce(
       region_es,
       region_en,
@@ -37,6 +38,7 @@ export async function getStoriesByBookId(bookId: string) {
       book->region_de
     ),
     "level": coalesce(level, book->level),
+    "cefrLevel": coalesce(cefrLevel, book->cefrLevel),
     "focus": coalesce(focus, book->focus),
     "topic": coalesce(topic, book->topic),
 

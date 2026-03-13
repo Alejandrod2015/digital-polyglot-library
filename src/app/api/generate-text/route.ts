@@ -13,6 +13,7 @@ import {
   countStoryWords,
 } from "@/lib/storyLength";
 import { cefrPromptLabel } from "@/lib/cefr";
+import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -113,6 +114,7 @@ export async function POST(req: Request) {
 
     const {
       language = "Spanish",
+      variant,
       region,
       cefrLevel,
       level = "intermediate",
@@ -121,6 +123,7 @@ export async function POST(req: Request) {
       synopsis = "",
     } = body as {
       language?: string;
+      variant?: string;
       region?: string;
       cefrLevel?: string;
       level?: string;
@@ -129,8 +132,10 @@ export async function POST(req: Request) {
       synopsis?: string;
     };
     const learnerProfile = cefrPromptLabel(cefrLevel, level);
+    const normalizedVariant = normalizeVariant(variant);
 
     const regionClause = region ? `, specifically from ${region}` : "";
+    const variantClause = buildVariantPromptClause(language, normalizedVariant);
 
     const resolvedRequestedTopic = typeof topic === "string" ? topic.trim() : "";
     const resolvedSynopsis = typeof synopsis === "string" ? synopsis.trim() : "";
@@ -148,6 +153,7 @@ You are an expert language teacher and long story writer.
 Write a long engaging story for a ${learnerProfile} learner studying ${language}${regionClause}.
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
+${variantClause}
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
 Never return one-word literal translations.

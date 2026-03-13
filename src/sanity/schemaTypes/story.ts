@@ -5,9 +5,11 @@ import React from "react";
 import StoryGeneratorInput from "../components/StoryGeneratorInput";
 import CoverGeneratorInput from "../components/CoverGeneratorInput";
 import VocabGeneratorInput from "../components/VocabGeneratorInput";
+import VocabValidatorInput from "../components/VocabValidatorInput";
 import AudioGeneratorInput from "../components/AudioGeneratorInput";
 import StoryTextInput from "../components/StoryTextInput";
 import AutoSlugInput from "../components/AutoSlugInput";
+import StoryVocabQualityInput from "../components/StoryVocabQualityInput";
 
 type SetPatch = {
   type: "set";
@@ -129,7 +131,7 @@ export const story = defineType({
 
               try {
                 const query = `*[_type == "book" && _id == $id][0]{
-                  language, region, level, topic, formality
+                  language, variant, region, level, cefrLevel, topic
                 }`;
 
                 const response = await fetch("/api/sanity-query", {
@@ -163,16 +165,18 @@ export const story = defineType({
                 if (typeof b.language === "string") {
                   patch.push({ type: "set", path: ["language"], value: b.language });
                 }
+                if (typeof b.variant === "string") {
+                  patch.push({ type: "set", path: ["variant"], value: b.variant });
+                }
                 if (typeof b.level === "string") {
                   patch.push({ type: "set", path: ["level"], value: b.level });
+                }
+                if (typeof b.cefrLevel === "string") {
+                  patch.push({ type: "set", path: ["cefrLevel"], value: b.cefrLevel });
                 }
                 if (typeof b.topic === "string") {
                   patch.push({ type: "set", path: ["topic"], value: b.topic });
                 }
-                if (typeof b.formality === "string") {
-                  patch.push({ type: "set", path: ["formality"], value: b.formality });
-                }
-
                 if (regionField && typeof b.region === "string") {
                   patch.push({ type: "set", path: [regionField], value: b.region });
                 }
@@ -208,6 +212,28 @@ export const story = defineType({
           { title: "German", value: "german" },
         ],
       },
+    }),
+
+    defineField({
+      name: "variant",
+      title: "Variant",
+      type: "string",
+      options: {
+        list: [
+          { title: "LATAM", value: "latam" },
+          { title: "Spain", value: "spain" },
+          { title: "US", value: "us" },
+          { title: "UK", value: "uk" },
+          { title: "Brazil", value: "brazil" },
+          { title: "Portugal", value: "portugal" },
+          { title: "Germany", value: "germany" },
+          { title: "Austria", value: "austria" },
+          { title: "France", value: "france" },
+          { title: "Canada (French)", value: "canada-fr" },
+          { title: "Italy", value: "italy" },
+        ],
+      },
+      description: "Pedagogical track used for curriculum and Journey. Keep region for the exact local context.",
     }),
 
     defineField({
@@ -284,6 +310,7 @@ export const story = defineType({
       name: "level",
       title: "Broad level",
       type: "string",
+      hidden: true,
       options: {
         list: [
           { title: "Beginner", value: "beginner" },
@@ -308,22 +335,7 @@ export const story = defineType({
           { title: "C2", value: "c2" },
         ],
       },
-      description: "Precise CEFR level for Atlas and learner progression.",
-    }),
-
-    defineField({
-      name: "formality",
-      title: "Formality",
-      type: "string",
-      options: {
-        list: [
-          { title: "Informal", value: "informal" },
-          { title: "Neutral", value: "neutral" },
-          { title: "Formal", value: "formal" },
-        ],
-      },
-      initialValue: "neutral",
-      description: "Formality level inherited from the book.",
+      description: "Precise CEFR level for Journey and learner progression.",
     }),
 
     defineField({
@@ -336,24 +348,16 @@ export const story = defineType({
           { title: "Verbs", value: "verbs" },
           { title: "Nouns", value: "nouns" },
           { title: "Expressions", value: "expressions" },
-          { title: "Slang", value: "slang" },
+          { title: "Mixed", value: "mixed" },
         ],
       },
     }),
 
     defineField({
       name: "topic",
-      title: "Topic",
+      title: "Prompt topic",
       type: "string",
-      description: "Free text topic for the story theme.",
-    }),
-
-    defineField({
-      name: "theme",
-      title: "Theme / Topics",
-      type: "array",
-      of: [{ type: "string" }],
-      description: "Cultural or contextual topics covered by the story.",
+      description: "Optional free-text topic to guide generation. This does not place the story inside Journey.",
     }),
 
     defineField({
@@ -432,12 +436,41 @@ export const story = defineType({
     }),
 
     defineField({
+      name: "checkStoryVocabQuality",
+      title: "🔎 Check Story Vocabulary Quality",
+      type: "string",
+      readOnly: true,
+      components: {
+        input: () => React.createElement(StoryVocabQualityInput),
+      },
+    }),
+
+    defineField({
+      name: "storyVocabQualityRaw",
+      title: "Story vocabulary quality report",
+      type: "text",
+      description: "Auto-generated lexical quality check for the story text.",
+      rows: 8,
+      readOnly: true,
+    }),
+
+    defineField({
       name: "generateVocab",
       title: "🧠 Generate Vocabulary",
       type: "string",
       readOnly: true,
       components: {
         input: () => React.createElement(VocabGeneratorInput),
+      },
+    }),
+
+    defineField({
+      name: "validateVocab",
+      title: "✅ Validate & Fix Vocabulary",
+      type: "string",
+      readOnly: true,
+      components: {
+        input: () => React.createElement(VocabValidatorInput),
       },
     }),
 
@@ -449,6 +482,15 @@ export const story = defineType({
         "This field stores the vocabulary list generated by ChatGPT. The system will parse it automatically.",
       rows: 10,
       validation: (Rule) => Rule.custom((value) => validateVocabRaw(value)),
+    }),
+
+    defineField({
+      name: "vocabValidationRaw",
+      title: "Vocabulary validation report",
+      type: "text",
+      description: "Auto-generated validation summary for the current vocabulary list.",
+      rows: 8,
+      readOnly: true,
     }),
 
     defineField({
@@ -503,9 +545,14 @@ export const story = defineType({
   ],
 
   preview: {
-    select: { title: "title", level: "level", media: "cover" },
-    prepare({ title, level, media }) {
-      const subtitle = level ? `Level: ${level}` : null;
+    select: { title: "title", cefrLevel: "cefrLevel", level: "level", media: "cover" },
+    prepare({ title, cefrLevel, level, media }) {
+      const subtitle =
+        typeof cefrLevel === "string" && cefrLevel
+          ? `CEFR ${cefrLevel.toUpperCase()}`
+          : level
+            ? `Level: ${level}`
+            : null;
       return {
         title: title || "Untitled Story",
         subtitle: subtitle || "No level assigned",

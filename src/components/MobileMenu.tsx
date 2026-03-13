@@ -10,7 +10,6 @@ import {
   MessageSquare,
   Settings,
   ChartNoAxesColumn,
-  Brain,
   BookMarked,
   Crown,
   LogIn,
@@ -160,12 +159,12 @@ export default function MobileMenu() {
                 </Link>
 
                 <Link
-                  href="/practice"
+                  href="/my-library"
                   onClick={() => setOpen(false)}
                   className="inline-flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                 >
-                  <Brain size={20} />
-                  Practice
+                  <BookMarked size={20} />
+                  My Library
                 </Link>
 
                 {plan === "free" && (

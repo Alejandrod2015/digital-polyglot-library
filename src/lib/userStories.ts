@@ -7,6 +7,7 @@ export type PublicUserStory = {
   slug: string;
   title: string;
   language: string | null;
+  variant: string | null;
   level: string | null;
   topic: string | null;
   region: string | null;
@@ -40,6 +41,7 @@ const getPublicUserStoriesCached = unstable_cache(
           slug: true,
           title: true,
           language: true,
+          variant: true,
           level: true,
           topic: true,
           region: true,
@@ -80,6 +82,7 @@ export async function getUserStoryById(
         slug: true,
         title: true,
         language: true,
+        variant: true,
         level: true,
         topic: true,
         region: true,

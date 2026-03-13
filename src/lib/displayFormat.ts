@@ -1,4 +1,5 @@
 import { CEFR_LEVEL_LABELS, LEVEL_LABELS, type CefrLevel, type Level } from "@/types/books";
+import { formatVariantLabel } from "@/lib/languageVariant";
 
 const FALLBACK = "—";
 
@@ -98,6 +99,10 @@ export function formatTopic(value?: string): string {
 
 export function formatRegion(value?: string): string {
   return toTitleCase(value);
+}
+
+export function formatVariant(value?: string): string {
+  return formatVariantLabel(value) ?? FALLBACK;
 }
 
 export function formatLevel(value?: string): string {

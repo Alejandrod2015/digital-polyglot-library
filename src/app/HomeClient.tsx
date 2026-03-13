@@ -12,6 +12,7 @@ import RegionBadge from "@/components/RegionBadge";
 import { books } from "@/data/books";
 import { formatTopic } from "@/lib/displayFormat";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
+import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel, normalizeVariant } from "@/lib/languageVariant";
 
 type LatestBook = {
   slug: string;
@@ -137,6 +138,7 @@ type Props = {
   initialPlan: string;
   initialTargetLanguages: string[];
   initialInterests: string[];
+  initialPreferredVariant: string;
   initialHasUser: boolean;
   initialContinueListening: Array<{
     bookSlug: string;
@@ -253,6 +255,7 @@ export default function HomeClient({
   initialPlan,
   initialTargetLanguages,
   initialInterests,
+  initialPreferredVariant,
   initialHasUser,
   initialContinueListening,
   continueLoadedOnServer,
@@ -313,6 +316,11 @@ export default function HomeClient({
   const [recommendedStoryDurations, setRecommendedStoryDurations] = useState<Record<string, number>>(
     {}
   );
+  const [preferredVariantOverride, setPreferredVariantOverride] = useState<string>(
+    initialPreferredVariant
+  );
+  const [variantSaving, setVariantSaving] = useState(false);
+  const [variantHint, setVariantHint] = useState("");
   const plan = isLoaded
     ? (user?.publicMetadata?.plan as string | undefined) ?? "free"
     : initialPlan;
@@ -793,6 +801,15 @@ export default function HomeClient({
     const raw = isLoaded ? user?.publicMetadata?.preferredRegion : undefined;
     return typeof raw === "string" ? raw.toLowerCase().trim() : "";
   }, [isLoaded, user]);
+  const preferredVariant = useMemo(() => {
+    const raw = isLoaded ? user?.publicMetadata?.preferredVariant : preferredVariantOverride;
+    return typeof raw === "string" ? normalizeVariant(raw) ?? "" : "";
+  }, [isLoaded, preferredVariantOverride, user]);
+  const shouldShowVariantPrompt = useMemo(() => {
+    if (!hasSession) return false;
+    if (!languageFilter?.has("spanish")) return false;
+    return !preferredVariant;
+  }, [hasSession, languageFilter, preferredVariant]);
   const interestFilter = useMemo(() => {
     if (!isStringArray(interestsUnknown) || interestsUnknown.length === 0) return null;
     const normalized = interestsUnknown
@@ -1434,9 +1451,68 @@ export default function HomeClient({
     </Link>
   );
 
+  const savePreferredVariant = async (variantValue: string) => {
+    try {
+      setVariantSaving(true);
+      setVariantHint("");
+      const res = await fetch("/api/user/preferences", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          preferredVariant: variantValue,
+        }),
+      });
+      if (!res.ok) throw new Error("Failed to save preferred variant");
+      setPreferredVariantOverride(variantValue);
+      setVariantHint("Preference saved.");
+      await user?.reload();
+    } catch {
+      setVariantHint("Could not save your variant right now.");
+    } finally {
+      setVariantSaving(false);
+    }
+  };
+
   return (
     <div className="min-h-full w-full flex flex-col items-center px-8 pb-28">
       <>
+      {shouldShowVariantPrompt && (
+        <section className="w-full max-w-5xl pt-6 md:pt-8 mb-8 md:mb-10">
+          <div className="rounded-[1.6rem] border border-[var(--card-border)] bg-[linear-gradient(180deg,#153355_0%,#102947_100%)] p-5 shadow-[0_18px_50px_rgba(6,17,38,0.28)]">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
+                  Spanish journey
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
+                  Pick your Spanish track
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm text-[var(--muted)]">
+                  Choose the variety you want to follow across Journey, stories, and recommendations.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                {(VARIANT_OPTIONS_BY_LANGUAGE.spanish ?? []).map((variant) => (
+                  <button
+                    key={variant.value}
+                    type="button"
+                    onClick={() => void savePreferredVariant(variant.value)}
+                    disabled={variantSaving}
+                    className="inline-flex min-w-[140px] items-center justify-center rounded-full border border-[var(--primary)]/25 bg-[var(--primary)] px-5 py-3 text-sm font-black text-[#0d1830] shadow-[0_10px_24px_rgba(163,230,53,0.18)] transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {formatVariantLabel(variant.value) ?? variant.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            {variantHint ? (
+              <p className="mt-3 text-sm font-medium text-[var(--primary)]">{variantHint}</p>
+            ) : null}
+          </div>
+        </section>
+      )}
+
       {/* Free featured story for free/basic users */}
       {isPersonalizationReady && featuredFreeStory && continueListening.length === 0 && (
         <section className="w-full max-w-5xl text-center pt-8 md:pt-10 mb-10 md:mb-12">
