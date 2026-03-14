@@ -1,3 +1,5 @@
+import { alignStorySentencesToSegments, splitStoryTextIntoSentences, type AudioSegment } from "@/lib/audioSegments";
+
 export type AudioQaStatus = "pass" | "warning" | "fail" | "unavailable";
 
 export type AudioQaResult = {
@@ -102,5 +104,99 @@ export function analyzeTranscriptQuality(
     score: Math.round(similarity * 1000) / 1000,
     transcript: cleanTranscript,
     notes,
+  };
+}
+
+export function analyzeDeliveryQuality(expectedText: string, transcriptSegments: AudioSegment[]): AudioQaResult {
+  if (!Array.isArray(transcriptSegments) || transcriptSegments.length === 0) {
+    return {
+      status: "unavailable",
+      score: null,
+      transcript: null,
+      notes: ["Timing segments were not available for delivery QA."],
+    };
+  }
+
+  const expectedSentences = splitStoryTextIntoSentences(expectedText);
+  if (expectedSentences.length < 2) {
+    return {
+      status: "unavailable",
+      score: null,
+      transcript: null,
+      notes: ["Not enough sentence boundaries were found for delivery QA."],
+    };
+  }
+
+  const alignedSentences = alignStorySentencesToSegments(expectedText, transcriptSegments);
+  if (alignedSentences.length < 2) {
+    return {
+      status: "unavailable",
+      score: null,
+      transcript: null,
+      notes: ["Could not align sentence timing for delivery QA."],
+    };
+  }
+
+  const notes: string[] = [];
+  let warningCount = 0;
+  let failCount = 0;
+  let checkedBoundaries = 0;
+
+  for (let index = 0; index < alignedSentences.length - 1; index += 1) {
+    const current = alignedSentences[index];
+    const next = alignedSentences[index + 1];
+    const sentence = current.text.trim();
+    const lastChar = sentence.slice(-1);
+    const gap = Math.max(0, next.startSec - current.endSec);
+
+    let requiredPause = 0;
+    if (/[.!?]/.test(lastChar)) requiredPause = 0.22;
+    else if (lastChar === ":") requiredPause = 0.18;
+    else if (lastChar === ",") requiredPause = 0.08;
+    else continue;
+
+    checkedBoundaries += 1;
+    const gapMs = Math.round(gap * 1000);
+    const sentencePreview =
+      sentence.length > 72 ? `${sentence.slice(0, 72).trimEnd()}...` : sentence;
+
+    if (gap < requiredPause * 0.55) {
+      failCount += 1;
+      notes.push(`Sentence ending may sound unfinished after "${sentencePreview}" (${gapMs}ms pause).`);
+    } else if (gap < requiredPause) {
+      warningCount += 1;
+      notes.push(`Sentence pause may be too tight after "${sentencePreview}" (${gapMs}ms pause).`);
+    }
+  }
+
+  if (checkedBoundaries === 0) {
+    return {
+      status: "unavailable",
+      score: null,
+      transcript: null,
+      notes: ["No punctuation boundaries could be evaluated for delivery QA."],
+    };
+  }
+
+  const penalties = failCount * 0.22 + warningCount * 0.08;
+  const score = Math.max(0, 1 - penalties / checkedBoundaries);
+
+  let status: AudioQaStatus = "pass";
+  if (failCount > 0 || score < 0.8) status = "fail";
+  else if (warningCount > 0 || score < 0.92) status = "warning";
+
+  const summary = [
+    `Delivery score: ${Math.round(score * 1000) / 10}%`,
+    `Checked sentence boundaries: ${checkedBoundaries}`,
+  ];
+
+  if (failCount > 0) summary.push(`Hard pause issues: ${failCount}`);
+  if (warningCount > 0) summary.push(`Tight pause warnings: ${warningCount}`);
+
+  return {
+    status,
+    score: Math.round(score * 1000) / 1000,
+    transcript: null,
+    notes: [...summary, ...notes],
   };
 }

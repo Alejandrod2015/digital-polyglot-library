@@ -192,6 +192,86 @@ export default function AudioGeneratorInput() {
     }
   }
 
+  async function analyzeDelivery() {
+    try {
+      setLoading(true)
+      setMsg(null)
+      setError(null)
+
+      const documentId = toCleanText(formId)
+      const cleanTitle = toCleanText(title)
+      const cleanText = toCleanText(text)
+      const cleanAudioRef = toCleanText(audioAssetRef)
+
+      if (!documentId) throw new Error('Save the draft once before analyzing delivery.')
+      if (!cleanTitle) throw new Error('Add a title before analyzing delivery.')
+      if (!cleanText) throw new Error('Add story text before analyzing delivery.')
+      if (!cleanAudioRef) throw new Error('Generate or attach an audio file first.')
+
+      const res = await fetch(`${apiBase}/api/sanity/analyze-audio-delivery`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          documentId,
+          title: cleanTitle,
+          text: cleanText,
+        }),
+      })
+
+      let data:
+        | {
+            error?: string
+            details?: string
+            audioDeliveryQa?: {
+              status?: 'pass' | 'warning' | 'fail' | 'unavailable'
+              score?: number | null
+              notes?: string[]
+            }
+          }
+        | undefined
+      try {
+        data = (await res.json()) as {
+          error?: string
+          details?: string
+          audioDeliveryQa?: {
+            status?: 'pass' | 'warning' | 'fail' | 'unavailable'
+            score?: number | null
+            notes?: string[]
+          }
+        }
+      } catch {
+        throw new Error('The server did not return valid JSON. Please try again.')
+      }
+
+      if (!res.ok) {
+        throw new Error(data.error || data.details || 'Failed to analyze delivery.')
+      }
+
+      const qaStatus = data?.audioDeliveryQa?.status
+      const qaScore =
+        typeof data?.audioDeliveryQa?.score === 'number'
+          ? `${Math.round(data.audioDeliveryQa.score * 100)}%`
+          : null
+
+      if (qaStatus === 'pass') {
+        setMsg(`Delivery analyzed successfully. QA passed${qaScore ? ` (${qaScore})` : ''}.`)
+      } else if (qaStatus === 'warning' || qaStatus === 'fail') {
+        const prefix = qaStatus === 'fail' ? 'Delivery analysis found a serious pacing issue.' : 'Delivery analysis recommends a review.'
+        const notes = Array.isArray(data?.audioDeliveryQa?.notes)
+          ? data.audioDeliveryQa.notes.slice(0, 2).join(' ')
+          : ''
+        setError(`${prefix}${qaScore ? ` Score: ${qaScore}.` : ''}${notes ? ` ${notes}` : ''}`)
+      } else {
+        setMsg('Delivery analyzed. QA result was unavailable.')
+      }
+    } catch (err) {
+      const e = err as Error
+      setError(e.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <Stack space={3}>
       <Card padding={3}>
@@ -208,6 +288,12 @@ export default function AudioGeneratorInput() {
             mode="ghost"
             disabled={loading}
             onClick={analyzeExistingAudio}
+          />
+          <Button
+            text={loading ? 'Analyzing...' : 'Analyze Delivery'}
+            mode="ghost"
+            disabled={loading}
+            onClick={analyzeDelivery}
           />
           {loading ? (
             <Flex align="center" gap={2}>

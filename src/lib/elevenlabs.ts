@@ -2,7 +2,7 @@
 import OpenAI from "openai";
 import { sanityWriteClient } from "@/sanity";
 import { buildAudioSegmentsFromTranscript, type AudioSegment, type TranscriptSegment } from "@/lib/audioSegments";
-import { analyzeTranscriptQuality, type AudioQaResult } from "@/lib/audioQa";
+import { analyzeDeliveryQuality, analyzeTranscriptQuality, type AudioQaResult } from "@/lib/audioQa";
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -234,6 +234,16 @@ export async function analyzeExistingAudio(
   const filename = `${filenameFromTitle(title || "audio_qa")}_qa.mp3`;
   const transcription = await transcribeAudioSegments(audioBuffer, filename, expectedText);
   return analyzeTranscriptQuality(expectedText, transcription.transcriptText);
+}
+
+export async function analyzeExistingAudioDelivery(
+  audioBuffer: Buffer,
+  expectedText: string,
+  title: string
+): Promise<AudioQaResult> {
+  const filename = `${filenameFromTitle(title || "audio_delivery_qa")}_delivery.mp3`;
+  const transcription = await transcribeAudioSegments(audioBuffer, filename, expectedText);
+  return analyzeDeliveryQuality(expectedText, transcription.audioSegments);
 }
 
 function filenameFromTitle(title: string): string {

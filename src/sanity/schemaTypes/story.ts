@@ -579,6 +579,42 @@ export const story = defineType({
       type: "datetime",
       readOnly: true,
     }),
+    defineField({
+      name: "audioDeliveryQaStatus",
+      title: "Audio delivery QA status",
+      type: "string",
+      readOnly: true,
+      options: {
+        list: [
+          { title: "Pass", value: "pass" },
+          { title: "Warning", value: "warning" },
+          { title: "Fail", value: "fail" },
+          { title: "Unavailable", value: "unavailable" },
+        ],
+      },
+      description: "Automatic delivery QA result based on sentence pauses.",
+    }),
+    defineField({
+      name: "audioDeliveryQaScore",
+      title: "Audio delivery QA score",
+      type: "number",
+      readOnly: true,
+      description: "Delivery score based on sentence pause timing (0 to 1).",
+    }),
+    defineField({
+      name: "audioDeliveryQaNotes",
+      title: "Audio delivery QA notes",
+      type: "text",
+      rows: 6,
+      readOnly: true,
+      description: "Automatic notes about pauses and possible unfinished sentence endings.",
+    }),
+    defineField({
+      name: "audioDeliveryQaCheckedAt",
+      title: "Audio delivery QA checked at",
+      type: "datetime",
+      readOnly: true,
+    }),
 
     defineField({
       name: "published",
