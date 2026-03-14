@@ -422,6 +422,50 @@ export const standaloneStory = defineType({
         },
       ],
     }),
+    defineField({
+      name: "audioQaStatus",
+      title: "Audio QA status",
+      type: "string",
+      readOnly: true,
+      options: {
+        list: [
+          { title: "Pass", value: "pass" },
+          { title: "Warning", value: "warning" },
+          { title: "Fail", value: "fail" },
+          { title: "Unavailable", value: "unavailable" },
+        ],
+      },
+      description: "Automatic QA result based on transcript similarity.",
+    }),
+    defineField({
+      name: "audioQaScore",
+      title: "Audio QA score",
+      type: "number",
+      readOnly: true,
+      description: "Similarity score between expected narration and transcript (0 to 1).",
+    }),
+    defineField({
+      name: "audioQaNotes",
+      title: "Audio QA notes",
+      type: "text",
+      rows: 6,
+      readOnly: true,
+      description: "Automatic notes for the audio review team.",
+    }),
+    defineField({
+      name: "audioQaTranscript",
+      title: "Audio QA transcript",
+      type: "text",
+      rows: 8,
+      readOnly: true,
+      description: "Transcript used to compare the generated audio with the expected text.",
+    }),
+    defineField({
+      name: "audioQaCheckedAt",
+      title: "Audio QA checked at",
+      type: "datetime",
+      readOnly: true,
+    }),
 
     defineField({
       name: "published",

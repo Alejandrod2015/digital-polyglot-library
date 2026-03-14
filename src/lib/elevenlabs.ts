@@ -2,6 +2,7 @@
 import OpenAI from "openai";
 import { sanityWriteClient } from "@/sanity";
 import { buildAudioSegmentsFromTranscript, type AudioSegment, type TranscriptSegment } from "@/lib/audioSegments";
+import { analyzeTranscriptQuality, type AudioQaResult } from "@/lib/audioQa";
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -68,7 +69,7 @@ function selectVoiceId(candidates: string[], seed: string): string {
   return candidates[hashSeed(seed) % candidates.length];
 }
 
-function buildAudioNarrationText(title: string, storyText: string): string {
+export function buildAudioNarrationText(title: string, storyText: string): string {
   const plainTitle = title.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
   const plainStory = storyText.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 
@@ -90,7 +91,13 @@ export async function generateAndUploadAudio(
   title: string,
   language?: string,
   region?: string
-): Promise<{ url: string; filename: string; assetId: string; audioSegments: AudioSegment[] } | null> {
+): Promise<{
+  url: string;
+  filename: string;
+  assetId: string;
+  audioSegments: AudioSegment[];
+  audioQa: AudioQaResult;
+} | null> {
   try {
     // 🔹 El audio debe narrar primero el título, luego hacer una pausa y empezar la historia.
     const narrationText = buildAudioNarrationText(title, storyText);
@@ -180,10 +187,10 @@ export async function generateAndUploadAudio(
 
     const arrayBuffer = await response.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
-    const audioSegments = await transcribeAudioSegments(buffer, filenameFromTitle(title), narrationText);
-
     // 📁 Crear nombre de archivo seguro
     const filename = `${filenameFromTitle(title)}_${Date.now()}.mp3`;
+    const transcription = await transcribeAudioSegments(buffer, filename, narrationText);
+    const audioQa = analyzeTranscriptQuality(narrationText, transcription.transcriptText);
 
     console.log("[elevenlabs] ⬆ Uploading to Sanity...");
 
@@ -206,11 +213,27 @@ export async function generateAndUploadAudio(
 
     console.log("[elevenlabs] ✅ Audio uploaded:", filename, "→", url);
 
-    return { url, filename, assetId: asset._id, audioSegments };
+    return {
+      url,
+      filename,
+      assetId: asset._id,
+      audioSegments: transcription.audioSegments,
+      audioQa,
+    };
   } catch (err) {
     console.error("[elevenlabs] 💥 Failed to generate/upload audio:", err);
     return null;
   }
+}
+
+export async function analyzeExistingAudio(
+  audioBuffer: Buffer,
+  expectedText: string,
+  title: string
+): Promise<AudioQaResult> {
+  const filename = `${filenameFromTitle(title || "audio_qa")}_qa.mp3`;
+  const transcription = await transcribeAudioSegments(audioBuffer, filename, expectedText);
+  return analyzeTranscriptQuality(expectedText, transcription.transcriptText);
 }
 
 function filenameFromTitle(title: string): string {
@@ -219,17 +242,17 @@ function filenameFromTitle(title: string): string {
 
 async function transcribeAudioSegments(
   buffer: Buffer,
-  safeTitle: string,
+  filename: string,
   narrationText: string
-): Promise<AudioSegment[]> {
+): Promise<{ audioSegments: AudioSegment[]; transcriptText: string | null }> {
   if (!openai) {
     console.warn("[audio-segments] Missing OPENAI_API_KEY, skipping segment generation");
-    return [];
+    return { audioSegments: [], transcriptText: null };
   }
 
   try {
     const fileBytes = new Uint8Array(buffer);
-    const file = new File([fileBytes], `${safeTitle}.mp3`, { type: "audio/mpeg" });
+    const file = new File([fileBytes], filename, { type: "audio/mpeg" });
     const transcript = await openai.audio.transcriptions.create({
       file,
       model: "whisper-1",
@@ -242,9 +265,12 @@ async function transcribeAudioSegments(
         ? (transcript.segments as TranscriptSegment[])
         : [];
 
-    return buildAudioSegmentsFromTranscript(rawSegments);
+    return {
+      audioSegments: buildAudioSegmentsFromTranscript(rawSegments),
+      transcriptText: typeof transcript.text === "string" ? transcript.text : null,
+    };
   } catch (error) {
     console.error("[audio-segments] Failed to build segments from transcription:", error);
-    return [];
+    return { audioSegments: [], transcriptText: null };
   }
 }

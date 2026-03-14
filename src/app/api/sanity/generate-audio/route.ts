@@ -102,6 +102,11 @@ export async function POST(req: Request) {
           _type: "file",
           asset: { _type: "reference", _ref: audio.assetId },
         },
+        audioQaStatus: audio.audioQa.status,
+        audioQaScore: audio.audioQa.score,
+        audioQaTranscript: audio.audioQa.transcript,
+        audioQaNotes: audio.audioQa.notes.join("\n"),
+        audioQaCheckedAt: new Date().toISOString(),
       })
       .commit({ autoGenerateArrayKeys: true });
 
@@ -111,6 +116,7 @@ export async function POST(req: Request) {
         audioAssetId: audio.assetId,
         url: audio.url,
         filename: audio.filename,
+        audioQa: audio.audioQa,
       },
       { headers: corsHeaders }
     );
