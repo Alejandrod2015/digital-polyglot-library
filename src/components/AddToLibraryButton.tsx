@@ -6,6 +6,7 @@ import { BookmarkPlus, BookmarkCheck } from 'lucide-react';
 import { clerkAppearance } from '../lib/clerkAppearance';
 import { books } from '@/data/books';
 import { removeOfflineBook, saveOfflineBook } from '@/lib/offlineLibrary';
+import { warmOfflineUrls } from '@/lib/offlineWarm';
 import { canUseOfflineAccess, type Plan } from '@/lib/access';
 
 type Props = {
@@ -111,6 +112,15 @@ export default function AddToLibraryButton({ bookId, title, coverUrl }: Props) {
             coverUrl,
             bookData,
           });
+          await warmOfflineUrls([
+            bookData?.slug ? `/books/${bookData.slug}` : null,
+            coverUrl,
+            ...(bookData?.stories.flatMap((story) => [
+              story.slug ? `/stories/${story.slug}` : null,
+              typeof story.cover === 'string' ? story.cover : null,
+              typeof story.audio === 'string' ? story.audio : null,
+            ]) ?? []),
+          ]);
         }
       }
     } catch (err) {

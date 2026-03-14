@@ -14,6 +14,7 @@ import NavigationTimingTracker from "@/components/NavigationTimingTracker";
 import ThemeController from "@/components/ThemeController";
 import GA4Tracker from "@/components/GA4Tracker";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import ServiceWorkerBootstrap from "@/components/ServiceWorkerBootstrap";
 import { clerkAppearance } from "@/lib/clerkAppearance";
 
 export const viewport: Viewport = {
@@ -81,6 +82,7 @@ export default async function RootLayout({
 
               <MobileMenu />
               <ThemeController />
+              <ServiceWorkerBootstrap />
               <BackNavigationHandler />
             </>
           ) : null}

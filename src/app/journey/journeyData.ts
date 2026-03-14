@@ -1,9 +1,6 @@
-import { books } from "@/data/books";
 import {
   CEFR_LEVEL_LABELS,
   type CefrLevel,
-  type Level,
-  type Story,
   type VocabItem,
 } from "@/types/books";
 import type { PracticeFavoriteItem } from "@/lib/practiceExercises";
@@ -160,29 +157,8 @@ const journeyLevelMeta: Record<CefrLevel, { id: string; title: string; subtitle:
   c2: { id: "c2", title: "C2", subtitle: "Near-native command" },
 };
 
-const legacyLevelFallback: Record<Level, CefrLevel> = {
-  beginner: "a1",
-  intermediate: "b1",
-  advanced: "c1",
-};
-
 const DEFAULT_LANGUAGE = "Spanish";
 const DEFAULT_VARIANT_ORDER = ["latam", "spain", "us", "uk", "brazil", "portugal", "germany", "austria", "france", "canada-fr", "italy"];
-
-function resolveCefrLevel(story: Story, bookLevel: Level, bookCefrLevel?: CefrLevel): CefrLevel {
-  return story.cefrLevel ?? bookCefrLevel ?? legacyLevelFallback[story.level ?? bookLevel];
-}
-
-function normalizeTopic(topic?: string | null) {
-  return (topic ?? "").trim();
-}
-
-function formatTopicLabel(topic: string) {
-  return topic
-    .replace(/\s*&\s*/g, " & ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
 
 function slugifyTopic(topic: string) {
   return topic
@@ -190,19 +166,6 @@ function slugifyTopic(topic: string) {
     .trim()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
-}
-
-function pickTopic(story: Story, fallbackTopic?: string | null) {
-  const direct = normalizeTopic(story.topic);
-  if (direct) return formatTopicLabel(direct);
-
-  const tags = Array.isArray(story.tags) ? story.tags.find((tag) => normalizeTopic(tag)) : null;
-  if (tags) return formatTopicLabel(tags);
-
-  const fallback = normalizeTopic(fallbackTopic);
-  if (fallback) return formatTopicLabel(fallback);
-
-  return "Everyday life";
 }
 
 function sortVariants(a: string, b: string) {
@@ -244,86 +207,8 @@ function parseStandaloneVocabRaw(vocabRaw: string | null): VocabItem[] {
   }
 }
 
-function buildLevelsForVariantFromBooks(language: string, variantId: string): {
-  grouped: Map<string, Map<string, JourneyStoryItem[]>>;
-  storyIndexByLevel: Map<string, Map<string, JourneyStoryItem>>;
-} {
-  const grouped = new Map<string, Map<string, JourneyStoryItem[]>>();
-  const storyIndexByLevel = new Map<string, Map<string, JourneyStoryItem>>();
-
-  for (const book of Object.values(books)) {
-    if ((book.language ?? "").trim().toLowerCase() !== language.trim().toLowerCase()) continue;
-
-    const bookVariant = resolveContentVariant({
-      language: book.language,
-      variant: book.variant,
-      region: book.region,
-    });
-    if (bookVariant !== variantId) continue;
-
-    const bookCefrLevel = book.cefrLevel ?? legacyLevelFallback[book.level];
-    const bookLevel = journeyLevelMeta[bookCefrLevel];
-
-    if (!grouped.has(bookLevel.id)) {
-      grouped.set(bookLevel.id, new Map());
-    }
-    if (!storyIndexByLevel.has(bookLevel.id)) {
-      storyIndexByLevel.set(bookLevel.id, new Map());
-    }
-
-    for (const story of book.stories) {
-      const storyVariant = resolveContentVariant({
-        language: story.language ?? book.language,
-        variant: story.variant ?? book.variant,
-        region: story.region ?? book.region,
-      });
-      if (storyVariant !== variantId) continue;
-
-      const resolvedCefrLevel = resolveCefrLevel(story, book.level, book.cefrLevel);
-      const mappedLevel = journeyLevelMeta[resolvedCefrLevel];
-      if (!mappedLevel) continue;
-
-      if (!grouped.has(mappedLevel.id)) {
-        grouped.set(mappedLevel.id, new Map());
-      }
-
-      const targetTopics = grouped.get(mappedLevel.id)!;
-      const topicLabel = pickTopic(story, book.topic);
-
-      if (!targetTopics.has(topicLabel)) {
-        targetTopics.set(topicLabel, []);
-      }
-
-      const items = targetTopics.get(topicLabel)!;
-      if (items.length >= 10) continue;
-
-      const storyItem = {
-        id: `${book.slug}:${story.slug}`,
-        progressKey: `${book.slug}:${story.slug}`,
-        storySlug: story.slug,
-        sourcePath: `/books/${book.slug}/${story.slug}`,
-        title: story.title,
-        href: `/books/${book.slug}/${story.slug}`,
-        coverUrl: story.cover ?? book.cover,
-        language: story.language ?? book.language,
-        region: story.region ?? book.region,
-        variant: storyVariant ?? undefined,
-        levelLabel: CEFR_LEVEL_LABELS[resolvedCefrLevel],
-        topicLabel,
-        text: story.text,
-        vocabItems: story.vocab ?? [],
-      } satisfies JourneyStoryItem;
-
-      items.push(storyItem);
-      storyIndexByLevel.get(mappedLevel.id)!.set(storyItem.progressKey, storyItem);
-    }
-  }
-
-  return { grouped, storyIndexByLevel };
-}
-
 async function buildLevelsForVariant(language: string, variantId: string): Promise<JourneyLevel[]> {
-  const { grouped, storyIndexByLevel } = buildLevelsForVariantFromBooks(language, variantId);
+  const grouped = new Map<string, Map<string, JourneyStoryItem[]>>();
   const standaloneStories = await getPublishedStandaloneStories();
 
   for (const story of standaloneStories) {
@@ -337,16 +222,13 @@ async function buildLevelsForVariant(language: string, variantId: string): Promi
     if (!grouped.has(mappedLevel.id)) {
       grouped.set(mappedLevel.id, new Map());
     }
-    if (!storyIndexByLevel.has(mappedLevel.id)) {
-      storyIndexByLevel.set(mappedLevel.id, new Map());
-    }
 
     const targetTopics = grouped.get(mappedLevel.id)!;
     const topicSlug = story.journeyTopic.trim().toLowerCase();
     const curriculumLevel = getJourneyLevelPlan(language, variantId, mappedLevel.id);
     const topicLabel =
       curriculumLevel?.topics.find((topic) => topic.slug === topicSlug)?.label ??
-      formatTopicLabel(topicSlug.replace(/-/g, " "));
+      topicSlug.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 
     if (!targetTopics.has(topicLabel)) {
       targetTopics.set(topicLabel, []);
@@ -371,13 +253,11 @@ async function buildLevelsForVariant(language: string, variantId: string): Promi
 
     const withOrder = { ...storyItem, journeyOrder: story.journeyOrder };
     targetTopics.get(topicLabel)!.push(withOrder);
-    storyIndexByLevel.get(mappedLevel.id)!.set(storyItem.progressKey, storyItem);
   }
 
   return Object.entries(journeyLevelMeta)
     .map(([, meta]) => {
       const topicsMap = grouped.get(meta.id) ?? new Map<string, JourneyStoryItem[]>();
-      const indexedStories = storyIndexByLevel.get(meta.id) ?? new Map<string, JourneyStoryItem>();
       const curriculumLevel = getJourneyLevelPlan(language, variantId, meta.id);
       const rawTopics: JourneyTopic[] = Array.from(topicsMap.entries()).map(([label, stories]) => {
         const slug = slugifyTopic(label);
@@ -405,31 +285,24 @@ async function buildLevelsForVariant(language: string, variantId: string): Promi
       });
 
       const topics: JourneyTopic[] = curriculumLevel
-        ? curriculumLevel.topics
-            .map((topicPlan) => {
-              if (topicPlan.storyKeys?.length) {
-                const curatedStories = topicPlan.storyKeys
-                  .map((storyKey) => indexedStories.get(storyKey) ?? null)
-                  .filter((story): story is JourneyStoryItem => story !== null);
-                const extraStories =
-                  rawTopics.find((topic) => topic.slug === topicPlan.slug)?.stories.filter(
-                    (story) => !curatedStories.some((curated) => curated.progressKey === story.progressKey)
-                  ) ?? [];
-                const combinedStories = [...curatedStories, ...extraStories];
+        ? curriculumLevel.topics.map((topicPlan) => {
+            const existingTopic = rawTopics.find((topic) => topic.slug === topicPlan.slug);
+            if (existingTopic) {
+              return {
+                ...existingTopic,
+                storyTarget: topicPlan.storyTarget,
+              };
+            }
 
-                return {
-                  id: `${meta.id}:${topicPlan.slug}`,
-                  slug: topicPlan.slug,
-                  label: topicPlan.label,
-                  storyCount: combinedStories.length,
-                  storyTarget: topicPlan.storyTarget,
-                  stories: combinedStories,
-                } satisfies JourneyTopic;
-              }
-
-              return rawTopics.find((topic) => topic.slug === topicPlan.slug) ?? null;
-            })
-            .filter((topic): topic is JourneyTopic => topic !== null)
+            return {
+              id: `${meta.id}:${topicPlan.slug}`,
+              slug: topicPlan.slug,
+              label: topicPlan.label,
+              storyCount: 0,
+              storyTarget: topicPlan.storyTarget,
+              stories: [],
+            } satisfies JourneyTopic;
+          })
         : rawTopics.sort((a, b) => {
             if (b.storyCount !== a.storyCount) return b.storyCount - a.storyCount;
             return a.label.localeCompare(b.label);
@@ -448,16 +321,6 @@ async function buildLevelsForVariant(language: string, variantId: string): Promi
 export async function buildJourneyVariants(language = DEFAULT_LANGUAGE): Promise<JourneyVariantTrack[]> {
   const variants = new Set<string>();
   const normalizedLanguage = language.trim().toLowerCase();
-
-  for (const book of Object.values(books)) {
-    if ((book.language ?? "").trim().toLowerCase() !== normalizedLanguage) continue;
-    const variant = resolveContentVariant({
-      language: book.language,
-      variant: book.variant,
-      region: book.region,
-    });
-    if (variant) variants.add(variant);
-  }
 
   const standaloneStories = await getPublishedStandaloneStories();
   for (const story of standaloneStories) {

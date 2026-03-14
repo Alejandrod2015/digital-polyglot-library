@@ -870,23 +870,23 @@ export default function CreatePage() {
                       <button
                         type="button"
                         onClick={() => handlePracticeScore('again')}
-                        className="rounded-lg bg-red-600/90 px-3 py-2 text-sm font-medium text-white hover:bg-red-600"
+                        className="rounded-lg border border-red-400 bg-red-500 px-3 py-2 text-sm font-medium text-white transition hover:bg-red-400 shadow-[0_10px_24px_rgba(239,68,68,0.34)]"
                       >
                         Again
                       </button>
                       <button
                         type="button"
                         onClick={() => handlePracticeScore('hard')}
-                        className="rounded-lg bg-amber-600/90 px-3 py-2 text-sm font-medium text-white hover:bg-amber-600"
+                        className="rounded-lg border border-yellow-300 bg-yellow-400 px-3 py-2 text-sm font-medium text-slate-950 transition hover:bg-yellow-300 shadow-[0_10px_24px_rgba(250,204,21,0.3)]"
                       >
-                        Hard
+                        Tricky
                       </button>
                       <button
                         type="button"
                         onClick={() => handlePracticeScore('easy')}
-                        className="rounded-lg bg-emerald-600/90 px-3 py-2 text-sm font-medium text-white hover:bg-emerald-600"
+                        className="rounded-lg border border-emerald-300 bg-emerald-500 px-3 py-2 text-sm font-medium text-white transition hover:bg-emerald-400 shadow-[0_10px_24px_rgba(16,185,129,0.3)]"
                       >
-                        Easy
+                        Clear
                       </button>
                     </div>
                   </>

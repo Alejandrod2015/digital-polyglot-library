@@ -54,6 +54,49 @@ type JourneyPracticeSource = {
   checkpointToken?: string;
 };
 
+function getFavoritesCacheKey(userId?: string | null) {
+  return `dp_favorites_${userId ?? "guest"}`;
+}
+
+function readLocalPracticeFavorites(userId?: string | null): PracticeFavoriteItem[] {
+  if (typeof window === "undefined") return [];
+
+  const candidates = [getFavoritesCacheKey(userId), "favorites"];
+  for (const key of candidates) {
+    try {
+      const raw = window.localStorage.getItem(key);
+      if (!raw) continue;
+      const parsed = JSON.parse(raw) as PracticeFavoriteItem[];
+      if (Array.isArray(parsed)) {
+        return parsed.map((item) => ({
+          ...item,
+          practiceSource: item.practiceSource ?? "user_saved",
+        }));
+      }
+    } catch {
+      // ignore invalid cache
+    }
+  }
+
+  return [];
+}
+
+async function readCachedJson<T>(requestUrl: string): Promise<T | null> {
+  if (typeof window === "undefined" || !("caches" in window)) return null;
+
+  try {
+    const request = new Request(new URL(requestUrl, window.location.origin).toString(), {
+      method: "GET",
+      credentials: "same-origin",
+    });
+    const cached = await window.caches.match(request);
+    if (!cached) return null;
+    return (await cached.json()) as T;
+  } catch {
+    return null;
+  }
+}
+
 function normalizeStorySlug(value: string | null | undefined): string {
   return typeof value === "string" ? value.trim().toLowerCase() : "";
 }
@@ -323,14 +366,15 @@ export default function PracticePage() {
     let cancelled = false;
 
     const load = async () => {
+      const requestUrl =
+        isJourneyPractice && journeyLevelId && journeyTopicId
+          ? `/api/journey/practice?levelId=${encodeURIComponent(journeyLevelId)}&topicId=${encodeURIComponent(
+              journeyTopicId
+            )}${journeyVariant ? `&variant=${encodeURIComponent(journeyVariant)}` : ""}${isJourneyCheckpoint ? "&kind=checkpoint" : ""}`
+          : "/api/favorites";
+
       try {
         setLoadState("loading");
-        const requestUrl =
-          isJourneyPractice && journeyLevelId && journeyTopicId
-            ? `/api/journey/practice?levelId=${encodeURIComponent(journeyLevelId)}&topicId=${encodeURIComponent(
-                journeyTopicId
-              )}${journeyVariant ? `&variant=${encodeURIComponent(journeyVariant)}` : ""}${isJourneyCheckpoint ? "&kind=checkpoint" : ""}`
-            : "/api/favorites";
         const res = await fetch(requestUrl, { cache: "no-store" });
         if (!res.ok) throw new Error(`Error ${res.status}`);
         const data = (await res.json()) as PracticeFavoriteItem[] | JourneyPracticeSource;
@@ -343,6 +387,38 @@ export default function PracticePage() {
       } catch (error) {
         console.error(error);
         if (!cancelled) {
+          const cachedData = await readCachedJson<PracticeFavoriteItem[] | JourneyPracticeSource>(requestUrl);
+          if (cachedData) {
+            setFavorites(
+              Array.isArray(cachedData)
+                ? cachedData
+                : Array.isArray(cachedData.items)
+                  ? cachedData.items
+                  : []
+            );
+            setPrefabExercises(
+              !Array.isArray(cachedData) && Array.isArray(cachedData.exercises)
+                ? cachedData.exercises
+                : []
+            );
+            setCheckpointToken(
+              !Array.isArray(cachedData) && typeof cachedData.checkpointToken === "string"
+                ? cachedData.checkpointToken
+                : null
+            );
+            setLoadState("ready");
+            return;
+          }
+
+          if (!isJourneyPractice) {
+            const localFavorites = readLocalPracticeFavorites(user?.id ?? null);
+            setFavorites(localFavorites);
+            setPrefabExercises([]);
+            setCheckpointToken(null);
+            setLoadState(localFavorites.length > 0 ? "ready" : "error");
+            return;
+          }
+
           setFavorites([]);
           setPrefabExercises([]);
           setCheckpointToken(null);

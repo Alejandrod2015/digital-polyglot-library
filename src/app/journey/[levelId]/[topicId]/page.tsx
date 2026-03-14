@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
-import { ChevronLeft, Lock, Map, Sparkles, Star } from "lucide-react";
+import { ChevronLeft, Sparkles } from "lucide-react";
 import {
   buildJourneyLevels,
   getJourneyTopicCheckpointKey,
@@ -12,6 +11,7 @@ import {
 } from "../../journeyData";
 import { formatVariantLabel, normalizeVariant } from "@/lib/languageVariant";
 import { getCompletedJourneyStoryKeys, getPassedJourneyCheckpointKeys } from "@/lib/journeyProgress";
+import StoryJourneyClient from "./StoryJourneyClient";
 
 export async function generateStaticParams() {
   const levels = await buildJourneyLevels();
@@ -64,27 +64,56 @@ export default async function JourneyTopicPage({
     )
   );
 
-  const laneOffsets = [0, 46, 8, 52, 14, 44];
-  const nodeCenters = [14, 72, 22, 78, 28, 70];
-  const totalNodes = topic.stories.length + 1;
-  const verticalStep = 86;
-  const journeyHeight = Math.max(totalNodes * verticalStep - 10, 184);
   const returnTo = activeVariant
     ? `/journey/${level.id}/${topic.slug}?variant=${encodeURIComponent(activeVariant)}`
     : `/journey/${level.id}/${topic.slug}`;
   const returnLabel = topic.label;
-  const journeyD = Array.from({ length: totalNodes }, (_, index) => {
-    const x = nodeCenters[index % nodeCenters.length];
-    const y = 28 + index * verticalStep;
+  const storyNodes = topic.stories.map((story, index) => {
+    const isUnlocked = index < unlockedStoryCount;
+    const isCompleted = isJourneyStoryComplete(story, completedStoryKeys);
+    const storyHref = `${story.href}?returnTo=${encodeURIComponent(returnTo)}&returnLabel=${encodeURIComponent(returnLabel)}`;
 
-    if (index === 0) return `M ${x} ${y}`;
+    return {
+      kind: "story" as const,
+      id: story.id,
+      title: story.title,
+      href: isUnlocked ? storyHref : undefined,
+      coverUrl: story.coverUrl,
+      label: `Story ${index + 1}`,
+      meta: isUnlocked ? story.region ?? story.language ?? "Global" : "Unlock later",
+      badge: isCompleted ? "Completed" : index === 0 ? "Start" : index === unlockedStoryCount - 1 ? "Continue" : "Locked",
+      badgeTone: isCompleted ? ("emerald" as const) : index === 0 ? ("lime" as const) : index === unlockedStoryCount - 1 ? ("sky" as const) : ("slate" as const),
+      unlocked: isUnlocked,
+    };
+  });
 
-    const previousX = nodeCenters[(index - 1) % nodeCenters.length];
-    const previousY = 28 + (index - 1) * verticalStep;
-    const midY = previousY + verticalStep / 2;
-
-    return `C ${previousX} ${midY - 18}, ${x} ${midY + 18}, ${x} ${y}`;
-  }).join(" ");
+  const finalNode = topicCompleted && !checkpointPassed
+    ? {
+        kind: "final" as const,
+        id: `${topic.slug}-checkpoint`,
+        href: `/journey/${level.id}/${topic.slug}/checkpoint${activeVariant ? `?variant=${encodeURIComponent(activeVariant)}` : ""}`,
+        badge: "Checkpoint",
+        badgeTone: "amber" as const,
+        unlocked: true,
+        icon: "sparkles" as const,
+      }
+    : !topicCompleted
+      ? {
+          kind: "final" as const,
+          id: `${topic.slug}-finish`,
+          badge: "Finish this journey",
+          badgeTone: "slate" as const,
+          unlocked: false,
+          icon: "sparkles" as const,
+        }
+      : {
+          kind: "final" as const,
+          id: `${topic.slug}-cleared`,
+          badge: "Journey cleared",
+          badgeTone: "emerald" as const,
+          unlocked: false,
+          icon: "sparkles" as const,
+        };
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 pb-14 pt-4 sm:px-6 lg:px-8">
@@ -135,158 +164,7 @@ export default async function JourneyTopicPage({
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-[24rem] pb-1.5 pt-0" style={{ minHeight: `${journeyHeight}px` }}>
-          <svg
-            aria-hidden="true"
-            viewBox={`0 0 100 ${journeyHeight}`}
-            className="pointer-events-none absolute inset-0 h-full w-full"
-            preserveAspectRatio="none"
-          >
-            <path
-              d={journeyD}
-              fill="none"
-              stroke="rgba(148, 163, 184, 0.16)"
-              strokeWidth="2.8"
-              strokeLinecap="round"
-            />
-            <path
-              d={journeyD}
-              fill="none"
-              stroke="rgba(96, 165, 250, 0.34)"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
-
-          <div className="relative flex flex-col gap-3.5">
-            {topic.stories.map((story, index) => {
-              const isUnlocked = index < unlockedStoryCount;
-              const isCompleted = isJourneyStoryComplete(story, completedStoryKeys);
-              const storyHref = `${story.href}?returnTo=${encodeURIComponent(returnTo)}&returnLabel=${encodeURIComponent(returnLabel)}`;
-
-              return (
-                <div key={story.id} className="w-full" style={{ marginLeft: `${laneOffsets[index % laneOffsets.length]}%` }}>
-                  {isUnlocked ? (
-                    <Link
-                      href={storyHref}
-                      className="group flex max-w-[210px] flex-col items-center text-center"
-                    >
-                      {isCompleted ? (
-                        <span className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-emerald-200/20 bg-[#13284a] px-3 py-1 text-[11px] font-black uppercase tracking-[0.18em] text-emerald-200">
-                          Completed
-                        </span>
-                      ) : index === 0 ? (
-                        <span className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-lime-200/20 bg-[#13284a] px-3 py-1 text-[11px] font-black uppercase tracking-[0.18em] text-lime-200">
-                          <Star size={12} />
-                          Start
-                        </span>
-                      ) : index === unlockedStoryCount - 1 ? (
-                        <span className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-sky-200/20 bg-[#13284a] px-3 py-1 text-[11px] font-black uppercase tracking-[0.18em] text-sky-200">
-                          Continue
-                        </span>
-                      ) : null}
-
-                      <span className="relative flex h-[3.85rem] w-[3.85rem] items-center justify-center overflow-hidden rounded-[0.95rem] border-[3px] border-[#20395b] bg-[linear-gradient(180deg,#75d9ff_0%,#4f8df7_100%)] text-slate-950 shadow-[0_8px_18px_rgba(59,130,246,0.18)] transition duration-200 group-hover:scale-[1.04]">
-                        {story.coverUrl ? (
-                          <Image
-                            src={story.coverUrl}
-                            alt={story.title}
-                            fill
-                            sizes="72px"
-                            className="object-cover"
-                          />
-                        ) : (
-                          <Map size={24} />
-                        )}
-                      </span>
-
-                      <span className="mt-1.5 inline-flex rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-200/75">
-                        Story {index + 1}
-                      </span>
-                      <h3 className="mt-1 text-[0.92rem] font-black leading-tight tracking-tight text-white">
-                        {story.title}
-                      </h3>
-                      <p className="mt-0.5 line-clamp-2 text-[10px] uppercase tracking-[0.14em] text-slate-300/65">
-                        {story.region ?? story.language ?? "Global"}
-                      </p>
-                    </Link>
-                  ) : (
-                    <div className="flex max-w-[210px] flex-col items-center text-center opacity-72">
-                      <span className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-black uppercase tracking-[0.18em] text-slate-300">
-                        <Lock size={12} />
-                        Locked
-                      </span>
-
-                      <span className="relative flex h-[3.85rem] w-[3.85rem] items-center justify-center overflow-hidden rounded-[0.95rem] border-[3px] border-[#20395b] bg-[#314861] text-white/45 shadow-[inset_0_-10px_0_rgba(0,0,0,0.16)]">
-                        {story.coverUrl ? (
-                          <Image
-                            src={story.coverUrl}
-                            alt={story.title}
-                            fill
-                            sizes="72px"
-                            className="object-cover grayscale opacity-55"
-                          />
-                        ) : (
-                          <Map size={24} />
-                        )}
-                      </span>
-
-                      <span className="mt-1.5 inline-flex rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-200/75">
-                        Story {index + 1}
-                      </span>
-                      <h3 className="mt-1 text-[0.92rem] font-black leading-tight tracking-tight text-white/80">
-                        {story.title}
-                      </h3>
-                      <p className="mt-0.5 line-clamp-2 text-[10px] uppercase tracking-[0.14em] text-slate-300/55">
-                        Unlock later
-                      </p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-
-            {topicCompleted && !checkpointPassed ? (
-              <div className="w-full" style={{ marginLeft: `${laneOffsets[topic.stories.length % laneOffsets.length]}%` }}>
-                <Link
-                  href={`/journey/${level.id}/${topic.slug}/checkpoint${activeVariant ? `?variant=${encodeURIComponent(activeVariant)}` : ""}`}
-                  className="group flex max-w-[210px] flex-col items-center text-center"
-                >
-                  <span className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-amber-200/20 bg-[#13284a] px-3 py-1 text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">
-                    <Star size={12} />
-                    Checkpoint
-                  </span>
-                  <span className="flex h-[3.85rem] w-[3.85rem] items-center justify-center rounded-[0.95rem] border-[3px] border-[#20395b] bg-[linear-gradient(180deg,#fde68a_0%,#f59e0b_100%)] text-slate-950 shadow-[0_8px_18px_rgba(245,158,11,0.18)] transition duration-200 group-hover:scale-[1.04]">
-                    <Sparkles size={20} />
-                  </span>
-                </Link>
-              </div>
-            ) : !topicCompleted ? (
-              <div className="w-full" style={{ marginLeft: `${laneOffsets[topic.stories.length % laneOffsets.length]}%` }}>
-                <div className="flex max-w-[210px] flex-col items-center text-center opacity-72">
-                  <span className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-black uppercase tracking-[0.18em] text-slate-300">
-                    <Lock size={12} />
-                    Finish this journey
-                  </span>
-                  <span className="flex h-[3.85rem] w-[3.85rem] items-center justify-center rounded-[0.95rem] border-[3px] border-[#20395b] bg-[#314861] text-white/45 shadow-[inset_0_-10px_0_rgba(0,0,0,0.16)]">
-                    <Sparkles size={20} />
-                  </span>
-                </div>
-              </div>
-            ) : (
-              <div className="w-full" style={{ marginLeft: `${laneOffsets[topic.stories.length % laneOffsets.length]}%` }}>
-                <div className="flex max-w-[210px] flex-col items-center text-center opacity-90">
-                  <span className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-emerald-200/20 bg-[#13284a] px-3 py-1 text-[11px] font-black uppercase tracking-[0.18em] text-emerald-200">
-                    Journey cleared
-                  </span>
-                  <span className="flex h-[3.85rem] w-[3.85rem] items-center justify-center rounded-[0.95rem] border-[3px] border-[#20395b] bg-[linear-gradient(180deg,#6ee7b7_0%,#10b981_100%)] text-slate-950 shadow-[0_8px_18px_rgba(16,185,129,0.18)]">
-                    <Sparkles size={20} />
-                  </span>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
+        <StoryJourneyClient nodes={[...storyNodes, finalNode]} />
       </section>
     </div>
   );

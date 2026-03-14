@@ -567,10 +567,11 @@ export default function FavoritesPage() {
     if (!currentPractice) return;
     const isSavedFavorite = favoriteIdentitySet.has(getFavoriteIdentity(currentPractice));
 
+    if (currentPracticeKey) {
+      setPracticeScoresByKey((map) => ({ ...map, [currentPracticeKey]: score }));
+    }
+
     if (practiceModeKind === 'related') {
-      if (currentPracticeKey) {
-        setPracticeScoresByKey((map) => ({ ...map, [currentPracticeKey]: score }));
-      }
       if (!isSavedFavorite) {
         return;
       }
@@ -748,7 +749,7 @@ export default function FavoritesPage() {
                 <div className="mb-3">
                   <button
                     onClick={() => void saveRelatedFavorite(currentPractice)}
-                    className="rounded-lg border border-[#6ea98d] bg-[#4e7f69] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#588b73]"
+                    className="rounded-lg border border-emerald-300 bg-emerald-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-emerald-400 shadow-[0_10px_24px_rgba(16,185,129,0.28)]"
                   >
                     Save to Favorites
                   </button>
@@ -757,7 +758,7 @@ export default function FavoritesPage() {
                 <div className="mb-3">
                   <button
                     onClick={() => void removeRelatedFavorite(currentPractice)}
-                    className="rounded-lg border border-[#d28fa0] bg-[#b96e83] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#c3798f]"
+                    className="rounded-lg border border-red-400 bg-red-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-red-400 shadow-[0_10px_24px_rgba(239,68,68,0.28)]"
                   >
                     Remove from Favorites
                   </button>
@@ -766,30 +767,30 @@ export default function FavoritesPage() {
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => rateCurrent('again')}
-                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
+                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-all ${
                     practiceScore === 'again'
-                      ? 'border-[#cf879b] bg-[#b96e83] text-white'
-                      : 'border-[#e7c1cb] bg-[#fdeef2] text-[#8a5563] hover:bg-[#fadfe7]'
+                      ? 'border-red-400 bg-red-500 text-white shadow-[0_10px_24px_rgba(239,68,68,0.34)]'
+                      : 'border-white/12 bg-white/5 text-white/78 hover:border-red-300/35 hover:bg-red-400/10 hover:text-red-100'
                   }`}
                 >
                   Again
                 </button>
                 <button
                   onClick={() => rateCurrent('hard')}
-                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
+                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-all ${
                     practiceScore === 'hard'
-                      ? 'border-[#d8b35f] bg-[#c49b43] text-white'
-                      : 'border-[#ead7a0] bg-[#fff6d9] text-[#8a7341] hover:bg-[#fdf0c1]'
+                      ? 'border-yellow-300 bg-yellow-400 text-slate-950 shadow-[0_10px_24px_rgba(250,204,21,0.3)]'
+                      : 'border-white/12 bg-white/5 text-white/78 hover:border-yellow-200/35 hover:bg-yellow-300/10 hover:text-yellow-100'
                   }`}
                 >
                   Tricky
                 </button>
                 <button
                   onClick={() => rateCurrent('easy')}
-                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
+                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-all ${
                     practiceScore === 'easy'
-                      ? 'border-[#7bb89b] bg-[#5fa07f] text-white'
-                      : 'border-[#b9e0cb] bg-[#ebfaf1] text-[#4f7a62] hover:bg-[#d8f4e4]'
+                      ? 'border-emerald-300 bg-emerald-500 text-white shadow-[0_10px_24px_rgba(16,185,129,0.3)]'
+                      : 'border-white/12 bg-white/5 text-white/78 hover:border-emerald-200/35 hover:bg-emerald-300/10 hover:text-emerald-100'
                   }`}
                 >
                   Clear

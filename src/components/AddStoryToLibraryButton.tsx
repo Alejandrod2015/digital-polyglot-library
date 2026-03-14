@@ -7,6 +7,7 @@ import { BookmarkPlus, BookmarkCheck } from 'lucide-react';
 import { clerkAppearance } from '../lib/clerkAppearance';
 import { books } from '@/data/books';
 import { removeOfflineStory, saveOfflineStory } from '@/lib/offlineLibrary';
+import { warmOfflineUrls } from '@/lib/offlineWarm';
 import { canUseOfflineAccess, type Plan } from '@/lib/access';
 
 
@@ -140,6 +141,7 @@ export default function AddStoryToLibraryButton({
        if (hasOfflineAccess) {
          const book = books[bookId];
          const story = book?.stories.find((item) => item.id === storyId);
+         const storyRoute = storySlug ? `/stories/${storySlug}` : null;
          await saveOfflineStory(user.id, {
            storyId,
            bookId,
@@ -154,6 +156,11 @@ export default function AddStoryToLibraryButton({
            audioUrl: audioUrl ?? (typeof story?.audio === 'string' ? story.audio : null),
            storyData: story,
          });
+         await warmOfflineUrls([
+           storyRoute,
+           coverUrl,
+           audioUrl ?? (typeof story?.audio === 'string' ? story.audio : null),
+         ]);
        }
      }
    } catch (err) {
