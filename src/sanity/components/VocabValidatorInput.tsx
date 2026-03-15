@@ -6,6 +6,7 @@ import { Button, Card, Flex, Spinner, Stack, Text } from '@sanity/ui'
 import { CheckmarkCircleIcon } from '@sanity/icons'
 import { getSanityTargetId } from '../lib/getSanityTargetId'
 import { validateGeneratedVocab } from '../lib/vocabValidationClient'
+import { stripLegacyVocabSpans } from '../lib/vocabTextHighlight'
 
 type VocabItem = {
   word: string
@@ -29,6 +30,7 @@ function parseVocabRaw(value: string | undefined): VocabItem[] {
 
 export default function VocabValidatorInput() {
   const formId = useFormValue(['_id']) as string | undefined
+  const formType = useFormValue(['_type']) as string | undefined
   const text = useFormValue(['text']) as string | undefined
   const language = useFormValue(['language']) as string | undefined
   const vocabRaw = useFormValue(['vocabRaw']) as string | undefined
@@ -41,6 +43,10 @@ export default function VocabValidatorInput() {
     typeof window !== 'undefined' && window.location.hostname === 'localhost'
       ? ''
       : 'https://reader.digitalpolyglot.com'
+
+  function getDraftId(documentId: string) {
+    return documentId.startsWith('drafts.') ? documentId : `drafts.${documentId}`
+  }
 
   async function validateVocab() {
     try {
@@ -68,15 +74,44 @@ export default function VocabValidatorInput() {
         language: language ?? 'spanish',
         vocab: currentVocab,
       })
+      const nextText = stripLegacyVocabSpans(text ?? '')
 
       const targetId = await getSanityTargetId(client, formId)
       await client
         .patch(targetId)
         .set({
+          text: nextText,
           vocabRaw: JSON.stringify(validated.vocab, null, 2),
           vocabValidationRaw: validated.validationRaw,
         })
         .commit()
+
+      if (formId) {
+        const draftId = getDraftId(formId)
+        const sourceDoc = await client.fetch<Record<string, unknown> | null>(
+          `*[_id == $id][0]`,
+          { id: targetId }
+        )
+        if (sourceDoc) {
+          await client.createIfNotExists({
+            ...sourceDoc,
+            _id: draftId,
+            _type: formType ?? (typeof sourceDoc._type === 'string' ? sourceDoc._type : 'standaloneStory'),
+          })
+        }
+        const patch = client.patch(draftId)
+        if (formType) {
+          patch.setIfMissing({ _type: formType })
+        }
+
+        await patch
+          .set({
+            text: nextText,
+            vocabRaw: JSON.stringify(validated.vocab, null, 2),
+            vocabValidationRaw: validated.validationRaw,
+          })
+          .commit()
+      }
 
       setMsg(validated.successMessage)
     } catch (err) {
@@ -94,7 +129,7 @@ export default function VocabValidatorInput() {
           <Button
             icon={CheckmarkCircleIcon}
             text={loading ? 'Validating vocabulary...' : 'Validate & Fix Vocabulary'}
-            tone="positive"
+            tone="primary"
             disabled={loading}
             onClick={validateVocab}
           />
@@ -121,4 +156,3 @@ export default function VocabValidatorInput() {
     </Stack>
   )
 }
-

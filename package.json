@@ -9,7 +9,14 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "export:sanity": "tsx scripts/exportBooksFromSanity.ts"
+    "import:sanity": "tsx scripts/importBooks.ts",
+    "export:sanity": "tsx scripts/exportBooksFromSanity.ts",
+    "sync:create-stories": "tsx scripts/syncCreateStoriesToSanity.ts",
+    "sync:create-stories:cli": "sanity exec scripts/syncCreateStoriesToSanity.ts --with-user-token",
+    "sync:create-story-slugs": "tsx scripts/syncCreateStorySlugs.ts",
+    "repair:create-story-drafts": "sanity exec scripts/repairCreateStoryDrafts.ts --with-user-token",
+    "tag:polyglot-stories": "tsx scripts/tagPolyglotStories.ts",
+    "reset:polyglot-stories": "tsx scripts/resetPolyglotStoriesVisibility.ts"
   },
   "dependencies": {
     "@clerk/backend": "^2.17.2",

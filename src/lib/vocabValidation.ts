@@ -1,4 +1,5 @@
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
+import { normalizeVocabWord } from "@/lib/vocabWordNormalization";
 
 export type VocabItem = {
   word: string;
@@ -156,7 +157,11 @@ export function validateAndNormalizeVocab(args: {
   for (const row of rows) {
     if (!row || typeof row !== "object") continue;
     const record = row as Record<string, unknown>;
-    const word = typeof record.word === "string" ? record.word.trim() : "";
+    const word = normalizeVocabWord({
+      word: typeof record.word === "string" ? record.word : "",
+      type: typeof record.type === "string" ? record.type : undefined,
+      language,
+    });
     const rawDefinition =
       typeof record.definition === "string"
         ? record.definition.trim()
@@ -235,4 +240,3 @@ export function validateAndNormalizeVocab(args: {
 
   return { vocab, issues };
 }
-

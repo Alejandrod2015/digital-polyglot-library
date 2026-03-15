@@ -6,6 +6,7 @@ import { Button, Card, Flex, Spinner, Stack, Text } from '@sanity/ui'
 import { SparklesIcon } from '@sanity/icons'
 import { getSanityTargetId } from '../lib/getSanityTargetId'
 import { broadLevelFromCefr } from '../../lib/cefr'
+import { stripLegacyVocabSpans } from '../lib/vocabTextHighlight'
 
 type VocabItem = {
   word: string
@@ -72,6 +73,7 @@ function normalizeRows(rows: VocabItem[], text: string): VocabItem[] {
 
 export default function VocabGeneratorInput() {
   const formId = useFormValue(['_id']) as string | undefined
+  const formType = useFormValue(['_type']) as string | undefined
   const text = useFormValue(['text']) as string | undefined
   const language = useFormValue(['language']) as string | undefined
   const variant = useFormValue(['variant']) as string | undefined
@@ -90,6 +92,10 @@ export default function VocabGeneratorInput() {
       : 'https://reader.digitalpolyglot.com'
   const resolvedCefrLevel = typeof cefrLevel === 'string' ? cefrLevel : ''
   const resolvedBroadLevel = broadLevelFromCefr(resolvedCefrLevel) ?? level ?? 'intermediate'
+
+  function getDraftId(documentId: string) {
+    return documentId.startsWith('drafts.') ? documentId : `drafts.${documentId}`
+  }
 
   async function generateVocab() {
     try {
@@ -163,15 +169,44 @@ export default function VocabGeneratorInput() {
           `The model returned fewer than ${minimumUsableItems} usable vocab items. Try again.`
         )
       }
+      const nextText = stripLegacyVocabSpans(text ?? '')
 
       const targetId = await getSanityTargetId(client, formId)
       await client
         .patch(targetId)
         .set({
+          text: nextText,
           vocabRaw: JSON.stringify(rows, null, 2),
           vocabValidationRaw: '',
         })
         .commit()
+
+      if (formId) {
+        const draftId = getDraftId(formId)
+        const sourceDoc = await client.fetch<Record<string, unknown> | null>(
+          `*[_id == $id][0]`,
+          { id: targetId }
+        )
+        if (sourceDoc) {
+          await client.createIfNotExists({
+            ...sourceDoc,
+            _id: draftId,
+            _type: formType ?? (typeof sourceDoc._type === 'string' ? sourceDoc._type : 'standaloneStory'),
+          })
+        }
+        const patch = client.patch(draftId)
+        if (formType) {
+          patch.setIfMissing({ _type: formType })
+        }
+
+        await patch
+          .set({
+            text: nextText,
+            vocabRaw: JSON.stringify(rows, null, 2),
+            vocabValidationRaw: '',
+          })
+          .commit()
+      }
 
       setMsg(
         res.ok

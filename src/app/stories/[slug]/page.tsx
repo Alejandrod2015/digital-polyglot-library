@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
+import { getCreateStoryMirrorBySlug, getCreateStoryMirrorByStoryId } from "@/lib/userStories";
 import Player from "@/components/Player";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Image from "next/image";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
@@ -13,6 +14,9 @@ import StoryContent from "@/components/StoryContent";
 import VocabPanel from "@/components/VocabPanel";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegments";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -76,29 +80,53 @@ export default async function StoryPage({ params }: StoryPageProps) {
   const polyglotStory = await prisma.userStory.findUnique({
     where: { slug },
   });
-  const standaloneStory = polyglotStory ? null : await getStandaloneStoryBySlug(slug);
+  const polyglotStoryMirror =
+    (polyglotStory ? await getCreateStoryMirrorByStoryId(polyglotStory.id) : null) ??
+    (await getCreateStoryMirrorBySlug(slug));
 
-  if (!polyglotStory && !standaloneStory) {
+  if (polyglotStory && polyglotStoryMirror?.slug && polyglotStoryMirror.slug !== slug) {
+    redirect(`/stories/${polyglotStoryMirror.slug}`);
+  }
+
+  const standaloneStory = polyglotStory || polyglotStoryMirror ? null : await getStandaloneStoryBySlug(slug);
+
+  if (!polyglotStory && !polyglotStoryMirror && !standaloneStory) {
     notFound();
   }
 
-  const source: StorySource = polyglotStory ? "polyglot" : "standalone";
+  const source: StorySource = polyglotStory || polyglotStoryMirror ? "polyglot" : "standalone";
   const story = polyglotStory
     ? {
         id: polyglotStory.id,
         slug: polyglotStory.slug,
-        title: polyglotStory.title,
-        text: polyglotStory.text,
-        vocab: polyglotStory.vocab,
-        audioUrl: polyglotStory.audioUrl,
+        title: polyglotStoryMirror?.title ?? polyglotStory.title,
+        text: polyglotStoryMirror?.text ?? polyglotStory.text,
+        vocab: polyglotStoryMirror?.vocabRaw ?? polyglotStory.vocab,
+        audioUrl: polyglotStoryMirror?.audioUrl ?? polyglotStory.audioUrl,
         audioStatus: polyglotStory.audioStatus,
-        language: polyglotStory.language,
-        region: polyglotStory.region,
-        level: polyglotStory.level,
-        coverUrl: polyglotStory.coverUrl,
+        language: polyglotStoryMirror?.language ?? polyglotStory.language,
+        region: polyglotStoryMirror?.region ?? polyglotStory.region,
+        level: polyglotStoryMirror?.level ?? polyglotStory.level,
+        coverUrl: polyglotStoryMirror?.coverUrl ?? polyglotStory.coverUrl,
         source,
         audioSegments: polyglotStory.audioSegments,
       }
+    : polyglotStoryMirror
+      ? {
+          id: polyglotStoryMirror.createStoryId,
+          slug: polyglotStoryMirror.slug,
+          title: polyglotStoryMirror.title,
+          text: polyglotStoryMirror.text ?? "",
+          vocab: polyglotStoryMirror.vocabRaw,
+          audioUrl: polyglotStoryMirror.audioUrl,
+          audioStatus: null,
+          language: polyglotStoryMirror.language,
+          region: polyglotStoryMirror.region,
+          level: polyglotStoryMirror.level,
+          coverUrl: polyglotStoryMirror.coverUrl,
+          source,
+          audioSegments: null,
+        }
     : {
         id: standaloneStory!.id,
         slug: standaloneStory!.slug,

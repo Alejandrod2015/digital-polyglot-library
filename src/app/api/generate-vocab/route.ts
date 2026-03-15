@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
+import { normalizeVocabWord } from "@/lib/vocabWordNormalization";
 import { buildSanityCorsHeaders } from "@/lib/sanityCors";
 import { cefrPromptLabel } from "@/lib/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
@@ -159,7 +160,12 @@ function normalizeVocab(raw: unknown, normalizedText: string, language?: string)
   for (const row of rows) {
     if (!row || typeof row !== "object") continue;
     const record = row as Record<string, unknown>;
-    const word = typeof record.word === "string" ? record.word.trim() : "";
+    const type = typeof record.type === "string" ? record.type.trim() : undefined;
+    const word = normalizeVocabWord({
+      word: typeof record.word === "string" ? record.word : "",
+      type,
+      language,
+    });
     const rawDefinition =
       typeof record.definition === "string"
         ? record.definition.trim()
@@ -167,7 +173,6 @@ function normalizeVocab(raw: unknown, normalizedText: string, language?: string)
           ? record.meaning.trim()
           : "";
     const definition = normalizeDefinition(rawDefinition);
-    const type = typeof record.type === "string" ? record.type.trim() : undefined;
     if (!word || !definition) continue;
     if (!appearsInText(normalizedText, word)) continue;
     const key = word.toLowerCase();

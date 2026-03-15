@@ -72,6 +72,15 @@ type SanityCreateIfNotExists = {
   };
 };
 
+type SanityPatch = {
+  patch: {
+    id: string;
+    set: Record<string, unknown>;
+  };
+};
+
+type SanityMutation = SanityCreateIfNotExists | SanityPatch;
+
 function chunk<T>(arr: T[], size: number): T[][] {
   if (size <= 0) return [arr];
   const out: T[][] = [];
@@ -85,11 +94,77 @@ function getBookIdsToImport(meta: ExportMeta | null): string[] {
   return allIds;
 }
 
-async function commitMutations(mutations: SanityCreateIfNotExists[], batchSize: number) {
+function slugValue(value: string | undefined) {
+  const current = typeof value === "string" ? value.trim() : "";
+  return current ? { _type: "slug", current } : undefined;
+}
+
+function getStoryRegionField(language: string | undefined): string | null {
+  switch ((language ?? "").toLowerCase()) {
+    case "spanish":
+      return "region_es";
+    case "english":
+      return "region_en";
+    case "german":
+      return "region_de";
+    case "french":
+      return "region_fr";
+    case "italian":
+      return "region_it";
+    case "portuguese":
+      return "region_pt";
+    default:
+      return null;
+  }
+}
+
+function imageAssetRefFromUrl(url: string | undefined): string | null {
+  if (typeof url !== "string") return null;
+  const match = url.match(/\/images\/[^/]+\/[^/]+\/([a-f0-9]+)-(\d+x\d+)\.([a-z0-9]+)$/i);
+  if (!match) return null;
+  const [, assetId, dimensions, ext] = match;
+  return `image-${assetId}-${dimensions}-${ext}`;
+}
+
+function fileAssetRefFromUrl(url: string | undefined): string | null {
+  if (typeof url !== "string") return null;
+  const match = url.match(/\/files\/[^/]+\/[^/]+\/([a-f0-9]+)\.([a-z0-9]+)$/i);
+  if (!match) return null;
+  const [, assetId, ext] = match;
+  return `file-${assetId}-${ext}`;
+}
+
+function imageFieldFromUrl(url: string | undefined) {
+  const ref = imageAssetRefFromUrl(url);
+  return ref
+    ? {
+        _type: "image",
+        asset: { _type: "reference", _ref: ref },
+      }
+    : undefined;
+}
+
+function fileFieldFromUrl(url: string | undefined) {
+  const ref = fileAssetRefFromUrl(url);
+  return ref
+    ? {
+        _type: "file",
+        asset: { _type: "reference", _ref: ref },
+      }
+    : undefined;
+}
+
+async function commitMutations(mutations: SanityMutation[], batchSize: number) {
   const batches = chunk(mutations, batchSize);
   for (let i = 0; i < batches.length; i++) {
     const tx = client.transaction();
-    for (const m of batches[i]) tx.createIfNotExists(m.createIfNotExists);
+    for (const m of batches[i]) {
+      if ("createIfNotExists" in m) {
+        tx.createIfNotExists(m.createIfNotExists);
+      } else {
+        tx.patch(m.patch.id, { set: m.patch.set });
+      }
+    }
     await tx.commit();
     console.log(`✅ Committed batch ${i + 1}/${batches.length} (${batches[i].length} docs)`);
   }
@@ -116,7 +191,7 @@ async function importBooks() {
     console.log(`📦 Import scope: ${idsToImport.length} book(s) (no export meta found)`);
   }
 
-  const mutations: SanityCreateIfNotExists[] = [];
+  const mutations: SanityMutation[] = [];
 
   let totalStories = 0;
 
@@ -131,16 +206,30 @@ async function importBooks() {
       createIfNotExists: {
         _id: bookDocId,
         _type: "book",
+      },
+    });
+
+    mutations.push({
+      patch: {
+        id: bookDocId,
+        set: {
         title: book.title,
+        slug: slugValue(book.slug),
+        id: slugValue(book.id),
         description: book.description,
         audioFolder: book.audioFolder,
         language: book.language,
+        variant: book.variant,
         region: book.region,
         level: book.level,
+        cefrLevel: book.cefrLevel,
         topic: book.topic,
         formality: book.formality,
+        storeUrl: book.storeUrl,
+        cover: imageFieldFromUrl(book.cover),
         published: true,
-      },
+        },
+      }
     });
 
     // 2) Story docs
@@ -152,31 +241,62 @@ async function importBooks() {
         createIfNotExists: {
           _id: `story.${book.id}.${storyId}`,
           _type: "story",
-          title: story.title,
-          text: story.text,
-          dialogue: "",
-          language:
-            typeof (story as unknown as { language?: unknown }).language === "string"
-              ? (story as unknown as { language?: string }).language
-              : book.language,
-          region:
-            typeof (story as unknown as { region?: unknown }).region === "string"
-              ? (story as unknown as { region?: string }).region
-              : book.region,
-          level:
-            typeof (story as unknown as { level?: unknown }).level === "string"
-              ? (story as unknown as { level?: string }).level
-              : book.level,
-          topic:
-            typeof (story as unknown as { topic?: unknown }).topic === "string"
-              ? (story as unknown as { topic?: string }).topic
-              : book.topic,
-          formality:
-            typeof (story as unknown as { formality?: unknown }).formality === "string"
-              ? (story as unknown as { formality?: string }).formality
-              : book.formality,
-          book: { _type: "reference", _ref: bookDocId },
-          published: true,
+          showInPolyglotStories: false,
+        },
+      });
+
+      const storyLanguage =
+        typeof (story as unknown as { language?: unknown }).language === "string"
+          ? (story as unknown as { language?: string }).language
+          : book.language;
+      const storyRegion =
+        typeof (story as unknown as { region?: unknown }).region === "string"
+          ? (story as unknown as { region?: string }).region
+          : book.region;
+      const storyRegionField = getStoryRegionField(storyLanguage);
+
+      mutations.push({
+        patch: {
+          id: `story.${book.id}.${storyId}`,
+          set: {
+            title: story.title,
+            slug: slugValue(story.slug),
+            synopsis:
+              typeof (story as unknown as { synopsis?: unknown }).synopsis === "string"
+                ? (story as unknown as { synopsis?: string }).synopsis
+                : "",
+            text: story.text,
+            language: storyLanguage,
+            variant:
+              typeof (story as unknown as { variant?: unknown }).variant === "string"
+                ? (story as unknown as { variant?: string }).variant
+                : book.variant,
+            level:
+              typeof (story as unknown as { level?: unknown }).level === "string"
+                ? (story as unknown as { level?: string }).level
+                : book.level,
+            cefrLevel:
+              typeof (story as unknown as { cefrLevel?: unknown }).cefrLevel === "string"
+                ? (story as unknown as { cefrLevel?: string }).cefrLevel
+                : book.cefrLevel,
+            topic:
+              typeof (story as unknown as { topic?: unknown }).topic === "string"
+                ? (story as unknown as { topic?: string }).topic
+                : book.topic,
+            formality:
+              typeof (story as unknown as { formality?: unknown }).formality === "string"
+                ? (story as unknown as { formality?: string }).formality
+                : book.formality,
+            ...(storyRegionField && typeof storyRegion === "string"
+              ? { [storyRegionField]: storyRegion }
+              : {}),
+            vocabRaw: Array.isArray(story.vocab) ? JSON.stringify(story.vocab, null, 2) : "",
+            cover: imageFieldFromUrl(story.cover),
+            audio: fileFieldFromUrl(story.audio),
+            book: { _type: "reference", _ref: bookDocId },
+            contentSource: "polyglotCatalog",
+            published: true,
+          },
         },
       });
 

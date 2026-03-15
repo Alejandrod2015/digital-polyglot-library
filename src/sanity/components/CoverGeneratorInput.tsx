@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button, Card, Flex, Spinner, Stack, Text } from '@sanity/ui'
 import { SparklesIcon } from '@sanity/icons'
-import { useFormValue } from 'sanity'
+import { useClient, useFormValue } from 'sanity'
 
 const regionKeyByLang: Record<string, string> = {
   spanish: 'region_es',
@@ -21,18 +21,20 @@ function toSynopsis(value: unknown): string {
 
 export default function CoverGeneratorInput() {
   const formId = useFormValue(['_id']) as string | undefined
+  const formType = useFormValue(['_type']) as string | undefined
   const title = useFormValue(['title']) as string | undefined
   const text = useFormValue(['text']) as string | undefined
   const synopsisField = useFormValue(['synopsis']) as string | undefined
   const language = useFormValue(['language']) as string | undefined
   const level = useFormValue(['level']) as string | undefined
   const topic = useFormValue(['topic']) as string | undefined
+  const client = useClient({ apiVersion: '2025-10-05' })
 
   const langKey = (language ?? 'spanish').toLowerCase()
   const regionKey = regionKeyByLang[langKey] ?? 'region'
   const region = useFormValue([regionKey]) as string | undefined
 
-  const [loadingProvider, setLoadingProvider] = useState<'openai' | 'flux' | null>(null)
+  const [loadingProvider, setLoadingProvider] = useState<'flux' | null>(null)
   const [msg, setMsg] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
@@ -42,7 +44,11 @@ export default function CoverGeneratorInput() {
       ? ''
       : 'https://reader.digitalpolyglot.com'
 
-  async function generateCover(provider: 'openai' | 'flux') {
+  function getDraftId(documentId: string) {
+    return documentId.startsWith('drafts.') ? documentId : `drafts.${documentId}`
+  }
+
+  async function generateCover(provider: 'flux') {
     try {
       setLoadingProvider(provider)
       setMsg(null)
@@ -71,9 +77,9 @@ export default function CoverGeneratorInput() {
         }),
       })
 
-      let data: { error?: string; details?: string } = {}
+      let data: { error?: string; details?: string; assetId?: string | null } = {}
       try {
-        data = (await res.json()) as { error?: string; details?: string }
+        data = (await res.json()) as { error?: string; details?: string; assetId?: string | null }
       } catch {
         throw new Error('The server did not return valid JSON. Please try again.')
       }
@@ -81,11 +87,26 @@ export default function CoverGeneratorInput() {
         throw new Error(data.error || data.details || 'Failed to generate cover.')
       }
 
-      setMsg(
-        provider === 'flux'
-          ? 'Cover generated with Flux and assigned successfully.'
-          : 'Cover generated with OpenAI and assigned successfully.'
-      )
+      if (data.assetId && formId) {
+        const patch = client.patch(getDraftId(formId))
+        if (formType) {
+          patch.setIfMissing({ _type: formType })
+        }
+
+        await patch
+          .set({
+            cover: {
+              _type: 'image',
+              asset: {
+                _type: 'reference',
+                _ref: data.assetId,
+              },
+            },
+          })
+          .commit({ autoGenerateArrayKeys: true })
+      }
+
+      setMsg('Cover generated with Flux and assigned successfully.')
     } catch (err) {
       const e = err as Error
       setError(e.message)
@@ -100,26 +121,15 @@ export default function CoverGeneratorInput() {
         <Flex gap={3} align="center">
           <Button
             icon={SparklesIcon}
-            text={loadingProvider === 'openai' ? 'Generating with OpenAI...' : 'Generate Cover (OpenAI)'}
-            tone="primary"
-            disabled={loadingProvider !== null}
-            onClick={() => generateCover('openai')}
-          />
-          <Button
-            icon={SparklesIcon}
-            text={loadingProvider === 'flux' ? 'Generating with Flux...' : 'Generate Cover (Flux)'}
-            tone="positive"
+            text={loadingProvider === 'flux' ? 'Generating Cover...' : 'Generate Cover'}
+            mode="default"
             disabled={loadingProvider !== null}
             onClick={() => generateCover('flux')}
           />
           {loadingProvider ? (
             <Flex align="center" gap={2}>
               <Spinner muted />
-              <Text size={1}>
-                {loadingProvider === 'flux'
-                  ? 'Creating image with Flux from synopsis...'
-                  : 'Creating image with OpenAI from synopsis...'}
-              </Text>
+              <Text size={1}>Creating image with Flux from synopsis...</Text>
             </Flex>
           ) : null}
         </Flex>

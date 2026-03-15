@@ -255,6 +255,20 @@ function extractFluxStatus(payload: unknown): string | null {
   );
 }
 
+function getDraftId(documentId: string): string {
+  return documentId.startsWith("drafts.") ? documentId : `drafts.${documentId}`;
+}
+
+function getPublishedId(documentId: string): string {
+  return documentId.startsWith("drafts.") ? documentId.replace(/^drafts\./, "") : documentId;
+}
+
+type SanityDoc = {
+  _id: string;
+  _type: string;
+  [key: string]: unknown;
+};
+
 async function generateOpenAIImageBase64(prompt: string): Promise<string> {
   const result = (await openai.images.generate({
     model: "gpt-image-1",
@@ -484,7 +498,26 @@ export async function POST(req: Request) {
       contentType: "image/png",
     });
 
-    await writeClient.patch(documentId).set({
+    const publishedId = getPublishedId(documentId);
+    const draftId = getDraftId(documentId);
+    const [publishedDoc, draftDoc] = await Promise.all([
+      writeClient.fetch<SanityDoc | null>(`*[_id == $id][0]`, { id: publishedId }),
+      writeClient.fetch<SanityDoc | null>(`*[_id == $id][0]`, { id: draftId }),
+    ]);
+
+    const docType = draftDoc?._type ?? publishedDoc?._type;
+    if (!docType) {
+      return NextResponse.json(
+        { error: "Could not resolve the document type for this cover generation." },
+        { status: 404, headers: corsHeaders }
+      );
+    }
+
+    const nextDraft: SanityDoc = {
+      ...(publishedDoc ?? {}),
+      ...(draftDoc ?? {}),
+      _id: draftId,
+      _type: docType,
       cover: {
         _type: "image",
         asset: {
@@ -492,7 +525,12 @@ export async function POST(req: Request) {
           _ref: asset._id,
         },
       },
-    }).commit({ autoGenerateArrayKeys: true });
+    };
+
+    await writeClient
+      .transaction()
+      .createOrReplace(nextDraft)
+      .commit({ autoGenerateArrayKeys: true });
 
     return NextResponse.json(
       {

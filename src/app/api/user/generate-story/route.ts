@@ -3,11 +3,11 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { PrismaClient } from "@/generated/prisma";
 import slugify from "slugify";
-import { customAlphabet } from "nanoid";
 import { generateAndUploadCover } from "@/lib/dalle";
 import { inferTopicFromText } from "@/lib/topicClassifier";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
+import { normalizeVocabWord } from "@/lib/vocabWordNormalization";
 import {
   HARD_STORY_WORDS_MAX,
   MIN_STORY_WORDS,
@@ -17,10 +17,10 @@ import {
 } from "@/lib/storyLength";
 import { broadLevelFromCefr, cefrPromptLabel, normalizeCefrLevel, normalizeBroadLevel } from "@/lib/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
+import { syncCreateStoryMirror } from "@/lib/createStoryMirror";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
-const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 6);
 
 type StoryJSON = {
   title: string;
@@ -33,6 +33,7 @@ type StoryVocabItem = StoryJSON["vocab"][number];
 const TARGET_VOCAB_ITEMS = 22;
 const MIN_VOCAB_ITEMS_HARD = 8;
 const MAX_GENERATION_ATTEMPTS = 3;
+const TITLE_SIMILARITY_THRESHOLD = 0.82;
 const UNIVERSAL_ANGLICISMS = new Set([
   "internet",
   "online",
@@ -260,6 +261,86 @@ function normalizeStoryHtml(html: string): string {
   return withParagraphs;
 }
 
+function normalizeComparableTitle(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function getBigrams(value: string): Set<string> {
+  const compact = value.replace(/\s+/g, " ");
+  if (compact.length < 2) return new Set(compact ? [compact] : []);
+  const bigrams = new Set<string>();
+  for (let i = 0; i < compact.length - 1; i += 1) {
+    bigrams.add(compact.slice(i, i + 2));
+  }
+  return bigrams;
+}
+
+function calculateTitleSimilarity(a: string, b: string): number {
+  const normalizedA = normalizeComparableTitle(a);
+  const normalizedB = normalizeComparableTitle(b);
+
+  if (!normalizedA || !normalizedB) return 0;
+  if (normalizedA === normalizedB) return 1;
+  if (normalizedA.includes(normalizedB) || normalizedB.includes(normalizedA)) return 0.95;
+
+  const tokensA = new Set(normalizedA.split(" "));
+  const tokensB = new Set(normalizedB.split(" "));
+  const sharedTokens = [...tokensA].filter((token) => tokensB.has(token)).length;
+  const tokenScore = (2 * sharedTokens) / (tokensA.size + tokensB.size);
+
+  const bigramsA = getBigrams(normalizedA);
+  const bigramsB = getBigrams(normalizedB);
+  const sharedBigrams = [...bigramsA].filter((bigram) => bigramsB.has(bigram)).length;
+  const bigramScore = (2 * sharedBigrams) / (bigramsA.size + bigramsB.size);
+
+  return Math.max(tokenScore, bigramScore);
+}
+
+function findTooSimilarTitle(candidate: string, existingTitles: string[]): string | null {
+  const normalizedCandidate = normalizeComparableTitle(candidate);
+  if (!normalizedCandidate) return null;
+
+  for (const existingTitle of existingTitles) {
+    if (!existingTitle.trim()) continue;
+    const similarity = calculateTitleSimilarity(candidate, existingTitle);
+    if (similarity >= TITLE_SIMILARITY_THRESHOLD) {
+      return existingTitle;
+    }
+  }
+
+  return null;
+}
+
+async function createReadableUniqueSlug(title: string): Promise<string> {
+  const baseSlug = slugify(title, { lower: true, strict: true }).slice(0, 80) || "story";
+  const existingStories = await prisma.userStory.findMany({
+    where: {
+      slug: {
+        startsWith: baseSlug,
+      },
+    },
+    select: {
+      slug: true,
+    },
+  });
+
+  const existingSlugs = new Set(existingStories.map((story) => story.slug));
+  if (!existingSlugs.has(baseSlug)) return baseSlug;
+
+  let counter = 2;
+  while (existingSlugs.has(`${baseSlug}-${counter}`)) {
+    counter += 1;
+  }
+
+  return `${baseSlug}-${counter}`;
+}
+
 function stripHtmlTags(value: string): string {
   return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -370,15 +451,19 @@ function isLikelyComplexWord(item: StoryVocabItem, language: string): boolean {
   return false;
 }
 
-function sanitizeVocab(items: StoryVocabItem[]): StoryVocabItem[] {
+function sanitizeVocab(items: StoryVocabItem[], language?: string): StoryVocabItem[] {
   const out: StoryVocabItem[] = [];
   const seen = new Set<string>();
 
   for (const item of items) {
     if (!item || typeof item !== "object") continue;
-    const word = typeof item.word === "string" ? item.word.trim() : "";
-    const definition = typeof item.definition === "string" ? item.definition.trim() : "";
     const type = typeof item.type === "string" ? item.type.trim() : undefined;
+    const word = normalizeVocabWord({
+      word: typeof item.word === "string" ? item.word : "",
+      type,
+      language,
+    });
+    const definition = typeof item.definition === "string" ? item.definition.trim() : "";
     if (!word || !definition) continue;
     const key = normalizeToken(word);
     if (!key || seen.has(key)) continue;
@@ -491,7 +576,7 @@ ${text.slice(0, 9000)}
     if (!content) return [];
     const parsed = parseModelJson(content);
     const rows = Array.isArray(parsed) ? parsed : [];
-    const normalized = sanitizeVocab(rows as StoryVocabItem[]);
+    const normalized = sanitizeVocab(rows as StoryVocabItem[], language);
     return normalized.filter(
       (item) =>
         !isUniversalAnglicism(item.word, language) &&
@@ -547,6 +632,36 @@ export async function POST(req: Request) {
     const customTopicResolved =
       typeof customTopic === "string" ? customTopic.trim().slice(0, 120) : "";
     const resolvedTopic = customTopicResolved || requestedTopic;
+    const existingStoryTitles = (
+      await prisma.userStory.findMany({
+        where: {
+          language,
+          ...(resolvedTopic
+            ? {
+                topic: {
+                  contains: resolvedTopic,
+                  mode: "insensitive",
+                },
+              }
+            : {}),
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+        take: 40,
+        select: {
+          title: true,
+        },
+      })
+    )
+      .map((story) => story.title.trim())
+      .filter(Boolean);
+    const existingTitlesClause = existingStoryTitles.length
+      ? `Avoid titles identical or too similar to these existing titles: ${existingStoryTitles
+          .slice(0, 12)
+          .map((title) => `"${title}"`)
+          .join(", ")}.`
+      : "";
 
     const regionClause = region ? `, specifically from ${region}` : "";
     const variantClause = buildVariantPromptClause(language, normalizedVariant);
@@ -591,6 +706,7 @@ Narrative quality rules:
 - Include realistic dialogue and specific details (places, constraints, consequences).
 - Keep the story for adult learners: natural, grounded, and emotionally believable.
 - Keep title short and specific (max 7 words), avoid clichés like "The Mystery of..." unless truly justified.
+- ${existingTitlesClause || "Keep the title clearly distinct from common travel/daily-life template titles."}
 - Length target: ${TARGET_STORY_WORDS_MIN}-${TARGET_STORY_WORDS_MAX} words.
 - Absolute minimum: ${MIN_STORY_WORDS} words.
 - Hard maximum: ${HARD_STORY_WORDS_MAX} words.
@@ -640,6 +756,11 @@ Return ONLY valid JSON:
       if (!isValidStoryJSON(parsed)) continue;
 
       const candidate = parsed as StoryJSON;
+      const tooSimilarTitle = findTooSimilarTitle(candidate.title, existingStoryTitles);
+      if (tooSimilarTitle) {
+        previousFeedback = `Title "${candidate.title}" is too similar to existing title "${tooSimilarTitle}". Generate a more distinct title.`;
+        continue;
+      }
       const normalizedCandidateText = normalizeStoryHtml(candidate.text);
       const boundedCandidateText =
         countStoryWords(normalizedCandidateText) > HARD_STORY_WORDS_MAX
@@ -657,7 +778,7 @@ Return ONLY valid JSON:
         continue;
       }
 
-      const cleanedVocab = sanitizeVocab(candidate.vocab);
+      const cleanedVocab = sanitizeVocab(candidate.vocab, language);
       const stats = analyzeVocab(cleanedVocab, language);
       if (stats.score > bestScore) {
         bestScore = stats.score;
@@ -688,7 +809,7 @@ Return ONLY valid JSON:
         { status: 502 }
       );
     }
-    let curatedVocab = sanitizeVocab(vocab);
+    let curatedVocab = sanitizeVocab(vocab, language);
 
     const disallowedKeys = new Set<string>();
     for (const item of curatedVocab) {
@@ -718,7 +839,7 @@ Return ONLY valid JSON:
         existingVocab: curatedVocab,
         needed: missing,
       });
-      curatedVocab = sanitizeVocab([...curatedVocab, ...filled]);
+      curatedVocab = sanitizeVocab([...curatedVocab, ...filled], language);
     }
 
     const improvedVocab = await improveVocabDefinitions(openai, {
@@ -729,7 +850,7 @@ Return ONLY valid JSON:
       topic: resolvedTopic,
       text: normalizedText,
     });
-    let finalVocab = sanitizeVocab(improvedVocab as StoryVocabItem[]);
+    let finalVocab = sanitizeVocab(improvedVocab as StoryVocabItem[], language);
     if (finalVocab.length < TARGET_VOCAB_ITEMS) {
       const missing = TARGET_VOCAB_ITEMS - finalVocab.length;
       const filled = await generateComplexVocabFill(openai, {
@@ -742,7 +863,7 @@ Return ONLY valid JSON:
         existingVocab: finalVocab,
         needed: missing,
       });
-      finalVocab = sanitizeVocab([...finalVocab, ...filled]);
+      finalVocab = sanitizeVocab([...finalVocab, ...filled], language);
     }
     if (finalVocab.length < MIN_VOCAB_ITEMS_HARD) {
       return NextResponse.json(
@@ -760,8 +881,7 @@ Return ONLY valid JSON:
           : "Beginner";
 
     // Generar slug único
-    const baseSlug = slugify(title, { lower: true, strict: true }).slice(0, 80);
-    const uniqueSlug = `${baseSlug}-${nanoid()}`;
+    const uniqueSlug = await createReadableUniqueSlug(title);
 
     const inferredTopic = inferTopicFromText({
       title,
@@ -801,17 +921,28 @@ Return ONLY valid JSON:
   });
 
   if (cover && cover.url && cover.filename) {
-    await prisma.userStory.update({
+    const storyWithCover = await prisma.userStory.update({
       where: { id: savedStory.id },
       data: {
         coverUrl: cover.url,
         coverFilename: cover.filename,
       },
     });
+    try {
+      await syncCreateStoryMirror(storyWithCover);
+    } catch (mirrorError) {
+      console.warn("[create-story-mirror] Cover sync failed:", mirrorError);
+    }
   }
 } catch (e: unknown) {
   console.error("[cover] Failed to generate/upload cover:", e);
 }
+
+    try {
+      await syncCreateStoryMirror(savedStory);
+    } catch (mirrorError) {
+      console.warn("[create-story-mirror] Initial sync failed:", mirrorError);
+    }
 
     // 🔹 Generación de audio en segundo plano
     try {

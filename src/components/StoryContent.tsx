@@ -28,6 +28,13 @@ function stripHtml(raw: string): string {
   return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+function stripLegacyVocabSpans(raw: string): string {
+  return raw.replace(
+    /<span\s+[^>]*class=["']vocab-word["'][^>]*>(.*?)<\/span>/giu,
+    (_match, inner: string) => inner
+  );
+}
+
 function sanitizePlainStoryText(raw: string): string {
   return raw
     .replace(/\r\n?/g, "\n")
@@ -84,6 +91,31 @@ function extractLegacyDataWords(html: string): string[] {
     match = regex.exec(html);
   }
   return Array.from(new Set(out));
+}
+
+type HtmlBlock = {
+  tag: "p" | "blockquote";
+  text: string;
+};
+
+function extractHtmlBlocks(html: string): HtmlBlock[] {
+  const cleanHtml = stripLegacyVocabSpans(html);
+  const blockRegex = /<(blockquote|p)\b[^>]*>([\s\S]*?)<\/\1>/giu;
+  const blocks: HtmlBlock[] = [];
+  let match: RegExpExecArray | null = blockRegex.exec(cleanHtml);
+
+  while (match) {
+    const tag = match[1]?.toLowerCase() === "blockquote" ? "blockquote" : "p";
+    const text = sanitizePlainStoryText(stripHtml(match[2] ?? ""));
+    if (text) blocks.push({ tag, text });
+    match = blockRegex.exec(cleanHtml);
+  }
+
+  if (blocks.length > 0) return blocks;
+
+  const fallback = sanitizePlainStoryText(stripHtml(cleanHtml));
+  if (!fallback) return [];
+  return splitSentences(fallback).map((text) => ({ tag: "p", text }));
 }
 
 function normalizeVocabForHighlight(vocab: Array<{ word: string }>): string[] {
@@ -181,7 +213,7 @@ export default function StoryContent({
   vocab = [],
 }: StoryContentProps) {
   const hasHtml = React.useMemo(
-    () => /<\s*span[^>]*class=["']vocab-word["']/.test(text),
+    () => /<[^>]+>/.test(text),
     [text]
   );
   const legacyWords = React.useMemo(() => (hasHtml ? extractLegacyDataWords(text) : []), [hasHtml, text]);
@@ -198,6 +230,7 @@ export default function StoryContent({
     () => normalizeVocabForHighlight(vocab).map((word) => ({ word })),
     [vocab]
   );
+  const htmlBlocks = React.useMemo(() => (hasHtml ? extractHtmlBlocks(text) : []), [hasHtml, text]);
 
   React.useEffect(() => {
     if (process.env.NODE_ENV === "production") return;
@@ -211,7 +244,7 @@ export default function StoryContent({
   }, [hasHtml, legacyWords, vocabSet]);
 
   const cleanedText = React.useMemo(
-    () => (hasHtml ? "" : sanitizePlainStoryText(stripHtml(text))),
+    () => (hasHtml ? "" : sanitizePlainStoryText(stripHtml(stripLegacyVocabSpans(text)))),
     [hasHtml, text]
   );
   const sentences = React.useMemo(() => (hasHtml ? [] : splitSentences(cleanedText)), [hasHtml, cleanedText]);
@@ -284,7 +317,17 @@ export default function StoryContent({
       )}
       onMouseUp={onParagraphSelect}
       {...(hasHtml
-        ? { dangerouslySetInnerHTML: { __html: text } }
+        ? {
+            children: htmlBlocks.map((block, i) =>
+              block.tag === "blockquote" ? (
+                <blockquote key={`bq-${i}`}>
+                  <p>{highlightVocabulary(block.text, safeVocab, renderWord)}</p>
+                </blockquote>
+              ) : (
+                <p key={`p-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord)}</p>
+              )
+            ),
+          }
         : {
             children: paragraphs.map((para, i) => (
               <p key={i}>{highlightVocabulary(para, safeVocab, renderWord)}</p>

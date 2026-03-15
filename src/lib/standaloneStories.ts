@@ -1,6 +1,6 @@
 import { unstable_cache } from "next/cache";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { freshClient as client } from "@/sanity/lib/client";
 import { resolveContentVariant } from "@/lib/languageVariant";
 import type { CefrLevel, Level } from "@/types/books";
 

@@ -10,6 +10,7 @@ import StoryTextInput from "../components/StoryTextInput";
 import AutoSlugInput from "../components/AutoSlugInput";
 import StoryVocabQualityInput from "../components/StoryVocabQualityInput";
 import JourneyTopicInput from "../components/JourneyTopicInput";
+import VisitStoryPageInput from "../components/VisitStoryPageInput";
 
 function isRecord(v: unknown): v is Record<string, unknown> {
   return typeof v === "object" && v !== null && !Array.isArray(v);
@@ -78,11 +79,49 @@ export const standaloneStory = defineType({
   name: "standaloneStory",
   title: "Standalone Story",
   type: "document",
+  fieldsets: [
+    { name: "metadata", title: "Metadata", options: { columns: 3 } },
+    { name: "journey", title: "Journey", options: { columns: 2 } },
+    { name: "generation", title: "Generation", options: { columns: 2 } },
+    { name: "content", title: "Content", options: { columns: 1 } },
+    { name: "vocab", title: "Vocabulary", options: { columns: 2 } },
+    { name: "media", title: "Cover & Audio", options: { columns: 1 } },
+    { name: "qa", title: "QA Reports", options: { columns: 2 } },
+    { name: "publishing", title: "Publishing", options: { columns: 2 } },
+  ],
   fields: [
+    defineField({
+      name: "sourceType",
+      title: "Source type",
+      type: "string",
+      hidden: true,
+      initialValue: "sanity",
+      options: {
+        list: [
+          { title: "Sanity", value: "sanity" },
+          { title: "Create", value: "create" },
+        ],
+      },
+    }),
+    defineField({
+      name: "createStoryId",
+      title: "Create story id",
+      type: "string",
+      hidden: true,
+      readOnly: true,
+    }),
+    defineField({
+      name: "createStoryUserId",
+      title: "Create story user id",
+      type: "string",
+      hidden: true,
+      readOnly: true,
+    }),
     defineField({
       name: "language",
       title: "Language",
       type: "string",
+      fieldset: "metadata",
       options: {
         list: [
           { title: "Spanish", value: "spanish" },
@@ -99,6 +138,7 @@ export const standaloneStory = defineType({
       name: "variant",
       title: "Variant",
       type: "string",
+      fieldset: "metadata",
       options: {
         list: [
           { title: "LATAM", value: "latam" },
@@ -114,13 +154,13 @@ export const standaloneStory = defineType({
           { title: "Italy", value: "italy" },
         ],
       },
-      description: "Pedagogical track used for curriculum and learner paths.",
     }),
 
     defineField({
       name: "region_es",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "spanish",
       options: {
         list: [
@@ -132,12 +172,12 @@ export const standaloneStory = defineType({
           { title: "Peru", value: "peru" },
         ],
       },
-      description: "Optional.",
     }),
     defineField({
       name: "region_en",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "english",
       options: {
         list: [
@@ -147,45 +187,45 @@ export const standaloneStory = defineType({
           { title: "Canada", value: "canada" },
         ],
       },
-      description: "Optional.",
     }),
     defineField({
       name: "region_de",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "german",
       options: { list: [{ title: "Germany", value: "germany" }] },
-      description: "Optional.",
     }),
     defineField({
       name: "region_fr",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "french",
       options: { list: [{ title: "France", value: "france" }] },
-      description: "Optional.",
     }),
     defineField({
       name: "region_it",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "italian",
       options: { list: [{ title: "Italy", value: "italy" }] },
-      description: "Optional.",
     }),
     defineField({
       name: "region_pt",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "portuguese",
       options: { list: [{ title: "Brazil", value: "brazil" }] },
-      description: "Optional.",
     }),
 
     defineField({
       name: "level",
       title: "Broad level",
       type: "string",
+      fieldset: "metadata",
       hidden: true,
       options: {
         list: [
@@ -194,13 +234,13 @@ export const standaloneStory = defineType({
           { title: "Advanced", value: "advanced" },
         ],
       },
-      description: "Legacy broad difficulty bucket. Prefer CEFR level for precise progression.",
     }),
 
     defineField({
       name: "cefrLevel",
       title: "CEFR level",
       type: "string",
+      fieldset: "metadata",
       options: {
         list: [
           { title: "A1", value: "a1" },
@@ -211,13 +251,13 @@ export const standaloneStory = defineType({
           { title: "C2", value: "c2" },
         ],
       },
-      description: "Precise CEFR level for Journey and learner progression.",
     }),
 
     defineField({
       name: "focus",
       title: "Focus",
       type: "string",
+      fieldset: "metadata",
       options: {
         list: [
           { title: "Adjectives", value: "adjectives" },
@@ -233,34 +273,34 @@ export const standaloneStory = defineType({
       name: "topic",
       title: "Prompt topic",
       type: "string",
-      description: "Optional free-text topic to guide generation. This does not place the story inside Journey.",
+      fieldset: "metadata",
     }),
 
     defineField({
       name: "journeyEligible",
       title: "Show in Journey",
       type: "boolean",
+      fieldset: "journey",
       initialValue: false,
-      description: "Enable this only for stories that should appear inside the learner Journey.",
     }),
 
     defineField({
       name: "journeyTopic",
       title: "Journey topic",
       type: "string",
+      fieldset: "journey",
       hidden: ({ document }) => !Boolean((document as { journeyEligible?: boolean } | undefined)?.journeyEligible),
       components: {
         input: JourneyTopicInput,
       },
-      description: "Curriculum topic slug used by Journey. Options depend on variant and CEFR level.",
     }),
 
     defineField({
       name: "journeyOrder",
       title: "Journey order",
       type: "number",
+      fieldset: "journey",
       hidden: ({ document }) => !Boolean((document as { journeyEligible?: boolean } | undefined)?.journeyEligible),
-      description: "Order inside the Journey topic. Lower numbers appear first.",
       validation: (Rule) => Rule.integer().min(1),
     }),
 
@@ -268,12 +308,14 @@ export const standaloneStory = defineType({
       name: "title",
       title: "Title",
       type: "string",
+      fieldset: "content",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
+      fieldset: "content",
       options: {
         source: "title",
         maxLength: 96,
@@ -287,14 +329,15 @@ export const standaloneStory = defineType({
       name: "synopsis",
       title: "Synopsis",
       type: "text",
+      fieldset: "content",
       rows: 4,
-      description: "Short synopsis used to guide the story and cover generation.",
     }),
 
     defineField({
       name: "generate",
       title: "🪄 Generate Story",
       type: "string",
+      fieldset: "generation",
       readOnly: true,
       components: {
         input: (props: InputProps) => {
@@ -308,8 +351,7 @@ export const standaloneStory = defineType({
       name: "text",
       title: "Main Text",
       type: "text",
-      description:
-        "Target length: about 2-3 minutes of audio (roughly 260-500 words). Keep it concise and dynamic.",
+      fieldset: "content",
       components: {
         input: (props: InputProps) => React.createElement(StoryTextInput, props),
       },
@@ -317,12 +359,6 @@ export const standaloneStory = defineType({
         Rule.required().custom((value) => {
           if (typeof value !== "string" || value.trim() === "") {
             return "Main Text is required.";
-          }
-          if (countWords(value) < MIN_TEXT_WORDS) {
-            return `Main Text is too short for ~2 minutes of audio (min ${MIN_TEXT_WORDS} words).`;
-          }
-          if (countWords(value) > MAX_TEXT_WORDS) {
-            return `Main Text is too long for ~3 minutes of audio (max ${MAX_TEXT_WORDS} words).`;
           }
           if (/<\s*script\b/i.test(value)) {
             return "Main Text cannot contain <script> tags.";
@@ -335,6 +371,7 @@ export const standaloneStory = defineType({
       name: "checkStoryVocabQuality",
       title: "🔎 Check Story Vocabulary Quality",
       type: "string",
+      fieldset: "vocab",
       readOnly: true,
       components: {
         input: () => React.createElement(StoryVocabQualityInput),
@@ -344,7 +381,7 @@ export const standaloneStory = defineType({
       name: "storyVocabQualityRaw",
       title: "Story vocabulary quality report",
       type: "text",
-      description: "Auto-generated lexical quality check for the story text.",
+      fieldset: "qa",
       rows: 8,
       readOnly: true,
     }),
@@ -352,6 +389,7 @@ export const standaloneStory = defineType({
       name: "generateVocab",
       title: "🧠 Generate Vocabulary",
       type: "string",
+      fieldset: "vocab",
       readOnly: true,
       components: {
         input: () => React.createElement(VocabGeneratorInput),
@@ -361,6 +399,7 @@ export const standaloneStory = defineType({
       name: "validateVocab",
       title: "✅ Validate & Fix Vocabulary",
       type: "string",
+      fieldset: "vocab",
       readOnly: true,
       components: {
         input: () => React.createElement(VocabValidatorInput),
@@ -370,8 +409,7 @@ export const standaloneStory = defineType({
       name: "vocabRaw",
       title: "Vocabulary (raw JSON or text)",
       type: "text",
-      description:
-        "This field stores the vocabulary list generated by ChatGPT. The system will parse it automatically.",
+      fieldset: "vocab",
       rows: 10,
       validation: (Rule) => Rule.custom((value) => validateVocabRaw(value)),
     }),
@@ -379,7 +417,7 @@ export const standaloneStory = defineType({
       name: "vocabValidationRaw",
       title: "Vocabulary validation report",
       type: "text",
-      description: "Auto-generated validation summary for the current vocabulary list.",
+      fieldset: "qa",
       rows: 8,
       readOnly: true,
     }),
@@ -387,6 +425,7 @@ export const standaloneStory = defineType({
       name: "generateCover",
       title: "🖼️ Generate Cover",
       type: "string",
+      fieldset: "media",
       readOnly: true,
       components: {
         input: () => React.createElement(CoverGeneratorInput),
@@ -396,12 +435,14 @@ export const standaloneStory = defineType({
       name: "cover",
       title: "Cover Image",
       type: "image",
+      fieldset: "media",
       options: { hotspot: true },
     }),
     defineField({
       name: "generateAudio",
       title: "🎙️ Generate Audio",
       type: "string",
+      fieldset: "media",
       readOnly: true,
       components: {
         input: () => React.createElement(AudioGeneratorInput),
@@ -411,6 +452,7 @@ export const standaloneStory = defineType({
       name: "audio",
       title: "Audio File",
       type: "file",
+      fieldset: "media",
       options: {
         storeOriginalFilename: true,
       },
@@ -426,6 +468,7 @@ export const standaloneStory = defineType({
       name: "audioQaStatus",
       title: "Audio QA status",
       type: "string",
+      fieldset: "qa",
       readOnly: true,
       options: {
         list: [
@@ -435,41 +478,42 @@ export const standaloneStory = defineType({
           { title: "Unavailable", value: "unavailable" },
         ],
       },
-      description: "Automatic QA result based on transcript similarity.",
     }),
     defineField({
       name: "audioQaScore",
       title: "Audio QA score",
       type: "number",
+      fieldset: "qa",
       readOnly: true,
-      description: "Similarity score between expected narration and transcript (0 to 1).",
     }),
     defineField({
       name: "audioQaNotes",
       title: "Audio QA notes",
       type: "text",
+      fieldset: "qa",
       rows: 6,
       readOnly: true,
-      description: "Automatic notes for the audio review team.",
     }),
     defineField({
       name: "audioQaTranscript",
       title: "Audio QA transcript",
       type: "text",
+      fieldset: "qa",
       rows: 8,
       readOnly: true,
-      description: "Transcript used to compare the generated audio with the expected text.",
     }),
     defineField({
       name: "audioQaCheckedAt",
       title: "Audio QA checked at",
       type: "datetime",
+      fieldset: "qa",
       readOnly: true,
     }),
     defineField({
       name: "audioDeliveryQaStatus",
       title: "Audio delivery QA status",
       type: "string",
+      fieldset: "qa",
       readOnly: true,
       options: {
         list: [
@@ -479,27 +523,27 @@ export const standaloneStory = defineType({
           { title: "Unavailable", value: "unavailable" },
         ],
       },
-      description: "Automatic delivery QA result based on sentence pauses.",
     }),
     defineField({
       name: "audioDeliveryQaScore",
       title: "Audio delivery QA score",
       type: "number",
+      fieldset: "qa",
       readOnly: true,
-      description: "Delivery score based on sentence pause timing (0 to 1).",
     }),
     defineField({
       name: "audioDeliveryQaNotes",
       title: "Audio delivery QA notes",
       type: "text",
+      fieldset: "qa",
       rows: 6,
       readOnly: true,
-      description: "Automatic notes about pauses and possible unfinished sentence endings.",
     }),
     defineField({
       name: "audioDeliveryQaCheckedAt",
       title: "Audio delivery QA checked at",
       type: "datetime",
+      fieldset: "qa",
       readOnly: true,
     }),
 
@@ -507,19 +551,31 @@ export const standaloneStory = defineType({
       name: "published",
       title: "Published",
       type: "boolean",
+      fieldset: "publishing",
       initialValue: false,
+    }),
+    defineField({
+      name: "visitStoryPage",
+      title: "Visit Story Page",
+      type: "string",
+      fieldset: "publishing",
+      readOnly: true,
+      components: {
+        input: VisitStoryPageInput,
+      },
     }),
   ],
 
   preview: {
-    select: { title: "title", cefrLevel: "cefrLevel", level: "level", media: "cover" },
-    prepare({ title, cefrLevel, level, media }) {
+    select: { title: "title", cefrLevel: "cefrLevel", level: "level", media: "cover", sourceType: "sourceType" },
+    prepare({ title, cefrLevel, level, media, sourceType }) {
+      const sourceLabel = sourceType === "create" ? "Create" : "Standalone";
       const subtitle =
         typeof cefrLevel === "string" && cefrLevel
-          ? `Standalone • CEFR ${cefrLevel.toUpperCase()}`
+          ? `${sourceLabel} • CEFR ${cefrLevel.toUpperCase()}`
           : level
-            ? `Standalone • Level: ${level}`
-            : "Standalone story";
+            ? `${sourceLabel} • Level: ${level}`
+            : `${sourceLabel} story`;
       return {
         title: title || "Untitled Story",
         subtitle,

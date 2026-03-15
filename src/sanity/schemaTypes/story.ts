@@ -10,6 +10,7 @@ import AudioGeneratorInput from "../components/AudioGeneratorInput";
 import StoryTextInput from "../components/StoryTextInput";
 import AutoSlugInput from "../components/AutoSlugInput";
 import StoryVocabQualityInput from "../components/StoryVocabQualityInput";
+import VisitStoryPageInput from "../components/VisitStoryPageInput";
 
 type SetPatch = {
   type: "set";
@@ -97,6 +98,16 @@ export const story = defineType({
   name: "story",
   title: "Story",
   type: "document",
+  fieldsets: [
+    { name: "relationship", title: "Book Link", options: { columns: 2 } },
+    { name: "metadata", title: "Metadata", options: { columns: 3 } },
+    { name: "generation", title: "Generation", options: { columns: 2 } },
+    { name: "content", title: "Content", options: { columns: 1 } },
+    { name: "vocab", title: "Vocabulary", options: { columns: 2 } },
+    { name: "media", title: "Cover & Audio", options: { columns: 1 } },
+    { name: "qa", title: "QA Reports", options: { columns: 2 } },
+    { name: "publishing", title: "Publishing", options: { columns: 2 } },
+  ],
 
   fields: [
     //
@@ -106,9 +117,9 @@ export const story = defineType({
       name: "book",
       title: "Related Book",
       type: "reference",
+      fieldset: "relationship",
       to: [{ type: "book" }],
       validation: (Rule) => Rule.required(),
-      description: "Select the book this story belongs to (required).",
     }),
 
     //
@@ -118,6 +129,7 @@ export const story = defineType({
       name: "syncBookMetadata",
       title: "Sync Book Metadata",
       type: "string",
+      fieldset: "relationship",
       hidden: true,
       components: {
         input: function SyncBookMetadataComponent(props: unknown) {
@@ -195,6 +207,28 @@ export const story = defineType({
       },
     }),
 
+    defineField({
+      name: "contentSource",
+      title: "Content source",
+      type: "string",
+      hidden: true,
+      readOnly: true,
+      options: {
+        list: [
+          { title: "Polyglot Catalog", value: "polyglotCatalog" },
+          { title: "Studio", value: "studio" },
+        ],
+      },
+    }),
+
+    defineField({
+      name: "showInPolyglotStories",
+      title: "Show in Polyglot Stories",
+      type: "boolean",
+      fieldset: "publishing",
+      initialValue: false,
+    }),
+
     //
     // 🧭 INPUT SECTION — configuración previa a la generación
     //
@@ -202,6 +236,7 @@ export const story = defineType({
       name: "language",
       title: "Language",
       type: "string",
+      fieldset: "metadata",
       options: {
         list: [
           { title: "Spanish", value: "spanish" },
@@ -218,6 +253,7 @@ export const story = defineType({
       name: "variant",
       title: "Variant",
       type: "string",
+      fieldset: "metadata",
       options: {
         list: [
           { title: "LATAM", value: "latam" },
@@ -233,13 +269,13 @@ export const story = defineType({
           { title: "Italy", value: "italy" },
         ],
       },
-      description: "Pedagogical track used for curriculum and Journey. Keep region for the exact local context.",
     }),
 
     defineField({
       name: "region_es",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "spanish",
       options: {
         list: [
@@ -251,13 +287,13 @@ export const story = defineType({
           { title: "Peru", value: "peru" },
         ],
       },
-      description: "Optional.",
     }),
 
     defineField({
       name: "region_en",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "english",
       options: {
         list: [
@@ -267,49 +303,49 @@ export const story = defineType({
           { title: "Canada", value: "canada" },
         ],
       },
-      description: "Optional.",
     }),
 
     defineField({
       name: "region_de",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "german",
       options: { list: [{ title: "Germany", value: "germany" }] },
-      description: "Optional.",
     }),
 
     defineField({
       name: "region_fr",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "french",
       options: { list: [{ title: "France", value: "france" }] },
-      description: "Optional.",
     }),
 
     defineField({
       name: "region_it",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "italian",
       options: { list: [{ title: "Italy", value: "italy" }] },
-      description: "Optional.",
     }),
 
     defineField({
       name: "region_pt",
       title: "Region",
       type: "string",
+      fieldset: "metadata",
       hidden: ({ document }) => getLanguage(document) !== "portuguese",
       options: { list: [{ title: "Brazil", value: "brazil" }] },
-      description: "Optional.",
     }),
 
     defineField({
       name: "level",
       title: "Broad level",
       type: "string",
+      fieldset: "metadata",
       hidden: true,
       options: {
         list: [
@@ -318,13 +354,13 @@ export const story = defineType({
           { title: "Advanced", value: "advanced" },
         ],
       },
-      description: "Legacy broad difficulty bucket. Prefer CEFR level for precise progression.",
     }),
 
     defineField({
       name: "cefrLevel",
       title: "CEFR level",
       type: "string",
+      fieldset: "metadata",
       options: {
         list: [
           { title: "A1", value: "a1" },
@@ -335,13 +371,13 @@ export const story = defineType({
           { title: "C2", value: "c2" },
         ],
       },
-      description: "Precise CEFR level for Journey and learner progression.",
     }),
 
     defineField({
       name: "focus",
       title: "Focus",
       type: "string",
+      fieldset: "metadata",
       options: {
         list: [
           { title: "Adjectives", value: "adjectives" },
@@ -357,13 +393,14 @@ export const story = defineType({
       name: "topic",
       title: "Prompt topic",
       type: "string",
-      description: "Optional free-text topic to guide generation. This does not place the story inside Journey.",
+      fieldset: "metadata",
     }),
 
     defineField({
       name: "title",
       title: "Title",
       type: "string",
+      fieldset: "content",
       validation: (Rule) => Rule.required(),
     }),
 
@@ -371,6 +408,7 @@ export const story = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
+      fieldset: "content",
       options: {
         source: "title",
         maxLength: 96,
@@ -384,9 +422,8 @@ export const story = defineType({
       name: "synopsis",
       title: "Synopsis",
       type: "text",
+      fieldset: "content",
       rows: 4,
-      description:
-        "Short synopsis used to generate the cover image. If empty, the story text will be used.",
     }),
 
     //
@@ -396,6 +433,7 @@ export const story = defineType({
       name: "generate",
       title: "🪄 Generate Story",
       type: "string",
+      fieldset: "generation",
       readOnly: true,
       components: {
         input: (props: InputProps) => {
@@ -412,8 +450,7 @@ export const story = defineType({
       name: "text",
       title: "Main Text",
       type: "text",
-      description:
-        "Target length: about 2-3 minutes of audio (roughly 260-500 words). Keep it concise and dynamic.",
+      fieldset: "content",
       components: {
         input: (props: InputProps) => React.createElement(StoryTextInput, props),
       },
@@ -421,12 +458,6 @@ export const story = defineType({
         Rule.required().custom((value) => {
           if (typeof value !== "string" || value.trim() === "") {
             return "Main Text is required.";
-          }
-          if (countWords(value) < MIN_TEXT_WORDS) {
-            return `Main Text is too short for ~2 minutes of audio (min ${MIN_TEXT_WORDS} words).`;
-          }
-          if (countWords(value) > MAX_TEXT_WORDS) {
-            return `Main Text is too long for ~3 minutes of audio (max ${MAX_TEXT_WORDS} words).`;
           }
           if (/<\s*script\b/i.test(value)) {
             return "Main Text cannot contain <script> tags.";
@@ -439,6 +470,7 @@ export const story = defineType({
       name: "checkStoryVocabQuality",
       title: "🔎 Check Story Vocabulary Quality",
       type: "string",
+      fieldset: "vocab",
       readOnly: true,
       components: {
         input: () => React.createElement(StoryVocabQualityInput),
@@ -449,7 +481,7 @@ export const story = defineType({
       name: "storyVocabQualityRaw",
       title: "Story vocabulary quality report",
       type: "text",
-      description: "Auto-generated lexical quality check for the story text.",
+      fieldset: "qa",
       rows: 8,
       readOnly: true,
     }),
@@ -458,6 +490,7 @@ export const story = defineType({
       name: "generateVocab",
       title: "🧠 Generate Vocabulary",
       type: "string",
+      fieldset: "vocab",
       readOnly: true,
       components: {
         input: () => React.createElement(VocabGeneratorInput),
@@ -468,6 +501,7 @@ export const story = defineType({
       name: "validateVocab",
       title: "✅ Validate & Fix Vocabulary",
       type: "string",
+      fieldset: "vocab",
       readOnly: true,
       components: {
         input: () => React.createElement(VocabValidatorInput),
@@ -478,8 +512,7 @@ export const story = defineType({
       name: "vocabRaw",
       title: "Vocabulary (raw JSON or text)",
       type: "text",
-      description:
-        "This field stores the vocabulary list generated by ChatGPT. The system will parse it automatically.",
+      fieldset: "vocab",
       rows: 10,
       validation: (Rule) => Rule.custom((value) => validateVocabRaw(value)),
     }),
@@ -488,7 +521,7 @@ export const story = defineType({
       name: "vocabValidationRaw",
       title: "Vocabulary validation report",
       type: "text",
-      description: "Auto-generated validation summary for the current vocabulary list.",
+      fieldset: "qa",
       rows: 8,
       readOnly: true,
     }),
@@ -497,6 +530,7 @@ export const story = defineType({
       name: "generateCover",
       title: "🖼️ Generate Cover",
       type: "string",
+      fieldset: "media",
       readOnly: true,
       components: {
         input: () => React.createElement(CoverGeneratorInput),
@@ -507,6 +541,7 @@ export const story = defineType({
       name: "cover",
       title: "Cover Image",
       type: "image",
+      fieldset: "media",
       options: { hotspot: true },
     }),
 
@@ -514,6 +549,7 @@ export const story = defineType({
       name: "generateAudio",
       title: "🎙️ Generate Audio",
       type: "string",
+      fieldset: "media",
       readOnly: true,
       components: {
         input: () => React.createElement(AudioGeneratorInput),
@@ -524,6 +560,7 @@ export const story = defineType({
       name: "audio",
       title: "Audio File",
       type: "file",
+      fieldset: "media",
       options: {
         storeOriginalFilename: true,
       },
@@ -539,6 +576,7 @@ export const story = defineType({
       name: "audioQaStatus",
       title: "Audio QA status",
       type: "string",
+      fieldset: "qa",
       readOnly: true,
       options: {
         list: [
@@ -548,41 +586,42 @@ export const story = defineType({
           { title: "Unavailable", value: "unavailable" },
         ],
       },
-      description: "Automatic QA result based on transcript similarity.",
     }),
     defineField({
       name: "audioQaScore",
       title: "Audio QA score",
       type: "number",
+      fieldset: "qa",
       readOnly: true,
-      description: "Similarity score between expected narration and transcript (0 to 1).",
     }),
     defineField({
       name: "audioQaNotes",
       title: "Audio QA notes",
       type: "text",
+      fieldset: "qa",
       rows: 6,
       readOnly: true,
-      description: "Automatic notes for the audio review team.",
     }),
     defineField({
       name: "audioQaTranscript",
       title: "Audio QA transcript",
       type: "text",
+      fieldset: "qa",
       rows: 8,
       readOnly: true,
-      description: "Transcript used to compare the generated audio with the expected text.",
     }),
     defineField({
       name: "audioQaCheckedAt",
       title: "Audio QA checked at",
       type: "datetime",
+      fieldset: "qa",
       readOnly: true,
     }),
     defineField({
       name: "audioDeliveryQaStatus",
       title: "Audio delivery QA status",
       type: "string",
+      fieldset: "qa",
       readOnly: true,
       options: {
         list: [
@@ -592,27 +631,27 @@ export const story = defineType({
           { title: "Unavailable", value: "unavailable" },
         ],
       },
-      description: "Automatic delivery QA result based on sentence pauses.",
     }),
     defineField({
       name: "audioDeliveryQaScore",
       title: "Audio delivery QA score",
       type: "number",
+      fieldset: "qa",
       readOnly: true,
-      description: "Delivery score based on sentence pause timing (0 to 1).",
     }),
     defineField({
       name: "audioDeliveryQaNotes",
       title: "Audio delivery QA notes",
       type: "text",
+      fieldset: "qa",
       rows: 6,
       readOnly: true,
-      description: "Automatic notes about pauses and possible unfinished sentence endings.",
     }),
     defineField({
       name: "audioDeliveryQaCheckedAt",
       title: "Audio delivery QA checked at",
       type: "datetime",
+      fieldset: "qa",
       readOnly: true,
     }),
 
@@ -620,7 +659,18 @@ export const story = defineType({
       name: "published",
       title: "Published",
       type: "boolean",
+      fieldset: "publishing",
       initialValue: false,
+    }),
+    defineField({
+      name: "visitStoryPage",
+      title: "Visit Story Page",
+      type: "string",
+      fieldset: "publishing",
+      readOnly: true,
+      components: {
+        input: VisitStoryPageInput,
+      },
     }),
   ],
 

@@ -5,18 +5,26 @@ export const book = defineType({
   name: "book",
   title: "Book",
   type: "document",
+  fieldsets: [
+    { name: "basics", title: "Basics", options: { columns: 2 } },
+    { name: "commerce", title: "Commerce", options: { columns: 2 } },
+    { name: "language", title: "Language & Level", options: { columns: 3 } },
+    { name: "publishing", title: "Publishing", options: { columns: 2 } },
+  ],
   fields: [
     // 📘 Información general
     defineField({
       name: "title",
       title: "Title",
       type: "string",
+      fieldset: "basics",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
+      fieldset: "basics",
       options: { source: "title", maxLength: 96 },
       validation: (Rule) => Rule.required(),
     }),
@@ -24,6 +32,7 @@ export const book = defineType({
       name: "id",
       title: "Book ID",
       type: "slug",
+      fieldset: "basics",
       options: { source: "title", maxLength: 96 },
       validation: (Rule) => Rule.required(),
     }),
@@ -31,16 +40,19 @@ export const book = defineType({
       name: "description",
       title: "Description",
       type: "text",
+      fieldset: "basics",
     }),
     defineField({
       name: "cover",
       title: "Cover Image",
       type: "image",
+      fieldset: "basics",
     }),
     defineField({
       name: "audioFolder",
       title: "Audio Folder",
       type: "string",
+      fieldset: "basics",
     }),
 
     // 🛒 Enlace al libro físico en tienda
@@ -48,8 +60,7 @@ export const book = defineType({
       name: "storeUrl",
       title: "Physical Book URL",
       type: "url",
-      description:
-        "Optional: link to the physical version of this book in the online store.",
+      fieldset: "commerce",
       validation: (Rule) =>
         Rule.uri({
           allowRelative: false,
@@ -62,6 +73,7 @@ export const book = defineType({
       name: "language",
       title: "Language",
       type: "string",
+      fieldset: "language",
       options: {
         list: [
           { title: "Spanish", value: "spanish" },
@@ -79,6 +91,7 @@ export const book = defineType({
       name: "variant",
       title: "Variant",
       type: "string",
+      fieldset: "language",
       options: {
         list: [
           { title: "LATAM", value: "latam" },
@@ -94,13 +107,13 @@ export const book = defineType({
           { title: "Italy", value: "italy" },
         ],
       },
-      description: "Pedagogical language track, separate from the exact region of the content.",
     }),
 
     defineField({
       name: "region",
       title: "Region",
       type: "string",
+      fieldset: "language",
       options: {
         list: [
           { title: "Spain", value: "spain" },
@@ -119,13 +132,13 @@ export const book = defineType({
           { title: "Brazil", value: "brazil" },
         ],
       },
-      description: "Optional: region variant or accent used in the book.",
     }),
 
     defineField({
       name: "level",
       title: "Broad level",
       type: "string",
+      fieldset: "language",
       hidden: true,
       options: {
         list: [
@@ -135,13 +148,13 @@ export const book = defineType({
         ],
       },
       validation: (Rule) => Rule.required(),
-      description: "Legacy broad difficulty bucket. Use CEFR level below for precise placement.",
     }),
 
     defineField({
       name: "cefrLevel",
       title: "CEFR level",
       type: "string",
+      fieldset: "language",
       options: {
         list: [
           { title: "A1", value: "a1" },
@@ -152,20 +165,20 @@ export const book = defineType({
           { title: "C2", value: "c2" },
         ],
       },
-      description: "Precise CEFR level used by Journey and progression features.",
     }),
 
     defineField({
       name: "topic",
       title: "Topic",
       type: "string",
-      description: "Main subject or theme of the book (e.g., Travel, Food).",
+      fieldset: "language",
     }),
 
     defineField({
       name: "published",
       title: "Published",
       type: "boolean",
+      fieldset: "publishing",
       initialValue: false,
     }),
   ],

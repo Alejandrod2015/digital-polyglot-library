@@ -1,11 +1,9 @@
-// /src/sanity/structure.ts
-import { StructureResolver } from "sanity/structure";
+import type { StructureResolver } from "sanity/structure";
 
 export const structure: StructureResolver = (S) =>
   S.list()
     .title("Content")
     .items([
-      // 📚 Libros con sus historias asociadas
       S.listItem()
         .title("📚 Books → Stories")
         .schemaType("book")
@@ -25,13 +23,11 @@ export const structure: StructureResolver = (S) =>
 
       S.divider(),
 
-      // 📚 Todos los libros
       S.listItem()
         .title("📚 All Books")
         .schemaType("book")
         .child(S.documentTypeList("book").title("All Books")),
 
-      // 📘 Libros publicados
       S.listItem()
         .title("📘 Published Books")
         .schemaType("book")
@@ -41,7 +37,6 @@ export const structure: StructureResolver = (S) =>
             .filter('_type == "book" && published == true')
         ),
 
-      // 📝 Historias publicadas
       S.listItem()
         .title("📝 Published Stories")
         .schemaType("story")
@@ -60,7 +55,15 @@ export const structure: StructureResolver = (S) =>
             .filter('_type == "standaloneStory" && published == true')
         ),
 
-      // 📄 Todas las historias
+      S.listItem()
+        .title("Polyglot Stories")
+        .schemaType("standaloneStory")
+        .child(
+          S.documentList()
+            .title("Polyglot Stories")
+            .filter('_type == "standaloneStory" && sourceType == "create"')
+        ),
+
       S.listItem()
         .title("📄 All Stories")
         .schemaType("story")
@@ -73,7 +76,6 @@ export const structure: StructureResolver = (S) =>
 
       S.divider(),
 
-      // 📅 Story Scheduler (nuevo singleton)
       S.listItem()
         .title("📅 Story Scheduler")
         .child(

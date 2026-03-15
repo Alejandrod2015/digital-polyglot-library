@@ -279,7 +279,7 @@ export default function AudioGeneratorInput() {
           <Button
             icon={PlayIcon}
             text={loading ? 'Generating audio...' : 'Generate Audio'}
-            tone="positive"
+            tone="primary"
             disabled={loading}
             onClick={generateAudio}
           />

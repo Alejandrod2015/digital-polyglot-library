@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { prisma } from "@/lib/prisma";
+import { syncCreateStoryMirror } from "@/lib/createStoryMirror";
 
 export async function POST(req: Request) {
   let storyId: string | undefined;
@@ -42,7 +43,7 @@ export async function POST(req: Request) {
     }
 
     // ✅ Actualizar la historia en la base de datos
-    await prisma.userStory.update({
+    const updatedStory = await prisma.userStory.update({
       where: { id: storyId },
       data: {
         audioUrl: audioResult.url,
@@ -51,6 +52,12 @@ export async function POST(req: Request) {
         audioStatus: "ready",
       },
     });
+
+    try {
+      await syncCreateStoryMirror(updatedStory);
+    } catch (mirrorError) {
+      console.warn("[create-story-mirror] Audio sync failed:", mirrorError);
+    }
 
     console.log("[audio-job] Audio generated and uploaded for story:", storyId);
 

@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@/generated/prisma';
 import { auth } from '@clerk/nextjs/server';
+import { syncCreateStoryMirror } from '@/lib/createStoryMirror';
+import { getPublicUserStories, getUserStoryById } from '@/lib/userStories';
 
 const prisma = new PrismaClient();
 
@@ -46,28 +48,7 @@ export async function GET(req: Request) {
 
     // 🔹 Si viene un id → devolver solo esa historia
     if (storyId) {
-      const story = await prisma.userStory.findUnique({
-        where: { id: storyId },
-        select: {
-          id: true,
-          title: true,
-          slug: true,
-          text: true,
-          language: true,
-          variant: true,
-          region: true,
-          level: true,
-          cefrLevel: true,
-          focus: true,
-          topic: true,
-          audioUrl: true,
-          audioSegments: true,
-          audioFilename: true,
-          audioStatus: true,
-          createdAt: true,
-        },
-      });
-
+      const story = await getUserStoryById(storyId);
       await prisma.$disconnect();
 
       if (!story) {
@@ -133,31 +114,13 @@ export async function GET(req: Request) {
         },
       });
 
+      const canonicalStory = story ? await getUserStoryById(story.id) : null;
       await prisma.$disconnect();
-      return NextResponse.json({ story: story ?? null });
+      return NextResponse.json({ story: canonicalStory ?? null });
     }
 
     // 🔹 Si no hay id → devolver lista general
-    const stories = await prisma.userStory.findMany({
-      where: { public: true },
-      orderBy: { createdAt: 'desc' },
-      select: {
-        id: true,
-        title: true,
-        slug: true,
-        text: true, // ✅ se incluye texto
-        language: true,
-        variant: true,
-        level: true,
-        cefrLevel: true,
-        region: true,
-        audioUrl: true,
-        audioSegments: true,
-        audioStatus: true,
-        createdAt: true,
-      },
-    });
-
+    const stories = await getPublicUserStories();
     await prisma.$disconnect();
 
     return NextResponse.json({ stories });
@@ -166,6 +129,91 @@ export async function GET(req: Request) {
     await prisma.$disconnect();
     return NextResponse.json(
       { error: 'Failed to load stories' },
+      { status: 500 },
+    );
+  }
+}
+
+export async function PUT(req: Request) {
+  try {
+    const body = await req.json();
+    const storyId = typeof body?.id === 'string' ? body.id.trim() : '';
+
+    if (!storyId) {
+      await prisma.$disconnect();
+      return NextResponse.json({ error: 'Story id is required' }, { status: 400 });
+    }
+
+    const data: Record<string, unknown> = {};
+
+    const textFields = [
+      'title',
+      'text',
+      'language',
+      'variant',
+      'region',
+      'level',
+      'cefrLevel',
+      'focus',
+      'topic',
+    ] as const;
+
+    for (const field of textFields) {
+      const value = body?.[field];
+      if (typeof value === 'string') {
+        data[field] = value.trim();
+      }
+    }
+
+    if (typeof body?.public === 'boolean') {
+      data.public = body.public;
+    }
+
+    if (Array.isArray(body?.vocab)) {
+      data.vocab = body.vocab;
+    }
+
+    const updated = await prisma.userStory.update({
+      where: { id: storyId },
+      data,
+      select: {
+        id: true,
+        userId: true,
+        title: true,
+        slug: true,
+        text: true,
+        vocab: true,
+        language: true,
+        variant: true,
+        region: true,
+        level: true,
+        cefrLevel: true,
+        focus: true,
+        topic: true,
+        public: true,
+        coverUrl: true,
+        coverFilename: true,
+        audioUrl: true,
+        audioSegments: true,
+        audioFilename: true,
+        audioStatus: true,
+        createdAt: true,
+      },
+    });
+
+    try {
+      await syncCreateStoryMirror(updated);
+    } catch (mirrorError) {
+      console.warn('[create-story-mirror] Update sync failed:', mirrorError);
+    }
+
+    await prisma.$disconnect();
+    return NextResponse.json({ story: updated });
+  } catch (error) {
+    console.error('Error updating user story:', error);
+    await prisma.$disconnect();
+    return NextResponse.json(
+      { error: 'Failed to update story' },
       { status: 500 },
     );
   }

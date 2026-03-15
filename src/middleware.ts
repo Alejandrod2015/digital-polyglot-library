@@ -29,6 +29,22 @@ export default clerkMiddleware(async (auth, req) => {
     },
   });
   res.headers.set("x-clerk-mw", "1");
+
+  const isApiRoute = url.startsWith("/api/");
+  const disableBrowserCache =
+    !isApiRoute &&
+    (url.startsWith("/studio") ||
+      url.startsWith("/stories/") ||
+      url.startsWith("/books/") ||
+      !isProd);
+
+  if (disableBrowserCache) {
+    res.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+    res.headers.set("Pragma", "no-cache");
+    res.headers.set("Expires", "0");
+    res.headers.set("Surrogate-Control", "no-store");
+  }
+
   return res;
 });
 

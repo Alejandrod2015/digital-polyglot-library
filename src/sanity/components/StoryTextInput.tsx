@@ -42,7 +42,7 @@ export default function StoryTextInput(props: InputProps) {
         ) : null}
         {overWords ? (
           <Text size={1} style={{marginTop: '0.35rem'}}>
-            Word count still blocks publishing above {MAX_TEXT_WORDS} words.
+            Word count warning only. It will not block publishing.
           </Text>
         ) : null}
       </Card>

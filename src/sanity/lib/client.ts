@@ -28,6 +28,15 @@ export const client = createClient({
   perspective: "published",   // ✅ solo documentos publicados
 });
 
+// 🔍 Cliente de lectura fresca para reflejar cambios recién publicados sin esperar al CDN
+export const freshClient = createClient({
+  projectId: safeEnv("NEXT_PUBLIC_SANITY_PROJECT_ID", FALLBACK.projectId),
+  dataset: safeEnv("NEXT_PUBLIC_SANITY_DATASET", FALLBACK.dataset),
+  apiVersion: safeEnv("NEXT_PUBLIC_SANITY_API_VERSION", FALLBACK.apiVersion),
+  useCdn: false,
+  perspective: "published",
+});
+
 // ✏️ Cliente de escritura — solo para acciones del servidor
 export const writeClient = createClient({
   projectId: safeEnv("NEXT_PUBLIC_SANITY_PROJECT_ID", FALLBACK.projectId),
