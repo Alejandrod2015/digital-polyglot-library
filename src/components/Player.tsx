@@ -475,7 +475,7 @@ export default function Player({
   }
 
   return (
-    <div className="bg-[var(--bg-player)] border-t border-[var(--player-border-top)] px-4 py-3 rounded-t-xl shadow-2xl backdrop-blur w-full relative text-[var(--foreground)]">
+    <div className="relative w-full rounded-t-xl border-t border-[var(--player-border-top)] bg-[var(--bg-player)] px-4 py-3 text-[var(--foreground)] shadow-2xl backdrop-blur md:ml-64 md:w-[calc(100%-16rem)]">
       <audio ref={audioRef} src={resolvedSrc} preload="metadata" />
 
       {/* barra de progreso */}

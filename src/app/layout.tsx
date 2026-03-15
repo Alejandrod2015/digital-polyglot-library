@@ -15,6 +15,7 @@ import ThemeController from "@/components/ThemeController";
 import GA4Tracker from "@/components/GA4Tracker";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import ServiceWorkerBootstrap from "@/components/ServiceWorkerBootstrap";
+import AppUpdateBanner from "@/components/AppUpdateBanner";
 import { clerkAppearance } from "@/lib/clerkAppearance";
 
 export const viewport: Viewport = {
@@ -45,6 +46,11 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const currentVersion =
+    process.env.VERCEL_GIT_COMMIT_SHA ||
+    process.env.VERCEL_DEPLOYMENT_ID ||
+    process.env.VERCEL_URL ||
+    "dev-local";
   const pathname = (await headers()).get("x-pathname") ?? "";
   const isMetricsView = pathname.startsWith("/studio/metrics");
   const isAuthFlowView =
@@ -83,6 +89,7 @@ export default async function RootLayout({
               <MobileMenu />
               <ThemeController />
               <ServiceWorkerBootstrap />
+              <AppUpdateBanner currentVersion={currentVersion} />
               <BackNavigationHandler />
             </>
           ) : null}
