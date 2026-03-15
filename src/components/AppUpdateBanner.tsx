@@ -1,58 +1,48 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Props = {
   currentVersion: string;
   enabled?: boolean;
 };
 
-type VersionPayload = {
-  version?: string;
-};
-
 const POLL_INTERVAL_MS = 60_000;
 
 export default function AppUpdateBanner({ currentVersion, enabled = true }: Props) {
-  const [nextVersion, setNextVersion] = useState<string | null>(null);
-  const checkingRef = useRef(false);
-
-  const shouldRun = useMemo(() => {
-    if (!enabled) return false;
-    if (!currentVersion || currentVersion === "dev-local") return false;
-    return true;
-  }, [currentVersion, enabled]);
-
-  const checkForUpdate = useCallback(async () => {
-    if (!shouldRun || checkingRef.current) return;
-    checkingRef.current = true;
-
-    try {
-      const response = await fetch("/api/version", {
-        method: "GET",
-        cache: "no-store",
-        headers: {
-          "Cache-Control": "no-store",
-        },
-      });
-      if (!response.ok) return;
-      const payload = (await response.json()) as VersionPayload;
-      const latestVersion = typeof payload.version === "string" ? payload.version.trim() : "";
-      if (!latestVersion || latestVersion === currentVersion) return;
-      setNextVersion(latestVersion);
-    } catch {
-      // Keep the app quiet if the version check fails.
-    } finally {
-      checkingRef.current = false;
-    }
-  }, [currentVersion, shouldRun]);
+  const [hasUpdate, setHasUpdate] = useState(false);
 
   useEffect(() => {
-    if (!shouldRun) return;
+    if (!enabled) return;
+    if (!currentVersion || currentVersion === "dev-local") return;
+
+    let cancelled = false;
+
+    const checkForUpdate = async () => {
+      try {
+        const response = await fetch("/api/version", {
+          method: "GET",
+          cache: "no-store",
+          headers: { "Cache-Control": "no-store" },
+        });
+        if (!response.ok) return;
+        const payload = (await response.json()) as { version?: string };
+        const latestVersion = typeof payload.version === "string" ? payload.version.trim() : "";
+        if (!cancelled && latestVersion && latestVersion !== currentVersion) {
+          setHasUpdate(true);
+        }
+      } catch {
+        // Stay quiet on transient failures.
+      }
+    };
 
     const intervalId = window.setInterval(() => {
       void checkForUpdate();
     }, POLL_INTERVAL_MS);
+
+    const handleFocus = () => {
+      void checkForUpdate();
+    };
 
     const handleVisibilityChange = () => {
       if (document.visibilityState === "visible") {
@@ -60,17 +50,18 @@ export default function AppUpdateBanner({ currentVersion, enabled = true }: Prop
       }
     };
 
-    window.addEventListener("focus", checkForUpdate);
+    window.addEventListener("focus", handleFocus);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
+      cancelled = true;
       window.clearInterval(intervalId);
-      window.removeEventListener("focus", checkForUpdate);
+      window.removeEventListener("focus", handleFocus);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [checkForUpdate, shouldRun]);
+  }, [currentVersion, enabled]);
 
-  if (!nextVersion) return null;
+  if (!hasUpdate) return null;
 
   return (
     <div className="fixed inset-x-3 top-[calc(env(safe-area-inset-top)+0.85rem)] z-[80] md:left-[calc(16rem+1rem)] md:right-4">

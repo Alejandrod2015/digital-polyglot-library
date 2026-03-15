@@ -15,7 +15,6 @@ import ThemeController from "@/components/ThemeController";
 import GA4Tracker from "@/components/GA4Tracker";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import ServiceWorkerBootstrap from "@/components/ServiceWorkerBootstrap";
-import AppUpdateBanner from "@/components/AppUpdateBanner";
 import { clerkAppearance } from "@/lib/clerkAppearance";
 
 export const viewport: Viewport = {
@@ -88,8 +87,7 @@ export default async function RootLayout({
 
               <MobileMenu />
               <ThemeController />
-              <ServiceWorkerBootstrap />
-              <AppUpdateBanner currentVersion={currentVersion} />
+              <ServiceWorkerBootstrap currentVersion={currentVersion} />
               <BackNavigationHandler />
             </>
           ) : null}

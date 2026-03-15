@@ -8,10 +8,17 @@ import { books } from "@/data/books";
 const COMPLETE_RATIO = 0.95;
 const WEEKLY_GOAL_MINUTES = 60;
 const WEEKLY_GOAL_STORIES = 5;
+const WEEKLY_GOAL_PRACTICE_SESSIONS = 3;
 
 type ContinueMeta = {
   progressSec?: number;
   audioDurationSec?: number;
+};
+
+type PracticeMeta = {
+  score?: number;
+  itemsCount?: number;
+  mode?: string;
 };
 
 type MetricRow = {
@@ -46,6 +53,16 @@ function parseContinueMeta(metadata: unknown): ContinueMeta {
   return {
     progressSec: toNumber(record.progressSec),
     audioDurationSec: toNumber(record.audioDurationSec),
+  };
+}
+
+function parsePracticeMeta(metadata: unknown): PracticeMeta {
+  if (!metadata || typeof metadata !== "object") return {};
+  const record = metadata as Record<string, unknown>;
+  return {
+    score: toNumber(record.score),
+    itemsCount: toNumber(record.itemsCount),
+    mode: typeof record.mode === "string" ? record.mode : undefined,
   };
 }
 
@@ -222,6 +239,37 @@ function computeFromMetrics(rows: MetricRow[], weekStart: Date) {
   return { totalSeconds, weeklySeconds, completedStories, activeDayKeys, completedEvents };
 }
 
+function computePracticeFromMetrics(rows: MetricRow[], weekStart: Date) {
+  const completions = rows.filter((row) => row.eventType === "practice_session_completed");
+  const activeDayKeys = new Set<string>();
+  let totalSessions = 0;
+  let weeklySessions = 0;
+  let totalScore = 0;
+  let totalItems = 0;
+
+  for (const row of completions) {
+    totalSessions += 1;
+    activeDayKeys.add(toUtcDayKey(row.createdAt));
+
+    const meta = parsePracticeMeta(row.metadata);
+    const score = typeof meta.score === "number" ? Math.max(0, meta.score) : 0;
+    const itemsCount = typeof meta.itemsCount === "number" ? Math.max(0, meta.itemsCount) : 0;
+    totalScore += score;
+    totalItems += itemsCount;
+
+    if (row.createdAt >= weekStart) {
+      weeklySessions += 1;
+    }
+  }
+
+  return {
+    totalSessions,
+    weeklySessions,
+    practiceAccuracy: totalItems > 0 ? Math.round((totalScore / totalItems) * 100) : 0,
+    practiceStreakDays: getStreakFromDates(activeDayKeys),
+  };
+}
+
 export async function GET(req: NextRequest): Promise<Response> {
   const { userId } = getAuth(req);
   if (!userId) {
@@ -238,7 +286,15 @@ export async function GET(req: NextRequest): Promise<Response> {
         prisma.userMetric.findMany({
           where: {
             userId,
-            eventType: { in: ["audio_complete", "continue_listening", "audio_play"] },
+            eventType: {
+              in: [
+                "audio_complete",
+                "continue_listening",
+                "audio_play",
+                "practice_session_started",
+                "practice_session_completed",
+              ],
+            },
           },
           select: {
             eventType: true,
@@ -296,6 +352,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     ]);
 
     const metricsComputed = computeFromMetrics(metrics, weekStart);
+    const practiceComputed = computePracticeFromMetrics(metrics, weekStart);
     const continueComputed = computeFromContinueRows(continueRows, weekStart);
 
     // Merge both sources so progress remains stable even if one source is temporarily sparse.
@@ -351,7 +408,11 @@ export async function GET(req: NextRequest): Promise<Response> {
     const weeklyStoriesFinished = [...completionEvents.values()].filter((date) => date >= weekStart).length;
     const monthlyStoriesFinished = [...completionEvents.values()].filter((date) => date >= monthStart).length;
     const storyStreakDays = getStoryStreakFromDates(completionDayKeys);
-    const streakDays = Math.max(getStreakFromDates(activeDayKeys), storyStreakDays);
+    const streakDays = Math.max(
+      getStreakFromDates(activeDayKeys),
+      storyStreakDays,
+      practiceComputed.practiceStreakDays
+    );
 
     return NextResponse.json({
       minutesListened: roundMinutes(totalListeningSec),
@@ -365,6 +426,11 @@ export async function GET(req: NextRequest): Promise<Response> {
       monthlyStoriesFinished,
       storyStreakDays,
       regionsExplored: exploredRegions.size,
+      practiceSessionsCompleted: practiceComputed.totalSessions,
+      weeklyPracticeSessions: practiceComputed.weeklySessions,
+      weeklyGoalPracticeSessions: WEEKLY_GOAL_PRACTICE_SESSIONS,
+      practiceAccuracy: practiceComputed.practiceAccuracy,
+      practiceStreakDays: practiceComputed.practiceStreakDays,
       streakDays,
     });
   } catch (err) {

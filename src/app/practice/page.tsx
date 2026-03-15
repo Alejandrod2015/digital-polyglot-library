@@ -351,6 +351,8 @@ export default function PracticePage() {
   const [checkpointSaveState, setCheckpointSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [checkpointToken, setCheckpointToken] = useState<string | null>(null);
   const [checkpointResponses, setCheckpointResponses] = useState<Record<string, string>>({});
+  const practiceStartTrackedRef = useRef(false);
+  const practiceCompletionTrackedRef = useRef(false);
 
   useEffect(() => {
     if (!isLoaded) return;
@@ -535,6 +537,19 @@ export default function PracticePage() {
     return selectedMode ? buildPracticeSession(favorites, selectedMode) : [];
   }, [favorites, isJourneyCheckpoint, prefabExercises, selectedMode]);
   const currentExercise = exercises[exerciseIndex] ?? null;
+  const inferredModeFromExercise: PracticeMode | null =
+    currentExercise?.type === "meaning_in_context"
+      ? "meaning"
+      : currentExercise?.type === "fill_blank"
+        ? "context"
+        : currentExercise?.type === "natural_expression"
+          ? "natural"
+          : currentExercise?.type === "listen_choose"
+            ? "listening"
+            : currentExercise?.type === "match_meaning"
+              ? "match"
+              : null;
+  const activePracticeMode = selectedMode ?? inferredModeFromExercise;
   const revealed = currentExercise ? revealedIds.includes(currentExercise.id) : false;
   const activeSession = selectedMode !== null || (isJourneyCheckpoint && exercises.length > 0);
   const completedExerciseCount = sessionComplete ? exercises.length : revealedIds.length;
@@ -565,6 +580,44 @@ export default function PracticePage() {
     }
     setSelectedMode(null);
   }, [isJourneyPractice, journeyReturnHref]);
+
+  const trackPracticeMetric = useCallback(
+    async (
+      eventType: "practice_session_started" | "practice_session_completed",
+      extra?: Record<string, unknown>
+    ) => {
+      if (!user) return;
+
+      const firstExerciseWithStorySlug = exercises.find(
+        (exercise): exercise is Extract<PracticeExercise, { storySlug?: string | null }> =>
+          "storySlug" in exercise && typeof exercise.storySlug === "string" && exercise.storySlug.trim().length > 0
+      );
+
+      try {
+        await fetch("/api/metrics", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            storySlug: firstExerciseWithStorySlug?.storySlug?.trim() || "practice",
+            eventType,
+            metadata: {
+              mode: activePracticeMode ?? "mixed",
+              itemsCount: exercises.length,
+              score,
+              source: isJourneyPractice ? "journey" : "practice",
+              isJourneyCheckpoint,
+              levelId: journeyLevelId,
+              topicId: journeyTopicId,
+              ...extra,
+            },
+          }),
+        });
+      } catch (error) {
+        console.error("[practice] failed to track practice metric", error);
+      }
+    },
+    [activePracticeMode, exercises, isJourneyCheckpoint, isJourneyPractice, journeyLevelId, journeyTopicId, score, user]
+  );
 
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -601,7 +654,27 @@ export default function PracticePage() {
     setLastResult(null);
     setCheckpointSaveState("idle");
     setCheckpointResponses({});
+    practiceStartTrackedRef.current = false;
+    practiceCompletionTrackedRef.current = false;
   }, [favorites.length, prefabExercises.length, selectedMode]);
+
+  useEffect(() => {
+    if (!activeSession || sessionComplete || exercises.length === 0 || practiceStartTrackedRef.current) return;
+    practiceStartTrackedRef.current = true;
+    void trackPracticeMetric("practice_session_started");
+  }, [activeSession, exercises.length, sessionComplete, trackPracticeMetric]);
+
+  useEffect(() => {
+    if (!sessionComplete || exercises.length === 0 || practiceCompletionTrackedRef.current) return;
+    practiceCompletionTrackedRef.current = true;
+    const passedCheckpoint = exercises.length > 0 && score / exercises.length >= CHECKPOINT_PASS_THRESHOLD;
+    void trackPracticeMetric("practice_session_completed", {
+      score,
+      itemsCount: exercises.length,
+      accuracyPercent: exercises.length > 0 ? Math.round((score / exercises.length) * 100) : 0,
+      passedCheckpoint: isJourneyCheckpoint ? passedCheckpoint : undefined,
+    });
+  }, [exercises.length, isJourneyCheckpoint, score, sessionComplete, trackPracticeMetric]);
 
   useEffect(() => {
     setSelectedOption(null);
@@ -871,6 +944,8 @@ export default function PracticePage() {
     setSessionComplete(false);
     setCheckpointSaveState("idle");
     setCheckpointResponses({});
+    practiceStartTrackedRef.current = false;
+    practiceCompletionTrackedRef.current = false;
   };
 
   const playSpeechText = useCallback((clipOwnerId: string, text: string, language: string | null | undefined) => {
@@ -1053,18 +1128,6 @@ export default function PracticePage() {
     mode,
     ...theme,
   }));
-  const inferredModeFromExercise: PracticeMode | null =
-    currentExercise?.type === "meaning_in_context"
-      ? "meaning"
-      : currentExercise?.type === "fill_blank"
-        ? "context"
-        : currentExercise?.type === "natural_expression"
-          ? "natural"
-          : currentExercise?.type === "listen_choose"
-            ? "listening"
-            : currentExercise?.type === "match_meaning"
-              ? "match"
-              : null;
   const activeModeTheme = selectedMode
     ? modeThemeByMode[selectedMode]
     : inferredModeFromExercise

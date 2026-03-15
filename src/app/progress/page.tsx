@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { BookCheck, BookOpenCheck, Clock3, Flame, Star, Trophy } from "lucide-react";
+import { BookCheck, BookOpenCheck, BrainCircuit, Clock3, Flame, Star, Trophy } from "lucide-react";
 
 type ProgressPayload = {
   minutesListened: number;
@@ -17,6 +17,11 @@ type ProgressPayload = {
   monthlyStoriesFinished: number;
   storyStreakDays: number;
   regionsExplored: number;
+  practiceSessionsCompleted: number;
+  weeklyPracticeSessions: number;
+  weeklyGoalPracticeSessions: number;
+  practiceAccuracy: number;
+  practiceStreakDays: number;
   streakDays: number;
 };
 
@@ -26,6 +31,7 @@ function clamp(value: number, min: number, max: number): number {
 
 function motivationalLine(progress: ProgressPayload): string {
   if (progress.storyStreakDays >= 7) return "Your reading habit is real now. Protect the streak.";
+  if (progress.practiceStreakDays >= 3) return "Practice is compounding now. Keep the rhythm going.";
   if (progress.weeklyStoriesFinished >= progress.weeklyGoalStories) return "Weekly story goal reached. Strong consistency.";
   if (progress.regionsExplored >= 3) return "You are expanding your learning journey, not just finishing stories.";
   return "One finished story a day is enough to keep momentum.";
@@ -34,6 +40,7 @@ function motivationalLine(progress: ProgressPayload): string {
 function motivationalBadge(progress: ProgressPayload): string {
   if (progress.storyStreakDays >= 14) return "Strong streak";
   if (progress.storyStreakDays >= 7) return "On a roll";
+  if (progress.weeklyPracticeSessions >= progress.weeklyGoalPracticeSessions) return "Practice locked in";
   if (progress.weeklyStoriesFinished >= progress.weeklyGoalStories) return "Goal reached";
   return "Keep going";
 }
@@ -114,6 +121,13 @@ export default function ProgressPage() {
         current: progress.wordsLearned,
         target: 25,
         accent: "bg-[#7ad67f]",
+      },
+      {
+        label: "Sharpener",
+        description: "Complete 10 practice sessions",
+        current: progress.practiceSessionsCompleted,
+        target: 10,
+        accent: "bg-[#a78bfa]",
       },
     ];
   }, [progress]);
@@ -204,6 +218,9 @@ export default function ProgressPage() {
               <p className="mt-1 text-xs text-slate-300">
                 Listening: {progress.weeklyMinutesListened} / {progress.weeklyGoalMinutes} min
               </p>
+              <p className="mt-1 text-xs text-slate-300">
+                Practice: {progress.weeklyPracticeSessions} / {progress.weeklyGoalPracticeSessions} sessions
+              </p>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
@@ -222,7 +239,7 @@ export default function ProgressPage() {
         </div>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
         <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
           <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
             <BookCheck size={15} /> Stories finished
@@ -249,6 +266,16 @@ export default function ProgressPage() {
             <Star size={15} /> Words saved
           </div>
           <p className="text-3xl font-bold">{progress.wordsLearned}</p>
+        </div>
+
+        <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
+          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+            <BrainCircuit size={15} /> Practice sessions
+          </div>
+          <p className="text-3xl font-bold">{progress.practiceSessionsCompleted}</p>
+          <p className="mt-1 text-xs text-slate-300">
+            {progress.practiceAccuracy}% average accuracy
+          </p>
         </div>
       </div>
 

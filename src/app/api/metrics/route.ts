@@ -3,12 +3,14 @@ export const runtime = "nodejs";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import type { Prisma } from "@/generated/prisma";
 
 type MetricBody = {
   storySlug: string;
   bookSlug?: string;
   eventType: string;
   value?: number;
+  metadata?: Record<string, unknown>;
 };
 
 const ALLOWED_EVENT_TYPES = new Set([
@@ -19,6 +21,8 @@ const ALLOWED_EVENT_TYPES = new Set([
   "speed_change",
   "seek",
   "continue_listening",
+  "practice_session_started",
+  "practice_session_completed",
   "trial_started",
   "trial_started_with_pm",
   "trial_converted",
@@ -38,7 +42,8 @@ function isMetricBody(x: unknown): x is MetricBody {
     typeof o.storySlug === "string" &&
     typeof o.eventType === "string" &&
     (typeof o.bookSlug === "string" || o.bookSlug === undefined) &&
-    (typeof o.value === "number" || o.value === undefined)
+    (typeof o.value === "number" || o.value === undefined) &&
+    (typeof o.metadata === "object" || o.metadata === undefined || o.metadata === null)
   );
 }
 
@@ -54,7 +59,7 @@ export async function POST(req: NextRequest): Promise<Response> {
   }
 
   try {
-    const { storySlug, bookSlug, eventType, value } = json;
+    const { storySlug, bookSlug, eventType, value, metadata } = json;
     if (!ALLOWED_EVENT_TYPES.has(eventType)) {
       return NextResponse.json({ error: "Invalid eventType" }, { status: 400 });
     }
@@ -66,6 +71,7 @@ export async function POST(req: NextRequest): Promise<Response> {
         bookSlug: bookSlug ?? null,
         eventType,
         value,
+        metadata: (metadata as Prisma.InputJsonValue | undefined) ?? undefined,
       },
     });
 
