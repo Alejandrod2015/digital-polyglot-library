@@ -62,11 +62,13 @@ export function clearBonusStories() {
 
 // 📊 Versión activa (sin límites reales)
 export function getStoriesReadCount(plan: UserPlan): number {
+  void plan;
   const history = getReadingHistory();
   return history.length; // solo informativo
 }
 
 export function getStoriesLimit(plan: UserPlan): number {
+  void plan;
   return Infinity; // sin límites activos
 }
 

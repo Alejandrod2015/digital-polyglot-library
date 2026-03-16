@@ -41,9 +41,6 @@ function getLanguage(doc: unknown): string | null {
   return typeof language === "string" && language.length > 0 ? language : null;
 }
 
-const MAX_TEXT_CHARS = 3800;
-const MIN_TEXT_WORDS = 260;
-const MAX_TEXT_WORDS = 500;
 const MAX_VOCAB_ITEMS = 40;
 const MAX_VOCAB_WORD_LENGTH = 48;
 const MAX_VOCAB_WORD_TOKENS = 4;
@@ -90,10 +87,6 @@ function validateVocabRaw(value: unknown): true | string {
   return true;
 }
 
-function countWords(value: string): number {
-  return value.trim().split(/\s+/).filter(Boolean).length;
-}
-
 export const story = defineType({
   name: "story",
   title: "Story",
@@ -135,7 +128,6 @@ export const story = defineType({
         input: function SyncBookMetadataComponent(props: unknown) {
           const { document, onChange } = props as SyncInputProps;
 
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           React.useEffect(() => {
             const run = async () => {
               const bookRef = getBookRefId(document);

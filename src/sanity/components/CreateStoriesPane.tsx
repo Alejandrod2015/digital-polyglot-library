@@ -57,16 +57,6 @@ function matchesSearch(story: CreateStoryListItem, query: string): boolean {
   return haystack.includes(query.toLowerCase())
 }
 
-function formatDate(value: string): string {
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) return value
-  return new Intl.DateTimeFormat('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-  }).format(date)
-}
-
 export default function CreateStoriesPane() {
   const [stories, setStories] = useState<CreateStoryListItem[]>([])
   const [search, setSearch] = useState('')

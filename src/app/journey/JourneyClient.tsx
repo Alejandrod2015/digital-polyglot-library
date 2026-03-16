@@ -284,18 +284,20 @@ export default function JourneyClient({
     };
   }, [selectedLevel]);
 
-  if (!selectedLevel || !selectedTrack) return null;
-
   const unlockedTopicCount = getUnlockedTopicCount(
-    selectedLevel,
+    selectedLevel ?? { id: "", title: "", topics: [] },
     completedStoryKeySet,
     passedCheckpointKeySet,
-    selectedTrack.id,
-    selectedLevel.id
+    selectedTrack?.id ?? "",
+    selectedLevel?.id ?? ""
   );
   const laneOffsets = [8, 60, 12, 64, 16, 60];
   const dueReviewCountByTopicId = useMemo(() => {
     const counts = new Map<string, number>();
+
+    if (!selectedTrack) {
+      return counts;
+    }
 
     for (const level of selectedTrack.levels) {
       for (const topic of level.topics) {
@@ -309,8 +311,10 @@ export default function JourneyClient({
     }
 
     return counts;
-  }, [dueReviewProgressKeySet, selectedTrack.levels]);
+  }, [dueReviewProgressKeySet, selectedTrack]);
   const nextAction = useMemo(() => {
+    if (!selectedLevel || !selectedTrack) return null;
+
     const currentTopicIndex = Math.max(0, unlockedTopicCount - 1);
     const currentTopic = selectedLevel.topics[currentTopicIndex] ?? selectedLevel.topics[0] ?? null;
     if (!currentTopic) return null;
@@ -380,10 +384,12 @@ export default function JourneyClient({
     passedCheckpointKeySet,
     practicedTopicKeySet,
     selectedLevel,
-    selectedTrack.id,
+    selectedTrack,
     unlockedTopicCount,
   ]);
   const reviewAction = useMemo(() => {
+    if (!selectedTrack) return null;
+
     let best:
       | {
           levelId: string;
@@ -423,21 +429,24 @@ export default function JourneyClient({
       ...best,
       href: `/practice?${params.toString()}`,
     };
-  }, [dueReviewCountByTopicId, selectedTrack.id, selectedTrack.levels]);
+  }, [dueReviewCountByTopicId, selectedTrack]);
   const levelClearedTopicCount = useMemo(
-    () =>
-      selectedLevel.topics.filter((topic) => {
+    () => {
+      if (!selectedLevel || !selectedTrack) return 0;
+
+      return selectedLevel.topics.filter((topic) => {
         const checkpointKey = getJourneyTopicCheckpointKey(selectedTrack.id, selectedLevel.id, topic.slug);
         return (
           isJourneyTopicComplete(topic, completedStoryKeySet) &&
           passedCheckpointKeySet.has(checkpointKey)
         );
-      }).length,
-    [completedStoryKeySet, passedCheckpointKeySet, selectedLevel, selectedTrack.id]
+      }).length;
+    },
+    [completedStoryKeySet, passedCheckpointKeySet, selectedLevel, selectedTrack]
   );
   const levelCompletionPercent =
-    selectedLevel.topics.length > 0
-      ? Math.round((levelClearedTopicCount / selectedLevel.topics.length) * 100)
+    (selectedLevel?.topics.length ?? 0) > 0
+      ? Math.round((levelClearedTopicCount / (selectedLevel?.topics.length ?? 1)) * 100)
       : 0;
   const weeklyStoryPercent = progressSummary
     ? Math.min(
@@ -453,6 +462,8 @@ export default function JourneyClient({
         )
       )
     : 0;
+
+  if (!selectedLevel || !selectedTrack) return null;
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 pb-14 pt-4 sm:gap-4 sm:px-6 lg:px-8">
