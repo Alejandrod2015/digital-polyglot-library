@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
         hostname: "cdn.digitalpolyglot.com",
         pathname: "/**",
       },
+      // Temporary R2 public development URL
+      {
+        protocol: "https",
+        hostname: "pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev",
+        pathname: "/**",
+      },
     ],
   },
 };
