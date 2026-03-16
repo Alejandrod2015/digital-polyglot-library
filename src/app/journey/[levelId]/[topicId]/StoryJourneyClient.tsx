@@ -23,7 +23,7 @@ type StoryJourneyNode =
       id: string;
       href?: string;
       badge: string;
-      badgeTone: "amber" | "slate" | "emerald";
+      badgeTone: "amber" | "sky" | "slate" | "emerald";
       unlocked: boolean;
       icon: "sparkles";
     };
@@ -227,6 +227,8 @@ export default function StoryJourneyClient({ nodes }: StoryJourneyClientProps) {
                 className={`flex h-[3.85rem] w-[3.85rem] items-center justify-center rounded-[0.95rem] border-[3px] border-[#20395b] ${
                   node.badgeTone === "amber"
                     ? "bg-[linear-gradient(180deg,#fde68a_0%,#f59e0b_100%)] text-slate-950 shadow-[0_8px_18px_rgba(245,158,11,0.18)]"
+                    : node.badgeTone === "sky"
+                      ? "bg-[linear-gradient(180deg,#7dd3fc_0%,#3b82f6_100%)] text-slate-950 shadow-[0_8px_18px_rgba(59,130,246,0.18)]"
                     : node.badgeTone === "emerald"
                       ? "bg-[linear-gradient(180deg,#6ee7b7_0%,#10b981_100%)] text-slate-950 shadow-[0_8px_18px_rgba(16,185,129,0.18)]"
                       : "bg-[#314861] text-white/45 shadow-[inset_0_-10px_0_rgba(0,0,0,0.16)]"

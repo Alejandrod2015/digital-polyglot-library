@@ -16,6 +16,7 @@ import {
 import { useUser } from "@clerk/nextjs";
 import {
   buildPracticeSession,
+  getDuePracticeItems,
   getSpeechSynthesisLang,
   PracticeAudioClip,
   PracticeExercise,
@@ -48,6 +49,11 @@ type JourneyPracticeSource = {
     slug: string;
     label: string;
     storyCount: number;
+  } | null;
+  review?: {
+    dueCount: number;
+    totalCount: number;
+    focusWords?: string[];
   } | null;
   items: PracticeFavoriteItem[];
   exercises?: PracticeExercise[];
@@ -126,6 +132,27 @@ function findSegmentForClip(
 
 function isStandaloneFavorite(item: PracticeFavoriteItem): boolean {
   return isStandaloneSourcePath(item.sourcePath, item.storySlug);
+}
+
+function isExpressionLikeFavorite(item: PracticeFavoriteItem): boolean {
+  const word = typeof item.word === "string" ? item.word.trim() : "";
+  const wordType = typeof item.wordType === "string" ? item.wordType.toLowerCase() : "";
+  return word.includes(" ") || /expression|phrase|idiom|chunk|connector/.test(wordType);
+}
+
+function getModeLabel(mode: PracticeMode): string {
+  switch (mode) {
+    case "meaning":
+      return "Meaning";
+    case "context":
+      return "Context";
+    case "natural":
+      return "Natural usage";
+    case "listening":
+      return "Listening";
+    case "match":
+      return "Match";
+  }
 }
 
 const matchColorClasses = [
@@ -339,20 +366,65 @@ export default function PracticePage() {
     wrong: null,
   });
   const practiceSource = searchParams.get("source");
+  const storyPracticeSlug = searchParams.get("storySlug");
+  const storyPracticeBookSlug = searchParams.get("bookSlug");
+  const storyPracticeTitle = searchParams.get("storyTitle");
+  const storyReturnHref = searchParams.get("storyHref");
+  const storyNextHref = searchParams.get("nextHref");
   const journeyVariant = searchParams.get("variant");
   const journeyLevelId = searchParams.get("levelId");
   const journeyTopicId = searchParams.get("topicId");
+  const explicitReturnTo = searchParams.get("returnTo");
+  const explicitReturnLabel = searchParams.get("returnLabel");
+  const isReviewFocus = searchParams.get("review") === "1";
+  const requestedModeParam = searchParams.get("mode");
   const isJourneyCheckpoint = searchParams.get("checkpoint") === "1";
   const isJourneyPractice = practiceSource === "journey" && Boolean(journeyLevelId) && Boolean(journeyTopicId);
+  const isStoryPractice = practiceSource === "story" && Boolean(storyPracticeSlug);
   const journeyReturnHref =
     isJourneyPractice && journeyLevelId && journeyTopicId
-      ? `/journey/${journeyLevelId}/${journeyTopicId}${journeyVariant ? `?variant=${encodeURIComponent(journeyVariant)}` : ""}`
+      ? explicitReturnTo && explicitReturnTo.startsWith("/") && !explicitReturnTo.startsWith("//")
+        ? explicitReturnTo
+        : `/journey/${journeyLevelId}/${journeyTopicId}${journeyVariant ? `?variant=${encodeURIComponent(journeyVariant)}` : ""}`
       : null;
   const [checkpointSaveState, setCheckpointSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [checkpointToken, setCheckpointToken] = useState<string | null>(null);
   const [checkpointResponses, setCheckpointResponses] = useState<Record<string, string>>({});
+  const [journeyReviewMeta, setJourneyReviewMeta] = useState<JourneyPracticeSource["review"]>(null);
   const practiceStartTrackedRef = useRef(false);
   const practiceCompletionTrackedRef = useRef(false);
+  const autoOpenedModeRef = useRef<string | null>(null);
+  const trackUiMetric = useCallback(
+    async (
+      eventType: "checkpoint_recovery_clicked" | "practice_recommended_mode_opened",
+      metadata?: Record<string, unknown>
+    ) => {
+      if (!user) return;
+
+      try {
+        await fetch("/api/metrics", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            bookSlug: "journey",
+            storySlug: journeyTopicId || "practice",
+            eventType,
+            metadata: {
+              variantId: journeyVariant,
+              levelId: journeyLevelId,
+              topicId: journeyTopicId,
+              reviewFocus: isReviewFocus,
+              checkpoint: isJourneyCheckpoint,
+              ...metadata,
+            },
+          }),
+        });
+      } catch {
+        // Best-effort analytics only.
+      }
+    },
+    [isJourneyCheckpoint, isReviewFocus, journeyLevelId, journeyTopicId, journeyVariant, user]
+  );
 
   useEffect(() => {
     if (!isLoaded) return;
@@ -373,6 +445,10 @@ export default function PracticePage() {
           ? `/api/journey/practice?levelId=${encodeURIComponent(journeyLevelId)}&topicId=${encodeURIComponent(
               journeyTopicId
             )}${journeyVariant ? `&variant=${encodeURIComponent(journeyVariant)}` : ""}${isJourneyCheckpoint ? "&kind=checkpoint" : ""}`
+          : isStoryPractice && storyPracticeSlug
+            ? `/api/story-practice?storySlug=${encodeURIComponent(storyPracticeSlug)}${
+                storyPracticeBookSlug ? `&bookSlug=${encodeURIComponent(storyPracticeBookSlug)}` : ""
+              }`
           : "/api/favorites";
 
       try {
@@ -384,6 +460,9 @@ export default function PracticePage() {
           setFavorites(Array.isArray(data) ? data : Array.isArray(data.items) ? data.items : []);
           setPrefabExercises(!Array.isArray(data) && Array.isArray(data.exercises) ? data.exercises : []);
           setCheckpointToken(!Array.isArray(data) && typeof data.checkpointToken === "string" ? data.checkpointToken : null);
+          setJourneyReviewMeta(
+            !Array.isArray(data) && data.review && typeof data.review === "object" ? data.review : null
+          );
           setLoadState("ready");
         }
       } catch (error) {
@@ -408,11 +487,16 @@ export default function PracticePage() {
                 ? cachedData.checkpointToken
                 : null
             );
+            setJourneyReviewMeta(
+              !Array.isArray(cachedData) && cachedData.review && typeof cachedData.review === "object"
+                ? cachedData.review
+                : null
+            );
             setLoadState("ready");
             return;
           }
 
-          if (!isJourneyPractice) {
+          if (!isJourneyPractice && !isStoryPractice) {
             const localFavorites = readLocalPracticeFavorites(user?.id ?? null);
             setFavorites(localFavorites);
             setPrefabExercises([]);
@@ -424,6 +508,7 @@ export default function PracticePage() {
           setFavorites([]);
           setPrefabExercises([]);
           setCheckpointToken(null);
+          setJourneyReviewMeta(null);
           setLoadState("error");
         }
       }
@@ -434,7 +519,18 @@ export default function PracticePage() {
     return () => {
       cancelled = true;
     };
-  }, [isLoaded, isJourneyCheckpoint, isJourneyPractice, journeyLevelId, journeyTopicId, journeyVariant, user]);
+  }, [
+    isJourneyCheckpoint,
+    isJourneyPractice,
+    isLoaded,
+    isStoryPractice,
+    journeyLevelId,
+    journeyTopicId,
+    journeyVariant,
+    storyPracticeBookSlug,
+    storyPracticeSlug,
+    user,
+  ]);
 
   useEffect(() => {
     const userStorySlugs = Array.from(
@@ -574,12 +670,16 @@ export default function PracticePage() {
       window.location.href = journeyReturnHref;
       return;
     }
+    if (isStoryPractice && storyReturnHref) {
+      window.location.href = storyReturnHref;
+      return;
+    }
     if (typeof window !== "undefined" && window.history.state?.practiceSession) {
       window.history.back();
       return;
     }
     setSelectedMode(null);
-  }, [isJourneyPractice, journeyReturnHref]);
+  }, [isJourneyPractice, isStoryPractice, journeyReturnHref, storyReturnHref]);
 
   const trackPracticeMetric = useCallback(
     async (
@@ -605,9 +705,11 @@ export default function PracticePage() {
               itemsCount: exercises.length,
               score,
               source: isJourneyPractice ? "journey" : "practice",
+              storyTitle: storyPracticeTitle,
               isJourneyCheckpoint,
               levelId: journeyLevelId,
               topicId: journeyTopicId,
+              variantId: journeyVariant,
               ...extra,
             },
           }),
@@ -616,7 +718,17 @@ export default function PracticePage() {
         console.error("[practice] failed to track practice metric", error);
       }
     },
-    [activePracticeMode, exercises, isJourneyCheckpoint, isJourneyPractice, journeyLevelId, journeyTopicId, score, user]
+    [
+      activePracticeMode,
+      exercises,
+      isJourneyCheckpoint,
+      isJourneyPractice,
+      journeyLevelId,
+      journeyTopicId,
+      score,
+      storyPracticeTitle,
+      user,
+    ]
   );
 
   useEffect(() => {
@@ -657,6 +769,22 @@ export default function PracticePage() {
     practiceStartTrackedRef.current = false;
     practiceCompletionTrackedRef.current = false;
   }, [favorites.length, prefabExercises.length, selectedMode]);
+
+  const reviewDueCount = journeyReviewMeta?.dueCount ?? 0;
+  const reviewFocusWords = Array.isArray(journeyReviewMeta?.focusWords) ? journeyReviewMeta.focusWords : [];
+  const reviewLead = reviewFocusWords.slice(0, 3).join(" · ");
+  const checkpointRecoveryHref = useMemo(() => {
+    if (!journeyLevelId || !journeyTopicId) return null;
+    const params = new URLSearchParams();
+    params.set("source", "journey");
+    params.set("levelId", journeyLevelId);
+    params.set("topicId", journeyTopicId);
+    params.set("review", "1");
+    if (journeyVariant) params.set("variant", journeyVariant);
+    if (journeyReturnHref) params.set("returnTo", journeyReturnHref);
+    if (explicitReturnLabel?.trim()) params.set("returnLabel", explicitReturnLabel.trim());
+    return `/practice?${params.toString()}`;
+  }, [explicitReturnLabel, journeyLevelId, journeyReturnHref, journeyTopicId, journeyVariant]);
 
   useEffect(() => {
     if (!activeSession || sessionComplete || exercises.length === 0 || practiceStartTrackedRef.current) return;
@@ -1135,6 +1263,94 @@ export default function PracticePage() {
       : null;
   const completionTone = getCompletionTone(score, exercises.length);
   const checkpointPassed = exercises.length > 0 && score / exercises.length >= CHECKPOINT_PASS_THRESHOLD;
+  const checkpointNeedsSave = isJourneyCheckpoint && checkpointPassed && checkpointSaveState !== "saved";
+  const checkpointMissedItems = useMemo(() => {
+    if (!isJourneyCheckpoint) return [];
+
+    return exercises.flatMap((exercise) => {
+      if (exercise.type === "match_meaning") return [];
+      const response = checkpointResponses[exercise.id];
+      if (!response || response === exercise.answer) return [];
+
+      if (exercise.type === "meaning_in_context") {
+        return [{ label: exercise.word, answer: exercise.answer }];
+      }
+      if (exercise.type === "fill_blank") {
+        return [{ label: exercise.answer, answer: exercise.answer }];
+      }
+      if (exercise.type === "natural_expression") {
+        return [{ label: exercise.answer, answer: exercise.answer }];
+      }
+      return [{ label: exercise.speechText, answer: exercise.answer }];
+    });
+  }, [checkpointResponses, exercises, isJourneyCheckpoint]);
+  const checkpointRecoveryWords = checkpointMissedItems
+    .map((item) => item.label)
+    .filter((value, index, array) => array.indexOf(value) === index)
+    .slice(0, 4);
+  const checkpointMissedMode = useMemo<PracticeMode | null>(() => {
+    if (!isJourneyCheckpoint || checkpointMissedItems.length === 0) return null;
+
+    const counts: Record<PracticeMode, number> = {
+      meaning: 0,
+      context: 0,
+      natural: 0,
+      listening: 0,
+      match: 0,
+    };
+
+    for (const exercise of exercises) {
+      if (exercise.type === "match_meaning") continue;
+      const response = checkpointResponses[exercise.id];
+      if (!response || response === exercise.answer) continue;
+
+      if (exercise.type === "meaning_in_context") counts.meaning += 1;
+      else if (exercise.type === "fill_blank") counts.context += 1;
+      else if (exercise.type === "natural_expression") counts.natural += 1;
+      else if (exercise.type === "listen_choose") counts.listening += 1;
+    }
+
+    const ranked = (Object.entries(counts) as Array<[PracticeMode, number]>)
+      .filter(([, count]) => count > 0)
+      .sort((a, b) => b[1] - a[1]);
+
+    return ranked[0]?.[0] ?? null;
+  }, [checkpointMissedItems.length, checkpointResponses, exercises, isJourneyCheckpoint]);
+  const dueFavorites = useMemo(() => getDuePracticeItems(favorites), [favorites]);
+  const reviewRecommendedMode = useMemo<PracticeMode>(() => {
+    if (checkpointMissedMode) return checkpointMissedMode;
+    if (dueFavorites.length === 0) return "meaning";
+
+    const counts: Record<PracticeMode, number> = {
+      meaning: 0,
+      context: 0,
+      natural: 0,
+      listening: 0,
+      match: 0,
+    };
+
+    for (const item of dueFavorites) {
+      counts.meaning += 1;
+      if (item.exampleSentence?.trim()) counts.context += 2;
+      if (isExpressionLikeFavorite(item)) counts.natural += 3;
+      if (item.storySlug || item.language) counts.listening += 1;
+    }
+
+    const ranked = (Object.entries(counts) as Array<[PracticeMode, number]>)
+      .filter(([mode]) => mode !== "match")
+      .sort((a, b) => b[1] - a[1]);
+
+    return ranked[0]?.[0] ?? "meaning";
+  }, [checkpointMissedMode, dueFavorites]);
+  const reviewRecommendedLabel = getModeLabel(reviewRecommendedMode);
+  const requestedMode =
+    requestedModeParam === "meaning" ||
+    requestedModeParam === "context" ||
+    requestedModeParam === "natural" ||
+    requestedModeParam === "listening" ||
+    requestedModeParam === "match"
+      ? requestedModeParam
+      : null;
   const completionBursts = useMemo(
     () => [
       { left: "8%", top: "18%", delay: "0ms", size: "h-2.5 w-2.5", color: "bg-emerald-300/80" },
@@ -1202,6 +1418,20 @@ export default function PracticePage() {
     score,
     sessionComplete,
   ]);
+
+  useEffect(() => {
+    if (isJourneyCheckpoint) return;
+    if (!requestedMode) return;
+    if (selectedMode !== null) return;
+    if (autoOpenedModeRef.current === requestedMode) return;
+
+    autoOpenedModeRef.current = requestedMode;
+    void trackUiMetric("practice_recommended_mode_opened", {
+      mode: requestedMode,
+      source: "query_param",
+    });
+    openSession(requestedMode);
+  }, [isJourneyCheckpoint, openSession, requestedMode, selectedMode, trackUiMetric]);
 
   if (!isLoaded || loadState === "loading") {
     return (
@@ -1290,6 +1520,11 @@ export default function PracticePage() {
               <X size={20} />
             </button>
             <div className="min-w-0 flex-1">
+              {isReviewFocus && reviewDueCount > 0 && !isJourneyCheckpoint ? (
+                <p className="mb-1 truncate text-[11px] font-bold uppercase tracking-[0.18em] text-amber-200">
+                  {reviewDueCount} due {reviewDueCount === 1 ? "item" : "items"} prioritized in this round
+                </p>
+              ) : null}
               <div className="mb-1.5 h-5">
                 <p
                   className={`text-[11px] font-bold uppercase tracking-[0.2em] text-amber-200 transition-opacity duration-150 ${
@@ -1386,11 +1621,17 @@ export default function PracticePage() {
                             ? checkpointPassed
                               ? checkpointSaveState === "saved"
                                 ? "Checkpoint passed. You can continue to the next topic."
-                                : "Checkpoint passed. Saving your progress..."
+                                : checkpointSaveState === "error"
+                                  ? "Checkpoint passed, but we could not save it yet. Retry to unlock the next topic."
+                                  : "Checkpoint passed. Saving your progress..."
                               : `${Math.max(0, Math.ceil(CHECKPOINT_PASS_THRESHOLD * exercises.length) - score)} more correct answers needed to pass.`
-                            : score === exercises.length
-                              ? "No misses. Keep the streak alive."
-                              : `${exercises.length - score} to revisit next time.`}
+                            : isJourneyPractice
+                              ? score === exercises.length
+                                ? "Strong work. Head back to your topic and keep the journey moving."
+                                : `${exercises.length - score} to revisit next time before you continue.`
+                              : score === exercises.length
+                                ? "No misses. Keep the streak alive."
+                                : `${exercises.length - score} to revisit next time.`}
                         </p>
                       </div>
                       {score === exercises.length ? (
@@ -1416,6 +1657,36 @@ export default function PracticePage() {
                       ) : null}
                     </div>
                   </div>
+                  {isJourneyCheckpoint && checkpointPassed && checkpointSaveState === "error" ? (
+                    <div className="mt-3 rounded-[1.2rem] border border-amber-200/20 bg-amber-300/10 px-4 py-3 text-sm text-amber-100">
+                      Your result is good, but the unlock has not been saved yet.
+                    </div>
+                  ) : null}
+                  {isJourneyCheckpoint && !checkpointPassed && checkpointMissedItems.length > 0 ? (
+                    <div className="mt-3 rounded-[1.2rem] border border-rose-200/20 bg-rose-300/10 px-4 py-4">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-rose-100/80">
+                        Review these first
+                      </p>
+                      <p className="mt-2 text-sm text-rose-50/92">
+                        Focus on {checkpointRecoveryWords.join(" · ")} before retrying the checkpoint.
+                      </p>
+                      {checkpointMissedMode ? (
+                        <p className="mt-2 text-sm text-rose-100/84">
+                          Best next step: {getModeLabel(checkpointMissedMode)} review.
+                        </p>
+                      ) : null}
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {checkpointRecoveryWords.map((word) => (
+                          <span
+                            key={word}
+                            className="rounded-full border border-rose-200/20 bg-white/5 px-3 py-1 text-[11px] font-semibold text-rose-50"
+                          >
+                            {word}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
                   <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
                     <button
                       type="button"
@@ -1424,13 +1695,55 @@ export default function PracticePage() {
                     >
                       {isJourneyCheckpoint ? "Retry checkpoint" : "Practice 10 more"}
                     </button>
+                    {isJourneyCheckpoint && !checkpointPassed && checkpointRecoveryHref ? (
+                      <Link
+                        href={`${checkpointRecoveryHref}&mode=${encodeURIComponent(reviewRecommendedMode)}`}
+                        onClick={() => {
+                          void trackUiMetric("checkpoint_recovery_clicked", {
+                            recommendedMode: reviewRecommendedMode,
+                            missedWords: checkpointRecoveryWords,
+                          });
+                        }}
+                        className="inline-flex min-w-[172px] justify-center rounded-full border border-amber-200/20 bg-amber-300/10 px-5 py-3 text-sm font-semibold text-amber-100 hover:bg-amber-300/15"
+                      >
+                        Review weak spots
+                      </Link>
+                    ) : null}
+                    {isJourneyCheckpoint && checkpointPassed && checkpointSaveState === "error" ? (
+                      <button
+                        type="button"
+                        onClick={() => setCheckpointSaveState("idle")}
+                        className="inline-flex min-w-[172px] justify-center rounded-full border border-amber-200/20 bg-amber-300/10 px-5 py-3 text-sm font-semibold text-amber-100 hover:bg-amber-300/15"
+                      >
+                        Retry save
+                      </button>
+                    ) : null}
                     {isJourneyPractice && journeyReturnHref ? (
                       <Link
                         href={journeyReturnHref}
                         className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
                       >
-                        {isJourneyCheckpoint && checkpointPassed ? "Continue journey" : "Back to topic"}
+                        {isJourneyCheckpoint && checkpointPassed && !checkpointNeedsSave
+                          ? "Continue journey"
+                          : explicitReturnLabel?.trim() || "Back to journey"}
                       </Link>
+                    ) : isStoryPractice && storyReturnHref ? (
+                      <>
+                        <Link
+                          href={storyReturnHref}
+                          className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+                        >
+                          Back to story
+                        </Link>
+                        {storyNextHref ? (
+                          <Link
+                            href={storyNextHref}
+                            className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+                          >
+                            Continue to next story
+                          </Link>
+                        ) : null}
+                      </>
                     ) : (
                       <Link
                         href="/favorites"
@@ -1863,16 +2176,40 @@ export default function PracticePage() {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(248,220,154,0.08),transparent_28%),linear-gradient(180deg,#042349_0%,#062148_45%,#031a3d_100%)] p-4 pb-24 text-[var(--foreground)] sm:p-6 sm:pb-24">
       <div className="mb-4 px-1 sm:mb-6">
-        <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[rgba(255,246,214,0.86)]">
+        <div className={`mb-2 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] ${isReviewFocus && reviewDueCount > 0 ? "bg-amber-300/12 text-amber-100" : "bg-white/8 text-[rgba(255,246,214,0.86)]"}`}>
           <Sparkles size={13} />
-          Pick a mode
+          {isReviewFocus && reviewDueCount > 0 ? "Review focus" : "Pick a mode"}
         </div>
         <h1 className="text-[2rem] font-black tracking-tight text-white sm:text-[2.5rem]">
-          Practice
+          {isReviewFocus && reviewDueCount > 0 ? "Review this topic" : "Practice"}
         </h1>
         <p className="mt-1 max-w-xl text-sm leading-6 text-[rgba(226,232,244,0.78)] sm:text-base">
-          Five quick ways to review. Tap one and jump straight in.
+          {isReviewFocus && reviewDueCount > 0
+            ? `You have ${reviewDueCount} due ${reviewDueCount === 1 ? "item" : "items"} waiting in this topic. ${reviewRecommendedLabel} is the best next move right now.`
+            : "Five quick ways to review. Tap one and jump straight in."}
         </p>
+        {isReviewFocus && reviewDueCount > 0 ? (
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                void trackUiMetric("practice_recommended_mode_opened", {
+                  mode: reviewRecommendedMode,
+                  source: "review_focus_cta",
+                });
+                openSession(reviewRecommendedMode);
+              }}
+              className="inline-flex items-center justify-center rounded-full border border-amber-200/20 bg-amber-300 px-4 py-2.5 text-sm font-black text-slate-950 shadow-[0_10px_24px_rgba(252,211,77,0.22)] hover:brightness-105"
+            >
+              Start {reviewRecommendedLabel.toLowerCase()} review
+            </button>
+            {reviewLead ? (
+              <p className="text-sm text-[rgba(226,232,244,0.74)]">
+                Focus words: {reviewLead}
+              </p>
+            ) : null}
+          </div>
+        ) : null}
       </div>
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-2 xl:grid-cols-3">
@@ -1907,6 +2244,11 @@ export default function PracticePage() {
                   <card.icon size={20} />
                 </span>
               </div>
+              {isReviewFocus && reviewDueCount > 0 && card.mode === reviewRecommendedMode ? (
+                <div className="mb-3 inline-flex rounded-full border border-amber-200/20 bg-amber-300/12 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-100">
+                  Recommended now
+                </div>
+              ) : null}
               <p className="text-[12px] leading-5 text-white/84 sm:text-[13px]">
                 {card.detail}
               </p>

@@ -4,13 +4,20 @@ import { currentUser } from "@clerk/nextjs/server";
 import { ChevronLeft, Sparkles } from "lucide-react";
 import {
   buildJourneyLevels,
+  getJourneyTopicCompletedStoryCount,
   getJourneyTopicCheckpointKey,
+  getJourneyTopicRequiredStoryCount,
+  getJourneyTopicPracticeKey,
   getUnlockedStoryCount,
   isJourneyStoryComplete,
   isJourneyTopicComplete,
 } from "../../journeyData";
 import { formatVariantLabel, normalizeVariant } from "@/lib/languageVariant";
-import { getCompletedJourneyStoryKeys, getPassedJourneyCheckpointKeys } from "@/lib/journeyProgress";
+import {
+  getCompletedJourneyStoryKeys,
+  getPassedJourneyCheckpointKeys,
+  getPracticedJourneyTopicKeys,
+} from "@/lib/journeyProgress";
 import StoryJourneyClient from "./StoryJourneyClient";
 
 export async function generateStaticParams() {
@@ -28,10 +35,15 @@ export default async function JourneyTopicPage({
   searchParams,
 }: {
   params: Promise<{ levelId: string; topicId: string }>;
-  searchParams: Promise<{ variant?: string }>;
+  searchParams: Promise<{
+    variant?: string;
+    justRead?: string;
+    justPracticed?: string;
+    justCheckpoint?: string;
+  }>;
 }) {
   const { levelId, topicId } = await params;
-  const { variant } = await searchParams;
+  const { variant, justRead, justPracticed, justCheckpoint } = await searchParams;
   const user = await currentUser();
   const preferredVariant =
     typeof user?.publicMetadata?.preferredVariant === "string"
@@ -45,33 +57,95 @@ export default async function JourneyTopicPage({
   const levels = await buildJourneyLevels(activeVariant);
   const level = levels.find((entry) => entry.id === levelId) ?? null;
   const topic = level?.topics.find((entry) => entry.slug === topicId) ?? null;
-  const [completedStoryKeys, passedCheckpointKeys] = await Promise.all([
+  const [completedStoryKeys, passedCheckpointKeys, practicedTopicKeys] = await Promise.all([
     getCompletedJourneyStoryKeys(),
     getPassedJourneyCheckpointKeys(),
+    getPracticedJourneyTopicKeys(),
   ]);
 
   if (!level || !topic) {
     notFound();
   }
 
-  const unlockedStoryCount = getUnlockedStoryCount(topic, completedStoryKeys);
-  const topicCompleted = isJourneyTopicComplete(topic, completedStoryKeys);
-  const checkpointPassed = passedCheckpointKeys.has(
-    getJourneyTopicCheckpointKey(
-      activeVariant,
-      level.id,
-      topic.slug
-    )
-  );
+  const optimisticCompletedStoryKeys = new Set(completedStoryKeys);
+  const optimisticPassedCheckpointKeys = new Set(passedCheckpointKeys);
+  const optimisticPracticedTopicKeys = new Set(practicedTopicKeys);
 
-  const returnTo = activeVariant
-    ? `/journey/${level.id}/${topic.slug}?variant=${encodeURIComponent(activeVariant)}`
-    : `/journey/${level.id}/${topic.slug}`;
+  if (typeof justRead === "string" && justRead.trim()) {
+    optimisticCompletedStoryKeys.add(justRead.trim());
+  }
+
+  const topicPracticeKey = getJourneyTopicPracticeKey(activeVariant, level.id, topic.slug);
+  if (justPracticed === "1") {
+    optimisticPracticedTopicKeys.add(topicPracticeKey);
+  }
+
+  const checkpointKey = getJourneyTopicCheckpointKey(
+    activeVariant,
+    level.id,
+    topic.slug
+  );
+  if (justCheckpoint === "1") {
+    optimisticPassedCheckpointKeys.add(checkpointKey);
+  }
+
+  const unlockedStoryCount = getUnlockedStoryCount(topic, optimisticCompletedStoryKeys);
+  const topicCompleted = isJourneyTopicComplete(topic, optimisticCompletedStoryKeys);
+  const checkpointPassed = optimisticPassedCheckpointKeys.has(
+    checkpointKey
+  );
+  const topicPracticed = optimisticPracticedTopicKeys.has(topicPracticeKey);
+  const completedStoryCount = getJourneyTopicCompletedStoryCount(topic, optimisticCompletedStoryKeys);
+  const requiredStoryCount = getJourneyTopicRequiredStoryCount(topic);
+  const remainingRequiredStories = Math.max(0, requiredStoryCount - completedStoryCount);
+
+  const returnParams = new URLSearchParams();
+  if (activeVariant) returnParams.set("variant", activeVariant);
+  const returnTo = `/journey/${level.id}/${topic.slug}${returnParams.toString() ? `?${returnParams.toString()}` : ""}`;
   const returnLabel = topic.label;
+  const practiceReturnParams = new URLSearchParams(returnParams);
+  practiceReturnParams.set("justPracticed", "1");
+  const practiceReturnHref = `/journey/${level.id}/${topic.slug}?${practiceReturnParams.toString()}`;
+  const checkpointReturnParams = new URLSearchParams(returnParams);
+  checkpointReturnParams.set("justCheckpoint", "1");
+  const checkpointReturnHref = `/journey/${level.id}/${topic.slug}?${checkpointReturnParams.toString()}`;
+  const topicPracticeParams = new URLSearchParams();
+  topicPracticeParams.set("source", "journey");
+  topicPracticeParams.set("levelId", level.id);
+  topicPracticeParams.set("topicId", topic.slug);
+  if (activeVariant) topicPracticeParams.set("variant", activeVariant);
+  topicPracticeParams.set("returnTo", practiceReturnHref);
+  topicPracticeParams.set("returnLabel", topic.label);
+  const topicPracticeHref = `/practice?${topicPracticeParams.toString()}`;
+  const checkpointHrefParams = new URLSearchParams();
+  if (activeVariant) checkpointHrefParams.set("variant", activeVariant);
+  checkpointHrefParams.set("returnTo", checkpointReturnHref);
+  const checkpointHref = `/journey/${level.id}/${topic.slug}/checkpoint?${checkpointHrefParams.toString()}`;
+  const primaryAction = !topicCompleted
+    ? null
+    : !topicPracticed
+      ? {
+          href: topicPracticeHref,
+          label: "Practice topic",
+          tone:
+            "inline-flex rounded-full border border-sky-200/20 bg-sky-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-sky-100 hover:bg-sky-300/16",
+        }
+      : !checkpointPassed
+        ? {
+            href: checkpointHref,
+            label: "Take checkpoint",
+            tone:
+              "inline-flex rounded-full border border-amber-200/20 bg-amber-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-100 hover:bg-amber-300/16",
+          }
+        : null;
+
   const storyNodes = topic.stories.map((story, index) => {
     const isUnlocked = index < unlockedStoryCount;
-    const isCompleted = isJourneyStoryComplete(story, completedStoryKeys);
-    const storyHref = `${story.href}?returnTo=${encodeURIComponent(returnTo)}&returnLabel=${encodeURIComponent(returnLabel)}`;
+    const isCompleted = isJourneyStoryComplete(story, optimisticCompletedStoryKeys);
+    const storyReturnParams = new URLSearchParams(returnParams);
+    storyReturnParams.set("justRead", story.progressKey);
+    const storyReturnHref = `/journey/${level.id}/${topic.slug}?${storyReturnParams.toString()}`;
+    const storyHref = `${story.href}?returnTo=${encodeURIComponent(storyReturnHref)}&returnLabel=${encodeURIComponent(returnLabel)}`;
 
     return {
       kind: "story" as const,
@@ -81,17 +155,27 @@ export default async function JourneyTopicPage({
       coverUrl: story.coverUrl,
       label: `Story ${index + 1}`,
       meta: isUnlocked ? story.region ?? story.language ?? "Global" : "Unlock later",
-      badge: isCompleted ? "Completed" : index === 0 ? "Start" : index === unlockedStoryCount - 1 ? "Continue" : "Locked",
+      badge: isCompleted ? "Read" : index === 0 ? "Start" : index === unlockedStoryCount - 1 ? "Continue" : "Locked",
       badgeTone: isCompleted ? ("emerald" as const) : index === 0 ? ("lime" as const) : index === unlockedStoryCount - 1 ? ("sky" as const) : ("slate" as const),
       unlocked: isUnlocked,
     };
   });
 
-  const finalNode = topicCompleted && !checkpointPassed
+  const finalNode = topicCompleted && !topicPracticed
+    ? {
+        kind: "final" as const,
+        id: `${topic.slug}-practice`,
+        href: topicPracticeHref,
+        badge: "Practice topic",
+        badgeTone: "sky" as const,
+        unlocked: true,
+        icon: "sparkles" as const,
+      }
+    : topicCompleted && !checkpointPassed
     ? {
         kind: "final" as const,
         id: `${topic.slug}-checkpoint`,
-        href: `/journey/${level.id}/${topic.slug}/checkpoint${activeVariant ? `?variant=${encodeURIComponent(activeVariant)}` : ""}`,
+        href: checkpointHref,
         badge: "Checkpoint",
         badgeTone: "amber" as const,
         unlocked: true,
@@ -150,17 +234,38 @@ export default async function JourneyTopicPage({
             <h2 className="mt-0.5 text-base font-black tracking-tight text-white sm:text-3xl">Story journey</h2>
           </div>
           <div className="flex items-center gap-2">
-            <Link
-              href={`/practice?source=journey&levelId=${encodeURIComponent(level.id)}&topicId=${encodeURIComponent(
-                topic.slug
-              )}${activeVariant ? `&variant=${encodeURIComponent(activeVariant)}` : ""}`}
-              className="inline-flex rounded-full border border-sky-200/20 bg-sky-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-sky-100 hover:bg-sky-300/16"
-            >
-              Practice topic
-            </Link>
+            {primaryAction ? (
+              <Link href={primaryAction.href} className={primaryAction.tone}>
+                {primaryAction.label}
+              </Link>
+            ) : !topicCompleted ? (
+              <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-200/80">
+                Finish {remainingRequiredStories} more {remainingRequiredStories === 1 ? "story" : "stories"}
+              </div>
+            ) : (
+              <div className="inline-flex rounded-full border border-emerald-200/20 bg-emerald-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-100">
+                Topic cleared
+              </div>
+            )}
             <div className="rounded-full border border-white/8 bg-white/[0.04] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-200/80">
               {topic.storyCount} stories
             </div>
+          </div>
+        </div>
+        <div className="mb-3 flex flex-wrap gap-2">
+          <div className={`rounded-full border px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] ${completedStoryCount > 0 ? "border-emerald-200/20 bg-emerald-300/10 text-emerald-100" : "border-white/10 bg-white/5 text-slate-200/80"}`}>
+            Read: {Math.min(completedStoryCount, requiredStoryCount)}/{requiredStoryCount} required
+          </div>
+          {topic.storyCount > requiredStoryCount ? (
+            <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-200/80">
+              {topic.storyCount - requiredStoryCount} extra {topic.storyCount - requiredStoryCount === 1 ? "story" : "stories"}
+            </div>
+          ) : null}
+          <div className={`rounded-full border px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] ${topicPracticed ? "border-sky-200/20 bg-sky-300/10 text-sky-100" : "border-white/10 bg-white/5 text-slate-200/80"}`}>
+            {topicPracticed ? "Practiced" : "Practice pending"}
+          </div>
+          <div className={`rounded-full border px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] ${checkpointPassed ? "border-amber-200/20 bg-amber-300/10 text-amber-100" : "border-white/10 bg-white/5 text-slate-200/80"}`}>
+            {checkpointPassed ? "Checkpoint cleared" : "Checkpoint pending"}
           </div>
         </div>
 

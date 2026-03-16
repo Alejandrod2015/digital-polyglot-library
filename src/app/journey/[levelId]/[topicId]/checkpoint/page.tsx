@@ -3,10 +3,9 @@ import { redirect } from "next/navigation";
 import {
   buildJourneyLevels,
   buildJourneyTopicPracticeItems,
-  getJourneyTopicCheckpointKey,
   isJourneyTopicComplete,
 } from "@/app/journey/journeyData";
-import { getCompletedJourneyStoryKeys, getPassedJourneyCheckpointKeys } from "@/lib/journeyProgress";
+import { getCompletedJourneyStoryKeys } from "@/lib/journeyProgress";
 import { normalizeVariant } from "@/lib/languageVariant";
 
 export default async function JourneyCheckpointPage({
@@ -14,10 +13,10 @@ export default async function JourneyCheckpointPage({
   searchParams,
 }: {
   params: Promise<{ levelId: string; topicId: string }>;
-  searchParams: Promise<{ variant?: string }>;
+  searchParams: Promise<{ variant?: string; returnTo?: string }>;
 }) {
   const { levelId, topicId } = await params;
-  const { variant } = await searchParams;
+  const { variant, returnTo } = await searchParams;
   const user = await currentUser();
   const preferredVariant =
     typeof user?.publicMetadata?.preferredVariant === "string"
@@ -31,10 +30,7 @@ export default async function JourneyCheckpointPage({
     redirect(`/journey/${levelId}/${topicId}/checkpoint?variant=${encodeURIComponent(variantId)}`);
   }
   const checkpoint = await buildJourneyTopicPracticeItems(variantId, levelId, topicId);
-  const [passedKeys, completedStoryKeys] = await Promise.all([
-    getPassedJourneyCheckpointKeys(),
-    getCompletedJourneyStoryKeys(),
-  ]);
+  const completedStoryKeys = await getCompletedJourneyStoryKeys();
 
   if (!checkpoint) {
     redirect("/journey");
@@ -55,8 +51,8 @@ export default async function JourneyCheckpointPage({
   if (variantId) {
     redirectParams.set("variant", variantId);
   }
-  if (passedKeys.has(getJourneyTopicCheckpointKey(variantId, levelId, topicId))) {
-    redirectParams.set("passed", "1");
+  if (typeof returnTo === "string" && returnTo.startsWith("/") && !returnTo.startsWith("//")) {
+    redirectParams.set("returnTo", returnTo);
   }
 
   redirect(`/practice?${redirectParams.toString()}`);

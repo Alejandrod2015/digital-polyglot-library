@@ -12,15 +12,22 @@ import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
+import StoryPracticeCta from "@/components/StoryPracticeCta";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
 
 type StoryPageProps = {
   params: Promise<{ bookSlug: string; storySlug: string }>;
+  searchParams: Promise<{
+    returnTo?: string;
+    returnLabel?: string;
+    from?: string;
+  }>;
 };
 
-export default async function StoryPage({ params }: StoryPageProps) {
+export default async function StoryPage({ params, searchParams }: StoryPageProps) {
   const { bookSlug, storySlug } = await params;
+  const { returnTo, returnLabel, from } = await searchParams;
   const book = Object.values(books).find((b) => b.slug === bookSlug);
   const story = book?.stories.find((s) => s.slug === storySlug);
 
@@ -76,6 +83,37 @@ export default async function StoryPage({ params }: StoryPageProps) {
   const signInHref = `/sign-in?redirect_url=${encodeURIComponent(
     `/books/${book.slug}/${story.slug}`
   )}`;
+  const resolvedReturnHref =
+    typeof returnTo === "string" && returnTo.startsWith("/") && !returnTo.startsWith("//")
+      ? returnTo
+      : from === "my-library"
+        ? "/my-library"
+        : `/books/${book.slug}`;
+  const resolvedReturnLabel =
+    typeof returnLabel === "string" && returnLabel.trim()
+      ? returnLabel.trim()
+      : from === "my-library"
+        ? "Back to My Library"
+        : "Back to book";
+  const currentStorySearch = new URLSearchParams();
+  if (resolvedReturnHref) currentStorySearch.set("returnTo", resolvedReturnHref);
+  if (resolvedReturnLabel) currentStorySearch.set("returnLabel", resolvedReturnLabel);
+  if (typeof from === "string" && from.trim()) currentStorySearch.set("from", from.trim());
+  const currentStoryHref = `/books/${book.slug}/${story.slug}${currentStorySearch.toString() ? `?${currentStorySearch.toString()}` : ""}`;
+  const nextStoryHref = nextStorySlug
+    ? `/books/${book.slug}/${nextStorySlug}${currentStorySearch.toString() ? `?${currentStorySearch.toString()}` : ""}`
+    : null;
+  const practiceParams = new URLSearchParams({
+    source: "story",
+    storySlug: story.slug,
+    bookSlug: book.slug,
+    storyTitle: story.title,
+    storyHref: currentStoryHref,
+  });
+  if (nextStoryHref) practiceParams.set("nextHref", nextStoryHref);
+  if (resolvedReturnHref) practiceParams.set("returnTo", resolvedReturnHref);
+  if (resolvedReturnLabel) practiceParams.set("returnLabel", resolvedReturnLabel);
+  const practiceHref = `/practice?${practiceParams.toString()}`;
 
   return (
     <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground">
@@ -178,9 +216,18 @@ export default async function StoryPage({ params }: StoryPageProps) {
         }
       >
         {hasFullAccess ? (
-          <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
-            <StoryContent text={visibleText} sentencesPerParagraph={3} vocab={story.vocab ?? []} />
-          </div>
+          <>
+            <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
+              <StoryContent text={visibleText} sentencesPerParagraph={3} vocab={story.vocab ?? []} />
+            </div>
+            {(story.vocab?.length ?? 0) > 0 ? (
+              <StoryPracticeCta
+                practiceHref={practiceHref}
+                secondaryHref={nextStoryHref ?? resolvedReturnHref}
+                secondaryLabel={nextStoryHref ? "Next story" : resolvedReturnLabel}
+              />
+            ) : null}
+          </>
         ) : (
           <div
             className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6"

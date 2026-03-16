@@ -3,27 +3,51 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   BriefcaseBusiness,
   BusFront,
   ChefHat,
+  Flame,
   FerrisWheel,
+  Goal,
   HeartHandshake,
   Leaf,
   Lightbulb,
   Lock,
-  Map,
+  Map as MapIcon,
+  RotateCcw,
+  Sparkles,
   type LucideIcon,
   Store,
 } from "lucide-react";
-import { getUnlockedLevelCount, getUnlockedTopicCount, isJourneyTopicComplete, type JourneyVariantTrack } from "./journeyData";
+import {
+  getJourneyTopicCheckpointKey,
+  getJourneyTopicCompletedStoryCount,
+  getJourneyTopicPracticeKey,
+  getJourneyTopicRequiredStoryCount,
+  getUnlockedLevelCount,
+  getUnlockedTopicCount,
+  isJourneyTopicComplete,
+  type JourneyVariantTrack,
+} from "./journeyData";
+import type { JourneyDueReviewItem } from "@/lib/journeyProgress";
 
 type JourneyClientProps = {
   tracks: JourneyVariantTrack[];
   initialVariantId: string;
   completedStoryKeys: string[];
   passedCheckpointKeys: string[];
+  practicedTopicKeys: string[];
+  dueReviewItems: JourneyDueReviewItem[];
+};
+
+type JourneyProgressSummary = {
+  weeklyGoalStories: number;
+  weeklyStoriesFinished: number;
+  weeklyPracticeSessions: number;
+  weeklyGoalPracticeSessions: number;
+  storyStreakDays: number;
 };
 
 const topicVisuals: Array<{
@@ -68,10 +92,14 @@ export default function JourneyClient({
   initialVariantId,
   completedStoryKeys,
   passedCheckpointKeys,
+  practicedTopicKeys,
+  dueReviewItems,
 }: JourneyClientProps) {
+  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const firstTrackId = tracks[0]?.id ?? "";
-  const [selectedVariantId] = useState(
+  const [selectedVariantId, setSelectedVariantId] = useState(
     tracks.some((track) => track.id === initialVariantId)
       ? initialVariantId
       : searchParams.get("variant") ?? firstTrackId
@@ -85,6 +113,14 @@ export default function JourneyClient({
   const passedCheckpointKeySet = useMemo(
     () => new Set(passedCheckpointKeys),
     [passedCheckpointKeys]
+  );
+  const practicedTopicKeySet = useMemo(
+    () => new Set(practicedTopicKeys),
+    [practicedTopicKeys]
+  );
+  const dueReviewProgressKeySet = useMemo(
+    () => new Set(dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))),
+    [dueReviewItems]
   );
   const unlockedLevelCount = useMemo(
     () =>
@@ -102,6 +138,32 @@ export default function JourneyClient({
   const nodeRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const [connectorFrame, setConnectorFrame] = useState({ width: 0, height: 0 });
   const [connectorPaths, setConnectorPaths] = useState<string[]>([]);
+  const [progressSummary, setProgressSummary] = useState<JourneyProgressSummary | null>(null);
+  const trackJourneyMetric = async (
+    eventType:
+      | "journey_variant_selected"
+      | "journey_level_selected"
+      | "journey_topic_opened"
+      | "journey_next_action_clicked"
+      | "journey_review_cta_clicked",
+    metadata?: Record<string, unknown>,
+    storySlug = "journey"
+  ) => {
+    try {
+      await fetch("/api/metrics", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          bookSlug: "journey",
+          storySlug,
+          eventType,
+          metadata,
+        }),
+      });
+    } catch {
+      // Best-effort analytics only.
+    }
+  };
   const selectedLevel = useMemo(() => {
     const unlockedIds = new Set(levels.slice(0, unlockedLevelCount).map((level) => level.id));
     if (unlockedIds.has(selectedLevelId)) {
@@ -109,6 +171,63 @@ export default function JourneyClient({
     }
     return levels.find((level) => level.id === firstUnlockedLevelId) ?? levels[0] ?? null;
   }, [firstUnlockedLevelId, levels, selectedLevelId, unlockedLevelCount]);
+
+  useEffect(() => {
+    const nextVariantId =
+      (tracks.some((track) => track.id === initialVariantId) ? initialVariantId : searchParams.get("variant")) ??
+      firstTrackId;
+    if (nextVariantId && nextVariantId !== selectedVariantId) {
+      setSelectedVariantId(nextVariantId);
+    }
+  }, [firstTrackId, initialVariantId, searchParams, selectedVariantId, tracks]);
+
+  useEffect(() => {
+    if (!selectedVariantId) return;
+    const params = new URLSearchParams(searchParams.toString());
+    if (params.get("variant") === selectedVariantId) return;
+    params.set("variant", selectedVariantId);
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  }, [pathname, router, searchParams, selectedVariantId]);
+
+  useEffect(() => {
+    setSelectedLevelId(firstUnlockedLevelId);
+  }, [firstUnlockedLevelId]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadProgress = async () => {
+      try {
+        const res = await fetch("/api/progress", { cache: "no-store" });
+        if (!res.ok) return;
+        const data = (await res.json()) as Partial<JourneyProgressSummary>;
+        if (cancelled) return;
+        if (
+          typeof data.weeklyGoalStories === "number" &&
+          typeof data.weeklyStoriesFinished === "number" &&
+          typeof data.weeklyPracticeSessions === "number" &&
+          typeof data.weeklyGoalPracticeSessions === "number" &&
+          typeof data.storyStreakDays === "number"
+        ) {
+          setProgressSummary({
+            weeklyGoalStories: data.weeklyGoalStories,
+            weeklyStoriesFinished: data.weeklyStoriesFinished,
+            weeklyPracticeSessions: data.weeklyPracticeSessions,
+            weeklyGoalPracticeSessions: data.weeklyGoalPracticeSessions,
+            storyStreakDays: data.storyStreakDays,
+          });
+        }
+      } catch {
+        // Keep the journey usable even if progress metrics are unavailable.
+      }
+    };
+
+    void loadProgress();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!selectedLevel) return;
@@ -175,6 +294,165 @@ export default function JourneyClient({
     selectedLevel.id
   );
   const laneOffsets = [8, 60, 12, 64, 16, 60];
+  const dueReviewCountByTopicId = useMemo(() => {
+    const counts = new Map<string, number>();
+
+    for (const level of selectedTrack.levels) {
+      for (const topic of level.topics) {
+        const topicDueCount = topic.stories.reduce((sum, story) => {
+          return sum + (dueReviewProgressKeySet.has(story.progressKey) ? 1 : 0);
+        }, 0);
+        if (topicDueCount > 0) {
+          counts.set(`${level.id}:${topic.slug}`, topicDueCount);
+        }
+      }
+    }
+
+    return counts;
+  }, [dueReviewProgressKeySet, selectedTrack.levels]);
+  const nextAction = useMemo(() => {
+    const currentTopicIndex = Math.max(0, unlockedTopicCount - 1);
+    const currentTopic = selectedLevel.topics[currentTopicIndex] ?? selectedLevel.topics[0] ?? null;
+    if (!currentTopic) return null;
+
+    const topicHref = `/journey/${selectedLevel.id}/${currentTopic.slug}?variant=${encodeURIComponent(selectedTrack.id)}`;
+    const completedCount = getJourneyTopicCompletedStoryCount(currentTopic, completedStoryKeySet);
+    const requiredCount = getJourneyTopicRequiredStoryCount(currentTopic);
+    const topicComplete = isJourneyTopicComplete(currentTopic, completedStoryKeySet);
+    const practiceKey = getJourneyTopicPracticeKey(selectedTrack.id, selectedLevel.id, currentTopic.slug);
+    const checkpointKey = getJourneyTopicCheckpointKey(selectedTrack.id, selectedLevel.id, currentTopic.slug);
+    const practiced = practicedTopicKeySet.has(practiceKey);
+    const checkpointPassed = passedCheckpointKeySet.has(checkpointKey);
+
+    if (!topicComplete) {
+      return {
+        eyebrow: `${selectedLevel.title} in progress`,
+        title: currentTopic.label,
+        description:
+          completedCount === 0
+            ? "Start this topic and unlock the rest of the path."
+            : `Read ${Math.max(0, requiredCount - completedCount)} more ${Math.max(0, requiredCount - completedCount) === 1 ? "story" : "stories"} to finish this topic.`,
+        href: topicHref,
+        label: completedCount === 0 ? "Start topic" : "Continue topic",
+      };
+    }
+
+    if (!practiced) {
+      return {
+        eyebrow: `${selectedLevel.title} ready to reinforce`,
+        title: currentTopic.label,
+        description: "You finished the reading target. Practice the topic while it is still fresh.",
+        href: topicHref,
+        label: "Practice topic",
+      };
+    }
+
+    if (!checkpointPassed) {
+      return {
+        eyebrow: `${selectedLevel.title} checkpoint`,
+        title: currentTopic.label,
+        description: "Clear the checkpoint to unlock the next topic in this level.",
+        href: topicHref,
+        label: "Take checkpoint",
+      };
+    }
+
+    const nextTopic = selectedLevel.topics[currentTopicIndex + 1] ?? null;
+    if (nextTopic) {
+      return {
+        eyebrow: `${selectedLevel.title} unlocked`,
+        title: nextTopic.label,
+        description: "Your next topic is open. Keep the journey moving.",
+        href: `/journey/${selectedLevel.id}/${nextTopic.slug}?variant=${encodeURIComponent(selectedTrack.id)}`,
+        label: "Open next topic",
+      };
+    }
+
+    return {
+      eyebrow: `${selectedLevel.title} cleared`,
+      title: "Level complete",
+      description: "You cleared every topic available in this level.",
+      href: topicHref,
+      label: "Review level",
+    };
+  }, [
+    completedStoryKeySet,
+    passedCheckpointKeySet,
+    practicedTopicKeySet,
+    selectedLevel,
+    selectedTrack.id,
+    unlockedTopicCount,
+  ]);
+  const reviewAction = useMemo(() => {
+    let best:
+      | {
+          levelId: string;
+          topicSlug: string;
+          topicLabel: string;
+          dueCount: number;
+        }
+      | null = null;
+
+    for (const level of selectedTrack.levels) {
+      for (const topic of level.topics) {
+        const dueCount = dueReviewCountByTopicId.get(`${level.id}:${topic.slug}`) ?? 0;
+        if (dueCount === 0) continue;
+        if (!best || dueCount > best.dueCount) {
+          best = {
+            levelId: level.id,
+            topicSlug: topic.slug,
+            topicLabel: topic.label,
+            dueCount,
+          };
+        }
+      }
+    }
+
+    if (!best) return null;
+
+    const params = new URLSearchParams();
+    params.set("source", "journey");
+    params.set("levelId", best.levelId);
+    params.set("topicId", best.topicSlug);
+    params.set("variant", selectedTrack.id);
+    params.set("review", "1");
+    params.set("returnTo", `/journey?variant=${encodeURIComponent(selectedTrack.id)}`);
+    params.set("returnLabel", "Back to journey");
+
+    return {
+      ...best,
+      href: `/practice?${params.toString()}`,
+    };
+  }, [dueReviewCountByTopicId, selectedTrack.id, selectedTrack.levels]);
+  const levelClearedTopicCount = useMemo(
+    () =>
+      selectedLevel.topics.filter((topic) => {
+        const checkpointKey = getJourneyTopicCheckpointKey(selectedTrack.id, selectedLevel.id, topic.slug);
+        return (
+          isJourneyTopicComplete(topic, completedStoryKeySet) &&
+          passedCheckpointKeySet.has(checkpointKey)
+        );
+      }).length,
+    [completedStoryKeySet, passedCheckpointKeySet, selectedLevel, selectedTrack.id]
+  );
+  const levelCompletionPercent =
+    selectedLevel.topics.length > 0
+      ? Math.round((levelClearedTopicCount / selectedLevel.topics.length) * 100)
+      : 0;
+  const weeklyStoryPercent = progressSummary
+    ? Math.min(
+        100,
+        Math.round((progressSummary.weeklyStoriesFinished / Math.max(progressSummary.weeklyGoalStories, 1)) * 100)
+      )
+    : 0;
+  const weeklyPracticePercent = progressSummary
+    ? Math.min(
+        100,
+        Math.round(
+          (progressSummary.weeklyPracticeSessions / Math.max(progressSummary.weeklyGoalPracticeSessions, 1)) * 100
+        )
+      )
+    : 0;
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 pb-14 pt-4 sm:gap-4 sm:px-6 lg:px-8">
@@ -182,14 +460,44 @@ export default function JourneyClient({
         <div className="flex items-start justify-between gap-3">
           <div className="h-[11px]" />
           <div className="hidden items-center gap-2 sm:flex">
-            <Map size={18} className="text-lime-100/80" />
+            <MapIcon size={18} className="text-lime-100/80" />
           </div>
         </div>
 
         <div className="mt-0.5">
-          <span className="inline-flex rounded-full border border-lime-200/18 bg-white/[0.04] px-2.5 py-0.5 text-[0.72rem] font-black uppercase tracking-[0.15em] text-lime-100/88 sm:px-3 sm:py-1 sm:text-[0.8rem]">
-            {selectedTrack.label}
-          </span>
+          {tracks.length > 1 ? (
+            <div className="-mx-1 overflow-x-auto px-1">
+              <div className="flex min-w-max gap-2">
+                {tracks.map((track) => {
+                  const active = track.id === selectedTrack.id;
+                  return (
+                    <button
+                      key={track.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedVariantId(track.id);
+                        void trackJourneyMetric("journey_variant_selected", {
+                          variantId: track.id,
+                          fromVariantId: selectedTrack.id,
+                        });
+                      }}
+                      className={`rounded-full border px-2.5 py-0.5 text-[0.72rem] font-black uppercase tracking-[0.15em] transition sm:px-3 sm:py-1 sm:text-[0.8rem] ${
+                        active
+                          ? "border-lime-200/25 bg-lime-300 text-slate-950 shadow-[0_10px_24px_rgba(163,230,53,0.22)]"
+                          : "border-white/10 bg-white/[0.04] text-lime-100/88 hover:bg-white/[0.08]"
+                      }`}
+                    >
+                      {track.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ) : (
+            <span className="inline-flex rounded-full border border-lime-200/18 bg-white/[0.04] px-2.5 py-0.5 text-[0.72rem] font-black uppercase tracking-[0.15em] text-lime-100/88 sm:px-3 sm:py-1 sm:text-[0.8rem]">
+              {selectedTrack.label}
+            </span>
+          )}
         </div>
 
         <div className="-mx-1 mt-1.5 overflow-x-auto px-1 sm:mx-0 sm:overflow-visible sm:px-0">
@@ -204,6 +512,10 @@ export default function JourneyClient({
                 onClick={() => {
                   if (!unlocked) return;
                   setSelectedLevelId(level.id);
+                  void trackJourneyMetric("journey_level_selected", {
+                    variantId: selectedTrack.id,
+                    levelId: level.id,
+                  });
                 }}
                 aria-disabled={!unlocked}
                 className={`rounded-full border px-2.5 py-0.5 text-[0.82rem] font-black uppercase tracking-[0.08em] transition sm:px-4 sm:py-1.5 sm:text-sm ${
@@ -221,6 +533,151 @@ export default function JourneyClient({
               </button>
             );
           })}
+          </div>
+        </div>
+
+        {nextAction ? (
+          <div className="mt-3 rounded-[1.25rem] border border-white/10 bg-white/[0.05] px-3 py-3 sm:px-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-sky-100/72">
+                  {nextAction.eyebrow}
+                </p>
+                <h2 className="mt-1 text-lg font-black tracking-tight text-white sm:text-xl">
+                  {nextAction.title}
+                </h2>
+                <p className="mt-1 max-w-2xl text-sm text-slate-200/82">
+                  {nextAction.description}
+                </p>
+              </div>
+              <Link
+                href={nextAction.href}
+                onClick={() => {
+                  void trackJourneyMetric("journey_next_action_clicked", {
+                    variantId: selectedTrack.id,
+                    levelId: selectedLevel.id,
+                    actionLabel: nextAction.label,
+                    actionTitle: nextAction.title,
+                  });
+                }}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-lime-200/25 bg-lime-300 px-4 py-2.5 text-sm font-black text-slate-950 shadow-[0_10px_24px_rgba(163,230,53,0.22)] hover:brightness-105"
+              >
+                <Sparkles size={16} />
+                {nextAction.label}
+              </Link>
+            </div>
+          </div>
+        ) : null}
+
+        {reviewAction ? (
+          <div className="mt-3 rounded-[1.25rem] border border-amber-200/18 bg-amber-300/[0.08] px-3 py-3 sm:px-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-amber-100/78">
+                  Review ready
+                </p>
+                <h2 className="mt-1 text-lg font-black tracking-tight text-white sm:text-xl">
+                  {reviewAction.topicLabel}
+                </h2>
+                <p className="mt-1 max-w-2xl text-sm text-slate-200/82">
+                  You have {reviewAction.dueCount} due {reviewAction.dueCount === 1 ? "review item" : "review items"} in this topic. Jump back in before they fade.
+                </p>
+              </div>
+              <Link
+                href={reviewAction.href}
+                onClick={() => {
+                  void trackJourneyMetric(
+                    "journey_review_cta_clicked",
+                    {
+                      variantId: selectedTrack.id,
+                      levelId: reviewAction.levelId,
+                      topicId: reviewAction.topicSlug,
+                      dueCount: reviewAction.dueCount,
+                    },
+                    reviewAction.topicSlug
+                  );
+                }}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-amber-200/20 bg-amber-300/12 px-4 py-2.5 text-sm font-black text-amber-100 hover:bg-amber-300/18"
+              >
+                <RotateCcw size={16} />
+                Review now
+              </Link>
+            </div>
+          </div>
+        ) : null}
+
+        <div className="mt-3 grid gap-3 md:grid-cols-3">
+          <div className="rounded-[1.2rem] border border-white/10 bg-white/[0.05] px-3 py-3">
+            <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-sky-100/74">
+              <Goal size={14} />
+              {selectedLevel.title} progress
+            </div>
+            <p className="mt-2 text-2xl font-black tracking-tight text-white">
+              {levelClearedTopicCount}/{selectedLevel.topics.length}
+            </p>
+            <p className="mt-1 text-sm text-slate-200/80">
+              topics fully cleared in this level
+            </p>
+            <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-white/10">
+              <div
+                className="h-full rounded-full bg-[linear-gradient(90deg,#7dd3fc,#38bdf8)] transition-all"
+                style={{ width: `${levelCompletionPercent}%` }}
+              />
+            </div>
+          </div>
+
+          <div className="rounded-[1.2rem] border border-white/10 bg-white/[0.05] px-3 py-3">
+            <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-100/74">
+              <Flame size={14} />
+              Weekly rhythm
+            </div>
+            {progressSummary ? (
+              <>
+                <p className="mt-2 text-2xl font-black tracking-tight text-white">
+                  {progressSummary.weeklyStoriesFinished}/{progressSummary.weeklyGoalStories}
+                </p>
+                <p className="mt-1 text-sm text-slate-200/80">
+                  stories finished this week
+                </p>
+                <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-[linear-gradient(90deg,#86efac,#4ade80)] transition-all"
+                    style={{ width: `${weeklyStoryPercent}%` }}
+                  />
+                </div>
+              </>
+            ) : (
+              <p className="mt-2 text-sm text-slate-300/80">
+                Weekly goals will show up here once progress data loads.
+              </p>
+            )}
+          </div>
+
+          <div className="rounded-[1.2rem] border border-white/10 bg-white/[0.05] px-3 py-3">
+            <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-amber-100/74">
+              <Sparkles size={14} />
+              Practice habit
+            </div>
+            {progressSummary ? (
+              <>
+                <p className="mt-2 text-2xl font-black tracking-tight text-white">
+                  {progressSummary.weeklyPracticeSessions}/{progressSummary.weeklyGoalPracticeSessions}
+                </p>
+                <p className="mt-1 text-sm text-slate-200/80">
+                  sessions this week · {progressSummary.storyStreakDays} day streak
+                </p>
+                <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-[linear-gradient(90deg,#fcd34d,#f59e0b)] transition-all"
+                    style={{ width: `${weeklyPracticePercent}%` }}
+                  />
+                </div>
+              </>
+            ) : (
+              <p className="mt-2 text-sm text-slate-300/80">
+                Practice streak and weekly sessions will appear here.
+              </p>
+            )}
           </div>
         </div>
       </section>
@@ -269,6 +726,7 @@ export default function JourneyClient({
               const checkpointPassed = passedCheckpointKeySet.has(
                 `${selectedTrack.id}:${selectedLevel.id}:${topic.slug}`
               );
+              const dueReviewCount = dueReviewCountByTopicId.get(`${selectedLevel.id}:${topic.slug}`) ?? 0;
               const coverUrl = topic.stories[0]?.coverUrl;
 
               return (
@@ -280,11 +738,29 @@ export default function JourneyClient({
                   {unlocked && hasStories ? (
                     <Link
                       href={`/journey/${selectedLevel.id}/${topic.slug}?variant=${encodeURIComponent(selectedTrack.id)}`}
+                      onClick={() => {
+                        void trackJourneyMetric(
+                          "journey_topic_opened",
+                          {
+                            variantId: selectedTrack.id,
+                            levelId: selectedLevel.id,
+                            topicId: topic.slug,
+                            topicLabel: topic.label,
+                            dueReviewCount,
+                            unlocked,
+                          },
+                          topic.slug
+                        );
+                      }}
                       className="group flex w-full max-w-[182px] flex-col items-center px-0.5 py-0 text-center"
                     >
                       {completed && checkpointPassed ? (
                       <span className="mb-0.5 inline-flex rounded-full border border-emerald-200/20 bg-[#13284a] px-2.5 py-0.5 text-[8px] font-black uppercase tracking-[0.16em] text-emerald-200">
                         Completed
+                      </span>
+                    ) : dueReviewCount > 0 ? (
+                      <span className="mb-0.5 inline-flex rounded-full border border-amber-200/20 bg-[#13284a] px-2.5 py-0.5 text-[8px] font-black uppercase tracking-[0.16em] text-amber-200">
+                        {dueReviewCount} due
                       </span>
                     ) : completed ? (
                       <span className="mb-0.5 inline-flex rounded-full border border-amber-200/20 bg-[#13284a] px-2.5 py-0.5 text-[8px] font-black uppercase tracking-[0.16em] text-amber-200">
@@ -330,7 +806,7 @@ export default function JourneyClient({
                       <span className="mb-0.5 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[7px] font-black uppercase tracking-[0.14em] text-slate-300">
                         {!hasStories ? (
                           <>
-                            <Map size={12} />
+                            <MapIcon size={12} />
                             Coming soon
                           </>
                         ) : (

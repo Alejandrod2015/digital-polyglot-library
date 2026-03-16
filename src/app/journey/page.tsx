@@ -2,7 +2,12 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import JourneyClient from "./JourneyClient";
 import { buildJourneyVariants } from "./journeyData";
-import { getCompletedJourneyStoryKeys, getPassedJourneyCheckpointKeys } from "@/lib/journeyProgress";
+import {
+  getCompletedJourneyStoryKeys,
+  getJourneyDueReviewItems,
+  getPassedJourneyCheckpointKeys,
+  getPracticedJourneyTopicKeys,
+} from "@/lib/journeyProgress";
 import { normalizeVariant } from "@/lib/languageVariant";
 
 export const metadata = {
@@ -30,9 +35,11 @@ export default async function JourneyPage({
   if (!variant && initialVariantId) {
     redirect(`/journey?variant=${encodeURIComponent(initialVariantId)}`);
   }
-  const [completedStoryKeys, passedCheckpointKeys] = await Promise.all([
+  const [completedStoryKeys, passedCheckpointKeys, practicedTopicKeys, dueReviewItems] = await Promise.all([
     getCompletedJourneyStoryKeys(),
     getPassedJourneyCheckpointKeys(),
+    getPracticedJourneyTopicKeys(),
+    getJourneyDueReviewItems(),
   ]);
   return (
     <JourneyClient
@@ -40,6 +47,8 @@ export default async function JourneyPage({
       initialVariantId={initialVariantId}
       completedStoryKeys={[...completedStoryKeys]}
       passedCheckpointKeys={[...passedCheckpointKeys]}
+      practicedTopicKeys={[...practicedTopicKeys]}
+      dueReviewItems={dueReviewItems}
     />
   );
 }

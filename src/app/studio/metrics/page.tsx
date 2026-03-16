@@ -99,6 +99,18 @@ type DashboardData = {
     source: string;
     clicks: number;
   }>;
+  journeyFunnel: {
+    variantSelected: number;
+    levelSelected: number;
+    topicOpened: number;
+    nextActionClicked: number;
+    reviewCtaClicked: number;
+    checkpointRecoveryClicked: number;
+    recommendedModeOpened: number;
+    topicOpenRateFromVariant: number;
+    nextActionRateFromTopicOpen: number;
+    reviewRateFromTopicOpen: number;
+  };
 };
 
 const EMPTY_DATA: DashboardData = {
@@ -142,6 +154,18 @@ const EMPTY_DATA: DashboardData = {
     checkoutRedirectRate: 0,
   },
   upgradeCtaSources: [],
+  journeyFunnel: {
+    variantSelected: 0,
+    levelSelected: 0,
+    topicOpened: 0,
+    nextActionClicked: 0,
+    reviewCtaClicked: 0,
+    checkpointRecoveryClicked: 0,
+    recommendedModeOpened: 0,
+    topicOpenRateFromVariant: 0,
+    nextActionRateFromTopicOpen: 0,
+    reviewRateFromTopicOpen: 0,
+  },
 };
 
 export default function MetricsDashboard() {
@@ -488,6 +512,53 @@ export default function MetricsDashboard() {
               </CardContent>
             </Card>
           </div>
+
+          <Card className="border border-border bg-card">
+            <CardContent className="pt-6">
+              <h2 className="text-lg font-semibold mb-4">Journey funnel</h2>
+              <div className="grid gap-4 md:grid-cols-4">
+                <div className="rounded-md border border-border px-3 py-3 text-sm">
+                  <p className="text-muted-foreground">Variants selected</p>
+                  <p className="mt-2 text-2xl font-semibold">{data.journeyFunnel.variantSelected}</p>
+                </div>
+                <div className="rounded-md border border-border px-3 py-3 text-sm">
+                  <p className="text-muted-foreground">Topics opened</p>
+                  <p className="mt-2 text-2xl font-semibold">{data.journeyFunnel.topicOpened}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {data.journeyFunnel.topicOpenRateFromVariant}% from variant select
+                  </p>
+                </div>
+                <div className="rounded-md border border-border px-3 py-3 text-sm">
+                  <p className="text-muted-foreground">Next action clicks</p>
+                  <p className="mt-2 text-2xl font-semibold">{data.journeyFunnel.nextActionClicked}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {data.journeyFunnel.nextActionRateFromTopicOpen}% from topic open
+                  </p>
+                </div>
+                <div className="rounded-md border border-border px-3 py-3 text-sm">
+                  <p className="text-muted-foreground">Review CTA clicks</p>
+                  <p className="mt-2 text-2xl font-semibold">{data.journeyFunnel.reviewCtaClicked}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {data.journeyFunnel.reviewRateFromTopicOpen}% from topic open
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4 grid gap-3 md:grid-cols-3">
+                <div className="rounded-md border border-border px-3 py-3 text-sm">
+                  <p className="text-muted-foreground">Level selections</p>
+                  <p className="mt-2 text-xl font-semibold">{data.journeyFunnel.levelSelected}</p>
+                </div>
+                <div className="rounded-md border border-border px-3 py-3 text-sm">
+                  <p className="text-muted-foreground">Checkpoint recovery clicks</p>
+                  <p className="mt-2 text-xl font-semibold">{data.journeyFunnel.checkpointRecoveryClicked}</p>
+                </div>
+                <div className="rounded-md border border-border px-3 py-3 text-sm">
+                  <p className="text-muted-foreground">Recommended mode opens</p>
+                  <p className="mt-2 text-xl font-semibold">{data.journeyFunnel.recommendedModeOpened}</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           <Card className="border border-border bg-card">
             <CardContent className="pt-6">

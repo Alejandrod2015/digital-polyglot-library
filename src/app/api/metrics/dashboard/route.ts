@@ -102,6 +102,18 @@ type DashboardResponse = {
     source: string;
     clicks: number;
   }>;
+  journeyFunnel: {
+    variantSelected: number;
+    levelSelected: number;
+    topicOpened: number;
+    nextActionClicked: number;
+    reviewCtaClicked: number;
+    checkpointRecoveryClicked: number;
+    recommendedModeOpened: number;
+    topicOpenRateFromVariant: number;
+    nextActionRateFromTopicOpen: number;
+    reviewRateFromTopicOpen: number;
+  };
 };
 
 function parseDays(raw: string | null): number {
@@ -151,6 +163,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     trialFunnelRows,
     checkoutFunnelRows,
     upgradeCtaRows,
+    journeyFunnelRows,
   ] =
     await Promise.all([
     prisma.userMetric.findMany({
@@ -283,6 +296,25 @@ export async function GET(req: NextRequest): Promise<Response> {
         createdAt: { gte: from, lte: to },
         eventType: "upgrade_cta_clicked",
         storySlug: { startsWith: "__upgrade_" },
+      },
+      _count: { _all: true },
+    }),
+    prisma.userMetric.groupBy({
+      by: ["eventType"],
+      where: {
+        createdAt: { gte: from, lte: to },
+        bookSlug: "journey",
+        eventType: {
+          in: [
+            "journey_variant_selected",
+            "journey_level_selected",
+            "journey_topic_opened",
+            "journey_next_action_clicked",
+            "journey_review_cta_clicked",
+            "checkpoint_recovery_clicked",
+            "practice_recommended_mode_opened",
+          ],
+        },
       },
       _count: { _all: true },
     }),
@@ -463,6 +495,27 @@ export async function GET(req: NextRequest): Promise<Response> {
     }))
     .sort((a, b) => b.clicks - a.clicks);
 
+  const journeyCounts = {
+    variantSelected: 0,
+    levelSelected: 0,
+    topicOpened: 0,
+    nextActionClicked: 0,
+    reviewCtaClicked: 0,
+    checkpointRecoveryClicked: 0,
+    recommendedModeOpened: 0,
+  };
+  for (const row of journeyFunnelRows as Array<{ eventType: string; _count: { _all: number } }>) {
+    if (row.eventType === "journey_variant_selected") journeyCounts.variantSelected = row._count._all;
+    if (row.eventType === "journey_level_selected") journeyCounts.levelSelected = row._count._all;
+    if (row.eventType === "journey_topic_opened") journeyCounts.topicOpened = row._count._all;
+    if (row.eventType === "journey_next_action_clicked") journeyCounts.nextActionClicked = row._count._all;
+    if (row.eventType === "journey_review_cta_clicked") journeyCounts.reviewCtaClicked = row._count._all;
+    if (row.eventType === "checkpoint_recovery_clicked") journeyCounts.checkpointRecoveryClicked = row._count._all;
+    if (row.eventType === "practice_recommended_mode_opened") {
+      journeyCounts.recommendedModeOpened = row._count._all;
+    }
+  }
+
   const payload: DashboardResponse = {
     range: {
       from: from.toISOString(),
@@ -508,6 +561,21 @@ export async function GET(req: NextRequest): Promise<Response> {
       checkoutRedirectRate,
     },
     upgradeCtaSources,
+    journeyFunnel: {
+      ...journeyCounts,
+      topicOpenRateFromVariant:
+        journeyCounts.variantSelected > 0
+          ? Math.round((journeyCounts.topicOpened / journeyCounts.variantSelected) * 100)
+          : 0,
+      nextActionRateFromTopicOpen:
+        journeyCounts.topicOpened > 0
+          ? Math.round((journeyCounts.nextActionClicked / journeyCounts.topicOpened) * 100)
+          : 0,
+      reviewRateFromTopicOpen:
+        journeyCounts.topicOpened > 0
+          ? Math.round((journeyCounts.reviewCtaClicked / journeyCounts.topicOpened) * 100)
+          : 0,
+    },
   };
 
   return NextResponse.json(payload);

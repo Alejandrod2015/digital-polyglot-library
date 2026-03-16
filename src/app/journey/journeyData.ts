@@ -58,6 +58,25 @@ export type JourneyCheckpointQuestion = {
   ttsText?: string;
 };
 
+export function getJourneyProgressKeyFromSource(
+  sourcePath?: string | null,
+  storySlug?: string | null
+): string | null {
+  const normalizedPath = typeof sourcePath === "string" ? sourcePath.trim() : "";
+  const normalizedSlug = typeof storySlug === "string" ? storySlug.trim() : "";
+  if (!normalizedPath || !normalizedSlug) return null;
+
+  if (normalizedPath.startsWith("/books/")) {
+    return normalizedPath.replace(/^\/books\//, "").replace(/\//g, ":");
+  }
+
+  if (normalizedPath.startsWith("/stories/")) {
+    return `standalone:${normalizedSlug}`;
+  }
+
+  return null;
+}
+
 export function isJourneyStoryComplete(
   story: Pick<JourneyStoryItem, "progressKey">,
   completedStoryKeys: Set<string>
@@ -65,11 +84,30 @@ export function isJourneyStoryComplete(
   return completedStoryKeys.has(story.progressKey);
 }
 
-export function isJourneyTopicComplete(
+export function getJourneyTopicRequiredStoryCount(
+  topic: Pick<JourneyTopic, "stories" | "storyTarget">
+): number {
+  if (topic.stories.length === 0) return 0;
+  if (typeof topic.storyTarget === "number" && Number.isFinite(topic.storyTarget)) {
+    return Math.max(1, Math.min(topic.storyTarget, topic.stories.length));
+  }
+  return topic.stories.length;
+}
+
+export function getJourneyTopicCompletedStoryCount(
   topic: Pick<JourneyTopic, "stories">,
   completedStoryKeys: Set<string>
+): number {
+  return topic.stories.filter((story) => isJourneyStoryComplete(story, completedStoryKeys)).length;
+}
+
+export function isJourneyTopicComplete(
+  topic: Pick<JourneyTopic, "stories" | "storyTarget">,
+  completedStoryKeys: Set<string>
 ): boolean {
-  return topic.stories.length > 0 && topic.stories.every((story) => isJourneyStoryComplete(story, completedStoryKeys));
+  const requiredStoryCount = getJourneyTopicRequiredStoryCount(topic);
+  if (requiredStoryCount === 0) return false;
+  return getJourneyTopicCompletedStoryCount(topic, completedStoryKeys) >= requiredStoryCount;
 }
 
 export function getUnlockedTopicCount(
@@ -127,10 +165,11 @@ export function getUnlockedLevelCount(
 }
 
 export function getUnlockedStoryCount(
-  topic: Pick<JourneyTopic, "stories">,
+  topic: Pick<JourneyTopic, "stories" | "storyTarget">,
   completedStoryKeys: Set<string>
 ): number {
   if (topic.stories.length === 0) return 0;
+  if (isJourneyTopicComplete(topic, completedStoryKeys)) return topic.stories.length;
 
   let unlockedCount = 1;
   for (let index = 0; index < topic.stories.length - 1; index += 1) {
@@ -141,6 +180,14 @@ export function getUnlockedStoryCount(
 }
 
 export function getJourneyTopicCheckpointKey(
+  variantId: string | undefined,
+  levelId: string,
+  topicSlug: string
+): string {
+  return `${variantId ?? "default"}:${levelId}:${topicSlug}`;
+}
+
+export function getJourneyTopicPracticeKey(
   variantId: string | undefined,
   levelId: string,
   topicSlug: string

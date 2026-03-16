@@ -12,6 +12,9 @@ import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
 import VocabPanel from "@/components/VocabPanel";
+import StoryPracticeCta from "@/components/StoryPracticeCta";
+import JourneyStoryReadBanner from "@/components/JourneyStoryReadBanner";
+import JourneyStoryReadTracker from "@/components/JourneyStoryReadTracker";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegments";
 
@@ -20,6 +23,11 @@ export const revalidate = 0;
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{
+    returnTo?: string;
+    returnLabel?: string;
+    from?: string;
+  }>;
 };
 
 type SafeVocabItem = { word: string; definition: string; type?: string };
@@ -74,8 +82,32 @@ function normalizePolyglotStoryText(input: string): string {
     .trim();
 }
 
-export default async function StoryPage({ params }: StoryPageProps) {
+function parseJourneyReturnContext(returnTo?: string | null): {
+  levelId: string;
+  topicId: string;
+  variant?: string;
+} | null {
+  if (typeof returnTo !== "string" || !returnTo.startsWith("/journey/")) return null;
+
+  try {
+    const url = new URL(returnTo, "https://example.local");
+    const parts = url.pathname.split("/").filter(Boolean);
+    if (parts.length < 3 || parts[0] !== "journey") return null;
+
+    const levelId = parts[1]?.trim();
+    const topicId = parts[2]?.trim();
+    if (!levelId || !topicId) return null;
+
+    const variant = url.searchParams.get("variant")?.trim() || undefined;
+    return { levelId, topicId, variant };
+  } catch {
+    return null;
+  }
+}
+
+export default async function StoryPage({ params, searchParams }: StoryPageProps) {
   const { slug } = await params;
+  const { returnTo, returnLabel, from } = await searchParams;
 
   const polyglotStory = await prisma.userStory.findUnique({
     where: { slug },
@@ -173,6 +205,41 @@ export default async function StoryPage({ params }: StoryPageProps) {
     : `${story.text.slice(0, 1000)}…`;
   const normalizedText = normalizePolyglotStoryText(displayText);
   const safeVocab = normalizePolyglotVocab(story.vocab);
+  const fallbackReturnHref = source === "polyglot" ? "/explore/polyglot-stories" : "/explore/polyglot-stories";
+  const resolvedReturnHref =
+    typeof returnTo === "string" && returnTo.startsWith("/") && !returnTo.startsWith("//")
+      ? returnTo
+      : fallbackReturnHref;
+  const resolvedReturnLabel =
+    typeof returnLabel === "string" && returnLabel.trim()
+      ? returnLabel.trim()
+      : from === "my-library"
+        ? "Back to My Library"
+        : "More stories";
+  const journeyContext = parseJourneyReturnContext(resolvedReturnHref);
+  const currentStorySearch = new URLSearchParams();
+  if (resolvedReturnHref) currentStorySearch.set("returnTo", resolvedReturnHref);
+  if (resolvedReturnLabel) currentStorySearch.set("returnLabel", resolvedReturnLabel);
+  if (typeof from === "string" && from.trim()) currentStorySearch.set("from", from.trim());
+  const currentStoryHref = `/stories/${story.slug}${currentStorySearch.toString() ? `?${currentStorySearch.toString()}` : ""}`;
+  const practiceParams = new URLSearchParams(
+    journeyContext
+      ? {
+          source: "journey",
+          levelId: journeyContext.levelId,
+          topicId: journeyContext.topicId,
+        }
+      : {
+          source: "story",
+          storySlug: story.slug,
+          storyTitle: story.title,
+          storyHref: currentStoryHref,
+        }
+  );
+  if (journeyContext?.variant) practiceParams.set("variant", journeyContext.variant);
+  if (resolvedReturnHref) practiceParams.set("returnTo", resolvedReturnHref);
+  if (resolvedReturnLabel) practiceParams.set("returnLabel", resolvedReturnLabel);
+  const practiceHref = `/practice?${practiceParams.toString()}`;
 
   const storyCoverUrl =
     typeof story.coverUrl === "string" && story.coverUrl.trim() !== ""
@@ -299,13 +366,43 @@ export default async function StoryPage({ params }: StoryPageProps) {
       {/* Texto principal */}
       <div className="relative">
         {hasFullAccess ? (
-          <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
-            <StoryContent
-              text={normalizedText}
-              sentencesPerParagraph={3}
-              vocab={safeVocab}
-            />
-          </div>
+          <>
+            <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
+              <StoryContent
+                text={normalizedText}
+                sentencesPerParagraph={3}
+                vocab={safeVocab}
+              />
+              {journeyContext ? (
+                <JourneyStoryReadTracker
+                  storySlug={story.slug}
+                  progressKey={`standalone:${story.slug}`}
+                  levelId={journeyContext.levelId}
+                  topicId={journeyContext.topicId}
+                  variantId={journeyContext.variant}
+                />
+              ) : null}
+            </div>
+            {safeVocab.length > 0 ? (
+              <StoryPracticeCta
+                practiceHref={practiceHref}
+                secondaryHref={resolvedReturnHref}
+                secondaryLabel={journeyContext ? "Back to journey" : resolvedReturnLabel}
+                practiceLabel={journeyContext ? "Practice this topic" : "Practice this story"}
+                eyebrow={journeyContext ? "Journey Step" : "Next Step"}
+                title={
+                  journeyContext
+                    ? "Finish the story, then clear the topic practice"
+                    : "Lock this story in with a short practice round"
+                }
+                description={
+                  journeyContext
+                    ? "Use the topic practice to reinforce what you just read and keep your journey moving."
+                    : "Review the key vocabulary while the story is still fresh, then keep moving."
+                }
+              />
+            ) : null}
+          </>
         ) : (
           <div
             className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6"
@@ -370,6 +467,14 @@ export default async function StoryPage({ params }: StoryPageProps) {
         <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-amber-400/20 bg-[#2b1d10]/95 px-4 py-3 text-center text-sm text-amber-100 backdrop-blur">
           This story is ready to read, but audio is currently unavailable.
         </div>
+      ) : null}
+
+      {journeyContext ? (
+        <JourneyStoryReadBanner
+          storySlug={story.slug}
+          practiceHref={practiceHref}
+          journeyHref={resolvedReturnHref}
+        />
       ) : null}
 
       <VocabPanel

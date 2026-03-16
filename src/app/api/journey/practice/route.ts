@@ -11,6 +11,7 @@ import {
 } from "@/app/journey/journeyData";
 import {
   buildTopicCheckpointPracticeSession,
+  getDuePracticeItems,
   mergePracticeItemsByWord,
   type PracticeFavoriteItem,
 } from "@/lib/practiceExercises";
@@ -104,6 +105,7 @@ export async function GET(request: NextRequest) {
   }
 
   const topicPracticeItems = mergePracticeItemsByWord([...unlockedItems, ...savedTopicItems]);
+  const dueTopicItems = getDuePracticeItems(topicPracticeItems);
 
   if (kind === "checkpoint") {
     if (!isJourneyTopicComplete(source.topic, completedStoryKeys)) {
@@ -156,6 +158,11 @@ export async function GET(request: NextRequest) {
       slug: source.topic.slug,
       label: source.topic.label,
       storyCount: source.topic.storyCount,
+    },
+    review: {
+      dueCount: dueTopicItems.length,
+      totalCount: topicPracticeItems.length,
+      focusWords: dueTopicItems.slice(0, 3).map((item) => item.word),
     },
     items: topicPracticeItems,
   });
