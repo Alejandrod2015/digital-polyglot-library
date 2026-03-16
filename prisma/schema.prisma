@@ -9,6 +9,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum BillingSource {
+  stripe
+  google_play
+}
+
+enum BillingStatus {
+  active
+  trialing
+  in_grace_period
+  on_hold
+  paused
+  canceled
+  expired
+  pending
+  revoked
+  unknown
+}
+
 model Favorite {
   id          String   @id @default(cuid())
   userId      String
@@ -146,4 +164,30 @@ model WeeklyMetricsSnapshot {
   @@map("dp_weekly_metrics_v1")
   @@index([weekStart])
   @@index([weekEnd])
+}
+
+model BillingEntitlement {
+  id                     String        @id @default(cuid())
+  userId                 String        @unique
+  plan                   String
+  source                 BillingSource
+  status                 BillingStatus @default(unknown)
+  productId              String?
+  externalCustomerId     String?
+  externalSubscriptionId String?
+  purchaseToken          String?       @unique
+  orderId                String?
+  willRenew              Boolean       @default(false)
+  startedAt              DateTime      @default(now())
+  renewedAt              DateTime?
+  trialEndsAt            DateTime?
+  expiresAt              DateTime?
+  rawPayload             Json?
+  createdAt              DateTime      @default(now())
+  updatedAt              DateTime      @updatedAt
+
+  @@map("dp_billing_entitlements_v1")
+  @@index([source, status])
+  @@index([expiresAt])
+  @@index([productId])
 }

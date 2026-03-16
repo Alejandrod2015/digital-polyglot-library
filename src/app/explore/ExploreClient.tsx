@@ -15,14 +15,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { formatLanguage, formatRegion, formatTopic } from "@/lib/displayFormat";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
 import { ChevronDown } from "lucide-react";
-
-const formatAudioDuration = (totalSeconds?: number) => {
-  if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:--";
-  const rounded = Math.floor(totalSeconds);
-  const minutes = Math.floor(rounded / 60);
-  const seconds = rounded % 60;
-  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-};
+import { resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 type UserStory = {
   id: string;
@@ -80,13 +73,8 @@ function isStringArray(x: unknown): x is string[] {
 }
 
 function normalizeCoverUrl(raw: string | null | undefined): string {
-  const v = typeof raw === "string" ? raw.trim() : "";
+  const v = resolvePublicMediaUrl(raw) ?? "";
   if (!v) return "/covers/default.jpg";
-
-  // Mantén el mismo patrón que en otras partes: si viene del CDN, optimiza.
-  if (v.startsWith("https://cdn.sanity.io/")) {
-    return `${v}?w=800&fit=crop&auto=format`;
-  }
 
   return v;
 }
@@ -464,7 +452,6 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     return rows;
   }, [topicChips]);
 
-  const [storyDurations, setStoryDurations] = useState<Record<string, number>>({});
 
   const safeBooks = Array.isArray(filteredBooks) ? filteredBooks : [];
   const safePolyglotStories = Array.isArray(filteredPolyglotStories) ? filteredPolyglotStories : [];
@@ -472,81 +459,6 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   const safeAllFilteredBookStories = Array.isArray(allFilteredBookStories)
     ? allFilteredBookStories
     : [];
-
-  useEffect(() => {
-    if (safePreviewBookStories.length === 0) return;
-
-    const unresolved = safePreviewBookStories.filter((story) => {
-      const key = `${story.bookSlug}:${story.storySlug}`;
-      const bookMeta = Object.values(books).find((b) => b.slug === story.bookSlug);
-      const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
-      const hasAudio = typeof storyMeta?.audio === "string" && storyMeta.audio.trim() !== "";
-      return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0) && hasAudio;
-    });
-    if (unresolved.length === 0) return;
-
-    let cancelled = false;
-
-    const loadDuration = (story: BookStoryItem) =>
-      new Promise<{ key: string; durationSec?: number }>((resolve) => {
-        const key = `${story.bookSlug}:${story.storySlug}`;
-        const bookMeta = Object.values(books).find((b) => b.slug === story.bookSlug);
-        const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
-        const rawSrc = storyMeta?.audio;
-        if (!rawSrc || typeof rawSrc !== "string") {
-          resolve({ key });
-          return;
-        }
-
-        const src = rawSrc.startsWith("http")
-          ? rawSrc
-          : `https://cdn.sanity.io/files/9u7ilulp/production/${rawSrc}.mp3`;
-
-        const audio = new Audio();
-        audio.preload = "metadata";
-
-        const done = (durationSec?: number) => {
-          audio.removeAttribute("src");
-          audio.load();
-          resolve({ key, durationSec });
-        };
-
-        const timeout = window.setTimeout(() => done(undefined), 6000);
-        audio.onloadedmetadata = () => {
-          window.clearTimeout(timeout);
-          const duration =
-            Number.isFinite(audio.duration) && audio.duration > 0
-              ? Math.round(audio.duration)
-              : undefined;
-          done(duration);
-        };
-        audio.onerror = () => {
-          window.clearTimeout(timeout);
-          done(undefined);
-        };
-
-        audio.src = src;
-      });
-
-    Promise.all(unresolved.map(loadDuration)).then((resolved) => {
-      if (cancelled || resolved.length === 0) return;
-      setStoryDurations((prev) => {
-        let changed = false;
-        const next = { ...prev };
-        for (const result of resolved) {
-          if (result.durationSec && result.durationSec > 0 && next[result.key] !== result.durationSec) {
-            next[result.key] = result.durationSec;
-            changed = true;
-          }
-        }
-        return changed ? next : prev;
-      });
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [safePreviewBookStories, storyDurations]);
 
   const hasAnyFilteredContent =
     safeBooks.length > 0 || safePreviewBookStories.length > 0 || safePolyglotStories.length > 0;
@@ -801,7 +713,6 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                         <RegionBadge region={s.region} />
                       </div>
                       <p className="text-sm text-[var(--muted)]">
-                        {formatAudioDuration(storyDurations[`${s.bookSlug}:${s.storySlug}`])} ·{" "}
                         {formatTopic(s.topics[0])}
                       </p>
                     </div>

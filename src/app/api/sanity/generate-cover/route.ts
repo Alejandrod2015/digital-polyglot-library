@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { writeClient } from "@/sanity/lib/client";
+import { uploadPublicObject } from "@/lib/objectStorage";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -493,10 +494,26 @@ export async function POST(req: Request) {
         ? await generateFluxImageBuffer(prompt)
         : Buffer.from(await generateOpenAIImageBase64(prompt), "base64");
 
-    const asset = await writeClient.assets.upload("image", buffer, {
-      filename,
+    const uploaded = await uploadPublicObject({
+      key: `media/generated/images/${filename}`,
+      body: buffer,
       contentType: "image/png",
     });
+
+    let coverField: Record<string, unknown> | undefined;
+    if (!uploaded?.url) {
+      const asset = await writeClient.assets.upload("image", buffer, {
+        filename,
+        contentType: "image/png",
+      });
+      coverField = {
+        _type: "image",
+        asset: {
+          _type: "reference",
+          _ref: asset._id,
+        },
+      };
+    }
 
     const publishedId = getPublishedId(documentId);
     const draftId = getDraftId(documentId);
@@ -518,13 +535,8 @@ export async function POST(req: Request) {
       ...(draftDoc ?? {}),
       _id: draftId,
       _type: docType,
-      cover: {
-        _type: "image",
-        asset: {
-          _type: "reference",
-          _ref: asset._id,
-        },
-      },
+      ...(coverField ? { cover: coverField } : {}),
+      ...(uploaded?.url ? { coverUrl: uploaded.url } : {}),
     };
 
     await writeClient
@@ -536,8 +548,10 @@ export async function POST(req: Request) {
       {
         ok: true,
         provider,
-        assetId: asset._id,
-        url: typeof asset.url === "string" ? asset.url : null,
+        assetId: coverField && typeof coverField.asset === "object"
+          ? ((coverField.asset as { _ref?: string })._ref ?? null)
+          : null,
+        url: uploaded?.url ?? null,
         filename,
       },
       { headers: corsHeaders }

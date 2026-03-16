@@ -4,6 +4,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import type { Book, Story } from "@/types/books";
 import ExploreStoryCardsClient from "@/components/ExploreStoryCardsClient";
 import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
+import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 type ExploreStoriesPageProps = {
   searchParams: Promise<{ topic?: string; language?: string; region?: string }>;
@@ -60,7 +61,7 @@ function extractStories(): StoryItem[] {
     const bookLevel = typeof book.level === "string" ? book.level : "";
     const bookCover =
       typeof book.cover === "string" && book.cover.trim() !== ""
-        ? book.cover
+        ? resolvePublicMediaUrl(book.cover) ?? book.cover
         : "/covers/default.jpg";
     const bookTopics = [
       ...toTopicList(book.topic),
@@ -85,14 +86,10 @@ function extractStories(): StoryItem[] {
       const storyLevel = typeof story.level === "string" ? story.level : bookLevel;
       const storyCover =
         typeof story.cover === "string" && story.cover.trim() !== ""
-          ? story.cover
+          ? resolvePublicMediaUrl(story.cover) ?? story.cover
           : bookCover;
       const rawAudio = typeof story.audio === "string" ? story.audio.trim() : "";
-      const storyAudio = rawAudio
-        ? rawAudio.startsWith("http")
-          ? rawAudio
-          : `https://cdn.sanity.io/files/9u7ilulp/production/${rawAudio}.mp3`
-        : undefined;
+      const storyAudio = resolveCatalogAudioUrl(rawAudio);
       const storyTopics = [
         ...toTopicList(story.topic),
         ...toTopicList(story.tags),

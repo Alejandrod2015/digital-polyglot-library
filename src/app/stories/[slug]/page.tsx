@@ -17,6 +17,7 @@ import JourneyStoryReadBanner from "@/components/JourneyStoryReadBanner";
 import JourneyStoryReadTracker from "@/components/JourneyStoryReadTracker";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegments";
+import { isSanityAssetUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -241,16 +242,18 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   if (resolvedReturnLabel) practiceParams.set("returnLabel", resolvedReturnLabel);
   const practiceHref = `/practice?${practiceParams.toString()}`;
 
-  const storyCoverUrl =
+  const resolvedStoryCover =
     typeof story.coverUrl === "string" && story.coverUrl.trim() !== ""
-      ? story.coverUrl.startsWith("https://cdn.sanity.io/")
-        ? `${story.coverUrl}?auto=format`
-        : story.coverUrl
+      ? resolvePublicMediaUrl(story.coverUrl) ?? story.coverUrl
       : null;
-  const storyCoverBlurUrl = storyCoverUrl?.includes("cdn.sanity.io/")
-    ? `${story.coverUrl}?w=160&blur=40&auto=format`
+  const storyCoverUrl =
+    resolvedStoryCover && isSanityAssetUrl(resolvedStoryCover)
+      ? `${resolvedStoryCover}?auto=format`
+      : resolvedStoryCover;
+  const storyCoverBlurUrl = resolvedStoryCover && isSanityAssetUrl(resolvedStoryCover)
+    ? `${resolvedStoryCover}?w=160&blur=40&auto=format`
     : storyCoverUrl;
-  const coverUrl = story.coverUrl ?? "/covers/default.png";
+  const coverUrl = resolvePublicMediaUrl(story.coverUrl) ?? "/covers/default.png";
   const signInHref = `/sign-in?redirect_url=${encodeURIComponent(`/stories/${story.slug}`)}`;
 
   if (userId) {

@@ -1,4 +1,5 @@
 import { sanityWriteClient as writeClient } from "@/sanity";
+import { uploadPublicObject } from "@/lib/objectStorage";
 
 export type CoverParams = {
   title: string;
@@ -363,6 +364,16 @@ export async function generateAndUploadCover({
     const fileBase = sanitizeFileChunk(title || "story-cover");
     const filename = `${fileBase || "story-cover"}-flux-${Date.now()}.png`;
     const buffer = await generateFluxImageBuffer(prompt);
+
+    const uploaded = await uploadPublicObject({
+      key: `media/generated/images/${filename}`,
+      body: buffer,
+      contentType: "image/png",
+    });
+
+    if (uploaded?.url) {
+      return { url: uploaded.url, filename };
+    }
 
     const asset = await writeClient.assets.upload("image", buffer, {
       filename,

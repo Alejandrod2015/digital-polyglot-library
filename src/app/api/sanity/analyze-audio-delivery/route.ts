@@ -52,7 +52,7 @@ async function getDocumentAudioUrl(documentId: string): Promise<string | null> {
 
   const query = `
     *[_id in [$documentId, $publishedId, $draftId]][0]{
-      "audioUrl": audio.asset->url
+      "audioUrl": coalesce(audioUrl, audio.asset->url)
     }
   `;
 

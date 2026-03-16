@@ -1,5 +1,6 @@
 // /src/lib/books.ts
 import { client as sanityClient } from "@/sanity/lib/client";
+import { resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 /**
  * Obtiene los metadatos de un libro desde Sanity por su slug.
@@ -29,12 +30,13 @@ export async function getBookMeta(slug: string) {
     }
 
     // 🔧 Asegura que el cover sea una URL válida y no una cadena vacía
-        const validCover =
-    book.cover
+    const validCover =
+      resolvePublicMediaUrl(book.cover) ??
+      (book.cover
         ? book.cover.startsWith("http")
-        ? book.cover
-        : `https://cdn.sanity.io${book.cover}`
-        : "/covers/default.jpg";
+          ? book.cover
+          : `https://cdn.sanity.io${book.cover}`
+        : "/covers/default.jpg");
 
     return {
       title: book.title ?? slug,

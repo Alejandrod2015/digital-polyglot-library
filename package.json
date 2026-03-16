@@ -11,6 +11,8 @@
     "lint": "next lint",
     "import:sanity": "tsx scripts/importBooks.ts",
     "export:sanity": "tsx scripts/exportBooksFromSanity.ts",
+    "media:upload-catalog": "tsx scripts/uploadCatalogMediaToObjectStorage.ts",
+    "media:backfill-standalone": "tsx scripts/backfillStandaloneStoryMedia.ts",
     "sync:create-stories": "tsx scripts/syncCreateStoriesToSanity.ts",
     "sync:create-stories:cli": "sanity exec scripts/syncCreateStoriesToSanity.ts --with-user-token",
     "sync:create-story-slugs": "tsx scripts/syncCreateStorySlugs.ts",

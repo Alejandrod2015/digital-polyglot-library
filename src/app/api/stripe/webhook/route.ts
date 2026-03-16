@@ -1,11 +1,39 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { createClerkClient } from "@clerk/backend";
+import type { Prisma } from "@/generated/prisma";
+import { Prisma as PrismaNamespace } from "@/generated/prisma";
 import { prisma } from "@/lib/prisma";
-
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+import { resolvePlanFromStripePriceId } from "@/lib/billing";
+import {
+  syncClerkPlanFromEntitlement,
+  syncClerkStripeCancellation,
+  syncClerkStripeSubscription,
+} from "@/lib/billingClerk";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
+
+function getStripeSubscriptionPeriodEnd(subscription: Stripe.Subscription) {
+  const periodEnds = subscription.items.data
+    .map((item) => item.current_period_end)
+    .filter((value): value is number => typeof value === "number");
+
+  if (periodEnds.length === 0) {
+    return null;
+  }
+
+  return new Date(Math.max(...periodEnds) * 1000);
+}
+
+function serializeStripeSubscriptionPayload(subscription: Stripe.Subscription): Prisma.InputJsonValue {
+  return JSON.parse(JSON.stringify(subscription)) as Prisma.InputJsonValue;
+}
+
+function isMissingBillingEntitlementsTableError(error: unknown) {
+  return (
+    error instanceof PrismaNamespace.PrismaClientKnownRequestError &&
+    error.code === "P2021"
+  );
+}
 
 export async function POST(req: Request) {
   const sig = req.headers.get("stripe-signature");
@@ -30,33 +58,63 @@ export async function POST(req: Request) {
       if (userId && subscriptionId) {
         const subscription = await stripe.subscriptions.retrieve(subscriptionId);
         const priceId = subscription.items.data[0]?.price.id;
-
-        let plan: "premium" | "polyglot" | null = null;
-        if (priceId === "price_1SI5WW6ytrKVzptQW7CBTx2G") plan = "premium";
-        if (priceId === "price_1SI5Wv6ytrKVzptQkzfg7emI") plan = "polyglot";
-        // Current active price IDs in plans page
-        if (priceId === "price_1SbP7r6ytrKVzptQaTBIuAaZ") plan = "premium";
-        if (priceId === "price_1SbP9H6ytrKVzptQQTz9v1hd") plan = "premium";
+        const plan = resolvePlanFromStripePriceId(priceId);
 
         if (plan) {
-          const trialEndIso =
-            typeof subscription.trial_end === "number"
-              ? new Date(subscription.trial_end * 1000).toISOString()
-              : null;
           const stripeCustomerId =
             typeof session.customer === "string" ? session.customer : null;
-          await clerkClient.users.updateUserMetadata(userId, {
-            publicMetadata: {
+          try {
+            const entitlement = await prisma.billingEntitlement.upsert({
+              where: { userId },
+              create: {
+                userId,
+                plan,
+                source: "stripe",
+                status: subscription.status === "trialing" ? "trialing" : "active",
+                productId: priceId ?? null,
+                externalCustomerId: stripeCustomerId,
+                externalSubscriptionId: subscriptionId,
+                willRenew: !subscription.cancel_at_period_end,
+                startedAt: new Date((subscription.start_date ?? Math.floor(Date.now() / 1000)) * 1000),
+                renewedAt: new Date(),
+                trialEndsAt:
+                  typeof subscription.trial_end === "number"
+                    ? new Date(subscription.trial_end * 1000)
+                    : null,
+                expiresAt: getStripeSubscriptionPeriodEnd(subscription),
+                rawPayload: serializeStripeSubscriptionPayload(subscription),
+              },
+              update: {
+                plan,
+                source: "stripe",
+                status: subscription.status === "trialing" ? "trialing" : "active",
+                productId: priceId ?? null,
+                externalCustomerId: stripeCustomerId,
+                externalSubscriptionId: subscriptionId,
+                willRenew: !subscription.cancel_at_period_end,
+                renewedAt: new Date(),
+                trialEndsAt:
+                  typeof subscription.trial_end === "number"
+                    ? new Date(subscription.trial_end * 1000)
+                    : null,
+                expiresAt: getStripeSubscriptionPeriodEnd(subscription),
+                rawPayload: serializeStripeSubscriptionPayload(subscription),
+              },
+            });
+            await syncClerkPlanFromEntitlement(userId, entitlement);
+          } catch (error) {
+            if (!isMissingBillingEntitlementsTableError(error)) {
+              throw error;
+            }
+
+            await syncClerkStripeSubscription({
+              userId,
               plan,
-              trialStartedAt: new Date().toISOString(),
-              trialEndsAt: trialEndIso,
-              trialStatus: subscription.status === "trialing" ? "trialing" : "active",
-            },
-            privateMetadata: {
+              subscription,
               stripeCustomerId,
               stripeSubscriptionId: subscriptionId,
-            },
-          });
+            });
+          }
           console.log(`✅ Updated user ${userId} to plan: ${plan}`);
         } else {
           console.warn("⚠️ Unknown priceId:", priceId);
@@ -103,17 +161,66 @@ export async function POST(req: Request) {
           });
         }
 
-        await clerkClient.users.updateUserMetadata(userId, {
-          publicMetadata: {
-            trialEndsAt: trialEndIso,
-            trialStatus:
-              subscription.status === "trialing"
-                ? "trialing"
-                : subscription.status === "canceled"
-                  ? "canceled"
-                  : "active",
-          },
-        });
+        const plan = resolvePlanFromStripePriceId(subscription.items.data[0]?.price.id);
+        const resolvedPlan = plan ?? "premium";
+        try {
+          const entitlement = await prisma.billingEntitlement.upsert({
+            where: { userId },
+            create: {
+              userId,
+              plan: resolvedPlan,
+              source: "stripe",
+              status:
+                subscription.status === "trialing"
+                  ? "trialing"
+                  : subscription.status === "canceled"
+                    ? "canceled"
+                    : "active",
+              productId: subscription.items.data[0]?.price.id ?? null,
+              externalCustomerId:
+                typeof subscription.customer === "string" ? subscription.customer : null,
+              externalSubscriptionId: subscription.id,
+              willRenew: !subscription.cancel_at_period_end,
+              startedAt: new Date((subscription.start_date ?? Math.floor(Date.now() / 1000)) * 1000),
+              renewedAt: new Date(),
+              trialEndsAt: trialEndIso ? new Date(trialEndIso) : null,
+              expiresAt: getStripeSubscriptionPeriodEnd(subscription),
+              rawPayload: serializeStripeSubscriptionPayload(subscription),
+            },
+            update: {
+              ...(plan ? { plan } : {}),
+              status:
+                subscription.status === "trialing"
+                  ? "trialing"
+                  : subscription.status === "canceled"
+                    ? "canceled"
+                    : "active",
+              productId: subscription.items.data[0]?.price.id ?? null,
+              externalCustomerId:
+                typeof subscription.customer === "string" ? subscription.customer : null,
+              externalSubscriptionId: subscription.id,
+              willRenew: !subscription.cancel_at_period_end,
+              renewedAt: new Date(),
+              trialEndsAt: trialEndIso ? new Date(trialEndIso) : null,
+              expiresAt: getStripeSubscriptionPeriodEnd(subscription),
+              rawPayload: serializeStripeSubscriptionPayload(subscription),
+            },
+          });
+          await syncClerkPlanFromEntitlement(userId, entitlement);
+        } catch (error) {
+          if (!isMissingBillingEntitlementsTableError(error)) {
+            throw error;
+          }
+
+          await syncClerkStripeSubscription({
+            userId,
+            plan: resolvedPlan,
+            subscription,
+            stripeCustomerId:
+              typeof subscription.customer === "string" ? subscription.customer : null,
+            stripeSubscriptionId: subscription.id,
+          });
+        }
       }
     }
 
@@ -130,9 +237,44 @@ export async function POST(req: Request) {
             value: 1,
           },
         });
-        await clerkClient.users.updateUserMetadata(userId, {
-          publicMetadata: { trialStatus: "canceled" },
-        });
+        const resolvedPlan =
+          resolvePlanFromStripePriceId(subscription.items.data[0]?.price.id) ?? "premium";
+        try {
+          const entitlement = await prisma.billingEntitlement.upsert({
+            where: { userId },
+            create: {
+              userId,
+              plan: resolvedPlan,
+              source: "stripe",
+              status: "canceled",
+              productId: subscription.items.data[0]?.price.id ?? null,
+              externalCustomerId:
+                typeof subscription.customer === "string" ? subscription.customer : null,
+              externalSubscriptionId: subscription.id,
+              willRenew: false,
+              startedAt: new Date((subscription.start_date ?? Math.floor(Date.now() / 1000)) * 1000),
+              expiresAt: getStripeSubscriptionPeriodEnd(subscription),
+              rawPayload: serializeStripeSubscriptionPayload(subscription),
+            },
+            update: {
+              status: "canceled",
+              willRenew: false,
+              expiresAt: getStripeSubscriptionPeriodEnd(subscription),
+              rawPayload: serializeStripeSubscriptionPayload(subscription),
+            },
+          });
+          await syncClerkPlanFromEntitlement(userId, entitlement);
+        } catch (error) {
+          if (!isMissingBillingEntitlementsTableError(error)) {
+            throw error;
+          }
+
+          await syncClerkStripeCancellation({
+            userId,
+            plan: resolvedPlan,
+            subscription,
+          });
+        }
       }
     }
 

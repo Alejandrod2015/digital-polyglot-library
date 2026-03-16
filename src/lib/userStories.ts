@@ -1,6 +1,6 @@
 // /src/lib/userStories.ts
 import { prisma } from "@/lib/prisma";
-import { writeClient as sanityClient } from "@/sanity/lib/client";
+import { client as sanityClient } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 
 export type PublicUserStory = {
@@ -62,9 +62,28 @@ const createStoryMirrorFields = `
   cefrLevel,
   focus,
   topic,
-  "coverUrl": cover.asset->url,
-  "audioUrl": audio.asset->url
+  "coverUrl": coalesce(coverUrl, cover.asset->url),
+  "audioUrl": coalesce(audioUrl, audio.asset->url)
 `;
+
+function mapPublicUserStoryToMirror(story: PublicUserStory): CreateStoryMirror {
+  return {
+    createStoryId: story.id,
+    slug: story.slug,
+    title: story.title,
+    text: story.text,
+    vocabRaw: null,
+    language: story.language,
+    variant: story.variant ?? null,
+    region: story.region,
+    level: story.level,
+    cefrLevel: story.cefrLevel ?? null,
+    focus: story.focus ?? null,
+    topic: story.topic,
+    coverUrl: story.coverUrl,
+    audioUrl: story.audioUrl,
+  };
+}
 
 async function getPublishedCreateStoryMirrors(): Promise<CreateStoryMirror[]> {
   const query = groq`*[_type == "standaloneStory" && sourceType == "create" && published == true]{
@@ -98,23 +117,59 @@ function mergeUserStoryWithMirror(
 }
 
 async function getCreateStoryMirrorMap(): Promise<Map<string, CreateStoryMirror>> {
-  const mirrors = await getPublishedCreateStoryMirrors();
-  return new Map(mirrors.map((mirror) => [mirror.createStoryId, mirror]));
+  const stories = await getPublicUserStoriesRaw(null);
+  return new Map(stories.map((story) => [story.id, mapPublicUserStoryToMirror(story)]));
 }
 
 export async function getCreateStoryMirrorByStoryId(
   createStoryId: string
 ): Promise<CreateStoryMirror | null> {
+  const story = await getUserStoryById(createStoryId);
+  if (story) {
+    return mapPublicUserStoryToMirror(story);
+  }
+
   const query = groq`*[_type == "standaloneStory" && sourceType == "create" && published == true && createStoryId == $createStoryId][0]{
     ${createStoryMirrorFields}
   }`;
-
   return sanityClient.fetch<CreateStoryMirror | null>(query, { createStoryId });
 }
 
 export async function getCreateStoryMirrorBySlug(
   slug: string
 ): Promise<CreateStoryMirror | null> {
+  try {
+    const story = await prisma.userStory.findUnique({
+      where: { slug },
+      select: {
+        id: true,
+        slug: true,
+        title: true,
+        language: true,
+        variant: true,
+        level: true,
+        cefrLevel: true,
+        focus: true,
+        topic: true,
+        region: true,
+        text: true,
+        audioUrl: true,
+        coverUrl: true,
+        coverFilename: true,
+        createdAt: true,
+      },
+    });
+
+    if (story) {
+      return mapPublicUserStoryToMirror(story);
+    }
+  } catch (err) {
+    if (!isTransientDbError(err)) {
+      throw err;
+    }
+    console.warn("[getCreateStoryMirrorBySlug] transient DB error, falling back to Sanity.");
+  }
+
   const query = groq`*[_type == "standaloneStory" && sourceType == "create" && published == true && slug.current == $slug][0]{
     ${createStoryMirrorFields}
   }`;
@@ -159,12 +214,7 @@ export async function getPublicUserStories(opts?: {
   limit?: number;
 }): Promise<PublicUserStory[]> {
   const limit = typeof opts?.limit === "number" ? opts.limit : null;
-  const [stories, mirrorMap] = await Promise.all([
-    getPublicUserStoriesRaw(limit),
-    getCreateStoryMirrorMap(),
-  ]);
-
-  return stories.map((story) => mergeUserStoryWithMirror(story, mirrorMap.get(story.id)));
+  return getPublicUserStoriesRaw(limit);
 }
 
 export async function getUserStoryById(
@@ -193,8 +243,7 @@ export async function getUserStoryById(
     });
 
     if (!story) return null;
-    const mirrorMap = await getCreateStoryMirrorMap();
-    return mergeUserStoryWithMirror(story, mirrorMap.get(story.id));
+    return story;
   } catch (err) {
     if (isTransientDbError(err)) {
       console.warn("[getUserStoryById] transient DB error, returning null.");

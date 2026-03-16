@@ -2,11 +2,20 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { auth } from "@clerk/nextjs/server";
 import { createClerkClient } from "@clerk/backend";
+import { prisma } from "@/lib/prisma";
+import { Prisma } from "@/generated/prisma";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
 
 export const runtime = "nodejs";
+
+function isMissingBillingEntitlementsTableError(error: unknown) {
+  return (
+    error instanceof Prisma.PrismaClientKnownRequestError &&
+    error.code === "P2021"
+  );
+}
 
 export async function POST() {
   try {
@@ -18,9 +27,29 @@ export async function POST() {
     const user = await clerkClient.users.getUser(userId);
     const privateMetadata = user.privateMetadata as Record<string, unknown> | undefined;
     const plan = user.publicMetadata?.plan;
+    let entitlement: { source: "stripe" | "google_play" } | null = null;
+    try {
+      entitlement = await prisma.billingEntitlement.findUnique({
+        where: { userId },
+        select: { source: true },
+      });
+    } catch (error) {
+      if (!isMissingBillingEntitlementsTableError(error)) {
+        throw error;
+      }
+    }
     const email = user.emailAddresses[0]?.emailAddress;
     const privateCustomerId = privateMetadata?.stripeCustomerId;
     const privateSubscriptionId = privateMetadata?.stripeSubscriptionId;
+
+    if (entitlement?.source === "google_play") {
+      return NextResponse.json(
+        {
+          error: "This subscription is managed in Google Play.",
+        },
+        { status: 409 }
+      );
+    }
 
     let customerId =
       typeof privateCustomerId === "string" && privateCustomerId.trim().length > 0

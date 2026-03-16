@@ -64,23 +64,6 @@ function getLanguageSpecificRegionField(language: string): RegionField | null {
   }
 }
 
-async function uploadRemoteAsset(
-  client: SanityClient,
-  kind: "image" | "file",
-  url: string,
-  filename: string
-) {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${kind} asset from ${url}: ${response.status}`);
-  }
-
-  const buffer = Buffer.from(await response.arrayBuffer());
-  return client.assets.upload(kind, buffer, {
-    filename,
-  });
-}
-
 export async function syncCreateStoryMirror(
   story: UserStoryMirrorInput,
   client: SanityClient = writeClient
@@ -89,14 +72,10 @@ export async function syncCreateStoryMirror(
   const existing = await client.fetch<{
     _id: string;
     slug?: { current?: string };
-    cover?: { asset?: { _id?: string } };
-    audio?: { asset?: { _id?: string } };
   } | null>(
     `*[_id == $id][0]{
       _id,
-      slug,
-      cover{asset->{_id}},
-      audio{asset->{_id}}
+      slug
     }`,
     { id: docId }
   );
@@ -151,6 +130,14 @@ export async function syncCreateStoryMirror(
     basePatch[regionField] = regionValue;
   }
 
+  if (story.coverUrl?.trim()) {
+    basePatch.coverUrl = story.coverUrl.trim();
+  }
+
+  if (story.audioUrl?.trim()) {
+    basePatch.audioUrl = story.audioUrl.trim();
+  }
+
   const tx = writeClient.transaction();
   tx.createIfNotExists({
     _id: docId,
@@ -165,44 +152,6 @@ export async function syncCreateStoryMirror(
     set: basePatch,
     unset: unsetFields,
   });
-
-  if (story.coverUrl && story.coverFilename && !existing?.cover?.asset?._id) {
-    try {
-      const coverAsset = await uploadRemoteAsset(client, "image", story.coverUrl, story.coverFilename);
-      tx.patch(docId, (patch) =>
-        patch.set({
-          cover: {
-            _type: "image",
-            asset: {
-              _type: "reference",
-              _ref: coverAsset._id,
-            },
-          },
-        })
-      );
-    } catch (error) {
-      console.warn("[syncCreateStoryMirror] Failed to mirror cover asset:", error);
-    }
-  }
-
-  if (story.audioUrl && story.audioFilename && !existing?.audio?.asset?._id) {
-    try {
-      const audioAsset = await uploadRemoteAsset(client, "file", story.audioUrl, story.audioFilename);
-      tx.patch(docId, (patch) =>
-        patch.set({
-          audio: {
-            _type: "file",
-            asset: {
-              _type: "reference",
-              _ref: audioAsset._id,
-            },
-          },
-        })
-      );
-    } catch (error) {
-      console.warn("[syncCreateStoryMirror] Failed to mirror audio asset:", error);
-    }
-  }
 
   await tx.commit();
 }

@@ -432,6 +432,13 @@ export const standaloneStory = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: "coverUrl",
+      title: "External cover URL",
+      type: "url",
+      fieldset: "media",
+      description: "Preferred public cover URL served from object storage/CDN.",
+    }),
+    defineField({
       name: "generateAudio",
       title: "🎙️ Generate Audio",
       type: "string",
@@ -456,6 +463,13 @@ export const standaloneStory = defineType({
           title: "Caption",
         },
       ],
+    }),
+    defineField({
+      name: "audioUrl",
+      title: "External audio URL",
+      type: "url",
+      fieldset: "media",
+      description: "Preferred public audio URL served from object storage/CDN.",
     }),
     defineField({
       name: "audioQaStatus",

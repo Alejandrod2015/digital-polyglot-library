@@ -3,6 +3,7 @@ import OpenAI from "openai";
 import { sanityWriteClient } from "@/sanity";
 import { buildAudioSegmentsFromTranscript, type AudioSegment, type TranscriptSegment } from "@/lib/audioSegments";
 import { analyzeDeliveryQuality, analyzeTranscriptQuality, type AudioQaResult } from "@/lib/audioQa";
+import { uploadPublicObject } from "@/lib/objectStorage";
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -94,7 +95,7 @@ export async function generateAndUploadAudio(
 ): Promise<{
   url: string;
   filename: string;
-  assetId: string;
+  assetId: string | null;
   audioSegments: AudioSegment[];
   audioQa: AudioQaResult;
 } | null> {
@@ -192,9 +193,28 @@ export async function generateAndUploadAudio(
     const transcription = await transcribeAudioSegments(buffer, filename, narrationText);
     const audioQa = analyzeTranscriptQuality(narrationText, transcription.transcriptText);
 
-    console.log("[elevenlabs] ⬆ Uploading to Sanity...");
+    console.log("[elevenlabs] ⬆ Uploading audio...");
 
-    // ✅ Subir archivo MP3 a Sanity con permisos de escritura
+    const uploaded = await uploadPublicObject({
+      key: `media/generated/audio/${filename}`,
+      body: buffer,
+      contentType: "audio/mpeg",
+    });
+
+    if (uploaded?.url) {
+      console.log("[elevenlabs] ✅ Audio uploaded to object storage:", filename, "→", uploaded.url);
+
+      return {
+        url: uploaded.url,
+        filename,
+        assetId: null,
+        audioSegments: transcription.audioSegments,
+        audioQa,
+      };
+    }
+
+    console.log("[elevenlabs] ↩ Falling back to Sanity asset storage");
+
     const asset = await sanityWriteClient.assets.upload("file", buffer, {
       filename,
       contentType: "audio/mpeg",
@@ -205,13 +225,12 @@ export async function generateAndUploadAudio(
       return null;
     }
 
-    // 🧩 Construir URL pública desde asset ID
     const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "9u7ilulp";
     const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
     const fileId = asset._id.replace("file-", "").replace("-mp3", "");
     const url = `https://cdn.sanity.io/files/${projectId}/${dataset}/${fileId}.mp3`;
 
-    console.log("[elevenlabs] ✅ Audio uploaded:", filename, "→", url);
+    console.log("[elevenlabs] ✅ Audio uploaded to Sanity:", filename, "→", url);
 
     return {
       url,

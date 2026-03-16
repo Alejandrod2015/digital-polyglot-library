@@ -1,6 +1,6 @@
 import { unstable_cache } from "next/cache";
 import { groq } from "next-sanity";
-import { freshClient as client } from "@/sanity/lib/client";
+import { client } from "@/sanity/lib/client";
 import { resolveContentVariant } from "@/lib/languageVariant";
 import type { CefrLevel, Level } from "@/types/books";
 
@@ -26,6 +26,10 @@ export type PublicStandaloneStory = {
   createdAt: string;
 };
 
+type GetPublishedStandaloneStoriesOptions = {
+  includeJourneyStories?: boolean;
+};
+
 const standaloneStoryFields = `
   "id": _id,
   "slug": slug.current,
@@ -43,8 +47,8 @@ const standaloneStoryFields = `
   journeyEligible,
   journeyTopic,
   journeyOrder,
-  "coverUrl": cover.asset->url,
-  "audioUrl": audio.asset->url,
+  "coverUrl": coalesce(coverUrl, cover.asset->url),
+  "audioUrl": coalesce(audioUrl, audio.asset->url),
   "createdAt": _createdAt
 `;
 
@@ -88,8 +92,19 @@ const getPublishedStandaloneStoriesCached = unstable_cache(
   { revalidate: 60, tags: ["published-standalone-stories"] }
 );
 
-export async function getPublishedStandaloneStories(): Promise<PublicStandaloneStory[]> {
-  return getPublishedStandaloneStoriesCached();
+function isJourneyAssignedStandaloneStory(story: Pick<PublicStandaloneStory, "journeyEligible">) {
+  return story.journeyEligible === true;
+}
+
+export async function getPublishedStandaloneStories(
+  options: GetPublishedStandaloneStoriesOptions = {}
+): Promise<PublicStandaloneStory[]> {
+  const stories = await getPublishedStandaloneStoriesCached();
+  if (options.includeJourneyStories) {
+    return stories;
+  }
+
+  return stories.filter((story) => !isJourneyAssignedStandaloneStory(story));
 }
 
 export async function getStandaloneStoryBySlug(

@@ -13,6 +13,7 @@ import { books } from "@/data/books";
 import { formatTopic } from "@/lib/displayFormat";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
 import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel, normalizeVariant } from "@/lib/languageVariant";
+import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 type LatestBook = {
   slug: string;
@@ -187,14 +188,6 @@ function estimateReadMinutes(text?: string): number {
   return Math.max(1, Math.ceil(words / 180));
 }
 
-function formatAudioDuration(totalSeconds?: number): string {
-  if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:--";
-  const rounded = Math.floor(totalSeconds);
-  const minutes = Math.floor(rounded / 60);
-  const seconds = rounded % 60;
-  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-}
-
 function formatRemainingDuration(totalSeconds?: number, progressSec?: number): string {
   if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:-- left";
   const safeProgress =
@@ -218,15 +211,6 @@ function isCompletedFromAudio(progressSec?: number, audioDurationSec?: number): 
     return false;
   }
   return progressSec >= audioDurationSec * CONTINUE_COMPLETION_RATIO;
-}
-
-function hasAudioSource(bookSlug: string, storySlug: string, audioUrl?: string): boolean {
-  if (typeof audioUrl === "string" && audioUrl.trim() !== "") return true;
-  if (bookSlug === "standalone") return false;
-  const bookMeta = Object.values(books).find((b) => b.slug === bookSlug);
-  const storyMeta = bookMeta?.stories.find((s) => s.slug === storySlug);
-  const rawSrc = typeof storyMeta?.audio === "string" ? storyMeta.audio.trim() : "";
-  return rawSrc.length > 0;
 }
 
 async function trackBusinessMetric(eventType: string, value?: number) {
@@ -277,7 +261,7 @@ export default function HomeClient({
         const cover =
           storyCover ??
           (typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
-            ? bookMeta.cover
+            ? resolvePublicMediaUrl(bookMeta.cover) ?? bookMeta.cover
             : "/covers/default.jpg");
 
         return {
@@ -313,9 +297,6 @@ export default function HomeClient({
   const [savedStoryIds, setSavedStoryIds] = useState<Set<string>>(new Set());
   const [readingHistoryStoryIds, setReadingHistoryStoryIds] = useState<Set<string>>(new Set());
   const [, setPersonalizationSignalsLoaded] = useState(false);
-  const [recommendedStoryDurations, setRecommendedStoryDurations] = useState<Record<string, number>>(
-    {}
-  );
   const [preferredVariantOverride, setPreferredVariantOverride] = useState<string>(
     initialPreferredVariant
   );
@@ -582,92 +563,6 @@ export default function HomeClient({
   }, []);
 
   useEffect(() => {
-    if (continueListening.length === 0) return;
-
-    const unresolved = continueListening.filter(
-      (item) =>
-        !(typeof item.audioDurationSec === "number" && item.audioDurationSec > 0) &&
-        hasAudioSource(item.bookSlug, item.storySlug)
-    );
-    if (unresolved.length === 0) return;
-
-    let cancelled = false;
-
-    const loadDuration = (item: ContinueItem) =>
-      new Promise<{ key: string; durationSec?: number }>((resolve) => {
-        const key = `${item.bookSlug}:${item.storySlug}`;
-        const bookMeta = Object.values(books).find((b) => b.slug === item.bookSlug);
-        const storyMeta = bookMeta?.stories.find((s) => s.slug === item.storySlug);
-        const rawSrc = storyMeta?.audio;
-        if (!rawSrc || typeof rawSrc !== "string") {
-          resolve({ key });
-          return;
-        }
-
-        const src = rawSrc.startsWith("http")
-          ? rawSrc
-          : `https://cdn.sanity.io/files/9u7ilulp/production/${rawSrc}.mp3`;
-
-        const audio = new Audio();
-        audio.preload = "metadata";
-
-        const done = (durationSec?: number) => {
-          audio.removeAttribute("src");
-          audio.load();
-          resolve({ key, durationSec });
-        };
-
-        const timeout = window.setTimeout(() => done(undefined), 6000);
-
-        audio.onloadedmetadata = () => {
-          window.clearTimeout(timeout);
-          const duration =
-            Number.isFinite(audio.duration) && audio.duration > 0
-              ? Math.round(audio.duration)
-              : undefined;
-          done(duration);
-        };
-        audio.onerror = () => {
-          window.clearTimeout(timeout);
-          done(undefined);
-        };
-
-        audio.src = src;
-      });
-
-    Promise.all(unresolved.map(loadDuration)).then((resolved) => {
-      if (cancelled) return;
-      if (resolved.length === 0) return;
-
-      setContinueListening((prev) => {
-        let changed = false;
-        const next = prev.map((item) => {
-          const key = `${item.bookSlug}:${item.storySlug}`;
-          const found = resolved.find((r) => r.key === key);
-          if (!found || !found.durationSec) return item;
-          if (item.audioDurationSec === found.durationSec) return item;
-          changed = true;
-          return { ...item, audioDurationSec: found.durationSec };
-        });
-
-        if (!changed) return prev;
-
-        try {
-          localStorage.setItem("dp_continue_listening_v1", JSON.stringify(next));
-        } catch {
-          // silencioso
-        }
-
-        return next;
-      });
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [continueListening]);
-
-  useEffect(() => {
     let cancelled = false;
 
     const loadPersonalizationSignals = async () => {
@@ -855,7 +750,6 @@ export default function HomeClient({
 
   const storiesForHome = filteredStories.slice(0, DESKTOP_LIMIT);
   const polyglotForHome = filteredPolyglot.slice(0, DESKTOP_LIMIT);
-  const [latestStoryDurations, setLatestStoryDurations] = useState<Record<string, number>>({});
   const canShowPersonalizedRecommendations =
     isPersonalizationReady && (plan === "premium" || plan === "polyglot");
 
@@ -889,9 +783,7 @@ export default function HomeClient({
         level: s.level,
         language: s.language,
         region: s.region,
-        detail: `${formatAudioDuration(latestStoryDurations[key])} · ${formatTopic(
-          latestStoryTopicByKey[key]
-        )}`,
+        detail: formatTopic(latestStoryTopicByKey[key]),
       };
     });
 
@@ -903,7 +795,7 @@ export default function HomeClient({
       subtitle: "Individual Story",
       coverUrl:
         typeof story.coverUrl === "string" && story.coverUrl.trim() !== ""
-          ? story.coverUrl
+          ? resolvePublicMediaUrl(story.coverUrl) ?? story.coverUrl
           : "/covers/default.jpg",
       level: story.level,
       language: story.language,
@@ -915,7 +807,6 @@ export default function HomeClient({
 
     return [...catalogCards, ...polyglotCards];
   }, [
-    latestStoryDurations,
     latestStoryTopicByKey,
     polyglotForHome,
     storiesForHome,
@@ -1015,16 +906,12 @@ export default function HomeClient({
         const textTokens = tokenizeForMatch(story.text ?? "");
         const coverUrl =
           typeof story.cover === "string" && story.cover.trim() !== ""
-            ? story.cover
+            ? resolvePublicMediaUrl(story.cover) ?? story.cover
             : typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
-              ? bookMeta.cover
+              ? resolvePublicMediaUrl(bookMeta.cover) ?? bookMeta.cover
               : "/covers/default.jpg";
         const rawAudio = typeof story.audio === "string" ? story.audio.trim() : "";
-        const audioSrc = rawAudio
-          ? rawAudio.startsWith("http")
-            ? rawAudio
-            : `https://cdn.sanity.io/files/9u7ilulp/production/${rawAudio}.mp3`
-          : undefined;
+        const audioSrc = resolveCatalogAudioUrl(rawAudio);
 
         let score = 0;
         let reason = "Picked for your profile";
@@ -1136,181 +1023,6 @@ export default function HomeClient({
     savedBookIds,
     savedStoryIds,
   ]);
-
-  useEffect(() => {
-    if (storiesForHome.length === 0) return;
-
-    const unresolved = storiesForHome.filter((story) => {
-      const key = `${story.bookSlug}:${story.storySlug}`;
-      return (
-        !(typeof latestStoryDurations[key] === "number" && latestStoryDurations[key] > 0) &&
-        hasAudioSource(story.bookSlug, story.storySlug, story.audioUrl)
-      );
-    });
-    if (unresolved.length === 0) return;
-
-    let cancelled = false;
-
-    const loadDuration = (story: LatestStory) =>
-      new Promise<{ key: string; durationSec?: number }>((resolve) => {
-        const key = `${story.bookSlug}:${story.storySlug}`;
-        if (story.bookSlug === "standalone") {
-          const rawSrc = typeof story.audioUrl === "string" ? story.audioUrl.trim() : "";
-          if (!rawSrc) {
-            resolve({ key });
-            return;
-          }
-
-          const audio = new Audio();
-          audio.preload = "metadata";
-
-          const done = (durationSec?: number) => {
-            audio.removeAttribute("src");
-            audio.load();
-            resolve({ key, durationSec });
-          };
-
-          const timeout = window.setTimeout(() => done(undefined), 6000);
-          audio.onloadedmetadata = () => {
-            window.clearTimeout(timeout);
-            const duration =
-              Number.isFinite(audio.duration) && audio.duration > 0
-                ? Math.round(audio.duration)
-                : undefined;
-            done(duration);
-          };
-          audio.onerror = () => {
-            window.clearTimeout(timeout);
-            done(undefined);
-          };
-
-          audio.src = rawSrc;
-          return;
-        }
-
-        const bookMeta = Object.values(books).find((b) => b.slug === story.bookSlug);
-        const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
-        const rawSrc = storyMeta?.audio;
-        if (!rawSrc || typeof rawSrc !== "string") {
-          resolve({ key });
-          return;
-        }
-
-        const src = rawSrc.startsWith("http")
-          ? rawSrc
-          : `https://cdn.sanity.io/files/9u7ilulp/production/${rawSrc}.mp3`;
-
-        const audio = new Audio();
-        audio.preload = "metadata";
-
-        const done = (durationSec?: number) => {
-          audio.removeAttribute("src");
-          audio.load();
-          resolve({ key, durationSec });
-        };
-
-        const timeout = window.setTimeout(() => done(undefined), 6000);
-        audio.onloadedmetadata = () => {
-          window.clearTimeout(timeout);
-          const duration =
-            Number.isFinite(audio.duration) && audio.duration > 0
-              ? Math.round(audio.duration)
-              : undefined;
-          done(duration);
-        };
-        audio.onerror = () => {
-          window.clearTimeout(timeout);
-          done(undefined);
-        };
-
-        audio.src = src;
-      });
-
-    Promise.all(unresolved.map(loadDuration)).then((resolved) => {
-      if (cancelled || resolved.length === 0) return;
-      setLatestStoryDurations((prev) => {
-        let changed = false;
-        const next = { ...prev };
-        for (const result of resolved) {
-          if (result.durationSec && result.durationSec > 0 && next[result.key] !== result.durationSec) {
-            next[result.key] = result.durationSec;
-            changed = true;
-          }
-        }
-        return changed ? next : prev;
-      });
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [storiesForHome, latestStoryDurations]);
-
-  useEffect(() => {
-    if (recommendedStories.length === 0) return;
-
-    const unresolved = recommendedStories.filter((story) => {
-      return (
-        !!story.audioSrc &&
-        !(typeof recommendedStoryDurations[story.key] === "number" && recommendedStoryDurations[story.key] > 0)
-      );
-    });
-    if (unresolved.length === 0) return;
-
-    let cancelled = false;
-
-    const loadDuration = (story: RecommendedStoryItem) =>
-      new Promise<{ key: string; durationSec?: number }>((resolve) => {
-        if (!story.audioSrc) {
-          resolve({ key: story.key });
-          return;
-        }
-
-        const audio = new Audio();
-        audio.preload = "metadata";
-
-        const done = (durationSec?: number) => {
-          audio.removeAttribute("src");
-          audio.load();
-          resolve({ key: story.key, durationSec });
-        };
-
-        const timeout = window.setTimeout(() => done(undefined), 6000);
-        audio.onloadedmetadata = () => {
-          window.clearTimeout(timeout);
-          const duration =
-            Number.isFinite(audio.duration) && audio.duration > 0
-              ? Math.round(audio.duration)
-              : undefined;
-          done(duration);
-        };
-        audio.onerror = () => {
-          window.clearTimeout(timeout);
-          done(undefined);
-        };
-
-        audio.src = story.audioSrc;
-      });
-
-    Promise.all(unresolved.map(loadDuration)).then((resolved) => {
-      if (cancelled || resolved.length === 0) return;
-      setRecommendedStoryDurations((prev) => {
-        let changed = false;
-        const next = { ...prev };
-        for (const result of resolved) {
-          if (result.durationSec && result.durationSec > 0 && next[result.key] !== result.durationSec) {
-            next[result.key] = result.durationSec;
-            changed = true;
-          }
-        }
-        return changed ? next : prev;
-      });
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [recommendedStories, recommendedStoryDurations]);
 
   const featuredFreeStory = useMemo(() => {
     const targetSlug =
@@ -1682,10 +1394,7 @@ export default function HomeClient({
                         <LanguageBadge language={story.language} />
                         <RegionBadge region={story.region} />
                       </div>
-                      <p>
-                        {formatAudioDuration(recommendedStoryDurations[story.key])} ·{" "}
-                        {formatTopic(story.topic)}
-                      </p>
+                      <p>{formatTopic(story.topic)}</p>
                     </div>
                   </div>
                 </Link>

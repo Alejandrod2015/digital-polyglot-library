@@ -287,7 +287,7 @@ useEffect(() => {
       {hasStoryAudio ? (
         <div className="fixed bottom-0 left-0 right-0 z-50 md:ml-64">
           <Player
-            src={`${book.audioFolder}/${story.audio}`}
+            src={story.audio}
             bookSlug={book.slug}
             storySlug={story.slug}
             prevStorySlug={currentIndex > 0 ? book.stories[currentIndex - 1]?.slug ?? null : null}

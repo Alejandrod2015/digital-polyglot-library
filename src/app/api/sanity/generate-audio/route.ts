@@ -88,27 +88,30 @@ export async function POST(req: Request) {
     }
 
     const audio = await generateAndUploadAudio(text, title, language, region || undefined);
-    if (!audio?.assetId) {
+    if (!audio?.url) {
       return NextResponse.json(
         { error: "Audio generation failed." },
         { status: 500, headers: corsHeaders }
       );
     }
 
-    await writeClient
-      .patch(documentId)
-      .set({
-        audio: {
-          _type: "file",
-          asset: { _type: "reference", _ref: audio.assetId },
-        },
-        audioQaStatus: audio.audioQa.status,
-        audioQaScore: audio.audioQa.score,
-        audioQaTranscript: audio.audioQa.transcript,
-        audioQaNotes: audio.audioQa.notes.join("\n"),
-        audioQaCheckedAt: new Date().toISOString(),
-      })
-      .commit({ autoGenerateArrayKeys: true });
+    const patchData: Record<string, unknown> = {
+      audioUrl: audio.url,
+      audioQaStatus: audio.audioQa.status,
+      audioQaScore: audio.audioQa.score,
+      audioQaTranscript: audio.audioQa.transcript,
+      audioQaNotes: audio.audioQa.notes.join("\n"),
+      audioQaCheckedAt: new Date().toISOString(),
+    };
+
+    if (audio.assetId) {
+      patchData.audio = {
+        _type: "file",
+        asset: { _type: "reference", _ref: audio.assetId },
+      };
+    }
+
+    await writeClient.patch(documentId).set(patchData).commit({ autoGenerateArrayKeys: true });
 
     return NextResponse.json(
       {

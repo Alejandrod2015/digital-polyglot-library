@@ -1,6 +1,4 @@
 "use client";
-
-
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { books } from "@/data/books";
@@ -72,16 +70,6 @@ type StoryItem = {
  coverUrl?: string;
  audioUrl?: string | null;
 };
-
-
-const formatAudioDuration = (totalSeconds?: number) => {
- if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:--";
- const rounded = Math.floor(totalSeconds);
- const minutes = Math.floor(rounded / 60);
- const seconds = rounded % 60;
- return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-};
-
 function normalizeMatch(value?: string | null): string {
  return value?.trim().toLowerCase() ?? "";
 }
@@ -94,7 +82,6 @@ export default function MyLibraryClient() {
  const [booksList, setBooksList] = useState<LibraryBook[]>([]);
  const [stories, setStories] = useState<LibraryStory[]>([]);
  const [loading, setLoading] = useState(true);
- const [storyDurations, setStoryDurations] = useState<Record<string, number>>({});
  const allBooks = useMemo(() => Object.values(books), []);
 
 
@@ -474,90 +461,6 @@ export default function MyLibraryClient() {
      .map(({ item }) => item);
  }, [allBooks, stories, targetLanguages]);
 
- useEffect(() => {
-   if (storyItems.length === 0) return;
-
-   const unresolved = storyItems.filter((story) => {
-     const key = `${story.bookSlug}:${story.storySlug}`;
-     if (story.bookSlug === "polyglot" || story.bookSlug === "standalone") {
-       const hasPolyglotAudio =
-         typeof story.audioUrl === "string" && story.audioUrl.trim() !== "";
-       return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0) && hasPolyglotAudio;
-     }
-     const bookMeta = allBooks.find((b) => b.slug === story.bookSlug);
-     const storyMeta = bookMeta?.stories.find((s) => s.slug === story.storySlug);
-     const hasAudio = typeof storyMeta?.audio === "string" && storyMeta.audio.trim() !== "";
-     return !(typeof storyDurations[key] === "number" && storyDurations[key] > 0) && hasAudio;
-   });
-   if (unresolved.length === 0) return;
-
-   let cancelled = false;
-
-   const loadDuration = (story: StoryItem) =>
-     new Promise<{ key: string; durationSec?: number }>((resolve) => {
-       const key = `${story.bookSlug}:${story.storySlug}`;
-       const rawSrc =
-         story.bookSlug === "polyglot" || story.bookSlug === "standalone"
-           ? story.audioUrl
-           : allBooks
-               .find((b) => b.slug === story.bookSlug)
-               ?.stories.find((s) => s.slug === story.storySlug)?.audio;
-       if (!rawSrc || typeof rawSrc !== "string") {
-         resolve({ key });
-         return;
-       }
-
-       const src = rawSrc.startsWith("http")
-         ? rawSrc
-         : `https://cdn.sanity.io/files/9u7ilulp/production/${rawSrc}.mp3`;
-
-       const audio = new Audio();
-       audio.preload = "metadata";
-
-       const done = (durationSec?: number) => {
-         audio.removeAttribute("src");
-         audio.load();
-         resolve({ key, durationSec });
-       };
-
-       const timeout = window.setTimeout(() => done(undefined), 6000);
-       audio.onloadedmetadata = () => {
-         window.clearTimeout(timeout);
-         const duration =
-           Number.isFinite(audio.duration) && audio.duration > 0
-             ? Math.round(audio.duration)
-             : undefined;
-         done(duration);
-       };
-       audio.onerror = () => {
-         window.clearTimeout(timeout);
-         done(undefined);
-       };
-
-       audio.src = src;
-     });
-
-   Promise.all(unresolved.map(loadDuration)).then((resolved) => {
-     if (cancelled || resolved.length === 0) return;
-     setStoryDurations((prev) => {
-       let changed = false;
-       const next = { ...prev };
-       for (const result of resolved) {
-         if (result.durationSec && result.durationSec > 0 && next[result.key] !== result.durationSec) {
-           next[result.key] = result.durationSec;
-           changed = true;
-         }
-       }
-       return changed ? next : prev;
-     });
-   });
-
-   return () => {
-     cancelled = true;
-   };
- }, [storyItems, storyDurations, allBooks]);
-
-
  // ------------------------------
  // UI
  // ------------------------------
@@ -763,9 +666,7 @@ export default function MyLibraryClient() {
                    level={story.level}
                    language={story.language}
                    region={story.region}
-                   metaSecondary={`${formatAudioDuration(
-                     storyDurations[`${story.bookSlug}:${story.storySlug}`]
-                   )} · ${formatTopic(story.topic)}`}
+                   metaSecondary={formatTopic(story.topic)}
                    footer={
                      <button
                        type="button"

@@ -8,6 +8,7 @@ import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel } from "@/lib/languageV
 
 type LanguageOption = { code: string; name: string };
 type Plan = "free" | "basic" | "premium" | "polyglot" | "owner" | undefined;
+type BillingSource = "stripe" | "google_play" | null;
 type SaveStatus = "idle" | "saving" | "saved" | "error";
 type ThemePref = "system" | "dark" | "light";
 
@@ -122,6 +123,7 @@ export default function SettingsPage() {
   const plan = (user?.publicMetadata?.plan as Plan) ?? "free";
   const hasPaidPlan = plan === "premium" || plan === "polyglot" || plan === "owner";
   const planLabel = formatPlanLabel(plan);
+  const billingSource = (user?.publicMetadata?.billingSource as BillingSource | undefined) ?? null;
 
   const dirty = useMemo(
     () =>
@@ -389,21 +391,27 @@ export default function SettingsPage() {
             <p className="mt-2 text-base font-semibold">Current plan: {planLabel}</p>
             <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
               Manage your plan from here. Free users can review available options. Paid users can
-              update their plan, payment method, or cancellation settings in Stripe Billing.
+              update their plan based on where the subscription was purchased.
             </p>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
           {hasPaidPlan ? (
-            <button
-              type="button"
-              onClick={openBillingPortal}
-              disabled={billingLoading}
-              className="inline-flex rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90 transition disabled:opacity-60"
-            >
-              {billingLoading ? "Opening..." : "Manage billing"}
-            </button>
+            billingSource === "google_play" ? (
+              <span className="inline-flex rounded-lg border border-[var(--card-border)] bg-[var(--card-bg-hover)] px-3 py-1.5 text-[13px] font-medium text-[var(--foreground)]">
+                Managed in Google Play
+              </span>
+            ) : (
+              <button
+                type="button"
+                onClick={openBillingPortal}
+                disabled={billingLoading}
+                className="inline-flex rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90 transition disabled:opacity-60"
+              >
+                {billingLoading ? "Opening..." : "Manage billing"}
+              </button>
+            )
           ) : (
             <Link
               href="/plans"

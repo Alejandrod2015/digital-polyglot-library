@@ -256,7 +256,7 @@ function parseStandaloneVocabRaw(vocabRaw: string | null): VocabItem[] {
 
 async function buildLevelsForVariant(language: string, variantId: string): Promise<JourneyLevel[]> {
   const grouped = new Map<string, Map<string, JourneyStoryItem[]>>();
-  const standaloneStories = await getPublishedStandaloneStories();
+  const standaloneStories = await getPublishedStandaloneStories({ includeJourneyStories: true });
 
   for (const story of standaloneStories) {
     if ((story.language ?? "").trim().toLowerCase() !== language.trim().toLowerCase()) continue;
@@ -369,7 +369,7 @@ export async function buildJourneyVariants(language = DEFAULT_LANGUAGE): Promise
   const variants = new Set<string>();
   const normalizedLanguage = language.trim().toLowerCase();
 
-  const standaloneStories = await getPublishedStandaloneStories();
+  const standaloneStories = await getPublishedStandaloneStories({ includeJourneyStories: true });
   for (const story of standaloneStories) {
     if ((story.language ?? "").trim().toLowerCase() !== normalizedLanguage) continue;
     if (!story.journeyEligible) continue;

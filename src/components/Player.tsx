@@ -12,6 +12,7 @@ import {
   SkipForward,
   ChevronUp,
 } from "lucide-react";
+import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 const TRACKED_PLAYER_EVENTS = new Set(["audio_play", "audio_complete"]);
 
@@ -155,10 +156,10 @@ export default function Player({
   const resolvedSrc = useMemo(() => {
     const normalized = typeof src === "string" ? src.trim() : "";
     if (!normalized) return "";
-    if (normalized.startsWith("http")) return normalized;
-    const sanitized = normalized.replace(/^\/+/, "");
-    if (!sanitized) return "";
-    return `https://cdn.sanity.io/files/9u7ilulp/production/${sanitized}.mp3`;
+    if (normalized.startsWith("http") || normalized.startsWith("/")) {
+      return resolvePublicMediaUrl(normalized) ?? "";
+    }
+    return resolveCatalogAudioUrl(normalized) ?? "";
   }, [src]);
   const hasPlayableAudio = resolvedSrc.length > 0;
 

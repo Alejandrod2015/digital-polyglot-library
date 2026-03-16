@@ -13,6 +13,7 @@ import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
 import StoryPracticeCta from "@/components/StoryPracticeCta";
+import { isSanityAssetUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
 
@@ -68,16 +69,19 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   const visibleText = story.text;
   const hasStoryAudio = typeof story.audio === "string" && story.audio.trim() !== "";
 
-  const storyCover = typeof story.cover === "string" && story.cover.trim() !== "" ? story.cover : null;
-  const rawCover = story.cover ?? book.cover ?? "/covers/default.jpg";
+  const storyCover =
+    typeof story.cover === "string" && story.cover.trim() !== ""
+      ? resolvePublicMediaUrl(story.cover) ?? story.cover
+      : null;
+  const rawCover = resolvePublicMediaUrl(story.cover ?? book.cover ?? "/covers/default.jpg") ?? "/covers/default.jpg";
 
-  const storyCoverUrl = storyCover?.startsWith("https://cdn.sanity.io/")
+  const storyCoverUrl = storyCover && isSanityAssetUrl(storyCover)
     ? `${storyCover}?auto=format`
     : storyCover;
-  const storyCoverBlurUrl = storyCover?.startsWith("https://cdn.sanity.io/")
+  const storyCoverBlurUrl = storyCover && isSanityAssetUrl(storyCover)
     ? `${storyCover}?w=160&blur=40&auto=format`
     : storyCoverUrl;
-  const coverUrl = rawCover.startsWith("https://cdn.sanity.io/")
+  const coverUrl = isSanityAssetUrl(rawCover)
     ? `${rawCover}?w=800&fit=crop&auto=format`
     : rawCover;
   const signInHref = `/sign-in?redirect_url=${encodeURIComponent(
@@ -240,11 +244,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
       {hasStoryAudio ? (
         <div className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
           <Player
-            src={
-              story.audio.startsWith("http")
-                ? story.audio
-                : `${book.audioFolder?.replace(/\/$/, "") ?? ""}/${story.audio}`
-            }
+            src={story.audio}
             bookSlug={book.slug}
             storySlug={story.slug}
             canPlay={hasFullAccess}
