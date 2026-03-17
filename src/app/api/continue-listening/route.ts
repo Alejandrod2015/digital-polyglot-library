@@ -3,7 +3,17 @@ export const runtime = "nodejs";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+
 const CONTINUE_COMPLETION_RATIO = 0.95;
+const CONTINUE_TABLE_CACHE_TTL_MS = 5 * 60 * 1000;
+const CONTINUE_PROGRESS_WRITE_THRESHOLD_SEC = 15;
+
+let continueTableCache:
+  | {
+      checkedAt: number;
+      value: boolean;
+    }
+  | null = null;
 
 type ContinueListeningRow = {
   bookSlug: string;
@@ -34,6 +44,15 @@ type ContinuePayloadItem = {
   storySlug: string;
   progressSec?: number;
   audioDurationSec?: number;
+};
+
+type ContinueListeningEntrySnapshot = {
+  userId: string;
+  bookSlug: string;
+  storySlug: string;
+  progressSec: number | null;
+  audioDurationSec: number | null;
+  lastPlayedAt: Date;
 };
 
 function isCompletedFromAudio(progressSec?: number, audioDurationSec?: number): boolean {
@@ -86,15 +105,58 @@ function isMissingContinueTableError(err: unknown): boolean {
 }
 
 async function hasContinueListeningTable(): Promise<boolean> {
+  const now = Date.now();
+  if (continueTableCache && now - continueTableCache.checkedAt < CONTINUE_TABLE_CACHE_TTL_MS) {
+    return continueTableCache.value;
+  }
+
   try {
     const rows = await prisma.$queryRaw<Array<{ regclass: string | null }>>`
       SELECT to_regclass('public.dp_continue_listening_v1')::text AS regclass
     `;
-    return Array.isArray(rows) && rows.length > 0 && typeof rows[0]?.regclass === "string";
+    const value =
+      Array.isArray(rows) && rows.length > 0 && typeof rows[0]?.regclass === "string";
+    continueTableCache = { checkedAt: now, value };
+    return value;
   } catch {
-    // If introspection fails, keep existing behavior and let regular query/catch flow handle it.
+    continueTableCache = { checkedAt: now, value: true };
     return true;
   }
+}
+
+function normalizeProgressValue(value?: number): number | undefined {
+  if (typeof value !== "number" || !Number.isFinite(value)) return undefined;
+  return Math.max(0, Math.round(value));
+}
+
+function normalizeContinuePayloadItem(pair: ContinuePayloadItem): ContinuePayloadItem {
+  return {
+    bookSlug: pair.bookSlug,
+    storySlug: pair.storySlug,
+    progressSec: normalizeProgressValue(pair.progressSec),
+    audioDurationSec: normalizeProgressValue(pair.audioDurationSec),
+  };
+}
+
+function shouldSkipContinueWrite(
+  existing: ContinueListeningEntrySnapshot | undefined,
+  next: ContinuePayloadItem,
+  nowMs: number
+): boolean {
+  if (!existing) return false;
+
+  const nextProgress = normalizeProgressValue(next.progressSec) ?? 0;
+  const existingProgress = normalizeProgressValue(existing.progressSec ?? undefined) ?? 0;
+  const nextDuration = normalizeProgressValue(next.audioDurationSec);
+  const existingDuration = normalizeProgressValue(existing.audioDurationSec ?? undefined);
+  const progressDelta = Math.abs(nextProgress - existingProgress);
+  const recentWrite = nowMs - existing.lastPlayedAt.getTime() < CONTINUE_TABLE_CACHE_TTL_MS / 2;
+
+  return (
+    progressDelta < CONTINUE_PROGRESS_WRITE_THRESHOLD_SEC &&
+    nextDuration === existingDuration &&
+    recentWrite
+  );
 }
 
 export async function GET(req: NextRequest): Promise<Response> {
@@ -242,7 +304,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       return NextResponse.json({ error: "Invalid body" }, { status: 400 });
     }
 
-    const limited = pairs.slice(0, 20);
+    const limited = pairs.slice(0, 20).map(normalizeContinuePayloadItem);
     const completed = limited.filter((pair) =>
       isCompletedFromAudio(pair.progressSec, pair.audioDurationSec)
     );
@@ -275,8 +337,42 @@ export async function POST(req: NextRequest): Promise<Response> {
     }
 
     try {
+      const existingRows = limited.length
+        ? await prisma.continueListeningEntry.findMany({
+            where: {
+              userId,
+              OR: limited.map((pair) => ({
+                bookSlug: pair.bookSlug,
+                storySlug: pair.storySlug,
+              })),
+            },
+            select: {
+              userId: true,
+              bookSlug: true,
+              storySlug: true,
+              progressSec: true,
+              audioDurationSec: true,
+              lastPlayedAt: true,
+            },
+          })
+        : [];
+      const existingByKey = new Map(
+        existingRows.map((row) => [`${row.bookSlug}:${row.storySlug}`, row] as const)
+      );
+      const activeToWrite = active.filter(
+        (pair) =>
+          !shouldSkipContinueWrite(
+            existingByKey.get(`${pair.bookSlug}:${pair.storySlug}`),
+            pair,
+            nowMs
+          )
+      );
+      const completedToWrite = completed.filter((pair) =>
+        existingByKey.has(`${pair.bookSlug}:${pair.storySlug}`)
+      );
+
       const operations = [
-        ...completed.map((pair) =>
+        ...completedToWrite.map((pair) =>
           prisma.continueListeningEntry.deleteMany({
             where: {
               userId,
@@ -285,7 +381,7 @@ export async function POST(req: NextRequest): Promise<Response> {
             },
           })
         ),
-        ...active.map((pair, index) =>
+        ...activeToWrite.map((pair, index) =>
           prisma.continueListeningEntry.upsert({
             where: {
               userId_bookSlug_storySlug: {
@@ -310,14 +406,8 @@ export async function POST(req: NextRequest): Promise<Response> {
               bookSlug: pair.bookSlug,
               storySlug: pair.storySlug,
               lastPlayedAt: new Date(nowMs - index),
-              progressSec:
-                typeof pair.progressSec === "number" && Number.isFinite(pair.progressSec)
-                  ? Math.max(0, Math.round(pair.progressSec))
-                  : undefined,
-              audioDurationSec:
-                typeof pair.audioDurationSec === "number" && Number.isFinite(pair.audioDurationSec)
-                  ? Math.max(0, Math.round(pair.audioDurationSec))
-                  : undefined,
+              progressSec: pair.progressSec,
+              audioDurationSec: pair.audioDurationSec,
             },
           })
         ),

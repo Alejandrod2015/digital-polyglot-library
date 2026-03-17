@@ -1,8 +1,11 @@
 import ExploreClient from "./ExploreClient";
 import { getPublicUserStories } from "@/lib/userStories";
-import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
+import {
+  getPublishedStandaloneStories,
+  isJourneyAssignedStandaloneStory,
+} from "@/lib/standaloneStories";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export default async function ExplorePage() {
   const [userStories, standaloneStories] = await Promise.all([
@@ -10,7 +13,7 @@ export default async function ExplorePage() {
     getPublishedStandaloneStories(),
   ]);
 
-  const polyglotStories = [...userStories, ...standaloneStories]
+  const polyglotStories = [...userStories, ...standaloneStories.filter((story) => !isJourneyAssignedStandaloneStory(story))]
     .map((s) => ({
       id: s.id,
       slug: s.slug,

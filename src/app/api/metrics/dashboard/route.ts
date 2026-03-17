@@ -4,6 +4,15 @@ import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isMetricsAccessAllowed } from "@/lib/metricsAccess";
+import { books } from "@/data/books";
+import { getStandaloneStoriesByIds, getStandaloneStoriesBySlugs } from "@/lib/standaloneStories";
+
+const METRICS_DASHBOARD_CACHE_TTL_MS = 60 * 1000;
+
+const metricsDashboardCache = new Map<
+  string,
+  { createdAt: number; payload: DashboardResponse }
+>();
 
 type EventRow = {
   userId: string;
@@ -17,6 +26,7 @@ type ProgressRow = {
   userId: string;
   storySlug: string;
   value: number | null;
+  metadata?: unknown;
 };
 
 type SavedStoryRow = {
@@ -132,6 +142,76 @@ function toDayKey(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
+function getSavedStoryFilter(storySlug: string | null, storyIdsForFilter: string[]) {
+  if (!storySlug) return {};
+  if (storyIdsForFilter.length === 0) {
+    return { storyId: "__no_matching_story__" };
+  }
+  return { storyId: { in: storyIdsForFilter } };
+}
+
+function toNumber(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function getProgressValue(row: ProgressRow): number {
+  const direct = toNumber(row.value);
+  if (direct !== null) return direct;
+
+  if (!row.metadata || typeof row.metadata !== "object") return 0;
+  const metadata = row.metadata as Record<string, unknown>;
+  return toNumber(metadata.progressSec) ?? 0;
+}
+
+async function resolveStoryIdsForSlug(slug: string): Promise<string[]> {
+  const localIds = Object.values(books)
+    .flatMap((book) => book.stories)
+    .filter((story) => story.slug === slug)
+    .map((story) => story.id);
+
+  const [polyglotStories, standaloneStories] = await Promise.all([
+    prisma.userStory.findMany({
+      where: { slug },
+      select: { id: true },
+      take: 20,
+    }),
+    getStandaloneStoriesBySlugs([slug]),
+  ]);
+
+  return Array.from(
+    new Set([
+      ...localIds,
+      ...polyglotStories.map((story) => story.id),
+      ...standaloneStories.map((story) => story.id),
+    ])
+  );
+}
+
+async function resolveStorySlugMap(storyIds: string[]): Promise<Map<string, string>> {
+  const localEntries = Object.values(books)
+    .flatMap((book) => book.stories)
+    .filter((story) => storyIds.includes(story.id))
+    .map((story) => [story.id, story.slug] as const);
+
+  const localIdSet = new Set(localEntries.map(([storyId]) => storyId));
+  const unresolvedIds = storyIds.filter((id) => !localIdSet.has(id));
+  const [polyglotStories, standaloneStories] = await Promise.all([
+    unresolvedIds.length
+      ? prisma.userStory.findMany({
+          where: { id: { in: unresolvedIds } },
+          select: { id: true, slug: true },
+        })
+      : Promise.resolve([]),
+    getStandaloneStoriesByIds(unresolvedIds),
+  ]);
+
+  return new Map([
+    ...localEntries,
+    ...polyglotStories.map((story) => [story.id, story.slug] as const),
+    ...standaloneStories.map((story) => [story.id, story.slug] as const),
+  ]);
+}
+
 export async function GET(req: NextRequest): Promise<Response> {
   const { userId } = getAuth(req);
   if (!userId) {
@@ -149,6 +229,21 @@ export async function GET(req: NextRequest): Promise<Response> {
   const to = parseDate(search.get("to")) ?? now;
   const storySlug = search.get("storySlug")?.trim() || null;
   const bookSlug = search.get("bookSlug")?.trim() || null;
+  const storyIdsForFilter = storySlug ? await resolveStoryIdsForSlug(storySlug) : [];
+  const savedStoryFilter = getSavedStoryFilter(storySlug, storyIdsForFilter);
+  const cacheKey = JSON.stringify({
+    userId,
+    days,
+    from: from.toISOString(),
+    to: to.toISOString(),
+    storySlug,
+    bookSlug,
+    storyIdsForFilter,
+  });
+  const cached = metricsDashboardCache.get(cacheKey);
+  if (cached && Date.now() - cached.createdAt < METRICS_DASHBOARD_CACHE_TTL_MS) {
+    return NextResponse.json(cached.payload);
+  }
 
   const [
     events,
@@ -205,7 +300,6 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: {
         createdAt: { gte: from, lte: to },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
-        value: { not: null },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
       },
@@ -213,6 +307,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         userId: true,
         storySlug: true,
         value: true,
+        metadata: true,
       },
       orderBy: { createdAt: "asc" },
       take: 50000,
@@ -230,7 +325,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       by: ["storyId"],
       where: {
         createdAt: { gte: from, lte: to },
-        ...(storySlug ? { storyId: storySlug } : {}),
+        ...savedStoryFilter,
         ...(bookSlug ? { bookId: bookSlug } : {}),
       },
       _count: { _all: true },
@@ -250,7 +345,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     prisma.libraryStory.count({
       where: {
         createdAt: { gte: from, lte: to },
-        ...(storySlug ? { storyId: storySlug } : {}),
+        ...savedStoryFilter,
         ...(bookSlug ? { bookId: bookSlug } : {}),
       },
     }),
@@ -361,7 +456,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   // Aggregate listened seconds by taking max progress per user+story in range
   // to avoid over-counting repeated pause/continue events.
   for (const row of progressRows as ProgressRow[]) {
-    const value = typeof row.value === "number" ? row.value : 0;
+    const value = getProgressValue(row);
     if (!Number.isFinite(value) || value <= 0) continue;
     const key = `${row.userId}::${row.storySlug}`;
     const prev = byUserStoryMaxSeconds.get(key) ?? 0;
@@ -427,9 +522,12 @@ export async function GET(req: NextRequest): Promise<Response> {
     .sort((a, b) => b.listenedMinutes - a.listenedMinutes)
     .slice(0, 10);
 
+  const savedStorySlugMap = await resolveStorySlugMap(
+    (savedStoryRows as SavedStoryRow[]).map((row) => row.storyId)
+  );
   const topSavedStories = (savedStoryRows as SavedStoryRow[])
     .map((row) => ({
-      storySlug: row.storyId,
+      storySlug: savedStorySlugMap.get(row.storyId) ?? row.storyId,
       saves: row._count._all,
     }))
     .slice(0, 10);
@@ -578,5 +676,9 @@ export async function GET(req: NextRequest): Promise<Response> {
     },
   };
 
+  metricsDashboardCache.set(cacheKey, {
+    createdAt: Date.now(),
+    payload,
+  });
   return NextResponse.json(payload);
 }

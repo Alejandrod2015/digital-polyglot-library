@@ -14,19 +14,30 @@ type CoverProps = {
  * - fondo acorde al tema para que los márgenes no “canten”
  */
 export default function Cover({ src = "/globe.svg", alt, className = "" }: CoverProps) {
+  const isRemote = typeof src === "string" && /^https?:\/\//.test(src);
+
   return (
     <div
   className={`relative aspect-[2/3] rounded-2xl overflow-hidden 
               bg-[#0D1B2A] shadow-lg ring-1 ring-white/10 ${className}`}
 >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        priority={false}
-        sizes="(max-width: 768px) 220px, 240px"
-        className="object-cover"
+      {isRemote ? (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
         />
+      ) : (
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={false}
+          sizes="(max-width: 768px) 220px, 240px"
+          className="object-cover"
+        />
+      )}
 
     </div>
   );

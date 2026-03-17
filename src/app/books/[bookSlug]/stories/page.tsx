@@ -1,8 +1,8 @@
-import { currentUser } from '@clerk/nextjs/server';
 import ReaderClient from '../ReaderClient';
 import { books } from '@/data/books';
 
 type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
+export const revalidate = 300;
 
 type ReaderPageProps = {
   params: Promise<{ bookSlug: string }>;
@@ -16,12 +16,6 @@ export default async function ReaderPage({ params }: ReaderPageProps) {
     return <div className="p-8 text-center">Libro no encontrado.</div>;
   }
 
-  const user = await currentUser();
-
-  console.log('🧩 currentUser():', JSON.stringify(user, null, 2));
-
-  const plan = (user?.publicMetadata?.plan as UserPlan) || 'free';
-  console.log('📗 Server plan:', plan);
-
+  const plan: UserPlan = 'free';
   return <ReaderClient book={book} userPlan={plan} />;
 }

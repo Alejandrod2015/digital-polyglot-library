@@ -5,6 +5,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isMetricsAccessAllowed } from "@/lib/metricsAccess";
 
+const METRICS_AGGREGATE_CACHE_TTL_MS = 60 * 1000;
+
+const metricsAggregateCache = new Map<
+  string,
+  { createdAt: number; payload: Array<{ storySlug: string; plays: number; completions: number; completionRate: number }> }
+>();
+
 type AggregateRow = {
   storySlug: string;
   eventType: string;
@@ -24,6 +31,12 @@ export async function GET(req: NextRequest): Promise<Response> {
   }
   if (!isMetricsAccessAllowed(req)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  const cacheKey = `aggregate:${userId}`;
+  const cached = metricsAggregateCache.get(cacheKey);
+  if (cached && Date.now() - cached.createdAt < METRICS_AGGREGATE_CACHE_TTL_MS) {
+    return NextResponse.json(cached.payload);
   }
 
   try {
@@ -57,6 +70,10 @@ export async function GET(req: NextRequest): Promise<Response> {
       .sort((a, b) => b.plays - a.plays)
       .slice(0, 100);
 
+    metricsAggregateCache.set(cacheKey, {
+      createdAt: Date.now(),
+      payload: result,
+    });
     return NextResponse.json(result);
   } catch (err) {
     if (isMissingTableError(err)) {

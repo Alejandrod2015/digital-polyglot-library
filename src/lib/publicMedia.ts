@@ -33,6 +33,17 @@ export function isSanityAssetUrl(value: string): boolean {
   return value.startsWith("https://cdn.sanity.io/");
 }
 
+export function shouldBypassImageOptimization(value?: string | null): boolean {
+  const resolved = typeof value === "string" ? value.trim() : "";
+  if (!resolved) return false;
+
+  return (
+    resolved.startsWith("http://") ||
+    resolved.startsWith("https://") ||
+    resolved.startsWith("//")
+  );
+}
+
 export function resolvePublicMediaUrl(raw?: string | null): string | undefined {
   const value = typeof raw === "string" ? raw.trim() : "";
   if (!value) return undefined;

@@ -17,6 +17,7 @@ import {
   saveOfflineBook,
   saveOfflineStory,
 } from "@/lib/offlineLibrary";
+import { warmOfflineUrls } from "@/lib/offlineWarm";
 
 
 type LibraryBook = {
@@ -34,6 +35,7 @@ type LibraryStory = {
  title: string;
  coverUrl: string;
  storySlug?: string;
+ bookSlug?: string;
  language?: string;
  region?: string;
  level?: string;
@@ -123,6 +125,7 @@ export default function MyLibraryClient() {
            title: item.title,
            coverUrl: item.coverUrl,
            storySlug: item.storySlug,
+           bookSlug: item.bookSlug,
            language: item.language,
            region: item.region,
            level: item.level,
@@ -165,6 +168,23 @@ export default function MyLibraryClient() {
                  coverUrl: item.coverUrl,
                  bookData: bookMeta,
                });
+               await warmOfflineUrls([
+                 bookMeta?.slug ? `/books/${bookMeta.slug}` : null,
+                 bookMeta?.slug ? `/books/${bookMeta.slug}?from=my-library` : null,
+                 item.coverUrl,
+                 ...(bookMeta?.stories.flatMap((story) => [
+                   story.slug ? `/books/${bookMeta.slug}/${story.slug}` : null,
+                   story.slug
+                     ? `/books/${bookMeta.slug}/${story.slug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
+                     : null,
+                   story.slug ? `/stories/${story.slug}` : null,
+                   story.slug
+                     ? `/stories/${story.slug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
+                     : null,
+                   typeof story.cover === "string" ? story.cover : null,
+                   typeof story.audio === "string" ? story.audio : null,
+                 ]) ?? []),
+               ]);
              })
            );
          }
@@ -186,9 +206,9 @@ export default function MyLibraryClient() {
          if (hasOfflineAccess) {
            await Promise.all(
              normalizedStories.map(async (item) => {
-               const bookMeta = allBooks.find((book) => book.id === item.bookId);
-               const storyMeta = bookMeta?.stories.find((story) => story.id === item.storyId);
-               await saveOfflineStory(user.id, {
+                const bookMeta = allBooks.find((book) => book.id === item.bookId);
+                const storyMeta = bookMeta?.stories.find((story) => story.id === item.storyId);
+                await saveOfflineStory(user.id, {
                  storyId: item.storyId,
                  bookId: item.bookId,
                  title: item.title,
@@ -207,6 +227,21 @@ export default function MyLibraryClient() {
                    (typeof storyMeta?.audio === "string" ? storyMeta.audio : null),
                  storyData: storyMeta,
                });
+               const bookSlug = item.bookSlug ?? bookMeta?.slug;
+               const storySlug = item.storySlug ?? storyMeta?.slug;
+               await warmOfflineUrls([
+                 bookSlug && storySlug ? `/books/${bookSlug}/${storySlug}` : null,
+                 bookSlug && storySlug
+                   ? `/books/${bookSlug}/${storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
+                   : null,
+                 storySlug ? `/stories/${storySlug}` : null,
+                 storySlug
+                   ? `/stories/${storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
+                   : null,
+                 item.coverUrl,
+                 item.audioUrl ??
+                   (typeof storyMeta?.audio === "string" ? storyMeta.audio : null),
+               ]);
              })
            );
          }

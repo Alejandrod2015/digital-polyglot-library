@@ -92,8 +92,18 @@ const getPublishedStandaloneStoriesCached = unstable_cache(
   { revalidate: 60, tags: ["published-standalone-stories"] }
 );
 
-function isJourneyAssignedStandaloneStory(story: Pick<PublicStandaloneStory, "journeyEligible">) {
-  return story.journeyEligible === true;
+export function isJourneyAssignedStandaloneStory(
+  story: Pick<PublicStandaloneStory, "journeyEligible" | "journeyTopic" | "journeyOrder">
+) {
+  if (story.journeyEligible === true) {
+    return true;
+  }
+
+  if (typeof story.journeyTopic === "string" && story.journeyTopic.trim() !== "") {
+    return true;
+  }
+
+  return typeof story.journeyOrder === "number" && Number.isFinite(story.journeyOrder);
 }
 
 export async function getPublishedStandaloneStories(
@@ -110,16 +120,24 @@ export async function getPublishedStandaloneStories(
 export async function getStandaloneStoryBySlug(
   slug: string
 ): Promise<PublicStandaloneStory | null> {
-  const query = groq`*[
-    _type == "standaloneStory" &&
-    published == true &&
-    slug.current == $slug
-  ][0]{
-    ${standaloneStoryFields}
-  }`;
+  const getStandaloneStoryBySlugCached = unstable_cache(
+    async (cachedSlug: string): Promise<PublicStandaloneStory | null> => {
+      const query = groq`*[
+        _type == "standaloneStory" &&
+        published == true &&
+        slug.current == $slug
+      ][0]{
+        ${standaloneStoryFields}
+      }`;
 
-  const story = await client.fetch<PublicStandaloneStory | null>(query, { slug });
-  return story ? normalizeStandaloneStory(story) : null;
+      const story = await client.fetch<PublicStandaloneStory | null>(query, { slug: cachedSlug });
+      return story ? normalizeStandaloneStory(story) : null;
+    },
+    ["published-standalone-story-by-slug-v1", slug],
+    { revalidate: 60, tags: ["published-standalone-stories", `standalone-story:${slug}`] }
+  );
+
+  return getStandaloneStoryBySlugCached(slug);
 }
 
 export async function getStandaloneStoriesByIds(

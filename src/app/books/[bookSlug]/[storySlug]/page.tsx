@@ -12,8 +12,13 @@ import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
-import StoryPracticeCta from "@/components/StoryPracticeCta";
-import { isSanityAssetUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
+import {
+  isSanityAssetUrl,
+  resolvePublicMediaUrl,
+  shouldBypassImageOptimization,
+} from "@/lib/publicMedia";
+import { canAccessStoryContent } from "@/lib/access";
+import { getLockedStoryPreviewHtml } from "@/lib/lockedStoryPreview";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
 
@@ -58,15 +63,15 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
       ? book.stories[storyIndex + 1]?.slug ?? null
       : null;
 
-  const hasFullAccess =
-    userPlan === "premium" ||
-    userPlan === "polyglot" ||
-    userPlan === "owner" ||
-    ownsThisBook ||
-    (userPlan === "basic" && (isWeeklyStory || isDailyStory)) ||
-    (userPlan === "free" && isWeeklyStory);
+  const hasFullAccess = canAccessStoryContent({
+    plan: userPlan,
+    ownsBook: ownsThisBook,
+    isWeeklyStory,
+    isDailyStory,
+  });
 
   const visibleText = story.text;
+  const lockedPreviewHtml = getLockedStoryPreviewHtml(story.text);
   const hasStoryAudio = typeof story.audio === "string" && story.audio.trim() !== "";
 
   const storyCover =
@@ -84,6 +89,8 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   const coverUrl = isSanityAssetUrl(rawCover)
     ? `${rawCover}?w=800&fit=crop&auto=format`
     : rawCover;
+  const unoptimizedStoryCover = shouldBypassImageOptimization(storyCoverUrl);
+  const unoptimizedStoryCoverBlur = shouldBypassImageOptimization(storyCoverBlurUrl);
   const signInHref = `/sign-in?redirect_url=${encodeURIComponent(
     `/books/${book.slug}/${story.slug}`
   )}`;
@@ -117,8 +124,6 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   if (nextStoryHref) practiceParams.set("nextHref", nextStoryHref);
   if (resolvedReturnHref) practiceParams.set("returnTo", resolvedReturnHref);
   if (resolvedReturnLabel) practiceParams.set("returnLabel", resolvedReturnLabel);
-  const practiceHref = `/practice?${practiceParams.toString()}`;
-
   return (
     <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground">
       <ScrollToTopOnPathChange />
@@ -153,6 +158,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
                 alt={story.title}
                 fill
                 priority
+                unoptimized={unoptimizedStoryCover}
                 sizes="(max-width: 768px) 100vw, 0px"
                 className="object-contain"
               />
@@ -164,6 +170,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
                 aria-hidden="true"
                 fill
                 priority
+                unoptimized={unoptimizedStoryCoverBlur}
                 sizes="(max-width: 1024px) 896px, 960px"
                 className="object-cover scale-110 blur-2xl opacity-65"
               />
@@ -181,6 +188,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
                 alt={story.title}
                 fill
                 priority
+                unoptimized={unoptimizedStoryCover}
                 sizes="(max-width: 1024px) 896px, 960px"
                 className="object-contain"
               />
@@ -224,18 +232,11 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
             <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
               <StoryContent text={visibleText} sentencesPerParagraph={3} vocab={story.vocab ?? []} />
             </div>
-            {(story.vocab?.length ?? 0) > 0 ? (
-              <StoryPracticeCta
-                practiceHref={practiceHref}
-                secondaryHref={nextStoryHref ?? resolvedReturnHref}
-                secondaryLabel={nextStoryHref ? "Next story" : resolvedReturnLabel}
-              />
-            ) : null}
           </>
         ) : (
           <div
             className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6"
-            dangerouslySetInnerHTML={{ __html: visibleText }}
+            dangerouslySetInnerHTML={{ __html: lockedPreviewHtml }}
           />
         )}
       </StoryClientGate>

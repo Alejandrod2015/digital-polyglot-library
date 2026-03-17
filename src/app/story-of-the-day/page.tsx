@@ -3,8 +3,9 @@ import { getFeaturedStory, getFeaturedStoryDataBySlug } from "@/lib/getFeaturedS
 import Link from "next/link";
 import Image from "next/image";
 import { formatLanguage, formatLevel, formatTopic, toTitleCase } from "@/lib/displayFormat";
+import { shouldBypassImageOptimization } from "@/lib/publicMedia";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default async function StoryOfTheDayPage() {
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
@@ -36,13 +37,20 @@ export default async function StoryOfTheDayPage() {
 
   const book = story.book;
   const coverUrl = book.cover || "/covers/default.jpg";
+  const unoptimizedCover = shouldBypassImageOptimization(coverUrl);
 
   return (
     <div className="min-h-screen bg-[#0D1B2A] text-white flex flex-col items-center justify-center px-4 sm:px-8 py-12">
       <div className="max-w-5xl w-full bg-white/5 rounded-3xl shadow-xl p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-10 border border-white/10">
         <div className="w-full sm:w-1/3 flex justify-center">
           <div className="relative aspect-[3/4] w-56 sm:w-64 rounded-xl overflow-hidden shadow-lg border border-white/10 bg-[#102746]">
-            <Image src={coverUrl} alt={story.title} fill className="object-contain" />
+            <Image
+              src={coverUrl}
+              alt={story.title}
+              fill
+              unoptimized={unoptimizedCover}
+              className="object-contain"
+            />
           </div>
         </div>
 
@@ -86,7 +94,7 @@ export default async function StoryOfTheDayPage() {
               href={`/books/${book.slug}/${story.slug}`}
               className="px-6 py-3 bg-sky-600 hover:bg-sky-700 rounded-xl font-medium transition text-center"
             >
-              Read for free
+              Read today&apos;s story
             </Link>
             <Link
               href="/plans"
@@ -96,7 +104,7 @@ export default async function StoryOfTheDayPage() {
             </Link>
           </div>
 
-          <p className="text-gray-400 text-xs mt-6">Free to read today only.</p>
+          <p className="text-gray-400 text-xs mt-6">Available today with Basic and above.</p>
         </div>
       </div>
     </div>

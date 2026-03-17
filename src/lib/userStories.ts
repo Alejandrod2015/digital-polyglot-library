@@ -2,6 +2,7 @@
 import { prisma } from "@/lib/prisma";
 import { client as sanityClient } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
+import { unstable_cache } from "next/cache";
 
 export type PublicUserStory = {
   id: string;
@@ -93,6 +94,12 @@ async function getPublishedCreateStoryMirrors(): Promise<CreateStoryMirror[]> {
   return sanityClient.fetch<CreateStoryMirror[]>(query);
 }
 
+const getPublishedCreateStoryMirrorsCached = unstable_cache(
+  async (): Promise<CreateStoryMirror[]> => getPublishedCreateStoryMirrors(),
+  ["published-create-story-mirrors-v1"],
+  { revalidate: 60, tags: ["published-create-story-mirrors"] }
+);
+
 function mergeUserStoryWithMirror(
   story: PublicUserStory,
   mirror?: CreateStoryMirror | null
@@ -117,64 +124,91 @@ function mergeUserStoryWithMirror(
 }
 
 async function getCreateStoryMirrorMap(): Promise<Map<string, CreateStoryMirror>> {
-  const stories = await getPublicUserStoriesRaw(null);
-  return new Map(stories.map((story) => [story.id, mapPublicUserStoryToMirror(story)]));
+  const mirrors = await getPublishedCreateStoryMirrorsCached();
+  return new Map(
+    mirrors
+      .filter((story) => typeof story.createStoryId === "string" && story.createStoryId.trim() !== "")
+      .map((story) => [story.createStoryId, story])
+  );
 }
 
 export async function getCreateStoryMirrorByStoryId(
   createStoryId: string
 ): Promise<CreateStoryMirror | null> {
-  const story = await getUserStoryById(createStoryId);
-  if (story) {
-    return mapPublicUserStoryToMirror(story);
-  }
+  const getMirrorByStoryIdCached = unstable_cache(
+    async (cachedCreateStoryId: string): Promise<CreateStoryMirror | null> => {
+      const query = groq`*[_type == "standaloneStory" && sourceType == "create" && published == true && createStoryId == $createStoryId][0]{
+        ${createStoryMirrorFields}
+      }`;
+      const mirror = await sanityClient.fetch<CreateStoryMirror | null>(query, {
+        createStoryId: cachedCreateStoryId,
+      });
+      if (mirror) {
+        return mirror;
+      }
 
-  const query = groq`*[_type == "standaloneStory" && sourceType == "create" && published == true && createStoryId == $createStoryId][0]{
-    ${createStoryMirrorFields}
-  }`;
-  return sanityClient.fetch<CreateStoryMirror | null>(query, { createStoryId });
+      const story = await getUserStoryById(cachedCreateStoryId);
+      if (story) {
+        return mapPublicUserStoryToMirror(story);
+      }
+
+      return null;
+    },
+    ["create-story-mirror-by-story-id-v1", createStoryId],
+    { revalidate: 60, tags: ["published-create-story-mirrors", `create-story:${createStoryId}`] }
+  );
+
+  return getMirrorByStoryIdCached(createStoryId);
 }
 
 export async function getCreateStoryMirrorBySlug(
   slug: string
 ): Promise<CreateStoryMirror | null> {
-  try {
-    const story = await prisma.userStory.findUnique({
-      where: { slug },
-      select: {
-        id: true,
-        slug: true,
-        title: true,
-        language: true,
-        variant: true,
-        level: true,
-        cefrLevel: true,
-        focus: true,
-        topic: true,
-        region: true,
-        text: true,
-        audioUrl: true,
-        coverUrl: true,
-        coverFilename: true,
-        createdAt: true,
-      },
-    });
+  const getMirrorBySlugCached = unstable_cache(
+    async (cachedSlug: string): Promise<CreateStoryMirror | null> => {
+      try {
+        const story = await prisma.userStory.findUnique({
+          where: { slug: cachedSlug },
+          select: {
+            id: true,
+            slug: true,
+            title: true,
+            language: true,
+            variant: true,
+            level: true,
+            cefrLevel: true,
+            focus: true,
+            topic: true,
+            region: true,
+            text: true,
+            audioUrl: true,
+            coverUrl: true,
+            coverFilename: true,
+            createdAt: true,
+          },
+        });
 
-    if (story) {
-      return mapPublicUserStoryToMirror(story);
-    }
-  } catch (err) {
-    if (!isTransientDbError(err)) {
-      throw err;
-    }
-    console.warn("[getCreateStoryMirrorBySlug] transient DB error, falling back to Sanity.");
-  }
+        if (story) {
+          return mapPublicUserStoryToMirror(story);
+        }
+      } catch (err) {
+        if (!isTransientDbError(err)) {
+          throw err;
+        }
+        console.warn("[getCreateStoryMirrorBySlug] transient DB error, falling back to Sanity.");
+      }
 
-  const query = groq`*[_type == "standaloneStory" && sourceType == "create" && published == true && slug.current == $slug][0]{
-    ${createStoryMirrorFields}
-  }`;
+      const query = groq`*[_type == "standaloneStory" && sourceType == "create" && published == true && slug.current == $slug][0]{
+        ${createStoryMirrorFields}
+      }`;
 
-  return sanityClient.fetch<CreateStoryMirror | null>(query, { slug });
+      return sanityClient.fetch<CreateStoryMirror | null>(query, { slug: cachedSlug });
+    },
+    ["create-story-mirror-by-slug-v1", slug],
+    { revalidate: 60, tags: ["published-create-story-mirrors", `story-slug:${slug}`] }
+  );
+
+  return getMirrorBySlugCached(slug);
 }
 
 async function getPublicUserStoriesRaw(limit: number | null): Promise<PublicUserStory[]> {
@@ -210,11 +244,29 @@ async function getPublicUserStoriesRaw(limit: number | null): Promise<PublicUser
   }
 }
 
+const getPublicUserStoriesRawCached = unstable_cache(
+  async (limitKey: string): Promise<PublicUserStory[]> => {
+    const parsedLimit = limitKey === "all" ? null : Number.parseInt(limitKey, 10);
+    const limit = Number.isFinite(parsedLimit) ? parsedLimit : null;
+    return getPublicUserStoriesRaw(limit);
+  },
+  ["public-user-stories-raw-v1"],
+  { revalidate: 60, tags: ["public-user-stories"] }
+);
+
 export async function getPublicUserStories(opts?: {
   limit?: number;
 }): Promise<PublicUserStory[]> {
   const limit = typeof opts?.limit === "number" ? opts.limit : null;
-  return getPublicUserStoriesRaw(limit);
+  const stories = await getPublicUserStoriesRawCached(limit === null ? "all" : String(limit));
+
+  try {
+    const mirrorMap = await getCreateStoryMirrorMap();
+    return stories.map((story) => mergeUserStoryWithMirror(story, mirrorMap.get(story.id)));
+  } catch (err) {
+    console.warn("[getPublicUserStories] Failed to merge create-story mirrors, returning DB stories.", err);
+    return stories;
+  }
 }
 
 export async function getUserStoryById(

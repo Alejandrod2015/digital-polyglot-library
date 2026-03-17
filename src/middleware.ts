@@ -15,43 +15,25 @@ export default clerkMiddleware(async (auth, req) => {
     }
   }
 
-  // ⚡ Excluir solo rutas que deben ejecutarse sin Clerk
-  // Mantener Stripe Checkout autenticado (necesita userId)
-  if (url.startsWith("/api/favorites") || url.startsWith("/api/claims")) {
-    return NextResponse.next();
-  }
-
-  const requestHeaders = new Headers(req.headers);
-  requestHeaders.set("x-pathname", url);
-  const res = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
-  res.headers.set("x-clerk-mw", "1");
-
-  const isApiRoute = url.startsWith("/api/");
-  const disableBrowserCache =
-    !isApiRoute &&
-    (url.startsWith("/studio") ||
-      url.startsWith("/stories/") ||
-      url.startsWith("/books/") ||
-      !isProd);
-
-  if (disableBrowserCache) {
-    res.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
-    res.headers.set("Pragma", "no-cache");
-    res.headers.set("Expires", "0");
-    res.headers.set("Surrogate-Control", "no-store");
-  }
-
-  return res;
+  return NextResponse.next();
 });
 
 export const config = {
   matcher: [
-    "/((?!_next|.*\\..*).*)",
+    "/api/:path*",
     "/",
-    "/(api|trpc)(.*)", // ✅ mantener esta
+    "/auth/:path*",
+    "/sign-in/:path*",
+    "/sign-up/:path*",
+    "/create",
+    "/favorites",
+    "/journey/:path*",
+    "/my-library",
+    "/practice",
+    "/settings",
+    "/stories/:path*",
+    "/books/:path*",
+    "/claim/:path*",
+    "/studio/:path*",
   ],
 };

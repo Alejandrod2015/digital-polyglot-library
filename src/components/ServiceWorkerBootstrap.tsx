@@ -14,6 +14,43 @@ export default function ServiceWorkerBootstrap({ currentVersion = "dev-local" }:
   useEffect(() => {
     if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
 
+    if (process.env.NODE_ENV !== "production") {
+      const unregisterDevServiceWorkers = async () => {
+        try {
+          const hadController = Boolean(navigator.serviceWorker.controller);
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          const hadRegistrations = registrations.length > 0;
+
+          await Promise.all(registrations.map((registration) => registration.unregister()));
+
+          if ("caches" in window) {
+            const cacheKeys = await window.caches.keys();
+            await Promise.all(cacheKeys.map((key) => window.caches.delete(key)));
+          }
+
+          const reloadKey = "dp-dev-sw-cleanup-reloaded";
+          const shouldReload =
+            (hadController || hadRegistrations) &&
+            window.sessionStorage.getItem(reloadKey) !== "1";
+
+          if (shouldReload) {
+            window.sessionStorage.setItem(reloadKey, "1");
+            window.location.reload();
+            return;
+          }
+
+          if (!hadController && !hadRegistrations) {
+            window.sessionStorage.removeItem(reloadKey);
+          }
+        } catch (error) {
+          console.error("[sw] dev unregister failed", error);
+        }
+      };
+
+      void unregisterDevServiceWorkers();
+      return;
+    }
+
     const register = async () => {
       try {
         await navigator.serviceWorker.register("/sw.js", { scope: "/" });

@@ -13,6 +13,8 @@
     "export:sanity": "tsx scripts/exportBooksFromSanity.ts",
     "media:upload-catalog": "tsx scripts/uploadCatalogMediaToObjectStorage.ts",
     "media:backfill-standalone": "tsx scripts/backfillStandaloneStoryMedia.ts",
+    "media:backfill-polyglot": "tsx scripts/backfillPolyglotStoryMedia.ts",
+    "media:reconcile-create-story-assets": "tsx scripts/reconcileCreateStoryMediaFromSanityAssets.ts",
     "sync:create-stories": "tsx scripts/syncCreateStoriesToSanity.ts",
     "sync:create-stories:cli": "sanity exec scripts/syncCreateStoriesToSanity.ts --with-user-token",
     "sync:create-story-slugs": "tsx scripts/syncCreateStorySlugs.ts",
@@ -61,6 +63,6 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
-    "vercel": "^50.25.4"
+    "vercel": "^50.32.5"
   }
 }

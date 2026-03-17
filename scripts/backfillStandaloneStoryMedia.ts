@@ -23,12 +23,25 @@ function fileExtensionFromUrl(value: string, fallback: string): string {
   }
 }
 
+function versionTokenFromUrl(value: string): string {
+  try {
+    const pathname = new URL(value).pathname;
+    const filename = pathname.split("/").pop() ?? "";
+    const withoutExt = filename.replace(/\.[a-z0-9]+$/i, "");
+    const token = withoutExt.trim().toLowerCase();
+    return token || "current";
+  } catch {
+    return "current";
+  }
+}
+
 function buildObjectKey(doc: StandaloneStoryDoc, kind: "cover" | "audio", sourceUrl: string): string {
   const ext = kind === "cover"
     ? fileExtensionFromUrl(sourceUrl, "png")
     : fileExtensionFromUrl(sourceUrl, "mp3");
   const slug = (doc.slug || doc._id).replace(/[^a-z0-9-_]/gi, "-").toLowerCase();
-  return `media/standalone/${slug}/${kind}.${ext}`;
+  const version = versionTokenFromUrl(sourceUrl);
+  return `media/standalone/${slug}/${kind}-${version}.${ext}`;
 }
 
 async function main() {

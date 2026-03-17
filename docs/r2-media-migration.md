@@ -29,8 +29,10 @@ Bucket key layout:
 - `media/catalog/audio/<filename>`
 - `media/generated/images/<filename>`
 - `media/generated/audio/<filename>`
-- `media/standalone/<slug>/cover.<ext>`
-- `media/standalone/<slug>/audio.<ext>`
+- `media/standalone/<slug>/cover-<version>.<ext>`
+- `media/standalone/<slug>/audio-<version>.<ext>`
+- `media/polyglot/<slug>/cover-<version>.<ext>`
+- `media/polyglot/<slug>/audio-<version>.<ext>`
 
 ### Required env vars for new uploads
 
@@ -70,5 +72,7 @@ These folders can be uploaded directly to R2 while preserving the same key paths
 4. Set the `MEDIA_STORAGE_*` env vars for server-side uploads.
 5. Redeploy.
 6. Run `npm run media:backfill-standalone` to copy existing standalone story media to object storage and patch `coverUrl` / `audioUrl`.
+7. Run `npm run media:backfill-polyglot` to copy existing polyglot story media to object storage and patch `Prisma userStory.coverUrl` / `audioUrl`.
+8. If some Create stories have a newer editorial `cover` or `audio` asset inside Sanity than their external URL, run `npm run media:reconcile-create-story-assets` to copy the current Sanity asset to R2 and patch both Sanity + Prisma to that latest public URL.
 
 No code changes should be needed after that for the static catalog, and new generated media will stop landing in Sanity.

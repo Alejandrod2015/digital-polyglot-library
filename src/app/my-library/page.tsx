@@ -3,7 +3,7 @@
 
 import MyLibraryClient from "./MyLibraryClient";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export default async function MyLibraryPage() {
   // No lógica aquí — todo vive en el client

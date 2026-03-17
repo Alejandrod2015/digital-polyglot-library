@@ -1,16 +1,15 @@
 import Link from "next/link";
-import { currentUser } from "@clerk/nextjs/server";
 import { getPublicUserStories } from "@/lib/userStories";
-import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
+import {
+  getPublishedStandaloneStories,
+  isJourneyAssignedStandaloneStory,
+} from "@/lib/standaloneStories";
 import StoryVerticalCard from "@/components/StoryVerticalCard";
+export const revalidate = 300;
 
 type ExplorePolyglotStoriesPageProps = {
   searchParams: Promise<{ topic?: string; language?: string; region?: string }>;
 };
-
-function isStringArray(x: unknown): x is string[] {
-  return Array.isArray(x) && x.every((i) => typeof i === "string");
-}
 
 function normalizeTopicKey(value: string): string {
   return value
@@ -44,18 +43,11 @@ export default async function ExplorePolyglotStoriesPage({
   const languageKey = normalizeTopicKey(language ?? "");
   const regionKey = normalizeTopicKey(region ?? "");
 
-  const user = await currentUser();
-  const targetLanguagesUnknown = (user?.publicMetadata?.targetLanguages as unknown) ?? [];
-  const targetLanguages =
-    isStringArray(targetLanguagesUnknown) && targetLanguagesUnknown.length > 0
-      ? new Set(targetLanguagesUnknown.map((l) => l.toLowerCase()))
-      : null;
-
   const [userStories, standaloneStories] = await Promise.all([
     getPublicUserStories(),
     getPublishedStandaloneStories(),
   ]);
-  const normalized = [...userStories, ...standaloneStories]
+  const normalized = [...userStories, ...standaloneStories.filter((story) => !isJourneyAssignedStandaloneStory(story))]
     .map((s) => ({
       id: s.id,
       slug: s.slug,
@@ -75,12 +67,9 @@ export default async function ExplorePolyglotStoriesPage({
     }))
     .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
 
-  const filteredByLanguage = targetLanguages
-    ? normalized.filter((s) => targetLanguages.has((s.language ?? "").toLowerCase()))
-    : normalized;
   const languageFilteredStories = languageKey
-    ? filteredByLanguage.filter((s) => normalizeTopicKey(s.language ?? "") === languageKey)
-    : filteredByLanguage;
+    ? normalized.filter((s) => normalizeTopicKey(s.language ?? "") === languageKey)
+    : normalized;
   const regionFilteredStories = regionKey
     ? languageFilteredStories.filter((s) => normalizeTopicKey(s.region ?? "") === regionKey)
     : languageFilteredStories;

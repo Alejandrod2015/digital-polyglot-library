@@ -2,20 +2,9 @@
 
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Suspense } from "react";
-import { headers } from "next/headers";
 import "./globals.css";
-import Sidebar from "../components/Sidebar";
-import MobileMenu from "../components/MobileMenu";
-import MobileTabBar from "@/components/MobileTabBar";
-import BackNavigationHandler from "@/components/BackNavigationHandler";
-import FeedbackButton from "@/components/FeedbackButton";
-import NavigationTimingTracker from "@/components/NavigationTimingTracker";
-import ThemeController from "@/components/ThemeController";
-import GA4Tracker from "@/components/GA4Tracker";
-import CookieConsentBanner from "@/components/CookieConsentBanner";
-import ServiceWorkerBootstrap from "@/components/ServiceWorkerBootstrap";
 import { clerkAppearance } from "@/lib/clerkAppearance";
+import AppShell from "@/components/AppShell";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -50,17 +39,6 @@ export default async function RootLayout({
     process.env.VERCEL_DEPLOYMENT_ID ||
     process.env.VERCEL_URL ||
     "dev-local";
-  const pathname = (await headers()).get("x-pathname") ?? "";
-  const isMetricsView = pathname.startsWith("/studio/metrics");
-  const isAuthFlowView =
-    pathname.startsWith("/auth/") ||
-    pathname.startsWith("/sign-in") ||
-    pathname.startsWith("/sign-up");
-  const mainClassName = isMetricsView
-    ? "no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 px-1 py-6 overflow-y-auto bg-[var(--bg-content)]"
-    : isAuthFlowView
-    ? "no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 px-1 py-6 overflow-y-auto bg-[var(--bg-content)]"
-    : "no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 md:ml-64 px-1 py-6 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-[env(safe-area-inset-bottom)] overflow-y-auto bg-[var(--bg-content)]";
 
   return (
     <ClerkProvider
@@ -78,42 +56,7 @@ export default async function RootLayout({
 
         {/* ✅ layout estable: usa min-h-screen, no h-screen */}
         <body className="bg-[var(--bg-content)] text-[var(--foreground)] min-h-screen flex flex-col pt-[env(safe-area-inset-top)]">
-          {!isMetricsView && !isAuthFlowView ? (
-            <>
-              {/* Sidebar (desktop) */}
-              <aside className="hidden md:flex md:w-64 bg-[var(--bg-sidebar)] fixed top-0 left-0 bottom-0 z-20">
-                <Sidebar />
-              </aside>
-
-              <MobileMenu />
-              <ThemeController />
-              <ServiceWorkerBootstrap currentVersion={currentVersion} />
-              <BackNavigationHandler />
-            </>
-          ) : null}
-          {!isAuthFlowView ? (
-            <>
-              <Suspense fallback={null}>
-                <GA4Tracker />
-              </Suspense>
-              <Suspense fallback={null}>
-                <NavigationTimingTracker />
-              </Suspense>
-            </>
-          ) : null}
-
-          {/* Main content scrollable */}
-          <main className={mainClassName}>
-            {children}
-          </main>
-          <CookieConsentBanner />
-
-          {!isMetricsView && !isAuthFlowView ? (
-            <>
-              <MobileTabBar />
-              <FeedbackButton />
-            </>
-          ) : null}
+          <AppShell currentVersion={currentVersion}>{children}</AppShell>
         </body>
       </html>
     </ClerkProvider>

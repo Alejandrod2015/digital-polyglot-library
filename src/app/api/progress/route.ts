@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { books } from "@/data/books";
 
@@ -270,13 +271,28 @@ function computePracticeFromMetrics(rows: MetricRow[], weekStart: Date) {
   };
 }
 
-export async function GET(req: NextRequest): Promise<Response> {
-  const { userId } = getAuth(req);
-  if (!userId) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+type ProgressResponsePayload = {
+  minutesListened: number;
+  storiesFinished: number;
+  booksFinished: number;
+  wordsLearned: number;
+  weeklyGoalMinutes: number;
+  weeklyMinutesListened: number;
+  weeklyGoalStories: number;
+  weeklyStoriesFinished: number;
+  monthlyStoriesFinished: number;
+  storyStreakDays: number;
+  regionsExplored: number;
+  practiceSessionsCompleted: number;
+  weeklyPracticeSessions: number;
+  weeklyGoalPracticeSessions: number;
+  practiceAccuracy: number;
+  practiceStreakDays: number;
+  streakDays: number;
+};
 
-  try {
+const getProgressPayloadCached = unstable_cache(
+  async (userId: string): Promise<ProgressResponsePayload> => {
     const weekStart = getStartOfWeekUtc();
     const monthStart = getStartOfMonthUtc();
 
@@ -355,7 +371,6 @@ export async function GET(req: NextRequest): Promise<Response> {
     const practiceComputed = computePracticeFromMetrics(metrics, weekStart);
     const continueComputed = computeFromContinueRows(continueRows, weekStart);
 
-    // Merge both sources so progress remains stable even if one source is temporarily sparse.
     const totalListeningSec = Math.max(
       metricsComputed.totalSeconds,
       continueComputed.totalSeconds
@@ -381,6 +396,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     );
 
     const bookById = new Map(Object.values(books).map((b) => [b.id, b] as const));
+    const bookBySlug = new Map(Object.values(books).map((b) => [b.slug, b] as const));
     let finishedBooks = 0;
     const exploredRegions = new Set<string>();
     for (const lb of libraryBooks) {
@@ -394,15 +410,16 @@ export async function GET(req: NextRequest): Promise<Response> {
       if (allCompleted) finishedBooks += 1;
     }
 
+    const userStoryRegionBySlug = new Map(publicUserStories.map((story) => [story.slug, story.region] as const));
     for (const key of completedStories) {
       const [bookSlug, storySlug] = key.split(":");
       if (bookSlug) {
-        const matchedBook = Object.values(books).find((book) => book.slug === bookSlug);
+        const matchedBook = bookBySlug.get(bookSlug);
         if (matchedBook?.region) exploredRegions.add(String(matchedBook.region));
         continue;
       }
-      const matchedStory = publicUserStories.find((story) => story.slug === storySlug);
-      if (matchedStory?.region) exploredRegions.add(String(matchedStory.region));
+      const matchedRegion = userStoryRegionBySlug.get(storySlug);
+      if (matchedRegion) exploredRegions.add(String(matchedRegion));
     }
 
     const weeklyStoriesFinished = [...completionEvents.values()].filter((date) => date >= weekStart).length;
@@ -414,7 +431,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       practiceComputed.practiceStreakDays
     );
 
-    return NextResponse.json({
+    return {
       minutesListened: roundMinutes(totalListeningSec),
       storiesFinished: completedStories.size,
       booksFinished: finishedBooks,
@@ -432,7 +449,21 @@ export async function GET(req: NextRequest): Promise<Response> {
       practiceAccuracy: practiceComputed.practiceAccuracy,
       practiceStreakDays: practiceComputed.practiceStreakDays,
       streakDays,
-    });
+    };
+  },
+  ["progress-payload-v1"],
+  { revalidate: 30 }
+);
+
+export async function GET(req: NextRequest): Promise<Response> {
+  const { userId } = getAuth(req);
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  try {
+    const payload = await getProgressPayloadCached(userId);
+    return NextResponse.json(payload);
   } catch (err) {
     console.error("Error in GET /api/progress:", err);
     return NextResponse.json({ error: "Database error" }, { status: 500 });

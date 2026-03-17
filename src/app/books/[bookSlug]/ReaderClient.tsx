@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useUser } from '@clerk/nextjs';
 import type { Book, Story } from '@/types/books';
 import Player from '@/components/Player';
 import StoryContent from '@/components/StoryContent';
@@ -12,7 +13,7 @@ import { getStoriesReadCount, getStoriesLimit, addStoryToHistory } from '@/utils
 type UserPlan = 'free' | 'basic' | 'premium' | 'polyglot' | 'owner';
 
 export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; userPlan?: UserPlan }) {
-  console.log('🟢 User plan:', userPlan);
+  const { user, isLoaded } = useUser();
   const stripPunct = (s: string) => s.replace(/[.,!?;:()"'«»¿¡]/g, '');
   const highlightWord = (text: string, word: string) => {
     if (!word) return text;
@@ -39,6 +40,9 @@ export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; 
   const [/* saved */, setSaved] = useState(false);
   const [/* errorMessage */, setErrorMessage] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const effectiveUserPlan = isLoaded
+    ? ((user?.publicMetadata?.plan as UserPlan | undefined) ?? userPlan)
+    : userPlan;
 
 
   // Control de modo móvil
@@ -50,6 +54,7 @@ export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; 
   }, []);
 
   const story = book.stories.find((s) => s.id === selectedStoryId);
+  const storyId = story?.id ?? '';
   const currentIndex = book.stories.findIndex((s) => s.id === selectedStoryId);
   const hasStoryAudio = typeof story?.audio === "string" && story.audio.trim() !== "";
   const trackUpgradeCta = async (source: string) => {
@@ -70,42 +75,42 @@ export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; 
 
   // --- Registro de lectura ---
   useEffect(() => {
-    if (!story || !userPlan) return;
+    if (!storyId || !effectiveUserPlan) return;
 
-    if (userPlan === 'free' || userPlan === 'basic') {
-      const readCount = getStoriesReadCount(userPlan);
-      const limit = userPlan === 'free' ? 10 : 1;
+    if (effectiveUserPlan === 'free' || effectiveUserPlan === 'basic') {
+      const readCount = getStoriesReadCount(effectiveUserPlan);
+      const limit = effectiveUserPlan === 'free' ? 10 : 1;
       const overLimit = readCount >= limit;
 
       if (overLimit) {
         alert(
-          userPlan === 'free'
+          effectiveUserPlan === 'free'
             ? "You've reached the limit of 10 free stories."
             : "You've read your daily story as a Basic user."
         );
       } else {
-        addStoryToHistory(story.id);
+        addStoryToHistory(storyId);
       }
     }
-  }, [story?.id, userPlan]);
+  }, [storyId, effectiveUserPlan]);
 
   // --- Estado de límites ---
 const [limitReached, setLimitReached] = useState(false);
-const [storiesLeft, setStoriesLeft] = useState<number | null>(null);
+const [, setStoriesLeft] = useState<number | null>(null);
 
 useEffect(() => {
   if (typeof window === 'undefined') return;
 
-  if (userPlan === 'free' || userPlan === 'basic') {
-    const count = getStoriesReadCount(userPlan);
-    const limit = getStoriesLimit(userPlan);
+  if (effectiveUserPlan === 'free' || effectiveUserPlan === 'basic') {
+    const count = getStoriesReadCount(effectiveUserPlan);
+    const limit = getStoriesLimit(effectiveUserPlan);
     setStoriesLeft(Math.max(0, limit - count));
     setLimitReached(count >= limit);
   } else {
     setLimitReached(false);
     setStoriesLeft(null);
   }
-}, [userPlan, story?.id]);
+}, [effectiveUserPlan, storyId]);
 
   if (!story) {
     return <div className="p-8 text-center">Selected story not found.</div>;
@@ -115,7 +120,7 @@ useEffect(() => {
     return (
       <div className="p-8 text-center text-red-400 space-y-4">
         <h2 className="text-2xl font-bold">
-          {userPlan === 'free'
+          {effectiveUserPlan === 'free'
             ? "You've reached the limit of 10 free stories."
             : "You've read your daily story as a Basic user."}
         </h2>

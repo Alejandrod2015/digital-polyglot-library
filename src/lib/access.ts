@@ -50,6 +50,28 @@ export function canAccessFeaturedStory(opts: {
   return false;
 }
 
+export function canAccessStoryContent(opts: {
+  plan: Plan;
+  isWeeklyStory: boolean;
+  isDailyStory: boolean;
+  ownsBook?: boolean;
+}): boolean {
+  const { plan, isWeeklyStory, isDailyStory, ownsBook = false } = opts;
+
+  if (plan === "premium" || plan === "polyglot" || plan === "owner") return true;
+  if (ownsBook) return true;
+
+  if (plan === "basic") {
+    return isWeeklyStory || isDailyStory;
+  }
+
+  if (plan === "free") {
+    return isWeeklyStory;
+  }
+
+  return false;
+}
+
 export function canUseOfflineAccess(plan: Plan): boolean {
   return (
     plan === "basic" ||

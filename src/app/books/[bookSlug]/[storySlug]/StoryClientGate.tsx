@@ -61,8 +61,8 @@ export default function StoryClientGate({
 
   return (
     <div className="relative">
-      {/* Contenido completo, pero recortado visualmente con max-height + overflow-hidden */}
-      <div className="relative max-h-[40vh] overflow-hidden">
+      {/* Contenido bloqueado con una altura fija para que el reveal sea consistente */}
+      <div className="relative max-h-[28rem] overflow-hidden">
         {children}
 
         {/* Fade overlay adaptado al tema para evitar contraste raro en claro */}

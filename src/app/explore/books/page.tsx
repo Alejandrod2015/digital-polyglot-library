@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { books } from "@/data/books";
-import { currentUser } from "@clerk/nextjs/server";
 import type { Book } from "@/types/books";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
 import { getBookCardMeta } from "@/lib/bookCardMeta";
@@ -9,9 +8,7 @@ type ExploreBooksPageProps = {
   searchParams: Promise<{ topic?: string }>;
 };
 
-function isStringArray(x: unknown): x is string[] {
-  return Array.isArray(x) && x.every((i) => typeof i === "string");
-}
+export const revalidate = 300;
 
 function normalizeTopicKey(value: string): string {
   return value
@@ -41,25 +38,12 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
   const { topic } = await searchParams;
   const topicKey = normalizeTopicKey(topic ?? "");
 
-  const user = await currentUser();
-  const targetLanguagesUnknown = (user?.publicMetadata?.targetLanguages as unknown) ?? [];
-  const targetLanguages =
-    isStringArray(targetLanguagesUnknown) && targetLanguagesUnknown.length > 0
-      ? new Set(targetLanguagesUnknown.map((l) => l.toLowerCase()))
-      : null;
-
   const allBooks = Object.values(books) as Book[];
-  const filteredByLanguage = targetLanguages
-    ? allBooks.filter((book) => {
-        return typeof book.language === "string" && targetLanguages.has(book.language.toLowerCase());
-      })
-    : allBooks;
-
   const filteredBooks = topicKey
-    ? filteredByLanguage.filter((book) =>
+    ? allBooks.filter((book) =>
         extractBookTopics(book).some((t) => normalizeTopicKey(t) === topicKey)
       )
-    : filteredByLanguage;
+    : allBooks;
 
   return (
     <div className="max-w-6xl mx-auto p-8 text-[var(--foreground)]">

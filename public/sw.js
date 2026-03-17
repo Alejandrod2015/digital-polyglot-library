@@ -1,7 +1,6 @@
 const STATIC_CACHE = "dp-static-v1";
 const RUNTIME_CACHE = "dp-runtime-v1";
 const MEDIA_CACHE = "dp-media-v1";
-const API_CACHE = "dp-api-v1";
 
 const APP_SHELL_URLS = [
   "/",
@@ -28,7 +27,7 @@ self.addEventListener("activate", (event) => {
     caches.keys().then((keys) =>
       Promise.all(
         keys
-          .filter((key) => ![STATIC_CACHE, RUNTIME_CACHE, MEDIA_CACHE, API_CACHE].includes(key))
+          .filter((key) => ![STATIC_CACHE, RUNTIME_CACHE, MEDIA_CACHE].includes(key))
           .map((key) => caches.delete(key))
       )
     )
@@ -62,6 +61,43 @@ async function networkFirst(request, cacheName) {
   }
 }
 
+async function matchNavigationFallback(request) {
+  const direct = await caches.match(request, { ignoreSearch: true });
+  if (direct) return direct;
+
+  const url = new URL(request.url);
+  const canonicalRequest = new Request(url.pathname, {
+    method: "GET",
+    credentials: "same-origin",
+  });
+
+  return caches.match(canonicalRequest, { ignoreSearch: true });
+}
+
+async function navigationNetworkFirst(request, cacheName) {
+  try {
+    const response = await fetch(request);
+    if (response && response.ok) {
+      const cache = await caches.open(cacheName);
+      cache.put(request, response.clone());
+
+      const url = new URL(request.url);
+      if (url.search) {
+        const canonicalRequest = new Request(url.pathname, {
+          method: "GET",
+          credentials: "same-origin",
+        });
+        cache.put(canonicalRequest, response.clone());
+      }
+    }
+    return response;
+  } catch (error) {
+    const cached = await matchNavigationFallback(request);
+    if (cached) return cached;
+    throw error;
+  }
+}
+
 self.addEventListener("fetch", (event) => {
   const request = event.request;
   if (request.method !== "GET") return;
@@ -70,7 +106,7 @@ self.addEventListener("fetch", (event) => {
   const isSameOrigin = url.origin === self.location.origin;
 
   if (request.mode === "navigate") {
-    event.respondWith(networkFirst(request, RUNTIME_CACHE));
+    event.respondWith(navigationNetworkFirst(request, RUNTIME_CACHE));
     return;
   }
 
@@ -78,17 +114,6 @@ self.addEventListener("fetch", (event) => {
     if (/\.(mp3|m4a|wav|ogg|jpg|jpeg|png|webp|avif)$/i.test(url.pathname)) {
       event.respondWith(cacheFirst(request, MEDIA_CACHE));
     }
-    return;
-  }
-
-  if (
-    url.pathname.startsWith("/api/favorites") ||
-    url.pathname.startsWith("/api/library") ||
-    url.pathname.startsWith("/api/journey/practice") ||
-    url.pathname.startsWith("/api/user-stories") ||
-    url.pathname.startsWith("/api/standalone-story-audio")
-  ) {
-    event.respondWith(networkFirst(request, API_CACHE));
     return;
   }
 

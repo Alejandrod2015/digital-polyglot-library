@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { books } from "@/data/books";
-import { currentUser } from "@clerk/nextjs/server";
 import type { Book, Story } from "@/types/books";
 import ExploreStoryCardsClient from "@/components/ExploreStoryCardsClient";
-import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
+import {
+  getPublishedStandaloneStories,
+  isJourneyAssignedStandaloneStory,
+} from "@/lib/standaloneStories";
 import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
+export const revalidate = 300;
 
 type ExploreStoriesPageProps = {
   searchParams: Promise<{ topic?: string; language?: string; region?: string }>;
@@ -24,10 +27,6 @@ type StoryItem = {
   topic?: string;
   topics: string[];
 };
-
-function isStringArray(x: unknown): x is string[] {
-  return Array.isArray(x) && x.every((i) => typeof i === "string");
-}
 
 function normalizeTopicKey(value: string): string {
   return value
@@ -122,17 +121,12 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
   const languageKey = normalizeTopicKey(language ?? "");
   const regionKey = normalizeTopicKey(region ?? "");
 
-  const user = await currentUser();
-  const targetLanguagesUnknown = (user?.publicMetadata?.targetLanguages as unknown) ?? [];
-  const targetLanguages =
-    isStringArray(targetLanguagesUnknown) && targetLanguagesUnknown.length > 0
-      ? new Set(targetLanguagesUnknown.map((l) => l.toLowerCase()))
-      : null;
-
   const standaloneStories = await getPublishedStandaloneStories();
   const allStories = [
     ...extractStories(),
-    ...standaloneStories.map((story) => ({
+    ...standaloneStories
+      .filter((story) => !isJourneyAssignedStandaloneStory(story))
+      .map((story) => ({
       id: `standalone:${story.id}`,
       bookSlug: "standalone",
       bookTitle: "Individual Stories",
@@ -147,12 +141,9 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
       topics: [...toTopicList(story.topic), ...toTopicList(story.theme)],
     })),
   ];
-  const filteredByLanguage = targetLanguages
-    ? allStories.filter((s) => targetLanguages.has((s.language ?? "").toLowerCase()))
-    : allStories;
   const languageFilteredStories = languageKey
-    ? filteredByLanguage.filter((s) => normalizeTopicKey(s.language ?? "") === languageKey)
-    : filteredByLanguage;
+    ? allStories.filter((s) => normalizeTopicKey(s.language ?? "") === languageKey)
+    : allStories;
   const regionFilteredStories = regionKey
     ? languageFilteredStories.filter((s) => normalizeTopicKey(s.region ?? "") === regionKey)
     : languageFilteredStories;

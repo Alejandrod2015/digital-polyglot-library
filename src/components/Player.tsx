@@ -14,24 +14,41 @@ import {
 } from "lucide-react";
 import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
 
-const TRACKED_PLAYER_EVENTS = new Set(["audio_play", "audio_complete"]);
+const TRACKED_PLAYER_EVENTS = new Set([
+  "audio_play",
+  "audio_pause",
+  "audio_complete",
+  "continue_listening",
+]);
 
 async function trackMetric(
   storySlug: string,
   bookSlug: string,
   eventType: string,
-  value?: number
+  value?: number,
+  metadata?: Record<string, unknown>
 ) {
   if (!TRACKED_PLAYER_EVENTS.has(eventType)) return;
   try {
     await fetch("/api/metrics", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ storySlug, bookSlug, eventType, value }),
+      body: JSON.stringify({ storySlug, bookSlug, eventType, value, metadata }),
     });
   } catch {
     // silencioso
   }
+}
+
+function buildContinueMetricMetadata(progressSec?: number, audioDurationSec?: number) {
+  return {
+    ...(typeof progressSec === "number" && Number.isFinite(progressSec)
+      ? { progressSec: Math.max(0, Math.round(progressSec)) }
+      : {}),
+    ...(typeof audioDurationSec === "number" && Number.isFinite(audioDurationSec)
+      ? { audioDurationSec: Math.max(0, Math.round(audioDurationSec)) }
+      : {}),
+  };
 }
 
 async function syncContinueListening(
@@ -315,31 +332,51 @@ export default function Player({
     if (!audio) return;
 
     const interval = window.setInterval(() => {
+      const currentDuration =
+        Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : duration;
       rememberContinueListening(audio.currentTime);
       void syncContinueListening(
         storySlug,
         bookSlug,
         audio.currentTime,
-        Number.isFinite(audio.duration) ? audio.duration : duration
+        currentDuration
       );
-    }, 5000);
+      void trackMetric(
+        storySlug,
+        bookSlug,
+        "continue_listening",
+        audio.currentTime,
+        buildContinueMetricMetadata(audio.currentTime, currentDuration)
+      );
+    }, 15000);
 
     const persistNow = () => {
       const currentProgress = audio.currentTime;
       const currentDuration =
         Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : duration;
       rememberContinueListening(audio.currentTime);
+      void trackMetric(
+        storySlug,
+        bookSlug,
+        "continue_listening",
+        currentProgress,
+        buildContinueMetricMetadata(currentProgress, currentDuration)
+      );
       syncContinueListeningBeacon(storySlug, bookSlug, currentProgress, currentDuration);
       void syncContinueListening(storySlug, bookSlug, currentProgress, currentDuration);
     };
+    const handleVisibilityChange = () => {
+      if (document.visibilityState !== "hidden") return;
+      persistNow();
+    };
 
     window.addEventListener("pagehide", persistNow);
-    document.addEventListener("visibilitychange", persistNow);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       window.clearInterval(interval);
       window.removeEventListener("pagehide", persistNow);
-      document.removeEventListener("visibilitychange", persistNow);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [
     hasPlayableAudio,
@@ -361,6 +398,13 @@ export default function Player({
           ? audioElement.duration
           : duration;
       rememberContinueListening(currentProgress);
+      void trackMetric(
+        storySlug,
+        bookSlug,
+        "continue_listening",
+        currentProgress,
+        buildContinueMetricMetadata(currentProgress, currentDuration)
+      );
       syncContinueListeningBeacon(storySlug, bookSlug, currentProgress, currentDuration);
       void syncContinueListening(storySlug, bookSlug, currentProgress, currentDuration);
     };
@@ -410,6 +454,26 @@ export default function Player({
     if (isPlaying) {
       a.pause();
       rememberContinueListening(a.currentTime);
+      await trackMetric(
+        storySlug,
+        bookSlug,
+        "audio_pause",
+        a.currentTime,
+        buildContinueMetricMetadata(
+          a.currentTime,
+          Number.isFinite(a.duration) ? a.duration : duration
+        )
+      );
+      await trackMetric(
+        storySlug,
+        bookSlug,
+        "continue_listening",
+        a.currentTime,
+        buildContinueMetricMetadata(
+          a.currentTime,
+          Number.isFinite(a.duration) ? a.duration : duration
+        )
+      );
       void syncContinueListening(
         storySlug,
         bookSlug,
