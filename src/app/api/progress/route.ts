@@ -305,9 +305,6 @@ const getProgressPayloadCached = unstable_cache(
             eventType: {
               in: [
                 "audio_complete",
-                "continue_listening",
-                "audio_play",
-                "practice_session_started",
                 "practice_session_completed",
               ],
             },
@@ -321,7 +318,7 @@ const getProgressPayloadCached = unstable_cache(
             createdAt: true,
           },
           orderBy: { createdAt: "desc" },
-          take: 5000,
+          take: 1000,
         }),
         [] as MetricRow[]
       ),

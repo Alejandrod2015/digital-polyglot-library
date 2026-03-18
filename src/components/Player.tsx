@@ -18,8 +18,10 @@ const TRACKED_PLAYER_EVENTS = new Set([
   "audio_play",
   "audio_pause",
   "audio_complete",
-  "continue_listening",
 ]);
+
+const CONTINUE_SYNC_INTERVAL_MS = 60_000;
+const MIN_PROGRESS_PERSIST_DELTA_SEC = 20;
 
 async function trackMetric(
   storySlug: string,
@@ -144,6 +146,7 @@ export default function Player({
   const [duration, setDuration] = useState(0);
 
   const wakeLockRef = useRef<WakeLockSentinel | null>(null);
+  const lastPersistedProgressRef = useRef<number | null>(null);
   const navWL = getWakeLockNavigator();
 
   const requestWakeLock = async () => {
@@ -287,6 +290,21 @@ export default function Player({
     }
   }, [bookSlug, continueMeta, duration, hasPlayableAudio, storySlug]);
 
+  const shouldPersistProgress = useCallback((progressSec?: number) => {
+    if (typeof progressSec !== "number" || !Number.isFinite(progressSec) || progressSec < 0) {
+      return false;
+    }
+
+    const rounded = Math.max(0, Math.round(progressSec));
+    const previous = lastPersistedProgressRef.current;
+    if (previous === null || Math.abs(rounded - previous) >= MIN_PROGRESS_PERSIST_DELTA_SEC) {
+      lastPersistedProgressRef.current = rounded;
+      return true;
+    }
+
+    return false;
+  }, []);
+
   // ✅ tracking: carga de audio
   useEffect(() => {
     if (!hasPlayableAudio) return;
@@ -334,48 +352,36 @@ export default function Player({
     const interval = window.setInterval(() => {
       const currentDuration =
         Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : duration;
+      if (!shouldPersistProgress(audio.currentTime)) return;
       rememberContinueListening(audio.currentTime);
-      void syncContinueListening(
-        storySlug,
-        bookSlug,
-        audio.currentTime,
-        currentDuration
-      );
-      void trackMetric(
-        storySlug,
-        bookSlug,
-        "continue_listening",
-        audio.currentTime,
-        buildContinueMetricMetadata(audio.currentTime, currentDuration)
-      );
-    }, 15000);
+      void syncContinueListening(storySlug, bookSlug, audio.currentTime, currentDuration);
+    }, CONTINUE_SYNC_INTERVAL_MS);
 
-    const persistNow = () => {
+    const persistNow = (transport: "fetch" | "beacon" = "fetch") => {
       const currentProgress = audio.currentTime;
       const currentDuration =
         Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : duration;
+      if (!shouldPersistProgress(currentProgress)) return;
       rememberContinueListening(audio.currentTime);
-      void trackMetric(
-        storySlug,
-        bookSlug,
-        "continue_listening",
-        currentProgress,
-        buildContinueMetricMetadata(currentProgress, currentDuration)
-      );
-      syncContinueListeningBeacon(storySlug, bookSlug, currentProgress, currentDuration);
+      if (transport === "beacon") {
+        syncContinueListeningBeacon(storySlug, bookSlug, currentProgress, currentDuration);
+        return;
+      }
       void syncContinueListening(storySlug, bookSlug, currentProgress, currentDuration);
     };
     const handleVisibilityChange = () => {
       if (document.visibilityState !== "hidden") return;
-      persistNow();
+      persistNow("beacon");
     };
 
-    window.addEventListener("pagehide", persistNow);
+    const handlePageHide = () => persistNow("beacon");
+
+    window.addEventListener("pagehide", handlePageHide);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       window.clearInterval(interval);
-      window.removeEventListener("pagehide", persistNow);
+      window.removeEventListener("pagehide", handlePageHide);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [
@@ -386,6 +392,7 @@ export default function Player({
     storySlug,
     rememberContinueListening,
     canTrackContinueListening,
+    shouldPersistProgress,
   ]);
 
   useEffect(() => {
@@ -397,15 +404,8 @@ export default function Player({
         audioElement && Number.isFinite(audioElement.duration) && audioElement.duration > 0
           ? audioElement.duration
           : duration;
+      if (!shouldPersistProgress(currentProgress)) return;
       rememberContinueListening(currentProgress);
-      void trackMetric(
-        storySlug,
-        bookSlug,
-        "continue_listening",
-        currentProgress,
-        buildContinueMetricMetadata(currentProgress, currentDuration)
-      );
-      syncContinueListeningBeacon(storySlug, bookSlug, currentProgress, currentDuration);
       void syncContinueListening(storySlug, bookSlug, currentProgress, currentDuration);
     };
   }, [
@@ -416,6 +416,7 @@ export default function Player({
     duration,
     rememberContinueListening,
     canTrackContinueListening,
+    shouldPersistProgress,
   ]);
 
   useEffect(() => {
@@ -454,20 +455,11 @@ export default function Player({
     if (isPlaying) {
       a.pause();
       rememberContinueListening(a.currentTime);
+      lastPersistedProgressRef.current = Math.max(0, Math.round(a.currentTime));
       await trackMetric(
         storySlug,
         bookSlug,
         "audio_pause",
-        a.currentTime,
-        buildContinueMetricMetadata(
-          a.currentTime,
-          Number.isFinite(a.duration) ? a.duration : duration
-        )
-      );
-      await trackMetric(
-        storySlug,
-        bookSlug,
-        "continue_listening",
         a.currentTime,
         buildContinueMetricMetadata(
           a.currentTime,
@@ -487,6 +479,7 @@ export default function Player({
         .then(async () => {
           setIsPlaying(true);
           rememberContinueListening(a.currentTime);
+          lastPersistedProgressRef.current = Math.max(0, Math.round(a.currentTime));
           void syncContinueListening(
             storySlug,
             bookSlug,

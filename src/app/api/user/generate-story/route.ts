@@ -18,6 +18,12 @@ import {
 import { broadLevelFromCefr, cefrPromptLabel, normalizeCefrLevel, normalizeBroadLevel } from "@/lib/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 import { syncCreateStoryMirror } from "@/lib/createStoryMirror";
+import {
+  computeDynamicVocabRange,
+  computeSoftMinimum,
+  stripHtml,
+  validateAndNormalizeVocab,
+} from "@/lib/vocabValidation";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
@@ -261,6 +267,13 @@ function normalizeStoryHtml(html: string): string {
   return withParagraphs;
 }
 
+function stripLegacyVocabSpans(text: string): string {
+  return text.replace(
+    /<span\s+[^>]*class=['"]vocab-word['"][^>]*data-word=['"][^'"]+['"][^>]*>(.*?)<\/span>/giu,
+    (_match: string, inner: string) => inner
+  );
+}
+
 function normalizeComparableTitle(value: string): string {
   return value
     .normalize("NFD")
@@ -389,6 +402,27 @@ function unwrapRemovedVocabSpans(text: string, wordsToRemove: Set<string>): stri
       return inner;
     }
   );
+}
+
+function mergeVocab(base: StoryVocabItem[], incoming: StoryVocabItem[], language?: string): StoryVocabItem[] {
+  return sanitizeVocab([...base, ...incoming], language);
+}
+
+function extractCandidateWords(text: string, max = 500): string[] {
+  const matches = text.match(/[\p{L}][\p{L}\p{M}\-']*/gu) ?? [];
+  const counts = new Map<string, number>();
+
+  for (const token of matches) {
+    const clean = token.trim();
+    if (!clean || clean.length < 3) continue;
+    const lower = clean.toLowerCase();
+    counts.set(lower, (counts.get(lower) ?? 0) + 1);
+  }
+
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, max)
+    .map(([token]) => token);
 }
 
 function parseModelJson(content: string): unknown {
@@ -586,6 +620,104 @@ ${text.slice(0, 9000)}
     );
   } catch (error) {
     console.warn("[vocab] fill pass failed", error);
+    return [];
+  }
+}
+
+async function requestVocabFromStoryText(
+  openaiClient: OpenAI,
+  args: {
+    text: string;
+    language: string;
+    variant?: string | null;
+    level: string;
+    cefrLevel?: string;
+    focus: string;
+    topic: string;
+    minItems: number;
+    maxItems: number;
+    candidates?: string[];
+  }
+): Promise<StoryVocabItem[]> {
+  const {
+    text,
+    language,
+    variant,
+    level,
+    cefrLevel,
+    focus,
+    topic,
+    minItems,
+    maxItems,
+    candidates = [],
+  } = args;
+  const variantClause = buildVariantPromptClause(language, normalizeVariant(variant));
+  const candidateBlock =
+    candidates.length > 0
+      ? `\nUse ONLY words/phrases from this exact candidate list:\n${candidates.join(", ")}\n`
+      : "";
+
+  const prompt = `
+You extract study vocabulary from language-learning stories.
+
+Task:
+- Return ONLY a JSON array.
+- Extract between ${minItems} and ${maxItems} useful words/phrases from the story.
+- Prioritize this focus: "${focus}".
+- Story language: ${language}.
+- Learner level: ${cefrPromptLabel(cefrLevel, level)}.
+- Story topic/context: ${topic || "general"}.
+${variantClause}
+- Each item must have:
+  - "word": exact form as it appears in the story text
+  - "definition": clear English explanation with 8-18 words, including nuance or typical usage in context
+  - "type": one label among ["verb","noun","adjective","adverb","expression","slang","other"]
+- Prefer high-learning-value items that are practical, reusable, nuanced, or culturally grounded.
+- Do not include duplicates.
+- Avoid ultra-generic items unless they are essential to the story meaning.
+- Avoid globally known anglicisms (internet, marketing, smartphone, software, meeting, etc.) unless truly unavoidable.
+- Avoid transparent international/basic items such as "importante", "normal", "general", "social", or their direct equivalents unless part of a fixed expression.
+- Single words are preferred.
+- If you return more than one word, it must be a short lexicalized expression or idiom (usually 2-3 words).
+- Any multi-word item MUST use type "expression".
+- Good examples: "de repente", "por fin", "al menos".
+- Bad examples: "con cada ensayo", "buenos momentos", "manos temblando", "sazonar correctamente", "mostrar lo que somos", "llenaba de emoción".
+- Start each definition with a capital letter.
+- Definitions must explain usage/nuance, not just translate the word.
+- Definitions must not begin with a literal gloss followed by a comma or colon.
+${candidateBlock}
+`;
+
+  try {
+    const response = await openaiClient.chat.completions.create({
+      model: "gpt-4o-mini",
+      temperature: 0.2,
+      messages: [
+        {
+          role: "system",
+          content: "You are a precise vocabulary extraction assistant. Output valid JSON only.",
+        },
+        {
+          role: "user",
+          content: `${prompt}\n\nStory:\n${text}`,
+        },
+      ],
+    });
+
+    const content = response.choices[0]?.message?.content?.trim();
+    if (!content) return [];
+
+    const parsed = parseModelJson(content);
+    const rows = Array.isArray(parsed) ? parsed : [];
+    const normalized = sanitizeVocab(rows as StoryVocabItem[], language);
+    return normalized.filter(
+      (item) =>
+        !isUniversalAnglicism(item.word, language) &&
+        !isDiscouragedTransparentWord(item.word, language) &&
+        !isInvalidMultiwordVocab(item.word, { type: item.type, storyText: text })
+    );
+  } catch (error) {
+    console.warn("[vocab] extraction pass failed", error);
     return [];
   }
 }
@@ -802,72 +934,114 @@ Return ONLY valid JSON:
     const { title, text, vocab } = selectedStory;
 
     // 🔹 Normalizar texto HTML para formato consistente
-    let normalizedText = normalizeStoryHtml(text);
+    let normalizedText = stripLegacyVocabSpans(normalizeStoryHtml(text));
     if (hasInlineGlossaryExplanation(normalizedText)) {
       return NextResponse.json(
         { error: "Generated story contains inline glossary explanations and was rejected." },
         { status: 502 }
       );
     }
-    let curatedVocab = sanitizeVocab(vocab, language);
+    const plainText = stripHtml(normalizedText);
+    const dynamicRange = computeDynamicVocabRange(plainText);
+    const minVocabItems = Math.min(
+      Math.max(dynamicRange.minItems, TARGET_VOCAB_ITEMS - 4),
+      dynamicRange.maxItems
+    );
+    const maxVocabItems = Math.max(
+      minVocabItems,
+      Math.min(32, Math.max(dynamicRange.maxItems, TARGET_VOCAB_ITEMS))
+    );
+    const minimumUsableItems = computeSoftMinimum(minVocabItems);
 
-    const disallowedKeys = new Set<string>();
-    for (const item of curatedVocab) {
-      if (
-        isUniversalAnglicism(item.word, language) ||
-        isSimpleWord(item.word, language) ||
-        isDiscouragedTransparentWord(item.word, language) ||
-        isInvalidMultiwordVocab(item.word, { type: item.type, storyText: normalizedText })
-      ) {
-        disallowedKeys.add(normalizeToken(item.word));
-      }
-    }
-    if (disallowedKeys.size > 0) {
-      curatedVocab = curatedVocab.filter((item) => !disallowedKeys.has(normalizeToken(item.word)));
-      normalizedText = unwrapRemovedVocabSpans(normalizedText, disallowedKeys);
-    }
+    let vocabPool = sanitizeVocab(vocab, language).filter(
+      (item) =>
+        !isUniversalAnglicism(item.word, language) &&
+        !isDiscouragedTransparentWord(item.word, language) &&
+        !isInvalidMultiwordVocab(item.word, { type: item.type, storyText: plainText })
+    );
 
-    if (curatedVocab.length < TARGET_VOCAB_ITEMS) {
-      const missing = TARGET_VOCAB_ITEMS - curatedVocab.length;
-      const filled = await generateComplexVocabFill(openai, {
-        text: normalizedText,
+    const extractedVocab = await requestVocabFromStoryText(openai, {
+      text: plainText,
+      language,
+      variant: normalizedVariant,
+      level: normalizedBroadLevel,
+      cefrLevel: normalizedCefrLevel ?? undefined,
+      focus,
+      topic: resolvedTopic,
+      minItems: minVocabItems,
+      maxItems: maxVocabItems,
+    });
+    vocabPool = mergeVocab(vocabPool, extractedVocab, language);
+
+    if (vocabPool.length < minVocabItems) {
+      const refill = await requestVocabFromStoryText(openai, {
+        text: plainText,
         language,
-        level: learnerProfile,
+        variant: normalizedVariant,
+        level: normalizedBroadLevel,
         cefrLevel: normalizedCefrLevel ?? undefined,
-        focus,
+        focus: `${focus} (strictly provide practical, reusable vocabulary; prefer strong single words over weak expressions)`,
         topic: resolvedTopic,
-        existingVocab: curatedVocab,
-        needed: missing,
+        minItems: Math.max(5, minVocabItems - vocabPool.length),
+        maxItems: Math.max(minVocabItems, maxVocabItems - vocabPool.length + 4),
+        candidates: extractCandidateWords(plainText, 450).filter(
+          (token) => !vocabPool.some((item) => item.word.toLowerCase() === token.toLowerCase())
+        ),
       });
-      curatedVocab = sanitizeVocab([...curatedVocab, ...filled], language);
+      vocabPool = mergeVocab(vocabPool, refill, language);
     }
 
-    const improvedVocab = await improveVocabDefinitions(openai, {
-      items: curatedVocab,
+    let improvedVocab = await improveVocabDefinitions(openai, {
+      items: vocabPool,
       language,
       level: learnerProfile,
       focus,
       topic: resolvedTopic,
-      text: normalizedText,
+      text: plainText,
     });
-    let finalVocab = sanitizeVocab(improvedVocab as StoryVocabItem[], language);
-    if (finalVocab.length < TARGET_VOCAB_ITEMS) {
-      const missing = TARGET_VOCAB_ITEMS - finalVocab.length;
-      const filled = await generateComplexVocabFill(openai, {
-        text: normalizedText,
+
+    let validation = validateAndNormalizeVocab({
+      rawVocab: improvedVocab,
+      text: plainText,
+      language,
+    });
+
+    if (validation.vocab.length < minVocabItems) {
+      const rescue = await requestVocabFromStoryText(openai, {
+        text: plainText,
+        language,
+        variant: normalizedVariant,
+        level: normalizedBroadLevel,
+        cefrLevel: normalizedCefrLevel ?? undefined,
+        focus: `${focus} (final rescue pass, prioritize concrete and reusable vocabulary; avoid abstract cognates and avoid expressions unless clearly lexicalized)`,
+        topic: resolvedTopic,
+        minItems: Math.max(4, minVocabItems - validation.vocab.length),
+        maxItems: Math.max(minVocabItems, Math.min(maxVocabItems, validation.vocab.length + 8)),
+        candidates: extractCandidateWords(plainText, 550).filter(
+          (token) => !validation.vocab.some((item) => item.word.toLowerCase() === token.toLowerCase())
+        ),
+      });
+      improvedVocab = await improveVocabDefinitions(openai, {
+        items: mergeVocab(validation.vocab, rescue, language),
         language,
         level: learnerProfile,
-        cefrLevel: normalizedCefrLevel ?? undefined,
         focus,
         topic: resolvedTopic,
-        existingVocab: finalVocab,
-        needed: missing,
+        text: plainText,
       });
-      finalVocab = sanitizeVocab([...finalVocab, ...filled], language);
+      validation = validateAndNormalizeVocab({
+        rawVocab: improvedVocab,
+        text: plainText,
+        language,
+      });
     }
-    if (finalVocab.length < MIN_VOCAB_ITEMS_HARD) {
+
+    const finalVocab = validation.vocab.slice(0, maxVocabItems);
+    if (finalVocab.length < Math.max(MIN_VOCAB_ITEMS_HARD, minimumUsableItems)) {
       return NextResponse.json(
-        { error: `Could not assemble enough high-quality vocabulary items (minimum safety floor: ${MIN_VOCAB_ITEMS_HARD})` },
+        {
+          error: `Could not assemble enough high-quality vocabulary items (minimum usable threshold: ${Math.max(MIN_VOCAB_ITEMS_HARD, minimumUsableItems)}).`,
+        },
         { status: 502 }
       );
     }

@@ -15,11 +15,11 @@ NEXT_PUBLIC_STRIPE_PREMIUM_MONTHLY_PRICE_ID=price_replace_monthly
 NEXT_PUBLIC_STRIPE_PREMIUM_ANNUAL_PRICE_ID=price_replace_annual
 NEXT_PUBLIC_GOOGLE_PLAY_PREMIUM_MONTHLY_PRODUCT_ID=premium_monthly
 NEXT_PUBLIC_GOOGLE_PLAY_PREMIUM_ANNUAL_PRODUCT_ID=premium_annual
-GOOGLE_PLAY_PACKAGE_NAME=com.example.digitalpolyglot
+GOOGLE_PLAY_PACKAGE_NAME=com.digitalpolyglot.app
 GOOGLE_PLAY_SERVICE_ACCOUNT_EMAIL=play-billing-service-account@project-id.iam.gserviceaccount.com
 GOOGLE_PLAY_SERVICE_ACCOUNT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
 GOOGLE_PLAY_PRODUCT_PLAN_MAP={"premium_monthly":"premium","premium_annual":"premium"}
-GOOGLE_PLAY_SHA256_CERT_FINGERPRINTS=AA:BB:...
+GOOGLE_PLAY_SHA256_CERT_FINGERPRINTS=D4:4F:C7:2F:54:64:2B:D4:18:8D:D0:DB:19:20:7F:C9:8B:75:5D:6B:6A:AE:CF:4C:07:FD:5A:02:DF:1A:AD:B2,<PLAY_APP_SIGNING_SHA256>
 ```
 
 ## Bubblewrap
@@ -28,14 +28,14 @@ Install and initialize:
 
 ```bash
 npm install -g @bubblewrap/cli
-bubblewrap init --manifest https://your-domain.com/favicon/site.webmanifest
+bubblewrap init --manifest https://reader.digitalpolyglot.com/favicon/site.webmanifest
 ```
 
 Values you will need during setup:
 
-- Android package name: `com.yourcompany.digitalpolyglot`
+- Android package name: `com.digitalpolyglot.app`
 - App name: `Digital Polyglot`
-- Start URL: `https://your-domain.com/`
+- Start URL: `https://reader.digitalpolyglot.com/`
 - Theme color: `#0b1e36`
 - Navigation scope: `/`
 
@@ -47,7 +47,11 @@ bubblewrap build
 
 ## assetlinks.json
 
-The repo now serves `https://your-domain.com/.well-known/assetlinks.json` automatically from `GOOGLE_PLAY_PACKAGE_NAME` and `GOOGLE_PLAY_SHA256_CERT_FINGERPRINTS`.
+The repo now serves `https://reader.digitalpolyglot.com/.well-known/assetlinks.json` automatically from `GOOGLE_PLAY_PACKAGE_NAME` and `GOOGLE_PLAY_SHA256_CERT_FINGERPRINTS`.
+
+Use both fingerprints in `GOOGLE_PLAY_SHA256_CERT_FINGERPRINTS`:
+- the upload key fingerprint currently used in this repo: `D4:4F:C7:2F:54:64:2B:D4:18:8D:D0:DB:19:20:7F:C9:8B:75:5D:6B:6A:AE:CF:4C:07:FD:5A:02:DF:1A:AD:B2`
+- the Google Play app signing fingerprint from Play Console > `Integridad de la app`
 
 If you want to inspect the shape, it will look like this after those env vars are set:
 
@@ -57,7 +61,7 @@ If you want to inspect the shape, it will look like this after those env vars ar
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.yourcompany.digitalpolyglot",
+      "package_name": "com.digitalpolyglot.app",
       "sha256_cert_fingerprints": [
         "AA:BB:CC:DD:EE:FF:00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD:EE:FF:00:11:22:33:44:55:66:77:88:99"
       ]

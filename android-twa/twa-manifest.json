@@ -1,0 +1,51 @@
+{
+  "packageId": "com.digitalpolyglot.app",
+  "host": "reader.digitalpolyglot.com",
+  "name": "Digital Polyglot",
+  "launcherName": "Polyglot",
+  "display": "standalone",
+  "themeColor": "#0B1E36",
+  "themeColorDark": "#000000",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#0B1E36",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://reader.digitalpolyglot.com/favicon/android-chrome-512x512.png",
+  "maskableIconUrl": "https://reader.digitalpolyglot.com/favicon/android-chrome-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "/Users/alejandrodelcarpio/digital-polyglot-library/android-twa/android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://reader.digitalpolyglot.com/favicon/site.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {
+    "playBilling": {
+      "enabled": true
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://reader.digitalpolyglot.com/",
+  "minSdkVersion": 21,
+  "orientation": "default",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "protocolHandlers": [],
+  "fileHandlers": [],
+  "launchHandlerClientMode": "",
+  "displayOverride": [],
+  "appVersion": "1"
+}
