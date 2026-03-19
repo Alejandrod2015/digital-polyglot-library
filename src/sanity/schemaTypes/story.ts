@@ -18,9 +18,14 @@ type SetPatch = {
   value: unknown;
 };
 
+type UnsetPatch = {
+  type: "unset";
+  path: (string | number)[];
+};
+
 type SyncInputProps = {
   document?: unknown;
-  onChange: (patch: SetPatch) => void;
+  onChange: (patch: SetPatch | UnsetPatch) => void;
 };
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -33,6 +38,11 @@ function getBookRefId(doc: unknown): string | null {
   if (!isRecord(book)) return null;
   const ref = book._ref;
   return typeof ref === "string" && ref.length > 0 ? ref : null;
+}
+
+function normalizeBookIds(bookRef: string): { publishedId: string; draftId: string } {
+  const publishedId = bookRef.replace(/^drafts\./, "");
+  return { publishedId, draftId: `drafts.${publishedId}` };
 }
 
 function getLanguage(doc: unknown): string | null {
@@ -110,6 +120,7 @@ export const story = defineType({
       name: "book",
       title: "Related Book",
       type: "reference",
+      weak: true,
       fieldset: "relationship",
       to: [{ type: "book" }],
       validation: (Rule) => Rule.required(),
@@ -132,23 +143,33 @@ export const story = defineType({
             const run = async () => {
               const bookRef = getBookRefId(document);
               if (!bookRef) return;
+              const { publishedId, draftId } = normalizeBookIds(bookRef);
 
               try {
-                const query = `*[_type == "book" && _id == $id][0]{
-                  language, variant, region, level, cefrLevel, topic
-                }`;
+                const query = `coalesce(
+                  *[_type == "book" && _id == $draftId][0]{
+                    language, variant, region, level, cefrLevel, topic
+                  },
+                  *[_type == "book" && _id == $id][0]{
+                    language, variant, region, level, cefrLevel, topic
+                  }
+                )`;
 
                 const response = await fetch("/api/sanity-query", {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ query, params: { id: bookRef } }),
+                  body: JSON.stringify({ query, params: { id: publishedId, draftId } }),
                 });
 
                 const json: unknown = await response.json();
                 if (!isRecord(json)) return;
 
                 const result = json.result;
-                if (!isRecord(result)) return;
+                if (!isRecord(result)) {
+                  // Recover from drafts that still point at a deleted book document.
+                  onChange({ type: "unset", path: ["book"] });
+                  return;
+                }
 
                 const b = result;
 
@@ -667,18 +688,26 @@ export const story = defineType({
   ],
 
   preview: {
-    select: { title: "title", cefrLevel: "cefrLevel", level: "level", media: "cover" },
-    prepare({ title, cefrLevel, level, media }) {
+    select: { title: "title", cefrLevel: "cefrLevel", level: "level", media: "cover", coverUrl: "coverUrl" },
+    prepare({ title, cefrLevel, level, media, coverUrl }) {
       const subtitle =
         typeof cefrLevel === "string" && cefrLevel
           ? `CEFR ${cefrLevel.toUpperCase()}`
           : level
             ? `Level: ${level}`
             : null;
+      const previewMedia =
+        typeof coverUrl === "string" && coverUrl.trim()
+          ? React.createElement("img", {
+              src: coverUrl,
+              alt: title || "Story cover",
+              style: { width: "100%", height: "100%", objectFit: "cover" },
+            })
+          : media;
       return {
         title: title || "Untitled Story",
         subtitle: subtitle || "No level assigned",
-        media,
+        media: previewMedia,
       };
     },
   },

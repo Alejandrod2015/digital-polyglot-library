@@ -1,5 +1,5 @@
 // /src/sanity/actions/updateFeaturedStory.ts
-import { writeClient, client } from "@/sanity/lib/client";
+import { writeClient, client } from "../lib/client";
 
 /**
  * Actualiza automáticamente la historia destacada semanal o diaria.

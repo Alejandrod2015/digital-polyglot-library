@@ -1,10 +1,20 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { createClient } from "next-sanity";
 import { writeClient } from "@/sanity/lib/client";
 import { uploadPublicObject } from "@/lib/objectStorage";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
+});
+
+const sanityServerClient = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "9u7ilulp",
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2025-10-05",
+  useCdn: false,
+  token: process.env.SANITY_API_WRITE_TOKEN,
+  perspective: "raw",
 });
 
 const ALLOWED_ORIGINS = new Set([
@@ -184,7 +194,7 @@ function buildCoverPrompt(args: {
     "- Use limited texture and low detail density; avoid painterly realism and gritty rendering.",
     "- Keep facial features natural and calm, with simplified illustrated detail.",
     "- Avoid sepia/yellow cast, fantasy glow, heavy filters, and neon/duotone look.",
-    "- Keep the overall mood clear, modern, and approachable.",
+    "- Keep the overall mood clear, modern, and emotionally grounded.",
     "- Clean composition, strong focal point, readable at thumbnail size.",
     "",
     "Hard constraints:",
@@ -518,8 +528,8 @@ export async function POST(req: Request) {
     const publishedId = getPublishedId(documentId);
     const draftId = getDraftId(documentId);
     const [publishedDoc, draftDoc] = await Promise.all([
-      writeClient.fetch<SanityDoc | null>(`*[_id == $id][0]`, { id: publishedId }),
-      writeClient.fetch<SanityDoc | null>(`*[_id == $id][0]`, { id: draftId }),
+      sanityServerClient.fetch<SanityDoc | null>(`*[_id == $id][0]`, { id: publishedId }),
+      sanityServerClient.fetch<SanityDoc | null>(`*[_id == $id][0]`, { id: draftId }),
     ]);
 
     const docType = draftDoc?._type ?? publishedDoc?._type;

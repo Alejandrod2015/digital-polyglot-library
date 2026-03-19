@@ -5,6 +5,9 @@ export default defineCliConfig({
     projectId: '9u7ilulp',
     dataset: 'production',
   },
+  vite: {
+    publicDir: false,
+  },
   studioHost: 'digital-polyglot',
   deployment: {
     appId: 'xxbbfm0hmwuj6efzob1o8z2o',

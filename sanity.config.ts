@@ -21,6 +21,10 @@ export default defineConfig({
   basePath: "/studio",
   projectId,
   dataset,
+  vite: (config) => ({
+    ...config,
+    publicDir: false,
+  }),
 
   schema: {
     types,

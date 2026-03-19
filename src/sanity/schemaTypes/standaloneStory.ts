@@ -574,8 +574,15 @@ export const standaloneStory = defineType({
   ],
 
   preview: {
-    select: { title: "title", cefrLevel: "cefrLevel", level: "level", media: "cover", sourceType: "sourceType" },
-    prepare({ title, cefrLevel, level, media, sourceType }) {
+    select: {
+      title: "title",
+      cefrLevel: "cefrLevel",
+      level: "level",
+      media: "cover",
+      coverUrl: "coverUrl",
+      sourceType: "sourceType",
+    },
+    prepare({ title, cefrLevel, level, media, coverUrl, sourceType }) {
       const sourceLabel = sourceType === "create" ? "Create" : "Standalone";
       const subtitle =
         typeof cefrLevel === "string" && cefrLevel
@@ -583,10 +590,18 @@ export const standaloneStory = defineType({
           : level
             ? `${sourceLabel} • Level: ${level}`
             : `${sourceLabel} story`;
+      const previewMedia =
+        typeof coverUrl === "string" && coverUrl.trim()
+          ? React.createElement("img", {
+              src: coverUrl,
+              alt: title || "Story cover",
+              style: { width: "100%", height: "100%", objectFit: "cover" },
+            })
+          : media;
       return {
         title: title || "Untitled Story",
         subtitle,
-        media,
+        media: previewMedia,
       };
     },
   },

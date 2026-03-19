@@ -28,6 +28,7 @@ export default function CoverGeneratorInput() {
   const language = useFormValue(['language']) as string | undefined
   const level = useFormValue(['level']) as string | undefined
   const topic = useFormValue(['topic']) as string | undefined
+  const coverUrl = useFormValue(['coverUrl']) as string | undefined
   const client = useClient({ apiVersion: '2025-10-05' })
 
   const langKey = (language ?? 'spanish').toLowerCase()
@@ -77,9 +78,9 @@ export default function CoverGeneratorInput() {
         }),
       })
 
-      let data: { error?: string; details?: string; assetId?: string | null } = {}
+      let data: { error?: string; details?: string; assetId?: string | null; url?: string | null } = {}
       try {
-        data = (await res.json()) as { error?: string; details?: string; assetId?: string | null }
+        data = (await res.json()) as { error?: string; details?: string; assetId?: string | null; url?: string | null }
       } catch {
         throw new Error('The server did not return valid JSON. Please try again.')
       }
@@ -87,23 +88,27 @@ export default function CoverGeneratorInput() {
         throw new Error(data.error || data.details || 'Failed to generate cover.')
       }
 
-      if (data.assetId && formId) {
+      if (formId && (data.assetId || data.url)) {
         const patch = client.patch(getDraftId(formId))
         if (formType) {
           patch.setIfMissing({ _type: formType })
         }
 
-        await patch
-          .set({
-            cover: {
-              _type: 'image',
-              asset: {
-                _type: 'reference',
-                _ref: data.assetId,
-              },
+        const nextPatch: Record<string, unknown> = {}
+        if (data.assetId) {
+          nextPatch.cover = {
+            _type: 'image',
+            asset: {
+              _type: 'reference',
+              _ref: data.assetId,
             },
-          })
-          .commit({ autoGenerateArrayKeys: true })
+          }
+        }
+        if (data.url) {
+          nextPatch.coverUrl = data.url
+        }
+
+        await patch.set(nextPatch).commit({ autoGenerateArrayKeys: true })
       }
 
       setMsg('Cover generated with Flux and assigned successfully.')
@@ -144,6 +149,27 @@ export default function CoverGeneratorInput() {
       {error ? (
         <Card padding={3} tone="critical">
           <Text>{error}</Text>
+        </Card>
+      ) : null}
+
+      {typeof coverUrl === 'string' && coverUrl.trim() ? (
+        <Card padding={2} radius={2} shadow={1}>
+          <Stack space={2}>
+            <Text size={1} muted>
+              Preview from external cover URL
+            </Text>
+            <img
+              src={coverUrl}
+              alt={typeof title === 'string' && title.trim() ? title : 'Generated cover preview'}
+              style={{
+                width: '100%',
+                maxWidth: 420,
+                height: 'auto',
+                borderRadius: 6,
+                display: 'block',
+              }}
+            />
+          </Stack>
         </Card>
       ) : null}
     </Stack>

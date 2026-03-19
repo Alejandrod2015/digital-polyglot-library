@@ -35,6 +35,11 @@ yarn-error.log*
 .keystore
 *.keystore
 android-twa/.keystore-secrets.local
+android-twa/.gradle/
+android-twa/**/build/
+android-twa/app-release-*.aab
+android-twa/app-release-*.apk
+android-twa/app-release-*.idsig
 
 # vercel
 .vercel

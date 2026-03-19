@@ -1,5 +1,28 @@
 // DESPUÉS — /src/sanity/schemaTypes/book.ts
 import { defineField, defineType } from "sanity";
+import React from "react";
+import { broadLevelFromCefr } from "../../lib/cefr";
+
+type SetPatch = {
+  type: "set";
+  path: (string | number)[];
+  value: unknown;
+};
+
+type SyncInputProps = {
+  document?: unknown;
+  onChange: (patch: SetPatch) => void;
+};
+
+function isRecord(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v);
+}
+
+function getCefrLevel(doc: unknown): string | null {
+  if (!isRecord(doc)) return null;
+  const cefrLevel = doc.cefrLevel;
+  return typeof cefrLevel === "string" && cefrLevel.length > 0 ? cefrLevel : null;
+}
 
 export const book = defineType({
   name: "book",
@@ -140,6 +163,20 @@ export const book = defineType({
       type: "string",
       fieldset: "language",
       hidden: true,
+      components: {
+        input: function SyncBroadLevelComponent(props: unknown) {
+          const { document, onChange } = props as SyncInputProps;
+
+          React.useEffect(() => {
+            const cefrLevel = getCefrLevel(document);
+            const broadLevel = broadLevelFromCefr(cefrLevel);
+            if (!broadLevel) return;
+            onChange({ type: "set", path: ["level"], value: broadLevel });
+          }, [document, onChange]);
+
+          return null;
+        },
+      },
       options: {
         list: [
           { title: "Beginner (A1-A2)", value: "beginner" },

@@ -141,7 +141,7 @@ function buildCoverPrompt(args: {
     "- Use limited texture and low detail density; avoid painterly realism and gritty rendering.",
     "- Keep facial features natural and calm, with simplified illustrated detail.",
     "- Avoid sepia/yellow cast, fantasy glow, heavy filters, and neon/duotone look.",
-    "- Keep the overall mood clear, modern, and approachable.",
+    "- Keep the overall mood clear, modern, and emotionally grounded.",
     "- Clean composition, strong focal point, readable at thumbnail size.",
     "",
     "Hard constraints:",

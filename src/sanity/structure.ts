@@ -10,15 +10,22 @@ export const structure: StructureResolver = (S) =>
         .child(
           S.documentTypeList("book")
             .title("Books")
-            .child((bookId: string) =>
+            .child((bookId: string) => {
+              const publishedBookId = bookId.replace(/^drafts\./, "");
+              const draftBookId = `drafts.${publishedBookId}`;
+              return (
               S.documentList()
                 .title("Stories in this Book")
-                .filter('_type == "story" && references($bookId)')
-                .params({ bookId })
+                .filter('_type == "story" && (references($publishedBookId) || references($draftBookId))')
+                .params({ publishedBookId, draftBookId })
                 .initialValueTemplates([
-                  S.initialValueTemplateItem("story-from-book", { bookId }),
+                  S.initialValueTemplateItem("story-from-book", {
+                    bookId: publishedBookId,
+                    sourceBookId: bookId,
+                  }),
                 ])
-            )
+              );
+            })
         ),
 
       S.divider(),

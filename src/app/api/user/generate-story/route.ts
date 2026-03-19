@@ -934,7 +934,7 @@ Return ONLY valid JSON:
     const { title, text, vocab } = selectedStory;
 
     // 🔹 Normalizar texto HTML para formato consistente
-    let normalizedText = stripLegacyVocabSpans(normalizeStoryHtml(text));
+    const normalizedText = stripLegacyVocabSpans(normalizeStoryHtml(text));
     if (hasInlineGlossaryExplanation(normalizedText)) {
       return NextResponse.json(
         { error: "Generated story contains inline glossary explanations and was rejected." },
