@@ -549,10 +549,11 @@ export async function POST(req: Request) {
       ...(uploaded?.url ? { coverUrl: uploaded.url } : {}),
     };
 
-    await writeClient
-      .transaction()
-      .createOrReplace(nextDraft)
-      .commit({ autoGenerateArrayKeys: true });
+    const tx = writeClient.transaction().createOrReplace(nextDraft);
+    if (uploaded?.url && !coverField) {
+      tx.patch(draftId, (patch) => patch.unset(["cover"]));
+    }
+    await tx.commit({ autoGenerateArrayKeys: true });
 
     return NextResponse.json(
       {

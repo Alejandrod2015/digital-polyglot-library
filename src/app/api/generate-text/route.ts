@@ -5,14 +5,15 @@ import { inferTopicFromText } from "@/lib/topicClassifier";
 import { buildSanityCorsHeaders } from "@/lib/sanityCors";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
 import { isInvalidMultiwordVocab, normalizeToken } from "@/lib/vocabSelection";
+import { resolveCanonicalVocabEntry } from "@/lib/vocabWordNormalization";
 import {
   HARD_STORY_WORDS_MAX,
   MIN_STORY_WORDS,
   TARGET_STORY_WORDS_MAX,
   TARGET_STORY_WORDS_MIN,
   countStoryWords,
-} from "@/lib/storyLength";
-import { cefrPromptLabel } from "@/lib/cefr";
+} from "@domain/storyLength";
+import { cefrPromptLabel } from "@domain/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 
 const openai = new OpenAI({
@@ -22,7 +23,7 @@ const openai = new OpenAI({
 type StoryJSON = {
   title: string;
   text: string;
-  vocab: { word: string; definition: string; type?: string }[];
+  vocab: { word: string; surface?: string; definition: string; type?: string }[];
 };
 
 const MAX_GENERATION_ATTEMPTS = 3;
@@ -68,21 +69,32 @@ function isValidStoryJSON(data: unknown): data is StoryJSON {
 
 function sanitizeGeneratedVocab(
   items: StoryJSON["vocab"],
-  storyText: string
+  storyText: string,
+  language?: string
 ): StoryJSON["vocab"] {
   const seen = new Set<string>();
   const out: StoryJSON["vocab"] = [];
 
   for (const item of items) {
-    const word = typeof item.word === "string" ? item.word.trim() : "";
-    const definition = typeof item.definition === "string" ? item.definition.trim() : "";
     const type = typeof item.type === "string" ? item.type.trim() : undefined;
+    const rawWord = typeof item.word === "string" ? item.word : "";
+    const { word, surface } = resolveCanonicalVocabEntry({
+      word: rawWord,
+      surface: typeof item.surface === "string" ? item.surface : rawWord,
+      type,
+      language,
+    });
+    const definition = typeof item.definition === "string" ? item.definition.trim() : "";
     if (!word || !definition) continue;
     if (isInvalidMultiwordVocab(word, { type, storyText })) continue;
     const key = normalizeToken(word);
     if (!key || seen.has(key)) continue;
     seen.add(key);
-    out.push(type ? { word, definition, type } : { word, definition });
+    out.push(
+      type
+        ? { word, ...(surface && surface !== word ? { surface } : {}), definition, type }
+        : { word, ...(surface && surface !== word ? { surface } : {}), definition }
+    );
   }
 
   return out;
@@ -167,6 +179,7 @@ Use a close third-person narrator with strong internal focalization.
 - Keep the prose mainly in third person, but use first-person phrasing only inside dialogue or brief inner-thought moments when natural.
 - Prioritize ${focus.toLowerCase()} in lexical choices and situations.
 - Prefer useful short fixed expressions, nuanced verbs, and culturally specific phrases.
+- In the vocab JSON, set "surface" to the exact form from the story and "word" to the dictionary/root form.
 - Single words are preferred.
 - If you return more than one word, it must be a short lexicalized expression or idiom (usually 2-3 words).
 - Any multi-word item MUST use type "expression".
@@ -187,7 +200,7 @@ Return ONLY valid JSON:
 {
   "title": "string",
   "text": "string",
-  "vocab": [{ "word": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang" }]
+  "vocab": [{ "word": "string", "surface": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang" }]
 }
 `;
 
@@ -233,7 +246,7 @@ Return ONLY valid JSON:
       }
 
       const improvedVocab = await improveVocabDefinitions(openai, {
-        items: sanitizeGeneratedVocab(raw.vocab, text),
+        items: sanitizeGeneratedVocab(raw.vocab, text, language),
         language,
         level: learnerProfile,
         focus,

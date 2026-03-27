@@ -18,6 +18,7 @@ import {
 import { createJourneyCheckpointToken } from "@/lib/journeyCheckpointToken";
 import { getCompletedJourneyStoryKeys } from "@/lib/journeyProgress";
 import { normalizeVariant } from "@/lib/languageVariant";
+import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 
 declare global {
   var __journey_practice_prisma__: PrismaClient | undefined;
@@ -45,7 +46,9 @@ function getProgressKeyFromSourcePath(sourcePath: string, storySlug: string): st
 }
 
 export async function GET(request: NextRequest) {
-  const { userId } = getAuth(request);
+  const mobileSession = getMobileSessionFromRequest(request);
+  const { userId: clerkUserId } = getAuth(request);
+  const userId = mobileSession?.sub ?? clerkUserId ?? null;
   const { searchParams } = new URL(request.url);
   const variant = normalizeVariant(searchParams.get("variant"));
   const levelId = (searchParams.get("levelId") ?? "").trim().toLowerCase();
@@ -61,7 +64,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Topic not found" }, { status: 404 });
   }
 
-  const completedStoryKeys = await getCompletedJourneyStoryKeys();
+  const completedStoryKeys = await getCompletedJourneyStoryKeys(userId ?? undefined);
   const unlockedStoryCount = getUnlockedStoryCount(source.topic, completedStoryKeys);
   const unlockedProgressKeys = new Set(
     source.topic.stories.slice(0, unlockedStoryCount).map((story) => story.progressKey)

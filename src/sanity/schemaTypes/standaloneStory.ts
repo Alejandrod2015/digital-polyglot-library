@@ -248,7 +248,7 @@ export const standaloneStory = defineType({
 
     defineField({
       name: "focus",
-      title: "Focus",
+      title: "Language focus",
       type: "string",
       fieldset: "metadata",
       options: {
@@ -295,6 +295,25 @@ export const standaloneStory = defineType({
       fieldset: "journey",
       hidden: ({ document }) => !Boolean((document as { journeyEligible?: boolean } | undefined)?.journeyEligible),
       validation: (Rule) => Rule.integer().min(1),
+    }),
+
+    defineField({
+      name: "journeyFocus",
+      title: "Journey focus",
+      type: "string",
+      fieldset: "journey",
+      initialValue: "General",
+      hidden: ({ document }) => !Boolean((document as { journeyEligible?: boolean } | undefined)?.journeyEligible),
+      description:
+        "Use General for the default Journey story. Use a specific focus only when this story is an alternative for that same Journey slot.",
+      options: {
+        list: [
+          { title: "General", value: "General" },
+          { title: "Travel & Local Life", value: "Travel & Local Life" },
+          { title: "Work & Career", value: "Work & Career" },
+          { title: "Culture & Belonging", value: "Culture & Belonging" },
+        ],
+      },
     }),
 
     defineField({

@@ -13,6 +13,8 @@ import {
 type ValidateVocabBody = {
   text?: string;
   language?: string;
+  level?: string;
+  cefrLevel?: string;
   vocab?: unknown;
   minItems?: number;
   maxItems?: number;
@@ -45,7 +47,7 @@ async function repairWeakDefinitions(args: {
 Rewrite the definition of each vocabulary item into strong learner-friendly English.
 
 Rules:
-- Keep the same "word" and "type".
+- Keep the same "word", preserve "surface" when present, and keep "type".
 - Return ONLY a JSON array.
 - Each "definition" must be 6-18 words.
 - Explain practical meaning or usage nuance.
@@ -124,6 +126,8 @@ export async function POST(req: Request) {
       rawVocab: body.vocab,
       text,
       language: typeof body.language === "string" ? body.language : undefined,
+      level: typeof body.level === "string" ? body.level : undefined,
+      cefrLevel: typeof body.cefrLevel === "string" ? body.cefrLevel : undefined,
     });
 
     const weakDefinitionItems = Array.isArray(initialRawVocab)
@@ -149,6 +153,8 @@ export async function POST(req: Request) {
           rawVocab: initialRawVocab,
           text,
           language: typeof body.language === "string" ? body.language : undefined,
+          level: typeof body.level === "string" ? body.level : undefined,
+          cefrLevel: typeof body.cefrLevel === "string" ? body.cefrLevel : undefined,
         });
         vocab = rerun.vocab;
         issues = rerun.issues;

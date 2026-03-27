@@ -25,6 +25,7 @@ export default function MobileTabBar() {
   const pathname = usePathname() || "/";
   const { user } = useUser();
   const [practiceActive, setPracticeActive] = useState(false);
+  const [onboardingTourTarget, setOnboardingTourTarget] = useState("");
   const isSignedIn = Boolean(user);
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
 
@@ -38,6 +39,19 @@ export default function MobileTabBar() {
     window.addEventListener("practice-session-visibility-change", readPracticeState);
     return () => {
       window.removeEventListener("practice-session-visibility-change", readPracticeState);
+    };
+  }, []);
+
+  useEffect(() => {
+    const readTourTarget = () => {
+      if (typeof document === "undefined") return;
+      setOnboardingTourTarget(document.body.dataset.onboardingTourTarget ?? "");
+    };
+
+    readTourTarget();
+    window.addEventListener("dp-onboarding-tour-target-change", readTourTarget);
+    return () => {
+      window.removeEventListener("dp-onboarding-tour-target-change", readTourTarget);
     };
   }, []);
 
@@ -81,8 +95,24 @@ export default function MobileTabBar() {
             <li key={tab.href}>
               <Link
                 href={tab.href}
+                data-tour-target={
+                  tab.label === "Home"
+                    ? "home"
+                    : tab.label === "Explore"
+                      ? "explore"
+                      : tab.label === "Practice" || tab.label === "Favorites"
+                        ? "practice-favorites"
+                        : undefined
+                }
                 className={`flex flex-col items-center justify-center py-2.5 text-[11px] transition-colors ${
                   active ? "text-[var(--nav-text)]" : "text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
+                } ${
+                  (tab.label === "Home" && onboardingTourTarget === "home") ||
+                  (tab.label === "Explore" && onboardingTourTarget === "explore") ||
+                  ((tab.label === "Practice" || tab.label === "Favorites") &&
+                    onboardingTourTarget === "practice-favorites")
+                    ? "rounded-xl border border-[var(--primary)]/45 bg-[var(--primary)]/12 shadow-[0_0_0_1px_rgba(163,230,53,0.15)]"
+                    : ""
                 }`}
               >
                 <Icon size={20} strokeWidth={active ? 2.4 : 2} />

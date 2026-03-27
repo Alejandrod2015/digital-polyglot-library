@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { currentUser } from "@clerk/nextjs/server";
 import { getPublicUserStories } from "@/lib/userStories";
 import {
   getPublishedStandaloneStories,
@@ -35,13 +36,28 @@ function toTopicList(value: unknown): string[] {
   return [];
 }
 
+function toLanguageKeys(value: unknown): Set<string> | null {
+  if (!Array.isArray(value)) return null;
+  const keys = value
+    .filter((item): item is string => typeof item === "string")
+    .map((item) => normalizeTopicKey(item))
+    .filter(Boolean);
+  return keys.length > 0 ? new Set(keys) : null;
+}
+
 export default async function ExplorePolyglotStoriesPage({
   searchParams,
 }: ExplorePolyglotStoriesPageProps) {
-  const { topic, language, region } = await searchParams;
+  const [{ topic, language, region }, user] = await Promise.all([searchParams, currentUser()]);
   const topicKey = normalizeTopicKey(topic ?? "");
   const languageKey = normalizeTopicKey(language ?? "");
-  const regionKey = normalizeTopicKey(region ?? "");
+  const preferredLanguageKeys = toLanguageKeys(user?.publicMetadata?.targetLanguages);
+  const regionKey = normalizeTopicKey(
+    region ??
+      (typeof user?.publicMetadata?.preferredRegion === "string"
+        ? user.publicMetadata.preferredRegion
+        : "")
+  );
 
   const [userStories, standaloneStories] = await Promise.all([
     getPublicUserStories(),
@@ -69,7 +85,9 @@ export default async function ExplorePolyglotStoriesPage({
 
   const languageFilteredStories = languageKey
     ? normalized.filter((s) => normalizeTopicKey(s.language ?? "") === languageKey)
-    : normalized;
+    : preferredLanguageKeys
+      ? normalized.filter((s) => preferredLanguageKeys.has(normalizeTopicKey(s.language ?? "")))
+      : normalized;
   const regionFilteredStories = regionKey
     ? languageFilteredStories.filter((s) => normalizeTopicKey(s.region ?? "") === regionKey)
     : languageFilteredStories;

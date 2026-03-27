@@ -1,0 +1,75 @@
+{
+  "apps": [
+    {
+      "id": "web",
+      "name": "Web app",
+      "kind": "web",
+      "sourceRoots": [
+        "src/app"
+      ],
+      "screenshotRoots": [
+        "qa-artifacts/web"
+      ]
+    },
+    {
+      "id": "mobile-ios",
+      "name": "iOS app",
+      "kind": "mobile",
+      "sourceRoots": [
+        "apps/mobile/src"
+      ],
+      "screenshotRoots": [
+        ".",
+        ".maestro"
+      ]
+    },
+    {
+      "id": "studio",
+      "name": "Sanity Studio",
+      "kind": "studio",
+      "sourceRoots": [
+        "src/sanity"
+      ],
+      "screenshotRoots": [
+        "qa-artifacts/studio"
+      ]
+    }
+  ],
+  "autofixMappings": [
+    {
+      "file": "apps/mobile/src/mobile/MobileLibraryShell.tsx",
+      "duplicateText": "Home",
+      "replacementEyebrow": "Today"
+    },
+    {
+      "file": "apps/mobile/src/mobile/MobileLibraryShell.tsx",
+      "duplicateText": "Explore",
+      "replacementEyebrow": "Browse"
+    },
+    {
+      "file": "apps/mobile/src/mobile/MobileLibraryShell.tsx",
+      "duplicateText": "Latest books",
+      "replacementEyebrow": "Books"
+    },
+    {
+      "file": "apps/mobile/src/mobile/MobileLibraryShell.tsx",
+      "duplicateText": "Latest stories",
+      "replacementEyebrow": "Stories"
+    },
+    {
+      "file": "apps/mobile/src/mobile/MobileLibraryShell.tsx",
+      "duplicateText": "Stories",
+      "replacementEyebrow": "Read"
+    },
+    {
+      "file": "apps/mobile/src/mobile/MobileLibraryShell.tsx",
+      "duplicateText": "Books",
+      "replacementEyebrow": "Library"
+    },
+    {
+      "file": "apps/mobile/src/mobile/MobileLibraryShell.tsx",
+      "duplicateText": "Individual stories",
+      "replacementEyebrow": "Standalone"
+    }
+  ]
+}

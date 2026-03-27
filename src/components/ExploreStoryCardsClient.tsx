@@ -1,7 +1,7 @@
 "use client";
 
 import StoryVerticalCard from "@/components/StoryVerticalCard";
-import { formatTopic } from "@/lib/displayFormat";
+import { formatTopic } from "@domain/displayFormat";
 
 type ExploreStoryCardItem = {
   id: string;

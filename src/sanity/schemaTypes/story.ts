@@ -388,7 +388,7 @@ export const story = defineType({
 
     defineField({
       name: "focus",
-      title: "Focus",
+      title: "Language focus",
       type: "string",
       fieldset: "metadata",
       options: {
@@ -556,6 +556,14 @@ export const story = defineType({
       type: "image",
       fieldset: "media",
       options: { hotspot: true },
+    }),
+
+    defineField({
+      name: "coverUrl",
+      title: "External cover URL",
+      type: "url",
+      fieldset: "media",
+      description: "Preferred public cover URL served from object storage/CDN.",
     }),
 
     defineField({

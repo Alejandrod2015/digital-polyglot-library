@@ -1,0 +1,103 @@
+appId: com.digitalpolyglot.mobile
+---
+- tapOn:
+    id: "qa-onboarding-option-0-spanish"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-option-1-beginner"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-option-2-latam"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-option-3-colombia"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-option-4-travel"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-option-4-food"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-option-5-travel"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-option-6-5"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-next"
+    optional: true
+
+- tapOn:
+    id: "qa-onboarding-tour-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-tour-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-tour-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-tour-next"
+    optional: true
+- tapOn:
+    id: "qa-onboarding-tour-next"
+    optional: true
+
+- assertVisible:
+    text: "Home"
+    optional: true
+- takeScreenshot: "01-home"
+
+- tapOn:
+    id: "qa-tab-explore"
+- assertVisible:
+    id: "qa-explore-search-input"
+- takeScreenshot: "02-explore"
+
+- tapOn:
+    text: "QA open first book"
+- assertVisible:
+    id: "qa-book-detail-screen"
+- takeScreenshot: "03-book-detail"
+
+- tapOn:
+    id: "qa-book-start-reading"
+- assertVisible:
+    id: "qa-reader-screen"
+- takeScreenshot: "04-reader"
+
+- tapOn:
+    id: "qa-reader-back"
+- tapOn:
+    id: "qa-book-detail-back"
+
+- tapOn:
+    id: "qa-tab-practice"
+- takeScreenshot: "05-practice"
+
+- tapOn:
+    id: "qa-tab-favorites"
+- takeScreenshot: "06-favorites"
+
+- tapOn:
+    id: "qa-tab-journey"
+- takeScreenshot: "07-journey"

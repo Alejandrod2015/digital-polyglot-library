@@ -16,6 +16,7 @@ import {
 import { useUser } from "@clerk/nextjs";
 import {
   buildPracticeSession,
+  getRecommendedPracticeModeFromOnboarding,
   getDuePracticeItems,
   getSpeechSynthesisLang,
   PracticeAudioClip,
@@ -29,6 +30,11 @@ import {
   findBestAudioSegmentLegacy,
   type AudioSegment,
 } from "@/lib/audioSegments";
+import {
+  sortPracticeItemsByOnboarding,
+  type OnboardingGoal,
+  type OnboardingPracticePrefs,
+} from "@/lib/onboarding";
 import { isStandaloneSourcePath } from "@/lib/storySource";
 
 type LoadState = "loading" | "ready" | "error";
@@ -394,6 +400,17 @@ export default function PracticePage() {
   const practiceStartTrackedRef = useRef(false);
   const practiceCompletionTrackedRef = useRef(false);
   const autoOpenedModeRef = useRef<string | null>(null);
+  const onboardingPracticePrefs = useMemo<OnboardingPracticePrefs>(() => {
+    const metadata = user?.publicMetadata ?? {};
+    const interests = Array.isArray(metadata.interests)
+      ? metadata.interests.filter((value): value is string => typeof value === "string")
+      : [];
+    return {
+      interests,
+      learningGoal: typeof metadata.learningGoal === "string" ? (metadata.learningGoal as OnboardingGoal) : null,
+      dailyMinutes: typeof metadata.dailyMinutes === "number" ? metadata.dailyMinutes : null,
+    };
+  }, [user]);
   const trackUiMetric = useCallback(
     async (
       eventType: "checkpoint_recovery_clicked" | "practice_recommended_mode_opened",
@@ -628,10 +645,14 @@ export default function PracticePage() {
     };
   }, [favorites]);
 
+  const orderedFavorites = useMemo(
+    () => sortPracticeItemsByOnboarding(favorites, onboardingPracticePrefs, true),
+    [favorites, onboardingPracticePrefs]
+  );
   const exercises = useMemo(() => {
     if (isJourneyCheckpoint) return prefabExercises;
-    return selectedMode ? buildPracticeSession(favorites, selectedMode) : [];
-  }, [favorites, isJourneyCheckpoint, prefabExercises, selectedMode]);
+    return selectedMode ? buildPracticeSession(orderedFavorites, selectedMode, onboardingPracticePrefs) : [];
+  }, [isJourneyCheckpoint, onboardingPracticePrefs, orderedFavorites, prefabExercises, selectedMode]);
   const currentExercise = exercises[exerciseIndex] ?? null;
   const inferredModeFromExercise: PracticeMode | null =
     currentExercise?.type === "meaning_in_context"
@@ -1316,7 +1337,10 @@ export default function PracticePage() {
 
     return ranked[0]?.[0] ?? null;
   }, [checkpointMissedItems.length, checkpointResponses, exercises, isJourneyCheckpoint]);
-  const dueFavorites = useMemo(() => getDuePracticeItems(favorites), [favorites]);
+  const dueFavorites = useMemo(
+    () => sortPracticeItemsByOnboarding(getDuePracticeItems(favorites), onboardingPracticePrefs, true),
+    [favorites, onboardingPracticePrefs]
+  );
   const reviewRecommendedMode = useMemo<PracticeMode>(() => {
     if (checkpointMissedMode) return checkpointMissedMode;
     if (dueFavorites.length === 0) return "meaning";
@@ -1340,9 +1364,23 @@ export default function PracticePage() {
       .filter(([mode]) => mode !== "match")
       .sort((a, b) => b[1] - a[1]);
 
-    return ranked[0]?.[0] ?? "meaning";
-  }, [checkpointMissedMode, dueFavorites]);
+    const fallback = ranked[0]?.[0] ?? "meaning";
+    return getRecommendedPracticeModeFromOnboarding(dueFavorites, fallback, onboardingPracticePrefs);
+  }, [checkpointMissedMode, dueFavorites, onboardingPracticePrefs]);
   const reviewRecommendedLabel = getModeLabel(reviewRecommendedMode);
+  const preferredPracticeMinutes =
+    typeof onboardingPracticePrefs.dailyMinutes === "number" && onboardingPracticePrefs.dailyMinutes > 0
+      ? onboardingPracticePrefs.dailyMinutes
+      : 5;
+  const practiceLoopSummary = useMemo(() => {
+    if (isReviewFocus && reviewDueCount > 0) {
+      return `You have ${reviewDueCount} due ${reviewDueCount === 1 ? "item" : "items"} waiting in this topic. ${reviewRecommendedLabel} is the best next move for your ${preferredPracticeMinutes}-minute plan.`;
+    }
+    if (dueFavorites.length > 0) {
+      return `${dueFavorites.length} saved ${dueFavorites.length === 1 ? "word is" : "words are"} ready. ${reviewRecommendedLabel} is the best quick review for your ${preferredPracticeMinutes}-minute plan.`;
+    }
+    return `Pick one fast mode and keep the loop moving. This setup is tuned for a ${preferredPracticeMinutes}-minute practice pass.`;
+  }, [dueFavorites.length, isReviewFocus, preferredPracticeMinutes, reviewDueCount, reviewRecommendedLabel]);
   const requestedMode =
     requestedModeParam === "meaning" ||
     requestedModeParam === "context" ||
@@ -2184,18 +2222,16 @@ export default function PracticePage() {
           {isReviewFocus && reviewDueCount > 0 ? "Review this topic" : "Practice"}
         </h1>
         <p className="mt-1 max-w-xl text-sm leading-6 text-[rgba(226,232,244,0.78)] sm:text-base">
-          {isReviewFocus && reviewDueCount > 0
-            ? `You have ${reviewDueCount} due ${reviewDueCount === 1 ? "item" : "items"} waiting in this topic. ${reviewRecommendedLabel} is the best next move right now.`
-            : "Five quick ways to review. Tap one and jump straight in."}
+          {practiceLoopSummary}
         </p>
-        {isReviewFocus && reviewDueCount > 0 ? (
-          <div className="mt-4 flex flex-wrap items-center gap-3">
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          {(isReviewFocus && reviewDueCount > 0) || dueFavorites.length > 0 ? (
             <button
               type="button"
               onClick={() => {
                 void trackUiMetric("practice_recommended_mode_opened", {
                   mode: reviewRecommendedMode,
-                  source: "review_focus_cta",
+                  source: isReviewFocus && reviewDueCount > 0 ? "review_focus_cta" : "practice_loop_cta",
                 });
                 openSession(reviewRecommendedMode);
               }}
@@ -2203,13 +2239,29 @@ export default function PracticePage() {
             >
               Start {reviewRecommendedLabel.toLowerCase()} review
             </button>
-            {reviewLead ? (
-              <p className="text-sm text-[rgba(226,232,244,0.74)]">
-                Focus words: {reviewLead}
-              </p>
-            ) : null}
-          </div>
-        ) : null}
+          ) : null}
+          {journeyReturnHref ? (
+            <Link
+              href={journeyReturnHref}
+              className="inline-flex rounded-full border border-white/12 bg-white/6 px-4 py-2.5 text-sm font-semibold text-white/88 hover:bg-white/10"
+            >
+              Back to Journey
+            </Link>
+          ) : null}
+          {!journeyReturnHref && dueFavorites.length === 0 ? (
+            <Link
+              href="/journey"
+              className="inline-flex rounded-full border border-white/12 bg-white/6 px-4 py-2.5 text-sm font-semibold text-white/88 hover:bg-white/10"
+            >
+              Open Journey
+            </Link>
+          ) : null}
+          {reviewLead ? (
+            <p className="text-sm text-[rgba(226,232,244,0.74)]">
+              Focus words: {reviewLead}
+            </p>
+          ) : null}
+        </div>
       </div>
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-2 xl:grid-cols-3">

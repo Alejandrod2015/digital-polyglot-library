@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { currentUser } from "@clerk/nextjs/server";
 import { books } from "@/data/books";
 import type { Book, Story } from "@/types/books";
 import ExploreStoryCardsClient from "@/components/ExploreStoryCardsClient";
@@ -46,6 +47,15 @@ function toTopicList(value: unknown): string[] {
     return value.filter((i): i is string => typeof i === "string" && i.trim() !== "");
   }
   return [];
+}
+
+function toLanguageKeys(value: unknown): Set<string> | null {
+  if (!Array.isArray(value)) return null;
+  const keys = value
+    .filter((item): item is string => typeof item === "string")
+    .map((item) => normalizeTopicKey(item))
+    .filter(Boolean);
+  return keys.length > 0 ? new Set(keys) : null;
 }
 
 function extractStories(): StoryItem[] {
@@ -116,10 +126,16 @@ function extractStories(): StoryItem[] {
 }
 
 export default async function ExploreStoriesPage({ searchParams }: ExploreStoriesPageProps) {
-  const { topic, language, region } = await searchParams;
+  const [{ topic, language, region }, user] = await Promise.all([searchParams, currentUser()]);
   const topicKey = normalizeTopicKey(topic ?? "");
   const languageKey = normalizeTopicKey(language ?? "");
-  const regionKey = normalizeTopicKey(region ?? "");
+  const preferredLanguageKeys = toLanguageKeys(user?.publicMetadata?.targetLanguages);
+  const regionKey = normalizeTopicKey(
+    region ??
+      (typeof user?.publicMetadata?.preferredRegion === "string"
+        ? user.publicMetadata.preferredRegion
+        : "")
+  );
 
   const standaloneStories = await getPublishedStandaloneStories();
   const allStories = [
@@ -143,7 +159,9 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
   ];
   const languageFilteredStories = languageKey
     ? allStories.filter((s) => normalizeTopicKey(s.language ?? "") === languageKey)
-    : allStories;
+    : preferredLanguageKeys
+      ? allStories.filter((s) => preferredLanguageKeys.has(normalizeTopicKey(s.language ?? "")))
+      : allStories;
   const regionFilteredStories = regionKey
     ? languageFilteredStories.filter((s) => normalizeTopicKey(s.region ?? "") === regionKey)
     : languageFilteredStories;

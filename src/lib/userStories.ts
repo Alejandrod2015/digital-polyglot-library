@@ -1,6 +1,6 @@
 // /src/lib/userStories.ts
 import { prisma } from "@/lib/prisma";
-import { client as sanityClient } from "@/sanity/lib/client";
+import { client as sanityClient, freshClient, rawServerClient } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 import { unstable_cache } from "next/cache";
 
@@ -91,7 +91,7 @@ async function getPublishedCreateStoryMirrors(): Promise<CreateStoryMirror[]> {
     ${createStoryMirrorFields}
   }`;
 
-  return sanityClient.fetch<CreateStoryMirror[]>(query);
+  return freshClient.fetch<CreateStoryMirror[]>(query);
 }
 
 const getPublishedCreateStoryMirrorsCached = unstable_cache(
@@ -161,6 +161,29 @@ export async function getCreateStoryMirrorByStoryId(
   return getMirrorByStoryIdCached(createStoryId);
 }
 
+export async function getCreateStoryMirrorByStoryIdFresh(
+  createStoryId: string
+): Promise<CreateStoryMirror | null> {
+  const directDocId = `create-story.${createStoryId}`;
+  const directQuery = groq`*[_id == $id][0]{
+    ${createStoryMirrorFields}
+  }`;
+  const direct = await rawServerClient.fetch<CreateStoryMirror | null>(directQuery, {
+    id: directDocId,
+  });
+  if (direct) return direct;
+
+  const fallbackQuery = groq`*[
+    _type == "standaloneStory" &&
+    sourceType == "create" &&
+    createStoryId == $createStoryId &&
+    !(_id in path("drafts.**"))
+  ][0]{
+    ${createStoryMirrorFields}
+  }`;
+  return rawServerClient.fetch<CreateStoryMirror | null>(fallbackQuery, { createStoryId });
+}
+
 export async function getCreateStoryMirrorBySlug(
   slug: string
 ): Promise<CreateStoryMirror | null> {
@@ -209,6 +232,51 @@ export async function getCreateStoryMirrorBySlug(
   );
 
   return getMirrorBySlugCached(slug);
+}
+
+export async function getCreateStoryMirrorBySlugFresh(
+  slug: string
+): Promise<CreateStoryMirror | null> {
+  const query = groq`*[
+    _type == "standaloneStory" &&
+    sourceType == "create" &&
+    slug.current == $slug &&
+    !(_id in path("drafts.**"))
+  ][0]{
+    ${createStoryMirrorFields}
+  }`;
+
+  return rawServerClient.fetch<CreateStoryMirror | null>(query, { slug });
+}
+
+export async function getDraftCreateStoryMirrorBySlug(
+  slug: string
+): Promise<CreateStoryMirror | null> {
+  const query = groq`*[
+    _id in path("drafts.**") &&
+    _type == "standaloneStory" &&
+    sourceType == "create" &&
+    slug.current == $slug
+  ][0]{
+    ${createStoryMirrorFields}
+  }`;
+
+  return rawServerClient.fetch<CreateStoryMirror | null>(query, { slug });
+}
+
+export async function getDraftCreateStoryMirrorByStoryId(
+  createStoryId: string
+): Promise<CreateStoryMirror | null> {
+  const query = groq`*[
+    _id in path("drafts.**") &&
+    _type == "standaloneStory" &&
+    sourceType == "create" &&
+    createStoryId == $createStoryId
+  ][0]{
+    ${createStoryMirrorFields}
+  }`;
+
+  return rawServerClient.fetch<CreateStoryMirror | null>(query, { createStoryId });
 }
 
 async function getPublicUserStoriesRaw(limit: number | null): Promise<PublicUserStory[]> {

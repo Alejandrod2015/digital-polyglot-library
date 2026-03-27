@@ -3,6 +3,7 @@ export const runtime = "nodejs";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 
 const CONTINUE_COMPLETION_RATIO = 0.95;
 const CONTINUE_TABLE_CACHE_TTL_MS = 5 * 60 * 1000;
@@ -160,7 +161,9 @@ function shouldSkipContinueWrite(
 }
 
 export async function GET(req: NextRequest): Promise<Response> {
-  const { userId } = getAuth(req);
+  const { userId: clerkUserId } = getAuth(req);
+  const mobileSession = !clerkUserId ? getMobileSessionFromRequest(req) : null;
+  const userId = clerkUserId ?? mobileSession?.sub ?? null;
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -280,7 +283,9 @@ export async function GET(req: NextRequest): Promise<Response> {
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
-  const { userId } = getAuth(req);
+  const { userId: clerkUserId } = getAuth(req);
+  const mobileSession = !clerkUserId ? getMobileSessionFromRequest(req) : null;
+  const userId = clerkUserId ?? mobileSession?.sub ?? null;
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

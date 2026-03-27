@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
   Home,
   Compass,
@@ -78,6 +79,7 @@ function SignInButtonCustom({ onClose }: { onClose?: () => void }) {
 export default function Sidebar({ onClose }: SidebarProps) {
   const { user } = useUser();
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
+  const [onboardingTourTarget, setOnboardingTourTarget] = useState("");
 
   const trackUpgradeCta = async (source: string) => {
     try {
@@ -99,8 +101,26 @@ export default function Sidebar({ onClose }: SidebarProps) {
     if (typeof onClose === "function") onClose();
   };
 
+  useEffect(() => {
+    const readTourTarget = () => {
+      if (typeof document === "undefined") return;
+      setOnboardingTourTarget(document.body.dataset.onboardingTourTarget ?? "");
+    };
+
+    readTourTarget();
+    window.addEventListener("dp-onboarding-tour-target-change", readTourTarget);
+    return () => {
+      window.removeEventListener("dp-onboarding-tour-target-change", readTourTarget);
+    };
+  }, []);
+
   const navLinkClass =
     "flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)] transition-colors";
+
+  const navLinkHighlight = (target: string) =>
+    onboardingTourTarget === target
+      ? "rounded-xl border border-[var(--primary)]/45 bg-[var(--primary)]/12 px-3 py-2 text-[var(--nav-text)] shadow-[0_0_0_1px_rgba(163,230,53,0.15)]"
+      : "";
 
   return (
     <div className="flex flex-col h-full w-full bg-[var(--bg-sidebar)] text-[var(--foreground)] p-6">
@@ -131,7 +151,8 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/"
           onClick={handleNavClick}
-          className={navLinkClass}
+          data-tour-target="home"
+          className={`${navLinkClass} ${navLinkHighlight("home")}`}
         >
           <Home size={22} /> Home
         </Link>
@@ -139,7 +160,8 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/explore"
           onClick={handleNavClick}
-          className={navLinkClass}
+          data-tour-target="explore"
+          className={`${navLinkClass} ${navLinkHighlight("explore")}`}
         >
           <Compass size={22} /> Explore
         </Link>
@@ -147,7 +169,8 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/practice"
           onClick={handleNavClick}
-          className={navLinkClass}
+          data-tour-target="practice-favorites"
+          className={`${navLinkClass} ${navLinkHighlight("practice-favorites")}`}
         >
           <Brain size={22} /> Practice
         </Link>
@@ -163,7 +186,8 @@ export default function Sidebar({ onClose }: SidebarProps) {
         <Link
           href="/favorites"
           onClick={handleNavClick}
-          className={navLinkClass}
+          data-tour-target="practice-favorites"
+          className={`${navLinkClass} ${navLinkHighlight("practice-favorites")}`}
         >
           <Star size={22} /> Favorites
         </Link>

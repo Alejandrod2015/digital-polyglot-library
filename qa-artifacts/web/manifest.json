@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-03-26T17:17:50.903Z",
+  "baseUrl": "http://127.0.0.1:3001",
+  "config": "qa/web-screenshots.config.json",
+  "captures": [
+    {
+      "id": "home",
+      "path": "/",
+      "url": "http://127.0.0.1:3001/",
+      "file": "qa-artifacts/web/home.png",
+      "status": "ok"
+    },
+    {
+      "id": "explore",
+      "path": "/explore",
+      "url": "http://127.0.0.1:3001/explore",
+      "file": "qa-artifacts/web/explore.png",
+      "status": "ok"
+    },
+    {
+      "id": "journey",
+      "path": "/journey",
+      "url": "http://127.0.0.1:3001/journey",
+      "file": "qa-artifacts/web/journey.png",
+      "status": "ok"
+    },
+    {
+      "id": "practice",
+      "path": "/practice",
+      "url": "http://127.0.0.1:3001/practice",
+      "status": "error",
+      "error": "page.goto: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3001/practice\", waiting until \"domcontentloaded\"\u001b[22m\n"
+    },
+    {
+      "id": "favorites",
+      "path": "/favorites",
+      "url": "http://127.0.0.1:3001/favorites",
+      "file": "qa-artifacts/web/favorites.png",
+      "status": "ok"
+    },
+    {
+      "id": "settings",
+      "path": "/settings",
+      "url": "http://127.0.0.1:3001/settings",
+      "file": "qa-artifacts/web/settings.png",
+      "status": "ok"
+    },
+    {
+      "id": "create",
+      "path": "/create",
+      "url": "http://127.0.0.1:3001/create",
+      "status": "error",
+      "error": "page.goto: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3001/create\", waiting until \"domcontentloaded\"\u001b[22m\n"
+    }
+  ]
+}

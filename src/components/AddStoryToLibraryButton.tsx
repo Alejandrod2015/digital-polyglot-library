@@ -8,7 +8,7 @@ import { clerkAppearance } from '../lib/clerkAppearance';
 import { books } from '@/data/books';
 import { removeOfflineStory, saveOfflineStory } from '@/lib/offlineLibrary';
 import { warmOfflineUrls } from '@/lib/offlineWarm';
-import { canUseOfflineAccess, type Plan } from '@/lib/access';
+import { canUseOfflineAccess, type Plan } from '@domain/access';
 
 
 type Props = {

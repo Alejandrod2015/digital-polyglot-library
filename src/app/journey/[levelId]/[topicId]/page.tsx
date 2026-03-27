@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
 import { ChevronLeft, Sparkles } from "lucide-react";
 import {
+  buildJourneyTrackInsights,
   buildJourneyLevels,
   getJourneyTopicCompletedStoryCount,
   getJourneyTopicCheckpointKey,
@@ -13,12 +14,15 @@ import {
   isJourneyTopicComplete,
 } from "../../journeyData";
 import { formatVariantLabel, normalizeVariant } from "@/lib/languageVariant";
+import { getJourneyFocusFromLearningGoal, getJourneyVariantFromPreferences, normalizeJourneyFocus } from "@/lib/onboarding";
 import {
   getCompletedJourneyStoryKeys,
+  getJourneyDueReviewItems,
   getPassedJourneyCheckpointKeys,
   getPracticedJourneyTopicKeys,
 } from "@/lib/journeyProgress";
 import StoryJourneyClient from "./StoryJourneyClient";
+import JourneyMilestoneBanner from "./JourneyMilestoneBanner";
 
 export async function generateStaticParams() {
   const levels = await buildJourneyLevels();
@@ -45,22 +49,36 @@ export default async function JourneyTopicPage({
   const { levelId, topicId } = await params;
   const { variant, justRead, justPracticed, justCheckpoint } = await searchParams;
   const user = await currentUser();
+  const preferredRegion =
+    typeof user?.publicMetadata?.preferredRegion === "string"
+      ? user.publicMetadata.preferredRegion
+      : null;
   const preferredVariant =
     typeof user?.publicMetadata?.preferredVariant === "string"
       ? normalizeVariant(user.publicMetadata.preferredVariant)
       : null;
+  const journeyFocus =
+    typeof user?.publicMetadata?.journeyFocus === "string"
+      ? normalizeJourneyFocus(user.publicMetadata.journeyFocus)
+      : getJourneyFocusFromLearningGoal(
+          typeof user?.publicMetadata?.learningGoal === "string" ? user.publicMetadata.learningGoal : null
+        );
   const activeVariant =
-    (typeof variant === "string" ? normalizeVariant(variant) : null) ?? preferredVariant ?? undefined;
+    (typeof variant === "string" ? normalizeVariant(variant) : null) ??
+    preferredVariant ??
+    getJourneyVariantFromPreferences("Spanish", preferredVariant, preferredRegion) ??
+    undefined;
   if (!variant && activeVariant) {
     redirect(`/journey/${levelId}/${topicId}?variant=${encodeURIComponent(activeVariant)}`);
   }
-  const levels = await buildJourneyLevels(activeVariant);
+  const levels = await buildJourneyLevels(activeVariant, "Spanish", journeyFocus ?? "General");
   const level = levels.find((entry) => entry.id === levelId) ?? null;
   const topic = level?.topics.find((entry) => entry.slug === topicId) ?? null;
-  const [completedStoryKeys, passedCheckpointKeys, practicedTopicKeys] = await Promise.all([
+  const [completedStoryKeys, passedCheckpointKeys, practicedTopicKeys, dueReviewItems] = await Promise.all([
     getCompletedJourneyStoryKeys(),
     getPassedJourneyCheckpointKeys(),
     getPracticedJourneyTopicKeys(),
+    getJourneyDueReviewItems(),
   ]);
 
   if (!level || !topic) {
@@ -98,6 +116,19 @@ export default async function JourneyTopicPage({
   const completedStoryCount = getJourneyTopicCompletedStoryCount(topic, optimisticCompletedStoryKeys);
   const requiredStoryCount = getJourneyTopicRequiredStoryCount(topic);
   const remainingRequiredStories = Math.max(0, requiredStoryCount - completedStoryCount);
+  const dueReviewProgressKeySet = new Set(
+    dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))
+  );
+  const topicDueReviewCount = topic.stories.reduce((sum, story) => {
+    return sum + (dueReviewProgressKeySet.has(story.progressKey) ? 1 : 0);
+  }, 0);
+  const trackInsights = buildJourneyTrackInsights(
+    { id: activeVariant ?? "default", levels },
+    optimisticCompletedStoryKeys,
+    optimisticPracticedTopicKeys,
+    optimisticPassedCheckpointKeys,
+    dueReviewItems
+  );
 
   const returnParams = new URLSearchParams();
   if (activeVariant) returnParams.set("variant", activeVariant);
@@ -121,23 +152,77 @@ export default async function JourneyTopicPage({
   if (activeVariant) checkpointHrefParams.set("variant", activeVariant);
   checkpointHrefParams.set("returnTo", checkpointReturnHref);
   const checkpointHref = `/journey/${level.id}/${topic.slug}/checkpoint?${checkpointHrefParams.toString()}`;
-  const primaryAction = !topicCompleted
-    ? null
-    : !topicPracticed
+  const currentTopicIndex = level.topics.findIndex((entry) => entry.slug === topic.slug);
+  const nextTopic = currentTopicIndex >= 0
+    ? level.topics.slice(currentTopicIndex + 1).find((entry) => entry.storyCount > 0) ?? null
+    : null;
+  const nextUnlockedStory = topic.stories.find((story, index) => {
+    const isUnlocked = index < unlockedStoryCount;
+    return isUnlocked && !isJourneyStoryComplete(story, optimisticCompletedStoryKeys);
+  }) ?? null;
+  const nextTopicHref =
+    nextTopic
+      ? `/journey/${level.id}/${nextTopic.slug}${activeVariant ? `?variant=${encodeURIComponent(activeVariant)}` : ""}`
+      : null;
+  const currentLevelIndex = levels.findIndex((entry) => entry.id === level.id);
+  const nextUnlockedLevel =
+    currentLevelIndex >= 0
+      ? levels.slice(currentLevelIndex + 1).find((entry) => entry.topics.some((topic) => topic.storyCount > 0)) ?? null
+      : null;
+  const nextUnlockedLevelHref =
+    nextUnlockedLevel
+      ? `/journey${activeVariant ? `?variant=${encodeURIComponent(activeVariant)}` : ""}`
+      : null;
+  const primaryAction = nextUnlockedStory
+    ? {
+        href: `${nextUnlockedStory.href}?returnTo=${encodeURIComponent(
+          `/journey/${level.id}/${topic.slug}?${new URLSearchParams(
+            activeVariant ? { variant: activeVariant, justRead: nextUnlockedStory.progressKey } : { justRead: nextUnlockedStory.progressKey }
+          ).toString()}`
+        )}&returnLabel=${encodeURIComponent(returnLabel)}`,
+        label: nextUnlockedStory.title,
+        cta: "Continue story",
+        tone:
+          "inline-flex rounded-full border border-lime-200/20 bg-lime-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-lime-100 hover:bg-lime-300/16",
+        description: "Pick up the next unlocked story and keep the topic moving.",
+      }
+    : topicDueReviewCount > 0
       ? {
           href: topicPracticeHref,
-          label: "Practice topic",
+          label: "Review due",
+          cta: "Start review",
           tone:
-            "inline-flex rounded-full border border-sky-200/20 bg-sky-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-sky-100 hover:bg-sky-300/16",
+            "inline-flex rounded-full border border-amber-200/20 bg-amber-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-100 hover:bg-amber-300/16",
+          description: `You have ${topicDueReviewCount} due ${topicDueReviewCount === 1 ? "review item" : "review items"} in this topic.`,
         }
-      : !checkpointPassed
+      : !topicPracticed
         ? {
-            href: checkpointHref,
-            label: "Take checkpoint",
+            href: topicPracticeHref,
+            label: "Practice topic",
+            cta: "Open practice",
             tone:
-              "inline-flex rounded-full border border-amber-200/20 bg-amber-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-100 hover:bg-amber-300/16",
+              "inline-flex rounded-full border border-sky-200/20 bg-sky-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-sky-100 hover:bg-sky-300/16",
+            description: "You finished the reading. Lock it in with a focused practice pass.",
           }
-        : null;
+        : !checkpointPassed
+          ? {
+              href: checkpointHref,
+              label: "Take checkpoint",
+              cta: "Start checkpoint",
+              tone:
+                "inline-flex rounded-full border border-amber-200/20 bg-amber-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-100 hover:bg-amber-300/16",
+              description: "Pass the checkpoint to unlock the next step in the journey.",
+            }
+          : nextTopicHref
+            ? {
+                href: nextTopicHref,
+                label: "Next topic",
+                cta: "Open next topic",
+                tone:
+                  "inline-flex rounded-full border border-emerald-200/20 bg-emerald-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-100 hover:bg-emerald-300/16",
+                description: `Move on to ${nextTopic?.label ?? "the next topic"}.`,
+              }
+            : null;
 
   const storyNodes = topic.stories.map((story, index) => {
     const isUnlocked = index < unlockedStoryCount;
@@ -197,7 +282,56 @@ export default async function JourneyTopicPage({
           badgeTone: "emerald" as const,
           unlocked: false,
           icon: "sparkles" as const,
-        };
+      };
+
+  const milestoneCard =
+    justCheckpoint === "1" && checkpointPassed
+      ? nextTopic && nextTopicHref
+        ? {
+            eyebrow: "Unlocked",
+            title: "Checkpoint cleared",
+            body: `${nextTopic.label} is now open. Keep the journey moving while the momentum is fresh.`,
+            cta: "Open next topic",
+            href: nextTopicHref,
+          }
+        : nextUnlockedLevel && nextUnlockedLevelHref
+          ? {
+              eyebrow: "Level unlocked",
+              title: `${nextUnlockedLevel.title} is open`,
+              body: `You cleared ${topic.label}. The next level is ready when you are.`,
+              cta: "Back to map",
+              href: nextUnlockedLevelHref,
+            }
+          : {
+              eyebrow: "Completed",
+              title: "Checkpoint cleared",
+              body: `${topic.label} is fully cleared.`,
+              cta: "Back to topics",
+              href: activeVariant ? `/journey?variant=${encodeURIComponent(activeVariant)}` : "/journey",
+            }
+      : justPracticed === "1" && topicPracticed
+        ? {
+            eyebrow: "Locked in",
+            title: "Practice complete",
+            body: checkpointPassed
+              ? `${topic.label} is already cleared. You can move on whenever you want.`
+              : `${topic.label} is now ready for its checkpoint.`,
+            cta: checkpointPassed ? "Back to topics" : "Start checkpoint",
+            href: checkpointPassed
+              ? activeVariant
+                ? `/journey?variant=${encodeURIComponent(activeVariant)}`
+                : "/journey"
+              : checkpointHref,
+          }
+        : typeof justRead === "string" && justRead.trim() && topicCompleted && !topicPracticed
+          ? {
+              eyebrow: "Stories cleared",
+              title: "Topic reading complete",
+              body: `You finished the required stories for ${topic.label}. Practice is the next unlock step.`,
+              cta: "Open practice",
+              href: topicPracticeHref,
+            }
+          : null;
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 pb-14 pt-4 sm:px-6 lg:px-8">
@@ -228,6 +362,44 @@ export default async function JourneyTopicPage({
       </section>
 
       <section className="overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(19,45,82,0.96),rgba(11,31,61,0.98))] px-2.5 py-3 shadow-[0_20px_50px_rgba(2,10,26,0.28)] sm:px-5 sm:py-4">
+        {milestoneCard ? <JourneyMilestoneBanner {...milestoneCard} /> : null}
+
+        <div className="mb-3 grid gap-3 md:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)]">
+          <div className="rounded-[1.35rem] border border-white/10 bg-white/[0.04] px-4 py-3">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-sky-100/75">Journey score</p>
+            <div className="mt-1 flex items-end gap-3">
+              <p className="text-3xl font-black leading-none tracking-tight text-white">{trackInsights.score}</p>
+              <p className="pb-0.5 text-sm text-slate-300/80">
+                {trackInsights.completedSteps}/{trackInsights.totalSteps} steps
+              </p>
+            </div>
+            <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/8">
+              <div
+                className="h-full rounded-full bg-[linear-gradient(90deg,#bef264,#38bdf8)]"
+                style={{ width: `${Math.max(6, trackInsights.score)}%` }}
+              />
+            </div>
+            <p className="mt-3 text-sm text-slate-300/80">Next milestone: {trackInsights.nextMilestone}</p>
+          </div>
+          <div className="rounded-[1.35rem] border border-amber-200/10 bg-amber-300/5 px-4 py-3">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-amber-100/80">Review lane</p>
+            <p className="mt-1 text-base font-black tracking-tight text-white">
+              {topicDueReviewCount > 0
+                ? `${topicDueReviewCount} due in this topic`
+                : trackInsights.dueReviewCount > 0
+                  ? `${trackInsights.dueReviewCount} due across the track`
+                  : "No due review right now"}
+            </p>
+            <p className="mt-2 text-sm text-slate-300/80">
+              {topicDueReviewCount > 0
+                ? "Clear these review items before they pile up and slow the lane down."
+                : trackInsights.dueReviewCount > 0
+                  ? "This topic is clear, but other topics need review to keep the path warm."
+                  : "Perfect moment to keep moving forward with fresh stories."}
+            </p>
+          </div>
+        </div>
+
         <div className="mb-2 flex items-center justify-between gap-3">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-sky-100/70">{level.subtitle}</p>
@@ -235,9 +407,16 @@ export default async function JourneyTopicPage({
           </div>
           <div className="flex items-center gap-2">
             {primaryAction ? (
-              <Link href={primaryAction.href} className={primaryAction.tone}>
-                {primaryAction.label}
-              </Link>
+              <div className="flex items-center gap-2">
+                <div className="hidden max-w-[16rem] text-right md:block">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-sky-100/75">Next action</p>
+                  <p className="mt-1 text-sm font-semibold text-white">{primaryAction.label}</p>
+                  <p className="mt-1 text-xs text-slate-300/80">{primaryAction.description}</p>
+                </div>
+                <Link href={primaryAction.href} className={primaryAction.tone}>
+                  {primaryAction.cta}
+                </Link>
+              </div>
             ) : !topicCompleted ? (
               <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-200/80">
                 Finish {remainingRequiredStories} more {remainingRequiredStories === 1 ? "story" : "stories"}

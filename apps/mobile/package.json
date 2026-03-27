@@ -1,0 +1,44 @@
+{
+  "name": "@digital-polyglot/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "main": "expo/AppEntry",
+  "expo": {
+    "autolinking": {
+      "exclude": [
+        "@clerk/expo"
+      ]
+    }
+  },
+  "scripts": {
+    "start": "expo start",
+    "ios": "expo start --ios",
+    "android": "expo start --android",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@clerk/expo": "^3.1.4",
+    "@digital-polyglot/domain": "file:../../packages/domain",
+    "expo": "54.0.33",
+    "expo-asset": "~12.0.12",
+    "expo-auth-session": "~7.0.10",
+    "expo-av": "~16.0.8",
+    "expo-constants": "~18.0.13",
+    "expo-crypto": "~15.0.8",
+    "expo-device": "~8.0.10",
+    "expo-file-system": "~19.0.21",
+    "expo-font": "~14.0.9",
+    "expo-notifications": "~0.32.16",
+    "expo-secure-store": "~15.0.8",
+    "expo-speech": "^55.0.9",
+    "expo-web-browser": "~15.0.10",
+    "react": "19.1.0",
+    "react-native": "0.81.5"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.10",
+    "babel-preset-expo": "~54.0.10",
+    "eas-cli": "^18.4.0",
+    "typescript": "^5.9.3"
+  }
+}

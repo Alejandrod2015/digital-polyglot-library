@@ -1,5 +1,10 @@
 import { books } from "@/data/books";
 import { splitStoryTextIntoSentences } from "@/lib/audioSegments";
+import {
+  getPracticeModeBias,
+  sortPracticeItemsByOnboarding,
+  type OnboardingPracticePrefs,
+} from "@/lib/onboarding";
 import { normalizeVocabType } from "@/lib/vocabTypes";
 import { getSegmentIdFromSourcePath, getStorySource, isStandaloneSourcePath } from "@/lib/storySource";
 
@@ -441,7 +446,10 @@ export function getDuePracticeItems(items: PracticeFavoriteItem[]): PracticeFavo
   });
 }
 
-function getPracticeSource(items: PracticeFavoriteItem[]): PracticeFavoriteItem[] {
+function getPracticeSource(
+  items: PracticeFavoriteItem[],
+  prefs?: OnboardingPracticePrefs
+): PracticeFavoriteItem[] {
   const all = uniqueByWord(items);
   const due = uniqueByWord(getDuePracticeItems(all));
   if (due.length === 0) return all;
@@ -469,17 +477,20 @@ function getPracticeSource(items: PracticeFavoriteItem[]): PracticeFavoriteItem[
       return a.word.localeCompare(b.word);
     });
 
-  return [
-    ...sortByPriority(due),
-    ...sortByPriority(all.filter((item) => !dueKeys.has(`${normalizeKey(item.language)}::${normalizeKey(item.word)}`))),
-  ];
+  const orderedDue = sortByPriority(due);
+  const orderedRest = sortByPriority(
+    all.filter((item) => !dueKeys.has(`${normalizeKey(item.language)}::${normalizeKey(item.word)}`))
+  );
+  const ordered = [...orderedDue, ...orderedRest];
+  return prefs ? sortPracticeItemsByOnboarding(ordered, prefs, true) : ordered;
 }
 
 export function buildPracticeSession(
   items: PracticeFavoriteItem[],
-  mode: PracticeMode
+  mode: PracticeMode,
+  prefs?: OnboardingPracticePrefs
 ): PracticeExercise[] {
-  const source = getPracticeSource(items);
+  const source = getPracticeSource(items, prefs);
   if (source.length === 0) return [];
 
   const languageAwarePool = uniqueByWord([...source, ...catalogPool]);
@@ -540,10 +551,11 @@ function getExerciseAnchor(exercise: PracticeExercise): string {
 export function buildMixedPracticeSession(
   items: PracticeFavoriteItem[],
   plan: PracticeMode[],
-  maxExercises = 10
+  maxExercises = 10,
+  prefs?: OnboardingPracticePrefs
 ): PracticeExercise[] {
   const sessionsByMode = new Map<PracticeMode, PracticeExercise[]>(
-    plan.map((mode) => [mode, buildPracticeSession(items, mode)])
+    plan.map((mode) => [mode, buildPracticeSession(items, mode, prefs)])
   );
   const nextIndexByMode = new Map<PracticeMode, number>(plan.map((mode) => [mode, 0]));
   const usedAnchors = new Set<string>();
@@ -595,6 +607,32 @@ export function buildTopicCheckpointPracticeSession(items: PracticeFavoriteItem[
     ["meaning", "context", "listening", "meaning", "context", "listening", "natural", "meaning"],
     8
   );
+}
+
+export function getRecommendedPracticeModeFromOnboarding(
+  items: PracticeFavoriteItem[],
+  fallback: PracticeMode,
+  prefs?: OnboardingPracticePrefs
+): PracticeMode {
+  if (!prefs) return fallback;
+  const bias = getPracticeModeBias(prefs);
+  if (!bias) return fallback;
+
+  const sorted = sortPracticeItemsByOnboarding(items, prefs, true);
+  if (sorted.length === 0) return fallback;
+
+  if (bias === "natural") {
+    return sorted.some((item) => normalizeVocabType(item.wordType, { word: item.word, definition: item.translation }) === "expression")
+      ? "natural"
+      : fallback;
+  }
+  if (bias === "context") {
+    return sorted.some((item) => normalizeText(item.exampleSentence)) ? "context" : fallback;
+  }
+  if (bias === "listening") {
+    return sorted.some((item) => item.storySlug || item.language) ? "listening" : fallback;
+  }
+  return bias;
 }
 
 export function getSpeechSynthesisLang(language?: string | null): string {

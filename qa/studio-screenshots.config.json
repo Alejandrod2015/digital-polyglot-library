@@ -1,0 +1,10 @@
+{
+  "baseUrl": "http://127.0.0.1:3000",
+  "outputDir": "qa-artifacts/studio",
+  "pages": [
+    {
+      "id": "studio-home",
+      "path": "/studio"
+    }
+  ]
+}

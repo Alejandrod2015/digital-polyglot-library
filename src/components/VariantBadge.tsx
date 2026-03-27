@@ -1,6 +1,6 @@
 "use client";
 
-import { formatVariant } from "@/lib/displayFormat";
+import { formatVariant } from "@domain/displayFormat";
 
 type VariantBadgeProps = {
   variant?: string | null;

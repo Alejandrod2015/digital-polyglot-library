@@ -272,3 +272,300 @@ body {
   -ms-overflow-style: none; /* IE y Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* ── Studio accent color ── */
+:root {
+  --studio-accent: #14b8a6;
+  --studio-accent-hover: #0d9488;
+  --studio-accent-soft: rgba(20, 184, 166, 0.15);
+  --studio-accent-glow: rgba(20, 184, 166, 0.3);
+  --studio-sidebar-bg: #080f1a;
+  --studio-sidebar-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Studio layout: sidebar + main ── */
+.studio-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* ── Studio sidebar ── */
+.studio-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  background: var(--studio-sidebar-bg);
+  border-right: 1px solid var(--studio-sidebar-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 40;
+  overflow-y: auto;
+}
+
+.studio-sidebar-brand {
+  padding: 20px 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--studio-sidebar-border);
+}
+
+.studio-brand-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--studio-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.studio-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--studio-accent);
+  background: var(--studio-accent-soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+.studio-sidebar-nav {
+  padding: 12px 0;
+  flex: 1;
+}
+
+.studio-nav-section {
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+
+.studio-nav-section-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 12px 8px 6px;
+  opacity: 0.7;
+}
+
+.studio-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  background: none;
+  border: none;
+  text-align: left;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.studio-sidebar-link:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--foreground);
+}
+
+.studio-sidebar-link-active {
+  background-color: var(--studio-accent-soft) !important;
+  color: var(--studio-accent) !important;
+  font-weight: 600;
+}
+
+/* ── Studio main area ── */
+.studio-main {
+  margin-left: 240px;
+  flex: 1;
+  min-width: 0;
+}
+
+.studio-page-header {
+  padding: 24px 32px 20px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.studio-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.studio-page-desc {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+
+.studio-content {
+  padding: 24px 32px 48px;
+  max-width: 1200px;
+}
+
+/* ── Studio UI helper classes ── */
+
+/* Card hover */
+.studio-card {
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+.studio-card:hover {
+  background-color: var(--card-bg-hover);
+  border-color: var(--chip-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Nav button hover (for StudioActionLink buttons) */
+.studio-nav-btn {
+  transition: background-color 0.15s, color 0.15s;
+}
+.studio-nav-btn:hover:not(:disabled) {
+  background-color: var(--card-bg) !important;
+  color: var(--foreground) !important;
+}
+
+/* Table row hover */
+.studio-table-row {
+  transition: background-color 0.15s;
+}
+.studio-table-row:hover {
+  background-color: var(--card-bg);
+}
+
+/* Ghost button hover */
+.studio-btn-ghost {
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.studio-btn-ghost:hover:not(:disabled) {
+  background-color: var(--card-bg-hover);
+  border-color: var(--chip-border);
+  color: var(--foreground);
+}
+
+/* Primary button hover */
+.studio-btn-primary {
+  transition: background-color 0.15s, box-shadow 0.15s;
+}
+.studio-btn-primary:hover:not(:disabled) {
+  background-color: var(--studio-accent-hover);
+  box-shadow: 0 2px 8px var(--studio-accent-glow);
+}
+
+/* Input focus */
+.studio-input {
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.studio-input:focus {
+  border-color: var(--studio-accent);
+  box-shadow: 0 0 0 3px var(--studio-accent-soft);
+  outline: none;
+}
+
+/* Toast notification */
+@keyframes studio-toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.studio-toast {
+  animation: studio-toast-in 0.2s ease-out;
+}
+
+/* Skeleton pulse */
+@keyframes studio-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+.studio-skeleton {
+  animation: studio-pulse 1.8s ease-in-out infinite;
+  border-radius: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* Breadcrumb separator */
+.studio-breadcrumb-sep {
+  color: var(--muted);
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+/* Spinner for StudioActionLink */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Studio responsive ── */
+@media (max-width: 900px) {
+  .studio-sidebar {
+    width: 200px;
+  }
+  .studio-main {
+    margin-left: 200px;
+  }
+  .studio-content {
+    padding: 20px 20px 48px;
+  }
+  .studio-page-header {
+    padding: 20px 20px 16px;
+  }
+  /* Story editor: stack columns vertically */
+  .studio-editor-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Metrics: 2-col KPI grid on tablet */
+  .studio-kpi-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Plan editor: stack level fields */
+  .studio-level-fields {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Plan editor: stack topic row */
+  .studio-topic-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .studio-sidebar {
+    display: none;
+  }
+  .studio-main {
+    margin-left: 0;
+  }
+  .studio-kpi-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .studio-level-fields {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Studio section fade-in ── */
+@keyframes studio-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.studio-section-fade {
+  animation: studio-fade-in 0.2s ease-out;
+}
+
+/* ── Studio validation error field ── */
+.studio-input-error {
+  border-color: #ef4444 !important;
+}
+.studio-input-error:focus {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}

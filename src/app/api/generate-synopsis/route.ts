@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { buildSanityCorsHeaders } from "@/lib/sanityCors";
-import { cefrPromptLabel } from "@/lib/cefr";
+import { cefrPromptLabel } from "@domain/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 
 const openai = new OpenAI({

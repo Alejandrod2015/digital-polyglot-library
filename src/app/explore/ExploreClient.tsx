@@ -9,12 +9,18 @@ import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
 import { useUser } from "@clerk/nextjs";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import ExploreSearch from "@/components/ExploreSearch";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { formatLanguage, formatRegion, formatTopic } from "@/lib/displayFormat";
-import { getBookCardMeta } from "@/lib/bookCardMeta";
+import { formatLanguage, formatRegion, formatTopic } from "@domain/displayFormat";
+import { getBookCardMeta } from "@domain/bookCardMeta";
 import { ChevronDown } from "lucide-react";
+import {
+  pickOnboardingTopicPreference,
+  scoreReadTimeFit,
+  scoreTopicLabelAgainstOnboarding,
+  type OnboardingGoal,
+} from "@/lib/onboarding";
 import { resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 type UserStory = {
@@ -77,6 +83,10 @@ function normalizeCoverUrl(raw: string | null | undefined): string {
   if (!v) return "/covers/default.jpg";
 
   return v;
+}
+
+function stripHtml(input?: string): string {
+  return (input ?? "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
 function normalizeTopicKey(value: string): string {
@@ -212,13 +222,21 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
   const rawTargetLanguages = user?.publicMetadata?.targetLanguages as unknown;
   const targetLanguages = useMemo(() => rawTargetLanguages ?? [], [rawTargetLanguages]);
+  const rawInterests = user?.publicMetadata?.interests as unknown;
+  const interests = useMemo(() => (isStringArray(rawInterests) ? rawInterests : []), [rawInterests]);
+  const learningGoalRaw = user?.publicMetadata?.learningGoal as unknown;
+  const learningGoal = typeof learningGoalRaw === "string" ? (learningGoalRaw as OnboardingGoal) : null;
+  const dailyMinutesRaw = user?.publicMetadata?.dailyMinutes as unknown;
+  const dailyMinutes = typeof dailyMinutesRaw === "number" ? dailyMinutesRaw : null;
   const preferredRegionRaw = user?.publicMetadata?.preferredRegion as unknown;
   const preferredRegion = typeof preferredRegionRaw === "string" ? preferredRegionRaw.trim() : "";
-  const fallbackLanguage = useMemo(() => {
-    if (!isStringArray(targetLanguages) || targetLanguages.length === 0) return "";
-    return typeof targetLanguages[0] === "string" ? targetLanguages[0].trim() : "";
+  const normalizedTargetLanguages = useMemo(() => {
+    if (!isStringArray(targetLanguages)) return [];
+    return targetLanguages
+      .map((value) => value.trim())
+      .filter(Boolean);
   }, [targetLanguages]);
-  const effectiveLanguageValue = languageFromUrl.trim() || fallbackLanguage;
+  const effectiveLanguageValue = languageFromUrl.trim() || normalizedTargetLanguages[0] || "";
   const effectiveRegionValue = regionFromUrl.trim() || preferredRegion;
   const selectedLanguageKey = normalizeTopicKey(effectiveLanguageValue);
   const selectedRegionKey = normalizeTopicKey(effectiveRegionValue);
@@ -246,8 +264,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     const allBookStories = extractBookStories(allBooks);
 
     const langs =
-      isStringArray(targetLanguages) && targetLanguages.length > 0
-        ? new Set(targetLanguages.map((l) => l.toLowerCase()))
+      normalizedTargetLanguages.length > 0
+        ? new Set(normalizedTargetLanguages.map((l) => l.toLowerCase()))
         : null;
 
     const languageFilteredBooks = langs
@@ -333,8 +351,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
 
     const languageSelectedLabel =
       languageOptions.find((chip) => chip.key === selectedLanguageKey)?.label ||
-      effectiveLanguageValue ||
-      null;
+      (effectiveLanguageValue || null);
 
     const languageSelectedBooks = selectedLanguageKey
       ? languageFilteredBooks.filter((book) => {
@@ -380,8 +397,19 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
       }))
       .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 
+    const defaultTopicLabel = topicFromUrl.trim()
+      ? null
+      : pickOnboardingTopicPreference(
+          chips.map((chip) => chip.label),
+          interests,
+          learningGoal
+        );
+    const effectiveTopicKey = selectedTopicKey || normalizeTopicKey(defaultTopicLabel ?? "");
     const selectedLabel =
-      chips.find((chip) => chip.key === selectedTopicKey)?.label || topicFromUrl.trim() || null;
+      chips.find((chip) => chip.key === effectiveTopicKey)?.label ||
+      defaultTopicLabel ||
+      topicFromUrl.trim() ||
+      null;
 
     const regionFilteredBooks = selectedRegionKey
       ? languageSelectedBooks.filter((book) => {
@@ -402,29 +430,70 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         )
       : languageSelectedPolyglotStories;
 
-    const topicFilteredBooks = selectedTopicKey
+    const topicFilteredBooks = effectiveTopicKey
       ? regionFilteredBooks.filter((book) => {
           if (!isRecord(book)) return false;
-          return matchesTopic(extractBookTopics(book), selectedTopicKey);
+          return matchesTopic(extractBookTopics(book), effectiveTopicKey);
         })
       : regionFilteredBooks;
 
-    const topicFilteredBookStories = selectedTopicKey
-      ? regionFilteredBookStories.filter((story) => matchesTopic(story.topics, selectedTopicKey))
+    const topicFilteredBookStories = effectiveTopicKey
+      ? regionFilteredBookStories.filter((story) => matchesTopic(story.topics, effectiveTopicKey))
       : regionFilteredBookStories;
 
-    const topicFilteredPolyglotStories = selectedTopicKey
+    const topicFilteredPolyglotStories = effectiveTopicKey
       ? regionFilteredPolyglotStories.filter((story) =>
-          matchesTopic([...toTopicList(story.topic), ...toTopicList(story.themes)], selectedTopicKey)
+          matchesTopic([...toTopicList(story.topic), ...toTopicList(story.themes)], effectiveTopicKey)
         )
       : regionFilteredPolyglotStories;
 
-    const preview = topicFilteredBookStories.slice(0, 18);
+    const rankedBooks = [...topicFilteredBooks].sort((a, b) => {
+      const scoreBook = (book: unknown) => {
+        if (!isRecord(book)) return 0;
+        const slug = getString(book, "slug") ?? "";
+        const bookMeta = books[slug as keyof typeof books];
+        const avgReadMinutes =
+          bookMeta && bookMeta.stories.length > 0
+            ? Math.round(bookMeta.stories.reduce((sum, story) => sum + Math.max(1, Math.ceil(stripHtml(story.text ?? "").split(/\s+/).filter(Boolean).length / 180)), 0) / bookMeta.stories.length)
+            : null;
+        return (
+          scoreTopicLabelAgainstOnboarding(
+            [getString(book, "topic"), getString(book, "title"), getString(book, "description")].filter(Boolean).join(" "),
+            interests,
+            learningGoal
+          ) +
+          scoreReadTimeFit(avgReadMinutes, dailyMinutes)
+        );
+      };
+      return scoreBook(b) - scoreBook(a);
+    });
+
+    const rankedBookStories = [...topicFilteredBookStories].sort((a, b) => {
+      const scoreStory = (story: BookStoryItem) =>
+        scoreTopicLabelAgainstOnboarding(
+          [...story.topics, story.storyTitle, story.bookTitle].join(" "),
+          interests,
+          learningGoal
+        ) + scoreReadTimeFit(Math.max(1, Math.ceil((books[story.bookSlug as keyof typeof books]?.stories.find((entry) => entry.slug === story.storySlug)?.text ?? "").split(/\s+/).filter(Boolean).length / 180)), dailyMinutes);
+      return scoreStory(b) - scoreStory(a) || a.storyTitle.localeCompare(b.storyTitle);
+    });
+
+    const rankedPolyglotStories = [...topicFilteredPolyglotStories].sort((a, b) => {
+      const scorePolyglot = (story: UserStory) =>
+        scoreTopicLabelAgainstOnboarding(
+          [story.topic, ...(story.themes ?? []), story.title, story.text].filter(Boolean).join(" "),
+          interests,
+          learningGoal
+        ) + scoreReadTimeFit(Math.max(1, Math.ceil(stripHtml(story.text ?? "").split(/\s+/).filter(Boolean).length / 180)), dailyMinutes);
+      return scorePolyglot(b) - scorePolyglot(a) || a.title.localeCompare(b.title);
+    });
+
+    const preview = rankedBookStories.slice(0, 18);
 
     return {
-      filteredBooks: topicFilteredBooks,
-      filteredPolyglotStories: topicFilteredPolyglotStories,
-      allFilteredBookStories: topicFilteredBookStories,
+      filteredBooks: rankedBooks,
+      filteredPolyglotStories: rankedPolyglotStories,
+      allFilteredBookStories: rankedBookStories,
       previewBookStories: preview,
       languageChips: languageOptions,
       regionChips: regionOptions,
@@ -435,12 +504,15 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     };
   }, [
     polyglotStories,
-    targetLanguages,
+    normalizedTargetLanguages,
     selectedLanguageKey,
     selectedRegionKey,
     selectedTopicKey,
     effectiveLanguageValue,
     effectiveRegionValue,
+    interests,
+    learningGoal,
+    dailyMinutes,
     topicFromUrl,
   ]);
 
@@ -550,7 +622,9 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                     onChange={(event) => setFilterInUrl("language", event.target.value)}
                     className="w-full appearance-none rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-3 pr-11 py-2 text-[13px] font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40 md:px-4 md:pr-12 md:py-2.5 md:text-sm"
                   >
-                    <option value="">All languages</option>
+                    <option value="">
+                      {normalizedTargetLanguages.length > 0 ? "Your languages" : "All languages"}
+                    </option>
                     {languageChips.map((chip) => (
                       <option key={chip.key} value={chip.label}>
                         {chip.label} ({chip.count})

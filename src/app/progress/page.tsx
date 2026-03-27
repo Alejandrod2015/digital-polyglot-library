@@ -23,6 +23,31 @@ type ProgressPayload = {
   practiceAccuracy: number;
   practiceStreakDays: number;
   streakDays: number;
+  gamification: {
+    totalXp: number;
+    todayXp: number;
+    weeklyXp: number;
+    currentLevel: number;
+    levelStartXp: number;
+    nextLevelXp: number;
+    levelProgress: number;
+    dailyStreak: number;
+    quests: Array<{
+      id: string;
+      label: string;
+      current: number;
+      target: number;
+      rewardXp: number;
+      complete: boolean;
+    }>;
+    badges: Array<{
+      id: string;
+      label: string;
+      description: string;
+      unlocked: boolean;
+      accent: string;
+    }>;
+  };
 };
 
 function clamp(value: number, min: number, max: number): number {
@@ -55,6 +80,7 @@ type Achievement = {
   current: number;
   target: number;
   accent: string;
+  unlocked?: boolean;
 };
 
 export default function ProgressPage() {
@@ -100,36 +126,22 @@ export default function ProgressPage() {
 
   const achievements = useMemo<Achievement[]>(() => {
     if (!progress) return [];
-    return [
-      {
-        label: "Wildfire",
-        description: "Reach a 7-day story streak",
-        current: progress.storyStreakDays,
-        target: 7,
-        accent: "bg-[#ff8a5b]",
-      },
-      {
-        label: "Pathfinder",
-        description: "Explore 3 regions",
-        current: progress.regionsExplored,
-        target: 3,
-        accent: "bg-[#4bb7ff]",
-      },
-      {
-        label: "Collector",
-        description: "Save 25 useful words",
-        current: progress.wordsLearned,
-        target: 25,
-        accent: "bg-[#7ad67f]",
-      },
-      {
-        label: "Sharpener",
-        description: "Complete 10 practice sessions",
-        current: progress.practiceSessionsCompleted,
-        target: 10,
-        accent: "bg-[#a78bfa]",
-      },
-    ];
+    const progressMap: Record<string, { current: number; target: number }> = {
+      first_story: { current: progress.storiesFinished, target: 1 },
+      week_streak: { current: progress.storyStreakDays, target: 7 },
+      word_collector: { current: progress.wordsLearned, target: 25 },
+      practice_ten: { current: progress.practiceSessionsCompleted, target: 10 },
+      region_explorer: { current: progress.regionsExplored, target: 3 },
+    };
+
+    return progress.gamification.badges.map((badge) => ({
+      label: badge.label,
+      description: badge.description,
+      current: progressMap[badge.id]?.current ?? 0,
+      target: progressMap[badge.id]?.target ?? 1,
+      accent: badge.accent,
+      unlocked: badge.unlocked,
+    }));
   }, [progress]);
 
   if (!isLoaded || loading) {
@@ -239,6 +251,82 @@ export default function ProgressPage() {
         </div>
       </div>
 
+      <div className="mb-4 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="rounded-[26px] border border-[#26425f] bg-[linear-gradient(180deg,#16304f_0%,#132947_100%)] p-5 shadow-[0_18px_40px_rgba(6,17,38,0.22)]">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-100">
+              <Flame size={14} className="text-[#ffd36b]" />
+              {progress.gamification.dailyStreak}-day streak
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#365b81] bg-[#21466d] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#dcefff]">
+              <Star size={14} className="text-[#8ef0c6]" />
+              {progress.gamification.totalXp} XP
+            </span>
+          </div>
+
+          <div className="mt-5 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Level</p>
+              <p className="mt-2 text-5xl font-bold text-white">{progress.gamification.currentLevel}</p>
+            </div>
+            <div className="text-right text-sm text-slate-300">
+              <p>{progress.gamification.todayXp} XP today</p>
+              <p>{progress.gamification.weeklyXp} XP this week</p>
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <div className="mb-2 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
+              <span>Progress to next level</span>
+              <span>
+                {progress.gamification.totalXp - progress.gamification.levelStartXp} /{" "}
+                {progress.gamification.nextLevelXp - progress.gamification.levelStartXp} XP
+              </span>
+            </div>
+            <div className="h-3 overflow-hidden rounded-full bg-[#314861]">
+              <div
+                className="h-full rounded-full bg-[linear-gradient(90deg,#71dd5a,#3dc55d)] transition-all"
+                style={{ width: `${Math.round(progress.gamification.levelProgress * 100)}%` }}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-[26px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4 sm:p-5">
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-slate-100">
+              <Trophy size={18} className="text-[#ffd36b]" />
+              Daily quests
+            </div>
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+              {progress.gamification.quests.filter((quest) => quest.complete).length} / {progress.gamification.quests.length}
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            {progress.gamification.quests.map((quest) => (
+              <div
+                key={quest.id}
+                className="rounded-[18px] border border-[#334860] bg-[var(--bg-content)] px-4 py-3"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-[var(--foreground)]">{quest.label}</p>
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--primary)]">
+                    +{quest.rewardXp} XP
+                  </span>
+                </div>
+                <div className="mt-2 flex items-center justify-between text-xs text-slate-300">
+                  <span>
+                    {Math.min(quest.current, quest.target)} / {quest.target}
+                  </span>
+                  <span>{quest.complete ? "Done" : "In progress"}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
         <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
           <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
@@ -296,9 +384,12 @@ export default function ProgressPage() {
                 key={achievement.label}
                 className="grid items-center gap-3 rounded-[20px] border border-[#334860] bg-[var(--bg-content)] p-3 sm:grid-cols-[72px_1fr_auto]"
               >
-                <div className={`flex h-[72px] w-[72px] items-center justify-center rounded-[18px] ${achievement.accent} shadow-[inset_0_-4px_0_rgba(0,0,0,0.15)]`}>
-                  <Flame size={28} className="text-white" />
-                </div>
+                  <div
+                    className="flex h-[72px] w-[72px] items-center justify-center rounded-[18px] shadow-[inset_0_-4px_0_rgba(0,0,0,0.15)]"
+                    style={{ backgroundColor: achievement.accent }}
+                  >
+                    <Flame size={28} className="text-white" />
+                  </div>
                 <div>
                   <div className="flex items-center justify-between gap-3">
                     <p className="text-lg font-bold">{achievement.label}</p>
@@ -308,11 +399,14 @@ export default function ProgressPage() {
                   </div>
                   <p className="mb-2 text-sm text-slate-300">{achievement.description}</p>
                   <div className="h-3 rounded-full bg-[#334860] overflow-hidden">
-                    <div className={`h-full rounded-full ${achievement.accent}`} style={{ width: `${percent}%` }} />
+                    <div
+                      className="h-full rounded-full"
+                      style={{ width: `${percent}%`, backgroundColor: achievement.accent }}
+                    />
                   </div>
                 </div>
                 <div className="hidden text-right text-xs font-semibold uppercase tracking-[0.14em] text-slate-400 sm:block">
-                  {percent >= 100 ? "Done" : `${Math.round(percent)}%`}
+                  {achievement.unlocked || percent >= 100 ? "Done" : `${Math.round(percent)}%`}
                 </div>
               </div>
             );

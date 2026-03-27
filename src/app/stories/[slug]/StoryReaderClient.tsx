@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import VocabPanel from "@/components/VocabPanel";
 import StoryContent from "@/components/StoryContent";
 
-type VocabItem = { word: string; definition: string; type?: string };
+type VocabItem = { word: string; surface?: string; definition: string; type?: string };
 
 type StoryData = {
   id: string;
@@ -72,8 +72,8 @@ useEffect(() => {
       const word = el.dataset.word ?? "";
       if (!word) return;
 
-      setSelectedWord(word);
-      const item = story.vocab?.find((v) => v.word === word);
+      const item = story.vocab?.find((v) => v.word === word || v.surface === word);
+      setSelectedWord(item?.word ?? word);
       setDefinition(item?.definition ?? null);
     };
 

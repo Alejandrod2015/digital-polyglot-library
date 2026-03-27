@@ -1,6 +1,6 @@
 "use client";
 
-import { formatLevel } from "@/lib/displayFormat";
+import { formatLevel } from "@domain/displayFormat";
 
 type LevelBadgeProps = {
   level?: string;

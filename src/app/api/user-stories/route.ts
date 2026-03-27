@@ -1,21 +1,29 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@/generated/prisma';
 import { auth } from '@clerk/nextjs/server';
 import { syncCreateStoryMirror } from '@/lib/createStoryMirror';
 import { getPublicUserStories, getUserStoryById } from '@/lib/userStories';
+import { getMobileSessionFromRequest } from '@/lib/mobileSession';
 
 const prisma = new PrismaClient();
 
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const storyId = searchParams.get('id');
     const slugsParam = searchParams.get('slugs');
     const mine = searchParams.get('mine') === '1';
     const latestForCreate = searchParams.get('latestForCreate') === '1';
+    const limitRaw = searchParams.get('limit');
+    const limit =
+      typeof limitRaw === 'string' && Number.isFinite(Number(limitRaw))
+        ? Math.min(Math.max(Number(limitRaw), 1), 24)
+        : 8;
 
     if (slugsParam) {
       const { userId } = await auth();
+      const mobileSession = getMobileSessionFromRequest(req);
+      const effectiveUserId = userId ?? mobileSession?.sub ?? null;
       const slugs = Array.from(
         new Set(
           slugsParam
@@ -33,7 +41,7 @@ export async function GET(req: Request) {
       const stories = await prisma.userStory.findMany({
         where: {
           slug: { in: slugs },
-          ...(userId ? { OR: [{ public: true }, { userId }] } : { public: true }),
+          ...(effectiveUserId ? { OR: [{ public: true }, { userId: effectiveUserId }] } : { public: true }),
         },
         select: {
           slug: true,
@@ -60,7 +68,9 @@ export async function GET(req: Request) {
 
     if (mine && latestForCreate) {
       const { userId } = await auth();
-      if (!userId) {
+      const mobileSession = getMobileSessionFromRequest(req);
+      const effectiveUserId = userId ?? mobileSession?.sub ?? null;
+      if (!effectiveUserId) {
         await prisma.$disconnect();
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
       }
@@ -81,7 +91,7 @@ export async function GET(req: Request) {
 
       const story = await prisma.userStory.findFirst({
         where: {
-          userId,
+          userId: effectiveUserId,
           ...(language ? { language } : {}),
           ...(variant ? { variant } : {}),
           ...(cefrLevel ? { cefrLevel } : {}),
@@ -119,6 +129,49 @@ export async function GET(req: Request) {
       return NextResponse.json({ story: canonicalStory ?? null });
     }
 
+    if (mine) {
+      const { userId } = await auth();
+      const mobileSession = getMobileSessionFromRequest(req);
+      const effectiveUserId = userId ?? mobileSession?.sub ?? null;
+      if (!effectiveUserId) {
+        await prisma.$disconnect();
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      }
+
+      const stories = await prisma.userStory.findMany({
+        where: {
+          userId: effectiveUserId,
+        },
+        orderBy: { createdAt: 'desc' },
+        take: limit,
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          text: true,
+          vocab: true,
+          language: true,
+          variant: true,
+          region: true,
+          level: true,
+          cefrLevel: true,
+          focus: true,
+          topic: true,
+          public: true,
+          coverUrl: true,
+          coverFilename: true,
+          audioUrl: true,
+          audioSegments: true,
+          audioFilename: true,
+          audioStatus: true,
+          createdAt: true,
+        },
+      });
+
+      await prisma.$disconnect();
+      return NextResponse.json({ stories });
+    }
+
     // 🔹 Si no hay id → devolver lista general
     const stories = await getPublicUserStories();
     await prisma.$disconnect();
@@ -134,7 +187,7 @@ export async function GET(req: Request) {
   }
 }
 
-export async function PUT(req: Request) {
+export async function PUT(req: NextRequest) {
   try {
     const body = await req.json();
     const storyId = typeof body?.id === 'string' ? body.id.trim() : '';

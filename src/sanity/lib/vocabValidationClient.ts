@@ -1,5 +1,6 @@
 type VocabItem = {
   word: string
+  surface?: string
   definition: string
   type?: string
 }
@@ -70,4 +71,3 @@ export async function validateGeneratedVocab({
         : `Vocabulary generated and validated (${validatedVocab.length} items).`,
   }
 }
-

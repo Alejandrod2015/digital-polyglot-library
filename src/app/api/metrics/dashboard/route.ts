@@ -1,5 +1,6 @@
 export const runtime = "nodejs";
 
+import { createClerkClient } from "@clerk/backend";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
@@ -8,6 +9,11 @@ import { books } from "@/data/books";
 import { getStandaloneStoriesByIds, getStandaloneStoriesBySlugs } from "@/lib/standaloneStories";
 
 const METRICS_DASHBOARD_CACHE_TTL_MS = 60 * 1000;
+const RECENT_TRIAL_STARTS_LIMIT = 20;
+const RECENT_REMINDER_TAPS_LIMIT = 20;
+const RECENT_REMINDER_OPENS_LIMIT = 20;
+const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
+const metricsUserEmailCache = new Map<string, string | null>();
 
 const metricsDashboardCache = new Map<
   string,
@@ -37,6 +43,19 @@ type SavedStoryRow = {
 type SavedBookRow = {
   bookId: string;
   _count: { _all: number };
+};
+
+type TrialStartRow = {
+  userId: string;
+  eventType: string;
+  createdAt: Date;
+};
+
+type ReminderTapRow = {
+  userId: string;
+  eventType: string;
+  createdAt: Date;
+  metadata?: unknown;
 };
 
 type DashboardResponse = {
@@ -100,6 +119,27 @@ type DashboardResponse = {
     day1ActivationRate: number;
     cancelRate: number;
   };
+  recentTrialStarts: Array<{
+    userId: string;
+    email: string | null;
+    eventType: string;
+    createdAt: string;
+  }>;
+  recentReminderTaps: Array<{
+    userId: string;
+    email: string | null;
+    eventType: string;
+    destination: string | null;
+    source: string | null;
+    createdAt: string;
+  }>;
+  recentReminderOpens: Array<{
+    userId: string;
+    email: string | null;
+    eventType: string;
+    destination: string | null;
+    createdAt: string;
+  }>;
   checkoutFunnel: {
     plansViewed: number;
     checkoutStarted: number;
@@ -124,7 +164,120 @@ type DashboardResponse = {
     nextActionRateFromTopicOpen: number;
     reviewRateFromTopicOpen: number;
   };
+  reminderFunnel: {
+    scheduled: number;
+    tapped: number;
+    destinationOpened: number;
+    tapRateFromScheduled: number;
+    openRateFromTap: number;
+    destinationBreakdown: Array<{
+      destination: string;
+      opens: number;
+    }>;
+  };
 };
+
+type DashboardSection =
+  | "overview"
+  | "acquisition"
+  | "engagement"
+  | "learning"
+  | "content"
+  | "funnels"
+  | "audience"
+  | "experiments"
+  | "alerts"
+  | "exports";
+
+function parseSection(raw: string | null): DashboardSection {
+  switch (raw) {
+    case "acquisition":
+    case "engagement":
+    case "learning":
+    case "content":
+    case "funnels":
+    case "audience":
+    case "experiments":
+    case "alerts":
+    case "exports":
+      return raw;
+    case "overview":
+    default:
+      return "overview";
+  }
+}
+
+function createEmptyDashboardResponse(from: Date, to: Date, days: number): DashboardResponse {
+  return {
+    range: {
+      from: from.toISOString(),
+      to: to.toISOString(),
+      days,
+    },
+    kpis: {
+      dau: 0,
+      wau: 0,
+      activeUsersInRange: 0,
+      plays: 0,
+      completions: 0,
+      completionRate: 0,
+      uniqueStories: 0,
+      uniqueBooks: 0,
+      avgMinutesPerActiveUser: 0,
+      totalListenedMinutes: 0,
+      savedStories: 0,
+      savedBooks: 0,
+    },
+    daily: [],
+    topStories: [],
+    topBooks: [],
+    topStoriesByMinutes: [],
+    topSavedStories: [],
+    topSavedBooks: [],
+    trialFunnel: {
+      started: 0,
+      startedWithPm: 0,
+      day1Active: 0,
+      converted: 0,
+      canceled: 0,
+      conversionRate: 0,
+      day1ActivationRate: 0,
+      cancelRate: 0,
+    },
+    recentTrialStarts: [],
+    recentReminderTaps: [],
+    recentReminderOpens: [],
+    checkoutFunnel: {
+      plansViewed: 0,
+      checkoutStarted: 0,
+      checkoutRedirected: 0,
+      checkoutFailed: 0,
+      checkoutStartRate: 0,
+      checkoutRedirectRate: 0,
+    },
+    upgradeCtaSources: [],
+    journeyFunnel: {
+      variantSelected: 0,
+      levelSelected: 0,
+      topicOpened: 0,
+      nextActionClicked: 0,
+      reviewCtaClicked: 0,
+      checkpointRecoveryClicked: 0,
+      recommendedModeOpened: 0,
+      topicOpenRateFromVariant: 0,
+      nextActionRateFromTopicOpen: 0,
+      reviewRateFromTopicOpen: 0,
+    },
+    reminderFunnel: {
+      scheduled: 0,
+      tapped: 0,
+      destinationOpened: 0,
+      tapRateFromScheduled: 0,
+      openRateFromTap: 0,
+      destinationBreakdown: [],
+    },
+  };
+}
 
 function parseDays(raw: string | null): number {
   const parsed = Number(raw);
@@ -212,6 +365,44 @@ async function resolveStorySlugMap(storyIds: string[]): Promise<Map<string, stri
   ]);
 }
 
+async function resolveUserEmails(userIds: string[]): Promise<Map<string, string | null>> {
+  const uniqueUserIds = Array.from(new Set(userIds.filter(Boolean)));
+  const byUserId = new Map<string, string | null>();
+
+  await Promise.all(
+    uniqueUserIds.map(async (userId) => {
+      if (metricsUserEmailCache.has(userId)) {
+        byUserId.set(userId, metricsUserEmailCache.get(userId) ?? null);
+        return;
+      }
+
+      try {
+        const user = await clerkClient.users.getUser(userId);
+        const email = user.emailAddresses[0]?.emailAddress ?? null;
+        metricsUserEmailCache.set(userId, email);
+        byUserId.set(userId, email);
+      } catch (error) {
+        const status =
+          typeof error === "object" &&
+          error !== null &&
+          "status" in error &&
+          typeof (error as { status?: unknown }).status === "number"
+            ? (error as { status: number }).status
+            : null;
+
+        if (status !== 404) {
+          console.warn("METRICS DASHBOARD: failed to resolve Clerk user", userId, error);
+        }
+
+        metricsUserEmailCache.set(userId, null);
+        byUserId.set(userId, null);
+      }
+    })
+  );
+
+  return byUserId;
+}
+
 export async function GET(req: NextRequest): Promise<Response> {
   const { userId } = getAuth(req);
   if (!userId) {
@@ -222,6 +413,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   }
 
   const search = req.nextUrl.searchParams;
+  const section = parseSection(search.get("section"));
   const days = parseDays(search.get("days"));
   const now = new Date();
   const defaultFrom = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
@@ -233,6 +425,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   const savedStoryFilter = getSavedStoryFilter(storySlug, storyIdsForFilter);
   const cacheKey = JSON.stringify({
     userId,
+    section,
     days,
     from: from.toISOString(),
     to: to.toISOString(),
@@ -245,6 +438,19 @@ export async function GET(req: NextRequest): Promise<Response> {
     return NextResponse.json(cached.payload);
   }
 
+  const needsOverviewData = section === "overview";
+  const needsEngagementData = section === "engagement";
+  const needsAcquisitionData = section === "acquisition";
+  const needsFunnelsData = section === "funnels";
+  const needsEventData = needsOverviewData || needsEngagementData;
+  const needsProgressData = needsOverviewData;
+  const needsActiveUsersData = needsOverviewData;
+  const needsSavedCountsData = needsOverviewData || needsEngagementData;
+  const needsCheckoutData = needsAcquisitionData || needsFunnelsData;
+  const needsJourneyFunnelData = needsFunnelsData;
+  const needsReminderFunnelData = needsFunnelsData;
+  const needsTrialData = needsFunnelsData;
+
   const [
     events,
     dauRows,
@@ -256,12 +462,17 @@ export async function GET(req: NextRequest): Promise<Response> {
     savedStoriesTotal,
     savedBooksTotal,
     trialFunnelRows,
+    recentTrialStartRows,
+    recentReminderTapRows,
+    recentReminderOpenRows,
     checkoutFunnelRows,
     upgradeCtaRows,
     journeyFunnelRows,
+    reminderFunnelRows,
+    reminderDestinationRows,
   ] =
     await Promise.all([
-    prisma.userMetric.findMany({
+    needsEventData ? prisma.userMetric.findMany({
       where: {
         createdAt: { gte: from, lte: to },
         eventType: { in: ["audio_play", "audio_complete"] },
@@ -277,8 +488,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       },
       orderBy: { createdAt: "asc" },
       take: 20000,
-    }),
-    prisma.userMetric.findMany({
+    }) : Promise.resolve([]),
+    needsOverviewData ? prisma.userMetric.findMany({
       where: {
         createdAt: { gte: new Date(now.getTime() - 24 * 60 * 60 * 1000), lte: now },
         ...(storySlug ? { storySlug } : {}),
@@ -286,8 +497,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       },
       distinct: ["userId"],
       select: { userId: true },
-    }),
-    prisma.userMetric.findMany({
+    }) : Promise.resolve([]),
+    needsOverviewData ? prisma.userMetric.findMany({
       where: {
         createdAt: { gte: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000), lte: now },
         ...(storySlug ? { storySlug } : {}),
@@ -295,8 +506,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       },
       distinct: ["userId"],
       select: { userId: true },
-    }),
-    prisma.userMetric.findMany({
+    }) : Promise.resolve([]),
+    needsProgressData ? prisma.userMetric.findMany({
       where: {
         createdAt: { gte: from, lte: to },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
@@ -311,8 +522,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       },
       orderBy: { createdAt: "asc" },
       take: 50000,
-    }),
-    prisma.userMetric.findMany({
+    }) : Promise.resolve([]),
+    needsActiveUsersData ? prisma.userMetric.findMany({
       where: {
         createdAt: { gte: from, lte: to },
         ...(storySlug ? { storySlug } : {}),
@@ -320,8 +531,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       },
       distinct: ["userId"],
       select: { userId: true },
-    }),
-    prisma.libraryStory.groupBy({
+    }) : Promise.resolve([]),
+    needsSavedCountsData ? prisma.libraryStory.groupBy({
       by: ["storyId"],
       where: {
         createdAt: { gte: from, lte: to },
@@ -331,8 +542,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       _count: { _all: true },
       orderBy: { _count: { storyId: "desc" } },
       take: 20,
-    }),
-    prisma.libraryBook.groupBy({
+    }) : Promise.resolve([]),
+    needsSavedCountsData ? prisma.libraryBook.groupBy({
       by: ["bookId"],
       where: {
         createdAt: { gte: from, lte: to },
@@ -341,21 +552,21 @@ export async function GET(req: NextRequest): Promise<Response> {
       _count: { _all: true },
       orderBy: { _count: { bookId: "desc" } },
       take: 20,
-    }),
-    prisma.libraryStory.count({
+    }) : Promise.resolve(0),
+    needsOverviewData ? prisma.libraryStory.count({
       where: {
         createdAt: { gte: from, lte: to },
         ...savedStoryFilter,
         ...(bookSlug ? { bookId: bookSlug } : {}),
       },
-    }),
-    prisma.libraryBook.count({
+    }) : Promise.resolve(0),
+    needsOverviewData ? prisma.libraryBook.count({
       where: {
         createdAt: { gte: from, lte: to },
         ...(bookSlug ? { bookId: bookSlug } : {}),
       },
-    }),
-    prisma.userMetric.groupBy({
+    }) : Promise.resolve(0),
+    needsTrialData ? prisma.userMetric.groupBy({
       by: ["eventType"],
       where: {
         createdAt: { gte: from, lte: to },
@@ -372,8 +583,55 @@ export async function GET(req: NextRequest): Promise<Response> {
         },
       },
       _count: { _all: true },
-    }),
-    prisma.userMetric.groupBy({
+    }) : Promise.resolve([]),
+    needsTrialData ? prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: from, lte: to },
+        storySlug: "__plans__",
+        bookSlug: "billing",
+        eventType: { in: ["trial_started", "trial_started_with_pm"] },
+      },
+      select: {
+        userId: true,
+        eventType: true,
+        createdAt: true,
+      },
+      orderBy: { createdAt: "desc" },
+      take: RECENT_TRIAL_STARTS_LIMIT,
+    }) : Promise.resolve([]),
+    needsReminderFunnelData ? prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: from, lte: to },
+        storySlug: "daily-loop",
+        bookSlug: "mobile",
+        eventType: "reminder_tapped",
+      },
+      select: {
+        userId: true,
+        eventType: true,
+        createdAt: true,
+        metadata: true,
+      },
+      orderBy: { createdAt: "desc" },
+      take: RECENT_REMINDER_TAPS_LIMIT,
+    }) : Promise.resolve([]),
+    needsReminderFunnelData ? prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: from, lte: to },
+        storySlug: "daily-loop",
+        bookSlug: "mobile",
+        eventType: "reminder_destination_opened",
+      },
+      select: {
+        userId: true,
+        eventType: true,
+        createdAt: true,
+        metadata: true,
+      },
+      orderBy: { createdAt: "desc" },
+      take: RECENT_REMINDER_OPENS_LIMIT,
+    }) : Promise.resolve([]),
+    needsCheckoutData ? prisma.userMetric.groupBy({
       by: ["eventType"],
       where: {
         createdAt: { gte: from, lte: to },
@@ -384,8 +642,8 @@ export async function GET(req: NextRequest): Promise<Response> {
         },
       },
       _count: { _all: true },
-    }),
-    prisma.userMetric.groupBy({
+    }) : Promise.resolve([]),
+    needsFunnelsData ? prisma.userMetric.groupBy({
       by: ["storySlug"],
       where: {
         createdAt: { gte: from, lte: to },
@@ -393,8 +651,8 @@ export async function GET(req: NextRequest): Promise<Response> {
         storySlug: { startsWith: "__upgrade_" },
       },
       _count: { _all: true },
-    }),
-    prisma.userMetric.groupBy({
+    }) : Promise.resolve([]),
+    needsJourneyFunnelData ? prisma.userMetric.groupBy({
       by: ["eventType"],
       where: {
         createdAt: { gte: from, lte: to },
@@ -412,7 +670,31 @@ export async function GET(req: NextRequest): Promise<Response> {
         },
       },
       _count: { _all: true },
-    }),
+    }) : Promise.resolve([]),
+    needsReminderFunnelData ? prisma.userMetric.groupBy({
+      by: ["eventType"],
+      where: {
+        createdAt: { gte: from, lte: to },
+        storySlug: "daily-loop",
+        bookSlug: "mobile",
+        eventType: {
+          in: ["reminder_scheduled", "reminder_tapped", "reminder_destination_opened"],
+        },
+      },
+      _count: { _all: true },
+    }) : Promise.resolve([]),
+    needsReminderFunnelData ? prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: from, lte: to },
+        storySlug: "daily-loop",
+        bookSlug: "mobile",
+        eventType: "reminder_destination_opened",
+      },
+      select: {
+        metadata: true,
+      },
+      take: 5000,
+    }) : Promise.resolve([]),
     ]);
 
   const plays = events.filter((e) => e.eventType === "audio_play").length;
@@ -522,9 +804,9 @@ export async function GET(req: NextRequest): Promise<Response> {
     .sort((a, b) => b.listenedMinutes - a.listenedMinutes)
     .slice(0, 10);
 
-  const savedStorySlugMap = await resolveStorySlugMap(
-    (savedStoryRows as SavedStoryRow[]).map((row) => row.storyId)
-  );
+  const savedStorySlugMap = needsSavedCountsData
+    ? await resolveStorySlugMap((savedStoryRows as SavedStoryRow[]).map((row) => row.storyId))
+    : new Map<string, string>();
   const topSavedStories = (savedStoryRows as SavedStoryRow[])
     .map((row) => ({
       storySlug: savedStorySlugMap.get(row.storyId) ?? row.storyId,
@@ -562,6 +844,44 @@ export async function GET(req: NextRequest): Promise<Response> {
     trialCounts.started > 0 ? Math.round((trialCounts.day1Active / trialCounts.started) * 100) : 0;
   const cancelRate =
     trialCounts.started > 0 ? Math.round((trialCounts.canceled / trialCounts.started) * 100) : 0;
+  const trialStartUserEmails = needsTrialData
+    ? await resolveUserEmails((recentTrialStartRows as TrialStartRow[]).map((row) => row.userId))
+    : new Map<string, string | null>();
+  const recentTrialStarts = (recentTrialStartRows as TrialStartRow[]).map((row) => ({
+    userId: row.userId,
+    email: trialStartUserEmails.get(row.userId) ?? null,
+    eventType: row.eventType,
+    createdAt: row.createdAt.toISOString(),
+  }));
+  const reminderTapUserEmails = needsReminderFunnelData
+    ? await resolveUserEmails((recentReminderTapRows as ReminderTapRow[]).map((row) => row.userId))
+    : new Map<string, string | null>();
+  const recentReminderTaps = (recentReminderTapRows as ReminderTapRow[]).map((row) => {
+    const metadata =
+      row.metadata && typeof row.metadata === "object" ? (row.metadata as Record<string, unknown>) : null;
+    return {
+      userId: row.userId,
+      email: reminderTapUserEmails.get(row.userId) ?? null,
+      eventType: row.eventType,
+      destination: typeof metadata?.targetKind === "string" ? metadata.targetKind : null,
+      source: typeof metadata?.source === "string" ? metadata.source : null,
+      createdAt: row.createdAt.toISOString(),
+    };
+  });
+  const reminderOpenUserEmails = needsReminderFunnelData
+    ? await resolveUserEmails((recentReminderOpenRows as ReminderTapRow[]).map((row) => row.userId))
+    : new Map<string, string | null>();
+  const recentReminderOpens = (recentReminderOpenRows as ReminderTapRow[]).map((row) => {
+    const metadata =
+      row.metadata && typeof row.metadata === "object" ? (row.metadata as Record<string, unknown>) : null;
+    return {
+      userId: row.userId,
+      email: reminderOpenUserEmails.get(row.userId) ?? null,
+      eventType: row.eventType,
+      destination: typeof metadata?.targetKind === "string" ? metadata.targetKind : null,
+      createdAt: row.createdAt.toISOString(),
+    };
+  });
 
   const checkoutCounts = {
     plansViewed: 0,
@@ -614,12 +934,32 @@ export async function GET(req: NextRequest): Promise<Response> {
     }
   }
 
+  const reminderCounts = {
+    scheduled: 0,
+    tapped: 0,
+    destinationOpened: 0,
+  };
+  for (const row of reminderFunnelRows as Array<{ eventType: string; _count: { _all: number } }>) {
+    if (row.eventType === "reminder_scheduled") reminderCounts.scheduled = row._count._all;
+    if (row.eventType === "reminder_tapped") reminderCounts.tapped = row._count._all;
+    if (row.eventType === "reminder_destination_opened") reminderCounts.destinationOpened = row._count._all;
+  }
+  const reminderDestinationMap = new Map<string, number>();
+  for (const row of reminderDestinationRows as Array<{ metadata: unknown }>) {
+    if (!row.metadata || typeof row.metadata !== "object") continue;
+    const metadata = row.metadata as Record<string, unknown>;
+    const destination =
+      typeof metadata.targetKind === "string" && metadata.targetKind.trim().length > 0
+        ? metadata.targetKind.trim()
+        : "unknown";
+    reminderDestinationMap.set(destination, (reminderDestinationMap.get(destination) ?? 0) + 1);
+  }
+  const reminderDestinationBreakdown = Array.from(reminderDestinationMap.entries())
+    .map(([destination, opens]) => ({ destination, opens }))
+    .sort((a, b) => b.opens - a.opens || a.destination.localeCompare(b.destination));
+
   const payload: DashboardResponse = {
-    range: {
-      from: from.toISOString(),
-      to: to.toISOString(),
-      days,
-    },
+    ...createEmptyDashboardResponse(from, to, days),
     kpis: {
       dau: dauRows.length,
       wau: wauRows.length,
@@ -650,6 +990,9 @@ export async function GET(req: NextRequest): Promise<Response> {
       day1ActivationRate,
       cancelRate,
     },
+    recentTrialStarts,
+    recentReminderTaps,
+    recentReminderOpens,
     checkoutFunnel: {
       plansViewed: checkoutCounts.plansViewed,
       checkoutStarted: checkoutCounts.checkoutStarted,
@@ -673,6 +1016,18 @@ export async function GET(req: NextRequest): Promise<Response> {
         journeyCounts.topicOpened > 0
           ? Math.round((journeyCounts.reviewCtaClicked / journeyCounts.topicOpened) * 100)
           : 0,
+    },
+    reminderFunnel: {
+      ...reminderCounts,
+      tapRateFromScheduled:
+        reminderCounts.scheduled > 0
+          ? Math.round((reminderCounts.tapped / reminderCounts.scheduled) * 100)
+          : 0,
+      openRateFromTap:
+        reminderCounts.tapped > 0
+          ? Math.round((reminderCounts.destinationOpened / reminderCounts.tapped) * 100)
+          : 0,
+      destinationBreakdown: reminderDestinationBreakdown,
     },
   };
 

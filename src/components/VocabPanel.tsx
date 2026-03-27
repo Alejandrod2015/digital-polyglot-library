@@ -194,11 +194,12 @@ export default function VocabPanel({
           : shortenContext(sentenceNode?.textContent ?? undefined, word);
       const normalizedWord = word.trim().toLowerCase();
 
-      setSelectedWord(word);
       const item = story.vocab?.find((v) => {
         const vocabWord = typeof v.word === "string" ? v.word.trim().toLowerCase() : "";
-        return vocabWord === normalizedWord;
+        const vocabSurface = typeof v.surface === "string" ? v.surface.trim().toLowerCase() : "";
+        return vocabWord === normalizedWord || vocabSurface === normalizedWord;
       });
+      setSelectedWord(item?.word ?? word);
       setDefinition(item?.definition ?? null);
       setSelectedSentence(sentence);
       setSelectedSourcePath(buildSourcePath(sentence, word));
@@ -253,7 +254,7 @@ export default function VocabPanel({
       translation: definition ?? "",
       wordType:
         normalizeVocabType(
-          story.vocab?.find((v) => v.word === selectedWord)?.type,
+          story.vocab?.find((v) => v.word === selectedWord || v.surface === selectedWord)?.type,
           { word: selectedWord, definition: definition ?? "" }
         ) ?? null,
       exampleSentence: selectedSentence,

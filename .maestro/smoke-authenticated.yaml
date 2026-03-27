@@ -1,0 +1,154 @@
+appId: com.digitalpolyglot.mobile
+---
+- launchApp:
+    clearState: false
+
+- tapOn:
+    text: "Abrir"
+    optional: true
+
+- tapOn:
+    text: "Open"
+    optional: true
+
+- tapOn:
+    text: "Spanish"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "Beginner"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "LATAM"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "Colombia"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "Travel"
+    optional: true
+- tapOn:
+    text: "Food"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "Travel"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "5 min"
+    optional: true
+- tapOn:
+    text: "Finish"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "Next"
+    optional: true
+- tapOn:
+    text: "Got it"
+    optional: true
+
+- assertVisible:
+    id: "qa-tab-home"
+- assertVisible:
+    id: "qa-tab-explore"
+- assertVisible:
+    id: "qa-tab-practice"
+- assertVisible:
+    id: "qa-tab-favorites"
+- assertVisible:
+    id: "qa-tab-journey"
+
+- takeScreenshot: "01-home-shell"
+
+- tapOn:
+    id: "qa-tab-explore"
+- assertVisible:
+    id: "qa-explore-search-input"
+- assertVisible: "Books"
+- assertVisible: "Stories"
+- takeScreenshot: "02-explore"
+
+- tapOn:
+    id: "qa-tab-practice"
+- assertVisible:
+    id: "qa-tab-practice"
+- takeScreenshot: "03-practice"
+
+- tapOn:
+    id: "qa-tab-favorites"
+- assertVisible:
+    id: "qa-tab-favorites"
+- takeScreenshot: "04-favorites"
+
+- tapOn:
+    id: "qa-tab-journey"
+- assertVisible:
+    id: "qa-tab-journey"
+- takeScreenshot: "05-journey"
+
+- tapOn:
+    id: "qa-tab-home"
+- assertVisible:
+    id: "qa-tab-home"
+- takeScreenshot: "06-home-return"
+
+- tapOn:
+    id: "qa-tab-explore"
+- tapOn:
+    id: "qa-explore-book-card-0"
+- assertVisible:
+    id: "qa-book-detail-screen"
+- assertVisible:
+    id: "qa-book-start-reading"
+- takeScreenshot: "07-book-detail"
+
+- tapOn:
+    id: "qa-book-start-reading"
+- assertVisible:
+    id: "qa-reader-screen"
+- takeScreenshot: "08-reader"
+
+- tapOn:
+    id: "qa-reader-back"
+- assertVisible:
+    id: "qa-book-detail-screen"
+
+- tapOn:
+    id: "qa-book-detail-back"
+- tapOn:
+    id: "qa-tab-journey"
+- tapOn:
+    id: "qa-journey-topic-community-celebrations"
+- assertVisible:
+    id: "qa-journey-topic-detail"
+- takeScreenshot: "09-journey-topic-detail"
+
+- tapOn:
+    id: "qa-journey-back-to-map"
+- assertVisible:
+    id: "qa-journey-level-a1"

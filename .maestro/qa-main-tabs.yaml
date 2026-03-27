@@ -1,0 +1,28 @@
+appId: com.digitalpolyglot.mobile
+---
+- assertVisible:
+    id: "qa-tab-home"
+- assertVisible:
+    id: "qa-tab-explore"
+- assertVisible:
+    id: "qa-tab-practice"
+- assertVisible:
+    id: "qa-tab-favorites"
+- assertVisible:
+    id: "qa-tab-journey"
+
+- tapOn:
+    id: "qa-tab-practice"
+- takeScreenshot: "01-practice"
+
+- tapOn:
+    id: "qa-tab-favorites"
+- takeScreenshot: "02-favorites"
+
+- tapOn:
+    id: "qa-tab-journey"
+- takeScreenshot: "03-journey"
+
+- tapOn:
+    id: "qa-tab-home"
+- takeScreenshot: "04-home"

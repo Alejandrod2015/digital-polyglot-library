@@ -2,7 +2,7 @@
 
 import { useUser } from '@clerk/nextjs';
 import { useMemo } from 'react';
-import { getOwnedBooks, canReadWholeBook, canAccessFeaturedStory, Plan } from '@/lib/access';
+import { getOwnedBooks, canReadWholeBook, canAccessFeaturedStory, Plan } from '@domain/access';
 
 /**
  * Hook que devuelve el acceso del usuario: lectura completa y featured stories.

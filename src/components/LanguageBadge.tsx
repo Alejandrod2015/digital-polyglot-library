@@ -1,6 +1,6 @@
 "use client";
 
-import { formatLanguageCode } from "@/lib/displayFormat";
+import { formatLanguageCode } from "@domain/displayFormat";
 
 type LanguageBadgeProps = {
   language?: string;

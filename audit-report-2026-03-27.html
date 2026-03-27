@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit Report — Digital Polyglot Library — 2026-03-27</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; padding: 2rem; max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff; }
+  h2 { font-size: 1.3rem; margin: 2.5rem 0 1rem; color: #fff; border-bottom: 1px solid #333; padding-bottom: 0.5rem; }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; color: #ccc; }
+  .subtitle { color: #888; margin-bottom: 2rem; }
+  .stats { display: flex; gap: 1rem; margin: 1.5rem 0 2rem; flex-wrap: wrap; }
+  .stat { padding: 1rem 1.5rem; border-radius: 8px; flex: 1; min-width: 120px; text-align: center; }
+  .stat-critical { background: #3a1111; border: 1px solid #ef4444; }
+  .stat-warning { background: #3a2e11; border: 1px solid #f59e0b; }
+  .stat-info { background: #112233; border: 1px solid #3b82f6; }
+  .stat .number { font-size: 2rem; font-weight: 700; display: block; }
+  .stat-critical .number { color: #ef4444; }
+  .stat-warning .number { color: #f59e0b; }
+  .stat-info .number { color: #3b82f6; }
+  .stat .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; }
+  .issue { background: #141414; border-radius: 8px; padding: 1.25rem; margin: 1rem 0; border-left: 4px solid; }
+  .issue-critical { border-color: #ef4444; }
+  .issue-warning { border-color: #f59e0b; }
+  .issue-info { border-color: #3b82f6; }
+  .issue-id { font-family: monospace; font-size: 0.8rem; padding: 2px 6px; border-radius: 4px; margin-right: 0.5rem; }
+  .id-critical { background: #3a1111; color: #ef4444; }
+  .id-warning { background: #3a2e11; color: #f59e0b; }
+  .id-info { background: #112233; color: #3b82f6; }
+  .issue-title { font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+  .issue-file { font-family: monospace; font-size: 0.85rem; color: #888; margin: 0.25rem 0; }
+  .issue-desc { color: #bbb; margin: 0.5rem 0; }
+  .issue-fix { color: #7dd3a0; font-size: 0.9rem; margin-top: 0.5rem; }
+  .issue-fix::before { content: "Fix: "; font-weight: 600; }
+  .affected { font-size: 0.85rem; color: #a78bfa; margin: 0.25rem 0; }
+  .affected::before { content: "Afecta a: "; font-weight: 600; color: #7c3aed; }
+  .section-tag { display: inline-block; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; background: #222; color: #888; margin-left: 0.5rem; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<h1>Audit Report — Digital Polyglot Library</h1>
+<p class="subtitle">Primera auditoría completa · 27 marzo 2026 · reader.digitalpolyglot.com</p>
+
+<div class="stats">
+  <div class="stat stat-critical"><span class="number">11</span><span class="label">Critical</span></div>
+  <div class="stat stat-warning"><span class="number">13</span><span class="label">Warning</span></div>
+  <div class="stat stat-info"><span class="number">5</span><span class="label">Info</span></div>
+</div>
+
+<!-- ==================== CRITICAL ==================== -->
+<h2>CRITICAL — Rompe funcionalidad o expone datos</h2>
+
+<!-- API Security -->
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">API-001</span> Audio generation sin autenticación</div>
+  <div class="issue-file">src/app/api/audio/generate/route.ts</div>
+  <div class="issue-desc">El endpoint POST genera audio vía ElevenLabs TTS sin verificar auth. Cualquier persona puede disparar generación de audio costosa sin estar logueada.</div>
+  <div class="affected">Todos — endpoint público</div>
+  <div class="issue-fix">Agregar <code>const { userId } = await auth(); if (!userId) return 401;</code> al inicio del handler.</div>
+</div>
+
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">API-001</span> Synopsis generation sin autenticación</div>
+  <div class="issue-file">src/app/api/generate-synopsis/route.ts</div>
+  <div class="issue-desc">POST llama a OpenAI GPT-4o-mini para generar sinopsis sin auth. Riesgo de abuso y costos no controlados.</div>
+  <div class="affected">Todos — endpoint público</div>
+  <div class="issue-fix">Agregar auth check antes de la llamada a OpenAI.</div>
+</div>
+
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">API-001</span> Traducción sin autenticación</div>
+  <div class="issue-file">src/app/api/translate/route.ts</div>
+  <div class="issue-desc">POST llama a DeepL API sin auth. Cuota de traducción puede ser agotada por cualquiera.</div>
+  <div class="affected">Todos — endpoint público</div>
+  <div class="issue-fix">Agregar auth gate.</div>
+</div>
+
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">API-002</span> Studio create-stories expone datos de todos los usuarios</div>
+  <div class="issue-file">src/app/api/studio/create-stories/route.ts</div>
+  <div class="issue-desc">GET retorna todas las user stories (userId, títulos, idioma, nivel, tópico) sin autenticación. Expone metadata de contenido personal de todos los usuarios.</div>
+  <div class="affected">Todos los usuarios con stories creadas</div>
+  <div class="issue-fix">Agregar auth y filtrar por userId en la query.</div>
+</div>
+
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">API-005</span> Shopify webhook con HMAC deshabilitado</div>
+  <div class="issue-file">src/app/api/shopify/webhook/route.ts</div>
+  <div class="issue-desc">La validación HMAC está comentada con "ignorando para test". En producción, cualquiera puede crear claim tokens para emails y libros arbitrarios sin compra válida de Shopify.</div>
+  <div class="affected">Sistema de billing completo</div>
+  <div class="issue-fix">Re-habilitar validación HMAC. Nunca bypassear en producción.</div>
+</div>
+
+<!-- User State -->
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">USR-001</span> Usuarios anónimos ven links a páginas protegidas</div>
+  <div class="issue-file">src/components/Sidebar.tsx · src/components/MobileMenu.tsx · src/components/MobileTabBar.tsx</div>
+  <div class="issue-desc">Usuarios no logueados ven links de navegación a /my-library, /favorites, /progress, y /journey. Al visitarlas, la experiencia es inconsistente: favorites muestra "Sign in", progress muestra "Sign in", pero journey intenta cargar datos que requieren sesión.</div>
+  <div class="affected">Usuarios anónimos</div>
+  <div class="issue-fix">Envolver estos links en <code>&lt;SignedIn&gt;</code> en Sidebar, MobileMenu y MobileTabBar. O agregar redirects server-side en las páginas.</div>
+</div>
+
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">USR-001</span> Journey page sin auth guard pero depende de datos de usuario</div>
+  <div class="issue-file">src/app/journey/page.tsx (línea ~28)</div>
+  <div class="issue-desc">Llama a <code>currentUser()</code> sin verificar null. Usa <code>user?.publicMetadata</code> y pasa a funciones que esperan sesión activa (getCompletedJourneyStoryKeys, getJourneyDueReviewItems). Usuario anónimo obtiene comportamiento indefinido.</div>
+  <div class="affected">Usuarios anónimos</div>
+  <div class="issue-fix">Agregar <code>if (!user) redirect("/sign-in")</code> después de currentUser().</div>
+</div>
+
+<!-- Billing -->
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">BILL-001</span> Conflicto de suscripción dual sin resolución</div>
+  <div class="issue-file">prisma/schema.prisma · src/app/api/stripe/webhook/route.ts · src/app/api/billing/google-play/verify/route.ts</div>
+  <div class="issue-desc">BillingEntitlement tiene constraint unique en userId (una fila por usuario). Si un usuario tiene suscripción Stripe Y Google Play, el último webhook que llega sobreescribe al otro. El usuario podría estar pagando doble mientras solo una suscripción está activa en la DB.</div>
+  <div class="affected">Usuarios con suscripciones en múltiples plataformas</div>
+  <div class="issue-fix">Cambiar constraint a <code>@@unique([userId, source])</code>, verificar si existe otra suscripción antes de upsert, cancelar la vieja si se cambia de fuente.</div>
+</div>
+
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">BILL-002</span> Clerk metadata puede desincronizarse de la DB</div>
+  <div class="issue-file">src/lib/billingClerk.ts · src/app/api/stripe/webhook/route.ts</div>
+  <div class="issue-desc">Después de actualizar BillingEntitlement en la DB, se llama <code>syncClerkPlanFromEntitlement()</code> para sincronizar Clerk. Si la sincronización falla (error de red, rate limit), la DB está actualizada pero Clerk queda stale. No hay retry ni mecanismo de recuperación. El usuario ve el plan viejo hasta re-login.</div>
+  <div class="affected">Cualquier usuario que cambie de plan</div>
+  <div class="issue-fix">Agregar retry con exponential backoff, timestamp de última sincronización, y job periódico que verifique que Clerk coincide con la DB.</div>
+</div>
+
+<!-- Error Handling -->
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">ERR-001</span> Libros/historias inexistentes no retornan 404</div>
+  <div class="issue-file">src/app/books/[bookSlug]/page.tsx (línea ~20) · src/app/books/[bookSlug]/[storySlug]/page.tsx (línea ~136)</div>
+  <div class="issue-desc">Cuando un libro o historia no existe, retorna un &lt;div&gt; con "Libro no encontrado" en vez de llamar <code>notFound()</code>. No hay 404 HTTP, no hay fallback de Next.js, y el layout completo (sidebar, nav) sigue renderizando.</div>
+  <div class="affected">Cualquiera con URL inválida</div>
+  <div class="issue-fix">Reemplazar los returns de div con <code>notFound()</code>.</div>
+</div>
+
+<div class="issue issue-critical">
+  <div class="issue-title"><span class="issue-id id-critical">ERR-003</span> Múltiples fetches client-side sin manejo de errores</div>
+  <div class="issue-file">src/app/books/[bookSlug]/ReaderClient.tsx · src/app/practice/page.tsx · src/app/create/page.tsx · src/app/HomeClient.tsx</div>
+  <div class="issue-desc">Llamadas fetch() sin try-catch ni estado de error. Fallos de red fallan silenciosamente — el usuario no recibe feedback.</div>
+  <div class="affected">Todos los usuarios con conexión inestable</div>
+  <div class="issue-fix">Envolver todos los fetch en try-catch con estado de error visible al usuario.</div>
+</div>
+
+<!-- ==================== WARNING ==================== -->
+<h2>WARNING — UX confusa o inconsistente</h2>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">USR-003</span> Story of Week/Day: nav filtrada por plan pero páginas son públicas</div>
+  <div class="issue-file">src/components/Sidebar.tsx (líneas 215-232) · src/app/story-of-the-week/page.tsx · src/app/story-of-the-day/page.tsx</div>
+  <div class="issue-desc">Sidebar muestra "Story of the Week" solo a plan free, y "Story of the Day" solo a plan basic. Pero ambas páginas son accesibles por URL para cualquiera sin restricción de plan.</div>
+  <div class="affected">Todos los tipos de usuario</div>
+  <div class="issue-fix">O mostrar ambos links a todos, o agregar guards server-side en las páginas.</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">USR-004</span> Settings accesible para anónimos pero cambios no persisten</div>
+  <div class="issue-file">src/components/Sidebar.tsx (líneas 245-251) · src/app/settings/page.tsx</div>
+  <div class="issue-desc">Link de Settings visible para todos. Usuarios anónimos pueden cambiar tema localmente, pero cambios de idioma/región/plan no se guardan server-side. UX engañosa.</div>
+  <div class="affected">Usuarios anónimos</div>
+  <div class="issue-fix">Esconder Settings de anónimos o mostrar "Sign in para guardar cambios".</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">API-004</span> Claim tokens sin validación de expiración</div>
+  <div class="issue-file">src/app/api/claim/[token]/route.ts · prisma/schema.prisma</div>
+  <div class="issue-desc">El schema tiene campo <code>expiresAt</code> pero el endpoint nunca lo verifica. El Shopify webhook tampoco lo setea al crear tokens. Todos los tokens son válidos indefinidamente.</div>
+  <div class="affected">Sistema de claims</div>
+  <div class="issue-fix">Verificar <code>expiresAt</code> en el endpoint y setear expiración (ej: 90 días) al crear tokens.</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">BILL-003</span> Trial expirado no se actualiza en DB</div>
+  <div class="issue-file">src/lib/billing.ts · src/app/api/billing/entitlement/route.ts</div>
+  <div class="issue-desc">Expiración de trial se calcula on-the-fly (<code>trialEndsAt > now()</code>). El status en DB queda "trialing" para siempre. Si un webhook se pierde, el estado nunca transiciona a "expired".</div>
+  <div class="affected">Usuarios en trial</div>
+  <div class="issue-fix">Agregar cron job que actualice status de "trialing" a "expired" cuando trialEndsAt < NOW().</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">BILL-004</span> Race condition en redención de claim tokens</div>
+  <div class="issue-file">src/app/api/claim/[token]/route.ts (líneas 75-96)</div>
+  <div class="issue-desc">Entre el check de <code>claim.redeemedBy</code> y el update, dos requests concurrentes pueden redimir el mismo token. No hay transacción ni lock de base de datos.</div>
+  <div class="affected">Usuarios redimiendo tokens simultáneamente</div>
+  <div class="issue-fix">Usar transacción Prisma con isolation level SERIALIZABLE, o conditional update atómico.</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">ERR-005</span> Estados vacíos inconsistentes en páginas de listas</div>
+  <div class="issue-file">src/app/my-library/MyLibraryClient.tsx · src/app/explore/ExploreClient.tsx · src/app/favorites/page.tsx</div>
+  <div class="issue-desc">Cuando no hay datos (librería vacía, sin favoritos, búsqueda sin resultados), no siempre se muestra mensaje significativo. Si el API falla y datos offline están vacíos, el usuario ve página en blanco.</div>
+  <div class="affected">Usuarios nuevos, usuarios con errores de red</div>
+  <div class="issue-fix">Agregar UI de estado vacío explícito con mensaje y CTA claro.</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">ERR-004</span> Páginas con data fetching sin loading.tsx</div>
+  <div class="issue-file">src/app/my-library/ · src/app/favorites/ · src/app/progress/ · src/app/settings/ · src/app/plans/ · src/app/create/</div>
+  <div class="issue-desc">6 páginas fetchean datos en cliente pero no tienen loading.tsx ni skeleton UI. Flash de pantalla en blanco durante carga inicial.</div>
+  <div class="affected">Todos los usuarios (especialmente conexiones lentas)</div>
+  <div class="issue-fix">Crear loading.tsx con skeleton loaders para cada una de estas páginas.</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">NAV-001</span> Back navigation rota para rutas no trackeadas</div>
+  <div class="issue-file">src/components/BackButton.tsx · src/components/BackNavigationHandler.tsx</div>
+  <div class="issue-desc">BackNavigationHandler solo trackea secciones principales (/explore, /my-library, /favorites, /settings). Navegando desde /explore → /books/xxx/chapter-1 → botón back va a / en vez de /explore.</div>
+  <div class="affected">Todos los usuarios navegando libros/stories</div>
+  <div class="issue-fix">Agregar tracking para /books/, /stories/, /journey/ en BackNavigationHandler.</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">PERF-001</span> Imágenes sin next/image optimization</div>
+  <div class="issue-file">src/app/explore/ExploreClient.tsx · src/app/HomeClient.tsx · src/components/StoryVerticalCard.tsx · src/components/BookStoriesGrid.tsx · src/components/Cover.tsx</div>
+  <div class="issue-desc">Tags &lt;img&gt; crudos en vez de next/image. Sin lazy loading automático, sin conversión a AVIF/WebP, sin responsive sizing.</div>
+  <div class="affected">Performance para todos los usuarios</div>
+  <div class="issue-fix">Reemplazar &lt;img&gt; con &lt;Image&gt; de next/image con width, height, y fill props.</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">ERR-001</span> Studio routes sin validación de existencia de recursos</div>
+  <div class="issue-file">src/app/studio/journey-builder/[language]/[variantId]/page.tsx · src/app/studio/journey-stories/[storyId]/page.tsx</div>
+  <div class="issue-desc">Validan permisos de usuario pero no validan que language/variant/storyId existan. IDs inválidos cargan UI vacía sin indicación de error.</div>
+  <div class="affected">Usuarios de studio con URLs inválidas</div>
+  <div class="issue-fix">Validar existencia de recursos y llamar notFound() si no existen.</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">BILL-007</span> Lógica de sincronización Clerk inconsistente</div>
+  <div class="issue-file">src/lib/billingClerk.ts</div>
+  <div class="issue-desc">Tres funciones diferentes para sincronizar Clerk (syncClerkPlanFromEntitlement, syncClerkStripeSubscription, syncClerkStripeCancellation) con diferentes estrategias de metadata update y sin error handling.</div>
+  <div class="affected">Usuarios cambiando de plan</div>
+  <div class="issue-fix">Consolidar en una sola función <code>syncClerkPlanFromDatabase(userId)</code> que siempre lea fresh BillingEntitlement de la DB.</div>
+</div>
+
+<div class="issue issue-warning">
+  <div class="issue-title"><span class="issue-id id-warning">CNT-002</span> Debug console.logs con emojis en producción</div>
+  <div class="issue-file">src/app/api/shopify/webhook/route.ts</div>
+  <div class="issue-desc">Múltiples console.log() con prefijos emoji ("🔍 RAW BODY", "🧩 LINE ITEMS", "🔑 HMAC recibido", etc.) que son claramente debugging statements, no logging legítimo.</div>
+  <div class="affected">Logs de producción</div>
+  <div class="issue-fix">Reemplazar con logging condicional detrás de flag DEBUG_WEBHOOKS, o usar librería de logging.</div>
+</div>
+
+<!-- ==================== INFO ==================== -->
+<h2>INFO — Calidad de código / deuda técnica</h2>
+
+<div class="issue issue-info">
+  <div class="issue-title"><span class="issue-id id-info">CNT-003</span> Origins de desarrollo hardcodeados en CORS</div>
+  <div class="issue-file">src/lib/sanityCors.ts</div>
+  <div class="issue-desc">localhost:3000, localhost:3333, 127.0.0.1 hardcodeados en el array de allowed origins para Sanity CORS.</div>
+  <div class="issue-fix">Mover a variable de entorno ALLOWED_DEV_ORIGINS que solo se cargue fuera de producción.</div>
+</div>
+
+<div class="issue issue-info">
+  <div class="issue-title"><span class="issue-id id-info">PERF-002</span> 63 directivas "use client" necesitan revisión</div>
+  <div class="issue-file">Múltiples archivos</div>
+  <div class="issue-desc">63 componentes marcados como client. Algunos podrían ser server components, reduciendo bundle size.</div>
+  <div class="issue-fix">Auditar cada "use client" para verificar que usa hooks, event handlers, o browser APIs.</div>
+</div>
+
+<div class="issue issue-info">
+  <div class="issue-title"><span class="issue-id id-info">BILL-005</span> Google Play token sin cache</div>
+  <div class="issue-file">src/lib/googlePlay.ts</div>
+  <div class="issue-desc"><code>getGooglePlayAccessToken()</code> pide token OAuth nuevo en cada llamada. El token dura 1 hora pero nunca se cachea.</div>
+  <div class="issue-fix">Cachear token con TTL de 55 minutos (exp - 5 min de margen).</div>
+</div>
+
+<div class="issue issue-info">
+  <div class="issue-title"><span class="issue-id id-info">BILL-006</span> Sin audit log para cambios de billing</div>
+  <div class="issue-file">src/app/api/stripe/webhook/route.ts · src/app/api/billing/google-play/rtdn/route.ts</div>
+  <div class="issue-desc">Cambios de suscripción solo se loguean con console.log(). No hay trail persistente en la DB. Riesgo de compliance para transacciones financieras.</div>
+  <div class="issue-fix">Crear tabla BillingAuditLog con userId, action, source, oldStatus, newStatus, timestamp.</div>
+</div>
+
+<div class="issue issue-info">
+  <div class="issue-title"><span class="issue-id id-info">USR-006</span> Sign-in inconsistente entre componentes mobile</div>
+  <div class="issue-file">src/components/MobileTabBar.tsx · src/components/MobileMenu.tsx</div>
+  <div class="issue-desc">MobileTabBar reemplaza Settings tab con "Sign in" para anónimos. MobileMenu muestra "Sign in" en el header pero no reemplaza tabs. Comportamiento diferente entre componentes móviles.</div>
+  <div class="issue-fix">Unificar la experiencia de sign-in en ambos componentes mobile.</div>
+</div>
+
+<hr style="margin: 3rem 0; border: none; border-top: 1px solid #333;">
+<p style="color: #666; font-size: 0.85rem;">Generado por el skill <strong>app-audit</strong> · Las reglas de esta auditoría se guardaron en <code>.claude/skills/app-audit/references/audit-rules.md</code> para futuras auditorías.</p>
+
+</body>
+</html>

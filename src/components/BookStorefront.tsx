@@ -11,9 +11,9 @@ import ReleaseCarousel from "@/components/ReleaseCarousel";
 import StoryCarousel from "@/components/StoryCarousel";
 import StoryVerticalCard from "@/components/StoryVerticalCard";
 import { books } from "@/data/books";
-import { getBookCardMeta } from "@/lib/bookCardMeta";
+import { getBookCardMeta } from "@domain/bookCardMeta";
 import { type Book, type Story } from "@/types/books";
-import { formatLanguage, formatLevel, formatRegion, formatTopic } from "@/lib/displayFormat";
+import { formatLanguage, formatLevel, formatRegion, formatTopic } from "@domain/displayFormat";
 
 type TabKey = "stories" | "vocab" | "reviews" | "about";
 type SortKey = "recommended" | "shortest" | "longest" | "title";
@@ -78,7 +78,7 @@ export default function BookStorefront({
     ? `/books/${book.slug}/${book.stories[0].slug}${storyNavSuffix}`
     : null;
   const cleanDescription = (book.description ?? "").trim();
-  const DESCRIPTION_LIMIT = 230;
+  const DESCRIPTION_LIMIT = 160;
   const shouldShowDescriptionToggle = cleanDescription.length > DESCRIPTION_LIMIT;
   const visibleDescription =
     shouldShowDescriptionToggle && !descriptionExpanded
@@ -275,7 +275,7 @@ export default function BookStorefront({
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight">{book.title}</h1>
           {book.subtitle ? <p className="mt-2 text-lg text-gray-200">{book.subtitle}</p> : null}
-          <p className="mt-3 text-base md:text-lg text-gray-200 leading-relaxed">{visibleDescription}</p>
+          <p className="mt-3 max-w-3xl text-base md:text-lg text-gray-200 leading-relaxed">{visibleDescription}</p>
           {shouldShowDescriptionToggle ? (
             <button
               type="button"

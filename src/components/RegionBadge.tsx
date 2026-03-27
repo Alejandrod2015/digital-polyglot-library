@@ -1,6 +1,6 @@
 "use client";
 
-import { formatRegion } from "@/lib/displayFormat";
+import { formatRegion } from "@domain/displayFormat";
 
 type RegionBadgeProps = {
   region?: string | null;

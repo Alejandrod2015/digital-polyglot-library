@@ -6,7 +6,8 @@ import {
 import type { PracticeFavoriteItem } from "@/lib/practiceExercises";
 import { formatVariantLabel, resolveContentVariant } from "@/lib/languageVariant";
 import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
-import { getJourneyLevelPlan, JOURNEY_CURRICULUM } from "./journeyCurriculum";
+import { normalizeJourneyFocus, type JourneyFocus } from "@/lib/onboarding";
+import { getJourneyCurriculumPlans, getJourneyLevelPlanAsync } from "@/lib/journeyCurriculumSource";
 
 export type JourneyStoryItem = {
   id: string;
@@ -19,6 +20,7 @@ export type JourneyStoryItem = {
   language?: string;
   region?: string;
   variant?: string;
+  journeyFocus?: JourneyFocus;
   levelLabel: string;
   topicLabel: string;
   text?: string;
@@ -45,6 +47,35 @@ export type JourneyVariantTrack = {
   id: string;
   label: string;
   levels: JourneyLevel[];
+};
+
+export type JourneyReviewLaneTopic = {
+  levelId: string;
+  levelTitle: string;
+  topicSlug: string;
+  topicLabel: string;
+  dueCount: number;
+  complete: boolean;
+  practiced: boolean;
+  checkpointPassed: boolean;
+};
+
+export type JourneyTrackInsights = {
+  score: number;
+  completedSteps: number;
+  totalSteps: number;
+  completedRequiredStories: number;
+  totalRequiredStories: number;
+  practicedTopicCount: number;
+  totalTopicCount: number;
+  passedCheckpointCount: number;
+  totalCheckpointCount: number;
+  dueReviewCount: number;
+  dueTopicCount: number;
+  reviewTopics: JourneyReviewLaneTopic[];
+  currentLevelId: string | null;
+  currentLevelTitle: string | null;
+  nextMilestone: string;
 };
 
 export type JourneyCheckpointQuestion = {
@@ -206,6 +237,21 @@ const journeyLevelMeta: Record<CefrLevel, { id: string; title: string; subtitle:
 
 const DEFAULT_LANGUAGE = "Spanish";
 const DEFAULT_VARIANT_ORDER = ["latam", "spain", "us", "uk", "brazil", "portugal", "germany", "austria", "france", "canada-fr", "italy"];
+export const JOURNEY_LEVEL_IDS = ["a1", "a2", "b1", "b2", "c1", "c2"] as const;
+
+export function normalizeJourneyPlacementLevel(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const normalized = value.trim().toLowerCase();
+  return JOURNEY_LEVEL_IDS.includes(normalized as (typeof JOURNEY_LEVEL_IDS)[number]) ? normalized : null;
+}
+
+export function getJourneyPlacementLevelIndex<
+  TLevel extends { id: string }
+>(levels: TLevel[], placementLevelId: string | null | undefined): number {
+  const normalizedPlacement = normalizeJourneyPlacementLevel(placementLevelId);
+  if (!normalizedPlacement) return -1;
+  return levels.findIndex((level) => level.id === normalizedPlacement);
+}
 
 function slugifyTopic(topic: string) {
   return topic
@@ -254,8 +300,53 @@ function parseStandaloneVocabRaw(vocabRaw: string | null): VocabItem[] {
   }
 }
 
-async function buildLevelsForVariant(language: string, variantId: string): Promise<JourneyLevel[]> {
-  const grouped = new Map<string, Map<string, JourneyStoryItem[]>>();
+function getJourneyFocusPriority(
+  storyFocus: JourneyFocus | undefined,
+  activeFocus: JourneyFocus
+): number {
+  const normalizedStoryFocus = normalizeJourneyFocus(storyFocus) ?? "General";
+  if (normalizedStoryFocus === activeFocus) return 3;
+  if (normalizedStoryFocus === "General") return 2;
+  return 1;
+}
+
+function collapseJourneyStoryAlternatives(
+  stories: Array<JourneyStoryItem & { journeyOrder?: number | null }>,
+  activeFocus: JourneyFocus
+): JourneyStoryItem[] {
+  const groupedBySlot = new Map<string, Array<JourneyStoryItem & { journeyOrder?: number | null }>>();
+
+  for (const story of stories) {
+    const slotKey =
+      typeof story.journeyOrder === "number" && Number.isFinite(story.journeyOrder)
+        ? `order:${story.journeyOrder}`
+        : `story:${story.id}`;
+    const current = groupedBySlot.get(slotKey) ?? [];
+    current.push(story);
+    groupedBySlot.set(slotKey, current);
+  }
+
+  return Array.from(groupedBySlot.entries())
+    .sort(([aKey], [bKey]) => aKey.localeCompare(bKey, undefined, { numeric: true }))
+    .map(([, candidates]) =>
+      [...candidates]
+        .sort((a, b) => {
+          const focusDiff = getJourneyFocusPriority(b.journeyFocus, activeFocus) - getJourneyFocusPriority(a.journeyFocus, activeFocus);
+          if (focusDiff !== 0) return focusDiff;
+          const aOrder = typeof a.journeyOrder === "number" ? a.journeyOrder : Number.MAX_SAFE_INTEGER;
+          const bOrder = typeof b.journeyOrder === "number" ? b.journeyOrder : Number.MAX_SAFE_INTEGER;
+          if (aOrder !== bOrder) return aOrder - bOrder;
+          return a.title.localeCompare(b.title);
+        })[0]
+    );
+}
+
+async function buildLevelsForVariant(
+  language: string,
+  variantId: string,
+  journeyFocus: JourneyFocus = "General"
+): Promise<JourneyLevel[]> {
+  const grouped = new Map<string, Map<string, Array<JourneyStoryItem & { journeyOrder?: number | null }>>>();
   const standaloneStories = await getPublishedStandaloneStories({ includeJourneyStories: true });
 
   for (const story of standaloneStories) {
@@ -272,7 +363,7 @@ async function buildLevelsForVariant(language: string, variantId: string): Promi
 
     const targetTopics = grouped.get(mappedLevel.id)!;
     const topicSlug = story.journeyTopic.trim().toLowerCase();
-    const curriculumLevel = getJourneyLevelPlan(language, variantId, mappedLevel.id);
+    const curriculumLevel = await getJourneyLevelPlanAsync(language, variantId, mappedLevel.id);
     const topicLabel =
       curriculumLevel?.topics.find((topic) => topic.slug === topicSlug)?.label ??
       topicSlug.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
@@ -292,6 +383,7 @@ async function buildLevelsForVariant(language: string, variantId: string): Promi
       language: story.language ?? undefined,
       region: story.region ?? undefined,
       variant: story.variant ?? undefined,
+      journeyFocus: normalizeJourneyFocus(story.journeyFocus) ?? "General",
       levelLabel: CEFR_LEVEL_LABELS[resolvedCefrLevel],
       topicLabel,
       text: story.text,
@@ -302,10 +394,10 @@ async function buildLevelsForVariant(language: string, variantId: string): Promi
     targetTopics.get(topicLabel)!.push(withOrder);
   }
 
-  return Object.entries(journeyLevelMeta)
-    .map(([, meta]) => {
+  const levels: JourneyLevel[] = [];
+  for (const [, meta] of Object.entries(journeyLevelMeta)) {
       const topicsMap = grouped.get(meta.id) ?? new Map<string, JourneyStoryItem[]>();
-      const curriculumLevel = getJourneyLevelPlan(language, variantId, meta.id);
+      const curriculumLevel = await getJourneyLevelPlanAsync(language, variantId, meta.id);
       const rawTopics: JourneyTopic[] = Array.from(topicsMap.entries()).map(([label, stories]) => {
         const slug = slugifyTopic(label);
         const topicPlan = curriculumLevel?.topics.find((topic) => topic.slug === slug) ?? null;
@@ -321,13 +413,14 @@ async function buildLevelsForVariant(language: string, variantId: string): Promi
           if (aOrder !== bOrder) return aOrder - bOrder;
           return a.title.localeCompare(b.title);
         });
+        const selectedStories = collapseJourneyStoryAlternatives(sortedStories, journeyFocus);
         return {
           id: `${meta.id}:${slug}`,
           slug,
           label: topicPlan?.label ?? label,
-          storyCount: sortedStories.length,
+          storyCount: selectedStories.length,
           storyTarget: topicPlan?.storyTarget,
-          stories: sortedStories,
+          stories: selectedStories,
         } satisfies JourneyTopic;
       });
 
@@ -355,17 +448,25 @@ async function buildLevelsForVariant(language: string, variantId: string): Promi
             return a.label.localeCompare(b.label);
           });
 
-      return {
+      const level = {
         id: meta.id,
         title: curriculumLevel?.title ?? meta.title,
         subtitle: curriculumLevel?.subtitle ?? meta.subtitle,
         topics,
       } satisfies JourneyLevel;
-    })
-    .filter((level) => level.topics.length > 0 || Boolean(getJourneyLevelPlan(language, variantId, level.id)));
+
+      if (level.topics.length > 0 || Boolean(curriculumLevel)) {
+        levels.push(level);
+      }
+  }
+
+  return levels;
 }
 
-export async function buildJourneyVariants(language = DEFAULT_LANGUAGE): Promise<JourneyVariantTrack[]> {
+export async function buildJourneyVariants(
+  language = DEFAULT_LANGUAGE,
+  journeyFocus: JourneyFocus = "General"
+): Promise<JourneyVariantTrack[]> {
   const variants = new Set<string>();
   const normalizedLanguage = language.trim().toLowerCase();
 
@@ -381,7 +482,8 @@ export async function buildJourneyVariants(language = DEFAULT_LANGUAGE): Promise
     if (variant) variants.add(variant);
   }
 
-  for (const plan of JOURNEY_CURRICULUM) {
+  const curriculumPlans = await getJourneyCurriculumPlans();
+  for (const plan of curriculumPlans) {
     if (plan.language.trim().toLowerCase() === normalizedLanguage) {
       variants.add(plan.variantId);
     }
@@ -393,15 +495,134 @@ export async function buildJourneyVariants(language = DEFAULT_LANGUAGE): Promise
     .map(async (variantId) => ({
       id: variantId,
       label: formatVariantLabel(variantId) ?? variantId.toUpperCase(),
-      levels: await buildLevelsForVariant(language, variantId),
+      levels: await buildLevelsForVariant(language, variantId, journeyFocus),
     }))
   );
 
   return trackEntries.filter((track) => track.levels.length > 0);
 }
 
-export async function buildJourneyLevels(variantId?: string, language = DEFAULT_LANGUAGE): Promise<JourneyLevel[]> {
-  const tracks = await buildJourneyVariants(language);
+export function buildJourneyTrackInsights(
+  track: Pick<JourneyVariantTrack, "id" | "levels">,
+  completedStoryKeys: Set<string>,
+  practicedTopicKeys: Set<string>,
+  passedCheckpointKeys: Set<string>,
+  dueReviewItems: Array<{ progressKey: string | null }>
+): JourneyTrackInsights {
+  const dueReviewProgressKeySet = new Set(
+    dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))
+  );
+
+  let completedRequiredStories = 0;
+  let totalRequiredStories = 0;
+  let practicedTopicCount = 0;
+  let totalTopicCount = 0;
+  let passedCheckpointCount = 0;
+  let dueReviewCount = 0;
+  let currentLevelId: string | null = null;
+  let currentLevelTitle: string | null = null;
+  let nextMilestone = "Journey cleared";
+  const reviewTopics: JourneyReviewLaneTopic[] = [];
+
+  for (const level of track.levels) {
+    let levelHasAnyStory = false;
+    let levelHasAnyProgress = false;
+
+    for (const topic of level.topics) {
+      if (topic.storyCount <= 0) continue;
+
+      levelHasAnyStory = true;
+      totalTopicCount += 1;
+      const requiredStoryCount = getJourneyTopicRequiredStoryCount(topic);
+      const completedStoryCount = getJourneyTopicCompletedStoryCount(topic, completedStoryKeys);
+      const completedRequiredCount = Math.min(completedStoryCount, requiredStoryCount);
+      const practiceKey = getJourneyTopicPracticeKey(track.id, level.id, topic.slug);
+      const checkpointKey = getJourneyTopicCheckpointKey(track.id, level.id, topic.slug);
+      const practiced = practicedTopicKeys.has(practiceKey);
+      const checkpointPassed = passedCheckpointKeys.has(checkpointKey);
+      const complete = requiredStoryCount > 0 && completedStoryCount >= requiredStoryCount;
+      const topicDueCount = topic.stories.reduce((sum, story) => {
+        return sum + (dueReviewProgressKeySet.has(story.progressKey) ? 1 : 0);
+      }, 0);
+
+      totalRequiredStories += requiredStoryCount;
+      completedRequiredStories += completedRequiredCount;
+      if (practiced) practicedTopicCount += 1;
+      if (checkpointPassed) passedCheckpointCount += 1;
+      dueReviewCount += topicDueCount;
+
+      if (completedRequiredCount > 0 || practiced || checkpointPassed || topicDueCount > 0) {
+        levelHasAnyProgress = true;
+      }
+
+      if (topicDueCount > 0) {
+        reviewTopics.push({
+          levelId: level.id,
+          levelTitle: level.title,
+          topicSlug: topic.slug,
+          topicLabel: topic.label,
+          dueCount: topicDueCount,
+          complete,
+          practiced,
+          checkpointPassed,
+        });
+      }
+
+      if (nextMilestone === "Journey cleared") {
+        if (!complete) {
+          const remaining = Math.max(requiredStoryCount - completedStoryCount, 0);
+          nextMilestone = `Read ${remaining} more ${remaining === 1 ? "story" : "stories"} in ${topic.label}`;
+        } else if (!practiced) {
+          nextMilestone = `Practice ${topic.label}`;
+        } else if (!checkpointPassed) {
+          nextMilestone = `Clear the ${topic.label} checkpoint`;
+        }
+      }
+    }
+
+    if (!currentLevelId && levelHasAnyStory && levelHasAnyProgress) {
+      currentLevelId = level.id;
+      currentLevelTitle = level.title;
+    }
+  }
+
+  if (!currentLevelId) {
+    const firstLevelWithStories = track.levels.find((level) => level.topics.some((topic) => topic.storyCount > 0));
+    currentLevelId = firstLevelWithStories?.id ?? null;
+    currentLevelTitle = firstLevelWithStories?.title ?? null;
+  }
+
+  reviewTopics.sort((a, b) => b.dueCount - a.dueCount || a.topicLabel.localeCompare(b.topicLabel));
+
+  const totalCheckpointCount = totalTopicCount;
+  const totalSteps = totalRequiredStories + totalTopicCount + totalCheckpointCount;
+  const completedSteps = completedRequiredStories + practicedTopicCount + passedCheckpointCount;
+
+  return {
+    score: totalSteps > 0 ? Math.round((completedSteps / totalSteps) * 100) : 0,
+    completedSteps,
+    totalSteps,
+    completedRequiredStories,
+    totalRequiredStories,
+    practicedTopicCount,
+    totalTopicCount,
+    passedCheckpointCount,
+    totalCheckpointCount,
+    dueReviewCount,
+    dueTopicCount: reviewTopics.length,
+    reviewTopics,
+    currentLevelId,
+    currentLevelTitle,
+    nextMilestone,
+  };
+}
+
+export async function buildJourneyLevels(
+  variantId?: string,
+  language = DEFAULT_LANGUAGE,
+  journeyFocus: JourneyFocus = "General"
+): Promise<JourneyLevel[]> {
+  const tracks = await buildJourneyVariants(language, journeyFocus);
   if (tracks.length === 0) return [];
 
   if (variantId) {
@@ -552,13 +773,14 @@ function buildWordChoiceQuestion(
 export async function buildJourneyTopicPracticeItems(
   variantId: string | undefined,
   levelId: string,
-  topicSlug: string
+  topicSlug: string,
+  journeyFocus: JourneyFocus = "General"
 ): Promise<{
   topic: JourneyTopic;
   level: JourneyLevel;
   items: PracticeFavoriteItem[];
 } | null> {
-  const levels = await buildJourneyLevels(variantId);
+  const levels = await buildJourneyLevels(variantId, DEFAULT_LANGUAGE, journeyFocus);
   const level = levels.find((entry) => entry.id === levelId) ?? null;
   const topic = level?.topics.find((entry) => entry.slug === topicSlug) ?? null;
 

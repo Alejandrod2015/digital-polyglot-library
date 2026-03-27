@@ -1,0 +1,9 @@
+appId: com.digitalpolyglot.mobile
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "Pick up your stories on iPhone"
+- assertVisible: "Continue with web sign-in"
+- assertVisible: "Browse preview catalog"
+- takeScreenshot: "01-auth-gate"

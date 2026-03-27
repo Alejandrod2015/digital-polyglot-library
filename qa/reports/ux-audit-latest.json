@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-03-27T11:51:56.505Z",
+  "fixedCount": 0,
+  "apps": [
+    {
+      "id": "web",
+      "name": "Web app",
+      "kind": "web",
+      "screenshotCount": 7,
+      "sourceFileCount": 139,
+      "findings": [
+        {
+          "appId": "web",
+          "appName": "Web app",
+          "code": "oversized_ui_surface",
+          "severity": "info",
+          "message": "Large UI surface with 2502 lines",
+          "filePath": "src/app/HomeClient.tsx",
+          "line": 1,
+          "evidence": "Large files slow down autonomous fixes and increase regression risk.",
+          "suggestedFix": "Split by screen or card family before the next major product sweep."
+        }
+      ]
+    },
+    {
+      "id": "mobile-ios",
+      "name": "iOS app",
+      "kind": "mobile",
+      "screenshotCount": 173,
+      "sourceFileCount": 24,
+      "findings": [
+        {
+          "appId": "mobile-ios",
+          "appName": "iOS app",
+          "code": "oversized_ui_surface",
+          "severity": "info",
+          "message": "Large UI surface with 12642 lines",
+          "filePath": "apps/mobile/src/mobile/MobileLibraryShell.tsx",
+          "line": 1,
+          "evidence": "Large files slow down autonomous fixes and increase regression risk.",
+          "suggestedFix": "Split by screen or card family before the next major product sweep."
+        }
+      ]
+    },
+    {
+      "id": "studio",
+      "name": "Sanity Studio",
+      "kind": "studio",
+      "screenshotCount": 1,
+      "sourceFileCount": 30,
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "appId": "web",
+      "appName": "Web app",
+      "code": "oversized_ui_surface",
+      "severity": "info",
+      "message": "Large UI surface with 2502 lines",
+      "filePath": "src/app/HomeClient.tsx",
+      "line": 1,
+      "evidence": "Large files slow down autonomous fixes and increase regression risk.",
+      "suggestedFix": "Split by screen or card family before the next major product sweep."
+    },
+    {
+      "appId": "mobile-ios",
+      "appName": "iOS app",
+      "code": "oversized_ui_surface",
+      "severity": "info",
+      "message": "Large UI surface with 12642 lines",
+      "filePath": "apps/mobile/src/mobile/MobileLibraryShell.tsx",
+      "line": 1,
+      "evidence": "Large files slow down autonomous fixes and increase regression risk.",
+      "suggestedFix": "Split by screen or card family before the next major product sweep."
+    }
+  ]
+}

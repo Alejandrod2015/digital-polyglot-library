@@ -1,8 +1,10 @@
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
-import { normalizeVocabWord } from "@/lib/vocabWordNormalization";
+import { resolveCanonicalVocabEntry } from "@/lib/vocabWordNormalization";
+import { isLowValueStudyWord } from "@/lib/vocabPedagogy";
 
 export type VocabItem = {
   word: string;
+  surface?: string;
   definition: string;
   type?: string;
 };
@@ -17,7 +19,8 @@ export type VocabValidationIssueCode =
   | "duplicate"
   | "transparent_word"
   | "invalid_multiword"
-  | "weak_definition";
+  | "weak_definition"
+  | "too_basic_for_level";
 
 export type VocabValidationIssue = {
   word: string;
@@ -142,6 +145,8 @@ export function validateAndNormalizeVocab(args: {
   rawVocab: unknown;
   text: string;
   language?: string;
+  level?: string;
+  cefrLevel?: string;
   maxWordLength?: number;
   maxWordTokens?: number;
 }): { vocab: VocabItem[]; issues: VocabValidationIssue[] } {
@@ -157,9 +162,12 @@ export function validateAndNormalizeVocab(args: {
   for (const row of rows) {
     if (!row || typeof row !== "object") continue;
     const record = row as Record<string, unknown>;
-    const word = normalizeVocabWord({
-      word: typeof record.word === "string" ? record.word : "",
-      type: typeof record.type === "string" ? record.type : undefined,
+    const rawWord = typeof record.word === "string" ? record.word : "";
+    const type = typeof record.type === "string" ? record.type.trim() : undefined;
+    const { word, surface } = resolveCanonicalVocabEntry({
+      word: rawWord,
+      surface: typeof record.surface === "string" ? record.surface : rawWord,
+      type,
       language,
     });
     const rawDefinition =
@@ -169,8 +177,6 @@ export function validateAndNormalizeVocab(args: {
           ? record.meaning.trim()
           : "";
     const definition = normalizeDefinition(rawDefinition);
-    const type = typeof record.type === "string" ? record.type.trim() : undefined;
-
     if (!word) {
       issues.push({ word: "", code: "missing_word", reason: 'Missing "word".' });
       continue;
@@ -200,7 +206,7 @@ export function validateAndNormalizeVocab(args: {
       });
       continue;
     }
-    if (!appearsInText(normalizedText, word)) {
+    if (!appearsInText(normalizedText, surface || word)) {
       issues.push({ word, code: "missing_in_text", reason: "Word does not appear in the story text." });
       continue;
     }
@@ -214,6 +220,22 @@ export function validateAndNormalizeVocab(args: {
         word,
         code: "transparent_word",
         reason: "Too transparent or generic to be high-value study vocabulary.",
+      });
+      continue;
+    }
+    if (
+      isLowValueStudyWord({
+        word,
+        language,
+        level: args.level,
+        cefrLevel: args.cefrLevel,
+        type,
+      })
+    ) {
+      issues.push({
+        word,
+        code: "too_basic_for_level",
+        reason: "Too basic or too low-information for the target study level.",
       });
       continue;
     }
@@ -235,7 +257,7 @@ export function validateAndNormalizeVocab(args: {
     }
 
     seen.add(key);
-    vocab.push({ word, definition, ...(type ? { type } : {}) });
+    vocab.push({ word, ...(surface && surface !== word ? { surface } : {}), definition, ...(type ? { type } : {}) });
   }
 
   return { vocab, issues };

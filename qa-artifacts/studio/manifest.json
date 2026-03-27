@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-03-25T23:24:53.985Z",
+  "baseUrl": "http://127.0.0.1:3002",
+  "config": "qa/studio-screenshots.config.json",
+  "captures": [
+    {
+      "id": "studio-home",
+      "path": "/studio",
+      "url": "http://127.0.0.1:3002/studio",
+      "file": "qa-artifacts/studio/studio-home.png",
+      "status": "ok"
+    }
+  ]
+}

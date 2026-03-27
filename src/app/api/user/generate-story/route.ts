@@ -1,5 +1,5 @@
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 import { PrismaClient } from "@/generated/prisma";
 import slugify from "slugify";
@@ -7,15 +7,15 @@ import { generateAndUploadCover } from "@/lib/dalle";
 import { inferTopicFromText } from "@/lib/topicClassifier";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
-import { normalizeVocabWord } from "@/lib/vocabWordNormalization";
+import { resolveCanonicalVocabEntry } from "@/lib/vocabWordNormalization";
 import {
   HARD_STORY_WORDS_MAX,
   MIN_STORY_WORDS,
   TARGET_STORY_WORDS_MAX,
   TARGET_STORY_WORDS_MIN,
   countStoryWords,
-} from "@/lib/storyLength";
-import { broadLevelFromCefr, cefrPromptLabel, normalizeCefrLevel, normalizeBroadLevel } from "@/lib/cefr";
+} from "@domain/storyLength";
+import { broadLevelFromCefr, cefrPromptLabel, normalizeCefrLevel, normalizeBroadLevel } from "@domain/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 import { syncCreateStoryMirror } from "@/lib/createStoryMirror";
 import {
@@ -24,6 +24,7 @@ import {
   stripHtml,
   validateAndNormalizeVocab,
 } from "@/lib/vocabValidation";
+import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
@@ -31,7 +32,7 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 type StoryJSON = {
   title: string;
   text: string;
-  vocab: { word: string; definition: string; type?: string }[];
+  vocab: { word: string; surface?: string; definition: string; type?: string }[];
 };
 
 type StoryVocabItem = StoryJSON["vocab"][number];
@@ -492,8 +493,10 @@ function sanitizeVocab(items: StoryVocabItem[], language?: string): StoryVocabIt
   for (const item of items) {
     if (!item || typeof item !== "object") continue;
     const type = typeof item.type === "string" ? item.type.trim() : undefined;
-    const word = normalizeVocabWord({
-      word: typeof item.word === "string" ? item.word : "",
+    const rawWord = typeof item.word === "string" ? item.word : "";
+    const { word, surface } = resolveCanonicalVocabEntry({
+      word: rawWord,
+      surface: typeof item.surface === "string" ? item.surface : rawWord,
       type,
       language,
     });
@@ -502,7 +505,11 @@ function sanitizeVocab(items: StoryVocabItem[], language?: string): StoryVocabIt
     const key = normalizeToken(word);
     if (!key || seen.has(key)) continue;
     seen.add(key);
-    out.push(type ? { word, definition, type } : { word, definition });
+    out.push(
+      type
+        ? { word, ...(surface && surface !== word ? { surface } : {}), definition, type }
+        : { word, ...(surface && surface !== word ? { surface } : {}), definition }
+    );
   }
 
   return out;
@@ -588,10 +595,11 @@ Rules:
 - Exclude transparent/basic cognates such as "importante", "normal", "general", "social", or direct equivalents.
 - Exclude extremely basic function words and beginner vocabulary.
 - Do not repeat these existing words: ${JSON.stringify(existingWords)}.
-- Keep words exactly as they appear in the story.
+- Set "surface" to the exact form that appears in the story.
+- Set "word" to the dictionary/root form learners should study.
 - Definitions must be in English, 8-18 words, pedagogical and contextual.
 - Return ONLY valid JSON array:
-[{"word":"...","definition":"...","type":"verb|noun|adjective|adverb|expression|slang"}]
+[{"word":"...","surface":"...","definition":"...","type":"verb|noun|adjective|adverb|expression|slang"}]
 
 Story text:
 ${text.slice(0, 9000)}
@@ -669,7 +677,8 @@ Task:
 - Story topic/context: ${topic || "general"}.
 ${variantClause}
 - Each item must have:
-  - "word": exact form as it appears in the story text
+  - "word": dictionary/root form learners should study
+  - "surface": exact form as it appears in the story text
   - "definition": clear English explanation with 8-18 words, including nuance or typical usage in context
   - "type": one label among ["verb","noun","adjective","adverb","expression","slang","other"]
 - Prefer high-learning-value items that are practical, reusable, nuanced, or culturally grounded.
@@ -722,15 +731,19 @@ ${candidateBlock}
   }
 }
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
-    const { userId } = (await auth()) ?? { userId: null };
+    const { userId: clerkUserId } = (await auth()) ?? { userId: null };
+    const mobileSession = getMobileSessionFromRequest(req);
+    const userId = clerkUserId ?? mobileSession?.sub ?? null;
     if (!userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const user = await currentUser();
-    const plan = (user?.publicMetadata?.plan as string) ?? "free";
+    const user = clerkUserId ? await currentUser() : null;
+    const plan = clerkUserId
+      ? ((user?.publicMetadata?.plan as string) ?? "free")
+      : (mobileSession?.plan ?? "free");
     if (plan !== "polyglot") {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
@@ -847,7 +860,7 @@ Return ONLY valid JSON:
 {
   "title": "string",
   "text": "string",
-  "vocab": [{ "word": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang" }]
+  "vocab": [{ "word": "string", "surface": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang" }]
 }
 `;
 
@@ -1004,6 +1017,8 @@ Return ONLY valid JSON:
       rawVocab: improvedVocab,
       text: plainText,
       language,
+      level: normalizedBroadLevel,
+      cefrLevel: normalizedCefrLevel ?? undefined,
     });
 
     if (validation.vocab.length < minVocabItems) {
@@ -1033,6 +1048,8 @@ Return ONLY valid JSON:
         rawVocab: improvedVocab,
         text: plainText,
         language,
+        level: normalizedBroadLevel,
+        cefrLevel: normalizedCefrLevel ?? undefined,
       });
     }
 
@@ -1156,6 +1173,8 @@ Return ONLY valid JSON:
         focus: savedStory.focus,
         topic: savedStory.topic,
         audioStatus: savedStory.audioStatus,
+        audioUrl: savedStory.audioUrl,
+        coverUrl: savedStory.coverUrl,
       },
     });
   } catch (error: unknown) {

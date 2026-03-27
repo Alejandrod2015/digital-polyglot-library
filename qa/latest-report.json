@@ -1,0 +1,286 @@
+{
+  "generatedAt": "2026-03-27T12:00:00.000Z",
+  "summary": { "critical": 11, "warning": 13, "info": 5, "total": 29 },
+  "issues": [
+    {
+      "id": "API-001-a",
+      "severity": "critical",
+      "category": "API Security",
+      "title": "Audio generation sin autenticación",
+      "file": "src/app/api/audio/generate/route.ts",
+      "description": "El endpoint POST genera audio vía ElevenLabs TTS sin verificar auth. Cualquier persona puede disparar generación de audio costosa sin estar logueada.",
+      "affected": "Todos — endpoint público",
+      "fix": "Agregar auth() check y verificar userId antes de procesar."
+    },
+    {
+      "id": "API-001-b",
+      "severity": "critical",
+      "category": "API Security",
+      "title": "Synopsis generation sin autenticación",
+      "file": "src/app/api/generate-synopsis/route.ts",
+      "description": "POST llama a OpenAI GPT-4o-mini para generar sinopsis sin auth. Riesgo de abuso y costos no controlados.",
+      "affected": "Todos — endpoint público",
+      "fix": "Agregar auth check antes de la llamada a OpenAI."
+    },
+    {
+      "id": "API-001-c",
+      "severity": "critical",
+      "category": "API Security",
+      "title": "Traducción sin autenticación",
+      "file": "src/app/api/translate/route.ts",
+      "description": "POST llama a DeepL API sin auth. Cuota de traducción puede ser agotada por cualquiera.",
+      "affected": "Todos — endpoint público",
+      "fix": "Agregar auth gate."
+    },
+    {
+      "id": "API-002",
+      "severity": "critical",
+      "category": "API Security",
+      "title": "Studio create-stories expone datos de todos los usuarios",
+      "file": "src/app/api/studio/create-stories/route.ts",
+      "description": "GET retorna todas las user stories (userId, títulos, idioma, nivel, tópico) sin autenticación. Expone metadata de contenido personal de todos los usuarios.",
+      "affected": "Todos los usuarios con stories creadas",
+      "fix": "Agregar auth y filtrar por userId en la query."
+    },
+    {
+      "id": "API-005",
+      "severity": "critical",
+      "category": "API Security",
+      "title": "Shopify webhook con HMAC deshabilitado",
+      "file": "src/app/api/shopify/webhook/route.ts",
+      "description": "La validación HMAC está comentada con 'ignorando para test'. En producción, cualquiera puede crear claim tokens para emails y libros arbitrarios.",
+      "affected": "Sistema de billing completo",
+      "fix": "Re-habilitar validación HMAC. Nunca bypassear en producción."
+    },
+    {
+      "id": "USR-001-a",
+      "severity": "critical",
+      "category": "User State",
+      "title": "Usuarios anónimos ven links a páginas protegidas",
+      "file": "src/components/Sidebar.tsx",
+      "description": "Usuarios no logueados ven links de navegación a /my-library, /favorites, /progress, y /journey. La experiencia al visitarlas es inconsistente.",
+      "affected": "Usuarios anónimos",
+      "fix": "Envolver estos links en <SignedIn> en Sidebar, MobileMenu y MobileTabBar."
+    },
+    {
+      "id": "USR-001-b",
+      "severity": "critical",
+      "category": "User State",
+      "title": "Journey page sin auth guard pero depende de datos de usuario",
+      "file": "src/app/journey/page.tsx",
+      "description": "Llama a currentUser() sin verificar null. Usa user?.publicMetadata y pasa a funciones que esperan sesión activa. Usuario anónimo obtiene comportamiento indefinido.",
+      "affected": "Usuarios anónimos",
+      "fix": "Agregar if (!user) redirect('/sign-in') después de currentUser()."
+    },
+    {
+      "id": "BILL-001",
+      "severity": "critical",
+      "category": "Billing",
+      "title": "Conflicto de suscripción dual sin resolución",
+      "file": "prisma/schema.prisma",
+      "description": "BillingEntitlement tiene constraint unique en userId. Si un usuario tiene suscripción Stripe Y Google Play, el último webhook que llega sobreescribe al otro.",
+      "affected": "Usuarios con suscripciones en múltiples plataformas",
+      "fix": "Cambiar constraint a @@unique([userId, source]) y resolver conflictos."
+    },
+    {
+      "id": "BILL-002",
+      "severity": "critical",
+      "category": "Billing",
+      "title": "Clerk metadata puede desincronizarse de la DB",
+      "file": "src/lib/billingClerk.ts",
+      "description": "Después de actualizar BillingEntitlement en la DB, si syncClerkPlanFromEntitlement() falla, la DB queda actualizada pero Clerk stale. No hay retry.",
+      "affected": "Cualquier usuario que cambie de plan",
+      "fix": "Agregar retry con exponential backoff y job periódico de verificación."
+    },
+    {
+      "id": "ERR-001",
+      "severity": "critical",
+      "category": "Error Handling",
+      "title": "Libros/historias inexistentes no retornan 404",
+      "file": "src/app/books/[bookSlug]/page.tsx",
+      "description": "Cuando un libro o historia no existe, retorna un <div> con texto en vez de llamar notFound(). No hay 404 HTTP, no hay fallback de Next.js.",
+      "affected": "Cualquiera con URL inválida",
+      "fix": "Reemplazar returns de div con notFound()."
+    },
+    {
+      "id": "ERR-003",
+      "severity": "critical",
+      "category": "Error Handling",
+      "title": "Múltiples fetches client-side sin manejo de errores",
+      "file": "src/app/books/[bookSlug]/ReaderClient.tsx",
+      "description": "Llamadas fetch() sin try-catch ni estado de error. Fallos de red fallan silenciosamente sin feedback al usuario.",
+      "affected": "Todos los usuarios con conexión inestable",
+      "fix": "Envolver todos los fetch en try-catch con estado de error visible."
+    },
+    {
+      "id": "USR-003",
+      "severity": "warning",
+      "category": "User State",
+      "title": "Story of Week/Day: nav filtrada por plan pero páginas son públicas",
+      "file": "src/components/Sidebar.tsx",
+      "description": "Sidebar muestra 'Story of the Week' solo a plan free, y 'Story of the Day' solo a plan basic. Pero ambas páginas son accesibles por URL sin restricción.",
+      "affected": "Todos los tipos de usuario",
+      "fix": "Mostrar ambos links a todos, o agregar guards server-side en las páginas."
+    },
+    {
+      "id": "USR-004",
+      "severity": "warning",
+      "category": "User State",
+      "title": "Settings accesible para anónimos pero cambios no persisten",
+      "file": "src/app/settings/page.tsx",
+      "description": "Link de Settings visible para todos. Usuarios anónimos pueden cambiar tema localmente, pero cambios de idioma/región no se guardan.",
+      "affected": "Usuarios anónimos",
+      "fix": "Esconder Settings de anónimos o mostrar 'Sign in para guardar'."
+    },
+    {
+      "id": "API-004",
+      "severity": "warning",
+      "category": "API Security",
+      "title": "Claim tokens sin validación de expiración",
+      "file": "src/app/api/claim/[token]/route.ts",
+      "description": "El schema tiene campo expiresAt pero el endpoint nunca lo verifica. Todos los tokens son válidos indefinidamente.",
+      "affected": "Sistema de claims",
+      "fix": "Verificar expiresAt en el endpoint y setear expiración al crear tokens."
+    },
+    {
+      "id": "BILL-003",
+      "severity": "warning",
+      "category": "Billing",
+      "title": "Trial expirado no se actualiza en DB",
+      "file": "src/lib/billing.ts",
+      "description": "Expiración de trial se calcula on-the-fly. El status en DB queda 'trialing' para siempre si un webhook se pierde.",
+      "affected": "Usuarios en trial",
+      "fix": "Agregar cron job que actualice status de 'trialing' a 'expired'."
+    },
+    {
+      "id": "BILL-004",
+      "severity": "warning",
+      "category": "Billing",
+      "title": "Race condition en redención de claim tokens",
+      "file": "src/app/api/claim/[token]/route.ts",
+      "description": "Entre el check de claim.redeemedBy y el update, dos requests concurrentes pueden redimir el mismo token.",
+      "affected": "Usuarios redimiendo tokens simultáneamente",
+      "fix": "Usar transacción Prisma con isolation SERIALIZABLE."
+    },
+    {
+      "id": "ERR-005",
+      "severity": "warning",
+      "category": "Error Handling",
+      "title": "Estados vacíos inconsistentes en páginas de listas",
+      "file": "src/app/my-library/MyLibraryClient.tsx",
+      "description": "Cuando no hay datos, no siempre se muestra mensaje significativo. Si el API falla y datos offline están vacíos, el usuario ve página en blanco.",
+      "affected": "Usuarios nuevos, usuarios con errores de red",
+      "fix": "Agregar UI de estado vacío explícito con mensaje y CTA."
+    },
+    {
+      "id": "ERR-004",
+      "severity": "warning",
+      "category": "Error Handling",
+      "title": "6 páginas con data fetching sin loading.tsx",
+      "file": "src/app/my-library/",
+      "description": "my-library, favorites, progress, settings, plans y create fetchean datos pero no tienen loading.tsx ni skeleton UI.",
+      "affected": "Todos los usuarios (especialmente conexiones lentas)",
+      "fix": "Crear loading.tsx con skeleton loaders para cada página."
+    },
+    {
+      "id": "NAV-001",
+      "severity": "warning",
+      "category": "Navigation",
+      "title": "Back navigation rota para rutas no trackeadas",
+      "file": "src/components/BackNavigationHandler.tsx",
+      "description": "BackNavigationHandler solo trackea secciones principales. Navegando desde /explore → /books/xxx → back va a / en vez de /explore.",
+      "affected": "Todos los usuarios navegando libros/stories",
+      "fix": "Agregar tracking para /books/, /stories/, /journey/."
+    },
+    {
+      "id": "PERF-001",
+      "severity": "warning",
+      "category": "Performance",
+      "title": "Imágenes sin next/image optimization",
+      "file": "src/components/Cover.tsx",
+      "description": "Tags <img> crudos en vez de next/image. Sin lazy loading automático, sin conversión a AVIF/WebP.",
+      "affected": "Performance para todos los usuarios",
+      "fix": "Reemplazar <img> con <Image> de next/image."
+    },
+    {
+      "id": "ERR-001-b",
+      "severity": "warning",
+      "category": "Error Handling",
+      "title": "Studio routes sin validación de existencia de recursos",
+      "file": "src/app/studio/journey-builder/[language]/[variantId]/page.tsx",
+      "description": "Validan permisos pero no validan que language/variant/storyId existan. IDs inválidos cargan UI vacía.",
+      "affected": "Usuarios de studio con URLs inválidas",
+      "fix": "Validar existencia de recursos y llamar notFound()."
+    },
+    {
+      "id": "BILL-007",
+      "severity": "warning",
+      "category": "Billing",
+      "title": "Lógica de sincronización Clerk inconsistente",
+      "file": "src/lib/billingClerk.ts",
+      "description": "Tres funciones diferentes para sincronizar Clerk con diferentes estrategias de metadata update y sin error handling.",
+      "affected": "Usuarios cambiando de plan",
+      "fix": "Consolidar en una sola función syncClerkPlanFromDatabase(userId)."
+    },
+    {
+      "id": "CNT-002",
+      "severity": "warning",
+      "category": "Content",
+      "title": "Debug console.logs con emojis en producción",
+      "file": "src/app/api/shopify/webhook/route.ts",
+      "description": "Múltiples console.log() con prefijos emoji que son claramente debugging statements.",
+      "affected": "Logs de producción",
+      "fix": "Reemplazar con logging condicional o usar librería de logging."
+    },
+    {
+      "id": "CNT-003",
+      "severity": "info",
+      "category": "Content",
+      "title": "Origins de desarrollo hardcodeados en CORS",
+      "file": "src/lib/sanityCors.ts",
+      "description": "localhost:3000, localhost:3333, 127.0.0.1 hardcodeados en allowed origins para Sanity CORS.",
+      "affected": "Configuración de producción",
+      "fix": "Mover a variable de entorno que solo se cargue fuera de producción."
+    },
+    {
+      "id": "PERF-002",
+      "severity": "info",
+      "category": "Performance",
+      "title": "63 directivas 'use client' necesitan revisión",
+      "file": "Múltiples archivos",
+      "description": "63 componentes marcados como client. Algunos podrían ser server components, reduciendo bundle size.",
+      "affected": "Bundle size general",
+      "fix": "Auditar cada 'use client' para verificar que usa hooks o browser APIs."
+    },
+    {
+      "id": "BILL-005",
+      "severity": "info",
+      "category": "Billing",
+      "title": "Google Play token sin cache",
+      "file": "src/lib/googlePlay.ts",
+      "description": "getGooglePlayAccessToken() pide token OAuth nuevo en cada llamada. El token dura 1 hora pero nunca se cachea.",
+      "affected": "Latencia de verificación Google Play",
+      "fix": "Cachear token con TTL de 55 minutos."
+    },
+    {
+      "id": "BILL-006",
+      "severity": "info",
+      "category": "Billing",
+      "title": "Sin audit log para cambios de billing",
+      "file": "src/app/api/stripe/webhook/route.ts",
+      "description": "Cambios de suscripción solo se loguean con console.log(). No hay trail persistente en la DB.",
+      "affected": "Compliance de transacciones financieras",
+      "fix": "Crear tabla BillingAuditLog con userId, action, source, timestamps."
+    },
+    {
+      "id": "USR-006",
+      "severity": "info",
+      "category": "User State",
+      "title": "Sign-in inconsistente entre componentes mobile",
+      "file": "src/components/MobileTabBar.tsx",
+      "description": "MobileTabBar reemplaza Settings tab con 'Sign in' para anónimos. MobileMenu muestra 'Sign in' en header pero no reemplaza tabs.",
+      "affected": "Usuarios anónimos en mobile",
+      "fix": "Unificar la experiencia de sign-in en ambos componentes mobile."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+appId: com.digitalpolyglot.mobile
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "Continue with web sign-in"
+- tapOn: "Continue with web sign-in"
+
+- takeScreenshot: "01-after-tap-sign-in"
+
+- tapOn:
+    text: "Abrir"
+    optional: true
+
+- tapOn:
+    text: "Open"
+    optional: true
+
+- tapOn:
+    text: "Continuar"
+    optional: true
+
+- tapOn:
+    text: "Continue"
+    optional: true
+
+- takeScreenshot: "02-after-open-prompt"
+
+- extendedWaitUntil:
+    visible: "Pick up your stories on iPhone"
+    timeout: 10000
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "qa-tab-home"
+    timeout: 10000
+    optional: true
+
+- takeScreenshot: "03-final-state"

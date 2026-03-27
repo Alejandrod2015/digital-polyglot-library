@@ -1,0 +1,41 @@
+{
+  "baseUrl": "http://127.0.0.1:3000",
+  "outputDir": "qa-artifacts/web",
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "waitFor": "text=Latest books"
+    },
+    {
+      "id": "explore",
+      "path": "/explore",
+      "waitFor": "text=Explore"
+    },
+    {
+      "id": "journey",
+      "path": "/journey",
+      "waitFor": "text=Journey"
+    },
+    {
+      "id": "practice",
+      "path": "/practice",
+      "waitFor": "text=Practice"
+    },
+    {
+      "id": "favorites",
+      "path": "/favorites",
+      "waitFor": "text=Favorites"
+    },
+    {
+      "id": "settings",
+      "path": "/settings",
+      "waitFor": "text=Settings"
+    },
+    {
+      "id": "create",
+      "path": "/create",
+      "waitFor": "text=Create"
+    }
+  ]
+}

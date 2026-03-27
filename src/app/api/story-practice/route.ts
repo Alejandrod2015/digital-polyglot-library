@@ -4,13 +4,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAuth } from "@clerk/nextjs/server";
 import { books } from "@/data/books";
 import { prisma } from "@/lib/prisma";
+import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 import { getCreateStoryMirrorBySlug } from "@/lib/userStories";
 import { buildPracticeItemsFromStory, parseLooseVocab } from "@/lib/storyPracticeItems";
 import { mergePracticeItemsByWord, type PracticeFavoriteItem } from "@/lib/practiceExercises";
 
 export async function GET(request: NextRequest) {
-  const { userId } = getAuth(request);
+  const mobileSession = getMobileSessionFromRequest(request);
+  const { userId: clerkUserId } = getAuth(request);
+  const userId = mobileSession?.sub ?? clerkUserId ?? null;
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

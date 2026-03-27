@@ -1,0 +1,44 @@
+# dependencies
+node_modules
+apps/mobile/node_modules
+
+# build outputs
+.next
+out
+build
+dist
+coverage
+.turbo
+*.tsbuildinfo
+
+# local native artifacts
+apps/mobile/android
+apps/mobile/ios
+apps/mobile/.expo
+apps/mobile/ios/build
+
+# local QA / screenshots
+qa-artifacts
+.maestro
+qa
+*.png
+*.jpg
+*.jpeg
+
+# local tooling
+.git
+.vercel
+.clerk
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# generated / local-only files
+src/generated/prisma
+android-twa
+public

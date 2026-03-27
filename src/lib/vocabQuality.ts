@@ -2,6 +2,7 @@ import OpenAI from "openai";
 
 export type VocabItem = {
   word: string;
+  surface?: string;
   definition: string;
   type?: string;
 };
@@ -53,6 +54,7 @@ export function normalizeVocab(raw: unknown): VocabItem[] {
     if (!row || typeof row !== "object") continue;
     const record = row as Record<string, unknown>;
     const word = typeof record.word === "string" ? record.word.trim() : "";
+    const surface = typeof record.surface === "string" ? record.surface.trim() : "";
     const definition =
       typeof record.definition === "string"
         ? record.definition.trim()
@@ -64,7 +66,7 @@ export function normalizeVocab(raw: unknown): VocabItem[] {
     const key = word.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    output.push({ word, definition, ...(type ? { type } : {}) });
+    output.push({ word, ...(surface ? { surface } : {}), definition, ...(type ? { type } : {}) });
   }
 
   return output;
@@ -119,12 +121,13 @@ Context:
 
 Rules:
 - Keep exactly the same "word" and preserve "type" when present.
+- Keep exactly the same "surface" when present.
 - Definition must be 8-18 words.
 - Explain practical meaning/usage nuance in context, not one-word gloss.
 - NEVER return direct translation equivalents.
 - NEVER start with a literal gloss followed by punctuation, such as "To change, ..." or "Important, ...".
 - Start directly with an explanation such as "Used to...", "Describes...", "Refers to...", or "Said when...".
-- Return ONLY a valid JSON array with objects: { "word", "definition", "type?" }.
+- Return ONLY a valid JSON array with objects: { "word", "surface?", "definition", "type?" }.
 `;
 
   try {
@@ -151,7 +154,7 @@ Rules:
   const strictPrompt = `
 Rewrite ONLY these low-quality definitions.
 Rules:
-- Keep same "word" and "type".
+- Keep same "word", "surface" when present, and "type".
 - Each definition must be 8-18 words.
 - Explain meaning in English with usage nuance from the story context.
 - Never return direct translation equivalents.

@@ -2,19 +2,25 @@
 
 import { useUser } from '@clerk/nextjs';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Sparkles, Loader2, Music, CheckCircle, X } from 'lucide-react';
 import StoryContent from '@/components/StoryContent';
 import VocabPanel from '@/components/VocabPanel';
-import { broadLevelFromCefr } from '@/lib/cefr';
-import { formatCefrLevel, formatLanguage, formatLevel, formatVariant, toTitleCase } from '@/lib/displayFormat';
+import { broadLevelFromCefr } from '@domain/cefr';
+import { formatCefrLevel, formatLanguage, formatLevel, formatVariant, toTitleCase } from '@domain/displayFormat';
 import { VARIANT_OPTIONS_BY_LANGUAGE } from '@/lib/languageVariant';
+import {
+  getCreateFocusForGoal,
+  getDefaultCreateTopic,
+  type OnboardingGoal,
+} from '@/lib/onboarding';
 
 type Plan = 'free' | 'basic' | 'premium' | 'polyglot';
 type CreateStatus = 'idle' | 'generating_text' | 'generating_audio' | 'done' | 'audio_failed';
 type AudioStatus = 'pending' | 'generating' | 'ready' | 'failed';
 
-type VocabItem = { word: string; definition: string; type?: string };
+type VocabItem = { word: string; surface?: string; definition: string; type?: string };
 
 type GeneratedStory = {
   id: string;
@@ -105,6 +111,12 @@ const RECOVERY_LOOKUP_WINDOW_MS = 1000 * 45;
 const RECOVERY_LOOKUP_INTERVAL_MS = 2500;
 const AUDIO_DELAY_NOTICE_MS = 20_000;
 
+const DEFAULT_CEFR_BY_LEVEL: Record<string, string> = {
+  beginner: 'A2',
+  intermediate: 'B1',
+  advanced: 'C1',
+};
+
 function readJson<T>(key: string): T | null {
   if (typeof window === 'undefined') return null;
   try {
@@ -169,6 +181,7 @@ function computeNextReview(score: ReviewScore, streak: number): { nextReviewAt: 
 
 export default function CreatePage() {
   const { user, isLoaded } = useUser();
+  const searchParams = useSearchParams();
 
   const [language, setLanguage] = useState('');
   const [variant, setVariant] = useState('');
@@ -201,6 +214,93 @@ export default function CreatePage() {
 
   const availableRegions = regionsByLanguage[language as keyof typeof regionsByLanguage] || [];
   const availableVariants = VARIANT_OPTIONS_BY_LANGUAGE[language.toLowerCase()] || [];
+
+  useEffect(() => {
+    const nextLanguage = (searchParams.get('language') ?? '').trim();
+    const nextVariant = (searchParams.get('variant') ?? '').trim();
+    const nextRegion = (searchParams.get('region') ?? '').trim();
+    const nextLevel = (searchParams.get('level') ?? '').trim().toLowerCase();
+    const nextFocus = (searchParams.get('focus') ?? '').trim();
+    const nextTopic = (searchParams.get('topic') ?? '').trim();
+
+    if (nextLanguage) {
+      setLanguage(nextLanguage);
+    }
+
+    if (nextVariant) {
+      setVariant(nextVariant);
+    }
+
+    if (nextRegion) {
+      setRegion(nextRegion);
+    }
+
+    if (nextLevel) {
+      setCefrLevel(DEFAULT_CEFR_BY_LEVEL[nextLevel] ?? '');
+    }
+
+    if (nextFocus) {
+      const knownFocus = focusOptions.find((item) => item.toLowerCase() === nextFocus.toLowerCase());
+      if (knownFocus) {
+        setFocus(knownFocus);
+      }
+    }
+
+    if (nextTopic) {
+      const knownTopic = topicOptions.find((item) => item.toLowerCase() === nextTopic.toLowerCase());
+      if (knownTopic) {
+        setTopic(knownTopic);
+        setCustomTopic('');
+      } else {
+        setTopic('');
+        setCustomTopic(nextTopic);
+      }
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (!isLoaded || !user) return;
+
+    const metadata = user.publicMetadata ?? {};
+    const targetLanguages = Array.isArray(metadata.targetLanguages)
+      ? metadata.targetLanguages.filter((value): value is string => typeof value === 'string')
+      : [];
+    const preferredLevel =
+      typeof metadata.preferredLevel === 'string' ? metadata.preferredLevel.trim().toLowerCase() : '';
+    const preferredVariant =
+      typeof metadata.preferredVariant === 'string' ? metadata.preferredVariant.trim() : '';
+    const preferredRegion =
+      typeof metadata.preferredRegion === 'string' ? metadata.preferredRegion.trim() : '';
+    const interests = Array.isArray(metadata.interests)
+      ? metadata.interests.filter((value): value is string => typeof value === 'string')
+      : [];
+    const learningGoal =
+      typeof metadata.learningGoal === 'string' ? (metadata.learningGoal as OnboardingGoal) : null;
+
+    const suggestedLanguage = targetLanguages[0]?.trim() ?? '';
+    const suggestedTopic = getDefaultCreateTopic(topicOptions, interests, learningGoal);
+    const suggestedFocus = getCreateFocusForGoal(learningGoal);
+    const suggestedCefr = DEFAULT_CEFR_BY_LEVEL[preferredLevel] ?? '';
+
+    if (!language && suggestedLanguage) {
+      setLanguage(suggestedLanguage);
+    }
+    if (!variant && preferredVariant) {
+      setVariant(preferredVariant);
+    }
+    if (!region && preferredRegion) {
+      setRegion(preferredRegion);
+    }
+    if (!cefrLevel && suggestedCefr) {
+      setCefrLevel(suggestedCefr);
+    }
+    if (!focus && suggestedFocus) {
+      setFocus(suggestedFocus);
+    }
+    if (!topic && !customTopic && suggestedTopic) {
+      setTopic(suggestedTopic);
+    }
+  }, [cefrLevel, customTopic, focus, isLoaded, language, region, topic, user, variant]);
 
   const buildPayload = useCallback((): CreateRequestPayload => {
     const resolvedFocus = focus.trim();

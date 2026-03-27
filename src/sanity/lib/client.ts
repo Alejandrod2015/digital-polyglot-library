@@ -37,6 +37,16 @@ export const freshClient = createClient({
   perspective: "published",
 });
 
+// 🧪 Cliente raw para flujos locales/editoriales donde necesitamos ver drafts
+export const rawServerClient = createClient({
+  projectId: safeEnv("NEXT_PUBLIC_SANITY_PROJECT_ID", FALLBACK.projectId),
+  dataset: safeEnv("NEXT_PUBLIC_SANITY_DATASET", FALLBACK.dataset),
+  apiVersion: safeEnv("NEXT_PUBLIC_SANITY_API_VERSION", FALLBACK.apiVersion),
+  useCdn: false,
+  token: process.env.SANITY_API_WRITE_TOKEN,
+  perspective: "raw",
+});
+
 // ✏️ Cliente de escritura — solo para acciones del servidor
 export const writeClient = createClient({
   projectId: safeEnv("NEXT_PUBLIC_SANITY_PROJECT_ID", FALLBACK.projectId),

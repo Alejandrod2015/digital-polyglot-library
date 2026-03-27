@@ -4,7 +4,8 @@ import { book } from "./book";
 import { story } from "./story";
 import { standaloneStory } from "./standaloneStory";
 import { storyScheduler } from "./storyScheduler";
+import { journeyVariantPlan } from "./journeyVariantPlan";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [book, story, standaloneStory, storyScheduler],
+  types: [book, story, standaloneStory, storyScheduler, journeyVariantPlan],
 };

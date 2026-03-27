@@ -2,7 +2,7 @@
 import { getFeaturedStory, getFeaturedStoryDataBySlug } from "@/lib/getFeaturedStory";
 import Link from "next/link";
 import Image from "next/image";
-import { formatLanguage, formatLevel, formatTopic, toTitleCase } from "@/lib/displayFormat";
+import { formatLanguage, formatLevel, formatTopic, toTitleCase } from "@domain/displayFormat";
 import { shouldBypassImageOptimization } from "@/lib/publicMedia";
 
 export const revalidate = 3600;

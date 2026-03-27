@@ -3,6 +3,18 @@ import { auth } from "@clerk/nextjs/server";
 import { createClerkClient } from "@clerk/backend";
 import { NextResponse } from "next/server";
 import { VARIANT_OPTIONS_BY_LANGUAGE, normalizeVariant } from "@/lib/languageVariant";
+import { normalizeJourneyPlacementLevel } from "@/app/journey/journeyData";
+import {
+  ONBOARDING_DAILY_MINUTES_OPTIONS,
+  ONBOARDING_GOAL_OPTIONS,
+  JOURNEY_FOCUS_OPTIONS,
+  type OnboardingDailyMinutes,
+  type OnboardingGoal,
+  type JourneyFocus,
+  getJourneyFocusFromLearningGoal,
+  normalizeJourneyFocus,
+} from "@/lib/onboarding";
+import { REMINDER_HOUR_OPTIONS, normalizeReminderHour, normalizeRemindersEnabled } from "@/lib/reminders";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -19,7 +31,6 @@ const ALLOWED_LANGUAGES = new Set([
   "Korean",
   "Chinese",
 ]);
-const MAX_SELECTION = 3;
 const MAX_INTERESTS = 12;
 const ALLOWED_REGIONS = new Set([
   "Colombia",
@@ -36,6 +47,10 @@ const ALLOWED_REGIONS = new Set([
 const ALLOWED_VARIANTS = new Set(
   Object.values(VARIANT_OPTIONS_BY_LANGUAGE).flatMap((options) => options.map((option) => option.value))
 );
+const ALLOWED_GOALS = new Set<string>(ONBOARDING_GOAL_OPTIONS);
+const ALLOWED_JOURNEY_FOCUSES = new Set<string>(JOURNEY_FOCUS_OPTIONS);
+const ALLOWED_DAILY_MINUTES = new Set<number>(ONBOARDING_DAILY_MINUTES_OPTIONS);
+const ALLOWED_REMINDER_HOURS = new Set<number>(REMINDER_HOUR_OPTIONS);
 
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((v) => typeof v === "string");
@@ -76,7 +91,6 @@ function normalize(langs: string[]): string[] {
     if (!canonical) continue;
     if (!ALLOWED_LANGUAGES.has(canonical)) continue;
     seen.add(canonical);
-    if (seen.size >= MAX_SELECTION) break;
   }
   return Array.from(seen);
 }
@@ -117,6 +131,22 @@ function normalizeVariantPreference(value: unknown): string | null {
     : null;
 }
 
+function normalizeLearningGoal(value: unknown): OnboardingGoal | null {
+  if (typeof value !== "string") return null;
+  const match = ONBOARDING_GOAL_OPTIONS.find((option) => option.toLowerCase() === value.trim().toLowerCase());
+  return match && ALLOWED_GOALS.has(match) ? match : null;
+}
+
+function normalizeJourneyFocusPreference(value: unknown): JourneyFocus | null {
+  const match = normalizeJourneyFocus(value);
+  return match && ALLOWED_JOURNEY_FOCUSES.has(match) ? match : null;
+}
+
+function normalizeDailyMinutes(value: unknown): OnboardingDailyMinutes | null {
+  if (typeof value !== "number" || !Number.isFinite(value)) return null;
+  return ALLOWED_DAILY_MINUTES.has(value) ? (value as OnboardingDailyMinutes) : null;
+}
+
 export async function POST(req: Request) {
   try {
     const { userId } = await auth();
@@ -130,11 +160,27 @@ export async function POST(req: Request) {
     const hasPreferredLevel = Object.prototype.hasOwnProperty.call(body ?? {}, "preferredLevel");
     const hasPreferredRegion = Object.prototype.hasOwnProperty.call(body ?? {}, "preferredRegion");
     const hasPreferredVariant = Object.prototype.hasOwnProperty.call(body ?? {}, "preferredVariant");
+    const hasLearningGoal = Object.prototype.hasOwnProperty.call(body ?? {}, "learningGoal");
+    const hasJourneyFocus = Object.prototype.hasOwnProperty.call(body ?? {}, "journeyFocus");
+    const hasDailyMinutes = Object.prototype.hasOwnProperty.call(body ?? {}, "dailyMinutes");
+    const hasRemindersEnabled = Object.prototype.hasOwnProperty.call(body ?? {}, "remindersEnabled");
+    const hasReminderHour = Object.prototype.hasOwnProperty.call(body ?? {}, "reminderHour");
+    const hasJourneyPlacementLevel = Object.prototype.hasOwnProperty.call(body ?? {}, "journeyPlacementLevel");
+    const hasOnboardingSurveyCompletedAt = Object.prototype.hasOwnProperty.call(body ?? {}, "onboardingSurveyCompletedAt");
+    const hasOnboardingTourCompletedAt = Object.prototype.hasOwnProperty.call(body ?? {}, "onboardingTourCompletedAt");
     const targetLanguages = body?.targetLanguages;
     const interests = body?.interests;
     const preferredLevel = body?.preferredLevel;
     const preferredRegion = body?.preferredRegion;
     const preferredVariant = body?.preferredVariant;
+    const learningGoal = body?.learningGoal;
+    const journeyFocus = body?.journeyFocus;
+    const dailyMinutes = body?.dailyMinutes;
+    const remindersEnabled = body?.remindersEnabled;
+    const reminderHour = body?.reminderHour;
+    const journeyPlacementLevel = body?.journeyPlacementLevel;
+    const onboardingSurveyCompletedAt = body?.onboardingSurveyCompletedAt;
+    const onboardingTourCompletedAt = body?.onboardingTourCompletedAt;
 
     if (hasTargetLanguages && !isStringArray(targetLanguages)) {
       return NextResponse.json(
@@ -156,6 +202,30 @@ export async function POST(req: Request) {
     }
     if (hasPreferredVariant && preferredVariant !== null && typeof preferredVariant !== "string") {
       return NextResponse.json({ error: "Invalid preferredVariant: expected string|null" }, { status: 400 });
+    }
+    if (hasLearningGoal && learningGoal !== null && typeof learningGoal !== "string") {
+      return NextResponse.json({ error: "Invalid learningGoal: expected string|null" }, { status: 400 });
+    }
+    if (hasJourneyFocus && journeyFocus !== null && typeof journeyFocus !== "string") {
+      return NextResponse.json({ error: "Invalid journeyFocus: expected string|null" }, { status: 400 });
+    }
+    if (hasDailyMinutes && dailyMinutes !== null && typeof dailyMinutes !== "number") {
+      return NextResponse.json({ error: "Invalid dailyMinutes: expected number|null" }, { status: 400 });
+    }
+    if (hasRemindersEnabled && remindersEnabled !== null && typeof remindersEnabled !== "boolean") {
+      return NextResponse.json({ error: "Invalid remindersEnabled: expected boolean|null" }, { status: 400 });
+    }
+    if (hasReminderHour && reminderHour !== null && typeof reminderHour !== "number") {
+      return NextResponse.json({ error: "Invalid reminderHour: expected number|null" }, { status: 400 });
+    }
+    if (hasJourneyPlacementLevel && journeyPlacementLevel !== null && typeof journeyPlacementLevel !== "string") {
+      return NextResponse.json({ error: "Invalid journeyPlacementLevel: expected string|null" }, { status: 400 });
+    }
+    if (hasOnboardingSurveyCompletedAt && onboardingSurveyCompletedAt !== null && typeof onboardingSurveyCompletedAt !== "string") {
+      return NextResponse.json({ error: "Invalid onboardingSurveyCompletedAt: expected string|null" }, { status: 400 });
+    }
+    if (hasOnboardingTourCompletedAt && onboardingTourCompletedAt !== null && typeof onboardingTourCompletedAt !== "string") {
+      return NextResponse.json({ error: "Invalid onboardingTourCompletedAt: expected string|null" }, { status: 400 });
     }
 
     // 1) Leer metadatos actuales
@@ -190,6 +260,48 @@ export async function POST(req: Request) {
       : typeof existing.preferredVariant === "string"
         ? normalizeVariantPreference(existing.preferredVariant)
         : null;
+    const normalizedLearningGoal = hasLearningGoal
+      ? normalizeLearningGoal(learningGoal)
+      : typeof existing.learningGoal === "string"
+        ? normalizeLearningGoal(existing.learningGoal)
+        : null;
+    const normalizedJourneyFocus = hasJourneyFocus
+      ? normalizeJourneyFocusPreference(journeyFocus)
+      : typeof existing.journeyFocus === "string"
+        ? normalizeJourneyFocusPreference(existing.journeyFocus)
+        : getJourneyFocusFromLearningGoal(normalizedLearningGoal);
+    const normalizedDailyMinutes = hasDailyMinutes
+      ? normalizeDailyMinutes(dailyMinutes)
+      : typeof existing.dailyMinutes === "number"
+        ? normalizeDailyMinutes(existing.dailyMinutes)
+        : null;
+    const normalizedRemindersEnabled = hasRemindersEnabled
+      ? normalizeRemindersEnabled(remindersEnabled)
+      : existing.remindersEnabled === true;
+    const normalizedReminderHour = hasReminderHour
+      ? normalizeReminderHour(reminderHour)
+      : typeof existing.reminderHour === "number" && ALLOWED_REMINDER_HOURS.has(existing.reminderHour)
+        ? normalizeReminderHour(existing.reminderHour)
+        : null;
+    const normalizedJourneyPlacementLevel = hasJourneyPlacementLevel
+      ? normalizeJourneyPlacementLevel(journeyPlacementLevel)
+      : typeof existing.journeyPlacementLevel === "string"
+        ? normalizeJourneyPlacementLevel(existing.journeyPlacementLevel)
+        : null;
+    const normalizedOnboardingSurveyCompletedAt = hasOnboardingSurveyCompletedAt
+      ? typeof onboardingSurveyCompletedAt === "string"
+        ? onboardingSurveyCompletedAt
+        : null
+      : typeof existing.onboardingSurveyCompletedAt === "string"
+        ? existing.onboardingSurveyCompletedAt
+        : null;
+    const normalizedOnboardingTourCompletedAt = hasOnboardingTourCompletedAt
+      ? typeof onboardingTourCompletedAt === "string"
+        ? onboardingTourCompletedAt
+        : null
+      : typeof existing.onboardingTourCompletedAt === "string"
+        ? existing.onboardingTourCompletedAt
+        : null;
 
     const updatedMetadata: Record<string, unknown> = {
       ...existing,
@@ -215,6 +327,54 @@ export async function POST(req: Request) {
       delete updatedMetadata.preferredVariant;
     }
 
+    if (normalizedLearningGoal) {
+      updatedMetadata.learningGoal = normalizedLearningGoal;
+    } else {
+      delete updatedMetadata.learningGoal;
+    }
+
+    if (normalizedJourneyFocus) {
+      updatedMetadata.journeyFocus = normalizedJourneyFocus;
+    } else {
+      delete updatedMetadata.journeyFocus;
+    }
+
+    if (normalizedDailyMinutes) {
+      updatedMetadata.dailyMinutes = normalizedDailyMinutes;
+    } else {
+      delete updatedMetadata.dailyMinutes;
+    }
+
+    if (normalizedRemindersEnabled) {
+      updatedMetadata.remindersEnabled = true;
+    } else {
+      delete updatedMetadata.remindersEnabled;
+    }
+
+    if (normalizedReminderHour) {
+      updatedMetadata.reminderHour = normalizedReminderHour;
+    } else {
+      delete updatedMetadata.reminderHour;
+    }
+
+    if (normalizedJourneyPlacementLevel) {
+      updatedMetadata.journeyPlacementLevel = normalizedJourneyPlacementLevel;
+    } else {
+      delete updatedMetadata.journeyPlacementLevel;
+    }
+
+    if (normalizedOnboardingSurveyCompletedAt) {
+      updatedMetadata.onboardingSurveyCompletedAt = normalizedOnboardingSurveyCompletedAt;
+    } else {
+      delete updatedMetadata.onboardingSurveyCompletedAt;
+    }
+
+    if (normalizedOnboardingTourCompletedAt) {
+      updatedMetadata.onboardingTourCompletedAt = normalizedOnboardingTourCompletedAt;
+    } else {
+      delete updatedMetadata.onboardingTourCompletedAt;
+    }
+
     await clerkClient.users.updateUserMetadata(userId, {
       publicMetadata: updatedMetadata,
     });
@@ -235,6 +395,25 @@ export async function POST(req: Request) {
       typeof finalMeta.preferredRegion === "string" ? finalMeta.preferredRegion : null;
     const finalPreferredVariant =
       typeof finalMeta.preferredVariant === "string" ? finalMeta.preferredVariant : null;
+    const finalLearningGoal =
+      typeof finalMeta.learningGoal === "string" ? finalMeta.learningGoal : null;
+    const finalJourneyFocus =
+      typeof finalMeta.journeyFocus === "string"
+        ? normalizeJourneyFocusPreference(finalMeta.journeyFocus)
+        : getJourneyFocusFromLearningGoal(finalLearningGoal as OnboardingGoal | null);
+    const finalDailyMinutes =
+      typeof finalMeta.dailyMinutes === "number" ? finalMeta.dailyMinutes : null;
+    const finalRemindersEnabled = finalMeta.remindersEnabled === true;
+    const finalReminderHour =
+      typeof finalMeta.reminderHour === "number" ? normalizeReminderHour(finalMeta.reminderHour) : null;
+    const finalJourneyPlacementLevel =
+      typeof finalMeta.journeyPlacementLevel === "string"
+        ? normalizeJourneyPlacementLevel(finalMeta.journeyPlacementLevel)
+        : null;
+    const finalOnboardingSurveyCompletedAt =
+      typeof finalMeta.onboardingSurveyCompletedAt === "string" ? finalMeta.onboardingSurveyCompletedAt : null;
+    const finalOnboardingTourCompletedAt =
+      typeof finalMeta.onboardingTourCompletedAt === "string" ? finalMeta.onboardingTourCompletedAt : null;
 
     return new NextResponse(
       JSON.stringify({
@@ -243,6 +422,14 @@ export async function POST(req: Request) {
         preferredLevel: finalPreferredLevel,
         preferredRegion: finalPreferredRegion,
         preferredVariant: finalPreferredVariant,
+        learningGoal: finalLearningGoal,
+        journeyFocus: finalJourneyFocus,
+        dailyMinutes: finalDailyMinutes,
+        remindersEnabled: finalRemindersEnabled,
+        reminderHour: finalReminderHour,
+        journeyPlacementLevel: finalJourneyPlacementLevel,
+        onboardingSurveyCompletedAt: finalOnboardingSurveyCompletedAt,
+        onboardingTourCompletedAt: finalOnboardingTourCompletedAt,
       }),
       {
       status: 200,

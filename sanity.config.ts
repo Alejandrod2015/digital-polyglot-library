@@ -18,7 +18,7 @@ const types = Array.isArray(schema) ? schema : schema?.types ?? [];
 export default defineConfig({
   name: "digital-polyglot-studio",
   title: "Digital Polyglot",
-  basePath: "/studio",
+  basePath: "/studio/sanity",
   projectId,
   dataset,
   vite: (config) => ({

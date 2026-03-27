@@ -1,0 +1,30 @@
+appId: com.digitalpolyglot.mobile
+---
+- assertVisible:
+    id: "qa-book-detail-screen"
+- takeScreenshot: "01-book-detail"
+
+- scrollUntilVisible:
+    element:
+      id: "qa-book-start-reading"
+    direction: DOWN
+    timeout: 20000
+    visibilityPercentage: 30
+
+- tapOn:
+    id: "qa-book-start-reading"
+- assertVisible:
+    id: "qa-reader-screen"
+- takeScreenshot: "02-reader"
+
+- tapOn:
+    id: "qa-reader-back"
+- assertVisible:
+    id: "qa-book-detail-screen"
+- takeScreenshot: "03-book-detail-return"
+
+- tapOn:
+    id: "qa-book-detail-back"
+- assertVisible:
+    id: "qa-tab-explore"
+- takeScreenshot: "04-back-to-shell"

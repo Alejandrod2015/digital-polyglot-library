@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Digital Polyglot",
+    "slug": "digital-polyglot-mobile",
+    "scheme": "digitalpolyglot",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.digitalpolyglot.mobile"
+    },
+    "android": {
+      "package": "com.digitalpolyglot.mobile"
+    }
+  }
+}

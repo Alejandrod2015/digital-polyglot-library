@@ -1,9 +1,9 @@
 import type { BillingEntitlement, BillingSource, BillingStatus } from "@/generated/prisma";
-import type { Plan } from "@/lib/access";
+import type { Plan } from "@domain/access";
 import {
   STRIPE_PREMIUM_ANNUAL_PRICE_ID,
   STRIPE_PREMIUM_MONTHLY_PRICE_ID,
-} from "@/lib/billingCatalog";
+} from "@domain/billingCatalog";
 
 export const STRIPE_PRICE_PLAN_MAP = {
   price_1SI5WW6ytrKVzptQW7CBTx2G: "premium",

@@ -1,18 +1,24 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import {
-  LineChart,
-  Line,
-  Bar,
-  BarChart,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
-import { Card, CardContent } from "@/components/ui/card";
+import StudioShell from "@/components/studio/StudioShell";
+
+const MetricsOverviewChart = dynamic(
+  () => import("@/components/studio/MetricsOverviewChart"),
+  {
+    ssr: false,
+    loading: () => <div className="studio-skeleton" style={{ height: 320, width: "100%" }} />,
+  }
+);
+
+const MetricsEngagementChart = dynamic(
+  () => import("@/components/studio/MetricsEngagementChart"),
+  {
+    ssr: false,
+    loading: () => <div className="studio-skeleton" style={{ height: 400, width: "100%" }} />,
+  }
+);
 
 type MetricsSection =
   | "overview"
@@ -27,149 +33,87 @@ type MetricsSection =
   | "exports";
 
 type DashboardData = {
-  range: {
-    from: string;
-    to: string;
-    days: number;
-  };
+  range: { from: string; to: string; days: number };
   kpis: {
-    dau: number;
-    wau: number;
-    activeUsersInRange: number;
-    plays: number;
-    completions: number;
-    completionRate: number;
-    uniqueStories: number;
-    uniqueBooks: number;
-    avgMinutesPerActiveUser: number;
-    totalListenedMinutes: number;
-    savedStories: number;
-    savedBooks: number;
+    dau: number; wau: number; activeUsersInRange: number; plays: number;
+    completions: number; completionRate: number; uniqueStories: number;
+    uniqueBooks: number; avgMinutesPerActiveUser: number; totalListenedMinutes: number;
+    savedStories: number; savedBooks: number;
   };
-  daily: Array<{
-    date: string;
-    plays: number;
-    completions: number;
-    completionRate: number;
-  }>;
-  topStories: Array<{
-    storySlug: string;
-    plays: number;
-    completions: number;
-    completionRate: number;
-  }>;
-  topBooks: Array<{
-    bookSlug: string;
-    plays: number;
-    completions: number;
-    completionRate: number;
-  }>;
-  topStoriesByMinutes: Array<{
-    storySlug: string;
-    listenedMinutes: number;
-    listeners: number;
-  }>;
-  topSavedStories: Array<{
-    storySlug: string;
-    saves: number;
-  }>;
-  topSavedBooks: Array<{
-    bookSlug: string;
-    saves: number;
-  }>;
+  daily: Array<{ date: string; plays: number; completions: number; completionRate: number }>;
+  topStories: Array<{ storySlug: string; plays: number; completions: number; completionRate: number }>;
+  topBooks: Array<{ bookSlug: string; plays: number; completions: number; completionRate: number }>;
+  topStoriesByMinutes: Array<{ storySlug: string; listenedMinutes: number; listeners: number }>;
+  topSavedStories: Array<{ storySlug: string; saves: number }>;
+  topSavedBooks: Array<{ bookSlug: string; saves: number }>;
   trialFunnel: {
-    started: number;
-    startedWithPm: number;
-    day1Active: number;
-    converted: number;
-    canceled: number;
-    conversionRate: number;
-    day1ActivationRate: number;
-    cancelRate: number;
+    started: number; startedWithPm: number; day1Active: number; converted: number;
+    canceled: number; conversionRate: number; day1ActivationRate: number; cancelRate: number;
   };
+  recentTrialStarts: Array<{ userId: string; email: string | null; eventType: string; createdAt: string }>;
+  recentReminderTaps: Array<{ userId: string; email: string | null; eventType: string; destination: string | null; source: string | null; createdAt: string }>;
+  recentReminderOpens: Array<{ userId: string; email: string | null; eventType: string; destination: string | null; createdAt: string }>;
   checkoutFunnel: {
-    plansViewed: number;
-    checkoutStarted: number;
-    checkoutRedirected: number;
-    checkoutFailed: number;
-    checkoutStartRate: number;
-    checkoutRedirectRate: number;
+    plansViewed: number; checkoutStarted: number; checkoutRedirected: number;
+    checkoutFailed: number; checkoutStartRate: number; checkoutRedirectRate: number;
   };
-  upgradeCtaSources: Array<{
-    source: string;
-    clicks: number;
-  }>;
+  upgradeCtaSources: Array<{ source: string; clicks: number }>;
   journeyFunnel: {
-    variantSelected: number;
-    levelSelected: number;
-    topicOpened: number;
-    nextActionClicked: number;
-    reviewCtaClicked: number;
-    checkpointRecoveryClicked: number;
-    recommendedModeOpened: number;
-    topicOpenRateFromVariant: number;
-    nextActionRateFromTopicOpen: number;
-    reviewRateFromTopicOpen: number;
+    variantSelected: number; levelSelected: number; topicOpened: number;
+    nextActionClicked: number; reviewCtaClicked: number; checkpointRecoveryClicked: number;
+    recommendedModeOpened: number; topicOpenRateFromVariant: number;
+    nextActionRateFromTopicOpen: number; reviewRateFromTopicOpen: number;
+  };
+  reminderFunnel: {
+    scheduled: number; tapped: number; destinationOpened: number;
+    tapRateFromScheduled: number; openRateFromTap: number;
+    destinationBreakdown: Array<{ destination: string; opens: number }>;
   };
 };
 
 const EMPTY_DATA: DashboardData = {
   range: { from: "", to: "", days: 30 },
-  kpis: {
-    dau: 0,
-    wau: 0,
-    activeUsersInRange: 0,
-    plays: 0,
-    completions: 0,
-    completionRate: 0,
-    uniqueStories: 0,
-    uniqueBooks: 0,
-    avgMinutesPerActiveUser: 0,
-    totalListenedMinutes: 0,
-    savedStories: 0,
-    savedBooks: 0,
-  },
-  daily: [],
-  topStories: [],
-  topBooks: [],
-  topStoriesByMinutes: [],
-  topSavedStories: [],
-  topSavedBooks: [],
-  trialFunnel: {
-    started: 0,
-    startedWithPm: 0,
-    day1Active: 0,
-    converted: 0,
-    canceled: 0,
-    conversionRate: 0,
-    day1ActivationRate: 0,
-    cancelRate: 0,
-  },
-  checkoutFunnel: {
-    plansViewed: 0,
-    checkoutStarted: 0,
-    checkoutRedirected: 0,
-    checkoutFailed: 0,
-    checkoutStartRate: 0,
-    checkoutRedirectRate: 0,
-  },
+  kpis: { dau: 0, wau: 0, activeUsersInRange: 0, plays: 0, completions: 0, completionRate: 0, uniqueStories: 0, uniqueBooks: 0, avgMinutesPerActiveUser: 0, totalListenedMinutes: 0, savedStories: 0, savedBooks: 0 },
+  daily: [], topStories: [], topBooks: [], topStoriesByMinutes: [], topSavedStories: [], topSavedBooks: [],
+  trialFunnel: { started: 0, startedWithPm: 0, day1Active: 0, converted: 0, canceled: 0, conversionRate: 0, day1ActivationRate: 0, cancelRate: 0 },
+  recentTrialStarts: [], recentReminderTaps: [], recentReminderOpens: [],
+  checkoutFunnel: { plansViewed: 0, checkoutStarted: 0, checkoutRedirected: 0, checkoutFailed: 0, checkoutStartRate: 0, checkoutRedirectRate: 0 },
   upgradeCtaSources: [],
-  journeyFunnel: {
-    variantSelected: 0,
-    levelSelected: 0,
-    topicOpened: 0,
-    nextActionClicked: 0,
-    reviewCtaClicked: 0,
-    checkpointRecoveryClicked: 0,
-    recommendedModeOpened: 0,
-    topicOpenRateFromVariant: 0,
-    nextActionRateFromTopicOpen: 0,
-    reviewRateFromTopicOpen: 0,
-  },
+  journeyFunnel: { variantSelected: 0, levelSelected: 0, topicOpened: 0, nextActionClicked: 0, reviewCtaClicked: 0, checkpointRecoveryClicked: 0, recommendedModeOpened: 0, topicOpenRateFromVariant: 0, nextActionRateFromTopicOpen: 0, reviewRateFromTopicOpen: 0 },
+  reminderFunnel: { scheduled: 0, tapped: 0, destinationOpened: 0, tapRateFromScheduled: 0, openRateFromTap: 0, destinationBreakdown: [] },
 };
+
+/* ── shared style tokens ── */
+const card: React.CSSProperties = { borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", padding: 20 };
+const cardCompact: React.CSSProperties = { ...card, padding: 16 };
+const input: React.CSSProperties = { height: 40, width: "100%", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px", fontSize: 14, outline: "none" };
+const btnPrimary: React.CSSProperties = { height: 40, borderRadius: 8, border: "none", backgroundColor: "var(--primary)", color: "#fff", padding: "0 20px", fontSize: 14, fontWeight: 600, cursor: "pointer", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8 };
+const sectionLabel: React.CSSProperties = { fontSize: 12, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" as const, letterSpacing: "0.05em" };
+const heading: React.CSSProperties = { fontSize: 16, fontWeight: 700, color: "var(--foreground)", margin: "0 0 14px" };
+const kpiValue: React.CSSProperties = { fontSize: 28, fontWeight: 700, color: "var(--foreground)", margin: "6px 0 0", lineHeight: 1.2 };
+const kpiLabel: React.CSSProperties = { fontSize: 13, color: "var(--muted)", fontWeight: 500 };
+const subLabel: React.CSSProperties = { fontSize: 12, color: "var(--muted)", marginTop: 2 };
+const emptyText: React.CSSProperties = { fontSize: 13, color: "var(--muted)" };
+const listRow: React.CSSProperties = { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 12px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", fontSize: 13 };
+const thStyle: React.CSSProperties = { padding: "8px 12px", fontSize: 12, fontWeight: 600, color: "var(--muted)", textAlign: "left" as const, borderBottom: "1px solid var(--card-border)" };
+const tdStyle: React.CSSProperties = { padding: "8px 12px", fontSize: 13, color: "var(--foreground)", borderBottom: "1px solid var(--card-border)", verticalAlign: "top" as const };
+
+const SECTIONS: Array<{ key: MetricsSection; label: string }> = [
+  { key: "overview", label: "Overview" },
+  { key: "acquisition", label: "Acquisition" },
+  { key: "engagement", label: "Engagement" },
+  { key: "learning", label: "Learning" },
+  { key: "content", label: "Content" },
+  { key: "funnels", label: "Funnels" },
+  { key: "audience", label: "Audience" },
+  { key: "experiments", label: "Experiments" },
+  { key: "alerts", label: "Alerts" },
+  { key: "exports", label: "Exports" },
+];
 
 export default function MetricsDashboard() {
   const [data, setData] = useState<DashboardData>(EMPTY_DATA);
+  const [sectionCache, setSectionCache] = useState<Partial<Record<MetricsSection, DashboardData>>>({});
   const [days, setDays] = useState("30");
   const [bookSlug, setBookSlug] = useState("");
   const [storySlug, setStorySlug] = useState("");
@@ -182,16 +126,19 @@ export default function MetricsDashboard() {
     try {
       const saved = window.localStorage.getItem("dp_metrics_access_key") ?? "";
       if (saved) setAccessKey(saved);
-    } catch {
-      // ignore
-    }
+    } catch { /* ignore */ }
   }, []);
 
-  async function loadMetrics() {
+  async function loadMetrics(targetSection: MetricsSection = section, force = false) {
+    if (!force && sectionCache[targetSection]) {
+      setData(sectionCache[targetSection] ?? EMPTY_DATA);
+      return;
+    }
     setLoading(true);
     setErrorMessage(null);
     try {
       const qs = new URLSearchParams();
+      qs.set("section", targetSection);
       qs.set("days", days);
       if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
       if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
@@ -200,19 +147,13 @@ export default function MetricsDashboard() {
       });
       if (!res.ok) throw new Error(`Error ${res.status}`);
       const json = (await res.json()) as DashboardData;
+      setSectionCache((c) => ({ ...c, [targetSection]: json }));
       setData(json);
-      try {
-        if (accessKey.trim()) {
-          window.localStorage.setItem("dp_metrics_access_key", accessKey.trim());
-        }
-      } catch {
-        // ignore
-      }
+      try { if (accessKey.trim()) window.localStorage.setItem("dp_metrics_access_key", accessKey.trim()); } catch { /* ignore */ }
     } catch (err) {
-      const message =
-        err instanceof Error && err.message.includes("403")
-          ? "Forbidden: invalid or missing access key."
-          : "Failed to load metrics dashboard.";
+      const message = err instanceof Error && err.message.includes("403")
+        ? "Forbidden: invalid or missing access key."
+        : "Failed to load metrics dashboard.";
       setErrorMessage(message);
       console.error("Error loading metrics dashboard:", err);
       setData(EMPTY_DATA);
@@ -222,10 +163,23 @@ export default function MetricsDashboard() {
   }
 
   useEffect(() => {
-    void loadMetrics();
+    if (sectionCache[section]) {
+      setData(sectionCache[section] ?? EMPTY_DATA);
+      return;
+    }
+    const timeoutId = window.setTimeout(() => {
+      window.requestAnimationFrame(() => { void loadMetrics(section); });
+    }, 0);
+    return () => { window.clearTimeout(timeoutId); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [section]);
 
+  useEffect(() => {
+    setSectionCache({});
+    setData(EMPTY_DATA);
+  }, [accessKey, bookSlug, days, storySlug]);
+
+  /* ── KPI definitions ── */
   const kpis = [
     { label: "DAU", value: data.kpis.dau },
     { label: "WAU", value: data.kpis.wau },
@@ -241,456 +195,437 @@ export default function MetricsDashboard() {
     { label: "Books Saved", value: data.kpis.savedBooks },
   ];
 
-  const sections: Array<{ key: MetricsSection; label: string }> = [
-    { key: "overview", label: "Overview" },
-    { key: "acquisition", label: "Acquisition" },
-    { key: "engagement", label: "Engagement" },
-    { key: "learning", label: "Learning Outcomes" },
-    { key: "content", label: "Content Performance" },
-    { key: "funnels", label: "Funnels" },
-    { key: "audience", label: "Audience" },
-    { key: "experiments", label: "Experiments" },
-    { key: "alerts", label: "Alerts" },
-    { key: "exports", label: "Exports" },
-  ];
+  /* ── Spinner element ── */
+  const spinner = (
+    <span style={{ width: 14, height: 14, border: "2px solid rgba(255,255,255,0.4)", borderTopColor: "#fff", borderRadius: "50%", display: "inline-block", animation: "spin 0.6s linear infinite" }} />
+  );
 
-  function EmptySection({
-    title,
-    description,
-  }: {
-    title: string;
-    description: string;
-  }) {
+  /* ── Empty section placeholder ── */
+  function EmptySection({ title, description }: { title: string; description: string }) {
     return (
-      <Card className="border border-border bg-card">
-        <CardContent className="pt-6">
-          <h2 className="text-lg font-semibold">{title}</h2>
-          <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-        </CardContent>
-      </Card>
+      <div style={card}>
+        <h3 style={heading}>{title}</h3>
+        <p style={emptyText}>{description}</p>
+      </div>
     );
   }
 
+  /* ── Section content renderer ── */
   function renderSectionContent() {
     if (section === "overview") {
       return (
-        <>
-          <div className="grid gap-4 md:grid-cols-4">
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
             {kpis.map((kpi) => (
-              <Card key={kpi.label} className="border border-border bg-card">
-                <CardContent className="pt-6">
-                  <p className="text-sm text-muted-foreground">{kpi.label}</p>
-                  <p className="mt-2 text-2xl font-semibold">{kpi.value}</p>
-                </CardContent>
-              </Card>
+              <div key={kpi.label} className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>{kpi.label}</p>
+                <p style={kpiValue}>{kpi.value}</p>
+              </div>
             ))}
           </div>
 
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <h2 className="text-lg font-semibold mb-4">Daily trend (plays vs completions)</h2>
-              <ResponsiveContainer width="100%" height={320}>
-                <LineChart data={data.daily}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="date" tick={{ fontSize: 12 }} />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="plays" stroke="#2563eb" strokeWidth={2} />
-                  <Line type="monotone" dataKey="completions" stroke="#16a34a" strokeWidth={2} />
-                </LineChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
-
-          <div className="grid gap-4 lg:grid-cols-2">
-            <Card className="border border-border bg-card">
-              <CardContent className="pt-6">
-                <h2 className="text-lg font-semibold mb-4">Most listened stories (minutes)</h2>
-                <div className="space-y-2">
-                  {data.topStoriesByMinutes.map((story) => (
-                    <div
-                      key={story.storySlug}
-                      className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
-                    >
-                      <span className="font-medium">{story.storySlug}</span>
-                      <span className="text-muted-foreground">
-                        {story.listenedMinutes} min · {story.listeners} listeners
-                      </span>
-                    </div>
-                  ))}
-                  {data.topStoriesByMinutes.length === 0 ? (
-                    <p className="text-sm text-muted-foreground">No data for current filters.</p>
-                  ) : null}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border border-border bg-card">
-              <CardContent className="pt-6">
-                <h2 className="text-lg font-semibold mb-4">Most saved stories</h2>
-                <div className="space-y-2">
-                  {data.topSavedStories.map((story) => (
-                    <div
-                      key={story.storySlug}
-                      className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
-                    >
-                      <span className="font-medium">{story.storySlug}</span>
-                      <span className="text-muted-foreground">{story.saves} saves</span>
-                    </div>
-                  ))}
-                  {data.topSavedStories.length === 0 ? (
-                    <p className="text-sm text-muted-foreground">No data for current filters.</p>
-                  ) : null}
-                </div>
-              </CardContent>
-            </Card>
+          <div style={card}>
+            <h3 style={heading}>Daily trend (plays vs completions)</h3>
+            <MetricsOverviewChart data={data.daily} />
           </div>
-        </>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <div style={card}>
+              <h3 style={heading}>Most listened stories (minutes)</h3>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                {data.topStoriesByMinutes.map((story) => (
+                  <div key={story.storySlug} className="studio-table-row" style={listRow}>
+                    <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{story.storySlug}</span>
+                    <span style={{ color: "var(--muted)", fontSize: 12 }}>{story.listenedMinutes} min · {story.listeners} listeners</span>
+                  </div>
+                ))}
+                {data.topStoriesByMinutes.length === 0 && <p style={emptyText}>No data for current filters.</p>}
+              </div>
+            </div>
+
+            <div style={card}>
+              <h3 style={heading}>Most saved stories</h3>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                {data.topSavedStories.map((story) => (
+                  <div key={story.storySlug} className="studio-table-row" style={listRow}>
+                    <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{story.storySlug}</span>
+                    <span style={{ color: "var(--muted)", fontSize: 12 }}>{story.saves} saves</span>
+                  </div>
+                ))}
+                {data.topSavedStories.length === 0 && <p style={emptyText}>No data for current filters.</p>}
+              </div>
+            </div>
+          </div>
+        </div>
       );
     }
 
     if (section === "engagement") {
       return (
-        <>
-          <Card className="border border-border bg-card">
-            <CardContent>
-              <h2 className="text-lg font-semibold mb-4">Top stories by usage</h2>
-              <ResponsiveContainer width="100%" height={400}>
-                <BarChart data={data.topStories}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    dataKey="storySlug"
-                    tick={{ fontSize: 12 }}
-                    interval={0}
-                    angle={-30}
-                    textAnchor="end"
-                  />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="plays" fill="#2563eb" />
-                  <Bar dataKey="completions" fill="#16a34a" />
-                </BarChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div style={card}>
+            <h3 style={heading}>Top stories by usage</h3>
+            <MetricsEngagementChart data={data.topStories} />
+          </div>
 
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <h2 className="text-lg font-semibold mb-4">Top books by usage</h2>
-              <div className="space-y-2">
-                {data.topBooks.map((book) => (
-                  <div
-                    key={book.bookSlug}
-                    className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
-                  >
-                    <span className="font-medium">{book.bookSlug}</span>
-                    <span className="text-muted-foreground">
-                      Plays {book.plays} · Completions {book.completions} · CR {book.completionRate}%
-                    </span>
-                  </div>
-                ))}
-                {data.topBooks.length === 0 ? (
-                  <p className="text-sm text-muted-foreground">No data for current filters.</p>
-                ) : null}
-              </div>
-            </CardContent>
-          </Card>
+          <div style={card}>
+            <h3 style={heading}>Top books by usage</h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {data.topBooks.map((book) => (
+                <div key={book.bookSlug} className="studio-table-row" style={listRow}>
+                  <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{book.bookSlug}</span>
+                  <span style={{ color: "var(--muted)", fontSize: 12 }}>Plays {book.plays} · Completions {book.completions} · CR {book.completionRate}%</span>
+                </div>
+              ))}
+              {data.topBooks.length === 0 && <p style={emptyText}>No data for current filters.</p>}
+            </div>
+          </div>
 
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <h2 className="text-lg font-semibold mb-4">Top saved books</h2>
-              <div className="space-y-2">
-                {data.topSavedBooks.map((book) => (
-                  <div
-                    key={book.bookSlug}
-                    className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
-                  >
-                    <span className="font-medium">{book.bookSlug}</span>
-                    <span className="text-muted-foreground">{book.saves} saves</span>
-                  </div>
-                ))}
-                {data.topSavedBooks.length === 0 ? (
-                  <p className="text-sm text-muted-foreground">No data for current filters.</p>
-                ) : null}
-              </div>
-            </CardContent>
-          </Card>
-        </>
+          <div style={card}>
+            <h3 style={heading}>Top saved books</h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {data.topSavedBooks.map((book) => (
+                <div key={book.bookSlug} className="studio-table-row" style={listRow}>
+                  <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{book.bookSlug}</span>
+                  <span style={{ color: "var(--muted)", fontSize: 12 }}>{book.saves} saves</span>
+                </div>
+              ))}
+              {data.topSavedBooks.length === 0 && <p style={emptyText}>No data for current filters.</p>}
+            </div>
+          </div>
+        </div>
       );
     }
 
     if (section === "acquisition") {
       return (
-        <div className="grid gap-4 md:grid-cols-4">
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <p className="text-sm text-muted-foreground">Plans viewed</p>
-              <p className="mt-2 text-2xl font-semibold">{data.checkoutFunnel.plansViewed}</p>
-            </CardContent>
-          </Card>
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <p className="text-sm text-muted-foreground">Checkout started</p>
-              <p className="mt-2 text-2xl font-semibold">{data.checkoutFunnel.checkoutStarted}</p>
-              <p className="text-xs text-muted-foreground mt-1">
-                {data.checkoutFunnel.checkoutStartRate}% from plans view
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <p className="text-sm text-muted-foreground">Checkout redirect success</p>
-              <p className="mt-2 text-2xl font-semibold">{data.checkoutFunnel.checkoutRedirected}</p>
-              <p className="text-xs text-muted-foreground mt-1">
-                {data.checkoutFunnel.checkoutRedirectRate}% from checkout start
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <p className="text-sm text-muted-foreground">Checkout failed</p>
-              <p className="mt-2 text-2xl font-semibold">{data.checkoutFunnel.checkoutFailed}</p>
-            </CardContent>
-          </Card>
+        <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+          <div className="studio-card" style={cardCompact}>
+            <p style={kpiLabel}>Plans viewed</p>
+            <p style={kpiValue}>{data.checkoutFunnel.plansViewed}</p>
+          </div>
+          <div className="studio-card" style={cardCompact}>
+            <p style={kpiLabel}>Checkout started</p>
+            <p style={kpiValue}>{data.checkoutFunnel.checkoutStarted}</p>
+            <p style={subLabel}>{data.checkoutFunnel.checkoutStartRate}% from plans view</p>
+          </div>
+          <div className="studio-card" style={cardCompact}>
+            <p style={kpiLabel}>Checkout redirect</p>
+            <p style={kpiValue}>{data.checkoutFunnel.checkoutRedirected}</p>
+            <p style={subLabel}>{data.checkoutFunnel.checkoutRedirectRate}% from checkout start</p>
+          </div>
+          <div className="studio-card" style={cardCompact}>
+            <p style={kpiLabel}>Checkout failed</p>
+            <p style={kpiValue}>{data.checkoutFunnel.checkoutFailed}</p>
+          </div>
         </div>
       );
     }
 
     if (section === "learning") {
-      return (
-        <EmptySection
-          title="Learning Outcomes"
-          description="Track vocabulary retention, streak performance, and progress by language/level. You can connect favorites + review outcomes in this section."
-        />
-      );
+      return <EmptySection title="Learning Outcomes" description="Track vocabulary retention, streak performance, and progress by language/level. You can connect favorites + review outcomes in this section." />;
     }
 
     if (section === "content") {
-      return (
-        <EmptySection
-          title="Content Performance"
-          description="Compare completion rate by topic, level, language, region, and cover/title versions."
-        />
-      );
+      return <EmptySection title="Content Performance" description="Compare completion rate by topic, level, language, region, and cover/title versions." />;
     }
 
     if (section === "funnels") {
       return (
-        <div className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-4">
-            <Card className="border border-border bg-card">
-              <CardContent className="pt-6">
-                <p className="text-sm text-muted-foreground">Trial Started</p>
-                <p className="mt-2 text-2xl font-semibold">{data.trialFunnel.started}</p>
-              </CardContent>
-            </Card>
-            <Card className="border border-border bg-card">
-              <CardContent className="pt-6">
-                <p className="text-sm text-muted-foreground">Day-1 Active</p>
-                <p className="mt-2 text-2xl font-semibold">{data.trialFunnel.day1Active}</p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {data.trialFunnel.day1ActivationRate}% activation
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border border-border bg-card">
-              <CardContent className="pt-6">
-                <p className="text-sm text-muted-foreground">Converted</p>
-                <p className="mt-2 text-2xl font-semibold">{data.trialFunnel.converted}</p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {data.trialFunnel.conversionRate}% conversion
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border border-border bg-card">
-              <CardContent className="pt-6">
-                <p className="text-sm text-muted-foreground">Canceled</p>
-                <p className="mt-2 text-2xl font-semibold">{data.trialFunnel.canceled}</p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {data.trialFunnel.cancelRate}% cancel rate
-                </p>
-              </CardContent>
-            </Card>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {/* Trial funnel */}
+          <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Trial Started</p>
+              <p style={kpiValue}>{data.trialFunnel.started}</p>
+            </div>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Day-1 Active</p>
+              <p style={kpiValue}>{data.trialFunnel.day1Active}</p>
+              <p style={subLabel}>{data.trialFunnel.day1ActivationRate}% activation</p>
+            </div>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Converted</p>
+              <p style={kpiValue}>{data.trialFunnel.converted}</p>
+              <p style={subLabel}>{data.trialFunnel.conversionRate}% conversion</p>
+            </div>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Canceled</p>
+              <p style={kpiValue}>{data.trialFunnel.canceled}</p>
+              <p style={subLabel}>{data.trialFunnel.cancelRate}% cancel rate</p>
+            </div>
           </div>
 
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <h2 className="text-lg font-semibold mb-4">Journey funnel</h2>
-              <div className="grid gap-4 md:grid-cols-4">
-                <div className="rounded-md border border-border px-3 py-3 text-sm">
-                  <p className="text-muted-foreground">Variants selected</p>
-                  <p className="mt-2 text-2xl font-semibold">{data.journeyFunnel.variantSelected}</p>
+          {/* Journey funnel */}
+          <div style={card}>
+            <h3 style={heading}>Journey funnel</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
+              {[
+                { label: "Variants selected", value: data.journeyFunnel.variantSelected },
+                { label: "Topics opened", value: data.journeyFunnel.topicOpened, sub: `${data.journeyFunnel.topicOpenRateFromVariant}% from variant select` },
+                { label: "Next action clicks", value: data.journeyFunnel.nextActionClicked, sub: `${data.journeyFunnel.nextActionRateFromTopicOpen}% from topic open` },
+                { label: "Review CTA clicks", value: data.journeyFunnel.reviewCtaClicked, sub: `${data.journeyFunnel.reviewRateFromTopicOpen}% from topic open` },
+              ].map((item) => (
+                <div key={item.label} style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
+                  <p style={kpiLabel}>{item.label}</p>
+                  <p style={{ ...kpiValue, fontSize: 24 }}>{item.value}</p>
+                  {item.sub && <p style={subLabel}>{item.sub}</p>}
                 </div>
-                <div className="rounded-md border border-border px-3 py-3 text-sm">
-                  <p className="text-muted-foreground">Topics opened</p>
-                  <p className="mt-2 text-2xl font-semibold">{data.journeyFunnel.topicOpened}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {data.journeyFunnel.topicOpenRateFromVariant}% from variant select
-                  </p>
+              ))}
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginTop: 12 }}>
+              {[
+                { label: "Level selections", value: data.journeyFunnel.levelSelected },
+                { label: "Checkpoint recovery", value: data.journeyFunnel.checkpointRecoveryClicked },
+                { label: "Recommended mode opens", value: data.journeyFunnel.recommendedModeOpened },
+              ].map((item) => (
+                <div key={item.label} style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
+                  <p style={kpiLabel}>{item.label}</p>
+                  <p style={{ ...kpiValue, fontSize: 22 }}>{item.value}</p>
                 </div>
-                <div className="rounded-md border border-border px-3 py-3 text-sm">
-                  <p className="text-muted-foreground">Next action clicks</p>
-                  <p className="mt-2 text-2xl font-semibold">{data.journeyFunnel.nextActionClicked}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {data.journeyFunnel.nextActionRateFromTopicOpen}% from topic open
-                  </p>
-                </div>
-                <div className="rounded-md border border-border px-3 py-3 text-sm">
-                  <p className="text-muted-foreground">Review CTA clicks</p>
-                  <p className="mt-2 text-2xl font-semibold">{data.journeyFunnel.reviewCtaClicked}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {data.journeyFunnel.reviewRateFromTopicOpen}% from topic open
-                  </p>
-                </div>
-              </div>
-              <div className="mt-4 grid gap-3 md:grid-cols-3">
-                <div className="rounded-md border border-border px-3 py-3 text-sm">
-                  <p className="text-muted-foreground">Level selections</p>
-                  <p className="mt-2 text-xl font-semibold">{data.journeyFunnel.levelSelected}</p>
-                </div>
-                <div className="rounded-md border border-border px-3 py-3 text-sm">
-                  <p className="text-muted-foreground">Checkpoint recovery clicks</p>
-                  <p className="mt-2 text-xl font-semibold">{data.journeyFunnel.checkpointRecoveryClicked}</p>
-                </div>
-                <div className="rounded-md border border-border px-3 py-3 text-sm">
-                  <p className="text-muted-foreground">Recommended mode opens</p>
-                  <p className="mt-2 text-xl font-semibold">{data.journeyFunnel.recommendedModeOpened}</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              ))}
+            </div>
+          </div>
 
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <h2 className="text-lg font-semibold mb-4">Upgrade CTA performance by source</h2>
-              <div className="space-y-2">
-                {data.upgradeCtaSources.map((row) => (
-                  <div
-                    key={row.source}
-                    className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
-                  >
-                    <span className="font-medium">{row.source}</span>
-                    <span className="text-muted-foreground">{row.clicks} clicks</span>
+          {/* Reminders funnel */}
+          <div style={card}>
+            <h3 style={heading}>Reminders funnel</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
+              <div style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
+                <p style={kpiLabel}>Scheduled</p>
+                <p style={{ ...kpiValue, fontSize: 24 }}>{data.reminderFunnel.scheduled}</p>
+              </div>
+              <div style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
+                <p style={kpiLabel}>Tapped</p>
+                <p style={{ ...kpiValue, fontSize: 24 }}>{data.reminderFunnel.tapped}</p>
+                <p style={subLabel}>{data.reminderFunnel.tapRateFromScheduled}% from scheduled</p>
+              </div>
+              <div style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
+                <p style={kpiLabel}>Destination opened</p>
+                <p style={{ ...kpiValue, fontSize: 24 }}>{data.reminderFunnel.destinationOpened}</p>
+                <p style={subLabel}>{data.reminderFunnel.openRateFromTap}% from tap</p>
+              </div>
+            </div>
+            <div style={{ marginTop: 12, padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
+              <p style={{ ...sectionLabel, marginBottom: 10 }}>Destination breakdown</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                {data.reminderFunnel.destinationBreakdown.map((row) => (
+                  <div key={row.destination} style={{ display: "flex", justifyContent: "space-between", padding: "4px 0", fontSize: 13 }}>
+                    <span style={{ fontWeight: 600, color: "var(--foreground)", textTransform: "capitalize" as const }}>{row.destination}</span>
+                    <span style={{ color: "var(--muted)" }}>{row.opens} opens</span>
                   </div>
                 ))}
-                {data.upgradeCtaSources.length === 0 ? (
-                  <p className="text-sm text-muted-foreground">No CTA clicks for current filters.</p>
-                ) : null}
+                {data.reminderFunnel.destinationBreakdown.length === 0 && <p style={emptyText}>No reminder opens for current filters.</p>}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+
+          {/* Recent reminder taps table */}
+          <div style={card}>
+            <h3 style={heading}>Recent reminder taps</h3>
+            <p style={{ ...emptyText, marginBottom: 12 }}>Most recent notification taps, including where the push tried to send the user.</p>
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", minWidth: 860, borderCollapse: "collapse" }}>
+                <thead>
+                  <tr>
+                    <th style={thStyle}>Tapped at</th>
+                    <th style={thStyle}>Email</th>
+                    <th style={thStyle}>User ID</th>
+                    <th style={thStyle}>Destination</th>
+                    <th style={thStyle}>Source</th>
+                    <th style={thStyle}>Event</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.recentReminderTaps.map((row) => (
+                    <tr key={`${row.userId}-${row.createdAt}-${row.destination ?? "unknown"}`} className="studio-table-row">
+                      <td style={tdStyle}>{new Date(row.createdAt).toLocaleString()}</td>
+                      <td style={tdStyle}>{row.email ?? "Unknown"}</td>
+                      <td style={{ ...tdStyle, fontFamily: "monospace", fontSize: 11 }}>{row.userId}</td>
+                      <td style={tdStyle}>{row.destination ?? "Unknown"}</td>
+                      <td style={tdStyle}>{row.source ?? "Unknown"}</td>
+                      <td style={tdStyle}>{row.eventType}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {data.recentReminderTaps.length === 0 && <p style={{ ...emptyText, marginTop: 8 }}>No recent reminder taps for current filters.</p>}
+          </div>
+
+          {/* Recent reminder opens table */}
+          <div style={card}>
+            <h3 style={heading}>Recent reminder destination opens</h3>
+            <p style={{ ...emptyText, marginBottom: 12 }}>The destinations users actually reached after tapping a reminder.</p>
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", minWidth: 760, borderCollapse: "collapse" }}>
+                <thead>
+                  <tr>
+                    <th style={thStyle}>Opened at</th>
+                    <th style={thStyle}>Email</th>
+                    <th style={thStyle}>User ID</th>
+                    <th style={thStyle}>Destination</th>
+                    <th style={thStyle}>Event</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.recentReminderOpens.map((row) => (
+                    <tr key={`${row.userId}-${row.createdAt}-${row.destination ?? "unknown"}`} className="studio-table-row">
+                      <td style={tdStyle}>{new Date(row.createdAt).toLocaleString()}</td>
+                      <td style={tdStyle}>{row.email ?? "Unknown"}</td>
+                      <td style={{ ...tdStyle, fontFamily: "monospace", fontSize: 11 }}>{row.userId}</td>
+                      <td style={tdStyle}>{row.destination ?? "Unknown"}</td>
+                      <td style={tdStyle}>{row.eventType}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {data.recentReminderOpens.length === 0 && <p style={{ ...emptyText, marginTop: 8 }}>No recent reminder destination opens for current filters.</p>}
+          </div>
+
+          {/* Recent trial starts */}
+          <div style={card}>
+            <h3 style={heading}>Recent trial starts</h3>
+            <p style={{ ...emptyText, marginBottom: 12 }}>These events fire when a Stripe checkout session is created, so they can include abandoned checkouts.</p>
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", minWidth: 720, borderCollapse: "collapse" }}>
+                <thead>
+                  <tr>
+                    <th style={thStyle}>Started at</th>
+                    <th style={thStyle}>Email</th>
+                    <th style={thStyle}>User ID</th>
+                    <th style={thStyle}>Event</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.recentTrialStarts.map((row) => (
+                    <tr key={`${row.userId}-${row.createdAt}-${row.eventType}`} className="studio-table-row">
+                      <td style={tdStyle}>{new Date(row.createdAt).toLocaleString()}</td>
+                      <td style={tdStyle}>{row.email ?? "Unknown"}</td>
+                      <td style={{ ...tdStyle, fontFamily: "monospace", fontSize: 11 }}>{row.userId}</td>
+                      <td style={tdStyle}>{row.eventType}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {data.recentTrialStarts.length === 0 && <p style={{ ...emptyText, marginTop: 8 }}>No recent trial starts for current filters.</p>}
+          </div>
+
+          {/* Upgrade CTA sources */}
+          <div style={card}>
+            <h3 style={heading}>Upgrade CTA performance by source</h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {data.upgradeCtaSources.map((row) => (
+                <div key={row.source} className="studio-table-row" style={listRow}>
+                  <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{row.source}</span>
+                  <span style={{ color: "var(--muted)", fontSize: 12 }}>{row.clicks} clicks</span>
+                </div>
+              ))}
+              {data.upgradeCtaSources.length === 0 && <p style={emptyText}>No CTA clicks for current filters.</p>}
+            </div>
+          </div>
         </div>
       );
     }
 
     if (section === "audience") {
-      return (
-        <EmptySection
-          title="Audience"
-          description="Segment new vs returning users, cohorts by week, and behavior by country/device/target language."
-        />
-      );
+      return <EmptySection title="Audience" description="Segment new vs returning users, cohorts by week, and behavior by country/device/target language." />;
     }
-
     if (section === "experiments") {
-      return (
-        <EmptySection
-          title="Experiments"
-          description="Store and compare A/B test variants for covers, titles, CTAs, and paywall copy."
-        />
-      );
+      return <EmptySection title="Experiments" description="Store and compare A/B test variants for covers, titles, CTAs, and paywall copy." />;
     }
-
     if (section === "alerts") {
-      return (
-        <EmptySection
-          title="Alerts"
-          description="Set thresholds for completion-rate drops, traffic anomalies, and pipeline/API failures."
-        />
-      );
+      return <EmptySection title="Alerts" description="Set thresholds for completion-rate drops, traffic anomalies, and pipeline/API failures." />;
     }
-
-    return (
-      <EmptySection
-        title="Exports"
-        description="Export weekly snapshots and connect BI tools (Looker Studio/Metabase) with read-only credentials."
-      />
-    );
+    return <EmptySection title="Exports" description="Export weekly snapshots and connect BI tools (Looker Studio/Metabase) with read-only credentials." />;
   }
 
   return (
-    <div className="p-6">
-      <div className="grid gap-6 lg:grid-cols-[240px_1fr]">
-        <aside className="space-y-2">
-          {sections.map((item) => {
+    <StudioShell
+      title="Metrics"
+      description="Track the stories, books, journeys, reminders, and funnels that matter so Studio can drive better editorial decisions."
+      breadcrumbs={[
+        { label: "Studio", href: "/studio" },
+        { label: "Metrics" },
+      ]}
+    >
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+
+        {/* ── Filter toolbar ── */}
+        <div style={{ ...card, display: "flex", flexWrap: "wrap", alignItems: "flex-end", gap: 12 }}>
+          <div style={{ flex: "0 0 150px" }}>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Time range</label>
+            <select value={days} onChange={(e) => setDays(e.target.value)} className="studio-input" style={input}>
+              <option value="7">Last 7 days</option>
+              <option value="30">Last 30 days</option>
+              <option value="90">Last 90 days</option>
+              <option value="180">Last 180 days</option>
+            </select>
+          </div>
+          <div style={{ flex: "1 1 160px" }}>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Book slug</label>
+            <input value={bookSlug} onChange={(e) => setBookSlug(e.target.value)} placeholder="Filter by bookSlug" className="studio-input" style={input} />
+          </div>
+          <div style={{ flex: "1 1 160px" }}>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Story slug</label>
+            <input value={storySlug} onChange={(e) => setStorySlug(e.target.value)} placeholder="Filter by storySlug" className="studio-input" style={input} />
+          </div>
+          <div style={{ flex: "1 1 140px" }}>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Access key</label>
+            <input value={accessKey} onChange={(e) => setAccessKey(e.target.value)} placeholder="Access key" type="password" className="studio-input" style={input} />
+          </div>
+          <button
+            onClick={() => void loadMetrics(section, true)}
+            disabled={loading}
+            className="studio-btn-primary"
+            style={{ ...btnPrimary, opacity: loading ? 0.7 : 1, flexShrink: 0 }}
+          >
+            {loading ? spinner : null}
+            {loading ? "Loading..." : "Refresh"}
+          </button>
+        </div>
+
+        {errorMessage && (
+          <div style={{ padding: "12px 16px", borderRadius: 8, backgroundColor: "rgba(239, 68, 68, 0.1)", border: "1px solid rgba(239, 68, 68, 0.3)", color: "#ef4444", fontSize: 14, fontWeight: 500 }}>
+            {errorMessage}
+          </div>
+        )}
+
+        {/* ── Section tabs ── */}
+        <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+          {SECTIONS.map((item) => {
             const active = item.key === section;
             return (
               <button
                 key={item.key}
                 onClick={() => setSection(item.key)}
-                className={`w-full rounded-md px-3 py-2 text-left text-sm transition ${
-                  active
-                    ? "bg-blue-600 text-white"
-                    : "border border-border bg-card text-foreground hover:bg-muted"
-                }`}
+                className={active ? "" : "studio-btn-ghost"}
+                style={{
+                  height: 34,
+                  borderRadius: 8,
+                  border: active ? "none" : "1px solid var(--card-border)",
+                  backgroundColor: active ? "var(--primary)" : "transparent",
+                  color: active ? "#fff" : "var(--foreground)",
+                  padding: "0 14px",
+                  fontSize: 13,
+                  fontWeight: active ? 600 : 500,
+                  cursor: "pointer",
+                  whiteSpace: "nowrap",
+                }}
               >
                 {item.label}
               </button>
             );
           })}
-        </aside>
+        </div>
 
-        <div className="space-y-8">
-          <Card className="border border-border bg-card">
-            <CardContent className="pt-6">
-              <h1 className="text-2xl font-semibold">Internal Metrics</h1>
-              <p className="text-sm text-muted-foreground mt-1">
-                Internal usage and listening progress dashboard.
-              </p>
-
-              <div className="mt-4 grid gap-3 md:grid-cols-5">
-                <select
-                  value={days}
-                  onChange={(e) => setDays(e.target.value)}
-                  className="h-10 rounded-md border border-input bg-background px-3 text-sm"
-                >
-                  <option value="7">Last 7 days</option>
-                  <option value="30">Last 30 days</option>
-                  <option value="90">Last 90 days</option>
-                  <option value="180">Last 180 days</option>
-                </select>
-                <input
-                  value={bookSlug}
-                  onChange={(e) => setBookSlug(e.target.value)}
-                  placeholder="Filter by bookSlug"
-                  className="h-10 rounded-md border border-input bg-background px-3 text-sm"
-                />
-                <input
-                  value={storySlug}
-                  onChange={(e) => setStorySlug(e.target.value)}
-                  placeholder="Filter by storySlug"
-                  className="h-10 rounded-md border border-input bg-background px-3 text-sm"
-                />
-                <input
-                  value={accessKey}
-                  onChange={(e) => setAccessKey(e.target.value)}
-                  placeholder="Access key"
-                  className="h-10 rounded-md border border-input bg-background px-3 text-sm"
-                />
-                <button
-                  onClick={() => void loadMetrics()}
-                  className="h-10 rounded-md bg-blue-600 px-4 text-sm font-medium text-white hover:bg-blue-500"
-                >
-                  {loading ? "Loading..." : "Refresh"}
-                </button>
-              </div>
-              {errorMessage ? <p className="mt-3 text-sm text-red-500">{errorMessage}</p> : null}
-            </CardContent>
-          </Card>
-
+        {/* ── Section content ── */}
+        <div key={section} className="studio-section-fade">
           {renderSectionContent()}
         </div>
       </div>
-    </div>
+    </StudioShell>
   );
 }

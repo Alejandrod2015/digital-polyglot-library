@@ -1,0 +1,69 @@
+appId: com.digitalpolyglot.mobile
+---
+- launchApp:
+    clearState: false
+
+- runFlow:
+    when:
+      visible:
+        id: "qa-reader-screen"
+    commands:
+      - tapOn:
+          id: "qa-reader-back"
+
+- runFlow:
+    when:
+      visible:
+        id: "qa-book-detail-screen"
+    commands:
+      - tapOn:
+          id: "qa-book-detail-back"
+
+- tapOn:
+    id: "qa-tab-journey"
+- assertVisible:
+    id: "qa-journey-map-section"
+
+- scrollUntilVisible:
+    element:
+      id: "qa-journey-topic-community-celebrations"
+    direction: DOWN
+    timeout: 30000
+    visibilityPercentage: 40
+
+- tapOn:
+    id: "qa-journey-topic-community-celebrations"
+- assertVisible:
+    id: "qa-journey-topic-detail"
+
+- scrollUntilVisible:
+    element:
+      id: "qa-journey-story-row-0"
+    direction: DOWN
+    timeout: 30000
+    visibilityPercentage: 40
+
+- tapOn:
+    id: "qa-journey-primary-action"
+
+- runFlow:
+    when:
+      visible:
+        id: "qa-reader-screen"
+    commands:
+      - assertVisible:
+          id: "qa-reader-screen"
+      - tapOn:
+          id: "qa-reader-back"
+
+- runFlow:
+    when:
+      visible:
+        id: "qa-journey-topic-detail"
+    commands:
+      - tapOn:
+          id: "qa-journey-back-to-map"
+
+- assertVisible:
+    id: "qa-journey-map-section"
+- takeScreenshot: "interaction-authenticated-pass"

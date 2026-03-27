@@ -6,9 +6,9 @@ import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
 import StoryVerticalCard from "@/components/StoryVerticalCard";
-import { formatLanguage, formatLevel, formatTopic } from "@/lib/displayFormat";
-import { getBookCardMeta } from "@/lib/bookCardMeta";
-import { canUseOfflineAccess, type Plan } from "@/lib/access";
+import { formatLanguage, formatLevel, formatTopic } from "@domain/displayFormat";
+import { getBookCardMeta } from "@domain/bookCardMeta";
+import { canUseOfflineAccess, type Plan } from "@domain/access";
 import {
   listOfflineBooks,
   listOfflineStories,

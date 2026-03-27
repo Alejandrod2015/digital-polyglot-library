@@ -4,7 +4,12 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
 import { books } from '@/data/books';
-import { formatLanguageCode } from '@/lib/displayFormat';
+import { formatLanguageCode } from '@domain/displayFormat';
+import {
+  sortPracticeItemsByOnboarding,
+  type OnboardingGoal,
+  type OnboardingPracticePrefs,
+} from '@/lib/onboarding';
 import {
   VOCAB_TYPE_ORDER,
   VocabTypeKey,
@@ -226,6 +231,17 @@ export default function FavoritesPage() {
   const [practiceScoresByKey, setPracticeScoresByKey] = useState<Record<string, ReviewScore>>({});
   const [revealedPracticeKeys, setRevealedPracticeKeys] = useState<string[]>([]);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
+  const onboardingPracticePrefs = useMemo<OnboardingPracticePrefs>(() => {
+    const metadata = user?.publicMetadata ?? {};
+    const interests = Array.isArray(metadata.interests)
+      ? metadata.interests.filter((value): value is string => typeof value === 'string')
+      : [];
+    return {
+      interests,
+      learningGoal: typeof metadata.learningGoal === 'string' ? (metadata.learningGoal as OnboardingGoal) : null,
+      dailyMinutes: typeof metadata.dailyMinutes === 'number' ? metadata.dailyMinutes : null,
+    };
+  }, [user]);
   const getPracticeModeTabClass = (mode: 'due' | 'all' | 'related') =>
     `px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${
       practiceModeKind === mode
@@ -367,7 +383,38 @@ export default function FavoritesPage() {
   }, [srsMap, userId, isLoaded]);
 
   const now = Date.now();
-  const dueFavorites = favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now));
+  const sortedFavorites = useMemo(
+    () => sortPracticeItemsByOnboarding(favorites, onboardingPracticePrefs, true),
+    [favorites, onboardingPracticePrefs]
+  );
+  const dueFavorites = useMemo(
+    () => sortPracticeItemsByOnboarding(favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now)), onboardingPracticePrefs, true),
+    [favorites, now, onboardingPracticePrefs, srsMap]
+  );
+  const dailyLoopSummary = useMemo(() => {
+    const preferredMinutes =
+      typeof onboardingPracticePrefs.dailyMinutes === 'number' && onboardingPracticePrefs.dailyMinutes > 0
+        ? onboardingPracticePrefs.dailyMinutes
+        : 5;
+
+    if (dueFavorites.length > 0) {
+      return {
+        title: 'Clear your due review first',
+        body: `${dueFavorites.length} saved ${dueFavorites.length === 1 ? 'word is' : 'words are'} ready for a fast ${preferredMinutes}-minute round.`,
+        primaryLabel: 'Practice due',
+        secondaryLabel: 'Back to Journey',
+        secondaryHref: '/journey',
+      };
+    }
+
+    return {
+      title: 'Grow the next review round',
+      body: `You are clear for now. Read one more story and save a few words to keep your ${preferredMinutes}-minute habit alive.`,
+      primaryLabel: 'Practice all',
+      secondaryLabel: 'Open Journey',
+      secondaryHref: '/journey',
+    };
+  }, [dueFavorites.length, onboardingPracticePrefs.dailyMinutes]);
   const currentPractice = practiceQueue[practiceIndex] ?? null;
   const currentPracticeIdentity = currentPractice ? getFavoriteIdentity(currentPractice) : null;
   const currentPracticeKey =
@@ -412,7 +459,7 @@ export default function FavoritesPage() {
   }, {} as Record<VocabTypeKey, number>);
   const availablePracticeTypes = VOCAB_TYPE_ORDER.filter((key) => (favoriteTypeCounts[key] ?? 0) > 0);
   const relatedPracticeCandidates = useMemo(() => {
-    const base = favorites.filter((fav) => {
+    const base = sortedFavorites.filter((fav) => {
       if (practiceType === 'all') return true;
       return getFavoriteType(fav) === practiceType;
     });
@@ -458,7 +505,7 @@ export default function FavoritesPage() {
       .sort((a, b) => b.score - a.score || a.item.word.localeCompare(b.item.word))
       .slice(0, RELATED_PRACTICE_MAX)
       .map((entry) => entry.item);
-  }, [allCatalogRelatedItems, favoriteIdentitySet, favorites, practiceType]);
+  }, [allCatalogRelatedItems, favoriteIdentitySet, onboardingPracticePrefs, practiceType, sortedFavorites]);
   const relatedPracticeAvailable = relatedPracticeCandidates.length >= MIN_RELATED_PRACTICE_ITEMS;
 
   const removeFavorite = async (word: string) => {
@@ -531,7 +578,7 @@ export default function FavoritesPage() {
   };
 
   const startPractice = (onlyDue: boolean) => {
-    const source = onlyDue ? dueFavorites : favorites;
+    const source = onlyDue ? dueFavorites : sortedFavorites;
     const snapshot = source.filter((fav) => {
       if (practiceType === 'all') return true;
       const normalized = getFavoriteType(fav);
@@ -553,7 +600,7 @@ export default function FavoritesPage() {
       setRevealedPracticeKeys([]);
       return;
     }
-    const relatedSet = shuffleArray(relatedPracticeCandidates);
+    const relatedSet = sortPracticeItemsByOnboarding(relatedPracticeCandidates, onboardingPracticePrefs, false);
 
     setPracticeModeKind('related');
     setPracticeQueue(relatedSet);
@@ -706,6 +753,29 @@ export default function FavoritesPage() {
           </div>
         ) : null}
       </div>
+
+      {favorites.length > 0 ? (
+        <div className="mb-6 rounded-[1.6rem] border border-[var(--card-border)] bg-[linear-gradient(180deg,#18304d_0%,#14243b_100%)] p-5 shadow-[0_18px_50px_rgba(6,17,38,0.18)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">Today&apos;s loop</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">{dailyLoopSummary.title}</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">{dailyLoopSummary.body}</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={() => startPractice(dueFavorites.length > 0)}
+              className="inline-flex rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white hover:opacity-90"
+            >
+              {dailyLoopSummary.primaryLabel}
+            </button>
+            <Link
+              href={dailyLoopSummary.secondaryHref}
+              className="inline-flex rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            >
+              {dailyLoopSummary.secondaryLabel}
+            </Link>
+          </div>
+        </div>
+      ) : null}
 
       {practiceMode && currentPractice ? (
         <div className="mb-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 sm:p-5">
@@ -911,7 +981,7 @@ export default function FavoritesPage() {
             </div>
           ) : (
             <ul className="space-y-4">
-              {favorites.map((fav) => {
+              {sortedFavorites.map((fav) => {
                 const meta = srsMap[normalizeWord(fav.word)];
                 const due = isDue(meta, now);
                 return (

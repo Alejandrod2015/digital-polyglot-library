@@ -1,8 +1,9 @@
 import { unstable_cache } from "next/cache";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { freshClient } from "@/sanity/lib/client";
 import { resolveContentVariant } from "@/lib/languageVariant";
 import type { CefrLevel, Level } from "@/types/books";
+import { getJourneyFocusFromLearningGoal, normalizeJourneyFocus, type JourneyFocus } from "@/lib/onboarding";
 
 export type PublicStandaloneStory = {
   id: string;
@@ -17,6 +18,7 @@ export type PublicStandaloneStory = {
   level: string | null;
   cefrLevel: string | null;
   focus: string | null;
+  journeyFocus: JourneyFocus | null;
   topic: string | null;
   journeyEligible: boolean | null;
   journeyTopic: string | null;
@@ -43,6 +45,7 @@ const standaloneStoryFields = `
   level,
   cefrLevel,
   focus,
+  journeyFocus,
   topic,
   journeyEligible,
   journeyTopic,
@@ -76,6 +79,9 @@ function normalizeStandaloneStory(story: PublicStandaloneStory): PublicStandalon
     cefrLevel:
       story.cefrLevel ??
       (resolvedLevel ? legacyLevelFallback[resolvedLevel] : null),
+    journeyFocus:
+      normalizeJourneyFocus(story.journeyFocus) ??
+      getJourneyFocusFromLearningGoal(null),
   };
 }
 
@@ -85,12 +91,24 @@ const getPublishedStandaloneStoriesCached = unstable_cache(
       ${standaloneStoryFields}
     }`;
 
-    const stories = await client.fetch<PublicStandaloneStory[]>(query);
+    const stories = await freshClient.fetch<PublicStandaloneStory[]>(query);
     return stories.map(normalizeStandaloneStory);
   },
   ["published-standalone-stories-v1"],
   { revalidate: 60, tags: ["published-standalone-stories"] }
 );
+
+async function getPublishedJourneyStandaloneStories(): Promise<PublicStandaloneStory[]> {
+  const query = groq`*[
+    _type == "standaloneStory" &&
+    journeyEligible == true
+  ] | order(_createdAt desc){
+    ${standaloneStoryFields}
+  }`;
+
+  const stories = await freshClient.fetch<PublicStandaloneStory[]>(query);
+  return stories.map(normalizeStandaloneStory);
+}
 
 export function isJourneyAssignedStandaloneStory(
   story: Pick<PublicStandaloneStory, "journeyEligible" | "journeyTopic" | "journeyOrder">
@@ -109,11 +127,11 @@ export function isJourneyAssignedStandaloneStory(
 export async function getPublishedStandaloneStories(
   options: GetPublishedStandaloneStoriesOptions = {}
 ): Promise<PublicStandaloneStory[]> {
-  const stories = await getPublishedStandaloneStoriesCached();
   if (options.includeJourneyStories) {
-    return stories;
+    return getPublishedJourneyStandaloneStories();
   }
 
+  const stories = await getPublishedStandaloneStoriesCached();
   return stories.filter((story) => !isJourneyAssignedStandaloneStory(story));
 }
 
@@ -130,7 +148,7 @@ export async function getStandaloneStoryBySlug(
         ${standaloneStoryFields}
       }`;
 
-      const story = await client.fetch<PublicStandaloneStory | null>(query, { slug: cachedSlug });
+      const story = await freshClient.fetch<PublicStandaloneStory | null>(query, { slug: cachedSlug });
       return story ? normalizeStandaloneStory(story) : null;
     },
     ["published-standalone-story-by-slug-v1", slug],
@@ -153,7 +171,7 @@ export async function getStandaloneStoriesByIds(
     ${standaloneStoryFields}
   }`;
 
-  const stories = await client.fetch<PublicStandaloneStory[]>(query, { ids });
+  const stories = await freshClient.fetch<PublicStandaloneStory[]>(query, { ids });
   return stories.map(normalizeStandaloneStory);
 }
 
@@ -170,6 +188,6 @@ export async function getStandaloneStoriesBySlugs(
     ${standaloneStoryFields}
   }`;
 
-  const stories = await client.fetch<PublicStandaloneStory[]>(query, { slugs });
+  const stories = await freshClient.fetch<PublicStandaloneStory[]>(query, { slugs });
   return stories.map(normalizeStandaloneStory);
 }

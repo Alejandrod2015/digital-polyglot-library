@@ -5,7 +5,7 @@ import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { type Book, type Story } from "@/types/books";
-import { formatTopic } from "@/lib/displayFormat";
+import { formatTopic } from "@domain/displayFormat";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";

@@ -38,6 +38,7 @@ type RawStory = {
   slug?: string;
   audio?: string;
   cover?: string;
+  coverUrl?: string;
   topic?: string;
   tags?: unknown;
   vocabRaw?: unknown;
@@ -75,6 +76,7 @@ type ExportedStory = {
   topic: string;
   tags?: string[];
   cover?: string;
+  coverUrl?: string;
   vocab: unknown[];
 };
 
@@ -263,6 +265,7 @@ async function exportBooks() {
           defined(cover.asset->url) => cover.asset->url,
           null
         ),
+        coverUrl,
         vocabRaw
       }
     }`;
@@ -290,6 +293,8 @@ async function exportBooks() {
       const sSlug = safeString(s.slug, safeString(s._id, `story-${i + 1}`));
       const sCover =
         typeof s.cover === "string" && s.cover.length > 0 ? s.cover : undefined;
+      const sCoverUrl =
+        typeof s.coverUrl === "string" && s.coverUrl.length > 0 ? s.coverUrl : undefined;
       const inferredStoryTopic = inferTopicFromText({
         title: safeString(s.title, ""),
         text: safeString(s.text, ""),
@@ -317,6 +322,7 @@ async function exportBooks() {
         topic: inferredStoryTopic,
         ...(tags.length > 0 ? { tags } : {}),
         ...(sCover ? { cover: sCover } : {}),
+        ...(sCoverUrl ? { coverUrl: sCoverUrl } : {}),
         vocab: normalizeVocab(s.vocabRaw),
       };
     });

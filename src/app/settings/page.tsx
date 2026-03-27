@@ -3,14 +3,44 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
+import { Bell, Flame, Sparkles, Trophy } from "lucide-react";
 import { getCookieConsentKey } from "@/components/CookieConsentBanner";
 import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel } from "@/lib/languageVariant";
+import { REMINDER_HOUR_OPTIONS, formatReminderHour } from "@/lib/reminders";
 
 type LanguageOption = { code: string; name: string };
 type Plan = "free" | "basic" | "premium" | "polyglot" | "owner" | undefined;
 type BillingSource = "stripe" | "google_play" | null;
 type SaveStatus = "idle" | "saving" | "saved" | "error";
 type ThemePref = "system" | "dark" | "light";
+type SettingsProgressPayload = {
+  streakDays: number;
+  gamification: {
+    totalXp: number;
+    todayXp: number;
+    weeklyXp: number;
+    currentLevel: number;
+    levelStartXp: number;
+    nextLevelXp: number;
+    levelProgress: number;
+    dailyStreak: number;
+    quests: Array<{
+      id: string;
+      label: string;
+      current: number;
+      target: number;
+      rewardXp: number;
+      complete: boolean;
+    }>;
+    badges: Array<{
+      id: string;
+      label: string;
+      description: string;
+      unlocked: boolean;
+      accent: string;
+    }>;
+  };
+};
 
 const LANGUAGES: LanguageOption[] = [
   { code: "English", name: "English" },
@@ -24,7 +54,6 @@ const LANGUAGES: LanguageOption[] = [
   { code: "Chinese", name: "Chinese" },
 ];
 
-const MAX_SELECTION = 3;
 const MAX_INTERESTS = 12;
 const THEME_KEY = "dp_theme_pref";
 const LEVEL_OPTIONS = ["Beginner", "Intermediate", "Advanced"] as const;
@@ -113,12 +142,17 @@ export default function SettingsPage() {
   const [persistedPreferredRegion, setPersistedPreferredRegion] = useState("");
   const [preferredVariant, setPreferredVariant] = useState("");
   const [persistedPreferredVariant, setPersistedPreferredVariant] = useState("");
+  const [remindersEnabled, setRemindersEnabled] = useState(false);
+  const [persistedRemindersEnabled, setPersistedRemindersEnabled] = useState(false);
+  const [reminderHour, setReminderHour] = useState<number | "">("");
+  const [persistedReminderHour, setPersistedReminderHour] = useState<number | "">("");
   const [status, setStatus] = useState<SaveStatus>("idle");
   const [hint, setHint] = useState("");
   const [themePref, setThemePref] = useState<ThemePref>("system");
   const [analyticsConsent, setAnalyticsConsent] = useState<"accepted" | "rejected" | "unset">("unset");
   const [billingLoading, setBillingLoading] = useState(false);
   const [billingError, setBillingError] = useState("");
+  const [settingsProgress, setSettingsProgress] = useState<SettingsProgressPayload | null>(null);
 
   const plan = (user?.publicMetadata?.plan as Plan) ?? "free";
   const hasPaidPlan = plan === "premium" || plan === "polyglot" || plan === "owner";
@@ -131,8 +165,25 @@ export default function SettingsPage() {
       !equalsSet(interests, persistedInterests) ||
       preferredLevel !== persistedPreferredLevel ||
       preferredRegion !== persistedPreferredRegion ||
-      preferredVariant !== persistedPreferredVariant,
-    [selected, persisted, interests, persistedInterests, preferredLevel, persistedPreferredLevel, preferredRegion, persistedPreferredRegion, preferredVariant, persistedPreferredVariant]
+      preferredVariant !== persistedPreferredVariant ||
+      remindersEnabled !== persistedRemindersEnabled ||
+      reminderHour !== persistedReminderHour,
+    [
+      selected,
+      persisted,
+      interests,
+      persistedInterests,
+      preferredLevel,
+      persistedPreferredLevel,
+      preferredRegion,
+      persistedPreferredRegion,
+      preferredVariant,
+      persistedPreferredVariant,
+      remindersEnabled,
+      persistedRemindersEnabled,
+      reminderHour,
+      persistedReminderHour,
+    ]
   );
 
   const primaryLanguage = selected[0] ?? "";
@@ -150,6 +201,9 @@ export default function SettingsPage() {
       typeof user?.publicMetadata?.preferredRegion === "string" ? user.publicMetadata.preferredRegion : "";
     const currentVariant =
       typeof user?.publicMetadata?.preferredVariant === "string" ? user.publicMetadata.preferredVariant : "";
+    const currentRemindersEnabled = user?.publicMetadata?.remindersEnabled === true;
+    const currentReminderHour =
+      typeof user?.publicMetadata?.reminderHour === "number" ? user.publicMetadata.reminderHour : "";
     setSelected(current);
     setPersisted(current);
     setInterests(currentInterests);
@@ -160,6 +214,10 @@ export default function SettingsPage() {
     setPersistedPreferredRegion(currentRegion);
     setPreferredVariant(currentVariant);
     setPersistedPreferredVariant(currentVariant);
+    setRemindersEnabled(currentRemindersEnabled);
+    setPersistedRemindersEnabled(currentRemindersEnabled);
+    setReminderHour(currentReminderHour);
+    setPersistedReminderHour(currentReminderHour);
     setStatus("idle");
     setHint("");
   }, [isLoaded, user]);
@@ -196,6 +254,30 @@ export default function SettingsPage() {
     return () => window.clearTimeout(timer);
   }, [hint]);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadProgress = async () => {
+      if (!user) {
+        if (!cancelled) setSettingsProgress(null);
+        return;
+      }
+      try {
+        const res = await fetch("/api/progress", { cache: "no-store" });
+        const data = (await res.json()) as SettingsProgressPayload & { error?: string };
+        if (!res.ok) throw new Error(data.error || "Failed to load progress");
+        if (!cancelled) setSettingsProgress(data);
+      } catch {
+        if (!cancelled) setSettingsProgress(null);
+      }
+    };
+
+    if (isLoaded) void loadProgress();
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoaded, user]);
+
   const savePreferences = async () => {
     if (!user) {
       setStatus("error");
@@ -206,7 +288,7 @@ export default function SettingsPage() {
 
     try {
       setStatus("saving");
-      const payload = normalizeSelection(selected).slice(0, MAX_SELECTION);
+      const payload = normalizeSelection(selected);
       const payloadInterests = normalizeInterests(interests);
       const res = await fetch("/api/user/preferences", {
         method: "POST",
@@ -217,6 +299,8 @@ export default function SettingsPage() {
           preferredLevel: preferredLevel || null,
           preferredRegion: preferredRegion || null,
           preferredVariant: preferredVariant || null,
+          remindersEnabled,
+          reminderHour: remindersEnabled && typeof reminderHour === "number" ? reminderHour : null,
         }),
       });
       if (!res.ok) throw new Error(`Error ${res.status}`);
@@ -235,6 +319,8 @@ export default function SettingsPage() {
         typeof record?.preferredRegion === "string" ? record.preferredRegion : "";
       const serverPreferredVariant =
         typeof record?.preferredVariant === "string" ? record.preferredVariant : "";
+      const serverRemindersEnabled = record?.remindersEnabled === true;
+      const serverReminderHour = typeof record?.reminderHour === "number" ? record.reminderHour : "";
       setSelected(serverTL);
       setPersisted(serverTL);
       setInterests(serverInterests);
@@ -245,6 +331,10 @@ export default function SettingsPage() {
       setPersistedPreferredRegion(serverPreferredRegion);
       setPreferredVariant(serverPreferredVariant);
       setPersistedPreferredVariant(serverPreferredVariant);
+      setRemindersEnabled(serverRemindersEnabled);
+      setPersistedRemindersEnabled(serverRemindersEnabled);
+      setReminderHour(serverReminderHour);
+      setPersistedReminderHour(serverReminderHour);
       setStatus("saved");
       await user?.reload();
     } catch (err) {
@@ -283,15 +373,11 @@ export default function SettingsPage() {
       void savePreferences();
     }, 800);
     return () => window.clearTimeout(timer);
-  }, [dirty, selected, interests, preferredLevel, preferredRegion, preferredVariant]);
+  }, [dirty, selected, interests, preferredLevel, preferredRegion, preferredVariant, remindersEnabled, reminderHour]);
 
   const toggleLanguage = (code: string) => {
     setSelected((prev) => {
       if (prev.includes(code)) return prev.filter((c) => c !== code);
-      if (prev.length >= MAX_SELECTION) {
-        setHint(`You can select up to ${MAX_SELECTION} languages.`);
-        return prev;
-      }
       return [...prev, code];
     });
     if (status === "saved") setStatus("idle");
@@ -425,6 +511,82 @@ export default function SettingsPage() {
 
       </section>
 
+      {settingsProgress?.gamification ? (
+        <section className="mb-6 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 text-sm text-[var(--foreground)]">
+          <div className="mb-4 flex items-start justify-between gap-3">
+            <div>
+              <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Profile</h2>
+              <p className="mt-2 text-base font-semibold">Your achievements shelf</p>
+              <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
+                Your level, streak, XP, and unlocked badges live here permanently.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="rounded-[22px] border border-[#26425f] bg-[linear-gradient(180deg,#16304f_0%,#132947_100%)] p-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-100">
+                  <Flame size={14} className="text-[#ffd36b]" />
+                  {settingsProgress.gamification.dailyStreak}-day streak
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#365b81] bg-[#21466d] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#dcefff]">
+                  <Sparkles size={14} className="text-[#8ef0c6]" />
+                  {settingsProgress.gamification.totalXp} XP
+                </span>
+              </div>
+              <div className="mt-4 flex items-end justify-between gap-4">
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Level</p>
+                  <p className="mt-2 text-4xl font-bold text-white">{settingsProgress.gamification.currentLevel}</p>
+                </div>
+                <div className="text-right text-sm text-slate-300">
+                  <p>{settingsProgress.gamification.todayXp} XP today</p>
+                  <p>{settingsProgress.gamification.weeklyXp} XP this week</p>
+                </div>
+              </div>
+              <div className="mt-4">
+                <div className="mb-2 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
+                  <span>Progress to next level</span>
+                  <span>
+                    {settingsProgress.gamification.totalXp - settingsProgress.gamification.levelStartXp} /{" "}
+                    {settingsProgress.gamification.nextLevelXp - settingsProgress.gamification.levelStartXp} XP
+                  </span>
+                </div>
+                <div className="h-3 overflow-hidden rounded-full bg-[#314861]">
+                  <div
+                    className="h-full rounded-full bg-[linear-gradient(90deg,#71dd5a,#3dc55d)]"
+                    style={{ width: `${Math.round(settingsProgress.gamification.levelProgress * 100)}%` }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--bg-content)] p-4">
+              <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-slate-100">
+                <Trophy size={18} className="text-[#ffd36b]" />
+                Unlocked badges
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {settingsProgress.gamification.badges.map((badge) => (
+                  <div
+                    key={badge.id}
+                    className={[
+                      "rounded-full border px-3 py-1.5 text-xs font-semibold",
+                      badge.unlocked
+                        ? "border-white/12 bg-white/8 text-[var(--foreground)]"
+                        : "border-[var(--card-border)] bg-[var(--card-bg)] text-slate-500",
+                    ].join(" ")}
+                  >
+                    {badge.label}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="mb-6">
         <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Appearance</h2>
         <div className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-1">
@@ -445,9 +607,7 @@ export default function SettingsPage() {
         </div>
       </section>
 
-      <p className="mb-3 text-xs text-[var(--muted)]">
-        Selected: {selected.length}/{MAX_SELECTION}
-      </p>
+      <p className="mb-3 text-xs text-[var(--muted)]">Selected: {selected.length}</p>
 
       <section>
         <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Languages</h2>
@@ -531,6 +691,64 @@ export default function SettingsPage() {
             ))}
           </select>
         </div>
+      </section>
+
+      <section className="mt-7 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Daily reminders</h2>
+            <p className="mt-2 text-base font-semibold text-[var(--foreground)]">Keep the daily loop alive</p>
+            <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
+              iPhone uses local notifications at the time you pick here. Web keeps the schedule synced.
+            </p>
+          </div>
+          <Bell size={18} className="mt-1 text-[var(--muted)]" />
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setRemindersEnabled(true)}
+            className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+              remindersEnabled
+                ? "bg-[var(--primary)] border-[var(--primary)] text-white"
+                : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
+            }`}
+          >
+            Reminders on
+          </button>
+          <button
+            type="button"
+            onClick={() => setRemindersEnabled(false)}
+            className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+              !remindersEnabled
+                ? "bg-[var(--primary)] border-[var(--primary)] text-white"
+                : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
+            }`}
+          >
+            Reminders off
+          </button>
+        </div>
+        {remindersEnabled ? (
+          <div className="mt-4">
+            <h3 className="mb-3 text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Time</h3>
+            <div className="flex flex-wrap gap-2">
+              {REMINDER_HOUR_OPTIONS.map((hour) => (
+                <button
+                  key={hour}
+                  type="button"
+                  onClick={() => setReminderHour(hour)}
+                  className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+                    reminderHour === hour
+                      ? "bg-[var(--primary)] border-[var(--primary)] text-white"
+                      : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
+                  }`}
+                >
+                  {formatReminderHour(hour)}
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </section>
 
       <section className="mt-7">

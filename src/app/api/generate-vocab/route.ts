@@ -1,15 +1,29 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
-import { normalizeVocabWord } from "@/lib/vocabWordNormalization";
+import { resolveCanonicalVocabEntry } from "@/lib/vocabWordNormalization";
 import { buildSanityCorsHeaders } from "@/lib/sanityCors";
-import { cefrPromptLabel } from "@/lib/cefr";
+import { cefrPromptLabel } from "@domain/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
+import { isLowValueStudyWord } from "@/lib/vocabPedagogy";
 
 type VocabItem = {
   word: string;
+  surface?: string;
   definition: string;
   type?: string;
+};
+
+type CandidateSelectionItem = {
+  word: string;
+  surface?: string;
+  type?: string;
+};
+
+type DeterministicCandidate = {
+  word: string;
+  score: number;
+  typeHint?: string;
 };
 
 type GenerateVocabBody = {
@@ -54,6 +68,43 @@ const DISCOURAGED_VOCAB_BY_LANGUAGE: Record<string, Set<string>> = {
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
 });
+
+const STOPWORDS_BY_LANGUAGE: Record<string, Set<string>> = {
+  spanish: new Set([
+    "el", "la", "los", "las", "un", "una", "unos", "unas", "y", "o", "u", "de", "del", "al",
+    "que", "en", "con", "sin", "por", "para", "como", "más", "mas", "muy", "pero", "porque",
+    "cuando", "donde", "desde", "hasta", "sobre", "entre", "tras", "durante", "antes", "despues",
+    "después", "era", "eran", "fue", "ser", "estar", "hay", "habia", "había", "tenia", "tenía",
+    "ese", "esa", "este", "esta", "estos", "estas", "aquel", "aquella", "su", "sus", "mi", "mis",
+  ]),
+  german: new Set([
+    "der", "die", "das", "den", "dem", "des", "ein", "eine", "einen", "einem", "einer", "und",
+    "oder", "aber", "nicht", "mit", "ohne", "für", "fur", "von", "vom", "zum", "zur", "bei",
+    "als", "auch", "noch", "schon", "weil", "wenn", "dann", "dort", "hier", "war", "waren",
+    "ist", "sind", "hat", "hatte", "hatten", "sein", "ihre", "ihren", "seine", "seinen", "seiner",
+  ]),
+  english: new Set([
+    "the", "a", "an", "and", "or", "but", "with", "without", "for", "from", "into", "onto", "of",
+    "to", "in", "on", "at", "by", "as", "is", "are", "was", "were", "be", "been", "being", "that",
+    "this", "these", "those", "then", "than", "when", "where", "which", "their", "there", "have",
+    "has", "had", "would", "could", "should",
+  ]),
+  french: new Set([
+    "le", "la", "les", "un", "une", "des", "du", "de", "et", "ou", "avec", "sans", "pour", "par",
+    "dans", "sur", "sous", "mais", "que", "qui", "quand", "comme", "plus", "tres", "très", "est",
+    "sont", "etait", "était", "etaient", "étaient", "avoir", "etre", "être", "son", "sa", "ses",
+  ]),
+  italian: new Set([
+    "il", "lo", "la", "i", "gli", "le", "un", "una", "e", "o", "con", "senza", "per", "da", "di",
+    "del", "della", "dello", "nel", "nella", "sul", "sulla", "che", "come", "quando", "dove",
+    "piu", "più", "molto", "ma", "era", "erano", "essere", "avere", "suo", "sua", "suoi", "sue",
+  ]),
+  portuguese: new Set([
+    "o", "a", "os", "as", "um", "uma", "uns", "umas", "e", "ou", "com", "sem", "por", "para",
+    "de", "do", "da", "dos", "das", "que", "como", "quando", "onde", "mais", "muito", "mas",
+    "era", "eram", "foi", "ser", "estar", "tem", "tinha", "seu", "sua", "seus", "suas",
+  ]),
+};
 
 function toIntInRange(value: unknown, fallback: number, min: number, max: number): number {
   if (typeof value !== "number" || !Number.isFinite(value)) return fallback;
@@ -152,7 +203,13 @@ function appearsInText(text: string, phrase: string): boolean {
   return pattern.test(text);
 }
 
-function normalizeVocab(raw: unknown, normalizedText: string, language?: string): VocabItem[] {
+function normalizeVocab(
+  raw: unknown,
+  normalizedText: string,
+  language?: string,
+  level?: string,
+  cefrLevel?: string
+): VocabItem[] {
   const rows = Array.isArray(raw) ? raw : [];
   const output: VocabItem[] = [];
   const seen = new Set<string>();
@@ -161,8 +218,10 @@ function normalizeVocab(raw: unknown, normalizedText: string, language?: string)
     if (!row || typeof row !== "object") continue;
     const record = row as Record<string, unknown>;
     const type = typeof record.type === "string" ? record.type.trim() : undefined;
-    const word = normalizeVocabWord({
-      word: typeof record.word === "string" ? record.word : "",
+    const rawWord = typeof record.word === "string" ? record.word : "";
+    const { word, surface } = resolveCanonicalVocabEntry({
+      word: rawWord,
+      surface: typeof record.surface === "string" ? record.surface : rawWord,
       type,
       language,
     });
@@ -174,13 +233,14 @@ function normalizeVocab(raw: unknown, normalizedText: string, language?: string)
           : "";
     const definition = normalizeDefinition(rawDefinition);
     if (!word || !definition) continue;
-    if (!appearsInText(normalizedText, word)) continue;
+    if (!appearsInText(normalizedText, surface || word)) continue;
     const key = word.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
     if (language && isDiscouragedTransparentWord(word, language)) continue;
+    if (isLowValueStudyWord({ word, language, level, cefrLevel, type })) continue;
     if (isInvalidMultiwordVocab(word, { type, storyText: normalizedText })) continue;
-    output.push({ word, definition, ...(type ? { type } : {}) });
+    output.push({ word, ...(surface && surface !== word ? { surface } : {}), definition, ...(type ? { type } : {}) });
   }
 
   return output;
@@ -218,6 +278,270 @@ function extractCandidateWords(text: string, max = 500): string[] {
     .sort((a, b) => b[1] - a[1])
     .slice(0, max)
     .map(([token]) => token);
+}
+
+function getStopwords(language?: string): Set<string> {
+  return STOPWORDS_BY_LANGUAGE[normalizeToken(language ?? "")] ?? new Set<string>();
+}
+
+function guessTypeHint(word: string, language?: string): string | undefined {
+  const normalizedLanguage = normalizeToken(language ?? "");
+  const tokens = splitWordTokens(word);
+  if (tokens.length > 1) return "expression";
+  const token = normalizeToken(word);
+  if (!token) return undefined;
+
+  if (normalizedLanguage === "spanish") {
+    if (/(ar|er|ir|ando|iendo|ado|ido)$/i.test(token)) return "verb";
+    if (/(mente)$/i.test(token)) return "other";
+    if (/(cion|sion|dad|tad|ez|eza|ura)$/i.test(token)) return "noun";
+    if (/(oso|osa|al|able|ible|ario|aria)$/i.test(token)) return "adjective";
+  }
+
+  if (normalizedLanguage === "german") {
+    if (/en$/i.test(token)) return "verb";
+    if (/ung$|keit$|heit$|schaft$|tum$/i.test(token)) return "noun";
+    if (/ig$|lich$|isch$|bar$/i.test(token)) return "adjective";
+  }
+
+  if (normalizedLanguage === "english") {
+    if (/(ing|ed|en)$/i.test(token)) return "verb";
+    if (/(ness|tion|sion|ment|ship)$/i.test(token)) return "noun";
+    if (/(ful|less|able|ible|ous|ive|al)$/i.test(token)) return "adjective";
+  }
+
+  return undefined;
+}
+
+function chooseBestSurface(surfaceCounts: Map<string, number>): string {
+  return [...surfaceCounts.entries()]
+    .sort((a, b) => {
+      if (b[1] !== a[1]) return b[1] - a[1];
+      return b[0].length - a[0].length;
+    })[0]?.[0] ?? "";
+}
+
+function extractDeterministicCandidates(text: string, language?: string, max = 140): DeterministicCandidate[] {
+  const stopwords = getStopwords(language);
+  const tokenMatches = [...text.matchAll(/[\p{L}][\p{L}\p{M}'’-]*/gu)];
+  const unigramStats = new Map<
+    string,
+    { count: number; surfaces: Map<string, number>; firstIndex: number }
+  >();
+
+  for (let i = 0; i < tokenMatches.length; i += 1) {
+    const raw = tokenMatches[i]?.[0] ?? "";
+    const normalized = normalizeToken(raw);
+    if (!normalized || normalized.length < 3 || normalized.length > 32) continue;
+    if (stopwords.has(normalized)) continue;
+
+    const entry = unigramStats.get(normalized) ?? {
+      count: 0,
+      surfaces: new Map<string, number>(),
+      firstIndex: i,
+    };
+    entry.count += 1;
+    entry.surfaces.set(raw, (entry.surfaces.get(raw) ?? 0) + 1);
+    unigramStats.set(normalized, entry);
+  }
+
+  const candidates: DeterministicCandidate[] = [];
+  for (const [normalized, entry] of unigramStats.entries()) {
+    const word = chooseBestSurface(entry.surfaces);
+    if (!word) continue;
+    if (language && isDiscouragedTransparentWord(word, language)) continue;
+    if (isInvalidMultiwordVocab(word, { type: guessTypeHint(word, language), storyText: text })) continue;
+
+    const score =
+      entry.count * 5 +
+      Math.min(normalized.length, 12) +
+      (entry.count > 1 ? 4 : 0) -
+      Math.min(entry.firstIndex, 80) * 0.03;
+
+    candidates.push({
+      word,
+      score,
+      typeHint: guessTypeHint(word, language),
+    });
+  }
+
+  const seenPhrase = new Set<string>();
+  for (let i = 0; i < tokenMatches.length - 1; i += 1) {
+    for (const size of [2, 3]) {
+      if (i + size > tokenMatches.length) continue;
+      const parts = tokenMatches.slice(i, i + size).map((match) => match[0]);
+      const normalizedParts = parts.map((part) => normalizeToken(part)).filter(Boolean);
+      if (normalizedParts.length !== size) continue;
+      if (!normalizedParts.some((token) => stopwords.has(token))) continue;
+      const phrase = parts.join(" ").replace(/\s+/g, " ").trim();
+      const phraseKey = normalizedParts.join(" ");
+      if (seenPhrase.has(phraseKey)) continue;
+      seenPhrase.add(phraseKey);
+      if (isInvalidMultiwordVocab(phrase, { type: "expression", storyText: text })) continue;
+      if (!appearsInText(text, phrase)) continue;
+      const score = 6 + normalizedParts.filter((token) => token.length > 3).length * 3 - i * 0.02;
+      candidates.push({ word: phrase, score, typeHint: "expression" });
+    }
+  }
+
+  return candidates
+    .sort((a, b) => b.score - a.score || a.word.localeCompare(b.word))
+    .slice(0, max);
+}
+
+function normalizeCandidateSelection(
+  raw: unknown,
+  normalizedText: string,
+  language?: string
+): CandidateSelectionItem[] {
+  const rows = Array.isArray(raw) ? raw : [];
+  const output: CandidateSelectionItem[] = [];
+  const seen = new Set<string>();
+
+  for (const row of rows) {
+    const record =
+      typeof row === "string"
+        ? { word: row }
+        : row && typeof row === "object"
+          ? (row as Record<string, unknown>)
+          : null;
+    if (!record) continue;
+
+    const type = typeof record.type === "string" ? record.type.trim() : undefined;
+    const rawWord = typeof record.word === "string" ? record.word : "";
+    const { word, surface } = resolveCanonicalVocabEntry({
+      word: rawWord,
+      surface: typeof record.surface === "string" ? record.surface : rawWord,
+      type,
+      language,
+    });
+    if (!word) continue;
+    if (!appearsInText(normalizedText, surface || word)) continue;
+    if (language && isDiscouragedTransparentWord(word, language)) continue;
+    if (isInvalidMultiwordVocab(word, { type, storyText: normalizedText })) continue;
+
+    const key = word.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    output.push({ word, ...(surface && surface !== word ? { surface } : {}), ...(type ? { type } : {}) });
+  }
+
+  return output;
+}
+
+async function requestCandidateSelectionFromModel(args: {
+  text: string;
+  language: string;
+  variant?: string;
+  cefrLevel?: string;
+  level: string;
+  focus: string;
+  topic: string;
+  candidates: DeterministicCandidate[];
+  minItems: number;
+  maxItems: number;
+}): Promise<CandidateSelectionItem[]> {
+  const variantClause = buildVariantPromptClause(args.language, normalizeVariant(args.variant));
+  const selectionTarget = Math.min(args.maxItems + 8, Math.max(args.minItems + 6, args.maxItems + 4));
+  const candidateBlock = args.candidates
+    .map((candidate, index) =>
+      `${index + 1}. ${candidate.word}${candidate.typeHint ? ` [${candidate.typeHint}]` : ""}`
+    )
+    .join("\n");
+
+  const prompt = `
+You are selecting high-value study vocabulary candidates from a language-learning story.
+
+Rules:
+- Return ONLY a JSON array.
+- Select between ${selectionTarget} and ${selectionTarget + 4} items from the candidate list.
+- Use ONLY exact words/phrases from the candidate list.
+- Prefer reusable, concrete, pedagogically strong vocabulary.
+- Avoid transparent/basic items unless essential.
+- Prefer strong single words. Only keep multi-word items if they are short lexicalized expressions.
+- Keep type as one label among ["verb","noun","adjective","expression","slang","other"].
+- Story language: ${args.language}.
+- Learner level: ${cefrPromptLabel(args.cefrLevel, args.level)}.
+- Focus: ${args.focus}.
+- Topic/context: ${args.topic || "general"}.
+${variantClause}
+
+Candidate list:
+${candidateBlock}
+`;
+
+  const response = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    temperature: 0.1,
+    messages: [
+      {
+        role: "system",
+        content: "You select vocabulary candidates from a fixed list. Output valid JSON only.",
+      },
+      {
+        role: "user",
+        content: `${prompt}\n\nStory:\n${args.text}`,
+      },
+    ],
+  });
+
+  const content = response.choices[0]?.message?.content?.trim();
+  if (!content) throw new Error("Empty response while selecting vocabulary candidates.");
+  return normalizeCandidateSelection(parseModelResponse(content), args.text, args.language);
+}
+
+async function requestDefinitionsForSelection(args: {
+  text: string;
+  language: string;
+  variant?: string;
+  cefrLevel?: string;
+  level: string;
+  topic: string;
+  selected: CandidateSelectionItem[];
+}): Promise<VocabItem[]> {
+  const variantClause = buildVariantPromptClause(args.language, normalizeVariant(args.variant));
+  const selectionBlock = args.selected
+    .map((item) => `- ${item.surface ?? item.word}${item.type ? ` [${item.type}]` : ""}`)
+    .join("\n");
+
+  const prompt = `
+You write learner-friendly English definitions for selected vocabulary items from a story.
+
+Rules:
+- Return ONLY a JSON array.
+- Keep every "surface" exactly as provided.
+- Set "word" to the dictionary/root form learners should study.
+- Keep "type" when provided, or infer one label among ["verb","noun","adjective","expression","slang","other"].
+- Each definition must have 6-18 words.
+- Explain practical meaning or usage nuance in context, not a direct translation.
+- Start each definition with a capital letter.
+- Story language: ${args.language}.
+- Learner level: ${cefrPromptLabel(args.cefrLevel, args.level)}.
+- Topic/context: ${args.topic || "general"}.
+${variantClause}
+
+Selected vocabulary:
+${selectionBlock}
+`;
+
+  const response = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    temperature: 0.2,
+    messages: [
+      {
+        role: "system",
+        content: "You write vocabulary definitions. Output valid JSON only.",
+      },
+      {
+        role: "user",
+        content: `${prompt}\n\nStory:\n${args.text}`,
+      },
+    ],
+  });
+
+  const content = response.choices[0]?.message?.content?.trim();
+  if (!content) throw new Error("Empty response while writing vocabulary definitions.");
+  return normalizeVocab(parseModelResponse(content), args.text, args.language, args.level, args.cefrLevel);
 }
 
 function parseModelResponse(content: string): unknown {
@@ -277,7 +601,8 @@ Task:
 - Story topic/context: ${topic || "general"}.
 ${variantClause}
 - Each item must have:
-  - "word": exact form as it appears in the story text
+  - "word": dictionary/root form learners should study
+  - "surface": exact form as it appears in the story text
   - "definition": ${
     detailedDefinitions
       ? "clear English explanation with 6-18 words, including nuance or typical usage in context"
@@ -318,7 +643,7 @@ ${candidateBlock}
   const content = response.choices[0]?.message?.content?.trim();
   if (!content) throw new Error("Empty response from model.");
   const parsed = parseModelResponse(content);
-  return normalizeVocab(parsed, text, language);
+  return normalizeVocab(parsed, text, language, level, cefrLevel);
 }
 
 export async function POST(req: Request) {
@@ -362,18 +687,50 @@ export async function POST(req: Request) {
       ? toIntInRange(body.maxItems, dynamicRange.maxItems, minItems, 45)
       : Math.max(minItems, dynamicRange.maxItems);
 
-    let vocab = await requestVocabFromModel({
-      text,
-      language,
-      variant,
-      cefrLevel,
-      level,
-      focus,
-      topic,
-      minItems,
-      maxItems,
-      detailedDefinitions: true,
-    });
+    const deterministicCandidates = extractDeterministicCandidates(text, language, 160);
+    const deterministicCandidateWords = deterministicCandidates.map((candidate) => candidate.word);
+
+    let vocab: VocabItem[] = [];
+    if (deterministicCandidates.length > 0) {
+      const selected = await requestCandidateSelectionFromModel({
+        text,
+        language,
+        variant,
+        cefrLevel,
+        level,
+        focus,
+        topic,
+        candidates: deterministicCandidates,
+        minItems,
+        maxItems,
+      });
+      if (selected.length > 0) {
+        vocab = await requestDefinitionsForSelection({
+          text,
+          language,
+          variant,
+          cefrLevel,
+          level,
+          topic,
+          selected,
+        });
+      }
+    }
+
+    if (vocab.length === 0) {
+      vocab = await requestVocabFromModel({
+        text,
+        language,
+        variant,
+        cefrLevel,
+        level,
+        focus,
+        topic,
+        minItems,
+        maxItems,
+        detailedDefinitions: true,
+      });
+    }
     vocab = vocab.filter(
       (item) =>
         !isDiscouragedTransparentWord(item.word, language) &&
@@ -383,7 +740,9 @@ export async function POST(req: Request) {
     const lowQualityDefinitions = vocab.filter((item) => !hasPedagogicalDefinition(item.definition)).length;
     if (vocab.length < minItems || lowQualityDefinitions > Math.floor(vocab.length * 0.35)) {
       // Fallback pass constrained to exact words found in text, helps verbs/slang alignment.
-      const candidates = extractCandidateWords(text, 450);
+      const candidates = deterministicCandidateWords.length > 0
+        ? deterministicCandidateWords.slice(0, 450)
+        : extractCandidateWords(text, 450);
       const refill = await requestVocabFromModel({
         text,
         language,
@@ -401,6 +760,7 @@ export async function POST(req: Request) {
       vocab = vocab.filter(
         (item) =>
           !isDiscouragedTransparentWord(item.word, language) &&
+          !isLowValueStudyWord({ word: item.word, language, level, cefrLevel, type: item.type }) &&
           !isInvalidMultiwordVocab(item.word, { type: item.type, storyText: text })
       );
     }
@@ -409,7 +769,9 @@ export async function POST(req: Request) {
       // Second refill focused on missing amount.
       const remainingMin = Math.max(5, minItems - vocab.length);
       const remainingMax = Math.max(remainingMin, maxItems - vocab.length + 5);
-      const candidates = extractCandidateWords(text, 500).filter(
+      const candidates = (deterministicCandidateWords.length > 0
+        ? deterministicCandidateWords
+        : extractCandidateWords(text, 500)).filter(
         (token) => !vocab.some((item) => item.word.toLowerCase() === token.toLowerCase())
       );
       const refill = await requestVocabFromModel({
@@ -429,6 +791,7 @@ export async function POST(req: Request) {
       vocab = vocab.filter(
         (item) =>
           !isDiscouragedTransparentWord(item.word, language) &&
+          !isLowValueStudyWord({ word: item.word, language, level, cefrLevel, type: item.type }) &&
           !isInvalidMultiwordVocab(item.word, { type: item.type, storyText: text })
       );
     }
@@ -439,7 +802,7 @@ export async function POST(req: Request) {
       const enrichPrompt = `
 Rewrite the "definition" of each item in clear English.
 Rules:
-- Keep the same "word" and "type".
+- Keep the same "word", preserve "surface" when present, and keep "type".
 - Definition must be 6-18 words.
 - Explain practical meaning in context, not a one-word gloss.
 - DO NOT translate directly. Avoid outputs like "to go", "cheese", "to smile".
@@ -471,7 +834,7 @@ Return ONLY valid JSON array with same items.
       const strictPrompt = `
 Rewrite ONLY these low-quality definitions.
 Rules:
-- Keep same "word" and "type".
+- Keep same "word", "surface" when present, and "type".
 - Each definition must be 8-18 words.
 - Explain meaning in English with context/usage nuance.
 - Never return direct translation equivalents.
@@ -506,7 +869,9 @@ Return ONLY valid JSON array.
     if (vocab.length < minItems) {
       const remainingMin = Math.max(4, minItems - vocab.length);
       const remainingMax = Math.max(remainingMin, Math.min(maxItems, vocab.length + remainingMin + 4));
-      const candidates = extractCandidateWords(text, 550).filter(
+      const candidates = (deterministicCandidateWords.length > 0
+        ? deterministicCandidateWords
+        : extractCandidateWords(text, 550)).filter(
         (token) => !vocab.some((item) => item.word.toLowerCase() === token.toLowerCase())
       );
       const rescue = await requestVocabFromModel({

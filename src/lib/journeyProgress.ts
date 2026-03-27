@@ -26,8 +26,14 @@ function isCompletedFromAudio(progressSec?: number, audioDurationSec?: number): 
   return progressSec >= audioDurationSec * COMPLETE_RATIO;
 }
 
-export async function getCompletedJourneyStoryKeys(): Promise<Set<string>> {
+async function resolveJourneyUserId(userIdOverride?: string): Promise<string | null> {
+  if (userIdOverride) return userIdOverride;
   const { userId } = await auth();
+  return userId ?? null;
+}
+
+export async function getCompletedJourneyStoryKeys(userIdOverride?: string): Promise<Set<string>> {
+  const userId = await resolveJourneyUserId(userIdOverride);
   if (!userId) return new Set<string>();
 
   const metrics = await prisma.userMetric.findMany({
@@ -84,8 +90,8 @@ export async function getCompletedJourneyStoryKeys(): Promise<Set<string>> {
   return completed;
 }
 
-export async function getPracticedJourneyTopicKeys(): Promise<Set<string>> {
-  const { userId } = await auth();
+export async function getPracticedJourneyTopicKeys(userIdOverride?: string): Promise<Set<string>> {
+  const userId = await resolveJourneyUserId(userIdOverride);
   if (!userId) return new Set<string>();
 
   const rows = await prisma.userMetric.findMany({
@@ -126,8 +132,8 @@ export async function getPracticedJourneyTopicKeys(): Promise<Set<string>> {
   return practiced;
 }
 
-export async function getPassedJourneyCheckpointKeys(): Promise<Set<string>> {
-  const { userId } = await auth();
+export async function getPassedJourneyCheckpointKeys(userIdOverride?: string): Promise<Set<string>> {
+  const userId = await resolveJourneyUserId(userIdOverride);
   if (!userId) return new Set<string>();
 
   const rows = await prisma.userMetric.findMany({
@@ -173,8 +179,8 @@ export type JourneyDueReviewItem = {
   progressKey: string | null;
 };
 
-export async function getJourneyDueReviewItems(limit = 200): Promise<JourneyDueReviewItem[]> {
-  const { userId } = await auth();
+export async function getJourneyDueReviewItems(limit = 200, userIdOverride?: string): Promise<JourneyDueReviewItem[]> {
+  const userId = await resolveJourneyUserId(userIdOverride);
   if (!userId) return [];
 
   const rows = await prisma.favorite.findMany({

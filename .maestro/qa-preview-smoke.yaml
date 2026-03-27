@@ -1,0 +1,108 @@
+appId: com.digitalpolyglot.mobile
+---
+- launchApp:
+    clearState: false
+
+- runFlow:
+    when:
+      visible:
+        id: "qa-reader-screen"
+    commands:
+      - tapOn:
+          id: "qa-reader-back"
+
+- runFlow:
+    when:
+      visible:
+        id: "qa-book-detail-screen"
+    commands:
+      - tapOn:
+          id: "qa-book-detail-back"
+
+- runFlow:
+    when:
+      visible: "Browse preview catalog"
+    commands:
+      - tapOn:
+          text: "Browse preview catalog"
+
+- runFlow:
+    when:
+      visible:
+        id: "qa-tab-home"
+    commands:
+      - tapOn:
+          id: "qa-tab-home"
+
+- assertVisible:
+    id: "qa-tab-home"
+- takeScreenshot: "01-preview-home"
+
+- tapOn:
+    id: "qa-tab-explore"
+- assertVisible:
+    id: "qa-explore-search-input"
+- takeScreenshot: "02-preview-explore"
+
+- scrollUntilVisible:
+    element:
+      id: "qa-explore-book-card-0"
+    direction: DOWN
+    timeout: 120000
+
+- tapOn:
+    id: "qa-explore-book-card-0"
+- assertVisible:
+    id: "qa-book-detail-screen"
+- takeScreenshot: "03-preview-book"
+
+- scrollUntilVisible:
+    element:
+      id: "qa-book-start-reading"
+    direction: DOWN
+    timeout: 120000
+
+- tapOn:
+    id: "qa-book-start-reading"
+- assertVisible:
+    id: "qa-reader-screen"
+- takeScreenshot: "04-preview-reader"
+
+- tapOn:
+    id: "qa-reader-back"
+- assertVisible:
+    id: "qa-book-detail-screen"
+
+- tapOn:
+    id: "qa-book-detail-back"
+- tapOn:
+    id: "qa-tab-practice"
+- assertVisible:
+    id: "qa-tab-practice"
+- takeScreenshot: "05-preview-practice"
+
+- tapOn:
+    id: "qa-tab-favorites"
+- assertVisible:
+    id: "qa-tab-favorites"
+- takeScreenshot: "06-preview-favorites"
+
+- runFlow:
+    when:
+      visible:
+        id: "qa-tab-journey"
+    commands:
+      - tapOn:
+          id: "qa-tab-journey"
+      - assertVisible:
+          id: "qa-journey-level-a1"
+      - takeScreenshot: "07-preview-journey"
+
+- runFlow:
+    when:
+      visible:
+        id: "qa-tab-signin"
+    commands:
+      - assertVisible:
+          id: "qa-tab-signin"
+      - takeScreenshot: "07-preview-signin-gate"

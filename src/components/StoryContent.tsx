@@ -11,7 +11,7 @@ export type StoryContentProps = {
   className?: string;
   onParagraphSelect?: (e: React.MouseEvent<HTMLParagraphElement>) => void;
   renderWord?: (t: string) => React.ReactNode;
-  vocab?: Array<{ word: string }>;
+  vocab?: Array<{ word: string; surface?: string }>;
 };
 
 const MAX_HIGHLIGHT_WORDS = 30;
@@ -118,12 +118,17 @@ function extractHtmlBlocks(html: string): HtmlBlock[] {
   return splitSentences(fallback).map((text) => ({ tag: "p", text }));
 }
 
-function normalizeVocabForHighlight(vocab: Array<{ word: string }>): string[] {
+function normalizeVocabForHighlight(vocab: Array<{ word: string; surface?: string }>): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
 
   for (const item of vocab) {
-    const raw = typeof item?.word === "string" ? item.word.trim() : "";
+    const raw =
+      typeof item?.surface === "string" && item.surface.trim()
+        ? item.surface.trim()
+        : typeof item?.word === "string"
+          ? item.word.trim()
+          : "";
     if (!raw) continue;
     if (raw.length < 3 || raw.length > MAX_HIGHLIGHT_WORD_LENGTH) continue;
     if (/[<>[\]{}]/.test(raw)) continue;
@@ -142,7 +147,7 @@ function normalizeVocabForHighlight(vocab: Array<{ word: string }>): string[] {
 
 function highlightVocabulary(
   text: string,
-  vocab: Array<{ word: string }>,
+  vocab: Array<{ word: string; surface?: string }>,
   renderWord: (t: string) => React.ReactNode
 ) {
   if (text.length > MAX_TEXT_LENGTH_FOR_HIGHLIGHT) return renderWord(text);
@@ -171,6 +176,7 @@ function highlightVocabulary(
   }
 
   const nodes: React.ReactNode[] = [];
+  const alreadyHighlighted = new Set<string>();
   let lastIndex = 0;
   let key = 0;
   let match: RegExpExecArray | null = regex.exec(text);
@@ -187,11 +193,17 @@ function highlightVocabulary(
     }
 
     const canonical = canonicalByLower.get(matchedText.toLowerCase()) ?? matchedText;
-    nodes.push(
-      <span key={`voc-${key++}`} className="vocab-word" data-word={canonical}>
-        {renderWord(matchedText)}
-      </span>
-    );
+    const canonicalKey = canonical.toLowerCase();
+    if (alreadyHighlighted.has(canonicalKey)) {
+      nodes.push(<React.Fragment key={`txt-${key++}`}>{renderWord(matchedText)}</React.Fragment>);
+    } else {
+      alreadyHighlighted.add(canonicalKey);
+      nodes.push(
+        <span key={`voc-${key++}`} className="vocab-word" data-word={canonical}>
+          {renderWord(matchedText)}
+        </span>
+      );
+    }
     lastIndex = end;
     match = regex.exec(text);
   }

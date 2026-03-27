@@ -1,9 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { auth } from "@clerk/nextjs/server";
 import { createClerkClient } from "@clerk/backend";
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@/generated/prisma";
+import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
@@ -17,9 +18,12 @@ function isMissingBillingEntitlementsTableError(error: unknown) {
   );
 }
 
-export async function POST() {
+export async function POST(request: NextRequest) {
   try {
-    const { userId } = await auth();
+    const { userId: clerkUserId } = await auth();
+    const mobileSession = !clerkUserId ? await getMobileSessionFromRequest(request) : null;
+    const userId = clerkUserId ?? mobileSession?.sub ?? null;
+
     if (!userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }

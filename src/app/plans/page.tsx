@@ -4,13 +4,13 @@ import { Suspense, useEffect, useMemo, useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import type { Plan } from '@/lib/access';
+import type { Plan } from '@domain/access';
 import {
   GOOGLE_PLAY_PREMIUM_ANNUAL_PRODUCT_ID,
   GOOGLE_PLAY_PREMIUM_MONTHLY_PRODUCT_ID,
   STRIPE_PREMIUM_ANNUAL_PRICE_ID,
   STRIPE_PREMIUM_MONTHLY_PRICE_ID,
-} from '@/lib/billingCatalog';
+} from '@domain/billingCatalog';
 
 const LEGAL_ACCEPTANCE_KEY = 'dp_checkout_legal_acceptance_v1';
 const PLAY_BILLING_STORE = 'https://play.google.com/billing';

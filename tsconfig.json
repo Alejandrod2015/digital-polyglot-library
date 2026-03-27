@@ -16,11 +16,14 @@
     "plugins": [{ "name": "next" }],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@domain": ["./packages/domain/src/index.ts"],
+      "@domain/*": ["./packages/domain/src/*"]
     }
   },
   "include": [
     "next-env.d.ts",
+    "packages/domain/src/**/*.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
     ".next/types/**/*.ts"
