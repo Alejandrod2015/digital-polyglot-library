@@ -117,17 +117,9 @@ export default function MetricsDashboard() {
   const [days, setDays] = useState("30");
   const [bookSlug, setBookSlug] = useState("");
   const [storySlug, setStorySlug] = useState("");
-  const [accessKey, setAccessKey] = useState("");
   const [section, setSection] = useState<MetricsSection>("overview");
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem("dp_metrics_access_key") ?? "";
-      if (saved) setAccessKey(saved);
-    } catch { /* ignore */ }
-  }, []);
 
   async function loadMetrics(targetSection: MetricsSection = section, force = false) {
     if (!force && sectionCache[targetSection]) {
@@ -142,18 +134,19 @@ export default function MetricsDashboard() {
       qs.set("days", days);
       if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
       if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
-      const res = await fetch(`/api/metrics/dashboard?${qs.toString()}`, {
-        headers: accessKey.trim() ? { "x-metrics-key": accessKey.trim() } : undefined,
-      });
-      if (!res.ok) throw new Error(`Error ${res.status}`);
+      const res = await fetch(`/api/metrics/dashboard?${qs.toString()}`);
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
+      }
       const json = (await res.json()) as DashboardData;
       setSectionCache((c) => ({ ...c, [targetSection]: json }));
       setData(json);
-      try { if (accessKey.trim()) window.localStorage.setItem("dp_metrics_access_key", accessKey.trim()); } catch { /* ignore */ }
     } catch (err) {
-      const message = err instanceof Error && err.message.includes("403")
-        ? "Forbidden: invalid or missing access key."
-        : "Failed to load metrics dashboard.";
+      const msg = err instanceof Error ? err.message : String(err);
+      const message = msg.includes("403")
+        ? "Forbidden: you don't have access to metrics."
+        : `Failed to load metrics: ${msg}`;
       setErrorMessage(message);
       console.error("Error loading metrics dashboard:", err);
       setData(EMPTY_DATA);
@@ -177,7 +170,7 @@ export default function MetricsDashboard() {
   useEffect(() => {
     setSectionCache({});
     setData(EMPTY_DATA);
-  }, [accessKey, bookSlug, days, storySlug]);
+  }, [bookSlug, days, storySlug]);
 
   /* ── KPI definitions ── */
   const kpis = [
@@ -554,7 +547,7 @@ export default function MetricsDashboard() {
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 
         {/* ── Filter toolbar ── */}
-        <div style={{ ...card, display: "flex", flexWrap: "wrap", alignItems: "flex-end", gap: 12 }}>
+        <form autoComplete="off" onSubmit={(e) => { e.preventDefault(); void loadMetrics(section, true); }} style={{ ...card, display: "flex", flexWrap: "wrap", alignItems: "flex-end", gap: 12 }}>
           <div style={{ flex: "0 0 150px" }}>
             <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Time range</label>
             <select value={days} onChange={(e) => setDays(e.target.value)} className="studio-input" style={input}>
@@ -566,18 +559,14 @@ export default function MetricsDashboard() {
           </div>
           <div style={{ flex: "1 1 160px" }}>
             <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Book slug</label>
-            <input value={bookSlug} onChange={(e) => setBookSlug(e.target.value)} placeholder="Filter by bookSlug" className="studio-input" style={input} />
+            <input value={bookSlug} onChange={(e) => setBookSlug(e.target.value)} placeholder="Filter by bookSlug" className="studio-input" style={input} autoComplete="off" data-1p-ignore data-lpignore="true" />
           </div>
           <div style={{ flex: "1 1 160px" }}>
             <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Story slug</label>
-            <input value={storySlug} onChange={(e) => setStorySlug(e.target.value)} placeholder="Filter by storySlug" className="studio-input" style={input} />
-          </div>
-          <div style={{ flex: "1 1 140px" }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Access key</label>
-            <input value={accessKey} onChange={(e) => setAccessKey(e.target.value)} placeholder="Access key" type="password" className="studio-input" style={input} />
+            <input value={storySlug} onChange={(e) => setStorySlug(e.target.value)} placeholder="Filter by storySlug" className="studio-input" style={input} autoComplete="off" data-1p-ignore data-lpignore="true" />
           </div>
           <button
-            onClick={() => void loadMetrics(section, true)}
+            type="submit"
             disabled={loading}
             className="studio-btn-primary"
             style={{ ...btnPrimary, opacity: loading ? 0.7 : 1, flexShrink: 0 }}
@@ -585,7 +574,7 @@ export default function MetricsDashboard() {
             {loading ? spinner : null}
             {loading ? "Loading..." : "Refresh"}
           </button>
-        </div>
+        </form>
 
         {errorMessage && (
           <div style={{ padding: "12px 16px", borderRadius: 8, backgroundColor: "rgba(239, 68, 68, 0.1)", border: "1px solid rgba(239, 68, 68, 0.3)", color: "#ef4444", fontSize: 14, fontWeight: 500 }}>

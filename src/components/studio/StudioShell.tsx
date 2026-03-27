@@ -36,6 +36,12 @@ const NAV_SECTIONS = [
   },
 ];
 
+/* ── Colors ── */
+const ACCENT = "#14b8a6";
+const ACCENT_SOFT = "rgba(20, 184, 166, 0.15)";
+const SIDEBAR_BG = "#080f1a";
+const SIDEBAR_BORDER = "rgba(255, 255, 255, 0.08)";
+
 function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
   const props = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
@@ -66,17 +72,50 @@ export default function StudioShell({
   const pathname = usePathname() ?? "";
 
   return (
-    <div className="studio-shell">
+    <div style={{ display: "flex", minHeight: "100vh", backgroundColor: "var(--background)", color: "var(--foreground)" }}>
       {/* ── Sidebar ── */}
-      <aside className="studio-sidebar">
+      <aside
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          bottom: 0,
+          width: 240,
+          background: SIDEBAR_BG,
+          borderRight: `1px solid ${SIDEBAR_BORDER}`,
+          display: "flex",
+          flexDirection: "column",
+          zIndex: 40,
+          overflowY: "auto",
+        }}
+      >
         {/* Brand */}
-        <div className="studio-sidebar-brand">
+        <div
+          style={{
+            padding: "20px 20px 16px",
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            borderBottom: `1px solid ${SIDEBAR_BORDER}`,
+          }}
+        >
           <StudioActionLink
             href="/studio"
             pendingLabel="Opening..."
             style={{ display: "flex", alignItems: "center", gap: 10, background: "none", border: "none", padding: 0 }}
           >
-            <div className="studio-brand-icon">
+            <div
+              style={{
+                width: 28,
+                height: 28,
+                borderRadius: 8,
+                background: ACCENT,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+              }}
+            >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="12 2 2 7 12 12 22 7 12 2" />
                 <polyline points="2 17 12 22 22 17" />
@@ -87,14 +126,40 @@ export default function StudioShell({
               Digital Polyglot
             </span>
           </StudioActionLink>
-          <span className="studio-badge">STUDIO</span>
+          <span
+            style={{
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: "0.08em",
+              color: ACCENT,
+              background: ACCENT_SOFT,
+              padding: "2px 6px",
+              borderRadius: 4,
+              marginLeft: "auto",
+            }}
+          >
+            STUDIO
+          </span>
         </div>
 
         {/* Nav sections */}
-        <nav className="studio-sidebar-nav">
+        <nav style={{ padding: "12px 0", flex: 1 }}>
           {NAV_SECTIONS.map((section) => (
-            <div key={section.label} className="studio-nav-section">
-              <span className="studio-nav-section-label">{section.label}</span>
+            <div key={section.label} style={{ padding: "0 12px", marginBottom: 8 }}>
+              <span
+                style={{
+                  display: "block",
+                  fontSize: 10,
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  color: "var(--muted)",
+                  padding: "12px 8px 6px",
+                  opacity: 0.7,
+                }}
+              >
+                {section.label}
+              </span>
               {section.items.map((item) => {
                 const active = item.exact
                   ? pathname === item.href
@@ -104,7 +169,21 @@ export default function StudioShell({
                     key={item.href}
                     href={item.href}
                     pendingLabel={`Opening ${item.label}...`}
-                    className={`studio-sidebar-link ${active ? "studio-sidebar-link-active" : ""}`}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 10,
+                      width: "100%",
+                      padding: "8px 10px",
+                      borderRadius: 8,
+                      fontSize: 14,
+                      fontWeight: active ? 600 : 500,
+                      color: active ? ACCENT : "var(--muted)",
+                      backgroundColor: active ? ACCENT_SOFT : "transparent",
+                      border: "none",
+                      textAlign: "left",
+                      transition: "background-color 0.15s, color 0.15s",
+                    }}
                   >
                     <NavIcon name={item.icon} />
                     <span>{item.label}</span>
@@ -117,19 +196,24 @@ export default function StudioShell({
       </aside>
 
       {/* ── Main area ── */}
-      <div className="studio-main">
+      <div style={{ marginLeft: 240, flex: 1, minWidth: 0 }}>
         {/* Page header */}
-        <header className="studio-page-header">
+        <header
+          style={{
+            padding: "24px 32px 20px",
+            borderBottom: "1px solid var(--card-border)",
+          }}
+        >
           {breadcrumbs && breadcrumbs.length > 0 && (
             <div style={{ display: "flex", alignItems: "center", gap: 4, marginBottom: 6 }}>
               {breadcrumbs.map((crumb, i) => (
                 <span key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                  {i > 0 && <span className="studio-breadcrumb-sep">/</span>}
+                  {i > 0 && <span style={{ color: "var(--muted)", opacity: 0.5, margin: "0 2px" }}>/</span>}
                   {crumb.href ? (
                     <StudioActionLink
                       href={crumb.href}
                       pendingLabel="Opening..."
-                      style={{ fontSize: 13, color: "var(--studio-accent)", background: "none", border: "none", padding: 0, fontWeight: 500 }}
+                      style={{ fontSize: 13, color: ACCENT, background: "none", border: "none", padding: 0, fontWeight: 500 }}
                     >
                       {crumb.label}
                     </StudioActionLink>
@@ -140,12 +224,18 @@ export default function StudioShell({
               ))}
             </div>
           )}
-          <h1 className="studio-page-title">{title}</h1>
-          {description && <p className="studio-page-desc">{description}</p>}
+          <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0, color: "var(--foreground)" }}>
+            {title}
+          </h1>
+          {description && (
+            <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 4, marginBottom: 0 }}>
+              {description}
+            </p>
+          )}
         </header>
 
         {/* Content */}
-        <main className="studio-content">
+        <main style={{ padding: "24px 32px 48px", maxWidth: 1200 }}>
           {children}
         </main>
       </div>
