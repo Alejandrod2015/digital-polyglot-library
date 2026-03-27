@@ -36,11 +36,7 @@ export default function AppShell({ children, currentVersion }: AppShellProps) {
   }
 
   if (isStudioView) {
-    return (
-      <main className="no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 overflow-y-auto bg-[var(--bg-content)] px-1 py-6">
-        {children}
-      </main>
-    );
+    return <>{children}</>;
   }
 
   const mainClassName =

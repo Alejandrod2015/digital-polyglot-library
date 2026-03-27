@@ -8,6 +8,14 @@
   --bg-content: #0b1e36;
   --bg-player: rgba(7, 16, 30, 0.94);
   --player-border-top: rgba(255, 255, 255, 0.14);
+
+  /* Studio accent (teal) */
+  --studio-accent: #14b8a6;
+  --studio-accent-hover: #0d9488;
+  --studio-accent-soft: rgba(20, 184, 166, 0.15);
+  --studio-accent-glow: rgba(20, 184, 166, 0.3);
+  --studio-sidebar-bg: #080f1a;
+  --studio-sidebar-border: rgba(255, 255, 255, 0.08);
   --foreground: #e6eaf2;
   --muted: #9aa7bd;
   --primary: #2563eb;
@@ -271,16 +279,6 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE y Edge */
   scrollbar-width: none; /* Firefox */
-}
-
-/* ── Studio accent color ── */
-:root {
-  --studio-accent: #14b8a6;
-  --studio-accent-hover: #0d9488;
-  --studio-accent-soft: rgba(20, 184, 166, 0.15);
-  --studio-accent-glow: rgba(20, 184, 166, 0.3);
-  --studio-sidebar-bg: #080f1a;
-  --studio-sidebar-border: rgba(255, 255, 255, 0.08);
 }
 
 /* ── Studio layout: sidebar + main ── */
