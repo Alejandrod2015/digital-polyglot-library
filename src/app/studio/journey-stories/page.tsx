@@ -7,11 +7,11 @@ export default async function JourneyStoriesPage() {
 
   return (
     <StudioShell
-      title="Journey Stories"
-      description="Start managing the stories that feed Journey here, while the legacy Sanity flow stays intact underneath."
+      title="Biblioteca de historias"
+      description="Aquí puedes revisar y editar historias existentes. Para crear journeys nuevos y completarlos, la entrada principal ahora es el creador."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
-        { label: "Journey Stories" },
+        { label: "Biblioteca de historias" },
       ]}
     >
       <JourneyStoriesPageClient />

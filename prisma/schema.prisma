@@ -9,6 +9,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum StudioRole {
+  admin
+  manager
+  content_creator
+}
+
+model StudioMember {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  role      StudioRole
+  name      String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@map("dp_studio_members")
+}
+
 enum BillingSource {
   stripe
   google_play

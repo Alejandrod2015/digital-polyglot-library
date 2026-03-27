@@ -99,16 +99,16 @@ const thStyle: React.CSSProperties = { padding: "8px 12px", fontSize: 12, fontWe
 const tdStyle: React.CSSProperties = { padding: "8px 12px", fontSize: 13, color: "var(--foreground)", borderBottom: "1px solid var(--card-border)", verticalAlign: "top" as const };
 
 const SECTIONS: Array<{ key: MetricsSection; label: string }> = [
-  { key: "overview", label: "Overview" },
-  { key: "acquisition", label: "Acquisition" },
+  { key: "overview", label: "Resumen" },
+  { key: "acquisition", label: "Adquisición" },
   { key: "engagement", label: "Engagement" },
-  { key: "learning", label: "Learning" },
-  { key: "content", label: "Content" },
+  { key: "learning", label: "Aprendizaje" },
+  { key: "content", label: "Contenido" },
   { key: "funnels", label: "Funnels" },
-  { key: "audience", label: "Audience" },
-  { key: "experiments", label: "Experiments" },
-  { key: "alerts", label: "Alerts" },
-  { key: "exports", label: "Exports" },
+  { key: "audience", label: "Audiencia" },
+  { key: "experiments", label: "Experimentos" },
+  { key: "alerts", label: "Alertas" },
+  { key: "exports", label: "Exportaciones" },
 ];
 
 export default function MetricsDashboard() {
@@ -145,8 +145,8 @@ export default function MetricsDashboard() {
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       const message = msg.includes("403")
-        ? "Forbidden: you don't have access to metrics."
-        : `Failed to load metrics: ${msg}`;
+        ? "No tienes acceso a métricas."
+        : `No se pudieron cargar las métricas: ${msg}`;
       setErrorMessage(message);
       console.error("Error loading metrics dashboard:", err);
       setData(EMPTY_DATA);
@@ -537,11 +537,11 @@ export default function MetricsDashboard() {
 
   return (
     <StudioShell
-      title="Metrics"
-      description="Track the stories, books, journeys, reminders, and funnels that matter so Studio can drive better editorial decisions."
+      title="Métricas"
+      description="Sigue las historias, libros, journeys, recordatorios y funnels que más importan para tomar mejores decisiones editoriales."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
-        { label: "Metrics" },
+        { label: "Métricas" },
       ]}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -549,21 +549,21 @@ export default function MetricsDashboard() {
         {/* ── Filter toolbar ── */}
         <form autoComplete="off" onSubmit={(e) => { e.preventDefault(); void loadMetrics(section, true); }} style={{ ...card, display: "flex", flexWrap: "wrap", alignItems: "flex-end", gap: 12 }}>
           <div style={{ flex: "0 0 150px" }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Time range</label>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Rango</label>
             <select value={days} onChange={(e) => setDays(e.target.value)} className="studio-input" style={input}>
-              <option value="7">Last 7 days</option>
-              <option value="30">Last 30 days</option>
-              <option value="90">Last 90 days</option>
-              <option value="180">Last 180 days</option>
+              <option value="7">Últimos 7 días</option>
+              <option value="30">Últimos 30 días</option>
+              <option value="90">Últimos 90 días</option>
+              <option value="180">Últimos 180 días</option>
             </select>
           </div>
           <div style={{ flex: "1 1 160px" }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Book slug</label>
-            <input value={bookSlug} onChange={(e) => setBookSlug(e.target.value)} placeholder="Filter by bookSlug" className="studio-input" style={input} autoComplete="off" data-1p-ignore data-lpignore="true" />
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Slug del libro</label>
+            <input value={bookSlug} onChange={(e) => setBookSlug(e.target.value)} placeholder="Filtrar por bookSlug" className="studio-input" style={input} autoComplete="off" data-1p-ignore data-lpignore="true" />
           </div>
           <div style={{ flex: "1 1 160px" }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Story slug</label>
-            <input value={storySlug} onChange={(e) => setStorySlug(e.target.value)} placeholder="Filter by storySlug" className="studio-input" style={input} autoComplete="off" data-1p-ignore data-lpignore="true" />
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Slug de la historia</label>
+            <input value={storySlug} onChange={(e) => setStorySlug(e.target.value)} placeholder="Filtrar por storySlug" className="studio-input" style={input} autoComplete="off" data-1p-ignore data-lpignore="true" />
           </div>
           <button
             type="submit"
@@ -572,7 +572,7 @@ export default function MetricsDashboard() {
             style={{ ...btnPrimary, opacity: loading ? 0.7 : 1, flexShrink: 0 }}
           >
             {loading ? spinner : null}
-            {loading ? "Loading..." : "Refresh"}
+            {loading ? "Cargando..." : "Actualizar"}
           </button>
         </form>
 

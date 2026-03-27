@@ -3,13 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "main": "expo/AppEntry",
-  "expo": {
-    "autolinking": {
-      "exclude": [
-        "@clerk/expo"
-      ]
-    }
-  },
   "scripts": {
     "start": "expo start",
     "ios": "expo start --ios",

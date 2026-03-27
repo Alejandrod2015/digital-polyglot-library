@@ -1,17 +1,212 @@
 "use client";
 
+import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import type { JourneyVariantPlan } from "@/app/journey/journeyCurriculum";
 import StudioActionLink from "@/components/studio/StudioActionLink";
+import StudioToast, { showToast } from "@/components/studio/StudioToast";
 
 type Props = { plans: JourneyVariantPlan[] };
 
 const COLORS = ["#2563eb", "#7c3aed", "#059669", "#d97706", "#ec4899", "#0ea5e9"];
+const LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"];
 
 export default function JourneyBuilderManager({ plans }: Props) {
+  const router = useRouter();
+  const language = "Spanish";
+  const [variantId, setVariantId] = useState("");
+  const [levelsIncluded, setLevelsIncluded] = useState<string[]>(["a1", "a2"]);
+  const [templateKey, setTemplateKey] = useState("empty");
+  const [creating, setCreating] = useState(false);
+
+  const templateOptions = useMemo(
+    () => [
+      { value: "empty", label: "Empezar vacío" },
+      ...plans.map((plan) => ({
+        value: `${plan.language}::${plan.variantId}`,
+        label: `Duplicar ${plan.language} · ${plan.variantId.toUpperCase()}`,
+      })),
+    ],
+    [plans]
+  );
+
+  function toggleLevel(levelId: string) {
+    setLevelsIncluded((current) =>
+      current.includes(levelId) ? current.filter((value) => value !== levelId) : [...current, levelId]
+    );
+  }
+
+  async function createJourney() {
+    const cleanVariant = variantId.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    if (!cleanVariant) {
+      showToast("Añade una variante para crear el journey.", "error");
+      return;
+    }
+    if (!levelsIncluded.length) {
+      showToast("Selecciona al menos un nivel.", "error");
+      return;
+    }
+
+    setCreating(true);
+    try {
+      const [templateLanguage, templateVariantId] =
+        templateKey !== "empty" ? templateKey.split("::") : [null, null];
+
+      const res = await fetch("/api/studio/journey-builder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          language,
+          variantId: cleanVariant,
+          levelsIncluded,
+          templateLanguage,
+          templateVariantId,
+        }),
+      });
+
+      if (res.status === 409) {
+        showToast("Ese journey ya existe.", "error");
+        return;
+      }
+      if (!res.ok) throw new Error(`Error ${res.status}`);
+
+      showToast("Journey creado.", "success");
+      router.push(`/studio/journey-builder/${encodeURIComponent(language)}/${encodeURIComponent(cleanVariant)}`);
+    } catch (error) {
+      console.error("Failed to create journey", error);
+      showToast("No se pudo crear el journey. Inténtalo otra vez.", "error");
+    } finally {
+      setCreating(false);
+    }
+  }
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+      <div
+        style={{
+          padding: 20,
+          borderRadius: 14,
+          backgroundColor: "var(--card-bg)",
+          border: "1px solid var(--card-border)",
+        }}
+      >
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div>
+            <p style={{ fontSize: 20, fontWeight: 700, color: "var(--foreground)", margin: 0 }}>
+              Crear journey nuevo
+            </p>
+            <p style={{ fontSize: 13, color: "var(--muted)", margin: "6px 0 0" }}>
+              Empieza definiendo la variante, los niveles incluidos y si quieres partir de una plantilla existente.
+            </p>
+          </div>
 
-      {/* Info */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <div>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>
+                Idioma
+              </label>
+              <div style={{ width: "100%", height: 40, borderRadius: 10, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <span style={{ fontSize: 14, fontWeight: 600 }}>Spanish</span>
+                <span style={{ fontSize: 11, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Fijo</span>
+              </div>
+              <p style={{ fontSize: 12, color: "var(--muted)", margin: "8px 0 0" }}>
+                Hoy los journeys solo están modelados para español, así que aquí no mostramos idiomas falsos.
+              </p>
+            </div>
+            <div>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>
+                Variante
+              </label>
+              <input
+                value={variantId}
+                onChange={(event) => setVariantId(event.target.value)}
+                placeholder="Ej. latam, spain, latam-business"
+                style={{ width: "100%", height: 40, borderRadius: 10, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px" }}
+              />
+            </div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 12 }}>
+            <div>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 8 }}>
+                Niveles incluidos
+              </label>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {LEVELS.map((levelId) => {
+                  const selected = levelsIncluded.includes(levelId);
+                  return (
+                    <button
+                      key={levelId}
+                      type="button"
+                      onClick={() => toggleLevel(levelId)}
+                      style={{
+                        height: 34,
+                        minWidth: 52,
+                        borderRadius: 999,
+                        border: `1px solid ${selected ? "var(--primary)" : "var(--card-border)"}`,
+                        backgroundColor: selected ? "rgba(37, 99, 235, 0.15)" : "var(--background)",
+                        color: selected ? "var(--primary)" : "var(--foreground)",
+                        fontSize: 13,
+                        fontWeight: 700,
+                        padding: "0 12px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {levelId.toUpperCase()}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+            <div>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>
+                Punto de partida
+              </label>
+              <select
+                value={templateKey}
+                onChange={(event) => setTemplateKey(event.target.value)}
+                style={{ width: "100%", height: 40, borderRadius: 10, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px" }}
+              >
+                {templateOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              <p style={{ fontSize: 12, color: "var(--muted)", margin: "8px 0 0" }}>
+                Puedes empezar vacío o duplicar una estructura ya existente para ahorrar trabajo.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, paddingTop: 4 }}>
+            <p style={{ fontSize: 12, color: "var(--muted)", margin: 0 }}>
+              Después podrás completar niveles, topics y metas de historias dentro del journey.
+            </p>
+            <button
+              type="button"
+              onClick={() => void createJourney()}
+              disabled={creating}
+              className="studio-btn-primary"
+              style={{
+                height: 42,
+                borderRadius: 10,
+                border: "none",
+                backgroundColor: "var(--primary)",
+                color: "#fff",
+                fontSize: 14,
+                fontWeight: 700,
+                padding: "0 18px",
+                cursor: creating ? "default" : "pointer",
+                opacity: creating ? 0.7 : 1,
+              }}
+            >
+              {creating ? "Creando..." : "Crear journey"}
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div
         style={{
           padding: "16px 20px",
@@ -21,19 +216,18 @@ export default function JourneyBuilderManager({ plans }: Props) {
         }}
       >
         <p style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)", margin: 0 }}>
-          Edit the structure of each Journey track here.
+          Journeys ya creados
         </p>
         <p style={{ fontSize: 13, color: "var(--muted)", margin: "6px 0 0" }}>
-          Runtime uses published plans with the old hardcoded curriculum as fallback.
+          Aquí puedes abrir journeys existentes para ajustar niveles, topics y metas de historias. El runtime sigue usando el plan publicado con fallback al currículo antiguo si falta algo.
         </p>
       </div>
 
-      {/* Plan cards */}
       {plans.length === 0 ? (
         <div style={{ textAlign: "center", padding: "60px 20px" }}>
           <div style={{ fontSize: 40, marginBottom: 12, opacity: 0.3 }}>&#128736;&#65039;</div>
-          <p style={{ fontSize: 16, fontWeight: 600, color: "var(--foreground)", margin: "0 0 6px" }}>No Journey plans yet</p>
-          <p style={{ fontSize: 13, color: "var(--muted)", margin: 0 }}>Journey plans will appear here once created via the API or Sanity.</p>
+          <p style={{ fontSize: 16, fontWeight: 600, color: "var(--foreground)", margin: "0 0 6px" }}>Aún no hay journeys creados</p>
+          <p style={{ fontSize: 13, color: "var(--muted)", margin: 0 }}>Cuando crees el primero, aparecerá aquí para seguir completándolo.</p>
         </div>
       ) : null}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: 16 }}>
@@ -62,7 +256,7 @@ export default function JourneyBuilderManager({ plans }: Props) {
                       {plan.language}
                     </h3>
                     <p style={{ fontSize: 13, color: "var(--muted)", margin: "2px 0 0" }}>
-                      {plan.variantId.toUpperCase()} — {plan.levels.length} levels, {totalTopics} topics
+                      {plan.variantId.toUpperCase()} · {plan.levels.length} niveles · {totalTopics} topics
                     </p>
                   </div>
                 </div>
@@ -106,10 +300,9 @@ export default function JourneyBuilderManager({ plans }: Props) {
                   ))}
                 </div>
 
-                {/* CTA */}
                 <StudioActionLink
                   href={`/studio/journey-builder/${encodeURIComponent(plan.language)}/${encodeURIComponent(plan.variantId)}`}
-                  pendingLabel="Opening builder..."
+                  pendingLabel="Abriendo journey..."
                   className="studio-btn-primary"
                   style={{
                     display: "flex",
@@ -125,13 +318,14 @@ export default function JourneyBuilderManager({ plans }: Props) {
                     border: "none",
                   }}
                 >
-                  Edit structure
+                  Abrir journey
                 </StudioActionLink>
               </div>
             </div>
           );
         })}
       </div>
+      <StudioToast />
     </div>
   );
 }

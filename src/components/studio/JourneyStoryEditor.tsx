@@ -18,11 +18,11 @@ type ValidationErrors = Partial<Record<string, string>>;
 
 function validate(form: StudioJourneyStory): ValidationErrors {
   const errors: ValidationErrors = {};
-  if (!form.title.trim()) errors.title = "Title is required";
-  if (!form.slug.trim()) errors.slug = "Slug is required";
-  else if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(form.slug)) errors.slug = "Slug must be lowercase with hyphens only";
-  if (!form.variant.trim()) errors.variant = "Variant is required";
-  if (!form.journeyTopic.trim()) errors.journeyTopic = "Journey topic is required";
+  if (!form.title.trim()) errors.title = "El título es obligatorio";
+  if (!form.slug.trim()) errors.slug = "El slug es obligatorio";
+  else if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(form.slug)) errors.slug = "El slug debe ir en minúsculas y con guiones";
+  if (!form.variant.trim()) errors.variant = "La variante es obligatoria";
+  if (!form.journeyTopic.trim()) errors.journeyTopic = "El topic del journey es obligatorio";
   return errors;
 }
 
@@ -57,6 +57,17 @@ const btnPrimary: React.CSSProperties = {
   ...btn, border: "none", backgroundColor: "var(--primary)", color: "#fff",
 };
 
+const qaPill: React.CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  padding: "4px 10px",
+  borderRadius: 999,
+  backgroundColor: "rgba(148, 163, 184, 0.12)",
+  color: "var(--foreground)",
+  fontSize: 12,
+  fontWeight: 600,
+};
+
 const AUTOSAVE_DELAY = 5000;
 
 export default function JourneyStoryEditor({ story }: Props) {
@@ -74,12 +85,13 @@ export default function JourneyStoryEditor({ story }: Props) {
   const [autoSaveStatus, setAutoSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
 
   const statusLabel = useMemo(() => {
-    if (form.hasDraft) return "Draft";
-    if (form.published) return "Published";
-    return "Needs draft";
+    if (form.hasDraft) return "Borrador";
+    if (form.published) return "Publicada";
+    return "Falta borrador";
   }, [form.hasDraft, form.published]);
 
   const statusColor = form.hasDraft ? "#f59e0b" : form.published ? "#10b981" : "#6b7280";
+  const publishedStoryHref = form.slug.trim() ? `/stories/${encodeURIComponent(form.slug.trim())}` : null;
 
   /* ── Revalidate on form changes ── */
   useEffect(() => {
@@ -103,7 +115,7 @@ export default function JourneyStoryEditor({ story }: Props) {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       setTouched(new Set(Object.keys(validationErrors)));
-      if (!isAuto) showToast("Fix validation errors before saving", "error");
+      if (!isAuto) showToast("Corrige los errores antes de guardar.", "error");
       return;
     }
 
@@ -116,6 +128,7 @@ export default function JourneyStoryEditor({ story }: Props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           title: form.title, slug: form.slug, synopsis: form.synopsis, text: form.text,
+          vocabRaw: form.vocabRaw, coverUrl: form.coverUrl, audioUrl: form.audioUrl,
           language: form.language, variant: form.variant, region: form.region, cefrLevel: form.cefrLevel,
           topic: form.topic, languageFocus: form.languageFocus, journeyTopic: form.journeyTopic,
           journeyOrder: form.journeyOrder, journeyFocus: form.journeyFocus,
@@ -132,12 +145,12 @@ export default function JourneyStoryEditor({ story }: Props) {
         setAutoSaveStatus("saved");
         setTimeout(() => setAutoSaveStatus("idle"), 2000);
       } else {
-        showToast("Draft saved successfully", "success");
+        showToast("Borrador guardado.", "success");
       }
     } catch (error) {
       console.error("Failed to save Journey story", error);
       if (isAuto) setAutoSaveStatus("idle");
-      else showToast("Failed to save the story. Please try again.", "error");
+      else showToast("No se pudo guardar la historia. Inténtalo otra vez.", "error");
     } finally {
       if (!isAuto) setSaving(false);
     }
@@ -187,11 +200,11 @@ export default function JourneyStoryEditor({ story }: Props) {
       }
       if (!res.ok) throw new Error(`Error ${res.status}`);
       const json = (await res.json()) as { story: StudioJourneyStory };
-      showToast("Story duplicated", "success");
+      showToast("Historia duplicada.", "success");
       startTransition(() => { router.push(`/studio/journey-stories/${json.story.id}`); });
     } catch (error) {
       console.error("Failed to duplicate Journey story", error);
-      showToast("Failed to duplicate the story. Please try again.", "error");
+      showToast("No se pudo duplicar la historia. Inténtalo otra vez.", "error");
     } finally { setDuplicating(false); }
   }
 
@@ -217,44 +230,43 @@ export default function JourneyStoryEditor({ story }: Props) {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, color: "var(--foreground)", margin: 0 }}>
-            {form.title || "Untitled Story"}
+            {form.title || "Historia sin título"}
           </h2>
           <span style={{ display: "inline-flex", alignItems: "center", padding: "2px 8px", borderRadius: 6, fontSize: 12, fontWeight: 600, backgroundColor: `${statusColor}20`, color: statusColor }}>
             {statusLabel}
           </span>
           {dirty && autoSaveStatus === "idle" && (
             <span style={{ display: "inline-flex", alignItems: "center", padding: "2px 8px", borderRadius: 6, fontSize: 11, fontWeight: 600, backgroundColor: "rgba(245, 158, 11, 0.15)", color: "#f59e0b" }}>
-              Unsaved changes
+              Cambios sin guardar
             </span>
           )}
           {autoSaveStatus === "saving" && (
             <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "2px 8px", borderRadius: 6, fontSize: 11, fontWeight: 600, backgroundColor: "rgba(37, 99, 235, 0.12)", color: "var(--primary)" }}>
               <span style={{ width: 10, height: 10, border: "2px solid var(--primary)", borderTopColor: "transparent", borderRadius: "50%", display: "inline-block", animation: "spin 0.6s linear infinite" }} />
-              Auto-saving...
+              Guardando...
             </span>
           )}
           {autoSaveStatus === "saved" && (
             <span style={{ display: "inline-flex", alignItems: "center", padding: "2px 8px", borderRadius: 6, fontSize: 11, fontWeight: 600, backgroundColor: "rgba(16, 185, 129, 0.12)", color: "#10b981" }}>
-              All changes saved
+              Todo guardado
             </span>
           )}
-          {savedAt && autoSaveStatus === "idle" && <span style={{ fontSize: 12, color: "#10b981", fontWeight: 600 }}>Last saved {savedAt}</span>}
+          {savedAt && autoSaveStatus === "idle" && <span style={{ fontSize: 12, color: "#10b981", fontWeight: 600 }}>Guardado a las {savedAt}</span>}
         </div>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-          <StudioActionLink href="/studio/journey-stories" className="studio-btn-ghost" style={btn} pendingLabel="Opening stories...">Back to list</StudioActionLink>
-          <StudioActionLink href={legacyStoryHref(form)} className="studio-btn-ghost" style={btn} pendingLabel="Opening legacy CMS...">Legacy CMS</StudioActionLink>
+          <StudioActionLink href="/studio/journey-stories" className="studio-btn-ghost" style={btn} pendingLabel="Abriendo historias...">Volver a la lista</StudioActionLink>
+          <StudioActionLink href={legacyStoryHref(form)} className="studio-btn-ghost" style={btn} pendingLabel="Abriendo Sanity...">Abrir en Sanity</StudioActionLink>
           <button onClick={() => void duplicate()} disabled={duplicating || isNavigating} className="studio-btn-ghost" style={{ ...btn, opacity: duplicating || isNavigating ? 0.6 : 1 }}>
-            {duplicating ? "Duplicating..." : isNavigating ? "Opening..." : "Duplicate"}
+            {duplicating ? "Duplicando..." : isNavigating ? "Abriendo..." : "Duplicar"}
           </button>
           <button onClick={() => void save(false)} disabled={saving} className="studio-btn-primary" style={{ ...btnPrimary, opacity: saving ? 0.6 : 1 }}>
-            {saving ? "Saving..." : "Save draft"}
+            {saving ? "Guardando..." : "Guardar borrador"}
           </button>
         </div>
       </div>
 
-      {/* Keyboard shortcut hint */}
       <p style={{ fontSize: 12, color: "var(--muted)", margin: "-8px 0 0", textAlign: "right" }}>
-        Auto-saves after 5s of inactivity · <kbd style={{ padding: "1px 5px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "var(--card-bg)", fontSize: 11, fontFamily: "monospace" }}>Cmd+S</kbd> to save now
+        Guarda sola tras 5s de inactividad · <kbd style={{ padding: "1px 5px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "var(--card-bg)", fontSize: 11, fontFamily: "monospace" }}>Cmd+S</kbd> para guardar ahora
       </p>
 
       {/* ── Two columns ── */}
@@ -262,26 +274,30 @@ export default function JourneyStoryEditor({ story }: Props) {
 
         {/* Left: Content */}
         <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", padding: 20 }}>
-          <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 16px" }}>Content</h3>
+          <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 16px" }}>Contenido</h3>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
             <div>
-              <label style={label}>Title <span style={{ color: "#ef4444" }}>*</span></label>
-              <input value={form.title} onChange={(e) => update("title", e.target.value)} placeholder="Story title" className="studio-input" style={fieldStyle("title")} aria-invalid={!!errors.title} aria-describedby={errors.title ? "err-title" : undefined} />
+              <label style={label}>Título <span style={{ color: "#ef4444" }}>*</span></label>
+              <input value={form.title} onChange={(e) => update("title", e.target.value)} placeholder="Título de la historia" className="studio-input" style={fieldStyle("title")} aria-invalid={!!errors.title} aria-describedby={errors.title ? "err-title" : undefined} />
               {renderError("title")}
             </div>
             <div>
+              <label style={label}>Sinopsis</label>
+              <textarea value={form.synopsis} onChange={(e) => update("synopsis", e.target.value)} placeholder="Breve sinopsis..." rows={3} className="studio-input" style={textarea} />
+            </div>
+            <div>
+              <label style={label}>Texto de la historia</label>
+              <textarea value={form.text} onChange={(e) => update("text", e.target.value)} placeholder="Texto completo..." rows={18} className="studio-input" style={textarea} />
+            </div>
+            <div>
+              <label style={label}>Vocabulario</label>
+              <textarea value={form.vocabRaw} onChange={(e) => update("vocabRaw", e.target.value)} placeholder="JSON o texto de vocabulario..." rows={8} className="studio-input" style={textarea} />
+            </div>
+            <div>
               <label style={label}>Slug <span style={{ color: "#ef4444" }}>*</span></label>
-              <input value={form.slug} onChange={(e) => update("slug", e.target.value)} placeholder="story-slug" className="studio-input" style={{ ...fieldStyle("slug"), fontFamily: "monospace" }} aria-invalid={!!errors.slug} />
+              <input value={form.slug} onChange={(e) => update("slug", e.target.value)} placeholder="historia-slug" className="studio-input" style={{ ...fieldStyle("slug"), fontFamily: "monospace" }} aria-invalid={!!errors.slug} />
               {renderError("slug")}
-            </div>
-            <div>
-              <label style={label}>Synopsis</label>
-              <textarea value={form.synopsis} onChange={(e) => update("synopsis", e.target.value)} placeholder="Brief synopsis..." rows={3} className="studio-input" style={textarea} />
-            </div>
-            <div>
-              <label style={label}>Story text</label>
-              <textarea value={form.text} onChange={(e) => update("text", e.target.value)} placeholder="Full story text..." rows={18} className="studio-input" style={textarea} />
             </div>
           </div>
         </div>
@@ -289,11 +305,11 @@ export default function JourneyStoryEditor({ story }: Props) {
         {/* Right: Metadata */}
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", padding: 20 }}>
-            <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 16px" }}>Journey metadata</h3>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 16px" }}>Metadatos del Journey</h3>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               <div>
-                <label style={label}>Language</label>
+                <label style={label}>Idioma</label>
                 <select value={form.language} onChange={(e) => update("language", e.target.value)} className="studio-input" style={field}>
                   <option value="spanish">Spanish</option><option value="english">English</option>
                   <option value="portuguese">Portuguese</option><option value="french">French</option>
@@ -301,16 +317,16 @@ export default function JourneyStoryEditor({ story }: Props) {
                 </select>
               </div>
               <div>
-                <label style={label}>Variant <span style={{ color: "#ef4444" }}>*</span></label>
-                <input value={form.variant} onChange={(e) => update("variant", e.target.value)} placeholder="Variant" className="studio-input" style={fieldStyle("variant")} aria-invalid={!!errors.variant} />
+                <label style={label}>Variante <span style={{ color: "#ef4444" }}>*</span></label>
+                <input value={form.variant} onChange={(e) => update("variant", e.target.value)} placeholder="Variante" className="studio-input" style={fieldStyle("variant")} aria-invalid={!!errors.variant} />
                 {renderError("variant")}
               </div>
               <div>
-                <label style={label}>Region</label>
-                <input value={form.region} onChange={(e) => update("region", e.target.value)} placeholder="Region" className="studio-input" style={field} />
+                <label style={label}>Región</label>
+                <input value={form.region} onChange={(e) => update("region", e.target.value)} placeholder="Región" className="studio-input" style={field} />
               </div>
               <div>
-                <label style={label}>CEFR Level</label>
+                <label style={label}>Nivel CEFR</label>
                 <select value={form.cefrLevel} onChange={(e) => update("cefrLevel", e.target.value)} className="studio-input" style={field}>
                   <option value="a1">A1</option><option value="a2">A2</option>
                   <option value="b1">B1</option><option value="b2">B2</option>
@@ -322,24 +338,24 @@ export default function JourneyStoryEditor({ story }: Props) {
                 <input value={form.topic} onChange={(e) => update("topic", e.target.value)} placeholder="Topic" className="studio-input" style={field} />
               </div>
               <div>
-                <label style={label}>Language focus</label>
+                <label style={label}>Focus lingüístico</label>
                 <select value={form.languageFocus} onChange={(e) => update("languageFocus", e.target.value)} className="studio-input" style={field}>
-                  <option value="mixed">Mixed</option><option value="verbs">Verbs</option>
-                  <option value="nouns">Nouns</option><option value="adjectives">Adjectives</option>
-                  <option value="expressions">Expressions</option>
+                  <option value="mixed">Mixto</option><option value="verbs">Verbos</option>
+                  <option value="nouns">Sustantivos</option><option value="adjectives">Adjetivos</option>
+                  <option value="expressions">Expresiones</option>
                 </select>
               </div>
               <div>
-                <label style={label}>Journey topic <span style={{ color: "#ef4444" }}>*</span></label>
-                <input value={form.journeyTopic} onChange={(e) => update("journeyTopic", e.target.value)} placeholder="Journey topic" className="studio-input" style={fieldStyle("journeyTopic")} aria-invalid={!!errors.journeyTopic} />
+                <label style={label}>Topic del journey <span style={{ color: "#ef4444" }}>*</span></label>
+                <input value={form.journeyTopic} onChange={(e) => update("journeyTopic", e.target.value)} placeholder="Topic del journey" className="studio-input" style={fieldStyle("journeyTopic")} aria-invalid={!!errors.journeyTopic} />
                 {renderError("journeyTopic")}
               </div>
               <div>
-                <label style={label}>Journey order</label>
-                <input value={form.journeyOrder ?? ""} onChange={(e) => update("journeyOrder", e.target.value ? Number(e.target.value) : null)} type="number" placeholder="Order" className="studio-input" style={field} />
+                <label style={label}>Orden en el journey</label>
+                <input value={form.journeyOrder ?? ""} onChange={(e) => update("journeyOrder", e.target.value ? Number(e.target.value) : null)} type="number" placeholder="Orden" className="studio-input" style={field} />
               </div>
               <div style={{ gridColumn: "1 / -1" }}>
-                <label style={label}>Journey focus</label>
+                <label style={label}>Focus del journey</label>
                 <select value={form.journeyFocus} onChange={(e) => update("journeyFocus", e.target.value)} className="studio-input" style={field}>
                   <option value="General">General</option>
                   <option value="Travel & Local Life">Travel & Local Life</option>
@@ -353,28 +369,78 @@ export default function JourneyStoryEditor({ story }: Props) {
             <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 16, paddingTop: 16, borderTop: "1px solid var(--card-border)" }}>
               <label style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, color: "var(--foreground)", cursor: "pointer" }}>
                 <input type="checkbox" checked={form.journeyEligible} onChange={(e) => update("journeyEligible", e.target.checked)} style={{ width: 18, height: 18, accentColor: "var(--primary)" }} />
-                Show in Journey
+                Mostrar en Journey
               </label>
               <label style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, color: "var(--foreground)", cursor: "pointer" }}>
                 <input type="checkbox" checked={form.published} onChange={(e) => update("published", e.target.checked)} style={{ width: 18, height: 18, accentColor: "#10b981" }} />
-                Published in app
+                Publicada en la app
               </label>
+            </div>
+          </div>
+
+          <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", padding: 20 }}>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 16px" }}>Media</h3>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <div>
+                <label style={label}>URL de cover</label>
+                <input value={form.coverUrl} onChange={(e) => update("coverUrl", e.target.value)} placeholder="https://..." className="studio-input" style={field} />
+              </div>
+              {form.coverUrl.trim() ? (
+                <div style={{ borderRadius: 10, overflow: "hidden", border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={form.coverUrl} alt={form.title || "Cover"} style={{ display: "block", width: "100%", aspectRatio: "16 / 9", objectFit: "cover" }} />
+                </div>
+              ) : null}
+              <div>
+                <label style={label}>URL de audio</label>
+                <input value={form.audioUrl} onChange={(e) => update("audioUrl", e.target.value)} placeholder="https://..." className="studio-input" style={field} />
+              </div>
+              {form.audioUrl.trim() ? (
+                <a href={form.audioUrl} target="_blank" rel="noreferrer" style={{ ...btn, width: "fit-content" }}>
+                  Abrir audio
+                </a>
+              ) : null}
+            </div>
+          </div>
+
+          <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", padding: 20 }}>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 12px" }}>QA</h3>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
+              <span style={qaPill}>Audio: {form.audioQaStatus || "Sin revisar"}</span>
+              <span style={qaPill}>Score audio: {form.audioQaScore ?? "—"}</span>
+              <span style={qaPill}>Entrega audio: {form.audioDeliveryQaStatus || "Sin revisar"}</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <div>
+                <label style={label}>Reporte de vocabulario de la historia</label>
+                <textarea value={form.storyVocabQualityRaw} readOnly rows={4} className="studio-input" style={{ ...textarea, opacity: 0.8 }} />
+              </div>
+              <div>
+                <label style={label}>Validación de vocabulario</label>
+                <textarea value={form.vocabValidationRaw} readOnly rows={4} className="studio-input" style={{ ...textarea, opacity: 0.8 }} />
+              </div>
             </div>
           </div>
 
           {/* Quick links */}
           <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", padding: 20 }}>
-            <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 12px" }}>Quick links</h3>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 12px" }}>Atajos</h3>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
               <StudioActionLink
                 href={`/studio/journey-builder/${encodeURIComponent(form.language ? form.language.charAt(0).toUpperCase() + form.language.slice(1) : "Spanish")}/${encodeURIComponent(form.variant)}?level=${encodeURIComponent(form.cefrLevel)}&topic=${encodeURIComponent(form.journeyTopic)}&slot=${form.journeyOrder ?? 1}&focus=${encodeURIComponent(form.journeyFocus || "General")}`}
                 className="studio-btn-ghost"
                 style={btn}
-                pendingLabel="Opening builder..."
+                pendingLabel="Abriendo creador..."
               >
-                Open slot in builder
+                Abrir hueco en el creador
               </StudioActionLink>
-              <StudioActionLink href={legacyStoryHref(form)} className="studio-btn-ghost" style={btn} pendingLabel="Opening legacy CMS...">Open in legacy CMS</StudioActionLink>
+              {publishedStoryHref ? (
+                <StudioActionLink href={publishedStoryHref} className="studio-btn-ghost" style={btn} pendingLabel="Abriendo historia...">
+                  Abrir historia publicada
+                </StudioActionLink>
+              ) : null}
+              <StudioActionLink href={legacyStoryHref(form)} className="studio-btn-ghost" style={btn} pendingLabel="Abriendo Sanity...">Abrir en Sanity</StudioActionLink>
             </div>
             <p style={{ fontSize: 11, color: "var(--muted)", marginTop: 10, fontFamily: "monospace" }}>
               ID: {form.documentId}

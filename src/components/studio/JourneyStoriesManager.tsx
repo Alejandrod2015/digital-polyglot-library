@@ -143,7 +143,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
       });
     } catch (error) {
       console.error("Failed to create Journey story", error);
-      window.alert("Failed to create the draft. Please try again.");
+      window.alert("No se pudo crear el borrador. Inténtalo otra vez.");
     } finally {
       setLoadingCreate(false);
     }
@@ -152,7 +152,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
   async function handleCreateFromGap(gap: JourneyCoverageGap) {
     setLoadingCreate(true);
     try {
-      const titlePrefix = gap.focus === "General" ? "Journey Story" : gap.focus;
+      const titlePrefix = gap.focus === "General" ? "Historia del Journey" : gap.focus;
       const res = await fetch("/api/studio/journey-stories", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -181,7 +181,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
       });
     } catch (error) {
       console.error("Failed to create Journey story from gap", error);
-      window.alert("Failed to create the draft. Please try again.");
+      window.alert("No se pudo crear el borrador. Inténtalo otra vez.");
     } finally {
       setLoadingCreate(false);
     }
@@ -204,32 +204,32 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
         }}
       >
         <div style={{ flex: "1 1 200px" }}>
-          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Search</label>
-          <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Title, slug, topic..." className={INPUT_CLASS} style={input} />
+          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Buscar</label>
+          <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Título, slug, topic..." className={INPUT_CLASS} style={input} />
         </div>
         <div style={{ flex: "0 0 120px" }}>
-          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Level</label>
+          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Nivel</label>
           <select value={level} onChange={(e) => setLevel(e.target.value)} className={INPUT_CLASS} style={input}>
-            {levelOpts.map((o) => <option key={o} value={o}>{o === "all" ? "All levels" : o.toUpperCase()}</option>)}
+            {levelOpts.map((o) => <option key={o} value={o}>{o === "all" ? "Todos" : o.toUpperCase()}</option>)}
           </select>
         </div>
         <div style={{ flex: "0 0 160px" }}>
           <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Focus</label>
           <select value={focus} onChange={(e) => setFocus(e.target.value)} className={INPUT_CLASS} style={input}>
-            {focusOpts.map((o) => <option key={o} value={o}>{o === "all" ? "All focuses" : o}</option>)}
+            {focusOpts.map((o) => <option key={o} value={o}>{o === "all" ? "Todos" : o}</option>)}
           </select>
         </div>
         <div style={{ flex: "0 0 140px" }}>
-          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Status</label>
+          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Estado</label>
           <select value={status} onChange={(e) => setStatus(e.target.value)} className={INPUT_CLASS} style={input}>
-            <option value="all">All statuses</option>
-            <option value="draft">Has draft</option>
-            <option value="published">Published</option>
-            <option value="pending">Draft needed</option>
+            <option value="all">Todos</option>
+            <option value="draft">Con borrador</option>
+            <option value="published">Publicada</option>
+            <option value="pending">Falta borrador</option>
           </select>
         </div>
         <button onClick={() => void handleCreate()} disabled={loadingCreate || isNavigating} className={BTN_PRIMARY_CLASS} style={{ ...btnPrimary, opacity: loadingCreate || isNavigating ? 0.6 : 1 }}>
-          + {loadingCreate ? "Creating..." : isNavigating ? "Opening..." : "New story"}
+          + {loadingCreate ? "Creando..." : isNavigating ? "Abriendo..." : "Nueva historia"}
         </button>
       </div>
 
@@ -252,7 +252,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
               transition: "all 0.15s",
             }}
           >
-            {t === "stories" ? `Stories (${filteredStories.length})` : `Coverage gaps (${filteredGaps.length})`}
+            {t === "stories" ? `Historias (${filteredStories.length})` : `Huecos (${filteredGaps.length})`}
           </button>
         ))}
       </div>
@@ -263,8 +263,8 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
           {filteredGaps.length === 0 ? (
             <div style={{ textAlign: "center", padding: "60px 20px" }}>
               <div style={{ fontSize: 40, marginBottom: 12, opacity: 0.3 }}>&#9989;</div>
-              <p style={{ fontSize: 16, fontWeight: 600, color: "var(--foreground)", margin: "0 0 6px" }}>No coverage gaps</p>
-              <p style={{ fontSize: 13, color: "var(--muted)", margin: 0 }}>All Journey slots are covered, or no gaps match the current filters.</p>
+              <p style={{ fontSize: 16, fontWeight: 600, color: "var(--foreground)", margin: "0 0 6px" }}>No hay huecos</p>
+              <p style={{ fontSize: 13, color: "var(--muted)", margin: 0 }}>Todos los huecos del Journey están cubiertos o no coinciden con los filtros actuales.</p>
             </div>
           ) : filteredGaps.map((gap) => (
             <div
@@ -283,19 +283,19 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
             >
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
                 <Badge color={gap.type === "core-gap" ? "#ef4444" : "#0ea5e9"}>
-                  {gap.type === "core-gap" ? "Core gap" : "Opportunity"}
+                  {gap.type === "core-gap" ? "Hueco core" : "Oportunidad"}
                 </Badge>
                 <Badge color="#6b7280">{gap.level.toUpperCase()}</Badge>
                 <span style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)" }}>{gap.topic}</span>
                 <span style={{ fontSize: 13, color: "var(--muted)" }}>{gap.language}/{gap.variant.toUpperCase()}</span>
-                <span style={{ fontSize: 12, color: "var(--muted)" }}>Slot {gap.slotOrder}</span>
+                <span style={{ fontSize: 12, color: "var(--muted)" }}>Hueco {gap.slotOrder}</span>
               </div>
               <div style={{ display: "flex", gap: 6 }}>
                 <button onClick={() => void handleCreateFromGap(gap)} disabled={loadingCreate || isNavigating} className={BTN_PRIMARY_CLASS} style={{ ...btnPrimary, height: 30, fontSize: 12, padding: "0 12px", opacity: loadingCreate || isNavigating ? 0.6 : 1 }}>
-                  {loadingCreate ? "Creating..." : isNavigating ? "Opening..." : "Create draft"}
+                  {loadingCreate ? "Creando..." : isNavigating ? "Abriendo..." : "Crear borrador"}
                 </button>
-                <StudioActionLink href={`/studio/journey-builder/${encodeURIComponent(gap.language)}/${encodeURIComponent(gap.variant)}?level=${encodeURIComponent(gap.level)}&topic=${encodeURIComponent(gap.topicSlug)}&slot=${gap.slotOrder}&focus=${encodeURIComponent(gap.focus)}`} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Opening builder...">
-                  Open in builder
+                <StudioActionLink href={`/studio/journey-builder/${encodeURIComponent(gap.language)}/${encodeURIComponent(gap.variant)}?level=${encodeURIComponent(gap.level)}&topic=${encodeURIComponent(gap.topicSlug)}&slot=${gap.slotOrder}&focus=${encodeURIComponent(gap.focus)}`} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Abriendo creador...">
+                  Abrir en creador
                 </StudioActionLink>
               </div>
             </div>
@@ -309,16 +309,16 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
           <div style={{ textAlign: "center", padding: "60px 20px" }}>
             <div style={{ fontSize: 40, marginBottom: 12, opacity: 0.3 }}>&#128214;</div>
             <p style={{ fontSize: 16, fontWeight: 600, color: "var(--foreground)", margin: "0 0 6px" }}>
-              {stories.length === 0 ? "No stories yet" : "No stories match these filters"}
+              {stories.length === 0 ? "Aún no hay historias" : "Ninguna historia coincide con estos filtros"}
             </p>
             <p style={{ fontSize: 13, color: "var(--muted)", margin: "0 0 16px" }}>
               {stories.length === 0
-                ? "Create your first Journey story to get started."
-                : "Try adjusting the search, level, focus, or status filters above."}
+                ? "Crea tu primera historia del Journey para empezar."
+                : "Prueba ajustando la búsqueda, el nivel, el focus o el estado."}
             </p>
             {stories.length === 0 && (
               <button onClick={() => void handleCreate()} disabled={loadingCreate} className={BTN_PRIMARY_CLASS} style={{ ...btnPrimary, opacity: loadingCreate ? 0.6 : 1 }}>
-                {loadingCreate ? "Creating..." : "+ Create first story"}
+                {loadingCreate ? "Creando..." : "+ Crear primera historia"}
               </button>
             )}
           </div>
@@ -328,7 +328,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
               <table style={{ width: "100%", minWidth: 900, borderCollapse: "collapse" }}>
                 <thead>
                   <tr style={{ backgroundColor: "var(--card-bg)" }}>
-                    {["Story", "Level", "Topic / Order", "Focus", "Status", "Updated", "Actions"].map((h) => (
+                    {["Historia", "Nivel", "Topic / Orden", "Focus", "Estado", "Actualizada", "Acciones"].map((h) => (
                       <th key={h} style={{ padding: "10px 14px", textAlign: "left", fontSize: 12, fontWeight: 600, color: "var(--muted)", borderBottom: "1px solid var(--card-border)" }}>
                         {h}
                       </th>
@@ -337,7 +337,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
                 </thead>
                 <tbody>
                   {filteredStories.map((story) => {
-                    const st = story.hasDraft ? "Draft" : story.published ? "Published" : "Needs draft";
+                    const st = story.hasDraft ? "Borrador" : story.published ? "Publicada" : "Falta borrador";
                     const stColor = story.hasDraft ? "#f59e0b" : story.published ? "#10b981" : "#6b7280";
                     return (
                       <tr
@@ -346,13 +346,13 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
                         className="studio-table-row"
                       >
                         <td style={{ padding: "10px 14px" }}>
-                          <div style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)" }}>{story.title || "Untitled"}</div>
-                          <div style={{ fontSize: 12, color: "var(--muted)", fontFamily: "monospace" }}>{story.slug || "no-slug"}</div>
+                          <div style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)" }}>{story.title || "Sin título"}</div>
+                          <div style={{ fontSize: 12, color: "var(--muted)", fontFamily: "monospace" }}>{story.slug || "sin-slug"}</div>
                         </td>
                         <td style={{ padding: "10px 14px" }}><Badge color="#3b82f6">{story.cefrLevel.toUpperCase()}</Badge></td>
                         <td style={{ padding: "10px 14px" }}>
                           <div style={{ fontSize: 13, color: "var(--foreground)" }}>{story.journeyTopic || "—"}</div>
-                          <div style={{ fontSize: 12, color: "var(--muted)" }}>Order {story.journeyOrder ?? "—"}</div>
+                          <div style={{ fontSize: 12, color: "var(--muted)" }}>Orden {story.journeyOrder ?? "—"}</div>
                         </td>
                         <td style={{ padding: "10px 14px", fontSize: 13, color: "var(--muted)" }}>{story.journeyFocus}</td>
                         <td style={{ padding: "10px 14px" }}><Badge color={stColor}>{st}</Badge></td>
@@ -361,16 +361,16 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
                         </td>
                         <td style={{ padding: "10px 14px" }}>
                           <div style={{ display: "flex", gap: 4 }}>
-                            <StudioActionLink href={`/studio/journey-stories/${story.id}`} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Opening story...">Edit</StudioActionLink>
+                            <StudioActionLink href={`/studio/journey-stories/${story.id}`} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Abriendo historia...">Editar</StudioActionLink>
                             <StudioActionLink
                               href={`/studio/journey-builder/${encodeURIComponent(story.language ? story.language.charAt(0).toUpperCase() + story.language.slice(1) : "Spanish")}/${encodeURIComponent(story.variant)}?level=${encodeURIComponent(story.cefrLevel)}&topic=${encodeURIComponent(story.journeyTopic)}&slot=${story.journeyOrder ?? 1}&focus=${encodeURIComponent(story.journeyFocus || "General")}`}
                               className={BTN_GHOST_CLASS}
                               style={btnGhost}
-                              pendingLabel="Opening builder..."
+                              pendingLabel="Abriendo creador..."
                             >
-                              Slot
+                              Hueco
                             </StudioActionLink>
-                            <StudioActionLink href={legacyStoryHref(story)} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Opening legacy CMS...">Legacy</StudioActionLink>
+                            <StudioActionLink href={legacyStoryHref(story)} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Abriendo Sanity...">Sanity</StudioActionLink>
                           </div>
                         </td>
                       </tr>

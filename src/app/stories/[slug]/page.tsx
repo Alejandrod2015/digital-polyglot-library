@@ -18,7 +18,6 @@ import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
 import VocabPanel from "@/components/VocabPanel";
-import JourneyStoryReadBanner from "@/components/JourneyStoryReadBanner";
 import JourneyStoryReadTracker from "@/components/JourneyStoryReadTracker";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegments";
@@ -497,14 +496,6 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
         <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-amber-400/20 bg-[#2b1d10]/95 px-4 py-3 text-center text-sm text-amber-100 backdrop-blur">
           This story is ready to read, but audio is currently unavailable.
         </div>
-      ) : null}
-
-      {journeyContext ? (
-        <JourneyStoryReadBanner
-          storySlug={resolvedStory.slug}
-          practiceHref={practiceHref}
-          journeyHref={resolvedReturnHref}
-        />
       ) : null}
 
       <VocabPanel

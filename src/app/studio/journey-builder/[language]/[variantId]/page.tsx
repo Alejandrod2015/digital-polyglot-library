@@ -24,11 +24,11 @@ export default async function JourneyVariantBuilderPage({
 
   return (
     <StudioShell
-      title="Edit Journey Structure"
-      description="This is the first Studio-based builder for Journey. Runtime falls back to the old hardcoded curriculum if a plan is missing."
+      title="Estructura del Journey"
+      description="Aquí defines el currículo real del journey: niveles, topics y cuántas historias necesita cada parte."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
-        { label: "Journey Builder", href: "/studio/journey-builder" },
+        { label: "Creador de Journeys", href: "/studio/journey-builder" },
         { label: `${decodeURIComponent(language)} / ${decodeURIComponent(variantId).toUpperCase()}` },
       ]}
     >

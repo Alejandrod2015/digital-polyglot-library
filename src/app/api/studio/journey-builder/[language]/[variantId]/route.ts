@@ -6,6 +6,7 @@ import {
   saveJourneyVariantPlanForStudio,
 } from "@/lib/journeyCurriculumSource";
 import type { JourneyVariantPlan } from "@/app/journey/journeyCurriculum";
+import { listStudioJourneyStoriesForVariant } from "@/lib/studioJourneyStories";
 
 type RouteContext = {
   params: Promise<{ language: string; variantId: string }>;
@@ -22,7 +23,8 @@ export async function GET(req: NextRequest, context: RouteContext) {
   if (!plan) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
-  return NextResponse.json({ plan });
+  const stories = await listStudioJourneyStoriesForVariant(language, variantId);
+  return NextResponse.json({ plan, stories });
 }
 
 export async function PUT(req: NextRequest, context: RouteContext) {

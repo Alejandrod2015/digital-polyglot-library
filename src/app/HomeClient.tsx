@@ -2,9 +2,7 @@
 
 import { useMemo, useEffect, useRef, useState } from "react";
 import { useAuth, useUser } from "@clerk/nextjs";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { CheckCircle2, Flame, Sparkles } from "lucide-react";
 import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
@@ -15,7 +13,6 @@ import { books } from "@/data/books";
 import { formatTopic } from "@domain/displayFormat";
 import { getBookCardMeta } from "@domain/bookCardMeta";
 import type { GamificationSummary } from "@/lib/gamification";
-import { buildGamificationCelebrations, type GamificationCelebration } from "@/lib/gamificationCelebrations";
 import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel, normalizeVariant } from "@/lib/languageVariant";
 import {
   JOURNEY_FOCUS_OPTIONS,
@@ -361,10 +358,7 @@ export default function HomeClient({
   const [preferredVariantOverride, setPreferredVariantOverride] = useState<string>(
     initialPreferredVariant
   );
-  const [variantSaving, setVariantSaving] = useState(false);
-  const [variantHint, setVariantHint] = useState("");
   const [homeProgress, setHomeProgress] = useState<HomeProgressPayload | null>(null);
-  const [activeCelebration, setActiveCelebration] = useState<GamificationCelebration | null>(null);
   const [onboardingState, setOnboardingState] = useState<OnboardingPreferenceState>({
     targetLanguages: initialTargetLanguages,
     interests: initialInterests,
@@ -603,39 +597,6 @@ export default function HomeClient({
       cancelled = true;
     };
   }, [isAuthLoaded, userId]);
-
-  useEffect(() => {
-    if (typeof window === "undefined" || !userId || !homeProgress?.gamification) return;
-
-    const storageKey = `dp_home_gamification_seen_v1:${userId}`;
-    let parsed: string[] = [];
-    try {
-      const raw = window.localStorage.getItem(storageKey);
-      const value = raw ? (JSON.parse(raw) as unknown) : [];
-      parsed = Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
-    } catch {
-      parsed = [];
-    }
-    const seen = new Set(parsed);
-    const next = buildGamificationCelebrations(homeProgress.gamification).find((item) => !seen.has(item.id)) ?? null;
-    setActiveCelebration(next);
-  }, [homeProgress, userId]);
-
-  function dismissCelebration(id: string) {
-    if (typeof window === "undefined" || !userId) return;
-    const storageKey = `dp_home_gamification_seen_v1:${userId}`;
-    let parsed: string[] = [];
-    try {
-      const raw = window.localStorage.getItem(storageKey);
-      const value = raw ? (JSON.parse(raw) as unknown) : [];
-      parsed = Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
-    } catch {
-      parsed = [];
-    }
-    const next = [...new Set([...parsed, id])].slice(-40);
-    window.localStorage.setItem(storageKey, JSON.stringify(next));
-    setActiveCelebration(null);
-  }
 
   useEffect(() => {
     let cancelled = false;
@@ -969,11 +930,6 @@ export default function HomeClient({
     const raw = onboardingState.preferredVariant ?? preferredVariantOverride;
     return typeof raw === "string" ? normalizeVariant(raw) ?? "" : "";
   }, [onboardingState.preferredVariant, preferredVariantOverride]);
-  const shouldShowVariantPrompt = useMemo(() => {
-    if (!hasSession) return false;
-    if (!languageFilter?.has("spanish")) return false;
-    return !preferredVariant;
-  }, [hasSession, languageFilter, preferredVariant]);
   const interestFilter = useMemo(() => {
     if (!Array.isArray(onboardingState.interests) || onboardingState.interests.length === 0) return null;
     const normalized = onboardingState.interests
@@ -1587,28 +1543,6 @@ export default function HomeClient({
     </Link>
   );
 
-  const savePreferredVariant = async (variantValue: string) => {
-    try {
-      setVariantSaving(true);
-      setVariantHint("");
-      const res = await fetch("/api/user/preferences", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          preferredVariant: variantValue,
-        }),
-      });
-      if (!res.ok) throw new Error("Failed to save preferred variant");
-      setPreferredVariantOverride(variantValue);
-      setVariantHint("Preference saved.");
-      await user?.reload();
-    } catch {
-      setVariantHint("Could not save your variant right now.");
-    } finally {
-      setVariantSaving(false);
-    }
-  };
-
   const onboardingSteps = [
     {
       title: "What are you learning?",
@@ -1988,207 +1922,8 @@ export default function HomeClient({
         </div>
       ) : null}
 
-      {shouldShowVariantPrompt && (
-        <section className="w-full max-w-5xl pt-6 md:pt-8 mb-8 md:mb-10">
-          <div className="rounded-[1.6rem] border border-[var(--card-border)] bg-[linear-gradient(180deg,#153355_0%,#102947_100%)] p-5 shadow-[0_18px_50px_rgba(6,17,38,0.28)]">
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
-                  Spanish journey
-                </p>
-                <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
-                  Pick your Spanish track
-                </h2>
-                <p className="mt-2 max-w-2xl text-sm text-[var(--muted)]">
-                  Choose the variety you want to follow across Journey, stories, and recommendations.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                {(VARIANT_OPTIONS_BY_LANGUAGE.spanish ?? []).map((variant) => (
-                  <button
-                    key={variant.value}
-                    type="button"
-                    onClick={() => void savePreferredVariant(variant.value)}
-                    disabled={variantSaving}
-                    className="inline-flex min-w-[140px] items-center justify-center rounded-full border border-[var(--primary)]/25 bg-[var(--primary)] px-5 py-3 text-sm font-black text-[#0d1830] shadow-[0_10px_24px_rgba(163,230,53,0.18)] transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
-                  >
-                    {formatVariantLabel(variant.value) ?? variant.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            {variantHint ? (
-              <p className="mt-3 text-sm font-medium text-[var(--primary)]">{variantHint}</p>
-            ) : null}
-          </div>
-        </section>
-      )}
-
-      {homeProgress?.gamification ? (
-        <section className="w-full max-w-5xl pt-2 md:pt-4 mb-8 md:mb-10">
-          <div className="rounded-[1.8rem] border border-[var(--card-border)] bg-[linear-gradient(180deg,#16304f_0%,#122946_100%)] p-5 shadow-[0_18px_50px_rgba(6,17,38,0.28)]">
-            <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="rounded-[1.4rem] border border-[#34516f] bg-[linear-gradient(180deg,#25486f_0%,#1a3457_100%)] p-5">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-100">
-                    <Flame size={14} className="text-[#ffd36b]" />
-                    {homeProgress.gamification.dailyStreak}-day streak
-                  </span>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-[#355879] bg-[#1d4268] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#dcefff]">
-                    <Sparkles size={14} className="text-[#8ef0c6]" />
-                    {homeProgress.gamification.totalXp} XP
-                  </span>
-                </div>
-                <div className="mt-4 flex items-end justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Level</p>
-                    <div className="mt-2 flex items-end gap-3">
-                      <span className="text-5xl font-bold leading-none text-white">
-                        {homeProgress.gamification.currentLevel}
-                      </span>
-                      <div className="pb-1 text-sm text-slate-300">
-                        <div>{homeProgress.gamification.todayXp} XP today</div>
-                        <div>{homeProgress.gamification.weeklyXp} XP this week</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <div className="mb-2 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-                    <span>Progress to next level</span>
-                    <span>
-                      {homeProgress.gamification.totalXp - homeProgress.gamification.levelStartXp} /{" "}
-                      {homeProgress.gamification.nextLevelXp - homeProgress.gamification.levelStartXp} XP
-                    </span>
-                  </div>
-                  <div className="h-3 overflow-hidden rounded-full bg-[#314861]">
-                    <div
-                      className="h-full rounded-full bg-[linear-gradient(90deg,#71dd5a,#3dc55d)] transition-all"
-                      style={{ width: `${Math.round(homeProgress.gamification.levelProgress * 100)}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-[1.4rem] border border-[#34516f] bg-[#18314d] p-5">
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">Daily quests</p>
-                    <h2 className="mt-1 text-xl font-semibold text-[var(--foreground)]">Keep the streak alive</h2>
-                  </div>
-                  <div className="text-sm font-semibold text-slate-300">
-                    {homeProgress.gamification.quests.filter((quest) => quest.complete).length} / {homeProgress.gamification.quests.length}
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {homeProgress.gamification.quests.map((quest) => (
-                    <div
-                      key={quest.id}
-                      className="rounded-[1.1rem] border border-[#334860] bg-[var(--bg-content)] px-4 py-3"
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle2
-                            size={16}
-                            className={quest.complete ? "text-[#8ef0c6]" : "text-slate-500"}
-                          />
-                          <span className="text-sm font-semibold text-[var(--foreground)]">{quest.label}</span>
-                        </div>
-                        <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--primary)]">
-                          +{quest.rewardXp} XP
-                        </span>
-                      </div>
-                      <div className="mt-2 flex items-center justify-between text-xs text-slate-300">
-                        <span>{Math.min(quest.current, quest.target)} / {quest.target}</span>
-                        <span>{quest.complete ? "Done" : "In progress"}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-4 border-t border-white/8 pt-4">
-                  <div className="mb-3 flex items-center justify-between gap-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Unlocked badges</p>
-                    <p className="text-xs font-semibold text-slate-300">
-                      {homeProgress.gamification.badges.filter((badge) => badge.unlocked).length} / {homeProgress.gamification.badges.length}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {homeProgress.gamification.badges.map((badge) => (
-                      <div
-                        key={badge.id}
-                        className={[
-                          "rounded-full border px-3 py-1.5 text-xs font-semibold",
-                          badge.unlocked
-                            ? "border-white/12 bg-white/8 text-[var(--foreground)]"
-                            : "border-[var(--card-border)] bg-[var(--bg-content)] text-slate-500",
-                        ].join(" ")}
-                      >
-                        {badge.label}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      ) : null}
-
-      {activeCelebration ? (
-        <section className="w-full max-w-5xl mb-8 md:mb-10">
-          <motion.div
-            initial={{ opacity: 0, y: 18, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ type: "spring", stiffness: 220, damping: 20 }}
-            className="relative overflow-hidden rounded-[1.6rem] border border-[#355b82] bg-[linear-gradient(180deg,#1c426a_0%,#163557_100%)] p-5 shadow-[0_18px_50px_rgba(6,17,38,0.28)]"
-          >
-            {[
-              { left: "8%", top: 22, color: "#ffd36b", dx: -16, dy: -18 },
-              { left: "20%", top: 54, color: "#8ef0c6", dx: -8, dy: -28 },
-              { left: "78%", top: 18, color: "#7dd3fc", dx: 14, dy: -20 },
-              { left: "90%", top: 52, color: "#ffd36b", dx: 18, dy: -10 },
-              { left: "70%", top: 86, color: "#8ef0c6", dx: 10, dy: 18 },
-            ].map((particle, index) => (
-              <motion.span
-                key={`${activeCelebration.id}-${index}`}
-                initial={{ opacity: 0, scale: 0.6, x: 0, y: 0 }}
-                animate={{ opacity: [0, 1, 0], scale: [0.6, 1, 0.7], x: particle.dx, y: particle.dy }}
-                transition={{ duration: 1, delay: index * 0.05, ease: "easeOut" }}
-                className="pointer-events-none absolute h-2.5 w-2.5 rounded-full"
-                style={{ left: particle.left, top: particle.top, backgroundColor: particle.color }}
-              />
-            ))}
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd36b]">Celebration</p>
-                <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">{activeCelebration.title}</h2>
-                <p className="mt-2 max-w-2xl text-sm text-slate-200/90">{activeCelebration.body}</p>
-              </div>
-              <button
-                type="button"
-                onClick={() => dismissCelebration(activeCelebration.id)}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/6 text-slate-100 transition hover:bg-white/12"
-                aria-label="Dismiss celebration"
-              >
-                ×
-              </button>
-            </div>
-            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#3d6491] bg-[#21466d] px-4 py-2 text-sm font-black text-[#dcefff]">
-              <Sparkles size={16} className="text-[#8ef0c6]" />
-              {activeCelebration.cta}
-            </div>
-          </motion.div>
-        </section>
-      ) : null}
-
       {isPersonalizationReady ? (
-        <section
-          data-tour-target="home"
-          className={`w-full max-w-5xl pt-4 md:pt-6 mb-10 md:mb-12 ${getTourSectionClass("home")}`}
-        >
+        <section data-tour-target="home" className={`w-full max-w-5xl pt-6 md:pt-8 mb-8 md:mb-10 ${getTourSectionClass("home")}`}>
           <div className="rounded-[1.8rem] border border-[var(--card-border)] bg-[linear-gradient(180deg,#18304d_0%,#14243b_100%)] p-5 shadow-[0_18px_50px_rgba(6,17,38,0.22)]">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
               {dailyLoopSummary.eyebrow}

@@ -32,7 +32,7 @@ export default function JourneyStoriesPageClient() {
         if (!cancelled) setData(json);
       } catch (err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : "Failed to load Journey stories.");
+          setError(err instanceof Error ? err.message : "No se pudieron cargar las historias del Journey.");
         }
       }
     }
@@ -45,7 +45,7 @@ export default function JourneyStoriesPageClient() {
     return (
       <div style={{ padding: 24, borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", textAlign: "center" }}>
         <p style={{ margin: 0, fontSize: 15, fontWeight: 600, color: "#ef4444" }}>
-          Failed to load Journey Stories
+          No se pudieron cargar las historias del Journey
         </p>
         <p style={{ margin: "8px 0 16px", fontSize: 13, color: "var(--muted)" }}>{error}</p>
         <button
@@ -53,7 +53,7 @@ export default function JourneyStoriesPageClient() {
           className="studio-btn-primary"
           style={{ height: 36, borderRadius: 8, border: "none", backgroundColor: "var(--primary)", color: "#fff", padding: "0 20px", fontSize: 14, fontWeight: 600, cursor: "pointer" }}
         >
-          Try again
+          Reintentar
         </button>
       </div>
     );

@@ -282,6 +282,7 @@ export default function Player({
             bookSlug: current.bookSlug,
             storySlug: current.storySlug,
             progressSec: current.progressSec,
+            audioDurationSec: current.audioDurationSec,
           },
         })
       );

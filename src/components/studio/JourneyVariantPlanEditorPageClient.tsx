@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { JourneyVariantPlan } from "@/app/journey/journeyCurriculum";
 import JourneyVariantPlanEditor from "@/components/studio/JourneyVariantPlanEditor";
+import type { StudioJourneyStory } from "@/lib/studioJourneyStories";
 
 type Props = {
   language: string;
@@ -16,6 +17,7 @@ type Props = {
 
 type JourneyVariantResponse = {
   plan: JourneyVariantPlan;
+  stories: StudioJourneyStory[];
 };
 
 export default function JourneyVariantPlanEditorPageClient({
@@ -28,6 +30,7 @@ export default function JourneyVariantPlanEditorPageClient({
 }: Props) {
   const router = useRouter();
   const [plan, setPlan] = useState<JourneyVariantPlan | null>(null);
+  const [stories, setStories] = useState<StudioJourneyStory[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
 
@@ -53,10 +56,13 @@ export default function JourneyVariantPlanEditorPageClient({
         }
         if (!res.ok) throw new Error(`Error ${res.status}`);
         const json = (await res.json()) as JourneyVariantResponse;
-        if (!cancelled) setPlan(json.plan);
+        if (!cancelled) {
+          setPlan(json.plan);
+          setStories(json.stories ?? []);
+        }
       } catch (err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : "Failed to load Journey plan.");
+          setError(err instanceof Error ? err.message : "No se pudo cargar este journey.");
         }
       }
     }
@@ -71,7 +77,7 @@ export default function JourneyVariantPlanEditorPageClient({
     return (
       <div style={{ padding: 24, borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", textAlign: "center" }}>
         <p style={{ margin: 0, fontSize: 15, fontWeight: 600, color: "#ef4444" }}>
-          Failed to load Journey Plan
+          No se pudo cargar este journey
         </p>
         <p style={{ margin: "8px 0 16px", fontSize: 13, color: "var(--muted)" }}>{error}</p>
         <button
@@ -79,7 +85,7 @@ export default function JourneyVariantPlanEditorPageClient({
           className="studio-btn-primary"
           style={{ height: 36, borderRadius: 8, border: "none", backgroundColor: "var(--primary)", color: "#fff", padding: "0 20px", fontSize: 14, fontWeight: 600, cursor: "pointer" }}
         >
-          Try again
+          Reintentar
         </button>
       </div>
     );
@@ -96,8 +102,9 @@ export default function JourneyVariantPlanEditorPageClient({
   }
 
   return (
-    <JourneyVariantPlanEditor
+      <JourneyVariantPlanEditor
       plan={plan}
+      stories={stories}
       highlightedLevel={highlightedLevel ?? null}
       highlightedTopic={highlightedTopic ?? null}
       highlightedSlot={highlightedSlot ?? null}

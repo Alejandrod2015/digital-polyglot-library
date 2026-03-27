@@ -4,34 +4,40 @@ import { requireStudioUser } from "@/lib/requireStudioUser";
 
 const CARDS = [
   {
-    title: "Journey Stories",
-    desc: "Create, edit, and manage the stories that feed Journey.",
-    href: "/studio/journey-stories",
-    icon: "📖",
-  },
-  {
-    title: "Journey Builder",
-    desc: "Edit the structure: variants, levels, topics, story slots.",
+    title: "Creador de Journeys",
+    desc: "Crea journeys nuevos y define su estructura: niveles, topics e historias.",
     href: "/studio/journey-builder",
     icon: "🧩",
   },
   {
-    title: "Metrics",
-    desc: "Usage funnels, reminders, top stories, book performance.",
+    title: "Biblioteca de historias",
+    desc: "Consulta y edita historias existentes cuando necesites revisar el inventario completo.",
+    href: "/studio/journey-stories",
+    icon: "📖",
+  },
+  {
+    title: "Métricas",
+    desc: "Uso, recordatorios, historias más fuertes y rendimiento del catálogo.",
     href: "/studio/metrics",
     icon: "📊",
   },
   {
     title: "QA",
-    desc: "Audit the app for bugs, inconsistencies, and UX problems.",
+    desc: "Audita la app para detectar bugs, inconsistencias y problemas de UX.",
     href: "/studio/qa",
     icon: "🛡️",
   },
   {
-    title: "Legacy CMS (Sanity)",
-    desc: "Open the existing Sanity Studio for legacy editing.",
+    title: "Sanity",
+    desc: "Abre el CMS anterior mientras terminamos la transición.",
     href: "/studio/sanity",
     icon: "🗄️",
+  },
+  {
+    title: "Equipo",
+    desc: "Gestiona quién tiene acceso al studio y con qué rol.",
+    href: "/studio/team",
+    icon: "👥",
   },
 ];
 
@@ -39,7 +45,7 @@ export default async function StudioOverviewPage() {
   await requireStudioUser("/studio");
 
   return (
-    <StudioShell title="Overview" description="Manage Journey content and structure from one place.">
+    <StudioShell title="Resumen" description="Gestiona el contenido y la estructura del Journey desde un solo lugar.">
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
 
         {/* Info box */}
@@ -52,10 +58,10 @@ export default async function StudioOverviewPage() {
           }}
         >
           <p style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)", margin: 0 }}>
-            Studio is running in hybrid mode
+            Studio está en modo híbrido
           </p>
           <p style={{ fontSize: 13, color: "var(--muted)", margin: "6px 0 0" }}>
-            Use Studio for new Journey work. Sanity stays available in parallel until this workflow is stable.
+            Usa Studio para todo lo nuevo del Journey. Sanity sigue disponible en paralelo mientras consolidamos este flujo.
           </p>
         </div>
 
@@ -71,7 +77,7 @@ export default async function StudioOverviewPage() {
             <StudioActionLink
               key={card.title}
               href={card.href}
-              pendingLabel={`Opening ${card.title}...`}
+              pendingLabel={`Abriendo ${card.title.toLowerCase()}...`}
               className="studio-card"
               style={{
                 display: "block",
@@ -104,9 +110,9 @@ export default async function StudioOverviewPage() {
           }}
         >
           {[
-            { label: "Mode", value: "Hybrid", detail: "Studio + Sanity in parallel", color: "#14b8a6" },
-            { label: "Backend", value: "Sanity", detail: "Storage & editorial layer", color: "#f59e0b" },
-            { label: "Runtime", value: "Fallback active", detail: "Sanity → hardcoded curriculum", color: "#3b82f6" },
+            { label: "Modo", value: "Híbrido", detail: "Studio + Sanity en paralelo", color: "#14b8a6" },
+            { label: "Backend", value: "Sanity", detail: "Almacenamiento y capa editorial", color: "#f59e0b" },
+            { label: "Runtime", value: "Fallback activo", detail: "Sanity -> currículo hardcodeado", color: "#3b82f6" },
           ].map((item) => (
             <div
               key={item.label}

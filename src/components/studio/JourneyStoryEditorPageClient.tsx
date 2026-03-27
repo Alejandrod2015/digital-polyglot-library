@@ -41,7 +41,7 @@ export default function JourneyStoryEditorPageClient({ storyId }: Props) {
         if (!cancelled) setStory(json.story);
       } catch (err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : "Failed to load Journey story.");
+          setError(err instanceof Error ? err.message : "No se pudo cargar esta historia.");
         }
       }
     }
@@ -56,7 +56,7 @@ export default function JourneyStoryEditorPageClient({ storyId }: Props) {
     return (
       <div style={{ padding: 24, borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", textAlign: "center" }}>
         <p style={{ margin: 0, fontSize: 15, fontWeight: 600, color: "#ef4444" }}>
-          Failed to load Journey Story
+          No se pudo cargar esta historia
         </p>
         <p style={{ margin: "8px 0 16px", fontSize: 13, color: "var(--muted)" }}>{error}</p>
         <button
@@ -64,7 +64,7 @@ export default function JourneyStoryEditorPageClient({ storyId }: Props) {
           className="studio-btn-primary"
           style={{ height: 36, borderRadius: 8, border: "none", backgroundColor: "var(--primary)", color: "#fff", padding: "0 20px", fontSize: 14, fontWeight: 600, cursor: "pointer" }}
         >
-          Try again
+          Reintentar
         </button>
       </div>
     );

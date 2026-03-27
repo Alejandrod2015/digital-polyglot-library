@@ -16,7 +16,7 @@ export default function StudioActionLink({
   children,
   className,
   style,
-  pendingLabel = "Opening...",
+  pendingLabel = "Abriendo...",
 }: StudioActionLinkProps) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();

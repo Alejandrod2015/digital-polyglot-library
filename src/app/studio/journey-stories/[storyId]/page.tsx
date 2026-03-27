@@ -14,12 +14,12 @@ export default async function JourneyStoryEditorPage({
 
   return (
     <StudioShell
-      title="Edit Journey Story"
-      description="Keep Journey authoring inside App Studio while the current runtime still reads from the existing content layer."
+      title="Editar historia del Journey"
+      description="Mantén la autoría del Journey dentro de Studio mientras el runtime sigue leyendo desde la capa actual de contenido."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
-        { label: "Journey Stories", href: "/studio/journey-stories" },
-        { label: "Edit Story" },
+        { label: "Biblioteca de historias", href: "/studio/journey-stories" },
+        { label: "Editar historia" },
       ]}
     >
       <JourneyStoryEditorPageClient storyId={storyId} />

@@ -5,11 +5,14 @@ import { ChevronLeft, Sparkles } from "lucide-react";
 import {
   buildJourneyTrackInsights,
   buildJourneyLevels,
+  getJourneyPlacementLevelIndex,
   getJourneyTopicCompletedStoryCount,
   getJourneyTopicCheckpointKey,
   getJourneyTopicRequiredStoryCount,
   getJourneyTopicPracticeKey,
+  getUnlockedLevelCount,
   getUnlockedStoryCount,
+  getUnlockedTopicCount,
   isJourneyStoryComplete,
   isJourneyTopicComplete,
 } from "../../journeyData";
@@ -57,6 +60,10 @@ export default async function JourneyTopicPage({
     typeof user?.publicMetadata?.preferredVariant === "string"
       ? normalizeVariant(user.publicMetadata.preferredVariant)
       : null;
+  const journeyPlacementLevel =
+    typeof user?.publicMetadata?.journeyPlacementLevel === "string"
+      ? user.publicMetadata.journeyPlacementLevel
+      : null;
   const journeyFocus =
     typeof user?.publicMetadata?.journeyFocus === "string"
       ? normalizeJourneyFocus(user.publicMetadata.journeyFocus)
@@ -83,6 +90,40 @@ export default async function JourneyTopicPage({
 
   if (!level || !topic) {
     notFound();
+  }
+
+  const baseUnlockedLevelCount = getUnlockedLevelCount(
+    levels,
+    completedStoryKeys,
+    passedCheckpointKeys,
+    activeVariant
+  );
+  const placementLevelIndex = getJourneyPlacementLevelIndex(levels, journeyPlacementLevel);
+  const unlockedLevelCount =
+    placementLevelIndex >= 0
+      ? Math.max(baseUnlockedLevelCount, Math.min(levels.length, placementLevelIndex + 1))
+      : baseUnlockedLevelCount;
+  const currentLevelIndex = levels.findIndex((entry) => entry.id === level.id);
+
+  if (currentLevelIndex < 0 || currentLevelIndex >= unlockedLevelCount) {
+    redirect(activeVariant ? `/journey?variant=${encodeURIComponent(activeVariant)}` : "/journey");
+  }
+
+  const baseUnlockedTopicCount = getUnlockedTopicCount(
+    level,
+    completedStoryKeys,
+    passedCheckpointKeys,
+    activeVariant,
+    level.id
+  );
+  const unlockedTopicCount =
+    placementLevelIndex >= 0 && currentLevelIndex < placementLevelIndex
+      ? level.topics.length
+      : baseUnlockedTopicCount;
+  const currentTopicIndex = level.topics.findIndex((entry) => entry.slug === topic.slug);
+
+  if (currentTopicIndex < 0 || currentTopicIndex >= unlockedTopicCount) {
+    redirect(activeVariant ? `/journey?variant=${encodeURIComponent(activeVariant)}` : "/journey");
   }
 
   const optimisticCompletedStoryKeys = new Set(completedStoryKeys);
@@ -152,9 +193,8 @@ export default async function JourneyTopicPage({
   if (activeVariant) checkpointHrefParams.set("variant", activeVariant);
   checkpointHrefParams.set("returnTo", checkpointReturnHref);
   const checkpointHref = `/journey/${level.id}/${topic.slug}/checkpoint?${checkpointHrefParams.toString()}`;
-  const currentTopicIndex = level.topics.findIndex((entry) => entry.slug === topic.slug);
   const nextTopic = currentTopicIndex >= 0
-    ? level.topics.slice(currentTopicIndex + 1).find((entry) => entry.storyCount > 0) ?? null
+    ? level.topics.slice(currentTopicIndex + 1, unlockedTopicCount).find((entry) => entry.storyCount > 0) ?? null
     : null;
   const nextUnlockedStory = topic.stories.find((story, index) => {
     const isUnlocked = index < unlockedStoryCount;
@@ -164,10 +204,11 @@ export default async function JourneyTopicPage({
     nextTopic
       ? `/journey/${level.id}/${nextTopic.slug}${activeVariant ? `?variant=${encodeURIComponent(activeVariant)}` : ""}`
       : null;
-  const currentLevelIndex = levels.findIndex((entry) => entry.id === level.id);
   const nextUnlockedLevel =
     currentLevelIndex >= 0
-      ? levels.slice(currentLevelIndex + 1).find((entry) => entry.topics.some((topic) => topic.storyCount > 0)) ?? null
+      ? levels
+          .slice(currentLevelIndex + 1, unlockedLevelCount)
+          .find((entry) => entry.topics.some((topic) => topic.storyCount > 0)) ?? null
       : null;
   const nextUnlockedLevelHref =
     nextUnlockedLevel

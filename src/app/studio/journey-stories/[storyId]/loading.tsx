@@ -3,8 +3,8 @@ import StudioShell from "@/components/studio/StudioShell";
 export default function JourneyStoryEditorLoading() {
   return (
     <StudioShell
-      title="Edit Journey Story"
-      description="Loading story editor..."
+      title="Editar historia del Journey"
+      description="Cargando editor de historia..."
     >
       <div style={{ display: "grid", gap: 16 }}>
         <div style={{ height: 64, borderRadius: 12, background: "var(--card-bg)", border: "1px solid var(--card-border)", opacity: 0.7 }} />

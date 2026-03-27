@@ -29,7 +29,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  if (!isMetricsAccessAllowed(req)) {
+  if (!(await isMetricsAccessAllowed(req))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

@@ -7,11 +7,11 @@ export default async function JourneyBuilderPage() {
 
   return (
     <StudioShell
-      title="Journey Builder"
-      description="Manage the actual structure of Journey here: variants, levels, topics, and story targets."
+      title="Creador de Journeys"
+      description="Crea journeys nuevos y organiza su estructura real: variante, niveles, topics y meta de historias."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
-        { label: "Journey Builder" },
+        { label: "Creador de Journeys" },
       ]}
     >
       <JourneyBuilderPageClient />

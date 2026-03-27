@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import {
+  deleteStudioJourneyStory,
   duplicateStudioJourneyStory,
   getStudioJourneyStory,
   patchStudioJourneyStory,
@@ -65,5 +66,23 @@ export async function POST(req: NextRequest, context: RouteContext) {
   } catch (error) {
     console.error("[studio/journey-stories/:storyId] failed to duplicate", error);
     return NextResponse.json({ error: "Failed to duplicate story" }, { status: 500 });
+  }
+}
+
+export async function DELETE(_req: NextRequest, context: RouteContext) {
+  const { userId } = await auth();
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const { storyId } = await context.params;
+
+  try {
+    await deleteStudioJourneyStory(storyId);
+    revalidatePath("/studio/journey-stories");
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error("[studio/journey-stories/:storyId] failed to delete", error);
+    return NextResponse.json({ error: "Failed to delete story" }, { status: 500 });
   }
 }

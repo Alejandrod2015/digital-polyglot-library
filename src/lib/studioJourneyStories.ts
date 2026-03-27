@@ -13,6 +13,9 @@ export type StudioJourneyStory = {
   slug: string;
   synopsis: string;
   text: string;
+  vocabRaw: string;
+  coverUrl: string;
+  audioUrl: string;
   language: string;
   variant: string;
   region: string;
@@ -24,6 +27,11 @@ export type StudioJourneyStory = {
   journeyFocus: string;
   journeyEligible: boolean;
   published: boolean;
+  storyVocabQualityRaw: string;
+  vocabValidationRaw: string;
+  audioQaStatus: string;
+  audioQaScore: number | null;
+  audioDeliveryQaStatus: string;
   updatedAt: string;
 };
 
@@ -34,6 +42,9 @@ type SanityJourneyStoryDoc = {
   slug?: { current?: string };
   synopsis?: string;
   text?: string;
+  vocabRaw?: string;
+  coverUrl?: string;
+  audioUrl?: string;
   language?: string;
   variant?: string;
   region_es?: string;
@@ -50,6 +61,11 @@ type SanityJourneyStoryDoc = {
   journeyFocus?: string;
   journeyEligible?: boolean;
   published?: boolean;
+  storyVocabQualityRaw?: string;
+  vocabValidationRaw?: string;
+  audioQaStatus?: string;
+  audioQaScore?: number;
+  audioDeliveryQaStatus?: string;
 };
 
 export type JourneyStoryPatch = {
@@ -57,6 +73,9 @@ export type JourneyStoryPatch = {
   slug?: string;
   synopsis?: string;
   text?: string;
+  vocabRaw?: string;
+  coverUrl?: string;
+  audioUrl?: string;
   language?: string;
   variant?: string;
   region?: string;
@@ -68,6 +87,11 @@ export type JourneyStoryPatch = {
   journeyFocus?: string;
   journeyEligible?: boolean;
   published?: boolean;
+  storyVocabQualityRaw?: string;
+  vocabValidationRaw?: string;
+  audioQaStatus?: string;
+  audioQaScore?: number | null;
+  audioDeliveryQaStatus?: string;
 };
 
 export type JourneyCoverageGap = {
@@ -116,6 +140,9 @@ function toStudioStory(
     slug: active?.slug?.current ?? "",
     synopsis: active?.synopsis ?? "",
     text: active?.text ?? "",
+    vocabRaw: active?.vocabRaw ?? "",
+    coverUrl: active?.coverUrl ?? "",
+    audioUrl: active?.audioUrl ?? "",
     language: active?.language ?? "spanish",
     variant: active?.variant ?? "latam",
     region: active ? regionFromDoc(active) : "",
@@ -130,6 +157,14 @@ function toStudioStory(
     journeyFocus: active?.journeyFocus ?? "General",
     journeyEligible: Boolean(active?.journeyEligible ?? true),
     published: Boolean(active?.published ?? false),
+    storyVocabQualityRaw: active?.storyVocabQualityRaw ?? "",
+    vocabValidationRaw: active?.vocabValidationRaw ?? "",
+    audioQaStatus: active?.audioQaStatus ?? "",
+    audioQaScore:
+      typeof active?.audioQaScore === "number" && Number.isFinite(active.audioQaScore)
+        ? active.audioQaScore
+        : null,
+    audioDeliveryQaStatus: active?.audioDeliveryQaStatus ?? "",
     updatedAt: active?._updatedAt ?? "",
   };
 }
@@ -169,6 +204,9 @@ export async function listStudioJourneyStories(): Promise<StudioJourneyStory[]> 
       slug,
       synopsis,
       text,
+      vocabRaw,
+      coverUrl,
+      audioUrl,
       language,
       variant,
       region_es,
@@ -184,7 +222,12 @@ export async function listStudioJourneyStories(): Promise<StudioJourneyStory[]> 
       journeyOrder,
       journeyFocus,
       journeyEligible,
-      published
+      published,
+      storyVocabQualityRaw,
+      vocabValidationRaw,
+      audioQaStatus,
+      audioQaScore,
+      audioDeliveryQaStatus
     }
   `);
 
@@ -211,6 +254,20 @@ export async function listStudioJourneyStories(): Promise<StudioJourneyStory[]> 
     });
 }
 
+export async function listStudioJourneyStoriesForVariant(
+  language: string,
+  variant: string
+): Promise<StudioJourneyStory[]> {
+  const stories = await listStudioJourneyStories();
+  const normalizedLanguage = language.trim().toLowerCase();
+  const normalizedVariant = variant.trim().toLowerCase();
+  return stories.filter(
+    (story) =>
+      story.language.trim().toLowerCase() === normalizedLanguage &&
+      story.variant.trim().toLowerCase() === normalizedVariant
+  );
+}
+
 export async function getStudioJourneyStory(id: string): Promise<StudioJourneyStory | null> {
   const docs = await rawServerClient.fetch<SanityJourneyStoryDoc[]>(
     `
@@ -224,6 +281,9 @@ export async function getStudioJourneyStory(id: string): Promise<StudioJourneySt
       slug,
       synopsis,
       text,
+      vocabRaw,
+      coverUrl,
+      audioUrl,
       language,
       variant,
       region_es,
@@ -239,7 +299,12 @@ export async function getStudioJourneyStory(id: string): Promise<StudioJourneySt
       journeyOrder,
       journeyFocus,
       journeyEligible,
-      published
+      published,
+      storyVocabQualityRaw,
+      vocabValidationRaw,
+      audioQaStatus,
+      audioQaScore,
+      audioDeliveryQaStatus
     }
   `,
     { publishedId: id, draftId: `drafts.${id}` }
@@ -280,6 +345,9 @@ export async function createStudioJourneyStoryWithSeed(
     title: seed.title ?? "Untitled Journey Story",
     synopsis: seed.synopsis ?? "",
     text: seed.text ?? "",
+    vocabRaw: seed.vocabRaw ?? "",
+    coverUrl: seed.coverUrl ?? "",
+    audioUrl: seed.audioUrl ?? "",
     slug: seed.slug ? { _type: "slug", current: seed.slug } : undefined,
   });
 
@@ -317,6 +385,9 @@ export async function patchStudioJourneyStory(
     published: current.published,
     synopsis: current.synopsis,
     text: current.text,
+    vocabRaw: current.vocabRaw,
+    coverUrl: current.coverUrl,
+    audioUrl: current.audioUrl,
     slug: current.slug ? { _type: "slug", current: current.slug } : undefined,
   });
 
@@ -325,6 +396,9 @@ export async function patchStudioJourneyStory(
   if (patch.slug !== undefined) setPatch.slug = { _type: "slug", current: patch.slug };
   if (patch.synopsis !== undefined) setPatch.synopsis = patch.synopsis;
   if (patch.text !== undefined) setPatch.text = patch.text;
+  if (patch.vocabRaw !== undefined) setPatch.vocabRaw = patch.vocabRaw;
+  if (patch.coverUrl !== undefined) setPatch.coverUrl = patch.coverUrl;
+  if (patch.audioUrl !== undefined) setPatch.audioUrl = patch.audioUrl;
   if (patch.language !== undefined) setPatch.language = patch.language;
   if (patch.variant !== undefined) setPatch.variant = patch.variant;
   if (patch.cefrLevel !== undefined) setPatch.cefrLevel = patch.cefrLevel;
@@ -375,6 +449,9 @@ export async function duplicateStudioJourneyStory(id: string): Promise<StudioJou
     slug: current.slug ? `${current.slug}-copy` : "",
     synopsis: current.synopsis,
     text: current.text,
+    vocabRaw: current.vocabRaw,
+    coverUrl: current.coverUrl,
+    audioUrl: current.audioUrl,
     language: current.language,
     variant: current.variant,
     region: current.region,
@@ -387,6 +464,14 @@ export async function duplicateStudioJourneyStory(id: string): Promise<StudioJou
     journeyEligible: current.journeyEligible,
     published: false,
   });
+}
+
+export async function deleteStudioJourneyStory(id: string): Promise<void> {
+  const draftId = `drafts.${id}`;
+  await Promise.allSettled([
+    writeClient.delete(draftId),
+    writeClient.delete(id),
+  ]);
 }
 
 export async function getJourneyCoverageGaps(
