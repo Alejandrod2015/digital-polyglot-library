@@ -6,6 +6,11 @@ export default clerkMiddleware(async (auth, req) => {
   const isProd = process.env.NODE_ENV === "production";
 
   if (isProd && url.startsWith("/studio/metrics")) {
+    const { userId } = await auth();
+    if (userId) {
+      return NextResponse.next();
+    }
+
     const expectedKey = process.env.METRICS_DASHBOARD_KEY?.trim();
     const providedKey =
       req.headers.get("x-metrics-key")?.trim() ?? req.nextUrl.searchParams.get("key")?.trim();
