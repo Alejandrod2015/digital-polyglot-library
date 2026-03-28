@@ -71,6 +71,39 @@ type DashboardData = {
   };
 };
 
+type PipelineData = {
+  agentRuns: {
+    total: number;
+    byKind: { planner: number; content: number; qa: number };
+    byStatus: { completed: number; failed: number; running: number };
+    last7Days: Array<{ date: string; completed: number; failed: number }>;
+  };
+  drafts: {
+    total: number;
+    byStatus: {
+      draft: number;
+      generated: number;
+      qa_pass: number;
+      qa_fail: number;
+      needs_review: number;
+      approved: number;
+      published: number;
+    };
+    avgQaScore: number | null;
+    qaPassRate: number;
+    last7Days: Array<{ date: string; created: number; published: number }>;
+  };
+  briefs: {
+    total: number;
+    pending: number;
+    completed: number;
+  };
+  pipeline: {
+    avgTimeToPublish: number | null;
+    contentPerDay: number;
+  };
+};
+
 const EMPTY_DATA: DashboardData = {
   range: { from: "", to: "", days: 30 },
   kpis: { dau: 0, wau: 0, activeUsersInRange: 0, plays: 0, completions: 0, completionRate: 0, uniqueStories: 0, uniqueBooks: 0, avgMinutesPerActiveUser: 0, totalListenedMinutes: 0, savedStories: 0, savedBooks: 0 },
@@ -111,8 +144,16 @@ const SECTIONS: Array<{ key: MetricsSection; label: string }> = [
   { key: "exports", label: "Exportaciones" },
 ];
 
+const EMPTY_PIPELINE_DATA: PipelineData = {
+  agentRuns: { total: 0, byKind: { planner: 0, content: 0, qa: 0 }, byStatus: { completed: 0, failed: 0, running: 0 }, last7Days: [] },
+  drafts: { total: 0, byStatus: { draft: 0, generated: 0, qa_pass: 0, qa_fail: 0, needs_review: 0, approved: 0, published: 0 }, avgQaScore: null, qaPassRate: 0, last7Days: [] },
+  briefs: { total: 0, pending: 0, completed: 0 },
+  pipeline: { avgTimeToPublish: null, contentPerDay: 0 },
+};
+
 export default function MetricsDashboard() {
   const [data, setData] = useState<DashboardData>(EMPTY_DATA);
+  const [pipelineData, setPipelineData] = useState<PipelineData>(EMPTY_PIPELINE_DATA);
   const [sectionCache, setSectionCache] = useState<Partial<Record<MetricsSection, DashboardData>>>({});
   const [days, setDays] = useState("30");
   const [bookSlug, setBookSlug] = useState("");
@@ -122,6 +163,9 @@ export default function MetricsDashboard() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function loadMetrics(targetSection: MetricsSection = section, force = false) {
+    if (targetSection === "content") {
+      return loadPipelineMetrics();
+    }
     if (!force && sectionCache[targetSection]) {
       setData(sectionCache[targetSection] ?? EMPTY_DATA);
       return;
@@ -155,7 +199,35 @@ export default function MetricsDashboard() {
     }
   }
 
+  async function loadPipelineMetrics() {
+    setLoading(true);
+    setErrorMessage(null);
+    try {
+      const res = await fetch("/api/metrics/pipeline");
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
+      }
+      const json = (await res.json()) as PipelineData;
+      setPipelineData(json);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      const message = msg.includes("403")
+        ? "No tienes acceso a métricas."
+        : `No se pudieron cargar las métricas de pipeline: ${msg}`;
+      setErrorMessage(message);
+      console.error("Error loading pipeline metrics:", err);
+      setPipelineData(EMPTY_PIPELINE_DATA);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   useEffect(() => {
+    if (section === "content") {
+      void loadPipelineMetrics();
+      return;
+    }
     if (sectionCache[section]) {
       setData(sectionCache[section] ?? EMPTY_DATA);
       return;
@@ -320,7 +392,171 @@ export default function MetricsDashboard() {
     }
 
     if (section === "content") {
-      return <EmptySection title="Content Performance" description="Compare completion rate by topic, level, language, region, and cover/title versions." />;
+      return (
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {/* Agent Runs KPIs */}
+          <div style={card}>
+            <h3 style={heading}>Agent Runs</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Total Runs</p>
+                <p style={kpiValue}>{pipelineData.agentRuns.total}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Completed</p>
+                <p style={kpiValue}>{pipelineData.agentRuns.byStatus.completed}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Failed</p>
+                <p style={{ ...kpiValue, color: pipelineData.agentRuns.byStatus.failed > 0 ? "#ef4444" : "var(--foreground)" }}>{pipelineData.agentRuns.byStatus.failed}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Running</p>
+                <p style={kpiValue}>{pipelineData.agentRuns.byStatus.running}</p>
+              </div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginTop: 12 }}>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Planner Runs</p>
+                <p style={kpiValue}>{pipelineData.agentRuns.byKind.planner}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Content Runs</p>
+                <p style={kpiValue}>{pipelineData.agentRuns.byKind.content}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>QA Runs</p>
+                <p style={kpiValue}>{pipelineData.agentRuns.byKind.qa}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Story Drafts KPIs */}
+          <div style={card}>
+            <h3 style={heading}>Story Drafts</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Total Drafts</p>
+                <p style={kpiValue}>{pipelineData.drafts.total}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>QA Pass Rate</p>
+                <p style={kpiValue}>{pipelineData.drafts.qaPassRate}%</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Avg QA Score</p>
+                <p style={kpiValue}>{pipelineData.drafts.avgQaScore !== null ? pipelineData.drafts.avgQaScore.toFixed(2) : "N/A"}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Published</p>
+                <p style={kpiValue}>{pipelineData.drafts.byStatus.published}</p>
+              </div>
+            </div>
+            <div style={{ marginTop: 12 }}>
+              <p style={{ ...sectionLabel, marginBottom: 8 }}>Drafts by Status</p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 10 }}>
+                {[
+                  { label: "Draft", value: pipelineData.drafts.byStatus.draft },
+                  { label: "Generated", value: pipelineData.drafts.byStatus.generated },
+                  { label: "QA Pass", value: pipelineData.drafts.byStatus.qa_pass },
+                  { label: "QA Fail", value: pipelineData.drafts.byStatus.qa_fail },
+                  { label: "Needs Review", value: pipelineData.drafts.byStatus.needs_review },
+                  { label: "Approved", value: pipelineData.drafts.byStatus.approved },
+                  { label: "Published", value: pipelineData.drafts.byStatus.published },
+                ].map((item) => (
+                  <div key={item.label} style={{ padding: "10px 8px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", textAlign: "center" as const }}>
+                    <p style={{ ...kpiLabel, fontSize: 12 }}>{item.label}</p>
+                    <p style={{ ...kpiValue, fontSize: 20 }}>{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Curriculum Briefs KPIs */}
+          <div style={card}>
+            <h3 style={heading}>Curriculum Briefs</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Total Briefs</p>
+                <p style={kpiValue}>{pipelineData.briefs.total}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Pending</p>
+                <p style={kpiValue}>{pipelineData.briefs.pending}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Completed</p>
+                <p style={kpiValue}>{pipelineData.briefs.completed}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Pipeline Metrics */}
+          <div style={card}>
+            <h3 style={heading}>Pipeline Performance</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12 }}>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Avg Time to Publish</p>
+                <p style={kpiValue}>{pipelineData.pipeline.avgTimeToPublish !== null ? `${Math.round(pipelineData.pipeline.avgTimeToPublish)} min` : "N/A"}</p>
+              </div>
+              <div className="studio-card" style={cardCompact}>
+                <p style={kpiLabel}>Content per Day</p>
+                <p style={kpiValue}>{pipelineData.pipeline.contentPerDay.toFixed(1)}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Last 7 Days Trend */}
+          <div style={card}>
+            <h3 style={heading}>Last 7 Days Trend</h3>
+            <p style={sectionLabel}>Drafts Created vs Published</p>
+            <table style={{ width: "100%", marginTop: 12 }}>
+              <thead>
+                <tr>
+                  <th style={thStyle}>Date</th>
+                  <th style={thStyle}>Created</th>
+                  <th style={thStyle}>Published</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pipelineData.drafts.last7Days.map((item) => (
+                  <tr key={item.date}>
+                    <td style={tdStyle}>{new Date(item.date).toLocaleDateString("es-ES", { month: "short", day: "numeric" })}</td>
+                    <td style={tdStyle}>{item.created}</td>
+                    <td style={tdStyle}>{item.published}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {pipelineData.drafts.last7Days.length === 0 && <p style={{ ...emptyText, marginTop: 12 }}>No data available for the last 7 days.</p>}
+          </div>
+
+          {/* Agent Runs Last 7 Days */}
+          <div style={card}>
+            <h3 style={heading}>Agent Runs Last 7 Days</h3>
+            <table style={{ width: "100%", marginTop: 12 }}>
+              <thead>
+                <tr>
+                  <th style={thStyle}>Date</th>
+                  <th style={thStyle}>Completed</th>
+                  <th style={thStyle}>Failed</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pipelineData.agentRuns.last7Days.map((item) => (
+                  <tr key={item.date}>
+                    <td style={tdStyle}>{new Date(item.date).toLocaleDateString("es-ES", { month: "short", day: "numeric" })}</td>
+                    <td style={tdStyle}>{item.completed}</td>
+                    <td style={{ ...tdStyle, color: item.failed > 0 ? "#ef4444" : "var(--foreground)" }}>{item.failed}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {pipelineData.agentRuns.last7Days.length === 0 && <p style={{ ...emptyText, marginTop: 12 }}>No data available for the last 7 days.</p>}
+          </div>
+        </div>
+      );
     }
 
     if (section === "funnels") {

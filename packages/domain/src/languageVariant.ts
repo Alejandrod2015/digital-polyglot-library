@@ -9,7 +9,8 @@ export type LanguageVariant =
   | "austria"
   | "france"
   | "canada-fr"
-  | "italy";
+  | "italy"
+  | "south-korea";
 
 export const VARIANT_LABELS: Record<LanguageVariant, string> = {
   latam: "LATAM",
@@ -23,6 +24,7 @@ export const VARIANT_LABELS: Record<LanguageVariant, string> = {
   france: "France",
   "canada-fr": "Canada",
   italy: "Italy",
+  "south-korea": "South Korea",
 };
 
 export const VARIANT_OPTIONS_BY_LANGUAGE: Record<string, Array<{ value: LanguageVariant; label: string }>> = {
@@ -47,6 +49,7 @@ export const VARIANT_OPTIONS_BY_LANGUAGE: Record<string, Array<{ value: Language
     { value: "canada-fr", label: "Canada" },
   ],
   italian: [{ value: "italy", label: "Italy" }],
+  korean: [{ value: "south-korea", label: "South Korea" }],
 };
 
 export function normalizeVariant(value?: string | null): string | null {
@@ -114,6 +117,10 @@ export function inferVariantFromRegion(language?: string | null, region?: string
 
   if (normalizedLanguage === "italian" || normalizedLanguage === "italiano") {
     return "italy";
+  }
+
+  if (normalizedLanguage === "korean" || normalizedLanguage === "coreano") {
+    return "south-korea";
   }
 
   return null;

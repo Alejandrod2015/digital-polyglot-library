@@ -31,7 +31,13 @@ export type StudioJourneyStory = {
   vocabValidationRaw: string;
   audioQaStatus: string;
   audioQaScore: number | null;
+  audioQaNotes: string;
+  audioQaTranscript: string;
+  audioQaCheckedAt: string;
   audioDeliveryQaStatus: string;
+  audioDeliveryQaScore: number | null;
+  audioDeliveryQaNotes: string;
+  audioDeliveryQaCheckedAt: string;
   updatedAt: string;
 };
 
@@ -65,7 +71,13 @@ type SanityJourneyStoryDoc = {
   vocabValidationRaw?: string;
   audioQaStatus?: string;
   audioQaScore?: number;
+  audioQaNotes?: string;
+  audioQaTranscript?: string;
+  audioQaCheckedAt?: string;
   audioDeliveryQaStatus?: string;
+  audioDeliveryQaScore?: number;
+  audioDeliveryQaNotes?: string;
+  audioDeliveryQaCheckedAt?: string;
 };
 
 export type JourneyStoryPatch = {
@@ -164,7 +176,16 @@ function toStudioStory(
       typeof active?.audioQaScore === "number" && Number.isFinite(active.audioQaScore)
         ? active.audioQaScore
         : null,
+    audioQaNotes: active?.audioQaNotes ?? "",
+    audioQaTranscript: active?.audioQaTranscript ?? "",
+    audioQaCheckedAt: active?.audioQaCheckedAt ?? "",
     audioDeliveryQaStatus: active?.audioDeliveryQaStatus ?? "",
+    audioDeliveryQaScore:
+      typeof active?.audioDeliveryQaScore === "number" && Number.isFinite(active.audioDeliveryQaScore)
+        ? active.audioDeliveryQaScore
+        : null,
+    audioDeliveryQaNotes: active?.audioDeliveryQaNotes ?? "",
+    audioDeliveryQaCheckedAt: active?.audioDeliveryQaCheckedAt ?? "",
     updatedAt: active?._updatedAt ?? "",
   };
 }
@@ -227,7 +248,13 @@ export async function listStudioJourneyStories(): Promise<StudioJourneyStory[]> 
       vocabValidationRaw,
       audioQaStatus,
       audioQaScore,
-      audioDeliveryQaStatus
+      audioQaNotes,
+      audioQaTranscript,
+      audioQaCheckedAt,
+      audioDeliveryQaStatus,
+      audioDeliveryQaScore,
+      audioDeliveryQaNotes,
+      audioDeliveryQaCheckedAt
     }
   `);
 
@@ -304,7 +331,13 @@ export async function getStudioJourneyStory(id: string): Promise<StudioJourneySt
       vocabValidationRaw,
       audioQaStatus,
       audioQaScore,
-      audioDeliveryQaStatus
+      audioQaNotes,
+      audioQaTranscript,
+      audioQaCheckedAt,
+      audioDeliveryQaStatus,
+      audioDeliveryQaScore,
+      audioDeliveryQaNotes,
+      audioDeliveryQaCheckedAt
     }
   `,
     { publishedId: id, draftId: `drafts.${id}` }

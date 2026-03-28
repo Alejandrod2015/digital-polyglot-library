@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { JourneyVariantPlan } from "@/app/journey/journeyCurriculum";
+import { VARIANT_OPTIONS_BY_LANGUAGE } from "@/lib/languageVariant";
 import StudioActionLink from "@/components/studio/StudioActionLink";
 import StudioToast, { showToast } from "@/components/studio/StudioToast";
 
@@ -10,10 +11,11 @@ type Props = { plans: JourneyVariantPlan[] };
 
 const COLORS = ["#2563eb", "#7c3aed", "#059669", "#d97706", "#ec4899", "#0ea5e9"];
 const LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"];
+const LANGUAGES = ["Spanish", "Portuguese", "French", "Italian", "German", "Korean", "English"];
 
 export default function JourneyBuilderManager({ plans }: Props) {
   const router = useRouter();
-  const language = "Spanish";
+  const [language, setLanguage] = useState("Spanish");
   const [variantId, setVariantId] = useState("");
   const [levelsIncluded, setLevelsIncluded] = useState<string[]>(["a1", "a2"]);
   const [templateKey, setTemplateKey] = useState("empty");
@@ -105,24 +107,42 @@ export default function JourneyBuilderManager({ plans }: Props) {
               <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>
                 Idioma
               </label>
-              <div style={{ width: "100%", height: 40, borderRadius: 10, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: 14, fontWeight: 600 }}>Spanish</span>
-                <span style={{ fontSize: 11, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Fijo</span>
-              </div>
-              <p style={{ fontSize: 12, color: "var(--muted)", margin: "8px 0 0" }}>
-                Hoy los journeys solo están modelados para español, así que aquí no mostramos idiomas falsos.
-              </p>
+              <select
+                value={language}
+                onChange={(event) => { setLanguage(event.target.value); setVariantId(""); }}
+                style={{ width: "100%", height: 40, borderRadius: 10, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px" }}
+              >
+                {LANGUAGES.map((lang) => (
+                  <option key={lang} value={lang}>{lang}</option>
+                ))}
+              </select>
             </div>
             <div>
               <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>
                 Variante
               </label>
-              <input
-                value={variantId}
-                onChange={(event) => setVariantId(event.target.value)}
-                placeholder="Ej. latam, spain, latam-business"
-                style={{ width: "100%", height: 40, borderRadius: 10, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px" }}
-              />
+              {(() => {
+                const options = VARIANT_OPTIONS_BY_LANGUAGE[language.toLowerCase()] ?? [];
+                return options.length > 0 ? (
+                  <select
+                    value={variantId}
+                    onChange={(event) => setVariantId(event.target.value)}
+                    style={{ width: "100%", height: 40, borderRadius: 10, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px" }}
+                  >
+                    <option value="">Seleccionar variante</option>
+                    {options.map((opt) => (
+                      <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    value={variantId}
+                    onChange={(event) => setVariantId(event.target.value)}
+                    placeholder="Ej. latam, us, brazil"
+                    style={{ width: "100%", height: 40, borderRadius: 10, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px" }}
+                  />
+                );
+              })()}
             </div>
           </div>
 

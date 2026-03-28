@@ -16,9 +16,18 @@ const NAV_SECTIONS = [
   {
     label: "BASE",
     items: [
+      { href: "/studio/monitor", label: "Monitor", icon: "globe", exact: false },
       { href: "/studio", label: "Resumen", icon: "grid", exact: true },
       { href: "/studio/metrics", label: "Métricas", icon: "chart", exact: false },
       { href: "/studio/qa", label: "QA", icon: "shield", exact: false },
+    ],
+  },
+  {
+    label: "AGENTS",
+    items: [
+      { href: "/studio/planner", label: "Planner", icon: "compass", exact: false },
+      { href: "/studio/content", label: "Content Agent", icon: "pen", exact: false },
+      { href: "/studio/drafts", label: "Borradores", icon: "file-text", exact: false },
     ],
   },
   {
@@ -37,6 +46,7 @@ const NAV_SECTIONS = [
   {
     label: "ADMIN",
     items: [
+      { href: "/studio/config", label: "Reglas pedagógicas", icon: "sliders", exact: false },
       { href: "/studio/team", label: "Equipo", icon: "users", exact: false },
     ],
   },
@@ -66,6 +76,16 @@ function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
       return <svg {...props}><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" /><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" /></svg>;
     case "users":
       return <svg {...props}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>;
+    case "compass":
+      return <svg {...props}><circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" /></svg>;
+    case "pen":
+      return <svg {...props}><path d="M12 19l7-7 3 3-7 7-3-3z" /><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" /><path d="M2 2l7.586 7.586" /><circle cx="11" cy="11" r="2" /></svg>;
+    case "globe":
+      return <svg {...props}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>;
+    case "file-text":
+      return <svg {...props}><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><polyline points="13 2 13 9 20 9" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="15" y2="17" /></svg>;
+    case "sliders":
+      return <svg {...props}><line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" /><line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" /><line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" /><line x1="1" y1="14" x2="7" y2="14" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="17" y1="16" x2="23" y2="16" /></svg>;
     default:
       return null;
   }
@@ -250,3 +270,4 @@ export default function StudioShell({
     </div>
   );
 }
+

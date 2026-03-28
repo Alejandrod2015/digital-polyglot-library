@@ -314,6 +314,7 @@ export default function JourneyStoryEditor({ story }: Props) {
                   <option value="spanish">Spanish</option><option value="english">English</option>
                   <option value="portuguese">Portuguese</option><option value="french">French</option>
                   <option value="italian">Italian</option><option value="german">German</option>
+                  <option value="korean">Korean</option>
                 </select>
               </div>
               <div>
@@ -406,13 +407,41 @@ export default function JourneyStoryEditor({ story }: Props) {
 
           <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", padding: 20 }}>
             <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 12px" }}>QA</h3>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
+
+            {/* Status pills */}
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 16 }}>
               <span style={qaPill}>Audio: {form.audioQaStatus || "Sin revisar"}</span>
               <span style={qaPill}>Score audio: {form.audioQaScore ?? "—"}</span>
               <span style={qaPill}>Entrega audio: {form.audioDeliveryQaStatus || "Sin revisar"}</span>
+              <span style={qaPill}>Score entrega: {form.audioDeliveryQaScore ?? "—"}</span>
             </div>
+
+            {/* Timestamps */}
+            {(form.audioQaCheckedAt || form.audioDeliveryQaCheckedAt) && (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 16, fontSize: 11, color: "var(--muted)" }}>
+                {form.audioQaCheckedAt && (
+                  <span>Audio QA: {new Date(form.audioQaCheckedAt).toLocaleString()}</span>
+                )}
+                {form.audioDeliveryQaCheckedAt && (
+                  <span>Entrega QA: {new Date(form.audioDeliveryQaCheckedAt).toLocaleString()}</span>
+                )}
+              </div>
+            )}
+
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <div>
+                <label style={label}>Notas de QA de audio</label>
+                <textarea value={form.audioQaNotes} readOnly rows={3} className="studio-input" style={{ ...textarea, opacity: 0.8 }} />
+              </div>
+              <div>
+                <label style={label}>Transcripción de QA de audio</label>
+                <textarea value={form.audioQaTranscript} readOnly rows={4} className="studio-input" style={{ ...textarea, opacity: 0.8 }} />
+              </div>
+              <div>
+                <label style={label}>Notas de QA de entrega de audio</label>
+                <textarea value={form.audioDeliveryQaNotes} readOnly rows={3} className="studio-input" style={{ ...textarea, opacity: 0.8 }} />
+              </div>
+              <div style={{ borderTop: "1px solid var(--card-border)", paddingTop: 12 }}>
                 <label style={label}>Reporte de vocabulario de la historia</label>
                 <textarea value={form.storyVocabQualityRaw} readOnly rows={4} className="studio-input" style={{ ...textarea, opacity: 0.8 }} />
               </div>

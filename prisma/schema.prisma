@@ -15,6 +15,30 @@ enum StudioRole {
   content_creator
 }
 
+enum AgentKind {
+  planner
+  content
+  qa
+}
+
+enum AgentRunStatus {
+  queued
+  running
+  completed
+  failed
+  needs_review
+}
+
+enum AgentArtifactStatus {
+  draft
+  generated
+  qa_pass
+  qa_fail
+  needs_review
+  approved
+  published
+}
+
 model StudioMember {
   id        String     @id @default(cuid())
   email     String     @unique
@@ -24,6 +48,100 @@ model StudioMember {
   updatedAt DateTime   @updatedAt
 
   @@map("dp_studio_members")
+}
+
+model AgentRun {
+  id           String         @id @default(cuid())
+  agentKind    AgentKind
+  status       AgentRunStatus @default(queued)
+  model        String?
+  input        Json
+  output       Json?
+  errorMessage String?
+  toolsUsed    String[]
+  parentRunId  String?
+  startedAt    DateTime?
+  completedAt  DateTime?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  @@map("dp_agent_runs_v1")
+  @@index([agentKind, status, createdAt])
+  @@index([parentRunId])
+}
+
+model CurriculumBrief {
+  id            String              @id @default(cuid())
+  language      String
+  variant       String
+  level         String
+  journeyKey    String
+  topicSlug     String
+  storySlot     Int
+  journeyFocus  String?             @default("General")
+  title         String
+  brief         Json
+  status        AgentArtifactStatus @default(draft)
+  sourceRunId   String?
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+
+  @@map("dp_curriculum_briefs_v1")
+  @@index([language, variant, level])
+  @@index([journeyKey, topicSlug, storySlot])
+  @@index([status])
+}
+
+model StoryDraft {
+  id               String              @id @default(cuid())
+  briefId          String?
+  sourceStoryId    String?
+  title            String
+  slug             String?
+  text             String
+  synopsis         String?
+  vocab            Json?
+  metadata         Json?
+  status           AgentArtifactStatus @default(draft)
+  sourceRunId      String?
+  latestQaRunId    String?
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+
+  @@map("dp_story_drafts_v1")
+  @@index([briefId])
+  @@index([sourceStoryId])
+  @@index([status])
+}
+
+model QAReview {
+  id                String   @id @default(cuid())
+  storyDraftId      String?
+  sourceStoryId     String?
+  sourceRunId       String?
+  status            String
+  score             Float?
+  report            Json
+  correctedText     String?
+  correctedVocab    Json?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("dp_qa_reviews_v1")
+  @@index([storyDraftId])
+  @@index([sourceStoryId])
+  @@index([status, createdAt])
+}
+
+model StudioConfig {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  updatedBy String?
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@map("dp_studio_config_v1")
 }
 
 enum BillingSource {

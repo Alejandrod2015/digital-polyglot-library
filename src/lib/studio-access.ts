@@ -39,9 +39,11 @@ const ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
     "studio:metrics",
     "studio:qa",
     "studio:content",
+    "studio:planner",
     "studio:sanity",
     "studio:journey-stories",
     "studio:journey-builder",
+    "studio:drafts",
   ],
   content_creator: [
     "studio:view",
@@ -53,12 +55,16 @@ const ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
 
 // ─── Path → permission mapping ─────────────────────────────────
 const PATH_PERMISSIONS: Array<{ pattern: RegExp; permission: string }> = [
+  { pattern: /^\/studio\/config/, permission: "studio:config" },
   { pattern: /^\/studio\/team/, permission: "studio:team" },
   { pattern: /^\/studio\/metrics/, permission: "studio:metrics" },
   { pattern: /^\/studio\/qa/, permission: "studio:qa" },
+  { pattern: /^\/studio\/content/, permission: "studio:content" },
+  { pattern: /^\/studio\/planner/, permission: "studio:planner" },
   { pattern: /^\/studio\/journey-stories/, permission: "studio:journey-stories" },
   { pattern: /^\/studio\/journey-builder/, permission: "studio:journey-builder" },
   { pattern: /^\/studio\/sanity/, permission: "studio:sanity" },
+  { pattern: /^\/studio\/drafts/, permission: "studio:drafts" },
   { pattern: /^\/studio/, permission: "studio:view" },
 ];
 
