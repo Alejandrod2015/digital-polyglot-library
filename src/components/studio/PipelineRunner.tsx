@@ -195,6 +195,14 @@ export default function PipelineRunner() {
 
   // ── Phase 2: Generate one topic ──
 
+  function addStep(step: PipelineStep) {
+    setTopicSteps((prev) => {
+      const idx = prev.findIndex((s) => s.step === step.step);
+      if (idx >= 0) { const u = [...prev]; u[idx] = step; return u; }
+      return [...prev, step];
+    });
+  }
+
   async function generateTopic(level: string, topicSlug: string) {
     const key = `${level}|${topicSlug}`;
     setActiveTopicKey(key);
@@ -202,17 +210,49 @@ export default function PipelineRunner() {
     setPhase("generating");
 
     try {
+      // Step 1: Generate stories + QA + publish
+      const collectedSteps: PipelineStep[] = [];
       await streamNDJSON(
         "/api/studio/pipeline/generate-topic",
         { level, topicSlug },
         (step) => {
-          setTopicSteps((prev) => {
-            const idx = prev.findIndex((s) => s.step === step.step);
-            if (idx >= 0) { const u = [...prev]; u[idx] = step; return u; }
-            return [...prev, step];
-          });
+          collectedSteps.push(step);
+          addStep(step);
         },
       );
+
+      // Step 2: Auto-chain cover generation for published stories
+      const publishStep = collectedSteps.find((s) => s.step === "publish" && s.data?.publishedStories);
+      const publishedStories = (publishStep?.data?.publishedStories ?? []) as Array<{ draftId: string; sanityId: string }>;
+
+      if (publishedStories.length > 0) {
+        addStep({ step: "covers", status: "running", detail: `Generando covers (0/${publishedStories.length})...` });
+        let coverOk = 0, coverFail = 0;
+
+        for (const { sanityId, draftId } of publishedStories) {
+          try {
+            const res = await fetch("/api/studio/pipeline/generate-cover", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ sanityId, draftId }),
+            });
+            const data = await res.json();
+            if (data.success) coverOk++; else coverFail++;
+          } catch { coverFail++; }
+          addStep({
+            step: "covers",
+            status: "running",
+            detail: `Generando covers (${coverOk + coverFail}/${publishedStories.length})...`,
+          });
+        }
+
+        addStep({
+          step: "covers",
+          status: coverFail === publishedStories.length ? "failed" : "completed",
+          detail: `${coverOk} covers generados${coverFail > 0 ? `, ${coverFail} fallidos` : ""}.`,
+        });
+      }
+
       await fetchTopics();
     } catch { /* error shown in steps */ }
     finally {

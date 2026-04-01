@@ -11,6 +11,9 @@ import { prisma } from "@/lib/prisma";
 import { getJourneyCurriculumPlans, saveJourneyVariantPlanForStudio } from "@/lib/journeyCurriculumSource";
 import type { JourneyVariantPlan } from "@/app/journey/journeyCurriculum";
 
+/** Vercel Hobby allows up to 60s */
+export const maxDuration = 60;
+
 /**
  * Map directive language names (lowercase) to the language/variant
  * used in curriculum plans. Falls back to sensible defaults.

@@ -7,7 +7,9 @@ import { runDraftQaAgent } from "@/agents/qa/agent";
 import { regenerateFromQA } from "@/agents/content/regenerate";
 import { autoPromoteDrafts, publishDraftToSanity } from "@/agents/publish/tools";
 import { loadDirective, DEFAULT_BUDGET, type PipelineBudget } from "@/agents/config/directive";
-import { generateCoverForPublishedStory } from "@/agents/publish/coverGenerator";
+
+/** Vercel Hobby allows up to 60s */
+export const maxDuration = 60;
 
 type StepEvent = {
   step: string;
@@ -21,7 +23,7 @@ type StepEvent = {
  *
  * Generates stories for a single (level, topicSlug) combination.
  * Runs: Content Agent → QA → Retry → Promote → Publish
- * Streams NDJSON progress.
+ * Covers are handled separately by the UI via /api/studio/pipeline/generate-cover.
  *
  * Body: { level: string, topicSlug: string }
  */
@@ -156,24 +158,8 @@ export async function POST(request: Request) {
             step: "publish",
             status: pubFail === promoted.length ? "failed" : "completed",
             detail: `${pubOk} publicadas${pubFail > 0 ? `, ${pubFail} fallidas` : ""}.`,
+            data: { publishedStories },
           });
-
-          // ── Covers ──
-          if (publishedStories.length > 0) {
-            send({ step: "covers", status: "running", detail: `Generando covers para ${publishedStories.length} historias...` });
-            let coverOk = 0, coverFail = 0;
-            for (const { draftId, sanityId } of publishedStories) {
-              try {
-                const coverResult = await generateCoverForPublishedStory({ sanityId, draftId });
-                if (coverResult.success) coverOk++; else coverFail++;
-              } catch { coverFail++; }
-            }
-            send({
-              step: "covers",
-              status: coverFail === publishedStories.length ? "failed" : "completed",
-              detail: `${coverOk} covers generados${coverFail > 0 ? `, ${coverFail} fallidos` : ""}.`,
-            });
-          }
         } else {
           send({ step: "promote", status: "skipped", detail: `No hay drafts con score >= ${budget.minQAScore}.` });
         }
