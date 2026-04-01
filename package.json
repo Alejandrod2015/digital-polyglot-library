@@ -12,7 +12,6 @@
     "dev:mobile": "npm run start --workspace @digital-polyglot/mobile",
     "dev:studio": "sanity dev --host",
     "build": "prisma generate && next build",
-    "postinstall": "node scripts/patchClerkExpo.js",
     "ios": "npm run ios --workspace @digital-polyglot/mobile",
     "start": "next start",
     "lint": "next lint",
