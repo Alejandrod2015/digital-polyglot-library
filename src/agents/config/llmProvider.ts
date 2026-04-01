@@ -11,6 +11,7 @@
 
 import OpenAI from "openai";
 import Anthropic from "@anthropic-ai/sdk";
+import { agentLog, estimateTokens, estimateCostUSD } from "@/lib/agentLogger";
 
 export type LLMProvider = "openai" | "anthropic";
 
@@ -49,7 +50,7 @@ export type LLMOptions = {
 };
 
 const DEFAULT_MODELS: Record<LLMProvider, string> = {
-  openai: "gpt-4o-mini",
+  openai: "gpt-4o",
   anthropic: "claude-sonnet-4-20250514",
 };
 
@@ -66,10 +67,32 @@ export async function chatCompletion(
   const temperature = options.temperature ?? 0.7;
   const maxTokens = options.maxTokens ?? 2048;
 
+  const start = performance.now();
+  const inputText = messages.map((m) => m.content).join(" ");
+  const inputTokens = estimateTokens(inputText);
+
+  let result: string;
   if (provider === "anthropic") {
-    return chatAnthropic(messages, model, temperature, maxTokens);
+    result = await chatAnthropic(messages, model, temperature, maxTokens);
+  } else {
+    result = await chatOpenAI(messages, model, temperature, maxTokens);
   }
-  return chatOpenAI(messages, model, temperature, maxTokens);
+
+  const durationMs = Math.round(performance.now() - start);
+  const outputTokens = estimateTokens(result);
+  const costUSD = estimateCostUSD(model, inputTokens, outputTokens);
+
+  agentLog.debug("pipeline", "LLM call completed", {
+    provider,
+    model,
+    temperature,
+    inputTokens,
+    outputTokens,
+    costUSD: Math.round(costUSD * 10000) / 10000,
+    durationMs,
+  });
+
+  return result;
 }
 
 // ── OpenAI implementation ──

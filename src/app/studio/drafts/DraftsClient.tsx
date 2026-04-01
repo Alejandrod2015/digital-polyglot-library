@@ -191,7 +191,7 @@ export default function DraftsClient() {
       const res = await fetch("/api/agents/drafts/promote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ minScore: 90, autoPublish: false }),
+        body: JSON.stringify({ minScore: 85, autoPublish: false }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();

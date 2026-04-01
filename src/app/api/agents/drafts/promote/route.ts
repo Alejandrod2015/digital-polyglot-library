@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json().catch(() => ({}));
-    const minScore = body.minScore ?? 90;
+    const minScore = body.minScore ?? 85;
     const autoPublish = body.autoPublish === true;
 
     // Step 1: Auto-promote

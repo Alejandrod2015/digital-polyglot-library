@@ -67,8 +67,9 @@ export async function POST(req: NextRequest) {
   }
 
   const email = body.email.toLowerCase().trim();
-  if (!email.includes("@")) {
-    return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return NextResponse.json({ error: "Invalid email format" }, { status: 400 });
   }
 
   // Check if already exists

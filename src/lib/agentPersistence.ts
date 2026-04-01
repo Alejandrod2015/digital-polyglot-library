@@ -38,7 +38,7 @@ export async function persistQAReview(params: {
   score: number;
   report: Record<string, unknown>;
 }): Promise<string> {
-  const review = await (prisma as any).qaReview.create({
+  const review = await (prisma as any).qAReview.create({
     data: {
       sourceStoryId: params.sourceStoryId,
       sourceRunId: params.sourceRunId,
@@ -66,7 +66,7 @@ export async function getAgentRuns(agentKind: AgentKind, limit: number = 50): Pr
 }
 
 export async function getQAReviewsForStory(sourceStoryId: string): Promise<any[]> {
-  const reviews = await (prisma as any).qaReview.findMany({
+  const reviews = await (prisma as any).qAReview.findMany({
     where: {
       sourceStoryId,
     },

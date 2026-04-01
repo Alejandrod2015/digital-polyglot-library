@@ -71,3 +71,15 @@ export const JOURNEY_MILESTONE_CHIME_URI = createToneWavDataUri([
   { frequency: 784, durationMs: 95, gain: 0.14 },
   { frequency: 1046.5, durationMs: 125, gain: 0.16 },
 ]);
+
+// Short ascending ding for a correct practice answer
+export const PRACTICE_CORRECT_SOUND_URI = createToneWavDataUri([
+  { frequency: 659, durationMs: 60, gain: 0.15 },
+  { frequency: 1047, durationMs: 110, gain: 0.17 },
+]);
+
+// Short descending low tone for a wrong practice answer
+export const PRACTICE_WRONG_SOUND_URI = createToneWavDataUri([
+  { frequency: 330, durationMs: 70, gain: 0.18 },
+  { frequency: 247, durationMs: 110, gain: 0.14 },
+]);

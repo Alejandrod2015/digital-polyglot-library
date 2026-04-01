@@ -28,6 +28,21 @@ interface MetricsData {
   };
   briefs: { total: number; pending: number; completed: number };
   pipeline: { avgTimeToPublish: number | null; contentPerDay: number };
+  qaQuality?: {
+    scoreTrend: Array<{ date: string; avgScore: number; count: number }>;
+    recentReviews: Array<{
+      id: string;
+      storyTitle: string;
+      score: number;
+      status: string;
+      createdAt: string;
+    }>;
+    passRateTrend: Array<{ date: string; passRate: number; total: number }>;
+  };
+  agentPerformance?: {
+    avgDurationByKind: Record<string, number | null>;
+    failureRate: number;
+  };
 }
 
 interface Directive {
@@ -74,20 +89,27 @@ export default function MonitorClient() {
     const fetchData = async () => {
       try {
         setError(null);
-        const [metricsRes, directiveRes] = await Promise.all([
+        const [metricsRes, directiveRes] = await Promise.allSettled([
           fetch("/api/metrics/pipeline"),
           fetch("/api/agents/directive"),
         ]);
 
-        if (!metricsRes.ok || !directiveRes.ok) {
-          throw new Error("Error al cargar datos");
+        // Handle metrics — show partial data if directive works
+        if (metricsRes.status === "fulfilled" && metricsRes.value.ok) {
+          const metricsData = await metricsRes.value.json();
+          setMetrics(metricsData);
+        } else {
+          const detail =
+            metricsRes.status === "fulfilled"
+              ? `API respondió ${metricsRes.value.status}`
+              : metricsRes.reason?.message ?? "red no disponible";
+          setError(`No se pudieron cargar métricas del pipeline (${detail})`);
         }
 
-        const metricsData = await metricsRes.json();
-        const directiveData = await directiveRes.json();
-
-        setMetrics(metricsData);
-        setDirective(directiveData.directive);
+        if (directiveRes.status === "fulfilled" && directiveRes.value.ok) {
+          const directiveData = await directiveRes.value.json();
+          setDirective(directiveData.directive);
+        }
       } catch (err) {
         setError(err instanceof Error ? err.message : "Error desconocido");
       } finally {
@@ -364,6 +386,163 @@ export default function MonitorClient() {
           )}
         </div>
       </div>
+
+      {/* QA Quality Trend + Agent Performance */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16 }}>
+        {/* QA Score Trend */}
+        {metrics.qaQuality && metrics.qaQuality.scoreTrend.length > 0 && (
+          <div
+            style={{
+              padding: 20,
+              borderRadius: 14,
+              backgroundColor: "var(--card-bg)",
+              border: "1px solid var(--card-border)",
+            }}
+          >
+            <p style={{ margin: 0, fontSize: 12, fontWeight: 700, color: "var(--studio-accent, #14b8a6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              Tendencia QA
+            </p>
+            <h3 style={{ margin: "8px 0 12px", fontSize: 16, color: "var(--foreground)" }}>Score promedio (7 días)</h3>
+            <div style={{ display: "flex", alignItems: "flex-end", gap: 6, height: 80 }}>
+              {metrics.qaQuality.scoreTrend.map((day, idx) => {
+                const height = Math.max(8, (day.avgScore / 100) * 80);
+                const barColor = day.avgScore >= 85 ? "#14b8a6" : day.avgScore >= 70 ? "#f59e0b" : "#ef4444";
+                return (
+                  <div key={idx} style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
+                    <span style={{ fontSize: 10, color: "var(--muted)", marginBottom: 4 }}>{Math.round(day.avgScore)}</span>
+                    <div
+                      style={{
+                        width: "100%",
+                        maxWidth: 32,
+                        height,
+                        backgroundColor: barColor,
+                        borderRadius: 4,
+                        opacity: 0.8,
+                      }}
+                      title={`${formatDate(day.date)}: ${day.avgScore.toFixed(1)} (${day.count} reviews)`}
+                    />
+                    <span style={{ fontSize: 9, color: "var(--muted)", marginTop: 4 }}>{formatDate(day.date)}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Agent Performance */}
+        {metrics.agentPerformance && (
+          <div
+            style={{
+              padding: 20,
+              borderRadius: 14,
+              backgroundColor: "var(--card-bg)",
+              border: "1px solid var(--card-border)",
+            }}
+          >
+            <p style={{ margin: 0, fontSize: 12, fontWeight: 700, color: "var(--studio-accent, #14b8a6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              Rendimiento de agentes
+            </p>
+            <h3 style={{ margin: "8px 0 12px", fontSize: 16, color: "var(--foreground)" }}>Tiempo promedio por agente</h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {(["planner", "content", "qa"] as const).map((kind) => {
+                const ms = metrics.agentPerformance!.avgDurationByKind[kind];
+                const label = kind === "planner" ? "Planner" : kind === "content" ? "Content" : "QA";
+                const seconds = ms ? (ms / 1000).toFixed(1) : "—";
+                return (
+                  <div key={kind} style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <span style={{ fontSize: 13, color: "var(--foreground)", fontWeight: 500 }}>{label}</span>
+                    <span style={{ fontSize: 13, color: ms ? "var(--foreground)" : "var(--muted)", fontWeight: 600 }}>{seconds}s</span>
+                  </div>
+                );
+              })}
+              <div style={{ borderTop: "1px solid var(--card-border)", paddingTop: 10, marginTop: 4 }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span style={{ fontSize: 13, color: "var(--foreground)", fontWeight: 500 }}>Tasa de fallos</span>
+                  <span style={{
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: metrics.agentPerformance.failureRate > 20 ? "#ef4444" : metrics.agentPerformance.failureRate > 5 ? "#f59e0b" : "#14b8a6",
+                  }}>
+                    {metrics.agentPerformance.failureRate}%
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Recent QA Reviews */}
+      {metrics.qaQuality && metrics.qaQuality.recentReviews.length > 0 && (
+        <div
+          style={{
+            padding: 20,
+            borderRadius: 14,
+            backgroundColor: "var(--card-bg)",
+            border: "1px solid var(--card-border)",
+          }}
+        >
+          <p style={{ margin: 0, fontSize: 12, fontWeight: 700, color: "var(--studio-accent, #14b8a6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+            Últimas revisiones QA
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 12 }}>
+            {metrics.qaQuality.recentReviews.map((review) => {
+              const scoreColor = review.score >= 85 ? "#14b8a6" : review.score >= 70 ? "#f59e0b" : "#ef4444";
+              const statusLabel = review.status === "pass" || review.status === "passed" ? "Aprobado" : review.status === "needs_review" ? "Revisión" : "Falló";
+              return (
+                <div
+                  key={review.id}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "10px 12px",
+                    borderRadius: 8,
+                    backgroundColor: "rgba(255,255,255,0.03)",
+                    border: "1px solid var(--card-border)",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1, minWidth: 0 }}>
+                    <span style={{
+                      fontSize: 14,
+                      fontWeight: 700,
+                      color: scoreColor,
+                      minWidth: 36,
+                      textAlign: "center",
+                    }}>
+                      {review.score}
+                    </span>
+                    <span style={{
+                      fontSize: 13,
+                      color: "var(--foreground)",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      whiteSpace: "nowrap",
+                    }}>
+                      {review.storyTitle}
+                    </span>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+                    <span style={{
+                      fontSize: 11,
+                      padding: "3px 8px",
+                      borderRadius: 4,
+                      fontWeight: 600,
+                      backgroundColor: `${scoreColor}20`,
+                      color: scoreColor,
+                    }}>
+                      {statusLabel}
+                    </span>
+                    <span style={{ fontSize: 11, color: "var(--muted)" }}>
+                      {new Date(review.createdAt).toLocaleDateString("es", { day: "numeric", month: "short" })}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Necesita atención */}
       {(problemStories > 0 || failedRuns > 0 || (metrics.briefs.pending > 0 && metrics.briefs.pending > 10)) && (

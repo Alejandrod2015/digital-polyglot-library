@@ -39,6 +39,23 @@ type PipelineResponse = {
     avgTimeToPublish: number | null;
     contentPerDay: number;
   };
+  // New: QA quality trends over the last 7 days
+  qaQuality?: {
+    scoreTrend: Array<{ date: string; avgScore: number; count: number }>;
+    recentReviews: Array<{
+      id: string;
+      storyTitle: string;
+      score: number;
+      status: string;
+      createdAt: string;
+    }>;
+    passRateTrend: Array<{ date: string; passRate: number; total: number }>;
+  };
+  // New: Agent performance (avg duration in ms)
+  agentPerformance?: {
+    avgDurationByKind: Record<string, number | null>;
+    failureRate: number;
+  };
 };
 
 /**
@@ -91,46 +108,37 @@ async function fetchPipelineMetrics(): Promise<PipelineResponse> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const briefModel = (prisma as any).curriculumBrief;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const qaReviewModel = (prisma as any).qaReview;
+  const qaReviewModel = (prisma as any).qAReview;
 
   const now = new Date();
   const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
   const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
 
   // ─── Agent Runs ────────────────────────────────────────────────
-  const totalAgentRuns = await agentRunModel.count();
+  // Use raw SQL to avoid Prisma enum deserialization errors
+  // (DB contains legacy agentKind values like 'curriculum' not in the Prisma enum)
+  const VALID_KINDS = new Set(["planner", "content", "qa"]);
 
-  const agentRunsByKind = await agentRunModel.groupBy({
-    by: ["agentKind"],
-    _count: true,
-  });
+  const allAgentRuns: Array<{ agentKind: string; status: string; createdAt: Date }> =
+    await prisma.$queryRawUnsafe(
+      `SELECT "agentKind"::text, "status"::text, "createdAt" FROM "dp_agent_runs_v1"`
+    );
 
-  const agentRunsByStatus = await agentRunModel.groupBy({
-    by: ["status"],
-    _count: true,
-  });
+  const validRuns = allAgentRuns.filter((r) => VALID_KINDS.has(r.agentKind));
+  const totalAgentRuns = validRuns.length;
 
-  const agentRunsLast7Days = await agentRunModel.groupBy({
-    by: ["createdAt"],
-    where: { createdAt: { gte: sevenDaysAgo } },
-    _count: true,
-    orderBy: { createdAt: "asc" },
-  });
+  const kindCounts = { planner: 0, content: 0, qa: 0 };
+  const statusCounts_runs = { completed: 0, failed: 0, running: 0 };
 
-  const agentRunsLast7DaysGrouped = await agentRunModel.groupBy({
-    by: ["createdAt"],
-    where: { createdAt: { gte: sevenDaysAgo } },
-    _count: true,
-  });
+  for (const run of validRuns) {
+    if (run.agentKind in kindCounts) kindCounts[run.agentKind as keyof typeof kindCounts]++;
+    if (run.status in statusCounts_runs) statusCounts_runs[run.status as keyof typeof statusCounts_runs]++;
+  }
 
-  // Group by date and status
+  // Last 7 days grouped by date
   const dateStatusMap = new Map<string, { completed: number; failed: number }>();
-  const agentRunsByDateAndStatus = await agentRunModel.findMany({
-    where: { createdAt: { gte: sevenDaysAgo } },
-    select: { createdAt: true, status: true },
-  });
-
-  agentRunsByDateAndStatus.forEach((run: { createdAt: Date; status: string }) => {
+  for (const run of validRuns) {
+    if (run.createdAt < sevenDaysAgo) continue;
     const dateStr = run.createdAt.toISOString().split("T")[0];
     if (!dateStatusMap.has(dateStr)) {
       dateStatusMap.set(dateStr, { completed: 0, failed: 0 });
@@ -138,12 +146,11 @@ async function fetchPipelineMetrics(): Promise<PipelineResponse> {
     const counts = dateStatusMap.get(dateStr)!;
     if (run.status === "completed") counts.completed++;
     if (run.status === "failed") counts.failed++;
-  });
+  }
 
-  const agentRunsLast7DaysFormatted = Array.from(dateStatusMap.entries()).map(([date, counts]) => ({
-    date,
-    ...counts,
-  }));
+  const agentRunsLast7DaysFormatted = Array.from(dateStatusMap.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([date, counts]) => ({ date, ...counts }));
 
   // ─── Story Drafts ─────────────────────────────────────────────
   const totalDrafts = await storyDraftModel.count();
@@ -236,19 +243,120 @@ async function fetchPipelineMetrics(): Promise<PipelineResponse> {
   });
   const contentPerDay = draftCountLast30 / 30;
 
+  // ─── QA Quality Trends ───────────────────────────────────────
+  let qaQuality: PipelineResponse["qaQuality"] = undefined;
+  try {
+    // Score trend by date (last 7 days)
+    const recentQaReviews = await qaReviewModel.findMany({
+      where: { createdAt: { gte: sevenDaysAgo } },
+      select: { id: true, score: true, status: true, createdAt: true, sourceStoryId: true },
+      orderBy: { createdAt: "desc" },
+    });
+
+    // Group by date for score trend
+    const scoreByDate = new Map<string, { total: number; sum: number; passed: number }>();
+    for (const review of recentQaReviews) {
+      const dateStr = review.createdAt.toISOString().split("T")[0];
+      if (!scoreByDate.has(dateStr)) {
+        scoreByDate.set(dateStr, { total: 0, sum: 0, passed: 0 });
+      }
+      const entry = scoreByDate.get(dateStr)!;
+      entry.total++;
+      entry.sum += review.score ?? 0;
+      if (review.status === "passed" || review.status === "pass") entry.passed++;
+    }
+
+    const scoreTrend = Array.from(scoreByDate.entries())
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([date, { total, sum }]) => ({
+        date,
+        avgScore: Math.round((sum / total) * 10) / 10,
+        count: total,
+      }));
+
+    const passRateTrend = Array.from(scoreByDate.entries())
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([date, { total, passed }]) => ({
+        date,
+        passRate: Math.round((passed / total) * 100),
+        total,
+      }));
+
+    // Recent reviews with story info
+    const recentReviewsFormatted = await Promise.all(
+      recentQaReviews.slice(0, 10).map(async (review: any) => {
+        let storyTitle = "Unknown";
+        try {
+          const draft = await storyDraftModel.findUnique({
+            where: { id: review.sourceStoryId },
+            select: { title: true },
+          });
+          if (draft?.title) storyTitle = draft.title;
+        } catch { /* non-critical */ }
+        return {
+          id: review.id,
+          storyTitle,
+          score: review.score ?? 0,
+          status: review.status,
+          createdAt: review.createdAt.toISOString(),
+        };
+      })
+    );
+
+    qaQuality = { scoreTrend, recentReviews: recentReviewsFormatted, passRateTrend };
+  } catch {
+    // Non-critical — qaQuality will be undefined
+  }
+
+  // ─── Agent Performance ──────────────────────────────────────
+  let agentPerformance: PipelineResponse["agentPerformance"] = undefined;
+  try {
+    // Calculate average duration by agent kind from runs with both timestamps
+    const runsWithDuration: Array<{ agentKind: string; startedAt: Date; completedAt: Date | null }> =
+      await prisma.$queryRawUnsafe(
+        `SELECT "agentKind"::text, "startedAt", "completedAt" FROM "dp_agent_runs_v1" WHERE "completedAt" IS NOT NULL`
+      );
+
+    const durationByKind = new Map<string, { total: number; sum: number }>();
+    let totalRuns = 0;
+    let failedRuns = 0;
+
+    for (const run of runsWithDuration) {
+      if (!VALID_KINDS.has(run.agentKind) || !run.completedAt) continue;
+      const durationMs = new Date(run.completedAt).getTime() - new Date(run.startedAt).getTime();
+      if (durationMs < 0 || durationMs > 600000) continue; // skip invalid (>10min)
+
+      if (!durationByKind.has(run.agentKind)) {
+        durationByKind.set(run.agentKind, { total: 0, sum: 0 });
+      }
+      const entry = durationByKind.get(run.agentKind)!;
+      entry.total++;
+      entry.sum += durationMs;
+      totalRuns++;
+    }
+
+    // Count failures from our existing validRuns
+    failedRuns = validRuns.filter((r) => r.status === "failed").length;
+
+    const avgDurationByKind: Record<string, number | null> = {};
+    for (const kind of ["planner", "content", "qa"]) {
+      const entry = durationByKind.get(kind);
+      avgDurationByKind[kind] = entry ? Math.round(entry.sum / entry.total) : null;
+    }
+
+    agentPerformance = {
+      avgDurationByKind,
+      failureRate: totalRuns > 0 ? Math.round((failedRuns / totalRuns) * 100) : 0,
+    };
+  } catch {
+    // Non-critical
+  }
+
   return {
     agentRuns: {
       total: totalAgentRuns,
-      byKind: {
-        planner: agentRunsByKind.find((k: { agentKind: string }) => k.agentKind === "planner")?._count ?? 0,
-        content: agentRunsByKind.find((k: { agentKind: string }) => k.agentKind === "content")?._count ?? 0,
-        qa: agentRunsByKind.find((k: { agentKind: string }) => k.agentKind === "qa")?._count ?? 0,
-      },
-      byStatus: {
-        completed: agentRunsByStatus.find((s: { status: string }) => s.status === "completed")?._count ?? 0,
-        failed: agentRunsByStatus.find((s: { status: string }) => s.status === "failed")?._count ?? 0,
-        running: agentRunsByStatus.find((s: { status: string }) => s.status === "running")?._count ?? 0,
-      },
+      byKind: kindCounts,
+      byStatus: statusCounts_runs,
       last7Days: agentRunsLast7DaysFormatted,
     },
     drafts: {
@@ -275,5 +383,7 @@ async function fetchPipelineMetrics(): Promise<PipelineResponse> {
       avgTimeToPublish,
       contentPerDay: Math.round(contentPerDay * 100) / 100,
     },
+    qaQuality,
+    agentPerformance,
   };
 }

@@ -7,7 +7,7 @@ import { prisma } from "@/lib/prisma";
 export async function autoPromoteDrafts(params: {
   minScore?: number;
 }): Promise<string[]> {
-  const minScore = params.minScore ?? 90;
+  const minScore = params.minScore ?? 85;
   const promoted: string[] = [];
 
   // Find drafts that have a QA review with score >= minScore and are still in "draft" status
@@ -23,7 +23,7 @@ export async function autoPromoteDrafts(params: {
     if (!draft.latestQaRunId) continue;
 
     // Look up the QA review for this run
-    const qaReview = await (prisma as any).qaReview.findFirst({
+    const qaReview = await (prisma as any).qAReview.findFirst({
       where: { sourceRunId: draft.latestQaRunId },
     });
 

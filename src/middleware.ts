@@ -5,6 +5,12 @@ export default clerkMiddleware(async (auth, req) => {
   const url = req.nextUrl.pathname;
   const isProd = process.env.NODE_ENV === "production";
 
+  // Mobile API routes use the app's own signed mobile session token, not Clerk's
+  // session JWT header/cookie flow. Let them pass through untouched.
+  if (url.startsWith("/api/mobile/")) {
+    return NextResponse.next();
+  }
+
   if (isProd && url.startsWith("/studio/metrics")) {
     const { userId } = await auth();
     if (userId) {

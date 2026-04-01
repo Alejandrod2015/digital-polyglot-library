@@ -193,6 +193,88 @@ export async function generateSynopsis(params: {
   return raw || "";
 }
 
+// ── Content safety filter ──
+
+const UNSAFE_PATTERNS = [
+  /\b(kill|murder|suicide|self[- ]?harm)\b/i,
+  /\b(drug|cocaine|heroin|meth|marijuana)\b/i,
+  /\b(sex|nude|naked|erotic|porn)\b/i,
+  /\b(gun|weapon|bomb|explosive)\b/i,
+  /\b(racist|racial\s+slur|hate\s+speech)\b/i,
+  /\b(terror|terrorist|extremis)\b/i,
+];
+
+export type SafetyCheckResult = {
+  safe: boolean;
+  flags: string[];
+};
+
+/**
+ * Check generated content for unsafe patterns.
+ * This is a fast regex-based pre-filter. The LLM QA agent provides deeper analysis.
+ */
+export function checkContentSafety(text: string, title: string): SafetyCheckResult {
+  const combined = `${title} ${text}`;
+  const flags: string[] = [];
+
+  for (const pattern of UNSAFE_PATTERNS) {
+    const match = combined.match(pattern);
+    if (match) {
+      flags.push(`Detected unsafe pattern: "${match[0]}"`);
+    }
+  }
+
+  return { safe: flags.length === 0, flags };
+}
+
+// ── Pre-QA validation (fast structural checks before saving) ──
+
+export type PreQAResult = {
+  pass: boolean;
+  issues: string[];
+};
+
+/**
+ * Quick structural validation before persisting a draft.
+ * Catches obvious problems early so we don't waste a QA cycle.
+ */
+export function preQAValidation(params: {
+  text: string;
+  vocab: Array<{ word: string; translation: string; type: string }>;
+  level: string;
+  title: string;
+}): PreQAResult {
+  const issues: string[] = [];
+  const words = params.text.split(/\s+/).filter(Boolean).length;
+
+  // Minimum word count by level
+  const minWords: Record<string, number> = {
+    a1: 80, a2: 120, b1: 200, b2: 300, c1: 400, c2: 500,
+  };
+  const min = minWords[params.level.toLowerCase()] ?? 100;
+  if (words < min * 0.7) {
+    issues.push(`Story too short: ${words} words (minimum ~${min} for ${params.level.toUpperCase()})`);
+  }
+
+  // Minimum vocab items
+  if (params.vocab.length < 3) {
+    issues.push(`Too few vocab items: ${params.vocab.length} (need at least 3)`);
+  }
+
+  // Title must not be empty
+  if (!params.title.trim()) {
+    issues.push("Title is empty");
+  }
+
+  // Text must contain actual content (not just HTML tags)
+  const textOnly = params.text.replace(/<[^>]+>/g, "").trim();
+  if (textOnly.length < 50) {
+    issues.push("Story text appears to contain only markup or is too short");
+  }
+
+  return { pass: issues.length === 0, issues };
+}
+
 // Save a story draft to the database
 export async function saveStoryDraft(params: {
   briefId: string;

@@ -61,6 +61,12 @@ export async function PATCH(request: Request) {
       return NextResponse.json({ error: `Invalid status. Must be one of: ${validStatuses.join(", ")}` }, { status: 400 });
     }
 
+    // Verify draft exists before updating
+    const existing = await (prisma as any).storyDraft.findUnique({ where: { id } });
+    if (!existing) {
+      return NextResponse.json({ error: "Draft not found" }, { status: 404 });
+    }
+
     const draft = await (prisma as any).storyDraft.update({
       where: { id },
       data: { status },
