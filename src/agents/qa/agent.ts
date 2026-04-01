@@ -2,6 +2,7 @@ import type { QAAgentOutput, QAAgentRun } from "@/agents/qa/types";
 import { loadJourneyStoryForQa, runStoryQaChecks } from "@/agents/qa/tools";
 import { persistAgentRun, persistQAReview } from "@/lib/agentPersistence";
 import { loadPedagogicalRules } from "@/agents/config/pedagogicalConfig";
+import { agentLog, agentTimer } from "@/lib/agentLogger";
 
 function summarize(status: QAAgentOutput["status"], findingsCount: number): string {
   if (status === "pass") {
@@ -138,13 +139,18 @@ export async function runJourneyStoryQaAgent(storyId: string): Promise<QAAgentRu
   };
 }
 
-export async function runDraftQaAgent(draftId: string): Promise<QAAgentRun & { runId: string }> {
+export async function runDraftQaAgent(draftId: string, options?: { enableLLMQA?: boolean }): Promise<QAAgentRun & { runId: string }> {
   const startedAt = new Date().toISOString();
+  const qaTimer = agentTimer("qa", "runDraftQaAgent");
   await loadPedagogicalRules();
 
   const { loadDraftForQa } = await import("@/agents/qa/tools");
   const story = await loadDraftForQa(draftId);
-  const findings = await runStoryQaChecks(story);
+
+  const checksTimer = agentTimer("qa", "runStoryQaChecks");
+  const findings = await runStoryQaChecks(story, { enableLLMQA: options?.enableLLMQA });
+  checksTimer.end({ findingsCount: findings.length });
+
   const criticalCount = findings.filter((f) => f.severity === "critical").length;
   const warningCount = findings.filter((f) => f.severity === "warning").length;
   const infoCount = findings.filter((f) => f.severity === "info").length;
@@ -152,6 +158,17 @@ export async function runDraftQaAgent(draftId: string): Promise<QAAgentRun & { r
   const llmQualityScore = (story as any)._llmQualityScore;
   const score = computeScore(criticalCount, warningCount, infoCount, llmQualityScore);
   const completedAt = new Date().toISOString();
+
+  agentLog.info("qa", `Draft QA completed: ${status} (score: ${score})`, {
+    draftId,
+    status,
+    score,
+    criticalCount,
+    warningCount,
+    infoCount,
+    llmQualityScore,
+    durationMs: qaTimer.elapsed(),
+  });
 
   const runStatus = status === "pass" ? "completed" : status === "needs_review" ? "needs_review" : "failed";
 

@@ -7,6 +7,33 @@
  * The pipeline reads this automatically on each run.
  */
 
+export type PipelineBudget = {
+  /** Max stories to generate per pipeline run */
+  maxStoriesPerRun: number;
+  /** Hard cap on LLM API calls per run (generation + QA + retries) */
+  maxLLMCallsPerRun: number;
+  /** Max regeneration attempts per story when QA fails */
+  maxRetriesPerStory: number;
+  /** Whether to run LLM-based quality checks (narrative, CEFR compliance, etc.) */
+  enableLLMQA: boolean;
+  /** Whether to auto-retry stories that fail QA */
+  autoRetryQA: boolean;
+  /** Minimum QA score (0-100) to auto-promote a draft */
+  minQAScore: number;
+  /** Max pipeline run duration in minutes — hard timeout */
+  maxRunDurationMinutes: number;
+};
+
+export const DEFAULT_BUDGET: PipelineBudget = {
+  maxStoriesPerRun: 10,
+  maxLLMCallsPerRun: 50,
+  maxRetriesPerStory: 2,
+  enableLLMQA: true,
+  autoRetryQA: true,
+  minQAScore: 85,
+  maxRunDurationMinutes: 15,
+};
+
 export type ContentDirective = {
   /** Target languages for content generation (e.g. ["it", "pt"]) */
   languages: string[];
@@ -24,6 +51,8 @@ export type ContentDirective = {
   updatedBy: string;
   /** When it was last updated */
   updatedAt: string;
+  /** Pipeline budget and limits */
+  budget: PipelineBudget;
 };
 
 export const DEFAULT_DIRECTIVE: ContentDirective = {
@@ -35,7 +64,13 @@ export const DEFAULT_DIRECTIVE: ContentDirective = {
   active: true,
   updatedBy: "",
   updatedAt: new Date().toISOString(),
+  budget: DEFAULT_BUDGET,
 };
+
+function clampInt(val: unknown, min: number, max: number, fallback: number): number {
+  if (typeof val !== "number" || !Number.isFinite(val)) return fallback;
+  return Math.max(min, Math.min(max, Math.floor(val)));
+}
 
 const CONFIG_KEY = "content_directive";
 const CACHE_TTL = 60_000;
@@ -63,6 +98,20 @@ export function sanitizeDirective(raw: unknown): ContentDirective {
       ? Math.floor(input.storiesPerSlot)
       : DEFAULT_DIRECTIVE.storiesPerSlot;
 
+  const rawBudget = input.budget && typeof input.budget === "object"
+    ? (input.budget as Record<string, unknown>)
+    : {};
+
+  const budget: PipelineBudget = {
+    maxStoriesPerRun: clampInt(rawBudget.maxStoriesPerRun, 1, 100, DEFAULT_BUDGET.maxStoriesPerRun),
+    maxLLMCallsPerRun: clampInt(rawBudget.maxLLMCallsPerRun, 1, 500, DEFAULT_BUDGET.maxLLMCallsPerRun),
+    maxRetriesPerStory: clampInt(rawBudget.maxRetriesPerStory, 0, 5, DEFAULT_BUDGET.maxRetriesPerStory),
+    enableLLMQA: typeof rawBudget.enableLLMQA === "boolean" ? rawBudget.enableLLMQA : DEFAULT_BUDGET.enableLLMQA,
+    autoRetryQA: typeof rawBudget.autoRetryQA === "boolean" ? rawBudget.autoRetryQA : DEFAULT_BUDGET.autoRetryQA,
+    minQAScore: clampInt(rawBudget.minQAScore, 0, 100, DEFAULT_BUDGET.minQAScore),
+    maxRunDurationMinutes: clampInt(rawBudget.maxRunDurationMinutes, 1, 60, DEFAULT_BUDGET.maxRunDurationMinutes),
+  };
+
   return {
     languages: languages.length > 0 ? [...new Set(languages)] : DEFAULT_DIRECTIVE.languages,
     levels: levels.length > 0 ? [...new Set(levels)] : DEFAULT_DIRECTIVE.levels,
@@ -72,6 +121,7 @@ export function sanitizeDirective(raw: unknown): ContentDirective {
     active: typeof input.active === "boolean" ? input.active : true,
     updatedBy: typeof input.updatedBy === "string" ? input.updatedBy : "",
     updatedAt: typeof input.updatedAt === "string" ? input.updatedAt : new Date().toISOString(),
+    budget,
   };
 }
 

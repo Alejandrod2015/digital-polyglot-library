@@ -6,10 +6,15 @@ import {
   generateVocabFromText,
   generateSynopsis,
   saveStoryDraft,
+  checkContentSafety,
+  preQAValidation,
 } from "@/agents/content/tools";
 import { persistAgentRun, updateAgentRunOutput } from "@/lib/agentPersistence";
 import { loadPedagogicalRules } from "@/agents/config/pedagogicalConfig";
 import type { ContentAgentOutput, ContentAgentRun } from "@/agents/content/types";
+
+/** Maximum number of times a single draft can be regenerated to prevent infinite loops. */
+const MAX_REGENERATION_ATTEMPTS = 2;
 
 /**
  * Regenerate a story draft using QA feedback.
@@ -17,7 +22,8 @@ import type { ContentAgentOutput, ContentAgentRun } from "@/agents/content/types
  * with the feedback injected into the LLM prompt.
  */
 export async function regenerateFromQA(
-  draftId: string
+  draftId: string,
+  options?: { maxRetries?: number }
 ): Promise<ContentAgentRun & { runId: string }> {
   const startedAt = new Date().toISOString();
 
@@ -30,37 +36,63 @@ export async function regenerateFromQA(
     });
     if (!draft) throw new Error(`Draft ${draftId} not found`);
 
-    const qaReview = await (prisma as any).qaReview.findFirst({
+    const qaReview = await (prisma as any).qAReview.findFirst({
       where: { sourceStoryId: draftId },
       orderBy: { createdAt: "desc" },
     });
 
-    // 2. Build QA feedback string from findings
+    // 1b. Check regeneration attempt count to prevent infinite loops
+    const meta = (draft.metadata ?? {}) as Record<string, any>;
+    const prevAttempts = (meta.regenerationAttempt as number) ?? 0;
+    const maxRetries = options?.maxRetries ?? MAX_REGENERATION_ATTEMPTS;
+    if (prevAttempts >= maxRetries) {
+      throw new Error(
+        `Draft ${draftId} has already been regenerated ${prevAttempts} times (max: ${maxRetries}). ` +
+        `Manual review required.`
+      );
+    }
+
+    // 2. Build structured QA feedback for better LLM comprehension
     let qaFeedback = "";
     if (qaReview?.report) {
       const report = qaReview.report as {
         findings?: Array<{
+          code: string;
           severity: string;
+          field: string;
           title: string;
           message: string;
           suggestion?: string;
         }>;
+        score?: number;
       };
       if (report.findings && report.findings.length > 0) {
-        qaFeedback = report.findings
-          .filter((f) => f.severity === "critical" || f.severity === "warning")
-          .map(
-            (f) =>
-              `- [${f.severity.toUpperCase()}] ${f.title}: ${f.message}${
-                f.suggestion ? ` → ${f.suggestion}` : ""
-              }`
-          )
-          .join("\n");
+        const criticals = report.findings.filter((f) => f.severity === "critical");
+        const warnings = report.findings.filter((f) => f.severity === "warning");
+
+        const parts: string[] = [];
+        if (report.score !== undefined) {
+          parts.push(`Previous QA score: ${report.score}/100`);
+        }
+        if (criticals.length > 0) {
+          parts.push(`\nCRITICAL issues (must fix):`);
+          criticals.forEach((f) => {
+            parts.push(`  • ${f.title}: ${f.message}`);
+            if (f.suggestion) parts.push(`    Fix: ${f.suggestion}`);
+          });
+        }
+        if (warnings.length > 0) {
+          parts.push(`\nWARNING issues (should fix):`);
+          warnings.forEach((f) => {
+            parts.push(`  • ${f.title}: ${f.message}`);
+            if (f.suggestion) parts.push(`    Fix: ${f.suggestion}`);
+          });
+        }
+        qaFeedback = parts.join("\n");
       }
     }
 
     // 3. Load the original brief for metadata
-    const meta = (draft.metadata ?? {}) as Record<string, any>;
     const briefId = draft.briefId;
     let brief: any = null;
     if (briefId) {
@@ -108,6 +140,23 @@ export async function regenerateFromQA(
     });
 
     const wordCount = text.split(/\s+/).filter(Boolean).length;
+
+    // 4b. Content safety filter
+    const safetyResult = checkContentSafety(text, newTitle);
+    if (!safetyResult.safe) {
+      throw new Error(
+        `Content safety check failed on regeneration: ${safetyResult.flags.join("; ")}`
+      );
+    }
+
+    // 4c. Pre-QA structural validation
+    const preQA = preQAValidation({ text, vocab, level, title: newTitle });
+    if (!preQA.pass) {
+      throw new Error(
+        `Pre-QA validation failed on regeneration: ${preQA.issues.join("; ")}`
+      );
+    }
+
     const completedAt = new Date().toISOString();
 
     const input = {
@@ -161,6 +210,7 @@ export async function regenerateFromQA(
         journeyFocus,
         storySlot,
         regeneratedFrom: draftId,
+        regenerationAttempt: prevAttempts + 1,
       },
     });
 

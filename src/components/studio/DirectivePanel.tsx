@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { ContentDirective } from "@/agents/config/directive";
+import type { ContentDirective, PipelineBudget } from "@/agents/config/directive";
+import { DEFAULT_BUDGET } from "@/agents/config/directive";
 
 const LANGUAGE_MAP: Record<string, string> = {
   es: "Español",
@@ -27,6 +28,7 @@ export default function DirectivePanel() {
   const [storiesPerSlot, setStoriesPerSlot] = useState(4);
   const [note, setNote] = useState("");
   const [active, setActive] = useState(true);
+  const [budget, setBudget] = useState<PipelineBudget>(DEFAULT_BUDGET);
 
   useEffect(() => {
     async function fetchDirective() {
@@ -42,6 +44,7 @@ export default function DirectivePanel() {
         setStoriesPerSlot(directive.storiesPerSlot);
         setNote(directive.note);
         setActive(directive.active);
+        if (directive.budget) setBudget({ ...DEFAULT_BUDGET, ...directive.budget });
       } catch (err) {
         setMessage({ type: "error", text: "No se pudo cargar la directriz" });
       } finally {
@@ -71,6 +74,7 @@ export default function DirectivePanel() {
         active,
         updatedBy: "studio-ui",
         updatedAt: new Date().toISOString(),
+        budget,
       };
 
       const res = await fetch("/api/agents/directive", {
@@ -294,6 +298,76 @@ export default function DirectivePanel() {
             resize: "vertical",
           }}
         />
+      </div>
+
+      {/* Budget & Limits */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 12, paddingTop: 12, borderTop: "1px solid var(--card-border)" }}>
+        <div>
+          <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#f59e0b" }}>
+            Presupuesto y límites
+          </p>
+          <p style={{ margin: "4px 0 0", fontSize: 12, color: "var(--muted)" }}>
+            Controlan cuántos recursos consume cada ejecución del pipeline
+          </p>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <label style={{ fontSize: 12, color: "var(--muted)" }}>Max historias/run</label>
+            <input type="number" min={1} max={100} value={budget.maxStoriesPerRun}
+              onChange={(e) => setBudget({ ...budget, maxStoriesPerRun: Math.max(1, parseInt(e.target.value) || 10) })}
+              style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 13, fontFamily: "inherit" }}
+            />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <label style={{ fontSize: 12, color: "var(--muted)" }}>Max LLM calls/run</label>
+            <input type="number" min={1} max={500} value={budget.maxLLMCallsPerRun}
+              onChange={(e) => setBudget({ ...budget, maxLLMCallsPerRun: Math.max(1, parseInt(e.target.value) || 50) })}
+              style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 13, fontFamily: "inherit" }}
+            />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <label style={{ fontSize: 12, color: "var(--muted)" }}>Max duración (min)</label>
+            <input type="number" min={1} max={60} value={budget.maxRunDurationMinutes}
+              onChange={(e) => setBudget({ ...budget, maxRunDurationMinutes: Math.max(1, parseInt(e.target.value) || 15) })}
+              style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 13, fontFamily: "inherit" }}
+            />
+          </div>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <label style={{ fontSize: 12, color: "var(--muted)" }}>Max reintentos/historia</label>
+            <input type="number" min={0} max={5} value={budget.maxRetriesPerStory}
+              onChange={(e) => setBudget({ ...budget, maxRetriesPerStory: Math.max(0, parseInt(e.target.value) || 2) })}
+              style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 13, fontFamily: "inherit" }}
+            />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <label style={{ fontSize: 12, color: "var(--muted)" }}>QA mínimo para aprobar</label>
+            <input type="number" min={0} max={100} value={budget.minQAScore}
+              onChange={(e) => setBudget({ ...budget, minQAScore: Math.max(0, Math.min(100, parseInt(e.target.value) || 85)) })}
+              style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 13, fontFamily: "inherit" }}
+            />
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--foreground)", cursor: "pointer" }}>
+            <input type="checkbox" checked={budget.enableLLMQA}
+              onChange={(e) => setBudget({ ...budget, enableLLMQA: e.target.checked })}
+              style={{ cursor: "pointer" }}
+            />
+            QA con LLM (calidad narrativa, CEFR, cultural)
+          </label>
+          <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--foreground)", cursor: "pointer" }}>
+            <input type="checkbox" checked={budget.autoRetryQA}
+              onChange={(e) => setBudget({ ...budget, autoRetryQA: e.target.checked })}
+              style={{ cursor: "pointer" }}
+            />
+            Auto-reintentar historias que fallen QA
+          </label>
+        </div>
       </div>
 
       {/* Active toggle */}

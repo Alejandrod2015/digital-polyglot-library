@@ -5,7 +5,7 @@ import { runPlannerAgent } from "@/agents/planner/agent";
 import { runContentAgentParallel } from "@/agents/content/parallel";
 import { runDraftQaAgent } from "@/agents/qa/agent";
 import { regenerateFromQA } from "@/agents/content/regenerate";
-import { loadDirective } from "@/agents/config/directive";
+import { loadDirective, DEFAULT_BUDGET, type PipelineBudget } from "@/agents/config/directive";
 import { autoPromoteDrafts, publishDraftToSanity } from "@/agents/publish/tools";
 import { prisma } from "@/lib/prisma";
 import { getJourneyCurriculumPlans, saveJourneyVariantPlanForStudio } from "@/lib/journeyCurriculumSource";
@@ -108,6 +108,44 @@ type PipelineStep = {
   data?: Record<string, unknown>;
 };
 
+// ── Budget counter: tracks resource usage across the run ──
+
+type BudgetCounter = {
+  llmCalls: number;
+  stories: number;
+  startTime: number;
+  budget: PipelineBudget;
+  testMode: boolean;
+};
+
+function checkBudget(counter: BudgetCounter): { exceeded: boolean; reason: string } {
+  if (counter.llmCalls >= counter.budget.maxLLMCallsPerRun) {
+    return { exceeded: true, reason: `Límite de llamadas LLM alcanzado (${counter.llmCalls}/${counter.budget.maxLLMCallsPerRun})` };
+  }
+  if (counter.stories >= counter.budget.maxStoriesPerRun) {
+    return { exceeded: true, reason: `Límite de historias alcanzado (${counter.stories}/${counter.budget.maxStoriesPerRun})` };
+  }
+  const elapsedMs = Date.now() - counter.startTime;
+  const maxMs = counter.budget.maxRunDurationMinutes * 60_000;
+  if (elapsedMs >= maxMs) {
+    return { exceeded: true, reason: `Tiempo máximo alcanzado (${Math.round(elapsedMs / 60_000)}/${counter.budget.maxRunDurationMinutes} min)` };
+  }
+  return { exceeded: false, reason: "" };
+}
+
+function budgetSummary(counter: BudgetCounter): Record<string, unknown> {
+  const elapsedMs = Date.now() - counter.startTime;
+  return {
+    llmCallsUsed: counter.llmCalls,
+    llmCallsBudget: counter.budget.maxLLMCallsPerRun,
+    storiesGenerated: counter.stories,
+    storiesBudget: counter.budget.maxStoriesPerRun,
+    timeElapsedSeconds: Math.round(elapsedMs / 1000),
+    timeBudgetSeconds: counter.budget.maxRunDurationMinutes * 60,
+    testMode: counter.testMode,
+  };
+}
+
 export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) {
@@ -142,8 +180,33 @@ export async function POST(request: Request) {
           return;
         }
 
+        // ── Resolve budget and testMode ──
+        const testMode = body.testMode === true;
+        const budget: PipelineBudget = {
+          ...DEFAULT_BUDGET,
+          ...directive.budget,
+          // Body overrides (for UI controls)
+          ...(typeof body.maxStoriesPerRun === "number" ? { maxStoriesPerRun: body.maxStoriesPerRun } : {}),
+          ...(typeof body.maxLLMCallsPerRun === "number" ? { maxLLMCallsPerRun: body.maxLLMCallsPerRun } : {}),
+        };
+
+        // In test mode: override to minimal generation
+        if (testMode) {
+          budget.maxStoriesPerRun = Math.min(budget.maxStoriesPerRun, 6);
+          budget.maxLLMCallsPerRun = Math.min(budget.maxLLMCallsPerRun, 60);
+        }
+
+        const counter: BudgetCounter = {
+          llmCalls: 0,
+          stories: 0,
+          startTime: Date.now(),
+          budget,
+          testMode,
+        };
+
         // Build directive summary
-        const directiveSummary = `Directriz activa: idiomas ${directive.languages.join(", ")}, niveles ${directive.levels.join(", ")}, ${directive.topics.length > 0 ? "temas " + directive.topics.join(", ") : "todos los temas"}, ${directive.storiesPerSlot} historias por slot.`;
+        const modeLabel = testMode ? " [MODO TEST]" : "";
+        const directiveSummary = `${modeLabel}Directriz activa: idiomas ${directive.languages.join(", ")}, niveles ${directive.levels.join(", ")}, ${directive.topics.length > 0 ? "temas " + directive.topics.join(", ") : "todos los temas"}, ${directive.storiesPerSlot} historias por slot. Budget: max ${budget.maxStoriesPerRun} historias, ${budget.maxLLMCallsPerRun} LLM calls, ${budget.maxRunDurationMinutes} min.`;
         send({
           step: "directive",
           status: "completed",
@@ -154,14 +217,17 @@ export async function POST(request: Request) {
             topics: directive.topics,
             storiesPerSlot: directive.storiesPerSlot,
             note: directive.note,
+            testMode,
+            budget,
           },
         });
 
         // Determine parameters: use body overrides if provided, otherwise use directive
         const scope = body.scope ?? "full";
-        const contentLimit = body.contentLimit ?? 5;
+        const contentLimit = testMode
+          ? Math.min(6, budget.maxStoriesPerRun)
+          : Math.min(body.contentLimit ?? budget.maxStoriesPerRun, budget.maxStoriesPerRun);
         const concurrency = body.concurrency ?? 3;
-        const autoRetryQA = body.autoRetryQA !== false;
 
         // Use body params if explicitly provided, else fall back to directive
         const languages = body.language ? [body.language] : directive.languages;
@@ -176,7 +242,7 @@ export async function POST(request: Request) {
           const { bootstrapped, skipped } = await bootstrapNewLanguages(
             languages,
             directive.levels,
-            directive.storiesPerSlot,
+            testMode ? 1 : directive.storiesPerSlot,
           );
 
           if (bootstrapped.length > 0) {
@@ -225,6 +291,14 @@ export async function POST(request: Request) {
           totalBriefsCreated += planResult.output.briefsCreated;
           lastPlanResult = planResult;
         }
+
+        // In test mode, mark all new briefs
+        if (testMode && totalBriefsCreated > 0) {
+          await (prisma as any).$executeRawUnsafe(
+            `UPDATE dp_curriculum_briefs_v1 SET brief = jsonb_set(COALESCE(brief, '{}'::jsonb), '{isTest}', 'true') WHERE status = 'draft' AND brief->>'isTest' IS NULL`
+          );
+        }
+
         send({
           step: "planner",
           status: "completed",
@@ -236,6 +310,22 @@ export async function POST(request: Request) {
             languagesProcessed: languages,
           },
         });
+
+        // ── planOnly: stop after planning ──
+        if (body.planOnly === true) {
+          send({ step: "done", status: "completed", detail: `Plan completo. ${totalBriefsCreated} briefs listos para generar topic por topic.` });
+          controller.close();
+          return;
+        }
+
+        // ── Budget check before content generation ──
+        const preContentCheck = checkBudget(counter);
+        if (preContentCheck.exceeded) {
+          send({ step: "budget-exhausted", status: "completed", detail: preContentCheck.reason, data: budgetSummary(counter) });
+          send({ step: "done", status: "completed", detail: "Pipeline detenido por presupuesto.", data: budgetSummary(counter) });
+          controller.close();
+          return;
+        }
 
         // ── Step 2: Content (parallel) ──
         const briefs = await (prisma as any).curriculumBrief.findMany({
@@ -256,12 +346,41 @@ export async function POST(request: Request) {
             .filter((r) => r.result?.output.draftId)
             .map((r) => r.result!.output.draftId!);
 
+          // Track budget: 3 LLM calls per successful story (text + vocab + synopsis)
+          counter.llmCalls += okCount * 3;
+          counter.stories += okCount;
+
+          // In test mode, mark all generated drafts
+          if (testMode && draftIds.length > 0) {
+            for (const draftId of draftIds) {
+              try {
+                const draft = await (prisma as any).storyDraft.findUnique({ where: { id: draftId } });
+                if (draft) {
+                  const meta = (draft.metadata ?? {}) as Record<string, any>;
+                  await (prisma as any).storyDraft.update({
+                    where: { id: draftId },
+                    data: { metadata: { ...meta, isTest: true } },
+                  });
+                }
+              } catch { /* non-critical */ }
+            }
+          }
+
           send({
             step: "content",
             status: "completed",
             detail: `${okCount} generadas, ${failCount} fallidas.`,
-            data: { ok: okCount, fail: failCount, draftIds },
+            data: { ok: okCount, fail: failCount, draftIds, ...budgetSummary(counter) },
           });
+
+          // ── Budget check before QA ──
+          const preQACheck = checkBudget(counter);
+          if (preQACheck.exceeded) {
+            send({ step: "budget-exhausted", status: "completed", detail: preQACheck.reason, data: budgetSummary(counter) });
+            send({ step: "done", status: "completed", detail: "Pipeline detenido por presupuesto.", data: budgetSummary(counter) });
+            controller.close();
+            return;
+          }
 
           // ── Step 3: QA on new drafts ──
           if (draftIds.length === 0) {
@@ -273,7 +392,9 @@ export async function POST(request: Request) {
 
             for (const draftId of draftIds) {
               try {
-                const qaResult = await runDraftQaAgent(draftId);
+                const qaResult = await runDraftQaAgent(draftId, { enableLLMQA: budget.enableLLMQA });
+                // Track: 1 LLM call per QA if LLM QA is enabled
+                if (budget.enableLLMQA) counter.llmCalls++;
                 if (qaResult.output.status === "pass") pass++;
                 else if (qaResult.output.status === "fail") {
                   fail++;
@@ -288,47 +409,76 @@ export async function POST(request: Request) {
               step: "qa",
               status: "completed",
               detail: `${pass} pass, ${review} review, ${fail} fail.`,
-              data: { pass, review, fail, failedDraftIds },
+              data: { pass, review, fail, failedDraftIds, ...budgetSummary(counter) },
             });
 
             // ── Step 4: Auto-retry failed QA ──
-            if (autoRetryQA && failedDraftIds.length > 0) {
-              send({ step: "retry", status: "running", detail: `Regenerando ${failedDraftIds.length} drafts que fallaron QA...` });
-              let retryOk = 0, retryFail = 0;
+            if (budget.autoRetryQA && failedDraftIds.length > 0) {
+              // Budget check before retrying
+              const preRetryCheck = checkBudget(counter);
+              if (preRetryCheck.exceeded) {
+                send({ step: "retry", status: "skipped", detail: `Omitido: ${preRetryCheck.reason}` });
+              } else {
+                send({ step: "retry", status: "running", detail: `Regenerando ${failedDraftIds.length} drafts que fallaron QA...` });
+                let retryOk = 0, retryFail = 0;
 
-              for (const draftId of failedDraftIds) {
-                try {
-                  const regenResult = await regenerateFromQA(draftId);
-                  if (regenResult.output.draftId) {
-                    const reQA = await runDraftQaAgent(regenResult.output.draftId);
-                    if (reQA.output.status === "pass") retryOk++;
-                    else retryFail++;
-                  } else {
+                for (const draftId of failedDraftIds) {
+                  // Check budget before each retry
+                  const midRetryCheck = checkBudget(counter);
+                  if (midRetryCheck.exceeded) {
+                    send({ step: "budget-exhausted", status: "completed", detail: midRetryCheck.reason, data: budgetSummary(counter) });
+                    break;
+                  }
+
+                  try {
+                    const regenResult = await regenerateFromQA(draftId, { maxRetries: budget.maxRetriesPerStory });
+                    // 3 LLM calls for regeneration (text + vocab + synopsis)
+                    counter.llmCalls += 3;
+                    if (regenResult.output.draftId) {
+                      // Mark regenerated draft as test too
+                      if (testMode) {
+                        try {
+                          const reDraft = await (prisma as any).storyDraft.findUnique({ where: { id: regenResult.output.draftId } });
+                          if (reDraft) {
+                            const meta = (reDraft.metadata ?? {}) as Record<string, any>;
+                            await (prisma as any).storyDraft.update({
+                              where: { id: regenResult.output.draftId },
+                              data: { metadata: { ...meta, isTest: true } },
+                            });
+                          }
+                        } catch { /* non-critical */ }
+                      }
+                      const reQA = await runDraftQaAgent(regenResult.output.draftId, { enableLLMQA: budget.enableLLMQA });
+                      if (budget.enableLLMQA) counter.llmCalls++;
+                      if (reQA.output.status === "pass") retryOk++;
+                      else retryFail++;
+                    } else {
+                      retryFail++;
+                    }
+                  } catch {
                     retryFail++;
                   }
-                } catch {
-                  retryFail++;
                 }
-              }
 
-              send({
-                step: "retry",
-                status: "completed",
-                detail: `${retryOk} recuperados, ${retryFail} siguen fallando.`,
-                data: { retryOk, retryFail },
-              });
+                send({
+                  step: "retry",
+                  status: "completed",
+                  detail: `${retryOk} recuperados, ${retryFail} siguen fallando.`,
+                  data: { retryOk, retryFail, ...budgetSummary(counter) },
+                });
+              }
             }
 
             // ── Step 5: Auto-promote drafts ──
             try {
               send({ step: "promote", status: "running", detail: "Promoviendo drafts aprobados por QA..." });
-              const promoted = await autoPromoteDrafts({ minScore: 85 });
+              const promoted = await autoPromoteDrafts({ minScore: budget.minQAScore });
 
               if (promoted.length === 0) {
                 send({
                   step: "promote",
                   status: "skipped",
-                  detail: "No hay drafts con puntuación >= 85 para promover.",
+                  detail: `No hay drafts con puntuación >= ${budget.minQAScore} para promover.`,
                   data: { promoted: [] },
                 });
               } else {
@@ -341,7 +491,15 @@ export async function POST(request: Request) {
               }
 
               // ── Step 6: Auto-publish to Sanity ──
-              if (promoted.length > 0) {
+              if (testMode) {
+                // In test mode, do NOT auto-publish — leave as approved for review
+                send({
+                  step: "publish",
+                  status: "skipped",
+                  detail: "Modo test: historias aprobadas pero NO publicadas a Sanity. Revisar en Borradores.",
+                  data: { promoted, testMode: true },
+                });
+              } else if (promoted.length > 0) {
                 send({ step: "publish", status: "running", detail: "Publicando a Sanity CMS..." });
                 const publishedIds: string[] = [];
                 const errors: Array<{ draftId: string; error: string }> = [];
@@ -379,7 +537,14 @@ export async function POST(request: Request) {
           }
         }
 
-        send({ step: "done", status: "completed", detail: "Pipeline completo. Historias publicadas en Sanity CMS." });
+        send({
+          step: "done",
+          status: "completed",
+          detail: testMode
+            ? "Pipeline test completo. Revisar drafts en Borradores antes de publicar."
+            : "Pipeline completo. Historias publicadas en Sanity CMS.",
+          data: budgetSummary(counter),
+        });
       } catch (error) {
         const msg = error instanceof Error ? error.message : String(error);
         send({ step: "error", status: "failed", detail: msg });

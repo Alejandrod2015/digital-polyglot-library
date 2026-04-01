@@ -54,7 +54,7 @@ export function parseStoryVocab(raw: string): ParsedVocab {
   }
 }
 
-export async function runStoryQaChecks(story: StudioJourneyStory): Promise<QAAgentFinding[]> {
+export async function runStoryQaChecks(story: StudioJourneyStory, options?: { enableLLMQA?: boolean }): Promise<QAAgentFinding[]> {
   const findings: QAAgentFinding[] = [];
 
   if (!story.title.trim()) {
@@ -179,7 +179,7 @@ export async function runStoryQaChecks(story: StudioJourneyStory): Promise<QAAge
   if (!story.audioUrl.trim()) {
     findings.push({
       code: "missing_audio_url",
-      severity: "warning",
+      severity: "info",
       field: "audio",
       title: "Falta el audio",
       message: "No hay una URL pública de audio.",
@@ -294,6 +294,7 @@ export async function runStoryQaChecks(story: StudioJourneyStory): Promise<QAAge
       cefrLevel: story.cefrLevel,
       topic: story.journeyTopic || story.topic,
       synopsis: story.synopsis,
+      enableLLMQA: options?.enableLLMQA,
     });
 
     // Merge LLM findings with structural findings
@@ -366,9 +367,11 @@ export async function runLLMQualityCheck(params: {
   cefrLevel: string;
   topic: string;
   synopsis: string;
+  /** Override env var — when provided, takes precedence over ENABLE_LLM_QA */
+  enableLLMQA?: boolean;
 }): Promise<LLMQualityCheckResult> {
-  // Check if LLM QA is enabled via environment variable
-  const enableLLMQA = process.env.ENABLE_LLM_QA === "true";
+  // Budget param takes precedence over env var
+  const enableLLMQA = params.enableLLMQA ?? process.env.ENABLE_LLM_QA === "true";
   if (!enableLLMQA) {
     // Return a neutral result with no findings if disabled
     return {
