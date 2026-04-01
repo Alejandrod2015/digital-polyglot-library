@@ -253,7 +253,7 @@ export default function QAClient() {
             onClick={() => void runQaAgent()} disabled={agentRunning || !selectedStoryId}
             style={{ height: 32, borderRadius: 6, border: "none", backgroundColor: "var(--primary)", color: "#fff", fontWeight: 700, padding: "0 14px", cursor: agentRunning ? "progress" : "pointer", opacity: agentRunning || !selectedStoryId ? 0.7 : 1, fontSize: 12 }}
           >
-            {agentRunning ? "Ejecutando..." : "Ejecutar QA Agent"}
+            {agentRunning ? "Validando..." : "Validar calidad"}
           </button>
         </div>
 
@@ -404,7 +404,7 @@ export default function QAClient() {
           <div style={{ display: "flex", gap: 4, flexWrap: "wrap", alignItems: "center" }}>
             {(["all", "critical", "warning", "info"] as Filter[]).map((f) => (
               <Pill key={f} active={filter === f} onClick={() => setFilter(f)}>
-                {f === "all" ? "Todos" : f.charAt(0).toUpperCase() + f.slice(1)}
+                {f === "all" ? "Todos" : f === "critical" ? "Crítico" : f === "warning" ? "Aviso" : "Info"}
               </Pill>
             ))}
             <span style={{ width: 1, height: 14, backgroundColor: "var(--card-border)", margin: "0 2px" }} />

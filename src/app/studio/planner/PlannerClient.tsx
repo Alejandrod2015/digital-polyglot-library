@@ -78,18 +78,15 @@ type PlannerConfigResponse = {
 };
 
 type AgentRun = {
-  runId: string;
-  agent: string;
+  id?: string;
+  runId?: string;
+  agent?: string;
+  agentKind?: string;
   status: string;
-  startedAt: string;
-  completedAt: string;
-  output: {
-    totalStoriesAnalyzed?: number;
-    gapsFound?: number;
-    briefsCreated?: number;
-    journeysProposed?: number;
-    journeysCreated?: number;
-  };
+  startedAt?: string | null;
+  completedAt?: string | null;
+  createdAt?: string;
+  output?: Record<string, unknown> | null;
 };
 
 /* ── shared compact styles ────────────────────────────── */
@@ -426,10 +423,10 @@ export default function PlannerClient() {
 
       {/* ── mode pills ────────────────────────────────── */}
       <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-        <button onClick={() => setMode("gaps")} style={pill(mode === "gaps")}>Detectar gaps</button>
+        <button onClick={() => setMode("gaps")} style={pill(mode === "gaps")}>Buscar faltantes</button>
         <button onClick={() => setMode("create-journey")} style={pill(mode === "create-journey")}>Crear journey</button>
         <span style={{ ...mutedTxt, marginLeft: "auto", fontSize: 10 }}>
-          {mode === "gaps" ? "Analiza, detecta huecos, crea briefs." : "Crea journey + briefs derivados."}
+          {mode === "gaps" ? "Busca historias que faltan en el catálogo." : "Crea un journey nuevo con sus historias."}
         </span>
       </div>
 
@@ -462,7 +459,7 @@ export default function PlannerClient() {
               disabled={agentRunning || (scope === "journey" && !journeyTopic)}
               style={{ ...btnPrimary(agentRunning || (scope === "journey" && !journeyTopic)), marginLeft: "auto" }}
             >
-              {agentRunning ? "Ejecutando..." : "Ejecutar"}
+              {agentRunning ? "Analizando..." : "Analizar"}
             </button>
           </div>
           {agentError && <p style={{ margin: 0, fontSize: 11, color: "#ef4444" }}>{agentError}</p>}
@@ -522,11 +519,11 @@ export default function PlannerClient() {
           <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
             <span style={statusPill("rgba(125,211,160,0.15)", "#7dd3a0")}>{agentRun.output.status}</span>
             <span style={{ fontSize: 12, fontWeight: 700, color: "var(--foreground)" }}>
-              {mode === "gaps" ? "Analisis completado" : "Journey creado"}
+              {mode === "gaps" ? "Análisis completado" : "Journey creado"}
             </span>
             {agentRun.output.totalStoriesAnalyzed != null && <span style={mutedTxt}>Analizadas: <strong>{agentRun.output.totalStoriesAnalyzed}</strong></span>}
-            {agentRun.output.gapsFound != null && <span style={{ ...mutedTxt, color: "#ef4444" }}>Gaps: <strong>{agentRun.output.gapsFound}</strong></span>}
-            {agentRun.output.briefsCreated != null && <span style={{ ...mutedTxt, color: "#7dd3a0" }}>Briefs: <strong>{agentRun.output.briefsCreated}</strong></span>}
+            {agentRun.output.gapsFound != null && <span style={{ ...mutedTxt, color: "#ef4444" }}>Faltantes: <strong>{agentRun.output.gapsFound}</strong></span>}
+            {agentRun.output.briefsCreated != null && <span style={{ ...mutedTxt, color: "#7dd3a0" }}>Pendientes creados: <strong>{agentRun.output.briefsCreated}</strong></span>}
             {agentRun.output.journeysProposed != null && <span style={mutedTxt}>Propuestos: <strong>{agentRun.output.journeysProposed}</strong></span>}
             {agentRun.output.journeysCreated != null && <span style={{ ...mutedTxt, color: "#7dd3a0" }}>Creados: <strong>{agentRun.output.journeysCreated}</strong></span>}
           </div>
@@ -572,7 +569,7 @@ export default function PlannerClient() {
       {/* ── briefs (grouped by level) ─────────────────── */}
       <div style={card}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-          <span style={sectionHead}>Briefs</span>
+          <span style={sectionHead}>Historias pendientes</span>
           <span style={{ ...mutedTxt, fontSize: 10 }}>{filteredBriefs.length} total</span>
 
           <div style={{ display: "flex", gap: 4, marginLeft: "auto", alignItems: "center" }}>
@@ -616,7 +613,7 @@ export default function PlannerClient() {
 
       {/* ── execution history (collapsible) ───────────── */}
       <Collapsible
-        title="Historial de ejecuciones"
+        title="Historial"
         badge={<span style={{ ...mutedTxt, fontSize: 10 }}>{runHistory.length} runs</span>}
       >
         {historyError && <p style={{ margin: 0, fontSize: 11, color: "#ef4444" }}>{historyError}</p>}
@@ -629,16 +626,17 @@ export default function PlannerClient() {
         ) : (
           <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
             {runHistory.map((run) => {
-              const d = new Date(run.startedAt).toLocaleDateString("es", { day: "numeric", month: "short" });
+              const d = run.startedAt ? new Date(run.startedAt).toLocaleDateString("es", { day: "numeric", month: "short" }) : run.createdAt ? new Date(run.createdAt).toLocaleDateString("es", { day: "numeric", month: "short" }) : "—";
+              const out = (run.output ?? {}) as Record<string, unknown>;
               return (
-                <div key={run.runId} style={{ display: "flex", alignItems: "center", gap: 6, padding: "3px 6px", borderRadius: 4, fontSize: 11 }}>
+                <div key={run.runId ?? run.id} style={{ display: "flex", alignItems: "center", gap: 6, padding: "3px 6px", borderRadius: 4, fontSize: 11 }}>
                   <span style={statusPill("rgba(125,211,160,0.15)", "#7dd3a0")}>{run.status}</span>
                   <span style={{ color: "var(--muted)" }}>{d}</span>
-                  {run.output.totalStoriesAnalyzed != null && <span style={{ color: "var(--muted)" }}>Hist: <strong style={{ color: "var(--foreground)" }}>{run.output.totalStoriesAnalyzed}</strong></span>}
-                  {run.output.gapsFound != null && <span style={{ color: "var(--muted)" }}>Gaps: <strong style={{ color: "var(--foreground)" }}>{run.output.gapsFound}</strong></span>}
-                  {run.output.briefsCreated != null && <span style={{ color: "var(--muted)" }}>Briefs: <strong style={{ color: "var(--foreground)" }}>{run.output.briefsCreated}</strong></span>}
-                  {run.output.journeysProposed != null && <span style={{ color: "var(--muted)" }}>Prop: <strong style={{ color: "var(--foreground)" }}>{run.output.journeysProposed}</strong></span>}
-                  {run.output.journeysCreated != null && <span style={{ color: "var(--muted)" }}>Creados: <strong style={{ color: "var(--foreground)" }}>{run.output.journeysCreated}</strong></span>}
+                  {out.totalStoriesAnalyzed != null && <span style={{ color: "var(--muted)" }}>Analizadas: <strong style={{ color: "var(--foreground)" }}>{String(out.totalStoriesAnalyzed)}</strong></span>}
+                  {out.gapsFound != null && <span style={{ color: "var(--muted)" }}>Faltantes: <strong style={{ color: "var(--foreground)" }}>{String(out.gapsFound)}</strong></span>}
+                  {out.briefsCreated != null && <span style={{ color: "var(--muted)" }}>Pendientes: <strong style={{ color: "var(--foreground)" }}>{String(out.briefsCreated)}</strong></span>}
+                  {out.journeysProposed != null && <span style={{ color: "var(--muted)" }}>Propuestos: <strong style={{ color: "var(--foreground)" }}>{String(out.journeysProposed)}</strong></span>}
+                  {out.journeysCreated != null && <span style={{ color: "var(--muted)" }}>Creados: <strong style={{ color: "var(--foreground)" }}>{String(out.journeysCreated)}</strong></span>}
                 </div>
               );
             })}
@@ -647,7 +645,7 @@ export default function PlannerClient() {
       </Collapsible>
 
       {/* ── runtime config (collapsible) ──────────────── */}
-      <Collapsible title="Configuracion runtime" badge={
+      <Collapsible title="Configuración avanzada" badge={
         plannerConfigDraft ? <span style={{ ...mutedTxt, fontSize: 10 }}>{plannerConfigSource === "database" ? "Personalizada" : "Default"}</span> : undefined
       }>
         {plannerConfigLoading && <p style={mutedTxt}>Cargando...</p>}

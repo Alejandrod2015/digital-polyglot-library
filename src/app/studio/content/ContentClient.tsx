@@ -292,7 +292,7 @@ export default function ContentClient() {
               whiteSpace: "nowrap",
             }}
           >
-            {agentRunning ? "Ejecutando..." : "Ejecutar Agent"}
+            {agentRunning ? "Generando..." : "Generar historia"}
           </button>
         </div>
 
