@@ -41,56 +41,30 @@ type ContentAgentRun = {
   toolsUsed: Array<{ toolName: string; summary: string }>;
 };
 
-type BriefsResponse = {
-  briefs: CurriculumBrief[];
-  count: number;
+type BriefsResponse = { briefs: CurriculumBrief[]; count: number };
+type RunsResponse = { runs: ContentAgentRun[] };
+
+const statusColors: Record<string, string> = {
+  completed: "#22c55e",
+  running: "#3b82f6",
+  failed: "#ef4444",
+  pending: "#a855f7",
 };
 
-type RunsResponse = {
-  runs: ContentAgentRun[];
-};
-
-function StatusBadge({ status }: { status: string }) {
-  const statusConfig: Record<
-    string,
-    { bg: string; border: string; text: string }
-  > = {
-    completed: {
-      bg: "rgba(34, 197, 94, 0.08)",
-      border: "rgba(34, 197, 94, 0.3)",
-      text: "#22c55e",
-    },
-    running: {
-      bg: "rgba(59, 130, 246, 0.08)",
-      border: "rgba(59, 130, 246, 0.3)",
-      text: "#3b82f6",
-    },
-    failed: {
-      bg: "rgba(239, 68, 68, 0.08)",
-      border: "rgba(239, 68, 68, 0.3)",
-      text: "#ef4444",
-    },
-    pending: {
-      bg: "rgba(168, 85, 247, 0.08)",
-      border: "rgba(168, 85, 247, 0.3)",
-      text: "#a855f7",
-    },
-  };
-
-  const config = statusConfig[status] || statusConfig.pending;
-
+function Badge({ status }: { status: string }) {
+  const c = statusColors[status] || statusColors.pending;
   return (
     <span
       style={{
-        fontSize: 11,
-        fontWeight: 600,
+        fontSize: 10,
+        fontWeight: 700,
         textTransform: "uppercase",
         letterSpacing: "0.05em",
-        padding: "3px 8px",
-        borderRadius: 6,
-        backgroundColor: config.bg,
-        color: config.text,
-        border: `1px solid ${config.border}`,
+        padding: "1px 6px",
+        borderRadius: 4,
+        backgroundColor: `${c}14`,
+        color: c,
+        border: `1px solid ${c}4d`,
         whiteSpace: "nowrap",
       }}
     >
@@ -99,407 +73,42 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
-function BriefSelectCard({
-  briefs,
-  selectedBriefId,
-  onSelect,
-  loading,
-  error,
-}: {
-  briefs: CurriculumBrief[];
-  selectedBriefId: string;
-  onSelect: (id: string) => void;
-  loading: boolean;
-  error: string | null;
-}) {
+function Lbl({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      style={{
-        padding: 20,
-        borderRadius: 12,
-        backgroundColor: "var(--card-bg)",
-        border: "1px solid var(--card-border)",
-        display: "flex",
-        flexDirection: "column",
-        gap: 16,
-      }}
-    >
-      <div>
-        <p
-          style={{
-            margin: 0,
-            fontSize: 12,
-            fontWeight: 700,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            color: "var(--studio-accent, #14b8a6)",
-          }}
-        >
-          Generador de borradores
-        </p>
-        <h3 style={{ margin: "8px 0 6px", fontSize: 22, color: "var(--foreground)" }}>
-          Generar borrador desde brief
-        </h3>
-        <p
-          style={{
-            margin: 0,
-            fontSize: 14,
-            color: "var(--muted)",
-            maxWidth: 840,
-            lineHeight: 1.6,
-          }}
-        >
-          Selecciona un brief curricular en estado "draft" y genera una historia completa usando el Content Agent.
-          El agente crea el texto, define slugs, calcula estadísticas y sugiere vocabulario.
-        </p>
-      </div>
-
-      {error && (
-        <p style={{ margin: 0, fontSize: 13, color: "#ef4444" }}>
-          {error}
-        </p>
-      )}
-
-      <label style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        <span style={{ fontSize: 12, fontWeight: 600, color: "var(--muted)" }}>
-          Brief
-        </span>
-        <select
-          value={selectedBriefId}
-          onChange={(e) => onSelect(e.target.value)}
-          disabled={loading || briefs.length === 0}
-          style={{
-            height: 42,
-            borderRadius: 10,
-            border: "1px solid var(--card-border)",
-            backgroundColor: "var(--background)",
-            color: "var(--foreground)",
-            padding: "0 12px",
-            fontSize: 14,
-            cursor: loading || briefs.length === 0 ? "not-allowed" : "pointer",
-          }}
-        >
-          {loading ? (
-            <option>Cargando briefs...</option>
-          ) : briefs.length === 0 ? (
-            <option>No hay briefs en estado draft</option>
-          ) : (
-            briefs.map((brief) => (
-              <option key={brief.id} value={brief.id}>
-                {brief.title} · {brief.level.toUpperCase()} · {brief.language}
-              </option>
-            ))
-          )}
-        </select>
-      </label>
-    </div>
-  );
-}
-
-function SelectedBriefDetail({
-  brief,
-  onRun,
-  running,
-}: {
-  brief: CurriculumBrief | null;
-  onRun: () => void;
-  running: boolean;
-}) {
-  if (!brief) return null;
-
-  return (
-    <div
-      style={{
-        padding: 18,
-        borderRadius: 12,
-        border: "1px solid var(--card-border)",
-        backgroundColor: "rgba(255,255,255,0.02)",
-        display: "flex",
-        flexDirection: "column",
-        gap: 14,
-      }}
-    >
-      <div>
-        <h4 style={{ margin: "0 0 10px", fontSize: 16, color: "var(--foreground)" }}>
-          {brief.title}
-        </h4>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10 }}>
-          <div>
-            <p style={{ margin: "0 0 4px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Idioma
-            </p>
-            <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)" }}>
-              {brief.language}
-            </p>
-          </div>
-          <div>
-            <p style={{ margin: "0 0 4px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Nivel
-            </p>
-            <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)" }}>
-              {brief.level.toUpperCase()}
-            </p>
-          </div>
-          <div>
-            <p style={{ margin: "0 0 4px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Variante
-            </p>
-            <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)" }}>
-              {brief.variant}
-            </p>
-          </div>
-          <div>
-            <p style={{ margin: "0 0 4px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Journey
-            </p>
-            <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)" }}>
-              {brief.journeyKey}
-            </p>
-          </div>
-          <div>
-            <p style={{ margin: "0 0 4px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Topic
-            </p>
-            <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)" }}>
-              {brief.topicSlug}
-            </p>
-          </div>
-          <div>
-            <p style={{ margin: "0 0 4px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Story Slot
-            </p>
-            <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)" }}>
-              {brief.storySlot}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <button
-        onClick={onRun}
-        disabled={running}
-        style={{
-          height: 42,
-          borderRadius: 10,
-          border: "none",
-          backgroundColor: "var(--primary)",
-          color: "#fff",
-          fontWeight: 700,
-          padding: "0 18px",
-          cursor: running ? "progress" : "pointer",
-          opacity: running ? 0.7 : 1,
-          alignSelf: "flex-start",
-        }}
-      >
-        {running ? "Ejecutando..." : "Ejecutar Content Agent"}
-      </button>
-    </div>
-  );
-}
-
-function RunResultCard({
-  run,
-}: {
-  run: ContentAgentRun;
-}) {
-  const [expanded, setExpanded] = useState(false);
-
-  return (
-    <div
-      style={{
-        padding: 18,
-        borderRadius: 12,
-        border: "1px solid var(--card-border)",
-        backgroundColor: "rgba(255,255,255,0.02)",
-        display: "flex",
-        flexDirection: "column",
-        gap: 14,
-        cursor: "pointer",
-      }}
-      onClick={() => setExpanded(!expanded)}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-        <StatusBadge status={run.status} />
-        <span style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)" }}>
-          {run.output.title}
-        </span>
-        <span
-          style={{
-            fontSize: 13,
-            color: "var(--muted)",
-            marginLeft: "auto",
-          }}
-        >
-          {new Date(run.startedAt).toLocaleDateString("es", {
-            day: "numeric",
-            month: "short",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-          })}
-        </span>
-        <span style={{ fontSize: 18, color: "var(--muted)", transform: expanded ? "rotate(180deg)" : "none", transition: "transform 0.15s" }}>
-          ▾
-        </span>
-      </div>
-
-      {expanded && (
-        <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 14 }}>
-          <div>
-            <p style={{ margin: "0 0 8px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              ID del borrador
-            </p>
-            <p style={{ margin: 0, fontSize: 13, fontFamily: "monospace", color: "var(--studio-accent, #14b8a6)" }}>
-              {run.output.draftId}
-            </p>
-          </div>
-
-          <div>
-            <p style={{ margin: "0 0 8px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Slug
-            </p>
-            <p style={{ margin: 0, fontSize: 13, fontFamily: "monospace", color: "var(--foreground)" }}>
-              {run.output.slug}
-            </p>
-          </div>
-
-          <div>
-            <p style={{ margin: "0 0 8px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Sinopsis
-            </p>
-            <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)", lineHeight: 1.6 }}>
-              {run.output.synopsis}
-            </p>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10 }}>
-            <div
-              style={{
-                padding: 10,
-                borderRadius: 8,
-                border: "1px solid var(--card-border)",
-                backgroundColor: "var(--card-bg)",
-              }}
-            >
-              <p style={{ margin: 0, fontSize: 18, fontWeight: 700, color: "var(--studio-accent, #14b8a6)" }}>
-                {run.output.wordCount}
-              </p>
-              <p style={{ margin: "4px 0 0", fontSize: 11, color: "var(--muted)", fontWeight: 600, textTransform: "uppercase" }}>
-                Palabras
-              </p>
-            </div>
-            <div
-              style={{
-                padding: 10,
-                borderRadius: 8,
-                border: "1px solid var(--card-border)",
-                backgroundColor: "var(--card-bg)",
-              }}
-            >
-              <p style={{ margin: 0, fontSize: 18, fontWeight: 700, color: "var(--studio-accent, #14b8a6)" }}>
-                {run.output.vocabItemCount}
-              </p>
-              <p style={{ margin: "4px 0 0", fontSize: 11, color: "var(--muted)", fontWeight: 600, textTransform: "uppercase" }}>
-                Vocab Items
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <p style={{ margin: "0 0 8px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Preview del texto
-            </p>
-            <p
-              style={{
-                margin: 0,
-                fontSize: 13,
-                color: "var(--foreground)",
-                lineHeight: 1.6,
-                maxHeight: 120,
-                overflow: "auto",
-                padding: 10,
-                borderRadius: 8,
-                backgroundColor: "var(--card-bg)",
-                border: "1px solid var(--card-border)",
-              }}
-            >
-              {run.output.textPreview}
-            </p>
-          </div>
-
-          <div>
-            <p style={{ margin: "0 0 8px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-              Resumen de ejecución
-            </p>
-            <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)", lineHeight: 1.6 }}>
-              {run.output.summary}
-            </p>
-          </div>
-
-          {run.toolsUsed && run.toolsUsed.length > 0 && (
-            <div>
-              <p style={{ margin: "0 0 8px", fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>
-                Herramientas utilizadas
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                {run.toolsUsed.map((tool) => (
-                  <div
-                    key={tool.toolName}
-                    style={{
-                      padding: 10,
-                      borderRadius: 8,
-                      border: "1px solid var(--card-border)",
-                      backgroundColor: "var(--card-bg)",
-                    }}
-                  >
-                    <p style={{ margin: 0, fontSize: 12, fontWeight: 600, color: "var(--foreground)" }}>
-                      {tool.toolName}
-                    </p>
-                    <p style={{ margin: "4px 0 0", fontSize: 12, color: "var(--muted)", lineHeight: 1.5 }}>
-                      {tool.summary}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
+    <span style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>
+      {children}
+    </span>
   );
 }
 
 export default function ContentClient() {
   const router = useRouter();
-
-  // Brief selection state
   const [briefs, setBriefs] = useState<CurriculumBrief[]>([]);
   const [briefsLoading, setBriefsLoading] = useState(true);
   const [briefsError, setBriefsError] = useState<string | null>(null);
   const [selectedBriefId, setSelectedBriefId] = useState("");
-
-  // Agent run state
   const [agentRun, setAgentRun] = useState<ContentAgentRun | null>(null);
   const [agentError, setAgentError] = useState<string | null>(null);
   const [agentRunning, setAgentRunning] = useState(false);
-
-  // Run history state
   const [runHistory, setRunHistory] = useState<ContentAgentRun[]>([]);
   const [historyLoading, setHistoryLoading] = useState(true);
   const [historyError, setHistoryError] = useState<string | null>(null);
   const [expandedRunId, setExpandedRunId] = useState<string | null>(null);
+  const [historyOpen, setHistoryOpen] = useState(false);
+
+  const selectedBrief = useMemo(
+    () => briefs.find((b) => b.id === selectedBriefId) ?? null,
+    [briefs, selectedBriefId],
+  );
 
   async function loadBriefs() {
     try {
       const res = await fetch("/api/agents/planner/briefs?status=draft");
-      if (res.status === 401) {
-        router.push("/sign-in?redirect_url=/studio/content");
-        return;
-      }
+      if (res.status === 401) { router.push("/sign-in?redirect_url=/studio/content"); return; }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = (await res.json()) as BriefsResponse;
       setBriefs(data.briefs);
-      setSelectedBriefId((current) => current || data.briefs[0]?.id || "");
+      setSelectedBriefId((c) => c || data.briefs[0]?.id || "");
       setBriefsError(null);
     } catch (err) {
       setBriefsError(err instanceof Error ? err.message : "No se pudieron cargar los briefs.");
@@ -511,72 +120,39 @@ export default function ContentClient() {
   async function loadRunHistory() {
     try {
       const res = await fetch("/api/agents/runs?kind=content&limit=20");
-      if (res.status === 401) {
-        router.push("/sign-in?redirect_url=/studio/content");
-        return;
-      }
+      if (res.status === 401) { router.push("/sign-in?redirect_url=/studio/content"); return; }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = (await res.json()) as RunsResponse;
       setRunHistory(data.runs);
       setHistoryError(null);
     } catch (err) {
-      setHistoryError(err instanceof Error ? err.message : "No se pudo cargar el historial de ejecuciones.");
+      setHistoryError(err instanceof Error ? err.message : "No se pudo cargar el historial.");
     } finally {
       setHistoryLoading(false);
     }
   }
 
   useEffect(() => {
-    let cancelled = false;
-
-    async function load() {
-      await loadBriefs();
-      await loadRunHistory();
-      return () => {
-        cancelled = true;
-      };
-    }
-
-    void load();
+    void (async () => { await loadBriefs(); await loadRunHistory(); })();
   }, [router]);
 
-  const selectedBrief = useMemo(
-    () => briefs.find((b) => b.id === selectedBriefId) ?? null,
-    [briefs, selectedBriefId]
-  );
-
   async function runContentAgent() {
-    if (!selectedBriefId) {
-      setAgentError("Selecciona un brief antes de ejecutar el agente.");
-      return;
-    }
-
+    if (!selectedBriefId) { setAgentError("Selecciona un brief."); return; }
     setAgentError(null);
     setAgentRunning(true);
-
     try {
       const res = await fetch("/api/agents/content/run", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ briefId: selectedBriefId }),
       });
-
-      if (res.status === 401) {
-        router.push("/sign-in?redirect_url=/studio/content");
-        return;
-      }
-
+      if (res.status === 401) { router.push("/sign-in?redirect_url=/studio/content"); return; }
       if (!res.ok) {
-        const body = (await res.json().catch(() => null)) as
-          | { error?: string; details?: string }
-          | null;
+        const body = (await res.json().catch(() => null)) as { error?: string; details?: string } | null;
         throw new Error(body?.details ?? body?.error ?? `HTTP ${res.status}`);
       }
-
       const data = (await res.json()) as ContentAgentRun;
       setAgentRun(data);
-
-      // Refresh run history after successful execution
       setHistoryLoading(true);
       await loadRunHistory();
     } catch (err) {
@@ -586,110 +162,298 @@ export default function ContentClient() {
     }
   }
 
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-      <BriefSelectCard
-        briefs={briefs}
-        selectedBriefId={selectedBriefId}
-        onSelect={setSelectedBriefId}
-        loading={briefsLoading}
-        error={briefsError}
-      />
+  const fmtDate = (d: string) =>
+    new Date(d).toLocaleDateString("es", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
 
-      {selectedBrief && (
-        <SelectedBriefDetail
-          brief={selectedBrief}
-          onRun={runContentAgent}
-          running={agentRunning}
-        />
-      )}
-
-      {agentError && (
+  /* ---- Inline run detail (used for both latest result and history expansion) ---- */
+  function RunDetail({ run }: { run: ContentAgentRun }) {
+    return (
+      <div style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12, color: "var(--foreground)" }}>
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+          <span><Lbl>Draft ID</Lbl>{" "}<code style={{ color: "var(--studio-accent, #14b8a6)" }}>{run.output.draftId}</code></span>
+          <span><Lbl>Slug</Lbl>{" "}<code>{run.output.slug}</code></span>
+          <span><Lbl>Palabras</Lbl>{" "}<strong style={{ color: "var(--studio-accent, #14b8a6)" }}>{run.output.wordCount}</strong></span>
+          <span><Lbl>Vocab</Lbl>{" "}<strong style={{ color: "var(--studio-accent, #14b8a6)" }}>{run.output.vocabItemCount}</strong></span>
+        </div>
+        <div style={{ lineHeight: 1.5 }}>
+          <Lbl>Sinopsis</Lbl>{" "}{run.output.synopsis}
+        </div>
         <div
           style={{
-            padding: 16,
-            borderRadius: 10,
-            backgroundColor: "rgba(239, 68, 68, 0.08)",
-            border: "1px solid rgba(239, 68, 68, 0.2)",
+            maxHeight: 80,
+            overflow: "auto",
+            padding: "4px 6px",
+            borderRadius: 4,
+            backgroundColor: "var(--card-bg)",
+            border: "1px solid var(--card-border)",
+            lineHeight: 1.5,
+            fontSize: 11,
           }}
         >
-          <p style={{ fontSize: 14, fontWeight: 600, color: "#ef4444", margin: 0 }}>
-            Error al ejecutar el agente
-          </p>
-          <p style={{ fontSize: 13, color: "var(--muted)", margin: "6px 0 0" }}>
-            {agentError}
-          </p>
+          {run.output.textPreview}
+        </div>
+        <div style={{ lineHeight: 1.5 }}>
+          <Lbl>Resumen</Lbl>{" "}{run.output.summary}
+        </div>
+        {run.toolsUsed?.length > 0 && (
+          <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+            <Lbl>Tools</Lbl>{" "}
+            {run.toolsUsed.map((t) => (
+              <span
+                key={t.toolName}
+                title={t.summary}
+                style={{
+                  fontSize: 10,
+                  padding: "1px 5px",
+                  borderRadius: 3,
+                  backgroundColor: "var(--card-bg)",
+                  border: "1px solid var(--card-border)",
+                }}
+              >
+                {t.toolName}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      {/* ===== Brief selector + run button ===== */}
+      <div
+        style={{
+          padding: "10px 14px",
+          borderRadius: 8,
+          backgroundColor: "var(--card-bg)",
+          border: "1px solid var(--card-border)",
+          display: "flex",
+          flexDirection: "column",
+          gap: 8,
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+          <span style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--studio-accent, #14b8a6)" }}>
+            Generador de borradores
+          </span>
+          <span style={{ fontSize: 12, color: "var(--muted)" }}>
+            Selecciona un brief y genera una historia con el Content Agent.
+          </span>
+        </div>
+
+        {briefsError && <p style={{ margin: 0, fontSize: 11, color: "#ef4444" }}>{briefsError}</p>}
+
+        <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+          <select
+            value={selectedBriefId}
+            onChange={(e) => setSelectedBriefId(e.target.value)}
+            disabled={briefsLoading || briefs.length === 0}
+            style={{
+              flex: 1,
+              minWidth: 200,
+              height: 32,
+              borderRadius: 6,
+              border: "1px solid var(--card-border)",
+              backgroundColor: "var(--background)",
+              color: "var(--foreground)",
+              padding: "0 8px",
+              fontSize: 12,
+              cursor: briefsLoading || briefs.length === 0 ? "not-allowed" : "pointer",
+            }}
+          >
+            {briefsLoading ? (
+              <option>Cargando...</option>
+            ) : briefs.length === 0 ? (
+              <option>Sin briefs draft</option>
+            ) : (
+              briefs.map((b) => (
+                <option key={b.id} value={b.id}>
+                  {b.title} / {b.level.toUpperCase()} / {b.language}
+                </option>
+              ))
+            )}
+          </select>
+
+          <button
+            onClick={runContentAgent}
+            disabled={agentRunning || !selectedBriefId}
+            style={{
+              height: 32,
+              borderRadius: 6,
+              border: "none",
+              backgroundColor: "var(--primary)",
+              color: "#fff",
+              fontWeight: 700,
+              padding: "0 14px",
+              fontSize: 12,
+              cursor: agentRunning ? "progress" : "pointer",
+              opacity: agentRunning || !selectedBriefId ? 0.6 : 1,
+              whiteSpace: "nowrap",
+            }}
+          >
+            {agentRunning ? "Ejecutando..." : "Ejecutar Agent"}
+          </button>
+        </div>
+
+        {/* Brief detail row */}
+        {selectedBrief && (
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", fontSize: 11, color: "var(--foreground)" }}>
+            {[
+              ["Idioma", selectedBrief.language],
+              ["Nivel", selectedBrief.level.toUpperCase()],
+              ["Variante", selectedBrief.variant],
+              ["Journey", selectedBrief.journeyKey],
+              ["Topic", selectedBrief.topicSlug],
+              ["Slot", selectedBrief.storySlot],
+            ].map(([label, val]) => (
+              <span key={label}>
+                <Lbl>{label}</Lbl>{" "}{val}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* ===== Agent error ===== */}
+      {agentError && (
+        <div style={{ padding: "6px 10px", borderRadius: 6, backgroundColor: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)" }}>
+          <span style={{ fontSize: 12, fontWeight: 600, color: "#ef4444" }}>Error: </span>
+          <span style={{ fontSize: 12, color: "var(--muted)" }}>{agentError}</span>
         </div>
       )}
 
+      {/* ===== Latest run result (inline) ===== */}
       {agentRun && (
-        <section style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <div>
-            <h3 style={{ margin: 0, fontSize: 18, color: "var(--foreground)" }}>
-              Resultado de la ejecución
-            </h3>
+        <div
+          style={{
+            padding: "8px 12px",
+            borderRadius: 8,
+            border: "1px solid var(--card-border)",
+            backgroundColor: "rgba(255,255,255,0.02)",
+            display: "flex",
+            flexDirection: "column",
+            gap: 6,
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13 }}>
+            <Badge status={agentRun.status} />
+            <strong style={{ color: "var(--foreground)" }}>{agentRun.output.title}</strong>
+            <span style={{ fontSize: 11, color: "var(--muted)", marginLeft: "auto" }}>Resultado</span>
           </div>
-          <RunResultCard run={agentRun} />
-        </section>
+          <RunDetail run={agentRun} />
+        </div>
       )}
 
+      {/* ===== Run history (collapsible) ===== */}
       {historyLoading ? (
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <div style={{ display: "flex", gap: 6 }}>
           {[1, 2, 3].map((i) => (
-            <div key={i} className="studio-skeleton" style={{ height: 56 }} />
+            <div key={i} className="studio-skeleton" style={{ height: 24, flex: 1 }} />
           ))}
         </div>
       ) : historyError ? (
-        <div
-          style={{
-            padding: 20,
-            borderRadius: 10,
-            backgroundColor: "rgba(239, 68, 68, 0.08)",
-            border: "1px solid rgba(239, 68, 68, 0.2)",
-          }}
-        >
-          <p style={{ fontSize: 14, fontWeight: 600, color: "#ef4444", margin: 0 }}>
-            Error al cargar el historial
-          </p>
-          <p style={{ fontSize: 13, color: "var(--muted)", margin: "6px 0 0" }}>
-            {historyError}
-          </p>
+        <div style={{ padding: "6px 10px", borderRadius: 6, backgroundColor: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)" }}>
+          <span style={{ fontSize: 12, fontWeight: 600, color: "#ef4444" }}>Error historial: </span>
+          <span style={{ fontSize: 12, color: "var(--muted)" }}>{historyError}</span>
         </div>
       ) : runHistory.length === 0 ? (
-        <div style={{ textAlign: "center", padding: "60px 20px" }}>
-          <p style={{ fontSize: 40, margin: "0 0 12px" }}>📝</p>
-          <p style={{ fontSize: 16, fontWeight: 600, color: "var(--foreground)", margin: 0 }}>
-            No hay ejecuciones registradas
-          </p>
-          <p style={{ fontSize: 14, color: "var(--muted)", margin: "8px 0 0" }}>
-            Ejecuta el Content Agent para generar borradores.
-          </p>
-        </div>
+        <p style={{ textAlign: "center", padding: "20px 0", fontSize: 13, color: "var(--muted)", margin: 0 }}>
+          Sin ejecuciones registradas. Ejecuta el Content Agent para generar borradores.
+        </p>
       ) : (
-        <section style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <div>
-            <h3 style={{ margin: 0, fontSize: 18, color: "var(--foreground)" }}>
-              Historial de generaciones
-            </h3>
-            <p style={{ margin: "8px 0 0", fontSize: 14, color: "var(--muted)" }}>
-              Últimas {runHistory.length} ejecuciones del Content Agent
-            </p>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {runHistory.map((run) => (
+        <div
+          style={{
+            borderRadius: 8,
+            border: "1px solid var(--card-border)",
+            backgroundColor: "var(--card-bg)",
+            overflow: "hidden",
+          }}
+        >
+          {/* Collapsible header */}
+          <button
+            onClick={() => setHistoryOpen(!historyOpen)}
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              gap: 6,
+              padding: "6px 12px",
+              border: "none",
+              background: "none",
+              cursor: "pointer",
+              fontSize: 12,
+              fontWeight: 700,
+              color: "var(--foreground)",
+              textAlign: "left",
+            }}
+          >
+            <span style={{ fontSize: 14, transform: historyOpen ? "rotate(180deg)" : "none", transition: "transform 0.15s" }}>
+              &#9662;
+            </span>
+            Historial ({runHistory.length})
+          </button>
+
+          {historyOpen && (
+            <div style={{ borderTop: "1px solid var(--card-border)" }}>
+              {/* Table header */}
               <div
-                key={run.runId}
-                onClick={() =>
-                  setExpandedRunId(
-                    expandedRunId === run.runId ? null : run.runId
-                  )
-                }
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "60px 1fr 100px 60px 60px 40px",
+                  gap: 4,
+                  padding: "4px 12px",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  color: "var(--muted)",
+                  borderBottom: "1px solid var(--card-border)",
+                }}
               >
-                <RunResultCard run={run} />
+                <span>Estado</span>
+                <span>Titulo</span>
+                <span>Fecha</span>
+                <span>Words</span>
+                <span>Vocab</span>
+                <span />
               </div>
-            ))}
-          </div>
-        </section>
+
+              {runHistory.map((run) => (
+                <div key={run.runId}>
+                  <div
+                    onClick={() => setExpandedRunId(expandedRunId === run.runId ? null : run.runId)}
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "60px 1fr 100px 60px 60px 40px",
+                      gap: 4,
+                      padding: "4px 12px",
+                      fontSize: 12,
+                      cursor: "pointer",
+                      borderBottom: "1px solid var(--card-border)",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Badge status={run.status} />
+                    <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "var(--foreground)", fontWeight: 600 }}>
+                      {run.output.title}
+                    </span>
+                    <span style={{ fontSize: 11, color: "var(--muted)" }}>{fmtDate(run.startedAt)}</span>
+                    <span style={{ fontSize: 11, color: "var(--foreground)" }}>{run.output.wordCount}</span>
+                    <span style={{ fontSize: 11, color: "var(--foreground)" }}>{run.output.vocabItemCount}</span>
+                    <span style={{ fontSize: 14, color: "var(--muted)", transform: expandedRunId === run.runId ? "rotate(180deg)" : "none", transition: "transform 0.15s", textAlign: "center" }}>
+                      &#9662;
+                    </span>
+                  </div>
+                  {expandedRunId === run.runId && (
+                    <div style={{ padding: "6px 12px 10px", borderBottom: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.01)" }}>
+                      <RunDetail run={run} />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       )}
     </div>
   );
