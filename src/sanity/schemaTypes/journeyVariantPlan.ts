@@ -79,15 +79,16 @@ export const journeyVariantPlan = defineType({
                   name: "journeyTopicPlan",
                   fields: [
                     defineField({
-                      name: "slug",
-                      title: "Slug",
+                      name: "label",
+                      title: "Nombre del tema",
                       type: "string",
                       validation: (Rule) => Rule.required(),
                     }),
                     defineField({
-                      name: "label",
-                      title: "Label",
+                      name: "slug",
+                      title: "Slug (auto)",
                       type: "string",
+                      description: "Se genera automáticamente del nombre.",
                       validation: (Rule) => Rule.required(),
                     }),
                     defineField({

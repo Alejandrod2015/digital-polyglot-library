@@ -137,7 +137,10 @@ export default function JourneyVariantPlanEditor({ plan, stories, highlightedLev
 
   function updateTopic(li: number, ti: number, f: keyof JourneyVariantPlan["levels"][number]["topics"][number], v: string | number) {
     setDraft((c) => {
-      const ls = [...c.levels]; const ts = [...ls[li].topics]; ts[ti] = { ...ts[ti], [f]: v };
+      const ls = [...c.levels]; const ts = [...ls[li].topics];
+      ts[ti] = { ...ts[ti], [f]: v };
+      // Auto-generate slug from label
+      if (f === "label" && typeof v === "string") { ts[ti] = { ...ts[ti], slug: slugify(v) }; }
       ls[li] = { ...ls[li], topics: ts }; const next = { ...c, levels: ls }; markDirty(next); return next;
     });
   }
@@ -160,7 +163,7 @@ export default function JourneyVariantPlanEditor({ plan, stories, highlightedLev
   function addTopic(li: number) {
     setDraft((c) => {
       const ls = [...c.levels];
-      ls[li] = { ...ls[li], topics: [...ls[li].topics, { slug: `nuevo-topic-${ls[li].topics.length + 1}`, label: "Nuevo topic", storyTarget: ls[li].storyTargetPerTopic, checkpoint: "mixed" as const }] };
+      ls[li] = { ...ls[li], topics: [...ls[li].topics, { slug: `nuevo-tema-${ls[li].topics.length + 1}`, label: "Nuevo tema", storyTarget: ls[li].storyTargetPerTopic, checkpoint: "mixed" as const }] };
       const next = { ...c, levels: ls }; markDirty(next); return next;
     });
   }
@@ -547,15 +550,18 @@ export default function JourneyVariantPlanEditor({ plan, stories, highlightedLev
                           <button
                             type="button"
                             onClick={() => toggleTopic(topicKey)}
-                            style={{ display: "flex", alignItems: "center", gap: 10, background: "none", border: "none", color: "inherit", padding: 0, cursor: "pointer", textAlign: "left" }}
+                            style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", color: "inherit", padding: 0, cursor: "pointer", textAlign: "left" }}
                           >
                             <span style={{ fontSize: 12, color: "var(--muted)", transition: "transform 0.15s", transform: expandedTopics.has(topicKey) ? "rotate(90deg)" : "rotate(0deg)", display: "inline-block" }}>▶</span>
-                            <div>
-                              <div style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)" }}>{topic.label}</div>
-                              <div style={{ fontSize: 11, color: "var(--muted)", fontFamily: "monospace" }}>{topic.slug}</div>
-                            </div>
                           </button>
-                          <input type="number" value={topic.storyTarget} onChange={(e) => updateTopic(li, ti, "storyTarget", Number(e.target.value) || 1)} className="studio-input" style={field} />
+                          <input
+                            value={topic.label}
+                            onChange={(e) => updateTopic(li, ti, "label", e.target.value)}
+                            className="studio-input"
+                            style={{ ...field, flex: 1, fontSize: 13, fontWeight: 600 }}
+                            placeholder="Nombre del tema"
+                          />
+                          <input type="number" value={topic.storyTarget} onChange={(e) => updateTopic(li, ti, "storyTarget", Number(e.target.value) || 1)} className="studio-input" style={{ ...field, width: 60, textAlign: "center" }} title="Historias por tema" />
                           <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
                             <span style={{ fontSize: 12, color: "var(--muted)" }}>{topicStories.length} historia(s)</span>
                             <span
@@ -739,7 +745,7 @@ export default function JourneyVariantPlanEditor({ plan, stories, highlightedLev
 
                 {/* Level actions */}
                 <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
-                  <button onClick={() => addTopic(li)} className="studio-btn-ghost" style={{ ...btn, height: 32, fontSize: 12 }}>+ Añadir topic</button>
+                  <button onClick={() => addTopic(li)} className="studio-btn-ghost" style={{ ...btn, height: 32, fontSize: 12 }}>+ Añadir tema</button>
                   <button onClick={() => requestRemoveLevel(li)} className="studio-btn-ghost" style={{ ...btn, height: 32, fontSize: 12, color: "#ef4444", borderColor: "#ef444440" }}>
                     Quitar nivel
                   </button>
