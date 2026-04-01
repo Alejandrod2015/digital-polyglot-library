@@ -1,15 +1,9 @@
-import * as AuthSession from "expo-auth-session";
-import * as WebBrowser from "expo-web-browser";
-import { useAuth } from "@clerk/expo";
-import { useSignIn, useSignUp } from "@clerk/expo/legacy";
-import { useState } from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { useEffect, useState } from "react";
+import { Linking, Pressable, StyleSheet, Text, View } from "react-native";
 import { mobileConfig } from "../config";
+import { NativeClerkModule, type NativeAuthMode } from "./nativeClerkModule";
 import { exchangeClerkSessionForMobileToken } from "./exchangeClerkSession";
 
-WebBrowser.maybeCompleteAuthSession();
-
-const MOBILE_AUTH_REDIRECT_URI = "digitalpolyglot://auth/callback";
 
 function toErrorMessage(error: unknown): string {
   if (error instanceof Error) {
@@ -19,178 +13,235 @@ function toErrorMessage(error: unknown): string {
   return "Something went wrong. Please try again.";
 }
 
+function readQaNativeAuthMode(urlString: string | null | undefined): NativeAuthMode | null {
+  if (!__DEV__ || !urlString) {
+    return null;
+  }
+
+  try {
+    const url = new URL(urlString);
+    if (url.protocol !== "digitalpolyglot:" || url.hostname !== "qa") {
+      return null;
+    }
+
+    const action = url.pathname.replace(/^\/+/, "");
+    if (action !== "native-auth") {
+      return null;
+    }
+
+    return url.searchParams.get("mode") === "sign-up" ? "signUp" : "signIn";
+  } catch {
+    return null;
+  }
+}
+
+function readSessionId(value: Record<string, unknown> | null | undefined): string {
+  const sessionId = typeof value?.sessionId === "string" ? value.sessionId.trim() : "";
+  return sessionId;
+}
+
+function readSessionStatus(value: Record<string, unknown> | null | undefined): string {
+  return typeof value?.status === "string" ? value.status.trim().toLowerCase() : "";
+}
+
+function isRecoverableNativeSessionMismatch(error: unknown): boolean {
+  const message = toErrorMessage(error).toLowerCase();
+
+  return (
+    message.includes("unable to find a signing key in jwks") ||
+    message.includes("session lookup failed: not found") ||
+    message.includes("session lookup returned no session") ||
+    (message.includes("kid='") && message.includes("clerk")) ||
+    (message.includes("bearer verification failed") && message.includes("clerk"))
+  );
+}
+
+async function resetNativeAuthState() {
+  if (!NativeClerkModule) {
+    return;
+  }
+
+  await NativeClerkModule.signOut().catch(() => undefined);
+  await new Promise((resolve) => setTimeout(resolve, 250));
+}
+
+async function exchangeNativeSessionForMobileToken(
+  fallbackSessionId?: string
+): Promise<string> {
+  if (!NativeClerkModule) {
+    throw new Error("Native Clerk is not available in this build yet.");
+  }
+
+  console.log("[native-auth] exchange:start", {
+    hasFallbackSessionId: Boolean(fallbackSessionId?.trim()),
+    hasGetSessionToken: typeof NativeClerkModule.getSessionToken === "function",
+  });
+  const nativeSessionToken =
+    typeof NativeClerkModule.getSessionToken === "function"
+      ? ((await NativeClerkModule.getSessionToken().catch(() => null))?.trim() ?? "")
+      : "";
+  const errors: string[] = [];
+
+  if (nativeSessionToken) {
+    try {
+      console.log("[native-auth] exchange:bearer");
+      return await exchangeClerkSessionForMobileToken({ clerkSessionToken: nativeSessionToken });
+    } catch (error) {
+      console.error("[native-auth] exchange:bearer:error", error);
+      errors.push(`bearer exchange: ${toErrorMessage(error)}`);
+    }
+  }
+
+  const sessionId = fallbackSessionId?.trim() || (await waitForActiveNativeSession());
+  try {
+    console.log("[native-auth] exchange:session", { sessionId });
+    return await exchangeClerkSessionForMobileToken({ sessionId });
+  } catch (error) {
+    console.error("[native-auth] exchange:session:error", error);
+    errors.push(`session exchange: ${toErrorMessage(error)}`);
+  }
+
+  throw new Error(errors.join(" | ") || "Mobile session exchange failed.");
+}
+
+async function waitForActiveNativeSession(): Promise<string> {
+  if (!NativeClerkModule) {
+    throw new Error("Native Clerk is not available in this build yet.");
+  }
+
+  for (let attempt = 0; attempt < 10; attempt += 1) {
+    const session = await NativeClerkModule.getSession();
+    const sessionId = readSessionId(session);
+    const status = readSessionStatus(session);
+
+    if (sessionId && (!status || status === "active")) {
+      console.log("[native-auth] session:active", { attempt, sessionId, status });
+      return sessionId;
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 300));
+  }
+
+  const fallbackSessionId = readSessionId(await NativeClerkModule.getSession());
+  if (fallbackSessionId) {
+    return fallbackSessionId;
+  }
+
+  throw new Error("Native auth completed without an active session.");
+}
+
 export function AuthScreen(args: {
   onAuthenticated: (token: string) => void;
   onContinuePreview: () => void;
 }) {
   const { onAuthenticated, onContinuePreview } = args;
-  const { isLoaded: authLoaded, getToken } = useAuth();
-  const { isLoaded: signInLoaded, signIn, setActive } = useSignIn();
-  const { isLoaded: signUpLoaded, signUp, setActive: setActiveSignUp } = useSignUp();
-  const [submitting, setSubmitting] = useState<"sign-in" | "sign-up" | "verify-sign-up" | "web" | null>(null);
+  const [submitting, setSubmitting] = useState<"getStarted" | "signIn" | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [identifier, setIdentifier] = useState("");
-  const [password, setPassword] = useState("");
-  const [verificationCode, setVerificationCode] = useState("");
-  const [authMode, setAuthMode] = useState<"sign-in" | "sign-up">("sign-in");
-  const [awaitingEmailCode, setAwaitingEmailCode] = useState(false);
 
-  async function getClerkSessionTokenWithRetry() {
-    for (let attempt = 0; attempt < 5; attempt += 1) {
-      const token = await getToken();
-      if (token) {
-        return token;
-      }
-      await new Promise((resolve) => setTimeout(resolve, 250));
-    }
-    return null;
-  }
-
-  async function completeNativeSession(createdSessionId: string, activate: ((params: { session: string }) => Promise<void>) | undefined) {
-    if (!activate) {
-      throw new Error("The native auth session could not be activated.");
-    }
-
-    await activate({ session: createdSessionId });
-
-    const clerkSessionToken = await getClerkSessionTokenWithRetry();
-    if (!clerkSessionToken) {
-      throw new Error("Native auth completed but no Clerk session token was available.");
-    }
-
-    const mobileToken = await exchangeClerkSessionForMobileToken(clerkSessionToken);
-    onAuthenticated(mobileToken);
-  }
-
-  async function beginNativeSignIn() {
-    if (!authLoaded || !signInLoaded || !signIn || !setActive) {
-      setError("Native sign-in is still loading. Try again in a second.");
+  async function beginNativeAuth(mode: NativeAuthMode) {
+    if (!NativeClerkModule) {
+      setError(
+        "Native Clerk is not available in this build yet. Rebuild the app after enabling the Clerk Expo plugin."
+      );
       return;
     }
 
-    if (!identifier.trim() || !password) {
-      setError("Enter your email and password first.");
+    if (!mobileConfig.clerkPublishableKey) {
+      setError("This build is missing the Clerk publishable key.");
       return;
     }
-
-    setSubmitting("sign-in");
-    setError(null);
 
     try {
-      const attempt = await signIn.create({
-        strategy: "password",
-        identifier: identifier.trim(),
-        password,
-      });
+      const keyType = mobileConfig.clerkPublishableKey.startsWith("pk_live_") ? "LIVE" : "TEST";
+      console.log("[native-auth] begin", { mode, keyType, keyPrefix: mobileConfig.clerkPublishableKey.substring(0, 12) });
+      await NativeClerkModule.configure(mobileConfig.clerkPublishableKey, null);
+      console.log("[native-auth] configured");
 
-      if (!attempt.createdSessionId) {
-        throw new Error("Sign-in did not create a session.");
+      let didResetForMismatch = false;
+
+      for (let attempt = 0; attempt < 2; attempt += 1) {
+        console.log("[native-auth] presentAuth:start", { attempt });
+        const result = await NativeClerkModule.presentAuth({
+          mode,
+          dismissable: true,
+        });
+        console.log("[native-auth] presentAuth:result", result ?? null);
+
+        const resolvedSessionId = result?.cancelled
+          ? readSessionId(await NativeClerkModule.getSession()) || existingSessionId
+          : result?.sessionId?.trim() ||
+            readSessionId(await NativeClerkModule.getSession()) ||
+            existingSessionId;
+
+        if (!resolvedSessionId) {
+          throw new Error(
+            result?.cancelled
+              ? "Sign-in was cancelled before it finished."
+              : "Native auth completed without a session."
+          );
+        }
+
+        try {
+          const mobileToken = await exchangeNativeSessionForMobileToken(resolvedSessionId);
+          console.log("[native-auth] authenticated");
+          onAuthenticated(mobileToken);
+          return;
+        } catch (exchangeError) {
+          if (!didResetForMismatch && isRecoverableNativeSessionMismatch(exchangeError)) {
+            didResetForMismatch = true;
+            console.warn("[native-auth] mismatch detected, resetting native state", exchangeError);
+            await resetNativeAuthState();
+            await NativeClerkModule.configure(mobileConfig.clerkPublishableKey, null);
+            continue;
+          }
+
+          throw exchangeError;
+        }
       }
-
-      await completeNativeSession(attempt.createdSessionId, setActive);
     } catch (authError) {
+      console.error("[native-auth] begin:error", authError);
       setError(toErrorMessage(authError));
     } finally {
       setSubmitting(null);
     }
   }
 
-  async function beginNativeSignUp() {
-    if (!authLoaded || !signUpLoaded || !signUp) {
-      setError("Native sign-up is still loading. Try again in a second.");
+
+  useEffect(() => {
+    if (!__DEV__ || submitting !== null) {
       return;
     }
 
-    if (!identifier.trim() || !password) {
-      setError("Enter your email and password first.");
-      return;
-    }
+    let cancelled = false;
 
-    setSubmitting("sign-up");
-    setError(null);
+    async function maybeLaunchQaNativeAuth() {
+      const initialUrl = await Linking.getInitialURL();
+      if (cancelled) return;
 
-    try {
-      const attempt = await signUp.create({
-        emailAddress: identifier.trim(),
-        password,
-      });
-
-      if (attempt.createdSessionId) {
-        await completeNativeSession(attempt.createdSessionId, setActiveSignUp);
+      const mode = readQaNativeAuthMode(initialUrl);
+      if (!mode) {
         return;
       }
 
-      await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
-      setAwaitingEmailCode(true);
-    } catch (authError) {
-      setError(toErrorMessage(authError));
-    } finally {
-      setSubmitting(null);
-    }
-  }
-
-  async function verifyNativeSignUp() {
-    if (!signUpLoaded || !signUp) {
-      setError("Verification is still loading. Try again in a second.");
-      return;
+      void beginNativeAuth(mode);
     }
 
-    if (!verificationCode.trim()) {
-      setError("Enter the code we sent to your email.");
-      return;
-    }
+    void maybeLaunchQaNativeAuth();
 
-    setSubmitting("verify-sign-up");
-    setError(null);
-
-    try {
-      const attempt = await signUp.attemptEmailAddressVerification({
-        code: verificationCode.trim(),
-      });
-
-      if (!attempt.createdSessionId) {
-        throw new Error("Email verification completed but no session was created.");
+    const subscription = Linking.addEventListener("url", ({ url }) => {
+      const mode = readQaNativeAuthMode(url);
+      if (!mode) {
+        return;
       }
 
-      await completeNativeSession(attempt.createdSessionId, setActiveSignUp);
-    } catch (authError) {
-      setError(toErrorMessage(authError));
-    } finally {
-      setSubmitting(null);
-    }
-  }
+      void beginNativeAuth(mode);
+    });
 
-  async function beginWebSignIn() {
-    setSubmitting("web");
-    setError(null);
-
-    try {
-      const redirectUri = AuthSession.makeRedirectUri({
-        native: MOBILE_AUTH_REDIRECT_URI,
-        scheme: "digitalpolyglot",
-        path: "auth/callback",
-      });
-      const startUrl = new URL("/mobile-auth", mobileConfig.apiBaseUrl);
-      startUrl.searchParams.set("redirect_uri", redirectUri);
-
-      const result = await WebBrowser.openAuthSessionAsync(startUrl.toString(), redirectUri);
-      if (result.type !== "success" || !result.url) {
-        throw new Error("Sign-in was cancelled before it finished.");
-      }
-
-      const url = new URL(result.url);
-      const token = url.searchParams.get("token")?.trim() ?? "";
-      if (!token) {
-        throw new Error("The mobile sign-in completed without a session token.");
-      }
-
-      onAuthenticated(token);
-    } catch (authError) {
-      setError(toErrorMessage(authError));
-    } finally {
-      setSubmitting(null);
-    }
-  }
+    return () => {
+      cancelled = true;
+      subscription.remove();
+    };
+  }, [submitting]);
 
   return (
     <View style={styles.card}>
@@ -200,125 +251,39 @@ export function AuthScreen(args: {
           <Text style={styles.livePillText}>Reader + audio</Text>
         </View>
       </View>
-      <Text style={styles.cardTitle}>Pick up your stories on iPhone</Text>
-      <Text style={styles.cardBody}>
-        Sign in with your existing account and the app will open your saved books, stories and
-        listening progress in a mobile-friendly reader.
-      </Text>
-
-      <View style={styles.nativeSection}>
-        <View style={styles.modeRow}>
-          <Pressable
-            onPress={() => {
-              setAuthMode("sign-in");
-              setAwaitingEmailCode(false);
-              setVerificationCode("");
-              setError(null);
-            }}
-            style={[styles.modeButton, authMode === "sign-in" ? styles.modeButtonActive : null]}
-          >
-            <Text style={[styles.modeButtonText, authMode === "sign-in" ? styles.modeButtonTextActive : null]}>
-              Sign in
-            </Text>
-          </Pressable>
-          <Pressable
-            onPress={() => {
-              setAuthMode("sign-up");
-              setAwaitingEmailCode(false);
-              setVerificationCode("");
-              setError(null);
-            }}
-            style={[styles.modeButton, authMode === "sign-up" ? styles.modeButtonActive : null]}
-          >
-            <Text style={[styles.modeButtonText, authMode === "sign-up" ? styles.modeButtonTextActive : null]}>
-              Sign up
-            </Text>
-          </Pressable>
-        </View>
-
-        <Text style={styles.sectionLabel}>
-          {authMode === "sign-in" ? "Native sign-in" : "Native sign-up"}
-        </Text>
-        <TextInput
-          autoCapitalize="none"
-          autoCorrect={false}
-          keyboardType="email-address"
-          placeholder="Email"
-          placeholderTextColor="#7f95b2"
-          value={identifier}
-          onChangeText={setIdentifier}
-          style={styles.input}
-        />
-        <TextInput
-          autoCapitalize="none"
-          autoCorrect={false}
-          secureTextEntry
-          placeholder="Password"
-          placeholderTextColor="#7f95b2"
-          value={password}
-          onChangeText={setPassword}
-          style={styles.input}
-        />
-
-        {authMode === "sign-up" && awaitingEmailCode ? (
-          <>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardType="number-pad"
-              placeholder="Email verification code"
-              placeholderTextColor="#7f95b2"
-              value={verificationCode}
-              onChangeText={setVerificationCode}
-              style={styles.input}
-            />
-            <Pressable
-              disabled={submitting !== null}
-              onPress={() => void verifyNativeSignUp()}
-              style={[styles.primaryButton, submitting ? styles.primaryButtonDisabled : null]}
-            >
-              <Text style={styles.primaryButtonText}>
-                {submitting === "verify-sign-up" ? "Verifying..." : "Verify email and continue"}
-              </Text>
-            </Pressable>
-          </>
-        ) : (
-          <Pressable
-            disabled={submitting !== null}
-            onPress={() => void (authMode === "sign-in" ? beginNativeSignIn() : beginNativeSignUp())}
-            style={[styles.primaryButton, submitting ? styles.primaryButtonDisabled : null]}
-          >
-            <Text style={styles.primaryButtonText}>
-              {submitting === "sign-in"
-                ? "Signing in..."
-                : submitting === "sign-up"
-                  ? "Creating account..."
-                  : authMode === "sign-in"
-                    ? "Sign in on iPhone"
-                    : "Create account on iPhone"}
-            </Text>
-          </Pressable>
-        )}
-      </View>
+      <Text style={styles.cardTitle}>Read and listen in any language</Text>
 
       <Pressable
         disabled={submitting !== null}
-        onPress={() => void beginWebSignIn()}
+        onPress={() => {
+          setError(null);
+          setSubmitting("getStarted");
+          void beginNativeAuth("signInOrUp");
+        }}
+        style={[styles.primaryButton, submitting ? styles.primaryButtonDisabled : null]}
+      >
+        <Text style={styles.primaryButtonText}>
+          {submitting === "getStarted" ? "Opening..." : "Get started"}
+        </Text>
+      </Pressable>
+
+      <Pressable
+        disabled={submitting !== null}
+        onPress={() => {
+          setError(null);
+          setSubmitting("signIn");
+          void beginNativeAuth("signIn");
+        }}
         style={[styles.secondaryButton, submitting ? styles.primaryButtonDisabled : null]}
       >
         <Text style={styles.secondaryButtonText}>
-          {submitting === "web" ? "Opening web sign-in..." : "Use web sign-in instead"}
+          {submitting === "signIn" ? "Opening..." : "I already have an account"}
         </Text>
       </Pressable>
 
       <Pressable onPress={onContinuePreview} style={styles.tertiaryButton}>
-        <Text style={styles.secondaryButtonText}>Browse preview catalog</Text>
+        <Text style={styles.tertiaryButtonText}>Browse without an account</Text>
       </Pressable>
-
-      <Text style={styles.helperText}>
-        Native auth is now the default. The web flow stays here only as fallback while we finish
-        the transition.
-      </Text>
 
       {error ? <Text style={styles.errorText}>{error}</Text> : null}
     </View>
@@ -370,57 +335,6 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     lineHeight: 34,
   },
-  cardBody: {
-    color: "#c8d4e5",
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  nativeSection: {
-    gap: 10,
-    marginTop: 4,
-  },
-  modeRow: {
-    flexDirection: "row",
-    gap: 8,
-  },
-  modeButton: {
-    flex: 1,
-    borderRadius: 14,
-    borderWidth: 1,
-    borderColor: "#315174",
-    backgroundColor: "#203754",
-    paddingVertical: 10,
-    alignItems: "center",
-  },
-  modeButtonActive: {
-    backgroundColor: "#f8c15c",
-    borderColor: "#f8c15c",
-  },
-  modeButtonText: {
-    color: "#dbe9ff",
-    fontSize: 14,
-    fontWeight: "700",
-  },
-  modeButtonTextActive: {
-    color: "#132238",
-  },
-  sectionLabel: {
-    color: "#dbe9ff",
-    fontSize: 13,
-    fontWeight: "800",
-    letterSpacing: 0.4,
-    textTransform: "uppercase",
-  },
-  input: {
-    borderRadius: 14,
-    borderWidth: 1,
-    borderColor: "#315174",
-    backgroundColor: "#0f1c2f",
-    color: "#ffffff",
-    paddingHorizontal: 14,
-    paddingVertical: 13,
-    fontSize: 15,
-  },
   primaryButton: {
     borderRadius: 16,
     backgroundColor: "#f8c15c",
@@ -446,23 +360,24 @@ const styles = StyleSheet.create({
   },
   tertiaryButton: {
     borderRadius: 16,
-    backgroundColor: "#203754",
-    paddingVertical: 14,
+    borderWidth: 1,
+    borderColor: "#315174",
+    paddingVertical: 12,
     alignItems: "center",
   },
   secondaryButtonText: {
     color: "#dbe9ff",
     fontSize: 15,
-    fontWeight: "800",
+    fontWeight: "700",
   },
-  helperText: {
-    color: "#9fb5d0",
-    fontSize: 13,
-    lineHeight: 18,
+  tertiaryButtonText: {
+    color: "#8fa8c8",
+    fontSize: 14,
+    fontWeight: "600",
   },
   errorText: {
-    color: "#ffb4b4",
-    fontSize: 13,
-    lineHeight: 18,
+    color: "#ffb4ab",
+    fontSize: 14,
+    lineHeight: 20,
   },
 });
