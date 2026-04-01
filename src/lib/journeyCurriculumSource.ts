@@ -70,7 +70,8 @@ function normalizeVariant(doc: SanityJourneyVariantPlan): JourneyVariantPlan | n
 
 const getPublishedCurriculumCached = unstable_cache(
   async (): Promise<JourneyVariantPlan[]> => {
-    const docs = await freshClient.fetch<SanityJourneyVariantPlan[]>(
+    // Use rawServerClient (with token) so pipeline/agents can see all docs
+    const docs = await rawServerClient.fetch<SanityJourneyVariantPlan[]>(
       `*[_type == "journeyVariantPlan"] | order(language asc, variantId asc){
         _id,
         language,
@@ -170,8 +171,8 @@ export async function saveJourneyVariantPlanForStudio(plan: JourneyVariantPlan):
   await writeClient.createOrReplace({
     _id: docId,
     _type: "journeyVariantPlan",
-    language: plan.language,
-    variantId: plan.variantId,
+    language: plan.language.toLowerCase(),
+    variantId: plan.variantId.toLowerCase(),
     levels: plan.levels.map((level) => ({
       _type: "journeyLevelPlan",
       id: level.id,
