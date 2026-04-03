@@ -64,9 +64,9 @@ const config = {
     "expo-secure-store",
     "expo-web-browser",
     "expo-notifications",
-    "@clerk/expo",
-    "./plugins/patch-clerk-view-factory",
     "./plugins/without-apple-signin",
+    "./plugins/patch-clerk-view-factory",
+    "@clerk/expo",
   ],
   ios: {
     supportsTablet: true,
