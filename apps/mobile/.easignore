@@ -19,6 +19,7 @@ android
 ../../qa-artifacts
 ../../qa
 ../../.maestro
+../../.npmrc
 
 # web-only / unrelated app assets
 ../../android-twa
