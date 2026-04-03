@@ -1,315 +1,363 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import PipelineRunner from "@/components/studio/PipelineRunner";
+import { useState } from "react";
 
-interface MetricsData {
-  agentRuns: {
-    total: number;
-    byKind: { planner: number; content: number; qa: number };
-    byStatus: { completed: number; failed: number; running: number };
-    last7Days: Array<{ date: string; completed: number; failed: number }>;
-  };
-  drafts: {
-    total: number;
-    byStatus: {
-      draft: number;
-      generated: number;
-      qa_pass: number;
-      qa_fail: number;
-      needs_review: number;
-      approved: number;
-      published: number;
-    };
-    avgQaScore: number | null;
-    qaPassRate: number;
-    last7Days: Array<{ date: string; created: number; published: number }>;
-  };
-  briefs: { total: number; pending: number; completed: number };
-  pipeline: { avgTimeToPublish: number | null; contentPerDay: number };
-  qaQuality?: {
-    scoreTrend: Array<{ date: string; avgScore: number; count: number }>;
-    recentReviews: Array<{
-      id: string;
-      storyTitle: string;
-      score: number;
-      status: string;
-      createdAt: string;
-    }>;
-    passRateTrend: Array<{ date: string; passRate: number; total: number }>;
-  };
-  agentPerformance?: {
-    avgDurationByKind: Record<string, number | null>;
-    failureRate: number;
-  };
-}
+// ── MVP test config ──
 
-interface Directive {
-  languages: string[];
-  levels: string[];
-  topics: string[];
-  storiesPerSlot: number;
-  note: string;
-  active: boolean;
-  updatedBy: string;
-  updatedAt: string;
-}
+const LANGUAGES = [
+  { code: "spanish", label: "Español", variant: "latam" },
+  { code: "german", label: "Alemán", variant: "germany" },
+];
 
-const DAY_NAMES = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+const TOPICS: Record<string, Record<string, string[]>> = {
+  spanish: {
+    a1: ["community-celebrations", "food-daily-life"],
+    a2: ["work-study", "travel-plans"],
+  },
+  german: {
+    a1: ["community-celebrations", "food-daily-life"],
+    a2: ["work-study", "travel-plans"],
+  },
+};
 
-function getStatusColor(qaPassRate: number, failedRuns: number): {
-  color: string;
-  label: string;
-  status: "good" | "warning" | "critical";
-} {
-  if (failedRuns > 3 || qaPassRate < 50)
-    return { color: "#ef4444", label: "Hay problemas", status: "critical" };
-  if (failedRuns > 0 || qaPassRate < 70)
-    return { color: "#f59e0b", label: "Atención necesaria", status: "warning" };
-  return { color: "#14b8a6", label: "Todo bien", status: "good" };
-}
+const LEVELS = ["a1", "a2"];
 
-function formatDate(dateString: string): string {
-  const d = new Date(dateString);
-  return `${DAY_NAMES[d.getDay()]} ${d.getDate()}`;
-}
+const TOPIC_LABELS: Record<string, string> = {
+  "community-celebrations": "Community & Celebrations",
+  "food-daily-life": "Food & Everyday Life",
+  "work-study": "Work & Study",
+  "travel-plans": "Travel & Plans",
+};
 
-const accent = "var(--studio-accent, #14b8a6)";
-const lbl: React.CSSProperties = { margin: 0, fontSize: 10, fontWeight: 700, color: accent, textTransform: "uppercase", letterSpacing: "0.05em" };
-const card: React.CSSProperties = { padding: "10px 12px", borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)" };
-const linkBtn: React.CSSProperties = { fontSize: 11, color: "#14b8a6", textDecoration: "none", fontWeight: 600, padding: "3px 8px", borderRadius: 5, backgroundColor: "rgba(20,184,166,0.1)" };
+// ── Styles ──
+
+const card: React.CSSProperties = {
+  padding: 16, borderRadius: 10, backgroundColor: "var(--card-bg)",
+  border: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 12,
+};
+
+const pill = (active: boolean): React.CSSProperties => ({
+  padding: "4px 12px", borderRadius: 6, border: `1px solid ${active ? "#14b8a6" : "var(--card-border)"}`,
+  backgroundColor: active ? "rgba(20,184,166,0.15)" : "transparent",
+  color: active ? "#14b8a6" : "var(--muted)", fontSize: 12, fontWeight: 700,
+  cursor: "pointer", transition: "all 0.15s",
+});
+
+const btnPrimary: React.CSSProperties = {
+  height: 36, padding: "0 20px", borderRadius: 8, border: "none",
+  backgroundColor: "#14b8a6", color: "#fff", fontWeight: 700, fontSize: 13, cursor: "pointer",
+};
+
+const btnSecondary: React.CSSProperties = {
+  height: 32, padding: "0 14px", borderRadius: 6, border: "1px solid var(--card-border)",
+  backgroundColor: "transparent", color: "var(--foreground)", fontWeight: 600, fontSize: 12, cursor: "pointer",
+};
+
+const btnDanger: React.CSSProperties = {
+  ...btnSecondary, borderColor: "rgba(239,68,68,0.3)", color: "#ef4444",
+};
+
+type GeneratedStory = {
+  title: string;
+  slug: string;
+  text: string;
+  synopsis: string;
+  vocab: Array<{ word: string; translation?: string; type?: string; example?: string }>;
+  wordCount: number;
+  vocabCount: number;
+};
 
 export default function MonitorClient() {
-  const [metrics, setMetrics] = useState<MetricsData | null>(null);
-  const [directive, setDirective] = useState<Directive | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Form state
+  const [language, setLanguage] = useState(LANGUAGES[0].code);
+  const [level, setLevel] = useState(LEVELS[0]);
+  const [topic, setTopic] = useState(TOPICS[LANGUAGES[0].code][LEVELS[0]][0]);
+
+  // Generation state
+  const [generating, setGenerating] = useState(false);
+  const [story, setStory] = useState<GeneratedStory | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [activityOpen, setActivityOpen] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setError(null);
-        const [metricsRes, directiveRes] = await Promise.allSettled([
-          fetch("/api/metrics/pipeline"),
-          fetch("/api/agents/directive"),
-        ]);
-        if (metricsRes.status === "fulfilled" && metricsRes.value.ok) {
-          setMetrics(await metricsRes.value.json());
-        } else {
-          const detail =
-            metricsRes.status === "fulfilled"
-              ? `API respondió ${metricsRes.value.status}`
-              : metricsRes.reason?.message ?? "red no disponible";
-          setError(`No se pudieron cargar métricas del pipeline (${detail})`);
-        }
-        if (directiveRes.status === "fulfilled" && directiveRes.value.ok) {
-          const d = await directiveRes.value.json();
-          setDirective(d.directive);
-        }
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Error desconocido");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-    const interval = setInterval(fetchData, 30000);
-    return () => clearInterval(interval);
-  }, []);
+  // Publish state
+  const [publishing, setPublishing] = useState(false);
+  const [published, setPublished] = useState<string | null>(null);
 
-  if (loading) return <div style={{ padding: 20, textAlign: "center", color: "var(--muted)", fontSize: 13 }}>Cargando...</div>;
+  // Cover state
+  const [generatingCover, setGeneratingCover] = useState(false);
+  const [coverDone, setCoverDone] = useState(false);
 
-  if (error || !metrics) {
-    return (
-      <div style={{ padding: 12, borderRadius: 8, backgroundColor: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.3)", color: "#ef4444", fontSize: 13 }}>
-        {error || "No se pudieron cargar los datos"}
-      </div>
-    );
+  const selectedLang = LANGUAGES.find((l) => l.code === language) ?? LANGUAGES[0];
+  const availableTopics = TOPICS[language]?.[level] ?? [];
+
+  // When language or level changes, reset topic to first available
+  function changeLanguage(code: string) {
+    setLanguage(code);
+    const topics = TOPICS[code]?.[level] ?? TOPICS[code]?.[LEVELS[0]] ?? [];
+    setTopic(topics[0] ?? "");
+    resetResult();
   }
 
-  const failedRuns = metrics.agentRuns.byStatus.failed;
-  const statusInfo = getStatusColor(metrics.drafts.qaPassRate, failedRuns);
-  const createdStories = metrics.drafts.byStatus.generated + metrics.drafts.byStatus.qa_pass + metrics.drafts.byStatus.approved + metrics.drafts.byStatus.published;
-  const approvedStories = metrics.drafts.byStatus.qa_pass + metrics.drafts.byStatus.approved + metrics.drafts.byStatus.published;
-  const problemStories = metrics.drafts.byStatus.qa_fail + metrics.drafts.byStatus.needs_review;
-  const icon = statusInfo.status === "good" ? "✓" : statusInfo.status === "warning" ? "!" : "✕";
+  function changeLevel(lvl: string) {
+    setLevel(lvl);
+    const topics = TOPICS[language]?.[lvl] ?? [];
+    setTopic(topics[0] ?? "");
+    resetResult();
+  }
+
+  function resetResult() {
+    setStory(null);
+    setError(null);
+    setPublished(null);
+    setCoverDone(false);
+  }
+
+  // ── Generate ──
+  async function handleGenerate() {
+    setGenerating(true);
+    setError(null);
+    setStory(null);
+    setPublished(null);
+    setCoverDone(false);
+
+    try {
+      const res = await fetch("/api/studio/pipeline/generate-story", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ language, variant: selectedLang.variant, level, topic }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error ?? `HTTP ${res.status}`);
+      }
+      const data = await res.json();
+      setStory(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setGenerating(false);
+    }
+  }
+
+  // ── Publish ──
+  async function handlePublish() {
+    if (!story) return;
+    setPublishing(true);
+    try {
+      const res = await fetch("/api/studio/pipeline/publish-story", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: story.title,
+          slug: story.slug,
+          text: story.text,
+          synopsis: story.synopsis,
+          vocab: story.vocab,
+          language,
+          variant: selectedLang.variant,
+          level,
+          topic,
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error ?? `HTTP ${res.status}`);
+      }
+      const data = await res.json();
+      setPublished(data.sanityId);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setPublishing(false);
+    }
+  }
+
+  // ── Cover ──
+  async function handleCover() {
+    if (!published || !story) return;
+    setGeneratingCover(true);
+    try {
+      const res = await fetch("/api/sanity/generate-cover", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          documentId: published,
+          title: story.title,
+          synopsis: story.synopsis || story.text.slice(0, 500),
+          language,
+          region: selectedLang.variant,
+          topic,
+          level,
+          provider: "flux",
+        }),
+      });
+      if (!res.ok) throw new Error("Cover generation failed");
+      setCoverDone(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setGeneratingCover(false);
+    }
+  }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-
-      {/* Status banner - single compact line */}
-      <div style={{
-        padding: "8px 14px", borderRadius: 8,
-        backgroundColor: `${statusInfo.color}14`, border: `1.5px solid ${statusInfo.color}`,
-        display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10,
-      }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <span style={{ width: 22, height: 22, borderRadius: "50%", backgroundColor: statusInfo.color, display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: 13, lineHeight: 1, flexShrink: 0 }}>{icon}</span>
-          <span style={{ fontSize: 13, fontWeight: 600, color: "var(--foreground)" }}>{statusInfo.label}</span>
-          {directive && (
-            <span style={{ fontSize: 11, color: "var(--muted)" }}>
-              {directive.languages.join(", ")} / {directive.levels.join(", ")} / {directive.storiesPerSlot}/nivel
-              {!directive.active && <span style={{ color: "#f59e0b", fontWeight: 600, marginLeft: 6 }}>Inactivas</span>}
-            </span>
-          )}
-        </div>
-        <span style={{ fontSize: 18, fontWeight: 700, color: statusInfo.color, flexShrink: 0 }}>
-          {Math.round(metrics.drafts.qaPassRate)}%
-        </span>
-      </div>
-
-      {/* KPI row - single compact row */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
-        {([
-          { label: "Creadas", value: createdStories, sub: "generadas", problem: false },
-          { label: "Aprobadas", value: approvedStories, sub: "QA pass", problem: false },
-          { label: "Publicadas", value: metrics.drafts.byStatus.published, sub: "en vivo", problem: false },
-          { label: "Problemas", value: problemStories, sub: problemStories > 0 ? "revisar" : "ok", problem: problemStories > 0 },
-        ] as const).map((kpi) => (
-          <div key={kpi.label} style={{
-            ...card,
-            ...(kpi.problem ? { backgroundColor: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.3)" } : {}),
-          }}>
-            <p style={{ ...lbl, color: kpi.problem ? "#ef4444" : accent }}>{kpi.label}</p>
-            <p style={{ margin: "2px 0 0", fontSize: 20, fontWeight: 700, color: kpi.problem ? "#ef4444" : "var(--foreground)", lineHeight: 1.1 }}>{kpi.value}</p>
-            <p style={{ margin: 0, fontSize: 10, color: kpi.problem ? "#ef4444" : "var(--muted)" }}>{kpi.sub}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Pipeline runner */}
-      <PipelineRunner />
-
-      {/* Activity - collapsible */}
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {/* ── Generator form ── */}
       <div style={card}>
-        <button
-          onClick={() => setActivityOpen(!activityOpen)}
-          style={{
-            all: "unset", cursor: "pointer", width: "100%",
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-          }}
-        >
-          <span style={{ ...lbl }}>Actividad - Últimos 7 días</span>
-          <span style={{ fontSize: 11, color: "var(--muted)", transform: activityOpen ? "rotate(180deg)" : "none", transition: "transform 0.15s" }}>▼</span>
-        </button>
-        {activityOpen && (
-          <div style={{ display: "flex", flexDirection: "column", gap: 4, marginTop: 8 }}>
-            {metrics.drafts.last7Days.length > 0 ? metrics.drafts.last7Days.map((day, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "5px 8px", borderRadius: 5, backgroundColor: "rgba(255,255,255,0.03)", border: "1px solid var(--card-border)" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <span style={{ fontSize: 11, fontWeight: 600, color: "var(--foreground)", minWidth: 42 }}>{formatDate(day.date)}</span>
-                  <span style={{ fontSize: 11, color: "var(--muted)" }}>{day.created} cre</span>
-                  <span style={{ fontSize: 11, color: "#14b8a6", fontWeight: 500 }}>{day.published} pub</span>
-                </div>
-                <div style={{ width: 40, height: 20, backgroundColor: "rgba(20,184,166,0.1)", borderRadius: 4, display: "flex", alignItems: "flex-end", justifyContent: "space-around", padding: 2 }}>
-                  <div style={{ width: 6, height: `${Math.min(100, Math.max(10, day.created * 15))}%`, backgroundColor: "rgba(20,184,166,0.35)", borderRadius: 1 }} />
-                  <div style={{ width: 6, height: `${Math.min(100, Math.max(10, day.published * 15))}%`, backgroundColor: "#14b8a6", borderRadius: 1 }} />
-                </div>
-              </div>
-            )) : <p style={{ margin: 0, fontSize: 11, color: "var(--muted)" }}>Sin datos</p>}
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#14b8a6" }}>
+            Generar historia
+          </p>
+          <span style={{ fontSize: 11, color: "var(--muted)" }}>
+            Crea una historia para el journey
+          </span>
+        </div>
+
+        <div style={{ display: "flex", gap: 16, alignItems: "end", flexWrap: "wrap" }}>
+          {/* Language */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <span style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Idioma</span>
+            <div style={{ display: "flex", gap: 4 }}>
+              {LANGUAGES.map((l) => (
+                <button key={l.code} onClick={() => changeLanguage(l.code)} style={pill(language === l.code)}>
+                  {l.label}
+                </button>
+              ))}
+            </div>
           </div>
-        )}
+
+          {/* Level */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <span style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Nivel</span>
+            <div style={{ display: "flex", gap: 4 }}>
+              {LEVELS.map((l) => (
+                <button key={l} onClick={() => changeLevel(l)} style={pill(level === l)}>
+                  {l.toUpperCase()}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Topic */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <span style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Tema</span>
+            <div style={{ display: "flex", gap: 4 }}>
+              {availableTopics.map((t) => (
+                <button key={t} onClick={() => { setTopic(t); resetResult(); }} style={pill(topic === t)}>
+                  {TOPIC_LABELS[t] ?? t}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Generate button */}
+          <button
+            onClick={() => void handleGenerate()}
+            disabled={generating || !topic}
+            style={{
+              ...btnPrimary,
+              opacity: generating || !topic ? 0.6 : 1,
+              cursor: generating ? "progress" : "pointer",
+              marginLeft: "auto",
+            }}
+          >
+            {generating ? "Generando..." : "Generar historia"}
+          </button>
+        </div>
       </div>
 
-      {/* QA Trend + Agent Performance - compact side by side */}
-      {(metrics.qaQuality?.scoreTrend?.length || metrics.agentPerformance) && (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 8 }}>
-          {metrics.qaQuality && metrics.qaQuality.scoreTrend.length > 0 && (
-            <div style={card}>
-              <p style={lbl}>Tendencia QA</p>
-              <div style={{ display: "flex", alignItems: "flex-end", gap: 4, height: 50, marginTop: 6 }}>
-                {metrics.qaQuality.scoreTrend.map((day, i) => {
-                  const h = Math.max(6, (day.avgScore / 100) * 50);
-                  const c = day.avgScore >= 85 ? "#14b8a6" : day.avgScore >= 70 ? "#f59e0b" : "#ef4444";
-                  return (
-                    <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
-                      <span style={{ fontSize: 8, color: "var(--muted)", marginBottom: 2 }}>{Math.round(day.avgScore)}</span>
-                      <div style={{ width: "100%", maxWidth: 20, height: h, backgroundColor: c, borderRadius: 3, opacity: 0.8 }} title={`${formatDate(day.date)}: ${day.avgScore.toFixed(1)} (${day.count})`} />
-                      <span style={{ fontSize: 7, color: "var(--muted)", marginTop: 2 }}>{formatDate(day.date)}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {metrics.agentPerformance && (
-            <div style={card}>
-              <p style={lbl}>Agentes</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 4, marginTop: 6 }}>
-                {(["planner", "content", "qa"] as const).map((kind) => {
-                  const ms = metrics.agentPerformance!.avgDurationByKind[kind];
-                  const l = kind === "planner" ? "Plan" : kind === "content" ? "Content" : "QA";
-                  return (
-                    <div key={kind} style={{ display: "flex", justifyContent: "space-between", fontSize: 11 }}>
-                      <span style={{ color: "var(--foreground)" }}>{l}</span>
-                      <span style={{ fontWeight: 600, color: ms ? "var(--foreground)" : "var(--muted)" }}>{ms ? `${(ms / 1000).toFixed(1)}s` : "—"}</span>
-                    </div>
-                  );
-                })}
-                <div style={{ borderTop: "1px solid var(--card-border)", paddingTop: 4, marginTop: 2, display: "flex", justifyContent: "space-between", fontSize: 11 }}>
-                  <span style={{ color: "var(--foreground)" }}>Fallos</span>
-                  <span style={{ fontWeight: 600, color: metrics.agentPerformance.failureRate > 20 ? "#ef4444" : metrics.agentPerformance.failureRate > 5 ? "#f59e0b" : "#14b8a6" }}>
-                    {metrics.agentPerformance.failureRate}%
-                  </span>
-                </div>
-              </div>
-            </div>
-          )}
+      {/* ── Error ── */}
+      {error && (
+        <div style={{ ...card, borderColor: "rgba(239,68,68,0.3)", backgroundColor: "rgba(239,68,68,0.05)" }}>
+          <p style={{ margin: 0, fontSize: 12, color: "#ef4444" }}>{error}</p>
         </div>
       )}
 
-      {/* Recent QA Reviews - compact */}
-      {metrics.qaQuality && metrics.qaQuality.recentReviews.length > 0 && (
+      {/* ── Result ── */}
+      {story && (
         <div style={card}>
-          <p style={lbl}>Últimas revisiones QA</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 3, marginTop: 6 }}>
-            {metrics.qaQuality.recentReviews.map((r) => {
-              const sc = r.score >= 85 ? "#14b8a6" : r.score >= 70 ? "#f59e0b" : "#ef4444";
-              const sl = r.status === "pass" || r.status === "passed" ? "OK" : r.status === "needs_review" ? "Rev" : "Fail";
-              return (
-                <div key={r.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 6px", borderRadius: 5, backgroundColor: "rgba(255,255,255,0.03)", border: "1px solid var(--card-border)" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 6, flex: 1, minWidth: 0 }}>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: sc, minWidth: 26, textAlign: "center" }}>{r.score}</span>
-                    <span style={{ fontSize: 11, color: "var(--foreground)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.storyTitle}</span>
-                  </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 4, flexShrink: 0 }}>
-                    <span style={{ fontSize: 9, padding: "1px 5px", borderRadius: 3, fontWeight: 600, backgroundColor: `${sc}20`, color: sc }}>{sl}</span>
-                    <span style={{ fontSize: 9, color: "var(--muted)" }}>{new Date(r.createdAt).toLocaleDateString("es", { day: "numeric", month: "short" })}</span>
-                  </div>
-                </div>
-              );
-            })}
+          {/* Header */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div>
+              <h3 style={{ margin: 0, fontSize: 16, color: "var(--foreground)" }}>{story.title}</h3>
+              <p style={{ margin: "2px 0 0", fontSize: 11, color: "var(--muted)" }}>
+                {story.wordCount} palabras · {story.vocabCount} vocab · {language} · {level.toUpperCase()} · {TOPIC_LABELS[topic] ?? topic}
+              </p>
+            </div>
+
+            {/* Actions */}
+            <div style={{ display: "flex", gap: 8 }}>
+              {!published ? (
+                <>
+                  <button onClick={() => void handlePublish()} disabled={publishing} style={{ ...btnPrimary, opacity: publishing ? 0.6 : 1 }}>
+                    {publishing ? "Publicando..." : "Publicar en Sanity"}
+                  </button>
+                  <button onClick={resetResult} style={btnDanger}>Descartar</button>
+                </>
+              ) : (
+                <>
+                  <span style={{ display: "flex", alignItems: "center", fontSize: 12, color: "#22c55e", fontWeight: 600, gap: 4 }}>
+                    Publicada
+                  </span>
+                  {!coverDone ? (
+                    <button onClick={() => void handleCover()} disabled={generatingCover} style={{ ...btnSecondary, opacity: generatingCover ? 0.6 : 1 }}>
+                      {generatingCover ? "Generando cover..." : "Generar cover"}
+                    </button>
+                  ) : (
+                    <span style={{ fontSize: 12, color: "#22c55e", fontWeight: 600 }}>Cover listo</span>
+                  )}
+                </>
+              )}
+            </div>
           </div>
+
+          {/* Synopsis */}
+          {story.synopsis && (
+            <p style={{ margin: 0, fontSize: 12, color: "var(--muted)", fontStyle: "italic", borderLeft: "2px solid var(--card-border)", paddingLeft: 10 }}>
+              {story.synopsis}
+            </p>
+          )}
+
+          {/* Text preview */}
+          <div style={{
+            fontSize: 13, color: "var(--foreground)", lineHeight: 1.6,
+            maxHeight: 200, overflow: "auto",
+            padding: 12, borderRadius: 6, backgroundColor: "rgba(255,255,255,0.02)",
+            border: "1px solid var(--card-border)",
+            whiteSpace: "pre-wrap",
+          }}>
+            {story.text}
+          </div>
+
+          {/* Vocab */}
+          {story.vocab && story.vocab.length > 0 && (
+            <div>
+              <p style={{ margin: "0 0 6px", fontSize: 11, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>
+                Vocabulario ({story.vocab.length})
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                {story.vocab.map((v, i) => (
+                  <span key={i} style={{
+                    padding: "3px 8px", borderRadius: 4, fontSize: 11,
+                    backgroundColor: "rgba(20,184,166,0.08)", border: "1px solid rgba(20,184,166,0.2)",
+                    color: "var(--foreground)",
+                  }}>
+                    <strong>{v.word}</strong>
+                    {v.translation && <span style={{ color: "var(--muted)" }}> — {v.translation}</span>}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
 
-      {/* Attention needed - compact */}
-      {(problemStories > 0 || failedRuns > 0 || (metrics.briefs.pending > 10)) && (
-        <div style={{ padding: "8px 12px", borderRadius: 8, backgroundColor: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.3)" }}>
-          <p style={{ ...lbl, color: "#f59e0b", marginBottom: 6 }}>Necesita atención</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            {problemStories > 0 && (
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: 12, color: "var(--foreground)" }}>{problemStories} {problemStories === 1 ? "historia" : "historias"} sin pasar QA</span>
-                <Link href="/studio/drafts?status=qa_fail,needs_review" style={linkBtn}>Ver</Link>
-              </div>
-            )}
-            {failedRuns > 0 && (
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: 12, color: "var(--foreground)" }}>{failedRuns} {failedRuns === 1 ? "proceso falló" : "procesos fallaron"}</span>
-                <Link href="/studio/metrics" style={linkBtn}>Detalles</Link>
-              </div>
-            )}
-            {metrics.briefs.pending > 10 && (
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: 12, color: "var(--foreground)" }}>{metrics.briefs.pending} pendientes de crear</span>
-                <Link href="/studio/planner" style={linkBtn}>Crear</Link>
-              </div>
-            )}
-          </div>
+      {/* ── Empty state ── */}
+      {!story && !generating && !error && (
+        <div style={{ ...card, alignItems: "center", padding: 32 }}>
+          <p style={{ margin: 0, fontSize: 13, color: "var(--muted)", textAlign: "center" }}>
+            Elige idioma, nivel y tema, luego haz click en "Generar historia".<br />
+            Podrás revisar el resultado antes de publicar.
+          </p>
         </div>
       )}
     </div>

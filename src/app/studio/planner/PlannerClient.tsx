@@ -471,15 +471,11 @@ export default function PlannerClient() {
         <div style={card}>
           <div style={{ display: "flex", gap: 8, alignItems: "end", flexWrap: "wrap" }}>
             <label style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              <span style={tinyLabel}>Slug *</span>
-              <input type="text" value={topicSlug} onChange={(e) => setTopicSlug(e.target.value)} placeholder="coffee" style={{ ...inp, width: 120 }} />
+              <span style={tinyLabel}>Nombre del tema *</span>
+              <input type="text" value={topicLabel} onChange={(e) => { setTopicLabel(e.target.value); setTopicSlug(e.target.value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")); }} placeholder="Ej: Coffee Culture" style={{ ...inp, width: 180 }} />
             </label>
             <label style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              <span style={tinyLabel}>Label *</span>
-              <input type="text" value={topicLabel} onChange={(e) => setTopicLabel(e.target.value)} placeholder="Coffee Culture" style={{ ...inp, width: 140 }} />
-            </label>
-            <label style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              <span style={tinyLabel}>Stories/nivel</span>
+              <span style={tinyLabel}>Historias/tema</span>
               <input type="number" min={1} value={storiesPerLevel} onChange={(e) => setStoriesPerLevel(Math.max(1, parseInt(e.target.value) || 1))} style={{ ...inp, width: 50 }} />
             </label>
 
@@ -572,22 +568,24 @@ export default function PlannerClient() {
           <span style={sectionHead}>Historias pendientes</span>
           <span style={{ ...mutedTxt, fontSize: 10 }}>{filteredBriefs.length} total</span>
 
-          <div style={{ display: "flex", gap: 4, marginLeft: "auto", alignItems: "center" }}>
-            <span style={{ ...tinyLabel, fontSize: 9 }}>Filtrar:</span>
-            {/* language pills */}
-            <button onClick={() => setBriefLanguageFilter("all")} style={pill(briefLanguageFilter === "all")}>All</button>
+          <div style={{ display: "flex", gap: 3, marginLeft: "auto", alignItems: "center", flexWrap: "wrap" }}>
+            {/* idioma */}
+            <span style={{ fontSize: 9, color: "var(--muted)", marginRight: 1 }}>Idioma:</span>
+            <button onClick={() => setBriefLanguageFilter("all")} style={pill(briefLanguageFilter === "all")}>Todos</button>
             {uniqueLanguages.map((l) => (
               <button key={l} onClick={() => setBriefLanguageFilter(l)} style={pill(briefLanguageFilter === l)}>{l.toUpperCase()}</button>
             ))}
-            <span style={{ width: 1, height: 14, backgroundColor: "var(--card-border)", margin: "0 2px" }} />
-            {/* status pills */}
-            <button onClick={() => setBriefStatusFilter("all")} style={pill(briefStatusFilter === "all")}>All</button>
+            <span style={{ width: 1, height: 12, backgroundColor: "var(--card-border)", margin: "0 3px" }} />
+            {/* estado */}
+            <span style={{ fontSize: 9, color: "var(--muted)", marginRight: 1 }}>Estado:</span>
+            <button onClick={() => setBriefStatusFilter("all")} style={pill(briefStatusFilter === "all")}>Todos</button>
             {uniqueStatuses.map((s) => (
               <button key={s} onClick={() => setBriefStatusFilter(s)} style={pill(briefStatusFilter === s)}>{s}</button>
             ))}
-            <span style={{ width: 1, height: 14, backgroundColor: "var(--card-border)", margin: "0 2px" }} />
-            {/* level pills */}
-            <button onClick={() => setBriefLevelFilter("all")} style={pill(briefLevelFilter === "all")}>All</button>
+            <span style={{ width: 1, height: 12, backgroundColor: "var(--card-border)", margin: "0 3px" }} />
+            {/* nivel */}
+            <span style={{ fontSize: 9, color: "var(--muted)", marginRight: 1 }}>Nivel:</span>
+            <button onClick={() => setBriefLevelFilter("all")} style={pill(briefLevelFilter === "all")}>Todos</button>
             {uniqueLevels.map((l) => (
               <button key={l} onClick={() => setBriefLevelFilter(l)} style={pill(briefLevelFilter === l)}>{l.toUpperCase()}</button>
             ))}
@@ -665,11 +663,11 @@ export default function PlannerClient() {
                 <input type="text" value={plannerConfigDraft.defaultGapLanguage} onChange={(e) => updatePlannerConfig("defaultGapLanguage", e.target.value.trim().toLowerCase())} disabled={!plannerConfigCanEdit} style={inp} />
               </label>
               <label style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                <span style={tinyLabel}>Stories/nivel</span>
+                <span style={tinyLabel}>Historias/tema</span>
                 <input type="number" min={1} value={plannerConfigDraft.defaultStoriesPerLevel} onChange={(e) => updatePlannerConfig("defaultStoriesPerLevel", Math.max(1, parseInt(e.target.value, 10) || 1))} disabled={!plannerConfigCanEdit} style={inp} />
               </label>
               <label style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                <span style={tinyLabel}>Slots/topic</span>
+                <span style={tinyLabel}>Historias/slot</span>
                 <input type="number" min={1} value={plannerConfigDraft.expectedSlotsPerTopic} onChange={(e) => updatePlannerConfig("expectedSlotsPerTopic", Math.max(1, parseInt(e.target.value, 10) || 1))} disabled={!plannerConfigCanEdit} style={inp} />
               </label>
               <label style={{ display: "flex", flexDirection: "column", gap: 2 }}>
