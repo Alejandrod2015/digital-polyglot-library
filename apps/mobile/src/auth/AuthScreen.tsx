@@ -1,42 +1,16 @@
-import { useEffect, useState } from "react";
-import { Linking, Pressable, StyleSheet, Text, View } from "react-native";
-import { useAuth } from "@clerk/expo";
+import * as AuthSession from "expo-auth-session";
+import * as WebBrowser from "expo-web-browser";
+import { useState } from "react";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { mobileConfig } from "../config";
-import { NativeClerkModule, type NativeAuthMode } from "./nativeClerkModule";
-import { exchangeClerkSessionForMobileToken } from "./exchangeClerkSession";
+
+WebBrowser.maybeCompleteAuthSession();
+
+const MOBILE_AUTH_REDIRECT_URI = "digitalpolyglot://auth/callback";
 
 function toErrorMessage(error: unknown): string {
   if (error instanceof Error) return error.message;
   return "Something went wrong. Please try again.";
-}
-
-function readQaNativeAuthMode(urlString: string | null | undefined): NativeAuthMode | null {
-  if (!__DEV__ || !urlString) return null;
-
-  try {
-    const url = new URL(urlString);
-    if (url.protocol !== "digitalpolyglot:" || url.hostname !== "qa") return null;
-    const action = url.pathname.replace(/^\/+/, "");
-    if (action !== "native-auth") return null;
-    return url.searchParams.get("mode") === "sign-up" ? "signUp" : "signIn";
-  } catch {
-    return null;
-  }
-}
-
-function readSessionId(value: Record<string, unknown> | null | undefined): string {
-  return typeof value?.sessionId === "string" ? value.sessionId.trim() : "";
-}
-
-function isRecoverableNativeSessionMismatch(error: unknown): boolean {
-  const message = toErrorMessage(error).toLowerCase();
-  return (
-    message.includes("unable to find a signing key in jwks") ||
-    message.includes("session lookup failed: not found") ||
-    message.includes("session lookup returned no session") ||
-    (message.includes("kid='") && message.includes("clerk")) ||
-    (message.includes("bearer verification failed") && message.includes("clerk"))
-  );
 }
 
 export function AuthScreen(args: {
@@ -44,116 +18,43 @@ export function AuthScreen(args: {
   onContinuePreview: () => void;
 }) {
   const { onAuthenticated, onContinuePreview } = args;
-  const { getToken } = useAuth();
   const [submitting, setSubmitting] = useState<"getStarted" | "signIn" | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  async function getClerkSessionTokenWithRetry(): Promise<string | null> {
-    for (let attempt = 0; attempt < 8; attempt++) {
-      const token = await getToken();
-      if (token) return token;
-      await new Promise((r) => setTimeout(r, 300));
-    }
-    return null;
-  }
-
-  async function exchangeAfterNativeAuth(): Promise<string> {
-    const clerkSessionToken = await getClerkSessionTokenWithRetry();
-    if (!clerkSessionToken) {
-      throw new Error("Sign-in completed but no session token was available. Please try again.");
-    }
-    return await exchangeClerkSessionForMobileToken({ clerkSessionToken });
-  }
-
-  async function beginNativeAuth(mode: NativeAuthMode) {
-    if (!NativeClerkModule) {
-      setError("Native Clerk is not available in this build.");
-      return;
-    }
-
-    if (!mobileConfig.clerkPublishableKey) {
-      setError("This build is missing the Clerk publishable key.");
-      return;
-    }
+  async function beginWebAuth(mode: "signIn" | "signUp") {
+    setError(null);
+    setSubmitting(mode === "signIn" ? "signIn" : "getStarted");
 
     try {
-      const keyType = mobileConfig.clerkPublishableKey.startsWith("pk_live_") ? "LIVE" : "TEST";
-      console.log("[native-auth] begin", {
-        mode,
-        keyType,
-        keyPrefix: mobileConfig.clerkPublishableKey.substring(0, 12),
+      const redirectUri = AuthSession.makeRedirectUri({
+        native: MOBILE_AUTH_REDIRECT_URI,
+        scheme: "digitalpolyglot",
+        path: "auth/callback",
       });
 
-      await NativeClerkModule.configure(mobileConfig.clerkPublishableKey, null);
+      const startUrl = new URL("/mobile-auth", mobileConfig.apiBaseUrl);
+      startUrl.searchParams.set("redirect_uri", redirectUri);
+      startUrl.searchParams.set("mode", mode);
 
-      // Clear any stale existing Clerk session from keychain to avoid
-      // the native UI showing "you're already signed in" unexpectedly.
-      const existingSession = await NativeClerkModule.getSession().catch(() => null);
-      if (readSessionId(existingSession)) {
-        console.log("[native-auth] clearing stale existing session before auth");
-        await NativeClerkModule.signOut().catch(() => {});
-        await new Promise((r) => setTimeout(r, 300));
+      const result = await WebBrowser.openAuthSessionAsync(startUrl.toString(), redirectUri);
+
+      if (result.type !== "success" || !result.url) {
+        return;
       }
 
-      let didResetForMismatch = false;
-
-      for (let attempt = 0; attempt < 2; attempt++) {
-        console.log("[native-auth] presentAuth:start", { attempt });
-        const result = await NativeClerkModule.presentAuth({ mode, dismissable: true });
-        console.log("[native-auth] presentAuth:result", result ?? null);
-
-        if (result?.cancelled) {
-          return;
-        }
-
-        try {
-          const mobileToken = await exchangeAfterNativeAuth();
-          console.log("[native-auth] authenticated");
-          onAuthenticated(mobileToken);
-          return;
-        } catch (exchangeError) {
-          if (!didResetForMismatch && isRecoverableNativeSessionMismatch(exchangeError)) {
-            didResetForMismatch = true;
-            console.warn("[native-auth] mismatch detected, resetting native state", exchangeError);
-            await NativeClerkModule.signOut().catch(() => {});
-            await new Promise((r) => setTimeout(r, 250));
-            await NativeClerkModule.configure(mobileConfig.clerkPublishableKey, null);
-            continue;
-          }
-          throw exchangeError;
-        }
+      const url = new URL(result.url);
+      const token = url.searchParams.get("token")?.trim() ?? "";
+      if (!token) {
+        throw new Error("Sign-in completed without a session token. Please try again.");
       }
+
+      onAuthenticated(token);
     } catch (authError) {
-      console.error("[native-auth] begin:error", authError);
       setError(toErrorMessage(authError));
     } finally {
       setSubmitting(null);
     }
   }
-
-  useEffect(() => {
-    if (!__DEV__ || submitting !== null) return;
-    let cancelled = false;
-
-    async function maybeLaunchQaNativeAuth() {
-      const initialUrl = await Linking.getInitialURL();
-      if (cancelled) return;
-      const mode = readQaNativeAuthMode(initialUrl);
-      if (mode) void beginNativeAuth(mode);
-    }
-
-    void maybeLaunchQaNativeAuth();
-
-    const subscription = Linking.addEventListener("url", ({ url }) => {
-      const mode = readQaNativeAuthMode(url);
-      if (mode) void beginNativeAuth(mode);
-    });
-
-    return () => {
-      cancelled = true;
-      subscription.remove();
-    };
-  }, [submitting]);
 
   return (
     <View style={styles.card}>
@@ -170,11 +71,7 @@ export function AuthScreen(args: {
       <View style={styles.actions}>
         <Pressable
           disabled={submitting !== null}
-          onPress={() => {
-            setError(null);
-            setSubmitting("getStarted");
-            void beginNativeAuth("signInOrUp");
-          }}
+          onPress={() => void beginWebAuth("signUp")}
           style={[styles.primaryButton, submitting !== null && styles.buttonDisabled]}
         >
           <Text style={styles.primaryButtonText}>
@@ -184,11 +81,7 @@ export function AuthScreen(args: {
 
         <Pressable
           disabled={submitting !== null}
-          onPress={() => {
-            setError(null);
-            setSubmitting("signIn");
-            void beginNativeAuth("signIn");
-          }}
+          onPress={() => void beginWebAuth("signIn")}
           style={[styles.secondaryButton, submitting !== null && styles.buttonDisabled]}
         >
           <Text style={styles.secondaryButtonText}>
