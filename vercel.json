@@ -1,1 +1,3 @@
-{}
+{
+  "installCommand": "npm ci --no-workspaces"
+}
