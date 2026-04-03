@@ -71,7 +71,7 @@ const config: ExpoConfig = {
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.digitalpolyglot.mobile",
-    buildNumber: "21",
+    buildNumber: "23",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },

@@ -44,7 +44,6 @@ import {
 import {
   JourneyMilestoneCard,
   JourneyOverviewCard,
-  JourneyPlacementPicker,
 } from "./MobileJourneyCards";
 import { MobileBookDetail } from "./MobileBookDetail";
 import { MobileSettingsScreen } from "./MobileSettingsScreen";
@@ -72,6 +71,7 @@ import {
   loadOfflineSnapshot,
   removeStoryOffline,
   saveStoryOffline,
+  saveStandaloneStoryOffline,
   type OfflineLibrarySnapshot,
 } from "../lib/offlineStore";
 import type { PushRegistrationState } from "../notifications/registerPush";
@@ -132,8 +132,8 @@ import {
   type JourneyFocus,
   type OnboardingGoal,
 } from "../../../../src/lib/onboarding";
-import { buildJourneyTrackInsights } from "../../../../src/app/journey/journeyData";
-import { JOURNEY_MILESTONE_CHIME_URI } from "../../../../src/lib/journeyMilestone";
+import { buildJourneyTrackInsights } from "./journeyTrackInsights";
+import { JOURNEY_MILESTONE_CHIME_URI, PRACTICE_CORRECT_SOUND_URI, PRACTICE_WRONG_SOUND_URI } from "../../../../src/lib/journeyMilestone";
 
 type ReaderSelection = {
   book: Book;
@@ -1500,6 +1500,7 @@ export function MobileLibraryShell(args: {
   });
   const [preferencesStatus, setPreferencesStatus] = useState<SaveStatus>("idle");
   const [preferencesLoading, setPreferencesLoading] = useState(false);
+  const [didHydratePreferences, setDidHydratePreferences] = useState(false);
   const [preferencesHint, setPreferencesHint] = useState<string | null>(null);
   const [reminderHint, setReminderHint] = useState<string | null>(null);
   const [customInterestInput, setCustomInterestInput] = useState("");
@@ -1523,6 +1524,7 @@ export function MobileLibraryShell(args: {
   const [journeyDetailTopicId, setJourneyDetailTopicId] = useState<string | null>(null);
   const [journeyMilestone, setJourneyMilestone] = useState<JourneyMilestone | null>(null);
   const effectivePlan = getPlan(remoteEntitlement?.plan ?? sessionPlan);
+  const canDownloadOffline = effectivePlan === "premium" || effectivePlan === "polyglot";
   const [createPickerSection, setCreatePickerSection] = useState<CreateSection | null>(null);
   const [settingsPickerSection, setSettingsPickerSection] = useState<SettingsSection | null>(null);
   const [createStatus, setCreateStatus] = useState<CreateStatus>("idle");
@@ -1539,6 +1541,9 @@ export function MobileLibraryShell(args: {
   const practiceCompletionTrackedRef = useRef(false);
   const practiceClipSoundRef = useRef<Audio.Sound | null>(null);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
+  const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
+  const storyCompletionShownRef = useRef(new Set<string>());
+  const [storyCompletionPopup, setStoryCompletionPopup] = useState(false);
   const hasSeededExplorePreferencesRef = useRef(false);
   const practiceSpeechAvailable = getOptionalSpeechModule() !== null;
 
@@ -1797,6 +1802,12 @@ export function MobileLibraryShell(args: {
   }, [selectedBook?.id]);
 
   useEffect(() => {
+    if (!sessionToken) {
+      setDidHydratePreferences(false);
+    }
+  }, [sessionToken]);
+
+  useEffect(() => {
     if (!sessionToken) return;
 
     let cancelled = false;
@@ -1832,6 +1843,7 @@ export function MobileLibraryShell(args: {
         };
         setPreferences(normalized);
         setSavedPreferences(normalized);
+        setDidHydratePreferences(true);
         setPreferencesStatus("idle");
         setPreferencesHint(null);
         const reminderState = await syncDailyReminderSchedule({
@@ -2622,9 +2634,14 @@ export function MobileLibraryShell(args: {
     VARIANT_OPTIONS_BY_LANGUAGE[settingsPrimaryLanguage.trim().toLowerCase()] ?? [];
   const createAvailableRegions = getRegionOptionsForLanguage(settingsPrimaryLanguage);
   const settingsAvailableRegions = getRegionOptionsForLanguage(settingsPrimaryLanguage);
-  const shouldShowOnboardingSurvey = isSignedIn && !preferencesLoading && !preferences.onboardingSurveyCompletedAt;
+  const shouldShowOnboardingSurvey =
+    isSignedIn &&
+    didHydratePreferences &&
+    !preferencesLoading &&
+    !preferences.onboardingSurveyCompletedAt;
   const shouldShowOnboardingTour =
     isSignedIn &&
+    didHydratePreferences &&
     !preferencesLoading &&
     Boolean(preferences.onboardingSurveyCompletedAt) &&
     !preferences.onboardingTourCompletedAt &&
@@ -2754,6 +2771,16 @@ export function MobileLibraryShell(args: {
         ...current.filter((entry) => entry.storyId !== story.id),
       ].slice(0, 8)
     );
+
+    // Show "what's next" popup for standalone/journey stories when nearing completion
+    if (
+      book.id === "standalone-book" &&
+      (details?.progressRatio ?? 0) >= 0.92 &&
+      !storyCompletionShownRef.current.has(story.id)
+    ) {
+      storyCompletionShownRef.current.add(story.id);
+      setStoryCompletionPopup(true);
+    }
   }
 
   async function savePreferences() {
@@ -2960,6 +2987,10 @@ export function MobileLibraryShell(args: {
   }
 
   async function downloadStoryOffline(book: Book, story: Story) {
+    if (!canDownloadOffline) {
+      void openWebPath("/plans");
+      return;
+    }
     setOfflineStoryIdInFlight(story.id);
     try {
       const nextSnapshot = await saveStoryOffline(PREVIEW_OFFLINE_USER_ID, book, story);
@@ -2969,7 +3000,32 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  async function removeStoryFromOffline(story: Story) {
+  async function downloadJourneyStoryOffline(story: MobileJourneyTopicSummary["stories"][number]) {
+    if (!canDownloadOffline) {
+      void openWebPath("/plans");
+      return;
+    }
+    if (!story.storySlug) return;
+    setOfflineStoryIdInFlight(story.id);
+    try {
+      const payload = await apiFetch<{ stories?: MobileStandaloneStory[] }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: `/api/standalone-stories?slugs=${encodeURIComponent(story.storySlug)}`,
+        token: sessionToken,
+        timeoutMs: 15000,
+      });
+      const standalone = payload.stories?.[0];
+      if (!standalone) return;
+      const nextSnapshot = await saveStandaloneStoryOffline(PREVIEW_OFFLINE_USER_ID, standalone);
+      setOfflineSnapshot(nextSnapshot);
+    } catch (error) {
+      console.error("[mobile journey] failed to download journey story offline", error);
+    } finally {
+      setOfflineStoryIdInFlight(null);
+    }
+  }
+
+  async function removeStoryFromOffline(story: Story | { id: string }) {
     setOfflineStoryIdInFlight(story.id);
     try {
       const nextSnapshot = await removeStoryOffline(PREVIEW_OFFLINE_USER_ID, story.id);
@@ -3069,10 +3125,42 @@ export function MobileLibraryShell(args: {
     setActiveScreen("explore");
   }
 
-  function openJourneyStory(story: MobileJourneyTopicSummary["stories"][number]) {
-    const resolved = resolveStorySelection(story.id);
-    if (resolved) {
-      openSelection(resolved);
+  async function openJourneyStory(story: MobileJourneyTopicSummary["stories"][number]) {
+    if (!story.storySlug) return;
+
+    // Use locally cached version if available
+    const offlineCopy = offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug);
+    if (offlineCopy?.text) {
+      const standalone: MobileStandaloneStory = {
+        id: offlineCopy.storyId,
+        slug: offlineCopy.storySlug ?? story.storySlug,
+        title: offlineCopy.title,
+        text: offlineCopy.text,
+        language: offlineCopy.language ?? null,
+        variant: offlineCopy.variant ?? null,
+        region: offlineCopy.region ?? null,
+        level: offlineCopy.level ?? null,
+        cefrLevel: offlineCopy.cefrLevel ?? null,
+        topic: offlineCopy.topic ?? null,
+        coverUrl: offlineCopy.localCoverUri ?? offlineCopy.coverUrl ?? null,
+        audioUrl: offlineCopy.localAudioUri ?? offlineCopy.audioUrl ?? null,
+      };
+      openSelection(createSelectionFromStandaloneStory(standalone));
+      return;
+    }
+
+    try {
+      const payload = await apiFetch<{ stories?: MobileStandaloneStory[] }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: `/api/standalone-stories?slugs=${encodeURIComponent(story.storySlug)}`,
+        token: sessionToken,
+        timeoutMs: 15000,
+      });
+      const standalone = payload.stories?.[0];
+      if (!standalone) return;
+      openSelection(createSelectionFromStandaloneStory(standalone));
+    } catch (error) {
+      console.error("[mobile journey] failed to open journey story", error);
     }
   }
 
@@ -3797,6 +3885,39 @@ export function MobileLibraryShell(args: {
     const current = practiceExercises[practiceIndex];
     if (!current || current.kind !== "multiple-choice") return;
     setPracticeSelectedOption(option);
+  }
+
+  async function playPracticeFeedbackSound(correct: boolean) {
+    try {
+      const prev = practiceFeedbackSoundRef.current;
+      if (prev) {
+        practiceFeedbackSoundRef.current = null;
+        await prev.stopAsync().catch(() => undefined);
+        await prev.unloadAsync().catch(() => undefined);
+      }
+      const { sound } = await Audio.Sound.createAsync(
+        { uri: correct ? PRACTICE_CORRECT_SOUND_URI : PRACTICE_WRONG_SOUND_URI },
+        { shouldPlay: true, volume: 0.8 }
+      );
+      practiceFeedbackSoundRef.current = sound;
+      sound.setOnPlaybackStatusUpdate((status) => {
+        if ("didJustFinish" in status && status.didJustFinish) {
+          practiceFeedbackSoundRef.current = null;
+          void sound.unloadAsync().catch(() => undefined);
+        }
+      });
+    } catch {
+      // Sound is best-effort
+    }
+  }
+
+  function checkPracticeAnswer() {
+    if (practiceRevealed || practiceComplete) return;
+    const current = practiceExercises[practiceIndex];
+    if (!current || current.kind !== "multiple-choice") return;
+    if (!practiceSelectedOption) return;
+
+    const option = practiceSelectedOption;
     setPracticeRevealed(true);
     setPracticeReviewScores((currentScores) => ({
       ...currentScores,
@@ -3816,6 +3937,7 @@ export function MobileLibraryShell(args: {
       setPracticeLastResult("wrong");
       setPracticeSessionStreak(0);
     }
+    void playPracticeFeedbackSound(option === current.answer);
   }
 
   function playPracticePrompt() {
@@ -4060,6 +4182,7 @@ export function MobileLibraryShell(args: {
         }
         return nextScores;
       });
+      void playPracticeFeedbackSound(true);
     }
   }
 
@@ -4722,11 +4845,17 @@ export function MobileLibraryShell(args: {
         ].filter(Boolean)
       )
     ).sort();
+    const variantOnlyIds = new Set(
+      Object.values(VARIANT_OPTIONS_BY_LANGUAGE)
+        .flat()
+        .filter((v) => !["spain", "brazil", "portugal", "germany", "austria", "france", "italy", "south-korea"].includes(v.value))
+        .map((v) => v.value.toLowerCase())
+    );
     const regions = Array.from(
       new Set(
         [
-          ...CATALOG_BOOKS.map((book) => formatRegion(book.region ?? "")),
-          ...remoteStories.map((story) => formatRegion(story.region ?? "")),
+          ...CATALOG_BOOKS.filter((b) => !variantOnlyIds.has((b.region ?? "").trim().toLowerCase())).map((book) => formatRegion(book.region ?? "")),
+          ...remoteStories.filter((s) => !variantOnlyIds.has((s.region ?? "").trim().toLowerCase())).map((story) => formatRegion(story.region ?? "")),
         ].filter((value) => value && value !== "Unknown")
       )
     ).sort();
@@ -4989,6 +5118,7 @@ export function MobileLibraryShell(args: {
           setSelectedBook(null);
           setSelection(null);
           setActiveScreen("journey");
+          shellScrollRef.current?.scrollTo({ y: 0, animated: false });
           return;
         }
 
@@ -4996,6 +5126,39 @@ export function MobileLibraryShell(args: {
           setSelectedBook(null);
           setSelection(null);
           setActiveScreen("home");
+          shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+          return;
+        }
+
+        if (action === "open-explore") {
+          setSelectedBook(null);
+          setSelection(null);
+          setActiveScreen("explore");
+          shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+          return;
+        }
+
+        if (action === "open-library") {
+          setSelectedBook(null);
+          setSelection(null);
+          setActiveScreen("library");
+          shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+          return;
+        }
+
+        if (action === "scroll-top") {
+          shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+          return;
+        }
+
+        if (action === "scroll-mid") {
+          shellScrollRef.current?.scrollTo({ y: 900, animated: false });
+          return;
+        }
+
+        if (action === "scroll-bottom") {
+          shellScrollRef.current?.scrollTo({ y: 2200, animated: false });
+          return;
         }
       } catch (error) {
         console.warn("[mobile qa] failed to process QA URL", error);
@@ -6165,6 +6328,9 @@ export function MobileLibraryShell(args: {
                   <View style={styles.practiceScorePill}>
                     <Text style={styles.practiceScorePillText}>Streak {practiceSessionStreak}</Text>
                   </View>
+                  <View style={styles.practiceScorePill}>
+                    <Text style={styles.practiceScorePillText}>Score {practiceScore}</Text>
+                  </View>
                 </View>
               </View>
 
@@ -6383,10 +6549,14 @@ export function MobileLibraryShell(args: {
 
               <View style={styles.practiceFooter}>
                 {practiceRevealed ? (
-                  <Pressable onPress={advancePractice} style={[styles.inlineButton, styles.primaryButton]}>
+                  <Pressable onPress={advancePractice} style={[styles.inlineButton, styles.primaryButton, styles.practiceFooterButton]}>
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
                       {practiceIndex >= practiceExercises.length - 1 ? "Finish" : "Next"}
                     </Text>
+                  </Pressable>
+                ) : currentPracticeExercise.kind === "multiple-choice" && practiceSelectedOption ? (
+                  <Pressable onPress={checkPracticeAnswer} style={[styles.inlineButton, styles.primaryButton, styles.practiceFooterButton]}>
+                    <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Check</Text>
                   </Pressable>
                 ) : (
                   <Text style={styles.practiceFooterHint}>
@@ -6394,13 +6564,9 @@ export function MobileLibraryShell(args: {
                       ? activeMatchWord
                         ? "Now choose the matching meaning."
                         : "Choose a word to begin."
-                      : "Pick one answer to reveal the result."}
+                      : "Select an answer to continue."}
                   </Text>
                 )}
-
-                <View style={styles.practiceScorePill}>
-                  <Text style={styles.practiceScorePillText}>Score {practiceScore}</Text>
-                </View>
               </View>
             </>
           ) : null}
@@ -8068,27 +8234,15 @@ export function MobileLibraryShell(args: {
               </View>
             ) : null}
 
-            <JourneyPlacementPicker
-              currentLabel={
-                preferences.journeyPlacementLevel
-                  ? activeJourneyTrack.levels.find((level) => level.id === preferences.journeyPlacementLevel)?.title ??
-                    preferences.journeyPlacementLevel.toUpperCase()
-                  : `Auto · ${(
-                      activeJourneyTrack.levels.find((level) => level.id === suggestedJourneyPlacementLevel)?.title ??
-                      suggestedJourneyPlacementLevel ??
-                      "A1"
-                    ).toUpperCase()}`
-              }
-              levels={activeJourneyTrack.levels.map((level) => ({
-                id: level.id,
-                title: level.title,
-                active: preferences.journeyPlacementLevel === level.id,
-              }))}
-              showAuto={Boolean(preferences.journeyPlacementLevel)}
-              disabled={preferencesLoading}
-              onSelectLevel={(levelId) => void saveJourneyPlacementOnMobile(levelId)}
-              onSelectAuto={() => void saveJourneyPlacementOnMobile(null)}
-            />
+            <View style={styles.journeyPlacementTestCard}>
+              <View style={styles.journeyPlacementTestCopy}>
+                <Text style={styles.journeyPlacementTestTitle}>Not sure where to start?</Text>
+                <Text style={styles.journeyPlacementTestBody}>Take a placement test to find your level.</Text>
+              </View>
+              <Pressable disabled style={styles.journeyPlacementTestButton}>
+                <Text style={styles.journeyPlacementTestButtonText}>Coming soon</Text>
+              </Pressable>
+            </View>
           </>
         ) : null}
 
@@ -8189,32 +8343,56 @@ export function MobileLibraryShell(args: {
                         : index === activeJourneyTopic.unlockedStoryCount - 1
                           ? "Continue"
                           : "Open";
+                  const isOfflineReady = offlineStoriesById.has(story.id) ||
+                    Boolean(offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug));
+                  const isDownloading = offlineStoryIdInFlight === story.id;
                   return (
-                    <Pressable
+                    <View
                       key={story.id}
-                      disabled={!story.unlocked}
-                      onPress={() => openJourneyStory(story)}
-                      accessibilityRole="button"
-                      accessibilityLabel={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
-                      testID={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
                       style={[
                         styles.journeyStoryRow,
                         !story.unlocked ? styles.journeyTopicActionDisabled : null,
                       ]}
                     >
-                      <ProgressiveImage uri={getCoverUrl(story.coverUrl)} style={styles.journeyStoryCover} />
-                      <View style={styles.journeyStoryCopy}>
-                        <Text style={styles.journeyStoryBadge}>{badge}</Text>
-                        <Text style={styles.journeyStoryTitle}>{story.title}</Text>
-                        <Text style={styles.journeyStoryMeta}>
-                          {story.unlocked
-                            ? story.region || story.language || "Global"
-                            : previousStory && !previousStory.completed
-                              ? `Finish ${previousStory.title} first`
-                              : "Unlock later"}
-                        </Text>
-                      </View>
-                    </Pressable>
+                      <Pressable
+                        disabled={!story.unlocked}
+                        onPress={() => openJourneyStory(story)}
+                        accessibilityRole="button"
+                        accessibilityLabel={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
+                        testID={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
+                        style={styles.journeyStoryRowContent}
+                      >
+                        <ProgressiveImage uri={getCoverUrl(story.coverUrl)} style={styles.journeyStoryCover} />
+                        <View style={styles.journeyStoryCopy}>
+                          <Text style={styles.journeyStoryBadge}>{badge}</Text>
+                          <Text style={styles.journeyStoryTitle}>{story.title}</Text>
+                          <Text style={styles.journeyStoryMeta}>
+                            {story.unlocked
+                              ? formatRegion(story.region ?? "") || story.language || "Global"
+                              : previousStory && !previousStory.completed
+                                ? `Finish ${previousStory.title} first`
+                                : "Unlock later"}
+                          </Text>
+                        </View>
+                      </Pressable>
+                      {story.unlocked ? (
+                        <Pressable
+                          onPress={() => isOfflineReady
+                            ? void removeStoryFromOffline({ id: story.id })
+                            : void downloadJourneyStoryOffline(story)
+                          }
+                          disabled={isDownloading}
+                          style={styles.journeyStoryDownloadBtn}
+                          accessibilityLabel={isOfflineReady ? "Remove offline" : "Download for offline"}
+                        >
+                          <Feather
+                            name={isDownloading ? "loader" : isOfflineReady ? "check-circle" : "download-cloud"}
+                            size={17}
+                            color={isOfflineReady ? "#6ab8ff" : "#5a7da0"}
+                          />
+                        </Pressable>
+                      ) : null}
+                    </View>
                   );
                 })}
               </View>
@@ -8539,45 +8717,71 @@ export function MobileLibraryShell(args: {
         ? selection.book.stories[currentStoryIndex + 1]
         : null;
     return (
-      <ReaderScreen
-        book={selection.book}
-        story={selection.story}
-        resolvedAudioUrl={offlineStory?.localAudioUri ?? selection.resolvedAudioUrl ?? selection.story.audio}
-        sessionToken={sessionToken}
-        onBack={() => setSelection(null)}
-        canGoPrevious={Boolean(previousStory)}
-        canGoNext={Boolean(nextStory)}
-        onPreviousStory={
-          previousStory
-            ? () => {
-                const resolved = resolveStorySelection(previousStory.id, selection.book, previousStory);
-                if (resolved) openSelection(resolved);
-              }
-            : undefined
-        }
-        onNextStory={
-          nextStory
-            ? () => {
-                const resolved = resolveStorySelection(nextStory.id, selection.book, nextStory);
-                if (resolved) openSelection(resolved);
-              }
-            : undefined
-        }
-        isSaved={savedStoryIds.includes(selection.story.id)}
-        isSaving={false}
-        onToggleSaved={() => void toggleStorySaved(selection.book, selection.story)}
-        initialProgress={
-          readingProgress.find((entry) => entry.storyId === selection.story.id) ?? null
-        }
-        onTrackProgress={(details) => recordProgress(selection.book, selection.story, details)}
-        isAvailableOffline={Boolean(offlineStory)}
-        isDownloadingOffline={offlineStoryIdInFlight === selection.story.id}
-        onDownloadOffline={() => void downloadStoryOffline(selection.book, selection.story)}
-        onRemoveOffline={() => void removeStoryFromOffline(selection.story)}
-        onOpenPractice={() => void openStoryPractice(selection)}
-        isFavoriteWord={isFavoriteWord}
-        onToggleFavoriteWord={(item, contextSentence) => void toggleFavoriteWord(item, contextSentence)}
-      />
+      <View style={styles.readerWrapper}>
+        <ReaderScreen
+          book={selection.book}
+          story={selection.story}
+          resolvedAudioUrl={offlineStory?.localAudioUri ?? selection.resolvedAudioUrl ?? selection.story.audio}
+          sessionToken={sessionToken}
+          onBack={() => setSelection(null)}
+          canGoPrevious={Boolean(previousStory)}
+          canGoNext={Boolean(nextStory)}
+          onPreviousStory={
+            previousStory
+              ? () => {
+                  const resolved = resolveStorySelection(previousStory.id, selection.book, previousStory);
+                  if (resolved) openSelection(resolved);
+                }
+              : undefined
+          }
+          onNextStory={
+            nextStory
+              ? () => {
+                  const resolved = resolveStorySelection(nextStory.id, selection.book, nextStory);
+                  if (resolved) openSelection(resolved);
+                }
+              : undefined
+          }
+          isSaved={savedStoryIds.includes(selection.story.id)}
+          isSaving={false}
+          onToggleSaved={() => void toggleStorySaved(selection.book, selection.story)}
+          initialProgress={
+            readingProgress.find((entry) => entry.storyId === selection.story.id) ?? null
+          }
+          onTrackProgress={(details) => recordProgress(selection.book, selection.story, details)}
+          isAvailableOffline={Boolean(offlineStory)}
+          isDownloadingOffline={offlineStoryIdInFlight === selection.story.id}
+          onDownloadOffline={() => void downloadStoryOffline(selection.book, selection.story)}
+          onRemoveOffline={() => void removeStoryFromOffline(selection.story)}
+          onOpenPractice={() => void openStoryPractice(selection)}
+          isFavoriteWord={isFavoriteWord}
+          onToggleFavoriteWord={(item, contextSentence) => void toggleFavoriteWord(item, contextSentence)}
+        />
+        {storyCompletionPopup ? (
+          <View style={styles.storyCompletionOverlay}>
+            <View style={styles.storyCompletionCard}>
+              <Text style={styles.storyCompletionTitle}>Story complete</Text>
+              <Text style={styles.storyCompletionBody}>Head back to your journey to see what to read next.</Text>
+              <Pressable
+                onPress={() => {
+                  setStoryCompletionPopup(false);
+                  setSelection(null);
+                  setActiveScreen("journey");
+                }}
+                style={[styles.inlineButton, styles.primaryButton]}
+              >
+                <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Back to Journey</Text>
+              </Pressable>
+              <Pressable
+                onPress={() => setStoryCompletionPopup(false)}
+                style={styles.secondaryButton}
+              >
+                <Text style={styles.secondaryButtonText}>Keep reading</Text>
+              </Pressable>
+            </View>
+          </View>
+        ) : null}
+      </View>
     );
   }
 
@@ -8762,11 +8966,12 @@ export function MobileLibraryShell(args: {
         ref={shellScrollRef}
         style={styles.scrollView}
         contentContainerStyle={[styles.container, styles.containerGrow]}
+        scrollEnabled
         showsVerticalScrollIndicator={false}
         alwaysBounceVertical
         decelerationRate="normal"
         keyboardShouldPersistTaps="handled"
-        contentInsetAdjustmentBehavior="automatic"
+        contentInsetAdjustmentBehavior="never"
       >
         {content}
       </ScrollView>
@@ -9117,7 +9322,7 @@ function BottomTabIcon({ tab, active }: { tab: BottomTab; active: boolean }) {
   const color = active ? "#ffffff" : "#9cb0c9";
   if (tab === "home") return <Feather name="home" size={18} color={color} />;
   if (tab === "explore") return <Feather name="compass" size={18} color={color} />;
-  if (tab === "practice") return <MaterialCommunityIcons name="cards-outline" size={19} color={color} />;
+  if (tab === "practice") return <MaterialCommunityIcons name="brain" size={19} color={color} />;
   if (tab === "favorites") return <Feather name="star" size={18} color={color} />;
   if (tab === "journey") return <MaterialCommunityIcons name="map-marker-path" size={18} color={color} />;
   if (tab === "signin") return <Feather name="log-in" size={18} color={color} />;
@@ -10054,6 +10259,44 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 16,
   },
+  journeyPlacementTestCard: {
+    borderRadius: 16,
+    backgroundColor: "#18304d",
+    borderWidth: 1,
+    borderColor: "#29435f",
+    padding: 16,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+  },
+  journeyPlacementTestCopy: {
+    flex: 1,
+    gap: 2,
+  },
+  journeyPlacementTestTitle: {
+    color: "#d7e7ff",
+    fontSize: 14,
+    fontWeight: "700",
+  },
+  journeyPlacementTestBody: {
+    color: "#8fa8c8",
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  journeyPlacementTestButton: {
+    borderRadius: 10,
+    backgroundColor: "#203754",
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderWidth: 1,
+    borderColor: "#315174",
+    opacity: 0.6,
+  },
+  journeyPlacementTestButtonText: {
+    color: "#8fa8c8",
+    fontSize: 12,
+    fontWeight: "600",
+  },
   mutedLabel: {
     color: "#8fa4c0",
   },
@@ -10306,13 +10549,24 @@ const styles = StyleSheet.create({
   journeyStoryRow: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 12,
     borderRadius: 16,
     backgroundColor: "#142a44",
     borderWidth: 1,
     borderColor: "#29435f",
+    paddingRight: 8,
+    overflow: "hidden",
+  },
+  journeyStoryRowContent: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
     paddingHorizontal: 10,
     paddingVertical: 10,
+  },
+  journeyStoryDownloadBtn: {
+    paddingHorizontal: 8,
+    paddingVertical: 8,
   },
   journeyStoryCover: {
     width: 54,
@@ -11138,6 +11392,38 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "800",
   },
+  readerWrapper: {
+    flex: 1,
+  },
+  storyCompletionOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(5, 14, 26, 0.82)",
+    justifyContent: "flex-end",
+    paddingBottom: 40,
+    paddingHorizontal: 20,
+  },
+  storyCompletionCard: {
+    backgroundColor: "#14243b",
+    borderRadius: 24,
+    padding: 24,
+    gap: 14,
+    borderWidth: 1,
+    borderColor: "#27405f",
+    shadowColor: "#000",
+    shadowOpacity: 0.3,
+    shadowRadius: 20,
+    shadowOffset: { width: 0, height: 8 },
+  },
+  storyCompletionTitle: {
+    color: "#ffffff",
+    fontSize: 22,
+    fontWeight: "800",
+  },
+  storyCompletionBody: {
+    color: "#aebcd3",
+    fontSize: 15,
+    lineHeight: 22,
+  },
   storyList: {
     gap: 12,
     paddingTop: 6,
@@ -11843,17 +12129,22 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   practiceFooter: {
-    flexDirection: "row",
+    alignItems: "stretch",
+    paddingTop: 8,
+  },
+  practiceFooterButton: {
+    alignSelf: "stretch",
+    paddingVertical: 16,
+    borderRadius: 18,
     alignItems: "center",
-    justifyContent: "space-between",
-    gap: 12,
-    paddingTop: 2,
+    justifyContent: "center",
   },
   practiceFooterHint: {
-    flex: 1,
     color: "rgba(226,232,244,0.74)",
     fontSize: 11,
     lineHeight: 14,
+    textAlign: "center",
+    paddingVertical: 16,
   },
   practiceScorePill: {
     borderRadius: 999,

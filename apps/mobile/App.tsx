@@ -1,12 +1,8 @@
 import "./src/polyfills";
 import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { ClerkProvider, useAuth, useClerk } from "@clerk/expo";
-import { tokenCache } from "@clerk/expo/token-cache";
+import { Component, type ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 import { Linking, Pressable, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
-import { AuthScreen } from "./src/auth/AuthScreen";
-import { exchangeClerkSessionForMobileToken } from "./src/auth/exchangeClerkSession";
 import {
   clearMobileSessionToken,
   decodeMobileSessionToken,
@@ -48,6 +44,21 @@ function extractMobileAuthToken(urlString: string | null | undefined): string | 
   }
 }
 
+function extractQaAction(urlString: string | null | undefined): string | null {
+  if (!urlString) return null;
+
+  try {
+    const url = new URL(urlString);
+    if (url.protocol !== "digitalpolyglot:" || url.hostname !== "qa") {
+      return null;
+    }
+
+    return url.pathname.replace(/^\/+/, "") || null;
+  } catch {
+    return null;
+  }
+}
+
 function getNotificationsModule():
   | typeof import("expo-notifications")
   | null {
@@ -66,21 +77,42 @@ function useMobileShellState() {
   const [pendingReminderNavigation, setPendingReminderNavigation] = useState<PendingReminderNavigation | null>(null);
 
   const handleAuthenticated = useCallback(async (token: string) => {
+    console.log("[mobile-auth] handleAuthenticated:start", { tokenLength: token.length });
     await saveMobileSessionToken(token);
+    console.log("[mobile-auth] handleAuthenticated:saved");
     setSessionToken(token);
+    console.log("[mobile-auth] handleAuthenticated:set-session");
     setPreviewModeOnly(false);
     setPushState({
       status: "unsupported",
       message: "Push notifications will be enabled in the next native rebuild.",
     });
+    console.log("[mobile-auth] handleAuthenticated:done");
   }, []);
 
   useEffect(() => {
     let cancelled = false;
 
     async function hydrateSession() {
+      if (__DEV__) {
+        await clearMobileSessionToken();
+        setLoadingSession(false);
+        return;
+      }
+
       const storedToken = await loadMobileSessionToken();
       if (cancelled) return;
+
+      if (storedToken) {
+        const decoded = decodeMobileSessionToken(storedToken);
+        const nowSec = Math.floor(Date.now() / 1000);
+        if (!decoded || decoded.exp <= nowSec) {
+          await clearMobileSessionToken();
+          setLoadingSession(false);
+          return;
+        }
+      }
+
       setSessionToken((currentToken) => currentToken ?? storedToken);
       setLoadingSession(false);
     }
@@ -99,16 +131,41 @@ function useMobileShellState() {
       const initialUrl = await Linking.getInitialURL();
       if (cancelled) return;
       const token = extractMobileAuthToken(initialUrl);
-      if (!token) return;
-      void handleAuthenticated(token);
+      if (token) {
+        void handleAuthenticated(token);
+        return;
+      }
+
+      if (__DEV__) {
+        const qaAction = extractQaAction(initialUrl);
+        if (qaAction === "continue-preview") {
+          setPreviewModeOnly(true);
+        }
+      }
     }
 
     void hydrateInitialUrl();
 
     const subscription = Linking.addEventListener("url", ({ url }) => {
       const token = extractMobileAuthToken(url);
-      if (!token) return;
-      void handleAuthenticated(token);
+      if (token) {
+        void handleAuthenticated(token);
+        return;
+      }
+
+      if (__DEV__) {
+        const qaAction = extractQaAction(url);
+        if (qaAction === "continue-preview") {
+          setPreviewModeOnly(true);
+          return;
+        }
+
+        if (qaAction === "sign-out") {
+          void clearMobileSessionToken();
+          setSessionToken(null);
+          setPreviewModeOnly(false);
+        }
+      }
     });
 
     return () => {
@@ -203,8 +260,17 @@ function useMobileShellState() {
 function FallbackAuthScreen(args: {
   onAuthenticated: (token: string) => void;
   onContinuePreview: () => void;
+  ctaLabel?: string;
+  eyebrowLabel?: string;
+  bodyText?: string;
 }) {
-  const { onAuthenticated, onContinuePreview } = args;
+  const {
+    onAuthenticated,
+    onContinuePreview,
+    ctaLabel = "Use web sign-in",
+    eyebrowLabel = "Web fallback",
+    bodyText = "This build uses web sign-in for stability while we finish hardening the native auth flow.",
+  } = args;
   const [submitting, setSubmitting] = useState<"web" | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -218,10 +284,23 @@ function FallbackAuthScreen(args: {
         scheme: "digitalpolyglot",
         path: "auth/callback",
       });
-      const startUrl = new URL("/mobile-auth", mobileConfig.apiBaseUrl);
-      startUrl.searchParams.set("redirect_uri", redirectUri);
+      const mobileAuthPath = `/mobile-auth?redirect_uri=${encodeURIComponent(redirectUri)}`;
+      const startUrl = new URL("/sign-in", mobileConfig.apiBaseUrl);
+      startUrl.searchParams.set("redirect_url", mobileAuthPath);
 
-      const result = await WebBrowser.openAuthSessionAsync(startUrl.toString(), redirectUri);
+      if (__DEV__) {
+        console.log("[mobile auth] begin web sign-in", {
+          startUrl: startUrl.toString(),
+          redirectUri,
+        });
+      }
+
+      const result = await WebBrowser.openAuthSessionAsync(startUrl.toString(), redirectUri, {
+        preferEphemeralSession: true,
+      });
+      if (__DEV__) {
+        console.log("[mobile auth] web sign-in result", result);
+      }
       if (result.type !== "success" || !result.url) {
         throw new Error("Sign-in was cancelled before it finished.");
       }
@@ -234,24 +313,43 @@ function FallbackAuthScreen(args: {
 
       onAuthenticated(token);
     } catch (authError) {
+      if (__DEV__) {
+        console.warn(
+          "[mobile auth] web sign-in failed",
+          authError instanceof Error ? authError.message : String(authError)
+        );
+      }
       setError(authError instanceof Error ? authError.message : "Something went wrong. Please try again.");
     } finally {
       setSubmitting(null);
     }
   }
 
+  useEffect(() => {
+    if (!__DEV__) return;
+
+    const subscription = Linking.addEventListener("url", ({ url }) => {
+      const qaAction = extractQaAction(url);
+      if (qaAction === "web-sign-in") {
+        void beginWebSignIn();
+      }
+    });
+
+    return () => {
+      subscription.remove();
+    };
+  }, []);
+
   return (
     <View style={styles.card}>
       <View style={styles.badgeRow}>
         <Text style={styles.eyebrow}>iPhone library</Text>
         <View style={styles.livePill}>
-          <Text style={styles.livePillText}>Web fallback</Text>
+          <Text style={styles.livePillText}>{eyebrowLabel}</Text>
         </View>
       </View>
       <Text style={styles.cardTitle}>Open your stories on iPhone</Text>
-      <Text style={styles.cardBody}>
-        This build is missing the native auth key, so we are falling back to web sign-in instead of crashing.
-      </Text>
+      <Text style={styles.cardBody}>{bodyText}</Text>
       {error ? <Text style={styles.errorText}>{error}</Text> : null}
       <Pressable
         onPress={() => void beginWebSignIn()}
@@ -259,13 +357,135 @@ function FallbackAuthScreen(args: {
         style={[styles.primaryButton, submitting ? styles.primaryButtonDisabled : null]}
       >
         <Text style={styles.primaryButtonText}>
-          {submitting === "web" ? "Opening..." : "Use web sign-in"}
+          {submitting === "web" ? "Opening..." : ctaLabel}
         </Text>
       </Pressable>
       <Pressable onPress={onContinuePreview} style={styles.secondaryButton}>
         <Text style={styles.secondaryButtonText}>Continue in preview</Text>
       </Pressable>
     </View>
+  );
+}
+
+class NativeAuthErrorBoundary extends Component<
+  {
+    children: ReactNode;
+    onError: (message: string) => void;
+  },
+  { hasError: boolean }
+> {
+  constructor(props: { children: ReactNode; onError: (message: string) => void }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: unknown) {
+    const message = error instanceof Error ? error.message : "Native auth crashed.";
+    this.props.onError(message);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return null;
+    }
+
+    return this.props.children;
+  }
+}
+
+function NativeAuthScreenIsolated(args: {
+  onAuthenticated: (token: string) => void;
+  onContinuePreview: () => void;
+  onFallbackToWeb: (message: string) => void;
+}) {
+  const { onAuthenticated, onContinuePreview, onFallbackToWeb } = args;
+  const [NativeAuthEntry, setNativeAuthEntry] = useState<null | ((props: {
+    onAuthenticated: (token: string) => void;
+    onContinuePreview: () => void;
+  }) => ReactNode)>(null);
+
+  if (!mobileConfig.clerkPublishableKey) {
+    return (
+      <FallbackAuthScreen
+        onAuthenticated={onAuthenticated}
+        onContinuePreview={onContinuePreview}
+      />
+    );
+  }
+
+  useEffect(() => {
+    let cancelled = false;
+
+    void import("./src/auth/NativeAuthEntry")
+      .then((module) => {
+        if (cancelled) return;
+        setNativeAuthEntry(() => module.NativeAuthEntry);
+      })
+      .catch((error) => {
+        if (cancelled) return;
+        onFallbackToWeb(error instanceof Error ? error.message : "Native auth failed to load.");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [onFallbackToWeb]);
+
+  if (!NativeAuthEntry) {
+    return (
+      <View style={styles.card}>
+        <View style={styles.badgeRow}>
+          <Text style={styles.eyebrow}>iPhone library</Text>
+          <View style={styles.livePill}>
+            <Text style={styles.livePillText}>Native auth</Text>
+          </View>
+        </View>
+        <Text style={styles.cardTitle}>Loading native sign-in…</Text>
+        <Text style={styles.cardBody}>
+          We are preparing the isolated native auth module so the app can fall back safely if it fails.
+        </Text>
+      </View>
+    );
+  }
+
+  return (
+    <NativeAuthErrorBoundary onError={onFallbackToWeb}>
+      <NativeAuthEntry
+        onAuthenticated={onAuthenticated}
+        onContinuePreview={onContinuePreview}
+      />
+    </NativeAuthErrorBoundary>
+  );
+}
+
+function AuthGatewayScreen(args: {
+  onAuthenticated: (token: string) => void;
+  onContinuePreview: () => void;
+}) {
+  const { onAuthenticated, onContinuePreview } = args;
+  const [authMode, setAuthMode] = useState<"native" | "web">("native");
+
+  if (authMode === "web") {
+    return (
+      <FallbackAuthScreen
+        onAuthenticated={onAuthenticated}
+        onContinuePreview={onContinuePreview}
+        eyebrowLabel="Web sign-in"
+        bodyText="Web sign-in is available as a safe fallback if native auth hits a runtime issue."
+      />
+    );
+  }
+
+  return (
+    <NativeAuthScreenIsolated
+      onAuthenticated={onAuthenticated}
+      onContinuePreview={onContinuePreview}
+      onFallbackToWeb={() => setAuthMode("web")}
+    />
   );
 }
 
@@ -283,7 +503,6 @@ function FallbackMobileAppRoot() {
     setPendingReminderNavigation,
     handleAuthenticated,
   } = useMobileShellState();
-
   async function handleSignOut() {
     await clearMobileSessionToken();
     setSessionToken(null);
@@ -307,100 +526,7 @@ function FallbackMobileAppRoot() {
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="light-content" />
         <View style={styles.authContainer}>
-          <FallbackAuthScreen
-            onAuthenticated={(token) => void handleAuthenticated(token)}
-            onContinuePreview={() => setPreviewModeOnly(true)}
-          />
-        </View>
-      </SafeAreaView>
-    );
-  }
-
-  return (
-    <SafeAreaView style={styles.safeArea}>
-      <StatusBar barStyle="light-content" />
-      <MobileLibraryShell
-        sessionToken={sessionToken}
-        sessionUserId={session?.sub ?? null}
-        sessionName={session?.name ?? null}
-        sessionEmail={session?.email ?? null}
-        sessionPlan={session?.plan ?? null}
-        sessionTargetLanguages={session?.targetLanguages ?? []}
-        sessionBooksCount={session?.booksCount ?? 0}
-        sessionStoriesCount={session?.storiesCount ?? 0}
-        pushState={pushState}
-        pendingReminderNavigation={pendingReminderNavigation}
-        onHandledReminderNavigation={() => setPendingReminderNavigation(null)}
-        onSignOut={() => void handleSignOut()}
-        onRequestSignIn={() => setPreviewModeOnly(false)}
-      />
-    </SafeAreaView>
-  );
-}
-
-function NativeMobileAppRoot() {
-  const {
-    sessionToken,
-    session,
-    loadingSession,
-    previewModeOnly,
-    pushState,
-    pendingReminderNavigation,
-    setPreviewModeOnly,
-    setSessionToken,
-    setPushState,
-    setPendingReminderNavigation,
-    handleAuthenticated,
-  } = useMobileShellState();
-  const { isLoaded: clerkLoaded, isSignedIn: isClerkSignedIn, getToken } = useAuth();
-  const { signOut: clerkSignOut } = useClerk();
-
-  const handleNativeSessionSync = useCallback(async () => {
-    const clerkSessionToken = await getToken();
-    if (!clerkSessionToken) {
-      return false;
-    }
-
-    const mobileToken = await exchangeClerkSessionForMobileToken(clerkSessionToken);
-    await handleAuthenticated(mobileToken);
-    return true;
-  }, [getToken, handleAuthenticated]);
-
-  useEffect(() => {
-    if (!clerkLoaded || !isClerkSignedIn || sessionToken || loadingSession) {
-      return;
-    }
-
-    void handleNativeSessionSync().catch((error) => {
-      console.error("Failed to sync Clerk session into mobile session", error);
-    });
-  }, [clerkLoaded, handleNativeSessionSync, isClerkSignedIn, loadingSession, sessionToken]);
-
-  async function handleSignOut() {
-    await clearMobileSessionToken();
-    await clerkSignOut().catch(() => {});
-    setSessionToken(null);
-    setPreviewModeOnly(false);
-    setPushState({ status: "idle" });
-  }
-
-  if (loadingSession) {
-    return (
-      <SafeAreaView style={styles.safeArea}>
-        <StatusBar barStyle="light-content" />
-        <View style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>Loading iOS workspace...</Text>
-        </View>
-      </SafeAreaView>
-    );
-  }
-
-  if (!sessionToken && !previewModeOnly) {
-    return (
-      <SafeAreaView style={styles.safeArea}>
-        <StatusBar barStyle="light-content" />
-        <View style={styles.authContainer}>
-          <AuthScreen
+          <AuthGatewayScreen
             onAuthenticated={(token) => void handleAuthenticated(token)}
             onContinuePreview={() => setPreviewModeOnly(true)}
           />
@@ -432,16 +558,7 @@ function NativeMobileAppRoot() {
 }
 
 export default function App() {
-  if (!mobileConfig.clerkPublishableKey) {
-    console.warn("[mobile auth] Missing Clerk publishable key. Falling back to web sign-in mode.");
-    return <FallbackMobileAppRoot />;
-  }
-
-  return (
-    <ClerkProvider publishableKey={mobileConfig.clerkPublishableKey} tokenCache={tokenCache}>
-      <NativeMobileAppRoot />
-    </ClerkProvider>
-  );
+  return <FallbackMobileAppRoot />;
 }
 
 const styles = StyleSheet.create({
@@ -453,6 +570,31 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     paddingHorizontal: 24,
+  },
+  nativeAuthNotice: {
+    marginTop: 16,
+    color: "#dcefff",
+    fontSize: 14,
+    fontWeight: "700",
+    textAlign: "center",
+  },
+  nativeAuthHint: {
+    marginTop: 6,
+    color: "#9fb2c9",
+    fontSize: 12,
+    lineHeight: 18,
+    textAlign: "center",
+  },
+  tertiaryButton: {
+    marginTop: 12,
+    alignSelf: "center",
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  tertiaryButtonText: {
+    color: "#9fb2c9",
+    fontSize: 14,
+    fontWeight: "700",
   },
   loadingContainer: {
     flex: 1,

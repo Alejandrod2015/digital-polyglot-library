@@ -10,6 +10,10 @@ import {
   type ViewStyle,
 } from "react-native";
 
+// Module-level cache: tracks URIs that have already been loaded this session.
+// When a component remounts with a known URI, we skip the skeleton animation entirely.
+const loadedUriCache = new Set<string>();
+
 type Props = {
   uri: string;
   style: StyleProp<ImageStyle>;
@@ -18,10 +22,11 @@ type Props = {
 };
 
 export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonStyle }: Props) {
-  const imageOpacity = useRef(new Animated.Value(0)).current;
-  const skeletonOpacity = useRef(new Animated.Value(0.55)).current;
-  const [loaded, setLoaded] = useState(false);
-  const [showSkeleton, setShowSkeleton] = useState(true);
+  const alreadyLoaded = loadedUriCache.has(uri);
+  const imageOpacity = useRef(new Animated.Value(alreadyLoaded ? 1 : 0)).current;
+  const skeletonOpacity = useRef(new Animated.Value(alreadyLoaded ? 0 : 0.55)).current;
+  const [loaded, setLoaded] = useState(alreadyLoaded);
+  const [showSkeleton, setShowSkeleton] = useState(!alreadyLoaded);
 
   const flattenedStyle = useMemo(() => StyleSheet.flatten(style) ?? {}, [style]);
   const wrapperStyle = useMemo(
@@ -34,10 +39,18 @@ export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonSty
   );
 
   useEffect(() => {
-    setLoaded(false);
-    setShowSkeleton(true);
-    imageOpacity.setValue(0);
-  }, [uri, imageOpacity]);
+    if (loadedUriCache.has(uri)) {
+      setLoaded(true);
+      setShowSkeleton(false);
+      imageOpacity.setValue(1);
+      skeletonOpacity.setValue(0);
+    } else {
+      setLoaded(false);
+      setShowSkeleton(true);
+      imageOpacity.setValue(0);
+      skeletonOpacity.setValue(0.55);
+    }
+  }, [uri, imageOpacity, skeletonOpacity]);
 
   useEffect(() => {
     if (!showSkeleton) return undefined;
@@ -68,6 +81,7 @@ export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonSty
 
   function finishLoad() {
     if (loaded) return;
+    loadedUriCache.add(uri);
     setLoaded(true);
 
     Animated.parallel([

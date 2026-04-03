@@ -18,9 +18,12 @@ export type OfflineLibraryStory = {
   storySlug?: string;
   bookSlug?: string;
   language?: string;
+  variant?: string;
   region?: string;
   level?: string;
+  cefrLevel?: string;
   topic?: string;
+  text?: string | null;
   audioUrl?: string | null;
   localCoverUri?: string | null;
   localAudioUri?: string | null;
@@ -250,6 +253,59 @@ export async function saveStoryOffline(
   return hydrateOfflineAssets(userId, {
     ...current,
     books: nextBooks,
+    stories: nextStories,
+    savedAt: new Date().toISOString(),
+  });
+}
+
+export async function saveStandaloneStoryOffline(
+  userId: string,
+  story: {
+    id: string;
+    slug: string;
+    title: string;
+    text: string;
+    language?: string | null;
+    variant?: string | null;
+    region?: string | null;
+    level?: string | null;
+    cefrLevel?: string | null;
+    topic?: string | null;
+    coverUrl?: string | null;
+    audioUrl?: string | null;
+  }
+): Promise<OfflineLibrarySnapshot> {
+  const current = (await loadOfflineSnapshot(userId)) ?? {
+    books: [],
+    stories: [],
+    progress: [],
+    savedAt: new Date().toISOString(),
+  };
+
+  const storyRecord: OfflineLibraryStory = {
+    id: `story-${story.id}`,
+    storyId: story.id,
+    bookId: "standalone-book",
+    title: story.title,
+    coverUrl: story.coverUrl ?? "",
+    storySlug: story.slug,
+    bookSlug: "standalone-stories",
+    language: story.language ?? undefined,
+    variant: story.variant ?? undefined,
+    region: story.region ?? undefined,
+    level: story.level ?? undefined,
+    cefrLevel: story.cefrLevel ?? undefined,
+    topic: story.topic ?? undefined,
+    text: story.text,
+    audioUrl: story.audioUrl ?? undefined,
+  };
+
+  const nextStories = current.stories.some((s) => s.storyId === story.id)
+    ? current.stories.map((s) => (s.storyId === story.id ? { ...s, ...storyRecord } : s))
+    : [...current.stories, storyRecord];
+
+  return hydrateOfflineAssets(userId, {
+    ...current,
     stories: nextStories,
     savedAt: new Date().toISOString(),
   });
