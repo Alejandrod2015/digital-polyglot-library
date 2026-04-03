@@ -14,43 +14,32 @@ type StudioShellProps = {
 /* ── Sidebar sections ── */
 const NAV_SECTIONS = [
   {
-    label: "BASE",
-    items: [
-      { href: "/studio/monitor", label: "Monitor", icon: "globe", exact: false },
-      { href: "/studio", label: "Resumen", icon: "grid", exact: true },
-      { href: "/studio/metrics", label: "Métricas", icon: "chart", exact: false },
-      { href: "/studio/qa", label: "QA", icon: "shield", exact: false },
-    ],
-  },
-  {
-    label: "AGENTS",
-    items: [
-      { href: "/studio/planner", label: "Planner", icon: "compass", exact: false },
-      { href: "/studio/content", label: "Content Agent", icon: "pen", exact: false },
-      { href: "/studio/drafts", label: "Borradores", icon: "file-text", exact: false },
-    ],
-  },
-  {
     label: "CONTENIDO",
     items: [
-      { href: "/studio/journey-builder", label: "Creador de Journeys", icon: "layers", exact: false },
-      { href: "/studio/journey-stories", label: "Biblioteca de historias", icon: "book", exact: false },
-    ],
-  },
-  {
-    label: "LEGADO",
-    items: [
-      { href: "/studio/sanity", label: "Sanity", icon: "database", exact: false },
+      { href: "/studio/monitor", label: "Generar historia", icon: "pen", exact: false },
+      { href: "/studio/journey-stories", label: "Biblioteca", icon: "book", exact: false },
     ],
   },
   {
     label: "ADMIN",
     items: [
       { href: "/studio/config", label: "Reglas pedagógicas", icon: "sliders", exact: false },
-      { href: "/studio/team", label: "Equipo", icon: "users", exact: false },
     ],
   },
 ];
+
+/* ── Hidden pages (all routes still work, just not in sidebar) ──
+  /studio              → Resumen
+  /studio/metrics      → Métricas
+  /studio/qa           → QA
+  /studio/planner      → Planner
+  /studio/content      → Content Agent
+  /studio/drafts       → Borradores
+  /studio/journey-builder → Creador de Journeys
+  /studio/sanity       → Sanity CMS
+  /studio/team         → Equipo
+  /studio/directive    → Directriz
+*/
 
 /* ── Colors ── */
 const ACCENT = "#14b8a6";
