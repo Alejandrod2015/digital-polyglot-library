@@ -1,6 +1,5 @@
-import type { ExpoConfig } from "expo/config";
-import dotenv from "dotenv";
-import path from "path";
+const dotenv = require("dotenv");
+const path = require("path");
 
 dotenv.config({ path: path.resolve(__dirname, "../../.env.local") });
 
@@ -35,7 +34,7 @@ function resolveApiBaseUrl() {
   }
 }
 
-function resolveClerkPublishableKey(apiBaseUrl: string) {
+function resolveClerkPublishableKey(apiBaseUrl) {
   const raw = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY?.trim() ?? "";
   const targetApiBaseUrl = deviceApiBaseUrl || apiBaseUrl;
   const isProductionApi = targetApiBaseUrl === DEFAULT_PRODUCTION_APP_URL || isProductionBuild;
@@ -51,7 +50,8 @@ function resolveClerkPublishableKey(apiBaseUrl: string) {
 const apiBaseUrl = resolveApiBaseUrl();
 const clerkPublishableKey = resolveClerkPublishableKey(apiBaseUrl);
 
-const config: ExpoConfig = {
+/** @type {import('expo/config').ExpoConfig} */
+const config = {
   name: "Digital Polyglot",
   slug: "digital-polyglot-mobile",
   scheme: "digitalpolyglot",
@@ -92,4 +92,4 @@ const config: ExpoConfig = {
   },
 };
 
-export default config;
+module.exports = config;
