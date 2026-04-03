@@ -16,6 +16,9 @@
     },
     "production": {
       "autoIncrement": false,
+      "env": {
+        "npm_config_workspaces": "true"
+      },
       "ios": {
         "simulator": false
       }
