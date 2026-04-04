@@ -25,6 +25,12 @@ android
 ../../android-twa
 ../../public
 
+# local build artifacts
+*.ipa
+*.apk
+*.aab
+vendor
+
 # local screenshots and loose files
 ../../*.png
 ../../*.jpg
