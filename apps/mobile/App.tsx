@@ -68,7 +68,6 @@ function MobileAppRoot() {
     useState<PendingReminderNavigation | null>(null);
   const { isLoaded: clerkLoaded, isSignedIn: isClerkSignedIn, getToken } = useAuth();
   const { signOut: clerkSignOut } = useClerk();
-
   const handleAuthenticated = useCallback(async (token: string) => {
     console.log("[mobile-auth] handleAuthenticated:start", { tokenLength: token.length });
     await saveMobileSessionToken(token);
@@ -265,6 +264,7 @@ function MobileAppRoot() {
           <AuthScreen
             onAuthenticated={(token) => void handleAuthenticated(token)}
             onContinuePreview={() => setPreviewModeOnly(true)}
+            onClerkSessionCreated={() => void handleNativeSessionSync()}
           />
         </View>
       </SafeAreaView>
