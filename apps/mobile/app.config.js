@@ -65,13 +65,11 @@ const config = {
     "expo-web-browser",
     "expo-notifications",
     "./plugins/without-apple-signin",
-    "./plugins/patch-clerk-view-factory",
-    "@clerk/expo",
   ],
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.digitalpolyglot.mobile",
-    buildNumber: "25",
+    buildNumber: "27",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },
