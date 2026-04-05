@@ -1700,7 +1700,7 @@ export function MobileLibraryShell(args: {
       setRemoteEntitlementLoading(true);
       setRemoteProgressLoading(true);
 
-      const [booksResult, storiesResult, entitlementResult, progressResult, continueResult] = await Promise.allSettled([
+      const [booksResult, storiesResult, entitlementResult, progressResult, continueResult, journeyResult] = await Promise.allSettled([
         apiFetch<RemoteLibraryBook[]>({
           baseUrl: mobileConfig.apiBaseUrl,
           path: "/api/mobile/library?type=book",
@@ -1734,11 +1734,16 @@ export function MobileLibraryShell(args: {
           path: "/api/continue-listening",
           token: sessionToken,
         }),
+        apiFetch<MobileJourneyPayload>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/mobile/journey",
+          token: sessionToken,
+        }),
       ]);
 
       if (cancelled) return;
 
-      const unauthorized = [booksResult, storiesResult, entitlementResult, progressResult, continueResult].some(
+      const unauthorized = [booksResult, storiesResult, entitlementResult, progressResult, continueResult, journeyResult].some(
         (result) => result.status === "rejected" && isApiErrorStatus(result.reason, 401)
       );
       if (unauthorized) {
@@ -1788,6 +1793,12 @@ export function MobileLibraryShell(args: {
         setRemoteContinueListening(continueResult.value);
       } else {
         setRemoteContinueListening([]);
+      }
+
+      if (journeyResult.status === "fulfilled") {
+        setRemoteJourney(journeyResult.value);
+      } else {
+        setRemoteJourney(null);
       }
 
       setRemoteError(errors.length > 0 ? errors.join("  ") : null);
@@ -1842,25 +1853,6 @@ export function MobileLibraryShell(args: {
     },
     [sessionToken]
   );
-
-  const prevTargetLanguagesRef = useRef<string[]>(preferences.targetLanguages);
-  useEffect(() => {
-    const prev = prevTargetLanguagesRef.current;
-    const next = preferences.targetLanguages;
-    prevTargetLanguagesRef.current = next;
-    const changed = prev.length !== next.length || prev.some((lang, i) => lang !== next[i]);
-    if (!changed) return;
-    if (next.length === 1) {
-      setActiveJourneyLanguage(next[0]);
-    } else {
-      setActiveJourneyLanguage(null);
-    }
-  }, [preferences.targetLanguages]);
-
-  useEffect(() => {
-    if (!activeJourneyLanguage || !sessionToken) return;
-    void loadJourneyForLanguage(activeJourneyLanguage);
-  }, [activeJourneyLanguage, sessionToken, loadJourneyForLanguage]);
 
   useEffect(() => {
     setSelectedBookDescriptionExpanded(false);
@@ -7883,7 +7875,7 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  const showJourneyHub = !activeJourneyLanguage && preferences.targetLanguages.length !== 1;
+  const showJourneyHub = !activeJourneyLanguage && !remoteJourney?.tracks?.length;
 
   const journeyView = (
     <>
@@ -7903,11 +7895,11 @@ export function MobileLibraryShell(args: {
               </>
             ) : (
               <>
-                {activeJourneyLanguage && preferences.targetLanguages.length !== 1 ? (
+                {activeJourneyLanguage ? (
                   <Text style={styles.sectionEyebrow}>Journey</Text>
                 ) : null}
                 <Text style={styles.journeyHeroTitle}>
-                  {activeJourneyLanguage && preferences.targetLanguages.length > 1
+                  {activeJourneyLanguage
                     ? `Journey · ${activeJourneyLanguage}`
                     : "Journey"}
                 </Text>
@@ -7929,7 +7921,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyLanguage && preferences.targetLanguages.length !== 1 ? (
+      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyLanguage && activeJourneyLanguage ? (
         <View style={styles.section}>
           <Pressable
             onPress={() => {
@@ -7960,7 +7952,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && journeyVariantPickerOpen && preferences.targetLanguages.length !== 1 ? (
+      {!showJourneyHub && journeyVariantPickerOpen && activeJourneyLanguage ? (
         <View style={styles.section}>
           <Pressable
             onPress={() => {
