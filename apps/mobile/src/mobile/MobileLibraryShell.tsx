@@ -4867,9 +4867,10 @@ export function MobileLibraryShell(args: {
       if (practiceLaunchContext.source === "journey") {
         try {
           const previousJourneyPayload = remoteJourney;
+          const journeyLang = activeJourneyLanguage || remoteJourney?.language || "Spanish";
           const payload = await apiFetch<MobileJourneyPayload>({
             baseUrl: mobileConfig.apiBaseUrl,
-            path: "/api/mobile/journey",
+            path: `/api/mobile/journey?language=${encodeURIComponent(journeyLang)}`,
             token: sessionToken,
           });
           setRemoteJourney(payload);
@@ -7845,9 +7846,10 @@ export function MobileLibraryShell(args: {
     if (!saved || !sessionToken) return;
 
     try {
+      const journeyLang = activeJourneyLanguage || remoteJourney?.language || "Spanish";
       const payload = await apiFetch<MobileJourneyPayload>({
         baseUrl: mobileConfig.apiBaseUrl,
-        path: "/api/mobile/journey",
+        path: `/api/mobile/journey?language=${encodeURIComponent(journeyLang)}`,
         token: sessionToken,
       });
       setRemoteJourney(payload);
