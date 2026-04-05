@@ -1954,6 +1954,11 @@ export function MobileLibraryShell(args: {
       const seen = new Set([...seenIds, ...dismissedCelebrationIds]);
       const next =
         buildGamificationCelebrations(remoteProgress.gamification).find((item) => !seen.has(item.id)) ?? null;
+      if (next) {
+        const allIds = buildGamificationCelebrations(remoteProgress.gamification).map((c) => c.id);
+        const updatedSeen = Array.from(new Set([...seenIds, ...allIds]));
+        void saveSeenGamificationCelebrations(sessionUserId, updatedSeen);
+      }
       setActiveGamificationCelebration(next);
     }
 
