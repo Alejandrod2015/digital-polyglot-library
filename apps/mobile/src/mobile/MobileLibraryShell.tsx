@@ -1529,6 +1529,7 @@ export function MobileLibraryShell(args: {
   const [journeyDetailTopicId, setJourneyDetailTopicId] = useState<string | null>(null);
   const [journeyMilestone, setJourneyMilestone] = useState<JourneyMilestone | null>(null);
   const [activeJourneyLanguage, setActiveJourneyLanguage] = useState<string | null>(null);
+  const [journeyLanguageLoading, setJourneyLanguageLoading] = useState(false);
   const [journeyVariantPickerOpen, setJourneyVariantPickerOpen] = useState(false);
   const [journeyInsightsByLanguage, setJourneyInsightsByLanguage] = useState<Record<string, LanguageInsightsSummary | null>>({});
   const effectivePlan = getPlan(remoteEntitlement?.plan ?? sessionPlan);
@@ -1681,6 +1682,7 @@ export function MobileLibraryShell(args: {
       setRemoteContinueListening([]);
       setRemoteJourney(null);
       setActiveJourneyLanguage(null);
+      setJourneyLanguageLoading(false);
       setJourneyVariantPickerOpen(false);
       setJourneyInsightsByLanguage({});
       return;
@@ -1833,6 +1835,7 @@ export function MobileLibraryShell(args: {
       setJourneyDetailTopicId(null);
       setJourneyVariantPickerOpen(false);
       setRemoteJourney(null);
+      setJourneyLanguageLoading(true);
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
           baseUrl: mobileConfig.apiBaseUrl,
@@ -1858,6 +1861,8 @@ export function MobileLibraryShell(args: {
         }
       } catch {
         setRemoteJourney(null);
+      } finally {
+        setJourneyLanguageLoading(false);
       }
     },
     [sessionToken]
@@ -7992,14 +7997,18 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && !loadingRemote && !activeJourneyTrack ? (
+      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && !loadingRemote && !journeyLanguageLoading && !activeJourneyTrack ? (
         <View style={styles.section}>
           <View style={styles.emptyCard}>
-            <Text style={styles.emptyTitle}>Journey is not available right now</Text>
+            <Text style={styles.emptyTitle}>
+              {activeJourneyLanguage ? `No ${activeJourneyLanguage} content yet` : "Journey is not available right now"}
+            </Text>
             <Text style={styles.metaLine}>
-              {remoteError?.trim()
-                ? remoteError
-                : "Make sure the local web server is running, then reopen Journey."}
+              {activeJourneyLanguage
+                ? "Content for this language is coming soon."
+                : remoteError?.trim()
+                  ? remoteError
+                  : "Make sure the local web server is running, then reopen Journey."}
             </Text>
           </View>
         </View>
