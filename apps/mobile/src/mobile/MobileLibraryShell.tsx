@@ -13,6 +13,7 @@ import {
   View,
 } from "react-native";
 import * as WebBrowser from "expo-web-browser";
+import { Image as ExpoImage } from "expo-image";
 import { Feather, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   CEFR_LEVEL_LABELS,
@@ -4267,6 +4268,16 @@ export function MobileLibraryShell(args: {
       })),
     [preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
   );
+
+  useEffect(() => {
+    const urls = [
+      ...latestBookCards.slice(0, 4).map((c) => c.coverUrl),
+      ...continueReadingCards.slice(0, 3).map((c) => c.coverUrl),
+    ].filter(Boolean);
+    if (urls.length > 0) {
+      ExpoImage.prefetch(urls);
+    }
+  }, [latestBookCards, continueReadingCards]);
 
   const selectedBookContinueStory = useMemo(() => {
     if (!selectedBook) return null;
