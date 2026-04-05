@@ -1829,6 +1829,7 @@ export function MobileLibraryShell(args: {
       setSelectedJourneyLevelId(null);
       setSelectedJourneyTopicId(null);
       setJourneyDetailTopicId(null);
+      setRemoteJourney(null);
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
           baseUrl: mobileConfig.apiBaseUrl,
