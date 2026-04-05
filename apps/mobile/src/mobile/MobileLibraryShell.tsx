@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
 import {
+  Alert,
   Animated,
   Easing,
   Linking,
@@ -4303,6 +4304,24 @@ export function MobileLibraryShell(args: {
   function handleBottomTabPress(tab: BottomTab) {
     if (tab === "signin") {
       onRequestSignIn?.();
+      return;
+    }
+    if (activeScreen === "settings" && preferencesDirty) {
+      Alert.alert(
+        "Unsaved changes",
+        "You have unsaved preferences. Discard them?",
+        [
+          { text: "Stay", style: "cancel" },
+          {
+            text: "Discard",
+            style: "destructive",
+            onPress: () => {
+              setPreferences(savedPreferences);
+              setActiveScreen(tab);
+            },
+          },
+        ]
+      );
       return;
     }
     setActiveScreen(tab);
