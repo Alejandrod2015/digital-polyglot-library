@@ -1530,6 +1530,7 @@ export function MobileLibraryShell(args: {
   const [journeyMilestone, setJourneyMilestone] = useState<JourneyMilestone | null>(null);
   const [activeJourneyLanguage, setActiveJourneyLanguage] = useState<string | null>(null);
   const [journeyLanguageLoading, setJourneyLanguageLoading] = useState(false);
+  const journeyLanguageFetchedRef = useRef(false);
   const [journeyVariantPickerOpen, setJourneyVariantPickerOpen] = useState(false);
   const [journeyInsightsByLanguage, setJourneyInsightsByLanguage] = useState<Record<string, LanguageInsightsSummary | null>>({});
   const effectivePlan = getPlan(remoteEntitlement?.plan ?? sessionPlan);
@@ -1685,6 +1686,7 @@ export function MobileLibraryShell(args: {
       setJourneyLanguageLoading(false);
       setJourneyVariantPickerOpen(false);
       setJourneyInsightsByLanguage({});
+      journeyLanguageFetchedRef.current = false;
       return;
     }
 
@@ -1795,7 +1797,9 @@ export function MobileLibraryShell(args: {
 
       if (journeyResult.status === "fulfilled") {
         const journeyPayload = journeyResult.value;
-        setRemoteJourney(journeyPayload);
+        if (!journeyLanguageFetchedRef.current) {
+          setRemoteJourney(journeyPayload);
+        }
         const firstTrackInsights = journeyPayload.tracks?.[0]?.insights ?? null;
         const journeyLang = journeyPayload.language ?? "Spanish";
         setJourneyInsightsByLanguage((prev) => ({
@@ -1810,7 +1814,7 @@ export function MobileLibraryShell(args: {
               }
             : null,
         }));
-      } else {
+      } else if (!journeyLanguageFetchedRef.current) {
         setRemoteJourney(null);
       }
 
@@ -1836,6 +1840,7 @@ export function MobileLibraryShell(args: {
       setJourneyVariantPickerOpen(false);
       setRemoteJourney(null);
       setJourneyLanguageLoading(true);
+      journeyLanguageFetchedRef.current = true;
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
           baseUrl: mobileConfig.apiBaseUrl,
