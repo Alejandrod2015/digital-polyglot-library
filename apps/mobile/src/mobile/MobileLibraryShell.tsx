@@ -1512,7 +1512,7 @@ export function MobileLibraryShell(args: {
   const [remoteError, setRemoteError] = useState<string | null>(null);
   const [remoteProgress, setRemoteProgress] = useState<MobileProgressPayload | null>(null);
   const [activeGamificationCelebration, setActiveGamificationCelebration] = useState<GamificationCelebration | null>(null);
-  const dismissedCelebrationIdsRef = useRef<Set<string>>(new Set());
+  const [dismissedCelebrationIds, setDismissedCelebrationIds] = useState<Set<string>>(new Set());
   const celebrationAnim = useRef(new Animated.Value(0)).current;
   const journeyMilestoneAnim = useRef(new Animated.Value(0)).current;
   const journeyMilestoneSoundRef = useRef<Audio.Sound | null>(null);
@@ -1966,7 +1966,7 @@ export function MobileLibraryShell(args: {
 
       const seenIds = await loadSeenGamificationCelebrations(sessionUserId);
       if (cancelled) return;
-      const seen = new Set([...seenIds, ...dismissedCelebrationIdsRef.current]);
+      const seen = new Set([...seenIds, ...dismissedCelebrationIds]);
       const next =
         buildGamificationCelebrations(remoteProgress.gamification).find((item) => !seen.has(item.id)) ?? null;
       setActiveGamificationCelebration(next);
@@ -1976,7 +1976,7 @@ export function MobileLibraryShell(args: {
     return () => {
       cancelled = true;
     };
-  }, [remoteProgress, sessionUserId]);
+  }, [dismissedCelebrationIds, remoteProgress, sessionUserId]);
 
   useEffect(() => {
     if (!activeGamificationCelebration) {
@@ -5361,7 +5361,11 @@ export function MobileLibraryShell(args: {
     const allIds = remoteProgress?.gamification
       ? buildGamificationCelebrations(remoteProgress.gamification).map((c) => c.id)
       : [_id];
-    for (const id of allIds) dismissedCelebrationIdsRef.current.add(id);
+    setDismissedCelebrationIds((prev) => {
+      const next = new Set(prev);
+      for (const id of allIds) next.add(id);
+      return next;
+    });
     setActiveGamificationCelebration(null);
     const nextSeen = [
       ...(await loadSeenGamificationCelebrations(sessionUserId)),
