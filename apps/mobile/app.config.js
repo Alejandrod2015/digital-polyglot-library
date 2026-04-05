@@ -69,7 +69,7 @@ const config = {
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.digitalpolyglot.mobile",
-    buildNumber: "29",
+    buildNumber: "30",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },
