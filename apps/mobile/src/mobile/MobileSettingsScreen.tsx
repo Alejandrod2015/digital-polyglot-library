@@ -70,6 +70,7 @@ type Props = {
   pickerVisible: boolean;
   pickerTitle: string;
   onClosePicker: () => void;
+  onSavePicker?: () => void;
   pickerOptions: PickerOption[];
   showInterestComposer: boolean;
   customInterestInput: string;
@@ -108,6 +109,7 @@ export function MobileSettingsScreen({
   pickerVisible,
   pickerTitle,
   onClosePicker,
+  onSavePicker,
   pickerOptions,
   showInterestComposer,
   customInterestInput,
@@ -129,7 +131,7 @@ export function MobileSettingsScreen({
         </View>
       </View>
 
-      <View style={[styles.card, styles.accountCard]}>
+      <View style={styles.settingsSections}>
         {achievements ? (
           <View style={[styles.card, styles.accountCard]}>
             <View style={styles.sectionHeader}>
@@ -291,79 +293,46 @@ export function MobileSettingsScreen({
           <Text style={styles.helperText}>{reminderHint}</Text>
         </View>
 
-        <View style={[styles.card, styles.preferenceCard]}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>Privacy & legal</Text>
-              <Text style={styles.sectionTitle}>Handled inside the app</Text>
+        <View style={styles.settingsLegalSection}>
+          <Text style={styles.sectionEyebrow}>Privacy & legal</Text>
+          <View style={styles.settingsLegalRow}>
+            <Feather name="shield" size={16} color="#9cb0c9" />
+            <View style={styles.settingsLegalCopy}>
+              <Text style={styles.settingsLegalTitle}>Privacy</Text>
+              <Text style={styles.settingsLegalText}>Account, progress, favorites and usage data for authentication, personalization and billing.</Text>
             </View>
           </View>
-
-          <View style={styles.legalStack}>
-            <View style={styles.legalCard}>
-              <View style={styles.settingsActionRow}>
-                <Feather name="shield" size={18} color="#dbe9ff" />
-                <View style={styles.settingsActionCopy}>
-                  <Text style={styles.settingsActionTitle}>Privacy</Text>
-                  <Text style={styles.settingsActionText}>
-                    We store account, billing status, progress, favorites and usage events to run the product.
-                  </Text>
-                </View>
-              </View>
-              <Text style={styles.legalBody}>
-                Data is used for authentication, personalization, billing, support, fraud prevention and product improvement.
-              </Text>
+          <View style={styles.settingsLegalDivider} />
+          <View style={styles.settingsLegalRow}>
+            <Feather name="sliders" size={16} color="#9cb0c9" />
+            <View style={styles.settingsLegalCopy}>
+              <Text style={styles.settingsLegalTitle}>Cookies</Text>
+              <Text style={styles.settingsLegalText}>Essential storage for sign-in and core behavior. Analytics is consent-based.</Text>
             </View>
-
-            <View style={styles.legalCard}>
-              <View style={styles.settingsActionRow}>
-                <Feather name="sliders" size={18} color="#dbe9ff" />
-                <View style={styles.settingsActionCopy}>
-                  <Text style={styles.settingsActionTitle}>Cookies</Text>
-                  <Text style={styles.settingsActionText}>
-                    Essential storage keeps sign-in and core app behavior working. Analytics stays consent-based.
-                  </Text>
-                </View>
-              </View>
+          </View>
+          <View style={styles.settingsLegalDivider} />
+          <View style={styles.settingsLegalRow}>
+            <Feather name="file-text" size={16} color="#9cb0c9" />
+            <View style={styles.settingsLegalCopy}>
+              <Text style={styles.settingsLegalTitle}>Terms</Text>
+              <Text style={styles.settingsLegalText}>Personal, non-exclusive access subject to fair use and platform policies.</Text>
             </View>
-
-            <View style={styles.legalCard}>
-              <View style={styles.settingsActionRow}>
-                <Feather name="file-text" size={18} color="#dbe9ff" />
-                <View style={styles.settingsActionCopy}>
-                  <Text style={styles.settingsActionTitle}>Terms</Text>
-                  <Text style={styles.settingsActionText}>
-                    Your access is personal, non-exclusive, and subject to fair use, billing rules and platform policies.
-                  </Text>
-                </View>
-              </View>
+          </View>
+          <View style={styles.settingsLegalDivider} />
+          <View style={styles.settingsLegalRow}>
+            <Feather name="trash-2" size={16} color="#9cb0c9" />
+            <View style={styles.settingsLegalCopy}>
+              <Text style={styles.settingsLegalTitle}>Data deletion</Text>
+              <Text style={styles.settingsLegalText}>Request account or data deletion directly from iPhone.</Text>
             </View>
-
-            <View style={styles.legalCard}>
-              <View style={styles.settingsActionRow}>
-                <Feather name="trash-2" size={18} color="#dbe9ff" />
-                <View style={styles.settingsActionCopy}>
-                  <Text style={styles.settingsActionTitle}>Data deletion</Text>
-                  <Text style={styles.settingsActionText}>
-                    Request account or data deletion directly from iPhone without opening the web app.
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.legalActions}>
-                <Pressable
-                  onPress={() => void Linking.openURL("mailto:support@digitalpolyglot.com?subject=Data%20Deletion%20Request")}
-                  style={[styles.inlineButton, styles.primaryButton]}
-                >
-                  <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Request deletion</Text>
-                </Pressable>
-                <Pressable
-                  onPress={() => void Linking.openURL("mailto:support@digitalpolyglot.com?subject=Privacy%20Question")}
-                  style={styles.inlineButton}
-                >
-                  <Text style={styles.inlineButtonText}>Contact support</Text>
-                </Pressable>
-              </View>
-            </View>
+          </View>
+          <View style={styles.legalActions}>
+            <Pressable onPress={() => void Linking.openURL("mailto:support@digitalpolyglot.com?subject=Data%20Deletion%20Request")} style={[styles.inlineButton, styles.primaryButton]}>
+              <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Request deletion</Text>
+            </Pressable>
+            <Pressable onPress={() => void Linking.openURL("mailto:support@digitalpolyglot.com?subject=Privacy%20Question")} style={styles.inlineButton}>
+              <Text style={styles.inlineButtonText}>Contact support</Text>
+            </Pressable>
           </View>
         </View>
 
@@ -414,6 +383,15 @@ export function MobileSettingsScreen({
                 </Pressable>
               ))}
             </View>
+
+            {onSavePicker ? (
+              <Pressable
+                onPress={onSavePicker}
+                style={[styles.inlineButton, styles.primaryButton, { marginTop: 8 }]}
+              >
+                <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Save</Text>
+              </Pressable>
+            ) : null}
 
             {showInterestComposer ? (
               <>
@@ -709,8 +687,36 @@ const styles = StyleSheet.create({
   filterChipTextActive: {
     color: "#10233a",
   },
-  legalStack: {
+  settingsSections: {
+    gap: 16,
+  },
+  settingsLegalSection: {
+    gap: 14,
+    paddingTop: 8,
+  },
+  settingsLegalRow: {
+    flexDirection: "row",
     gap: 12,
+    alignItems: "flex-start",
+    paddingVertical: 4,
+  },
+  settingsLegalCopy: {
+    flex: 1,
+    gap: 2,
+  },
+  settingsLegalTitle: {
+    color: "#f5f7fb",
+    fontSize: 15,
+    fontWeight: "700",
+  },
+  settingsLegalText: {
+    color: "#9cb0c9",
+    fontSize: 13,
+    lineHeight: 19,
+  },
+  settingsLegalDivider: {
+    height: 1,
+    backgroundColor: "#1e3450",
   },
   legalCard: {
     gap: 10,

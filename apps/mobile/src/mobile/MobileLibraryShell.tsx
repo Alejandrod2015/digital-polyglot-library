@@ -7002,28 +7002,35 @@ export function MobileLibraryShell(args: {
 
   const settingsPickerOptions =
     settingsPickerSection === "language"
-      ? LANGUAGE_OPTIONS.map((language) => ({
-          key: `settings-language-${language}`,
-          label: language,
-          active: preferences.targetLanguages[0] === language,
-          onPress: () => {
-            setPreferences((current) => ({
-              ...current,
-              targetLanguages: [language],
-              preferredVariant:
-                (VARIANT_OPTIONS_BY_LANGUAGE[language.toLowerCase()] ?? []).some(
-                  (option) => option.value === current.preferredVariant
-                )
-                  ? current.preferredVariant
-                  : null,
-              preferredRegion: getRegionOptionsForLanguage(language).includes(current.preferredRegion ?? "")
-                ? current.preferredRegion
-                : null,
-            }));
-            setPreferencesStatus("idle");
-            setSettingsPickerSection(null);
+      ? [
+          {
+            key: "settings-language-none",
+            label: "No preference",
+            active: preferences.targetLanguages.length === 0,
+            onPress: () => {
+              setPreferences((current) => ({
+                ...current,
+                targetLanguages: [],
+              }));
+              setPreferencesStatus("idle");
+            },
           },
-        }))
+          ...LANGUAGE_OPTIONS.filter((l) => l !== "Chinese").map((language) => ({
+            key: `settings-language-${language}`,
+            label: language,
+            active: preferences.targetLanguages.includes(language),
+            onPress: () => {
+              setPreferences((current) => {
+                const has = current.targetLanguages.includes(language);
+                const next = has
+                  ? current.targetLanguages.filter((l) => l !== language)
+                  : [...current.targetLanguages, language];
+                return { ...current, targetLanguages: next };
+              });
+              setPreferencesStatus("idle");
+            },
+          })),
+        ]
       : settingsPickerSection === "level"
         ? [
             {
@@ -7278,6 +7285,10 @@ export function MobileLibraryShell(args: {
       pickerVisible={settingsPickerSection !== null}
       pickerTitle={settingsPickerTitle}
       onClosePicker={() => setSettingsPickerSection(null)}
+      onSavePicker={settingsPickerSection === "language" ? () => {
+        setSettingsPickerSection(null);
+        void savePreferences();
+      } : undefined}
       pickerOptions={settingsPickerOptions}
       showInterestComposer={settingsPickerSection === "interests"}
       customInterestInput={customInterestInput}
