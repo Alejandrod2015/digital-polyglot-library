@@ -16,9 +16,11 @@ enum StudioRole {
 }
 
 enum AgentKind {
+  curriculum
   planner
   content
   qa
+  translation
 }
 
 enum AgentRunStatus {
@@ -37,6 +39,60 @@ enum AgentArtifactStatus {
   needs_review
   approved
   published
+}
+
+model Topic {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  label     String
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("dp_topics_v1")
+  @@index([sortOrder])
+}
+
+model Language {
+  id        String   @id @default(cuid())
+  code      String   @unique
+  label     String
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  variants LanguageVariant[]
+
+  @@map("dp_languages_v1")
+  @@index([sortOrder])
+}
+
+model LanguageVariant {
+  id         String   @id @default(cuid())
+  languageId String
+  code       String
+  label      String
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  language Language @relation(fields: [languageId], references: [id], onDelete: Cascade)
+
+  @@map("dp_language_variants_v1")
+  @@unique([languageId, code])
+  @@index([languageId])
+}
+
+model Level {
+  id        String   @id @default(cuid())
+  code      String   @unique
+  label     String
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("dp_levels_v1")
+  @@index([sortOrder])
 }
 
 model StudioMember {
@@ -131,6 +187,60 @@ model QAReview {
   @@index([storyDraftId])
   @@index([sourceStoryId])
   @@index([status, createdAt])
+}
+
+enum JourneyStatus {
+  active
+  completed
+  archived
+}
+
+model Journey {
+  id              String        @id @default(cuid())
+  name            String
+  language        String
+  variant         String
+  levels          String[]
+  topics          String[]
+  storiesPerTopic Int           @default(1)
+  status          JourneyStatus @default(active)
+  createdBy       String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  stories JourneyStory[]
+
+  @@map("dp_journeys_v1")
+  @@index([status])
+  @@index([language, variant])
+}
+
+model JourneyStory {
+  id         String              @id @default(cuid())
+  journeyId  String
+  level      String
+  topic      String
+  slotIndex  Int
+  status     AgentArtifactStatus @default(draft)
+  title      String?
+  slug       String?
+  text       String?
+  synopsis   String?
+  vocab      Json?
+  wordCount  Int?
+  vocabCount Int?
+  sanityId   String?
+  coverDone  Boolean             @default(false)
+  error      String?
+  createdAt  DateTime            @default(now())
+  updatedAt  DateTime            @updatedAt
+
+  journey Journey @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+
+  @@map("dp_journey_stories_v1")
+  @@index([journeyId, level, topic])
+  @@index([status])
+  @@unique([journeyId, level, topic, slotIndex])
 }
 
 model StudioConfig {

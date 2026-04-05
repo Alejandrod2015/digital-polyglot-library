@@ -20,6 +20,7 @@ import StoryContent from "@/components/StoryContent";
 import VocabPanel from "@/components/VocabPanel";
 import JourneyStoryReadTracker from "@/components/JourneyStoryReadTracker";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
+import { getJourneyStoryBySlug } from "@/lib/journeyStories";
 import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegments";
 import {
   isSanityAssetUrl,
@@ -195,6 +196,27 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
     };
   }
 
+  // Check journey stories (PostgreSQL) first
+  const journeyStory = await getJourneyStoryBySlug(slug);
+  if (journeyStory) {
+    return {
+      id: journeyStory.id,
+      slug: journeyStory.slug,
+      title: journeyStory.title,
+      text: journeyStory.text,
+      vocab: journeyStory.vocabRaw,
+      audioUrl: journeyStory.audioUrl,
+      audioStatus: null,
+      language: journeyStory.language,
+      region: journeyStory.region,
+      level: journeyStory.level,
+      coverUrl: journeyStory.coverUrl,
+      source: "standalone",
+      audioSegments: null,
+    };
+  }
+
+  // Fall back to Sanity standalone stories
   const standaloneStory = await getStandaloneStoryBySlug(slug);
   if (!standaloneStory) return null;
 

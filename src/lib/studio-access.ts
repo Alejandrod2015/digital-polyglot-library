@@ -55,6 +55,7 @@ const ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
 
 // ─── Path → permission mapping ─────────────────────────────────
 const PATH_PERMISSIONS: Array<{ pattern: RegExp; permission: string }> = [
+  { pattern: /^\/studio\/settings/, permission: "studio:settings" },
   { pattern: /^\/studio\/config/, permission: "studio:config" },
   { pattern: /^\/studio\/team/, permission: "studio:team" },
   { pattern: /^\/studio\/metrics/, permission: "studio:metrics" },

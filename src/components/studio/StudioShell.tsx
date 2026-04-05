@@ -14,16 +14,29 @@ type StudioShellProps = {
 /* ── Sidebar sections ── */
 const NAV_SECTIONS = [
   {
+    label: "",
+    items: [
+      { href: "/studio", label: "Resumen", icon: "grid", exact: true },
+    ],
+  },
+  {
     label: "CONTENIDO",
     items: [
-      { href: "/studio/monitor", label: "Generar historia", icon: "pen", exact: false },
+      { href: "/studio/monitor", label: "Journey Manager", icon: "pen", exact: false },
       { href: "/studio/journey-stories", label: "Biblioteca", icon: "book", exact: false },
+    ],
+  },
+  {
+    label: "PLANNING",
+    items: [
+      { href: "/studio/planning", label: "Temas, Idiomas y Niveles", icon: "grid", exact: false },
     ],
   },
   {
     label: "ADMIN",
     items: [
       { href: "/studio/config", label: "Reglas pedagógicas", icon: "sliders", exact: false },
+      { href: "/studio/settings", label: "Settings", icon: "settings", exact: false },
     ],
   },
 ];
@@ -75,6 +88,8 @@ function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
       return <svg {...props}><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><polyline points="13 2 13 9 20 9" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="15" y2="17" /></svg>;
     case "sliders":
       return <svg {...props}><line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" /><line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" /><line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" /><line x1="1" y1="14" x2="7" y2="14" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="17" y1="16" x2="23" y2="16" /></svg>;
+    case "settings":
+      return <svg {...props}><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>;
     default:
       return null;
   }
@@ -161,22 +176,24 @@ export default function StudioShell({
 
         {/* Nav sections */}
         <nav style={{ padding: "12px 0", flex: 1 }}>
-          {NAV_SECTIONS.map((section) => (
-            <div key={section.label} style={{ padding: "0 12px", marginBottom: 8 }}>
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 10,
-                  fontWeight: 600,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: "var(--muted)",
-                  padding: "12px 8px 6px",
-                  opacity: 0.7,
-                }}
-              >
-                {section.label}
-              </span>
+          {NAV_SECTIONS.map((section, si) => (
+            <div key={section.label || `s${si}`} style={{ padding: "0 12px", marginBottom: 8 }}>
+              {section.label && (
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: 10,
+                    fontWeight: 600,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: "var(--muted)",
+                    padding: "12px 8px 6px",
+                    opacity: 0.7,
+                  }}
+                >
+                  {section.label}
+                </span>
+              )}
               {section.items.map((item) => {
                 const active = item.exact
                   ? pathname === item.href

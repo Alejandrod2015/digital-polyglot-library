@@ -7,6 +7,7 @@ import {
   getPublishedStandaloneStories,
   isJourneyAssignedStandaloneStory,
 } from "@/lib/standaloneStories";
+import { getPublishedJourneyStories } from "@/lib/journeyStories";
 import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
 export const revalidate = 300;
 
@@ -137,9 +138,28 @@ export default async function ExploreStoriesPage({ searchParams }: ExploreStorie
         : "")
   );
 
-  const standaloneStories = await getPublishedStandaloneStories();
+  const [standaloneStories, journeyStories] = await Promise.all([
+    getPublishedStandaloneStories(),
+    getPublishedJourneyStories(),
+  ]);
   const allStories = [
     ...extractStories(),
+    // Journey stories from PostgreSQL
+    ...journeyStories.map((story) => ({
+      id: `journey:${story.id}`,
+      bookSlug: "standalone",
+      bookTitle: "Journey Stories",
+      storySlug: story.slug,
+      storyTitle: story.title || "Untitled story",
+      language: story.language ?? "",
+      region: story.region ?? undefined,
+      level: story.level ?? "",
+      coverUrl: story.coverUrl?.trim() ? story.coverUrl : "/covers/default.jpg",
+      audioSrc: story.audioUrl ?? undefined,
+      topic: story.topic ?? undefined,
+      topics: [...toTopicList(story.topic), ...toTopicList(story.theme)],
+    })),
+    // Sanity standalone stories
     ...standaloneStories
       .filter((story) => !isJourneyAssignedStandaloneStory(story))
       .map((story) => ({

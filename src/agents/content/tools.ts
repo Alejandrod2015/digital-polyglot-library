@@ -56,6 +56,8 @@ export async function generateStoryWithLLM(params: {
   journeyFocus: string;
   variant?: string;
   qaFeedback?: string;
+  testMode?: boolean;
+  existingTitles?: string[];
 }): Promise<{ text: string; title: string }> {
   const rule = getRuleForLevel(params.level);
   const pedagogicalContext = buildContentPromptContext(
@@ -72,10 +74,22 @@ export async function generateStoryWithLLM(params: {
     ? `\n\n## Previous QA Feedback (fix these issues):\n${params.qaFeedback}`
     : "";
 
+  const titleClause = params.title
+    ? `- Story title suggestion: "${params.title}" (you may improve it)`
+    : `- Create an original, evocative title in ${params.language} that hooks the reader. Avoid generic titles like "The Festival" or "A Day in the City". Use specific imagery, a character's name, or an intriguing situation (e.g. "Lena und der vergessene Kuchen", "El secreto del abuelo en la cocina").`;
+
+  const existingTitlesClause = params.existingTitles?.length
+    ? `\n- NEVER reuse these existing titles (or close variations): ${params.existingTitles.map((t) => `"${t}"`).join(", ")}. Use completely different characters, settings, and situations.`
+    : "";
+
+  const testModeClause = params.testMode
+    ? `\n\n## TEST MODE — CRITICAL OVERRIDE\n- Write EXACTLY 2-3 sentences (40-60 words maximum). This is a test.\n- Keep the story minimal but complete (beginning, middle, end).\n- Use only 1 paragraph wrapped in <blockquote>.`
+    : "";
+
   const prompt = `${pedagogicalContext}
 
 ## Additional Requirements
-- Story title suggestion: "${params.title}" (you may improve it)
+${titleClause}
 - Journey focus: ${params.journeyFocus}
 ${variantClause}
 - Write the story entirely in ${params.language}. Do NOT write in English.
@@ -83,7 +97,8 @@ ${variantClause}
 - Use a close third-person narrator with internal focalization.
 - Keep paragraphs short and dynamic (1-3 sentences).
 - Include dialogue to keep pacing lively.
-${feedbackClause}
+- Make the story specific and vivid — use named characters, a concrete setting, and a small conflict or surprise. Avoid vague or generic plots.${existingTitlesClause}
+${feedbackClause}${testModeClause}
 
 Return ONLY valid JSON with this exact structure:
 {
@@ -120,10 +135,11 @@ export async function generateVocabFromText(params: {
   language: string;
   level: string;
   topic: string;
+  testMode?: boolean;
 }): Promise<Array<{ word: string; translation: string; type: string; example?: string }>> {
   const rule = getRuleForLevel(params.level);
-  const minItems = rule?.vocabDensity.minItems ?? 8;
-  const maxItems = rule?.vocabDensity.maxItems ?? 20;
+  const minItems = params.testMode ? 3 : (rule?.vocabDensity.minItems ?? 8);
+  const maxItems = params.testMode ? 5 : (rule?.vocabDensity.maxItems ?? 20);
 
   const prompt = `Analyze the following ${params.language} story and extract the ${minItems}-${maxItems} most pedagogically valuable vocabulary items for a ${params.level.toUpperCase()} learner.
 
