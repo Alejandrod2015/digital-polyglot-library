@@ -1,16 +1,24 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-const LANGUAGE_FLAGS: Record<string, string> = {
-  English: "🇬🇧",
-  Spanish: "🇪🇸",
-  French: "🇫🇷",
-  German: "🇩🇪",
-  Italian: "🇮🇹",
-  Portuguese: "🇧🇷",
-  Japanese: "🇯🇵",
-  Korean: "🇰🇷",
-  Chinese: "🇨🇳",
+type LanguageTheme = {
+  flag: string;
+  bg: string;
+  accent: string;
 };
+
+const LANGUAGE_THEMES: Record<string, LanguageTheme> = {
+  English:    { flag: "🇬🇧", bg: "#152a4a", accent: "#5b9bd5" },
+  Spanish:    { flag: "🇪🇸", bg: "#301818", accent: "#e85d4a" },
+  French:     { flag: "🇫🇷", bg: "#1e1e38", accent: "#7b68ee" },
+  German:     { flag: "🇩🇪", bg: "#2a2816", accent: "#d4a843" },
+  Italian:    { flag: "🇮🇹", bg: "#162e1a", accent: "#4aba6e" },
+  Portuguese: { flag: "🇧🇷", bg: "#163030", accent: "#3dbfa8" },
+  Japanese:   { flag: "🇯🇵", bg: "#2e1828", accent: "#e06090" },
+  Korean:     { flag: "🇰🇷", bg: "#162040", accent: "#6aadff" },
+  Chinese:    { flag: "🇨🇳", bg: "#2e1820", accent: "#d45050" },
+};
+
+const DEFAULT_THEME: LanguageTheme = { flag: "🌐", bg: "#14243b", accent: "#84cc16" };
 
 export const ALL_LANGUAGES = [
   "English", "Spanish", "French", "German", "Italian",
@@ -36,15 +44,14 @@ export function JourneyLanguageHub({
   languages,
   insightsByLanguage,
   onSelectLanguage,
-  onOpenSettings,
 }: JourneyLanguageHubProps) {
   const displayLanguages = languages.length > 0 ? languages : ALL_LANGUAGES;
 
   return (
-    <View style={styles.container}>
+    <View style={styles.grid}>
       {displayLanguages.map((language) => {
         const insights = insightsByLanguage[language] ?? null;
-        const flag = LANGUAGE_FLAGS[language] ?? "🌐";
+        const theme = LANGUAGE_THEMES[language] ?? DEFAULT_THEME;
         const hasContent = insights !== null;
 
         return (
@@ -54,33 +61,35 @@ export function JourneyLanguageHub({
             accessibilityRole="button"
             accessibilityLabel={`qa-journey-language-${language.toLowerCase()}`}
             testID={`qa-journey-language-${language.toLowerCase()}`}
-            style={styles.card}
+            style={styles.cardWrapper}
           >
-            <View style={styles.cardHeader}>
-              <Text style={styles.flag}>{flag}</Text>
-              <View style={styles.cardHeaderText}>
-                <Text style={styles.languageName}>{language}</Text>
-                {hasContent && insights.currentLevelId ? (
-                  <Text style={styles.levelBadge}>{insights.currentLevelId.toUpperCase()}</Text>
-                ) : null}
-              </View>
-              {hasContent ? (
-                <Text style={styles.scoreText}>{insights.score}%</Text>
-              ) : null}
-            </View>
+            <View style={[styles.card, { backgroundColor: theme.bg, borderColor: `${theme.accent}30` }]}>
+              <Text style={styles.flag}>{theme.flag}</Text>
+              <Text style={styles.languageName}>{language}</Text>
 
-            {hasContent ? (
-              <>
-                <View style={styles.progressBar}>
-                  <View style={[styles.progressBarFill, { width: `${Math.max(4, insights.score)}%` }]} />
-                </View>
-                <Text style={styles.milestoneText}>
-                  {insights.completedSteps}/{insights.totalSteps} steps · {insights.nextMilestone}
-                </Text>
-              </>
-            ) : (
-              <Text style={styles.tapToStart}>Tap to start</Text>
-            )}
+              {hasContent ? (
+                <>
+                  <View style={styles.progressBar}>
+                    <View
+                      style={[
+                        styles.progressBarFill,
+                        { width: `${Math.max(6, insights.score)}%`, backgroundColor: theme.accent },
+                      ]}
+                    />
+                  </View>
+                  <View style={styles.statsRow}>
+                    <Text style={[styles.scoreText, { color: theme.accent }]}>{insights.score}%</Text>
+                    {insights.currentLevelId ? (
+                      <Text style={[styles.levelBadge, { color: theme.accent, backgroundColor: `${theme.accent}18` }]}>
+                        {insights.currentLevelId.toUpperCase()}
+                      </Text>
+                    ) : null}
+                  </View>
+                </>
+              ) : (
+                <Text style={styles.tapToStart}>Tap to start</Text>
+              )}
+            </View>
           </Pressable>
         );
       })}
@@ -89,103 +98,65 @@ export function JourneyLanguageHub({
 }
 
 const styles = StyleSheet.create({
-  container: {
-    gap: 12,
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+  },
+  cardWrapper: {
+    width: "48.5%",
+    flexGrow: 0,
   },
   card: {
-    gap: 10,
-    backgroundColor: "#14243b",
     borderRadius: 20,
-    padding: 18,
+    padding: 16,
     borderWidth: 1,
-    borderColor: "#27405f",
-  },
-  cardHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
+    gap: 6,
+    minHeight: 130,
+    justifyContent: "flex-end",
   },
   flag: {
-    fontSize: 28,
-  },
-  cardHeaderText: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
+    fontSize: 32,
+    marginBottom: 2,
   },
   languageName: {
     color: "#ffffff",
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: "800",
-  },
-  levelBadge: {
-    color: "#f8d48a",
-    fontSize: 11,
-    fontWeight: "800",
-    letterSpacing: 0.5,
-    backgroundColor: "rgba(248,212,138,0.12)",
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 6,
-    overflow: "hidden",
-  },
-  scoreText: {
-    color: "#84cc16",
-    fontSize: 16,
-    fontWeight: "900",
   },
   progressBar: {
-    height: 6,
+    height: 4,
     overflow: "hidden",
     borderRadius: 999,
     backgroundColor: "rgba(255,255,255,0.08)",
+    marginTop: 4,
   },
   progressBarFill: {
     height: "100%",
     borderRadius: 999,
-    backgroundColor: "#84cc16",
   },
-  milestoneText: {
-    color: "#9cb0c9",
-    fontSize: 12,
-    lineHeight: 17,
+  statsRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  scoreText: {
+    fontSize: 13,
+    fontWeight: "900",
+  },
+  levelBadge: {
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 0.5,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 5,
+    overflow: "hidden",
   },
   tapToStart: {
-    color: "#5a7da0",
-    fontSize: 13,
+    color: "rgba(255,255,255,0.35)",
+    fontSize: 12,
     fontWeight: "600",
-  },
-  emptyCard: {
-    gap: 10,
-    backgroundColor: "#14243b",
-    borderRadius: 20,
-    padding: 24,
-    borderWidth: 1,
-    borderColor: "#27405f",
-    alignItems: "center",
-  },
-  emptyTitle: {
-    color: "#ffffff",
-    fontSize: 16,
-    fontWeight: "800",
-  },
-  emptyBody: {
-    color: "#9cb0c9",
-    fontSize: 14,
-    textAlign: "center",
-    lineHeight: 20,
-  },
-  settingsButton: {
     marginTop: 4,
-    borderRadius: 999,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    backgroundColor: "#dbe9ff",
-  },
-  settingsButtonText: {
-    color: "#10233a",
-    fontSize: 13,
-    fontWeight: "800",
   },
 });
