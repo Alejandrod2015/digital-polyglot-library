@@ -1552,6 +1552,7 @@ export function MobileLibraryShell(args: {
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
   const storyCompletionShownRef = useRef(new Set<string>());
+  const storyOpenedAtRef = useRef<number>(0);
   const [storyCompletionPopup, setStoryCompletionPopup] = useState(false);
   const hasSeededExplorePreferencesRef = useRef(false);
   const practiceSpeechAvailable = getOptionalSpeechModule() !== null;
@@ -2787,6 +2788,7 @@ export function MobileLibraryShell(args: {
   function openSelection(selection: ReaderSelection) {
     setSelection(selection);
     setMenuOpen(false);
+    storyOpenedAtRef.current = Date.now();
   }
 
   function openBook(book: Book) {
@@ -2862,9 +2864,13 @@ export function MobileLibraryShell(args: {
     );
 
     // Show "what's next" popup for standalone/journey stories when nearing completion
+    // Require both scroll position (92%+) AND minimum reading time (30s) to avoid
+    // false positives from fast scrolling without actually reading.
+    const readingTimeSec = (Date.now() - storyOpenedAtRef.current) / 1000;
     if (
       book.id === "standalone-book" &&
       (details?.progressRatio ?? 0) >= 0.92 &&
+      readingTimeSec >= 30 &&
       !storyCompletionShownRef.current.has(story.id)
     ) {
       storyCompletionShownRef.current.add(story.id);
