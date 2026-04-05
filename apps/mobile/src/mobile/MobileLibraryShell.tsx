@@ -7933,7 +7933,10 @@ export function MobileLibraryShell(args: {
           <JourneyLanguageHub
             languages={preferences.targetLanguages}
             insightsByLanguage={journeyInsightsByLanguage}
-            onSelectLanguage={(lang) => setActiveJourneyLanguage(lang)}
+            onSelectLanguage={(lang) => {
+              setActiveJourneyLanguage(lang);
+              void loadJourneyForLanguage(lang);
+            }}
             onOpenSettings={() => setActiveScreen("settings")}
           />
         </View>
