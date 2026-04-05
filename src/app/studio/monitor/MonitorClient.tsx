@@ -179,7 +179,7 @@ export default function MonitorClient() {
 
   // Story detail panel
   const [expandedStoryId, setExpandedStoryId] = useState<string | null>(null);
-  const [storyDetail, setStoryDetail] = useState<{ text?: string; synopsis?: string; vocab?: any[] } | null>(null);
+  const [storyDetail, setStoryDetail] = useState<{ title?: string; text?: string; synopsis?: string; vocab?: any[] } | null>(null);
   const [showText, setShowText] = useState(false);
   const [showVocab, setShowVocab] = useState(false);
   const [loadingDetail, setLoadingDetail] = useState(false);
