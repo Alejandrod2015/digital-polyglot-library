@@ -13,6 +13,7 @@ import {
   View,
 } from "react-native";
 import * as WebBrowser from "expo-web-browser";
+import { Image } from "react-native";
 import { Feather, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   CEFR_LEVEL_LABELS,
@@ -41,12 +42,9 @@ import {
   type BookCardModel,
   type StoryCardModel,
 } from "./MobileCards";
-import {
-  JourneyMilestoneCard,
-  JourneyOverviewCard,
-} from "./MobileJourneyCards";
 import { MobileBookDetail } from "./MobileBookDetail";
 import { MobileSettingsScreen } from "./MobileSettingsScreen";
+import { JourneyLanguageHub, type LanguageInsightsSummary } from "./MobileJourneyLanguageHub";
 import { MobileCreateScreen } from "./MobileCreateScreen";
 import { ProgressiveImage } from "./ProgressiveImage";
 import { mobileCatalog } from "./catalog";
@@ -1059,9 +1057,15 @@ function resolveStorySelectionBySlugs(bookSlug: string, storySlug: string): Read
   return null;
 }
 
-function getCoverUrl(input?: string | null): string {
-  if (typeof input === "string" && input.trim()) return input;
-  return "https://reader.digitalpolyglot.com/covers/default.jpg";
+function getCoverUrl(input?: string | null, width = 400): string {
+  if (typeof input !== "string" || !input.trim()) {
+    return "https://reader.digitalpolyglot.com/covers/default.jpg";
+  }
+  if (input.includes("cdn.sanity.io/images/")) {
+    const sep = input.includes("?") ? "&" : "?";
+    return `${input}${sep}w=${width}&q=75&auto=format&fit=max`;
+  }
+  return input;
 }
 
 function normalizeFavoriteWord(word: string): string {
@@ -1523,6 +1527,8 @@ export function MobileLibraryShell(args: {
   const [selectedJourneyTopicId, setSelectedJourneyTopicId] = useState<string | null>(null);
   const [journeyDetailTopicId, setJourneyDetailTopicId] = useState<string | null>(null);
   const [journeyMilestone, setJourneyMilestone] = useState<JourneyMilestone | null>(null);
+  const [activeJourneyLanguage, setActiveJourneyLanguage] = useState<string | null>(null);
+  const [journeyInsightsByLanguage, setJourneyInsightsByLanguage] = useState<Record<string, LanguageInsightsSummary | null>>({});
   const effectivePlan = getPlan(remoteEntitlement?.plan ?? sessionPlan);
   const canDownloadOffline = effectivePlan === "premium" || effectivePlan === "polyglot";
   const [createPickerSection, setCreatePickerSection] = useState<CreateSection | null>(null);
@@ -1672,6 +1678,8 @@ export function MobileLibraryShell(args: {
       setRemoteProgressLoading(false);
       setRemoteContinueListening([]);
       setRemoteJourney(null);
+      setActiveJourneyLanguage(null);
+      setJourneyInsightsByLanguage({});
       return;
     }
 
@@ -1781,7 +1789,22 @@ export function MobileLibraryShell(args: {
       }
 
       if (journeyResult.status === "fulfilled") {
-        setRemoteJourney(journeyResult.value);
+        const journeyPayload = journeyResult.value;
+        setRemoteJourney(journeyPayload);
+        const firstTrackInsights = journeyPayload.tracks?.[0]?.insights ?? null;
+        const journeyLang = journeyPayload.language ?? "Spanish";
+        setJourneyInsightsByLanguage((prev) => ({
+          ...prev,
+          [journeyLang]: firstTrackInsights
+            ? {
+                score: firstTrackInsights.score,
+                completedSteps: firstTrackInsights.completedSteps,
+                totalSteps: firstTrackInsights.totalSteps,
+                currentLevelId: firstTrackInsights.currentLevelId ?? null,
+                nextMilestone: firstTrackInsights.nextMilestone,
+              }
+            : null,
+        }));
       } else {
         setRemoteJourney(null);
       }
@@ -1796,6 +1819,49 @@ export function MobileLibraryShell(args: {
       cancelled = true;
     };
   }, [handleUnauthorizedSession, sessionBooksCount, sessionPlan, sessionStoriesCount, sessionToken]);
+
+  const loadJourneyForLanguage = useCallback(
+    async (language: string) => {
+      if (!sessionToken) return;
+      setActiveJourneyLanguage(language);
+      setSelectedJourneyTrackId(null);
+      setSelectedJourneyLevelId(null);
+      setSelectedJourneyTopicId(null);
+      setJourneyDetailTopicId(null);
+      try {
+        const payload = await apiFetch<MobileJourneyPayload>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: `/api/mobile/journey?language=${encodeURIComponent(language)}`,
+          token: sessionToken,
+        });
+        setRemoteJourney(payload);
+        const firstTrackInsights = payload.tracks?.[0]?.insights ?? null;
+        setJourneyInsightsByLanguage((prev) => ({
+          ...prev,
+          [language]: firstTrackInsights
+            ? {
+                score: firstTrackInsights.score,
+                completedSteps: firstTrackInsights.completedSteps,
+                totalSteps: firstTrackInsights.totalSteps,
+                currentLevelId: firstTrackInsights.currentLevelId ?? null,
+                nextMilestone: firstTrackInsights.nextMilestone,
+              }
+            : null,
+        }));
+      } catch {
+        setRemoteJourney(null);
+      }
+    },
+    [sessionToken]
+  );
+
+  useEffect(() => {
+    if (preferences.targetLanguages.length === 1) {
+      setActiveJourneyLanguage(preferences.targetLanguages[0]);
+    } else if (preferences.targetLanguages.length === 0) {
+      setActiveJourneyLanguage(null);
+    }
+  }, [preferences.targetLanguages]);
 
   useEffect(() => {
     setSelectedBookDescriptionExpanded(false);
@@ -1919,6 +1985,17 @@ export function MobileLibraryShell(args: {
         useNativeDriver: true,
       }),
     ]).start();
+    const autoDismiss = setTimeout(() => {
+      Animated.timing(celebrationAnim, {
+        toValue: 0,
+        duration: 300,
+        easing: Easing.in(Easing.quad),
+        useNativeDriver: true,
+      }).start(() => {
+        void dismissGamificationCelebration(activeGamificationCelebration.id);
+      });
+    }, 4000);
+    return () => clearTimeout(autoDismiss);
   }, [activeGamificationCelebration, celebrationAnim]);
 
   useEffect(() => {
@@ -1941,6 +2018,16 @@ export function MobileLibraryShell(args: {
         useNativeDriver: true,
       }),
     ]).start();
+    const autoDismiss = setTimeout(() => {
+      Animated.timing(journeyMilestoneAnim, {
+        toValue: 0,
+        duration: 300,
+        easing: Easing.in(Easing.quad),
+        useNativeDriver: true,
+      }).start(() => {
+        setJourneyMilestone(null);
+      });
+    }, 5000);
 
     let cancelled = false;
     void (async () => {
@@ -1965,6 +2052,7 @@ export function MobileLibraryShell(args: {
     })();
 
     return () => {
+      clearTimeout(autoDismiss);
       cancelled = true;
     };
   }, [journeyMilestone, journeyMilestoneAnim]);
@@ -2355,6 +2443,10 @@ export function MobileLibraryShell(args: {
       ),
     [favoriteCards, selectedFavoriteType]
   );
+  const showFavoriteLanguageChip = useMemo(() => {
+    const langs = new Set(favoriteWords.map((w) => w.language).filter(Boolean));
+    return langs.size > 1;
+  }, [favoriteWords]);
   const relatedPracticeCandidates = useMemo(() => {
     const base = favoriteWords.filter((item) =>
       selectedFavoriteType === "all" ? true : getFavoriteType(item) === selectedFavoriteType
@@ -4268,6 +4360,16 @@ export function MobileLibraryShell(args: {
     [preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
   );
 
+  useEffect(() => {
+    const urls = [
+      ...latestBookCards.slice(0, 4).map((c) => c.coverUrl),
+      ...continueReadingCards.slice(0, 3).map((c) => c.coverUrl),
+    ].filter(Boolean);
+    for (const url of urls) {
+      Image.prefetch(url);
+    }
+  }, [latestBookCards, continueReadingCards]);
+
   const selectedBookContinueStory = useMemo(() => {
     if (!selectedBook) return null;
     const progressByStoryId = new Map(readingProgress.map((entry) => [entry.storyId, entry] as const));
@@ -5242,10 +5344,13 @@ export function MobileLibraryShell(args: {
     selectedExploreTopic,
   ]);
 
-  async function dismissGamificationCelebration(id: string) {
+  async function dismissGamificationCelebration(_id: string) {
+    const allIds = remoteProgress?.gamification
+      ? buildGamificationCelebrations(remoteProgress.gamification).map((c) => c.id)
+      : [_id];
     const nextSeen = [
       ...(await loadSeenGamificationCelebrations(sessionUserId)),
-      id,
+      ...allIds,
     ];
     await saveSeenGamificationCelebrations(sessionUserId, Array.from(new Set(nextSeen)));
     setActiveGamificationCelebration(null);
@@ -5318,157 +5423,30 @@ export function MobileLibraryShell(args: {
 
       {remoteProgress?.gamification ? (
         <View style={styles.section}>
-          <View style={styles.gamificationHeroCard}>
-            <View style={styles.gamificationHeroMain}>
-              <View style={styles.gamificationBadgeRow}>
-                <View style={styles.gamificationPill}>
-                  <Feather name="zap" size={14} color="#ffd36b" />
-                  <Text style={styles.gamificationPillText}>
-                    {remoteProgress.gamification.dailyStreak}-day streak
-                  </Text>
-                </View>
-                <View style={styles.gamificationPill}>
-                  <Feather name="star" size={14} color="#8ef0c6" />
-                  <Text style={styles.gamificationPillText}>{remoteProgress.gamification.totalXp} XP</Text>
-                </View>
-              </View>
-              <View style={styles.gamificationLevelRow}>
-                <View>
-                  <Text style={styles.gamificationEyebrow}>Level</Text>
-                  <Text style={styles.gamificationLevelValue}>{remoteProgress.gamification.currentLevel}</Text>
-                </View>
-                <View style={styles.gamificationLevelMeta}>
-                  <Text style={styles.gamificationLevelMetaText}>{remoteProgress.gamification.todayXp} XP today</Text>
-                  <Text style={styles.gamificationLevelMetaText}>{remoteProgress.gamification.weeklyXp} XP this week</Text>
-                </View>
-              </View>
-              <View style={styles.gamificationTrack}>
-                <View
-                  style={[
-                    styles.gamificationFill,
-                    { width: `${Math.round(remoteProgress.gamification.levelProgress * 100)}%` },
-                  ]}
-                />
-              </View>
-              <Text style={styles.gamificationTrackMeta}>
-                {remoteProgress.gamification.totalXp - remoteProgress.gamification.levelStartXp} /{" "}
-                {remoteProgress.gamification.nextLevelXp - remoteProgress.gamification.levelStartXp} XP to next level
+          <Pressable
+            onPress={() => setActiveScreen("progress")}
+            style={styles.gamificationMiniBar}
+          >
+            <View style={styles.gamificationMiniBarPill}>
+              <Feather name="zap" size={13} color="#ffd36b" />
+              <Text style={styles.gamificationMiniBarPillText}>
+                {remoteProgress.gamification.dailyStreak}-day streak
               </Text>
             </View>
-
-            <View style={styles.gamificationQuestCard}>
-              <View style={styles.sectionHeader}>
-                <View>
-                  <Text style={styles.sectionEyebrow}>Daily quests</Text>
-                  <Text style={styles.sectionTitle}>Keep the streak alive</Text>
-                </View>
-                <Text style={styles.helperText}>
-                  {remoteProgress.gamification.quests.filter((quest) => quest.complete).length}/
-                  {remoteProgress.gamification.quests.length}
-                </Text>
-              </View>
-              <View style={styles.gamificationQuestList}>
-                {remoteProgress.gamification.quests.map((quest) => (
-                  <View key={quest.id} style={styles.gamificationQuestItem}>
-                    <View style={styles.gamificationQuestTopRow}>
-                      <View style={styles.gamificationQuestLabelRow}>
-                        <Feather
-                          name={quest.complete ? "check-circle" : "circle"}
-                          size={16}
-                          color={quest.complete ? "#8ef0c6" : "#6f88a8"}
-                        />
-                        <Text style={styles.gamificationQuestLabel}>{quest.label}</Text>
-                      </View>
-                      <Text style={styles.gamificationQuestXp}>+{quest.rewardXp} XP</Text>
-                    </View>
-                    <Text style={styles.gamificationQuestMeta}>
-                      {Math.min(quest.current, quest.target)}/{quest.target} {quest.complete ? "Done" : "In progress"}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-              <View style={styles.gamificationBadgeSection}>
-                <View style={styles.sectionHeader}>
-                  <Text style={styles.sectionEyebrow}>Unlocked badges</Text>
-                  <Text style={styles.helperText}>
-                    {remoteProgress.gamification.badges.filter((badge) => badge.unlocked).length}/
-                    {remoteProgress.gamification.badges.length}
-                  </Text>
-                </View>
-                <View style={styles.gamificationBadgeWrap}>
-                  {remoteProgress.gamification.badges.map((badge) => (
-                    <View
-                      key={badge.id}
-                      style={[
-                        styles.gamificationBadgeChip,
-                        badge.unlocked ? styles.gamificationBadgeChipUnlocked : styles.gamificationBadgeChipLocked,
-                      ]}
-                    >
-                      <Text
-                        style={[
-                          styles.gamificationBadgeChipText,
-                          badge.unlocked ? styles.gamificationBadgeChipTextUnlocked : styles.gamificationBadgeChipTextLocked,
-                        ]}
-                      >
-                        {badge.label}
-                      </Text>
-                    </View>
-                  ))}
-                </View>
-              </View>
+            <View style={styles.gamificationMiniBarPill}>
+              <Feather name="star" size={13} color="#8ef0c6" />
+              <Text style={styles.gamificationMiniBarPillText}>
+                {remoteProgress.gamification.totalXp} XP
+              </Text>
             </View>
-          </View>
-        </View>
-      ) : null}
-
-      {activeGamificationCelebration ? (
-        <View style={styles.section}>
-          <Animated.View
-            style={[
-              styles.gamificationCelebrationCard,
-              {
-                opacity: celebrationAnim.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [0.55, 1],
-                }),
-                transform: [
-                  {
-                    translateY: celebrationAnim.interpolate({
-                      inputRange: [0, 1],
-                      outputRange: [16, 0],
-                    }),
-                  },
-                  {
-                    scale: celebrationAnim.interpolate({
-                      inputRange: [0, 1],
-                      outputRange: [0.98, 1.02],
-                    }),
-                  },
-                ],
-              },
-            ]}
-          >
-            <CelebrationBurst progress={celebrationAnim} />
-            <View style={styles.gamificationCelebrationHeader}>
-              <View style={styles.gamificationCelebrationCopy}>
-                <Text style={styles.sectionEyebrow}>Celebration</Text>
-                <Text style={styles.sectionTitle}>{activeGamificationCelebration.title}</Text>
-                <Text style={styles.metaLine}>{activeGamificationCelebration.body}</Text>
-              </View>
-              <Pressable
-                onPress={() => {
-                  void dismissGamificationCelebration(activeGamificationCelebration.id);
-                }}
-                style={styles.readerIconButton}
-              >
-                <Feather name="x" size={18} color="#dbe9ff" />
-              </Pressable>
+            <View style={styles.gamificationMiniBarPill}>
+              <Feather name="award" size={13} color="#7dd3fc" />
+              <Text style={styles.gamificationMiniBarPillText}>
+                Lv {remoteProgress.gamification.currentLevel}
+              </Text>
             </View>
-            <View style={styles.gamificationCelebrationPill}>
-              <Feather name="star" size={16} color="#8ef0c6" />
-              <Text style={styles.gamificationCelebrationPillText}>{activeGamificationCelebration.cta}</Text>
-            </View>
-          </Animated.View>
+            <Feather name="chevron-right" size={14} color="#6f88a8" />
+          </Pressable>
         </View>
       ) : null}
 
@@ -5582,49 +5560,36 @@ export function MobileLibraryShell(args: {
       ) : null}
 
       <View
-        style={styles.section}
+        style={[styles.section, activeOnboardingTourTarget === "reader" ? styles.onboardingHighlightedSurface : null]}
         accessibilityLabel="qa-home-latest-books-section"
         testID="qa-home-latest-books-section"
       >
         <View style={styles.sectionHeader}>
           <View>
-            <Text style={styles.sectionEyebrow}>Books</Text>
-            <Text style={styles.sectionTitle}>Latest books</Text>
+            <Text style={styles.sectionEyebrow}>Library</Text>
+            <Text style={styles.sectionTitle}>New releases</Text>
           </View>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-          {latestBookCards.map((item) => (
-            <BookWebCard key={item.key} item={item} />
-          ))}
-        </ScrollView>
-      </View>
-
-      <View
-        style={[styles.section, activeOnboardingTourTarget === "reader" ? styles.onboardingHighlightedSurface : null]}
-        accessibilityLabel="qa-home-latest-stories-section"
-        testID="qa-home-latest-stories-section"
-      >
-        <View style={styles.sectionHeader}>
-          <View>
-            <Text style={styles.sectionEyebrow}>Stories</Text>
-            <Text style={styles.sectionTitle}>Latest stories</Text>
-          </View>
-        </View>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-          {[...latestStoryCards.slice(0, 6), ...homeStandaloneStoryCards.slice(0, 4)].slice(0, 10).map((item) => (
-            <BookHomeCard
-              key={`home-story-${item.key}`}
-              item={{
-                key: item.key,
-                title: item.title,
-                coverUrl: item.coverUrl,
-                subtitle: item.subtitle,
-                meta: item.meta,
-                progressLabel: item.progressLabel,
-                onPress: item.onPress ?? (() => {}),
-              }}
-            />
-          ))}
+          {[
+            ...latestBookCards.slice(0, 5).map((item) => (
+              <BookWebCard key={item.key} item={item} />
+            )),
+            ...[...latestStoryCards.slice(0, 5), ...homeStandaloneStoryCards.slice(0, 3)].slice(0, 6).map((item) => (
+              <BookHomeCard
+                key={`home-story-${item.key}`}
+                item={{
+                  key: item.key,
+                  title: item.title,
+                  coverUrl: item.coverUrl,
+                  subtitle: item.subtitle,
+                  meta: item.meta,
+                  progressLabel: item.progressLabel,
+                  onPress: item.onPress ?? (() => {}),
+                }}
+              />
+            )),
+          ]}
         </ScrollView>
       </View>
     </>
@@ -5853,178 +5818,106 @@ export function MobileLibraryShell(args: {
         </Pressable>
       </Modal>
 
-      <View style={styles.section}>
-        <View style={styles.sectionHeader}>
-          <View>
-            <Text style={styles.sectionEyebrow}>Read</Text>
-            <Text style={styles.sectionTitle}>Stories</Text>
-          </View>
-          <View style={styles.sectionHeaderActions}>
-            <Text style={styles.helperText}>{filteredExploreStories.length} stories</Text>
-            {filteredExploreStories.length > 4 ? (
-              <Pressable onPress={() => setExpandedExploreSection((current) => current === "stories" ? null : "stories")}>
-                <Text style={styles.sectionHeaderActionText}>
-                  {expandedExploreSection === "stories" ? "Show less" : "See all"}
-                </Text>
-              </Pressable>
-            ) : null}
-          </View>
-        </View>
-        {filteredExploreStories.length > 0 ? (
-          expandedExploreSection === "stories" ? (
-            <View style={styles.exploreExpandedList}>
-              {filteredExploreStories.map((item) => (
-                <ExploreStoryListCard key={`explore-story-expanded-${item.key}`} item={item} />
-              ))}
-            </View>
-          ) : (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-              {filteredExploreStories.map((item) => (
-                <BookHomeCard
-                  key={`explore-story-${item.key}`}
-                  item={{
-                    key: item.key,
-                    title: item.title,
-                    coverUrl: item.coverUrl,
-                    subtitle: item.subtitle,
-                    meta: item.meta,
-                    qaLabel: item.key === filteredExploreStories[0]?.key ? "qa-explore-story-card-0" : undefined,
-                    onPress: item.onPress ?? (() => {}),
-                  }}
-                />
-              ))}
-            </ScrollView>
-          )
-        ) : (
-          <View style={styles.emptyCard}>
-            <Text style={styles.emptyTitle}>No stories match those filters</Text>
-            <Text style={styles.metaLine}>Try a broader language, topic or search query.</Text>
-          </View>
-        )}
-      </View>
-
-      <View style={styles.section}>
-        <View style={styles.sectionHeader}>
-          <View>
-            <Text style={styles.sectionEyebrow}>Library</Text>
-            <Text style={styles.sectionTitle}>Books</Text>
-          </View>
-          <View style={styles.sectionHeaderActions}>
-            <Text style={styles.helperText}>{filteredExploreBooks.length} books</Text>
-            {filteredExploreBooks.length > 4 ? (
-              <Pressable onPress={() => setExpandedExploreSection((current) => current === "books" ? null : "books")}>
-                <Text style={styles.sectionHeaderActionText}>
-                  {expandedExploreSection === "books" ? "Show less" : "See all"}
-                </Text>
-              </Pressable>
-            ) : null}
-          </View>
-        </View>
-        {filteredExploreBooks.length > 0 ? (
-          expandedExploreSection === "books" ? (
-            <View style={styles.exploreExpandedList}>
-              {filteredExploreBooks.map((book) => (
-                <BookWebCard
-                  key={`explore-book-expanded-${book.id}`}
-                  fullWidth
-                  item={{
-                    key: book.id,
-                    title: book.title,
-                    coverUrl: getCoverUrl(book.cover),
-                    language: formatLanguage(book.language),
-                    region: formatRegion(book.region),
-                    level: book.level,
-                    statsLine: `${book.stories.length} stories`,
-                    topicsLine: formatTopic(book.topic),
-                    description: book.description ?? book.subtitle ?? undefined,
-                    onPress: () => openBook(book),
-                  }}
-                />
-              ))}
-            </View>
-          ) : (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-              {filteredExploreBooks.map((book) => (
-                <BookWebCard
-                  key={`explore-book-${book.id}`}
-                  item={{
-                    key: book.id,
-                    title: book.title,
-                    coverUrl: getCoverUrl(book.cover),
-                    language: formatLanguage(book.language),
-                    region: formatRegion(book.region),
-                    level: book.level,
-                    statsLine: `${book.stories.length} stories`,
-                    topicsLine: formatTopic(book.topic),
-                    description: book.description ?? book.subtitle ?? undefined,
-                    qaLabel: book.id === filteredExploreBooks[0]?.id ? "qa-explore-book-card-0" : undefined,
-                    onPress: () => openBook(book),
-                  }}
-                />
-              ))}
-            </ScrollView>
-          )
-        ) : (
-          <View style={styles.emptyCard}>
-            <Text style={styles.emptyTitle}>No books match those filters</Text>
-            <Text style={styles.metaLine}>Try a broader language, region or search query.</Text>
-          </View>
-        )}
-      </View>
-
-      {sessionToken && filteredStandaloneStoryCards.length > 0 ? (
-        <View
-          style={styles.section}
-          accessibilityLabel="qa-explore-individual-stories-section"
-          testID="qa-explore-individual-stories-section"
-        >
+      {expandedExploreSection ? (
+        <View style={styles.section}>
+          <Pressable onPress={() => { setExpandedExploreSection(null); shellScrollRef.current?.scrollTo({ y: 0, animated: false }); }} style={styles.secondaryButton}>
+            <Text style={styles.secondaryButtonText}>Back to Explore</Text>
+          </Pressable>
           <View style={styles.sectionHeader}>
             <View>
-              <Text style={styles.sectionEyebrow}>Standalone</Text>
-              <Text style={styles.sectionTitle}>Individual stories</Text>
-            </View>
-            <View style={styles.sectionHeaderActions}>
-              {loadingRemote ? <Text style={styles.helperText}>Refreshing…</Text> : null}
-              {filteredStandaloneStoryCards.length > 4 ? (
-                <Pressable onPress={() => setExpandedExploreSection((current) => current === "standalone" ? null : "standalone")}>
-                  <Text style={styles.sectionHeaderActionText}>
-                    {expandedExploreSection === "standalone" ? "Show less" : "See all"}
-                  </Text>
-                </Pressable>
-              ) : null}
+              <Text style={styles.sectionEyebrow}>{expandedExploreSection === "stories" ? "Read" : expandedExploreSection === "books" ? "Library" : "Standalone"}</Text>
+              <Text style={styles.sectionTitle}>{expandedExploreSection === "stories" ? `All stories (${filteredExploreStories.length})` : expandedExploreSection === "books" ? `All books (${filteredExploreBooks.length})` : `All individual stories (${filteredStandaloneStoryCards.length})`}</Text>
             </View>
           </View>
-          {expandedExploreSection === "standalone" ? (
-            <View style={styles.exploreExpandedList}>
-              {filteredStandaloneStoryCards.map((item) => (
-                <ExploreStoryListCard key={`explore-individual-expanded-${item.key}`} item={item} />
-              ))}
-            </View>
-          ) : (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-              {filteredStandaloneStoryCards.map((item) => (
-                <BookHomeCard
-                  key={`explore-individual-${item.key}`}
-                  item={{
-                    key: item.key,
-                    title: item.title,
-                    coverUrl: item.coverUrl,
-                    subtitle: item.subtitle,
-                    meta: item.meta,
-                    onPress: item.onPress ?? (() => {}),
-                  }}
-                />
-              ))}
-            </ScrollView>
-          )}
+          <View style={styles.exploreExpandedList}>
+            {expandedExploreSection === "stories" ? filteredExploreStories.map((item) => (<ExploreStoryListCard key={`explore-story-expanded-${item.key}`} item={item} />)) : expandedExploreSection === "books" ? filteredExploreBooks.map((book) => (<BookWebCard key={`explore-book-expanded-${book.id}`} fullWidth item={{ key: book.id, title: book.title, coverUrl: getCoverUrl(book.cover), language: formatLanguage(book.language), region: formatRegion(book.region), level: book.level, statsLine: `${book.stories.length} stories`, topicsLine: formatTopic(book.topic), description: book.description ?? book.subtitle ?? undefined, onPress: () => openBook(book) }} />)) : filteredStandaloneStoryCards.map((item) => (<ExploreStoryListCard key={`explore-individual-expanded-${item.key}`} item={item} />))}
+          </View>
         </View>
       ) : (
-        <View style={styles.section}>
-          <View style={styles.emptyCard}>
-            <Text style={styles.emptyTitle}>No individual stories match those filters</Text>
-            <Text style={styles.metaLine}>Try a broader language, region or topic.</Text>
+        <>
+          <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+              <View>
+                <Text style={styles.sectionEyebrow}>Read</Text>
+                <Text style={styles.sectionTitle}>Stories</Text>
+              </View>
+              <View style={styles.sectionHeaderActions}>
+                <Text style={styles.helperText}>{filteredExploreStories.length} stories</Text>
+                {filteredExploreStories.length > 4 ? (
+                  <Pressable onPress={() => { setExpandedExploreSection("stories"); shellScrollRef.current?.scrollTo({ y: 0, animated: false }); }}>
+                    <Text style={styles.sectionHeaderActionText}>See all</Text>
+                  </Pressable>
+                ) : null}
+              </View>
+            </View>
+            {filteredExploreStories.length > 0 ? (
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
+                {filteredExploreStories.map((item) => (<BookHomeCard key={`explore-story-${item.key}`} item={{ key: item.key, title: item.title, coverUrl: item.coverUrl, subtitle: item.subtitle, meta: item.meta, qaLabel: item.key === filteredExploreStories[0]?.key ? "qa-explore-story-card-0" : undefined, onPress: item.onPress ?? (() => {}) }} />))}
+              </ScrollView>
+            ) : (
+              <View style={styles.emptyCard}>
+                <Text style={styles.emptyTitle}>No stories match those filters</Text>
+                <Text style={styles.metaLine}>Try a broader language, topic or search query.</Text>
+              </View>
+            )}
           </View>
-        </View>
+
+          <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+              <View>
+                <Text style={styles.sectionEyebrow}>Library</Text>
+                <Text style={styles.sectionTitle}>Books</Text>
+              </View>
+              <View style={styles.sectionHeaderActions}>
+                <Text style={styles.helperText}>{filteredExploreBooks.length} books</Text>
+                {filteredExploreBooks.length > 4 ? (
+                  <Pressable onPress={() => { setExpandedExploreSection("books"); shellScrollRef.current?.scrollTo({ y: 0, animated: false }); }}>
+                    <Text style={styles.sectionHeaderActionText}>See all</Text>
+                  </Pressable>
+                ) : null}
+              </View>
+            </View>
+            {filteredExploreBooks.length > 0 ? (
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
+                {filteredExploreBooks.map((book) => (<BookWebCard key={`explore-book-${book.id}`} item={{ key: book.id, title: book.title, coverUrl: getCoverUrl(book.cover), language: formatLanguage(book.language), region: formatRegion(book.region), level: book.level, statsLine: `${book.stories.length} stories`, topicsLine: formatTopic(book.topic), description: book.description ?? book.subtitle ?? undefined, qaLabel: book.id === filteredExploreBooks[0]?.id ? "qa-explore-book-card-0" : undefined, onPress: () => openBook(book) }} />))}
+              </ScrollView>
+            ) : (
+              <View style={styles.emptyCard}>
+                <Text style={styles.emptyTitle}>No books match those filters</Text>
+                <Text style={styles.metaLine}>Try a broader language, region or search query.</Text>
+              </View>
+            )}
+          </View>
+
+          {sessionToken && filteredStandaloneStoryCards.length > 0 ? (
+            <View style={styles.section} accessibilityLabel="qa-explore-individual-stories-section" testID="qa-explore-individual-stories-section">
+              <View style={styles.sectionHeader}>
+                <View>
+                  <Text style={styles.sectionEyebrow}>Standalone</Text>
+                  <Text style={styles.sectionTitle}>Individual stories</Text>
+                </View>
+                <View style={styles.sectionHeaderActions}>
+                  {loadingRemote ? <Text style={styles.helperText}>Refreshing…</Text> : null}
+                  {filteredStandaloneStoryCards.length > 4 ? (
+                    <Pressable onPress={() => { setExpandedExploreSection("standalone"); shellScrollRef.current?.scrollTo({ y: 0, animated: false }); }}>
+                      <Text style={styles.sectionHeaderActionText}>See all</Text>
+                    </Pressable>
+                  ) : null}
+                </View>
+              </View>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
+                {filteredStandaloneStoryCards.map((item) => (<BookHomeCard key={`explore-individual-${item.key}`} item={{ key: item.key, title: item.title, coverUrl: item.coverUrl, subtitle: item.subtitle, meta: item.meta, onPress: item.onPress ?? (() => {}) }} />))}
+              </ScrollView>
+            </View>
+          ) : (
+            <View style={styles.section}>
+              <View style={styles.emptyCard}>
+                <Text style={styles.emptyTitle}>No individual stories match those filters</Text>
+                <Text style={styles.metaLine}>Try a broader language, region or topic.</Text>
+              </View>
+            </View>
+          )}
+        </>
       )}
     </>
   );
@@ -6035,7 +5928,7 @@ export function MobileLibraryShell(args: {
         <View style={styles.heroHeaderRow}>
           <View style={styles.heroTextBlock}>
             <Text style={styles.eyebrow}>{favoriteWords.length > 0 ? "Pick a mode" : "Get started"}</Text>
-            <Text style={styles.title}>{favoriteWords.length > 0 ? "Practice" : "Practice"}</Text>
+            <Text style={styles.title}>Practice</Text>
             <Text style={styles.practiceSubtitle}>
               {favoriteWords.length > 0
                 ? "Four fast review modes."
@@ -6045,33 +5938,6 @@ export function MobileLibraryShell(args: {
           <MenuTrigger onPress={() => setMenuOpen(true)} />
         </View>
       </View>
-
-      {isSignedIn && favoriteWords.length > 0 ? (
-        <View style={styles.section}>
-          <View style={[styles.card, styles.dailyLoopCard]}>
-            <Text style={styles.sectionEyebrow}>Today&apos;s loop</Text>
-            <Text style={styles.dailyLoopTitle}>
-              {dueFavoritesCount > 0 ? "Clear review, then get back to reading" : "Keep the loop moving"}
-            </Text>
-            <Text style={styles.metaLine}>{practiceLoopSummary}</Text>
-            <View style={styles.bookActionsRow}>
-              {dueFavoritesCount > 0 ? (
-                <Pressable
-                  onPress={() => void openPracticeMode(recommendedPracticeMode, true, undefined, "due")}
-                  style={[styles.inlineButton, styles.primaryButton]}
-                >
-                  <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
-                    Start {recommendedPracticeLabel}
-                  </Text>
-                </Pressable>
-              ) : null}
-              <Pressable onPress={() => setActiveScreen("journey")} style={styles.inlineButton}>
-                <Text style={styles.inlineButtonText}>Back to Journey</Text>
-              </Pressable>
-            </View>
-          </View>
-        </View>
-      ) : null}
 
       {!isSignedIn ? (
         <View style={[styles.card, styles.accountCard]}>
@@ -6150,8 +6016,8 @@ export function MobileLibraryShell(args: {
                       </Text>
                     </View>
                   </View>
-                  <View style={styles.practiceModeAction}>
-                    <Text style={[styles.practiceModeActionText, { color: card.background }]}>Play</Text>
+                  <View style={styles.practiceModeActionCentered}>
+                    <Text style={[styles.practiceModeActionTextLarge, { color: card.background }]}>Play</Text>
                   </View>
                 </View>
               </Pressable>
@@ -6590,139 +6456,117 @@ export function MobileLibraryShell(args: {
       </View>
 
       {favoriteCards.length > 0 ? (
-        <View style={styles.section}>
-          <View style={[styles.card, styles.dailyLoopCard]}>
-            <Text style={styles.sectionEyebrow}>Today&apos;s loop</Text>
-            <Text style={styles.dailyLoopTitle}>{favoritesLoopSummary.title}</Text>
-            <Text style={styles.metaLine}>{favoritesLoopSummary.body}</Text>
-            <View style={styles.bookActionsRow}>
-              <Pressable
-                onPress={() => {
-                  setActiveScreen("practice");
-                  void openPracticeMode(
-                    recommendedPracticeMode,
-                    dueFavoritesCount > 0,
-                    undefined,
-                    dueFavoritesCount > 0 ? "due" : "all"
-                  );
-                }}
-                style={[styles.inlineButton, styles.primaryButton]}
-              >
-                <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>{favoritesLoopSummary.primaryLabel}</Text>
-              </Pressable>
-              <Pressable onPress={() => setActiveScreen("journey")} style={styles.inlineButton}>
-                <Text style={styles.inlineButtonText}>{favoritesLoopSummary.secondaryLabel}</Text>
-              </Pressable>
-            </View>
-          </View>
-        </View>
-      ) : null}
-
-      {favoriteCards.length > 0 ? (
         <>
-          <View style={styles.favoritesHeroCard}>
-            <View style={styles.favoritesHeroHeader}>
-              <View>
-                <Text style={styles.favoriteHeroTitle}>Review ready</Text>
-                <Text style={styles.metaLine}>
-                  {dueFavoritesCount} due today · {favoriteWords.length} total · {formatStreakLabel(
-                    Math.max(maxFavoriteStreak, 1)
-                  )}
-                </Text>
+          <View style={styles.favoritesCompactBar}>
+            <View style={styles.favoritesCompactStats}>
+              {dueFavoritesCount > 0 ? (
+                <View style={styles.favoritesCompactPill}>
+                  <Text style={styles.favoritesCompactDueText}>{dueFavoritesCount} due</Text>
+                </View>
+              ) : null}
+              <View style={styles.favoritesCompactPill}>
+                <Text style={styles.favoritesCompactPillText}>{favoriteWords.length} total</Text>
+              </View>
+              <View style={styles.favoritesCompactPill}>
+                <Text style={styles.favoritesCompactPillText}>{formatStreakLabel(Math.max(maxFavoriteStreak, 1))}</Text>
               </View>
             </View>
-            <View style={styles.favoritePracticeTabs}>
-              <Pressable
-                onPress={() => {
-                  setFavoritePracticeModeKind("due");
-                  setActiveScreen("practice");
-                  void openPracticeMode(recommendedPracticeMode, true, undefined, "due");
-                }}
-                style={[
-                  styles.favoritePracticeTab,
-                  favoritePracticeModeKind === "due" ? styles.favoritePracticeTabActive : null,
-                ]}
-              >
-                <Text
-                  style={[
-                    styles.favoritePracticeTabText,
-                    favoritePracticeModeKind === "due" ? styles.favoritePracticeTabTextActive : null,
-                  ]}
-                >
-                  Practice due
-                </Text>
-              </Pressable>
-              <Pressable
-                onPress={() => {
-                  setFavoritePracticeModeKind("all");
-                  setActiveScreen("practice");
-                  void openPracticeMode(recommendedPracticeMode, false, undefined, "all");
-                }}
-                style={[
-                  styles.favoritePracticeTab,
-                  favoritePracticeModeKind === "all" ? styles.favoritePracticeTabActive : null,
-                ]}
-              >
-                <Text
-                  style={[
-                    styles.favoritePracticeTabText,
-                    favoritePracticeModeKind === "all" ? styles.favoritePracticeTabTextActive : null,
-                  ]}
-                >
-                  Practice all
-                </Text>
-              </Pressable>
-              {relatedPracticeAvailable ? (
+            <View style={styles.favoritesCompactActions}>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoritesModePills}>
                 <Pressable
                   onPress={() => {
-                    setFavoritePracticeModeKind("related");
+                    setFavoritePracticeModeKind("due");
                     setActiveScreen("practice");
-                    void openPracticeMode(
-                      recommendedPracticeMode,
-                      false,
-                      buildPracticeFavorites(relatedPracticeCandidates),
-                      "related"
-                    );
+                    void openPracticeMode(recommendedPracticeMode, true, undefined, "due");
                   }}
                   style={[
-                    styles.favoritePracticeTab,
-                    favoritePracticeModeKind === "related" ? styles.favoritePracticeTabActive : null,
+                    styles.favoritesModePill,
+                    favoritePracticeModeKind === "due" ? styles.favoritesModePillActive : null,
                   ]}
                 >
                   <Text
                     style={[
-                      styles.favoritePracticeTabText,
-                      favoritePracticeModeKind === "related" ? styles.favoritePracticeTabTextActive : null,
+                      styles.favoritesModePillText,
+                      favoritePracticeModeKind === "due" ? styles.favoritesModePillTextActive : null,
                     ]}
                   >
-                    Practice related
+                    Due
                   </Text>
                 </Pressable>
-              ) : null}
-            </View>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoriteFilterChips}>
-              {availableFavoriteTypes.map((type) => (
                 <Pressable
-                  key={type}
-                  onPress={() => setSelectedFavoriteType(type)}
+                  onPress={() => {
+                    setFavoritePracticeModeKind("all");
+                    setActiveScreen("practice");
+                    void openPracticeMode(recommendedPracticeMode, false, undefined, "all");
+                  }}
                   style={[
-                    styles.filterChip,
-                    selectedFavoriteType === type ? styles.filterChipActive : null,
+                    styles.favoritesModePill,
+                    favoritePracticeModeKind === "all" ? styles.favoritesModePillActive : null,
                   ]}
                 >
                   <Text
                     style={[
-                      styles.filterChipText,
-                      selectedFavoriteType === type ? styles.filterChipTextActive : null,
+                      styles.favoritesModePillText,
+                      favoritePracticeModeKind === "all" ? styles.favoritesModePillTextActive : null,
                     ]}
                   >
-                    {type === "all"
-                      ? getFavoriteTypeLabel(type)
-                      : `${getFavoriteTypeLabel(type)} (${favoriteTypeCounts[type] ?? 0})`}
+                    All
                   </Text>
                 </Pressable>
-              ))}
-            </ScrollView>
+                {relatedPracticeAvailable ? (
+                  <Pressable
+                    onPress={() => {
+                      setFavoritePracticeModeKind("related");
+                      setActiveScreen("practice");
+                      void openPracticeMode(
+                        recommendedPracticeMode,
+                        false,
+                        buildPracticeFavorites(relatedPracticeCandidates),
+                        "related"
+                      );
+                    }}
+                    style={[
+                      styles.favoritesModePill,
+                      favoritePracticeModeKind === "related" ? styles.favoritesModePillActive : null,
+                    ]}
+                  >
+                    <Text
+                      style={[
+                        styles.favoritesModePillText,
+                        favoritePracticeModeKind === "related" ? styles.favoritesModePillTextActive : null,
+                      ]}
+                    >
+                      Related
+                    </Text>
+                  </Pressable>
+                ) : null}
+              </ScrollView>
+            </View>
+            {availableFavoriteTypes.length > 2 ? (
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoriteFilterChips}>
+                {availableFavoriteTypes.map((type) => (
+                  <Pressable
+                    key={type}
+                    onPress={() => setSelectedFavoriteType(type)}
+                    style={[
+                      styles.filterChip,
+                      selectedFavoriteType === type ? styles.filterChipActive : null,
+                    ]}
+                  >
+                    <Text
+                      style={[
+                        styles.filterChipText,
+                        selectedFavoriteType === type ? styles.filterChipTextActive : null,
+                      ]}
+                    >
+                      {type === "all"
+                        ? getFavoriteTypeLabel(type)
+                        : `${getFavoriteTypeLabel(type)} (${favoriteTypeCounts[type] ?? 0})`}
+                    </Text>
+                  </Pressable>
+                ))}
+              </ScrollView>
+            ) : null}
           </View>
 
           {filteredFavoriteCards.map(({ key, item, selection }) => {
@@ -6739,7 +6583,7 @@ export function MobileLibraryShell(args: {
                     <View style={styles.favoriteTypeChip}>
                       <Text style={styles.favoriteTypeChipText}>{getFavoriteTypeLabel(getFavoriteType(item))}</Text>
                     </View>
-                    {item.language ? (
+                    {showFavoriteLanguageChip && item.language ? (
                       <View style={styles.favoriteTypeChip}>
                         <Text style={styles.favoriteTypeChipText}>{item.language.toUpperCase()}</Text>
                       </View>
@@ -8010,61 +7854,104 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  const showJourneyHub = !activeJourneyLanguage && preferences.targetLanguages.length > 1;
+
   const journeyView = (
     <>
       <View style={[styles.hero, styles.journeyHero]}>
         <View style={styles.heroHeaderRow}>
           <View style={[styles.heroTextBlock, styles.journeyHeroTextBlock]}>
-            {journeyDetailTopicId && activeJourneyTopic ? (
+            {showJourneyHub ? (
+              <>
+                <Text style={styles.sectionEyebrow}>Journey</Text>
+                <Text style={styles.journeyHeroTitle}>My Languages</Text>
+              </>
+            ) : journeyDetailTopicId && activeJourneyTopic ? (
               <>
                 <Text style={styles.sectionEyebrow}>{activeJourneyLevel?.title ?? "Journey"}</Text>
                 <Text style={styles.journeyHeroTitle}>{activeJourneyTopic.label}</Text>
                 <Text style={styles.journeyHeroSubtitle}>Read the stories, practice, then clear the checkpoint.</Text>
               </>
             ) : (
-              <Text style={styles.journeyHeroTitle}>Journey</Text>
+              <>
+                {activeJourneyLanguage && preferences.targetLanguages.length > 1 ? (
+                  <Text style={styles.sectionEyebrow}>Journey</Text>
+                ) : null}
+                <Text style={styles.journeyHeroTitle}>
+                  {activeJourneyLanguage && preferences.targetLanguages.length > 1
+                    ? `Journey · ${activeJourneyLanguage}`
+                    : "Journey"}
+                </Text>
+              </>
             )}
           </View>
           <MenuTrigger onPress={() => setMenuOpen(true)} />
         </View>
       </View>
 
-      {!journeyDetailTopicId && activeJourneyInsights ? (
+      {showJourneyHub ? (
         <View style={styles.section}>
-          <JourneyOverviewCard
-            score={activeJourneyInsights.score}
-            totalStepsLabel={`${activeJourneyInsights.completedSteps}/${activeJourneyInsights.totalSteps} steps`}
-            activeLevelLabel={activeJourneyInsights.currentLevelTitle ?? "Track"}
-            nextMilestone={activeJourneyInsights.nextMilestone}
-            storyProgressLabel={`Stories ${activeJourneyInsights.completedRequiredStories}/${activeJourneyInsights.totalRequiredStories}`}
-            practiceProgressLabel={`Practice ${activeJourneyInsights.practicedTopicCount}/${activeJourneyInsights.totalTopicCount}`}
-            checkpointProgressLabel={`Checkpoints ${activeJourneyInsights.passedCheckpointCount}/${activeJourneyInsights.totalCheckpointCount}`}
-            dueReviewLabel={activeJourneyInsights.dueReviewCount > 0 ? `${activeJourneyInsights.dueReviewCount} due review` : null}
-            onPressDueReview={() => {
-              const firstReviewTopic = activeJourneyInsights.reviewTopics[0];
-              if (!firstReviewTopic) return;
-              setSelectedJourneyLevelId(firstReviewTopic.levelId);
-              setSelectedJourneyTopicId(firstReviewTopic.topicSlug);
-              setJourneyDetailTopicId(firstReviewTopic.topicSlug);
+          <JourneyLanguageHub
+            languages={preferences.targetLanguages}
+            insightsByLanguage={journeyInsightsByLanguage}
+            onSelectLanguage={(lang) => void loadJourneyForLanguage(lang)}
+            onOpenSettings={() => setActiveScreen("settings")}
+          />
+        </View>
+      ) : null}
+
+      {!showJourneyHub && !journeyDetailTopicId && activeJourneyLanguage && preferences.targetLanguages.length > 1 ? (
+        <View style={styles.section}>
+          <Pressable
+            onPress={() => {
+              setActiveJourneyLanguage(null);
+              setJourneyDetailTopicId(null);
+              setSelectedJourneyLevelId(null);
+              setSelectedJourneyTopicId(null);
+              setSelectedJourneyTrackId(null);
             }}
-          />
+            accessibilityRole="button"
+            accessibilityLabel="qa-journey-back-to-languages"
+            testID="qa-journey-back-to-languages"
+            style={styles.secondaryButton}
+          >
+            <Text style={styles.secondaryButtonText}>All languages</Text>
+          </Pressable>
         </View>
       ) : null}
 
-      {journeyMilestone ? (
+      {!showJourneyHub && !journeyDetailTopicId && activeJourneyInsights ? (
         <View style={styles.section}>
-          <JourneyMilestoneCard
-            progress={journeyMilestoneAnim}
-            title={journeyMilestone.title}
-            body={journeyMilestone.body}
-            cta={journeyMilestone.cta}
-            onPressPrimary={journeyMilestone.onPress}
-            onPressLater={() => setJourneyMilestone(null)}
-          />
+          <View style={styles.journeyInsightsBar}>
+            <View style={styles.journeyInsightsBarPill}>
+              <Text style={styles.journeyInsightsBarValue}>{activeJourneyInsights.score}%</Text>
+            </View>
+            <View style={styles.journeyInsightsBarPill}>
+              <Text style={styles.journeyInsightsBarText}>
+                {activeJourneyInsights.completedSteps}/{activeJourneyInsights.totalSteps} steps
+              </Text>
+            </View>
+            {activeJourneyInsights.dueReviewCount > 0 ? (
+              <Pressable
+                onPress={() => {
+                  const firstReviewTopic = activeJourneyInsights.reviewTopics[0];
+                  if (!firstReviewTopic) return;
+                  setSelectedJourneyLevelId(firstReviewTopic.levelId);
+                  setSelectedJourneyTopicId(firstReviewTopic.topicSlug);
+                  setJourneyDetailTopicId(firstReviewTopic.topicSlug);
+                }}
+                style={styles.journeyInsightsBarReview}
+              >
+                <Text style={styles.journeyInsightsBarReviewText}>
+                  {activeJourneyInsights.dueReviewCount} due
+                </Text>
+              </Pressable>
+            ) : null}
+          </View>
         </View>
       ) : null}
 
-      {!journeyDetailTopicId && !loadingRemote && !activeJourneyTrack ? (
+      {!showJourneyHub && !journeyDetailTopicId && !loadingRemote && !activeJourneyTrack ? (
         <View style={styles.section}>
           <View style={styles.emptyCard}>
             <Text style={styles.emptyTitle}>Journey is not available right now</Text>
@@ -8077,6 +7964,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
+      {!showJourneyHub ? (
       <View style={styles.section}>
         {!journeyDetailTopicId && activeJourneyTrack ? (
           <>
@@ -8234,15 +8122,6 @@ export function MobileLibraryShell(args: {
               </View>
             ) : null}
 
-            <View style={styles.journeyPlacementTestCard}>
-              <View style={styles.journeyPlacementTestCopy}>
-                <Text style={styles.journeyPlacementTestTitle}>Not sure where to start?</Text>
-                <Text style={styles.journeyPlacementTestBody}>Take a placement test to find your level.</Text>
-              </View>
-              <Pressable disabled style={styles.journeyPlacementTestButton}>
-                <Text style={styles.journeyPlacementTestButtonText}>Coming soon</Text>
-              </Pressable>
-            </View>
           </>
         ) : null}
 
@@ -8299,34 +8178,6 @@ export function MobileLibraryShell(args: {
                     <Text style={[styles.journeyTopicActionText, styles.journeyTopicActionTextPrimary]}>
                       {activeJourneyPrimaryAction.cta}
                     </Text>
-                  </Pressable>
-                </View>
-              ) : null}
-
-              {activeJourneyTopic.dueReviewCount > 0 ? (
-                <View style={[styles.journeyPrimaryActionCard, styles.journeyReviewLaneCard]}>
-                  <View style={styles.journeyPrimaryActionCopy}>
-                    <Text style={styles.journeyPrimaryActionEyebrow}>Review lane</Text>
-                    <Text style={styles.journeyPrimaryActionTitle}>
-                      {activeJourneyTopic.dueReviewCount} due {activeJourneyTopic.dueReviewCount === 1 ? "item" : "items"}
-                    </Text>
-                    <Text style={styles.journeyPrimaryActionBody}>
-                      Clear this topic's due review before it slows the lane down.
-                    </Text>
-                  </View>
-                  <Pressable
-                    onPress={() => {
-                      void openJourneyPractice({
-                        variantId: activeJourneyTrack?.id ?? null,
-                        levelId: activeJourneyLevel.id,
-                        topicId: activeJourneyTopic.slug,
-                        topicLabel: activeJourneyTopic.label,
-                        review: true,
-                      });
-                    }}
-                    style={styles.journeyTopicAction}
-                  >
-                    <Text style={styles.journeyTopicActionText}>Start review</Text>
                   </Pressable>
                 </View>
               ) : null}
@@ -8409,9 +8260,9 @@ export function MobileLibraryShell(args: {
                         review: true,
                       });
                     }}
-                    style={styles.journeyTopicAction}
+                    style={[styles.journeyTopicAction, styles.journeyTopicActionPrimary]}
                   >
-                    <Text style={styles.journeyTopicActionText}>Review due</Text>
+                    <Text style={[styles.journeyTopicActionText, styles.journeyTopicActionTextPrimary]}>{activeJourneyTopic.dueReviewCount} due review</Text>
                   </Pressable>
                 ) : null}
                 <Pressable
@@ -8446,43 +8297,46 @@ export function MobileLibraryShell(args: {
                       !activeJourneyTopic.complete ? styles.journeyTopicActionTextDisabled : null,
                     ]}
                   >
-                    {activeJourneyTopic.practiced ? "Practice again" : "Practice topic"}
+                    {activeJourneyTopic.practiced ? "Practice again" : "Practice"}
                   </Text>
                 </Pressable>
-                <Pressable
-                  onPress={() => {
-                    void openJourneyPractice({
-                      variantId: activeJourneyTrack?.id ?? null,
-                      levelId: activeJourneyLevel.id,
-                      topicId: activeJourneyTopic.slug,
-                      topicLabel: activeJourneyTopic.label,
-                      kind: "checkpoint",
-                    });
-                  }}
-                  disabled={!activeJourneyTopic.complete || !activeJourneyTopic.practiced}
-                  style={[
-                    styles.journeyTopicAction,
-                    (!activeJourneyTopic.complete || !activeJourneyTopic.practiced)
-                      ? styles.journeyTopicActionDisabled
-                      : null,
-                  ]}
-                >
-                  <Text
+                {!activeJourneyTopic.checkpointPassed ? (
+                  <Pressable
+                    onPress={() => {
+                      void openJourneyPractice({
+                        variantId: activeJourneyTrack?.id ?? null,
+                        levelId: activeJourneyLevel.id,
+                        topicId: activeJourneyTopic.slug,
+                        topicLabel: activeJourneyTopic.label,
+                        kind: "checkpoint",
+                      });
+                    }}
+                    disabled={!activeJourneyTopic.complete || !activeJourneyTopic.practiced}
                     style={[
-                      styles.journeyTopicActionText,
+                      styles.journeyTopicAction,
                       (!activeJourneyTopic.complete || !activeJourneyTopic.practiced)
-                        ? styles.journeyTopicActionTextDisabled
+                        ? styles.journeyTopicActionDisabled
                         : null,
                     ]}
                   >
-                    {activeJourneyTopic.checkpointPassed ? "Checkpoint done" : "Checkpoint"}
-                  </Text>
-                </Pressable>
+                    <Text
+                      style={[
+                        styles.journeyTopicActionText,
+                        (!activeJourneyTopic.complete || !activeJourneyTopic.practiced)
+                          ? styles.journeyTopicActionTextDisabled
+                          : null,
+                      ]}
+                    >
+                      Checkpoint
+                    </Text>
+                  </Pressable>
+                ) : null}
               </View>
             </View>
           </>
         ) : null}
       </View>
+      ) : null}
     </>
   );
 
@@ -8569,6 +8423,72 @@ export function MobileLibraryShell(args: {
       </View>
 
       {remoteProgressLoading ? <Text style={styles.helperText}>Refreshing progress…</Text> : null}
+
+      {remoteProgress?.gamification ? (
+        <View style={styles.section}>
+          <View style={styles.gamificationQuestCard}>
+            <View style={styles.sectionHeader}>
+              <View>
+                <Text style={styles.sectionEyebrow}>Daily quests</Text>
+                <Text style={styles.sectionTitle}>Keep the streak alive</Text>
+              </View>
+              <Text style={styles.helperText}>
+                {remoteProgress.gamification.quests.filter((quest) => quest.complete).length}/
+                {remoteProgress.gamification.quests.length}
+              </Text>
+            </View>
+            <View style={styles.gamificationQuestList}>
+              {remoteProgress.gamification.quests.map((quest) => (
+                <View key={quest.id} style={styles.gamificationQuestItem}>
+                  <View style={styles.gamificationQuestTopRow}>
+                    <View style={styles.gamificationQuestLabelRow}>
+                      <Feather
+                        name={quest.complete ? "check-circle" : "circle"}
+                        size={16}
+                        color={quest.complete ? "#8ef0c6" : "#6f88a8"}
+                      />
+                      <Text style={styles.gamificationQuestLabel}>{quest.label}</Text>
+                    </View>
+                    <Text style={styles.gamificationQuestXp}>+{quest.rewardXp} XP</Text>
+                  </View>
+                  <Text style={styles.gamificationQuestMeta}>
+                    {Math.min(quest.current, quest.target)}/{quest.target} {quest.complete ? "Done" : "In progress"}
+                  </Text>
+                </View>
+              ))}
+            </View>
+            <View style={styles.gamificationBadgeSection}>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionEyebrow}>Unlocked badges</Text>
+                <Text style={styles.helperText}>
+                  {remoteProgress.gamification.badges.filter((badge) => badge.unlocked).length}/
+                  {remoteProgress.gamification.badges.length}
+                </Text>
+              </View>
+              <View style={styles.gamificationBadgeWrap}>
+                {remoteProgress.gamification.badges.map((badge) => (
+                  <View
+                    key={badge.id}
+                    style={[
+                      styles.gamificationBadgeChip,
+                      badge.unlocked ? styles.gamificationBadgeChipUnlocked : styles.gamificationBadgeChipLocked,
+                    ]}
+                  >
+                    <Text
+                      style={[
+                        styles.gamificationBadgeChipText,
+                        badge.unlocked ? styles.gamificationBadgeChipTextUnlocked : styles.gamificationBadgeChipTextLocked,
+                      ]}
+                    >
+                      {badge.label}
+                    </Text>
+                  </View>
+                ))}
+              </View>
+            </View>
+          </View>
+        </View>
+      ) : null}
 
       {continueReadingCards.length > 0 ? (
         <View style={styles.section}>
@@ -8804,7 +8724,7 @@ export function MobileLibraryShell(args: {
         scrollRef={bookDetailScrollRef}
         title={selectedBook.title}
         subtitle={selectedBook.subtitle}
-        coverUrl={getCoverUrl(selectedBook.cover)}
+        coverUrl={getCoverUrl(selectedBook.cover, 800)}
         description={selectedBookDescription}
         descriptionExpanded={selectedBookDescriptionExpanded}
         needsDescriptionToggle={selectedBookNeedsDescriptionToggle}
@@ -8975,6 +8895,85 @@ export function MobileLibraryShell(args: {
       >
         {content}
       </ScrollView>
+
+      {activeGamificationCelebration ? (
+        <Animated.View
+          pointerEvents="box-none"
+          style={[
+            styles.celebrationToast,
+            {
+              opacity: celebrationAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [0, 1],
+              }),
+              transform: [
+                {
+                  translateY: celebrationAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [-40, 0],
+                  }),
+                },
+              ],
+            },
+          ]}
+        >
+          <CelebrationBurst progress={celebrationAnim} />
+          <View style={styles.celebrationToastContent}>
+            <View style={styles.celebrationToastCopy}>
+              <Feather name="star" size={16} color="#8ef0c6" />
+              <Text style={styles.celebrationToastTitle}>{activeGamificationCelebration.title}</Text>
+            </View>
+            <Pressable
+              onPress={() => {
+                void dismissGamificationCelebration(activeGamificationCelebration.id);
+              }}
+              hitSlop={12}
+            >
+              <Feather name="x" size={16} color="#9cb0c9" />
+            </Pressable>
+          </View>
+          <Text style={styles.celebrationToastBody}>{activeGamificationCelebration.cta}</Text>
+        </Animated.View>
+      ) : null}
+
+      {journeyMilestone ? (
+        <Animated.View
+          pointerEvents="box-none"
+          style={[
+            styles.celebrationToast,
+            {
+              opacity: journeyMilestoneAnim,
+              transform: [
+                {
+                  translateY: journeyMilestoneAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [-40, 0],
+                  }),
+                },
+              ],
+            },
+          ]}
+        >
+          <View style={styles.celebrationToastContent}>
+            <View style={styles.celebrationToastCopy}>
+              <Feather name="award" size={16} color="#86efac" />
+              <Text style={styles.celebrationToastTitle}>{journeyMilestone.title}</Text>
+            </View>
+            <Pressable onPress={() => setJourneyMilestone(null)} hitSlop={12}>
+              <Feather name="x" size={16} color="#9cb0c9" />
+            </Pressable>
+          </View>
+          <Text style={styles.celebrationToastBody}>{journeyMilestone.body}</Text>
+          <View style={styles.milestoneToastActions}>
+            <Pressable onPress={journeyMilestone.onPress} style={styles.milestoneToastPrimaryBtn}>
+              <Text style={styles.milestoneToastPrimaryBtnText}>{journeyMilestone.cta}</Text>
+            </Pressable>
+            <Pressable onPress={() => setJourneyMilestone(null)} hitSlop={8}>
+              <Text style={styles.milestoneToastLaterText}>Later</Text>
+            </Pressable>
+          </View>
+        </Animated.View>
+      ) : null}
 
       <Modal visible={shouldShowOnboardingSurvey} transparent animationType="fade">
         <View style={styles.modalBackdrop}>
@@ -10826,84 +10825,30 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "800",
   },
-  gamificationHeroCard: {
-    gap: 14,
-  },
-  gamificationHeroMain: {
-    borderRadius: 28,
-    borderWidth: 1,
-    borderColor: "#34516f",
-    backgroundColor: "#18314d",
-    padding: 20,
-    gap: 12,
-  },
-  gamificationBadgeRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8,
-  },
-  gamificationPill: {
+  gamificationMiniBar: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 6,
-    alignSelf: "flex-start",
+    gap: 8,
     borderRadius: 999,
     borderWidth: 1,
-    borderColor: "#365b81",
-    backgroundColor: "#21466d",
-    paddingHorizontal: 12,
-    paddingVertical: 7,
+    borderColor: "#27405f",
+    backgroundColor: "#18314d",
+    paddingHorizontal: 14,
+    paddingVertical: 10,
   },
-  gamificationPillText: {
+  gamificationMiniBarPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    borderRadius: 999,
+    backgroundColor: "#1a3250",
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  gamificationMiniBarPillText: {
     color: "#dcefff",
     fontSize: 12,
     fontWeight: "800",
-  },
-  gamificationEyebrow: {
-    color: "#9cb0c9",
-    fontSize: 11,
-    fontWeight: "800",
-    letterSpacing: 1.4,
-    textTransform: "uppercase",
-  },
-  gamificationLevelRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-end",
-    gap: 16,
-  },
-  gamificationLevelValue: {
-    color: "#ffffff",
-    fontSize: 52,
-    fontWeight: "800",
-    lineHeight: 56,
-    marginTop: 4,
-  },
-  gamificationLevelMeta: {
-    gap: 4,
-    paddingBottom: 6,
-  },
-  gamificationLevelMetaText: {
-    color: "#b7c9df",
-    fontSize: 13,
-    fontWeight: "600",
-    textAlign: "right",
-  },
-  gamificationTrack: {
-    height: 10,
-    borderRadius: 999,
-    backgroundColor: "#314861",
-    overflow: "hidden",
-  },
-  gamificationFill: {
-    height: "100%",
-    borderRadius: 999,
-    backgroundColor: "#71dd5a",
-  },
-  gamificationTrackMeta: {
-    color: "#9cb0c9",
-    fontSize: 12,
-    fontWeight: "700",
   },
   gamificationQuestCard: {
     borderRadius: 28,
@@ -10988,40 +10933,112 @@ const styles = StyleSheet.create({
   gamificationBadgeChipTextLocked: {
     color: "#6f88a8",
   },
-  gamificationCelebrationCard: {
-    borderRadius: 28,
+  celebrationToast: {
+    position: "absolute",
+    top: 60,
+    left: 16,
+    right: 16,
+    zIndex: 100,
+    borderRadius: 22,
     borderWidth: 1,
     borderColor: "#355b82",
     backgroundColor: "#18314d",
-    padding: 20,
-    gap: 14,
+    padding: 16,
+    gap: 6,
     overflow: "hidden",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.35,
+    shadowRadius: 12,
+    elevation: 8,
   },
-  gamificationCelebrationHeader: {
+  celebrationToastContent: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "flex-start",
-    gap: 16,
+    alignItems: "center",
+    gap: 12,
   },
-  gamificationCelebrationCopy: {
+  celebrationToastCopy: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
     flex: 1,
-    gap: 6,
   },
-  gamificationCelebrationPill: {
-    alignSelf: "flex-start",
+  celebrationToastTitle: {
+    color: "#f5f7fb",
+    fontSize: 14,
+    fontWeight: "800",
+    flex: 1,
+  },
+  celebrationToastBody: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "600",
+    paddingLeft: 24,
+  },
+  milestoneToastActions: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingLeft: 24,
+    paddingTop: 4,
+  },
+  milestoneToastPrimaryBtn: {
+    borderRadius: 999,
+    backgroundColor: "#dbe9ff",
+    paddingHorizontal: 14,
+    paddingVertical: 7,
+  },
+  milestoneToastPrimaryBtnText: {
+    color: "#10233a",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  milestoneToastLaterText: {
+    color: "#6f88a8",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  journeyInsightsBar: {
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
     borderRadius: 999,
     borderWidth: 1,
-    borderColor: "#3d6491",
-    backgroundColor: "#21466d",
+    borderColor: "#27405f",
+    backgroundColor: "#14243b",
     paddingHorizontal: 14,
-    paddingVertical: 9,
+    paddingVertical: 10,
   },
-  gamificationCelebrationPillText: {
-    color: "#dcefff",
+  journeyInsightsBarPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    borderRadius: 999,
+    backgroundColor: "#1a3250",
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  journeyInsightsBarValue: {
+    color: "#84cc16",
     fontSize: 13,
+    fontWeight: "900",
+  },
+  journeyInsightsBarText: {
+    color: "#dcefff",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  journeyInsightsBarReview: {
+    marginLeft: "auto",
+    borderRadius: 999,
+    backgroundColor: "#3d2a1a",
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  journeyInsightsBarReviewText: {
+    color: "#f8d48a",
+    fontSize: 12,
     fontWeight: "800",
   },
   celebrationParticle: {
@@ -11575,58 +11592,64 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
   },
-  favoritesHeroCard: {
-    gap: 3,
-    borderRadius: 14,
+  favoritesCompactBar: {
+    gap: 10,
+    borderRadius: 22,
     borderWidth: 1,
     borderColor: "#27405f",
     backgroundColor: "#14243b",
-    paddingHorizontal: 10,
-    paddingTop: 7,
-    paddingBottom: 5,
+    padding: 12,
   },
-  favoritesHeroHeader: {
+  favoritesCompactStats: {
+    flexDirection: "row",
+    gap: 8,
+  },
+  favoritesCompactPill: {
+    borderRadius: 999,
+    backgroundColor: "#1a3250",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  favoritesCompactPillText: {
+    color: "#dcefff",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  favoritesCompactDueText: {
+    color: "#f8d48a",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  favoritesCompactActions: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    gap: 10,
+    gap: 8,
   },
-  favoriteHeroTitle: {
-    color: "#ffffff",
-    fontSize: 15,
-    fontWeight: "800",
-    lineHeight: 17,
+  favoritesModePills: {
+    gap: 6,
   },
-  favoritePracticeTabs: {
-    flexDirection: "row",
-    gap: 5,
-  },
-  favoriteFilterChips: {
-    gap: 5,
-    paddingTop: 0,
-    paddingBottom: 1,
-  },
-  favoritePracticeTab: {
-    flex: 1,
-    borderRadius: 12,
+  favoritesModePill: {
+    borderRadius: 999,
     borderWidth: 1,
     borderColor: "#35506f",
     backgroundColor: "#1a2f48",
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    alignItems: "center",
+    paddingHorizontal: 12,
+    paddingVertical: 7,
   },
-  favoritePracticeTabActive: {
+  favoritesModePillActive: {
     borderColor: "#5b92ff",
     backgroundColor: "#274b74",
   },
-  favoritePracticeTabText: {
+  favoritesModePillText: {
     color: "#dbe9ff",
-    fontSize: 9,
+    fontSize: 12,
     fontWeight: "700",
   },
-  favoritePracticeTabTextActive: {
+  favoritesModePillTextActive: {
     color: "#ffffff",
+  },
+  favoriteFilterChips: {
+    gap: 6,
   },
   practiceFocusBanner: {
     gap: 10,
@@ -11683,12 +11706,12 @@ const styles = StyleSheet.create({
   },
   practiceModeCard: {
     width: "48%",
-    minHeight: 144,
-    borderRadius: 16,
+    minHeight: 174,
+    borderRadius: 20,
     borderWidth: 1,
     borderColor: "rgba(255,255,255,0.08)",
-    padding: 10,
-    gap: 5,
+    padding: 14,
+    gap: 8,
     overflow: "hidden",
   },
   practiceModeHeader: {
@@ -11716,9 +11739,9 @@ const styles = StyleSheet.create({
     lineHeight: 19,
   },
   practiceModeIconWrap: {
-    width: 32,
-    height: 32,
-    borderRadius: 11,
+    width: 36,
+    height: 36,
+    borderRadius: 12,
     borderWidth: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -11749,10 +11772,8 @@ const styles = StyleSheet.create({
     minHeight: 34,
   },
   practiceModeFooter: {
-    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    gap: 4,
+    gap: 10,
     marginTop: "auto",
   },
   practiceModeFooterMeta: {
@@ -11786,6 +11807,19 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontWeight: "900",
     letterSpacing: 0.5,
+    textTransform: "uppercase",
+  },
+  practiceModeActionCentered: {
+    alignSelf: "center",
+    borderRadius: 999,
+    backgroundColor: "#f8d48a",
+    paddingHorizontal: 22,
+    paddingVertical: 8,
+  },
+  practiceModeActionTextLarge: {
+    fontSize: 11,
+    fontWeight: "900",
+    letterSpacing: 0.6,
     textTransform: "uppercase",
   },
   practiceSessionShell: {

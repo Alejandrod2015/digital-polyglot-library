@@ -33,7 +33,11 @@ export async function GET(req: NextRequest): Promise<Response> {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const language = session.targetLanguages[0] || "Spanish";
+  const requestedLanguage = req.nextUrl.searchParams.get("language");
+  const language =
+    requestedLanguage && session.targetLanguages.includes(requestedLanguage)
+      ? requestedLanguage
+      : session.targetLanguages[0] || "Spanish";
   const user = await clerkClient.users.getUser(session.sub);
   const journeyFocus =
     typeof user.publicMetadata?.journeyFocus === "string"
