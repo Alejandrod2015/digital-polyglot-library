@@ -21,15 +21,6 @@ export function buildGamificationCelebrations(
   const dayKey = getUtcDayKey(base);
   const items: GamificationCelebration[] = [];
 
-  if (summary.currentLevel > 1) {
-    items.push({
-      id: `level:${summary.currentLevel}`,
-      title: `Level ${summary.currentLevel} reached`,
-      body: `You just leveled up with ${summary.totalXp} total XP. Keep the streak going.`,
-      cta: "Keep going",
-    });
-  }
-
   summary.quests.forEach((quest) => {
     if (!quest.complete) return;
     items.push({
