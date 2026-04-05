@@ -35,7 +35,7 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   const requestedLanguage = req.nextUrl.searchParams.get("language");
   const language =
-    requestedLanguage && session.targetLanguages.includes(requestedLanguage)
+    requestedLanguage
       ? requestedLanguage
       : session.targetLanguages[0] || "Spanish";
   const user = await clerkClient.users.getUser(session.sub);

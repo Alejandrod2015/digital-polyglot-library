@@ -1858,7 +1858,7 @@ export function MobileLibraryShell(args: {
   useEffect(() => {
     if (preferences.targetLanguages.length === 1) {
       setActiveJourneyLanguage(preferences.targetLanguages[0]);
-    } else if (preferences.targetLanguages.length === 0) {
+    } else {
       setActiveJourneyLanguage(null);
     }
   }, [preferences.targetLanguages]);
@@ -7854,7 +7854,7 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  const showJourneyHub = !activeJourneyLanguage && preferences.targetLanguages.length > 1;
+  const showJourneyHub = !activeJourneyLanguage && preferences.targetLanguages.length !== 1;
 
   const journeyView = (
     <>
@@ -7874,7 +7874,7 @@ export function MobileLibraryShell(args: {
               </>
             ) : (
               <>
-                {activeJourneyLanguage && preferences.targetLanguages.length > 1 ? (
+                {activeJourneyLanguage && preferences.targetLanguages.length !== 1 ? (
                   <Text style={styles.sectionEyebrow}>Journey</Text>
                 ) : null}
                 <Text style={styles.journeyHeroTitle}>
@@ -7900,7 +7900,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyDetailTopicId && activeJourneyLanguage && preferences.targetLanguages.length > 1 ? (
+      {!showJourneyHub && !journeyDetailTopicId && activeJourneyLanguage && preferences.targetLanguages.length !== 1 ? (
         <View style={styles.section}>
           <Pressable
             onPress={() => {

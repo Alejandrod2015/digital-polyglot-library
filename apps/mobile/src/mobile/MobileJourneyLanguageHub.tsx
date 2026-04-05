@@ -12,6 +12,11 @@ const LANGUAGE_FLAGS: Record<string, string> = {
   Chinese: "🇨🇳",
 };
 
+export const ALL_LANGUAGES = [
+  "English", "Spanish", "French", "German", "Italian",
+  "Portuguese", "Japanese", "Korean", "Chinese",
+];
+
 export type LanguageInsightsSummary = {
   score: number;
   completedSteps: number;
@@ -33,21 +38,11 @@ export function JourneyLanguageHub({
   onSelectLanguage,
   onOpenSettings,
 }: JourneyLanguageHubProps) {
-  if (languages.length === 0) {
-    return (
-      <View style={styles.emptyCard}>
-        <Text style={styles.emptyTitle}>No languages selected</Text>
-        <Text style={styles.emptyBody}>Add languages in Settings to start your journey.</Text>
-        <Pressable onPress={onOpenSettings} style={styles.settingsButton}>
-          <Text style={styles.settingsButtonText}>Open Settings</Text>
-        </Pressable>
-      </View>
-    );
-  }
+  const displayLanguages = languages.length > 0 ? languages : ALL_LANGUAGES;
 
   return (
     <View style={styles.container}>
-      {languages.map((language) => {
+      {displayLanguages.map((language) => {
         const insights = insightsByLanguage[language] ?? null;
         const flag = LANGUAGE_FLAGS[language] ?? "🌐";
         const hasContent = insights !== null;
