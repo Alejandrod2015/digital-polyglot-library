@@ -1855,6 +1855,13 @@ export function MobileLibraryShell(args: {
   );
 
   useEffect(() => {
+    if (!didHydratePreferences) return;
+    if (preferences.targetLanguages.length === 1 && !activeJourneyLanguage) {
+      setActiveJourneyLanguage(preferences.targetLanguages[0]);
+    }
+  }, [didHydratePreferences, preferences.targetLanguages, activeJourneyLanguage]);
+
+  useEffect(() => {
     setSelectedBookDescriptionExpanded(false);
   }, [selectedBook?.id]);
 
@@ -7886,7 +7893,7 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  const showJourneyHub = !activeJourneyLanguage && !remoteJourney?.tracks?.length;
+  const showJourneyHub = !activeJourneyLanguage;
 
   const journeyView = (
     <>
