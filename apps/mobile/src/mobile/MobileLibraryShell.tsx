@@ -7939,38 +7939,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyLanguage && activeJourneyLanguage ? (
-        <View style={styles.section}>
-          <Pressable
-            onPress={() => {
-              if (remoteJourney && remoteJourney.tracks.length >= 2) {
-                setJourneyVariantPickerOpen(true);
-                setSelectedJourneyTrackId(null);
-                setSelectedJourneyLevelId(null);
-                setSelectedJourneyTopicId(null);
-              } else {
-                setActiveJourneyLanguage(null);
-                setJourneyDetailTopicId(null);
-                setSelectedJourneyLevelId(null);
-                setSelectedJourneyTopicId(null);
-                setSelectedJourneyTrackId(null);
-              }
-            }}
-            accessibilityRole="button"
-            accessibilityLabel="qa-journey-back-to-language"
-            testID="qa-journey-back-to-language"
-            style={styles.secondaryButton}
-          >
-            <Text style={styles.secondaryButtonText}>
-              {remoteJourney && remoteJourney.tracks.length >= 2
-                ? `${activeJourneyLanguage} variants`
-                : "All languages"}
-            </Text>
-          </Pressable>
-        </View>
-      ) : null}
-
-      {!showJourneyHub && journeyVariantPickerOpen && activeJourneyLanguage ? (
+      {!showJourneyHub && !journeyDetailTopicId && activeJourneyLanguage ? (
         <View style={styles.section}>
           <Pressable
             onPress={() => {
