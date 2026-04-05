@@ -1529,6 +1529,7 @@ export function MobileLibraryShell(args: {
   const [journeyDetailTopicId, setJourneyDetailTopicId] = useState<string | null>(null);
   const [journeyMilestone, setJourneyMilestone] = useState<JourneyMilestone | null>(null);
   const [activeJourneyLanguage, setActiveJourneyLanguage] = useState<string | null>(null);
+  const [journeyVariantPickerOpen, setJourneyVariantPickerOpen] = useState(false);
   const [journeyInsightsByLanguage, setJourneyInsightsByLanguage] = useState<Record<string, LanguageInsightsSummary | null>>({});
   const effectivePlan = getPlan(remoteEntitlement?.plan ?? sessionPlan);
   const canDownloadOffline = effectivePlan === "premium" || effectivePlan === "polyglot";
@@ -1680,6 +1681,7 @@ export function MobileLibraryShell(args: {
       setRemoteContinueListening([]);
       setRemoteJourney(null);
       setActiveJourneyLanguage(null);
+      setJourneyVariantPickerOpen(false);
       setJourneyInsightsByLanguage({});
       return;
     }
@@ -1829,6 +1831,7 @@ export function MobileLibraryShell(args: {
       setSelectedJourneyLevelId(null);
       setSelectedJourneyTopicId(null);
       setJourneyDetailTopicId(null);
+      setJourneyVariantPickerOpen(false);
       setRemoteJourney(null);
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
@@ -1850,6 +1853,9 @@ export function MobileLibraryShell(args: {
               }
             : null,
         }));
+        if (payload.tracks.length >= 2) {
+          setJourneyVariantPickerOpen(true);
+        }
       } catch {
         setRemoteJourney(null);
       }
@@ -7908,6 +7914,7 @@ export function MobileLibraryShell(args: {
           <Pressable
             onPress={() => {
               setActiveJourneyLanguage(null);
+              setJourneyVariantPickerOpen(false);
               setJourneyDetailTopicId(null);
               setSelectedJourneyLevelId(null);
               setSelectedJourneyTopicId(null);
@@ -7923,7 +7930,38 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyDetailTopicId && activeJourneyInsights ? (
+      {!showJourneyHub && journeyVariantPickerOpen && remoteJourney && remoteJourney.tracks.length >= 2 ? (
+        <View style={styles.section}>
+          <Text style={styles.journeyVariantPickerLabel}>Choose a variant</Text>
+          <View style={styles.journeyVariantPickerGrid}>
+            {remoteJourney.tracks.map((track) => {
+              const isActive = selectedJourneyTrackId === track.id;
+              return (
+                <Pressable
+                  key={track.id}
+                  onPress={() => {
+                    setSelectedJourneyTrackId(track.id);
+                    setJourneyVariantPickerOpen(false);
+                  }}
+                  accessibilityRole="button"
+                  accessibilityLabel={`qa-journey-variant-${track.id}`}
+                  testID={`qa-journey-variant-${track.id}`}
+                  style={[styles.journeyVariantCard, isActive ? styles.journeyVariantCardActive : null]}
+                >
+                  <Text style={[styles.journeyVariantLabel, isActive ? styles.journeyVariantLabelActive : null]}>
+                    {track.label}
+                  </Text>
+                  <Text style={styles.journeyVariantMeta}>
+                    {track.insights.score}% · {track.insights.completedSteps}/{track.insights.totalSteps} steps
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
+      ) : null}
+
+      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyInsights ? (
         <View style={styles.section}>
           <View style={styles.journeyInsightsBar}>
             <View style={styles.journeyInsightsBarPill}>
@@ -7954,7 +7992,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyDetailTopicId && !loadingRemote && !activeJourneyTrack ? (
+      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && !loadingRemote && !activeJourneyTrack ? (
         <View style={styles.section}>
           <View style={styles.emptyCard}>
             <Text style={styles.emptyTitle}>Journey is not available right now</Text>
@@ -7967,7 +8005,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub ? (
+      {!showJourneyHub && !journeyVariantPickerOpen ? (
       <View style={styles.section}>
         {!journeyDetailTopicId && activeJourneyTrack ? (
           <>
@@ -9460,6 +9498,44 @@ const styles = StyleSheet.create({
     gap: 4,
     paddingTop: 6,
     paddingBottom: 0,
+  },
+  journeyVariantPickerLabel: {
+    color: "#9cb0c9",
+    fontSize: 13,
+    fontWeight: "700",
+    marginBottom: 8,
+  },
+  journeyVariantPickerGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+  },
+  journeyVariantCard: {
+    flex: 1,
+    minWidth: "45%",
+    backgroundColor: "#14243b",
+    borderRadius: 16,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: "#27405f",
+    gap: 4,
+  },
+  journeyVariantCardActive: {
+    borderColor: "#5f83a8",
+    backgroundColor: "#1c3350",
+  },
+  journeyVariantLabel: {
+    color: "#ffffff",
+    fontSize: 16,
+    fontWeight: "800",
+  },
+  journeyVariantLabelActive: {
+    color: "#dbe9ff",
+  },
+  journeyVariantMeta: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "600",
   },
   quickActionsRow: {
     flexDirection: "row",
