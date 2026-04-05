@@ -1530,7 +1530,6 @@ export function MobileLibraryShell(args: {
   const [journeyMilestone, setJourneyMilestone] = useState<JourneyMilestone | null>(null);
   const [activeJourneyLanguage, setActiveJourneyLanguage] = useState<string | null>(null);
   const [journeyLanguageLoading, setJourneyLanguageLoading] = useState(false);
-  const journeyLanguageFetchedRef = useRef(false);
   const [journeyVariantPickerOpen, setJourneyVariantPickerOpen] = useState(false);
   const [journeyInsightsByLanguage, setJourneyInsightsByLanguage] = useState<Record<string, LanguageInsightsSummary | null>>({});
   const effectivePlan = getPlan(remoteEntitlement?.plan ?? sessionPlan);
@@ -1686,7 +1685,6 @@ export function MobileLibraryShell(args: {
       setJourneyLanguageLoading(false);
       setJourneyVariantPickerOpen(false);
       setJourneyInsightsByLanguage({});
-      journeyLanguageFetchedRef.current = false;
       return;
     }
 
@@ -1700,7 +1698,7 @@ export function MobileLibraryShell(args: {
       setRemoteEntitlementLoading(true);
       setRemoteProgressLoading(true);
 
-      const [booksResult, storiesResult, entitlementResult, progressResult, continueResult, journeyResult] = await Promise.allSettled([
+      const [booksResult, storiesResult, entitlementResult, progressResult, continueResult] = await Promise.allSettled([
         apiFetch<RemoteLibraryBook[]>({
           baseUrl: mobileConfig.apiBaseUrl,
           path: "/api/mobile/library?type=book",
@@ -1734,16 +1732,11 @@ export function MobileLibraryShell(args: {
           path: "/api/continue-listening",
           token: sessionToken,
         }),
-        apiFetch<MobileJourneyPayload>({
-          baseUrl: mobileConfig.apiBaseUrl,
-          path: "/api/mobile/journey",
-          token: sessionToken,
-        }),
       ]);
 
       if (cancelled) return;
 
-      const unauthorized = [booksResult, storiesResult, entitlementResult, progressResult, continueResult, journeyResult].some(
+      const unauthorized = [booksResult, storiesResult, entitlementResult, progressResult, continueResult].some(
         (result) => result.status === "rejected" && isApiErrorStatus(result.reason, 401)
       );
       if (unauthorized) {
@@ -1795,29 +1788,6 @@ export function MobileLibraryShell(args: {
         setRemoteContinueListening([]);
       }
 
-      if (journeyResult.status === "fulfilled") {
-        const journeyPayload = journeyResult.value;
-        if (!journeyLanguageFetchedRef.current) {
-          setRemoteJourney(journeyPayload);
-        }
-        const firstTrackInsights = journeyPayload.tracks?.[0]?.insights ?? null;
-        const journeyLang = journeyPayload.language ?? "Spanish";
-        setJourneyInsightsByLanguage((prev) => ({
-          ...prev,
-          [journeyLang]: firstTrackInsights
-            ? {
-                score: firstTrackInsights.score,
-                completedSteps: firstTrackInsights.completedSteps,
-                totalSteps: firstTrackInsights.totalSteps,
-                currentLevelId: firstTrackInsights.currentLevelId ?? null,
-                nextMilestone: firstTrackInsights.nextMilestone,
-              }
-            : null,
-        }));
-      } else if (!journeyLanguageFetchedRef.current) {
-        setRemoteJourney(null);
-      }
-
       setRemoteError(errors.length > 0 ? errors.join("  ") : null);
       setLoadingRemote(false);
     }
@@ -1832,7 +1802,6 @@ export function MobileLibraryShell(args: {
   const loadJourneyForLanguage = useCallback(
     async (language: string) => {
       if (!sessionToken) return;
-      setActiveJourneyLanguage(language);
       setSelectedJourneyTrackId(null);
       setSelectedJourneyLevelId(null);
       setSelectedJourneyTopicId(null);
@@ -1840,7 +1809,6 @@ export function MobileLibraryShell(args: {
       setJourneyVariantPickerOpen(false);
       setRemoteJourney(null);
       setJourneyLanguageLoading(true);
-      journeyLanguageFetchedRef.current = true;
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
           baseUrl: mobileConfig.apiBaseUrl,
@@ -1880,6 +1848,11 @@ export function MobileLibraryShell(args: {
       setActiveJourneyLanguage(null);
     }
   }, [preferences.targetLanguages]);
+
+  useEffect(() => {
+    if (!activeJourneyLanguage || !sessionToken) return;
+    void loadJourneyForLanguage(activeJourneyLanguage);
+  }, [activeJourneyLanguage, sessionToken, loadJourneyForLanguage]);
 
   useEffect(() => {
     setSelectedBookDescriptionExpanded(false);
@@ -7917,7 +7890,7 @@ export function MobileLibraryShell(args: {
           <JourneyLanguageHub
             languages={preferences.targetLanguages}
             insightsByLanguage={journeyInsightsByLanguage}
-            onSelectLanguage={(lang) => void loadJourneyForLanguage(lang)}
+            onSelectLanguage={(lang) => setActiveJourneyLanguage(lang)}
             onOpenSettings={() => setActiveScreen("settings")}
           />
         </View>
