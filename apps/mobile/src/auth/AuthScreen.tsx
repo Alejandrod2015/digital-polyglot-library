@@ -43,13 +43,14 @@ export function AuthScreen(args: {
   const { signIn } = useSignIn();
   const { signUp } = useSignUp();
 
-  // ── Google OAuth ────────────────────────────────────────────────────
-  const handleGoogleSignIn = useCallback(async () => {
+  // ── Social OAuth ────────────────────────────────────────────────────
+  const handleSocialSignIn = useCallback(async (strategy: "oauth_google" | "oauth_facebook") => {
     setError(null);
-    setSubmitting("google");
+    setSubmitting(strategy);
     try {
       const { createdSessionId, setActive: ssoSetActive } = await startSSOFlow({
-        strategy: "oauth_google",
+        strategy,
+        redirectUrl: "digitalpolyglot://oauth-callback",
       });
       if (createdSessionId) {
         const activate = ssoSetActive || setActive;
@@ -57,12 +58,12 @@ export function AuthScreen(args: {
         onClerkSessionCreated();
       }
     } catch (err) {
-      console.error("[auth] Google sign-in error:", err);
+      console.error(`[auth] ${strategy} sign-in error:`, err);
       setError(toErrorMessage(err));
     } finally {
       setSubmitting(null);
     }
-  }, [startSSOFlow, onClerkSessionCreated]);
+  }, [startSSOFlow, setActive, onClerkSessionCreated]);
 
   // ── Email + Password Sign In ────────────────────────────────────────
   const handlePasswordSignIn = useCallback(async () => {
@@ -246,17 +247,43 @@ export function AuthScreen(args: {
         Sign in to open your saved books, stories, and listening progress on iPhone.
       </Text>
       <View style={styles.actions}>
-        <Pressable
-          disabled={submitting !== null}
-          onPress={() => void handleGoogleSignIn()}
-          style={[styles.googleButton, submitting !== null && styles.buttonDisabled]}
-        >
-          {submitting === "google" ? (
-            <ActivityIndicator color="#1a1a1a" />
-          ) : (
-            <Text style={styles.googleButtonText}>Continue with Google</Text>
-          )}
-        </Pressable>
+        <View style={styles.socialRow}>
+          <Pressable
+            disabled={submitting !== null}
+            onPress={() => void handleSocialSignIn("oauth_google")}
+            style={[styles.socialButton, submitting !== null && styles.buttonDisabled]}
+          >
+            {submitting === "oauth_google" ? (
+              <ActivityIndicator color="#1a1a1a" size="small" />
+            ) : (
+              <>
+                <Text style={styles.socialIcon}>G</Text>
+                <Text style={styles.socialButtonText}>Google</Text>
+              </>
+            )}
+          </Pressable>
+
+          <Pressable
+            disabled={submitting !== null}
+            onPress={() => void handleSocialSignIn("oauth_facebook")}
+            style={[styles.socialButton, styles.facebookButton, submitting !== null && styles.buttonDisabled]}
+          >
+            {submitting === "oauth_facebook" ? (
+              <ActivityIndicator color="#ffffff" size="small" />
+            ) : (
+              <>
+                <Text style={styles.facebookIcon}>f</Text>
+                <Text style={styles.facebookButtonText}>Facebook</Text>
+              </>
+            )}
+          </Pressable>
+        </View>
+
+        <View style={styles.dividerRow}>
+          <View style={styles.dividerLine} />
+          <Text style={styles.dividerText}>or</Text>
+          <View style={styles.dividerLine} />
+        </View>
 
         <Pressable
           disabled={submitting !== null}
@@ -326,8 +353,16 @@ const styles = StyleSheet.create({
   headline: { color: "#f5f7fb", fontSize: 36, fontWeight: "800", lineHeight: 42, marginBottom: 12 },
   subtext: { color: "#7a95b3", fontSize: 15, lineHeight: 22, marginBottom: 28 },
   actions: { gap: 10 },
-  googleButton: { backgroundColor: "#ffffff", borderRadius: 16, paddingVertical: 15, alignItems: "center" },
-  googleButtonText: { color: "#1a1a1a", fontSize: 16, fontWeight: "700" },
+  socialRow: { flexDirection: "row", gap: 10 },
+  socialButton: { flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, backgroundColor: "#ffffff", borderRadius: 16, paddingVertical: 14 },
+  socialIcon: { color: "#4285F4", fontSize: 20, fontWeight: "700", fontFamily: "System" },
+  socialButtonText: { color: "#1a1a1a", fontSize: 15, fontWeight: "700" },
+  facebookButton: { backgroundColor: "#1877F2" },
+  facebookIcon: { color: "#ffffff", fontSize: 20, fontWeight: "800", fontFamily: "System" },
+  facebookButtonText: { color: "#ffffff", fontSize: 15, fontWeight: "700" },
+  dividerRow: { flexDirection: "row", alignItems: "center", gap: 12, marginVertical: 4 },
+  dividerLine: { flex: 1, height: 1, backgroundColor: "#1e3450" },
+  dividerText: { color: "#4e6a8a", fontSize: 13, fontWeight: "600" },
   primaryButton: { backgroundColor: "#f8c15c", borderRadius: 16, paddingVertical: 15, alignItems: "center" },
   primaryButtonText: { color: "#0c1626", fontSize: 16, fontWeight: "800" },
   secondaryButton: { borderRadius: 16, paddingVertical: 15, alignItems: "center", borderWidth: 1, borderColor: "#27405f", backgroundColor: "#132238" },
