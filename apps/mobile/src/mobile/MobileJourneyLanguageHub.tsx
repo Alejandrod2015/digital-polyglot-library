@@ -15,14 +15,13 @@ const LANGUAGE_THEMES: Record<string, LanguageTheme> = {
   Portuguese: { flag: "🇧🇷", bg: "#163030", accent: "#3dbfa8" },
   Japanese:   { flag: "🇯🇵", bg: "#2e1828", accent: "#e06090" },
   Korean:     { flag: "🇰🇷", bg: "#162040", accent: "#6aadff" },
-  Chinese:    { flag: "🇨🇳", bg: "#2e1820", accent: "#d45050" },
 };
 
 const DEFAULT_THEME: LanguageTheme = { flag: "🌐", bg: "#14243b", accent: "#84cc16" };
 
 export const ALL_LANGUAGES = [
   "English", "Spanish", "French", "German", "Italian",
-  "Portuguese", "Japanese", "Korean", "Chinese",
+  "Portuguese", "Japanese", "Korean",
 ];
 
 export type LanguageInsightsSummary = {
