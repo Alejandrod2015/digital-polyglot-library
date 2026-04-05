@@ -1700,7 +1700,7 @@ export function MobileLibraryShell(args: {
       setRemoteEntitlementLoading(true);
       setRemoteProgressLoading(true);
 
-      const [booksResult, storiesResult, entitlementResult, progressResult, continueResult] = await Promise.allSettled([
+      const [booksResult, storiesResult, entitlementResult, progressResult, continueResult, journeyResult] = await Promise.allSettled([
         apiFetch<RemoteLibraryBook[]>({
           baseUrl: mobileConfig.apiBaseUrl,
           path: "/api/mobile/library?type=book",
@@ -1734,11 +1734,16 @@ export function MobileLibraryShell(args: {
           path: "/api/continue-listening",
           token: sessionToken,
         }),
+        apiFetch<MobileJourneyPayload>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/mobile/journey",
+          token: sessionToken,
+        }),
       ]);
 
       if (cancelled) return;
 
-      const unauthorized = [booksResult, storiesResult, entitlementResult, progressResult, continueResult].some(
+      const unauthorized = [booksResult, storiesResult, entitlementResult, progressResult, continueResult, journeyResult].some(
         (result) => result.status === "rejected" && isApiErrorStatus(result.reason, 401)
       );
       if (unauthorized) {
@@ -1788,6 +1793,26 @@ export function MobileLibraryShell(args: {
         setRemoteContinueListening(continueResult.value);
       } else {
         setRemoteContinueListening([]);
+      }
+
+      if (journeyResult.status === "fulfilled") {
+        const journeyPayload = journeyResult.value;
+        setRemoteJourney(journeyPayload);
+        const journeyLang = journeyPayload.language ?? "Spanish";
+        setActiveJourneyLanguage(journeyLang);
+        const firstTrackInsights = journeyPayload.tracks?.[0]?.insights ?? null;
+        setJourneyInsightsByLanguage((prev) => ({
+          ...prev,
+          [journeyLang]: firstTrackInsights
+            ? {
+                score: firstTrackInsights.score,
+                completedSteps: firstTrackInsights.completedSteps,
+                totalSteps: firstTrackInsights.totalSteps,
+                currentLevelId: firstTrackInsights.currentLevelId ?? null,
+                nextMilestone: firstTrackInsights.nextMilestone,
+              }
+            : null,
+        }));
       }
 
       setRemoteError(errors.length > 0 ? errors.join("  ") : null);
@@ -1857,8 +1882,9 @@ export function MobileLibraryShell(args: {
     }
   }, [preferences.targetLanguages]);
 
+  const userSelectedJourneyLanguageRef = useRef(false);
   useEffect(() => {
-    if (!activeJourneyLanguage || !sessionToken) return;
+    if (!activeJourneyLanguage || !sessionToken || !userSelectedJourneyLanguageRef.current) return;
     void loadJourneyForLanguage(activeJourneyLanguage);
   }, [activeJourneyLanguage, sessionToken, loadJourneyForLanguage]);
 
@@ -7928,7 +7954,10 @@ export function MobileLibraryShell(args: {
           <JourneyLanguageHub
             languages={preferences.targetLanguages}
             insightsByLanguage={journeyInsightsByLanguage}
-            onSelectLanguage={(lang) => setActiveJourneyLanguage(lang)}
+            onSelectLanguage={(lang) => {
+              userSelectedJourneyLanguageRef.current = true;
+              setActiveJourneyLanguage(lang);
+            }}
             onOpenSettings={() => setActiveScreen("settings")}
           />
         </View>
