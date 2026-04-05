@@ -1841,9 +1841,15 @@ export function MobileLibraryShell(args: {
     [sessionToken]
   );
 
+  const prevTargetLanguagesRef = useRef<string[]>(preferences.targetLanguages);
   useEffect(() => {
-    if (preferences.targetLanguages.length === 1) {
-      setActiveJourneyLanguage(preferences.targetLanguages[0]);
+    const prev = prevTargetLanguagesRef.current;
+    const next = preferences.targetLanguages;
+    prevTargetLanguagesRef.current = next;
+    const changed = prev.length !== next.length || prev.some((lang, i) => lang !== next[i]);
+    if (!changed) return;
+    if (next.length === 1) {
+      setActiveJourneyLanguage(next[0]);
     } else {
       setActiveJourneyLanguage(null);
     }
