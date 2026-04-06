@@ -42,12 +42,16 @@ enum AgentArtifactStatus {
 }
 
 model Topic {
-  id        String   @id @default(cuid())
-  slug      String   @unique
-  label     String
-  sortOrder Int      @default(0)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  label        String
+  isUniversal  Boolean  @default(true)
+  defaultLevel String?
+  sortOrder    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  journeyTypes TopicJourneyType[]
 
   @@map("dp_topics_v1")
   @@index([sortOrder])
@@ -93,6 +97,35 @@ model Level {
 
   @@map("dp_levels_v1")
   @@index([sortOrder])
+}
+
+model JourneyType {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  label     String
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  topics TopicJourneyType[]
+
+  @@map("dp_journey_types_v1")
+  @@index([sortOrder])
+}
+
+model TopicJourneyType {
+  id            String      @id @default(cuid())
+  topicId       String
+  journeyTypeId String
+  createdAt     DateTime    @default(now())
+
+  topic       Topic       @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  journeyType JourneyType @relation(fields: [journeyTypeId], references: [id], onDelete: Cascade)
+
+  @@unique([topicId, journeyTypeId])
+  @@map("dp_topic_journey_types_v1")
+  @@index([topicId])
+  @@index([journeyTypeId])
 }
 
 model StudioMember {
@@ -230,8 +263,13 @@ model JourneyStory {
   wordCount  Int?
   vocabCount Int?
   sanityId   String?
-  coverDone  Boolean             @default(false)
-  error      String?
+  coverDone     Boolean             @default(false)
+  coverUrl      String?
+  audioUrl      String?
+  audioSegments Json?
+  audioFilename String?
+  audioStatus   String              @default("pending")
+  error         String?
   createdAt  DateTime            @default(now())
   updatedAt  DateTime            @updatedAt
 

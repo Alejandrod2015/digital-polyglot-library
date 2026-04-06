@@ -25,6 +25,7 @@ type SanityJourneyVariantPlan = {
   _id: string;
   language?: string;
   variantId?: string;
+  journeyType?: string;
   levels?: SanityJourneyLevelPlan[];
 };
 
@@ -64,6 +65,7 @@ function normalizeVariant(doc: SanityJourneyVariantPlan): JourneyVariantPlan | n
   return {
     language: doc.language,
     variantId: doc.variantId,
+    ...(doc.journeyType ? { journeyType: doc.journeyType } : {}),
     levels,
   };
 }
@@ -76,6 +78,7 @@ const getPublishedCurriculumCached = unstable_cache(
         _id,
         language,
         variantId,
+        journeyType,
         levels[]{
           id,
           title,
@@ -154,25 +157,30 @@ export async function listJourneyVariantPlansForStudio(): Promise<JourneyVariant
 
 export async function getJourneyVariantPlanForStudio(
   language: string,
-  variantId: string
+  variantId: string,
+  journeyType?: string
 ): Promise<JourneyVariantPlan | null> {
   const plans = await listJourneyVariantPlansForStudio();
+  const normalizedJourneyType = (journeyType ?? "generico").trim().toLowerCase();
   return (
     plans.find(
       (plan) =>
         plan.language.trim().toLowerCase() === language.trim().toLowerCase() &&
-        plan.variantId.trim().toLowerCase() === variantId.trim().toLowerCase()
+        plan.variantId.trim().toLowerCase() === variantId.trim().toLowerCase() &&
+        (plan.journeyType ?? "generico").trim().toLowerCase() === normalizedJourneyType
     ) ?? null
   );
 }
 
 export async function saveJourneyVariantPlanForStudio(plan: JourneyVariantPlan): Promise<void> {
-  const docId = `journey-variant-plan.${plan.language.toLowerCase()}.${plan.variantId.toLowerCase()}`;
+  const jType = (plan.journeyType ?? "generico").toLowerCase();
+  const docId = `journey-variant-plan.${plan.language.toLowerCase()}.${plan.variantId.toLowerCase()}.${jType}`;
   await writeClient.createOrReplace({
     _id: docId,
     _type: "journeyVariantPlan",
     language: plan.language.toLowerCase(),
     variantId: plan.variantId.toLowerCase(),
+    journeyType: jType,
     levels: plan.levels.map((level) => ({
       _type: "journeyLevelPlan",
       id: level.id,

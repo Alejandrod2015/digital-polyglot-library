@@ -6,8 +6,63 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 type LanguageItem = { code: string; label: string; variants: { id: string; code: string; label: string }[] };
 type LevelItem = { code: string; label: string };
+type TopicItem = { slug: string; label: string; defaultLevel?: string };
+type JourneyTypeItem = { id: string; slug: string; label: string };
 
-type TopicItem = { slug: string; label: string };
+// ── Single-select custom dropdown (matches TopicDropdown style) ──
+function SingleSelectDropdown({ options, value, onChange, placeholder }: {
+  options: { value: string; label: string }[];
+  value: string;
+  onChange: (value: string) => void;
+  placeholder: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const selectedOption = options.find((o) => o.value === value);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
+  return (
+    <div ref={ref} style={{ position: "relative" }}>
+      <div onClick={() => setOpen(!open)}
+        style={{ display: "flex", gap: 3, alignItems: "center", padding: "4px 8px", borderRadius: 5, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", cursor: "pointer", height: 30, width: 150 }}>
+        {selectedOption ? (
+          <span style={{ padding: "0 5px", borderRadius: 3, fontSize: 11, fontWeight: 600, backgroundColor: "rgba(20,184,166,0.15)", border: "1px solid rgba(20,184,166,0.3)", color: "#14b8a6", whiteSpace: "nowrap" }}>
+            {selectedOption.label}
+          </span>
+        ) : (
+          <span style={{ fontSize: 11, color: "var(--muted)" }}>{placeholder}</span>
+        )}
+        <span style={{ marginLeft: "auto", fontSize: 8, color: "var(--muted)", paddingLeft: 4 }}>▼</span>
+      </div>
+      {open && (
+        <div style={{ position: "absolute", top: "calc(100% + 2px)", left: 0, minWidth: "100%", width: "max-content", padding: 4, borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "#0d1520", zIndex: 100, maxHeight: 220, overflowY: "auto", boxShadow: "0 8px 24px rgba(0,0,0,0.5)" }}>
+          {options.map((o) => {
+            const isSelected = o.value === value;
+            return (
+              <div key={o.value}
+                onClick={() => { onChange(o.value); setOpen(false); }}
+                style={{ display: "flex", alignItems: "center", gap: 6, padding: "4px 8px", borderRadius: 4, cursor: "pointer",
+                  backgroundColor: isSelected ? "rgba(20,184,166,0.1)" : "transparent" }}>
+                <span style={{ width: 12, height: 12, borderRadius: 6, border: `1.5px solid ${isSelected ? "#14b8a6" : "var(--card-border)"}`, backgroundColor: isSelected ? "#14b8a6" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 8, color: "#fff", flexShrink: 0 }}>
+                  {isSelected && "●"}
+                </span>
+                <span style={{ fontSize: 11, color: "var(--foreground)", whiteSpace: "nowrap" }}>{o.label}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
 
 // ── Topic multi-select dropdown ──
 function TopicDropdown({ available, selected, disabled, onToggle }: {
@@ -128,6 +183,7 @@ type StoryRow = {
   id: string; slug: string | null; level: string; topic: string; slotIndex: number;
   status: string; title: string | null; wordCount: number | null;
   vocabCount: number | null; sanityId: string | null; coverDone: boolean;
+  coverUrl: string | null; audioUrl: string | null; audioStatus: string;
   error: string | null;
 };
 type TopicGroup = { level: string; topic: string; label: string; stories: StoryRow[] };
@@ -160,14 +216,13 @@ export default function MonitorClient() {
   const [journeyFilter, setJourneyFilter] = useState<"all" | "pending" | "complete">("all");
 
   // Create form — language/variant set after data loads
-  const [journeyName, setJourneyName] = useState("");
+  const [allJourneyTypes, setAllJourneyTypes] = useState<JourneyTypeItem[]>([]);
+  const [journeyType, setJourneyType] = useState("");
+  const [filteredTopics, setFilteredTopics] = useState<TopicItem[]>([]);
   const [language, setLanguage] = useState("");
   const [variant, setVariant] = useState("");
   const [selectedLevels, setSelectedLevels] = useState<Set<string>>(new Set(["a1", "a2"]));
-  const [topicsByLevel, setTopicsByLevel] = useState<Record<string, Set<string>>>({
-    a1: new Set(["community-celebrations", "food-daily-life"]),
-    a2: new Set(["work-study", "travel-plans"]),
-  });
+  const [topicsByLevel, setTopicsByLevel] = useState<Record<string, Set<string>>>({});
   const [storiesPerTopic, setStoriesPerTopic] = useState(1);
   const [creating, setCreating] = useState(false);
 
@@ -188,8 +243,34 @@ export default function MonitorClient() {
   const [confirmAction, setConfirmAction] = useState<{ message: string; onConfirm: () => void } | null>(null);
   const [editingJourneyId, setEditingJourneyId] = useState<string | null>(null);
   const [editName, setEditName] = useState("");
+  const [editingStructureId, setEditingStructureId] = useState<string | null>(null);
 
   const selectedLang = allLanguages.find((l) => l.code === language) ?? allLanguages[0];
+
+  // Load topics filtered by journey type and auto-distribute by defaultLevel
+  useEffect(() => {
+    if (!journeyType) { setFilteredTopics([]); setTopicsByLevel({}); return; }
+    (async () => {
+      const res = await fetch(`/api/studio/topics?journeyType=${encodeURIComponent(journeyType)}`);
+      if (res.ok) {
+        const topics: TopicItem[] = await res.json();
+        setFilteredTopics(topics);
+        // Auto-distribute topics to levels based on defaultLevel
+        const byLevel: Record<string, Set<string>> = {};
+        for (const t of topics) {
+          const lvl = t.defaultLevel?.toLowerCase();
+          if (lvl && selectedLevels.has(lvl)) {
+            if (!byLevel[lvl]) byLevel[lvl] = new Set();
+            byLevel[lvl].add(t.slug);
+          }
+        }
+        setTopicsByLevel(byLevel);
+      }
+    })();
+  }, [journeyType]);
+
+  // Use filtered topics for the create form, fall back to allTopics
+  const availableTopics = journeyType ? filteredTopics : allTopics;
 
   function toggleSet<T>(set: Set<T>, val: T): Set<T> {
     const n = new Set(set);
@@ -226,11 +307,12 @@ export default function MonitorClient() {
   const loadJourneys = useCallback(async () => {
     setLoading(true);
     try {
-      const [jRes, tRes, lRes, lvRes] = await Promise.all([
+      const [jRes, tRes, lRes, lvRes, jtRes] = await Promise.all([
         fetch("/api/studio/journeys"),
         fetch("/api/studio/topics"),
         fetch("/api/studio/languages"),
         fetch("/api/studio/levels"),
+        fetch("/api/studio/journey-types"),
       ]);
       if (jRes.ok) setJourneys(await jRes.json());
       if (tRes.ok) setAllTopics(await tRes.json());
@@ -244,10 +326,14 @@ export default function MonitorClient() {
         }
       }
       if (lvRes.ok) setAllLevels(await lvRes.json());
+      if (jtRes.ok) setAllJourneyTypes(await jtRes.json());
     } finally { setLoading(false); }
   }, []);
 
   useEffect(() => { void loadJourneys(); }, [loadJourneys]);
+
+  const selectedJourneyType = allJourneyTypes.find((jt) => jt.slug === journeyType);
+  const journeyName = selectedJourneyType?.label ?? journeyType;
 
   async function createJourney() {
     setCreating(true);
@@ -255,7 +341,7 @@ export default function MonitorClient() {
       const res = await fetch("/api/studio/journeys", {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: journeyName, language, variant,
+          name: journeyName, journeyType, language, variant,
           levels: [...selectedLevels],
           topics: [...new Set([...selectedLevels].flatMap((l) => [...(topicsByLevel[l] ?? [])]))],
           topicsByLevel: Object.fromEntries([...selectedLevels].map((l) => [l, [...(topicsByLevel[l] ?? [])]])),
@@ -277,6 +363,27 @@ export default function MonitorClient() {
     await fetch("/api/studio/journeys", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ journeyId: id, name }) });
     await loadJourneys();
     setEditingJourneyId(null);
+  }
+
+  async function reloadStoriesForJourney(journeyId: string) {
+    const res = await fetch(`/api/studio/journeys/stories?journeyId=${journeyId}`);
+    if (res.ok) setStories(await res.json());
+  }
+
+  async function addLevelToJourney(journeyId: string, level: string) {
+    // Try to match journey name to a journey type for correct topic selection
+    const journey = journeys.find((j) => j.id === journeyId);
+    const matchedType = allJourneyTypes.find((jt) => jt.label.toLowerCase() === journey?.name.toLowerCase());
+    await fetch("/api/studio/journeys", { method: "PATCH", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ journeyId, addLevels: [level], journeyTypeSlug: matchedType?.slug }) });
+    await loadJourneys();
+    if (expandedJourneyId === journeyId) await reloadStoriesForJourney(journeyId);
+  }
+
+  async function removeLevelFromJourney(journeyId: string, level: string) {
+    await fetch("/api/studio/journeys", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ journeyId, removeLevels: [level] }) });
+    await loadJourneys();
+    if (expandedJourneyId === journeyId) await reloadStoriesForJourney(journeyId);
   }
 
   async function deleteStory(storyId: string) {
@@ -333,15 +440,26 @@ export default function MonitorClient() {
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
   }
 
-  async function generateCover(storyId: string) {
-    const story = stories.find((s) => s.id === storyId);
-    const j = journeys.find((j) => j.id === expandedJourneyId);
-    if (!story?.sanityId || !j) return;
+  async function generateAudio(storyId: string) {
     setBusyStories((s) => new Set(s).add(storyId));
     try {
-      const res = await fetch("/api/sanity/generate-cover", { method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ documentId: story.sanityId, title: story.title || "", synopsis: "", language: j.language, region: j.variant, topic: story.topic, level: story.level, provider: "flux" }) });
-      if (res.ok) setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, coverDone: true } : s));
+      const res = await fetch("/api/studio/journeys/audio", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ storyId }) });
+      const data = await res.json();
+      if (res.ok) setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, audioUrl: data.audioUrl ?? s.audioUrl, audioStatus: "ready" } : s));
+      else setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, audioStatus: "failed", error: data.error } : s));
+    } catch (err) {
+      setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, audioStatus: "failed", error: String(err) } : s));
+    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
+  }
+
+  async function generateCover(storyId: string) {
+    setBusyStories((s) => new Set(s).add(storyId));
+    try {
+      const res = await fetch("/api/studio/journeys/cover", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ storyId }) });
+      const data = await res.json();
+      if (res.ok) setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, coverDone: true, coverUrl: data.url ?? s.coverUrl } : s));
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
   }
 
@@ -369,8 +487,8 @@ export default function MonitorClient() {
     }
   }
 
-  function dotColor(status: string, coverDone?: boolean) {
-    if (status === "published" && coverDone) return "#22c55e";
+  function dotColor(status: string, coverDone?: boolean, audioStatus?: string) {
+    if (status === "published" && coverDone && audioStatus === "ready") return "#22c55e";
     if (status === "published") return "#86efac";
     if (status === "generated" || status === "qa_pass" || status === "approved") return "#3b82f6";
     if (status === "draft") return "rgba(255,255,255,0.15)";
@@ -384,8 +502,7 @@ export default function MonitorClient() {
       return { label: "Generar historia", disabled: false, onClick: () => generateStory(s.id) };
     if (s.status === "generated" || s.status === "qa_pass" || s.status === "approved")
       return { label: "Publicar", disabled: false, onClick: () => publishStory(s.id) };
-    if (s.status === "published" && !s.coverDone)
-      return { label: "Cover", disabled: false, onClick: () => generateCover(s.id) };
+    // After publish, Cover and Audio are independent buttons rendered separately
     return null;
   }
 
@@ -430,6 +547,14 @@ export default function MonitorClient() {
 
         {storyDetail && (
           <>
+            {/* Cover thumbnail + Audio player */}
+            {(s.coverUrl || s.audioUrl) && (
+              <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                {s.coverUrl && <img src={s.coverUrl} alt="Cover" style={{ width: 160, height: 107, objectFit: "cover", borderRadius: 6, border: "1px solid var(--card-border)" }} />}
+                {s.audioUrl && <audio controls src={s.audioUrl} style={{ height: 32, flex: 1 }} />}
+              </div>
+            )}
+
             {/* Editable title */}
             <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
               <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Titulo</span>
@@ -455,7 +580,7 @@ export default function MonitorClient() {
 
             {/* Stats + slug + link row */}
             <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
-              <span style={{ ...chipStyle, backgroundColor: dotColor(s.status, s.coverDone) + "22", borderColor: dotColor(s.status, s.coverDone) + "44", color: dotColor(s.status, s.coverDone) }}>{statusText}</span>
+              <span style={{ ...chipStyle, backgroundColor: dotColor(s.status, s.coverDone, s.audioStatus) + "22", borderColor: dotColor(s.status, s.coverDone, s.audioStatus) + "44", color: dotColor(s.status, s.coverDone, s.audioStatus) }}>{statusText}</span>
               {s.wordCount != null && <span style={chipStyle}>{s.wordCount} palabras</span>}
               {s.vocabCount != null && <span style={chipStyle}>{s.vocabCount} vocabulario</span>}
               {s.slug && <span style={{ ...chipStyle, fontFamily: "monospace", fontSize: 8 }}>{s.slug}</span>}
@@ -528,31 +653,38 @@ export default function MonitorClient() {
       <div style={{ ...card, gap: 10, padding: "16px 18px", ...(allLanguages.length === 0 ? { opacity: 0.5, pointerEvents: "none" } : {}) }}>
         <p style={sectionLabel}>Nuevo Journey</p>
 
-        {/* Row 1: Name (large) + count + create button */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <input value={journeyName} onChange={(e) => setJourneyName(e.target.value)} placeholder="Nombre del journey"
-            style={{ padding: "6px 0", border: "none", borderBottom: "2px solid var(--card-border)", backgroundColor: "transparent", color: "var(--foreground)", fontSize: 18, fontWeight: 700, flex: 1, outline: "none" }} />
+        {/* Row 1: count + create button */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12, justifyContent: "flex-end" }}>
           <span style={{ fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>
             {totalStories} {totalStories === 1 ? "historia" : "historias"}
           </span>
-          <button onClick={() => void createJourney()} disabled={creating || totalStories === 0 || !journeyName.trim()}
-            style={btnPrimary(creating || totalStories === 0 || !journeyName.trim())}>
+          <button onClick={() => void createJourney()} disabled={creating || totalStories === 0 || !journeyType}
+            style={btnPrimary(creating || totalStories === 0 || !journeyType)}>
             {creating ? "Creando..." : "Crear journey"}
           </button>
         </div>
 
-        {/* Row 2: Language + Region + Levels + stories/topic */}
+        {/* Row 2: Journey type + Language + Region + Levels + stories/topic */}
         <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-          <select value={language}
-            onChange={(e) => { setLanguage(e.target.value); const l = allLanguages.find((x) => x.code === e.target.value); if (l?.variants?.[0]) setVariant(l.variants[0].code); }}
-            style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "var(--card-bg)", color: "var(--foreground)", fontSize: 13, height: 30 }}>
-            {allLanguages.map((l) => <option key={l.code} value={l.code}>{l.label}</option>)}
-          </select>
+          <SingleSelectDropdown
+            options={allJourneyTypes.map((jt) => ({ value: jt.slug, label: jt.label }))}
+            value={journeyType}
+            onChange={setJourneyType}
+            placeholder="Tipo de journey"
+          />
+          <SingleSelectDropdown
+            options={allLanguages.map((l) => ({ value: l.code, label: l.label }))}
+            value={language}
+            onChange={(val) => { setLanguage(val); const l = allLanguages.find((x) => x.code === val); if (l?.variants?.[0]) setVariant(l.variants[0].code); }}
+            placeholder="Idioma"
+          />
           {selectedLang?.variants?.length > 0 && (
-            <select value={variant} onChange={(e) => setVariant(e.target.value)}
-              style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "var(--card-bg)", color: "var(--foreground)", fontSize: 13, height: 30 }}>
-              {selectedLang.variants.map((v) => <option key={v.code} value={v.code}>{v.label}</option>)}
-            </select>
+            <SingleSelectDropdown
+              options={selectedLang.variants.map((v) => ({ value: v.code, label: v.label }))}
+              value={variant}
+              onChange={setVariant}
+              placeholder="Variante"
+            />
           )}
           <span style={{ width: 1, height: 18, backgroundColor: "var(--card-border)" }} />
           {allLevels.map((l) => <button key={l.code} onClick={() => toggleLevel(l.code)} style={pill(selectedLevels.has(l.code))}>{l.code.toUpperCase()}</button>)}
@@ -576,7 +708,7 @@ export default function MonitorClient() {
             <div key={level} style={{ display: "flex", gap: 8, alignItems: "center" }}>
               <span style={{ fontSize: 13, fontWeight: 700, color: "#14b8a6", width: 26, flexShrink: 0 }}>{level.toUpperCase()}</span>
               <TopicDropdown
-                available={allTopics}
+                available={availableTopics}
                 selected={levelTopics}
                 disabled={takenByOther}
                 onToggle={(slug) => toggleTopicForLevel(level, slug)}
@@ -622,7 +754,8 @@ export default function MonitorClient() {
                   onBlur={() => void renameJourney(j.id, editName)}
                   style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid #14b8a6", backgroundColor: "transparent", color: "var(--foreground)", fontSize: 15, fontWeight: 700, width: 220 }} />
               ) : (
-                <span style={{ fontSize: 15, fontWeight: 700, color: "var(--foreground)" }}>{j.name}</span>
+                <span onClick={(e) => { e.stopPropagation(); setEditingJourneyId(j.id); setEditName(j.name); }}
+                  style={{ fontSize: 15, fontWeight: 700, color: "var(--foreground)", cursor: "text" }} title="Clic para renombrar">{j.name}</span>
               )}
               <span style={{ fontSize: 12, color: "var(--muted)" }}>
                 {lang?.label || j.language} · {j.levels.map((l) => l.toUpperCase()).join(", ")} · {j.topics.length} temas
@@ -635,10 +768,44 @@ export default function MonitorClient() {
                 <div style={{ height: "100%", width: `${pct}%`, backgroundColor: "#14b8a6", borderRadius: 2 }} />
               </div>
 
-              <button onClick={(e) => { e.stopPropagation(); setEditingJourneyId(j.id); setEditName(j.name); }} style={iconBtn} title="Renombrar">✏️</button>
-              <button onClick={(e) => { e.stopPropagation(); setConfirmAction({ message: `Eliminar "${j.name}" y todas sus historias?`, onConfirm: () => deleteJourney(j.id) }); }}
+              <button onClick={(e) => { e.stopPropagation(); setEditingStructureId(editingStructureId === j.id ? null : j.id); }} style={{ ...iconBtn, color: editingStructureId === j.id ? "#14b8a6" : undefined }} title="Editar niveles">✏️</button>
+              <button onClick={(e) => { e.stopPropagation(); setConfirmAction({ message: `⚠️ Eliminar "${j.name}" con ${j.stats.total} historia${j.stats.total === 1 ? "" : "s"} (${j.stats.published} publicada${j.stats.published === 1 ? "" : "s"})? Esta acción es irreversible y no se puede deshacer.`, onConfirm: () => deleteJourney(j.id) }); }}
                 style={deleteBtn} title="Eliminar">&#x2716;</button>
             </div>
+
+            {/* Level editor panel */}
+            {editingStructureId === j.id && (
+              <div onClick={(e) => e.stopPropagation()} style={{ borderTop: "1px solid var(--card-border)", padding: "10px 16px", backgroundColor: "rgba(20,184,166,0.03)", display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+                <span style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)" }}>Niveles:</span>
+                {allLevels.map((l) => {
+                  const hasLevel = j.levels.includes(l.code);
+                  const storyCount = hasLevel ? j.stats.total : 0; // approximate
+                  return (
+                    <button key={l.code}
+                      onClick={() => {
+                        if (hasLevel) {
+                          const levelStories = stories.filter((s) => s.level === l.code);
+                          const count = levelStories.length || Math.round(j.stats.total / j.levels.length);
+                          setConfirmAction({
+                            message: `⚠️ Quitar nivel ${l.code.toUpperCase()} eliminará ~${count} historia${count === 1 ? "" : "s"}. Esta acción es irreversible.`,
+                            onConfirm: () => removeLevelFromJourney(j.id, l.code),
+                          });
+                        } else {
+                          void addLevelToJourney(j.id, l.code);
+                        }
+                      }}
+                      style={{
+                        ...pill(hasLevel),
+                        position: "relative",
+                      }}>
+                      {l.code.toUpperCase()}
+                      {hasLevel && <span style={{ marginLeft: 4, fontSize: 9, opacity: 0.5 }}>✕</span>}
+                      {!hasLevel && <span style={{ marginLeft: 4, fontSize: 9, opacity: 0.5 }}>+</span>}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
 
             {/* Expanded: grouped by LEVEL, then topics within */}
             {isExpanded && (() => {
@@ -681,7 +848,7 @@ export default function MonitorClient() {
                                       {busyStories.has(s.id) ? (
                                         <span style={{ display: "inline-block", width: 8, height: 8, border: "1.5px solid rgba(245,158,11,0.3)", borderTopColor: "#f59e0b", borderRadius: "50%", animation: "spin 0.6s linear infinite" }} />
                                       ) : (
-                                        <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: dotColor(s.status, s.coverDone) }} />
+                                        <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: dotColor(s.status, s.coverDone, s.audioStatus) }} />
                                       )}
                                     </span>
                                   ))}
@@ -711,7 +878,7 @@ export default function MonitorClient() {
                                             {busyStories.has(s.id) ? (
                                               <span style={{ display: "inline-block", width: 8, height: 8, border: "1.5px solid rgba(245,158,11,0.3)", borderTopColor: "#f59e0b", borderRadius: "50%", animation: "spin 0.6s linear infinite" }} />
                                             ) : (
-                                              <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: dotColor(s.status, s.coverDone) }} />
+                                              <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: dotColor(s.status, s.coverDone, s.audioStatus) }} />
                                             )}
                                           </span>
                                           <span onClick={() => s.title ? void toggleStoryDetail(s.id) : undefined}
@@ -727,7 +894,28 @@ export default function MonitorClient() {
                                                 ...(s.status === "published" && !s.coverDone ? { backgroundColor: "transparent", border: "1px solid var(--card-border)", color: "var(--foreground)" } : {}),
                                               }}>{action.label}</button>
                                           )}
-                                          {s.status === "published" && s.coverDone && <span style={{ fontSize: 9, color: "#22c55e" }}>✓</span>}
+                                          {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
+                                            <button onClick={() => setConfirmAction({
+                                              message: `Regenerar "${s.title}"? Sobreescribirá el contenido actual.${s.status === "published" ? " La historia volverá a estado 'generada' y dejará de ser visible hasta que se republique." : ""}`,
+                                              onConfirm: () => generateStory(s.id),
+                                            })}
+                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
+                                              Regenerar
+                                            </button>
+                                          )}
+                                          {s.status === "published" && !s.coverDone && !busyStories.has(s.id) && (
+                                            <button onClick={() => generateCover(s.id)}
+                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
+                                              Cover
+                                            </button>
+                                          )}
+                                          {s.status === "published" && s.audioStatus !== "ready" && !busyStories.has(s.id) && (
+                                            <button onClick={() => generateAudio(s.id)}
+                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
+                                              Audio
+                                            </button>
+                                          )}
+                                          {s.status === "published" && s.coverDone && s.audioStatus === "ready" && <span style={{ fontSize: 9, color: "#22c55e" }}>✓</span>}
                                           <button onClick={() => setConfirmAction({ message: `Eliminar "${s.title || "Historia " + (s.slotIndex + 1)}"?`, onConfirm: () => deleteStory(s.id) })}
                                             style={deleteBtn} title="Eliminar historia">&#x2716;</button>
                                         </div>

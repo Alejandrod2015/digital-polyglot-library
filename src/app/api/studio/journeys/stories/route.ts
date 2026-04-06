@@ -22,7 +22,8 @@ export async function GET(request: NextRequest) {
     select: {
       id: true, slug: true, level: true, topic: true, slotIndex: true,
       status: true, title: true, wordCount: true, vocabCount: true,
-      sanityId: true, coverDone: true, error: true,
+      sanityId: true, coverDone: true, coverUrl: true,
+      audioUrl: true, audioStatus: true, error: true,
     },
   });
 
@@ -77,7 +78,8 @@ export async function POST(request: Request) {
     select: {
       id: true, slug: true, level: true, topic: true, slotIndex: true,
       status: true, title: true, wordCount: true, vocabCount: true,
-      sanityId: true, coverDone: true, error: true,
+      sanityId: true, coverDone: true, coverUrl: true,
+      audioUrl: true, audioStatus: true, error: true,
     },
   });
 

@@ -11,6 +11,7 @@ import {
 type CreateJourneyRequest = {
   language?: string;
   variantId?: string;
+  journeyType?: string;
   levelsIncluded?: string[];
   templateLanguage?: string | null;
   templateVariantId?: string | null;
@@ -53,6 +54,7 @@ export async function POST(req: Request) {
     const body = (await req.json()) as CreateJourneyRequest;
     const language = body.language?.trim() || "Spanish";
     const variantId = normalizeVariantId(body.variantId ?? "");
+    const journeyType = (body.journeyType ?? "generico").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
     const requestedLevels = Array.isArray(body.levelsIncluded)
       ? body.levelsIncluded
           .map((level) => level.trim().toLowerCase())
@@ -62,8 +64,11 @@ export async function POST(req: Request) {
     if (!variantId) {
       return NextResponse.json({ error: "Missing variantId" }, { status: 400 });
     }
+    if (!journeyType) {
+      return NextResponse.json({ error: "Missing journeyType" }, { status: 400 });
+    }
 
-    const existingPlan = await getJourneyVariantPlanForStudio(language, variantId);
+    const existingPlan = await getJourneyVariantPlanForStudio(language, variantId, journeyType);
     if (existingPlan) {
       return NextResponse.json({ error: "Journey already exists" }, { status: 409 });
     }
@@ -81,6 +86,7 @@ export async function POST(req: Request) {
       plan = {
         language,
         variantId,
+        journeyType,
         levels: templateLevels.map((level) => ({
           ...level,
           topics: level.topics.map((topic) => ({ ...topic })),
@@ -90,6 +96,7 @@ export async function POST(req: Request) {
       plan = {
         language,
         variantId,
+        journeyType,
         levels: levelsIncluded.map((levelId) => ({
           id: levelId,
           title: levelId.toUpperCase(),

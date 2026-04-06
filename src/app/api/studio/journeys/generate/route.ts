@@ -88,7 +88,8 @@ export async function POST(request: Request) {
       language: story.journey.language,
     });
 
-    const slug = generateSlug(generated.title, story.journey.language, story.journey.variant, story.slotIndex + 1);
+    const baseSlug = generateSlug(generated.title, story.journey.language, story.journey.variant, 0).replace(/-0$/, "");
+    const slug = story.slotIndex > 0 ? `${baseSlug}-${story.slotIndex + 1}` : baseSlug;
     const wordCount = generated.text.split(/\s+/).filter(Boolean).length;
 
     const updated = await prisma.journeyStory.update({
