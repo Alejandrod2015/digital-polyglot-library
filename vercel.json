@@ -1,3 +1,4 @@
 {
-  "installCommand": "npm ci --no-workspaces"
+  "installCommand": "npm ci --no-workspaces",
+  "ignoreCommand": "bash scripts/vercel-ignore-build.sh"
 }
