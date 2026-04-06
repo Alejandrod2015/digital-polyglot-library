@@ -81,31 +81,31 @@ function TopicDropdown({ available, selected, disabled, onToggle }: {
 // ── Styles ──
 
 const card: React.CSSProperties = {
-  padding: 14, borderRadius: 10, backgroundColor: "var(--card-bg)",
+  padding: 16, borderRadius: 10, backgroundColor: "var(--card-bg)",
   border: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 10,
 };
 const pill = (active: boolean): React.CSSProperties => ({
-  padding: "3px 10px", borderRadius: 5, border: `1px solid ${active ? "#14b8a6" : "var(--card-border)"}`,
+  padding: "4px 12px", borderRadius: 6, border: `1px solid ${active ? "#14b8a6" : "var(--card-border)"}`,
   backgroundColor: active ? "rgba(20,184,166,0.15)" : "transparent",
-  color: active ? "#14b8a6" : "var(--muted)", fontSize: 11, fontWeight: 700, cursor: "pointer",
+  color: active ? "#14b8a6" : "var(--muted)", fontSize: 13, fontWeight: 600, cursor: "pointer",
 });
 const sectionLabel: React.CSSProperties = {
-  margin: 0, fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "#14b8a6",
+  margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "#14b8a6",
 };
 const fieldLabel: React.CSSProperties = {
-  fontSize: 10, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" as const,
+  fontSize: 11, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" as const,
 };
 const btnPrimary = (disabled?: boolean): React.CSSProperties => ({
-  height: 28, padding: "0 14px", borderRadius: 6, border: "none",
-  backgroundColor: "#14b8a6", color: "#fff", fontWeight: 700, fontSize: 11,
+  height: 34, padding: "0 18px", borderRadius: 7, border: "none",
+  backgroundColor: "#14b8a6", color: "#fff", fontWeight: 700, fontSize: 13,
   cursor: disabled ? "not-allowed" : "pointer", opacity: disabled ? 0.5 : 1,
 });
 const btnSecondary: React.CSSProperties = {
-  height: 24, padding: "0 10px", borderRadius: 5, border: "1px solid var(--card-border)",
-  backgroundColor: "transparent", color: "var(--foreground)", fontWeight: 600, fontSize: 10, cursor: "pointer",
+  height: 28, padding: "0 12px", borderRadius: 6, border: "1px solid var(--card-border)",
+  backgroundColor: "transparent", color: "var(--foreground)", fontWeight: 600, fontSize: 12, cursor: "pointer",
 };
 const chipStyle: React.CSSProperties = {
-  padding: "1px 6px", borderRadius: 3, fontSize: 9, fontWeight: 600,
+  padding: "2px 8px", borderRadius: 4, fontSize: 11, fontWeight: 600,
   backgroundColor: "rgba(20,184,166,0.08)", border: "1px solid rgba(20,184,166,0.15)", color: "var(--foreground)",
 };
 const iconBtn: React.CSSProperties = {
@@ -524,13 +524,15 @@ export default function MonitorClient() {
           onCancel={() => setConfirmAction(null)} />
       )}
 
-      {/* ══ Create form ══ */}
-      <div style={{ ...card, gap: 8, padding: "12px 14px", ...(allLanguages.length === 0 ? { opacity: 0.5, pointerEvents: "none" } : {}) }}>
+      {/* ══ Nuevo Journey ══ */}
+      <div style={{ ...card, gap: 10, padding: "16px 18px", ...(allLanguages.length === 0 ? { opacity: 0.5, pointerEvents: "none" } : {}) }}>
+        <p style={sectionLabel}>Nuevo Journey</p>
+
         {/* Row 1: Name (large) + count + create button */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <input value={journeyName} onChange={(e) => setJourneyName(e.target.value)} placeholder="Nombre del journey"
-            style={{ padding: "4px 0", border: "none", borderBottom: "1px solid var(--card-border)", backgroundColor: "transparent", color: "var(--foreground)", fontSize: 16, fontWeight: 700, flex: 1, outline: "none" }} />
-          <span style={{ fontSize: 11, color: "var(--muted)", whiteSpace: "nowrap" }}>
+            style={{ padding: "6px 0", border: "none", borderBottom: "2px solid var(--card-border)", backgroundColor: "transparent", color: "var(--foreground)", fontSize: 18, fontWeight: 700, flex: 1, outline: "none" }} />
+          <span style={{ fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>
             {totalStories} {totalStories === 1 ? "historia" : "historias"}
           </span>
           <button onClick={() => void createJourney()} disabled={creating || totalStories === 0 || !journeyName.trim()}
@@ -540,25 +542,25 @@ export default function MonitorClient() {
         </div>
 
         {/* Row 2: Language + Region + Levels + stories/topic */}
-        <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
           <select value={language}
             onChange={(e) => { setLanguage(e.target.value); const l = allLanguages.find((x) => x.code === e.target.value); if (l?.variants?.[0]) setVariant(l.variants[0].code); }}
-            style={{ padding: "2px 6px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "var(--card-bg)", color: "var(--foreground)", fontSize: 11, height: 24 }}>
+            style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "var(--card-bg)", color: "var(--foreground)", fontSize: 13, height: 30 }}>
             {allLanguages.map((l) => <option key={l.code} value={l.code}>{l.label}</option>)}
           </select>
           {selectedLang?.variants?.length > 0 && (
             <select value={variant} onChange={(e) => setVariant(e.target.value)}
-              style={{ padding: "2px 6px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "var(--card-bg)", color: "var(--foreground)", fontSize: 11, height: 24 }}>
+              style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "var(--card-bg)", color: "var(--foreground)", fontSize: 13, height: 30 }}>
               {selectedLang.variants.map((v) => <option key={v.code} value={v.code}>{v.label}</option>)}
             </select>
           )}
-          <span style={{ width: 1, height: 14, backgroundColor: "var(--card-border)" }} />
-          {allLevels.map((l) => <button key={l.code} onClick={() => toggleLevel(l.code)} style={{ ...pill(selectedLevels.has(l.code)), padding: "1px 7px", fontSize: 10 }}>{l.code.toUpperCase()}</button>)}
-          <span style={{ width: 1, height: 14, backgroundColor: "var(--card-border)" }} />
-          <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+          <span style={{ width: 1, height: 18, backgroundColor: "var(--card-border)" }} />
+          {allLevels.map((l) => <button key={l.code} onClick={() => toggleLevel(l.code)} style={pill(selectedLevels.has(l.code))}>{l.code.toUpperCase()}</button>)}
+          <span style={{ width: 1, height: 18, backgroundColor: "var(--card-border)" }} />
+          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <input type="number" min={1} max={10} value={storiesPerTopic} onChange={(e) => setStoriesPerTopic(Math.max(1, parseInt(e.target.value) || 1))}
-              style={{ padding: "2px 4px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 11, width: 32, textAlign: "center" }} />
-            <span style={{ fontSize: 10, color: "var(--muted)" }}>historia/tema</span>
+              style={{ padding: "4px 6px", borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 13, width: 38, textAlign: "center" }} />
+            <span style={{ fontSize: 12, color: "var(--muted)" }}>historia/tema</span>
           </div>
         </div>
 
@@ -571,8 +573,8 @@ export default function MonitorClient() {
             for (const t of otherTopics) takenByOther.set(t, otherLevel.toUpperCase());
           }
           return (
-            <div key={level} style={{ display: "flex", gap: 6, alignItems: "center" }}>
-              <span style={{ fontSize: 10, fontWeight: 700, color: "#14b8a6", width: 22, flexShrink: 0 }}>{level.toUpperCase()}</span>
+            <div key={level} style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <span style={{ fontSize: 13, fontWeight: 700, color: "#14b8a6", width: 26, flexShrink: 0 }}>{level.toUpperCase()}</span>
               <TopicDropdown
                 available={allTopics}
                 selected={levelTopics}
@@ -584,18 +586,15 @@ export default function MonitorClient() {
         })}
       </div>
 
-      {/* ══ Journeys list (inline expandable) ══ */}
+      {/* ══ Journeys list ══ */}
       {journeys.length > 0 && (
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <p style={sectionLabel}>Journeys</p>
-          <div style={{ display: "flex", gap: 3 }}>
-            {(["all", "pending", "complete"] as const).map((f) => (
-              <button key={f} onClick={() => setJourneyFilter(f)}
-                style={{ ...pill(journeyFilter === f), padding: "2px 8px", fontSize: 9 }}>
-                {f === "all" ? "Todos" : f === "pending" ? "Pendientes" : "Completos"}
-              </button>
-            ))}
-          </div>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 4 }}>
+          {(["all", "pending", "complete"] as const).map((f) => (
+            <button key={f} onClick={() => setJourneyFilter(f)}
+              style={{ ...pill(journeyFilter === f), padding: "3px 10px" }}>
+              {f === "all" ? "Todos" : f === "pending" ? "Pendientes" : "Completos"}
+            </button>
+          ))}
         </div>
       )}
       {loading && <p style={{ fontSize: 11, color: "var(--muted)" }}>Cargando...</p>}
@@ -613,26 +612,26 @@ export default function MonitorClient() {
         return (
           <div key={j.id} style={{ ...card, gap: 0, padding: 0, overflow: "hidden" }}>
             {/* Journey header row */}
-            <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 12px", cursor: "pointer" }}
+            <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 16px", cursor: "pointer" }}
               onClick={() => void toggleJourney(j)}>
-              <span style={{ fontSize: 10, color: "var(--muted)", transform: isExpanded ? "rotate(90deg)" : "none", transition: "transform 0.15s" }}>▶</span>
+              <span style={{ fontSize: 12, color: "var(--muted)", transform: isExpanded ? "rotate(90deg)" : "none", transition: "transform 0.15s" }}>▶</span>
               {isEditing ? (
                 <input autoFocus value={editName} onChange={(e) => setEditName(e.target.value)}
                   onClick={(e) => e.stopPropagation()}
                   onKeyDown={(e) => { if (e.key === "Enter") void renameJourney(j.id, editName); if (e.key === "Escape") setEditingJourneyId(null); }}
                   onBlur={() => void renameJourney(j.id, editName)}
-                  style={{ padding: "2px 6px", borderRadius: 4, border: "1px solid #14b8a6", backgroundColor: "transparent", color: "var(--foreground)", fontSize: 13, fontWeight: 700, width: 180 }} />
+                  style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid #14b8a6", backgroundColor: "transparent", color: "var(--foreground)", fontSize: 15, fontWeight: 700, width: 220 }} />
               ) : (
-                <span style={{ fontSize: 13, fontWeight: 700, color: "var(--foreground)" }}>{j.name}</span>
+                <span style={{ fontSize: 15, fontWeight: 700, color: "var(--foreground)" }}>{j.name}</span>
               )}
-              <span style={{ fontSize: 10, color: "var(--muted)" }}>
+              <span style={{ fontSize: 12, color: "var(--muted)" }}>
                 {lang?.label || j.language} · {j.levels.map((l) => l.toUpperCase()).join(", ")} · {j.topics.length} temas
               </span>
               <span style={{ flex: 1 }} />
               <span style={chipStyle}>{j.stats.published}/{j.stats.total} publicadas</span>
 
               {/* Progress bar mini */}
-              <div style={{ width: 60, height: 3, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.06)", overflow: "hidden" }}>
+              <div style={{ width: 80, height: 4, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.06)", overflow: "hidden" }}>
                 <div style={{ height: "100%", width: `${pct}%`, backgroundColor: "#14b8a6", borderRadius: 2 }} />
               </div>
 
@@ -655,8 +654,8 @@ export default function MonitorClient() {
                     return (
                       <div key={level}>
                         {/* Level header */}
-                        <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "6px 4px 2px" }}>
-                          <span style={{ fontSize: 11, fontWeight: 700, color: "#14b8a6", letterSpacing: "0.05em" }}>{level.toUpperCase()}</span>
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 4px 2px" }}>
+                          <span style={{ fontSize: 13, fontWeight: 700, color: "#14b8a6", letterSpacing: "0.05em" }}>{level.toUpperCase()}</span>
                           <span style={{ flex: 1, height: 1, backgroundColor: "rgba(20,184,166,0.15)" }} />
                           <span style={{ ...chipStyle, fontSize: 8 }}>{levelGen}/{levelTotal}</span>
                         </div>
@@ -675,7 +674,7 @@ export default function MonitorClient() {
                               <div onClick={() => { setExpandedTopic(isTopicOpen ? null : key); setExpandedStoryId(null); setStoryDetail(null); }}
                                 style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 8px 4px 16px", borderRadius: 5, cursor: "pointer",
                                   backgroundColor: isTopicOpen ? "rgba(20,184,166,0.04)" : "transparent" }}>
-                                <span style={{ fontSize: 12, color: "var(--foreground)", fontWeight: 500 }}>{group.label}</span>
+                                <span style={{ fontSize: 14, color: "var(--foreground)", fontWeight: 500 }}>{group.label}</span>
                                 <div style={{ display: "flex", gap: 3, marginLeft: 4 }}>
                                   {group.stories.map((s) => (
                                     <span key={s.id} style={{ width: 8, height: 8, display: "flex", alignItems: "center", justifyContent: "center" }}>

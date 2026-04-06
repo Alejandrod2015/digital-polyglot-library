@@ -6,9 +6,8 @@ export default async function MonitorPage() {
   await requireStudioUser("/studio/monitor");
   return (
     <StudioShell
-      title="Journey Manager"
-      description="Crea y gestiona los journeys de aprendizaje"
-      breadcrumbs={[{ label: "Studio", href: "/studio" }, { label: "Journey Manager" }]}
+      title=""
+      breadcrumbs={[]}
     >
       <MonitorClient />
     </StudioShell>
