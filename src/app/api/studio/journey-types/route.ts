@@ -7,48 +7,19 @@ function toSlug(label: string): string {
   return label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-/** GET /api/studio/topics — list topics. Optional ?journeyType=slug to get universal + that journey's specialized */
-export async function GET(request: Request) {
+/** GET /api/studio/journey-types — list all journey types */
+export async function GET() {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const user = await currentUser();
   if (!user?.primaryEmailAddress?.emailAddress || !(await isStudioMember(user.primaryEmailAddress.emailAddress)))
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
-  const { searchParams } = new URL(request.url);
-  const journeyTypeSlug = searchParams.get("journeyType");
-
-  if (journeyTypeSlug) {
-    // Return universal topics + specialized topics assigned to this journey type
-    const jt = await prisma.journeyType.findUnique({ where: { slug: journeyTypeSlug } });
-    if (!jt) return NextResponse.json({ error: "Journey type not found" }, { status: 404 });
-
-    const [universal, specialized] = await Promise.all([
-      prisma.topic.findMany({ where: { isUniversal: true }, orderBy: { sortOrder: "asc" } }),
-      prisma.topicJourneyType.findMany({
-        where: { journeyTypeId: jt.id },
-        include: { topic: true },
-        orderBy: { topic: { sortOrder: "asc" } },
-      }),
-    ]);
-
-    const specializedTopics = specialized.map((s) => s.topic);
-    const all = [...universal, ...specializedTopics].sort((a, b) => a.sortOrder - b.sortOrder);
-    return NextResponse.json(all);
-  }
-
-  // No filter: return all topics with isUniversal and journeyTypes info
-  const topics = await prisma.topic.findMany({
-    orderBy: { sortOrder: "asc" },
-    include: { journeyTypes: { include: { journeyType: true } } },
-  });
-  return NextResponse.json(topics.map((t) => ({
-    ...t,
-    journeyTypes: t.journeyTypes.map((jt) => ({ slug: jt.journeyType.slug, label: jt.journeyType.label })),
-  })));
+  const types = await prisma.journeyType.findMany({ orderBy: { sortOrder: "asc" } });
+  return NextResponse.json(types);
 }
 
-/** POST /api/studio/topics — create a topic. Body: { label } */
+/** POST /api/studio/journey-types — create a journey type. Body: { label } */
 export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -68,14 +39,14 @@ export async function POST(request: Request) {
   if (!label?.trim()) return NextResponse.json({ error: "label required" }, { status: 400 });
 
   const slug = toSlug(label);
-  const maxOrder = await prisma.topic.aggregate({ _max: { sortOrder: true } });
-  const topic = await prisma.topic.create({
+  const maxOrder = await prisma.journeyType.aggregate({ _max: { sortOrder: true } });
+  const journeyType = await prisma.journeyType.create({
     data: { slug, label: label.trim(), sortOrder: (maxOrder._max.sortOrder ?? 0) + 1 },
   });
-  return NextResponse.json(topic);
+  return NextResponse.json(journeyType);
 }
 
-/** PATCH /api/studio/topics — update a topic. Body: { id, label?, sortOrder? } */
+/** PATCH /api/studio/journey-types — update a journey type. Body: { id, label?, sortOrder? } */
 export async function PATCH(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -91,19 +62,53 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
 
-  const { id, label, sortOrder, defaultLevel } = body;
+  const { id, label, sortOrder, assignTopicId, unassignTopicId, addTopicLabel } = body;
   if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
+
+  // Assign an existing specialized topic to this journey type
+  if (assignTopicId) {
+    await prisma.topicJourneyType.upsert({
+      where: { topicId_journeyTypeId: { topicId: assignTopicId, journeyTypeId: id } },
+      update: {},
+      create: { topicId: assignTopicId, journeyTypeId: id },
+    });
+    return NextResponse.json({ ok: true });
+  }
+
+  // Unassign a topic from this journey type
+  if (unassignTopicId) {
+    await prisma.topicJourneyType.deleteMany({
+      where: { topicId: unassignTopicId, journeyTypeId: id },
+    });
+    return NextResponse.json({ ok: true });
+  }
+
+  // Create a new specialized topic and assign it to this journey type
+  if (addTopicLabel) {
+    const slug = toSlug(addTopicLabel);
+    const maxOrder = await prisma.topic.aggregate({ _max: { sortOrder: true } });
+    const topic = await prisma.topic.upsert({
+      where: { slug },
+      update: {},
+      create: { slug, label: addTopicLabel.trim(), isUniversal: false, sortOrder: (maxOrder._max.sortOrder ?? 0) + 1 },
+    });
+    await prisma.topicJourneyType.upsert({
+      where: { topicId_journeyTypeId: { topicId: topic.id, journeyTypeId: id } },
+      update: {},
+      create: { topicId: topic.id, journeyTypeId: id },
+    });
+    return NextResponse.json({ ok: true, topic });
+  }
 
   const data: Record<string, any> = {};
   if (label !== undefined) { data.label = label.trim(); data.slug = toSlug(label); }
   if (sortOrder !== undefined) data.sortOrder = sortOrder;
-  if (defaultLevel !== undefined) data.defaultLevel = defaultLevel;
 
-  const topic = await prisma.topic.update({ where: { id }, data });
-  return NextResponse.json(topic);
+  const journeyType = await prisma.journeyType.update({ where: { id }, data });
+  return NextResponse.json(journeyType);
 }
 
-/** DELETE /api/studio/topics — delete a topic. Body: { id } */
+/** DELETE /api/studio/journey-types — delete a journey type. Body: { id } */
 export async function DELETE(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -122,6 +127,6 @@ export async function DELETE(request: Request) {
   const { id } = body;
   if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
 
-  await prisma.topic.delete({ where: { id } });
+  await prisma.journeyType.delete({ where: { id } });
   return NextResponse.json({ ok: true });
 }

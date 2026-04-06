@@ -1,12 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { JourneyVariantPlan } from "@/app/journey/journeyCurriculum";
 import { VARIANT_OPTIONS_BY_LANGUAGE } from "@/lib/languageVariant";
 import StudioActionLink from "@/components/studio/StudioActionLink";
 import StudioToast, { showToast } from "@/components/studio/StudioToast";
 
+type JourneyTypeOption = { id: string; slug: string; label: string };
 type Props = { plans: JourneyVariantPlan[] };
 
 const COLORS = ["#2563eb", "#7c3aed", "#059669", "#d97706", "#ec4899", "#0ea5e9"];
@@ -17,9 +18,18 @@ export default function JourneyBuilderManager({ plans }: Props) {
   const router = useRouter();
   const [language, setLanguage] = useState("Spanish");
   const [variantId, setVariantId] = useState("");
+  const [journeyType, setJourneyType] = useState("");
+  const [journeyTypes, setJourneyTypes] = useState<JourneyTypeOption[]>([]);
   const [levelsIncluded, setLevelsIncluded] = useState<string[]>(["a1", "a2"]);
   const [templateKey, setTemplateKey] = useState("empty");
   const [creating, setCreating] = useState(false);
+
+  const loadJourneyTypes = useCallback(async () => {
+    const res = await fetch("/api/studio/journey-types");
+    if (res.ok) setJourneyTypes(await res.json());
+  }, []);
+
+  useEffect(() => { void loadJourneyTypes(); }, [loadJourneyTypes]);
 
   const templateOptions = useMemo(
     () => [
@@ -44,6 +54,10 @@ export default function JourneyBuilderManager({ plans }: Props) {
       showToast("Añade una variante para crear el journey.", "error");
       return;
     }
+    if (!journeyType) {
+      showToast("Selecciona un tipo de journey.", "error");
+      return;
+    }
     if (!levelsIncluded.length) {
       showToast("Selecciona al menos un nivel.", "error");
       return;
@@ -60,6 +74,7 @@ export default function JourneyBuilderManager({ plans }: Props) {
         body: JSON.stringify({
           language,
           variantId: cleanVariant,
+          journeyType,
           levelsIncluded,
           templateLanguage,
           templateVariantId,
@@ -67,7 +82,8 @@ export default function JourneyBuilderManager({ plans }: Props) {
       });
 
       if (res.status === 409) {
-        showToast("Ese journey ya existe.", "error");
+        const selectedType = journeyTypes.find((jt) => jt.slug === journeyType);
+        showToast(`Ya existe un journey "${selectedType?.label ?? journeyType}" para ${language} · ${cleanVariant.toUpperCase()}.`, "error");
         return;
       }
       if (!res.ok) throw new Error(`Error ${res.status}`);
@@ -102,7 +118,7 @@ export default function JourneyBuilderManager({ plans }: Props) {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
             <div>
               <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>
                 Idioma
@@ -143,6 +159,21 @@ export default function JourneyBuilderManager({ plans }: Props) {
                   />
                 );
               })()}
+            </div>
+            <div>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>
+                Tipo de journey
+              </label>
+              <select
+                value={journeyType}
+                onChange={(event) => setJourneyType(event.target.value)}
+                style={{ width: "100%", height: 40, borderRadius: 10, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px" }}
+              >
+                <option value="">Seleccionar tipo</option>
+                {journeyTypes.map((jt) => (
+                  <option key={jt.id} value={jt.slug}>{jt.label}</option>
+                ))}
+              </select>
             </div>
           </div>
 
@@ -276,7 +307,7 @@ export default function JourneyBuilderManager({ plans }: Props) {
                       {plan.language}
                     </h3>
                     <p style={{ fontSize: 13, color: "var(--muted)", margin: "2px 0 0" }}>
-                      {plan.variantId.toUpperCase()} · {plan.levels.length} niveles · {totalTopics} topics
+                      {plan.variantId.toUpperCase()} · {plan.journeyType ?? "genérico"} · {plan.levels.length} niveles · {totalTopics} topics
                     </p>
                   </div>
                 </div>

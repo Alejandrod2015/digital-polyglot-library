@@ -18,6 +18,7 @@ export type JourneyLevelPlan = {
 export type JourneyVariantPlan = {
   language: string;
   variantId: string;
+  journeyType?: string;
   levels: JourneyLevelPlan[];
 };
 

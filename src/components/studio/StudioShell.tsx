@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import StudioActionLink from "@/components/studio/StudioActionLink";
 
@@ -102,6 +103,14 @@ export default function StudioShell({
   breadcrumbs,
 }: StudioShellProps) {
   const pathname = usePathname() ?? "";
+  const [testMode, setTestMode] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/studio/settings")
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => { if (data?.testMode) setTestMode(true); })
+      .catch(() => {});
+  }, []);
 
   return (
     <div style={{ display: "flex", minHeight: "100vh", backgroundColor: "var(--background)", color: "var(--foreground)" }}>
@@ -231,6 +240,25 @@ export default function StudioShell({
 
       {/* ── Main area ── */}
       <div style={{ marginLeft: 240, flex: 1, minWidth: 0 }}>
+        {/* Test mode banner */}
+        {testMode && (
+          <div style={{
+            padding: "6px 32px",
+            backgroundColor: "rgba(234, 179, 8, 0.12)",
+            borderBottom: "1px solid rgba(234, 179, 8, 0.25)",
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}>
+            <span style={{ fontSize: 12, fontWeight: 600, color: "#eab308" }}>
+              ⚠ Modo de prueba
+            </span>
+            <span style={{ fontSize: 11, color: "rgba(234, 179, 8, 0.7)" }}>
+              Genera historias muy cortas (~50 palabras, 3-5 vocab) para probar el sistema sin gastar tokens
+            </span>
+          </div>
+        )}
+
         {/* Page header */}
         <header
           style={{

@@ -29,6 +29,13 @@ export const journeyVariantPlan = defineType({
       description: "Must match the runtime variant id, for example latam or spain.",
     }),
     defineField({
+      name: "journeyType",
+      title: "Journey Type",
+      type: "string",
+      description: "The type of journey, e.g. generico, viajero, negocios.",
+      initialValue: "generico",
+    }),
+    defineField({
       name: "levels",
       title: "Levels",
       type: "array",
@@ -122,10 +129,12 @@ export const journeyVariantPlan = defineType({
     select: {
       title: "variantId",
       subtitle: "language",
+      journeyType: "journeyType",
     },
     prepare(selection) {
+      const jType = selection.journeyType ? ` (${selection.journeyType})` : "";
       return {
-        title: selection.title ? `Journey: ${selection.title}` : "Journey Variant Plan",
+        title: selection.title ? `Journey: ${selection.title}${jType}` : "Journey Variant Plan",
         subtitle: selection.subtitle ?? "No language",
       };
     },

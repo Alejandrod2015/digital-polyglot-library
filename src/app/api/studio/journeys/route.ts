@@ -130,8 +130,8 @@ export async function DELETE(request: Request) {
 }
 
 /**
- * PATCH /api/studio/journeys — update journey name
- * Body: { journeyId, name }
+ * PATCH /api/studio/journeys — update journey name, add/remove levels
+ * Body: { journeyId, name?, addLevels?, removeLevels? }
  */
 export async function PATCH(request: Request) {
   const { userId } = await auth();
@@ -146,9 +146,70 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
 
-  const { journeyId, name } = body;
-  if (!journeyId || !name) return NextResponse.json({ error: "journeyId and name required" }, { status: 400 });
+  const { journeyId, name, addLevels, removeLevels, journeyTypeSlug } = body;
+  if (!journeyId) return NextResponse.json({ error: "journeyId required" }, { status: 400 });
 
-  await prisma.journey.update({ where: { id: journeyId }, data: { name } });
+  const journey = await prisma.journey.findUnique({ where: { id: journeyId } });
+  if (!journey) return NextResponse.json({ error: "Journey not found" }, { status: 404 });
+
+  // Rename
+  if (name) {
+    await prisma.journey.update({ where: { id: journeyId }, data: { name } });
+  }
+
+  // Add levels: create story slots using topics whose defaultLevel matches
+  if (Array.isArray(addLevels) && addLevels.length > 0) {
+    const newLevels = addLevels.filter((l: string) => !journey.levels.includes(l));
+    if (newLevels.length > 0) {
+      // Get all topics available for this journey type (universal + specialized)
+      let availableTopicSlugs: string[];
+      if (journeyTypeSlug) {
+        const jt = await prisma.journeyType.findUnique({ where: { slug: journeyTypeSlug } });
+        const [universal, specialized] = await Promise.all([
+          prisma.topic.findMany({ where: { isUniversal: true }, select: { slug: true } }),
+          jt ? prisma.topicJourneyType.findMany({ where: { journeyTypeId: jt.id }, include: { topic: { select: { slug: true } } } }) : Promise.resolve([]),
+        ]);
+        availableTopicSlugs = [...universal.map((t) => t.slug), ...specialized.map((s) => s.topic.slug)];
+      } else {
+        availableTopicSlugs = journey.topics;
+      }
+
+      const topicsForLevels = await prisma.topic.findMany({
+        where: { slug: { in: availableTopicSlugs }, defaultLevel: { in: newLevels } },
+      });
+
+      const storyData: { journeyId: string; level: string; topic: string; slotIndex: number }[] = [];
+      for (const topic of topicsForLevels) {
+        const level = topic.defaultLevel!;
+        for (let i = 0; i < journey.storiesPerTopic; i++) {
+          storyData.push({ journeyId, level, topic: topic.slug, slotIndex: i });
+        }
+      }
+
+      // Update the journey topics array to include any new topic slugs
+      const allTopicSlugs = new Set([...journey.topics, ...topicsForLevels.map((t) => t.slug)]);
+
+      await prisma.$transaction([
+        ...(storyData.length > 0 ? [prisma.journeyStory.createMany({ data: storyData, skipDuplicates: true })] : []),
+        prisma.journey.update({ where: { id: journeyId }, data: { levels: [...journey.levels, ...newLevels], topics: [...allTopicSlugs] } }),
+      ]);
+      return NextResponse.json({ ok: true, addedLevels: newLevels, storiesCreated: storyData.length });
+    }
+  }
+
+  // Remove levels: delete stories and update journey
+  if (Array.isArray(removeLevels) && removeLevels.length > 0) {
+    const remaining = journey.levels.filter((l) => !removeLevels.includes(l));
+    if (remaining.length === 0) {
+      return NextResponse.json({ error: "Cannot remove all levels" }, { status: 400 });
+    }
+    const deletedCount = await prisma.journeyStory.count({ where: { journeyId, level: { in: removeLevels } } });
+    await prisma.$transaction([
+      prisma.journeyStory.deleteMany({ where: { journeyId, level: { in: removeLevels } } }),
+      prisma.journey.update({ where: { id: journeyId }, data: { levels: remaining } }),
+    ]);
+    return NextResponse.json({ ok: true, removedLevels: removeLevels, storiesDeleted: deletedCount });
+  }
+
   return NextResponse.json({ ok: true });
 }

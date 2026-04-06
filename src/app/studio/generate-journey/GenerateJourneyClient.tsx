@@ -1,25 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const LANGUAGES = [
-  { code: "spanish", label: "Español", variants: [{ id: "latam", label: "Latam" }, { id: "spain", label: "España" }] },
-  { code: "german", label: "Alemán", variants: [{ id: "germany", label: "Alemania" }, { id: "austria", label: "Austria" }] },
-];
-
-const ALL_TOPICS = [
-  { slug: "community-celebrations", label: "Community & Celebrations" },
-  { slug: "food-daily-life", label: "Food & Everyday Life" },
-  { slug: "work-study", label: "Work & Study" },
-  { slug: "travel-plans", label: "Travel & Plans" },
-  { slug: "home-family", label: "Home & Family" },
-  { slug: "health-wellbeing", label: "Health & Wellbeing" },
-  { slug: "nature-adventure", label: "Nature & Adventure" },
-  { slug: "traditions-daily-culture", label: "Traditions & Daily Culture" },
-];
-
-const LEVELS = ["a1", "a2", "b1", "b2"];
+type LanguageOption = { id: string; code: string; label: string; variants: { id: string; code: string; label: string }[] };
+type TopicOption = { id: string; slug: string; label: string };
+type LevelOption = { id: string; code: string; label: string };
+type JourneyTypeOption = { id: string; slug: string; label: string };
 
 const card: React.CSSProperties = {
   padding: 14, borderRadius: 10, backgroundColor: "var(--card-bg)",
@@ -42,6 +29,11 @@ const btnPrimary = (disabled?: boolean): React.CSSProperties => ({
   cursor: disabled ? "not-allowed" : "pointer", opacity: disabled ? 0.5 : 1,
 });
 
+const selectStyle: React.CSSProperties = {
+  padding: "4px 8px", borderRadius: 5, border: "1px solid var(--card-border)",
+  backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 12,
+};
+
 function toggleSet<T>(set: Set<T>, val: T): Set<T> {
   const n = new Set(set);
   if (n.has(val)) n.delete(val); else n.add(val);
@@ -50,69 +42,103 @@ function toggleSet<T>(set: Set<T>, val: T): Set<T> {
 
 export default function GenerateJourneyClient() {
   const router = useRouter();
-  const [journeyName, setJourneyName] = useState("German Generic");
-  const [language, setLanguage] = useState("german");
-  const [variant, setVariant] = useState("germany");
+  const [languages, setLanguages] = useState<LanguageOption[]>([]);
+  const [topics, setTopics] = useState<TopicOption[]>([]);
+  const [levels, setLevels] = useState<LevelOption[]>([]);
+  const [journeyTypes, setJourneyTypes] = useState<JourneyTypeOption[]>([]);
+
+  const [journeyType, setJourneyType] = useState("");
+  const [language, setLanguage] = useState("");
+  const [variant, setVariant] = useState("");
   const [selectedLevels, setSelectedLevels] = useState<Set<string>>(new Set(["a1", "a2"]));
-  const [selectedTopics, setSelectedTopics] = useState<Set<string>>(new Set(["community-celebrations", "food-daily-life", "work-study", "travel-plans"]));
+  const [selectedTopics, setSelectedTopics] = useState<Set<string>>(new Set());
   const [storiesPerTopic, setStoriesPerTopic] = useState(1);
 
-  const selectedLang = LANGUAGES.find((l) => l.code === language) ?? LANGUAGES[0];
+  const loadData = useCallback(async () => {
+    const [lang, top, lev, jt] = await Promise.all([
+      fetch("/api/studio/languages").then((r) => r.ok ? r.json() : []),
+      fetch("/api/studio/topics").then((r) => r.ok ? r.json() : []),
+      fetch("/api/studio/levels").then((r) => r.ok ? r.json() : []),
+      fetch("/api/studio/journey-types").then((r) => r.ok ? r.json() : []),
+    ]);
+    setLanguages(lang);
+    setTopics(top);
+    setLevels(lev);
+    setJourneyTypes(jt);
+    if (lang.length && !language) {
+      setLanguage(lang[0].code);
+      if (lang[0].variants?.length) setVariant(lang[0].variants[0].code);
+    }
+  }, [language]);
+
+  useEffect(() => { void loadData(); }, [loadData]);
+
+  const selectedLang = languages.find((l) => l.code === language);
   const total = selectedLevels.size * selectedTopics.size * storiesPerTopic;
+  const selectedJourneyType = journeyTypes.find((jt) => jt.slug === journeyType);
 
   function createJourney() {
-    // Store journey config in sessionStorage so the generate page can read it
     const config = {
-      journeyName,
+      journeyName: selectedJourneyType?.label ?? journeyType,
+      journeyType,
       language,
       variant,
       levels: Array.from(selectedLevels),
       topics: Array.from(selectedTopics),
-      topicLabels: Object.fromEntries(ALL_TOPICS.map((t) => [t.slug, t.label])),
+      topicLabels: Object.fromEntries(topics.map((t) => [t.slug, t.label])),
       storiesPerTopic,
     };
     sessionStorage.setItem("journeyConfig", JSON.stringify(config));
     router.push("/studio/monitor");
   }
 
+  const canCreate = journeyType && language && variant && selectedLevels.size > 0 && selectedTopics.size > 0;
+
   return (
     <div style={card}>
-      {/* Row 1: Name + Language + Variant + Stories/topic */}
+      {/* Row 1: Journey Type + Language + Variant + Stories/topic */}
       <div style={{ display: "flex", gap: 12, alignItems: "end", flexWrap: "wrap" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
-          <span style={fieldLabel}>Nombre</span>
-          <input value={journeyName} onChange={(e) => setJourneyName(e.target.value)} placeholder="Ej: German Generic"
-            style={{ padding: "4px 8px", borderRadius: 5, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 12, width: 160 }} />
+          <span style={fieldLabel}>Tipo de journey</span>
+          <select value={journeyType} onChange={(e) => setJourneyType(e.target.value)}
+            style={{ ...selectStyle, width: 160 }}>
+            <option value="">Seleccionar tipo</option>
+            {journeyTypes.map((jt) => (
+              <option key={jt.id} value={jt.slug}>{jt.label}</option>
+            ))}
+          </select>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
           <span style={fieldLabel}>Idioma</span>
-          <div style={{ display: "flex", gap: 3 }}>
-            {LANGUAGES.map((l) => (
-              <button key={l.code} onClick={() => { setLanguage(l.code); setVariant(l.variants[0].id); }} style={pill(language === l.code)}>{l.label}</button>
+          <select value={language} onChange={(e) => { setLanguage(e.target.value); const lang = languages.find((l) => l.code === e.target.value); if (lang?.variants?.length) setVariant(lang.variants[0].code); else setVariant(""); }}
+            style={{ ...selectStyle, width: 120 }}>
+            {languages.map((l) => (
+              <option key={l.id} value={l.code}>{l.label}</option>
             ))}
-          </div>
+          </select>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
           <span style={fieldLabel}>Variante</span>
-          <div style={{ display: "flex", gap: 3 }}>
-            {selectedLang.variants.map((v) => (
-              <button key={v.id} onClick={() => setVariant(v.id)} style={pill(variant === v.id)}>{v.label}</button>
+          <select value={variant} onChange={(e) => setVariant(e.target.value)}
+            style={{ ...selectStyle, width: 120 }}>
+            {selectedLang?.variants.map((v) => (
+              <option key={v.id} value={v.code}>{v.label}</option>
             ))}
-          </div>
+          </select>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
           <span style={fieldLabel}>Historias/tema</span>
           <input type="number" min={1} max={4} value={storiesPerTopic} onChange={(e) => setStoriesPerTopic(Math.max(1, parseInt(e.target.value) || 1))}
-            style={{ padding: "4px 8px", borderRadius: 5, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 12, width: 50 }} />
+            style={{ ...selectStyle, width: 50 }} />
         </div>
       </div>
 
       {/* Row 2: Levels */}
       <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
         <span style={fieldLabel}>Niveles</span>
-        {LEVELS.map((l) => (
-          <button key={l} onClick={() => setSelectedLevels(toggleSet(selectedLevels, l))} style={pill(selectedLevels.has(l))}>
-            {l.toUpperCase()}
+        {levels.map((l) => (
+          <button key={l.id} onClick={() => setSelectedLevels(toggleSet(selectedLevels, l.code.toLowerCase()))} style={pill(selectedLevels.has(l.code.toLowerCase()))}>
+            {l.code.toUpperCase()}
           </button>
         ))}
       </div>
@@ -120,8 +146,8 @@ export default function GenerateJourneyClient() {
       {/* Row 3: Topics */}
       <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
         <span style={fieldLabel}>Temas</span>
-        {ALL_TOPICS.map((t) => (
-          <button key={t.slug} onClick={() => setSelectedTopics(toggleSet(selectedTopics, t.slug))} style={pill(selectedTopics.has(t.slug))}>
+        {topics.map((t) => (
+          <button key={t.id} onClick={() => setSelectedTopics(toggleSet(selectedTopics, t.slug))} style={pill(selectedTopics.has(t.slug))}>
             {t.label}
           </button>
         ))}
@@ -132,8 +158,8 @@ export default function GenerateJourneyClient() {
         <span style={{ fontSize: 11, color: "var(--muted)" }}>
           {selectedLevels.size} niveles x {selectedTopics.size} temas x {storiesPerTopic} = <strong style={{ color: "var(--foreground)" }}>{total} historias</strong>
         </span>
-        <button onClick={createJourney} disabled={selectedLevels.size === 0 || selectedTopics.size === 0 || !journeyName.trim()}
-          style={btnPrimary(selectedLevels.size === 0 || selectedTopics.size === 0 || !journeyName.trim())}>
+        <button onClick={createJourney} disabled={!canCreate}
+          style={btnPrimary(!canCreate)}>
           Crear journey
         </button>
       </div>
