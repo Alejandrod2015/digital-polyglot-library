@@ -2,7 +2,7 @@
 import HomeClient from "./HomeClient";
 import { getLatestHomeReleases } from "@/lib/homeReleases";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
-export const revalidate = 300;
+export const revalidate = 3600;
 
 export default async function HomePage() {
   const [{ latestBooks, latestStories, latestPolyglotStories }, featured] = await Promise.all([

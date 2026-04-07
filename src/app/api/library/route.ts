@@ -5,14 +5,8 @@ export const runtime = "nodejs";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { unstable_cache, revalidateTag } from "next/cache";
-import { PrismaClient } from "@/generated/prisma";
 import { getStandaloneStoriesByIds } from "@/lib/standaloneStories";
-
-declare global {
-  var __prisma__: PrismaClient | undefined;
-}
-const prisma = globalThis.__prisma__ ?? new PrismaClient();
-if (process.env.NODE_ENV !== "production") globalThis.__prisma__ = prisma;
+import { prisma } from "@/lib/prisma";
 
 type LibraryType = "book" | "story";
 

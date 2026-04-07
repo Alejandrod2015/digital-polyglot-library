@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@/generated/prisma';
 import { auth } from '@clerk/nextjs/server';
 import { syncCreateStoryMirror } from '@/lib/createStoryMirror';
 import { getPublicUserStories, getUserStoryById } from '@/lib/userStories';
 import { getMobileSessionFromRequest } from '@/lib/mobileSession';
-
-const prisma = new PrismaClient();
+import { prisma } from '@/lib/prisma';
 
 export async function GET(req: NextRequest) {
   try {

@@ -1,7 +1,6 @@
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-import { PrismaClient } from "@/generated/prisma";
 import slugify from "slugify";
 import { generateAndUploadCover } from "@/lib/dalle";
 import { inferTopicFromText } from "@/lib/topicClassifier";
@@ -25,8 +24,7 @@ import {
   validateAndNormalizeVocab,
 } from "@/lib/vocabValidation";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
 type StoryJSON = {

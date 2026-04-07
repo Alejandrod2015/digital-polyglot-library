@@ -2,11 +2,9 @@
 
 import { NextResponse } from "next/server";
 import crypto from "crypto";
-import { PrismaClient } from "@/generated/prisma";
 import { shopifybundles } from "@/data/shopifybundles";
 import { sendClaimEmail } from "@/lib/email";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 
 const SHOPIFY_WEBHOOK_SECRET = process.env.SHOPIFY_WEBHOOK_SECRET;
 

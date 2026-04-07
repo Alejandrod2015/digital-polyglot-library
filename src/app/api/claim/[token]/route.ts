@@ -1,13 +1,10 @@
 // /src/app/api/claim/[token]/route.ts
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@/generated/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { createClerkClient } from "@clerk/backend";
 import { getBookMeta } from "@/lib/books";
 import { revalidateTag } from "next/cache";
-
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 
 /**
  * Actualiza los metadatos públicos del usuario en Clerk con sus nuevos libros.

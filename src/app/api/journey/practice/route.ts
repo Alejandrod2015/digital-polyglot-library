@@ -2,7 +2,6 @@ export const runtime = "nodejs";
 
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@/generated/prisma";
 import {
   buildJourneyTopicCheckpoint,
   buildJourneyTopicPracticeItems,
@@ -19,15 +18,7 @@ import { createJourneyCheckpointToken } from "@/lib/journeyCheckpointToken";
 import { getCompletedJourneyStoryKeys } from "@/lib/journeyProgress";
 import { normalizeVariant } from "@/lib/languageVariant";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
-
-declare global {
-  var __journey_practice_prisma__: PrismaClient | undefined;
-}
-
-const prisma = globalThis.__journey_practice_prisma__ ?? new PrismaClient();
-if (process.env.NODE_ENV !== "production") {
-  globalThis.__journey_practice_prisma__ = prisma;
-}
+import { prisma } from "@/lib/prisma";
 
 function getProgressKeyFromSourcePath(sourcePath: string, storySlug: string): string | null {
   const normalizedPath = sourcePath.trim();

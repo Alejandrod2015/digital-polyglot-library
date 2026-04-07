@@ -2,16 +2,10 @@ export const runtime = "nodejs";
 
 import { createClerkClient } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@/generated/prisma";
 import { serializeEntitlement } from "@/lib/billing";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import type { Plan } from "@domain/access";
-
-declare global {
-  var __prisma__: PrismaClient | undefined;
-}
-const prisma = globalThis.__prisma__ ?? new PrismaClient();
-if (process.env.NODE_ENV !== "production") globalThis.__prisma__ = prisma;
+import { prisma } from "@/lib/prisma";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
