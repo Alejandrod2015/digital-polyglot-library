@@ -133,6 +133,58 @@ function TopicDropdown({ available, selected, disabled, onToggle }: {
   );
 }
 
+// ── Mini audio player ──
+function MiniPlayer({ src, width = 180 }: { src: string; width?: number }) {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+    const onTime = () => { setCurrentTime(el.currentTime); setProgress(el.duration ? (el.currentTime / el.duration) * 100 : 0); };
+    const onMeta = () => setDuration(el.duration || 0);
+    const onEnd = () => setPlaying(false);
+    el.addEventListener("timeupdate", onTime);
+    el.addEventListener("loadedmetadata", onMeta);
+    el.addEventListener("ended", onEnd);
+    return () => { el.removeEventListener("timeupdate", onTime); el.removeEventListener("loadedmetadata", onMeta); el.removeEventListener("ended", onEnd); };
+  }, []);
+
+  function togglePlay() {
+    const el = audioRef.current;
+    if (!el) return;
+    if (playing) el.pause(); else void el.play();
+    setPlaying(!playing);
+  }
+
+  function seek(e: React.MouseEvent<HTMLDivElement>) {
+    const el = audioRef.current;
+    if (!el || !el.duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    el.currentTime = ((e.clientX - rect.left) / rect.width) * el.duration;
+  }
+
+  const fmt = (s: number) => { const m = Math.floor(s / 60); return `${m}:${String(Math.floor(s % 60)).padStart(2, "0")}`; };
+
+  return (
+    <div style={{ width, display: "flex", alignItems: "center", gap: 6, padding: "4px 8px", borderRadius: 6, backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid var(--card-border)" }}>
+      <audio ref={audioRef} src={src} preload="metadata" />
+      <button onClick={togglePlay} style={{ background: "none", border: "none", cursor: "pointer", padding: 0, fontSize: 14, color: "#14b8a6", lineHeight: 1 }}>
+        {playing ? "⏸" : "▶"}
+      </button>
+      <div onClick={seek} style={{ flex: 1, height: 4, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.1)", cursor: "pointer", position: "relative" }}>
+        <div style={{ height: "100%", width: `${progress}%`, backgroundColor: "#14b8a6", borderRadius: 2, transition: "width 0.1s" }} />
+      </div>
+      <span style={{ fontSize: 9, color: "var(--muted)", whiteSpace: "nowrap", minWidth: 30, textAlign: "right" }}>
+        {duration > 0 ? fmt(currentTime) : "—"}
+      </span>
+    </div>
+  );
+}
+
 // ── Styles ──
 
 const card: React.CSSProperties = {
@@ -552,9 +604,7 @@ export default function MonitorClient() {
               {/* Left: cover + audio stacked */}
               <div style={{ display: "flex", flexDirection: "column", gap: 6, flexShrink: 0 }}>
                 {s.coverUrl && <img src={s.coverUrl} alt="Cover" style={{ width: 180, height: 120, objectFit: "cover", borderRadius: 6, border: "1px solid var(--card-border)" }} />}
-                {s.audioUrl && (
-                  <audio controls src={s.audioUrl} style={{ width: 180, height: 28 }} />
-                )}
+                {s.audioUrl && <MiniPlayer src={s.audioUrl} width={180} />}
               </div>
 
               {/* Right: title, synopsis, stats, actions */}
