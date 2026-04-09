@@ -26,7 +26,16 @@ function toPublicStory(s: {
     slug: s.slug || s.id,
     title: s.title || "Untitled",
     text: s.text || "",
-    vocabRaw: s.vocab ? JSON.stringify(s.vocab) : null,
+    vocabRaw: s.vocab ? JSON.stringify(
+      Array.isArray(s.vocab)
+        ? (s.vocab as any[]).map((v: any) => ({
+            word: v.word ?? "",
+            definition: v.definition ?? v.translation ?? "",
+            ...(v.type ? { type: v.type } : {}),
+            ...(v.surface ? { surface: v.surface } : {}),
+          }))
+        : s.vocab
+    ) : null,
     theme: [s.topic],
     language: s.journey.language,
     variant: s.journey.variant,
