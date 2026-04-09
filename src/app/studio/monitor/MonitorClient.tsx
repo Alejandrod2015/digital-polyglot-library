@@ -474,6 +474,11 @@ export default function MonitorClient() {
       setStories((prev) => prev.map((s) => s.id === storyId
         ? { ...s, status: res.ok ? "generated" : s.status, title: data.title ?? s.title, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: res.ok ? null : data.error }
         : s));
+      // Re-fetch detail if this story is expanded
+      if (res.ok && expandedStoryId === storyId) {
+        const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
+        if (detailRes.ok) setStoryDetail(await detailRes.json());
+      }
     } catch (err) {
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: String(err) } : s));
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
@@ -489,6 +494,21 @@ export default function MonitorClient() {
         : s));
     } catch (err) {
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: String(err) } : s));
+    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
+  }
+
+  async function regenerateVocab(storyId: string) {
+    setBusyStories((s) => new Set(s).add(storyId));
+    try {
+      const res = await fetch("/api/studio/journeys/regenerate-vocab", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
+      const data = await res.json();
+      if (res.ok) {
+        setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, vocabCount: data.vocabCount ?? s.vocabCount } : s));
+        if (expandedStoryId === storyId) {
+          const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
+          if (detailRes.ok) setStoryDetail(await detailRes.json());
+        }
+      }
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
   }
 
@@ -944,11 +964,17 @@ export default function MonitorClient() {
                                           )}
                                           {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
                                             <button onClick={() => setConfirmAction({
-                                              message: `Regenerar "${s.title}"? Sobreescribirá el contenido actual.${s.status === "published" ? " La historia volverá a estado 'generada' y dejará de ser visible hasta que se republique." : ""}`,
+                                              message: `Regenerar texto de "${s.title}"? Sobreescribirá el contenido actual.${s.status === "published" ? " La historia volverá a estado 'generada' y dejará de ser visible hasta que se republique." : ""}`,
                                               onConfirm: () => generateStory(s.id),
                                             })}
                                               style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
-                                              Regenerar
+                                              Regenerar texto
+                                            </button>
+                                          )}
+                                          {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
+                                            <button onClick={() => regenerateVocab(s.id)}
+                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
+                                              Regenerar vocab
                                             </button>
                                           )}
                                           {s.status === "published" && !s.coverDone && !busyStories.has(s.id) && (
@@ -961,6 +987,12 @@ export default function MonitorClient() {
                                             <button onClick={() => generateAudio(s.id)}
                                               style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
                                               Audio
+                                            </button>
+                                          )}
+                                          {s.audioStatus === "ready" && !busyStories.has(s.id) && (
+                                            <button onClick={() => generateAudio(s.id)}
+                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
+                                              Regenerar audio
                                             </button>
                                           )}
                                           {s.status === "published" && s.coverDone && s.audioStatus === "ready" && <span style={{ fontSize: 9, color: "#22c55e" }}>✓</span>}
