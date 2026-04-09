@@ -21,17 +21,14 @@ export function generateSlug(
 ): string {
   const titleSlug = title
     .toLowerCase()
-    .replace(/[áéíóúñ]/g, (char) => {
-      const map: Record<string, string> = { á: "a", é: "e", í: "i", ó: "o", ú: "u", ñ: "n" };
+    .replace(/[áéíóúüñç]/g, (char) => {
+      const map: Record<string, string> = { á: "a", é: "e", í: "i", ó: "o", ú: "u", ü: "u", ñ: "n", ç: "c" };
       return map[char] || char;
     })
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-  const languageSlug = language.toLowerCase();
-  const variantSlug = variant.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-
-  return `${titleSlug}-${languageSlug}-${variantSlug}-${slot}`;
+  return titleSlug;
 }
 
 function sanitizeText(input: string): string {

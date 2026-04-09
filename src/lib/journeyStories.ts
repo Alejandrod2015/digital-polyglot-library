@@ -16,6 +16,8 @@ function toPublicStory(s: {
   level: string;
   topic: string;
   coverDone: boolean;
+  coverUrl: string | null;
+  audioUrl: string | null;
   journey: { language: string; variant: string };
   createdAt: Date;
 }): PublicStandaloneStory {
@@ -37,8 +39,8 @@ function toPublicStory(s: {
     journeyEligible: true,
     journeyTopic: s.topic,
     journeyOrder: null,
-    coverUrl: null, // TODO: add coverUrl to JourneyStory model
-    audioUrl: null,
+    coverUrl: s.coverUrl ?? null,
+    audioUrl: s.audioUrl ?? null,
     createdAt: s.createdAt.toISOString(),
   };
 }
