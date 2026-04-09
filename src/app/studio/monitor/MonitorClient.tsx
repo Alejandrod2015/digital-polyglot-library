@@ -241,14 +241,14 @@ type StoryRow = {
 type TopicGroup = { level: string; topic: string; label: string; stories: StoryRow[] };
 
 // ── Confirm dialog ──
-function ConfirmDialog({ message, onConfirm, onCancel }: { message: string; onConfirm: () => void; onCancel: () => void }) {
+function ConfirmDialog({ message, onConfirm, onCancel, confirmLabel, confirmColor }: { message: string; onConfirm: () => void; onCancel: () => void; confirmLabel?: string; confirmColor?: string }) {
   return (
     <div style={{ position: "fixed", inset: 0, backgroundColor: "rgba(0,0,0,0.6)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 9999 }}>
       <div style={{ ...card, maxWidth: 360, padding: 20, gap: 14 }}>
         <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)" }}>{message}</p>
         <div style={{ display: "flex", gap: 8, justifyContent: "flex-end" }}>
           <button onClick={onCancel} style={btnSecondary}>Cancelar</button>
-          <button onClick={onConfirm} style={{ ...btnPrimary(), backgroundColor: "#ef4444" }}>Eliminar</button>
+          <button onClick={onConfirm} style={{ ...btnPrimary(), backgroundColor: confirmColor ?? "#ef4444" }}>{confirmLabel ?? "Eliminar"}</button>
         </div>
       </div>
     </div>
@@ -292,7 +292,7 @@ export default function MonitorClient() {
   const [loadingDetail, setLoadingDetail] = useState(false);
 
   // Confirm dialog & edit
-  const [confirmAction, setConfirmAction] = useState<{ message: string; onConfirm: () => void } | null>(null);
+  const [confirmAction, setConfirmAction] = useState<{ message: string; onConfirm: () => void; confirmLabel?: string; confirmColor?: string } | null>(null);
   const [editingJourneyId, setEditingJourneyId] = useState<string | null>(null);
   const [editName, setEditName] = useState("");
   const [editingStructureId, setEditingStructureId] = useState<string | null>(null);
@@ -713,6 +713,7 @@ export default function MonitorClient() {
 
       {confirmAction && (
         <ConfirmDialog message={confirmAction.message}
+          confirmLabel={confirmAction.confirmLabel} confirmColor={confirmAction.confirmColor}
           onConfirm={() => { confirmAction.onConfirm(); setConfirmAction(null); }}
           onCancel={() => setConfirmAction(null)} />
       )}
@@ -966,6 +967,8 @@ export default function MonitorClient() {
                                             <button onClick={() => setConfirmAction({
                                               message: `Regenerar texto de "${s.title}"? Sobreescribirá el contenido actual.${s.status === "published" ? " La historia volverá a estado 'generada' y dejará de ser visible hasta que se republique." : ""}`,
                                               onConfirm: () => generateStory(s.id),
+                                              confirmLabel: "Regenerar",
+                                              confirmColor: "#f59e0b",
                                             })}
                                               style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
                                               Regenerar texto
