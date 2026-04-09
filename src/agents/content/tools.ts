@@ -58,6 +58,7 @@ export async function generateStoryWithLLM(params: {
   qaFeedback?: string;
   testMode?: boolean;
   existingTitles?: string[];
+  usedCharacterNames?: string[];
 }): Promise<{ text: string; title: string }> {
   const rule = getRuleForLevel(params.level);
   const pedagogicalContext = buildContentPromptContext(
@@ -82,6 +83,10 @@ export async function generateStoryWithLLM(params: {
     ? `\n- NEVER reuse these existing titles (or close variations): ${params.existingTitles.map((t) => `"${t}"`).join(", ")}. Use completely different characters, settings, and situations.`
     : "";
 
+  const usedNamesClause = params.usedCharacterNames?.length
+    ? `\n- NEVER reuse these character names (they already appear in other stories): ${params.usedCharacterNames.join(", ")}. Invent completely new, fresh character names.`
+    : "";
+
   const testModeClause = params.testMode
     ? `\n\n## TEST MODE — CRITICAL OVERRIDE\n- Write EXACTLY 2-3 sentences (40-60 words maximum). This is a test.\n- Keep the story minimal but complete (beginning, middle, end).\n- Use only 1 paragraph wrapped in <blockquote>.`
     : "";
@@ -97,7 +102,7 @@ ${variantClause}
 - Use a close third-person narrator with internal focalization.
 - Keep paragraphs short and dynamic (1-3 sentences).
 - Include dialogue to keep pacing lively.
-- Make the story specific and vivid — use named characters, a concrete setting, and a small conflict or surprise. Avoid vague or generic plots.${existingTitlesClause}
+- Make the story specific and vivid — use named characters, a concrete setting, and a small conflict or surprise. Avoid vague or generic plots.${existingTitlesClause}${usedNamesClause}
 ${feedbackClause}${testModeClause}
 
 Return ONLY valid JSON with this exact structure:

@@ -547,67 +547,65 @@ export default function MonitorClient() {
 
         {storyDetail && (
           <>
-            {/* Cover thumbnail + Audio player */}
-            {(s.coverUrl || s.audioUrl) && (
-              <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                {s.coverUrl && <img src={s.coverUrl} alt="Cover" style={{ width: 160, height: 107, objectFit: "cover", borderRadius: 6, border: "1px solid var(--card-border)" }} />}
-                {s.audioUrl && <audio controls src={s.audioUrl} style={{ height: 32, flex: 1 }} />}
+            {/* Two-column layout: left = cover + audio, right = title + synopsis + stats */}
+            <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+              {/* Left: cover + audio stacked */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 6, flexShrink: 0 }}>
+                {s.coverUrl && <img src={s.coverUrl} alt="Cover" style={{ width: 180, height: 120, objectFit: "cover", borderRadius: 6, border: "1px solid var(--card-border)" }} />}
+                {s.audioUrl && (
+                  <audio controls src={s.audioUrl} style={{ width: 180, height: 28 }} />
+                )}
               </div>
-            )}
 
-            {/* Editable title */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Titulo</span>
-              <input
-                value={storyDetail.title ?? ""}
-                onChange={(e) => setStoryDetail({ ...storyDetail, title: e.target.value })}
-                onBlur={(e) => updateStoryField(s.id, "title", e.target.value)}
-                style={{ padding: "4px 8px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 12, width: "100%" }}
-              />
-            </div>
+              {/* Right: title, synopsis, stats, actions */}
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6, minWidth: 0 }}>
+                {/* Title + synopsis side by side */}
+                <div style={{ display: "flex", gap: 8 }}>
+                  <div style={{ flex: 1 }}>
+                    <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Titulo</span>
+                    <input
+                      value={storyDetail.title ?? ""}
+                      onChange={(e) => setStoryDetail({ ...storyDetail, title: e.target.value })}
+                      onBlur={(e) => updateStoryField(s.id, "title", e.target.value)}
+                      style={{ padding: "3px 6px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 12, width: "100%", marginTop: 2 }}
+                    />
+                  </div>
+                </div>
 
-            {/* Editable synopsis */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Synopsis</span>
-              <textarea
-                value={storyDetail.synopsis ?? ""}
-                onChange={(e) => setStoryDetail({ ...storyDetail, synopsis: e.target.value })}
-                onBlur={(e) => updateStoryField(s.id, "synopsis", e.target.value)}
-                rows={2}
-                style={{ padding: "4px 8px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 11, resize: "vertical", fontFamily: "inherit" }}
-              />
-            </div>
+                {/* Synopsis */}
+                <div>
+                  <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Synopsis</span>
+                  <textarea
+                    value={storyDetail.synopsis ?? ""}
+                    onChange={(e) => setStoryDetail({ ...storyDetail, synopsis: e.target.value })}
+                    onBlur={(e) => updateStoryField(s.id, "synopsis", e.target.value)}
+                    rows={2}
+                    style={{ padding: "3px 6px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 11, resize: "vertical", fontFamily: "inherit", width: "100%", marginTop: 2 }}
+                  />
+                </div>
 
-            {/* Stats + slug + link row */}
-            <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
-              <span style={{ ...chipStyle, backgroundColor: dotColor(s.status, s.coverDone, s.audioStatus) + "22", borderColor: dotColor(s.status, s.coverDone, s.audioStatus) + "44", color: dotColor(s.status, s.coverDone, s.audioStatus) }}>{statusText}</span>
-              {s.wordCount != null && <span style={chipStyle}>{s.wordCount} palabras</span>}
-              {s.vocabCount != null && <span style={chipStyle}>{s.vocabCount} vocabulario</span>}
-              {s.slug && <span style={{ ...chipStyle, fontFamily: "monospace", fontSize: 8 }}>{s.slug}</span>}
-              {s.slug && s.status === "published" && (
-                <a href={`/stories/${s.slug}`} target="_blank" rel="noopener"
-                  style={{ fontSize: 10, color: "#14b8a6", textDecoration: "none", fontWeight: 600 }}>
-                  Abrir historia ↗
-                </a>
-              )}
-            </div>
-
-            {/* Action buttons row */}
-            <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-              <button onClick={() => setShowText(!showText)}
-                style={{ ...btnSecondary, ...(showText ? { borderColor: "#14b8a6", color: "#14b8a6" } : {}) }}>
-                {showText ? "Ocultar texto" : "Ver texto"}
-              </button>
-              <button onClick={() => setShowVocab(!showVocab)}
-                style={{ ...btnSecondary, ...(showVocab ? { borderColor: "#14b8a6", color: "#14b8a6" } : {}) }}>
-                {showVocab ? "Ocultar vocabulario" : `Ver vocabulario (${s.vocabCount || 0})`}
-              </button>
-              {s.sanityId && (
-                <a href={`/studio/sanity/intent/edit/id=${encodeURIComponent(s.sanityId)};type=standaloneStory`}
-                  style={{ ...btnSecondary, textDecoration: "none", display: "inline-flex", alignItems: "center" }} target="_blank" rel="noopener">
-                  Abrir en Sanity
-                </a>
-              )}
+                {/* Stats + actions in one row */}
+                <div style={{ display: "flex", gap: 5, alignItems: "center", flexWrap: "wrap" }}>
+                  <span style={{ ...chipStyle, backgroundColor: dotColor(s.status, s.coverDone, s.audioStatus) + "22", borderColor: dotColor(s.status, s.coverDone, s.audioStatus) + "44", color: dotColor(s.status, s.coverDone, s.audioStatus) }}>{statusText}</span>
+                  {s.wordCount != null && <span style={chipStyle}>{s.wordCount}w</span>}
+                  {s.vocabCount != null && <span style={chipStyle}>{s.vocabCount}v</span>}
+                  <span style={{ flex: 1 }} />
+                  <button onClick={() => setShowText(!showText)}
+                    style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", ...(showText ? { borderColor: "#14b8a6", color: "#14b8a6" } : {}) }}>
+                    {showText ? "Ocultar texto" : "Texto"}
+                  </button>
+                  <button onClick={() => setShowVocab(!showVocab)}
+                    style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", ...(showVocab ? { borderColor: "#14b8a6", color: "#14b8a6" } : {}) }}>
+                    {showVocab ? "Ocultar vocab" : `Vocab (${s.vocabCount || 0})`}
+                  </button>
+                  {s.slug && s.status === "published" && (
+                    <a href={`/stories/${s.slug}`} target="_blank" rel="noopener"
+                      style={{ fontSize: 10, color: "#14b8a6", textDecoration: "none", fontWeight: 600 }}>
+                      Abrir ↗
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
 
             {/* Collapsible text */}
