@@ -56,12 +56,22 @@ export async function POST(request: Request) {
       }
     } catch { /* ignore */ }
 
-    // Get existing titles in this journey to avoid duplicates
+    // Get existing titles + character names from same topic to avoid repetition
     const existingStories = await prisma.journeyStory.findMany({
       where: { journeyId: story.journeyId, title: { not: null } },
-      select: { title: true },
+      select: { title: true, text: true, topic: true },
     });
     const existingTitles = existingStories.map((s) => s.title).filter(Boolean) as string[];
+
+    // Extract character names from stories in the same topic
+    const sameTopicStories = existingStories.filter((s) => s.topic === story.topic && s.text);
+    const usedNames = new Set<string>();
+    for (const s of sameTopicStories) {
+      const matches = (s.text ?? "").match(/\b[A-Z][a-zà-ü]+(?:\s+[A-Z][a-zà-ü]+)?\b/g) ?? [];
+      const stop = new Set(["The", "This", "That", "She", "Her", "His", "They", "But", "And", "One", "When", "After", "Before", "Der", "Die", "Das", "Ein", "Eine", "Und", "Sie", "Ich", "Wir"]);
+      for (const m of matches) { if (!stop.has(m)) usedNames.add(m); }
+    }
+    const usedCharacterNames = [...usedNames].slice(0, 30);
 
     const generated = await generateStoryWithLLM({
       title: "",
@@ -72,6 +82,7 @@ export async function POST(request: Request) {
       variant: story.journey.variant,
       testMode,
       existingTitles,
+      usedCharacterNames,
     });
 
     const vocab = await generateVocabFromText({
