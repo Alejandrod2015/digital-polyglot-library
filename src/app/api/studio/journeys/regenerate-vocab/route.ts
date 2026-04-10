@@ -2,10 +2,14 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
-import { generateVocabFromText } from "@/agents/content/tools";
 
 export const maxDuration = 60;
 
+/**
+ * POST /api/studio/journeys/regenerate-vocab
+ * Body: { storyId }
+ * Regenerates vocab for a journey story using the Sanity /api/generate-vocab endpoint.
+ */
 export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -30,22 +34,37 @@ export async function POST(request: Request) {
   if (!story.text) return NextResponse.json({ error: "Story has no text" }, { status: 400 });
 
   try {
-    // Check test mode
-    let testMode = false;
-    try {
-      const cfg = await prisma.studioConfig.findUnique({ where: { key: "studio_settings" } });
-      if (cfg && typeof cfg.value === "object" && cfg.value !== null && "testMode" in cfg.value) {
-        testMode = !!(cfg.value as any).testMode;
-      }
-    } catch { /* ignore */ }
-
-    const vocab = await generateVocabFromText({
-      text: story.text,
-      language: story.journey.language,
-      level: story.level,
-      topic: story.topic,
-      testMode,
+    // Call the Sanity vocab generator endpoint internally
+    const origin = new URL(request.url).origin;
+    const res = await fetch(`${origin}/api/generate-vocab`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Origin": "https://www.sanity.io",
+      },
+      body: JSON.stringify({
+        text: story.text,
+        language: story.journey.language,
+        variant: story.journey.variant,
+        cefrLevel: story.level,
+        topic: story.topic,
+        focus: "verbs",
+        minItems: 15,
+        maxItems: 22,
+      }),
     });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      throw new Error(`generate-vocab failed: ${res.status} ${errText.slice(0, 200)}`);
+    }
+
+    const data = await res.json();
+    const vocab = Array.isArray(data?.vocab) ? data.vocab : [];
+
+    if (vocab.length === 0) {
+      throw new Error("generate-vocab returned empty vocab");
+    }
 
     await prisma.journeyStory.update({
       where: { id: storyId },

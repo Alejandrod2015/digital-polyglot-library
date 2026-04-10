@@ -41,7 +41,7 @@ export const PEDAGOGICAL_RULES: Record<CEFRLevel, PedagogicalRule> = {
       "Common imperative forms",
       "Negative forms with simple negation",
     ],
-    vocabDensity: { minItems: 8, maxItems: 15 },
+    vocabDensity: { minItems: 15, maxItems: 22 },
     vocabType: "concrete",
     toneGuidance:
       "Friendly and encouraging. Use repetition of key phrases and vocabulary. Keep paragraphs very short (1-2 sentences). Use present tense predominantly.",
