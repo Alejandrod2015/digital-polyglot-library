@@ -31,6 +31,7 @@ export async function POST(request: Request) {
     const result = await generateAndUploadAudio(story.text, story.title, story.journey.language, story.journey.variant);
     if (!result) throw new Error("Audio generation returned null");
 
+    // Save audio QA data that came back from generation (generateAndUploadAudio includes audioQa)
     await prisma.journeyStory.update({
       where: { id: storyId },
       data: {
@@ -38,10 +39,13 @@ export async function POST(request: Request) {
         audioSegments: result.audioSegments as any,
         audioFilename: result.filename,
         audioStatus: "ready",
+        audioQaStatus: result.audioQa?.status ?? null,
+        audioQaScore: result.audioQa?.score ?? null,
+        audioQaNotes: result.audioQa?.notes?.join("\n") ?? null,
       },
     });
 
-    return NextResponse.json({ ok: true, audioUrl: result.url });
+    return NextResponse.json({ ok: true, audioUrl: result.url, audioQa: result.audioQa });
   } catch (error) {
     console.error("[journeys/audio] Failed:", error);
     await prisma.journeyStory.update({ where: { id: storyId }, data: { audioStatus: "failed" } }).catch(() => {});

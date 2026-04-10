@@ -23,7 +23,9 @@ export async function GET(request: NextRequest) {
       id: true, journeyId: true, slug: true, level: true, topic: true, slotIndex: true,
       status: true, title: true, wordCount: true, vocabCount: true,
       sanityId: true, coverDone: true, coverUrl: true,
-      audioUrl: true, audioStatus: true, error: true,
+      audioUrl: true, audioStatus: true,
+      audioQaStatus: true, audioQaScore: true, audioQaNotes: true,
+      error: true,
     },
   });
 
@@ -79,7 +81,9 @@ export async function POST(request: Request) {
       id: true, journeyId: true, slug: true, level: true, topic: true, slotIndex: true,
       status: true, title: true, wordCount: true, vocabCount: true,
       sanityId: true, coverDone: true, coverUrl: true,
-      audioUrl: true, audioStatus: true, error: true,
+      audioUrl: true, audioStatus: true,
+      audioQaStatus: true, audioQaScore: true, audioQaNotes: true,
+      error: true,
     },
   });
 
