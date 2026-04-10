@@ -232,13 +232,13 @@ type JourneySummary = {
   stats: { total: number; generated: number; published: number; withCover: number };
 };
 type StoryRow = {
-  id: string; slug: string | null; level: string; topic: string; slotIndex: number;
+  id: string; journeyId: string; slug: string | null; level: string; topic: string; slotIndex: number;
   status: string; title: string | null; wordCount: number | null;
   vocabCount: number | null; sanityId: string | null; coverDone: boolean;
   coverUrl: string | null; audioUrl: string | null; audioStatus: string;
   error: string | null;
 };
-type TopicGroup = { level: string; topic: string; label: string; stories: StoryRow[] };
+type TopicGroup = { journeyId: string; level: string; topic: string; label: string; stories: StoryRow[] };
 
 // ── Confirm dialog ──
 function ConfirmDialog({ message, onConfirm, onCancel, confirmLabel, confirmColor }: { message: string; onConfirm: () => void; onCancel: () => void; confirmLabel?: string; confirmColor?: string }) {
@@ -278,10 +278,10 @@ export default function MonitorClient() {
   const [storiesPerTopic, setStoriesPerTopic] = useState(1);
   const [creating, setCreating] = useState(false);
 
-  // Expanded journey (inline)
-  const [expandedJourneyId, setExpandedJourneyId] = useState<string | null>(null);
+  // Expanded journeys/topics (support multiple open)
+  const [expandedJourneyIds, setExpandedJourneyIds] = useState<Set<string>>(new Set());
+  const [expandedTopics, setExpandedTopics] = useState<Set<string>>(new Set());
   const [stories, setStories] = useState<StoryRow[]>([]);
-  const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
   const [busyStories, setBusyStories] = useState<Set<string>>(new Set());
 
   // Story detail panel (support multiple open stories)
@@ -408,7 +408,8 @@ export default function MonitorClient() {
 
   async function deleteJourney(id: string) {
     await fetch("/api/studio/journeys", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ journeyId: id }) });
-    if (expandedJourneyId === id) { setExpandedJourneyId(null); setStories([]); }
+    setExpandedJourneyIds((prev) => { const n = new Set(prev); n.delete(id); return n; });
+    setStories((prev) => prev.filter((s) => s.journeyId !== id));
     await loadJourneys();
   }
 
@@ -420,23 +421,25 @@ export default function MonitorClient() {
 
   async function reloadStoriesForJourney(journeyId: string) {
     const res = await fetch(`/api/studio/journeys/stories?journeyId=${journeyId}`);
-    if (res.ok) setStories(await res.json());
+    if (res.ok) {
+      const newStories: StoryRow[] = await res.json();
+      setStories((prev) => [...prev.filter((s) => s.journeyId !== journeyId), ...newStories]);
+    }
   }
 
   async function addLevelToJourney(journeyId: string, level: string) {
-    // Try to match journey name to a journey type for correct topic selection
     const journey = journeys.find((j) => j.id === journeyId);
     const matchedType = allJourneyTypes.find((jt) => jt.label.toLowerCase() === journey?.name.toLowerCase());
     await fetch("/api/studio/journeys", { method: "PATCH", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ journeyId, addLevels: [level], journeyTypeSlug: matchedType?.slug }) });
     await loadJourneys();
-    if (expandedJourneyId === journeyId) await reloadStoriesForJourney(journeyId);
+    if (expandedJourneyIds.has(journeyId)) await reloadStoriesForJourney(journeyId);
   }
 
   async function removeLevelFromJourney(journeyId: string, level: string) {
     await fetch("/api/studio/journeys", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ journeyId, removeLevels: [level] }) });
     await loadJourneys();
-    if (expandedJourneyId === journeyId) await reloadStoriesForJourney(journeyId);
+    if (expandedJourneyIds.has(journeyId)) await reloadStoriesForJourney(journeyId);
   }
 
   async function deleteStory(storyId: string) {
@@ -447,22 +450,26 @@ export default function MonitorClient() {
   }
 
   async function toggleJourney(j: JourneySummary) {
-    if (expandedJourneyId === j.id) {
-      setExpandedJourneyId(null); setStories([]); setExpandedTopic(null);
-      setExpandedStoryIds(new Set()); setStoryDetails(new Map());
+    if (expandedJourneyIds.has(j.id)) {
+      // Collapse this journey: remove its stories and collapse its topics
+      setExpandedJourneyIds((prev) => { const n = new Set(prev); n.delete(j.id); return n; });
+      setStories((prev) => prev.filter((s) => s.journeyId !== j.id));
+      // Collapse topics belonging to this journey (keys prefixed with journeyId would be cleaner, but we collapse all for safety)
       return;
     }
-    setExpandedJourneyId(j.id); setExpandedTopic(null);
-    setExpandedStoryIds(new Set()); setStoryDetails(new Map());
+    setExpandedJourneyIds((prev) => new Set(prev).add(j.id));
     const res = await fetch(`/api/studio/journeys/stories?journeyId=${j.id}`);
-    if (res.ok) setStories(await res.json());
+    if (res.ok) {
+      const newStories: StoryRow[] = await res.json();
+      setStories((prev) => [...prev, ...newStories]);
+    }
   }
 
-  function getTopicGroups(): TopicGroup[] {
+  function getTopicGroupsForJourney(journeyId: string): TopicGroup[] {
     const map = new Map<string, TopicGroup>();
-    stories.forEach((s) => {
-      const key = `${s.level}:${s.topic}`;
-      if (!map.has(key)) map.set(key, { level: s.level, topic: s.topic, label: topicLabels[s.topic] || s.topic, stories: [] });
+    stories.filter((s) => s.journeyId === journeyId).forEach((s) => {
+      const key = `${s.journeyId}:${s.level}:${s.topic}`;
+      if (!map.has(key)) map.set(key, { journeyId: s.journeyId, level: s.level, topic: s.topic, label: topicLabels[s.topic] || s.topic, stories: [] });
       map.get(key)!.stories.push(s);
     });
     return Array.from(map.values());
@@ -726,7 +733,6 @@ export default function MonitorClient() {
     );
   }
 
-  const topicGroups = getTopicGroups();
 
   // ═══════════════════ RENDER ═══════════════════
 
@@ -831,7 +837,7 @@ export default function MonitorClient() {
         const pct = j.stats.total > 0 ? Math.round((j.stats.published / j.stats.total) * 100) : 0;
         const lang = allLanguages.find((l) => l.code === j.language);
         const isEditing = editingJourneyId === j.id;
-        const isExpanded = expandedJourneyId === j.id;
+        const isExpanded = expandedJourneyIds.has(j.id);
 
         return (
           <div key={j.id} style={{ ...card, gap: 0, padding: 0, overflow: "hidden" }}>
@@ -901,8 +907,10 @@ export default function MonitorClient() {
 
             {/* Expanded: grouped by LEVEL, then topics within */}
             {isExpanded && (() => {
+              const journeyStories = stories.filter((s) => s.journeyId === j.id);
+              const topicGroups = getTopicGroupsForJourney(j.id);
               // Group by level
-              const levels = [...new Set(stories.map((s) => s.level))].sort();
+              const levels = [...new Set(journeyStories.map((s) => s.level))].sort();
               return (
                 <div style={{ borderTop: "1px solid var(--card-border)", padding: "4px 12px 8px", display: "flex", flexDirection: "column", gap: 2 }}>
                   {levels.map((level) => {
@@ -921,8 +929,8 @@ export default function MonitorClient() {
 
                         {/* Topics in this level */}
                         {levelTopics.map((group) => {
-                          const key = `${group.level}:${group.topic}`;
-                          const isTopicOpen = expandedTopic === key;
+                          const key = `${group.journeyId}:${group.level}:${group.topic}`;
+                          const isTopicOpen = expandedTopics.has(key);
                           const gen = group.stories.filter((s) => ["generated", "qa_pass", "approved", "published"].includes(s.status)).length;
                           const pendingCount = group.stories.filter((s) => s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review").length;
                           const topicBusy = group.stories.some((s) => busyStories.has(s.id));
@@ -930,7 +938,7 @@ export default function MonitorClient() {
                           return (
                             <div key={key}>
                               {/* Topic row */}
-                              <div onClick={() => { setExpandedTopic(isTopicOpen ? null : key); }}
+                              <div onClick={() => { setExpandedTopics((prev) => { const n = new Set(prev); if (n.has(key)) n.delete(key); else n.add(key); return n; }); }}
                                 style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 8px 4px 16px", borderRadius: 5, cursor: "pointer",
                                   backgroundColor: isTopicOpen ? "rgba(20,184,166,0.04)" : "transparent" }}>
                                 <span style={{ fontSize: 14, color: "var(--foreground)", fontWeight: 500 }}>{group.label}</span>
