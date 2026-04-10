@@ -236,6 +236,7 @@ type StoryRow = {
   status: string; title: string | null; wordCount: number | null;
   vocabCount: number | null; sanityId: string | null; coverDone: boolean;
   coverUrl: string | null; audioUrl: string | null; audioStatus: string;
+  audioQaStatus: string | null; audioQaScore: number | null; audioQaNotes: string | null;
   error: string | null;
 };
 type TopicGroup = { journeyId: string; level: string; topic: string; label: string; stories: StoryRow[] };
@@ -481,7 +482,7 @@ export default function MonitorClient() {
       const res = await fetch("/api/studio/journeys/generate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
       const data = await res.json();
       setStories((prev) => prev.map((s) => s.id === storyId
-        ? { ...s, status: res.ok ? "generated" : s.status, title: data.title ?? s.title, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: res.ok ? null : data.error }
+        ? { ...s, status: res.ok ? "generated" : s.status, title: data.title ?? s.title, slug: data.slug ?? s.slug, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: res.ok ? null : data.error }
         : s));
       // Re-fetch detail if this story is expanded
       if (res.ok && expandedStoryIds.has(storyId)) {
@@ -506,6 +507,62 @@ export default function MonitorClient() {
         : s));
     } catch (err) {
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: String(err) } : s));
+    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
+  }
+
+  async function regenerateTitle(storyId: string) {
+    setBusyStories((s) => new Set(s).add(storyId));
+    try {
+      const res = await fetch("/api/studio/journeys/regenerate-title", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
+      const data = await res.json();
+      if (res.ok) {
+        setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, title: data.title ?? s.title, slug: data.slug ?? s.slug } : s));
+      }
+    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
+  }
+
+  async function regenerateSynopsis(storyId: string) {
+    setBusyStories((s) => new Set(s).add(storyId));
+    try {
+      const res = await fetch("/api/studio/journeys/regenerate-synopsis", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
+      if (res.ok && expandedStoryIds.has(storyId)) {
+        const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
+        if (detailRes.ok) {
+          const detail = await detailRes.json();
+          setStoryDetails((prev) => new Map(prev).set(storyId, detail));
+        }
+      }
+    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
+  }
+
+  async function analyzeAudio(storyId: string) {
+    setBusyStories((s) => new Set(s).add(storyId));
+    try {
+      const res = await fetch("/api/studio/journeys/analyze-audio", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
+      const data = await res.json();
+      if (res.ok) {
+        setStories((prev) => prev.map((s) => s.id === storyId
+          ? { ...s, audioQaStatus: data.audioQa?.status ?? s.audioQaStatus, audioQaScore: data.audioQa?.score ?? s.audioQaScore, audioQaNotes: data.audioQa?.notes?.join("\n") ?? s.audioQaNotes }
+          : s));
+      }
+    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
+  }
+
+  async function validateVocab(storyId: string) {
+    setBusyStories((s) => new Set(s).add(storyId));
+    try {
+      const res = await fetch("/api/studio/journeys/validate-vocab", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
+      const data = await res.json();
+      if (res.ok) {
+        setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, vocabCount: data.vocabCount ?? s.vocabCount } : s));
+        if (expandedStoryIds.has(storyId)) {
+          const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
+          if (detailRes.ok) {
+            const detail = await detailRes.json();
+            setStoryDetails((prev) => new Map(prev).set(storyId, detail));
+          }
+        }
+      }
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
   }
 

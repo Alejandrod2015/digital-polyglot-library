@@ -2,7 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
-import { generateSynopsis, generateSlug } from "@/agents/content/tools";
+import { generateSlug } from "@/agents/content/tools";
 import { generateStoryPayload } from "@/lib/storyGenerator";
 
 export const maxDuration = 60;
@@ -73,11 +73,29 @@ export async function POST(request: Request) {
       throw new Error("Story generation failed after multiple attempts");
     }
 
-    const synopsis = await generateSynopsis({
-      title: payload.title,
-      text: payload.text,
-      language: story.journey.language,
-    });
+    // Use Sanity's generate-synopsis endpoint (higher quality than agent version)
+    const origin = new URL(request.url).origin;
+    let synopsis = "";
+    try {
+      const synopsisRes = await fetch(`${origin}/api/generate-synopsis`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+        body: JSON.stringify({
+          title: payload.title,
+          language: story.journey.language,
+          variant: story.journey.variant,
+          region: story.journey.variant,
+          cefrLevel: story.level,
+          topic: story.topic,
+        }),
+      });
+      if (synopsisRes.ok) {
+        const data = await synopsisRes.json();
+        synopsis = data.result?.trim() ?? "";
+      }
+    } catch (e) {
+      console.warn("[generate] synopsis generation failed:", e);
+    }
 
     const baseSlug = generateSlug(payload.title, story.journey.language, story.journey.variant, 0).replace(/-0$/, "");
     const slug = story.slotIndex > 0 ? `${baseSlug}-${story.slotIndex + 1}` : baseSlug;
