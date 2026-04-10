@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
     where: { journeyId },
     orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
     select: {
-      id: true, slug: true, level: true, topic: true, slotIndex: true,
+      id: true, journeyId: true, slug: true, level: true, topic: true, slotIndex: true,
       status: true, title: true, wordCount: true, vocabCount: true,
       sanityId: true, coverDone: true, coverUrl: true,
       audioUrl: true, audioStatus: true, error: true,
@@ -76,7 +76,7 @@ export async function POST(request: Request) {
   const story = await prisma.journeyStory.create({
     data: { journeyId, level, topic, slotIndex, status: "draft" },
     select: {
-      id: true, slug: true, level: true, topic: true, slotIndex: true,
+      id: true, journeyId: true, slug: true, level: true, topic: true, slotIndex: true,
       status: true, title: true, wordCount: true, vocabCount: true,
       sanityId: true, coverDone: true, coverUrl: true,
       audioUrl: true, audioStatus: true, error: true,
