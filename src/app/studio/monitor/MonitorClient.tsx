@@ -284,12 +284,13 @@ export default function MonitorClient() {
   const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
   const [busyStories, setBusyStories] = useState<Set<string>>(new Set());
 
-  // Story detail panel
-  const [expandedStoryId, setExpandedStoryId] = useState<string | null>(null);
-  const [storyDetail, setStoryDetail] = useState<{ title?: string; text?: string; synopsis?: string; vocab?: any[] } | null>(null);
-  const [showText, setShowText] = useState(false);
-  const [showVocab, setShowVocab] = useState(false);
-  const [loadingDetail, setLoadingDetail] = useState(false);
+  // Story detail panel (support multiple open stories)
+  type StoryDetailData = { title?: string; text?: string; synopsis?: string; vocab?: any[] };
+  const [expandedStoryIds, setExpandedStoryIds] = useState<Set<string>>(new Set());
+  const [storyDetails, setStoryDetails] = useState<Map<string, StoryDetailData>>(new Map());
+  const [showTextIds, setShowTextIds] = useState<Set<string>>(new Set());
+  const [showVocabIds, setShowVocabIds] = useState<Set<string>>(new Set());
+  const [loadingDetailIds, setLoadingDetailIds] = useState<Set<string>>(new Set());
 
   // Confirm dialog & edit
   const [confirmAction, setConfirmAction] = useState<{ message: string; onConfirm: () => void; confirmLabel?: string; confirmColor?: string } | null>(null);
@@ -441,17 +442,18 @@ export default function MonitorClient() {
   async function deleteStory(storyId: string) {
     await fetch("/api/studio/journeys/stories", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
     setStories((prev) => prev.filter((s) => s.id !== storyId));
-    if (expandedStoryId === storyId) { setExpandedStoryId(null); setStoryDetail(null); }
+    setExpandedStoryIds((prev) => { const n = new Set(prev); n.delete(storyId); return n; });
+    setStoryDetails((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
   }
 
   async function toggleJourney(j: JourneySummary) {
     if (expandedJourneyId === j.id) {
       setExpandedJourneyId(null); setStories([]); setExpandedTopic(null);
-      setExpandedStoryId(null); setStoryDetail(null);
+      setExpandedStoryIds(new Set()); setStoryDetails(new Map());
       return;
     }
     setExpandedJourneyId(j.id); setExpandedTopic(null);
-    setExpandedStoryId(null); setStoryDetail(null);
+    setExpandedStoryIds(new Set()); setStoryDetails(new Map());
     const res = await fetch(`/api/studio/journeys/stories?journeyId=${j.id}`);
     if (res.ok) setStories(await res.json());
   }
@@ -475,9 +477,12 @@ export default function MonitorClient() {
         ? { ...s, status: res.ok ? "generated" : s.status, title: data.title ?? s.title, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: res.ok ? null : data.error }
         : s));
       // Re-fetch detail if this story is expanded
-      if (res.ok && expandedStoryId === storyId) {
+      if (res.ok && expandedStoryIds.has(storyId)) {
         const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
-        if (detailRes.ok) setStoryDetail(await detailRes.json());
+        if (detailRes.ok) {
+          const detail = await detailRes.json();
+          setStoryDetails((prev) => new Map(prev).set(storyId, detail));
+        }
       }
     } catch (err) {
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: String(err) } : s));
@@ -504,9 +509,12 @@ export default function MonitorClient() {
       const data = await res.json();
       if (res.ok) {
         setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, vocabCount: data.vocabCount ?? s.vocabCount } : s));
-        if (expandedStoryId === storyId) {
+        if (expandedStoryIds.has(storyId)) {
           const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
-          if (detailRes.ok) setStoryDetail(await detailRes.json());
+          if (detailRes.ok) {
+            const detail = await detailRes.json();
+            setStoryDetails((prev) => new Map(prev).set(storyId, detail));
+          }
         }
       }
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
@@ -579,16 +587,25 @@ export default function MonitorClient() {
   }
 
   async function toggleStoryDetail(storyId: string) {
-    if (expandedStoryId === storyId) {
-      setExpandedStoryId(null); setStoryDetail(null); setShowText(false); setShowVocab(false);
+    if (expandedStoryIds.has(storyId)) {
+      // Close this one only
+      setExpandedStoryIds((prev) => { const n = new Set(prev); n.delete(storyId); return n; });
+      setStoryDetails((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
+      setShowTextIds((prev) => { const n = new Set(prev); n.delete(storyId); return n; });
+      setShowVocabIds((prev) => { const n = new Set(prev); n.delete(storyId); return n; });
       return;
     }
-    setExpandedStoryId(storyId); setStoryDetail(null); setShowText(false); setShowVocab(false);
-    setLoadingDetail(true);
+    setExpandedStoryIds((prev) => new Set(prev).add(storyId));
+    setLoadingDetailIds((prev) => new Set(prev).add(storyId));
     try {
       const res = await fetch(`/api/studio/journeys/story?id=${storyId}`);
-      if (res.ok) setStoryDetail(await res.json());
-    } finally { setLoadingDetail(false); }
+      if (res.ok) {
+        const detail = await res.json();
+        setStoryDetails((prev) => new Map(prev).set(storyId, detail));
+      }
+    } finally {
+      setLoadingDetailIds((prev) => { const n = new Set(prev); n.delete(storyId); return n; });
+    }
   }
 
   async function updateStoryField(storyId: string, field: "title" | "synopsis", value: string) {
@@ -601,15 +618,21 @@ export default function MonitorClient() {
       if (field === "title") {
         setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, title: value } : s));
       }
-      if (storyDetail) {
-        setStoryDetail({ ...storyDetail, [field]: value });
-      }
+      setStoryDetails((prev) => {
+        const existing = prev.get(storyId);
+        if (!existing) return prev;
+        return new Map(prev).set(storyId, { ...existing, [field]: value });
+      });
     } catch { /* ignore */ }
   }
 
   // Renders the inline story editor panel
   function renderStoryEditor(s: StoryRow) {
-    if (expandedStoryId !== s.id) return null;
+    if (!expandedStoryIds.has(s.id)) return null;
+    const storyDetail = storyDetails.get(s.id);
+    const loadingDetail = loadingDetailIds.has(s.id);
+    const showText = showTextIds.has(s.id);
+    const showVocab = showVocabIds.has(s.id);
     const statusText = s.status === "published" ? (s.coverDone ? "Completa" : "En Sanity") :
       s.status === "generated" ? "Generada" : s.status === "draft" ? "Pendiente" : s.status;
 
@@ -635,7 +658,7 @@ export default function MonitorClient() {
                     <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Titulo</span>
                     <input
                       value={storyDetail.title ?? ""}
-                      onChange={(e) => setStoryDetail({ ...storyDetail, title: e.target.value })}
+                      onChange={(e) => setStoryDetails((prev) => new Map(prev).set(s.id, { ...storyDetail, title: e.target.value }))}
                       onBlur={(e) => updateStoryField(s.id, "title", e.target.value)}
                       style={{ padding: "3px 6px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 12, width: "100%", marginTop: 2 }}
                     />
@@ -647,7 +670,7 @@ export default function MonitorClient() {
                   <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Synopsis</span>
                   <textarea
                     value={storyDetail.synopsis ?? ""}
-                    onChange={(e) => setStoryDetail({ ...storyDetail, synopsis: e.target.value })}
+                    onChange={(e) => setStoryDetails((prev) => new Map(prev).set(s.id, { ...storyDetail, synopsis: e.target.value }))}
                     onBlur={(e) => updateStoryField(s.id, "synopsis", e.target.value)}
                     rows={2}
                     style={{ padding: "3px 6px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 11, resize: "vertical", fontFamily: "inherit", width: "100%", marginTop: 2 }}
@@ -660,11 +683,11 @@ export default function MonitorClient() {
                   {s.wordCount != null && <span style={chipStyle}>{s.wordCount}w</span>}
                   {s.vocabCount != null && <span style={chipStyle}>{s.vocabCount}v</span>}
                   <span style={{ flex: 1 }} />
-                  <button onClick={() => setShowText(!showText)}
+                  <button onClick={() => setShowTextIds((prev) => { const n = new Set(prev); if (n.has(s.id)) n.delete(s.id); else n.add(s.id); return n; })}
                     style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", ...(showText ? { borderColor: "#14b8a6", color: "#14b8a6" } : {}) }}>
                     {showText ? "Ocultar texto" : "Texto"}
                   </button>
-                  <button onClick={() => setShowVocab(!showVocab)}
+                  <button onClick={() => setShowVocabIds((prev) => { const n = new Set(prev); if (n.has(s.id)) n.delete(s.id); else n.add(s.id); return n; })}
                     style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", ...(showVocab ? { borderColor: "#14b8a6", color: "#14b8a6" } : {}) }}>
                     {showVocab ? "Ocultar vocab" : `Vocab (${s.vocabCount || 0})`}
                   </button>
@@ -907,7 +930,7 @@ export default function MonitorClient() {
                           return (
                             <div key={key}>
                               {/* Topic row */}
-                              <div onClick={() => { setExpandedTopic(isTopicOpen ? null : key); setExpandedStoryId(null); setStoryDetail(null); }}
+                              <div onClick={() => { setExpandedTopic(isTopicOpen ? null : key); }}
                                 style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 8px 4px 16px", borderRadius: 5, cursor: "pointer",
                                   backgroundColor: isTopicOpen ? "rgba(20,184,166,0.04)" : "transparent" }}>
                                 <span style={{ fontSize: 14, color: "var(--foreground)", fontWeight: 500 }}>{group.label}</span>
@@ -939,7 +962,7 @@ export default function MonitorClient() {
                                 <div style={{ paddingLeft: 36, display: "flex", flexDirection: "column", gap: 1 }}>
                                   {group.stories.map((s) => {
                                     const action = storyAction(s);
-                                    const isDetailOpen = expandedStoryId === s.id;
+                                    const isDetailOpen = expandedStoryIds.has(s.id);
                                     return (
                                       <div key={s.id}>
                                         <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 8px", borderRadius: 4, fontSize: 11 }}>
@@ -983,7 +1006,7 @@ export default function MonitorClient() {
                                           {s.status === "published" && !s.coverDone && !busyStories.has(s.id) && (
                                             <button onClick={() => generateCover(s.id)}
                                               style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
-                                              Cover
+                                              Generar cover
                                             </button>
                                           )}
                                           {s.coverDone && !busyStories.has(s.id) && (
@@ -995,7 +1018,7 @@ export default function MonitorClient() {
                                           {s.status === "published" && s.audioStatus !== "ready" && !busyStories.has(s.id) && (
                                             <button onClick={() => generateAudio(s.id)}
                                               style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
-                                              Audio
+                                              Generar audio
                                             </button>
                                           )}
                                           {s.audioStatus === "ready" && !busyStories.has(s.id) && (

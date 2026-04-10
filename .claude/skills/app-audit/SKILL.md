@@ -156,3 +156,13 @@ For each issue, provide:
 ## Updating the Rules
 
 After each audit, add any newly discovered issue patterns to `references/audit-rules.md`. This way the audit gets smarter over time and never misses the same class of problem twice.
+
+## Auto-Fix Pipeline
+
+After generating the report, automatically trigger the `qa-autofix` skill to apply safe fixes. The pipeline is:
+
+1. **Audit** (this skill) → generates `qa/latest-report.json`
+2. **Auto-fix** (`qa-autofix` skill) → reads report, applies safe fixes, updates report
+3. **Verify** → run `tsc --noEmit` to confirm nothing broke
+
+This creates a closed loop: audit finds issues → auto-fix resolves what it can → next audit verifies fixes and finds new issues.

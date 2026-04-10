@@ -8,7 +8,7 @@ import {
   generateSynopsis,
   generateSlug,
 } from "@/agents/content/tools";
-import { loadPedagogicalRules } from "@/agents/config/pedagogicalConfig";
+import { loadPedagogicalRules, invalidatePedagogicalCache, getRuleForLevel } from "@/agents/config/pedagogicalConfig";
 
 export const maxDuration = 60;
 
@@ -45,6 +45,7 @@ export async function POST(request: Request) {
   });
 
   try {
+    invalidatePedagogicalCache();
     await loadPedagogicalRules();
 
     // Check test mode
@@ -73,17 +74,37 @@ export async function POST(request: Request) {
     }
     const usedCharacterNames = [...usedNames].slice(0, 30);
 
-    const generated = await generateStoryWithLLM({
-      title: "",
-      language: story.journey.language,
-      level: story.level,
-      topic: story.topic,
-      journeyFocus: "General",
-      variant: story.journey.variant,
-      testMode,
-      existingTitles,
-      usedCharacterNames,
-    });
+    // Get minimum word count for this level
+    const rule = getRuleForLevel(story.level);
+    const minWords = testMode ? 30 : (rule?.wordCountRange.min ?? 250);
+
+    // Generate with retry if word count is too low (up to 3 attempts)
+    let generated: { title: string; text: string } = { title: "", text: "" };
+    let attempts = 0;
+    const maxAttempts = 3;
+    while (attempts < maxAttempts) {
+      attempts++;
+      const qaFeedback = attempts > 1
+        ? `Previous attempt was only ${generated.text.split(/\s+/).filter(Boolean).length} words. You MUST write at least ${minWords} words. Extend the narrative with more sensory details, dialogue, and character moments.`
+        : undefined;
+
+      generated = await generateStoryWithLLM({
+        title: "",
+        language: story.journey.language,
+        level: story.level,
+        topic: story.topic,
+        journeyFocus: "General",
+        variant: story.journey.variant,
+        testMode,
+        existingTitles,
+        usedCharacterNames,
+        qaFeedback,
+      });
+
+      const currentWords = generated.text.split(/\s+/).filter(Boolean).length;
+      if (currentWords >= minWords) break;
+      console.log(`[generate] Attempt ${attempts}: ${currentWords} words (min ${minWords}), retrying...`);
+    }
 
     const vocab = await generateVocabFromText({
       text: generated.text,

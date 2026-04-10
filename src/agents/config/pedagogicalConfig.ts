@@ -24,7 +24,7 @@ export const PEDAGOGICAL_RULES: Record<CEFRLevel, PedagogicalRule> = {
   a1: {
     level: "a1",
     label: "Beginner",
-    wordCountRange: { min: 150, max: 300 },
+    wordCountRange: { min: 250, max: 350 },
     sentenceComplexity: "simple",
     grammarStructures: [
       "Present simple tense (to be, to have, common verbs)",
@@ -60,7 +60,7 @@ export const PEDAGOGICAL_RULES: Record<CEFRLevel, PedagogicalRule> = {
   a2: {
     level: "a2",
     label: "Elementary",
-    wordCountRange: { min: 250, max: 450 },
+    wordCountRange: { min: 300, max: 450 },
     sentenceComplexity: "compound",
     grammarStructures: [
       "Present simple tense (all regular and common irregular verbs)",
@@ -331,7 +331,7 @@ export function buildContentPromptContext(
 You are generating a language learning story for ${language} learners at the ${rule.label} (${level.toUpperCase()}) level.
 
 ## Content Constraints
-- **Word Count**: ${rule.wordCountRange.min}-${rule.wordCountRange.max} words
+- **Word Count**: ${rule.wordCountRange.min}-${rule.wordCountRange.max} words (IMPORTANT: aim for at least ${rule.wordCountRange.min} words — this story will be narrated as audio and must be at least 2 minutes long)
 - **Topic**: ${topic}
 - **Sentence Complexity**: ${rule.sentenceComplexity} (${rule.sentenceComplexity === "simple" ? "short, direct statements" : rule.sentenceComplexity === "compound" ? "connected with and/but/because" : rule.sentenceComplexity === "complex" ? "with subordinate clauses and relative clauses" : "advanced syntax with multiple nested structures"})
 - **Vocabulary Items to Teach**: ${rule.vocabDensity.minItems}-${rule.vocabDensity.maxItems} new/important words
