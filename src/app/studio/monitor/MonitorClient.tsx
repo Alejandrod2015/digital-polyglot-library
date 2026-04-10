@@ -986,6 +986,12 @@ export default function MonitorClient() {
                                               Cover
                                             </button>
                                           )}
+                                          {s.coverDone && !busyStories.has(s.id) && (
+                                            <button onClick={() => generateCover(s.id)}
+                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
+                                              Regenerar cover
+                                            </button>
+                                          )}
                                           {s.status === "published" && s.audioStatus !== "ready" && !busyStories.has(s.id) && (
                                             <button onClick={() => generateAudio(s.id)}
                                               style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
