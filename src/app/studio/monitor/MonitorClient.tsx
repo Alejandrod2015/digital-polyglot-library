@@ -762,6 +762,50 @@ export default function MonitorClient() {
                     </a>
                   )}
                 </div>
+
+                {/* Tools row: secondary polish actions */}
+                <div style={{ display: "flex", gap: 5, alignItems: "center", flexWrap: "wrap", paddingTop: 4, borderTop: "1px dashed rgba(255,255,255,0.04)", marginTop: 2 }}>
+                  <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase", marginRight: 4 }}>Herramientas</span>
+                  {s.title && !busyStories.has(s.id) && (
+                    <button onClick={() => regenerateTitle(s.id)}
+                      style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
+                      Regenerar título
+                    </button>
+                  )}
+                  {s.title && !busyStories.has(s.id) && (
+                    <button onClick={() => regenerateSynopsis(s.id)}
+                      style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
+                      Regenerar synopsis
+                    </button>
+                  )}
+                  {s.vocabCount != null && s.vocabCount > 0 && !busyStories.has(s.id) && (
+                    <button onClick={() => validateVocab(s.id)}
+                      style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
+                      Validar vocab
+                    </button>
+                  )}
+                  {s.audioUrl && !busyStories.has(s.id) && (
+                    <button onClick={() => analyzeAudio(s.id)}
+                      style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
+                      Analizar audio
+                    </button>
+                  )}
+                </div>
+
+                {/* Audio QA results */}
+                {s.audioQaStatus && (
+                  <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap", paddingTop: 2 }}>
+                    <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Audio QA</span>
+                    <span style={{ ...chipStyle, fontSize: 9, color: s.audioQaStatus === "pass" ? "#22c55e" : s.audioQaStatus === "fail" ? "#ef4444" : "#f59e0b" }}>
+                      {s.audioQaStatus}{s.audioQaScore != null ? ` · ${Math.round(s.audioQaScore * 100)}%` : ""}
+                    </span>
+                    {s.audioQaNotes && (
+                      <span style={{ fontSize: 10, color: "var(--muted)", fontStyle: "italic" }} title={s.audioQaNotes}>
+                        {s.audioQaNotes.split("\n")[0].slice(0, 80)}
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
 
