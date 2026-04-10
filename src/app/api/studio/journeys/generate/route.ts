@@ -2,19 +2,15 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
-import {
-  generateStoryWithLLM,
-  generateVocabFromText,
-  generateSynopsis,
-  generateSlug,
-} from "@/agents/content/tools";
-import { loadPedagogicalRules, invalidatePedagogicalCache, getRuleForLevel } from "@/agents/config/pedagogicalConfig";
+import { generateSynopsis, generateSlug } from "@/agents/content/tools";
+import { generateStoryPayload } from "@/lib/storyGenerator";
 
 export const maxDuration = 60;
 
 /**
  * POST /api/studio/journeys/generate
  * Body: { storyId } — generates content for a JourneyStory slot
+ * Uses the same high-quality Sanity story generator.
  */
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -41,22 +37,10 @@ export async function POST(request: Request) {
   // Mark as generating
   await prisma.journeyStory.update({
     where: { id: storyId },
-    data: { status: "generated", error: null }, // temp status while generating
+    data: { status: "generated", error: null },
   });
 
   try {
-    invalidatePedagogicalCache();
-    await loadPedagogicalRules();
-
-    // Check test mode
-    let testMode = false;
-    try {
-      const cfg = await prisma.studioConfig.findUnique({ where: { key: "studio_settings" } });
-      if (cfg && typeof cfg.value === "object" && cfg.value !== null && "testMode" in cfg.value) {
-        testMode = !!(cfg.value as any).testMode;
-      }
-    } catch { /* ignore */ }
-
     // Get existing titles + character names from same topic to avoid repetition
     const existingStories = await prisma.journeyStory.findMany({
       where: { journeyId: story.journeyId, title: { not: null } },
@@ -64,7 +48,6 @@ export async function POST(request: Request) {
     });
     const existingTitles = existingStories.map((s) => s.title).filter(Boolean) as string[];
 
-    // Extract character names from stories in the same topic
     const sameTopicStories = existingStories.filter((s) => s.topic === story.topic && s.text);
     const usedNames = new Set<string>();
     for (const s of sameTopicStories) {
@@ -74,67 +57,43 @@ export async function POST(request: Request) {
     }
     const usedCharacterNames = [...usedNames].slice(0, 30);
 
-    // Get minimum word count for this level
-    const rule = getRuleForLevel(story.level);
-    const minWords = testMode ? 30 : (rule?.wordCountRange.min ?? 250);
+    // Use the same generator as Sanity Studio
+    const payload = await generateStoryPayload({
+      language: story.journey.language,
+      variant: story.journey.variant,
+      region: story.journey.variant,
+      cefrLevel: story.level,
+      topic: story.topic,
+      focus: "verbs",
+      existingTitles,
+      usedCharacterNames,
+    });
 
-    // Generate with retry if word count is too low (up to 3 attempts)
-    let generated: { title: string; text: string } = { title: "", text: "" };
-    let attempts = 0;
-    const maxAttempts = 3;
-    while (attempts < maxAttempts) {
-      attempts++;
-      const qaFeedback = attempts > 1
-        ? `Previous attempt was only ${generated.text.split(/\s+/).filter(Boolean).length} words. You MUST write at least ${minWords} words. Extend the narrative with more sensory details, dialogue, and character moments.`
-        : undefined;
-
-      generated = await generateStoryWithLLM({
-        title: "",
-        language: story.journey.language,
-        level: story.level,
-        topic: story.topic,
-        journeyFocus: "General",
-        variant: story.journey.variant,
-        testMode,
-        existingTitles,
-        usedCharacterNames,
-        qaFeedback,
-      });
-
-      const currentWords = generated.text.split(/\s+/).filter(Boolean).length;
-      if (currentWords >= minWords) break;
-      console.log(`[generate] Attempt ${attempts}: ${currentWords} words (min ${minWords}), retrying...`);
+    if (!payload) {
+      throw new Error("Story generation failed after multiple attempts");
     }
 
-    const vocab = await generateVocabFromText({
-      text: generated.text,
-      language: story.journey.language,
-      level: story.level,
-      topic: story.topic,
-      testMode,
-    });
-
     const synopsis = await generateSynopsis({
-      title: generated.title,
-      text: generated.text,
+      title: payload.title,
+      text: payload.text,
       language: story.journey.language,
     });
 
-    const baseSlug = generateSlug(generated.title, story.journey.language, story.journey.variant, 0).replace(/-0$/, "");
+    const baseSlug = generateSlug(payload.title, story.journey.language, story.journey.variant, 0).replace(/-0$/, "");
     const slug = story.slotIndex > 0 ? `${baseSlug}-${story.slotIndex + 1}` : baseSlug;
-    const wordCount = generated.text.split(/\s+/).filter(Boolean).length;
+    const wordCount = payload.text.split(/\s+/).filter(Boolean).length;
 
     const updated = await prisma.journeyStory.update({
       where: { id: storyId },
       data: {
         status: "generated",
-        title: generated.title,
+        title: payload.title,
         slug,
-        text: generated.text,
+        text: payload.text,
         synopsis,
-        vocab: vocab as any,
+        vocab: payload.vocab as any,
         wordCount,
-        vocabCount: vocab.length,
+        vocabCount: payload.vocab.length,
         error: null,
       },
     });
@@ -142,6 +101,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       id: updated.id,
       title: updated.title,
+      slug: updated.slug,
       wordCount: updated.wordCount,
       vocabCount: updated.vocabCount,
       status: updated.status,
