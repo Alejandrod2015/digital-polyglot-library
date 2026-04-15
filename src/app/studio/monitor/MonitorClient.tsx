@@ -631,6 +631,18 @@ export default function MonitorClient() {
     }
   }
 
+  // Generate all pending stories in an entire level (across all topics) sequentially
+  async function generateAllInLevel(journeyId: string, level: string) {
+    const pending = stories.filter((s) =>
+      s.journeyId === journeyId &&
+      s.level === level &&
+      (s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review")
+    );
+    for (const s of pending) {
+      await generateStory(s.id);
+    }
+  }
+
   function dotColor(status: string, coverDone?: boolean, audioStatus?: string) {
     if (status === "published" && coverDone && audioStatus === "ready") return "#22c55e";
     if (status === "published") return "#86efac";
@@ -1018,6 +1030,8 @@ export default function MonitorClient() {
                     const levelTopics = topicGroups.filter((g) => g.level === level);
                     const levelGen = levelTopics.reduce((a, g) => a + g.stories.filter((s) => ["generated", "qa_pass", "approved", "published"].includes(s.status)).length, 0);
                     const levelTotal = levelTopics.reduce((a, g) => a + g.stories.length, 0);
+                    const levelPending = levelTopics.reduce((a, g) => a + g.stories.filter((s) => s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review").length, 0);
+                    const levelBusy = levelTopics.some((g) => g.stories.some((s) => busyStories.has(s.id)));
 
                     return (
                       <div key={level}>
@@ -1025,6 +1039,14 @@ export default function MonitorClient() {
                         <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 4px 2px" }}>
                           <span style={{ fontSize: 13, fontWeight: 700, color: "#14b8a6", letterSpacing: "0.05em" }}>{level.toUpperCase()}</span>
                           <span style={{ flex: 1, height: 1, backgroundColor: "rgba(20,184,166,0.15)" }} />
+                          {levelPending > 0 && (
+                            <button onClick={(e) => { e.stopPropagation(); void generateAllInLevel(j.id, level); }}
+                              disabled={levelBusy}
+                              title={`Generar todas las historias pendientes del nivel ${level.toUpperCase()} (${levelPending})`}
+                              style={{ ...btnPrimary(levelBusy), fontSize: 9, height: 22, padding: "0 10px" }}>
+                              {levelBusy ? "Generando..." : `⚡ Generar nivel ${level.toUpperCase()} (${levelPending})`}
+                            </button>
+                          )}
                           <span style={{ ...chipStyle, fontSize: 8 }}>{levelGen}/{levelTotal}</span>
                         </div>
 
