@@ -219,9 +219,95 @@ const iconBtn: React.CSSProperties = {
   background: "none", border: "none", cursor: "pointer", padding: 2, fontSize: 12, lineHeight: 1, opacity: 0.5,
 };
 const deleteBtn: React.CSSProperties = {
-  background: "none", border: "none", cursor: "pointer", padding: "2px 4px", fontSize: 10, lineHeight: 1,
-  color: "#ef4444", opacity: 0.6, borderRadius: 3,
+  background: "none", border: "none", cursor: "pointer", padding: "4px", display: "inline-flex", alignItems: "center", justifyContent: "center",
+  color: "#ef4444", opacity: 0.7, borderRadius: 4,
 };
+
+const svgBtn = (color = "#14b8a6", disabled = false): React.CSSProperties => ({
+  background: "none", border: "none", cursor: disabled ? "not-allowed" : "pointer",
+  padding: "4px 6px", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 4,
+  color, opacity: disabled ? 0.35 : 0.85, borderRadius: 4, fontSize: 11, fontWeight: 500,
+});
+
+function Icon({ name, size = 14, color = "currentColor" }: { name: string; size?: number; color?: string }) {
+  const paths: Record<string, React.ReactNode> = {
+    // Trash can for delete actions
+    trash: (
+      <>
+        <polyline points="3 6 5 6 21 6" />
+        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+        <path d="M10 11v6M14 11v6" />
+        <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+      </>
+    ),
+    // Play / generate
+    play: <polygon points="6 4 20 12 6 20 6 4" />,
+    // Lightning / generate level
+    zap: <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />,
+    // Refresh / regenerate
+    refresh: (
+      <>
+        <polyline points="23 4 23 10 17 10" />
+        <polyline points="1 20 1 14 7 14" />
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+      </>
+    ),
+    // Pencil / edit
+    pencil: (
+      <>
+        <path d="M12 20h9" />
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+      </>
+    ),
+    // Image / cover
+    image: (
+      <>
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <polyline points="21 15 16 10 5 21" />
+      </>
+    ),
+    // Volume / audio
+    volume: (
+      <>
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+      </>
+    ),
+    // Type / text
+    type: (
+      <>
+        <polyline points="4 7 4 4 20 4 20 7" />
+        <line x1="9" y1="20" x2="15" y2="20" />
+        <line x1="12" y1="4" x2="12" y2="20" />
+      </>
+    ),
+    // Chevron right
+    chevronRight: <polyline points="9 18 15 12 9 6" />,
+    // Check
+    check: <polyline points="20 6 9 17 4 12" />,
+    // Close / X
+    close: (
+      <>
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </>
+    ),
+    // Plus
+    plus: (
+      <>
+        <line x1="12" y1="5" x2="12" y2="19" />
+        <line x1="5" y1="12" x2="19" y2="12" />
+      </>
+    ),
+  };
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      {paths[name] ?? null}
+    </svg>
+  );
+}
 
 // ── Types ──
 
@@ -631,6 +717,33 @@ export default function MonitorClient() {
     }
   }
 
+  /**
+   * Generate all pending stories for a specific CEFR level within a journey.
+   * Stories are generated sequentially (advisory lock ensures safe vocab planning)
+   * and progress is tracked in real time.
+   */
+  const [levelProgress, setLevelProgress] = useState<Map<string, { current: number; total: number }>>(new Map());
+  async function generateAllInLevel(journeyId: string, level: string) {
+    try {
+      const levelStories = stories
+        .filter((s) => s.journeyId === journeyId && s.level === level)
+        .filter((s) => s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review");
+      console.log(`[generateAllInLevel] journeyId=${journeyId} level=${level} found=${levelStories.length} stories`, levelStories.map((s) => s.id));
+      if (levelStories.length === 0) return;
+      const progressKey = `${journeyId}:${level}`;
+      setLevelProgress((prev) => new Map(prev).set(progressKey, { current: 0, total: levelStories.length }));
+      for (let i = 0; i < levelStories.length; i++) {
+        setLevelProgress((prev) => new Map(prev).set(progressKey, { current: i + 1, total: levelStories.length }));
+        console.log(`[generateAllInLevel] generating ${i + 1}/${levelStories.length}: ${levelStories[i].id}`);
+        await generateStory(levelStories[i].id);
+      }
+      setLevelProgress((prev) => { const n = new Map(prev); n.delete(progressKey); return n; });
+      console.log(`[generateAllInLevel] done`);
+    } catch (err) {
+      console.error(`[generateAllInLevel] error:`, err);
+    }
+  }
+
   function dotColor(status: string, coverDone?: boolean, audioStatus?: string) {
     if (status === "published" && coverDone && audioStatus === "ready") return "#22c55e";
     if (status === "published") return "#86efac";
@@ -967,9 +1080,13 @@ export default function MonitorClient() {
                 <div style={{ height: "100%", width: `${pct}%`, backgroundColor: "#14b8a6", borderRadius: 2 }} />
               </div>
 
-              <button onClick={(e) => { e.stopPropagation(); setEditingStructureId(editingStructureId === j.id ? null : j.id); }} style={{ ...iconBtn, color: editingStructureId === j.id ? "#14b8a6" : undefined }} title="Editar niveles">✏️</button>
+              <button onClick={(e) => { e.stopPropagation(); setEditingStructureId(editingStructureId === j.id ? null : j.id); }} style={{ ...iconBtn, color: editingStructureId === j.id ? "#14b8a6" : undefined }} title="Editar niveles">
+                <Icon name="pencil" size={14} />
+              </button>
               <button onClick={(e) => { e.stopPropagation(); setConfirmAction({ message: `⚠️ Eliminar "${j.name}" con ${j.stats.total} historia${j.stats.total === 1 ? "" : "s"} (${j.stats.published} publicada${j.stats.published === 1 ? "" : "s"})? Esta acción es irreversible y no se puede deshacer.`, onConfirm: () => deleteJourney(j.id) }); }}
-                style={deleteBtn} title="Eliminar">&#x2716;</button>
+                style={deleteBtn} title="Eliminar journey">
+                <Icon name="trash" size={14} />
+              </button>
             </div>
 
             {/* Level editor panel */}
@@ -1025,6 +1142,34 @@ export default function MonitorClient() {
                         <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 4px 2px" }}>
                           <span style={{ fontSize: 13, fontWeight: 700, color: "#14b8a6", letterSpacing: "0.05em" }}>{level.toUpperCase()}</span>
                           <span style={{ flex: 1, height: 1, backgroundColor: "rgba(20,184,166,0.15)" }} />
+                          {(() => {
+                            const progressKey = `${j.id}:${level}`;
+                            const progress = levelProgress.get(progressKey);
+                            const levelPending = levelTopics.reduce((a, g) => a + g.stories.filter((s) => s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review").length, 0);
+                            const levelBusy = !!progress || levelTopics.some((g) => g.stories.some((s) => busyStories.has(s.id)));
+                            if (progress) {
+                              return (
+                                <span style={{ ...chipStyle, fontSize: 9, backgroundColor: "rgba(245,158,11,0.15)", borderColor: "rgba(245,158,11,0.4)", color: "#f59e0b" }}>
+                                  Generando {progress.current}/{progress.total}...
+                                </span>
+                              );
+                            }
+                            if (levelPending > 0) {
+                              return (
+                                <button
+                                  type="button"
+                                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); void generateAllInLevel(j.id, level); }}
+                                  disabled={levelBusy}
+                                  title={`Generar nivel ${level.toUpperCase()} (${levelPending} pendiente${levelPending === 1 ? "" : "s"})`}
+                                  style={svgBtn("#14b8a6", levelBusy)}
+                                >
+                                  <Icon name="zap" size={14} />
+                                  <span>Generar nivel {level.toUpperCase()} ({levelPending})</span>
+                                </button>
+                              );
+                            }
+                            return null;
+                          })()}
                           <span style={{ ...chipStyle, fontSize: 8 }}>{levelGen}/{levelTotal}</span>
                         </div>
 
@@ -1058,12 +1203,16 @@ export default function MonitorClient() {
                                 {pendingCount > 0 && (
                                   <button onClick={(e) => { e.stopPropagation(); void generateAllInTopic(group); }}
                                     disabled={topicBusy}
-                                    style={{ ...btnPrimary(topicBusy), fontSize: 9, height: 22, padding: "0 8px" }}>
-                                    {topicBusy ? "Generando..." : `Generar todas (${pendingCount})`}
+                                    title={topicBusy ? "Generando..." : `Generar todas las historias del tema (${pendingCount})`}
+                                    style={svgBtn("#14b8a6", topicBusy)}>
+                                    <Icon name="play" size={12} />
+                                    <span>{pendingCount}</span>
                                   </button>
                                 )}
                                 <span style={{ ...chipStyle, fontSize: 9 }}>{gen}/{group.stories.length}</span>
-                                <span style={{ fontSize: 10, color: "var(--muted)", transform: isTopicOpen ? "rotate(90deg)" : "none", transition: "transform 0.15s" }}>▶</span>
+                                <span style={{ display: "inline-flex", color: "var(--muted)", transform: isTopicOpen ? "rotate(90deg)" : "none", transition: "transform 0.15s" }}>
+                                  <Icon name="chevronRight" size={12} />
+                                </span>
                               </div>
 
                               {/* Stories inside topic */}
@@ -1102,43 +1251,50 @@ export default function MonitorClient() {
                                               confirmLabel: "Regenerar",
                                               confirmColor: "#f59e0b",
                                             })}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
-                                              Regenerar texto
+                                              title="Regenerar texto"
+                                              style={svgBtn("#f59e0b")}>
+                                              <Icon name="type" size={13} />
                                             </button>
                                           )}
                                           {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
-                                            <button onClick={() => regenerateVocab(s.id)}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
-                                              Regenerar vocab
+                                            <button onClick={() => regenerateVocab(s.id)} title="Regenerar vocab"
+                                              style={svgBtn("#f59e0b")}>
+                                              <Icon name="refresh" size={13} />
                                             </button>
                                           )}
                                           {s.status === "published" && !s.coverDone && !busyStories.has(s.id) && (
-                                            <button onClick={() => generateCover(s.id)}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
-                                              Generar cover
+                                            <button onClick={() => generateCover(s.id)} title="Generar cover"
+                                              style={svgBtn("var(--foreground)")}>
+                                              <Icon name="image" size={13} />
                                             </button>
                                           )}
                                           {s.coverDone && !busyStories.has(s.id) && (
-                                            <button onClick={() => generateCover(s.id)}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
-                                              Regenerar cover
+                                            <button onClick={() => generateCover(s.id)} title="Regenerar cover"
+                                              style={svgBtn("#f59e0b")}>
+                                              <Icon name="image" size={13} />
                                             </button>
                                           )}
                                           {s.status === "published" && s.audioStatus !== "ready" && !busyStories.has(s.id) && (
-                                            <button onClick={() => generateAudio(s.id)}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
-                                              Generar audio
+                                            <button onClick={() => generateAudio(s.id)} title="Generar audio"
+                                              style={svgBtn("var(--foreground)")}>
+                                              <Icon name="volume" size={13} />
                                             </button>
                                           )}
                                           {s.audioStatus === "ready" && !busyStories.has(s.id) && (
-                                            <button onClick={() => generateAudio(s.id)}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
-                                              Regenerar audio
+                                            <button onClick={() => generateAudio(s.id)} title="Regenerar audio"
+                                              style={svgBtn("#f59e0b")}>
+                                              <Icon name="volume" size={13} />
                                             </button>
                                           )}
-                                          {s.status === "published" && s.coverDone && s.audioStatus === "ready" && <span style={{ fontSize: 9, color: "#22c55e" }}>✓</span>}
+                                          {s.status === "published" && s.coverDone && s.audioStatus === "ready" && (
+                                            <span style={{ display: "inline-flex", color: "#22c55e" }} title="Completada">
+                                              <Icon name="check" size={13} />
+                                            </span>
+                                          )}
                                           <button onClick={() => setConfirmAction({ message: `Eliminar "${s.title || "Historia " + (s.slotIndex + 1)}"?`, onConfirm: () => deleteStory(s.id) })}
-                                            style={deleteBtn} title="Eliminar historia">&#x2716;</button>
+                                            style={deleteBtn} title="Eliminar historia">
+                                            <Icon name="trash" size={13} />
+                                          </button>
                                         </div>
                                         {renderStoryEditor(s)}
                                       </div>
