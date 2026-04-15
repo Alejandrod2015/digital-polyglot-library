@@ -13,9 +13,7 @@ export const shortstoriesincolombianspanish: Book = {
     "Work & Career",
     "Food & Cooking"
   ],
-  "variant": "latam",
   "level": "intermediate",
-  "cefrLevel": "b1",
   "language": "spanish",
   "region": "colombia",
   "topic": "Family & Community",
@@ -919,10 +917,10 @@ export const shortstoriesincolombianspanish: Book = {
       "id": "el-taxista",
       "slug": "el-taxista",
       "title": "El taxista",
-      "text": "<p>Cartagena de Indias, una ciudad colonial vibrante y caótica. El <span class=\"vocab-word\" data-word=\"El sol raja\">sol raja</span> las piedras mientras el tráfico ruge. Entre el mar de taxis amarillos, Antonio, un hombre <span class=\"vocab-word\" data-word=\"Destartalado\">destartalado</span> por el sol y la brisa salada, conduce su <span class=\"vocab-word\" data-word=\"Destartalado\">destartalado</span> Chevrolet Spark.</p> <blockquote>Antonio: ¡Taxi! ¿Pa' dónde va, <span class=\"vocab-word\" data-word=\"Mi llave\">mi llave</span>?</blockquote> <blockquote>Pedro: Al Pie de la Popa, mijo. <span class=\"vocab-word\" data-word=\"Apure\">Apure</span> que tengo un vuelo que me espera.</blockquote> <blockquote>Antonio: ¡Tranquilo, don Pedro! En un <span class=\"vocab-word\" data-word=\"santiamén\">santiamén</span> lo llevo.</blockquote> <blockquote>Pedro: ¿Y cuánto <span class=\"vocab-word\" data-word=\"Cobra\">cobra</span>?</blockquote> <blockquote>Antonio: Depende del tráfico, mi llave. Pero no se preocupe, no le voy a cobrar caro.</blockquote> <blockquote>Pedro: ¡Menos mal! Es que estos taxistas de Cartagena son unos <span class=\"vocab-word\" data-word=\"Bandidos\">bandidos</span>.</blockquote> <blockquote>Antonio: (Ríe) No todos, mi llave. Hay de todo como en <span class=\"vocab-word\" data-word=\"Botica\">botica</span>.</blockquote> <p>En el camino, pasajero y taxista conversan de diferentes temas.</p> <blockquote>Pedro: ¿Y usted lleva mucho tiempo manejando taxi?</blockquote> <blockquote>Antonio: Uff, como unos 15 años, mi llave. He visto de todo en este <span class=\"vocab-word\" data-word=\"Oficio\">oficio</span>.</blockquote> <blockquote>Pedro: ¿Y qué tal le ha ido?</blockquote> <blockquote>Antonio: No me quejo. Hay días buenos y días malos. Pero uno se va acostumbrando a la <span class=\"vocab-word\" data-word=\"Maña\">maña</span>.</blockquote> <blockquote>Pedro: ¿Y ha tenido algún <span class=\"vocab-word\" data-word=\"Susto\">susto</span>?</blockquote> <blockquote>Antonio: ¡Uy, sí! Cómo no. Una vez me <span class=\"vocab-word\" data-word=\"Atracaron\">atracaron</span> unos pelaos en un callejón oscuro. Me quitaron todo, hasta el radio del carro.</blockquote> <blockquote>Pedro: ¡<span class=\"vocab-word\" data-word=\"¡Qué bárbaro!\">Qué bárbaro</span>!</blockquote> <blockquote>Antonio: Sí, mi llave. Pero gracias a Dios no me pasó nada grave.</blockquote> <blockquote>Pedro: ¿Y qué le gusta más de ser taxista?</blockquote> <blockquote>Antonio: Lo que más me gusta es conocer gente. He conocido a personas de todas partes del mundo. Y cada uno tiene una historia que contar.</blockquote> <blockquote>Pedro: Eso sí es interesante.</blockquote> <p>Llegan al Pie de la Popa.</p> <blockquote>Antonio: Aquí estamos, mi llave.</blockquote> <blockquote>Pedro: ¡Muchas gracias por la carrera!</blockquote> <blockquote>Antonio: No hay de qué, mi llave. Que tenga un buen viaje.</blockquote> <blockquote>Pedro: ¿<span class=\"vocab-word\" data-word=\"¿Cuánto le debo?\">Cuánto le debo</span>?</blockquote> <blockquote>Antonio: Son 15 mil pesos, mi llave.</blockquote> <blockquote>Pedro: Aquí tiene.</blockquote> <blockquote>Antonio: ¡Muchas gracias!</blockquote> <blockquote>Pedro: ¡Hasta luego!</blockquote> <blockquote>Antonio: ¡Hasta pronto!</blockquote> <p>Pedro se va y Antonio se queda solo en el taxi. Suspira y mira hacia el cielo. Sabe que la vida de taxista no es fácil, pero también sabe que es una vida llena de aventuras y sorpresas.</p>",
+      "text": "<p>Cartagena de Indias, una ciudad colonial vibrante y caótica. El sol raja las piedras mientras el tráfico ruge. Entre el mar de taxis amarillos, Antonio, un hombre destartalado por el sol y la brisa salada, conduce su destartalado Chevrolet Spark.</p> <blockquote>Antonio: ¡Taxi! ¿Pa' dónde va, mi llave?</blockquote> <blockquote>Pedro: Al Pie de la Popa, mijo. Apure que tengo un vuelo que me espera.</blockquote> <blockquote>Antonio: ¡Tranquilo, don Pedro! En un santiamén lo llevo.</blockquote> <blockquote>Pedro: ¿Y cuánto cobra?</blockquote> <blockquote>Antonio: Depende del tráfico, mi llave. Pero no se preocupe, no le voy a cobrar caro.</blockquote> <blockquote>Pedro: ¡Menos mal! Es que estos taxistas de Cartagena son unos bandidos.</blockquote> <blockquote>Antonio: (Ríe) No todos, mi llave. Hay de todo como en botica.</blockquote> <p>En el camino, pasajero y taxista conversan de diferentes temas.</p> <blockquote>Pedro: ¿Y usted lleva mucho tiempo manejando taxi?</blockquote> <blockquote>Antonio: Uff, como unos 15 años, mi llave. He visto de todo en este oficio.</blockquote> <blockquote>Pedro: ¿Y qué tal le ha ido?</blockquote> <blockquote>Antonio: No me quejo. Hay días buenos y días malos. Pero uno se va acostumbrando a la maña.</blockquote> <blockquote>Pedro: ¿Y ha tenido algún susto?</blockquote> <blockquote>Antonio: ¡Uy, sí! Cómo no. Una vez me atracaron unos pelaos en un callejón oscuro. Me quitaron todo, hasta el radio del carro.</blockquote> <blockquote>Pedro: ¡Qué bárbaro!</blockquote> <blockquote>Antonio: Sí, mi llave. Pero gracias a Dios no me pasó nada grave.</blockquote> <blockquote>Pedro: ¿Y qué le gusta más de ser taxista?</blockquote> <blockquote>Antonio: Lo que más me gusta es conocer gente. He conocido a personas de todas partes del mundo. Y cada uno tiene una historia que contar.</blockquote> <blockquote>Pedro: Eso sí es interesante.</blockquote> <p>Llegan al Pie de la Popa.</p> <blockquote>Antonio: Aquí estamos, mi llave.</blockquote> <blockquote>Pedro: ¡Muchas gracias por la carrera!</blockquote> <blockquote>Antonio: No hay de qué, mi llave. Que tenga un buen viaje.</blockquote> <blockquote>Pedro: ¿Cuánto le debo?</blockquote> <blockquote>Antonio: Son 15 mil pesos, mi llave.</blockquote> <blockquote>Pedro: Aquí tiene.</blockquote> <blockquote>Antonio: ¡Muchas gracias!</blockquote> <blockquote>Pedro: ¡Hasta luego!</blockquote> <blockquote>Antonio: ¡Hasta pronto!</blockquote> <p>Pedro se va y Antonio se queda solo en el taxi. Suspira y mira hacia el cielo. Sabe que la vida de taxista no es fácil, pero también sabe que es una vida llena de aventuras y sorpresas.</p>",
       "audio": "https://cdn.sanity.io/files/9u7ilulp/production/e55a85f581d5276c6961cb4c243daf8065741985.mp3",
       "createdAt": "2025-10-25T20:17:14Z",
-      "updatedAt": "2026-03-05T14:03:47Z",
+      "updatedAt": "2026-03-25T19:23:36Z",
       "topic": "History & Places",
       "tags": [
         "History & Places"
@@ -930,60 +928,99 @@ export const shortstoriesincolombianspanish: Book = {
       "cover": "https://cdn.sanity.io/images/9u7ilulp/production/4bde0f2048984d38d97d1861113a1bbe68fcc25d-1536x1024.png",
       "vocab": [
         {
-          "word": "El sol raja",
-          "definition": "It is extremely hot."
+          "word": "conduce",
+          "definition": "Refers to the act of driving a vehicle, especially a taxi.",
+          "type": "verb"
         },
         {
-          "word": "Destartalado",
-          "definition": "In poor condition or disorganized."
+          "word": "manejando",
+          "definition": "Describes the process of controlling and operating a vehicle.",
+          "type": "verb"
         },
         {
-          "word": "Mi llave",
-          "definition": "A colloquial expression meaning friend or companion."
+          "word": "conocer",
+          "definition": "Involves meeting or becoming acquainted with people or locations.",
+          "type": "verb"
         },
         {
-          "word": "Apure",
-          "definition": "To hurry or rush."
+          "word": "cobrar",
+          "definition": "Refers to the act of requesting payment for goods or services.",
+          "type": "verb"
         },
         {
-          "word": "santiamén",
-          "definition": "A very short amount of time; instantly."
+          "word": "contar",
+          "definition": "Involves narrating a story or sharing information with others.",
+          "type": "verb"
         },
         {
-          "word": "Cobra",
-          "definition": "To charge money for a service or product."
+          "word": "acostumbrando",
+          "definition": "Describes the process of becoming familiar with something over time.",
+          "type": "verb"
         },
         {
-          "word": "Bandidos",
-          "definition": "People who commit illegal acts."
+          "word": "sabe",
+          "definition": "Indicates having knowledge or awareness about a particular subject.",
+          "type": "verb"
         },
         {
-          "word": "Botica",
-          "definition": "A place where medicines are sold; a pharmacy."
+          "word": "tiene",
+          "definition": "Expresses possession or ownership of an object or idea.",
+          "type": "verb"
         },
         {
-          "word": "Oficio",
-          "definition": "A job or occupation."
+          "word": "llevo",
+          "definition": "Refers to transporting someone or something to a specific place.",
+          "type": "verb"
         },
         {
-          "word": "Maña",
-          "definition": "Skill or dexterity in doing something."
+          "word": "quitaron",
+          "definition": "Describes the action of removing something from a person.",
+          "type": "verb"
         },
         {
-          "word": "Susto",
-          "definition": "A strong emotion caused by fear or surprise."
+          "word": "atracaron",
+          "definition": "Involves robbing or threatening someone, often violently.",
+          "type": "verb"
         },
         {
-          "word": "Atracaron",
-          "definition": "To be the victim of a violent robbery."
+          "word": "depende",
+          "definition": "Indicates reliance on certain factors or conditions for outcomes.",
+          "type": "verb"
         },
         {
-          "word": "¡Qué bárbaro!",
-          "definition": "An expression of astonishment or disbelief."
+          "word": "carrera",
+          "definition": "Refers to a journey taken in a taxi from one location to another.",
+          "type": "noun"
         },
         {
-          "word": "¿Cuánto le debo?",
-          "definition": "A question asking how much must be paid for a service or product."
+          "word": "taxista",
+          "definition": "A professional driver who operates a taxi for passengers.",
+          "type": "noun"
+        },
+        {
+          "word": "pasajero",
+          "definition": "A person who is traveling in a vehicle, particularly in a taxi.",
+          "type": "noun"
+        },
+        {
+          "word": "vida",
+          "definition": "Refers to the overall experience of living and one's lifestyle.",
+          "type": "noun"
+        },
+        {
+          "word": "sorpresas",
+          "definition": "Unexpected occurrences that can bring joy or challenges.",
+          "type": "noun"
+        },
+        {
+          "word": "aventuras",
+          "definition": "Exciting experiences that often involve some level of risk.",
+          "type": "noun"
+        },
+        {
+          "word": "temas",
+          "definition": "Topics or subjects that are discussed in conversations.",
+          "type": "noun"
         }
       ]
     },
@@ -1115,10 +1152,10 @@ export const shortstoriesincolombianspanish: Book = {
       "id": "la-familia-cafetera",
       "slug": "la-familia-cafetera",
       "title": "La familia cafetera",
-      "text": "<p>El sol de la mañana se filtraba entre las hojas de plátano, iluminando la pequeña <span class=\"vocab-word\" data-word=\"Parcela\">parcela</span> de café en la que Alejandro, un hombre de 50, revisaba las <span class=\"vocab-word\" data-word=\"Matas\">matas</span> con una mirada preocupada. A su lado, Marina, su esposa, de 48 años y con la fuerza inquebrantable de las mujeres campesinas, preparaba el almuerzo en un <span class=\"vocab-word\" data-word=\"Fogón\">fogón</span> de leña.</p> <blockquote>Alejandro: Este año el café está más berraco que nunca. La cosecha es escasa y los precios bajan cada vez más.</blockquote> <blockquote>Marina: Ni me lo digas, Alejandro. Ya no sé cómo vamos a hacer para pagar las cuentas y sacar adelante a los muchachos.</blockquote> <blockquote>Alejandro: (Golpea la tierra con el <span class=\"vocab-word\" data-word=\"Azadón\">azadón</span>) Yo tampoco, Marina. Esta tradición cafetera que tanto nos ha costado levantar se nos está viniendo abajo.</blockquote> <blockquote>Marina: No te desanimes, <span class=\"vocab-word\" data-word=\"Viejo\">viejo</span>. Siempre hemos encontrado la manera de salir adelante.</blockquote> <blockquote>Alejandro: Sí, pero esta vez es diferente. Los jóvenes no quieren saber nada del café. Buscan otras oportunidades en la ciudad, donde creen que la vida es más fácil.</blockquote> <blockquote>Marina: Es verdad. Juan ya se fue a estudiar a Medellín y Mariana quiere seguir sus pasos. No sé cómo vamos a <span class=\"vocab-word\" data-word=\"Convencerlos\">convencerlos</span> de que se queden aquí, en su tierra.</blockquote> <blockquote>Alejandro: Tenemos que hablar con ellos, Marina. Hacerles entender que esto no solo es un trabajo, sino una <span class=\"vocab-word\" data-word=\"Herencia\">herencia</span>, una forma de vida.</blockquote> <blockquote>Marina: Tienes razón. Debemos recordarles el orgullo que significa trabajar la tierra que nos vio nacer, el valor de cultivar un producto que nos identifica como colombianos.</blockquote> <blockquote>Alejandro: Y quién sabe, tal vez con el tiempo, ellos encuentren la pasión por el café que nosotros sentimos y decidan continuar con la tradición familiar.</blockquote> <blockquote>Marina: No lo dudo, Alejandro. La sangre cafetera corre por sus venas, tarde o temprano lo sentirán.</blockquote> <blockquote>Alejandro: Mientras tanto, seguiremos luchando por mantener este legado, por nuestro futuro y el de nuestros hijos.</blockquote> <blockquote>Marina: Juntos, como siempre lo hemos hecho, Alejandro.</blockquote> <p>En los días siguientes, Alejandro y Marina conversaron con Juan y Mariana sobre la importancia del café en sus vidas.</p> <blockquote>Alejandro: Sabemos que existen dificultades, pero también es satisfactorio vivir de lo que nos da la madre tierra.</blockquote> <blockquote>Marina: De generación en generación nos hemos esforzado para vivir una vida digna a partir del café.</blockquote> <p>Las palabras de sus padres calaron hondo en los corazones de los jóvenes. Juan y Mariana comprendieron que el café era mucho más que un simple producto, era una parte de su identidad y la de su familia.</p>",
+      "text": "<p>El sol de la mañana se filtraba entre las hojas de plátano, iluminando la pequeña parcela de café en la que Alejandro, un hombre de 50, revisaba las matas con una mirada preocupada. A su lado, Marina, su esposa, de 48 años y con la fuerza inquebrantable de las mujeres campesinas, preparaba el almuerzo en un fogón de leña.</p> <blockquote>Alejandro: Este año el café está más berraco que nunca. La cosecha es escasa y los precios bajan cada vez más.</blockquote> <blockquote>Marina: Ni me lo digas, Alejandro. Ya no sé cómo vamos a hacer para pagar las cuentas y sacar adelante a los muchachos.</blockquote> <blockquote>Alejandro: (Golpea la tierra con el azadón) Yo tampoco, Marina. Esta tradición cafetera que tanto nos ha costado levantar se nos está viniendo abajo.</blockquote> <blockquote>Marina: No te desanimes, viejo. Siempre hemos encontrado la manera de salir adelante.</blockquote> <blockquote>Alejandro: Sí, pero esta vez es diferente. Los jóvenes no quieren saber nada del café. Buscan otras oportunidades en la ciudad, donde creen que la vida es más fácil.</blockquote> <blockquote>Marina: Es verdad. Juan ya se fue a estudiar a Medellín y Mariana quiere seguir sus pasos. No sé cómo vamos a convencerlos de que se queden aquí, en su tierra.</blockquote> <blockquote>Alejandro: Tenemos que hablar con ellos, Marina. Hacerles entender que esto no solo es un trabajo, sino una herencia, una forma de vida.</blockquote> <blockquote>Marina: Tienes razón. Debemos recordarles el orgullo que significa trabajar la tierra que nos vio nacer, el valor de cultivar un producto que nos identifica como colombianos.</blockquote> <blockquote>Alejandro: Y quién sabe, tal vez con el tiempo, ellos encuentren la pasión por el café que nosotros sentimos y decidan continuar con la tradición familiar.</blockquote> <blockquote>Marina: No lo dudo, Alejandro. La sangre cafetera corre por sus venas, tarde o temprano lo sentirán.</blockquote> <blockquote>Alejandro: Mientras tanto, seguiremos luchando por mantener este legado, por nuestro futuro y el de nuestros hijos.</blockquote> <blockquote>Marina: Juntos, como siempre lo hemos hecho, Alejandro.</blockquote> <p>En los días siguientes, Alejandro y Marina conversaron con Juan y Mariana sobre la importancia del café en sus vidas.</p> <blockquote>Alejandro: Sabemos que existen dificultades, pero también es satisfactorio vivir de lo que nos da la madre tierra.</blockquote> <blockquote>Marina: De generación en generación nos hemos esforzado para vivir una vida digna a partir del café.</blockquote> <p>Las palabras de sus padres calaron hondo en los corazones de los jóvenes. Juan y Mariana comprendieron que el café era mucho más que un simple producto, era una parte de su identidad y la de su familia.</p>",
       "audio": "https://cdn.sanity.io/files/9u7ilulp/production/ef007aa8e8e20eb0a8162d84057f3b5dd455139d.mp3",
       "createdAt": "2025-10-25T20:22:27Z",
-      "updatedAt": "2026-03-05T14:23:46Z",
+      "updatedAt": "2026-03-25T17:40:41Z",
       "topic": "Food & Cooking",
       "tags": [
         "Food & Cooking"
@@ -1126,32 +1163,109 @@ export const shortstoriesincolombianspanish: Book = {
       "cover": "https://cdn.sanity.io/images/9u7ilulp/production/12b304802981284056f7b283eb1627ade0d51c25-1536x1024.png",
       "vocab": [
         {
-          "word": "Parcela",
-          "definition": "A small portion of land."
+          "word": "vivir",
+          "definition": "To exist or have life in a particular way or place.",
+          "type": "verb"
         },
         {
-          "word": "Matas",
-          "definition": "Small plants or shrubs."
+          "word": "iluminando",
+          "definition": "Providing light or making something visible in a bright way.",
+          "type": "verb"
         },
         {
-          "word": "Fogón",
-          "definition": "A place used for cooking, especially outdoors."
+          "word": "encontrado",
+          "definition": "Having discovered or come across something unexpectedly.",
+          "type": "verb"
         },
         {
-          "word": "Azadón",
-          "definition": "An agricultural tool used for digging."
+          "word": "continuar",
+          "definition": "To keep going or persist in an action or process.",
+          "type": "verb"
         },
         {
-          "word": "Viejo",
-          "definition": "A colloquial term used to refer to a person, regardless of age."
+          "word": "entender",
+          "definition": "To grasp the meaning or significance of something.",
+          "type": "verb"
         },
         {
-          "word": "Convencerlos",
-          "definition": "To persuade them or make them accept something."
+          "word": "trabajar",
+          "definition": "To engage in physical or mental effort to achieve a goal.",
+          "type": "verb"
         },
         {
-          "word": "Herencia",
-          "definition": "Goods or traits passed down through generations."
+          "word": "cultivar",
+          "definition": "To grow or nurture plants or crops for food or other uses.",
+          "type": "verb"
+        },
+        {
+          "word": "seguir",
+          "definition": "To go after or pursue someone or something.",
+          "type": "verb"
+        },
+        {
+          "word": "luchando",
+          "definition": "Struggling or fighting to achieve a goal or overcome difficulties.",
+          "type": "verb"
+        },
+        {
+          "word": "mantener",
+          "definition": "To keep something in a particular state or condition.",
+          "type": "verb"
+        },
+        {
+          "word": "preparaba",
+          "definition": "Was getting ready or making something in advance.",
+          "type": "verb"
+        },
+        {
+          "word": "hablar",
+          "definition": "To communicate or express thoughts using spoken words.",
+          "type": "verb"
+        },
+        {
+          "word": "recordarles",
+          "definition": "To remind someone of something important or significant.",
+          "type": "verb"
+        },
+        {
+          "word": "convencerlos",
+          "definition": "To persuade someone to agree or believe in something.",
+          "type": "verb"
+        },
+        {
+          "word": "comprendieron",
+          "definition": "Realized or understood something after consideration.",
+          "type": "verb"
+        },
+        {
+          "word": "desanimes",
+          "definition": "To lose hope or confidence in a situation.",
+          "type": "verb"
+        },
+        {
+          "word": "golpea",
+          "definition": "To strike or hit something with force.",
+          "type": "verb"
+        },
+        {
+          "word": "revisaba",
+          "definition": "Was examining or checking something carefully.",
+          "type": "verb"
+        },
+        {
+          "word": "sentirán",
+          "definition": "Will experience or perceive an emotion or sensation.",
+          "type": "verb"
+        },
+        {
+          "word": "esforzado",
+          "definition": "Having made a strong effort to achieve something.",
+          "type": "verb"
+        },
+        {
+          "word": "conversaron",
+          "definition": "Engaged in spoken exchange of thoughts or ideas.",
+          "type": "verb"
         }
       ]
     },

@@ -2,6 +2,7 @@
 import { books } from "@/data/books";
 import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
 import { getPublicUserStories } from "@/lib/userStories";
+import { resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 export type LatestBook = {
   slug: string;
@@ -87,7 +88,19 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
     .slice()
     .flatMap((book) => {
       const bookTs = getEntityTimestamp(book);
-      return (book.stories ?? []).map((story) => ({
+      return (book.stories ?? []).map((story) => {
+        const storyCoverRaw =
+          (typeof story.cover === "string" && story.cover.trim() !== ""
+            ? story.cover
+            : undefined) ??
+          (typeof (story as { coverUrl?: unknown }).coverUrl === "string" &&
+          ((story as { coverUrl?: string }).coverUrl ?? "").trim() !== ""
+            ? (story as { coverUrl?: string }).coverUrl
+            : undefined);
+        const resolvedStoryCover = storyCoverRaw
+          ? resolvePublicMediaUrl(storyCoverRaw) ?? storyCoverRaw
+          : undefined;
+        return ({
         bookSlug: book.slug,
         bookTitle: book.title,
         storySlug: story.slug,
@@ -95,7 +108,7 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
         language: story.language ?? book.language,
         region: story.region ?? book.region,
         level: story.level ?? book.level,
-        coverUrl: story.cover ?? book.cover ?? "/covers/default.jpg",
+        coverUrl: resolvedStoryCover ?? book.cover ?? "/covers/default.jpg",
         audioUrl:
           typeof story.audio === "string" && story.audio.trim() !== ""
             ? story.audio
@@ -105,7 +118,8 @@ export async function getLatestHomeReleases({ limit }: Options): Promise<{
           getEntityTimestamp(story),
           bookTs
         ),
-      }));
+      });
+      });
     })
     .sort((a, b) => b._ts - a._ts);
 

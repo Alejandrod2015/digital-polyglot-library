@@ -13,9 +13,7 @@ export const colombianspanishstoriesforbeginners: Book = {
     "Nature & Environment",
     "Money & Shopping"
   ],
-  "variant": "latam",
   "level": "beginner",
-  "cefrLevel": "a1",
   "language": "spanish",
   "region": "colombia",
   "topic": "Culture & Traditions",

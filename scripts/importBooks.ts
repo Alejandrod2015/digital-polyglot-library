@@ -195,11 +195,54 @@ async function importBooks() {
 
   let totalStories = 0;
 
+  // Pre-fetch existing book/story IDs by slug so we re-use docs that were
+  // created earlier with different (e.g. UUID) _ids and avoid duplicates.
+  const slugList = idsToImport
+    .map((id) => books[id]?.slug)
+    .filter((s): s is string => typeof s === "string" && s.length > 0);
+
+  type SlugIdRow = { slug: string; _id: string };
+
+  const existingBooks = slugList.length
+    ? await client.fetch<SlugIdRow[]>(
+        `*[_type == "book" && slug.current in $slugs]{ "slug": slug.current, _id }`,
+        { slugs: slugList }
+      )
+    : [];
+  const existingBookIdBySlug = new Map<string, string>();
+  for (const row of existingBooks) {
+    // Prefer the published doc over a draft.* sibling, and the canonical
+    // book.<slug> id over a random UUID when both exist.
+    const current = existingBookIdBySlug.get(row.slug);
+    const isDraft = (id: string) => id.startsWith("drafts.");
+    const isCanonical = (id: string) => id.startsWith("book.");
+    const better =
+      !current
+        ? row._id
+        : isDraft(current) && !isDraft(row._id)
+        ? row._id
+        : !isCanonical(current) && isCanonical(row._id)
+        ? row._id
+        : current;
+    existingBookIdBySlug.set(row.slug, better);
+  }
+
+  const existingStories = slugList.length
+    ? await client.fetch<SlugIdRow[]>(
+        `*[_type == "story" && defined(slug.current) && book._ref in $bookIds]{ "slug": slug.current, _id }`,
+        { bookIds: Array.from(existingBookIdBySlug.values()) }
+      )
+    : [];
+  const existingStoryIdBySlug = new Map<string, string>();
+  for (const row of existingStories) {
+    if (!existingStoryIdBySlug.has(row.slug)) existingStoryIdBySlug.set(row.slug, row._id);
+  }
+
   for (const bookId of idsToImport) {
     const book = books[bookId];
     if (!book) continue;
 
-    const bookDocId = `book.${book.id}`;
+    const bookDocId = existingBookIdBySlug.get(book.slug) ?? `book.${book.id}`;
 
     // 1) Book doc
     mutations.push({
@@ -237,9 +280,12 @@ async function importBooks() {
       const storyId =
         typeof story.id === "string" && story.id.length > 0 ? story.id : story.slug;
 
+      const storyDocId =
+        existingStoryIdBySlug.get(story.slug) ?? `story.${book.id}.${storyId}`;
+
       mutations.push({
         createIfNotExists: {
-          _id: `story.${book.id}.${storyId}`,
+          _id: storyDocId,
           _type: "story",
           showInPolyglotStories: false,
         },
@@ -257,7 +303,7 @@ async function importBooks() {
 
       mutations.push({
         patch: {
-          id: `story.${book.id}.${storyId}`,
+          id: storyDocId,
           set: {
             title: story.title,
             slug: slugValue(story.slug),
