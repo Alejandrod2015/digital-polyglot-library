@@ -1940,6 +1940,137 @@ export const shortstoriesinargentinianspanishforbeginners: Book = {
       ]
     },
     {
+      "id": "asado-y-misterio-en-la-costanera",
+      "slug": "asado-y-misterio-en-la-costanera",
+      "title": "Asado y misterio en la costanera",
+      "text": "<p>La brisa del Río de la Plata traía consigo olor a sal y eucaliptos. El cielo estaba encapotado, pero eso no le importaba a Julián, que ya tenía el carbón, la parrilla y una sonrisa de oreja a oreja. Como todos los viernes, el grupo se juntaba a tirar carne al fuego, tomar algo y charlar. Esta vez, el punto de encuentro era la Costanera Sur, cerca de los viejos árboles torcidos por el viento.</p>\n<blockquote>Julián: ¡Vamos, che! ¿Quién trajo los chorizos?</blockquote>\n<blockquote>Carla: Yo traje la provoleta, que no todo en la vida es carne.</blockquote>\n<blockquote>Julián: Ay, por favor… qué ganas de bardear.</blockquote>\n<blockquote>Carla: No bardeo, pero si vas a prender el fuego, que sea con lógica, ¿eh? El otro día casi volás una palmera.</blockquote>\n<p>Entre risas y cargadas, empezaron a preparar todo. Julián acomodaba los troncos mientras Carla cortaba pan sobre la conservadora que usaban de mesa. El resto del grupo iba llegando con heladeritas y parlantes. Todo pintaba como una noche tranqui.</p>\n<p>Entonces, lo vieron. Un tipo alto, flaco, con campera larga y gorra bajada hasta las cejas. Se acercó sin hacer ruido, como salido de la nada. Se paró justo al lado del fuego que Julián estaba por encender.</p>\n<blockquote>Desconocido: No enciendan el fuego esta noche.</blockquote>\n<p>Todos se quedaron en silencio. El viento sopló fuerte. Carla levantó una ceja.</p>\n<blockquote>Carla: ¿Perdón?</blockquote>\n<blockquote>Desconocido: Hoy no. No prendan nada.</blockquote>\n<blockquote>Julián: Mirá, maestro, esto es un asado. Lo vamos a hacer igual.</blockquote>\n<blockquote>Desconocido (mirando al río): Después no digan que no les avisaron.</blockquote>\n<p>Se dio media vuelta y se alejó entre los árboles. Nadie dijo nada por unos segundos.</p>\n<blockquote>Carla: ¿Qué fue eso? ¿Una joda?</blockquote>\n<blockquote>Julián: Seguro un loquito. Dale, pasame los fósforos.</blockquote>\n<p>Apenas prendió el fuego, un sonido seco vino desde el río. Como si algo pesado hubiera caído al agua. Carla miró hacia la orilla. No había nadie.</p>\n<blockquote>Carla: ¿Escucharon eso?</blockquote>\n<blockquote>Julián: Seguro fue una rama.</blockquote>\n<p>El fuego crepitaba raro. No como siempre. La grasita de los choris empezó a chispear más fuerte de lo normal. El humo, en vez de irse con el viento, se estancaba. Formaba una especie de nube baja que rodeaba la parrilla.</p>\n<blockquote>Carla: Esto no me gusta nada.</blockquote>\n<p>Julián se inclinó para ver si algo se había caído, pero entonces el humo pareció envolverlo. Se paró de golpe, tosiendo.</p>\n<blockquote>Julián: ¡Che, esto arde!</blockquote>\n<p>En el centro del fuego, algo brillaba. No era carbón. No era madera. Era una especie de medallón metálico, viejo, con símbolos que nadie reconocía.</p>\n<blockquote>Carla (asustada): ¿Qué es eso?</blockquote>\n<blockquote>Julián: No tengo idea…</blockquote>\n<p>En ese momento, una voz —la del desconocido— se oyó desde la oscuridad.</p>\n<blockquote>Desconocido: Esa tierra guarda cosas. No la despierten.</blockquote>\n<p>El fuego se apagó solo. De golpe. Como si nunca hubiera existido. La provoleta quedó a medio derretir, los choris crudos, la noche en silencio absoluto. Nadie dijo una palabra más. Solo miraban el medallón, ahora frío, en medio de la parrilla.</p>\n<p>Esa noche, nadie comió. Pero todos recordaron. A veces, el fuego no calienta. A veces, llama lo que no debe ser llamado.</p>",
+      "audio": "https://cdn.sanity.io/files/9u7ilulp/production/afae6e18dd846fc3e9f49e88339c79366c761f95.mp3",
+      "createdAt": "2026-04-13T18:10:47Z",
+      "updatedAt": "2026-04-15T21:24:57Z",
+      "topic": "Nature & Environment",
+      "tags": [
+        "Nature & Environment"
+      ],
+      "coverUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/images/asado-y-misterio-en-la-costanera-flux-1776104067680.png",
+      "vocab": [
+        {
+          "word": "Julián",
+          "definition": "A common male first name in many Spanish-speaking countries.",
+          "type": "noun"
+        },
+        {
+          "word": "Carla",
+          "definition": "A popular female first name in various Spanish-speaking regions.",
+          "type": "noun"
+        },
+        {
+          "word": "fuego",
+          "definition": "A chemical reaction that produces light and heat, often used for cooking.",
+          "type": "noun"
+        },
+        {
+          "word": "noche",
+          "definition": "The time period from sunset to sunrise, often associated with rest.",
+          "type": "noun"
+        },
+        {
+          "word": "grupo",
+          "definition": "A collection of individuals who gather for socializing or activities.",
+          "type": "noun"
+        },
+        {
+          "word": "río",
+          "definition": "A flowing body of water that typically empties into a sea or lake.",
+          "type": "noun"
+        },
+        {
+          "word": "parrilla",
+          "definition": "A metal structure used for grilling meat over an open flame.",
+          "type": "noun"
+        },
+        {
+          "word": "carbón",
+          "definition": "A black material used as fuel to start and maintain a fire.",
+          "type": "noun"
+        },
+        {
+          "word": "árboles",
+          "definition": "Large plants with woody trunks that provide shade and oxygen.",
+          "type": "noun"
+        },
+        {
+          "word": "especie",
+          "definition": "A group of organisms that share similar characteristics and traits.",
+          "type": "noun"
+        },
+        {
+          "word": "sonrisa",
+          "definition": "A facial expression that conveys happiness or joy.",
+          "type": "noun"
+        },
+        {
+          "word": "campera",
+          "definition": "A jacket or coat worn for warmth in cold weather.",
+          "type": "noun"
+        },
+        {
+          "word": "troncos",
+          "definition": "The sturdy central part of a tree, supporting branches and leaves.",
+          "type": "noun"
+        },
+        {
+          "word": "brisa",
+          "definition": "A gentle and pleasant wind, often refreshing.",
+          "type": "noun"
+        },
+        {
+          "word": "costanera",
+          "definition": "A walkway or path alongside a body of water, like a river.",
+          "type": "noun"
+        },
+        {
+          "word": "humo",
+          "definition": "The vapor or gas produced when something is burned.",
+          "type": "noun"
+        },
+        {
+          "word": "carne",
+          "definition": "The edible part of animals, commonly used in various dishes.",
+          "type": "noun"
+        },
+        {
+          "word": "desconocido",
+          "definition": "A person or thing that is not known or identified.",
+          "type": "other"
+        },
+        {
+          "word": "tranqui",
+          "definition": "A casual way to describe something as calm or relaxed.",
+          "type": "slang"
+        },
+        {
+          "word": "pesado",
+          "definition": "To make something feel denser or harder to manage.",
+          "type": "verb"
+        },
+        {
+          "word": "encender",
+          "definition": "To start a fire or light, such as when lighting a campfire.",
+          "type": "verb"
+        },
+        {
+          "word": "preparar",
+          "definition": "To organize or make something ready for use or consumption.",
+          "type": "verb"
+        },
+        {
+          "word": "hacer",
+          "definition": "To perform an action or create something through effort.",
+          "type": "verb"
+        }
+      ]
+    },
+    {
       "id": "el-laberinto-de-las-empanadas",
       "slug": "el-laberinto-de-las-empanadas",
       "title": "El laberinto de las empanadas",
