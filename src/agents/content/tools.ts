@@ -100,7 +100,7 @@ ${variantClause}
 - Keep paragraphs short and dynamic (1-3 sentences).
 - Include dialogue to keep pacing lively.
 - Make the story specific and vivid — use named characters, a concrete setting, and a small conflict or surprise. Avoid vague or generic plots.
-- CRITICAL: The story MUST have at least ${rule.wordCountRange.min} words. It will be narrated as audio and must last at least 2 minutes. Stories shorter than this target are UNACCEPTABLE. Count your words and extend naturally with more dialogue, sensory details, and character moments if needed — do NOT pad with filler.${existingTitlesClause}${usedNamesClause}
+- CRITICAL: The story MUST have at least ${rule?.wordCountRange.min ?? 300} words. It will be narrated as audio and must last at least 2 minutes. Stories shorter than this target are UNACCEPTABLE. Count your words and extend naturally with more dialogue, sensory details, and character moments if needed — do NOT pad with filler.${existingTitlesClause}${usedNamesClause}
 ${feedbackClause}${testModeClause}
 
 Return ONLY valid JSON with this exact structure:
