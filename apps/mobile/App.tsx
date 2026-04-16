@@ -256,7 +256,7 @@ function MobileAppRoot() {
     );
   }
 
-  if (!sessionToken && !previewModeOnly) {
+  if (!sessionToken && !previewModeOnly && !loadingSession) {
     return (
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="light-content" />
