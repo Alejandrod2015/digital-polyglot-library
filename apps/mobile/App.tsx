@@ -84,7 +84,7 @@ function MobileAppRoot() {
   const handleNativeSessionSync = useCallback(async () => {
     const clerkSessionToken = await getToken();
     if (!clerkSessionToken) return false;
-    const mobileToken = await exchangeClerkSessionForMobileToken({ clerkSessionToken });
+    const mobileToken = await exchangeClerkSessionForMobileToken(clerkSessionToken);
     await handleAuthenticated(mobileToken);
     return true;
   }, [getToken, handleAuthenticated]);
