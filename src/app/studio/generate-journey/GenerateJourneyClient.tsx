@@ -89,7 +89,7 @@ export default function GenerateJourneyClient() {
       storiesPerTopic,
     };
     sessionStorage.setItem("journeyConfig", JSON.stringify(config));
-    router.push("/studio/monitor");
+    router.push("/studio/journey-manager");
   }
 
   const canCreate = journeyType && language && variant && selectedLevels.size > 0 && selectedTopics.size > 0;

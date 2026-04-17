@@ -23,7 +23,7 @@ const NAV_SECTIONS = [
   {
     label: "CONTENIDO",
     items: [
-      { href: "/studio/monitor", label: "Journey Manager", icon: "pen", exact: false },
+      { href: "/studio/journey-manager", label: "Journey Manager", icon: "pen", exact: false },
       { href: "/studio/journey-stories", label: "Biblioteca", icon: "book", exact: false },
     ],
   },
