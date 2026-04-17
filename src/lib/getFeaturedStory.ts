@@ -41,6 +41,10 @@ export function getFeaturedStoryDataBySlug(slug: string): FeaturedStoryData | nu
   for (const book of Object.values(books)) {
     const story = book.stories.find((s) => s.slug === slug);
     if (!story) continue;
+    const storyCoverUrl =
+      typeof (story as { coverUrl?: unknown }).coverUrl === "string"
+        ? ((story as { coverUrl?: string }).coverUrl ?? "").trim() || undefined
+        : undefined;
     return {
       title: story.title,
       slug: story.slug,
@@ -48,7 +52,11 @@ export function getFeaturedStoryDataBySlug(slug: string): FeaturedStoryData | nu
       book: {
         title: book.title,
         slug: book.slug,
-        cover: story.cover ?? book.cover ?? "/covers/default.jpg",
+        cover:
+          story.cover ??
+          storyCoverUrl ??
+          book.cover ??
+          "/covers/default.jpg",
         description: book.description,
         language: story.language ?? book.language,
         level: story.level ?? book.level,
