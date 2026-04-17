@@ -85,7 +85,11 @@ export default function StoryReaderClient({ book, story }: { book: Book; story: 
             continueMeta={{
               title: story.title,
               bookTitle: book.title,
-              cover: story.cover ?? book.cover ?? "/covers/default.jpg",
+              cover:
+                story.cover ??
+                (story as { coverUrl?: string }).coverUrl ??
+                book.cover ??
+                "/covers/default.jpg",
               language: story.language ?? book.language,
               level: story.level ?? book.level,
               topic: story.topic ?? book.topic,

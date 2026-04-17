@@ -9,6 +9,7 @@ import { formatTopic } from "@domain/displayFormat";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
+import { resolvePublicMediaUrl } from "@/lib/publicMedia";
 
 type ContinueLocalItem = {
   bookSlug: string;
@@ -191,12 +192,19 @@ export default function BookStoriesGrid({
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   const renderStoryCard = (story: Story, originalIndex: number) => {
-    const storyCover =
+    const storyCoverUrl =
+      typeof (story as { coverUrl?: unknown }).coverUrl === "string"
+        ? ((story as { coverUrl?: string }).coverUrl ?? "").trim()
+        : "";
+    const storyCoverRaw =
       typeof story.cover === "string" && story.cover.trim() !== ""
         ? story.cover
-        : typeof book.cover === "string" && book.cover.trim() !== ""
-          ? book.cover
-          : "/covers/default.jpg";
+        : storyCoverUrl !== ""
+          ? storyCoverUrl
+          : typeof book.cover === "string" && book.cover.trim() !== ""
+            ? book.cover
+            : "/covers/default.jpg";
+    const storyCover = resolvePublicMediaUrl(storyCoverRaw) ?? storyCoverRaw;
 
     const storyLanguage = story.language ?? book.language;
     const storyRegion = story.region ?? book.region;
