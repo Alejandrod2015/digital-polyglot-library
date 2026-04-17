@@ -31,15 +31,5 @@ export function buildGamificationCelebrations(
     });
   });
 
-  summary.badges.forEach((badge) => {
-    if (!badge.unlocked) return;
-    items.push({
-      id: `badge:${badge.id}`,
-      title: `Badge unlocked: ${badge.label}`,
-      body: badge.description,
-      cta: "New badge",
-    });
-  });
-
   return items;
 }

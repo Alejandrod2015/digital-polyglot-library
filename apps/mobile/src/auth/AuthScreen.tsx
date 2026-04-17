@@ -71,19 +71,19 @@ export function AuthScreen(args: {
     setError(null);
     setSubmitting("password");
     try {
-      const result = await signIn.create({
+      await signIn.create({
         identifier: email.trim(),
         password,
       });
-      if (result.status === "complete" && result.createdSessionId && setActive) {
-        await setActive({ session: result.createdSessionId });
+      if (signIn.status === "complete" && signIn.createdSessionId && setActive) {
+        await setActive({ session: signIn.createdSessionId });
         onClerkSessionCreated();
-      } else if (result.status === "needs_first_factor") {
-        const emailCodeFactor = result.supportedFirstFactors?.find(
+      } else if (signIn.status === "needs_first_factor") {
+        const emailCodeFactor = signIn.supportedFirstFactors?.find(
           (f) => f.strategy === "email_code"
         );
         if (emailCodeFactor && "emailAddressId" in emailCodeFactor) {
-          await result.prepareFirstFactor({
+          await signIn.prepareFirstFactor({
             strategy: "email_code",
             emailAddressId: emailCodeFactor.emailAddressId,
           });

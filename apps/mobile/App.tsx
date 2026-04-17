@@ -256,8 +256,7 @@ function MobileAppRoot() {
     );
   }
 
-  const clerkMaySyncSession = !sessionToken && clerkLoaded && isClerkSignedIn;
-  if (!sessionToken && !previewModeOnly && !loadingSession && !clerkMaySyncSession) {
+  if (!sessionToken && !previewModeOnly) {
     return (
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="light-content" />

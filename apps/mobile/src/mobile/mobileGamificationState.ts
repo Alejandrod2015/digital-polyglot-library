@@ -21,10 +21,7 @@ export async function saveSeenGamificationCelebrations(
   ids: string[]
 ): Promise<void> {
   try {
-    const badges = ids.filter((id) => id.startsWith("badge:"));
-    const rest = ids.filter((id) => !id.startsWith("badge:"));
-    const trimmed = [...new Set([...badges, ...rest.slice(-40)])];
-    await SecureStore.setItemAsync(getSeenKey(userId), JSON.stringify(trimmed));
+    await SecureStore.setItemAsync(getSeenKey(userId), JSON.stringify(ids.slice(-40)));
   } catch {
     // Fail quietly to avoid breaking the shell.
   }
