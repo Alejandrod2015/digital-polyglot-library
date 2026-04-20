@@ -33,6 +33,7 @@ export type GenerateStoryParams = {
 };
 
 const MAX_GENERATION_ATTEMPTS = 3;
+const MIN_VOCAB_ITEMS = 15;
 
 function sanitizeGeneratedStoryText(input: string): string {
   return input
@@ -156,7 +157,7 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     const retryClause =
       attempt === 0
         ? ""
-        : `\nRetry constraints: the previous story was too short (${previousFeedback}). Expand the scenes, dialogue, internal reactions, and consequences. Do not end early.`;
+        : `\nRetry constraints: previous attempt failed: ${previousFeedback}. If it was about length, expand the scenes, dialogue, internal reactions, and consequences. If it was about vocab count, return more candidate items (22 or more) so that enough survive post-processing.`;
 
     const titleClause = resolvedProvidedTitle
       ? `The story's title is already fixed: "${resolvedProvidedTitle}". Do NOT invent a different title. Return exactly this title in the JSON "title" field, and write the story so its content is coherent with it — the title's concrete nouns (dishes, places, objects, numbers) must appear or be clearly reflected in the narrative.`
@@ -169,6 +170,7 @@ ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 ${titleClause}
 ${variantClause}
+Return 18-22 vocabulary items (aim for 20). After post-processing filters transparent cognates and invalid multi-word fragments, this yields roughly 15-17 keeper items — the target the app needs.
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Each vocabulary definition must be a pedagogical explanation (17-25 words), with usage nuance in context.
 Never return one-word literal translations.
@@ -264,6 +266,12 @@ Return ONLY valid JSON:
       topic: resolvedRequestedTopic,
       text,
     });
+
+    if (improvedVocab.length < MIN_VOCAB_ITEMS) {
+      previousFeedback = `vocab had ${improvedVocab.length} items after filtering, need at least ${MIN_VOCAB_ITEMS}. Return more candidate items next time (aim for 22).`;
+      finalPayload = { title, text, vocab: improvedVocab };
+      continue;
+    }
 
     finalPayload = { title, text, vocab: improvedVocab };
     break;
