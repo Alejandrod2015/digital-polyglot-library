@@ -371,12 +371,15 @@ async function buildLevelsForVariant(
     const targetTopics = grouped.get(mappedLevel.id)!;
     const topicSlug = story.journeyTopic.trim().toLowerCase();
     const curriculumLevel = await getJourneyLevelPlanAsync(language, variantId, mappedLevel.id);
+    const topicPlan = curriculumLevel?.topics.find((topic) => topic.slug === topicSlug) ?? null;
     const topicLabel =
-      curriculumLevel?.topics.find((topic) => topic.slug === topicSlug)?.label ??
+      topicPlan?.label ??
       topicSlug.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 
-    if (!targetTopics.has(topicLabel)) {
-      targetTopics.set(topicLabel, []);
+    // Key the inner map by slug (not label) so the curriculum match later is direct
+    // and survives labels whose slugify round-trip doesn't match the curriculum slug.
+    if (!targetTopics.has(topicSlug)) {
+      targetTopics.set(topicSlug, []);
     }
 
     const storyItem = {
@@ -398,7 +401,7 @@ async function buildLevelsForVariant(
     } satisfies JourneyStoryItem & { journeyOrder?: number | null };
 
     const withOrder = { ...storyItem, journeyOrder: story.journeyOrder };
-    targetTopics.get(topicLabel)!.push(withOrder);
+    targetTopics.get(topicSlug)!.push(withOrder);
   }
 
   console.log("[journey-debug] buildLevelsForVariant", {
@@ -417,9 +420,13 @@ async function buildLevelsForVariant(
   for (const [, meta] of Object.entries(journeyLevelMeta)) {
       const topicsMap = grouped.get(meta.id) ?? new Map<string, JourneyStoryItem[]>();
       const curriculumLevel = await getJourneyLevelPlanAsync(language, variantId, meta.id);
-      const rawTopics: JourneyTopic[] = Array.from(topicsMap.entries()).map(([label, stories]) => {
-        const slug = slugifyTopic(label);
+      // The inner Map is now keyed by slug (the story's journeyTopic slug), so the slug
+      // here is authoritative — no lossy slugify(label) round-trip.
+      const rawTopics: JourneyTopic[] = Array.from(topicsMap.entries()).map(([slug, stories]) => {
         const topicPlan = curriculumLevel?.topics.find((topic) => topic.slug === slug) ?? null;
+        const label =
+          topicPlan?.label ??
+          slug.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
         const sortedStories = [...stories].sort((a, b) => {
           const aOrder =
             typeof (a as JourneyStoryItem & { journeyOrder?: number | null }).journeyOrder === "number"
@@ -436,7 +443,7 @@ async function buildLevelsForVariant(
         return {
           id: `${meta.id}:${slug}`,
           slug,
-          label: topicPlan?.label ?? label,
+          label,
           storyCount: selectedStories.length,
           storyTarget: topicPlan?.storyTarget,
           stories: selectedStories,
@@ -444,24 +451,29 @@ async function buildLevelsForVariant(
       });
 
       const topics: JourneyTopic[] = curriculumLevel
-        ? curriculumLevel.topics.map((topicPlan) => {
-            const existingTopic = rawTopics.find((topic) => topic.slug === topicPlan.slug);
-            if (existingTopic) {
+        ? (() => {
+            const curriculumTopics = curriculumLevel.topics.map((topicPlan) => {
+              const existingTopic = rawTopics.find((topic) => topic.slug === topicPlan.slug);
+              if (existingTopic) {
+                return {
+                  ...existingTopic,
+                  storyTarget: topicPlan.storyTarget,
+                };
+              }
               return {
-                ...existingTopic,
+                id: `${meta.id}:${topicPlan.slug}`,
+                slug: topicPlan.slug,
+                label: topicPlan.label,
+                storyCount: 0,
                 storyTarget: topicPlan.storyTarget,
-              };
-            }
-
-            return {
-              id: `${meta.id}:${topicPlan.slug}`,
-              slug: topicPlan.slug,
-              label: topicPlan.label,
-              storyCount: 0,
-              storyTarget: topicPlan.storyTarget,
-              stories: [],
-            } satisfies JourneyTopic;
-          })
+                stories: [],
+              } satisfies JourneyTopic;
+            });
+            // Include custom topics (from studio-created journeys) not present in the curriculum plan.
+            const curriculumSlugs = new Set(curriculumLevel.topics.map((t) => t.slug));
+            const customTopics = rawTopics.filter((t) => !curriculumSlugs.has(t.slug));
+            return [...curriculumTopics, ...customTopics];
+          })()
         : rawTopics.sort((a, b) => {
             if (b.storyCount !== a.storyCount) return b.storyCount - a.storyCount;
             return a.label.localeCompare(b.label);

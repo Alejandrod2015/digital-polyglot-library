@@ -28,6 +28,7 @@ export async function GET(req: Request) {
     journeyEligible: s.journeyEligible,
     journeyTopic: s.journeyTopic,
     topic: s.topic,
+    journeyOrder: s.journeyOrder,
   }));
 
   const tracks = await buildJourneyVariants(language, "General");
