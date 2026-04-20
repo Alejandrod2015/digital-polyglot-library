@@ -128,7 +128,18 @@ export async function getPublishedStandaloneStories(
   options: GetPublishedStandaloneStoriesOptions = {}
 ): Promise<PublicStandaloneStory[]> {
   if (options.includeJourneyStories) {
-    return getPublishedJourneyStandaloneStories();
+    const [sanityStories, prismaStories] = await Promise.all([
+      getPublishedJourneyStandaloneStories(),
+      // Dynamic import avoids a circular dependency (journeyStories imports PublicStandaloneStory from this module).
+      import("@/lib/journeyStories").then((m) => m.getPublishedJourneyStories()),
+    ]);
+    const sanitySlugs = new Set(sanityStories.map((story) => story.slug));
+    const merged = [...sanityStories];
+    for (const story of prismaStories) {
+      if (sanitySlugs.has(story.slug)) continue;
+      merged.push(story);
+    }
+    return merged;
   }
 
   const stories = await getPublishedStandaloneStoriesCached();

@@ -33,10 +33,15 @@ export default async function JourneyCheckpointPage({
       : getJourneyFocusFromLearningGoal(
           typeof user?.publicMetadata?.learningGoal === "string" ? user.publicMetadata.learningGoal : null
         );
+  const targetLanguagesRaw = user?.publicMetadata?.targetLanguages;
+  const targetLanguage =
+    Array.isArray(targetLanguagesRaw) && typeof targetLanguagesRaw[0] === "string"
+      ? targetLanguagesRaw[0]
+      : "Spanish";
   const variantId =
     (typeof variant === "string" && variant.trim() !== "" ? normalizeVariant(variant) : null) ??
     preferredVariant ??
-    getJourneyVariantFromPreferences("Spanish", preferredVariant, preferredRegion) ??
+    getJourneyVariantFromPreferences(targetLanguage, preferredVariant, preferredRegion) ??
     undefined;
   if (!variant && variantId) {
     redirect(`/journey/${levelId}/${topicId}/checkpoint?variant=${encodeURIComponent(variantId)}`);
@@ -47,7 +52,7 @@ export default async function JourneyCheckpointPage({
   if (!checkpoint) {
     redirect("/journey");
   }
-  const level = (await buildJourneyLevels(variantId, "Spanish", journeyFocus ?? "General")).find((entry) => entry.id === levelId) ?? null;
+  const level = (await buildJourneyLevels(variantId, targetLanguage, journeyFocus ?? "General")).find((entry) => entry.id === levelId) ?? null;
   const topic = level?.topics.find((entry) => entry.slug === topicId) ?? null;
   if (!topic || !isJourneyTopicComplete(topic, completedStoryKeys)) {
     redirect(variantId ? `/journey/${levelId}/${topicId}?variant=${encodeURIComponent(variantId)}` : `/journey/${levelId}/${topicId}`);

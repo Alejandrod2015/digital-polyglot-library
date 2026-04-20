@@ -70,15 +70,20 @@ export default async function JourneyTopicPage({
       : getJourneyFocusFromLearningGoal(
           typeof user?.publicMetadata?.learningGoal === "string" ? user.publicMetadata.learningGoal : null
         );
+  const targetLanguagesRaw = user?.publicMetadata?.targetLanguages;
+  const targetLanguage =
+    Array.isArray(targetLanguagesRaw) && typeof targetLanguagesRaw[0] === "string"
+      ? targetLanguagesRaw[0]
+      : "Spanish";
   const activeVariant =
     (typeof variant === "string" ? normalizeVariant(variant) : null) ??
     preferredVariant ??
-    getJourneyVariantFromPreferences("Spanish", preferredVariant, preferredRegion) ??
+    getJourneyVariantFromPreferences(targetLanguage, preferredVariant, preferredRegion) ??
     undefined;
   if (!variant && activeVariant) {
     redirect(`/journey/${levelId}/${topicId}?variant=${encodeURIComponent(activeVariant)}`);
   }
-  const levels = await buildJourneyLevels(activeVariant, "Spanish", journeyFocus ?? "General");
+  const levels = await buildJourneyLevels(activeVariant, targetLanguage, journeyFocus ?? "General");
   const level = levels.find((entry) => entry.id === levelId) ?? null;
   const topic = level?.topics.find((entry) => entry.slug === topicId) ?? null;
   const [completedStoryKeys, passedCheckpointKeys, practicedTopicKeys, dueReviewItems] = await Promise.all([

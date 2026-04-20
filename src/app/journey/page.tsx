@@ -32,7 +32,12 @@ export default async function JourneyPage({
       : getJourneyFocusFromLearningGoal(
           typeof user?.publicMetadata?.learningGoal === "string" ? user.publicMetadata.learningGoal : null
         );
-  const tracks = await buildJourneyVariants("Spanish", journeyFocus ?? "General");
+  const targetLanguagesRaw = user?.publicMetadata?.targetLanguages;
+  const targetLanguage =
+    Array.isArray(targetLanguagesRaw) && typeof targetLanguagesRaw[0] === "string"
+      ? targetLanguagesRaw[0]
+      : "Spanish";
+  const tracks = await buildJourneyVariants(targetLanguage, journeyFocus ?? "General");
   const preferredRegion =
     typeof user?.publicMetadata?.preferredRegion === "string"
       ? user.publicMetadata.preferredRegion
@@ -42,7 +47,7 @@ export default async function JourneyPage({
       ? normalizeVariant(user.publicMetadata.preferredVariant)
       : null;
   const fallbackVariant =
-    getJourneyVariantFromPreferences("Spanish", preferredVariant, preferredRegion) ?? null;
+    getJourneyVariantFromPreferences(targetLanguage, preferredVariant, preferredRegion) ?? null;
   const initialVariantId =
     (typeof variant === "string" ? normalizeVariant(variant) : null) ??
     ([preferredVariant, fallbackVariant].find((candidate) => candidate && tracks.some((track) => track.id === candidate)) ?? null) ??
