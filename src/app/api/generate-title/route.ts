@@ -87,86 +87,70 @@ export async function POST(req: Request) {
 
       const prompt = `
 # Your task
-Write ONE story title in ${language}, 2 to 6 words, following the strict rules below.
+Write ONE story title in ${language}, 2 to 6 words.
 
-# HARD RULES — any violation means the title is rejected
+# The one thing that matters: a concrete cultural anchor
+The title must include at least ONE real-world proper noun or a culturally-specific common noun characteristic of the target region — a specific dish, a real neighborhood, a named venue, a traditional object. Not a generic noun like "meal", "food", "trip", "journey", "day", "adventure", "visit".
 
-## Rule 1: Use at least one concrete, named cultural anchor
-The title MUST include a real-world proper noun or a culturally-specific common noun that is characteristic of the target region. Examples of anchors (pick ONE, do not force more than one):
-- A specific dish, drink, or ingredient native to the region (not the generic word "food", "meal", "drink", "coffee").
-- A real neighborhood, district, street, square, or market (not the generic word "market", "park", "station").
-- A named local venue type, brand, or institution (a specific beer hall, café chain, train line, etc.).
-- A traditional object, garment, or custom tied to that culture.
-Generic nouns like "meal", "food", "trip", "journey", "day", "problem", "adventure", "visit", "story" ARE NOT anchors and do NOT count. If your title only contains a city name plus a generic noun, you failed this rule.
+That is the only hard requirement. Everything else below is advice on taste, not additional checkboxes.
 
-## Rule 2: NO generic "A/An/One [generic noun] in [city]" formulas
-Titles like "A Meal in Berlin", "Ein Essen in Berlin", "Una comida en Madrid", "Un pranzo a Roma", "Un repas à Paris" are all BANNED — they are the single most common failure mode. You will be punished for producing one.
+# Keep it simple. Do NOT over-engineer.
+Think of real book titles. "Mrs. Dalloway". "Der Prozess". "El Aleph". They are concrete names, not packed sentences. Most good titles contain ONE cultural element and nothing else. A second element (a small number, a name, an absence, a time) is OPTIONAL — include it only when the synopsis makes it feel natural, never to satisfy a checklist.
 
-## Rule 3: NO genre-labeling words
-NEVER use the words "mystery", "secret", "danger", "adventure", "escape", "enigma", or their direct equivalents in ${language}. Those words label the tension instead of creating it — they make the title feel like a cheap thriller.
+## The single most common failure to avoid: stacking layers
+If your title combines three or more of these into one title, you have over-engineered it:
+- a specific dish
+- a specific ingredient or accessory (especially framed as an absence)
+- a specific location / venue
+- a specific number or time
 
-## Rule 4: NO pronouns, NO bare articles as the whole subject
-NEVER use pronoun equivalents of "him", "her", "it", "them", "us". Always use concrete nouns. Do not start every title with the definite article — vary the grammatical entry (number, verb, preposition, proper noun, adjective).
+Concrete example of over-engineering to AVOID: "Kartoffelsalat ohne Senf am Flughafen" — a dish + an ingredient absence + a location is too many anchors. The result reads like the model was checking boxes.
 
-## Rule 5: Create implicit tension with a SPECIFIC detail
-Pair the cultural anchor with a specific detail that hints at conflict without naming it:
-- A specific number (table 7, seat 12, 3 apples)
-- A precise time (Sunday at four, five minutes before midnight)
-- An anomalous absence (without change, without a ticket, without salt)
-- An unexpected pairing (two coffees and a letter, schnitzel and a stranger)
-- A small but concrete problem (the wrong ingredient, the last seat, the closed door)
-The reader should know WHAT is present but wonder WHAT WILL HAPPEN.
+When tempted to add a second or third detail: delete elements instead of adding them, until the title feels like a natural name, not a description.
 
-# Examples (STYLE reference only — DO NOT reuse the words)
+# Graded examples — note the default is simple
 
-Good — cultural anchor + implicit tension + varied structure:
-- "Königsberger Klopse, falsche Zutaten" — specific German dish + "wrong ingredients" tension
-- "Keine Kartoffeln für Anna" — specific ingredient absence + named character
-- "Sauerbraten am Winterfeldtmarkt" — specific dish + real Berlin market
-- "Anna sucht Sauerkraut in Neukölln" — verb first + specific food + real Berlin district
-- "Zwei Maß und ein Brief" — specific Bavarian beer measure + unexpected pairing
-- "Augustiner, Tisch sieben" — real Munich brewery + specific table number
-- "Ein Münchner im Berliner Biergarten" — internal regional clash, two real cities
-- "Tres empanadas en Palermo" — regional food + Buenos Aires neighborhood
-- "La Boca, domingo a las cuatro" — barrio + specific day and hour
-- "Choripán sin chimichurri" — specific street food + absence of key ingredient
-- "Un Napolitano a Milano" — internal Italian clash, real cities
-- "Bar Trieste, tavolo otto" — venue + specific table number
-- "Tre cannoli per Rosa" — regional pastry + named person
-- "Croque-monsieur à Belleville" — specific dish + real Paris neighborhood
-- "Deux pains et un billet" — specific pairing, no genre label
+## Level 1 (default — single anchor, nothing else, use this most of the time):
+- "Sauerbraten am Winterfeldtmarkt"
+- "Tres empanadas en Palermo"
+- "Augustiner, Tisch sieben"
+- "Bar Trieste, tavolo otto"
+- "Croque-monsieur à Belleville"
+- "Ein Münchner im Berliner Biergarten"
 
-BAD — the model must NEVER produce anything resembling these:
-- "Ein Essen in Berlin" — generic noun + city, no anchor, banned formula
-- "Eine Reise nach München" — "a trip to X" formula, no anchor
-- "Die Reise von Clara und Paul" — generic journey formula
-- "Der Fremde im Biergarten" — vague stock character
-- "Das Geheimnis im Zug" — genre label ("secret"), cheap thriller feel
-- "Wien um Mitternacht" — too vague, no situation
-- "Airport Adventure" — generic, genre label
-- "Salzburg erkennt ihn" — pronoun, reads like a phrase not a title
-- "Una comida en Madrid" — banned "a meal in city" formula
-- "Un viaggio a Roma" — banned "a trip to city" formula
+## Level 2 (anchor + one natural extra — only when the synopsis explicitly motivates it):
+- "Keine Kartoffeln für Anna" — a named character AND a simple absence
+- "Tre cannoli per Rosa" — a regional pastry AND a named character
+- "La Boca, domingo a las cuatro" — a neighborhood AND a specific time
+
+## Level 3 (rare — only when the absence is culturally essential to the dish):
+- "Choripán sin chimichurri" — chimichurri is structurally essential to a choripán, so its absence is meaningful
+
+Default to Level 1. Go to Level 2 only if Level 1 feels too bare for this particular synopsis. Go to Level 3 almost never.
+
+# Banned patterns (hard rejects)
+- "A/An [generic noun] in [city]": "Ein Essen in Berlin", "Una comida en Madrid", "Un viaggio a Roma", "A Meal in Paris"
+- Three or more stacked anchors: "Kartoffelsalat ohne Senf am Flughafen", "Schnitzel mit Salat in München"
+- Genre-labeling words: equivalents of "mystery", "secret", "danger", "adventure", "escape", "enigma" in ${language}
+- Pronouns: no equivalents of "him", "her", "it", "them"
+- Generic formulas: "A Day in...", "The Story of X and Y", "The Journey of...", "A Problem with..."
 
 # Context for this title
-
 - Target language: ${language}
-${region ? `- Region / cultural context: ${region}. Your cultural anchor MUST come from this region specifically, not a generic national stereotype.` : ""}
+${region ? `- Region / cultural context: ${region}` : ""}
 ${topic ? `- Story topic: "${topic}"` : ""}
-${synopsis ? `- Synopsis to draw details from: "${synopsis}"` : ""}
-
-IMPORTANT: Mine the synopsis (if provided) for concrete nouns — specific dishes, neighborhoods, objects, characters, times — and build the title from those. If the synopsis mentions "traditional German dishes", DO NOT write "a meal" — pick a specific German dish (Sauerbraten, Königsberger Klopse, Rouladen, Schnitzel) and put THAT in the title.
+${synopsis ? `- Synopsis: "${synopsis}" — mine it for ONE concrete noun (a dish, neighborhood, object, venue, character name) and build the title around that noun. Do not try to reflect every detail of the synopsis.` : ""}
 
 # Output
-Return ONLY the title text in ${language}. No quotes, no explanation, no prefix, no trailing punctuation beyond what the title naturally requires.
+Return ONLY the title text in ${language}. No quotes, no explanation.
 ${retryBlock}
 `;
 
       const response = await openai.chat.completions.create({
         model: "gpt-4o",
-        temperature: 0.9,
+        temperature: 0.7,
         messages: [
-          { role: "system", content: "You write concise, original story titles with concrete cultural anchors. You follow hard rules strictly and never produce banned formulas. Return plain text only." },
+          { role: "system", content: "You write concise, restrained story titles anchored in one cultural element. You prefer simple titles to elaborate ones, and you never stack multiple anchors. Return plain text only." },
           { role: "user", content: prompt },
         ],
       });

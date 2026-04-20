@@ -198,15 +198,13 @@ Use a close third-person narrator with strong internal focalization.
 - Absolute minimum: ${MIN_STORY_WORDS} words.
 - Hard maximum: ${HARD_STORY_WORDS_MAX} words.${existingTitlesClause}${usedNamesClause}
 ${retryClause}
-${resolvedProvidedTitle ? `REMINDER: The title is fixed as "${resolvedProvidedTitle}" — return it verbatim in the JSON "title" field.` : `Title requirements (only because no title is fixed yet — think book cover, not scene description):
-- HARD RULE: include at least one concrete cultural anchor (a specific dish, drink, neighborhood, venue name, or traditional object from ${language}${regionClause}). Generic nouns like "meal", "food", "trip", "journey", "day", "visit" DO NOT count.
-- HARD RULE: NEVER use "A/An [generic noun] in [city]" formulas ("A Meal in Berlin", "Ein Essen in Berlin", "Una comida en Madrid" are all banned).
-- HARD RULE: NO genre-labeling words — no equivalents of "mystery", "secret", "danger", "adventure", "escape", "enigma" in ${language}.
-- HARD RULE: no pronouns ("him", "her", "it", "them" equivalents). Concrete nouns only.
-- 2-6 words. Create implicit tension with a specific detail: a specific number, precise time, anomalous absence, unexpected pairing.
-- Vary the grammatical entry (do NOT always start with the definite article): mix numbers first, verbs first, prepositions first, proper nouns first.
-- Mine the synopsis (if provided) for specific dishes, neighborhoods, objects, characters — build the title from those concrete nouns.
-- Style examples (DO NOT reuse content — style only): "Königsberger Klopse, falsche Zutaten", "Sauerbraten am Winterfeldtmarkt", "Keine Kartoffeln für Anna", "Tres empanadas en Palermo", "Choripán sin chimichurri", "Augustiner, Tisch sieben", "Bar Trieste, tavolo otto", "Croque-monsieur à Belleville".`}
+${resolvedProvidedTitle ? `REMINDER: The title is fixed as "${resolvedProvidedTitle}" — return it verbatim in the JSON "title" field.` : `Title requirements (only because no title is fixed yet):
+- 2-6 words. Include exactly ONE concrete cultural anchor from ${language}${regionClause}: a specific dish, drink, neighborhood, or named venue. Generic nouns like "meal", "food", "trip", "journey", "day", "visit" DO NOT count.
+- Keep it simple. Think real book titles — concrete names, not packed sentences. A single anchor is usually enough; do NOT stack a dish + an ingredient absence + a location (e.g. "Kartoffelsalat ohne Senf am Flughafen" is over-engineered and banned).
+- Add a second element (a name, a number, a time) ONLY if the synopsis makes it feel natural. Never stack three or more distinct anchors.
+- Banned: "A/An [generic noun] in [city]" ("Ein Essen in Berlin", "Una comida en Madrid"); genre labels (equivalents of "mystery", "secret", "adventure", "escape"); pronouns.
+- Level 1 examples (default, one anchor): "Sauerbraten am Winterfeldtmarkt", "Tres empanadas en Palermo", "Augustiner, Tisch sieben", "Croque-monsieur à Belleville".
+- Level 2 (one anchor + one natural extra — only when motivated): "Keine Kartoffeln für Anna", "La Boca, domingo a las cuatro".`}
 
 Return ONLY valid JSON:
 {
