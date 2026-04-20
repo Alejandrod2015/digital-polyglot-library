@@ -7,6 +7,43 @@ import { generateStoryPayload } from "@/lib/storyGenerator";
 
 export const maxDuration = 60;
 
+function getDetailedRegionDescription(variant?: string, language?: string): string {
+  if (!variant) return "";
+  const normalizedVariant = variant.trim().toLowerCase();
+
+  const regionDetails: Record<string, Record<string, string>> = {
+    spanish: {
+      latam: "Latin America (Colombia, Mexico, Argentina, Peru, Chile) — use regional foods (empanadas, arepas, tacos, asado), neighborhoods (Palermo, Condesa, Miraflores), and cultural markers",
+      spain: "Spain (Madrid, Barcelona, Valencia, Seville) — use regional foods (tortilla, jamón, paella, tapas), neighborhoods (Malasaña, Gracia, Triana), and cultural markers",
+    },
+    english: {
+      us: "United States (New York, LA, Chicago) — use regional foods, neighborhoods (Williamsburg, Silver Lake, Wicker Park), and cultural markers",
+      uk: "United Kingdom (London, Manchester, Edinburgh) — use regional foods (fish and chips, Sunday roast), neighborhoods (Shoreditch, Camden), and cultural markers",
+    },
+    portuguese: {
+      brazil: "Brazil (São Paulo, Rio, Salvador) — use regional foods (feijoada, pão de queijo, açaí), neighborhoods (Ipanema, Pinheiros, Pelourinho), and cultural markers",
+      portugal: "Portugal (Lisbon, Porto) — use regional foods (bacalhau, pastel de nata, francesinha), neighborhoods (Alfama, Bairro Alto, Ribeira), and cultural markers",
+    },
+    german: {
+      germany: "Germany (Berlin, Munich, Hamburg) — use regional foods (Sauerbraten, Königsberger Klopse, Currywurst, Bratwurst, Kartoffelsalat), neighborhoods (Kreuzberg, Schwabing, Neukölln), real markets (Winterfeldtmarkt, Markthalle Neun, Viktualienmarkt), and cultural markers",
+      austria: "Austria (Vienna, Salzburg) — use regional foods (Wiener Schnitzel, Tafelspitz, Sachertorte, Apfelstrudel), neighborhoods (Neubau, Leopoldstadt), real coffeehouses (Café Central, Café Sperl), and cultural markers",
+    },
+    french: {
+      france: "France (Paris, Lyon, Marseille) — use regional foods (croque-monsieur, bouillabaisse, quenelles), neighborhoods (Belleville, Le Marais, Croix-Rousse), and cultural markers",
+      "canada-fr": "French Canada (Quebec, Montreal) — use regional foods (poutine, tourtière), neighborhoods (Plateau, Petite-Italie), and cultural markers",
+    },
+    italian: {
+      italy: "Italy (Rome, Milan, Naples, Florence) — use regional foods (cacio e pepe, risotto alla milanese, pizza napoletana, cannoli), neighborhoods (Trastevere, Navigli, Quartieri Spagnoli), and cultural markers",
+    },
+    korean: {
+      "south-korea": "South Korea (Seoul, Busan) — use regional foods (kimchi jjigae, bibimbap, tteokbokki, samgyeopsal), neighborhoods (Hongdae, Itaewon, Gangnam), and cultural markers",
+    },
+  };
+
+  const langDetails = regionDetails[language?.toLowerCase() ?? ""] ?? {};
+  return langDetails[normalizedVariant] || "";
+}
+
 /**
  * POST /api/studio/journeys/generate
  * Body: { storyId } — generates content for a JourneyStory slot
@@ -57,34 +94,38 @@ export async function POST(request: Request) {
     }
     const usedCharacterNames = [...usedNames].slice(0, 30);
 
-    // Use the same generator as Sanity Studio
-    const payload = await generateStoryPayload({
-      language: story.journey.language,
-      variant: story.journey.variant,
-      region: story.journey.variant,
-      cefrLevel: story.level,
-      topic: story.topic,
-      focus: "verbs",
-      existingTitles,
-      usedCharacterNames,
-    });
-
-    if (!payload) {
-      throw new Error("Story generation failed after multiple attempts");
-    }
-
-    // Use Sanity's generate-synopsis endpoint (higher quality than agent version)
     const origin = new URL(request.url).origin;
+    const detailedRegion = getDetailedRegionDescription(story.journey.variant, story.journey.language);
+
+    // STEP 1: Generate the title first with the dedicated endpoint (uses gpt-4o + strict cultural rules)
+    const titleRes = await fetch(`${origin}/api/generate-title`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+      body: JSON.stringify({
+        language: story.journey.language,
+        region: detailedRegion || story.journey.variant,
+        topic: story.topic,
+      }),
+    });
+    if (!titleRes.ok) {
+      const errText = await titleRes.text();
+      throw new Error(`generate-title failed: ${titleRes.status} ${errText.slice(0, 200)}`);
+    }
+    const titleData = await titleRes.json();
+    const title = typeof titleData.result === "string" ? titleData.result.trim() : "";
+    if (!title) throw new Error("generate-title returned empty title");
+
+    // STEP 2: Generate synopsis using the title (so it's coherent with the specific cultural anchor)
     let synopsis = "";
     try {
       const synopsisRes = await fetch(`${origin}/api/generate-synopsis`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
         body: JSON.stringify({
-          title: payload.title,
+          title,
           language: story.journey.language,
           variant: story.journey.variant,
-          region: story.journey.variant,
+          region: detailedRegion || story.journey.variant,
           cefrLevel: story.level,
           topic: story.topic,
         }),
@@ -95,6 +136,24 @@ export async function POST(request: Request) {
       }
     } catch (e) {
       console.warn("[generate] synopsis generation failed:", e);
+    }
+
+    // STEP 3: Generate text + vocab, passing the fixed title and synopsis
+    const payload = await generateStoryPayload({
+      language: story.journey.language,
+      variant: story.journey.variant,
+      region: detailedRegion,
+      cefrLevel: story.level,
+      topic: story.topic,
+      focus: "verbs",
+      title,
+      synopsis,
+      existingTitles,
+      usedCharacterNames,
+    });
+
+    if (!payload) {
+      throw new Error("Story generation failed after multiple attempts");
     }
 
     const baseSlug = generateSlug(payload.title, story.journey.language, story.journey.variant, 0).replace(/-0$/, "");
@@ -120,6 +179,7 @@ export async function POST(request: Request) {
       id: updated.id,
       title: updated.title,
       slug: updated.slug,
+      synopsis: updated.synopsis,
       wordCount: updated.wordCount,
       vocabCount: updated.vocabCount,
       status: updated.status,

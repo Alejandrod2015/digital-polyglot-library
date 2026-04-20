@@ -26,6 +26,7 @@ export type GenerateStoryParams = {
   level?: string;
   focus?: string;
   topic?: string;
+  title?: string;
   synopsis?: string;
   existingTitles?: string[];
   usedCharacterNames?: string[];
@@ -127,10 +128,12 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     level = "intermediate",
     focus = "verbs",
     topic = "",
+    title: providedTitle = "",
     synopsis = "",
     existingTitles = [],
     usedCharacterNames = [],
   } = params;
+  const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
 
   const learnerProfile = cefrPromptLabel(cefrLevel, level);
   const normalizedVariant = normalizeVariant(variant);
@@ -155,11 +158,16 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
         ? ""
         : `\nRetry constraints: the previous story was too short (${previousFeedback}). Expand the scenes, dialogue, internal reactions, and consequences. Do not end early.`;
 
+    const titleClause = resolvedProvidedTitle
+      ? `The story's title is already fixed: "${resolvedProvidedTitle}". Do NOT invent a different title. Return exactly this title in the JSON "title" field, and write the story so its content is coherent with it — the title's concrete nouns (dishes, places, objects, numbers) must appear or be clearly reflected in the narrative.`
+      : "";
+
     const prompt = `
 You are an expert language teacher and long story writer.
 Write a long engaging story for a ${learnerProfile} learner studying ${language}${regionClause}.
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
+${titleClause}
 ${variantClause}
 All vocabulary definitions must be written in clear English, regardless of the story language.
 Each vocabulary definition must be a pedagogical explanation (17-25 words), with usage nuance in context.
@@ -190,18 +198,15 @@ Use a close third-person narrator with strong internal focalization.
 - Absolute minimum: ${MIN_STORY_WORDS} words.
 - Hard maximum: ${HARD_STORY_WORDS_MAX} words.${existingTitlesClause}${usedNamesClause}
 ${retryClause}
-
-Title requirements (think book cover, not scene description):
-- Culturally rooted in ${language}${regionClause}: use real place names, neighborhoods, regional foods/drinks, local brand or venue names, or culturally-specific objects. The title must feel like the story could ONLY happen in that culture — generic situations (an airport, a train, a café) are universal and NOT acceptable alone.
-- Avoid touristy clichés (the single most famous monument or festival named directly). Aim one level deeper — the everyday cultural texture.
-- Internal regional contrasts (someone from region A in region B within the same country) are often strong.
-- 2-6 words. Use concrete nouns only — NO pronouns (no equivalents of "him", "her", "it", "them").
-- Create implicit tension through specific detail: unusual pairings, specific numbers, anomalous objects, precise times, unexpected juxtapositions. The reader should know WHAT is present but wonder WHAT WILL HAPPEN.
-- NEVER use words that label the genre directly: equivalents of "mystery", "secret", "danger", "adventure", "escape", "enigma" in ${language}. Labeling the tension makes titles feel like cheap thrillers.
-- Vary the grammatical entry: do NOT always start with a definite article. Mix numbers first ("Two espressos and a letter"), verbs first ("Stolen at the pier"), prepositions first ("Inside the last tram"), proper nouns first ("Trieste, Saturday night").
-- Avoid generic formulas: "A Day in...", "The Story of X and Y", "The Journey of...", "A Problem with...", "Important Decision".
-- Avoid extremely long compound words that intimidate learners, but don't oversimplify either.
-- Illustrative style examples (do NOT reuse content — style only): "Ein Münchner im Berliner Biergarten", "Augustiner, Tisch sieben", "Zwei Maß und ein Brief", "Tres empanadas en Palermo", "La Boca, domingo a las cuatro", "Un Napolitano a Milano", "Bar Trieste, tavolo otto".
+${resolvedProvidedTitle ? `REMINDER: The title is fixed as "${resolvedProvidedTitle}" — return it verbatim in the JSON "title" field.` : `Title requirements (only because no title is fixed yet — think book cover, not scene description):
+- HARD RULE: include at least one concrete cultural anchor (a specific dish, drink, neighborhood, venue name, or traditional object from ${language}${regionClause}). Generic nouns like "meal", "food", "trip", "journey", "day", "visit" DO NOT count.
+- HARD RULE: NEVER use "A/An [generic noun] in [city]" formulas ("A Meal in Berlin", "Ein Essen in Berlin", "Una comida en Madrid" are all banned).
+- HARD RULE: NO genre-labeling words — no equivalents of "mystery", "secret", "danger", "adventure", "escape", "enigma" in ${language}.
+- HARD RULE: no pronouns ("him", "her", "it", "them" equivalents). Concrete nouns only.
+- 2-6 words. Create implicit tension with a specific detail: a specific number, precise time, anomalous absence, unexpected pairing.
+- Vary the grammatical entry (do NOT always start with the definite article): mix numbers first, verbs first, prepositions first, proper nouns first.
+- Mine the synopsis (if provided) for specific dishes, neighborhoods, objects, characters — build the title from those concrete nouns.
+- Style examples (DO NOT reuse content — style only): "Königsberger Klopse, falsche Zutaten", "Sauerbraten am Winterfeldtmarkt", "Keine Kartoffeln für Anna", "Tres empanadas en Palermo", "Choripán sin chimichurri", "Augustiner, Tisch sieben", "Bar Trieste, tavolo otto", "Croque-monsieur à Belleville".`}
 
 Return ONLY valid JSON:
 {
@@ -240,7 +245,7 @@ Return ONLY valid JSON:
     }
 
     const raw = parsed as StoryJSON;
-    const title = raw.title.trim() || "Untitled";
+    const title = resolvedProvidedTitle || raw.title.trim() || "Untitled";
     const sanitized = sanitizeGeneratedStoryText(raw.text);
     const text =
       countStoryWords(sanitized) > HARD_STORY_WORDS_MAX
