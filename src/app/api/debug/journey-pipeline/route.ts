@@ -15,41 +15,42 @@ export async function GET(req: Request) {
 
   const allStories = await getPublishedStandaloneStories({ includeJourneyStories: true });
 
-  const languageCounts = new Map<string, number>();
-  for (const s of allStories) {
-    const key = (s.language ?? "(null)").toLowerCase();
-    languageCounts.set(key, (languageCounts.get(key) ?? 0) + 1);
-  }
-
   const matchingLang = allStories.filter(
     (s) => (s.language ?? "").trim().toLowerCase() === language.trim().toLowerCase()
   );
+
+  // Show ALL matching-language stories + topic info
+  const allMatchingLangDetail = matchingLang.map((s) => ({
+    slug: s.slug,
+    title: s.title,
+    variant: s.variant,
+    cefrLevel: s.cefrLevel,
+    journeyEligible: s.journeyEligible,
+    journeyTopic: s.journeyTopic,
+    topic: s.topic,
+  }));
 
   const tracks = await buildJourneyVariants(language, "General");
 
   return NextResponse.json({
     requestedLanguage: language,
     totalStories: allStories.length,
-    languageCounts: Object.fromEntries(languageCounts),
     matchingLangCount: matchingLang.length,
-    matchingLangSample: matchingLang.slice(0, 3).map((s) => ({
-      slug: s.slug,
-      title: s.title,
-      language: s.language,
-      variant: s.variant,
-      region: s.region,
-      cefrLevel: s.cefrLevel,
-      level: s.level,
-      journeyEligible: s.journeyEligible,
-      journeyTopic: s.journeyTopic,
-      topic: s.topic,
-    })),
-    tracksCount: tracks.length,
+    allMatchingLangDetail,
     tracks: tracks.map((t) => ({
       id: t.id,
       label: t.label,
-      levelsCount: t.levels.length,
-      totalStories: t.levels.reduce((sum, lvl) => sum + lvl.topics.reduce((s, tp) => s + tp.storyCount, 0), 0),
+      levels: t.levels.map((lvl) => ({
+        id: lvl.id,
+        title: lvl.title,
+        topics: lvl.topics.map((tp) => ({
+          slug: tp.slug,
+          label: tp.label,
+          storyCount: tp.storyCount,
+          storyTarget: tp.storyTarget,
+          storySlugs: tp.stories.map((st) => st.storySlug),
+        })),
+      })),
     })),
   });
 }
