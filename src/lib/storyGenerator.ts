@@ -162,7 +162,7 @@ ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 ${variantClause}
 All vocabulary definitions must be written in clear English, regardless of the story language.
-Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
+Each vocabulary definition must be a pedagogical explanation (17-25 words), with usage nuance in context.
 Never return one-word literal translations.
 Never begin a definition with a direct gloss plus comma/colon (for example: "To change, ..." or "Important, ...").
 Wrap each paragraph inside <blockquote> ... </blockquote>.
