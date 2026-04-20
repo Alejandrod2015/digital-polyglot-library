@@ -191,6 +191,18 @@ Use a close third-person narrator with strong internal focalization.
 - Hard maximum: ${HARD_STORY_WORDS_MAX} words.${existingTitlesClause}${usedNamesClause}
 ${retryClause}
 
+Title requirements (think book cover, not scene description):
+- Culturally rooted in ${language}${regionClause}: use real place names, neighborhoods, regional foods/drinks, local brand or venue names, or culturally-specific objects. The title must feel like the story could ONLY happen in that culture — generic situations (an airport, a train, a café) are universal and NOT acceptable alone.
+- Avoid touristy clichés (the single most famous monument or festival named directly). Aim one level deeper — the everyday cultural texture.
+- Internal regional contrasts (someone from region A in region B within the same country) are often strong.
+- 2-6 words. Use concrete nouns only — NO pronouns (no equivalents of "him", "her", "it", "them").
+- Create implicit tension through specific detail: unusual pairings, specific numbers, anomalous objects, precise times, unexpected juxtapositions. The reader should know WHAT is present but wonder WHAT WILL HAPPEN.
+- NEVER use words that label the genre directly: equivalents of "mystery", "secret", "danger", "adventure", "escape", "enigma" in ${language}. Labeling the tension makes titles feel like cheap thrillers.
+- Vary the grammatical entry: do NOT always start with a definite article. Mix numbers first ("Two espressos and a letter"), verbs first ("Stolen at the pier"), prepositions first ("Inside the last tram"), proper nouns first ("Trieste, Saturday night").
+- Avoid generic formulas: "A Day in...", "The Story of X and Y", "The Journey of...", "A Problem with...", "Important Decision".
+- Avoid extremely long compound words that intimidate learners, but don't oversimplify either.
+- Illustrative style examples (do NOT reuse content — style only): "Ein Münchner im Berliner Biergarten", "Augustiner, Tisch sieben", "Zwei Maß und ein Brief", "Tres empanadas en Palermo", "La Boca, domingo a las cuatro", "Un Napolitano a Milano", "Bar Trieste, tavolo otto".
+
 Return ONLY valid JSON:
 {
   "title": "string",

@@ -86,21 +86,66 @@ export async function POST(req: Request) {
           : `\nAvoid titles close to these existing ones: ${existingTitles.slice(0, 80).join(" | ")}.\nPrevious attempt failed uniqueness: ${feedback}`;
 
       const prompt = `
-You create strong story titles for a language-learning app.
+You create strong, culturally-grounded story titles for a language-learning app.
 
 Write ONE title in ${language}.
-${region ? `The title should feel grounded in ${region}.` : ""}
+${region ? `The title MUST feel rooted in ${region} — use real place names, neighborhoods, local brands, regional foods/drinks, traditional objects, or culturally-specific venues that could only belong to that culture.` : ""}
 ${topic ? `The story topic is "${topic}".` : ""}
-${synopsis ? `Use this synopsis to infer the characters, conflict, and setting: "${synopsis}".` : ""}
+${synopsis ? `Use this synopsis to infer characters, conflict, and setting: "${synopsis}".` : ""}
 
-Requirements:
+# What makes a good title
+
+A real title is concise, memorable, and evocative — not a scene description, not a plot explanation. Think of it like the title printed on a book cover.
+
+## 1. Cultural specificity (REQUIRED)
+The title must feel like the story could ONLY happen in that culture. Generic situations (an airport, a train, a café, a park) are universal — NOT acceptable alone.
+- Use concrete cultural markers: real neighborhood names, regional foods/drinks, local brand or venue names, traditional objects, typical social settings.
+- Avoid the most touristy clichés (the single most famous monument or festival named directly). Go one level deeper — the everyday cultural texture, not the postcard.
+- Internal regional contrasts (someone from region A in region B within the same country) are often strong.
+
+## 2. Narrative tension (IMPLICIT, never labeled)
+The title should suggest a situation, not just a place.
+- NEVER use words that name the genre: equivalents of "mystery", "secret", "danger", "adventure", "escape", "enigma" in ${language}. Labeling the tension makes the title feel like a cheap thriller.
+- Create intrigue through specific details: unusual pairings, specific numbers, anomalous objects, precise times, unexpected juxtapositions.
+- Balance: specific in the situation (reader knows WHAT is present), mysterious in the consequences (reader wonders WHAT WILL HAPPEN).
+
+## 3. Language and density
 - 2 to 6 words.
-- Interesting, specific, and memorable.
-- If possible, anchor it in a real cultural or regional element from the country/region.
-- Avoid generic titles like "A Day in...", "The Story of...", "A Problem", "Important Decision".
-- Avoid cliché thriller formulas like "The Mystery of..." unless truly justified by the synopsis.
-- Avoid repeating the same noun pairings or themes already common in existing titles.
-- Return ONLY the title text, with no quotes or explanation.
+- Do NOT use pronouns — no equivalents of "him", "her", "it", "them" — always use concrete nouns.
+- Avoid extremely long compound words that intimidate learners, but don't oversimplify either. Aim for accessible but textured vocabulary.
+- Do NOT use generic formulas: "A Day in...", "The Story of...", "The Journey of X and Y", "A Problem with...", "Important Decision".
+
+## 4. Structural variety
+Do NOT always begin with a definite article (the equivalents of "The/Die/Der/Das/Le/La/El"). Vary the grammatical entry point across different title attempts:
+- Number first: "Two espressos and a letter"
+- Verb first: "Stolen at the pier"
+- Preposition first: "Inside the last tram"
+- Proper noun first: "Trieste, Saturday night"
+- Adjective first, conjunction first, etc.
+
+# Examples (illustrative of STYLE only — do NOT reuse content)
+
+Good (specific culture + implicit tension + varied structure):
+- "Ein Münchner im Berliner Biergarten" (internal regional clash, real cities)
+- "Augustiner, Tisch sieben" (real Munich brewery + specific table number)
+- "Zwei Maß und ein Brief" (culturally-specific object + unexpected pairing)
+- "Tres empanadas en Palermo" (regional food + Buenos Aires neighborhood)
+- "La Boca, domingo a las cuatro" (barrio + specific day and hour)
+- "Un Napolitano a Milano" (internal cultural clash, real cities)
+- "Bar Trieste, tavolo otto" (venue + specific table number)
+- "Due caffè al Procope" (culinary detail + real Parisian historic café)
+
+Bad (reject these patterns):
+- "Die Reise von Clara und Paul" — generic, could be any country
+- "Der Fremde im Biergarten" — too simple and vague
+- "Das Geheimnis im Zug" — names the genre ("secret"), cheap feel
+- "Wien um Mitternacht" — too vague, no situation
+- "Der Zug um Mitternacht" — no cultural anchor
+- "Airport Adventure" — generic, universal situation
+- "Salzburg erkennt ihn" — uses a pronoun ("him"), feels like a phrase not a title
+
+# Output
+Return ONLY the title text in ${language}. No quotes, no explanation, no trailing punctuation beyond what the title naturally requires.
 ${retryBlock}
 `;
 
