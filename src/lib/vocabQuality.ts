@@ -15,7 +15,7 @@ function wordCount(text: string): number {
 }
 
 function hasDetailedDefinition(definition: string): boolean {
-  return wordCount(definition) >= 6;
+  return wordCount(definition) >= 17;
 }
 
 function isLikelyDirectTranslation(definition: string): boolean {
@@ -122,7 +122,7 @@ Context:
 Rules:
 - Keep exactly the same "word" and preserve "type" when present.
 - Keep exactly the same "surface" when present.
-- Definition must be 8-18 words.
+- Definition must be 17-25 words minimum.
 - Explain practical meaning/usage nuance in context, not one-word gloss.
 - NEVER return direct translation equivalents.
 - NEVER start with a literal gloss followed by punctuation, such as "To change, ..." or "Important, ...".
@@ -155,7 +155,7 @@ Rules:
 Rewrite ONLY these low-quality definitions.
 Rules:
 - Keep same "word", "surface" when present, and "type".
-- Each definition must be 8-18 words.
+- Each definition must be 17-25 words minimum.
 - Explain meaning in English with usage nuance from the story context.
 - Never return direct translation equivalents.
 - Never begin with a direct gloss plus comma/colon.

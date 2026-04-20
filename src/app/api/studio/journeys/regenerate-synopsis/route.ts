@@ -2,6 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
+import { broadLevelFromCefr } from "@domain/cefr";
 
 export const maxDuration = 60;
 
@@ -30,6 +31,7 @@ export async function POST(request: Request) {
 
   try {
     const origin = new URL(request.url).origin;
+    const broadLevel = broadLevelFromCefr(story.level) ?? "intermediate";
     const res = await fetch(`${origin}/api/generate-synopsis`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
@@ -39,6 +41,8 @@ export async function POST(request: Request) {
         variant: story.journey.variant,
         region: story.journey.variant,
         cefrLevel: story.level,
+        level: broadLevel,
+        focus: "verbs",
         topic: story.topic,
       }),
     });

@@ -26,12 +26,14 @@ export type GenerateStoryParams = {
   level?: string;
   focus?: string;
   topic?: string;
+  title?: string;
   synopsis?: string;
   existingTitles?: string[];
   usedCharacterNames?: string[];
 };
 
 const MAX_GENERATION_ATTEMPTS = 3;
+const MIN_VOCAB_ITEMS = 15;
 
 function sanitizeGeneratedStoryText(input: string): string {
   return input
@@ -127,10 +129,12 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     level = "intermediate",
     focus = "verbs",
     topic = "",
+    title: providedTitle = "",
     synopsis = "",
     existingTitles = [],
     usedCharacterNames = [],
   } = params;
+  const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
 
   const learnerProfile = cefrPromptLabel(cefrLevel, level);
   const normalizedVariant = normalizeVariant(variant);
@@ -153,16 +157,22 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     const retryClause =
       attempt === 0
         ? ""
-        : `\nRetry constraints: the previous story was too short (${previousFeedback}). Expand the scenes, dialogue, internal reactions, and consequences. Do not end early.`;
+        : `\nRetry constraints: previous attempt failed: ${previousFeedback}. If it was about length, expand the scenes, dialogue, internal reactions, and consequences. If it was about vocab count, return more candidate items (22 or more) so that enough survive post-processing.`;
+
+    const titleClause = resolvedProvidedTitle
+      ? `The story's title is already fixed: "${resolvedProvidedTitle}". Do NOT invent a different title. Return exactly this title in the JSON "title" field, and write the story so its content is coherent with it — the title's concrete nouns (dishes, places, objects, numbers) must appear or be clearly reflected in the narrative.`
+      : "";
 
     const prompt = `
 You are an expert language teacher and long story writer.
 Write a long engaging story for a ${learnerProfile} learner studying ${language}${regionClause}.
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
+${titleClause}
 ${variantClause}
+Return 18-22 vocabulary items (aim for 20). After post-processing filters transparent cognates and invalid multi-word fragments, this yields roughly 15-17 keeper items — the target the app needs.
 All vocabulary definitions must be written in clear English, regardless of the story language.
-Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
+Each vocabulary definition must be a pedagogical explanation (17-25 words), with usage nuance in context.
 Never return one-word literal translations.
 Never begin a definition with a direct gloss plus comma/colon (for example: "To change, ..." or "Important, ...").
 Wrap each paragraph inside <blockquote> ... </blockquote>.
@@ -228,7 +238,7 @@ Return ONLY valid JSON:
     }
 
     const raw = parsed as StoryJSON;
-    const title = raw.title.trim() || "Untitled";
+    const title = resolvedProvidedTitle || raw.title.trim() || "Untitled";
     const sanitized = sanitizeGeneratedStoryText(raw.text);
     const text =
       countStoryWords(sanitized) > HARD_STORY_WORDS_MAX
@@ -249,6 +259,12 @@ Return ONLY valid JSON:
       topic: resolvedRequestedTopic,
       text,
     });
+
+    if (improvedVocab.length < MIN_VOCAB_ITEMS) {
+      previousFeedback = `vocab had ${improvedVocab.length} items after filtering, need at least ${MIN_VOCAB_ITEMS}. Return more candidate items next time (aim for 22).`;
+      finalPayload = { title, text, vocab: improvedVocab };
+      continue;
+    }
 
     finalPayload = { title, text, vocab: improvedVocab };
     break;

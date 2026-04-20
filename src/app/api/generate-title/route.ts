@@ -86,29 +86,71 @@ export async function POST(req: Request) {
           : `\nAvoid titles close to these existing ones: ${existingTitles.slice(0, 80).join(" | ")}.\nPrevious attempt failed uniqueness: ${feedback}`;
 
       const prompt = `
-You create strong story titles for a language-learning app.
+# Your task
+Write ONE story title in ${language}, 2 to 6 words.
 
-Write ONE title in ${language}.
-${region ? `The title should feel grounded in ${region}.` : ""}
-${topic ? `The story topic is "${topic}".` : ""}
-${synopsis ? `Use this synopsis to infer the characters, conflict, and setting: "${synopsis}".` : ""}
+# The one thing that matters: a concrete cultural anchor
+The title must include at least ONE real-world proper noun or a culturally-specific common noun characteristic of the target region — a specific dish, a real neighborhood, a named venue, a traditional object. Not a generic noun like "meal", "food", "trip", "journey", "day", "adventure", "visit".
 
-Requirements:
-- 2 to 6 words.
-- Interesting, specific, and memorable.
-- If possible, anchor it in a real cultural or regional element from the country/region.
-- Avoid generic titles like "A Day in...", "The Story of...", "A Problem", "Important Decision".
-- Avoid cliché thriller formulas like "The Mystery of..." unless truly justified by the synopsis.
-- Avoid repeating the same noun pairings or themes already common in existing titles.
-- Return ONLY the title text, with no quotes or explanation.
+That is the only hard requirement. Everything else below is advice on taste, not additional checkboxes.
+
+# Keep it simple. Do NOT over-engineer.
+Think of real book titles. "Mrs. Dalloway". "Der Prozess". "El Aleph". They are concrete names, not packed sentences. Most good titles contain ONE cultural element and nothing else. A second element (a small number, a name, an absence, a time) is OPTIONAL — include it only when the synopsis makes it feel natural, never to satisfy a checklist.
+
+## The single most common failure to avoid: stacking layers
+If your title combines three or more of these into one title, you have over-engineered it:
+- a specific dish
+- a specific ingredient or accessory (especially framed as an absence)
+- a specific location / venue
+- a specific number or time
+
+Concrete example of over-engineering to AVOID: "Kartoffelsalat ohne Senf am Flughafen" — a dish + an ingredient absence + a location is too many anchors. The result reads like the model was checking boxes.
+
+When tempted to add a second or third detail: delete elements instead of adding them, until the title feels like a natural name, not a description.
+
+# Graded examples — note the default is simple
+
+## Level 1 (default — single anchor, nothing else, use this most of the time):
+- "Sauerbraten am Winterfeldtmarkt"
+- "Tres empanadas en Palermo"
+- "Augustiner, Tisch sieben"
+- "Bar Trieste, tavolo otto"
+- "Croque-monsieur à Belleville"
+- "Ein Münchner im Berliner Biergarten"
+
+## Level 2 (anchor + one natural extra — only when the synopsis explicitly motivates it):
+- "Keine Kartoffeln für Anna" — a named character AND a simple absence
+- "Tre cannoli per Rosa" — a regional pastry AND a named character
+- "La Boca, domingo a las cuatro" — a neighborhood AND a specific time
+
+## Level 3 (rare — only when the absence is culturally essential to the dish):
+- "Choripán sin chimichurri" — chimichurri is structurally essential to a choripán, so its absence is meaningful
+
+Default to Level 1. Go to Level 2 only if Level 1 feels too bare for this particular synopsis. Go to Level 3 almost never.
+
+# Banned patterns (hard rejects)
+- "A/An [generic noun] in [city]": "Ein Essen in Berlin", "Una comida en Madrid", "Un viaggio a Roma", "A Meal in Paris"
+- Three or more stacked anchors: "Kartoffelsalat ohne Senf am Flughafen", "Schnitzel mit Salat in München"
+- Genre-labeling words: equivalents of "mystery", "secret", "danger", "adventure", "escape", "enigma" in ${language}
+- Pronouns: no equivalents of "him", "her", "it", "them"
+- Generic formulas: "A Day in...", "The Story of X and Y", "The Journey of...", "A Problem with..."
+
+# Context for this title
+- Target language: ${language}
+${region ? `- Region / cultural context: ${region}` : ""}
+${topic ? `- Story topic: "${topic}"` : ""}
+${synopsis ? `- Synopsis: "${synopsis}" — mine it for ONE concrete noun (a dish, neighborhood, object, venue, character name) and build the title around that noun. Do not try to reflect every detail of the synopsis.` : ""}
+
+# Output
+Return ONLY the title text in ${language}. No quotes, no explanation.
 ${retryBlock}
 `;
 
       const response = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
-        temperature: 0.9,
+        model: "gpt-4o",
+        temperature: 0.7,
         messages: [
-          { role: "system", content: "You write concise, original story titles. Return plain text only." },
+          { role: "system", content: "You write concise, restrained story titles anchored in one cultural element. You prefer simple titles to elaborate ones, and you never stack multiple anchors. Return plain text only." },
           { role: "user", content: prompt },
         ],
       });
