@@ -3,7 +3,7 @@ import { requireStudioUser } from "@/lib/requireStudioUser";
 import MonitorClient from "./MonitorClient";
 
 export default async function MonitorPage() {
-  await requireStudioUser("/studio/monitor");
+  await requireStudioUser("/studio/journey-manager");
   return (
     <StudioShell
       title=""
