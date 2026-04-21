@@ -8,6 +8,7 @@ import { formatVariantLabel, resolveContentVariant } from "@/lib/languageVariant
 import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
 import { normalizeJourneyFocus, type JourneyFocus } from "@/lib/onboarding";
 import { getJourneyCurriculumPlans, getJourneyLevelPlanAsync } from "@/lib/journeyCurriculumSource";
+import { prisma } from "@/lib/prisma";
 
 export type JourneyStoryItem = {
   id: string;
@@ -473,10 +474,135 @@ async function buildLevelsForVariant(
   return levels;
 }
 
+function prettifyTopicLabel(slug: string): string {
+  return slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+/**
+ * Build journey tracks from Prisma Journey records (Studio-created content).
+ * Studio is the source of truth: only levels, topics and stories configured
+ * there show up in the reader. Returns an empty array when there is no
+ * Studio content for the language — the caller falls back to legacy.
+ */
+async function buildJourneyVariantsFromStudio(
+  language: string
+): Promise<JourneyVariantTrack[]> {
+  const journeys = await prisma.journey.findMany({
+    where: {
+      language: { equals: language, mode: "insensitive" },
+      status: { not: "archived" },
+    },
+    include: {
+      stories: {
+        where: { status: "published", NOT: [{ text: null }, { title: null }] },
+        orderBy: [{ level: "asc" }, { slotIndex: "asc" }],
+      },
+    },
+  });
+  if (journeys.length === 0) return [];
+
+  // Include a track only when the Studio journey has at least one published story.
+  const variantGroups = new Map<string, typeof journeys>();
+  for (const j of journeys) {
+    if (j.stories.length === 0) continue;
+    const v = (j.variant ?? "").trim().toLowerCase();
+    if (!v) continue;
+    if (!variantGroups.has(v)) variantGroups.set(v, []);
+    variantGroups.get(v)!.push(j);
+  }
+
+  const tracks: JourneyVariantTrack[] = [];
+  for (const [variantId, group] of Array.from(variantGroups.entries()).sort(([a], [b]) =>
+    sortVariants(a, b)
+  )) {
+    const levelMap = new Map<string, Map<string, JourneyStoryItem[]>>();
+
+    for (const journey of group) {
+      for (const story of journey.stories) {
+        if (!story.text || !story.title || !story.slug) continue;
+        const levelId = story.level.trim().toLowerCase();
+        const topicSlug = story.topic.trim().toLowerCase();
+        if (!levelId || !topicSlug) continue;
+
+        if (!levelMap.has(levelId)) levelMap.set(levelId, new Map());
+        const topicMap = levelMap.get(levelId)!;
+        if (!topicMap.has(topicSlug)) topicMap.set(topicSlug, []);
+
+        const levelLabel = journeyLevelMeta[levelId as CefrLevel]?.title ?? levelId.toUpperCase();
+        const storySlug = story.slug;
+        const item: JourneyStoryItem = {
+          id: `journey:${story.id}`,
+          progressKey: `standalone:${storySlug}`,
+          storySlug,
+          sourcePath: `/stories/${storySlug}`,
+          title: story.title,
+          href: `/stories/${storySlug}`,
+          coverUrl: story.coverUrl ?? undefined,
+          language: journey.language,
+          region: journey.variant,
+          variant: journey.variant,
+          journeyFocus: "General",
+          levelLabel: CEFR_LEVEL_LABELS[levelId as CefrLevel] ?? levelLabel,
+          topicLabel: prettifyTopicLabel(topicSlug),
+          text: story.text ?? undefined,
+          vocabItems: Array.isArray(story.vocab) ? (story.vocab as VocabItem[]) : undefined,
+        };
+        topicMap.get(topicSlug)!.push(item);
+      }
+    }
+
+    const levels: JourneyLevel[] = [];
+    // Emit levels in canonical CEFR order so the UI matches the curriculum sequence.
+    for (const levelId of JOURNEY_LEVEL_IDS) {
+      const topicMap = levelMap.get(levelId);
+      if (!topicMap || topicMap.size === 0) continue;
+      const meta = journeyLevelMeta[levelId];
+      const topics: JourneyTopic[] = [];
+      for (const [slug, stories] of topicMap) {
+        if (stories.length === 0) continue;
+        topics.push({
+          id: `${levelId}:${slug}`,
+          slug,
+          label: prettifyTopicLabel(slug),
+          storyCount: stories.length,
+          stories,
+        });
+      }
+      if (topics.length === 0) continue;
+      levels.push({
+        id: meta.id,
+        title: meta.title,
+        subtitle: meta.subtitle,
+        topics,
+      });
+    }
+
+    if (levels.length === 0) continue;
+
+    tracks.push({
+      id: variantId,
+      label: formatVariantLabel(variantId) ?? variantId.toUpperCase(),
+      levels,
+    });
+  }
+
+  return tracks;
+}
+
 export async function buildJourneyVariants(
   language = DEFAULT_LANGUAGE,
   journeyFocus: JourneyFocus = "General"
 ): Promise<JourneyVariantTrack[]> {
+  // Studio (Prisma Journey records) is the canonical source for the Journey
+  // tab. If there is any Studio content for the language, only that shows up.
+  const studioTracks = await buildJourneyVariantsFromStudio(language);
+  if (studioTracks.length > 0) return studioTracks;
+
+  // Legacy fallback: Sanity standaloneStories + curriculum plan. Kept so
+  // languages without Studio content yet (e.g. the original Spanish catalog)
+  // still render the existing reader.
   const variants = new Set<string>();
   const normalizedLanguage = language.trim().toLowerCase();
 
