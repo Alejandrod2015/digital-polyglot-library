@@ -57,6 +57,19 @@ export async function GET(req: NextRequest): Promise<Response> {
       getPracticedJourneyTopicKeys(session.sub),
       getJourneyDueReviewItems(200, session.sub),
     ]);
+  console.log("[mobile-journey-debug]", {
+    requestedLanguage: requestedLanguage ?? "(from session)",
+    resolvedLanguage: language,
+    sessionTargetLanguages: session.targetLanguages,
+    tracksCount: tracks.length,
+    tracksDetail: tracks.map((t) => ({
+      id: t.id,
+      levelsWithStories: t.levels.map((lvl) => ({
+        id: lvl.id,
+        topicsWithStories: lvl.topics.filter((tp) => tp.storyCount > 0).map((tp) => ({ slug: tp.slug, count: tp.storyCount })),
+      })),
+    })),
+  });
 
   const dueReviewProgressKeySet = new Set(
     dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))
