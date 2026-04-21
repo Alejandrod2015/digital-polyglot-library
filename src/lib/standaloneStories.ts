@@ -199,6 +199,20 @@ export async function getStandaloneStoriesBySlugs(
     ${standaloneStoryFields}
   }`;
 
-  const stories = await freshClient.fetch<PublicStandaloneStory[]>(query, { slugs });
-  return stories.map(normalizeStandaloneStory);
+  const sanityStories = (await freshClient.fetch<PublicStandaloneStory[]>(query, { slugs })).map(
+    normalizeStandaloneStory
+  );
+
+  // Also resolve slugs from Prisma JourneyStory rows — stories created in the
+  // Studio live there, not in Sanity, and the reader needs them to open.
+  const foundSlugs = new Set(sanityStories.map((s) => s.slug));
+  const missingSlugs = slugs.filter((s) => !foundSlugs.has(s));
+  if (missingSlugs.length === 0) return sanityStories;
+
+  const { getJourneyStoryBySlug } = await import("@/lib/journeyStories");
+  const prismaStories = (
+    await Promise.all(missingSlugs.map((slug) => getJourneyStoryBySlug(slug)))
+  ).filter((story): story is PublicStandaloneStory => Boolean(story));
+
+  return [...sanityStories, ...prismaStories];
 }

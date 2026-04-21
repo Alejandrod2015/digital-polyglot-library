@@ -433,24 +433,20 @@ async function buildLevelsForVariant(
 
       const topics: JourneyTopic[] = curriculumLevel
         ? (() => {
-            const curriculumTopics = curriculumLevel.topics.map((topicPlan) => {
-              const existingTopic = rawTopics.find((topic) => topic.slug === topicPlan.slug);
-              if (existingTopic) {
+            // Only surface curriculum topics that actually have stories. Empty
+            // curriculum slots were creating noise ("Coming soon" rows that
+            // never went anywhere). Custom Studio topics are always included
+            // when they have stories.
+            const curriculumTopics = curriculumLevel.topics
+              .map((topicPlan) => {
+                const existingTopic = rawTopics.find((topic) => topic.slug === topicPlan.slug);
+                if (!existingTopic) return null;
                 return {
                   ...existingTopic,
                   storyTarget: topicPlan.storyTarget,
-                };
-              }
-              return {
-                id: `${meta.id}:${topicPlan.slug}`,
-                slug: topicPlan.slug,
-                label: topicPlan.label,
-                storyCount: 0,
-                storyTarget: topicPlan.storyTarget,
-                stories: [],
-              } satisfies JourneyTopic;
-            });
-            // Include custom topics (from studio-created journeys) not present in the curriculum plan.
+                } satisfies JourneyTopic;
+              })
+              .filter((entry): entry is JourneyTopic => entry !== null);
             const curriculumSlugs = new Set(curriculumLevel.topics.map((t) => t.slug));
             const customTopics = rawTopics.filter((t) => !curriculumSlugs.has(t.slug));
             return [...curriculumTopics, ...customTopics];
@@ -467,7 +463,9 @@ async function buildLevelsForVariant(
         topics,
       } satisfies JourneyLevel;
 
-      if (level.topics.length > 0 || Boolean(curriculumLevel)) {
+      // Only include the level if at least one topic has stories. An empty
+      // level would render as a locked placeholder with nothing behind it.
+      if (level.topics.length > 0) {
         levels.push(level);
       }
   }
