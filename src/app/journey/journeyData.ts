@@ -547,7 +547,7 @@ async function buildJourneyVariantsFromStudio(
           levelLabel: CEFR_LEVEL_LABELS[levelId as CefrLevel] ?? levelLabel,
           topicLabel: prettifyTopicLabel(topicSlug),
           text: story.text ?? undefined,
-          vocabItems: Array.isArray(story.vocab) ? (story.vocab as VocabItem[]) : undefined,
+          vocabItems: Array.isArray(story.vocab) ? (story.vocab as unknown as VocabItem[]) : undefined,
         };
         topicMap.get(topicSlug)!.push(item);
       }
