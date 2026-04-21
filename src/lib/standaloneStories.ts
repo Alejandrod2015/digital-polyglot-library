@@ -133,18 +133,6 @@ export async function getPublishedStandaloneStories(
       // Dynamic import avoids a circular dependency (journeyStories imports PublicStandaloneStory from this module).
       import("@/lib/journeyStories").then((m) => m.getPublishedJourneyStories()),
     ]);
-    console.log("[journey-debug] getPublishedStandaloneStories merge", {
-      sanityCount: sanityStories.length,
-      prismaCount: prismaStories.length,
-      prismaSample: prismaStories.slice(0, 2).map((s) => ({
-        slug: s.slug,
-        language: s.language,
-        variant: s.variant,
-        cefrLevel: s.cefrLevel,
-        journeyEligible: s.journeyEligible,
-        journeyTopic: s.journeyTopic,
-      })),
-    });
     const sanitySlugs = new Set(sanityStories.map((story) => story.slug));
     const merged = [...sanityStories];
     for (const story of prismaStories) {

@@ -349,20 +349,13 @@ async function buildLevelsForVariant(
   const grouped = new Map<string, Map<string, Array<JourneyStoryItem & { journeyOrder?: number | null }>>>();
   const standaloneStories = await getPublishedStandaloneStories({ includeJourneyStories: true });
 
-  const dbg = { total: standaloneStories.length, passLang: 0, passEligible: 0, passVariant: 0, passLevel: 0, sampleVariants: new Set<string>(), sampleLevels: new Set<string>() };
   for (const story of standaloneStories) {
     if ((story.language ?? "").trim().toLowerCase() !== language.trim().toLowerCase()) continue;
-    dbg.passLang += 1;
     if (!story.journeyEligible || !story.journeyTopic) continue;
-    dbg.passEligible += 1;
-    dbg.sampleVariants.add((story.variant ?? "").trim().toLowerCase());
     if ((story.variant ?? "").trim().toLowerCase() !== variantId) continue;
-    dbg.passVariant += 1;
-    dbg.sampleLevels.add((story.cefrLevel ?? "").trim().toLowerCase());
     const resolvedCefrLevel = (story.cefrLevel ?? "").trim().toLowerCase() as CefrLevel;
     const mappedLevel = journeyLevelMeta[resolvedCefrLevel];
     if (!mappedLevel) continue;
-    dbg.passLevel += 1;
 
     if (!grouped.has(mappedLevel.id)) {
       grouped.set(mappedLevel.id, new Map());
@@ -403,18 +396,6 @@ async function buildLevelsForVariant(
     const withOrder = { ...storyItem, journeyOrder: story.journeyOrder };
     targetTopics.get(topicSlug)!.push(withOrder);
   }
-
-  console.log("[journey-debug] buildLevelsForVariant", {
-    language,
-    variantId,
-    total: dbg.total,
-    passLang: dbg.passLang,
-    passEligible: dbg.passEligible,
-    passVariant: dbg.passVariant,
-    passLevel: dbg.passLevel,
-    sampleVariantsFromEligible: Array.from(dbg.sampleVariants),
-    sampleLevelsFromVariantMatch: Array.from(dbg.sampleLevels),
-  });
 
   const levels: JourneyLevel[] = [];
   for (const [, meta] of Object.entries(journeyLevelMeta)) {
@@ -502,33 +483,16 @@ export async function buildJourneyVariants(
   const normalizedLanguage = language.trim().toLowerCase();
 
   const standaloneStories = await getPublishedStandaloneStories({ includeJourneyStories: true });
-  let matchedLang = 0;
-  let matchedEligible = 0;
-  let matchedVariant = 0;
   for (const story of standaloneStories) {
     if ((story.language ?? "").trim().toLowerCase() !== normalizedLanguage) continue;
-    matchedLang += 1;
     if (!story.journeyEligible) continue;
-    matchedEligible += 1;
     const variant = resolveContentVariant({
       language: story.language,
       variant: story.variant,
       region: story.region,
     });
-    if (variant) {
-      variants.add(variant);
-      matchedVariant += 1;
-    }
+    if (variant) variants.add(variant);
   }
-  console.log("[journey-debug] buildJourneyVariants", {
-    requestedLanguage: language,
-    normalizedLanguage,
-    totalStories: standaloneStories.length,
-    matchedLang,
-    matchedEligible,
-    matchedVariant,
-    variants: Array.from(variants),
-  });
 
   const curriculumPlans = await getJourneyCurriculumPlans();
   for (const plan of curriculumPlans) {

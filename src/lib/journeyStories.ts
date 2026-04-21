@@ -61,30 +61,13 @@ function toPublicStory(s: {
 export const getPublishedJourneyStories = unstable_cache(
   async (): Promise<PublicStandaloneStory[]> => {
     try {
-      console.log("[journey-debug] getPublishedJourneyStories: running prisma.journeyStory.findMany");
       const stories = await prisma.journeyStory.findMany({
         where: { status: "published" },
         include: { journey: { select: { language: true, variant: true } } },
         orderBy: { createdAt: "desc" },
       });
-      console.log("[journey-debug] getPublishedJourneyStories: raw count", {
-        rawCount: stories.length,
-        sampleRaw: stories.slice(0, 2).map((s) => ({
-          id: s.id,
-          status: s.status,
-          title: s.title,
-          hasText: !!s.text,
-          level: s.level,
-          topic: s.topic,
-          journeyLanguage: s.journey?.language,
-          journeyVariant: s.journey?.variant,
-        })),
-      });
-      const filtered = stories.filter((s) => s.text && s.title).map(toPublicStory);
-      console.log("[journey-debug] getPublishedJourneyStories: filtered count", filtered.length);
-      return filtered;
-    } catch (err) {
-      console.error("[journey-debug] getPublishedJourneyStories ERROR", err);
+      return stories.filter((s) => s.text && s.title).map(toPublicStory);
+    } catch {
       return [];
     }
   },

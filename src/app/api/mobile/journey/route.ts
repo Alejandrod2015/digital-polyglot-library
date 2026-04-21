@@ -22,6 +22,7 @@ import {
 } from "@/lib/journeyProgress";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import { getJourneyFocusFromLearningGoal, normalizeJourneyFocus } from "@/lib/onboarding";
+import { prisma } from "@/lib/prisma";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -34,10 +35,23 @@ export async function GET(req: NextRequest): Promise<Response> {
   }
 
   const requestedLanguage = req.nextUrl.searchParams.get("language");
-  const language =
-    requestedLanguage
-      ? requestedLanguage
-      : session.targetLanguages[0] || "Spanish";
+  let language: string;
+  if (requestedLanguage) {
+    language = requestedLanguage;
+  } else if (session.targetLanguages[0]) {
+    language = session.targetLanguages[0];
+  } else {
+    // No explicit preference. Use the language of the most recently published
+    // journey story (created in the Studio) so solo-language accounts without
+    // targetLanguages configured still see their own content instead of a
+    // hardcoded "Spanish" fallback.
+    const latestJourneyStory = await prisma.journeyStory.findFirst({
+      where: { status: "published" },
+      include: { journey: { select: { language: true } } },
+      orderBy: { createdAt: "desc" },
+    });
+    language = latestJourneyStory?.journey?.language ?? "Spanish";
+  }
   const user = await clerkClient.users.getUser(session.sub);
   const journeyFocus =
     typeof user.publicMetadata?.journeyFocus === "string"
@@ -57,19 +71,6 @@ export async function GET(req: NextRequest): Promise<Response> {
       getPracticedJourneyTopicKeys(session.sub),
       getJourneyDueReviewItems(200, session.sub),
     ]);
-  console.log("[mobile-journey-debug]", {
-    requestedLanguage: requestedLanguage ?? "(from session)",
-    resolvedLanguage: language,
-    sessionTargetLanguages: session.targetLanguages,
-    tracksCount: tracks.length,
-    tracksDetail: tracks.map((t) => ({
-      id: t.id,
-      levelsWithStories: t.levels.map((lvl) => ({
-        id: lvl.id,
-        topicsWithStories: lvl.topics.filter((tp) => tp.storyCount > 0).map((tp) => ({ slug: tp.slug, count: tp.storyCount })),
-      })),
-    })),
-  });
 
   const dueReviewProgressKeySet = new Set(
     dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))
@@ -128,7 +129,14 @@ export async function GET(req: NextRequest): Promise<Response> {
             const requiredStoryCount = getJourneyTopicRequiredStoryCount(topic);
             const practiceKey = getJourneyTopicPracticeKey(track.id, level.id, topic.slug);
             const checkpointKey = getJourneyTopicCheckpointKey(track.id, level.id, topic.slug);
-            const topicUnlocked = levelIndex < unlockedLevelCount && topicIndex < unlockedTopicCount;
+            // Any topic with published stories is accessible. We drop the pure
+            // sequential gating so Studio-created journeys don't hide behind
+            // unfinished curriculum topics. The first topic stays unlocked
+            // too (entry point even when empty).
+            const hasStories = topic.storyCount > 0;
+            const topicUnlocked =
+              levelIndex < unlockedLevelCount &&
+              (topicIndex === 0 || hasStories || topicIndex < unlockedTopicCount);
             const unlockedStoryCount = topicUnlocked
               ? placementLevelIndex >= 0 && levelIndex < placementLevelIndex
                 ? topic.storyCount

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import * as SecureStore from "expo-secure-store";
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
 import {
   Alert,
@@ -1530,6 +1531,7 @@ export function MobileLibraryShell(args: {
   const [journeyDetailTopicId, setJourneyDetailTopicId] = useState<string | null>(null);
   const [journeyMilestone, setJourneyMilestone] = useState<JourneyMilestone | null>(null);
   const [activeJourneyLanguage, setActiveJourneyLanguage] = useState<string | null>(null);
+  const [activeJourneyLanguageHydrated, setActiveJourneyLanguageHydrated] = useState(false);
   const [journeyLanguageLoading, setJourneyLanguageLoading] = useState(false);
   const [journeyVariantPickerOpen, setJourneyVariantPickerOpen] = useState(false);
   const [journeyInsightsByLanguage, setJourneyInsightsByLanguage] = useState<Record<string, LanguageInsightsSummary | null>>({});
@@ -1854,12 +1856,65 @@ export function MobileLibraryShell(args: {
     [sessionToken]
   );
 
+  // Hydrate the active journey language from SecureStore on mount so the
+  // user's last selection survives app relaunches.
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const stored = await SecureStore.getItemAsync("digital-polyglot/active-journey-language");
+        if (!cancelled && typeof stored === "string" && stored.trim()) {
+          setActiveJourneyLanguage(stored.trim());
+        }
+      } catch {
+        // ignore; SecureStore unavailable or corrupted value
+      } finally {
+        if (!cancelled) setActiveJourneyLanguageHydrated(true);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Persist the active journey language whenever it changes (after hydration).
+  useEffect(() => {
+    if (!activeJourneyLanguageHydrated) return;
+    (async () => {
+      try {
+        if (activeJourneyLanguage) {
+          await SecureStore.setItemAsync(
+            "digital-polyglot/active-journey-language",
+            activeJourneyLanguage
+          );
+        } else {
+          await SecureStore.deleteItemAsync("digital-polyglot/active-journey-language");
+        }
+      } catch {
+        // ignore
+      }
+    })();
+  }, [activeJourneyLanguage, activeJourneyLanguageHydrated]);
+
   useEffect(() => {
     if (!didHydratePreferences) return;
     if (preferences.targetLanguages.length === 1 && !activeJourneyLanguage) {
       setActiveJourneyLanguage(preferences.targetLanguages[0]);
     }
   }, [didHydratePreferences, preferences.targetLanguages, activeJourneyLanguage]);
+
+  // If we restored a language from SecureStore, re-fetch the journey with that
+  // explicit language so the initial (no-param) fetch doesn't overwrite it with
+  // the server-side fallback.
+  useEffect(() => {
+    if (!activeJourneyLanguageHydrated) return;
+    if (!sessionToken) return;
+    if (!activeJourneyLanguage) return;
+    if (remoteJourney?.language && remoteJourney.language.toLowerCase() === activeJourneyLanguage.toLowerCase()) {
+      return;
+    }
+    void loadJourneyForLanguage(activeJourneyLanguage);
+  }, [activeJourneyLanguageHydrated, activeJourneyLanguage, sessionToken, remoteJourney?.language, loadJourneyForLanguage]);
 
   useEffect(() => {
     setSelectedBookDescriptionExpanded(false);

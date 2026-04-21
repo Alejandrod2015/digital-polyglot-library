@@ -127,7 +127,13 @@ export default async function JourneyTopicPage({
       : baseUnlockedTopicCount;
   const currentTopicIndex = level.topics.findIndex((entry) => entry.slug === topic.slug);
 
-  if (currentTopicIndex < 0 || currentTopicIndex >= unlockedTopicCount) {
+  // A topic is reachable if it's the first one, it has stories, or it falls
+  // within the sequential unlock window (kept for curriculum-only users).
+  const topicHasStories = topic.storyCount > 0;
+  const topicReachable =
+    currentTopicIndex === 0 || topicHasStories || currentTopicIndex < unlockedTopicCount;
+
+  if (currentTopicIndex < 0 || !topicReachable) {
     redirect(activeVariant ? `/journey?variant=${encodeURIComponent(activeVariant)}` : "/journey");
   }
 
