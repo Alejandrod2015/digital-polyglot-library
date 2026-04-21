@@ -432,30 +432,30 @@ async function buildLevelsForVariant(
         } satisfies JourneyTopic;
       });
 
-      const topics: JourneyTopic[] = curriculumLevel
-        ? (() => {
-            // Only surface curriculum topics that actually have stories. Empty
-            // curriculum slots were creating noise ("Coming soon" rows that
-            // never went anywhere). Custom Studio topics are always included
-            // when they have stories.
-            const curriculumTopics = curriculumLevel.topics
-              .map((topicPlan) => {
-                const existingTopic = rawTopics.find((topic) => topic.slug === topicPlan.slug);
-                if (!existingTopic) return null;
-                return {
-                  ...existingTopic,
-                  storyTarget: topicPlan.storyTarget,
-                } satisfies JourneyTopic;
-              })
-              .filter((entry): entry is JourneyTopic => entry !== null);
-            const curriculumSlugs = new Set(curriculumLevel.topics.map((t) => t.slug));
-            const customTopics = rawTopics.filter((t) => !curriculumSlugs.has(t.slug));
-            return [...curriculumTopics, ...customTopics];
-          })()
-        : rawTopics.sort((a, b) => {
-            if (b.storyCount !== a.storyCount) return b.storyCount - a.storyCount;
-            return a.label.localeCompare(b.label);
+      let topics: JourneyTopic[];
+      if (curriculumLevel) {
+        // Only surface curriculum topics that actually have stories. Empty
+        // curriculum slots were creating noise ("Coming soon" rows that
+        // never went anywhere). Custom Studio topics are always included
+        // when they have stories.
+        const curriculumTopics: JourneyTopic[] = [];
+        for (const topicPlan of curriculumLevel.topics) {
+          const existingTopic = rawTopics.find((topic) => topic.slug === topicPlan.slug);
+          if (!existingTopic) continue;
+          curriculumTopics.push({
+            ...existingTopic,
+            storyTarget: topicPlan.storyTarget,
           });
+        }
+        const curriculumSlugs = new Set(curriculumLevel.topics.map((t) => t.slug));
+        const customTopics = rawTopics.filter((t) => !curriculumSlugs.has(t.slug));
+        topics = [...curriculumTopics, ...customTopics];
+      } else {
+        topics = rawTopics.slice().sort((a, b) => {
+          if (b.storyCount !== a.storyCount) return b.storyCount - a.storyCount;
+          return a.label.localeCompare(b.label);
+        });
+      }
 
       const level = {
         id: meta.id,
