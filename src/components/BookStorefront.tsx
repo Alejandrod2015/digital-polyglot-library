@@ -513,7 +513,7 @@ export default function BookStorefront({
                   <StoryVerticalCard
                     href={`/books/${candidate.slug}/${story.slug}${storyNavSuffix}`}
                     title={story.title}
-                    coverUrl={story.cover ?? candidate.cover ?? "/covers/default.jpg"}
+                    coverUrl={story.cover ?? story.coverUrl ?? candidate.cover ?? "/covers/default.jpg"}
                     subtitle={candidate.title}
                     level={formatLevel(story.level ?? candidate.level)}
                     language={formatLanguage(story.language ?? candidate.language)}

@@ -2557,7 +2557,7 @@ export function MobileLibraryShell(args: {
           key: `continue-${item.story.id}`,
           title: item.story.title,
           subtitle: progress ? formatReadingProgressLabel(progress) ?? item.book.title : item.book.title,
-          coverUrl: getCoverUrl(item.story.cover ?? item.book.cover),
+          coverUrl: getCoverUrl(item.story.cover ?? item.story.coverUrl ?? item.book.cover),
           meta: `${formatLanguage(item.story.language ?? item.book.language)} · ${formatTopic(item.story.topic ?? item.book.topic)}`,
           badge: offlineStoriesById.has(item.story.id) ? "Offline ready" : item.story.audio ? "Audio" : "Read",
           progressLabel: formatReadingProgressLabel(progress),
@@ -2575,7 +2575,7 @@ export function MobileLibraryShell(args: {
           key: `saved-${selection.story.id}`,
           title: selection.story.title,
           subtitle: progress ? formatReadingProgressLabel(progress) ?? selection.book.title : selection.book.title,
-          coverUrl: getCoverUrl(selection.story.cover ?? selection.book.cover),
+          coverUrl: getCoverUrl(selection.story.cover ?? selection.story.coverUrl ?? selection.book.cover),
           meta: `${formatLanguage(selection.story.language ?? selection.book.language)} · ${formatTopic(selection.story.topic ?? selection.book.topic)}`,
           badge: offlineStory ? "Offline ready" : selection.story.audio ? "Audio ready" : "Text",
           progressLabel: formatReadingProgressLabel(progress),
@@ -4645,7 +4645,7 @@ export function MobileLibraryShell(args: {
               key: `personalized-${story.id}`,
               title: story.title,
               subtitle: book.title,
-              coverUrl: getCoverUrl(story.cover ?? book.cover),
+              coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? book.cover),
               meta: `${formatLanguage(story.language ?? book.language)} · ${formatTopic(story.topic ?? book.topic)}`,
               badge: LEVEL_LABELS[story.level ?? book.level],
               onPress: () => openSelection(resolved),
@@ -4992,7 +4992,7 @@ export function MobileLibraryShell(args: {
                 key: `latest-${story.id}`,
                 title: story.title,
                 subtitle: book.title,
-                coverUrl: getCoverUrl(story.cover ?? book.cover),
+                coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? book.cover),
                 meta: `${formatLanguage(story.language ?? book.language)} · ${formatTopic(story.topic ?? book.topic)}`,
                 badge: story.audio ? "Audio ready" : "Read",
                 onPress: () => openSelection(resolved),
@@ -5109,7 +5109,7 @@ export function MobileLibraryShell(args: {
             id: `book-story:${book.id}:${story.id}`,
             title: story.title,
             subtitle: [book.title, language, region, level].filter(Boolean).join(" · "),
-            coverUrl: getCoverUrl(story.cover ?? book.cover),
+            coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? book.cover),
             onPress: () => openSelection(resolved),
           },
           score: score + 10,
@@ -5233,7 +5233,7 @@ export function MobileLibraryShell(args: {
               key: `explore-${story.id}`,
               title: story.title,
               subtitle: book.title,
-              coverUrl: getCoverUrl(story.cover ?? book.cover),
+              coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? book.cover),
               meta: `${formatLanguage(story.language ?? book.language)} · ${formatTopic(story.topic ?? book.topic)}`,
               badge: LEVEL_LABELS[story.level ?? book.level],
               onPress: () => openSelection(resolved),
@@ -5551,7 +5551,9 @@ export function MobileLibraryShell(args: {
               key: `featured-${featuredHomeStory.selection.story.id}`,
               title: featuredHomeStory.selection.story.title,
               coverUrl: getCoverUrl(
-                featuredHomeStory.selection.story.cover ?? featuredHomeStory.selection.book.cover
+                featuredHomeStory.selection.story.cover ??
+                  featuredHomeStory.selection.story.coverUrl ??
+                  featuredHomeStory.selection.book.cover
               ),
               subtitle: featuredHomeStory.selection.book.title,
               meta: `${formatLanguage(
@@ -8993,7 +8995,7 @@ export function MobileLibraryShell(args: {
           title: story.title,
           subtitle: selectedBook.title,
           meta: `${readMinutes} min read · ${topic}`,
-          coverUrl: getCoverUrl(story.cover ?? selectedBook.cover),
+          coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? selectedBook.cover),
           qaLabel: index === 0 ? "qa-book-story-row-0" : `qa-book-story-row-${story.id}`,
           onPress: () => openSelection(resolved),
         }))}
@@ -9001,7 +9003,7 @@ export function MobileLibraryShell(args: {
           key: `suggested-story-${selection.story.id}`,
           title: selection.story.title,
           subtitle: selection.book.title,
-          coverUrl: getCoverUrl(selection.story.cover ?? selection.book.cover),
+          coverUrl: getCoverUrl(selection.story.cover ?? selection.story.coverUrl ?? selection.book.cover),
           meta: `${formatLanguage(selection.story.language ?? selection.book.language)} · ${formatTopic(selection.story.topic ?? selection.book.topic)}`,
           onPress: () => openSelection(selection),
         }))}

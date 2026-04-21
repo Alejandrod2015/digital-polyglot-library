@@ -219,7 +219,7 @@ function toOfflineStory(book: Book, story: Story): OfflineLibraryStory {
     storyId: story.id,
     bookId: book.id,
     title: story.title,
-    coverUrl: story.cover ?? book.cover ?? "",
+    coverUrl: story.cover ?? story.coverUrl ?? book.cover ?? "",
     storySlug: story.slug,
     bookSlug: book.slug,
     language: story.language ?? book.language,
