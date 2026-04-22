@@ -419,6 +419,7 @@ type MobileStandaloneStory = {
   slug: string;
   title: string;
   text: string;
+  vocabRaw?: string | null;
   language?: string | null;
   variant?: string | null;
   region?: string | null;
@@ -428,6 +429,20 @@ type MobileStandaloneStory = {
   coverUrl?: string | null;
   audioUrl?: string | null;
 };
+
+function parseStandaloneVocab(raw?: string | null): VocabItem[] {
+  if (!raw || typeof raw !== "string") return [];
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(
+      (v): v is VocabItem =>
+        v && typeof v === "object" && typeof v.word === "string" && typeof v.definition === "string"
+    );
+  } catch {
+    return [];
+  }
+}
 
 type MobileJourneyTopicSummary = {
   id: string;
@@ -1219,7 +1234,7 @@ function createSelectionFromStandaloneStory(story: MobileStandaloneStory): Reade
     title: story.title,
     text: story.text,
     audio: story.audioUrl || "",
-    vocab: [],
+    vocab: parseStandaloneVocab(story.vocabRaw),
     language,
     region,
     variant: story.variant?.trim() || undefined,
