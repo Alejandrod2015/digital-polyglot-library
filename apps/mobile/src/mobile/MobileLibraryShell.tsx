@@ -3377,7 +3377,7 @@ export function MobileLibraryShell(args: {
       return {
         title: "Checkpoint cleared",
         body: `${topic.label} is fully cleared.`,
-        cta: "Back to map",
+        cta: "Back to journey",
         onPress: () => {
           setActiveScreen("journey");
           setJourneyDetailTopicId(null);
@@ -3392,7 +3392,7 @@ export function MobileLibraryShell(args: {
         body: topic.checkpointPassed
           ? `${topic.label} is already cleared. Jump into the next topic.`
           : `${topic.label} is ready for its checkpoint now.`,
-        cta: topic.checkpointPassed ? "Back to map" : "Start checkpoint",
+        cta: topic.checkpointPassed ? "Back to journey" : "Start checkpoint",
         onPress: () => {
           setActiveScreen("journey");
           if (!topic.checkpointPassed) {
@@ -8298,7 +8298,7 @@ export function MobileLibraryShell(args: {
               testID="qa-journey-back-to-map"
               style={styles.secondaryButton}
             >
-              <Text style={styles.secondaryButtonText}>Back to map</Text>
+              <Text style={styles.secondaryButtonText}>Back to journey</Text>
             </Pressable>
 
             <View style={styles.journeyTopicDetailCard} accessibilityLabel="qa-journey-topic-detail" testID="qa-journey-topic-detail">

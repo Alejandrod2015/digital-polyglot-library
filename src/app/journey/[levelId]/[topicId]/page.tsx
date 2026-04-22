@@ -351,14 +351,14 @@ export default async function JourneyTopicPage({
               eyebrow: "Level unlocked",
               title: `${nextUnlockedLevel.title} is open`,
               body: `You cleared ${topic.label}. The next level is ready when you are.`,
-              cta: "Back to map",
+              cta: "Back to journey",
               href: nextUnlockedLevelHref,
             }
           : {
               eyebrow: "Completed",
               title: "Checkpoint cleared",
               body: `${topic.label} is fully cleared.`,
-              cta: "Back to topics",
+              cta: "Back to journey",
               href: activeVariant ? `/journey?variant=${encodeURIComponent(activeVariant)}` : "/journey",
             }
       : justPracticed === "1" && topicPracticed
@@ -368,7 +368,7 @@ export default async function JourneyTopicPage({
             body: checkpointPassed
               ? `${topic.label} is already cleared. You can move on whenever you want.`
               : `${topic.label} is now ready for its checkpoint.`,
-            cta: checkpointPassed ? "Back to topics" : "Start checkpoint",
+            cta: checkpointPassed ? "Back to journey" : "Start checkpoint",
             href: checkpointPassed
               ? activeVariant
                 ? `/journey?variant=${encodeURIComponent(activeVariant)}`
@@ -394,7 +394,7 @@ export default async function JourneyTopicPage({
             className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white/88 hover:bg-white/10"
           >
             <ChevronLeft size={16} />
-            Back to topics
+            Back to journey
           </Link>
           <div className="flex items-end justify-between gap-3">
             <div>
