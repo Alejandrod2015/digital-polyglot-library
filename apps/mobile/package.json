@@ -14,8 +14,7 @@
     "start": "expo start",
     "ios": "expo start --ios",
     "android": "expo start --android",
-    "web": "expo start --web",
-    "eas-build-pre-install": "npm install --legacy-peer-deps --no-audit --no-fund"
+    "web": "expo start --web"
   },
   "dependencies": {
     "@clerk/expo": "^3.1.4",

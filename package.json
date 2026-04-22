@@ -3,16 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "apps/*",
     "packages/*"
   ],
   "scripts": {
     "dev": "prisma generate && next dev",
     "dev:web": "next dev",
-    "dev:mobile": "npm run start --workspace @digital-polyglot/mobile",
+    "dev:mobile": "npm run start --prefix apps/mobile",
     "dev:studio": "sanity dev --host",
     "build": "prisma generate && next build",
-    "ios": "npm run ios --workspace @digital-polyglot/mobile",
+    "ios": "npm run ios --prefix apps/mobile",
     "start": "next start",
     "lint": "next lint",
     "qa:ux:web:capture": "tsx scripts/captureWebScreenshots.ts",
