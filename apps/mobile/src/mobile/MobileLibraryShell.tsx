@@ -1564,10 +1564,12 @@ export function MobileLibraryShell(args: {
   const practiceClipSoundRef = useRef<Audio.Sound | null>(null);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
-  const storyCompletionShownRef = useRef(new Set<string>());
   const storyOpenedAtRef = useRef<number>(0);
-  const [storyCompletionPopup, setStoryCompletionPopup] = useState(false);
   const hasSeededExplorePreferencesRef = useRef(false);
+  // Keep the last-fetched journey payload per language so switching back to
+  // a previously-opened language renders instantly (no empty flash) while we
+  // silently re-fetch in the background to refresh stats / unlocks.
+  const journeyCacheByLanguageRef = useRef<Map<string, MobileJourneyPayload>>(new Map());
   const practiceSpeechAvailable = getOptionalSpeechModule() !== null;
 
   const effectiveTargetLanguages = preferences.targetLanguages.length > 0
@@ -1708,6 +1710,7 @@ export function MobileLibraryShell(args: {
       setJourneyLanguageLoading(false);
       setJourneyVariantPickerOpen(false);
       setJourneyInsightsByLanguage({});
+      journeyCacheByLanguageRef.current.clear();
       return;
     }
 
@@ -1818,6 +1821,13 @@ export function MobileLibraryShell(args: {
 
       if (journeyResult.status === "fulfilled") {
         setRemoteJourney(journeyResult.value);
+        // Seed the per-language cache with whatever the server returned from
+        // the no-param call so a subsequent explicit switch to the same
+        // language skips the empty state entirely.
+        const seedLanguage = journeyResult.value?.language;
+        if (typeof seedLanguage === "string" && seedLanguage.trim()) {
+          journeyCacheByLanguageRef.current.set(seedLanguage.toLowerCase(), journeyResult.value);
+        }
       } else {
         setRemoteJourney(null);
       }
@@ -1836,27 +1846,35 @@ export function MobileLibraryShell(args: {
   const loadJourneyForLanguage = useCallback(
     async (language: string, options: { clearPrevious?: boolean } = {}) => {
       if (!sessionToken) return;
+      const cacheKey = language.toLowerCase();
+      const cached = journeyCacheByLanguageRef.current.get(cacheKey);
       // For silent re-fetches (Clerk token refresh, language-mismatch check
       // after hydrate) we keep the currently-rendered journey visible so the
       // grid doesn't flash empty for a split-second. For explicit user-driven
       // language switches we DO clear it — otherwise the old language's story
       // covers ghost under the new header while the new payload loads.
+      // However, if we already have a cached payload for this language we can
+      // render it instantly and then refresh in the background — no empty
+      // state at all.
       const shouldClearPrevious = options.clearPrevious !== false;
       setSelectedJourneyTrackId(null);
       setSelectedJourneyLevelId(null);
       setSelectedJourneyTopicId(null);
       setJourneyDetailTopicId(null);
       setJourneyVariantPickerOpen(false);
-      if (shouldClearPrevious) {
+      if (cached) {
+        setRemoteJourney(cached);
+      } else if (shouldClearPrevious) {
         setRemoteJourney(null);
       }
-      setJourneyLanguageLoading(true);
+      setJourneyLanguageLoading(!cached);
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
           baseUrl: mobileConfig.apiBaseUrl,
           path: `/api/mobile/journey?language=${encodeURIComponent(language)}`,
           token: sessionToken,
         });
+        journeyCacheByLanguageRef.current.set(cacheKey, payload);
         setRemoteJourney(payload);
         const firstTrackInsights = payload.tracks?.[0]?.insights ?? null;
         setJourneyInsightsByLanguage((prev) => ({
@@ -1875,7 +1893,8 @@ export function MobileLibraryShell(args: {
           setJourneyVariantPickerOpen(true);
         }
       } catch {
-        setRemoteJourney(null);
+        // Only drop to empty if we have nothing cached to fall back on.
+        if (!cached) setRemoteJourney(null);
       } finally {
         setJourneyLanguageLoading(false);
       }
@@ -2920,6 +2939,14 @@ export function MobileLibraryShell(args: {
   async function openStandaloneStory(story: RemoteLibraryStory) {
     if (!story.storySlug) return;
 
+    // Start prefetching the big reader cover at the same size the reader will
+    // render it. This overlaps the image network transfer with the
+    // standalone-story fetch and the navigation transition, so by the time
+    // ReaderScreen mounts the cover is usually already cached locally.
+    if (story.coverUrl) {
+      void Image.prefetch(getCoverUrl(story.coverUrl, 640)).catch(() => undefined);
+    }
+
     try {
       const payload = await apiFetch<{ stories?: MobileStandaloneStory[] }>({
         baseUrl: mobileConfig.apiBaseUrl,
@@ -2968,20 +2995,6 @@ export function MobileLibraryShell(args: {
         ...current.filter((entry) => entry.storyId !== story.id),
       ].slice(0, 8)
     );
-
-    // Show "what's next" popup for standalone/journey stories when nearing completion
-    // Require both scroll position (92%+) AND minimum reading time (30s) to avoid
-    // false positives from fast scrolling without actually reading.
-    const readingTimeSec = (Date.now() - storyOpenedAtRef.current) / 1000;
-    if (
-      book.id === "standalone-book" &&
-      (details?.progressRatio ?? 0) >= 0.92 &&
-      readingTimeSec >= 30 &&
-      !storyCompletionShownRef.current.has(story.id)
-    ) {
-      storyCompletionShownRef.current.add(story.id);
-      setStoryCompletionPopup(true);
-    }
   }
 
   async function savePreferences() {
@@ -3328,6 +3341,11 @@ export function MobileLibraryShell(args: {
 
   async function openJourneyStory(story: MobileJourneyTopicSummary["stories"][number]) {
     if (!story.storySlug) return;
+
+    // Warm the large reader cover while we fetch the story body + navigate.
+    if (story.coverUrl) {
+      void Image.prefetch(getCoverUrl(story.coverUrl, 640)).catch(() => undefined);
+    }
 
     // Use locally cached version if available
     const offlineCopy = offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug);
@@ -8925,30 +8943,6 @@ export function MobileLibraryShell(args: {
           isFavoriteWord={isFavoriteWord}
           onToggleFavoriteWord={(item, contextSentence) => void toggleFavoriteWord(item, contextSentence)}
         />
-        {storyCompletionPopup ? (
-          <View style={styles.storyCompletionOverlay}>
-            <View style={styles.storyCompletionCard}>
-              <Text style={styles.storyCompletionTitle}>Story complete</Text>
-              <Text style={styles.storyCompletionBody}>Head back to your journey to see what to read next.</Text>
-              <Pressable
-                onPress={() => {
-                  setStoryCompletionPopup(false);
-                  setSelection(null);
-                  setActiveScreen("journey");
-                }}
-                style={[styles.inlineButton, styles.primaryButton]}
-              >
-                <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Back to Journey</Text>
-              </Pressable>
-              <Pressable
-                onPress={() => setStoryCompletionPopup(false)}
-                style={styles.secondaryButton}
-              >
-                <Text style={styles.secondaryButtonText}>Keep reading</Text>
-              </Pressable>
-            </View>
-          </View>
-        ) : null}
       </View>
     );
   }
@@ -11714,35 +11708,6 @@ const styles = StyleSheet.create({
   },
   readerWrapper: {
     flex: 1,
-  },
-  storyCompletionOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(5, 14, 26, 0.82)",
-    justifyContent: "flex-end",
-    paddingBottom: 40,
-    paddingHorizontal: 20,
-  },
-  storyCompletionCard: {
-    backgroundColor: "#14243b",
-    borderRadius: 24,
-    padding: 24,
-    gap: 14,
-    borderWidth: 1,
-    borderColor: "#27405f",
-    shadowColor: "#000",
-    shadowOpacity: 0.3,
-    shadowRadius: 20,
-    shadowOffset: { width: 0, height: 8 },
-  },
-  storyCompletionTitle: {
-    color: "#ffffff",
-    fontSize: 22,
-    fontWeight: "800",
-  },
-  storyCompletionBody: {
-    color: "#aebcd3",
-    fontSize: 15,
-    lineHeight: 22,
   },
   storyList: {
     gap: 12,

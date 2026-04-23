@@ -6,6 +6,7 @@ import { books } from "@/data/books";
 import { prisma } from "@/lib/prisma";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
+import { getJourneyStoryBySlug } from "@/lib/journeyStories";
 import { getCreateStoryMirrorBySlug } from "@/lib/userStories";
 import { buildPracticeItemsFromStory, parseLooseVocab } from "@/lib/storyPracticeItems";
 import { mergePracticeItemsByWord, type PracticeFavoriteItem } from "@/lib/practiceExercises";
@@ -46,16 +47,21 @@ export async function GET(request: NextRequest) {
       practiceSource: "curriculum",
     });
   } else {
+    // Try Sanity standalones first, then Prisma journey stories (Studio-created),
+    // then userStory (Polyglot / Create-page generated). Without the journey
+    // fallback the mobile "Start practice" prompt 404s for every Studio story.
     const standaloneStory = await getStandaloneStoryBySlug(storySlug);
+    const journeyStory = standaloneStory ? null : await getJourneyStoryBySlug(storySlug);
+    const resolvedStandalone = standaloneStory ?? journeyStory;
 
-    if (standaloneStory) {
+    if (resolvedStandalone) {
       storyItems = buildPracticeItemsFromStory({
-        title: standaloneStory.title,
-        slug: standaloneStory.slug,
-        text: standaloneStory.text,
-        language: standaloneStory.language,
-        sourcePath: `/stories/${standaloneStory.slug}?source=standalone`,
-        vocab: parseLooseVocab(standaloneStory.vocabRaw),
+        title: resolvedStandalone.title,
+        slug: resolvedStandalone.slug,
+        text: resolvedStandalone.text,
+        language: resolvedStandalone.language,
+        sourcePath: `/stories/${resolvedStandalone.slug}?source=standalone`,
+        vocab: parseLooseVocab(resolvedStandalone.vocabRaw),
         practiceSource: "curriculum",
       });
     } else {

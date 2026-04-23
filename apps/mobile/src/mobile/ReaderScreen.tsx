@@ -296,10 +296,29 @@ export function ReaderScreen(args: {
   // Only auto-open the practice prompt once per story view so dismissing it
   // doesn't cause it to re-pop every time the user scrolls near the bottom.
   const promptShownForStoryRef = useRef<string | null>(null);
+  const storyOpenedAtRef = useRef<number>(Date.now());
   useEffect(() => {
     setEndOfStoryPromptVisible(false);
     promptShownForStoryRef.current = null;
+    storyOpenedAtRef.current = Date.now();
   }, [story.id]);
+  // Minimum elapsed time before the read-path trigger fires. Rejects quick
+  // scroll-throughs: 30s absolute floor, scaled for long stories by
+  // wordCount / 180 WPM * 0.5 (read at least half the theoretical L2 reading
+  // time). A 600-word story → ~100 s floor. A 200-word story → 30 s floor.
+  const readFloorSec = useMemo(() => {
+    const wordCount = story.text ? story.text.trim().split(/\s+/).filter(Boolean).length : 0;
+    const scaled = (wordCount / 180) * 60 * 0.5;
+    return Math.max(30, Math.round(scaled));
+  }, [story.text]);
+
+  function maybeFireEndOfStoryPrompt() {
+    if (!onOpenPractice) return;
+    if (vocab.length === 0) return;
+    if (promptShownForStoryRef.current === story.id) return;
+    promptShownForStoryRef.current = story.id;
+    setEndOfStoryPromptVisible(true);
+  }
   const lastTrackedStoryId = useRef<string | null>(null);
   const lastPersistedProgressSecRef = useRef<number | null>(null);
   const lastPersistedAtRef = useRef<number>(0);
@@ -460,16 +479,14 @@ export function ReaderScreen(args: {
     }
     trackReadingPosition(ratio, nextBlockIndex);
 
-    // Once the reader scrolls past ~95% of the story, surface the practice
-    // prompt as a popup. Fires once per story; dismissing it does not re-open.
-    if (
-      onOpenPractice &&
-      vocab.length > 0 &&
-      ratio >= 0.95 &&
-      promptShownForStoryRef.current !== story.id
-    ) {
-      promptShownForStoryRef.current = story.id;
-      setEndOfStoryPromptVisible(true);
+    // Read-path trigger: scroll reached ~95% AND user has been on the screen
+    // at least `readFloorSec` seconds. The time gate rejects fast drags; the
+    // scroll gate rejects "read the intro and left".
+    if (ratio >= 0.95) {
+      const elapsedSec = (Date.now() - storyOpenedAtRef.current) / 1000;
+      if (elapsedSec >= readFloorSec) {
+        maybeFireEndOfStoryPrompt();
+      }
     }
   }
 
@@ -543,7 +560,10 @@ export function ReaderScreen(args: {
         </View>
 
         {coverUrl ? (
-          <ProgressiveImage uri={getCoverUrl(coverUrl, 1080)} style={styles.readerCover} resizeMode="cover" />
+          // w=640 is plenty for the 196pt-tall hero at @3x and is usually
+          // already in the Next.js image cache because smaller cards share
+          // the same bucket — keeps first render fast.
+          <ProgressiveImage uri={getCoverUrl(coverUrl, 640)} style={styles.readerCover} resizeMode="cover" />
         ) : null}
 
         <View style={styles.textWrap}>
@@ -715,6 +735,12 @@ export function ReaderScreen(args: {
                   : ratio >= 0.95 || progressSec >= 15;
               if (shouldPersist) {
                 void persistContinueListening(progressSec, durationSec);
+              }
+              // Audio-path trigger for the end-of-story practice prompt: if
+              // the user listened to ≥ 90% of the audio duration, they
+              // finished the story even without ever scrolling.
+              if (ratio >= 0.9) {
+                maybeFireEndOfStoryPrompt();
               }
             }
 
@@ -1023,21 +1049,19 @@ const styles = StyleSheet.create({
     lineHeight: 35,
   },
   highlightedWord: {
-    // Keep the text itself at full brightness (same as the surrounding
-    // paragraph) and let a saturated translucent amber act as the
-    // "highlighter marker" underneath. The previous light-yellow text on a
-    // muted yellow background had almost no contrast because both were warm
-    // low-saturation tones.
-    color: "#ffffff",
+    // Solid amber "highlighter marker" with dark text — same as printed
+    // highlighter pens. Avoids the muddy look a translucent fill had against
+    // the dark-blue page. Slight rounding softens the corners without
+    // looking like a pill.
+    color: "#1a1205",
     fontSize: 20,
     lineHeight: 35,
-    backgroundColor: "rgba(251, 191, 36, 0.28)",
-    borderBottomWidth: 2,
-    borderBottomColor: "#fbbf24",
+    backgroundColor: "#f8c15c",
     fontWeight: "700",
-    paddingHorizontal: 3,
+    paddingHorizontal: 4,
     paddingVertical: 0,
-    borderRadius: 4,
+    borderRadius: 6,
+    overflow: "hidden",
   },
   vocabOverlay: {
     position: "absolute",

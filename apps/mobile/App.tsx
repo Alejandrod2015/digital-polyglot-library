@@ -2,7 +2,7 @@ import "./src/polyfills";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ClerkProvider, useAuth, useClerk } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
-import { Linking, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Linking, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
 import { AuthScreen } from "./src/auth/AuthScreen";
 import { exchangeClerkSessionForMobileToken } from "./src/auth/exchangeClerkSession";
 import {
@@ -270,11 +270,17 @@ function MobileAppRoot() {
   const shouldShowSplash = loadingSession || clerkHydrating || clerkSyncPending;
 
   if (shouldShowSplash) {
+    // Minimal branded splash that mirrors the app's dark palette. We show the
+    // wordmark plus a quiet spinner instead of a generic "Loading..." label so
+    // the transition from the native iOS LaunchScreen into the JS UI feels
+    // like one continuous brand experience — same pattern most polished apps
+    // (Spotify, Duolingo, etc.) use while their main shell is hydrating.
     return (
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="light-content" />
         <View style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>Loading...</Text>
+          <Text style={styles.loadingBrand}>Digital Polyglot</Text>
+          <ActivityIndicator color="#f8c15c" style={styles.loadingSpinner} />
         </View>
       </SafeAreaView>
     );
@@ -346,5 +352,15 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 24,
     textAlign: "center",
+  },
+  loadingBrand: {
+    color: "#f5f7fb",
+    fontSize: 22,
+    fontWeight: "800",
+    letterSpacing: 0.4,
+    textAlign: "center",
+  },
+  loadingSpinner: {
+    marginTop: 18,
   },
 });
