@@ -307,8 +307,11 @@ export function ReaderScreen(args: {
   const [activeBlockIndex, setActiveBlockIndex] = useState(
     Math.min(Math.max(initialProgress?.currentBlockIndex ?? 0, 0), Math.max(blocks.length - 1, 0))
   );
+  // Show the full definition — the bubble grows vertically and defs from the
+  // generator now target 17-25 words (~100-150 chars), so the old 56-char
+  // shortener was truncating almost everything.
   const compactDefinition = useMemo(
-    () => shortenDefinition(selectedVocab?.definition),
+    () => selectedVocab?.definition?.replace(/\s+/g, " ").trim() || undefined,
     [selectedVocab?.definition]
   );
 

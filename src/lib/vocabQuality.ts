@@ -18,6 +18,37 @@ function hasDetailedDefinition(definition: string): boolean {
   return wordCount(definition) >= 17;
 }
 
+// Pragmatic detector for "this definition is not in English" without depending
+// on a language-detection library. Catches the two common failure modes:
+//   1) Heavy use of accented characters typical of Spanish / German / French /
+//      Italian / Portuguese (ñ, ü, ß, é, etc.)
+//   2) A definition of 15+ words that contains none of the ubiquitous English
+//      function words/lead-ins the prompt asks the model to use.
+// A single loan word like "Frühstück" inside an otherwise English sentence will
+// not trip the first heuristic. A definition written entirely in e.g. German
+// will trip both.
+function looksNotInEnglish(definition: string): boolean {
+  const text = definition.trim();
+  if (!text) return false;
+  const nonAsciiLetterCount = (text.match(/[À-ÿ]/g) ?? []).length;
+  const letterCount = (text.match(/[A-Za-zÀ-ÿ]/g) ?? []).length;
+  if (letterCount > 0 && nonAsciiLetterCount / letterCount >= 0.06) {
+    return true;
+  }
+  const wc = wordCount(text);
+  if (wc < 6) return false;
+  const lower = ` ${text.toLowerCase()} `;
+  const englishMarkers = [
+    " the ", " a ", " an ", " to ", " of ", " in ", " on ", " is ", " are ",
+    " was ", " were ", " be ", " used ", " means ", " refers ", " describes ",
+    " something ", " someone ", " when ", " how ", " expresses ", " indicates ",
+    " said ", " often ", " usually ", " typically ", " without ", " with ",
+    " for ", " about ", " who ", " that ", " this ",
+  ];
+  const hasAnyMarker = englishMarkers.some((marker) => lower.includes(marker));
+  return !hasAnyMarker;
+}
+
 function isLikelyDirectTranslation(definition: string): boolean {
   const normalized = definition.trim().toLowerCase();
   const wc = wordCount(normalized);
@@ -42,7 +73,11 @@ function isLikelyDirectTranslation(definition: string): boolean {
 }
 
 export function hasPedagogicalDefinition(definition: string): boolean {
-  return hasDetailedDefinition(definition) && !isLikelyDirectTranslation(definition);
+  return (
+    hasDetailedDefinition(definition) &&
+    !isLikelyDirectTranslation(definition) &&
+    !looksNotInEnglish(definition)
+  );
 }
 
 export function normalizeVocab(raw: unknown): VocabItem[] {
@@ -135,7 +170,7 @@ Rules:
       model: "gpt-4o-mini",
       temperature: 0.2,
       messages: [
-        { role: "system", content: "You rewrite vocabulary definitions for pedagogy. Output JSON only." },
+        { role: "system", content: "You rewrite vocabulary definitions for pedagogy. CRITICAL: every definition MUST be in English, never in the target language. Output JSON only." },
         { role: "user", content: `${enrichPrompt}\n\n${JSON.stringify(vocab)}` },
       ],
     });
@@ -167,7 +202,7 @@ Rules:
       model: "gpt-4o-mini",
       temperature: 0.2,
       messages: [
-        { role: "system", content: "You rewrite definitions for pedagogy. Output JSON only." },
+        { role: "system", content: "You rewrite vocabulary definitions for pedagogy. CRITICAL: every definition MUST be in English, never in the target language. Output JSON only." },
         { role: "user", content: `${strictPrompt}\n\n${JSON.stringify(stillLowQuality)}` },
       ],
     });

@@ -213,7 +213,11 @@ Return ONLY valid JSON:
       model: "gpt-4o-mini",
       temperature: attempt === 0 ? 0.8 : 0.6,
       messages: [
-        { role: "system", content: "You are a creative story generator for language learners." },
+        {
+          role: "system",
+          content:
+            "You are a creative story generator for language learners. CRITICAL RULE: the story body is written in the target language, but every vocabulary definition you emit MUST be written in clear English, never in the target language. Definitions that are not in English will be rejected and rewritten.",
+        },
         { role: "user", content: prompt },
       ],
     });

@@ -498,15 +498,21 @@ const getStudioJourneysForLanguage = unstable_cache(
         language: { equals: language, mode: "insensitive" },
         status: { not: "archived" },
       },
+      // Deterministic order across Journey records for a variant so the UI
+      // shows them the same way every time.
+      orderBy: { createdAt: "asc" },
       include: {
         stories: {
           where: { status: "published", NOT: [{ text: null }, { title: null }] },
-          orderBy: [{ level: "asc" }, { slotIndex: "asc" }],
+          // Include `topic` in the order so stories with the same level/slot
+          // don't get shuffled between topics; `slotIndex` is the sequence
+          // within a topic, as assigned by the Studio creation flow.
+          orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
         },
       },
     });
   },
-  ["studio-journeys-by-language-v1"],
+  ["studio-journeys-by-language-v2"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -531,6 +537,22 @@ async function buildJourneyVariantsFromStudio(
     sortVariants(a, b)
   )) {
     const levelMap = new Map<string, Map<string, JourneyStoryItem[]>>();
+
+    // Seed topic slots per level using the order the user defined in Studio
+    // (Journey.topics[] and Journey.levels[]). JS Maps preserve insertion
+    // order, so pre-creating entries here is enough to freeze the topic order
+    // before any stories are pushed below.
+    for (const journey of group) {
+      const levelSlugs = (journey.levels ?? []).map((level) => level.trim().toLowerCase()).filter(Boolean);
+      const topicSlugsInOrder = (journey.topics ?? []).map((t) => t.trim().toLowerCase()).filter(Boolean);
+      for (const levelId of levelSlugs) {
+        if (!levelMap.has(levelId)) levelMap.set(levelId, new Map());
+        const topicMap = levelMap.get(levelId)!;
+        for (const topicSlug of topicSlugsInOrder) {
+          if (!topicMap.has(topicSlug)) topicMap.set(topicSlug, []);
+        }
+      }
+    }
 
     for (const journey of group) {
       for (const story of journey.stories) {
