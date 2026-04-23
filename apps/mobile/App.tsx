@@ -2,7 +2,7 @@ import "./src/polyfills";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ClerkProvider, useAuth, useClerk } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
-import { ActivityIndicator, Linking, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Image, Linking, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
 import { AuthScreen } from "./src/auth/AuthScreen";
 import { exchangeClerkSessionForMobileToken } from "./src/auth/exchangeClerkSession";
 import {
@@ -270,17 +270,21 @@ function MobileAppRoot() {
   const shouldShowSplash = loadingSession || clerkHydrating || clerkSyncPending;
 
   if (shouldShowSplash) {
-    // Minimal branded splash that mirrors the app's dark palette. We show the
-    // wordmark plus a quiet spinner instead of a generic "Loading..." label so
-    // the transition from the native iOS LaunchScreen into the JS UI feels
-    // like one continuous brand experience — same pattern most polished apps
-    // (Spotify, Duolingo, etc.) use while their main shell is hydrating.
+    // Branded splash: the full colour logo on a white background matches the
+    // native iOS LaunchScreen (systemBackgroundColor is white) so there is no
+    // visible flash between the native launch image and this JS splash while
+    // Clerk + our SecureStore token exchange finish hydrating.
     return (
-      <SafeAreaView style={styles.safeArea}>
-        <StatusBar barStyle="light-content" />
-        <View style={styles.loadingContainer}>
-          <Text style={styles.loadingBrand}>Digital Polyglot</Text>
-          <ActivityIndicator color="#f8c15c" style={styles.loadingSpinner} />
+      <SafeAreaView style={[styles.safeArea, styles.splashSafeArea]}>
+        <StatusBar barStyle="dark-content" />
+        <View style={styles.splashContainer}>
+          <Image
+            source={require("./assets/splash-logo.png")}
+            style={styles.splashLogo}
+            resizeMode="contain"
+            accessibilityLabel="Digital Polyglot"
+          />
+          <ActivityIndicator color="#1e62e3" style={styles.loadingSpinner} />
         </View>
       </SafeAreaView>
     );
@@ -362,5 +366,19 @@ const styles = StyleSheet.create({
   },
   loadingSpinner: {
     marginTop: 18,
+  },
+  splashSafeArea: {
+    backgroundColor: "#ffffff",
+  },
+  splashContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 24,
+    backgroundColor: "#ffffff",
+  },
+  splashLogo: {
+    width: 260,
+    height: 132,
   },
 });

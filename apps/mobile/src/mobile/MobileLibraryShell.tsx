@@ -37,6 +37,7 @@ import {
 import { requireOptionalNativeModule } from "expo-modules-core";
 import { ReaderScreen } from "./ReaderScreen";
 import { getCoverUrl } from "./coverUrl";
+import { NextActionGlow } from "./NextActionGlow";
 import {
   BookHomeCard,
   BookWebCard,
@@ -4515,6 +4516,31 @@ export function MobileLibraryShell(args: {
     [preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
   );
 
+  // Home carousel wants a uniform vertical card shape (BookHomeCard). Build
+  // the book subset of "New releases" with the same fields so the carousel
+  // renders at one consistent width/height instead of mixing horizontal
+  // BookWebCards with vertical story cards.
+  const latestBookHomeCards = useMemo(
+    () =>
+      latestBookCards.map((item) => {
+        const book = CATALOG_BOOKS.find((b) => `book-${b.id}` === item.key);
+        const subtitle =
+          book
+            ? formatLanguageAndRegion(book.language, book.region ?? "") || "Book"
+            : "Book";
+        const meta = [formatLevel(item.level), item.statsLine].filter(Boolean).join(" · ");
+        return {
+          key: item.key,
+          title: item.title,
+          coverUrl: item.coverUrl,
+          subtitle,
+          meta,
+          onPress: item.onPress,
+        };
+      }),
+    [latestBookCards]
+  );
+
   useEffect(() => {
     const urls = [
       ...latestBookCards.slice(0, 4).map((c) => c.coverUrl),
@@ -5540,58 +5566,6 @@ export function MobileLibraryShell(args: {
         </View>
       </View>
 
-      {isSignedIn ? (
-        <View style={styles.section}>
-          <View
-            style={[
-              styles.card,
-              styles.dailyLoopCard,
-              activeOnboardingTourTarget === "home" ? styles.onboardingHighlightedSurface : null,
-            ]}
-          >
-            <Text style={styles.sectionEyebrow}>Today&apos;s loop</Text>
-            <Text style={styles.dailyLoopTitle}>{homeLoopSummary.title}</Text>
-            <Text style={styles.metaLine}>{homeLoopSummary.body}</Text>
-            <View style={styles.bookActionsRow}>
-              <Pressable
-                onPress={() => {
-                  if (continueReading.length > 0) {
-                    openSelection(continueReading[0]);
-                    return;
-                  }
-                  if (dueFavoritesCount > 0) {
-                    setActiveScreen("practice");
-                    void openPracticeMode(recommendedPracticeMode, true, undefined, "due");
-                    return;
-                  }
-                  setActiveScreen("journey");
-                }}
-                style={[styles.inlineButton, styles.primaryButton]}
-              >
-                <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>{homeLoopSummary.primaryLabel}</Text>
-              </Pressable>
-              <Pressable
-                onPress={() => {
-                  if (continueReading.length > 0) {
-                    setActiveScreen("practice");
-                    void openPracticeMode(recommendedPracticeMode, true, undefined, "due");
-                    return;
-                  }
-                  if (dueFavoritesCount > 0) {
-                    setActiveScreen("journey");
-                    return;
-                  }
-                  setActiveScreen("explore");
-                }}
-                style={styles.inlineButton}
-              >
-                <Text style={styles.inlineButtonText}>{homeLoopSummary.secondaryLabel}</Text>
-              </Pressable>
-            </View>
-          </View>
-        </View>
-      ) : null}
-
       {remoteProgress?.gamification ? (
         <View style={styles.section}>
           <Pressable
@@ -5618,42 +5592,6 @@ export function MobileLibraryShell(args: {
             </View>
             <Feather name="chevron-right" size={14} color="#6f88a8" />
           </Pressable>
-        </View>
-      ) : null}
-
-      {featuredHomeStory ? (
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>{featuredHomeStory.label}</Text>
-              <Text style={styles.sectionTitle}>
-                {effectivePlan === "free"
-                  ? "Your free story"
-                  : effectivePlan === "basic"
-                    ? "Your daily story"
-                    : "Featured story"}
-              </Text>
-            </View>
-          </View>
-          <BookHomeCard
-            item={{
-              key: `featured-${featuredHomeStory.selection.story.id}`,
-              title: featuredHomeStory.selection.story.title,
-              coverUrl: getCoverUrl(
-                featuredHomeStory.selection.story.cover ??
-                  featuredHomeStory.selection.story.coverUrl ??
-                  featuredHomeStory.selection.book.cover
-              ),
-              subtitle: featuredHomeStory.selection.book.title,
-              meta: `${formatLanguage(
-                featuredHomeStory.selection.story.language ?? featuredHomeStory.selection.book.language
-              )} · ${formatTopic(
-                featuredHomeStory.selection.story.topic ?? featuredHomeStory.selection.book.topic
-              )}`,
-              onPress: () => openSelection(featuredHomeStory.selection),
-            }}
-            fullWidth
-          />
         </View>
       ) : null}
 
@@ -5696,6 +5634,42 @@ export function MobileLibraryShell(args: {
               ))}
             </ScrollView>
           )}
+        </View>
+      ) : null}
+
+      {featuredHomeStory ? (
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <View>
+              <Text style={styles.sectionEyebrow}>{featuredHomeStory.label}</Text>
+              <Text style={styles.sectionTitle}>
+                {effectivePlan === "free"
+                  ? "Your free story"
+                  : effectivePlan === "basic"
+                    ? "Your daily story"
+                    : "Featured story"}
+              </Text>
+            </View>
+          </View>
+          <BookHomeCard
+            item={{
+              key: `featured-${featuredHomeStory.selection.story.id}`,
+              title: featuredHomeStory.selection.story.title,
+              coverUrl: getCoverUrl(
+                featuredHomeStory.selection.story.cover ??
+                  featuredHomeStory.selection.story.coverUrl ??
+                  featuredHomeStory.selection.book.cover
+              ),
+              subtitle: featuredHomeStory.selection.book.title,
+              meta: `${formatLanguage(
+                featuredHomeStory.selection.story.language ?? featuredHomeStory.selection.book.language
+              )} · ${formatTopic(
+                featuredHomeStory.selection.story.topic ?? featuredHomeStory.selection.book.topic
+              )}`,
+              onPress: () => openSelection(featuredHomeStory.selection),
+            }}
+            fullWidth
+          />
         </View>
       ) : null}
 
@@ -5745,8 +5719,18 @@ export function MobileLibraryShell(args: {
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
           {[
-            ...latestBookCards.slice(0, 5).map((item) => (
-              <BookWebCard key={item.key} item={item} />
+            ...latestBookHomeCards.slice(0, 5).map((item) => (
+              <BookHomeCard
+                key={item.key}
+                item={{
+                  key: item.key,
+                  title: item.title,
+                  coverUrl: item.coverUrl,
+                  subtitle: item.subtitle,
+                  meta: item.meta,
+                  onPress: item.onPress,
+                }}
+              />
             )),
             ...[...latestStoryCards.slice(0, 5), ...homeStandaloneStoryCards.slice(0, 3)].slice(0, 6).map((item) => (
               <BookHomeCard
@@ -6778,16 +6762,7 @@ export function MobileLibraryShell(args: {
                   accessibilityRole="button"
                   accessibilityLabel={`Remove ${item.word}`}
                   hitSlop={12}
-                  onPress={() =>
-                    void toggleFavoriteWord(
-                      {
-                        word: item.word,
-                        definition: item.translation,
-                        type: item.wordType ?? undefined,
-                      } as VocabItem,
-                      item.exampleSentence ?? undefined
-                    )
-                  }
+                  onPress={() => void removeFavoriteItem(item)}
                   style={({ pressed }) => [
                     styles.favoriteRemove,
                     pressed ? styles.favoriteRemovePressed : null,
@@ -8281,6 +8256,14 @@ export function MobileLibraryShell(args: {
                   {activeJourneyLevel.topics.map((topic, index) => {
                     const active = selectedJourneyTopicId === topic.slug;
                     const hasStories = topic.storyCount > 0;
+                    // Glow the first unlocked topic that still needs work —
+                    // the one the user is most likely to tap next.
+                    const isNextAction =
+                      topic.unlocked &&
+                      !topic.checkpointPassed &&
+                      activeJourneyLevel.topics.findIndex(
+                        (t) => t.unlocked && !t.checkpointPassed
+                      ) === index;
                     const previousTopic = index > 0 ? activeJourneyLevel.topics[index - 1] : null;
                     const previousTopicRemaining = previousTopic
                       ? Math.max(previousTopic.requiredStoryCount - previousTopic.completedStoryCount, 0)
@@ -8330,18 +8313,20 @@ export function MobileLibraryShell(args: {
                             ]}
                           >
                             <Text style={styles.journeyMapBadge}>{badge}</Text>
-                            <View style={styles.journeyMapArt}>
-                              {topic.stories[0]?.coverUrl ? (
-                                <ProgressiveImage
-                                  uri={getCoverUrl(topic.stories[0].coverUrl)}
-                                  style={styles.journeyMapArtImage}
-                                />
-                              ) : (
-                                <View style={styles.journeyMapArtFallback}>
-                                  <MaterialCommunityIcons name="map-marker-path" size={22} color="#9fb5d0" />
-                                </View>
-                              )}
-                            </View>
+                            <NextActionGlow active={isNextAction} borderRadius={20} inset={-3}>
+                              <View style={styles.journeyMapArt}>
+                                {topic.stories[0]?.coverUrl ? (
+                                  <ProgressiveImage
+                                    uri={getCoverUrl(topic.stories[0].coverUrl)}
+                                    style={styles.journeyMapArtImage}
+                                  />
+                                ) : (
+                                  <View style={styles.journeyMapArtFallback}>
+                                    <MaterialCommunityIcons name="map-marker-path" size={22} color="#9fb5d0" />
+                                  </View>
+                                )}
+                              </View>
+                            </NextActionGlow>
                             <Text
                               style={[
                                 styles.journeyMapTitle,
@@ -8439,6 +8424,12 @@ export function MobileLibraryShell(args: {
                     Boolean(offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug));
                   const isDownloading = offlineStoryIdInFlight === story.id;
                   const alignRight = index % 2 === 1;
+                  // Glow the first unlocked, not-yet-completed story so the
+                  // user can see at a glance where to resume in this topic.
+                  const isNextAction =
+                    story.unlocked &&
+                    !story.completed &&
+                    activeJourneyTopic.stories.findIndex((s) => s.unlocked && !s.completed) === index;
 
                   return (
                     <View key={story.id} style={styles.journeyMapSequence}>
@@ -8460,18 +8451,20 @@ export function MobileLibraryShell(args: {
                           ]}
                         >
                           <Text style={styles.journeyMapBadge}>{badge}</Text>
-                          <View style={styles.journeyMapArt}>
-                            {story.coverUrl ? (
-                              <ProgressiveImage
-                                uri={getCoverUrl(story.coverUrl)}
-                                style={styles.journeyMapArtImage}
-                              />
-                            ) : (
-                              <View style={styles.journeyMapArtFallback}>
-                                <MaterialCommunityIcons name="book-open-page-variant" size={22} color="#9fb5d0" />
-                              </View>
-                            )}
-                          </View>
+                          <NextActionGlow active={isNextAction} borderRadius={20} inset={-3}>
+                            <View style={styles.journeyMapArt}>
+                              {story.coverUrl ? (
+                                <ProgressiveImage
+                                  uri={getCoverUrl(story.coverUrl)}
+                                  style={styles.journeyMapArtImage}
+                                />
+                              ) : (
+                                <View style={styles.journeyMapArtFallback}>
+                                  <MaterialCommunityIcons name="book-open-page-variant" size={22} color="#9fb5d0" />
+                                </View>
+                              )}
+                            </View>
+                          </NextActionGlow>
                           <Text
                             style={[
                               styles.journeyMapTitle,
@@ -8489,13 +8482,17 @@ export function MobileLibraryShell(args: {
                               : void downloadJourneyStoryOffline(story)
                             }
                             disabled={isDownloading}
-                            style={styles.journeyStoryDownloadBtn}
+                            hitSlop={10}
+                            style={[
+                              styles.journeyStoryDownloadBadge,
+                              alignRight ? styles.journeyStoryDownloadBadgeRight : styles.journeyStoryDownloadBadgeLeft,
+                            ]}
                             accessibilityLabel={isOfflineReady ? "Remove offline" : "Download for offline"}
                           >
                             <Feather
                               name={isDownloading ? "loader" : isOfflineReady ? "check-circle" : "download-cloud"}
-                              size={17}
-                              color={isOfflineReady ? "#6ab8ff" : "#5a7da0"}
+                              size={15}
+                              color={isOfflineReady ? "#8ef0c6" : "#f5f7fb"}
                             />
                           </Pressable>
                         ) : null}
@@ -8524,90 +8521,6 @@ export function MobileLibraryShell(args: {
                 })}
               </View>
 
-              <View style={styles.journeyTopicRowActions}>
-                {activeJourneyTopic.hasDueReview ? (
-                  <Pressable
-                    onPress={() => {
-                      void openJourneyPractice({
-                        variantId: activeJourneyTrack?.id ?? null,
-                        levelId: activeJourneyLevel.id,
-                        topicId: activeJourneyTopic.slug,
-                        topicLabel: activeJourneyTopic.label,
-                        review: true,
-                      });
-                    }}
-                    style={[styles.journeyTopicAction, styles.journeyTopicActionPrimary]}
-                  >
-                    <Text style={[styles.journeyTopicActionText, styles.journeyTopicActionTextPrimary]}>{activeJourneyTopic.dueReviewCount} due review</Text>
-                  </Pressable>
-                ) : null}
-                <Pressable
-                  onPress={() =>
-                    openJourneyTopicInExplore({
-                      topicLabel: activeJourneyTopic.label,
-                      trackId: activeJourneyTrack?.id ?? null,
-                    })
-                  }
-                  style={styles.journeyTopicAction}
-                >
-                  <Text style={styles.journeyTopicActionText}>Browse</Text>
-                </Pressable>
-                <Pressable
-                  onPress={() => {
-                    void openJourneyPractice({
-                      variantId: activeJourneyTrack?.id ?? null,
-                      levelId: activeJourneyLevel.id,
-                      topicId: activeJourneyTopic.slug,
-                      topicLabel: activeJourneyTopic.label,
-                    });
-                  }}
-                  disabled={!activeJourneyTopic.complete}
-                  style={[
-                    styles.journeyTopicAction,
-                    !activeJourneyTopic.complete ? styles.journeyTopicActionDisabled : null,
-                  ]}
-                >
-                  <Text
-                    style={[
-                      styles.journeyTopicActionText,
-                      !activeJourneyTopic.complete ? styles.journeyTopicActionTextDisabled : null,
-                    ]}
-                  >
-                    {activeJourneyTopic.practiced ? "Practice again" : "Practice"}
-                  </Text>
-                </Pressable>
-                {!activeJourneyTopic.checkpointPassed ? (
-                  <Pressable
-                    onPress={() => {
-                      void openJourneyPractice({
-                        variantId: activeJourneyTrack?.id ?? null,
-                        levelId: activeJourneyLevel.id,
-                        topicId: activeJourneyTopic.slug,
-                        topicLabel: activeJourneyTopic.label,
-                        kind: "checkpoint",
-                      });
-                    }}
-                    disabled={!activeJourneyTopic.complete || !activeJourneyTopic.practiced}
-                    style={[
-                      styles.journeyTopicAction,
-                      (!activeJourneyTopic.complete || !activeJourneyTopic.practiced)
-                        ? styles.journeyTopicActionDisabled
-                        : null,
-                    ]}
-                  >
-                    <Text
-                      style={[
-                        styles.journeyTopicActionText,
-                        (!activeJourneyTopic.complete || !activeJourneyTopic.practiced)
-                          ? styles.journeyTopicActionTextDisabled
-                          : null,
-                      ]}
-                    >
-                      Checkpoint
-                    </Text>
-                  </Pressable>
-                ) : null}
-              </View>
             </View>
           </>
         ) : null}
@@ -10873,6 +10786,32 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 6,
     alignSelf: "center",
+  },
+  journeyStoryDownloadBadge: {
+    // The node pressable is 172 pt wide and its 84x84 cover art is centered
+    // inside with a 20 pt badge + 6 pt gap above it. That puts the top of
+    // the art at y ≈ 26 from the top of the wrap, and its right edge 44 pt
+    // from whichever side the node is aligned to. We overlay a 30x30
+    // circular download badge on the top-right of the cover.
+    position: "absolute",
+    top: 22,
+    width: 30,
+    height: 30,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(5, 14, 26, 0.82)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.14)",
+  },
+  journeyStoryDownloadBadgeLeft: {
+    // Left-aligned node: node spans [0, 172]; art right-edge at x = 128.
+    // Badge left = 128 - 30 = 98.
+    left: 98,
+  },
+  journeyStoryDownloadBadgeRight: {
+    // Right-aligned node: art right-edge is 44 pt from the wrap's right edge.
+    right: 44,
   },
   journeyStoryCover: {
     width: 54,

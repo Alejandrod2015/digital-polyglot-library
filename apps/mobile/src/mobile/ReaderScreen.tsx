@@ -12,6 +12,8 @@ import {
 import { Feather } from "@expo/vector-icons";
 import {
   formatLanguage,
+  formatRegion,
+  formatVariantLabel,
   formatLevel,
   formatTopic,
   type Book,
@@ -558,7 +560,11 @@ export function ReaderScreen(args: {
               <Text style={[styles.pillText, styles.activePillText]}>{formatLevel(book.level)}</Text>
             </View>
             <View style={styles.pill}>
-              <Text style={styles.pillText}>{(book.variant ?? book.region ?? "").toUpperCase()}</Text>
+              <Text style={styles.pillText}>
+                {book.variant
+                  ? formatVariantLabel(book.variant) ?? formatRegion(book.variant)
+                  : formatRegion(book.region ?? "")}
+              </Text>
             </View>
             <View style={styles.pill}>
               <Text style={styles.pillText}>{formatLanguage(story.language ?? book.language)}</Text>
