@@ -599,33 +599,50 @@ export function ReaderScreen(args: {
             >
               <Feather name="x" size={18} color="#aebcd3" />
             </Pressable>
-            <Text style={styles.endOfStoryEyebrow}>You finished the story</Text>
-            <Text style={styles.endOfStoryTitle}>Practice the vocabulary</Text>
-            <Text style={styles.endOfStoryBody}>
-              A quick round with the words you just met — takes a minute and keeps them sticky.
-            </Text>
-            <View style={styles.endOfStoryDialogActions}>
-              <Pressable
-                onPress={() => {
-                  setEndOfStoryPromptVisible(false);
-                  onOpenPractice();
-                }}
-                accessibilityRole="button"
-                accessibilityLabel="qa-reader-practice-story"
-                testID="qa-reader-practice-story"
-                style={styles.endOfStoryButton}
-              >
-                <Feather name="zap" size={16} color="#0e1727" />
-                <Text style={styles.endOfStoryButtonText}>Practice now</Text>
-              </Pressable>
-              <Pressable
-                onPress={() => setEndOfStoryPromptVisible(false)}
-                accessibilityRole="button"
-                style={styles.endOfStoryDialogSecondary}
-              >
-                <Text style={styles.endOfStoryDialogSecondaryText}>Not now</Text>
-              </Pressable>
+            <View style={styles.endOfStoryTrophyRing}>
+              <View style={styles.endOfStoryTrophy}>
+                <Feather name="zap" size={28} color="#0e1727" />
+              </View>
             </View>
+            <Text style={styles.endOfStoryEyebrow}>Lock it in</Text>
+            <Text style={styles.endOfStoryTitle}>
+              Practice {vocab.length > 0 ? `${vocab.length} word${vocab.length === 1 ? "" : "s"}` : "what you just learned"}
+            </Text>
+            <Text style={styles.endOfStoryBody}>
+              You remember 2× more when you practice right after reading.
+            </Text>
+            {vocab.length > 0 ? (
+              <View style={styles.endOfStoryStatsRow}>
+                <View style={styles.endOfStoryStatChip}>
+                  <Feather name="book-open" size={13} color="#f8c15c" />
+                  <Text style={styles.endOfStoryStatText}>{vocab.length} new words</Text>
+                </View>
+                <View style={styles.endOfStoryStatChip}>
+                  <Feather name="clock" size={13} color="#9ce5c1" />
+                  <Text style={styles.endOfStoryStatText}>~1 min</Text>
+                </View>
+              </View>
+            ) : null}
+            <Pressable
+              onPress={() => {
+                setEndOfStoryPromptVisible(false);
+                onOpenPractice();
+              }}
+              accessibilityRole="button"
+              accessibilityLabel="qa-reader-practice-story"
+              testID="qa-reader-practice-story"
+              style={styles.endOfStoryButton}
+            >
+              <Feather name="zap" size={16} color="#0e1727" />
+              <Text style={styles.endOfStoryButtonText}>Start practice</Text>
+            </Pressable>
+            <Pressable
+              onPress={() => setEndOfStoryPromptVisible(false)}
+              accessibilityRole="button"
+              style={styles.endOfStoryDialogSecondary}
+            >
+              <Text style={styles.endOfStoryDialogSecondaryText}>Maybe later</Text>
+            </Pressable>
           </View>
         </View>
       ) : null}
@@ -853,17 +870,20 @@ const styles = StyleSheet.create({
   },
   endOfStoryBackdropPress: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(4, 9, 17, 0.72)",
+    backgroundColor: "rgba(4, 9, 17, 0.78)",
   },
   endOfStoryDialog: {
     width: "100%",
     maxWidth: 360,
-    borderRadius: 22,
+    borderRadius: 26,
     backgroundColor: "#152844",
     borderWidth: 1,
     borderColor: "#2d476b",
-    padding: 22,
-    gap: 10,
+    paddingTop: 28,
+    paddingBottom: 20,
+    paddingHorizontal: 22,
+    alignItems: "center",
+    gap: 8,
   },
   endOfStoryDialogClose: {
     position: "absolute",
@@ -872,51 +892,95 @@ const styles = StyleSheet.create({
     padding: 6,
     zIndex: 2,
   },
+  endOfStoryTrophyRing: {
+    width: 86,
+    height: 86,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(248, 193, 92, 0.14)",
+    borderWidth: 1,
+    borderColor: "rgba(248, 193, 92, 0.28)",
+    marginBottom: 4,
+  },
+  endOfStoryTrophy: {
+    width: 62,
+    height: 62,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#f8c15c",
+  },
   endOfStoryEyebrow: {
-    color: "#8fb5d8",
+    color: "#f8c15c",
     fontSize: 11,
     fontWeight: "800",
-    letterSpacing: 1,
+    letterSpacing: 1.6,
     textTransform: "uppercase",
   },
   endOfStoryTitle: {
     color: "#ffffff",
-    fontSize: 22,
-    fontWeight: "800",
-    lineHeight: 26,
+    fontSize: 24,
+    fontWeight: "900",
+    lineHeight: 28,
+    textAlign: "center",
   },
   endOfStoryBody: {
     color: "#cfdbec",
     fontSize: 14,
     lineHeight: 20,
+    textAlign: "center",
     marginBottom: 4,
   },
-  endOfStoryDialogActions: {
+  endOfStoryStatsRow: {
+    flexDirection: "row",
+    gap: 8,
+    marginTop: 2,
+    marginBottom: 8,
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+  endOfStoryStatChip: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 10,
-    marginTop: 4,
+    gap: 6,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  endOfStoryStatText: {
+    color: "#dbe9ff",
+    fontSize: 12,
+    fontWeight: "700",
   },
   endOfStoryButton: {
+    alignSelf: "stretch",
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
     gap: 8,
     borderRadius: 999,
     backgroundColor: "#f8c15c",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 20,
+    paddingVertical: 14,
+    marginTop: 2,
   },
   endOfStoryButtonText: {
     color: "#0e1727",
-    fontSize: 14,
-    fontWeight: "800",
+    fontSize: 15,
+    fontWeight: "900",
+    letterSpacing: 0.2,
   },
   endOfStoryDialogSecondary: {
     paddingHorizontal: 14,
-    paddingVertical: 12,
+    paddingVertical: 10,
+    marginTop: 2,
   },
   endOfStoryDialogSecondaryText: {
-    color: "#aebcd3",
+    color: "#9cb0c9",
     fontSize: 13,
     fontWeight: "700",
   },

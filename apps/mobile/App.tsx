@@ -257,7 +257,19 @@ function MobileAppRoot() {
     setPendingReminderNavigation(null);
   }, []);
 
-  if (loadingSession) {
+  // Three "keep showing the loading splash" signals that used to fall through
+  // to AuthScreen and caused a visible login/signup flash on cold start for
+  // already-logged-in users:
+  //   1. Our SecureStore hydration is still in flight (`loadingSession`).
+  //   2. Clerk hasn't finished hydrating its own stored session yet — we
+  //      don't know whether the user is signed in until `clerkLoaded` is true.
+  //   3. Clerk IS signed in but we're still waiting for the mobile-session
+  //      JWT exchange (`handleNativeSessionSync`) to complete.
+  const clerkHydrating = !clerkLoaded;
+  const clerkSyncPending = clerkLoaded && isClerkSignedIn && !sessionToken;
+  const shouldShowSplash = loadingSession || clerkHydrating || clerkSyncPending;
+
+  if (shouldShowSplash) {
     return (
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="light-content" />

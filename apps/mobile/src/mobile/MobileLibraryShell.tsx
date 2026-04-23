@@ -1834,17 +1834,22 @@ export function MobileLibraryShell(args: {
   }, [sessionBooksCount, sessionPlan, sessionStoriesCount, sessionToken]);
 
   const loadJourneyForLanguage = useCallback(
-    async (language: string) => {
+    async (language: string, options: { clearPrevious?: boolean } = {}) => {
       if (!sessionToken) return;
-      // We keep the currently-rendered journey visible and only show a loading
-      // flag, so that a silent re-fetch (e.g. after a Clerk token refresh or a
-      // language-mismatch check) does not cause the grid to flash empty for a
-      // split-second while the next payload arrives.
+      // For silent re-fetches (Clerk token refresh, language-mismatch check
+      // after hydrate) we keep the currently-rendered journey visible so the
+      // grid doesn't flash empty for a split-second. For explicit user-driven
+      // language switches we DO clear it — otherwise the old language's story
+      // covers ghost under the new header while the new payload loads.
+      const shouldClearPrevious = options.clearPrevious !== false;
       setSelectedJourneyTrackId(null);
       setSelectedJourneyLevelId(null);
       setSelectedJourneyTopicId(null);
       setJourneyDetailTopicId(null);
       setJourneyVariantPickerOpen(false);
+      if (shouldClearPrevious) {
+        setRemoteJourney(null);
+      }
       setJourneyLanguageLoading(true);
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
@@ -1961,7 +1966,9 @@ export function MobileLibraryShell(args: {
     if (remoteJourney?.language && remoteJourney.language.toLowerCase() === activeJourneyLanguage.toLowerCase()) {
       return;
     }
-    void loadJourneyForLanguage(activeJourneyLanguage);
+    // Silent reconciliation: don't clear the previously-rendered payload; we
+    // only want the new one to seamlessly replace it when it arrives.
+    void loadJourneyForLanguage(activeJourneyLanguage, { clearPrevious: false });
   }, [activeJourneyLanguageHydrated, activeJourneyLanguage, sessionToken, remoteJourney?.language, loadJourneyForLanguage]);
 
   useEffect(() => {
@@ -6142,10 +6149,7 @@ export function MobileLibraryShell(args: {
                         </View>
                       </View>
                       <View style={styles.practiceModeBody}>
-                        <Text numberOfLines={3} style={styles.practiceModeDetail}>{card.detail}</Text>
-                        {card.caption ? (
-                          <Text numberOfLines={2} style={styles.practiceModeCaption}>{card.caption}</Text>
-                        ) : null}
+                        <Text style={styles.practiceModeDetail}>{card.detail}</Text>
                       </View>
                       <View style={styles.practiceModeFooter}>
                         <View style={styles.practiceModeFooterMeta}>
@@ -12090,18 +12094,11 @@ const styles = StyleSheet.create({
   },
   practiceModeDetail: {
     color: "#ffffff",
-    fontSize: 13,
-    lineHeight: 18,
-  },
-  practiceModeCaption: {
-    color: "rgba(255,255,255,0.72)",
-    fontSize: 12,
-    lineHeight: 16,
-    fontStyle: "italic",
+    fontSize: 14,
+    lineHeight: 20,
   },
   practiceModeBody: {
     flex: 1,
-    gap: 6,
     justifyContent: "center",
   },
   practiceModeFooter: {
