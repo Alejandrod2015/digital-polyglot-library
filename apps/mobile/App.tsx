@@ -237,13 +237,25 @@ function MobileAppRoot() {
     [sessionToken]
   );
 
-  async function handleSignOut() {
+  const handleSignOut = useCallback(async () => {
     await clearMobileSessionToken();
     await clerkSignOut().catch(() => {});
     setSessionToken(null);
     setPreviewModeOnly(false);
     setPushState({ status: "idle" });
-  }
+  }, [clerkSignOut]);
+
+  const handleSignOutSync = useCallback(() => {
+    void handleSignOut();
+  }, [handleSignOut]);
+
+  const handleRequestSignIn = useCallback(() => {
+    setPreviewModeOnly(false);
+  }, []);
+
+  const handleHandledReminderNavigation = useCallback(() => {
+    setPendingReminderNavigation(null);
+  }, []);
 
   if (loadingSession) {
     return (
@@ -285,9 +297,9 @@ function MobileAppRoot() {
         sessionStoriesCount={session?.storiesCount ?? 0}
         pushState={pushState}
         pendingReminderNavigation={pendingReminderNavigation}
-        onHandledReminderNavigation={() => setPendingReminderNavigation(null)}
-        onSignOut={() => void handleSignOut()}
-        onRequestSignIn={() => setPreviewModeOnly(false)}
+        onHandledReminderNavigation={handleHandledReminderNavigation}
+        onSignOut={handleSignOutSync}
+        onRequestSignIn={handleRequestSignIn}
       />
     </SafeAreaView>
   );

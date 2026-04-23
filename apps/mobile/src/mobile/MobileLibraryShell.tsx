@@ -36,6 +36,7 @@ import {
 } from "@digital-polyglot/domain";
 import { requireOptionalNativeModule } from "expo-modules-core";
 import { ReaderScreen } from "./ReaderScreen";
+import { getCoverUrl } from "./coverUrl";
 import {
   BookHomeCard,
   BookWebCard,
@@ -1075,16 +1076,9 @@ function resolveStorySelectionBySlugs(bookSlug: string, storySlug: string): Read
   return null;
 }
 
-function getCoverUrl(input?: string | null, width = 400): string {
-  if (typeof input !== "string" || !input.trim()) {
-    return "https://reader.digitalpolyglot.com/covers/default.jpg";
-  }
-  if (input.includes("cdn.sanity.io/images/")) {
-    const sep = input.includes("?") ? "&" : "?";
-    return `${input}${sep}w=${width}&q=75&auto=format&fit=max`;
-  }
-  return input;
-}
+// getCoverUrl lives in its own module so ReaderScreen and anything else that
+// renders a cover can share the same Next.js image-optimizer routing.
+// See `./coverUrl.ts`.
 
 function normalizeFavoriteWord(word: string): string {
   return word.trim().toLowerCase();
@@ -1666,6 +1660,15 @@ export function MobileLibraryShell(args: {
     [onSignOut]
   );
 
+  // Keep a stable ref to the latest handler so effects that depend on it do
+  // not refire every time the parent produces a new onSignOut identity (this
+  // used to cascade from Clerk's ~60s token refresh and cause the Journey
+  // grid to flash empty for a split second).
+  const handleUnauthorizedSessionRef = useRef(handleUnauthorizedSession);
+  useEffect(() => {
+    handleUnauthorizedSessionRef.current = handleUnauthorizedSession;
+  }, [handleUnauthorizedSession]);
+
   useEffect(() => {
     if (!sessionToken) {
       setRemoteBooks([]);
@@ -1765,7 +1768,7 @@ export function MobileLibraryShell(args: {
         (result) => result.status === "rejected" && isApiErrorStatus(result.reason, 401)
       );
       if (unauthorized) {
-        handleUnauthorizedSession();
+        handleUnauthorizedSessionRef.current();
         setLoadingRemote(false);
         return;
       }
@@ -1828,17 +1831,20 @@ export function MobileLibraryShell(args: {
     return () => {
       cancelled = true;
     };
-  }, [handleUnauthorizedSession, sessionBooksCount, sessionPlan, sessionStoriesCount, sessionToken]);
+  }, [sessionBooksCount, sessionPlan, sessionStoriesCount, sessionToken]);
 
   const loadJourneyForLanguage = useCallback(
     async (language: string) => {
       if (!sessionToken) return;
+      // We keep the currently-rendered journey visible and only show a loading
+      // flag, so that a silent re-fetch (e.g. after a Clerk token refresh or a
+      // language-mismatch check) does not cause the grid to flash empty for a
+      // split-second while the next payload arrives.
       setSelectedJourneyTrackId(null);
       setSelectedJourneyLevelId(null);
       setSelectedJourneyTopicId(null);
       setJourneyDetailTopicId(null);
       setJourneyVariantPickerOpen(false);
-      setRemoteJourney(null);
       setJourneyLanguageLoading(true);
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
@@ -1874,6 +1880,8 @@ export function MobileLibraryShell(args: {
 
   // Prefetch every cover once the journey payload arrives so tapping into a
   // level or topic shows images immediately instead of racing the network.
+  // We prefetch the SAME URL shape (`getCoverUrl`) the UI will render with,
+  // otherwise RN's Image cache keys won't match and the prefetch is wasted.
   useEffect(() => {
     if (!remoteJourney) return;
     const covers = new Set<string>();
@@ -1888,7 +1896,11 @@ export function MobileLibraryShell(args: {
       }
     }
     covers.forEach((url) => {
-      void Image.prefetch(url).catch(() => undefined);
+      // Match the width the journey UI renders covers at: `getCoverUrl(url)`
+      // defaults to 400 → snaps to 640 via the Next.js image optimizer. If
+      // we prefetched at a different width the cache key wouldn't match and
+      // the prefetch would be wasted.
+      void Image.prefetch(getCoverUrl(url)).catch(() => undefined);
     });
   }, [remoteJourney]);
 
@@ -2014,7 +2026,7 @@ export function MobileLibraryShell(args: {
       } catch (error) {
         if (cancelled) return;
         if (isApiErrorStatus(error, 401)) {
-          handleUnauthorizedSession();
+          handleUnauthorizedSessionRef.current();
           return;
         }
         setPreferencesStatus("error");
@@ -2029,7 +2041,7 @@ export function MobileLibraryShell(args: {
     return () => {
       cancelled = true;
     };
-  }, [handleUnauthorizedSession, sessionToken]);
+  }, [sessionToken]);
 
   useEffect(() => {
     let cancelled = false;
@@ -6130,7 +6142,10 @@ export function MobileLibraryShell(args: {
                         </View>
                       </View>
                       <View style={styles.practiceModeBody}>
-                        <Text numberOfLines={2} style={styles.practiceModeDetail}>{card.detail}</Text>
+                        <Text numberOfLines={3} style={styles.practiceModeDetail}>{card.detail}</Text>
+                        {card.caption ? (
+                          <Text numberOfLines={2} style={styles.practiceModeCaption}>{card.caption}</Text>
+                        ) : null}
                       </View>
                       <View style={styles.practiceModeFooter}>
                         <View style={styles.practiceModeFooterMeta}>
@@ -6572,35 +6587,34 @@ export function MobileLibraryShell(args: {
 
   const favoritesView = (
     <>
-      <View style={styles.hero}>
+      <View style={styles.favoritesHero}>
         <View style={styles.heroHeaderRow}>
-          <View style={styles.heroTextBlock}>
+          <View style={styles.favoritesHeroTextBlock}>
             <Text style={styles.eyebrow}>Favorites</Text>
-            <Text style={styles.title}>Saved vocabulary</Text>
-            <Text style={styles.subtitle}>
-              Tap highlighted words inside a story to save them here and reopen the story later.
-            </Text>
+            <Text style={styles.favoritesHeroTitle}>Saved vocabulary</Text>
           </View>
           <MenuTrigger onPress={() => setMenuOpen(true)} />
         </View>
+        {favoriteCards.length > 0 ? (
+          <View style={styles.favoritesHeroStats}>
+            {dueFavoritesCount > 0 ? (
+              <View style={styles.favoritesCompactPill}>
+                <Text style={styles.favoritesCompactDueText}>{dueFavoritesCount} due</Text>
+              </View>
+            ) : null}
+            <View style={styles.favoritesCompactPill}>
+              <Text style={styles.favoritesCompactPillText}>{favoriteWords.length} total</Text>
+            </View>
+            <View style={styles.favoritesCompactPill}>
+              <Text style={styles.favoritesCompactPillText}>{formatStreakLabel(Math.max(maxFavoriteStreak, 1))}</Text>
+            </View>
+          </View>
+        ) : null}
       </View>
 
       {favoriteCards.length > 0 ? (
         <>
           <View style={styles.favoritesCompactBar}>
-            <View style={styles.favoritesCompactStats}>
-              {dueFavoritesCount > 0 ? (
-                <View style={styles.favoritesCompactPill}>
-                  <Text style={styles.favoritesCompactDueText}>{dueFavoritesCount} due</Text>
-                </View>
-              ) : null}
-              <View style={styles.favoritesCompactPill}>
-                <Text style={styles.favoritesCompactPillText}>{favoriteWords.length} total</Text>
-              </View>
-              <View style={styles.favoritesCompactPill}>
-                <Text style={styles.favoritesCompactPillText}>{formatStreakLabel(Math.max(maxFavoriteStreak, 1))}</Text>
-              </View>
-            </View>
             <View style={styles.favoritesCompactActions}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoritesModePills}>
                 <Pressable
@@ -6729,6 +6743,9 @@ export function MobileLibraryShell(args: {
                   </Text>
                 </View>
                 <Pressable
+                  accessibilityRole="button"
+                  accessibilityLabel={`Remove ${item.word}`}
+                  hitSlop={12}
                   onPress={() =>
                     void toggleFavoriteWord(
                       {
@@ -6739,8 +6756,12 @@ export function MobileLibraryShell(args: {
                       item.exampleSentence ?? undefined
                     )
                   }
-                  style={styles.favoriteRemove}
+                  style={({ pressed }) => [
+                    styles.favoriteRemove,
+                    pressed ? styles.favoriteRemovePressed : null,
+                  ]}
                 >
+                  <Feather name="x" size={14} color="#f5b5b5" />
                   <Text style={styles.favoriteRemoveText}>Remove</Text>
                 </Pressable>
               </View>
@@ -8348,27 +8369,21 @@ export function MobileLibraryShell(args: {
             </Pressable>
 
             <View style={styles.journeyTopicDetailCard} accessibilityLabel="qa-journey-topic-detail" testID="qa-journey-topic-detail">
-              <View style={styles.sectionHeader}>
+              <View style={styles.journeyTopicDetailHeader}>
                 <View style={styles.journeyLevelText}>
                   <Text style={styles.sectionEyebrow}>{activeJourneyLevel.title} topic</Text>
-                  <Text style={styles.sectionTitle}>{activeJourneyTopic.label}</Text>
+                  <Text style={styles.journeyTopicDetailTitle}>{activeJourneyTopic.label}</Text>
+                  <Text style={styles.journeyTopicDetailStatus}>
+                    {activeJourneyTopic.completedStoryCount}/{activeJourneyTopic.requiredStoryCount} stories
+                    {activeJourneyTopic.hasDueReview ? " · Review due" : ""}
+                    {" · "}
+                    {activeJourneyTopic.checkpointPassed
+                      ? "Checkpoint cleared"
+                      : activeJourneyTopic.practiced
+                        ? "Checkpoint pending"
+                        : "Practice pending"}
+                  </Text>
                 </View>
-                <Text style={styles.journeyTopicProgressText}>
-                  {activeJourneyTopic.completedStoryCount}/{activeJourneyTopic.requiredStoryCount}
-                </Text>
-              </View>
-
-              <View style={styles.featureMetaPills}>
-                <Text style={styles.featureMetaPill}>
-                  {activeJourneyTopic.complete ? "Stories complete" : `${Math.max(activeJourneyTopic.requiredStoryCount - activeJourneyTopic.completedStoryCount, 0)} to go`}
-                </Text>
-                <Text style={styles.featureMetaPill}>
-                  {activeJourneyTopic.practiced ? "Practiced" : "Practice pending"}
-                </Text>
-                <Text style={styles.featureMetaPill}>
-                  {activeJourneyTopic.checkpointPassed ? "Checkpoint cleared" : "Checkpoint pending"}
-                </Text>
-                {activeJourneyTopic.hasDueReview ? <Text style={styles.featureMetaPill}>Review due</Text> : null}
               </View>
 
               <View style={styles.journeyMapList}>
@@ -10402,7 +10417,8 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
   },
   journeyMapList: {
-    gap: 18,
+    gap: 14,
+    marginTop: 2,
   },
   journeyMapSequence: {
     gap: 10,
@@ -10795,13 +10811,28 @@ const styles = StyleSheet.create({
     color: "#8fa4c0",
   },
   journeyTopicDetailCard: {
-    gap: 12,
+    gap: 8,
     borderRadius: 20,
     backgroundColor: "#102238",
     borderWidth: 1,
     borderColor: "#29435f",
     paddingHorizontal: 14,
-    paddingVertical: 14,
+    paddingTop: 12,
+    paddingBottom: 14,
+  },
+  journeyTopicDetailHeader: {
+    gap: 2,
+  },
+  journeyTopicDetailTitle: {
+    color: "#ffffff",
+    fontSize: 20,
+    fontWeight: "800",
+    lineHeight: 24,
+  },
+  journeyTopicDetailStatus: {
+    color: "#aebcd3",
+    fontSize: 12,
+    fontWeight: "600",
   },
   journeyTopicProgressText: {
     color: "#f8c15c",
@@ -11820,13 +11851,22 @@ const styles = StyleSheet.create({
   },
   favoriteRemove: {
     alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
     borderRadius: 999,
-    backgroundColor: "#213754",
-    paddingHorizontal: 9,
-    paddingVertical: 6,
+    borderWidth: 1,
+    borderColor: "#5a2a2a",
+    backgroundColor: "#3a1d1d",
+    paddingHorizontal: 11,
+    paddingVertical: 8,
+  },
+  favoriteRemovePressed: {
+    backgroundColor: "#532727",
+    borderColor: "#7a3535",
   },
   favoriteRemoveText: {
-    color: "#dbe9ff",
+    color: "#f5b5b5",
     fontSize: 12,
     fontWeight: "700",
   },
@@ -11860,13 +11900,34 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
   },
+  favoritesHero: {
+    gap: 8,
+    paddingTop: 8,
+    paddingBottom: 2,
+  },
+  favoritesHeroTextBlock: {
+    flex: 1,
+    gap: 2,
+  },
+  favoritesHeroTitle: {
+    color: "#f5f7fb",
+    fontSize: 22,
+    fontWeight: "800",
+    lineHeight: 26,
+  },
+  favoritesHeroStats: {
+    flexDirection: "row",
+    gap: 6,
+    flexWrap: "wrap",
+  },
   favoritesCompactBar: {
-    gap: 10,
-    borderRadius: 22,
+    gap: 8,
+    borderRadius: 18,
     borderWidth: 1,
     borderColor: "#27405f",
     backgroundColor: "#14243b",
-    padding: 12,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
   },
   favoritesCompactStats: {
     flexDirection: "row",
@@ -11999,9 +12060,9 @@ const styles = StyleSheet.create({
   },
   practiceModeTitle: {
     color: "#ffffff",
-    fontSize: 17,
+    fontSize: 20,
     fontWeight: "900",
-    lineHeight: 19,
+    lineHeight: 22,
   },
   practiceModeIconWrap: {
     width: 36,
@@ -12029,12 +12090,19 @@ const styles = StyleSheet.create({
   },
   practiceModeDetail: {
     color: "#ffffff",
-    fontSize: 11,
-    lineHeight: 14,
+    fontSize: 13,
+    lineHeight: 18,
+  },
+  practiceModeCaption: {
+    color: "rgba(255,255,255,0.72)",
+    fontSize: 12,
+    lineHeight: 16,
+    fontStyle: "italic",
   },
   practiceModeBody: {
-    gap: 1,
-    minHeight: 34,
+    flex: 1,
+    gap: 6,
+    justifyContent: "center",
   },
   practiceModeFooter: {
     alignItems: "center",

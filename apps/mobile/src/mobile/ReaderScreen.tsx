@@ -20,6 +20,7 @@ import {
 } from "@digital-polyglot/domain";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
 import { ProgressiveImage } from "./ProgressiveImage";
+import { getCoverUrl } from "./coverUrl";
 import { apiFetch } from "../lib/api";
 import { mobileConfig } from "../config";
 
@@ -291,6 +292,14 @@ export function ReaderScreen(args: {
   const audioUrl = typeof resolvedAudioUrl === "string" && resolvedAudioUrl.trim() ? resolvedAudioUrl : story.audio;
   const isOfflineAudio = typeof audioUrl === "string" && audioUrl.startsWith("file://");
   const [selectedVocab, setSelectedVocab] = useState<VocabItem | null>(null);
+  const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
+  // Only auto-open the practice prompt once per story view so dismissing it
+  // doesn't cause it to re-pop every time the user scrolls near the bottom.
+  const promptShownForStoryRef = useRef<string | null>(null);
+  useEffect(() => {
+    setEndOfStoryPromptVisible(false);
+    promptShownForStoryRef.current = null;
+  }, [story.id]);
   const lastTrackedStoryId = useRef<string | null>(null);
   const lastPersistedProgressSecRef = useRef<number | null>(null);
   const lastPersistedAtRef = useRef<number>(0);
@@ -450,6 +459,18 @@ export function ReaderScreen(args: {
       setActiveBlockIndex(nextBlockIndex);
     }
     trackReadingPosition(ratio, nextBlockIndex);
+
+    // Once the reader scrolls past ~95% of the story, surface the practice
+    // prompt as a popup. Fires once per story; dismissing it does not re-open.
+    if (
+      onOpenPractice &&
+      vocab.length > 0 &&
+      ratio >= 0.95 &&
+      promptShownForStoryRef.current !== story.id
+    ) {
+      promptShownForStoryRef.current = story.id;
+      setEndOfStoryPromptVisible(true);
+    }
   }
 
   return (
@@ -522,7 +543,7 @@ export function ReaderScreen(args: {
         </View>
 
         {coverUrl ? (
-          <ProgressiveImage uri={coverUrl} style={styles.readerCover} resizeMode="cover" />
+          <ProgressiveImage uri={getCoverUrl(coverUrl, 1080)} style={styles.readerCover} resizeMode="cover" />
         ) : null}
 
         <View style={styles.textWrap}>
@@ -559,27 +580,55 @@ export function ReaderScreen(args: {
             <Text style={styles.offlineBadge}>Offline audio ready on this device</Text>
           ) : null}
 
-          {onOpenPractice ? (
-            <View style={styles.endOfStoryCard}>
-              <Text style={styles.endOfStoryEyebrow}>You finished the story</Text>
-              <Text style={styles.endOfStoryTitle}>Lock the new vocabulary in</Text>
-              <Text style={styles.endOfStoryBody}>
-                Quick practice of the words you just met — takes a minute and keeps them sticky.
-              </Text>
+        </View>
+      </ScrollView>
+
+      {endOfStoryPromptVisible && onOpenPractice ? (
+        <View style={styles.endOfStoryBackdrop} accessibilityLabel="qa-reader-practice-prompt" testID="qa-reader-practice-prompt">
+          <Pressable
+            style={styles.endOfStoryBackdropPress}
+            accessibilityLabel="qa-reader-practice-prompt-dismiss"
+            onPress={() => setEndOfStoryPromptVisible(false)}
+          />
+          <View style={styles.endOfStoryDialog}>
+            <Pressable
+              onPress={() => setEndOfStoryPromptVisible(false)}
+              style={styles.endOfStoryDialogClose}
+              hitSlop={12}
+              accessibilityLabel="qa-reader-practice-prompt-close"
+            >
+              <Feather name="x" size={18} color="#aebcd3" />
+            </Pressable>
+            <Text style={styles.endOfStoryEyebrow}>You finished the story</Text>
+            <Text style={styles.endOfStoryTitle}>Practice the vocabulary</Text>
+            <Text style={styles.endOfStoryBody}>
+              A quick round with the words you just met — takes a minute and keeps them sticky.
+            </Text>
+            <View style={styles.endOfStoryDialogActions}>
               <Pressable
-                onPress={onOpenPractice}
+                onPress={() => {
+                  setEndOfStoryPromptVisible(false);
+                  onOpenPractice();
+                }}
                 accessibilityRole="button"
                 accessibilityLabel="qa-reader-practice-story"
                 testID="qa-reader-practice-story"
                 style={styles.endOfStoryButton}
               >
                 <Feather name="zap" size={16} color="#0e1727" />
-                <Text style={styles.endOfStoryButtonText}>Practice vocabulary</Text>
+                <Text style={styles.endOfStoryButtonText}>Practice now</Text>
+              </Pressable>
+              <Pressable
+                onPress={() => setEndOfStoryPromptVisible(false)}
+                accessibilityRole="button"
+                style={styles.endOfStoryDialogSecondary}
+              >
+                <Text style={styles.endOfStoryDialogSecondaryText}>Not now</Text>
               </Pressable>
             </View>
-          ) : null}
+          </View>
         </View>
-      </ScrollView>
+      ) : null}
 
       {selectedVocab ? (
         // Use pointerEvents="box-none" so taps on words in the ScrollView
@@ -792,14 +841,36 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "800",
   },
-  endOfStoryCard: {
-    marginTop: 20,
-    padding: 20,
-    borderRadius: 20,
-    backgroundColor: "#14273f",
+  endOfStoryBackdrop: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 24,
+  },
+  endOfStoryBackdropPress: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(4, 9, 17, 0.72)",
+  },
+  endOfStoryDialog: {
+    width: "100%",
+    maxWidth: 360,
+    borderRadius: 22,
+    backgroundColor: "#152844",
     borderWidth: 1,
-    borderColor: "#28415f",
-    gap: 8,
+    borderColor: "#2d476b",
+    padding: 22,
+    gap: 10,
+  },
+  endOfStoryDialogClose: {
+    position: "absolute",
+    top: 10,
+    right: 10,
+    padding: 6,
+    zIndex: 2,
   },
   endOfStoryEyebrow: {
     color: "#8fb5d8",
@@ -810,17 +881,23 @@ const styles = StyleSheet.create({
   },
   endOfStoryTitle: {
     color: "#ffffff",
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: "800",
+    lineHeight: 26,
   },
   endOfStoryBody: {
     color: "#cfdbec",
     fontSize: 14,
     lineHeight: 20,
-    marginBottom: 6,
+    marginBottom: 4,
+  },
+  endOfStoryDialogActions: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    marginTop: 4,
   },
   endOfStoryButton: {
-    alignSelf: "flex-start",
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
@@ -833,6 +910,15 @@ const styles = StyleSheet.create({
     color: "#0e1727",
     fontSize: 14,
     fontWeight: "800",
+  },
+  endOfStoryDialogSecondary: {
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+  },
+  endOfStoryDialogSecondaryText: {
+    color: "#aebcd3",
+    fontSize: 13,
+    fontWeight: "700",
   },
   progressTrack: {
     height: 8,
