@@ -525,24 +525,14 @@ export function ReaderScreen(args: {
           <ProgressiveImage uri={coverUrl} style={styles.readerCover} resizeMode="cover" />
         ) : null}
 
-        {onOpenPractice ? (
-          <Pressable
-            onPress={onOpenPractice}
-            accessibilityRole="button"
-            accessibilityLabel="qa-reader-practice-story"
-            testID="qa-reader-practice-story"
-            style={styles.practiceStoryButton}
-          >
-            <Feather name="zap" size={15} color="#0e1727" />
-            <Text style={styles.practiceStoryButtonText}>Practice this story</Text>
-          </Pressable>
-        ) : null}
-
         <View style={styles.textWrap}>
           <View style={styles.textCard}>
             {blocks.map((block, index) => (
-              <View
+              <Pressable
                 key={`${story.id}-${index}`}
+                onPress={() => {
+                  if (selectedVocab) setSelectedVocab(null);
+                }}
                 style={[
                   block.type === "quote" ? styles.quoteBlock : styles.paragraphBlock,
                 ]}
@@ -561,20 +551,45 @@ export function ReaderScreen(args: {
                     ),
                   block.type
                 )}
-              </View>
+              </Pressable>
             ))}
           </View>
 
           {isOfflineAudio ? (
             <Text style={styles.offlineBadge}>Offline audio ready on this device</Text>
           ) : null}
+
+          {onOpenPractice ? (
+            <View style={styles.endOfStoryCard}>
+              <Text style={styles.endOfStoryEyebrow}>You finished the story</Text>
+              <Text style={styles.endOfStoryTitle}>Lock the new vocabulary in</Text>
+              <Text style={styles.endOfStoryBody}>
+                Quick practice of the words you just met — takes a minute and keeps them sticky.
+              </Text>
+              <Pressable
+                onPress={onOpenPractice}
+                accessibilityRole="button"
+                accessibilityLabel="qa-reader-practice-story"
+                testID="qa-reader-practice-story"
+                style={styles.endOfStoryButton}
+              >
+                <Feather name="zap" size={16} color="#0e1727" />
+                <Text style={styles.endOfStoryButtonText}>Practice vocabulary</Text>
+              </Pressable>
+            </View>
+          ) : null}
         </View>
       </ScrollView>
 
       {selectedVocab ? (
-        <Pressable
+        // Use pointerEvents="box-none" so taps on words in the ScrollView
+        // below pass through — tapping a different highlighted word simply
+        // switches the popup to that word instead of needing a separate
+        // tap-to-close first. Tapping blank paragraph space closes the popup
+        // via the Pressable wrapper around each block.
+        <View
           style={styles.vocabOverlay}
-          onPress={() => setSelectedVocab(null)}
+          pointerEvents="box-none"
           accessibilityLabel="qa-reader-vocab-overlay"
           testID="qa-reader-vocab-overlay"
         >
@@ -612,7 +627,7 @@ export function ReaderScreen(args: {
               </View>
             </View>
           </Pressable>
-        </Pressable>
+        </View>
       ) : null}
 
       <View style={styles.playerDock}>
@@ -777,6 +792,48 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "800",
   },
+  endOfStoryCard: {
+    marginTop: 20,
+    padding: 20,
+    borderRadius: 20,
+    backgroundColor: "#14273f",
+    borderWidth: 1,
+    borderColor: "#28415f",
+    gap: 8,
+  },
+  endOfStoryEyebrow: {
+    color: "#8fb5d8",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 1,
+    textTransform: "uppercase",
+  },
+  endOfStoryTitle: {
+    color: "#ffffff",
+    fontSize: 20,
+    fontWeight: "800",
+  },
+  endOfStoryBody: {
+    color: "#cfdbec",
+    fontSize: 14,
+    lineHeight: 20,
+    marginBottom: 6,
+  },
+  endOfStoryButton: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+  },
+  endOfStoryButtonText: {
+    color: "#0e1727",
+    fontSize: 14,
+    fontWeight: "800",
+  },
   progressTrack: {
     height: 8,
     borderRadius: 999,
@@ -816,16 +873,21 @@ const styles = StyleSheet.create({
     lineHeight: 35,
   },
   highlightedWord: {
-    color: "#fff1bf",
+    // Keep the text itself at full brightness (same as the surrounding
+    // paragraph) and let a saturated translucent amber act as the
+    // "highlighter marker" underneath. The previous light-yellow text on a
+    // muted yellow background had almost no contrast because both were warm
+    // low-saturation tones.
+    color: "#ffffff",
     fontSize: 20,
     lineHeight: 35,
-    backgroundColor: "rgba(185, 155, 63, 0.18)",
+    backgroundColor: "rgba(251, 191, 36, 0.28)",
     borderBottomWidth: 2,
-    borderBottomColor: "#c6a749",
+    borderBottomColor: "#fbbf24",
     fontWeight: "700",
-    paddingHorizontal: 2,
+    paddingHorizontal: 3,
     paddingVertical: 0,
-    borderRadius: 3,
+    borderRadius: 4,
   },
   vocabOverlay: {
     position: "absolute",

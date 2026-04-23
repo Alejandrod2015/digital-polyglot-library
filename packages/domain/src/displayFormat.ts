@@ -1,4 +1,4 @@
-import { formatVariantLabel } from "./languageVariant";
+import { formatVariantLabel, VARIANT_OPTIONS_BY_LANGUAGE } from "./languageVariant";
 import { CEFR_LEVEL_LABELS, LEVEL_LABELS, type CefrLevel, type Level } from "./types/books";
 
 const FALLBACK = "—";
@@ -98,6 +98,26 @@ export function formatTopic(value?: string): string {
 
 export function formatRegion(value?: string): string {
   return toTitleCase(value);
+}
+
+/**
+ * Formats a language/region pair for display, skipping the region half when
+ * the language has only one variant configured (e.g. Italian → Italy, Korean
+ * → South Korea). For those we show just the language name to avoid the
+ * redundant-looking "Italian · Italy" / "Korean · South Korea".
+ */
+export function formatLanguageAndRegion(language?: string, region?: string): string {
+  const lang = formatLanguage(language);
+  if (!language) return lang;
+  // Route through formatLanguage() first so Spanish/English aliases like
+  // "italiano" or "alemán" still resolve to the canonical key.
+  const canonicalKey = lang.toLowerCase();
+  const variants = VARIANT_OPTIONS_BY_LANGUAGE[canonicalKey];
+  const isSingleVariant = Array.isArray(variants) && variants.length <= 1;
+  if (isSingleVariant) return lang;
+  const regionLabel = formatRegion(region);
+  if (!region || regionLabel === FALLBACK) return lang;
+  return `${lang} · ${regionLabel}`;
 }
 
 export function formatVariant(value?: string): string {

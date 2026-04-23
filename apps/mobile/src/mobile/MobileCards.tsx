@@ -1,7 +1,20 @@
 import { Feather } from "@expo/vector-icons";
-import { formatLanguageCode, formatLevel, formatRegion } from "@digital-polyglot/domain";
+import {
+  VARIANT_OPTIONS_BY_LANGUAGE,
+  formatLanguage,
+  formatLanguageCode,
+  formatLevel,
+  formatRegion,
+} from "@digital-polyglot/domain";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { ProgressiveImage } from "./ProgressiveImage";
+
+function isSingleVariantLanguage(language?: string): boolean {
+  if (!language) return false;
+  const key = formatLanguage(language).toLowerCase();
+  const variants = VARIANT_OPTIONS_BY_LANGUAGE[key];
+  return Array.isArray(variants) && variants.length <= 1;
+}
 
 export type StoryCardModel = {
   key: string;
@@ -162,7 +175,9 @@ export function BookWebCard({ item, fullWidth = false }: { item: BookCardModel; 
             </Text>
           ) : null}
           {item.language ? <Text style={styles.bookWebCardBadge}>{formatLanguageCode(item.language)}</Text> : null}
-          {item.region ? <Text style={styles.bookWebCardBadge}>{formatRegion(item.region)}</Text> : null}
+          {item.region && !isSingleVariantLanguage(item.language) ? (
+            <Text style={styles.bookWebCardBadge}>{formatRegion(item.region)}</Text>
+          ) : null}
         </View>
         <Text numberOfLines={2} style={styles.bookWebCardTitle}>{item.title}</Text>
         {item.statsLine ? <Text style={styles.bookWebCardStats}>{item.statsLine}</Text> : null}

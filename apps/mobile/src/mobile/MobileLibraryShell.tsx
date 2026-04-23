@@ -21,6 +21,7 @@ import {
   CEFR_LEVEL_LABELS,
   LEVEL_LABELS,
   formatLanguage,
+  formatLanguageAndRegion,
   formatLanguageCode,
   formatLevel,
   formatRegion,
@@ -2725,9 +2726,7 @@ export function MobileLibraryShell(args: {
       .map((story) => ({
         key: `standalone-${story.storyId}`,
         title: story.title,
-        subtitle: [formatLanguage(story.language ?? ""), formatRegion(story.region ?? "")]
-          .filter((value) => value && value !== "Unknown")
-          .join(" · ") || "Standalone story",
+        subtitle: formatLanguageAndRegion(story.language ?? "", story.region ?? "") || "Standalone story",
         coverUrl: getCoverUrl(story.coverUrl),
         meta: [story.level ? LEVEL_LABELS[toDomainLevel(story.level)] : null, formatTopic(story.topic ?? "")]
           .filter(Boolean)
@@ -2752,9 +2751,7 @@ export function MobileLibraryShell(args: {
         .map((story) => ({
           key: `home-standalone-${story.storyId}`,
           title: story.title,
-          subtitle: [formatLanguage(story.language ?? ""), formatRegion(story.region ?? "")]
-            .filter((value) => value && value !== "Unknown")
-            .join(" · ") || "Standalone story",
+          subtitle: formatLanguageAndRegion(story.language ?? "", story.region ?? "") || "Standalone story",
           coverUrl: getCoverUrl(story.coverUrl),
           meta: [story.level ? LEVEL_LABELS[toDomainLevel(story.level)] : null, formatTopic(story.topic ?? "")]
             .filter(Boolean)
@@ -5106,7 +5103,9 @@ export function MobileLibraryShell(args: {
           kind: "book",
           id: `book:${book.id}`,
           title: book.title,
-          subtitle: [language, region, level].filter(Boolean).join(" · "),
+          subtitle: [formatLanguageAndRegion(book.language, book.region ?? ""), level]
+            .filter(Boolean)
+            .join(" · "),
           coverUrl: getCoverUrl(book.cover),
           onPress: () => openBook(book),
         },
@@ -5143,7 +5142,13 @@ export function MobileLibraryShell(args: {
             kind: "bookStory",
             id: `book-story:${book.id}:${story.id}`,
             title: story.title,
-            subtitle: [book.title, language, region, level].filter(Boolean).join(" · "),
+            subtitle: [
+              book.title,
+              formatLanguageAndRegion(story.language ?? book.language, story.region ?? book.region ?? ""),
+              level,
+            ]
+              .filter(Boolean)
+              .join(" · "),
             coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? book.cover),
             onPress: () => openSelection(resolved),
           },
@@ -5169,7 +5174,9 @@ export function MobileLibraryShell(args: {
           kind: "standaloneStory",
           id: `standalone:${story.storyId}`,
           title: story.title,
-          subtitle: [language, region, level].filter(Boolean).join(" · "),
+          subtitle: [formatLanguageAndRegion(story.language ?? "", story.region ?? ""), level]
+            .filter(Boolean)
+            .join(" · "),
           coverUrl: getCoverUrl(story.coverUrl),
           onPress: () => {
             void openStandaloneStory(story);
@@ -6100,48 +6107,52 @@ export function MobileLibraryShell(args: {
             </View>
           ) : null}
           <View style={styles.practiceGridShell}>
-            <View style={styles.practiceGrid}>
-            {visiblePracticeCards.map((card) => (
-              <Pressable
-                key={card.key}
-                onPress={() => void openPracticeMode(card.key)}
-                style={[
-                  styles.practiceModeCard,
-                  { backgroundColor: card.background },
-                ]}
-              >
-                <View style={styles.practiceModeHeader}>
-                  <View style={styles.practiceModeHeaderText}>
-                    <Text style={styles.practiceModeEyebrow}>{card.eyebrow}</Text>
-                    <Text style={styles.practiceModeTitle}>{card.title}</Text>
-                  </View>
-                  <View style={[styles.practiceModeIconWrap, { borderColor: `${card.accent}55` }]}>
-                    <PracticeModeIcon icon={card.icon} color={card.accent} />
-                  </View>
-                </View>
-                <View style={styles.practiceModeBody}>
-                  <Text numberOfLines={2} style={styles.practiceModeDetail}>{card.detail}</Text>
-                </View>
-                <View style={styles.practiceModeFooter}>
-                  <View style={styles.practiceModeFooterMeta}>
-                    {card.key === recommendedPracticeMode ? (
-                      <View style={styles.practiceRecommendedBadge}>
-                        <Text style={styles.practiceRecommendedText}>Best next</Text>
+            {[0, 1].map((rowIndex) => (
+              <View key={`practice-row-${rowIndex}`} style={styles.practiceRow}>
+                {visiblePracticeCards
+                  .slice(rowIndex * 2, rowIndex * 2 + 2)
+                  .map((card) => (
+                    <Pressable
+                      key={card.key}
+                      onPress={() => void openPracticeMode(card.key)}
+                      style={[
+                        styles.practiceModeCard,
+                        { backgroundColor: card.background },
+                      ]}
+                    >
+                      <View style={styles.practiceModeHeader}>
+                        <View style={styles.practiceModeHeaderText}>
+                          <Text style={styles.practiceModeEyebrow}>{card.eyebrow}</Text>
+                          <Text style={styles.practiceModeTitle}>{card.title}</Text>
+                        </View>
+                        <View style={[styles.practiceModeIconWrap, { borderColor: `${card.accent}55` }]}>
+                          <PracticeModeIcon icon={card.icon} color={card.accent} />
+                        </View>
                       </View>
-                    ) : null}
-                    <View style={styles.practiceModeMetaPill}>
-                      <Text style={styles.practiceModeMetaText}>
-                        {favoriteWords.length} ready
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={styles.practiceModeActionCentered}>
-                    <Text style={[styles.practiceModeActionTextLarge, { color: card.background }]}>Play</Text>
-                  </View>
-                </View>
-              </Pressable>
+                      <View style={styles.practiceModeBody}>
+                        <Text numberOfLines={2} style={styles.practiceModeDetail}>{card.detail}</Text>
+                      </View>
+                      <View style={styles.practiceModeFooter}>
+                        <View style={styles.practiceModeFooterMeta}>
+                          {card.key === recommendedPracticeMode ? (
+                            <View style={styles.practiceRecommendedBadge}>
+                              <Text style={styles.practiceRecommendedText}>Best next</Text>
+                            </View>
+                          ) : null}
+                          <View style={styles.practiceModeMetaPill}>
+                            <Text style={styles.practiceModeMetaText}>
+                              {favoriteWords.length} ready
+                            </Text>
+                          </View>
+                        </View>
+                        <View style={styles.practiceModeActionCentered}>
+                          <Text style={[styles.practiceModeActionTextLarge, { color: card.background }]}>Play</Text>
+                        </View>
+                      </View>
+                    </Pressable>
+                  ))}
+              </View>
             ))}
-            </View>
           </View>
 
         </>
@@ -8360,27 +8371,6 @@ export function MobileLibraryShell(args: {
                 {activeJourneyTopic.hasDueReview ? <Text style={styles.featureMetaPill}>Review due</Text> : null}
               </View>
 
-              {activeJourneyPrimaryAction ? (
-                <View style={styles.journeyPrimaryActionCard}>
-                  <View style={styles.journeyPrimaryActionCopy}>
-                    <Text style={styles.journeyPrimaryActionEyebrow}>Next action</Text>
-                    <Text style={styles.journeyPrimaryActionTitle}>{activeJourneyPrimaryAction.title}</Text>
-                    <Text style={styles.journeyPrimaryActionBody}>{activeJourneyPrimaryAction.body}</Text>
-                  </View>
-                  <Pressable
-                    onPress={activeJourneyPrimaryAction.onPress}
-                    accessibilityRole="button"
-                    accessibilityLabel="qa-journey-primary-action"
-                    testID="qa-journey-primary-action"
-                    style={[styles.journeyTopicAction, styles.journeyTopicActionPrimary]}
-                  >
-                    <Text style={[styles.journeyTopicActionText, styles.journeyTopicActionTextPrimary]}>
-                      {activeJourneyPrimaryAction.cta}
-                    </Text>
-                  </Pressable>
-                </View>
-              ) : null}
-
               <View style={styles.journeyMapList}>
                 {activeJourneyTopic.stories.map((story, index) => {
                   const previousStory = index > 0 ? activeJourneyTopic.stories[index - 1] : null;
@@ -8969,9 +8959,8 @@ export function MobileLibraryShell(args: {
         needsDescriptionToggle={selectedBookNeedsDescriptionToggle}
         onToggleDescription={() => setSelectedBookDescriptionExpanded((current) => !current)}
         pills={[
-          formatLanguage(selectedBook.language),
+          formatLanguageAndRegion(selectedBook.language, selectedBook.region ?? ""),
           formatLevel(selectedBook.level),
-          ...(selectedBook.region ? [formatRegion(selectedBook.region)] : []),
           ...(selectedBook.topic ? [formatTopic(selectedBook.topic)] : []),
         ]}
         storyCount={selectedBook.stories.length}
@@ -11968,23 +11957,20 @@ const styles = StyleSheet.create({
   },
   practiceGridShell: {
     flex: 1,
-    justifyContent: "center",
-    paddingTop: 2,
-    paddingBottom: 2,
+    paddingTop: 4,
+    paddingBottom: 4,
+    gap: 8,
   },
   practiceErrorCard: {
     marginBottom: 8,
   },
-  practiceGrid: {
+  practiceRow: {
+    flex: 1,
     flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    rowGap: 8,
-    columnGap: 8,
-    alignContent: "center",
+    gap: 8,
   },
   practiceModeCard: {
-    width: "48%",
+    flex: 1,
     minHeight: 174,
     borderRadius: 20,
     borderWidth: 1,
