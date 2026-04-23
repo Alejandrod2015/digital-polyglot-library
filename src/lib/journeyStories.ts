@@ -72,7 +72,11 @@ export const getPublishedJourneyStories = unstable_cache(
     }
   },
   ["published-journey-stories-v2"],
-  { revalidate: 60, tags: ["published-journey-stories"] }
+  // 5-minute soft cache — publish flow calls revalidateTag() so fresh
+  // content still appears immediately when a story is published; the
+  // longer window just avoids refetching for every reader request when
+  // nothing changed.
+  { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
 /**

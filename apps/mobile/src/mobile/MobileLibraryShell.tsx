@@ -1871,6 +1871,26 @@ export function MobileLibraryShell(args: {
     [sessionToken]
   );
 
+  // Prefetch every cover once the journey payload arrives so tapping into a
+  // level or topic shows images immediately instead of racing the network.
+  useEffect(() => {
+    if (!remoteJourney) return;
+    const covers = new Set<string>();
+    for (const track of remoteJourney.tracks) {
+      for (const level of track.levels) {
+        for (const topic of level.topics) {
+          for (const story of topic.stories) {
+            const url = story.coverUrl;
+            if (typeof url === "string" && url.trim()) covers.add(url);
+          }
+        }
+      }
+    }
+    covers.forEach((url) => {
+      void Image.prefetch(url).catch(() => undefined);
+    });
+  }, [remoteJourney]);
+
   // Hydrate the active journey language from SecureStore on mount so the
   // user's last selection survives app relaunches.
   useEffect(() => {
@@ -8361,7 +8381,7 @@ export function MobileLibraryShell(args: {
                 </View>
               ) : null}
 
-              <View style={styles.journeyStoryList}>
+              <View style={styles.journeyMapList}>
                 {activeJourneyTopic.stories.map((story, index) => {
                   const previousStory = index > 0 ? activeJourneyTopic.stories[index - 1] : null;
                   const badge = !story.unlocked
@@ -8373,54 +8393,94 @@ export function MobileLibraryShell(args: {
                         : index === activeJourneyTopic.unlockedStoryCount - 1
                           ? "Continue"
                           : "Open";
+                  const meta = story.unlocked
+                    ? formatRegion(story.region ?? "") || story.language || "Global"
+                    : previousStory && !previousStory.completed
+                      ? `After ${previousStory.title}`
+                      : "Unlock later";
                   const isOfflineReady = offlineStoriesById.has(story.id) ||
                     Boolean(offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug));
                   const isDownloading = offlineStoryIdInFlight === story.id;
+                  const alignRight = index % 2 === 1;
+
                   return (
-                    <View
-                      key={story.id}
-                      style={[
-                        styles.journeyStoryRow,
-                        !story.unlocked ? styles.journeyTopicActionDisabled : null,
-                      ]}
-                    >
-                      <Pressable
-                        disabled={!story.unlocked}
-                        onPress={() => openJourneyStory(story)}
-                        accessibilityRole="button"
-                        accessibilityLabel={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
-                        testID={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
-                        style={styles.journeyStoryRowContent}
+                    <View key={story.id} style={styles.journeyMapSequence}>
+                      <View
+                        style={[
+                          styles.journeyMapNodeWrap,
+                          alignRight ? styles.journeyMapNodeWrapRight : styles.journeyMapNodeWrapLeft,
+                        ]}
                       >
-                        <ProgressiveImage uri={getCoverUrl(story.coverUrl)} style={styles.journeyStoryCover} />
-                        <View style={styles.journeyStoryCopy}>
-                          <Text style={styles.journeyStoryBadge}>{badge}</Text>
-                          <Text style={styles.journeyStoryTitle}>{story.title}</Text>
-                          <Text style={styles.journeyStoryMeta}>
-                            {story.unlocked
-                              ? formatRegion(story.region ?? "") || story.language || "Global"
-                              : previousStory && !previousStory.completed
-                                ? `Finish ${previousStory.title} first`
-                                : "Unlock later"}
-                          </Text>
-                        </View>
-                      </Pressable>
-                      {story.unlocked ? (
                         <Pressable
-                          onPress={() => isOfflineReady
-                            ? void removeStoryFromOffline({ id: story.id })
-                            : void downloadJourneyStoryOffline(story)
-                          }
-                          disabled={isDownloading}
-                          style={styles.journeyStoryDownloadBtn}
-                          accessibilityLabel={isOfflineReady ? "Remove offline" : "Download for offline"}
+                          disabled={!story.unlocked}
+                          onPress={() => openJourneyStory(story)}
+                          accessibilityRole="button"
+                          accessibilityLabel={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
+                          testID={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
+                          style={[
+                            styles.journeyMapNode,
+                            !story.unlocked ? styles.journeyMapNodeLocked : null,
+                          ]}
                         >
-                          <Feather
-                            name={isDownloading ? "loader" : isOfflineReady ? "check-circle" : "download-cloud"}
-                            size={17}
-                            color={isOfflineReady ? "#6ab8ff" : "#5a7da0"}
-                          />
+                          <Text style={styles.journeyMapBadge}>{badge}</Text>
+                          <View style={styles.journeyMapArt}>
+                            {story.coverUrl ? (
+                              <ProgressiveImage
+                                uri={getCoverUrl(story.coverUrl)}
+                                style={styles.journeyMapArtImage}
+                              />
+                            ) : (
+                              <View style={styles.journeyMapArtFallback}>
+                                <MaterialCommunityIcons name="book-open-page-variant" size={22} color="#9fb5d0" />
+                              </View>
+                            )}
+                          </View>
+                          <Text
+                            style={[
+                              styles.journeyMapTitle,
+                              !story.unlocked ? styles.journeyTopicActionTextDisabled : null,
+                            ]}
+                          >
+                            {story.title}
+                          </Text>
+                          <Text style={styles.journeyMapMeta}>{meta}</Text>
                         </Pressable>
+                        {story.unlocked ? (
+                          <Pressable
+                            onPress={() => isOfflineReady
+                              ? void removeStoryFromOffline({ id: story.id })
+                              : void downloadJourneyStoryOffline(story)
+                            }
+                            disabled={isDownloading}
+                            style={styles.journeyStoryDownloadBtn}
+                            accessibilityLabel={isOfflineReady ? "Remove offline" : "Download for offline"}
+                          >
+                            <Feather
+                              name={isDownloading ? "loader" : isOfflineReady ? "check-circle" : "download-cloud"}
+                              size={17}
+                              color={isOfflineReady ? "#6ab8ff" : "#5a7da0"}
+                            />
+                          </Pressable>
+                        ) : null}
+                      </View>
+
+                      {index < activeJourneyTopic.stories.length - 1 ? (
+                        <View
+                          pointerEvents="none"
+                          style={[
+                            styles.journeyMapConnectorRow,
+                            alignRight ? styles.journeyMapConnectorRowLeft : styles.journeyMapConnectorRowRight,
+                          ]}
+                        >
+                          <View
+                            style={[
+                              styles.journeyMapConnectorCurve,
+                              alignRight
+                                ? styles.journeyMapConnectorCurveRight
+                                : styles.journeyMapConnectorCurveLeft,
+                            ]}
+                          />
+                        </View>
                       ) : null}
                     </View>
                   );
@@ -10781,8 +10841,10 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   journeyStoryDownloadBtn: {
+    marginTop: 4,
     paddingHorizontal: 8,
-    paddingVertical: 8,
+    paddingVertical: 6,
+    alignSelf: "center",
   },
   journeyStoryCover: {
     width: 54,

@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import {
   CEFR_LEVEL_LABELS,
   type CefrLevel,
@@ -486,21 +487,33 @@ function prettifyTopicLabel(slug: string): string {
  * there show up in the reader. Returns an empty array when there is no
  * Studio content for the language — the caller falls back to legacy.
  */
+// Cached Prisma read. Pair with revalidateTag("published-journey-stories")
+// — already fired by /api/studio/journeys/publish — so newly published
+// content appears immediately while the reader avoids a round trip on
+// every request.
+const getStudioJourneysForLanguage = unstable_cache(
+  async (language: string) => {
+    return prisma.journey.findMany({
+      where: {
+        language: { equals: language, mode: "insensitive" },
+        status: { not: "archived" },
+      },
+      include: {
+        stories: {
+          where: { status: "published", NOT: [{ text: null }, { title: null }] },
+          orderBy: [{ level: "asc" }, { slotIndex: "asc" }],
+        },
+      },
+    });
+  },
+  ["studio-journeys-by-language-v1"],
+  { revalidate: 300, tags: ["published-journey-stories"] }
+);
+
 async function buildJourneyVariantsFromStudio(
   language: string
 ): Promise<JourneyVariantTrack[]> {
-  const journeys = await prisma.journey.findMany({
-    where: {
-      language: { equals: language, mode: "insensitive" },
-      status: { not: "archived" },
-    },
-    include: {
-      stories: {
-        where: { status: "published", NOT: [{ text: null }, { title: null }] },
-        orderBy: [{ level: "asc" }, { slotIndex: "asc" }],
-      },
-    },
-  });
+  const journeys = await getStudioJourneysForLanguage(language);
   if (journeys.length === 0) return [];
 
   // Include a track only when the Studio journey has at least one published story.
