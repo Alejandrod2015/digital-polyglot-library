@@ -22,7 +22,7 @@ type PlaybackSnapshot = {
   didJustFinish: boolean;
 };
 
-const SEEK_STEP_MS = 15_000;
+const SEEK_STEP_MS = 10_000;
 const SPEEDS = [0.75, 1, 1.25, 1.5] as const;
 
 function formatClock(ms: number): string {
@@ -228,7 +228,7 @@ export function NativeAudioPlayer({
 
         <Pressable onPress={() => void seekBy(-SEEK_STEP_MS)} style={styles.iconButton}>
           <Feather name="rotate-ccw" size={24} color="#dbe9ff" />
-          <Text style={styles.iconButtonText}>15</Text>
+          <Text style={styles.iconButtonText}>10</Text>
         </Pressable>
 
         <Pressable
@@ -247,7 +247,7 @@ export function NativeAudioPlayer({
 
         <Pressable onPress={() => void seekBy(SEEK_STEP_MS)} style={styles.iconButton}>
           <Feather name="rotate-cw" size={24} color="#dbe9ff" />
-          <Text style={styles.iconButtonText}>15</Text>
+          <Text style={styles.iconButtonText}>10</Text>
         </Pressable>
 
         {variant === "sticky" && canGoNext ? (

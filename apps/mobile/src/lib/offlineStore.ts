@@ -24,6 +24,10 @@ export type OfflineLibraryStory = {
   cefrLevel?: string;
   topic?: string;
   text?: string | null;
+  // JSON-encoded VocabItem[] from the remote story payload. Persisted so the
+  // reader can highlight vocabulary when opening the story offline (or when
+  // the offline copy is used even online to skip the network fetch).
+  vocabRaw?: string | null;
   audioUrl?: string | null;
   localCoverUri?: string | null;
   localAudioUri?: string | null;
@@ -265,6 +269,7 @@ export async function saveStandaloneStoryOffline(
     slug: string;
     title: string;
     text: string;
+    vocabRaw?: string | null;
     language?: string | null;
     variant?: string | null;
     region?: string | null;
@@ -297,6 +302,7 @@ export async function saveStandaloneStoryOffline(
     cefrLevel: story.cefrLevel ?? undefined,
     topic: story.topic ?? undefined,
     text: story.text,
+    vocabRaw: story.vocabRaw ?? undefined,
     audioUrl: story.audioUrl ?? undefined,
   };
 

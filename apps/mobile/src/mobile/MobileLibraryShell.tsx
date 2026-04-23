@@ -1451,6 +1451,11 @@ export function MobileLibraryShell(args: {
   const [practiceSeedItems, setPracticeSeedItems] = useState<PracticeFavoriteItem[] | null>(null);
   const [practiceLoadError, setPracticeLoadError] = useState<string | null>(null);
   const [practiceReturnSelection, setPracticeReturnSelection] = useState<ReaderSelection | null>(null);
+  // Screen the user was on when story-based practice was launched (typically
+  // "journey" if they came from a topic detail, or "home" / "explore" etc.).
+  // Restored by closePracticeSession so tapping back out of the reader after
+  // a practice session returns them to where they came from, not "practice".
+  const [practicePreviousScreen, setPracticePreviousScreen] = useState<MobileScreen | null>(null);
   const [practiceReviewScores, setPracticeReviewScores] = useState<Record<string, ReviewScore>>({});
   const [practiceCheckpointToken, setPracticeCheckpointToken] = useState<string | null>(null);
   const [practiceCheckpointResponses, setPracticeCheckpointResponses] = useState<Record<string, string>>({});
@@ -3348,14 +3353,20 @@ export function MobileLibraryShell(args: {
       void Image.prefetch(getCoverUrl(story.coverUrl, 640)).catch(() => undefined);
     }
 
-    // Use locally cached version if available
+    // Use locally cached version if available. If the cached copy is missing
+    // vocab (older downloads saved before vocabRaw was persisted), try the
+    // network first so the reader can still highlight words; if the network
+    // fails we fall back to the local text-only copy further down.
     const offlineCopy = offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug);
-    if (offlineCopy?.text) {
+    const hasOfflineVocab =
+      typeof offlineCopy?.vocabRaw === "string" && offlineCopy.vocabRaw.trim().length > 0;
+    if (offlineCopy?.text && hasOfflineVocab) {
       const standalone: MobileStandaloneStory = {
         id: offlineCopy.storyId,
         slug: offlineCopy.storySlug ?? story.storySlug,
         title: offlineCopy.title,
         text: offlineCopy.text,
+        vocabRaw: offlineCopy.vocabRaw ?? null,
         language: offlineCopy.language ?? null,
         variant: offlineCopy.variant ?? null,
         region: offlineCopy.region ?? null,
@@ -3379,8 +3390,39 @@ export function MobileLibraryShell(args: {
       const standalone = payload.stories?.[0];
       if (!standalone) return;
       openSelection(createSelectionFromStandaloneStory(standalone));
+      // If this story is already downloaded offline but was saved before
+      // vocabRaw was persisted, backfill the snapshot so next offline open
+      // has highlights without needing a re-download.
+      if (offlineCopy && !hasOfflineVocab && typeof standalone.vocabRaw === "string") {
+        try {
+          const next = await saveStandaloneStoryOffline(PREVIEW_OFFLINE_USER_ID, standalone);
+          setOfflineSnapshot(next);
+        } catch (err) {
+          console.warn("[mobile journey] failed to backfill vocab into offline copy", err);
+        }
+      }
     } catch (error) {
       console.error("[mobile journey] failed to open journey story", error);
+      // We're likely offline AND the local copy has no vocab. Better to open
+      // the text-only version than to do nothing.
+      if (offlineCopy?.text) {
+        const standalone: MobileStandaloneStory = {
+          id: offlineCopy.storyId,
+          slug: offlineCopy.storySlug ?? story.storySlug,
+          title: offlineCopy.title,
+          text: offlineCopy.text,
+          vocabRaw: offlineCopy.vocabRaw ?? null,
+          language: offlineCopy.language ?? null,
+          variant: offlineCopy.variant ?? null,
+          region: offlineCopy.region ?? null,
+          level: offlineCopy.level ?? null,
+          cefrLevel: offlineCopy.cefrLevel ?? null,
+          topic: offlineCopy.topic ?? null,
+          coverUrl: offlineCopy.localCoverUri ?? offlineCopy.coverUrl ?? null,
+          audioUrl: offlineCopy.localAudioUri ?? offlineCopy.audioUrl ?? null,
+        };
+        openSelection(createSelectionFromStandaloneStory(standalone));
+      }
     }
   }
 
@@ -3927,6 +3969,10 @@ export function MobileLibraryShell(args: {
         storyTitle: selection.story.title,
       });
       setPracticeReturnSelection(selection);
+      // Remember the screen we were on (usually "journey" when coming from
+      // a topic detail). Used by closePracticeSession to restore the right
+      // tab under the reader so the next back-tap lands on topic detail.
+      setPracticePreviousScreen(activeScreen);
       setPracticeLoadError(null);
       setActivePracticeMode("context");
       setPracticeExercises(exercises);
@@ -4065,13 +4111,17 @@ export function MobileLibraryShell(args: {
     setSpeakingPracticePromptId(null);
     setActivePracticeMode(null);
     if (practiceLaunchContext.source === "story" && practiceReturnSelection) {
+      // Restore the reader AND the tab underneath it, so tapping back inside
+      // the reader returns to the topic detail (journey), not Practice.
       setSelection(practiceReturnSelection);
+      setActiveScreen(practicePreviousScreen ?? "journey");
     } else if (practiceLaunchContext.source === "journey") {
       setActiveScreen("journey");
     }
     setPracticeSeedItems(null);
     setPracticeLaunchContext({ source: "favorites" });
     setPracticeReturnSelection(null);
+    setPracticePreviousScreen(null);
     setPracticeExercises([]);
     setPracticeIndex(0);
     setPracticeScore(0);
@@ -4331,12 +4381,50 @@ export function MobileLibraryShell(args: {
       return;
     }
 
+    // If the TTS fallback is currently speaking, a second tap should stop it.
+    if (speakingPracticePromptId === currentPracticeExercise.id) {
+      getOptionalSpeechModule()?.stop();
+      setSpeakingPracticePromptId(null);
+      return;
+    }
+
     const storyAudio = await ensurePracticeClipStoryAudio(clip);
     const segment = findSegmentForClip(storyAudio, clip);
     const baseAudioUrl = resolvePracticeAudioUri(storyAudio?.audioUrl);
     const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
     const audioUrl = segmentClipUrl ?? baseAudioUrl;
-    if (!audioUrl || !segment) return;
+    // Journey stories don't yet ship with per-sentence alignment segments, so
+    // there's no precise clip we can scrub into. Instead of silently no-oping
+    // the Play button, fall back to on-device TTS of the context sentence in
+    // the story's language. Works for every journey story, uses the right
+    // voice (it-IT, de-DE, etc.), and the audio sync is accurate enough for
+    // a short sentence.
+    if (!audioUrl || !segment) {
+      const speechText = clip.sentence?.trim();
+      const Speech = getOptionalSpeechModule();
+      if (!speechText || !Speech) return;
+      await stopPracticeContextClip();
+      Speech.stop();
+      setSpeakingPracticePromptId(currentPracticeExercise.id);
+      Speech.speak(speechText, {
+        language: getSpeechSynthesisLang(clip.language),
+        rate: 0.92,
+        pitch: 1,
+        onDone: () =>
+          setSpeakingPracticePromptId((cur) =>
+            cur === currentPracticeExercise.id ? null : cur
+          ),
+        onStopped: () =>
+          setSpeakingPracticePromptId((cur) =>
+            cur === currentPracticeExercise.id ? null : cur
+          ),
+        onError: () =>
+          setSpeakingPracticePromptId((cur) =>
+            cur === currentPracticeExercise.id ? null : cur
+          ),
+      });
+      return;
+    }
 
     await stopPracticeContextClip();
     getOptionalSpeechModule()?.stop();

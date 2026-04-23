@@ -2,7 +2,7 @@ import "./src/polyfills";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ClerkProvider, useAuth, useClerk } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
-import { ActivityIndicator, Image, Linking, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { Image, Linking, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
 import { AuthScreen } from "./src/auth/AuthScreen";
 import { exchangeClerkSessionForMobileToken } from "./src/auth/exchangeClerkSession";
 import {
@@ -284,7 +284,6 @@ function MobileAppRoot() {
             resizeMode="contain"
             accessibilityLabel="Digital Polyglot"
           />
-          <ActivityIndicator color="#1e62e3" style={styles.loadingSpinner} />
         </View>
       </SafeAreaView>
     );
