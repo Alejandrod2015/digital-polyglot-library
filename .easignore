@@ -21,9 +21,12 @@ apps/mobile/ios/build
 qa-artifacts
 .maestro
 qa
-*.png
-*.jpg
-*.jpeg
+# Loose screenshots at the repo root only — do NOT recursively exclude PNGs,
+# otherwise required runtime assets like apps/mobile/assets/*.png are dropped
+# from the EAS upload and Metro can't resolve them at bundle time.
+/*.png
+/*.jpg
+/*.jpeg
 
 # local tooling
 .git
