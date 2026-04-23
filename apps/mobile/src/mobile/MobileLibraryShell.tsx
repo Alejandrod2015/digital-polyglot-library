@@ -3887,7 +3887,17 @@ export function MobileLibraryShell(args: {
         storySlug: selection.story.slug,
       });
 
-      if (selection.book.slug && !selection.book.slug.startsWith("generated-book-")) {
+      // Only send bookSlug for REAL curated books. The synthesized
+      // "standalone-stories" book (used for Sanity standalones + Prisma
+      // journey stories) and "generated-book-*" (user-created stories) are
+      // not in the hard-coded `books` catalog on the server, so sending them
+      // as bookSlug makes the server 404 before it reaches the standalone/
+      // journey fallbacks. Omitting the param lets it resolve correctly.
+      const hasRealBookSlug =
+        selection.book.slug &&
+        selection.book.slug !== "standalone-stories" &&
+        !selection.book.slug.startsWith("generated-book-");
+      if (hasRealBookSlug) {
         params.set("bookSlug", selection.book.slug);
       }
 

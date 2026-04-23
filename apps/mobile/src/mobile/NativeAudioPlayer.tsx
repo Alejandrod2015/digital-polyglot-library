@@ -19,6 +19,7 @@ type PlaybackSnapshot = {
   positionMillis: number;
   durationMillis: number;
   rate: number;
+  didJustFinish: boolean;
 };
 
 const SEEK_STEP_MS = 15_000;
@@ -39,6 +40,7 @@ function toSnapshot(status: AVPlaybackStatus): PlaybackSnapshot {
       positionMillis: 0,
       durationMillis: 0,
       rate: 1,
+      didJustFinish: false,
     };
   }
 
@@ -48,6 +50,7 @@ function toSnapshot(status: AVPlaybackStatus): PlaybackSnapshot {
     positionMillis: status.positionMillis ?? 0,
     durationMillis: status.durationMillis ?? 0,
     rate: status.rate ?? 1,
+    didJustFinish: status.didJustFinish ?? false,
   };
 }
 
@@ -67,6 +70,7 @@ export function NativeAudioPlayer({
     positionMillis: 0,
     durationMillis: 0,
     rate: 1,
+    didJustFinish: false,
   });
   const [error, setError] = useState<string | null>(null);
 
@@ -97,6 +101,7 @@ export function NativeAudioPlayer({
         positionMillis: 0,
         durationMillis: 0,
         rate: 1,
+        didJustFinish: false,
       });
 
       if (!hasAudio) return;

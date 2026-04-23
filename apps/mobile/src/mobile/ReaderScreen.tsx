@@ -297,10 +297,16 @@ export function ReaderScreen(args: {
   // doesn't cause it to re-pop every time the user scrolls near the bottom.
   const promptShownForStoryRef = useRef<string | null>(null);
   const storyOpenedAtRef = useRef<number>(Date.now());
+  // Flip when the user starts audio. If audio is in use we suppress the
+  // scroll/time trigger — they're listening, not reading — and wait for the
+  // audio to actually finish before showing the practice prompt. Avoids the
+  // popup appearing ~10 s before the narration is done.
+  const hasStartedAudioRef = useRef(false);
   useEffect(() => {
     setEndOfStoryPromptVisible(false);
     promptShownForStoryRef.current = null;
     storyOpenedAtRef.current = Date.now();
+    hasStartedAudioRef.current = false;
   }, [story.id]);
   // Minimum elapsed time before the read-path trigger fires. Rejects quick
   // scroll-throughs: 30s absolute floor, scaled for long stories by
@@ -479,10 +485,11 @@ export function ReaderScreen(args: {
     }
     trackReadingPosition(ratio, nextBlockIndex);
 
-    // Read-path trigger: scroll reached ~95% AND user has been on the screen
-    // at least `readFloorSec` seconds. The time gate rejects fast drags; the
-    // scroll gate rejects "read the intro and left".
-    if (ratio >= 0.95) {
+    // Read-path trigger: only if the user ISN'T using audio. Scroll reached
+    // ~95% AND they've been on screen at least `readFloorSec` seconds. The
+    // time gate rejects fast drags; the scroll gate rejects "read the intro
+    // and left". If audio is in use we wait for audio completion instead.
+    if (!hasStartedAudioRef.current && ratio >= 0.95) {
       const elapsedSec = (Date.now() - storyOpenedAtRef.current) / 1000;
       if (elapsedSec >= readFloorSec) {
         maybeFireEndOfStoryPrompt();
@@ -736,10 +743,17 @@ export function ReaderScreen(args: {
               if (shouldPersist) {
                 void persistContinueListening(progressSec, durationSec);
               }
-              // Audio-path trigger for the end-of-story practice prompt: if
-              // the user listened to ≥ 90% of the audio duration, they
-              // finished the story even without ever scrolling.
-              if (ratio >= 0.9) {
+              // Mark audio as "in use" the first time we see the user
+              // actively playing. Suppresses the scroll-based trigger while
+              // they're listening.
+              if (playback.isPlaying) {
+                hasStartedAudioRef.current = true;
+              }
+              // Audio-path trigger: fire ONLY when the narration actually
+              // finishes (expo-av's didJustFinish). Using a percentage-based
+              // trigger (e.g. 90 %) popped the prompt while the reader was
+              // still listening to the last paragraph.
+              if (playback.didJustFinish) {
                 maybeFireEndOfStoryPrompt();
               }
             }
@@ -1049,19 +1063,18 @@ const styles = StyleSheet.create({
     lineHeight: 35,
   },
   highlightedWord: {
-    // Solid amber "highlighter marker" with dark text — same as printed
-    // highlighter pens. Avoids the muddy look a translucent fill had against
-    // the dark-blue page. Slight rounding softens the corners without
-    // looking like a pill.
+    // Solid amber highlighter on dark text. On iOS an inline <Text> with a
+    // backgroundColor fills the full line-box of its own lineHeight — so we
+    // force a tighter lineHeight (26 instead of the paragraph's 35) to stop
+    // the highlight from touching the previous/next line of text. overflow
+    // must NOT be "hidden" on inline text or iOS drops the border radius.
     color: "#1a1205",
     fontSize: 20,
-    lineHeight: 35,
+    lineHeight: 26,
     backgroundColor: "#f8c15c",
     fontWeight: "700",
     paddingHorizontal: 4,
-    paddingVertical: 0,
     borderRadius: 6,
-    overflow: "hidden",
   },
   vocabOverlay: {
     position: "absolute",
