@@ -19,9 +19,12 @@ type Props = {
   style: StyleProp<ImageStyle>;
   resizeMode?: ImageResizeMode;
   skeletonStyle?: StyleProp<ViewStyle>;
+  // Bubbled up so callers (e.g. the reader) can swap to a fallback URL when
+  // a local file:// cached copy turns out to be missing / corrupt.
+  onError?: () => void;
 };
 
-export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonStyle }: Props) {
+export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonStyle, onError }: Props) {
   const alreadyLoaded = loadedUriCache.has(uri);
   const imageOpacity = useRef(new Animated.Value(alreadyLoaded ? 1 : 0)).current;
   const skeletonOpacity = useRef(new Animated.Value(alreadyLoaded ? 0 : 0.55)).current;
@@ -121,7 +124,10 @@ export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonSty
         source={{ uri }}
         resizeMode={resizeMode}
         onLoad={finishLoad}
-        onError={finishLoad}
+        onError={() => {
+          finishLoad();
+          onError?.();
+        }}
         style={[StyleSheet.absoluteFillObject, { opacity: imageOpacity }]}
       />
     </View>

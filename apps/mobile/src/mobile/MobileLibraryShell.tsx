@@ -147,6 +147,10 @@ type ReaderSelection = {
   book: Book;
   story: Story;
   resolvedAudioUrl?: string | null;
+  // Local cover URI to try before falling back to story.cover. Set when we
+  // have a downloaded copy on disk. The reader swaps to story.cover if this
+  // errors (truncated / missing file).
+  resolvedCoverUrl?: string | null;
 };
 
 type MobileScreen =
@@ -434,8 +438,16 @@ type MobileStandaloneStory = {
   level?: string | null;
   cefrLevel?: string | null;
   topic?: string | null;
+  // Remote (http/https) URLs — always safe as a fallback when online.
   coverUrl?: string | null;
   audioUrl?: string | null;
+  // Local (file://) URIs — preferred when available because they work
+  // offline and skip the network. Callers that construct a standalone from
+  // the offline snapshot populate both pairs so the reader can try local
+  // first and fall back to remote automatically if the local file is
+  // missing / corrupt.
+  localCoverUri?: string | null;
+  localAudioUri?: string | null;
 };
 
 function parseStandaloneVocab(raw?: string | null): VocabItem[] {
@@ -1213,7 +1225,15 @@ function createSelectionFromStandaloneStory(story: MobileStandaloneStory): Reade
   const region = story.region?.trim() || undefined;
   const level = toDomainLevel(story.level);
   const cefrLevel = typeof story.cefrLevel === "string" ? story.cefrLevel.toLowerCase() : undefined;
-  const cover = story.coverUrl || undefined;
+  // Keep remote and local URLs on separate fields so the reader has a real
+  // fallback when the local copy is missing / corrupt: `story.cover` and
+  // `story.audio` carry the REMOTE URL (works online, even if offline copy
+  // broke); `resolvedCoverUrl` / `resolvedAudioUrl` carry the LOCAL URI
+  // (works offline when the file is actually on disk).
+  const remoteCover = story.coverUrl || undefined;
+  const remoteAudio = story.audioUrl || "";
+  const localCover = story.localCoverUri || null;
+  const localAudio = story.localAudioUri || null;
   const mobileBook: Book = {
     id: "standalone-book",
     slug: "standalone-stories",
@@ -1226,7 +1246,7 @@ function createSelectionFromStandaloneStory(story: MobileStandaloneStory): Reade
     cefrLevel: cefrLevel as Book["cefrLevel"],
     topic: story.topic || "Daily life",
     audioFolder: "standalone",
-    cover,
+    cover: remoteCover,
     stories: [],
   };
   const mobileStory: Story = {
@@ -1234,7 +1254,7 @@ function createSelectionFromStandaloneStory(story: MobileStandaloneStory): Reade
     slug: story.slug,
     title: story.title,
     text: story.text,
-    audio: story.audioUrl || "",
+    audio: remoteAudio,
     vocab: parseStandaloneVocab(story.vocabRaw),
     language,
     region,
@@ -1242,8 +1262,8 @@ function createSelectionFromStandaloneStory(story: MobileStandaloneStory): Reade
     level,
     cefrLevel: cefrLevel as Story["cefrLevel"],
     topic: story.topic || "Daily life",
-    cover,
-    coverUrl: cover,
+    cover: remoteCover,
+    coverUrl: remoteCover,
     book: mobileBook,
     overrideMetadata: true,
   };
@@ -1252,7 +1272,8 @@ function createSelectionFromStandaloneStory(story: MobileStandaloneStory): Reade
   return {
     book: mobileBook,
     story: mobileStory,
-    resolvedAudioUrl: story.audioUrl ?? null,
+    resolvedAudioUrl: localAudio ?? remoteAudio ?? null,
+    resolvedCoverUrl: localCover,
   };
 }
 
@@ -3480,8 +3501,10 @@ export function MobileLibraryShell(args: {
         level: offlineCopy.level ?? null,
         cefrLevel: offlineCopy.cefrLevel ?? null,
         topic: offlineCopy.topic ?? null,
-        coverUrl: offlineCopy.localCoverUri ?? offlineCopy.coverUrl ?? null,
-        audioUrl: offlineCopy.localAudioUri ?? offlineCopy.audioUrl ?? null,
+        coverUrl: offlineCopy.coverUrl ?? null,
+        audioUrl: offlineCopy.audioUrl ?? null,
+        localCoverUri: offlineCopy.localCoverUri ?? null,
+        localAudioUri: offlineCopy.localAudioUri ?? null,
       };
       openSelection(createSelectionFromStandaloneStory(standalone));
       return;
@@ -3525,8 +3548,10 @@ export function MobileLibraryShell(args: {
           level: offlineCopy.level ?? null,
           cefrLevel: offlineCopy.cefrLevel ?? null,
           topic: offlineCopy.topic ?? null,
-          coverUrl: offlineCopy.localCoverUri ?? offlineCopy.coverUrl ?? null,
-          audioUrl: offlineCopy.localAudioUri ?? offlineCopy.audioUrl ?? null,
+          coverUrl: offlineCopy.coverUrl ?? null,
+          audioUrl: offlineCopy.audioUrl ?? null,
+          localCoverUri: offlineCopy.localCoverUri ?? null,
+          localAudioUri: offlineCopy.localAudioUri ?? null,
         };
         openSelection(createSelectionFromStandaloneStory(standalone));
       }
@@ -9000,6 +9025,7 @@ export function MobileLibraryShell(args: {
           book={selection.book}
           story={selection.story}
           resolvedAudioUrl={offlineStory?.localAudioUri ?? selection.resolvedAudioUrl ?? selection.story.audio}
+          resolvedCoverUrl={offlineStory?.localCoverUri ?? selection.resolvedCoverUrl ?? null}
           sessionToken={sessionToken}
           onBack={() => setSelection(null)}
           canGoPrevious={Boolean(previousStory)}

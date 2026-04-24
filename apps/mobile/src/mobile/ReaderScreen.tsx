@@ -264,6 +264,10 @@ export function ReaderScreen(args: {
   book: Book;
   story: Story;
   resolvedAudioUrl?: string | null;
+  // Local (file://) cover URI from a prior offline download. Tried first;
+  // if the image fails to load we fall back to story.cover / story.coverUrl
+  // (remote) automatically so a missing / corrupt local file still renders.
+  resolvedCoverUrl?: string | null;
   sessionToken?: string | null;
   onBack: () => void;
   canGoPrevious?: boolean;
@@ -295,6 +299,7 @@ export function ReaderScreen(args: {
     book,
     story,
     resolvedAudioUrl,
+    resolvedCoverUrl,
     sessionToken,
     onBack,
     canGoPrevious = false,
@@ -363,7 +368,19 @@ export function ReaderScreen(args: {
   const hasRestoredPositionRef = useRef(false);
   const lastTrackedReadingRatioRef = useRef<number | null>(null);
   const lastTrackedBlockIndexRef = useRef<number | null>(null);
-  const coverUrl = story.cover || story.coverUrl || book.cover;
+  const remoteCoverUrl = story.cover || story.coverUrl || book.cover;
+  // Prefer the local (file://) copy when we have one — it's instant and
+  // works offline. If it errors (file missing / truncated), ProgressiveImage
+  // calls onError and we swap to the remote URL for a graceful recovery.
+  const [localCoverFailed, setLocalCoverFailed] = useState(false);
+  useEffect(() => {
+    setLocalCoverFailed(false);
+  }, [story.id]);
+  const preferLocalCover =
+    typeof resolvedCoverUrl === "string" &&
+    resolvedCoverUrl.startsWith("file://") &&
+    !localCoverFailed;
+  const coverUrl = preferLocalCover ? resolvedCoverUrl : remoteCoverUrl;
   // The reader does not render anything based on the active block index
   // (it's only used to persist progress on scroll). Keeping it in state
   // would trigger a full re-render of the reader on every block boundary
@@ -648,7 +665,15 @@ export function ReaderScreen(args: {
           // w=640 is plenty for the 196pt-tall hero at @3x and is usually
           // already in the Next.js image cache because smaller cards share
           // the same bucket — keeps first render fast.
-          <ProgressiveImage uri={getCoverUrl(coverUrl, 640)} style={styles.readerCover} resizeMode="cover" />
+          <ProgressiveImage
+            uri={getCoverUrl(coverUrl, 640)}
+            style={styles.readerCover}
+            resizeMode="cover"
+            onError={() => {
+              // Swap to the remote URL if the local file failed to load.
+              if (preferLocalCover) setLocalCoverFailed(true);
+            }}
+          />
         ) : null}
 
         <View style={styles.textWrap}>

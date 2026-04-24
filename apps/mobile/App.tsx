@@ -103,10 +103,14 @@ function MobileAppRoot() {
       const storedToken = await loadMobileSessionToken();
       if (cancelled) return;
 
+      // If the stored token is *structurally* broken (unparseable) we drop it —
+      // there's no way the API will ever accept it. But an EXPIRED token we
+      // keep around: offline cold-start needs some proof-of-prior-sign-in to
+      // let the user into the app, and online the first 401 will
+      // naturally trigger `handleUnauthorizedSession` → sign-out.
       if (storedToken) {
         const decoded = decodeMobileSessionToken(storedToken);
-        const nowSec = Math.floor(Date.now() / 1000);
-        if (!decoded || decoded.exp <= nowSec) {
+        if (!decoded) {
           await clearMobileSessionToken();
           setLoadingSession(false);
           return;
@@ -285,11 +289,12 @@ function MobileAppRoot() {
   //      edge-case where we have no local JWT and Clerk also can't hydrate.
   //   3. Clerk IS signed in but we're still waiting for the mobile-session
   //      JWT exchange (`handleNativeSessionSync`) to complete.
-  const hasValidLocalSession = (() => {
-    if (!session) return false;
-    const nowSec = Math.floor(Date.now() / 1000);
-    return session.exp > nowSec;
-  })();
+  // Any parseable local session is enough to bypass the Clerk gate. We
+  // intentionally don't check `exp` here: an expired token is still proof
+  // that the user has signed in on this device before, and offline we can't
+  // refresh it anyway. If it turns out to be expired online, the first
+  // backend 401 will trigger a real sign-out flow in the Shell.
+  const hasValidLocalSession = Boolean(session);
   const clerkHydrating = !clerkLoaded && !hasValidLocalSession && !clerkHydrationTimedOut;
   const clerkSyncPending = clerkLoaded && isClerkSignedIn && !sessionToken;
   const shouldShowSplash = loadingSession || clerkHydrating || clerkSyncPending;
