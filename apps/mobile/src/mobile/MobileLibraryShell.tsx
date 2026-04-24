@@ -40,6 +40,7 @@ import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
+import { PracticeExitConfirm } from "./PracticeExitConfirm";
 import {
   BookHomeCard,
   BookWebCard,
@@ -1471,6 +1472,15 @@ export function MobileLibraryShell(args: {
   const [practiceSelectedOption, setPracticeSelectedOption] = useState<string | null>(null);
   const [practiceRevealed, setPracticeRevealed] = useState(false);
   const [practiceComplete, setPracticeComplete] = useState(false);
+  // Controls the "Exit without finishing?" confirmation overlay. Back button
+  // opens it when the user is mid-session (has started at least one exercise
+  // and hasn't completed the round). The Done button after completion skips
+  // straight past it — no confirmation needed then.
+  const [practiceExitConfirmVisible, setPracticeExitConfirmVisible] = useState(false);
+  // Story ID that should wear the "next up" glow on the topic / book list
+  // after a story-based practice session completes. Cleared after a few
+  // seconds so the glow is attention-grabbing but not permanent.
+  const [highlightedNextStoryId, setHighlightedNextStoryId] = useState<string | null>(null);
   const [speakingPracticePromptId, setSpeakingPracticePromptId] = useState<string | null>(null);
   const [playingPracticeClipId, setPlayingPracticeClipId] = useState<string | null>(null);
   const [practiceLastResult, setPracticeLastResult] = useState<"correct" | "wrong" | null>(null);
@@ -4238,15 +4248,60 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  // Back-arrow handler. If the session is already complete OR the user
+  // hasn't actually attempted anything yet, we close immediately — there's
+  // nothing meaningful to "lose". If they're mid-session, we surface a
+  // confirmation overlay so a stray tap doesn't wipe their streak/score.
+  function requestClosePracticeSession() {
+    if (practiceComplete) {
+      closePracticeSession();
+      return;
+    }
+    const attemptedAnything = practiceIndex > 0 || practiceRevealed || practiceSelectedOption !== null;
+    if (!attemptedAnything) {
+      closePracticeSession();
+      return;
+    }
+    setPracticeExitConfirmVisible(true);
+  }
+
+  function confirmExitPracticeSession() {
+    setPracticeExitConfirmVisible(false);
+    closePracticeSession();
+  }
+
   function closePracticeSession() {
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
     setActivePracticeMode(null);
+    setPracticeExitConfirmVisible(false);
     if (practiceLaunchContext.source === "story" && practiceReturnSelection) {
-      // Restore the reader AND the tab underneath it, so tapping back inside
-      // the reader returns to the topic detail (journey), not Practice.
-      setSelection(practiceReturnSelection);
-      setActiveScreen(practicePreviousScreen ?? "journey");
+      // If the user actually finished the round we DON'T re-open the story
+      // they just read — we send them back to the list (topic detail /
+      // library) with the next story glowing, so the natural next action is
+      // visible the moment the practice screen clears. If they bailed
+      // mid-session we restore the reader so they can keep listening.
+      const sourceBook = practiceReturnSelection.book;
+      const finishedStoryId = practiceReturnSelection.story.id;
+      const finishedIndex = sourceBook.stories.findIndex((s) => s.id === finishedStoryId);
+      const nextStory =
+        practiceComplete && finishedIndex >= 0 && finishedIndex < sourceBook.stories.length - 1
+          ? sourceBook.stories[finishedIndex + 1]
+          : null;
+      if (nextStory) {
+        setSelection(null);
+        setActiveScreen(practicePreviousScreen ?? "journey");
+        setHighlightedNextStoryId(nextStory.id);
+        // Clear the glow after a few seconds so it's an attention cue
+        // rather than a permanent decoration.
+        setTimeout(() => {
+          setHighlightedNextStoryId((current) => (current === nextStory.id ? null : current));
+        }, 5000);
+      } else {
+        // Last story in the book, or the user exited mid-session.
+        setSelection(practiceReturnSelection);
+        setActiveScreen(practicePreviousScreen ?? "journey");
+      }
     } else if (practiceLaunchContext.source === "journey") {
       setActiveScreen("journey");
     }
@@ -6364,22 +6419,24 @@ export function MobileLibraryShell(args: {
   const practiceSessionView =
     activePracticeMode && activePracticeCard ? (
       <View style={styles.practiceSessionShell}>
-        <View
-          style={[
-            styles.practiceSessionCard,
-            { backgroundColor: activePracticeCard.background, borderColor: `${activePracticeCard.accent}33` },
-          ]}
-        >
-          <View style={styles.practiceSessionGlow} />
+        <View style={styles.practiceSessionCard}>
           <View style={styles.practiceSessionHeader}>
-            <Pressable onPress={closePracticeSession} style={styles.practiceSessionClose}>
+            <Pressable onPress={requestClosePracticeSession} style={styles.practiceSessionClose}>
               <Feather name="arrow-left" size={18} color="#f5f7fb" />
             </Pressable>
             <View style={styles.practiceSessionTitleWrap}>
-              <Text style={styles.practiceSessionEyebrow}>{activePracticeCard.eyebrow}</Text>
+              <Text style={[styles.practiceSessionEyebrow, { color: activePracticeCard.accent }]}>
+                {activePracticeCard.eyebrow}
+              </Text>
               <Text style={styles.practiceSessionTitle}>{activePracticeCard.title}</Text>
             </View>
-            <View style={[styles.practiceModeIconWrap, styles.practiceSessionIconWrap, { borderColor: `${activePracticeCard.accent}55` }]}>
+            <View
+              style={[
+                styles.practiceModeIconWrap,
+                styles.practiceSessionIconWrap,
+                { borderColor: `${activePracticeCard.accent}55` },
+              ]}
+            >
               <PracticeModeIcon icon={activePracticeCard.icon} color={activePracticeCard.accent} />
             </View>
           </View>
@@ -6777,6 +6834,13 @@ export function MobileLibraryShell(args: {
             </>
           ) : null}
         </View>
+        {practiceExitConfirmVisible ? (
+          <PracticeExitConfirm
+            accent={activePracticeCard?.accent ?? "#f8d48a"}
+            onKeepGoing={() => setPracticeExitConfirmVisible(false)}
+            onExit={confirmExitPracticeSession}
+          />
+        ) : null}
       </View>
     ) : null;
 
@@ -8604,10 +8668,14 @@ export function MobileLibraryShell(args: {
                   const alignRight = index % 2 === 1;
                   // Glow the first unlocked, not-yet-completed story so the
                   // user can see at a glance where to resume in this topic.
+                  // Also glow the story we just set as "next up" after a
+                  // successful practice session — even if it's already
+                  // completed, the glow guides the user's attention.
                   const isNextAction =
-                    story.unlocked &&
-                    !story.completed &&
-                    activeJourneyTopic.stories.findIndex((s) => s.unlocked && !s.completed) === index;
+                    (story.unlocked &&
+                      !story.completed &&
+                      activeJourneyTopic.stories.findIndex((s) => s.unlocked && !s.completed) === index) ||
+                    highlightedNextStoryId === story.id;
 
                   return (
                     <View key={story.id} style={styles.journeyMapSequence}>
@@ -12377,20 +12445,13 @@ const styles = StyleSheet.create({
   },
   practiceSessionCard: {
     flex: 1,
-    borderRadius: 32,
-    borderWidth: 1,
-    overflow: "hidden",
-    padding: 16,
+    // Background and border removed — the practice session now lives on the
+    // same dark surface as Journey / Topic views. The only color accent is
+    // the per-mode tint applied to the eyebrow pill and the progress bar,
+    // which keeps the "which mode am I in" signal without the heavy panel.
+    paddingHorizontal: 4,
+    paddingTop: 4,
     gap: 12,
-  },
-  practiceSessionGlow: {
-    position: "absolute",
-    top: -40,
-    right: -50,
-    width: 180,
-    height: 180,
-    borderRadius: 999,
-    backgroundColor: "rgba(255,255,255,0.08)",
   },
   practiceSessionHeader: {
     flexDirection: "row",

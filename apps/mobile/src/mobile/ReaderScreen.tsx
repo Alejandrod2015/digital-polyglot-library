@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+  Animated,
   AppState,
+  Easing,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -341,6 +343,114 @@ export function ReaderScreen(args: {
   const isOfflineAudio = typeof audioUrl === "string" && audioUrl.startsWith("file://");
   const [selectedVocab, setSelectedVocab] = useState<VocabItem | null>(null);
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
+  // Animated values for the end-of-story prompt. Entrance is a spring-in
+  // (backdrop fades, card slides up with a small overshoot and scales to 1)
+  // matching the rest of the app's micro-animations (celebration toast,
+  // journey milestone). Exit on "Start practice" is a compress+fade that
+  // visually pushes the card into the practice screen instead of popping
+  // it away.
+  const endOfStoryBackdropOpacity = useRef(new Animated.Value(0)).current;
+  const endOfStoryCardOpacity = useRef(new Animated.Value(0)).current;
+  const endOfStoryCardTranslate = useRef(new Animated.Value(40)).current;
+  const endOfStoryCardScale = useRef(new Animated.Value(0.92)).current;
+  // Pulsing halo behind the "Start practice" CTA to draw the eye — same
+  // feel as NextActionGlow on the journey map.
+  const endOfStoryCtaPulse = useRef(new Animated.Value(0.3)).current;
+  useEffect(() => {
+    if (!endOfStoryPromptVisible) {
+      endOfStoryBackdropOpacity.setValue(0);
+      endOfStoryCardOpacity.setValue(0);
+      endOfStoryCardTranslate.setValue(40);
+      endOfStoryCardScale.setValue(0.92);
+      return;
+    }
+    Animated.parallel([
+      Animated.timing(endOfStoryBackdropOpacity, {
+        toValue: 1,
+        duration: 200,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.timing(endOfStoryCardOpacity, {
+        toValue: 1,
+        duration: 260,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.timing(endOfStoryCardTranslate, {
+        toValue: 0,
+        duration: 340,
+        easing: Easing.out(Easing.back(1.2)),
+        useNativeDriver: true,
+      }),
+      Animated.timing(endOfStoryCardScale, {
+        toValue: 1,
+        duration: 340,
+        easing: Easing.out(Easing.back(1.4)),
+        useNativeDriver: true,
+      }),
+    ]).start();
+    // Looping CTA halo.
+    const pulse = Animated.loop(
+      Animated.sequence([
+        Animated.timing(endOfStoryCtaPulse, {
+          toValue: 0.7,
+          duration: 900,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }),
+        Animated.timing(endOfStoryCtaPulse, {
+          toValue: 0.3,
+          duration: 900,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }),
+      ])
+    );
+    pulse.start();
+    return () => pulse.stop();
+  }, [
+    endOfStoryPromptVisible,
+    endOfStoryBackdropOpacity,
+    endOfStoryCardOpacity,
+    endOfStoryCardTranslate,
+    endOfStoryCardScale,
+    endOfStoryCtaPulse,
+  ]);
+
+  function runEndOfStoryExitAnimation(onDone: () => void) {
+    // Card compresses + sinks + fades, backdrop fades. The slight downward
+    // movement plus scale-down feels like the card is being "pushed into"
+    // the practice screen that's about to appear.
+    Animated.parallel([
+      Animated.timing(endOfStoryCardScale, {
+        toValue: 0.96,
+        duration: 180,
+        easing: Easing.in(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.timing(endOfStoryCardTranslate, {
+        toValue: 20,
+        duration: 180,
+        easing: Easing.in(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.timing(endOfStoryCardOpacity, {
+        toValue: 0,
+        duration: 180,
+        easing: Easing.in(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.timing(endOfStoryBackdropOpacity, {
+        toValue: 0,
+        duration: 180,
+        easing: Easing.in(Easing.quad),
+        useNativeDriver: true,
+      }),
+    ]).start(({ finished }) => {
+      if (finished) onDone();
+    });
+  }
   // Only auto-open the practice prompt once per story view so dismissing it
   // doesn't cause it to re-pop every time the user scrolls near the bottom.
   const promptShownForStoryRef = useRef<string | null>(null);
@@ -714,13 +824,34 @@ export function ReaderScreen(args: {
       </ScrollView>
 
       {endOfStoryPromptVisible && onOpenPractice ? (
-        <View style={styles.endOfStoryBackdrop} accessibilityLabel="qa-reader-practice-prompt" testID="qa-reader-practice-prompt">
-          <Pressable
-            style={styles.endOfStoryBackdropPress}
-            accessibilityLabel="qa-reader-practice-prompt-dismiss"
-            onPress={() => setEndOfStoryPromptVisible(false)}
-          />
-          <View style={styles.endOfStoryDialog}>
+        <View
+          style={styles.endOfStoryBackdrop}
+          accessibilityLabel="qa-reader-practice-prompt"
+          testID="qa-reader-practice-prompt"
+          pointerEvents="box-none"
+        >
+          <Animated.View
+            pointerEvents="auto"
+            style={[styles.endOfStoryBackdropFill, { opacity: endOfStoryBackdropOpacity }]}
+          >
+            <Pressable
+              style={StyleSheet.absoluteFillObject}
+              accessibilityLabel="qa-reader-practice-prompt-dismiss"
+              onPress={() => setEndOfStoryPromptVisible(false)}
+            />
+          </Animated.View>
+          <Animated.View
+            style={[
+              styles.endOfStoryDialog,
+              {
+                opacity: endOfStoryCardOpacity,
+                transform: [
+                  { translateY: endOfStoryCardTranslate },
+                  { scale: endOfStoryCardScale },
+                ],
+              },
+            ]}
+          >
             <Pressable
               onPress={() => setEndOfStoryPromptVisible(false)}
               style={styles.endOfStoryDialogClose}
@@ -753,19 +884,29 @@ export function ReaderScreen(args: {
                 </View>
               </View>
             ) : null}
-            <Pressable
-              onPress={() => {
-                setEndOfStoryPromptVisible(false);
-                onOpenPractice();
-              }}
-              accessibilityRole="button"
-              accessibilityLabel="qa-reader-practice-story"
-              testID="qa-reader-practice-story"
-              style={styles.endOfStoryButton}
-            >
-              <Feather name="zap" size={16} color="#0e1727" />
-              <Text style={styles.endOfStoryButtonText}>Start practice</Text>
-            </Pressable>
+            <View style={styles.endOfStoryCtaWrap}>
+              <Animated.View
+                pointerEvents="none"
+                style={[styles.endOfStoryCtaHalo, { opacity: endOfStoryCtaPulse }]}
+              />
+              <Pressable
+                onPress={() => {
+                  // Run the exit animation first, then fire the navigation
+                  // so the card visually "pushes" into the practice screen.
+                  runEndOfStoryExitAnimation(() => {
+                    setEndOfStoryPromptVisible(false);
+                    onOpenPractice();
+                  });
+                }}
+                accessibilityRole="button"
+                accessibilityLabel="qa-reader-practice-story"
+                testID="qa-reader-practice-story"
+                style={styles.endOfStoryButton}
+              >
+                <Feather name="zap" size={16} color="#0e1727" />
+                <Text style={styles.endOfStoryButtonText}>Start practice</Text>
+              </Pressable>
+            </View>
             <Pressable
               onPress={() => setEndOfStoryPromptVisible(false)}
               accessibilityRole="button"
@@ -773,7 +914,7 @@ export function ReaderScreen(args: {
             >
               <Text style={styles.endOfStoryDialogSecondaryText}>Maybe later</Text>
             </Pressable>
-          </View>
+          </Animated.View>
         </View>
       ) : null}
 
@@ -1053,6 +1194,24 @@ const styles = StyleSheet.create({
   endOfStoryBackdropPress: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "rgba(4, 9, 17, 0.78)",
+  },
+  endOfStoryBackdropFill: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(4, 9, 17, 0.78)",
+  },
+  endOfStoryCtaWrap: {
+    alignSelf: "stretch",
+    position: "relative",
+    marginTop: 2,
+  },
+  endOfStoryCtaHalo: {
+    position: "absolute",
+    top: -8,
+    left: -8,
+    right: -8,
+    bottom: -8,
+    borderRadius: 999,
+    backgroundColor: "rgba(248, 193, 92, 0.35)",
   },
   endOfStoryDialog: {
     width: "100%",
