@@ -1740,45 +1740,60 @@ export function MobileLibraryShell(args: {
 
   useEffect(() => {
     if (!sessionToken) {
-      setRemoteBooks([]);
-      setRemoteStories([]);
-      setRemoteEntitlement(null);
-      setRemoteProgress(null);
-      const clearedPreferences = {
-        targetLanguages: normalizeLanguageSelection(sessionTargetLanguages ?? []),
-        interests: [],
-        preferredLevel: null,
-        preferredRegion: null,
-        preferredVariant: null,
-        learningGoal: null,
-        journeyFocus: null,
-        dailyMinutes: null,
-        remindersEnabled: false,
-        reminderHour: null,
-        journeyPlacementLevel: null,
-        onboardingSurveyCompletedAt: null,
-        onboardingTourCompletedAt: null,
-      };
-      setPreferences(clearedPreferences);
-      setSavedPreferences(clearedPreferences);
-      setReminderHint(null);
-      setPreferencesStatus("idle");
-      setPreferencesHint(null);
-      setCustomInterestInput("");
-      setRemoteError(null);
-      setLoadingRemote(false);
-      setRemoteBooksLoading(false);
-      setRemoteStoriesLoading(false);
-      setRemoteEntitlementLoading(false);
-      setRemoteProgressLoading(false);
-      setRemoteContinueListening([]);
-      setRemoteJourney(null);
-      setActiveJourneyLanguage(null);
-      setJourneyLanguageLoading(false);
-      setJourneyVariantPickerOpen(false);
-      setJourneyInsightsByLanguage({});
-      journeyCacheByLanguageRef.current.clear();
-      void clearJourneyCache(PREVIEW_OFFLINE_USER_ID);
+      // Two distinct "no token" cases:
+      //   1. No sessionUserId either → genuine signed-out state. Wipe
+      //      everything so the next sign-in starts fresh.
+      //   2. We have a sessionUserId from the anchor → the user IS signed
+      //      in, we just can't call the API right now (offline cold-start
+      //      where SecureStore didn't return the JWT). Mark the UI as
+      //      offline so the banner appears; keep cached state intact so
+      //      Library / Home / Journey still render from the snapshot.
+      if (!sessionUserId) {
+        setRemoteBooks([]);
+        setRemoteStories([]);
+        setRemoteEntitlement(null);
+        setRemoteProgress(null);
+        const clearedPreferences = {
+          targetLanguages: normalizeLanguageSelection(sessionTargetLanguages ?? []),
+          interests: [],
+          preferredLevel: null,
+          preferredRegion: null,
+          preferredVariant: null,
+          learningGoal: null,
+          journeyFocus: null,
+          dailyMinutes: null,
+          remindersEnabled: false,
+          reminderHour: null,
+          journeyPlacementLevel: null,
+          onboardingSurveyCompletedAt: null,
+          onboardingTourCompletedAt: null,
+        };
+        setPreferences(clearedPreferences);
+        setSavedPreferences(clearedPreferences);
+        setReminderHint(null);
+        setPreferencesStatus("idle");
+        setPreferencesHint(null);
+        setCustomInterestInput("");
+        setRemoteError(null);
+        setLoadingRemote(false);
+        setRemoteBooksLoading(false);
+        setRemoteStoriesLoading(false);
+        setRemoteEntitlementLoading(false);
+        setRemoteProgressLoading(false);
+        setRemoteContinueListening([]);
+        setRemoteJourney(null);
+        setActiveJourneyLanguage(null);
+        setJourneyLanguageLoading(false);
+        setJourneyVariantPickerOpen(false);
+        setJourneyInsightsByLanguage({});
+        journeyCacheByLanguageRef.current.clear();
+        void clearJourneyCache(PREVIEW_OFFLINE_USER_ID);
+        setIsOffline(false);
+      } else {
+        // Anchor-only / offline-degraded mode.
+        setIsOffline(true);
+        setLoadingRemote(false);
+      }
       return;
     }
 
@@ -1919,7 +1934,7 @@ export function MobileLibraryShell(args: {
     return () => {
       cancelled = true;
     };
-  }, [remoteRefreshCounter, sessionBooksCount, sessionPlan, sessionStoriesCount, sessionToken]);
+  }, [remoteRefreshCounter, sessionBooksCount, sessionPlan, sessionStoriesCount, sessionToken, sessionUserId]);
 
   const loadJourneyForLanguage = useCallback(
     async (language: string, options: { clearPrevious?: boolean } = {}) => {
@@ -9312,7 +9327,7 @@ export function MobileLibraryShell(args: {
       {/* Subtle "you're offline" banner. Only appears once we've actually
           tried to hydrate and every request failed — so it does not flash
           during the initial in-flight window. Tappable to retry. */}
-      {isOffline && isSignedIn ? (
+      {isOffline && (isSignedIn || Boolean(sessionUserId)) ? (
         <Pressable
           accessibilityLabel="Sin conexión. Tocá para reintentar."
           onPress={() => {
