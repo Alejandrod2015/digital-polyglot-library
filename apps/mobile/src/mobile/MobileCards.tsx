@@ -180,18 +180,22 @@ export function BookWebCard({ item, fullWidth = false }: { item: BookCardModel; 
         <ProgressiveImage uri={item.coverUrl} style={styles.bookWebCardCover} resizeMode="cover" />
       </View>
       <View style={styles.bookWebCardBody}>
-        <View style={styles.bookWebCardBadgeRow}>
-          {item.level ? (
-            <Text style={[styles.bookWebCardBadge, styles.bookWebCardLevelBadge]}>
-              {formatLevel(item.level)}
-            </Text>
-          ) : null}
-          {item.language ? <Text style={styles.bookWebCardBadge}>{formatLanguageCode(item.language)}</Text> : null}
-          {item.region && !isSingleVariantLanguage(item.language) ? (
-            <Text style={styles.bookWebCardBadge}>{formatRegion(item.region)}</Text>
-          ) : null}
-        </View>
+        {/* Title first so its top aligns with the top of the cover instead
+            of sitting ~24 pt down behind the badge row. */}
         <Text numberOfLines={2} style={styles.bookWebCardTitle}>{item.title}</Text>
+        {(item.level || item.language || item.region) ? (
+          <View style={styles.bookWebCardBadgeRow}>
+            {item.level ? (
+              <Text style={[styles.bookWebCardBadge, styles.bookWebCardLevelBadge]}>
+                {formatLevel(item.level)}
+              </Text>
+            ) : null}
+            {item.language ? <Text style={styles.bookWebCardBadge}>{formatLanguageCode(item.language)}</Text> : null}
+            {item.region && !isSingleVariantLanguage(item.language) ? (
+              <Text style={styles.bookWebCardBadge}>{formatRegion(item.region)}</Text>
+            ) : null}
+          </View>
+        ) : null}
         {item.statsLine ? <Text style={styles.bookWebCardStats}>{item.statsLine}</Text> : null}
         {item.topicsLine ? <Text numberOfLines={1} style={styles.bookWebCardTopics}>{item.topicsLine}</Text> : null}
         {item.description ? (

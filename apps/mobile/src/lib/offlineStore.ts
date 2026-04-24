@@ -84,6 +84,74 @@ function buildMediaPath(kind: "images" | "audio", key: string, sourceUrl: string
   return `${MEDIA_ROOT}/${kind}/${safeKey}.${extension}`;
 }
 
+// MIN_AUDIO_BYTES is deliberately small — just large enough to reject
+// zero-byte or a few-header-bytes failures. We do NOT use this as a
+// quality threshold; the real validation is Content-Length vs on-disk
+// size below.
+const MIN_AUDIO_BYTES = 1024;
+const MAX_DOWNLOAD_ATTEMPTS = 3;
+
+/**
+ * Download a remote file to disk with resumable transfer, Content-Length
+ * validation, and exponential backoff retries. Returns the local URI when
+ * the downloaded file is trustworthy; `null` otherwise. Any intermediate
+ * failure scrubs the partial file from disk so the next attempt starts
+ * clean. Never throws — all errors turn into `null`.
+ */
+async function downloadResumableWithValidation(
+  remoteUrl: string,
+  destination: string
+): Promise<string | null> {
+  let backoffMs = 1000;
+  for (let attempt = 0; attempt < MAX_DOWNLOAD_ATTEMPTS; attempt += 1) {
+    try {
+      const downloader = FileSystem.createDownloadResumable(remoteUrl, destination);
+      const result = await downloader.downloadAsync();
+      if (!result) throw new Error("download-null");
+      if (result.status >= 400) throw new Error(`http-${result.status}`);
+
+      const info = await FileSystem.getInfoAsync(result.uri);
+      if (!info.exists) throw new Error("file-missing");
+      const localSize = info.size ?? 0;
+
+      // Prefer Content-Length for a strict byte-exact check. Fall back to
+      // the "must be at least MIN bytes" heuristic when the server didn't
+      // send it (R2 always sends Content-Length for static assets).
+      const headers = (result.headers ?? {}) as Record<string, string>;
+      const rawContentLength = headers["content-length"] ?? headers["Content-Length"];
+      const expectedSize =
+        rawContentLength && /^\d+$/.test(rawContentLength) ? Number(rawContentLength) : null;
+
+      if (expectedSize !== null && expectedSize > 0) {
+        if (localSize !== expectedSize) {
+          throw new Error(`size-mismatch-${localSize}-of-${expectedSize}`);
+        }
+      } else if (localSize < MIN_AUDIO_BYTES) {
+        throw new Error(`tiny-file-${localSize}`);
+      }
+
+      return result.uri;
+    } catch (err) {
+      console.warn("[offline-dl] attempt failed", {
+        attempt: attempt + 1,
+        url: remoteUrl,
+        error: err instanceof Error ? err.message : String(err),
+      });
+      // Scrub any partial/corrupt file before retrying.
+      try {
+        await FileSystem.deleteAsync(destination, { idempotent: true });
+      } catch {
+        // ignore
+      }
+      if (attempt < MAX_DOWNLOAD_ATTEMPTS - 1) {
+        await new Promise((resolve) => setTimeout(resolve, backoffMs));
+        backoffMs *= 2;
+      }
+    }
+  }
+  return null;
+}
+
 async function cacheRemoteFile(args: {
   kind: "images" | "audio";
   key: string;
@@ -96,21 +164,26 @@ async function cacheRemoteFile(args: {
   const destination = buildMediaPath(args.kind, args.key, remoteUrl);
   const existing = await FileSystem.getInfoAsync(destination);
   if (existing.exists) {
-    // Validate the cached file. A previous download may have been truncated
-    // (app backgrounded, network dropped, storage pressure) which leaves a
-    // zero-byte or partial file on disk. AVPlayer then fails to load with
-    // errors like -17913 / AVErrorUnknown. If the cached file is suspicious
-    // we drop it and re-download.
     const cachedSize = existing.size ?? 0;
-    if (cachedSize >= 1024) {
+    if (cachedSize >= MIN_AUDIO_BYTES) {
       return destination;
     }
+    // Zero-byte / clearly truncated cache from a previous build: drop it so
+    // the resumable downloader below gets a clean slate.
     try {
       await FileSystem.deleteAsync(destination, { idempotent: true });
     } catch {
       // ignore
     }
   }
+
+  // Try the robust path (resumable + validated + retries). If it returns
+  // null we fall back to the simpler one-shot downloadAsync as a last
+  // resort — this keeps the previous behaviour intact in the unlikely
+  // event that createDownloadResumable itself has a problem on some iOS
+  // version, so we never get worse than before.
+  const robust = await downloadResumableWithValidation(remoteUrl, destination);
+  if (robust) return robust;
 
   try {
     const result = await FileSystem.downloadAsync(remoteUrl, destination);
@@ -119,8 +192,7 @@ async function cacheRemoteFile(args: {
       return null;
     }
     const info = await FileSystem.getInfoAsync(result.uri);
-    if (!info.exists || (info.size ?? 0) < 1024) {
-      // Server returned an empty body or the download was truncated.
+    if (!info.exists || (info.size ?? 0) < MIN_AUDIO_BYTES) {
       await FileSystem.deleteAsync(result.uri, { idempotent: true }).catch(() => undefined);
       return null;
     }

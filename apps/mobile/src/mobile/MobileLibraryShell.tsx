@@ -5795,6 +5795,13 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
+      {/* New releases uses static bundled data so it's available at T=0.
+          The sections above (Continue listening, Recommended next) depend
+          on async data and land ~500-900 ms later — if we render New
+          Releases before those arrive, it flashes at the top of the list
+          and then jumps down. Gate on loadingRemote so the home layout
+          stabilizes in a single paint. */}
+      {!loadingRemote ? (
       <View
         style={[styles.section, activeOnboardingTourTarget === "reader" ? styles.onboardingHighlightedSurface : null]}
         accessibilityLabel="qa-home-latest-books-section"
@@ -5828,6 +5835,7 @@ export function MobileLibraryShell(args: {
           ]}
         </ScrollView>
       </View>
+      ) : null}
     </>
   );
 
@@ -6505,41 +6513,50 @@ export function MobileLibraryShell(args: {
                           currentPracticeExercise.audioClip.storySource === "user" && !practiceSpeechAvailable
                         }
                       >
-                        <Feather
-                          name={
-                            currentPracticeExercise.audioClip.storySource === "user"
-                              ? speakingPracticePromptId === currentPracticeExercise.id
-                                ? "square"
-                                : "volume-2"
-                              : playingPracticeClipId === currentPracticeExercise.id
-                                ? "square"
-                                : "play"
-                          }
-                          size={16}
-                          color={
-                            currentPracticeExercise.audioClip.storySource === "user" && !practiceSpeechAvailable
-                              ? "#8ea2bc"
-                              : "#f5f7fb"
-                          }
-                        />
-                        <Text
-                          style={[
-                            styles.practiceListenButtonText,
-                            currentPracticeExercise.audioClip.storySource === "user" && !practiceSpeechAvailable
-                              ? styles.practiceListenButtonTextDisabled
-                              : null,
-                          ]}
-                        >
-                          {currentPracticeExercise.audioClip.storySource === "user" && !practiceSpeechAvailable
-                            ? "Voice unavailable in this build"
-                            : currentPracticeExercise.audioClip.storySource === "user"
-                              ? speakingPracticePromptId === currentPracticeExercise.id
-                                ? "Stop context"
-                                : "Play context"
-                              : playingPracticeClipId === currentPracticeExercise.id
-                                ? "Stop clip"
-                                : "Play clip"}
-                        </Text>
+                        {(() => {
+                          // A clip exercise can be "active" in two ways:
+                          // - the remote audio Sound is playing → playingPracticeClipId
+                          // - the TTS fallback is speaking   → speakingPracticePromptId
+                          // The icon/label needs to reflect EITHER so the user
+                          // sees a Stop state when tapping Play Clip on a
+                          // journey story (which uses the TTS fallback).
+                          const active =
+                            playingPracticeClipId === currentPracticeExercise.id ||
+                            speakingPracticePromptId === currentPracticeExercise.id;
+                          const isUserStory = currentPracticeExercise.audioClip.storySource === "user";
+                          const voiceUnavailable = isUserStory && !practiceSpeechAvailable;
+                          return (
+                            <>
+                              <Feather
+                                name={
+                                  active
+                                    ? "square"
+                                    : isUserStory
+                                      ? "volume-2"
+                                      : "play"
+                                }
+                                size={16}
+                                color={voiceUnavailable ? "#8ea2bc" : "#f5f7fb"}
+                              />
+                              <Text
+                                style={[
+                                  styles.practiceListenButtonText,
+                                  voiceUnavailable ? styles.practiceListenButtonTextDisabled : null,
+                                ]}
+                              >
+                                {voiceUnavailable
+                                  ? "Voice unavailable in this build"
+                                  : isUserStory
+                                    ? active
+                                      ? "Stop context"
+                                      : "Play context"
+                                    : active
+                                      ? "Stop clip"
+                                      : "Play clip"}
+                              </Text>
+                            </>
+                          );
+                        })()}
                       </Pressable>
                     ) : null}
                     {currentPracticeExercise.sentence ? (
@@ -8114,55 +8131,37 @@ export function MobileLibraryShell(args: {
 
   const journeyView = (
     <>
-      <View style={[styles.hero, styles.journeyHero]}>
-        <View style={styles.heroHeaderRow}>
-          <View style={[styles.heroTextBlock, styles.journeyHeroTextBlock]}>
-            {showJourneyHub ? (
-              <>
-                <Text style={styles.sectionEyebrow}>Journey</Text>
-                <Text style={styles.journeyHeroTitle}>My Languages</Text>
-              </>
-            ) : journeyDetailTopicId && activeJourneyTopic ? (
-              <>
-                <Text style={styles.sectionEyebrow}>{activeJourneyLevel?.title ?? "Journey"}</Text>
-                <Text style={styles.journeyHeroTitle}>{activeJourneyTopic.label}</Text>
-                <Text style={styles.journeyHeroSubtitle}>Read the stories, practice, then clear the checkpoint.</Text>
-              </>
-            ) : (
-              <>
-                {activeJourneyLanguage ? (
-                  <Text style={styles.sectionEyebrow}>Journey</Text>
-                ) : null}
-                <Text style={styles.journeyHeroTitle}>
-                  {activeJourneyLanguage
-                    ? `Journey · ${activeJourneyLanguage}`
-                    : "Journey"}
-                </Text>
-              </>
-            )}
-          </View>
-          <MenuTrigger onPress={() => setMenuOpen(true)} />
-        </View>
-      </View>
-
+      {/* Compact Duolingo-style strip: language flag + progress + menu.
+          Replaces the old stacked Journey eyebrow + title + All-languages
+          pill + insights bar, which ate ~280 pt before the path started. */}
       {showJourneyHub ? (
-        <View style={styles.section}>
-          <JourneyLanguageHub
-            languages={preferences.targetLanguages}
-            insightsByLanguage={journeyInsightsByLanguage}
-            onSelectLanguage={(lang) => {
-              setActiveJourneyLanguage(lang);
-              void loadJourneyForLanguage(lang);
-            }}
-            onOpenSettings={() => setActiveScreen("settings")}
-          />
+        <View style={[styles.hero, styles.journeyHero]}>
+          <View style={styles.heroHeaderRow}>
+            <View style={[styles.heroTextBlock, styles.journeyHeroTextBlock]}>
+              <Text style={styles.sectionEyebrow}>Journey</Text>
+              <Text style={styles.journeyHeroTitle}>My Languages</Text>
+            </View>
+            <MenuTrigger onPress={() => setMenuOpen(true)} />
+          </View>
         </View>
-      ) : null}
-
-      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyLanguage ? (
-        <View style={styles.section}>
+      ) : journeyDetailTopicId && activeJourneyTopic ? (
+        <View style={[styles.hero, styles.journeyHero]}>
+          <View style={styles.heroHeaderRow}>
+            <View style={[styles.heroTextBlock, styles.journeyHeroTextBlock]}>
+              <Text style={styles.sectionEyebrow}>{activeJourneyLevel?.title ?? "Journey"}</Text>
+              <Text style={styles.journeyHeroTitle}>{activeJourneyTopic.label}</Text>
+              <Text style={styles.journeyHeroSubtitle}>Read the stories, practice, then clear the checkpoint.</Text>
+            </View>
+            <MenuTrigger onPress={() => setMenuOpen(true)} />
+          </View>
+        </View>
+      ) : (
+        <View style={styles.journeyTopStrip}>
           <Pressable
             onPress={() => {
+              // Tapping the flag opens the language switcher (hub) when
+              // the user has more than one target language, or the
+              // variant picker when a language has multiple variants.
               if (remoteJourney && remoteJourney.tracks.length >= 2) {
                 setJourneyVariantPickerOpen(true);
                 setSelectedJourneyTrackId(null);
@@ -8177,14 +8176,53 @@ export function MobileLibraryShell(args: {
               }
             }}
             accessibilityRole="button"
-            accessibilityLabel="qa-journey-back"
-            testID="qa-journey-back"
-            style={styles.secondaryButton}
+            accessibilityLabel="qa-journey-language-switch"
+            testID="qa-journey-language-switch"
+            style={styles.journeyLanguageChip}
           >
-            <Text style={styles.secondaryButtonText}>
-              {remoteJourney && remoteJourney.tracks.length >= 2 ? activeJourneyLanguage : "All languages"}
-            </Text>
+            <Text style={styles.journeyLanguageChipText}>{activeJourneyLanguage ?? "Journey"}</Text>
+            {(preferences.targetLanguages.length > 1 ||
+              (remoteJourney && remoteJourney.tracks.length >= 2)) ? (
+              <Feather name="chevron-down" size={14} color="#dbe9ff" />
+            ) : null}
           </Pressable>
+          {activeJourneyInsights ? (
+            <Pressable
+              onPress={() => {
+                if (!activeJourneyInsights.dueReviewCount) return;
+                const firstReviewTopic = activeJourneyInsights.reviewTopics[0];
+                if (!firstReviewTopic) return;
+                setSelectedJourneyLevelId(firstReviewTopic.levelId);
+                setSelectedJourneyTopicId(firstReviewTopic.topicSlug);
+                setJourneyDetailTopicId(firstReviewTopic.topicSlug);
+              }}
+              style={styles.journeyStripStats}
+            >
+              <Text style={styles.journeyStripStatsText}>
+                {activeJourneyInsights.completedSteps}/{activeJourneyInsights.totalSteps} steps
+                {" · "}
+                <Text style={styles.journeyStripStatsPercent}>{activeJourneyInsights.score}%</Text>
+              </Text>
+              {activeJourneyInsights.dueReviewCount > 0 ? (
+                <Text style={styles.journeyStripDueBadge}>{activeJourneyInsights.dueReviewCount} due</Text>
+              ) : null}
+            </Pressable>
+          ) : <View style={styles.journeyStripStats} />}
+          <MenuTrigger onPress={() => setMenuOpen(true)} />
+        </View>
+      )}
+
+      {showJourneyHub ? (
+        <View style={styles.section}>
+          <JourneyLanguageHub
+            languages={preferences.targetLanguages}
+            insightsByLanguage={journeyInsightsByLanguage}
+            onSelectLanguage={(lang) => {
+              setActiveJourneyLanguage(lang);
+              void loadJourneyForLanguage(lang);
+            }}
+            onOpenSettings={() => setActiveScreen("settings")}
+          />
         </View>
       ) : null}
 
@@ -8240,36 +8278,8 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyInsights ? (
-        <View style={styles.section}>
-          <View style={styles.journeyInsightsBar}>
-            <View style={styles.journeyInsightsBarPill}>
-              <Text style={styles.journeyInsightsBarValue}>{activeJourneyInsights.score}%</Text>
-            </View>
-            <View style={styles.journeyInsightsBarPill}>
-              <Text style={styles.journeyInsightsBarText}>
-                {activeJourneyInsights.completedSteps}/{activeJourneyInsights.totalSteps} steps
-              </Text>
-            </View>
-            {activeJourneyInsights.dueReviewCount > 0 ? (
-              <Pressable
-                onPress={() => {
-                  const firstReviewTopic = activeJourneyInsights.reviewTopics[0];
-                  if (!firstReviewTopic) return;
-                  setSelectedJourneyLevelId(firstReviewTopic.levelId);
-                  setSelectedJourneyTopicId(firstReviewTopic.topicSlug);
-                  setJourneyDetailTopicId(firstReviewTopic.topicSlug);
-                }}
-                style={styles.journeyInsightsBarReview}
-              >
-                <Text style={styles.journeyInsightsBarReviewText}>
-                  {activeJourneyInsights.dueReviewCount} due
-                </Text>
-              </Pressable>
-            ) : null}
-          </View>
-        </View>
-      ) : null}
+      {/* Old insights bar (progress %, steps, due pills) removed — all that
+          info is now inline in the journey top strip. */}
 
       {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && !loadingRemote && !journeyLanguageLoading && !activeJourneyTrack ? (
         <View style={styles.section}>
@@ -8335,15 +8345,9 @@ export function MobileLibraryShell(args: {
                 accessibilityLabel="qa-journey-map-section"
                 testID="qa-journey-map-section"
               >
-                <View style={styles.journeyLevelHeader}>
-                  <View style={styles.journeyLevelText}>
-                    <Text style={styles.journeyLevelTitle}>{activeJourneyLevel.title}</Text>
-                    <Text style={styles.journeyLevelMeta}>
-                      {activeJourneyLevel.subtitle} · {activeJourneyLevel.unlockedTopicCount}/{activeJourneyLevel.totalTopicCount} topics open
-                    </Text>
-                  </View>
-                </View>
-
+                {/* The old duplicated level header (big "A1" + subtitle) is
+                    gone — the active chip already communicates the level
+                    and the strip up top covers progress/topics. */}
                 <View style={styles.journeyMapList}>
                   {activeJourneyLevel.topics.map((topic, index) => {
                     const active = selectedJourneyTopicId === topic.slug;
@@ -9159,10 +9163,9 @@ export function MobileLibraryShell(args: {
       <ScrollView
         ref={shellScrollRef}
         style={styles.scrollView}
-        contentContainerStyle={[styles.container, styles.containerGrow]}
+        contentContainerStyle={styles.container}
         scrollEnabled
         showsVerticalScrollIndicator={false}
-        alwaysBounceVertical
         decelerationRate="normal"
         keyboardShouldPersistTaps="handled"
         contentInsetAdjustmentBehavior="never"
@@ -9726,7 +9729,9 @@ const styles = StyleSheet.create({
     gap: 18,
     paddingHorizontal: 24,
     paddingTop: 28,
-    paddingBottom: 116,
+    // Enough clearance for the floating bottom tab bar (~68 pt + safe area)
+    // without the 40+ pt of dead empty space the old value produced.
+    paddingBottom: 80,
   },
   containerGrow: {
     flexGrow: 1,
@@ -9740,6 +9745,57 @@ const styles = StyleSheet.create({
     gap: 4,
     paddingTop: 6,
     paddingBottom: 0,
+  },
+  journeyTopStrip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    paddingTop: 10,
+    paddingBottom: 6,
+  },
+  journeyLanguageChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#2d4562",
+    backgroundColor: "#132238",
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+  },
+  journeyLanguageChipText: {
+    color: "#f5f7fb",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  journeyStripStats: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    gap: 8,
+  },
+  journeyStripStatsText: {
+    color: "#aebcd3",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  journeyStripStatsPercent: {
+    color: "#8ef0c6",
+    fontWeight: "800",
+  },
+  journeyStripDueBadge: {
+    color: "#f8c15c",
+    fontSize: 11,
+    fontWeight: "800",
+    backgroundColor: "rgba(248, 193, 92, 0.15)",
+    borderWidth: 1,
+    borderColor: "rgba(248, 193, 92, 0.38)",
+    borderRadius: 999,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    overflow: "hidden",
   },
   journeyVariantPickerLabel: {
     color: "#9cb0c9",

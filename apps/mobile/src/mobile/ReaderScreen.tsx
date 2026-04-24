@@ -9,8 +9,9 @@ import {
   type NativeScrollEvent,
   type NativeSyntheticEvent,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
+  formatCefrLevel,
   formatLanguage,
   formatRegion,
   formatVariantLabel,
@@ -20,6 +21,7 @@ import {
   type Story,
   type VocabItem,
 } from "@digital-polyglot/domain";
+import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
 import { ProgressiveImage } from "./ProgressiveImage";
 import { getCoverUrl } from "./coverUrl";
@@ -564,21 +566,49 @@ export function ReaderScreen(args: {
               right side keeps save + download. */}
           <View />
           <View style={styles.topActions}>
-            <Pressable onPress={onToggleSaved} style={styles.iconButton}>
-              <Feather
-                name={isSaved ? "bookmark" : "bookmark"}
-                size={18}
-                color={isSaved ? "#f8c15c" : "#dbe9ff"}
-              />
+            <Pressable
+              onPress={onToggleSaved}
+              accessibilityLabel={isSaved ? "Remove from saved" : "Save story"}
+              style={({ pressed }) => [
+                styles.iconButton,
+                isSaved ? styles.iconButtonActiveSaved : null,
+                pressed ? styles.iconButtonPressed : null,
+              ]}
+            >
+              {/* Filled vs outline bookmark — the shape change (not just
+                  the colour) makes the toggle readable at a glance. */}
+              {isSaved ? (
+                <MaterialCommunityIcons name="bookmark" size={19} color="#f8c15c" />
+              ) : (
+                <MaterialCommunityIcons name="bookmark-outline" size={19} color="#dbe9ff" />
+              )}
             </Pressable>
             <Pressable
               onPress={isAvailableOffline ? onRemoveOffline : onDownloadOffline}
-              style={styles.iconButton}
+              disabled={isDownloadingOffline}
+              accessibilityLabel={
+                isDownloadingOffline
+                  ? "Downloading"
+                  : isAvailableOffline
+                    ? "Remove offline copy"
+                    : "Download for offline"
+              }
+              style={({ pressed }) => [
+                styles.iconButton,
+                isAvailableOffline ? styles.iconButtonActiveDownloaded : null,
+                pressed ? styles.iconButtonPressed : null,
+              ]}
             >
               <Feather
-                name={isDownloadingOffline ? "more-horizontal" : "download"}
+                name={
+                  isDownloadingOffline
+                    ? "loader"
+                    : isAvailableOffline
+                      ? "check-circle"
+                      : "download-cloud"
+                }
                 size={18}
-                color={isAvailableOffline ? "#8fc7ff" : "#dbe9ff"}
+                color={isAvailableOffline ? "#8ef0c6" : "#dbe9ff"}
               />
             </Pressable>
           </View>
@@ -589,7 +619,17 @@ export function ReaderScreen(args: {
           <Text style={styles.storyTitle}>{story.title}</Text>
           <View style={styles.metaPills}>
             <View style={[styles.pill, styles.activePill]}>
-              <Text style={[styles.pillText, styles.activePillText]}>{formatLevel(book.level)}</Text>
+              <Text style={[styles.pillText, styles.activePillText]}>
+                {/* Prefer the story's own CEFR (A1/B2/...) when the story
+                    carries one — more precise than the book's broad level
+                    which defaults to "Intermediate" for anything that's not
+                    clearly beginner or advanced. */}
+                {story.cefrLevel
+                  ? formatCefrLevel(story.cefrLevel)
+                  : book.cefrLevel
+                    ? formatCefrLevel(book.cefrLevel)
+                    : formatLevel(story.level ?? book.level)}
+              </Text>
             </View>
             <View style={styles.pill}>
               <Text style={styles.pillText}>
@@ -776,6 +816,11 @@ export function ReaderScreen(args: {
             // the fresh http(s) URL and attempt playback again.
             if (details.src.startsWith("file://") && !offlineAudioFailed) {
               setOfflineAudioFailed(true);
+              // Self-heal: nuke the corrupt file so the next hydrate pass
+              // downloads a fresh copy instead of reusing the broken one.
+              // Best-effort, ignore delete errors; the resumable downloader
+              // will validate Content-Length on the re-download anyway.
+              void FileSystem.deleteAsync(details.src, { idempotent: true }).catch(() => undefined);
             }
           }}
           onProgressChange={(playback) => {
@@ -880,6 +925,23 @@ const styles = StyleSheet.create({
     borderColor: "#2d4562",
     alignItems: "center",
     justifyContent: "center",
+  },
+  iconButtonActiveSaved: {
+    // Soft amber tint for the "saved" state so the whole button reads as
+    // active, not just the icon colour.
+    backgroundColor: "rgba(248, 193, 92, 0.14)",
+    borderColor: "rgba(248, 193, 92, 0.38)",
+  },
+  iconButtonActiveDownloaded: {
+    // Soft green tint for the "downloaded and ready offline" state.
+    backgroundColor: "rgba(142, 240, 198, 0.12)",
+    borderColor: "rgba(142, 240, 198, 0.38)",
+  },
+  iconButtonPressed: {
+    // Subtle press feedback (scale down + slight opacity) so every tap
+    // has a tactile confirmation without being flashy.
+    opacity: 0.7,
+    transform: [{ scale: 0.94 }],
   },
   iconButtonText: {
     color: "#cfe3ff",
@@ -1133,24 +1195,21 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   highlightedPill: {
-    // Inline <View> embedded inside the paragraph <Text>. iOS aligns the
-    // pill's vertical center with the surrounding text's baseline-ish zone.
-    // Keeping the padding vertical-symmetric and letting the inner <Text>
-    // use the same fontSize + a lineHeight equal to fontSize (no extra
-    // leading) keeps the word sitting on the paragraph baseline instead
-    // of drifting high/low from line to line.
+    // Inline <View> embedded via NSTextAttachment. iOS places the View so
+    // its TOP aligns with the surrounding line's top (ascender), which puts
+    // the visible amber block too low relative to the text baseline. A
+    // small negative translateY shifts the pill up so it visually centers
+    // on the text's cap-height band.
     backgroundColor: "#f8c15c",
     borderRadius: 6,
     paddingHorizontal: 5,
     paddingVertical: 1,
+    transform: [{ translateY: -4 }],
   },
   highlightedPillText: {
     color: "#1a1205",
     fontSize: 20,
     fontWeight: "700",
-    // lineHeight === fontSize removes iOS's default leading so the pill
-    // height is exactly the glyph box; pairs with paddingVertical: 1 on
-    // the wrapper View for a 22pt pill that sits snugly on the baseline.
     lineHeight: 20,
   },
   vocabOverlay: {

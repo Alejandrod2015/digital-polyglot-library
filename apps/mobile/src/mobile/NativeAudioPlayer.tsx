@@ -153,7 +153,14 @@ export function NativeAudioPlayer({
             url: normalizedSrc,
           });
           const message = loadError instanceof Error ? loadError.message : "Unable to load audio.";
-          setError(`Audio unavailable: ${message}`);
+          // For local file:// sources we let the parent decide whether to
+          // fall back to a remote URL before surfacing any error text —
+          // seeing "Audio unavailable" flash for 400 ms and then the
+          // player recovering is worse UX than a silent swap.
+          const isLocalFile = normalizedSrc.startsWith("file://");
+          if (!isLocalFile) {
+            setError(`Audio unavailable: ${message}`);
+          }
           onLoadError?.({ src: normalizedSrc, reason: message });
         }
       }
