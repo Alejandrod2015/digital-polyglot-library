@@ -5,6 +5,7 @@ import {
   Alert,
   Animated,
   Easing,
+  findNodeHandle,
   Linking,
   Modal,
   Pressable,
@@ -7936,6 +7937,35 @@ export function MobileLibraryShell(args: {
   const activeJourneyNextStory = useMemo(() => {
     return activeJourneyTopic?.stories.find((story) => story.unlocked && !story.completed) ?? null;
   }, [activeJourneyTopic]);
+
+  // Globally-next story across the whole track (all levels, all topics).
+  // This is what the Duolingo-style scroll renders with the "START"
+  // bubble + cyan circle; every other node is greyed out. Walks the
+  // track in order and returns the first story that's unlocked but not
+  // completed. Returns null when everything is done.
+  const globalJourneyNextStoryId = useMemo<string | null>(() => {
+    if (!activeJourneyTrack) return null;
+    for (const level of activeJourneyTrack.levels) {
+      for (const topic of level.topics) {
+        for (const story of topic.stories) {
+          if (story.unlocked && !story.completed) return story.id;
+        }
+      }
+    }
+    return null;
+  }, [activeJourneyTrack]);
+
+  // Ref attached to the "next" node once it renders, plus a flag that
+  // makes sure the auto-scroll only fires once per track load. The
+  // actual scroll is a one-shot in the onLayout handler of the next
+  // node — we measure its offset inside shellScrollRef and jump there.
+  const journeyNextNodeRef = useRef<View | null>(null);
+  const journeyAutoScrolledRef = useRef<string | null>(null);
+  useEffect(() => {
+    // Reset when the track changes so the auto-scroll fires again for
+    // the new track's next.
+    journeyAutoScrolledRef.current = null;
+  }, [activeJourneyTrack?.id, globalJourneyNextStoryId]);
   const activeJourneyNextTopic = useMemo(() => {
     if (!activeJourneyLevel || !activeJourneyTopic) return null;
     const currentIndex = activeJourneyLevel.topics.findIndex((topic) => topic.slug === activeJourneyTopic.slug);
@@ -8468,265 +8498,115 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyVariantPickerOpen ? (
+      {!showJourneyHub && !journeyVariantPickerOpen && activeJourneyTrack ? (
       <View style={styles.section}>
-        {!journeyDetailTopicId && activeJourneyTrack ? (
-          <>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.filterChips}>
-              {activeJourneyTrack.levels.map((level) => {
-                const active = activeJourneyLevel?.id === level.id;
-                return (
-                  <Pressable
-                    key={level.id}
-                    disabled={!level.unlocked}
-                    onPress={() => setSelectedJourneyLevelId(level.id)}
-                    accessibilityRole="button"
-                    accessibilityLabel={`qa-journey-level-${level.id}`}
-                    testID={`qa-journey-level-${level.id}`}
-                    style={[
-                      styles.filterChip,
-                      active ? styles.filterChipActive : null,
-                      !level.unlocked ? styles.journeyTopicActionDisabled : null,
-                    ]}
-                  >
-                    <Text
-                      style={[
-                        styles.filterChipText,
-                        active ? styles.filterChipTextActive : null,
-                        !level.unlocked ? styles.journeyTopicActionTextDisabled : null,
-                      ]}
-                    >
-                      {level.title}
-                    </Text>
-                  </Pressable>
-                );
-              })}
-            </ScrollView>
-
-            {activeJourneyLevel ? (
-              <View
-                style={styles.journeyMapSection}
-                accessibilityLabel="qa-journey-map-section"
-                testID="qa-journey-map-section"
-              >
-                {/* The old duplicated level header (big "A1" + subtitle) is
-                    gone — the active chip already communicates the level
-                    and the strip up top covers progress/topics. */}
-                <View style={styles.journeyMapList}>
-                  {activeJourneyLevel.topics.map((topic, index) => {
-                    const active = selectedJourneyTopicId === topic.slug;
-                    const hasStories = topic.storyCount > 0;
-                    // Glow the first unlocked topic that still needs work —
-                    // the one the user is most likely to tap next.
-                    const isNextAction =
-                      topic.unlocked &&
-                      !topic.checkpointPassed &&
-                      activeJourneyLevel.topics.findIndex(
-                        (t) => t.unlocked && !t.checkpointPassed
-                      ) === index;
-                    const previousTopic = index > 0 ? activeJourneyLevel.topics[index - 1] : null;
-                    const previousTopicRemaining = previousTopic
-                      ? Math.max(previousTopic.requiredStoryCount - previousTopic.completedStoryCount, 0)
-                      : 0;
-                    const previousTopicCheckpointPassed = previousTopic ? previousTopic.checkpointPassed : true;
-                    const badge = topic.checkpointPassed
-                      ? "Completed"
-                      : topic.complete
-                        ? "Checkpoint"
-                        : index === 0
-                          ? "Start"
-                          : topic.unlocked
-                            ? "Open"
-                            : hasStories
-                              ? "Locked"
-                              : "Coming soon";
-                    const lockedMeta = !hasStories
-                      ? "No stories yet"
-                      : previousTopic && !previousTopic.complete
-                        ? `Finish ${previousTopicRemaining} more ${previousTopicRemaining === 1 ? "story" : "stories"} in ${previousTopic.label}`
-                        : previousTopic && !previousTopicCheckpointPassed
-                          ? `Pass the ${previousTopic.label} checkpoint`
-                          : "Unlock later";
-                    const alignRight = index % 2 === 1;
-
-                    return (
-                      <View key={topic.id} style={styles.journeyMapSequence}>
-                        <View
-                          style={[
-                            styles.journeyMapNodeWrap,
-                            alignRight ? styles.journeyMapNodeWrapRight : styles.journeyMapNodeWrapLeft,
-                          ]}
-                        >
-                          <Pressable
-                            disabled={!topic.unlocked}
-                            onPress={() => {
-                              setSelectedJourneyTopicId(topic.slug);
-                              setJourneyDetailTopicId(topic.slug);
-                            }}
-                            accessibilityRole="button"
-                            accessibilityLabel={`qa-journey-topic-${topic.slug}`}
-                            testID={`qa-journey-topic-${topic.slug}`}
-                            style={[
-                              styles.journeyMapNode,
-                              !topic.unlocked ? styles.journeyMapNodeLocked : null,
-                              active ? styles.journeyMapNodeActive : null,
-                            ]}
-                          >
-                            <Text style={styles.journeyMapBadge}>{badge}</Text>
-                            <NextActionGlow active={isNextAction} borderRadius={20} inset={-3}>
-                              <View style={styles.journeyMapArt}>
-                                {topic.stories[0]?.coverUrl ? (
-                                  <ProgressiveImage
-                                    uri={getCoverUrl(topic.stories[0].coverUrl)}
-                                    style={styles.journeyMapArtImage}
-                                  />
-                                ) : (
-                                  <View style={styles.journeyMapArtFallback}>
-                                    <MaterialCommunityIcons name="map-marker-path" size={22} color="#9fb5d0" />
-                                  </View>
-                                )}
-                              </View>
-                            </NextActionGlow>
-                            <Text
-                              numberOfLines={2}
-                              ellipsizeMode="tail"
-                              style={[
-                                styles.journeyMapTitle,
-                                !topic.unlocked ? styles.journeyTopicActionTextDisabled : null,
-                              ]}
-                            >
-                              {topic.label}
-                            </Text>
-                            <Text style={styles.journeyMapMeta}>
-                              {topic.unlocked
-                                ? topic.storyCount > 0
-                                  ? `${topic.completedStoryCount}/${topic.requiredStoryCount} stories`
-                                  : "No stories yet"
-                                : lockedMeta}
-                            </Text>
-                          </Pressable>
-                        </View>
-
-                        {index < activeJourneyLevel.topics.length - 1 ? (
-                          <View
-                            pointerEvents="none"
-                            style={[
-                              styles.journeyMapConnectorRow,
-                              alignRight ? styles.journeyMapConnectorRowLeft : styles.journeyMapConnectorRowRight,
-                            ]}
-                          >
-                            <View
-                              style={[
-                                styles.journeyMapConnectorCurve,
-                                alignRight
-                                  ? styles.journeyMapConnectorCurveRight
-                                  : styles.journeyMapConnectorCurveLeft,
-                              ]}
-                            />
-                          </View>
-                        ) : null}
-                      </View>
-                    );
-                  })}
-                </View>
-              </View>
-            ) : null}
-
-          </>
+        {/* Gamification pills — streak, level, XP. Pulled straight from
+            the existing GamificationSummary payload. Collapses silently
+            when progress hasn't loaded yet. */}
+        {remoteProgress?.gamification ? (
+          <View style={styles.journeyTopicStatsRow}>
+            <View style={styles.journeyTopicStatPill}>
+              <Feather name="zap" size={13} color={tokenColor.streak} />
+              <Text style={[styles.journeyTopicStatText, { color: tokenColor.streak }]}>
+                {remoteProgress.gamification.dailyStreak}
+              </Text>
+            </View>
+            <View style={styles.journeyTopicStatPill}>
+              <Feather name="award" size={13} color={tokenColor.gold} />
+              <Text style={[styles.journeyTopicStatText, { color: tokenColor.gold }]}>
+                Lv {remoteProgress.gamification.currentLevel}
+              </Text>
+            </View>
+            <View style={styles.journeyTopicStatPill}>
+              <Feather name="star" size={13} color={tokenColor.cyan} />
+              <Text style={[styles.journeyTopicStatText, { color: tokenColor.cyan }]}>
+                {remoteProgress.gamification.totalXp} XP
+              </Text>
+            </View>
+          </View>
         ) : null}
 
-        {journeyDetailTopicId && activeJourneyTopic && activeJourneyLevel ? (
-          <>
-            <Pressable
-              onPress={() => setJourneyDetailTopicId(null)}
-              accessibilityRole="button"
-              accessibilityLabel="qa-journey-back-to-map"
-              testID="qa-journey-back-to-map"
-              style={styles.secondaryButton}
+        {/* Full Duolingo-style path: every level, every topic, every
+            story rendered inline in scroll order. Section headers for
+            level and topic tell the user where they are; locked ones
+            are dimmed but still visible so they can see what's ahead. */}
+        {activeJourneyTrack.levels.map((level) => (
+          <View key={level.id} style={styles.journeyPathLevelBlock}>
+            <View
+              style={[
+                styles.journeyPathLevelHeader,
+                !level.unlocked ? styles.journeyPathLevelHeaderLocked : null,
+              ]}
             >
-              <Text style={styles.secondaryButtonText}>Back to journey</Text>
-            </Pressable>
+              <Text style={styles.journeyPathLevelBadge}>{level.title}</Text>
+              <Text style={styles.journeyPathLevelSubtitle}>
+                {level.unlocked ? level.subtitle ?? "" : "Locked"}
+              </Text>
+            </View>
 
-            <View style={styles.journeyTopicDetailCard} accessibilityLabel="qa-journey-topic-detail" testID="qa-journey-topic-detail">
-              <View style={styles.journeyTopicDetailHeader}>
-                <View style={styles.journeyLevelText}>
-                  <Text style={styles.sectionEyebrow}>{activeJourneyLevel.title} topic</Text>
-                  <Text style={styles.journeyTopicDetailTitle}>{activeJourneyTopic.label}</Text>
-                  <Text style={styles.journeyTopicDetailStatus}>
-                    {activeJourneyTopic.completedStoryCount}/{activeJourneyTopic.requiredStoryCount} stories
-                    {activeJourneyTopic.hasDueReview ? " · Review due" : ""}
-                    {" · "}
-                    {activeJourneyTopic.checkpointPassed
-                      ? "Checkpoint cleared"
-                      : activeJourneyTopic.practiced
-                        ? "Checkpoint pending"
-                        : "Practice pending"}
+            {level.topics.map((topic) => {
+              const topicStoriesCount = topic.stories.length;
+              const showCheckpoint = topic.unlocked && topicStoriesCount > 0;
+              return (
+                <View key={topic.slug} style={styles.journeyPathTopicBlock}>
+                  <Text
+                    style={[
+                      styles.journeyPathTopicLabel,
+                      !topic.unlocked ? styles.journeyPathTopicLabelLocked : null,
+                    ]}
+                  >
+                    {topic.label}
                   </Text>
-                </View>
-              </View>
 
-              {remoteProgress?.gamification ? (
-                // Gamification strip above the map: streak, level, XP.
-                // Values are pulled straight from the existing
-                // GamificationSummary payload — nothing new is computed,
-                // matching the "use what we already have" constraint.
-                <View style={styles.journeyTopicStatsRow}>
-                  <View style={styles.journeyTopicStatPill}>
-                    <Feather name="zap" size={13} color={tokenColor.streak} />
-                    <Text style={[styles.journeyTopicStatText, { color: tokenColor.streak }]}>
-                      {remoteProgress.gamification.dailyStreak}
-                    </Text>
-                  </View>
-                  <View style={styles.journeyTopicStatPill}>
-                    <Feather name="award" size={13} color={tokenColor.gold} />
-                    <Text style={[styles.journeyTopicStatText, { color: tokenColor.gold }]}>
-                      Lv {remoteProgress.gamification.currentLevel}
-                    </Text>
-                  </View>
-                  <View style={styles.journeyTopicStatPill}>
-                    <Feather name="star" size={13} color={tokenColor.cyan} />
-                    <Text style={[styles.journeyTopicStatText, { color: tokenColor.cyan }]}>
-                      {remoteProgress.gamification.totalXp} XP
-                    </Text>
-                  </View>
-                </View>
-              ) : null}
+                  {topic.stories.map((story, storyIdx) => {
+                    const isOfflineReady =
+                      offlineStoriesById.has(story.id) ||
+                      Boolean(offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug));
+                    const isDownloading = offlineStoryIdInFlight === story.id;
+                    const alignRight = storyIdx % 2 === 1;
+                    const isNextAction = globalJourneyNextStoryId === story.id;
+                    const nodeVariant: "completed" | "next" | "locked" | "step" = story.completed
+                      ? "completed"
+                      : isNextAction
+                        ? "next"
+                        : !story.unlocked
+                          ? "locked"
+                          : "step";
 
-              <View style={styles.journeyMapList}>
-                {activeJourneyTopic.stories.map((story, index) => {
-                  const isOfflineReady = offlineStoriesById.has(story.id) ||
-                    Boolean(offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug));
-                  const isDownloading = offlineStoryIdInFlight === story.id;
-                  const alignRight = index % 2 === 1;
-                  // Compute the single "next up" index once: the first
-                  // unlocked, not-yet-completed story. It's the only node
-                  // that gets full Duolingo-style treatment — color,
-                  // play icon, title bubble floating above. Everything
-                  // else shows only a step number.
-                  const firstUnfinishedIndex = activeJourneyTopic.stories.findIndex(
-                    (s) => s.unlocked && !s.completed
-                  );
-                  const isNextAction =
-                    (story.unlocked && !story.completed && firstUnfinishedIndex === index) ||
-                    highlightedNextStoryId === story.id;
-                  const nodeVariant: "completed" | "next" | "locked" | "step" = story.completed
-                    ? "completed"
-                    : isNextAction
-                      ? "next"
-                      : !story.unlocked
-                        ? "locked"
-                        : "step";
-
-                  return (
-                    <View key={story.id} style={styles.journeyMapSequence}>
+                    return (
                       <View
+                        key={story.id}
+                        ref={isNextAction ? journeyNextNodeRef : undefined}
+                        onLayout={
+                          isNextAction
+                            ? () => {
+                                if (journeyAutoScrolledRef.current === story.id) return;
+                                if (!journeyNextNodeRef.current || !shellScrollRef.current) return;
+                                const scrollHandle = findNodeHandle(shellScrollRef.current);
+                                if (scrollHandle == null) return;
+                                journeyNextNodeRef.current.measureLayout(
+                                  scrollHandle,
+                                  (_x, y) => {
+                                    // Extra 140pt of headroom so the node
+                                    // lands below the top strip + stats row
+                                    // rather than jammed at the very top.
+                                    shellScrollRef.current?.scrollTo({
+                                      y: Math.max(0, y - 140),
+                                      animated: true,
+                                    });
+                                    journeyAutoScrolledRef.current = story.id;
+                                  },
+                                  () => undefined
+                                );
+                              }
+                            : undefined
+                        }
                         style={[
                           styles.journeyMapNodeWrap,
                           alignRight ? styles.journeyMapNodeWrapRight : styles.journeyMapNodeWrapLeft,
+                          styles.journeyPathNodeWrap,
                         ]}
                       >
-                        {/* Title bubble with arrow — only over the NEXT
-                            node. Always visible (no hover on mobile). */}
                         {nodeVariant === "next" ? (
                           <View style={styles.journeyStartBubble} pointerEvents="none">
                             <View style={styles.journeyStartBubbleInner}>
@@ -8747,8 +8627,8 @@ export function MobileLibraryShell(args: {
                           disabled={!story.unlocked}
                           onPress={() => openJourneyStory(story)}
                           accessibilityRole="button"
-                          accessibilityLabel={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
-                          testID={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
+                          accessibilityLabel={`qa-journey-story-${story.id}`}
+                          testID={`qa-journey-story-${story.id}`}
                           style={[
                             styles.journeyNode,
                             nodeVariant === "next" ? styles.journeyNodeNext : null,
@@ -8773,7 +8653,7 @@ export function MobileLibraryShell(args: {
                             </View>
                           ) : (
                             <View style={styles.journeyNodeCircleStep}>
-                              <Text style={styles.journeyNodeStepNumber}>{index + 1}</Text>
+                              <Text style={styles.journeyNodeStepNumber}>{storyIdx + 1}</Text>
                             </View>
                           )}
                           <Text
@@ -8782,16 +8662,10 @@ export function MobileLibraryShell(args: {
                               nodeVariant === "next" ? styles.journeyNodeCaptionNext : null,
                             ]}
                           >
-                            {nodeVariant === "next"
-                              ? "START NOW"
-                              : nodeVariant === "completed"
-                                ? `STEP ${index + 1}`
-                                : `STEP ${index + 1}`}
+                            {nodeVariant === "next" ? "START NOW" : `STEP ${storyIdx + 1}`}
                           </Text>
                         </Pressable>
 
-                        {/* Offline download indicator — unchanged logic,
-                            re-styled to match the new node layout. */}
                         {story.unlocked ? (
                           <Pressable
                             onPress={() => isOfflineReady
@@ -8814,33 +8688,68 @@ export function MobileLibraryShell(args: {
                           </Pressable>
                         ) : null}
                       </View>
+                    );
+                  })}
 
-                      {index < activeJourneyTopic.stories.length - 1 ? (
-                        <View
-                          pointerEvents="none"
-                          style={[
-                            styles.journeyMapConnectorRow,
-                            alignRight ? styles.journeyMapConnectorRowLeft : styles.journeyMapConnectorRowRight,
-                          ]}
-                        >
-                          <View
-                            style={[
-                              styles.journeyMapConnectorCurve,
-                              alignRight
-                                ? styles.journeyMapConnectorCurveRight
-                                : styles.journeyMapConnectorCurveLeft,
-                            ]}
-                          />
-                        </View>
-                      ) : null}
-                    </View>
-                  );
-                })}
-              </View>
+                  {showCheckpoint ? (
+                    <Pressable
+                      onPress={() => {
+                        if (topic.checkpointPassed) return;
+                        void openJourneyPractice({
+                          variantId: activeJourneyTrack?.id ?? null,
+                          levelId: level.id,
+                          topicId: topic.slug,
+                          topicLabel: topic.label,
+                          kind: "checkpoint",
+                        });
+                      }}
+                      disabled={topic.checkpointPassed || !topic.complete || !topic.practiced}
+                      style={[
+                        styles.journeyPathCheckpointChip,
+                        topic.checkpointPassed
+                          ? styles.journeyPathCheckpointChipPassed
+                          : topic.complete && topic.practiced
+                            ? styles.journeyPathCheckpointChipReady
+                            : styles.journeyPathCheckpointChipLocked,
+                      ]}
+                      accessibilityRole="button"
+                      accessibilityLabel={`qa-journey-checkpoint-${topic.slug}`}
+                    >
+                      <Feather
+                        name={topic.checkpointPassed ? "check" : "award"}
+                        size={14}
+                        color={
+                          topic.checkpointPassed
+                            ? tokenColor.xp
+                            : topic.complete && topic.practiced
+                              ? tokenColor.gold
+                              : "#6f88a8"
+                        }
+                      />
+                      <Text
+                        style={[
+                          styles.journeyPathCheckpointText,
+                          topic.checkpointPassed
+                            ? { color: tokenColor.xp }
+                            : topic.complete && topic.practiced
+                              ? { color: tokenColor.gold }
+                              : null,
+                        ]}
+                      >
+                        {topic.checkpointPassed
+                          ? "CHECKPOINT · PASSED"
+                          : topic.complete && topic.practiced
+                            ? "START CHECKPOINT"
+                            : "CHECKPOINT"}
+                      </Text>
+                    </Pressable>
+                  ) : null}
+                </View>
+              );
+            })}
+          </View>
+        ))}
 
-            </View>
-          </>
-        ) : null}
       </View>
       ) : null}
     </>
@@ -11026,6 +10935,92 @@ const styles = StyleSheet.create({
   journeyNodeCaptionNext: {
     color: tokenColor.cyan,
     fontSize: 11,
+  },
+  // ─── Full-path Duolingo-style scroll (level+topic headers inline) ──
+  journeyPathLevelBlock: {
+    marginTop: 18,
+  },
+  journeyPathLevelHeader: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    justifyContent: "space-between",
+    paddingHorizontal: 4,
+    paddingTop: 6,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: "rgba(255,255,255,0.08)",
+    marginBottom: 10,
+  },
+  journeyPathLevelHeaderLocked: {
+    opacity: 0.55,
+  },
+  journeyPathLevelBadge: {
+    color: "#f5f7fb",
+    fontSize: 26,
+    fontWeight: "900",
+    letterSpacing: -0.5,
+  },
+  journeyPathLevelSubtitle: {
+    color: "rgba(255,255,255,0.55)",
+    fontSize: 12,
+    fontWeight: "700",
+    letterSpacing: 0.2,
+  },
+  journeyPathTopicBlock: {
+    marginTop: 8,
+    marginBottom: 20,
+    gap: 4,
+  },
+  journeyPathTopicLabel: {
+    alignSelf: "center",
+    color: "rgba(255,255,255,0.72)",
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 1.4,
+    textTransform: "uppercase",
+    marginBottom: 14,
+    paddingHorizontal: 12,
+    paddingVertical: 5,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.05)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+  },
+  journeyPathTopicLabelLocked: {
+    opacity: 0.55,
+  },
+  journeyPathNodeWrap: {
+    marginBottom: 18,
+  },
+  journeyPathCheckpointChip: {
+    alignSelf: "center",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginTop: 4,
+    marginBottom: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+  },
+  journeyPathCheckpointChipLocked: {
+    backgroundColor: "rgba(255,255,255,0.03)",
+    borderColor: "rgba(255,255,255,0.1)",
+  },
+  journeyPathCheckpointChipReady: {
+    backgroundColor: "rgba(252, 211, 77, 0.08)",
+    borderColor: "rgba(252, 211, 77, 0.32)",
+  },
+  journeyPathCheckpointChipPassed: {
+    backgroundColor: "rgba(190, 242, 100, 0.06)",
+    borderColor: "rgba(190, 242, 100, 0.28)",
+  },
+  journeyPathCheckpointText: {
+    fontSize: 10.5,
+    fontWeight: "900",
+    letterSpacing: 1.4,
+    color: "#6f88a8",
   },
   journeyLevelHeader: {
     flexDirection: "row",
