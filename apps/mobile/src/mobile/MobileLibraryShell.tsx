@@ -41,6 +41,8 @@ import { NextActionGlow } from "./NextActionGlow";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { PracticeExitConfirm } from "./PracticeExitConfirm";
+import { useOfflineStatus } from "../lib/useOfflineStatus";
+import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 import {
   BookHomeCard,
   BookWebCard,
@@ -1570,13 +1572,14 @@ export function MobileLibraryShell(args: {
   const [customInterestInput, setCustomInterestInput] = useState("");
   const [loadingRemote, setLoadingRemote] = useState(false);
   const [remoteError, setRemoteError] = useState<string | null>(null);
-  // True when we tried to hydrate remote data but every request failed — a
-  // strong signal that we're offline (or the API is down). Drives the
-  // "Sin conexión — mostrando tu biblioteca descargada" banner so the user
-  // understands why new content isn't appearing. Stays false during the
-  // initial in-flight window so we don't flash a banner before the first
-  // response lands.
-  const [isOffline, setIsOffline] = useState(false);
+  // Real "am I offline" signal from the OS via NetInfo, debounced so brief
+  // blips (cold-start before the first event, Wi-Fi handoff, captive
+  // portal revalidation) don't flash the banner. The banner appears only
+  // when the OS reports no connectivity for >800ms; it disappears the
+  // instant connectivity returns. This replaces the older heuristic of
+  // "every fetch rejected" which caused false positives during the first
+  // second of cold-start.
+  const isOffline = useOfflineStatus();
   // Tap the offline banner → increment this to trigger a fresh hydrate
   // without waiting for the next natural refresh cycle.
   const [remoteRefreshCounter, setRemoteRefreshCounter] = useState(0);
@@ -1788,10 +1791,11 @@ export function MobileLibraryShell(args: {
         setJourneyInsightsByLanguage({});
         journeyCacheByLanguageRef.current.clear();
         void clearJourneyCache(PREVIEW_OFFLINE_USER_ID);
-        setIsOffline(false);
       } else {
-        // Anchor-only / offline-degraded mode.
-        setIsOffline(true);
+        // Anchor-only: we have proof of prior sign-in but no token yet.
+        // Just stop the loading spinner — the useOfflineStatus hook
+        // decides on its own whether to show the offline banner based
+        // on the real OS signal, not on our lack of a token.
         setLoadingRemote(false);
       }
       return;
@@ -1860,13 +1864,14 @@ export function MobileLibraryShell(args: {
       }
 
       const errors: string[] = [];
-      // If every single request rejected we treat it as "offline" and do NOT
-      // wipe any cached remote state — we want the user to keep seeing their
-      // previously-loaded library and whatever is in the offline snapshot.
+      // When every single request rejected, we keep any previously
+      // loaded remote state intact instead of wiping it. The banner
+      // itself is driven by NetInfo (useOfflineStatus), not by this
+      // flag — so we only use `allRejected` to decide whether to
+      // blank arrays or preserve the last-known-good state.
       const allRejected = [booksResult, storiesResult, entitlementResult, progressResult, continueResult, journeyResult].every(
         (result) => result.status === "rejected"
       );
-      setIsOffline(allRejected);
 
       if (booksResult.status === "fulfilled") {
         setRemoteBooks(booksResult.value);
@@ -8660,37 +8665,57 @@ export function MobileLibraryShell(args: {
                 </View>
               </View>
 
+              {remoteProgress?.gamification ? (
+                // Gamification strip above the map: streak, level, XP.
+                // Values are pulled straight from the existing
+                // GamificationSummary payload — nothing new is computed,
+                // matching the "use what we already have" constraint.
+                <View style={styles.journeyTopicStatsRow}>
+                  <View style={styles.journeyTopicStatPill}>
+                    <Feather name="zap" size={13} color={tokenColor.streak} />
+                    <Text style={[styles.journeyTopicStatText, { color: tokenColor.streak }]}>
+                      {remoteProgress.gamification.dailyStreak}
+                    </Text>
+                  </View>
+                  <View style={styles.journeyTopicStatPill}>
+                    <Feather name="award" size={13} color={tokenColor.gold} />
+                    <Text style={[styles.journeyTopicStatText, { color: tokenColor.gold }]}>
+                      Lv {remoteProgress.gamification.currentLevel}
+                    </Text>
+                  </View>
+                  <View style={styles.journeyTopicStatPill}>
+                    <Feather name="star" size={13} color={tokenColor.cyan} />
+                    <Text style={[styles.journeyTopicStatText, { color: tokenColor.cyan }]}>
+                      {remoteProgress.gamification.totalXp} XP
+                    </Text>
+                  </View>
+                </View>
+              ) : null}
+
               <View style={styles.journeyMapList}>
                 {activeJourneyTopic.stories.map((story, index) => {
-                  const previousStory = index > 0 ? activeJourneyTopic.stories[index - 1] : null;
-                  const badge = !story.unlocked
-                    ? "Locked"
-                    : story.completed
-                      ? "Read"
-                      : index === 0
-                        ? "Start"
-                        : index === activeJourneyTopic.unlockedStoryCount - 1
-                          ? "Continue"
-                          : "Open";
-                  const meta = story.unlocked
-                    ? formatRegion(story.region ?? "") || story.language || "Global"
-                    : previousStory && !previousStory.completed
-                      ? `After ${previousStory.title}`
-                      : "Unlock later";
                   const isOfflineReady = offlineStoriesById.has(story.id) ||
                     Boolean(offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug));
                   const isDownloading = offlineStoryIdInFlight === story.id;
                   const alignRight = index % 2 === 1;
-                  // Glow the first unlocked, not-yet-completed story so the
-                  // user can see at a glance where to resume in this topic.
-                  // Also glow the story we just set as "next up" after a
-                  // successful practice session — even if it's already
-                  // completed, the glow guides the user's attention.
+                  // Compute the single "next up" index once: the first
+                  // unlocked, not-yet-completed story. It's the only node
+                  // that gets full Duolingo-style treatment — color,
+                  // play icon, title bubble floating above. Everything
+                  // else shows only a step number.
+                  const firstUnfinishedIndex = activeJourneyTopic.stories.findIndex(
+                    (s) => s.unlocked && !s.completed
+                  );
                   const isNextAction =
-                    (story.unlocked &&
-                      !story.completed &&
-                      activeJourneyTopic.stories.findIndex((s) => s.unlocked && !s.completed) === index) ||
+                    (story.unlocked && !story.completed && firstUnfinishedIndex === index) ||
                     highlightedNextStoryId === story.id;
+                  const nodeVariant: "completed" | "next" | "locked" | "step" = story.completed
+                    ? "completed"
+                    : isNextAction
+                      ? "next"
+                      : !story.unlocked
+                        ? "locked"
+                        : "step";
 
                   return (
                     <View key={story.id} style={styles.journeyMapSequence}>
@@ -8700,6 +8725,24 @@ export function MobileLibraryShell(args: {
                           alignRight ? styles.journeyMapNodeWrapRight : styles.journeyMapNodeWrapLeft,
                         ]}
                       >
+                        {/* Title bubble with arrow — only over the NEXT
+                            node. Always visible (no hover on mobile). */}
+                        {nodeVariant === "next" ? (
+                          <View style={styles.journeyStartBubble} pointerEvents="none">
+                            <View style={styles.journeyStartBubbleInner}>
+                              <Text style={styles.journeyStartBubbleEyebrow}>START</Text>
+                              <Text
+                                numberOfLines={1}
+                                ellipsizeMode="tail"
+                                style={styles.journeyStartBubbleTitle}
+                              >
+                                {story.title}
+                              </Text>
+                            </View>
+                            <View style={styles.journeyStartBubbleArrow} />
+                          </View>
+                        ) : null}
+
                         <Pressable
                           disabled={!story.unlocked}
                           onPress={() => openJourneyStory(story)}
@@ -8707,39 +8750,48 @@ export function MobileLibraryShell(args: {
                           accessibilityLabel={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
                           testID={index === 0 ? "qa-journey-story-row-0" : `qa-journey-story-row-${story.id}`}
                           style={[
-                            styles.journeyMapNode,
-                            !story.unlocked ? styles.journeyMapNodeLocked : null,
+                            styles.journeyNode,
+                            nodeVariant === "next" ? styles.journeyNodeNext : null,
+                            nodeVariant === "completed" ? styles.journeyNodeCompleted : null,
+                            nodeVariant === "locked" ? styles.journeyNodeLocked : null,
+                            nodeVariant === "step" ? styles.journeyNodeStep : null,
                           ]}
                         >
-                          <Text style={styles.journeyMapBadge}>{badge}</Text>
-                          <NextActionGlow active={isNextAction} borderRadius={20} inset={-3}>
-                            <View style={styles.journeyMapArt}>
-                              {story.coverUrl ? (
-                                <ProgressiveImage
-                                  uri={getCoverUrl(story.coverUrl)}
-                                  style={styles.journeyMapArtImage}
-                                />
-                              ) : (
-                                <View style={styles.journeyMapArtFallback}>
-                                  <MaterialCommunityIcons name="book-open-page-variant" size={22} color="#9fb5d0" />
-                                </View>
-                              )}
+                          {nodeVariant === "next" ? (
+                            <NextActionGlow active borderRadius={999} inset={-6}>
+                              <View style={styles.journeyNodeCircleNext}>
+                                <Feather name="play" size={26} color={tokenBg[1]} />
+                              </View>
+                            </NextActionGlow>
+                          ) : nodeVariant === "completed" ? (
+                            <View style={styles.journeyNodeCircleCompleted}>
+                              <Feather name="check" size={24} color={tokenBg[1]} />
                             </View>
-                          </NextActionGlow>
+                          ) : nodeVariant === "locked" ? (
+                            <View style={styles.journeyNodeCircleLocked}>
+                              <Feather name="lock" size={18} color="#7a8aa5" />
+                            </View>
+                          ) : (
+                            <View style={styles.journeyNodeCircleStep}>
+                              <Text style={styles.journeyNodeStepNumber}>{index + 1}</Text>
+                            </View>
+                          )}
                           <Text
-                            numberOfLines={2}
-                            ellipsizeMode="tail"
                             style={[
-                              styles.journeyMapTitle,
-                              !story.unlocked ? styles.journeyTopicActionTextDisabled : null,
+                              styles.journeyNodeCaption,
+                              nodeVariant === "next" ? styles.journeyNodeCaptionNext : null,
                             ]}
                           >
-                            {story.title}
+                            {nodeVariant === "next"
+                              ? "START NOW"
+                              : nodeVariant === "completed"
+                                ? `STEP ${index + 1}`
+                                : `STEP ${index + 1}`}
                           </Text>
-                          {!story.unlocked ? (
-                            <Text numberOfLines={1} style={styles.journeyMapMeta}>{meta}</Text>
-                          ) : null}
                         </Pressable>
+
+                        {/* Offline download indicator — unchanged logic,
+                            re-styled to match the new node layout. */}
                         {story.unlocked ? (
                           <Pressable
                             onPress={() => isOfflineReady
@@ -8757,7 +8809,7 @@ export function MobileLibraryShell(args: {
                             <Feather
                               name={isDownloading ? "loader" : isOfflineReady ? "check-circle" : "download-cloud"}
                               size={15}
-                              color={isOfflineReady ? "#8ef0c6" : "#f5f7fb"}
+                              color={isOfflineReady ? tokenColor.xp : "#f5f7fb"}
                             />
                           </Pressable>
                         ) : null}
@@ -10827,6 +10879,153 @@ const styles = StyleSheet.create({
   journeyMapConnectorCurveRight: {
     borderLeftWidth: 2,
     borderTopLeftRadius: 64,
+  },
+  // ─── New Duolingo-style journey node (2026-04) ──────────────
+  // Replaces the cover + full-title layout. The node is now a round
+  // circle whose visual state encodes progress; only the "next up"
+  // story shows its title (via a bubble floating above the circle).
+  journeyTopicStatsRow: {
+    flexDirection: "row",
+    gap: 8,
+    marginTop: 4,
+    marginBottom: 4,
+  },
+  journeyTopicStatPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+  },
+  journeyTopicStatText: {
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 0.2,
+  },
+  journeyStartBubble: {
+    position: "absolute",
+    top: -46,
+    alignItems: "center",
+    zIndex: 2,
+  },
+  journeyStartBubbleInner: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 14,
+    backgroundColor: "#f5f7fb",
+    // Soft shadow so the bubble "floats" above the map on iOS and
+    // gets a lift even on Android where iOS shadow props are a no-op.
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
+    elevation: 5,
+  },
+  journeyStartBubbleEyebrow: {
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 1.4,
+    color: tokenColor.cyan,
+  },
+  journeyStartBubbleTitle: {
+    fontSize: 13,
+    fontWeight: "900",
+    color: "#0c1626",
+    maxWidth: 180,
+  },
+  journeyStartBubbleArrow: {
+    // Downward triangle, carved from an empty view via rotated square
+    // with two transparent sides — keeps us from pulling in an SVG
+    // dependency for one arrow.
+    marginTop: -1,
+    width: 0,
+    height: 0,
+    borderLeftWidth: 7,
+    borderRightWidth: 7,
+    borderTopWidth: 7,
+    borderLeftColor: "transparent",
+    borderRightColor: "transparent",
+    borderTopColor: "#f5f7fb",
+  },
+  journeyNode: {
+    alignItems: "center",
+    gap: 6,
+    paddingHorizontal: 6,
+    paddingVertical: 4,
+  },
+  journeyNodeNext: {
+    transform: [{ scale: 1.04 }],
+  },
+  journeyNodeCompleted: {},
+  journeyNodeLocked: {
+    opacity: 0.6,
+  },
+  journeyNodeStep: {
+    opacity: 0.78,
+  },
+  journeyNodeCircleNext: {
+    width: 78,
+    height: 78,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: tokenColor.cyan,
+    borderWidth: 3,
+    borderColor: "rgba(255,255,255,0.85)",
+  },
+  journeyNodeCircleCompleted: {
+    width: 66,
+    height: 66,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: tokenColor.xp,
+    borderWidth: 2,
+    borderColor: "rgba(190,242,100,0.45)",
+  },
+  journeyNodeCircleLocked: {
+    width: 62,
+    height: 62,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: tokenBg[2],
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.08)",
+  },
+  journeyNodeCircleStep: {
+    width: 62,
+    height: 62,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: tokenBg[2],
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.12)",
+  },
+  journeyNodeStepNumber: {
+    color: "#dbe9ff",
+    fontSize: 18,
+    fontWeight: "900",
+  },
+  journeyNodeCaption: {
+    marginTop: 2,
+    color: "rgba(255,255,255,0.5)",
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 1.1,
+    textTransform: "uppercase",
+  },
+  journeyNodeCaptionNext: {
+    color: tokenColor.cyan,
+    fontSize: 11,
   },
   journeyLevelHeader: {
     flexDirection: "row",
