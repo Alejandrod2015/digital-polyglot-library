@@ -237,6 +237,20 @@ function MobileAppRoot() {
     [sessionToken]
   );
 
+  // Safety-net timer for the case where Clerk cannot hydrate (no network,
+  // server down, etc.) AND we don't have a valid local mobile session. Without
+  // it the splash would hang forever; with it we fall through to the auth
+  // screen after 4s so the user can retry or try again later.
+  const [clerkHydrationTimedOut, setClerkHydrationTimedOut] = useState(false);
+  useEffect(() => {
+    if (clerkLoaded) {
+      setClerkHydrationTimedOut(false);
+      return;
+    }
+    const timer = setTimeout(() => setClerkHydrationTimedOut(true), 4000);
+    return () => clearTimeout(timer);
+  }, [clerkLoaded]);
+
   const handleSignOut = useCallback(async () => {
     await clearMobileSessionToken();
     await clerkSignOut().catch(() => {});
@@ -257,15 +271,26 @@ function MobileAppRoot() {
     setPendingReminderNavigation(null);
   }, []);
 
-  // Three "keep showing the loading splash" signals that used to fall through
-  // to AuthScreen and caused a visible login/signup flash on cold start for
-  // already-logged-in users:
+  // "Keep showing the loading splash" signals that would otherwise fall
+  // through to AuthScreen and cause a visible login/signup flash on cold
+  // start for already-logged-in users:
   //   1. Our SecureStore hydration is still in flight (`loadingSession`).
   //   2. Clerk hasn't finished hydrating its own stored session yet — we
-  //      don't know whether the user is signed in until `clerkLoaded` is true.
+  //      don't know whether the user is signed in until `clerkLoaded` is
+  //      true. BUT this is bypassed when we already have a valid local
+  //      mobile JWT (`hasValidLocalSession`): we know the user is signed in
+  //      without needing Clerk to confirm it, which is critical for offline
+  //      cold-starts where Clerk can't reach its servers and would hang the
+  //      splash forever. The 4s timeout is a second safety net for the
+  //      edge-case where we have no local JWT and Clerk also can't hydrate.
   //   3. Clerk IS signed in but we're still waiting for the mobile-session
   //      JWT exchange (`handleNativeSessionSync`) to complete.
-  const clerkHydrating = !clerkLoaded;
+  const hasValidLocalSession = (() => {
+    if (!session) return false;
+    const nowSec = Math.floor(Date.now() / 1000);
+    return session.exp > nowSec;
+  })();
+  const clerkHydrating = !clerkLoaded && !hasValidLocalSession && !clerkHydrationTimedOut;
   const clerkSyncPending = clerkLoaded && isClerkSignedIn && !sessionToken;
   const shouldShowSplash = loadingSession || clerkHydrating || clerkSyncPending;
 

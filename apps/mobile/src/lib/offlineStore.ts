@@ -54,6 +54,10 @@ function getSnapshotPath(userId: string): string {
   return `${OFFLINE_ROOT}/offline-${userId}.json`;
 }
 
+function getJourneyCachePath(userId: string): string {
+  return `${OFFLINE_ROOT}/journey-${userId}.json`;
+}
+
 async function ensureRootDirectory(): Promise<void> {
   const info = await FileSystem.getInfoAsync(OFFLINE_ROOT);
   if (!info.exists) {
@@ -412,6 +416,50 @@ export async function saveStandaloneStoryOffline(
     stories: nextStories,
     savedAt: new Date().toISOString(),
   });
+}
+
+/**
+ * Persist the per-language Journey cache so a cold-start offline can still
+ * show a Journey view for any language the user has previously opened. The
+ * shape of the stored payload is opaque to this module — the caller pins a
+ * concrete type on read.
+ */
+export async function saveJourneyCache<T>(
+  userId: string,
+  cache: Record<string, T>
+): Promise<void> {
+  await ensureRootDirectory();
+  try {
+    await FileSystem.writeAsStringAsync(
+      getJourneyCachePath(userId),
+      JSON.stringify({ cache, savedAt: new Date().toISOString() })
+    );
+  } catch {
+    // Best-effort; losing the cache only means the next cold-start offline
+    // renders an empty Journey for a moment until the network call succeeds.
+  }
+}
+
+export async function loadJourneyCache<T>(userId: string): Promise<Record<string, T>> {
+  await ensureRootDirectory();
+  const path = getJourneyCachePath(userId);
+  const info = await FileSystem.getInfoAsync(path);
+  if (!info.exists) return {};
+  try {
+    const raw = await FileSystem.readAsStringAsync(path);
+    const parsed = JSON.parse(raw) as { cache?: Record<string, T> };
+    return parsed && typeof parsed === "object" && parsed.cache ? parsed.cache : {};
+  } catch {
+    return {};
+  }
+}
+
+export async function clearJourneyCache(userId: string): Promise<void> {
+  try {
+    await FileSystem.deleteAsync(getJourneyCachePath(userId), { idempotent: true });
+  } catch {
+    // ignore
+  }
 }
 
 export async function removeStoryOffline(

@@ -39,6 +39,7 @@ import { ReaderScreen } from "./ReaderScreen";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PulseDots } from "./PulseDots";
+import { HomeSkeleton } from "./HomeSkeleton";
 import {
   BookHomeCard,
   BookWebCard,
@@ -72,8 +73,11 @@ import {
   saveSeenGamificationCelebrations,
 } from "./mobileGamificationState";
 import {
+  clearJourneyCache,
+  loadJourneyCache,
   loadOfflineSnapshot,
   removeStoryOffline,
+  saveJourneyCache,
   saveStoryOffline,
   saveStandaloneStoryOffline,
   type OfflineLibrarySnapshot,
@@ -1535,6 +1539,16 @@ export function MobileLibraryShell(args: {
   const [customInterestInput, setCustomInterestInput] = useState("");
   const [loadingRemote, setLoadingRemote] = useState(false);
   const [remoteError, setRemoteError] = useState<string | null>(null);
+  // True when we tried to hydrate remote data but every request failed — a
+  // strong signal that we're offline (or the API is down). Drives the
+  // "Sin conexión — mostrando tu biblioteca descargada" banner so the user
+  // understands why new content isn't appearing. Stays false during the
+  // initial in-flight window so we don't flash a banner before the first
+  // response lands.
+  const [isOffline, setIsOffline] = useState(false);
+  // Tap the offline banner → increment this to trigger a fresh hydrate
+  // without waiting for the next natural refresh cycle.
+  const [remoteRefreshCounter, setRemoteRefreshCounter] = useState(0);
   const [remoteProgress, setRemoteProgress] = useState<MobileProgressPayload | null>(null);
   const [activeGamificationCelebration, setActiveGamificationCelebration] = useState<GamificationCelebration | null>(null);
   const [dismissedCelebrationIds, setDismissedCelebrationIds] = useState<Set<string>>(new Set());
@@ -1581,8 +1595,17 @@ export function MobileLibraryShell(args: {
   const hasSeededExplorePreferencesRef = useRef(false);
   // Keep the last-fetched journey payload per language so switching back to
   // a previously-opened language renders instantly (no empty flash) while we
-  // silently re-fetch in the background to refresh stats / unlocks.
+  // silently re-fetch in the background to refresh stats / unlocks. Mirrored
+  // to disk so a cold-start offline can still render Journey for any
+  // language the user has opened before.
   const journeyCacheByLanguageRef = useRef<Map<string, MobileJourneyPayload>>(new Map());
+  const saveJourneyCacheToDisk = useCallback(() => {
+    const serializable: Record<string, MobileJourneyPayload> = {};
+    journeyCacheByLanguageRef.current.forEach((value, key) => {
+      serializable[key] = value;
+    });
+    void saveJourneyCache<MobileJourneyPayload>(PREVIEW_OFFLINE_USER_ID, serializable);
+  }, []);
   const practiceSpeechAvailable = getOptionalSpeechModule() !== null;
 
   const effectiveTargetLanguages = preferences.targetLanguages.length > 0
@@ -1724,6 +1747,7 @@ export function MobileLibraryShell(args: {
       setJourneyVariantPickerOpen(false);
       setJourneyInsightsByLanguage({});
       journeyCacheByLanguageRef.current.clear();
+      void clearJourneyCache(PREVIEW_OFFLINE_USER_ID);
       return;
     }
 
@@ -1790,10 +1814,19 @@ export function MobileLibraryShell(args: {
       }
 
       const errors: string[] = [];
+      // If every single request rejected we treat it as "offline" and do NOT
+      // wipe any cached remote state — we want the user to keep seeing their
+      // previously-loaded library and whatever is in the offline snapshot.
+      const allRejected = [booksResult, storiesResult, entitlementResult, progressResult, continueResult, journeyResult].every(
+        (result) => result.status === "rejected"
+      );
+      setIsOffline(allRejected);
 
       if (booksResult.status === "fulfilled") {
         setRemoteBooks(booksResult.value);
-      } else {
+      } else if (!allRejected) {
+        // Partial failure (this specific endpoint is broken, rest is fine):
+        // drop to empty and surface the error like before.
         setRemoteBooks([]);
         if (!sessionBooksCount) {
           errors.push(`Books: ${booksResult.reason instanceof Error ? booksResult.reason.message : "Unable to load"}`);
@@ -1802,7 +1835,7 @@ export function MobileLibraryShell(args: {
 
       if (storiesResult.status === "fulfilled") {
         setRemoteStories(storiesResult.value);
-      } else {
+      } else if (!allRejected) {
         setRemoteStories([]);
         if (!sessionStoriesCount) {
           errors.push(
@@ -1813,7 +1846,7 @@ export function MobileLibraryShell(args: {
 
       if (entitlementResult.status === "fulfilled") {
         setRemoteEntitlement(entitlementResult.value);
-      } else if (!sessionPlan) {
+      } else if (!allRejected && !sessionPlan) {
         setRemoteEntitlement(null);
         errors.push(
           `Plan: ${entitlementResult.reason instanceof Error ? entitlementResult.reason.message : "Unable to load"}`
@@ -1822,13 +1855,13 @@ export function MobileLibraryShell(args: {
 
       if (progressResult.status === "fulfilled") {
         setRemoteProgress(progressResult.value);
-      } else {
+      } else if (!allRejected) {
         setRemoteProgress(null);
       }
 
       if (continueResult.status === "fulfilled") {
         setRemoteContinueListening(continueResult.value);
-      } else {
+      } else if (!allRejected) {
         setRemoteContinueListening([]);
       }
 
@@ -1840,8 +1873,9 @@ export function MobileLibraryShell(args: {
         const seedLanguage = journeyResult.value?.language;
         if (typeof seedLanguage === "string" && seedLanguage.trim()) {
           journeyCacheByLanguageRef.current.set(seedLanguage.toLowerCase(), journeyResult.value);
+          void saveJourneyCacheToDisk();
         }
-      } else {
+      } else if (!allRejected) {
         setRemoteJourney(null);
       }
 
@@ -1854,7 +1888,7 @@ export function MobileLibraryShell(args: {
     return () => {
       cancelled = true;
     };
-  }, [sessionBooksCount, sessionPlan, sessionStoriesCount, sessionToken]);
+  }, [remoteRefreshCounter, sessionBooksCount, sessionPlan, sessionStoriesCount, sessionToken]);
 
   const loadJourneyForLanguage = useCallback(
     async (language: string, options: { clearPrevious?: boolean } = {}) => {
@@ -1888,6 +1922,7 @@ export function MobileLibraryShell(args: {
           token: sessionToken,
         });
         journeyCacheByLanguageRef.current.set(cacheKey, payload);
+        saveJourneyCacheToDisk();
         setRemoteJourney(payload);
         const firstTrackInsights = payload.tracks?.[0]?.insights ?? null;
         setJourneyInsightsByLanguage((prev) => ({
@@ -1912,7 +1947,7 @@ export function MobileLibraryShell(args: {
         setJourneyLanguageLoading(false);
       }
     },
-    [sessionToken]
+    [saveJourneyCacheToDisk, sessionToken]
   );
 
   // Prefetch every cover once the journey payload arrives so tapping into a
@@ -2207,8 +2242,18 @@ export function MobileLibraryShell(args: {
     let cancelled = false;
 
     async function hydrateOfflineState() {
-      const snapshot = await loadOfflineSnapshot(PREVIEW_OFFLINE_USER_ID);
-      if (!cancelled) setOfflineSnapshot(snapshot);
+      const [snapshot, journeyByLang] = await Promise.all([
+        loadOfflineSnapshot(PREVIEW_OFFLINE_USER_ID),
+        loadJourneyCache<MobileJourneyPayload>(PREVIEW_OFFLINE_USER_ID),
+      ]);
+      if (cancelled) return;
+      setOfflineSnapshot(snapshot);
+      // Rehydrate the in-memory ref BEFORE any network hydrate so Journey
+      // renders instantly offline. Network responses will overwrite each
+      // entry once they arrive.
+      Object.entries(journeyByLang).forEach(([key, payload]) => {
+        journeyCacheByLanguageRef.current.set(key, payload);
+      });
     }
 
     void hydrateOfflineState();
@@ -5691,6 +5736,12 @@ export function MobileLibraryShell(args: {
         </View>
       </View>
 
+      {/* Loading placeholder that matches the shapes of the real cards
+          that are about to arrive (Continue listening + New releases),
+          so the layout doesn't jump and the user has something to look
+          at during the ~500-900 ms hydration window. */}
+      {loadingRemote && isSignedIn ? <HomeSkeleton /> : null}
+
       {remoteProgress?.gamification ? (
         <View style={styles.section}>
           <Pressable
@@ -8180,11 +8231,8 @@ export function MobileLibraryShell(args: {
             testID="qa-journey-language-switch"
             style={styles.journeyLanguageChip}
           >
-            <Text style={styles.journeyLanguageChipText}>{activeJourneyLanguage ?? "Journey"}</Text>
-            {(preferences.targetLanguages.length > 1 ||
-              (remoteJourney && remoteJourney.tracks.length >= 2)) ? (
-              <Feather name="chevron-down" size={14} color="#dbe9ff" />
-            ) : null}
+            <Text style={styles.journeyLanguageChipText}>My languages</Text>
+            <Feather name="chevron-down" size={14} color="#dbe9ff" />
           </Pressable>
           {activeJourneyInsights ? (
             <Pressable
@@ -8199,7 +8247,8 @@ export function MobileLibraryShell(args: {
               style={styles.journeyStripStats}
             >
               <Text style={styles.journeyStripStatsText}>
-                {activeJourneyInsights.completedSteps}/{activeJourneyInsights.totalSteps} steps
+                {activeJourneyLanguage ? `${activeJourneyLanguage} · ` : ""}
+                {activeJourneyInsights.completedSteps}/{activeJourneyInsights.totalSteps}
                 {" · "}
                 <Text style={styles.journeyStripStatsPercent}>{activeJourneyInsights.score}%</Text>
               </Text>
@@ -8207,7 +8256,13 @@ export function MobileLibraryShell(args: {
                 <Text style={styles.journeyStripDueBadge}>{activeJourneyInsights.dueReviewCount} due</Text>
               ) : null}
             </Pressable>
-          ) : <View style={styles.journeyStripStats} />}
+          ) : (
+            <View style={styles.journeyStripStats}>
+              {activeJourneyLanguage ? (
+                <Text style={styles.journeyStripStatsText}>{activeJourneyLanguage}</Text>
+              ) : null}
+            </View>
+          )}
           <MenuTrigger onPress={() => setMenuOpen(true)} />
         </View>
       )}
@@ -9160,6 +9215,27 @@ export function MobileLibraryShell(args: {
 
   return (
     <View style={styles.shell}>
+      {/* Subtle "you're offline" banner. Only appears once we've actually
+          tried to hydrate and every request failed — so it does not flash
+          during the initial in-flight window. Tappable to retry. */}
+      {isOffline && isSignedIn ? (
+        <Pressable
+          accessibilityLabel="Sin conexión. Tocá para reintentar."
+          onPress={() => {
+            // Bump the refresh counter to re-trigger the hydrate effect.
+            // If we're still offline the banner will reappear; if network
+            // came back the fresh data lands and isOffline flips to false.
+            setRemoteRefreshCounter((prev) => prev + 1);
+          }}
+          style={styles.offlineBanner}
+        >
+          <View style={styles.offlineBannerDot} />
+          <Text style={styles.offlineBannerText} numberOfLines={1}>
+            Sin conexión — mostrando tu biblioteca descargada
+          </Text>
+          <Feather name="refresh-cw" size={13} color="#f5e0b5" />
+        </Pressable>
+      ) : null}
       <ScrollView
         ref={shellScrollRef}
         style={styles.scrollView}
@@ -9724,6 +9800,32 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  offlineBanner: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    marginHorizontal: 16,
+    marginTop: 8,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderRadius: 12,
+    backgroundColor: "rgba(255, 176, 59, 0.14)",
+    borderWidth: 1,
+    borderColor: "rgba(255, 176, 59, 0.32)",
+  },
+  offlineBannerDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: "#ffb03b",
+  },
+  offlineBannerText: {
+    flex: 1,
+    color: "#f5e0b5",
+    fontSize: 13,
+    fontWeight: "600",
+    letterSpacing: 0.2,
   },
   container: {
     gap: 18,
@@ -10508,11 +10610,11 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   journeyMapList: {
-    gap: 10,
+    gap: 6,
     marginTop: 2,
   },
   journeyMapSequence: {
-    gap: 6,
+    gap: 4,
   },
   journeyMapNodeWrap: {
     width: "100%",
@@ -10587,12 +10689,12 @@ const styles = StyleSheet.create({
     lineHeight: 16,
   },
   journeyMapConnectorRow: {
-    // Tighter curve: brings consecutive nodes closer vertically while
-    // keeping the path legible.
-    height: 88,
+    // Tighter curve again — brings consecutive nodes ~24 pt closer so the
+    // path fits more stops per viewport without feeling cramped.
+    height: 64,
     width: "100%",
     justifyContent: "flex-start",
-    marginTop: -70,
+    marginTop: -50,
     paddingHorizontal: 42,
   },
   journeyMapConnectorRowLeft: {
@@ -10603,7 +10705,7 @@ const styles = StyleSheet.create({
   },
   journeyMapConnectorCurve: {
     width: "50%",
-    height: 110,
+    height: 80,
     borderTopWidth: 2,
     borderColor: "#83b05e",
     borderStyle: "dashed",
