@@ -2,9 +2,22 @@
 
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import { clerkAppearance } from "@/lib/clerkAppearance";
 import AppShell from "@/components/AppShell";
+
+// Nunito as the primary UI font. `variable` exposes it as a CSS custom
+// property (consumed in globals.css via `var(--font-nunito)`), and
+// `display: "swap"` avoids the invisible-text-while-loading flash.
+// Weight list is narrowed to what the type scale actually uses
+// (400 for body fallback + 700/800/900 for titles) to keep payload small.
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["400", "700", "800", "900"],
+  variable: "--font-nunito",
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -45,7 +58,7 @@ export default async function RootLayout({
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
       appearance={clerkAppearance}
     >
-      <html lang="en" className="bg-[var(--bg-content)]">
+      <html lang="en" className={`${nunito.variable} bg-[var(--bg-content)]`}>
         <head>
           <meta name="theme-color" content="#0b1e36" />
           <meta
