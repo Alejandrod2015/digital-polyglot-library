@@ -270,16 +270,15 @@ function MobileAppRoot() {
   const shouldShowSplash = loadingSession || clerkHydrating || clerkSyncPending;
 
   if (shouldShowSplash) {
-    // Branded splash: the full colour logo on a white background matches the
-    // native iOS LaunchScreen (systemBackgroundColor is white) so there is no
-    // visible flash between the native launch image and this JS splash while
-    // Clerk + our SecureStore token exchange finish hydrating.
+    // Branded splash: white wordmark logo on the app's dark background so
+    // the splash matches the main UI and the transition into the shell is
+    // visually continuous (no white → dark flash).
     return (
-      <SafeAreaView style={[styles.safeArea, styles.splashSafeArea]}>
-        <StatusBar barStyle="dark-content" />
+      <SafeAreaView style={styles.safeArea}>
+        <StatusBar barStyle="light-content" />
         <View style={styles.splashContainer}>
           <Image
-            source={require("./assets/splash-logo.png")}
+            source={require("./assets/splash-logo-white.png")}
             style={styles.splashLogo}
             resizeMode="contain"
             accessibilityLabel="Digital Polyglot"
@@ -366,15 +365,12 @@ const styles = StyleSheet.create({
   loadingSpinner: {
     marginTop: 18,
   },
-  splashSafeArea: {
-    backgroundColor: "#ffffff",
-  },
   splashContainer: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     padding: 24,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#0c1626",
   },
   splashLogo: {
     width: 260,

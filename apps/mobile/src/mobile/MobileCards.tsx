@@ -431,26 +431,28 @@ const styles = StyleSheet.create({
   },
   bookWebCard: {
     width: 324,
-    borderRadius: 24,
+    borderRadius: 20,
     borderWidth: 1,
     borderColor: "#27405f",
     backgroundColor: "#14243b",
     flexDirection: "row",
-    // Center the body column vertically against the portrait cover. With the
-    // previous "flex-start" the short text column left a visible empty block
-    // under itself next to the taller cover.
-    alignItems: "center",
-    paddingHorizontal: 14,
-    paddingVertical: 14,
-    gap: 14,
+    // Body and cover are both ~118-126 pt tall now, so flex-start hugs the
+    // content at the top and leaves no awkward gap above the badges.
+    alignItems: "flex-start",
+    padding: 12,
+    gap: 12,
   },
   bookWebCardFullWidth: {
     width: "100%",
   },
   bookWebCardCoverFrame: {
-    width: 104,
+    // Shrunk from 104→86 px wide so the cover's height (86 / 0.72 ≈ 120 pt)
+    // matches the typical body height (badges + 2-line title + stats +
+    // topics ≈ 110-125 pt). Result: no empty vertical space above or below
+    // the text column.
+    width: 86,
     aspectRatio: 0.72,
-    borderRadius: 18,
+    borderRadius: 14,
     overflow: "hidden",
     backgroundColor: "#0c1a2c",
     borderWidth: 1,

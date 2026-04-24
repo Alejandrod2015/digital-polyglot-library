@@ -207,15 +207,38 @@ function renderHighlightedParagraph(
       alreadyHighlighted.add(canonicalKey);
     }
 
-    nodes.push(
-      <Text
-        key={`${paragraphKey}-voc-${key++}`}
-        style={highlightStyle}
-        onPress={vocabItem ? () => onWordPress(vocabItem, text) : undefined}
-      >
-        {matchedText}
-      </Text>
-    );
+    const isActualHighlight = highlightStyle !== baseTextStyle;
+
+    if (isActualHighlight) {
+      // Wrap the highlighted word in an inline <View> so the background
+      // respects borderRadius (iOS's TextKit ignores borderRadius on a
+      // nested <Text>, but a <View> inline inside a <Text> renders via
+      // NSTextAttachment and keeps its own styles, including rounded
+      // corners). The inner <Text> still owns the onPress so tapping the
+      // pill opens the vocab popup.
+      nodes.push(
+        <View
+          key={`${paragraphKey}-voc-${key++}`}
+          style={styles.highlightedPill}
+        >
+          <Text
+            style={styles.highlightedPillText}
+            onPress={vocabItem ? () => onWordPress(vocabItem, text) : undefined}
+          >
+            {matchedText}
+          </Text>
+        </View>
+      );
+    } else {
+      nodes.push(
+        <Text
+          key={`${paragraphKey}-voc-${key++}`}
+          style={highlightStyle}
+        >
+          {matchedText}
+        </Text>
+      );
+    }
 
     lastIndex = end;
     match = regex.exec(text);
@@ -340,7 +363,12 @@ export function ReaderScreen(args: {
   const lastTrackedReadingRatioRef = useRef<number | null>(null);
   const lastTrackedBlockIndexRef = useRef<number | null>(null);
   const coverUrl = story.cover || story.coverUrl || book.cover;
-  const [activeBlockIndex, setActiveBlockIndex] = useState(
+  // The reader does not render anything based on the active block index
+  // (it's only used to persist progress on scroll). Keeping it in state
+  // would trigger a full re-render of the reader on every block boundary
+  // crossed during scroll — catastrophic for scroll performance. A ref
+  // avoids the re-renders entirely.
+  const activeBlockIndexRef = useRef(
     Math.min(Math.max(initialProgress?.currentBlockIndex ?? 0, 0), Math.max(blocks.length - 1, 0))
   );
   // Show the full definition — the bubble grows vertically and defs from the
@@ -379,7 +407,7 @@ export function ReaderScreen(args: {
       Math.max(initialProgress?.currentBlockIndex ?? 0, 0),
       Math.max(blocks.length - 1, 0)
     );
-    setActiveBlockIndex(nextBlockIndex);
+    activeBlockIndexRef.current = nextBlockIndex;
     onTrackProgress({
       progressRatio: initialProgress?.progressRatio ?? 0,
       currentBlockIndex: nextBlockIndex,
@@ -482,8 +510,8 @@ export function ReaderScreen(args: {
         break;
       }
     }
-    if (nextBlockIndex !== activeBlockIndex) {
-      setActiveBlockIndex(nextBlockIndex);
+    if (nextBlockIndex !== activeBlockIndexRef.current) {
+      activeBlockIndexRef.current = nextBlockIndex;
     }
     trackReadingPosition(ratio, nextBlockIndex);
 
@@ -524,7 +552,10 @@ export function ReaderScreen(args: {
         keyboardShouldPersistTaps="handled"
         contentInsetAdjustmentBehavior="automatic"
         onScroll={handleScroll}
-        scrollEventThrottle={16}
+        // 32 ms ≈ 30 Hz is plenty for progress tracking; cuts the JS-side
+        // scroll handler cost in half vs 60 Hz (16 ms) without any
+        // visible scroll smoothness difference.
+        scrollEventThrottle={32}
         onContentSizeChange={(_width, height) => {
           contentHeightRef.current = height;
           restoreReadingPosition();
@@ -796,7 +827,7 @@ export function ReaderScreen(args: {
               blocks.length - 1,
               Math.max(0, Math.round(nextRatio * Math.max(blocks.length - 1, 0)))
             );
-            setActiveBlockIndex(estimatedBlockIndex);
+            activeBlockIndexRef.current = estimatedBlockIndex;
             trackReadingPosition(nextRatio, estimatedBlockIndex);
             scrollViewRef.current.scrollTo({
               y: nextRatio * scrollableHeight,
@@ -1098,12 +1129,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     lineHeight: 40,
   },
+  // Kept for the (rare) case where the renderer falls back to a plain
+  // <Text> instead of the <View> pill (e.g. already-highlighted duplicates
+  // in the same paragraph).
   highlightedWord: {
-    // Solid amber "highlighter" on dark text. borderRadius on inline <Text>
-    // in iOS is not visibly rendered by the text engine (known limitation),
-    // so the corners stay square; we mitigate by using a very short
-    // lineHeight on the span itself to keep the visible block compact and
-    // well separated from adjacent paragraph lines.
     color: "#1a1205",
     fontSize: 20,
     lineHeight: 24,
@@ -1111,6 +1140,28 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     paddingHorizontal: 4,
     borderRadius: 6,
+  },
+  highlightedPill: {
+    // Inline <View> embedded inside the paragraph <Text>. This is the only
+    // reliable way on iOS to get an amber highlight block with REAL rounded
+    // corners — a nested <Text>'s borderRadius is discarded by TextKit.
+    backgroundColor: "#f8c15c",
+    borderRadius: 6,
+    paddingHorizontal: 4,
+    paddingVertical: 0,
+    // Keep the pill short vertically so it sits tight around the word and
+    // can't touch a highlighted word on the adjacent paragraph line.
+    marginVertical: 0,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  highlightedPillText: {
+    color: "#1a1205",
+    fontSize: 20,
+    fontWeight: "700",
+    // Tighter line-height than the surrounding paragraph (40) so the pill
+    // background stays compact — 22 gives a snug fit around caps + descenders.
+    lineHeight: 22,
   },
   vocabOverlay: {
     position: "absolute",

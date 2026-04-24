@@ -119,22 +119,17 @@ export function NativeAudioPlayer({
           { shouldPlay: false, progressUpdateIntervalMillis: 500 },
           (status) => {
             if (cancelled) return;
-            // Expo AV surfaces mid-playback failures (the AVPlayerItem 11800
-            // "AVErrorUnknown" family) on the status object via `error` when
-            // unloaded, or `didJustFinish === false && !isLoaded` otherwise.
-            // We log the full context + URL so we can diagnose the next
-            // time a reader's first story fails.
+            // Log transient status errors for diagnostics but don't flip
+            // the UI into an error state or return early — Expo AV can emit
+            // a momentary error during buffering and still recover; the
+            // previous "setError + return" path blocked the state machine
+            // from reaching isLoaded:true in those cases, which is what
+            // happened after build 42.
             if (!status.isLoaded && "error" in status && status.error) {
               console.error("[audio] playback status error", {
                 error: status.error,
                 url: normalizedSrc,
               });
-              setError(
-                typeof status.error === "string"
-                  ? `Audio unavailable: ${status.error}`
-                  : "Audio unavailable. Tap retry or check your connection."
-              );
-              return;
             }
             setPlayback(toSnapshot(status));
           }

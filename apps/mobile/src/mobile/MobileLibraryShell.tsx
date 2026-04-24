@@ -38,6 +38,7 @@ import { requireOptionalNativeModule } from "expo-modules-core";
 import { ReaderScreen } from "./ReaderScreen";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
+import { PulseDots } from "./PulseDots";
 import {
   BookHomeCard,
   BookWebCard,
@@ -2978,30 +2979,79 @@ export function MobileLibraryShell(args: {
     setSavedStoryIds((current) => (isSaved ? current.filter((id) => id !== story.id) : [...current, story.id]));
   }
 
-  function recordProgress(
-    book: Book,
-    story: Story,
-    details?: {
-      progressRatio?: number;
-      currentBlockIndex?: number;
-      totalBlocks?: number;
-    }
-  ) {
-    setReadingProgress((current) =>
-      [
-        {
-          bookId: book.id,
-          storyId: story.id,
-          title: story.title,
-          updatedAt: new Date().toISOString(),
-          progressRatio: details?.progressRatio,
-          currentBlockIndex: details?.currentBlockIndex,
-          totalBlocks: details?.totalBlocks,
-        },
-        ...current.filter((entry) => entry.storyId !== story.id),
-      ].slice(0, 8)
-    );
-  }
+  // Throttle state updates from the reader scroll to at most one per
+  // 2.5 s + a guaranteed final update ~1 s after the last scroll event.
+  // Before this, every 3 % of scroll ratio fired a setReadingProgress
+  // which re-rendered the 13k-line Shell in the middle of scrolling,
+  // making the reader feel sluggish on iOS.
+  const lastRecordProgressRef = useRef<{ storyId: string | null; at: number }>({
+    storyId: null,
+    at: 0,
+  });
+  const pendingRecordProgressRef = useRef<{
+    timer: ReturnType<typeof setTimeout> | null;
+    args: { book: Book; story: Story; details?: { progressRatio?: number; currentBlockIndex?: number; totalBlocks?: number } } | null;
+  }>({ timer: null, args: null });
+
+  const commitRecordProgress = useCallback(
+    (
+      book: Book,
+      story: Story,
+      details?: { progressRatio?: number; currentBlockIndex?: number; totalBlocks?: number }
+    ) => {
+      lastRecordProgressRef.current = { storyId: story.id, at: Date.now() };
+      setReadingProgress((current) =>
+        [
+          {
+            bookId: book.id,
+            storyId: story.id,
+            title: story.title,
+            updatedAt: new Date().toISOString(),
+            progressRatio: details?.progressRatio,
+            currentBlockIndex: details?.currentBlockIndex,
+            totalBlocks: details?.totalBlocks,
+          },
+          ...current.filter((entry) => entry.storyId !== story.id),
+        ].slice(0, 8)
+      );
+    },
+    []
+  );
+
+  const recordProgress = useCallback(
+    (
+      book: Book,
+      story: Story,
+      details?: { progressRatio?: number; currentBlockIndex?: number; totalBlocks?: number }
+    ) => {
+      const now = Date.now();
+      const last = lastRecordProgressRef.current;
+      // If the same story was persisted recently, queue a trailing update
+      // and let later calls replace the args (keeps only the latest).
+      if (last.storyId === story.id && now - last.at < 2500) {
+        pendingRecordProgressRef.current.args = { book, story, details };
+        if (!pendingRecordProgressRef.current.timer) {
+          pendingRecordProgressRef.current.timer = setTimeout(() => {
+            const queued = pendingRecordProgressRef.current.args;
+            pendingRecordProgressRef.current.timer = null;
+            pendingRecordProgressRef.current.args = null;
+            if (queued) {
+              commitRecordProgress(queued.book, queued.story, queued.details);
+            }
+          }, 1000);
+        }
+        return;
+      }
+      // Cold call or different story: commit immediately.
+      if (pendingRecordProgressRef.current.timer) {
+        clearTimeout(pendingRecordProgressRef.current.timer);
+        pendingRecordProgressRef.current.timer = null;
+        pendingRecordProgressRef.current.args = null;
+      }
+      commitRecordProgress(book, story, details);
+    },
+    [commitRecordProgress]
+  );
 
   async function savePreferences() {
     if (!sessionToken) {
@@ -4604,31 +4654,6 @@ export function MobileLibraryShell(args: {
     [preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
   );
 
-  // Home carousel wants a uniform vertical card shape (BookHomeCard). Build
-  // the book subset of "New releases" with the same fields so the carousel
-  // renders at one consistent width/height instead of mixing horizontal
-  // BookWebCards with vertical story cards.
-  const latestBookHomeCards = useMemo(
-    () =>
-      latestBookCards.map((item) => {
-        const book = CATALOG_BOOKS.find((b) => `book-${b.id}` === item.key);
-        const subtitle =
-          book
-            ? formatLanguageAndRegion(book.language, book.region ?? "") || "Book"
-            : "Book";
-        const meta = [formatLevel(item.level), item.statsLine].filter(Boolean).join(" · ");
-        return {
-          key: item.key,
-          title: item.title,
-          coverUrl: item.coverUrl,
-          subtitle,
-          meta,
-          onPress: item.onPress,
-        };
-      }),
-    [latestBookCards]
-  );
-
   useEffect(() => {
     const urls = [
       ...latestBookCards.slice(0, 4).map((c) => c.coverUrl),
@@ -5771,19 +5796,8 @@ export function MobileLibraryShell(args: {
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
           {[
-            ...latestBookHomeCards.slice(0, 5).map((item) => (
-              <BookHomeCard
-                key={item.key}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  coverFit: "contain",
-                  onPress: item.onPress,
-                }}
-              />
+            ...latestBookCards.slice(0, 5).map((item) => (
+              <BookWebCard key={item.key} item={item} />
             )),
             ...[...latestStoryCards.slice(0, 5), ...homeStandaloneStoryCards.slice(0, 3)].slice(0, 6).map((item) => (
               <BookHomeCard
@@ -8267,18 +8281,7 @@ export function MobileLibraryShell(args: {
 
       {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && (loadingRemote || journeyLanguageLoading) && !activeJourneyTrack ? (
         <View style={styles.section}>
-          <View style={styles.journeyLoadingSkeleton}>
-            <View style={[styles.journeyLoadingChipRow]}>
-              {[0, 1, 2].map((i) => (
-                <View key={i} style={styles.journeyLoadingChip} />
-              ))}
-            </View>
-            {[0, 1, 2].map((row) => (
-              <View key={row} style={styles.journeyLoadingRow}>
-                <View style={styles.journeyLoadingCover} />
-              </View>
-            ))}
-          </View>
+          <PulseDots label={activeJourneyLanguage ? `Loading ${activeJourneyLanguage} journey…` : "Loading journey…"} />
         </View>
       ) : null}
 
@@ -8903,6 +8906,18 @@ export function MobileLibraryShell(args: {
     setOnboardingTourStep(null);
   }
 
+  // Stable progress handler for the current reader selection. Without this
+  // memo the reader received a fresh arrow every Shell render, which
+  // invalidated its props during scroll and kept the reader rendering when
+  // the Shell re-rendered (cascading scroll lag).
+  const handleReaderTrackProgress = useCallback(
+    (details?: { progressRatio?: number; currentBlockIndex?: number; totalBlocks?: number }) => {
+      if (!selection) return;
+      recordProgress(selection.book, selection.story, details);
+    },
+    [recordProgress, selection]
+  );
+
   if (selection) {
     const offlineStory = offlineStoriesById.get(selection.story.id);
     const currentStoryIndex = selection.book.stories.findIndex((story) => story.id === selection.story.id);
@@ -8943,7 +8958,7 @@ export function MobileLibraryShell(args: {
           initialProgress={
             readingProgress.find((entry) => entry.storyId === selection.story.id) ?? null
           }
-          onTrackProgress={(details) => recordProgress(selection.book, selection.story, details)}
+          onTrackProgress={handleReaderTrackProgress}
           isAvailableOffline={Boolean(offlineStory)}
           isDownloadingOffline={offlineStoryIdInFlight === selection.story.id}
           onDownloadOffline={() => void downloadStoryOffline(selection.book, selection.story)}
@@ -9552,6 +9567,15 @@ export function MobileLibraryShell(args: {
                 <Text style={styles.feedbackButtonText}>Feedback</Text>
               </Pressable>
             </ScrollView>
+
+            <View style={styles.menuFooter}>
+              <Image
+                source={require("../../assets/splash-logo-white.png")}
+                style={styles.menuFooterLogo}
+                resizeMode="contain"
+                accessibilityLabel="Digital Polyglot"
+              />
+            </View>
           </View>
         </View>
       </Modal>
@@ -10413,34 +10437,6 @@ const styles = StyleSheet.create({
     borderColor: "#29435f",
     paddingHorizontal: 14,
     paddingVertical: 12,
-  },
-  journeyLoadingSkeleton: {
-    gap: 16,
-    paddingVertical: 4,
-  },
-  journeyLoadingChipRow: {
-    flexDirection: "row",
-    gap: 8,
-  },
-  journeyLoadingChip: {
-    width: 78,
-    height: 32,
-    borderRadius: 999,
-    backgroundColor: "rgba(255,255,255,0.06)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.08)",
-  },
-  journeyLoadingRow: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-  journeyLoadingCover: {
-    width: 84,
-    height: 84,
-    borderRadius: 20,
-    backgroundColor: "rgba(255,255,255,0.06)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.08)",
   },
   journeyMapSection: {
     // Sits directly on the app background — no framing card.
@@ -13261,6 +13257,17 @@ const styles = StyleSheet.create({
     paddingTop: 56,
     paddingHorizontal: 22,
     paddingBottom: 28,
+    flex: 1,
+    flexDirection: "column",
+  },
+  menuFooter: {
+    paddingTop: 18,
+    alignItems: "center",
+  },
+  menuFooterLogo: {
+    width: 160,
+    height: 80,
+    opacity: 0.85,
   },
   menuPanelHeader: {
     flexDirection: "row",
