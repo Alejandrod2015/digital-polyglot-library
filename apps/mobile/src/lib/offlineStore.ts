@@ -95,10 +95,35 @@ async function cacheRemoteFile(args: {
   await ensureMediaDirectory(args.kind);
   const destination = buildMediaPath(args.kind, args.key, remoteUrl);
   const existing = await FileSystem.getInfoAsync(destination);
-  if (existing.exists) return destination;
+  if (existing.exists) {
+    // Validate the cached file. A previous download may have been truncated
+    // (app backgrounded, network dropped, storage pressure) which leaves a
+    // zero-byte or partial file on disk. AVPlayer then fails to load with
+    // errors like -17913 / AVErrorUnknown. If the cached file is suspicious
+    // we drop it and re-download.
+    const cachedSize = existing.size ?? 0;
+    if (cachedSize >= 1024) {
+      return destination;
+    }
+    try {
+      await FileSystem.deleteAsync(destination, { idempotent: true });
+    } catch {
+      // ignore
+    }
+  }
 
   try {
     const result = await FileSystem.downloadAsync(remoteUrl, destination);
+    if (result.status >= 400) {
+      await FileSystem.deleteAsync(result.uri, { idempotent: true }).catch(() => undefined);
+      return null;
+    }
+    const info = await FileSystem.getInfoAsync(result.uri);
+    if (!info.exists || (info.size ?? 0) < 1024) {
+      // Server returned an empty body or the download was truncated.
+      await FileSystem.deleteAsync(result.uri, { idempotent: true }).catch(() => undefined);
+      return null;
+    }
     return result.uri;
   } catch {
     return null;

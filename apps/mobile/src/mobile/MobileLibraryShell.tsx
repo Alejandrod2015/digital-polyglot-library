@@ -1413,6 +1413,12 @@ export function MobileLibraryShell(args: {
   const isSignedIn = Boolean(sessionToken);
   const shellScrollRef = useRef<ScrollView | null>(null);
   const [activeScreen, setActiveScreen] = useState<MobileScreen>("home");
+  // Scroll the main shell to the top whenever the user switches tabs, so
+  // e.g. Home → Explore doesn't land the new screen mid-list at the same
+  // vertical offset as the old one.
+  useEffect(() => {
+    shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+  }, [activeScreen]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [exploreQuery, setExploreQuery] = useState("");
   const [isExploreSearchFocused, setIsExploreSearchFocused] = useState(false);
@@ -1975,8 +1981,14 @@ export function MobileLibraryShell(args: {
     })();
   }, [activeJourneyLanguage, activeJourneyLanguageHydrated]);
 
+  // Only auto-pick the user's single target language on the FIRST hydration
+  // pass, not every time they tap "All languages". Otherwise clearing the
+  // language snaps back immediately and the hub is unreachable.
+  const hasAutoPickedLanguageRef = useRef(false);
   useEffect(() => {
     if (!didHydratePreferences) return;
+    if (hasAutoPickedLanguageRef.current) return;
+    hasAutoPickedLanguageRef.current = true;
     if (preferences.targetLanguages.length === 1 && !activeJourneyLanguage) {
       setActiveJourneyLanguage(preferences.targetLanguages[0]);
     }
@@ -8147,10 +8159,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyLanguage && (
-        preferences.targetLanguages.length > 1 ||
-        (remoteJourney && remoteJourney.tracks.length >= 2)
-      ) ? (
+      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyLanguage ? (
         <View style={styles.section}>
           <Pressable
             onPress={() => {
@@ -11401,6 +11410,11 @@ const styles = StyleSheet.create({
   carousel: {
     gap: 12,
     paddingRight: 12,
+    // Horizontal ScrollView defaults to alignItems:"stretch", which makes
+    // shorter cards (e.g. BookWebCard ≈170 pt) grow to match the tallest
+    // item (e.g. BookHomeCard ≈320 pt) and leaves empty space below their
+    // content. Keep each card at its own intrinsic height.
+    alignItems: "flex-start",
   },
   heroCard: {
     width: 286,

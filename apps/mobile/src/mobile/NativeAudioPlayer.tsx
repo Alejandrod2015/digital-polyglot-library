@@ -6,6 +6,9 @@ import { Feather } from "@expo/vector-icons";
 type Props = {
   src?: string | null;
   onProgressChange?: (snapshot: PlaybackSnapshot) => void;
+  /** Called when the underlying audio load or playback fails. Lets the
+   * parent fall back to a different URL (e.g. remote when local is bad). */
+  onLoadError?: (details: { src: string; reason: string }) => void;
   variant?: "inline" | "sticky";
   canGoPrevious?: boolean;
   canGoNext?: boolean;
@@ -57,6 +60,7 @@ function toSnapshot(status: AVPlaybackStatus): PlaybackSnapshot {
 export function NativeAudioPlayer({
   src,
   onProgressChange,
+  onLoadError,
   variant = "inline",
   canGoPrevious = false,
   canGoNext = false,
@@ -119,16 +123,17 @@ export function NativeAudioPlayer({
           { shouldPlay: false, progressUpdateIntervalMillis: 500 },
           (status) => {
             if (cancelled) return;
-            // Log transient status errors for diagnostics but don't flip
-            // the UI into an error state or return early — Expo AV can emit
-            // a momentary error during buffering and still recover; the
-            // previous "setError + return" path blocked the state machine
-            // from reaching isLoaded:true in those cases, which is what
-            // happened after build 42.
             if (!status.isLoaded && "error" in status && status.error) {
               console.error("[audio] playback status error", {
                 error: status.error,
                 url: normalizedSrc,
+              });
+              // Let the parent decide whether to retry with a different URL
+              // (e.g. fall back to the remote file when a local `file://`
+              // cached copy turns out to be corrupt).
+              onLoadError?.({
+                src: normalizedSrc,
+                reason: typeof status.error === "string" ? status.error : "unknown",
               });
             }
             setPlayback(toSnapshot(status));
@@ -143,15 +148,13 @@ export function NativeAudioPlayer({
         soundRef.current = sound;
       } catch (loadError) {
         if (!cancelled) {
-          // Include the URL in the log so failures are traceable. 11800 =
-          // AVFoundationErrorDomain / AVErrorUnknown, typically an HTTP 4xx
-          // or format issue on the remote file.
           console.error("[audio] load failed", {
             error: loadError,
             url: normalizedSrc,
           });
           const message = loadError instanceof Error ? loadError.message : "Unable to load audio.";
           setError(`Audio unavailable: ${message}`);
+          onLoadError?.({ src: normalizedSrc, reason: message });
         }
       }
     }

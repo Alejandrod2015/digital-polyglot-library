@@ -314,34 +314,33 @@ export function ReaderScreen(args: {
   } = args;
   const blocks = useMemo(() => toBlocks(story.text), [story.text]);
   const vocab = story.vocab ?? [];
-  const audioUrl = typeof resolvedAudioUrl === "string" && resolvedAudioUrl.trim() ? resolvedAudioUrl : story.audio;
+  // If a `file://` audio URL was provided but it fails to play (e.g. the
+  // downloaded file was truncated), this state lets us fall back to the
+  // remote story.audio on a retry pass. Reset whenever the story changes.
+  const [offlineAudioFailed, setOfflineAudioFailed] = useState(false);
+  useEffect(() => {
+    setOfflineAudioFailed(false);
+  }, [story.id]);
+  const preferredAudioUrl =
+    typeof resolvedAudioUrl === "string" && resolvedAudioUrl.trim() ? resolvedAudioUrl : story.audio;
+  const audioUrl =
+    offlineAudioFailed &&
+    typeof preferredAudioUrl === "string" &&
+    preferredAudioUrl.startsWith("file://") &&
+    typeof story.audio === "string" &&
+    /^https?:\/\//.test(story.audio)
+      ? story.audio
+      : preferredAudioUrl;
   const isOfflineAudio = typeof audioUrl === "string" && audioUrl.startsWith("file://");
   const [selectedVocab, setSelectedVocab] = useState<VocabItem | null>(null);
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
   // Only auto-open the practice prompt once per story view so dismissing it
   // doesn't cause it to re-pop every time the user scrolls near the bottom.
   const promptShownForStoryRef = useRef<string | null>(null);
-  const storyOpenedAtRef = useRef<number>(Date.now());
-  // Flip when the user starts audio. If audio is in use we suppress the
-  // scroll/time trigger — they're listening, not reading — and wait for the
-  // audio to actually finish before showing the practice prompt. Avoids the
-  // popup appearing ~10 s before the narration is done.
-  const hasStartedAudioRef = useRef(false);
   useEffect(() => {
     setEndOfStoryPromptVisible(false);
     promptShownForStoryRef.current = null;
-    storyOpenedAtRef.current = Date.now();
-    hasStartedAudioRef.current = false;
   }, [story.id]);
-  // Minimum elapsed time before the read-path trigger fires. Rejects quick
-  // scroll-throughs: 30s absolute floor, scaled for long stories by
-  // wordCount / 180 WPM * 0.5 (read at least half the theoretical L2 reading
-  // time). A 600-word story → ~100 s floor. A 200-word story → 30 s floor.
-  const readFloorSec = useMemo(() => {
-    const wordCount = story.text ? story.text.trim().split(/\s+/).filter(Boolean).length : 0;
-    const scaled = (wordCount / 180) * 60 * 0.5;
-    return Math.max(30, Math.round(scaled));
-  }, [story.text]);
 
   function maybeFireEndOfStoryPrompt() {
     if (!onOpenPractice) return;
@@ -515,16 +514,10 @@ export function ReaderScreen(args: {
     }
     trackReadingPosition(ratio, nextBlockIndex);
 
-    // Read-path trigger: only if the user ISN'T using audio. Scroll reached
-    // ~95% AND they've been on screen at least `readFloorSec` seconds. The
-    // time gate rejects fast drags; the scroll gate rejects "read the intro
-    // and left". If audio is in use we wait for audio completion instead.
-    if (!hasStartedAudioRef.current && ratio >= 0.95) {
-      const elapsedSec = (Date.now() - storyOpenedAtRef.current) / 1000;
-      if (elapsedSec >= readFloorSec) {
-        maybeFireEndOfStoryPrompt();
-      }
-    }
+    // "Lock it in" prompt is now audio-only (fires on expo-av
+    // didJustFinish). The scroll-to-end trigger was removed per request —
+    // reaching the bottom of the text is not the same thing as finishing
+    // the story, especially if the listener is using audio.
   }
 
   return (
@@ -566,15 +559,10 @@ export function ReaderScreen(args: {
         }}
       >
         <View style={styles.topBar}>
-          <Pressable
-            onPress={onBack}
-            accessibilityRole="button"
-            accessibilityLabel="qa-reader-back"
-            testID="qa-reader-back"
-            style={styles.iconButton}
-          >
-            <Feather name="arrow-left" size={18} color="#dbe9ff" />
-          </Pressable>
+          {/* Back lives in the floating button (rendered outside this
+              ScrollView) so it's always reachable without scrolling. The
+              right side keeps save + download. */}
+          <View />
           <View style={styles.topActions}>
             <Pressable onPress={onToggleSaved} style={styles.iconButton}>
               <Feather
@@ -781,6 +769,15 @@ export function ReaderScreen(args: {
           canGoNext={canGoNext}
           onPrevious={onPreviousStory}
           onNext={onNextStory}
+          onLoadError={(details) => {
+            // If the local offline copy fails (truncated/corrupt download),
+            // flip to the remote URL. `audioUrl` recomputes based on
+            // `offlineAudioFailed` so NativeAudioPlayer will re-mount with
+            // the fresh http(s) URL and attempt playback again.
+            if (details.src.startsWith("file://") && !offlineAudioFailed) {
+              setOfflineAudioFailed(true);
+            }
+          }}
           onProgressChange={(playback) => {
             if (playback.isLoaded && playback.durationMillis > 0) {
               const progressSec = playback.positionMillis / 1000;
@@ -793,16 +790,10 @@ export function ReaderScreen(args: {
               if (shouldPersist) {
                 void persistContinueListening(progressSec, durationSec);
               }
-              // Mark audio as "in use" the first time we see the user
-              // actively playing. Suppresses the scroll-based trigger while
-              // they're listening.
-              if (playback.isPlaying) {
-                hasStartedAudioRef.current = true;
-              }
               // Audio-path trigger: fire ONLY when the narration actually
-              // finishes (expo-av's didJustFinish). Using a percentage-based
-              // trigger (e.g. 90 %) popped the prompt while the reader was
-              // still listening to the last paragraph.
+              // finishes (expo-av's didJustFinish). Per-request the
+              // scroll-to-end trigger was removed, so audio completion is
+              // now the single source of truth for the end-of-story prompt.
               if (playback.didJustFinish) {
                 maybeFireEndOfStoryPrompt();
               }
@@ -1142,26 +1133,25 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   highlightedPill: {
-    // Inline <View> embedded inside the paragraph <Text>. This is the only
-    // reliable way on iOS to get an amber highlight block with REAL rounded
-    // corners — a nested <Text>'s borderRadius is discarded by TextKit.
+    // Inline <View> embedded inside the paragraph <Text>. iOS aligns the
+    // pill's vertical center with the surrounding text's baseline-ish zone.
+    // Keeping the padding vertical-symmetric and letting the inner <Text>
+    // use the same fontSize + a lineHeight equal to fontSize (no extra
+    // leading) keeps the word sitting on the paragraph baseline instead
+    // of drifting high/low from line to line.
     backgroundColor: "#f8c15c",
     borderRadius: 6,
-    paddingHorizontal: 4,
-    paddingVertical: 0,
-    // Keep the pill short vertically so it sits tight around the word and
-    // can't touch a highlighted word on the adjacent paragraph line.
-    marginVertical: 0,
-    alignItems: "center",
-    justifyContent: "center",
+    paddingHorizontal: 5,
+    paddingVertical: 1,
   },
   highlightedPillText: {
     color: "#1a1205",
     fontSize: 20,
     fontWeight: "700",
-    // Tighter line-height than the surrounding paragraph (40) so the pill
-    // background stays compact — 22 gives a snug fit around caps + descenders.
-    lineHeight: 22,
+    // lineHeight === fontSize removes iOS's default leading so the pill
+    // height is exactly the glyph box; pairs with paddingVertical: 1 on
+    // the wrapper View for a 22pt pill that sits snugly on the baseline.
+    lineHeight: 20,
   },
   vocabOverlay: {
     position: "absolute",

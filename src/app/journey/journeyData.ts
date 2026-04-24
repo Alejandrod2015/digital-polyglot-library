@@ -516,11 +516,33 @@ const getStudioJourneysForLanguage = unstable_cache(
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
+// Topic slug → canonical display label (e.g. "food-everyday-life" →
+// "Food & Everyday Life"). Slug-to-label reconstruction via string
+// replacement can't recover characters like "&" / "and" / apostrophes
+// that were stripped when the slug was created, so we pull the real
+// labels from the Topic table.
+const getTopicLabelBySlug = unstable_cache(
+  async () => {
+    const rows = await prisma.topic.findMany({ select: { slug: true, label: true } });
+    const map: Record<string, string> = {};
+    for (const row of rows) {
+      if (row.slug && row.label) map[row.slug.toLowerCase()] = row.label;
+    }
+    return map;
+  },
+  ["topic-labels-by-slug-v1"],
+  { revalidate: 3600, tags: ["topic-labels"] }
+);
+
 async function buildJourneyVariantsFromStudio(
   language: string
 ): Promise<JourneyVariantTrack[]> {
   const journeys = await getStudioJourneysForLanguage(language);
   if (journeys.length === 0) return [];
+
+  const topicLabelBySlug = await getTopicLabelBySlug();
+  const resolveTopicLabel = (slug: string) =>
+    topicLabelBySlug[slug.toLowerCase()] ?? prettifyTopicLabel(slug);
 
   // Include a track only when the Studio journey has at least one published story.
   const variantGroups = new Map<string, typeof journeys>();
@@ -580,7 +602,7 @@ async function buildJourneyVariantsFromStudio(
           variant: journey.variant,
           journeyFocus: "General",
           levelLabel: CEFR_LEVEL_LABELS[levelId as CefrLevel] ?? levelLabel,
-          topicLabel: prettifyTopicLabel(topicSlug),
+          topicLabel: resolveTopicLabel(topicSlug),
           text: story.text ?? undefined,
           vocabItems: Array.isArray(story.vocab) ? (story.vocab as unknown as VocabItem[]) : undefined,
         };
@@ -600,7 +622,7 @@ async function buildJourneyVariantsFromStudio(
         topics.push({
           id: `${levelId}:${slug}`,
           slug,
-          label: prettifyTopicLabel(slug),
+          label: resolveTopicLabel(slug),
           storyCount: stories.length,
           stories,
         });
