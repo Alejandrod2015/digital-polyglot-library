@@ -313,6 +313,25 @@ function stripHtml(input?: string): string {
   return (input ?? "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+// Emoji flag keyed by the full language name the API returns
+// ("Italian", "German", …). Returns a globe fallback for unknowns.
+// Intentionally tiny — not worth a separate file or lib.
+const MOBILE_FLAG_BY_LANGUAGE: Record<string, string> = {
+  English: "🇺🇸",
+  Spanish: "🇪🇸",
+  French: "🇫🇷",
+  German: "🇩🇪",
+  Italian: "🇮🇹",
+  Portuguese: "🇵🇹",
+  Japanese: "🇯🇵",
+  Korean: "🇰🇷",
+  Chinese: "🇨🇳",
+};
+function getMobileLanguageFlag(language: string | null | undefined): string {
+  if (!language) return "🌐";
+  return MOBILE_FLAG_BY_LANGUAGE[language] ?? "🌐";
+}
+
 function estimateReadMinutes(text?: string): number {
   const words = stripHtml(text).split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(words / 180));
@@ -8347,11 +8366,12 @@ export function MobileLibraryShell(args: {
         </View>
       ) : (
         <View style={styles.journeyTopStrip}>
+          {/* Flag + level badge on the left. Tap opens the hub when the
+              user has multiple languages, or the variant picker when
+              the active language has multiple variants. Replaces the
+              old "My languages ∨" pill + progress line. */}
           <Pressable
             onPress={() => {
-              // Tapping the flag opens the language switcher (hub) when
-              // the user has more than one target language, or the
-              // variant picker when a language has multiple variants.
               if (remoteJourney && remoteJourney.tracks.length >= 2) {
                 setJourneyVariantPickerOpen(true);
                 setSelectedJourneyTrackId(null);
@@ -8368,40 +8388,42 @@ export function MobileLibraryShell(args: {
             accessibilityRole="button"
             accessibilityLabel="qa-journey-language-switch"
             testID="qa-journey-language-switch"
-            style={styles.journeyLanguageChip}
+            style={styles.journeyHeaderFlagBadge}
           >
-            <Text style={styles.journeyLanguageChipText}>My languages</Text>
-            <Feather name="chevron-down" size={14} color="#dbe9ff" />
+            <Text style={styles.journeyHeaderFlagEmoji}>
+              {getMobileLanguageFlag(activeJourneyLanguage)}
+            </Text>
+            {activeJourneyLevel ? (
+              <Text style={styles.journeyHeaderLevelBadge}>{activeJourneyLevel.title}</Text>
+            ) : null}
           </Pressable>
-          {activeJourneyInsights ? (
-            <Pressable
-              onPress={() => {
-                if (!activeJourneyInsights.dueReviewCount) return;
-                const firstReviewTopic = activeJourneyInsights.reviewTopics[0];
-                if (!firstReviewTopic) return;
-                setSelectedJourneyLevelId(firstReviewTopic.levelId);
-                setSelectedJourneyTopicId(firstReviewTopic.topicSlug);
-                setJourneyDetailTopicId(firstReviewTopic.topicSlug);
-              }}
-              style={styles.journeyStripStats}
-            >
-              <Text style={styles.journeyStripStatsText}>
-                {activeJourneyLanguage ? `${activeJourneyLanguage} · ` : ""}
-                {activeJourneyInsights.completedSteps}/{activeJourneyInsights.totalSteps}
-                {" · "}
-                <Text style={styles.journeyStripStatsPercent}>{activeJourneyInsights.score}%</Text>
-              </Text>
-              {activeJourneyInsights.dueReviewCount > 0 ? (
-                <Text style={styles.journeyStripDueBadge}>{activeJourneyInsights.dueReviewCount} due</Text>
-              ) : null}
-            </Pressable>
-          ) : (
-            <View style={styles.journeyStripStats}>
-              {activeJourneyLanguage ? (
-                <Text style={styles.journeyStripStatsText}>{activeJourneyLanguage}</Text>
-              ) : null}
+
+          {/* Compact gamification stats: streak, level, XP. Replaces
+              the old "Italian · 0/12 · 0%" text and the 3 big pills
+              in the body. Values come straight from the existing
+              GamificationSummary payload. */}
+          {remoteProgress?.gamification ? (
+            <View style={styles.journeyHeaderStatsRow}>
+              <View style={styles.journeyHeaderStat}>
+                <Feather name="zap" size={13} color={tokenColor.streak} />
+                <Text style={[styles.journeyHeaderStatText, { color: tokenColor.streak }]}>
+                  {remoteProgress.gamification.dailyStreak}
+                </Text>
+              </View>
+              <View style={styles.journeyHeaderStat}>
+                <Feather name="award" size={13} color={tokenColor.gold} />
+                <Text style={[styles.journeyHeaderStatText, { color: tokenColor.gold }]}>
+                  Lv {remoteProgress.gamification.currentLevel}
+                </Text>
+              </View>
+              <View style={styles.journeyHeaderStat}>
+                <Feather name="star" size={13} color={tokenColor.cyan} />
+                <Text style={[styles.journeyHeaderStatText, { color: tokenColor.cyan }]}>
+                  {remoteProgress.gamification.totalXp}
+                </Text>
+              </View>
             </View>
-          )}
+          ) : null}
           <MenuTrigger onPress={() => setMenuOpen(true)} />
         </View>
       )}
@@ -8500,32 +8522,6 @@ export function MobileLibraryShell(args: {
 
       {!showJourneyHub && !journeyVariantPickerOpen && activeJourneyTrack ? (
       <View style={styles.section}>
-        {/* Gamification pills — streak, level, XP. Pulled straight from
-            the existing GamificationSummary payload. Collapses silently
-            when progress hasn't loaded yet. */}
-        {remoteProgress?.gamification ? (
-          <View style={styles.journeyTopicStatsRow}>
-            <View style={styles.journeyTopicStatPill}>
-              <Feather name="zap" size={13} color={tokenColor.streak} />
-              <Text style={[styles.journeyTopicStatText, { color: tokenColor.streak }]}>
-                {remoteProgress.gamification.dailyStreak}
-              </Text>
-            </View>
-            <View style={styles.journeyTopicStatPill}>
-              <Feather name="award" size={13} color={tokenColor.gold} />
-              <Text style={[styles.journeyTopicStatText, { color: tokenColor.gold }]}>
-                Lv {remoteProgress.gamification.currentLevel}
-              </Text>
-            </View>
-            <View style={styles.journeyTopicStatPill}>
-              <Feather name="star" size={13} color={tokenColor.cyan} />
-              <Text style={[styles.journeyTopicStatText, { color: tokenColor.cyan }]}>
-                {remoteProgress.gamification.totalXp} XP
-              </Text>
-            </View>
-          </View>
-        ) : null}
-
         {/* Full Duolingo-style path: every level, every topic, every
             story rendered inline in scroll order. Section headers for
             level and topic tell the user where they are; locked ones
@@ -8559,10 +8555,17 @@ export function MobileLibraryShell(args: {
                   </Text>
 
                   {topic.stories.map((story, storyIdx) => {
-                    const isOfflineReady =
-                      offlineStoriesById.has(story.id) ||
-                      Boolean(offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug));
+                    const offlineCopy = offlineStoriesById.get(story.id)
+                      ?? offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug);
+                    const isOfflineReady = Boolean(offlineCopy);
                     const isDownloading = offlineStoryIdInFlight === story.id;
+                    // Duration shown on the pill: computed from the local
+                    // text when the story has been downloaded. Journey
+                    // summary stories don't carry `text`, so online-only
+                    // stories simply omit the duration line.
+                    const durationMin = offlineCopy?.text
+                      ? estimateReadMinutes(offlineCopy.text)
+                      : null;
                     const alignRight = storyIdx % 2 === 1;
                     const isNextAction = globalJourneyNextStoryId === story.id;
                     const nodeVariant: "completed" | "next" | "locked" | "step" = story.completed
@@ -8572,6 +8575,8 @@ export function MobileLibraryShell(args: {
                         : !story.unlocked
                           ? "locked"
                           : "step";
+                    const pillLabel =
+                      nodeVariant === "next" ? "START NOW" : `STEP ${storyIdx + 1}`;
 
                     return (
                       <View
@@ -8587,9 +8592,6 @@ export function MobileLibraryShell(args: {
                                 journeyNextNodeRef.current.measureLayout(
                                   scrollHandle,
                                   (_x, y) => {
-                                    // Extra 140pt of headroom so the node
-                                    // lands below the top strip + stats row
-                                    // rather than jammed at the very top.
                                     shellScrollRef.current?.scrollTo({
                                       y: Math.max(0, y - 140),
                                       animated: true,
@@ -8602,9 +8604,8 @@ export function MobileLibraryShell(args: {
                             : undefined
                         }
                         style={[
-                          styles.journeyMapNodeWrap,
-                          alignRight ? styles.journeyMapNodeWrapRight : styles.journeyMapNodeWrapLeft,
-                          styles.journeyPathNodeWrap,
+                          styles.journeyPathNodeRow,
+                          alignRight ? styles.journeyPathNodeRowRight : styles.journeyPathNodeRowLeft,
                         ]}
                       >
                         {nodeVariant === "next" ? (
@@ -8623,48 +8624,73 @@ export function MobileLibraryShell(args: {
                           </View>
                         ) : null}
 
-                        <Pressable
-                          disabled={!story.unlocked}
-                          onPress={() => openJourneyStory(story)}
-                          accessibilityRole="button"
-                          accessibilityLabel={`qa-journey-story-${story.id}`}
-                          testID={`qa-journey-story-${story.id}`}
-                          style={[
-                            styles.journeyNode,
-                            nodeVariant === "next" ? styles.journeyNodeNext : null,
-                            nodeVariant === "completed" ? styles.journeyNodeCompleted : null,
-                            nodeVariant === "locked" ? styles.journeyNodeLocked : null,
-                            nodeVariant === "step" ? styles.journeyNodeStep : null,
-                          ]}
-                        >
-                          {nodeVariant === "next" ? (
-                            <NextActionGlow active borderRadius={999} inset={-6}>
-                              <View style={styles.journeyNodeCircleNext}>
-                                <Feather name="play" size={26} color={tokenBg[1]} />
+                        {/* Horizontal pill: circle icon on the left, label
+                            + duration stack on the right. Alternates
+                            side via the row alignment above so the path
+                            zigzags down the screen. */}
+                        {nodeVariant === "next" ? (
+                          <NextActionGlow active borderRadius={18} inset={-3}>
+                            <Pressable
+                              disabled={!story.unlocked}
+                              onPress={() => openJourneyStory(story)}
+                              accessibilityRole="button"
+                              accessibilityLabel={`qa-journey-story-${story.id}`}
+                              testID={`qa-journey-story-${story.id}`}
+                              style={[styles.journeyNodePill, styles.journeyNodePillNext]}
+                            >
+                              <View style={[styles.journeyNodePillIcon, styles.journeyNodePillIconNext]}>
+                                <Feather name="play" size={20} color={tokenBg[1]} />
                               </View>
-                            </NextActionGlow>
-                          ) : nodeVariant === "completed" ? (
-                            <View style={styles.journeyNodeCircleCompleted}>
-                              <Feather name="check" size={24} color={tokenBg[1]} />
-                            </View>
-                          ) : nodeVariant === "locked" ? (
-                            <View style={styles.journeyNodeCircleLocked}>
-                              <Feather name="lock" size={18} color="#7a8aa5" />
-                            </View>
-                          ) : (
-                            <View style={styles.journeyNodeCircleStep}>
-                              <Text style={styles.journeyNodeStepNumber}>{storyIdx + 1}</Text>
-                            </View>
-                          )}
-                          <Text
+                              <View style={styles.journeyNodePillTextStack}>
+                                <Text style={[styles.journeyNodePillLabel, styles.journeyNodePillLabelNext]}>
+                                  {pillLabel}
+                                </Text>
+                                {durationMin != null ? (
+                                  <Text style={[styles.journeyNodePillSub, styles.journeyNodePillSubNext]}>
+                                    {durationMin} min
+                                  </Text>
+                                ) : null}
+                              </View>
+                            </Pressable>
+                          </NextActionGlow>
+                        ) : (
+                          <Pressable
+                            disabled={!story.unlocked}
+                            onPress={() => openJourneyStory(story)}
+                            accessibilityRole="button"
+                            accessibilityLabel={`qa-journey-story-${story.id}`}
+                            testID={`qa-journey-story-${story.id}`}
                             style={[
-                              styles.journeyNodeCaption,
-                              nodeVariant === "next" ? styles.journeyNodeCaptionNext : null,
+                              styles.journeyNodePill,
+                              nodeVariant === "completed" ? styles.journeyNodePillCompleted : null,
+                              nodeVariant === "locked" ? styles.journeyNodePillLocked : null,
+                              nodeVariant === "step" ? styles.journeyNodePillStep : null,
                             ]}
                           >
-                            {nodeVariant === "next" ? "START NOW" : `STEP ${storyIdx + 1}`}
-                          </Text>
-                        </Pressable>
+                            <View
+                              style={[
+                                styles.journeyNodePillIcon,
+                                nodeVariant === "completed" ? styles.journeyNodePillIconCompleted : null,
+                                nodeVariant === "locked" ? styles.journeyNodePillIconLocked : null,
+                                nodeVariant === "step" ? styles.journeyNodePillIconStep : null,
+                              ]}
+                            >
+                              {nodeVariant === "completed" ? (
+                                <Feather name="check" size={18} color={tokenBg[1]} />
+                              ) : nodeVariant === "locked" ? (
+                                <Feather name="lock" size={15} color="#7a8aa5" />
+                              ) : (
+                                <Text style={styles.journeyNodePillStepNumber}>{storyIdx + 1}</Text>
+                              )}
+                            </View>
+                            <View style={styles.journeyNodePillTextStack}>
+                              <Text style={styles.journeyNodePillLabel}>{pillLabel}</Text>
+                              {durationMin != null ? (
+                                <Text style={styles.journeyNodePillSub}>{durationMin} min</Text>
+                              ) : null}
+                            </View>
+                          </Pressable>
+                        )}
 
                         {story.unlocked ? (
                           <Pressable
@@ -8674,16 +8700,13 @@ export function MobileLibraryShell(args: {
                             }
                             disabled={isDownloading}
                             hitSlop={10}
-                            style={[
-                              styles.journeyStoryDownloadBadge,
-                              alignRight ? styles.journeyStoryDownloadBadgeRight : styles.journeyStoryDownloadBadgeLeft,
-                            ]}
+                            style={styles.journeyPathDownloadBadge}
                             accessibilityLabel={isOfflineReady ? "Remove offline" : "Download for offline"}
                           >
                             <Feather
                               name={isDownloading ? "loader" : isOfflineReady ? "check-circle" : "download-cloud"}
-                              size={15}
-                              color={isOfflineReady ? tokenColor.xp : "#f5f7fb"}
+                              size={14}
+                              color={isOfflineReady ? tokenColor.xp : "#9fb5d0"}
                             />
                           </Pressable>
                         ) : null}
@@ -10973,18 +10996,14 @@ const styles = StyleSheet.create({
   },
   journeyPathTopicLabel: {
     alignSelf: "center",
-    color: "rgba(255,255,255,0.72)",
-    fontSize: 13,
+    color: "#f5f7fb",
+    fontSize: 17,
     fontWeight: "900",
-    letterSpacing: 1.4,
-    textTransform: "uppercase",
-    marginBottom: 14,
+    letterSpacing: -0.2,
+    textAlign: "center",
+    marginTop: 6,
+    marginBottom: 16,
     paddingHorizontal: 12,
-    paddingVertical: 5,
-    borderRadius: 999,
-    backgroundColor: "rgba(255,255,255,0.05)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.08)",
   },
   journeyPathTopicLabelLocked: {
     opacity: 0.55,
@@ -11021,6 +11040,146 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     letterSpacing: 1.4,
     color: "#6f88a8",
+  },
+  // ─── Compact Duolingo-style header (flag + level + stats) ──────────
+  journeyHeaderFlagBadge: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    paddingHorizontal: 6,
+    paddingVertical: 4,
+  },
+  journeyHeaderFlagEmoji: {
+    fontSize: 28,
+    lineHeight: 32,
+  },
+  journeyHeaderLevelBadge: {
+    color: "#f5f7fb",
+    fontSize: 15,
+    fontWeight: "900",
+    letterSpacing: -0.2,
+  },
+  journeyHeaderStatsRow: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    gap: 14,
+    paddingHorizontal: 4,
+  },
+  journeyHeaderStat: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+  },
+  journeyHeaderStatText: {
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 0.2,
+  },
+  // ─── Horizontal pill nodes ─────────────────────────────────────────
+  journeyPathNodeRow: {
+    width: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 14,
+    gap: 8,
+  },
+  journeyPathNodeRowLeft: {
+    justifyContent: "flex-start",
+  },
+  journeyPathNodeRowRight: {
+    justifyContent: "flex-end",
+  },
+  journeyNodePill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    borderRadius: 18,
+    borderWidth: 1,
+    minWidth: 200,
+    maxWidth: 260,
+  },
+  journeyNodePillNext: {
+    backgroundColor: "rgba(125, 211, 252, 0.14)",
+    borderColor: "rgba(125, 211, 252, 0.5)",
+  },
+  journeyNodePillCompleted: {
+    backgroundColor: "rgba(190, 242, 100, 0.08)",
+    borderColor: "rgba(190, 242, 100, 0.25)",
+  },
+  journeyNodePillLocked: {
+    backgroundColor: "rgba(255,255,255,0.03)",
+    borderColor: "rgba(255,255,255,0.08)",
+    opacity: 0.7,
+  },
+  journeyNodePillStep: {
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderColor: "rgba(255,255,255,0.1)",
+  },
+  journeyNodePillIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  journeyNodePillIconNext: {
+    backgroundColor: tokenColor.cyan,
+    borderWidth: 2,
+    borderColor: "rgba(255,255,255,0.9)",
+  },
+  journeyNodePillIconCompleted: {
+    backgroundColor: tokenColor.xp,
+  },
+  journeyNodePillIconLocked: {
+    backgroundColor: tokenBg[2],
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+  },
+  journeyNodePillIconStep: {
+    backgroundColor: tokenBg[2],
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.12)",
+  },
+  journeyNodePillStepNumber: {
+    color: "#dbe9ff",
+    fontSize: 15,
+    fontWeight: "900",
+  },
+  journeyNodePillTextStack: {
+    flex: 1,
+    minWidth: 0,
+  },
+  journeyNodePillLabel: {
+    color: "rgba(255,255,255,0.7)",
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 0.6,
+  },
+  journeyNodePillLabelNext: {
+    color: "#0c1626",
+  },
+  journeyNodePillSub: {
+    color: "rgba(255,255,255,0.45)",
+    fontSize: 12,
+    fontWeight: "700",
+    marginTop: 1,
+  },
+  journeyNodePillSubNext: {
+    color: "rgba(12, 22, 38, 0.72)",
+  },
+  journeyPathDownloadBadge: {
+    width: 30,
+    height: 30,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
   },
   journeyLevelHeader: {
     flexDirection: "row",
