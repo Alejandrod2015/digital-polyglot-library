@@ -132,10 +132,18 @@ export function BookHomeCard({
     meta: string;
     progressLabel?: string;
     qaLabel?: string;
+    /**
+     * How to fit the cover inside the card frame. "cover" (default) fills the
+     * whole frame and crops — perfect for landscape story covers. "contain"
+     * letterboxes so portrait book covers aren't chopped; we also swap the
+     * frame to a taller aspect so the letterbox blend is minimal.
+     */
+    coverFit?: "cover" | "contain";
     onPress: () => void;
   };
   fullWidth?: boolean;
 }) {
+  const usePortraitFrame = item.coverFit === "contain";
   return (
     <Pressable
       onPress={item.onPress}
@@ -144,7 +152,11 @@ export function BookHomeCard({
       testID={item.qaLabel}
       style={[styles.bookHomeCard, fullWidth ? styles.bookHomeCardFullWidth : null]}
     >
-      <ProgressiveImage uri={item.coverUrl} style={styles.bookHomeCardImage} />
+      <ProgressiveImage
+        uri={item.coverUrl}
+        style={[styles.bookHomeCardImage, usePortraitFrame ? styles.bookHomeCardImagePortrait : null]}
+        resizeMode={item.coverFit ?? "cover"}
+      />
       <View style={styles.bookHomeCardBody}>
         <Text style={styles.bookHomeCardTitle}>{item.title}</Text>
         <Text style={styles.bookHomeCardSubtitle}>{item.subtitle}</Text>
@@ -385,6 +397,11 @@ const styles = StyleSheet.create({
     height: 180,
     backgroundColor: "#102238",
   },
+  bookHomeCardImagePortrait: {
+    // Book covers are portrait (≈2:3). A taller frame lets "contain" display
+    // the full art without letterbox bars dominating the top/bottom.
+    height: 284,
+  },
   bookHomeCardBody: {
     paddingHorizontal: 14,
     paddingVertical: 14,
@@ -419,7 +436,10 @@ const styles = StyleSheet.create({
     borderColor: "#27405f",
     backgroundColor: "#14243b",
     flexDirection: "row",
-    alignItems: "flex-start",
+    // Center the body column vertically against the portrait cover. With the
+    // previous "flex-start" the short text column left a visible empty block
+    // under itself next to the taller cover.
+    alignItems: "center",
     paddingHorizontal: 14,
     paddingVertical: 14,
     gap: 14,

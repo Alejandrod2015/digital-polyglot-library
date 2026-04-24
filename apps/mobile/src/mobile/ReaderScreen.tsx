@@ -501,6 +501,19 @@ export function ReaderScreen(args: {
 
   return (
     <View style={styles.screen} accessibilityLabel="qa-reader-screen" testID="qa-reader-screen">
+      {/* Floating back button — always reachable regardless of scroll
+          position, so the user doesn't have to scroll back to the top of a
+          long story to tap "back to journey". */}
+      <Pressable
+        onPress={onBack}
+        accessibilityRole="button"
+        accessibilityLabel="qa-reader-back-floating"
+        testID="qa-reader-back-floating"
+        style={styles.floatingBackButton}
+        hitSlop={10}
+      >
+        <Feather name="arrow-left" size={20} color="#f5f7fb" />
+      </Pressable>
       <ScrollView
         ref={scrollViewRef}
         style={styles.scrollView}
@@ -812,6 +825,20 @@ const styles = StyleSheet.create({
   containerGrow: {
     flexGrow: 1,
   },
+  floatingBackButton: {
+    position: "absolute",
+    top: 18,
+    left: 14,
+    width: 40,
+    height: 40,
+    borderRadius: 999,
+    backgroundColor: "rgba(4, 9, 17, 0.78)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.12)",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 20,
+  },
   topBar: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -1061,22 +1088,25 @@ const styles = StyleSheet.create({
   paragraph: {
     color: "#eef4ff",
     fontSize: 20,
-    lineHeight: 35,
+    // Wider paragraph line-height so highlighted background boxes can never
+    // touch the adjacent line's box. 40 (paragraph) - 24 (highlight) = 16 px
+    // of guaranteed vertical separation.
+    lineHeight: 40,
   },
   quoteParagraph: {
     color: "#e5eefb",
     fontSize: 20,
-    lineHeight: 35,
+    lineHeight: 40,
   },
   highlightedWord: {
-    // Solid amber highlighter on dark text. On iOS an inline <Text> with a
-    // backgroundColor fills the full line-box of its own lineHeight — so we
-    // force a tighter lineHeight (26 instead of the paragraph's 35) to stop
-    // the highlight from touching the previous/next line of text. overflow
-    // must NOT be "hidden" on inline text or iOS drops the border radius.
+    // Solid amber "highlighter" on dark text. borderRadius on inline <Text>
+    // in iOS is not visibly rendered by the text engine (known limitation),
+    // so the corners stay square; we mitigate by using a very short
+    // lineHeight on the span itself to keep the visible block compact and
+    // well separated from adjacent paragraph lines.
     color: "#1a1205",
     fontSize: 20,
-    lineHeight: 26,
+    lineHeight: 24,
     backgroundColor: "#f8c15c",
     fontWeight: "700",
     paddingHorizontal: 4,

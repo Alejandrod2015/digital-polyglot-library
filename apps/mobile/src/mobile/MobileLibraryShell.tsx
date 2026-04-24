@@ -5725,42 +5725,6 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {featuredHomeStory ? (
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>{featuredHomeStory.label}</Text>
-              <Text style={styles.sectionTitle}>
-                {effectivePlan === "free"
-                  ? "Your free story"
-                  : effectivePlan === "basic"
-                    ? "Your daily story"
-                    : "Featured story"}
-              </Text>
-            </View>
-          </View>
-          <BookHomeCard
-            item={{
-              key: `featured-${featuredHomeStory.selection.story.id}`,
-              title: featuredHomeStory.selection.story.title,
-              coverUrl: getCoverUrl(
-                featuredHomeStory.selection.story.cover ??
-                  featuredHomeStory.selection.story.coverUrl ??
-                  featuredHomeStory.selection.book.cover
-              ),
-              subtitle: featuredHomeStory.selection.book.title,
-              meta: `${formatLanguage(
-                featuredHomeStory.selection.story.language ?? featuredHomeStory.selection.book.language
-              )} · ${formatTopic(
-                featuredHomeStory.selection.story.topic ?? featuredHomeStory.selection.book.topic
-              )}`,
-              onPress: () => openSelection(featuredHomeStory.selection),
-            }}
-            fullWidth
-          />
-        </View>
-      ) : null}
-
       {(remoteStoryCards.length > 0 || personalizedStoryCards.length > 0) ? (
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
@@ -5816,6 +5780,7 @@ export function MobileLibraryShell(args: {
                   coverUrl: item.coverUrl,
                   subtitle: item.subtitle,
                   meta: item.meta,
+                  coverFit: "contain",
                   onPress: item.onPress,
                 }}
               />
@@ -6241,8 +6206,15 @@ export function MobileLibraryShell(args: {
                     >
                       <View style={styles.practiceModeHeader}>
                         <View style={styles.practiceModeHeaderText}>
-                          <Text style={styles.practiceModeEyebrow}>{card.eyebrow}</Text>
-                          <Text style={styles.practiceModeTitle}>{card.title}</Text>
+                          <Text numberOfLines={1} style={styles.practiceModeEyebrow}>{card.eyebrow}</Text>
+                          <Text
+                            numberOfLines={1}
+                            adjustsFontSizeToFit
+                            minimumFontScale={0.75}
+                            style={styles.practiceModeTitle}
+                          >
+                            {card.title}
+                          </Text>
                         </View>
                         <View style={[styles.practiceModeIconWrap, { borderColor: `${card.accent}55` }]}>
                           <PracticeModeIcon icon={card.icon} color={card.accent} />
@@ -8161,7 +8133,10 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyLanguage ? (
+      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && activeJourneyLanguage && (
+        preferences.targetLanguages.length > 1 ||
+        (remoteJourney && remoteJourney.tracks.length >= 2)
+      ) ? (
         <View style={styles.section}>
           <Pressable
             onPress={() => {
@@ -8286,6 +8261,23 @@ export function MobileLibraryShell(args: {
                   ? remoteError
                   : "Make sure the local web server is running, then reopen Journey."}
             </Text>
+          </View>
+        </View>
+      ) : null}
+
+      {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && (loadingRemote || journeyLanguageLoading) && !activeJourneyTrack ? (
+        <View style={styles.section}>
+          <View style={styles.journeyLoadingSkeleton}>
+            <View style={[styles.journeyLoadingChipRow]}>
+              {[0, 1, 2].map((i) => (
+                <View key={i} style={styles.journeyLoadingChip} />
+              ))}
+            </View>
+            {[0, 1, 2].map((row) => (
+              <View key={row} style={styles.journeyLoadingRow}>
+                <View style={styles.journeyLoadingCover} />
+              </View>
+            ))}
           </View>
         </View>
       ) : null}
@@ -8416,6 +8408,8 @@ export function MobileLibraryShell(args: {
                               </View>
                             </NextActionGlow>
                             <Text
+                              numberOfLines={2}
+                              ellipsizeMode="tail"
                               style={[
                                 styles.journeyMapTitle,
                                 !topic.unlocked ? styles.journeyTopicActionTextDisabled : null,
@@ -8554,6 +8548,8 @@ export function MobileLibraryShell(args: {
                             </View>
                           </NextActionGlow>
                           <Text
+                            numberOfLines={2}
+                            ellipsizeMode="tail"
                             style={[
                               styles.journeyMapTitle,
                               !story.unlocked ? styles.journeyTopicActionTextDisabled : null,
@@ -8561,7 +8557,9 @@ export function MobileLibraryShell(args: {
                           >
                             {story.title}
                           </Text>
-                          <Text style={styles.journeyMapMeta}>{meta}</Text>
+                          {!story.unlocked ? (
+                            <Text numberOfLines={1} style={styles.journeyMapMeta}>{meta}</Text>
+                          ) : null}
                         </Pressable>
                         {story.unlocked ? (
                           <Pressable
@@ -10416,21 +10414,44 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 12,
   },
-  journeyMapSection: {
-    gap: 12,
-    borderRadius: 24,
-    backgroundColor: "#18304d",
+  journeyLoadingSkeleton: {
+    gap: 16,
+    paddingVertical: 4,
+  },
+  journeyLoadingChipRow: {
+    flexDirection: "row",
+    gap: 8,
+  },
+  journeyLoadingChip: {
+    width: 78,
+    height: 32,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.06)",
     borderWidth: 1,
-    borderColor: "#29435f",
-    paddingHorizontal: 14,
-    paddingVertical: 14,
+    borderColor: "rgba(255,255,255,0.08)",
+  },
+  journeyLoadingRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  journeyLoadingCover: {
+    width: 84,
+    height: 84,
+    borderRadius: 20,
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+  },
+  journeyMapSection: {
+    // Sits directly on the app background — no framing card.
+    gap: 12,
   },
   journeyMapList: {
-    gap: 14,
+    gap: 10,
     marginTop: 2,
   },
   journeyMapSequence: {
-    gap: 10,
+    gap: 6,
   },
   journeyMapNodeWrap: {
     width: "100%",
@@ -10488,10 +10509,14 @@ const styles = StyleSheet.create({
   },
   journeyMapTitle: {
     color: "#f5f7fb",
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: "800",
     textAlign: "center",
-    lineHeight: 20,
+    lineHeight: 19,
+    // Constrain the title to the node's art width so long titles wrap inside
+    // the column instead of stretching past the cover; combined with the
+    // numberOfLines={2} prop above, truly long titles get "…"-truncated.
+    maxWidth: 160,
   },
   journeyMapMeta: {
     color: "#8fa4c0",
@@ -10501,10 +10526,12 @@ const styles = StyleSheet.create({
     lineHeight: 16,
   },
   journeyMapConnectorRow: {
-    height: 132,
+    // Tighter curve: brings consecutive nodes closer vertically while
+    // keeping the path legible.
+    height: 88,
     width: "100%",
     justifyContent: "flex-start",
-    marginTop: -104,
+    marginTop: -70,
     paddingHorizontal: 42,
   },
   journeyMapConnectorRowLeft: {
@@ -10515,7 +10542,7 @@ const styles = StyleSheet.create({
   },
   journeyMapConnectorCurve: {
     width: "50%",
-    height: 156,
+    height: 110,
     borderTopWidth: 2,
     borderColor: "#83b05e",
     borderStyle: "dashed",
@@ -10820,14 +10847,8 @@ const styles = StyleSheet.create({
     color: "#8fa4c0",
   },
   journeyTopicDetailCard: {
+    // No framing card — the topic header + story list sit on the app bg.
     gap: 8,
-    borderRadius: 20,
-    backgroundColor: "#102238",
-    borderWidth: 1,
-    borderColor: "#29435f",
-    paddingHorizontal: 14,
-    paddingTop: 12,
-    paddingBottom: 14,
   },
   journeyTopicDetailHeader: {
     gap: 2,
