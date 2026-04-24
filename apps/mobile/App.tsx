@@ -2,7 +2,42 @@ import "./src/polyfills";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ClerkProvider, useAuth, useClerk } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
-import { Image, Linking, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  Linking,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  type TextProps,
+} from "react-native";
+import {
+  Nunito_400Regular,
+  Nunito_700Bold,
+  Nunito_800ExtraBold,
+  Nunito_900Black,
+  useFonts,
+} from "@expo-google-fonts/nunito";
+import { nunitoFamilyForWeight } from "./src/theme/tokens";
+
+/**
+ * Global Text patch: map `fontWeight` on every <Text> to the matching
+ * Nunito family so existing components (which use fontWeight: "900"
+ * etc.) pick up the right font file without any edit. Custom fonts in
+ * RN don't honor fontWeight alone — the family name is authoritative.
+ * Runs once at module load, before any component renders.
+ */
+const TextAny = Text as unknown as {
+  render: (props: TextProps, ref: unknown) => unknown;
+};
+const originalTextRender = TextAny.render;
+TextAny.render = function patchedTextRender(props: TextProps, ref: unknown) {
+  const flattened = StyleSheet.flatten(props.style) ?? {};
+  const weight = (flattened as { fontWeight?: string | number }).fontWeight;
+  const nextStyle = [{ fontFamily: nunitoFamilyForWeight(weight) }, props.style];
+  return originalTextRender.call(this, { ...props, style: nextStyle }, ref);
+};
 import { AuthScreen } from "./src/auth/AuthScreen";
 import { exchangeClerkSessionForMobileToken } from "./src/auth/exchangeClerkSession";
 import {
@@ -407,6 +442,34 @@ function MobileAppRoot() {
 }
 
 export default function App() {
+  // Block the app until Nunito is ready. While it's loading we keep the
+  // same branded splash the rest of the app uses so there's no white
+  // flash and no "font swap" visible to the user on cold start. If the
+  // fonts ever fail to load we still render the app — RN falls back to
+  // the system font rather than leaving the user stuck on the splash.
+  const [fontsLoaded, fontError] = useFonts({
+    Nunito_400Regular,
+    Nunito_700Bold,
+    Nunito_800ExtraBold,
+    Nunito_900Black,
+  });
+
+  if (!fontsLoaded && !fontError) {
+    return (
+      <SafeAreaView style={styles.safeArea}>
+        <StatusBar barStyle="light-content" />
+        <View style={styles.splashContainer}>
+          <Image
+            source={require("./assets/splash-logo-white.png")}
+            style={styles.splashLogo}
+            resizeMode="contain"
+            accessibilityLabel="Digital Polyglot"
+          />
+        </View>
+      </SafeAreaView>
+    );
+  }
+
   return (
     <ClerkProvider publishableKey={mobileConfig.clerkPublishableKey} tokenCache={tokenCache}>
       <MobileAppRoot />
