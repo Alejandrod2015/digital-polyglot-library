@@ -41,6 +41,7 @@ import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
+import { PracticeCelebration } from "./PracticeCelebration";
 import { PracticeExitConfirm } from "./PracticeExitConfirm";
 import { useOfflineStatus } from "../lib/useOfflineStatus";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
@@ -145,7 +146,7 @@ import {
   type OnboardingGoal,
 } from "../../../../src/lib/onboarding";
 import { buildJourneyTrackInsights } from "./journeyTrackInsights";
-import { JOURNEY_MILESTONE_CHIME_URI, PRACTICE_CORRECT_SOUND_URI, PRACTICE_WRONG_SOUND_URI } from "../../../../src/lib/journeyMilestone";
+import { JOURNEY_MILESTONE_CHIME_URI, PRACTICE_CORRECT_SOUND_URI, PRACTICE_PERFECT_CHIME_URI, PRACTICE_WRONG_SOUND_URI } from "../../../../src/lib/journeyMilestone";
 
 type ReaderSelection = {
   book: Book;
@@ -204,6 +205,7 @@ type OptionalSpeechModule = {
       language?: string;
       rate?: number;
       pitch?: number;
+      voice?: string;
       onDone?: () => void;
       onStopped?: () => void;
       onError?: () => void;
@@ -219,6 +221,7 @@ type NativeExpoSpeechModule = {
       language?: string;
       rate?: number;
       pitch?: number;
+      voice?: string;
     }
   ) => void | Promise<void>;
   stop: () => void | Promise<void>;
@@ -304,9 +307,85 @@ function getOptionalSpeechModule(): OptionalSpeechModule | null {
         language: options?.language,
         rate: options?.rate,
         pitch: options?.pitch,
+        voice: options?.voice,
       });
     },
   };
+}
+
+// Cached "best voice" lookup. iOS exposes "Default", "Enhanced" and
+// "Premium" voice variants — premium being the natural-sounding
+// neural ones. We pick the highest-quality match per language code so
+// practice prompts no longer use the bare robotic default voice.
+//
+// `getAvailableVoicesAsync` is async and slightly expensive on the
+// first call (it queries CoreTextToSpeech), so we memoize the result
+// in module-scope. The map is populated once per app launch.
+type CachedVoiceEntry = { identifier: string; quality: "Enhanced" | "Default" };
+const bestVoiceByLangCache: Map<string, CachedVoiceEntry> = new Map();
+let bestVoicesPromise: Promise<unknown> | null = null;
+async function ensureBestVoicesLoaded(): Promise<void> {
+  if (bestVoicesPromise) {
+    await bestVoicesPromise;
+    return;
+  }
+  bestVoicesPromise = (async () => {
+    try {
+      const expoSpeech = await import("expo-speech");
+      const voices = await expoSpeech.getAvailableVoicesAsync();
+      // Group by base language code (the part before any "-" region
+      // suffix), then pick the highest-quality voice in that group.
+      const groups = new Map<string, typeof voices>();
+      for (const voice of voices) {
+        const langCode = (voice.language ?? "").toLowerCase();
+        if (!langCode) continue;
+        const existing = groups.get(langCode) ?? [];
+        existing.push(voice);
+        groups.set(langCode, existing);
+      }
+      groups.forEach((groupVoices, langCode) => {
+        // Enhanced > Default. Premium is iOS-internal but expo-speech
+        // only surfaces Default | Enhanced; the OS still uses Premium
+        // when available because it's the user's selected variant.
+        const ranked = [...groupVoices].sort((a, b) => {
+          const score = (q: string | null | undefined) =>
+            q === "Enhanced" ? 2 : q === "Default" ? 1 : 0;
+          return score(b.quality as string) - score(a.quality as string);
+        });
+        const best = ranked[0];
+        if (best) {
+          const quality: CachedVoiceEntry["quality"] =
+            (best.quality as string) === "Enhanced" ? "Enhanced" : "Default";
+          bestVoiceByLangCache.set(langCode, {
+            identifier: best.identifier,
+            quality,
+          });
+        }
+      });
+    } catch {
+      // expo-speech missing or query failed → silently fall back to
+      // the default voice on every speak() call.
+    }
+  })();
+  await bestVoicesPromise;
+}
+function getBestVoiceFor(language: string | null | undefined): string | undefined {
+  if (!language) return undefined;
+  const key = language.trim().toLowerCase();
+  if (!key) return undefined;
+  // Try exact match first ("it-it"), then the base ("it").
+  const exact = bestVoiceByLangCache.get(key);
+  if (exact) return exact.identifier;
+  const base = key.split("-")[0];
+  if (base && base !== key) {
+    const baseHit = bestVoiceByLangCache.get(base);
+    if (baseHit) return baseHit.identifier;
+    // Try any "<base>-..." variant.
+    for (const [cachedKey, voice] of bestVoiceByLangCache.entries()) {
+      if (voice && cachedKey.startsWith(`${base}-`)) return voice.identifier;
+    }
+  }
+  return undefined;
 }
 
 function stripHtml(input?: string): string {
@@ -1645,6 +1724,19 @@ export function MobileLibraryShell(args: {
   const practiceClipSoundRef = useRef<Audio.Sound | null>(null);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
+  // Animated values for the "session complete" celebration. Driven by
+  // an effect that fires when practiceComplete flips to true; reset
+  // whenever the session is closed or the round restarts.
+  const practiceCompleteOpacity = useRef(new Animated.Value(0)).current;
+  const practiceCompleteScale = useRef(new Animated.Value(0.85)).current;
+  const practiceCompleteTranslate = useRef(new Animated.Value(20)).current;
+  // Per-exercise entrance animation: each new exercise slides up + fades
+  // in so the transition feels deliberate instead of an instant swap.
+  const practiceExerciseOpacity = useRef(new Animated.Value(1)).current;
+  const practiceExerciseTranslate = useRef(new Animated.Value(0)).current;
+  // Set to true while the perfect-score celebration is on screen so
+  // PracticeCelebration renders confetti. Reset on close.
+  const [practicePerfectActive, setPracticePerfectActive] = useState(false);
   const storyOpenedAtRef = useRef<number>(0);
   const hasSeededExplorePreferencesRef = useRef(false);
   // Keep the last-fetched journey payload per language so switching back to
@@ -2631,6 +2723,32 @@ export function MobileLibraryShell(args: {
       .filter((item): item is PracticeFavoriteItem => Boolean(item));
   }, [practiceCheckpointResponses, practiceExercises, practiceLaunchContext, practiceSeedItems]);
   const checkpointRecoveryWords = checkpointMissedItems.slice(0, 4).map((item) => item.word);
+
+  /**
+   * Words the user got wrong during a NON-checkpoint round. Lets the
+   * "session complete" panel offer "Review wrong answers" so the user
+   * can retry only the misses instead of replaying every exercise.
+   * Empty in the checkpoint flow (that one already has its own
+   * `checkpointMissedItems`).
+   */
+  const practiceMissedItems = useMemo(() => {
+    if (
+      practiceLaunchContext.source === "journey" &&
+      practiceLaunchContext.kind === "checkpoint"
+    ) {
+      return [] as PracticeFavoriteItem[];
+    }
+    const wordMap = new Map(
+      (practiceSeedItems ?? []).map((item) => [normalizePracticeWord(item.word), item] as const)
+    );
+    const missed = new Set<string>();
+    for (const [word, score] of Object.entries(practiceReviewScores)) {
+      if (score === "again") missed.add(word);
+    }
+    return Array.from(missed)
+      .map((word) => wordMap.get(word))
+      .filter((item): item is PracticeFavoriteItem => Boolean(item));
+  }, [practiceLaunchContext, practiceReviewScores, practiceSeedItems]);
   const checkpointRecoveryMode = useMemo<PracticeModeKey | null>(() => {
     if (checkpointMissedItems.length === 0) return null;
     return getRecommendedPracticeModeFromItems(checkpointMissedItems);
@@ -4080,6 +4198,9 @@ export function MobileLibraryShell(args: {
       source: "favorites",
       kind: favoriteKind ?? (current.source === "favorites" ? current.kind : undefined),
     }));
+    // Warm up the iOS voice cache once so the first listening prompt
+    // already uses an Enhanced/Premium voice instead of the default.
+    void ensureBestVoicesLoaded();
     setActivePracticeMode(mode);
     setPracticeLoadError(null);
     setPracticeExercises(exercises);
@@ -4418,6 +4539,98 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  // Slide + fade the exercise card on every index change. Skip the
+  // animation when no session is active so we don't churn values.
+  useEffect(() => {
+    if (!activePracticeMode || practiceComplete) return;
+    practiceExerciseOpacity.setValue(0);
+    practiceExerciseTranslate.setValue(16);
+    Animated.parallel([
+      Animated.timing(practiceExerciseOpacity, {
+        toValue: 1,
+        duration: 240,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.timing(practiceExerciseTranslate, {
+        toValue: 0,
+        duration: 280,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, [activePracticeMode, practiceComplete, practiceExerciseOpacity, practiceExerciseTranslate, practiceIndex]);
+
+  // Run the entrance animation + perfect-score celebration whenever
+  // we transition into the "session complete" state. Reset back to the
+  // initial values when the user leaves the complete screen so the
+  // animation plays fresh next time.
+  useEffect(() => {
+    if (!practiceComplete) {
+      practiceCompleteOpacity.setValue(0);
+      practiceCompleteScale.setValue(0.85);
+      practiceCompleteTranslate.setValue(20);
+      setPracticePerfectActive(false);
+      return;
+    }
+    Animated.parallel([
+      Animated.timing(practiceCompleteOpacity, {
+        toValue: 1,
+        duration: 280,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.timing(practiceCompleteScale, {
+        toValue: 1,
+        duration: 380,
+        easing: Easing.out(Easing.back(1.4)),
+        useNativeDriver: true,
+      }),
+      Animated.timing(practiceCompleteTranslate, {
+        toValue: 0,
+        duration: 380,
+        easing: Easing.out(Easing.back(1.2)),
+        useNativeDriver: true,
+      }),
+    ]).start();
+    // Perfect score → confetti + a louder chime overlay.
+    if (
+      practiceExercises.length > 0 &&
+      practiceScore === practiceExercises.length
+    ) {
+      setPracticePerfectActive(true);
+      void playPracticePerfectChime();
+    }
+  }, [
+    practiceComplete,
+    practiceCompleteOpacity,
+    practiceCompleteScale,
+    practiceCompleteTranslate,
+    practiceExercises.length,
+    practiceScore,
+  ]);
+
+  /**
+   * One-shot "perfect score" chime — louder + longer than the correct
+   * tone so the moment feels like a real reward, not a repeat. Only
+   * called when the user finishes a session with 100% accuracy.
+   */
+  async function playPracticePerfectChime() {
+    try {
+      const { sound } = await Audio.Sound.createAsync(
+        { uri: PRACTICE_PERFECT_CHIME_URI },
+        { shouldPlay: true, volume: 0.9 }
+      );
+      sound.setOnPlaybackStatusUpdate((status) => {
+        if ("didJustFinish" in status && status.didJustFinish) {
+          void sound.unloadAsync().catch(() => undefined);
+        }
+      });
+    } catch {
+      // Best-effort
+    }
+  }
+
   function checkPracticeAnswer() {
     if (practiceRevealed || practiceComplete) return;
     const current = practiceExercises[practiceIndex];
@@ -4466,8 +4679,10 @@ export function MobileLibraryShell(args: {
 
     Speech.stop();
     setSpeakingPracticePromptId(currentPracticeExercise.id);
+    const speechLang = getSpeechSynthesisLang(currentPracticeExercise.language);
     Speech.speak(speechText, {
-      language: getSpeechSynthesisLang(currentPracticeExercise.language),
+      language: speechLang,
+      voice: getBestVoiceFor(speechLang),
       rate: 0.95,
       pitch: 1,
       onDone: () =>
@@ -4583,8 +4798,10 @@ export function MobileLibraryShell(args: {
       await stopPracticeContextClip();
       Speech.stop();
       setSpeakingPracticePromptId(currentPracticeExercise.id);
+      const contextLang = getSpeechSynthesisLang(clip.language);
       Speech.speak(speechText, {
-        language: getSpeechSynthesisLang(clip.language),
+        language: contextLang,
+        voice: getBestVoiceFor(contextLang),
         rate: 0.92,
         pitch: 1,
         onDone: () =>
@@ -4633,8 +4850,10 @@ export function MobileLibraryShell(args: {
       await stopPracticeContextClip();
       Speech.stop();
       setSpeakingPracticePromptId(currentPracticeExercise.id);
+      const fallbackLang = getSpeechSynthesisLang(clip.language);
       Speech.speak(speechText, {
-        language: getSpeechSynthesisLang(clip.language),
+        language: fallbackLang,
+        voice: getBestVoiceFor(fallbackLang),
         rate: 0.92,
         pitch: 1,
         onDone: () =>
@@ -6482,14 +6701,45 @@ export function MobileLibraryShell(args: {
           </View>
 
           {practiceComplete ? (
-            <View style={styles.practiceResultCard}>
-              <View style={styles.practiceFocusPill}>
-                <Feather name="award" size={13} color={activePracticeCard.accent} />
-                <Text style={styles.practiceFocusPillText}>Session complete</Text>
-              </View>
-              <Text style={styles.practiceResultScore}>
-                {practiceScore}/{practiceExercises.length}
-              </Text>
+            <Animated.View
+              style={[
+                styles.practiceResultCard,
+                {
+                  opacity: practiceCompleteOpacity,
+                  transform: [
+                    { scale: practiceCompleteScale },
+                    { translateY: practiceCompleteTranslate },
+                  ],
+                },
+              ]}
+            >
+              {practiceScore === practiceExercises.length && practiceExercises.length > 0 ? (
+                // Perfect-score header: trophy ring + bouncing emoji-style
+                // wordmark. Replaces the small "Session complete" pill so
+                // the moment feels noticeably different from a normal
+                // finish.
+                <>
+                  <View style={styles.practicePerfectRing}>
+                    <View style={styles.practicePerfectRingInner}>
+                      <Feather name="award" size={28} color={tokenBg[1]} />
+                    </View>
+                  </View>
+                  <Text style={styles.practicePerfectTitle}>Perfect!</Text>
+                  <Text style={styles.practiceResultScore}>
+                    {practiceScore}/{practiceExercises.length}
+                  </Text>
+                </>
+              ) : (
+                <>
+                  <View style={styles.practiceFocusPill}>
+                    <Feather name="award" size={13} color={activePracticeCard.accent} />
+                    <Text style={styles.practiceFocusPillText}>Session complete</Text>
+                  </View>
+                  <Text style={styles.practiceResultScore}>
+                    {practiceScore}/{practiceExercises.length}
+                  </Text>
+                </>
+              )}
               <Text style={styles.practiceResultText}>
                 {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint"
                   ? checkpointPassed
@@ -6500,8 +6750,8 @@ export function MobileLibraryShell(args: {
                         : "Checkpoint passed. Saving your result..."
                     : `${Math.max(0, Math.ceil(CHECKPOINT_PASS_THRESHOLD * practiceExercises.length) - practiceScore)} more correct answers needed to pass.`
                   : practiceScore === practiceExercises.length
-                    ? "Perfect round. Your saved words are ready for the next step."
-                    : "Nice run. Repeat this mode or switch to another one to lock the words in."}
+                    ? "Every answer correct. Your words are locked in for the next step."
+                    : `${practiceExercises.length - practiceScore} to review · keep going.`}
               </Text>
               {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint" ? (
                 <Text style={styles.practiceResultStatusText}>
@@ -6550,16 +6800,40 @@ export function MobileLibraryShell(args: {
                 </Text>
               ) : null}
               <View style={styles.practiceResultActions}>
-                <Pressable
-                  onPress={() => void openPracticeMode(activePracticeMode, false)}
-                  style={[styles.inlineButton, styles.primaryButton]}
-                >
-                  <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
-                    {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint"
-                      ? "Retry checkpoint"
-                      : "Play again"}
-                  </Text>
-                </Pressable>
+                {/* Primary CTA depends on context:
+                    - Checkpoint failed → "Retry checkpoint"
+                    - Non-checkpoint with mistakes → "Review wrong answers"
+                      (re-runs the same mode but only on the missed words)
+                    - Otherwise → "Play again" */}
+                {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint" ? (
+                  <Pressable
+                    onPress={() => void openPracticeMode(activePracticeMode, false)}
+                    style={[styles.inlineButton, styles.primaryButton]}
+                  >
+                    <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
+                      Retry checkpoint
+                    </Text>
+                  </Pressable>
+                ) : practiceMissedItems.length > 0 ? (
+                  <Pressable
+                    onPress={() => void openPracticeMode(activePracticeMode, true, practiceMissedItems)}
+                    style={[styles.inlineButton, styles.primaryButton]}
+                  >
+                    <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
+                      Review {practiceMissedItems.length} wrong{practiceMissedItems.length === 1 ? "" : "s"}
+                    </Text>
+                  </Pressable>
+                ) : (
+                  <Pressable
+                    onPress={() => void openPracticeMode(activePracticeMode, false)}
+                    style={[styles.inlineButton, styles.primaryButton]}
+                  >
+                    <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
+                      Play again
+                    </Text>
+                  </Pressable>
+                )}
+                {/* Secondary CTAs */}
                 {practiceLaunchContext.source === "journey" &&
                 practiceLaunchContext.kind === "checkpoint" &&
                 !checkpointPassed &&
@@ -6572,11 +6846,23 @@ export function MobileLibraryShell(args: {
                     <Text style={styles.inlineButtonText}>Review weak spots</Text>
                   </Pressable>
                 ) : null}
+                {/* "Play again" stays available as a secondary option
+                    when the primary already takes the user somewhere
+                    else (e.g. wrong-answer review). */}
+                {practiceMissedItems.length > 0 &&
+                !(practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint") ? (
+                  <Pressable
+                    onPress={() => void openPracticeMode(activePracticeMode, false)}
+                    style={styles.inlineButton}
+                  >
+                    <Text style={styles.inlineButtonText}>Play again</Text>
+                  </Pressable>
+                ) : null}
                 <Pressable onPress={closePracticeSession} style={styles.inlineButton}>
                   <Text style={styles.inlineButtonText}>Done</Text>
                 </Pressable>
               </View>
-            </View>
+            </Animated.View>
           ) : currentPracticeExercise ? (
             <>
               <View style={styles.practiceSessionMeta}>
@@ -6634,6 +6920,12 @@ export function MobileLibraryShell(args: {
                 showsVerticalScrollIndicator={false}
                 bounces={false}
               >
+                <Animated.View
+                  style={{
+                    opacity: practiceExerciseOpacity,
+                    transform: [{ translateY: practiceExerciseTranslate }],
+                  }}
+                >
                 {currentPracticeExercise.kind === "multiple-choice" ? (
                   <View style={styles.practiceQuestionCard}>
                     <Text style={styles.practicePrompt}>{currentPracticeExercise.prompt}</Text>
@@ -6848,6 +7140,7 @@ export function MobileLibraryShell(args: {
                     </View>
                   </View>
                 )}
+                </Animated.View>
               </ScrollView>
 
               <View style={styles.practiceFooter}>
@@ -6881,6 +7174,7 @@ export function MobileLibraryShell(args: {
             onExit={confirmExitPracticeSession}
           />
         ) : null}
+        <PracticeCelebration active={practicePerfectActive} />
       </View>
     ) : null;
 
@@ -13174,28 +13468,59 @@ const styles = StyleSheet.create({
   practiceResultCard: {
     flex: 1,
     justifyContent: "center",
-    gap: 16,
+    alignItems: "center",
+    gap: 14,
+    paddingHorizontal: 12,
+  },
+  practicePerfectRing: {
+    width: 92,
+    height: 92,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(252, 211, 77, 0.18)",
+    borderWidth: 1,
+    borderColor: "rgba(252, 211, 77, 0.42)",
+  },
+  practicePerfectRingInner: {
+    width: 64,
+    height: 64,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: tokenColor.gold,
+  },
+  practicePerfectTitle: {
+    color: tokenColor.gold,
+    fontSize: 32,
+    fontWeight: "900",
+    letterSpacing: -0.5,
+    textAlign: "center",
   },
   practiceResultScore: {
     color: "#ffffff",
     fontSize: 54,
     fontWeight: "900",
     lineHeight: 58,
+    textAlign: "center",
   },
   practiceResultText: {
     color: "rgba(226,232,244,0.82)",
-    fontSize: 17,
-    lineHeight: 25,
+    fontSize: 16,
+    lineHeight: 23,
+    textAlign: "center",
   },
   practiceResultStatusText: {
     color: "#b8c9df",
     fontSize: 13,
     lineHeight: 19,
+    textAlign: "center",
   },
   practiceResultActions: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 12,
+    width: "100%",
+    flexDirection: "column",
+    gap: 10,
+    marginTop: 6,
   },
   createFeatureGrid: {
     gap: 10,
