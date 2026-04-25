@@ -568,20 +568,14 @@ export function ReaderScreen(args: {
   }
 
   function restoreReadingPosition() {
-    if (hasRestoredPositionRef.current || !scrollViewRef.current) return;
-    const scrollableHeight = Math.max(contentHeightRef.current - viewportHeightRef.current, 0);
-    if (scrollableHeight <= 0) return;
-    const initialRatio = Math.min(1, Math.max(0, initialProgress?.progressRatio ?? 0));
-    if (initialRatio <= 0) {
-      hasRestoredPositionRef.current = true;
-      return;
-    }
+    // Stories always open scrolled to the very top now — regardless of
+    // any persisted progress. The audio playhead still resumes via the
+    // <NativeAudioPlayer/> initial position; only the visual scroll is
+    // pinned to 0 so the user sees the cover + first line right away.
+    if (hasRestoredPositionRef.current) return;
     hasRestoredPositionRef.current = true;
     requestAnimationFrame(() => {
-      scrollViewRef.current?.scrollTo({
-        y: initialRatio * scrollableHeight,
-        animated: false,
-      });
+      scrollViewRef.current?.scrollTo({ y: 0, animated: false });
     });
   }
 

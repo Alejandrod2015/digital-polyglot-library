@@ -41,6 +41,7 @@ import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
+import { LanguageFlag } from "./LanguageFlag";
 import { PracticeCelebration } from "./PracticeCelebration";
 import { PracticeExitConfirm } from "./PracticeExitConfirm";
 import { useOfflineStatus } from "../lib/useOfflineStatus";
@@ -390,25 +391,6 @@ function getBestVoiceFor(language: string | null | undefined): string | undefine
 
 function stripHtml(input?: string): string {
   return (input ?? "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-}
-
-// Emoji flag keyed by the full language name the API returns
-// ("Italian", "German", …). Returns a globe fallback for unknowns.
-// Intentionally tiny — not worth a separate file or lib.
-const MOBILE_FLAG_BY_LANGUAGE: Record<string, string> = {
-  English: "🇺🇸",
-  Spanish: "🇪🇸",
-  French: "🇫🇷",
-  German: "🇩🇪",
-  Italian: "🇮🇹",
-  Portuguese: "🇵🇹",
-  Japanese: "🇯🇵",
-  Korean: "🇰🇷",
-  Chinese: "🇨🇳",
-};
-function getMobileLanguageFlag(language: string | null | undefined): string {
-  if (!language) return "🌐";
-  return MOBILE_FLAG_BY_LANGUAGE[language] ?? "🌐";
 }
 
 function estimateReadMinutes(text?: string): number {
@@ -803,7 +785,10 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     caption: "Best for repetition and confidence under pressure.",
     accent: "#8fd8ff",
     background: "#22495f",
-    icon: "brain",
+    // Was "brain" — collided with the bottom-tab Practice icon. "link"
+    // matches the "Connect words and meanings" copy and is unique
+    // among the four practice modes.
+    icon: "link",
   },
 ];
 
@@ -6191,7 +6176,13 @@ export function MobileLibraryShell(args: {
           Releases before those arrive, it flashes at the top of the list
           and then jumps down. Gate on loadingRemote so the home layout
           stabilizes in a single paint. */}
-      {!loadingRemote ? (
+      {/* Books and stories used to share a single "New releases" rail,
+          but the two cards have different intrinsic heights — the
+          shorter ones left a visual gap under them when alignItems
+          collapsed everyone to the row's tallest card. Splitting them
+          into two rails keeps each carousel uniform and makes the
+          Home page feel deliberate instead of ragged. */}
+      {!loadingRemote && latestBookCards.length > 0 ? (
       <View
         style={[styles.section, activeOnboardingTourTarget === "reader" ? styles.onboardingHighlightedSurface : null]}
         accessibilityLabel="qa-home-latest-books-section"
@@ -6200,29 +6191,40 @@ export function MobileLibraryShell(args: {
         <View style={styles.sectionHeader}>
           <View>
             <Text style={styles.sectionEyebrow}>Library</Text>
-            <Text style={styles.sectionTitle}>New releases</Text>
+            <Text style={styles.sectionTitle}>New books</Text>
           </View>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-          {[
-            ...latestBookCards.slice(0, 5).map((item) => (
-              <BookWebCard key={item.key} item={item} />
-            )),
-            ...[...latestStoryCards.slice(0, 5), ...homeStandaloneStoryCards.slice(0, 3)].slice(0, 6).map((item) => (
-              <BookHomeCard
-                key={`home-story-${item.key}`}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
-            )),
-          ]}
+          {latestBookCards.slice(0, 5).map((item) => (
+            <BookWebCard key={item.key} item={item} />
+          ))}
+        </ScrollView>
+      </View>
+      ) : null}
+
+      {!loadingRemote && (latestStoryCards.length > 0 || homeStandaloneStoryCards.length > 0) ? (
+      <View style={styles.section} accessibilityLabel="qa-home-latest-stories-section" testID="qa-home-latest-stories-section">
+        <View style={styles.sectionHeader}>
+          <View>
+            <Text style={styles.sectionEyebrow}>Library</Text>
+            <Text style={styles.sectionTitle}>New stories</Text>
+          </View>
+        </View>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
+          {[...latestStoryCards.slice(0, 5), ...homeStandaloneStoryCards.slice(0, 3)].slice(0, 6).map((item) => (
+            <BookHomeCard
+              key={`home-story-${item.key}`}
+              item={{
+                key: item.key,
+                title: item.title,
+                coverUrl: item.coverUrl,
+                subtitle: item.subtitle,
+                meta: item.meta,
+                progressLabel: item.progressLabel,
+                onPress: item.onPress ?? (() => {}),
+              }}
+            />
+          ))}
         </ScrollView>
       </View>
       ) : null}
@@ -6808,7 +6810,7 @@ export function MobileLibraryShell(args: {
                 {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint" ? (
                   <Pressable
                     onPress={() => void openPracticeMode(activePracticeMode, false)}
-                    style={[styles.inlineButton, styles.primaryButton]}
+                    style={[styles.inlineButton, styles.primaryButton, styles.practiceResultActionButton]}
                   >
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
                       Retry checkpoint
@@ -6817,7 +6819,7 @@ export function MobileLibraryShell(args: {
                 ) : practiceMissedItems.length > 0 ? (
                   <Pressable
                     onPress={() => void openPracticeMode(activePracticeMode, true, practiceMissedItems)}
-                    style={[styles.inlineButton, styles.primaryButton]}
+                    style={[styles.inlineButton, styles.primaryButton, styles.practiceResultActionButton]}
                   >
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
                       Review {practiceMissedItems.length} wrong{practiceMissedItems.length === 1 ? "" : "s"}
@@ -6826,7 +6828,7 @@ export function MobileLibraryShell(args: {
                 ) : (
                   <Pressable
                     onPress={() => void openPracticeMode(activePracticeMode, false)}
-                    style={[styles.inlineButton, styles.primaryButton]}
+                    style={[styles.inlineButton, styles.primaryButton, styles.practiceResultActionButton]}
                   >
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
                       Play again
@@ -6841,7 +6843,7 @@ export function MobileLibraryShell(args: {
                 checkpointMissedItems.length > 0 ? (
                   <Pressable
                     onPress={() => void openPracticeMode(checkpointRecoveryMode, true, checkpointMissedItems)}
-                    style={styles.inlineButton}
+                    style={[styles.inlineButton, styles.practiceResultActionButton]}
                   >
                     <Text style={styles.inlineButtonText}>Review weak spots</Text>
                   </Pressable>
@@ -6853,12 +6855,15 @@ export function MobileLibraryShell(args: {
                 !(practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint") ? (
                   <Pressable
                     onPress={() => void openPracticeMode(activePracticeMode, false)}
-                    style={styles.inlineButton}
+                    style={[styles.inlineButton, styles.practiceResultActionButton]}
                   >
                     <Text style={styles.inlineButtonText}>Play again</Text>
                   </Pressable>
                 ) : null}
-                <Pressable onPress={closePracticeSession} style={styles.inlineButton}>
+                <Pressable
+                  onPress={closePracticeSession}
+                  style={[styles.inlineButton, styles.practiceResultActionButton]}
+                >
                   <Text style={styles.inlineButtonText}>Done</Text>
                 </Pressable>
               </View>
@@ -8684,9 +8689,7 @@ export function MobileLibraryShell(args: {
             testID="qa-journey-language-switch"
             style={styles.journeyHeaderFlagBadge}
           >
-            <Text style={styles.journeyHeaderFlagEmoji}>
-              {getMobileLanguageFlag(activeJourneyLanguage)}
-            </Text>
+            <LanguageFlag language={activeJourneyLanguage} size={26} />
             {activeJourneyLevel ? (
               <Text style={styles.journeyHeaderLevelBadge}>{activeJourneyLevel.title}</Text>
             ) : null}
@@ -8820,19 +8823,26 @@ export function MobileLibraryShell(args: {
             story rendered inline in scroll order. Section headers for
             level and topic tell the user where they are; locked ones
             are dimmed but still visible so they can see what's ahead. */}
-        {activeJourneyTrack.levels.map((level) => (
+        {activeJourneyTrack.levels.map((level, levelIdx) => (
           <View key={level.id} style={styles.journeyPathLevelBlock}>
-            <View
-              style={[
-                styles.journeyPathLevelHeader,
-                !level.unlocked ? styles.journeyPathLevelHeaderLocked : null,
-              ]}
-            >
-              <Text style={styles.journeyPathLevelBadge}>{level.title}</Text>
-              <Text style={styles.journeyPathLevelSubtitle}>
-                {level.unlocked ? level.subtitle ?? "" : "Locked"}
-              </Text>
-            </View>
+            {/* Skip the inline level header for the first level — the
+                top strip already shows the active level (e.g. "A1") so
+                rendering it again right under the strip duplicated info.
+                Subsequent levels still get their header so the user
+                sees the boundary while scrolling. */}
+            {levelIdx > 0 ? (
+              <View
+                style={[
+                  styles.journeyPathLevelHeader,
+                  !level.unlocked ? styles.journeyPathLevelHeaderLocked : null,
+                ]}
+              >
+                <Text style={styles.journeyPathLevelBadge}>{level.title}</Text>
+                <Text style={styles.journeyPathLevelSubtitle}>
+                  {level.unlocked ? level.subtitle ?? "" : "Locked"}
+                </Text>
+              </View>
+            ) : null}
 
             {level.topics.map((topic) => {
               const topicStoriesCount = topic.stories.length;
@@ -8902,29 +8912,14 @@ export function MobileLibraryShell(args: {
                           alignRight ? styles.journeyPathNodeRowRight : styles.journeyPathNodeRowLeft,
                         ]}
                       >
-                        {nodeVariant === "next" ? (
-                          <View style={styles.journeyStartBubble} pointerEvents="none">
-                            <View style={styles.journeyStartBubbleInner}>
-                              <Text style={styles.journeyStartBubbleEyebrow}>START</Text>
-                              <Text
-                                numberOfLines={1}
-                                ellipsizeMode="tail"
-                                style={styles.journeyStartBubbleTitle}
-                              >
-                                {story.title}
-                              </Text>
-                            </View>
-                            <View style={styles.journeyStartBubbleArrow} />
-                          </View>
-                        ) : null}
-
                         {/* Horizontal pill: circle icon on the left, label
                             + duration stack on the right. Alternates
                             side via the row alignment above so the path
-                            zigzags down the screen. */}
+                            zigzags down the screen. The "next" variant
+                            gets its accent + a single soft glow built
+                            into its style — no extra ring overlay. */}
                         {nodeVariant === "next" ? (
-                          <NextActionGlow active borderRadius={18} inset={-3}>
-                            <Pressable
+                          <Pressable
                               disabled={!story.unlocked}
                               onPress={() => openJourneyStory(story)}
                               accessibilityRole="button"
@@ -8946,7 +8941,6 @@ export function MobileLibraryShell(args: {
                                 ) : null}
                               </View>
                             </Pressable>
-                          </NextActionGlow>
                         ) : (
                           <Pressable
                             disabled={!story.unlocked}
@@ -10218,9 +10212,10 @@ const styles = StyleSheet.create({
     gap: 18,
     paddingHorizontal: 24,
     paddingTop: 28,
-    // Enough clearance for the floating bottom tab bar (~68 pt + safe area)
-    // without the 40+ pt of dead empty space the old value produced.
-    paddingBottom: 80,
+    // Just enough clearance to clear the floating bottom tab bar
+    // (~58 pt). Earlier 80 pt left a noticeable empty stretch under
+    // the last carousel on Home; we trade slack for a tighter end.
+    paddingBottom: 56,
   },
   containerGrow: {
     flexGrow: 1,
@@ -11397,8 +11392,15 @@ const styles = StyleSheet.create({
     maxWidth: 260,
   },
   journeyNodePillNext: {
-    backgroundColor: "rgba(125, 211, 252, 0.14)",
-    borderColor: "rgba(125, 211, 252, 0.5)",
+    backgroundColor: "rgba(125, 211, 252, 0.16)",
+    borderColor: "rgba(125, 211, 252, 0.55)",
+    // Single soft cyan glow — replaces the multi-layer NextActionGlow
+    // ring that was making the next node look noisy.
+    shadowColor: tokenColor.cyan,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.45,
+    shadowRadius: 14,
+    elevation: 4,
   },
   journeyNodePillCompleted: {
     backgroundColor: "rgba(190, 242, 100, 0.08)",
@@ -13264,6 +13266,13 @@ const styles = StyleSheet.create({
     paddingBottom: 72,
   },
   practiceQuestionCard: {
+    // flex+space-between makes the card fill the available height on
+    // tall devices (so Listening / Context / Match no longer leave a
+    // big empty gap between the prompt and the options) while still
+    // shrinking and scrolling naturally on small screens. The padding
+    // and inner content keep their intrinsic heights either way.
+    flex: 1,
+    justifyContent: "space-between",
     borderRadius: 28,
     backgroundColor: "rgba(7,18,31,0.36)",
     borderWidth: 1,
@@ -13519,8 +13528,13 @@ const styles = StyleSheet.create({
   practiceResultActions: {
     width: "100%",
     flexDirection: "column",
+    alignItems: "center",
     gap: 10,
     marginTop: 6,
+  },
+  practiceResultActionButton: {
+    minWidth: 220,
+    alignSelf: "center",
   },
   createFeatureGrid: {
     gap: 10,

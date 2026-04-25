@@ -19,7 +19,7 @@ import NetInfo, { type NetInfoState } from "@react-native-community/netinfo";
  * probed) we fall back to `isConnected` alone to avoid a false
  * positive during the first few ms after mount.
  */
-export function useOfflineStatus(offlineDelayMs = 800): boolean {
+export function useOfflineStatus(offlineDelayMs = 1800): boolean {
   const [isOffline, setIsOffline] = useState(false);
   const pendingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 

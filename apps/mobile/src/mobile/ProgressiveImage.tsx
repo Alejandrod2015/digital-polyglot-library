@@ -121,7 +121,16 @@ export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonSty
         />
       ) : null}
       <Animated.Image
-        source={{ uri }}
+        source={{
+          uri,
+          // `force-cache` tells iOS NSURLCache to serve the cached
+          // bytes when present and only hit the network on a cache
+          // miss. Combined with the long max-age that /_next/image
+          // already sends, the second time you see a cover it loads
+          // immediately. Falls through cleanly on Android (which
+          // ignores the prop and uses its default disk cache).
+          cache: "force-cache",
+        }}
         resizeMode={resizeMode}
         onLoad={finishLoad}
         onError={() => {
