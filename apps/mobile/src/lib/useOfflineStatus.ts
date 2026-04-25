@@ -3,9 +3,16 @@ import NetInfo, { type NetInfoState } from "@react-native-community/netinfo";
 
 /**
  * Truth-based "are we offline?" signal. Combines the OS-level network
- * status from NetInfo with a short debounce so that brief blips (cold
- * start before NetInfo has emitted its first event, Wi-Fi handoff,
- * captive-portal revalidation) never flash the offline banner.
+ * status from NetInfo with a long debounce so that brief blips never
+ * flash the offline banner.
+ *
+ * Why we ONLY trust `isConnected`:
+ *   On iOS, `isInternetReachable` oscillates between true / false /
+ *   null while the OS revalidates connectivity (Wi-Fi handoff, ARP
+ *   refresh, every time the screen wakes up). Tying the banner to it
+ *   produced exactly the "shows up briefly even when I have signal"
+ *   problem reported on device. `isConnected` is much steadier and
+ *   only flips when the radio actually drops.
  *
  * Debounce is ASYMMETRIC by design:
  *   - Going offline → waits `offlineDelayMs` before reporting true.
@@ -14,12 +21,12 @@ import NetInfo, { type NetInfoState } from "@react-native-community/netinfo";
  *     instant; there's no upside to holding a stale "offline" banner
  *     once we know the network is back.
  *
- * `isInternetReachable` is honored when the OS can determine it
- * (captive portals, Wi-Fi without uplink). When it's null (not yet
- * probed) we fall back to `isConnected` alone to avoid a false
- * positive during the first few ms after mount.
+ * Captive-portal-style "Wi-Fi without uplink" is not detected here
+ * anymore; if we want that signal back later we can add a second
+ * source (e.g., consecutive fetch failures from the API) instead of
+ * relying on the noisy `isInternetReachable` flag.
  */
-export function useOfflineStatus(offlineDelayMs = 1800): boolean {
+export function useOfflineStatus(offlineDelayMs = 3500): boolean {
   const [isOffline, setIsOffline] = useState(false);
   const pendingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -32,12 +39,10 @@ export function useOfflineStatus(offlineDelayMs = 1800): boolean {
     }
 
     function handleChange(state: NetInfoState) {
-      // Explicit-false isConnected is a hard offline signal from the OS.
-      // isInternetReachable === false covers "Wi-Fi connected but no
-      // uplink" (captive portals). `null` means the OS hasn't probed
-      // yet — treat as online to avoid false-positive flashes at boot.
-      const offlineNow =
-        state.isConnected === false || state.isInternetReachable === false;
+      // Hard offline = the radio reports no connection. Anything else
+      // (including `isInternetReachable === false` which used to be
+      // here) is too noisy on iOS.
+      const offlineNow = state.isConnected === false;
 
       if (offlineNow) {
         // Only start a debounce timer if we're not already offline.

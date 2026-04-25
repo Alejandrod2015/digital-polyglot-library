@@ -44,6 +44,7 @@ import { HomeSkeleton } from "./HomeSkeleton";
 import { LanguageFlag } from "./LanguageFlag";
 import { PracticeCelebration } from "./PracticeCelebration";
 import { PracticeExitConfirm } from "./PracticeExitConfirm";
+import { ReaderSkeleton } from "./ReaderSkeleton";
 import { useOfflineStatus } from "../lib/useOfflineStatus";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 import {
@@ -1655,6 +1656,13 @@ export function MobileLibraryShell(args: {
   const [reminderHint, setReminderHint] = useState<string | null>(null);
   const [customInterestInput, setCustomInterestInput] = useState("");
   const [loadingRemote, setLoadingRemote] = useState(false);
+  // Tracks whether the first remote hydrate has completed (success OR
+  // failure). The Home skeleton is gated on `!didFirstHydrate` rather
+  // than `loadingRemote` so the very first paint shows ONLY the
+  // skeleton — no flashes of half-loaded sections from local state
+  // before the fetch effect runs and flips loadingRemote. Subsequent
+  // refreshes don't re-show the skeleton because this flag stays true.
+  const [didFirstHydrate, setDidFirstHydrate] = useState(false);
   const [remoteError, setRemoteError] = useState<string | null>(null);
   // Real "am I offline" signal from the OS via NetInfo, debounced so brief
   // blips (cold-start before the first event, Wi-Fi handoff, captive
@@ -1719,6 +1727,62 @@ export function MobileLibraryShell(args: {
   // in so the transition feels deliberate instead of an instant swap.
   const practiceExerciseOpacity = useRef(new Animated.Value(1)).current;
   const practiceExerciseTranslate = useRef(new Animated.Value(0)).current;
+  // Story ID currently being fetched in the background after a tap.
+  // Drives the full-screen ReaderSkeleton so the user sees something
+  // immediate even when /api/standalone-stories takes a moment.
+  const [openingStoryId, setOpeningStoryId] = useState<string | null>(null);
+
+  // Hint surfaced when the user taps a locked journey story — tells
+  // them what they need to finish first instead of the tap silently
+  // doing nothing. Auto-dismissed by an effect below.
+  const [lockedStoryHint, setLockedStoryHint] = useState<string | null>(null);
+  const lockedHintAnim = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    if (!lockedStoryHint) {
+      lockedHintAnim.setValue(0);
+      return;
+    }
+    Animated.timing(lockedHintAnim, {
+      toValue: 1,
+      duration: 220,
+      easing: Easing.out(Easing.quad),
+      useNativeDriver: true,
+    }).start();
+    const dismiss = setTimeout(() => {
+      Animated.timing(lockedHintAnim, {
+        toValue: 0,
+        duration: 220,
+        easing: Easing.in(Easing.quad),
+        useNativeDriver: true,
+      }).start(() => setLockedStoryHint(null));
+    }, 2800);
+    return () => clearTimeout(dismiss);
+  }, [lockedStoryHint, lockedHintAnim]);
+
+  // Breathing halo behind the journey "next up" pill — Duolingo-style
+  // periodic glow. One shared loop drives all uses, runs forever once
+  // mounted; we keep it native-driver so it doesn't churn JS.
+  const journeyNextPulse = useRef(new Animated.Value(0.25)).current;
+  useEffect(() => {
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(journeyNextPulse, {
+          toValue: 0.85,
+          duration: 1100,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }),
+        Animated.timing(journeyNextPulse, {
+          toValue: 0.25,
+          duration: 1100,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }),
+      ])
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [journeyNextPulse]);
   // Set to true while the perfect-score celebration is on screen so
   // PracticeCelebration renders confetti. Reset on close.
   const [practicePerfectActive, setPracticePerfectActive] = useState(false);
@@ -1888,12 +1952,15 @@ export function MobileLibraryShell(args: {
         setJourneyInsightsByLanguage({});
         journeyCacheByLanguageRef.current.clear();
         void clearJourneyCache(PREVIEW_OFFLINE_USER_ID);
+        // Genuine signed-out: no skeleton needed either.
+        setDidFirstHydrate(true);
       } else {
         // Anchor-only: we have proof of prior sign-in but no token yet.
         // Just stop the loading spinner — the useOfflineStatus hook
         // decides on its own whether to show the offline banner based
         // on the real OS signal, not on our lack of a token.
         setLoadingRemote(false);
+        setDidFirstHydrate(true);
       }
       return;
     }
@@ -1957,6 +2024,7 @@ export function MobileLibraryShell(args: {
       if (unauthorized) {
         handleUnauthorizedSessionRef.current();
         setLoadingRemote(false);
+        setDidFirstHydrate(true);
         return;
       }
 
@@ -2029,6 +2097,7 @@ export function MobileLibraryShell(args: {
 
       setRemoteError(errors.length > 0 ? errors.join("  ") : null);
       setLoadingRemote(false);
+      setDidFirstHydrate(true);
     }
 
     void hydrateRemoteLibrary();
@@ -2271,61 +2340,12 @@ export function MobileLibraryShell(args: {
     };
   }, [sessionToken]);
 
-  useEffect(() => {
-    let cancelled = false;
-
-    async function resolveCelebration() {
-      if (!sessionUserId || !remoteProgress?.gamification) {
-        if (!cancelled) setActiveGamificationCelebration(null);
-        return;
-      }
-
-      const seenIds = await loadSeenGamificationCelebrations(sessionUserId);
-      if (cancelled) return;
-      const seen = new Set([...seenIds, ...dismissedCelebrationIds]);
-      const next =
-        buildGamificationCelebrations(remoteProgress.gamification).find((item) => !seen.has(item.id)) ?? null;
-      setActiveGamificationCelebration(next);
-    }
-
-    void resolveCelebration();
-    return () => {
-      cancelled = true;
-    };
-  }, [dismissedCelebrationIds, remoteProgress, sessionUserId]);
-
-  useEffect(() => {
-    if (!activeGamificationCelebration) {
-      celebrationAnim.setValue(0);
-      return;
-    }
-
-    Animated.sequence([
-      Animated.timing(celebrationAnim, {
-        toValue: 1,
-        duration: 520,
-        easing: Easing.out(Easing.cubic),
-        useNativeDriver: true,
-      }),
-      Animated.timing(celebrationAnim, {
-        toValue: 0.82,
-        duration: 220,
-        easing: Easing.inOut(Easing.quad),
-        useNativeDriver: true,
-      }),
-    ]).start();
-    const autoDismiss = setTimeout(() => {
-      Animated.timing(celebrationAnim, {
-        toValue: 0,
-        duration: 300,
-        easing: Easing.in(Easing.quad),
-        useNativeDriver: true,
-      }).start(() => {
-        void dismissGamificationCelebration(activeGamificationCelebration.id);
-      });
-    }, 4000);
-    return () => clearTimeout(autoDismiss);
-  }, [activeGamificationCelebration, celebrationAnim]);
+  // Daily-quest celebration effects removed alongside the toast — the
+  // related state (activeGamificationCelebration, dismissed IDs, the
+  // celebrationAnim ref, CelebrationBurst, dismissGamificationCelebration)
+  // is left in place as dead code to keep this diff focused; a follow-up
+  // pass can sweep it once we're sure we don't bring the toast back in
+  // a different form.
 
   useEffect(() => {
     if (!journeyMilestone) {
@@ -3663,6 +3683,10 @@ export function MobileLibraryShell(args: {
       return;
     }
 
+    // Show the reader skeleton if the network fetch takes more than
+    // ~150ms so a fast response doesn't flash a placeholder. Clear it
+    // on every exit path below (success, no-result, network failure).
+    const skeletonTimer = setTimeout(() => setOpeningStoryId(story.id), 150);
     try {
       const payload = await apiFetch<{ stories?: MobileStandaloneStory[] }>({
         baseUrl: mobileConfig.apiBaseUrl,
@@ -3671,7 +3695,13 @@ export function MobileLibraryShell(args: {
         timeoutMs: 15000,
       });
       const standalone = payload.stories?.[0];
-      if (!standalone) return;
+      if (!standalone) {
+        clearTimeout(skeletonTimer);
+        setOpeningStoryId(null);
+        return;
+      }
+      clearTimeout(skeletonTimer);
+      setOpeningStoryId(null);
       openSelection(createSelectionFromStandaloneStory(standalone));
       // If this story is already downloaded offline but was saved before
       // vocabRaw was persisted, backfill the snapshot so next offline open
@@ -3685,6 +3715,8 @@ export function MobileLibraryShell(args: {
         }
       }
     } catch (error) {
+      clearTimeout(skeletonTimer);
+      setOpeningStoryId(null);
       console.error("[mobile journey] failed to open journey story", error);
       // We're likely offline AND the local copy has no vocab. Better to open
       // the text-only version than to do nothing.
@@ -6063,10 +6095,15 @@ export function MobileLibraryShell(args: {
       {/* Loading placeholder that matches the shapes of the real cards
           that are about to arrive (Continue listening + New releases),
           so the layout doesn't jump and the user has something to look
-          at during the ~500-900 ms hydration window. */}
-      {loadingRemote && isSignedIn ? <HomeSkeleton /> : null}
+          at during the ~500-900 ms hydration window. Gated on
+          `didFirstHydrate`, NOT `loadingRemote` — that distinction
+          matters because `loadingRemote` only flips to true inside the
+          fetch effect, after the first render has already painted the
+          local-state sections. The flag stays true after the first
+          hydrate so subsequent silent refreshes don't redraw it. */}
+      {!didFirstHydrate && isSignedIn ? <HomeSkeleton /> : null}
 
-      {remoteProgress?.gamification ? (
+      {didFirstHydrate && remoteProgress?.gamification ? (
         <View style={styles.section}>
           <Pressable
             onPress={() => setActiveScreen("progress")}
@@ -6095,7 +6132,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {continueReadingCards.length > 0 ? (
+      {didFirstHydrate && continueReadingCards.length > 0 ? (
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <View>
@@ -6137,7 +6174,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {(remoteStoryCards.length > 0 || personalizedStoryCards.length > 0) ? (
+      {didFirstHydrate && (remoteStoryCards.length > 0 || personalizedStoryCards.length > 0) ? (
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <View>
@@ -6182,7 +6219,7 @@ export function MobileLibraryShell(args: {
           collapsed everyone to the row's tallest card. Splitting them
           into two rails keeps each carousel uniform and makes the
           Home page feel deliberate instead of ragged. */}
-      {!loadingRemote && latestBookCards.length > 0 ? (
+      {didFirstHydrate && latestBookCards.length > 0 ? (
       <View
         style={[styles.section, activeOnboardingTourTarget === "reader" ? styles.onboardingHighlightedSurface : null]}
         accessibilityLabel="qa-home-latest-books-section"
@@ -6202,7 +6239,7 @@ export function MobileLibraryShell(args: {
       </View>
       ) : null}
 
-      {!loadingRemote && (latestStoryCards.length > 0 || homeStandaloneStoryCards.length > 0) ? (
+      {didFirstHydrate && (latestStoryCards.length > 0 || homeStandaloneStoryCards.length > 0) ? (
       <View style={styles.section} accessibilityLabel="qa-home-latest-stories-section" testID="qa-home-latest-stories-section">
         <View style={styles.sectionHeader}>
           <View>
@@ -8871,6 +8908,28 @@ export function MobileLibraryShell(args: {
                       ? estimateReadMinutes(offlineCopy.text)
                       : null;
                     const alignRight = storyIdx % 2 === 1;
+                    // Reason a locked story is locked, computed when the
+                    // user actually taps it. Cheaper to compute on demand
+                    // than once per render — most stories will never be
+                    // tapped while locked.
+                    const showLockedHint = () => {
+                      const previousInTopic = storyIdx > 0 ? topic.stories[storyIdx - 1] : null;
+                      if (previousInTopic && !previousInTopic.completed) {
+                        setLockedStoryHint(`Finish "${previousInTopic.title}" to unlock this one.`);
+                        return;
+                      }
+                      const levelTopicIdx = level.topics.findIndex((t) => t.slug === topic.slug);
+                      const previousTopic = levelTopicIdx > 0 ? level.topics[levelTopicIdx - 1] : null;
+                      if (previousTopic && !previousTopic.checkpointPassed) {
+                        setLockedStoryHint(`Pass the ${previousTopic.label} checkpoint first.`);
+                        return;
+                      }
+                      if (!level.unlocked) {
+                        setLockedStoryHint(`Complete the previous level to unlock ${level.title}.`);
+                        return;
+                      }
+                      setLockedStoryHint("Complete the previous step first.");
+                    };
                     const isNextAction = globalJourneyNextStoryId === story.id;
                     const nodeVariant: "completed" | "next" | "locked" | "step" = story.completed
                       ? "completed"
@@ -8919,6 +8978,11 @@ export function MobileLibraryShell(args: {
                             gets its accent + a single soft glow built
                             into its style — no extra ring overlay. */}
                         {nodeVariant === "next" ? (
+                          <View style={styles.journeyNextPillWrap}>
+                            <Animated.View
+                              pointerEvents="none"
+                              style={[styles.journeyNextHalo, { opacity: journeyNextPulse }]}
+                            />
                           <Pressable
                               disabled={!story.unlocked}
                               onPress={() => openJourneyStory(story)}
@@ -8941,10 +9005,16 @@ export function MobileLibraryShell(args: {
                                 ) : null}
                               </View>
                             </Pressable>
+                          </View>
                         ) : (
                           <Pressable
-                            disabled={!story.unlocked}
-                            onPress={() => openJourneyStory(story)}
+                            onPress={() => {
+                              if (!story.unlocked) {
+                                showLockedHint();
+                                return;
+                              }
+                              openJourneyStory(story);
+                            }}
                             accessibilityRole="button"
                             accessibilityLabel={`qa-journey-story-${story.id}`}
                             testID={`qa-journey-story-${story.id}`}
@@ -9630,43 +9700,40 @@ export function MobileLibraryShell(args: {
         {content}
       </ScrollView>
 
-      {activeGamificationCelebration ? (
+      {/* Gamification daily-quest toast removed: it surfaced across
+          unrelated screens (Journey, Library, …) when the gamification
+          payload happened to refresh, well after the user had earned
+          the quest, and the "Daily quest complete · Claimed" copy read
+          like a prompt instead of a confirmation. The underlying
+          GamificationSummary still drives the Home stats pill and the
+          journey header chips. */}
+
+      {openingStoryId ? <ReaderSkeleton /> : null}
+
+      {lockedStoryHint ? (
         <Animated.View
-          pointerEvents="box-none"
+          pointerEvents="none"
           style={[
-            styles.celebrationToast,
+            styles.lockedHintToast,
             {
-              opacity: celebrationAnim.interpolate({
-                inputRange: [0, 1],
-                outputRange: [0, 1],
-              }),
+              opacity: lockedHintAnim,
               transform: [
                 {
-                  translateY: celebrationAnim.interpolate({
+                  translateY: lockedHintAnim.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [-40, 0],
+                    outputRange: [-20, 0],
                   }),
                 },
               ],
             },
           ]}
         >
-          <CelebrationBurst progress={celebrationAnim} />
-          <View style={styles.celebrationToastContent}>
-            <View style={styles.celebrationToastCopy}>
-              <Feather name="star" size={16} color="#8ef0c6" />
-              <Text style={styles.celebrationToastTitle}>{activeGamificationCelebration.title}</Text>
-            </View>
-            <Pressable
-              onPress={() => {
-                void dismissGamificationCelebration(activeGamificationCelebration.id);
-              }}
-              hitSlop={12}
-            >
-              <Feather name="x" size={16} color="#9cb0c9" />
-            </Pressable>
+          <View style={styles.lockedHintIcon}>
+            <Feather name="lock" size={14} color="#0c1626" />
           </View>
-          <Text style={styles.celebrationToastBody}>{activeGamificationCelebration.cta}</Text>
+          <Text style={styles.lockedHintText} numberOfLines={2}>
+            {lockedStoryHint}
+          </Text>
         </Animated.View>
       ) : null}
 
@@ -11393,14 +11460,66 @@ const styles = StyleSheet.create({
   },
   journeyNodePillNext: {
     backgroundColor: "rgba(125, 211, 252, 0.16)",
-    borderColor: "rgba(125, 211, 252, 0.55)",
-    // Single soft cyan glow — replaces the multi-layer NextActionGlow
-    // ring that was making the next node look noisy.
+    borderColor: "rgba(125, 211, 252, 0.6)",
+  },
+  // Wrap that hosts the breathing halo + the actual pill. Keeps the
+  // halo behind the pill via z-stacking (halo is absolute, pill is the
+  // sibling that sits on top by document order).
+  journeyNextPillWrap: {
+    position: "relative",
+  },
+  journeyNextHalo: {
+    position: "absolute",
+    top: -10,
+    left: -10,
+    right: -10,
+    bottom: -10,
+    borderRadius: 28,
+    backgroundColor: tokenColor.cyan,
+    // Soft outward shadow on the halo itself so it bleeds into the
+    // dark page bg. Combined with the looped opacity it reads as a
+    // gentle pulse instead of a hard ring.
     shadowColor: tokenColor.cyan,
     shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.45,
-    shadowRadius: 14,
-    elevation: 4,
+    shadowOpacity: 0.6,
+    shadowRadius: 18,
+    elevation: 5,
+  },
+  // Toast for the "tap on a locked story" hint. Pinned near the top
+  // (below the strip) so it doesn't fight with the bottom tab bar.
+  lockedHintToast: {
+    position: "absolute",
+    top: 90,
+    left: 24,
+    right: 24,
+    zIndex: 30,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    borderRadius: 16,
+    backgroundColor: "#f5f7fb",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.28,
+    shadowRadius: 16,
+    elevation: 8,
+  },
+  lockedHintIcon: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: tokenColor.gold,
+  },
+  lockedHintText: {
+    flex: 1,
+    color: "#0c1626",
+    fontSize: 13,
+    fontWeight: "800",
+    lineHeight: 17,
   },
   journeyNodePillCompleted: {
     backgroundColor: "rgba(190, 242, 100, 0.08)",

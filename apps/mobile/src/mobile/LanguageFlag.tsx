@@ -41,23 +41,45 @@ export function LanguageFlag({
   size?: number;
 }) {
   const spec = language ? SPECS[language] : undefined;
-  const containerStyle = {
+  // Outer ring: dark navy with a thin white edge so the flag looks
+  // like a coin / avatar instead of a bare clipped circle. The actual
+  // flag artwork lives inside, smaller, so the bands aren't bleeding
+  // off the circumference. ~80% of the diameter for the artwork keeps
+  // the bands readable while leaving a clean rim.
+  const inner = Math.round(size * 0.84);
+  const ringStyle = {
     width: size,
     height: size,
     borderRadius: size / 2,
+    backgroundColor: "#0c1626",
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.22)",
+    alignItems: "center" as const,
+    justifyContent: "center" as const,
+  };
+  const innerCircleStyle = {
+    width: inner,
+    height: inner,
+    borderRadius: inner / 2,
     overflow: "hidden" as const,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.18)",
     backgroundColor: "#314e7a",
   };
 
+  function wrap(content: React.ReactNode) {
+    return (
+      <View style={ringStyle}>
+        <View style={innerCircleStyle}>{content}</View>
+      </View>
+    );
+  }
+
   if (!spec) {
-    return <View style={containerStyle} />;
+    return wrap(null);
   }
 
   if (spec.kind === "vBands") {
-    return (
-      <View style={[containerStyle, styles.row]}>
+    return wrap(
+      <View style={[StyleSheet.absoluteFill, styles.row]}>
         {spec.colors.map((color, i) => (
           <View
             key={`${color}-${i}`}
@@ -69,8 +91,8 @@ export function LanguageFlag({
   }
 
   if (spec.kind === "hBands") {
-    return (
-      <View style={containerStyle}>
+    return wrap(
+      <View style={StyleSheet.absoluteFill}>
         {spec.colors.map((color, i) => (
           <View
             key={`${color}-${i}`}
@@ -82,13 +104,13 @@ export function LanguageFlag({
   }
 
   if (spec.kind === "japan") {
-    return (
-      <View style={[containerStyle, styles.center, { backgroundColor: "#FFFFFF" }]}>
+    return wrap(
+      <View style={[StyleSheet.absoluteFill, styles.center, { backgroundColor: "#FFFFFF" }]}>
         <View
           style={{
-            width: size * 0.6,
-            height: size * 0.6,
-            borderRadius: (size * 0.6) / 2,
+            width: inner * 0.55,
+            height: inner * 0.55,
+            borderRadius: (inner * 0.55) / 2,
             backgroundColor: "#BC002D",
           }}
         />
@@ -99,13 +121,13 @@ export function LanguageFlag({
   if (spec.kind === "china") {
     // Simplified: red field with a single yellow disc (the real flag has
     // 5 stars, not feasible without SVG and probably overkill at 28pt).
-    return (
-      <View style={[containerStyle, styles.center, { backgroundColor: "#DE2910" }]}>
+    return wrap(
+      <View style={[StyleSheet.absoluteFill, styles.center, { backgroundColor: "#DE2910" }]}>
         <View
           style={{
-            width: size * 0.36,
-            height: size * 0.36,
-            borderRadius: (size * 0.36) / 2,
+            width: inner * 0.32,
+            height: inner * 0.32,
+            borderRadius: (inner * 0.32) / 2,
             backgroundColor: "#FFDE00",
           }}
         />
@@ -116,13 +138,13 @@ export function LanguageFlag({
   if (spec.kind === "korea") {
     // Half-blue / half-red disc on white — a stylized nod to Taegukgi
     // without trying to draw the trigrams.
-    return (
-      <View style={[containerStyle, styles.center, { backgroundColor: "#FFFFFF" }]}>
+    return wrap(
+      <View style={[StyleSheet.absoluteFill, styles.center, { backgroundColor: "#FFFFFF" }]}>
         <View
           style={{
-            width: size * 0.66,
-            height: size * 0.66,
-            borderRadius: (size * 0.66) / 2,
+            width: inner * 0.6,
+            height: inner * 0.6,
+            borderRadius: (inner * 0.6) / 2,
             overflow: "hidden",
             flexDirection: "row",
           }}
@@ -137,8 +159,8 @@ export function LanguageFlag({
   if (spec.kind === "us") {
     // Three solid bands in red/white/blue. Doesn't try to draw the canton
     // or 13 stripes — at this size a clean tricolor reads better.
-    return (
-      <View style={containerStyle}>
+    return wrap(
+      <View style={StyleSheet.absoluteFill}>
         <View style={{ flex: 1, backgroundColor: "#B22234" }} />
         <View style={{ flex: 1, backgroundColor: "#FFFFFF" }} />
         <View style={{ flex: 1, backgroundColor: "#3C3B6E" }} />
@@ -146,7 +168,7 @@ export function LanguageFlag({
     );
   }
 
-  return <View style={containerStyle} />;
+  return wrap(null);
 }
 
 const styles = StyleSheet.create({
