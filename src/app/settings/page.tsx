@@ -153,6 +153,30 @@ export default function SettingsPage() {
   const [billingLoading, setBillingLoading] = useState(false);
   const [billingError, setBillingError] = useState("");
   const [settingsProgress, setSettingsProgress] = useState<SettingsProgressPayload | null>(null);
+  // Briefly highlights the Languages section when the user lands on
+  // /settings#languages or /settings#languages?add=1 from the mobile
+  // language switcher's "See all" / "Add language" buttons. Today the
+  // section is a flat toggle grid (no separate "add" modal), so the
+  // highlight tells the user where to act for both deep links.
+  const [languagesHighlighted, setLanguagesHighlighted] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash !== "#languages") return;
+    // Defer to next tick so the section is in the DOM and any preceding
+    // layout work has settled before we measure / scroll.
+    const timer = setTimeout(() => {
+      const node = document.getElementById("languages-section");
+      if (node) {
+        node.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      setLanguagesHighlighted(true);
+    }, 80);
+    const fade = setTimeout(() => setLanguagesHighlighted(false), 2400);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(fade);
+    };
+  }, []);
 
   const plan = (user?.publicMetadata?.plan as Plan) ?? "free";
   const hasPaidPlan = plan === "premium" || plan === "polyglot" || plan === "owner";
@@ -609,7 +633,14 @@ export default function SettingsPage() {
 
       <p className="mb-3 text-xs text-[var(--muted)]">Selected: {selected.length}</p>
 
-      <section>
+      <section
+        id="languages-section"
+        className={`scroll-mt-20 transition-shadow duration-500 rounded-xl ${
+          languagesHighlighted
+            ? "ring-2 ring-[var(--primary)]/50 shadow-[0_0_0_4px_rgba(125,211,252,0.18)]"
+            : ""
+        }`}
+      >
         <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Languages</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {LANGUAGES.map((lang) => {
