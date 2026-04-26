@@ -6267,7 +6267,15 @@ export function MobileLibraryShell(args: {
           fetch effect, after the first render has already painted the
           local-state sections. The flag stays true after the first
           hydrate so subsequent silent refreshes don't redraw it. */}
-      {!didFirstHydrate && isSignedIn ? <HomeSkeleton /> : null}
+      {/* Show the skeleton on first paint regardless of whether the
+          token is already in memory: an anchor-only mount (cold-
+          start before Clerk has minted the JWT) used to slip past
+          this gate because isSignedIn = Boolean(sessionToken) was
+          still false at frame 1, so the user saw an empty Home for
+          a beat before the skeleton kicked in. Using sessionUserId
+          (which is populated by the anchor on mount) covers both
+          cases. */}
+      {!didFirstHydrate && (isSignedIn || Boolean(sessionUserId)) ? <HomeSkeleton /> : null}
 
       {didFirstHydrate && remoteProgress?.gamification ? (
         <View style={styles.section}>

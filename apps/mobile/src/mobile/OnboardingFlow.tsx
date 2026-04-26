@@ -79,16 +79,45 @@ const WHY_OPTIONS: WhyOption[] = [
   { key: "Just for fun", title: "Just for fun", hint: "Brain workout", icon: "smile" },
 ];
 
-const LEVEL_OPTIONS: Array<{
+type LevelOption = {
   key: OnboardingLevel;
   badge: string;
   title: string;
-  hint: string;
-}> = [
+  /** Hint can vary by language (e.g. example greetings); resolved
+   *  at render time by `levelHintFor(option, language)`. */
+  hint: string | ((language: string | null) => string);
+};
+
+// "A few words" sample greetings per language. Falls back to a
+// neutral example when we don't have a recipe so we never show
+// Spanish phrases on a German row, etc.
+const FEW_WORDS_BY_LANGUAGE: Record<string, string> = {
+  Spanish: "Hola, gracias…",
+  French: "Bonjour, merci…",
+  German: "Hallo, danke…",
+  Italian: "Ciao, grazie…",
+  Portuguese: "Olá, obrigado…",
+  Japanese: "こんにちは, ありがとう…",
+  Korean: "안녕하세요, 감사합니다…",
+  Chinese: "你好, 谢谢…",
+  English: "Hi, thanks…",
+};
+
+const LEVEL_OPTIONS: LevelOption[] = [
   { key: "Brand new", badge: "A0", title: "Brand new", hint: "Never studied it" },
-  { key: "A few words", badge: "A1", title: "A few words", hint: "Hola, gracias…" },
+  {
+    key: "A few words",
+    badge: "A1",
+    title: "A few words",
+    hint: (language) =>
+      (language && FEW_WORDS_BY_LANGUAGE[language]) || "Just a handful of phrases",
+  },
   { key: "Some", badge: "B1+", title: "I have some", hint: "I can hold a chat" },
 ];
+
+function levelHintFor(option: LevelOption, language: string | null): string {
+  return typeof option.hint === "function" ? option.hint(language) : option.hint;
+}
 
 const GOAL_OPTIONS: Array<{
   minutes: 5 | 10 | 15 | 30;
@@ -346,7 +375,7 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
                       </View>
                       <View style={styles.levelMeta}>
                         <Text style={styles.levelTitle}>{option.title}</Text>
-                        <Text style={styles.levelHint}>{option.hint}</Text>
+                        <Text style={styles.levelHint}>{levelHintFor(option, language)}</Text>
                       </View>
                       <View
                         style={[
