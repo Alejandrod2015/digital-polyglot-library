@@ -1655,7 +1655,13 @@ export function MobileLibraryShell(args: {
   const [preferencesHint, setPreferencesHint] = useState<string | null>(null);
   const [reminderHint, setReminderHint] = useState<string | null>(null);
   const [customInterestInput, setCustomInterestInput] = useState("");
-  const [loadingRemote, setLoadingRemote] = useState(false);
+  // Initial `true` when we already know there's a session token at
+  // mount — that way the very first paint already shows the skeleton
+  // instead of empty sections waiting for the fetch effect to flip
+  // the flag. Without this the previous loadingRemote=false on frame
+  // 1 produced the "home incompleta → skeleton → home completa"
+  // flicker reported on device.
+  const [loadingRemote, setLoadingRemote] = useState(() => Boolean(sessionToken));
   // Tracks whether the first remote hydrate has completed (success OR
   // failure). The Home skeleton is gated on `!didFirstHydrate` rather
   // than `loadingRemote` so the very first paint shows ONLY the
@@ -1955,12 +1961,17 @@ export function MobileLibraryShell(args: {
         // Genuine signed-out: no skeleton needed either.
         setDidFirstHydrate(true);
       } else {
-        // Anchor-only: we have proof of prior sign-in but no token yet.
-        // Just stop the loading spinner — the useOfflineStatus hook
-        // decides on its own whether to show the offline banner based
-        // on the real OS signal, not on our lack of a token.
+        // Anchor-only: we have proof of prior sign-in but no token
+        // yet. The skeleton stays visible while Clerk catches up and
+        // mints a fresh token — when it does, this effect re-runs
+        // with sessionToken set and goes through the full-hydrate
+        // branch, which is what flips didFirstHydrate=true normally.
+        // If the token never arrives (offline for real), a 4s
+        // fallback timer enables the offline content view so the
+        // user isn't stuck looking at the skeleton forever.
         setLoadingRemote(false);
-        setDidFirstHydrate(true);
+        const fallback = setTimeout(() => setDidFirstHydrate(true), 4000);
+        return () => clearTimeout(fallback);
       }
       return;
     }
@@ -8992,7 +9003,15 @@ export function MobileLibraryShell(args: {
                               style={[styles.journeyNodePill, styles.journeyNodePillNext]}
                             >
                               <View style={[styles.journeyNodePillIcon, styles.journeyNodePillIconNext]}>
-                                <Feather name="play" size={20} color={tokenBg[1]} />
+                                {story.coverUrl ? (
+                                  <ProgressiveImage
+                                    uri={getCoverUrl(story.coverUrl, 128)}
+                                    style={styles.journeyNodePillCoverThumb}
+                                    resizeMode="cover"
+                                  />
+                                ) : (
+                                  <Feather name="play" size={20} color={tokenBg[1]} />
+                                )}
                               </View>
                               <View style={styles.journeyNodePillTextStack}>
                                 <Text style={[styles.journeyNodePillLabel, styles.journeyNodePillLabelNext]}>
@@ -11459,8 +11478,10 @@ const styles = StyleSheet.create({
     maxWidth: 260,
   },
   journeyNodePillNext: {
-    backgroundColor: "rgba(125, 211, 252, 0.16)",
-    borderColor: "rgba(125, 211, 252, 0.6)",
+    // White card so the next-up pill clearly contrasts with the dark
+    // page background; the cyan halo behind it carries the accent.
+    backgroundColor: "#f5f7fb",
+    borderColor: "rgba(255, 255, 255, 0.85)",
   },
   // Wrap that hosts the breathing halo + the actual pill. Keeps the
   // halo behind the pill via z-stacking (halo is absolute, pill is the
@@ -11542,9 +11563,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   journeyNodePillIconNext: {
-    backgroundColor: tokenColor.cyan,
-    borderWidth: 2,
-    borderColor: "rgba(255,255,255,0.9)",
+    backgroundColor: tokenBg[2],
+    borderWidth: 0,
+    overflow: "hidden",
+  },
+  journeyNodePillCoverThumb: {
+    width: 40,
+    height: 40,
+    borderRadius: 999,
   },
   journeyNodePillIconCompleted: {
     backgroundColor: tokenColor.xp,
@@ -11576,6 +11602,9 @@ const styles = StyleSheet.create({
   },
   journeyNodePillLabelNext: {
     color: "#0c1626",
+    // Restore the cyan brand for the START NOW label so the white pill
+    // doesn't read as just a generic action; the colored text + the
+    // looped cyan halo behind the card both signal "this is the one".
   },
   journeyNodePillSub: {
     color: "rgba(255,255,255,0.45)",
