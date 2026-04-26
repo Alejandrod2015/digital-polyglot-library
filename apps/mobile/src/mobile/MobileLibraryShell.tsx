@@ -43,6 +43,7 @@ import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { LanguageFlag } from "./LanguageFlag";
 import { LanguageSwitchSheet, type LanguageSwitchEntry } from "./LanguageSwitchSheet";
+import { OnboardingFlow, type OnboardingPayload } from "./OnboardingFlow";
 import { PracticeCelebration } from "./PracticeCelebration";
 import { PracticeExitConfirm } from "./PracticeExitConfirm";
 import { ReaderSkeleton } from "./ReaderSkeleton";
@@ -1738,6 +1739,12 @@ export function MobileLibraryShell(args: {
   // tap of the flag chip in the journey top strip and replaces the
   // old full-screen "My Languages" hub.
   const [languageSwitchOpen, setLanguageSwitchOpen] = useState(false);
+
+  // Polyglot-only "Test onboarding" trigger from the side menu. When
+  // true the OnboardingFlow renders in test mode (its onComplete is a
+  // no-op that just clears the flag back to false). Lets us verify
+  // the flow without losing the saved survey state.
+  const [forceOnboardingTest, setForceOnboardingTest] = useState(false);
 
   // MOCK DATA — per-language stats while we don't have a backend
   // aggregator. Same source as the web handoff; reviewer should grep
@@ -8888,18 +8895,33 @@ export function MobileLibraryShell(args: {
           {/* Flag + level badge on the left. Tap opens the bottom-
               sheet language switcher (variant B with stats). The
               old full-screen "My Languages" hub is gone — users
-              always land on a journey, switching is a sheet. */}
+              always land on a journey, switching is a sheet.
+
+              We fall back to the first persisted target language
+              so the flag renders the moment the shell mounts,
+              instead of waiting for the auto-select effect to fire
+              after preferences hydrate (which left the chip looking
+              empty + un-tappable on the first paint). hitSlop adds
+              forgiveness around the small chip. */}
           <Pressable
             onPress={() => setLanguageSwitchOpen(true)}
             accessibilityRole="button"
             accessibilityLabel="qa-journey-language-switch"
             testID="qa-journey-language-switch"
-            style={styles.journeyHeaderFlagBadge}
+            hitSlop={12}
+            style={({ pressed }) => [
+              styles.journeyHeaderFlagBadge,
+              pressed ? styles.journeyHeaderFlagBadgePressed : null,
+            ]}
           >
-            <LanguageFlag language={activeJourneyLanguage} size={26} />
+            <LanguageFlag
+              language={activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null}
+              size={34}
+            />
             {activeJourneyLevel ? (
               <Text style={styles.journeyHeaderLevelBadge}>{activeJourneyLevel.title}</Text>
             ) : null}
+            <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
           </Pressable>
 
           {/* Compact gamification stats: streak, level, XP. Replaces
@@ -9839,6 +9861,66 @@ export function MobileLibraryShell(args: {
     return practiceSessionView;
   }
 
+  /**
+   * Persist the onboarding payload from the new OnboardingFlow.
+   * Maps the flow's level enum to the existing journeyPlacementLevel
+   * + preferredLevel fields so downstream views (journey track
+   * generation, etc.) keep working unchanged.
+   */
+  async function commitOnboarding(payload: OnboardingPayload) {
+    const journeyFocus: "Work & Career" | "General" | "Travel & Local Life" | "Culture & Belonging" =
+      payload.whys.includes("Travel")
+        ? "Travel & Local Life"
+        : payload.whys.includes("Work") || payload.whys.includes("School")
+          ? "Work & Career"
+          : payload.whys.includes("Culture") || payload.whys.includes("Family")
+            ? "Culture & Belonging"
+            : "General";
+    const placement =
+      payload.level === "Brand new"
+        ? "A0"
+        : payload.level === "A few words"
+          ? "A1"
+          : "B1";
+    const preferredLevel =
+      payload.level === "Brand new" || payload.level === "A few words"
+        ? "Beginner"
+        : "Intermediate";
+
+    await saveOnboardingPreferences({
+      targetLanguages: [payload.language],
+      interests: payload.whys,
+      preferredLevel,
+      journeyFocus,
+      dailyMinutes: payload.dailyMinutes,
+      remindersEnabled: payload.remindersEnabled,
+      reminderHour: payload.reminderHour,
+      journeyPlacementLevel: placement,
+      onboardingSurveyCompletedAt: new Date().toISOString(),
+    });
+  }
+
+  // Render the dedicated full-screen onboarding when the user hasn't
+  // completed the survey yet — or when a polyglot tester triggered
+  // the flow from the menu. Replaces the old Modal-based survey.
+  const showOnboarding = shouldShowOnboardingSurvey || forceOnboardingTest;
+  if (showOnboarding) {
+    return (
+      <OnboardingFlow
+        userName={sessionName ?? null}
+        testMode={forceOnboardingTest}
+        onComplete={async (payload) => {
+          if (forceOnboardingTest) {
+            setForceOnboardingTest(false);
+            return;
+          }
+          await commitOnboarding(payload);
+        }}
+        onCancel={forceOnboardingTest ? () => setForceOnboardingTest(false) : undefined}
+      />
+    );
+  }
+
   let content = homeView;
   if (activeScreen === "explore") content = exploreView;
   if (activeScreen === "practice") content = practiceView;
@@ -10260,6 +10342,20 @@ export function MobileLibraryShell(args: {
 
                   {(effectivePlan === "free" || effectivePlan === "basic") ? (
                     <MenuLink label="Upgrade" icon="upgrade" onPress={() => void openWebPath("/plans")} tone="accent" />
+                  ) : null}
+
+                  {/* Polyglot-only: replay the onboarding without
+                      losing the saved survey state. Test mode skips
+                      persistence and clears itself on cancel/finish. */}
+                  {effectivePlan === "polyglot" ? (
+                    <MenuLink
+                      label="Test onboarding"
+                      icon="settings"
+                      onPress={() => {
+                        setMenuOpen(false);
+                        setForceOnboardingTest(true);
+                      }}
+                    />
                   ) : null}
 
                   <MenuLink
@@ -11602,8 +11698,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
-    paddingHorizontal: 6,
-    paddingVertical: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+  },
+  journeyHeaderFlagBadgePressed: {
+    backgroundColor: "rgba(255,255,255,0.08)",
   },
   journeyHeaderFlagEmoji: {
     fontSize: 28,
