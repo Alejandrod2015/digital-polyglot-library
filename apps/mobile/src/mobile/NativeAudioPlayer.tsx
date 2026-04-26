@@ -1,6 +1,13 @@
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  type LayoutChangeEvent,
+  PanResponder,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 type Props = {
@@ -84,6 +91,64 @@ export function NativeAudioPlayer({
     if (!playback.durationMillis) return 0;
     return Math.min(1, playback.positionMillis / playback.durationMillis);
   }, [playback.durationMillis, playback.positionMillis]);
+
+  // Scrubbing: while the user is dragging on the progress track we
+  // freeze the visible position to whatever ratio their finger is at,
+  // and only commit a real seek (setPositionAsync) when they let go.
+  // Without this, every progressUpdate from expo-av would yank the
+  // bar back to the playhead while the user is still dragging.
+  const trackWidthRef = useRef(0);
+  const [isScrubbing, setIsScrubbing] = useState(false);
+  const [scrubRatio, setScrubRatio] = useState(0);
+  const durationRef = useRef(0);
+  durationRef.current = playback.durationMillis;
+  const ratioFromX = (x: number): number => {
+    const width = trackWidthRef.current;
+    if (width <= 0) return 0;
+    return Math.max(0, Math.min(1, x / width));
+  };
+  const panResponder = useMemo(
+    () =>
+      PanResponder.create({
+        // Capture both tap and drag.
+        onStartShouldSetPanResponder: () => true,
+        onMoveShouldSetPanResponder: () => true,
+        onPanResponderGrant: (event) => {
+          setIsScrubbing(true);
+          setScrubRatio(ratioFromX(event.nativeEvent.locationX));
+        },
+        onPanResponderMove: (event) => {
+          setScrubRatio(ratioFromX(event.nativeEvent.locationX));
+        },
+        onPanResponderRelease: (event) => {
+          const finalRatio = ratioFromX(event.nativeEvent.locationX);
+          setScrubRatio(finalRatio);
+          const sound = soundRef.current;
+          const duration = durationRef.current;
+          if (sound && duration > 0) {
+            void sound
+              .setPositionAsync(Math.round(finalRatio * duration))
+              .catch(() => undefined)
+              .finally(() => setIsScrubbing(false));
+          } else {
+            setIsScrubbing(false);
+          }
+        },
+        onPanResponderTerminate: () => {
+          // Cancelled by another gesture (rare on iOS): drop the
+          // scrub state without committing a seek.
+          setIsScrubbing(false);
+        },
+      }),
+    []
+  );
+  const displayRatio = isScrubbing ? scrubRatio : progressRatio;
+  const displayPositionMs = isScrubbing
+    ? Math.round(scrubRatio * playback.durationMillis)
+    : playback.positionMillis;
+  const handleTrackLayout = (event: LayoutChangeEvent) => {
+    trackWidthRef.current = event.nativeEvent.layout.width;
+  };
 
   useEffect(() => {
     onProgressChange?.(playback);
@@ -223,10 +288,31 @@ export function NativeAudioPlayer({
   return (
     <View style={[styles.card, variant === "sticky" ? styles.stickyCard : null]}>
       <View style={styles.topTrackRow}>
-        <Text style={styles.timeText}>{formatClock(playback.positionMillis)}</Text>
-        <View style={styles.trackWrapper}>
-          <View style={styles.progressTrack}>
-            <View style={[styles.progressFill, { width: `${progressRatio * 100}%` }]} />
+        <Text style={styles.timeText}>{formatClock(displayPositionMs)}</Text>
+        {/* trackWrapper hosts the gesture; padding around the visible
+            bar gives a fat hit area so the user can grab it without
+            having to land exactly on the 4-pt-tall pill. */}
+        <View
+          style={styles.trackWrapper}
+          onLayout={handleTrackLayout}
+          {...panResponder.panHandlers}
+        >
+          <View style={[styles.progressTrack, isScrubbing ? styles.progressTrackActive : null]}>
+            <View
+              style={[
+                styles.progressFill,
+                { width: `${displayRatio * 100}%` },
+                isScrubbing ? styles.progressFillActive : null,
+              ]}
+            />
+            <View
+              style={[
+                styles.progressThumb,
+                { left: `${displayRatio * 100}%` },
+                isScrubbing ? styles.progressThumbActive : null,
+              ]}
+              pointerEvents="none"
+            />
           </View>
         </View>
         <Text style={styles.timeText}>{formatClock(playback.durationMillis)}</Text>
@@ -340,6 +426,9 @@ const styles = StyleSheet.create({
   },
   trackWrapper: {
     flex: 1,
+    // Vertical padding gives the gesture a generous touch area even
+    // though the visible bar is only 6 pt tall. Spotify-style.
+    paddingVertical: 12,
   },
   disabledTitle: {
     color: "#ffffff",
@@ -377,14 +466,43 @@ const styles = StyleSheet.create({
   },
   progressTrack: {
     height: 6,
-    overflow: "hidden",
     borderRadius: 999,
     backgroundColor: "#203754",
+    position: "relative",
+    // overflow visible so the thumb can extend slightly beyond the
+    // bar edges; the fill clips itself via its own borderRadius.
+  },
+  progressTrackActive: {
+    height: 8,
   },
   progressFill: {
     height: "100%",
     borderRadius: 999,
     backgroundColor: "#f8c15c",
+  },
+  progressFillActive: {
+    backgroundColor: "#ffd58c",
+  },
+  progressThumb: {
+    position: "absolute",
+    top: -5,
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    backgroundColor: "#ffffff",
+    marginLeft: -8,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.35,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  progressThumbActive: {
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    top: -6,
+    marginLeft: -10,
   },
   timeRow: {
     flexDirection: "row",

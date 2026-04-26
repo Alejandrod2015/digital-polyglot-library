@@ -1738,6 +1738,19 @@ export function MobileLibraryShell(args: {
   // immediate even when /api/standalone-stories takes a moment.
   const [openingStoryId, setOpeningStoryId] = useState<string | null>(null);
 
+  // Pre-fetched practice items keyed by story slug. The reader kicks
+  // off the fetch in the background while the user is still reading,
+  // so by the time they tap "Start practice" at the end the data is
+  // already in memory and the transition is instant. Falls back to a
+  // live fetch with a loading indicator if the user is faster than
+  // the network.
+  const practicePrefetchBySlugRef = useRef<Map<string, PracticeFavoriteItem[]>>(new Map());
+  const practicePrefetchInFlightRef = useRef<Set<string>>(new Set());
+  // Visible while a story-practice fetch is in flight after the user
+  // tapped "Start practice" but the prefetch hadn't finished. Drives
+  // a tiny loader on top of the practice session view.
+  const [practiceLaunchLoading, setPracticeLaunchLoading] = useState(false);
+
   // Hint surfaced when the user taps a locked journey story — tells
   // them what they need to finish first instead of the tap silently
   // doing nothing. Auto-dismissed by an effect below.
@@ -3183,6 +3196,10 @@ export function MobileLibraryShell(args: {
     setSelection(selection);
     setMenuOpen(false);
     storyOpenedAtRef.current = Date.now();
+    // Warm up the practice items in the background so that hitting
+    // "Start practice" at the end of the story is instant. The fetch
+    // happens once per slug per session; result lives in a ref.
+    prefetchStoryPracticeItems(selection);
   }
 
   function openBook(book: Book) {
@@ -4250,82 +4267,135 @@ export function MobileLibraryShell(args: {
     setMenuOpen(false);
   }
 
+  /**
+   * Build the URL params for /api/story-practice. Shared between the
+   * background prefetch and the live fetch so the cache key matches.
+   */
+  function buildStoryPracticePath(selection: ReaderSelection): string {
+    const params = new URLSearchParams({ storySlug: selection.story.slug });
+    const hasRealBookSlug =
+      selection.book.slug &&
+      selection.book.slug !== "standalone-stories" &&
+      !selection.book.slug.startsWith("generated-book-");
+    if (hasRealBookSlug) {
+      params.set("bookSlug", selection.book.slug);
+    }
+    return `/api/story-practice?${params.toString()}`;
+  }
+
+  /**
+   * Background fetch kicked off when the reader opens. Stores the
+   * resulting items so `openStoryPractice` is instant when the user
+   * taps the end-of-story prompt. Idempotent: a second call for the
+   * same slug while the first is still in flight is a no-op.
+   */
+  function prefetchStoryPracticeItems(selection: ReaderSelection) {
+    if (!sessionToken) return;
+    const slug = selection.story.slug;
+    if (!slug) return;
+    if (practicePrefetchBySlugRef.current.has(slug)) return;
+    if (practicePrefetchInFlightRef.current.has(slug)) return;
+    practicePrefetchInFlightRef.current.add(slug);
+    void apiFetch<{ items: PracticeFavoriteItem[] }>({
+      baseUrl: mobileConfig.apiBaseUrl,
+      path: buildStoryPracticePath(selection),
+      token: sessionToken,
+    })
+      .then((payload) => {
+        const items = Array.isArray(payload.items) ? payload.items : [];
+        practicePrefetchBySlugRef.current.set(slug, items);
+      })
+      .catch(() => {
+        // Swallow — openStoryPractice will retry with a live fetch and
+        // surface the error there if it still fails.
+      })
+      .finally(() => {
+        practicePrefetchInFlightRef.current.delete(slug);
+      });
+  }
+
+  /**
+   * Apply a loaded set of practice items to the practice-session
+   * state. Pulled out of openStoryPractice so the prefetch path and
+   * the live-fetch path share the exact same setter sequence.
+   */
+  function commitStoryPracticeItems(selection: ReaderSelection, items: PracticeFavoriteItem[]) {
+    const exercises = buildPracticeExercisesFromItems(items, "context", false, onboardingPracticePrefs);
+    if (exercises.length === 0) {
+      setPracticeLoadError("This story does not have practice items yet.");
+      setActiveScreen("practice");
+      setSelection(null);
+      return;
+    }
+
+    getOptionalSpeechModule()?.stop();
+    setSpeakingPracticePromptId(null);
+    setPracticeSeedItems(items);
+    setPracticeLaunchContext({
+      source: "story",
+      storySlug: selection.story.slug,
+      bookSlug: selection.book.slug ?? null,
+      storyTitle: selection.story.title,
+    });
+    setPracticeReturnSelection(selection);
+    setPracticePreviousScreen(activeScreen);
+    setPracticeLoadError(null);
+    setActivePracticeMode("context");
+    setPracticeExercises(exercises);
+    setPracticeIndex(0);
+    setPracticeScore(0);
+    setPracticeSelectedOption(null);
+    setPracticeRevealed(false);
+    setPracticeComplete(false);
+    setPracticeLastResult(null);
+    setPracticeSessionStreak(0);
+    setPracticeReviewScores({});
+    setPracticeCheckpointToken(null);
+    setPracticeCheckpointResponses({});
+    setPracticeCheckpointSaveState("idle");
+    setPracticeJourneyReviewMeta(null);
+    setActiveMatchWord(null);
+    setMatchedWords([]);
+    setSelection(null);
+    setActiveScreen("practice");
+  }
+
   async function openStoryPractice(selection: ReaderSelection) {
     if (!sessionToken) {
       onRequestSignIn?.();
       return;
     }
 
+    // Fast path: items already in cache from the reader's prefetch.
+    const cached = practicePrefetchBySlugRef.current.get(selection.story.slug);
+    if (cached) {
+      commitStoryPracticeItems(selection, cached);
+      return;
+    }
+
+    // Slow path: user beat the prefetch. Switch to the practice tab
+    // immediately with a loading indicator so the reader doesn't sit
+    // visible while the network request resolves.
+    setPracticeLaunchLoading(true);
+    setActivePracticeMode("context");
+    setActiveScreen("practice");
+    setSelection(null);
+
     try {
-      const params = new URLSearchParams({
-        storySlug: selection.story.slug,
-      });
-
-      // Only send bookSlug for REAL curated books. The synthesized
-      // "standalone-stories" book (used for Sanity standalones + Prisma
-      // journey stories) and "generated-book-*" (user-created stories) are
-      // not in the hard-coded `books` catalog on the server, so sending them
-      // as bookSlug makes the server 404 before it reaches the standalone/
-      // journey fallbacks. Omitting the param lets it resolve correctly.
-      const hasRealBookSlug =
-        selection.book.slug &&
-        selection.book.slug !== "standalone-stories" &&
-        !selection.book.slug.startsWith("generated-book-");
-      if (hasRealBookSlug) {
-        params.set("bookSlug", selection.book.slug);
-      }
-
       const payload = await apiFetch<{ items: PracticeFavoriteItem[] }>({
         baseUrl: mobileConfig.apiBaseUrl,
-        path: `/api/story-practice?${params.toString()}`,
+        path: buildStoryPracticePath(selection),
         token: sessionToken,
       });
-
       const items = Array.isArray(payload.items) ? payload.items : [];
-      const exercises = buildPracticeExercisesFromItems(items, "context", false, onboardingPracticePrefs);
-      if (exercises.length === 0) {
-        setPracticeLoadError("This story does not have practice items yet.");
-        setActiveScreen("practice");
-        setSelection(null);
-        return;
-      }
-
-      getOptionalSpeechModule()?.stop();
-      setSpeakingPracticePromptId(null);
-      setPracticeSeedItems(items);
-      setPracticeLaunchContext({
-        source: "story",
-        storySlug: selection.story.slug,
-        bookSlug: selection.book.slug ?? null,
-        storyTitle: selection.story.title,
-      });
-      setPracticeReturnSelection(selection);
-      // Remember the screen we were on (usually "journey" when coming from
-      // a topic detail). Used by closePracticeSession to restore the right
-      // tab under the reader so the next back-tap lands on topic detail.
-      setPracticePreviousScreen(activeScreen);
-      setPracticeLoadError(null);
-      setActivePracticeMode("context");
-      setPracticeExercises(exercises);
-      setPracticeIndex(0);
-      setPracticeScore(0);
-      setPracticeSelectedOption(null);
-      setPracticeRevealed(false);
-      setPracticeComplete(false);
-      setPracticeLastResult(null);
-      setPracticeSessionStreak(0);
-      setPracticeReviewScores({});
-      setPracticeCheckpointToken(null);
-      setPracticeCheckpointResponses({});
-      setPracticeCheckpointSaveState("idle");
-      setPracticeJourneyReviewMeta(null);
-      setActiveMatchWord(null);
-      setMatchedWords([]);
-      setSelection(null);
-      setActiveScreen("practice");
+      practicePrefetchBySlugRef.current.set(selection.story.slug, items);
+      setPracticeLaunchLoading(false);
+      commitStoryPracticeItems(selection, items);
     } catch (error) {
+      setPracticeLaunchLoading(false);
       setPracticeSeedItems(null);
       setPracticeLoadError(error instanceof Error ? error.message : "Could not load story practice.");
+      setActivePracticeMode(null);
       setActiveScreen("practice");
       setSelection(null);
     }
@@ -6750,7 +6820,11 @@ export function MobileLibraryShell(args: {
             </View>
           </View>
 
-          {practiceComplete ? (
+          {practiceLaunchLoading ? (
+            <View style={styles.practiceLaunchLoaderCard}>
+              <PulseDots label="Preparing your practice…" />
+            </View>
+          ) : practiceComplete ? (
             <Animated.View
               style={[
                 styles.practiceResultCard,
@@ -9068,25 +9142,11 @@ export function MobileLibraryShell(args: {
                             </View>
                           </Pressable>
                         )}
-
-                        {story.unlocked ? (
-                          <Pressable
-                            onPress={() => isOfflineReady
-                              ? void removeStoryFromOffline({ id: story.id })
-                              : void downloadJourneyStoryOffline(story)
-                            }
-                            disabled={isDownloading}
-                            hitSlop={10}
-                            style={styles.journeyPathDownloadBadge}
-                            accessibilityLabel={isOfflineReady ? "Remove offline" : "Download for offline"}
-                          >
-                            <Feather
-                              name={isDownloading ? "loader" : isOfflineReady ? "check-circle" : "download-cloud"}
-                              size={14}
-                              color={isOfflineReady ? tokenColor.xp : "#9fb5d0"}
-                            />
-                          </Pressable>
-                        ) : null}
+                        {/* Per-node download badge removed — the
+                            offline action is available inside the
+                            reader (bookmark / cloud icons in the
+                            top bar) so the path can stay a clean,
+                            uncluttered Duolingo-style scroll. */}
                       </View>
                     );
                   })}
@@ -13628,6 +13688,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 14,
     paddingHorizontal: 12,
+  },
+  practiceLaunchLoaderCard: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 24,
+    gap: 12,
   },
   practicePerfectRing: {
     width: 92,
