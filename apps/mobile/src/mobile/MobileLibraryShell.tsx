@@ -42,6 +42,7 @@ import { NextActionGlow } from "./NextActionGlow";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { LanguageFlag } from "./LanguageFlag";
+import { LanguageSwitchSheet, type LanguageSwitchEntry } from "./LanguageSwitchSheet";
 import { PracticeCelebration } from "./PracticeCelebration";
 import { PracticeExitConfirm } from "./PracticeExitConfirm";
 import { ReaderSkeleton } from "./ReaderSkeleton";
@@ -1733,6 +1734,83 @@ export function MobileLibraryShell(args: {
   // in so the transition feels deliberate instead of an instant swap.
   const practiceExerciseOpacity = useRef(new Animated.Value(1)).current;
   const practiceExerciseTranslate = useRef(new Animated.Value(0)).current;
+  // Bottom sheet state for the new "Switch language" flow. Opens on
+  // tap of the flag chip in the journey top strip and replaces the
+  // old full-screen "My Languages" hub.
+  const [languageSwitchOpen, setLanguageSwitchOpen] = useState(false);
+
+  // MOCK DATA — per-language stats while we don't have a backend
+  // aggregator. Same source as the web handoff; reviewer should grep
+  // "MOCK_LANG_STATS" to find and remove in one diff once stats land.
+  const MOCK_LANG_STATS: Record<string, { streak: number; xpTotal: number; progress: number }> = {
+    German: { streak: 7, xpTotal: 1240, progress: 42 },
+    Spanish: { streak: 21, xpTotal: 8450, progress: 78 },
+    French: { streak: 0, xpTotal: 120, progress: 8 },
+    Japanese: { streak: 3, xpTotal: 560, progress: 18 },
+    Italian: { streak: 0, xpTotal: 0, progress: 0 },
+    Portuguese: { streak: 0, xpTotal: 0, progress: 0 },
+    English: { streak: 0, xpTotal: 0, progress: 0 },
+    Korean: { streak: 0, xpTotal: 0, progress: 0 },
+    Chinese: { streak: 0, xpTotal: 0, progress: 0 },
+  };
+  // Mapping our coarse preferredLevel (Beginner / Intermediate /
+  // Advanced) to a CEFR-ish pill string. Today this is global, so the
+  // pill is the same for every row — visual approximation, mirrored
+  // from the web variant B.
+  function cefrFromPreferredLevel(value?: string | null): string | null {
+    if (!value) return null;
+    const key = value.trim().toLowerCase();
+    if (key === "beginner") return "A1";
+    if (key === "intermediate") return "B1";
+    if (key === "advanced") return "C1";
+    return null;
+  }
+  const languageSwitchEntries: LanguageSwitchEntry[] = preferences.targetLanguages.map((name, index) => {
+    const isActive = name === (activeJourneyLanguage ?? preferences.targetLanguages[0]);
+    const stats = MOCK_LANG_STATS[name] ?? { streak: 0, xpTotal: 0, progress: 0 };
+    return {
+      name,
+      variant: isActive ? preferences.preferredVariant : null,
+      variantLabel: isActive ? formatVariantLabel(preferences.preferredVariant) : null,
+      level: cefrFromPreferredLevel(preferences.preferredLevel),
+      active: isActive,
+      streak: stats.streak,
+      xpTotal: stats.xpTotal,
+      progress: stats.progress,
+    };
+  });
+
+  async function handleLanguageSwitch(targetName: string) {
+    if (!sessionToken) return;
+    if (activeJourneyLanguage === targetName) {
+      setLanguageSwitchOpen(false);
+      return;
+    }
+    try {
+      // Reorder client-side first so the journey UI flips immediately;
+      // the server write happens in the background and overwrites with
+      // the canonical normalized list when it returns.
+      setActiveJourneyLanguage(targetName);
+      void loadJourneyForLanguage(targetName);
+
+      const nextOrder = [
+        targetName,
+        ...preferences.targetLanguages.filter((n) => n !== targetName),
+      ];
+      await apiFetch({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/user/preferences",
+        token: sessionToken,
+        method: "POST",
+        body: { targetLanguages: nextOrder },
+      });
+    } catch (err) {
+      console.warn("[language-switch] failed to persist new order", err);
+    } finally {
+      setLanguageSwitchOpen(false);
+    }
+  }
+
   // Story ID currently being fetched in the background after a tap.
   // Drives the full-screen ReaderSkeleton so the user sees something
   // immediate even when /api/standalone-stories takes a moment.
@@ -8757,24 +8835,44 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  const showJourneyHub = !activeJourneyLanguage;
+  // Always start the Journey scroll at the top when the user lands
+  // there. Without this, switching tabs or coming back from a story
+  // can leave the page scrolled mid-path (or a few px down from the
+  // old auto-scroll-to-next behavior). Forces y=0 once per visit.
+  useEffect(() => {
+    if (activeScreen !== "journey") return;
+    // Defer one frame so layout has flushed before we scroll.
+    requestAnimationFrame(() => {
+      shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+    });
+  }, [activeScreen]);
+
+  // Auto-select the first target language when the user lands in
+  // Journey for the first time. Replaces the old "My Languages" full-
+  // screen hub: the user is always inside a journey, switching is a
+  // bottom-sheet action via the flag chip.
+  useEffect(() => {
+    if (activeJourneyLanguage) return;
+    if (!sessionToken) return;
+    const first = preferences.targetLanguages[0];
+    if (!first) return;
+    setActiveJourneyLanguage(first);
+    void loadJourneyForLanguage(first);
+    // Intentionally narrow deps: we only want this to fire when the
+    // user's target list arrives or changes meaningfully — not on
+    // every loadJourneyForLanguage identity bump.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeJourneyLanguage, preferences.targetLanguages, sessionToken]);
+  // The hub is gone — kept as a const for the few places below that
+  // still branch on it, but it's always false now.
+  const showJourneyHub = false;
 
   const journeyView = (
     <>
       {/* Compact Duolingo-style strip: language flag + progress + menu.
           Replaces the old stacked Journey eyebrow + title + All-languages
           pill + insights bar, which ate ~280 pt before the path started. */}
-      {showJourneyHub ? (
-        <View style={[styles.hero, styles.journeyHero]}>
-          <View style={styles.heroHeaderRow}>
-            <View style={[styles.heroTextBlock, styles.journeyHeroTextBlock]}>
-              <Text style={styles.sectionEyebrow}>Journey</Text>
-              <Text style={styles.journeyHeroTitle}>My Languages</Text>
-            </View>
-            <MenuTrigger onPress={() => setMenuOpen(true)} />
-          </View>
-        </View>
-      ) : journeyDetailTopicId && activeJourneyTopic ? (
+      {journeyDetailTopicId && activeJourneyTopic ? (
         <View style={[styles.hero, styles.journeyHero]}>
           <View style={styles.heroHeaderRow}>
             <View style={[styles.heroTextBlock, styles.journeyHeroTextBlock]}>
@@ -8787,25 +8885,12 @@ export function MobileLibraryShell(args: {
         </View>
       ) : (
         <View style={styles.journeyTopStrip}>
-          {/* Flag + level badge on the left. Tap opens the hub when the
-              user has multiple languages, or the variant picker when
-              the active language has multiple variants. Replaces the
-              old "My languages ∨" pill + progress line. */}
+          {/* Flag + level badge on the left. Tap opens the bottom-
+              sheet language switcher (variant B with stats). The
+              old full-screen "My Languages" hub is gone — users
+              always land on a journey, switching is a sheet. */}
           <Pressable
-            onPress={() => {
-              if (remoteJourney && remoteJourney.tracks.length >= 2) {
-                setJourneyVariantPickerOpen(true);
-                setSelectedJourneyTrackId(null);
-                setSelectedJourneyLevelId(null);
-                setSelectedJourneyTopicId(null);
-              } else {
-                setActiveJourneyLanguage(null);
-                setJourneyDetailTopicId(null);
-                setSelectedJourneyLevelId(null);
-                setSelectedJourneyTopicId(null);
-                setSelectedJourneyTrackId(null);
-              }
-            }}
+            onPress={() => setLanguageSwitchOpen(true)}
             accessibilityRole="button"
             accessibilityLabel="qa-journey-language-switch"
             testID="qa-journey-language-switch"
@@ -8847,19 +8932,10 @@ export function MobileLibraryShell(args: {
         </View>
       )}
 
-      {showJourneyHub ? (
-        <View style={styles.section}>
-          <JourneyLanguageHub
-            languages={preferences.targetLanguages}
-            insightsByLanguage={journeyInsightsByLanguage}
-            onSelectLanguage={(lang) => {
-              setActiveJourneyLanguage(lang);
-              void loadJourneyForLanguage(lang);
-            }}
-            onOpenSettings={() => setActiveScreen("settings")}
-          />
-        </View>
-      ) : null}
+      {/* The full-screen "My Languages" hub was removed. Switching
+          languages happens via the LanguageSwitchSheet bottom sheet
+          mounted at the shell root, opened by tapping the flag chip
+          in the top strip. */}
 
       {!showJourneyHub && journeyVariantPickerOpen && activeJourneyLanguage ? (
         <View style={styles.section}>
@@ -9024,33 +9100,16 @@ export function MobileLibraryShell(args: {
                           ? "locked"
                           : "step";
                     const pillLabel =
-                      nodeVariant === "next" ? "START NOW" : `STEP ${storyIdx + 1}`;
+                      nodeVariant === "next" ? "START NOW" : `STORY ${storyIdx + 1}`;
 
                     return (
                       <View
                         key={story.id}
-                        ref={isNextAction ? journeyNextNodeRef : undefined}
-                        onLayout={
-                          isNextAction
-                            ? () => {
-                                if (journeyAutoScrolledRef.current === story.id) return;
-                                if (!journeyNextNodeRef.current || !shellScrollRef.current) return;
-                                const scrollHandle = findNodeHandle(shellScrollRef.current);
-                                if (scrollHandle == null) return;
-                                journeyNextNodeRef.current.measureLayout(
-                                  scrollHandle,
-                                  (_x, y) => {
-                                    shellScrollRef.current?.scrollTo({
-                                      y: Math.max(0, y - 140),
-                                      animated: true,
-                                    });
-                                    journeyAutoScrolledRef.current = story.id;
-                                  },
-                                  () => undefined
-                                );
-                              }
-                            : undefined
-                        }
+                        // Auto-scroll-to-next-node was removed: it
+                        // landed on the next pill but left the page
+                        // visibly off-the-top, which read as a bug
+                        // ("doesn't start from the top"). The user's
+                        // current position is now always row 0.
                         style={[
                           styles.journeyPathNodeRow,
                           alignRight ? styles.journeyPathNodeRowRight : styles.journeyPathNodeRowLeft,
@@ -9126,7 +9185,54 @@ export function MobileLibraryShell(args: {
                                 nodeVariant === "step" ? styles.journeyNodePillIconStep : null,
                               ]}
                             >
-                              {nodeVariant === "completed" ? (
+                              {/* Cover thumbnail (dimmed) for every
+                                  non-next state, so the path reads
+                                  visually like a stack of stories
+                                  rather than abstract numbers. The
+                                  next pill uses a fully opaque
+                                  thumbnail; this one is at low alpha
+                                  so it clearly reads as "not the
+                                  one to tap right now". A small
+                                  status badge (check / lock / step
+                                  number) sits as a sibling so the
+                                  thumb's overflow:hidden doesn't
+                                  clip it. */}
+                              {story.coverUrl ? (
+                                <>
+                                  <View style={styles.journeyNodePillThumbWrap}>
+                                    <ProgressiveImage
+                                      uri={getCoverUrl(story.coverUrl, 128)}
+                                      style={[
+                                        styles.journeyNodePillCoverThumb,
+                                        nodeVariant === "completed"
+                                          ? styles.journeyNodePillCoverThumbCompleted
+                                          : styles.journeyNodePillCoverThumbDim,
+                                      ]}
+                                      resizeMode="cover"
+                                    />
+                                  </View>
+                                  <View
+                                    style={[
+                                      styles.journeyNodePillThumbBadge,
+                                      nodeVariant === "completed"
+                                        ? styles.journeyNodePillThumbBadgeCompleted
+                                        : nodeVariant === "locked"
+                                          ? styles.journeyNodePillThumbBadgeLocked
+                                          : styles.journeyNodePillThumbBadgeStep,
+                                    ]}
+                                  >
+                                    {nodeVariant === "completed" ? (
+                                      <Feather name="check" size={11} color={tokenBg[1]} />
+                                    ) : nodeVariant === "locked" ? (
+                                      <Feather name="lock" size={10} color="#cdd9ec" />
+                                    ) : (
+                                      <Text style={styles.journeyNodePillThumbBadgeNumber}>
+                                        {storyIdx + 1}
+                                      </Text>
+                                    )}
+                                  </View>
+                                </>
+                              ) : nodeVariant === "completed" ? (
                                 <Feather name="check" size={18} color={tokenBg[1]} />
                               ) : nodeVariant === "locked" ? (
                                 <Feather name="lock" size={15} color="#7a8aa5" />
@@ -9788,6 +9894,21 @@ export function MobileLibraryShell(args: {
           journey header chips. */}
 
       {openingStoryId ? <ReaderSkeleton /> : null}
+
+      <LanguageSwitchSheet
+        open={languageSwitchOpen}
+        onClose={() => setLanguageSwitchOpen(false)}
+        languages={languageSwitchEntries}
+        onSelect={handleLanguageSwitch}
+        onAddLanguage={() => {
+          setLanguageSwitchOpen(false);
+          setActiveScreen("settings");
+        }}
+        onSeeAll={() => {
+          setLanguageSwitchOpen(false);
+          setActiveScreen("settings");
+        }}
+      />
 
       {lockedStoryHint ? (
         <Animated.View
@@ -11631,6 +11752,51 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 999,
+  },
+  journeyNodePillCoverThumbDim: {
+    // Dimmed cover for inactive states — keeps the visual context
+    // ("this is a story, not just a step") but mutes it so the
+    // active "next" pill reads as obviously the one to tap.
+    opacity: 0.42,
+  },
+  journeyNodePillCoverThumbCompleted: {
+    // Completed stories aren't dimmed as hard — they read as "done"
+    // (still the user's). The lime check badge in the corner is
+    // what marks the state.
+    opacity: 0.7,
+  },
+  journeyNodePillThumbWrap: {
+    width: 40,
+    height: 40,
+    borderRadius: 999,
+    overflow: "hidden",
+    position: "relative",
+  },
+  journeyNodePillThumbBadge: {
+    position: "absolute",
+    bottom: -2,
+    right: -2,
+    width: 18,
+    height: 18,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 2,
+    borderColor: tokenBg[1],
+  },
+  journeyNodePillThumbBadgeCompleted: {
+    backgroundColor: tokenColor.xp,
+  },
+  journeyNodePillThumbBadgeLocked: {
+    backgroundColor: tokenBg[3],
+  },
+  journeyNodePillThumbBadgeStep: {
+    backgroundColor: tokenBg[3],
+  },
+  journeyNodePillThumbBadgeNumber: {
+    color: "#dbe9ff",
+    fontSize: 10,
+    fontWeight: "900",
   },
   journeyNodePillIconCompleted: {
     backgroundColor: tokenColor.xp,
