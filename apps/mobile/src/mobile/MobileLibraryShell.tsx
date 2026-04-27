@@ -1793,8 +1793,29 @@ export function MobileLibraryShell(args: {
     if (key === "advanced") return "C1";
     return null;
   }
-  const languageSwitchEntries: LanguageSwitchEntry[] = preferences.targetLanguages.map((name, index) => {
-    const isActive = name === (activeJourneyLanguage ?? preferences.targetLanguages[0]);
+  // When the user has no target languages picked yet (legacy onboarding
+  // or a fresh account that skipped the survey), the sheet shows every
+  // supported language so they can start a journey from there. Tapping
+  // one writes it as the first targetLanguages entry the same way an
+  // active switch does.
+  const ALL_SUPPORTED_LANGUAGES = [
+    "Spanish",
+    "French",
+    "German",
+    "Italian",
+    "Portuguese",
+    "Japanese",
+    "Korean",
+    "Chinese",
+    "English",
+  ];
+  const hasUserLanguages = preferences.targetLanguages.length > 0;
+  const sourceLanguageNames = hasUserLanguages
+    ? preferences.targetLanguages
+    : ALL_SUPPORTED_LANGUAGES;
+  const languageSwitchEntries: LanguageSwitchEntry[] = sourceLanguageNames.map((name) => {
+    const isActive =
+      hasUserLanguages && name === (activeJourneyLanguage ?? preferences.targetLanguages[0]);
     const stats = MOCK_LANG_STATS[name] ?? { streak: 0, xpTotal: 0, progress: 0 };
     return {
       name,
@@ -1802,9 +1823,9 @@ export function MobileLibraryShell(args: {
       variantLabel: isActive ? formatVariantLabel(preferences.preferredVariant) : null,
       level: cefrFromPreferredLevel(preferences.preferredLevel),
       active: isActive,
-      streak: stats.streak,
-      xpTotal: stats.xpTotal,
-      progress: stats.progress,
+      streak: hasUserLanguages ? stats.streak : 0,
+      xpTotal: hasUserLanguages ? stats.xpTotal : 0,
+      progress: hasUserLanguages ? stats.progress : 0,
     };
   });
 
@@ -8933,17 +8954,7 @@ export function MobileLibraryShell(args: {
               empty + un-tappable on the first paint). hitSlop adds
               forgiveness around the small chip. */}
           <Pressable
-            onPress={() => {
-              // No language picked yet → push the user back into the
-              // onboarding survey. Opening the sheet with an empty
-              // list reads as "the chip doesn't work" and there's no
-              // way to add a language from there anyway.
-              if (preferences.targetLanguages.length === 0) {
-                setOnboardingOverride("proper");
-                return;
-              }
-              setLanguageSwitchOpen(true);
-            }}
+            onPress={() => setLanguageSwitchOpen(true)}
             accessibilityRole="button"
             accessibilityLabel="qa-journey-language-switch"
             testID="qa-journey-language-switch"
@@ -9927,7 +9938,7 @@ export function MobileLibraryShell(args: {
         : "Intermediate";
 
     await saveOnboardingPreferences({
-      targetLanguages: [payload.language],
+      targetLanguages: payload.languages,
       interests: payload.whys,
       preferredLevel,
       journeyFocus,

@@ -31,7 +31,9 @@ import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
  */
 
 export type OnboardingPayload = {
-  language: string;
+  /** All languages the user picked. First one becomes the active
+   *  journey; the rest are saved so the language switcher shows them. */
+  languages: string[];
   whys: string[];
   level: OnboardingLevel;
   dailyMinutes: 5 | 10 | 15 | 30;
@@ -139,7 +141,10 @@ function formatHour(hour: number): string {
 
 export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Props) {
   const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [language, setLanguage] = useState<string | null>(null);
+  const [languages, setLanguages] = useState<string[]>([]);
+  // Convenience shortcut for places that only care about the
+  // first/active language (greeting examples, summary copy, etc.).
+  const language = languages[0] ?? null;
   const [whys, setWhys] = useState<Set<string>>(new Set());
   const [level, setLevel] = useState<OnboardingLevel | null>(null);
   const [dailyMinutes, setDailyMinutes] = useState<5 | 10 | 15 | 30 | null>(15);
@@ -169,10 +174,10 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
   }, [step, slide, fade]);
 
   const canContinue = useMemo(() => {
-    if (step === 1) return Boolean(language);
+    if (step === 1) return languages.length > 0;
     if (step === 2) return whys.size > 0 && level !== null;
     return dailyMinutes !== null;
-  }, [step, language, whys, level, dailyMinutes]);
+  }, [step, languages, whys, level, dailyMinutes]);
 
   function handleContinue() {
     if (!canContinue) return;
@@ -192,11 +197,11 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
   }
 
   async function submit() {
-    if (!language || !level || !dailyMinutes) return;
+    if (languages.length === 0 || !level || !dailyMinutes) return;
     setSubmitting(true);
     try {
       await onComplete({
-        language,
+        languages,
         whys: Array.from(whys),
         level,
         dailyMinutes,
@@ -243,18 +248,27 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
       >
         {step === 1 ? (
           <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
-            <Text style={styles.eyebrow}>STEP 1 · LANGUAGE</Text>
+            <Text style={styles.eyebrow}>STEP 1 · LANGUAGES</Text>
             <Text style={styles.title}>What do you want to learn?</Text>
             <Text style={styles.subtitle}>
-              Pick a journey to start. You can add more languages later.
+              Pick one or more. The first you pick becomes your starting journey
+              — the rest will be ready in your language switcher.
             </Text>
             <View style={styles.languageList}>
               {LANGUAGE_OPTIONS.map((option) => {
-                const selected = language === option.name;
+                const selectedIndex = languages.indexOf(option.name);
+                const selected = selectedIndex >= 0;
+                const order = selected ? selectedIndex + 1 : null;
                 return (
                   <Pressable
                     key={option.name}
-                    onPress={() => setLanguage(option.name)}
+                    onPress={() => {
+                      setLanguages((prev) =>
+                        prev.includes(option.name)
+                          ? prev.filter((n) => n !== option.name)
+                          : [...prev, option.name]
+                      );
+                    }}
                     style={[
                       styles.languageRow,
                       selected ? styles.languageRowSelected : null,
@@ -269,17 +283,26 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
                             <Text style={styles.variantPillText}>{option.variant}</Text>
                           </View>
                         ) : null}
+                        {order === 1 && languages.length > 1 ? (
+                          <View style={styles.primaryPill}>
+                            <Text style={styles.primaryPillText}>PRIMARY</Text>
+                          </View>
+                        ) : null}
                       </View>
                       <Text style={styles.languageHint}>{option.learners}</Text>
                     </View>
                     <View
                       style={[
-                        styles.radio,
-                        selected ? styles.radioSelected : null,
+                        styles.checkbox,
+                        selected ? styles.checkboxSelected : null,
                       ]}
                     >
                       {selected ? (
-                        <Feather name="check" size={14} color={tokenBg[1]} />
+                        order && languages.length > 1 ? (
+                          <Text style={styles.checkboxOrder}>{order}</Text>
+                        ) : (
+                          <Feather name="check" size={14} color={tokenBg[1]} />
+                        )
                       ) : null}
                     </View>
                   </Pressable>
@@ -647,6 +670,39 @@ const styles = StyleSheet.create({
   radioSelected: {
     backgroundColor: tokenColor.xp,
     borderColor: tokenColor.xp,
+  },
+  // Multi-select checkbox: rounded square, fills with the selection
+  // order so the user can see which language they picked first
+  // (= the starting journey).
+  checkbox: {
+    width: 26,
+    height: 26,
+    borderRadius: 8,
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.2)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  checkboxSelected: {
+    backgroundColor: tokenColor.xp,
+    borderColor: tokenColor.xp,
+  },
+  checkboxOrder: {
+    color: tokenBg[1],
+    fontSize: 13,
+    fontWeight: "900",
+  },
+  primaryPill: {
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 4,
+    backgroundColor: tokenColor.xp,
+  },
+  primaryPillText: {
+    color: tokenBg[1],
+    fontSize: 9,
+    fontWeight: "900",
+    letterSpacing: 1.2,
   },
   // ─── Step 2 ───────────────────────────────────────────────────────
   subSection: {

@@ -142,11 +142,30 @@ export function LanguageFlag({
   }
 
   if (spec.kind === "us") {
+    // Stars-and-stripes approximation: 7 alternating red/white
+    // stripes + a blue canton in the top-left. Without this the
+    // tricolor red/white/blue read identically to the Dutch flag.
     return (
       <View style={containerStyle}>
-        <View style={{ flex: 1, backgroundColor: "#B22234" }} />
-        <View style={{ flex: 1, backgroundColor: "#FFFFFF" }} />
-        <View style={{ flex: 1, backgroundColor: "#3C3B6E" }} />
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+          <View
+            key={i}
+            style={{
+              flex: 1,
+              backgroundColor: i % 2 === 0 ? "#B22234" : "#FFFFFF",
+            }}
+          />
+        ))}
+        <View
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "44%",
+            height: "54%",
+            backgroundColor: "#3C3B6E",
+          }}
+        />
       </View>
     );
   }
