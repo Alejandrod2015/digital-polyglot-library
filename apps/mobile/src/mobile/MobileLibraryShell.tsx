@@ -1671,6 +1671,20 @@ export function MobileLibraryShell(args: {
   // before the fetch effect runs and flips loadingRemote. Subsequent
   // refreshes don't re-show the skeleton because this flag stays true.
   const [didFirstHydrate, setDidFirstHydrate] = useState(false);
+
+  // Hard cap so the Home skeleton never lingers. If the 6 parallel
+  // hydrate fetches haven't all settled by 3 s we flip the flag
+  // anyway: most users should see whatever data did arrive, plus
+  // empty states for slow endpoints, instead of the skeleton for
+  // ~5 s while the slowest request finishes. The fetches keep
+  // running and update the UI when they land. Cleared on every
+  // sessionToken change so it only fires for the current session.
+  useEffect(() => {
+    if (didFirstHydrate) return;
+    if (!sessionToken) return;
+    const timer = setTimeout(() => setDidFirstHydrate(true), 3000);
+    return () => clearTimeout(timer);
+  }, [didFirstHydrate, sessionToken]);
   const [remoteError, setRemoteError] = useState<string | null>(null);
   // Real "am I offline" signal from the OS via NetInfo, debounced so brief
   // blips (cold-start before the first event, Wi-Fi handoff, captive
@@ -1740,11 +1754,18 @@ export function MobileLibraryShell(args: {
   // old full-screen "My Languages" hub.
   const [languageSwitchOpen, setLanguageSwitchOpen] = useState(false);
 
-  // Polyglot-only "Test onboarding" trigger from the side menu. When
-  // true the OnboardingFlow renders in test mode (its onComplete is a
-  // no-op that just clears the flag back to false). Lets us verify
-  // the flow without losing the saved survey state.
-  const [forceOnboardingTest, setForceOnboardingTest] = useState(false);
+  // Two reasons to force the onboarding to show up after the gate:
+  //   - "test"   → polyglot menu entry. Selections are NOT persisted;
+  //                cancelling/finishing just clears the flag.
+  //   - "proper" → the user landed in the shell with no language
+  //                configured (likely completed the legacy survey
+  //                without picking one), and tapped the flag chip.
+  //                Selections persist normally.
+  const [onboardingOverride, setOnboardingOverride] = useState<
+    "test" | "proper" | null
+  >(null);
+  const forceOnboardingTest = onboardingOverride === "test";
+  const forceOnboardingProper = onboardingOverride === "proper";
 
   // MOCK DATA — per-language stats while we don't have a backend
   // aggregator. Same source as the web handoff; reviewer should grep
@@ -8912,7 +8933,17 @@ export function MobileLibraryShell(args: {
               empty + un-tappable on the first paint). hitSlop adds
               forgiveness around the small chip. */}
           <Pressable
-            onPress={() => setLanguageSwitchOpen(true)}
+            onPress={() => {
+              // No language picked yet → push the user back into the
+              // onboarding survey. Opening the sheet with an empty
+              // list reads as "the chip doesn't work" and there's no
+              // way to add a language from there anyway.
+              if (preferences.targetLanguages.length === 0) {
+                setOnboardingOverride("proper");
+                return;
+              }
+              setLanguageSwitchOpen(true);
+            }}
             accessibilityRole="button"
             accessibilityLabel="qa-journey-language-switch"
             testID="qa-journey-language-switch"
@@ -9909,9 +9940,11 @@ export function MobileLibraryShell(args: {
   }
 
   // Render the dedicated full-screen onboarding when the user hasn't
-  // completed the survey yet — or when a polyglot tester triggered
-  // the flow from the menu. Replaces the old Modal-based survey.
-  const showOnboarding = shouldShowOnboardingSurvey || forceOnboardingTest;
+  // completed the survey yet — or when an override (polyglot test or
+  // a tap on the empty flag chip) asked for it. Replaces the old
+  // Modal-based survey.
+  const showOnboarding =
+    shouldShowOnboardingSurvey || forceOnboardingTest || forceOnboardingProper;
   if (showOnboarding) {
     return (
       <OnboardingFlow
@@ -9919,12 +9952,20 @@ export function MobileLibraryShell(args: {
         testMode={forceOnboardingTest}
         onComplete={async (payload) => {
           if (forceOnboardingTest) {
-            setForceOnboardingTest(false);
+            // Test runs throw away their selections.
+            setOnboardingOverride(null);
             return;
           }
           await commitOnboarding(payload);
+          // Real run (first-time gate or "proper" override): clear
+          // any override so the shell renders normally afterwards.
+          setOnboardingOverride(null);
         }}
-        onCancel={forceOnboardingTest ? () => setForceOnboardingTest(false) : undefined}
+        onCancel={
+          forceOnboardingTest || forceOnboardingProper
+            ? () => setOnboardingOverride(null)
+            : undefined
+        }
       />
     );
   }
@@ -10361,7 +10402,7 @@ export function MobileLibraryShell(args: {
                       icon="settings"
                       onPress={() => {
                         setMenuOpen(false);
-                        setForceOnboardingTest(true);
+                        setOnboardingOverride("test");
                       }}
                     />
                   ) : null}
