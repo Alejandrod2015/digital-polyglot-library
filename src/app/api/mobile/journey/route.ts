@@ -168,7 +168,20 @@ export async function GET(req: NextRequest): Promise<Response> {
                 language: story.language ?? null,
                 region: story.region ?? null,
                 unlocked: topicUnlocked && storyIndex < unlockedStoryCount,
-                completed: completedStoryKeys.has(story.progressKey),
+                // Mark stories below the user's placement level as
+                // completed so the global "next" pointer (the first
+                // unlocked && !completed story) jumps straight to
+                // the placement level instead of forcing them to
+                // re-read everything underneath. They stay unlocked
+                // and re-readable; they just no longer count as
+                // pending. Without this, taking a B1 placement test
+                // still left "next = first A1 story" and every A2
+                // / B1 story past it showed up as `unlocked: true`
+                // — which is what made the locked-story popup not
+                // trigger on stories the user hadn't earned yet.
+                completed:
+                  completedStoryKeys.has(story.progressKey) ||
+                  (placementLevelIndex >= 0 && levelIndex < placementLevelIndex),
               })),
             };
           }),
