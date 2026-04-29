@@ -159,30 +159,36 @@ export async function GET(req: NextRequest): Promise<Response> {
               }, 0),
               hasDueReview: topic.stories.some((story) => dueReviewProgressKeySet.has(story.progressKey)),
               unlockedStoryCount,
-              stories: topic.stories.map((story, storyIndex) => ({
-                id: story.id,
-                storySlug: story.storySlug,
-                title: story.title,
-                coverUrl: story.coverUrl ?? null,
-                progressKey: story.progressKey,
-                language: story.language ?? null,
-                region: story.region ?? null,
-                unlocked: topicUnlocked && storyIndex < unlockedStoryCount,
-                // Mark stories below the user's placement level as
-                // completed so the global "next" pointer (the first
-                // unlocked && !completed story) jumps straight to
-                // the placement level instead of forcing them to
-                // re-read everything underneath. They stay unlocked
-                // and re-readable; they just no longer count as
-                // pending. Without this, taking a B1 placement test
-                // still left "next = first A1 story" and every A2
-                // / B1 story past it showed up as `unlocked: true`
-                // — which is what made the locked-story popup not
-                // trigger on stories the user hadn't earned yet.
-                completed:
-                  completedStoryKeys.has(story.progressKey) ||
-                  (placementLevelIndex >= 0 && levelIndex < placementLevelIndex),
-              })),
+              stories: topic.stories.map((story, storyIndex) => {
+                // Three-state progression model:
+                //   - audioFinished: user listened to the audio in
+                //     full (or scrubbed past 95%). Story is "read"
+                //     but exercises are still pending.
+                //   - completed: audio finished AND the topic's
+                //     checkpoint is passed. Earns the green check.
+                //   - skipped: story belongs to a level below the
+                //     user's placement level. Stays unlocked and
+                //     re-readable but doesn't count as pending —
+                //     used so the "next" pointer can jump straight
+                //     to the placement level without falsely
+                //     awarding the green check on unread stories.
+                const audioFinished = completedStoryKeys.has(story.progressKey);
+                const checkpointPassedForTopic = passedCheckpointKeys.has(checkpointKey);
+                return {
+                  id: story.id,
+                  storySlug: story.storySlug,
+                  title: story.title,
+                  coverUrl: story.coverUrl ?? null,
+                  progressKey: story.progressKey,
+                  language: story.language ?? null,
+                  region: story.region ?? null,
+                  unlocked: topicUnlocked && storyIndex < unlockedStoryCount,
+                  audioFinished,
+                  completed: audioFinished && checkpointPassedForTopic,
+                  skipped:
+                    placementLevelIndex >= 0 && levelIndex < placementLevelIndex,
+                };
+              }),
             };
           }),
         };
