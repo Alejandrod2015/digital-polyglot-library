@@ -14,29 +14,40 @@ import { LanguageFlag } from "./LanguageFlag";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
 /**
- * Native bottom sheet that mirrors the web LanguageSwitcher (variant
- * B). Triggered from the journey top-strip flag tap and replaces the
- * old "My Languages" full-screen hub.
+ * Native bottom sheet showing the user's *journeys* (one row per
+ * (language, focus) tuple). Triggered from the journey top-strip
+ * flag tap. Tapping a row swaps the active journey; tapping the
+ * single footer CTA opens the full-screen "Your journeys" panel
+ * which is where new journeys are created.
  *
- * Visual parity notes vs. the web version:
- *   - Per-language progress is rendered as a solid color ring around
- *     the flag (lime when active, sky when inactive) instead of an
- *     SVG arc segment — react-native-svg isn't installed here and
- *     adding it would force a rebuild fingerprint change. The flag
- *     itself uses the in-house <LanguageFlag/> coin component.
- *   - Drag-to-dismiss and Escape are implemented via PanResponder
- *     (no swipe gesture lib needed) and a hardware-back equivalent
- *     isn't relevant on iOS-first.
+ * Visual parity notes vs. the web concept:
+ *   - The flag is the language coin; a small focus icon overlays it
+ *     so two journeys for the same language are visually distinct.
+ *   - Drag-to-dismiss is implemented via PanResponder (no swipe
+ *     gesture lib needed).
  *
- * The sheet is dumb: it receives the language list + per-language
- * stats from the shell and just calls `onSelect` / `onAdd` /
- * `onSeeAll`. All Clerk metadata writes happen in the shell.
+ * The sheet is dumb: it receives the journey list + per-journey
+ * stats from the shell and just calls `onSelect` / `onAdd`. All
+ * persistence happens in the shell.
  */
 
 export type LanguageSwitchEntry = {
-  name: string;
+  /** Stable journey id from `journeys.ts`. The shell resolves taps
+   *  back to the full Journey via this. */
+  id: string;
+  /** Canonical language name — drives the flag coin. */
+  language: string;
+  /** Variant code (us/uk for English) so the flag picks the right
+   *  regional rendering. null when the language has one flag. */
   variant: string | null;
+  /** Pretty variant label shown next to the language name (LATAM,
+   *  US, UK, BRAZIL, …). null when variant is null. */
   variantLabel: string | null;
+  /** Pre-formatted display name: "Spanish · Travelers" /
+   *  "English · Everyday" / etc. Computed in the shell so the sheet
+   *  doesn't have to care about the focus → label mapping. */
+  displayName: string;
+  /** Coarse level shown after the streak/XP block (e.g. "B1"). */
   level: string | null;
   active: boolean;
   streak: number;
@@ -48,22 +59,43 @@ export type LanguageSwitchEntry = {
 type Props = {
   open: boolean;
   onClose: () => void;
-  languages: LanguageSwitchEntry[];
-  onSelect: (name: string) => void | Promise<void>;
-  onAddLanguage: () => void;
-  onSeeAll: () => void;
+  /** All journeys the user has, ordered as the shell wants them
+   *  rendered (today: active first, then by recency). */
+  journeys: LanguageSwitchEntry[];
+  /** Activate a journey by its id. */
+  onSelect: (id: string) => void | Promise<void>;
+  /** Open the full-screen "Your journeys" panel where the user can
+   *  add a new (language, focus) combination. */
+  onAddJourney: () => void;
 };
+
+// How far below the screen the sheet starts. Generous enough that
+// the spring entry feels like a proper slide-up on tall devices.
+// Hoisted above the component so we can use it as the initial value
+// for the translateY Animated.Value (see "3-tap bug" note below).
+const SHEET_TRAVEL = 720;
 
 export function LanguageSwitchSheet({
   open,
   onClose,
-  languages,
+  journeys,
   onSelect,
-  onAddLanguage,
-  onSeeAll,
+  onAddJourney,
 }: Props) {
   const backdrop = useRef(new Animated.Value(0)).current;
-  const translateY = useRef(new Animated.Value(0)).current;
+  // IMPORTANT: initial value MUST be SHEET_TRAVEL (off-screen), not 0.
+  // Earlier this was `new Animated.Value(0)` paired with a separate
+  // useEffect that called `translateY.setValue(SHEET_TRAVEL)` on mount.
+  // Effect ordering meant the reset effect ran *after* the open-
+  // animation effect when `mounted` flipped to true — it cancelled the
+  // spring mid-flight, leaving the sheet at 720 (off-screen) even
+  // though `open === true` and the backdrop had faded in. The user
+  // saw a dim backdrop and no sheet, tapped the backdrop (=close),
+  // tapped the flag again, and only the *third* tap looked like it
+  // worked. Initializing the value off-screen removes the need for
+  // the reset effect entirely and the open animation runs cleanly on
+  // the first tap.
+  const translateY = useRef(new Animated.Value(SHEET_TRAVEL)).current;
   const dragY = useRef(new Animated.Value(0)).current;
   const [mounted, setMounted] = useState(open);
   const [switchingTo, setSwitchingTo] = useState<string | null>(null);
@@ -109,12 +141,6 @@ export function LanguageSwitchSheet({
     }
   }, [open, mounted, backdrop, translateY, dragY]);
 
-  // Reset translate to off-screen on first mount so the entry spring
-  // has a starting point.
-  useEffect(() => {
-    if (mounted) translateY.setValue(SHEET_TRAVEL);
-  }, [mounted, translateY]);
-
   // Drag-to-dismiss. We only respond on downward drag — upward drag
   // just elastics back. Release > 80 pt or velocity > 800 closes.
   const panResponder = useMemo(
@@ -151,22 +177,22 @@ export function LanguageSwitchSheet({
 
   if (!mounted) return null;
 
-  async function handleSelect(name: string) {
+  async function handleSelect(id: string) {
     if (switchingTo) return;
-    const target = languages.find((l) => l.name === name);
+    const target = journeys.find((j) => j.id === id);
     if (target?.active) {
       onClose();
       return;
     }
-    setSwitchingTo(name);
+    setSwitchingTo(id);
     try {
-      await onSelect(name);
+      await onSelect(id);
     } finally {
       setSwitchingTo(null);
     }
   }
 
-  const headerCount = languages.length;
+  const headerCount = journeys.length;
   const headerTitle =
     headerCount <= 1
       ? "Your journey"
@@ -198,7 +224,7 @@ export function LanguageSwitchSheet({
         </View>
 
         <View style={styles.headerBlock}>
-          <Text style={styles.headerEyebrow}>SWITCH LANGUAGE</Text>
+          <Text style={styles.headerEyebrow}>SWITCH JOURNEY</Text>
           <Text style={styles.headerTitle}>{headerTitle}</Text>
         </View>
 
@@ -207,17 +233,17 @@ export function LanguageSwitchSheet({
           showsVerticalScrollIndicator={false}
           bounces={false}
         >
-          {languages.map((lang) => {
-            const isSwitching = switchingTo === lang.name;
+          {journeys.map((journey) => {
+            const isSwitching = switchingTo === journey.id;
             const disabled = Boolean(switchingTo) && !isSwitching;
             return (
               <Pressable
-                key={lang.name}
+                key={journey.id}
                 disabled={disabled || isSwitching}
-                onPress={() => void handleSelect(lang.name)}
+                onPress={() => void handleSelect(journey.id)}
                 style={[
                   styles.row,
-                  lang.active ? styles.rowActive : styles.rowInactive,
+                  journey.active ? styles.rowActive : styles.rowInactive,
                   disabled ? styles.rowDisabled : null,
                 ]}
               >
@@ -225,23 +251,23 @@ export function LanguageSwitchSheet({
                   style={[
                     styles.flagRing,
                     {
-                      borderColor: lang.active
-                        ? "rgba(190, 242, 100, 0.85)"
+                      borderColor: journey.active
+                        ? "rgba(252, 211, 77, 0.85)"
                         : "rgba(125, 211, 252, 0.55)",
                     },
                   ]}
                 >
-                  <LanguageFlag language={lang.name} size={36} />
+                  <LanguageFlag language={journey.language} variant={journey.variant} size={36} />
                 </View>
 
                 <View style={styles.rowMeta}>
                   <View style={styles.rowTitleLine}>
                     <Text style={styles.rowName} numberOfLines={1}>
-                      {lang.name}
+                      {journey.displayName}
                     </Text>
-                    {lang.variantLabel ? (
+                    {journey.variantLabel ? (
                       <Text style={styles.rowVariant} numberOfLines={1}>
-                        · {lang.variantLabel}
+                        · {journey.variantLabel}
                       </Text>
                     ) : null}
                   </View>
@@ -251,31 +277,31 @@ export function LanguageSwitchSheet({
                       <Feather
                         name="zap"
                         size={11}
-                        color={lang.streak > 0 ? tokenColor.streak : "rgba(255,255,255,0.45)"}
+                        color={journey.streak > 0 ? tokenColor.streak : "rgba(255,255,255,0.45)"}
                       />
                       <Text
                         style={[
                           styles.rowStatText,
                           {
                             color:
-                              lang.streak > 0 ? tokenColor.streak : "rgba(255,255,255,0.45)",
+                              journey.streak > 0 ? tokenColor.streak : "rgba(255,255,255,0.45)",
                           },
                         ]}
                       >
-                        {lang.streak}
+                        {journey.streak}
                       </Text>
                     </View>
                     <View style={styles.rowStat}>
                       <Feather name="star" size={11} color={tokenColor.xp} />
                       <Text style={[styles.rowStatText, { color: tokenColor.xp }]}>
-                        {lang.xpTotal >= 1000
-                          ? `${(lang.xpTotal / 1000).toFixed(1)}k`
-                          : lang.xpTotal}
+                        {journey.xpTotal >= 1000
+                          ? `${(journey.xpTotal / 1000).toFixed(1)}k`
+                          : journey.xpTotal}
                       </Text>
                     </View>
-                    {lang.level ? (
+                    {journey.level ? (
                       <View style={styles.rowLevelPill}>
-                        <Text style={styles.rowLevelPillText}>{lang.level}</Text>
+                        <Text style={styles.rowLevelPillText}>{journey.level}</Text>
                       </View>
                     ) : null}
                   </View>
@@ -285,7 +311,7 @@ export function LanguageSwitchSheet({
                   <View style={styles.rowSpinner}>
                     <Feather name="loader" size={16} color="rgba(255,255,255,0.7)" />
                   </View>
-                ) : lang.active ? (
+                ) : journey.active ? (
                   <View style={styles.activePill}>
                     <Text style={styles.activePillText}>ACTIVE</Text>
                   </View>
@@ -298,26 +324,20 @@ export function LanguageSwitchSheet({
         </ScrollView>
 
         <View style={styles.footer}>
+          {/* Single CTA — opens the full-screen "Your journeys"
+              panel where the user manages all journeys + creates new
+              ones. The sheet's "See all" button is gone because the
+              panel itself is the see-all view. */}
           <Pressable
             onPress={() => {
               if (switchingTo) return;
-              onSeeAll();
+              onAddJourney();
             }}
-            style={[styles.footerButton, styles.footerButtonNeutral]}
-          >
-            <Feather name="settings" size={13} color="rgba(255,255,255,0.8)" />
-            <Text style={styles.footerButtonText}>See all</Text>
-          </Pressable>
-          <Pressable
-            onPress={() => {
-              if (switchingTo) return;
-              onAddLanguage();
-            }}
-            style={[styles.footerButton, styles.footerButtonAccent]}
+            style={[styles.footerButton, styles.footerButtonAccent, styles.footerButtonFull]}
           >
             <Feather name="plus" size={13} color={tokenColor.cyan} />
             <Text style={[styles.footerButtonText, { color: tokenColor.cyan }]}>
-              Add language
+              Add journey
             </Text>
           </Pressable>
         </View>
@@ -325,10 +345,6 @@ export function LanguageSwitchSheet({
     </View>
   );
 }
-
-// How far below the screen the sheet starts. Generous enough that
-// the spring entry feels like a proper slide-up on tall devices.
-const SHEET_TRAVEL = 720;
 
 const styles = StyleSheet.create({
   fill: {
@@ -400,8 +416,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   rowActive: {
-    backgroundColor: "rgba(190, 242, 100, 0.10)",
-    borderColor: "rgba(190, 242, 100, 0.4)",
+    backgroundColor: "rgba(252, 211, 77, 0.10)",
+    borderColor: "rgba(252, 211, 77, 0.4)",
     borderWidth: 1.5,
   },
   rowInactive: {
@@ -414,7 +430,10 @@ const styles = StyleSheet.create({
   flagRing: {
     width: 46,
     height: 46,
-    borderRadius: 23,
+    // Rounded square (≈22% of size) to match the LanguageFlag coin
+    // shape change. A circular ring around a square flag would look
+    // mismatched after the Duolingo-style update.
+    borderRadius: 11,
     borderWidth: 2.5,
     alignItems: "center",
     justifyContent: "center",
@@ -512,6 +531,12 @@ const styles = StyleSheet.create({
   footerButtonAccent: {
     backgroundColor: "rgba(125, 211, 252, 0.08)",
     borderColor: "rgba(125, 211, 252, 0.28)",
+  },
+  // Wider CTA when it's the only footer button (post-merge of "See
+  // all" + "Add"). Gives the touch target more presence at the bottom
+  // of the sheet without redesigning the whole footer chrome.
+  footerButtonFull: {
+    paddingVertical: 14,
   },
   footerButtonText: {
     color: "rgba(255,255,255,0.8)",

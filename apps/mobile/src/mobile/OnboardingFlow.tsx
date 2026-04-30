@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { LanguageFlag } from "./LanguageFlag";
+import { LevelTestRunner } from "./LevelTestRunner";
+import { type CEFRLevel, hasLevelTest } from "./levelTest";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
 /**
@@ -31,11 +33,27 @@ import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
  */
 
 export type OnboardingPayload = {
-  /** All languages the user picked. First one becomes the active
-   *  journey; the rest are saved so the language switcher shows them. */
+  /** Every (language, variant) tuple the user picked, in order of
+   *  selection. The first one becomes the active journey; the rest
+   *  are persisted as additional journeys on the account. Picking
+   *  Spanish ES + Spanish LATAM creates two distinct journeys with
+   *  the same `language` ("Spanish") but different `variant`
+   *  codes. */
+  selections: Array<{ language: string; variant: string | null }>;
+  /** Deduped list of language NAMES (ignores variants), used to
+   *  populate the legacy server field `targetLanguages`. */
   languages: string[];
+  /** Variant chosen alongside the primary language, when the picker
+   *  exposes more than one regional flag (English: us|uk). null when
+   *  no regional choice was made. Only the primary language's variant
+   *  is captured for the legacy `preferredVariant` server field;
+   *  secondary variants live in `selections`. */
+  primaryVariant: string | null;
   whys: string[];
   level: OnboardingLevel;
+  /** CEFR level from the level test, if the user took it. null when
+   *  they skipped the test. */
+  testedLevel: CEFRLevel | null;
   dailyMinutes: 5 | 10 | 15 | 30;
   remindersEnabled: boolean;
   reminderHour: number | null;
@@ -47,23 +65,60 @@ type Props = {
   /** First name to show in the prompt — falls back to "you" */
   userName?: string | null;
   testMode?: boolean;
+  /** Set of canonical language names ("Spanish", "Korean", …) flagged as
+   *  Próximamente in Studio Planning. Coming-soon rows render a "Próximamente"
+   *  pill and refuse selection. The shell hydrates this from
+   *  /api/mobile/languages — when the fetch fails we treat the set as empty
+   *  and let everything be selectable rather than block onboarding. */
+  comingSoonLanguages?: ReadonlySet<string>;
   onComplete: (payload: OnboardingPayload) => Promise<void> | void;
   onCancel?: () => void;
 };
 
-const LANGUAGE_OPTIONS: Array<{
+type LanguageOption = {
+  /** Unique row key. For most languages this equals `name`. English
+   *  has two rows (us / uk) that share the name "English", so we
+   *  disambiguate with `English|us` and `English|uk`. */
+  key: string;
+  /** Canonical language name persisted to preferences. */
   name: string;
-  variant?: string;
+  /** Display pill on the row. For English this is "US" / "UK"; for
+   *  Spanish/Portuguese it's "LATAM"/"BRAZIL". */
+  variantLabel?: string;
+  /** Lower-case variant code passed to LanguageFlag and stored as
+   *  preferredVariant on commit. Only set when the language has more
+   *  than one regional flag in the picker (today: English us|uk). */
+  variantCode?: string;
   learners: string;
-}> = [
-  { name: "Spanish", variant: "LATAM", learners: "12.4M learners" },
-  { name: "French", learners: "7.1M learners" },
-  { name: "German", learners: "4.8M learners" },
-  { name: "Italian", learners: "3.2M learners" },
-  { name: "Portuguese", variant: "BRAZIL", learners: "2.6M learners" },
-  { name: "Japanese", learners: "5.4M learners" },
-  { name: "Korean", learners: "3.0M learners" },
-  { name: "English", learners: "30M+ learners" },
+};
+
+const LANGUAGE_OPTIONS: LanguageOption[] = [
+  // Spanish: split between Spain (default ES, red-yellow-red) and
+  // LATAM (Colombia flag, yellow-blue-red 2:1:1). Mutex per language
+  // so picking one variant deselects the other. Colombia was chosen
+  // for LATAM because its tricolor doesn't visually clash with any
+  // other flag in our set (vs. Mexico's green-white-red, which is
+  // indistinguishable from Italy at coin scale).
+  { key: "Spanish|es", name: "Spanish", variantLabel: "SPAIN", variantCode: "es", learners: "Castilian Spanish" },
+  { key: "Spanish|latam", name: "Spanish", variantLabel: "LATAM", variantCode: "latam", learners: "12.4M learners" },
+  { key: "French", name: "French", learners: "7.1M learners" },
+  { key: "German", name: "German", learners: "4.8M learners" },
+  { key: "Italian", name: "Italian", learners: "3.2M learners" },
+  // Portuguese: Brazilian (green field + yellow rhombus + blue circle)
+  // is the default, European is the alternative.
+  { key: "Portuguese|br", name: "Portuguese", variantLabel: "BRAZIL", variantCode: "br", learners: "2.6M learners" },
+  { key: "Portuguese|pt", name: "Portuguese", variantLabel: "PORTUGAL", variantCode: "pt", learners: "European Portuguese" },
+  { key: "Japanese", name: "Japanese", learners: "5.4M learners" },
+  { key: "Korean", name: "Korean", learners: "3.0M learners" },
+  // Chinese added in build 68 — was previously only listed in the
+  // Add-journey panel, never in onboarding. Now consistent across
+  // both entry points.
+  { key: "Chinese", name: "Chinese", learners: "Mandarin · 1.1B speakers" },
+  // English ships two regional flags so users can pick the variant
+  // that matches their target audience (US business English vs.
+  // UK / Commonwealth English).
+  { key: "English|us", name: "English", variantLabel: "US", variantCode: "us", learners: "30M+ learners" },
+  { key: "English|uk", name: "English", variantLabel: "UK", variantCode: "uk", learners: "Commonwealth English" },
 ];
 
 type WhyOption = {
@@ -139,14 +194,44 @@ function formatHour(hour: number): string {
   return `${hour.toString().padStart(2, "0")}:00`;
 }
 
-export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Props) {
-  const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [languages, setLanguages] = useState<string[]>([]);
+export function OnboardingFlow({
+  userName,
+  testMode,
+  comingSoonLanguages,
+  onComplete,
+  onCancel,
+}: Props) {
+  // 4-step flow:
+  //   1. Languages
+  //   2. Why / motivations
+  //   3. Daily goal + reminders
+  //   4. Level (with optional level test for accuracy) — last step so
+  //      the test result, when taken, lands right before submit.
+  const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
+  // We track selection by option *key*, not language name, so the two
+  // English rows (English|us / English|uk) can coexist in the catalog
+  // without collapsing to the same selection bucket.
+  const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
+  const selectedOptions = useMemo(
+    () =>
+      selectedKeys
+        .map((key) => LANGUAGE_OPTIONS.find((option) => option.key === key))
+        .filter((option): option is LanguageOption => Boolean(option)),
+    [selectedKeys]
+  );
   // Convenience shortcut for places that only care about the
   // first/active language (greeting examples, summary copy, etc.).
-  const language = languages[0] ?? null;
+  const language = selectedOptions[0]?.name ?? null;
   const [whys, setWhys] = useState<Set<string>>(new Set());
   const [level, setLevel] = useState<OnboardingLevel | null>(null);
+  // CEFR level produced by the level test, if the user took it. null
+  // means they skipped the test (we'll persist the self-reported
+  // `level` mapped to a coarse CEFR equivalent).
+  const [testedLevel, setTestedLevel] = useState<CEFRLevel | null>(null);
+  // Whether the level test runner is currently overlaid on top of
+  // the onboarding flow. The runner is full-screen and self-handles
+  // its lifecycle; we just gate it with this flag.
+  const [levelTestOpen, setLevelTestOpen] = useState(false);
   const [dailyMinutes, setDailyMinutes] = useState<5 | 10 | 15 | 30 | null>(15);
   const [remindersEnabled, setRemindersEnabled] = useState(true);
   const [reminderHour, setReminderHour] = useState<number | null>(19);
@@ -174,15 +259,49 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
   }, [step, slide, fade]);
 
   const canContinue = useMemo(() => {
-    if (step === 1) return languages.length > 0;
-    if (step === 2) return whys.size > 0 && level !== null;
-    return dailyMinutes !== null;
-  }, [step, languages, whys, level, dailyMinutes]);
+    if (step === 1) return selectedKeys.length > 0;
+    if (step === 2) return whys.size > 0;
+    if (step === 3) return dailyMinutes !== null;
+    // Step 4 (level): need a level pick OR a test result.
+    return level !== null || testedLevel !== null;
+  }, [step, selectedKeys, whys, level, testedLevel, dailyMinutes]);
 
-  function handleContinue() {
+  async function handleContinue() {
     if (!canContinue) return;
-    if (step < 3) {
-      setStep(((step + 1) as 1 | 2 | 3));
+    // When the user opts into the daily reminder on step 3, surface
+    // the iOS notification permission popup right after they tap
+    // Continue. iOS only shows the system prompt the FIRST time we
+    // ask, so we couple it to the explicit toggle-on action where
+    // the user has already signaled intent — that gives the best
+    // grant rate. We don't gate navigation on the result; if the
+    // user denies, the toggle stays as their stated preference and
+    // they can re-enable from Settings later. The lazy require
+    // mirrors `notifications/registerPush.ts` so a missing native
+    // module never breaks the onboarding flow.
+    if (step === 3 && remindersEnabled) {
+      try {
+        const Notifications = require("expo-notifications") as
+          | typeof import("expo-notifications")
+          | undefined;
+        if (Notifications) {
+          const current = await Notifications.getPermissionsAsync();
+          // Only call request when the system hasn't already
+          // resolved — re-requesting after a deny is a no-op on iOS
+          // (returns the same denied status without re-prompting),
+          // but skipping the call avoids an unnecessary bridge hop.
+          if (current.status === "undetermined" || current.canAskAgain) {
+            await Notifications.requestPermissionsAsync();
+          }
+        }
+      } catch (err) {
+        console.warn(
+          "[onboarding] notification permission request failed",
+          err
+        );
+      }
+    }
+    if (step < 4) {
+      setStep(((step + 1) as 1 | 2 | 3 | 4));
       return;
     }
     void submit();
@@ -193,17 +312,27 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
       onCancel?.();
       return;
     }
-    setStep(((step - 1) as 1 | 2 | 3));
+    setStep(((step - 1) as 1 | 2 | 3 | 4));
   }
 
   async function submit() {
-    if (languages.length === 0 || !level || !dailyMinutes) return;
+    if (selectedOptions.length === 0 || !dailyMinutes) return;
+    if (!level && !testedLevel) return;
     setSubmitting(true);
     try {
       await onComplete({
-        languages,
+        selections: selectedOptions.map((option) => ({
+          language: option.name,
+          variant: option.variantCode ?? null,
+        })),
+        languages: Array.from(new Set(selectedOptions.map((option) => option.name))),
+        primaryVariant: selectedOptions[0]?.variantCode ?? null,
         whys: Array.from(whys),
-        level,
+        // If the user skipped the test but didn't pick a level either
+        // (shouldn't happen due to canContinue, but defensive), fall
+        // back to "Brand new".
+        level: level ?? "Brand new",
+        testedLevel,
         dailyMinutes,
         remindersEnabled,
         reminderHour: remindersEnabled ? reminderHour : null,
@@ -220,7 +349,7 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
           <Feather name="chevron-left" size={20} color="#f5f7fb" />
         </Pressable>
         <View style={styles.progressTrack}>
-          {[1, 2, 3].map((segment) => (
+          {[1, 2, 3, 4].map((segment) => (
             <View
               key={segment}
               style={[
@@ -230,7 +359,7 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
             />
           ))}
         </View>
-        <Text style={styles.progressLabel}>{step}/3</Text>
+        <Text style={styles.progressLabel}>{step}/4</Text>
       </View>
 
       {testMode ? (
@@ -256,34 +385,52 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
             </Text>
             <View style={styles.languageList}>
               {LANGUAGE_OPTIONS.map((option) => {
-                const selectedIndex = languages.indexOf(option.name);
+                const selectedIndex = selectedKeys.indexOf(option.key);
                 const selected = selectedIndex >= 0;
                 const order = selected ? selectedIndex + 1 : null;
+                const comingSoon = comingSoonLanguages?.has(option.name) ?? false;
                 return (
                   <Pressable
-                    key={option.name}
+                    key={option.key}
+                    disabled={comingSoon}
                     onPress={() => {
-                      setLanguages((prev) =>
-                        prev.includes(option.name)
-                          ? prev.filter((n) => n !== option.name)
-                          : [...prev, option.name]
+                      // Plain toggle — picking a Spanish-LATAM row
+                      // does NOT deselect Spanish-ES, and the same
+                      // for any other language with multiple
+                      // variants (Portuguese BR/PT, English US/UK).
+                      // Each variant is its own journey on the user's
+                      // account.
+                      setSelectedKeys((prev) =>
+                        prev.includes(option.key)
+                          ? prev.filter((k) => k !== option.key)
+                          : [...prev, option.key]
                       );
                     }}
                     style={[
                       styles.languageRow,
                       selected ? styles.languageRowSelected : null,
+                      comingSoon ? styles.languageRowDisabled : null,
                     ]}
                   >
-                    <LanguageFlag language={option.name} size={36} />
+                    <LanguageFlag
+                      language={option.name}
+                      variant={option.variantCode}
+                      size={36}
+                    />
                     <View style={styles.languageMeta}>
                       <View style={styles.languageHeading}>
                         <Text style={styles.languageName}>{option.name}</Text>
-                        {option.variant ? (
+                        {option.variantLabel ? (
                           <View style={styles.variantPill}>
-                            <Text style={styles.variantPillText}>{option.variant}</Text>
+                            <Text style={styles.variantPillText}>{option.variantLabel}</Text>
                           </View>
                         ) : null}
-                        {order === 1 && languages.length > 1 ? (
+                        {comingSoon ? (
+                          <View style={styles.comingSoonPill}>
+                            <Text style={styles.comingSoonPillText}>PRÓXIMAMENTE</Text>
+                          </View>
+                        ) : null}
+                        {!comingSoon && order === 1 && selectedKeys.length > 1 ? (
                           <View style={styles.primaryPill}>
                             <Text style={styles.primaryPillText}>PRIMARY</Text>
                           </View>
@@ -295,10 +442,11 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
                       style={[
                         styles.checkbox,
                         selected ? styles.checkboxSelected : null,
+                        comingSoon ? styles.checkboxComingSoon : null,
                       ]}
                     >
                       {selected ? (
-                        order && languages.length > 1 ? (
+                        order && selectedKeys.length > 1 ? (
                           <Text style={styles.checkboxOrder}>{order}</Text>
                         ) : (
                           <Feather name="check" size={14} color={tokenBg[1]} />
@@ -314,106 +462,47 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
 
         {step === 2 ? (
           <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
-            <Text style={styles.eyebrow}>STEP 2 · ABOUT YOU</Text>
+            <Text style={styles.eyebrow}>STEP 2 · MOTIVATION</Text>
             <Text style={styles.title}>
-              Why {language ?? "this language"}, and where are you?
+              Why {language ?? "this language"}?
             </Text>
-
-            <View style={styles.subSection}>
-              <View style={styles.subSectionHeader}>
-                <View style={styles.subSectionDot}>
-                  <Text style={styles.subSectionDotText}>1</Text>
-                </View>
-                <Text style={styles.subSectionLabel}>What&apos;s pulling you in?</Text>
-              </View>
-              <View style={styles.whyGrid}>
-                {WHY_OPTIONS.map((option) => {
-                  const checked = whys.has(option.key);
-                  return (
-                    <Pressable
-                      key={option.key}
-                      onPress={() => {
-                        setWhys((prev) => {
-                          const next = new Set(prev);
-                          if (next.has(option.key)) next.delete(option.key);
-                          else next.add(option.key);
-                          return next;
-                        });
-                      }}
-                      style={[styles.whyCard, checked ? styles.whyCardSelected : null]}
-                    >
-                      <Feather
-                        name={option.icon}
-                        size={18}
-                        color={checked ? tokenColor.xp : "#9fb5d0"}
-                      />
-                      <Text
-                        style={[
-                          styles.whyCardTitle,
-                          checked ? styles.whyCardTitleSelected : null,
-                        ]}
-                      >
-                        {option.title}
-                      </Text>
-                      <Text style={styles.whyCardHint}>{option.hint}</Text>
-                    </Pressable>
-                  );
-                })}
-              </View>
-            </View>
-
-            <View style={styles.subSection}>
-              <View style={styles.subSectionHeader}>
-                <View style={styles.subSectionDot}>
-                  <Text style={styles.subSectionDotText}>2</Text>
-                </View>
-                <Text style={styles.subSectionLabel}>Where are you starting?</Text>
-              </View>
-              <View style={styles.levelList}>
-                {LEVEL_OPTIONS.map((option) => {
-                  const selected = level === option.key;
-                  return (
-                    <Pressable
-                      key={option.key}
-                      onPress={() => setLevel(option.key)}
+            <Text style={styles.subtitle}>
+              Pick one or more. We&apos;ll tilt your journey toward stories
+              that match what&apos;s pulling you in.
+            </Text>
+            <View style={styles.whyGrid}>
+              {WHY_OPTIONS.map((option) => {
+                const checked = whys.has(option.key);
+                return (
+                  <Pressable
+                    key={option.key}
+                    onPress={() => {
+                      setWhys((prev) => {
+                        const next = new Set(prev);
+                        if (next.has(option.key)) next.delete(option.key);
+                        else next.add(option.key);
+                        return next;
+                      });
+                    }}
+                    style={[styles.whyCard, checked ? styles.whyCardSelected : null]}
+                  >
+                    <Feather
+                      name={option.icon}
+                      size={18}
+                      color={checked ? tokenColor.xp : "#9fb5d0"}
+                    />
+                    <Text
                       style={[
-                        styles.levelRow,
-                        selected ? styles.levelRowSelected : null,
+                        styles.whyCardTitle,
+                        checked ? styles.whyCardTitleSelected : null,
                       ]}
                     >
-                      <View
-                        style={[
-                          styles.levelBadge,
-                          selected ? styles.levelBadgeSelected : null,
-                        ]}
-                      >
-                        <Text
-                          style={[
-                            styles.levelBadgeText,
-                            selected ? styles.levelBadgeTextSelected : null,
-                          ]}
-                        >
-                          {option.badge}
-                        </Text>
-                      </View>
-                      <View style={styles.levelMeta}>
-                        <Text style={styles.levelTitle}>{option.title}</Text>
-                        <Text style={styles.levelHint}>{levelHintFor(option, language)}</Text>
-                      </View>
-                      <View
-                        style={[
-                          styles.radio,
-                          selected ? styles.radioSelected : null,
-                        ]}
-                      >
-                        {selected ? (
-                          <Feather name="check" size={14} color={tokenBg[1]} />
-                        ) : null}
-                      </View>
-                    </Pressable>
-                  );
-                })}
-              </View>
+                      {option.title}
+                    </Text>
+                    <Text style={styles.whyCardHint}>{option.hint}</Text>
+                  </Pressable>
+                );
+              })}
             </View>
           </ScrollView>
         ) : null}
@@ -421,7 +510,7 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
         {step === 3 ? (
           <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
             <Text style={styles.eyebrow}>STEP 3 · COMMIT</Text>
-            <Text style={styles.title}>Set your daily practice goal</Text>
+            <Text style={styles.title}>Daily practice goal</Text>
 
             <View style={styles.goalGrid}>
               {GOAL_OPTIONS.map((option) => {
@@ -491,13 +580,107 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
               ) : null}
             </View>
 
-            <View style={styles.summaryCard}>
-              <Text style={styles.summaryTitle}>You&apos;re ready, {userName ?? "let's go"}</Text>
-              <Text style={styles.summaryBody}>
-                We&apos;ll build your {language ?? "first"} journey around{" "}
-                {whys.size > 0 ? Array.from(whys).slice(0, 2).join(" + ") : "your goals"}.
-              </Text>
+          </ScrollView>
+        ) : null}
+
+        {step === 4 ? (
+          <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+            <Text style={styles.eyebrow}>STEP 4 · LEVEL</Text>
+            <Text style={styles.title}>
+              Where are you starting with {language ?? "this language"}?
+            </Text>
+            <Text style={styles.subtitle}>
+              Pick the closest match. Or take a 1-minute level test for a more
+              accurate placement.
+            </Text>
+
+            <View style={styles.levelList}>
+              {LEVEL_OPTIONS.map((option) => {
+                const selected = level === option.key && !testedLevel;
+                return (
+                  <Pressable
+                    key={option.key}
+                    onPress={() => {
+                      setLevel(option.key);
+                      // Picking a self-reported level after taking the
+                      // test means the user wants the self-pick — clear
+                      // the test result so submit uses the picked level.
+                      setTestedLevel(null);
+                    }}
+                    style={[
+                      styles.levelRow,
+                      selected ? styles.levelRowSelected : null,
+                    ]}
+                  >
+                    <View
+                      style={[
+                        styles.levelBadge,
+                        selected ? styles.levelBadgeSelected : null,
+                      ]}
+                    >
+                      <Text
+                        style={[
+                          styles.levelBadgeText,
+                          selected ? styles.levelBadgeTextSelected : null,
+                        ]}
+                      >
+                        {option.badge}
+                      </Text>
+                    </View>
+                    <View style={styles.levelMeta}>
+                      <Text style={styles.levelTitle}>{option.title}</Text>
+                      <Text style={styles.levelHint}>{levelHintFor(option, language)}</Text>
+                    </View>
+                    <View
+                      style={[
+                        styles.radio,
+                        selected ? styles.radioSelected : null,
+                      ]}
+                    >
+                      {selected ? (
+                        <Feather name="check" size={14} color={tokenBg[1]} />
+                      ) : null}
+                    </View>
+                  </Pressable>
+                );
+              })}
             </View>
+
+            {/* Level test offer — only shown for languages where we
+                have authored test content (Spanish, German). The test
+                runner is a full-screen modal that overlays this flow. */}
+            {language && hasLevelTest(language) ? (
+              <Pressable
+                onPress={() => setLevelTestOpen(true)}
+                style={styles.levelTestCta}
+              >
+                <View style={styles.levelTestCtaIcon}>
+                  <Feather name="zap" size={16} color={tokenColor.gold} />
+                </View>
+                <View style={styles.levelTestCtaText}>
+                  <Text style={styles.levelTestCtaTitle}>
+                    {testedLevel
+                      ? `Tested level: ${testedLevel}`
+                      : "Take the level test"}
+                  </Text>
+                  <Text style={styles.levelTestCtaHint}>
+                    {testedLevel
+                      ? "Tap to retake the test"
+                      : "10 quick questions · ~1 minute"}
+                  </Text>
+                </View>
+                <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.55)" />
+              </Pressable>
+            ) : null}
+
+            {testedLevel ? (
+              <View style={styles.testedLevelCard}>
+                <Feather name="check-circle" size={14} color={tokenColor.xp} />
+                <Text style={styles.testedLevelText}>
+                  We&apos;ll start your journey at {testedLevel}.
+                </Text>
+              </View>
+            ) : null}
           </ScrollView>
         ) : null}
       </Animated.View>
@@ -512,11 +695,61 @@ export function OnboardingFlow({ userName, testMode, onComplete, onCancel }: Pro
           ]}
         >
           <Text style={styles.continueText}>
-            {submitting ? "Saving…" : step < 3 ? "Continue" : "Start journey"}
+            {submitting ? "Saving…" : step < 4 ? "Continue" : "Start journey"}
           </Text>
           <Feather name="chevron-right" size={18} color={tokenBg[1]} />
         </Pressable>
       </View>
+
+      {/* Level test runner — full-screen overlay launched from step 4
+          when the user taps "Take the level test". Self-contained;
+          calls back with a CEFR level which we store as `testedLevel`
+          and surface as the placement when the user submits. */}
+      {language ? (
+        <LevelTestRunner
+          open={levelTestOpen}
+          language={language}
+          variant={selectedOptions[0]?.variantCode ?? null}
+          source="onboarding"
+          onComplete={async (result) => {
+            // The user tapped "Start journey" in the test result —
+            // the expectation is the journey actually starts, not
+            // that we bounce them back to step 4. We submit the
+            // onboarding payload right here with the tested level
+            // baked in, then close the runner. (Earlier this only
+            // stored testedLevel + closed the runner, which left
+            // the user on step 4 wondering why nothing happened.)
+            setTestedLevel(result.level);
+            setLevelTestOpen(false);
+            if (selectedOptions.length === 0 || !dailyMinutes) return;
+            setSubmitting(true);
+            try {
+              await onComplete({
+                selections: selectedOptions.map((option) => ({
+                  language: option.name,
+                  variant: option.variantCode ?? null,
+                })),
+                languages: Array.from(
+                  new Set(selectedOptions.map((option) => option.name))
+                ),
+                primaryVariant: selectedOptions[0]?.variantCode ?? null,
+                whys: Array.from(whys),
+                // Self-reported level is now optional when the test
+                // was taken — if the user never picked one, default
+                // to "Some" since the test showed they have skill.
+                level: level ?? "Some",
+                testedLevel: result.level,
+                dailyMinutes,
+                remindersEnabled,
+                reminderHour: remindersEnabled ? reminderHour : null,
+              });
+            } finally {
+              setSubmitting(false);
+            }
+          }}
+          onCancel={() => setLevelTestOpen(false)}
+        />
+      ) : null}
     </View>
   );
 }
@@ -623,8 +856,8 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.03)",
   },
   languageRowSelected: {
-    borderColor: "rgba(190, 242, 100, 0.5)",
-    backgroundColor: "rgba(190, 242, 100, 0.08)",
+    borderColor: "rgba(252, 211, 77, 0.5)",
+    backgroundColor: "rgba(252, 211, 77, 0.08)",
   },
   languageMeta: {
     flex: 1,
@@ -704,6 +937,28 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     letterSpacing: 1.2,
   },
+  languageRowDisabled: {
+    opacity: 0.45,
+    borderColor: "rgba(255,255,255,0.05)",
+    backgroundColor: "rgba(255,255,255,0.02)",
+  },
+  comingSoonPill: {
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 4,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.18)",
+  },
+  comingSoonPillText: {
+    color: "rgba(255,255,255,0.65)",
+    fontSize: 9,
+    fontWeight: "900",
+    letterSpacing: 1.2,
+  },
+  checkboxComingSoon: {
+    borderColor: "rgba(255,255,255,0.08)",
+  },
   // ─── Step 2 ───────────────────────────────────────────────────────
   subSection: {
     marginTop: 14,
@@ -720,9 +975,9 @@ const styles = StyleSheet.create({
     borderRadius: 11,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(190, 242, 100, 0.16)",
+    backgroundColor: "rgba(252, 211, 77, 0.16)",
     borderWidth: 1,
-    borderColor: "rgba(190, 242, 100, 0.4)",
+    borderColor: "rgba(252, 211, 77, 0.4)",
   },
   subSectionDotText: {
     color: tokenColor.xp,
@@ -750,8 +1005,8 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   whyCardSelected: {
-    borderColor: "rgba(190, 242, 100, 0.5)",
-    backgroundColor: "rgba(190, 242, 100, 0.08)",
+    borderColor: "rgba(252, 211, 77, 0.5)",
+    backgroundColor: "rgba(252, 211, 77, 0.08)",
   },
   whyCardTitle: {
     color: "#ffffff",
@@ -781,8 +1036,8 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.03)",
   },
   levelRowSelected: {
-    borderColor: "rgba(190, 242, 100, 0.5)",
-    backgroundColor: "rgba(190, 242, 100, 0.08)",
+    borderColor: "rgba(252, 211, 77, 0.5)",
+    backgroundColor: "rgba(252, 211, 77, 0.08)",
   },
   levelBadge: {
     width: 44,
@@ -838,8 +1093,8 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   goalCardSelected: {
-    borderColor: "rgba(190, 242, 100, 0.55)",
-    backgroundColor: "rgba(190, 242, 100, 0.10)",
+    borderColor: "rgba(252, 211, 77, 0.55)",
+    backgroundColor: "rgba(252, 211, 77, 0.10)",
   },
   goalPopularPill: {
     position: "absolute",
@@ -931,7 +1186,7 @@ const styles = StyleSheet.create({
   },
   hourChipSelected: {
     borderColor: tokenColor.xp,
-    backgroundColor: "rgba(190, 242, 100, 0.16)",
+    backgroundColor: "rgba(252, 211, 77, 0.16)",
   },
   hourText: {
     color: "rgba(255,255,255,0.7)",
@@ -988,5 +1243,59 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "900",
     letterSpacing: 0.3,
+  },
+  // ─── Step 4: level test offer card ───────────────────────────────
+  levelTestCta: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 14,
+    borderRadius: 18,
+    borderWidth: 1.5,
+    borderColor: "rgba(252, 211, 77, 0.35)",
+    backgroundColor: "rgba(252, 211, 77, 0.06)",
+    marginTop: 14,
+  },
+  levelTestCtaIcon: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(252, 211, 77, 0.14)",
+  },
+  levelTestCtaText: {
+    flex: 1,
+    minWidth: 0,
+  },
+  levelTestCtaTitle: {
+    color: "#ffffff",
+    fontSize: 14,
+    fontWeight: "900",
+    letterSpacing: -0.2,
+  },
+  levelTestCtaHint: {
+    color: "rgba(255,255,255,0.55)",
+    fontSize: 11.5,
+    fontWeight: "700",
+    marginTop: 2,
+  },
+  testedLevelCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    borderRadius: 12,
+    backgroundColor: "rgba(252, 211, 77, 0.08)",
+    borderWidth: 1,
+    borderColor: "rgba(252, 211, 77, 0.3)",
+    marginTop: 10,
+  },
+  testedLevelText: {
+    color: "#ffffff",
+    fontSize: 12.5,
+    fontWeight: "700",
   },
 });

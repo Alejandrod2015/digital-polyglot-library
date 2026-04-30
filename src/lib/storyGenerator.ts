@@ -6,6 +6,7 @@ import {
   HARD_STORY_WORDS_MAX,
   MIN_STORY_WORDS,
   TARGET_STORY_WORDS_MAX,
+  TARGET_STORY_WORDS_MIN,
   countStoryWords,
 } from "@domain/storyLength";
 import { cefrPromptLabel, resolveCefrLevel } from "@domain/cefr";
@@ -19,23 +20,40 @@ import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVarian
  * A1 across Italian, German, Korean, etc. without per-language wordlists.
  */
 function levelGuidanceFor(cefr: string | null, language: string): {
+  /** Floor used by the post-generation length gate. Anything below this
+   *  triggers a retry. */
   wordsMin: number;
+  /** Lower bound shown to the model in the prompt. Set higher than
+   *  wordsMin so the model aims with cushion — it tends to undershoot
+   *  the lower end of any range it sees, so the prompt range is
+   *  strictly inside the gate. */
+  wordsTargetMin: number;
+  /** Upper bound shown to the model in the prompt. */
   wordsMax: number;
+  /** Truncation cap. Stories above this get cut. */
   wordsHard: number;
   instructions: string;
 } {
   const lvl = (cefr ?? "").toLowerCase();
   if (lvl === "a1") {
     return {
-      wordsMin: 120,
-      wordsMax: 180,
-      wordsHard: 200,
+      // Floor stays at 180 (real A1 publication minimum). Target shown
+      // in the prompt is 80 words above the floor so the model's
+      // natural ~50-word undershoot still lands comfortably above the
+      // gate. Earlier the prompt asked for 210 → model landed 137-170
+      // → most failed the gate. With target 260 the model lands ~210
+      // → passes 180 with cushion.
+      wordsMin: 180,
+      wordsTargetMin: 260,
+      wordsMax: 300,
+      wordsHard: 320,
       instructions: `
 STRICT A1 LEVEL CONSTRAINTS — every line is mandatory:
 - Vocabulary: ONLY the most common words a true beginner (~80 hours of study) would know in ${language}. If a non-basic word is essential to the plot, replace it with a simpler synonym or rewrite the action concretely.
 - Tenses: use ONLY simple present and simple past for completed actions, plus a near-future construction if natural in ${language} (e.g. "going to" / "ir a + infinitivo" / "werde + Infinitiv"). FORBIDDEN: present perfect, pluperfect, synthetic future, conditional, any subjunctive form.
 - Sentences: short. Average 7-9 words. NO sentence longer than 12 words.
 - Avoid subordinate clauses; prefer simple connectors ("and", "but", "because", "then" — equivalent in ${language}).
+- Drop subject pronouns in pro-drop languages (Italian, Spanish, Portuguese). "Cammina per Trastevere." beats "Lui cammina per Trastevere." Use the pronoun only when needed for contrast or clarity.
 - NO idioms, NO figurative language, NO fancy adjectives.
 - Concrete actions and visible objects only, not abstract concepts.
 - Repetition is OK — beginners benefit from re-encountering the same word.
@@ -44,72 +62,87 @@ STRICT A1 LEVEL CONSTRAINTS — every line is mandatory:
   }
   if (lvl === "a2") {
     return {
-      wordsMin: 180,
-      wordsMax: 260,
-      wordsHard: 300,
+      wordsMin: 220,
+      wordsTargetMin: 300,
+      wordsMax: 340,
+      wordsHard: 360,
       instructions: `
 A2 LEVEL CONSTRAINTS:
 - Vocabulary: common everyday words. A learner with ~180 hours of study should follow without a dictionary.
 - Tenses: simple present, simple past, near future, basic continuous forms. Avoid conditional and subjunctive.
 - Sentences: short to medium (avg 9-12 words). Up to one subordinate clause is fine.
-- Avoid complex idioms and dense figurative language.`,
+- Avoid complex idioms and dense figurative language.
+- Drop subject pronouns in pro-drop languages unless needed for emphasis or contrast.
+- Show feelings through action and dialogue, not abstract description ("his hands shook" beats "he was very nervous").`,
     };
   }
   if (lvl === "b1") {
     return {
       wordsMin: 280,
-      wordsMax: 340,
-      wordsHard: 380,
+      wordsTargetMin: 360,
+      wordsMax: 400,
+      wordsHard: 420,
       instructions: `
 B1 LEVEL CONSTRAINTS:
 - Vocabulary: intermediate everyday + common topical vocabulary.
 - Tenses: most common forms, including conditional and basic subjunctive in everyday contexts. Avoid rare literary forms.
 - Sentences: natural variety, subordinate clauses welcome.
-- Some idioms OK if clearly contextualized.`,
+- Some idioms OK if clearly contextualized.
+- Push subtext: the protagonist's feelings can be implied by what they choose NOT to say or do, not just described.
+- One genuine moment of internal conflict (a doubt, a temptation, a regret) belongs in every B1 story.`,
     };
   }
   if (lvl === "b2") {
     return {
       wordsMin: 320,
-      wordsMax: 400,
-      wordsHard: 460,
+      wordsTargetMin: 400,
+      wordsMax: 460,
+      wordsHard: 480,
       instructions: `
 B2 LEVEL CONSTRAINTS:
 - Vocabulary: rich and varied; semi-technical terms allowed with context.
 - Tenses: full range, including less common forms when natural.
 - Sentences: complex syntax welcome, multi-clause structures fine.
-- Idioms and figurative language welcome.`,
+- Idioms and figurative language welcome.
+- Subtext is essential: characters can hide what they really mean. The reader should feel they are reading between the lines at least once.
+- Stakes should feel real — even small ones (a friendship, a reputation, a chance) — and the protagonist should leave changed, even slightly.`,
     };
   }
   if (lvl === "c1") {
     return {
       wordsMin: 380,
-      wordsMax: 460,
-      wordsHard: 540,
+      wordsTargetMin: 460,
+      wordsMax: 520,
+      wordsHard: 550,
       instructions: `
 C1 LEVEL CONSTRAINTS:
 - Sophisticated vocabulary including nuanced and abstract terms.
 - Full grammatical range; literary and formal registers allowed.
 - Complex and varied sentence structure.
-- Cultural references, idioms, and stylistic flourishes welcome.`,
+- Cultural references, idioms, and stylistic flourishes welcome.
+- Voice matters: the prose should have a recognizable rhythm or register, not feel anonymous.
+- Allow ambiguity — not everything needs to be explained on the page.`,
     };
   }
   if (lvl === "c2") {
     return {
       wordsMin: 420,
-      wordsMax: 520,
-      wordsHard: 600,
+      wordsTargetMin: 500,
+      wordsMax: 580,
+      wordsHard: 620,
       instructions: `
 C2 LEVEL CONSTRAINTS:
 - Native-level vocabulary, including rare, literary, and specialized terms.
 - Full nuance and stylistic variety.
 - Long, complex sentences with sophisticated structure.
-- Embrace ambiguity, layered meaning, and cultural depth.`,
+- Embrace ambiguity, layered meaning, and cultural depth.
+- The story should reward close reading: a second pass should reveal something the first didn't.`,
     };
   }
   // Fallback: behave like the historic defaults (B1 territory).
   return {
     wordsMin: MIN_STORY_WORDS,
+    wordsTargetMin: TARGET_STORY_WORDS_MIN,
     wordsMax: TARGET_STORY_WORDS_MAX,
     wordsHard: HARD_STORY_WORDS_MAX,
     instructions: "",
@@ -134,9 +167,27 @@ export type GenerateStoryParams = {
   synopsis?: string;
   existingTitles?: string[];
   usedCharacterNames?: string[];
+  /**
+   * Opt-in flag for the V2 path (`/api/studio/journeys/generate-v2`).
+   * When true, the prompt receives explicit per-CEFR-level constraints
+   * (vocabulary frequency, allowed tenses, sentence length) and the
+   * length targets shrink to level-appropriate ranges (A1 ≈ 180-260
+   * words instead of the historic 220-380). V1 (the default `generate`
+   * route) keeps its original behavior — same prompt, same constants —
+   * so anything calling generateStoryPayload without this flag is
+   * unchanged.
+   */
+  useLevelGuidance?: boolean;
 };
 
-const MAX_GENERATION_ATTEMPTS = 3;
+const MAX_GENERATION_ATTEMPTS_V1 = 3;
+// V2 needs more retries because the stacked constraints (level rules +
+// narrative quality + length floor) make undershooting more common —
+// 4 of every 5 V2 A1 attempts land at 180+ words, but the 5th lands
+// at 140-170. Three retries was leaving us exposed to that tail; five
+// gives the gate a near-certain pass without escalating cost much
+// (most generations succeed on attempt 1 anyway).
+const MAX_GENERATION_ATTEMPTS_V2 = 5;
 const MIN_VOCAB_ITEMS = 15;
 
 function sanitizeGeneratedStoryText(input: string): string {
@@ -222,7 +273,8 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
 /**
  * Generate a story with the same high-quality logic used by the Sanity studio.
- * Returns null if generation fails after MAX_GENERATION_ATTEMPTS.
+ * Returns null if generation fails after MAX_GENERATION_ATTEMPTS_V1
+ * (or _V2 when `useLevelGuidance` is true).
  */
 export async function generateStoryPayload(params: GenerateStoryParams): Promise<StoryJSON | null> {
   const {
@@ -237,12 +289,24 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     synopsis = "",
     existingTitles = [],
     usedCharacterNames = [],
+    useLevelGuidance = false,
   } = params;
   const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
 
   const learnerProfile = cefrPromptLabel(cefrLevel, level);
   const resolvedCefr = resolveCefrLevel(cefrLevel, level);
-  const levelGuidance = levelGuidanceFor(resolvedCefr, language);
+  // V1 (default) keeps the original prompt. V2 (opt-in via useLevelGuidance)
+  // injects the per-CEFR-level constraints + uses level-appropriate length
+  // targets. The two paths share the rest of the pipeline (vocab, retries,
+  // sanitization) so V2 stays a thin layer on top of V1.
+  const levelGuidance = useLevelGuidance ? levelGuidanceFor(resolvedCefr, language) : null;
+  const guidanceBlock = levelGuidance ? levelGuidance.instructions : "";
+  const wordsHard = levelGuidance ? levelGuidance.wordsHard : HARD_STORY_WORDS_MAX;
+  const wordsMin = levelGuidance ? levelGuidance.wordsMin : MIN_STORY_WORDS;
+  const wordsTargetMin = levelGuidance ? levelGuidance.wordsTargetMin : TARGET_STORY_WORDS_MIN;
+  const wordsTargetMax = levelGuidance ? levelGuidance.wordsMax : TARGET_STORY_WORDS_MAX;
+  const longClause = levelGuidance ? "" : "long ";
+  const writeClause = levelGuidance ? "Write an engaging story" : "Write a long engaging story";
   const normalizedVariant = normalizeVariant(variant);
   const regionClause = region ? `, specifically from ${region}` : "";
   const variantClause = buildVariantPromptClause(language, normalizedVariant);
@@ -259,7 +323,8 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
   let previousFeedback = "";
   let finalPayload: StoryJSON | null = null;
 
-  for (let attempt = 0; attempt < MAX_GENERATION_ATTEMPTS; attempt += 1) {
+  const maxAttempts = useLevelGuidance ? MAX_GENERATION_ATTEMPTS_V2 : MAX_GENERATION_ATTEMPTS_V1;
+  for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
     const retryClause =
       attempt === 0
         ? ""
@@ -270,9 +335,9 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
       : "";
 
     const prompt = `
-You are an expert language teacher and story writer.
-Write an engaging story for a ${learnerProfile} learner studying ${language}${regionClause}.
-${levelGuidance.instructions}
+You are an expert language teacher and ${longClause}story writer.
+${writeClause} for a ${learnerProfile} learner studying ${language}${regionClause}.
+${guidanceBlock}
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 ${titleClause}
@@ -303,8 +368,9 @@ Use a close third-person narrator with strong internal focalization.
 - Keep paragraphs short and dynamic (usually 1-3 sentences per paragraph).
 - Avoid long expository narrator blocks; reduce detached description and increase character-centered viewpoint.
 - Include frequent dialogue beats and immediate reactions to keep pacing lively.
-- Length target: ${levelGuidance.wordsMin}-${levelGuidance.wordsMax} words.
-- Hard maximum: ${levelGuidance.wordsHard} words. Going over the maximum will cause the story to be truncated mid-sentence.${existingTitlesClause}${usedNamesClause}
+- Length target: ${wordsTargetMin}-${wordsTargetMax} words.
+- Absolute minimum: ${wordsMin} words.
+- Hard maximum: ${wordsHard} words.${existingTitlesClause}${usedNamesClause}
 ${retryClause}
 
 Return ONLY valid JSON:
@@ -316,7 +382,14 @@ Return ONLY valid JSON:
 `;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      // V2 uses gpt-4o (the bigger model) so it can satisfy the stacked
+      // constraints (level rules + narrative quality + length target)
+      // without undershooting. gpt-4o-mini was consistently landing at
+      // ~140 words for A1 even when asked for 210, because juggling
+      // sentence-length caps + tense restrictions + vocab frequency
+      // exhausts its instruction-following budget. V1 keeps mini —
+      // it's the cheaper path with looser constraints.
+      model: useLevelGuidance ? "gpt-4o" : "gpt-4o-mini",
       temperature: attempt === 0 ? 0.8 : 0.6,
       messages: [
         {
@@ -351,13 +424,19 @@ Return ONLY valid JSON:
     const title = resolvedProvidedTitle || raw.title.trim() || "Untitled";
     const sanitized = sanitizeGeneratedStoryText(raw.text);
     const text =
-      countStoryWords(sanitized) > levelGuidance.wordsHard
-        ? truncateToWordLimit(sanitized, levelGuidance.wordsHard)
+      countStoryWords(sanitized) > wordsHard
+        ? truncateToWordLimit(sanitized, wordsHard)
         : sanitized;
 
     const wordCount = countStoryWords(text);
-    if (wordCount < levelGuidance.wordsMin) {
-      previousFeedback = `${wordCount} words, need at least ${levelGuidance.wordsMin}`;
+    if (wordCount < wordsMin) {
+      // Concrete next-attempt instructions instead of just stating the
+      // gap. The model otherwise tends to undershoot the same way on
+      // retry; telling it WHAT to add (a paragraph of dialogue, a
+      // sensory beat, an internal reaction) gives it a clear lever
+      // without compromising level constraints.
+      const gap = wordsTargetMin - wordCount;
+      previousFeedback = `${wordCount} words, need at least ${wordsMin} (target ${wordsTargetMin}-${wordsTargetMax}). You undershot by about ${gap} words. ADD one of: another short dialogue exchange (2-3 lines between characters), a sensory beat (smell / sound / sight), or an internal reaction (what the protagonist thinks or feels) — keeping the same level constraints (vocabulary, tense, sentence length).`;
       continue;
     }
 
@@ -380,5 +459,13 @@ Return ONLY valid JSON:
     break;
   }
 
+  if (!finalPayload && previousFeedback) {
+    // Surface the last attempt's reason so callers can show the user
+    // a useful message instead of "failed after multiple attempts" with
+    // no context. The function used to silently return null here, which
+    // made it impossible to tell whether the LLM was undershooting on
+    // length, returning malformed JSON, or hitting some other gate.
+    throw new Error(`Story generation failed: ${previousFeedback}`);
+  }
   return finalPayload;
 }

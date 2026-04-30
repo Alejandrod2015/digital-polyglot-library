@@ -11,7 +11,7 @@ import { Animated, Dimensions, Easing, StyleSheet, View } from "react-native";
  * none so taps fall through to the CTAs underneath.
  */
 
-const PALETTE = ["#bef264", "#7dd3fc", "#fcd34d", "#f0abfc", "#fb923c"];
+const PALETTE = ["#fcd34d", "#7dd3fc", "#fcd34d", "#f0abfc", "#fb923c"];
 const PARTICLE_COUNT = 28;
 
 type Particle = {
@@ -36,7 +36,7 @@ function buildParticles(width: number, height: number): Particle[] {
       delay: Math.random() * 250,
       duration: 1200 + Math.random() * 900,
       rotateTo: dir * (180 + Math.random() * 360),
-      color: PALETTE[i % PALETTE.length] ?? "#bef264",
+      color: PALETTE[i % PALETTE.length] ?? "#fcd34d",
       size: 6 + Math.random() * 6,
       driftX: dir * (30 + Math.random() * 60),
     };

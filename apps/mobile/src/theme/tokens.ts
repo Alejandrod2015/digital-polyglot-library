@@ -31,7 +31,7 @@ export const bg = {
  */
 export const color = {
   cyan: "#7dd3fc", // links, sky CTAs
-  xp: "#bef264", // XP, completion, ACTIVE pills
+  xp: "#fcd34d", // XP, completion, ACTIVE pills
   streak: "#fb923c", // streak, day counters
   gems: "#c4b5fd", // gems, premium hints
   gold: "#fcd34d", // rewards, achievements

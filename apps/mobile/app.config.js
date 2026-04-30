@@ -60,16 +60,33 @@ const config = {
   orientation: "portrait",
   userInterfaceStyle: "automatic",
   assetBundlePatterns: ["**/*"],
+  // (Native splash config moved to the `expo-splash-screen` plugin
+  // below — gives us `imageWidth` so the wordmark renders at the
+  // same width the ExtendedSplash uses, eliminating the "logo size
+  // pop" between native and React splashes.)
   plugins: [
     "expo-secure-store",
     "expo-web-browser",
     "expo-notifications",
     "./plugins/without-apple-signin",
+    [
+      "expo-splash-screen",
+      {
+        // imageWidth controls the actual wordmark width on the
+        // native splash. Setting it to ~270pt matches the
+        // explicit pixel width in ExtendedSplash so the user
+        // doesn't see a size-pop when the React-rendered splash
+        // takes over.
+        backgroundColor: "#0c1626",
+        image: "./assets/splash-logo-white.png",
+        imageWidth: 270,
+      },
+    ],
   ],
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.digitalpolyglot.mobile",
-    buildNumber: "63",
+    buildNumber: "103",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },

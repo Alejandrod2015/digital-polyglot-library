@@ -24,12 +24,28 @@ type FlagSpec =
   | { kind: "japan" }
   | { kind: "china" }
   | { kind: "korea" }
-  | { kind: "us" };
+  | { kind: "us" }
+  | { kind: "uk" }
+  | { kind: "brazil" };
+
+// Colombia flag spec, used as the LATAM variant for Spanish. We use
+// a dedicated weighted hBands kind because the Colombian flag has a
+// 2:1:1 ratio (yellow takes the top half, blue and red split the
+// bottom half) — distinct from any other flag in our set.
+const COLOMBIA_SPEC: FlagSpec = {
+  kind: "hBands",
+  colors: ["#FCD116", "#003893", "#CE1126"],
+  weights: [2, 1, 1],
+};
 
 const SPECS: Record<string, FlagSpec> = {
   Italian: { kind: "vBands", colors: ["#008C45", "#F4F5F0", "#CD212A"] },
   German: { kind: "hBands", colors: ["#000000", "#DD0000", "#FFCE00"] },
   French: { kind: "vBands", colors: ["#0055A4", "#FFFFFF", "#EF4135"] },
+  // Spanish in SPECS holds the Spain (ES) flag — red, gold, red
+  // horizontal bands, weights 1:2:1. The LATAM variant uses the
+  // Mexican flag (vBands green/white/red) and is selected by
+  // `pickSpec("Spanish", "latam")`.
   Spanish: { kind: "hBands", colors: ["#AA151B", "#F1BF00", "#AA151B"], weights: [1, 2, 1] },
   Portuguese: { kind: "vBands", colors: ["#006600", "#FF0000"], weights: [2, 3] },
   English: { kind: "us" },
@@ -38,18 +54,51 @@ const SPECS: Record<string, FlagSpec> = {
   Chinese: { kind: "china" },
 };
 
+
+/**
+ * Resolve the flag spec for a (language, variant) pair. Languages
+ * with regional variants choose a different rendering based on the
+ * variant code:
+ *   - English → "us" (default) or "uk"
+ *   - Portuguese → "br" (default — most learners) or "pt"
+ *   - Spanish → "es" (default — Spain flag) or "latam" (Colombia
+ *     flag, picked as a distinctive LATAM signal that's visually
+ *     unrelated to Italy/Mexico/etc.)
+ */
+function pickSpec(language: string | null | undefined, variant?: string | null): FlagSpec | undefined {
+  if (!language) return undefined;
+  if (language === "English") {
+    return variant === "uk" ? { kind: "uk" } : { kind: "us" };
+  }
+  if (language === "Portuguese") {
+    return variant === "pt" ? SPECS.Portuguese : { kind: "brazil" };
+  }
+  if (language === "Spanish") {
+    return variant === "latam" ? COLOMBIA_SPEC : SPECS.Spanish;
+  }
+  return SPECS[language];
+}
+
 export function LanguageFlag({
   language,
   size = 28,
+  variant,
 }: {
   language: string | null | undefined;
   size?: number;
+  variant?: string | null;
 }) {
-  const spec = language ? SPECS[language] : undefined;
+  const spec = pickSpec(language, variant);
+  // Rounded square (Duolingo-style) instead of full circle. Real
+  // flags are rectangular, so a circular coin clipped the corners of
+  // banded flags (Germany, Italy, France, Mexico, Spain). The 22%
+  // radius keeps the rounded look while preserving full bands.
+  // Radial flags (Japan, China, Brazil) still render correctly
+  // because their composition is centered.
   const containerStyle = {
     width: size,
     height: size,
-    borderRadius: size / 2,
+    borderRadius: size * 0.22,
     overflow: "hidden" as const,
     borderWidth: 1.5,
     borderColor: "rgba(255,255,255,0.35)",
@@ -164,6 +213,137 @@ export function LanguageFlag({
             width: "44%",
             height: "54%",
             backgroundColor: "#3C3B6E",
+          }}
+        />
+      </View>
+    );
+  }
+
+  if (spec.kind === "brazil") {
+    // Brazilian flag approximation: green field + yellow rhombus
+    // (a 45°-rotated square inscribed inside the round coin) +
+    // a small blue circle at the center. Skipping the celestial
+    // sphere stars + "Ordem e Progresso" banner because Views
+    // can't reasonably draw those at coin scale; the green/
+    // yellow/blue palette is the recognizable signal.
+    const greenBg = "#009C3B";
+    const yellow = "#FFDF00";
+    const blue = "#002776";
+    // Square side chosen so its diagonal ≈ 95% of the inner coin
+    // diameter. Diagonal = side * √2 → side = diameter * 0.95 / √2.
+    const inner = size - 3; // minus the 1.5pt border each side
+    const rhombusSide = (inner * 0.95) / Math.SQRT2;
+    const blueCircleSize = size * 0.32;
+    return (
+      <View style={[containerStyle, styles.center, { backgroundColor: greenBg }]}>
+        <View
+          style={{
+            position: "absolute",
+            width: rhombusSide,
+            height: rhombusSide,
+            backgroundColor: yellow,
+            transform: [{ rotate: "45deg" }],
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            width: blueCircleSize,
+            height: blueCircleSize,
+            borderRadius: blueCircleSize / 2,
+            backgroundColor: blue,
+          }}
+        />
+      </View>
+    );
+  }
+
+  if (spec.kind === "uk") {
+    // Union Jack approximation. We can't render diagonal lines with
+    // plain Views, so we fake the saltires (white + red X) with two
+    // long thin Views rotated 45°/-45° and overlay the upright
+    // white-and-red cross on top. It's a stylized read but clearly
+    // distinct from the US flag, which is the whole point of having
+    // a separate UK variant.
+    const blue = "#012169";
+    const white = "#FFFFFF";
+    const red = "#C8102E";
+    // Diagonal bar length must reach corner-to-corner of the square,
+    // so it's the diagonal of the box: size * sqrt(2). We pad a bit
+    // to make sure it bleeds past the rounded edge before clipping.
+    const diag = size * 1.45;
+    return (
+      <View style={[containerStyle, styles.center, { backgroundColor: blue }]}>
+        {/* White saltire (X) — two crossed bars */}
+        <View
+          style={{
+            position: "absolute",
+            width: diag,
+            height: size * 0.22,
+            backgroundColor: white,
+            transform: [{ rotate: "45deg" }],
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            width: diag,
+            height: size * 0.22,
+            backgroundColor: white,
+            transform: [{ rotate: "-45deg" }],
+          }}
+        />
+        {/* Red saltire on top of white, slightly thinner */}
+        <View
+          style={{
+            position: "absolute",
+            width: diag,
+            height: size * 0.1,
+            backgroundColor: red,
+            transform: [{ rotate: "45deg" }],
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            width: diag,
+            height: size * 0.1,
+            backgroundColor: red,
+            transform: [{ rotate: "-45deg" }],
+          }}
+        />
+        {/* White upright cross — horizontal + vertical bars */}
+        <View
+          style={{
+            position: "absolute",
+            width: size,
+            height: size * 0.32,
+            backgroundColor: white,
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            width: size * 0.32,
+            height: size,
+            backgroundColor: white,
+          }}
+        />
+        {/* Red upright cross on top of white, thinner */}
+        <View
+          style={{
+            position: "absolute",
+            width: size,
+            height: size * 0.18,
+            backgroundColor: red,
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            width: size * 0.18,
+            height: size,
+            backgroundColor: red,
           }}
         />
       </View>

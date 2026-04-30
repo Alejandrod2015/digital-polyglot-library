@@ -8,6 +8,14 @@ import { VARIANT_LABELS, type LanguageVariant } from "@domain/languageVariant";
 
 export const maxDuration = 60;
 
+/**
+ * Per-language regional anchors for V2. Same data as V1 — V2 only differs
+ * in the prompt-time level guidance (vocabulary frequency, allowed tenses,
+ * sentence length) and the level-appropriate word-count targets, both of
+ * which live inside `generateStoryPayload` behind the `useLevelGuidance`
+ * flag. Everything else (title flow, synopsis, vocab pipeline) is shared
+ * with V1 so the saved JourneyStory shape is identical.
+ */
 function getDetailedRegionDescription(variant?: string, language?: string): string {
   if (!variant) return "";
   const normalizedVariant = variant.trim().toLowerCase() as LanguageVariant;
@@ -46,9 +54,18 @@ function getDetailedRegionDescription(variant?: string, language?: string): stri
 }
 
 /**
- * POST /api/studio/journeys/generate
- * Body: { storyId } — generates content for a JourneyStory slot
- * Uses the same high-quality Sanity story generator.
+ * POST /api/studio/journeys/generate-v2
+ *
+ * V2 generator. Same shape as V1 (`/api/studio/journeys/generate`), same
+ * vocab/title/synopsis pipeline — the only difference is that V2 turns on
+ * `useLevelGuidance` inside `generateStoryPayload`, which injects strict
+ * per-CEFR-level constraints into the prompt and shrinks/expands the
+ * word-count target so A1 stories actually feel A1, A2 actually feel A2,
+ * etc. Works for any language/level combination — the guidance is
+ * language-agnostic and the LLM applies the constraint to the target
+ * language without per-language wordlists or regex.
+ *
+ * Body: { storyId }
  */
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -58,12 +75,12 @@ export async function POST(request: Request) {
   if (!email || !(await isStudioMember(email)))
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
-  let body: Record<string, any>;
+  let body: Record<string, unknown> = {};
   try { body = await request.json(); } catch {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
 
-  const { storyId } = body;
+  const storyId = typeof body.storyId === "string" ? body.storyId : "";
   if (!storyId) return NextResponse.json({ error: "storyId required" }, { status: 400 });
 
   const story = await prisma.journeyStory.findUnique({
@@ -72,14 +89,12 @@ export async function POST(request: Request) {
   });
   if (!story) return NextResponse.json({ error: "Story not found" }, { status: 404 });
 
-  // Mark as generating
   await prisma.journeyStory.update({
     where: { id: storyId },
     data: { status: "generated", error: null },
   });
 
   try {
-    // Get existing titles + character names from same topic to avoid repetition
     const existingStories = await prisma.journeyStory.findMany({
       where: { journeyId: story.journeyId, title: { not: null } },
       select: { title: true, text: true, topic: true },
@@ -98,7 +113,8 @@ export async function POST(request: Request) {
     const origin = new URL(request.url).origin;
     const detailedRegion = getDetailedRegionDescription(story.journey.variant, story.journey.language);
 
-    // STEP 1: Generate the title first using the dedicated endpoint (gpt-4o + strict cultural rules)
+    // Title and synopsis use the same dedicated endpoints as V1 so the
+    // cultural anchor is identical between the two paths.
     const titleRes = await fetch(`${origin}/api/generate-title`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
@@ -107,8 +123,8 @@ export async function POST(request: Request) {
         region: detailedRegion || story.journey.variant,
         topic: story.topic,
         // Pass the in-progress journey titles so the title endpoint
-        // doesn't keep picking the canonical anchor for the region/topic
-        // every time within the same journey.
+        // knows what's already been used in this journey and can avoid
+        // canonical-anchor groove ("Cacio e Pepe a Trastevere" every time).
         extraExistingTitles: existingTitles,
       }),
     });
@@ -120,7 +136,6 @@ export async function POST(request: Request) {
     const title = typeof titleData.result === "string" ? titleData.result.trim() : "";
     if (!title) throw new Error("generate-title returned empty title");
 
-    // STEP 2: Generate synopsis using the title (so it's coherent with the specific cultural anchor)
     let synopsis = "";
     try {
       const synopsisRes = await fetch(`${origin}/api/generate-synopsis`, {
@@ -140,10 +155,10 @@ export async function POST(request: Request) {
         synopsis = data.result?.trim() ?? "";
       }
     } catch (e) {
-      console.warn("[generate] synopsis generation failed:", e);
+      console.warn("[generate-v2] synopsis generation failed:", e);
     }
 
-    // STEP 3: Generate text + vocab, passing the fixed title and synopsis
+    // The single difference vs V1: useLevelGuidance: true.
     const payload = await generateStoryPayload({
       language: story.journey.language,
       variant: story.journey.variant,
@@ -155,6 +170,7 @@ export async function POST(request: Request) {
       synopsis,
       existingTitles,
       usedCharacterNames,
+      useLevelGuidance: true,
     });
 
     if (!payload) {
@@ -173,6 +189,7 @@ export async function POST(request: Request) {
         slug,
         text: payload.text,
         synopsis,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         vocab: payload.vocab as any,
         wordCount,
         vocabCount: payload.vocab.length,

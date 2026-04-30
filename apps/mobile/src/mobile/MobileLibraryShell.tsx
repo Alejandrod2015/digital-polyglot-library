@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import * as SecureStore from "expo-secure-store";
+import * as Haptics from "expo-haptics";
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
 import {
   Alert,
@@ -42,6 +43,29 @@ import { NextActionGlow } from "./NextActionGlow";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { LanguageFlag } from "./LanguageFlag";
+import { JourneysPanel } from "./JourneysPanel";
+import { LegalSheet } from "./LegalSheet";
+import { LevelTestRunner } from "./LevelTestRunner";
+import { hasLevelTest } from "./levelTest";
+import { ExtendedSplash } from "./ExtendedSplash";
+import { TopicPreviewSheet } from "./TopicPreviewSheet";
+import {
+  type Journey,
+  areJourneysEqual,
+  dedupeJourneysById,
+  findActiveJourney,
+  focusShortLabel,
+  journeyDisplayName,
+  journeyId,
+  languageShortCode,
+  synthesizeJourneysFromLegacy,
+  targetLanguagesFromJourneys,
+} from "./journeys";
+import {
+  clearStoredJourneys,
+  loadStoredJourneys,
+  saveStoredJourneys,
+} from "./journeyStorage";
 import { LanguageSwitchSheet, type LanguageSwitchEntry } from "./LanguageSwitchSheet";
 import { OnboardingFlow, type OnboardingPayload } from "./OnboardingFlow";
 import { PracticeCelebration } from "./PracticeCelebration";
@@ -444,6 +468,13 @@ type MobilePreferences = {
   journeyPlacementLevel: string | null;
   onboardingSurveyCompletedAt: string | null;
   onboardingTourCompletedAt: string | null;
+  /** Multi-journey model: a user can have several (language, focus)
+   *  journeys at once. The legacy fields above (preferredVariant,
+   *  preferredLevel, journeyFocus, targetLanguages[0]) keep working
+   *  as projections of the *active* journey for backward compat with
+   *  call sites that haven't migrated yet. */
+  journeys: Journey[];
+  activeJourneyId: string | null;
 };
 
 type MobileProgressPayload = {
@@ -575,7 +606,18 @@ type MobileJourneyTopicSummary = {
     language: string | null;
     region: string | null;
     unlocked: boolean;
+    /** Audio listened to completion (>= 95% scrubbed). The story
+     *  is "read" but the topic's exercises may still be pending. */
+    audioFinished: boolean;
+    /** Audio finished AND the topic's checkpoint is passed. This
+     *  is what earns the green check — the bar for full mastery. */
     completed: boolean;
+    /** Story belongs to a level below the user's placement test
+     *  result. Stays unlocked and re-readable, but counted as
+     *  "passed" for the purposes of the "next" pointer (so it
+     *  jumps to the placement level). Doesn't show a green check —
+     *  the user didn't actually read it. */
+    skipped: boolean;
   }>;
 };
 
@@ -749,6 +791,12 @@ type JourneyReviewMeta = {
   focusWords?: string[];
 };
 
+// Each practice mode owns a different hue from the canonical token
+// palette so the four cards read as distinct without inventing
+// off-palette colors. `accent` drives the icon, eyebrow text, and
+// the progress arc; `background` is the dark color shown UNDER the
+// accent (e.g. "Play" text sitting on the accent fill) and is fixed
+// to the deepest canvas token for AA contrast against every accent.
 const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
   {
     key: "meaning",
@@ -756,8 +804,13 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     eyebrow: "Word quest",
     detail: "Choose the meaning that fits a word in context.",
     caption: "Best for locking in definitions with real usage.",
-    accent: "#f8d48a",
-    background: "#4b4f32",
+    accent: tokenColor.xp,
+    // Per-card background tinted toward the accent so the four cards
+    // read as distinct sections at a glance, instead of looking like
+    // four copies of the same card with different icons. Each value is
+    // a deeply desaturated version of the accent that keeps AA contrast
+    // against white text in the body.
+    background: "#2a2108",
     icon: "zap",
   },
   {
@@ -766,8 +819,8 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     eyebrow: "Sentence run",
     detail: "Complete real phrases and choose what sounds natural in context.",
     caption: "Best for recall, sentence flow, and natural usage.",
-    accent: "#9ce5c1",
-    background: "#234c42",
+    accent: tokenColor.streak,
+    background: "#2a1808",
     icon: "message-circle",
   },
   {
@@ -776,8 +829,8 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     eyebrow: "Sound check",
     detail: "Hear a word and choose what was said.",
     caption: "Best for audio recognition and fast review.",
-    accent: "#f0a8d7",
-    background: "#5a3c67",
+    accent: tokenColor.energy,
+    background: "#2a0a25",
     icon: "headphones",
   },
   {
@@ -786,8 +839,8 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     eyebrow: "Rapid pairs",
     detail: "Connect words and meanings in a timed matching round.",
     caption: "Best for repetition and confidence under pressure.",
-    accent: "#8fd8ff",
-    background: "#22495f",
+    accent: tokenColor.cyan,
+    background: "#082a36",
     // Was "brain" — collided with the bottom-tab Practice icon. "link"
     // matches the "Connect words and meanings" copy and is unique
     // among the four practice modes.
@@ -1485,6 +1538,8 @@ function preferencesEqual(a: MobilePreferences, b: MobilePreferences): boolean {
   if (a.remindersEnabled !== b.remindersEnabled) return false;
   if (a.reminderHour !== b.reminderHour) return false;
   if (a.journeyPlacementLevel !== b.journeyPlacementLevel) return false;
+  if (a.activeJourneyId !== b.activeJourneyId) return false;
+  if (!areJourneysEqual(a.journeys, b.journeys)) return false;
   if (a.targetLanguages.length !== b.targetLanguages.length) return false;
   if (a.interests.length !== b.interests.length) return false;
   const langSet = new Set(a.targetLanguages);
@@ -1528,11 +1583,23 @@ export function MobileLibraryShell(args: {
   const isSignedIn = Boolean(sessionToken);
   const shellScrollRef = useRef<ScrollView | null>(null);
   const [activeScreen, setActiveScreen] = useState<MobileScreen>("home");
+  // Tracks the shell ScrollView's vertical offset, used to decide
+  // when to surface the floating "scroll to top" button in Favorites.
+  // Reset to 0 on tab switches by the same effect below that scrolls
+  // the shell back to the top.
+  const [shellScrollY, setShellScrollY] = useState(0);
   // Scroll the main shell to the top whenever the user switches tabs, so
   // e.g. Home → Explore doesn't land the new screen mid-list at the same
-  // vertical offset as the old one.
+  // vertical offset as the old one. Journey is the exception: it has its
+  // own scroll-restore effect (see `previousActiveScreenRef` below) that
+  // returns the user to the same place they were when they last left
+  // Journey. Resetting to 0 here would race with that restore and
+  // sometimes win, snapping the user back to the top — exactly what the
+  // restore was trying to avoid.
   useEffect(() => {
+    if (activeScreen === "journey") return;
     shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+    setShellScrollY(0);
   }, [activeScreen]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [exploreQuery, setExploreQuery] = useState("");
@@ -1576,6 +1643,12 @@ export function MobileLibraryShell(args: {
   const [practiceSessionStreak, setPracticeSessionStreak] = useState(0);
   const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
   const [matchedWords, setMatchedWords] = useState<string[]>([]);
+  // Tracks the most recent wrong match attempt so the UI can flash the
+  // mis-tapped row red briefly. Cleared on a short timer (700 ms) and
+  // when the user moves on to the next exercise. Without this state
+  // the previous behavior silently swallowed wrong taps — the user
+  // simply couldn't make a mistake, which read as a broken exercise.
+  const [wrongMatchAttempt, setWrongMatchAttempt] = useState<{ word: string; value: string } | null>(null);
   const [practiceLaunchContext, setPracticeLaunchContext] = useState<PracticeLaunchContext>({
     source: "favorites",
   });
@@ -1621,6 +1694,22 @@ export function MobileLibraryShell(args: {
         }
       : null
   );
+  // Initial preferences: synthesize one journey per language from
+  // the session token's target list so that even before the first
+  // /api/user/preferences hydrate we have a non-empty `journeys`
+  // array to drive the chip + sheet. Server hydrate will overwrite
+  // this with the canonical list (or backfill it via
+  // synthesizeJourneysFromLegacy) once it returns.
+  const initialJourneys = (() => {
+    const langs = normalizeLanguageSelection(sessionTargetLanguages ?? []);
+    if (langs.length === 0) return { journeys: [] as Journey[], activeJourneyId: null };
+    return synthesizeJourneysFromLegacy({
+      targetLanguages: langs,
+      preferredVariant: null,
+      preferredLevel: null,
+      journeyFocus: null,
+    });
+  })();
   const [preferences, setPreferences] = useState<MobilePreferences>({
     targetLanguages: normalizeLanguageSelection(sessionTargetLanguages ?? []),
     interests: [],
@@ -1635,6 +1724,8 @@ export function MobileLibraryShell(args: {
     journeyPlacementLevel: null,
     onboardingSurveyCompletedAt: null,
     onboardingTourCompletedAt: null,
+    journeys: initialJourneys.journeys,
+    activeJourneyId: initialJourneys.activeJourneyId,
   });
   const [savedPreferences, setSavedPreferences] = useState<MobilePreferences>({
     targetLanguages: normalizeLanguageSelection(sessionTargetLanguages ?? []),
@@ -1650,6 +1741,8 @@ export function MobileLibraryShell(args: {
     journeyPlacementLevel: null,
     onboardingSurveyCompletedAt: null,
     onboardingTourCompletedAt: null,
+    journeys: initialJourneys.journeys,
+    activeJourneyId: initialJourneys.activeJourneyId,
   });
   const [preferencesStatus, setPreferencesStatus] = useState<SaveStatus>("idle");
   const [preferencesLoading, setPreferencesLoading] = useState(false);
@@ -1753,6 +1846,216 @@ export function MobileLibraryShell(args: {
   // tap of the flag chip in the journey top strip and replaces the
   // old full-screen "My Languages" hub.
   const [languageSwitchOpen, setLanguageSwitchOpen] = useState(false);
+  // Full-screen panel that opens from the sheet's single "Add journey"
+  // CTA. Shows every journey as a rich card and hosts the 2-step
+  // (language → focus) creator. Replaces the legacy "See all" /
+  // "Add language" routes that used to bounce users to /settings.
+  const [journeysPanelOpen, setJourneysPanelOpen] = useState(false);
+  // Set of canonical language names ("Spanish", "French", "Korean", …) that
+  // exist in the Studio Planning catalog but have NO active Journey record
+  // yet. Mobile shows them as "Próximamente" and disables selection. Hardcoded
+  // language options not present in Studio at all (Japanese, Chinese) are also
+  // treated as coming-soon — Studio is the source of truth.
+  const [comingSoonLanguages, setComingSoonLanguages] = useState<Set<string>>(new Set());
+  // Bottom sheet that consolidates the 5 legal links (Impressum,
+  // Privacy, Cookies, Terms, Data deletion) under a single "Legal"
+  // entry in the side menu. Replaces the inline list that used to
+  // sit at the bottom of the menu.
+  const [legalSheetOpen, setLegalSheetOpen] = useState(false);
+  // Bottom-sheet popup for the streak / level / XP stats in the
+  // journey top bar. Replaces the previous behavior of jumping to
+  // the Progress tab when the user tapped one of those badges —
+  // a tab change felt like a navigation, the badges read more like
+  // "show me a quick summary".
+  const [progressSheetOpen, setProgressSheetOpen] = useState(false);
+  // Topic preview sheet — opens when the user taps a topic panel on
+  // the journey path. Shows the stories that will appear inside the
+  // topic plus the vocabulary teaser (real words pulled from the
+  // offline cache) so the user gets a concrete preview of what
+  // they'll learn before diving in.
+  const [topicPreviewOpen, setTopicPreviewOpen] = useState<{
+    levelId: string;
+    topicLabel: string;
+    topicSlug: string;
+    bgColor: string;
+    stories: Array<{ id: string; title: string; coverUrl: string | null }>;
+    vocabWords: string[];
+    /** True while a background server fetch for vocab is in flight.
+     *  The sheet shows a skeleton placeholder instead of the
+     *  fallback hint while this is true, so the user doesn't see
+     *  "Open a story..." flash for a frame before the chips arrive. */
+    isVocabLoading: boolean;
+  } | null>(null);
+  // ─── Multi-variant journey persistence ────────────────────────
+  // Two-phase: (1) load disk first, override the synthesized list
+  // when the disk has more entries; THEN (2) start saving on every
+  // change. Earlier these two ran in parallel as soon as
+  // didHydratePreferences flipped — the save fired with the
+  // server-synthesized 1-entry list and overwrote whatever the
+  // disk had BEFORE the load could read it. Result: the user's
+  // multi-variant picks were lost on the very next cold start.
+  // The `journeysRestored` state gates saves until restore is
+  // done.
+  const [journeysRestored, setJourneysRestored] = useState(false);
+
+  // (1) Load stored journeys → override if more detailed.
+  useEffect(() => {
+    if (!didHydratePreferences) return;
+    if (journeysRestored) return;
+    void (async () => {
+      const stored = await loadStoredJourneys();
+      if (stored && stored.journeys.length > 0) {
+        setPreferences((current) => {
+          if (current.journeys.length >= stored.journeys.length) return current;
+          return {
+            ...current,
+            journeys: stored.journeys,
+            activeJourneyId: stored.activeJourneyId ?? current.activeJourneyId,
+            targetLanguages: targetLanguagesFromJourneys(stored.journeys),
+          };
+        });
+      }
+      // Mark restored AFTER the setPreferences call so the save
+      // effect (gated below) doesn't fire with the pre-restore
+      // value.
+      setJourneysRestored(true);
+    })();
+  }, [didHydratePreferences, journeysRestored]);
+
+  // (2) Save journeys to disk on every change — only AFTER the
+  // restore-from-disk pass has completed, to avoid the overwrite
+  // race described above.
+  useEffect(() => {
+    if (!journeysRestored) return;
+    void saveStoredJourneys(preferences.journeys, preferences.activeJourneyId);
+  }, [preferences.journeys, preferences.activeJourneyId, journeysRestored]);
+
+  // Pull the Studio Planning language catalog so the language pickers (in
+  // OnboardingFlow + JourneysPanel) can mark languages without an active
+  // Journey record as "Próximamente". The hardcoded LANGUAGE_OPTIONS in those
+  // components stays — we just annotate which entries are not ready yet.
+  useEffect(() => {
+    if (!sessionToken) return;
+    let cancelled = false;
+    void (async () => {
+      try {
+        const data = await apiFetch<{
+          languages: Array<{ code: string; label: string; comingSoon: boolean }>;
+        }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/mobile/languages",
+          token: sessionToken,
+        });
+        if (cancelled) return;
+        // Studio's `code` is the lowercase canonical language slug
+        // ("spanish", "korean", "italian"). Mobile's LANGUAGE_OPTIONS keys
+        // languages by their English name with a capital first letter
+        // ("Spanish", "Korean", "Italian"). Both forms go into the set so
+        // either lookup succeeds without a separate normalization pass.
+        const next = new Set<string>();
+        for (const lang of data.languages) {
+          if (!lang.comingSoon) continue;
+          const code = lang.code.trim().toLowerCase();
+          next.add(code);
+          // Title-case English name: "spanish" → "Spanish".
+          if (code) next.add(code[0].toUpperCase() + code.slice(1));
+        }
+        // Languages NOT in Studio at all are also coming-soon (Studio is the
+        // catalog of record). Mobile knows about Japanese/Chinese which the
+        // user hasn't added to Studio yet, so flag them too.
+        const studioLangs = new Set(data.languages.map((l) => l.code.trim().toLowerCase()));
+        for (const known of ["japanese", "chinese"]) {
+          if (!studioLangs.has(known)) {
+            next.add(known);
+            next.add(known[0].toUpperCase() + known.slice(1));
+          }
+        }
+        setComingSoonLanguages(next);
+      } catch (err) {
+        console.warn("[language-catalog] fetch failed", err);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [sessionToken]);
+
+  // Modal shown when the user taps a story locked by level — offers
+  // the level test as a way to skip ahead instead of just blocking
+  // them with a toast.
+  const [levelTestOfferOpen, setLevelTestOfferOpen] = useState<{
+    targetLevel: string;
+    targetLanguage: string;
+  } | null>(null);
+  // Live the level test runner state — when set, the test screen
+  // overlays the rest of the app. The runner handles its own scoring
+  // and calls back when finished.
+  const [levelTestActive, setLevelTestActive] = useState<{
+    language: string;
+    source: "onboarding" | "locked-story";
+  } | null>(null);
+  // ─── Topic panel sticky (JS-driven floating panel) ─────────────
+  // We measure each topic block's Y position inside the ScrollView's
+  // content via `measureLayout` against the ScrollView's inner node.
+  // On scroll, we figure out which topic the user is currently inside
+  // (the latest panel that has scrolled past the top of the path) and
+  // render its title in a fixed View pinned just below the top bar.
+  // The in-flow topic panels still render at their natural positions;
+  // the floating one covers them as the user scrolls past.
+  type TopicLayoutEntry = {
+    y: number;
+    height: number;
+    label: string;
+    levelLabel: string;
+    bgColor: string;
+    locked: boolean;
+  };
+  const topicLayoutsRef = useRef<Map<string, TopicLayoutEntry>>(new Map());
+  const topicViewsRef = useRef<Map<string, View>>(new Map());
+  const [stickyTopic, setStickyTopic] = useState<{
+    slug: string;
+    label: string;
+    levelLabel: string;
+    bgColor: string;
+    locked: boolean;
+  } | null>(null);
+  const stickyTopicSlugRef = useRef<string | null>(null);
+  // Set of destination slugs that already fired haptic during the current
+  // "scroll session" — a session runs from `onScrollBeginDrag` (finger
+  // touches the path) to `onMomentumScrollEnd` (deceleration finished).
+  // Within a session each unique slug only fires haptic once, so
+  // bounce / spring oscillation that revisits a topic the user already
+  // crossed produces no extra ticks. Sentinel string is used for the
+  // "sticky cleared" transition so going-back-to-top also dedupes if it
+  // happens to oscillate. Reset at session boundaries.
+  const STICKY_NULL_SENTINEL = "__null__";
+  const visitedSlugsInSessionRef = useRef<Set<string>>(new Set());
+  // Latest known scroll-Y of the shell ScrollView. Used by
+  // `measureTopicY` to seed the floating sticky panel as soon as the
+  // first topic is measured, without waiting for the user's first
+  // scroll event. Without this seed the panel would mount blank for
+  // a frame on entry to the journey screen.
+  const shellScrollYRef = useRef(0);
+  // Pixel height of the journey top bar (flag chip + stats + menu).
+  // We measure it ONCE (latched via `topBarMeasuredRef`) so the
+  // floating sticky panel sits pixel-perfect on top of the in-flow
+  // topic panel during the eclipse. Earlier we either:
+  //   - hardcoded it (wrong by 2–4 px on real devices, which made
+  //     the sticky and the in-flow appear as a doubled / vibrating
+  //     edge during overlap — the "flicker on eclipse" bug)
+  //   - re-measured on every render (created a feedback loop with
+  //     setState → re-render → onLayout → setState).
+  // Latch + once is the right balance: we get the exact device
+  // height once after first paint and never re-fire.
+  const [journeyTopBarHeight, setJourneyTopBarHeight] = useState(66);
+  const topBarMeasuredRef = useRef(false);
+  // Scroll-to-top floating arrow on the journey screen. Shows once
+  // the user has scrolled far enough that returning to the start of
+  // the path is a meaningful action (one full topic-block down,
+  // ~280pt). Tapping it animates the ScrollView smoothly back to
+  // y=0.
+  const [showJourneyScrollTop, setShowJourneyScrollTop] = useState(false);
+  const showJourneyScrollTopRef = useRef(false);
 
   // Two reasons to force the onboarding to show up after the gate:
   //   - "test"   → polyglot menu entry. Selections are NOT persisted;
@@ -1762,9 +2065,13 @@ export function MobileLibraryShell(args: {
   //                without picking one), and tapped the flag chip.
   //                Selections persist normally.
   const [onboardingOverride, setOnboardingOverride] = useState<
-    "test" | "proper" | null
+    "proper" | null
   >(null);
-  const forceOnboardingTest = onboardingOverride === "test";
+  // The "test" override variant was dropped — the "Test mode" menu
+  // entry now does a full preference reset (handleTestModeReset)
+  // and lets the regular `shouldShowOnboardingSurvey` gate fire,
+  // so we no longer need a transient flag to override the gate
+  // without touching prefs.
   const forceOnboardingProper = onboardingOverride === "proper";
 
   // MOCK DATA — per-language stats while we don't have a backend
@@ -1809,52 +2116,283 @@ export function MobileLibraryShell(args: {
     "Chinese",
     "English",
   ];
-  const hasUserLanguages = preferences.targetLanguages.length > 0;
-  const sourceLanguageNames = hasUserLanguages
-    ? preferences.targetLanguages
-    : ALL_SUPPORTED_LANGUAGES;
-  const languageSwitchEntries: LanguageSwitchEntry[] = sourceLanguageNames.map((name) => {
-    const isActive =
-      hasUserLanguages && name === (activeJourneyLanguage ?? preferences.targetLanguages[0]);
-    const stats = MOCK_LANG_STATS[name] ?? { streak: 0, xpTotal: 0, progress: 0 };
+  const hasUserJourneys = preferences.journeys.length > 0;
+  const activeJourney = findActiveJourney(preferences.journeys, preferences.activeJourneyId);
+  // Build the rows the JourneySwitchSheet renders: one row per journey
+  // (= one row per (language, variant, focus) tuple). Stats are still
+  // language-level mocks for now — when per-journey progress lands the
+  // lookup key changes to journey.id.
+  const journeySwitchEntries: LanguageSwitchEntry[] = preferences.journeys.map((journey) => {
+    const stats = MOCK_LANG_STATS[journey.language] ?? { streak: 0, xpTotal: 0, progress: 0 };
+    const isActive = preferences.activeJourneyId
+      ? journey.id === preferences.activeJourneyId
+      : journey === preferences.journeys[0];
     return {
-      name,
-      variant: isActive ? preferences.preferredVariant : null,
-      variantLabel: isActive ? formatVariantLabel(preferences.preferredVariant) : null,
-      level: cefrFromPreferredLevel(preferences.preferredLevel),
+      id: journey.id,
+      language: journey.language,
+      variant: journey.variant,
+      variantLabel: formatVariantLabel(journey.variant),
+      displayName: journeyDisplayName(journey),
+      level: cefrFromPreferredLevel(journey.level),
       active: isActive,
-      streak: hasUserLanguages ? stats.streak : 0,
-      xpTotal: hasUserLanguages ? stats.xpTotal : 0,
-      progress: hasUserLanguages ? stats.progress : 0,
+      streak: stats.streak,
+      xpTotal: stats.xpTotal,
+      progress: stats.progress,
     };
   });
 
-  async function handleLanguageSwitch(targetName: string) {
+  // Polyglot-only QA reset: wipes the user's preferences on both
+  // client and server so the onboarding gate fires again, letting
+  // you walk through the flow as a brand-new user with the changes
+  // actually persisting. Tied to the "Test mode" menu entry.
+  async function handleTestModeReset() {
+    const blankPrefs: MobilePreferences = {
+      targetLanguages: [],
+      interests: [],
+      preferredLevel: null,
+      preferredRegion: null,
+      preferredVariant: null,
+      learningGoal: null,
+      journeyFocus: null,
+      dailyMinutes: null,
+      remindersEnabled: false,
+      reminderHour: null,
+      journeyPlacementLevel: null,
+      onboardingSurveyCompletedAt: null,
+      onboardingTourCompletedAt: null,
+      journeys: [],
+      activeJourneyId: null,
+    };
+    setPreferences(blankPrefs);
+    setSavedPreferences(blankPrefs);
+    setActiveJourneyLanguage(null);
+    setRemoteJourney(null);
+    setOnboardingOverride(null);
+    setActiveScreen("home");
+    journeyCacheByLanguageRef.current.clear();
+    // Wipe disk-stored journeys too so the test reset truly starts
+    // from zero on next launch. Also reset the "restored" flag so
+    // the next save cycle isn't gated by a stale restore that
+    // happened pre-reset.
+    void clearStoredJourneys();
+    setJourneysRestored(false);
+    // Clear the server side too so a kill + relaunch mid-flow lands
+    // on the same fresh state instead of the previous session.
+    if (sessionToken) {
+      try {
+        await apiFetch({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/user/preferences",
+          token: sessionToken,
+          method: "POST",
+          body: {
+            targetLanguages: [],
+            interests: [],
+            preferredLevel: null,
+            preferredRegion: null,
+            preferredVariant: null,
+            journeyFocus: null,
+            dailyMinutes: null,
+            remindersEnabled: false,
+            reminderHour: null,
+            journeyPlacementLevel: null,
+            onboardingSurveyCompletedAt: null,
+          },
+        });
+      } catch (err) {
+        console.warn("[test-mode-reset] failed to clear server prefs", err);
+      }
+    }
+  }
+
+  async function handleJourneyDelete(targetId: string) {
+    // Block destructive paths the panel already guards but be
+    // defensive — a stale UI tap shouldn't be able to wipe the only
+    // journey on the account.
+    if (preferences.journeys.length <= 1) return;
+    const wasActive = preferences.activeJourneyId === targetId;
+    let nextActiveId: string | null = preferences.activeJourneyId;
+    let nextJourneys: Journey[] = preferences.journeys;
+    setPreferences((current) => {
+      const remaining = current.journeys.filter((j) => j.id !== targetId);
+      // If we just removed the active journey, promote the first
+      // remaining one. Otherwise keep the active id pointing where
+      // it did (it's still valid).
+      const newActiveId = wasActive ? remaining[0]?.id ?? null : current.activeJourneyId;
+      const promoted = newActiveId
+        ? remaining.find((j) => j.id === newActiveId) ?? null
+        : null;
+      nextActiveId = newActiveId;
+      nextJourneys = remaining;
+      return {
+        ...current,
+        journeys: remaining,
+        activeJourneyId: newActiveId,
+        targetLanguages: targetLanguagesFromJourneys(remaining),
+        // Surface the promoted journey's variant/focus/level on the
+        // legacy fields so call sites that still read them see the
+        // new active journey, not the dead one.
+        preferredVariant: promoted ? promoted.variant : current.preferredVariant,
+        preferredLevel: promoted ? promoted.level ?? current.preferredLevel : current.preferredLevel,
+        journeyFocus: promoted ? promoted.focus : current.journeyFocus,
+      };
+    });
+    if (wasActive) {
+      const promoted = nextJourneys.find((j) => j.id === nextActiveId) ?? null;
+      if (promoted) {
+        setActiveJourneyLanguage(promoted.language);
+        void loadJourneyForLanguage(promoted.language);
+      } else {
+        setActiveJourneyLanguage(null);
+      }
+    }
+    if (sessionToken) {
+      try {
+        await apiFetch({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/user/preferences",
+          token: sessionToken,
+          method: "POST",
+          body: {
+            targetLanguages: targetLanguagesFromJourneys(nextJourneys),
+          },
+        });
+      } catch (err) {
+        console.warn("[journey-delete] failed to persist", err);
+      }
+    }
+  }
+
+  // Synchronous guard against rapid double-tap on the create button.
+  // The previous `submitting` state lives in the panel and `existing`
+  // check reads `preferences.journeys` from closure — both lag the
+  // first call by one render, so two clicks fired ~16ms apart could
+  // both pass the existing-id check and emit two journeys with
+  // identical ids. A ref flips synchronously and bridges the gap.
+  const journeyCreateInFlightRef = useRef<Set<string>>(new Set());
+
+  async function handleJourneyCreate(input: {
+    language: string;
+    variant: string | null;
+    focus: JourneyFocus;
+  }) {
+    const id = journeyId(input.language, input.variant, input.focus);
+    // Defensive: if the user somehow lands on an existing combination,
+    // activate it instead of duplicating. The panel disables existing
+    // combos but this keeps us correct under race conditions.
+    const existing = preferences.journeys.find((j) => j.id === id);
+    if (existing) {
+      void handleJourneySwitch(id);
+      return;
+    }
+    // Synchronous "already creating this id" check — see ref above.
+    if (journeyCreateInFlightRef.current.has(id)) {
+      return;
+    }
+    journeyCreateInFlightRef.current.add(id);
+    const newJourney: Journey = {
+      id,
+      language: input.language,
+      variant: input.variant,
+      focus: input.focus,
+      level: preferences.preferredLevel,
+      createdAt: new Date().toISOString(),
+    };
+    setPreferences((current) => {
+      // Belt + suspenders: dedupe the merge result. If anything
+      // ever bypasses the in-flight ref (background hydrate from
+      // disk, server payload, …) the array still ends up unique.
+      const nextJourneys = dedupeJourneysById([newJourney, ...current.journeys]);
+      return {
+        ...current,
+        journeys: nextJourneys,
+        activeJourneyId: newJourney.id,
+        targetLanguages: targetLanguagesFromJourneys(nextJourneys),
+        preferredVariant: newJourney.variant,
+        journeyFocus: newJourney.focus,
+      };
+    });
+    setActiveJourneyLanguage(input.language);
+    void loadJourneyForLanguage(input.language);
+    if (sessionToken) {
+      try {
+        await apiFetch({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/user/preferences",
+          token: sessionToken,
+          method: "POST",
+          body: {
+            targetLanguages: [
+              input.language,
+              ...preferences.targetLanguages.filter((n) => n !== input.language),
+            ],
+            preferredVariant: input.variant,
+            journeyFocus: input.focus,
+          },
+        });
+      } catch (err) {
+        console.warn("[journey-create] failed to persist", err);
+      }
+    }
+    // Release the in-flight slot regardless of how the persist call
+    // resolved — the journey is already in client state, and a
+    // subsequent retry of the same id would correctly take the
+    // "existing" branch above.
+    journeyCreateInFlightRef.current.delete(id);
+  }
+
+  async function handleJourneySwitch(journeyId: string) {
     if (!sessionToken) return;
-    if (activeJourneyLanguage === targetName) {
+    const target = preferences.journeys.find((j) => j.id === journeyId);
+    if (!target) {
+      setLanguageSwitchOpen(false);
+      return;
+    }
+    if (preferences.activeJourneyId === journeyId) {
       setLanguageSwitchOpen(false);
       return;
     }
     try {
       // Reorder client-side first so the journey UI flips immediately;
-      // the server write happens in the background and overwrites with
-      // the canonical normalized list when it returns.
-      setActiveJourneyLanguage(targetName);
-      void loadJourneyForLanguage(targetName);
+      // the server write happens in the background. The legacy
+      // targetLanguages / preferredVariant / preferredLevel /
+      // journeyFocus fields are kept in sync so call sites that
+      // haven't migrated yet see the active journey's values.
+      setPreferences((current) => {
+        const reordered = [
+          target,
+          ...current.journeys.filter((j) => j.id !== journeyId),
+        ];
+        return {
+          ...current,
+          journeys: reordered,
+          activeJourneyId: journeyId,
+          targetLanguages: targetLanguagesFromJourneys(reordered),
+          preferredVariant: target.variant,
+          preferredLevel: target.level,
+          journeyFocus: target.focus,
+        };
+      });
+      setActiveJourneyLanguage(target.language);
+      void loadJourneyForLanguage(target.language);
 
       const nextOrder = [
-        targetName,
-        ...preferences.targetLanguages.filter((n) => n !== targetName),
+        target.language,
+        ...preferences.targetLanguages.filter((n) => n !== target.language),
       ];
       await apiFetch({
         baseUrl: mobileConfig.apiBaseUrl,
         path: "/api/user/preferences",
         token: sessionToken,
         method: "POST",
-        body: { targetLanguages: nextOrder },
+        body: {
+          targetLanguages: nextOrder,
+          preferredVariant: target.variant,
+          journeyFocus: target.focus,
+        },
       });
     } catch (err) {
-      console.warn("[language-switch] failed to persist new order", err);
+      console.warn("[journey-switch] failed to persist", err);
     } finally {
       setLanguageSwitchOpen(false);
     }
@@ -2063,8 +2601,17 @@ export function MobileLibraryShell(args: {
         setRemoteStories([]);
         setRemoteEntitlement(null);
         setRemoteProgress(null);
-        const clearedPreferences = {
-          targetLanguages: normalizeLanguageSelection(sessionTargetLanguages ?? []),
+        const clearedLangs = normalizeLanguageSelection(sessionTargetLanguages ?? []);
+        const clearedJourneys = clearedLangs.length > 0
+          ? synthesizeJourneysFromLegacy({
+              targetLanguages: clearedLangs,
+              preferredVariant: null,
+              preferredLevel: null,
+              journeyFocus: null,
+            })
+          : { journeys: [] as Journey[], activeJourneyId: null };
+        const clearedPreferences: MobilePreferences = {
+          targetLanguages: clearedLangs,
           interests: [],
           preferredLevel: null,
           preferredRegion: null,
@@ -2077,6 +2624,8 @@ export function MobileLibraryShell(args: {
           journeyPlacementLevel: null,
           onboardingSurveyCompletedAt: null,
           onboardingTourCompletedAt: null,
+          journeys: clearedJourneys.journeys,
+          activeJourneyId: clearedJourneys.activeJourneyId,
         };
         setPreferences(clearedPreferences);
         setSavedPreferences(clearedPreferences);
@@ -2412,6 +2961,28 @@ export function MobileLibraryShell(args: {
     void loadJourneyForLanguage(activeJourneyLanguage, { clearPrevious: false });
   }, [activeJourneyLanguageHydrated, activeJourneyLanguage, sessionToken, remoteJourney?.language, loadJourneyForLanguage]);
 
+  // Force-refresh the journey payload every time the user enters the
+  // journey screen. Without this, the cached payload (from disk or
+  // previous session) wins forever — including stale unlock state
+  // from when the user had a `journeyPlacementLevel` set in Clerk
+  // that has since been removed. The cached version still renders
+  // immediately for snappy UX; this just guarantees a fresh fetch
+  // races behind it and replaces the data with reality.
+  const lastJourneyFreshFetchRef = useRef<{ key: string; ts: number } | null>(null);
+  useEffect(() => {
+    if (activeScreen !== "journey") return;
+    if (!sessionToken) return;
+    if (!activeJourneyLanguage) return;
+    const key = activeJourneyLanguage.toLowerCase();
+    const now = Date.now();
+    // Throttle: don't re-fetch if we just refreshed under 30 seconds
+    // ago. A user toggling tabs quickly shouldn't hammer the API.
+    const prev = lastJourneyFreshFetchRef.current;
+    if (prev && prev.key === key && now - prev.ts < 30_000) return;
+    lastJourneyFreshFetchRef.current = { key, ts: now };
+    void loadJourneyForLanguage(activeJourneyLanguage, { clearPrevious: false });
+  }, [activeScreen, sessionToken, activeJourneyLanguage, loadJourneyForLanguage]);
+
   useEffect(() => {
     setSelectedBookDescriptionExpanded(false);
   }, [selectedBook?.id]);
@@ -2436,16 +3007,40 @@ export function MobileLibraryShell(args: {
           token: sessionToken,
         });
         if (cancelled) return;
+        const normalizedTargetLanguages = normalizeLanguageSelection(next.targetLanguages ?? []);
+        const resolvedJourneyFocus =
+          normalizeJourneyFocusPreference(next.journeyFocus) ??
+          getJourneyFocusFromLearningGoal(normalizeLearningGoal(next.learningGoal));
+        const resolvedPreferredVariant = next.preferredVariant ?? null;
+        const resolvedPreferredLevel = next.preferredLevel ?? null;
+        // Backfill the multi-journey list when the server hasn't been
+        // migrated yet (or returned an empty array): one journey per
+        // language, with the legacy single-focus / variant / level
+        // applied to the primary entry. Once we ship the server-side
+        // model, the `next.journeys` branch takes over.
+        const remoteJourneys = Array.isArray((next as { journeys?: unknown }).journeys)
+          ? ((next as { journeys?: Journey[] }).journeys ?? [])
+          : [];
+        const remoteActiveId =
+          typeof (next as { activeJourneyId?: unknown }).activeJourneyId === "string"
+            ? ((next as { activeJourneyId?: string }).activeJourneyId ?? null)
+            : null;
+        const synthesized = synthesizeJourneysFromLegacy({
+          targetLanguages: normalizedTargetLanguages,
+          preferredVariant: resolvedPreferredVariant,
+          preferredLevel: resolvedPreferredLevel,
+          journeyFocus: resolvedJourneyFocus,
+        });
+        const journeys = remoteJourneys.length > 0 ? remoteJourneys : synthesized.journeys;
+        const activeJourneyId = remoteActiveId ?? synthesized.activeJourneyId;
         const normalized: MobilePreferences = {
-          targetLanguages: normalizeLanguageSelection(next.targetLanguages ?? []),
+          targetLanguages: normalizedTargetLanguages,
           interests: normalizeInterestSelection(next.interests ?? []),
-          preferredLevel: next.preferredLevel ?? null,
+          preferredLevel: resolvedPreferredLevel,
           preferredRegion: next.preferredRegion ?? null,
-          preferredVariant: next.preferredVariant ?? null,
+          preferredVariant: resolvedPreferredVariant,
           learningGoal: normalizeLearningGoal(next.learningGoal),
-          journeyFocus:
-            normalizeJourneyFocusPreference(next.journeyFocus) ??
-            getJourneyFocusFromLearningGoal(normalizeLearningGoal(next.learningGoal)),
+          journeyFocus: resolvedJourneyFocus,
           dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
           remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
           reminderHour: normalizeReminderHour(next.reminderHour),
@@ -2455,6 +3050,8 @@ export function MobileLibraryShell(args: {
             typeof next.onboardingSurveyCompletedAt === "string" ? next.onboardingSurveyCompletedAt : null,
           onboardingTourCompletedAt:
             typeof next.onboardingTourCompletedAt === "string" ? next.onboardingTourCompletedAt : null,
+          journeys,
+          activeJourneyId,
         };
         setPreferences(normalized);
         setSavedPreferences(normalized);
@@ -3475,16 +4072,32 @@ export function MobileLibraryShell(args: {
         method: "POST",
         body: preferences,
       });
+      const normalizedTargetLanguages = normalizeLanguageSelection(next.targetLanguages ?? []);
+      const resolvedJourneyFocus =
+        normalizeJourneyFocusPreference(next.journeyFocus) ??
+        getJourneyFocusFromLearningGoal(normalizeLearningGoal(next.learningGoal));
+      const resolvedPreferredVariant = next.preferredVariant ?? null;
+      const resolvedPreferredLevel = next.preferredLevel ?? null;
+      // Server may not echo journeys yet — we keep the local list if
+      // the response omits it, so saving global prefs (interests,
+      // reminders, etc.) doesn't wipe the multi-journey state.
+      const remoteJourneys = Array.isArray((next as { journeys?: unknown }).journeys)
+        ? ((next as { journeys?: Journey[] }).journeys ?? [])
+        : null;
+      const remoteActiveId =
+        typeof (next as { activeJourneyId?: unknown }).activeJourneyId === "string"
+          ? ((next as { activeJourneyId?: string }).activeJourneyId ?? null)
+          : null;
+      const journeys = remoteJourneys ?? preferences.journeys;
+      const activeJourneyId = remoteActiveId ?? preferences.activeJourneyId;
       const normalized: MobilePreferences = {
-        targetLanguages: normalizeLanguageSelection(next.targetLanguages ?? []),
+        targetLanguages: normalizedTargetLanguages,
         interests: normalizeInterestSelection(next.interests ?? []),
-        preferredLevel: next.preferredLevel ?? null,
+        preferredLevel: resolvedPreferredLevel,
         preferredRegion: next.preferredRegion ?? null,
-        preferredVariant: next.preferredVariant ?? null,
+        preferredVariant: resolvedPreferredVariant,
         learningGoal: normalizeLearningGoal(next.learningGoal),
-        journeyFocus:
-          normalizeJourneyFocusPreference(next.journeyFocus) ??
-          getJourneyFocusFromLearningGoal(normalizeLearningGoal(next.learningGoal)),
+        journeyFocus: resolvedJourneyFocus,
         dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
         remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
         reminderHour: normalizeReminderHour(next.reminderHour),
@@ -3494,6 +4107,8 @@ export function MobileLibraryShell(args: {
           typeof next.onboardingSurveyCompletedAt === "string" ? next.onboardingSurveyCompletedAt : null,
         onboardingTourCompletedAt:
           typeof next.onboardingTourCompletedAt === "string" ? next.onboardingTourCompletedAt : null,
+        journeys,
+        activeJourneyId,
       };
       setPreferences(normalized);
       setSavedPreferences(normalized);
@@ -3587,16 +4202,38 @@ export function MobileLibraryShell(args: {
         method: "POST",
         body: payload,
       });
+      const normalizedTargetLanguages = normalizeLanguageSelection(next.targetLanguages ?? []);
+      const resolvedJourneyFocus =
+        normalizeJourneyFocusPreference(next.journeyFocus) ??
+        getJourneyFocusFromLearningGoal(normalizeLearningGoal(next.learningGoal));
+      const resolvedPreferredVariant = next.preferredVariant ?? null;
+      const resolvedPreferredLevel = next.preferredLevel ?? null;
+      const remoteJourneys = Array.isArray((next as { journeys?: unknown }).journeys)
+        ? ((next as { journeys?: Journey[] }).journeys ?? [])
+        : [];
+      const remoteActiveId =
+        typeof (next as { activeJourneyId?: unknown }).activeJourneyId === "string"
+          ? ((next as { activeJourneyId?: string }).activeJourneyId ?? null)
+          : null;
+      // Onboarding is the moment the user first declares languages,
+      // so we always synthesize from the freshly-saved targetLanguages
+      // when the server hasn't rolled out the journeys field yet.
+      const synthesized = synthesizeJourneysFromLegacy({
+        targetLanguages: normalizedTargetLanguages,
+        preferredVariant: resolvedPreferredVariant,
+        preferredLevel: resolvedPreferredLevel,
+        journeyFocus: resolvedJourneyFocus,
+      });
+      const journeys = remoteJourneys.length > 0 ? remoteJourneys : synthesized.journeys;
+      const activeJourneyId = remoteActiveId ?? synthesized.activeJourneyId;
       const normalized: MobilePreferences = {
-        targetLanguages: normalizeLanguageSelection(next.targetLanguages ?? []),
+        targetLanguages: normalizedTargetLanguages,
         interests: normalizeInterestSelection(next.interests ?? []),
-        preferredLevel: next.preferredLevel ?? null,
+        preferredLevel: resolvedPreferredLevel,
         preferredRegion: next.preferredRegion ?? null,
-        preferredVariant: next.preferredVariant ?? null,
+        preferredVariant: resolvedPreferredVariant,
         learningGoal: normalizeLearningGoal(next.learningGoal),
-        journeyFocus:
-          normalizeJourneyFocusPreference(next.journeyFocus) ??
-          getJourneyFocusFromLearningGoal(normalizeLearningGoal(next.learningGoal)),
+        journeyFocus: resolvedJourneyFocus,
         dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
         remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
         reminderHour: normalizeReminderHour(next.reminderHour),
@@ -3606,6 +4243,8 @@ export function MobileLibraryShell(args: {
           typeof next.onboardingSurveyCompletedAt === "string" ? next.onboardingSurveyCompletedAt : null,
         onboardingTourCompletedAt:
           typeof next.onboardingTourCompletedAt === "string" ? next.onboardingTourCompletedAt : null,
+        journeys,
+        activeJourneyId,
       };
       setPreferences(normalized);
       setSavedPreferences(normalized);
@@ -3802,7 +4441,14 @@ export function MobileLibraryShell(args: {
   }
 
   async function openJourneyStory(story: MobileJourneyTopicSummary["stories"][number]) {
-    if (!story.storySlug) return;
+    if (!story.storySlug) {
+      // Surface the failure instead of silently doing nothing —
+      // the user reported "tap and nothing happens", which traced
+      // back to journey stories whose slug never made it into the
+      // payload (a data inconsistency on the Studio side).
+      setLockedStoryHint("Esta historia aún no está disponible. Prueba con otra.");
+      return;
+    }
 
     // Warm the large reader cover while we fetch the story body + navigate.
     if (story.coverUrl) {
@@ -3853,6 +4499,10 @@ export function MobileLibraryShell(args: {
       if (!standalone) {
         clearTimeout(skeletonTimer);
         setOpeningStoryId(null);
+        // The journey points at this slug but the standalone
+        // catalog doesn't have it. Tell the user instead of
+        // failing silently.
+        setLockedStoryHint("No se pudo cargar esta historia. Inténtalo de nuevo.");
         return;
       }
       clearTimeout(skeletonTimer);
@@ -4388,7 +5038,7 @@ export function MobileLibraryShell(args: {
     setPracticeCheckpointResponses({});
     setPracticeCheckpointSaveState("idle");
     setPracticeJourneyReviewMeta(null);
-    setActiveMatchWord(null);
+    setActiveMatchWord(null); setWrongMatchAttempt(null);
     setMatchedWords([]);
     setLastPracticeActivityAt(new Date().toISOString());
     setMenuOpen(false);
@@ -4481,7 +5131,7 @@ export function MobileLibraryShell(args: {
     setPracticeCheckpointResponses({});
     setPracticeCheckpointSaveState("idle");
     setPracticeJourneyReviewMeta(null);
-    setActiveMatchWord(null);
+    setActiveMatchWord(null); setWrongMatchAttempt(null);
     setMatchedWords([]);
     setSelection(null);
     setActiveScreen("practice");
@@ -4624,7 +5274,7 @@ export function MobileLibraryShell(args: {
       setPracticeCheckpointResponses({});
       setPracticeCheckpointSaveState("idle");
       setPracticeJourneyReviewMeta(reviewMeta);
-      setActiveMatchWord(null);
+      setActiveMatchWord(null); setWrongMatchAttempt(null);
       setMatchedWords([]);
       setActiveScreen("practice");
     } catch (error) {
@@ -4708,7 +5358,7 @@ export function MobileLibraryShell(args: {
     setPracticeCheckpointResponses({});
     setPracticeCheckpointSaveState("idle");
     setPracticeJourneyReviewMeta(null);
-    setActiveMatchWord(null);
+    setActiveMatchWord(null); setWrongMatchAttempt(null);
     setMatchedWords([]);
   }
 
@@ -4720,7 +5370,7 @@ export function MobileLibraryShell(args: {
       setPracticeComplete(true);
       setPracticeRevealed(false);
       setPracticeSelectedOption(null);
-      setActiveMatchWord(null);
+      setActiveMatchWord(null); setWrongMatchAttempt(null);
       setMatchedWords([]);
       return;
     }
@@ -4729,7 +5379,7 @@ export function MobileLibraryShell(args: {
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
     setPracticeLastResult(null);
-    setActiveMatchWord(null);
+    setActiveMatchWord(null); setWrongMatchAttempt(null);
     setMatchedWords([]);
   }
 
@@ -5153,11 +5803,34 @@ export function MobileLibraryShell(args: {
 
     const pair = current.pairs.find((entry) => entry.word === activeMatchWord);
     if (!pair) return;
-    if (pair.answer !== value) return;
+
+    if (pair.answer !== value) {
+      // Wrong match: previously this branch silently returned, which
+      // made the exercise feel broken (the user would tap an option
+      // and nothing happened). Now we surface the miss: flash the
+      // mis-tapped row red, mark the word as "again" in SRS, drop
+      // the streak, and clear the active selection so the user can
+      // retry without an extra tap.
+      setWrongMatchAttempt({ word: activeMatchWord, value });
+      setPracticeSessionStreak(0);
+      setPracticeLastResult("wrong");
+      setPracticeReviewScores((currentScores) => ({
+        ...currentScores,
+        [normalizePracticeWord(activeMatchWord)]: "again",
+      }));
+      void playPracticeFeedbackSound(false);
+      // Hold the red flash long enough to register as feedback,
+      // then deselect so a new tap starts a fresh attempt.
+      setTimeout(() => {
+        setWrongMatchAttempt(null);
+        setActiveMatchWord(null); setWrongMatchAttempt(null);
+      }, 700);
+      return;
+    }
 
     const nextMatched = [...matchedWords, activeMatchWord];
     setMatchedWords(nextMatched);
-    setActiveMatchWord(null);
+    setActiveMatchWord(null); setWrongMatchAttempt(null);
 
     if (nextMatched.length === current.pairs.length) {
       setPracticeScore((value) => value + 1);
@@ -5167,7 +5840,14 @@ export function MobileLibraryShell(args: {
       setPracticeReviewScores((currentScores) => {
         const nextScores = { ...currentScores };
         for (const pair of current.pairs) {
-          nextScores[normalizePracticeWord(pair.word)] = "good";
+          // Only mark pairs that weren't previously flagged as
+          // "again" — otherwise a perfect finish after one or two
+          // misses would erase the SRS "again" signal and the user
+          // wouldn't see the word pop back for review.
+          const key = normalizePracticeWord(pair.word);
+          if (nextScores[key] !== "again") {
+            nextScores[key] = "good";
+          }
         }
         return nextScores;
       });
@@ -6916,7 +7596,7 @@ export function MobileLibraryShell(args: {
                           </View>
                         </View>
                         <View style={styles.practiceModeActionCentered}>
-                          <Text style={[styles.practiceModeActionTextLarge, { color: card.background }]}>Play</Text>
+                          <Text style={styles.practiceModeActionTextLarge}>Play</Text>
                         </View>
                       </View>
                     </Pressable>
@@ -7178,7 +7858,13 @@ export function MobileLibraryShell(args: {
 
               <ScrollView
                 style={styles.practiceExerciseScroll}
-                contentContainerStyle={styles.practiceExerciseScrollContent}
+                contentContainerStyle={[
+                  styles.practiceExerciseScrollContent,
+                  currentPracticeExercise.kind === "multiple-choice" &&
+                  currentPracticeExercise.mode === "meaning"
+                    ? styles.practiceExerciseScrollContentMeaning
+                    : null,
+                ]}
                 showsVerticalScrollIndicator={false}
                 bounces={false}
               >
@@ -7189,7 +7875,22 @@ export function MobileLibraryShell(args: {
                   }}
                 >
                 {currentPracticeExercise.kind === "multiple-choice" ? (
-                  <View style={styles.practiceQuestionCard}>
+                  // The "make options + sentence bigger to fill the card on
+                  // tall devices" pass that fixes the empty space below the
+                  // prompt for context / listening / match. Meaning already
+                  // had the right vertical balance with the original sizes,
+                  // so we keep its smaller typography + tighter spacing —
+                  // otherwise meaning ends up taller than the screen and
+                  // forces a scroll.
+                  (() => {
+                    const isMeaningExercise = currentPracticeExercise.mode === "meaning";
+                    return (
+                  <View
+                    style={[
+                      styles.practiceQuestionCard,
+                      isMeaningExercise ? styles.practiceQuestionCardMeaning : null,
+                    ]}
+                  >
                     <Text style={styles.practicePrompt}>{currentPracticeExercise.prompt}</Text>
                     {currentPracticeExercise.mode === "meaning" || currentPracticeExercise.mode === "listening" ? (
                       <View style={styles.practiceTargetWrap}>
@@ -7287,7 +7988,14 @@ export function MobileLibraryShell(args: {
                       </Pressable>
                     ) : null}
                     {currentPracticeExercise.sentence ? (
-                      <Text style={styles.practiceSentence}>{currentPracticeExercise.sentence}</Text>
+                      <Text
+                        style={[
+                          styles.practiceSentence,
+                          isMeaningExercise ? styles.practiceSentenceMeaning : null,
+                        ]}
+                      >
+                        {currentPracticeExercise.sentence}
+                      </Text>
                     ) : null}
                     {practiceRevealed &&
                     practiceLaunchContext.source === "favorites" &&
@@ -7306,7 +8014,12 @@ export function MobileLibraryShell(args: {
                         </Text>
                       </Pressable>
                     ) : null}
-                    <View style={styles.practiceOptions}>
+                    <View
+                      style={[
+                        styles.practiceOptions,
+                        isMeaningExercise ? styles.practiceOptionsMeaning : null,
+                      ]}
+                    >
                       {currentPracticeExercise.options.map((option) => {
                         const isSelected = practiceSelectedOption === option;
                         const isCorrect = practiceRevealed && option === currentPracticeExercise.answer;
@@ -7318,6 +8031,7 @@ export function MobileLibraryShell(args: {
                             disabled={practiceRevealed}
                             style={[
                               styles.practiceOption,
+                              isMeaningExercise ? styles.practiceOptionMeaning : null,
                               isSelected ? styles.practiceOptionSelected : null,
                               isCorrect ? styles.practiceOptionCorrect : null,
                               isWrong ? styles.practiceOptionWrong : null,
@@ -7326,6 +8040,7 @@ export function MobileLibraryShell(args: {
                             <Text
                               style={[
                                 styles.practiceOptionText,
+                                isMeaningExercise ? styles.practiceOptionTextMeaning : null,
                                 isCorrect || isWrong ? styles.practiceOptionTextOnAccent : null,
                               ]}
                             >
@@ -7336,6 +8051,8 @@ export function MobileLibraryShell(args: {
                       })}
                     </View>
                   </View>
+                    );
+                  })()
                 ) : (
                   <View style={styles.practiceQuestionCard}>
                     <Text style={styles.practicePrompt}>{currentPracticeExercise.prompt}</Text>
@@ -7346,17 +8063,20 @@ export function MobileLibraryShell(args: {
                         {currentPracticeExercise.pairs.map((pair) => {
                           const isMatched = matchedWords.includes(pair.word);
                           const isActive = activeMatchWord === pair.word;
+                          const isWrong = wrongMatchAttempt?.word === pair.word;
                           return (
                             <Pressable
                               key={pair.word}
                               onPress={() => {
                                 if (practiceRevealed) return;
+                                if (wrongMatchAttempt) return;
                                 setActiveMatchWord((current) => (current === pair.word ? null : pair.word));
                               }}
                               style={[
                                 styles.practiceMatchChip,
                                 isActive ? styles.practiceMatchChipActive : null,
                                 isMatched ? styles.practiceMatchChipCorrect : null,
+                                isWrong ? styles.practiceMatchChipWrong : null,
                               ]}
                             >
                               <Text
@@ -7377,14 +8097,21 @@ export function MobileLibraryShell(args: {
                           const matchedPair = currentPracticeExercise.pairs.find(
                             (pair) => pair.answer === meaning && matchedWords.includes(pair.word)
                           );
+                          const isWrong = wrongMatchAttempt?.value === meaning;
                           return (
                             <Pressable
                               key={meaning}
                               onPress={() => chooseMatchValue(meaning)}
-                              disabled={practiceRevealed || !activeMatchWord || Boolean(matchedPair)}
+                              disabled={
+                                practiceRevealed ||
+                                !activeMatchWord ||
+                                Boolean(matchedPair) ||
+                                Boolean(wrongMatchAttempt)
+                              }
                               style={[
                                 styles.practiceMatchMeaning,
                                 matchedPair ? styles.practiceMatchChipCorrect : null,
+                                isWrong ? styles.practiceMatchChipWrong : null,
                               ]}
                             >
                               <Text
@@ -7431,7 +8158,7 @@ export function MobileLibraryShell(args: {
         </View>
         {practiceExitConfirmVisible ? (
           <PracticeExitConfirm
-            accent={activePracticeCard?.accent ?? "#f8d48a"}
+            accent={activePracticeCard?.accent ?? tokenColor.xp}
             onKeepGoing={() => setPracticeExitConfirmVisible(false)}
             onExit={confirmExitPracticeSession}
           />
@@ -8523,11 +9250,50 @@ export function MobileLibraryShell(args: {
     for (const level of activeJourneyTrack.levels) {
       for (const topic of level.topics) {
         for (const story of topic.stories) {
-          if (story.unlocked && !story.completed) return story.id;
+          // The "next" pointer skips three states:
+          //  - completed: audio + exercises done (full mastery)
+          //  - audioFinished: user listened to the story already
+          //    (read it once, exercises pending)
+          //  - skipped: below the placement test level
+          // The first story that's unlocked AND none of those is
+          // the user's current target.
+          if (
+            story.unlocked &&
+            !story.completed &&
+            !story.audioFinished &&
+            !story.skipped
+          ) {
+            return story.id;
+          }
         }
       }
     }
     return null;
+  }, [activeJourneyTrack]);
+
+  // Set of story ids that come AFTER the global "next" pointer in
+  // the path's logical order. Tapping any of these should show the
+  // placement-test offer popup instead of opening the reader —
+  // they're the user's "future" content, not yet earned. Stories
+  // before the next (completed, audioFinished, skipped) are
+  // re-readable; the next itself opens normally.
+  const postNextStoryIds = useMemo<Set<string>>(() => {
+    // Model B: candado solo en niveles que están bloqueados (CEFR boundary).
+    // Dentro de un nivel desbloqueado, todas las historias son accesibles —
+    // el orden secuencial sigue siendo visible vía la pill "next" pero ya
+    // no es un gate. Una historia entra en este Set solo cuando el backend
+    // marcó `unlocked: false`, lo que significa que su nivel todavía no ha
+    // sido alcanzado por el usuario.
+    const set = new Set<string>();
+    if (!activeJourneyTrack) return set;
+    for (const level of activeJourneyTrack.levels) {
+      for (const topic of level.topics) {
+        for (const story of topic.stories) {
+          if (!story.unlocked) set.add(story.id);
+        }
+      }
+    }
+    return set;
   }, [activeJourneyTrack]);
 
   // Ref attached to the "next" node once it renders, plus a flag that
@@ -8892,17 +9658,13 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  // Always start the Journey scroll at the top when the user lands
-  // there. Without this, switching tabs or coming back from a story
-  // can leave the page scrolled mid-path (or a few px down from the
-  // old auto-scroll-to-next behavior). Forces y=0 once per visit.
-  useEffect(() => {
-    if (activeScreen !== "journey") return;
-    // Defer one frame so layout has flushed before we scroll.
-    requestAnimationFrame(() => {
-      shellScrollRef.current?.scrollTo({ y: 0, animated: false });
-    });
-  }, [activeScreen]);
+  // (Removed: an older "force scrollTo(0) every time activeScreen
+  // becomes journey" effect lived here. It was added to defeat a now-
+  // gone auto-scroll-to-next behavior, and competed with the new
+  // scroll-restore-on-tab-return useEffect — its rAF would fire AFTER
+  // the restore, snapping the user back to the top. The restore path
+  // already covers first-visit-lands-at-top because shellScrollYRef
+  // defaults to 0.)
 
   // Auto-select the first target language when the user lands in
   // Journey for the first time. Replaces the old "My Languages" full-
@@ -8924,11 +9686,657 @@ export function MobileLibraryShell(args: {
   // still branch on it, but it's always false now.
   const showJourneyHub = false;
 
+  // Helper that renders a single story node row inside the journey
+  // path. Extracted so the path render can be a flat ReactNode[]
+  // (no nested .map wrappers) — that flat structure is required for
+  // the ScrollView's native `stickyHeaderIndices` to pin the topic
+  // panels at the top of the screen and produce the proper Duolingo
+  // "next panel slides over previous" eclipse swap.
+  const renderJourneyStoryNode = (
+    story: NonNullable<typeof activeJourneyTrack>["levels"][number]["topics"][number]["stories"][number],
+    storyIdx: number,
+    level: NonNullable<typeof activeJourneyTrack>["levels"][number],
+    topic: NonNullable<typeof activeJourneyTrack>["levels"][number]["topics"][number]
+  ) => {
+    const offlineCopy =
+      offlineStoriesById.get(story.id) ??
+      offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug);
+    const durationMin = offlineCopy?.text
+      ? estimateReadMinutes(offlineCopy.text)
+      : null;
+    // Soft serpentine: each story pill sits at a horizontal offset
+    // that walks rightward by a fixed step until it hits the right
+    // edge of the path, then walks back left, then back right, etc.
+    // Independent of total story count — with 3 stories we get
+    // 0/25/50 (still ascending, no return yet); with 5 we get
+    // 0/25/50/25/0 (full cycle); with 7 we get 0/25/50/25/0/25/50.
+    // Earlier versions used a triangle wave with peak at the middle,
+    // which caused short topics (3 stories) to "return" too early —
+    // the third story landed back at the leftmost position even
+    // though the second had only just reached the right edge.
+    const STEP_PX = 25;
+    const MAX_WAVE_OFFSET_PX = 75;
+    const PERIOD = (MAX_WAVE_OFFSET_PX / STEP_PX) * 2; // 6 with these values
+    const phase = storyIdx % PERIOD;
+    const waveOffsetPx =
+      phase <= PERIOD / 2 ? phase * STEP_PX : (PERIOD - phase) * STEP_PX;
+    // ANY locked story → open the level test offer modal. We
+    // always show the modal (no toast fallback): the journey
+    // screen guarantees a language, and falling back to the toast
+    // hid the modal in edge cases where activeJourneyLanguage was
+    // momentarily null right after a navigation event.
+    const showLockedHint = () => {
+      const lang =
+        activeJourney?.language ??
+        activeJourneyLanguage ??
+        remoteJourney?.language ??
+        preferences.targetLanguages[0] ??
+        "Spanish";
+      setLevelTestOfferOpen({
+        targetLevel: (level.id ?? "").toUpperCase() || level.title,
+        targetLanguage: lang,
+      });
+    };
+    const isNextAction = globalJourneyNextStoryId === story.id;
+    const isPostNext = postNextStoryIds.has(story.id);
+    // Five-state variant for visual rendering:
+    //   - completed: audio + exercises done → green check (mastery)
+    //   - audioFinished: audio done, exercises pending → subtle
+    //     intermediate indicator (no green check, just "you've
+    //     been here")
+    //   - next: the current target → bright "START NOW" pill
+    //   - locked: a story past `next` that the user hasn't earned →
+    //     greyed out; tap shows the placement-test offer popup
+    //   - step: re-readable but not progressed (e.g. a `skipped`
+    //     story below the placement level)
+    const nodeVariant:
+      | "completed"
+      | "audioFinished"
+      | "next"
+      | "locked"
+      | "step" = story.completed
+      ? "completed"
+      : story.audioFinished
+        ? "audioFinished"
+        : isNextAction
+          ? "next"
+          : isPostNext
+            ? "locked"
+            : "step";
+    const pillLabel = story.title?.trim() || `Story ${storyIdx + 1}`;
+    return (
+      <View
+        // Compound key (level.id + topic.slug + story.id) — story
+        // ids should be globally unique already, but compound keys
+        // are cheap insurance against any duplicate-key dedupe bug
+        // similar to the topic-panel one we just fixed.
+        key={`sn-${level.id}-${topic.slug}-${story.id}`}
+        style={[
+          styles.journeyPathNodeRow,
+          { paddingLeft: waveOffsetPx },
+        ]}
+      >
+        {(() => {
+          // The "next" variant used to render a separate bright-white pill
+          // wrapped in a glowing halo. It read as oversized and gritty
+          // against the path of neutral cards. Now it renders through the
+          // same Pressable as every other story, so the BOX itself stays
+          // identical in size and weight; we only overlay a thin cyan
+          // breathing inset ring + a subtle background tint so the user's
+          // eye lands on it without the row screaming.
+          const nextOverlay =
+            nodeVariant === "next" ? (
+              <Animated.View
+                pointerEvents="none"
+                style={[styles.journeyNodePillNextGlow, { opacity: journeyNextPulse }]}
+              />
+            ) : null;
+          return (
+          <Pressable
+            onPress={() => {
+              // Tap behavior is now driven by position vs the
+              // "next" pointer, not by `unlocked`. Stories that
+              // come after `next` show the placement-test offer
+              // popup; everything before (or at) next opens for
+              // (re)reading. This preserves the rule that the
+              // green check is earned only via audio + exercises
+              // — placement still gates progression but doesn't
+              // forge completions.
+              if (postNextStoryIds.has(story.id)) {
+                showLockedHint();
+                return;
+              }
+              openJourneyStory(story);
+            }}
+            accessibilityRole="button"
+            accessibilityLabel={`qa-journey-story-${story.id}`}
+            testID={`qa-journey-story-${story.id}`}
+            style={[
+              styles.journeyNodePill,
+              nodeVariant === "completed" ? styles.journeyNodePillCompleted : null,
+              nodeVariant === "audioFinished" ? styles.journeyNodePillAudioFinished : null,
+              nodeVariant === "locked" ? styles.journeyNodePillLocked : null,
+              nodeVariant === "step" ? styles.journeyNodePillStep : null,
+              nodeVariant === "next" ? styles.journeyNodePillNext : null,
+            ]}
+          >
+            {nextOverlay}
+            <View
+              style={[
+                styles.journeyNodePillIcon,
+                nodeVariant === "completed" ? styles.journeyNodePillIconCompleted : null,
+                nodeVariant === "audioFinished" ? styles.journeyNodePillIconAudioFinished : null,
+                nodeVariant === "locked" ? styles.journeyNodePillIconLocked : null,
+                nodeVariant === "step" ? styles.journeyNodePillIconStep : null,
+              ]}
+            >
+              {story.coverUrl ? (
+                <>
+                  <View style={styles.journeyNodePillThumbWrap}>
+                    <ProgressiveImage
+                      uri={getCoverUrl(story.coverUrl, 128)}
+                      style={[
+                        styles.journeyNodePillCoverThumb,
+                        // The "next" recommended story shows its cover at
+                        // full brightness — same as `completed` — so the
+                        // box reads as luminous, not muted. Only past/locked
+                        // stories get the dim treatment.
+                        nodeVariant === "completed" || nodeVariant === "next"
+                          ? styles.journeyNodePillCoverThumbCompleted
+                          : styles.journeyNodePillCoverThumbDim,
+                      ]}
+                      resizeMode="cover"
+                    />
+                  </View>
+                  {/* Status badge — completed gets a green check
+                      ("you mastered this"), audioFinished gets a
+                      headphones icon ("you've heard this but the
+                      exercises are pending"), locked gets the
+                      padlock. step doesn't render a badge. */}
+                  {nodeVariant === "completed" ||
+                  nodeVariant === "audioFinished" ||
+                  nodeVariant === "locked" ? (
+                    <View
+                      style={[
+                        styles.journeyNodePillThumbBadge,
+                        nodeVariant === "completed"
+                          ? styles.journeyNodePillThumbBadgeCompleted
+                          : nodeVariant === "audioFinished"
+                            ? styles.journeyNodePillThumbBadgeAudioFinished
+                            : styles.journeyNodePillThumbBadgeLocked,
+                      ]}
+                    >
+                      {nodeVariant === "completed" ? (
+                        <Feather name="check" size={11} color="#0c1626" />
+                      ) : nodeVariant === "audioFinished" ? (
+                        // Outline check (same shape as the green
+                        // mastery check) to convey "started, not
+                        // mastered" — the badge style itself is
+                        // hollow cyan, see journeyNodePillThumb-
+                        // BadgeAudioFinished.
+                        <Feather name="check" size={11} color="#7dd3fc" />
+                      ) : (
+                        <Feather name="lock" size={10} color="#cdd9ec" />
+                      )}
+                    </View>
+                  ) : null}
+                </>
+              ) : nodeVariant === "completed" ? (
+                <Feather name="check" size={18} color="#0c1626" />
+              ) : nodeVariant === "audioFinished" ? (
+                <Feather name="check" size={16} color="#7dd3fc" />
+              ) : nodeVariant === "locked" ? (
+                <Feather name="lock" size={15} color="#7a8aa5" />
+              ) : (
+                <Feather name="play" size={16} color="#cdd9ec" />
+              )}
+            </View>
+            <View style={styles.journeyNodePillTextStack}>
+              <Text style={styles.journeyNodePillLabel} numberOfLines={2}>
+                {pillLabel}
+              </Text>
+              {durationMin != null ? (
+                <Text style={styles.journeyNodePillSub}>{durationMin} min</Text>
+              ) : null}
+            </View>
+          </Pressable>
+          );
+        })()}
+      </View>
+    );
+  };
+
+  // Duolingo-style level palette: each level gets its own bright
+  // background color so the user gets a visual cue when they cross
+  // a level boundary. Falls back to the cyan-blue base for unknown
+  // level ids.
+  const levelPanelColor = (levelId: string | null | undefined): string => {
+    const id = (levelId ?? "").toLowerCase();
+    switch (id) {
+      case "a1":
+        return "#1f7ee0"; // cyan-blue (current default)
+      case "a2":
+        return "#58a700"; // green
+      case "b1":
+        return "#a560e8"; // purple
+      case "b2":
+        return "#ff9600"; // orange
+      case "c1":
+        return "#ff4b4b"; // red
+      default:
+        return "#1f7ee0";
+    }
+  };
+
+  // Measure a topic block's Y position relative to the ScrollView's
+  // content view. Called from each topic block's `ref` and `onLayout`
+  // so the position stays accurate as the layout settles (e.g. as
+  // story cover images load and push content down).
+  const measureTopicY = useCallback(
+    (
+      slug: string,
+      label: string,
+      levelLabel: string,
+      bgColor: string,
+      locked: boolean,
+      viewNode: View
+    ) => {
+      const scrollable = shellScrollRef.current;
+      if (!scrollable || !viewNode) return;
+      // Older React Native exposes `getInnerViewNode()`; newer
+      // versions return the node handle from `findNodeHandle` on the
+      // inner ref. We prefer the former when present.
+      const innerNode =
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        typeof (scrollable as any).getInnerViewNode === "function"
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ? (scrollable as any).getInnerViewNode()
+          : null;
+      if (innerNode == null) return;
+      viewNode.measureLayout(
+        innerNode,
+        (_x, y, _w, height) => {
+          // ONLY accept the first measurement for each slug. Later
+          // re-measurements (image loads shifting the topic by a
+          // few px) overwrite layout.y while the scroll handler is
+          // mid-flight, which causes the sticky panel to "rotate"
+          // between two topics on every eclipse — exactly the
+          // flicker the user reported.
+          //
+          // The trade-off is that if a cover loads after the user
+          // scrolls past its block, the sticky's swap point is off
+          // by however much that block shifted. In practice covers
+          // load within the first 1–2s and the user is at the top,
+          // so this is barely visible. Stable beats precise.
+          if (topicLayoutsRef.current.has(slug)) return;
+          topicLayoutsRef.current.set(slug, {
+            y,
+            height,
+            label,
+            levelLabel,
+            bgColor,
+            locked,
+          });
+          // Layout-driven recompute → silent. The haptic is reserved
+          // for genuine onScroll-driven transitions; without this flag
+          // every newly-measured topic would re-trigger recompute and
+          // potentially fire its own haptic, multiplying ticks on fast
+          // scroll where state changes drive bursts of remeasurement.
+          recomputeStickyTopicRef.current?.(shellScrollYRef.current, true);
+        },
+        () => {
+          // measureLayout failures are common during fast scroll —
+          // we just skip and rely on the next onLayout / scroll pass.
+        }
+      );
+    },
+    []
+  );
+  // Forward declaration so `measureTopicY` can call the recompute
+  // function defined just below without creating a circular
+  // dependency in the useCallback dep arrays.
+  const recomputeStickyTopicRef = useRef<((y: number, silent?: boolean) => void) | null>(null);
+
+  // Re-evaluate which topic should be sticky based on the current
+  // scroll Y. `silent=true` skips the haptic — used by layout-driven
+  // call sites (measureTopicY, scroll-restore on tab return) so layout
+  // re-measurements and programmatic scroll don't masquerade as user
+  // scroll events. Only `handleJourneyScroll` (the genuine onScroll
+  // path) leaves `silent` defaulted to `false` so the haptic fires
+  // exactly once per real user-driven topic transition.
+  const recomputeStickyTopic = useCallback((scrollY: number, silent: boolean = false) => {
+    if (activeScreen !== "journey" || journeyDetailTopicId) {
+      if (stickyTopicSlugRef.current !== null) {
+        stickyTopicSlugRef.current = null;
+        setStickyTopic(null);
+      }
+      return;
+    }
+    // Eclipse trigger = 0: the floating panel sits at the same Y
+    // (top of the ScrollView) as the in-flow topic panel when
+    // `scrollY === layout.y`. At that exact instant they overlap
+    // pixel-perfect — that's the moment we swap the floating panel
+    // to the new topic.
+    const TRIGGER = 0;
+    const sortedByY = Array.from(topicLayoutsRef.current.entries()).sort(
+      (a, b) => a[1].y - b[1].y
+    );
+    let foundCurrent: {
+      slug: string;
+      label: string;
+      levelLabel: string;
+      bgColor: string;
+      locked: boolean;
+    } | null = null;
+    for (const [slug, layout] of sortedByY) {
+      if (scrollY + TRIGGER >= layout.y) {
+        foundCurrent = {
+          slug,
+          label: layout.label,
+          levelLabel: layout.levelLabel,
+          bgColor: layout.bgColor,
+          locked: layout.locked,
+        };
+      }
+    }
+    // The sticky panel is only visible once a topic has actually
+    // crossed the eclipse trigger. Before that, it stays null so
+    // the in-flow first topic shows in its natural position.
+    let current: typeof foundCurrent;
+    if (foundCurrent) {
+      current = foundCurrent;
+    } else if (stickyTopicSlugRef.current === null) {
+      // Nothing has crossed yet, no previous value to keep — stay
+      // hidden (current === null).
+      current = null;
+    } else {
+      // Had a value, but nothing currently crosses the trigger.
+      // Two cases:
+      //   1. User scrolled all the way back above every topic →
+      //      hide the sticky so the in-flow first topic is visible
+      //      in its natural position again. We detect this with
+      //      `scrollY < firstY`.
+      //   2. Same scroll position, just a stray re-measurement
+      //      (image loaded, layout settled) → keep the previous
+      //      value to avoid the banner switching on its own.
+      const firstY = sortedByY[0]?.[1].y;
+      if (firstY !== undefined && scrollY + TRIGGER < firstY) {
+        current = null;
+      } else {
+        return;
+      }
+    }
+    if (current?.slug !== stickyTopicSlugRef.current) {
+      // Subtle iOS haptic at the eclipse moment. `selectionAsync` is
+      // the lightest style (same tick as scrubbing through a picker
+      // wheel). Two guards keep this honest:
+      //
+      //   1. `silent`: layout-driven recomputes (measureTopicY when a
+      //      topic block first lays out, scroll-restore on tab return)
+      //      pass silent=true. The haptic is reserved for genuine
+      //      user-scroll-driven transitions only.
+      //   2. Session set: within a single scroll gesture (drag + its
+      //      momentum decay) each destination slug only fires haptic
+      //      once. If iOS spring oscillation crosses a topic boundary
+      //      the user already passed in this session, we drop it. A
+      //      flick passing 5 topics → 5 haptics no matter the velocity;
+      //      the bounce-back oscillation produces zero extra ticks
+      //      because those slugs are already in the session set.
+      //      Sessions reset on `onScrollBeginDrag` and clear on
+      //      `onMomentumScrollEnd`.
+      const newSlug = current?.slug ?? null;
+      if (!silent) {
+        const sessionKey = newSlug ?? STICKY_NULL_SENTINEL;
+        if (!visitedSlugsInSessionRef.current.has(sessionKey)) {
+          visitedSlugsInSessionRef.current.add(sessionKey);
+          Haptics.selectionAsync().catch(() => {
+            // Ignore — devices without a Taptic engine just get the
+            // visual swap with no haptic.
+          });
+        }
+      }
+      stickyTopicSlugRef.current = newSlug;
+      setStickyTopic(current);
+    }
+  }, [activeScreen, journeyDetailTopicId]);
+  // Wire up the forward-declared ref above so `measureTopicY` can
+  // call this on first measurement to seed the floating panel.
+  recomputeStickyTopicRef.current = recomputeStickyTopic;
+
+  // ScrollView onScroll handler. Cheap — just reads contentOffset.y
+  // and forwards to the recompute logic. Throttled to 16ms via
+  // `scrollEventThrottle` on the ScrollView itself.
+  const handleJourneyScroll = useCallback(
+    (event: { nativeEvent: { contentOffset: { y: number } } }) => {
+      const y = event.nativeEvent.contentOffset.y;
+      // Cache the latest scrollY so newly-mounted topic measurements
+      // can seed the floating sticky panel against the current
+      // scroll position (not stale 0).
+      shellScrollYRef.current = y;
+      recomputeStickyTopic(y);
+      // Toggle the floating "back to top" arrow. ~280pt threshold
+      // hides it when the user is near the top so it doesn't crowd
+      // the path when not needed.
+      const shouldShow = y > 280;
+      if (shouldShow !== showJourneyScrollTopRef.current) {
+        showJourneyScrollTopRef.current = shouldShow;
+        setShowJourneyScrollTop(shouldShow);
+      }
+    },
+    [recomputeStickyTopic]
+  );
+
+  // Reset the sticky topic when the user leaves the journey screen
+  // (e.g. switches tabs) so a stale topic doesn't briefly flash on
+  // top when they return.
+  useEffect(() => {
+    if (activeScreen !== "journey" || journeyDetailTopicId) {
+      stickyTopicSlugRef.current = null;
+      setStickyTopic(null);
+      topicLayoutsRef.current.clear();
+      topicViewsRef.current.clear();
+      // Hide the floating scroll-to-top arrow when leaving the
+      // journey screen; otherwise it'd briefly flash when the
+      // user returns at scrollY > 280 from a previous session.
+      if (showJourneyScrollTopRef.current) {
+        showJourneyScrollTopRef.current = false;
+        setShowJourneyScrollTop(false);
+      }
+    }
+  }, [activeScreen, journeyDetailTopicId]);
+
+  // Reset the topic layouts whenever the active journey changes
+  // (different language, different track id). Without this, two
+  // journeys whose topic slugs collide ("food-everyday-life" exists
+  // in Italian + Spanish) inherit each other's measured Y/labels
+  // because `topicLayoutsRef` is keyed by slug only — the sticky
+  // panel then shows the wrong topic name or position. Clearing on
+  // track change forces a fresh measurement pass.
+  const trackIdentityRef = useRef<string | null>(null);
+  useEffect(() => {
+    const identity = activeJourneyTrack
+      ? `${activeJourneyLanguage ?? remoteJourney?.language ?? ""}::${activeJourneyTrack.id}`
+      : null;
+    if (identity !== trackIdentityRef.current) {
+      trackIdentityRef.current = identity;
+      stickyTopicSlugRef.current = null;
+      setStickyTopic(null);
+      topicLayoutsRef.current.clear();
+      topicViewsRef.current.clear();
+    }
+  }, [activeJourneyTrack, activeJourneyLanguage, remoteJourney?.language]);
+
+  // Restore the journey scroll position when the user comes back
+  // from a story. The shell's early `return <ReaderScreen />`
+  // unmounts the ScrollView, so on the way back its contentOffset
+  // resets to 0. We saved the user's last journey scrollY in
+  // `shellScrollYRef` (updated on every onScroll); we just need to
+  // re-apply it once the ScrollView is mounted again. The recompute
+  // call right after keeps the sticky panel consistent with the
+  // restored position because programmatic scrollTo doesn't always
+  // fire onScroll.
+  const previousSelectionRef = useRef<typeof selection>(null);
+  useEffect(() => {
+    const wasOpen = previousSelectionRef.current !== null;
+    const isOpen = selection !== null;
+    previousSelectionRef.current = selection;
+    if (wasOpen && !isOpen) {
+      const targetY = shellScrollYRef.current;
+      // Defer one frame so the ScrollView is mounted and ready.
+      // Silent recompute — programmatic scroll-restore should not
+      // emit a haptic.
+      requestAnimationFrame(() => {
+        shellScrollRef.current?.scrollTo({ y: targetY, animated: false });
+        recomputeStickyTopicRef.current?.(targetY, true);
+      });
+    }
+  }, [selection]);
+
+  // Restore the journey scroll position when the user returns to the
+  // Journey tab from another tab (Home, Practice, Favorites, …). The
+  // shell uses ONE shared <ScrollView> and just swaps content based on
+  // `activeScreen`, so the native contentOffset persists across tabs:
+  // if the user scrolled Home to Y=400 and taps Journey, the
+  // ScrollView lands at Y=400 instead of where Journey was last left.
+  // Worse, `shellScrollYRef.current` still holds the journey's last Y
+  // (since handleJourneyScroll only fires on Journey), so when topic
+  // blocks remeasure on return they call recomputeStickyTopic against
+  // the stale Y — surfacing a sticky banner that doesn't match the
+  // actual scroll position. Re-applying the cached Y here aligns the
+  // visual scroll with the cached value before the recompute runs.
+  // Pending journey scroll-Y to restore the next time the ScrollView's
+  // contentSize is large enough to honor it. Set when the user returns
+  // to Journey from another tab; cleared by onContentSizeChange (once
+  // applied) or by onScrollBeginDrag (the user took over). The pending
+  // ref pattern is necessary because a single requestAnimationFrame on
+  // tab return often fires BEFORE the journey path has finished
+  // measuring its contentSize — `scrollTo(1500)` then gets clamped to
+  // whatever maxOffset the ScrollView has at that frame (e.g. 400),
+  // which silently kills the restore. By keeping the target around and
+  // re-applying it whenever contentSize grows, we recover even when
+  // images / nested layouts settle several frames late.
+  const pendingJourneyRestoreYRef = useRef<number | null>(null);
+  const previousActiveScreenRef = useRef(activeScreen);
+  useEffect(() => {
+    const previous = previousActiveScreenRef.current;
+    previousActiveScreenRef.current = activeScreen;
+    if (activeScreen !== "journey") return;
+    if (previous === "journey") return;
+    if (selection !== null) return;
+    const targetY = shellScrollYRef.current;
+    pendingJourneyRestoreYRef.current = targetY;
+    // First-attempt scrollTo on the next frame — covers the common case
+    // where the content height is already large enough (warm cache,
+    // returning from a quick tab visit). If it gets clamped, the
+    // onContentSizeChange handler below will pick the pending target up
+    // again once the content grows past it.
+    requestAnimationFrame(() => {
+      shellScrollRef.current?.scrollTo({ y: targetY, animated: false });
+      // Silent — programmatic scroll restore on tab return should not
+      // fire a haptic.
+      recomputeStickyTopicRef.current?.(targetY, true);
+    });
+  }, [activeScreen, selection]);
+
+  // Lifted out of `journeyView` so the shell can render it OUTSIDE
+  // the main ScrollView and have it stay pinned to the top of the
+  // screen while the path content scrolls underneath. Earlier this
+  // sat at the top of the journey content and scrolled away — the
+  // user reported "tampoco queda sticky la primera línea" because
+  // of that. Rendered conditionally in the shell render below when
+  // `activeScreen === "journey" && !journeyDetailTopicId`.
+  const journeyPathTopBar = (
+    <View style={styles.journeyTopStripFixed}>
+      <Pressable
+        onPress={() => setLanguageSwitchOpen(true)}
+        accessibilityRole="button"
+        accessibilityLabel="qa-journey-language-switch"
+        testID="qa-journey-language-switch"
+        hitSlop={12}
+        style={({ pressed }) => [
+          styles.journeyHeaderFlagBadge,
+          pressed ? styles.journeyHeaderFlagBadgePressed : null,
+        ]}
+      >
+        <LanguageFlag
+          language={activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null}
+          variant={activeJourney?.variant ?? preferences.preferredVariant}
+          size={34}
+        />
+        {(() => {
+          const lang = activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null;
+          const code = languageShortCode(lang);
+          if (!code) return null;
+          return <Text style={styles.journeyHeaderLanguageCode}>{code}</Text>;
+        })()}
+        <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
+      </Pressable>
+
+      {remoteProgress?.gamification ? (
+        <Pressable
+          onPress={() => setProgressSheetOpen(true)}
+          accessibilityRole="button"
+          accessibilityLabel="Open progress sheet"
+          style={styles.journeyHeaderStatsRow}
+        >
+          <View style={styles.journeyHeaderStat}>
+            <Feather name="zap" size={13} color={tokenColor.streak} />
+            <Text style={[styles.journeyHeaderStatText, { color: tokenColor.streak }]}>
+              {remoteProgress.gamification.dailyStreak}
+            </Text>
+          </View>
+          <View style={styles.journeyHeaderStat}>
+            <Feather name="award" size={13} color={tokenColor.gold} />
+            <Text style={[styles.journeyHeaderStatText, { color: tokenColor.gold }]}>
+              Lv {remoteProgress.gamification.currentLevel}
+            </Text>
+          </View>
+          <View style={styles.journeyHeaderStat}>
+            <Feather name="star" size={13} color={tokenColor.cyan} />
+            <Text style={[styles.journeyHeaderStatText, { color: tokenColor.cyan }]}>
+              {remoteProgress.gamification.totalXp >= 1000
+                ? `${(remoteProgress.gamification.totalXp / 1000).toFixed(1)}k`
+                : remoteProgress.gamification.totalXp}
+            </Text>
+          </View>
+        </Pressable>
+      ) : null}
+      <MenuTrigger onPress={() => setMenuOpen(true)} />
+    </View>
+  );
+
+  // Sticky indices for the journey path's topic panels — computed
+  // based on their position within the journeyView's flat children
+  // list. iOS native `stickyHeaderIndices` on the ScrollView uses
+  // these to pin each topic panel at the top of the screen while
+  // its stories scroll under it, then slides the next panel over
+  // the previous as boundaries cross (Duolingo-style eclipse).
+  // Empty array on screens that aren't path mode → ScrollView
+  // gets `undefined` and behaves normally.
+  const journeyStickyIndices: number[] = [];
+  if (
+    activeScreen === "journey" &&
+    !journeyDetailTopicId &&
+    !journeyVariantPickerOpen &&
+    activeJourneyTrack
+  ) {
+    let count = 0;
+    activeJourneyTrack.levels.forEach((level, levelIdx) => {
+      if (levelIdx > 0) count += 1; // level header item
+      level.topics.forEach((topic) => {
+        journeyStickyIndices.push(count);
+        count += 1; // topic panel itself (the sticky one)
+        count += topic.stories.length; // each story node
+      });
+    });
+  }
+
   const journeyView = (
     <>
-      {/* Compact Duolingo-style strip: language flag + progress + menu.
-          Replaces the old stacked Journey eyebrow + title + All-languages
-          pill + insights bar, which ate ~280 pt before the path started. */}
+      {/* Detail-mode hero only — the path-mode top strip was lifted
+          out of the scroll content and lives in the shell render
+          (`journeyPathTopBar`) so it can stay sticky at the top of
+          the screen while the path scrolls underneath. */}
       {journeyDetailTopicId && activeJourneyTopic ? (
         <View style={[styles.hero, styles.journeyHero]}>
           <View style={styles.heroHeaderRow}>
@@ -8940,69 +10348,7 @@ export function MobileLibraryShell(args: {
             <MenuTrigger onPress={() => setMenuOpen(true)} />
           </View>
         </View>
-      ) : (
-        <View style={styles.journeyTopStrip}>
-          {/* Flag + level badge on the left. Tap opens the bottom-
-              sheet language switcher (variant B with stats). The
-              old full-screen "My Languages" hub is gone — users
-              always land on a journey, switching is a sheet.
-
-              We fall back to the first persisted target language
-              so the flag renders the moment the shell mounts,
-              instead of waiting for the auto-select effect to fire
-              after preferences hydrate (which left the chip looking
-              empty + un-tappable on the first paint). hitSlop adds
-              forgiveness around the small chip. */}
-          <Pressable
-            onPress={() => setLanguageSwitchOpen(true)}
-            accessibilityRole="button"
-            accessibilityLabel="qa-journey-language-switch"
-            testID="qa-journey-language-switch"
-            hitSlop={12}
-            style={({ pressed }) => [
-              styles.journeyHeaderFlagBadge,
-              pressed ? styles.journeyHeaderFlagBadgePressed : null,
-            ]}
-          >
-            <LanguageFlag
-              language={activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null}
-              size={34}
-            />
-            {activeJourneyLevel ? (
-              <Text style={styles.journeyHeaderLevelBadge}>{activeJourneyLevel.title}</Text>
-            ) : null}
-            <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
-          </Pressable>
-
-          {/* Compact gamification stats: streak, level, XP. Replaces
-              the old "Italian · 0/12 · 0%" text and the 3 big pills
-              in the body. Values come straight from the existing
-              GamificationSummary payload. */}
-          {remoteProgress?.gamification ? (
-            <View style={styles.journeyHeaderStatsRow}>
-              <View style={styles.journeyHeaderStat}>
-                <Feather name="zap" size={13} color={tokenColor.streak} />
-                <Text style={[styles.journeyHeaderStatText, { color: tokenColor.streak }]}>
-                  {remoteProgress.gamification.dailyStreak}
-                </Text>
-              </View>
-              <View style={styles.journeyHeaderStat}>
-                <Feather name="award" size={13} color={tokenColor.gold} />
-                <Text style={[styles.journeyHeaderStatText, { color: tokenColor.gold }]}>
-                  Lv {remoteProgress.gamification.currentLevel}
-                </Text>
-              </View>
-              <View style={styles.journeyHeaderStat}>
-                <Feather name="star" size={13} color={tokenColor.cyan} />
-                <Text style={[styles.journeyHeaderStatText, { color: tokenColor.cyan }]}>
-                  {remoteProgress.gamification.totalXp}
-                </Text>
-              </View>
-            </View>
-          ) : null}
-          <MenuTrigger onPress={() => setMenuOpen(true)} />
-        </View>
-      )}
+      ) : null}
 
       {/* The full-screen "My Languages" hub was removed. Switching
           languages happens via the LanguageSwitchSheet bottom sheet
@@ -9087,19 +10433,342 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {!showJourneyHub && !journeyVariantPickerOpen && activeJourneyTrack ? (
-      <View style={styles.section}>
-        {/* Full Duolingo-style path: every level, every topic, every
-            story rendered inline in scroll order. Section headers for
-            level and topic tell the user where they are; locked ones
-            are dimmed but still visible so they can see what's ahead. */}
-        {activeJourneyTrack.levels.map((level, levelIdx) => (
-          <View key={level.id} style={styles.journeyPathLevelBlock}>
-            {/* Skip the inline level header for the first level — the
-                top strip already shows the active level (e.g. "A1") so
-                rendering it again right under the strip duplicated info.
-                Subsequent levels still get their header so the user
-                sees the boundary while scrolling. */}
+      {/* Full Duolingo-style path — flattened (no wrapping section /
+          level / topic Views) so each topic panel can be a direct
+          child of the shell ScrollView. stickyHeaderIndices for the
+          topic panels was disabled (see ScrollView prop below) after
+          we confirmed it was clipping the path's content to A1 only;
+          re-enable once the index off-by-one against the journeyView
+          fragment's other children is solved. */}
+      {!showJourneyHub && !journeyVariantPickerOpen && activeJourneyTrack
+        ? activeJourneyTrack.levels.flatMap((level, levelIdx) => {
+            const items: React.ReactNode[] = [];
+            // Level header (skip for first level — the top bar
+            // already shows the active level code).
+            if (levelIdx > 0) {
+              items.push(
+                <View
+                  key={`lh-${level.id}`}
+                  style={[
+                    styles.journeyPathLevelHeader,
+                    !level.unlocked ? styles.journeyPathLevelHeaderLocked : null,
+                  ]}
+                >
+                  <Text style={styles.journeyPathLevelBadge}>{level.title}</Text>
+                </View>
+              );
+            }
+            // Compute level progress for the gate hint we render after the
+            // last topic. Only gating topics (with stories) count toward the
+            // 75% threshold the backend enforces; empty placeholders don't.
+            const gatingTopics = level.topics.filter((t) => t.storyCount > 0);
+            const clearedTopics = gatingTopics.filter((t) => t.checkpointPassed).length;
+            const requiredForLevel = Math.max(1, Math.ceil(gatingTopics.length * 0.75));
+            const nextLevelInTrack = activeJourneyTrack?.levels[levelIdx + 1] ?? null;
+            level.topics.forEach((topic, topicIdx) => {
+              // Topic panel — sticky. Direct sibling of other path
+              // children so stickyHeaderIndices on the ScrollView
+              // can target it. Compound key (level.id + topic.slug)
+              // because the same topic slug ("food", "home", etc.)
+              // can repeat across levels — React would silently
+              // dedupe siblings with identical keys and skip the
+              // A2 / B1 copies, which matches the user's report
+              // that "only A1 levels show up".
+              const levelLabelForSticky = `LEVEL ${(level.id ?? "").toUpperCase() || level.title}`;
+              const bgColorForSticky = levelPanelColor(level.id);
+              items.push(
+                <View
+                  // Wrapper exists so we have a stable native node
+                  // to measure with `measureLayout` against the
+                  // ScrollView. Used by the JS-driven floating
+                  // sticky panel. Pressable would also accept a ref
+                  // but its native node varies across RN versions
+                  // and platforms — a plain View is the reliable
+                  // measurement target.
+                  key={`tp-${level.id}-${topic.slug}`}
+                  ref={(node) => {
+                    if (node) {
+                      topicViewsRef.current.set(topic.slug, node);
+                      // Only measure if we don't already have a
+                      // layout for this slug. Re-renders that fire
+                      // the ref callback again with a new node (a
+                      // remount) used to also delete and re-measure
+                      // — that path turned a stray re-mount into a
+                      // recompute, which during a `setState` storm
+                      // (e.g. from opening the locked-story modal)
+                      // produced the cascading flicker the user
+                      // reported. Treat the ref as "pin the node",
+                      // not "force a re-measure".
+                      if (!topicLayoutsRef.current.has(topic.slug)) {
+                        requestAnimationFrame(() => {
+                          measureTopicY(
+                            topic.slug,
+                            topic.label,
+                            levelLabelForSticky,
+                            bgColorForSticky,
+                            !topic.unlocked,
+                            node
+                          );
+                        });
+                      }
+                    } else {
+                      topicViewsRef.current.delete(topic.slug);
+                      // Intentionally NOT deleting from
+                      // topicLayoutsRef here. If RN remounts the
+                      // wrapper for any reason, keeping the layout
+                      // means the next mount won't re-measure and
+                      // re-fire recompute. The layout is only
+                      // cleared when the user leaves the journey
+                      // screen (the useEffect below).
+                    }
+                  }}
+                  onLayout={() => {
+                    // Re-measure when story covers finish loading
+                    // and push content down — keeps the sticky swap
+                    // point accurate.
+                    const node = topicViewsRef.current.get(topic.slug);
+                    if (node)
+                      measureTopicY(
+                        topic.slug,
+                        topic.label,
+                        levelLabelForSticky,
+                        bgColorForSticky,
+                        !topic.unlocked,
+                        node
+                      );
+                  }}
+                >
+                <Pressable
+                  onPress={() => {
+                    if (!topic.unlocked) return;
+                    // 1. Open the preview instantly using whatever
+                    //    vocab the offline cache has (likely none on
+                    //    a fresh install). The sheet renders right
+                    //    away so there's no perceived delay.
+                    const offlineVocab: string[] = [];
+                    const seenWords = new Set<string>();
+                    for (const story of topic.stories) {
+                      const offlineCopy =
+                        offlineStoriesById.get(story.id) ??
+                        offlineSnapshot?.stories.find(
+                          (s) => s.storySlug === story.storySlug
+                        );
+                      if (!offlineCopy?.vocabRaw) continue;
+                      const items = parseStandaloneVocab(offlineCopy.vocabRaw);
+                      for (const item of items) {
+                        const word = item.word?.trim();
+                        if (!word) continue;
+                        const key = word.toLowerCase();
+                        if (seenWords.has(key)) continue;
+                        seenWords.add(key);
+                        offlineVocab.push(word);
+                      }
+                    }
+                    // Decide upfront if a background fetch will run —
+                    // we want isVocabLoading to be `true` from the
+                    // very first render of the sheet so the loading
+                    // skeleton replaces the fallback hint without
+                    // any one-frame flash.
+                    // Re-fetch from server when the offline cache hasn't
+                    // covered every story in the topic — that gives us
+                    // the full vocab (all stories, all unique words)
+                    // even when the user has only downloaded some.
+                    const offlineCoverage = topic.stories.filter((s) => {
+                      const cached =
+                        offlineStoriesById.get(s.id) ??
+                        offlineSnapshot?.stories.find(
+                          (cs) => cs.storySlug === s.storySlug
+                        );
+                      return Boolean(cached?.vocabRaw);
+                    }).length;
+                    const willFetchVocab =
+                      offlineCoverage < topic.stories.length &&
+                      Boolean(sessionToken) &&
+                      topic.stories.some((s) => Boolean(s.storySlug));
+                    setTopicPreviewOpen({
+                      levelId: (level.id ?? "").toUpperCase() || level.title,
+                      topicLabel: topic.label,
+                      topicSlug: topic.slug,
+                      bgColor: levelPanelColor(level.id),
+                      stories: topic.stories.map((s) => ({
+                        id: s.id,
+                        title: s.title,
+                        coverUrl: s.coverUrl ?? null,
+                      })),
+                      vocabWords: offlineVocab,
+                      isVocabLoading: willFetchVocab,
+                    });
+
+                    // 2. If the offline cache didn't fully populate
+                    //    the chip row, batch-fetch vocab from the
+                    //    `/api/standalone-stories?slugs=` endpoint
+                    //    (single request, comma-separated slugs).
+                    //    Skip when we already have ≥6 words offline
+                    //    or when no session token is available.
+                    if (!willFetchVocab) return;
+                    const slug = topic.slug;
+                    const storySlugs = topic.stories
+                      .map((s) => s.storySlug)
+                      .filter((s): s is string => Boolean(s));
+                    if (storySlugs.length === 0) return;
+                    void (async () => {
+                      try {
+                        const payload = await apiFetch<{
+                          stories?: Array<{ vocabRaw?: string | null; storySlug?: string }>;
+                        }>({
+                          baseUrl: mobileConfig.apiBaseUrl,
+                          path: `/api/standalone-stories?slugs=${encodeURIComponent(storySlugs.join(","))}`,
+                          token: sessionToken,
+                          timeoutMs: 12000,
+                        });
+                        const remoteStories = payload.stories ?? [];
+                        const fetchedVocab: string[] = [...offlineVocab];
+                        const fetchedSeen = new Set(seenWords);
+                        for (const remote of remoteStories) {
+                          const items = parseStandaloneVocab(remote.vocabRaw ?? null);
+                          for (const item of items) {
+                            const word = item.word?.trim();
+                            if (!word) continue;
+                            const key = word.toLowerCase();
+                            if (fetchedSeen.has(key)) continue;
+                            fetchedSeen.add(key);
+                            fetchedVocab.push(word);
+                          }
+                        }
+                        // Only update if the preview is still open
+                        // for the same topic — otherwise the user
+                        // moved on and we'd be overwriting unrelated
+                        // state.
+                        setTopicPreviewOpen((current) => {
+                          if (!current || current.topicSlug !== slug) return current;
+                          return { ...current, vocabWords: fetchedVocab, isVocabLoading: false };
+                        });
+                      } catch (err) {
+                        console.warn("[topic-preview] vocab fetch failed", err);
+                        setTopicPreviewOpen((current) => {
+                          if (!current || current.topicSlug !== slug) return current;
+                          return { ...current, isVocabLoading: false };
+                        });
+                      }
+                    })();
+                  }}
+                  style={[
+                    styles.journeyTopicPanel,
+                    !topic.unlocked
+                      ? styles.journeyTopicPanelLocked
+                      : { backgroundColor: levelPanelColor(level.id) },
+                    // Hide the in-flow panel ONLY when the floating
+                    // panel is currently covering the same topic — at
+                    // that moment they share the same Y so the swap
+                    // is invisible (no double-render of the same
+                    // card). We don't fade earlier because that's
+                    // what produced the "absorb" effect (in-flow
+                    // disappeared before being covered).
+                    stickyTopic?.slug === topic.slug ? styles.journeyTopicPanelHidden : null,
+                  ]}
+                >
+                  <View style={styles.journeyTopicPanelTextBlock}>
+                    <Text
+                      style={[
+                        styles.journeyTopicPanelEyebrow,
+                        !topic.unlocked ? styles.journeyTopicPanelEyebrowLocked : null,
+                      ]}
+                    >
+                      LEVEL {(level.id ?? "").toUpperCase() || level.title}
+                    </Text>
+                    <Text
+                      style={[
+                        styles.journeyTopicPanelTitle,
+                        !topic.unlocked ? styles.journeyTopicPanelTitleLocked : null,
+                      ]}
+                      numberOfLines={2}
+                    >
+                      {topic.label}
+                    </Text>
+                  </View>
+                  <View style={styles.journeyTopicPanelIconWrap}>
+                    <Feather
+                      name={topic.unlocked ? "list" : "lock"}
+                      size={18}
+                      color="#ffffff"
+                    />
+                  </View>
+                </Pressable>
+                </View>
+              );
+              // Story nodes for this topic.
+              topic.stories.forEach((story, storyIdx) => {
+                items.push(renderJourneyStoryNode(story, storyIdx, level, topic));
+              });
+            });
+
+            // Level-end gate block. Two purposes:
+            //   1. Surface the 75% rule so the user knows what they're
+            //      working toward instead of "next level just appeared".
+            //   2. Discoverable express lane via the level test (already
+            //      reachable from locked stories — this makes it proactive).
+            // Shown only on unlocked levels that have a next level above
+            // and at least one gating topic. The user has nothing to "test
+            // out of" at the last CEFR level, and an empty-scaffold level
+            // has no checkpoints to chase.
+            if (
+              level.unlocked &&
+              nextLevelInTrack &&
+              gatingTopics.length > 0 &&
+              clearedTopics < requiredForLevel
+            ) {
+              const remaining = requiredForLevel - clearedTopics;
+              const lang = activeJourney?.language ?? activeJourneyLanguage ?? null;
+              items.push(
+                <View
+                  key={`lg-${level.id}`}
+                  style={styles.journeyLevelGateBlock}
+                >
+                  <View style={styles.journeyLevelGateProgressRow}>
+                    <Feather name="trending-up" size={14} color="rgba(255,255,255,0.55)" />
+                    <Text style={styles.journeyLevelGateProgressText}>
+                      {clearedTopics}/{requiredForLevel} topics to unlock {nextLevelInTrack.title}
+                    </Text>
+                  </View>
+                  <Text style={styles.journeyLevelGateHint}>
+                    {remaining === 1
+                      ? `1 more topic to clear, or pass the test to jump to ${nextLevelInTrack.title}.`
+                      : `Clear checkpoints or take the test to jump to ${nextLevelInTrack.title}.`}
+                  </Text>
+                  <Pressable
+                    onPress={() => {
+                      if (!lang) {
+                        setLockedStoryHint("Activate a journey to take the test.");
+                        return;
+                      }
+                      setLevelTestOfferOpen({
+                        targetLevel:
+                          (nextLevelInTrack.id ?? "").toUpperCase() || nextLevelInTrack.title,
+                        targetLanguage: lang,
+                      });
+                    }}
+                    style={styles.journeyLevelGateCta}
+                  >
+                    <Feather name="zap" size={13} color={tokenColor.gold} />
+                    <Text style={styles.journeyLevelGateCtaText}>
+                      Take {level.title} test
+                    </Text>
+                  </Pressable>
+                </View>
+              );
+            }
+            return items;
+          })
+        : null}
+
+      {/* (Old nested-View rendering removed — the flat flatMap above
+          replaces the section / level-block / topic-block wrappers
+          so the topic panels can be direct children of the
+          ScrollView for native sticky.) */}
+      {false ? (
+      <View>
+        {activeJourneyTrack?.levels.map((level, levelIdx) => (
+          <View key={level.id}>
             {levelIdx > 0 ? (
               <View
                 style={[
@@ -9108,25 +10777,123 @@ export function MobileLibraryShell(args: {
                 ]}
               >
                 <Text style={styles.journeyPathLevelBadge}>{level.title}</Text>
-                <Text style={styles.journeyPathLevelSubtitle}>
-                  {level.unlocked ? level.subtitle ?? "" : "Locked"}
-                </Text>
               </View>
             ) : null}
 
-            {level.topics.map((topic) => {
-              const topicStoriesCount = topic.stories.length;
-              const showCheckpoint = topic.unlocked && topicStoriesCount > 0;
+            {level.topics.map((topic, topicIdx) => {
               return (
-                <View key={topic.slug} style={styles.journeyPathTopicBlock}>
-                  <Text
+                <View
+                  key={topic.slug}
+                  // Topic block carries the ref + onLayout that drive
+                  // the floating sticky panel. We measure the block's
+                  // top against the ScrollView's content view so the
+                  // floating panel's swap point lines up with where
+                  // the in-flow panel would have left the viewport.
+                  ref={(node) => {
+                    const levelLabel = `LEVEL ${(level.id ?? "").toUpperCase() || level.title}`;
+                    const bgColor = levelPanelColor(level.id);
+                    if (node) {
+                      topicViewsRef.current.set(topic.slug, node);
+                      requestAnimationFrame(() => {
+                        measureTopicY(topic.slug, topic.label, levelLabel, bgColor, !topic.unlocked, node);
+                      });
+                    } else {
+                      topicViewsRef.current.delete(topic.slug);
+                      topicLayoutsRef.current.delete(topic.slug);
+                    }
+                  }}
+                  onLayout={() => {
+                    const node = topicViewsRef.current.get(topic.slug);
+                    const levelLabel = `LEVEL ${(level.id ?? "").toUpperCase() || level.title}`;
+                    const bgColor = levelPanelColor(level.id);
+                    if (node) measureTopicY(topic.slug, topic.label, levelLabel, bgColor, !topic.unlocked, node);
+                  }}
+                  style={styles.journeyPathTopicBlock}
+                >
+                  {/* Duolingo-style topic panel — rounded card with
+                      eyebrow (level) + topic title on the left, and a
+                      notepad icon on the right matching the
+                      Duolingo reference. The card sits within the
+                      ScrollView's horizontal padding so it visually
+                      "floats" rather than being a full-width section
+                      divider. */}
+                  <Pressable
+                    onPress={() => {
+                      if (!topic.unlocked) return;
+                      // Empty topic from the Studio scaffold — the user
+                      // already sees the "Aún no hay historias" placeholder
+                      // below the header, so don't pop a preview sheet that
+                      // would just be blank.
+                      if (topic.stories.length === 0) return;
+                      setTopicPreviewOpen({
+                        levelId: (level.id ?? "").toUpperCase() || level.title,
+                        topicLabel: topic.label,
+                        topicSlug: topic.slug,
+                        bgColor: levelPanelColor(level.id),
+                        stories: topic.stories.map((s) => ({
+                          id: s.id,
+                          title: s.title,
+                          coverUrl: s.coverUrl ?? null,
+                        })),
+                        vocabWords: [],
+                        isVocabLoading: false,
+                      });
+                    }}
                     style={[
-                      styles.journeyPathTopicLabel,
-                      !topic.unlocked ? styles.journeyPathTopicLabelLocked : null,
+                      styles.journeyTopicPanel,
+                      !topic.unlocked
+                        ? styles.journeyTopicPanelLocked
+                        : { backgroundColor: levelPanelColor(level.id) },
+                      // When the floating sticky panel is showing
+                      // this same topic, hide the in-flow copy so the
+                      // user only sees ONE panel — earlier the two
+                      // overlapped briefly during the scroll handoff
+                      // and produced the visible flicker.
+                      stickyTopic?.slug === topic.slug ? { opacity: 0 } : null,
                     ]}
                   >
-                    {topic.label}
-                  </Text>
+                    <View style={styles.journeyTopicPanelTextBlock}>
+                      <Text
+                        style={[
+                          styles.journeyTopicPanelEyebrow,
+                          !topic.unlocked ? styles.journeyTopicPanelEyebrowLocked : null,
+                        ]}
+                      >
+                        LEVEL {(level.id ?? "").toUpperCase() || level.title}
+                      </Text>
+                      <Text
+                        style={[
+                          styles.journeyTopicPanelTitle,
+                          !topic.unlocked ? styles.journeyTopicPanelTitleLocked : null,
+                        ]}
+                        numberOfLines={2}
+                      >
+                        {topic.label}
+                      </Text>
+                    </View>
+                    <View style={styles.journeyTopicPanelIconWrap}>
+                      <Feather
+                        name={topic.unlocked ? "list" : "lock"}
+                        size={18}
+                        color="#ffffff"
+                      />
+                    </View>
+                  </Pressable>
+
+                  {topic.stories.length === 0 ? (
+                    // Placeholder for topics planned in Studio that don't
+                    // have any published stories yet. The user said
+                    // "visibles pero vacíos" — keep the topic in the path
+                    // so the curriculum scaffold is visible, but make it
+                    // clear nothing's there yet rather than rendering an
+                    // empty gap that looks like a layout glitch.
+                    <View style={styles.journeyTopicEmptyState}>
+                      <Feather name="clock" size={16} color="rgba(255,255,255,0.55)" />
+                      <Text style={styles.journeyTopicEmptyText}>
+                        Aún no hay historias
+                      </Text>
+                    </View>
+                  ) : null}
 
                   {topic.stories.map((story, storyIdx) => {
                     const offlineCopy = offlineStoriesById.get(story.id)
@@ -9146,6 +10913,27 @@ export function MobileLibraryShell(args: {
                     // than once per render — most stories will never be
                     // tapped while locked.
                     const showLockedHint = () => {
+                      // 1. Level-locked first: any story in a locked
+                      //    level can be skipped to via the level test,
+                      //    regardless of its topic / position. This
+                      //    used to come AFTER the previous-topic
+                      //    check, so most locked-level taps fell into
+                      //    the "Pass the X checkpoint first" toast
+                      //    instead of opening the modal.
+                      if (!level.unlocked) {
+                        const lang = activeJourney?.language ?? activeJourneyLanguage ?? null;
+                        if (lang) {
+                          setLevelTestOfferOpen({
+                            targetLevel: (level.id ?? "").toUpperCase() || level.title,
+                            targetLanguage: lang,
+                          });
+                          return;
+                        }
+                        setLockedStoryHint(`Complete the previous level to unlock ${level.title}.`);
+                        return;
+                      }
+                      // 2. Within an unlocked level, check sequence
+                      //    inside the topic.
                       const previousInTopic = storyIdx > 0 ? topic.stories[storyIdx - 1] : null;
                       if (previousInTopic && !previousInTopic.completed) {
                         setLockedStoryHint(`Finish "${previousInTopic.title}" to unlock this one.`);
@@ -9155,10 +10943,6 @@ export function MobileLibraryShell(args: {
                       const previousTopic = levelTopicIdx > 0 ? level.topics[levelTopicIdx - 1] : null;
                       if (previousTopic && !previousTopic.checkpointPassed) {
                         setLockedStoryHint(`Pass the ${previousTopic.label} checkpoint first.`);
-                        return;
-                      }
-                      if (!level.unlocked) {
-                        setLockedStoryHint(`Complete the previous level to unlock ${level.title}.`);
                         return;
                       }
                       setLockedStoryHint("Complete the previous step first.");
@@ -9171,8 +10955,12 @@ export function MobileLibraryShell(args: {
                         : !story.unlocked
                           ? "locked"
                           : "step";
-                    const pillLabel =
-                      nodeVariant === "next" ? "START NOW" : `STORY ${storyIdx + 1}`;
+                    // Story name as the pill label. Earlier this
+                    // showed generic "STORY 1" / "START NOW" copy
+                    // which was the same on every node and didn't
+                    // tell the user what the story was about. Falls
+                    // back to "Story N" if the title is missing.
+                    const pillLabel = story.title?.trim() || `Story ${storyIdx + 1}`;
 
                     return (
                       <View
@@ -9219,7 +11007,10 @@ export function MobileLibraryShell(args: {
                                 )}
                               </View>
                               <View style={styles.journeyNodePillTextStack}>
-                                <Text style={[styles.journeyNodePillLabel, styles.journeyNodePillLabelNext]}>
+                                <Text
+                                  style={[styles.journeyNodePillLabel, styles.journeyNodePillLabelNext]}
+                                  numberOfLines={2}
+                                >
                                   {pillLabel}
                                 </Text>
                                 {durationMin != null ? (
@@ -9313,7 +11104,9 @@ export function MobileLibraryShell(args: {
                               )}
                             </View>
                             <View style={styles.journeyNodePillTextStack}>
-                              <Text style={styles.journeyNodePillLabel}>{pillLabel}</Text>
+                              <Text style={styles.journeyNodePillLabel} numberOfLines={2}>
+                                {pillLabel}
+                              </Text>
                               {durationMin != null ? (
                                 <Text style={styles.journeyNodePillSub}>{durationMin} min</Text>
                               ) : null}
@@ -9329,59 +11122,12 @@ export function MobileLibraryShell(args: {
                     );
                   })}
 
-                  {showCheckpoint ? (
-                    <Pressable
-                      onPress={() => {
-                        if (topic.checkpointPassed) return;
-                        void openJourneyPractice({
-                          variantId: activeJourneyTrack?.id ?? null,
-                          levelId: level.id,
-                          topicId: topic.slug,
-                          topicLabel: topic.label,
-                          kind: "checkpoint",
-                        });
-                      }}
-                      disabled={topic.checkpointPassed || !topic.complete || !topic.practiced}
-                      style={[
-                        styles.journeyPathCheckpointChip,
-                        topic.checkpointPassed
-                          ? styles.journeyPathCheckpointChipPassed
-                          : topic.complete && topic.practiced
-                            ? styles.journeyPathCheckpointChipReady
-                            : styles.journeyPathCheckpointChipLocked,
-                      ]}
-                      accessibilityRole="button"
-                      accessibilityLabel={`qa-journey-checkpoint-${topic.slug}`}
-                    >
-                      <Feather
-                        name={topic.checkpointPassed ? "check" : "award"}
-                        size={14}
-                        color={
-                          topic.checkpointPassed
-                            ? tokenColor.xp
-                            : topic.complete && topic.practiced
-                              ? tokenColor.gold
-                              : "#6f88a8"
-                        }
-                      />
-                      <Text
-                        style={[
-                          styles.journeyPathCheckpointText,
-                          topic.checkpointPassed
-                            ? { color: tokenColor.xp }
-                            : topic.complete && topic.practiced
-                              ? { color: tokenColor.gold }
-                              : null,
-                        ]}
-                      >
-                        {topic.checkpointPassed
-                          ? "CHECKPOINT · PASSED"
-                          : topic.complete && topic.practiced
-                            ? "START CHECKPOINT"
-                            : "CHECKPOINT"}
-                      </Text>
-                    </Pressable>
-                  ) : null}
+                  {/* Checkpoint chip removed in build 67 per product
+                      direction — checkpoints are no longer surfaced
+                      between topics. The underlying state
+                      (topic.checkpointPassed, openJourneyPractice
+                      with kind: "checkpoint") is left intact in case
+                      we reintroduce them with a different UI later. */}
                 </View>
               );
             })}
@@ -9918,6 +11664,18 @@ export function MobileLibraryShell(args: {
    * generation, etc.) keep working unchanged.
    */
   async function commitOnboarding(payload: OnboardingPayload) {
+    // Fire the journey load IMMEDIATELY (before any await) so the
+    // journey screen has its loading state set the moment the gate
+    // flips. Without this, the user briefly saw "Journey is not
+    // available" between when shouldShowOnboardingSurvey becomes
+    // false and when loadJourneyForLanguage starts marking the
+    // shell as loading.
+    const primaryLanguageEarly = payload.selections[0]?.language ?? null;
+    if (primaryLanguageEarly) {
+      setActiveJourneyLanguage(primaryLanguageEarly);
+      void loadJourneyForLanguage(primaryLanguageEarly);
+    }
+
     const journeyFocus: "Work & Career" | "General" | "Travel & Local Life" | "Culture & Belonging" =
       payload.whys.includes("Travel")
         ? "Travel & Local Life"
@@ -9926,19 +11684,34 @@ export function MobileLibraryShell(args: {
           : payload.whys.includes("Culture") || payload.whys.includes("Family")
             ? "Culture & Belonging"
             : "General";
-    const placement =
-      payload.level === "Brand new"
+    // If the user took the level test, its CEFR result wins over the
+    // self-reported level — the test is a more accurate placement
+    // signal. Otherwise fall back to the coarse self-pick mapping.
+    const placement = payload.testedLevel
+      ? payload.testedLevel
+      : payload.level === "Brand new"
         ? "A0"
         : payload.level === "A few words"
           ? "A1"
           : "B1";
-    const preferredLevel =
-      payload.level === "Brand new" || payload.level === "A few words"
+    const preferredLevel = payload.testedLevel
+      ? payload.testedLevel === "B2" || payload.testedLevel === "C1"
+        ? "Advanced"
+        : payload.testedLevel === "B1"
+          ? "Intermediate"
+          : "Beginner"
+      : payload.level === "Brand new" || payload.level === "A few words"
         ? "Beginner"
         : "Intermediate";
 
     await saveOnboardingPreferences({
       targetLanguages: payload.languages,
+      // The picker now lets the user choose US vs UK English. When the
+      // primary language has a regional flag we persist that choice as
+      // `preferredVariant` so the journey, reader, and language chip
+      // all respect it from the very first session. Other languages
+      // fall through and stay null until set explicitly in settings.
+      preferredVariant: payload.primaryVariant,
       interests: payload.whys,
       preferredLevel,
       journeyFocus,
@@ -9948,34 +11721,78 @@ export function MobileLibraryShell(args: {
       journeyPlacementLevel: placement,
       onboardingSurveyCompletedAt: new Date().toISOString(),
     });
+
+    // Override journeys client-side from `selections` — one journey
+    // per (language, variant, focus) tuple. This preserves the user's
+    // multi-variant picks (e.g. Spanish ES + Spanish LATAM) which the
+    // server doesn't yet model: server sees only the deduped
+    // `targetLanguages` + `preferredVariant`. Without this override
+    // `synthesizeJourneysFromLegacy` would produce one journey per
+    // unique language and the secondary variants would be lost.
+    if (payload.selections.length > 0) {
+      const createdAt = new Date().toISOString();
+      // Dedupe before committing — `payload.selections` mirrors
+      // every chip the user tapped in step 1; if the picker ever
+      // returns the same (language, variant) twice (or the user
+      // taps a chip rapidly enough to register twice), `journeyId`
+      // collapses both to the same id and we'd otherwise commit
+      // two entries with identical ids.
+      const journeys: Journey[] = dedupeJourneysById(
+        payload.selections.map((sel) => ({
+          id: journeyId(sel.language, sel.variant, journeyFocus),
+          language: sel.language,
+          variant: sel.variant,
+          focus: journeyFocus,
+          level: preferredLevel,
+          createdAt,
+        }))
+      );
+      setPreferences((current) => ({
+        ...current,
+        journeys,
+        activeJourneyId: journeys[0]?.id ?? null,
+      }));
+      setSavedPreferences((current) => ({
+        ...current,
+        journeys,
+        activeJourneyId: journeys[0]?.id ?? null,
+      }));
+      // Set the active journey language so the journey screen lands
+      // on the right path right away.
+      const primaryLanguage = payload.selections[0]?.language ?? null;
+      if (primaryLanguage) {
+        setActiveJourneyLanguage(primaryLanguage);
+        void loadJourneyForLanguage(primaryLanguage);
+      }
+    }
   }
 
   // Render the dedicated full-screen onboarding when the user hasn't
   // completed the survey yet — or when an override (polyglot test or
   // a tap on the empty flag chip) asked for it. Replaces the old
   // Modal-based survey.
-  const showOnboarding =
-    shouldShowOnboardingSurvey || forceOnboardingTest || forceOnboardingProper;
+  const showOnboarding = shouldShowOnboardingSurvey || forceOnboardingProper;
   if (showOnboarding) {
     return (
       <OnboardingFlow
         userName={sessionName ?? null}
-        testMode={forceOnboardingTest}
+        // Always persist now: the previous test-mode "throw away
+        // selections" path is gone — Test mode in the polyglot menu
+        // does a full reset instead and runs onboarding normally.
+        testMode={false}
+        comingSoonLanguages={comingSoonLanguages}
         onComplete={async (payload) => {
-          if (forceOnboardingTest) {
-            // Test runs throw away their selections.
-            setOnboardingOverride(null);
-            return;
-          }
-          await commitOnboarding(payload);
-          // Real run (first-time gate or "proper" override): clear
-          // any override so the shell renders normally afterwards.
+          // Set activeScreen BEFORE the await: when the gate flips
+          // (onboardingSurveyCompletedAt set inside commitOnboarding)
+          // and the shell re-renders without the onboarding overlay,
+          // activeScreen is already "journey" — so the user lands
+          // directly there without a one-frame Home flash.
+          setActiveScreen("journey");
           setOnboardingOverride(null);
+          await commitOnboarding(payload);
         }}
         onCancel={
-          forceOnboardingTest || forceOnboardingProper
-            ? () => setOnboardingOverride(null)
-            : undefined
+          forceOnboardingProper ? () => setOnboardingOverride(null) : undefined
         }
       />
     );
@@ -9998,7 +11815,7 @@ export function MobileLibraryShell(args: {
           during the initial in-flight window. Tappable to retry. */}
       {isOffline && (isSignedIn || Boolean(sessionUserId)) ? (
         <Pressable
-          accessibilityLabel="Sin conexión. Tocá para reintentar."
+          accessibilityLabel="Sin conexión. Toca para reintentar."
           onPress={() => {
             // Bump the refresh counter to re-trigger the hydrate effect.
             // If we're still offline the banner will reappear; if network
@@ -10009,10 +11826,38 @@ export function MobileLibraryShell(args: {
         >
           <View style={styles.offlineBannerDot} />
           <Text style={styles.offlineBannerText} numberOfLines={1}>
-            Sin conexión — mostrando tu biblioteca descargada
+            Sin conexión — biblioteca descargada
           </Text>
           <Feather name="refresh-cw" size={13} color="#f5e0b5" />
         </Pressable>
+      ) : null}
+      {/* Journey path top bar lifted out of the ScrollView so it
+          stays pinned to the top of the screen while the path content
+          scrolls underneath. Only rendered for the journey screen in
+          path mode — detail mode (`journeyDetailTopicId` set) keeps
+          its hero inside the scroll content. Hidden when a story is
+          opening (`openingStoryId`) or already open (`selection`)
+          so the journey UI doesn't linger over the reader for a
+          frame. */}
+      {activeScreen === "journey" &&
+      !journeyDetailTopicId &&
+      !openingStoryId &&
+      !selection ? (
+        <View
+          onLayout={(e) => {
+            // Latch: only the first non-zero measurement counts.
+            // Later layout events (re-renders, etc.) are ignored
+            // so they can't loop with sticky setState.
+            if (topBarMeasuredRef.current) return;
+            const h = e.nativeEvent.layout.height;
+            if (h > 0) {
+              topBarMeasuredRef.current = true;
+              setJourneyTopBarHeight(h);
+            }
+          }}
+        >
+          {journeyPathTopBar}
+        </View>
       ) : null}
       <ScrollView
         ref={shellScrollRef}
@@ -10023,9 +11868,185 @@ export function MobileLibraryShell(args: {
         decelerationRate="normal"
         keyboardShouldPersistTaps="handled"
         contentInsetAdjustmentBehavior="never"
+        stickyHeaderIndices={undefined}
+        onScroll={(event) => {
+          const y = event.nativeEvent.contentOffset.y;
+          if (activeScreen === "favorites") setShellScrollY(y);
+          if (activeScreen === "journey" && !journeyDetailTopicId) {
+            handleJourneyScroll(event);
+          }
+        }}
+        onScrollBeginDrag={() => {
+          // Start of a new scroll session: the user just put their
+          // finger on the path. Reset the visited-slug set so haptics
+          // can fire again for topics they cross during this session.
+          // (See `visitedSlugsInSessionRef` declaration for why we use
+          // a session-scoped set instead of a time-based dedup.)
+          if (activeScreen === "journey" && !journeyDetailTopicId) {
+            visitedSlugsInSessionRef.current.clear();
+            // Seed with the current sticky slug so a tiny initial drag
+            // that doesn't actually leave the current topic doesn't
+            // re-fire haptic when foundCurrent flickers.
+            const seed = stickyTopicSlugRef.current ?? STICKY_NULL_SENTINEL;
+            visitedSlugsInSessionRef.current.add(seed);
+          }
+          // User took over: cancel any pending scroll restoration so we
+          // don't yank them back while they're scrolling.
+          pendingJourneyRestoreYRef.current = null;
+        }}
+        onContentSizeChange={(_w, h) => {
+          // Re-attempt scroll restoration when content grows past the
+          // pending target. Required because the ScrollView clamps
+          // scrollTo to its current maxOffset; if the journey path is
+          // still measuring (image covers loading, etc.) the first
+          // restore from the tab-return effect lands short. As h
+          // grows past targetY we apply scrollTo again and clear.
+          if (activeScreen !== "journey" || journeyDetailTopicId) return;
+          const targetY = pendingJourneyRestoreYRef.current;
+          if (targetY == null) return;
+          if (h < targetY) return;
+          shellScrollRef.current?.scrollTo({ y: targetY, animated: false });
+          recomputeStickyTopicRef.current?.(targetY, true);
+          pendingJourneyRestoreYRef.current = null;
+        }}
+        onMomentumScrollEnd={() => {
+          // Momentum decay finished. The session ends here — clear so
+          // the next gesture starts fresh.
+          if (activeScreen === "journey" && !journeyDetailTopicId) {
+            visitedSlugsInSessionRef.current.clear();
+          }
+        }}
+        onScrollEndDrag={(event) => {
+          // If the user releases without enough velocity to start
+          // momentum, `onMomentumScrollEnd` never fires. We clear the
+          // set here too, but only when the scroll has effectively
+          // come to rest (no velocity). RN exposes velocity on the
+          // event for this exact purpose.
+          if (activeScreen !== "journey" || journeyDetailTopicId) return;
+          const velocity = event.nativeEvent.velocity?.y ?? 0;
+          if (Math.abs(velocity) < 0.1) {
+            visitedSlugsInSessionRef.current.clear();
+          }
+        }}
+        scrollEventThrottle={16}
       >
         {content}
       </ScrollView>
+      {/* JS-driven floating sticky panel — overlays the ScrollView
+          (NOT in flow) so appearing / disappearing never reflows the
+          scroll content. Top edge sits flush with the journey top
+          bar's bottom (height measured via onLayout above). The
+          in-flow topic panel for the same slug renders with
+          opacity:0 so the user only sees one panel at a time.
+          Rendered unconditionally on the journey path screen and
+          driven via opacity so we never pay a mount frame on the
+          first cross-over — that mount frame was the residual
+          flicker the user reported on the first panel scroll. */}
+      {activeScreen === "journey" &&
+      !journeyDetailTopicId &&
+      !openingStoryId &&
+      !selection ? (
+        <View
+          pointerEvents="none"
+          style={[
+            styles.journeyStickyFloatingPanel,
+            { top: journeyTopBarHeight },
+            stickyTopic?.locked
+              ? styles.journeyTopicPanelLocked
+              : stickyTopic
+                ? { backgroundColor: stickyTopic.bgColor }
+                : null,
+            !stickyTopic ? styles.journeyTopicPanelHidden : null,
+          ]}
+        >
+          <View style={styles.journeyTopicPanelTextBlock}>
+            <Text
+              style={[
+                styles.journeyTopicPanelEyebrow,
+                stickyTopic?.locked ? styles.journeyTopicPanelEyebrowLocked : null,
+              ]}
+            >
+              {stickyTopic?.levelLabel ?? ""}
+            </Text>
+            <Text
+              style={[
+                styles.journeyTopicPanelTitle,
+                stickyTopic?.locked ? styles.journeyTopicPanelTitleLocked : null,
+              ]}
+              numberOfLines={2}
+            >
+              {stickyTopic?.label ?? ""}
+            </Text>
+          </View>
+          <View style={styles.journeyTopicPanelIconWrap}>
+            <Feather
+              name={stickyTopic?.locked ? "lock" : "list"}
+              size={18}
+              color="#ffffff"
+            />
+          </View>
+        </View>
+      ) : null}
+      {/* Floating "scroll to top" — only on Favorites where the
+          saved-words list can grow long. Shows up after the user has
+          scrolled at least one viewport-ish (400 px) so it doesn't
+          flash on short lists. Tap returns the shell scroll to 0.
+          Reuses the journey FAB styles so the two surfaces feel like
+          the same control. */}
+      {activeScreen === "favorites" && shellScrollY > 400 ? (
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Volver al inicio"
+          onPress={() => {
+            shellScrollRef.current?.scrollTo({ y: 0, animated: true });
+          }}
+          style={({ pressed }) => [
+            styles.journeyScrollTopButton,
+            pressed ? styles.journeyScrollTopButtonPressed : null,
+          ]}
+        >
+          <Feather name="chevron-up" size={22} color="#0c1626" />
+        </Pressable>
+      ) : null}
+
+      {/* Floating sticky topic panel — pinned just below the lifted
+          top bar while the user scrolls through the path. The active
+          topic is updated from the ScrollView's onScroll handler
+          based on each topic block's measured Y. The in-flow panel
+          (rendered inside the path) keeps existing — this floating
+          one covers it as the user scrolls past, producing the
+          Duolingo-style "section header that swaps as you cross
+          boundaries" effect without flattening the path. */}
+      {/* (Floating JS-driven sticky panel removed — native
+          stickyHeaderIndices on the ScrollView now pins the in-flow
+          topic panel directly, producing the proper Duolingo
+          eclipse swap without the flicker the floating overlay
+          had.) */}
+
+      {/* Floating "back to top" arrow on the journey screen.
+          Visible after the user has scrolled past ~280pt so it
+          doesn't crowd the top of the path. Tapping smoothly
+          scrolls back to y=0. Sits above the bottom tab nav and
+          uses safe-area-aware bottom inset. */}
+      {activeScreen === "journey" &&
+      !journeyDetailTopicId &&
+      !openingStoryId &&
+      !selection &&
+      showJourneyScrollTop ? (
+        <Pressable
+          onPress={() => {
+            shellScrollRef.current?.scrollTo({ y: 0, animated: true });
+          }}
+          accessibilityRole="button"
+          accessibilityLabel="Scroll to top of journey"
+          style={({ pressed }) => [
+            styles.journeyScrollTopButton,
+            pressed ? styles.journeyScrollTopButtonPressed : null,
+          ]}
+        >
+          <Feather name="chevron-up" size={22} color="#0c1626" />
+        </Pressable>
+      ) : null}
 
       {/* Gamification daily-quest toast removed: it surfaced across
           unrelated screens (Journey, Library, …) when the gamification
@@ -10040,17 +12061,211 @@ export function MobileLibraryShell(args: {
       <LanguageSwitchSheet
         open={languageSwitchOpen}
         onClose={() => setLanguageSwitchOpen(false)}
-        languages={languageSwitchEntries}
-        onSelect={handleLanguageSwitch}
-        onAddLanguage={() => {
+        journeys={journeySwitchEntries}
+        onSelect={handleJourneySwitch}
+        onAddJourney={() => {
+          // Close the sheet and open the full-screen "Your journeys"
+          // panel where the user can browse all journeys + start a
+          // new one (no longer routed to /settings).
           setLanguageSwitchOpen(false);
-          setActiveScreen("settings");
-        }}
-        onSeeAll={() => {
-          setLanguageSwitchOpen(false);
-          setActiveScreen("settings");
+          setJourneysPanelOpen(true);
         }}
       />
+
+      <JourneysPanel
+        open={journeysPanelOpen}
+        onClose={() => setJourneysPanelOpen(false)}
+        journeys={preferences.journeys}
+        activeJourneyId={preferences.activeJourneyId}
+        statsByLanguage={MOCK_LANG_STATS}
+        comingSoonLanguages={comingSoonLanguages}
+        onSelect={async (id) => {
+          await handleJourneySwitch(id);
+          setJourneysPanelOpen(false);
+        }}
+        onCreate={async (input) => {
+          await handleJourneyCreate(input);
+          setJourneysPanelOpen(false);
+        }}
+        onDelete={async (id) => {
+          // Don't auto-close on delete: the user typically wants to
+          // see the remaining journeys + maybe delete more or pick
+          // a new active one. They can dismiss with the close button.
+          await handleJourneyDelete(id);
+        }}
+      />
+
+      <LegalSheet
+        open={legalSheetOpen}
+        onClose={() => setLegalSheetOpen(false)}
+        onSelect={(link) => {
+          setLegalSheetOpen(false);
+          void openWebPath(link.path);
+        }}
+      />
+
+      {/* Progress sheet — opens when the user taps the streak / level
+          / XP badges in the journey top bar. Same content as the
+          Progress tab, but presented as a slide-up sheet with a
+          dismissable backdrop instead of a tab navigation. */}
+      <Modal
+        visible={progressSheetOpen}
+        transparent
+        animationType="slide"
+        onRequestClose={() => setProgressSheetOpen(false)}
+      >
+        <Pressable
+          onPress={() => setProgressSheetOpen(false)}
+          style={styles.progressSheetBackdrop}
+        />
+        <View style={styles.progressSheetContainer}>
+          <View style={styles.progressSheetHandleRow}>
+            <View style={styles.progressSheetHandle} />
+            <Pressable
+              onPress={() => setProgressSheetOpen(false)}
+              hitSlop={12}
+              style={styles.progressSheetClose}
+            >
+              <Feather name="x" size={18} color="#ffffff" />
+            </Pressable>
+          </View>
+          <ScrollView
+            style={styles.progressSheetScroll}
+            contentContainerStyle={styles.progressSheetContent}
+            showsVerticalScrollIndicator={false}
+            bounces={false}
+          >
+            {progressView}
+          </ScrollView>
+        </View>
+      </Modal>
+
+      {/* Topic preview — opens when the user taps a topic panel on
+          the journey path. Shows the stories that will appear inside
+          plus a vocabulary teaser, helping the user understand
+          what's coming before they start. */}
+      <TopicPreviewSheet
+        open={Boolean(topicPreviewOpen)}
+        onClose={() => setTopicPreviewOpen(null)}
+        levelId={topicPreviewOpen?.levelId ?? ""}
+        topicLabel={topicPreviewOpen?.topicLabel ?? ""}
+        bgColor={topicPreviewOpen?.bgColor ?? "#1f7ee0"}
+        stories={topicPreviewOpen?.stories ?? []}
+        vocabWords={topicPreviewOpen?.vocabWords ?? []}
+        isVocabLoading={topicPreviewOpen?.isVocabLoading ?? false}
+      />
+
+      {/* Extended splash — keeps the brand logo visible until the
+          first hydrate completes, so the user sees logo → loaded
+          content instead of logo → skeleton → content. The skeleton
+          inside the shell is still rendered when needed (e.g. very
+          slow hydrates where the splash already faded), but in the
+          common case it's never visible. */}
+      <ExtendedSplash visible={!didFirstHydrate} />
+
+      {/* Level test offer modal — opens when the user taps a story
+          gated by level. Offers the level test as a way to skip
+          ahead instead of showing a dead-end toast. */}
+      <Modal
+        visible={Boolean(levelTestOfferOpen)}
+        animationType="fade"
+        transparent
+        onRequestClose={() => setLevelTestOfferOpen(null)}
+      >
+        <View style={styles.levelTestOfferBackdrop}>
+          <Pressable
+            style={StyleSheet.absoluteFill}
+            onPress={() => setLevelTestOfferOpen(null)}
+          />
+          <View style={styles.levelTestOfferCard}>
+            <View style={styles.levelTestOfferIcon}>
+              <Feather name="lock" size={20} color={tokenColor.gold} />
+            </View>
+            <Text style={styles.levelTestOfferTitle}>
+              This story is at level {levelTestOfferOpen?.targetLevel}
+            </Text>
+            <Text style={styles.levelTestOfferBody}>
+              {levelTestOfferOpen && hasLevelTest(levelTestOfferOpen.targetLanguage)
+                ? "Take a 1-minute level test to unlock it without finishing the earlier levels."
+                : "Complete the previous level to unlock this one."}
+            </Text>
+            <View style={styles.levelTestOfferActions}>
+              {levelTestOfferOpen && hasLevelTest(levelTestOfferOpen.targetLanguage) ? (
+                <Pressable
+                  onPress={() => {
+                    if (!levelTestOfferOpen) return;
+                    const lang = levelTestOfferOpen.targetLanguage;
+                    setLevelTestOfferOpen(null);
+                    setLevelTestActive({ language: lang, source: "locked-story" });
+                  }}
+                  style={[styles.levelTestOfferButton, styles.levelTestOfferButtonPrimary]}
+                >
+                  <Feather name="zap" size={14} color={tokenBg[1]} />
+                  <Text style={styles.levelTestOfferButtonPrimaryText}>
+                    Take level test
+                  </Text>
+                </Pressable>
+              ) : null}
+              <Pressable
+                onPress={() => setLevelTestOfferOpen(null)}
+                style={[styles.levelTestOfferButton, styles.levelTestOfferButtonSecondary]}
+              >
+                <Text style={styles.levelTestOfferButtonSecondaryText}>
+                  {levelTestOfferOpen && hasLevelTest(levelTestOfferOpen.targetLanguage)
+                    ? "Not now"
+                    : "OK"}
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Level test runner — fires when launched from a locked story.
+          Onboarding has its own runner mounted inside OnboardingFlow,
+          so this one is only for post-onboarding usage. */}
+      {levelTestActive ? (
+        <LevelTestRunner
+          open={Boolean(levelTestActive)}
+          language={levelTestActive.language}
+          variant={preferences.preferredVariant}
+          source={levelTestActive.source}
+          onComplete={async (result) => {
+            setLevelTestActive(null);
+            // Map CEFR level to legacy preferredLevel for backend
+            // compatibility, AND store the placement directly so
+            // the journey can unlock content up to that level.
+            const newPreferredLevel =
+              result.level === "B2" || result.level === "C1"
+                ? "Advanced"
+                : result.level === "B1"
+                  ? "Intermediate"
+                  : "Beginner";
+            setPreferences((current) => ({
+              ...current,
+              preferredLevel: newPreferredLevel,
+              journeyPlacementLevel: result.level,
+            }));
+            if (sessionToken) {
+              try {
+                await apiFetch({
+                  baseUrl: mobileConfig.apiBaseUrl,
+                  path: "/api/user/preferences",
+                  token: sessionToken,
+                  method: "POST",
+                  body: {
+                    preferredLevel: newPreferredLevel,
+                    journeyPlacementLevel: result.level,
+                  },
+                });
+              } catch (err) {
+                console.warn("[level-test] failed to persist", err);
+              }
+            }
+          }}
+          onCancel={() => setLevelTestActive(null)}
+        />
+      ) : null}
 
       {lockedStoryHint ? (
         <Animated.View
@@ -10369,14 +12584,11 @@ export function MobileLibraryShell(args: {
                       setMenuOpen(false);
                     }}
                   />
-                  <MenuLink
-                    label="Journey"
-                    icon="journey"
-                    onPress={() => {
-                      setActiveScreen("journey");
-                      setMenuOpen(false);
-                    }}
-                  />
+                  {/* Journey link removed in build 68 — it's already
+                      in the bottom tab nav so the side menu entry was
+                      a duplicate. The "journey" icon in MenuIcon is
+                      still defined in case Journey re-enters the
+                      menu under a different label later. */}
 
                   {effectivePlan === "free" ? (
                     <MenuLink
@@ -10404,16 +12616,25 @@ export function MobileLibraryShell(args: {
                     <MenuLink label="Upgrade" icon="upgrade" onPress={() => void openWebPath("/plans")} tone="accent" />
                   ) : null}
 
-                  {/* Polyglot-only: replay the onboarding without
-                      losing the saved survey state. Test mode skips
-                      persistence and clears itself on cancel/finish. */}
+                  {/* Polyglot-only — internal QA tool. Wipes the
+                      account's preferences (target languages,
+                      journeys, focus, level, goals, reminders, the
+                      onboarding-completed flag) on both client and
+                      server, which makes the shell fall straight
+                      into the onboarding gate again. The onboarding
+                      runs in normal (persistent) mode so any new
+                      selections REPLACE the old setup — letting you
+                      test the new-user experience end-to-end on a
+                      live account. Gated to `polyglot` because that
+                      tier is for internal use only; this entry is
+                      never visible to real users. */}
                   {effectivePlan === "polyglot" ? (
                     <MenuLink
-                      label="Test onboarding"
+                      label="Test mode"
                       icon="settings"
                       onPress={() => {
                         setMenuOpen(false);
-                        setOnboardingOverride("test");
+                        void handleTestModeReset();
                       }}
                     />
                   ) : null}
@@ -10438,21 +12659,20 @@ export function MobileLibraryShell(args: {
                 />
               )}
 
-              <View style={styles.menuLegalBlock}>
-                <Text style={styles.menuLegalTitle}>Legal</Text>
-                <View style={styles.menuLegalLinks}>
-                  <MenuLink label="Impressum" icon="legal" compact onPress={() => void openWebPath("/impressum")} />
-                  <MenuLink label="Privacy" icon="legal" compact onPress={() => void openWebPath("/privacy")} />
-                  <MenuLink label="Cookies" icon="legal" compact onPress={() => void openWebPath("/cookies")} />
-                  <MenuLink label="Terms" icon="legal" compact onPress={() => void openWebPath("/terms")} />
-                  <MenuLink
-                    label="Data deletion"
-                    icon="legal"
-                    compact
-                    onPress={() => void openWebPath("/data-deletion")}
-                  />
-                </View>
-              </View>
+              {/* Legal links collapsed into a single MenuLink in
+                  build 68 — tapping it opens a bottom sheet with the
+                  5 individual links (Impressum, Privacy, Cookies,
+                  Terms, Data deletion). The inline list was eating
+                  ~5 rows in the side menu; the sheet keeps them
+                  one-tap-away while reclaiming that vertical space. */}
+              <MenuLink
+                label="Legal"
+                icon="legal"
+                onPress={() => {
+                  setMenuOpen(false);
+                  setLegalSheetOpen(true);
+                }}
+              />
 
               <Pressable onPress={() => void openFeedback()} style={styles.feedbackButton}>
                 <Feather name="message-square" size={18} color="#dbe9ff" />
@@ -10656,9 +12876,88 @@ const styles = StyleSheet.create({
   journeyTopStrip: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 10,
+    // Wider gap so the chip ("Travelers · B1") doesn't visually butt
+    // up against the gamification stats row's lightning bolt — the
+    // previous 10pt gap let them touch on long focus names.
+    gap: 14,
     paddingTop: 10,
     paddingBottom: 6,
+  },
+  // Journey top bar lifted OUT of the ScrollView so it stays pinned
+  // to the top of the screen. No background — the elements (flag
+  // chip, stats, menu) "float" over the page background, matching
+  // Duolingo where the top row sits transparently over the dark
+  // canvas instead of inside a separate-colored bar.
+  journeyTopStripFixed: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14,
+    paddingHorizontal: 24,
+    paddingTop: 14,
+    paddingBottom: 8,
+    backgroundColor: "transparent",
+  },
+  // Floating sticky topic panel — sits just below the lifted top
+  // bar via `top: <approx top bar height>`. Renders on top of the
+  // ScrollView as a sibling overlay; the in-flow topic panels keep
+  // existing inside the scroll content and get covered by this
+  // floating one as the user scrolls past.
+  // Floating "back to top" arrow on the journey screen. Sits in
+  // the bottom-right above the tab bar; the lime accent matches
+  // the active-action color used elsewhere (next-pill halo, level-
+  // up badges) so it reads as "tap me" rather than navigation
+  // chrome.
+  journeyScrollTopButton: {
+    position: "absolute",
+    right: 18,
+    // ~80pt for the floating tab bar height + 20pt breathing space.
+    bottom: 100,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: "#fcd34d",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 60,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.35,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  journeyScrollTopButtonPressed: {
+    // Darker amber for the pressed state, matching the new yellow
+    // base (#fcd34d). Earlier this was a darker LIME (#a3d647) —
+    // a leftover from when the base was lime green; the user saw
+    // the green flash on press because the pressed shade hadn't
+    // been swapped along with the base color.
+    backgroundColor: "#eab308",
+  },
+  journeyStickyTopicWrap: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    // Top bar height is roughly 60pt + we add 18pt of breathing
+    // space so the floating topic panel doesn't sit flush against
+    // the gamification stats / hamburger row.
+    top: 78,
+    zIndex: 50,
+    // Same horizontal padding as the ScrollView's container so the
+    // floating panel matches the in-flow panel's width. Without this
+    // the floating one was visibly wider than the in-flow one and
+    // looked like it was "expanding sideways" during the swap.
+    paddingHorizontal: 24,
+  },
+  journeyStickyTopicPanel: {
+    // Floating sticky version of the topic panel — same dimensions
+    // as the in-flow card, plus a stronger shadow so it visually
+    // separates from the path content scrolling underneath.
+    marginBottom: 0,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.35,
+    shadowRadius: 8,
+    elevation: 8,
   },
   journeyLanguageChip: {
     flexDirection: "row",
@@ -11632,7 +13931,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: tokenColor.xp,
     borderWidth: 2,
-    borderColor: "rgba(190,242,100,0.45)",
+    borderColor: "rgba(252,211,77,0.45)",
   },
   journeyNodeCircleLocked: {
     width: 62,
@@ -11687,7 +13986,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   journeyPathLevelHeaderLocked: {
-    opacity: 0.55,
+    // Opacity bumped from 0.55 → 0.85: at the lower value the locked
+    // level title (A2 / B1 / …) was hard to spot against the dark
+    // canvas — users were scrolling past it and reporting "only A1
+    // shows up" because the rest blended in. 0.85 keeps it visibly
+    // dimmer than the active level header without becoming a ghost.
+    opacity: 0.85,
   },
   journeyPathLevelBadge: {
     color: "#f5f7fb",
@@ -11702,23 +14006,181 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
   },
   journeyPathTopicBlock: {
-    marginTop: 8,
-    marginBottom: 20,
-    gap: 4,
+    marginTop: 0,
+    marginBottom: 8,
+    // No vertical gap — the topic panel sits flush with the stories
+    // below it so the sticky panel + path read as a single unit.
+    gap: 0,
   },
-  journeyPathTopicLabel: {
-    alignSelf: "center",
-    color: "#f5f7fb",
-    fontSize: 17,
+  // Duolingo-style "you are here" panel. Solid cyan-blue card with
+  // a small eyebrow (LEVEL ·) and the topic title. Sits as a
+  // floating rounded card with horizontal margins (NOT edge-to-
+  // edge) — Duolingo's reference uses this card-on-canvas look so
+  // the panel reads as content, not as a section divider.
+  journeyTopicPanel: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 18,
+    paddingVertical: 12,
+    backgroundColor: "#1f7ee0",
+    borderRadius: 16,
+    gap: 10,
+    marginBottom: 14,
+    // Soft drop shadow so the card lifts off the canvas like the
+    // Duolingo reference. Subtle on iOS where shadow rendering can
+    // get aggressive.
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.18,
+    shadowRadius: 6,
+    elevation: 4,
+  },
+  journeyStickyFloatingPanel: {
+    // Pinned card that mirrors the in-flow topic panel and stays
+    // visible while the stories below it scroll. Absolutely
+    // positioned so showing / hiding it doesn't reflow the
+    // ScrollView (in-flow caused the visible flicker the user
+    // reported). `top` is supplied at render time from the measured
+    // journey-top-bar height. The horizontal positioning mirrors
+    // the path's content padding (24) so the sticky and in-flow
+    // panels stay pixel-aligned during the swap. Shadow values
+    // mirror the in-flow card exactly so the eye can't tell which
+    // of the two is on top during the cross-over moment — earlier a
+    // heavier shadow on the floating panel made the swap visible.
+    position: "absolute",
+    left: 24,
+    right: 24,
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 18,
+    paddingVertical: 12,
+    borderRadius: 16,
+    gap: 10,
+    zIndex: 50,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.18,
+    shadowRadius: 6,
+    elevation: 4,
+  },
+  journeyTopicPanelTextBlock: {
+    flex: 1,
+    minWidth: 0,
+  },
+  journeyTopicPanelEyebrow: {
+    color: "rgba(255,255,255,0.78)",
+    fontSize: 10.5,
     fontWeight: "900",
-    letterSpacing: -0.2,
-    textAlign: "center",
-    marginTop: 6,
-    marginBottom: 16,
-    paddingHorizontal: 12,
+    letterSpacing: 1.4,
   },
-  journeyPathTopicLabelLocked: {
-    opacity: 0.55,
+  journeyTopicPanelEyebrowLocked: {
+    color: "rgba(255,255,255,0.45)",
+  },
+  journeyTopicPanelIconWrap: {
+    width: 36,
+    height: 36,
+    borderRadius: 12,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.18)",
+  },
+  journeyTopicPanelLocked: {
+    // Was #1f2a40, only ~4% lighter than the canvas (#051834), so
+    // locked topic panels were almost invisible — users couldn't tell
+    // there was content for A2 / B1 / etc. and reported "only A1
+    // shows up". This shade is clearly distinguishable from the
+    // canvas while still reading as muted vs the active cyan panel.
+    backgroundColor: "#3b4a66",
+  },
+  journeyTopicPanelHidden: {
+    // `display: none` (rather than opacity: 0) so the in-flow card
+    // takes up zero pixels and there's no chance of seeing a one-
+    // frame ghost behind the floating panel during the swap.
+    opacity: 0,
+  },
+  journeyTopicPanelTitle: {
+    color: "#ffffff",
+    fontSize: 19,
+    fontWeight: "900",
+    letterSpacing: -0.3,
+    lineHeight: 23,
+    marginTop: 1,
+  },
+  journeyTopicPanelTitleLocked: {
+    color: "rgba(255,255,255,0.5)",
+  },
+  // Empty-topic placeholder shown when a Studio topic has no published
+  // stories yet. Sits below the topic header card with a subtle dashed
+  // border so it reads as "intentionally placeholder", not "broken UI".
+  journeyTopicEmptyState: {
+    marginTop: 14,
+    marginBottom: 18,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    paddingVertical: 18,
+    paddingHorizontal: 18,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderStyle: "dashed",
+    borderColor: "rgba(255,255,255,0.18)",
+    backgroundColor: "rgba(255,255,255,0.02)",
+  },
+  journeyTopicEmptyText: {
+    color: "rgba(255,255,255,0.65)",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  // Block injected after the last topic of an unlocked level. Surfaces
+  // (a) the 75%-of-topics rule and (b) the level-test express lane so the
+  // user understands what unlocks the next CEFR level instead of being
+  // surprised when it pops open silently.
+  journeyLevelGateBlock: {
+    marginTop: 4,
+    marginBottom: 22,
+    paddingVertical: 16,
+    paddingHorizontal: 18,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.12)",
+    backgroundColor: "rgba(255,255,255,0.04)",
+    gap: 10,
+  },
+  journeyLevelGateProgressRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  journeyLevelGateProgressText: {
+    color: "#ffffff",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+  journeyLevelGateHint: {
+    color: "rgba(255,255,255,0.55)",
+    fontSize: 12,
+    fontWeight: "600",
+    lineHeight: 17,
+  },
+  journeyLevelGateCta: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginTop: 2,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(252, 211, 77, 0.35)",
+    backgroundColor: "rgba(252, 211, 77, 0.10)",
+  },
+  journeyLevelGateCtaText: {
+    color: tokenColor.gold,
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 0.4,
   },
   journeyPathNodeWrap: {
     marginBottom: 18,
@@ -11744,8 +14206,8 @@ const styles = StyleSheet.create({
     borderColor: "rgba(252, 211, 77, 0.32)",
   },
   journeyPathCheckpointChipPassed: {
-    backgroundColor: "rgba(190, 242, 100, 0.06)",
-    borderColor: "rgba(190, 242, 100, 0.28)",
+    backgroundColor: "rgba(252, 211, 77, 0.06)",
+    borderColor: "rgba(252, 211, 77, 0.28)",
   },
   journeyPathCheckpointText: {
     fontSize: 10.5,
@@ -11753,11 +14215,15 @@ const styles = StyleSheet.create({
     letterSpacing: 1.4,
     color: "#6f88a8",
   },
-  // ─── Compact Duolingo-style header (flag + level + stats) ──────────
+  // ─── Compact Duolingo-style header (flag-only chip + stats) ───────
+  // The chip went text-less in build 67 — only flag + chevron — so it
+  // stays compact and doesn't need a maxWidth/flexShrink dance to
+  // share the row with the stats cluster. Level + topic live in the
+  // sticky panel below the strip now.
   journeyHeaderFlagBadge: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8,
+    gap: 6,
     paddingHorizontal: 8,
     paddingVertical: 6,
     borderRadius: 999,
@@ -11777,14 +14243,113 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "900",
     letterSpacing: -0.2,
+    // Allow the focus + level text to truncate with ellipsis instead
+    // of forcing the chip wider than the strip can hold.
+    flexShrink: 1,
+    minWidth: 0,
+  },
+  // Two-letter language code rendered next to the flag in the
+  // journey header chip ("ES", "DE", "FR", etc.). Slightly tighter
+  // letterSpacing + uppercase weight gives it the compact Duolingo
+  // feel without competing with the flag.
+  journeyHeaderLanguageCode: {
+    color: "#f5f7fb",
+    fontSize: 14,
+    fontWeight: "900",
+    letterSpacing: 0.4,
+  },
+  // ─── Level test offer modal (locked-story tap) ─────────────────
+  // Absolute fill instead of `flex: 1` so it always takes the whole
+  // Modal viewport. The user reported the alert appearing "arriba"
+  // (at the top) — that's a sign the parent Modal didn't pass a
+  // flex height through, so the View collapsed against the top.
+  levelTestOfferBackdrop: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(5, 24, 52, 0.7)",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 24,
+  },
+  levelTestOfferCard: {
+    width: "100%",
+    maxWidth: 360,
+    backgroundColor: "#0c1626",
+    borderRadius: 24,
+    padding: 22,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+    gap: 12,
+    alignItems: "center",
+  },
+  levelTestOfferIcon: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(252, 211, 77, 0.14)",
+    marginBottom: 4,
+  },
+  levelTestOfferTitle: {
+    color: "#ffffff",
+    fontSize: 19,
+    fontWeight: "900",
+    letterSpacing: -0.4,
+    textAlign: "center",
+  },
+  levelTestOfferBody: {
+    color: "rgba(255,255,255,0.7)",
+    fontSize: 13.5,
+    lineHeight: 19,
+    textAlign: "center",
+    paddingHorizontal: 8,
+  },
+  levelTestOfferActions: {
+    width: "100%",
+    gap: 8,
+    marginTop: 6,
+  },
+  levelTestOfferButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    paddingVertical: 14,
+    borderRadius: 14,
+  },
+  levelTestOfferButtonPrimary: {
+    backgroundColor: tokenColor.xp,
+  },
+  levelTestOfferButtonPrimaryText: {
+    color: tokenBg[1],
+    fontSize: 14,
+    fontWeight: "900",
+    letterSpacing: 0.3,
+  },
+  levelTestOfferButtonSecondary: {
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+  },
+  levelTestOfferButtonSecondaryText: {
+    color: "rgba(255,255,255,0.85)",
+    fontSize: 14,
+    fontWeight: "800",
   },
   journeyHeaderStatsRow: {
+    // Residual space to the right of the chip. flex:1 + flex-end
+    // alignment keeps the streak/level/XP cluster pinned to the
+    // right edge while the chip on the left holds its capped width.
     flex: 1,
     flexDirection: "row",
     justifyContent: "flex-end",
     alignItems: "center",
-    gap: 14,
-    paddingHorizontal: 4,
+    gap: 12,
+    paddingLeft: 4,
   },
   journeyHeaderStat: {
     flexDirection: "row",
@@ -11797,19 +14362,26 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
   },
   // ─── Horizontal pill nodes ─────────────────────────────────────────
+  // Pill keeps its full size — title space, cover thumb, badge — so
+  // long titles don't ellipsize unnecessarily. The compactness for
+  // long topics (7+ stories) comes from tighter vertical spacing
+  // between rows + a soft horizontal wave (see `journeyPathNodeRow`
+  // and the per-story marginLeft computed at render time) rather
+  // than from shrinking the pill itself.
   journeyPathNodeRow: {
     width: "100%",
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 14,
+    marginBottom: 8,
     gap: 8,
+    // Per-story horizontal offset (paddingLeft) is set inline at
+    // render time via the wave formula in `renderJourneyStoryNode`.
+    // The hard left/right variants below are kept as empty styles so
+    // legacy/dead branches that still reference them keep compiling;
+    // they no longer influence layout.
   },
-  journeyPathNodeRowLeft: {
-    justifyContent: "flex-start",
-  },
-  journeyPathNodeRowRight: {
-    justifyContent: "flex-end",
-  },
+  journeyPathNodeRowLeft: {},
+  journeyPathNodeRowRight: {},
   journeyNodePill: {
     flexDirection: "row",
     alignItems: "center",
@@ -11822,10 +14394,26 @@ const styles = StyleSheet.create({
     maxWidth: 260,
   },
   journeyNodePillNext: {
-    // White card so the next-up pill clearly contrasts with the dark
-    // page background; the cyan halo behind it carries the accent.
-    backgroundColor: "#f5f7fb",
-    borderColor: "rgba(255, 255, 255, 0.85)",
+    // Same dimensions and same neutral border as the other variants —
+    // we deliberately keep the cyan accent OUT of the border. The user
+    // wanted "no borde, simplemente" (no rim, just the glow), so the
+    // visual cue lives entirely in the breathing fill on top.
+    backgroundColor: "rgba(125, 211, 252, 0.16)",
+  },
+  // Soft cyan FILL overlay rendered INSIDE the next pill, pulsing in
+  // opacity. Replaces the earlier thin ring — the user reported the
+  // ring alone read as "only the contour", which was too discreet.
+  // A breathing fill makes the whole button glow gently while still
+  // staying the exact same size/shape as the neutral pills. Native
+  // driver opacity keeps it cheap.
+  journeyNodePillNextGlow: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: 18,
+    backgroundColor: tokenColor.cyan,
   },
   // Wrap that hosts the breathing halo + the actual pill. Keeps the
   // halo behind the pill via z-stacking (halo is absolute, pill is the
@@ -11849,6 +14437,60 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.6,
     shadowRadius: 18,
     elevation: 5,
+  },
+  // Progress sheet (bottom popup that replaces the old "tap stats →
+  // jump to Progress tab" navigation).
+  progressSheetBackdrop: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(5, 24, 52, 0.55)",
+  },
+  progressSheetContainer: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: "92%",
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
+    backgroundColor: tokenBg[1],
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+    paddingBottom: 22,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: -16 },
+    shadowOpacity: 0.55,
+    shadowRadius: 24,
+    elevation: 14,
+  },
+  progressSheetHandleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: 10,
+    paddingHorizontal: 16,
+  },
+  progressSheetHandle: {
+    width: 40,
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: "rgba(255,255,255,0.18)",
+  },
+  progressSheetClose: {
+    position: "absolute",
+    right: 14,
+    top: 10,
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.08)",
+  },
+  progressSheetScroll: {
+    flex: 1,
+  },
+  progressSheetContent: {
+    paddingBottom: 24,
   },
   // Toast for the "tap on a locked story" hint. Pinned near the top
   // (below the strip) so it doesn't fight with the bottom tab bar.
@@ -11887,13 +14529,30 @@ const styles = StyleSheet.create({
     lineHeight: 17,
   },
   journeyNodePillCompleted: {
-    backgroundColor: "rgba(190, 242, 100, 0.08)",
-    borderColor: "rgba(190, 242, 100, 0.25)",
+    // Soft green wash + emerald edge — "you mastered this".
+    // Strong enough to read as an achievement at a glance,
+    // restrained enough to not compete with the active "next"
+    // pill for the user's eye.
+    backgroundColor: "rgba(110, 231, 183, 0.1)",
+    borderColor: "rgba(110, 231, 183, 0.5)",
+  },
+  journeyNodePillAudioFinished: {
+    // Cool muted cyan — "you've been here, exercises pending".
+    // Distinct from completed (green) and from never-tapped
+    // (neutral) so the path tells the user at a glance which
+    // stories are halfway done.
+    backgroundColor: "rgba(125, 211, 252, 0.08)",
+    borderColor: "rgba(125, 211, 252, 0.32)",
   },
   journeyNodePillLocked: {
-    backgroundColor: "rgba(255,255,255,0.03)",
-    borderColor: "rgba(255,255,255,0.08)",
-    opacity: 0.7,
+    // Was rgba(255,255,255,0.03) + opacity 0.7 → effective ~2% white,
+    // which made locked story pills indistinguishable from the
+    // canvas. Pumping both values gives the row enough presence so
+    // the user can see a story is there (and tap it to open the
+    // level-test offer modal) even when locked.
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderColor: "rgba(255,255,255,0.18)",
+    opacity: 0.9,
   },
   journeyNodePillStep: {
     backgroundColor: "rgba(255,255,255,0.04)",
@@ -11919,8 +14578,10 @@ const styles = StyleSheet.create({
   journeyNodePillCoverThumbDim: {
     // Dimmed cover for inactive states — keeps the visual context
     // ("this is a story, not just a step") but mutes it so the
-    // active "next" pill reads as obviously the one to tap.
-    opacity: 0.42,
+    // active "next" pill reads as obviously the one to tap. Bumped
+    // from 0.42 → 0.65 so locked story covers stay visible enough
+    // for the user to recognize there is content beyond A1.
+    opacity: 0.65,
   },
   journeyNodePillCoverThumbCompleted: {
     // Completed stories aren't dimmed as hard — they read as "done"
@@ -11948,7 +14609,20 @@ const styles = StyleSheet.create({
     borderColor: tokenBg[1],
   },
   journeyNodePillThumbBadgeCompleted: {
-    backgroundColor: tokenColor.xp,
+    // Bright emerald with a subtle inner highlight — meant to feel
+    // celebratory, not muted. The dark check inside reads
+    // immediately against the green.
+    backgroundColor: "#34d399",
+  },
+  journeyNodePillThumbBadgeAudioFinished: {
+    // Outline cyan — same check shape as the green mastery badge
+    // but hollow, so the metaphor reads as "started, not finished".
+    // The check inside is also cyan (matching the border) and
+    // contrasts against the dark canvas behind the transparent
+    // fill.
+    backgroundColor: "transparent",
+    borderColor: "#7dd3fc",
+    borderWidth: 1.5,
   },
   journeyNodePillThumbBadgeLocked: {
     backgroundColor: tokenBg[3],
@@ -11962,7 +14636,14 @@ const styles = StyleSheet.create({
     fontWeight: "900",
   },
   journeyNodePillIconCompleted: {
-    backgroundColor: tokenColor.xp,
+    backgroundColor: "#34d399",
+  },
+  journeyNodePillIconAudioFinished: {
+    // Hollow cyan circle for cover-less stories: matches the
+    // outline-check badge style of stories with covers.
+    backgroundColor: "transparent",
+    borderWidth: 1.5,
+    borderColor: "#7dd3fc",
   },
   journeyNodePillIconLocked: {
     backgroundColor: tokenBg[2],
@@ -12125,7 +14806,7 @@ const styles = StyleSheet.create({
     gap: 8,
     borderRadius: 18,
     borderWidth: 1,
-    borderColor: "rgba(190,242,100,0.22)",
+    borderColor: "rgba(252,211,77,0.22)",
     backgroundColor: "rgba(132,204,22,0.08)",
     padding: 14,
   },
@@ -13308,7 +15989,10 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   favoriteWord: {
-    color: "#fff6d7",
+    // Pure white per the user's request — the previous "#fff6d7"
+    // gave the word a yellow tint that didn't match the rest of the
+    // typography on the favorites card.
+    color: "#ffffff",
     fontSize: 20,
     fontWeight: "800",
   },
@@ -13633,6 +16317,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   practiceModeActionTextLarge: {
+    color: "#0c1626",
     fontSize: 11,
     fontWeight: "900",
     letterSpacing: 0.6,
@@ -13799,23 +16484,31 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   practiceExerciseScrollContent: {
+    // Content starts at the top (flex-start) and grows downward via
+    // bigger fonts + taller option rows, so the visible area gets
+    // filled organically without centering. Earlier the card was
+    // centered, but that produced an empty stripe ABOVE the card
+    // instead of below — same problem in a different position. The
+    // fix now is to make the content elements (sentence + options)
+    // larger so they naturally fill the space, while still
+    // scrolling normally on smaller phones where they overflow.
     flexGrow: 1,
-    paddingBottom: 72,
+    paddingBottom: 16,
   },
   practiceQuestionCard: {
-    // flex+space-between makes the card fill the available height on
-    // tall devices (so Listening / Context / Match no longer leave a
-    // big empty gap between the prompt and the options) while still
-    // shrinking and scrolling naturally on small screens. The padding
-    // and inner content keep their intrinsic heights either way.
-    flex: 1,
-    justifyContent: "space-between",
+    // Intrinsic height (no flex) so the card hugs its content. The
+    // earlier flex+space-between attempt didn't work because the
+    // wrapping Animated.View has no flex height. Instead we now
+    // make the inner content (sentence + option rows) larger so it
+    // organically fills the available area, leaving less empty
+    // space below it. Padding + gap bumped to match the bigger
+    // typography and option rows.
     borderRadius: 28,
     backgroundColor: "rgba(7,18,31,0.36)",
     borderWidth: 1,
     borderColor: "rgba(255,255,255,0.08)",
-    padding: 12,
-    gap: 10,
+    padding: 18,
+    gap: 14,
   },
   practicePrompt: {
     color: "rgba(226,232,244,0.84)",
@@ -13844,9 +16537,16 @@ const styles = StyleSheet.create({
     letterSpacing: -0.4,
   },
   practiceSentence: {
-    color: "rgba(226,232,244,0.8)",
-    fontSize: 12,
-    lineHeight: 17,
+    // Bumped from 12 → 19 so the sentence reads as the focal point
+    // of the exercise instead of a small caption above the options.
+    // This (combined with taller option rows below) is what fills
+    // the previously empty area at the bottom of the card on tall
+    // devices, instead of centering a small block.
+    color: "#f5f7fb",
+    fontSize: 19,
+    fontWeight: "700",
+    lineHeight: 26,
+    marginVertical: 6,
   },
   practiceListenButton: {
     alignSelf: "flex-start",
@@ -13891,15 +16591,21 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
   practiceOptions: {
-    gap: 6,
+    // Wider gap between option rows so each tap target reads as a
+    // distinct button, not a stack of cells. Combined with the
+    // taller paddingVertical below this brings the 4 options into
+    // the comfortable Duolingo zone of one-thumb-per-option.
+    gap: 10,
   },
   practiceOption: {
     borderRadius: 16,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.1)",
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.12)",
     backgroundColor: "rgba(255,255,255,0.04)",
-    paddingHorizontal: 12,
-    paddingVertical: 10,
+    paddingHorizontal: 16,
+    // 10 → 18: taller rows for bigger tap targets and better filling
+    // of the available vertical space without resorting to centering.
+    paddingVertical: 18,
   },
   practiceOptionSelected: {
     borderColor: "#67b5ff",
@@ -13914,7 +16620,43 @@ const styles = StyleSheet.create({
     backgroundColor: "#fb7185",
   },
   practiceOptionText: {
+    // 13 → 16: bigger option labels match the larger sentence above.
     color: "#f5f7fb",
+    fontSize: 16,
+    fontWeight: "800",
+    lineHeight: 20,
+  },
+  // ── Meaning-mode overrides ────────────────────────────────────────
+  // The "make options + sentence bigger" pass was meant for context /
+  // listening / match where the card was leaving an empty band at the
+  // bottom of tall devices. Meaning was already balanced with the
+  // smaller original sizes; applying the bigger pass to it as well
+  // pushed its content past the screen and forced a scroll. These
+  // overrides revert the spacing back to the pre-bump values, but
+  // only for meaning. Keep this list in sync with the styles above.
+  practiceExerciseScrollContentMeaning: {
+    paddingBottom: 72,
+  },
+  practiceQuestionCardMeaning: {
+    padding: 12,
+    gap: 10,
+  },
+  practiceSentenceMeaning: {
+    color: "rgba(226,232,244,0.8)",
+    fontSize: 12,
+    fontWeight: "400",
+    lineHeight: 17,
+    marginVertical: 0,
+  },
+  practiceOptionsMeaning: {
+    gap: 6,
+  },
+  practiceOptionMeaning: {
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+    paddingVertical: 10,
+  },
+  practiceOptionTextMeaning: {
     fontSize: 13,
     fontWeight: "700",
     lineHeight: 16,
@@ -13954,6 +16696,12 @@ const styles = StyleSheet.create({
   practiceMatchChipCorrect: {
     borderColor: "#6ee7b7",
     backgroundColor: "#6ee7b7",
+  },
+  practiceMatchChipWrong: {
+    // Same red palette as the multiple-choice "wrong" option, so the
+    // visual feedback is consistent across all four practice modes.
+    borderColor: "#fb7185",
+    backgroundColor: "rgba(251,113,133,0.22)",
   },
   practiceMatchChipText: {
     color: "#f5f7fb",

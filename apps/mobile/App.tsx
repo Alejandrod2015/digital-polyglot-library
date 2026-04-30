@@ -2,6 +2,18 @@ import "./src/polyfills";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ClerkProvider, useAuth, useClerk } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
+import * as SplashScreen from "expo-splash-screen";
+
+// Prevent the native splash from auto-hiding the moment React mounts.
+// We hide it programmatically AFTER the JS has rendered the in-app
+// `ExtendedSplash` component, so the user never sees a brief gap or
+// size change between the native logo and the React-rendered one.
+// Has to run at module load (not inside a component) to win the race
+// against the native auto-hide.
+SplashScreen.preventAutoHideAsync().catch(() => {
+  // The promise rejects when called too late (already hidden) — safe
+  // to ignore. The fallback is the default auto-hide behavior.
+});
 import {
   Image,
   Linking,
@@ -377,22 +389,12 @@ function MobileAppRoot() {
   const shouldShowSplash = loadingSession || clerkHydrating || clerkSyncPending;
 
   if (shouldShowSplash) {
-    // Branded splash: white wordmark logo on the app's dark background so
-    // the splash matches the main UI and the transition into the shell is
-    // visually continuous (no white → dark flash).
-    return (
-      <SafeAreaView style={styles.safeArea}>
-        <StatusBar barStyle="light-content" />
-        <View style={styles.splashContainer}>
-          <Image
-            source={require("./assets/splash-logo-white.png")}
-            style={styles.splashLogo}
-            resizeMode="contain"
-            accessibilityLabel="Digital Polyglot"
-          />
-        </View>
-      </SafeAreaView>
-    );
+    // Same pattern as the font-loading branch above: render an
+    // empty matching-bg View while the native splash (kept up via
+    // preventAutoHideAsync) covers the screen. ExtendedSplash
+    // takes over later inside MobileLibraryShell. Eliminates the
+    // visible "static logo" intermediate state.
+    return <View style={styles.safeArea} />;
   }
 
   // Only show AuthScreen when there's NO evidence of a prior sign-in.
@@ -455,19 +457,16 @@ export default function App() {
   });
 
   if (!fontsLoaded && !fontError) {
-    return (
-      <SafeAreaView style={styles.safeArea}>
-        <StatusBar barStyle="light-content" />
-        <View style={styles.splashContainer}>
-          <Image
-            source={require("./assets/splash-logo-white.png")}
-            style={styles.splashLogo}
-            resizeMode="contain"
-            accessibilityLabel="Digital Polyglot"
-          />
-        </View>
-      </SafeAreaView>
-    );
+    // Render NOTHING during font loading — the native splash
+    // (kept up via SplashScreen.preventAutoHideAsync at module
+    // load) is still covering the screen, so the user sees
+    // continuous "logo on dark bg" until ExtendedSplash takes
+    // over. Earlier this branch rendered a separate static
+    // splash image which the user perceived as "static logo for
+    // a few seconds, then animated logo" — two visible logo
+    // states. Returning a plain background View eliminates that
+    // intermediate state.
+    return <View style={styles.safeArea} />;
   }
 
   return (
@@ -517,7 +516,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#0c1626",
   },
   splashLogo: {
-    width: 260,
-    height: 132,
+    // Same width:'100%' + intrinsic aspect ratio as ExtendedSplash
+    // and the native splash, so all three render the wordmark at
+    // the exact same size and the user can't perceive the handoff
+    // between them.
+    width: "100%",
+    aspectRatio: 904 / 437,
   },
 });

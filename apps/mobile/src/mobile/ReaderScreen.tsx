@@ -736,33 +736,7 @@ export function ReaderScreen(args: {
         </View>
 
         <View style={styles.headerBlock}>
-          <Text style={styles.bookTitle}>{book.title}</Text>
           <Text style={styles.storyTitle}>{story.title}</Text>
-          <View style={styles.metaPills}>
-            <View style={[styles.pill, styles.activePill]}>
-              <Text style={[styles.pillText, styles.activePillText]}>
-                {/* Prefer the story's own CEFR (A1/B2/...) when the story
-                    carries one — more precise than the book's broad level
-                    which defaults to "Intermediate" for anything that's not
-                    clearly beginner or advanced. */}
-                {story.cefrLevel
-                  ? formatCefrLevel(story.cefrLevel)
-                  : book.cefrLevel
-                    ? formatCefrLevel(book.cefrLevel)
-                    : formatLevel(story.level ?? book.level)}
-              </Text>
-            </View>
-            <View style={styles.pill}>
-              <Text style={styles.pillText}>
-                {book.variant
-                  ? formatVariantLabel(book.variant) ?? formatRegion(book.variant)
-                  : formatRegion(book.region ?? "")}
-              </Text>
-            </View>
-            <View style={styles.pill}>
-              <Text style={styles.pillText}>{formatLanguage(story.language ?? book.language)}</Text>
-            </View>
-          </View>
         </View>
 
         {coverUrl ? (
@@ -1109,20 +1083,17 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   headerBlock: {
-    gap: 8,
-  },
-  bookTitle: {
-    color: "#f8c15c",
-    fontSize: 11,
-    fontWeight: "700",
-    letterSpacing: 1.05,
-    textTransform: "uppercase",
+    alignItems: "center",
+    paddingHorizontal: 8,
+    marginTop: 4,
   },
   storyTitle: {
     color: "#ffffff",
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "800",
-    lineHeight: 24,
+    lineHeight: 30,
+    letterSpacing: -0.2,
+    textAlign: "center",
   },
   metaPills: {
     flexDirection: "row",
