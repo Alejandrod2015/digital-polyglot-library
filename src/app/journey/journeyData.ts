@@ -650,49 +650,11 @@ async function buildJourneyVariantsFromStudio(
 
 export async function buildJourneyVariants(
   language = DEFAULT_LANGUAGE,
-  journeyFocus: JourneyFocus = "General"
+  _journeyFocus: JourneyFocus = "General"
 ): Promise<JourneyVariantTrack[]> {
-  // Studio (Prisma Journey records) is the canonical source for the Journey
-  // tab. If there is any Studio content for the language, only that shows up.
-  const studioTracks = await buildJourneyVariantsFromStudio(language);
-  if (studioTracks.length > 0) return studioTracks;
-
-  // Legacy fallback: Sanity standaloneStories + curriculum plan. Kept so
-  // languages without Studio content yet (e.g. the original Spanish catalog)
-  // still render the existing reader.
-  const variants = new Set<string>();
-  const normalizedLanguage = language.trim().toLowerCase();
-
-  const standaloneStories = await getPublishedStandaloneStories({ includeJourneyStories: true });
-  for (const story of standaloneStories) {
-    if ((story.language ?? "").trim().toLowerCase() !== normalizedLanguage) continue;
-    if (!story.journeyEligible) continue;
-    const variant = resolveContentVariant({
-      language: story.language,
-      variant: story.variant,
-      region: story.region,
-    });
-    if (variant) variants.add(variant);
-  }
-
-  const curriculumPlans = await getJourneyCurriculumPlans();
-  for (const plan of curriculumPlans) {
-    if (plan.language.trim().toLowerCase() === normalizedLanguage) {
-      variants.add(plan.variantId);
-    }
-  }
-
-  const trackEntries = await Promise.all(
-    Array.from(variants)
-    .sort(sortVariants)
-    .map(async (variantId) => ({
-      id: variantId,
-      label: formatVariantLabel(variantId) ?? variantId.toUpperCase(),
-      levels: await buildLevelsForVariant(language, variantId, journeyFocus),
-    }))
-  );
-
-  return trackEntries.filter((track) => track.levels.length > 0);
+  // Studio (Prisma Journey records) is the only source for the Journey tab.
+  // Sanity stories are reader-only legacy content and must never appear here.
+  return buildJourneyVariantsFromStudio(language);
 }
 
 export function buildJourneyTrackInsights(
