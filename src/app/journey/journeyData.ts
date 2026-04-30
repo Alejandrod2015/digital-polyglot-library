@@ -143,6 +143,15 @@ export function isJourneyTopicComplete(
   return getJourneyTopicCompletedStoryCount(topic, completedStoryKeys) >= requiredStoryCount;
 }
 
+/**
+ * A topic only gates progression if it has at least one published story.
+ * Empty topics (planned in Studio but not yet authored) are visible
+ * placeholders that do not block the user from advancing past them.
+ */
+function isTopicGating(topic: Pick<JourneyTopic, "stories">): boolean {
+  return topic.stories.length > 0;
+}
+
 export function getUnlockedTopicCount(
   level: Pick<JourneyLevel, "topics">,
   completedStoryKeys: Set<string>,
@@ -154,11 +163,15 @@ export function getUnlockedTopicCount(
 
   let unlockedCount = 1;
   for (let index = 0; index < level.topics.length - 1; index += 1) {
-    if (!isJourneyTopicComplete(level.topics[index], completedStoryKeys)) break;
-    if (passedCheckpointKeys && levelId) {
-      const checkpointKey = getJourneyTopicCheckpointKey(variantId, levelId, level.topics[index].slug);
-      if (!passedCheckpointKeys.has(checkpointKey)) break;
+    const topic = level.topics[index];
+    if (isTopicGating(topic)) {
+      if (!isJourneyTopicComplete(topic, completedStoryKeys)) break;
+      if (passedCheckpointKeys && levelId) {
+        const checkpointKey = getJourneyTopicCheckpointKey(variantId, levelId, topic.slug);
+        if (!passedCheckpointKeys.has(checkpointKey)) break;
+      }
     }
+    // Empty topic: doesn't gate progression — advance freely.
     unlockedCount += 1;
   }
   return Math.min(unlockedCount, level.topics.length);
@@ -172,7 +185,14 @@ export function isJourneyLevelComplete(
 ): boolean {
   if (level.topics.length === 0) return false;
 
-  return level.topics.every((topic) => {
+  // Only gating topics (with at least one story) decide whether the level is
+  // "done". Empty placeholder topics are skipped from this count. A level with
+  // zero gating topics can never be auto-completed, which is the right outcome
+  // for Spanish-style "scaffold only, no published content yet" cases.
+  const gatingTopics = level.topics.filter(isTopicGating);
+  if (gatingTopics.length === 0) return false;
+
+  return gatingTopics.every((topic) => {
     if (!isJourneyTopicComplete(topic, completedStoryKeys)) return false;
     return passedCheckpointKeys.has(getJourneyTopicCheckpointKey(variantId, level.id, topic.slug));
   });
@@ -534,6 +554,23 @@ const getTopicLabelBySlug = unstable_cache(
   { revalidate: 3600, tags: ["topic-labels"] }
 );
 
+// Each Topic in Studio has a `defaultLevel` (a1, a2, b1, b2, c1, c2). The
+// Journey record stores a flat list of topic slugs and level slugs, so to
+// reconstruct the planned scaffold (which topic belongs to which level) we
+// fall back on defaultLevel.
+const getTopicDefaultLevelBySlug = unstable_cache(
+  async () => {
+    const rows = await prisma.topic.findMany({ select: { slug: true, defaultLevel: true } });
+    const map: Record<string, string> = {};
+    for (const row of rows) {
+      if (row.slug && row.defaultLevel) map[row.slug.toLowerCase()] = row.defaultLevel.toLowerCase();
+    }
+    return map;
+  },
+  ["topic-default-level-by-slug-v1"],
+  { revalidate: 3600, tags: ["topic-labels"] }
+);
+
 async function buildJourneyVariantsFromStudio(
   language: string
 ): Promise<JourneyVariantTrack[]> {
@@ -541,13 +578,15 @@ async function buildJourneyVariantsFromStudio(
   if (journeys.length === 0) return [];
 
   const topicLabelBySlug = await getTopicLabelBySlug();
+  const topicDefaultLevelBySlug = await getTopicDefaultLevelBySlug();
   const resolveTopicLabel = (slug: string) =>
     topicLabelBySlug[slug.toLowerCase()] ?? prettifyTopicLabel(slug);
 
-  // Include a track only when the Studio journey has at least one published story.
+  // Include every Studio journey, even if no stories have been published yet.
+  // The mobile UI is meant to mirror the Studio plan — empty topics show as
+  // "Aún no hay historias" placeholders rather than disappearing.
   const variantGroups = new Map<string, typeof journeys>();
   for (const j of journeys) {
-    if (j.stories.length === 0) continue;
     const v = (j.variant ?? "").trim().toLowerCase();
     if (!v) continue;
     if (!variantGroups.has(v)) variantGroups.set(v, []);
@@ -561,18 +600,24 @@ async function buildJourneyVariantsFromStudio(
     const levelMap = new Map<string, Map<string, JourneyStoryItem[]>>();
 
     // Seed topic slots per level using the order the user defined in Studio
-    // (Journey.topics[] and Journey.levels[]). JS Maps preserve insertion
-    // order, so pre-creating entries here is enough to freeze the topic order
-    // before any stories are pushed below.
+    // (Journey.topics[] and Journey.levels[]). Each topic only seats itself at
+    // its own `defaultLevel` (e.g. food-everyday-life is a1, work-study is b1)
+    // so the scaffold reflects the planned curriculum: A1 only shows A1 topics,
+    // not all 22 of them. JS Maps preserve insertion order, so pre-creating
+    // entries here is enough to freeze the topic order before any stories are
+    // pushed below.
     for (const journey of group) {
       const levelSlugs = (journey.levels ?? []).map((level) => level.trim().toLowerCase()).filter(Boolean);
       const topicSlugsInOrder = (journey.topics ?? []).map((t) => t.trim().toLowerCase()).filter(Boolean);
+      const journeyLevelSet = new Set(levelSlugs);
       for (const levelId of levelSlugs) {
         if (!levelMap.has(levelId)) levelMap.set(levelId, new Map());
-        const topicMap = levelMap.get(levelId)!;
-        for (const topicSlug of topicSlugsInOrder) {
-          if (!topicMap.has(topicSlug)) topicMap.set(topicSlug, []);
-        }
+      }
+      for (const topicSlug of topicSlugsInOrder) {
+        const defaultLevel = topicDefaultLevelBySlug[topicSlug];
+        if (!defaultLevel || !journeyLevelSet.has(defaultLevel)) continue;
+        const topicMap = levelMap.get(defaultLevel)!;
+        if (!topicMap.has(topicSlug)) topicMap.set(topicSlug, []);
       }
     }
 
@@ -612,13 +657,15 @@ async function buildJourneyVariantsFromStudio(
 
     const levels: JourneyLevel[] = [];
     // Emit levels in canonical CEFR order so the UI matches the curriculum sequence.
+    // Empty topics and empty levels are kept so the Studio plan (Journey.levels[]
+    // and Journey.topics[]) is fully reflected on mobile, with placeholders for
+    // unpublished slots.
     for (const levelId of JOURNEY_LEVEL_IDS) {
       const topicMap = levelMap.get(levelId);
       if (!topicMap || topicMap.size === 0) continue;
       const meta = journeyLevelMeta[levelId];
       const topics: JourneyTopic[] = [];
       for (const [slug, stories] of topicMap) {
-        if (stories.length === 0) continue;
         topics.push({
           id: `${levelId}:${slug}`,
           slug,
