@@ -497,35 +497,6 @@ export default function MonitorClient() {
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
   }
 
-  async function generateStoryV2(storyId: string) {
-    setBusyStories((s) => new Set(s).add(storyId));
-    try {
-      const res = await fetch("/api/studio/journeys/generate-v2", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
-      const data = await res.json();
-      if (!res.ok) {
-        window.alert(`V2 falló: ${data.error ?? "error desconocido"}`);
-        setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: data.error ?? "V2 falló" } : s));
-        return;
-      }
-      if (data.v2 && (!data.v2.pass || data.v2.attempts > 1)) {
-        const issues = [...(data.v2.gateIssues ?? []), ...(data.v2.judgeIssues ?? [])].slice(0, 5).join("\n• ");
-        console.warn(`[V2] story ${storyId}`, data.v2);
-        window.alert(`V2 generó la historia, pero con avisos:\n• ${issues || "ver consola"}\n\nIntentos: ${data.v2.attempts}, juez: ${data.v2.judgeScore ?? "—"}/10`);
-      }
-      setStories((prev) => prev.map((s) => s.id === storyId
-        ? { ...s, status: "generated", title: data.title ?? s.title, synopsis: data.synopsis ?? s.synopsis, slug: data.slug ?? s.slug, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: null }
-        : s));
-      if (expandedStoryIds.has(storyId)) {
-        const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
-        if (detailRes.ok) {
-          const detail = await detailRes.json();
-          setStoryDetails((prev) => new Map(prev).set(storyId, detail));
-        }
-      }
-    } catch (err) {
-      setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: String(err) } : s));
-    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
-  }
 
   async function publishStory(storyId: string) {
     setBusyStories((s) => new Set(s).add(storyId));
@@ -1216,25 +1187,6 @@ export default function MonitorClient() {
                                                 ...(s.status === "generated" ? { backgroundColor: "#3b82f6" } : {}),
                                                 ...(s.status === "published" && !s.coverDone ? { backgroundColor: "transparent", border: "1px solid var(--card-border)", color: "var(--foreground)" } : {}),
                                               }}>{action.label}</button>
-                                          )}
-                                          {(s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review") && !busyStories.has(s.id) && (
-                                            <button onClick={() => void generateStoryV2(s.id)}
-                                              title="Generar con pipeline V2 (solo español A1: B1 → simplificar a A1 → gate → juez)"
-                                              style={{ fontSize: 10, height: 24, padding: "0 10px", borderRadius: 4, border: "1px solid #a78bfa", color: "#a78bfa", backgroundColor: "transparent", cursor: "pointer", whiteSpace: "nowrap" }}>
-                                              Generar V2
-                                            </button>
-                                          )}
-                                          {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
-                                            <button onClick={() => setConfirmAction({
-                                              message: `Regenerar "${s.title}" con pipeline V2? Sobrescribirá título, sinopsis, historia y vocabulario. Solo funciona en español A1.`,
-                                              onConfirm: () => generateStoryV2(s.id),
-                                              confirmLabel: "Regenerar V2",
-                                              confirmColor: "#a78bfa",
-                                            })}
-                                              title="Regenerar con pipeline V2"
-                                              style={{ fontSize: 10, height: 24, padding: "0 8px", borderRadius: 4, border: "1px solid rgba(167,139,250,0.3)", color: "#a78bfa", backgroundColor: "transparent", cursor: "pointer", whiteSpace: "nowrap" }}>
-                                              Regenerar V2
-                                            </button>
                                           )}
                                           {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
                                             <button onClick={() => setConfirmAction({

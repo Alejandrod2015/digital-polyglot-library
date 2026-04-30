@@ -6,11 +6,115 @@ import {
   HARD_STORY_WORDS_MAX,
   MIN_STORY_WORDS,
   TARGET_STORY_WORDS_MAX,
-  TARGET_STORY_WORDS_MIN,
   countStoryWords,
 } from "@domain/storyLength";
-import { cefrPromptLabel } from "@domain/cefr";
+import { cefrPromptLabel, resolveCefrLevel } from "@domain/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
+
+/**
+ * Level-specific guidance + word-count targets injected into the prompt.
+ * Language-agnostic on purpose: we describe the constraint (vocabulary
+ * frequency, tense complexity, sentence length) and let the LLM apply it
+ * to whatever target language we pass in. This is what lets A1 feel like
+ * A1 across Italian, German, Korean, etc. without per-language wordlists.
+ */
+function levelGuidanceFor(cefr: string | null, language: string): {
+  wordsMin: number;
+  wordsMax: number;
+  wordsHard: number;
+  instructions: string;
+} {
+  const lvl = (cefr ?? "").toLowerCase();
+  if (lvl === "a1") {
+    return {
+      wordsMin: 120,
+      wordsMax: 180,
+      wordsHard: 200,
+      instructions: `
+STRICT A1 LEVEL CONSTRAINTS — every line is mandatory:
+- Vocabulary: ONLY the most common words a true beginner (~80 hours of study) would know in ${language}. If a non-basic word is essential to the plot, replace it with a simpler synonym or rewrite the action concretely.
+- Tenses: use ONLY simple present and simple past for completed actions, plus a near-future construction if natural in ${language} (e.g. "going to" / "ir a + infinitivo" / "werde + Infinitiv"). FORBIDDEN: present perfect, pluperfect, synthetic future, conditional, any subjunctive form.
+- Sentences: short. Average 7-9 words. NO sentence longer than 12 words.
+- Avoid subordinate clauses; prefer simple connectors ("and", "but", "because", "then" — equivalent in ${language}).
+- NO idioms, NO figurative language, NO fancy adjectives.
+- Concrete actions and visible objects only, not abstract concepts.
+- Repetition is OK — beginners benefit from re-encountering the same word.
+- The reader must be able to follow the plot without a dictionary.`,
+    };
+  }
+  if (lvl === "a2") {
+    return {
+      wordsMin: 180,
+      wordsMax: 260,
+      wordsHard: 300,
+      instructions: `
+A2 LEVEL CONSTRAINTS:
+- Vocabulary: common everyday words. A learner with ~180 hours of study should follow without a dictionary.
+- Tenses: simple present, simple past, near future, basic continuous forms. Avoid conditional and subjunctive.
+- Sentences: short to medium (avg 9-12 words). Up to one subordinate clause is fine.
+- Avoid complex idioms and dense figurative language.`,
+    };
+  }
+  if (lvl === "b1") {
+    return {
+      wordsMin: 280,
+      wordsMax: 340,
+      wordsHard: 380,
+      instructions: `
+B1 LEVEL CONSTRAINTS:
+- Vocabulary: intermediate everyday + common topical vocabulary.
+- Tenses: most common forms, including conditional and basic subjunctive in everyday contexts. Avoid rare literary forms.
+- Sentences: natural variety, subordinate clauses welcome.
+- Some idioms OK if clearly contextualized.`,
+    };
+  }
+  if (lvl === "b2") {
+    return {
+      wordsMin: 320,
+      wordsMax: 400,
+      wordsHard: 460,
+      instructions: `
+B2 LEVEL CONSTRAINTS:
+- Vocabulary: rich and varied; semi-technical terms allowed with context.
+- Tenses: full range, including less common forms when natural.
+- Sentences: complex syntax welcome, multi-clause structures fine.
+- Idioms and figurative language welcome.`,
+    };
+  }
+  if (lvl === "c1") {
+    return {
+      wordsMin: 380,
+      wordsMax: 460,
+      wordsHard: 540,
+      instructions: `
+C1 LEVEL CONSTRAINTS:
+- Sophisticated vocabulary including nuanced and abstract terms.
+- Full grammatical range; literary and formal registers allowed.
+- Complex and varied sentence structure.
+- Cultural references, idioms, and stylistic flourishes welcome.`,
+    };
+  }
+  if (lvl === "c2") {
+    return {
+      wordsMin: 420,
+      wordsMax: 520,
+      wordsHard: 600,
+      instructions: `
+C2 LEVEL CONSTRAINTS:
+- Native-level vocabulary, including rare, literary, and specialized terms.
+- Full nuance and stylistic variety.
+- Long, complex sentences with sophisticated structure.
+- Embrace ambiguity, layered meaning, and cultural depth.`,
+    };
+  }
+  // Fallback: behave like the historic defaults (B1 territory).
+  return {
+    wordsMin: MIN_STORY_WORDS,
+    wordsMax: TARGET_STORY_WORDS_MAX,
+    wordsHard: HARD_STORY_WORDS_MAX,
+    instructions: "",
+  };
+}
 
 export type StoryJSON = {
   title: string;
@@ -137,6 +241,8 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
   const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
 
   const learnerProfile = cefrPromptLabel(cefrLevel, level);
+  const resolvedCefr = resolveCefrLevel(cefrLevel, level);
+  const levelGuidance = levelGuidanceFor(resolvedCefr, language);
   const normalizedVariant = normalizeVariant(variant);
   const regionClause = region ? `, specifically from ${region}` : "";
   const variantClause = buildVariantPromptClause(language, normalizedVariant);
@@ -164,8 +270,9 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
       : "";
 
     const prompt = `
-You are an expert language teacher and long story writer.
-Write a long engaging story for a ${learnerProfile} learner studying ${language}${regionClause}.
+You are an expert language teacher and story writer.
+Write an engaging story for a ${learnerProfile} learner studying ${language}${regionClause}.
+${levelGuidance.instructions}
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 ${titleClause}
@@ -196,9 +303,8 @@ Use a close third-person narrator with strong internal focalization.
 - Keep paragraphs short and dynamic (usually 1-3 sentences per paragraph).
 - Avoid long expository narrator blocks; reduce detached description and increase character-centered viewpoint.
 - Include frequent dialogue beats and immediate reactions to keep pacing lively.
-- Length target: ${TARGET_STORY_WORDS_MIN}-${TARGET_STORY_WORDS_MAX} words.
-- Absolute minimum: ${MIN_STORY_WORDS} words.
-- Hard maximum: ${HARD_STORY_WORDS_MAX} words.${existingTitlesClause}${usedNamesClause}
+- Length target: ${levelGuidance.wordsMin}-${levelGuidance.wordsMax} words.
+- Hard maximum: ${levelGuidance.wordsHard} words. Going over the maximum will cause the story to be truncated mid-sentence.${existingTitlesClause}${usedNamesClause}
 ${retryClause}
 
 Return ONLY valid JSON:
@@ -245,13 +351,13 @@ Return ONLY valid JSON:
     const title = resolvedProvidedTitle || raw.title.trim() || "Untitled";
     const sanitized = sanitizeGeneratedStoryText(raw.text);
     const text =
-      countStoryWords(sanitized) > HARD_STORY_WORDS_MAX
-        ? truncateToWordLimit(sanitized, HARD_STORY_WORDS_MAX)
+      countStoryWords(sanitized) > levelGuidance.wordsHard
+        ? truncateToWordLimit(sanitized, levelGuidance.wordsHard)
         : sanitized;
 
     const wordCount = countStoryWords(text);
-    if (wordCount < MIN_STORY_WORDS) {
-      previousFeedback = `${wordCount} words, need ${MIN_STORY_WORDS}`;
+    if (wordCount < levelGuidance.wordsMin) {
+      previousFeedback = `${wordCount} words, need at least ${levelGuidance.wordsMin}`;
       continue;
     }
 
