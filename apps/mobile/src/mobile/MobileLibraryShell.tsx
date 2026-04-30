@@ -11139,184 +11139,220 @@ export function MobileLibraryShell(args: {
     </>
   );
 
-  const progressView = (
-    <>
-      <View style={styles.hero}>
-        <View style={styles.heroHeaderRow}>
-          <View style={styles.heroTextBlock}>
-            <Text style={styles.eyebrow}>Progress</Text>
-            <Text style={styles.title}>Reading activity</Text>
-            <Text style={styles.subtitle}>Reading, listening and review at a glance.</Text>
-          </View>
-          <MenuTrigger onPress={() => setMenuOpen(true)} />
-        </View>
-      </View>
+  const progressView = (() => {
+    const DAILY_XP_GOAL = 60;
+    const streak = Math.max(remoteProgress?.gamification?.dailyStreak ?? maxFavoriteStreak, 1);
+    const todayXp = remoteProgress?.gamification?.todayXp ?? 0;
+    const totalXp = remoteProgress?.gamification?.totalXp ?? 0;
+    const level = remoteProgress?.gamification?.currentLevel ?? 1;
+    const xpRemaining = Math.max(DAILY_XP_GOAL - todayXp, 0);
+    const dailyXpPercent = Math.min(100, (todayXp / DAILY_XP_GOAL) * 100);
+    const goalReached = todayXp >= DAILY_XP_GOAL;
 
-      <View style={styles.progressHeroCard}>
-        <View style={styles.progressHeroMain}>
-          <View style={styles.practiceFocusPill}>
-            <Feather name="activity" size={13} color="#f8d48a" />
-            <Text style={styles.practiceFocusPillText}>
-              {(remoteProgress?.storyStreakDays ?? maxFavoriteStreak) >= 7 ? "On a roll" : "Keep going"}
-            </Text>
-          </View>
-          <Text style={styles.progressHeroValue}>{Math.max(remoteProgress?.storyStreakDays ?? maxFavoriteStreak, 1)}</Text>
-          <Text style={styles.progressHeroLabel}>
-            {formatStreakLabel(Math.max(remoteProgress?.storyStreakDays ?? maxFavoriteStreak, 1))}
-          </Text>
-          <Text style={styles.progressHeroText}>
-            {(remoteProgress?.storiesFinished ?? continueReading.length) > 0
-              ? "You already have stories in motion."
-              : "One saved story is enough to build momentum."}
-          </Text>
-        </View>
-        <View style={styles.progressGoalCard}>
-          <View style={styles.progressGoalHeader}>
-            <Text style={styles.progressGoalTitle}>Weekly goal</Text>
-            <Text style={styles.progressGoalMeta}>{weeklyStoriesFinished} / {weeklyGoalStories}</Text>
-          </View>
-          <View style={styles.progressGoalTrack}>
-            <View
-              style={[
-                styles.progressGoalFill,
-                {
-                  width: `${weeklyStoriesPercent}%`,
-                },
-              ]}
-            />
-          </View>
-          <Text style={styles.progressGoalMeta}>
-            {weeklyStoriesFinished} story{weeklyStoriesFinished === 1 ? "" : "ies"} finished this week
-          </Text>
-          <Text style={styles.progressGoalSubmeta}>
-            {(remoteProgress?.weeklyMinutesListened ?? continueReading.length)} {remoteProgress ? "min listened" : "in progress"} · {offlineSnapshot?.stories.length ?? 0} offline
-          </Text>
-        </View>
+    const wkStories = remoteProgress?.weeklyStoriesFinished ?? weeklyStoriesFinished;
+    const wkStoriesGoal = remoteProgress?.weeklyGoalStories ?? weeklyGoalStories;
+    const wkMinutes = remoteProgress?.weeklyMinutesListened ?? 0;
+    const wkMinutesGoal = remoteProgress?.weeklyGoalMinutes ?? 60;
+    const wkPractice = remoteProgress?.weeklyPracticeSessions ?? 0;
+    const wkPracticeGoal = remoteProgress?.weeklyGoalPracticeSessions ?? 5;
 
-        <View style={styles.progressMiniGrid}>
-          <View style={styles.progressMiniCard}>
-            <Text style={styles.progressMiniEyebrow}>This month</Text>
-            <Text style={styles.progressMiniValue}>{remoteProgress?.monthlyStoriesFinished ?? effectiveRemoteStoriesCount}</Text>
-            <Text style={styles.progressMiniText}>
-              {remoteProgress ? "stories finished" : "stories in your library"}
-            </Text>
-          </View>
-          <View style={styles.progressMiniCard}>
-            <Text style={styles.progressMiniEyebrow}>Regions</Text>
-            <Text style={styles.progressMiniValue}>{regionsExplored}</Text>
-            <Text style={styles.progressMiniText}>regions explored</Text>
-          </View>
-        </View>
-      </View>
+    const rings = [
+      { label: "Stories", value: wkStories, total: wkStoriesGoal, color: "#a8e845" },
+      { label: "Minutes", value: wkMinutes, total: wkMinutesGoal, color: "#4ec3e0" },
+      { label: "Practice", value: wkPractice, total: wkPracticeGoal, color: "#a08dff" },
+    ];
 
-      <View style={styles.progressStatsGrid}>
-        {progressStats.map((item) => (
-          <View key={item.label} style={styles.progressStatCard}>
-            <View style={styles.progressStatLabelRow}>
-              <Feather name={item.icon} size={14} color="#9cb0c9" />
-              <Text style={styles.progressStatLabel}>{item.label}</Text>
+    const lifetimeStats: ProgressStat[] = [
+      { label: "Stories finished", value: `${remoteProgress?.storiesFinished ?? continueReading.length}`, icon: "book-open" },
+      { label: "Saved words", value: `${remoteProgress?.wordsLearned ?? favoriteWords.length}`, icon: "star" },
+      { label: "Regions", value: `${regionsExplored}`, icon: "map" },
+      { label: "Practice acc.", value: `${Math.round(remoteProgress?.practiceAccuracy ?? 0)}%`, icon: "target" },
+    ];
+
+    return (
+      <>
+        <View style={styles.hero}>
+          <View style={styles.heroHeaderRow}>
+            <View style={styles.heroTextBlock}>
+              <Text style={styles.eyebrow}>Progress</Text>
+              <Text style={styles.title}>Reading activity</Text>
             </View>
-            <Text style={styles.progressStatValue}>{item.value}</Text>
-          </View>
-        ))}
-      </View>
-
-      {remoteProgressLoading ? <Text style={styles.helperText}>Refreshing progress…</Text> : null}
-
-      {remoteProgress?.gamification ? (
-        <View style={styles.section}>
-          <View style={styles.gamificationQuestCard}>
-            <View style={styles.sectionHeader}>
-              <View>
-                <Text style={styles.sectionEyebrow}>Daily quests</Text>
-                <Text style={styles.sectionTitle}>Keep the streak alive</Text>
+            <View style={styles.progressHeaderChips}>
+              <View style={styles.progressHeaderChip}>
+                <Text style={styles.progressHeaderChipFlame}>🔥</Text>
+                <Text style={styles.progressHeaderChipValue}>{streak}</Text>
               </View>
-              <Text style={styles.helperText}>
-                {remoteProgress.gamification.quests.filter((quest) => quest.complete).length}/
-                {remoteProgress.gamification.quests.length}
+              <View style={[styles.progressHeaderChip, styles.progressHeaderChipXp]}>
+                <Feather name="zap" size={12} color="#1a2c1a" />
+                <Text style={[styles.progressHeaderChipValue, styles.progressHeaderChipValueXp]}>{todayXp}</Text>
+              </View>
+              <MenuTrigger onPress={() => setMenuOpen(true)} />
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.progressDailyCard}>
+          <View style={styles.progressDailyHeader}>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.progressDailyEyebrow}>Daily goal</Text>
+              <Text style={styles.progressDailyValue}>
+                {todayXp}<Text style={styles.progressDailyValueSuffix}> / {DAILY_XP_GOAL} XP</Text>
               </Text>
             </View>
-            <View style={styles.gamificationQuestList}>
-              {remoteProgress.gamification.quests.map((quest) => (
-                <View key={quest.id} style={styles.gamificationQuestItem}>
-                  <View style={styles.gamificationQuestTopRow}>
-                    <View style={styles.gamificationQuestLabelRow}>
-                      <Feather
-                        name={quest.complete ? "check-circle" : "circle"}
-                        size={16}
-                        color={quest.complete ? "#8ef0c6" : "#6f88a8"}
-                      />
-                      <Text style={styles.gamificationQuestLabel}>{quest.label}</Text>
+            <View style={styles.progressLevelBadge}>
+              <Text style={styles.progressLevelEyebrow}>LVL</Text>
+              <Text style={styles.progressLevelValue}>{level}</Text>
+            </View>
+          </View>
+          <View style={styles.progressGoalTrack}>
+            <View style={[styles.progressGoalFill, { width: `${dailyXpPercent}%` }]} />
+          </View>
+          <Text style={styles.progressDailyHint}>
+            {goalReached
+              ? "Daily goal reached. Keep going to extend your streak."
+              : `${xpRemaining} XP to go · finish a story (+30) or practice 5 min (+10).`}
+          </Text>
+        </View>
+
+        {remoteProgress?.gamification ? (
+          <View style={styles.progressQuestsCard}>
+            <View style={styles.progressQuestsHeader}>
+              <Text style={styles.progressDailyEyebrow}>Daily quests</Text>
+              <Text style={styles.progressQuestsCount}>
+                {remoteProgress.gamification.quests.filter((q) => q.complete).length}/{remoteProgress.gamification.quests.length}
+              </Text>
+            </View>
+            <View style={styles.progressQuestsList}>
+              {remoteProgress.gamification.quests.map((quest) => {
+                const pct = Math.min(100, (quest.current / Math.max(1, quest.target)) * 100);
+                return (
+                  <View key={quest.id} style={styles.progressQuestItem}>
+                    <View style={styles.progressQuestTopRow}>
+                      <View style={styles.progressQuestLabelRow}>
+                        <Feather
+                          name={quest.complete ? "check-circle" : "zap"}
+                          size={14}
+                          color={quest.complete ? "#8ef0c6" : "#f5d77a"}
+                        />
+                        <Text style={styles.progressQuestLabel}>{quest.label}</Text>
+                      </View>
+                      <Text style={styles.progressQuestXp}>+{quest.rewardXp} XP</Text>
                     </View>
-                    <Text style={styles.gamificationQuestXp}>+{quest.rewardXp} XP</Text>
+                    {quest.complete ? null : (
+                      <View style={styles.progressQuestTrack}>
+                        <View style={[styles.progressQuestFill, { width: `${pct}%` }]} />
+                      </View>
+                    )}
                   </View>
-                  <Text style={styles.gamificationQuestMeta}>
-                    {Math.min(quest.current, quest.target)}/{quest.target} {quest.complete ? "Done" : "In progress"}
+                );
+              })}
+            </View>
+          </View>
+        ) : null}
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionEyebrow}>This week</Text>
+          </View>
+          <View style={styles.progressRingsRow}>
+            {rings.map((ring) => {
+              const pct = Math.min(100, (ring.value / Math.max(1, ring.total)) * 100);
+              return (
+                <View key={ring.label} style={styles.progressRingCard}>
+                  <Text style={styles.progressRingValue}>
+                    {ring.value}
+                    <Text style={styles.progressRingValueTotal}>/{ring.total}</Text>
+                  </Text>
+                  <View style={styles.progressRingTrack}>
+                    <View style={[styles.progressRingFill, { width: `${pct}%`, backgroundColor: ring.color }]} />
+                  </View>
+                  <Text style={styles.progressRingLabel}>{ring.label}</Text>
+                </View>
+              );
+            })}
+          </View>
+        </View>
+
+        {remoteProgress?.gamification?.badges?.length ? (
+          <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+              <Text style={styles.sectionEyebrow}>Achievements</Text>
+              <Text style={styles.helperText}>
+                {remoteProgress.gamification.badges.filter((b) => b.unlocked).length}/{remoteProgress.gamification.badges.length}
+              </Text>
+            </View>
+            <View style={styles.gamificationBadgeWrap}>
+              {remoteProgress.gamification.badges.map((badge) => (
+                <View
+                  key={badge.id}
+                  style={[
+                    styles.gamificationBadgeChip,
+                    badge.unlocked ? styles.gamificationBadgeChipUnlocked : styles.gamificationBadgeChipLocked,
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.gamificationBadgeChipText,
+                      badge.unlocked ? styles.gamificationBadgeChipTextUnlocked : styles.gamificationBadgeChipTextLocked,
+                    ]}
+                  >
+                    {badge.label}
                   </Text>
                 </View>
               ))}
             </View>
-            <View style={styles.gamificationBadgeSection}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionEyebrow}>Unlocked badges</Text>
-                <Text style={styles.helperText}>
-                  {remoteProgress.gamification.badges.filter((badge) => badge.unlocked).length}/
-                  {remoteProgress.gamification.badges.length}
-                </Text>
-              </View>
-              <View style={styles.gamificationBadgeWrap}>
-                {remoteProgress.gamification.badges.map((badge) => (
-                  <View
-                    key={badge.id}
-                    style={[
-                      styles.gamificationBadgeChip,
-                      badge.unlocked ? styles.gamificationBadgeChipUnlocked : styles.gamificationBadgeChipLocked,
-                    ]}
-                  >
-                    <Text
-                      style={[
-                        styles.gamificationBadgeChipText,
-                        badge.unlocked ? styles.gamificationBadgeChipTextUnlocked : styles.gamificationBadgeChipTextLocked,
-                      ]}
-                    >
-                      {badge.label}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-            </View>
           </View>
-        </View>
-      ) : null}
+        ) : null}
 
-      {continueReadingCards.length > 0 ? (
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>Recent</Text>
-              <Text style={styles.sectionTitle}>Stories in motion</Text>
-            </View>
+            <Text style={styles.sectionEyebrow}>Lifetime</Text>
+            <Text style={styles.helperText}>{totalXp} XP</Text>
           </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {continueReadingCards.map((item) => (
-              <BookHomeCard
-                key={item.key}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
+          <View style={styles.progressStatsGrid}>
+            {lifetimeStats.map((item) => (
+              <View key={item.label} style={styles.progressStatCard}>
+                <View style={styles.progressStatLabelRow}>
+                  <Feather name={item.icon} size={14} color="#9cb0c9" />
+                  <Text style={styles.progressStatLabel}>{item.label}</Text>
+                </View>
+                <Text style={styles.progressStatValue}>{item.value}</Text>
+              </View>
             ))}
-          </ScrollView>
+          </View>
         </View>
-      ) : null}
-    </>
-  );
+
+        {remoteProgressLoading ? <Text style={styles.helperText}>Refreshing progress…</Text> : null}
+
+        {continueReadingCards.length > 0 ? (
+          <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+              <View>
+                <Text style={styles.sectionEyebrow}>Recent</Text>
+                <Text style={styles.sectionTitle}>Stories in motion</Text>
+              </View>
+            </View>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
+              {continueReadingCards.map((item) => (
+                <BookHomeCard
+                  key={item.key}
+                  item={{
+                    key: item.key,
+                    title: item.title,
+                    coverUrl: item.coverUrl,
+                    subtitle: item.subtitle,
+                    meta: item.meta,
+                    progressLabel: item.progressLabel,
+                    onPress: item.onPress ?? (() => {}),
+                  }}
+                />
+              ))}
+            </ScrollView>
+          </View>
+        ) : null}
+      </>
+    );
+  })();
 
   const onboardingSurveySteps = [
     {
@@ -17451,6 +17487,195 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 32,
     fontWeight: "900",
+  },
+  progressHeaderChips: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  progressHeaderChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    backgroundColor: "rgba(255, 122, 56, 0.18)",
+    borderWidth: 1,
+    borderColor: "rgba(255, 122, 56, 0.4)",
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 999,
+  },
+  progressHeaderChipXp: {
+    backgroundColor: "rgba(168, 232, 69, 0.22)",
+    borderColor: "rgba(168, 232, 69, 0.5)",
+  },
+  progressHeaderChipFlame: {
+    fontSize: 12,
+  },
+  progressHeaderChipValue: {
+    color: "#ffd5b8",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+  progressHeaderChipValueXp: {
+    color: "#cdf5a0",
+  },
+  progressDailyCard: {
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: "#26425f",
+    backgroundColor: "#16304f",
+    padding: 16,
+    gap: 12,
+  },
+  progressDailyHeader: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 12,
+  },
+  progressDailyEyebrow: {
+    color: "#9cb0c9",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 1,
+    textTransform: "uppercase",
+    marginBottom: 4,
+  },
+  progressDailyValue: {
+    color: "#ffffff",
+    fontSize: 36,
+    fontWeight: "900",
+    lineHeight: 38,
+  },
+  progressDailyValueSuffix: {
+    color: "#9cb0c9",
+    fontSize: 16,
+    fontWeight: "700",
+  },
+  progressDailyHint: {
+    color: "#c3d0e2",
+    fontSize: 13,
+    lineHeight: 18,
+  },
+  progressLevelBadge: {
+    backgroundColor: "#a8e845",
+    borderRadius: 14,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    alignItems: "center",
+    minWidth: 56,
+  },
+  progressLevelEyebrow: {
+    color: "#1a2c0a",
+    fontSize: 9,
+    fontWeight: "900",
+    letterSpacing: 1,
+  },
+  progressLevelValue: {
+    color: "#0d1a05",
+    fontSize: 22,
+    fontWeight: "900",
+    lineHeight: 24,
+  },
+  progressQuestsCard: {
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "#27405f",
+    backgroundColor: "#14243b",
+    padding: 14,
+    gap: 10,
+  },
+  progressQuestsHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  progressQuestsCount: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  progressQuestsList: {
+    gap: 10,
+  },
+  progressQuestItem: {
+    gap: 6,
+  },
+  progressQuestTopRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 10,
+  },
+  progressQuestLabelRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    flex: 1,
+  },
+  progressQuestLabel: {
+    color: "#dbe9ff",
+    fontSize: 14,
+    fontWeight: "700",
+    flexShrink: 1,
+  },
+  progressQuestXp: {
+    color: "#cdf5a0",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  progressQuestTrack: {
+    height: 6,
+    borderRadius: 999,
+    backgroundColor: "#22354d",
+    overflow: "hidden",
+  },
+  progressQuestFill: {
+    height: "100%",
+    borderRadius: 999,
+    backgroundColor: "#71dd5a",
+  },
+  progressRingsRow: {
+    flexDirection: "row",
+    gap: 10,
+  },
+  progressRingCard: {
+    flex: 1,
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: "#27405f",
+    backgroundColor: "#14243b",
+    paddingHorizontal: 12,
+    paddingVertical: 14,
+    gap: 8,
+    alignItems: "flex-start",
+  },
+  progressRingValue: {
+    color: "#ffffff",
+    fontSize: 22,
+    fontWeight: "900",
+  },
+  progressRingValueTotal: {
+    color: "#9cb0c9",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  progressRingTrack: {
+    width: "100%",
+    height: 8,
+    borderRadius: 999,
+    backgroundColor: "#22354d",
+    overflow: "hidden",
+  },
+  progressRingFill: {
+    height: "100%",
+    borderRadius: 999,
+  },
+  progressRingLabel: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "700",
+    textTransform: "uppercase",
+    letterSpacing: 0.6,
   },
   bottomNav: {
     position: "absolute",
