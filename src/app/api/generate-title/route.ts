@@ -14,6 +14,15 @@ type Body = {
   region?: string;
   topic?: string;
   synopsis?: string;
+  /**
+   * Caller-supplied "do not reuse" list. Studio's V1/V2 generators
+   * compute the in-progress titles for the same journey from the
+   * Prisma `JourneyStory` table and pass them in here. Without this,
+   * the title endpoint only sees Sanity's catalog and keeps picking
+   * the canonical anchor for the region/topic (e.g. "Cacio e Pepe a
+   * Trastevere") every time within the same journey.
+   */
+  extraExistingTitles?: string[];
 };
 
 function normalizeTitle(value: string): string {
@@ -45,7 +54,11 @@ function tooSimilarToExisting(title: string, existingTitles: string[]): boolean 
       if (existingTokens.has(token)) overlap += 1;
     }
     const denominator = Math.max(tokens.size, existingTokens.size);
-    return denominator > 0 && overlap / denominator >= 0.8;
+    // 0.5 instead of 0.8 — half-overlap on a short title almost
+    // always means the same cultural anchor is being reused (e.g.
+    // "Quartieri Spagnoli, pizza margherita" vs "Arancini a
+    // Quartieri Spagnoli" share 50% of tokens). Reject those.
+    return denominator > 0 && overlap / denominator >= 0.5;
   });
 }
 
@@ -75,15 +88,32 @@ export async function POST(req: Request) {
     const topic = typeof body.topic === "string" ? body.topic.trim() : "";
     const synopsis = typeof body.synopsis === "string" ? body.synopsis.trim() : "";
     const documentId = typeof body.documentId === "string" ? body.documentId.trim() : "";
+    const extraExistingTitles = Array.isArray(body.extraExistingTitles)
+      ? body.extraExistingTitles.filter((t): t is string => typeof t === "string" && t.trim().length > 0)
+      : [];
 
-    const existingTitles = await getExistingGeneratedTitles(documentId || undefined);
+    const sanityTitles = await getExistingGeneratedTitles(documentId || undefined);
+    // Merge caller-supplied + Sanity titles. Caller titles come first so
+    // the retry block surfaces them earlier when feedback is constructed.
+    const existingTitles = [...extraExistingTitles, ...sanityTitles];
     let feedback = "";
+
+    // Always-on existing titles block — shown even on the first
+    // attempt so the model isn't blind to titles already used in
+    // the catalog. Earlier this only appeared in retry blocks,
+    // which let the first attempt happily pick "Quartieri Spagnoli"
+    // again after another story already used it; the subsequent
+    // similarity check used an 80% token-overlap threshold that
+    // didn't catch shared two-word anchors when the rest differed.
+    const existingTitlesBlock = existingTitles.length
+      ? `\n\n# Titles already used — do NOT repeat their cultural anchor\nThe titles below already exist. Pick a fresh anchor (a different neighborhood, dish, venue, named object) characteristic of the same region but not appearing in this list:\n${existingTitles.slice(0, 80).join(" | ")}`
+      : "";
 
     for (let attempt = 0; attempt < 3; attempt += 1) {
       const retryBlock =
         attempt === 0
           ? ""
-          : `\nAvoid titles close to these existing ones: ${existingTitles.slice(0, 80).join(" | ")}.\nPrevious attempt failed uniqueness: ${feedback}`;
+          : `\nPrevious attempt failed uniqueness: ${feedback}. Rotate the anchor — pick a different neighborhood, dish, venue, or named object than what you tried before AND than anything in the list above.`;
 
       const prompt = `
 # Your task
@@ -140,6 +170,7 @@ Default to Level 1. Go to Level 2 only if Level 1 feels too bare for this partic
 ${region ? `- Region / cultural context: ${region}` : ""}
 ${topic ? `- Story topic: "${topic}"` : ""}
 ${synopsis ? `- Synopsis: "${synopsis}" — mine it for ONE concrete noun (a dish, neighborhood, object, venue, character name) and build the title around that noun. Do not try to reflect every detail of the synopsis.` : ""}
+${existingTitlesBlock}
 
 # Output
 Return ONLY the title text in ${language}. No quotes, no explanation.
