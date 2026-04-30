@@ -177,6 +177,13 @@ export function getUnlockedTopicCount(
   return Math.min(unlockedCount, level.topics.length);
 }
 
+// Fraction of a level's gating topics that must be cleared (story complete +
+// checkpoint passed) for the level to count as "done" via the effort path.
+// 75% leaves room for the user to skip a topic that doesn't resonate without
+// being held back from the next CEFR level. The express path (passing the
+// level test from the locked-story popup) bypasses this entirely.
+const LEVEL_COMPLETION_THRESHOLD = 0.75;
+
 export function isJourneyLevelComplete(
   level: Pick<JourneyLevel, "id" | "topics">,
   completedStoryKeys: Set<string>,
@@ -192,10 +199,15 @@ export function isJourneyLevelComplete(
   const gatingTopics = level.topics.filter(isTopicGating);
   if (gatingTopics.length === 0) return false;
 
-  return gatingTopics.every((topic) => {
-    if (!isJourneyTopicComplete(topic, completedStoryKeys)) return false;
-    return passedCheckpointKeys.has(getJourneyTopicCheckpointKey(variantId, level.id, topic.slug));
-  });
+  const required = Math.max(1, Math.ceil(gatingTopics.length * LEVEL_COMPLETION_THRESHOLD));
+  let cleared = 0;
+  for (const topic of gatingTopics) {
+    if (!isJourneyTopicComplete(topic, completedStoryKeys)) continue;
+    if (!passedCheckpointKeys.has(getJourneyTopicCheckpointKey(variantId, level.id, topic.slug))) continue;
+    cleared += 1;
+    if (cleared >= required) return true;
+  }
+  return false;
 }
 
 export function getUnlockedLevelCount(

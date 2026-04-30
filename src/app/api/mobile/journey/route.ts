@@ -10,9 +10,7 @@ import {
   getJourneyTopicCompletedStoryCount,
   getJourneyTopicPracticeKey,
   getJourneyTopicRequiredStoryCount,
-  getUnlockedStoryCount,
   getUnlockedLevelCount,
-  getUnlockedTopicCount,
 } from "@/app/journey/journeyData";
 import {
   getCompletedJourneyStoryKeys,
@@ -102,46 +100,33 @@ export async function GET(req: NextRequest): Promise<Response> {
       unlockedLevelCount,
       totalLevelCount: track.levels.length,
       levels: track.levels.map((level, levelIndex) => {
-        const baseUnlockedTopicCount =
-          levelIndex < unlockedLevelCount
-            ? getUnlockedTopicCount(
-                level,
-                completedStoryKeys,
-                passedCheckpointKeys,
-                track.id,
-                level.id
-              )
-            : 0;
-        const unlockedTopicCount =
-          placementLevelIndex >= 0 && levelIndex < placementLevelIndex
-            ? level.topics.length
-            : baseUnlockedTopicCount;
+        // With Model B (lock at level boundaries only), every topic in an
+        // unlocked level is accessible, so unlockedTopicCount is just the
+        // total when the level is unlocked. We keep the field on the wire
+        // for any client that still reads it.
+        const unlocked = levelIndex < unlockedLevelCount;
+        const unlockedTopicCount = unlocked ? level.topics.length : 0;
 
         return {
           id: level.id,
           title: level.title,
           subtitle: level.subtitle,
-          unlocked: levelIndex < unlockedLevelCount,
+          unlocked,
           unlockedTopicCount,
           totalTopicCount: level.topics.length,
-          topics: level.topics.map((topic, topicIndex) => {
+          topics: level.topics.map((topic) => {
             const completedStoryCount = getJourneyTopicCompletedStoryCount(topic, completedStoryKeys);
             const requiredStoryCount = getJourneyTopicRequiredStoryCount(topic);
             const practiceKey = getJourneyTopicPracticeKey(track.id, level.id, topic.slug);
             const checkpointKey = getJourneyTopicCheckpointKey(track.id, level.id, topic.slug);
-            // Any topic with published stories is accessible. We drop the pure
-            // sequential gating so Studio-created journeys don't hide behind
-            // unfinished curriculum topics. The first topic stays unlocked
-            // too (entry point even when empty).
-            const hasStories = topic.storyCount > 0;
-            const topicUnlocked =
-              levelIndex < unlockedLevelCount &&
-              (topicIndex === 0 || hasStories || topicIndex < unlockedTopicCount);
-            const unlockedStoryCount = topicUnlocked
-              ? placementLevelIndex >= 0 && levelIndex < placementLevelIndex
-                ? topic.storyCount
-                : getUnlockedStoryCount(topic, completedStoryKeys)
-              : 0;
+            // Lock only at the level boundary. Within an unlocked CEFR level,
+            // every topic and every story is accessible — the user can read
+            // them in whatever order suits them. The recommended order is
+            // still expressed via the "next" pointer, but it's a guide, not
+            // a gate. Stories above the user's reach (locked level) still
+            // show with the lock icon and tap into the placement-test offer.
+            const topicUnlocked = levelIndex < unlockedLevelCount;
+            const unlockedStoryCount = topicUnlocked ? topic.storyCount : 0;
             return {
               id: topic.id,
               slug: topic.slug,
