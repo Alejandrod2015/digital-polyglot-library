@@ -303,6 +303,11 @@ export default function MonitorClient() {
   type LevelAuditData = { cefrLevel: string; score: number; totalUniqueWords: number; offendingCount: number; offenders: LevelAuditOffender[]; ranAt: number };
   const [auditResults, setAuditResults] = useState<Map<string, LevelAuditData>>(new Map());
 
+  type AdjustReplacement = { from: string; to: string };
+  type AdjustStage = "adjusting" | "auditing";
+  const [adjustProgress, setAdjustProgress] = useState<Map<string, AdjustStage>>(new Map());
+  const [lastReplacements, setLastReplacements] = useState<Map<string, AdjustReplacement[]>>(new Map());
+
   // Confirm dialog & edit
   const [confirmAction, setConfirmAction] = useState<{ message: string; onConfirm: () => void; confirmLabel?: string; confirmColor?: string } | null>(null);
   const [editingJourneyId, setEditingJourneyId] = useState<string | null>(null);
@@ -550,8 +555,10 @@ export default function MonitorClient() {
       setStories((prev) => prev.map((s) => s.id === storyId
         ? { ...s, status: "generated", title: data.title ?? s.title, synopsis: data.synopsis ?? s.synopsis, slug: data.slug ?? s.slug, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: null }
         : s));
-      // The story changed — the previous audit is stale.
+      // The story changed — the previous audit and any past replacements
+      // are stale.
       setAuditResults((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
+      setLastReplacements((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
       if (expandedStoryIds.has(storyId)) {
         const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
         if (detailRes.ok) {
@@ -590,6 +597,7 @@ export default function MonitorClient() {
     if (!audit || audit.offenders.length === 0) return;
     const wordsToAvoid = audit.offenders.map((o) => o.word);
     setBusyStories((s) => new Set(s).add(storyId));
+    setAdjustProgress((prev) => new Map(prev).set(storyId, "adjusting"));
     try {
       const res = await fetch("/api/studio/journeys/adjust-level", {
         method: "POST", headers: { "Content-Type": "application/json" },
@@ -601,6 +609,9 @@ export default function MonitorClient() {
         return;
       }
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, wordCount: data.wordCount ?? s.wordCount } : s));
+      // Save replacements so the panel can show before→after pairs.
+      const replacements: AdjustReplacement[] = Array.isArray(data.replacements) ? data.replacements : [];
+      setLastReplacements((prev) => new Map(prev).set(storyId, replacements));
       // Refresh detail with the new text.
       const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
       if (detailRes.ok) {
@@ -610,6 +621,7 @@ export default function MonitorClient() {
       // Old audit is stale — the text changed.
       setAuditResults((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
       // Re-audit so the user sees the new score immediately.
+      setAdjustProgress((prev) => new Map(prev).set(storyId, "auditing"));
       try {
         const auditRes = await fetch("/api/studio/journeys/audit-level", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
         if (auditRes.ok) {
@@ -628,7 +640,10 @@ export default function MonitorClient() {
       }
     } catch (err) {
       window.alert(`Ajuste falló: ${err}`);
-    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
+    } finally {
+      setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; });
+      setAdjustProgress((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
+    }
   }
 
   async function auditLevel(storyId: string) {
@@ -1021,36 +1036,53 @@ export default function MonitorClient() {
                   </div>
                 )}
 
-                {/* Vocabulary level audit results */}
-                {auditResults.has(s.id) && (() => {
-                  const audit = auditResults.get(s.id)!;
-                  const scoreColor = audit.score >= 90 ? "#22c55e" : audit.score >= 70 ? "#f59e0b" : "#ef4444";
+                {/* Vocabulary level audit + adjust progress + replacements panel */}
+                {(auditResults.has(s.id) || adjustProgress.has(s.id) || lastReplacements.has(s.id)) && (() => {
+                  const audit = auditResults.get(s.id);
+                  const progress = adjustProgress.get(s.id);
+                  const replacements = lastReplacements.get(s.id) ?? [];
+                  const scoreColor = !audit ? "#a78bfa" : audit.score >= 90 ? "#22c55e" : audit.score >= 70 ? "#f59e0b" : "#ef4444";
+                  const progressLabel = progress === "adjusting" ? "Ajustando texto…" : progress === "auditing" ? "Re-auditando nivel…" : null;
                   return (
                     <div style={{ display: "flex", flexDirection: "column", gap: 6, paddingTop: 4, borderTop: "1px dashed rgba(255,255,255,0.04)", marginTop: 2 }}>
                       <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
-                        <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Nivel {audit.cefrLevel}</span>
-                        <span style={{ ...chipStyle, fontSize: 10, color: scoreColor, borderColor: scoreColor + "55", backgroundColor: scoreColor + "11", fontWeight: 600 }}>
-                          {audit.score}%
+                        <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>
+                          Nivel {audit?.cefrLevel ?? s.level.toUpperCase()}
                         </span>
-                        <span style={{ fontSize: 10, color: "var(--muted)" }}>
-                          {audit.totalUniqueWords > 0
-                            ? `${audit.totalUniqueWords - audit.offendingCount}/${audit.totalUniqueWords} palabras dentro del nivel · ${audit.offendingCount} fuera`
-                            : `${audit.offendingCount} palabra${audit.offendingCount === 1 ? "" : "s"} fuera del nivel`}
-                        </span>
+                        {audit && (
+                          <span style={{ ...chipStyle, fontSize: 10, color: scoreColor, borderColor: scoreColor + "55", backgroundColor: scoreColor + "11", fontWeight: 600 }}>
+                            {audit.score}%
+                          </span>
+                        )}
+                        {audit && (
+                          <span style={{ fontSize: 10, color: "var(--muted)" }}>
+                            {audit.totalUniqueWords > 0
+                              ? `${audit.totalUniqueWords - audit.offendingCount}/${audit.totalUniqueWords} palabras dentro del nivel · ${audit.offendingCount} fuera`
+                              : `${audit.offendingCount} palabra${audit.offendingCount === 1 ? "" : "s"} fuera del nivel`}
+                          </span>
+                        )}
+                        {progressLabel && (
+                          <span style={{ fontSize: 10, color: "#14b8a6", fontStyle: "italic" }}>
+                            {progressLabel}
+                          </span>
+                        )}
                         <span style={{ flex: 1 }} />
-                        {audit.offenders.length > 0 && !busyStories.has(s.id) && (
+                        {audit && audit.offenders.length > 0 && !busyStories.has(s.id) && (
                           <button onClick={() => adjustLevel(s.id)}
                             title={`Reescribir solo las frases con palabras fuera de nivel, manteniendo el resto del texto idéntico`}
                             style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
                             Ajustar nivel
                           </button>
                         )}
-                        <button onClick={() => setAuditResults((prev) => { const n = new Map(prev); n.delete(s.id); return n; })}
+                        <button onClick={() => {
+                          setAuditResults((prev) => { const n = new Map(prev); n.delete(s.id); return n; });
+                          setLastReplacements((prev) => { const n = new Map(prev); n.delete(s.id); return n; });
+                        }}
                           style={{ ...btnSecondary, fontSize: 9, height: 18, padding: "0 6px", color: "var(--muted)", borderColor: "var(--card-border)" }}>
                           Ocultar
                         </button>
                       </div>
-                      {audit.offenders.length > 0 && (
+                      {audit && audit.offenders.length > 0 && (
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
                           {audit.offenders.map((o, i) => {
                             const lvlColor = o.estimatedLevel === "C2" || o.estimatedLevel === "C1" ? "#ef4444"
@@ -1066,6 +1098,22 @@ export default function MonitorClient() {
                               </span>
                             );
                           })}
+                        </div>
+                      )}
+                      {replacements.length > 0 && (
+                        <div style={{ display: "flex", flexDirection: "column", gap: 3, paddingTop: 4 }}>
+                          <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>
+                            Último ajuste — {replacements.length} reemplazo{replacements.length === 1 ? "" : "s"}
+                          </span>
+                          <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                            {replacements.map((r, i) => (
+                              <div key={i} style={{ display: "flex", gap: 6, alignItems: "center", fontSize: 11, lineHeight: 1.4 }}>
+                                <span style={{ color: "#ef4444", textDecoration: "line-through" }}>{r.from}</span>
+                                <span style={{ color: "var(--muted)" }}>→</span>
+                                <span style={{ color: "#22c55e", fontWeight: 500 }}>{r.to}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>

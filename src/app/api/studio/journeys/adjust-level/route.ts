@@ -66,25 +66,58 @@ Hard rules:
 - Do NOT introduce new offender words.
 - Output the FULL story text (every paragraph), not just the changed sentences.
 
+ALSO: as you edit, keep track of every replacement you make. A replacement is the surface form (in the story) you removed and the surface form you put in its place. Use short fragments — single words when 1-to-1, short phrases when reformulating. Limit to the meaningful changes; ignore punctuation tweaks.
+
 STORY:
 ${story.text}
 
-Return ONLY the rewritten story text. No commentary, no explanations.
+Return ONLY valid JSON of this shape:
+{
+  "text": "<full rewritten story body, all paragraphs, preserving <blockquote> tags>",
+  "replacements": [
+    { "from": "<original surface fragment>", "to": "<rewritten surface fragment>" }
+  ]
+}
+No commentary, no markdown fences, no extra fields.
 `;
 
   try {
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       temperature: 0.3,
+      response_format: { type: "json_object" },
       messages: [
-        { role: "system", content: `You perform minimal surgical edits on ${language} stories for CEFR alignment. You preserve everything that doesn't need changing. Output plain text only, preserving HTML tags from the input.` },
+        { role: "system", content: `You perform minimal surgical edits on ${language} stories for CEFR alignment. You preserve everything that doesn't need changing. Output JSON only.` },
         { role: "user", content: prompt },
       ],
     });
 
-    const newText = response.choices[0]?.message?.content?.trim() ?? "";
-    if (!newText) {
+    const raw = response.choices[0]?.message?.content?.trim() ?? "";
+    if (!raw) {
       return NextResponse.json({ error: "Empty rewrite returned" }, { status: 502 });
+    }
+
+    let newText = "";
+    let replacements: { from: string; to: string }[] = [];
+    try {
+      const parsed = JSON.parse(raw) as { text?: unknown; replacements?: unknown };
+      if (typeof parsed.text === "string") newText = parsed.text.trim();
+      if (Array.isArray(parsed.replacements)) {
+        replacements = parsed.replacements
+          .filter((r): r is { from: string; to: string } =>
+            r != null && typeof r === "object"
+            && typeof (r as { from?: unknown }).from === "string"
+            && typeof (r as { to?: unknown }).to === "string")
+          .map((r) => ({ from: r.from.trim(), to: r.to.trim() }))
+          .filter((r) => r.from.length > 0 && r.from !== r.to);
+      }
+    } catch {
+      // Fallback: treat the whole payload as raw text. Replacements unknown.
+      newText = raw;
+    }
+
+    if (!newText) {
+      return NextResponse.json({ error: "No rewritten text in response" }, { status: 502 });
     }
 
     const wordCount = newText.split(/\s+/).filter(Boolean).length;
@@ -104,6 +137,7 @@ Return ONLY the rewritten story text. No commentary, no explanations.
       id: updated.id,
       text: updated.text,
       wordCount: updated.wordCount,
+      replacements,
     });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
