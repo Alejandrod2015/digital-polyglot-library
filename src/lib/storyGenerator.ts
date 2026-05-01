@@ -29,6 +29,13 @@ export type GenerateStoryParams = {
   title?: string;
   synopsis?: string;
   existingTitles?: string[];
+  /**
+   * Synopses of stories already in the same journey. Used to detect the
+   * dominant emotional arc / tone of the journey so the new story can
+   * vary register instead of repeating "warm encounter, happy ending"
+   * eight times in a row.
+   */
+  existingSynopses?: { title: string; synopsis: string }[];
   usedCharacterNames?: string[];
   /**
    * Words flagged by a previous audit as above the requested CEFR level.
@@ -138,6 +145,7 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     title: providedTitle = "",
     synopsis = "",
     existingTitles = [],
+    existingSynopses = [],
     usedCharacterNames = [],
     wordsToAvoid = [],
   } = params;
@@ -165,6 +173,26 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
 
   const existingTitlesClause = existingTitles.length
     ? `\nNEVER reuse these existing titles or close variations: ${existingTitles.map((t) => `"${t}"`).join(", ")}. Use completely different characters, settings, and situations.`
+    : "";
+  // Tonal variety clause: feed up to 8 prior synopses so the model can
+  // detect the dominant emotional shape of the journey and DELIBERATELY
+  // vary it. The default failure mode is repetition: every story ends
+  // with a warm encounter and a happy protagonist, which makes a journey
+  // of 20+ stories feel monotone. Telling the model what tones already
+  // exist lets it pick a fresh register.
+  const tonalVarietyClause = existingSynopses.length
+    ? `\n\nTONAL VARIETY (read carefully):
+The journey already contains these synopses:
+${existingSynopses.slice(0, 8).map((s, i) => `[${i + 1}] "${s.title}": ${s.synopsis}`).join("\n")}
+Detect the DOMINANT emotional arc above (e.g. "friendly stranger helps protagonist, ends warmly", "protagonist rediscovers something familiar", "small triumph through patience"). The new story MUST use a different register. Avoid repeating the dominant arc. Possible alternatives:
+- A moment of doubt or hesitation that doesn't fully resolve
+- A small disappointment or missed connection handled with grace
+- Comedic tension or a misunderstanding played for humor
+- A contemplative monologue while alone (no second character)
+- A bittersweet realization
+- An open-ended decision the protagonist hasn't made yet
+- A mildly frustrating interaction handled politely
+The reader should finish this story feeling something different from what the previous synopses evoke. Do not default to "warm encounter, happy ending" if that pattern already dominates.`
     : "";
   const usedNamesClause = usedCharacterNames.length
     ? `\nNEVER reuse these character names (they already appear in other stories): ${usedCharacterNames.join(", ")}. Invent completely new, fresh character names.`
@@ -218,7 +246,7 @@ Use a close third-person narrator with strong internal focalization.
 - Include frequent dialogue beats and immediate reactions to keep pacing lively.
 - Length target: ${TARGET_STORY_WORDS_MIN}-${TARGET_STORY_WORDS_MAX} words.
 - Absolute minimum: ${MIN_STORY_WORDS} words.
-- Hard maximum: ${HARD_STORY_WORDS_MAX} words.${existingTitlesClause}${usedNamesClause}
+- Hard maximum: ${HARD_STORY_WORDS_MAX} words.${existingTitlesClause}${usedNamesClause}${tonalVarietyClause}
 ${retryClause}
 
 Return ONLY valid JSON:

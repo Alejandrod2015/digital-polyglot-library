@@ -191,6 +191,7 @@ export async function POST(request: Request) {
       title,
       synopsis,
       existingTitles,
+      existingSynopses: existingSynopsesForJudge,
       usedCharacterNames,
       wordsToAvoid,
     });
