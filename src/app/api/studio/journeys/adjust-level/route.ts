@@ -89,16 +89,16 @@ async function callAdjustLLM(args: {
  * Body: { storyId, wordsToAvoid: string[] }
  *
  * Surgical lexical edit with internal convergence loop. Each iteration:
- *   1. Ask the LLM to rewrite the text avoiding the current offender list.
- *   2. Re-audit the rewrite internally.
- *   3. If the offender count strictly dropped, keep the rewrite and (if any
- *      offenders remain) feed them back as wordsToAvoid for the next pass.
- *   4. Stop on success (zero offenders), regression (count didn't drop), or
- *      after MAX_ITERATIONS.
+ *   1. Ask the LLM to rewrite the text avoiding the current seed list.
+ *   2. Re-audit the rewrite holistically.
+ *   3. If the audit SCORE strictly improves, keep the rewrite and feed
+ *      the new highlights back as the next seed list.
+ *   4. Stop on near-perfect score, regression/plateau, or after
+ *      MAX_ITERATIONS.
  *
- * The result is guaranteed to have <= offenders than the original. If the
- * very first iteration regresses, the story is left UNCHANGED in the DB and
- * the response carries `noImprovement: true` so the frontend can warn.
+ * The result is guaranteed to have a strictly higher (or equal) score
+ * than the original. If the very first iteration regresses, the story
+ * is left UNCHANGED and the response carries `noImprovement: true`.
  */
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -131,19 +131,27 @@ export async function POST(request: Request) {
 
   const cefrLabel = story.level.toUpperCase();
   const language = story.journey.language;
-  const initialOffenderCount = initialWordsToAvoid.length;
+
+  // Baseline audit: needed to compare scores across iterations.
+  const baselineAudit = await auditStoryVocabularyLevel({
+    text: story.text,
+    language,
+    cefrLevel: story.level,
+  });
 
   let candidateText = story.text;
   let candidateWordsToAvoid = initialWordsToAvoid;
   let bestText = story.text;
-  let bestOffenderCount = initialOffenderCount;
-  let bestAudit: LevelAuditResult | null = null;
+  let bestScore = baselineAudit.score;
+  let bestAudit: LevelAuditResult = baselineAudit;
   const accumulatedReplacements: Replacement[] = [];
-  const iterationsLog: { iteration: number; offendersBefore: number; offendersAfter: number; replacementCount: number }[] = [];
+  const iterationsLog: { iteration: number; scoreBefore: number; scoreAfter: number; replacementCount: number }[] = [];
 
   try {
     for (let i = 0; i < MAX_ITERATIONS; i += 1) {
       if (candidateWordsToAvoid.length === 0) break;
+      // Already at near-perfect — nothing left to gain.
+      if (bestScore >= 95) break;
 
       const { text: rewritten, replacements } = await callAdjustLLM({
         text: candidateText,
@@ -161,21 +169,21 @@ export async function POST(request: Request) {
 
       iterationsLog.push({
         iteration: i + 1,
-        offendersBefore: candidateWordsToAvoid.length,
-        offendersAfter: audit.offendingCount,
+        scoreBefore: bestScore,
+        scoreAfter: audit.score,
         replacementCount: replacements.length,
       });
 
-      // Strict improvement required to accept the iteration.
-      if (audit.offendingCount < bestOffenderCount) {
+      // Strict score improvement required to accept the iteration.
+      if (audit.score > bestScore) {
         bestText = rewritten;
-        bestOffenderCount = audit.offendingCount;
+        bestScore = audit.score;
         bestAudit = audit;
         accumulatedReplacements.push(...replacements);
-        if (audit.offendingCount === 0) break;
-        // Feed remaining offenders into the next iteration.
+        if (audit.score >= 95 || audit.highlights.length === 0) break;
+        // Feed remaining highlights into the next iteration.
         candidateText = rewritten;
-        candidateWordsToAvoid = audit.offenders.map((o) => o.word);
+        candidateWordsToAvoid = audit.highlights.map((h) => h.word);
       } else {
         // Regression or plateau — stop and keep the best so far.
         break;
@@ -204,10 +212,10 @@ export async function POST(request: Request) {
     data: {
       text: bestText,
       wordCount,
-      auditScore: bestAudit ? bestAudit.score : null,
+      auditScore: bestAudit.score,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      auditOffenders: bestAudit ? (bestAudit.offenders as any) : undefined,
-      auditedAt: bestAudit ? new Date() : null,
+      auditOffenders: { summary: bestAudit.summary, highlights: bestAudit.highlights } as any,
+      auditedAt: new Date(),
     },
   });
 

@@ -10,9 +10,10 @@ export const maxDuration = 60;
  * POST /api/studio/journeys/audit-level
  * Body: { storyId }
  *
- * Returns LevelAuditResult with score (% of unique words at or below the
- * story's CEFR level) and the list of offenders. Uses gpt-4o-mini as judge —
- * no per-language wordlists required.
+ * Returns a holistic CEFR-fit audit: score 0-100, one-sentence summary,
+ * and up to 8 illustrative highlights of words that stand out as above
+ * the level. Persists score + highlights on the JourneyStory row so
+ * the panel rehydrates after refresh.
  */
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -47,8 +48,10 @@ export async function POST(request: Request) {
       where: { id: storyId },
       data: {
         auditScore: result.score,
+        // The DB column is named `auditOffenders` for legacy reasons but
+        // now stores the holistic-audit payload (summary + highlights).
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        auditOffenders: result.offenders as any,
+        auditOffenders: { summary: result.summary, highlights: result.highlights } as any,
         auditedAt: new Date(),
       },
     });

@@ -241,7 +241,7 @@ type StoryRow = {
   // by any endpoint that mutates `text`). The frontend hydrates the
   // auditResults map from these on load so refreshes don't lose state.
   auditScore?: number | null;
-  auditOffenders?: { word: string; surface: string; estimatedLevel: string }[] | null;
+  auditOffenders?: { summary?: string; highlights?: { word: string; surface: string; estimatedLevel: string }[] } | null;
   auditedAt?: string | null;
   error: string | null;
 };
@@ -299,8 +299,8 @@ export default function MonitorClient() {
   const [showVocabIds, setShowVocabIds] = useState<Set<string>>(new Set());
   const [loadingDetailIds, setLoadingDetailIds] = useState<Set<string>>(new Set());
 
-  type LevelAuditOffender = { word: string; surface: string; estimatedLevel: string };
-  type LevelAuditData = { cefrLevel: string; score: number; totalUniqueWords: number; offendingCount: number; offenders: LevelAuditOffender[]; ranAt: number };
+  type LevelAuditHighlight = { word: string; surface: string; estimatedLevel: string };
+  type LevelAuditData = { cefrLevel: string; score: number; summary: string; highlights: LevelAuditHighlight[]; ranAt: number };
   const [auditResults, setAuditResults] = useState<Map<string, LevelAuditData>>(new Map());
 
   type AdjustReplacement = { from: string; to: string };
@@ -438,15 +438,17 @@ export default function MonitorClient() {
   function hydrateAuditFromStories(rows: StoryRow[]) {
     const updates: [string, LevelAuditData][] = [];
     for (const r of rows) {
-      if (r.auditScore == null || !Array.isArray(r.auditOffenders)) continue;
-      const offenders = r.auditOffenders.filter((o) => o && typeof o.word === "string" && typeof o.surface === "string" && typeof o.estimatedLevel === "string");
-      const totalUniqueWords = 0; // unknown server-side without re-counting; filled on next audit
+      if (r.auditScore == null || !r.auditOffenders) continue;
+      const payload = r.auditOffenders;
+      const summary = typeof payload.summary === "string" ? payload.summary : "";
+      const highlights = Array.isArray(payload.highlights)
+        ? payload.highlights.filter((h) => h && typeof h.word === "string" && typeof h.surface === "string" && typeof h.estimatedLevel === "string")
+        : [];
       updates.push([r.id, {
         cefrLevel: r.level.toUpperCase(),
         score: r.auditScore,
-        totalUniqueWords,
-        offendingCount: offenders.length,
-        offenders,
+        summary,
+        highlights,
         ranAt: r.auditedAt ? new Date(r.auditedAt).getTime() : Date.now(),
       }]);
     }
@@ -544,7 +546,7 @@ export default function MonitorClient() {
       // and offenders are still on screen, send them so the prompt can
       // explicitly avoid them in the next draft.
       const lastAudit = auditResults.get(storyId);
-      const wordsToAvoid = lastAudit?.offenders.map((o) => o.word) ?? [];
+      const wordsToAvoid = lastAudit?.highlights.map((h) => h.word) ?? [];
       const res = await fetch("/api/studio/journeys/generate-v2", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId, wordsToAvoid }) });
       const data = await res.json();
       if (!res.ok) {
@@ -567,8 +569,8 @@ export default function MonitorClient() {
         }
       }
       // Auto-audit the freshly regenerated story so the next click on
-      // Regenerar V2 already has new offenders to send back. Inlined to
-      // share the same busy state — no spinner flash.
+      // Regenerar V2 already has fresh seeds. Inlined to share the same
+      // busy state — no spinner flash.
       try {
         const auditRes = await fetch("/api/studio/journeys/audit-level", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
         if (auditRes.ok) {
@@ -576,9 +578,8 @@ export default function MonitorClient() {
           setAuditResults((prev) => new Map(prev).set(storyId, {
             cefrLevel: auditData.cefrLevel,
             score: auditData.score,
-            totalUniqueWords: auditData.totalUniqueWords,
-            offendingCount: auditData.offendingCount,
-            offenders: auditData.offenders ?? [],
+            summary: auditData.summary ?? "",
+            highlights: auditData.highlights ?? [],
             ranAt: Date.now(),
           }));
           setExpandedStoryIds((prev) => new Set(prev).add(storyId));
@@ -594,8 +595,8 @@ export default function MonitorClient() {
 
   async function adjustLevel(storyId: string) {
     const audit = auditResults.get(storyId);
-    if (!audit || audit.offenders.length === 0) return;
-    const wordsToAvoid = audit.offenders.map((o) => o.word);
+    if (!audit || audit.highlights.length === 0) return;
+    const wordsToAvoid = audit.highlights.map((h) => h.word);
     setBusyStories((s) => new Set(s).add(storyId));
     setAdjustProgress((prev) => new Map(prev).set(storyId, "adjusting"));
     try {
@@ -628,9 +629,8 @@ export default function MonitorClient() {
         setAuditResults((prev) => new Map(prev).set(storyId, {
           cefrLevel: data.audit.cefrLevel,
           score: data.audit.score,
-          totalUniqueWords: data.audit.totalUniqueWords ?? 0,
-          offendingCount: data.audit.offendingCount,
-          offenders: data.audit.offenders ?? [],
+          summary: data.audit.summary ?? "",
+          highlights: data.audit.highlights ?? [],
           ranAt: Date.now(),
         }));
       } else {
@@ -657,9 +657,8 @@ export default function MonitorClient() {
       setAuditResults((prev) => new Map(prev).set(storyId, {
         cefrLevel: data.cefrLevel,
         score: data.score,
-        totalUniqueWords: data.totalUniqueWords,
-        offendingCount: data.offendingCount,
-        offenders: data.offenders ?? [],
+        summary: data.summary ?? "",
+        highlights: data.highlights ?? [],
         ranAt: Date.now(),
       }));
       // Lazy-load the story detail if it isn't loaded yet, so the audit
@@ -1052,11 +1051,9 @@ export default function MonitorClient() {
                             {audit.score}%
                           </span>
                         )}
-                        {audit && (
-                          <span style={{ fontSize: 10, color: "var(--muted)" }}>
-                            {audit.totalUniqueWords > 0
-                              ? `${audit.totalUniqueWords - audit.offendingCount}/${audit.totalUniqueWords} palabras dentro del nivel · ${audit.offendingCount} fuera`
-                              : `${audit.offendingCount} palabra${audit.offendingCount === 1 ? "" : "s"} fuera del nivel`}
+                        {audit && audit.summary && (
+                          <span style={{ fontSize: 10, color: "var(--muted)", fontStyle: "italic", flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={audit.summary}>
+                            {audit.summary}
                           </span>
                         )}
                         {progressLabel && (
@@ -1064,10 +1061,10 @@ export default function MonitorClient() {
                             {progressLabel}
                           </span>
                         )}
-                        <span style={{ flex: 1 }} />
-                        {audit && audit.offenders.length > 0 && !busyStories.has(s.id) && (
+                        <span style={{ flex: audit && audit.summary ? 0 : 1 }} />
+                        {audit && audit.highlights.length > 0 && audit.score < 95 && !busyStories.has(s.id) && (
                           <button onClick={() => adjustLevel(s.id)}
-                            title={`Reescribir solo las frases con palabras fuera de nivel, manteniendo el resto del texto idéntico`}
+                            title={`Reescribir solo las frases con palabras que destacan, manteniendo el resto del texto idéntico`}
                             style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
                             Ajustar nivel
                           </button>
@@ -1080,22 +1077,27 @@ export default function MonitorClient() {
                           Ocultar
                         </button>
                       </div>
-                      {audit && audit.offenders.length > 0 && (
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-                          {audit.offenders.map((o, i) => {
-                            const lvlColor = o.estimatedLevel === "C2" || o.estimatedLevel === "C1" ? "#ef4444"
-                              : o.estimatedLevel === "B2" ? "#f97316"
-                              : o.estimatedLevel === "B1" ? "#f59e0b"
-                              : "#a78bfa";
-                            return (
-                              <span key={i} title={`${o.word} (lemma) — estimado ${o.estimatedLevel}`}
-                                style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 6px", borderRadius: 3, fontSize: 10, backgroundColor: lvlColor + "11", border: `1px solid ${lvlColor}44`, color: "var(--foreground)" }}>
-                                <span style={{ fontSize: 8, fontWeight: 700, color: lvlColor }}>{o.estimatedLevel}</span>
-                                <strong>{o.surface}</strong>
-                                {o.surface.toLowerCase() !== o.word.toLowerCase() && <span style={{ color: "var(--muted)" }}>({o.word})</span>}
-                              </span>
-                            );
-                          })}
+                      {audit && audit.highlights.length > 0 && (
+                        <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
+                          <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>
+                            Palabras que destacan
+                          </span>
+                          <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+                            {audit.highlights.map((h, i) => {
+                              const lvlColor = h.estimatedLevel === "C2" || h.estimatedLevel === "C1" ? "#ef4444"
+                                : h.estimatedLevel === "B2" ? "#f97316"
+                                : h.estimatedLevel === "B1" ? "#f59e0b"
+                                : "#a78bfa";
+                              return (
+                                <span key={i} title={`${h.word} (lemma) — estimado ${h.estimatedLevel}`}
+                                  style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 6px", borderRadius: 3, fontSize: 10, backgroundColor: lvlColor + "11", border: `1px solid ${lvlColor}44`, color: "var(--foreground)" }}>
+                                  <span style={{ fontSize: 8, fontWeight: 700, color: lvlColor }}>{h.estimatedLevel}</span>
+                                  <strong>{h.surface}</strong>
+                                  {h.surface.toLowerCase() !== h.word.toLowerCase() && <span style={{ color: "var(--muted)" }}>({h.word})</span>}
+                                </span>
+                              );
+                            })}
+                          </div>
                         </div>
                       )}
                       {replacements.length > 0 && (
