@@ -57,11 +57,11 @@ export async function GET(req: NextRequest): Promise<Response> {
       : getJourneyFocusFromLearningGoal(
           typeof user.publicMetadata?.learningGoal === "string" ? user.publicMetadata.learningGoal : null
         );
-  const journeyPlacementLevel =
+  const rawJourneyPlacementLevel =
     typeof user.publicMetadata?.journeyPlacementLevel === "string"
       ? user.publicMetadata.journeyPlacementLevel
       : null;
-  const [tracks, completedStoryKeys, passedCheckpointKeys, practicedTopicKeys, dueReviewItems] =
+  const [rawTracks, completedStoryKeys, passedCheckpointKeys, practicedTopicKeys, dueReviewItems] =
     await Promise.all([
       buildJourneyVariants(language, journeyFocus ?? "General"),
       getCompletedJourneyStoryKeys(session.sub),
@@ -69,6 +69,31 @@ export async function GET(req: NextRequest): Promise<Response> {
       getPracticedJourneyTopicKeys(session.sub),
       getJourneyDueReviewItems(200, session.sub),
     ]);
+
+  // SAFETY NET: si el usuario tiene `journeyPlacementLevel` set pero todavía
+  // no ha terminado ni una sola historia (no hay events `audio_complete` ni
+  // `continue_listening` >= 95%), el placement no aporta — solo está
+  // marcando como `skipped` los niveles inferiores y empujando la "next"
+  // hacia abajo. En ese caso lo limpiamos en Clerk y servimos la respuesta
+  // sin placement. Self-healing: cualquier futura request ya verá
+  // `journeyPlacementLevel = null` desde Clerk.
+  let journeyPlacementLevel = rawJourneyPlacementLevel;
+  if (journeyPlacementLevel && completedStoryKeys.size === 0) {
+    try {
+      const updatedMetadata: Record<string, unknown> = { ...(user.publicMetadata ?? {}) };
+      delete updatedMetadata.journeyPlacementLevel;
+      await clerkClient.users.updateUserMetadata(session.sub, {
+        publicMetadata: updatedMetadata,
+      });
+      journeyPlacementLevel = null;
+    } catch {
+      // Best-effort: si Clerk falla, simplemente seguimos con el valor
+      // actual; la próxima request volverá a intentar.
+    }
+  }
+  // Variable kept under the original name so the rest of the route reads
+  // unchanged.
+  const tracks = rawTracks;
 
   const dueReviewProgressKeySet = new Set(
     dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))
