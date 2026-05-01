@@ -36,10 +36,16 @@ export async function getCompletedJourneyStoryKeys(userIdOverride?: string): Pro
   const userId = await resolveJourneyUserId(userIdOverride);
   if (!userId) return new Set<string>();
 
+  // `journey_story_read` se eliminó de esta lista: el web lo dispara
+  // por scroll-to-end del texto y por audio >= 35%, lo que marcaba
+  // stories como "audioFinished" sin que el usuario terminara el
+  // audio. La regla correcta es: una story se considera completada
+  // sólo cuando el audio realmente terminó (audio_complete) o cuando
+  // un evento de continue_listening la dejó >= COMPLETE_RATIO (95%).
   const metrics = await prisma.userMetric.findMany({
     where: {
       userId,
-      eventType: { in: ["audio_complete", "continue_listening", "journey_story_read"] },
+      eventType: { in: ["audio_complete", "continue_listening"] },
     },
     select: {
       bookSlug: true,
@@ -70,11 +76,6 @@ export async function getCompletedJourneyStoryKeys(userIdOverride?: string): Pro
     if (!progressKey || completed.has(progressKey)) continue;
 
     if (row.eventType === "audio_complete") {
-      completed.add(progressKey);
-      continue;
-    }
-
-    if (row.eventType === "journey_story_read") {
       completed.add(progressKey);
       continue;
     }
