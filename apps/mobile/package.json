@@ -37,7 +37,8 @@
     "expo-splash-screen": "~31.0.13",
     "expo-web-browser": "~15.0.10",
     "react": "19.1.0",
-    "react-native": "0.81.5"
+    "react-native": "0.81.5",
+    "react-native-svg": "15.12.1"
   },
   "devDependencies": {
     "@types/react": "^19.1.10",

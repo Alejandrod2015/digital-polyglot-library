@@ -9,6 +9,7 @@ import {
   findNodeHandle,
   Linking,
   Modal,
+  PanResponder,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -194,12 +195,10 @@ type MobileScreen =
   | "journey"
   | "library"
   | "settings"
-  | "create"
-  | "progress";
+  | "create";
 
 type BottomTab = "home" | "explore" | "practice" | "favorites" | "journey" | "signin";
 type MenuIconName =
-  | "progress"
   | "settings"
   | "library"
   | "story"
@@ -1868,6 +1867,42 @@ export function MobileLibraryShell(args: {
   // a tab change felt like a navigation, the badges read more like
   // "show me a quick summary".
   const [progressSheetOpen, setProgressSheetOpen] = useState(false);
+  // Drag-to-dismiss for the Progress sheet. Mirrors the gesture used in
+  // LanguageSwitchSheet — only downward drag is responsive; release > 80pt
+  // or velocity > 0.8 closes the sheet, otherwise it springs back to 0.
+  const progressSheetDragY = useRef(new Animated.Value(0)).current;
+  const progressSheetPanResponder = useMemo(
+    () =>
+      PanResponder.create({
+        onStartShouldSetPanResponder: () => false,
+        onMoveShouldSetPanResponder: (_, gesture) => Math.abs(gesture.dy) > 6,
+        onPanResponderMove: (_, gesture) => {
+          if (gesture.dy > 0) progressSheetDragY.setValue(gesture.dy);
+        },
+        onPanResponderRelease: (_, gesture) => {
+          if (gesture.dy > 80 || gesture.vy > 0.8) {
+            setProgressSheetOpen(false);
+            progressSheetDragY.setValue(0);
+          } else {
+            Animated.spring(progressSheetDragY, {
+              toValue: 0,
+              damping: 22,
+              stiffness: 220,
+              useNativeDriver: true,
+            }).start();
+          }
+        },
+        onPanResponderTerminate: () => {
+          Animated.spring(progressSheetDragY, {
+            toValue: 0,
+            damping: 22,
+            stiffness: 220,
+            useNativeDriver: true,
+          }).start();
+        },
+      }),
+    [progressSheetDragY]
+  );
   // Topic preview sheet — opens when the user taps a topic panel on
   // the journey path. Shows the stories that will appear inside the
   // topic plus the vocabulary teaser (real words pulled from the
@@ -7002,7 +7037,7 @@ export function MobileLibraryShell(args: {
       {didFirstHydrate && remoteProgress?.gamification ? (
         <View style={styles.section}>
           <Pressable
-            onPress={() => setActiveScreen("progress")}
+            onPress={() => setProgressSheetOpen(true)}
             style={styles.gamificationMiniBar}
           >
             <View style={styles.gamificationMiniBarPill}>
@@ -11140,14 +11175,20 @@ export function MobileLibraryShell(args: {
   );
 
   const progressView = (() => {
-    const DAILY_XP_GOAL = 60;
-    const streak = Math.max(remoteProgress?.gamification?.dailyStreak ?? maxFavoriteStreak, 1);
+    const streak = remoteProgress?.gamification?.dailyStreak ?? maxFavoriteStreak ?? 0;
     const todayXp = remoteProgress?.gamification?.todayXp ?? 0;
     const totalXp = remoteProgress?.gamification?.totalXp ?? 0;
     const level = remoteProgress?.gamification?.currentLevel ?? 1;
-    const xpRemaining = Math.max(DAILY_XP_GOAL - todayXp, 0);
-    const dailyXpPercent = Math.min(100, (todayXp / DAILY_XP_GOAL) * 100);
-    const goalReached = todayXp >= DAILY_XP_GOAL;
+    const levelStartXp = remoteProgress?.gamification?.levelStartXp ?? 0;
+    const nextLevelXp = remoteProgress?.gamification?.nextLevelXp ?? 600;
+    const xpInLevel = Math.max(0, totalXp - levelStartXp);
+    const xpForLevel = Math.max(1, nextLevelXp - levelStartXp);
+
+    const accuracy = Math.round(remoteProgress?.practiceAccuracy ?? 0);
+    const sessions = remoteProgress?.practiceSessionsCompleted ?? 0;
+    const wordsLearned = remoteProgress?.wordsLearned ?? favoriteWords.length;
+    const minutesListened = remoteProgress?.minutesListened ?? 0;
+    const storiesFinished = remoteProgress?.storiesFinished ?? continueReading.length;
 
     const wkStories = remoteProgress?.weeklyStoriesFinished ?? weeklyStoriesFinished;
     const wkStoriesGoal = remoteProgress?.weeklyGoalStories ?? weeklyGoalStories;
@@ -11156,200 +11197,146 @@ export function MobileLibraryShell(args: {
     const wkPractice = remoteProgress?.weeklyPracticeSessions ?? 0;
     const wkPracticeGoal = remoteProgress?.weeklyGoalPracticeSessions ?? 5;
 
-    const rings = [
-      { label: "Stories", value: wkStories, total: wkStoriesGoal, color: "#a8e845" },
-      { label: "Minutes", value: wkMinutes, total: wkMinutesGoal, color: "#4ec3e0" },
-      { label: "Practice", value: wkPractice, total: wkPracticeGoal, color: "#a08dff" },
+    const nowDate = new Date();
+    const tmpDate = new Date(Date.UTC(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate()));
+    const dayNum = tmpDate.getUTCDay() || 7;
+    tmpDate.setUTCDate(tmpDate.getUTCDate() + 4 - dayNum);
+    const yearStart = new Date(Date.UTC(tmpDate.getUTCFullYear(), 0, 1));
+    const weekNum = Math.ceil(((tmpDate.getTime() - yearStart.getTime()) / 86400000 + 1) / 7);
+    const weekLabel = `Week ${weekNum} · ${tmpDate.getUTCFullYear()}`;
+
+    const twinkles = [
+      { left: 22, top: 38, size: 5, color: "#f5d77a" },
+      { left: 196, top: 50, size: 4, color: "#f5a261" },
+      { left: 178, top: 28, size: 5, color: "#f5d77a" },
+      { left: 14, top: 132, size: 5, color: "#5dd9e8" },
+      { left: 204, top: 124, size: 4, color: "#5dd9e8" },
+      { left: 30, top: 196, size: 4, color: "#f5d77a" },
     ];
 
-    const lifetimeStats: ProgressStat[] = [
-      { label: "Stories finished", value: `${remoteProgress?.storiesFinished ?? continueReading.length}`, icon: "book-open" },
-      { label: "Saved words", value: `${remoteProgress?.wordsLearned ?? favoriteWords.length}`, icon: "star" },
-      { label: "Regions", value: `${regionsExplored}`, icon: "map" },
-      { label: "Practice acc.", value: `${Math.round(remoteProgress?.practiceAccuracy ?? 0)}%`, icon: "target" },
+    const bars = [
+      { key: "stories", label: "Stories", value: wkStories, total: wkStoriesGoal, unit: "", color: "#a8e845" },
+      { key: "minutes", label: "Minutes", value: wkMinutes, total: wkMinutesGoal, unit: " min", color: "#5dd9e8" },
+      { key: "practice", label: "Practice", value: wkPractice, total: wkPracticeGoal, unit: "", color: "#a892ff" },
     ];
 
     return (
       <>
-        <View style={styles.hero}>
-          <View style={styles.heroHeaderRow}>
-            <View style={styles.heroTextBlock}>
-              <Text style={styles.eyebrow}>Progress</Text>
-              <Text style={styles.title}>Reading activity</Text>
-            </View>
-            <View style={styles.progressHeaderChips}>
-              <View style={styles.progressHeaderChip}>
-                <Text style={styles.progressHeaderChipFlame}>🔥</Text>
-                <Text style={styles.progressHeaderChipValue}>{streak}</Text>
-              </View>
-              <View style={[styles.progressHeaderChip, styles.progressHeaderChipXp]}>
-                <Feather name="zap" size={12} color="#1a2c1a" />
-                <Text style={[styles.progressHeaderChipValue, styles.progressHeaderChipValueXp]}>{todayXp}</Text>
-              </View>
-              <MenuTrigger onPress={() => setMenuOpen(true)} />
-            </View>
+        <View style={styles.progressHeaderRow}>
+          <Text style={styles.progressTopEyebrow}>PROGRESS</Text>
+          <Text style={styles.progressTopWeek}>{weekLabel}</Text>
+        </View>
+
+        <View style={styles.progressStreakHero}>
+          {twinkles.map((t, i) => (
+            <View
+              key={i}
+              style={{
+                position: "absolute",
+                left: t.left,
+                top: t.top,
+                width: t.size,
+                height: t.size,
+                borderRadius: t.size / 2,
+                backgroundColor: t.color,
+                opacity: 0.85,
+              }}
+            />
+          ))}
+          <View style={styles.progressStreakRing} />
+          <View style={styles.progressStreakCenter}>
+            <Text style={styles.progressStreakFlame}>🔥</Text>
+            <Text style={styles.progressStreakValue}>{streak}</Text>
+            <Text style={styles.progressStreakLabel}>DAY STREAK</Text>
           </View>
         </View>
 
-        <View style={styles.progressDailyCard}>
-          <View style={styles.progressDailyHeader}>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.progressDailyEyebrow}>Daily goal</Text>
-              <Text style={styles.progressDailyValue}>
-                {todayXp}<Text style={styles.progressDailyValueSuffix}> / {DAILY_XP_GOAL} XP</Text>
-              </Text>
-            </View>
-            <View style={styles.progressLevelBadge}>
-              <Text style={styles.progressLevelEyebrow}>LVL</Text>
-              <Text style={styles.progressLevelValue}>{level}</Text>
-            </View>
-          </View>
-          <View style={styles.progressGoalTrack}>
-            <View style={[styles.progressGoalFill, { width: `${dailyXpPercent}%` }]} />
-          </View>
-          <Text style={styles.progressDailyHint}>
-            {goalReached
-              ? "Daily goal reached. Keep going to extend your streak."
-              : `${xpRemaining} XP to go · finish a story (+30) or practice 5 min (+10).`}
+        <View style={styles.progressLevelPill}>
+          <Feather name="zap" size={13} color="#a8e845" />
+          <Text style={styles.progressLevelPillText}>
+            LEVEL {level} · {xpInLevel}/{xpForLevel} XP
           </Text>
         </View>
 
-        {remoteProgress?.gamification ? (
-          <View style={styles.progressQuestsCard}>
-            <View style={styles.progressQuestsHeader}>
-              <Text style={styles.progressDailyEyebrow}>Daily quests</Text>
-              <Text style={styles.progressQuestsCount}>
-                {remoteProgress.gamification.quests.filter((q) => q.complete).length}/{remoteProgress.gamification.quests.length}
-              </Text>
+        <View style={styles.progressStatsGridV4}>
+          <View style={styles.progressStatV4}>
+            <View style={styles.progressStatV4Header}>
+              <Feather name="zap" size={11} color="#a8e845" />
+              <Text style={[styles.progressStatV4Eyebrow, { color: "#a8e845" }]}>TOTAL XP</Text>
             </View>
-            <View style={styles.progressQuestsList}>
-              {remoteProgress.gamification.quests.map((quest) => {
-                const pct = Math.min(100, (quest.current / Math.max(1, quest.target)) * 100);
-                return (
-                  <View key={quest.id} style={styles.progressQuestItem}>
-                    <View style={styles.progressQuestTopRow}>
-                      <View style={styles.progressQuestLabelRow}>
-                        <Feather
-                          name={quest.complete ? "check-circle" : "zap"}
-                          size={14}
-                          color={quest.complete ? "#8ef0c6" : "#f5d77a"}
-                        />
-                        <Text style={styles.progressQuestLabel}>{quest.label}</Text>
-                      </View>
-                      <Text style={styles.progressQuestXp}>+{quest.rewardXp} XP</Text>
-                    </View>
-                    {quest.complete ? null : (
-                      <View style={styles.progressQuestTrack}>
-                        <View style={[styles.progressQuestFill, { width: `${pct}%` }]} />
-                      </View>
-                    )}
-                  </View>
-                );
-              })}
-            </View>
+            <Text style={styles.progressStatV4Value}>{totalXp.toLocaleString()}</Text>
+            <Text style={styles.progressStatV4Sub}>+{todayXp} today</Text>
           </View>
-        ) : null}
 
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionEyebrow}>This week</Text>
+          <View style={styles.progressStatV4}>
+            <View style={styles.progressStatV4Header}>
+              <Feather name="target" size={11} color="#5dd9e8" />
+              <Text style={[styles.progressStatV4Eyebrow, { color: "#5dd9e8" }]}>ACCURACY</Text>
+            </View>
+            <Text style={styles.progressStatV4Value}>{accuracy}%</Text>
+            <Text style={styles.progressStatV4Sub}>
+              {sessions} {sessions === 1 ? "session" : "sessions"}
+            </Text>
           </View>
-          <View style={styles.progressRingsRow}>
-            {rings.map((ring) => {
-              const pct = Math.min(100, (ring.value / Math.max(1, ring.total)) * 100);
+
+          <View style={styles.progressStatV4}>
+            <View style={styles.progressStatV4Header}>
+              <Feather name="bookmark" size={11} color="#a892ff" />
+              <Text style={[styles.progressStatV4Eyebrow, { color: "#a892ff" }]}>WORDS</Text>
+            </View>
+            <Text style={styles.progressStatV4Value}>{wordsLearned}</Text>
+            <Text style={styles.progressStatV4Sub}>learned all-time</Text>
+          </View>
+
+          <View style={styles.progressStatV4}>
+            <View style={styles.progressStatV4Header}>
+              <Feather name="headphones" size={11} color="#f5d77a" />
+              <Text style={[styles.progressStatV4Eyebrow, { color: "#f5d77a" }]}>MINUTES</Text>
+            </View>
+            <Text style={styles.progressStatV4Value}>{minutesListened}</Text>
+            <Text style={styles.progressStatV4Sub}>
+              {storiesFinished} {storiesFinished === 1 ? "story" : "stories"}
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.progressWeekCard}>
+          <View style={styles.progressWeekHeader}>
+            <Text style={styles.progressWeekEyebrow}>THIS WEEK</Text>
+            <Text style={styles.progressWeekResets}>Resets Sun</Text>
+          </View>
+          <View style={styles.progressWeekList}>
+            {bars.map((bar) => {
+              const pct = Math.min(100, (bar.value / Math.max(1, bar.total)) * 100);
               return (
-                <View key={ring.label} style={styles.progressRingCard}>
-                  <Text style={styles.progressRingValue}>
-                    {ring.value}
-                    <Text style={styles.progressRingValueTotal}>/{ring.total}</Text>
-                  </Text>
-                  <View style={styles.progressRingTrack}>
-                    <View style={[styles.progressRingFill, { width: `${pct}%`, backgroundColor: ring.color }]} />
+                <View key={bar.key} style={styles.progressWeekRow}>
+                  <View style={styles.progressWeekRowHeader}>
+                    <View style={styles.progressWeekRowLabelGroup}>
+                      <Feather name="plus" size={12} color={bar.color} />
+                      <Text style={styles.progressWeekRowLabel}>{bar.label}</Text>
+                    </View>
+                    <Text style={styles.progressWeekRowValue}>
+                      <Text style={[styles.progressWeekRowValueStrong, { color: bar.color }]}>
+                        {bar.value}
+                      </Text>
+                      <Text style={styles.progressWeekRowValueTotal}> / {bar.total}{bar.unit}</Text>
+                    </Text>
                   </View>
-                  <Text style={styles.progressRingLabel}>{ring.label}</Text>
+                  <View style={styles.progressWeekRowTrack}>
+                    <View
+                      style={[
+                        styles.progressWeekRowFill,
+                        { width: `${pct}%`, backgroundColor: bar.color },
+                      ]}
+                    />
+                  </View>
                 </View>
               );
             })}
           </View>
         </View>
 
-        {remoteProgress?.gamification?.badges?.length ? (
-          <View style={styles.section}>
-            <View style={styles.sectionHeader}>
-              <Text style={styles.sectionEyebrow}>Achievements</Text>
-              <Text style={styles.helperText}>
-                {remoteProgress.gamification.badges.filter((b) => b.unlocked).length}/{remoteProgress.gamification.badges.length}
-              </Text>
-            </View>
-            <View style={styles.gamificationBadgeWrap}>
-              {remoteProgress.gamification.badges.map((badge) => (
-                <View
-                  key={badge.id}
-                  style={[
-                    styles.gamificationBadgeChip,
-                    badge.unlocked ? styles.gamificationBadgeChipUnlocked : styles.gamificationBadgeChipLocked,
-                  ]}
-                >
-                  <Text
-                    style={[
-                      styles.gamificationBadgeChipText,
-                      badge.unlocked ? styles.gamificationBadgeChipTextUnlocked : styles.gamificationBadgeChipTextLocked,
-                    ]}
-                  >
-                    {badge.label}
-                  </Text>
-                </View>
-              ))}
-            </View>
-          </View>
-        ) : null}
-
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionEyebrow}>Lifetime</Text>
-            <Text style={styles.helperText}>{totalXp} XP</Text>
-          </View>
-          <View style={styles.progressStatsGrid}>
-            {lifetimeStats.map((item) => (
-              <View key={item.label} style={styles.progressStatCard}>
-                <View style={styles.progressStatLabelRow}>
-                  <Feather name={item.icon} size={14} color="#9cb0c9" />
-                  <Text style={styles.progressStatLabel}>{item.label}</Text>
-                </View>
-                <Text style={styles.progressStatValue}>{item.value}</Text>
-              </View>
-            ))}
-          </View>
-        </View>
-
-        {remoteProgressLoading ? <Text style={styles.helperText}>Refreshing progress…</Text> : null}
-
-        {continueReadingCards.length > 0 ? (
-          <View style={styles.section}>
-            <View style={styles.sectionHeader}>
-              <View>
-                <Text style={styles.sectionEyebrow}>Recent</Text>
-                <Text style={styles.sectionTitle}>Stories in motion</Text>
-              </View>
-            </View>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-              {continueReadingCards.map((item) => (
-                <BookHomeCard
-                  key={item.key}
-                  item={{
-                    key: item.key,
-                    title: item.title,
-                    coverUrl: item.coverUrl,
-                    subtitle: item.subtitle,
-                    meta: item.meta,
-                    progressLabel: item.progressLabel,
-                    onPress: item.onPress ?? (() => {}),
-                  }}
-                />
-              ))}
-            </ScrollView>
-          </View>
-        ) : null}
+        {remoteProgressLoading ? <Text style={styles.helperText}>Refreshing…</Text> : null}
       </>
     );
   })();
@@ -11842,7 +11829,6 @@ export function MobileLibraryShell(args: {
   if (activeScreen === "library") content = libraryView;
   if (activeScreen === "settings") content = settingsView;
   if (activeScreen === "create") content = createView;
-  if (activeScreen === "progress") content = progressView;
 
   return (
     <View style={styles.shell}>
@@ -12154,26 +12140,40 @@ export function MobileLibraryShell(args: {
           onPress={() => setProgressSheetOpen(false)}
           style={styles.progressSheetBackdrop}
         />
-        <View style={styles.progressSheetContainer}>
-          <View style={styles.progressSheetHandleRow}>
+        <Animated.View
+          style={[
+            styles.progressSheetContainer,
+            { transform: [{ translateY: progressSheetDragY }] },
+          ]}
+        >
+          <View
+            {...progressSheetPanResponder.panHandlers}
+            style={styles.progressSheetHandleRow}
+          >
             <View style={styles.progressSheetHandle} />
-            <Pressable
-              onPress={() => setProgressSheetOpen(false)}
-              hitSlop={12}
-              style={styles.progressSheetClose}
-            >
-              <Feather name="x" size={18} color="#ffffff" />
-            </Pressable>
           </View>
           <ScrollView
             style={styles.progressSheetScroll}
             contentContainerStyle={styles.progressSheetContent}
             showsVerticalScrollIndicator={false}
-            bounces={false}
+            bounces={true}
+            scrollEventThrottle={16}
+            onScrollEndDrag={(e) => {
+              // Pull-down-to-dismiss: when the ScrollView is at the top
+              // and the user keeps dragging down, contentOffset.y goes
+              // negative (because bounces=true). Past a threshold, treat
+              // it as "close the sheet". We intentionally do NOT use the
+              // velocity here — a fast scroll-up has a positive velocity
+              // and would otherwise close the sheet by mistake.
+              const y = e.nativeEvent.contentOffset.y;
+              if (y < -70) {
+                setProgressSheetOpen(false);
+              }
+            }}
           >
             {progressView}
           </ScrollView>
-        </View>
+        </Animated.View>
       </Modal>
 
       {/* Topic preview — opens when the user taps a topic panel on
@@ -12589,14 +12589,6 @@ export function MobileLibraryShell(args: {
               {isSignedIn ? (
                 <>
                   <MenuLink
-                    label="Progress"
-                    icon="progress"
-                    onPress={() => {
-                      setActiveScreen("progress");
-                      setMenuOpen(false);
-                    }}
-                  />
-                  <MenuLink
                     label="Settings"
                     icon="settings"
                     onPress={() => {
@@ -12778,7 +12770,6 @@ function MenuLink(args: {
 
 function MenuIcon({ icon, tone = "default" }: { icon: MenuIconName; tone?: "default" | "accent" }) {
   const color = tone === "accent" ? "#f8d48a" : "#dbe9ff";
-  if (icon === "progress") return <Feather name="bar-chart-2" size={18} color={color} />;
   if (icon === "settings") return <Feather name="settings" size={18} color={color} />;
   if (icon === "library") return <Feather name="book-open" size={18} color={color} />;
   if (icon === "journey") return <MaterialCommunityIcons name="map-marker-path" size={18} color={color} />;
@@ -14503,13 +14494,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingTop: 10,
+    paddingBottom: 6,
     paddingHorizontal: 16,
   },
   progressSheetHandle: {
-    width: 40,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: "rgba(255,255,255,0.18)",
+    width: 44,
+    height: 5,
+    borderRadius: 2.5,
+    backgroundColor: "rgba(255,255,255,0.28)",
   },
   progressSheetClose: {
     position: "absolute",
@@ -14526,7 +14518,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   progressSheetContent: {
-    paddingBottom: 24,
+    paddingHorizontal: 16,
+    paddingBottom: 32,
+    paddingTop: 8,
+    gap: 14,
   },
   // Toast for the "tap on a locked story" hint. Pinned near the top
   // (below the strip) so it doesn't fight with the bottom tab bar.
@@ -17488,194 +17483,199 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "900",
   },
-  progressHeaderChips: {
+  progressHeaderRow: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 6,
+    justifyContent: "space-between",
+    paddingTop: 2,
+    paddingBottom: 4,
   },
-  progressHeaderChip: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 4,
-    backgroundColor: "rgba(255, 122, 56, 0.18)",
-    borderWidth: 1,
-    borderColor: "rgba(255, 122, 56, 0.4)",
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 999,
-  },
-  progressHeaderChipXp: {
-    backgroundColor: "rgba(168, 232, 69, 0.22)",
-    borderColor: "rgba(168, 232, 69, 0.5)",
-  },
-  progressHeaderChipFlame: {
-    fontSize: 12,
-  },
-  progressHeaderChipValue: {
-    color: "#ffd5b8",
-    fontSize: 13,
-    fontWeight: "800",
-  },
-  progressHeaderChipValueXp: {
-    color: "#cdf5a0",
-  },
-  progressDailyCard: {
-    borderRadius: 22,
-    borderWidth: 1,
-    borderColor: "#26425f",
-    backgroundColor: "#16304f",
-    padding: 16,
-    gap: 12,
-  },
-  progressDailyHeader: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    gap: 12,
-  },
-  progressDailyEyebrow: {
+  progressTopEyebrow: {
     color: "#9cb0c9",
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: "800",
-    letterSpacing: 1,
-    textTransform: "uppercase",
+    letterSpacing: 2,
+  },
+  progressTopWeek: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  progressStreakHero: {
+    width: 220,
+    height: 220,
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    marginVertical: 6,
+    position: "relative",
+  },
+  progressStreakRing: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    borderWidth: 5,
+    borderColor: "#a8e845",
+    backgroundColor: "rgba(11, 22, 40, 0.55)",
+    shadowColor: "#a8e845",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.6,
+    shadowRadius: 18,
+  },
+  progressStreakCenter: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  progressStreakFlame: {
+    fontSize: 26,
+    marginBottom: 0,
+  },
+  progressStreakValue: {
+    color: "#ffffff",
+    fontSize: 64,
+    fontWeight: "900",
+    lineHeight: 68,
+    marginTop: -2,
+    letterSpacing: -1.5,
+  },
+  progressStreakLabel: {
+    color: "#f5a261",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 2.4,
+    marginTop: 2,
+  },
+  progressLevelPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    alignSelf: "center",
+    paddingHorizontal: 18,
+    paddingVertical: 9,
+    borderRadius: 999,
+    backgroundColor: "rgba(168, 232, 69, 0.10)",
+    borderWidth: 1,
+    borderColor: "rgba(168, 232, 69, 0.45)",
+    marginTop: 4,
     marginBottom: 4,
   },
-  progressDailyValue: {
-    color: "#ffffff",
-    fontSize: 36,
-    fontWeight: "900",
-    lineHeight: 38,
-  },
-  progressDailyValueSuffix: {
-    color: "#9cb0c9",
-    fontSize: 16,
-    fontWeight: "700",
-  },
-  progressDailyHint: {
-    color: "#c3d0e2",
+  progressLevelPillText: {
+    color: "#a8e845",
     fontSize: 13,
-    lineHeight: 18,
-  },
-  progressLevelBadge: {
-    backgroundColor: "#a8e845",
-    borderRadius: 14,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    alignItems: "center",
-    minWidth: 56,
-  },
-  progressLevelEyebrow: {
-    color: "#1a2c0a",
-    fontSize: 9,
     fontWeight: "900",
-    letterSpacing: 1,
+    letterSpacing: 1.2,
   },
-  progressLevelValue: {
-    color: "#0d1a05",
-    fontSize: 22,
-    fontWeight: "900",
-    lineHeight: 24,
-  },
-  progressQuestsCard: {
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: "#27405f",
-    backgroundColor: "#14243b",
-    padding: 14,
+  progressStatsGridV4: {
+    flexDirection: "row",
+    flexWrap: "wrap",
     gap: 10,
   },
-  progressQuestsHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  progressQuestsCount: {
-    color: "#9cb0c9",
-    fontSize: 12,
-    fontWeight: "700",
-  },
-  progressQuestsList: {
-    gap: 10,
-  },
-  progressQuestItem: {
-    gap: 6,
-  },
-  progressQuestTopRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 10,
-  },
-  progressQuestLabelRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-    flex: 1,
-  },
-  progressQuestLabel: {
-    color: "#dbe9ff",
-    fontSize: 14,
-    fontWeight: "700",
-    flexShrink: 1,
-  },
-  progressQuestXp: {
-    color: "#cdf5a0",
-    fontSize: 12,
-    fontWeight: "800",
-  },
-  progressQuestTrack: {
-    height: 6,
-    borderRadius: 999,
-    backgroundColor: "#22354d",
-    overflow: "hidden",
-  },
-  progressQuestFill: {
-    height: "100%",
-    borderRadius: 999,
-    backgroundColor: "#71dd5a",
-  },
-  progressRingsRow: {
-    flexDirection: "row",
-    gap: 10,
-  },
-  progressRingCard: {
-    flex: 1,
+  progressStatV4: {
+    width: "48%",
+    flexGrow: 1,
     borderRadius: 18,
     borderWidth: 1,
-    borderColor: "#27405f",
-    backgroundColor: "#14243b",
-    paddingHorizontal: 12,
+    borderColor: "rgba(255,255,255,0.06)",
+    backgroundColor: "#101a2e",
+    paddingHorizontal: 14,
     paddingVertical: 14,
-    gap: 8,
-    alignItems: "flex-start",
+    gap: 4,
   },
-  progressRingValue: {
+  progressStatV4Header: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginBottom: 4,
+  },
+  progressStatV4Eyebrow: {
+    fontSize: 11,
+    fontWeight: "900",
+    letterSpacing: 1.4,
+  },
+  progressStatV4Value: {
     color: "#ffffff",
-    fontSize: 22,
+    fontSize: 30,
+    fontWeight: "900",
+    lineHeight: 32,
+    letterSpacing: -0.6,
+  },
+  progressStatV4Sub: {
+    color: "#7d92ad",
+    fontSize: 12,
+    fontWeight: "600",
+  },
+  progressWeekCard: {
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.06)",
+    backgroundColor: "#101a2e",
+    padding: 16,
+    gap: 14,
+  },
+  progressWeekHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  progressWeekEyebrow: {
+    color: "#5dd9e8",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 1.6,
+  },
+  progressWeekResets: {
+    color: "#7d92ad",
+    fontSize: 12,
+    fontWeight: "600",
+  },
+  progressWeekList: {
+    gap: 12,
+  },
+  progressWeekRow: {
+    gap: 7,
+  },
+  progressWeekRowHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  progressWeekRowLabelGroup: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  progressWeekRowLabel: {
+    color: "#dbe9ff",
+    fontSize: 15,
+    fontWeight: "700",
+  },
+  progressWeekRowValue: {
+    fontSize: 14,
+  },
+  progressWeekRowValueStrong: {
+    fontSize: 15,
     fontWeight: "900",
   },
-  progressRingValueTotal: {
-    color: "#9cb0c9",
+  progressWeekRowValueTotal: {
+    color: "#7d92ad",
     fontSize: 13,
-    fontWeight: "700",
+    fontWeight: "600",
   },
-  progressRingTrack: {
-    width: "100%",
-    height: 8,
+  progressWeekRowTrack: {
+    height: 6,
     borderRadius: 999,
-    backgroundColor: "#22354d",
+    backgroundColor: "rgba(255,255,255,0.06)",
     overflow: "hidden",
   },
-  progressRingFill: {
+  progressWeekRowFill: {
     height: "100%",
     borderRadius: 999,
-  },
-  progressRingLabel: {
-    color: "#9cb0c9",
-    fontSize: 12,
-    fontWeight: "700",
-    textTransform: "uppercase",
-    letterSpacing: 0.6,
   },
   bottomNav: {
     position: "absolute",

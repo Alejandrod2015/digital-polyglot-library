@@ -352,6 +352,11 @@ function MobileAppRoot() {
 
   const handleRequestSignIn = useCallback(() => {
     setPreviewModeOnly(false);
+    // Clear the offline anchor so the AuthScreen actually renders.
+    // Without this, an expired session that left an anchor behind keeps
+    // the app on MobileLibraryShell forever — Sign in becomes a no-op.
+    void clearSessionAnchor();
+    setSessionAnchor(null);
   }, []);
 
   const handleHandledReminderNavigation = useCallback(() => {
