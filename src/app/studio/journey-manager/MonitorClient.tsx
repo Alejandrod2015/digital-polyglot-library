@@ -554,6 +554,52 @@ export default function MonitorClient() {
   }
 
 
+  async function adjustLevel(storyId: string) {
+    const audit = auditResults.get(storyId);
+    if (!audit || audit.offenders.length === 0) return;
+    const wordsToAvoid = audit.offenders.map((o) => o.word);
+    setBusyStories((s) => new Set(s).add(storyId));
+    try {
+      const res = await fetch("/api/studio/journeys/adjust-level", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ storyId, wordsToAvoid }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        window.alert(`Ajuste falló: ${data.error ?? "error desconocido"}`);
+        return;
+      }
+      setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, wordCount: data.wordCount ?? s.wordCount } : s));
+      // Refresh detail with the new text.
+      const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
+      if (detailRes.ok) {
+        const detail = await detailRes.json();
+        setStoryDetails((prev) => new Map(prev).set(storyId, detail));
+      }
+      // Old audit is stale — the text changed.
+      setAuditResults((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
+      // Re-audit so the user sees the new score immediately.
+      try {
+        const auditRes = await fetch("/api/studio/journeys/audit-level", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
+        if (auditRes.ok) {
+          const auditData = await auditRes.json();
+          setAuditResults((prev) => new Map(prev).set(storyId, {
+            cefrLevel: auditData.cefrLevel,
+            score: auditData.score,
+            totalUniqueWords: auditData.totalUniqueWords,
+            offendingCount: auditData.offendingCount,
+            offenders: auditData.offenders ?? [],
+            ranAt: Date.now(),
+          }));
+        }
+      } catch (auditErr) {
+        console.warn("[adjustLevel] re-audit failed:", auditErr);
+      }
+    } catch (err) {
+      window.alert(`Ajuste falló: ${err}`);
+    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
+  }
+
   async function auditLevel(storyId: string) {
     setBusyStories((s) => new Set(s).add(storyId));
     setExpandedStoryIds((prev) => new Set(prev).add(storyId));
@@ -959,6 +1005,13 @@ export default function MonitorClient() {
                           {audit.totalUniqueWords - audit.offendingCount}/{audit.totalUniqueWords} palabras dentro del nivel · {audit.offendingCount} fuera
                         </span>
                         <span style={{ flex: 1 }} />
+                        {audit.offenders.length > 0 && !busyStories.has(s.id) && (
+                          <button onClick={() => adjustLevel(s.id)}
+                            title={`Reescribir solo las frases con palabras fuera de nivel, manteniendo el resto del texto idéntico`}
+                            style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
+                            Ajustar nivel
+                          </button>
+                        )}
                         <button onClick={() => setAuditResults((prev) => { const n = new Map(prev); n.delete(s.id); return n; })}
                           style={{ ...btnSecondary, fontSize: 9, height: 18, padding: "0 6px", color: "var(--muted)", borderColor: "var(--card-border)" }}>
                           Ocultar
