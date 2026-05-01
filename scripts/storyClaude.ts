@@ -8,6 +8,7 @@
  *
  * Usage:
  *   tsx scripts/storyClaude.ts context <storyId>
+ *   tsx scripts/storyClaude.ts pending <journeyId>
  *   tsx scripts/storyClaude.ts save    <storyId> <pathToJson>
  *
  * The DATABASE_URL must be in the environment (load .env beforehand).
@@ -183,6 +184,26 @@ async function saveStory(storyId: string, jsonPath: string): Promise<void> {
   }, null, 2));
 }
 
+async function listPending(journeyId: string): Promise<void> {
+  const journey = await prisma.journey.findUnique({ where: { id: journeyId } });
+  if (!journey) {
+    process.stderr.write(`Journey ${journeyId} not found\n`);
+    process.exit(1);
+  }
+
+  const drafts = await prisma.journeyStory.findMany({
+    where: { journeyId, status: "draft" },
+    select: { id: true, level: true, topic: true, slotIndex: true },
+    orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
+  });
+
+  process.stdout.write(JSON.stringify({
+    journey: { id: journey.id, language: journey.language, variant: journey.variant, name: journey.name },
+    pendingCount: drafts.length,
+    pending: drafts.map((d) => ({ storyId: d.id, level: d.level, topic: d.topic, slotIndex: d.slotIndex })),
+  }, null, 2));
+}
+
 async function main() {
   const [, , cmd, ...args] = process.argv;
   if (cmd === "context") {
@@ -190,12 +211,17 @@ async function main() {
     await loadContext(args[0]);
     return;
   }
+  if (cmd === "pending") {
+    if (!args[0]) { process.stderr.write("usage: storyClaude.ts pending <journeyId>\n"); process.exit(2); }
+    await listPending(args[0]);
+    return;
+  }
   if (cmd === "save") {
     if (!args[0] || !args[1]) { process.stderr.write("usage: storyClaude.ts save <storyId> <pathToJson>\n"); process.exit(2); }
     await saveStory(args[0], args[1]);
     return;
   }
-  process.stderr.write("usage: storyClaude.ts [context|save] ...\n");
+  process.stderr.write("usage: storyClaude.ts [context|pending|save] ...\n");
   process.exit(2);
 }
 
