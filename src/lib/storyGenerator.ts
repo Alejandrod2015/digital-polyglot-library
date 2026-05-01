@@ -37,6 +37,12 @@ export type GenerateStoryParams = {
    * the lexicon, no constraints on tense, sentence length, or style.
    */
   enforceLevelVocab?: boolean;
+  /**
+   * Words flagged by a previous audit as above the requested CEFR level.
+   * When present, the prompt explicitly asks the model to avoid them and
+   * pick simpler equivalents. Closes the audit→regenerate feedback loop.
+   */
+  wordsToAvoid?: string[];
 };
 
 const MAX_GENERATION_ATTEMPTS = 3;
@@ -141,6 +147,7 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     existingTitles = [],
     usedCharacterNames = [],
     enforceLevelVocab = false,
+    wordsToAvoid = [],
   } = params;
   const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
 
@@ -149,6 +156,10 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
   const cefrLabel = cefrCode ? cefrCode.toUpperCase() : "";
   const lexicalEmphasis = enforceLevelVocab && cefrLabel
     ? `\nVocabulary level: keep EVERY word in the story body — not only the highlighted vocab items — at or below CEFR ${cefrLabel}. If a higher-level word is essential, swap it for a simpler equivalent. Do not flatten narrative tension, dialogue, or pacing — this constrains the lexicon only.`
+    : "";
+  const dedupedWordsToAvoid = Array.from(new Set(wordsToAvoid.map((w) => w.trim()).filter(Boolean))).slice(0, 40);
+  const wordsToAvoidClause = dedupedWordsToAvoid.length && cefrLabel
+    ? `\nA previous draft used these words flagged as above CEFR ${cefrLabel}. Do NOT reuse them — choose simpler equivalents that fit the level: ${dedupedWordsToAvoid.join(", ")}.`
     : "";
   const normalizedVariant = normalizeVariant(variant);
   const regionClause = region ? `, specifically from ${region}` : "";
@@ -178,7 +189,7 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
 
     const prompt = `
 You are an expert language teacher and long story writer.
-Write a long engaging story for a ${learnerProfile} learner studying ${language}${regionClause}.${lexicalEmphasis}
+Write a long engaging story for a ${learnerProfile} learner studying ${language}${regionClause}.${lexicalEmphasis}${wordsToAvoidClause}
 ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}".` : "Choose a clear, concrete topic that fits the level."}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 ${titleClause}

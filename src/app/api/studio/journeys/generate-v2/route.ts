@@ -70,6 +70,9 @@ export async function POST(request: Request) {
 
   const storyId = typeof body.storyId === "string" ? body.storyId : "";
   if (!storyId) return NextResponse.json({ error: "storyId required" }, { status: 400 });
+  const wordsToAvoid = Array.isArray(body.wordsToAvoid)
+    ? body.wordsToAvoid.filter((w): w is string => typeof w === "string" && w.trim().length > 0)
+    : [];
 
   const story = await prisma.journeyStory.findUnique({
     where: { id: storyId },
@@ -187,6 +190,7 @@ export async function POST(request: Request) {
       existingTitles,
       usedCharacterNames,
       enforceLevelVocab: true,
+      wordsToAvoid,
     });
 
     if (!payload) {

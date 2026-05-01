@@ -504,7 +504,12 @@ export default function MonitorClient() {
   async function generateStoryV2(storyId: string) {
     setBusyStories((s) => new Set(s).add(storyId));
     try {
-      const res = await fetch("/api/studio/journeys/generate-v2", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
+      // Closes the audit→regenerate loop: if this story was just audited
+      // and offenders are still on screen, send them so the prompt can
+      // explicitly avoid them in the next draft.
+      const lastAudit = auditResults.get(storyId);
+      const wordsToAvoid = lastAudit?.offenders.map((o) => o.word) ?? [];
+      const res = await fetch("/api/studio/journeys/generate-v2", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId, wordsToAvoid }) });
       const data = await res.json();
       if (!res.ok) {
         window.alert(`V2 falló: ${data.error ?? "error desconocido"}`);
@@ -514,6 +519,8 @@ export default function MonitorClient() {
       setStories((prev) => prev.map((s) => s.id === storyId
         ? { ...s, status: "generated", title: data.title ?? s.title, synopsis: data.synopsis ?? s.synopsis, slug: data.slug ?? s.slug, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: null }
         : s));
+      // The story changed — the previous audit is stale.
+      setAuditResults((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
       if (expandedStoryIds.has(storyId)) {
         const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
         if (detailRes.ok) {
