@@ -608,8 +608,12 @@ export default function MonitorClient() {
         window.alert(`Ajuste falló: ${data.error ?? "error desconocido"}`);
         return;
       }
+      if (data.noImprovement) {
+        // Endpoint kept the story unchanged — tell the user, refresh nothing.
+        window.alert("El ajuste no logró bajar el conteo de palabras fuera de nivel después de varios intentos. La historia se dejó como estaba. Probá Regenerar V2 si querés un texto distinto.");
+        return;
+      }
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, wordCount: data.wordCount ?? s.wordCount } : s));
-      // Save replacements so the panel can show before→after pairs.
       const replacements: AdjustReplacement[] = Array.isArray(data.replacements) ? data.replacements : [];
       setLastReplacements((prev) => new Map(prev).set(storyId, replacements));
       // Refresh detail with the new text.
@@ -618,25 +622,19 @@ export default function MonitorClient() {
         const detail = await detailRes.json();
         setStoryDetails((prev) => new Map(prev).set(storyId, detail));
       }
-      // Old audit is stale — the text changed.
-      setAuditResults((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
-      // Re-audit so the user sees the new score immediately.
-      setAdjustProgress((prev) => new Map(prev).set(storyId, "auditing"));
-      try {
-        const auditRes = await fetch("/api/studio/journeys/audit-level", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
-        if (auditRes.ok) {
-          const auditData = await auditRes.json();
-          setAuditResults((prev) => new Map(prev).set(storyId, {
-            cefrLevel: auditData.cefrLevel,
-            score: auditData.score,
-            totalUniqueWords: auditData.totalUniqueWords,
-            offendingCount: auditData.offendingCount,
-            offenders: auditData.offenders ?? [],
-            ranAt: Date.now(),
-          }));
-        }
-      } catch (auditErr) {
-        console.warn("[adjustLevel] re-audit failed:", auditErr);
+      // The endpoint did the audit internally and returned it — populate
+      // straight from the response, no extra round-trip from the client.
+      if (data.audit && typeof data.audit.score === "number") {
+        setAuditResults((prev) => new Map(prev).set(storyId, {
+          cefrLevel: data.audit.cefrLevel,
+          score: data.audit.score,
+          totalUniqueWords: data.audit.totalUniqueWords ?? 0,
+          offendingCount: data.audit.offendingCount,
+          offenders: data.audit.offenders ?? [],
+          ranAt: Date.now(),
+        }));
+      } else {
+        setAuditResults((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
       }
     } catch (err) {
       window.alert(`Ajuste falló: ${err}`);
