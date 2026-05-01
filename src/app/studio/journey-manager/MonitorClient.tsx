@@ -293,6 +293,10 @@ export default function MonitorClient() {
   const [showVocabIds, setShowVocabIds] = useState<Set<string>>(new Set());
   const [loadingDetailIds, setLoadingDetailIds] = useState<Set<string>>(new Set());
 
+  type LevelAuditOffender = { word: string; surface: string; estimatedLevel: string };
+  type LevelAuditData = { cefrLevel: string; score: number; totalUniqueWords: number; offendingCount: number; offenders: LevelAuditOffender[]; ranAt: number };
+  const [auditResults, setAuditResults] = useState<Map<string, LevelAuditData>>(new Map());
+
   // Confirm dialog & edit
   const [confirmAction, setConfirmAction] = useState<{ message: string; onConfirm: () => void; confirmLabel?: string; confirmColor?: string } | null>(null);
   const [editingJourneyId, setEditingJourneyId] = useState<string | null>(null);
@@ -525,6 +529,7 @@ export default function MonitorClient() {
 
   async function auditLevel(storyId: string) {
     setBusyStories((s) => new Set(s).add(storyId));
+    setExpandedStoryIds((prev) => new Set(prev).add(storyId));
     try {
       const res = await fetch("/api/studio/journeys/audit-level", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
       const data = await res.json();
@@ -532,17 +537,23 @@ export default function MonitorClient() {
         window.alert(`Audit falló: ${data.error ?? "error desconocido"}`);
         return;
       }
-      const top = (data.offenders ?? []).slice(0, 25)
-        .map((o: { word: string; surface: string; estimatedLevel: string }) =>
-          `  ${o.estimatedLevel.padEnd(2)}  ${o.surface}${o.surface.toLowerCase() !== o.word.toLowerCase() ? ` (${o.word})` : ""}`)
-        .join("\n");
-      const more = data.offendingCount > 25 ? `\n  ... +${data.offendingCount - 25} más` : "";
-      window.alert(
-        `Audit nivel ${data.cefrLevel} (${data.language})\n` +
-        `Score: ${data.score}% (${data.totalUniqueWords - data.offendingCount}/${data.totalUniqueWords} palabras dentro del nivel)\n` +
-        `Fuera de nivel: ${data.offendingCount}\n\n` +
-        (top ? `Top offenders:\n${top}${more}` : "Sin palabras fuera de nivel.")
-      );
+      setAuditResults((prev) => new Map(prev).set(storyId, {
+        cefrLevel: data.cefrLevel,
+        score: data.score,
+        totalUniqueWords: data.totalUniqueWords,
+        offendingCount: data.offendingCount,
+        offenders: data.offenders ?? [],
+        ranAt: Date.now(),
+      }));
+      // Lazy-load the story detail if it isn't loaded yet, so the audit
+      // panel renders inside the open editor.
+      if (!storyDetails.has(storyId)) {
+        const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
+        if (detailRes.ok) {
+          const detail = await detailRes.json();
+          setStoryDetails((prev) => new Map(prev).set(storyId, detail));
+        }
+      }
     } catch (err) {
       window.alert(`Audit falló: ${err}`);
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
@@ -905,6 +916,48 @@ export default function MonitorClient() {
                     )}
                   </div>
                 )}
+
+                {/* Vocabulary level audit results */}
+                {auditResults.has(s.id) && (() => {
+                  const audit = auditResults.get(s.id)!;
+                  const scoreColor = audit.score >= 90 ? "#22c55e" : audit.score >= 70 ? "#f59e0b" : "#ef4444";
+                  return (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 6, paddingTop: 4, borderTop: "1px dashed rgba(255,255,255,0.04)", marginTop: 2 }}>
+                      <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
+                        <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Nivel {audit.cefrLevel}</span>
+                        <span style={{ ...chipStyle, fontSize: 10, color: scoreColor, borderColor: scoreColor + "55", backgroundColor: scoreColor + "11", fontWeight: 600 }}>
+                          {audit.score}%
+                        </span>
+                        <span style={{ fontSize: 10, color: "var(--muted)" }}>
+                          {audit.totalUniqueWords - audit.offendingCount}/{audit.totalUniqueWords} palabras dentro del nivel · {audit.offendingCount} fuera
+                        </span>
+                        <span style={{ flex: 1 }} />
+                        <button onClick={() => setAuditResults((prev) => { const n = new Map(prev); n.delete(s.id); return n; })}
+                          style={{ ...btnSecondary, fontSize: 9, height: 18, padding: "0 6px", color: "var(--muted)", borderColor: "var(--card-border)" }}>
+                          Ocultar
+                        </button>
+                      </div>
+                      {audit.offenders.length > 0 && (
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+                          {audit.offenders.map((o, i) => {
+                            const lvlColor = o.estimatedLevel === "C2" || o.estimatedLevel === "C1" ? "#ef4444"
+                              : o.estimatedLevel === "B2" ? "#f97316"
+                              : o.estimatedLevel === "B1" ? "#f59e0b"
+                              : "#a78bfa";
+                            return (
+                              <span key={i} title={`${o.word} (lemma) — estimado ${o.estimatedLevel}`}
+                                style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 6px", borderRadius: 3, fontSize: 10, backgroundColor: lvlColor + "11", border: `1px solid ${lvlColor}44`, color: "var(--foreground)" }}>
+                                <span style={{ fontSize: 8, fontWeight: 700, color: lvlColor }}>{o.estimatedLevel}</span>
+                                <strong>{o.surface}</strong>
+                                {o.surface.toLowerCase() !== o.word.toLowerCase() && <span style={{ color: "var(--muted)" }}>({o.word})</span>}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
             </div>
 
