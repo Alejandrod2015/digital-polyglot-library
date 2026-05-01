@@ -147,6 +147,41 @@ function normalizeDailyMinutes(value: unknown): OnboardingDailyMinutes | null {
   return ALLOWED_DAILY_MINUTES.has(value) ? (value as OnboardingDailyMinutes) : null;
 }
 
+type StoredJourney = {
+  id: string;
+  language: string;
+  variant: string | null;
+  focus: string;
+  level: string | null;
+  createdAt: string;
+};
+
+function normalizeJourneysArray(value: unknown): StoredJourney[] | null {
+  if (!Array.isArray(value)) return null;
+  const out: StoredJourney[] = [];
+  const seen = new Set<string>();
+  for (const item of value) {
+    if (!item || typeof item !== "object") continue;
+    const j = item as Record<string, unknown>;
+    const id = typeof j.id === "string" && j.id.trim() ? j.id.trim() : null;
+    const language = typeof j.language === "string" && j.language.trim() ? j.language.trim() : null;
+    if (!id || !language || seen.has(id)) continue;
+    seen.add(id);
+    out.push({
+      id,
+      language,
+      variant: typeof j.variant === "string" && j.variant.trim() ? j.variant.trim() : null,
+      focus:
+        typeof j.focus === "string" && j.focus.trim()
+          ? (normalizeJourneyFocusPreference(j.focus) ?? "General")
+          : "General",
+      level: typeof j.level === "string" && j.level.trim() ? j.level.trim() : null,
+      createdAt: typeof j.createdAt === "string" ? j.createdAt : new Date().toISOString(),
+    });
+  }
+  return out;
+}
+
 function serializePreferences(metadata: Record<string, unknown>) {
   return {
     targetLanguages: isStringArray(metadata.targetLanguages)
@@ -178,6 +213,11 @@ function serializePreferences(metadata: Record<string, unknown>) {
       typeof metadata.onboardingSurveyCompletedAt === "string" ? metadata.onboardingSurveyCompletedAt : null,
     onboardingTourCompletedAt:
       typeof metadata.onboardingTourCompletedAt === "string" ? metadata.onboardingTourCompletedAt : null,
+    journeys: normalizeJourneysArray(metadata.journeys) ?? [],
+    activeJourneyId:
+      typeof metadata.activeJourneyId === "string" && metadata.activeJourneyId.trim()
+        ? metadata.activeJourneyId.trim()
+        : null,
   };
 }
 
@@ -257,9 +297,20 @@ export async function POST(req: NextRequest): Promise<Response> {
         ? null
         : undefined
     : undefined;
+  const journeys = Object.prototype.hasOwnProperty.call(payload, "journeys")
+    ? normalizeJourneysArray(payload.journeys)
+    : undefined;
+  const activeJourneyId = Object.prototype.hasOwnProperty.call(payload, "activeJourneyId")
+    ? typeof payload.activeJourneyId === "string" && payload.activeJourneyId.trim()
+      ? payload.activeJourneyId.trim()
+      : null
+    : undefined;
 
   if (targetLanguages === null || interests === null) {
     return NextResponse.json({ error: "Invalid preferences payload" }, { status: 400 });
+  }
+  if (journeys === null) {
+    return NextResponse.json({ error: "Invalid journeys payload" }, { status: 400 });
   }
 
   const user = await clerkClient.users.getUser(session.sub);
@@ -322,6 +373,16 @@ export async function POST(req: NextRequest): Promise<Response> {
   if (onboardingTourCompletedAt !== undefined) {
     if (onboardingTourCompletedAt) updatedMetadata.onboardingTourCompletedAt = onboardingTourCompletedAt;
     else delete updatedMetadata.onboardingTourCompletedAt;
+  }
+
+  if (journeys !== undefined) {
+    if (journeys.length > 0) updatedMetadata.journeys = journeys;
+    else delete updatedMetadata.journeys;
+  }
+
+  if (activeJourneyId !== undefined) {
+    if (activeJourneyId) updatedMetadata.activeJourneyId = activeJourneyId;
+    else delete updatedMetadata.activeJourneyId;
   }
 
   await clerkClient.users.updateUserMetadata(session.sub, {

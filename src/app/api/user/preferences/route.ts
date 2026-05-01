@@ -142,6 +142,41 @@ function normalizeJourneyFocusPreference(value: unknown): JourneyFocus | null {
   return match && ALLOWED_JOURNEY_FOCUSES.has(match) ? match : null;
 }
 
+type StoredJourney = {
+  id: string;
+  language: string;
+  variant: string | null;
+  focus: string;
+  level: string | null;
+  createdAt: string;
+};
+
+function normalizeJourneysArray(value: unknown): StoredJourney[] | null {
+  if (!Array.isArray(value)) return null;
+  const out: StoredJourney[] = [];
+  const seen = new Set<string>();
+  for (const item of value) {
+    if (!item || typeof item !== "object") continue;
+    const j = item as Record<string, unknown>;
+    const id = typeof j.id === "string" && j.id.trim() ? j.id.trim() : null;
+    const language = typeof j.language === "string" && j.language.trim() ? j.language.trim() : null;
+    if (!id || !language || seen.has(id)) continue;
+    seen.add(id);
+    out.push({
+      id,
+      language,
+      variant: typeof j.variant === "string" && j.variant.trim() ? j.variant.trim() : null,
+      focus:
+        typeof j.focus === "string" && j.focus.trim()
+          ? (normalizeJourneyFocusPreference(j.focus) ?? "General")
+          : "General",
+      level: typeof j.level === "string" && j.level.trim() ? j.level.trim() : null,
+      createdAt: typeof j.createdAt === "string" ? j.createdAt : new Date().toISOString(),
+    });
+  }
+  return out;
+}
+
 function normalizeDailyMinutes(value: unknown): OnboardingDailyMinutes | null {
   if (typeof value !== "number" || !Number.isFinite(value)) return null;
   return ALLOWED_DAILY_MINUTES.has(value) ? (value as OnboardingDailyMinutes) : null;
@@ -168,6 +203,8 @@ export async function POST(req: Request) {
     const hasJourneyPlacementLevel = Object.prototype.hasOwnProperty.call(body ?? {}, "journeyPlacementLevel");
     const hasOnboardingSurveyCompletedAt = Object.prototype.hasOwnProperty.call(body ?? {}, "onboardingSurveyCompletedAt");
     const hasOnboardingTourCompletedAt = Object.prototype.hasOwnProperty.call(body ?? {}, "onboardingTourCompletedAt");
+    const hasJourneys = Object.prototype.hasOwnProperty.call(body ?? {}, "journeys");
+    const hasActiveJourneyId = Object.prototype.hasOwnProperty.call(body ?? {}, "activeJourneyId");
     const targetLanguages = body?.targetLanguages;
     const interests = body?.interests;
     const preferredLevel = body?.preferredLevel;
@@ -226,6 +263,23 @@ export async function POST(req: Request) {
     }
     if (hasOnboardingTourCompletedAt && onboardingTourCompletedAt !== null && typeof onboardingTourCompletedAt !== "string") {
       return NextResponse.json({ error: "Invalid onboardingTourCompletedAt: expected string|null" }, { status: 400 });
+    }
+    const journeysInput = body?.journeys;
+    const activeJourneyIdInput = body?.activeJourneyId;
+    let validatedJourneys: StoredJourney[] | undefined;
+    if (hasJourneys) {
+      const normalized = normalizeJourneysArray(journeysInput);
+      if (normalized === null) {
+        return NextResponse.json({ error: "Invalid journeys: expected Array<Journey>" }, { status: 400 });
+      }
+      validatedJourneys = normalized;
+    }
+    let validatedActiveJourneyId: string | null | undefined;
+    if (hasActiveJourneyId) {
+      if (activeJourneyIdInput === null) validatedActiveJourneyId = null;
+      else if (typeof activeJourneyIdInput === "string") validatedActiveJourneyId = activeJourneyIdInput.trim() || null;
+      else
+        return NextResponse.json({ error: "Invalid activeJourneyId: expected string|null" }, { status: 400 });
     }
 
     // 1) Leer metadatos actuales
@@ -375,6 +429,15 @@ export async function POST(req: Request) {
       delete updatedMetadata.onboardingTourCompletedAt;
     }
 
+    if (validatedJourneys !== undefined) {
+      if (validatedJourneys.length > 0) updatedMetadata.journeys = validatedJourneys;
+      else delete updatedMetadata.journeys;
+    }
+    if (validatedActiveJourneyId !== undefined) {
+      if (validatedActiveJourneyId) updatedMetadata.activeJourneyId = validatedActiveJourneyId;
+      else delete updatedMetadata.activeJourneyId;
+    }
+
     await clerkClient.users.updateUserMetadata(userId, {
       publicMetadata: updatedMetadata,
     });
@@ -414,6 +477,11 @@ export async function POST(req: Request) {
       typeof finalMeta.onboardingSurveyCompletedAt === "string" ? finalMeta.onboardingSurveyCompletedAt : null;
     const finalOnboardingTourCompletedAt =
       typeof finalMeta.onboardingTourCompletedAt === "string" ? finalMeta.onboardingTourCompletedAt : null;
+    const finalJourneys = normalizeJourneysArray(finalMeta.journeys) ?? [];
+    const finalActiveJourneyId =
+      typeof finalMeta.activeJourneyId === "string" && finalMeta.activeJourneyId.trim()
+        ? finalMeta.activeJourneyId.trim()
+        : null;
 
     return new NextResponse(
       JSON.stringify({
@@ -430,6 +498,8 @@ export async function POST(req: Request) {
         journeyPlacementLevel: finalJourneyPlacementLevel,
         onboardingSurveyCompletedAt: finalOnboardingSurveyCompletedAt,
         onboardingTourCompletedAt: finalOnboardingTourCompletedAt,
+        journeys: finalJourneys,
+        activeJourneyId: finalActiveJourneyId,
       }),
       {
       status: 200,

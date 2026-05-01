@@ -544,7 +544,7 @@ const getStudioJourneysForLanguage = unstable_cache(
       },
     });
   },
-  ["studio-journeys-by-language-v3"],
+  ["studio-journeys-by-language-v4"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -594,84 +594,73 @@ async function buildJourneyVariantsFromStudio(
   const resolveTopicLabel = (slug: string) =>
     topicLabelBySlug[slug.toLowerCase()] ?? prettifyTopicLabel(slug);
 
-  // Include every Studio journey, even if no stories have been published yet.
-  // The mobile UI is meant to mirror the Studio plan — empty topics show as
-  // "Aún no hay historias" placeholders rather than disappearing.
-  const variantGroups = new Map<string, typeof journeys>();
-  for (const j of journeys) {
-    const v = (j.variant ?? "").trim().toLowerCase();
-    if (!v) continue;
-    if (!variantGroups.has(v)) variantGroups.set(v, []);
-    variantGroups.get(v)!.push(j);
-  }
-
+  // ONE TRACK PER STUDIO JOURNEY RECORD. We used to group journeys by
+  // variant code (e.g. "italy") and merge their stories into a single
+  // ladder — but that hid the fact that "Viajero" and "Conversacional"
+  // are separate curated tracks. The mobile picker now exposes each
+  // Journey record as its own option, labeled with `Journey.name`.
   const tracks: JourneyVariantTrack[] = [];
-  for (const [variantId, group] of Array.from(variantGroups.entries()).sort(([a], [b]) =>
-    sortVariants(a, b)
-  )) {
+  for (const journey of journeys) {
     const levelMap = new Map<string, Map<string, JourneyStoryItem[]>>();
 
-    // Seed topic slots per level using the order the user defined in Studio
-    // (Journey.topics[] and Journey.levels[]). Each topic only seats itself at
-    // its own `defaultLevel` (e.g. food-everyday-life is a1, work-study is b1)
-    // so the scaffold reflects the planned curriculum: A1 only shows A1 topics,
-    // not all 22 of them. JS Maps preserve insertion order, so pre-creating
-    // entries here is enough to freeze the topic order before any stories are
-    // pushed below.
-    for (const journey of group) {
-      const levelSlugs = (journey.levels ?? []).map((level) => level.trim().toLowerCase()).filter(Boolean);
-      const topicSlugsInOrder = (journey.topics ?? []).map((t) => t.trim().toLowerCase()).filter(Boolean);
-      const journeyLevelSet = new Set(levelSlugs);
-      for (const levelId of levelSlugs) {
-        if (!levelMap.has(levelId)) levelMap.set(levelId, new Map());
-      }
-      for (const topicSlug of topicSlugsInOrder) {
-        const defaultLevel = topicDefaultLevelBySlug[topicSlug];
-        if (!defaultLevel || !journeyLevelSet.has(defaultLevel)) continue;
-        const topicMap = levelMap.get(defaultLevel)!;
-        if (!topicMap.has(topicSlug)) topicMap.set(topicSlug, []);
-      }
+    // Seed topic slots per level using the order the user defined in
+    // Studio (Journey.topics[] and Journey.levels[]). Each topic seats
+    // itself at its `defaultLevel` so the scaffold reflects the
+    // planned curriculum.
+    const levelSlugs = (journey.levels ?? [])
+      .map((level) => level.trim().toLowerCase())
+      .filter(Boolean);
+    const topicSlugsInOrder = (journey.topics ?? [])
+      .map((t) => t.trim().toLowerCase())
+      .filter(Boolean);
+    const journeyLevelSet = new Set(levelSlugs);
+    for (const levelId of levelSlugs) {
+      if (!levelMap.has(levelId)) levelMap.set(levelId, new Map());
+    }
+    for (const topicSlug of topicSlugsInOrder) {
+      const defaultLevel = topicDefaultLevelBySlug[topicSlug];
+      if (!defaultLevel || !journeyLevelSet.has(defaultLevel)) continue;
+      const topicMap = levelMap.get(defaultLevel)!;
+      if (!topicMap.has(topicSlug)) topicMap.set(topicSlug, []);
     }
 
-    for (const journey of group) {
-      for (const story of journey.stories) {
-        if (!story.text || !story.title || !story.slug) continue;
-        const levelId = story.level.trim().toLowerCase();
-        const topicSlug = story.topic.trim().toLowerCase();
-        if (!levelId || !topicSlug) continue;
+    for (const story of journey.stories) {
+      if (!story.text || !story.title || !story.slug) continue;
+      const levelId = story.level.trim().toLowerCase();
+      const topicSlug = story.topic.trim().toLowerCase();
+      if (!levelId || !topicSlug) continue;
 
-        if (!levelMap.has(levelId)) levelMap.set(levelId, new Map());
-        const topicMap = levelMap.get(levelId)!;
-        if (!topicMap.has(topicSlug)) topicMap.set(topicSlug, []);
+      if (!levelMap.has(levelId)) levelMap.set(levelId, new Map());
+      const topicMap = levelMap.get(levelId)!;
+      if (!topicMap.has(topicSlug)) topicMap.set(topicSlug, []);
 
-        const levelLabel = journeyLevelMeta[levelId as CefrLevel]?.title ?? levelId.toUpperCase();
-        const storySlug = story.slug;
-        const item: JourneyStoryItem = {
-          id: `journey:${story.id}`,
-          progressKey: `standalone:${storySlug}`,
-          storySlug,
-          sourcePath: `/stories/${storySlug}`,
-          title: story.title,
-          href: `/stories/${storySlug}`,
-          coverUrl: story.coverUrl ?? undefined,
-          language: journey.language,
-          region: journey.variant,
-          variant: journey.variant,
-          journeyFocus: "General",
-          levelLabel: CEFR_LEVEL_LABELS[levelId as CefrLevel] ?? levelLabel,
-          topicLabel: resolveTopicLabel(topicSlug),
-          text: story.text ?? undefined,
-          vocabItems: Array.isArray(story.vocab) ? (story.vocab as unknown as VocabItem[]) : undefined,
-        };
-        topicMap.get(topicSlug)!.push(item);
-      }
+      const levelLabel = journeyLevelMeta[levelId as CefrLevel]?.title ?? levelId.toUpperCase();
+      const storySlug = story.slug;
+      const item: JourneyStoryItem = {
+        id: `journey:${story.id}`,
+        progressKey: `standalone:${storySlug}`,
+        storySlug,
+        sourcePath: `/stories/${storySlug}`,
+        title: story.title,
+        href: `/stories/${storySlug}`,
+        coverUrl: story.coverUrl ?? undefined,
+        language: journey.language,
+        region: journey.variant,
+        variant: journey.variant,
+        journeyFocus: "General",
+        levelLabel: CEFR_LEVEL_LABELS[levelId as CefrLevel] ?? levelLabel,
+        topicLabel: resolveTopicLabel(topicSlug),
+        text: story.text ?? undefined,
+        vocabItems: Array.isArray(story.vocab) ? (story.vocab as unknown as VocabItem[]) : undefined,
+      };
+      topicMap.get(topicSlug)!.push(item);
     }
 
     const levels: JourneyLevel[] = [];
-    // Emit levels in canonical CEFR order so the UI matches the curriculum sequence.
-    // Empty topics and empty levels are kept so the Studio plan (Journey.levels[]
-    // and Journey.topics[]) is fully reflected on mobile, with placeholders for
-    // unpublished slots.
+    // Emit levels in canonical CEFR order so the UI matches the
+    // curriculum sequence. Empty topics and empty levels are kept so
+    // the Studio plan (Journey.levels[] and Journey.topics[]) is fully
+    // reflected on mobile, with placeholders for unpublished slots.
     for (const levelId of JOURNEY_LEVEL_IDS) {
       const topicMap = levelMap.get(levelId);
       if (!topicMap || topicMap.size === 0) continue;
@@ -697,24 +686,22 @@ async function buildJourneyVariantsFromStudio(
 
     if (levels.length === 0) continue;
 
-    // Prefer the Studio Journey record's `name` (e.g. "Conversational",
-    // "Traveler") so the mobile picker shows the actual journey, not
-    // just a variant code like "ITALY". When several Journey records
-    // share a variant we join their names; if names are missing we
-    // fall back to the regional variant label.
-    const groupNames = group
-      .map((j) => (j.name ?? "").trim())
-      .filter(Boolean);
-    const trackLabel = groupNames.length > 0
-      ? Array.from(new Set(groupNames)).join(" · ")
-      : formatVariantLabel(variantId) ?? variantId.toUpperCase();
+    const trackLabel =
+      (journey.name ?? "").trim() ||
+      formatVariantLabel((journey.variant ?? "").trim().toLowerCase()) ||
+      (journey.variant ?? "").trim().toUpperCase() ||
+      "Journey";
 
     tracks.push({
-      id: variantId,
+      id: journey.id,
       label: trackLabel,
       levels,
     });
   }
+
+  // Sort by variant first, then by Journey.createdAt, so the order is
+  // stable and groups regional variants together for the picker.
+  tracks.sort((a, b) => a.label.localeCompare(b.label));
 
   return tracks;
 }
