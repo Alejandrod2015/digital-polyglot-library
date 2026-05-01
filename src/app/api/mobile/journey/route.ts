@@ -70,25 +70,46 @@ export async function GET(req: NextRequest): Promise<Response> {
       getJourneyDueReviewItems(200, session.sub),
     ]);
 
-  // SAFETY NET: si el usuario tiene `journeyPlacementLevel` set pero todavía
-  // no ha terminado ni una sola historia (no hay events `audio_complete` ni
-  // `continue_listening` >= 95%), el placement no aporta — solo está
-  // marcando como `skipped` los niveles inferiores y empujando la "next"
-  // hacia abajo. En ese caso lo limpiamos en Clerk y servimos la respuesta
-  // sin placement. Self-healing: cualquier futura request ya verá
+  // SAFETY NET: si el usuario tiene `journeyPlacementLevel` set pero
+  // todavía no ha terminado ni una sola historia EN EL IDIOMA ACTUAL,
+  // el placement no aporta — solo está marcando como `skipped` los
+  // niveles inferiores y empujando la "next" hacia abajo. En ese caso
+  // lo limpiamos en Clerk y servimos la respuesta sin placement.
+  // Self-healing: cualquier futura request ya verá
   // `journeyPlacementLevel = null` desde Clerk.
+  //
+  // Nota importante: comparamos contra los progressKeys de las
+  // historias DEL TRACK ACTUAL (filtradas por idioma). El set
+  // `completedStoryKeys` es global (incluye todos los idiomas), así
+  // que un usuario con progreso en otros idiomas pero 0 en este sigue
+  // disparando el self-heal.
   let journeyPlacementLevel = rawJourneyPlacementLevel;
-  if (journeyPlacementLevel && completedStoryKeys.size === 0) {
-    try {
-      const updatedMetadata: Record<string, unknown> = { ...(user.publicMetadata ?? {}) };
-      delete updatedMetadata.journeyPlacementLevel;
-      await clerkClient.users.updateUserMetadata(session.sub, {
-        publicMetadata: updatedMetadata,
-      });
-      journeyPlacementLevel = null;
-    } catch {
-      // Best-effort: si Clerk falla, simplemente seguimos con el valor
-      // actual; la próxima request volverá a intentar.
+  if (journeyPlacementLevel) {
+    let hasProgressInThisLanguage = false;
+    outer: for (const track of rawTracks) {
+      for (const level of track.levels) {
+        for (const topic of level.topics) {
+          for (const story of topic.stories) {
+            if (completedStoryKeys.has(story.progressKey)) {
+              hasProgressInThisLanguage = true;
+              break outer;
+            }
+          }
+        }
+      }
+    }
+    if (!hasProgressInThisLanguage) {
+      try {
+        const updatedMetadata: Record<string, unknown> = { ...(user.publicMetadata ?? {}) };
+        delete updatedMetadata.journeyPlacementLevel;
+        await clerkClient.users.updateUserMetadata(session.sub, {
+          publicMetadata: updatedMetadata,
+        });
+        journeyPlacementLevel = null;
+      } catch {
+        // Best-effort: si Clerk falla, simplemente seguimos con el valor
+        // actual; la próxima request volverá a intentar.
+      }
     }
   }
   // Variable kept under the original name so the rest of the route reads
