@@ -4,18 +4,11 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateSlug } from "@/agents/content/tools";
 import { generateStoryPayload } from "@/lib/storyGenerator";
+import { extractCharacterNames, findSimilarSynopsis } from "@/lib/storyDedupe";
 import { VARIANT_LABELS, type LanguageVariant } from "@domain/languageVariant";
 
 export const maxDuration = 60;
 
-/**
- * Per-language regional anchors for V2. Same data as V1 — V2 only differs
- * in the prompt-time level guidance (vocabulary frequency, allowed tenses,
- * sentence length) and the level-appropriate word-count targets, both of
- * which live inside `generateStoryPayload` behind the `useLevelGuidance`
- * flag. Everything else (title flow, synopsis, vocab pipeline) is shared
- * with V1 so the saved JourneyStory shape is identical.
- */
 function getDetailedRegionDescription(variant?: string, language?: string): string {
   if (!variant) return "";
   const normalizedVariant = variant.trim().toLowerCase() as LanguageVariant;
@@ -56,14 +49,9 @@ function getDetailedRegionDescription(variant?: string, language?: string): stri
 /**
  * POST /api/studio/journeys/generate-v2
  *
- * V2 generator. Same shape as V1 (`/api/studio/journeys/generate`), same
- * vocab/title/synopsis pipeline — the only difference is that V2 turns on
- * `useLevelGuidance` inside `generateStoryPayload`, which injects strict
- * per-CEFR-level constraints into the prompt and shrinks/expands the
- * word-count target so A1 stories actually feel A1, A2 actually feel A2,
- * etc. Works for any language/level combination — the guidance is
- * language-agnostic and the LLM applies the constraint to the target
- * language without per-language wordlists or regex.
+ * Scratch endpoint for iterating on the story generator without touching V1.
+ * Currently identical to /api/studio/journeys/generate — V2-specific changes
+ * land here.
  *
  * Body: { storyId }
  */
@@ -96,25 +84,33 @@ export async function POST(request: Request) {
 
   try {
     const existingStories = await prisma.journeyStory.findMany({
-      where: { journeyId: story.journeyId, title: { not: null } },
-      select: { title: true, text: true, topic: true },
+      where: { journeyId: story.journeyId, title: { not: null }, id: { not: storyId } },
+      select: { title: true, text: true, topic: true, synopsis: true },
     });
     const existingTitles = existingStories.map((s) => s.title).filter(Boolean) as string[];
 
-    const sameTopicStories = existingStories.filter((s) => s.topic === story.topic && s.text);
-    const usedNames = new Set<string>();
-    for (const s of sameTopicStories) {
-      const matches = (s.text ?? "").match(/\b[A-Z][a-zà-ü]+(?:\s+[A-Z][a-zà-ü]+)?\b/g) ?? [];
-      const stop = new Set(["The", "This", "That", "She", "Her", "His", "They", "But", "And", "One", "When", "After", "Before", "Der", "Die", "Das", "Ein", "Eine", "Und", "Sie", "Ich", "Wir"]);
-      for (const m of matches) { if (!stop.has(m)) usedNames.add(m); }
-    }
-    const usedCharacterNames = [...usedNames].slice(0, 30);
+    // V2 extracts character names with an LLM call across the WHOLE journey
+    // (not just same-topic) so day-of-week / place / brand tokens don't leak
+    // in as false positives the way the regex did. Cross-topic dedupe is
+    // important because the same character popping up across topics within
+    // a journey is what the regex couldn't catch.
+    type ExistingRow = { title: string | null; text: string | null; topic: string; synopsis: string | null };
+    const journeyTexts: string[] = (existingStories as ExistingRow[])
+      .map((s) => s.text ?? "")
+      .filter((t) => t.length > 0);
+    const usedCharacterNames = await extractCharacterNames({
+      texts: journeyTexts,
+      language: story.journey.language,
+      limit: 30,
+    });
+
+    const existingSynopsesForJudge = (existingStories as ExistingRow[])
+      .map((s) => ({ title: s.title ?? "", synopsis: s.synopsis ?? "" }))
+      .filter((s) => s.synopsis.length > 0);
 
     const origin = new URL(request.url).origin;
     const detailedRegion = getDetailedRegionDescription(story.journey.variant, story.journey.language);
 
-    // Title and synopsis use the same dedicated endpoints as V1 so the
-    // cultural anchor is identical between the two paths.
     const titleRes = await fetch(`${origin}/api/generate-title`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
@@ -122,9 +118,6 @@ export async function POST(request: Request) {
         language: story.journey.language,
         region: detailedRegion || story.journey.variant,
         topic: story.topic,
-        // Pass the in-progress journey titles so the title endpoint
-        // knows what's already been used in this journey and can avoid
-        // canonical-anchor groove ("Cacio e Pepe a Trastevere" every time).
         extraExistingTitles: existingTitles,
       }),
     });
@@ -136,29 +129,52 @@ export async function POST(request: Request) {
     const title = typeof titleData.result === "string" ? titleData.result.trim() : "";
     if (!title) throw new Error("generate-title returned empty title");
 
+    // Synopsis with up to 2 narrative-overlap retries. The judge compares the
+    // candidate synopsis against every prior synopsis in the journey; if it
+    // detects shared CONFLICT or PAYOFF (not just shared setting), we ask
+    // generate-synopsis for another with the rejection reason as feedback.
     let synopsis = "";
-    try {
-      const synopsisRes = await fetch(`${origin}/api/generate-synopsis`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
-        body: JSON.stringify({
-          title,
-          language: story.journey.language,
-          variant: story.journey.variant,
-          region: detailedRegion || story.journey.variant,
-          cefrLevel: story.level,
-          topic: story.topic,
-        }),
-      });
-      if (synopsisRes.ok) {
+    let synopsisFeedback = "";
+    const MAX_SYNOPSIS_ATTEMPTS = 3;
+    for (let attempt = 0; attempt < MAX_SYNOPSIS_ATTEMPTS; attempt += 1) {
+      try {
+        const synopsisRes = await fetch(`${origin}/api/generate-synopsis`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+          body: JSON.stringify({
+            title,
+            language: story.journey.language,
+            variant: story.journey.variant,
+            region: detailedRegion || story.journey.variant,
+            cefrLevel: story.level,
+            topic: story.topic,
+            extraExistingSynopses: existingSynopsesForJudge,
+            previousAttemptFeedback: synopsisFeedback || undefined,
+          }),
+        });
+        if (!synopsisRes.ok) break;
         const data = await synopsisRes.json();
-        synopsis = data.result?.trim() ?? "";
+        const candidate = data.result?.trim() ?? "";
+        if (!candidate) break;
+        const judgement = await findSimilarSynopsis({
+          newSynopsis: candidate,
+          existingSynopses: existingSynopsesForJudge,
+          language: story.journey.language,
+        });
+        if (!judgement.isSimilar) {
+          synopsis = candidate;
+          break;
+        }
+        synopsisFeedback = `Too similar to "${judgement.conflictingTitle ?? "another story"}": ${judgement.reason ?? "shared narrative arc"}.`;
+        // On the last attempt, accept the candidate even if similar — better
+        // a slightly overlapping synopsis than no synopsis at all.
+        if (attempt === MAX_SYNOPSIS_ATTEMPTS - 1) synopsis = candidate;
+      } catch (e) {
+        console.warn("[generate-v2] synopsis generation failed:", e);
+        break;
       }
-    } catch (e) {
-      console.warn("[generate-v2] synopsis generation failed:", e);
     }
 
-    // The single difference vs V1: useLevelGuidance: true.
     const payload = await generateStoryPayload({
       language: story.journey.language,
       variant: story.journey.variant,
@@ -170,7 +186,7 @@ export async function POST(request: Request) {
       synopsis,
       existingTitles,
       usedCharacterNames,
-      useLevelGuidance: true,
+      enforceLevelVocab: true,
     });
 
     if (!payload) {

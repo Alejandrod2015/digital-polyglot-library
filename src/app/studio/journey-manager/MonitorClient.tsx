@@ -523,6 +523,31 @@ export default function MonitorClient() {
   }
 
 
+  async function auditLevel(storyId: string) {
+    setBusyStories((s) => new Set(s).add(storyId));
+    try {
+      const res = await fetch("/api/studio/journeys/audit-level", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
+      const data = await res.json();
+      if (!res.ok) {
+        window.alert(`Audit falló: ${data.error ?? "error desconocido"}`);
+        return;
+      }
+      const top = (data.offenders ?? []).slice(0, 25)
+        .map((o: { word: string; surface: string; estimatedLevel: string }) =>
+          `  ${o.estimatedLevel.padEnd(2)}  ${o.surface}${o.surface.toLowerCase() !== o.word.toLowerCase() ? ` (${o.word})` : ""}`)
+        .join("\n");
+      const more = data.offendingCount > 25 ? `\n  ... +${data.offendingCount - 25} más` : "";
+      window.alert(
+        `Audit nivel ${data.cefrLevel} (${data.language})\n` +
+        `Score: ${data.score}% (${data.totalUniqueWords - data.offendingCount}/${data.totalUniqueWords} palabras dentro del nivel)\n` +
+        `Fuera de nivel: ${data.offendingCount}\n\n` +
+        (top ? `Top offenders:\n${top}${more}` : "Sin palabras fuera de nivel.")
+      );
+    } catch (err) {
+      window.alert(`Audit falló: ${err}`);
+    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
+  }
+
   async function publishStory(storyId: string) {
     setBusyStories((s) => new Set(s).add(storyId));
     try {
@@ -1241,6 +1266,13 @@ export default function MonitorClient() {
                                             })}
                                               style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
                                               Regenerar texto
+                                            </button>
+                                          )}
+                                          {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
+                                            <button onClick={() => void auditLevel(s.id)}
+                                              title={`Auditar el texto de la historia para ver qué % de palabras está dentro del nivel ${s.level.toUpperCase()}`}
+                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
+                                              Auditar nivel
                                             </button>
                                           )}
                                           {s.title && s.status !== "draft" && !busyStories.has(s.id) && (

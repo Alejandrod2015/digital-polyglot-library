@@ -17,6 +17,17 @@ type Body = {
   level?: string;
   focus?: string;
   topic?: string;
+  /**
+   * Caller-supplied list of synopses already used in the same journey.
+   * When present, the prompt asks the model to avoid the same narrative
+   * arc (not just the same setting). Used by the V2 generator.
+   */
+  extraExistingSynopses?: { title?: string; synopsis?: string }[];
+  /**
+   * Optional feedback from a prior failed similarity check. Surfaced to
+   * the model so the next attempt rotates the conflict/payoff.
+   */
+  previousAttemptFeedback?: string;
 };
 
 export async function POST(req: Request) {
@@ -36,6 +47,17 @@ export async function POST(req: Request) {
     const topic = typeof body.topic === "string" ? body.topic.trim() : "";
     const learnerProfile = cefrPromptLabel(cefrLevel, level);
     const variantClause = buildVariantPromptClause(language, normalizeVariant(variant));
+    const extraExistingSynopses = Array.isArray(body.extraExistingSynopses)
+      ? body.extraExistingSynopses
+          .map((s) => ({
+            title: typeof s?.title === "string" ? s.title.trim() : "",
+            synopsis: typeof s?.synopsis === "string" ? s.synopsis.trim() : "",
+          }))
+          .filter((s) => s.synopsis.length > 0)
+      : [];
+    const previousAttemptFeedback = typeof body.previousAttemptFeedback === "string"
+      ? body.previousAttemptFeedback.trim()
+      : "";
 
     if (!title) {
       return NextResponse.json({ error: "Missing title" }, { status: 400, headers: corsHeaders });
@@ -43,6 +65,12 @@ export async function POST(req: Request) {
 
     const regionClause = region ? ` Set it specifically in ${region}.` : "";
     const topicClause = topic ? ` The topic is "${topic}".` : "";
+    const existingSynopsesBlock = extraExistingSynopses.length
+      ? `\n\n# Other synopses already in this journey — pick a DIFFERENT narrative arc\nDo NOT repeat the same conflict, the same payoff, or the same emotional shape as any of these. Sharing the setting is fine; sharing the STORY is not.\n${extraExistingSynopses.slice(0, 20).map((s, i) => `[${i + 1}] "${s.title || "(untitled)"}" — ${s.synopsis}`).join("\n")}`
+      : "";
+    const previousFeedbackBlock = previousAttemptFeedback
+      ? `\n\n# Previous attempt was rejected as too similar\nReason: ${previousAttemptFeedback}\nRotate the conflict OR the payoff (not just the setting): change what the character WANTS, what BLOCKS them, or how it RESOLVES.`
+      : "";
 
     const prompt = `
 # Your task
@@ -100,7 +128,7 @@ ${regionClause ? `- ${regionClause.trim()}` : ""}
 ${topicClause ? `- ${topicClause.trim()} (remember: if the topic clashes with the title anchor, REINTERPRET the topic to fit the anchor)` : ""}
 ${variantClause ? `- ${variantClause.trim()}` : ""}
 - Learning focus: "${focus}"
-- Learner level: ${learnerProfile}
+- Learner level: ${learnerProfile}${existingSynopsesBlock}${previousFeedbackBlock}
 `;
 
     const response = await openai.chat.completions.create({
