@@ -31,13 +31,6 @@ export type GenerateStoryParams = {
   existingTitles?: string[];
   usedCharacterNames?: string[];
   /**
-   * V2 opt-in. When true, adds one short line to the prompt asking the
-   * model to keep the entire story body within the requested CEFR level
-   * (not just the highlighted vocab items). Intentionally narrow: only
-   * the lexicon, no constraints on tense, sentence length, or style.
-   */
-  enforceLevelVocab?: boolean;
-  /**
    * Words flagged by a previous audit as above the requested CEFR level.
    * When present, the prompt explicitly asks the model to avoid them and
    * pick simpler equivalents. Closes the audit→regenerate feedback loop.
@@ -146,7 +139,6 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     synopsis = "",
     existingTitles = [],
     usedCharacterNames = [],
-    enforceLevelVocab = false,
     wordsToAvoid = [],
   } = params;
   const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
@@ -154,7 +146,11 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
   const learnerProfile = cefrPromptLabel(cefrLevel, level);
   const cefrCode = resolveCefrLevel(cefrLevel, level);
   const cefrLabel = cefrCode ? cefrCode.toUpperCase() : "";
-  const lexicalEmphasis = enforceLevelVocab && cefrLabel
+  // Lexical constraint applies on every generation: keep the whole story
+  // body — not only the highlighted vocab items — within the target CEFR
+  // level. Narrow on purpose: lexicon only, no constraints on tense,
+  // sentence length, or style.
+  const lexicalEmphasis = cefrLabel
     ? `\nVocabulary level: keep EVERY word in the story body — not only the highlighted vocab items — at or below CEFR ${cefrLabel}. If a higher-level word is essential, swap it for a simpler equivalent. Do not flatten narrative tension, dialogue, or pacing — this constrains the lexicon only.`
     : "";
   const dedupedWordsToAvoid = Array.from(new Set(wordsToAvoid.map((w) => w.trim()).filter(Boolean))).slice(0, 40);

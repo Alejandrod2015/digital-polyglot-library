@@ -4,6 +4,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateSlug } from "@/agents/content/tools";
 import { generateStoryPayload } from "@/lib/storyGenerator";
+import { extractCharacterNames, findSimilarSynopsis } from "@/lib/storyDedupe";
 import { VARIANT_LABELS, type LanguageVariant } from "@domain/languageVariant";
 
 export const maxDuration = 60;
@@ -47,8 +48,17 @@ function getDetailedRegionDescription(variant?: string, language?: string): stri
 
 /**
  * POST /api/studio/journeys/generate
- * Body: { storyId } — generates content for a JourneyStory slot
- * Uses the same high-quality Sanity story generator.
+ *
+ * Generates the full content for a JourneyStory slot:
+ *   1. Title (cultural-anchor aware, dedupes against existing journey titles).
+ *   2. Synopsis (with up to 3 attempts; an LLM judge rejects synopses that
+ *      share narrative arc with prior synopses in the journey).
+ *   3. Story body + vocab (level-aware prompt, character names extracted by
+ *      LLM across the whole journey to avoid reuse).
+ *
+ * Body: { storyId, wordsToAvoid? }
+ *   - wordsToAvoid: optional list of lemmas the prompt should explicitly
+ *     avoid (used by the audit→regenerate loop, see auditLevel in Studio).
  */
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -58,13 +68,16 @@ export async function POST(request: Request) {
   if (!email || !(await isStudioMember(email)))
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
-  let body: Record<string, any>;
+  let body: Record<string, unknown> = {};
   try { body = await request.json(); } catch {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
 
-  const { storyId } = body;
+  const storyId = typeof body.storyId === "string" ? body.storyId : "";
   if (!storyId) return NextResponse.json({ error: "storyId required" }, { status: 400 });
+  const wordsToAvoid = Array.isArray(body.wordsToAvoid)
+    ? body.wordsToAvoid.filter((w): w is string => typeof w === "string" && w.trim().length > 0)
+    : [];
 
   const story = await prisma.journeyStory.findUnique({
     where: { id: storyId },
@@ -72,33 +85,38 @@ export async function POST(request: Request) {
   });
   if (!story) return NextResponse.json({ error: "Story not found" }, { status: 404 });
 
-  // Mark as generating
   await prisma.journeyStory.update({
     where: { id: storyId },
     data: { status: "generated", error: null },
   });
 
   try {
-    // Get existing titles + character names from same topic to avoid repetition
     const existingStories = await prisma.journeyStory.findMany({
-      where: { journeyId: story.journeyId, title: { not: null } },
-      select: { title: true, text: true, topic: true },
+      where: { journeyId: story.journeyId, title: { not: null }, id: { not: storyId } },
+      select: { title: true, text: true, topic: true, synopsis: true },
     });
     const existingTitles = existingStories.map((s) => s.title).filter(Boolean) as string[];
 
-    const sameTopicStories = existingStories.filter((s) => s.topic === story.topic && s.text);
-    const usedNames = new Set<string>();
-    for (const s of sameTopicStories) {
-      const matches = (s.text ?? "").match(/\b[A-Z][a-zà-ü]+(?:\s+[A-Z][a-zà-ü]+)?\b/g) ?? [];
-      const stop = new Set(["The", "This", "That", "She", "Her", "His", "They", "But", "And", "One", "When", "After", "Before", "Der", "Die", "Das", "Ein", "Eine", "Und", "Sie", "Ich", "Wir"]);
-      for (const m of matches) { if (!stop.has(m)) usedNames.add(m); }
-    }
-    const usedCharacterNames = [...usedNames].slice(0, 30);
+    // LLM-extracted character names across the whole journey so reuse is
+    // detected cross-topic, and tokens like "Trastevere" or "Lunedì" don't
+    // leak in as false-positive person names the way the old regex did.
+    type ExistingRow = { title: string | null; text: string | null; topic: string; synopsis: string | null };
+    const journeyTexts: string[] = (existingStories as ExistingRow[])
+      .map((s) => s.text ?? "")
+      .filter((t) => t.length > 0);
+    const usedCharacterNames = await extractCharacterNames({
+      texts: journeyTexts,
+      language: story.journey.language,
+      limit: 30,
+    });
+
+    const existingSynopsesForJudge = (existingStories as ExistingRow[])
+      .map((s) => ({ title: s.title ?? "", synopsis: s.synopsis ?? "" }))
+      .filter((s) => s.synopsis.length > 0);
 
     const origin = new URL(request.url).origin;
     const detailedRegion = getDetailedRegionDescription(story.journey.variant, story.journey.language);
 
-    // STEP 1: Generate the title first using the dedicated endpoint (gpt-4o + strict cultural rules)
     const titleRes = await fetch(`${origin}/api/generate-title`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
@@ -106,9 +124,6 @@ export async function POST(request: Request) {
         language: story.journey.language,
         region: detailedRegion || story.journey.variant,
         topic: story.topic,
-        // Pass the in-progress journey titles so the title endpoint
-        // doesn't keep picking the canonical anchor for the region/topic
-        // every time within the same journey.
         extraExistingTitles: existingTitles,
       }),
     });
@@ -120,30 +135,52 @@ export async function POST(request: Request) {
     const title = typeof titleData.result === "string" ? titleData.result.trim() : "";
     if (!title) throw new Error("generate-title returned empty title");
 
-    // STEP 2: Generate synopsis using the title (so it's coherent with the specific cultural anchor)
+    // Synopsis with up to 3 narrative-overlap retries. The judge compares
+    // the candidate against every prior synopsis in the journey; if it
+    // detects shared CONFLICT or PAYOFF (not just setting), we ask for
+    // another with the rejection reason as feedback.
     let synopsis = "";
-    try {
-      const synopsisRes = await fetch(`${origin}/api/generate-synopsis`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
-        body: JSON.stringify({
-          title,
-          language: story.journey.language,
-          variant: story.journey.variant,
-          region: detailedRegion || story.journey.variant,
-          cefrLevel: story.level,
-          topic: story.topic,
-        }),
-      });
-      if (synopsisRes.ok) {
+    let synopsisFeedback = "";
+    const MAX_SYNOPSIS_ATTEMPTS = 3;
+    for (let attempt = 0; attempt < MAX_SYNOPSIS_ATTEMPTS; attempt += 1) {
+      try {
+        const synopsisRes = await fetch(`${origin}/api/generate-synopsis`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+          body: JSON.stringify({
+            title,
+            language: story.journey.language,
+            variant: story.journey.variant,
+            region: detailedRegion || story.journey.variant,
+            cefrLevel: story.level,
+            topic: story.topic,
+            extraExistingSynopses: existingSynopsesForJudge,
+            previousAttemptFeedback: synopsisFeedback || undefined,
+          }),
+        });
+        if (!synopsisRes.ok) break;
         const data = await synopsisRes.json();
-        synopsis = data.result?.trim() ?? "";
+        const candidate = data.result?.trim() ?? "";
+        if (!candidate) break;
+        const judgement = await findSimilarSynopsis({
+          newSynopsis: candidate,
+          existingSynopses: existingSynopsesForJudge,
+          language: story.journey.language,
+        });
+        if (!judgement.isSimilar) {
+          synopsis = candidate;
+          break;
+        }
+        synopsisFeedback = `Too similar to "${judgement.conflictingTitle ?? "another story"}": ${judgement.reason ?? "shared narrative arc"}.`;
+        // On the last attempt, accept the candidate even if similar —
+        // better a slightly overlapping synopsis than no synopsis at all.
+        if (attempt === MAX_SYNOPSIS_ATTEMPTS - 1) synopsis = candidate;
+      } catch (e) {
+        console.warn("[generate] synopsis generation failed:", e);
+        break;
       }
-    } catch (e) {
-      console.warn("[generate] synopsis generation failed:", e);
     }
 
-    // STEP 3: Generate text + vocab, passing the fixed title and synopsis
     const payload = await generateStoryPayload({
       language: story.journey.language,
       variant: story.journey.variant,
@@ -155,6 +192,7 @@ export async function POST(request: Request) {
       synopsis,
       existingTitles,
       usedCharacterNames,
+      wordsToAvoid,
     });
 
     if (!payload) {
@@ -173,10 +211,11 @@ export async function POST(request: Request) {
         slug,
         text: payload.text,
         synopsis,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         vocab: payload.vocab as any,
         wordCount,
         vocabCount: payload.vocab.length,
-        // Text changed → previous audit (if any) is obsolete.
+        // Text changed → previous audit is obsolete.
         auditScore: null,
         auditOffenders: undefined,
         auditedAt: null,

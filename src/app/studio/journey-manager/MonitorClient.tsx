@@ -521,44 +521,22 @@ export default function MonitorClient() {
   async function generateStory(storyId: string) {
     setBusyStories((s) => new Set(s).add(storyId));
     try {
-      const res = await fetch("/api/studio/journeys/generate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
-      const data = await res.json();
-      setStories((prev) => prev.map((s) => s.id === storyId
-        ? { ...s, status: res.ok ? "generated" : s.status, title: data.title ?? s.title, synopsis: data.synopsis ?? s.synopsis, slug: data.slug ?? s.slug, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: res.ok ? null : data.error }
-        : s));
-      // Re-fetch detail if this story is expanded
-      if (res.ok && expandedStoryIds.has(storyId)) {
-        const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
-        if (detailRes.ok) {
-          const detail = await detailRes.json();
-          setStoryDetails((prev) => new Map(prev).set(storyId, detail));
-        }
-      }
-    } catch (err) {
-      setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: String(err) } : s));
-    } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
-  }
-
-  async function generateStoryV2(storyId: string) {
-    setBusyStories((s) => new Set(s).add(storyId));
-    try {
-      // Closes the audit→regenerate loop: if this story was just audited
-      // and offenders are still on screen, send them so the prompt can
-      // explicitly avoid them in the next draft.
+      // If this story was just audited and offenders are still on screen,
+      // send them as wordsToAvoid so the next draft can explicitly avoid
+      // them — closes the audit→regenerate loop.
       const lastAudit = auditResults.get(storyId);
       const wordsToAvoid = lastAudit?.highlights.map((h) => h.word) ?? [];
-      const res = await fetch("/api/studio/journeys/generate-v2", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId, wordsToAvoid }) });
+      const res = await fetch("/api/studio/journeys/generate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId, wordsToAvoid }) });
       const data = await res.json();
       if (!res.ok) {
-        window.alert(`V2 falló: ${data.error ?? "error desconocido"}`);
-        setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: data.error ?? "V2 falló" } : s));
+        window.alert(`Generación falló: ${data.error ?? "error desconocido"}`);
+        setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: data.error ?? "Generación falló" } : s));
         return;
       }
       setStories((prev) => prev.map((s) => s.id === storyId
         ? { ...s, status: "generated", title: data.title ?? s.title, synopsis: data.synopsis ?? s.synopsis, slug: data.slug ?? s.slug, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: null }
         : s));
-      // The story changed — the previous audit and any past replacements
-      // are stale.
+      // Story changed — previous audit and replacements are stale.
       setAuditResults((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
       setLastReplacements((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
       if (expandedStoryIds.has(storyId)) {
@@ -568,9 +546,9 @@ export default function MonitorClient() {
           setStoryDetails((prev) => new Map(prev).set(storyId, detail));
         }
       }
-      // Auto-audit the freshly regenerated story so the next click on
-      // Regenerar V2 already has fresh seeds. Inlined to share the same
-      // busy state — no spinner flash.
+      // Auto-audit the fresh story so the next regenerate already has
+      // fresh seeds. Inlined to share the same busy state — no spinner
+      // flash.
       try {
         const auditRes = await fetch("/api/studio/journeys/audit-level", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
         if (auditRes.ok) {
@@ -585,7 +563,7 @@ export default function MonitorClient() {
           setExpandedStoryIds((prev) => new Set(prev).add(storyId));
         }
       } catch (auditErr) {
-        console.warn("[generateStoryV2] auto-audit failed:", auditErr);
+        console.warn("[generateStory] auto-audit failed:", auditErr);
       }
     } catch (err) {
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: String(err) } : s));
@@ -611,7 +589,7 @@ export default function MonitorClient() {
       }
       if (data.noImprovement) {
         // Endpoint kept the story unchanged — tell the user, refresh nothing.
-        window.alert("El ajuste no logró bajar el conteo de palabras fuera de nivel después de varios intentos. La historia se dejó como estaba. Probá Regenerar V2 si querés un texto distinto.");
+        window.alert("El ajuste no logró bajar el conteo de palabras fuera de nivel después de varios intentos. La historia se dejó como estaba. Probá Regenerar texto si querés un texto distinto.");
         return;
       }
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount } : s));
@@ -1451,25 +1429,6 @@ export default function MonitorClient() {
                                                 ...(s.status === "generated" ? { backgroundColor: "#3b82f6" } : {}),
                                                 ...(s.status === "published" && !s.coverDone ? { backgroundColor: "transparent", border: "1px solid var(--card-border)", color: "var(--foreground)" } : {}),
                                               }}>{action.label}</button>
-                                          )}
-                                          {(s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review") && !busyStories.has(s.id) && (
-                                            <button onClick={() => void generateStoryV2(s.id)}
-                                              title="Generar con prompt V2 (level-aware: constraints estrictos por CEFR + longitud apropiada por nivel). Funciona para cualquier idioma/nivel."
-                                              style={{ fontSize: 10, height: 24, padding: "0 10px", borderRadius: 4, border: "1px solid #a78bfa", color: "#a78bfa", backgroundColor: "transparent", cursor: "pointer", whiteSpace: "nowrap" }}>
-                                              Generar V2
-                                            </button>
-                                          )}
-                                          {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
-                                            <button onClick={() => setConfirmAction({
-                                              message: `Regenerar "${s.title}" con prompt V2 (level-aware)? Sobrescribirá título, sinopsis, historia y vocabulario.`,
-                                              onConfirm: () => generateStoryV2(s.id),
-                                              confirmLabel: "Regenerar V2",
-                                              confirmColor: "#a78bfa",
-                                            })}
-                                              title="Regenerar con prompt V2 (level-aware)"
-                                              style={{ fontSize: 10, height: 24, padding: "0 8px", borderRadius: 4, border: "1px solid rgba(167,139,250,0.3)", color: "#a78bfa", backgroundColor: "transparent", cursor: "pointer", whiteSpace: "nowrap" }}>
-                                              Regenerar V2
-                                            </button>
                                           )}
                                           {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
                                             <button onClick={() => setConfirmAction({
