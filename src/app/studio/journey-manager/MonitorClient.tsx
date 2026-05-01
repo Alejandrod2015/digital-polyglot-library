@@ -528,6 +528,26 @@ export default function MonitorClient() {
           setStoryDetails((prev) => new Map(prev).set(storyId, detail));
         }
       }
+      // Auto-audit the freshly regenerated story so the next click on
+      // Regenerar V2 already has new offenders to send back. Inlined to
+      // share the same busy state — no spinner flash.
+      try {
+        const auditRes = await fetch("/api/studio/journeys/audit-level", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
+        if (auditRes.ok) {
+          const auditData = await auditRes.json();
+          setAuditResults((prev) => new Map(prev).set(storyId, {
+            cefrLevel: auditData.cefrLevel,
+            score: auditData.score,
+            totalUniqueWords: auditData.totalUniqueWords,
+            offendingCount: auditData.offendingCount,
+            offenders: auditData.offenders ?? [],
+            ranAt: Date.now(),
+          }));
+          setExpandedStoryIds((prev) => new Set(prev).add(storyId));
+        }
+      } catch (auditErr) {
+        console.warn("[generateStoryV2] auto-audit failed:", auditErr);
+      }
     } catch (err) {
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, error: String(err) } : s));
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
