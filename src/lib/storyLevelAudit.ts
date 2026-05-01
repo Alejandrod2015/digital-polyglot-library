@@ -61,26 +61,47 @@ export async function auditStoryVocabularyLevel(args: {
   const totalUniqueWords = uniqueWordCount(cleanText);
   const targetLevel = cefrLevel.trim().toUpperCase();
 
+  // Two-level tolerance: a word is an offender only if its CEFR level is
+  // at least TWO steps above the target. A learner is naturally exposed
+  // to one-level-up vocabulary in any normal text — only larger gaps
+  // signal "this story isn't really at level X".
+  const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2"];
+  const targetIdx = LEVEL_ORDER.indexOf(targetLevel);
+  const flagFromIdx = targetIdx >= 0 ? targetIdx + 2 : -1;
+  const flagFromLevel = flagFromIdx >= 0 && flagFromIdx < LEVEL_ORDER.length ? LEVEL_ORDER[flagFromIdx] : null;
+  const flagLevels = flagFromLevel ? LEVEL_ORDER.slice(flagFromIdx).join(", ") : "(none — target is at the top)";
+
   const prompt = `
 You are a CEFR vocabulary auditor for ${language}.
 
 Target level: ${targetLevel}
 
-Read the story text below. List EVERY distinct word (use the dictionary/lemma form) whose CEFR level is HIGHER than ${targetLevel} for a learner of ${language}. Ignore proper nouns (people, place, brand names) and basic numbers. Group all surface forms of the same lemma into ONE entry.
+# What to flag
+A word is an OFFENDER only if its CEFR level is TWO OR MORE levels above the target. With target ${targetLevel}, flag ONLY words at: ${flagLevels}. Do NOT flag words one level above the target — being one level up is normal exposure for any learner and a story at the right level naturally contains some.
+
+# Hard rules to keep classification consistent
+1. High-frequency everyday adjectives, verbs, and nouns are A1 in any language, even when used in complex sentences. In ${language}, treat words like (the equivalents of) "good", "big", "new", "to be", "to have", "to do", "to say", "to go", "house", "day", "year", "person", "time", "thing", "to want", "to come", "to see" as A1 unless they appear in a clearly idiomatic or technical sense.
+2. A transparent derivation of an A1 root word is at most A2. Example in Italian: "bellezza" (← "bello") is A2, not B2. "felicità" (← "felice") is A2. Apply the same logic in any language.
+3. Internationalisms and Romance/Germanic cognates that a learner from a related L1 understands at sight (cliente, passione, attenzione, importante, normale, social, problema, idea, momento) are A2 at most — they don't require study to read.
+4. When uncertain between two adjacent levels, pick the LOWER one.
+5. Proper nouns (people, places, brands), numbers, and basic interjections are never offenders.
+
+# Output
+Read the story below. List every DISTINCT lemma whose level meets the "two or more above target" rule. Group all surface forms of the same lemma into one entry.
 
 For each offender, return:
 - "word": dictionary/lemma form
 - "surface": the form actually used in the story (pick one representative occurrence)
-- "estimatedLevel": one of "A1","A2","B1","B2","C1","C2"
+- "estimatedLevel": one of "A1","A2","B1","B2","C1","C2" (must be >= ${flagFromLevel ?? "C2"})
 
 Return ONLY valid JSON of this shape:
 {
   "offenders": [
-    { "word": "string", "surface": "string", "estimatedLevel": "B2" }
+    { "word": "string", "surface": "string", "estimatedLevel": "${flagFromLevel ?? "C2"}" }
   ]
 }
 
-If every word is at or below ${targetLevel}, return { "offenders": [] }.
+If every word is below the flag threshold, return { "offenders": [] }.
 
 STORY:
 ${cleanText}
@@ -88,9 +109,9 @@ ${cleanText}
 
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
-    temperature: 0.1,
+    temperature: 0,
     messages: [
-      { role: "system", content: "You audit text for CEFR vocabulary level. Output JSON only, no prose." },
+      { role: "system", content: "You audit text for CEFR vocabulary level. You apply the rules conservatively — when in doubt, the word is fine. Output JSON only, no prose." },
       { role: "user", content: prompt },
     ],
   });
@@ -108,11 +129,18 @@ ${cleanText}
     if (!word) continue;
     const key = word.toLowerCase();
     if (seen.has(key)) continue;
+    const estimatedLevel = typeof record.estimatedLevel === "string" ? record.estimatedLevel.trim().toUpperCase() : "?";
+    // Hard threshold guard: drop anything the model labeled below the
+    // 2-levels-above-target floor, even if it ignored the prompt.
+    if (flagFromIdx >= 0) {
+      const estIdx = LEVEL_ORDER.indexOf(estimatedLevel);
+      if (estIdx < 0 || estIdx < flagFromIdx) continue;
+    }
     seen.add(key);
     offenders.push({
       word,
       surface: typeof record.surface === "string" ? record.surface.trim() || word : word,
-      estimatedLevel: typeof record.estimatedLevel === "string" ? record.estimatedLevel.trim().toUpperCase() : "?",
+      estimatedLevel,
     });
   }
 
