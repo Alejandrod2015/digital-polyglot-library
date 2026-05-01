@@ -544,7 +544,7 @@ const getStudioJourneysForLanguage = unstable_cache(
       },
     });
   },
-  ["studio-journeys-by-language-v2"],
+  ["studio-journeys-by-language-v3"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -697,9 +697,21 @@ async function buildJourneyVariantsFromStudio(
 
     if (levels.length === 0) continue;
 
+    // Prefer the Studio Journey record's `name` (e.g. "Conversational",
+    // "Traveler") so the mobile picker shows the actual journey, not
+    // just a variant code like "ITALY". When several Journey records
+    // share a variant we join their names; if names are missing we
+    // fall back to the regional variant label.
+    const groupNames = group
+      .map((j) => (j.name ?? "").trim())
+      .filter(Boolean);
+    const trackLabel = groupNames.length > 0
+      ? Array.from(new Set(groupNames)).join(" · ")
+      : formatVariantLabel(variantId) ?? variantId.toUpperCase();
+
     tracks.push({
       id: variantId,
-      label: formatVariantLabel(variantId) ?? variantId.toUpperCase(),
+      label: trackLabel,
       levels,
     });
   }
