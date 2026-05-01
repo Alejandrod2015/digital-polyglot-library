@@ -74,6 +74,15 @@ export async function auditStoryVocabularyLevel(args: {
   const cleanText = stripHtml(text);
   const targetLevel = cefrLevel.trim().toUpperCase();
 
+  // Two-level tolerance: highlights are reserved for words that are at
+  // least TWO CEFR steps above the target. One-level-up vocabulary is
+  // normal exposure and not worth surfacing in the panel.
+  const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2"];
+  const targetIdx = LEVEL_ORDER.indexOf(targetLevel);
+  const flagFromIdx = targetIdx >= 0 ? targetIdx + 2 : LEVEL_ORDER.length;
+  const flagFromLevel = flagFromIdx < LEVEL_ORDER.length ? LEVEL_ORDER[flagFromIdx] : null;
+  const flagLevels = flagFromLevel ? LEVEL_ORDER.slice(flagFromIdx).join(", ") : "(none — target is at the top)";
+
   const prompt = `
 You are a CEFR ${language} editor evaluating whether a story reads at the right level.
 
@@ -91,7 +100,9 @@ Give a HOLISTIC verdict, not a word-by-word audit.
 
 2. Summary: one sentence in English describing the verdict in plain terms ("Reads cleanly as ${targetLevel} except for X.").
 
-3. Highlights: 0 to 8 illustrative words that MOST stand out as above target. NOT an exhaustive list. Pick the ones a teacher would actually circle. Skip if score >= 95. For each, give the lemma, the surface form used, and your CEFR estimate.
+3. Highlights: 0 to 8 illustrative words that MOST stand out as above target. NOT an exhaustive list. Pick the ones a teacher would actually circle. Skip if score >= 95.
+   STRICT RULE: only include words whose CEFR level is at least TWO steps above the target. With target ${targetLevel}, only include words at: ${flagLevels}. Do NOT include words one level up — that is normal exposure for any learner. If no word meets this threshold, return an empty highlights array.
+   For each, give the lemma, the surface form used, and your CEFR estimate (must be in {${flagLevels}}).
 
 # Calibration rules
 - Words two or more CEFR levels above target are the only ones that should drive a low score. Words one level up are normal exposure for any learner.
@@ -140,11 +151,21 @@ ${cleanText}
     if (!word) continue;
     const key = word.toLowerCase();
     if (seen.has(key)) continue;
+    const estimatedLevel = typeof record.estimatedLevel === "string" ? record.estimatedLevel.trim().toUpperCase() : "?";
+    // Hard threshold guard: drop anything below the 2-levels-above-target
+    // floor, even if the LLM ignored the prompt rule.
+    if (flagFromIdx < LEVEL_ORDER.length) {
+      const estIdx = LEVEL_ORDER.indexOf(estimatedLevel);
+      if (estIdx < 0 || estIdx < flagFromIdx) continue;
+    } else {
+      // Target has no two-up level (C1/C2): nothing should be flagged.
+      continue;
+    }
     seen.add(key);
     highlights.push({
       word,
       surface: typeof record.surface === "string" ? record.surface.trim() || word : word,
-      estimatedLevel: typeof record.estimatedLevel === "string" ? record.estimatedLevel.trim().toUpperCase() : "?",
+      estimatedLevel,
     });
     if (highlights.length >= 8) break;
   }

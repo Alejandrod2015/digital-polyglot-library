@@ -614,7 +614,7 @@ export default function MonitorClient() {
         window.alert("El ajuste no logró bajar el conteo de palabras fuera de nivel después de varios intentos. La historia se dejó como estaba. Probá Regenerar V2 si querés un texto distinto.");
         return;
       }
-      setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, wordCount: data.wordCount ?? s.wordCount } : s));
+      setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount } : s));
       const replacements: AdjustReplacement[] = Array.isArray(data.replacements) ? data.replacements : [];
       setLastReplacements((prev) => new Map(prev).set(storyId, replacements));
       // Refresh detail with the new text.

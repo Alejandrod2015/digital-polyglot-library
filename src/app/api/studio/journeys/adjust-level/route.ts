@@ -219,10 +219,51 @@ export async function POST(request: Request) {
     },
   });
 
+  // Regenerate vocab against the new text. The old vocab tracked words
+  // from the original draft; after the surgical edit, some of those
+  // words no longer appear and the new wording may surface words worth
+  // teaching that the old vocab missed. Best-effort: if it fails, the
+  // text save above still stands.
+  let updatedVocabCount = updated.vocabCount;
+  try {
+    const origin = new URL(request.url).origin;
+    const vocabRes = await fetch(`${origin}/api/generate-vocab`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Origin": "https://www.sanity.io" },
+      body: JSON.stringify({
+        text: bestText,
+        language,
+        variant: story.journey.variant,
+        cefrLevel: story.level,
+        topic: story.topic,
+        focus: "verbs",
+        minItems: 15,
+        maxItems: 22,
+      }),
+    });
+    if (vocabRes.ok) {
+      const vocabData = await vocabRes.json();
+      const newVocab = Array.isArray(vocabData?.vocab) ? vocabData.vocab : [];
+      if (newVocab.length > 0) {
+        const vocabSaved = await prisma.journeyStory.update({
+          where: { id: storyId },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          data: { vocab: newVocab as any, vocabCount: newVocab.length },
+        });
+        updatedVocabCount = vocabSaved.vocabCount;
+      }
+    } else {
+      console.warn("[adjust-level] vocab regeneration failed:", await vocabRes.text());
+    }
+  } catch (vocabErr) {
+    console.warn("[adjust-level] vocab regeneration threw:", vocabErr);
+  }
+
   return NextResponse.json({
     id: updated.id,
     text: updated.text,
     wordCount: updated.wordCount,
+    vocabCount: updatedVocabCount,
     replacements: accumulatedReplacements,
     audit: bestAudit,
     iterations: iterationsLog,
