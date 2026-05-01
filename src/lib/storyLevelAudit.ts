@@ -80,9 +80,9 @@ Target level: ${targetLevel}
 A word is an OFFENDER only if its CEFR level is TWO OR MORE levels above the target. With target ${targetLevel}, flag ONLY words at: ${flagLevels}. Do NOT flag words one level above the target — being one level up is normal exposure for any learner and a story at the right level naturally contains some.
 
 # Hard rules to keep classification consistent
-1. High-frequency everyday adjectives, verbs, and nouns are A1 in any language, even when used in complex sentences. In ${language}, treat words like (the equivalents of) "good", "big", "new", "to be", "to have", "to do", "to say", "to go", "house", "day", "year", "person", "time", "thing", "to want", "to come", "to see" as A1 unless they appear in a clearly idiomatic or technical sense.
-2. A transparent derivation of an A1 root word is at most A2. Example in Italian: "bellezza" (← "bello") is A2, not B2. "felicità" (← "felice") is A2. Apply the same logic in any language.
-3. Internationalisms and Romance/Germanic cognates that a learner from a related L1 understands at sight (cliente, passione, attenzione, importante, normale, social, problema, idea, momento) are A2 at most — they don't require study to read.
+1. High-frequency everyday words (top ~500 lemmas of ${language}) are A1, even when used in complex sentences. Common verbs of being/having/doing/saying/moving, common nouns for time/people/places/objects, common adjectives for size/quality/age all stay A1 unless they appear in a clearly idiomatic or technical sense.
+2. A transparent derivation of an A1 root is at most ONE level above the root. So an A1 root → A2 derivation (not B2 or higher).
+3. Loanwords and international cognates that any educated reader recognizes at sight, regardless of L1, are at most A2.
 4. When uncertain between two adjacent levels, pick the LOWER one.
 5. Proper nouns (people, places, brands), numbers, and basic interjections are never offenders.
 
