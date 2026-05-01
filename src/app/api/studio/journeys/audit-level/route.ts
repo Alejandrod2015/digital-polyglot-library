@@ -43,6 +43,15 @@ export async function POST(request: Request) {
       language: story.journey.language,
       cefrLevel: story.level,
     });
+    await prisma.journeyStory.update({
+      where: { id: storyId },
+      data: {
+        auditScore: result.score,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        auditOffenders: result.offenders as any,
+        auditedAt: new Date(),
+      },
+    });
     return NextResponse.json(result);
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

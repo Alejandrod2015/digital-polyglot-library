@@ -237,6 +237,12 @@ type StoryRow = {
   vocabCount: number | null; sanityId: string | null; coverDone: boolean;
   coverUrl: string | null; audioUrl: string | null; audioStatus: string;
   audioQaStatus: string | null; audioQaScore: number | null; audioQaNotes: string | null;
+  // Persisted vocabulary-level audit (refreshed by /audit-level, cleared
+  // by any endpoint that mutates `text`). The frontend hydrates the
+  // auditResults map from these on load so refreshes don't lose state.
+  auditScore?: number | null;
+  auditOffenders?: { word: string; surface: string; estimatedLevel: string }[] | null;
+  auditedAt?: string | null;
   error: string | null;
 };
 type TopicGroup = { journeyId: string; level: string; topic: string; label: string; stories: StoryRow[] };
@@ -424,11 +430,35 @@ export default function MonitorClient() {
     setEditingJourneyId(null);
   }
 
+  function hydrateAuditFromStories(rows: StoryRow[]) {
+    const updates: [string, LevelAuditData][] = [];
+    for (const r of rows) {
+      if (r.auditScore == null || !Array.isArray(r.auditOffenders)) continue;
+      const offenders = r.auditOffenders.filter((o) => o && typeof o.word === "string" && typeof o.surface === "string" && typeof o.estimatedLevel === "string");
+      const totalUniqueWords = 0; // unknown server-side without re-counting; filled on next audit
+      updates.push([r.id, {
+        cefrLevel: r.level.toUpperCase(),
+        score: r.auditScore,
+        totalUniqueWords,
+        offendingCount: offenders.length,
+        offenders,
+        ranAt: r.auditedAt ? new Date(r.auditedAt).getTime() : Date.now(),
+      }]);
+    }
+    if (updates.length === 0) return;
+    setAuditResults((prev) => {
+      const n = new Map(prev);
+      for (const [id, data] of updates) n.set(id, data);
+      return n;
+    });
+  }
+
   async function reloadStoriesForJourney(journeyId: string) {
     const res = await fetch(`/api/studio/journeys/stories?journeyId=${journeyId}`);
     if (res.ok) {
       const newStories: StoryRow[] = await res.json();
       setStories((prev) => [...prev.filter((s) => s.journeyId !== journeyId), ...newStories]);
+      hydrateAuditFromStories(newStories);
     }
   }
 
@@ -467,6 +497,7 @@ export default function MonitorClient() {
     if (res.ok) {
       const newStories: StoryRow[] = await res.json();
       setStories((prev) => [...prev, ...newStories]);
+      hydrateAuditFromStories(newStories);
     }
   }
 
@@ -1002,7 +1033,9 @@ export default function MonitorClient() {
                           {audit.score}%
                         </span>
                         <span style={{ fontSize: 10, color: "var(--muted)" }}>
-                          {audit.totalUniqueWords - audit.offendingCount}/{audit.totalUniqueWords} palabras dentro del nivel · {audit.offendingCount} fuera
+                          {audit.totalUniqueWords > 0
+                            ? `${audit.totalUniqueWords - audit.offendingCount}/${audit.totalUniqueWords} palabras dentro del nivel · ${audit.offendingCount} fuera`
+                            : `${audit.offendingCount} palabra${audit.offendingCount === 1 ? "" : "s"} fuera del nivel`}
                         </span>
                         <span style={{ flex: 1 }} />
                         {audit.offenders.length > 0 && !busyStories.has(s.id) && (

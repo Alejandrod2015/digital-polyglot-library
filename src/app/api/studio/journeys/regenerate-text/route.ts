@@ -115,6 +115,10 @@ export async function POST(request: Request) {
       data: {
         text: payload.text,
         wordCount,
+        // Text changed → audit invalidated.
+        auditScore: null,
+        auditOffenders: undefined,
+        auditedAt: null,
       },
     });
 

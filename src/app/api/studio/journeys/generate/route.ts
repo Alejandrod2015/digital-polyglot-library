@@ -176,6 +176,10 @@ export async function POST(request: Request) {
         vocab: payload.vocab as any,
         wordCount,
         vocabCount: payload.vocab.length,
+        // Text changed → previous audit (if any) is obsolete.
+        auditScore: null,
+        auditOffenders: undefined,
+        auditedAt: null,
         error: null,
       },
     });

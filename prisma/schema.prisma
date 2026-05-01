@@ -272,6 +272,11 @@ model JourneyStory {
   audioQaStatus String?
   audioQaScore  Float?
   audioQaNotes  String?
+  // Vocabulary-level audit (LLM-as-judge against story.level CEFR).
+  // Cleared whenever text is regenerated; refilled by /audit-level.
+  auditScore     Float?
+  auditOffenders Json?
+  auditedAt      DateTime?
   error         String?
   createdAt  DateTime            @default(now())
   updatedAt  DateTime            @updatedAt

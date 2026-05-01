@@ -90,7 +90,14 @@ Return ONLY the rewritten story text. No commentary, no explanations.
     const wordCount = newText.split(/\s+/).filter(Boolean).length;
     const updated = await prisma.journeyStory.update({
       where: { id: storyId },
-      data: { text: newText, wordCount },
+      data: {
+        text: newText,
+        wordCount,
+        // Text changed → audit is now stale; the frontend re-runs it.
+        auditScore: null,
+        auditOffenders: undefined,
+        auditedAt: null,
+      },
     });
 
     return NextResponse.json({

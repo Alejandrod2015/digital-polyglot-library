@@ -25,6 +25,7 @@ export async function GET(request: NextRequest) {
       sanityId: true, coverDone: true, coverUrl: true,
       audioUrl: true, audioStatus: true,
       audioQaStatus: true, audioQaScore: true, audioQaNotes: true,
+      auditScore: true, auditOffenders: true, auditedAt: true,
       error: true,
     },
   });
@@ -83,6 +84,7 @@ export async function POST(request: Request) {
       sanityId: true, coverDone: true, coverUrl: true,
       audioUrl: true, audioStatus: true,
       audioQaStatus: true, audioQaScore: true, audioQaNotes: true,
+      auditScore: true, auditOffenders: true, auditedAt: true,
       error: true,
     },
   });
