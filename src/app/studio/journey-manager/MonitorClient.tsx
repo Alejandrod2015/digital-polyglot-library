@@ -436,13 +436,25 @@ export default function MonitorClient() {
   }
 
   function hydrateAuditFromStories(rows: StoryRow[]) {
+    // Same threshold as the auditor lib: highlights must be 2+ levels
+    // above target. Applied here too so audits cached in the DB before
+    // the threshold change get filtered at render time.
+    const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2"];
     const updates: [string, LevelAuditData][] = [];
     for (const r of rows) {
       if (r.auditScore == null || !r.auditOffenders) continue;
       const payload = r.auditOffenders;
       const summary = typeof payload.summary === "string" ? payload.summary : "";
+      const targetIdx = LEVEL_ORDER.indexOf(r.level.toUpperCase());
+      const flagFromIdx = targetIdx >= 0 ? targetIdx + 2 : LEVEL_ORDER.length;
       const highlights = Array.isArray(payload.highlights)
-        ? payload.highlights.filter((h) => h && typeof h.word === "string" && typeof h.surface === "string" && typeof h.estimatedLevel === "string")
+        ? payload.highlights
+            .filter((h) => h && typeof h.word === "string" && typeof h.surface === "string" && typeof h.estimatedLevel === "string")
+            .filter((h) => {
+              if (flagFromIdx >= LEVEL_ORDER.length) return false;
+              const estIdx = LEVEL_ORDER.indexOf(h.estimatedLevel.toUpperCase());
+              return estIdx >= 0 && estIdx >= flagFromIdx;
+            })
         : [];
       updates.push([r.id, {
         cefrLevel: r.level.toUpperCase(),

@@ -88,20 +88,24 @@ You are a CEFR ${language} editor evaluating whether a story reads at the right 
 
 Target level: ${targetLevel}
 
+# CRITICAL — what counts as "above target"
+Words ONE CEFR level above target are NORMAL exposure for any learner (the i+1 principle). They are NOT problems and must NOT lower the score, must NOT be mentioned in the summary, and must NOT be included in highlights.
+
+Only words TWO OR MORE CEFR levels above target count as above-target for ALL of: score, summary, and highlights. With target ${targetLevel}, "above target" means specifically: ${flagLevels}.
+
 # Your task
 Give a HOLISTIC verdict, not a word-by-word audit.
 
-1. Score (0-100): how well does the text read as ${targetLevel}? Anchors:
-   - 95-100: feels solidly ${targetLevel}, fully appropriate.
-   - 80-94: mostly ${targetLevel}, a few words/turns that lean above but not jarring.
-   - 60-79: noticeably above target — clearly ${targetLevel === "A1" ? "A2/B1" : "one to two notches up"} in places.
+1. Score (0-100): how well does the text read as ${targetLevel}, treating one-level-up words as in-level? Anchors:
+   - 95-100: feels solidly ${targetLevel} — none or very few words ${flagFromLevel ?? "above target"} or above.
+   - 80-94: mostly ${targetLevel}, a small number of words at ${flagFromLevel ?? "above target"} or above.
+   - 60-79: noticeably above target — multiple ${flagFromLevel ?? "above-target"}+ words throughout.
    - Below 60: doesn't read as ${targetLevel} at all.
-   Be willing to give 95-100 when it really fits — don't manufacture imperfection.
+   Be willing to give 95-100 when it really fits. One-level-up vocabulary alone never blocks a 95+.
 
-2. Summary: one sentence in English describing the verdict in plain terms ("Reads cleanly as ${targetLevel} except for X.").
+2. Summary: one sentence in English describing the verdict. Mention only ${flagFromLevel ?? "above-target"}+ words if any — never mention one-level-up words even if you noticed them.
 
-3. Highlights: 0 to 8 illustrative words that MOST stand out as above target. NOT an exhaustive list. Pick the ones a teacher would actually circle. Skip if score >= 95.
-   STRICT RULE: only include words whose CEFR level is at least TWO steps above the target. With target ${targetLevel}, only include words at: ${flagLevels}. Do NOT include words one level up — that is normal exposure for any learner. If no word meets this threshold, return an empty highlights array.
+3. Highlights: 0 to 8 illustrative words at ${flagLevels}. NOT an exhaustive list. Skip if score >= 95. If no word meets the threshold, return an empty array.
    For each, give the lemma, the surface form used, and your CEFR estimate (must be in {${flagLevels}}).
 
 # Calibration rules
