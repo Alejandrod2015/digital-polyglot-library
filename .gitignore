@@ -59,3 +59,12 @@ next-env.d.ts
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+# Piper TTS voice models (download via scripts/tts/download_piper_voices.sh)
+scripts/tts/piper-voices/
+# Python virtualenv used by the TTS pipeline (recreated via scripts/tts/setup.sh)
+scripts/tts/.venv/
+# F5 cloned voice WAVs (per-user data, sourced manually)
+scripts/tts/cloned-voices/
+# Claude Code runtime artifacts
+.claude/scheduled_tasks.lock

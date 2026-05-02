@@ -228,6 +228,21 @@ enum JourneyStatus {
   archived
 }
 
+model ClonedVoice {
+  id           String   @id @default(cuid())
+  name         String
+  language     String
+  region       String?
+  gender       String   @default("f")
+  refAudioPath String
+  refText      String
+  createdBy    String?
+  createdAt    DateTime @default(now())
+
+  @@map("dp_cloned_voices_v1")
+  @@index([language])
+}
+
 model Journey {
   id              String        @id @default(cuid())
   name            String
@@ -269,6 +284,11 @@ model JourneyStory {
   audioSegments Json?
   audioFilename String?
   audioStatus   String              @default("pending")
+  audioUrlPreview      String?
+  audioFilenamePreview String?
+  ambientTag           String?
+  voiceId              String?
+  dialogueSpec         Json?
   audioQaStatus String?
   audioQaScore  Float?
   audioQaNotes  String?
