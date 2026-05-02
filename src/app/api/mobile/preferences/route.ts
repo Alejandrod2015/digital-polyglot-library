@@ -154,6 +154,7 @@ type StoredJourney = {
   focus: string;
   level: string | null;
   createdAt: string;
+  label: string | null;
 };
 
 function normalizeJourneysArray(value: unknown): StoredJourney[] | null {
@@ -177,6 +178,7 @@ function normalizeJourneysArray(value: unknown): StoredJourney[] | null {
           : "General",
       level: typeof j.level === "string" && j.level.trim() ? j.level.trim() : null,
       createdAt: typeof j.createdAt === "string" ? j.createdAt : new Date().toISOString(),
+      label: typeof j.label === "string" && j.label.trim() ? j.label.trim() : null,
     });
   }
   return out;
