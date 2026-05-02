@@ -16,9 +16,12 @@ import {
   LogOut,
 } from "lucide-react";
 import { SignedIn, SignedOut, SignOutButton, useUser } from "@clerk/nextjs";
-import * as Sentry from "@sentry/nextjs";
 
 type Plan = "free" | "basic" | "premium" | "polyglot";
+
+const FEEDBACK_MAILTO = `mailto:alejandro@muvn.de?subject=${encodeURIComponent(
+  "Feedback — Digital Polyglot Library"
+)}&body=${encodeURIComponent("Tell us what's on your mind:\n\n")}`;
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -65,23 +68,6 @@ export default function MobileMenu() {
       window.removeEventListener("practice-session-visibility-change", readPracticeState);
     };
   }, []);
-
-  const handleFeedback = (): void => {
-    const eventId =
-      Sentry.lastEventId() ||
-      Sentry.captureException(new Error("User feedback (mobile menu)"));
-
-    const sentryRuntime = Sentry as unknown as {
-      showReportDialog?: (options?: Record<string, unknown>) => void;
-    };
-
-    if (typeof sentryRuntime.showReportDialog === "function") {
-      sentryRuntime.showReportDialog({ eventId });
-      return;
-    }
-
-    alert("Feedback module not ready. Please reload and try again.");
-  };
 
   if (isStoryPage || practiceActive) {
     return null;
@@ -257,13 +243,13 @@ export default function MobileMenu() {
               </div>
             </div>
 
-            <button
-              onClick={handleFeedback}
+            <a
+              href={FEEDBACK_MAILTO}
               className="mt-4 w-full inline-flex items-center justify-center gap-2 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)] transition"
             >
               <MessageSquare size={22} />
               <span>Feedback</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
