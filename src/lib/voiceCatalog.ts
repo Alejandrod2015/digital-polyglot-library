@@ -43,7 +43,6 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   // German candidates — all passed UTMOS ≥ 3.0. NO THORSTEN VARIANTS (user-banned).
   { id: "bark/de_speaker_4",                       engine: "bark",  language: "german", region: "DE", gender: "m", label: "Bark Speaker 4 (Alemania) · UTMOS 3.61", status: "candidate" },
   { id: "coqui/de_DE-css10-vits-neon",             engine: "coqui", language: "german", region: "DE", gender: "f", label: "Coqui CSS10 (Alemania) · UTMOS 3.18",     status: "candidate" },
-  { id: "bark/de_speaker_3",                       engine: "bark",  language: "german", region: "DE", gender: "m", label: "Bark Speaker 3 (Alemania) · UTMOS 3.02", status: "candidate" },
 ];
 
 export const DEFAULT_VOICE_BY_LANGUAGE: Record<string, string> = {

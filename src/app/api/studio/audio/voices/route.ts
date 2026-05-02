@@ -19,6 +19,7 @@ export async function GET() {
     region: c.region ?? undefined,
     gender: c.gender === "m" ? "m" : "f",
     label: `${c.name} (clonada${c.region ? `, ${c.region}` : ""})`,
+    status: "approved",
   }));
   return NextResponse.json({ voices: [...VOICE_CATALOG, ...dynamic] });
 }

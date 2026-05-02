@@ -42,6 +42,26 @@ def _ensure_espeak_paths() -> None:
 
 _ensure_espeak_paths()
 
+
+def _patch_espeak_wrapper() -> None:
+    """Newer phonemizer dropped EspeakWrapper.set_library / set_data_path
+    (now read-only properties). misaki (Kokoro's G2P) still calls the old
+    classmethods at import time, raising AttributeError. Since env vars
+    PHONEMIZER_ESPEAK_LIBRARY / ESPEAK_DATA_PATH are already set above,
+    register the legacy methods as no-ops so the import succeeds.
+    """
+    try:
+        from phonemizer.backend.espeak.wrapper import EspeakWrapper
+    except Exception:
+        return
+    if not hasattr(EspeakWrapper, "set_library"):
+        EspeakWrapper.set_library = classmethod(lambda cls, *a, **kw: None)
+    if not hasattr(EspeakWrapper, "set_data_path"):
+        EspeakWrapper.set_data_path = classmethod(lambda cls, *a, **kw: None)
+
+
+_patch_espeak_wrapper()
+
 import io
 import wave
 
@@ -417,16 +437,7 @@ POSTPROCESS_FILTER = (
 # Use this when a specific voice needs different EQ/dynamics to sound right
 # (e.g. a voice that comes muffled benefits from a treble shelf, no lowpass).
 # Applied system-wide: same chain for gallery samples and full-story generations.
-PER_VOICE_POSTPROCESS: dict[str, str] = {
-    # Bark Speaker 3: comes muffled with default chain. No lowpass, no de-ess,
-    # +2 dB treble shelf at 6 kHz to open the highs. Validated UTMOS 3.21.
-    "bark/de_speaker_3": (
-        "afftdn=nr=12:nf=-25,"
-        "highpass=f=80,"
-        "treble=g=2:f=6000,"
-        "loudnorm=I=-16:TP=-1.5:LRA=11"
-    ),
-}
+PER_VOICE_POSTPROCESS: dict[str, str] = {}
 
 
 def resolve_postprocess_filter(voice_id: str | None) -> str:
@@ -573,7 +584,7 @@ def main() -> int:
             print(f"[tts] engine=coqui voice={name} chars={len(narration)} → {args.output}")
             audio, sr = synthesize_coqui(narration, model_id, args.speed)
         elif engine == "bark":
-            history_prompt = f"v2/{name}"  # e.g. bark/de_speaker_3 → v2/de_speaker_3
+            history_prompt = f"v2/{name}"  # e.g. bark/de_speaker_4 → v2/de_speaker_4
             print(f"[tts] engine=bark voice={name} chars={len(narration)} → {args.output}")
             audio, sr = synthesize_bark(narration, history_prompt, args.speed)
         else:
