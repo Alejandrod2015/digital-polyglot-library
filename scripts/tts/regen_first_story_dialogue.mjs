@@ -30,9 +30,9 @@ const VOCAB_API = process.env.VOCAB_API ?? "http://localhost:3000/api/generate-v
 // ─── Cast ───────────────────────────────────────────────────────────────
 const VOICE_NARRATOR = "Ww7Sq9tx9CCOiNOwWgsx"; // Moritz Morgenstern (DE, m, narrative)
 const VOICE_ANNA     = "WHaUUVTDq47Yqc9aDbkH"; // ENNIAH (DE, f, educational)
-// Liam (premade EN, energetic) replaces Simon Sunday (DE, young) — Simon felt
-// monotone in dialogue. Premade voices speak German via eleven_multilingual_v2.
-const VOICE_TOM      = "TX3LPaxmHKxFdv7VOQHJ"; // Liam (premade, m young)
+// Luca (DE native, young, dynamic) chosen 2026-05-03 after rejecting Liam
+// (premade EN, gringo accent) and Markus Soul (muffled room-reverb capture).
+const VOICE_TOM      = "mmAbrxFQ9xjByXyBpqrK"; // Luca (DE native, m young, dynamic)
 
 const STORY_TITLE = "Café in Kreuzberg";
 
