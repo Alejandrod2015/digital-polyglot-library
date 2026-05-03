@@ -347,6 +347,12 @@ export function ReaderScreen(args: {
       : preferredAudioUrl;
   const isOfflineAudio = typeof audioUrl === "string" && audioUrl.startsWith("file://");
   const [selectedVocab, setSelectedVocab] = useState<VocabItem | null>(null);
+  // Altura medida del playerDock; el vocab overlay deja un margen igual
+  // a esa altura + un pequeño gap para que la burbuja del vocab nunca
+  // quede tapada por el player. Antes era un padding hardcodeado (118)
+  // que se quedó corto cuando el sticky player creció a ~132 px y los
+  // últimos píxeles del vocab card quedaban detrás del slider.
+  const [playerDockHeight, setPlayerDockHeight] = useState(132);
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
   // Animated values for the end-of-story prompt. Entrance is a spring-in
   // (backdrop fades, card slides up with a small overshoot and scales to 1)
@@ -908,7 +914,7 @@ export function ReaderScreen(args: {
         // tap-to-close first. Tapping blank paragraph space closes the popup
         // via the Pressable wrapper around each block.
         <View
-          style={styles.vocabOverlay}
+          style={[styles.vocabOverlay, { paddingBottom: playerDockHeight + 12 }]}
           pointerEvents="box-none"
           accessibilityLabel="qa-reader-vocab-overlay"
           testID="qa-reader-vocab-overlay"
@@ -950,7 +956,15 @@ export function ReaderScreen(args: {
         </View>
       ) : null}
 
-      <View style={styles.playerDock}>
+      <View
+        style={styles.playerDock}
+        onLayout={(e) => {
+          const next = e.nativeEvent.layout.height;
+          if (next > 0 && Math.abs(next - playerDockHeight) > 1) {
+            setPlayerDockHeight(next);
+          }
+        }}
+      >
         <NativeAudioPlayer
           src={audioUrl}
           variant="sticky"
