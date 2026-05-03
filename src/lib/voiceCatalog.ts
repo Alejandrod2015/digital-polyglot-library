@@ -21,7 +21,7 @@
  * single-speaker studio datasets. Anything multi-speaker or low-quality skipped.
  */
 
-export type Engine = "kokoro" | "piper" | "f5" | "coqui" | "bark";
+export type Engine = "kokoro" | "piper" | "f5" | "coqui" | "bark" | "elevenlabs";
 export type VoiceStatus = "approved" | "candidate";
 
 export type VoiceEntry = {
@@ -40,15 +40,22 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   { id: "piper/pt_BR-cadu-medium",     engine: "piper", language: "portuguese", region: "BR", gender: "m", label: "Cadu (Brasil, masculina)",      status: "approved" },
   { id: "piper/it_IT-paola-medium",    engine: "piper", language: "italian",    region: "IT", gender: "f", label: "Paola (Italia, femenina)",     status: "approved" },
 
-  // German candidates — all passed UTMOS ≥ 3.0. NO THORSTEN VARIANTS (user-banned).
-  { id: "bark/de_speaker_4",                       engine: "bark",  language: "german", region: "DE", gender: "m", label: "Bark Speaker 4 (Alemania) · UTMOS 3.61", status: "candidate" },
-  { id: "coqui/de_DE-css10-vits-neon",             engine: "coqui", language: "german", region: "DE", gender: "f", label: "Coqui CSS10 (Alemania) · UTMOS 3.18",     status: "candidate" },
+  // German voices. NO THORSTEN VARIANTS (user-banned, perceptually depressing).
+  { id: "bark/de_speaker_4",            engine: "bark",  language: "german", region: "DE", gender: "m", label: "Bark Speaker 4 (Alemania, masculina)", status: "approved" },
+  { id: "coqui/de_DE-css10-vits-neon",  engine: "coqui", language: "german", region: "DE", gender: "f", label: "Coqui CSS10 (Alemania, femenina)",     status: "approved" },
+
+  // ElevenLabs premade voices used via eleven_multilingual_v2 for German dialogue stories.
+  // Liam plays younger male characters (e.g. Tom). Premade voices have mild non-native
+  // accent in German but compensate with natural prosody — chosen over native-DE Simon
+  // Sunday, which user perceived as monotone/depressing.
+  { id: "elevenlabs/TX3LPaxmHKxFdv7VOQHJ", engine: "elevenlabs", language: "german", region: "US", gender: "m", label: "Liam (premade, masculino joven)", status: "approved" },
 ];
 
 export const DEFAULT_VOICE_BY_LANGUAGE: Record<string, string> = {
   spanish:    "piper/es_ES-sharvard-medium",
   portuguese: "piper/pt_BR-cadu-medium",
   italian:    "piper/it_IT-paola-medium",
+  german:     "bark/de_speaker_4",
 };
 
 export function findVoice(voiceId: string | null | undefined): VoiceEntry | null {

@@ -79,6 +79,10 @@ LANG_TO_CODE = {
     "ja": "j",
     "zh": "z",
     "hi": "h",
+    # German has no Kokoro support — code is a placeholder. We accept "de" so
+    # callers can pass --lang de when using non-Kokoro voices (bark/coqui),
+    # which route by --voice-id and ignore --lang.
+    "de": "g",
 }
 
 DEFAULT_VOICE = {
