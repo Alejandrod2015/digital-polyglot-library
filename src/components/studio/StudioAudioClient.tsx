@@ -492,7 +492,7 @@ export default function StudioAudioClient() {
                         <button
                           onClick={() => void generate(s.id)}
                           disabled={isBusy || !supported || batchRunning}
-                          title={!supported ? `Kokoro no soporta ${s.journey.language} aún` : ""}
+                          title={!supported ? `${s.journey.language} aún no está soportado` : ""}
                           style={{ ...btnSmall, opacity: isBusy || !supported ? 0.5 : 1 }}
                         >
                           {isBusy ? "Generando…" : s.audioUrl ? "Regenerar" : "Generar"}
