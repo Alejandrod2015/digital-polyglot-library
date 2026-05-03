@@ -68,6 +68,38 @@ function filenameFromTitle(title: string): string {
   return title.replace(/[^\w\s-]/g, "").replace(/\s+/g, "_");
 }
 
+const MODAL_PIPER_VOICES = new Set([
+  "piper/es_ES-sharvard-medium",
+  "piper/pt_BR-cadu-medium",
+  "piper/it_IT-paola-medium",
+]);
+
+async function synthesizeViaModal(args: {
+  text: string;
+  voiceId: string;
+  filename: string;
+}): Promise<{ url: string; filename: string; bytes: number }> {
+  const url = process.env.STUDIO_AUDIO_URL;
+  const token = process.env.STUDIO_AUDIO_TOKEN;
+  if (!url || !token) throw new Error("STUDIO_AUDIO_URL/TOKEN not configured");
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      _token: token,
+      text: args.text,
+      voiceId: args.voiceId,
+      filename: args.filename.replace(/\.mp3$/, ""),
+    }),
+  });
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new Error(`Modal TTS ${res.status}: ${detail.slice(0, 300)}`);
+  }
+  return res.json();
+}
+
 async function runPythonTTS(args: {
   text?: string;
   specPath?: string;
@@ -109,11 +141,13 @@ async function runPythonTTS(args: {
 }
 
 export async function POST(request: Request) {
-  if (process.env.LOCAL_TTS_ENABLED !== "1") {
+  const modalEnabled = !!(process.env.STUDIO_AUDIO_URL && process.env.STUDIO_AUDIO_TOKEN);
+  const localEnabled = process.env.LOCAL_TTS_ENABLED === "1";
+  if (!modalEnabled && !localEnabled) {
     return NextResponse.json(
       {
-        error: "Local TTS is not enabled in this environment.",
-        hint: "Set LOCAL_TTS_ENABLED=1 in .env.local and run `./scripts/tts/setup.sh` once.",
+        error: "Audio propio is not enabled in this environment.",
+        hint: "Set STUDIO_AUDIO_URL + STUDIO_AUDIO_TOKEN (Modal) or LOCAL_TTS_ENABLED=1 (local .venv).",
       },
       { status: 503 }
     );
@@ -180,6 +214,53 @@ export async function POST(request: Request) {
 
     const narration = buildAudioNarrationText(story.title, story.text);
     const ambient = ambientPath(story.ambientTag, story.journey.language);
+
+    // Modal fast path: single-voice Piper, no ambient, no F5. Anything more
+    // exotic falls through to the legacy local-Python path below (which needs
+    // LOCAL_TTS_ENABLED=1 + a working .venv).
+    const canUseModal =
+      modalEnabled &&
+      !hasDialogueSpec &&
+      !ambient &&
+      !refAudioPath &&
+      typeof resolvedVoiceId === "string" &&
+      MODAL_PIPER_VOICES.has(resolvedVoiceId);
+
+    if (canUseModal) {
+      const result = await synthesizeViaModal({
+        text: narration,
+        voiceId: resolvedVoiceId!,
+        filename,
+      });
+
+      if (isPreview) {
+        await prisma.journeyStory.update({
+          where: { id: storyId },
+          data: { audioUrlPreview: result.url, audioFilenamePreview: result.filename },
+        });
+      } else {
+        await prisma.journeyStory.update({
+          where: { id: storyId },
+          data: {
+            audioUrl: result.url,
+            audioFilename: result.filename,
+            audioSegments: [],
+            audioStatus: "ready",
+            audioQaStatus: null,
+            audioQaScore: null,
+            audioQaNotes: null,
+          },
+        });
+      }
+      return NextResponse.json({ ok: true, audioUrl: result.url, filename: result.filename, isPreview, via: "modal" });
+    }
+
+    if (!localEnabled) {
+      return NextResponse.json(
+        { error: `Voice "${resolvedVoiceId ?? "default"}" not yet supported in cloud (Modal). Only the 3 approved Piper voices (es/pt/it) run in cloud today.` },
+        { status: 501 }
+      );
+    }
 
     // If the story has a multi-voice dialogueSpec, resolve any f5/* refs and
     // emit it as a temp JSON file. Otherwise fall back to single-voice flow.
