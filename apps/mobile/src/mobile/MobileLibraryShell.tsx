@@ -5,10 +5,12 @@ import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
 import {
   Alert,
   Animated,
+  AppState,
   Easing,
   findNodeHandle,
   Linking,
   Modal,
+  PanResponder,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -30,6 +32,7 @@ import {
   formatTopic,
   formatVariant,
   formatVariantLabel,
+  VARIANT_LABELS,
   VARIANT_OPTIONS_BY_LANGUAGE,
   type Book,
   type Level,
@@ -194,12 +197,10 @@ type MobileScreen =
   | "journey"
   | "library"
   | "settings"
-  | "create"
-  | "progress";
+  | "create";
 
 type BottomTab = "home" | "explore" | "practice" | "favorites" | "journey" | "signin";
 type MenuIconName =
-  | "progress"
   | "settings"
   | "library"
   | "story"
@@ -805,12 +806,10 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     detail: "Choose the meaning that fits a word in context.",
     caption: "Best for locking in definitions with real usage.",
     accent: tokenColor.xp,
-    // Per-card background tinted toward the accent so the four cards
-    // read as distinct sections at a glance, instead of looking like
-    // four copies of the same card with different icons. Each value is
-    // a deeply desaturated version of the accent that keeps AA contrast
-    // against white text in the body.
-    background: "#2a2108",
+    // Backgrounds = primeros 4 colores del TOPIC_PANEL_PALETTE (los
+    // mismos que usan los topics del journey). Color decision frozen
+    // tras varias iteraciones con el usuario (paleta "Italian Topics").
+    background: "#1f7ee0", // azul (1er topic del journey)
     icon: "zap",
   },
   {
@@ -820,7 +819,7 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     detail: "Complete real phrases and choose what sounds natural in context.",
     caption: "Best for recall, sentence flow, and natural usage.",
     accent: tokenColor.streak,
-    background: "#2a1808",
+    background: "#58a700", // verde (2do topic del journey)
     icon: "message-circle",
   },
   {
@@ -830,7 +829,7 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     detail: "Hear a word and choose what was said.",
     caption: "Best for audio recognition and fast review.",
     accent: tokenColor.energy,
-    background: "#2a0a25",
+    background: "#a560e8", // morado (3er topic del journey)
     icon: "headphones",
   },
   {
@@ -840,7 +839,7 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     detail: "Connect words and meanings in a timed matching round.",
     caption: "Best for repetition and confidence under pressure.",
     accent: tokenColor.cyan,
-    background: "#082a36",
+    background: "#ff9600", // naranja (4to topic del journey)
     // Was "brain" — collided with the bottom-tab Practice icon. "link"
     // matches the "Connect words and meanings" copy and is unique
     // among the four practice modes.
@@ -1597,7 +1596,10 @@ export function MobileLibraryShell(args: {
   // sometimes win, snapping the user back to the top — exactly what the
   // restore was trying to avoid.
   useEffect(() => {
-    if (activeScreen === "journey") return;
+    // After IA swap, the journey path lives in the "home" key. Skip
+    // the scroll-reset there so the journey doesn't snap back to top
+    // every time the tab becomes active.
+    if (activeScreen === "home") return;
     shellScrollRef.current?.scrollTo({ y: 0, animated: false });
     setShellScrollY(0);
   }, [activeScreen]);
@@ -1868,6 +1870,42 @@ export function MobileLibraryShell(args: {
   // a tab change felt like a navigation, the badges read more like
   // "show me a quick summary".
   const [progressSheetOpen, setProgressSheetOpen] = useState(false);
+  // Drag-to-dismiss for the Progress sheet. Mirrors the gesture used in
+  // LanguageSwitchSheet — only downward drag is responsive; release > 80pt
+  // or velocity > 0.8 closes the sheet, otherwise it springs back to 0.
+  const progressSheetDragY = useRef(new Animated.Value(0)).current;
+  const progressSheetPanResponder = useMemo(
+    () =>
+      PanResponder.create({
+        onStartShouldSetPanResponder: () => false,
+        onMoveShouldSetPanResponder: (_, gesture) => Math.abs(gesture.dy) > 6,
+        onPanResponderMove: (_, gesture) => {
+          if (gesture.dy > 0) progressSheetDragY.setValue(gesture.dy);
+        },
+        onPanResponderRelease: (_, gesture) => {
+          if (gesture.dy > 80 || gesture.vy > 0.8) {
+            setProgressSheetOpen(false);
+            progressSheetDragY.setValue(0);
+          } else {
+            Animated.spring(progressSheetDragY, {
+              toValue: 0,
+              damping: 22,
+              stiffness: 220,
+              useNativeDriver: true,
+            }).start();
+          }
+        },
+        onPanResponderTerminate: () => {
+          Animated.spring(progressSheetDragY, {
+            toValue: 0,
+            damping: 22,
+            stiffness: 220,
+            useNativeDriver: true,
+          }).start();
+        },
+      }),
+    [progressSheetDragY]
+  );
   // Topic preview sheet — opens when the user taps a topic panel on
   // the journey path. Shows the stories that will appear inside the
   // topic plus the vocabulary teaser (real words pulled from the
@@ -2127,11 +2165,19 @@ export function MobileLibraryShell(args: {
     const isActive = preferences.activeJourneyId
       ? journey.id === preferences.activeJourneyId
       : journey === preferences.journeys[0];
+    // Solo mostramos el variantLabel cuando el variant es realmente
+    // un código regional conocido (us/uk/latam/spain…). Bajo el nuevo
+    // modelo "un track por Studio Journey", `journey.variant` puede
+    // ser un cuid (Journey.id) — formatVariantLabel lo escupe en
+    // mayúscula y el row terminaba mostrando "· CMONCZ14V0000…", que
+    // es ruido para el usuario.
+    const rawVariant = (journey.variant ?? "").trim().toLowerCase();
+    const variantLabel = VARIANT_LABELS[rawVariant as keyof typeof VARIANT_LABELS] ?? null;
     return {
       id: journey.id,
       language: journey.language,
       variant: journey.variant,
-      variantLabel: formatVariantLabel(journey.variant),
+      variantLabel,
       displayName: journeyDisplayName(journey),
       level: cefrFromPreferredLevel(journey.level),
       active: isActive,
@@ -2255,6 +2301,8 @@ export function MobileLibraryShell(args: {
           method: "POST",
           body: {
             targetLanguages: targetLanguagesFromJourneys(nextJourneys),
+            journeys: nextJourneys,
+            activeJourneyId: nextActiveId,
           },
         });
       } catch (err) {
@@ -2275,6 +2323,7 @@ export function MobileLibraryShell(args: {
     language: string;
     variant: string | null;
     focus: JourneyFocus;
+    label?: string | null;
   }) {
     const id = journeyId(input.language, input.variant, input.focus);
     // Defensive: if the user somehow lands on an existing combination,
@@ -2297,21 +2346,23 @@ export function MobileLibraryShell(args: {
       focus: input.focus,
       level: preferences.preferredLevel,
       createdAt: new Date().toISOString(),
+      label: input.label?.trim() || null,
     };
-    setPreferences((current) => {
-      // Belt + suspenders: dedupe the merge result. If anything
-      // ever bypasses the in-flight ref (background hydrate from
-      // disk, server payload, …) the array still ends up unique.
-      const nextJourneys = dedupeJourneysById([newJourney, ...current.journeys]);
-      return {
-        ...current,
-        journeys: nextJourneys,
-        activeJourneyId: newJourney.id,
-        targetLanguages: targetLanguagesFromJourneys(nextJourneys),
-        preferredVariant: newJourney.variant,
-        journeyFocus: newJourney.focus,
-      };
-    });
+    // Computamos el siguiente estado SINCRÓNICAMENTE — antes de
+    // setPreferences — para evitar que el updater de React (que con
+    // concurrent mode / batching puede correr DESPUÉS del await) deje
+    // `persistedJourneys` vacío cuando armamos el body del POST.
+    // Bug previo: el body iba con `journeys: []` y el backend borraba
+    // la metadata, perdiendo todas las journeys tras kill+launch.
+    const nextJourneys = dedupeJourneysById([newJourney, ...preferences.journeys]);
+    setPreferences((current) => ({
+      ...current,
+      journeys: dedupeJourneysById([newJourney, ...current.journeys]),
+      activeJourneyId: newJourney.id,
+      targetLanguages: targetLanguagesFromJourneys(nextJourneys),
+      preferredVariant: newJourney.variant,
+      journeyFocus: newJourney.focus,
+    }));
     setActiveJourneyLanguage(input.language);
     void loadJourneyForLanguage(input.language);
     if (sessionToken) {
@@ -2328,6 +2379,8 @@ export function MobileLibraryShell(args: {
             ],
             preferredVariant: input.variant,
             journeyFocus: input.focus,
+            journeys: nextJourneys,
+            activeJourneyId: newJourney.id,
           },
         });
       } catch (err) {
@@ -2353,21 +2406,26 @@ export function MobileLibraryShell(args: {
       return;
     }
     try {
-      // Reorder client-side first so the journey UI flips immediately;
-      // the server write happens in the background. The legacy
-      // targetLanguages / preferredVariant / preferredLevel /
-      // journeyFocus fields are kept in sync so call sites that
-      // haven't migrated yet see the active journey's values.
+      // Switch the active journey by id only — do NOT reorder
+      // `journeys`. The LanguageSwitchSheet renders rows in array
+      // order, so reordering on every tap shuffled the list under the
+      // user (the language they came from kept jumping to the top),
+      // which felt disorienting. Active state is detected by
+      // `activeJourneyId === journey.id`, not by position.
+      //
+      // The legacy `targetLanguages` array still gets reordered with
+      // the active language first, because some call sites (and the
+      // server) still derive "what's active" from `targetLanguages[0]`.
       setPreferences((current) => {
-        const reordered = [
+        const reorderedForLegacy = [
           target,
           ...current.journeys.filter((j) => j.id !== journeyId),
         ];
         return {
           ...current,
-          journeys: reordered,
+          // journeys order intentionally left untouched
           activeJourneyId: journeyId,
-          targetLanguages: targetLanguagesFromJourneys(reordered),
+          targetLanguages: targetLanguagesFromJourneys(reorderedForLegacy),
           preferredVariant: target.variant,
           preferredLevel: target.level,
           journeyFocus: target.focus,
@@ -2389,6 +2447,8 @@ export function MobileLibraryShell(args: {
           targetLanguages: nextOrder,
           preferredVariant: target.variant,
           journeyFocus: target.focus,
+          journeys: preferences.journeys,
+          activeJourneyId: journeyId,
         },
       });
     } catch (err) {
@@ -2443,30 +2503,86 @@ export function MobileLibraryShell(args: {
     return () => clearTimeout(dismiss);
   }, [lockedStoryHint, lockedHintAnim]);
 
-  // Breathing halo behind the journey "next up" pill — Duolingo-style
-  // periodic glow. One shared loop drives all uses, runs forever once
-  // mounted; we keep it native-driver so it doesn't churn JS.
+  // Halo respirante detrás de la "next up" del journey — glow estilo
+  // Duolingo, indefinido. Un solo loop alimenta el halo + el float de
+  // la story. Native driver para no cargar el hilo JS.
   const journeyNextPulse = useRef(new Animated.Value(0.25)).current;
+  useEffect(() => {
+    // Rearmamos el loop ante varias señales para no quedar "muerto":
+    //   - El journey se vuelve visible (activeScreen pasa a "home").
+    //   - El track activo cambia (p.ej. el usuario picó otro Studio
+    //     Journey) — los Animated.View se desmontan/remontan y el
+    //     handle nativo se desvincula del valor.
+    //   - La "next" salta a otra historia (los views previos se
+    //     desmontan; los nuevos necesitan re-suscribirse).
+    //   - La app vuelve de background — iOS pausa los timing nativos
+    //     y al despertar el loop puede no reanudar solo.
+    if (activeScreen !== "home") return;
+
+    let loop: Animated.CompositeAnimation | null = null;
+    function startPulse() {
+      if (loop) loop.stop();
+      journeyNextPulse.setValue(0.25);
+      loop = Animated.loop(
+        Animated.sequence([
+          Animated.timing(journeyNextPulse, {
+            toValue: 0.85,
+            duration: 1100,
+            easing: Easing.inOut(Easing.ease),
+            // JS-driven: con native driver el loop se pausa a mitad
+            // bajo Low Power Mode / frame drops y queda congelado.
+            // El loop sólo controla 1 valor de opacity + 1 translateY,
+            // así que el costo de manejarlo en JS es despreciable.
+            useNativeDriver: false,
+          }),
+          Animated.timing(journeyNextPulse, {
+            toValue: 0.25,
+            duration: 1100,
+            easing: Easing.inOut(Easing.ease),
+            useNativeDriver: false,
+          }),
+        ])
+      );
+      loop.start();
+    }
+
+    startPulse();
+
+    const sub = AppState.addEventListener("change", (next) => {
+      if (next === "active") startPulse();
+    });
+
+    return () => {
+      sub.remove();
+      if (loop) loop.stop();
+    };
+  }, [journeyNextPulse, activeScreen]);
+
+  // Shimmer experiment (variant B). Loop independiente del pulso del
+  // "next" para poder espaciar más las pasadas. Cada ciclo: pausa de
+  // 2.4 s (la banda invisible fuera del wrap), 1.5 s de pasada, reset
+  // instantáneo. Sensación más sutil, menos repetitiva.
+  const shimmerPulse = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     const loop = Animated.loop(
       Animated.sequence([
-        Animated.timing(journeyNextPulse, {
-          toValue: 0.85,
-          duration: 1100,
+        Animated.delay(2400),
+        Animated.timing(shimmerPulse, {
+          toValue: 1,
+          duration: 1500,
           easing: Easing.inOut(Easing.ease),
           useNativeDriver: true,
         }),
-        Animated.timing(journeyNextPulse, {
-          toValue: 0.25,
-          duration: 1100,
-          easing: Easing.inOut(Easing.ease),
+        Animated.timing(shimmerPulse, {
+          toValue: 0,
+          duration: 0,
           useNativeDriver: true,
         }),
       ])
     );
     loop.start();
     return () => loop.stop();
-  }, [journeyNextPulse]);
+  }, [shimmerPulse]);
   // Set to true while the perfect-score celebration is on screen so
   // PracticeCelebration renders confetti. Reset on close.
   const [practicePerfectActive, setPracticePerfectActive] = useState(false);
@@ -2807,6 +2923,15 @@ export function MobileLibraryShell(args: {
     };
   }, [remoteRefreshCounter, sessionBooksCount, sessionPlan, sessionStoriesCount, sessionToken, sessionUserId]);
 
+  // Ref mirror of the latest preferences so callbacks that don't want
+  // to churn deps (like `loadJourneyForLanguage`) can still read the
+  // current preferredVariant / activeJourneyId without re-creating
+  // every render. Updated synchronously after every render below.
+  const preferencesRef = useRef(preferences);
+  useEffect(() => {
+    preferencesRef.current = preferences;
+  }, [preferences]);
+
   const loadJourneyForLanguage = useCallback(
     async (language: string, options: { clearPrevious?: boolean } = {}) => {
       if (!sessionToken) return;
@@ -2854,8 +2979,28 @@ export function MobileLibraryShell(args: {
               }
             : null,
         }));
+        // Open the legacy variant picker only when the user hasn't
+        // already chosen one of the available tracks. With the new
+        // "one track per Studio Journey" model, every language with
+        // multiple Journey records returns >= 2 tracks — but if the
+        // user already created a journey (preferredVariant matches a
+        // track id), or one of their saved journeys for this language
+        // matches a track, they don't need to pick again.
         if (payload.tracks.length >= 2) {
-          setJourneyVariantPickerOpen(true);
+          const prefs = preferencesRef.current;
+          const currentVariant = (prefs.preferredVariant ?? "").trim();
+          const matchesPreferredVariant = currentVariant
+            ? payload.tracks.some((track) => track.id === currentVariant)
+            : false;
+          const matchesAnySavedJourney = prefs.journeys.some(
+            (j) =>
+              j.language.toLowerCase() === language.toLowerCase() &&
+              j.variant &&
+              payload.tracks.some((track) => track.id === j.variant)
+          );
+          if (!matchesPreferredVariant && !matchesAnySavedJourney) {
+            setJourneyVariantPickerOpen(true);
+          }
         }
       } catch {
         // Only drop to empty if we have nothing cached to fall back on.
@@ -2865,6 +3010,49 @@ export function MobileLibraryShell(args: {
       }
     },
     [saveJourneyCacheToDisk, sessionToken]
+  );
+
+  // Lightweight tracks fetcher for the JourneysPanel "pick a journey"
+  // step. Hits the same endpoint as `loadJourneyForLanguage` but does
+  // NOT mutate the active journey state — the panel needs the track
+  // list for an arbitrary language without disturbing what the user
+  // is currently viewing on the journey screen.
+  const getTracksForLanguage = useCallback(
+    async (language: string): Promise<{ id: string; label: string }[]> => {
+      if (!sessionToken) return [];
+      const cacheKey = language.toLowerCase();
+      const cached = journeyCacheByLanguageRef.current.get(cacheKey);
+      if (cached?.tracks?.length) {
+        return cached.tracks.map((track) => ({ id: track.id, label: track.label }));
+      }
+      try {
+        const payload = await apiFetch<MobileJourneyPayload>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: `/api/mobile/journey?language=${encodeURIComponent(language)}`,
+          token: sessionToken,
+        });
+        journeyCacheByLanguageRef.current.set(cacheKey, payload);
+        saveJourneyCacheToDisk();
+        return payload.tracks.map((track) => ({ id: track.id, label: track.label }));
+      } catch {
+        return [];
+      }
+    },
+    [saveJourneyCacheToDisk, sessionToken]
+  );
+
+  // Synchronous twin of `getTracksForLanguage` — returns the cached
+  // tracks immediately when present, or null when a network fetch
+  // would be required. Used by the JourneysPanel to skip the
+  // "Loading..." flicker when the prefetch has already populated the
+  // cache.
+  const getTracksForLanguageSync = useCallback(
+    (language: string): { id: string; label: string }[] | null => {
+      const cached = journeyCacheByLanguageRef.current.get(language.toLowerCase());
+      if (!cached?.tracks?.length) return null;
+      return cached.tracks.map((track) => ({ id: track.id, label: track.label }));
+    },
+    []
   );
 
   // Prefetch every cover once the journey payload arrives so tapping into a
@@ -2936,15 +3124,38 @@ export function MobileLibraryShell(args: {
   // Only auto-pick the user's single target language on the FIRST hydration
   // pass, not every time they tap "All languages". Otherwise clearing the
   // language snaps back immediately and the hub is unreachable.
+  //
+  // Adicional: si el backend trae un `activeJourneyId` cuyo idioma NO
+  // coincide con el `activeJourneyLanguage` que vino de SecureStore,
+  // el backend gana. Bug previo (cold start tras matar la app):
+  // SecureStore guardaba el último idioma local (p.ej. Italian) y
+  // Clerk traía un journey activo distinto (p.ej. German). El pill
+  // mostraba la bandera del backend (German) pero el contenido
+  // cargaba el idioma del SecureStore (Italian). Solucionamos
+  // sincronizando contra `activeJourney?.language` en el primer
+  // hydrate.
   const hasAutoPickedLanguageRef = useRef(false);
   useEffect(() => {
     if (!didHydratePreferences) return;
     if (hasAutoPickedLanguageRef.current) return;
     hasAutoPickedLanguageRef.current = true;
+    const backendLang = activeJourney?.language?.trim() ?? null;
+    if (backendLang) {
+      const sameLang =
+        activeJourneyLanguage &&
+        activeJourneyLanguage.toLowerCase() === backendLang.toLowerCase();
+      if (!sameLang) setActiveJourneyLanguage(backendLang);
+      return;
+    }
     if (preferences.targetLanguages.length === 1 && !activeJourneyLanguage) {
       setActiveJourneyLanguage(preferences.targetLanguages[0]);
     }
-  }, [didHydratePreferences, preferences.targetLanguages, activeJourneyLanguage]);
+  }, [
+    didHydratePreferences,
+    preferences.targetLanguages,
+    activeJourneyLanguage,
+    activeJourney,
+  ]);
 
   // If we restored a language from SecureStore, re-fetch the journey with that
   // explicit language so the initial (no-param) fetch doesn't overwrite it with
@@ -2970,15 +3181,26 @@ export function MobileLibraryShell(args: {
   // races behind it and replaces the data with reality.
   const lastJourneyFreshFetchRef = useRef<{ key: string; ts: number } | null>(null);
   useEffect(() => {
-    if (activeScreen !== "journey") return;
+    // Journey path now lives in the "home" key after the IA swap.
+    if (activeScreen !== "home") return;
     if (!sessionToken) return;
     if (!activeJourneyLanguage) return;
     const key = activeJourneyLanguage.toLowerCase();
     const now = Date.now();
     // Throttle: don't re-fetch if we just refreshed under 30 seconds
     // ago. A user toggling tabs quickly shouldn't hammer the API.
+    // Excepción: si el cache está vacío de stories (p.ej. el primer
+    // fetch global trajo solo el shell sin contenido), saltamos el
+    // throttle y forzamos otro fetch — caso reportado: "primera vez
+    // solo se veían los temas pero no las historias, tuve que matar
+    // la app y volver a entrar".
+    // Throttle bajado de 30 s a 4 s. Con 30 s, después de un fix
+    // server-side el cliente seguía mostrando el cache stale durante
+    // medio minuto entre toques al journey, lo que confundía al usuario
+    // ("la next sigue abajo"). 4 s es suficiente para evitar hammering
+    // y permite ver fixes server-side casi inmediatamente.
     const prev = lastJourneyFreshFetchRef.current;
-    if (prev && prev.key === key && now - prev.ts < 30_000) return;
+    if (prev && prev.key === key && now - prev.ts < 4_000) return;
     lastJourneyFreshFetchRef.current = { key, ts: now };
     void loadJourneyForLanguage(activeJourneyLanguage, { clearPrevious: false });
   }, [activeScreen, sessionToken, activeJourneyLanguage, loadJourneyForLanguage]);
@@ -3158,18 +3380,15 @@ export function MobileLibraryShell(args: {
     let cancelled = false;
 
     async function hydrateOfflineState() {
-      const [snapshot, journeyByLang] = await Promise.all([
-        loadOfflineSnapshot(PREVIEW_OFFLINE_USER_ID),
-        loadJourneyCache<MobileJourneyPayload>(PREVIEW_OFFLINE_USER_ID),
-      ]);
+      // FORCE: skip persisted journey cache on cold start. Backend
+      // changed (journey_story_read no longer marks audioFinished) and
+      // the on-disk cache was serving the stale "next" pointer for
+      // multiple sessions even after force-quit. Always start with an
+      // empty journey ref and let the network hydrate populate it.
+      const snapshot = await loadOfflineSnapshot(PREVIEW_OFFLINE_USER_ID);
       if (cancelled) return;
       setOfflineSnapshot(snapshot);
-      // Rehydrate the in-memory ref BEFORE any network hydrate so Journey
-      // renders instantly offline. Network responses will overwrite each
-      // entry once they arrive.
-      Object.entries(journeyByLang).forEach(([key, payload]) => {
-        journeyCacheByLanguageRef.current.set(key, payload);
-      });
+      void saveJourneyCache<MobileJourneyPayload>(PREVIEW_OFFLINE_USER_ID, {});
     }
 
     void hydrateOfflineState();
@@ -3569,13 +3788,90 @@ export function MobileLibraryShell(args: {
         }),
     [favoriteWords, onboardingPracticePrefs]
   );
+  // Journeys-first: el listado de favoritos por defecto se acota al
+  // idioma del journey activo. La lógica anterior mezclaba palabras
+  // de todos los idiomas, lo cual diluía el foco del journey actual.
+  const activeJourneyLanguageLower = useMemo(() => {
+    return (activeJourney?.language ?? "").trim().toLowerCase();
+  }, [activeJourney]);
+  const journeyScopedFavoriteCards = useMemo(() => {
+    if (!activeJourneyLanguageLower) return favoriteCards;
+    return favoriteCards.filter(
+      ({ item }) => (item.language ?? "").trim().toLowerCase() === activeJourneyLanguageLower
+    );
+  }, [favoriteCards, activeJourneyLanguageLower]);
+  // Slugs de las stories que están en el nivel actual del journey
+  // activo (primer nivel desbloqueado). Sirven como criterio para el
+  // filtro "Related" — palabras saved que viven en stories cercanas
+  // a donde el usuario está parado en el path.
+  const currentLevelStorySlugs = useMemo(() => {
+    const set = new Set<string>();
+    if (!remoteJourney?.tracks?.length) return set;
+    const variantId = getJourneyVariantFromPreferences(
+      remoteJourney.language ?? "Spanish",
+      preferences.preferredVariant,
+      preferences.preferredRegion
+    );
+    const track =
+      remoteJourney.tracks.find((t) => t.id === variantId) ?? remoteJourney.tracks[0] ?? null;
+    if (!track) return set;
+    const level = track.levels.find((l) => l.unlocked) ?? track.levels[0] ?? null;
+    if (!level) return set;
+    for (const topic of level.topics ?? []) {
+      for (const story of topic.stories ?? []) {
+        if (story.storySlug) set.add(story.storySlug);
+      }
+    }
+    return set;
+  }, [remoteJourney, preferences.preferredVariant, preferences.preferredRegion]);
+  const nowMillis = useMemo(() => Date.now(), [favoriteWords]);
+  const journeyKindFilteredCards = useMemo(() => {
+    if (favoritePracticeModeKind === "due") {
+      return journeyScopedFavoriteCards.filter(({ item }) => {
+        if (!item.nextReviewAt) return false;
+        const ts = Date.parse(item.nextReviewAt);
+        return Number.isFinite(ts) && ts <= nowMillis;
+      });
+    }
+    if (favoritePracticeModeKind === "related") {
+      if (currentLevelStorySlugs.size === 0) return [];
+      return journeyScopedFavoriteCards.filter(
+        ({ item }) => item.storySlug && currentLevelStorySlugs.has(item.storySlug)
+      );
+    }
+    return journeyScopedFavoriteCards;
+  }, [
+    journeyScopedFavoriteCards,
+    favoritePracticeModeKind,
+    currentLevelStorySlugs,
+    nowMillis,
+  ]);
   const filteredFavoriteCards = useMemo(
     () =>
-      favoriteCards.filter(({ item }) =>
+      journeyKindFilteredCards.filter(({ item }) =>
         selectedFavoriteType === "all" ? true : getFavoriteType(item) === selectedFavoriteType
       ),
-    [favoriteCards, selectedFavoriteType]
+    [journeyKindFilteredCards, selectedFavoriteType]
   );
+  // Counts mostrados en cada pill (siempre journey-scoped, sin importar
+  // el tipo seleccionado, para que el usuario vea cuántas palabras hay
+  // en cada modo antes de tocar).
+  const journeyDueCount = useMemo(() => {
+    return journeyScopedFavoriteCards.reduce((n, { item }) => {
+      if (!item.nextReviewAt) return n;
+      const ts = Date.parse(item.nextReviewAt);
+      return Number.isFinite(ts) && ts <= nowMillis ? n + 1 : n;
+    }, 0);
+  }, [journeyScopedFavoriteCards, nowMillis]);
+  const journeyAllCount = journeyScopedFavoriteCards.length;
+  const journeyRelatedCount = useMemo(() => {
+    if (currentLevelStorySlugs.size === 0) return 0;
+    return journeyScopedFavoriteCards.reduce(
+      (n, { item }) =>
+        item.storySlug && currentLevelStorySlugs.has(item.storySlug) ? n + 1 : n,
+      0
+    );
+  }, [journeyScopedFavoriteCards, currentLevelStorySlugs]);
   const showFavoriteLanguageChip = useMemo(() => {
     const langs = new Set(favoriteWords.map((w) => w.language).filter(Boolean));
     return langs.size > 1;
@@ -3840,7 +4136,7 @@ export function MobileLibraryShell(args: {
         { key: "explore", label: "Explore" },
         { key: "practice", label: "Practice" },
         { key: "favorites", label: "Favorites" },
-        { key: "journey", label: "Journey" },
+        { key: "journey", label: "Library" },
       ]
     : [
         { key: "home", label: "Home" },
@@ -3891,7 +4187,7 @@ export function MobileLibraryShell(args: {
     } else if (activeOnboardingTourTarget === "practice-favorites") {
       setActiveScreen("practice");
     } else if (activeOnboardingTourTarget === "journey") {
-      setActiveScreen("journey");
+      setActiveScreen("home");
     }
     requestAnimationFrame(() => {
       shellScrollRef.current?.scrollTo({ y: 0, animated: true });
@@ -4584,7 +4880,7 @@ export function MobileLibraryShell(args: {
           body: `${nextTopic.label} is now unlocked. Keep the journey moving.`,
           cta: "Open next topic",
           onPress: () => {
-            setActiveScreen("journey");
+            setActiveScreen("home");
             setSelectedJourneyLevelId(level.id);
             setSelectedJourneyTopicId(nextTopic.slug);
             setJourneyDetailTopicId(nextTopic.slug);
@@ -4600,7 +4896,7 @@ export function MobileLibraryShell(args: {
           body: `${nextLevel.title} is open. You cleared the checkpoint for ${topic.label}.`,
           cta: "Open level",
           onPress: () => {
-            setActiveScreen("journey");
+            setActiveScreen("home");
             setSelectedJourneyLevelId(nextLevel.id);
             setJourneyDetailTopicId(null);
             setJourneyMilestone(null);
@@ -4613,7 +4909,7 @@ export function MobileLibraryShell(args: {
         body: `${topic.label} is fully cleared.`,
         cta: "Back to journey",
         onPress: () => {
-          setActiveScreen("journey");
+          setActiveScreen("home");
           setJourneyDetailTopicId(null);
           setJourneyMilestone(null);
         },
@@ -4628,7 +4924,7 @@ export function MobileLibraryShell(args: {
           : `${topic.label} is ready for its checkpoint now.`,
         cta: topic.checkpointPassed ? "Back to journey" : "Start checkpoint",
         onPress: () => {
-          setActiveScreen("journey");
+          setActiveScreen("home");
           if (!topic.checkpointPassed) {
             void openJourneyPractice({
               variantId: track.id,
@@ -5339,7 +5635,7 @@ export function MobileLibraryShell(args: {
         setActiveScreen(practicePreviousScreen ?? "journey");
       }
     } else if (practiceLaunchContext.source === "journey") {
-      setActiveScreen("journey");
+      setActiveScreen("home");
     }
     setPracticeSeedItems(null);
     setPracticeLaunchContext({ source: "favorites" });
@@ -6825,7 +7121,7 @@ export function MobileLibraryShell(args: {
         if (action === "open-journey") {
           setSelectedBook(null);
           setSelection(null);
-          setActiveScreen("journey");
+          setActiveScreen("home");
           shellScrollRef.current?.scrollTo({ y: 0, animated: false });
           return;
         }
@@ -6972,8 +7268,8 @@ export function MobileLibraryShell(args: {
       <View style={styles.hero}>
         <View style={styles.heroHeaderRow}>
           <View style={styles.heroTextBlock}>
-            <Text style={styles.eyebrow}>Today</Text>
-            <Text style={styles.title}>Home</Text>
+            <Text style={styles.eyebrow}>Library</Text>
+            <Text style={styles.title}>Library</Text>
             <Text style={styles.subtitle}>Continue, discover and jump into your next story.</Text>
           </View>
           <MenuTrigger onPress={() => setMenuOpen(true)} />
@@ -7002,7 +7298,7 @@ export function MobileLibraryShell(args: {
       {didFirstHydrate && remoteProgress?.gamification ? (
         <View style={styles.section}>
           <Pressable
-            onPress={() => setActiveScreen("progress")}
+            onPress={() => setProgressSheetOpen(true)}
             style={styles.gamificationMiniBar}
           >
             <View style={styles.gamificationMiniBarPill}>
@@ -7575,8 +7871,14 @@ export function MobileLibraryShell(args: {
                             {card.title}
                           </Text>
                         </View>
-                        <View style={[styles.practiceModeIconWrap, { borderColor: `${card.accent}55` }]}>
-                          <PracticeModeIcon icon={card.icon} color={card.accent} />
+                        {/* Icono siempre blanco sobre wrap translúcido
+                            blanco — mismo tratamiento que los topic
+                            panels del journey. Antes el ícono se
+                            renderizaba con `card.accent`, lo que
+                            sobre fondos vibrantes (verde, naranja)
+                            quedaba apagado o de hue similar al fondo. */}
+                        <View style={styles.practiceModeIconWrap}>
+                          <PracticeModeIcon icon={card.icon} color="#ffffff" />
                         </View>
                       </View>
                       <View style={styles.practiceModeBody}>
@@ -7610,7 +7912,12 @@ export function MobileLibraryShell(args: {
     </>
   );
 
-  const practiceSessionView =
+  // `practiceSessionView` se invoca como función (no const-eager) para
+  // que su body se evalúe DESPUÉS de los memos de journey
+  // (`globalJourneyNextStoryId`, `activeJourneyTrack`, etc.) que están
+  // declarados más abajo. Sin esto el "next-step CTA" del result card
+  // dispararía ReferenceError por TDZ.
+  const renderPracticeSessionView = () =>
     activePracticeMode && activePracticeCard ? (
       <View style={styles.practiceSessionShell}>
         <View style={styles.practiceSessionCard}>
@@ -7739,40 +8046,130 @@ export function MobileLibraryShell(args: {
                 </Text>
               ) : null}
               <View style={styles.practiceResultActions}>
-                {/* Primary CTA depends on context:
-                    - Checkpoint failed → "Retry checkpoint"
-                    - Non-checkpoint with mistakes → "Review wrong answers"
-                      (re-runs the same mode but only on the missed words)
-                    - Otherwise → "Play again" */}
+                {/* PRIMARY CTA = "next step" único y forward-looking:
+                    1. Si quedan palabras due en favoritos → "Review N more due"
+                    2. Si hay próxima historia en el path del journey → "Continue to {title}"
+                    3. Fallback → "Back to journey"
+                    Para checkpoint NO pasado, lo escondemos para que el
+                    "Retry checkpoint" (abajo) sea el camino obvio. */}
+                {(() => {
+                  const inCheckpoint =
+                    practiceLaunchContext.source === "journey" &&
+                    practiceLaunchContext.kind === "checkpoint";
+                  if (inCheckpoint && !checkpointPassed) return null;
+
+                  // Encontrar la story object del global next pointer
+                  let nextStory:
+                    | MobileJourneyTopicSummary["stories"][number]
+                    | null = null;
+                  if (globalJourneyNextStoryId && activeJourneyTrack) {
+                    for (const lvl of activeJourneyTrack.levels) {
+                      for (const tp of lvl.topics) {
+                        const found = tp.stories.find(
+                          (s) => s.id === globalJourneyNextStoryId
+                        );
+                        if (found) {
+                          nextStory = found;
+                          break;
+                        }
+                      }
+                      if (nextStory) break;
+                    }
+                  }
+
+                  // Si quedan due (y no fue checkpoint), proponer otra ronda.
+                  if (dueFavoritesCount > 0 && !inCheckpoint) {
+                    return (
+                      <Pressable
+                        onPress={() =>
+                          void openPracticeMode(recommendedPracticeMode, true)
+                        }
+                        style={[
+                          styles.inlineButton,
+                          styles.primaryButton,
+                          styles.practiceResultActionButton,
+                        ]}
+                      >
+                        <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
+                          Review {dueFavoritesCount} more due
+                        </Text>
+                      </Pressable>
+                    );
+                  }
+
+                  if (nextStory) {
+                    const nextTitle = nextStory.title?.trim() || "next story";
+                    const captured = nextStory;
+                    return (
+                      <Pressable
+                        onPress={() => {
+                          closePracticeSession();
+                          void openJourneyStory(captured);
+                        }}
+                        style={[
+                          styles.inlineButton,
+                          styles.primaryButton,
+                          styles.practiceResultActionButton,
+                        ]}
+                      >
+                        <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
+                          Continue to {nextTitle}
+                        </Text>
+                      </Pressable>
+                    );
+                  }
+
+                  return (
+                    <Pressable
+                      onPress={() => {
+                        closePracticeSession();
+                        setActiveScreen("home");
+                      }}
+                      style={[
+                        styles.inlineButton,
+                        styles.primaryButton,
+                        styles.practiceResultActionButton,
+                      ]}
+                    >
+                      <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
+                        Back to journey
+                      </Text>
+                    </Pressable>
+                  );
+                })()}
+
+                {/* SECONDARY CTAs (lo que antes eran primary):
+                    Retry checkpoint / Review N wrongs / Play again. */}
                 {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint" ? (
                   <Pressable
                     onPress={() => void openPracticeMode(activePracticeMode, false)}
-                    style={[styles.inlineButton, styles.primaryButton, styles.practiceResultActionButton]}
+                    style={[styles.inlineButton, styles.practiceResultActionButton]}
                   >
-                    <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
+                    <Text style={styles.inlineButtonText}>
                       Retry checkpoint
                     </Text>
                   </Pressable>
                 ) : practiceMissedItems.length > 0 ? (
                   <Pressable
                     onPress={() => void openPracticeMode(activePracticeMode, true, practiceMissedItems)}
-                    style={[styles.inlineButton, styles.primaryButton, styles.practiceResultActionButton]}
+                    style={[styles.inlineButton, styles.practiceResultActionButton]}
                   >
-                    <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
+                    <Text style={styles.inlineButtonText}>
                       Review {practiceMissedItems.length} wrong{practiceMissedItems.length === 1 ? "" : "s"}
                     </Text>
                   </Pressable>
                 ) : (
                   <Pressable
                     onPress={() => void openPracticeMode(activePracticeMode, false)}
-                    style={[styles.inlineButton, styles.primaryButton, styles.practiceResultActionButton]}
+                    style={[styles.inlineButton, styles.practiceResultActionButton]}
                   >
-                    <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
+                    <Text style={styles.inlineButtonText}>
                       Play again
                     </Text>
                   </Pressable>
                 )}
-                {/* Secondary CTAs */}
+
+                {/* Recovery weak spots para checkpoint failed sigue ahí. */}
                 {practiceLaunchContext.source === "journey" &&
                 practiceLaunchContext.kind === "checkpoint" &&
                 !checkpointPassed &&
@@ -7785,9 +8182,8 @@ export function MobileLibraryShell(args: {
                     <Text style={styles.inlineButtonText}>Review weak spots</Text>
                   </Pressable>
                 ) : null}
-                {/* "Play again" stays available as a secondary option
-                    when the primary already takes the user somewhere
-                    else (e.g. wrong-answer review). */}
+
+                {/* "Play again" extra cuando el secundario ya es "Review wrongs". */}
                 {practiceMissedItems.length > 0 &&
                 !(practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint") ? (
                   <Pressable
@@ -7797,12 +8193,6 @@ export function MobileLibraryShell(args: {
                     <Text style={styles.inlineButtonText}>Play again</Text>
                   </Pressable>
                 ) : null}
-                <Pressable
-                  onPress={closePracticeSession}
-                  style={[styles.inlineButton, styles.practiceResultActionButton]}
-                >
-                  <Text style={styles.inlineButtonText}>Done</Text>
-                </Pressable>
               </View>
             </Animated.View>
           ) : currentPracticeExercise ? (
@@ -8173,19 +8563,23 @@ export function MobileLibraryShell(args: {
         <View style={styles.heroHeaderRow}>
           <View style={styles.favoritesHeroTextBlock}>
             <Text style={styles.eyebrow}>Favorites</Text>
-            <Text style={styles.favoritesHeroTitle}>Saved vocabulary</Text>
+            <Text style={styles.favoritesHeroTitle}>
+              {activeJourney
+                ? `${activeJourney.language} vocabulary`
+                : "Saved vocabulary"}
+            </Text>
           </View>
           <MenuTrigger onPress={() => setMenuOpen(true)} />
         </View>
         {favoriteCards.length > 0 ? (
           <View style={styles.favoritesHeroStats}>
-            {dueFavoritesCount > 0 ? (
+            {journeyDueCount > 0 ? (
               <View style={styles.favoritesCompactPill}>
-                <Text style={styles.favoritesCompactDueText}>{dueFavoritesCount} due</Text>
+                <Text style={styles.favoritesCompactDueText}>{journeyDueCount} due</Text>
               </View>
             ) : null}
             <View style={styles.favoritesCompactPill}>
-              <Text style={styles.favoritesCompactPillText}>{favoriteWords.length} total</Text>
+              <Text style={styles.favoritesCompactPillText}>{journeyAllCount} in journey</Text>
             </View>
             <View style={styles.favoritesCompactPill}>
               <Text style={styles.favoritesCompactPillText}>{formatStreakLabel(Math.max(maxFavoriteStreak, 1))}</Text>
@@ -8198,13 +8592,12 @@ export function MobileLibraryShell(args: {
         <>
           <View style={styles.favoritesCompactBar}>
             <View style={styles.favoritesCompactActions}>
+              {/* Pills journey-scoped: filtran la lista visible (no
+                  navegan a Practice). El botón "Practice these" abajo
+                  arranca la sesión respetando el filtro activo. */}
               <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoritesModePills}>
                 <Pressable
-                  onPress={() => {
-                    setFavoritePracticeModeKind("due");
-                    setActiveScreen("practice");
-                    void openPracticeMode(recommendedPracticeMode, true, undefined, "due");
-                  }}
+                  onPress={() => setFavoritePracticeModeKind("due")}
                   style={[
                     styles.favoritesModePill,
                     favoritePracticeModeKind === "due" ? styles.favoritesModePillActive : null,
@@ -8216,15 +8609,11 @@ export function MobileLibraryShell(args: {
                       favoritePracticeModeKind === "due" ? styles.favoritesModePillTextActive : null,
                     ]}
                   >
-                    Due
+                    Due ({journeyDueCount})
                   </Text>
                 </Pressable>
                 <Pressable
-                  onPress={() => {
-                    setFavoritePracticeModeKind("all");
-                    setActiveScreen("practice");
-                    void openPracticeMode(recommendedPracticeMode, false, undefined, "all");
-                  }}
+                  onPress={() => setFavoritePracticeModeKind("all")}
                   style={[
                     styles.favoritesModePill,
                     favoritePracticeModeKind === "all" ? styles.favoritesModePillActive : null,
@@ -8236,21 +8625,12 @@ export function MobileLibraryShell(args: {
                       favoritePracticeModeKind === "all" ? styles.favoritesModePillTextActive : null,
                     ]}
                   >
-                    All
+                    All ({journeyAllCount})
                   </Text>
                 </Pressable>
-                {relatedPracticeAvailable ? (
+                {journeyRelatedCount > 0 ? (
                   <Pressable
-                    onPress={() => {
-                      setFavoritePracticeModeKind("related");
-                      setActiveScreen("practice");
-                      void openPracticeMode(
-                        recommendedPracticeMode,
-                        false,
-                        buildPracticeFavorites(relatedPracticeCandidates),
-                        "related"
-                      );
-                    }}
+                    onPress={() => setFavoritePracticeModeKind("related")}
                     style={[
                       styles.favoritesModePill,
                       favoritePracticeModeKind === "related" ? styles.favoritesModePillActive : null,
@@ -8262,7 +8642,7 @@ export function MobileLibraryShell(args: {
                         favoritePracticeModeKind === "related" ? styles.favoritesModePillTextActive : null,
                       ]}
                     >
-                      Related
+                      Related ({journeyRelatedCount})
                     </Text>
                   </Pressable>
                 ) : null}
@@ -8359,6 +8739,36 @@ export function MobileLibraryShell(args: {
             </View>
           );
           })}
+          {filteredFavoriteCards.length > 0 ? (
+            <Pressable
+              onPress={() => {
+                const itemsForPractice = filteredFavoriteCards.map((c) => c.item);
+                setActiveScreen("practice");
+                void openPracticeMode(
+                  recommendedPracticeMode,
+                  false,
+                  buildPracticeFavorites(itemsForPractice),
+                  favoritePracticeModeKind
+                );
+              }}
+              style={styles.favoritesPracticeCta}
+            >
+              <Feather name="play-circle" size={18} color={tokenBg[1]} />
+              <Text style={styles.favoritesPracticeCtaText}>
+                {`Practice these (${filteredFavoriteCards.length})`}
+              </Text>
+            </Pressable>
+          ) : (
+            <View style={styles.favoritesEmptyFilter}>
+              <Text style={styles.favoritesEmptyFilterText}>
+                {favoritePracticeModeKind === "due"
+                  ? "Nothing due right now."
+                  : favoritePracticeModeKind === "related"
+                    ? "No saved words from your current level yet."
+                    : "No favorites match this filter."}
+              </Text>
+            </View>
+          )}
         </>
       ) : (
         <View style={styles.emptyCard}>
@@ -8837,16 +9247,7 @@ export function MobileLibraryShell(args: {
                     })),
                   ]
                 : settingsPickerSection === "journeyFocus"
-                  ? JOURNEY_FOCUS_OPTIONS.map((focus) => ({
-                      key: `settings-journey-focus-${focus}`,
-                      label: focus,
-                      active: (preferences.journeyFocus ?? "General") === focus,
-                      onPress: () => {
-                        setPreferences((current) => ({ ...current, journeyFocus: focus }));
-                        setPreferencesStatus("idle");
-                        setSettingsPickerSection(null);
-                      },
-                    }))
+                  ? [] // journeyFocus picker removed; focus is captured in onboarding
                   : settingsPickerSection === "dailyMinutes"
                     ? [
                         {
@@ -8937,12 +9338,8 @@ export function MobileLibraryShell(args: {
           value: preferences.learningGoal || "No preference",
           onPress: () => setSettingsPickerSection("goal"),
         },
-        {
-          id: "journeyFocus",
-          label: "Journey focus",
-          value: preferences.journeyFocus || "General",
-          onPress: () => setSettingsPickerSection("journeyFocus"),
-        },
+        // "Journey focus" se removió de Settings: el focus ahora se
+        // captura en el onboarding eligiendo el Journey de Studio.
         {
           id: "dailyMinutes",
           label: "Daily plan",
@@ -9502,7 +9899,7 @@ export function MobileLibraryShell(args: {
     }
 
     if (target.kind === "journey") {
-      setActiveScreen("journey");
+      setActiveScreen("home");
       void trackReminderMetric("reminder_destination_opened", {
         targetKind: target.kind,
       });
@@ -9714,9 +10111,9 @@ export function MobileLibraryShell(args: {
     // which caused short topics (3 stories) to "return" too early —
     // the third story landed back at the leftmost position even
     // though the second had only just reached the right edge.
-    const STEP_PX = 25;
-    const MAX_WAVE_OFFSET_PX = 75;
-    const PERIOD = (MAX_WAVE_OFFSET_PX / STEP_PX) * 2; // 6 with these values
+    const STEP_PX = 28;
+    const MAX_WAVE_OFFSET_PX = 112;
+    const PERIOD = (MAX_WAVE_OFFSET_PX / STEP_PX) * 2; // 8 with these values
     const phase = storyIdx % PERIOD;
     const waveOffsetPx =
       phase <= PERIOD / 2 ? phase * STEP_PX : (PERIOD - phase) * STEP_PX;
@@ -9764,6 +10161,12 @@ export function MobileLibraryShell(args: {
             ? "locked"
             : "step";
     const pillLabel = story.title?.trim() || `Story ${storyIdx + 1}`;
+
+    // El glow del "next" usa el color del tema actual, así la
+    // historia recomendada queda visualmente integrada con el panel
+    // del topic en el que vive.
+    const topicColor = topicPanelColor(topic.slug, level.id);
+
     return (
       <View
         // Compound key (level.id + topic.slug + story.id) — story
@@ -9784,14 +10187,93 @@ export function MobileLibraryShell(args: {
           // identical in size and weight; we only overlay a thin cyan
           // breathing inset ring + a subtle background tint so the user's
           // eye lands on it without the row screaming.
+          // Glow pulsante del color del topic — ya existía y se mantiene
+          // para la "next".
           const nextOverlay =
             nodeVariant === "next" ? (
               <Animated.View
                 pointerEvents="none"
-                style={[styles.journeyNodePillNextGlow, { opacity: journeyNextPulse }]}
+                style={[
+                  styles.journeyNodePillNextGlow,
+                  { backgroundColor: topicColor, opacity: journeyNextPulse },
+                ]}
               />
             ) : null;
-          return (
+
+          // Sheen superior translúcido (variante E elegida) sobre el
+          // sólido del color del topic — sólo en la "next".
+          const nextSheen =
+            nodeVariant === "next" ? (
+              <View
+                pointerEvents="none"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "55%",
+                  backgroundColor: "rgba(255,255,255,0.16)",
+                  borderTopLeftRadius: 18,
+                  borderTopRightRadius: 18,
+                }}
+              />
+            ) : null;
+
+          // Banda diagonal que pasa cada ~4 s usando shimmerPulse
+          // (loop con delay) — sólo en la "next".
+          const nextShimmer =
+            nodeVariant === "next" ? (
+              <View
+                pointerEvents="none"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  borderRadius: 18,
+                  overflow: "hidden",
+                }}
+              >
+                <Animated.View
+                  style={{
+                    position: "absolute",
+                    top: -40,
+                    left: 0,
+                    width: 90,
+                    height: 200,
+                    backgroundColor: "rgba(255,255,255,0.12)",
+                    transform: [
+                      {
+                        translateX: shimmerPulse.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [-180, 360],
+                        }),
+                      },
+                      { rotate: "20deg" },
+                    ],
+                  }}
+                />
+              </View>
+            ) : null;
+
+          // Float vertical sutil (~3 px arriba/abajo) usando journeyNextPulse
+          // — sólo en la "next".
+          const nextFloatStyle =
+            nodeVariant === "next"
+              ? {
+                  transform: [
+                    {
+                      translateY: journeyNextPulse.interpolate({
+                        inputRange: [0.25, 0.85],
+                        outputRange: [-2.5, 2.5],
+                      }),
+                    },
+                  ],
+                }
+              : null;
+
+          const pressable = (
           <Pressable
             onPress={() => {
               // Tap behavior is now driven by position vs the
@@ -9817,10 +10299,17 @@ export function MobileLibraryShell(args: {
               nodeVariant === "audioFinished" ? styles.journeyNodePillAudioFinished : null,
               nodeVariant === "locked" ? styles.journeyNodePillLocked : null,
               nodeVariant === "step" ? styles.journeyNodePillStep : null,
-              nodeVariant === "next" ? styles.journeyNodePillNext : null,
+              // La "next" usa la variante E elegida: sólida del color
+              // del topic + sheen overlay arriba (renderizado abajo) +
+              // glow pulsante + shimmer cada 4 s + float vertical sutil.
+              nodeVariant === "next"
+                ? { backgroundColor: topicColor, borderColor: topicColor, borderWidth: 0 }
+                : null,
             ]}
           >
             {nextOverlay}
+            {nextSheen}
+            {nextShimmer}
             <View
               style={[
                 styles.journeyNodePillIcon,
@@ -9832,12 +10321,16 @@ export function MobileLibraryShell(args: {
             >
               {story.coverUrl ? (
                 <>
-                  <View style={styles.journeyNodePillThumbWrap}>
+                  <View
+                    style={[
+                      styles.journeyNodePillThumbWrap,
+                          ]}
+                  >
                     <ProgressiveImage
                       uri={getCoverUrl(story.coverUrl, 128)}
                       style={[
                         styles.journeyNodePillCoverThumb,
-                        // The "next" recommended story shows its cover at
+                                // The "next" recommended story shows its cover at
                         // full brightness — same as `completed` — so the
                         // box reads as luminous, not muted. Only past/locked
                         // stories get the dim treatment.
@@ -9901,6 +10394,11 @@ export function MobileLibraryShell(args: {
             </View>
           </Pressable>
           );
+          return nextFloatStyle ? (
+            <Animated.View style={nextFloatStyle}>{pressable}</Animated.View>
+          ) : (
+            pressable
+          );
         })()}
       </View>
     );
@@ -9926,6 +10424,44 @@ export function MobileLibraryShell(args: {
       default:
         return "#1f7ee0";
     }
+  };
+
+  // Color por tema (no por nivel). Asignamos colores en ORDEN de
+  // aparición (recorriendo levels → topics) en una paleta de 10
+  // colores. Eso garantiza que dos topics consecutivos NUNCA tengan
+  // el mismo color, cosa que el hash anterior no aseguraba.
+  const TOPIC_PANEL_PALETTE = [
+    "#1f7ee0", // blue
+    "#58a700", // green
+    "#a560e8", // purple
+    "#ff9600", // orange
+    "#ff4b4b", // red
+    "#00b894", // teal
+    "#e17055", // terracotta
+    "#5dd9e8", // cyan
+    "#f5b942", // amber
+    "#ff8aa8", // pink
+  ];
+  const topicColorByKey = useMemo(() => {
+    const map = new Map<string, string>();
+    if (!activeJourneyTrack) return map;
+    let idx = 0;
+    for (const lvl of activeJourneyTrack.levels) {
+      for (const t of lvl.topics) {
+        map.set(`${lvl.id}:${t.slug}`, TOPIC_PANEL_PALETTE[idx % TOPIC_PANEL_PALETTE.length]);
+        idx++;
+      }
+    }
+    return map;
+  }, [activeJourneyTrack]);
+  const topicPanelColor = (
+    topicSlug: string | null | undefined,
+    levelId: string | null | undefined
+  ): string => {
+    const slug = (topicSlug ?? "").toLowerCase();
+    if (!slug || !levelId) return levelPanelColor(levelId);
+    const fromMap = topicColorByKey.get(`${levelId}:${slug}`);
+    return fromMap ?? levelPanelColor(levelId);
   };
 
   // Measure a topic block's Y position relative to the ScrollView's
@@ -10005,7 +10541,7 @@ export function MobileLibraryShell(args: {
   // path) leaves `silent` defaulted to `false` so the haptic fires
   // exactly once per real user-driven topic transition.
   const recomputeStickyTopic = useCallback((scrollY: number, silent: boolean = false) => {
-    if (activeScreen !== "journey" || journeyDetailTopicId) {
+    if (activeScreen !== "home" || journeyDetailTopicId) {
       if (stickyTopicSlugRef.current !== null) {
         stickyTopicSlugRef.current = null;
         setStickyTopic(null);
@@ -10130,7 +10666,7 @@ export function MobileLibraryShell(args: {
   // (e.g. switches tabs) so a stale topic doesn't briefly flash on
   // top when they return.
   useEffect(() => {
-    if (activeScreen !== "journey" || journeyDetailTopicId) {
+    if (activeScreen !== "home" || journeyDetailTopicId) {
       stickyTopicSlugRef.current = null;
       setStickyTopic(null);
       topicLayoutsRef.current.clear();
@@ -10220,7 +10756,7 @@ export function MobileLibraryShell(args: {
   useEffect(() => {
     const previous = previousActiveScreenRef.current;
     previousActiveScreenRef.current = activeScreen;
-    if (activeScreen !== "journey") return;
+    if (activeScreen !== "home") return;
     if (previous === "journey") return;
     if (selection !== null) return;
     const targetY = shellScrollYRef.current;
@@ -10244,7 +10780,7 @@ export function MobileLibraryShell(args: {
   // sat at the top of the journey content and scrolled away — the
   // user reported "tampoco queda sticky la primera línea" because
   // of that. Rendered conditionally in the shell render below when
-  // `activeScreen === "journey" && !journeyDetailTopicId`.
+  // `activeScreen === "home" && !journeyDetailTopicId`.
   const journeyPathTopBar = (
     <View style={styles.journeyTopStripFixed}>
       <Pressable
@@ -10315,7 +10851,7 @@ export function MobileLibraryShell(args: {
   // gets `undefined` and behaves normally.
   const journeyStickyIndices: number[] = [];
   if (
-    activeScreen === "journey" &&
+    activeScreen === "home" &&
     !journeyDetailTopicId &&
     !journeyVariantPickerOpen &&
     activeJourneyTrack
@@ -10475,7 +11011,7 @@ export function MobileLibraryShell(args: {
               // A2 / B1 copies, which matches the user's report
               // that "only A1 levels show up".
               const levelLabelForSticky = `LEVEL ${(level.id ?? "").toUpperCase() || level.title}`;
-              const bgColorForSticky = levelPanelColor(level.id);
+              const bgColorForSticky = topicPanelColor(topic.slug, level.id);
               items.push(
                 <View
                   // Wrapper exists so we have a stable native node
@@ -10540,7 +11076,10 @@ export function MobileLibraryShell(args: {
                 >
                 <Pressable
                   onPress={() => {
-                    if (!topic.unlocked) return;
+                    // Topics are always tappable — even on locked
+                    // levels — so the user can preview stories +
+                    // vocab as motivation to reach the level. Only
+                    // the individual story nodes stay locked.
                     // 1. Open the preview instantly using whatever
                     //    vocab the offline cache has (likely none on
                     //    a fresh install). The sheet renders right
@@ -10589,7 +11128,7 @@ export function MobileLibraryShell(args: {
                       levelId: (level.id ?? "").toUpperCase() || level.title,
                       topicLabel: topic.label,
                       topicSlug: topic.slug,
-                      bgColor: levelPanelColor(level.id),
+                      bgColor: topicPanelColor(topic.slug, level.id),
                       stories: topic.stories.map((s) => ({
                         id: s.id,
                         title: s.title,
@@ -10654,9 +11193,8 @@ export function MobileLibraryShell(args: {
                   }}
                   style={[
                     styles.journeyTopicPanel,
-                    !topic.unlocked
-                      ? styles.journeyTopicPanelLocked
-                      : { backgroundColor: levelPanelColor(level.id) },
+                    styles.journeyTopicPanelBevel,
+                    { backgroundColor: topicPanelColor(topic.slug, level.id) },
                     // Hide the in-flow panel ONLY when the floating
                     // panel is currently covering the same topic — at
                     // that moment they share the same Y so the swap
@@ -10668,30 +11206,15 @@ export function MobileLibraryShell(args: {
                   ]}
                 >
                   <View style={styles.journeyTopicPanelTextBlock}>
-                    <Text
-                      style={[
-                        styles.journeyTopicPanelEyebrow,
-                        !topic.unlocked ? styles.journeyTopicPanelEyebrowLocked : null,
-                      ]}
-                    >
+                    <Text style={styles.journeyTopicPanelEyebrow}>
                       LEVEL {(level.id ?? "").toUpperCase() || level.title}
                     </Text>
-                    <Text
-                      style={[
-                        styles.journeyTopicPanelTitle,
-                        !topic.unlocked ? styles.journeyTopicPanelTitleLocked : null,
-                      ]}
-                      numberOfLines={2}
-                    >
+                    <Text style={styles.journeyTopicPanelTitle} numberOfLines={2}>
                       {topic.label}
                     </Text>
                   </View>
                   <View style={styles.journeyTopicPanelIconWrap}>
-                    <Feather
-                      name={topic.unlocked ? "list" : "lock"}
-                      size={18}
-                      color="#ffffff"
-                    />
+                    <Feather name="list" size={18} color="#ffffff" />
                   </View>
                 </Pressable>
                 </View>
@@ -10791,7 +11314,7 @@ export function MobileLibraryShell(args: {
                   // the in-flow panel would have left the viewport.
                   ref={(node) => {
                     const levelLabel = `LEVEL ${(level.id ?? "").toUpperCase() || level.title}`;
-                    const bgColor = levelPanelColor(level.id);
+                    const bgColor = topicPanelColor(topic.slug, level.id);
                     if (node) {
                       topicViewsRef.current.set(topic.slug, node);
                       requestAnimationFrame(() => {
@@ -10805,7 +11328,7 @@ export function MobileLibraryShell(args: {
                   onLayout={() => {
                     const node = topicViewsRef.current.get(topic.slug);
                     const levelLabel = `LEVEL ${(level.id ?? "").toUpperCase() || level.title}`;
-                    const bgColor = levelPanelColor(level.id);
+                    const bgColor = topicPanelColor(topic.slug, level.id);
                     if (node) measureTopicY(topic.slug, topic.label, levelLabel, bgColor, !topic.unlocked, node);
                   }}
                   style={styles.journeyPathTopicBlock}
@@ -10819,7 +11342,9 @@ export function MobileLibraryShell(args: {
                       divider. */}
                   <Pressable
                     onPress={() => {
-                      if (!topic.unlocked) return;
+                      // Topics are always tappable — see comment in
+                      // the other Pressable above. Locked story nodes
+                      // still surface the placement-test offer.
                       // Empty topic from the Studio scaffold — the user
                       // already sees the "Aún no hay historias" placeholder
                       // below the header, so don't pop a preview sheet that
@@ -10829,7 +11354,7 @@ export function MobileLibraryShell(args: {
                         levelId: (level.id ?? "").toUpperCase() || level.title,
                         topicLabel: topic.label,
                         topicSlug: topic.slug,
-                        bgColor: levelPanelColor(level.id),
+                        bgColor: topicPanelColor(topic.slug, level.id),
                         stories: topic.stories.map((s) => ({
                           id: s.id,
                           title: s.title,
@@ -10841,9 +11366,8 @@ export function MobileLibraryShell(args: {
                     }}
                     style={[
                       styles.journeyTopicPanel,
-                      !topic.unlocked
-                        ? styles.journeyTopicPanelLocked
-                        : { backgroundColor: levelPanelColor(level.id) },
+                      styles.journeyTopicPanelBevel,
+                      { backgroundColor: topicPanelColor(topic.slug, level.id) },
                       // When the floating sticky panel is showing
                       // this same topic, hide the in-flow copy so the
                       // user only sees ONE panel — earlier the two
@@ -10853,30 +11377,15 @@ export function MobileLibraryShell(args: {
                     ]}
                   >
                     <View style={styles.journeyTopicPanelTextBlock}>
-                      <Text
-                        style={[
-                          styles.journeyTopicPanelEyebrow,
-                          !topic.unlocked ? styles.journeyTopicPanelEyebrowLocked : null,
-                        ]}
-                      >
+                      <Text style={styles.journeyTopicPanelEyebrow}>
                         LEVEL {(level.id ?? "").toUpperCase() || level.title}
                       </Text>
-                      <Text
-                        style={[
-                          styles.journeyTopicPanelTitle,
-                          !topic.unlocked ? styles.journeyTopicPanelTitleLocked : null,
-                        ]}
-                        numberOfLines={2}
-                      >
+                      <Text style={styles.journeyTopicPanelTitle} numberOfLines={2}>
                         {topic.label}
                       </Text>
                     </View>
                     <View style={styles.journeyTopicPanelIconWrap}>
-                      <Feather
-                        name={topic.unlocked ? "list" : "lock"}
-                        size={18}
-                        color="#ffffff"
-                      />
+                      <Feather name="list" size={18} color="#ffffff" />
                     </View>
                   </Pressable>
 
@@ -11139,184 +11648,233 @@ export function MobileLibraryShell(args: {
     </>
   );
 
-  const progressView = (
-    <>
-      <View style={styles.hero}>
-        <View style={styles.heroHeaderRow}>
-          <View style={styles.heroTextBlock}>
-            <Text style={styles.eyebrow}>Progress</Text>
-            <Text style={styles.title}>Reading activity</Text>
-            <Text style={styles.subtitle}>Reading, listening and review at a glance.</Text>
-          </View>
-          <MenuTrigger onPress={() => setMenuOpen(true)} />
-        </View>
-      </View>
+  const progressView = (() => {
+    const streak = remoteProgress?.gamification?.dailyStreak ?? maxFavoriteStreak ?? 0;
+    const todayXp = remoteProgress?.gamification?.todayXp ?? 0;
+    const totalXp = remoteProgress?.gamification?.totalXp ?? 0;
+    const level = remoteProgress?.gamification?.currentLevel ?? 1;
+    const levelStartXp = remoteProgress?.gamification?.levelStartXp ?? 0;
+    const nextLevelXp = remoteProgress?.gamification?.nextLevelXp ?? 600;
+    const xpInLevel = Math.max(0, totalXp - levelStartXp);
+    const xpForLevel = Math.max(1, nextLevelXp - levelStartXp);
 
-      <View style={styles.progressHeroCard}>
-        <View style={styles.progressHeroMain}>
-          <View style={styles.practiceFocusPill}>
-            <Feather name="activity" size={13} color="#f8d48a" />
-            <Text style={styles.practiceFocusPillText}>
-              {(remoteProgress?.storyStreakDays ?? maxFavoriteStreak) >= 7 ? "On a roll" : "Keep going"}
-            </Text>
-          </View>
-          <Text style={styles.progressHeroValue}>{Math.max(remoteProgress?.storyStreakDays ?? maxFavoriteStreak, 1)}</Text>
-          <Text style={styles.progressHeroLabel}>
-            {formatStreakLabel(Math.max(remoteProgress?.storyStreakDays ?? maxFavoriteStreak, 1))}
-          </Text>
-          <Text style={styles.progressHeroText}>
-            {(remoteProgress?.storiesFinished ?? continueReading.length) > 0
-              ? "You already have stories in motion."
-              : "One saved story is enough to build momentum."}
-          </Text>
+    const accuracy = Math.round(remoteProgress?.practiceAccuracy ?? 0);
+    const sessions = remoteProgress?.practiceSessionsCompleted ?? 0;
+    const wordsLearned = remoteProgress?.wordsLearned ?? favoriteWords.length;
+    const minutesListened = remoteProgress?.minutesListened ?? 0;
+    const storiesFinished = remoteProgress?.storiesFinished ?? continueReading.length;
+
+    const wkStories = remoteProgress?.weeklyStoriesFinished ?? weeklyStoriesFinished;
+    const wkStoriesGoal = remoteProgress?.weeklyGoalStories ?? weeklyGoalStories;
+    const wkMinutes = remoteProgress?.weeklyMinutesListened ?? 0;
+    const wkMinutesGoal = remoteProgress?.weeklyGoalMinutes ?? 60;
+    const wkPractice = remoteProgress?.weeklyPracticeSessions ?? 0;
+    const wkPracticeGoal = remoteProgress?.weeklyGoalPracticeSessions ?? 5;
+
+    const nowDate = new Date();
+    const tmpDate = new Date(Date.UTC(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate()));
+    const dayNum = tmpDate.getUTCDay() || 7;
+    tmpDate.setUTCDate(tmpDate.getUTCDate() + 4 - dayNum);
+    const yearStart = new Date(Date.UTC(tmpDate.getUTCFullYear(), 0, 1));
+    const weekNum = Math.ceil(((tmpDate.getTime() - yearStart.getTime()) / 86400000 + 1) / 7);
+    const weekLabel = `Week ${weekNum} · ${tmpDate.getUTCFullYear()}`;
+
+    const twinkles = [
+      { left: 22, top: 38, size: 5, color: "#f5d77a" },
+      { left: 196, top: 50, size: 4, color: "#f5a261" },
+      { left: 178, top: 28, size: 5, color: "#f5d77a" },
+      { left: 14, top: 132, size: 5, color: "#5dd9e8" },
+      { left: 204, top: 124, size: 4, color: "#5dd9e8" },
+      { left: 30, top: 196, size: 4, color: "#f5d77a" },
+    ];
+
+    const bars = [
+      { key: "stories", label: "Stories", value: wkStories, total: wkStoriesGoal, unit: "", color: "#a8e845" },
+      { key: "minutes", label: "Minutes", value: wkMinutes, total: wkMinutesGoal, unit: " min", color: "#5dd9e8" },
+      { key: "practice", label: "Practice", value: wkPractice, total: wkPracticeGoal, unit: "", color: "#a892ff" },
+    ];
+
+    return (
+      <>
+        <View style={styles.progressHeaderRow}>
+          <Text style={styles.progressTopEyebrow}>PROGRESS</Text>
+          <Text style={styles.progressTopWeek}>{weekLabel}</Text>
         </View>
-        <View style={styles.progressGoalCard}>
-          <View style={styles.progressGoalHeader}>
-            <Text style={styles.progressGoalTitle}>Weekly goal</Text>
-            <Text style={styles.progressGoalMeta}>{weeklyStoriesFinished} / {weeklyGoalStories}</Text>
-          </View>
-          <View style={styles.progressGoalTrack}>
+
+        <View style={styles.progressStreakHero}>
+          {twinkles.map((t, i) => (
             <View
-              style={[
-                styles.progressGoalFill,
-                {
-                  width: `${weeklyStoriesPercent}%`,
-                },
-              ]}
+              key={i}
+              style={{
+                position: "absolute",
+                left: t.left,
+                top: t.top,
+                width: t.size,
+                height: t.size,
+                borderRadius: t.size / 2,
+                backgroundColor: t.color,
+                opacity: 0.85,
+              }}
             />
+          ))}
+          <View style={styles.progressStreakRing} />
+          <View style={styles.progressStreakCenter}>
+            <Text style={styles.progressStreakFlame}>🔥</Text>
+            <Text style={styles.progressStreakValue}>{streak}</Text>
+            <Text style={styles.progressStreakLabel}>DAY STREAK</Text>
           </View>
-          <Text style={styles.progressGoalMeta}>
-            {weeklyStoriesFinished} story{weeklyStoriesFinished === 1 ? "" : "ies"} finished this week
-          </Text>
-          <Text style={styles.progressGoalSubmeta}>
-            {(remoteProgress?.weeklyMinutesListened ?? continueReading.length)} {remoteProgress ? "min listened" : "in progress"} · {offlineSnapshot?.stories.length ?? 0} offline
+        </View>
+
+        <View style={styles.progressLevelPill}>
+          <Feather name="zap" size={13} color="#a8e845" />
+          <Text style={styles.progressLevelPillText}>
+            LEVEL {level} · {xpInLevel}/{xpForLevel} XP
           </Text>
         </View>
 
-        <View style={styles.progressMiniGrid}>
-          <View style={styles.progressMiniCard}>
-            <Text style={styles.progressMiniEyebrow}>This month</Text>
-            <Text style={styles.progressMiniValue}>{remoteProgress?.monthlyStoriesFinished ?? effectiveRemoteStoriesCount}</Text>
-            <Text style={styles.progressMiniText}>
-              {remoteProgress ? "stories finished" : "stories in your library"}
+        <View style={styles.progressStatsGridV4}>
+          <View style={styles.progressStatV4}>
+            <View style={styles.progressStatV4Header}>
+              <Feather name="zap" size={11} color="#a8e845" />
+              <Text style={[styles.progressStatV4Eyebrow, { color: "#a8e845" }]}>TOTAL XP</Text>
+            </View>
+            <Text style={styles.progressStatV4Value}>{totalXp.toLocaleString()}</Text>
+            <Text style={styles.progressStatV4Sub}>+{todayXp} today</Text>
+          </View>
+
+          <View style={styles.progressStatV4}>
+            <View style={styles.progressStatV4Header}>
+              <Feather name="target" size={11} color="#5dd9e8" />
+              <Text style={[styles.progressStatV4Eyebrow, { color: "#5dd9e8" }]}>ACCURACY</Text>
+            </View>
+            <Text style={styles.progressStatV4Value}>{accuracy}%</Text>
+            <Text style={styles.progressStatV4Sub}>
+              {sessions} {sessions === 1 ? "session" : "sessions"}
             </Text>
           </View>
-          <View style={styles.progressMiniCard}>
-            <Text style={styles.progressMiniEyebrow}>Regions</Text>
-            <Text style={styles.progressMiniValue}>{regionsExplored}</Text>
-            <Text style={styles.progressMiniText}>regions explored</Text>
+
+          <View style={styles.progressStatV4}>
+            <View style={styles.progressStatV4Header}>
+              <Feather name="bookmark" size={11} color="#a892ff" />
+              <Text style={[styles.progressStatV4Eyebrow, { color: "#a892ff" }]}>WORDS</Text>
+            </View>
+            <Text style={styles.progressStatV4Value}>{wordsLearned}</Text>
+            <Text style={styles.progressStatV4Sub}>learned all-time</Text>
+          </View>
+
+          <View style={styles.progressStatV4}>
+            <View style={styles.progressStatV4Header}>
+              <Feather name="headphones" size={11} color="#f5d77a" />
+              <Text style={[styles.progressStatV4Eyebrow, { color: "#f5d77a" }]}>MINUTES</Text>
+            </View>
+            <Text style={styles.progressStatV4Value}>{minutesListened}</Text>
+            <Text style={styles.progressStatV4Sub}>
+              {storiesFinished} {storiesFinished === 1 ? "story" : "stories"}
+            </Text>
           </View>
         </View>
-      </View>
 
-      <View style={styles.progressStatsGrid}>
-        {progressStats.map((item) => (
-          <View key={item.label} style={styles.progressStatCard}>
-            <View style={styles.progressStatLabelRow}>
-              <Feather name={item.icon} size={14} color="#9cb0c9" />
-              <Text style={styles.progressStatLabel}>{item.label}</Text>
-            </View>
-            <Text style={styles.progressStatValue}>{item.value}</Text>
+        <View style={styles.progressWeekCard}>
+          <View style={styles.progressWeekHeader}>
+            <Text style={styles.progressWeekEyebrow}>THIS WEEK</Text>
+            <Text style={styles.progressWeekResets}>Resets Sun</Text>
           </View>
-        ))}
-      </View>
-
-      {remoteProgressLoading ? <Text style={styles.helperText}>Refreshing progress…</Text> : null}
-
-      {remoteProgress?.gamification ? (
-        <View style={styles.section}>
-          <View style={styles.gamificationQuestCard}>
-            <View style={styles.sectionHeader}>
-              <View>
-                <Text style={styles.sectionEyebrow}>Daily quests</Text>
-                <Text style={styles.sectionTitle}>Keep the streak alive</Text>
-              </View>
-              <Text style={styles.helperText}>
-                {remoteProgress.gamification.quests.filter((quest) => quest.complete).length}/
-                {remoteProgress.gamification.quests.length}
-              </Text>
-            </View>
-            <View style={styles.gamificationQuestList}>
-              {remoteProgress.gamification.quests.map((quest) => (
-                <View key={quest.id} style={styles.gamificationQuestItem}>
-                  <View style={styles.gamificationQuestTopRow}>
-                    <View style={styles.gamificationQuestLabelRow}>
-                      <Feather
-                        name={quest.complete ? "check-circle" : "circle"}
-                        size={16}
-                        color={quest.complete ? "#8ef0c6" : "#6f88a8"}
-                      />
-                      <Text style={styles.gamificationQuestLabel}>{quest.label}</Text>
+          <View style={styles.progressWeekList}>
+            {bars.map((bar) => {
+              const pct = Math.min(100, (bar.value / Math.max(1, bar.total)) * 100);
+              return (
+                <View key={bar.key} style={styles.progressWeekRow}>
+                  <View style={styles.progressWeekRowHeader}>
+                    <View style={styles.progressWeekRowLabelGroup}>
+                      <Feather name="plus" size={12} color={bar.color} />
+                      <Text style={styles.progressWeekRowLabel}>{bar.label}</Text>
                     </View>
-                    <Text style={styles.gamificationQuestXp}>+{quest.rewardXp} XP</Text>
-                  </View>
-                  <Text style={styles.gamificationQuestMeta}>
-                    {Math.min(quest.current, quest.target)}/{quest.target} {quest.complete ? "Done" : "In progress"}
-                  </Text>
-                </View>
-              ))}
-            </View>
-            <View style={styles.gamificationBadgeSection}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionEyebrow}>Unlocked badges</Text>
-                <Text style={styles.helperText}>
-                  {remoteProgress.gamification.badges.filter((badge) => badge.unlocked).length}/
-                  {remoteProgress.gamification.badges.length}
-                </Text>
-              </View>
-              <View style={styles.gamificationBadgeWrap}>
-                {remoteProgress.gamification.badges.map((badge) => (
-                  <View
-                    key={badge.id}
-                    style={[
-                      styles.gamificationBadgeChip,
-                      badge.unlocked ? styles.gamificationBadgeChipUnlocked : styles.gamificationBadgeChipLocked,
-                    ]}
-                  >
-                    <Text
-                      style={[
-                        styles.gamificationBadgeChipText,
-                        badge.unlocked ? styles.gamificationBadgeChipTextUnlocked : styles.gamificationBadgeChipTextLocked,
-                      ]}
-                    >
-                      {badge.label}
+                    <Text style={styles.progressWeekRowValue}>
+                      <Text style={[styles.progressWeekRowValueStrong, { color: bar.color }]}>
+                        {bar.value}
+                      </Text>
+                      <Text style={styles.progressWeekRowValueTotal}> / {bar.total}{bar.unit}</Text>
                     </Text>
                   </View>
-                ))}
-              </View>
-            </View>
+                  <View style={styles.progressWeekRowTrack}>
+                    <View
+                      style={[
+                        styles.progressWeekRowFill,
+                        { width: `${pct}%`, backgroundColor: bar.color },
+                      ]}
+                    />
+                  </View>
+                </View>
+              );
+            })}
           </View>
         </View>
-      ) : null}
 
-      {continueReadingCards.length > 0 ? (
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>Recent</Text>
-              <Text style={styles.sectionTitle}>Stories in motion</Text>
-            </View>
-          </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {continueReadingCards.map((item) => (
-              <BookHomeCard
-                key={item.key}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      ) : null}
-    </>
+        {remoteProgressLoading ? <Text style={styles.helperText}>Refreshing…</Text> : null}
+      </>
+    );
+  })();
+
+  // Tracks disponibles en Studio para el language elegido en el onboarding.
+  // Se usan como opciones del step "What's your focus?" (cada Studio Journey
+  // record es un focus). Si todavía no se cargó el journey para ese language
+  // (race entre el select y el fetch), caemos a las 4 opciones hardcoded.
+  const onboardingFocusTracks = remoteJourney?.tracks ?? [];
+
+  // PLACEMENT/FOCUS RESET para los usuarios de prueba — corre una vez por
+  // cold start (gated por un ref). El placement seteado en publicMetadata
+  // marcaba historias de niveles inferiores como `skipped: true` y empujaba
+  // la "next" hacia abajo, así que limpiamos placement + focus y forzamos
+  // un refetch del journey con el cache invalidado.
+  const TEST_USER_EMAILS = useMemo(
+    () => new Set(["delcarpio321@gmail.com", "alejandro@muvn.de"]),
+    []
   );
+  const placementClearedRef = useRef(false);
+  useEffect(() => {
+    if (placementClearedRef.current) return;
+    if (!sessionToken) return;
+    if (!sessionEmail || !TEST_USER_EMAILS.has(sessionEmail.toLowerCase())) return;
+    placementClearedRef.current = true;
+    (async () => {
+      try {
+        await apiFetch({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/mobile/preferences",
+          token: sessionToken,
+          method: "PATCH",
+          body: { journeyPlacementLevel: null, journeyFocus: null },
+        });
+        // Invalida TODO el cache de journeys: el payload cambió porque el
+        // backend ahora ya no marca skipped sobre los niveles inferiores.
+        // Sin esto el `cached` previo seguiría sobreviviendo entre cold
+        // starts (saveJourneyCacheToDisk persiste el cache).
+        journeyCacheByLanguageRef.current.clear();
+        if (activeJourneyLanguage) {
+          await loadJourneyForLanguage(activeJourneyLanguage);
+        }
+      } catch {
+        // best-effort
+      }
+    })();
+  }, [sessionToken, sessionEmail, activeJourneyLanguage, loadJourneyForLanguage, TEST_USER_EMAILS]);
+
+  // Asegurar que el journey del language seleccionado se cargue durante el
+  // onboarding aunque el usuario haya entrado con `targetLanguages` ya set
+  // (re-onboarding) y no haya pasado por el `select` del primer step. Sin
+  // esto, el step "What's your focus?" cae al hardcoded fallback porque
+  // `remoteJourney` quedó vacío.
+  const onboardingTargetLang = preferences.targetLanguages[0];
+  const onboardingFocusFetchRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!shouldShowOnboardingSurvey) return;
+    if (!sessionToken) return;
+    if (!onboardingTargetLang) return;
+    if (onboardingFocusFetchRef.current === onboardingTargetLang) return;
+    onboardingFocusFetchRef.current = onboardingTargetLang;
+    setActiveJourneyLanguage(onboardingTargetLang);
+    void loadJourneyForLanguage(onboardingTargetLang);
+  }, [shouldShowOnboardingSurvey, sessionToken, onboardingTargetLang, loadJourneyForLanguage]);
 
   const onboardingSurveySteps = [
     {
@@ -11324,13 +11882,18 @@ export function MobileLibraryShell(args: {
       body: "We will use this to tailor stories, books, Journey and Create.",
       options: ["Spanish", "French", "German", "Italian", "Portuguese", "Japanese"],
       selected: preferences.targetLanguages[0] ?? "",
-      select: (value: string) =>
+      select: (value: string) => {
         setPreferences((current) => ({
           ...current,
           targetLanguages: [value],
           preferredVariant: null,
           preferredRegion: null,
-        })),
+        }));
+        // Pre-load del journey del nuevo language para que cuando el
+        // usuario llegue al step focus tengamos los tracks de Studio.
+        setActiveJourneyLanguage(value);
+        void loadJourneyForLanguage(value);
+      },
       format: (value: string) => value,
     },
     {
@@ -11379,17 +11942,18 @@ export function MobileLibraryShell(args: {
       isActive: (value: string) => preferences.interests.some((item) => item.toLowerCase() === value.toLowerCase()),
     },
     {
-      title: "Which Journey focus fits you best?",
-      body: "This keeps your Journey grounded in the kind of stories you care about most.",
-      options: [...JOURNEY_FOCUS_OPTIONS],
-      selected: preferences.journeyFocus ?? "",
+      title: "What's your focus?",
+      body: "Pick the Journey you want to start. Each Journey is a curated track of stories.",
+      // Always render Studio Journey tracks. NO hardcoded fallback
+      // anymore — if there's no Journey for this language we want the
+      // empty state, not the misleading "Travel & Local Life" copy.
+      options: onboardingFocusTracks.map((t) => t.id),
+      selected: preferences.preferredVariant ?? "",
       select: (value: string) =>
-        setPreferences((current) => ({
-          ...current,
-          journeyFocus: normalizeJourneyFocusPreference(value),
-          learningGoal: getLearningGoalFromJourneyFocus(normalizeJourneyFocusPreference(value)),
-        })),
-      format: (value: string) => value,
+        setPreferences((current) => ({ ...current, preferredVariant: value })),
+      format: (value: string) =>
+        onboardingFocusTracks.find((t) => t.id === value)?.label ?? value,
+      empty: "Loading journeys for this language…",
     },
     {
       title: "How much time can you give per day?",
@@ -11653,8 +12217,9 @@ export function MobileLibraryShell(args: {
     );
   }
 
-  if (practiceSessionView) {
-    return practiceSessionView;
+  const practiceSessionRendered = renderPracticeSessionView();
+  if (practiceSessionRendered) {
+    return practiceSessionRendered;
   }
 
   /**
@@ -11787,7 +12352,7 @@ export function MobileLibraryShell(args: {
           // and the shell re-renders without the onboarding overlay,
           // activeScreen is already "journey" — so the user lands
           // directly there without a one-frame Home flash.
-          setActiveScreen("journey");
+          setActiveScreen("home");
           setOnboardingOverride(null);
           await commitOnboarding(payload);
         }}
@@ -11798,15 +12363,17 @@ export function MobileLibraryShell(args: {
     );
   }
 
-  let content = homeView;
+  // IA swap: tab "Home" muestra Journey path (lo más actionable a diario)
+  // y tab "Library" (era "Journey" en bottom nav) muestra el contenido
+  // de browsing/recomendaciones que antes vivía en Home.
+  let content = journeyView;
   if (activeScreen === "explore") content = exploreView;
   if (activeScreen === "practice") content = practiceView;
   if (activeScreen === "favorites") content = favoritesView;
-  if (activeScreen === "journey") content = journeyView;
+  if (activeScreen === "journey") content = homeView;
   if (activeScreen === "library") content = libraryView;
   if (activeScreen === "settings") content = settingsView;
   if (activeScreen === "create") content = createView;
-  if (activeScreen === "progress") content = progressView;
 
   return (
     <View style={styles.shell}>
@@ -11839,7 +12406,7 @@ export function MobileLibraryShell(args: {
           opening (`openingStoryId`) or already open (`selection`)
           so the journey UI doesn't linger over the reader for a
           frame. */}
-      {activeScreen === "journey" &&
+      {activeScreen === "home" &&
       !journeyDetailTopicId &&
       !openingStoryId &&
       !selection ? (
@@ -11872,7 +12439,7 @@ export function MobileLibraryShell(args: {
         onScroll={(event) => {
           const y = event.nativeEvent.contentOffset.y;
           if (activeScreen === "favorites") setShellScrollY(y);
-          if (activeScreen === "journey" && !journeyDetailTopicId) {
+          if (activeScreen === "home" && !journeyDetailTopicId) {
             handleJourneyScroll(event);
           }
         }}
@@ -11882,7 +12449,7 @@ export function MobileLibraryShell(args: {
           // can fire again for topics they cross during this session.
           // (See `visitedSlugsInSessionRef` declaration for why we use
           // a session-scoped set instead of a time-based dedup.)
-          if (activeScreen === "journey" && !journeyDetailTopicId) {
+          if (activeScreen === "home" && !journeyDetailTopicId) {
             visitedSlugsInSessionRef.current.clear();
             // Seed with the current sticky slug so a tiny initial drag
             // that doesn't actually leave the current topic doesn't
@@ -11901,7 +12468,7 @@ export function MobileLibraryShell(args: {
           // still measuring (image covers loading, etc.) the first
           // restore from the tab-return effect lands short. As h
           // grows past targetY we apply scrollTo again and clear.
-          if (activeScreen !== "journey" || journeyDetailTopicId) return;
+          if (activeScreen !== "home" || journeyDetailTopicId) return;
           const targetY = pendingJourneyRestoreYRef.current;
           if (targetY == null) return;
           if (h < targetY) return;
@@ -11912,7 +12479,7 @@ export function MobileLibraryShell(args: {
         onMomentumScrollEnd={() => {
           // Momentum decay finished. The session ends here — clear so
           // the next gesture starts fresh.
-          if (activeScreen === "journey" && !journeyDetailTopicId) {
+          if (activeScreen === "home" && !journeyDetailTopicId) {
             visitedSlugsInSessionRef.current.clear();
           }
         }}
@@ -11922,7 +12489,7 @@ export function MobileLibraryShell(args: {
           // set here too, but only when the scroll has effectively
           // come to rest (no velocity). RN exposes velocity on the
           // event for this exact purpose.
-          if (activeScreen !== "journey" || journeyDetailTopicId) return;
+          if (activeScreen !== "home" || journeyDetailTopicId) return;
           const velocity = event.nativeEvent.velocity?.y ?? 0;
           if (Math.abs(velocity) < 0.1) {
             visitedSlugsInSessionRef.current.clear();
@@ -11942,7 +12509,7 @@ export function MobileLibraryShell(args: {
           driven via opacity so we never pay a mount frame on the
           first cross-over — that mount frame was the residual
           flicker the user reported on the first panel scroll. */}
-      {activeScreen === "journey" &&
+      {activeScreen === "home" &&
       !journeyDetailTopicId &&
       !openingStoryId &&
       !selection ? (
@@ -11950,40 +12517,22 @@ export function MobileLibraryShell(args: {
           pointerEvents="none"
           style={[
             styles.journeyStickyFloatingPanel,
+            styles.journeyTopicPanelBevel,
             { top: journeyTopBarHeight },
-            stickyTopic?.locked
-              ? styles.journeyTopicPanelLocked
-              : stickyTopic
-                ? { backgroundColor: stickyTopic.bgColor }
-                : null,
+            stickyTopic ? { backgroundColor: stickyTopic.bgColor } : null,
             !stickyTopic ? styles.journeyTopicPanelHidden : null,
           ]}
         >
           <View style={styles.journeyTopicPanelTextBlock}>
-            <Text
-              style={[
-                styles.journeyTopicPanelEyebrow,
-                stickyTopic?.locked ? styles.journeyTopicPanelEyebrowLocked : null,
-              ]}
-            >
+            <Text style={styles.journeyTopicPanelEyebrow}>
               {stickyTopic?.levelLabel ?? ""}
             </Text>
-            <Text
-              style={[
-                styles.journeyTopicPanelTitle,
-                stickyTopic?.locked ? styles.journeyTopicPanelTitleLocked : null,
-              ]}
-              numberOfLines={2}
-            >
+            <Text style={styles.journeyTopicPanelTitle} numberOfLines={2}>
               {stickyTopic?.label ?? ""}
             </Text>
           </View>
           <View style={styles.journeyTopicPanelIconWrap}>
-            <Feather
-              name={stickyTopic?.locked ? "lock" : "list"}
-              size={18}
-              color="#ffffff"
-            />
+            <Feather name="list" size={18} color="#ffffff" />
           </View>
         </View>
       ) : null}
@@ -12028,7 +12577,7 @@ export function MobileLibraryShell(args: {
           doesn't crowd the top of the path. Tapping smoothly
           scrolls back to y=0. Sits above the bottom tab nav and
           uses safe-area-aware bottom inset. */}
-      {activeScreen === "journey" &&
+      {activeScreen === "home" &&
       !journeyDetailTopicId &&
       !openingStoryId &&
       !selection &&
@@ -12093,6 +12642,8 @@ export function MobileLibraryShell(args: {
           // a new active one. They can dismiss with the close button.
           await handleJourneyDelete(id);
         }}
+        getTracksForLanguage={getTracksForLanguage}
+        getTracksForLanguageSync={getTracksForLanguageSync}
       />
 
       <LegalSheet
@@ -12118,26 +12669,40 @@ export function MobileLibraryShell(args: {
           onPress={() => setProgressSheetOpen(false)}
           style={styles.progressSheetBackdrop}
         />
-        <View style={styles.progressSheetContainer}>
-          <View style={styles.progressSheetHandleRow}>
+        <Animated.View
+          style={[
+            styles.progressSheetContainer,
+            { transform: [{ translateY: progressSheetDragY }] },
+          ]}
+        >
+          <View
+            {...progressSheetPanResponder.panHandlers}
+            style={styles.progressSheetHandleRow}
+          >
             <View style={styles.progressSheetHandle} />
-            <Pressable
-              onPress={() => setProgressSheetOpen(false)}
-              hitSlop={12}
-              style={styles.progressSheetClose}
-            >
-              <Feather name="x" size={18} color="#ffffff" />
-            </Pressable>
           </View>
           <ScrollView
             style={styles.progressSheetScroll}
             contentContainerStyle={styles.progressSheetContent}
             showsVerticalScrollIndicator={false}
-            bounces={false}
+            bounces={true}
+            scrollEventThrottle={16}
+            onScrollEndDrag={(e) => {
+              // Pull-down-to-dismiss: when the ScrollView is at the top
+              // and the user keeps dragging down, contentOffset.y goes
+              // negative (because bounces=true). Past a threshold, treat
+              // it as "close the sheet". We intentionally do NOT use the
+              // velocity here — a fast scroll-up has a positive velocity
+              // and would otherwise close the sheet by mistake.
+              const y = e.nativeEvent.contentOffset.y;
+              if (y < -70) {
+                setProgressSheetOpen(false);
+              }
+            }}
           >
             {progressView}
           </ScrollView>
-        </View>
+        </Animated.View>
       </Modal>
 
       {/* Topic preview — opens when the user taps a topic panel on
@@ -12553,14 +13118,6 @@ export function MobileLibraryShell(args: {
               {isSignedIn ? (
                 <>
                   <MenuLink
-                    label="Progress"
-                    icon="progress"
-                    onPress={() => {
-                      setActiveScreen("progress");
-                      setMenuOpen(false);
-                    }}
-                  />
-                  <MenuLink
                     label="Settings"
                     icon="settings"
                     onPress={() => {
@@ -12709,7 +13266,7 @@ function BottomTabIcon({ tab, active }: { tab: BottomTab; active: boolean }) {
   if (tab === "explore") return <Feather name="compass" size={18} color={color} />;
   if (tab === "practice") return <MaterialCommunityIcons name="brain" size={19} color={color} />;
   if (tab === "favorites") return <Feather name="star" size={18} color={color} />;
-  if (tab === "journey") return <MaterialCommunityIcons name="map-marker-path" size={18} color={color} />;
+  if (tab === "journey") return <Feather name="book" size={18} color={color} />;
   if (tab === "signin") return <Feather name="log-in" size={18} color={color} />;
   return <Feather name="circle" size={18} color={color} />;
 }
@@ -12742,7 +13299,6 @@ function MenuLink(args: {
 
 function MenuIcon({ icon, tone = "default" }: { icon: MenuIconName; tone?: "default" | "accent" }) {
   const color = tone === "accent" ? "#f8d48a" : "#dbe9ff";
-  if (icon === "progress") return <Feather name="bar-chart-2" size={18} color={color} />;
   if (icon === "settings") return <Feather name="settings" size={18} color={color} />;
   if (icon === "library") return <Feather name="book-open" size={18} color={color} />;
   if (icon === "journey") return <MaterialCommunityIcons name="map-marker-path" size={18} color={color} />;
@@ -14390,8 +14946,8 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderRadius: 18,
     borderWidth: 1,
-    minWidth: 200,
-    maxWidth: 260,
+    minWidth: 220,
+    maxWidth: 290,
   },
   journeyNodePillNext: {
     // Same dimensions and same neutral border as the other variants —
@@ -14414,6 +14970,53 @@ const styles = StyleSheet.create({
     bottom: 0,
     borderRadius: 18,
     backgroundColor: tokenColor.cyan,
+  },
+  // Experiment overlays — A: glow violeta para diferenciarlo del cyan
+  // del "next"; B: banda diagonal tipo shimmer que se mueve; C: borde
+  // que respira sin halo de fondo.
+  experimentGlow: {
+    position: "absolute",
+    top: -2,
+    left: -2,
+    right: -2,
+    bottom: -2,
+    borderRadius: 20,
+    backgroundColor: "#a892ff",
+  },
+  experimentShimmerWrap: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: 18,
+    overflow: "hidden",
+  },
+  experimentShimmerBand: {
+    position: "absolute",
+    top: -40,
+    left: 0,
+    width: 90,
+    height: 200,
+    backgroundColor: "rgba(255,255,255,0.09)",
+  },
+  experimentBreathBorder: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: 18,
+    borderWidth: 2,
+    borderColor: "#5dd9e8",
+  },
+  // Sutil 3D para los paneles de tema: highlight blanco arriba + sombra
+  // negra abajo. Da profundidad sin shadow externa (que se sentía pesada).
+  journeyTopicPanelBevel: {
+    borderTopWidth: 2,
+    borderTopColor: "rgba(255,255,255,0.32)",
+    borderBottomWidth: 3,
+    borderBottomColor: "rgba(0,0,0,0.32)",
   },
   // Wrap that hosts the breathing halo + the actual pill. Keeps the
   // halo behind the pill via z-stacking (halo is absolute, pill is the
@@ -14467,13 +15070,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingTop: 10,
+    paddingBottom: 6,
     paddingHorizontal: 16,
   },
   progressSheetHandle: {
-    width: 40,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: "rgba(255,255,255,0.18)",
+    width: 44,
+    height: 5,
+    borderRadius: 2.5,
+    backgroundColor: "rgba(255,255,255,0.28)",
   },
   progressSheetClose: {
     position: "absolute",
@@ -14490,7 +15094,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   progressSheetContent: {
-    paddingBottom: 24,
+    paddingHorizontal: 16,
+    paddingBottom: 32,
+    paddingTop: 8,
+    gap: 14,
   },
   // Toast for the "tap on a locked story" hint. Pinned near the top
   // (below the strip) so it doesn't fight with the bottom tab bar.
@@ -14530,33 +15137,29 @@ const styles = StyleSheet.create({
   },
   journeyNodePillCompleted: {
     // Soft green wash + emerald edge — "you mastered this".
-    // Strong enough to read as an achievement at a glance,
-    // restrained enough to not compete with the active "next"
-    // pill for the user's eye.
-    backgroundColor: "rgba(110, 231, 183, 0.1)",
-    borderColor: "rgba(110, 231, 183, 0.5)",
+    // Subido de 0.1 → 0.18 para que la pill no se sienta muerta;
+    // el "next" sigue dominando por su fondo sólido del topic.
+    backgroundColor: "rgba(110, 231, 183, 0.18)",
+    borderColor: "rgba(110, 231, 183, 0.55)",
   },
   journeyNodePillAudioFinished: {
     // Cool muted cyan — "you've been here, exercises pending".
-    // Distinct from completed (green) and from never-tapped
-    // (neutral) so the path tells the user at a glance which
-    // stories are halfway done.
-    backgroundColor: "rgba(125, 211, 252, 0.08)",
-    borderColor: "rgba(125, 211, 252, 0.32)",
+    // Subido de 0.08 → 0.16 por la misma razón.
+    backgroundColor: "rgba(125, 211, 252, 0.16)",
+    borderColor: "rgba(125, 211, 252, 0.42)",
   },
   journeyNodePillLocked: {
-    // Was rgba(255,255,255,0.03) + opacity 0.7 → effective ~2% white,
-    // which made locked story pills indistinguishable from the
-    // canvas. Pumping both values gives the row enough presence so
-    // the user can see a story is there (and tap it to open the
-    // level-test offer modal) even when locked.
+    // Locked SÍ debe verse atenuado (es la única razón válida para
+    // dim según el usuario). Mantenemos opacity 0.9 + bg bajo.
     backgroundColor: "rgba(255,255,255,0.08)",
     borderColor: "rgba(255,255,255,0.18)",
     opacity: 0.9,
   },
   journeyNodePillStep: {
-    backgroundColor: "rgba(255,255,255,0.04)",
-    borderColor: "rgba(255,255,255,0.1)",
+    // Subido de 0.04 → 0.08 para que las stories no-tocadas se
+    // vean presentes (no muertas) sin competir con el "next".
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderColor: "rgba(255,255,255,0.18)",
   },
   journeyNodePillIcon: {
     width: 40,
@@ -14576,18 +15179,13 @@ const styles = StyleSheet.create({
     borderRadius: 999,
   },
   journeyNodePillCoverThumbDim: {
-    // Dimmed cover for inactive states — keeps the visual context
-    // ("this is a story, not just a step") but mutes it so the
-    // active "next" pill reads as obviously the one to tap. Bumped
-    // from 0.42 → 0.65 so locked story covers stay visible enough
-    // for the user to recognize there is content beyond A1.
-    opacity: 0.65,
+    // Covers ya no se atenúan — el user pidió que las imágenes se
+    // vean siempre nítidas. El estado se comunica por el badge,
+    // no por dim.
+    opacity: 1,
   },
   journeyNodePillCoverThumbCompleted: {
-    // Completed stories aren't dimmed as hard — they read as "done"
-    // (still the user's). The lime check badge in the corner is
-    // what marks the state.
-    opacity: 0.7,
+    opacity: 1,
   },
   journeyNodePillThumbWrap: {
     width: 40,
@@ -14665,7 +15263,7 @@ const styles = StyleSheet.create({
     minWidth: 0,
   },
   journeyNodePillLabel: {
-    color: "rgba(255,255,255,0.7)",
+    color: "#ffffff",
     fontSize: 13,
     fontWeight: "900",
     letterSpacing: 0.6,
@@ -14677,7 +15275,7 @@ const styles = StyleSheet.create({
     // looped cyan halo behind the card both signal "this is the one".
   },
   journeyNodePillSub: {
-    color: "rgba(255,255,255,0.45)",
+    color: "#cdd9ec",
     fontSize: 12,
     fontWeight: "700",
     marginTop: 1,
@@ -16154,6 +16752,39 @@ const styles = StyleSheet.create({
   favoriteFilterChips: {
     gap: 6,
   },
+  favoritesPracticeCta: {
+    marginTop: 16,
+    // Clearance extra para el bottom tab bar — el `paddingBottom: 56`
+    // del container global no alcanza para que el CTA primario quede
+    // 100% visible sobre la tab bar flotante de iOS. Este margin
+    // empuja el botón hacia arriba lo suficiente para que el tap
+    // target completo quede expuesto.
+    marginBottom: 48,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    paddingVertical: 14,
+    borderRadius: 16,
+    backgroundColor: tokenColor.xp,
+  },
+  favoritesPracticeCtaText: {
+    color: tokenBg[1],
+    fontSize: 15,
+    fontWeight: "900",
+    letterSpacing: 0.3,
+  },
+  favoritesEmptyFilter: {
+    marginTop: 16,
+    paddingVertical: 24,
+    alignItems: "center",
+  },
+  favoritesEmptyFilterText: {
+    color: "rgba(255,255,255,0.55)",
+    fontSize: 13,
+    fontWeight: "700",
+    textAlign: "center",
+  },
   practiceFocusBanner: {
     gap: 10,
     borderRadius: 28,
@@ -16242,10 +16873,12 @@ const styles = StyleSheet.create({
     width: 36,
     height: 36,
     borderRadius: 12,
-    borderWidth: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(255,255,255,0.08)",
+    // Wrap translúcido blanco: el icono blanco encima rinde con
+    // contraste alto sobre cualquier color de fondo del card. Mismo
+    // patrón que los topic panels del journey.
+    backgroundColor: "rgba(255,255,255,0.18)",
   },
   practiceRecommendedBadge: {
     borderRadius: 999,
@@ -17451,6 +18084,200 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 32,
     fontWeight: "900",
+  },
+  progressHeaderRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingTop: 2,
+    paddingBottom: 4,
+  },
+  progressTopEyebrow: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "800",
+    letterSpacing: 2,
+  },
+  progressTopWeek: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  progressStreakHero: {
+    width: 220,
+    height: 220,
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    marginVertical: 6,
+    position: "relative",
+  },
+  progressStreakRing: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    borderWidth: 5,
+    borderColor: "#a8e845",
+    backgroundColor: "rgba(11, 22, 40, 0.55)",
+    shadowColor: "#a8e845",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.6,
+    shadowRadius: 18,
+  },
+  progressStreakCenter: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  progressStreakFlame: {
+    fontSize: 26,
+    marginBottom: 0,
+  },
+  progressStreakValue: {
+    color: "#ffffff",
+    fontSize: 64,
+    fontWeight: "900",
+    lineHeight: 68,
+    marginTop: -2,
+    letterSpacing: -1.5,
+  },
+  progressStreakLabel: {
+    color: "#f5a261",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 2.4,
+    marginTop: 2,
+  },
+  progressLevelPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    alignSelf: "center",
+    paddingHorizontal: 18,
+    paddingVertical: 9,
+    borderRadius: 999,
+    backgroundColor: "rgba(168, 232, 69, 0.10)",
+    borderWidth: 1,
+    borderColor: "rgba(168, 232, 69, 0.45)",
+    marginTop: 4,
+    marginBottom: 4,
+  },
+  progressLevelPillText: {
+    color: "#a8e845",
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 1.2,
+  },
+  progressStatsGridV4: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+  },
+  progressStatV4: {
+    width: "48%",
+    flexGrow: 1,
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.06)",
+    backgroundColor: "#101a2e",
+    paddingHorizontal: 14,
+    paddingVertical: 14,
+    gap: 4,
+  },
+  progressStatV4Header: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginBottom: 4,
+  },
+  progressStatV4Eyebrow: {
+    fontSize: 11,
+    fontWeight: "900",
+    letterSpacing: 1.4,
+  },
+  progressStatV4Value: {
+    color: "#ffffff",
+    fontSize: 30,
+    fontWeight: "900",
+    lineHeight: 32,
+    letterSpacing: -0.6,
+  },
+  progressStatV4Sub: {
+    color: "#7d92ad",
+    fontSize: 12,
+    fontWeight: "600",
+  },
+  progressWeekCard: {
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.06)",
+    backgroundColor: "#101a2e",
+    padding: 16,
+    gap: 14,
+  },
+  progressWeekHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  progressWeekEyebrow: {
+    color: "#5dd9e8",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 1.6,
+  },
+  progressWeekResets: {
+    color: "#7d92ad",
+    fontSize: 12,
+    fontWeight: "600",
+  },
+  progressWeekList: {
+    gap: 12,
+  },
+  progressWeekRow: {
+    gap: 7,
+  },
+  progressWeekRowHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  progressWeekRowLabelGroup: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  progressWeekRowLabel: {
+    color: "#dbe9ff",
+    fontSize: 15,
+    fontWeight: "700",
+  },
+  progressWeekRowValue: {
+    fontSize: 14,
+  },
+  progressWeekRowValueStrong: {
+    fontSize: 15,
+    fontWeight: "900",
+  },
+  progressWeekRowValueTotal: {
+    color: "#7d92ad",
+    fontSize: 13,
+    fontWeight: "600",
+  },
+  progressWeekRowTrack: {
+    height: 6,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.06)",
+    overflow: "hidden",
+  },
+  progressWeekRowFill: {
+    height: "100%",
+    borderRadius: 999,
   },
   bottomNav: {
     position: "absolute",

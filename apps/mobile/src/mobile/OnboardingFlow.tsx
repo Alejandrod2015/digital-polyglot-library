@@ -867,11 +867,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
+    rowGap: 4,
+    flexWrap: "wrap",
   },
   languageName: {
     color: "#ffffff",
     fontSize: 16,
     fontWeight: "900",
+    flexShrink: 1,
   },
   variantPill: {
     paddingHorizontal: 6,

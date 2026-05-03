@@ -21,11 +21,14 @@ export type Journey = {
   id: string;
   /** Canonical language name (e.g. "Spanish", "English"). */
   language: string;
-  /** Lower-case regional code when the language has variants:
-   *  "us" / "uk" for English, etc. null for languages with one flag. */
+  /** Bajo el modelo "un track por Studio Journey" este campo guarda
+   *  el `Journey.id` de Studio (un cuid). En journeys legacy guarda
+   *  el código regional ("us" / "uk" / "latam"). null cuando el
+   *  idioma tiene una sola variante y aún no se migró. */
   variant: string | null;
-  /** One of JOURNEY_FOCUS_OPTIONS — same domain enum used everywhere
-   *  else; we only swap the display label at the chrome layer. */
+  /** Uno de JOURNEY_FOCUS_OPTIONS — se conserva por compatibilidad
+   *  con el modelo legacy. Bajo el nuevo flow siempre es "General"
+   *  porque el nombre user-facing vive en `label`. */
   focus: JourneyFocus;
   /** Coarse self-reported level: "Beginner" | "Intermediate" | etc.
    *  Same alphabet as `MobilePreferences.preferredLevel`. */
@@ -33,6 +36,11 @@ export type Journey = {
   /** ISO timestamp; used to sort the panel by recency and to break
    *  ties between journeys created in the same minute. */
   createdAt: string;
+  /** Nombre user-facing del journey ("Conversational", "Traveler"…),
+   *  copiado de Studio Journey.name al crear. Cuando está, la UI lo
+   *  prefiere sobre `focusShortLabel(focus)`. Opcional para no
+   *  romper journeys creados antes de este campo. */
+  label?: string | null;
 };
 
 /**
@@ -99,8 +107,12 @@ export function focusIcon(focus: JourneyFocus): {
  * inconsistency where General had to be hand-cased to read naturally.
  */
 export function journeyDisplayName(journey: Journey): string {
-  const focusLabel = focusShortLabel(journey.focus);
-  return `${journey.language} · ${focusLabel}`;
+  const journeyName = (journey.label ?? "").trim();
+  // Si guardamos el Studio Journey.name al crear, lo usamos directo
+  // ("German · Conversational"). Para journeys legacy sin label
+  // caemos al focusShortLabel del enum.
+  const tail = journeyName || focusShortLabel(journey.focus);
+  return `${journey.language} · ${tail}`;
 }
 
 /**
@@ -110,10 +122,11 @@ export function journeyDisplayName(journey: Journey): string {
  * we drop the divider entirely.
  */
 export function journeyChipLabel(journey: Journey): string {
-  const focusLabel = focusShortLabel(journey.focus);
+  const journeyName = (journey.label ?? "").trim();
+  const head = journeyName || focusShortLabel(journey.focus);
   const level = journey.level?.trim();
-  if (!level) return focusLabel;
-  return `${focusLabel} · ${level}`;
+  if (!level) return head;
+  return `${head} · ${level}`;
 }
 
 /**

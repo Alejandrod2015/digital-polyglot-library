@@ -1,6 +1,7 @@
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+  ActivityIndicator,
   type LayoutChangeEvent,
   PanResponder,
   Pressable,
@@ -84,6 +85,12 @@ export function NativeAudioPlayer({
     didJustFinish: false,
   });
   const [error, setError] = useState<string | null>(null);
+  // Estilo Spotify: si el usuario toca play antes de que el audio
+  // termine de cargar, recordamos la intención. Cuando el sound queda
+  // cargado, autoreproducimos. Así un solo tap arranca el playback —
+  // antes el primer tap se ignoraba con un early return.
+  const pendingPlayRef = useRef(false);
+  const [pendingPlay, setPendingPlay] = useState(false);
 
   const normalizedSrc = typeof src === "string" ? src.trim() : "";
   const hasAudio = normalizedSrc.length > 0;
@@ -164,6 +171,11 @@ export function NativeAudioPlayer({
       }
 
       setError(null);
+      // Limpiamos la intención de play heredada del src previo: si el
+      // user había tocado play en la historia anterior y aún estaba
+      // cargando, no lo arrastramos al nuevo audio.
+      pendingPlayRef.current = false;
+      setPendingPlay(false);
       setPlayback({
         isLoaded: false,
         isPlaying: false,
@@ -211,6 +223,19 @@ export function NativeAudioPlayer({
         }
 
         soundRef.current = sound;
+
+        // Aquí (tras el await) el sound ya está cargado y soundRef
+        // asignado. Si el usuario tocó play durante la carga, lo
+        // disparamos ahora — ÚNICA manera confiable de no perder el
+        // tap. El check anterior dentro del status callback fallaba
+        // porque el callback puede dispararse con `isLoaded: true`
+        // ANTES de que await resuelva y soundRef se asigne, y luego
+        // no vuelve a fire si no estamos reproduciendo.
+        if (pendingPlayRef.current) {
+          pendingPlayRef.current = false;
+          setPendingPlay(false);
+          void sound.playAsync().catch(() => undefined);
+        }
       } catch (loadError) {
         if (!cancelled) {
           console.error("[audio] load failed", {
@@ -244,7 +269,19 @@ export function NativeAudioPlayer({
 
   async function togglePlayback() {
     const sound = soundRef.current;
-    if (!sound || !playback.isLoaded) return;
+    // Audio aún cargando: marcamos la intención y mostramos spinner.
+    // Cuando el callback de status confirme isLoaded, autoreproducimos.
+    // Si el user vuelve a tocar mientras carga, cancelamos el pending.
+    if (!sound || !playback.isLoaded) {
+      if (pendingPlayRef.current) {
+        pendingPlayRef.current = false;
+        setPendingPlay(false);
+      } else {
+        pendingPlayRef.current = true;
+        setPendingPlay(true);
+      }
+      return;
+    }
 
     if (playback.isPlaying) {
       await sound.pauseAsync();
@@ -352,12 +389,19 @@ export function NativeAudioPlayer({
           accessibilityLabel="qa-player-play-toggle"
           testID="qa-player-play-toggle"
         >
-          <Feather
-            name={playback.isPlaying ? "pause" : "play"}
-            size={30}
-            color="#f5f9ff"
-            style={playback.isPlaying ? undefined : styles.playIconOffset}
-          />
+          {pendingPlay && !playback.isLoaded ? (
+            // Spinner mientras el audio carga tras el primer tap.
+            // Da feedback inmediato (estilo Spotify): el botón
+            // reacciona al instante aunque el sound aún no esté listo.
+            <ActivityIndicator size="small" color="#f5f9ff" />
+          ) : (
+            <Feather
+              name={playback.isPlaying ? "pause" : "play"}
+              size={30}
+              color="#f5f9ff"
+              style={playback.isPlaying ? undefined : styles.playIconOffset}
+            />
+          )}
         </Pressable>
 
         <Pressable onPress={() => void seekBy(SEEK_STEP_MS)} style={styles.iconButton}>

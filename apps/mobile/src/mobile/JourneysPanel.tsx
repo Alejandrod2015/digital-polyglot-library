@@ -20,8 +20,20 @@ import {
   journeyId,
 } from "./journeys";
 import type { JourneyFocus } from "../../../../src/lib/onboarding";
-import { JOURNEY_FOCUS_OPTIONS } from "../../../../src/lib/onboarding";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
+
+/** A Studio Journey track exposed by the mobile journey API. Each
+ *  Journey record in Studio is one option in the Step 2 picker. */
+export type JourneysPanelTrack = {
+  id: string;
+  label: string;
+};
+
+/** Default focus assigned when the user creates a journey from this
+ *  panel. The journey is uniquely identified by (language, track.id),
+ *  so the focus field only exists to satisfy the legacy schema and is
+ *  no longer user-facing. Phase-2 cleanup will drop the field. */
+const DEFAULT_NEW_JOURNEY_FOCUS: JourneyFocus = "General";
 
 /**
  * Full-screen "Your journeys" panel. Slides up from the bottom (mirror
@@ -91,17 +103,31 @@ type Props = {
   /** Activate an existing journey by id and close the panel. */
   onSelect: (id: string) => void | Promise<void>;
   /** Create a new journey (language + variant + focus). The shell is
-   *  responsible for de-duping and persistence. */
+   *  responsible for de-duping and persistence. `label` carries the
+   *  picked Studio Journey.name so the chrome can render it instead
+   *  of the generic focus shortlabel. */
   onCreate: (input: {
     language: string;
     variant: string | null;
     focus: JourneyFocus;
+    label?: string | null;
   }) => void | Promise<void>;
   /** Remove a journey by id. The shell decides what to do with the
    *  active journey if the deleted one was active (typically it
    *  promotes the next journey in the list). The panel only fires
    *  the request after the user confirms via Alert. */
   onDelete: (id: string) => void | Promise<void>;
+  /** Fetch the Studio Journey tracks for a language. Used to populate
+   *  Step 2 of the create flow with real journeys instead of the old
+   *  4 hardcoded focus categories. The shell typically wraps the
+   *  /api/mobile/journey endpoint. Should never throw — return an
+   *  empty array on failure. */
+  getTracksForLanguage: (language: string) => Promise<JourneysPanelTrack[]>;
+  /** Synchronous cache hit for `getTracksForLanguage`. Returns the
+   *  cached tracks if the shell already has them in memory, or null
+   *  if a network fetch would be required. The panel uses this to
+   *  skip the "Loading..." flicker when the data is already there. */
+  getTracksForLanguageSync?: (language: string) => JourneysPanelTrack[] | null;
 };
 
 export function JourneysPanel({
@@ -114,6 +140,8 @@ export function JourneysPanel({
   onSelect,
   onCreate,
   onDelete,
+  getTracksForLanguage,
+  getTracksForLanguageSync,
 }: Props) {
   // Slide-up sheet animation, same pattern as LanguageSwitchSheet but
   // covering the whole screen height. We keep the tree alive during
@@ -123,11 +151,14 @@ export function JourneysPanel({
   const [mounted, setMounted] = useState(open);
   // "list" → browse + activate.
   // "pick-language" → step 1 of create flow.
-  // "pick-focus"    → step 2 of create flow.
+  // "pick-focus"    → step 2 of create flow (now picks a Studio
+  //                   Journey track, not one of 4 hardcoded focuses).
   type Mode = "list" | "pick-language" | "pick-focus";
   const [mode, setMode] = useState<Mode>("list");
   const [pickedLanguage, setPickedLanguage] = useState<LanguageOption | null>(null);
-  const [pickedFocus, setPickedFocus] = useState<JourneyFocus | null>(null);
+  const [pickedTrackId, setPickedTrackId] = useState<string | null>(null);
+  const [availableTracks, setAvailableTracks] = useState<JourneysPanelTrack[]>([]);
+  const [tracksLoading, setTracksLoading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   // When the panel opens with zero journeys, drop the user straight
@@ -140,9 +171,33 @@ export function JourneysPanel({
         setMode("list");
       }
       setPickedLanguage(null);
-      setPickedFocus(null);
+      setPickedTrackId(null);
+      setAvailableTracks([]);
+      setTracksLoading(false);
     }
   }, [open, journeys.length]);
+
+  // Prefetch tracks for every selectable language as soon as the panel
+  // opens, so by the time the user picks one in Step 1 the Step 2
+  // cards render instantly. The shell's `getTracksForLanguage` reads
+  // through an in-memory + disk cache, so duplicate calls are cheap.
+  // We fire all requests in parallel and ignore the result here — only
+  // the cache side-effect matters.
+  const prefetchedRef = useRef(false);
+  useEffect(() => {
+    if (!open) {
+      prefetchedRef.current = false;
+      return;
+    }
+    if (prefetchedRef.current) return;
+    prefetchedRef.current = true;
+    const seen = new Set<string>();
+    for (const option of LANGUAGE_OPTIONS) {
+      if (seen.has(option.name)) continue;
+      seen.add(option.name);
+      void getTracksForLanguage(option.name);
+    }
+  }, [open, getTracksForLanguage]);
 
   useEffect(() => {
     if (open) {
@@ -189,14 +244,18 @@ export function JourneysPanel({
   function handleClose() {
     setMode("list");
     setPickedLanguage(null);
-    setPickedFocus(null);
+    setPickedTrackId(null);
+    setAvailableTracks([]);
+    setTracksLoading(false);
     onClose();
   }
 
   function handleBack() {
     if (mode === "pick-focus") {
       setMode("pick-language");
-      setPickedFocus(null);
+      setPickedTrackId(null);
+      setAvailableTracks([]);
+      setTracksLoading(false);
     } else if (mode === "pick-language") {
       // If there are no journeys yet, "back" closes — there's nowhere
       // to go in the list view.
@@ -207,14 +266,44 @@ export function JourneysPanel({
     }
   }
 
+  async function pickLanguageAndLoadTracks(option: LanguageOption) {
+    setPickedLanguage(option);
+    setPickedTrackId(null);
+    // Sync cache hit: if the shell already has the tracks (typically
+    // because the open-time prefetch already populated the cache),
+    // render them in this same render — no spinner.
+    const cachedSync = getTracksForLanguageSync?.(option.name) ?? null;
+    if (cachedSync !== null && cachedSync.length > 0) {
+      setAvailableTracks(cachedSync);
+      setTracksLoading(false);
+      setMode("pick-focus");
+      return;
+    }
+    setAvailableTracks([]);
+    setTracksLoading(true);
+    setMode("pick-focus");
+    try {
+      const tracks = await getTracksForLanguage(option.name);
+      setAvailableTracks(tracks);
+    } catch {
+      setAvailableTracks([]);
+    } finally {
+      setTracksLoading(false);
+    }
+  }
+
   async function handleCreate() {
-    if (!pickedLanguage || !pickedFocus || submitting) return;
+    if (!pickedLanguage || !pickedTrackId || submitting) return;
+    const pickedTrack = availableTracks.find((t) => t.id === pickedTrackId) ?? null;
     setSubmitting(true);
     try {
       await onCreate({
         language: pickedLanguage.name,
-        variant: pickedLanguage.variant,
-        focus: pickedFocus,
+        // Use the Studio Journey track id as the variant so the
+        // resulting journey id is unique per (language, track).
+        variant: pickedTrackId,
+        focus: DEFAULT_NEW_JOURNEY_FOCUS,
+        label: pickedTrack?.label ?? null,
       });
       handleClose();
     } finally {
@@ -256,7 +345,7 @@ export function JourneysPanel({
         : "Your journeys"
       : mode === "pick-language"
         ? "Pick a language"
-        : "Pick a focus";
+        : "Pick a journey";
   const headerSub =
     mode === "list"
       ? `${journeys.length} active`
@@ -435,21 +524,18 @@ export function JourneysPanel({
             <View style={styles.languageGrid}>
               {LANGUAGE_OPTIONS.map((option) => {
                 const selected = pickedLanguage?.key === option.key;
-                // Disable a language only when *every* focus already
-                // has a journey in that (language, variant). Otherwise
-                // there's still at least one focus left to pick.
-                const allTaken = JOURNEY_FOCUS_OPTIONS.every((focus) =>
-                  existingKeys.has(journeyId(option.name, option.variant, focus))
-                );
+                // We can no longer cheaply check "all journeys taken
+                // for this language" without fetching the track list,
+                // so the language picker stays open and the dedup is
+                // enforced one level down (Step 2: alreadyExists).
                 const comingSoon = comingSoonLanguages?.has(option.name) ?? false;
-                const disabled = allTaken || comingSoon;
+                const disabled = comingSoon;
                 return (
                   <Pressable
                     key={option.key}
                     disabled={disabled}
                     onPress={() => {
-                      setPickedLanguage(option);
-                      setMode("pick-focus");
+                      void pickLanguageAndLoadTracks(option);
                     }}
                     style={[
                       styles.languageCard,
@@ -476,8 +562,6 @@ export function JourneysPanel({
                       <View style={styles.comingSoonPill}>
                         <Text style={styles.comingSoonPillText}>PRÓXIMAMENTE</Text>
                       </View>
-                    ) : allTaken ? (
-                      <Text style={styles.allTakenText}>All set ✓</Text>
                     ) : (
                       <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.4)" />
                     )}
@@ -504,52 +588,62 @@ export function JourneysPanel({
                 {pickedLanguage.variantLabel ? ` · ${pickedLanguage.variantLabel}` : ""}
               </Text>
             </View>
-            <Text style={styles.focusPrompt}>What&apos;s your focus?</Text>
+            <Text style={styles.focusPrompt}>Pick a journey</Text>
             <View style={styles.focusGrid}>
-              {JOURNEY_FOCUS_OPTIONS.map((focus) => {
-                const id = journeyId(pickedLanguage.name, pickedLanguage.variant, focus);
-                const alreadyExists = existingKeys.has(id);
-                const selected = pickedFocus === focus;
-                const icon = focusIcon(focus);
-                return (
-                  <Pressable
-                    key={focus}
-                    onPress={() => {
-                      if (alreadyExists) {
-                        // Tap on an existing combo just activates it.
-                        void onSelect(id);
-                        handleClose();
-                        return;
-                      }
-                      setPickedFocus(focus);
-                    }}
-                    style={[
-                      styles.focusCard,
-                      selected ? styles.focusCardSelected : null,
-                      alreadyExists ? styles.focusCardDisabled : null,
-                    ]}
-                  >
-                    <View style={styles.focusIconBox}>
-                      <Feather
-                        name={icon.feather}
-                        size={20}
-                        color={selected ? tokenBg[1] : tokenColor.cyan}
-                      />
-                    </View>
-                    <View style={{ flex: 1 }}>
-                      <Text style={styles.focusCardTitle}>
-                        {focusShortLabel(focus)}
-                      </Text>
-                      <Text style={styles.focusCardHint}>{focus}</Text>
-                    </View>
-                    {alreadyExists ? (
-                      <Text style={styles.alreadyText}>Already started ›</Text>
-                    ) : selected ? (
-                      <Feather name="check" size={18} color={tokenColor.xp} />
-                    ) : null}
-                  </Pressable>
-                );
-              })}
+              {tracksLoading ? (
+                <Text style={styles.focusEmptyText}>
+                  Loading journeys for {pickedLanguage.name}…
+                </Text>
+              ) : availableTracks.length === 0 ? (
+                <Text style={styles.focusEmptyText}>
+                  No journeys available for {pickedLanguage.name} yet.
+                </Text>
+              ) : (
+                availableTracks.map((track) => {
+                  const id = journeyId(
+                    pickedLanguage.name,
+                    track.id,
+                    DEFAULT_NEW_JOURNEY_FOCUS
+                  );
+                  const alreadyExists = existingKeys.has(id);
+                  const selected = pickedTrackId === track.id;
+                  return (
+                    <Pressable
+                      key={track.id}
+                      onPress={() => {
+                        if (alreadyExists) {
+                          // Tap on an existing combo just activates it.
+                          void onSelect(id);
+                          handleClose();
+                          return;
+                        }
+                        setPickedTrackId(track.id);
+                      }}
+                      style={[
+                        styles.focusCard,
+                        selected ? styles.focusCardSelected : null,
+                        alreadyExists ? styles.focusCardDisabled : null,
+                      ]}
+                    >
+                      <View style={styles.focusIconBox}>
+                        <Feather
+                          name="map"
+                          size={20}
+                          color={selected ? tokenBg[1] : tokenColor.cyan}
+                        />
+                      </View>
+                      <View style={{ flex: 1 }}>
+                        <Text style={styles.focusCardTitle}>{track.label}</Text>
+                      </View>
+                      {alreadyExists ? (
+                        <Text style={styles.alreadyText}>Already started ›</Text>
+                      ) : selected ? (
+                        <Feather name="check" size={18} color={tokenColor.xp} />
+                      ) : null}
+                    </Pressable>
+                  );
+                })
+              )}
             </View>
           </ScrollView>
         ) : null}
@@ -558,10 +652,10 @@ export function JourneysPanel({
           <View style={styles.footer}>
             <Pressable
               onPress={() => void handleCreate()}
-              disabled={!pickedFocus || submitting}
+              disabled={!pickedTrackId || submitting}
               style={[
                 styles.startButton,
-                !pickedFocus || submitting ? styles.startButtonDisabled : null,
+                !pickedTrackId || submitting ? styles.startButtonDisabled : null,
               ]}
             >
               <Text style={styles.startButtonText}>
@@ -892,6 +986,13 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "700",
     marginTop: 2,
+  },
+  focusEmptyText: {
+    color: "rgba(255,255,255,0.55)",
+    fontSize: 13,
+    fontWeight: "700",
+    paddingVertical: 18,
+    textAlign: "center",
   },
   alreadyText: {
     color: "rgba(255,255,255,0.55)",

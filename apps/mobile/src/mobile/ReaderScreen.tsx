@@ -140,7 +140,12 @@ function renderHighlightedParagraph(
   vocab: VocabItem[],
   paragraphKey: string,
   onWordPress: (word: VocabItem, contextSentence?: string) => void,
-  variant: "paragraph" | "quote" = "paragraph"
+  variant: "paragraph" | "quote" = "paragraph",
+  // Set compartido a nivel de historia: cada palabra del vocab se
+  // resalta SOLO la primera vez que aparece en todo el texto. Si no
+  // se pasa, hacemos fallback a un Set local (dedup por párrafo) para
+  // no romper otros call sites que aún no se hayan migrado.
+  alreadyHighlightedShared?: Set<string>
 ) {
   const baseTextStyle = variant === "quote" ? styles.quoteParagraph : styles.paragraph;
 
@@ -172,7 +177,7 @@ function renderHighlightedParagraph(
     return <Text style={baseTextStyle}>{text}</Text>;
   }
 
-  const alreadyHighlighted = new Set<string>();
+  const alreadyHighlighted = alreadyHighlightedShared ?? new Set<string>();
   const nodes: React.ReactNode[] = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null = regex.exec(text);
@@ -756,32 +761,42 @@ export function ReaderScreen(args: {
 
         <View style={styles.textWrap}>
           <View style={styles.textCard}>
-            {blocks.map((block, index) => (
-              <Pressable
-                key={`${story.id}-${index}`}
-                onPress={() => {
-                  if (selectedVocab) setSelectedVocab(null);
-                }}
-                style={[
-                  block.type === "quote" ? styles.quoteBlock : styles.paragraphBlock,
-                ]}
-                onLayout={(event) => {
-                  blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
-                  restoreReadingPosition();
-                }}
-              >
-                {renderHighlightedParagraph(
-                  block.text,
-                  vocab,
-                  `${story.id}-${index}`,
-                  (word, contextSentence) =>
-                    setSelectedVocab(
-                      contextSentence ? { ...word, note: contextSentence } : word
-                    ),
-                  block.type
-                )}
-              </Pressable>
-            ))}
+            {(() => {
+              // Set compartido a través de TODOS los párrafos de la
+              // historia, así una palabra del vocab queda resaltada
+              // sólo la primera vez que aparece. Antes vivía dentro
+              // de renderHighlightedParagraph y se reiniciaba por
+              // párrafo, por lo que la misma palabra se resaltaba en
+              // párrafos distintos.
+              const alreadyHighlightedShared = new Set<string>();
+              return blocks.map((block, index) => (
+                <Pressable
+                  key={`${story.id}-${index}`}
+                  onPress={() => {
+                    if (selectedVocab) setSelectedVocab(null);
+                  }}
+                  style={[
+                    block.type === "quote" ? styles.quoteBlock : styles.paragraphBlock,
+                  ]}
+                  onLayout={(event) => {
+                    blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
+                    restoreReadingPosition();
+                  }}
+                >
+                  {renderHighlightedParagraph(
+                    block.text,
+                    vocab,
+                    `${story.id}-${index}`,
+                    (word, contextSentence) =>
+                      setSelectedVocab(
+                        contextSentence ? { ...word, note: contextSentence } : word
+                      ),
+                    block.type,
+                    alreadyHighlightedShared
+                  )}
+                </Pressable>
+              ));
+            })()}
           </View>
 
           {isOfflineAudio ? (
