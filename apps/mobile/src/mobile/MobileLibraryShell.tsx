@@ -2228,7 +2228,7 @@ export function MobileLibraryShell(args: {
       try {
         await apiFetch({
           baseUrl: mobileConfig.apiBaseUrl,
-          path: "/api/user/preferences",
+          path: "/api/mobile/preferences",
           token: sessionToken,
           method: "POST",
           body: {
@@ -2296,7 +2296,7 @@ export function MobileLibraryShell(args: {
       try {
         await apiFetch({
           baseUrl: mobileConfig.apiBaseUrl,
-          path: "/api/user/preferences",
+          path: "/api/mobile/preferences",
           token: sessionToken,
           method: "POST",
           body: {
@@ -2369,7 +2369,7 @@ export function MobileLibraryShell(args: {
       try {
         await apiFetch({
           baseUrl: mobileConfig.apiBaseUrl,
-          path: "/api/user/preferences",
+          path: "/api/mobile/preferences",
           token: sessionToken,
           method: "POST",
           body: {
@@ -2440,7 +2440,7 @@ export function MobileLibraryShell(args: {
       ];
       await apiFetch({
         baseUrl: mobileConfig.apiBaseUrl,
-        path: "/api/user/preferences",
+        path: "/api/mobile/preferences",
         token: sessionToken,
         method: "POST",
         body: {
@@ -2505,58 +2505,39 @@ export function MobileLibraryShell(args: {
 
   // Halo respirante detrás de la "next up" del journey — glow estilo
   // Duolingo, indefinido. Un solo loop alimenta el halo + el float de
-  // la story. Native driver para no cargar el hilo JS.
+  // la story. Animated.Value se declara aquí; el effect que maneja el
+  // loop vive más abajo (después de que `activeJourneyTrack` y
+  // `globalJourneyNextStoryId` están en scope) para poder rearmarse
+  // cuando la "next" salta de historia o el track cambia.
   const journeyNextPulse = useRef(new Animated.Value(0.25)).current;
-  useEffect(() => {
-    // Rearmamos el loop ante varias señales para no quedar "muerto":
-    //   - El journey se vuelve visible (activeScreen pasa a "home").
-    //   - El track activo cambia (p.ej. el usuario picó otro Studio
-    //     Journey) — los Animated.View se desmontan/remontan y el
-    //     handle nativo se desvincula del valor.
-    //   - La "next" salta a otra historia (los views previos se
-    //     desmontan; los nuevos necesitan re-suscribirse).
-    //   - La app vuelve de background — iOS pausa los timing nativos
-    //     y al despertar el loop puede no reanudar solo.
-    if (activeScreen !== "home") return;
-
-    let loop: Animated.CompositeAnimation | null = null;
-    function startPulse() {
-      if (loop) loop.stop();
-      journeyNextPulse.setValue(0.25);
-      loop = Animated.loop(
-        Animated.sequence([
-          Animated.timing(journeyNextPulse, {
-            toValue: 0.85,
-            duration: 1100,
-            easing: Easing.inOut(Easing.ease),
-            // JS-driven: con native driver el loop se pausa a mitad
-            // bajo Low Power Mode / frame drops y queda congelado.
-            // El loop sólo controla 1 valor de opacity + 1 translateY,
-            // así que el costo de manejarlo en JS es despreciable.
-            useNativeDriver: false,
-          }),
-          Animated.timing(journeyNextPulse, {
-            toValue: 0.25,
-            duration: 1100,
-            easing: Easing.inOut(Easing.ease),
-            useNativeDriver: false,
-          }),
-        ])
-      );
-      loop.start();
-    }
-
-    startPulse();
-
-    const sub = AppState.addEventListener("change", (next) => {
-      if (next === "active") startPulse();
-    });
-
-    return () => {
-      sub.remove();
-      if (loop) loop.stop();
-    };
-  }, [journeyNextPulse, activeScreen]);
+  // Nodos de interpolación estables. ANTES los creábamos inline dentro
+  // de `renderJourneyStoryNode` (`journeyNextPulse.interpolate(...)`),
+  // que se llama en cada render. Cada render generaba un nodo nuevo, y
+  // `createAnimatedComponent` hacía detach+attach de listeners en cada
+  // pase; bajo carga (scroll del path con sticky topics, setStates
+  // varios) esa secuencia se desincronizaba y el listener nuevo no
+  // siempre enganchaba — la opacidad del halo se congelaba en el
+  // último valor alcanzado mientras que el translateY del float
+  // toleraba mejor el glitch y seguía visible. Memoizamos los nodos
+  // para que vivan tanto como el componente y los Animated.View
+  // solo monten/desmonten su listener una vez.
+  const journeyNextPulseOpacity = useMemo(
+    () =>
+      journeyNextPulse.interpolate({
+        inputRange: [0.25, 0.85],
+        outputRange: [0.25, 0.85],
+        extrapolate: "clamp",
+      }),
+    [journeyNextPulse]
+  );
+  const journeyNextPulseTranslateY = useMemo(
+    () =>
+      journeyNextPulse.interpolate({
+        inputRange: [0.25, 0.85],
+        outputRange: [-2.5, 2.5],
+      }),
+    [journeyNextPulse]
+  );
 
   // Shimmer experiment (variant B). Loop independiente del pulso del
   // "next" para poder espaciar más las pasadas. Cada ciclo: pausa de
@@ -2979,29 +2960,12 @@ export function MobileLibraryShell(args: {
               }
             : null,
         }));
-        // Open the legacy variant picker only when the user hasn't
-        // already chosen one of the available tracks. With the new
-        // "one track per Studio Journey" model, every language with
-        // multiple Journey records returns >= 2 tracks — but if the
-        // user already created a journey (preferredVariant matches a
-        // track id), or one of their saved journeys for this language
-        // matches a track, they don't need to pick again.
-        if (payload.tracks.length >= 2) {
-          const prefs = preferencesRef.current;
-          const currentVariant = (prefs.preferredVariant ?? "").trim();
-          const matchesPreferredVariant = currentVariant
-            ? payload.tracks.some((track) => track.id === currentVariant)
-            : false;
-          const matchesAnySavedJourney = prefs.journeys.some(
-            (j) =>
-              j.language.toLowerCase() === language.toLowerCase() &&
-              j.variant &&
-              payload.tracks.some((track) => track.id === j.variant)
-          );
-          if (!matchesPreferredVariant && !matchesAnySavedJourney) {
-            setJourneyVariantPickerOpen(true);
-          }
-        }
+        // El variant picker auto-abierto se eliminó: una pantalla de
+        // journey sin journey no tiene sentido. Si el idioma trae
+        // varios tracks y el usuario aún no escogió uno, `activeJourneyTrack`
+        // ([cae al primero][line 9612]) y el path se renderiza siempre.
+        // Cambio de track quedaría para un flujo explícito (settings o
+        // JourneysPanel), no como bloqueo del journey.
       } catch {
         // Only drop to empty if we have nothing cached to fall back on.
         if (!cached) setRemoteJourney(null);
@@ -3121,24 +3085,20 @@ export function MobileLibraryShell(args: {
     })();
   }, [activeJourneyLanguage, activeJourneyLanguageHydrated]);
 
-  // Only auto-pick the user's single target language on the FIRST hydration
-  // pass, not every time they tap "All languages". Otherwise clearing the
-  // language snaps back immediately and the hub is unreachable.
+  // Mantener `activeJourneyLanguage` (la fuente de verdad del contenido)
+  // sincronizado con `activeJourney?.language` (la fuente de la bandera
+  // y del header) en CADA hydrate, no solo en el primero.
   //
-  // Adicional: si el backend trae un `activeJourneyId` cuyo idioma NO
-  // coincide con el `activeJourneyLanguage` que vino de SecureStore,
-  // el backend gana. Bug previo (cold start tras matar la app):
-  // SecureStore guardaba el último idioma local (p.ej. Italian) y
-  // Clerk traía un journey activo distinto (p.ej. German). El pill
-  // mostraba la bandera del backend (German) pero el contenido
-  // cargaba el idioma del SecureStore (Italian). Solucionamos
-  // sincronizando contra `activeJourney?.language` en el primer
-  // hydrate.
-  const hasAutoPickedLanguageRef = useRef(false);
+  // Bug histórico (cold start): SecureStore traía Italian y Clerk traía
+  // un activeJourneyId alemán. El pill mostraba la bandera alemana y el
+  // contenido cargaba italiano. El fix anterior corría una vez por
+  // sesión (`hasAutoPickedLanguageRef`), así que cualquier rehidratación
+  // posterior (token refresh, race con el POST de switch, disk-restore)
+  // volvía a desincronizar y ya no se reconciliaba. Ahora corre cada
+  // vez que detecta mismatch — el backend sigue ganando, pero el flag y
+  // el contenido nunca se separan.
   useEffect(() => {
     if (!didHydratePreferences) return;
-    if (hasAutoPickedLanguageRef.current) return;
-    hasAutoPickedLanguageRef.current = true;
     const backendLang = activeJourney?.language?.trim() ?? null;
     if (backendLang) {
       const sameLang =
@@ -9704,6 +9664,59 @@ export function MobileLibraryShell(args: {
     // the new track's next.
     journeyAutoScrolledRef.current = null;
   }, [activeJourneyTrack?.id, globalJourneyNextStoryId]);
+
+  // Loop del halo + float de la story "next". Se rearma ante varias
+  // señales para no quedar "muerto":
+  //   - El journey se vuelve visible (activeScreen pasa a "home").
+  //   - El track activo cambia (el usuario picó otro Studio Journey)
+  //     — los Animated.View se desmontan/remontan y necesitan
+  //     re-suscribirse al valor.
+  //   - La "next" salta a otra historia (los views previos se
+  //     desmontan; los nuevos necesitan ver el valor oscilando).
+  //   - La app vuelve de background — iOS puede pausar timings y al
+  //     despertar el loop puede no reanudar solo.
+  // JS-driven (useNativeDriver:false): con native driver el loop se
+  // pausa a mitad bajo Low Power Mode / frame drops y queda congelado.
+  // El loop sólo controla 1 valor de opacity + 1 translateY, así que
+  // el costo de manejarlo en JS es despreciable.
+  useEffect(() => {
+    if (activeScreen !== "home") return;
+    if (!globalJourneyNextStoryId) return;
+
+    let loop: Animated.CompositeAnimation | null = null;
+    function startPulse() {
+      if (loop) loop.stop();
+      journeyNextPulse.setValue(0.25);
+      loop = Animated.loop(
+        Animated.sequence([
+          Animated.timing(journeyNextPulse, {
+            toValue: 0.85,
+            duration: 1100,
+            easing: Easing.inOut(Easing.ease),
+            useNativeDriver: false,
+          }),
+          Animated.timing(journeyNextPulse, {
+            toValue: 0.25,
+            duration: 1100,
+            easing: Easing.inOut(Easing.ease),
+            useNativeDriver: false,
+          }),
+        ])
+      );
+      loop.start();
+    }
+
+    startPulse();
+
+    const sub = AppState.addEventListener("change", (nextState) => {
+      if (nextState === "active") startPulse();
+    });
+
+    return () => {
+      sub.remove();
+      if (loop) loop.stop();
+    };
+  }, [journeyNextPulse, activeScreen, activeJourneyTrack?.id, globalJourneyNextStoryId]);
   const activeJourneyNextTopic = useMemo(() => {
     if (!activeJourneyLevel || !activeJourneyTopic) return null;
     const currentIndex = activeJourneyLevel.topics.findIndex((topic) => topic.slug === activeJourneyTopic.slug);
@@ -10187,15 +10200,21 @@ export function MobileLibraryShell(args: {
           // identical in size and weight; we only overlay a thin cyan
           // breathing inset ring + a subtle background tint so the user's
           // eye lands on it without the row screaming.
-          // Glow pulsante del color del topic — ya existía y se mantiene
-          // para la "next".
+          // Glow pulsante del color del topic. La opacity usa el nodo
+          // memoizado `journeyNextPulseOpacity` (declarado a nivel del
+          // componente) para que el listener no se detache+attache en
+          // cada render — eso causaba el congelamiento del halo bajo
+          // scroll/re-renders frecuentes.
           const nextOverlay =
             nodeVariant === "next" ? (
               <Animated.View
                 pointerEvents="none"
                 style={[
                   styles.journeyNodePillNextGlow,
-                  { backgroundColor: topicColor, opacity: journeyNextPulse },
+                  {
+                    backgroundColor: topicColor,
+                    opacity: journeyNextPulseOpacity,
+                  },
                 ]}
               />
             ) : null;
@@ -10257,19 +10276,12 @@ export function MobileLibraryShell(args: {
               </View>
             ) : null;
 
-          // Float vertical sutil (~3 px arriba/abajo) usando journeyNextPulse
-          // — sólo en la "next".
+          // Float vertical sutil (~3 px arriba/abajo) usando el nodo
+          // memoizado `journeyNextPulseTranslateY` — sólo en la "next".
           const nextFloatStyle =
             nodeVariant === "next"
               ? {
-                  transform: [
-                    {
-                      translateY: journeyNextPulse.interpolate({
-                        inputRange: [0.25, 0.85],
-                        outputRange: [-2.5, 2.5],
-                      }),
-                    },
-                  ],
+                  transform: [{ translateY: journeyNextPulseTranslateY }],
                 }
               : null;
 
@@ -10605,7 +10617,7 @@ export function MobileLibraryShell(args: {
     if (current?.slug !== stickyTopicSlugRef.current) {
       // Subtle iOS haptic at the eclipse moment. `selectionAsync` is
       // the lightest style (same tick as scrubbing through a picker
-      // wheel). Two guards keep this honest:
+      // wheel). Tres guardas mantienen esto honesto:
       //
       //   1. `silent`: layout-driven recomputes (measureTopicY when a
       //      topic block first lays out, scroll-restore on tab return)
@@ -10620,9 +10632,15 @@ export function MobileLibraryShell(args: {
       //      because those slugs are already in the session set.
       //      Sessions reset on `onScrollBeginDrag` and clear on
       //      `onMomentumScrollEnd`.
+      //   3. Solo topic→topic: las transiciones desde/hacia "sin
+      //      sticky" (null) no son cambios de tema, son el primer
+      //      panel apareciendo o desapareciendo al borde de la lista.
+      //      Esos no vibran; sólo el cruce real de un topic a otro.
       const newSlug = current?.slug ?? null;
-      if (!silent) {
-        const sessionKey = newSlug ?? STICKY_NULL_SENTINEL;
+      const previousSlug = stickyTopicSlugRef.current;
+      const isTopicToTopic = previousSlug !== null && newSlug !== null;
+      if (!silent && isTopicToTopic) {
+        const sessionKey = newSlug;
         if (!visitedSlugsInSessionRef.current.has(sessionKey)) {
           visitedSlugsInSessionRef.current.add(sessionKey);
           Haptics.selectionAsync().catch(() => {
@@ -10886,62 +10904,12 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {/* The full-screen "My Languages" hub was removed. Switching
-          languages happens via the LanguageSwitchSheet bottom sheet
-          mounted at the shell root, opened by tapping the flag chip
-          in the top strip. */}
-
-      {!showJourneyHub && journeyVariantPickerOpen && activeJourneyLanguage ? (
-        <View style={styles.section}>
-          <Pressable
-            onPress={() => {
-              setActiveJourneyLanguage(null);
-              setJourneyVariantPickerOpen(false);
-              setJourneyDetailTopicId(null);
-              setSelectedJourneyLevelId(null);
-              setSelectedJourneyTopicId(null);
-              setSelectedJourneyTrackId(null);
-            }}
-            accessibilityRole="button"
-            accessibilityLabel="qa-journey-back-to-languages"
-            testID="qa-journey-back-to-languages"
-            style={styles.secondaryButton}
-          >
-            <Text style={styles.secondaryButtonText}>All languages</Text>
-          </Pressable>
-        </View>
-      ) : null}
-
-      {!showJourneyHub && journeyVariantPickerOpen && remoteJourney && remoteJourney.tracks.length >= 2 ? (
-        <View style={styles.section}>
-          <Text style={styles.journeyVariantPickerLabel}>Choose a variant</Text>
-          <View style={styles.journeyVariantPickerGrid}>
-            {remoteJourney.tracks.map((track) => {
-              const isActive = selectedJourneyTrackId === track.id;
-              return (
-                <Pressable
-                  key={track.id}
-                  onPress={() => {
-                    setSelectedJourneyTrackId(track.id);
-                    setJourneyVariantPickerOpen(false);
-                  }}
-                  accessibilityRole="button"
-                  accessibilityLabel={`qa-journey-variant-${track.id}`}
-                  testID={`qa-journey-variant-${track.id}`}
-                  style={[styles.journeyVariantCard, isActive ? styles.journeyVariantCardActive : null]}
-                >
-                  <Text style={[styles.journeyVariantLabel, isActive ? styles.journeyVariantLabelActive : null]}>
-                    {track.label}
-                  </Text>
-                  <Text style={styles.journeyVariantMeta}>
-                    {track.insights.score}% · {track.insights.completedSteps}/{track.insights.totalSteps} steps
-                  </Text>
-                </Pressable>
-              );
-            })}
-          </View>
-        </View>
-      ) : null}
+      {/* Eliminados: el hub "My Languages" (ahora vive en el bottom
+          sheet del flag chip), el botón vestigio "All languages" que
+          apuntaba a ese hub muerto, y el variant picker que reemplazaba
+          el path con una pantalla casi vacía. La selección de variante
+          quedaría para JourneysPanel/settings; el path siempre debe
+          mostrar contenido. */}
 
       {/* Old insights bar (progress %, steps, due pills) removed — all that
           info is now inline in the journey top strip. */}
@@ -12815,7 +12783,7 @@ export function MobileLibraryShell(args: {
               try {
                 await apiFetch({
                   baseUrl: mobileConfig.apiBaseUrl,
-                  path: "/api/user/preferences",
+                  path: "/api/mobile/preferences",
                   token: sessionToken,
                   method: "POST",
                   body: {
