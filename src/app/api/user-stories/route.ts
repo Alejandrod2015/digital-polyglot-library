@@ -36,20 +36,57 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ stories: [] });
       }
 
-      const stories = await prisma.userStory.findMany({
-        where: {
-          slug: { in: slugs },
-          ...(effectiveUserId ? { OR: [{ public: true }, { userId: effectiveUserId }] } : { public: true }),
-        },
-        select: {
-          slug: true,
-          audioUrl: true,
-          audioSegments: true,
-        },
-      });
+      const [userStories, journeyStories] = await Promise.all([
+        prisma.userStory.findMany({
+          where: {
+            slug: { in: slugs },
+            ...(effectiveUserId ? { OR: [{ public: true }, { userId: effectiveUserId }] } : { public: true }),
+          },
+          select: {
+            slug: true,
+            audioUrl: true,
+            audioSegments: true,
+          },
+        }),
+        // También consultamos JourneyStory porque las historias del
+        // Studio Journey (p.ej. los diálogos alemanes A1) viven ahí
+        // y no en UserStory. Sin esto, el botón "Story" del práctico
+        // móvil queda mudo para esas historias porque no encuentra
+        // audio metadata. Filtramos por status published para evitar
+        // exponer drafts.
+        prisma.journeyStory.findMany({
+          where: {
+            slug: { in: slugs },
+            status: "published",
+            audioUrl: { not: null },
+          },
+          select: {
+            slug: true,
+            audioUrl: true,
+            audioSegments: true,
+          },
+        }),
+      ]);
+
+      // De-dup por slug: si ambos modelos tienen la misma slug, gana
+      // UserStory (la fuente más antigua y específica del usuario).
+      const seen = new Set<string>();
+      const merged: Array<{ slug: string | null; audioUrl: string | null; audioSegments: unknown }> = [];
+      for (const story of userStories) {
+        if (story.slug && !seen.has(story.slug)) {
+          seen.add(story.slug);
+          merged.push(story);
+        }
+      }
+      for (const story of journeyStories) {
+        if (story.slug && !seen.has(story.slug)) {
+          seen.add(story.slug);
+          merged.push(story);
+        }
+      }
 
       await prisma.$disconnect();
-      return NextResponse.json({ stories });
+      return NextResponse.json({ stories: merged });
     }
 
     // 🔹 Si viene un id → devolver solo esa historia
