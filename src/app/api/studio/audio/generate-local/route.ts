@@ -36,8 +36,8 @@ function ttsScript(): string {
   return join(projectRoot(), "scripts", "tts", "generate_audio.py");
 }
 
-export const AVAILABLE_AMBIENTS = ["mercado", "metro", "restaurante", "bar", "cafeteria"] as const;
-export type AmbientTag = (typeof AVAILABLE_AMBIENTS)[number];
+const AVAILABLE_AMBIENTS = ["mercado", "metro", "restaurante", "bar", "cafeteria"] as const;
+type AmbientTag = (typeof AVAILABLE_AMBIENTS)[number];
 
 const LANGUAGE_TO_AMBIENT_SUFFIX: Record<string, string> = {
   spanish: "es",
