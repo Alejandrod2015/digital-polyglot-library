@@ -524,8 +524,28 @@ export function buildPracticeSession(
           ? createNaturalExpressionExercise
           : createListenChooseExercise;
 
+  // Para los modos basados en frase (context/meaning/natural) también
+  // deduplicamos por oración subyacente. Si el usuario guardó varias
+  // palabras de la misma frase, cada item arma un ejercicio distinto pero
+  // sobre la misma oración — solo cambiaba la palabra con el blank y el
+  // bug reportado era ver "la misma oración varias veces y solo cambia
+  // la palabra". El id del ejercicio se basa en la palabra, así que el
+  // dedup por id no atrapaba esto.
+  const sentenceAwareMode = mode === "context" || mode === "meaning" || mode === "natural";
+  const seenSentences = new Set<string>();
+
   for (const item of source) {
     if (exercises.length >= 10) break;
+    if (sentenceAwareMode) {
+      const sentenceKey = normalizeKey(getContextSentence(item));
+      if (sentenceKey && seenSentences.has(sentenceKey)) continue;
+      const exercise = builder(item, languageAwarePool);
+      if (!exercise) continue;
+      if (exercises.some((existing) => existing.id === exercise.id)) continue;
+      if (sentenceKey) seenSentences.add(sentenceKey);
+      exercises.push(exercise);
+      continue;
+    }
     const exercise = builder(item, languageAwarePool);
     if (!exercise) continue;
     if (exercises.some((existing) => existing.id === exercise.id)) continue;
