@@ -1787,12 +1787,11 @@ const styles = StyleSheet.create({
   // line baseline. The inner wrapper carries the visible rounded
   // background and is naturally sized by its 24 px inner Text.
   karaokeWordOuter: {
-    // Empirically iterating: in iOS NSTextAttachment the relationship
-    // between inline-View padding and the surrounding text's baseline
-    // does not match the obvious mental model. (top: 4, bottom: 12)
-    // pushed punctuation lower, so the inverse should bring it back up.
-    paddingTop: 12,
-    paddingBottom: 4,
+    // Empirical sweep: (8,8) sat slightly low, (12,4) sat slightly high.
+    // (10,6) is the middle of those two and should land at the visual
+    // baseline of the surrounding text.
+    paddingTop: 10,
+    paddingBottom: 6,
     paddingHorizontal: 0,
   },
   karaokeWordContainerPlain: {
