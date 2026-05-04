@@ -19,11 +19,14 @@ import {
   formatVariantLabel,
   formatLevel,
   formatTopic,
+  getVocabTypeLabel,
+  normalizeVocabType,
   type AudioWordTimingsPayload,
   type Book,
   type Story,
   type StoryWordToken,
   type VocabItem,
+  type VocabTypeKey,
 } from "@digital-polyglot/domain";
 import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
@@ -311,35 +314,28 @@ function buildVocabLookup(vocab: VocabItem[]): Map<string, VocabItem> {
   return map;
 }
 
-// === TEMPORARY: vocab pill color sandbox ============================
-// Each unique vocab word in the story gets a different pill background
-// so the user can compare hues side by side and pick a favorite. The
-// same word always lands on the same palette index because the index
-// is derived deterministically from the word's lowercase form. Active
-// highlight on a vocab word still falls through to the amber pill, so
-// only the resting / non-active vocab state varies.
-//
-// To finalize: pick one entry, drop this list, hard-code its `bg` on
-// `karaokeWordContainerVocab` and on the legacy `highlightedPill` /
-// globals.css `.vocab-word`.
-const VOCAB_TEST_PALETTES: Array<{ name: string; bg: string }> = [
-  { name: "sky", bg: "rgba(56, 189, 248, 0.7)" },
-  { name: "teal", bg: "rgba(45, 212, 191, 0.7)" },
-  { name: "purple", bg: "rgba(167, 139, 250, 0.7)" },
-  { name: "pink", bg: "rgba(244, 114, 182, 0.65)" },
-  { name: "emerald", bg: "rgba(52, 211, 153, 0.65)" },
-  { name: "indigo", bg: "rgba(129, 140, 248, 0.7)" },
-  { name: "coral", bg: "rgba(248, 113, 113, 0.6)" },
-  { name: "cyan", bg: "rgba(34, 211, 238, 0.65)" },
-];
+// Vocab pill background per grammatical type. Each color is a saturated
+// hue at moderate opacity so white bold text reads cleanly on top, and
+// the hues are spread across the wheel so a paragraph with mixed parts
+// of speech displays a clear visual key. Active highlight on a vocab
+// word INTENTIONALLY does NOT override these — vocab keeps its type
+// color throughout playback so the grammar signal stays stable.
+const VOCAB_TYPE_BACKGROUNDS: Record<VocabTypeKey, string> = {
+  verb: "rgba(248, 113, 113, 0.6)", // coral — action
+  noun: "rgba(56, 189, 248, 0.65)", // sky — entity
+  adjective: "rgba(52, 211, 153, 0.6)", // emerald — quality
+  adverb: "rgba(167, 139, 250, 0.65)", // purple — modifier
+  expression: "rgba(244, 114, 182, 0.6)", // pink — idiomatic
+  other: "rgba(148, 163, 184, 0.55)", // slate — neutral fallback
+};
 
-function pickVocabPalette(vocabKey: string): { name: string; bg: string } {
-  let h = 0;
-  for (let i = 0; i < vocabKey.length; i += 1) {
-    h = (h * 31 + vocabKey.charCodeAt(i)) | 0;
-  }
-  const idx = Math.abs(h) % VOCAB_TEST_PALETTES.length;
-  return VOCAB_TEST_PALETTES[idx];
+function vocabBackgroundForItem(item: VocabItem | null | undefined): string {
+  if (!item) return VOCAB_TYPE_BACKGROUNDS.other;
+  const key = normalizeVocabType(item.type, {
+    word: item.word,
+    definition: item.definition,
+  });
+  return VOCAB_TYPE_BACKGROUNDS[key ?? "other"];
 }
 
 function renderKaraokeParagraph(args: {
@@ -440,17 +436,14 @@ function renderKaraokeParagraph(args: {
     // only the background color and not the layout.
     let containerStyle: any = styles.karaokeWordContainerPlain;
     let wordTextStyle: any = styles.karaokeWordText;
-    if (isFirstVocabHit && isActive) {
-      containerStyle = styles.karaokeWordContainerActiveVocab;
-      wordTextStyle = styles.karaokeWordTextVocabBold;
-    } else if (isFirstVocabHit) {
-      // TEMPORARY palette sandbox: each unique vocab word renders on
-      // a different background hue so the user can compare. Same word
-      // → same color via deterministic hash.
-      const palette = pickVocabPalette(vocabKey ?? w.text.toLowerCase());
+    if (isFirstVocabHit) {
+      // Vocab pills keep their type color through the entire playback.
+      // The audio cursor moving over a vocab word does NOT swap the pill
+      // to the active amber — the type signal stays stable so the user
+      // can still tell at a glance whether it was a noun / verb / etc.
       containerStyle = [
         styles.karaokeWordContainerVocab,
-        { backgroundColor: palette.bg },
+        { backgroundColor: vocabBackgroundForItem(vocabItem) },
       ];
       wordTextStyle = styles.karaokeWordTextVocabWhite;
     } else if (isActive) {
@@ -1311,6 +1304,28 @@ export function ReaderScreen(args: {
               <View style={styles.vocabBubbleHeader}>
                 <View style={styles.vocabBubbleTitleStack}>
                   <Text style={styles.vocabBubbleWord}>{selectedVocab.word}</Text>
+                  {(() => {
+                    // Small type badge under the word (Verb / Noun / etc.)
+                    // Tinted with the same hue family as the inline pill so
+                    // the visual association is reinforced from the popup.
+                    const normalizedType = normalizeVocabType(selectedVocab.type, {
+                      word: selectedVocab.word,
+                      definition: selectedVocab.definition,
+                    });
+                    if (!normalizedType || normalizedType === "other") return null;
+                    return (
+                      <View
+                        style={[
+                          styles.vocabBubbleTypeBadge,
+                          { backgroundColor: VOCAB_TYPE_BACKGROUNDS[normalizedType] },
+                        ]}
+                      >
+                        <Text style={styles.vocabBubbleTypeBadgeText}>
+                          {getVocabTypeLabel(normalizedType)}
+                        </Text>
+                      </View>
+                    );
+                  })()}
                 </View>
                 <Pressable onPress={() => setSelectedVocab(null)} style={styles.vocabClose}>
                   <Text style={styles.vocabCloseText}>×</Text>
@@ -1950,6 +1965,20 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 22,
     fontWeight: "800",
+  },
+  vocabBubbleTypeBadge: {
+    alignSelf: "flex-start",
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 999,
+    marginTop: 4,
+  },
+  vocabBubbleTypeBadgeText: {
+    color: "#ffffff",
+    fontSize: 11,
+    fontWeight: "700",
+    letterSpacing: 0.4,
+    textTransform: "uppercase",
   },
   vocabClose: {
     borderRadius: 999,
