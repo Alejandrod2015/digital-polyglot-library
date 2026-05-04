@@ -445,13 +445,29 @@ function findActiveKaraokeWordIndex(
   words: StoryWordToken[],
   positionSec: number
 ): number | null {
+  // Each token's effective window is [startSec, nextToken.startSec).
+  // Aeneas occasionally emits zero-duration windows (startSec === endSec)
+  // for short connector words; trusting endSec literally would mean those
+  // words never get highlighted because the 50 ms sampler almost never
+  // hits an exact-ms boundary. Walking startSecs avoids that hole and
+  // also covers any inter-word silence cleanly.
   let last: number | null = null;
   for (let i = 0; i < words.length; i += 1) {
     const w = words[i];
-    if (w.startSec === null || w.endSec === null) continue;
-    if (w.startSec <= positionSec && positionSec <= w.endSec) return i;
-    if (w.endSec < positionSec) last = i;
-    else break;
+    if (w.startSec === null) continue;
+    if (positionSec < w.startSec) break;
+    let nextStart: number | null = null;
+    for (let j = i + 1; j < words.length; j += 1) {
+      const candidate = words[j].startSec;
+      if (candidate !== null && candidate > w.startSec) {
+        nextStart = candidate;
+        break;
+      }
+    }
+    if (nextStart === null || positionSec < nextStart) {
+      return i;
+    }
+    last = i;
   }
   return last;
 }
@@ -1731,11 +1747,12 @@ const styles = StyleSheet.create({
   karaokeActivePillText: {
     color: "#1a1205",
     fontSize: 20,
-    // Intentionally NOT bold: bold glyphs are visibly wider than the
-    // paragraph's regular weight, and toggling weight on/off as the
-    // highlight moves was pushing surrounding text sideways. Vocab
-    // pills can stay bold because they are static; the active pill
-    // moves and so must keep the same width as the underlying text.
+    // Match the paragraph's natural weight explicitly. Without
+    // declaring it, iOS picked a slightly lighter weight for Text
+    // nested inside a <View> than for top-level paragraph Text, so
+    // the active word visibly looked thinner than the surrounding
+    // text. "400" is the system regular weight on iOS.
+    fontWeight: "400",
     lineHeight: 20,
   },
   vocabOverlay: {

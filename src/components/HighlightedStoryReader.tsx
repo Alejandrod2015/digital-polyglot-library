@@ -23,16 +23,28 @@ function findActiveWordIndex(
   words: AudioWordTimingsPayload["words"],
   currentTime: number
 ): number | null {
-  // Linear scan keeps the logic robust to nulls (gap-filled timings can
-  // straddle each other slightly when Whisper missed a word). N is small
-  // enough (a few hundred words) that this is fine.
+  // Each token's effective window is [startSec, nextToken.startSec).
+  // Aeneas occasionally emits zero-duration windows for short connector
+  // words; trusting endSec literally lets those words slip past every
+  // sampling tick. Walking startSecs covers them and any inter-word
+  // silence transparently.
   let last: number | null = null;
   for (let i = 0; i < words.length; i += 1) {
     const w = words[i];
-    if (w.startSec === null || w.endSec === null) continue;
-    if (w.startSec <= currentTime && currentTime <= w.endSec) return i;
-    if (w.endSec < currentTime) last = i;
-    else break;
+    if (w.startSec === null) continue;
+    if (currentTime < w.startSec) break;
+    let nextStart: number | null = null;
+    for (let j = i + 1; j < words.length; j += 1) {
+      const candidate = words[j].startSec;
+      if (candidate !== null && candidate > w.startSec) {
+        nextStart = candidate;
+        break;
+      }
+    }
+    if (nextStart === null || currentTime < nextStart) {
+      return i;
+    }
+    last = i;
   }
   return last;
 }
