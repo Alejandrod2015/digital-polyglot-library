@@ -56,6 +56,23 @@ function detectSceneHints(synopsis: string): { required: string[]; forbidden: st
   return { required, forbidden };
 }
 
+// Three distinct style profiles. Each one biases the model toward a different
+// minimalist aesthetic so the user can compare side by side and pick the one
+// that fits the brand best. All three share the same anti-anime / balanced
+// palette / minimalism guardrails.
+export type CoverVariant = "flat-poster" | "layered-paper" | "muted-watercolor";
+
+export const COVER_VARIANTS: CoverVariant[] = ["flat-poster", "layered-paper", "muted-watercolor"];
+
+const COVER_VARIANT_STYLE: Record<CoverVariant, string> = {
+  "flat-poster":
+    "Modern flat-design poster illustration in the spirit of contemporary editorial illustrators (Eiko Ojala, Tom Haugomat). Large flat color planes, bold geometric shapes, clean silhouettes, MINIMAL detail and rendering. Generous negative space. Limited palette of 4-5 colors mixing one warm accent with cool tones (teal, dusty blue, soft lavender, sage, cream).",
+  "layered-paper":
+    "Layered paper-cut illustration aesthetic. Stacked planes suggesting depth without realistic shading. Cool-leaning palette (teal, dusty blue, lavender, dusty pink) with one warm focal accent. Soft texture in the paper layers but not photorealistic. Compositional depth through layering rather than perspective rendering.",
+  "muted-watercolor":
+    "Soft watercolor minimal illustration. Muted, sophisticated base palette (sage, cream, dusty rose, slate) with ONE bold accent color anchoring the focal subject. Loose hand-drawn line work kept minimal. Subtle paper-grain texture. NOT digital-glossy.",
+};
+
 export function buildCoverPrompt(args: {
   title: string;
   synopsis: string;
@@ -63,8 +80,9 @@ export function buildCoverPrompt(args: {
   region: string;
   topic: string;
   level: string;
+  variant?: CoverVariant;
 }): string {
-  const { title, synopsis, language, region, topic, level } = args;
+  const { title, synopsis, language, region, topic, level, variant = "flat-poster" } = args;
   const characterNames = extractCharacterNames(synopsis);
   const sceneHints = detectSceneHints(synopsis);
   const contextLine = [
@@ -79,14 +97,23 @@ export function buildCoverPrompt(args: {
 
   return [
     "Create a horizontal story cover illustration (1536x1024) grounded in the synopsis.",
-    "Depict ONE clear main moment from the story, with visible characters and 2-4 representative objects from the scene.",
-    "Keep composition simple and readable: one primary focal area, at most 5 secondary people in the background.",
+    "Depict ONE clear main moment from the story. Keep it MINIMAL: 1-2 key objects max, 0-2 background figures, generous negative space. Composition should feel calm and uncluttered, not crowded.",
     "",
-    "Style: editorial illustration with flat-to-soft shading, clean shapes, clear silhouettes, vivid lively colors, natural balance.",
-    "Match the time-of-day from the synopsis; keep subjects readable with soft-to-medium shadows.",
-    "Clean composition with a strong focal point, readable at thumbnail size.",
+    `Style profile: ${COVER_VARIANT_STYLE[variant]}`,
     "",
-    "Single coherent scene. No text, letters, logos, watermark, border, UI, or book mockup.",
+    "Composition rules:",
+    "- ONE strong focal point, large enough to read at thumbnail size",
+    "- Avoid filling the frame; leave breathing room around the subject",
+    "- Match the time-of-day from the synopsis with soft, simple lighting",
+    "",
+    "Palette rules (CRITICAL):",
+    "- Avoid heavy yellow/amber/gold dominance even for warm scenes",
+    "- Mix cool tones (teal, dusty blue, lavender, sage) with at most ONE warm accent",
+    "- Limited palette of 4-5 colors total; do not use saturated rainbow palettes",
+    "",
+    "Strict exclusions: NOT anime, NOT manga, NOT cartoon, NOT chibi, NOT shoujo, NOT comic-book, NOT pixar 3D render, NOT photorealistic. No glossy digital sheen.",
+    "",
+    "No text, letters, logos, watermark, border, UI, or book mockup. Single coherent scene.",
     "",
     `Story title: ${title || "(untitled story)"}`,
     contextLine,
