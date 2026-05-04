@@ -616,7 +616,13 @@ export function ReaderScreen(args: {
       const lastIdx = lastResolvedIndexRef.current;
 
       let resolved = rawIdx;
-      if (rawIdx !== null && lastIdx !== null && rawIdx < lastIdx) {
+      if (rawIdx === null && lastIdx !== null && snap.isPlaying) {
+        // Mid-playback `null` from extrapolation overshoot: keep the
+        // last index instead of clearing the highlight, otherwise the
+        // first word visibly blinks twice as the snapshot oscillates
+        // around its startSec boundary on the very first activation.
+        resolved = lastIdx;
+      } else if (rawIdx !== null && lastIdx !== null && rawIdx < lastIdx) {
         // Treat backward steps of one or two words as jitter (extrapolation
         // overshooting the player's next reported position). Bigger jumps
         // are real seeks: let them through.
@@ -1747,12 +1753,12 @@ const styles = StyleSheet.create({
   karaokeActivePillText: {
     color: "#1a1205",
     fontSize: 20,
-    // Match the paragraph's natural weight explicitly. Without
-    // declaring it, iOS picked a slightly lighter weight for Text
-    // nested inside a <View> than for top-level paragraph Text, so
-    // the active word visibly looked thinner than the surrounding
-    // text. "400" is the system regular weight on iOS.
-    fontWeight: "400",
+    // Medium weight: visibly matches the paragraph's optical density
+    // without the ~3-4 px width gain of true bold (700) that was
+    // pushing surrounding words around. Goes a hair beyond regular
+    // to compensate for iOS rendering Text-inside-View slightly
+    // thinner than top-level paragraph Text.
+    fontWeight: "500",
     lineHeight: 20,
   },
   vocabOverlay: {
