@@ -20,7 +20,7 @@ type CandidateSelectionItem = {
   type?: string;
 };
 
-type DeterministicCandidate = {
+export type DeterministicCandidate = {
   word: string;
   score: number;
   typeHint?: string;
@@ -65,9 +65,13 @@ const DISCOURAGED_VOCAB_BY_LANGUAGE: Record<string, Set<string>> = {
   ]),
 };
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!,
-});
+// Lazy init so importing utility functions (e.g. extractDeterministicCandidates)
+// from migration scripts doesn't require OPENAI_API_KEY at module load.
+let _openai: OpenAI | null = null;
+function getOpenAI(): OpenAI {
+  if (!_openai) _openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+  return _openai;
+}
 
 const STOPWORDS_BY_LANGUAGE: Record<string, Set<string>> = {
   spanish: new Set([
@@ -321,7 +325,7 @@ function chooseBestSurface(surfaceCounts: Map<string, number>): string {
     })[0]?.[0] ?? "";
 }
 
-function extractDeterministicCandidates(text: string, language?: string, max = 140): DeterministicCandidate[] {
+export function extractDeterministicCandidates(text: string, language?: string, max = 140): DeterministicCandidate[] {
   const stopwords = getStopwords(language);
   const tokenMatches = [...text.matchAll(/[\p{L}][\p{L}\p{M}'’-]*/gu)];
   const unigramStats = new Map<
@@ -429,6 +433,90 @@ function normalizeCandidateSelection(
   return output;
 }
 
+// Locate every selected vocab item inside the story text and return the byte
+// position of its first occurrence. Items missing from the text get -1 and
+// are filtered out by the rebalancer so they don't skew the distribution.
+function indexSelectionsInText(
+  selected: CandidateSelectionItem[],
+  text: string
+): { item: CandidateSelectionItem; pos: number }[] {
+  const lower = text.toLowerCase();
+  return selected.map((item) => {
+    const probe = (item.surface ?? item.word).toLowerCase();
+    return { item, pos: probe ? lower.indexOf(probe) : -1 };
+  });
+}
+
+// After the LLM picks vocab, ensure the picks cover all THIRDS of the text.
+// If a third has 0 picks, swap the lowest-priority pick from the most-loaded
+// third for the highest-scored unselected candidate that lives in the empty
+// third. Mirrors the spread guidance now in the LLM prompt with a hard
+// guarantee. Pure compute, no extra LLM call.
+function rebalanceSelectionAcrossText(args: {
+  selected: CandidateSelectionItem[];
+  candidates: DeterministicCandidate[];
+  text: string;
+  minPerThird?: number;
+}): CandidateSelectionItem[] {
+  const minPerThird = args.minPerThird ?? 1;
+  const text = args.text;
+  if (text.length < 600 || args.selected.length < 6) return args.selected;
+
+  const thirdSize = Math.floor(text.length / 3);
+  const thirdOf = (pos: number): 0 | 1 | 2 => {
+    if (pos < 0) return 0;
+    if (pos < thirdSize) return 0;
+    if (pos < thirdSize * 2) return 1;
+    return 2;
+  };
+
+  let working = [...args.selected];
+  for (let pass = 0; pass < 3; pass += 1) {
+    const located = indexSelectionsInText(working, text).filter((entry) => entry.pos >= 0);
+    const buckets: Record<0 | 1 | 2, typeof located> = { 0: [], 1: [], 2: [] };
+    for (const entry of located) buckets[thirdOf(entry.pos)].push(entry);
+
+    const empties: (0 | 1 | 2)[] = ([0, 1, 2] as const).filter((b) => buckets[b].length < minPerThird);
+    if (empties.length === 0) break;
+
+    const selectedKeys = new Set(working.map((item) => (item.surface ?? item.word).toLowerCase()));
+    const lowerText = text.toLowerCase();
+    const candidatePool = args.candidates
+      .filter((c) => !selectedKeys.has(c.word.toLowerCase()))
+      .map((c) => ({
+        candidate: c,
+        pos: lowerText.indexOf(c.word.toLowerCase()),
+      }))
+      .filter((entry) => entry.pos >= 0);
+
+    let progressed = false;
+    for (const emptyThird of empties) {
+      const replacement = candidatePool
+        .filter((entry) => thirdOf(entry.pos) === emptyThird)
+        .sort((a, b) => b.candidate.score - a.candidate.score)[0];
+      if (!replacement) continue;
+
+      const heaviestThird = ([0, 1, 2] as const)
+        .map((b) => ({ b, count: buckets[b].length }))
+        .sort((a, b) => b.count - a.count)[0].b;
+      const dropTarget = buckets[heaviestThird]
+        .slice()
+        .sort((a, b) => b.pos - a.pos)[0];
+      if (!dropTarget) continue;
+
+      const dropKey = (dropTarget.item.surface ?? dropTarget.item.word).toLowerCase();
+      working = working.filter((item) => (item.surface ?? item.word).toLowerCase() !== dropKey);
+      working.push({
+        word: replacement.candidate.word,
+        ...(replacement.candidate.typeHint ? { type: replacement.candidate.typeHint } : {}),
+      });
+      progressed = true;
+    }
+    if (!progressed) break;
+  }
+  return working;
+}
+
 async function requestCandidateSelectionFromModel(args: {
   text: string;
   language: string;
@@ -459,6 +547,7 @@ Rules:
 - Prefer reusable, concrete, pedagogically strong vocabulary.
 - Avoid transparent/basic items unless essential.
 - Prefer strong single words. Only keep multi-word items if they are short lexicalized expressions.
+- Distribute the selected items along the story so the reader meets vocab evenly. Avoid clustering picks in a few dense paragraphs while leaving other paragraphs untouched. If the story has 5+ paragraphs, aim for at least one item per third of the text (beginning / middle / end).
 - Keep type as one label among ["verb","noun","adjective","expression","slang","other"].
 - Story language: ${args.language}.
 - Learner level: ${cefrPromptLabel(args.cefrLevel, args.level)}.
@@ -470,7 +559,7 @@ Candidate list:
 ${candidateBlock}
 `;
 
-  const response = await openai.chat.completions.create({
+  const response = await getOpenAI().chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0.1,
     messages: [
@@ -524,7 +613,7 @@ Selected vocabulary:
 ${selectionBlock}
 `;
 
-  const response = await openai.chat.completions.create({
+  const response = await getOpenAI().chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0.2,
     messages: [
@@ -625,7 +714,7 @@ ${variantClause}
 ${candidateBlock}
 `;
 
-  const response = await openai.chat.completions.create({
+  const response = await getOpenAI().chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0.2,
     messages: [
@@ -692,7 +781,7 @@ export async function POST(req: Request) {
 
     let vocab: VocabItem[] = [];
     if (deterministicCandidates.length > 0) {
-      const selected = await requestCandidateSelectionFromModel({
+      const llmSelected = await requestCandidateSelectionFromModel({
         text,
         language,
         variant,
@@ -703,6 +792,14 @@ export async function POST(req: Request) {
         candidates: deterministicCandidates,
         minItems,
         maxItems,
+      });
+      // Hard guarantee that picks cover beginning / middle / end thirds of
+      // the text. Swaps over-clustered picks for higher-scored candidates
+      // from empty thirds. No-op if the LLM already spread its picks well.
+      const selected = rebalanceSelectionAcrossText({
+        selected: llmSelected,
+        candidates: deterministicCandidates,
+        text,
       });
       if (selected.length > 0) {
         vocab = await requestDefinitionsForSelection({
@@ -811,7 +908,7 @@ Rules:
 - Start each definition with a capital letter.
 Return ONLY valid JSON array with same items.
 `;
-      const response = await openai.chat.completions.create({
+      const response = await getOpenAI().chat.completions.create({
         model: "gpt-4o-mini",
         temperature: 0.2,
         messages: [
@@ -842,7 +939,7 @@ Rules:
 - Start each definition with a capital letter.
 Return ONLY valid JSON array.
 `;
-      const response = await openai.chat.completions.create({
+      const response = await getOpenAI().chat.completions.create({
         model: "gpt-4o-mini",
         temperature: 0.2,
         messages: [

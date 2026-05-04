@@ -15,7 +15,53 @@ function wordCount(text: string): number {
 }
 
 function hasDetailedDefinition(definition: string): boolean {
-  return wordCount(definition) >= 17;
+  const wc = wordCount(definition);
+  return wc >= 6 && wc <= 16;
+}
+
+const MULETILLA_OPENERS: RegExp[] = [
+  /^refers\s+to\b/i,
+  /^describes?\b/i,
+  /^used\s+(to|for|in|as|when)\b/i,
+  /^means?\b/i,
+  /^meaning\b/i,
+  /^conveys?\b/i,
+  /^speaks?\s+to\b/i,
+  /^brings?\b/i,
+  /^this\s+word\b/i,
+  /^a\s+type\s+of\b/i,
+  /^a\s+person\s+who\b/i,
+  /^someone\s+who\b/i,
+  /^something\s+that\b/i,
+  /^the\s+(action|state|quality)\s+of\b/i,
+];
+
+function hasMuletillaOpener(definition: string): boolean {
+  const trimmed = definition.trim();
+  return MULETILLA_OPENERS.some((re) => re.test(trimmed));
+}
+
+// Catches "translation in disguise" patterns where the first clause is just a
+// gloss followed by an explanatory clause:
+//   "Silence; the active quiet..."           single word
+//   "A book; bound printed pages..."         article + noun
+//   "To work; to do a job..."                infinitive
+//   "Cheese (m); commonly bought..."         gloss + parenthetical gender
+//   "A book (n); printed pages..."           article + noun + parenthetical
+const LEADING_GLOSS_PATTERNS: RegExp[] = [
+  /^[A-Za-z][A-Za-z'\-]*[;,:]/,
+  /^[A-Za-z][A-Za-z'\-]*\s*\([^)]*\)\s*[;,:]/,
+  /^(A|An|The|To)\s+[A-Za-z'\-]+[;,:]/i,
+  /^(A|An|The|To)\s+[A-Za-z'\-]+\s*\([^)]*\)\s*[;,:]/i,
+];
+
+function hasLeadingOneWordGloss(definition: string): boolean {
+  const trimmed = definition.trim();
+  return LEADING_GLOSS_PATTERNS.some((re) => re.test(trimmed));
+}
+
+function hasEmDash(definition: string): boolean {
+  return /—/.test(definition);
 }
 
 // Pragmatic detector for "this definition is not in English" without depending
@@ -76,9 +122,20 @@ export function hasPedagogicalDefinition(definition: string): boolean {
   return (
     hasDetailedDefinition(definition) &&
     !isLikelyDirectTranslation(definition) &&
+    !hasMuletillaOpener(definition) &&
+    !hasLeadingOneWordGloss(definition) &&
+    !hasEmDash(definition) &&
     !looksNotInEnglish(definition)
   );
 }
+
+export const __testing__ = {
+  hasDetailedDefinition,
+  hasMuletillaOpener,
+  hasLeadingOneWordGloss,
+  hasEmDash,
+  isLikelyDirectTranslation,
+};
 
 export function normalizeVocab(raw: unknown): VocabItem[] {
   const rows = Array.isArray(raw) ? raw : [];
@@ -157,11 +214,13 @@ Context:
 Rules:
 - Keep exactly the same "word" and preserve "type" when present.
 - Keep exactly the same "surface" when present.
-- Definition must be 17-25 words minimum.
-- Explain practical meaning/usage nuance in context, not one-word gloss.
-- NEVER return direct translation equivalents.
-- NEVER start with a literal gloss followed by punctuation, such as "To change, ..." or "Important, ...".
-- Start directly with an explanation such as "Used to...", "Describes...", "Refers to...", or "Said when...".
+- Each definition must be 8-14 English words.
+- Read like a dictionary entry: describe the concept the word names, not the word itself.
+- Lead with the noun/concept, an infinitive verb ("To join..."), or a descriptive adjective phrase. Integrate any usage hint or short example into the same sentence.
+- Never start with: "Refers to", "Describes", "Used to", "Used for", "Used in", "Used as", "Used when", "Means", "Means to", "Conveys", "Speaks to", "Brings", "This word", "A type of", "A person who", "Someone who", "Something that", "The action of", "The state of", "The quality of".
+- Never start with a one-word translation followed by punctuation (e.g. "Silence;", "Hurry,", "Homeland:"). Also forbidden: article + noun followed by punctuation ("A book;", "The market;", "A book (f);", "To work;"). The first clause must already define, not announce the gloss before the colon.
+- Never use em-dashes; use semicolons, colons, commas, or parentheses instead.
+- Never return a direct translation equivalent. Explain practical meaning or usage nuance in context.
 - Return ONLY a valid JSON array with objects: { "word", "surface?", "definition", "type?" }.
 `;
 
@@ -190,10 +249,12 @@ Rules:
 Rewrite ONLY these low-quality definitions.
 Rules:
 - Keep same "word", "surface" when present, and "type".
-- Each definition must be 17-25 words minimum.
-- Explain meaning in English with usage nuance from the story context.
+- Each definition must be 8-14 English words and read like a dictionary entry.
+- Describe the concept the word names, not the word itself. Lead with the noun/concept, an infinitive ("To join..."), or a descriptive adjective phrase.
+- Never start with: "Refers to", "Describes", "Used to", "Used for", "Used in", "Used as", "Used when", "Means", "Means to", "Conveys", "Speaks to", "Brings", "This word", "A type of", "Someone who", "Something that", "The action of", "The state of", "The quality of".
+- Never start with a one-word translation followed by punctuation (e.g. "Silence;", "Hurry,"). Also forbidden: article + noun followed by punctuation ("A book;", "The market;", "To work;").
+- Never use em-dashes; use semicolons, colons, commas, or parentheses instead.
 - Never return direct translation equivalents.
-- Never begin with a direct gloss plus comma/colon.
 - Return ONLY valid JSON array.
 `;
 

@@ -220,9 +220,13 @@ ${titleClause}
 ${variantClause}
 Return 18-22 vocabulary items (aim for 20). After post-processing filters transparent cognates and invalid multi-word fragments, this yields roughly 15-17 keeper items — the target the app needs.
 All vocabulary definitions must be written in clear English, regardless of the story language.
-Each vocabulary definition must be a pedagogical explanation (17-25 words), with usage nuance in context.
+Each definition must be 8-14 English words and read like a dictionary entry: describe the concept the word names, not the word itself.
+Lead with the noun/concept, with an infinitive verb ("To join..."), or with a descriptive adjective phrase. Integrate any usage hint or short example into the same sentence.
+Never start a definition with: "Refers to", "Describes", "Used to", "Used for", "Used in", "Used as", "Used when", "Means", "Means to", "Conveys", "Speaks to", "Brings", "This word", "A type of", "A person who", "Someone who", "Something that", "The action of", "The state of", "The quality of".
+Never start with a one-word translation followed by punctuation (e.g. "Silence;", "Hurry,", "Homeland:") — that is a translation in disguise, not a definition.
+Never start with article + noun (or article + noun + gender) followed by punctuation. Forbidden: "A book; bound pages...", "The market; vendors selling...", "A newspaper (f); printed news...", "To work; to do a job...". The first clause must already be doing definitional work, not announcing the gloss before the colon. Instead lead with a richer descriptor that integrates the meaning: "Bound printed pages read for pleasure or study", "Open-air gathering of vendors selling food and produce", "Daily printed news, read at home or in cafés".
+Never use em-dashes (—); use semicolons, colons, commas, or parentheses instead.
 Never return one-word literal translations.
-Never begin a definition with a direct gloss plus comma/colon (for example: "To change, ..." or "Important, ...").
 Wrap each paragraph inside <blockquote> ... </blockquote>.
 
 Requirements:
