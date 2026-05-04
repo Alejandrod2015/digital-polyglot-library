@@ -44,11 +44,18 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   { id: "bark/de_speaker_4",            engine: "bark",  language: "german", region: "DE", gender: "m", label: "Bark Speaker 4 (Alemania, masculina)", status: "approved" },
   { id: "coqui/de_DE-css10-vits-neon",  engine: "coqui", language: "german", region: "DE", gender: "f", label: "Coqui CSS10 (Alemania, femenina)",     status: "approved" },
 
-  // ElevenLabs premade voices used via eleven_multilingual_v2 for German dialogue stories.
-  // Liam plays younger male characters (e.g. Tom). Premade voices have mild non-native
-  // accent in German but compensate with natural prosody — chosen over native-DE Simon
-  // Sunday, which user perceived as monotone/depressing.
-  { id: "elevenlabs/TX3LPaxmHKxFdv7VOQHJ", engine: "elevenlabs", language: "german", region: "US", gender: "m", label: "Liam (premade, masculino joven)", status: "approved" },
+  // ElevenLabs voices for German dialogue stories. All native-DE accent.
+  // Synthesized via eleven_multilingual_v2 with DEFAULT_VOICE_SETTINGS
+  // (stability=0.7, speed=0.9, style=0).
+  // License terms (verified against ElevenLabs API):
+  //   - Moritz, ENNIAH: premade default voices (perpetual, owned by ElevenLabs).
+  //   - Sebastian, Eleonore: professional shared library, notice_period=730
+  //     days (2 years, the max available in the marketplace).
+  // No US-accent voices kept here; Sarah and Liam retired.
+  { id: "elevenlabs/Ww7Sq9tx9CCOiNOwWgsx", engine: "elevenlabs", language: "german", region: "DE", gender: "m", label: "Moritz Morgenstern (narrador, perpetual)", status: "approved" },
+  { id: "elevenlabs/WHaUUVTDq47Yqc9aDbkH", engine: "elevenlabs", language: "german", region: "DE", gender: "f", label: "ENNIAH (femenino mature, perpetual)", status: "approved" },
+  { id: "elevenlabs/qVRpsZJDV29g1CIPzssm", engine: "elevenlabs", language: "german", region: "DE", gender: "m", label: "Sebastian (masculino joven, 2yr)", status: "approved" },
+  { id: "elevenlabs/8SdTD5IMgFKT1jp7JbPC", engine: "elevenlabs", language: "german", region: "DE", gender: "f", label: "Eleonore (femenino mature, narrator, 2yr)", status: "approved" },
 ];
 
 export const DEFAULT_VOICE_BY_LANGUAGE: Record<string, string> = {
