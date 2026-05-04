@@ -143,6 +143,26 @@ export async function alignAudioOnModal(args: {
   return { audioDurationSec, tokens };
 }
 
+// Mirrors `buildAudioNarrationText` from lib/elevenlabs.ts so the text we
+// align with aeneas matches what was actually narrated. Without the title
+// prefix the alignment treats the title's audio segment as if it were the
+// first body word, which makes the highlight jump to body word #1 while
+// the narrator is still speaking the title.
+function buildAlignmentText(titleRaw: string, bodyPlain: string): {
+  fullText: string;
+  bodyOffset: number;
+} {
+  const plainTitle = titleRaw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  if (!plainTitle) return { fullText: bodyPlain, bodyOffset: 0 };
+  if (!bodyPlain) return { fullText: plainTitle, bodyOffset: plainTitle.length };
+  const titleWithPause = /[.!?…:]$/.test(plainTitle) ? plainTitle : `${plainTitle}.`;
+  const separator = "\n\n";
+  return {
+    fullText: `${titleWithPause}${separator}${bodyPlain}`,
+    bodyOffset: titleWithPause.length + separator.length,
+  };
+}
+
 export async function generateWordTimingsForStory(
   storyId: string
 ): Promise<AudioWordTimingsPayload> {
@@ -164,10 +184,12 @@ export async function generateWordTimingsForStory(
   const storyPlainText = extractStoryPlainText(story.text);
   if (!storyPlainText) throw new Error(`Story ${storyId} plain text is empty after stripping`);
 
+  const { fullText, bodyOffset } = buildAlignmentText(story.title ?? "", storyPlainText);
+
   const language = story.journey.language;
   const { audioDurationSec, tokens } = await alignAudioOnModal({
     audioUrl: story.audioUrl,
-    plainText: storyPlainText,
+    plainText: fullText,
     language,
   });
 
@@ -175,11 +197,31 @@ export async function generateWordTimingsForStory(
     throw new Error("Modal align returned zero usable tokens");
   }
 
+  // Strip title-prefix tokens. We keep only the tokens whose charStart
+  // lies inside the body region (>= bodyOffset) and re-base their char
+  // ranges so they index into `storyPlainText` rather than the augmented
+  // alignment text. The startSec/endSec values stay absolute on the
+  // audio timeline, which is exactly what the renderer needs to know
+  // when the body actually begins.
+  const bodyTokens: StoryWordToken[] = tokens
+    .filter((t) => t.charStart >= bodyOffset)
+    .map((t) => ({
+      text: t.text,
+      charStart: t.charStart - bodyOffset,
+      charEnd: t.charEnd - bodyOffset,
+      startSec: t.startSec,
+      endSec: t.endSec,
+    }));
+
+  if (bodyTokens.length === 0) {
+    throw new Error("Modal align returned no body tokens after stripping title prefix");
+  }
+
   const payload: AudioWordTimingsPayload = {
     version: AUDIO_WORD_TIMINGS_VERSION,
     audioDurationSec,
     storyPlainText,
-    words: tokens,
+    words: bodyTokens,
   };
 
   await prisma.journeyStory.update({
