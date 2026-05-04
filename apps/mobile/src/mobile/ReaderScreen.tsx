@@ -378,14 +378,8 @@ function renderKaraokeParagraph(args: {
     if (w.charStart > cursor) {
       const gap = payloadText.slice(cursor, w.charStart).replace(/\n/g, " ");
       if (gap) {
-        // Gap (punctuation + whitespace between words) MUST use the same
-        // lineHeight as the per-word inner Text (24). Otherwise iOS
-        // anchors the punctuation glyphs to the paragraph's 40 px line
-        // baseline while the View-wrapped words anchor to the 24 px
-        // baseline, and periods render visibly elevated above the
-        // surrounding word baselines.
         nodes.push(
-          <Text key={`${paragraphKey}-gap-${key++}`} style={styles.karaokeWordText}>
+          <Text key={`${paragraphKey}-gap-${key++}`} style={baseTextStyle}>
             {gap}
           </Text>
         );
@@ -415,14 +409,21 @@ function renderKaraokeParagraph(args: {
       wordTextStyle = styles.karaokeWordTextDark;
     }
 
+    // Two-layer structure: the outer <View> takes the paragraph's full
+    // line height so its inline baseline matches the surrounding text's
+    // baseline (otherwise iOS aligns adjacent gap text to the View's
+    // own shorter baseline, which makes periods and commas float above
+    // the line). The inner <View> is the visible short rounded pill.
     nodes.push(
-      <View key={`${paragraphKey}-w-${i}`} style={containerStyle}>
-        <Text
-          style={wordTextStyle}
-          onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
-        >
-          {w.text}
-        </Text>
+      <View key={`${paragraphKey}-w-${i}`} style={styles.karaokeWordOuter}>
+        <View style={containerStyle}>
+          <Text
+            style={wordTextStyle}
+            onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
+          >
+            {w.text}
+          </Text>
+        </View>
       </View>
     );
 
@@ -433,10 +434,7 @@ function renderKaraokeParagraph(args: {
     const tail = payloadText.slice(cursor, paragraph.charEnd).replace(/\n/g, " ");
     if (tail) {
       nodes.push(
-        // Same lineHeight rule as the inter-word gaps: match the
-        // word-View inner Text so the trailing punctuation aligns to
-        // the same baseline as the surrounding glyphs.
-        <Text key={`${paragraphKey}-tail`} style={styles.karaokeWordText}>
+        <Text key={`${paragraphKey}-tail`} style={baseTextStyle}>
           {tail}
         </Text>
       );
@@ -1780,11 +1778,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#fcd34d",
     borderRadius: 6,
   },
-  // === Per-word inline <View> wrapper (every karaoke word) ===
-  // Wrapping every word in a View — even plain ones — makes iOS's
-  // NSTextAttachment kerning a constant layout cost. Active toggling
-  // changes only the View's backgroundColor, never its frame, which
-  // is the only iOS path to rounded + short + zero-shift highlights.
+  // === Per-word inline <View> wrappers (every karaoke word) ===
+  // Two-layer structure to give the inline attachment the same baseline
+  // as the surrounding paragraph text. The outer wrapper occupies the
+  // full 40 px line height (via vertical padding) so iOS computes the
+  // line's baseline from a 40 px element instead of the 24 px inner
+  // pill — periods and commas in the gap text then sit on the correct
+  // line baseline. The inner wrapper carries the visible rounded
+  // background and is naturally sized by its 24 px inner Text.
+  karaokeWordOuter: {
+    paddingVertical: 8,
+    paddingHorizontal: 0,
+  },
   karaokeWordContainerPlain: {
     paddingHorizontal: 0,
     paddingVertical: 0,
