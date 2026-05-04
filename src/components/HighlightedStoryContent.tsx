@@ -117,11 +117,13 @@ export default function HighlightedStoryContent({
               );
             }
             const isActive = activeWordIndex === piece.index;
+            // Active highlight is background-only, no padding change. Adding
+            // padding here would compound with .vocab-word's existing
+            // `padding: 0 0.15em` from globals.css and visibly shift the line
+            // whenever an active word overlapped a vocab word.
             const baseClass = "transition-colors duration-150 rounded";
-            const activeClass = isActive
-              ? "bg-yellow-300/90 text-black px-0.5"
-              : "";
-            const vocabClass = piece.vocabKey ? "vocab-word underline decoration-dotted" : "";
+            const activeClass = isActive ? "bg-amber-300 text-black font-medium" : "";
+            const vocabClass = piece.vocabKey ? "vocab-word" : "";
             return (
               <span
                 key={`w-${piece.index}`}
