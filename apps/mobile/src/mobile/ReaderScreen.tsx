@@ -1731,7 +1731,11 @@ const styles = StyleSheet.create({
   karaokeActivePillText: {
     color: "#1a1205",
     fontSize: 20,
-    fontWeight: "700",
+    // Intentionally NOT bold: bold glyphs are visibly wider than the
+    // paragraph's regular weight, and toggling weight on/off as the
+    // highlight moves was pushing surrounding text sideways. Vocab
+    // pills can stay bold because they are static; the active pill
+    // moves and so must keep the same width as the underlying text.
     lineHeight: 20,
   },
   vocabOverlay: {
