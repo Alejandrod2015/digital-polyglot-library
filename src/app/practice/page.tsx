@@ -361,6 +361,8 @@ export default function PracticePage() {
   const [lastResult, setLastResult] = useState<"correct" | "wrong" | null>(null);
   const [playingClipId, setPlayingClipId] = useState<string | null>(null);
   const [speakingClipId, setSpeakingClipId] = useState<string | null>(null);
+  const [hqClipId, setHqClipId] = useState<string | null>(null);
+  const [hqUrlBySentence, setHqUrlBySentence] = useState<Record<string, string>>({});
   const [userStoryAudioBySlug, setUserStoryAudioBySlug] = useState<Record<string, StoryAudioData>>({});
   const [standaloneStoryAudioBySlug, setStandaloneStoryAudioBySlug] = useState<Record<string, StoryAudioData>>({});
   const clipAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -1074,7 +1076,6 @@ export default function PracticePage() {
     },
     [playingClipId, standaloneStoryAudioBySlug, stopClipPlayback, userStoryAudioBySlug]
   );
-  void playExactContextClip;
 
   const goNext = () => {
     if (exerciseIndex < exercises.length - 1) {
@@ -1161,9 +1162,61 @@ export default function PracticePage() {
   }, [currentExercise, playSpeechText]);
 
   const playTtsContextClip = useCallback((clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
-    if (!clip || clip.storySource !== "user") return;
+    if (!clip) return;
     playSpeechText(clipOwnerId, clip.sentence, clip.language);
   }, [playSpeechText]);
+
+  const playHqContextClip = useCallback(async (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
+    if (!clip || typeof window === "undefined") return;
+    const audio = clipAudioRef.current ?? new Audio();
+    clipAudioRef.current = audio;
+    if (clipTimeHandlerRef.current) {
+      audio.removeEventListener("timeupdate", clipTimeHandlerRef.current);
+      clipTimeHandlerRef.current = null;
+    }
+    if (hqClipId === clipOwnerId) {
+      audio.pause();
+      setHqClipId(null);
+      return;
+    }
+    const cacheKey = `${clip.language ?? ""}|${clip.sentence}`;
+    let url = hqUrlBySentence[cacheKey];
+    if (!url) {
+      try {
+        const res = await fetch("/api/practice/sentence-tts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sentence: clip.sentence,
+            language: clip.language ?? "german",
+          }),
+        });
+        if (!res.ok) {
+          console.error("[practice] HQ TTS failed", res.status);
+          return;
+        }
+        const data = (await res.json()) as { url?: string };
+        if (!data.url) return;
+        url = data.url;
+        setHqUrlBySentence((prev) => ({ ...prev, [cacheKey]: data.url! }));
+      } catch (err) {
+        console.error("[practice] HQ TTS error", err);
+        return;
+      }
+    }
+    audio.src = url;
+    audio.currentTime = 0;
+    setHqClipId(clipOwnerId);
+    audio.onended = () => {
+      setHqClipId((current) => (current === clipOwnerId ? null : current));
+    };
+    try {
+      await audio.play();
+    } catch (err) {
+      console.error("[practice] HQ TTS play error", err);
+      setHqClipId(null);
+    }
+  }, [hqClipId, hqUrlBySentence]);
 
   const assignMatchMeaning = (meaning: string) => {
     if (!currentExercise || currentExercise.type !== "match_meaning" || !activeMatchWord || revealed) return;
@@ -1241,20 +1294,45 @@ export default function PracticePage() {
       });
     }
 
+    const hasStorySegment = Boolean(storyAudio?.audioUrl && exactSegment);
+    const buttonClass =
+      "inline-flex items-center justify-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--foreground)] transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40";
     return (
       <div className={contextBlockClass}>
         <div className="flex items-start justify-between gap-3">
           <p className={`${contextTextClass} flex-1`}>{sentence}</p>
-          <div className="flex shrink-0 items-center gap-2">
-            {clip && clip.storySource === "user" ? (
-              <button
-                type="button"
-                onClick={() => playTtsContextClip(clipOwnerId, clip)}
-                className="inline-flex min-w-[124px] items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--foreground)] transition hover:bg-white/10"
-              >
-                <Volume2 size={14} />
-                {speakingClipId === clipOwnerId ? "Stop" : "Play"}
-              </button>
+          <div className="flex shrink-0 items-center gap-1.5">
+            {clip ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() => playTtsContextClip(clipOwnerId, clip)}
+                  className={buttonClass}
+                  title="TTS del navegador (rápido pero robótico)"
+                >
+                  <Volume2 size={12} />
+                  {speakingClipId === clipOwnerId ? "Stop" : "TTS"}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => playExactContextClip(clipOwnerId, clip)}
+                  disabled={!hasStorySegment}
+                  className={buttonClass}
+                  title={hasStorySegment ? "Audio real de la historia" : "Sin segmentos de audio para esta historia"}
+                >
+                  <Volume2 size={12} />
+                  {playingClipId === clipOwnerId ? "Stop" : "Story"}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => playHqContextClip(clipOwnerId, clip)}
+                  className={buttonClass}
+                  title="TTS de alta calidad (ElevenLabs, primera vez tarda ~2s)"
+                >
+                  <Volume2 size={12} />
+                  {hqClipId === clipOwnerId ? "Stop" : "HQ"}
+                </button>
+              </>
             ) : null}
           </div>
         </div>

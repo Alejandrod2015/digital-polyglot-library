@@ -1641,6 +1641,8 @@ export function MobileLibraryShell(args: {
   const [highlightedNextStoryId, setHighlightedNextStoryId] = useState<string | null>(null);
   const [speakingPracticePromptId, setSpeakingPracticePromptId] = useState<string | null>(null);
   const [playingPracticeClipId, setPlayingPracticeClipId] = useState<string | null>(null);
+  const [playingHqPracticeClipId, setPlayingHqPracticeClipId] = useState<string | null>(null);
+  const [hqUrlBySentence, setHqUrlBySentence] = useState<Record<string, string>>({});
   const [practiceLastResult, setPracticeLastResult] = useState<"correct" | "wrong" | null>(null);
   const [practiceSessionStreak, setPracticeSessionStreak] = useState(0);
   const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
@@ -1832,6 +1834,7 @@ export function MobileLibraryShell(args: {
   const practiceStartTrackedRef = useRef(false);
   const practiceCompletionTrackedRef = useRef(false);
   const practiceClipSoundRef = useRef<Audio.Sound | null>(null);
+  const practiceHqSoundRef = useRef<Audio.Sound | null>(null);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
   // Animated values for the "session complete" celebration. Driven by
@@ -5907,6 +5910,173 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  async function stopPracticeHqClip() {
+    const sound = practiceHqSoundRef.current;
+    setPlayingHqPracticeClipId(null);
+    if (!sound) return;
+    practiceHqSoundRef.current = null;
+    try { await sound.stopAsync(); } catch { /* ignore */ }
+    try { await sound.unloadAsync(); } catch { /* ignore */ }
+  }
+
+  // Three focused helpers for the practice context buttons. Each one stops
+  // the others first so only one playback is active at a time.
+
+  async function playPracticeContextClipTtsOnly() {
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    const clip = currentPracticeExercise.audioClip;
+    const speechText = clip?.sentence?.trim();
+    const Speech = getOptionalSpeechModule();
+    if (!speechText || !Speech) return;
+    if (speakingPracticePromptId === currentPracticeExercise.id) {
+      Speech.stop();
+      setSpeakingPracticePromptId(null);
+      return;
+    }
+    await stopPracticeContextClip();
+    await stopPracticeHqClip();
+    Speech.stop();
+    setSpeakingPracticePromptId(currentPracticeExercise.id);
+    const lang = getSpeechSynthesisLang(clip?.language);
+    Speech.speak(speechText, {
+      language: lang,
+      voice: getBestVoiceFor(lang),
+      rate: 0.92,
+      pitch: 1,
+      onDone: () => setSpeakingPracticePromptId((c) => c === currentPracticeExercise.id ? null : c),
+      onStopped: () => setSpeakingPracticePromptId((c) => c === currentPracticeExercise.id ? null : c),
+      onError: () => setSpeakingPracticePromptId((c) => c === currentPracticeExercise.id ? null : c),
+    });
+  }
+
+  async function playPracticeContextClipStoryOnly() {
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    const clip = currentPracticeExercise.audioClip;
+    if (!clip) return;
+    if (playingPracticeClipId === currentPracticeExercise.id) {
+      await stopPracticeContextClip();
+      return;
+    }
+    const storyAudio = await ensurePracticeClipStoryAudio(clip);
+    const segment = findSegmentForClip(storyAudio, clip);
+    const baseAudioUrl = resolvePracticeAudioUri(storyAudio?.audioUrl);
+    const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
+    const audioUrl = segmentClipUrl ?? baseAudioUrl;
+    // Si no hay audio del story disponible, no hay nada que tocar como
+    // "Story". El botón ya viene gateado por `storyAvailable` en el
+    // render, esto es solo defensa.
+    if (!audioUrl) return;
+
+    await stopPracticeContextClip();
+    await stopPracticeHqClip();
+    getOptionalSpeechModule()?.stop();
+    setSpeakingPracticePromptId(null);
+
+    try {
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+      });
+      // Si tenemos segment con start/end y NO hay clipUrl directo,
+      // saltamos al inicio del segmento y paramos al final. Si no hay
+      // segment, tocamos el audio completo desde el inicio (mejor que
+      // silencio cuando el matching de oración falla pero el story
+      // sí tiene audio).
+      const hasDirectClip = Boolean(segmentClipUrl);
+      const hasSegmentRange = !hasDirectClip && segment != null;
+      const rawStartSec = hasDirectClip
+        ? 0
+        : hasSegmentRange
+          ? Math.max(0, segment.startSec - CLIP_START_PADDING_SEC)
+          : 0;
+      const rawEndSec = hasSegmentRange
+        ? Math.max(rawStartSec + 0.2, segment.endSec - CLIP_END_TRIM_SEC)
+        : Number.NaN;
+      const { sound } = await Audio.Sound.createAsync(
+        { uri: audioUrl },
+        { shouldPlay: true, positionMillis: Math.max(0, rawStartSec * 1000) },
+        (status) => {
+          const loaded = toClipPlaybackLoadedSnapshot(status);
+          if (!loaded) {
+            if ("didJustFinish" in status && status.didJustFinish) {
+              void stopPracticeContextClip();
+            }
+            return;
+          }
+          const stopAt = practiceClipStopAtMillisRef.current;
+          if (stopAt != null && loaded.positionMillis >= stopAt) {
+            void stopPracticeContextClip();
+          } else if ("didJustFinish" in status && status.didJustFinish) {
+            void stopPracticeContextClip();
+          }
+        }
+      );
+      practiceClipSoundRef.current = sound;
+      practiceClipStopAtMillisRef.current = hasSegmentRange ? rawEndSec * 1000 : null;
+      setPlayingPracticeClipId(currentPracticeExercise.id);
+    } catch (error) {
+      console.error("[mobile practice] story clip playback failed", error);
+      await stopPracticeContextClip();
+    }
+  }
+
+  async function playPracticeContextClipHqOnly() {
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    const clip = currentPracticeExercise.audioClip;
+    if (!clip?.sentence) return;
+    if (playingHqPracticeClipId === currentPracticeExercise.id) {
+      await stopPracticeHqClip();
+      return;
+    }
+    await stopPracticeContextClip();
+    await stopPracticeHqClip();
+    getOptionalSpeechModule()?.stop();
+    setSpeakingPracticePromptId(null);
+
+    const cacheKey = `${clip.language ?? ""}|${clip.sentence}`;
+    let url = hqUrlBySentence[cacheKey];
+    if (!url) {
+      try {
+        const resp = await apiFetch<{ url?: string }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/practice/sentence-tts",
+          method: "POST",
+          token: sessionToken ?? undefined,
+          body: { sentence: clip.sentence, language: clip.language ?? "german" },
+        });
+        if (!resp?.url) return;
+        url = resp.url;
+        setHqUrlBySentence((prev) => ({ ...prev, [cacheKey]: url! }));
+      } catch (err) {
+        console.error("[mobile practice] HQ TTS request failed", err);
+        return;
+      }
+    }
+
+    try {
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+      });
+      const { sound } = await Audio.Sound.createAsync(
+        { uri: url },
+        { shouldPlay: true },
+        (status) => {
+          if ("didJustFinish" in status && status.didJustFinish) {
+            void stopPracticeHqClip();
+          }
+        }
+      );
+      practiceHqSoundRef.current = sound;
+      setPlayingHqPracticeClipId(currentPracticeExercise.id);
+    } catch (err) {
+      console.error("[mobile practice] HQ playback failed", err);
+      await stopPracticeHqClip();
+    }
+  }
+
   async function playPracticeContextClip() {
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
     const clip = currentPracticeExercise.audioClip;
@@ -8276,67 +8446,61 @@ export function MobileLibraryShell(args: {
                         </Text>
                       </Pressable>
                     ) : null}
-                    {currentPracticeExercise.audioClip ? (
-                      <Pressable
-                        onPress={() => {
-                          void playPracticeContextClip();
-                        }}
-                        style={[
-                          styles.practiceListenButton,
-                          currentPracticeExercise.audioClip.storySource === "user" && !practiceSpeechAvailable
-                            ? styles.practiceListenButtonDisabled
-                            : null,
-                        ]}
-                        disabled={
-                          currentPracticeExercise.audioClip.storySource === "user" && !practiceSpeechAvailable
-                        }
-                      >
-                        {(() => {
-                          // A clip exercise can be "active" in two ways:
-                          // - the remote audio Sound is playing → playingPracticeClipId
-                          // - the TTS fallback is speaking   → speakingPracticePromptId
-                          // The icon/label needs to reflect EITHER so the user
-                          // sees a Stop state when tapping Play Clip on a
-                          // journey story (which uses the TTS fallback).
-                          const active =
-                            playingPracticeClipId === currentPracticeExercise.id ||
-                            speakingPracticePromptId === currentPracticeExercise.id;
-                          const isUserStory = currentPracticeExercise.audioClip.storySource === "user";
-                          const voiceUnavailable = isUserStory && !practiceSpeechAvailable;
-                          return (
-                            <>
-                              <Feather
-                                name={
-                                  active
-                                    ? "square"
-                                    : isUserStory
-                                      ? "volume-2"
-                                      : "play"
-                                }
-                                size={16}
-                                color={voiceUnavailable ? "#8ea2bc" : "#f5f7fb"}
-                              />
-                              <Text
-                                style={[
-                                  styles.practiceListenButtonText,
-                                  voiceUnavailable ? styles.practiceListenButtonTextDisabled : null,
-                                ]}
-                              >
-                                {voiceUnavailable
-                                  ? "Voice unavailable in this build"
-                                  : isUserStory
-                                    ? active
-                                      ? "Stop context"
-                                      : "Play context"
-                                    : active
-                                      ? "Stop clip"
-                                      : "Play clip"}
-                              </Text>
-                            </>
-                          );
-                        })()}
-                      </Pressable>
-                    ) : null}
+                    {currentPracticeExercise.audioClip ? (() => {
+                      const clip = currentPracticeExercise.audioClip;
+                      const exId = currentPracticeExercise.id;
+                      const ttsActive = speakingPracticePromptId === exId;
+                      const storyActive = playingPracticeClipId === exId;
+                      const hqActive = playingHqPracticeClipId === exId;
+                      const storyAudio =
+                        clip.storySource === "standalone"
+                          ? standaloneStoryAudioBySlug[normalizeStorySlug(clip.storySlug)]
+                          : userStoryAudioBySlug[normalizeStorySlug(clip.storySlug)];
+                      // Story button enabled si el story tiene audio,
+                      // aunque no se haya matcheado un segmento por
+                      // oración: en ese caso la función arranca el
+                      // audio desde el inicio en vez de silencio.
+                      const storyAvailable = Boolean(storyAudio?.audioUrl);
+                      return (
+                        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
+                          <Pressable
+                            onPress={() => { void playPracticeContextClipTtsOnly(); }}
+                            disabled={!practiceSpeechAvailable}
+                            style={[
+                              styles.practiceListenButton,
+                              !practiceSpeechAvailable ? styles.practiceListenButtonDisabled : null,
+                            ]}
+                          >
+                            <Feather name={ttsActive ? "square" : "volume-2"} size={14} color={practiceSpeechAvailable ? "#f5f7fb" : "#8ea2bc"} />
+                            <Text style={[styles.practiceListenButtonText, !practiceSpeechAvailable ? styles.practiceListenButtonTextDisabled : null]}>
+                              {ttsActive ? "Stop" : "TTS"}
+                            </Text>
+                          </Pressable>
+                          <Pressable
+                            onPress={() => { void playPracticeContextClipStoryOnly(); }}
+                            disabled={!storyAvailable}
+                            style={[
+                              styles.practiceListenButton,
+                              !storyAvailable ? styles.practiceListenButtonDisabled : null,
+                            ]}
+                          >
+                            <Feather name={storyActive ? "square" : "play"} size={14} color={storyAvailable ? "#f5f7fb" : "#8ea2bc"} />
+                            <Text style={[styles.practiceListenButtonText, !storyAvailable ? styles.practiceListenButtonTextDisabled : null]}>
+                              {storyActive ? "Stop" : "Story"}
+                            </Text>
+                          </Pressable>
+                          <Pressable
+                            onPress={() => { void playPracticeContextClipHqOnly(); }}
+                            style={styles.practiceListenButton}
+                          >
+                            <Feather name={hqActive ? "square" : "volume-2"} size={14} color="#f5f7fb" />
+                            <Text style={styles.practiceListenButtonText}>
+                              {hqActive ? "Stop" : "HQ"}
+                            </Text>
+                          </Pressable>
+                        </View>
+                      );
+                    })() : null}
                     {currentPracticeExercise.sentence ? (
                       <Text
                         style={[
@@ -10560,11 +10724,15 @@ export function MobileLibraryShell(args: {
       }
       return;
     }
-    // Eclipse trigger = 0: the floating panel sits at the same Y
-    // (top of the ScrollView) as the in-flow topic panel when
-    // `scrollY === layout.y`. At that exact instant they overlap
-    // pixel-perfect — that's the moment we swap the floating panel
-    // to the new topic.
+    // Eclipse trigger = 0: pixel-perfect overlap teórico cuando
+    // `scrollY === layout.y`. En la práctica el throttle de onScroll
+    // (16 ms) más el re-render de React (otro frame) introducen ~30 ms
+    // de lag, lo que se ve como un breve "corte" antes de que el
+    // flotante aparezca. Probamos TRIGGER=12 para anticipar pero el
+    // resultado fue un "salto magnético" del panel hacia el top
+    // (peor). Volvemos a 0 como fallback mientras el flotante JS
+    // sigue siendo el mecanismo. La solución real es usar
+    // `stickyHeaderIndices` nativo del ScrollView (sin lag).
     const TRIGGER = 0;
     const sortedByY = Array.from(topicLayoutsRef.current.entries()).sort(
       (a, b) => a[1].y - b[1].y
