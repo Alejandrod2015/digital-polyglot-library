@@ -1787,13 +1787,12 @@ const styles = StyleSheet.create({
   // line baseline. The inner wrapper carries the visible rounded
   // background and is naturally sized by its 24 px inner Text.
   karaokeWordOuter: {
-    // Asymmetric vertical padding raises the inner pill (and therefore
-    // the inline attachment's baseline that iOS uses for the line) so
-    // the surrounding gap punctuation reads on the visual baseline of
-    // the rest of the text instead of slightly below it. Total height
-    // still 40 to keep the line's overall metrics intact.
-    paddingTop: 4,
-    paddingBottom: 12,
+    // Empirically iterating: in iOS NSTextAttachment the relationship
+    // between inline-View padding and the surrounding text's baseline
+    // does not match the obvious mental model. (top: 4, bottom: 12)
+    // pushed punctuation lower, so the inverse should bring it back up.
+    paddingTop: 12,
+    paddingBottom: 4,
     paddingHorizontal: 0,
   },
   karaokeWordContainerPlain: {
