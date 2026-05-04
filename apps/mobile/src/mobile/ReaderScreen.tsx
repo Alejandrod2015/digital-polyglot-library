@@ -358,6 +358,18 @@ function renderKaraokeParagraph(args: {
   }
 
   const nodes: React.ReactNode[] = [];
+  // Prepend a zero-width Text node so the line's first inline element
+  // is always plain text. Without this, when the active/vocab pill
+  // <View> ends up first on a line, iOS computes the line height from
+  // the View's inner lineHeight (20) instead of the paragraph's (40),
+  // and the whole paragraph visibly collapses. The ZWSP carries the
+  // baseTextStyle line metrics so the line is anchored at 40px before
+  // any pill enters.
+  nodes.push(
+    <Text key={`${paragraphKey}-anchor`} style={baseTextStyle}>
+      {"​"}
+    </Text>
+  );
   let cursor = paragraph.charStart;
   let key = 0;
 
