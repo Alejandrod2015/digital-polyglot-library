@@ -378,8 +378,14 @@ function renderKaraokeParagraph(args: {
     if (w.charStart > cursor) {
       const gap = payloadText.slice(cursor, w.charStart).replace(/\n/g, " ");
       if (gap) {
+        // Gap (punctuation + whitespace between words) MUST use the same
+        // lineHeight as the per-word inner Text (24). Otherwise iOS
+        // anchors the punctuation glyphs to the paragraph's 40 px line
+        // baseline while the View-wrapped words anchor to the 24 px
+        // baseline, and periods render visibly elevated above the
+        // surrounding word baselines.
         nodes.push(
-          <Text key={`${paragraphKey}-gap-${key++}`} style={baseTextStyle}>
+          <Text key={`${paragraphKey}-gap-${key++}`} style={styles.karaokeWordText}>
             {gap}
           </Text>
         );
@@ -427,7 +433,10 @@ function renderKaraokeParagraph(args: {
     const tail = payloadText.slice(cursor, paragraph.charEnd).replace(/\n/g, " ");
     if (tail) {
       nodes.push(
-        <Text key={`${paragraphKey}-tail`} style={baseTextStyle}>
+        // Same lineHeight rule as the inter-word gaps: match the
+        // word-View inner Text so the trailing punctuation aligns to
+        // the same baseline as the surrounding glyphs.
+        <Text key={`${paragraphKey}-tail`} style={styles.karaokeWordText}>
           {tail}
         </Text>
       );
