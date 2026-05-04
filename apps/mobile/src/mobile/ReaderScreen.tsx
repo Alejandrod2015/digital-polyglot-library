@@ -311,6 +311,37 @@ function buildVocabLookup(vocab: VocabItem[]): Map<string, VocabItem> {
   return map;
 }
 
+// === TEMPORARY: vocab pill color sandbox ============================
+// Each unique vocab word in the story gets a different pill background
+// so the user can compare hues side by side and pick a favorite. The
+// same word always lands on the same palette index because the index
+// is derived deterministically from the word's lowercase form. Active
+// highlight on a vocab word still falls through to the amber pill, so
+// only the resting / non-active vocab state varies.
+//
+// To finalize: pick one entry, drop this list, hard-code its `bg` on
+// `karaokeWordContainerVocab` and on the legacy `highlightedPill` /
+// globals.css `.vocab-word`.
+const VOCAB_TEST_PALETTES: Array<{ name: string; bg: string }> = [
+  { name: "sky", bg: "rgba(56, 189, 248, 0.7)" },
+  { name: "teal", bg: "rgba(45, 212, 191, 0.7)" },
+  { name: "purple", bg: "rgba(167, 139, 250, 0.7)" },
+  { name: "pink", bg: "rgba(244, 114, 182, 0.65)" },
+  { name: "emerald", bg: "rgba(52, 211, 153, 0.65)" },
+  { name: "indigo", bg: "rgba(129, 140, 248, 0.7)" },
+  { name: "coral", bg: "rgba(248, 113, 113, 0.6)" },
+  { name: "cyan", bg: "rgba(34, 211, 238, 0.65)" },
+];
+
+function pickVocabPalette(vocabKey: string): { name: string; bg: string } {
+  let h = 0;
+  for (let i = 0; i < vocabKey.length; i += 1) {
+    h = (h * 31 + vocabKey.charCodeAt(i)) | 0;
+  }
+  const idx = Math.abs(h) % VOCAB_TEST_PALETTES.length;
+  return VOCAB_TEST_PALETTES[idx];
+}
+
 function renderKaraokeParagraph(args: {
   paragraph: KaraokeParagraph;
   payloadText: string;
@@ -407,14 +438,21 @@ function renderKaraokeParagraph(args: {
     // Because each word's container/text structure is fixed for the
     // life of the render, a vocab word toggling vocab→active changes
     // only the background color and not the layout.
-    let containerStyle: typeof styles.karaokeWordContainerPlain = styles.karaokeWordContainerPlain;
-    let wordTextStyle: typeof styles.karaokeWordText = styles.karaokeWordText;
+    let containerStyle: any = styles.karaokeWordContainerPlain;
+    let wordTextStyle: any = styles.karaokeWordText;
     if (isFirstVocabHit && isActive) {
       containerStyle = styles.karaokeWordContainerActiveVocab;
       wordTextStyle = styles.karaokeWordTextVocabBold;
     } else if (isFirstVocabHit) {
-      containerStyle = styles.karaokeWordContainerVocab;
-      wordTextStyle = styles.karaokeWordTextVocabBold;
+      // TEMPORARY palette sandbox: each unique vocab word renders on
+      // a different background hue so the user can compare. Same word
+      // → same color via deterministic hash.
+      const palette = pickVocabPalette(vocabKey ?? w.text.toLowerCase());
+      containerStyle = [
+        styles.karaokeWordContainerVocab,
+        { backgroundColor: palette.bg },
+      ];
+      wordTextStyle = styles.karaokeWordTextVocabWhite;
     } else if (isActive) {
       containerStyle = styles.karaokeWordContainerActive;
       wordTextStyle = styles.karaokeWordTextDark;
@@ -1858,6 +1896,14 @@ const styles = StyleSheet.create({
     // the legacy reader's vocab pill so the pre-fetch / post-fetch
     // transition is invisible.
     color: "#0e1727",
+    fontSize: 20,
+    fontWeight: "700",
+    lineHeight: 24,
+  },
+  karaokeWordTextVocabWhite: {
+    // White text variant for the vocab palette sandbox. Pairs with the
+    // saturated colored pills so each highlighted word stays readable.
+    color: "#ffffff",
     fontSize: 20,
     fontWeight: "700",
     lineHeight: 24,
