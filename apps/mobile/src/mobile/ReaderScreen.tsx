@@ -399,13 +399,24 @@ function renderKaraokeParagraph(args: {
     // layout once and the surrounding text never shifts when the
     // highlight enters or leaves a word — the only path on iOS that
     // gives short + rounded + zero-shift simultaneously.
+    //
+    // Vocab words and non-vocab words use different inner pill styles:
+    // vocab pills are padded + bold (matching the legacy reader's
+    // highlightedPill so the initial render-then-karaoke transition is
+    // visually invisible). Non-vocab pills are tight + regular weight.
+    // Because each word's container/text structure is fixed for the
+    // life of the render, a vocab word toggling vocab→active changes
+    // only the background color and not the layout.
     let containerStyle: typeof styles.karaokeWordContainerPlain = styles.karaokeWordContainerPlain;
     let wordTextStyle: typeof styles.karaokeWordText = styles.karaokeWordText;
-    if (isActive) {
-      containerStyle = styles.karaokeWordContainerActive;
-      wordTextStyle = styles.karaokeWordTextDark;
+    if (isFirstVocabHit && isActive) {
+      containerStyle = styles.karaokeWordContainerActiveVocab;
+      wordTextStyle = styles.karaokeWordTextVocabBold;
     } else if (isFirstVocabHit) {
       containerStyle = styles.karaokeWordContainerVocab;
+      wordTextStyle = styles.karaokeWordTextVocabBold;
+    } else if (isActive) {
+      containerStyle = styles.karaokeWordContainerActive;
       wordTextStyle = styles.karaokeWordTextDark;
     }
 
@@ -1799,12 +1810,29 @@ const styles = StyleSheet.create({
     paddingVertical: 0,
     borderRadius: 6,
   },
+  // Vocab pill: matches the legacy `highlightedPill` (padded + solid
+  // amber + bold inner text) so the transition from the first render
+  // to the karaoke render is visually invisible. The bold weight and
+  // 5 px padding are intentional layout costs PER vocab word — they
+  // are stable for the life of the render so they do not cause shift
+  // when the same word later goes active.
   karaokeWordContainerVocab: {
-    paddingHorizontal: 0,
-    paddingVertical: 0,
+    paddingHorizontal: 5,
+    paddingVertical: 1,
     borderRadius: 6,
-    backgroundColor: "rgba(250, 204, 21, 0.5)",
+    backgroundColor: "#f8c15c",
   },
+  // Active highlight ON a vocab word: same padding/weight footprint as
+  // the resting vocab pill, so toggling only swaps the background to
+  // the brighter amber.
+  karaokeWordContainerActiveVocab: {
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+    borderRadius: 6,
+    backgroundColor: "#fcd34d",
+  },
+  // Active highlight on a non-vocab word: tight pill, no padding so
+  // toggling onto/off a plain word does not shift surrounding text.
   karaokeWordContainerActive: {
     paddingHorizontal: 0,
     paddingVertical: 0,
@@ -1819,6 +1847,12 @@ const styles = StyleSheet.create({
   karaokeWordTextDark: {
     color: "#1a1205",
     fontSize: 20,
+    lineHeight: 24,
+  },
+  karaokeWordTextVocabBold: {
+    color: "#1a1205",
+    fontSize: 20,
+    fontWeight: "700",
     lineHeight: 24,
   },
   vocabOverlay: {
