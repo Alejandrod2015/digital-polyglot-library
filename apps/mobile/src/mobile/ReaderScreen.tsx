@@ -19,8 +19,10 @@ import {
   formatVariantLabel,
   formatLevel,
   formatTopic,
+  type AudioWordTimingsPayload,
   type Book,
   type Story,
+  type StoryWordToken,
   type VocabItem,
 } from "@digital-polyglot/domain";
 import * as FileSystem from "expo-file-system/legacy";
@@ -267,6 +269,153 @@ function renderHighlightedParagraph(
   return <Text style={baseTextStyle}>{nodes.length > 0 ? nodes : text}</Text>;
 }
 
+// === Karaoke (word-level audio highlight) helpers ====================
+// Opt-in render path used only when a JourneyStory has audioWordTimings
+// populated. The legacy renderHighlightedParagraph above is unchanged
+// and still drives every other story.
+
+type KaraokeParagraph = {
+  text: string;
+  charStart: number;
+  charEnd: number;
+};
+
+function splitKaraokeParagraphs(plainText: string): KaraokeParagraph[] {
+  const out: KaraokeParagraph[] = [];
+  if (!plainText) return out;
+  const regex = /[^\n]+(?:\n[^\n]+)*/g;
+  let match: RegExpExecArray | null = regex.exec(plainText);
+  while (match) {
+    const raw = match[0];
+    const charStart = match.index;
+    const charEnd = charStart + raw.length;
+    const collapsed = raw.replace(/\n/g, " ");
+    out.push({ text: collapsed, charStart, charEnd });
+    match = regex.exec(plainText);
+  }
+  return out;
+}
+
+function buildVocabLookup(vocab: VocabItem[]): Map<string, VocabItem> {
+  const map = new Map<string, VocabItem>();
+  for (const item of vocab) {
+    const surface =
+      typeof item.surface === "string" && item.surface.trim() ? item.surface.trim() : "";
+    const word = typeof item.word === "string" ? item.word.trim() : "";
+    if (surface) map.set(surface.toLowerCase(), item);
+    if (word) map.set(word.toLowerCase(), item);
+  }
+  return map;
+}
+
+function renderKaraokeParagraph(args: {
+  paragraph: KaraokeParagraph;
+  payloadText: string;
+  words: StoryWordToken[];
+  activeWordIndex: number | null;
+  vocabLookup: Map<string, VocabItem>;
+  paragraphKey: string;
+  onWordPress: (item: VocabItem, contextSentence?: string) => void;
+  variant: "paragraph" | "quote";
+}) {
+  const {
+    paragraph,
+    payloadText,
+    words,
+    activeWordIndex,
+    vocabLookup,
+    paragraphKey,
+    onWordPress,
+    variant,
+  } = args;
+  const baseTextStyle = variant === "quote" ? styles.quoteParagraph : styles.paragraph;
+
+  // Find the slice of words[] that lives inside this paragraph's char range.
+  // words are ordered by charStart so we can scan linearly.
+  let firstWordIdx = -1;
+  let lastWordIdx = -1;
+  for (let i = 0; i < words.length; i += 1) {
+    const w = words[i];
+    if (w.charStart >= paragraph.charStart && w.charEnd <= paragraph.charEnd) {
+      if (firstWordIdx === -1) firstWordIdx = i;
+      lastWordIdx = i;
+    } else if (w.charStart >= paragraph.charEnd) {
+      break;
+    }
+  }
+
+  if (firstWordIdx === -1) {
+    return <Text style={baseTextStyle}>{paragraph.text}</Text>;
+  }
+
+  const nodes: React.ReactNode[] = [];
+  let cursor = paragraph.charStart;
+  let key = 0;
+
+  for (let i = firstWordIdx; i <= lastWordIdx; i += 1) {
+    const w = words[i];
+    if (w.charStart > cursor) {
+      const gap = payloadText.slice(cursor, w.charStart).replace(/\n/g, " ");
+      if (gap) {
+        nodes.push(
+          <Text key={`${paragraphKey}-gap-${key++}`} style={baseTextStyle}>
+            {gap}
+          </Text>
+        );
+      }
+    }
+
+    const isActive = activeWordIndex === i;
+    const vocabItem = vocabLookup.get(w.text.toLowerCase()) ?? null;
+
+    const wordStyle = isActive
+      ? styles.karaokeActiveWord
+      : vocabItem
+        ? styles.karaokeVocabWord
+        : baseTextStyle;
+
+    nodes.push(
+      <Text
+        key={`${paragraphKey}-w-${i}`}
+        style={wordStyle}
+        onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
+      >
+        {w.text}
+      </Text>
+    );
+
+    cursor = w.charEnd;
+  }
+
+  if (cursor < paragraph.charEnd) {
+    const tail = payloadText.slice(cursor, paragraph.charEnd).replace(/\n/g, " ");
+    if (tail) {
+      nodes.push(
+        <Text key={`${paragraphKey}-tail`} style={baseTextStyle}>
+          {tail}
+        </Text>
+      );
+    }
+  }
+
+  return <Text style={baseTextStyle}>{nodes}</Text>;
+}
+
+function findActiveKaraokeWordIndex(
+  words: StoryWordToken[],
+  positionSec: number
+): number | null {
+  let last: number | null = null;
+  for (let i = 0; i < words.length; i += 1) {
+    const w = words[i];
+    if (w.startSec === null || w.endSec === null) continue;
+    if (w.startSec <= positionSec && positionSec <= w.endSec) return i;
+    if (w.endSec < positionSec) last = i;
+    else break;
+  }
+  return last;
+}
+
 export function ReaderScreen(args: {
   book: Book;
   story: Story;
@@ -335,6 +484,44 @@ export function ReaderScreen(args: {
   useEffect(() => {
     setOfflineAudioFailed(false);
   }, [story.id]);
+
+  // Word-level audio highlight (karaoke). Opt-in: only stories that have
+  // been aligned via /api/studio/audio/word-timings populate the column.
+  // Every other story keeps the existing renderHighlightedParagraph path.
+  const [wordTimings, setWordTimings] = useState<AudioWordTimingsPayload | null>(null);
+  const [activeWordIndex, setActiveWordIndex] = useState<number | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    setWordTimings(null);
+    setActiveWordIndex(null);
+    (async () => {
+      try {
+        const data = await apiFetch<{ timings?: AudioWordTimingsPayload | null }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: `/api/mobile/audio-word-timings?slug=${encodeURIComponent(story.slug)}`,
+          method: "GET",
+          token: sessionToken,
+          timeoutMs: 8000,
+        });
+        if (cancelled) return;
+        const timings = data?.timings ?? null;
+        if (timings && Array.isArray(timings.words) && timings.words.length > 0) {
+          setWordTimings(timings);
+        }
+      } catch {
+        // Silent fallback to legacy reader render.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [story.slug, sessionToken]);
+
+  const karaokeBlocks = useMemo(
+    () => (wordTimings ? splitKaraokeParagraphs(wordTimings.storyPlainText) : []),
+    [wordTimings]
+  );
+  const karaokeVocabLookup = useMemo(() => buildVocabLookup(vocab), [vocab]);
   const preferredAudioUrl =
     typeof resolvedAudioUrl === "string" && resolvedAudioUrl.trim() ? resolvedAudioUrl : story.audio;
   const audioUrl =
@@ -767,42 +954,70 @@ export function ReaderScreen(args: {
 
         <View style={styles.textWrap}>
           <View style={styles.textCard}>
-            {(() => {
-              // Set compartido a través de TODOS los párrafos de la
-              // historia, así una palabra del vocab queda resaltada
-              // sólo la primera vez que aparece. Antes vivía dentro
-              // de renderHighlightedParagraph y se reiniciaba por
-              // párrafo, por lo que la misma palabra se resaltaba en
-              // párrafos distintos.
-              const alreadyHighlightedShared = new Set<string>();
-              return blocks.map((block, index) => (
-                <Pressable
-                  key={`${story.id}-${index}`}
-                  onPress={() => {
-                    if (selectedVocab) setSelectedVocab(null);
-                  }}
-                  style={[
-                    block.type === "quote" ? styles.quoteBlock : styles.paragraphBlock,
-                  ]}
-                  onLayout={(event) => {
-                    blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
-                    restoreReadingPosition();
-                  }}
-                >
-                  {renderHighlightedParagraph(
-                    block.text,
-                    vocab,
-                    `${story.id}-${index}`,
-                    (word, contextSentence) =>
-                      setSelectedVocab(
-                        contextSentence ? { ...word, note: contextSentence } : word
-                      ),
-                    block.type,
-                    alreadyHighlightedShared
-                  )}
-                </Pressable>
-              ));
-            })()}
+            {wordTimings && karaokeBlocks.length > 0
+              ? karaokeBlocks.map((paragraph, index) => (
+                  <Pressable
+                    key={`${story.id}-k-${index}`}
+                    onPress={() => {
+                      if (selectedVocab) setSelectedVocab(null);
+                    }}
+                    style={styles.paragraphBlock}
+                    onLayout={(event) => {
+                      blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
+                      restoreReadingPosition();
+                    }}
+                  >
+                    {renderKaraokeParagraph({
+                      paragraph,
+                      payloadText: wordTimings.storyPlainText,
+                      words: wordTimings.words,
+                      activeWordIndex,
+                      vocabLookup: karaokeVocabLookup,
+                      paragraphKey: `${story.id}-k-${index}`,
+                      onWordPress: (item, contextSentence) =>
+                        setSelectedVocab(
+                          contextSentence ? { ...item, note: contextSentence } : item
+                        ),
+                      variant: "paragraph",
+                    })}
+                  </Pressable>
+                ))
+              : (() => {
+                  // Set compartido a través de TODOS los párrafos de la
+                  // historia, así una palabra del vocab queda resaltada
+                  // sólo la primera vez que aparece. Antes vivía dentro
+                  // de renderHighlightedParagraph y se reiniciaba por
+                  // párrafo, por lo que la misma palabra se resaltaba en
+                  // párrafos distintos.
+                  const alreadyHighlightedShared = new Set<string>();
+                  return blocks.map((block, index) => (
+                    <Pressable
+                      key={`${story.id}-${index}`}
+                      onPress={() => {
+                        if (selectedVocab) setSelectedVocab(null);
+                      }}
+                      style={[
+                        block.type === "quote" ? styles.quoteBlock : styles.paragraphBlock,
+                      ]}
+                      onLayout={(event) => {
+                        blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
+                        restoreReadingPosition();
+                      }}
+                    >
+                      {renderHighlightedParagraph(
+                        block.text,
+                        vocab,
+                        `${story.id}-${index}`,
+                        (word, contextSentence) =>
+                          setSelectedVocab(
+                            contextSentence ? { ...word, note: contextSentence } : word
+                          ),
+                        block.type,
+                        alreadyHighlightedShared
+                      )}
+                    </Pressable>
+                  ));
+                })()}
           </View>
 
           {isOfflineAudio ? (
@@ -987,6 +1202,14 @@ export function ReaderScreen(args: {
             }
           }}
           onProgressChange={(playback) => {
+            // Karaoke active-word lookup. Cheap on every tick: linear scan
+            // over a few hundred tokens. Setting null clears the highlight
+            // when the audio is paused before metadata loads.
+            if (wordTimings && playback.isLoaded) {
+              const positionSec = playback.positionMillis / 1000;
+              const idx = findActiveKaraokeWordIndex(wordTimings.words, positionSec);
+              setActiveWordIndex((prev) => (prev === idx ? prev : idx));
+            }
             if (playback.isLoaded && playback.durationMillis > 0) {
               const progressSec = playback.positionMillis / 1000;
               const durationSec = playback.durationMillis / 1000;
@@ -1389,6 +1612,23 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "700",
     lineHeight: 20,
+  },
+  // Karaoke (word-level audio highlight) styles. Background-only on the
+  // active word avoids the layout-shift problem the web component hit
+  // when active+vocab paddings stacked. Inactive vocab words inside the
+  // karaoke render keep a softer amber background to stay tappable.
+  karaokeActiveWord: {
+    color: "#1a1205",
+    fontSize: 20,
+    lineHeight: 40,
+    backgroundColor: "#fcd34d",
+    fontWeight: "700",
+  },
+  karaokeVocabWord: {
+    color: "#eef4ff",
+    fontSize: 20,
+    lineHeight: 40,
+    backgroundColor: "rgba(248, 193, 92, 0.28)",
   },
   vocabOverlay: {
     position: "absolute",
