@@ -282,6 +282,7 @@ model JourneyStory {
   coverUrl      String?
   audioUrl      String?
   audioSegments Json?
+  audioWordTimings Json?
   audioFilename String?
   audioStatus   String              @default("pending")
   audioUrlPreview      String?

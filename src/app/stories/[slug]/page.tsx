@@ -17,6 +17,7 @@ import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
+import HighlightedStoryReader from "@/components/HighlightedStoryReader";
 import VocabPanel from "@/components/VocabPanel";
 import JourneyStoryReadTracker from "@/components/JourneyStoryReadTracker";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
@@ -277,6 +278,19 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
     redirect(`/stories/${resolvedStory.slug}`);
   }
 
+  // OPT-IN word-level highlight payload. Only journey stories that have been
+  // explicitly aligned via /api/studio/audio/word-timings get this populated.
+  // Every other story stays on the existing StoryContent path untouched.
+  const journeyStoryRow = await prisma.journeyStory
+    .findFirst({
+      where: { slug, status: "published" },
+      select: { audioWordTimings: true },
+    })
+    .catch(() => null);
+  const audioWordTimings = journeyStoryRow?.audioWordTimings ?? null;
+  const hasWordTimings =
+    audioWordTimings !== null && typeof audioWordTimings === "object";
+
   const { userId } = await auth();
   const [user, featured] = await Promise.all([
     userId ? currentUser() : Promise.resolve(null),
@@ -473,11 +487,18 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
       >
         {hasFullAccess ? (
           <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
-            <StoryContent
-              text={normalizedText}
-              sentencesPerParagraph={3}
-              vocab={safeVocab}
-            />
+            {hasWordTimings ? (
+              <HighlightedStoryReader
+                story={{ vocab: safeVocab }}
+                audioWordTimings={audioWordTimings}
+              />
+            ) : (
+              <StoryContent
+                text={normalizedText}
+                sentencesPerParagraph={3}
+                vocab={safeVocab}
+              />
+            )}
             {journeyContext ? (
               <JourneyStoryReadTracker
                 storySlug={resolvedStory.slug}
