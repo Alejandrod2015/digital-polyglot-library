@@ -368,21 +368,31 @@ function renderKaraokeParagraph(args: {
     const isActive = activeWordIndex === i;
     const vocabItem = vocabLookup.get(w.text.toLowerCase()) ?? null;
 
-    const wordStyle = isActive
-      ? styles.karaokeActiveWord
-      : vocabItem
-        ? styles.karaokeVocabWord
-        : baseTextStyle;
-
-    nodes.push(
-      <Text
-        key={`${paragraphKey}-w-${i}`}
-        style={wordStyle}
-        onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
-      >
-        {w.text}
-      </Text>
-    );
+    if (isActive || vocabItem) {
+      // Inline <View> embedded via NSTextAttachment to get rounded
+      // corners on the highlight (iOS does NOT honor borderRadius on a
+      // <Text> background). Mirrors the existing `highlightedPill`
+      // pattern used by the legacy reader's vocab highlight so the
+      // active word and vocab pills share a single visual language.
+      const pillStyle = isActive ? styles.karaokeActivePill : styles.highlightedPill;
+      const pillTextStyle = isActive ? styles.karaokeActivePillText : styles.highlightedPillText;
+      nodes.push(
+        <View key={`${paragraphKey}-w-${i}`} style={pillStyle}>
+          <Text
+            style={pillTextStyle}
+            onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
+          >
+            {w.text}
+          </Text>
+        </View>
+      );
+    } else {
+      nodes.push(
+        <Text key={`${paragraphKey}-w-${i}`} style={baseTextStyle}>
+          {w.text}
+        </Text>
+      );
+    }
 
     cursor = w.charEnd;
   }
@@ -490,6 +500,15 @@ export function ReaderScreen(args: {
   // Every other story keeps the existing renderHighlightedParagraph path.
   const [wordTimings, setWordTimings] = useState<AudioWordTimingsPayload | null>(null);
   const [activeWordIndex, setActiveWordIndex] = useState<number | null>(null);
+  // Snapshot of the last NativeAudioPlayer tick (it fires every 500ms).
+  // We interpolate between ticks so words shorter than the player update
+  // interval (e.g. German "in" at ~160ms) still get highlighted.
+  const lastPlaybackRef = useRef<{
+    positionMillis: number;
+    wallClockMs: number;
+    isPlaying: boolean;
+    rate: number;
+  } | null>(null);
   useEffect(() => {
     let cancelled = false;
     setWordTimings(null);
@@ -522,6 +541,26 @@ export function ReaderScreen(args: {
     [wordTimings]
   );
   const karaokeVocabLookup = useMemo(() => buildVocabLookup(vocab), [vocab]);
+
+  // 50 ms tick that interpolates the audio position between the
+  // 500 ms callbacks from NativeAudioPlayer. Short words (<300 ms)
+  // would otherwise be skipped because the player update interval
+  // is coarser than the word duration.
+  useEffect(() => {
+    if (!wordTimings) {
+      setActiveWordIndex(null);
+      return;
+    }
+    const interval = setInterval(() => {
+      const snap = lastPlaybackRef.current;
+      if (!snap) return;
+      const elapsedMs = snap.isPlaying ? Date.now() - snap.wallClockMs : 0;
+      const estimatedSec = (snap.positionMillis + elapsedMs * snap.rate) / 1000;
+      const idx = findActiveKaraokeWordIndex(wordTimings.words, estimatedSec);
+      setActiveWordIndex((prev) => (prev === idx ? prev : idx));
+    }, 50);
+    return () => clearInterval(interval);
+  }, [wordTimings]);
   const preferredAudioUrl =
     typeof resolvedAudioUrl === "string" && resolvedAudioUrl.trim() ? resolvedAudioUrl : story.audio;
   const audioUrl =
@@ -1202,13 +1241,17 @@ export function ReaderScreen(args: {
             }
           }}
           onProgressChange={(playback) => {
-            // Karaoke active-word lookup. Cheap on every tick: linear scan
-            // over a few hundred tokens. Setting null clears the highlight
-            // when the audio is paused before metadata loads.
+            // Karaoke seam: store a snapshot of the player's position so
+            // the 50 ms interpolation interval can extrapolate between
+            // these 500 ms ticks. The player's own update cadence is too
+            // coarse for word-level highlighting on its own.
             if (wordTimings && playback.isLoaded) {
-              const positionSec = playback.positionMillis / 1000;
-              const idx = findActiveKaraokeWordIndex(wordTimings.words, positionSec);
-              setActiveWordIndex((prev) => (prev === idx ? prev : idx));
+              lastPlaybackRef.current = {
+                positionMillis: playback.positionMillis,
+                wallClockMs: Date.now(),
+                isPlaying: playback.isPlaying,
+                rate: playback.rate || 1,
+              };
             }
             if (playback.isLoaded && playback.durationMillis > 0) {
               const progressSec = playback.positionMillis / 1000;
@@ -1613,22 +1656,22 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     lineHeight: 20,
   },
-  // Karaoke (word-level audio highlight) styles. Background-only on the
-  // active word avoids the layout-shift problem the web component hit
-  // when active+vocab paddings stacked. Inactive vocab words inside the
-  // karaoke render keep a softer amber background to stay tappable.
-  karaokeActiveWord: {
+  // Karaoke (word-level audio highlight) styles. Reuses the
+  // `highlightedPill` shape from the legacy reader so the active word
+  // visually matches the vocab pills. Active variant just bumps the
+  // background to a more saturated amber to draw the eye.
+  karaokeActivePill: {
+    backgroundColor: "#fcd34d",
+    borderRadius: 6,
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+    transform: [{ translateY: -4 }],
+  },
+  karaokeActivePillText: {
     color: "#1a1205",
     fontSize: 20,
-    lineHeight: 40,
-    backgroundColor: "#fcd34d",
     fontWeight: "700",
-  },
-  karaokeVocabWord: {
-    color: "#eef4ff",
-    fontSize: 20,
-    lineHeight: 40,
-    backgroundColor: "rgba(248, 193, 92, 0.28)",
+    lineHeight: 20,
   },
   vocabOverlay: {
     position: "absolute",
