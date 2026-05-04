@@ -1736,17 +1736,22 @@ const styles = StyleSheet.create({
   highlightedPill: {
     // Inline <View> embedded via NSTextAttachment. iOS places the View so
     // its TOP aligns with the surrounding line's top (ascender), which puts
-    // the visible amber block too low relative to the text baseline. A
-    // small negative translateY shifts the pill up so it visually centers
-    // on the text's cap-height band.
-    backgroundColor: "#f8c15c",
+    // the visible block too low relative to the text baseline. A small
+    // negative translateY shifts the pill up so it visually centers on the
+    // text's cap-height band.
+    //
+    // Vocab pills are now sky-blue: warm amber is reserved for the
+    // karaoke active highlight, so vocab gets a cool hue to read as a
+    // distinct kind of mark.
+    backgroundColor: "rgba(125, 211, 252, 0.55)",
     borderRadius: 6,
     paddingHorizontal: 5,
     paddingVertical: 1,
     transform: [{ translateY: -4 }],
   },
   highlightedPillText: {
-    color: "#1a1205",
+    // Dark navy text reads cleanly on top of the sky-blue vocab pill.
+    color: "#0e1727",
     fontSize: 20,
     fontWeight: "700",
     lineHeight: 20,
@@ -1810,26 +1815,24 @@ const styles = StyleSheet.create({
     paddingVertical: 0,
     borderRadius: 6,
   },
-  // Vocab pill: matches the legacy `highlightedPill` (padded + solid
-  // amber + bold inner text) so the transition from the first render
-  // to the karaoke render is visually invisible. The bold weight and
-  // 5 px padding are intentional layout costs PER vocab word — they
-  // are stable for the life of the render so they do not cause shift
-  // when the same word later goes active.
+  // Vocab pill: same padding + bold + size as the legacy highlightedPill
+  // so the transition from the first paint to the karaoke render is
+  // visually invisible. Sky-blue background marks "this word has a
+  // definition" without competing with the warm amber active highlight.
   karaokeWordContainerVocab: {
     paddingHorizontal: 5,
     paddingVertical: 1,
     borderRadius: 6,
-    backgroundColor: "#f8c15c",
+    backgroundColor: "rgba(125, 211, 252, 0.55)",
   },
   // Active highlight ON a vocab word: same padding/weight footprint as
-  // the resting vocab pill, so toggling only swaps the background to
-  // the brighter amber.
+  // the resting vocab pill, so toggling only swaps the background from
+  // the cool sky-blue to the warm amber.
   karaokeWordContainerActiveVocab: {
     paddingHorizontal: 5,
     paddingVertical: 1,
     borderRadius: 6,
-    backgroundColor: "#fcd34d",
+    backgroundColor: "#f8c15c",
   },
   // Active highlight on a non-vocab word: tight pill, no padding so
   // toggling onto/off a plain word does not shift surrounding text.
@@ -1837,7 +1840,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 0,
     paddingVertical: 0,
     borderRadius: 6,
-    backgroundColor: "#fcd34d",
+    backgroundColor: "#f8c15c",
   },
   karaokeWordText: {
     color: "#eef4ff",
@@ -1845,12 +1848,16 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   karaokeWordTextDark: {
-    color: "#1a1205",
+    // Dark navy text on warm amber active background.
+    color: "#0e1727",
     fontSize: 20,
     lineHeight: 24,
   },
   karaokeWordTextVocabBold: {
-    color: "#1a1205",
+    // Dark navy text on sky-blue vocab background — same dark hue as
+    // the legacy reader's vocab pill so the pre-fetch / post-fetch
+    // transition is invisible.
+    color: "#0e1727",
     fontSize: 20,
     fontWeight: "700",
     lineHeight: 24,

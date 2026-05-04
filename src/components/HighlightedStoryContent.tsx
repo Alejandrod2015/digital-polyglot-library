@@ -121,8 +121,12 @@ export default function HighlightedStoryContent({
             // padding here would compound with .vocab-word's existing
             // `padding: 0 0.15em` from globals.css and visibly shift the line
             // whenever an active word overlapped a vocab word.
+            //
+            // Active uses warm amber (#f8c15c) — the same hue the legacy
+            // reader used for vocab; vocab moved to sky-blue in globals.css
+            // so the two highlight kinds read as distinctly different marks.
             const baseClass = "transition-colors duration-150 rounded";
-            const activeClass = isActive ? "bg-amber-300 text-black font-medium" : "";
+            const activeClass = isActive ? "bg-[#f8c15c] text-black font-medium" : "";
             const vocabClass = piece.vocabKey ? "vocab-word" : "";
             return (
               <span
