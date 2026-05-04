@@ -235,8 +235,11 @@ select,
 }
 
 /* === ✅ VOCABULARY HIGHLIGHT === */
+/* Vocab is now sky-blue: warm amber is reserved for the karaoke
+   active highlight, so vocab gets a cool hue to read as a distinct
+   kind of mark. */
 .vocab-word {
-  background-color: rgba(250, 204, 21, 0.35);
+  background-color: rgba(125, 211, 252, 0.55);
   border-radius: 0.25rem;
   padding: 0 0.15em;
   cursor: pointer;
@@ -244,8 +247,8 @@ select,
 }
 
 .vocab-word:hover {
-  background-color: rgba(250, 204, 21, 0.8);
-  color: #111827;
+  background-color: rgba(125, 211, 252, 0.85);
+  color: #0e1727;
 }
 
 /* === 🔹 CARRUSELES === */

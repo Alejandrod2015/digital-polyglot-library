@@ -64,6 +64,24 @@ image = (
     .run_function(_download_piper_voices)
 )
 
+# Forced-alignment image: aeneas needs espeak + python-dev for native build.
+# Pinned numpy<2 because aeneas 1.7.3 was released pre-numpy-2 and breaks
+# against the new ABI. lxml+beautifulsoup4 are aeneas runtime deps.
+align_image = (
+    modal.Image.debian_slim(python_version="3.11")
+    .apt_install(
+        "ffmpeg",
+        "espeak",
+        "espeak-ng",
+        "libespeak-dev",
+        "libespeak-ng1",
+        "build-essential",
+        "python3-dev",
+    )
+    .pip_install("numpy<2", "lxml", "beautifulsoup4", "fastapi[standard]==0.115.5")
+    .pip_install("aeneas==1.7.3.0")
+)
+
 app = modal.App("polyglot-audio-studio")
 
 
@@ -202,3 +220,189 @@ def synthesize(payload: dict):
     public_url = _r2_upload(mp3_bytes, key, "audio/mpeg")
 
     return {"url": public_url, "filename": safe_name, "bytes": len(mp3_bytes)}
+
+
+# Map app-level language strings to aeneas BCP-47 / ISO-639-3 task languages.
+# Anything not listed here yields a 400 from /align so we fail loud rather
+# than silently aligning German text against a Spanish phonetizer.
+ALIGN_LANGUAGE_MAP = {
+    "german": "deu",
+    "de": "deu",
+    "spanish": "spa",
+    "es": "spa",
+    "italian": "ita",
+    "it": "ita",
+    "portuguese": "por",
+    "pt": "por",
+    "english": "eng",
+    "en": "eng",
+    "french": "fra",
+    "fr": "fra",
+}
+
+# Tokenizes a paragraph of free text into word fragments, preserving the
+# character offsets (charStart/charEnd) of each token in the original text so
+# the JS renderer can splice the highlight markup back over the un-modified
+# source. The regex matches letters/digits with diacritics, apostrophes and
+# hyphens internal to a word; punctuation and whitespace are gaps.
+def _tokenize_with_spans(text: str):
+    import re
+
+    pattern = re.compile(r"[\w][\w'’-]*", re.UNICODE)
+    tokens = []
+    for match in pattern.finditer(text):
+        tokens.append(
+            {
+                "text": match.group(0),
+                "charStart": match.start(),
+                "charEnd": match.end(),
+            }
+        )
+    return tokens
+
+
+@app.function(
+    image=align_image,
+    secrets=[modal.Secret.from_name("polyglot-audio-studio-token")],
+    timeout=300,
+    cpu=2,
+    memory=2048,
+)
+@modal.fastapi_endpoint(method="POST", docs=False)
+def align(payload: dict):
+    """Forced-alignment endpoint. Returns word-level start/end timings.
+
+    Auth: payload must include `_token` matching STUDIO_AUDIO_TOKEN.
+
+    Body:
+      {
+        "_token": str,
+        "audioUrl": str,            # public URL to download
+        "text": str,                # full narration text
+        "language": str,            # "german" | "de" | "spanish" | ...
+      }
+
+    Response:
+      {
+        "language": "deu",
+        "audioDurationSec": float | null,
+        "tokens": [
+          {"text": "Hallo", "charStart": 0, "charEnd": 5,
+           "startSec": 0.04, "endSec": 0.52},
+          ...
+        ]
+      }
+    """
+    from fastapi import HTTPException
+
+    expected = os.environ.get("STUDIO_AUDIO_TOKEN", "")
+    presented = (payload.get("_token") or "").strip()
+    if not expected or not hmac.compare_digest(expected, presented):
+        raise HTTPException(status_code=401, detail="Unauthorized")
+
+    audio_url = (payload.get("audioUrl") or "").strip()
+    text = (payload.get("text") or "").strip()
+    raw_language = (payload.get("language") or "").strip().lower()
+    if not audio_url:
+        raise HTTPException(status_code=400, detail="Missing audioUrl")
+    if not text:
+        raise HTTPException(status_code=400, detail="Missing text")
+    aeneas_lang = ALIGN_LANGUAGE_MAP.get(raw_language)
+    if not aeneas_lang:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unsupported language: {raw_language!r}. Supported: {sorted(set(ALIGN_LANGUAGE_MAP.values()))}",
+        )
+
+    tokens = _tokenize_with_spans(text)
+    if not tokens:
+        raise HTTPException(status_code=400, detail="Text contained no alignable words")
+
+    import urllib.request
+    from aeneas.executetask import ExecuteTask
+    from aeneas.task import Task
+
+    with tempfile.TemporaryDirectory() as tmp_str:
+        tmp = Path(tmp_str)
+        audio_path = tmp / "audio.mp3"
+        text_path = tmp / "words.txt"
+        sync_path = tmp / "sync.json"
+
+        try:
+            req = urllib.request.Request(audio_url, headers={"User-Agent": "polyglot-align/1"})
+            with urllib.request.urlopen(req) as resp:
+                if resp.status != 200:
+                    raise HTTPException(status_code=502, detail=f"Audio download failed: {resp.status}")
+                audio_path.write_bytes(resp.read())
+        except HTTPException:
+            raise
+        except Exception as e:
+            raise HTTPException(status_code=502, detail=f"Audio download error: {e}")
+
+        # aeneas operates on text fragments line-by-line, so one word per line
+        # gives us word-level boundaries directly.
+        text_path.write_text("\n".join(t["text"] for t in tokens), encoding="utf-8")
+
+        config_string = (
+            f"task_language={aeneas_lang}"
+            "|is_text_type=plain"
+            "|os_task_file_format=json"
+        )
+        task = Task(config_string=config_string)
+        task.audio_file_path_absolute = str(audio_path)
+        task.text_file_path_absolute = str(text_path)
+        task.sync_map_file_path_absolute = str(sync_path)
+
+        try:
+            ExecuteTask(task).execute()
+            task.output_sync_map_file()
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"aeneas alignment failed: {e}")
+
+        sync_data = json.loads(sync_path.read_text(encoding="utf-8"))
+        fragments = sync_data.get("fragments") or []
+
+        # aeneas returns one fragment per input line, in order. The number of
+        # fragments matches the number of tokens unless the phonetizer dropped
+        # a line. We zip carefully and leave gaps as null timings.
+        timings = []
+        for i, token in enumerate(tokens):
+            frag = fragments[i] if i < len(fragments) else None
+            if frag is None:
+                start_sec = None
+                end_sec = None
+            else:
+                try:
+                    start_sec = float(frag.get("begin"))
+                    end_sec = float(frag.get("end"))
+                except (TypeError, ValueError):
+                    start_sec = None
+                    end_sec = None
+            timings.append(
+                {
+                    "text": token["text"],
+                    "charStart": token["charStart"],
+                    "charEnd": token["charEnd"],
+                    "startSec": start_sec,
+                    "endSec": end_sec,
+                }
+            )
+
+        # Probe audio duration via ffprobe; non-fatal if it fails.
+        duration = None
+        try:
+            probe = subprocess.run(
+                ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                 "-of", "default=noprint_wrappers=1:nokey=1", str(audio_path)],
+                capture_output=True, check=False, text=True,
+            )
+            if probe.returncode == 0:
+                duration = float(probe.stdout.strip())
+        except Exception:
+            duration = None
+
+        return {
+            "language": aeneas_lang,
+            "audioDurationSec": duration,
+            "tokens": timings,
+        }

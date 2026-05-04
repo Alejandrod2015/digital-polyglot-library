@@ -57,6 +57,16 @@ const VOICE_ASSIGNMENTS: VoiceAssignment[] = [
     },
     ambientFile: path.join(AMBIENT_DIR, "mercado_de.mp3"),
   },
+  {
+    slug: "eiscafe-am-sommerabend",
+    voiceMap: {
+      narrator: V.moritz,
+      Eva: V.gesaTess,
+      Lara: V.enniah,
+      Marc: V.sebastian,
+    },
+    ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3"),
+  },
 ];
 
 async function run() {

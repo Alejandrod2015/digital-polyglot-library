@@ -36,6 +36,21 @@ export interface Story extends Partial<BookMetadata> {
   overrideMetadata?: boolean;
 }
 
+export interface StoryWordToken {
+  text: string;
+  charStart: number;
+  charEnd: number;
+  startSec: number | null;
+  endSec: number | null;
+}
+
+export interface AudioWordTimingsPayload {
+  version: 1;
+  audioDurationSec: number | null;
+  storyPlainText: string;
+  words: StoryWordToken[];
+}
+
 export interface Book extends BookMetadata {
   id: string;
   slug: string;

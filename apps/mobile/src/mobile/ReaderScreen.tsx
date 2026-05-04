@@ -19,9 +19,14 @@ import {
   formatVariantLabel,
   formatLevel,
   formatTopic,
+  getVocabTypeLabel,
+  normalizeVocabType,
+  type AudioWordTimingsPayload,
   type Book,
   type Story,
+  type StoryWordToken,
   type VocabItem,
+  type VocabTypeKey,
 } from "@digital-polyglot/domain";
 import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
@@ -267,6 +272,251 @@ function renderHighlightedParagraph(
   return <Text style={baseTextStyle}>{nodes.length > 0 ? nodes : text}</Text>;
 }
 
+// === Karaoke (word-level audio highlight) helpers ====================
+// Opt-in render path used only when a JourneyStory has audioWordTimings
+// populated. The legacy renderHighlightedParagraph above is unchanged
+// and still drives every other story.
+
+type KaraokeParagraph = {
+  text: string;
+  charStart: number;
+  charEnd: number;
+};
+
+function splitKaraokeParagraphs(plainText: string): KaraokeParagraph[] {
+  const out: KaraokeParagraph[] = [];
+  if (!plainText) return out;
+  // The Studio's `extractStoryPlainText` collapses paragraph boundaries
+  // to a single `\n`, so we split on any run of newlines (one or more)
+  // to recover them. Without this, the entire story renders as one
+  // visually flat block on the iPhone reader.
+  const regex = /[^\n]+/g;
+  let match: RegExpExecArray | null = regex.exec(plainText);
+  while (match) {
+    const raw = match[0];
+    const charStart = match.index;
+    const charEnd = charStart + raw.length;
+    out.push({ text: raw, charStart, charEnd });
+    match = regex.exec(plainText);
+  }
+  return out;
+}
+
+function buildVocabLookup(vocab: VocabItem[]): Map<string, VocabItem> {
+  const map = new Map<string, VocabItem>();
+  for (const item of vocab) {
+    const surface =
+      typeof item.surface === "string" && item.surface.trim() ? item.surface.trim() : "";
+    const word = typeof item.word === "string" ? item.word.trim() : "";
+    if (surface) map.set(surface.toLowerCase(), item);
+    if (word) map.set(word.toLowerCase(), item);
+  }
+  return map;
+}
+
+// Vocab pill background per grammatical type. Each color is a saturated
+// hue at moderate opacity so white bold text reads cleanly on top, and
+// the hues are spread across the wheel so a paragraph with mixed parts
+// of speech displays a clear visual key. Active highlight on a vocab
+// word INTENTIONALLY does NOT override these — vocab keeps its type
+// color throughout playback so the grammar signal stays stable.
+const VOCAB_TYPE_BACKGROUNDS: Record<VocabTypeKey, string> = {
+  verb: "rgba(248, 113, 113, 0.6)", // coral — action
+  noun: "rgba(56, 189, 248, 0.65)", // sky — entity
+  adjective: "rgba(52, 211, 153, 0.6)", // emerald — quality
+  adverb: "rgba(167, 139, 250, 0.65)", // purple — modifier
+  expression: "rgba(244, 114, 182, 0.6)", // pink — idiomatic
+  other: "rgba(148, 163, 184, 0.55)", // slate — neutral fallback
+};
+
+function vocabBackgroundForItem(item: VocabItem | null | undefined): string {
+  if (!item) return VOCAB_TYPE_BACKGROUNDS.other;
+  const key = normalizeVocabType(item.type, {
+    word: item.word,
+    definition: item.definition,
+  });
+  return VOCAB_TYPE_BACKGROUNDS[key ?? "other"];
+}
+
+function renderKaraokeParagraph(args: {
+  paragraph: KaraokeParagraph;
+  payloadText: string;
+  words: StoryWordToken[];
+  activeWordIndex: number | null;
+  vocabLookup: Map<string, VocabItem>;
+  paragraphKey: string;
+  onWordPress: (item: VocabItem, contextSentence?: string) => void;
+  variant: "paragraph" | "quote";
+  // Shared across all paragraphs of the story: a vocab word only renders
+  // as a pill the first time it shows up. Mirrors the legacy reader's
+  // dedup logic so karaoke stories don't look denser than non-karaoke
+  // ones for the same vocab list.
+  alreadyHighlighted: Set<string>;
+}) {
+  const {
+    paragraph,
+    payloadText,
+    words,
+    activeWordIndex,
+    vocabLookup,
+    paragraphKey,
+    onWordPress,
+    variant,
+    alreadyHighlighted,
+  } = args;
+  const baseTextStyle = variant === "quote" ? styles.quoteParagraph : styles.paragraph;
+
+  // Find the slice of words[] that lives inside this paragraph's char range.
+  // words are ordered by charStart so we can scan linearly.
+  let firstWordIdx = -1;
+  let lastWordIdx = -1;
+  for (let i = 0; i < words.length; i += 1) {
+    const w = words[i];
+    if (w.charStart >= paragraph.charStart && w.charEnd <= paragraph.charEnd) {
+      if (firstWordIdx === -1) firstWordIdx = i;
+      lastWordIdx = i;
+    } else if (w.charStart >= paragraph.charEnd) {
+      break;
+    }
+  }
+
+  if (firstWordIdx === -1) {
+    return <Text style={baseTextStyle}>{paragraph.text}</Text>;
+  }
+
+  const nodes: React.ReactNode[] = [];
+  // Prepend a zero-width Text node so the line's first inline element
+  // is always plain text. Without this, when the active/vocab pill
+  // <View> ends up first on a line, iOS computes the line height from
+  // the View's inner lineHeight (20) instead of the paragraph's (40),
+  // and the whole paragraph visibly collapses. The ZWSP carries the
+  // baseTextStyle line metrics so the line is anchored at 40px before
+  // any pill enters.
+  nodes.push(
+    <Text key={`${paragraphKey}-anchor`} style={baseTextStyle}>
+      {"​"}
+    </Text>
+  );
+  let cursor = paragraph.charStart;
+  let key = 0;
+
+  for (let i = firstWordIdx; i <= lastWordIdx; i += 1) {
+    const w = words[i];
+    if (w.charStart > cursor) {
+      const gap = payloadText.slice(cursor, w.charStart).replace(/\n/g, " ");
+      if (gap) {
+        nodes.push(
+          <Text key={`${paragraphKey}-gap-${key++}`} style={baseTextStyle}>
+            {gap}
+          </Text>
+        );
+      }
+    }
+
+    const isActive = activeWordIndex === i;
+    const vocabItem = vocabLookup.get(w.text.toLowerCase()) ?? null;
+    const vocabKey = vocabItem ? (vocabItem.word ?? w.text).toLowerCase() : null;
+    const isFirstVocabHit = vocabKey !== null && !alreadyHighlighted.has(vocabKey);
+    if (isFirstVocabHit && vocabKey !== null) alreadyHighlighted.add(vocabKey);
+
+    // EVERY karaoke word is wrapped in the same inline <View> structure
+    // from the first render. Only the View's backgroundColor varies as
+    // the active highlight moves through. Because the View tree never
+    // changes shape, iOS NSTextAttachment kerning is baked into the
+    // layout once and the surrounding text never shifts when the
+    // highlight enters or leaves a word — the only path on iOS that
+    // gives short + rounded + zero-shift simultaneously.
+    //
+    // Vocab words and non-vocab words use different inner pill styles:
+    // vocab pills are padded + bold (matching the legacy reader's
+    // highlightedPill so the initial render-then-karaoke transition is
+    // visually invisible). Non-vocab pills are tight + regular weight.
+    // Because each word's container/text structure is fixed for the
+    // life of the render, a vocab word toggling vocab→active changes
+    // only the background color and not the layout.
+    let containerStyle: any = styles.karaokeWordContainerPlain;
+    let wordTextStyle: any = styles.karaokeWordText;
+    if (isFirstVocabHit) {
+      // Vocab pills keep their type color through the entire playback.
+      // The audio cursor moving over a vocab word does NOT swap the pill
+      // to the active amber — the type signal stays stable so the user
+      // can still tell at a glance whether it was a noun / verb / etc.
+      containerStyle = [
+        styles.karaokeWordContainerVocab,
+        { backgroundColor: vocabBackgroundForItem(vocabItem) },
+      ];
+      wordTextStyle = styles.karaokeWordTextVocabWhite;
+    } else if (isActive) {
+      containerStyle = styles.karaokeWordContainerActive;
+      wordTextStyle = styles.karaokeWordTextDark;
+    }
+
+    // Two-layer structure: the outer <View> takes the paragraph's full
+    // line height so its inline baseline matches the surrounding text's
+    // baseline (otherwise iOS aligns adjacent gap text to the View's
+    // own shorter baseline, which makes periods and commas float above
+    // the line). The inner <View> is the visible short rounded pill.
+    nodes.push(
+      <View key={`${paragraphKey}-w-${i}`} style={styles.karaokeWordOuter}>
+        <View style={containerStyle}>
+          <Text
+            style={wordTextStyle}
+            onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
+          >
+            {w.text}
+          </Text>
+        </View>
+      </View>
+    );
+
+    cursor = w.charEnd;
+  }
+
+  if (cursor < paragraph.charEnd) {
+    const tail = payloadText.slice(cursor, paragraph.charEnd).replace(/\n/g, " ");
+    if (tail) {
+      nodes.push(
+        <Text key={`${paragraphKey}-tail`} style={baseTextStyle}>
+          {tail}
+        </Text>
+      );
+    }
+  }
+
+  return <Text style={baseTextStyle}>{nodes}</Text>;
+}
+
+function findActiveKaraokeWordIndex(
+  words: StoryWordToken[],
+  positionSec: number
+): number | null {
+  // Each token's effective window is [startSec, nextToken.startSec).
+  // Aeneas occasionally emits zero-duration windows (startSec === endSec)
+  // for short connector words; trusting endSec literally would mean those
+  // words never get highlighted because the 50 ms sampler almost never
+  // hits an exact-ms boundary. Walking startSecs avoids that hole and
+  // also covers any inter-word silence cleanly.
+  let last: number | null = null;
+  for (let i = 0; i < words.length; i += 1) {
+    const w = words[i];
+    if (w.startSec === null) continue;
+    if (positionSec < w.startSec) break;
+    let nextStart: number | null = null;
+    for (let j = i + 1; j < words.length; j += 1) {
+      const candidate = words[j].startSec;
+      if (candidate !== null && candidate > w.startSec) {
+        nextStart = candidate;
+        break;
+      }
+    }
+    if (nextStart === null || positionSec < nextStart) {
+      return i;
+    }
+    last = i;
+  }
+  return last;
+}
+
 export function ReaderScreen(args: {
   book: Book;
   story: Story;
@@ -335,6 +585,101 @@ export function ReaderScreen(args: {
   useEffect(() => {
     setOfflineAudioFailed(false);
   }, [story.id]);
+
+  // Word-level audio highlight (karaoke). Opt-in: only stories that have
+  // been aligned via /api/studio/audio/word-timings populate the column.
+  // Every other story keeps the existing renderHighlightedParagraph path.
+  const [wordTimings, setWordTimings] = useState<AudioWordTimingsPayload | null>(null);
+  const [activeWordIndex, setActiveWordIndex] = useState<number | null>(null);
+  // Snapshot of the last NativeAudioPlayer tick (it fires every 500ms).
+  // We interpolate between ticks so words shorter than the player update
+  // interval (e.g. German "in" at ~160ms) still get highlighted.
+  const lastPlaybackRef = useRef<{
+    positionMillis: number;
+    wallClockMs: number;
+    isPlaying: boolean;
+    rate: number;
+  } | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    setWordTimings(null);
+    setActiveWordIndex(null);
+    (async () => {
+      try {
+        const data = await apiFetch<{ timings?: AudioWordTimingsPayload | null }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: `/api/mobile/audio-word-timings?slug=${encodeURIComponent(story.slug)}`,
+          method: "GET",
+          token: sessionToken,
+          timeoutMs: 8000,
+        });
+        if (cancelled) return;
+        const timings = data?.timings ?? null;
+        if (timings && Array.isArray(timings.words) && timings.words.length > 0) {
+          setWordTimings(timings);
+        }
+      } catch {
+        // Silent fallback to legacy reader render.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [story.slug, sessionToken]);
+
+  const karaokeBlocks = useMemo(
+    () => (wordTimings ? splitKaraokeParagraphs(wordTimings.storyPlainText) : []),
+    [wordTimings]
+  );
+  const karaokeVocabLookup = useMemo(() => buildVocabLookup(vocab), [vocab]);
+
+  // 50 ms tick that interpolates the audio position between the
+  // 500 ms callbacks from NativeAudioPlayer. Short words (<300 ms)
+  // would otherwise be skipped because the player update interval
+  // is coarser than the word duration.
+  //
+  // Index-level monotonic smoothing prevents the back-and-forth jitter
+  // caused by my wall-clock extrapolation over-shooting the player's
+  // actual reported position: small backward steps (1-2 words) are
+  // ignored as jitter; bigger jumps are honored as real seeks/rewinds.
+  const lastResolvedIndexRef = useRef<number | null>(null);
+  useEffect(() => {
+    lastResolvedIndexRef.current = null;
+  }, [story.id]);
+  useEffect(() => {
+    if (!wordTimings) {
+      setActiveWordIndex(null);
+      lastResolvedIndexRef.current = null;
+      return;
+    }
+    const interval = setInterval(() => {
+      const snap = lastPlaybackRef.current;
+      if (!snap) return;
+      const elapsedMs = snap.isPlaying ? Math.min(Date.now() - snap.wallClockMs, 700) : 0;
+      const estimatedSec = (snap.positionMillis + elapsedMs * snap.rate) / 1000;
+      const rawIdx = findActiveKaraokeWordIndex(wordTimings.words, estimatedSec);
+      const lastIdx = lastResolvedIndexRef.current;
+
+      let resolved = rawIdx;
+      if (rawIdx === null && lastIdx !== null && snap.isPlaying) {
+        // Mid-playback `null` from extrapolation overshoot: keep the
+        // last index instead of clearing the highlight, otherwise the
+        // first word visibly blinks twice as the snapshot oscillates
+        // around its startSec boundary on the very first activation.
+        resolved = lastIdx;
+      } else if (rawIdx !== null && lastIdx !== null && rawIdx < lastIdx) {
+        // Treat backward steps of one or two words as jitter (extrapolation
+        // overshooting the player's next reported position). Bigger jumps
+        // are real seeks: let them through.
+        if (lastIdx - rawIdx < 3) {
+          resolved = lastIdx;
+        }
+      }
+      lastResolvedIndexRef.current = resolved;
+      setActiveWordIndex((prev) => (prev === resolved ? prev : resolved));
+    }, 50);
+    return () => clearInterval(interval);
+  }, [wordTimings, story.id]);
   const preferredAudioUrl =
     typeof resolvedAudioUrl === "string" && resolvedAudioUrl.trim() ? resolvedAudioUrl : story.audio;
   const audioUrl =
@@ -767,42 +1112,77 @@ export function ReaderScreen(args: {
 
         <View style={styles.textWrap}>
           <View style={styles.textCard}>
-            {(() => {
-              // Set compartido a través de TODOS los párrafos de la
-              // historia, así una palabra del vocab queda resaltada
-              // sólo la primera vez que aparece. Antes vivía dentro
-              // de renderHighlightedParagraph y se reiniciaba por
-              // párrafo, por lo que la misma palabra se resaltaba en
-              // párrafos distintos.
-              const alreadyHighlightedShared = new Set<string>();
-              return blocks.map((block, index) => (
-                <Pressable
-                  key={`${story.id}-${index}`}
-                  onPress={() => {
-                    if (selectedVocab) setSelectedVocab(null);
-                  }}
-                  style={[
-                    block.type === "quote" ? styles.quoteBlock : styles.paragraphBlock,
-                  ]}
-                  onLayout={(event) => {
-                    blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
-                    restoreReadingPosition();
-                  }}
-                >
-                  {renderHighlightedParagraph(
-                    block.text,
-                    vocab,
-                    `${story.id}-${index}`,
-                    (word, contextSentence) =>
-                      setSelectedVocab(
-                        contextSentence ? { ...word, note: contextSentence } : word
-                      ),
-                    block.type,
-                    alreadyHighlightedShared
-                  )}
-                </Pressable>
-              ));
-            })()}
+            {wordTimings && karaokeBlocks.length > 0
+              ? (() => {
+                  // Shared dedup set so each vocab word becomes a pill
+                  // only the first time it appears across the whole
+                  // story, matching the legacy reader behavior.
+                  const karaokeAlreadyHighlighted = new Set<string>();
+                  return karaokeBlocks.map((paragraph, index) => (
+                    <Pressable
+                      key={`${story.id}-k-${index}`}
+                      onPress={() => {
+                        if (selectedVocab) setSelectedVocab(null);
+                      }}
+                      style={styles.paragraphBlock}
+                      onLayout={(event) => {
+                        blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
+                        restoreReadingPosition();
+                      }}
+                    >
+                      {renderKaraokeParagraph({
+                        paragraph,
+                        payloadText: wordTimings.storyPlainText,
+                        words: wordTimings.words,
+                        activeWordIndex,
+                        vocabLookup: karaokeVocabLookup,
+                        paragraphKey: `${story.id}-k-${index}`,
+                        onWordPress: (item, contextSentence) =>
+                          setSelectedVocab(
+                            contextSentence ? { ...item, note: contextSentence } : item
+                          ),
+                        variant: "paragraph",
+                        alreadyHighlighted: karaokeAlreadyHighlighted,
+                      })}
+                    </Pressable>
+                  ));
+                })()
+              : (() => {
+                  // Set compartido a través de TODOS los párrafos de la
+                  // historia, así una palabra del vocab queda resaltada
+                  // sólo la primera vez que aparece. Antes vivía dentro
+                  // de renderHighlightedParagraph y se reiniciaba por
+                  // párrafo, por lo que la misma palabra se resaltaba en
+                  // párrafos distintos.
+                  const alreadyHighlightedShared = new Set<string>();
+                  return blocks.map((block, index) => (
+                    <Pressable
+                      key={`${story.id}-${index}`}
+                      onPress={() => {
+                        if (selectedVocab) setSelectedVocab(null);
+                      }}
+                      style={[
+                        block.type === "quote" ? styles.quoteBlock : styles.paragraphBlock,
+                      ]}
+                      onLayout={(event) => {
+                        blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
+                        restoreReadingPosition();
+                      }}
+                    >
+                      {renderHighlightedParagraph(
+                        block.text,
+                        vocab,
+                        `${story.id}-${index}`,
+                        (word, contextSentence) =>
+                          setSelectedVocab(
+                            contextSentence ? { ...word, note: contextSentence } : word
+                          ),
+                        block.type,
+                        alreadyHighlightedShared
+                      )}
+                    </Pressable>
+                  ));
+                })()}
           </View>
 
           {isOfflineAudio ? (
@@ -924,6 +1304,28 @@ export function ReaderScreen(args: {
               <View style={styles.vocabBubbleHeader}>
                 <View style={styles.vocabBubbleTitleStack}>
                   <Text style={styles.vocabBubbleWord}>{selectedVocab.word}</Text>
+                  {(() => {
+                    // Small type badge under the word (Verb / Noun / etc.)
+                    // Tinted with the same hue family as the inline pill so
+                    // the visual association is reinforced from the popup.
+                    const normalizedType = normalizeVocabType(selectedVocab.type, {
+                      word: selectedVocab.word,
+                      definition: selectedVocab.definition,
+                    });
+                    if (!normalizedType || normalizedType === "other") return null;
+                    return (
+                      <View
+                        style={[
+                          styles.vocabBubbleTypeBadge,
+                          { backgroundColor: VOCAB_TYPE_BACKGROUNDS[normalizedType] },
+                        ]}
+                      >
+                        <Text style={styles.vocabBubbleTypeBadgeText}>
+                          {getVocabTypeLabel(normalizedType)}
+                        </Text>
+                      </View>
+                    );
+                  })()}
                 </View>
                 <Pressable onPress={() => setSelectedVocab(null)} style={styles.vocabClose}>
                   <Text style={styles.vocabCloseText}>×</Text>
@@ -987,6 +1389,18 @@ export function ReaderScreen(args: {
             }
           }}
           onProgressChange={(playback) => {
+            // Karaoke seam: store a snapshot of the player's position so
+            // the 50 ms interpolation interval can extrapolate between
+            // these 500 ms ticks. The player's own update cadence is too
+            // coarse for word-level highlighting on its own.
+            if (wordTimings && playback.isLoaded) {
+              lastPlaybackRef.current = {
+                positionMillis: playback.positionMillis,
+                wallClockMs: Date.now(),
+                isPlaying: playback.isPlaying,
+                rate: playback.rate || 1,
+              };
+            }
             if (playback.isLoaded && playback.durationMillis > 0) {
               const progressSec = playback.positionMillis / 1000;
               const durationSec = playback.durationMillis / 1000;
@@ -1375,20 +1789,139 @@ const styles = StyleSheet.create({
   highlightedPill: {
     // Inline <View> embedded via NSTextAttachment. iOS places the View so
     // its TOP aligns with the surrounding line's top (ascender), which puts
-    // the visible amber block too low relative to the text baseline. A
-    // small negative translateY shifts the pill up so it visually centers
-    // on the text's cap-height band.
-    backgroundColor: "#f8c15c",
+    // the visible block too low relative to the text baseline. A small
+    // negative translateY shifts the pill up so it visually centers on the
+    // text's cap-height band.
+    //
+    // Vocab pills are now sky-blue: warm amber is reserved for the
+    // karaoke active highlight, so vocab gets a cool hue to read as a
+    // distinct kind of mark.
+    backgroundColor: "rgba(125, 211, 252, 0.55)",
     borderRadius: 6,
     paddingHorizontal: 5,
     paddingVertical: 1,
     transform: [{ translateY: -4 }],
   },
   highlightedPillText: {
-    color: "#1a1205",
+    // Dark navy text reads cleanly on top of the sky-blue vocab pill.
+    color: "#0e1727",
     fontSize: 20,
     fontWeight: "700",
     lineHeight: 20,
+  },
+  // Karaoke (word-level audio highlight) styles. iOS NSTextAttachment
+  // does not consistently honor negative `margin` on inline <View>
+  // wrappers, so we keep the active pill's bounding box at exactly the
+  // text's natural width — zero horizontal padding, just a tight
+  // rounded background — to avoid the surrounding line being pushed
+  // sideways every time the highlight advances.
+  karaokeActivePill: {
+    backgroundColor: "#fcd34d",
+    borderRadius: 6,
+    paddingHorizontal: 0,
+    paddingVertical: 1,
+    transform: [{ translateY: -4 }],
+  },
+  karaokeActivePillText: {
+    color: "#1a1205",
+    fontSize: 20,
+    // Medium weight: visibly matches the paragraph's optical density
+    // without the ~3-4 px width gain of true bold (700) that was
+    // pushing surrounding words around. Goes a hair beyond regular
+    // to compensate for iOS rendering Text-inside-View slightly
+    // thinner than top-level paragraph Text.
+    fontWeight: "500",
+    lineHeight: 20,
+  },
+  // Inline highlight for non-vocab active words. Uses a plain <Text>
+  // with backgroundColor (no inline <View>) so the layout box is
+  // exactly the same as a non-highlighted word and surrounding text
+  // never moves. The lineHeight is set tight to fontSize so the
+  // colored background hugs the glyph cap-height instead of filling
+  // the paragraph's full 40 px line. borderRadius is honored on iOS
+  // Text background since RN 0.71+, so the corners come out rounded.
+  karaokeActiveInlineText: {
+    color: "#1a1205",
+    fontSize: 20,
+    lineHeight: 24,
+    backgroundColor: "#fcd34d",
+    borderRadius: 6,
+  },
+  // === Per-word inline <View> wrappers (every karaoke word) ===
+  // Two-layer structure to give the inline attachment the same baseline
+  // as the surrounding paragraph text. The outer wrapper occupies the
+  // full 40 px line height (via vertical padding) so iOS computes the
+  // line's baseline from a 40 px element instead of the 24 px inner
+  // pill — periods and commas in the gap text then sit on the correct
+  // line baseline. The inner wrapper carries the visible rounded
+  // background and is naturally sized by its 24 px inner Text.
+  karaokeWordOuter: {
+    // Empirical sweep: (8,8) sat slightly low, (12,4) sat slightly high.
+    // (10,6) is the middle of those two and should land at the visual
+    // baseline of the surrounding text.
+    paddingTop: 10,
+    paddingBottom: 6,
+    paddingHorizontal: 0,
+  },
+  karaokeWordContainerPlain: {
+    paddingHorizontal: 0,
+    paddingVertical: 0,
+    borderRadius: 6,
+  },
+  // Vocab pill: same padding + bold + size as the legacy highlightedPill
+  // so the transition from the first paint to the karaoke render is
+  // visually invisible. Sky-blue background marks "this word has a
+  // definition" without competing with the warm amber active highlight.
+  karaokeWordContainerVocab: {
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+    borderRadius: 6,
+    backgroundColor: "rgba(125, 211, 252, 0.55)",
+  },
+  // Active highlight ON a vocab word: same padding/weight footprint as
+  // the resting vocab pill, so toggling only swaps the background from
+  // the cool sky-blue to the warm amber.
+  karaokeWordContainerActiveVocab: {
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+    borderRadius: 6,
+    backgroundColor: "#f8c15c",
+  },
+  // Active highlight on a non-vocab word: tight pill, no padding so
+  // toggling onto/off a plain word does not shift surrounding text.
+  karaokeWordContainerActive: {
+    paddingHorizontal: 0,
+    paddingVertical: 0,
+    borderRadius: 6,
+    backgroundColor: "#f8c15c",
+  },
+  karaokeWordText: {
+    color: "#eef4ff",
+    fontSize: 20,
+    lineHeight: 24,
+  },
+  karaokeWordTextDark: {
+    // Dark navy text on warm amber active background.
+    color: "#0e1727",
+    fontSize: 20,
+    lineHeight: 24,
+  },
+  karaokeWordTextVocabBold: {
+    // Dark navy text on sky-blue vocab background — same dark hue as
+    // the legacy reader's vocab pill so the pre-fetch / post-fetch
+    // transition is invisible.
+    color: "#0e1727",
+    fontSize: 20,
+    fontWeight: "700",
+    lineHeight: 24,
+  },
+  karaokeWordTextVocabWhite: {
+    // White text variant for the vocab palette sandbox. Pairs with the
+    // saturated colored pills so each highlighted word stays readable.
+    color: "#ffffff",
+    fontSize: 20,
+    fontWeight: "700",
+    lineHeight: 24,
   },
   vocabOverlay: {
     position: "absolute",
@@ -1432,6 +1965,20 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 22,
     fontWeight: "800",
+  },
+  vocabBubbleTypeBadge: {
+    alignSelf: "flex-start",
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 999,
+    marginTop: 4,
+  },
+  vocabBubbleTypeBadgeText: {
+    color: "#ffffff",
+    fontSize: 11,
+    fontWeight: "700",
+    letterSpacing: 0.4,
+    textTransform: "uppercase",
   },
   vocabClose: {
     borderRadius: 999,

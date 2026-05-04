@@ -1,0 +1,576 @@
+import { memo, useMemo } from "react";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Feather } from "@expo/vector-icons";
+import Svg, { Circle, G } from "react-native-svg";
+
+/**
+ * PracticeOrbit — pantalla "Practice" rediseñada.
+ *
+ * Idea: invertir el flujo previo (4 cards, usuario elige modo). Ahora el
+ * algoritmo decide y el usuario solo presiona START. Los 4 modos siguen
+ * disponibles como atajo secundario para entrenar una habilidad puntual.
+ *
+ * Recompensas visibles ANTES del CTA:
+ *   - Streak chip (ya cuenta hacer Practice como actividad del día).
+ *   - XP% del daily goal (XP que va a sumar la sesión, ya calculado en
+ *     gamification.ts).
+ *   - "10 DUE" + topic dominante: el usuario ve QUÉ va a practicar
+ *     antes de empezar.
+ *
+ * Diseño visual: anillo segmentado en 4 colores (uno por modo) con
+ * ancho proporcional a las palabras en cada modo, orbe verde central
+ * con play. Versión Duolingo-like del Daily Goal ring.
+ */
+
+export type PracticeModeKey = "meaning" | "context" | "listening" | "match";
+
+export type PracticeOrbitProps = {
+  topicLabel: string | null;
+  totalDue: number;
+  estimatedMinutes: number;
+  xpReward: number;
+  modeBreakdown: Record<PracticeModeKey, number>;
+  streakDays: number;
+  dailyGoalPercent: number;
+  upNextWords: Array<{ word: string; translation: string }>;
+  upNextRemainingCount: number;
+  onStart: () => void;
+  onPickSkill: (mode: PracticeModeKey) => void;
+  emptyState?: boolean;
+};
+
+const MODE_COLORS: Record<PracticeModeKey, string> = {
+  meaning: "#facc15", // amarillo
+  context: "#86efac", // verde menta
+  listening: "#f0abfc", // rosa
+  match: "#7dd3fc", // cyan
+};
+
+const MODE_ICONS: Record<PracticeModeKey, "zap" | "message-circle" | "headphones" | "link"> = {
+  meaning: "zap",
+  context: "message-circle",
+  listening: "headphones",
+  match: "link",
+};
+
+const MODE_LABELS: Record<PracticeModeKey, string> = {
+  meaning: "Meaning",
+  context: "Context",
+  listening: "Listening",
+  match: "Match",
+};
+
+const MODE_ORDER: PracticeModeKey[] = ["meaning", "context", "listening", "match"];
+
+const RING_SIZE = 240;
+const RING_STROKE = 28;
+const RING_RADIUS = (RING_SIZE - RING_STROKE) / 2;
+const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
+
+type RingSegment = {
+  mode: PracticeModeKey;
+  count: number;
+  color: string;
+  dashLength: number;
+  dashOffset: number;
+};
+
+function buildRingSegments(
+  breakdown: Record<PracticeModeKey, number>,
+  total: number
+): RingSegment[] {
+  // Cada segmento ocupa una porción del ring proporcional a su count.
+  // Dejamos un gap pequeño entre segmentos para que se lean separados.
+  const GAP_DEG = 4;
+  const totalGapDeg = GAP_DEG * MODE_ORDER.filter((m) => breakdown[m] > 0).length;
+  const usableDeg = 360 - totalGapDeg;
+  const segments: RingSegment[] = [];
+  let cursorDeg = -90; // arrancar arriba (12 en punto)
+  for (const mode of MODE_ORDER) {
+    const count = breakdown[mode];
+    if (count <= 0) continue;
+    const fraction = total > 0 ? count / total : 0;
+    const arcDeg = usableDeg * fraction;
+    const dashLength = (arcDeg / 360) * RING_CIRCUMFERENCE;
+    // strokeDashoffset rota el patrón. Por la rotación de Svg de -90deg
+    // el offset 0 = arriba.
+    const startFromTopDeg = cursorDeg + 90; // grados desde "arriba"
+    const dashOffset = -((startFromTopDeg / 360) * RING_CIRCUMFERENCE);
+    segments.push({
+      mode,
+      count,
+      color: MODE_COLORS[mode],
+      dashLength,
+      dashOffset,
+    });
+    cursorDeg += arcDeg + GAP_DEG;
+  }
+  return segments;
+}
+
+const HeaderChips = memo(function HeaderChips({
+  streakDays,
+  dailyGoalPercent,
+}: {
+  streakDays: number;
+  dailyGoalPercent: number;
+}) {
+  return (
+    <View style={styles.headerChipsRow}>
+      <View style={styles.headerChip}>
+        <Feather name="zap" size={12} color="#fb923c" />
+        <Text style={styles.headerChipText}>{streakDays}</Text>
+      </View>
+      <View style={styles.headerChip}>
+        <Feather name="trending-up" size={12} color="#7dd3fc" />
+        <Text style={styles.headerChipText}>{Math.min(100, Math.round(dailyGoalPercent))}%</Text>
+      </View>
+    </View>
+  );
+});
+
+const Legend = memo(function Legend({
+  breakdown,
+}: {
+  breakdown: Record<PracticeModeKey, number>;
+}) {
+  return (
+    <View style={styles.legendRow}>
+      {MODE_ORDER.map((mode) =>
+        breakdown[mode] > 0 ? (
+          <View key={mode} style={styles.legendItem}>
+            <View style={[styles.legendDot, { backgroundColor: MODE_COLORS[mode] }]} />
+            <Text style={styles.legendLabel}>{MODE_LABELS[mode]}</Text>
+            <Text style={styles.legendCount}>{breakdown[mode]}</Text>
+          </View>
+        ) : null
+      )}
+    </View>
+  );
+});
+
+const UpNextCard = memo(function UpNextCard({
+  words,
+  remaining,
+}: {
+  words: Array<{ word: string; translation: string }>;
+  remaining: number;
+}) {
+  if (words.length === 0) return null;
+  return (
+    <View style={styles.upNextCard}>
+      <View style={styles.upNextHeader}>
+        <Text style={styles.upNextEyebrow}>UP NEXT</Text>
+        {remaining > 0 ? (
+          <Text style={styles.upNextRemaining}>+{remaining} more</Text>
+        ) : null}
+      </View>
+      {words.map((entry) => (
+        <View key={entry.word} style={styles.upNextRow}>
+          <Text style={styles.upNextWord}>{entry.word}</Text>
+          <Text style={styles.upNextTranslation}>{entry.translation}</Text>
+        </View>
+      ))}
+    </View>
+  );
+});
+
+export function PracticeOrbit({
+  topicLabel,
+  totalDue,
+  estimatedMinutes,
+  xpReward,
+  modeBreakdown,
+  streakDays,
+  dailyGoalPercent,
+  upNextWords,
+  upNextRemainingCount,
+  onStart,
+  onPickSkill,
+  emptyState,
+}: PracticeOrbitProps) {
+  const segments = useMemo(
+    () => buildRingSegments(modeBreakdown, totalDue),
+    [modeBreakdown, totalDue]
+  );
+
+  if (emptyState) {
+    return (
+      <View style={styles.shell}>
+        <View style={styles.headerRow}>
+          <Text style={styles.eyebrow}>PRACTICE</Text>
+        </View>
+        <View style={styles.emptyCard}>
+          <Feather name="bookmark" size={28} color="#cdd9ec" />
+          <Text style={styles.emptyTitle}>No words to review yet</Text>
+          <Text style={styles.emptyBody}>
+            Save words while reading and they will show up here as practice exercises.
+          </Text>
+        </View>
+      </View>
+    );
+  }
+
+  return (
+    <View style={styles.shell}>
+      <View style={styles.headerRow}>
+        <Text style={styles.eyebrow}>PRACTICE</Text>
+        <HeaderChips streakDays={streakDays} dailyGoalPercent={dailyGoalPercent} />
+      </View>
+
+      {topicLabel ? (
+        <Text style={styles.topicLine}>
+          From <Text style={styles.topicLineEm}>{topicLabel}</Text>
+        </Text>
+      ) : null}
+
+      <View style={styles.dueBadgeWrap}>
+        <View style={styles.dueBadge}>
+          <Text style={styles.dueBadgeNumber}>{totalDue}</Text>
+          <Text style={styles.dueBadgeLabel}>DUE</Text>
+        </View>
+      </View>
+
+      <View style={styles.ringWrap}>
+        <Svg width={RING_SIZE} height={RING_SIZE}>
+          <G rotation="-90" origin={`${RING_SIZE / 2}, ${RING_SIZE / 2}`}>
+            {/* Track de fondo */}
+            <Circle
+              cx={RING_SIZE / 2}
+              cy={RING_SIZE / 2}
+              r={RING_RADIUS}
+              stroke="rgba(255,255,255,0.06)"
+              strokeWidth={RING_STROKE}
+              fill="transparent"
+            />
+            {segments.map((seg) => (
+              <Circle
+                key={seg.mode}
+                cx={RING_SIZE / 2}
+                cy={RING_SIZE / 2}
+                r={RING_RADIUS}
+                stroke={seg.color}
+                strokeWidth={RING_STROKE}
+                strokeLinecap="butt"
+                fill="transparent"
+                strokeDasharray={`${seg.dashLength} ${RING_CIRCUMFERENCE - seg.dashLength}`}
+                strokeDashoffset={seg.dashOffset}
+              />
+            ))}
+          </G>
+        </Svg>
+        <Pressable
+          onPress={onStart}
+          accessibilityRole="button"
+          accessibilityLabel="Start practice session"
+          testID="qa-practice-start"
+          style={({ pressed }) => [
+            styles.centerOrb,
+            pressed ? styles.centerOrbPressed : null,
+          ]}
+        >
+          <View style={styles.centerOrbInner}>
+            <Feather name="play" size={28} color="#0c1626" />
+            <Text style={styles.centerOrbStart}>START</Text>
+            <Text style={styles.centerOrbDuration}>~{estimatedMinutes} MIN</Text>
+          </View>
+        </Pressable>
+      </View>
+
+      <Legend breakdown={modeBreakdown} />
+
+      <UpNextCard words={upNextWords} remaining={upNextRemainingCount} />
+
+      <View style={styles.skillSection}>
+        <Text style={styles.skillSectionEyebrow}>OR PICK A SKILL</Text>
+        <Text style={styles.skillSectionTitle}>Single-skill drills</Text>
+        <View style={styles.skillRow}>
+          {MODE_ORDER.map((mode) => (
+            <Pressable
+              key={mode}
+              onPress={() => onPickSkill(mode)}
+              accessibilityRole="button"
+              accessibilityLabel={`qa-practice-skill-${mode}`}
+              testID={`qa-practice-skill-${mode}`}
+              style={({ pressed }) => [
+                styles.skillCard,
+                pressed ? styles.skillCardPressed : null,
+              ]}
+            >
+              <View style={[styles.skillIconWrap, { backgroundColor: `${MODE_COLORS[mode]}33` }]}>
+                <Feather name={MODE_ICONS[mode]} size={16} color={MODE_COLORS[mode]} />
+              </View>
+              <Text style={styles.skillLabel}>{MODE_LABELS[mode]}</Text>
+            </Pressable>
+          ))}
+        </View>
+      </View>
+
+      <Text style={styles.xpFootnote}>+{xpReward} XP available</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  shell: {
+    paddingHorizontal: 20,
+    paddingTop: 6,
+    paddingBottom: 32,
+  },
+  headerRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 14,
+  },
+  eyebrow: {
+    color: "#7d8aa5",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 1.4,
+  },
+  headerChipsRow: {
+    flexDirection: "row",
+    gap: 8,
+  },
+  headerChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.06)",
+  },
+  headerChipText: {
+    color: "#f5f7fb",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+  topicLine: {
+    color: "#cdd9ec",
+    fontSize: 13,
+    fontWeight: "600",
+    textAlign: "center",
+    marginBottom: 8,
+  },
+  topicLineEm: {
+    color: "#ffffff",
+    fontWeight: "900",
+  },
+  dueBadgeWrap: {
+    alignItems: "center",
+    marginBottom: -18,
+    zIndex: 2,
+  },
+  dueBadge: {
+    backgroundColor: "#0a1424",
+    paddingHorizontal: 14,
+    paddingVertical: 6,
+    borderRadius: 12,
+    flexDirection: "row",
+    alignItems: "baseline",
+    gap: 6,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+  },
+  dueBadgeNumber: {
+    color: "#ffffff",
+    fontSize: 28,
+    fontWeight: "900",
+    letterSpacing: 0.4,
+  },
+  dueBadgeLabel: {
+    color: "#cdd9ec",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 1.2,
+  },
+  ringWrap: {
+    width: RING_SIZE,
+    height: RING_SIZE,
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  centerOrb: {
+    position: "absolute",
+    width: RING_SIZE - RING_STROKE * 2 - 18,
+    height: RING_SIZE - RING_STROKE * 2 - 18,
+    borderRadius: 999,
+    backgroundColor: "#86efac",
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#000",
+    shadowOpacity: 0.25,
+    shadowRadius: 14,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 6,
+  },
+  centerOrbPressed: {
+    opacity: 0.85,
+    transform: [{ scale: 0.97 }],
+  },
+  centerOrbInner: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  centerOrbStart: {
+    color: "#0c1626",
+    fontSize: 14,
+    fontWeight: "900",
+    letterSpacing: 1.4,
+    marginTop: 2,
+  },
+  centerOrbDuration: {
+    color: "rgba(12,22,38,0.7)",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 0.6,
+  },
+  legendRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: 14,
+    marginTop: 14,
+  },
+  legendItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  legendDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 999,
+  },
+  legendLabel: {
+    color: "#cdd9ec",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  legendCount: {
+    color: "#ffffff",
+    fontSize: 12,
+    fontWeight: "900",
+  },
+  upNextCard: {
+    marginTop: 18,
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderRadius: 14,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.05)",
+  },
+  upNextHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 6,
+  },
+  upNextEyebrow: {
+    color: "#7d8aa5",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.4,
+  },
+  upNextRemaining: {
+    color: "#7dd3fc",
+    fontSize: 11,
+    fontWeight: "800",
+  },
+  upNextRow: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    gap: 8,
+    paddingVertical: 3,
+  },
+  upNextWord: {
+    color: "#ffffff",
+    fontSize: 14,
+    fontWeight: "900",
+  },
+  upNextTranslation: {
+    color: "#cdd9ec",
+    fontSize: 13,
+    fontWeight: "600",
+  },
+  skillSection: {
+    marginTop: 22,
+  },
+  skillSectionEyebrow: {
+    color: "#7d8aa5",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.4,
+    marginBottom: 4,
+  },
+  skillSectionTitle: {
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "900",
+    marginBottom: 10,
+  },
+  skillRow: {
+    flexDirection: "row",
+    gap: 10,
+  },
+  skillCard: {
+    flex: 1,
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderRadius: 14,
+    paddingVertical: 14,
+    paddingHorizontal: 10,
+    alignItems: "center",
+    gap: 8,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.05)",
+  },
+  skillCardPressed: {
+    opacity: 0.7,
+  },
+  skillIconWrap: {
+    width: 36,
+    height: 36,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  skillLabel: {
+    color: "#ffffff",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  xpFootnote: {
+    marginTop: 16,
+    color: "#cdd9ec",
+    fontSize: 12,
+    fontWeight: "700",
+    textAlign: "center",
+  },
+  emptyCard: {
+    marginTop: 30,
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderRadius: 18,
+    padding: 22,
+    alignItems: "center",
+    gap: 8,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.05)",
+  },
+  emptyTitle: {
+    color: "#ffffff",
+    fontSize: 16,
+    fontWeight: "900",
+    marginTop: 6,
+  },
+  emptyBody: {
+    color: "#cdd9ec",
+    fontSize: 13,
+    fontWeight: "600",
+    textAlign: "center",
+    lineHeight: 18,
+  },
+});

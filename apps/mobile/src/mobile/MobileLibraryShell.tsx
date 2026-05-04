@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Children, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import * as SecureStore from "expo-secure-store";
 import * as Haptics from "expo-haptics";
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
@@ -43,6 +43,7 @@ import { requireOptionalNativeModule } from "expo-modules-core";
 import { ReaderScreen } from "./ReaderScreen";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
+import { PracticeOrbit, type PracticeModeKey as OrbitModeKey } from "./PracticeOrbit";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { LanguageFlag } from "./LanguageFlag";
@@ -1549,6 +1550,43 @@ function preferencesEqual(a: MobilePreferences, b: MobilePreferences): boolean {
   );
 }
 
+// Componente aislado para el halo pulsante del "next story". Lo
+// extraemos a nivel de módulo + React.memo para que el style array
+// (que contiene el Animated node `opacity`) NO se reconstruya en
+// cada render del shell. Antes el style era inline dentro de
+// `renderJourneyStoryNode`, así que el array y el objeto inline
+// `{ backgroundColor, opacity }` eran nuevos en cada pase. Eso
+// hacía que `Animated.createAnimatedComponent` detache+attache el
+// listener nativo bajo presión de renders (scroll del path, sticky
+// topic state, etc.) y bajo carga el attach no se completaba: el
+// halo quedaba congelado en el último valor mientras el float
+// seguía vivo (el float también era inline pero translateY tolera
+// mejor el detach/attach que opacity, según observación previa).
+// Con `memo` y props estables (color: string memoizado por slug,
+// opacity: nodo memoizado a nivel del componente), el inner
+// Animated.View no se desmonta ni cambia su style, así que el
+// listener nativo queda enganchado de forma persistente.
+const NextStoryGlowOverlay = memo(function NextStoryGlowOverlay({
+  color,
+  opacity,
+}: {
+  color: string;
+  opacity: Animated.AnimatedInterpolation<number>;
+}) {
+  // Memo del style: si memo() previene re-render por props iguales,
+  // este useMemo no se re-ejecuta y el array de style mantiene la
+  // misma referencia para el Animated.View. Así, aún si el padre
+  // se desmonta y remonta (cambio de tab + vuelta a home), una vez
+  // remontado el listener nativo se attach una sola vez al mismo
+  // style estable, sin oscilaciones detach+attach que congelaban
+  // el halo.
+  const style = useMemo(
+    () => [styles.journeyNodePillNextGlow, { backgroundColor: color, opacity }],
+    [color, opacity]
+  );
+  return <Animated.View pointerEvents="none" style={style} />;
+});
+
 export function MobileLibraryShell(args: {
   sessionToken?: string | null;
   sessionUserId?: string | null;
@@ -2540,6 +2578,19 @@ export function MobileLibraryShell(args: {
         outputRange: [-2.5, 2.5],
       }),
     [journeyNextPulse]
+  );
+  // Style estable del float vertical de la "next" story. ANTES se
+  // construía inline dentro del IIFE de `renderJourneyStoryNode`
+  // como `{ transform: [{ translateY: journeyNextPulseTranslateY }] }`,
+  // así que cada render del shell creaba un objeto nuevo. Bajo
+  // cambio de tab y vuelta a home (Animated.View se desmonta +
+  // remonta), el detach+attach del listener nativo de translateY
+  // a veces no se completaba y el float quedaba congelado igual
+  // que pasaba con el halo. Memoizar a nivel del componente da una
+  // referencia estable durante toda la vida del shell.
+  const nextStoryFloatStyle = useMemo(
+    () => ({ transform: [{ translateY: journeyNextPulseTranslateY }] }),
+    [journeyNextPulseTranslateY]
   );
 
   // Shimmer experiment (variant B). Loop independiente del pulso del
@@ -7917,57 +7968,101 @@ export function MobileLibraryShell(args: {
     </>
   );
 
+  // Distribución visual de las palabras due en los 4 modos para el ring
+  // del PracticeOrbit. Por ahora es ponderada (40/30/20/10), no por
+  // propiedades reales de cada palabra. Funciona para el preview;
+  // cuando implementemos la sesión mixta real, este breakdown puede
+  // alimentarse desde el mismo builder.
+  const orbitModeBreakdown = useMemo(() => {
+    const totalDue = duePracticeItems.length;
+    if (totalDue === 0) return { meaning: 0, context: 0, listening: 0, match: 0 };
+    const weights: Record<OrbitModeKey, number> = {
+      meaning: 0.4,
+      context: 0.3,
+      listening: 0.2,
+      match: 0.1,
+    };
+    const result: Record<OrbitModeKey, number> = {
+      meaning: Math.floor(totalDue * weights.meaning),
+      context: Math.floor(totalDue * weights.context),
+      listening: Math.floor(totalDue * weights.listening),
+      match: Math.floor(totalDue * weights.match),
+    };
+    const order: OrbitModeKey[] = ["meaning", "context", "listening", "match"];
+    let assigned = order.reduce((sum, key) => sum + result[key], 0);
+    let i = 0;
+    while (assigned < totalDue) {
+      result[order[i % order.length]] += 1;
+      assigned += 1;
+      i += 1;
+    }
+    // Match agrupa de 4 en 4 en backend; si total < 4 lo dejamos en 0
+    // y reparto a meaning para no mostrar "Match 1" sin sentido visual.
+    if (totalDue < 4 && result.match > 0) {
+      result.meaning += result.match;
+      result.match = 0;
+    }
+    return result;
+  }, [duePracticeItems]);
+
+  // Topic label: por ahora fijo. El campo "From {topic}" del mockup
+  // requiere saber el topic dominante de las palabras due, lo cual
+  // necesita metadata de cada Favorite (storySlug → topic). Se va a
+  // resolver en una iteración siguiente; por ahora "Your saved words"
+  // funciona como fallback honesto.
+  const orbitTopicLabel = "Your saved words";
+
+  const orbitUpNextWords = useMemo(
+    () =>
+      duePracticeItems.slice(0, 3).map((item) => ({
+        word: item.word,
+        translation: item.translation,
+      })),
+    [duePracticeItems]
+  );
+
+  const orbitEstimatedMinutes = useMemo(() => {
+    const total = duePracticeItems.length;
+    if (total === 0) return 0;
+    // ~24s por ejercicio, máximo 10 ejercicios por sesión.
+    const exercises = Math.min(10, total);
+    return Math.max(1, Math.round((exercises * 24) / 60));
+  }, [duePracticeItems]);
+
+  const orbitDailyGoalPercent = useMemo(() => {
+    const goal = 50; // XP / día (placeholder hasta exponer el goal real)
+    const today = remoteProgress?.gamification?.todayXp ?? 0;
+    return goal > 0 ? (today / goal) * 100 : 0;
+  }, [remoteProgress]);
+
+  const orbitStreak = remoteProgress?.gamification?.dailyStreak ?? maxFavoriteStreak ?? 0;
+
   const practiceView = (
     <>
-      <View style={styles.hero}>
-        <View style={styles.heroHeaderRow}>
-          <View style={styles.heroTextBlock}>
-            <Text style={styles.eyebrow}>{favoriteWords.length > 0 ? "Pick a mode" : "Get started"}</Text>
-            <Text style={styles.title}>Practice</Text>
-            <Text style={styles.practiceSubtitle}>
-              {favoriteWords.length > 0
-                ? "Four fast review modes."
-                : "Save words while reading and they will appear here as practice modes."}
-            </Text>
-          </View>
-          <MenuTrigger onPress={() => setMenuOpen(true)} />
-        </View>
-      </View>
-
       {!isSignedIn ? (
-        <View style={[styles.card, styles.accountCard]}>
-          <Text style={styles.sectionTitle}>Sign in to practice</Text>
-          <Text style={styles.metaLine}>
-            Practice your saved vocabulary with meaning, context, listening and matching rounds.
-          </Text>
-          <Pressable
-            onPress={onRequestSignIn}
-            style={[styles.inlineButton, styles.primaryButton]}
-          >
-            <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Sign in</Text>
-          </Pressable>
-        </View>
-      ) : favoriteWords.length === 0 ? (
-        <View style={[styles.card, styles.accountCard]}>
-          <Text style={styles.sectionTitle}>No saved vocabulary yet</Text>
-          <Text style={styles.metaLine}>
-            Save words while reading and they will appear here as exercises.
-          </Text>
-          <View style={styles.bookActionsRow}>
+        <>
+          <View style={styles.hero}>
+            <View style={styles.heroHeaderRow}>
+              <View style={styles.heroTextBlock}>
+                <Text style={styles.eyebrow}>Get started</Text>
+                <Text style={styles.title}>Practice</Text>
+              </View>
+              <MenuTrigger onPress={() => setMenuOpen(true)} />
+            </View>
+          </View>
+          <View style={[styles.card, styles.accountCard]}>
+            <Text style={styles.sectionTitle}>Sign in to practice</Text>
+            <Text style={styles.metaLine}>
+              Practice your saved vocabulary with meaning, context, listening and matching rounds.
+            </Text>
             <Pressable
-              onPress={() => setActiveScreen("explore")}
+              onPress={onRequestSignIn}
               style={[styles.inlineButton, styles.primaryButton]}
             >
-              <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Explore stories</Text>
-            </Pressable>
-            <Pressable
-              onPress={() => setActiveScreen("favorites")}
-              style={styles.inlineButton}
-            >
-              <Text style={styles.inlineButtonText}>Open favorites</Text>
+              <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Sign in</Text>
             </Pressable>
           </View>
-        </View>
+        </>
       ) : (
         <>
           {practiceLoadError ? (
@@ -7975,68 +8070,20 @@ export function MobileLibraryShell(args: {
               <Text style={styles.errorText}>{practiceLoadError}</Text>
             </View>
           ) : null}
-          <View style={styles.practiceGridShell}>
-            {[0, 1].map((rowIndex) => (
-              <View key={`practice-row-${rowIndex}`} style={styles.practiceRow}>
-                {visiblePracticeCards
-                  .slice(rowIndex * 2, rowIndex * 2 + 2)
-                  .map((card) => (
-                    <Pressable
-                      key={card.key}
-                      onPress={() => void openPracticeMode(card.key)}
-                      style={[
-                        styles.practiceModeCard,
-                        { backgroundColor: card.background },
-                      ]}
-                    >
-                      <View style={styles.practiceModeHeader}>
-                        <View style={styles.practiceModeHeaderText}>
-                          <Text numberOfLines={1} style={styles.practiceModeEyebrow}>{card.eyebrow}</Text>
-                          <Text
-                            numberOfLines={1}
-                            adjustsFontSizeToFit
-                            minimumFontScale={0.75}
-                            style={styles.practiceModeTitle}
-                          >
-                            {card.title}
-                          </Text>
-                        </View>
-                        {/* Icono siempre blanco sobre wrap translúcido
-                            blanco — mismo tratamiento que los topic
-                            panels del journey. Antes el ícono se
-                            renderizaba con `card.accent`, lo que
-                            sobre fondos vibrantes (verde, naranja)
-                            quedaba apagado o de hue similar al fondo. */}
-                        <View style={styles.practiceModeIconWrap}>
-                          <PracticeModeIcon icon={card.icon} color="#ffffff" />
-                        </View>
-                      </View>
-                      <View style={styles.practiceModeBody}>
-                        <Text style={styles.practiceModeDetail}>{card.detail}</Text>
-                      </View>
-                      <View style={styles.practiceModeFooter}>
-                        <View style={styles.practiceModeFooterMeta}>
-                          {card.key === recommendedPracticeMode ? (
-                            <View style={styles.practiceRecommendedBadge}>
-                              <Text style={styles.practiceRecommendedText}>Best next</Text>
-                            </View>
-                          ) : null}
-                          <View style={styles.practiceModeMetaPill}>
-                            <Text style={styles.practiceModeMetaText}>
-                              {favoriteWords.length} ready
-                            </Text>
-                          </View>
-                        </View>
-                        <View style={styles.practiceModeActionCentered}>
-                          <Text style={styles.practiceModeActionTextLarge}>Play</Text>
-                        </View>
-                      </View>
-                    </Pressable>
-                  ))}
-              </View>
-            ))}
-          </View>
-
+          <PracticeOrbit
+            topicLabel={favoriteWords.length === 0 ? null : orbitTopicLabel}
+            totalDue={duePracticeItems.length}
+            estimatedMinutes={orbitEstimatedMinutes}
+            xpReward={12}
+            modeBreakdown={orbitModeBreakdown}
+            streakDays={orbitStreak}
+            dailyGoalPercent={orbitDailyGoalPercent}
+            upNextWords={orbitUpNextWords}
+            upNextRemainingCount={Math.max(0, duePracticeItems.length - 3)}
+            onStart={() => void openPracticeMode(recommendedPracticeMode ?? "meaning")}
+            onPickSkill={(mode) => void openPracticeMode(mode)}
+            emptyState={favoriteWords.length === 0}
+          />
         </>
       )}
     </>
@@ -9850,6 +9897,12 @@ export function MobileLibraryShell(args: {
     let loop: Animated.CompositeAnimation | null = null;
     function startPulse() {
       if (loop) loop.stop();
+      // stopAnimation defensivo: si una timing previa quedó "in
+      // flight" (p.ej. interrumpida por un AppState change) podría
+      // seguir corriendo en paralelo con la nueva loop y pisar el
+      // valor. Forzar el stop antes del setValue garantiza arranque
+      // limpio.
+      journeyNextPulse.stopAnimation();
       journeyNextPulse.setValue(0.25);
       loop = Animated.loop(
         Animated.sequence([
@@ -9857,6 +9910,19 @@ export function MobileLibraryShell(args: {
             toValue: 0.85,
             duration: 1100,
             easing: Easing.inOut(Easing.ease),
+            // JS-driven (useNativeDriver:false) a propósito. Con
+            // native driver el loop se quedaba congelado al cambiar
+            // de tab + interactuar + volver a home: el rearm del
+            // useEffect creaba una loop nueva mientras el thread
+            // nativo aún tenía el estado inconsistente del anterior,
+            // y la nueva timing arrancaba muerta. La razón histórica
+            // para pasar a native driver fue evitar congelamientos
+            // bajo carga de renders, pero la causa real era que el
+            // style del Animated.View se reconstruía inline cada
+            // render y disparaba detach+attach del listener. Eso ya
+            // está resuelto memoizando los styles (NextStoryGlowOverlay
+            // + nextStoryFloatStyle), así que JS driver vuelve a ser
+            // seguro y resuelve el problema del rearm.
             useNativeDriver: false,
           }),
           Animated.timing(journeyNextPulse, {
@@ -9881,6 +9947,7 @@ export function MobileLibraryShell(args: {
       if (loop) loop.stop();
     };
   }, [journeyNextPulse, activeScreen, activeJourneyTrack?.id, globalJourneyNextStoryId]);
+
   const activeJourneyNextTopic = useMemo(() => {
     if (!activeJourneyLevel || !activeJourneyTopic) return null;
     const currentIndex = activeJourneyLevel.topics.findIndex((topic) => topic.slug === activeJourneyTopic.slug);
@@ -10364,22 +10431,19 @@ export function MobileLibraryShell(args: {
           // identical in size and weight; we only overlay a thin cyan
           // breathing inset ring + a subtle background tint so the user's
           // eye lands on it without the row screaming.
-          // Glow pulsante del color del topic. La opacity usa el nodo
-          // memoizado `journeyNextPulseOpacity` (declarado a nivel del
-          // componente) para que el listener no se detache+attache en
-          // cada render — eso causaba el congelamiento del halo bajo
-          // scroll/re-renders frecuentes.
+          // Glow pulsante del color del topic. Renderizado vía
+          // `NextStoryGlowOverlay` (memo) a nivel de módulo: ni el
+          // style array ni el objeto `{ backgroundColor, opacity }`
+          // se reconstruyen entre renders del shell, así el listener
+          // nativo del Animated.View del halo queda enganchado de
+          // forma persistente. Memoizar sólo el `interpolate()` no
+          // alcanzaba: el style inline cambiaba referencia en cada
+          // render igual y disparaba detach+attach.
           const nextOverlay =
             nodeVariant === "next" ? (
-              <Animated.View
-                pointerEvents="none"
-                style={[
-                  styles.journeyNodePillNextGlow,
-                  {
-                    backgroundColor: topicColor,
-                    opacity: journeyNextPulseOpacity,
-                  },
-                ]}
+              <NextStoryGlowOverlay
+                color={topicColor}
+                opacity={journeyNextPulseOpacity}
               />
             ) : null;
 
@@ -10440,14 +10504,11 @@ export function MobileLibraryShell(args: {
               </View>
             ) : null;
 
-          // Float vertical sutil (~3 px arriba/abajo) usando el nodo
-          // memoizado `journeyNextPulseTranslateY` — sólo en la "next".
-          const nextFloatStyle =
-            nodeVariant === "next"
-              ? {
-                  transform: [{ translateY: journeyNextPulseTranslateY }],
-                }
-              : null;
+          // Float vertical sutil. Usa el style memoizado a nivel del
+          // shell (`nextStoryFloatStyle`) en vez de construirlo inline
+          // aquí, así el Animated.View no detache+attache su listener
+          // native al cambiar de tab y volver a home.
+          const nextFloatStyle = nodeVariant === "next" ? nextStoryFloatStyle : null;
 
           const pressable = (
           <Pressable
@@ -11036,12 +11097,12 @@ export function MobileLibraryShell(args: {
   // Empty array on screens that aren't path mode → ScrollView
   // gets `undefined` and behaves normally.
   const journeyStickyIndices: number[] = [];
-  if (
+  const useNativeJourneySticky =
     activeScreen === "home" &&
     !journeyDetailTopicId &&
     !journeyVariantPickerOpen &&
-    activeJourneyTrack
-  ) {
+    Boolean(activeJourneyTrack);
+  if (useNativeJourneySticky && activeJourneyTrack) {
     let count = 0;
     activeJourneyTrack.levels.forEach((level, levelIdx) => {
       if (levelIdx > 0) count += 1; // level header item
@@ -11050,6 +11111,21 @@ export function MobileLibraryShell(args: {
         count += 1; // topic panel itself (the sticky one)
         count += topic.stories.length; // each story node
       });
+      // Level-end gate (espejea las condiciones del flatMap más
+      // abajo). Sin este conteo, los niveles posteriores quedan
+      // corridos por 1 → off-by-one que rompía el sticky nativo.
+      const gatingTopics = level.topics.filter((t) => t.storyCount > 0);
+      const clearedTopics = gatingTopics.filter((t) => t.checkpointPassed).length;
+      const requiredForLevel = Math.max(1, Math.ceil(gatingTopics.length * 0.75));
+      const nextLevelInTrackForCount = activeJourneyTrack?.levels[levelIdx + 1] ?? null;
+      if (
+        level.unlocked &&
+        nextLevelInTrackForCount &&
+        gatingTopics.length > 0 &&
+        clearedTopics < requiredForLevel
+      ) {
+        count += 1;
+      }
     });
   }
 
@@ -11331,14 +11407,14 @@ export function MobileLibraryShell(args: {
                     styles.journeyTopicPanel,
                     styles.journeyTopicPanelBevel,
                     { backgroundColor: topicPanelColor(topic.slug, level.id) },
-                    // Hide the in-flow panel ONLY when the floating
-                    // panel is currently covering the same topic — at
-                    // that moment they share the same Y so the swap
-                    // is invisible (no double-render of the same
-                    // card). We don't fade earlier because that's
-                    // what produced the "absorb" effect (in-flow
-                    // disappeared before being covered).
-                    stickyTopic?.slug === topic.slug ? styles.journeyTopicPanelHidden : null,
+                    // Con sticky nativo iOS no escondemos el in-flow:
+                    // iOS pinea el View directamente. Si lo
+                    // ocultáramos con opacity:0 estaría pineando un
+                    // panel invisible. Esta rama sólo aplica al
+                    // overlay JS-driven (cuando useNativeJourneySticky=false).
+                    !useNativeJourneySticky && stickyTopic?.slug === topic.slug
+                      ? styles.journeyTopicPanelHidden
+                      : null,
                   ]}
                 >
                   <View style={styles.journeyTopicPanelTextBlock}>
@@ -11504,12 +11580,10 @@ export function MobileLibraryShell(args: {
                       styles.journeyTopicPanel,
                       styles.journeyTopicPanelBevel,
                       { backgroundColor: topicPanelColor(topic.slug, level.id) },
-                      // When the floating sticky panel is showing
-                      // this same topic, hide the in-flow copy so the
-                      // user only sees ONE panel — earlier the two
-                      // overlapped briefly during the scroll handoff
-                      // and produced the visible flicker.
-                      stickyTopic?.slug === topic.slug ? { opacity: 0 } : null,
+                      // Idem: sólo aplicar cuando el sticky es JS-driven.
+                      !useNativeJourneySticky && stickyTopic?.slug === topic.slug
+                        ? { opacity: 0 }
+                        : null,
                     ]}
                   >
                     <View style={styles.journeyTopicPanelTextBlock}>
@@ -12502,7 +12576,7 @@ export function MobileLibraryShell(args: {
   // IA swap: tab "Home" muestra Journey path (lo más actionable a diario)
   // y tab "Library" (era "Journey" en bottom nav) muestra el contenido
   // de browsing/recomendaciones que antes vivía en Home.
-  let content = journeyView;
+  let content: React.ReactNode = journeyView;
   if (activeScreen === "explore") content = exploreView;
   if (activeScreen === "practice") content = practiceView;
   if (activeScreen === "favorites") content = favoritesView;
@@ -12510,6 +12584,15 @@ export function MobileLibraryShell(args: {
   if (activeScreen === "library") content = libraryView;
   if (activeScreen === "settings") content = settingsView;
   if (activeScreen === "create") content = createView;
+  // Cuando usamos sticky nativo iOS, los hijos del ScrollView deben
+  // ser un array PLANO (no un fragment con conditional-null siblings),
+  // si no `stickyHeaderIndices` no resuelve correctamente las
+  // posiciones — fue exactamente lo que rompió el intento anterior.
+  // `Children.toArray` aplana el fragment y filtra los nulls,
+  // dejando el array que journeyStickyIndices espera.
+  if (useNativeJourneySticky) {
+    content = Children.toArray(journeyView.props.children);
+  }
 
   return (
     <View style={styles.shell}>
@@ -12565,13 +12648,32 @@ export function MobileLibraryShell(args: {
       <ScrollView
         ref={shellScrollRef}
         style={styles.scrollView}
-        contentContainerStyle={styles.container}
+        // En path mode el primer panel arranca pegado al top bar
+        // (paddingTop:0). Así el panel ya está en su posición sticky
+        // desde el render inicial: al hacer scroll no "sube" — sólo
+        // las stories de abajo pasan por debajo. Los demás screens
+        // (explore, practice, etc.) mantienen el `paddingTop:28`
+        // original del container.
+        contentContainerStyle={[
+          styles.container,
+          useNativeJourneySticky ? { paddingTop: 0 } : null,
+        ]}
         scrollEnabled
         showsVerticalScrollIndicator={false}
         decelerationRate="normal"
         keyboardShouldPersistTaps="handled"
         contentInsetAdjustmentBehavior="never"
-        stickyHeaderIndices={undefined}
+        // Sticky nativo iOS sólo en path mode. Los hijos del
+        // ScrollView se generan con `Children.toArray(...)` justo
+        // arriba del return, así que los índices apuntan exactamente
+        // a los topic panels del flatMap (sin off-by-one por nulls
+        // del fragmento). Cuando no estamos en path mode, undefined
+        // → comportamiento ScrollView normal sin sticky nativo.
+        stickyHeaderIndices={
+          useNativeJourneySticky && journeyStickyIndices.length > 0
+            ? journeyStickyIndices
+            : undefined
+        }
         onScroll={(event) => {
           const y = event.nativeEvent.contentOffset.y;
           if (activeScreen === "favorites") setShellScrollY(y);
@@ -12648,7 +12750,8 @@ export function MobileLibraryShell(args: {
       {activeScreen === "home" &&
       !journeyDetailTopicId &&
       !openingStoryId &&
-      !selection ? (
+      !selection &&
+      !useNativeJourneySticky ? (
         <View
           pointerEvents="none"
           style={[
@@ -15298,9 +15401,9 @@ const styles = StyleSheet.create({
     borderColor: "rgba(255,255,255,0.18)",
   },
   journeyNodePillIcon: {
-    width: 40,
+    width: 48,
     height: 40,
-    borderRadius: 999,
+    borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -15310,9 +15413,9 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   journeyNodePillCoverThumb: {
-    width: 40,
+    width: 48,
     height: 40,
-    borderRadius: 999,
+    borderRadius: 10,
   },
   journeyNodePillCoverThumbDim: {
     // Covers ya no se atenúan — el user pidió que las imágenes se
@@ -15324,9 +15427,9 @@ const styles = StyleSheet.create({
     opacity: 1,
   },
   journeyNodePillThumbWrap: {
-    width: 40,
+    width: 48,
     height: 40,
-    borderRadius: 999,
+    borderRadius: 10,
     overflow: "hidden",
     position: "relative",
   },
