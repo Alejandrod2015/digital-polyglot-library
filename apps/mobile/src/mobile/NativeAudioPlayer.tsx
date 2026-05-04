@@ -2,7 +2,9 @@ import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ActivityIndicator,
+  Dimensions,
   type LayoutChangeEvent,
+  Modal,
   PanResponder,
   Pressable,
   StyleSheet,
@@ -35,6 +37,12 @@ type PlaybackSnapshot = {
 
 const SEEK_STEP_MS = 10_000;
 const SPEEDS = [0.75, 1, 1.25, 1.5] as const;
+// Dimensiones del sheet del picker de velocidad. Hardcoded para que
+// `measureInWindow` pueda computar el `top`/`left` exacto al que el
+// sheet debe abrirse desde el botón. 4 opciones × ~32 px + padding
+// = ~152 px. El ancho cabe holgadamente "1.50x" + check icon.
+const SPEED_SHEET_WIDTH = 124;
+const SPEED_SHEET_HEIGHT = 152;
 
 function formatClock(ms: number): string {
   const totalSeconds = Math.max(0, Math.floor(ms / 1000));
@@ -302,13 +310,48 @@ export function NativeAudioPlayer({
     await sound.setPositionAsync(nextPosition);
   }
 
-  async function cycleSpeed() {
-    const sound = soundRef.current;
-    if (!sound || !playback.isLoaded) return;
+  // Picker para la velocidad. El menú se ancla al botón que lo
+  // disparó (midiendo `measureInWindow`) y se despliega hacia
+  // arriba. El backdrop full-screen captura taps fuera para cerrar.
+  const speedHeaderButtonRef = useRef<View | null>(null);
+  const speedInlineButtonRef = useRef<View | null>(null);
+  const [speedPickerAnchor, setSpeedPickerAnchor] = useState<{ top: number; left: number } | null>(null);
+  const speedPickerOpen = speedPickerAnchor !== null;
 
-    const currentIndex = SPEEDS.findIndex((candidate) => candidate === playback.rate);
-    const nextRate = SPEEDS[(currentIndex + 1) % SPEEDS.length] ?? 1;
-    await sound.setRateAsync(nextRate, true);
+  function toggleSpeedPicker(buttonRef: React.MutableRefObject<View | null>) {
+    // Toggle: si está abierto, cerrar; si no, abrir.
+    if (speedPickerAnchor !== null) {
+      setSpeedPickerAnchor(null);
+      return;
+    }
+    // Apertura inmediata con anchor de fallback (esquina
+    // inferior-derecha de la pantalla) para que el picker SIEMPRE
+    // aparezca al primer tap, incluso si `measureInWindow` se
+    // demora o no resuelve. Después la medida real refina la
+    // posición exacta justo arriba del botón.
+    const window = Dimensions.get("window");
+    const fallback = {
+      top: Math.max(20, window.height - SPEED_SHEET_HEIGHT - 120),
+      left: Math.max(8, window.width - SPEED_SHEET_WIDTH - 16),
+    };
+    setSpeedPickerAnchor(fallback);
+    const node = buttonRef.current;
+    if (!node) return;
+    node.measureInWindow((x, y, width) => {
+      // Sheet alineado por la derecha al borde derecho del botón;
+      // su esquina inferior queda 6 px arriba del borde superior
+      // del botón (despliegue hacia arriba estilo dropdown).
+      const left = Math.max(8, x + width - SPEED_SHEET_WIDTH);
+      const top = Math.max(20, y - SPEED_SHEET_HEIGHT - 6);
+      setSpeedPickerAnchor({ top, left });
+    });
+  }
+
+  async function applySpeed(rate: number) {
+    const sound = soundRef.current;
+    setSpeedPickerAnchor(null);
+    if (!sound || !playback.isLoaded) return;
+    await sound.setRateAsync(rate, true);
   }
 
   if (!hasAudio) {
@@ -358,7 +401,11 @@ export function NativeAudioPlayer({
       {variant !== "sticky" ? (
         <View style={styles.headerRow}>
           <Text style={styles.cardTitle}>Audio</Text>
-          <Pressable onPress={() => void cycleSpeed()} style={styles.speedButton}>
+          <Pressable
+            ref={speedHeaderButtonRef}
+            onPress={() => toggleSpeedPicker(speedHeaderButtonRef)}
+            style={styles.speedButton}
+          >
             <Text style={styles.speedButtonText}>
               {playback.rate === 1 ? "1x" : `${playback.rate.toFixed(2)}x`}
             </Text>
@@ -421,7 +468,8 @@ export function NativeAudioPlayer({
         ) : null}
 
         <Pressable
-          onPress={() => void cycleSpeed()}
+          ref={speedInlineButtonRef}
+          onPress={() => toggleSpeedPicker(speedInlineButtonRef)}
           style={[styles.speedButton, styles.speedButtonInline]}
           accessibilityLabel="qa-player-speed"
           testID="qa-player-speed"
@@ -434,9 +482,68 @@ export function NativeAudioPlayer({
       </View>
 
       {error ? <Text style={styles.errorText}>{error}</Text> : null}
+
+      <Modal
+        visible={speedPickerOpen}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setSpeedPickerAnchor(null)}
+      >
+        <Pressable
+          style={styles.speedPickerBackdrop}
+          onPress={() => setSpeedPickerAnchor(null)}
+        />
+        {speedPickerAnchor ? (
+          <View
+            pointerEvents="box-none"
+            style={[
+              styles.speedPickerSheet,
+              {
+                position: "absolute",
+                top: speedPickerAnchor.top,
+                left: speedPickerAnchor.left,
+                width: SPEED_SHEET_WIDTH,
+              },
+            ]}
+          >
+            {SPEEDS.map((option) => {
+              const active = Math.abs(option - playback.rate) < 0.01;
+              return (
+                <Pressable
+                  key={option}
+                  onPress={() => void applySpeed(option)}
+                  style={[
+                    styles.speedPickerOption,
+                    active ? styles.speedPickerOptionActive : null,
+                  ]}
+                  accessibilityRole="button"
+                  accessibilityLabel={`qa-player-speed-${option}`}
+                  testID={`qa-player-speed-${option}`}
+                >
+                  <Text
+                    style={[
+                      styles.speedPickerOptionText,
+                      active ? styles.speedPickerOptionTextActive : null,
+                    ]}
+                  >
+                    {option === 1 ? "1x" : `${option.toFixed(2)}x`}
+                  </Text>
+                  {active ? (
+                    <Feather name="check" size={14} color={tokenCheckColor} />
+                  ) : null}
+                </Pressable>
+              );
+            })}
+          </View>
+        ) : null}
+      </Modal>
     </View>
   );
 }
+
+// Color del check para la opción activa — definido fuera del JSX
+// para evitar que el inline string se reevalúe en cada render.
+const tokenCheckColor = "#fcd34d";
 
 const styles = StyleSheet.create({
   card: {
@@ -618,5 +725,46 @@ const styles = StyleSheet.create({
     color: "#ffb4b4",
     fontSize: 13,
     lineHeight: 18,
+  },
+  speedPickerBackdrop: {
+    // Cubre toda la pantalla; las taps fuera del sheet cierran. No
+    // tinta el fondo (transparente) para que el dropdown se sienta
+    // como un menú nativo, no como un modal centrado.
+    ...StyleSheet.absoluteFillObject,
+  },
+  speedPickerSheet: {
+    backgroundColor: "#0f1f33",
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#28415f",
+    paddingVertical: 6,
+    paddingHorizontal: 6,
+    // Sombra suave para que el sheet se separe visualmente del
+    // contenido detrás.
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.32,
+    shadowRadius: 12,
+    elevation: 8,
+  },
+  speedPickerOption: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    borderRadius: 8,
+  },
+  speedPickerOptionActive: {
+    backgroundColor: "rgba(252, 211, 77, 0.16)",
+  },
+  speedPickerOptionText: {
+    color: "#dbe9ff",
+    fontSize: 14,
+    fontWeight: "700",
+  },
+  speedPickerOptionTextActive: {
+    color: "#fcd34d",
+    fontWeight: "800",
   },
 });
