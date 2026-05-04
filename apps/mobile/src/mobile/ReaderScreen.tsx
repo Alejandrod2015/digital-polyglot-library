@@ -392,52 +392,33 @@ function renderKaraokeParagraph(args: {
     const isFirstVocabHit = vocabKey !== null && !alreadyHighlighted.has(vocabKey);
     if (isFirstVocabHit && vocabKey !== null) alreadyHighlighted.add(vocabKey);
 
-    if (isFirstVocabHit) {
-      // Vocab pills stay as inline <View> (rounded corners) regardless
-      // of the active state. The View is mounted from the first render
-      // and never unmounted, so swapping its backgroundColor when the
-      // word becomes active changes zero pixels of layout — the only
-      // path on iOS that gives both rounded corners AND zero shift.
-      const pillStyle = isActive ? styles.karaokeActivePill : styles.highlightedPill;
-      const pillTextStyle = isActive ? styles.karaokeActivePillText : styles.highlightedPillText;
-      nodes.push(
-        <View key={`${paragraphKey}-w-${i}`} style={pillStyle}>
-          <Text
-            style={pillTextStyle}
-            onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
-          >
-            {w.text}
-          </Text>
-        </View>
-      );
-    } else if (isActive) {
-      // Non-vocab active word: render as a plain inline <Text> with a
-      // backgroundColor. NO inline <View> wrapper, so the layout box
-      // is exactly the natural text width — surrounding words never
-      // move when the highlight enters or leaves. Trade-off: iOS
-      // doesn't honor borderRadius on Text backgroundColor, so the
-      // highlight is a tight rectangle without rounded corners. This
-      // is the price of zero layout shift.
-      nodes.push(
-        <Text
-          key={`${paragraphKey}-w-${i}`}
-          style={styles.karaokeActiveInlineText}
-          onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
-        >
-          {w.text}
-        </Text>
-      );
-    } else {
-      nodes.push(
-        <Text
-          key={`${paragraphKey}-w-${i}`}
-          style={baseTextStyle}
-          onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
-        >
-          {w.text}
-        </Text>
-      );
+    // EVERY karaoke word is wrapped in the same inline <View> structure
+    // from the first render. Only the View's backgroundColor varies as
+    // the active highlight moves through. Because the View tree never
+    // changes shape, iOS NSTextAttachment kerning is baked into the
+    // layout once and the surrounding text never shifts when the
+    // highlight enters or leaves a word — the only path on iOS that
+    // gives short + rounded + zero-shift simultaneously.
+    let containerStyle: typeof styles.karaokeWordContainerPlain = styles.karaokeWordContainerPlain;
+    let wordTextStyle: typeof styles.karaokeWordText = styles.karaokeWordText;
+    if (isActive) {
+      containerStyle = styles.karaokeWordContainerActive;
+      wordTextStyle = styles.karaokeWordTextDark;
+    } else if (isFirstVocabHit) {
+      containerStyle = styles.karaokeWordContainerVocab;
+      wordTextStyle = styles.karaokeWordTextDark;
     }
+
+    nodes.push(
+      <View key={`${paragraphKey}-w-${i}`} style={containerStyle}>
+        <Text
+          style={wordTextStyle}
+          onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
+        >
+          {w.text}
+        </Text>
+      </View>
+    );
 
     cursor = w.charEnd;
   }
@@ -1789,6 +1770,38 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     backgroundColor: "#fcd34d",
     borderRadius: 6,
+  },
+  // === Per-word inline <View> wrapper (every karaoke word) ===
+  // Wrapping every word in a View — even plain ones — makes iOS's
+  // NSTextAttachment kerning a constant layout cost. Active toggling
+  // changes only the View's backgroundColor, never its frame, which
+  // is the only iOS path to rounded + short + zero-shift highlights.
+  karaokeWordContainerPlain: {
+    paddingHorizontal: 0,
+    paddingVertical: 0,
+    borderRadius: 6,
+  },
+  karaokeWordContainerVocab: {
+    paddingHorizontal: 0,
+    paddingVertical: 0,
+    borderRadius: 6,
+    backgroundColor: "rgba(250, 204, 21, 0.5)",
+  },
+  karaokeWordContainerActive: {
+    paddingHorizontal: 0,
+    paddingVertical: 0,
+    borderRadius: 6,
+    backgroundColor: "#fcd34d",
+  },
+  karaokeWordText: {
+    color: "#eef4ff",
+    fontSize: 20,
+    lineHeight: 24,
+  },
+  karaokeWordTextDark: {
+    color: "#1a1205",
+    fontSize: 20,
+    lineHeight: 24,
   },
   vocabOverlay: {
     position: "absolute",
