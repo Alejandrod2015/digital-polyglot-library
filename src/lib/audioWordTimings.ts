@@ -2,13 +2,13 @@
 // Lives next to existing audio/transcript helpers WITHOUT touching them.
 // The legacy sentence-level path in lib/elevenlabs.ts and lib/audioSegments.ts
 // keeps working unchanged for every story that does not opt into this feature.
+//
+// Forced alignment runs in Modal (see modal_app/audio_studio.py:align). aeneas
+// inside Modal takes (mp3, plain text, language) and returns a list of word
+// tokens with character offsets and start/end seconds. We persist that JSON
+// directly into the JourneyStory.audioWordTimings column.
 
-import OpenAI from "openai";
 import { prisma } from "@/lib/prisma";
-
-const openai = process.env.OPENAI_API_KEY
-  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
-  : null;
 
 export const AUDIO_WORD_TIMINGS_VERSION = 1 as const;
 
@@ -27,17 +27,32 @@ export type AudioWordTimingsPayload = {
   words: StoryWordToken[];
 };
 
-type WhisperWord = { word?: string; start?: number; end?: number };
+type ModalAlignResponse = {
+  language?: string;
+  audioDurationSec?: number | null;
+  tokens?: Array<{
+    text?: string;
+    charStart?: number;
+    charEnd?: number;
+    startSec?: number | null;
+    endSec?: number | null;
+  }>;
+};
 
-const WORD_TOKEN_REGEX = /[\p{L}\p{N}][\p{L}\p{M}\p{N}'’-]*/gu;
-
-function normalizeForMatch(value: string): string {
-  return value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/[^\p{L}\p{N}]/gu, "");
-}
+const STUDIO_LANGUAGE_TO_ALIGN: Record<string, string> = {
+  german: "german",
+  de: "german",
+  spanish: "spanish",
+  es: "spanish",
+  italian: "italian",
+  it: "italian",
+  portuguese: "portuguese",
+  pt: "portuguese",
+  english: "english",
+  en: "english",
+  french: "french",
+  fr: "french",
+};
 
 export function extractStoryPlainText(rawText: string): string {
   const stripped = rawText
@@ -54,221 +69,78 @@ export function extractStoryPlainText(rawText: string): string {
   return stripped;
 }
 
-export type StoryTokenSpan = {
-  text: string;
-  charStart: number;
-  charEnd: number;
-  normalized: string;
-};
-
-export function tokenizeStoryWithSpans(plainText: string): StoryTokenSpan[] {
-  const out: StoryTokenSpan[] = [];
-  const matches = plainText.matchAll(WORD_TOKEN_REGEX);
-  for (const match of matches) {
-    const text = match[0];
-    const charStart = match.index ?? 0;
-    const charEnd = charStart + text.length;
-    const normalized = normalizeForMatch(text);
-    if (!normalized) continue;
-    out.push({ text, charStart, charEnd, normalized });
+function resolveAlignUrl(): string {
+  const explicit = (process.env.STUDIO_AUDIO_ALIGN_URL || "").trim();
+  if (explicit) return explicit;
+  // Fallback: derive from the synth URL by swapping the function name.
+  // Matches the Modal naming convention `<account>--<app>-<function>.modal.run`.
+  const synth = (process.env.STUDIO_AUDIO_URL || "").trim();
+  if (synth.includes("-synthesize.modal.run")) {
+    return synth.replace("-synthesize.modal.run", "-align.modal.run");
   }
-  return out;
+  throw new Error(
+    "Missing STUDIO_AUDIO_ALIGN_URL (and STUDIO_AUDIO_URL not in expected synth format)"
+  );
 }
 
-function normalizeWhisperWords(raw: WhisperWord[]): Array<{
-  normalized: string;
-  startSec: number;
-  endSec: number;
+export async function alignAudioOnModal(args: {
+  audioUrl: string;
+  plainText: string;
+  language: string;
+}): Promise<{
+  audioDurationSec: number | null;
+  tokens: StoryWordToken[];
 }> {
-  const out: Array<{ normalized: string; startSec: number; endSec: number }> = [];
-  for (const w of raw) {
-    const startSec =
-      typeof w.start === "number" && Number.isFinite(w.start) ? Math.max(0, w.start) : NaN;
-    const endSec =
-      typeof w.end === "number" && Number.isFinite(w.end) ? Math.max(0, w.end) : NaN;
-    if (!Number.isFinite(startSec) || !Number.isFinite(endSec) || endSec <= startSec) continue;
-    const text = typeof w.word === "string" ? w.word : "";
-    const normalized = normalizeForMatch(text);
-    if (!normalized) continue;
-    out.push({ normalized, startSec, endSec });
-  }
-  return out;
-}
+  const token = (process.env.STUDIO_AUDIO_TOKEN || "").trim();
+  if (!token) throw new Error("STUDIO_AUDIO_TOKEN is not configured");
 
-// Longest-common-subsequence DP, mirrors the approach used in
-// audioSegments.ts:alignStorySentencesToWords but emits a per-token alignment.
-function alignTokensLCS(
-  storyTokens: StoryTokenSpan[],
-  whisperTokens: Array<{ normalized: string; startSec: number; endSec: number }>
-): Map<number, number> {
-  const rows = storyTokens.length;
-  const cols = whisperTokens.length;
-  if (rows === 0 || cols === 0) return new Map();
+  const mappedLanguage = STUDIO_LANGUAGE_TO_ALIGN[args.language.toLowerCase()] ?? args.language;
+  const url = resolveAlignUrl();
 
-  const dp: number[][] = Array.from({ length: rows + 1 }, () => Array<number>(cols + 1).fill(0));
-
-  for (let i = rows - 1; i >= 0; i -= 1) {
-    for (let j = cols - 1; j >= 0; j -= 1) {
-      dp[i][j] =
-        storyTokens[i].normalized === whisperTokens[j].normalized
-          ? dp[i + 1][j + 1] + 1
-          : Math.max(dp[i + 1][j], dp[i][j + 1]);
-    }
-  }
-
-  const map = new Map<number, number>();
-  let i = 0;
-  let j = 0;
-  while (i < rows && j < cols) {
-    if (storyTokens[i].normalized === whisperTokens[j].normalized) {
-      map.set(i, j);
-      i += 1;
-      j += 1;
-      continue;
-    }
-    if (dp[i + 1][j] >= dp[i][j + 1]) {
-      i += 1;
-    } else {
-      j += 1;
-    }
-  }
-  return map;
-}
-
-// Tokens that did not match (proper nouns Whisper heard differently, etc.)
-// get linearly interpolated timings between their nearest matched neighbors.
-function fillGaps(
-  storyTokens: StoryTokenSpan[],
-  matched: Map<number, number>,
-  whisperTokens: Array<{ normalized: string; startSec: number; endSec: number }>
-): Array<{ startSec: number | null; endSec: number | null }> {
-  const slots: Array<{ startSec: number | null; endSec: number | null }> = storyTokens.map(() => ({
-    startSec: null,
-    endSec: null,
-  }));
-
-  for (const [storyIdx, whisperIdx] of matched.entries()) {
-    const w = whisperTokens[whisperIdx];
-    slots[storyIdx] = { startSec: w.startSec, endSec: w.endSec };
-  }
-
-  for (let i = 0; i < slots.length; i += 1) {
-    if (slots[i].startSec !== null) continue;
-    let prev = i - 1;
-    while (prev >= 0 && slots[prev].endSec === null) prev -= 1;
-    let next = i + 1;
-    while (next < slots.length && slots[next].startSec === null) next += 1;
-
-    const prevEnd = prev >= 0 ? slots[prev].endSec : null;
-    const nextStart = next < slots.length ? slots[next].startSec : null;
-
-    let runEnd = i;
-    while (runEnd + 1 < slots.length && slots[runEnd + 1].startSec === null && runEnd + 1 < next) {
-      runEnd += 1;
-    }
-    const runLength = runEnd - i + 1;
-
-    if (prevEnd !== null && nextStart !== null && nextStart > prevEnd) {
-      const span = nextStart - prevEnd;
-      const step = span / (runLength + 1);
-      for (let k = 0; k < runLength; k += 1) {
-        const start = prevEnd + step * k;
-        const end = prevEnd + step * (k + 1);
-        slots[i + k] = { startSec: start, endSec: end };
-      }
-    } else if (prevEnd !== null) {
-      for (let k = 0; k < runLength; k += 1) {
-        const start = prevEnd + 0.001 * (k + 1);
-        slots[i + k] = { startSec: start, endSec: start + 0.05 };
-      }
-    } else if (nextStart !== null) {
-      for (let k = 0; k < runLength; k += 1) {
-        const start = Math.max(0, nextStart - 0.05 * (runLength - k));
-        slots[i + k] = { startSec: start, endSec: start + 0.05 };
-      }
-    }
-    i = runEnd;
-  }
-
-  return slots;
-}
-
-export function alignStoryToWhisperWords(
-  storyPlainText: string,
-  whisperWords: WhisperWord[]
-): StoryWordToken[] {
-  const storyTokens = tokenizeStoryWithSpans(storyPlainText);
-  if (storyTokens.length === 0) return [];
-
-  const whisperTokens = normalizeWhisperWords(whisperWords);
-  if (whisperTokens.length === 0) {
-    return storyTokens.map((t) => ({
-      text: t.text,
-      charStart: t.charStart,
-      charEnd: t.charEnd,
-      startSec: null,
-      endSec: null,
-    }));
-  }
-
-  const matched = alignTokensLCS(storyTokens, whisperTokens);
-  const filled = fillGaps(storyTokens, matched, whisperTokens);
-
-  return storyTokens.map((t, i) => ({
-    text: t.text,
-    charStart: t.charStart,
-    charEnd: t.charEnd,
-    startSec: filled[i].startSec,
-    endSec: filled[i].endSec,
-  }));
-}
-
-async function fetchAudioBuffer(audioUrl: string): Promise<{
-  buffer: Buffer;
-  filename: string;
-}> {
-  const res = await fetch(audioUrl);
-  if (!res.ok) {
-    throw new Error(`Failed to fetch audio (${res.status}): ${audioUrl}`);
-  }
-  const arrayBuffer = await res.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
-  const guessedName = audioUrl.split("/").pop()?.split("?")[0] || "audio.mp3";
-  return { buffer, filename: guessedName };
-}
-
-export async function transcribeWithWordTimings(
-  audioBuffer: Buffer,
-  filename: string,
-  narrationText: string
-): Promise<{ words: WhisperWord[]; durationSec: number | null }> {
-  if (!openai) {
-    throw new Error("OPENAI_API_KEY is not configured");
-  }
-  const fileBytes = new Uint8Array(audioBuffer);
-  const file = new File([fileBytes], filename, { type: "audio/mpeg" });
-
-  const transcript = await openai.audio.transcriptions.create({
-    file,
-    model: "whisper-1",
-    response_format: "verbose_json",
-    timestamp_granularities: ["word"],
-    prompt: narrationText.slice(0, 800),
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      _token: token,
+      audioUrl: args.audioUrl,
+      text: args.plainText,
+      language: mappedLanguage,
+    }),
   });
 
-  const words =
-    "words" in transcript && Array.isArray(transcript.words)
-      ? (transcript.words as WhisperWord[])
-      : [];
-  const duration =
-    "duration" in transcript && typeof transcript.duration === "number"
-      ? transcript.duration
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new Error(`Modal align ${res.status}: ${detail.slice(0, 400)}`);
+  }
+
+  const data = (await res.json()) as ModalAlignResponse;
+  if (!Array.isArray(data.tokens)) {
+    throw new Error("Modal align returned no tokens array");
+  }
+
+  const tokens: StoryWordToken[] = [];
+  for (const item of data.tokens) {
+    if (typeof item.text !== "string") continue;
+    if (typeof item.charStart !== "number" || typeof item.charEnd !== "number") continue;
+    tokens.push({
+      text: item.text,
+      charStart: item.charStart,
+      charEnd: item.charEnd,
+      startSec:
+        typeof item.startSec === "number" && Number.isFinite(item.startSec)
+          ? item.startSec
+          : null,
+      endSec:
+        typeof item.endSec === "number" && Number.isFinite(item.endSec) ? item.endSec : null,
+    });
+  }
+
+  const audioDurationSec =
+    typeof data.audioDurationSec === "number" && Number.isFinite(data.audioDurationSec)
+      ? data.audioDurationSec
       : null;
 
-  return {
-    words,
-    durationSec: duration !== null && Number.isFinite(duration) ? duration : null,
-  };
+  return { audioDurationSec, tokens };
 }
 
 export async function generateWordTimingsForStory(
@@ -276,7 +148,13 @@ export async function generateWordTimingsForStory(
 ): Promise<AudioWordTimingsPayload> {
   const story = await prisma.journeyStory.findUnique({
     where: { id: storyId },
-    select: { id: true, text: true, audioUrl: true, title: true },
+    select: {
+      id: true,
+      text: true,
+      audioUrl: true,
+      title: true,
+      journey: { select: { language: true } },
+    },
   });
 
   if (!story) throw new Error(`JourneyStory ${storyId} not found`);
@@ -286,20 +164,22 @@ export async function generateWordTimingsForStory(
   const storyPlainText = extractStoryPlainText(story.text);
   if (!storyPlainText) throw new Error(`Story ${storyId} plain text is empty after stripping`);
 
-  const { buffer, filename } = await fetchAudioBuffer(story.audioUrl);
-  const { words, durationSec } = await transcribeWithWordTimings(
-    buffer,
-    filename,
-    storyPlainText
-  );
+  const language = story.journey.language;
+  const { audioDurationSec, tokens } = await alignAudioOnModal({
+    audioUrl: story.audioUrl,
+    plainText: storyPlainText,
+    language,
+  });
 
-  const aligned = alignStoryToWhisperWords(storyPlainText, words);
+  if (tokens.length === 0) {
+    throw new Error("Modal align returned zero usable tokens");
+  }
 
   const payload: AudioWordTimingsPayload = {
     version: AUDIO_WORD_TIMINGS_VERSION,
-    audioDurationSec: durationSec,
+    audioDurationSec,
     storyPlainText,
-    words: aligned,
+    words: tokens,
   };
 
   await prisma.journeyStory.update({
