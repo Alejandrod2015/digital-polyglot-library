@@ -283,14 +283,17 @@ type KaraokeParagraph = {
 function splitKaraokeParagraphs(plainText: string): KaraokeParagraph[] {
   const out: KaraokeParagraph[] = [];
   if (!plainText) return out;
-  const regex = /[^\n]+(?:\n[^\n]+)*/g;
+  // The Studio's `extractStoryPlainText` collapses paragraph boundaries
+  // to a single `\n`, so we split on any run of newlines (one or more)
+  // to recover them. Without this, the entire story renders as one
+  // visually flat block on the iPhone reader.
+  const regex = /[^\n]+/g;
   let match: RegExpExecArray | null = regex.exec(plainText);
   while (match) {
     const raw = match[0];
     const charStart = match.index;
     const charEnd = charStart + raw.length;
-    const collapsed = raw.replace(/\n/g, " ");
-    out.push({ text: collapsed, charStart, charEnd });
+    out.push({ text: raw, charStart, charEnd });
     match = regex.exec(plainText);
   }
   return out;
@@ -1700,20 +1703,16 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     lineHeight: 20,
   },
-  // Karaoke (word-level audio highlight) styles. Reuses the
-  // `highlightedPill` shape from the legacy reader so the active word
-  // visually matches the vocab pills. Active variant bumps the
-  // background to a more saturated amber to draw the eye, and uses
-  // negative horizontal margins that cancel the inner horizontal
-  // padding at the layout level — without this, toggling the active
-  // highlight on a word near the right edge would push the next word
-  // into the following line and the line would jump back when the
-  // highlight moved on.
+  // Karaoke (word-level audio highlight) styles. iOS NSTextAttachment
+  // does not consistently honor negative `margin` on inline <View>
+  // wrappers, so we keep the active pill's bounding box at exactly the
+  // text's natural width — zero horizontal padding, just a tight
+  // rounded background — to avoid the surrounding line being pushed
+  // sideways every time the highlight advances.
   karaokeActivePill: {
     backgroundColor: "#fcd34d",
     borderRadius: 6,
-    paddingHorizontal: 5,
-    marginHorizontal: -5,
+    paddingHorizontal: 0,
     paddingVertical: 1,
     transform: [{ translateY: -4 }],
   },
