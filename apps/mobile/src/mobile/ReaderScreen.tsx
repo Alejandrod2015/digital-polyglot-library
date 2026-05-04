@@ -392,14 +392,12 @@ function renderKaraokeParagraph(args: {
     const isFirstVocabHit = vocabKey !== null && !alreadyHighlighted.has(vocabKey);
     if (isFirstVocabHit && vocabKey !== null) alreadyHighlighted.add(vocabKey);
 
-    const renderAsPill = isActive || isFirstVocabHit;
-
-    if (renderAsPill) {
-      // Inline <View> embedded via NSTextAttachment to get rounded
-      // corners on the highlight (iOS does NOT honor borderRadius on a
-      // <Text> background). Negative horizontal margin cancels the
-      // pill's horizontal padding at the layout level so toggling the
-      // active highlight doesn't reflow the surrounding text.
+    if (isFirstVocabHit) {
+      // Vocab pills stay as inline <View> (rounded corners) regardless
+      // of the active state. The View is mounted from the first render
+      // and never unmounted, so swapping its backgroundColor when the
+      // word becomes active changes zero pixels of layout — the only
+      // path on iOS that gives both rounded corners AND zero shift.
       const pillStyle = isActive ? styles.karaokeActivePill : styles.highlightedPill;
       const pillTextStyle = isActive ? styles.karaokeActivePillText : styles.highlightedPillText;
       nodes.push(
@@ -411,6 +409,23 @@ function renderKaraokeParagraph(args: {
             {w.text}
           </Text>
         </View>
+      );
+    } else if (isActive) {
+      // Non-vocab active word: render as a plain inline <Text> with a
+      // backgroundColor. NO inline <View> wrapper, so the layout box
+      // is exactly the natural text width — surrounding words never
+      // move when the highlight enters or leaves. Trade-off: iOS
+      // doesn't honor borderRadius on Text backgroundColor, so the
+      // highlight is a tight rectangle without rounded corners. This
+      // is the price of zero layout shift.
+      nodes.push(
+        <Text
+          key={`${paragraphKey}-w-${i}`}
+          style={styles.karaokeActiveInlineText}
+          onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
+        >
+          {w.text}
+        </Text>
       );
     } else {
       nodes.push(
@@ -1760,6 +1775,17 @@ const styles = StyleSheet.create({
     // thinner than top-level paragraph Text.
     fontWeight: "500",
     lineHeight: 20,
+  },
+  // Inline highlight for non-vocab active words. Uses a plain <Text>
+  // with backgroundColor (no inline <View>) so the layout box is
+  // exactly the same as a non-highlighted word and surrounding text
+  // never moves. iOS does not honor borderRadius on Text background,
+  // so this renders as a tight rectangle.
+  karaokeActiveInlineText: {
+    color: "#1a1205",
+    fontSize: 20,
+    lineHeight: 40,
+    backgroundColor: "#fcd34d",
   },
   vocabOverlay: {
     position: "absolute",
