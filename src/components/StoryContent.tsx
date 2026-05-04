@@ -118,6 +118,34 @@ function extractHtmlBlocks(html: string): HtmlBlock[] {
   return splitSentences(fallback).map((text) => ({ tag: "p", text }));
 }
 
+// Detect a dialogue story formatted as "Speaker: line" turns separated by
+// newlines (the multi-voice template used by Café in Kreuzberg, Beim Bäcker,
+// etc.). Returns one block per line so we can render the speaker label in bold
+// and break paragraphs at every speaker change. Returns null when the text
+// doesn't look like a dialogue (e.g. flowing prose).
+type DialogueRenderBlock = { speaker: string | null; text: string };
+
+const DIALOGUE_LABEL_REGEX =
+  /^([A-ZÄÖÜ][A-Za-zÄÖÜäöüß.'-]*(?:\s+[A-ZÄÖÜ][A-Za-zÄÖÜäöüß.'-]*){0,3}):\s+(.*\S)\s*$/u;
+
+function detectDialogueBlocks(rawText: string): DialogueRenderBlock[] | null {
+  const lines = rawText.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+  if (lines.length === 0) return null;
+  const blocks: DialogueRenderBlock[] = [];
+  let dialogueLines = 0;
+  for (const line of lines) {
+    const match = line.match(DIALOGUE_LABEL_REGEX);
+    if (match) {
+      blocks.push({ speaker: match[1].trim(), text: match[2].trim() });
+      dialogueLines += 1;
+    } else {
+      blocks.push({ speaker: null, text: line });
+    }
+  }
+  if (dialogueLines / lines.length < 0.4) return null;
+  return blocks;
+}
+
 function normalizeVocabForHighlight(vocab: Array<{ word: string; surface?: string }>): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
@@ -259,11 +287,22 @@ export default function StoryContent({
     () => (hasHtml ? "" : sanitizePlainStoryText(stripHtml(stripLegacyVocabSpans(text)))),
     [hasHtml, text]
   );
-  const sentences = React.useMemo(() => (hasHtml ? [] : splitSentences(cleanedText)), [hasHtml, cleanedText]);
+  // Multi-voice dialogue stories carry "Speaker: line" turns separated by
+  // newlines. When detected, render each turn on its own paragraph with the
+  // speaker label in bold so readers can follow the conversation visually.
+  // Falls back to standard sentence chunking when the text isn't a dialogue.
+  const dialogueBlocks = React.useMemo(
+    () => (hasHtml ? null : detectDialogueBlocks(cleanedText)),
+    [hasHtml, cleanedText]
+  );
+  const sentences = React.useMemo(
+    () => (hasHtml || dialogueBlocks ? [] : splitSentences(cleanedText)),
+    [hasHtml, dialogueBlocks, cleanedText]
+  );
   const paragraphs = React.useMemo(() => {
-    if (hasHtml) return [];
+    if (hasHtml || dialogueBlocks) return [];
     return chunk(sentences, Math.max(1, Math.min(6, sentencesPerParagraph))).map((p) => p.join(" "));
-  }, [hasHtml, sentences, sentencesPerParagraph]);
+  }, [hasHtml, dialogueBlocks, sentences, sentencesPerParagraph]);
 
     const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollStartRef = React.useRef<number | null>(null);
@@ -340,11 +379,24 @@ export default function StoryContent({
               )
             ),
           }
-        : {
-            children: paragraphs.map((para, i) => (
-              <p key={i}>{highlightVocabulary(para, safeVocab, renderWord)}</p>
-            )),
-          })}
+        : dialogueBlocks
+          ? {
+              children: dialogueBlocks.map((block, i) =>
+                block.speaker ? (
+                  <p key={`dlg-${i}`}>
+                    <strong>{block.speaker}:</strong>{" "}
+                    {highlightVocabulary(block.text, safeVocab, renderWord)}
+                  </p>
+                ) : (
+                  <p key={`nar-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord)}</p>
+                )
+              ),
+            }
+          : {
+              children: paragraphs.map((para, i) => (
+                <p key={i}>{highlightVocabulary(para, safeVocab, renderWord)}</p>
+              )),
+            })}
     />
   );
 }
