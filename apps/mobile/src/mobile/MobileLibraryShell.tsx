@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Children, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import * as SecureStore from "expo-secure-store";
 import * as Haptics from "expo-haptics";
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
@@ -9686,6 +9686,12 @@ export function MobileLibraryShell(args: {
     let loop: Animated.CompositeAnimation | null = null;
     function startPulse() {
       if (loop) loop.stop();
+      // stopAnimation defensivo: si una timing previa quedó "in
+      // flight" (p.ej. interrumpida por un AppState change) podría
+      // seguir corriendo en paralelo con la nueva loop y pisar el
+      // valor. Forzar el stop antes del setValue garantiza arranque
+      // limpio.
+      journeyNextPulse.stopAnimation();
       journeyNextPulse.setValue(0.25);
       loop = Animated.loop(
         Animated.sequence([
@@ -9693,13 +9699,19 @@ export function MobileLibraryShell(args: {
             toValue: 0.85,
             duration: 1100,
             easing: Easing.inOut(Easing.ease),
-            useNativeDriver: false,
+            // useNativeDriver:true saca la oscilación del hilo JS:
+            // tanto opacity (halo) como transform.translateY (float)
+            // son props soportadas nativamente. Antes con
+            // useNativeDriver:false el loop se congelaba bajo carga
+            // de renders; el AppState rearm a continuación cubre el
+            // caso de Low Power Mode al volver al foreground.
+            useNativeDriver: true,
           }),
           Animated.timing(journeyNextPulse, {
             toValue: 0.25,
             duration: 1100,
             easing: Easing.inOut(Easing.ease),
-            useNativeDriver: false,
+            useNativeDriver: true,
           }),
         ])
       );
@@ -10560,11 +10572,15 @@ export function MobileLibraryShell(args: {
       }
       return;
     }
-    // Eclipse trigger = 0: the floating panel sits at the same Y
-    // (top of the ScrollView) as the in-flow topic panel when
-    // `scrollY === layout.y`. At that exact instant they overlap
-    // pixel-perfect — that's the moment we swap the floating panel
-    // to the new topic.
+    // Eclipse trigger = 0: pixel-perfect overlap teórico cuando
+    // `scrollY === layout.y`. En la práctica el throttle de onScroll
+    // (16 ms) más el re-render de React (otro frame) introducen ~30 ms
+    // de lag, lo que se ve como un breve "corte" antes de que el
+    // flotante aparezca. Probamos TRIGGER=12 para anticipar pero el
+    // resultado fue un "salto magnético" del panel hacia el top
+    // (peor). Volvemos a 0 como fallback mientras el flotante JS
+    // sigue siendo el mecanismo. La solución real es usar
+    // `stickyHeaderIndices` nativo del ScrollView (sin lag).
     const TRIGGER = 0;
     const sortedByY = Array.from(topicLayoutsRef.current.entries()).sort(
       (a, b) => a[1].y - b[1].y
@@ -10868,12 +10884,12 @@ export function MobileLibraryShell(args: {
   // Empty array on screens that aren't path mode → ScrollView
   // gets `undefined` and behaves normally.
   const journeyStickyIndices: number[] = [];
-  if (
+  const useNativeJourneySticky =
     activeScreen === "home" &&
     !journeyDetailTopicId &&
     !journeyVariantPickerOpen &&
-    activeJourneyTrack
-  ) {
+    Boolean(activeJourneyTrack);
+  if (useNativeJourneySticky && activeJourneyTrack) {
     let count = 0;
     activeJourneyTrack.levels.forEach((level, levelIdx) => {
       if (levelIdx > 0) count += 1; // level header item
@@ -10882,6 +10898,21 @@ export function MobileLibraryShell(args: {
         count += 1; // topic panel itself (the sticky one)
         count += topic.stories.length; // each story node
       });
+      // Level-end gate (espejea las condiciones del flatMap más
+      // abajo). Sin este conteo, los niveles posteriores quedan
+      // corridos por 1 → off-by-one que rompía el sticky nativo.
+      const gatingTopics = level.topics.filter((t) => t.storyCount > 0);
+      const clearedTopics = gatingTopics.filter((t) => t.checkpointPassed).length;
+      const requiredForLevel = Math.max(1, Math.ceil(gatingTopics.length * 0.75));
+      const nextLevelInTrackForCount = activeJourneyTrack?.levels[levelIdx + 1] ?? null;
+      if (
+        level.unlocked &&
+        nextLevelInTrackForCount &&
+        gatingTopics.length > 0 &&
+        clearedTopics < requiredForLevel
+      ) {
+        count += 1;
+      }
     });
   }
 
@@ -11163,14 +11194,14 @@ export function MobileLibraryShell(args: {
                     styles.journeyTopicPanel,
                     styles.journeyTopicPanelBevel,
                     { backgroundColor: topicPanelColor(topic.slug, level.id) },
-                    // Hide the in-flow panel ONLY when the floating
-                    // panel is currently covering the same topic — at
-                    // that moment they share the same Y so the swap
-                    // is invisible (no double-render of the same
-                    // card). We don't fade earlier because that's
-                    // what produced the "absorb" effect (in-flow
-                    // disappeared before being covered).
-                    stickyTopic?.slug === topic.slug ? styles.journeyTopicPanelHidden : null,
+                    // Con sticky nativo iOS no escondemos el in-flow:
+                    // iOS pinea el View directamente. Si lo
+                    // ocultáramos con opacity:0 estaría pineando un
+                    // panel invisible. Esta rama sólo aplica al
+                    // overlay JS-driven (cuando useNativeJourneySticky=false).
+                    !useNativeJourneySticky && stickyTopic?.slug === topic.slug
+                      ? styles.journeyTopicPanelHidden
+                      : null,
                   ]}
                 >
                   <View style={styles.journeyTopicPanelTextBlock}>
@@ -11336,12 +11367,10 @@ export function MobileLibraryShell(args: {
                       styles.journeyTopicPanel,
                       styles.journeyTopicPanelBevel,
                       { backgroundColor: topicPanelColor(topic.slug, level.id) },
-                      // When the floating sticky panel is showing
-                      // this same topic, hide the in-flow copy so the
-                      // user only sees ONE panel — earlier the two
-                      // overlapped briefly during the scroll handoff
-                      // and produced the visible flicker.
-                      stickyTopic?.slug === topic.slug ? { opacity: 0 } : null,
+                      // Idem: sólo aplicar cuando el sticky es JS-driven.
+                      !useNativeJourneySticky && stickyTopic?.slug === topic.slug
+                        ? { opacity: 0 }
+                        : null,
                     ]}
                   >
                     <View style={styles.journeyTopicPanelTextBlock}>
@@ -12334,7 +12363,7 @@ export function MobileLibraryShell(args: {
   // IA swap: tab "Home" muestra Journey path (lo más actionable a diario)
   // y tab "Library" (era "Journey" en bottom nav) muestra el contenido
   // de browsing/recomendaciones que antes vivía en Home.
-  let content = journeyView;
+  let content: React.ReactNode = journeyView;
   if (activeScreen === "explore") content = exploreView;
   if (activeScreen === "practice") content = practiceView;
   if (activeScreen === "favorites") content = favoritesView;
@@ -12342,6 +12371,15 @@ export function MobileLibraryShell(args: {
   if (activeScreen === "library") content = libraryView;
   if (activeScreen === "settings") content = settingsView;
   if (activeScreen === "create") content = createView;
+  // Cuando usamos sticky nativo iOS, los hijos del ScrollView deben
+  // ser un array PLANO (no un fragment con conditional-null siblings),
+  // si no `stickyHeaderIndices` no resuelve correctamente las
+  // posiciones — fue exactamente lo que rompió el intento anterior.
+  // `React.Children.toArray` aplana el fragment y filtra los nulls,
+  // dejando el array que journeyStickyIndices espera.
+  if (useNativeJourneySticky) {
+    content = Children.toArray(journeyView.props.children);
+  }
 
   return (
     <View style={styles.shell}>
@@ -12397,13 +12435,32 @@ export function MobileLibraryShell(args: {
       <ScrollView
         ref={shellScrollRef}
         style={styles.scrollView}
-        contentContainerStyle={styles.container}
+        // En path mode el primer panel arranca pegado al top bar
+        // (paddingTop:0). Así el panel ya está en su posición sticky
+        // desde el render inicial: al hacer scroll no "sube" — sólo
+        // las stories de abajo pasan por debajo. Los demás screens
+        // (explore, practice, etc.) mantienen el `paddingTop:28`
+        // original del container.
+        contentContainerStyle={[
+          styles.container,
+          useNativeJourneySticky ? { paddingTop: 0 } : null,
+        ]}
         scrollEnabled
         showsVerticalScrollIndicator={false}
         decelerationRate="normal"
         keyboardShouldPersistTaps="handled"
         contentInsetAdjustmentBehavior="never"
-        stickyHeaderIndices={undefined}
+        // Sticky nativo iOS sólo en path mode. Los hijos del
+        // ScrollView se generan con `Children.toArray(...)` justo
+        // arriba del return, así que los índices apuntan exactamente
+        // a los topic panels del flatMap (sin off-by-one por nulls
+        // del fragmento). Cuando no estamos en path mode, undefined
+        // → comportamiento ScrollView normal sin sticky nativo.
+        stickyHeaderIndices={
+          useNativeJourneySticky && journeyStickyIndices.length > 0
+            ? journeyStickyIndices
+            : undefined
+        }
         onScroll={(event) => {
           const y = event.nativeEvent.contentOffset.y;
           if (activeScreen === "favorites") setShellScrollY(y);
@@ -12480,7 +12537,8 @@ export function MobileLibraryShell(args: {
       {activeScreen === "home" &&
       !journeyDetailTopicId &&
       !openingStoryId &&
-      !selection ? (
+      !selection &&
+      !useNativeJourneySticky ? (
         <View
           pointerEvents="none"
           style={[
