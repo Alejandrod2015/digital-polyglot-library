@@ -2,6 +2,22 @@
 
 import { useEffect, useMemo, useState } from "react";
 
+type Provider =
+  | "flux"
+  | "openai"
+  | "gemini-imagen-4"
+  | "gemini-imagen-4-ultra"
+  | "gemini-flash-image"
+  | "gemini-3-pro-image";
+const PROVIDERS: { value: Provider; label: string; cost: string }[] = [
+  { value: "flux", label: "Flux 2 Pro (BFL)", cost: "~$0.04-0.10/img" },
+  { value: "openai", label: "OpenAI gpt-image-1", cost: "~$0.04/img" },
+  { value: "gemini-imagen-4", label: "Gemini Imagen 4", cost: "~$0.04/img" },
+  { value: "gemini-imagen-4-ultra", label: "Gemini Imagen 4 Ultra", cost: "~$0.06/img" },
+  { value: "gemini-flash-image", label: "Gemini 2.5 Flash Image", cost: "más barato" },
+  { value: "gemini-3-pro-image", label: "Gemini 3 Pro Image", cost: "preview" },
+];
+
 type Journey = {
   id: string;
   name: string;
@@ -22,25 +38,25 @@ type Story = {
 };
 
 type VariantResult = {
-  variant: "flat-poster" | "layered-paper" | "muted-watercolor";
+  variant: "cool-cartoon" | "warm-cartoon" | "earthy-cartoon";
   url: string | null;
   filename: string | null;
   error: string | null;
 };
 
 const VARIANT_LABEL: Record<VariantResult["variant"], string> = {
-  "flat-poster": "Flat poster",
-  "layered-paper": "Layered paper",
-  "muted-watercolor": "Muted watercolor",
+  "cool-cartoon": "Cool",
+  "warm-cartoon": "Warm",
+  "earthy-cartoon": "Earthy",
 };
 
 const VARIANT_DESCRIPTION: Record<VariantResult["variant"], string> = {
-  "flat-poster":
-    "Planos de color amplios, formas geométricas, espacio negativo. Estilo Eiko Ojala / Tom Haugomat.",
-  "layered-paper":
-    "Estética de paper-cut por capas, paleta fría con un acento cálido.",
-  "muted-watercolor":
-    "Acuarela suave, paleta apagada con un acento fuerte, líneas mínimas.",
+  "cool-cartoon":
+    "Cartoon estilo Storyset/Freepik, paleta fría: sage, lavanda, azul polvo con saturación viva.",
+  "warm-cartoon":
+    "Cartoon estilo Storyset/Freepik, paleta cálida: durazno, terracota y sage con saturación viva.",
+  "earthy-cartoon":
+    "Cartoon estilo Storyset/Freepik, paleta terrosa: oliva, óxido, mostaza y crema.",
 };
 
 export default function StudioCoversClient() {
@@ -52,6 +68,8 @@ export default function StudioCoversClient() {
   const [variants, setVariants] = useState<VariantResult[] | null>(null);
   const [appliedUrl, setAppliedUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [provider, setProvider] = useState<Provider>("gemini-imagen-4");
+  const [usedProvider, setUsedProvider] = useState<Provider | null>(null);
 
   // Load journeys, default to first German.
   useEffect(() => {
@@ -98,7 +116,7 @@ export default function StudioCoversClient() {
       const r = await fetch("/api/studio/journeys/cover-variants", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ storyId }),
+        body: JSON.stringify({ storyId, provider }),
       });
       if (!r.ok) {
         const text = await r.text();
@@ -107,6 +125,7 @@ export default function StudioCoversClient() {
       }
       const data = await r.json();
       setVariants(data.variants ?? []);
+      setUsedProvider(provider);
     } catch (err) {
       setError(`Generation error: ${err}`);
     } finally {
@@ -168,12 +187,26 @@ export default function StudioCoversClient() {
             ))}
           </select>
         </label>
+        <label style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12 }}>
+          <span style={{ color: "var(--muted)" }}>Modelo</span>
+          <select
+            value={provider}
+            onChange={(e) => setProvider(e.target.value as Provider)}
+            style={selectStyle}
+          >
+            {PROVIDERS.map((p) => (
+              <option key={p.value} value={p.value}>
+                {p.label} ({p.cost})
+              </option>
+            ))}
+          </select>
+        </label>
         <button
           onClick={generateVariants}
           disabled={!storyId || generating}
           style={primaryButtonStyle(generating)}
         >
-          {generating ? "Generando 3 variantes…" : "Generar 3 variantes (~$0.15-0.30)"}
+          {generating ? "Generando 3 variantes…" : "Generar 3 variantes"}
         </button>
       </div>
 
@@ -188,6 +221,14 @@ export default function StudioCoversClient() {
           <span style={{ fontSize: 12, color: "var(--muted)" }}>Cover actual:</span>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={selectedStory.coverUrl} alt="current cover" style={{ height: 80, borderRadius: 6, border: "1px solid var(--card-border)" }} />
+        </div>
+      )}
+
+      {variants && usedProvider && (
+        <div style={{ fontSize: 12, color: "var(--muted)" }}>
+          Generadas con: <strong style={{ color: "var(--foreground)" }}>
+            {PROVIDERS.find((p) => p.value === usedProvider)?.label ?? usedProvider}
+          </strong>
         </div>
       )}
 

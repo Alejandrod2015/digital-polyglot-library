@@ -1,6 +1,42 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+let openaiClient: OpenAI | null = null;
+function openai(): OpenAI {
+  if (!openaiClient) {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) throw new Error("Missing OPENAI_API_KEY for OpenAI cover generation.");
+    openaiClient = new OpenAI({ apiKey });
+  }
+  return openaiClient;
+}
+
+// Provider catalog. Each entry corresponds to one image-generation backend
+// the cover-variants endpoint can dispatch to. Adding a new model usually
+// means: add the slug here, implement the buffer generator below, branch
+// in the endpoint dispatcher, and surface it in the Studio UI.
+export type CoverProvider =
+  | "flux"
+  | "openai"
+  | "gemini-imagen-4"
+  | "gemini-imagen-4-ultra"
+  | "gemini-flash-image"
+  | "gemini-3-pro-image";
+export const COVER_PROVIDERS: CoverProvider[] = [
+  "flux",
+  "openai",
+  "gemini-imagen-4",
+  "gemini-imagen-4-ultra",
+  "gemini-flash-image",
+  "gemini-3-pro-image",
+];
+export const COVER_PROVIDER_LABEL: Record<CoverProvider, string> = {
+  "flux": "Flux 2 Pro (BFL)",
+  "openai": "OpenAI gpt-image-1",
+  "gemini-imagen-4": "Gemini Imagen 4",
+  "gemini-imagen-4-ultra": "Gemini Imagen 4 Ultra",
+  "gemini-flash-image": "Gemini 2.5 Flash Image",
+  "gemini-3-pro-image": "Gemini 3 Pro Image (preview)",
+};
 
 export function stripHtmlForCover(input: string): string {
   return input.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
@@ -14,64 +50,53 @@ export function sanitizeFileChunk(input: string): string {
     .slice(0, 80);
 }
 
-function extractCharacterNames(synopsis: string): string[] {
-  const matches = synopsis.match(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?\b/g) ?? [];
-  const stop = new Set(["The", "This", "That", "Under", "Safe", "Story", "Laguna"]);
-  const names: string[] = [];
-  for (const raw of matches) {
-    const name = raw.trim();
-    if (stop.has(name)) continue;
-    if (names.includes(name)) continue;
-    names.push(name);
-    if (names.length >= 4) break;
-  }
-  return names;
-}
+// Three palette flavors of the same cartoon style. We validated the cartoon
+// look (Storyset/Freepik aesthetic, mid-shot characters, vivid-but-not-pastel
+// saturation) directly against gemini-3-pro-image-preview before promoting
+// the prompt; see scripts/testCoverPrompt.ts for the iteration history.
+export type CoverVariant = "cool-cartoon" | "warm-cartoon" | "earthy-cartoon";
 
-function detectSceneHints(synopsis: string): { required: string[]; forbidden: string[] } {
-  const lower = synopsis.toLowerCase();
-  const required: string[] = [];
-  const forbidden: string[] = [];
+export const COVER_VARIANTS: CoverVariant[] = ["cool-cartoon", "warm-cartoon", "earthy-cartoon"];
 
-  const hasWater = /\b(lagoon|laguna|lake|shore|dock|pier|fisherman|fishing|boat|current|fog|water)\b/.test(lower);
-  if (hasWater) {
-    required.push(
-      "A lagoon/lake shoreline environment as the main setting",
-      "At least one small dock or pier visible",
-      "A drifting or stranded small fishing boat on water",
-      "A rope being used or clearly present as a rescue tool"
-    );
-    forbidden.push(
-      "Do not depict downtown streets, storefront-heavy city blocks, or urban commercial avenues",
-      "Do not include East Asian street signage unless explicitly stated in the synopsis",
-      "Do not make the setting look like Tokyo, Osaka, Seoul, or generic Asian downtown districts"
-    );
-  }
-  if (/\b(rescue|save|pull|haul|stranded)\b/.test(lower)) {
-    required.push("Show a rescue action in progress or just completed");
-  }
-  if (/\b(cloudy|fog|mist)\b/.test(lower)) {
-    required.push("Cloudy or fog-prone atmosphere consistent with the synopsis");
-  }
-  return { required, forbidden };
-}
+const SHARED_CARTOON_STYLE = [
+  "Modern flat cartoon character illustration in the Storyset / Freepik educational-app aesthetic.",
+  "Stylized rounded faces with large expressive almond-shaped eyes,",
+  "soft gradient skin shading, simplified cel-shaded clothing, smooth clean linework, friendly approachable expressions.",
+  "Same family of illustrations used by Duolingo, Notion, Headspace and Babbel landing pages.",
+].join(" ");
 
-// Three distinct style profiles. Each one biases the model toward a different
-// minimalist aesthetic so the user can compare side by side and pick the one
-// that fits the brand best. All three share the same anti-anime / balanced
-// palette / minimalism guardrails.
-export type CoverVariant = "flat-poster" | "layered-paper" | "muted-watercolor";
-
-export const COVER_VARIANTS: CoverVariant[] = ["flat-poster", "layered-paper", "muted-watercolor"];
-
-const COVER_VARIANT_STYLE: Record<CoverVariant, string> = {
-  "flat-poster":
-    "Modern flat-design poster illustration in the spirit of contemporary editorial illustrators (Eiko Ojala, Tom Haugomat). Large flat color planes, bold geometric shapes, clean silhouettes, MINIMAL detail and rendering. Generous negative space. Limited palette of 4-5 colors mixing one warm accent with cool tones (teal, dusty blue, soft lavender, sage, cream).",
-  "layered-paper":
-    "Layered paper-cut illustration aesthetic. Stacked planes suggesting depth without realistic shading. Cool-leaning palette (teal, dusty blue, lavender, dusty pink) with one warm focal accent. Soft texture in the paper layers but not photorealistic. Compositional depth through layering rather than perspective rendering.",
-  "muted-watercolor":
-    "Soft watercolor minimal illustration. Muted, sophisticated base palette (sage, cream, dusty rose, slate) with ONE bold accent color anchoring the focal subject. Loose hand-drawn line work kept minimal. Subtle paper-grain texture. NOT digital-glossy.",
+// Each palette anchors a different mood but keeps the same intensity tier:
+// vivid confident saturation, never pastel, never neon.
+const COVER_VARIANT_PALETTE: Record<CoverVariant, string> = {
+  "cool-cartoon":
+    "Color tonality: cool harmony anchored on sage green, lavender and dusty blue, with vivid confident saturation, not pastel and not washed-out. Use as many colors as the scene needs across props, clothing and environment.",
+  "warm-cartoon":
+    "Color tonality: warm harmony anchored on peach, terracotta and sage, with vivid confident saturation, not pastel and not washed-out. Use as many colors as the scene needs across props, clothing and environment.",
+  "earthy-cartoon":
+    "Color tonality: earthy harmony anchored on olive, rust, mustard and cream, with vivid confident saturation, not pastel and not washed-out. Use as many colors as the scene needs across props, clothing and environment.",
 };
+
+// Strip proper nouns (character names, brand names) so Imagen-style models
+// don't render them as captions on top of the image. We keep a small
+// allowlist of city/country names that are useful as scene grounding.
+const PROPER_NOUN_KEEP = new Set([
+  "I", "A", "An", "The",
+  "Berlin", "Munich", "Hamburg", "Cologne", "Frankfurt", "Vienna",
+  "Madrid", "Barcelona", "Sevilla", "Valencia",
+  "Paris", "Lyon", "Marseille",
+  "Rome", "Milan", "Florence", "Venice",
+  "London", "Lisbon", "Porto",
+  "Mexico", "Buenos", "Aires",
+]);
+
+function summarizeSynopsis(synopsis: string): string {
+  const firstSentence = synopsis.split(/(?<=[.!?])\s+/)[0] ?? synopsis;
+  const trimmed = firstSentence.length > 240 ? firstSentence.slice(0, 240) : firstSentence;
+  return trimmed
+    .replace(/\b[A-Z][a-zA-Z]{2,}\b/g, (token) => (PROPER_NOUN_KEEP.has(token) ? token : ""))
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 export function buildCoverPrompt(args: {
   title: string;
@@ -82,48 +107,20 @@ export function buildCoverPrompt(args: {
   level: string;
   variant?: CoverVariant;
 }): string {
-  const { title, synopsis, language, region, topic, level, variant = "flat-poster" } = args;
-  const characterNames = extractCharacterNames(synopsis);
-  const sceneHints = detectSceneHints(synopsis);
-  const contextLine = [
-    language ? `Story language: ${language}.` : "",
-    region ? `Region/culture reference: ${region}.` : "",
-    level ? `Learner level: ${level}.` : "",
-    topic ? `Topic: ${topic}.` : "",
-  ].filter(Boolean).join(" ");
-  const characterLine = characterNames.length > 0 ? `Main character names found in synopsis: ${characterNames.join(", ")}.` : "";
-  const requiredLine = sceneHints.required.length > 0 ? `Scene lock (MUST include all): ${sceneHints.required.join("; ")}.` : "";
-  const forbiddenLine = sceneHints.forbidden.length > 0 ? `Strict exclusions: ${sceneHints.forbidden.join("; ")}.` : "";
-
+  const { synopsis, topic, variant = "cool-cartoon" } = args;
+  const scene = summarizeSynopsis(synopsis);
+  const topicHint = topic ? topic.replace(/-/g, " ") : "";
+  const sceneLine = scene
+    ? `Editorial book cover illustration depicting ${scene}`
+    : `Editorial book cover illustration of a ${topicHint || "calm everyday scene"}`;
   return [
-    "Create a horizontal story cover illustration (1536x1024) grounded in the synopsis.",
-    "Depict ONE clear main moment from the story. Keep it MINIMAL: 1-2 key objects max, 0-2 background figures, generous negative space. Composition should feel calm and uncluttered, not crowded.",
-    "",
-    `Style profile: ${COVER_VARIANT_STYLE[variant]}`,
-    "",
-    "Composition rules:",
-    "- ONE strong focal point, large enough to read at thumbnail size",
-    "- Avoid filling the frame; leave breathing room around the subject",
-    "- Match the time-of-day from the synopsis with soft, simple lighting",
-    "",
-    "Palette rules (CRITICAL):",
-    "- Avoid heavy yellow/amber/gold dominance even for warm scenes",
-    "- Mix cool tones (teal, dusty blue, lavender, sage) with at most ONE warm accent",
-    "- Limited palette of 4-5 colors total; do not use saturated rainbow palettes",
-    "",
-    "Strict exclusions: NOT anime, NOT manga, NOT cartoon, NOT chibi, NOT shoujo, NOT comic-book, NOT pixar 3D render, NOT photorealistic. No glossy digital sheen.",
-    "",
-    "No text, letters, logos, watermark, border, UI, or book mockup. Single coherent scene.",
-    "",
-    `Story title: ${title || "(untitled story)"}`,
-    contextLine,
-    characterLine,
-    requiredLine,
-    forbiddenLine,
-    "",
-    "Synopsis to follow literally:",
-    synopsis,
-  ].filter(Boolean).join("\n");
+    sceneLine.endsWith(".") ? sceneLine : `${sceneLine}.`,
+    SHARED_CARTOON_STYLE,
+    COVER_VARIANT_PALETTE[variant],
+    "Depict the main characters from the scene as the focal point in mid-shot framing, faces clearly visible. The characters fill most of the frame; the environment is a clean, simple backdrop.",
+    "Wide horizontal 16:9 landscape frame.",
+    "No text, no letters, no captions, no logos, no borders.",
+  ].join(" ");
 }
 
 function readString(obj: unknown, key: string): string | null {
@@ -168,7 +165,7 @@ function extractFluxStatus(payload: unknown): string | null {
 }
 
 export async function generateOpenAIImageBase64(prompt: string): Promise<string> {
-  const result = (await openai.images.generate({
+  const result = (await openai().images.generate({
     model: "gpt-image-1",
     prompt,
     size: "1536x1024",
@@ -287,4 +284,89 @@ export async function generateFluxImageBuffer(prompt: string): Promise<Buffer> {
   }
 
   throw new Error("Flux generation timed out while polling.");
+}
+
+// Google Gemini API — image generation. Two distinct surfaces:
+//   - Imagen 4 (`imagen-4.0-generate-001`): pure image model with explicit
+//     aspectRatio control. Best when you want predictable layouts.
+//   - Gemini 2.5 Flash Image (`gemini-2.5-flash-image-preview`): multimodal
+//     model that returns inline image data; aspect ratio biased via prompt.
+// Both read GEMINI_API_KEY from the env. Get one at
+// https://aistudio.google.com/app/apikey and put it in .env.local.
+
+function geminiApiKey(): string {
+  const key = process.env.GEMINI_API_KEY;
+  if (!key) throw new Error("Missing GEMINI_API_KEY for Gemini cover generation.");
+  return key;
+}
+
+export async function generateGeminiImagen4Buffer(prompt: string, modelOverride?: string): Promise<Buffer> {
+  const apiKey = geminiApiKey();
+  const model = modelOverride ?? process.env.GEMINI_IMAGEN_MODEL ?? "imagen-4.0-generate-001";
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:predict?key=${encodeURIComponent(apiKey)}`;
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      instances: [{ prompt }],
+      parameters: {
+        sampleCount: 1,
+        aspectRatio: "16:9",
+        personGeneration: "allow_adult",
+      },
+    }),
+  });
+  if (!response.ok) {
+    const details = await response.text();
+    throw new Error(`Gemini Imagen rejected request (${response.status}): ${details.slice(0, 300)}`);
+  }
+  const payload = (await response.json()) as {
+    predictions?: Array<{ bytesBase64Encoded?: string; mimeType?: string; raiFilteredReason?: string }>;
+  };
+  const prediction = payload.predictions?.[0];
+  if (!prediction) throw new Error("Gemini Imagen returned no predictions.");
+  if (prediction.raiFilteredReason) {
+    throw new Error(`Gemini Imagen filtered: ${prediction.raiFilteredReason}`);
+  }
+  if (!prediction.bytesBase64Encoded) {
+    throw new Error("Gemini Imagen returned no image bytes.");
+  }
+  return Buffer.from(prediction.bytesBase64Encoded, "base64");
+}
+
+export async function generateGeminiFlashImageBuffer(prompt: string, modelOverride?: string): Promise<Buffer> {
+  const apiKey = geminiApiKey();
+  const model = modelOverride ?? process.env.GEMINI_FLASH_IMAGE_MODEL ?? "gemini-2.5-flash-image";
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  const orientedPrompt =
+    "Generate a horizontal 16:9 landscape cover illustration. " + prompt;
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ role: "user", parts: [{ text: orientedPrompt }] }],
+      generationConfig: { responseModalities: ["IMAGE"] },
+    }),
+  });
+  if (!response.ok) {
+    const details = await response.text();
+    throw new Error(`Gemini Flash Image rejected request (${response.status}): ${details.slice(0, 300)}`);
+  }
+  const payload = (await response.json()) as {
+    candidates?: Array<{
+      content?: { parts?: Array<{ inlineData?: { mimeType?: string; data?: string } }> };
+      finishReason?: string;
+    }>;
+    promptFeedback?: { blockReason?: string };
+  };
+  if (payload.promptFeedback?.blockReason) {
+    throw new Error(`Gemini Flash Image blocked: ${payload.promptFeedback.blockReason}`);
+  }
+  for (const candidate of payload.candidates ?? []) {
+    for (const part of candidate.content?.parts ?? []) {
+      const inline = part.inlineData;
+      if (inline?.data) return Buffer.from(inline.data, "base64");
+    }
+  }
+  throw new Error("Gemini Flash Image returned no inline image data.");
 }
