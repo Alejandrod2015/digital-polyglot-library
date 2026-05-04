@@ -546,21 +546,43 @@ export function ReaderScreen(args: {
   // 500 ms callbacks from NativeAudioPlayer. Short words (<300 ms)
   // would otherwise be skipped because the player update interval
   // is coarser than the word duration.
+  //
+  // Index-level monotonic smoothing prevents the back-and-forth jitter
+  // caused by my wall-clock extrapolation over-shooting the player's
+  // actual reported position: small backward steps (1-2 words) are
+  // ignored as jitter; bigger jumps are honored as real seeks/rewinds.
+  const lastResolvedIndexRef = useRef<number | null>(null);
+  useEffect(() => {
+    lastResolvedIndexRef.current = null;
+  }, [story.id]);
   useEffect(() => {
     if (!wordTimings) {
       setActiveWordIndex(null);
+      lastResolvedIndexRef.current = null;
       return;
     }
     const interval = setInterval(() => {
       const snap = lastPlaybackRef.current;
       if (!snap) return;
-      const elapsedMs = snap.isPlaying ? Date.now() - snap.wallClockMs : 0;
+      const elapsedMs = snap.isPlaying ? Math.min(Date.now() - snap.wallClockMs, 700) : 0;
       const estimatedSec = (snap.positionMillis + elapsedMs * snap.rate) / 1000;
-      const idx = findActiveKaraokeWordIndex(wordTimings.words, estimatedSec);
-      setActiveWordIndex((prev) => (prev === idx ? prev : idx));
+      const rawIdx = findActiveKaraokeWordIndex(wordTimings.words, estimatedSec);
+      const lastIdx = lastResolvedIndexRef.current;
+
+      let resolved = rawIdx;
+      if (rawIdx !== null && lastIdx !== null && rawIdx < lastIdx) {
+        // Treat backward steps of one or two words as jitter (extrapolation
+        // overshooting the player's next reported position). Bigger jumps
+        // are real seeks: let them through.
+        if (lastIdx - rawIdx < 3) {
+          resolved = lastIdx;
+        }
+      }
+      lastResolvedIndexRef.current = resolved;
+      setActiveWordIndex((prev) => (prev === resolved ? prev : resolved));
     }, 50);
     return () => clearInterval(interval);
-  }, [wordTimings]);
+  }, [wordTimings, story.id]);
   const preferredAudioUrl =
     typeof resolvedAudioUrl === "string" && resolvedAudioUrl.trim() ? resolvedAudioUrl : story.audio;
   const audioUrl =
