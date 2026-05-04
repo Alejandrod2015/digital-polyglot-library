@@ -1779,13 +1779,16 @@ const styles = StyleSheet.create({
   // Inline highlight for non-vocab active words. Uses a plain <Text>
   // with backgroundColor (no inline <View>) so the layout box is
   // exactly the same as a non-highlighted word and surrounding text
-  // never moves. iOS does not honor borderRadius on Text background,
-  // so this renders as a tight rectangle.
+  // never moves. The lineHeight is set tight to fontSize so the
+  // colored background hugs the glyph cap-height instead of filling
+  // the paragraph's full 40 px line. borderRadius is honored on iOS
+  // Text background since RN 0.71+, so the corners come out rounded.
   karaokeActiveInlineText: {
     color: "#1a1205",
     fontSize: 20,
-    lineHeight: 40,
+    lineHeight: 24,
     backgroundColor: "#fcd34d",
+    borderRadius: 6,
   },
   vocabOverlay: {
     position: "absolute",
