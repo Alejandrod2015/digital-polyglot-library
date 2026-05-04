@@ -317,6 +317,11 @@ function renderKaraokeParagraph(args: {
   paragraphKey: string;
   onWordPress: (item: VocabItem, contextSentence?: string) => void;
   variant: "paragraph" | "quote";
+  // Shared across all paragraphs of the story: a vocab word only renders
+  // as a pill the first time it shows up. Mirrors the legacy reader's
+  // dedup logic so karaoke stories don't look denser than non-karaoke
+  // ones for the same vocab list.
+  alreadyHighlighted: Set<string>;
 }) {
   const {
     paragraph,
@@ -327,6 +332,7 @@ function renderKaraokeParagraph(args: {
     paragraphKey,
     onWordPress,
     variant,
+    alreadyHighlighted,
   } = args;
   const baseTextStyle = variant === "quote" ? styles.quoteParagraph : styles.paragraph;
 
@@ -367,13 +373,18 @@ function renderKaraokeParagraph(args: {
 
     const isActive = activeWordIndex === i;
     const vocabItem = vocabLookup.get(w.text.toLowerCase()) ?? null;
+    const vocabKey = vocabItem ? (vocabItem.word ?? w.text).toLowerCase() : null;
+    const isFirstVocabHit = vocabKey !== null && !alreadyHighlighted.has(vocabKey);
+    if (isFirstVocabHit && vocabKey !== null) alreadyHighlighted.add(vocabKey);
 
-    if (isActive || vocabItem) {
+    const renderAsPill = isActive || isFirstVocabHit;
+
+    if (renderAsPill) {
       // Inline <View> embedded via NSTextAttachment to get rounded
       // corners on the highlight (iOS does NOT honor borderRadius on a
-      // <Text> background). Mirrors the existing `highlightedPill`
-      // pattern used by the legacy reader's vocab highlight so the
-      // active word and vocab pills share a single visual language.
+      // <Text> background). Negative horizontal margin cancels the
+      // pill's horizontal padding at the layout level so toggling the
+      // active highlight doesn't reflow the surrounding text.
       const pillStyle = isActive ? styles.karaokeActivePill : styles.highlightedPill;
       const pillTextStyle = isActive ? styles.karaokeActivePillText : styles.highlightedPillText;
       nodes.push(
@@ -388,7 +399,11 @@ function renderKaraokeParagraph(args: {
       );
     } else {
       nodes.push(
-        <Text key={`${paragraphKey}-w-${i}`} style={baseTextStyle}>
+        <Text
+          key={`${paragraphKey}-w-${i}`}
+          style={baseTextStyle}
+          onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
+        >
           {w.text}
         </Text>
       );
@@ -1016,33 +1031,40 @@ export function ReaderScreen(args: {
         <View style={styles.textWrap}>
           <View style={styles.textCard}>
             {wordTimings && karaokeBlocks.length > 0
-              ? karaokeBlocks.map((paragraph, index) => (
-                  <Pressable
-                    key={`${story.id}-k-${index}`}
-                    onPress={() => {
-                      if (selectedVocab) setSelectedVocab(null);
-                    }}
-                    style={styles.paragraphBlock}
-                    onLayout={(event) => {
-                      blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
-                      restoreReadingPosition();
-                    }}
-                  >
-                    {renderKaraokeParagraph({
-                      paragraph,
-                      payloadText: wordTimings.storyPlainText,
-                      words: wordTimings.words,
-                      activeWordIndex,
-                      vocabLookup: karaokeVocabLookup,
-                      paragraphKey: `${story.id}-k-${index}`,
-                      onWordPress: (item, contextSentence) =>
-                        setSelectedVocab(
-                          contextSentence ? { ...item, note: contextSentence } : item
-                        ),
-                      variant: "paragraph",
-                    })}
-                  </Pressable>
-                ))
+              ? (() => {
+                  // Shared dedup set so each vocab word becomes a pill
+                  // only the first time it appears across the whole
+                  // story, matching the legacy reader behavior.
+                  const karaokeAlreadyHighlighted = new Set<string>();
+                  return karaokeBlocks.map((paragraph, index) => (
+                    <Pressable
+                      key={`${story.id}-k-${index}`}
+                      onPress={() => {
+                        if (selectedVocab) setSelectedVocab(null);
+                      }}
+                      style={styles.paragraphBlock}
+                      onLayout={(event) => {
+                        blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
+                        restoreReadingPosition();
+                      }}
+                    >
+                      {renderKaraokeParagraph({
+                        paragraph,
+                        payloadText: wordTimings.storyPlainText,
+                        words: wordTimings.words,
+                        activeWordIndex,
+                        vocabLookup: karaokeVocabLookup,
+                        paragraphKey: `${story.id}-k-${index}`,
+                        onWordPress: (item, contextSentence) =>
+                          setSelectedVocab(
+                            contextSentence ? { ...item, note: contextSentence } : item
+                          ),
+                        variant: "paragraph",
+                        alreadyHighlighted: karaokeAlreadyHighlighted,
+                      })}
+                    </Pressable>
+                  ));
+                })()
               : (() => {
                   // Set compartido a través de TODOS los párrafos de la
                   // historia, así una palabra del vocab queda resaltada
@@ -1680,12 +1702,18 @@ const styles = StyleSheet.create({
   },
   // Karaoke (word-level audio highlight) styles. Reuses the
   // `highlightedPill` shape from the legacy reader so the active word
-  // visually matches the vocab pills. Active variant just bumps the
-  // background to a more saturated amber to draw the eye.
+  // visually matches the vocab pills. Active variant bumps the
+  // background to a more saturated amber to draw the eye, and uses
+  // negative horizontal margins that cancel the inner horizontal
+  // padding at the layout level — without this, toggling the active
+  // highlight on a word near the right edge would push the next word
+  // into the following line and the line would jump back when the
+  // highlight moved on.
   karaokeActivePill: {
     backgroundColor: "#fcd34d",
     borderRadius: 6,
     paddingHorizontal: 5,
+    marginHorizontal: -5,
     paddingVertical: 1,
     transform: [{ translateY: -4 }],
   },
