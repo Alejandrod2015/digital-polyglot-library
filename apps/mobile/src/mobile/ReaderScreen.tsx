@@ -830,6 +830,14 @@ export function ReaderScreen(args: {
   const viewportHeightRef = useRef(0);
   const lastAutoScrollRatioRef = useRef(0);
   const lastScrollRatioRef = useRef(0);
+  // Timestamp of the user's most recent touch on the ScrollView. While
+  // the autoscroll's animated `scrollTo` is in flight (~300 ms per
+  // tick), the inline vocab pills are visually moving under the
+  // user's finger and iOS hit-tests against the destination frame, so
+  // taps land on the wrong word or miss entirely. We suspend the
+  // autoscroll for a short grace window after each touch so the user
+  // has a stable target.
+  const lastUserTouchAtRef = useRef(0);
   const blockOffsetsRef = useRef<number[]>([]);
   const hasRestoredPositionRef = useRef(false);
   const lastTrackedReadingRatioRef = useRef<number | null>(null);
@@ -1023,6 +1031,12 @@ export function ReaderScreen(args: {
         decelerationRate="normal"
         keyboardShouldPersistTaps="handled"
         contentInsetAdjustmentBehavior="automatic"
+        onTouchStart={() => {
+          lastUserTouchAtRef.current = Date.now();
+        }}
+        onTouchEnd={() => {
+          lastUserTouchAtRef.current = Date.now();
+        }}
         onScroll={handleScroll}
         // 32 ms ≈ 30 Hz is plenty for progress tracking; cuts the JS-side
         // scroll handler cost in half vs 60 Hz (16 ms) without any
@@ -1427,6 +1441,13 @@ export function ReaderScreen(args: {
 
             const nextRatio = Math.min(1, Math.max(0, playback.positionMillis / playback.durationMillis));
             if (Math.abs(nextRatio - lastAutoScrollRatioRef.current) < 0.01) {
+              return;
+            }
+
+            // Honor the user's touch grace window: do not animate the
+            // ScrollView while the user is tapping vocab pills, otherwise
+            // the inline targets move under their finger.
+            if (Date.now() - lastUserTouchAtRef.current < 1800) {
               return;
             }
 
