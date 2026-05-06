@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Digital Polyglot",
@@ -10,6 +11,11 @@ export default function PrivacyPage() {
     <main className="mx-auto w-full max-w-4xl px-6 py-10 text-[var(--foreground)]">
       <h1 className="text-3xl font-bold">Privacy Policy</h1>
       <p className="mt-2 text-sm text-[var(--muted)]">Last updated: May 7, 2026</p>
+      <p className="mt-1 text-sm text-[var(--muted)]">
+        <Link href="/privacy/de" className="text-[var(--primary)] hover:underline">
+          Diese Seite auf Deutsch lesen
+        </Link>
+      </p>
 
       <section className="mt-8 space-y-4 text-[15px] leading-7">
         <p>
