@@ -34,7 +34,7 @@ Schema fields for dialect/heritage tagging on `JourneyStory` + 6 new comprehensi
 |---|---|---|
 | Backend allowlist for 6 reader events (`/api/metrics`, `/api/mobile/metrics`) | `a7d8392` | Deployed to main |
 | Mobile `vocab_clicked` wiring (ReaderScreen + `trackReaderEvent` helper) | `4d6416c` | Deployed to main; ships next TestFlight build |
-| Schema fields on `JourneyStory` (`register`, `generationCohort`, `culturalTags`, `voiceProvenance`) + migration SQL | `c5e0e15` | **Local only.** Apply migration to prod DB before pushing |
+| Schema fields on `JourneyStory` (`register`, `generationCohort`, `culturalTags`, `voiceProvenance`) + migration SQL | local-only commit on dev branch | **Not on main.** Apply migration to prod DB, then push the local commit |
 
 **The 6 new events:**
 
