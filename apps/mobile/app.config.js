@@ -86,7 +86,13 @@ const config = {
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.digitalpolyglot.mobile",
-    buildNumber: "211",
+    // OJO: este `buildNumber` es la fuente de verdad para el
+    // CFBundleVersion del IPA. Tiene PRECEDENCIA sobre `app.json`
+    // (Expo descarta app.json cuando existe app.config.js). EAS
+    // `autoIncrement: true` NO funciona aquí porque EAS no muta JS.
+    // Bumpear manualmente cada release a (max submitted on App Store
+    // Connect) + 1.
+    buildNumber: "212",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },
