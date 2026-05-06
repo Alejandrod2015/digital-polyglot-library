@@ -149,6 +149,15 @@ export function isObjectStorageConfigured(): boolean {
   return getObjectStorageConfig() !== null;
 }
 
+// Construct the public URL for an object key without uploading. Returns null
+// when object storage isn't configured. Useful for HEAD-checks against a
+// content-addressed cache key before deciding to generate fresh content.
+export function getPublicObjectUrl(key: string): string | null {
+  const config = getObjectStorageConfig();
+  if (!config) return null;
+  return buildPublicUrl(config, key.replace(/^\/+/, ""));
+}
+
 export async function uploadPublicObject(
   input: UploadPublicObjectInput
 ): Promise<UploadPublicObjectResult | null> {
