@@ -44,6 +44,15 @@ const ALLOWED_EVENT_TYPES = new Set([
   "checkout_redirected",
   "checkout_failed",
   "upgrade_cta_clicked",
+  // Reader comprehension events (foundation for adaptive learning + asset corpus).
+  // value = duration_ms when applicable; metadata carries word, language,
+  // variant, voiceId, audioPositionMs, register, etc.
+  "vocab_clicked",
+  "word_dwell",
+  "audio_segment_replay",
+  "story_abandoned",
+  "vocab_marked_known",
+  "vocab_marked_unknown",
 ]);
 
 function isMetricBody(x: unknown): x is MetricBody {
