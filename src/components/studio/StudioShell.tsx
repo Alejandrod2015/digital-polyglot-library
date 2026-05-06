@@ -35,6 +35,12 @@ const NAV_SECTIONS = [
     ],
   },
   {
+    label: "ESTUDIO",
+    items: [
+      { href: "/studio/progreso", label: "Progreso del proyecto", icon: "chart", exact: false },
+    ],
+  },
+  {
     label: "ADMIN",
     items: [
       { href: "/studio/config", label: "Reglas pedagógicas", icon: "sliders", exact: false },
