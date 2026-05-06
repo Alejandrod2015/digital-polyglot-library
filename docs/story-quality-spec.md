@@ -89,10 +89,18 @@ Use one of the eight values above. The field is required for every new story and
 - Each item:
   - `word`: dictionary lemma form
   - `surface` (optional): exact form as used in the text, only if different from the lemma
-  - `definition`: pedagogical English explanation, 17 to 25 words. Starts with "Used to...", "Describes...", "Refers to...", "Said when...". NOT a one-word gloss; NOT "X, ..." with a comma after a single word
+  - `definition`: 8 to 14 English words. Concise, practical, no clichés. (See vocab audit 2026-05-03 in user memory: the legacy 17-25w prompt produced inflated, encyclopedic definitions in C2 German vs concise 12.5w avg in A1 Italian; the corrected target is 8-14w across all levels.)
   - `type`: one of `verb` | `noun` | `adjective` | `adverb` | `expression` | `slang`
-- No transparent cognates a learner reads at sight (importante, normal, social, problema, idea, momento).
-- Multi-word entries only for genuinely lexicalized expressions ("auf einmal", "schon mal"). Not arbitrary descriptive fragments.
+- **Banned definition openers** (do NOT start a definition with these phrases): `Refers to`, `Describes`, `Used to`, `Used for`, `Said when`. Start with the meaning directly. Examples:
+  - GOOD: `kochen → Heated ingredients in a pot to create a meal.`
+  - GOOD: `Linsensuppe → Lentil soup, hearty German weekday dish with sausage and vegetables.`
+  - GOOD: `vergessen → To forget, fail to remember or do something on time.`
+  - BAD: `Linsensuppe → Refers to lentil soup, a hearty traditional German dish often eaten on weekdays...`
+  - BAD: `vergessen → Used when telling someone you forgot something they asked you to do...`
+- **Vocab item must appear in the BODY**, not only in the synopsis. The reader's karaoke pill highlights vocab in the body; a vocab word that lives only in the synopsis is invisible at runtime and wastes a teaching slot. Verify the surface form is present in `text` before saving.
+- No transparent cognates a learner reads at sight (`Mathe`, `Kaffee`, `Tomate`, `Optimist`, `Chance`, `importante`, `normal`, `social`, `problema`, `idea`, `momento`). Pick teachable items instead.
+- No same-root duplicates in the same story: pick either the verb or the noun, not both. Bad: `fernsehen` + `Fernseher`; `Linsen` + `Linsensuppe`; `lügen` + `anlügen` — they teach the same root twice and waste two of 21 slots.
+- Multi-word entries only for genuinely lexicalized expressions (`auf einmal`, `schon mal`, `mein Schatz`, `tut mir leid`). Not arbitrary descriptive fragments.
 - The `type` field drives the karaoke pill color, so accuracy matters: an adjective tagged as `verb` shows in the wrong color.
 
 ## 5. Cover image
@@ -176,6 +184,9 @@ Before running the `save` script, walk through these ten binary questions. If an
 8. Is the declared `arcType` actually executed in the body, not just labeled? Reread and confirm the arc is recognizable to a reader.
 9. Does the close avoid the default "everyone parts happy" formula unless the arc explicitly justifies it?
 10. Are all body words within the target CEFR level or one level above (i+1)? No words two or more levels above target?
+11. Are all `definition` strings between 8 and 14 English words and free of the banned openers (Refers to / Describes / Used to / Used for / Said when)?
+12. Does every `vocab.word` (or `surface`) literally appear in the `text` body? No vocab item lives only in the synopsis?
+13. Is the `vocab` list free of transparent cognates and free of same-root duplicates (no verb+noun pair from the same root)?
 
 If 8 or more answers are `yes`, save. If fewer, revise.
 
