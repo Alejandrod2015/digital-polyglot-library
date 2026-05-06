@@ -277,6 +277,7 @@ model JourneyStory {
   vocab      Json?
   wordCount  Int?
   vocabCount Int?
+  arcType    String?
   sanityId   String?
   coverDone     Boolean             @default(false)
   coverUrl      String?

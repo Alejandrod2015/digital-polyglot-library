@@ -19,17 +19,24 @@ If you change a rule here, also update the matching feedback file in `~/.claude/
 
 - 45 to 90 words.
 - The first sentence must describe the scene with common nouns (place, props, action), not just proper nouns. The cover prompt builder strips proper nouns from the first sentence; if you write "Paul besucht Oma Hilde in Wedding" the prompt has nothing to grip.
+- **Synopsis-body coherence (REQUIRED)**: every named character in the synopsis must appear in the body, and vice versa. No renaming between drafts. A synopsis that says "Klaus and Sabine meet" while the body has Anna and Tom is a hard defect — the reader sees the mismatch immediately. Pre-save check: read the speakers list in the body and confirm every named character in the synopsis is one of them.
+- The synopsis should describe the arc, not replay the opening scene verbatim. If the body's first paragraph already says "Auf dem Küchentisch steht eine Tasse Linsensuppe, kalt und unberührt" and the synopsis says the same, the synopsis is redundant. Use synonyms or summarize at a higher level.
 - Sober concrete style. No marketing tone, no sentimental metaphors, no mention of "the reader" or "language learners".
 - Conflict and emotional shape distinct from existing synopses in the journey. Sharing a setting is fine; sharing the arc is not.
 - Plausible behavior in the cultural setting. Don't fabricate things a real venue does not host.
 
 ## 3. Body
 
-### Format
+### Format (depends on the journey)
 
-- Plain text. No HTML for multi-voice dialogue stories (the parser reads `Speaker: line` blocks).
-- Sections separated by blank lines (`\n\n`). Dialogue lines within a block separated by single newlines (`\n`).
-- One narrator block at the start, optional narrator transitions between dialogue acts, optional short narrator block at the end.
+The Conversacional German journey uses **multi-voice dialogue** stories: a narrator opens the scene, then characters speak in `Speaker: line` blocks. ElevenLabs `parseDialogueSegments` (lib/elevenlabs.ts:352) only recognizes that format, so audio must be generated against it.
+
+| Journey type | Body format | Audio backend |
+| --- | --- | --- |
+| Conversacional (DE) | Plain text. Narrator paragraph(s), then `Speaker: line` blocks separated by `\n` within a section. Section breaks `\n\n`. NO HTML tags. | ElevenLabs multi-voice |
+| Single-voice narrative (older Conversacional, all Viajero) | HTML with `<blockquote>...</blockquote>` per paragraph. Quoted speech embedded inside narrator prose. | ElevenLabs single-voice |
+
+**Default for new Conversacional DE stories: multi-voice plain-text.** Don't use `<blockquote>` for new ones. The two A1 holdouts on legacy HTML format (`Anna am Winterfeldtmarkt`, `Sonntag in Prenzlauer Berg`) need converting when their audio gets regenerated.
 
 ### Narrator
 
@@ -68,10 +75,14 @@ The eight archetypes the journey rotates through:
 | `late-reveal` | A line in the final beat recolors the entire conversation that came before. | Two friends meet at a café for their usual Saturday coffee; in the last exchange one mentions she is moving to Munich on Friday. |
 | `small-stake` | The character wants something concrete and faces a small, real obstacle. | At the cash register the customer realizes she forgot her wallet; the shopkeeper, who knows her by sight, lets her pay tomorrow. |
 | `open-ending` | The story closes on an unanswered question. The reader does not know how the situation ends. | A teenager waits at a U-Bahn station for someone who never shows; he decides to go home, or to go elsewhere alone — the story ends before the choice resolves. |
+| `daily-encounter` | A calm, low-stakes everyday encounter (shop, café, market, train) with at least one beat of warmth or observation that lifts it above pure transaction. Acts as a breathing space between heavier arcs in the journey. | A regular customer chats briefly with the baker about a son visiting on Sunday; the baker mentions a cake she just baked. They part on a small, specific shared moment, not a generic friendly goodbye. |
 
-**Rotation rule**: do not use the same `arcType` twice in three consecutive stories of the same journey level/topic. Read the previous stories' arcType fields before writing.
+**Rotation rules**:
 
-**Forbidden default**: a story whose only beat is "two characters meet, exchange friendly small talk, part on good terms" without any of the eight arcs above shall not be saved.
+1. Do not use the same non-`daily-encounter` `arcType` twice in three consecutive stories of the same journey level/topic.
+2. `daily-encounter` is the calm-mode arc and may be used more often, BUT no more than two consecutive stories at the same level may both be `daily-encounter`. After two calm beats, the next must use one of the higher-tension arcs (`white-lie`, `last-minute-decision`, `return-after-years`, `unspoken-subtext`, `plan-falls-short`, `late-reveal`, `small-stake`, `open-ending`).
+
+**Forbidden default**: a story whose only beat is "two characters meet, exchange friendly small talk, part on good terms" without ANY arcType (including `daily-encounter`) shall not be saved. If you tag `daily-encounter`, you must execute its requirement: at least one beat of warmth or observation that lifts the story above pure transaction.
 
 ### `arcType` field in the saved JSON
 
@@ -98,8 +109,9 @@ Use one of the eight values above. The field is required for every new story and
   - BAD: `Linsensuppe → Refers to lentil soup, a hearty traditional German dish often eaten on weekdays...`
   - BAD: `vergessen → Used when telling someone you forgot something they asked you to do...`
 - **Vocab item must appear in the BODY**, not only in the synopsis. The reader's karaoke pill highlights vocab in the body; a vocab word that lives only in the synopsis is invisible at runtime and wastes a teaching slot. Verify the surface form is present in `text` before saving.
-- No transparent cognates a learner reads at sight (`Mathe`, `Kaffee`, `Tomate`, `Optimist`, `Chance`, `importante`, `normal`, `social`, `problema`, `idea`, `momento`). Pick teachable items instead.
-- No same-root duplicates in the same story: pick either the verb or the noun, not both. Bad: `fernsehen` + `Fernseher`; `Linsen` + `Linsensuppe`; `lügen` + `anlügen` — they teach the same root twice and waste two of 21 slots.
+- **No transparent cognates** a learner reads at sight. Expanded list (DE): `Mathe`, `Kaffee`, `Tomate`, `Tomaten`, `Banane`, `Schokolade`, `Tee`, `Telefon`, `Apfel`, `Optimist`, `Chance`, `Computer`, `Familie`, `Restaurant`, `Park`, `Auto`, `Bus`, `Hotel`, `Adresse`, `Information`, `Foto`, `Musik`, `Konzert`, `Pizza`, `Spaghetti`, `Hamburger` (the food). Romance/Spanish examples: `importante`, `normal`, `social`, `problema`, `idea`, `momento`, `televisión`, `radio`, `posible`. Pick teachable items instead.
+- **No same-root duplicates in the same story**: pick either the verb or the noun, not both. Bad: `fernsehen` + `Fernseher`; `Linsen` + `Linsensuppe`; `lügen` + `anlügen`; `lächeln` + `Lächeln`; `kochen` + `Koch`. They teach the same root twice and waste two of 21 slots. Detection: if two vocab items share the first 4-5 root chars after stripping common prefixes (`an`, `ge`, `ver`, `be`, `er`, `ent`, `auf`, `aus`, `ein`, `nach`), drop one.
+- **Separable verbs**: when picking a separable verb (`anlügen`, `fernsehen`, `aufmachen`, `zuhören`, `abräumen`), the `surface` field MUST be a single contiguous string that actually appears in the body. If the body splits the verb (`lüg mich nicht an`, `Marie räumt den Tisch ab`), use the lemma form (`anlügen`, `abräumen`) as both `word` AND `surface`, NOT the separated form. Otherwise the karaoke pill matcher fails because the surface is not a literal substring of the body.
 - Multi-word entries only for genuinely lexicalized expressions (`auf einmal`, `schon mal`, `mein Schatz`, `tut mir leid`). Not arbitrary descriptive fragments.
 - The `type` field drives the karaoke pill color, so accuracy matters: an adjective tagged as `verb` shows in the wrong color.
 
@@ -187,8 +199,11 @@ Before running the `save` script, walk through these ten binary questions. If an
 11. Are all `definition` strings between 8 and 14 English words and free of the banned openers (Refers to / Describes / Used to / Used for / Said when)?
 12. Does every `vocab.word` (or `surface`) literally appear in the `text` body? No vocab item lives only in the synopsis?
 13. Is the `vocab` list free of transparent cognates and free of same-root duplicates (no verb+noun pair from the same root)?
+14. Does every named character in the synopsis (proper noun) also appear in the body, and vice versa? No "Klaus said" in the synopsis when the body says "Anna said".
+15. For separable verbs in vocab, is the `surface` a contiguous substring of the body? If not, the surface should be the lemma (`anlügen`), not the split form (`lüg an`).
+16. Is the body in the correct format for the journey type? Multi-voice Conversacional DE stories use `Speaker: line` plain text, NOT `<blockquote>` HTML.
 
-If 8 or more answers are `yes`, save. If fewer, revise.
+If 12 or more answers are `yes`, save. If fewer, revise.
 
 ---
 
