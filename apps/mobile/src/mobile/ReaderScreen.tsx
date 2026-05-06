@@ -551,6 +551,16 @@ export function ReaderScreen(args: {
   onOpenPractice?: () => void;
   isFavoriteWord: (word: string) => boolean;
   onToggleFavoriteWord: (item: VocabItem, contextSentence?: string) => void;
+  onTrackReaderEvent?: (
+    eventType:
+      | "vocab_clicked"
+      | "word_dwell"
+      | "audio_segment_replay"
+      | "story_abandoned"
+      | "vocab_marked_known"
+      | "vocab_marked_unknown",
+    payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
+  ) => void;
 }) {
   const {
     book,
@@ -575,6 +585,7 @@ export function ReaderScreen(args: {
     onOpenPractice,
     isFavoriteWord,
     onToggleFavoriteWord,
+    onTrackReaderEvent,
   } = args;
   const blocks = useMemo(() => toBlocks(story.text), [story.text]);
   const vocab = story.vocab ?? [];
@@ -1151,10 +1162,22 @@ export function ReaderScreen(args: {
                         activeWordIndex,
                         vocabLookup: karaokeVocabLookup,
                         paragraphKey: `${story.id}-k-${index}`,
-                        onWordPress: (item, contextSentence) =>
+                        onWordPress: (item, contextSentence) => {
                           setSelectedVocab(
                             contextSentence ? { ...item, note: contextSentence } : item
-                          ),
+                          );
+                          onTrackReaderEvent?.("vocab_clicked", {
+                            storySlug: story.slug ?? story.id,
+                            bookSlug: book.slug,
+                            metadata: {
+                              word: item.word,
+                              wordType: item.type,
+                              language: book.language ?? null,
+                              variant: book.variant ?? null,
+                              source: "karaoke",
+                            },
+                          });
+                        },
                         variant: "paragraph",
                         alreadyHighlighted: karaokeAlreadyHighlighted,
                       })}
@@ -1187,10 +1210,22 @@ export function ReaderScreen(args: {
                         block.text,
                         vocab,
                         `${story.id}-${index}`,
-                        (word, contextSentence) =>
+                        (word, contextSentence) => {
                           setSelectedVocab(
                             contextSentence ? { ...word, note: contextSentence } : word
-                          ),
+                          );
+                          onTrackReaderEvent?.("vocab_clicked", {
+                            storySlug: story.slug ?? story.id,
+                            bookSlug: book.slug,
+                            metadata: {
+                              word: word.word,
+                              wordType: word.type,
+                              language: book.language ?? null,
+                              variant: book.variant ?? null,
+                              source: "highlight",
+                            },
+                          });
+                        },
                         block.type,
                         alreadyHighlightedShared
                       )}

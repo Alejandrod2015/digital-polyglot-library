@@ -6510,6 +6510,39 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  // Reader comprehension events. Captures per-word interactions for adaptive
+  // learning + corpus asset value. Fire-and-forget; failures are logged but
+  // never block reader UX.
+  async function trackReaderEvent(
+    eventType:
+      | "vocab_clicked"
+      | "word_dwell"
+      | "audio_segment_replay"
+      | "story_abandoned"
+      | "vocab_marked_known"
+      | "vocab_marked_unknown",
+    payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
+  ) {
+    if (!sessionToken) return;
+    try {
+      await apiFetch<{ success: true }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/mobile/metrics",
+        token: sessionToken,
+        method: "POST",
+        body: {
+          storySlug: payload.storySlug,
+          bookSlug: payload.bookSlug,
+          eventType,
+          value: payload.value,
+          metadata: payload.metadata ?? {},
+        },
+      });
+    } catch (error) {
+      console.error("[mobile reader] failed to track reader event", error);
+    }
+  }
+
   useEffect(() => {
     practiceStartTrackedRef.current = false;
     practiceCompletionTrackedRef.current = false;
@@ -12049,6 +12082,7 @@ export function MobileLibraryShell(args: {
           onOpenPractice={() => void openStoryPractice(selection)}
           isFavoriteWord={isFavoriteWord}
           onToggleFavoriteWord={(item, contextSentence) => void toggleFavoriteWord(item, contextSentence)}
+          onTrackReaderEvent={trackReaderEvent}
         />
       </View>
     );
