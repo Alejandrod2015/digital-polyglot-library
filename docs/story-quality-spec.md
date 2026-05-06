@@ -52,10 +52,36 @@ If you change a rule here, also update the matching feedback file in `~/.claude/
 - Same target across all CEFR levels. What changes between levels is lexical and syntactic density, not volume.
 - If you go over 320, trim before saving (cut a sub-beat, tighten a dialogue exchange, remove a redundant transition). Going over is allowed only when explicitly authorized by the user for that specific story.
 
-### Register variety
+### Arc archetype (REQUIRED)
 
-- Each story should feel emotionally different from its journey neighbors. Avoid making every story a "friendly stranger helps protagonist, everyone leaves happy" arc.
-- Possible alternative registers: contemplative monologue, quiet bittersweet realization, mild misunderstanding played politely, comedic tension, an open-ended decision, a small disappointment handled gracefully.
+Every story must declare an `arcType` field in its JSON shape and execute that arc in the body. The default "two characters chat amably and part" pattern is BANNED unless the journey deliberately schedules it (e.g. as a calm beat between heavier stories). At A1 the lexicon is constrained but the narrative shape is not — kids' books at A1-equivalent levels carry real arcs with real stakes inside tiny vocabularies.
+
+The eight archetypes the journey rotates through:
+
+| `arcType` | What it is | Concrete A1 example |
+| --- | --- | --- |
+| `white-lie` | A character tells a small lie out of kindness and almost gets caught. Reader holds dramatic irony. | A teenager lies to her grandmother on the phone that she ate the soup; grandmother asks how it tasted; the teenager improvises. |
+| `last-minute-decision` | The character changes their mind in the final beat. | A man buys roses for his ex; at her door he turns back and gives them to a stranger in the lobby. |
+| `return-after-years` | A character returns to a place that has changed or no longer recognizes them. | An older man visits a café he hasn't been to in forty years; the new barista listens politely but doesn't know him. |
+| `unspoken-subtext` | Two characters discuss something trivial while another, unspoken topic floats between them. | A landlord visits an old tenant carrying a letter and never delivers it; they make coffee and talk about the weather instead. |
+| `plan-falls-short` | What the character wanted didn't pan out; they resolve it differently. | A girl wants to buy her mother a bouquet but only has enough for one stem; the florist wraps it with a free ribbon. |
+| `late-reveal` | A line in the final beat recolors the entire conversation that came before. | Two friends meet at a café for their usual Saturday coffee; in the last exchange one mentions she is moving to Munich on Friday. |
+| `small-stake` | The character wants something concrete and faces a small, real obstacle. | At the cash register the customer realizes she forgot her wallet; the shopkeeper, who knows her by sight, lets her pay tomorrow. |
+| `open-ending` | The story closes on an unanswered question. The reader does not know how the situation ends. | A teenager waits at a U-Bahn station for someone who never shows; he decides to go home, or to go elsewhere alone — the story ends before the choice resolves. |
+
+**Rotation rule**: do not use the same `arcType` twice in three consecutive stories of the same journey level/topic. Read the previous stories' arcType fields before writing.
+
+**Forbidden default**: a story whose only beat is "two characters meet, exchange friendly small talk, part on good terms" without any of the eight arcs above shall not be saved.
+
+### `arcType` field in the saved JSON
+
+In addition to the existing fields (`title`, `synopsis`, `text`, `vocab`), add:
+
+```json
+"arcType": "late-reveal"
+```
+
+Use one of the eight values above. The field is required for every new story and tracked across the journey for the rotation rule.
 
 ## 4. Vocab
 
@@ -136,9 +162,28 @@ If you change a rule here, also update the matching feedback file in `~/.claude/
 
 ---
 
-## Reference example: Bank im Tiergarten
+## 9. Pre-save checklist
 
-A story written specifically to illustrate the spec, not yet generated.
+Before running the `save` script, walk through these ten binary questions. If any answer is `no`, fix the story before saving. The script does not enforce these; the assistant must self-audit.
+
+1. Does the title have a concrete cultural anchor (neighborhood, dish, named venue, traditional object) and avoid generic nouns and banned patterns?
+2. Does the first sentence of the synopsis describe the scene with common nouns (place, props, action), not just proper nouns?
+3. Does the narrator open with a complete sentence (subject + verb), not a verbless fragment?
+4. Does the narrator's cadence vary (mix of short and long sentences, never five similar ones in a row)?
+5. Does the narrator include at least one sensory detail (smell, light, sound, temperature)?
+6. Does each character have a distinguishable voice (lines you can attribute to one and not the other without the speaker label)?
+7. Is there at least one callback inside the body (a phrase, gesture, or word reused with a twist late in the story)?
+8. Is the declared `arcType` actually executed in the body, not just labeled? Reread and confirm the arc is recognizable to a reader.
+9. Does the close avoid the default "everyone parts happy" formula unless the arc explicitly justifies it?
+10. Are all body words within the target CEFR level or one level above (i+1)? No words two or more levels above target?
+
+If 8 or more answers are `yes`, save. If fewer, revise.
+
+---
+
+## Reference example A — gentle subtext: Bank im Tiergarten
+
+A story written specifically to illustrate the spec, not yet generated. **`arcType: "unspoken-subtext"`**: two strangers chat about Berlin's weather while the older woman is really talking about loss and change. The reveal is implicit, never spelled out.
 
 ### Title
 
@@ -249,3 +294,140 @@ ambientPath = null; // park is outdoor but quiet; no ambient catalog match for T
 - Total: 1:45 – 1:55 minutes
 
 Same range as the existing journey examples (`Sonntag in Prenzlauer Berg` 1:51, `Apfelkuchen in Wedding` 2:08).
+
+---
+
+## Reference example B — late reveal: Espresso am Kollwitzplatz
+
+A second worked example, deliberately at the heavier end of the engagement spectrum. **`arcType: "late-reveal"`**: two friends meet for their usual Saturday coffee; in the last beat one of them mentions she is moving to Munich next week. The line recolors the entire previous hour: Mara's distance, the uneaten cake, the shorter laughs were all pointing at this. The story closes on Lina alone with a half-finished espresso.
+
+This is the engagement target for the journey rotation. Bank im Tiergarten is acceptable as a calm beat between heavier ones; Espresso am Kollwitzplatz is closer to what most stories should feel like.
+
+### Title
+
+`Espresso am Kollwitzplatz`
+
+Three words, dish + Berlin square (Kollwitzplatz, not used in existing titles). The title does not preview the reveal; it sits as a routine setting until the final beat changes its meaning.
+
+### Synopsis (58 words)
+
+> Lina und Mara sind beste Freundinnen seit der Schulzeit. Jeden Samstag treffen sie sich im selben kleinen Café am Kollwitzplatz, immer am gleichen Tisch. Heute ist Mara still und isst keinen Kuchen wie sonst. Lina merkt es, fragt aber nicht weiter. Erst beim Abschied, mit der Jacke schon an, sagt Mara den Satz, der die ganze Stunde rückwirkend verändert.
+
+The first sentence is "Lina und Mara sind beste Freundinnen seit der Schulzeit." After stripping proper nouns: "sind beste seit der." Weak. Better, the second sentence is what the cover prompt should pivot on: "Jeden Samstag treffen sie sich im selben kleinen Café am Kollwitzplatz." That gives the cover a real scene. (Reminder: bypass `buildCoverPrompt` and write the prompt explicitly.)
+
+### Body (~265 words)
+
+```
+Es ist Samstagnachmittag in Berlin. Im kleinen Café am Kollwitzplatz ist es ruhig. Es riecht nach Kaffee und frischem Gebäck. Lina sitzt schon am Fenster und wartet auf Mara, ihre beste Freundin seit der Schulzeit. Sie treffen sich jeden Samstag hier, immer zur gleichen Zeit, immer am gleichen Tisch.
+
+Mara: Hallo, Lina. Entschuldige, ich bin spät.
+Lina: Kein Problem. Setz dich. Was nimmst du?
+Mara: Einen Espresso, glaube ich. Nichts zu essen heute.
+Lina: Wirklich? Du isst sonst immer Kuchen.
+Mara: Heute nicht. Ich habe keinen Hunger.
+Lina: Alles gut?
+Mara: Ja, ja. Nur ein bisschen müde.
+
+Der Espresso kommt. Mara trinkt langsam. Sie schaut oft aus dem Fenster.
+
+Lina: Wie war deine Woche?
+Mara: Voll. Sehr voll. Und deine?
+Lina: Normal. Im Büro war viel los. Sonst ruhig.
+Mara: Schön.
+
+Sie reden über kleine Dinge. Über das Wetter. Über einen Film. Über Linas neuen Hund. Mara lacht ein paar Mal, aber kürzer als sonst. Lina merkt es, sagt aber nichts.
+
+Mara: Ich muss los, Lina.
+Lina: Schon? Wir sind erst seit einer Stunde hier.
+Mara: Ich weiß. Aber heute ist viel.
+Lina: Okay.
+
+Mara steht auf und nimmt ihre Jacke vom Stuhl. Bevor sie geht, dreht sie sich noch einmal um.
+
+Mara: Übrigens, Lina. Ich ziehe nächste Woche nach München. Wegen der Arbeit.
+Lina: Was?
+Mara: Ich wollte es dir sagen. Heute war schwer.
+Lina: Mara…
+Mara: Wir sehen uns, ja? Versprochen.
+
+Mara lächelt klein und geht. Lina bleibt sitzen. Vor ihr steht der halbvolle Espresso. Im Café ist es immer noch ruhig.
+```
+
+Why this body executes the `late-reveal` arc:
+
+- **Subtext layered through the body, not stated**: Mara is late, doesn't eat, drinks slowly, looks out the window often, laughs shorter than usual. The reader can pick up that something is off; the reveal at the end confirms it.
+- **Lina notices but doesn't push**: she asks once ("Alles gut?"), accepts the answer, lets the conversation move to small things. Real friend behavior at A1 vocabulary level.
+- **The reveal lands in the second-to-last beat**: "Übrigens, Lina. Ich ziehe nächste Woche nach München." The casual marker "übrigens" (by the way) is the cruelty: a life change presented as a footnote.
+- **The close echoes the opening with one detail changed**: opening narrator says "Im kleinen Café am Kollwitzplatz ist es ruhig." The closing narrator says "Im Café ist es immer noch ruhig." Same calm, completely different feeling. That's the callback that earns the arc.
+- **No "everyone happy" close**: Lina is left alone with a half-finished espresso. Mara has gone. The story ends in stillness, not warmth.
+
+### Vocab list (20 items)
+
+| word | surface | type | definition |
+| --- | --- | --- | --- |
+| treffen | treffen | verb | Used when meeting someone, by appointment or chance, very common verb for social plans with friends or family. |
+| Freundin | | noun | Refers to a female friend; the masculine form is Freund and is used for either male friends or romantic partners. |
+| Schulzeit | | noun | Refers to one's school years as a period of life, often used when talking about long friendships or shared memories. |
+| Espresso | | noun | Refers to a small strong coffee, prepared at high pressure, common order in central European cafés in the afternoon. |
+| Kuchen | | noun | Refers to a sweet baked dessert similar to cake, central in German coffee culture and Saturday social rituals. |
+| Hunger | | noun | Refers to the physical sensation of needing to eat; "ich habe Hunger" is the standard way to say "I am hungry". |
+| müde | | adjective | Describes a tired feeling, physical or emotional; can be used literally or as a polite cover for something heavier. |
+| langsam | | adjective | Describes a slow pace; used both for movement and for the way someone speaks, eats, or makes decisions. |
+| oft | | adverb | Means often; describes something that happens many times rather than rarely or only once. |
+| Woche | | noun | Refers to a week; in German conversation a frequent reference point for plans, work, or recent events. |
+| voll | | adjective | Describes something full; informally used for a busy, packed schedule, as in "Meine Woche war voll." |
+| ruhig | | adjective | Describes a moment, person, or place that is calm and quiet, without noise, hurry, or strong emotion. |
+| lachen | | verb | Used to describe laughter; intensity and length carry meaning, a short laugh hints at something held back. |
+| merken | merkt | verb | Used when noticing something, often something subtle; close in meaning to "to realize" or "to pick up on". |
+| übrigens | | adverb | Means "by the way"; introduces a remark that the speaker presents as a side note, sometimes to soften something major. |
+| ziehen | ziehe | verb | Used reflexively in "ich ziehe um" or alone in "ich ziehe nach X" to mean moving residence to a new place. |
+| wegen | | preposition | Means "because of"; introduces a reason or cause, common in everyday explanations of decisions. |
+| Arbeit | | noun | Refers to work, both as activity and as a job; central word in conversations about daily life and major decisions. |
+| versprechen | Versprochen | verb | Used when committing to do something for someone; the past participle alone is a common short reply meaning "I promise". |
+| halbvoll | | adjective | Describes something that is half full; here applied to the espresso left on the table, a quiet visual closing detail. |
+
+### Cover prompt (custom, bypassing `buildCoverPrompt`)
+
+> Editorial book cover illustration of two young women in their late twenties sitting at a small round café table by a window in a quiet Berlin neighborhood square. One has long dark hair and wears a soft jumper; she smiles politely but her gaze drifts to the window. The other leans forward, looking at her friend with quiet concern. Between them on the wooden table sit two small espresso cups; one is half empty. Through the window the soft light of a Saturday afternoon falls on a leafy square with a few walkers passing.
+>
+> Two characters only, mid-shot framing, both faces clearly visible, atmosphere of unspoken news between close friends.
+>
+> Hand-drawn cartoon vector illustration in the style of contemporary editorial language-learning book covers. Clean rounded shapes, gentle line work, expressive but stylized faces. The look used by Duolingo, Notion, Headspace and Babbel landing pages.
+>
+> Color tonality: cool harmony anchored on sage green, lavender and dusty blue, with vivid confident saturation, not pastel and not washed-out.
+>
+> Wide horizontal 16:9 landscape frame. No text, no letters, no captions, no logos, no borders.
+
+### Audio voice map
+
+```ts
+voiceMap = {
+  narrator: GERMAN_DIALOGUE_VOICES.moritz,    // baritone narrator
+  Lina: GERMAN_DIALOGUE_VOICES.enniah,        // warm middle-aged female; the friend who notices
+  Mara: GERMAN_DIALOGUE_VOICES.gesaTess,      // calmer host baseline; fits Mara's composed-but-distant voice
+};
+ambientPath = null; // intimate café scene; no ambient layer
+```
+
+The casting choice matters here: pairing a warmer voice (Enniah) with a cooler one (Gesa Tess) helps the listener feel Mara's distance even before the reveal. If both characters had the same warmth, the subtext would not land as well.
+
+### Estimated audio length
+
+- ~265 body words at ~2.5 wps for German A1 multi-voice = ~106 s
+- Title "Espresso am Kollwitzplatz" narrated first = ~3 s
+- Total: 1:45 – 1:55 minutes
+
+Same range as the other examples; engagement is in the arc, not in the runtime.
+
+---
+
+## How to use these examples
+
+When generating a new story:
+
+1. Read this whole spec, including both reference examples.
+2. Pick an `arcType` from §3 that has not appeared in the last three stories of the same journey/level/topic.
+3. Use the closer reference example for tone calibration: §A for low-intensity beats, §B for the engagement target.
+4. Generate, then run yourself through the §9 pre-save checklist.
+5. Save only when 8+ checklist items pass.
+
