@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Data Deletion Instructions | Digital Polyglot",
@@ -10,6 +11,11 @@ export default function DataDeletionPage() {
     <main className="mx-auto w-full max-w-3xl px-6 py-10 text-[var(--foreground)]">
       <h1 className="text-3xl font-bold">Data Deletion Instructions</h1>
       <p className="mt-2 text-sm text-[var(--muted)]">Last updated: March 5, 2026</p>
+      <p className="mt-1 text-sm text-[var(--muted)]">
+        <Link href="/data-deletion/de" className="text-[var(--primary)] hover:underline">
+          Diese Seite auf Deutsch lesen
+        </Link>
+      </p>
 
       <p className="mt-8 text-[15px] leading-7">
         If you signed in to Digital Polyglot using Facebook and want your account and associated

@@ -3,41 +3,41 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Impressum | Digital Polyglot",
-  description: "Legal notice and provider identification for Digital Polyglot.",
+  description: "Anbieterkennzeichnung und rechtlicher Hinweis für Digital Polyglot.",
 };
 
-export default function ImpressumPage() {
+export default function ImpressumDePage() {
   return (
     <main className="mx-auto w-full max-w-4xl px-6 py-10 text-[var(--foreground)]">
       <h1 className="text-3xl font-bold">Impressum</h1>
-      <p className="mt-2 text-sm text-[var(--muted)]">Last updated: March 8, 2026</p>
+      <p className="mt-2 text-sm text-[var(--muted)]">Stand: 8. März 2026</p>
       <p className="mt-1 text-sm text-[var(--muted)]">
-        <Link href="/impressum/de" className="text-[var(--primary)] hover:underline">
-          Diese Seite auf Deutsch lesen
+        <Link href="/impressum" className="text-[var(--primary)] hover:underline">
+          Read this page in English
         </Link>
       </p>
 
       <section className="mt-8">
-        <h2 className="text-xl font-semibold">Provider information</h2>
+        <h2 className="text-xl font-semibold">Anbieter</h2>
         <p className="mt-3 text-[15px] leading-7">
           Alberto Alejandro Del Carpio Olemar
           <br />
           Digital Polyglot
           <br />
-          Sole proprietor / Einzelunternehmen
+          Einzelunternehmen
           <br />
           Heußweg 3
           <br />
           20257 Hamburg
           <br />
-          Germany
+          Deutschland
         </p>
       </section>
 
       <section className="mt-8">
-        <h2 className="text-xl font-semibold">Contact</h2>
+        <h2 className="text-xl font-semibold">Kontakt</h2>
         <p className="mt-3 text-[15px] leading-7">
-          Legal contact:{" "}
+          Rechtlicher Kontakt:{" "}
           <a className="text-[var(--primary)] hover:underline" href="mailto:contact@digitalpolyglot.com">
             contact@digitalpolyglot.com
           </a>
@@ -47,23 +47,25 @@ export default function ImpressumPage() {
             support@digitalpolyglot.com
           </a>
           <br />
-          Phone: <a className="text-[var(--primary)] hover:underline" href="tel:+4915142899581">+49 1514 2899581</a>
+          Telefon:{" "}
+          <a className="text-[var(--primary)] hover:underline" href="tel:+4915142899581">
+            +49 1514 2899581
+          </a>
         </p>
       </section>
 
       <section className="mt-8">
-        <h2 className="text-xl font-semibold">Tax information</h2>
+        <h2 className="text-xl font-semibold">Steuerliche Angaben</h2>
         <p className="mt-3 text-[15px] leading-7">
-          No VAT ID has been provided.
+          Es wurde keine Umsatzsteuer-Identifikationsnummer angegeben.
           <br />
-          Small business status applies under <span className="font-medium">§ 19 UStG</span>
-          {" "}(Kleinunternehmerregelung).
+          Es gilt die <span className="font-medium">Kleinunternehmerregelung gemäß § 19 UStG</span>.
         </p>
       </section>
 
       <section className="mt-8">
-        <h2 className="text-xl font-semibold">Commercial register</h2>
-        <p className="mt-3 text-[15px] leading-7">Not entered in the commercial register.</p>
+        <h2 className="text-xl font-semibold">Handelsregister</h2>
+        <p className="mt-3 text-[15px] leading-7">Nicht im Handelsregister eingetragen.</p>
       </section>
     </main>
   );
