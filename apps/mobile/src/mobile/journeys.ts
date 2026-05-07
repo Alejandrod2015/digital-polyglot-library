@@ -41,7 +41,27 @@ export type Journey = {
    *  prefiere sobre `focusShortLabel(focus)`. Opcional para no
    *  romper journeys creados antes de este campo. */
   label?: string | null;
+  /** Código regional canónico ("latam", "spain", "us", "uk", "br",
+   *  "pt"…) usado por `LanguageFlag` para elegir la bandera. Bajo el
+   *  modelo "un track por Studio Journey", `variant` guarda el cuid
+   *  del Journey (necesario para resolver el track activo) y la
+   *  región se persiste aparte aquí. Opcional para journeys legacy
+   *  donde `variant` ya tenía el código regional. */
+  region?: string | null;
 };
+
+/**
+ * Devuelve el código regional que `LanguageFlag` debería pintar.
+ * Prefiere `journey.region` (modelo nuevo) y cae a `journey.variant`
+ * para journeys legacy donde el variant guardaba el código regional
+ * directo.
+ */
+export function journeyFlagVariant(journey: {
+  region?: string | null;
+  variant: string | null;
+}): string | null {
+  return (journey.region?.trim() || journey.variant?.trim() || null) as string | null;
+}
 
 /**
  * Build the deterministic id for a journey. Centralized so the
@@ -190,6 +210,9 @@ export function synthesizeJourneysFromLegacy(input: {
       id: journeyId(language, variant, journeyFocus),
       language,
       variant,
+      // En el flow legacy, `preferredVariant` ya contenía el código
+      // regional (us/uk/latam…), así que también sirve como `region`.
+      region: variant,
       focus: journeyFocus,
       level: input.preferredLevel,
       createdAt,
@@ -231,6 +254,7 @@ export function areJourneysEqual(a: Journey[], b: Journey[]): boolean {
       x.id !== y.id ||
       x.language !== y.language ||
       x.variant !== y.variant ||
+      (x.region ?? null) !== (y.region ?? null) ||
       x.focus !== y.focus ||
       x.level !== y.level ||
       x.createdAt !== y.createdAt

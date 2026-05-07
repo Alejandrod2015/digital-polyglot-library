@@ -151,6 +151,7 @@ type StoredJourney = {
   id: string;
   language: string;
   variant: string | null;
+  region: string | null;
   focus: string;
   level: string | null;
   createdAt: string;
@@ -172,6 +173,7 @@ function normalizeJourneysArray(value: unknown): StoredJourney[] | null {
       id,
       language,
       variant: typeof j.variant === "string" && j.variant.trim() ? j.variant.trim() : null,
+      region: typeof j.region === "string" && j.region.trim() ? j.region.trim() : null,
       focus:
         typeof j.focus === "string" && j.focus.trim()
           ? (normalizeJourneyFocusPreference(j.focus) ?? "General")

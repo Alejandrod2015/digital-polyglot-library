@@ -17,6 +17,7 @@ import {
   focusIcon,
   focusShortLabel,
   journeyDisplayName,
+  journeyFlagVariant,
   journeyId,
 } from "./journeys";
 import type { JourneyFocus } from "../../../../src/lib/onboarding";
@@ -109,6 +110,10 @@ type Props = {
   onCreate: (input: {
     language: string;
     variant: string | null;
+    /** Código regional ("latam"/"spain"/"us"/"uk"/"br"/"pt"…) usado
+     *  para la bandera. Distinto del `variant` (que bajo el modelo
+     *  nuevo guarda el cuid del Studio Journey track). */
+    region: string | null;
     focus: JourneyFocus;
     label?: string | null;
   }) => void | Promise<void>;
@@ -302,6 +307,11 @@ export function JourneysPanel({
         // Use the Studio Journey track id as the variant so the
         // resulting journey id is unique per (language, track).
         variant: pickedTrackId,
+        // El código regional ("latam"/"spain"/…) viene del paso 1 y
+        // se persiste aparte para que `LanguageFlag` pinte la
+        // bandera correcta. Antes se perdía porque `variant` se
+        // sobreescribía con el cuid del track.
+        region: pickedLanguage.variant,
         focus: DEFAULT_NEW_JOURNEY_FOCUS,
         label: pickedTrack?.label ?? null,
       });
@@ -395,6 +405,12 @@ export function JourneysPanel({
               };
               const focusLabel = focusShortLabel(journey.focus);
               const icon = focusIcon(journey.focus);
+              // Título = solo el idioma. El nombre específico del
+              // journey ("Conversational", "Viajero", "Travelers"…)
+              // se mueve a la sub-línea para que la línea del idioma
+              // no quede tan larga ("Portuguese · Conversational" se
+              // partía a dos visuales).
+              const journeyNameLabel = (journey.label ?? "").trim() || focusLabel;
               return (
                 <Pressable
                   key={journey.id}
@@ -407,11 +423,11 @@ export function JourneysPanel({
                   <View style={styles.cardHeader}>
                     <LanguageFlag
                       language={journey.language}
-                      variant={journey.variant}
+                      variant={journeyFlagVariant(journey)}
                       size={44}
                     />
                     <View style={styles.cardTitleBlock}>
-                      <Text style={styles.cardTitle}>{journeyDisplayName(journey)}</Text>
+                      <Text style={styles.cardTitle}>{journey.language}</Text>
                       <View style={styles.cardSubLine}>
                         <Feather
                           name={icon.feather}
@@ -419,7 +435,7 @@ export function JourneysPanel({
                           color="rgba(255,255,255,0.7)"
                         />
                         <Text style={styles.cardSubText}>
-                          {focusLabel}
+                          {journeyNameLabel}
                           {journey.level ? ` · ${journey.level}` : ""}
                         </Text>
                       </View>

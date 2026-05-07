@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { Children, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-=======
-import { Children, useCallback, useEffect, useMemo, useRef, useState } from "react";
->>>>>>> origin/main
 import * as SecureStore from "expo-secure-store";
 import * as Haptics from "expo-haptics";
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
@@ -65,6 +61,7 @@ import {
   findActiveJourney,
   focusShortLabel,
   journeyDisplayName,
+  journeyFlagVariant,
   journeyId,
   languageShortCode,
   synthesizeJourneysFromLegacy,
@@ -2245,13 +2242,17 @@ export function MobileLibraryShell(args: {
     // modelo "un track por Studio Journey", `journey.variant` puede
     // ser un cuid (Journey.id) — formatVariantLabel lo escupe en
     // mayúscula y el row terminaba mostrando "· CMONCZ14V0000…", que
-    // es ruido para el usuario.
-    const rawVariant = (journey.variant ?? "").trim().toLowerCase();
+    // es ruido para el usuario. La región canónica vive en
+    // `journey.region` (y para journeys legacy en `journey.variant`).
+    const flagRegion = journeyFlagVariant(journey);
+    const rawVariant = (flagRegion ?? "").trim().toLowerCase();
     const variantLabel = VARIANT_LABELS[rawVariant as keyof typeof VARIANT_LABELS] ?? null;
     return {
       id: journey.id,
       language: journey.language,
-      variant: journey.variant,
+      // El entry expone el código regional (no el cuid) para que la
+      // bandera se pinte bien.
+      variant: flagRegion,
       variantLabel,
       displayName: journeyDisplayName(journey),
       level: cefrFromPreferredLevel(journey.level),
@@ -2397,6 +2398,7 @@ export function MobileLibraryShell(args: {
   async function handleJourneyCreate(input: {
     language: string;
     variant: string | null;
+    region?: string | null;
     focus: JourneyFocus;
     label?: string | null;
   }) {
@@ -2418,6 +2420,7 @@ export function MobileLibraryShell(args: {
       id,
       language: input.language,
       variant: input.variant,
+      region: input.region?.trim() || null,
       focus: input.focus,
       level: preferences.preferredLevel,
       createdAt: new Date().toISOString(),
@@ -10413,7 +10416,6 @@ export function MobileLibraryShell(args: {
             toValue: 0.85,
             duration: 1100,
             easing: Easing.inOut(Easing.ease),
-<<<<<<< HEAD
             // JS-driven (useNativeDriver:false) a propósito. Con
             // native driver el loop se quedaba congelado al cambiar
             // de tab + interactuar + volver a home: el rearm del
@@ -10428,15 +10430,6 @@ export function MobileLibraryShell(args: {
             // + nextStoryFloatStyle), así que JS driver vuelve a ser
             // seguro y resuelve el problema del rearm.
             useNativeDriver: false,
-=======
-            // useNativeDriver:true saca la oscilación del hilo JS:
-            // tanto opacity (halo) como transform.translateY (float)
-            // son props soportadas nativamente. Antes con
-            // useNativeDriver:false el loop se congelaba bajo carga
-            // de renders; el AppState rearm a continuación cubre el
-            // caso de Low Power Mode al volver al foreground.
-            useNativeDriver: true,
->>>>>>> origin/main
           }),
           Animated.timing(journeyNextPulse, {
             toValue: 0.25,
@@ -11557,7 +11550,11 @@ export function MobileLibraryShell(args: {
       >
         <LanguageFlag
           language={activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null}
-          variant={activeJourney?.variant ?? preferences.preferredVariant}
+          variant={
+            activeJourney
+              ? journeyFlagVariant(activeJourney)
+              : preferences.preferredVariant
+          }
           size={34}
         />
         {(() => {
@@ -13112,11 +13109,7 @@ export function MobileLibraryShell(args: {
   // ser un array PLANO (no un fragment con conditional-null siblings),
   // si no `stickyHeaderIndices` no resuelve correctamente las
   // posiciones — fue exactamente lo que rompió el intento anterior.
-<<<<<<< HEAD
   // `Children.toArray` aplana el fragment y filtra los nulls,
-=======
-  // `React.Children.toArray` aplana el fragment y filtra los nulls,
->>>>>>> origin/main
   // dejando el array que journeyStickyIndices espera.
   if (useNativeJourneySticky) {
     content = Children.toArray(journeyView.props.children);

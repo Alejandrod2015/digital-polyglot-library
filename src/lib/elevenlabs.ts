@@ -388,14 +388,64 @@ export function parseDialogueSegments(storyText: string): DialogueSegment[] {
 // softened text, voice settings hash) means swapping a single character's
 // voice in a story re-generates only that character's segments; the
 // narrator and other speakers serve from R2 for free.
+//
+// El sufijo "trim-v1" se incorporó al key cuando agregamos la pasada de
+// `silenceremove` para limpiar artefactos de cola (clicks, breaths, vocal-
+// fry que ElevenLabs a veces encadena 100-300 ms después de terminar la
+// oración). Bumpea el key para que las entradas viejas sin trim no se
+// sirvan; quedan huérfanas en R2 hasta el próximo cleanup manual.
 function multivoiceSegmentCacheKey(voiceId: string, softenedText: string): string {
   const settingsFingerprint = JSON.stringify(DEFAULT_VOICE_SETTINGS);
   const hash = crypto
     .createHash("sha256")
-    .update(`${voiceId}|${settingsFingerprint}|${softenedText}`)
+    .update(`${voiceId}|${settingsFingerprint}|${softenedText}|trim-v1`)
     .digest("hex")
     .slice(0, 24);
   return `media/multivoice-segments/${hash}.mp3`;
+}
+
+// Pasa el buffer del segmento por `silenceremove` con threshold -45 dB y
+// duración mínima 50 ms, en ambos extremos. Quita el silencio inicial que
+// a veces incluye un click de attack, y la cola con breaths/vocal-fry/
+// mouth-clicks que ElevenLabs encadena al final de la oración. Re-encoda
+// a 192 kbps (mismo bitrate que sirve el endpoint TTS) así el concat
+// posterior no muestra discontinuidades de bitstream.
+async function trimSegmentArtifacts(buffer: Buffer): Promise<Buffer> {
+  const { writeFile, mkdtemp, rm, readFile } = await import("fs/promises");
+  const { tmpdir } = await import("os");
+  const path = await import("path");
+  const { spawn } = await import("child_process");
+
+  const dir = await mkdtemp(path.join(tmpdir(), "trim-"));
+  try {
+    const inPath = path.join(dir, "in.mp3");
+    const outPath = path.join(dir, "out.mp3");
+    await writeFile(inPath, buffer);
+    await new Promise<void>((resolve, reject) => {
+      const proc = spawn("ffmpeg", [
+        "-y",
+        "-loglevel", "error",
+        "-i", inPath,
+        "-af",
+        "silenceremove=" +
+          "start_periods=1:start_duration=0.05:start_threshold=-45dB:" +
+          "stop_periods=-1:stop_duration=0.05:stop_threshold=-45dB",
+        "-c:a", "libmp3lame",
+        "-b:a", "192k",
+        outPath,
+      ]);
+      let stderr = "";
+      proc.stderr.on("data", (chunk) => { stderr += chunk.toString(); });
+      proc.on("error", reject);
+      proc.on("close", (code) => {
+        if (code === 0) resolve();
+        else reject(new Error(`ffmpeg silenceremove exit ${code}: ${stderr.slice(0, 400)}`));
+      });
+    });
+    return await readFile(outPath);
+  } finally {
+    await rm(dir, { recursive: true, force: true }).catch(() => {});
+  }
 }
 
 async function ttsSegment(args: {
@@ -442,21 +492,31 @@ async function ttsSegment(args: {
     console.error(`[elevenlabs] segment TTS failed for voice ${args.voiceId}: ${response.status} ${err.slice(0, 200)}`);
     return null;
   }
-  const buffer = Buffer.from(await response.arrayBuffer());
+  const rawBuffer = Buffer.from(await response.arrayBuffer());
+
+  // Pasa por silenceremove para limpiar la cola de artefactos. Si ffmpeg
+  // falla (binario ausente, segmento corrupto), caemos al buffer crudo
+  // así el pipeline nunca se queda sin audio por un fallo de filtro.
+  const cleanedBuffer = await trimSegmentArtifacts(rawBuffer).catch((err) => {
+    console.warn(
+      `[elevenlabs] segment trim failed, using raw buffer: ${err instanceof Error ? err.message : err}`
+    );
+    return rawBuffer;
+  });
 
   // Best-effort cache write. If R2 isn't configured or upload fails, the
   // current generation still succeeds; the next regen will just miss again.
   try {
     await uploadPublicObject({
       key: cacheKey,
-      body: buffer,
+      body: cleanedBuffer,
       contentType: "audio/mpeg",
     });
   } catch (err) {
     console.warn(`[elevenlabs] segment cache write failed: ${err instanceof Error ? err.message : err}`);
   }
 
-  return buffer;
+  return cleanedBuffer;
 }
 
 // Each ElevenLabs MP3 starts with a Xing/Info frame announcing the per-segment
