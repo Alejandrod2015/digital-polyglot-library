@@ -71,15 +71,18 @@ The migration is additive (4 `ALTER TABLE ADD COLUMN IF NOT EXISTS`), zero risk 
 
 ## Movida 2 — SRS engine on Favorite scaffolding
 
-`Favorite` table already has `nextReviewAt`, `lastReviewedAt`, `streak`. The scaffolding is ~30% there.
+`Favorite` table already has `nextReviewAt`, `lastReviewedAt`, `streak`. The scaffolding is ~30% there. PATCH `/api/favorites` already accepts SRS update payload. What's missing is a real algorithm + the practice flow integration.
 
-**Pieces (not started):**
+**Sub-pieces and deploy state:**
 
-- FSRS algorithm implementation (~200 lines, open source) for next-review calculation
-- Endpoint: `GET /api/practice/due` returns vocab to review today
-- Integration with `practice_session_started` event so practice opens with SRS-due items first
-- After each correct/incorrect response in practice, update `nextReviewAt` and `streak`
-- Optional: surface "callback" vocab in future story generation (use Movida 1 events to know which words need reinforcement)
+| Piece | State |
+|---|---|
+| FSRS-4.5 algorithm in `src/lib/fsrs.ts` (+ tests + adapter from current Favorite shape) | Deployed to main |
+| Endpoint `GET /api/practice/due` (returns vocab to review today, ordered by dueness) | Not started |
+| Integration with `practice_session_started` so practice loads SRS-due items first | Not started |
+| Update `nextReviewAt`/`streak` after each grade via existing `PATCH /api/favorites` (UI for grade + call FSRS) | Not started |
+
+The FSRS lib is self-contained: 4 exported functions (`reviewCard`, `newCard`, `favoriteToFsrsCard`, `compareByDueness`), default parameters, types. No callers yet; integration arrives piece by piece.
 
 **Why this matters for the asset:** converts the app from passive reader into a personalized living curriculum. Each user's SRS state becomes lock-in (losing it = losing months of progress). The signal generated is high-value training data for Asset A.
 

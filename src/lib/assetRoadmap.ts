@@ -172,22 +172,26 @@ export const ASSET_ROADMAP: AssetRoadmap = {
       title: "SRS engine sobre Favorite",
       goal:
         "FSRS algorithm + endpoint de vocab para repasar + integración con practice + actualización de streak/nextReviewAt tras cada respuesta",
+      startedAt: "2026-05-07",
       pieces: [
         {
-          title: "FSRS algorithm implementation (~200 líneas open source)",
-          status: "not_started",
+          title: "FSRS-4.5 algorithm en src/lib/fsrs.ts (+ tests + adapter desde Favorite actual)",
+          status: "deployed",
+          note: "Algoritmo + reviewCard + favoriteToFsrsCard + compareByDueness. Tests en src/lib/__tests__/fsrs.test.ts. Sin callers todavía; las próximas piezas conectan",
         },
         {
           title: "Endpoint GET /api/practice/due (vocab para repasar hoy)",
           status: "not_started",
+          note: "Lee Favorite del usuario, ordena por dueness, devuelve N items para sesión",
         },
         {
-          title: "Integración con practice_session_started",
+          title: "Integración con practice_session_started (cargar primero items SRS-due)",
           status: "not_started",
         },
         {
-          title: "Update de nextReviewAt y streak tras cada respuesta",
+          title: "Update de nextReviewAt y streak tras cada respuesta (PATCH /api/favorites + grade del usuario)",
           status: "not_started",
+          note: "PATCH endpoint ya existe; falta UI de grade + llamarlo con valores que vengan de FSRS reviewCard()",
         },
       ],
     },
