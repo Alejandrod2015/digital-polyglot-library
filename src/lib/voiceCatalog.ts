@@ -28,6 +28,55 @@
 export type Engine = "kokoro" | "piper" | "f5" | "coqui" | "bark" | "elevenlabs" | "chatterbox" | "qwen";
 export type VoiceStatus = "approved" | "candidate" | "discarded";
 
+/**
+ * Accent / dialect tags. Más granulares que `region` (que sólo
+ * distingue LATAM/ES/BR/etc.) y permiten castear voces que matcheen
+ * realmente la ambientación de la historia. Una voz puede llevar
+ * varios — ej: una voz colombiana neutra puede ir tagueada como
+ * `["colombian", "neutral-latam"]` para que sirva de fallback en
+ * historias LATAM no-colombianas.
+ *
+ * `unverified` es el sentinel para voces nuevas o clones que aún no
+ * se han auditado. El sistema de casting nunca debe sugerir o auto-
+ * picar una voz `unverified`; sólo aparece en el gallery con flag.
+ */
+export type AccentTag =
+  // Spanish
+  | "mexican"
+  | "argentine"
+  | "colombian"
+  | "chilean"
+  | "peruvian"
+  | "caribbean"
+  | "peninsular-castilian"
+  | "peninsular-andalusian"
+  | "peninsular-northern"
+  | "neutral-latam"
+  // Portuguese
+  | "brazilian-paulista"
+  | "brazilian-carioca"
+  | "brazilian-ne"
+  | "portuguese-lisbon"
+  | "portuguese-porto"
+  // Italian
+  | "italian-roman"
+  | "italian-milanese"
+  | "italian-neapolitan"
+  | "italian-florentine"
+  | "italian-bolognese"
+  | "italian-neutral"
+  // German
+  | "german-hochdeutsch"
+  | "german-austrian"
+  | "german-swiss"
+  // English
+  | "english-gen-am"
+  | "english-rp"
+  | "english-southern-us"
+  | "english-australian"
+  // sentinel for new/clone voices not yet audited
+  | "unverified";
+
 /** Short licence codes used across the catalog. Keep in sync with
  * LICENSE_KIND in StudioAudioClient (color/tier mapping for the badge). */
 export type LicenseCode =
@@ -47,6 +96,18 @@ export type VoiceEntry = {
   engine: Engine;
   language: string;
   region?: string;
+  /**
+   * Lista de accent/dialect tags. Aditivo respecto a `region` (que se
+   * mantiene por compatibilidad con filtros LATAM/ES existentes).
+   * Reglas:
+   *  - Una voz puede tener varios tags (`["colombian", "neutral-latam"]`)
+   *    si sirve bien en más de un contexto.
+   *  - Una voz sin auditar usa `["unverified"]` y queda excluida del
+   *    auto-suggest de casting hasta que alguien escuche y confirme.
+   *  - Vacío o ausente = legacy (todavía no auditada). El audit script
+   *    los lista para forzar tageo progresivo.
+   */
+  accentTags?: AccentTag[];
   gender: "f" | "m";
   label: string;
   status: VoiceStatus;
@@ -73,12 +134,14 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   {
     id: "piper/pt_BR-cadu-medium", engine: "piper", language: "portuguese", region: "BR", gender: "m",
     label: "Cadu (Brasil, masculina)", status: "approved",
+    accentTags: ["brazilian-paulista"],
     license: "CC0",
     licenseSource: "https://huggingface.co/rhasspy/piper-voices/blob/main/pt/pt_BR/cadu/medium/MODEL_CARD",
   },
   {
     id: "piper/it_IT-paola-medium", engine: "piper", language: "italian", region: "IT", gender: "f",
     label: "Paola (Italia, femenina)", status: "approved",
+    accentTags: ["italian-neutral"],
     license: "CC0",
     licenseSource: "https://huggingface.co/datasets/paolapersico1/Voice-Dataset-Italian",
   },
@@ -87,18 +150,21 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   {
     id: "kokoro/ef_dora", engine: "kokoro", language: "spanish", region: "LATAM", gender: "f",
     label: "Dora (Kokoro, femenina)", status: "approved",
+    accentTags: ["neutral-latam"],
     license: "Apache-2.0",
     licenseSource: "https://huggingface.co/hexgrad/Kokoro-82M",
   },
   {
     id: "kokoro/em_alex", engine: "kokoro", language: "spanish", region: "LATAM", gender: "m",
     label: "Alex (Kokoro, masculino)", status: "approved",
+    accentTags: ["neutral-latam"],
     license: "Apache-2.0",
     licenseSource: "https://huggingface.co/hexgrad/Kokoro-82M",
   },
   {
     id: "kokoro/em_santa", engine: "kokoro", language: "spanish", region: "ES", gender: "m",
     label: "Santa (Kokoro, España, para niños)", status: "approved",
+    accentTags: ["peninsular-castilian"],
     license: "Apache-2.0",
     licenseSource: "https://huggingface.co/hexgrad/Kokoro-82M",
   },
@@ -107,38 +173,44 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   {
     id: "chatterbox/mtl_es-default", engine: "chatterbox", language: "spanish", region: "LATAM", gender: "m",
     label: "Chatterbox MTL ES (default, sin ref)", status: "approved",
+    accentTags: ["unverified"],
     license: "MIT",
     licenseSource: "https://github.com/resemble-ai/chatterbox",
   },
 
   // Qwen3-TTS 0.6B-CustomVoice (Alibaba, Apache 2.0 modelo+pesos). Multilingüe; speakers built-in
   // no son nativos de español. Outputs Apache 2.0 = tuyos.
-  { id: "qwen/es-Aiden",    engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Aiden (Qwen3 0.6B)",    status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen/es-Dylan-v3",    engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Dylan v3 (role-prompt)",         status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen/es-Uncle_Fu-v3", engine: "qwen", language: "spanish", region: "ES",    gender: "m", label: "Uncle Fu v3 (role-prompt)",      status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen/es-Aiden",    engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Aiden (Qwen3 0.6B)",    status: "approved",  accentTags: ["unverified"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen/es-Dylan-v3",    engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Dylan v3 (role-prompt)",         status: "approved", accentTags: ["unverified"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen/es-Uncle_Fu-v3", engine: "qwen", language: "spanish", region: "ES",    gender: "m", label: "Uncle Fu v3 (role-prompt)",      status: "approved", accentTags: ["peninsular-castilian"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
 
   // Qwen3 1.7B-VoiceDesign (Apache 2.0): personajes generados por descripción libre.
-  { id: "qwen17/es-madrid_55m",       engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Madrid 55 (Qwen3 1.7B VD)",     status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  // accentTags: el prompt pidió Madrid pero el region: LATAM original sugiere
+  // que la salida no convenció como peninsular; queda `unverified` hasta auditar.
+  { id: "qwen17/es-madrid_55m",       engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Madrid 55 (Qwen3 1.7B VD)",     status: "approved",  accentTags: ["unverified"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
 
   // Italian via Qwen3 1.7B-VoiceDesign (Apache 2.0)
-  { id: "qwen17/it-roma_30f",     engine: "qwen", language: "italian", region: "IT", gender: "f", label: "Roma 30 (Qwen3 1.7B VD)",     status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/it-milano_45m",   engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Milano 45 (Qwen3 1.7B VD)",   status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/it-firenze_55f",  engine: "qwen", language: "italian", region: "IT", gender: "f", label: "Firenze 55 (Qwen3 1.7B VD)",  status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/it-bologna_35m",  engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Bologna 35 (Qwen3 1.7B VD)",  status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-roma_30f",     engine: "qwen", language: "italian", region: "IT", gender: "f", label: "Roma 30 (Qwen3 1.7B VD)",     status: "approved", accentTags: ["italian-roman"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-milano_45m",   engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Milano 45 (Qwen3 1.7B VD)",   status: "approved", accentTags: ["italian-milanese"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-firenze_55f",  engine: "qwen", language: "italian", region: "IT", gender: "f", label: "Firenze 55 (Qwen3 1.7B VD)",  status: "approved", accentTags: ["italian-florentine"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-bologna_35m",  engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Bologna 35 (Qwen3 1.7B VD)",  status: "approved", accentTags: ["italian-bolognese"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
 
   // Brazilian Portuguese via Qwen3 1.7B-VoiceDesign (Apache 2.0)
-  { id: "qwen17/pt-salvador_28f",      engine: "qwen", language: "portuguese", region: "BR", gender: "f", label: "Salvador 28 (Qwen3 1.7B VD)",       status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/pt-belohorizonte_35f", engine: "qwen", language: "portuguese", region: "BR", gender: "f", label: "Belo Horizonte 35 (Qwen3 1.7B VD)", status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/pt-salvador_28f",      engine: "qwen", language: "portuguese", region: "BR", gender: "f", label: "Salvador 28 (Qwen3 1.7B VD)",       status: "approved", accentTags: ["brazilian-ne"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/pt-belohorizonte_35f", engine: "qwen", language: "portuguese", region: "BR", gender: "f", label: "Belo Horizonte 35 (Qwen3 1.7B VD)", status: "approved", accentTags: ["brazilian-paulista"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
 
   // Round 2: ajustes (Barcelona menos soft, Napoli/SãoPaulo más calmos, Salvador-style variación Recife).
-  { id: "qwen17/es-barcelona_45m-v3", engine: "qwen", language: "spanish",    region: "LATAM", gender: "m", label: "Barcelona 45 v3 (intermedio)",   status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  // accentTags `unverified` para las castellano que quedaron tagueadas region: LATAM
+  // — el catálogo ya señala que no salieron como Madrid, hay que escuchar para
+  // decidir si son neutral-latam u otra cosa.
+  { id: "qwen17/es-barcelona_45m-v3", engine: "qwen", language: "spanish",    region: "LATAM", gender: "m", label: "Barcelona 45 v3 (intermedio)",   status: "approved",  accentTags: ["unverified"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
   // Spain Spanish con prompt fonológico peninsular explícito (distinción c/z=θ vs s).
-  { id: "qwen17/es-madrid_38m-castellano",     engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Madrid 38 castellano (Qwen3 1.7B VD)",     status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/es-bilbao_35m-norte-v2",       engine: "qwen", language: "spanish", region: "ES",    gender: "m", label: "Bilbao 35 norte v2 (less energy)",          status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/es-castile_38f-castellano-v2", engine: "qwen", language: "spanish", region: "LATAM", gender: "f", label: "Castile 38 castellano v2 (alto, L alveolar)", status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/it-napoli_28m-v4",             engine: "qwen", language: "italian", region: "IT",    gender: "m", label: "Napoli 28 v4 (intermedio menos)",                  status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/pt-saopaulo_30f-v2",  engine: "qwen", language: "portuguese", region: "BR",    gender: "f", label: "São Paulo 30 v2 (volumen bajo)", status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/pt-recife_32f",       engine: "qwen", language: "portuguese", region: "BR",    gender: "f", label: "Recife 32 (variación NE)",       status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/es-madrid_38m-castellano",     engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Madrid 38 castellano (Qwen3 1.7B VD)",     status: "approved",  accentTags: ["peninsular-castilian"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/es-bilbao_35m-norte-v2",       engine: "qwen", language: "spanish", region: "ES",    gender: "m", label: "Bilbao 35 norte v2 (less energy)",          status: "approved", accentTags: ["peninsular-northern"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/es-castile_38f-castellano-v2", engine: "qwen", language: "spanish", region: "LATAM", gender: "f", label: "Castile 38 castellano v2 (alto, L alveolar)", status: "approved", accentTags: ["peninsular-castilian"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-napoli_28m-v4",             engine: "qwen", language: "italian", region: "IT",    gender: "m", label: "Napoli 28 v4 (intermedio menos)",                  status: "approved", accentTags: ["italian-neapolitan"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/pt-saopaulo_30f-v2",  engine: "qwen", language: "portuguese", region: "BR",    gender: "f", label: "São Paulo 30 v2 (volumen bajo)", status: "approved",  accentTags: ["brazilian-paulista"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/pt-recife_32f",       engine: "qwen", language: "portuguese", region: "BR",    gender: "f", label: "Recife 32 (variación NE)",       status: "approved",  accentTags: ["brazilian-ne"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
 
   // Voice clones via Chatterbox (modelo MIT) usando refs OpenSLR 72 (CC-BY-SA Google).
   // El output hereda la licencia más restrictiva del input → CC-BY-SA-4.0.
@@ -153,6 +225,7 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   {
     id: "chatterbox/co_cof_07508", engine: "chatterbox", language: "spanish", region: "CO", gender: "f",
     label: "Colombiana B (Chatterbox clone)", status: "approved",
+    accentTags: ["colombian", "neutral-latam"],
     license: "CC-BY-SA-4.0",
     licenseSource: "https://www.openslr.org/72/",
     attribution: "Voice cloned from Google Crowdsourced Spanish TTS Dataset (OpenSLR 72, Colombian Spanish), licensed under CC-BY-SA 4.0. Derivative audio is also CC-BY-SA 4.0.",
@@ -160,15 +233,39 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   {
     id: "chatterbox/co_cof_09697", engine: "chatterbox", language: "spanish", region: "CO", gender: "f",
     label: "Colombiana C (Chatterbox clone)", status: "approved",
+    accentTags: ["colombian", "neutral-latam"],
     license: "CC-BY-SA-4.0",
     licenseSource: "https://www.openslr.org/72/",
     attribution: "Voice cloned from Google Crowdsourced Spanish TTS Dataset (OpenSLR 72, Colombian Spanish), licensed under CC-BY-SA 4.0. Derivative audio is also CC-BY-SA 4.0.",
+  },
+
+  // ── Voice clones encontradas en producción (no agregadas previamente al
+  // catálogo). El query `inspectAllProductionVoices.ts` las descubrió en el
+  // dialogueSpec de carnitas-en-coyoacan + tinto-en-la-candelaria. Status
+  // candidate hasta que se auditen escuchando; accentTags `unverified` para
+  // que el sistema de casting NO las recomiende automáticamente.
+  // El usuario reportó que la masculina suena argentina aunque el ref es
+  // peninsular — el cloning con chatterbox tira hacia atractor rioplatense.
+  {
+    id: "chatterbox/clone-madrid_55m", engine: "chatterbox", language: "spanish", region: "LATAM", gender: "m",
+    label: "Clone Madrid 55m (chatterbox + qwen17 ref)", status: "candidate",
+    accentTags: ["unverified"],
+    license: "Apache-2.0",
+    licenseSource: "Output Apache-2.0 (qwen17 source) + chatterbox MIT pipeline.",
+  },
+  {
+    id: "chatterbox/clone-castile_38f-castellano-v2", engine: "chatterbox", language: "spanish", region: "LATAM", gender: "f",
+    label: "Clone Castile 38f castellano v2 (chatterbox + qwen17 ref)", status: "candidate",
+    accentTags: ["unverified"],
+    license: "Apache-2.0",
+    licenseSource: "Output Apache-2.0 (qwen17 source) + chatterbox MIT pipeline.",
   },
 
   // German internal fallbacks. NO THORSTEN VARIANTS (user-banned, perceptually depressing).
   {
     id: "bark/de_speaker_4", engine: "bark", language: "german", region: "DE", gender: "m",
     label: "Bark Speaker 4 (Alemania, masculina)", status: "approved",
+    accentTags: ["german-hochdeutsch"],
     license: "MIT",
     licenseSource: "https://github.com/suno-ai/bark",
   },
@@ -184,18 +281,21 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   {
     id: "elevenlabs/Ww7Sq9tx9CCOiNOwWgsx", engine: "elevenlabs", language: "german", region: "DE", gender: "m",
     label: "Moritz Morgenstern (narrador, perpetual)", status: "approved",
+    accentTags: ["german-hochdeutsch"],
     license: "ElevenLabs-Premade",
     licenseSource: "ElevenLabs API premade voice; perpetual under ElevenLabs Terms of Service.",
   },
   {
     id: "elevenlabs/WHaUUVTDq47Yqc9aDbkH", engine: "elevenlabs", language: "german", region: "DE", gender: "f",
     label: "ENNIAH (femenino mature, perpetual)", status: "approved",
+    accentTags: ["german-hochdeutsch"],
     license: "ElevenLabs-Premade",
     licenseSource: "ElevenLabs API premade voice; perpetual under ElevenLabs Terms of Service.",
   },
   {
     id: "elevenlabs/8SdTD5IMgFKT1jp7JbPC", engine: "elevenlabs", language: "german", region: "DE", gender: "f",
     label: "Eleonore (femenino mature, narrator, 2yr)", status: "approved",
+    accentTags: ["german-hochdeutsch"],
     license: "ElevenLabs-Pro-2yr",
     licenseSource: "ElevenLabs Professional Shared library; voice owner can give 730-day notice to retire.",
   },
@@ -250,4 +350,47 @@ export function approvedVoices(): VoiceEntry[] {
 export function voicesForLanguage(language: string, status: VoiceStatus = "approved"): VoiceEntry[] {
   const lang = language.toLowerCase();
   return VOICE_CATALOG.filter((v) => v.language === lang && v.status === status);
+}
+
+/**
+ * Voces aprobadas que matchean al menos uno de los `tags` pedidos.
+ * Excluye voces tagueadas `unverified` salvo que `unverified` esté en
+ * la lista de búsqueda (caso edge: querer auditar las pendientes).
+ *
+ * Ej: `voicesByAccent(["mexican", "neutral-latam"])` devuelve voces
+ * marcadas mexicanas O latam-neutras, descarte automático del resto.
+ */
+export function voicesByAccent(
+  tags: AccentTag[],
+  language?: string
+): VoiceEntry[] {
+  const want = new Set(tags);
+  const includeUnverified = want.has("unverified");
+  return VOICE_CATALOG.filter((v) => {
+    if (v.status !== "approved") return false;
+    if (language && v.language !== language.toLowerCase()) return false;
+    if (!v.accentTags || v.accentTags.length === 0) return false;
+    if (!includeUnverified && v.accentTags.includes("unverified")) return false;
+    return v.accentTags.some((t) => want.has(t));
+  });
+}
+
+/**
+ * Reporte de cobertura del catálogo: cuántas voces aprobadas hay por
+ * accent tag para un idioma dado. Útil para detectar buckets vacíos
+ * (ej: español sin ninguna voz `mexican` aprobada implica que toda
+ * historia mexicana se castea con aproximaciones).
+ */
+export function accentCoverage(language: string): Record<string, number> {
+  const lang = language.toLowerCase();
+  const counts: Record<string, number> = {};
+  for (const v of VOICE_CATALOG) {
+    if (v.status !== "approved") continue;
+    if (v.language !== lang) continue;
+    if (!v.accentTags) continue;
+    for (const tag of v.accentTags) {
+      counts[tag] = (counts[tag] ?? 0) + 1;
+    }
+  }
+  return counts;
 }
