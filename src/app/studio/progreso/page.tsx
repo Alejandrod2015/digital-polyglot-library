@@ -3,6 +3,7 @@ import { requireStudioUser } from "@/lib/requireStudioUser";
 import {
   ASSET_ROADMAP,
   movidaProgress,
+  pieceWeight,
   statusColor,
   statusLabel,
   type Movida,
@@ -14,16 +15,24 @@ const ACCENT = "#14b8a6";
 const ACCENT_SOFT = "rgba(20, 184, 166, 0.12)";
 const CARD_BG = "rgba(255, 255, 255, 0.02)";
 const CARD_BORDER = "rgba(255, 255, 255, 0.08)";
+const TEXT_MUTED = "var(--muted)";
 
-function ProgressBar({ value }: { value: number }) {
+function colorForProgress(pct: number): string {
+  if (pct >= 100) return "#10b981";
+  if (pct >= 50) return ACCENT;
+  if (pct > 0) return "#f59e0b";
+  return "#475569";
+}
+
+function ProgressBar({ value, height = 8 }: { value: number; height?: number }) {
   const pct = Math.round(value * 100);
-  const color = pct >= 100 ? "#10b981" : pct >= 50 ? ACCENT : pct > 0 ? "#f59e0b" : "#475569";
+  const color = colorForProgress(pct);
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 12, width: "100%" }}>
       <div
         style={{
           flex: 1,
-          height: 8,
+          height,
           background: "rgba(255, 255, 255, 0.06)",
           borderRadius: 999,
           overflow: "hidden",
@@ -40,10 +49,10 @@ function ProgressBar({ value }: { value: number }) {
       </div>
       <span
         style={{
-          fontSize: 12,
-          fontWeight: 600,
+          fontSize: 13,
+          fontWeight: 700,
           color,
-          minWidth: 36,
+          minWidth: 42,
           textAlign: "right",
           fontVariantNumeric: "tabular-nums",
         }}
@@ -54,132 +63,20 @@ function ProgressBar({ value }: { value: number }) {
   );
 }
 
-function StatusBadge({ piece }: { piece: RoadmapPiece }) {
-  const { bg, fg } = statusColor(piece.status);
+function StatusDot({ piece }: { piece: RoadmapPiece }) {
+  const { fg } = statusColor(piece.status);
   return (
     <span
+      title={statusLabel(piece.status)}
       style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 6,
-        padding: "3px 10px",
+        display: "inline-block",
+        width: 10,
+        height: 10,
         borderRadius: 999,
-        background: bg,
-        color: fg,
-        fontSize: 11,
-        fontWeight: 600,
-        letterSpacing: "0.02em",
-        whiteSpace: "nowrap",
+        background: fg,
+        flexShrink: 0,
       }}
-    >
-      {statusLabel(piece.status)}
-      {piece.commit && (
-        <span style={{ opacity: 0.7, fontWeight: 500, fontFamily: "ui-monospace, monospace" }}>
-          {piece.commit}
-        </span>
-      )}
-    </span>
-  );
-}
-
-function PieceRow({ piece }: { piece: RoadmapPiece }) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "flex-start",
-        gap: 16,
-        padding: "14px 0",
-        borderTop: `1px solid ${CARD_BORDER}`,
-      }}
-    >
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontSize: 14, fontWeight: 500, color: "var(--foreground)", marginBottom: 4 }}>
-          {piece.title}
-        </div>
-        {piece.note && (
-          <div style={{ fontSize: 12, color: "var(--muted)", lineHeight: 1.5 }}>
-            {piece.note}
-          </div>
-        )}
-      </div>
-      <div style={{ flexShrink: 0 }}>
-        <StatusBadge piece={piece} />
-      </div>
-    </div>
-  );
-}
-
-function WorkLogCard({ entry }: { entry: WorkLogEntry }) {
-  return (
-    <article
-      style={{
-        background: CARD_BG,
-        border: `1px solid ${CARD_BORDER}`,
-        borderRadius: 10,
-        padding: "16px 20px",
-      }}
-    >
-      <header style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 8, flexWrap: "wrap" }}>
-        <span
-          style={{
-            fontSize: 11,
-            fontWeight: 600,
-            color: "var(--muted)",
-            fontVariantNumeric: "tabular-nums",
-            opacity: 0.85,
-          }}
-        >
-          {entry.date}
-        </span>
-        <span
-          style={{
-            fontSize: 10,
-            fontWeight: 700,
-            letterSpacing: "0.06em",
-            textTransform: "uppercase",
-            color: ACCENT,
-            background: ACCENT_SOFT,
-            padding: "2px 8px",
-            borderRadius: 5,
-          }}
-        >
-          {entry.scope}
-        </span>
-        <h3 style={{ fontSize: 14, fontWeight: 600, margin: 0, color: "var(--foreground)", flex: 1 }}>
-          {entry.title}
-        </h3>
-        {entry.commits && entry.commits.length > 0 && (
-          <span
-            style={{
-              fontSize: 11,
-              fontFamily: "ui-monospace, monospace",
-              color: "var(--muted)",
-              opacity: 0.7,
-            }}
-          >
-            {entry.commits.join(" · ")}
-          </span>
-        )}
-      </header>
-      <p style={{ fontSize: 13, color: "var(--muted)", margin: "0 0 10px", lineHeight: 1.55 }}>
-        {entry.summary}
-      </p>
-      <ul
-        style={{
-          margin: 0,
-          paddingLeft: 18,
-          fontSize: 12,
-          color: "var(--muted)",
-          lineHeight: 1.65,
-          opacity: 0.92,
-        }}
-      >
-        {entry.highlights.map((line, i) => (
-          <li key={i}>{line}</li>
-        ))}
-      </ul>
-    </article>
+    />
   );
 }
 
@@ -189,203 +86,230 @@ function MovidaCard({ movida }: { movida: Movida }) {
   const totalCount = movida.pieces.length;
 
   return (
-    <section
+    <details
       style={{
         background: CARD_BG,
         border: `1px solid ${CARD_BORDER}`,
         borderRadius: 12,
-        padding: "20px 24px",
+        padding: "14px 18px",
       }}
     >
-      <header style={{ marginBottom: 16 }}>
-        <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 6 }}>
+      <summary
+        style={{
+          listStyle: "none",
+          cursor: "pointer",
+          display: "flex",
+          flexDirection: "column",
+          gap: 8,
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
           <span
             style={{
-              fontSize: 11,
+              fontSize: 10,
               fontWeight: 700,
               letterSpacing: "0.08em",
               color: ACCENT,
               background: ACCENT_SOFT,
-              padding: "3px 8px",
-              borderRadius: 6,
+              padding: "2px 7px",
+              borderRadius: 5,
             }}
           >
             MOVIDA {movida.id}
           </span>
-          <h3 style={{ fontSize: 17, fontWeight: 600, margin: 0, color: "var(--foreground)" }}>
+          <h3 style={{ fontSize: 15, fontWeight: 600, margin: 0, color: "var(--foreground)", flex: 1 }}>
             {movida.title}
           </h3>
-          <span style={{ fontSize: 12, color: "var(--muted)", marginLeft: "auto" }}>
-            {deployedCount} / {totalCount} en producción
+          <span style={{ fontSize: 12, color: TEXT_MUTED, fontVariantNumeric: "tabular-nums" }}>
+            {deployedCount}/{totalCount}
           </span>
         </div>
-        <p style={{ fontSize: 13, color: "var(--muted)", margin: "0 0 14px", lineHeight: 1.5 }}>
-          {movida.goal}
-        </p>
         <ProgressBar value={progress} />
-      </header>
-      <div>
+      </summary>
+      <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 10 }}>
         {movida.pieces.map((piece, i) => (
-          <PieceRow key={i} piece={piece} />
+          <div
+            key={i}
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              gap: 10,
+              paddingTop: i === 0 ? 0 : 10,
+              borderTop: i === 0 ? "none" : `1px solid ${CARD_BORDER}`,
+            }}
+          >
+            <span style={{ marginTop: 5 }}>
+              <StatusDot piece={piece} />
+            </span>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 13, color: "var(--foreground)", lineHeight: 1.4 }}>
+                {piece.title}
+              </div>
+              {piece.note && (
+                <div style={{ fontSize: 11, color: TEXT_MUTED, marginTop: 3, lineHeight: 1.5, opacity: 0.85 }}>
+                  {piece.note}
+                </div>
+              )}
+            </div>
+            <span
+              style={{
+                fontSize: 10,
+                fontWeight: 600,
+                color: statusColor(piece.status).fg,
+                background: statusColor(piece.status).bg,
+                padding: "2px 8px",
+                borderRadius: 4,
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}
+            >
+              {statusLabel(piece.status)}
+            </span>
+          </div>
         ))}
       </div>
-    </section>
+    </details>
+  );
+}
+
+function WorkLogRow({ entry }: { entry: WorkLogEntry }) {
+  return (
+    <details
+      style={{
+        background: CARD_BG,
+        border: `1px solid ${CARD_BORDER}`,
+        borderRadius: 8,
+        padding: "10px 14px",
+      }}
+    >
+      <summary
+        style={{
+          listStyle: "none",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          gap: 12,
+          flexWrap: "wrap",
+        }}
+      >
+        <span
+          style={{
+            fontSize: 11,
+            fontFamily: "ui-monospace, monospace",
+            color: TEXT_MUTED,
+            opacity: 0.7,
+            minWidth: 80,
+          }}
+        >
+          {entry.date}
+        </span>
+        <span
+          style={{
+            fontSize: 9,
+            fontWeight: 700,
+            letterSpacing: "0.06em",
+            color: ACCENT,
+            background: ACCENT_SOFT,
+            padding: "2px 6px",
+            borderRadius: 4,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {entry.scope}
+        </span>
+        <span style={{ fontSize: 13, color: "var(--foreground)", flex: 1, minWidth: 0 }}>
+          {entry.title}
+        </span>
+      </summary>
+      <div style={{ marginTop: 8, paddingLeft: 92 }}>
+        <p style={{ fontSize: 12, color: TEXT_MUTED, margin: "0 0 6px", lineHeight: 1.55 }}>
+          {entry.summary}
+        </p>
+        <ul style={{ margin: 0, paddingLeft: 16, fontSize: 11, color: TEXT_MUTED, lineHeight: 1.6, opacity: 0.85 }}>
+          {entry.highlights.map((line, i) => (
+            <li key={i}>{line}</li>
+          ))}
+        </ul>
+      </div>
+    </details>
   );
 }
 
 export default async function StudioProgresoPage() {
   await requireStudioUser("/studio/progreso");
 
+  const overall =
+    ASSET_ROADMAP.movidas.reduce((sum, m) => sum + movidaProgress(m), 0) /
+    Math.max(ASSET_ROADMAP.movidas.length, 1);
+  const totalPieces = ASSET_ROADMAP.movidas.reduce((sum, m) => sum + m.pieces.length, 0);
+  const deployedPieces = ASSET_ROADMAP.movidas.reduce(
+    (sum, m) => sum + m.pieces.filter((p) => p.status === "deployed").length,
+    0
+  );
+
   return (
     <StudioShell
       title="Progreso del proyecto"
-      description="Visualización del avance de la asset thesis y las movidas. Datos en src/lib/assetRoadmap.ts; doc espejo en docs/asset-roadmap.md."
       breadcrumbs={[{ label: "Studio", href: "/studio" }, { label: "Progreso" }]}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-        {/* Last updated */}
-        <div
-          style={{
-            fontSize: 12,
-            color: "var(--muted)",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <span>Última actualización: {ASSET_ROADMAP.lastUpdated}</span>
-          <span style={{ opacity: 0.7 }}>
-            Para actualizar: editar <code style={{ fontFamily: "ui-monospace, monospace" }}>src/lib/assetRoadmap.ts</code>
-          </span>
-        </div>
-
-        {/* Thesis card */}
+        {/* Top: global progress */}
         <section
           style={{
             background: CARD_BG,
             border: `1px solid ${CARD_BORDER}`,
             borderRadius: 12,
-            padding: "20px 24px",
+            padding: "18px 22px",
           }}
         >
-          <h2 style={{ fontSize: 16, fontWeight: 600, margin: "0 0 6px", color: "var(--foreground)" }}>
-            {ASSET_ROADMAP.thesisHeadline}
-          </h2>
-          <p style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.6, margin: 0 }}>
-            {ASSET_ROADMAP.thesisSummary}
-          </p>
-        </section>
-
-        {/* Three assets */}
-        <section>
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "var(--muted)",
-              margin: "0 0 12px",
-            }}
-          >
-            Los tres corpora
-          </h2>
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: 12,
+              display: "flex",
+              alignItems: "baseline",
+              justifyContent: "space-between",
+              marginBottom: 12,
+              flexWrap: "wrap",
+              gap: 8,
             }}
           >
-            {ASSET_ROADMAP.assets.map((asset) => (
-              <div
-                key={asset.id}
+            <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
+              <span
                 style={{
-                  background: CARD_BG,
-                  border: `1px solid ${CARD_BORDER}`,
-                  borderRadius: 10,
-                  padding: "16px 18px",
+                  fontSize: 32,
+                  fontWeight: 800,
+                  color: colorForProgress(Math.round(overall * 100)),
+                  fontVariantNumeric: "tabular-nums",
+                  lineHeight: 1,
                 }}
               >
-                <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}>
-                  <span
-                    style={{
-                      fontSize: 11,
-                      fontWeight: 700,
-                      color: ACCENT,
-                      background: ACCENT_SOFT,
-                      padding: "2px 7px",
-                      borderRadius: 5,
-                      letterSpacing: "0.05em",
-                    }}
-                  >
-                    ASSET {asset.id}
+                {Math.round(overall * 100)}%
+              </span>
+              <span style={{ fontSize: 13, color: TEXT_MUTED }}>
+                {deployedPieces} de {totalPieces} piezas en producción
+              </span>
+            </div>
+            <span style={{ fontSize: 11, color: TEXT_MUTED, opacity: 0.7 }}>
+              Última actualización · {ASSET_ROADMAP.lastUpdated}
+            </span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {ASSET_ROADMAP.movidas.map((m) => {
+              const pct = Math.round(movidaProgress(m) * 100);
+              return (
+                <div key={m.id} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  <span style={{ fontSize: 11, color: TEXT_MUTED, minWidth: 70, opacity: 0.7 }}>
+                    Movida {m.id}
                   </span>
-                  <h3 style={{ fontSize: 13, fontWeight: 600, margin: 0, color: "var(--foreground)" }}>
-                    {asset.title}
-                  </h3>
+                  <div style={{ flex: 1 }}>
+                    <ProgressBar value={movidaProgress(m)} height={6} />
+                  </div>
                 </div>
-                <p style={{ fontSize: 12, color: "var(--muted)", margin: "0 0 10px", lineHeight: 1.5 }}>
-                  {asset.description}
-                </p>
-                <div
-                  style={{
-                    fontSize: 11,
-                    color: "var(--muted)",
-                    opacity: 0.8,
-                    paddingTop: 8,
-                    borderTop: `1px solid ${CARD_BORDER}`,
-                  }}
-                >
-                  <span style={{ fontWeight: 600, color: "var(--foreground)", opacity: 0.85 }}>Compradores:</span>{" "}
-                  {asset.buyers}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
-        {/* Wedge + Why now */}
-        <section
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 12,
-          }}
-        >
-          <div
-            style={{
-              background: CARD_BG,
-              border: `1px solid ${CARD_BORDER}`,
-              borderRadius: 10,
-              padding: "14px 18px",
-            }}
-          >
-            <div style={{ fontSize: 11, fontWeight: 700, color: ACCENT, marginBottom: 6, letterSpacing: "0.05em" }}>
-              CUÑA INICIAL
-            </div>
-            <p style={{ fontSize: 13, color: "var(--muted)", margin: 0, lineHeight: 1.55 }}>
-              {ASSET_ROADMAP.wedge}
-            </p>
-          </div>
-          <div
-            style={{
-              background: CARD_BG,
-              border: `1px solid ${CARD_BORDER}`,
-              borderRadius: 10,
-              padding: "14px 18px",
-            }}
-          >
-            <div style={{ fontSize: 11, fontWeight: 700, color: ACCENT, marginBottom: 6, letterSpacing: "0.05em" }}>
-              POR QUÉ AHORA
-            </div>
-            <p style={{ fontSize: 13, color: "var(--muted)", margin: 0, lineHeight: 1.55 }}>
-              {ASSET_ROADMAP.whyNow}
-            </p>
-          </div>
-        </section>
-
-        {/* Movidas */}
+        {/* Movidas (each expandable) */}
         <section>
           <h2
             style={{
@@ -393,27 +317,27 @@ export default async function StudioProgresoPage() {
               fontWeight: 700,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              color: "var(--muted)",
-              margin: "8px 0 12px",
+              color: TEXT_MUTED,
+              margin: "0 0 10px",
             }}
           >
             Movidas
           </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {ASSET_ROADMAP.movidas.map((movida) => (
               <MovidaCard key={movida.id} movida={movida} />
             ))}
           </div>
         </section>
 
-        {/* Bitácora — chronological log of every block of work, most recent first. */}
+        {/* Bitácora (each row expandable) */}
         <section>
           <div
             style={{
               display: "flex",
               alignItems: "baseline",
               justifyContent: "space-between",
-              margin: "8px 0 12px",
+              margin: "0 0 10px",
             }}
           >
             <h2
@@ -422,35 +346,109 @@ export default async function StudioProgresoPage() {
                 fontWeight: 700,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "var(--muted)",
+                color: TEXT_MUTED,
                 margin: 0,
               }}
             >
               Bitácora
             </h2>
-            <span style={{ fontSize: 11, color: "var(--muted)", opacity: 0.7 }}>
-              {ASSET_ROADMAP.workLog.length} entradas, más reciente arriba
+            <span style={{ fontSize: 11, color: TEXT_MUTED, opacity: 0.7 }}>
+              {ASSET_ROADMAP.workLog.length} entradas
             </span>
           </div>
-          <p
-            style={{
-              fontSize: 12,
-              color: "var(--muted)",
-              opacity: 0.8,
-              margin: "0 0 14px",
-              lineHeight: 1.55,
-            }}
-          >
-            Cada bloque de trabajo queda acá en lenguaje claro. Editado en{" "}
-            <code style={{ fontFamily: "ui-monospace, monospace" }}>src/lib/assetRoadmap.ts</code>
-            {" "}cuando avanza algo nuevo, aparece automáticamente al rebuildar.
-          </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {ASSET_ROADMAP.workLog.map((entry, i) => (
-              <WorkLogCard key={`${entry.date}-${i}`} entry={entry} />
+              <WorkLogRow key={`${entry.date}-${i}`} entry={entry} />
             ))}
           </div>
         </section>
+
+        {/* Contexto (collapsed by default) */}
+        <details
+          style={{
+            background: CARD_BG,
+            border: `1px solid ${CARD_BORDER}`,
+            borderRadius: 12,
+            padding: "12px 18px",
+          }}
+        >
+          <summary
+            style={{
+              listStyle: "none",
+              cursor: "pointer",
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: TEXT_MUTED,
+            }}
+          >
+            Contexto estratégico ▾
+          </summary>
+          <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 14 }}>
+            <div>
+              <h3 style={{ fontSize: 13, fontWeight: 600, margin: "0 0 4px", color: "var(--foreground)" }}>
+                {ASSET_ROADMAP.thesisHeadline}
+              </h3>
+              <p style={{ fontSize: 12, color: TEXT_MUTED, margin: 0, lineHeight: 1.55 }}>
+                {ASSET_ROADMAP.thesisSummary}
+              </p>
+            </div>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+                gap: 8,
+              }}
+            >
+              {ASSET_ROADMAP.assets.map((asset) => (
+                <div
+                  key={asset.id}
+                  style={{
+                    background: "rgba(255, 255, 255, 0.02)",
+                    border: `1px solid ${CARD_BORDER}`,
+                    borderRadius: 8,
+                    padding: "10px 12px",
+                  }}
+                >
+                  <div style={{ display: "flex", gap: 6, marginBottom: 4 }}>
+                    <span
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 700,
+                        color: ACCENT,
+                        background: ACCENT_SOFT,
+                        padding: "1px 6px",
+                        borderRadius: 4,
+                      }}
+                    >
+                      {asset.id}
+                    </span>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: "var(--foreground)" }}>
+                      {asset.title}
+                    </span>
+                  </div>
+                  <p style={{ fontSize: 11, color: TEXT_MUTED, margin: 0, lineHeight: 1.45 }}>
+                    {asset.description}
+                  </p>
+                  <p style={{ fontSize: 10, color: TEXT_MUTED, margin: "6px 0 0", opacity: 0.7 }}>
+                    {asset.buyers}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 8 }}>
+              <div style={{ fontSize: 11, color: TEXT_MUTED, lineHeight: 1.55 }}>
+                <strong style={{ color: ACCENT, fontSize: 10, letterSpacing: "0.05em" }}>CUÑA · </strong>
+                {ASSET_ROADMAP.wedge}
+              </div>
+              <div style={{ fontSize: 11, color: TEXT_MUTED, lineHeight: 1.55 }}>
+                <strong style={{ color: ACCENT, fontSize: 10, letterSpacing: "0.05em" }}>POR QUÉ AHORA · </strong>
+                {ASSET_ROADMAP.whyNow}
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
     </StudioShell>
   );
