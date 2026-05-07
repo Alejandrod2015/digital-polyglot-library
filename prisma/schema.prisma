@@ -278,6 +278,13 @@ model JourneyStory {
   wordCount  Int?
   vocabCount Int?
   arcType    String?
+  // Dialect / heritage-learner asset metadata. All optional; backfilled by
+  // the editorial workflow as content is tagged. Foundation for filtering
+  // the corpus by register, cohort, or cultural variant.
+  register         String[] @default([])
+  generationCohort String?
+  culturalTags     String[] @default([])
+  voiceProvenance  Json?
   sanityId   String?
   coverDone     Boolean             @default(false)
   coverUrl      String?
