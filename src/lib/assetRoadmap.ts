@@ -23,6 +23,7 @@ export type RoadmapPiece = {
 export type Movida = {
   id: number;
   title: string;
+  subtitle: string;
   goal: string;
   startedAt?: string;
   completedAt?: string;
@@ -148,7 +149,9 @@ export const ASSET_ROADMAP: AssetRoadmap = {
   movidas: [
     {
       id: 1,
-      title: "Data layer foundation",
+      title: "Captura de datos del usuario",
+      subtitle:
+        "Cada interacción (clic, replay, abandono) se guarda etiquetada con dialecto y registro. Es la materia prima del corpus que después se vende.",
       goal:
         "Schema fields para tagging dialectal + 6 eventos nuevos de comprensión + wiring en ReaderScreen",
       startedAt: "2026-05-07",
@@ -179,7 +182,9 @@ export const ASSET_ROADMAP: AssetRoadmap = {
     },
     {
       id: 2,
-      title: "SRS engine sobre Favorite",
+      title: "Motor de repaso adaptativo",
+      subtitle:
+        "El sistema aprende qué palabras le cuestan a cada usuario y le programa repasos personalizados. Cuanto más se usa, mejor predice.",
       goal:
         "FSRS algorithm + endpoint de vocab para repasar + integración con practice + actualización de streak/nextReviewAt tras cada respuesta",
       startedAt: "2026-05-07",
@@ -213,7 +218,9 @@ export const ASSET_ROADMAP: AssetRoadmap = {
     },
     {
       id: 3,
-      title: "Day-1 dialect/heritage positioning",
+      title: "Posicionamiento dialectal/heritage",
+      subtitle:
+        "El producto y la marca dejan claro que enseñamos el dialecto real de la familia, no español neutro. Define qué usuarios atraemos y a qué precio.",
       goal:
         "Branding y copy para que el wedge de heritage learners esté claro desde el launch",
       pieces: [
