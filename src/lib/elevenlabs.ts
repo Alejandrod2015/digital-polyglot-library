@@ -7,16 +7,17 @@ import { analyzeDeliveryQuality, analyzeTranscriptQuality, type AudioQaResult } 
 import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 
 // Default ElevenLabs voice settings used across all journey TTS calls.
-//   stability=0.7        less emotional variation between calls; voices stop
-//                         drifting into "extra cheery" or "extra dramatic"
-//                         deliveries and pronounce foreign words (Kreuzberg,
-//                         Currywurst) more consistently.
+//   stability=0.9        más alta que 0.8 anterior. Bajaba la incidencia
+//                         de "phantom syllable" al final de la oración —
+//                         el modelo autorregresivo dejaba de generar 1-2
+//                         fonemas extra antes del stop. Trade-off: voces
+//                         menos expresivas; aceptable para A1/A2.
 //   similarity_boost=0.8 keeps each voice recognizable.
 //   style=0              suppresses model-added expressive style.
 //   speed=0.9            10% slower so A1/A2 learners can follow along.
 //   use_speaker_boost    sharpens consonants for clearer foreign-word delivery.
 export const DEFAULT_VOICE_SETTINGS = {
-  stability: 0.8,
+  stability: 0.9,
   similarity_boost: 0.8,
   style: 0,
   speed: 0.9,
@@ -389,27 +390,39 @@ export function parseDialogueSegments(storyText: string): DialogueSegment[] {
 // voice in a story re-generates only that character's segments; the
 // narrator and other speakers serve from R2 for free.
 //
-// El sufijo "trim-v1" se incorporó al key cuando agregamos la pasada de
-// `silenceremove` para limpiar artefactos de cola (clicks, breaths, vocal-
-// fry que ElevenLabs a veces encadena 100-300 ms después de terminar la
-// oración). Bumpea el key para que las entradas viejas sin trim no se
-// sirvan; quedan huérfanas en R2 hasta el próximo cleanup manual.
+// Sufijos del key (versionados para invalidar cache cuando cambia el
+// pipeline):
+//   trim-v1: se agregó silenceremove para limpiar artefactos de cola.
+//   trim-v2: stability 0.8→0.9 + previous_text/next_text + end-trim
+//            duro de 60 ms para matar la "phantom syllable" que aparecía
+//            al final de la oración aunque silenceremove no la tocara.
 function multivoiceSegmentCacheKey(voiceId: string, softenedText: string): string {
   const settingsFingerprint = JSON.stringify(DEFAULT_VOICE_SETTINGS);
   const hash = crypto
     .createHash("sha256")
-    .update(`${voiceId}|${settingsFingerprint}|${softenedText}|trim-v1`)
+    .update(`${voiceId}|${settingsFingerprint}|${softenedText}|trim-v2`)
     .digest("hex")
     .slice(0, 24);
   return `media/multivoice-segments/${hash}.mp3`;
 }
 
-// Pasa el buffer del segmento por `silenceremove` con threshold -45 dB y
-// duración mínima 50 ms, en ambos extremos. Quita el silencio inicial que
-// a veces incluye un click de attack, y la cola con breaths/vocal-fry/
-// mouth-clicks que ElevenLabs encadena al final de la oración. Re-encoda
-// a 192 kbps (mismo bitrate que sirve el endpoint TTS) así el concat
-// posterior no muestra discontinuidades de bitstream.
+// Pasa el buffer del segmento por dos limpiezas en cascada:
+//
+// 1. `silenceremove` con threshold -45 dB / duración mínima 50 ms en
+//    ambos extremos. Quita el silencio inicial con click de attack, y
+//    la cola con breaths/vocal-fry/mouth-clicks que `eleven_multilingual_v2`
+//    encadena al final de la oración.
+//
+// 2. End-trim duro de 60 ms via `areverse → atrim → asetpts → areverse`.
+//    Esto recorta contenido aunque NO sea silencio — es el único modo
+//    de matar la "phantom syllable" donde el modelo autorregresivo
+//    genera 1-2 fonemas del próximo token antes del stop signal.
+//    silenceremove con threshold normal no lo toca porque es vocal.
+//    60 ms es agresivo pero deja intacta la última sílaba en speed=0.9
+//    (~70-90 ms por fonema final). Si recorta demasiado, ajustar a 40 ms.
+//
+// Re-encoda a 192 kbps (mismo bitrate que sirve el endpoint TTS) así el
+// concat posterior no muestra discontinuidades de bitstream.
 async function trimSegmentArtifacts(buffer: Buffer): Promise<Buffer> {
   const { writeFile, mkdtemp, rm, readFile } = await import("fs/promises");
   const { tmpdir } = await import("os");
@@ -427,9 +440,12 @@ async function trimSegmentArtifacts(buffer: Buffer): Promise<Buffer> {
         "-loglevel", "error",
         "-i", inPath,
         "-af",
+        // Pasada 1: silenceremove en ambos extremos.
         "silenceremove=" +
           "start_periods=1:start_duration=0.05:start_threshold=-45dB:" +
-          "stop_periods=-1:stop_duration=0.05:stop_threshold=-45dB",
+          "stop_periods=-1:stop_duration=0.05:stop_threshold=-45dB," +
+          // Pasada 2: end-trim duro de 60 ms vía reverse-trim-reverse.
+          "areverse,atrim=start=0.06,asetpts=PTS-STARTPTS,areverse",
         "-c:a", "libmp3lame",
         "-b:a", "192k",
         outPath,
@@ -439,7 +455,7 @@ async function trimSegmentArtifacts(buffer: Buffer): Promise<Buffer> {
       proc.on("error", reject);
       proc.on("close", (code) => {
         if (code === 0) resolve();
-        else reject(new Error(`ffmpeg silenceremove exit ${code}: ${stderr.slice(0, 400)}`));
+        else reject(new Error(`ffmpeg trim exit ${code}: ${stderr.slice(0, 400)}`));
       });
     });
     return await readFile(outPath);
@@ -452,12 +468,24 @@ async function ttsSegment(args: {
   text: string;
   voiceId: string;
   apiKey: string;
+  /** Texto del segmento previo (mismo voiceId o no). Le da al modelo
+   *  contexto histórico para que la prosodia inicial encaje con lo
+   *  ya dicho. Limit ~500 chars; sino el modelo se distrae. */
+  previousText?: string;
+  /** Texto del próximo segmento. Le indica al modelo dónde termina
+   *  exactamente el segmento actual; sin esto, eleven_multilingual_v2
+   *  a veces genera 1-2 fonemas del siguiente token (la "phantom
+   *  syllable" reportada). Pasar incluso un espacio o "." ayuda. */
+  nextText?: string;
 }): Promise<Buffer | null> {
   const softened = softenPunctuationForTts(args.text);
 
   // Cache lookup: same voice + same text (after softening) + same voice
   // settings → reuse the previously generated MP3 from R2 instead of paying
   // ElevenLabs again.
+  // Nota: previousText/nextText NO van en la cache key. Cambiarlos
+  // produciría un audio ligeramente distinto pero no significativamente
+  // — y meterlos rompería la propiedad "regenero solo lo que cambió".
   const cacheKey = multivoiceSegmentCacheKey(args.voiceId, softened);
   const cacheUrl = getPublicObjectUrl(cacheKey);
   if (cacheUrl) {
@@ -475,16 +503,27 @@ async function ttsSegment(args: {
     }
   }
 
+  const requestBody: Record<string, unknown> = {
+    text: softened,
+    model_id: "eleven_multilingual_v2",
+    voice_settings: DEFAULT_VOICE_SETTINGS,
+  };
+  // ElevenLabs API: previous_text/next_text dan al modelo contexto
+  // sobre lo que pasa antes/después del segmento actual sin consumir
+  // caracteres del cuota. Sirve para que la prosodia fluya (previous)
+  // y para señalizar boundaries explícitos (next) — el último previene
+  // la "phantom syllable" mejor que cualquier post-process. Default a
+  // " " si no se pasa, así el modelo siempre tiene un boundary signal.
+  const prev = args.previousText?.trim();
+  if (prev) requestBody.previous_text = prev.slice(-500);
+  requestBody.next_text = args.nextText?.trim() ? args.nextText.trim().slice(0, 500) : " ";
+
   const response = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${args.voiceId}`,
     {
       method: "POST",
       headers: { "xi-api-key": args.apiKey, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        text: softened,
-        model_id: "eleven_multilingual_v2",
-        voice_settings: DEFAULT_VOICE_SETTINGS,
-      }),
+      body: JSON.stringify(requestBody),
     }
   );
   if (!response.ok) {
@@ -671,14 +710,29 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     : "";
 
   const audioBuffers: Buffer[] = [];
-  if (titleText) {
-    const buf = await ttsSegment({ text: titleText, voiceId: narratorVoice, apiKey });
-    if (!buf) return null;
-    audioBuffers.push(buf);
-  }
+  // Construimos la lista completa de "fragments-a-sintetizar" (title +
+  // segmentos en orden) para poder pasar previous_text/next_text con
+  // el contexto real de cada uno. Sin esto, ElevenLabs trata cada
+  // segmento como una oración aislada y a veces le agrega 1-2 fonemas
+  // del próximo token antes del stop signal (la "phantom syllable").
+  type Frag = { text: string; voiceId: string };
+  const fragments: Frag[] = [];
+  if (titleText) fragments.push({ text: titleText, voiceId: narratorVoice });
   for (const seg of segments) {
     const voiceId = lowerVoiceMap[seg.speaker.toLowerCase()] ?? narratorVoice;
-    const buf = await ttsSegment({ text: seg.text, voiceId, apiKey });
+    fragments.push({ text: seg.text, voiceId });
+  }
+  for (let i = 0; i < fragments.length; i += 1) {
+    const frag = fragments[i];
+    const previousText = i > 0 ? fragments[i - 1].text : undefined;
+    const nextText = i + 1 < fragments.length ? fragments[i + 1].text : " ";
+    const buf = await ttsSegment({
+      text: frag.text,
+      voiceId: frag.voiceId,
+      apiKey,
+      previousText,
+      nextText,
+    });
     if (!buf) return null;
     audioBuffers.push(buf);
   }
