@@ -139,114 +139,82 @@ export function focusIcon(focus: JourneyFocus): {
 
 /** Subset de Feather icon names que `journeyIcon` puede devolver.
  *  Todos están en `@expo/vector-icons` Feather set v4. Mantener
- *  alineado con `JourneyIconMatcher` abajo. */
+ *  alineado con la tabla de mapping de los 8 JourneyTypes oficiales. */
 export type JourneyFeatherIcon =
-  | "send"        // travel
-  | "briefcase"   // work
-  | "star"        // culture
   | "coffee"      // conversational
-  | "book-open"   // study / generic
-  | "music"       // music
-  | "activity"    // sports / fitness
-  | "cpu"         // tech
-  | "camera"      // art / photo
-  | "heart"       // health / love / family
-  | "film"        // media / cine
-  | "map"         // exploration
-  | "users"       // social / community
-  | "shopping-bag" // shopping / commerce
-  | "smile"       // kids / fun
-  | "headphones"; // podcast / audio
+  | "send"        // traveler
+  | "briefcase"   // business
+  | "globe"       // expat (someone abroad)
+  | "book-open"   // academic / generic fallback
+  | "star"        // cultural
+  | "smile"       // hospitality (welcoming / service)
+  | "activity";   // health
 
 /**
- * Devuelve el icono apropiado para un journey, prefiriendo el match
- * por keyword en `label` (Studio Journey.name) antes que el focus
- * legacy. Bajo el modelo "un track por Studio Journey" todos los
- * journeys tienen `focus: "General"` hardcoded, así que `focusIcon`
- * devolvía coffee para todos.
+ * Mapping ÚNICO de la fuente de verdad: los 8 `JourneyType` que
+ * viven en la tabla `dp_journey_types_v1` (Studio → Topics → Journeys).
+ * Cada entrada matchea por slug, en español original o equivalente
+ * en inglés (cubre el caso de que el usuario renombre los labels en
+ * Studio sin que la app rompa).
  *
- * El planner de Studio permite nombres de journey libres — no está
- * constrained a los 4 JOURNEY_FOCUS_OPTIONS clásicos. Por eso este
- * matcher cubre 16 categorías con keywords ES + EN + IT/PT/DE
- * cuando aplica, en orden de especificidad. El primer match gana.
+ * No inventamos categorías que no existen en Studio. Si en el futuro
+ * el usuario crea un `JourneyType` nuevo (ej: "Foodie"), agregar la
+ * entrada aquí — el sistema NO va a inferirla con keywords sueltos.
+ */
+const JOURNEY_TYPE_ICONS: Array<{
+  slugs: string[];
+  feather: JourneyFeatherIcon;
+  emoji: string;
+}> = [
+  { slugs: ["conversacional", "conversational"],   feather: "coffee",     emoji: "☕" },
+  { slugs: ["viajero", "traveler", "travel"],      feather: "send",       emoji: "✈" },
+  { slugs: ["negocios", "business"],               feather: "briefcase",  emoji: "💼" },
+  { slugs: ["expatriado", "expat", "expatriate"],  feather: "globe",      emoji: "🌐" },
+  { slugs: ["academico", "academic", "academia"],  feather: "book-open",  emoji: "📚" },
+  { slugs: ["cultural", "culture"],                feather: "star",       emoji: "🎭" },
+  { slugs: ["hospitalidad", "hospitality"],        feather: "smile",      emoji: "🤝" },
+  { slugs: ["salud", "health", "wellness"],        feather: "activity",   emoji: "🏃" },
+];
+
+function labelToSlug(label: string): string {
+  return label
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "") // strip combining diacritics (académico → academico)
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/**
+ * Devuelve el icono apropiado para un journey según su `label`
+ * (Studio Journey.name). El label se normaliza a slug y se busca en
+ * la tabla canónica de los 8 JourneyTypes. Si no matchea, fallback
+ * a `book-open` (estudio / lectura genérica).
  *
- * Para journeys legacy sin label cae al `focusIcon` original.
+ * Para journeys legacy sin label cae al `focusIcon` original que
+ * mira el focus enum.
  */
 export function journeyIcon(journey: { focus: JourneyFocus; label?: string | null }): {
   feather: JourneyFeatherIcon;
   emoji: string;
 } {
-  const label = (journey.label ?? "").trim().toLowerCase();
+  const label = (journey.label ?? "").trim();
   if (!label) {
     const fb = focusIcon(journey.focus);
-    return { feather: fb.feather, emoji: fb.emoji };
+    // focusIcon's feather subset is included in JourneyFeatherIcon
+    // except for "send"/"briefcase"/"star"/"coffee" which ARE.
+    return { feather: fb.feather as JourneyFeatherIcon, emoji: fb.emoji };
   }
 
-  // Travel / exploración. ES "viaj" cubre viajero/viaje/viajar.
-  if (/viaj|travel|tourist|turist|trip|nomad|nómada|adventur|aventur/.test(label)) {
-    return { feather: "send", emoji: "✈" };
+  const slug = labelToSlug(label);
+  for (const entry of JOURNEY_TYPE_ICONS) {
+    if (entry.slugs.includes(slug)) {
+      return { feather: entry.feather, emoji: entry.emoji };
+    }
   }
-  // Business / work / career.
-  if (/business|career|trabaj|negoci|profesion|professional|work|empresa|corporat/.test(label)) {
-    return { feather: "briefcase", emoji: "💼" };
-  }
-  // Health / wellness / fitness.
-  if (/health|salud|wellness|bienestar|fitness|deport|sport|workout|gym/.test(label)) {
-    return { feather: "activity", emoji: "🏃" };
-  }
-  // Music / podcast.
-  if (/music|música|musica|podcast|cancion|song|band/.test(label)) {
-    return { feather: "music", emoji: "🎵" };
-  }
-  // Tech / coding.
-  if (/tech|tecnolog|coding|programac|developer|software|engineer/.test(label)) {
-    return { feather: "cpu", emoji: "💻" };
-  }
-  // Art / photography / cinema.
-  if (/photo|foto|art\b|arte\b|paint|pintur|design|diseñ/.test(label)) {
-    return { feather: "camera", emoji: "🎨" };
-  }
-  if (/cinema|cine\b|film|movie|pelicul|película/.test(label)) {
-    return { feather: "film", emoji: "🎬" };
-  }
-  // Audio / listening / radio.
-  if (/audio\b|radio|listen|escuch/.test(label)) {
-    return { feather: "headphones", emoji: "🎧" };
-  }
-  // Family / community / heritage learner.
-  if (/family|familia|heritage|herencia|community|comunidad|social|amigos/.test(label)) {
-    return { feather: "users", emoji: "👥" };
-  }
-  // Culture (broad).
-  if (/cultur|tradicion|tradition|history|histori|folklor/.test(label)) {
-    return { feather: "star", emoji: "🎭" };
-  }
-  // Shopping / commerce.
-  if (/shop|compra|market|mercad|store|tienda|retail/.test(label)) {
-    return { feather: "shopping-bag", emoji: "🛍" };
-  }
-  // Kids / fun / playful.
-  if (/kids|niño|infantil|child|fun\b|diversion|diversión|play/.test(label)) {
-    return { feather: "smile", emoji: "😀" };
-  }
-  // Maps / urban / geography (distinct from "send" which is travel-flow).
-  if (/city|ciudad|urban|neighborhood|barrio|geograph|geografía|geografia/.test(label)) {
-    return { feather: "map", emoji: "🗺" };
-  }
-  // Romance / love / dating.
-  if (/love|amor|dating|cita\b|relationship|relacion/.test(label)) {
-    return { feather: "heart", emoji: "❤" };
-  }
-  // Conversation / casual / daily life: coffee fits "chat over coffee".
-  if (/conversa|everyday|daily|cotidian|casual|small.?talk|charl/.test(label)) {
-    return { feather: "coffee", emoji: "☕" };
-  }
-  // Food / cooking / cuisine.
-  if (/food|comida|cuisine|cocina|kitchen|cooking|recipe|receta|gastron/.test(label)) {
-    return { feather: "coffee", emoji: "🍴" };
-  }
-  // Genérico: book-open. Más neutral que coffee para un journey que
-  // no matchee ninguna categoría — sugiere "lectura/estudio".
+  // Default: book-open (lectura/estudio). Sucede cuando el JourneyType
+  // es nuevo y aún no se agregó a JOURNEY_TYPE_ICONS — síntoma de que
+  // hace falta sincronizar el mapping con la tabla `dp_journey_types_v1`.
   return { feather: "book-open", emoji: "📖" };
 }
 
