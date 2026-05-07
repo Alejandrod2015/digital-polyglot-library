@@ -104,7 +104,7 @@ export function statusColor(status: RoadmapStatus): { bg: string; fg: string } {
 }
 
 export const ASSET_ROADMAP: AssetRoadmap = {
-  lastUpdated: "2026-05-07 (Movida 2 piece 2)",
+  lastUpdated: "2026-05-07 (Movida 2 piece 3)",
   thesisHeadline: "DPL como instrumento de captura de 3 corpora licenciables",
   thesisSummary:
     "La app B2C es la herramienta. El asset real son tres corpora estructurados que se pueden licenciar o vender por separado a labs de IA, plataformas de TTS y editoriales. Pre-launch = momento más barato para arquitecturar el data layer.",
@@ -186,7 +186,8 @@ export const ASSET_ROADMAP: AssetRoadmap = {
         },
         {
           title: "Integración con practice_session_started (cargar primero items SRS-due)",
-          status: "not_started",
+          status: "deployed",
+          note: "sortPracticeItemsByDueness en src/lib/practiceExercises.ts; aplicado en practice/page.tsx solo en modo default favoritos (no journey/story practice). Mobile shell pendiente",
         },
         {
           title: "Update de nextReviewAt y streak tras cada respuesta (PATCH /api/favorites + grade del usuario)",

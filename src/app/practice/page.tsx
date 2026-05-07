@@ -19,6 +19,7 @@ import {
   getRecommendedPracticeModeFromOnboarding,
   getDuePracticeItems,
   getSpeechSynthesisLang,
+  sortPracticeItemsByDueness,
   PracticeAudioClip,
   PracticeExercise,
   PracticeFavoriteItem,
@@ -474,7 +475,17 @@ export default function PracticePage() {
         if (!res.ok) throw new Error(`Error ${res.status}`);
         const data = (await res.json()) as PracticeFavoriteItem[] | JourneyPracticeSource;
         if (!cancelled) {
-          setFavorites(Array.isArray(data) ? data : Array.isArray(data.items) ? data.items : []);
+          // Default favorites mode: pre-sort by FSRS dueness so the practice
+          // queue starts with the most-overdue items. Journey and story
+          // practice keep their server-defined order (curriculum / story
+          // sequence is intentional there).
+          const rawItems = Array.isArray(data)
+            ? data
+            : Array.isArray(data.items)
+              ? data.items
+              : [];
+          const isDefaultFavoritesMode = !isJourneyPractice && !isStoryPractice;
+          setFavorites(isDefaultFavoritesMode ? sortPracticeItemsByDueness(rawItems) : rawItems);
           setPrefabExercises(!Array.isArray(data) && Array.isArray(data.exercises) ? data.exercises : []);
           setCheckpointToken(!Array.isArray(data) && typeof data.checkpointToken === "string" ? data.checkpointToken : null);
           setJourneyReviewMeta(
@@ -487,12 +498,14 @@ export default function PracticePage() {
         if (!cancelled) {
           const cachedData = await readCachedJson<PracticeFavoriteItem[] | JourneyPracticeSource>(requestUrl);
           if (cachedData) {
+            const cachedItems = Array.isArray(cachedData)
+              ? cachedData
+              : Array.isArray(cachedData.items)
+                ? cachedData.items
+                : [];
+            const isDefaultFavoritesMode = !isJourneyPractice && !isStoryPractice;
             setFavorites(
-              Array.isArray(cachedData)
-                ? cachedData
-                : Array.isArray(cachedData.items)
-                  ? cachedData.items
-                  : []
+              isDefaultFavoritesMode ? sortPracticeItemsByDueness(cachedItems) : cachedItems
             );
             setPrefabExercises(
               !Array.isArray(cachedData) && Array.isArray(cachedData.exercises)
@@ -515,7 +528,7 @@ export default function PracticePage() {
 
           if (!isJourneyPractice && !isStoryPractice) {
             const localFavorites = readLocalPracticeFavorites(user?.id ?? null);
-            setFavorites(localFavorites);
+            setFavorites(sortPracticeItemsByDueness(localFavorites));
             setPrefabExercises([]);
             setCheckpointToken(null);
             setLoadState(localFavorites.length > 0 ? "ready" : "error");
