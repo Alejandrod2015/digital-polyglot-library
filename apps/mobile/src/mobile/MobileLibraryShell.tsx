@@ -10435,7 +10435,13 @@ export function MobileLibraryShell(args: {
             toValue: 0.25,
             duration: 1100,
             easing: Easing.inOut(Easing.ease),
-            useNativeDriver: true,
+            // Mismo driver que el timing previo: mezclar JS y native
+            // en una `Animated.sequence` crashea RN al mount con
+            // "Attempting to run JS driven animation on animated node
+            // that has been moved to native driver". El timing previo
+            // ya está en JS driver por la razón documentada arriba,
+            // este DEBE estar igual.
+            useNativeDriver: false,
           }),
         ])
       );
