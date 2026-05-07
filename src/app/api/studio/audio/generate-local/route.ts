@@ -10,6 +10,7 @@ import { prisma } from "@/lib/prisma";
 import { uploadPublicObject } from "@/lib/objectStorage";
 import { buildAudioNarrationText } from "@/lib/elevenlabs";
 import { findVoice, DEFAULT_VOICE_BY_LANGUAGE } from "@/lib/voiceCatalog";
+import { trimAudioBoundariesByAlignment } from "@/lib/audioBoundaryTrim";
 
 export const maxDuration = 300;
 
@@ -66,6 +67,30 @@ function ambientPath(tag: string | null | undefined, language: string | null | u
 
 function filenameFromTitle(title: string): string {
   return title.replace(/[^\w\s-]/g, "").replace(/\s+/g, "_");
+}
+
+/**
+ * Texto plano que matchea el orden y contenido del audio generado por
+ * Python, para pasarlo a aeneas. Para multi-voz arma `title + seg1.text
+ * + seg2.text + ... + segN.text`. Para single-voice usa el narration
+ * estándar (`buildAudioNarrationText`). Strippea HTML residual.
+ */
+function buildPlainTextForAlign(args: {
+  title: string;
+  bodyText: string;
+  dialogueSpec: Array<{ voice: string; text: string }> | null;
+}): string {
+  const titleClean = args.title.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  if (args.dialogueSpec && args.dialogueSpec.length > 0) {
+    const segs = args.dialogueSpec
+      .map((s) => (typeof s.text === "string" ? s.text.trim() : ""))
+      .filter(Boolean);
+    return [titleClean, ...segs].filter(Boolean).join(" ");
+  }
+  return buildAudioNarrationText(titleClean, args.bodyText)
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 const MODAL_PIPER_VOICES = new Set([
@@ -293,7 +318,41 @@ export async function POST(request: Request) {
       refText: specPath ? null : refText,
     });
 
-    const buffer = await readFile(tempFile);
+    const rawBuffer = await readFile(tempFile);
+
+    // Phantom-syllable trim por alineación forzada (aeneas via Modal).
+    // El Python script genera segmentos vía Kokoro/Chatterbox/F5/Piper
+    // y los concatena con DIALOGUE_PAUSE_S de silencio entre ellos. A
+    // pesar de ser modelos NAR, a veces emiten contenido vocal espurio
+    // al final del segmento (1-2 fonemas que el oyente percibe como
+    // "comenzar a decir otra cosa"). Aeneas alinea las palabras del
+    // texto contra el audio; reemplazamos cualquier hueco entre
+    // word_end_i y word_start_{i+1} con un silencio limpio fijo
+    // cuando ese hueco supera 250 ms (i.e. límite de segmento, no
+    // pausa intra-oración).
+    const fullPlainText = buildPlainTextForAlign({
+      title: story.title,
+      bodyText: story.text,
+      dialogueSpec: hasDialogueSpec
+        ? (story.dialogueSpec as Array<{ voice: string; text: string }>)
+        : null,
+    });
+    let buffer: Buffer = rawBuffer;
+    if (fullPlainText) {
+      try {
+        const cleaned = await trimAudioBoundariesByAlignment({
+          audioBuffer: rawBuffer,
+          plainText: fullPlainText,
+          language: story.journey.language,
+        });
+        if (cleaned) buffer = cleaned;
+      } catch (err) {
+        console.warn(
+          `[studio/audio/generate-local] boundary trim failed, using raw: ${err instanceof Error ? err.message : err}`
+        );
+      }
+    }
+
     const uploaded = await uploadPublicObject({
       key: `media/generated/audio/${filename}`,
       body: buffer,
