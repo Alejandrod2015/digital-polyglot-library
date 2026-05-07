@@ -114,7 +114,7 @@ export function statusColor(status: RoadmapStatus): { bg: string; fg: string } {
 }
 
 export const ASSET_ROADMAP: AssetRoadmap = {
-  lastUpdated: "2026-05-07 (Movida 2 grade UI)",
+  lastUpdated: "2026-05-07 (Movida 2 auto-grade revert)",
   thesisHeadline: "DPL como instrumento de captura de 3 corpora licenciables",
   thesisSummary:
     "La app B2C es la herramienta. El asset real son tres corpora estructurados que se pueden licenciar o vender por separado a labs de IA, plataformas de TTS y editoriales. Pre-launch = momento más barato para arquitecturar el data layer.",
@@ -205,9 +205,9 @@ export const ASSET_ROADMAP: AssetRoadmap = {
           note: "applyReviewToFavorite en src/lib/practiceReview.ts orquesta FSRS + Prisma. Endpoints POST /api/practice/review (web) y POST /api/mobile/practice/review (mobile)",
         },
         {
-          title: "UI de Again/Hard/Good/Easy en flow de práctica web",
+          title: "Auto-grade silencioso desde practice flow (sin UX visible)",
           status: "deployed",
-          note: "4 grade buttons reemplazan al Continue cuando el exercise tiene un word claro. Cada click llama POST /api/practice/review con grade 1-4 y avanza. Match-meaning (multi-word) sigue mostrando Continue. Mobile pendiente",
+          note: "El botón Continue auto-deriva el grade desde correcto/incorrecto y llama POST /api/practice/review en background fire-and-forget. Cero cambio visual para el usuario. Asset crece invisible. Mobile pendiente del mismo wiring",
         },
       ],
     },
@@ -242,16 +242,16 @@ export const ASSET_ROADMAP: AssetRoadmap = {
   workLog: [
     {
       date: "2026-05-07",
-      title: "Movida 2: grade UI Again/Hard/Good/Easy en práctica web",
+      title: "Auto-grade silencioso en práctica (sin cambio de UX)",
       scope: "Movida 2 (SRS engine)",
       summary:
-        "El motor SRS ya no es solo backend; ahora los usuarios web ven 4 botones después de cada respuesta y le dicen al sistema qué tan bien la sabían. Cada click alimenta el modelo.",
+        "El motor SRS recibe señal de cada respuesta del usuario sin que él vea nada distinto. El botón Continue es el mismo de siempre pero ahora deriva el grade automáticamente y lo manda al server en background.",
       highlights: [
-        "Sustituye al botón Continue en el feedback section de practice/page.tsx",
-        "Solo aparece cuando el exercise tiene una palabra clara (no en match_meaning multi-word)",
-        "Llama POST /api/practice/review con grade 1-4 y avanza al siguiente exercise",
-        "Fire-and-forget: si la network falla, igual avanza para no bloquear UX",
-        "Mobile (MobileLibraryShell) pendiente, en active dev de karaoke",
+        "Continue button visualmente intacto",
+        "Al click, deriva grade desde lastResult: correcto → 3 (Good), incorrecto → 1 (Again)",
+        "Fire-and-forget POST /api/practice/review, errores no bloquean UX",
+        "Asset crece invisible: cada respuesta de práctica alimenta FSRS",
+        "Revertimos el cambio de los 4 botones visibles que era invasivo de la UX",
       ],
     },
     {

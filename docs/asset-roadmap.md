@@ -81,7 +81,7 @@ The migration is additive (4 `ALTER TABLE ADD COLUMN IF NOT EXISTS`), zero risk 
 | Endpoint `GET /api/practice/due` (web + mobile mirror, ordered by dueness) | Deployed to main |
 | Integration with `practice_session_started` so practice loads SRS-due items first | Deployed (web; mobile pending) |
 | Update `nextReviewAt`/`streak` after each grade — server helper + `POST /api/practice/review` (web + mobile) | Deployed (helper + endpoints) |
-| Grade UI (Again/Hard/Good/Easy) on web practice flow | Deployed (web; mobile pending) |
+| Auto-grade from practice flow (silent, no UX change) | Deployed (web; mobile pending) |
 
 The FSRS lib is self-contained: 4 exported functions (`reviewCard`, `newCard`, `favoriteToFsrsCard`, `compareByDueness`), default parameters, types. No callers yet; integration arrives piece by piece.
 
