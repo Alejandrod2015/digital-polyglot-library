@@ -80,7 +80,7 @@ The migration is additive (4 `ALTER TABLE ADD COLUMN IF NOT EXISTS`), zero risk 
 | FSRS-4.5 algorithm in `src/lib/fsrs.ts` (+ tests + adapter from current Favorite shape) | Deployed to main |
 | Endpoint `GET /api/practice/due` (web + mobile mirror, ordered by dueness) | Deployed to main |
 | Integration with `practice_session_started` so practice loads SRS-due items first | Deployed (web; mobile pending) |
-| Update `nextReviewAt`/`streak` after each grade via existing `PATCH /api/favorites` (UI for grade + call FSRS) | Not started |
+| Update `nextReviewAt`/`streak` after each grade — server helper + `POST /api/practice/review` (web + mobile) | Deployed (helper + endpoints; grade UI in practice flow pending) |
 
 The FSRS lib is self-contained: 4 exported functions (`reviewCard`, `newCard`, `favoriteToFsrsCard`, `compareByDueness`), default parameters, types. No callers yet; integration arrives piece by piece.
 
