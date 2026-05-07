@@ -145,6 +145,27 @@ async function saveStory(storyId: string, jsonPath: string): Promise<void> {
   const parsed = JSON.parse(raw);
   const { title, synopsis, text, vocab } = validatePayload(parsed);
 
+  // Optional arcType: declared by the assistant per docs/story-quality-spec.md.
+  // Validated against the closed enum so a typo can't slip into the DB.
+  const ARC_TYPES = new Set([
+    "white-lie",
+    "last-minute-decision",
+    "return-after-years",
+    "unspoken-subtext",
+    "plan-falls-short",
+    "late-reveal",
+    "small-stake",
+    "open-ending",
+    "daily-encounter",
+  ]);
+  const rawArc = typeof parsed.arcType === "string" ? parsed.arcType.trim() : "";
+  if (rawArc && !ARC_TYPES.has(rawArc)) {
+    throw new Error(
+      `arcType "${rawArc}" is not in the allowed set. Allowed: ${Array.from(ARC_TYPES).join(", ")}`
+    );
+  }
+  const arcType = rawArc || null;
+
   const story = await prisma.journeyStory.findUnique({
     where: { id: storyId },
     include: { journey: true },
@@ -167,6 +188,7 @@ async function saveStory(storyId: string, jsonPath: string): Promise<void> {
       vocab: vocab as any,
       wordCount,
       vocabCount: vocab.length,
+      arcType,
       auditScore: null,
       auditOffenders: undefined,
       auditedAt: null,
@@ -180,6 +202,7 @@ async function saveStory(storyId: string, jsonPath: string): Promise<void> {
     slug: updated.slug,
     wordCount: updated.wordCount,
     vocabCount: updated.vocabCount,
+    arcType: updated.arcType,
     status: updated.status,
   }, null, 2));
 }

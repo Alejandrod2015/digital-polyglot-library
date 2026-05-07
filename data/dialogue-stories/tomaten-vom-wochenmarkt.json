@@ -1,0 +1,28 @@
+{
+  "title": "Tomaten vom Wochenmarkt",
+  "synopsis": "An einem sonnigen Samstagmorgen besucht Mira den Wochenmarkt am Boxhagener Platz in Berlin-Friedrichshain. Sie spricht mit Herrn Klein, einem freundlichen Gemüsehändler, und kauft reife Tomaten aus Brandenburg. Herr Klein empfiehlt auch frisches Basilikum aus seinem Stand. Die Nachbarin Frau Tan kommt vorbei und schlägt einen einfachen Brotsalat zum Abendessen vor. Mira bedankt sich herzlich und geht zufrieden nach Hause.",
+  "text": "Es ist Samstagmorgen in Berlin. Die Sonne scheint hell über dem Boxhagener Platz in Friedrichshain. Auf dem Wochenmarkt stehen viele bunte Stände. Es riecht nach frischem Brot und reifem Gemüse. Mira geht langsam durch den Markt und sucht Tomaten für das Abendessen.\n\nMira: Guten Morgen, Herr Klein! Welche Tomaten sind heute am reifsten? Ich möchte sie heute Abend essen.\nHerr Klein: Guten Morgen, Mira! Diese roten Tomaten aus Brandenburg sind perfekt. Sie kommen direkt aus der Region und kosten nur ein Euro pro Pfund.\nMira: Das klingt wirklich gut. Schmecken sie auch süß? Ich mag süße Tomaten sehr gern.\nHerr Klein: Ja, sie sind sehr süß und saftig. Probier mal ein kleines Stück. Hier, bitte schön.\nMira: Mmm, sie schmecken fantastisch! Ich nehme zwei Pfund, bitte. Haben Sie auch frisches Basilikum?\nHerr Klein: Natürlich, hier ist ein schöner Bund Basilikum. Das passt sehr gut zu den Tomaten. Möchtest du noch etwas anderes?\nMira: Nein, danke, das ist alles für heute. Wie viel kostet alles zusammen?\nHerr Klein: Drei Euro fünfzig, bitte. Vielen Dank für deinen Einkauf.\nFrau Tan: Hallo Mira, hallo Herr Klein! Was kaufst du heute Schönes?\nMira: Guten Morgen, Frau Tan! Ich kaufe Tomaten und Basilikum für das Abendessen.\nFrau Tan: Oh, dann mach doch einen einfachen Brotsalat! Du brauchst nur Brot, Tomaten, Olivenöl und Basilikum. Das schmeckt wunderbar im Sommer.\nMira: Was für eine schöne Idee! Vielen Dank, Frau Tan. Ich kaufe gleich noch ein Brot.\nHerr Klein: Guten Appetit, Mira! Bis nächsten Samstag.\nMira: Danke euch beiden! Tschüss und einen schönen Tag noch.",
+  "vocab": [
+    { "word": "Samstagmorgen", "surface": "Samstagmorgen", "definition": "Morning hours of Saturday, popular for weekend errands and markets.", "type": "noun" },
+    { "word": "Wochenmarkt", "surface": "Wochenmarkt", "definition": "Open-air weekly market with farmers selling produce and fresh food.", "type": "noun" },
+    { "word": "Stand", "surface": "Stände", "definition": "Small booth or stall where vendors display goods for sale.", "type": "noun" },
+    { "word": "riechen", "surface": "riecht", "definition": "To perceive odors through the nose, sensing scents in surroundings.", "type": "verb" },
+    { "word": "reif", "surface": "reifem", "definition": "Fully developed and ready to eat, said of fruit or vegetables.", "type": "adjective" },
+    { "word": "Tomate", "surface": "Tomaten", "definition": "Round red fruit eaten as vegetable in salads and sauces.", "type": "noun" },
+    { "word": "Abendessen", "surface": "Abendessen", "definition": "Evening meal eaten at the end of the working day.", "type": "noun" },
+    { "word": "Brandenburg", "surface": "Brandenburg", "definition": "German federal state surrounding Berlin, known for regional farm produce.", "type": "noun" },
+    { "word": "Pfund", "surface": "Pfund", "definition": "Half kilogram unit still common at German markets and butcheries.", "type": "noun" },
+    { "word": "süß", "surface": "süß", "definition": "Pleasant sugary taste, characteristic of sweets and ripe fruit.", "type": "adjective" },
+    { "word": "saftig", "surface": "saftig", "definition": "Full of juice, tender and moist when bitten or chewed.", "type": "adjective" },
+    { "word": "probieren", "surface": "Probier", "definition": "To taste a small sample to check flavor before buying.", "type": "verb" },
+    { "word": "Basilikum", "surface": "Basilikum", "definition": "Fragrant green herb used in Italian and Mediterranean cooking dishes.", "type": "noun" },
+    { "word": "Bund", "surface": "Bund", "definition": "Bundle of herbs or vegetables tied together for selling.", "type": "noun" },
+    { "word": "Einkauf", "surface": "Einkauf", "definition": "Act of buying goods, often groceries from shops or markets.", "type": "noun" },
+    { "word": "Brotsalat", "surface": "Brotsalat", "definition": "Italian-style salad combining stale bread with tomatoes and olive oil.", "type": "noun" },
+    { "word": "Olivenöl", "surface": "Olivenöl", "definition": "Golden oil pressed from olives, common in Mediterranean cooking.", "type": "noun" },
+    { "word": "wunderbar", "surface": "wunderbar", "definition": "Extremely pleasant or delightful, expressing strong positive feelings about something.", "type": "adjective" },
+    { "word": "Idee", "surface": "Idee", "definition": "Thought or suggestion that appears in the mind for action.", "type": "noun" },
+    { "word": "Appetit", "surface": "Appetit", "definition": "Hunger or desire to eat, often wished before sharing meals.", "type": "noun" },
+    { "word": "Tschüss", "surface": "Tschüss", "definition": "Casual German farewell among friends, neighbors, and shop customers.", "type": "expression" }
+  ]
+}

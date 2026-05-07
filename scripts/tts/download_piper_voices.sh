@@ -12,6 +12,9 @@ VOICES=(
   "es/es_ES/sharvard/medium/es_ES-sharvard-medium"
   "pt/pt_BR/cadu/medium/pt_BR-cadu-medium"
   "it/it_IT/paola/medium/it_IT-paola-medium"
+  # Candidates for testing (LATAM Spanish, neutral-MX accent).
+  "es/es_MX/claude/high/es_MX-claude-high"
+  "es/es_MX/ald/medium/es_MX-ald-medium"
 )
 
 BASE="https://huggingface.co/rhasspy/piper-voices/resolve/main"

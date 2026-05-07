@@ -1,0 +1,3376 @@
+{
+  "exportedAt": "2026-05-03T14:03:27.061Z",
+  "vocab": {
+    "cmocxf2rm0001ie040t5bt276": [
+      {
+        "type": "noun",
+        "word": "chef",
+        "definition": "A professional cook who leads the kitchen and creates meals in restaurants."
+      },
+      {
+        "type": "noun",
+        "word": "riso",
+        "definition": "A staple grain commonly used in various dishes, especially risotto."
+      },
+      {
+        "type": "noun",
+        "word": "ristorante",
+        "definition": "An establishment where meals are prepared and served to paying guests."
+      },
+      {
+        "type": "noun",
+        "word": "navigli",
+        "surface": "Navigli",
+        "definition": "Milan's canal district, lively with bars, eateries, and weekend strollers."
+      },
+      {
+        "type": "noun",
+        "word": "zafferano",
+        "definition": "A valuable spice from Crocus sativus flowers, known for its color and flavor."
+      },
+      {
+        "type": "adjective",
+        "word": "urgente",
+        "surface": "urgenza",
+        "definition": "Pressing matter demanding immediate attention, with no time to spare."
+      },
+      {
+        "type": "noun",
+        "word": "profumo",
+        "definition": "An enticing aroma that can evoke feelings of hunger and pleasant memories."
+      },
+      {
+        "type": "noun",
+        "word": "clienti",
+        "definition": "The paying customers a business serves, here diners eating at the restaurant."
+      },
+      {
+        "type": "noun",
+        "word": "salvatore",
+        "definition": "A rescuer who steps in to help when the situation looks hopeless."
+      },
+      {
+        "type": "adjective",
+        "word": "pieno",
+        "definition": "Full to capacity; packed with people, things, or contents."
+      },
+      {
+        "type": "noun",
+        "word": "piatto",
+        "definition": "A dish, both the plate itself and the food served on it."
+      },
+      {
+        "type": "adjective",
+        "word": "giallo",
+        "definition": "The bright yellow color, like saffron tinting a Milanese risotto."
+      },
+      {
+        "type": "noun",
+        "word": "successo",
+        "definition": "The accomplishment of a goal or positive outcome, often celebrated and recognized."
+      },
+      {
+        "type": "verb",
+        "word": "mescolare",
+        "definition": "The process of stirring or blending ingredients together to form a mixture."
+      },
+      {
+        "type": "adjective",
+        "word": "fiero",
+        "definition": "Quietly proud; satisfaction that comes from a well-earned achievement."
+      },
+      {
+        "type": "noun",
+        "word": "passione",
+        "definition": "Deep enthusiasm for an activity that drives someone to keep going."
+      }
+    ],
+    "cmocxf2rm0002ie04b150xy1v": [
+      {
+        "word": "stradine",
+        "definition": "Narrow cobblestone lanes that wind through old Italian neighborhoods."
+      },
+      {
+        "word": "accanto",
+        "definition": "Right next to something, positioned closely beside it in space."
+      },
+      {
+        "word": "anziano",
+        "definition": "An elderly person, often regarded with respect for their experience."
+      },
+      {
+        "word": "indicazioni",
+        "definition": "Spoken or written directions that guide someone toward a destination."
+      },
+      {
+        "word": "trattoria",
+        "definition": "A casual family-run eatery serving traditional Italian home-style cooking."
+      },
+      {
+        "word": "profumo",
+        "definition": "A pleasant aroma, especially of food, perfume, or fresh flowers."
+      },
+      {
+        "word": "deliziosa",
+        "definition": "Genuinely delicious food, so tasty that eating brings real pleasure."
+      },
+      {
+        "word": "forchettata",
+        "definition": "A forkful of food, the small portion you lift while eating."
+      },
+      {
+        "word": "felicità",
+        "definition": "A steady feeling of joy and emotional well-being in life."
+      },
+      {
+        "word": "vivace",
+        "definition": "Lively and full of energy, buzzing with movement and sound."
+      },
+      {
+        "word": "sapori",
+        "definition": "The distinct flavors a dish offers, from sweet to savory."
+      },
+      {
+        "word": "avventura",
+        "definition": "An exciting experience full of discovery and unexpected turns."
+      },
+      {
+        "word": "strada",
+        "definition": "A road or street that connects places and carries traffic."
+      },
+      {
+        "word": "sorriso",
+        "definition": "A smile; the warm upward curve of the lips signaling friendliness."
+      },
+      {
+        "word": "vivo",
+        "definition": "Alive or vibrant, pulsing with energy and visible signs of life."
+      }
+    ],
+    "cmogli5yt0001l404jj9zsf1a": [
+      {
+        "type": "noun",
+        "word": "cuore",
+        "definition": "Represents the central part of something, often symbolizing love or passion."
+      },
+      {
+        "type": "adjective",
+        "word": "giovane",
+        "definition": "In the early stages of life, full of energy and potential."
+      },
+      {
+        "type": "adjective",
+        "word": "importante",
+        "definition": "Carrying real weight or significance, deserving attention and care."
+      },
+      {
+        "type": "noun",
+        "word": "concorso",
+        "definition": "A competitive event where participants demonstrate skills to win a prize."
+      },
+      {
+        "type": "noun",
+        "word": "mercato",
+        "definition": "A place for buying and selling goods, involving vendor and customer interactions."
+      },
+      {
+        "type": "verb",
+        "word": "dimenticare",
+        "surface": "dimenticato",
+        "definition": "The act of failing to remember something important, leading to complications."
+      },
+      {
+        "type": "noun",
+        "word": "aiuto",
+        "definition": "Support given to someone in need, reflecting kindness and willingness to assist."
+      },
+      {
+        "type": "verb",
+        "word": "sorridere",
+        "surface": "sorridendo",
+        "definition": "To smile, showing warmth or pleasure through the curve of your lips."
+      },
+      {
+        "type": "noun",
+        "word": "cucina",
+        "definition": "The area for food preparation, also referring to a specific cooking style."
+      },
+      {
+        "type": "noun",
+        "word": "ingrediente",
+        "surface": "ingredienti",
+        "definition": "The components used in cooking, crucial for creating a dish's flavors and textures."
+      },
+      {
+        "type": "adjective",
+        "word": "delizioso",
+        "definition": "Genuinely delicious food whose taste brings pleasure with every bite."
+      },
+      {
+        "type": "noun",
+        "word": "risotto",
+        "definition": "An Italian rice dish cooked slowly in broth, known for its creamy texture."
+      },
+      {
+        "type": "noun",
+        "word": "amico",
+        "surface": "amica",
+        "definition": "A person with whom one shares a close bond of affection and support."
+      },
+      {
+        "type": "noun",
+        "word": "profumo",
+        "surface": "profumi",
+        "definition": "A pleasant smell that can evoke memories, often linked to food or flowers."
+      },
+      {
+        "type": "adjective",
+        "word": "felice",
+        "definition": "A feeling of deep joy or contentment from positive experiences or connections."
+      },
+      {
+        "type": "verb",
+        "word": "ispirare",
+        "surface": "ispirato",
+        "definition": "To spark someone's creativity or motivation to pursue an idea."
+      }
+    ],
+    "cmoglxwmx0002la047mrxuqmo": [
+      {
+        "type": "noun",
+        "word": "caffè",
+        "definition": "A cozy place where people enjoy coffee and light meals, fostering social connections."
+      },
+      {
+        "type": "noun",
+        "word": "brusio",
+        "definition": "The low murmur of many voices, like background chatter in crowds."
+      },
+      {
+        "type": "noun",
+        "word": "appunti",
+        "definition": "Notes taken during lectures or study sessions, essential for effective review and exam prep."
+      },
+      {
+        "type": "noun",
+        "word": "cappuccino",
+        "definition": "An Italian coffee drink made with espresso and steamed milk, often enjoyed as a treat."
+      },
+      {
+        "type": "noun",
+        "word": "energia",
+        "definition": "The enthusiasm and drive that motivate individuals, especially during intense study or work."
+      },
+      {
+        "type": "verb",
+        "word": "sorridere",
+        "surface": "sorridendo",
+        "definition": "To smile; to show warmth or pleasure through your face."
+      },
+      {
+        "type": "verb",
+        "word": "trasformare",
+        "definition": "To transform something, changing its form, state, or nature."
+      },
+      {
+        "type": "adjective",
+        "word": "sollevata",
+        "definition": "Feeling a sense of relief after overcoming a challenge, leading to renewed optimism."
+      },
+      {
+        "type": "verb",
+        "word": "studiare",
+        "surface": "studiato",
+        "definition": "To actively learn or review material, crucial for achieving academic success and understanding."
+      },
+      {
+        "type": "noun",
+        "word": "sogni",
+        "definition": "Aspirations or visions for the future that inspire individuals to pursue their goals."
+      },
+      {
+        "type": "verb",
+        "word": "affrontare",
+        "definition": "To face a challenge directly, showing courage and resilience in difficult situations."
+      },
+      {
+        "type": "noun",
+        "word": "momento",
+        "definition": "A significant point in time that presents an opportunity for action or decision-making."
+      }
+    ],
+    "cmoglxwmx0005la04zoiibtf1": [
+      {
+        "type": "noun",
+        "word": "trattoria",
+        "definition": "A trattoria is a casual Italian restaurant that serves homemade dishes in a friendly atmosphere."
+      },
+      {
+        "type": "noun",
+        "word": "cuoco",
+        "definition": "A cook or chef who prepares meals professionally in a kitchen."
+      },
+      {
+        "type": "noun",
+        "word": "pecorino",
+        "definition": "A hard sheep's-milk cheese with a sharp, salty Italian flavor."
+      },
+      {
+        "type": "noun",
+        "word": "pasta",
+        "definition": "Pasta is a fundamental Italian food made from wheat flour and water, shaped for various dishes."
+      },
+      {
+        "type": "noun",
+        "word": "sapore",
+        "definition": "Sapore refers to the unique taste of food, essential for creating enjoyable culinary experiences."
+      },
+      {
+        "type": "noun",
+        "word": "clienti",
+        "definition": "Clienti are the patrons of a restaurant, whose happiness is crucial for the establishment's success."
+      },
+      {
+        "type": "verb",
+        "word": "bilanciare",
+        "definition": "Bilanciare means to carefully balance different flavors and ingredients in a dish for a harmonious result."
+      },
+      {
+        "type": "noun",
+        "word": "sorrisi",
+        "definition": "Sorrisi are smiles that express happiness and strengthen connections during shared experiences."
+      },
+      {
+        "type": "noun",
+        "word": "equilibrio",
+        "definition": "A balanced state where competing elements come together harmoniously."
+      },
+      {
+        "type": "noun",
+        "word": "tecnica",
+        "definition": "A specific method or skill applied to perform a task well."
+      },
+      {
+        "type": "noun",
+        "word": "ingredienti",
+        "definition": "Ingredienti are the various items used in cooking, essential for achieving the desired flavor and quality."
+      },
+      {
+        "type": "noun",
+        "word": "giorno",
+        "definition": "Giorno represents a full day, marked by activities and experiences that shape our daily lives."
+      },
+      {
+        "type": "noun",
+        "word": "profumo",
+        "definition": "Profumo is a delightful scent, especially from food, that enhances the sensory experience of dining."
+      },
+      {
+        "type": "noun",
+        "word": "storia",
+        "definition": "A story; a narrative account of events real or imagined."
+      },
+      {
+        "type": "noun",
+        "word": "attesa",
+        "definition": "The waiting before something hoped-for arrives, often charged with anticipation."
+      }
+    ],
+    "cmoglxwmx0003la04nz6qydo5": [
+      {
+        "type": "verb",
+        "word": "avvicinare",
+        "surface": "avvicina",
+        "definition": "To bring people or things closer, physically or emotionally."
+      },
+      {
+        "type": "noun",
+        "word": "bancarella",
+        "surface": "bancarelle",
+        "definition": "These are small market stalls where vendors sell local foods and crafts."
+      },
+      {
+        "type": "verb",
+        "word": "ballare",
+        "surface": "ballano",
+        "definition": "To move rhythmically to music, often at parties or celebrations."
+      },
+      {
+        "type": "noun",
+        "word": "brindisi",
+        "definition": "A toast made by raising glasses together to mark an occasion."
+      },
+      {
+        "type": "noun",
+        "word": "cibo",
+        "definition": "Food in general; anything eaten for nourishment or pleasure."
+      },
+      {
+        "type": "noun",
+        "word": "eccitazione",
+        "definition": "Lively anticipation; the buzz felt before something exciting happens."
+      },
+      {
+        "type": "noun",
+        "word": "festività",
+        "surface": "festa",
+        "definition": "A festive occasion involving celebrations, gatherings, and shared community joy."
+      },
+      {
+        "type": "noun",
+        "word": "morso",
+        "definition": "A bite of food, the small piece taken in one mouthful."
+      },
+      {
+        "type": "noun",
+        "word": "musica",
+        "definition": "This is the art of creating sounds that express emotions, often enjoyed at gatherings."
+      },
+      {
+        "type": "noun",
+        "word": "profumo",
+        "definition": "This is a pleasant scent that can evoke memories, especially related to food."
+      },
+      {
+        "type": "noun",
+        "word": "risotto",
+        "definition": "This is a creamy rice dish cooked slowly, often enriched with broth and cheese."
+      },
+      {
+        "type": "noun",
+        "word": "sapore",
+        "definition": "The taste of food, shaped by ingredients and how it's prepared."
+      },
+      {
+        "type": "noun",
+        "word": "sorriso",
+        "definition": "A smile; a facial expression that signals warmth or happiness."
+      },
+      {
+        "type": "noun",
+        "word": "tradizione",
+        "surface": "tradizioni",
+        "definition": "These are customs passed down through generations, reflecting cultural identity and heritage."
+      },
+      {
+        "type": "verb",
+        "word": "vivere",
+        "surface": "viva",
+        "definition": "To live; to be fully alive and engaged with life."
+      },
+      {
+        "type": "noun",
+        "word": "vinicolo",
+        "surface": "vino",
+        "definition": "This is a drink made from fermented grapes, commonly enjoyed during meals and celebrations."
+      }
+    ],
+    "cmogmhwou0006kz04sd1s5awm": [
+      {
+        "type": "noun",
+        "word": "mercato",
+        "definition": "An open marketplace where vendors sell food and goods."
+      },
+      {
+        "type": "noun",
+        "word": "ingredienti",
+        "definition": "The components combined to make a dish in cooking."
+      },
+      {
+        "type": "noun",
+        "word": "pecorino",
+        "definition": "A sharp Italian cheese made from sheep's milk."
+      },
+      {
+        "type": "noun",
+        "word": "pepe",
+        "definition": "A pungent spice ground from dried peppercorns, used to season dishes."
+      },
+      {
+        "type": "noun",
+        "word": "pasta",
+        "definition": "Italian dough shaped into noodles or shapes, boiled and served with sauce."
+      },
+      {
+        "type": "expression",
+        "word": "al dente",
+        "definition": "Pasta cooked firm to the bite, not soft."
+      },
+      {
+        "type": "noun",
+        "word": "arancini",
+        "definition": "Sicilian fried rice balls with a savory filling inside."
+      },
+      {
+        "type": "noun",
+        "word": "cannoli",
+        "definition": "Crispy pastry tubes filled with sweetened ricotta, a Sicilian classic."
+      },
+      {
+        "type": "noun",
+        "word": "profumo",
+        "definition": "A pleasant aroma, especially from food, flowers, or perfume."
+      },
+      {
+        "type": "noun",
+        "word": "trucchi",
+        "definition": "Tricks or tips that make a task easier."
+      },
+      {
+        "type": "noun",
+        "word": "tradizione",
+        "definition": "A custom passed down through generations within a culture."
+      },
+      {
+        "type": "noun",
+        "word": "spuntino",
+        "definition": "A light snack eaten between regular meals."
+      },
+      {
+        "type": "noun",
+        "word": "storia",
+        "definition": "The backstory or narrative giving context to something."
+      },
+      {
+        "type": "noun",
+        "word": "cuoco",
+        "definition": "A cook; someone who prepares food, often professionally."
+      },
+      {
+        "type": "noun",
+        "word": "sorriso",
+        "definition": "A smile; an expression of warmth shown through the face."
+      },
+      {
+        "type": "noun",
+        "word": "bagaglio",
+        "definition": "Baggage or luggage; items you carry for a trip or task."
+      }
+    ],
+    "cmogn9tbh0000l204uigclz9v": [
+      {
+        "type": "verb",
+        "word": "preparare",
+        "surface": "preparava",
+        "definition": "To get something ready in advance, arranging what is needed."
+      },
+      {
+        "type": "adjective",
+        "word": "conviviale",
+        "definition": "Warm and welcoming, the kind of mood that invites sharing food."
+      },
+      {
+        "type": "adjective",
+        "word": "fumante",
+        "definition": "Steaming hot; freshly cooked and giving off visible vapor."
+      },
+      {
+        "type": "noun",
+        "word": "silenzio",
+        "definition": "The absence of sound; sometimes peaceful, sometimes awkward in conversation."
+      },
+      {
+        "type": "adjective",
+        "word": "bloccato",
+        "surface": "bloccò",
+        "definition": "Stuck or unable to move forward, especially during a technical glitch."
+      },
+      {
+        "type": "adjective",
+        "word": "ammirevole",
+        "surface": "ammirevoli",
+        "definition": "Worthy of admiration because of effort, courage, or generosity shown."
+      },
+      {
+        "type": "verb",
+        "word": "decollare",
+        "definition": "To take off; when a conversation or project finally gains momentum."
+      },
+      {
+        "type": "noun",
+        "word": "gioco",
+        "definition": "An enjoyable activity often involving rules, used to create fun and engage participants."
+      },
+      {
+        "type": "adjective",
+        "word": "preferito",
+        "surface": "preferite",
+        "definition": "Indicates something that is liked more than others, showcasing individual tastes and choices."
+      },
+      {
+        "type": "verb",
+        "word": "animarono",
+        "definition": "To bring liveliness to a scene, making energy rise among people."
+      },
+      {
+        "type": "noun",
+        "word": "promessa",
+        "surface": "promesse",
+        "definition": "A commitment to do something in the future, reflecting trust and obligation."
+      },
+      {
+        "type": "noun",
+        "word": "brindisi",
+        "definition": "A toast; raising glasses together to mark a shared moment."
+      },
+      {
+        "type": "noun",
+        "word": "affetto",
+        "definition": "A warm fondness for someone, expressed through small caring acts."
+      },
+      {
+        "type": "adjective",
+        "word": "distante",
+        "surface": "distanza",
+        "definition": "Far apart, in physical space or in emotional connection."
+      },
+      {
+        "type": "noun",
+        "word": "speranza",
+        "definition": "An expectation that something good will come, even amid uncertainty."
+      },
+      {
+        "type": "noun",
+        "word": "serata",
+        "definition": "An evening spent doing something specific, often social or festive."
+      }
+    ],
+    "cmogo38jn0001le04ho1pjdzh": [
+      {
+        "type": "noun",
+        "word": "trattoria",
+        "definition": "A casual family-run eatery serving traditional Italian dishes at modest prices."
+      },
+      {
+        "type": "noun",
+        "word": "piazzetta",
+        "definition": "A small, intimate square; a gathering spot tucked between buildings."
+      },
+      {
+        "type": "noun",
+        "word": "stradine",
+        "definition": "The narrow winding lanes typical of old Italian neighborhoods, full of charm."
+      },
+      {
+        "type": "noun",
+        "word": "turisti",
+        "definition": "Travelers visiting a place for leisure, often exploring local sights and food."
+      },
+      {
+        "type": "noun",
+        "word": "residenti",
+        "definition": "People who live in a place permanently, knowing its rhythms intimately."
+      },
+      {
+        "type": "adjective",
+        "word": "croccante",
+        "definition": "Crisp and crunchy, with a satisfying texture when bitten into."
+      },
+      {
+        "type": "adverb",
+        "word": "animatamente",
+        "definition": "In a lively, spirited way; speaking with visible enthusiasm and energy."
+      },
+      {
+        "type": "noun",
+        "word": "sapori",
+        "definition": "The tastes and flavors that distinguish one dish or tradition from another."
+      },
+      {
+        "type": "noun",
+        "word": "forchettata",
+        "definition": "A forkful; the amount of food lifted on a fork at once."
+      },
+      {
+        "type": "noun",
+        "word": "vino",
+        "definition": "An Italian wine, central to meals and a daily social ritual."
+      },
+      {
+        "type": "noun",
+        "word": "ristorante",
+        "definition": "A restaurant; a more formal place to dine than a trattoria."
+      },
+      {
+        "type": "noun",
+        "word": "fascino",
+        "definition": "The quiet pull a place exerts, drawing you in despite yourself."
+      },
+      {
+        "type": "noun",
+        "word": "tradizione",
+        "definition": "Customs handed down across generations, shaping how a culture lives."
+      },
+      {
+        "type": "noun",
+        "word": "genio",
+        "definition": "A genius; someone with rare brilliance in art, science, or thought."
+      },
+      {
+        "type": "noun",
+        "word": "gusto",
+        "definition": "Personal taste; what someone finds pleasing in food, art, or style."
+      },
+      {
+        "type": "noun",
+        "word": "piatto",
+        "definition": "A dish or course; what arrives at the table during a meal."
+      }
+    ],
+    "cmogo94ew0001jv040vlzny18": [
+      {
+        "type": "noun",
+        "word": "trattoria",
+        "definition": "A casual family-run Italian eatery offering homestyle regional dishes."
+      },
+      {
+        "type": "adjective",
+        "word": "accigliato",
+        "surface": "acciottolato",
+        "definition": "Paved with cobblestones, like many old European streets and lanes."
+      },
+      {
+        "type": "noun",
+        "word": "profumo",
+        "definition": "A pleasant aroma, especially of food, flowers, or perfume."
+      },
+      {
+        "type": "adjective",
+        "word": "vivaio",
+        "surface": "vivace",
+        "definition": "Lively and full of energy; bustling with movement and sound."
+      },
+      {
+        "type": "noun",
+        "word": "armonia",
+        "definition": "A pleasing balance among parts, whether in sounds or flavors."
+      },
+      {
+        "type": "noun",
+        "word": "chiacchere",
+        "surface": "chiacchiere",
+        "definition": "Casual chitchat among friends; light, easy everyday conversation."
+      },
+      {
+        "type": "adjective",
+        "word": "familiarità",
+        "surface": "familiare",
+        "definition": "Familiar and warmly known; comfortable like home or close kin."
+      },
+      {
+        "type": "noun",
+        "word": "magia",
+        "definition": "An almost magical feeling that makes a moment unforgettable."
+      },
+      {
+        "type": "noun",
+        "word": "serata",
+        "surface": "sera",
+        "definition": "An evening, typically spent socializing or relaxing after the day."
+      },
+      {
+        "type": "noun",
+        "word": "sfumature",
+        "definition": "Subtle shades or fine differences in color, mood, or meaning."
+      },
+      {
+        "type": "noun",
+        "word": "cena",
+        "definition": "The evening meal, often shared with family or friends."
+      },
+      {
+        "type": "noun",
+        "word": "momento",
+        "definition": "A brief instant in time, often emotionally significant or memorable."
+      },
+      {
+        "type": "noun",
+        "word": "passanti",
+        "definition": "People walking past on a street, going about their day."
+      },
+      {
+        "type": "noun",
+        "word": "bellezza",
+        "definition": "The pleasing quality that draws admiration in people, places, or art."
+      },
+      {
+        "type": "verb",
+        "word": "attraversare",
+        "definition": "To cross from one side to the other, literally or figuratively."
+      },
+      {
+        "type": "verb",
+        "word": "partecipare",
+        "surface": "parte",
+        "definition": "To take part in an activity or event with others."
+      },
+      {
+        "type": "verb",
+        "word": "sorridere",
+        "definition": "To smile; to show warmth or pleasure with the face."
+      }
+    ],
+    "cmolrnlda000532s9ke3pqnyu": [
+      {
+        "type": "noun",
+        "word": "profumo",
+        "definition": "A pleasing scent, often of food, flowers, or perfume."
+      },
+      {
+        "type": "noun",
+        "word": "strada",
+        "surface": "strade",
+        "definition": "A road or street where people walk, drive, and meet."
+      },
+      {
+        "type": "noun",
+        "word": "trattoria",
+        "definition": "A casual family-run Italian restaurant serving simple traditional dishes."
+      },
+      {
+        "type": "noun",
+        "word": "piatto",
+        "definition": "A dish of food served at a meal; also the plate itself."
+      },
+      {
+        "type": "noun",
+        "word": "camere",
+        "surface": "cameriere",
+        "definition": "A waiter; the person who serves food and drinks at restaurants."
+      },
+      {
+        "type": "noun",
+        "word": "menu",
+        "definition": "The list of food and drinks a restaurant offers customers."
+      },
+      {
+        "type": "noun",
+        "word": "musica",
+        "definition": "Organized sounds arranged to be pleasing or expressive to listeners."
+      },
+      {
+        "type": "noun",
+        "word": "suono",
+        "definition": "A sound; what your ears pick up from voices or instruments."
+      },
+      {
+        "type": "noun",
+        "word": "forchetta",
+        "definition": "A fork; a small utensil with prongs used for eating."
+      },
+      {
+        "type": "adjective",
+        "word": "delizioso",
+        "definition": "Wonderfully tasty, describing food that brings real pleasure to eat."
+      },
+      {
+        "type": "noun",
+        "word": "uomo",
+        "definition": "An adult male person, the most basic word for man."
+      },
+      {
+        "type": "adjective",
+        "word": "anziano",
+        "definition": "Older in age, often with much life experience to share."
+      },
+      {
+        "type": "noun",
+        "word": "storia",
+        "surface": "storie",
+        "definition": "A story or tale shared aloud about people and events."
+      },
+      {
+        "type": "noun",
+        "word": "arte",
+        "definition": "Creative work like painting, music, sculpture, or writing."
+      },
+      {
+        "type": "noun",
+        "word": "progetto",
+        "definition": "A project; a planned piece of work with a goal."
+      },
+      {
+        "type": "noun",
+        "word": "vita",
+        "definition": "The experience of being alive day to day, with all it brings."
+      },
+      {
+        "type": "noun",
+        "word": "ispirazione",
+        "definition": "A fresh idea or impulse that motivates you to create something."
+      },
+      {
+        "type": "verb",
+        "word": "scrivere",
+        "definition": "To write; to put words down on paper or screen."
+      },
+      {
+        "type": "verb",
+        "word": "ascoltare",
+        "surface": "ascolta",
+        "definition": "To listen; to pay close attention to sounds or words."
+      },
+      {
+        "type": "verb",
+        "word": "guardare",
+        "surface": "guarda",
+        "definition": "To look at someone or something attentively with the eyes."
+      }
+    ],
+    "cmolsbuwa000d32s9a5mvwfrc": [
+      {
+        "type": "noun",
+        "word": "forno",
+        "definition": "An oven; an enclosed space heated for baking food inside."
+      },
+      {
+        "type": "noun",
+        "word": "profumo",
+        "definition": "A pleasing smell, especially of food cooking or fresh flowers."
+      },
+      {
+        "type": "noun",
+        "word": "farina",
+        "definition": "A fine powder made from ground wheat or other grains."
+      },
+      {
+        "type": "noun",
+        "word": "impasto",
+        "definition": "Soft dough made from flour and water, ready for baking."
+      },
+      {
+        "type": "noun",
+        "word": "turista",
+        "definition": "A tourist; someone traveling for pleasure or to see new places."
+      },
+      {
+        "type": "verb",
+        "word": "cuocere",
+        "definition": "To cook; to prepare food using heat from an oven."
+      },
+      {
+        "type": "noun",
+        "word": "temperatura",
+        "definition": "How hot or cold something is at a given moment."
+      },
+      {
+        "type": "noun",
+        "word": "aiuto",
+        "definition": "Support given to someone who needs assistance with something."
+      },
+      {
+        "type": "noun",
+        "word": "sorriso",
+        "definition": "A smile; the friendly curve of lips showing joy."
+      },
+      {
+        "type": "adjective",
+        "word": "felice",
+        "definition": "Feeling joyful, content, and pleased with the present moment."
+      },
+      {
+        "type": "adjective",
+        "word": "deliziosa",
+        "definition": "Wonderfully tasty, said of food that gives real pleasure."
+      },
+      {
+        "type": "noun",
+        "word": "pizzeria",
+        "definition": "A restaurant that bakes and serves pizzas to its customers."
+      },
+      {
+        "type": "verb",
+        "word": "aspetta",
+        "definition": "To wait for someone or something to happen or arrive."
+      },
+      {
+        "type": "adjective",
+        "word": "strano",
+        "definition": "Different from the usual; odd, peculiar, or even unsettling."
+      },
+      {
+        "type": "adjective",
+        "word": "preoccupato",
+        "definition": "Feeling worried or anxious about something that might go wrong."
+      },
+      {
+        "type": "noun",
+        "word": "difficoltà",
+        "definition": "A hard situation or problem that requires effort to handle."
+      },
+      {
+        "type": "noun",
+        "word": "speranza",
+        "definition": "The hopeful wish that something good will soon happen."
+      },
+      {
+        "type": "noun",
+        "word": "serata",
+        "definition": "An evening, often spent socializing, working, or relaxing with others."
+      },
+      {
+        "type": "verb",
+        "word": "crescere",
+        "definition": "To grow larger or develop, in size, number, or maturity."
+      }
+    ],
+    "cmomyotyr0001328dkfucstiz": [
+      {
+        "word": "bistecca",
+        "definition": "A thick steak, often grilled; staple of Tuscan cuisine."
+      },
+      {
+        "word": "fiorentina",
+        "definition": "Florentine in origin; especially the famous T-bone steak from Florence."
+      },
+      {
+        "word": "osteria",
+        "definition": "A casual Italian eatery serving local dishes and house wines."
+      },
+      {
+        "word": "cucina",
+        "definition": "The kitchen as room, and the cooking style of a region."
+      },
+      {
+        "word": "turisti",
+        "definition": "Travelers visiting a place to see and enjoy its culture."
+      },
+      {
+        "word": "menù",
+        "definition": "The list of food and drinks offered at a restaurant."
+      },
+      {
+        "word": "piatto",
+        "definition": "A specific dish at a meal, or the plate holding it."
+      },
+      {
+        "word": "sapore",
+        "surface": "saporita",
+        "definition": "The taste or flavor of food perceived while eating it."
+      },
+      {
+        "word": "dolci",
+        "definition": "Sweet treats or desserts eaten at the end of a meal."
+      },
+      {
+        "word": "storie",
+        "definition": "These are narratives or accounts that recount events, serving to entertain or inform audiences through storytelling."
+      },
+      {
+        "word": "tradizione",
+        "definition": "Customs and practices passed from one generation to the next."
+      },
+      {
+        "word": "felice",
+        "definition": "Happy or joyful; feeling content with the present moment."
+      },
+      {
+        "word": "mangiare",
+        "definition": "To eat; the act of consuming food at a meal."
+      },
+      {
+        "word": "ascoltare",
+        "definition": "To listen attentively to sounds, words, or music around you."
+      },
+      {
+        "word": "spiegare",
+        "definition": "To explain something so another person can understand it clearly."
+      },
+      {
+        "word": "provare",
+        "definition": "To try or taste something, often for the first time."
+      },
+      {
+        "word": "felicità",
+        "definition": "A lasting feeling of joy and inner contentment."
+      },
+      {
+        "word": "cibo",
+        "definition": "Food in general; what people eat for nourishment and pleasure."
+      },
+      {
+        "word": "cultura",
+        "definition": "The shared customs, art, and ideas that define a people."
+      },
+      {
+        "word": "unire",
+        "definition": "To bring people or things together into one shared whole."
+      }
+    ],
+    "cmoncz14x000hukuc6c9t367z": [
+      {
+        "type": "noun",
+        "word": "Wiederholen",
+        "definition": "The act of repeating, here rereading the same words again."
+      },
+      {
+        "type": "noun",
+        "word": "Bildschirm",
+        "definition": "A screen, especially a computer monitor used for reading or writing."
+      },
+      {
+        "type": "noun",
+        "word": "Quelle",
+        "definition": "A source in journalism; a person providing information for reporting."
+      },
+      {
+        "type": "noun",
+        "word": "Mauerfall",
+        "definition": "The 1989 fall of the Berlin Wall, used as a temporal reference."
+      },
+      {
+        "type": "noun",
+        "word": "Spirale",
+        "definition": "A coiled telephone cord; period detail of older landline telephones."
+      },
+      {
+        "type": "verb",
+        "word": "loswerden",
+        "definition": "To get something off one's chest by sharing it with someone."
+      },
+      {
+        "type": "noun",
+        "word": "Schlagzeile",
+        "surface": "Schlagzeilen",
+        "definition": "A newspaper headline; the few words framing an entire article."
+      },
+      {
+        "type": "verb",
+        "word": "entschärfen",
+        "surface": "entschärft",
+        "definition": "To defuse a bomb, or soften a sentence to reduce risk."
+      },
+      {
+        "type": "noun",
+        "word": "Tonfall",
+        "definition": "The tone of voice; how something is said, beyond the words."
+      },
+      {
+        "type": "noun",
+        "word": "Setzer",
+        "definition": "A typesetter who arranged metal type by hand for printing presses."
+      },
+      {
+        "type": "verb",
+        "word": "ausbilden",
+        "surface": "ausgebildet",
+        "definition": "To train someone professionally over a long apprenticeship in a craft."
+      },
+      {
+        "type": "noun",
+        "word": "Hintergrund",
+        "surface": "Hintergründe",
+        "definition": "Background context behind a news event, beyond the surface facts."
+      },
+      {
+        "type": "noun",
+        "word": "Liebeserklärung",
+        "definition": "A declaration of love, literal or figurative, for a person or pursuit."
+      },
+      {
+        "type": "noun",
+        "word": "Geschäftsmodell",
+        "definition": "A business model; how an organisation generates and sustains its revenue."
+      },
+      {
+        "type": "noun",
+        "word": "Anzeigen",
+        "definition": "Newspaper advertisements; the income that long subsidised editorial work."
+      },
+      {
+        "type": "adverb",
+        "word": "innerlich",
+        "definition": "Happening inside the mind, with no visible outward sign."
+      },
+      {
+        "type": "noun",
+        "word": "Zustimmung",
+        "definition": "Consent or approval, formal or informal, given to a decision."
+      },
+      {
+        "type": "noun",
+        "word": "Augenblick",
+        "definition": "A brief moment, the blink of an eye when something quietly shifts."
+      },
+      {
+        "type": "noun",
+        "word": "Hinweis",
+        "definition": "A hint or tip; a small clue that helps a journalist start digging."
+      },
+      {
+        "type": "verb",
+        "word": "retten",
+        "definition": "To save someone or something from danger, loss, or disappearance."
+      }
+    ],
+    "cmoncz14x000lukuc78clupr3": [
+      {
+        "type": "noun",
+        "word": "Reim",
+        "definition": "A rhyme; loosely, the rhythmic logic and coherence of a story."
+      },
+      {
+        "type": "verb",
+        "word": "schälen",
+        "surface": "schält",
+        "definition": "To peel fruit; figuratively, wind stripping persuasive surface from a narrative."
+      },
+      {
+        "type": "noun",
+        "word": "Granitgipfel",
+        "definition": "A granite summit; on the Brocken, the rounded grey-pink legendary stage."
+      },
+      {
+        "type": "adverb",
+        "word": "angeblich",
+        "definition": "Marks information as a claim rather than a confirmed personal fact."
+      },
+      {
+        "type": "noun",
+        "word": "Walpurgisnacht",
+        "definition": "The night of 30 April when witches gathered on the Brocken legendarily."
+      },
+      {
+        "type": "noun",
+        "word": "Besen",
+        "definition": "A broom; in legend the stylised aerial vehicle, otherwise a household tool."
+      },
+      {
+        "type": "verb",
+        "word": "einbauen",
+        "surface": "eingebaut",
+        "definition": "To incorporate something into a larger structure, like a legend into Faust."
+      },
+      {
+        "type": "noun",
+        "word": "Hexenflug",
+        "surface": "Hexenflüge",
+        "definition": "The alleged flight of witches; historians say a confession produced under torture."
+      },
+      {
+        "type": "noun",
+        "word": "Erfindung",
+        "definition": "An invention, fictional or technological; here, narratives constructed to justify persecution."
+      },
+      {
+        "type": "noun",
+        "word": "Verfolgung",
+        "definition": "The systematic pursuit and punishment of specific people through powerful institutions."
+      },
+      {
+        "type": "noun",
+        "word": "Gerüst",
+        "definition": "A scaffolding or supporting structure; figuratively, the narrative bones of a tale."
+      },
+      {
+        "type": "verb",
+        "word": "demontieren",
+        "definition": "To dismantle a structure piece by piece, including arguments, myths, or institutions."
+      },
+      {
+        "type": "verb",
+        "word": "anpassen",
+        "surface": "passt sich an",
+        "definition": "Reflexive sich anpassen: adapting one's behaviour or tone to circumstances quietly."
+      },
+      {
+        "type": "adverb",
+        "word": "unbewusst",
+        "definition": "Happening without conscious intention; habitual adjustments noticed only later in retrospect."
+      },
+      {
+        "type": "verb",
+        "word": "misstrauen",
+        "surface": "misstraut",
+        "definition": "To regard something with suspicion, weaker than rejection but firmer than doubt."
+      },
+      {
+        "type": "noun",
+        "word": "Vitrine",
+        "definition": "A glass display case in a museum, pejoratively for over-preserved cultural objects."
+      },
+      {
+        "type": "noun",
+        "word": "Gefäß",
+        "definition": "A vessel or container; figuratively, a narrative form refilled with new meanings."
+      },
+      {
+        "type": "noun",
+        "word": "Sehnsucht",
+        "definition": "A deep, often unfulfillable longing, central to German Romantic literature traditions."
+      },
+      {
+        "type": "noun",
+        "word": "Nieselregen",
+        "definition": "A fine, persistent drizzle, common on German peaks in spring weather."
+      },
+      {
+        "type": "noun",
+        "word": "Glaubensrest",
+        "definition": "A residue of belief; the small remaining willingness to take tales seriously."
+      }
+    ],
+    "cmoncz14w000cukucqfl0hlf8": [
+      {
+        "type": "verb",
+        "word": "aussteigen",
+        "surface": "steigt aus",
+        "definition": "To get out of a vehicle such as a train or bus."
+      },
+      {
+        "type": "noun",
+        "word": "Werktag",
+        "definition": "A weekday; a regular working day outside Sundays and holidays."
+      },
+      {
+        "type": "noun",
+        "word": "Stille",
+        "definition": "Calm quietness, the deep absence of noise often felt in nature."
+      },
+      {
+        "type": "noun",
+        "word": "Ufer",
+        "definition": "The shore or bank along a lake, river, or sea."
+      },
+      {
+        "type": "verb",
+        "word": "glitzern",
+        "surface": "glitzert",
+        "definition": "To glitter or sparkle, like sunlight reflecting off moving water."
+      },
+      {
+        "type": "noun",
+        "word": "Erinnerung",
+        "definition": "A memory; a recollection of something experienced in the past."
+      },
+      {
+        "type": "adjective",
+        "word": "übertrieben",
+        "definition": "Exaggerated or overdone; expressed beyond what feels reasonable."
+      },
+      {
+        "type": "verb",
+        "word": "murmeln",
+        "surface": "murmelt",
+        "definition": "To murmur; to speak softly, almost under one's breath."
+      },
+      {
+        "type": "adjective",
+        "word": "enttäuscht",
+        "definition": "Feeling let down because expectations or hopes were not met."
+      },
+      {
+        "type": "verb",
+        "word": "atmen",
+        "surface": "atmet",
+        "definition": "To breathe; to draw air into and release from the lungs."
+      },
+      {
+        "type": "noun",
+        "word": "Beerdigung",
+        "definition": "A funeral; the ceremony for burying or honoring the dead."
+      },
+      {
+        "type": "expression",
+        "word": "weh tun",
+        "surface": "tat weh",
+        "definition": "To hurt, in body or in heart; to cause pain."
+      },
+      {
+        "type": "verb",
+        "word": "spüren",
+        "surface": "spürt",
+        "definition": "To sense or feel inwardly, often something subtle and unspoken."
+      },
+      {
+        "type": "noun",
+        "word": "Brust",
+        "definition": "The chest; in stories, where strong emotions are often felt."
+      },
+      {
+        "type": "adverb",
+        "word": "zugleich",
+        "definition": "At the same time; simultaneously, often holding two opposing feelings."
+      },
+      {
+        "type": "noun",
+        "word": "Rückweg",
+        "definition": "The way back; the return trip to where you started."
+      },
+      {
+        "type": "verb",
+        "word": "loslassen",
+        "surface": "losgelassen",
+        "definition": "To let go physically, or to release a memory or person."
+      },
+      {
+        "type": "noun",
+        "word": "Reihenhaus",
+        "definition": "A row house, joined to its neighbors in a continuous line."
+      },
+      {
+        "type": "noun",
+        "word": "Kiefer",
+        "surface": "Kiefern",
+        "definition": "A pine tree; common in sandy forests around Berlin's lakes."
+      },
+      {
+        "type": "noun",
+        "word": "Brotwerfen",
+        "definition": "Throwing bread to ducks; a classic childhood activity by lakes."
+      }
+    ],
+    "cmoncz14w0009ukuca9dj5c4q": [
+      {
+        "type": "noun",
+        "word": "Verspätung",
+        "definition": "A delay, especially affecting trains, flights, or scheduled appointments."
+      },
+      {
+        "type": "noun",
+        "word": "Anschlussflug",
+        "definition": "A connecting flight that links two legs of one journey."
+      },
+      {
+        "type": "adjective",
+        "word": "verspätet",
+        "definition": "Running late or behind the originally scheduled arrival or departure time."
+      },
+      {
+        "type": "noun",
+        "word": "Hochzeit",
+        "definition": "A wedding ceremony, one of life's most celebrated milestone events."
+      },
+      {
+        "type": "noun",
+        "word": "Anzeigetafel",
+        "definition": "The display board showing arrivals and departures at airports or stations."
+      },
+      {
+        "type": "adjective",
+        "word": "pünktlich",
+        "definition": "Right on time; arriving exactly when expected, no delay involved."
+      },
+      {
+        "type": "noun",
+        "word": "Studienzeit",
+        "definition": "The university years, often remembered with nostalgia and old friendships."
+      },
+      {
+        "type": "noun",
+        "word": "Pflichtgefühl",
+        "definition": "An inner sense of duty that compels you to act despite reluctance."
+      },
+      {
+        "type": "verb",
+        "word": "verschwinden",
+        "surface": "verschwunden",
+        "definition": "To disappear or fade away, whether physically or emotionally over time."
+      },
+      {
+        "type": "noun",
+        "word": "Durchsage",
+        "definition": "A public announcement made over loudspeakers in stations, airports, or trains."
+      },
+      {
+        "type": "verb",
+        "word": "bedauern",
+        "definition": "To regret something or feel sorry about an unfortunate outcome."
+      },
+      {
+        "type": "adjective",
+        "word": "verschoben",
+        "definition": "Postponed or shifted to a later time than originally planned."
+      },
+      {
+        "type": "verb",
+        "word": "fluchen",
+        "definition": "To curse or swear quietly, usually out of frustration or annoyance."
+      },
+      {
+        "type": "verb",
+        "word": "umkehren",
+        "definition": "To turn back, reversing direction or abandoning a journey midway."
+      },
+      {
+        "type": "verb",
+        "word": "vorwerfen",
+        "definition": "To reproach someone, blaming them openly for an action or omission."
+      },
+      {
+        "type": "adjective",
+        "word": "bittend",
+        "definition": "Pleading or imploring in tone; an expression that quietly asks for mercy."
+      },
+      {
+        "type": "noun",
+        "word": "Entscheidung",
+        "definition": "A decision; the moment of choosing one option over alternative possibilities."
+      },
+      {
+        "type": "verb",
+        "word": "rechnen",
+        "surface": "rechnet",
+        "definition": "To calculate numbers, or figuratively to weigh up odds and outcomes."
+      },
+      {
+        "type": "noun",
+        "word": "Glück",
+        "definition": "Luck or happiness, depending on context; a positive turn of fortune."
+      },
+      {
+        "type": "verb",
+        "word": "merken",
+        "definition": "To notice, realize, or remember something through perception or attention."
+      }
+    ],
+    "cmoncz14x000mukuckdq7tjw5": [
+      {
+        "type": "verb",
+        "word": "pfeifen",
+        "surface": "pfeift",
+        "definition": "To whistle, by mouth or by wind passing through a narrow gap."
+      },
+      {
+        "type": "noun",
+        "word": "Trennung",
+        "definition": "A separation, including political division or the parting of two people."
+      },
+      {
+        "type": "verb",
+        "word": "nachzeichnen",
+        "definition": "To retrace or sketch the outline of something already known."
+      },
+      {
+        "type": "adjective",
+        "word": "ritualisiert",
+        "surface": "ritualisierten",
+        "definition": "Formalized through repetition, becoming a habitual ritual barely noticed anymore."
+      },
+      {
+        "type": "verb",
+        "word": "konzeptionieren",
+        "surface": "konzeptioniert",
+        "definition": "To design the conceptual framework of an exhibition, project, or campaign."
+      },
+      {
+        "type": "verb",
+        "word": "hineinerzählen",
+        "definition": "To narrate oneself into experiences one did not personally live through."
+      },
+      {
+        "type": "adjective",
+        "word": "nominell",
+        "definition": "Existing on paper but not actually present in everyday practice."
+      },
+      {
+        "type": "noun",
+        "word": "Kurator",
+        "surface": "Kuratoren",
+        "definition": "A museum or exhibition curator who shapes how stories get told."
+      },
+      {
+        "type": "noun",
+        "word": "Lehrstuhl",
+        "surface": "Lehrstühle",
+        "definition": "A tenured German university chair, a foundation of academic prestige."
+      },
+      {
+        "type": "noun",
+        "word": "Erlebte",
+        "definition": "Those who personally lived through a historical event being discussed."
+      },
+      {
+        "type": "noun",
+        "word": "Erinnerung",
+        "definition": "The faculty of memory, both private recollection and shared collective remembrance."
+      },
+      {
+        "type": "noun",
+        "word": "Leistung",
+        "definition": "An achievement or feat of performance, often involving real cognitive effort."
+      },
+      {
+        "type": "noun",
+        "word": "Anspruch",
+        "definition": "A claim or entitlement; the moral standing one asserts in disputes."
+      },
+      {
+        "type": "noun",
+        "word": "Belletristik",
+        "definition": "Literary fiction, contrasted dismissively here with rigorous scholarly historical writing."
+      },
+      {
+        "type": "adjective",
+        "word": "regungslos",
+        "definition": "Completely motionless, not stirring at all; a held physical stillness."
+      },
+      {
+        "type": "adjective",
+        "word": "preußisch",
+        "definition": "Reflecting Prussian aesthetics of restraint, discipline, and unsentimental dignified composure."
+      },
+      {
+        "type": "adjective",
+        "word": "uneinig",
+        "definition": "In disagreement, holding opposing views without yet finding common ground."
+      },
+      {
+        "type": "noun",
+        "word": "Wende",
+        "definition": "The 1989 turn that ended East German socialism; loaded political shorthand."
+      },
+      {
+        "type": "adjective",
+        "word": "glatt",
+        "definition": "Smooth or even; figuratively, a narrative whose rough edges got polished."
+      },
+      {
+        "type": "expression",
+        "word": "sich verlieren",
+        "definition": "To lose one's sense of self in someone or in conflict."
+      }
+    ],
+    "cmoncz14w0008ukucsdk7ltzb": [
+      {
+        "type": "verb",
+        "word": "warten",
+        "definition": "To wait; takes 'auf' plus accusative for what one waits for."
+      },
+      {
+        "type": "noun",
+        "word": "Bank",
+        "definition": "A bench in a public space when feminine; otherwise a financial institution."
+      },
+      {
+        "type": "noun",
+        "word": "Sonne",
+        "definition": "The sun; 'die Sonne scheint' is everyday weather small talk."
+      },
+      {
+        "type": "noun",
+        "word": "Wind",
+        "definition": "Moving air outdoors; classic weather descriptor in coastal German cities."
+      },
+      {
+        "type": "adjective",
+        "word": "kühl",
+        "definition": "Cool in temperature, between warm and cold; for weather, drinks, rooms."
+      },
+      {
+        "type": "adjective",
+        "word": "geboren",
+        "definition": "Past participle of gebären; in München geboren means born in Munich."
+      },
+      {
+        "type": "adjective",
+        "word": "aufgewachsen",
+        "definition": "Raised or grown up somewhere; biographical phrase about one's origins."
+      },
+      {
+        "type": "verb",
+        "word": "studieren",
+        "surface": "studiere",
+        "definition": "To study at a university, distinct from lernen for general learning."
+      },
+      {
+        "type": "verb",
+        "word": "gefallen",
+        "surface": "gefällt",
+        "definition": "To please someone; impersonal with dative, as in 'gefällt mir'."
+      },
+      {
+        "type": "verb",
+        "word": "vorbeifahren",
+        "surface": "fahren vorbei",
+        "definition": "To drive or sail past; 'vorbei' separates in main clauses."
+      },
+      {
+        "type": "noun",
+        "word": "Möwe",
+        "surface": "Möwen",
+        "definition": "A seagull, common bird in coastal German cities like Hamburg."
+      },
+      {
+        "type": "verb",
+        "word": "schreien",
+        "definition": "To scream or cry out loudly; here, the calls of seagulls."
+      },
+      {
+        "type": "verb",
+        "word": "verändern",
+        "surface": "verändert",
+        "definition": "To change something; reflexive form means changing over time."
+      },
+      {
+        "type": "adverb",
+        "word": "früher",
+        "definition": "An adverb meaning earlier or in former times, used nostalgically."
+      },
+      {
+        "type": "verb",
+        "word": "sich beklagen",
+        "surface": "beklage mich",
+        "definition": "To complain reflexively; takes 'über' plus accusative for the topic."
+      },
+      {
+        "type": "noun",
+        "word": "Glück",
+        "definition": "Either luck or happiness; 'Glück haben' means being lucky."
+      },
+      {
+        "type": "verb",
+        "word": "schweigen",
+        "definition": "To stay silent deliberately, more pointed than just not speaking."
+      },
+      {
+        "type": "adjective",
+        "word": "angenehm",
+        "definition": "Pleasant or agreeable; slightly more refined in tone than nett."
+      },
+      {
+        "type": "noun",
+        "word": "Fremde",
+        "surface": "Fremden",
+        "definition": "Unfamiliar people met for the first time; mit Fremden sprechen means speaking with strangers."
+      },
+      {
+        "type": "expression",
+        "word": "tut mir leid",
+        "definition": "A standard German apology, literally 'it does me sorry'."
+      }
+    ],
+    "cmoncz14w0003ukucbibol5s1": [
+      {
+        "type": "adjective",
+        "word": "gemütlich",
+        "surface": "gemütlich",
+        "definition": "Cozy and warm; pleasant atmosphere where people feel at ease."
+      },
+      {
+        "type": "noun",
+        "word": "Zeitung",
+        "surface": "Zeitung",
+        "definition": "A newspaper; printed news read at home or in cafés."
+      },
+      {
+        "type": "adjective",
+        "word": "frei",
+        "surface": "frei",
+        "definition": "Free or unoccupied; commonly used to ask if a seat is available."
+      },
+      {
+        "type": "adjective",
+        "word": "besetzt",
+        "surface": "besetzt",
+        "definition": "Taken or occupied; opposite of frei, used for tables, seats, phones."
+      },
+      {
+        "type": "noun",
+        "word": "Fenster",
+        "surface": "Fenster",
+        "definition": "A window; a popular spot to sit when at a café."
+      },
+      {
+        "type": "noun",
+        "word": "Buch",
+        "surface": "Buch",
+        "definition": "A book; bound printed pages read for pleasure or study."
+      },
+      {
+        "type": "noun",
+        "word": "Gesellschaft",
+        "surface": "Gesellschaft",
+        "definition": "Company or society (f); here it means social company, someone to share time with."
+      },
+      {
+        "type": "adjective",
+        "word": "wunderbar",
+        "surface": "wunderbar",
+        "definition": "Wholly wonderful, a warm positive descriptor for places, people, or experiences."
+      },
+      {
+        "type": "noun",
+        "word": "Familie",
+        "surface": "Familie",
+        "definition": "The close relatives one lives with or grew up around."
+      },
+      {
+        "type": "noun",
+        "word": "Woche",
+        "surface": "Woche",
+        "definition": "A week; seven consecutive days as a unit of time."
+      },
+      {
+        "type": "adjective",
+        "word": "schwierig",
+        "surface": "schwierig",
+        "definition": "Difficult or hard; requiring effort, patience, or careful thought to handle."
+      },
+      {
+        "type": "verb",
+        "word": "arbeiten",
+        "surface": "arbeite",
+        "definition": "To work; to do a job in exchange for income."
+      },
+      {
+        "type": "noun",
+        "word": "Buchhandlung",
+        "surface": "Buchhandlung",
+        "definition": "A bookstore; a shop that sells books to readers and visitors."
+      },
+      {
+        "type": "verb",
+        "word": "verkaufen",
+        "surface": "verkaufen",
+        "definition": "To sell something in exchange for money; opposite of to buy."
+      },
+      {
+        "type": "noun",
+        "word": "Studium",
+        "surface": "Studium",
+        "definition": "University studies; a degree program followed at a higher-education institution."
+      },
+      {
+        "type": "noun",
+        "word": "Markt",
+        "surface": "Markt",
+        "definition": "A market where vendors sell food and goods, often outdoors."
+      },
+      {
+        "type": "adjective",
+        "word": "frisch",
+        "surface": "frisches",
+        "definition": "Recently made, picked, or baked, not stale or aged."
+      },
+      {
+        "type": "noun",
+        "word": "Brot",
+        "surface": "Brot",
+        "definition": "A German staple sold in countless varieties at neighborhood bakeries."
+      },
+      {
+        "type": "noun",
+        "word": "Käse",
+        "surface": "Käse",
+        "definition": "Cheese (m); commonly bought at markets and grocery stores, breakfast staple."
+      },
+      {
+        "type": "verb",
+        "word": "mitkommen",
+        "surface": "mitkommen",
+        "definition": "To come along; to join someone going somewhere together."
+      }
+    ],
+    "cmoncz14x000jukuccqplucy9": [
+      {
+        "type": "noun",
+        "word": "Streuselkuchen",
+        "definition": "A German cake topped with crunchy butter-sugar crumbs, classic Sunday afternoon."
+      },
+      {
+        "type": "noun",
+        "word": "Kanne",
+        "definition": "A pot for serving coffee or tea, kept for decades."
+      },
+      {
+        "type": "noun",
+        "word": "Tischdecke",
+        "definition": "A tablecloth distinguishing everyday meals from formal ritual occasions in households."
+      },
+      {
+        "type": "noun",
+        "word": "Kornblume",
+        "surface": "Kornblumen",
+        "definition": "The deep blue cornflower, a motif on traditional German tableware textiles."
+      },
+      {
+        "type": "noun",
+        "word": "Gedeck",
+        "surface": "Gedecke",
+        "definition": "A place setting for one person, counted in advance for guests."
+      },
+      {
+        "type": "verb",
+        "word": "wegpacken",
+        "surface": "weggepackt",
+        "definition": "To put something away into storage, often a quietly definitive gesture."
+      },
+      {
+        "type": "adjective",
+        "word": "entschuldigend",
+        "definition": "Apologetic in tone, common when softening cancellations or unwelcome messages."
+      },
+      {
+        "type": "noun",
+        "word": "Verein",
+        "definition": "An officially registered club, central to German social life and weekends."
+      },
+      {
+        "type": "verb",
+        "word": "schaffen",
+        "definition": "To manage doing something; common soft phrase when politely cancelling plans."
+      },
+      {
+        "type": "verb",
+        "word": "verschieben",
+        "surface": "verschiebt",
+        "definition": "To postpone an appointment; repeated postponements often signal fading traditions."
+      },
+      {
+        "type": "noun",
+        "word": "Hüfte",
+        "definition": "The hip; frequent topic in older relatives' apologetic excuses for absence."
+      },
+      {
+        "type": "noun",
+        "word": "Termin",
+        "definition": "A scheduled appointment, often more sacred than the relationships it disrupts."
+      },
+      {
+        "type": "noun",
+        "word": "Standuhr",
+        "definition": "A grandfather clock, traditional in older living rooms with brass swings."
+      },
+      {
+        "type": "verb",
+        "word": "eindecken",
+        "surface": "eingedeckt",
+        "definition": "To set the table for a meal, with care and ceremony."
+      },
+      {
+        "type": "noun",
+        "word": "Selbstverständlichkeit",
+        "definition": "Something so obvious nobody questions it, often noticed only when fading."
+      },
+      {
+        "type": "noun",
+        "word": "Naturgesetz",
+        "definition": "A law of nature; figuratively, what people wrongly assume is inevitable."
+      },
+      {
+        "type": "verb",
+        "word": "herstellen",
+        "surface": "hergestellt",
+        "definition": "To produce or create something, including intangible things like quietly maintained traditions."
+      },
+      {
+        "type": "noun",
+        "word": "Vorgeschmack",
+        "definition": "A foretaste of something larger coming, often an unwelcome transformation ahead."
+      },
+      {
+        "type": "noun",
+        "word": "Vorwurf",
+        "definition": "A reproach or accusation, carefully avoided in family conversations despite grievances."
+      },
+      {
+        "type": "noun",
+        "word": "Enkel",
+        "definition": "A grandchild; the perspective revealing how family habits quietly disappear."
+      }
+    ],
+    "cmoncz14w000aukucwxpat4fv": [
+      {
+        "type": "noun",
+        "word": "Buchhandlung",
+        "definition": "A bookshop, often the small independent kind, more specific than Laden."
+      },
+      {
+        "type": "verb",
+        "word": "beruhigen",
+        "surface": "beruhigt",
+        "definition": "To calm or soothe; takes accusative for the person calmed."
+      },
+      {
+        "type": "noun",
+        "word": "Umschlag",
+        "surface": "Umschläge",
+        "definition": "An envelope; the formal container for letters and important documents."
+      },
+      {
+        "type": "noun",
+        "word": "Jobangebot",
+        "surface": "Jobangebote",
+        "definition": "A job offer; modern compound, more concrete than Stellenangebot in speech."
+      },
+      {
+        "type": "noun",
+        "word": "Verlag",
+        "definition": "A publishing house, central institution in literary and academic Germany."
+      },
+      {
+        "type": "noun",
+        "word": "Gehalt",
+        "definition": "A salary, the regular monthly compensation of an employed person."
+      },
+      {
+        "type": "adjective",
+        "word": "krankenversichert",
+        "definition": "Covered by health insurance, a central concept in German employment vocabulary."
+      },
+      {
+        "type": "noun",
+        "word": "Lyrik",
+        "definition": "Poetry as a literary genre; from Greek but fully integrated."
+      },
+      {
+        "type": "noun",
+        "word": "Gedichtband",
+        "definition": "A volume of poems; the standard term for collected poetry books."
+      },
+      {
+        "type": "adjective",
+        "word": "zufällig",
+        "surface": "zufällige",
+        "definition": "Random or accidental, like opening to a page without prior intent."
+      },
+      {
+        "type": "noun",
+        "word": "Theke",
+        "definition": "A counter in shops, bars, or service desks; common context vocabulary."
+      },
+      {
+        "type": "noun",
+        "word": "Pflicht",
+        "definition": "A duty or obligation, weighty in moral, legal, and emotional contexts."
+      },
+      {
+        "type": "verb",
+        "word": "erfüllen",
+        "definition": "To fulfill expectations or wishes; einen Wunsch erfüllen in family contexts."
+      },
+      {
+        "type": "verb",
+        "word": "wiegen",
+        "surface": "wiegt",
+        "definition": "To weigh, both physically and figuratively on someone's mind heavily."
+      },
+      {
+        "type": "noun",
+        "word": "Anruf",
+        "definition": "A phone call; einen Anruf machen means to make one."
+      },
+      {
+        "type": "adverb",
+        "word": "trotzdem",
+        "definition": "Nevertheless or even so; signals something happens despite a contrary fact."
+      },
+      {
+        "type": "noun",
+        "word": "Mut",
+        "definition": "Courage or bravery; den Mut haben zu means having courage to."
+      },
+      {
+        "type": "verb",
+        "word": "aussprechen",
+        "definition": "To pronounce or articulate; separable verb where aus moves to end."
+      },
+      {
+        "type": "verb",
+        "word": "langweilen",
+        "definition": "To bore someone; takes accusative, common with unfulfilling activities or work."
+      },
+      {
+        "type": "verb",
+        "word": "feststehen",
+        "surface": "steht fest",
+        "definition": "To be settled or determined; an answer already clear inside oneself."
+      }
+    ],
+    "cmoncz14x000iukuc5w4fzg6w": [
+      {
+        "type": "noun",
+        "word": "Leinwand",
+        "definition": "A canvas stretched over wood; metaphorically any surface awaiting intentional marks."
+      },
+      {
+        "type": "verb",
+        "word": "verlernen",
+        "surface": "verlernt",
+        "definition": "To lose a skill once held through disuse, doubt, or overthinking."
+      },
+      {
+        "type": "adjective",
+        "word": "abgenutzt",
+        "definition": "Visibly worn from long use, suggesting authenticity rather than damage."
+      },
+      {
+        "type": "noun",
+        "word": "Terpentin",
+        "definition": "A strong-smelling solvent oil painters use to thin paints and clean brushes."
+      },
+      {
+        "type": "noun",
+        "word": "Atmung",
+        "definition": "Breathing as ongoing process; figuratively, a smell merged with breath."
+      },
+      {
+        "type": "noun",
+        "word": "Absage",
+        "definition": "A formal refusal or rejection, common in declined applications and invitations."
+      },
+      {
+        "type": "noun",
+        "word": "Auswahl",
+        "definition": "A curated selection from a wider field, especially gallery exhibition picks."
+      },
+      {
+        "type": "verb",
+        "word": "übermalen",
+        "surface": "übermalt",
+        "definition": "To paint over an existing image, often signalling doubt or revision."
+      },
+      {
+        "type": "adjective",
+        "word": "zaghaft",
+        "definition": "A timid, hesitant action lacking confidence; betrays uncertainty in brushstrokes."
+      },
+      {
+        "type": "adjective",
+        "word": "zeitgenössisch",
+        "definition": "Of our own time; in art, also implies an unspoken aesthetic ideology."
+      },
+      {
+        "type": "adjective",
+        "word": "verkaufbar",
+        "definition": "Market-ready and plausibly sellable; often defensive in artistic discourse contexts."
+      },
+      {
+        "type": "noun",
+        "word": "Strich",
+        "definition": "A single line or brushstroke, basic unit of artistic gesture and decision."
+      },
+      {
+        "type": "noun",
+        "word": "Berater",
+        "definition": "A consultant; metaphorically, the inner critical voice commenting before each decision."
+      },
+      {
+        "type": "adjective",
+        "word": "schief",
+        "surface": "schiefen",
+        "definition": "Slanted or askew; used both physically and figuratively for off-balance situations."
+      },
+      {
+        "type": "noun",
+        "word": "Streifen",
+        "definition": "A stripe or strip visually distinct, like a slanted band of sunlight."
+      },
+      {
+        "type": "noun",
+        "word": "Pinsel",
+        "definition": "A paintbrush; size and stiffness shape how the hand reaches canvas."
+      },
+      {
+        "type": "adjective",
+        "word": "peinlich",
+        "definition": "Embarrassing or awkward, revealing private weakness, often about one's past work."
+      },
+      {
+        "type": "verb",
+        "word": "überzeugen",
+        "definition": "To convince someone with arguments or evidence, often persuading a gatekeeper."
+      },
+      {
+        "type": "noun",
+        "word": "Verdacht",
+        "definition": "A suspicion that something might be true, weaker than certainty itself."
+      },
+      {
+        "type": "adverb",
+        "word": "zufällig",
+        "definition": "Happening by chance, without planning; said of confidence one cannot summon."
+      }
+    ],
+    "cmoncz14w0002ukucenj11v6i": [
+      {
+        "type": "noun",
+        "word": "Wohnung",
+        "definition": "An apartment or flat, the standard self-contained urban residence."
+      },
+      {
+        "type": "noun",
+        "word": "Schlafanzug",
+        "definition": "A pajama outfit, the comfortable clothing worn while sleeping at home."
+      },
+      {
+        "type": "noun",
+        "word": "Brötchen",
+        "definition": "A small bread roll, the standard German breakfast item."
+      },
+      {
+        "type": "noun",
+        "word": "Marmelade",
+        "definition": "Fruit jam or preserves, commonly spread on bread for breakfast."
+      },
+      {
+        "type": "noun",
+        "word": "Wurst",
+        "definition": "An iconic sausage staple of German cuisine in hundreds of varieties."
+      },
+      {
+        "type": "noun",
+        "word": "Schule",
+        "definition": "The institution where children attend lessons and learn together with classmates."
+      },
+      {
+        "type": "noun",
+        "word": "Junge",
+        "definition": "A boy or young male child, used in everyday descriptions."
+      },
+      {
+        "type": "noun",
+        "word": "Mädchen",
+        "definition": "A girl; grammatically neuter despite the feminine reference, due to diminutive ending."
+      },
+      {
+        "type": "noun",
+        "word": "Park",
+        "definition": "A public outdoor green space within a city, open to all."
+      },
+      {
+        "type": "noun",
+        "word": "Flohmarkt",
+        "definition": "A flea market where used goods get sold on weekends."
+      },
+      {
+        "type": "noun",
+        "word": "Schatz",
+        "definition": "An affectionate term meaning treasure, equivalent to darling or honey."
+      },
+      {
+        "type": "verb",
+        "word": "lachen",
+        "surface": "lacht",
+        "definition": "To laugh out loud, the audible expression of joy or amusement."
+      },
+      {
+        "type": "verb",
+        "word": "zuhören",
+        "surface": "hört zu",
+        "definition": "To listen attentively to someone speaking; a separable verb in German."
+      },
+      {
+        "type": "verb",
+        "word": "erzählen",
+        "surface": "erzählt",
+        "definition": "To tell a story or recount events to a listener."
+      },
+      {
+        "type": "adjective",
+        "word": "satt",
+        "definition": "Full after eating; the comfortable state of no longer being hungry."
+      },
+      {
+        "type": "verb",
+        "word": "abräumen",
+        "surface": "räumt ab",
+        "definition": "To clear away, especially the dishes from a table after eating."
+      },
+      {
+        "type": "verb",
+        "word": "sich anziehen",
+        "surface": "zieht sich an",
+        "definition": "To get dressed; the reflexive verb for putting on one's clothes."
+      },
+      {
+        "type": "verb",
+        "word": "lieben",
+        "surface": "liebe",
+        "definition": "To love deeply, stronger than mögen; for people, places, or activities."
+      },
+      {
+        "type": "noun",
+        "word": "Geschichte",
+        "definition": "A story or tale, also history as an academic field."
+      },
+      {
+        "type": "adjective",
+        "word": "bereit",
+        "definition": "Ready or prepared, willing to begin a specific task or trip."
+      }
+    ],
+    "cmoncz14w0007ukucmdug6e9b": [
+      {
+        "type": "verb",
+        "word": "besuchen",
+        "definition": "To visit a person or place, spending time there briefly."
+      },
+      {
+        "type": "noun",
+        "word": "U-Bahn",
+        "definition": "The underground subway, central to transit in major German cities."
+      },
+      {
+        "type": "noun",
+        "word": "Plan",
+        "definition": "A map or schedule; the route map shown at transit stations."
+      },
+      {
+        "type": "noun",
+        "word": "Linie",
+        "definition": "A transit line, like a subway route or tram number."
+      },
+      {
+        "type": "adjective",
+        "word": "verwirrt",
+        "definition": "Unable to make sense of conflicting or unfamiliar information."
+      },
+      {
+        "type": "verb",
+        "word": "überlegen",
+        "surface": "überlegt",
+        "definition": "To think something over carefully before making a decision."
+      },
+      {
+        "type": "verb",
+        "word": "helfen",
+        "definition": "To help someone; to assist a person needing support or information."
+      },
+      {
+        "type": "noun",
+        "word": "Richtung",
+        "definition": "In transit, the way a train or bus is heading."
+      },
+      {
+        "type": "verb",
+        "word": "einsteigen",
+        "surface": "steigt ein",
+        "definition": "To board a train, bus, car, or other vehicle."
+      },
+      {
+        "type": "verb",
+        "word": "aussteigen",
+        "surface": "steigst aus",
+        "definition": "To get off a train, bus, or other vehicle at a stop."
+      },
+      {
+        "type": "noun",
+        "word": "Station",
+        "definition": "A transit stop or station where vehicles stop for passengers."
+      },
+      {
+        "type": "verb",
+        "word": "dauern",
+        "surface": "dauert",
+        "definition": "To last or take a certain amount of time to complete."
+      },
+      {
+        "type": "verb",
+        "word": "zeigen",
+        "surface": "zeigt",
+        "definition": "To show or point out something so another person can see it."
+      },
+      {
+        "type": "adjective",
+        "word": "gelb",
+        "definition": "A bright color used for some Berlin U-Bahn line markings."
+      },
+      {
+        "type": "noun",
+        "word": "Treppe",
+        "definition": "A staircase; the steps connecting different levels of a building."
+      },
+      {
+        "type": "expression",
+        "word": "willkommen",
+        "definition": "A warm greeting offered to someone arriving for the first time."
+      },
+      {
+        "type": "verb",
+        "word": "zählen",
+        "surface": "zählt",
+        "definition": "To count items, people, or stops one after the other."
+      },
+      {
+        "type": "noun",
+        "word": "Ziel",
+        "definition": "A destination or goal; the place or aim one is heading toward."
+      },
+      {
+        "type": "verb",
+        "word": "schaffen",
+        "surface": "geschafft",
+        "definition": "To manage or succeed at something difficult, often after effort."
+      },
+      {
+        "type": "adjective",
+        "word": "älter",
+        "surface": "ältere",
+        "definition": "Comparative form of alt, used politely for someone advanced in age."
+      }
+    ],
+    "cmoncz14x000gukuclg9q02mi": [
+      {
+        "type": "noun",
+        "word": "Auslage",
+        "definition": "The glass display case where bakery goods sit visibly on view."
+      },
+      {
+        "type": "verb",
+        "word": "duften",
+        "surface": "duftet",
+        "definition": "To give off a pleasant smell, warmer in tone than riechen."
+      },
+      {
+        "type": "noun",
+        "word": "Mohn",
+        "definition": "Dark blue-grey poppy seeds, a classic filling in German pastries."
+      },
+      {
+        "type": "noun",
+        "word": "Schürze",
+        "definition": "An apron tied at the waist, worn while cooking or baking."
+      },
+      {
+        "type": "noun",
+        "word": "Pflaumenmus",
+        "definition": "A thick, dark plum jam slowly cooked down with warm spices."
+      },
+      {
+        "type": "verb",
+        "word": "innehalten",
+        "surface": "hält inne",
+        "definition": "To briefly stop mid-action, often to think or react surprised."
+      },
+      {
+        "type": "noun",
+        "word": "Zange",
+        "definition": "Tongs used in bakeries to pick up bread without bare hands."
+      },
+      {
+        "type": "verb",
+        "word": "verraten",
+        "surface": "hat verraten",
+        "definition": "To accidentally reveal something hidden, like an accent giving away origin."
+      },
+      {
+        "type": "noun",
+        "word": "Hochverrat",
+        "definition": "High treason; used jokingly when breaking an unwritten regional loyalty."
+      },
+      {
+        "type": "verb",
+        "word": "scherzen",
+        "surface": "scherzt",
+        "definition": "To joke around in a friendly way, often ambiguously serious."
+      },
+      {
+        "type": "adjective",
+        "word": "beleidigt",
+        "definition": "Feeling personally offended, sometimes with a slightly theatrical reaction."
+      },
+      {
+        "type": "noun",
+        "word": "Pfannkuchen",
+        "definition": "A pancake elsewhere in Germany, but a jam doughnut in Berlin."
+      },
+      {
+        "type": "adjective",
+        "word": "empört",
+        "definition": "Feeling strong moral indignation, often used playfully over absurd offences."
+      },
+      {
+        "type": "noun",
+        "word": "Rätsel",
+        "definition": "A riddle or mystery, used when something feels genuinely incomprehensible."
+      },
+      {
+        "type": "noun",
+        "word": "Verschwörung",
+        "definition": "A conspiracy; often invoked playfully when patterns seem too coincidental."
+      },
+      {
+        "type": "verb",
+        "word": "abwinken",
+        "surface": "winkt ab",
+        "definition": "To wave the hand dismissively, brushing off an offer or compliment."
+      },
+      {
+        "type": "adjective",
+        "word": "höflich",
+        "definition": "Polite in tone or manner, central to German service interactions."
+      },
+      {
+        "type": "adjective",
+        "word": "großartig",
+        "definition": "Genuinely excellent or wonderful, warmer than gut, common in informal praise."
+      },
+      {
+        "type": "expression",
+        "word": "Auf Kosten des Hauses",
+        "definition": "On the house; offered free as a gift from the establishment."
+      },
+      {
+        "type": "verb",
+        "word": "beißen",
+        "surface": "beißt",
+        "definition": "To bite into something, especially food, taking a sharp first bite."
+      }
+    ],
+    "cmoncz14w0005ukucu7eusk55": [
+      {
+        "type": "noun",
+        "word": "Geschenk",
+        "definition": "A gift or present, especially for birthdays, holidays, or special occasions."
+      },
+      {
+        "type": "noun",
+        "word": "Geburtstag",
+        "definition": "A birthday; the standard wish is alles Gute zum Geburtstag."
+      },
+      {
+        "type": "noun",
+        "word": "Laden",
+        "definition": "A small, often independent shop or boutique within a neighborhood."
+      },
+      {
+        "type": "adjective",
+        "word": "bestimmt",
+        "surface": "Bestimmtes",
+        "definition": "Specific or definite; etwas Bestimmtes means something particular in mind."
+      },
+      {
+        "type": "noun",
+        "word": "Schmuck",
+        "definition": "Jewelry as a category, covering rings, necklaces, earrings collectively."
+      },
+      {
+        "type": "noun",
+        "word": "Kette",
+        "definition": "A necklace or chain; can also mean a sequence of events."
+      },
+      {
+        "type": "adjective",
+        "word": "silbern",
+        "surface": "silberne",
+        "definition": "Silver-colored or made of silver, agreeing with the noun's gender."
+      },
+      {
+        "type": "adjective",
+        "word": "golden",
+        "surface": "goldene",
+        "definition": "Gold-colored or made of gold, agreeing with the noun's gender."
+      },
+      {
+        "type": "noun",
+        "word": "Wahl",
+        "definition": "A choice or selection; gute Wahl confirms a smart purchase decision."
+      },
+      {
+        "type": "adjective",
+        "word": "beliebt",
+        "definition": "Popular or well-liked, applied to products, places, or people."
+      },
+      {
+        "type": "noun",
+        "word": "Karte",
+        "definition": "A card; could be a greeting card, postcard, ticket, or playing card."
+      },
+      {
+        "type": "adjective",
+        "word": "teuer",
+        "definition": "Costing a lot, the opposite of günstig in everyday shopping conversations."
+      },
+      {
+        "type": "adverb",
+        "word": "zusammen",
+        "definition": "Indicating together, and in shopping contexts the total altogether."
+      },
+      {
+        "type": "adverb",
+        "word": "genau",
+        "definition": "Exactly or precisely; also used as confirmation meaning that's right."
+      },
+      {
+        "type": "noun",
+        "word": "Papier",
+        "definition": "The material paper, including the wrapping paper used for packaging gifts."
+      },
+      {
+        "type": "verb",
+        "word": "schreiben",
+        "surface": "schreibt",
+        "definition": "To write; takes accusative for content and dative for recipient."
+      },
+      {
+        "type": "adjective",
+        "word": "fertig",
+        "definition": "Finished or done; ich bin fertig signals task or meal completion."
+      },
+      {
+        "type": "verb",
+        "word": "bekommen",
+        "surface": "bekommt",
+        "definition": "To receive or get; works for gifts, change, news, anything."
+      },
+      {
+        "type": "verb",
+        "word": "sich freuen",
+        "surface": "freut sich",
+        "definition": "To be glad about something; with auf, looking forward to something."
+      },
+      {
+        "type": "verb",
+        "word": "verlassen",
+        "surface": "verlässt",
+        "definition": "To leave a place or person; den Laden verlassen means leaving the shop."
+      }
+    ],
+    "cmoncz14w0006ukuchilyfhwe": [
+      {
+        "type": "noun",
+        "word": "Kopfschmerzen",
+        "definition": "Pain in the head, always plural in German medical usage."
+      },
+      {
+        "type": "noun",
+        "word": "Apotheke",
+        "definition": "A pharmacy that dispenses prescription and over-the-counter medications in Germany."
+      },
+      {
+        "type": "noun",
+        "word": "Apotheker",
+        "definition": "A trained male pharmacist, often a first source of health advice."
+      },
+      {
+        "type": "noun",
+        "word": "Symptom",
+        "definition": "A bodily sign indicating illness, central to any healthcare conversation."
+      },
+      {
+        "type": "noun",
+        "word": "Fieber",
+        "definition": "An elevated body temperature signalling illness; 'Fieber haben' means having a fever."
+      },
+      {
+        "type": "verb",
+        "word": "schlafen",
+        "surface": "geschlafen",
+        "definition": "To sleep; the past participle is geschlafen, used with haben."
+      },
+      {
+        "type": "noun",
+        "word": "Stress",
+        "definition": "Mental or emotional tension; an English loanword fully integrated into German."
+      },
+      {
+        "type": "noun",
+        "word": "Tablette",
+        "definition": "A small pill of medication; 'eine Tablette nehmen' means taking a pill."
+      },
+      {
+        "type": "noun",
+        "word": "Schachtel",
+        "definition": "A small box or carton, especially for pills, cigarettes, or chocolates."
+      },
+      {
+        "type": "expression",
+        "word": "spazieren gehen",
+        "definition": "To go for a leisurely walk rather than walk with purpose."
+      },
+      {
+        "type": "noun",
+        "word": "Schmerzen",
+        "definition": "Aches or pains in the plural; combines with body parts in compounds."
+      },
+      {
+        "type": "adjective",
+        "word": "frisch",
+        "surface": "frische",
+        "definition": "Fresh or cool, often paired with Luft to mean fresh air."
+      },
+      {
+        "type": "noun",
+        "word": "Luft",
+        "definition": "The air around us; 'frische Luft' is fresh outdoor air."
+      },
+      {
+        "type": "noun",
+        "word": "Glas",
+        "definition": "A drinking glass; 'ein Glas Wasser' takes no preposition between them."
+      },
+      {
+        "type": "noun",
+        "word": "Sofa",
+        "definition": "A couch in the living room, central to relaxation scenes."
+      },
+      {
+        "type": "adjective",
+        "word": "schwach",
+        "definition": "Weak or feeble in strength; the opposite of stark."
+      },
+      {
+        "type": "verb",
+        "word": "klingen",
+        "surface": "klingt",
+        "definition": "To sound a certain way; 'klingt einfach' means sounds simple."
+      },
+      {
+        "type": "verb",
+        "word": "versuchen",
+        "surface": "versuche",
+        "definition": "To attempt or try something; 'ich versuche es' means I'll try."
+      },
+      {
+        "type": "expression",
+        "word": "Gute Besserung",
+        "definition": "A standard German wish for someone's quick recovery from illness."
+      },
+      {
+        "type": "expression",
+        "word": "ehrlich gesagt",
+        "definition": "An idiomatic phrase introducing a candid admission, like 'to be honest'."
+      }
+    ],
+    "cmoncz14w000bukucosbh3fns": [
+      {
+        "type": "adjective",
+        "word": "verkleidet",
+        "definition": "Wearing a costume or disguise, as during Karneval or Halloween."
+      },
+      {
+        "type": "verb",
+        "word": "überreden",
+        "surface": "überredet",
+        "definition": "To persuade someone; takes 'zu' plus dative for the action."
+      },
+      {
+        "type": "noun",
+        "word": "Kostüm",
+        "definition": "A costume worn for Karneval, theater, or themed events."
+      },
+      {
+        "type": "noun",
+        "word": "Trommel",
+        "definition": "A drum instrument, central to Karneval parades and street processions."
+      },
+      {
+        "type": "verb",
+        "word": "zusammenzucken",
+        "surface": "zuckt zusammen",
+        "definition": "To flinch or startle suddenly at an unexpected noise or event."
+      },
+      {
+        "type": "noun",
+        "word": "Gedränge",
+        "definition": "A dense crowd or crush of people pressed tightly together."
+      },
+      {
+        "type": "noun",
+        "word": "Seitenstraße",
+        "definition": "A side street branching off the main road in a city."
+      },
+      {
+        "type": "noun",
+        "word": "Trubel",
+        "definition": "Lively commotion or hustle and bustle, usually loud and energetic."
+      },
+      {
+        "type": "adjective",
+        "word": "verständnisvoll",
+        "definition": "Understanding or sympathetic toward another's discomfort, built from Verständnis."
+      },
+      {
+        "type": "verb",
+        "word": "vorbeiziehen",
+        "surface": "ziehen vorbei",
+        "definition": "To pass by; used for crowds, processions, or drifting clouds."
+      },
+      {
+        "type": "adjective",
+        "word": "umschlungen",
+        "definition": "Embraced or wrapped around, often poetic for two people holding tightly."
+      },
+      {
+        "type": "noun",
+        "word": "Erkenntnis",
+        "definition": "A serious realization that shifts how one sees something important."
+      },
+      {
+        "type": "adjective",
+        "word": "ehrlich",
+        "definition": "Honest or truthful; 'ehrlich gesagt' introduces a candid statement."
+      },
+      {
+        "type": "verb",
+        "word": "starren",
+        "surface": "starrt",
+        "definition": "To stare fixedly, stronger and more focused than schauen."
+      },
+      {
+        "type": "noun",
+        "word": "Bildschirm",
+        "definition": "A screen, especially of a phone or computer in modern usage."
+      },
+      {
+        "type": "verb",
+        "word": "klingeln",
+        "surface": "klingelt",
+        "definition": "To ring; said of phones, doorbells, and alarm clocks alike."
+      },
+      {
+        "type": "noun",
+        "word": "Eile",
+        "definition": "Hurry or haste; 'in Eile sein' means being in a rush."
+      },
+      {
+        "type": "verb",
+        "word": "benennen",
+        "definition": "To name something precisely, stronger than nennen and more deliberate."
+      },
+      {
+        "type": "noun",
+        "word": "Schluck",
+        "definition": "A sip or gulp of liquid; 'einen Schluck trinken' means sipping."
+      },
+      {
+        "type": "noun",
+        "word": "Apfelstrudel",
+        "definition": "A classic Austrian and Bavarian apple-filled pastry served in cafés."
+      }
+    ],
+    "cmoncz14w000dukucpmxh7pdr": [
+      {
+        "type": "verb",
+        "word": "strömen",
+        "definition": "To stream or flow in great numbers, like a crowd surging forward."
+      },
+      {
+        "type": "noun",
+        "word": "Schal",
+        "definition": "A long scarf, often worn in club colors by football fans."
+      },
+      {
+        "type": "noun",
+        "word": "Mütze",
+        "definition": "A soft cap or beanie, frequently worn in winter or on game days."
+      },
+      {
+        "type": "noun",
+        "word": "Schminke",
+        "definition": "Face paint or makeup, often applied in club colors before matches."
+      },
+      {
+        "type": "noun",
+        "word": "Wange",
+        "definition": "The cheek of a face, where tears or kisses commonly land."
+      },
+      {
+        "type": "noun",
+        "word": "Stufe",
+        "definition": "A step or level in a sequence, literal or figurative."
+      },
+      {
+        "type": "noun",
+        "word": "Ostkurve",
+        "definition": "The east curved stand of a stadium, home to the loudest supporters."
+      },
+      {
+        "type": "noun",
+        "word": "Glühbirne",
+        "definition": "A light bulb, used here as a metaphor for a beaming face."
+      },
+      {
+        "type": "adjective",
+        "word": "fragend",
+        "definition": "Questioning in expression, eyes silently asking for an answer or explanation."
+      },
+      {
+        "type": "noun",
+        "word": "Halbzeit",
+        "definition": "The fifteen-minute half-time pause between two halves of a match."
+      },
+      {
+        "type": "noun",
+        "word": "Brause",
+        "definition": "A cheap, sweet, fizzy soft drink popular among German children."
+      },
+      {
+        "type": "adjective",
+        "word": "tapfer",
+        "definition": "Brave under disappointment, especially a child trying not to cry openly."
+      },
+      {
+        "type": "noun",
+        "word": "Jubel",
+        "definition": "Loud collective cheering, especially the roar of a crowd after a goal."
+      },
+      {
+        "type": "noun",
+        "word": "Gästeseite",
+        "definition": "The away-fans section of a stadium, separated from home supporters."
+      },
+      {
+        "type": "noun",
+        "word": "Schlusspfiff",
+        "definition": "The final whistle ending the match; a heavy moment after defeat."
+      },
+      {
+        "type": "verb",
+        "word": "herausbrechen",
+        "surface": "bricht heraus",
+        "definition": "To burst out suddenly after being held back, like tears finally released."
+      },
+      {
+        "type": "verb",
+        "word": "wiederkommen",
+        "definition": "To come back another time, returning to the same place again."
+      },
+      {
+        "type": "verb",
+        "word": "drücken",
+        "surface": "drückt",
+        "definition": "To press or squeeze firmly, whether a hand, button, or hug."
+      },
+      {
+        "type": "verb",
+        "word": "schießen",
+        "surface": "schießt",
+        "definition": "To shoot in football; to kick the ball aiming for goal."
+      },
+      {
+        "type": "noun",
+        "word": "Schlag",
+        "definition": "A blow or hit, physical or emotional, like sudden bad news."
+      }
+    ],
+    "cmoncz14w000fukuc94ux8jh6": [
+      {
+        "type": "noun",
+        "word": "Steg",
+        "definition": "A wooden pier extending out over a lake for swimming or fishing."
+      },
+      {
+        "type": "adjective",
+        "word": "glatt",
+        "definition": "Smooth and even, with no waves; often said of calm water."
+      },
+      {
+        "type": "verb",
+        "word": "aufgießen",
+        "surface": "aufgegossen",
+        "definition": "To pour liquid onto something; here metaphorical for the freshly filled lake."
+      },
+      {
+        "type": "verb",
+        "word": "aufgeben",
+        "surface": "hatte aufgegeben",
+        "definition": "To stop trying because the effort has become useless or futile."
+      },
+      {
+        "type": "verb",
+        "word": "losfahren",
+        "surface": "ist losgefahren",
+        "definition": "To set off by bike, car, or train, often spontaneously."
+      },
+      {
+        "type": "noun",
+        "word": "Schilf",
+        "definition": "Tall reeds growing along the edges of lakes and slow rivers."
+      },
+      {
+        "type": "adjective",
+        "word": "blass",
+        "surface": "blasser",
+        "definition": "Pale or faded in colour; here marking the shift toward dawn."
+      },
+      {
+        "type": "noun",
+        "word": "Versprechen",
+        "definition": "A promise; metaphorically, an early hint of something good arriving soon."
+      },
+      {
+        "type": "noun",
+        "word": "Steuerunterlagen",
+        "definition": "The tax documents needed to file a German return; always dreaded."
+      },
+      {
+        "type": "verb",
+        "word": "wegschieben",
+        "surface": "schiebt sie weg",
+        "definition": "To push something away, physically or mentally aside as a thought."
+      },
+      {
+        "type": "noun",
+        "word": "Ufer",
+        "definition": "The shore where land meets water at a lake or river."
+      },
+      {
+        "type": "noun",
+        "word": "Boje",
+        "definition": "A floating buoy on water marking swimming areas or boating channels."
+      },
+      {
+        "type": "noun",
+        "word": "Ast",
+        "definition": "A tree branch, attached or fallen, sometimes floating in water."
+      },
+      {
+        "type": "adjective",
+        "word": "zerbrochen",
+        "definition": "Broken into pieces; used for branches, glass, hearts, or promises alike."
+      },
+      {
+        "type": "noun",
+        "word": "Ruderer",
+        "definition": "A person rowing a boat as sport or early-morning pastime."
+      },
+      {
+        "type": "verb",
+        "word": "zurückkehren",
+        "surface": "kehrt zurück",
+        "definition": "To come back to a place, person, or earlier mental state."
+      },
+      {
+        "type": "verb",
+        "word": "verbannen",
+        "definition": "To banish something far away, mentally or geographically; carries dramatic weight."
+      },
+      {
+        "type": "noun",
+        "word": "Erledigung",
+        "surface": "Erledigungen",
+        "definition": "An everyday chore or errand: phone calls, paperwork, shopping, small tasks."
+      },
+      {
+        "type": "noun",
+        "word": "Erleuchtung",
+        "definition": "A moment of inner clarity or insight, sometimes used ironically about ordinary calm."
+      },
+      {
+        "type": "noun",
+        "word": "Müdigkeit",
+        "definition": "Deep tiredness, both physical and emotional exhaustion combined into one state."
+      }
+    ],
+    "cmoncz14w0004ukucuasqpua4": [
+      {
+        "type": "noun",
+        "word": "Samstagmorgen",
+        "definition": "Saturday morning; a typical time for markets and weekend errands."
+      },
+      {
+        "type": "noun",
+        "word": "Markt",
+        "definition": "An open-air market selling fresh food, flowers, and local goods."
+      },
+      {
+        "type": "noun",
+        "word": "Tasche",
+        "definition": "A bag or pocket for carrying small items while out shopping."
+      },
+      {
+        "type": "noun",
+        "word": "Bäckerin",
+        "definition": "A female baker who makes or sells bread at a bakery."
+      },
+      {
+        "type": "verb",
+        "word": "fragen",
+        "surface": "fragt",
+        "definition": "To ask a question; to seek information from another person."
+      },
+      {
+        "type": "verb",
+        "word": "antworten",
+        "surface": "antwortet",
+        "definition": "To answer or reply to a question someone has asked."
+      },
+      {
+        "type": "verb",
+        "word": "kosten",
+        "surface": "kostet",
+        "definition": "To cost a certain price; how much money something requires."
+      },
+      {
+        "type": "verb",
+        "word": "nehmen",
+        "surface": "nehme",
+        "definition": "To take or pick up; in shops, to choose an item."
+      },
+      {
+        "type": "verb",
+        "word": "einpacken",
+        "definition": "To wrap or pack something up, especially purchases at a shop."
+      },
+      {
+        "type": "noun",
+        "word": "Käse",
+        "definition": "A staple food on German breakfast and dinner tables, sliced or melted."
+      },
+      {
+        "type": "verb",
+        "word": "schneiden",
+        "surface": "schneidet",
+        "definition": "To cut or slice something using a knife or sharp tool."
+      },
+      {
+        "type": "adverb",
+        "word": "genug",
+        "definition": "A sufficient quantity that meets the current need."
+      },
+      {
+        "type": "noun",
+        "word": "Wochenende",
+        "definition": "The weekend; Saturday and Sunday taken together as time off."
+      },
+      {
+        "type": "noun",
+        "word": "Obst",
+        "definition": "Fruit collectively; the food category of edible sweet plant produce."
+      },
+      {
+        "type": "noun",
+        "word": "Gemüse",
+        "definition": "Vegetables collectively; the broad food category of edible plants."
+      },
+      {
+        "type": "noun",
+        "word": "Entschuldigung",
+        "definition": "An apology, or a polite way to get someone's attention."
+      },
+      {
+        "type": "adverb",
+        "word": "drüben",
+        "definition": "Over there; in a place a bit further from here."
+      },
+      {
+        "type": "adjective",
+        "word": "freundlich",
+        "definition": "Warm and friendly in tone or manner; also pleasant when describing weather."
+      },
+      {
+        "type": "adverb",
+        "word": "miteinander",
+        "definition": "With each other; doing something together as a shared activity."
+      },
+      {
+        "type": "verb",
+        "word": "sich fühlen",
+        "surface": "fühlt sich",
+        "definition": "To feel a certain way, emotionally or physically, in oneself."
+      }
+    ],
+    "cmoni7j4f000032gnogvzmzb9": [
+      {
+        "type": "verb",
+        "word": "mischen",
+        "surface": "mischen sich",
+        "definition": "To blend together reflexively; languages overlapping without truly merging into one."
+      },
+      {
+        "type": "verb",
+        "word": "vereinen",
+        "definition": "To unite separate things into a coherent whole, often after divisions."
+      },
+      {
+        "type": "noun",
+        "word": "Vorwurf",
+        "surface": "Vorwürfe",
+        "definition": "An emotionally charged reproach or accusation, often within close family relationships."
+      },
+      {
+        "type": "verb",
+        "word": "abstellen",
+        "surface": "abgestellt",
+        "definition": "To switch off heating or water; here a sudden absence of warmth."
+      },
+      {
+        "type": "noun",
+        "word": "Hinterzimmer",
+        "definition": "A back room behind a shop where staff prepare goods privately."
+      },
+      {
+        "type": "adjective",
+        "word": "kurdisch",
+        "definition": "The Kurdish language and culture spread across Turkey, Iraq, Syria, and Iran."
+      },
+      {
+        "type": "noun",
+        "word": "Nachbarschaft",
+        "definition": "A neighbourhood as a social and cultural fabric, not just an address."
+      },
+      {
+        "type": "noun",
+        "word": "Sesamring",
+        "definition": "A ring-shaped bread covered in sesame seeds, sold in Turkish bakeries."
+      },
+      {
+        "type": "verb",
+        "word": "rutschen",
+        "surface": "rutscht heraus",
+        "definition": "To slip; 'es rutscht heraus' captures words leaving the mouth unconsciously."
+      },
+      {
+        "type": "noun",
+        "word": "Atemzug",
+        "definition": "A single breath; figuratively, the same brief moment of speech."
+      },
+      {
+        "type": "noun",
+        "word": "Abschied",
+        "definition": "A farewell carrying emotional weight beyond English 'goodbye', central in German narratives."
+      },
+      {
+        "type": "adjective",
+        "word": "liebevoll",
+        "definition": "Done with love and tenderness; said of gestures, words, or food."
+      },
+      {
+        "type": "noun",
+        "word": "Heimat",
+        "definition": "The place where a person feels rooted, beyond just where they live."
+      },
+      {
+        "type": "adjective",
+        "word": "salzig",
+        "definition": "Salty in taste; here, surprising savoury edge in sweet bread."
+      },
+      {
+        "type": "noun",
+        "word": "Lieferwagen",
+        "definition": "A delivery van, the workhorse of Berlin's bakeries and small shops."
+      },
+      {
+        "type": "verb",
+        "word": "fehlen",
+        "surface": "fehlt",
+        "definition": "To be missing or lacking; 'das fehlt mir' means I miss it."
+      },
+      {
+        "type": "noun",
+        "word": "Stille",
+        "definition": "An active silence, not just absence of sound, sometimes heavy."
+      },
+      {
+        "type": "verb",
+        "word": "beißen",
+        "surface": "beißt",
+        "definition": "To bite into something; grounds a character back into physical sensation."
+      },
+      {
+        "type": "adjective",
+        "word": "höflich",
+        "definition": "Polite in behaviour, especially acknowledging someone without commenting on awkward details."
+      },
+      {
+        "type": "verb",
+        "word": "anrufen",
+        "surface": "anruft",
+        "definition": "To call someone on the phone; restores a missing voice."
+      }
+    ],
+    "cmoni7j4g000132gnokn5scmi": [
+      {
+        "type": "adjective",
+        "word": "üblich",
+        "surface": "üblichen",
+        "definition": "Usual or customary; signals continuity rather than novelty in long relationships."
+      },
+      {
+        "type": "noun",
+        "word": "Witz",
+        "definition": "A joke or pointed remark, sometimes a recurring family gesture."
+      },
+      {
+        "type": "adjective",
+        "word": "aufgeräumt",
+        "definition": "Tidied up; here ironic, since the apartment looks orderly anyway."
+      },
+      {
+        "type": "noun",
+        "word": "Stuckdecke",
+        "surface": "Stuckdecken",
+        "definition": "A plaster-decorated ceiling, typical of older Wilhelminian-era Berlin apartments."
+      },
+      {
+        "type": "noun",
+        "word": "Pfeifentabak",
+        "definition": "Pipe tobacco, whose lingering smell can saturate walls for many decades."
+      },
+      {
+        "type": "adjective",
+        "word": "choreografiert",
+        "surface": "choreografierte",
+        "definition": "Carefully arranged in advance like a dance; said of rehearsed conversations."
+      },
+      {
+        "type": "noun",
+        "word": "Annäherung",
+        "definition": "A gradual approach; circling around a sensitive topic before addressing it."
+      },
+      {
+        "type": "noun",
+        "word": "Bundesrat",
+        "definition": "The German Federal Council representing the sixteen states of the country."
+      },
+      {
+        "type": "noun",
+        "word": "Klingel",
+        "definition": "A doorbell; small object often standing in for harder topics."
+      },
+      {
+        "type": "noun",
+        "word": "Hausverwaltung",
+        "definition": "A building's management company; common point of friction in tenanted flats."
+      },
+      {
+        "type": "verb",
+        "word": "melden",
+        "surface": "gemeldet",
+        "definition": "To officially report something to a person or institution bureaucratically."
+      },
+      {
+        "type": "adverb",
+        "word": "beiläufig",
+        "definition": "Said casually, almost in passing, to lower a question's dramatic weight."
+      },
+      {
+        "type": "noun",
+        "word": "Kleinigkeit",
+        "definition": "A small matter or trifle, often used to minimise something uncomfortable."
+      },
+      {
+        "type": "noun",
+        "word": "Topf",
+        "definition": "A cooking pot; here the concrete object behind a worrying conversation."
+      },
+      {
+        "type": "verb",
+        "word": "qualmen",
+        "surface": "gequalmt",
+        "definition": "To give off thick smoke from burning food, an oven, or chimney."
+      },
+      {
+        "type": "verb",
+        "word": "zwingen",
+        "surface": "zwingt sich",
+        "definition": "To force oneself reflexively to do something difficult and uncomfortable."
+      },
+      {
+        "type": "verb",
+        "word": "aushalten",
+        "surface": "auszuhalten",
+        "definition": "To endure something uncomfortable rather than escape it; holding tense pauses."
+      },
+      {
+        "type": "verb",
+        "word": "fürchten",
+        "definition": "To be afraid reflexively; 'sich fürchten' captures the shared family fear."
+      },
+      {
+        "type": "noun",
+        "word": "Broschüre",
+        "surface": "Broschüren",
+        "definition": "A printed brochure; here, assisted-living materials brought to discuss aging."
+      },
+      {
+        "type": "expression",
+        "word": "Abgemacht",
+        "definition": "A conversational shorthand for 'agreed' or 'deal'; closes small understandings quickly."
+      }
+    ]
+  }
+}

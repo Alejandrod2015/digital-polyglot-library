@@ -28,18 +28,18 @@ const VOICE_ASSIGNMENTS: Record<string, Record<string, string>> = {
   "cafe-in-kreuzberg": {
     narrator: V.moritz,
     Anna: V.enniah,
-    Tom: V.sebastian,
+    Tom: V.luca,
   },
   "beim-baecker-am-hackeschen-markt": {
     narrator: V.moritz,
     Sophie: V.enniah,
     "Frau Weber": V.eleonore,
-    Lukas: V.sebastian,
+    Lukas: V.luca,
   },
   "tomaten-vom-wochenmarkt": {
     narrator: V.moritz,
     Mira: V.enniah,
-    "Herr Klein": V.sebastian,
+    "Herr Klein": V.luca,
     "Frau Tan": V.eleonore,
   },
 };

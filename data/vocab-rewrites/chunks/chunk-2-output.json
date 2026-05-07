@@ -1,0 +1,31 @@
+{
+  "rewrites": [
+    {"storyId": "cmoncz14w0008ukucsdk7ltzb", "word": "warten", "newDefinition": "Lingering in one place, expecting someone or something to arrive."},
+    {"storyId": "cmoncz14w0008ukucsdk7ltzb", "word": "Sonne", "newDefinition": "Bright star warming the sky, central to weather small talk."},
+    {"storyId": "cmoncz14w0008ukucsdk7ltzb", "word": "Möwe", "newDefinition": "Coastal seabird with white feathers, screeching loudly above harbors and piers."},
+    {"storyId": "cmoncz14w0003ukucbibol5s1", "word": "Zeitung", "newDefinition": "Folded sheets of daily printed news, sold each morning at kiosks."},
+    {"storyId": "cmoncz14w0003ukucbibol5s1", "word": "Fenster", "newDefinition": "Glass-paneled opening in a wall, letting in light and view."},
+    {"storyId": "cmoncz14w0003ukucbibol5s1", "word": "Buch", "newDefinition": "Bound printed pages read for pleasure, study, or quiet escape."},
+    {"storyId": "cmoncz14w0003ukucbibol5s1", "word": "Woche", "newDefinition": "Span of seven consecutive days marking time between recurring events."},
+    {"storyId": "cmoncz14w0003ukucbibol5s1", "word": "arbeiten", "newDefinition": "To hold a job, doing tasks in exchange for pay."},
+    {"storyId": "cmoncz14w0003ukucbibol5s1", "word": "Buchhandlung", "newDefinition": "Retail shop selling new books, often with knowledgeable staff recommendations."},
+    {"storyId": "cmoncz14w0003ukucbibol5s1", "word": "Käse", "newDefinition": "Pressed dairy made from milk, central to German breakfast tables."},
+    {"storyId": "cmoncz14x000jukuccqplucy9", "word": "Hüfte", "newDefinition": "Curved bony joint connecting torso to leg, often aching with age."},
+    {"storyId": "cmoncz14x000jukuccqplucy9", "word": "Enkel", "newDefinition": "Younger generation descended from one's children, observing family rituals fade."},
+    {"storyId": "cmoncz14w000aukucwxpat4fv", "word": "Buchhandlung", "newDefinition": "Independent shop selling new and curated books to neighborhood readers."},
+    {"storyId": "cmoncz14w000aukucwxpat4fv", "word": "Umschlag", "newDefinition": "Folded paper sleeve sealing letters, contracts, and important offers inside."},
+    {"storyId": "cmoncz14w000aukucwxpat4fv", "word": "Gehalt", "newDefinition": "Regular monthly pay received from an employer for steady work."},
+    {"storyId": "cmoncz14w000aukucwxpat4fv", "word": "wiegen", "newDefinition": "Carrying weight, literally on a scale or figuratively on conscience."},
+    {"storyId": "cmoncz14x000iukuc5w4fzg6w", "word": "zaghaft", "newDefinition": "Hesitant and tentative, lacking confidence in each careful brushstroke."},
+    {"storyId": "cmoncz14x000iukuc5w4fzg6w", "word": "Berater", "newDefinition": "Trusted advisor offering opinions, sometimes the inner critic disrupting flow."},
+    {"storyId": "cmoncz14x000iukuc5w4fzg6w", "word": "Pinsel", "newDefinition": "Bristled tool dipped in paint, transferring color onto waiting canvas."},
+    {"storyId": "cmoncz14w0002ukucenj11v6i", "word": "Mädchen", "newDefinition": "Young female child, grammatically neuter due to its diminutive ending."},
+    {"storyId": "cmoncz14w0007ukucmdug6e9b", "word": "Treppe", "newDefinition": "Series of steps connecting one floor to another inside buildings."},
+    {"storyId": "cmoncz14x000gukuclg9q02mi", "word": "Pflaumenmus", "newDefinition": "Thick dark plum spread, slowly cooked down with warm autumn spices."},
+    {"storyId": "cmoncz14x000gukuclg9q02mi", "word": "Verschwörung", "newDefinition": "Secret plot among multiple parties, often invoked playfully about coincidences."},
+    {"storyId": "cmoncz14w0005ukucu7eusk55", "word": "Geburtstag", "newDefinition": "Annual celebration marking the day someone was born, with cake."},
+    {"storyId": "cmoncz14w0005ukucu7eusk55", "word": "Laden", "newDefinition": "Small storefront selling goods, often independently owned within a neighborhood."},
+    {"storyId": "cmoncz14w0005ukucu7eusk55", "word": "Karte", "newDefinition": "Small printed rectangle: greeting, postcard, ticket, or playing card."},
+    {"storyId": "cmoncz14w0005ukucu7eusk55", "word": "schreiben", "newDefinition": "Forming letters or words with pen, marking thoughts onto paper."}
+  ]
+}

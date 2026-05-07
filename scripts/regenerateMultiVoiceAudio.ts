@@ -33,7 +33,7 @@ const VOICE_ASSIGNMENTS: VoiceAssignment[] = [
     voiceMap: {
       narrator: V.moritz,
       Anna: V.gesaTess, // ENNIAH leaned too cheerful on Anna's warm greetings; Gesa Tess has a calmer baseline
-      Tom: V.sebastian,
+      Tom: V.luca,
     },
     ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3"),
   },
@@ -43,7 +43,7 @@ const VOICE_ASSIGNMENTS: VoiceAssignment[] = [
       narrator: V.moritz,
       Sophie: V.enniah,
       "Frau Weber": V.eleonore,
-      Lukas: V.sebastian,
+      Lukas: V.luca,
     },
     ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3"),
   },
@@ -52,7 +52,7 @@ const VOICE_ASSIGNMENTS: VoiceAssignment[] = [
     voiceMap: {
       narrator: V.moritz,
       Mira: V.enniah,
-      "Herr Klein": V.sebastian,
+      "Herr Klein": V.luca,
       "Frau Tan": V.eleonore,
     },
     ambientFile: path.join(AMBIENT_DIR, "mercado_de.mp3"),
@@ -63,7 +63,7 @@ const VOICE_ASSIGNMENTS: VoiceAssignment[] = [
       narrator: V.moritz,
       Eva: V.gesaTess,
       Lara: V.enniah,
-      Marc: V.sebastian,
+      Marc: V.luca,
     },
     ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3"),
   },

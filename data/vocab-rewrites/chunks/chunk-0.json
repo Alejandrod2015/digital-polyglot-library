@@ -1,0 +1,254 @@
+{
+  "stories": [
+    {
+      "storyId": "cmocxf2rm0001ie040t5bt276",
+      "slug": "risotto-alla-milanese",
+      "language": "italian",
+      "variant": "italy",
+      "level": "a2",
+      "topic": "health-wellbeing",
+      "storyTitle": "Risotto alla Milanese",
+      "storyExcerpt": "Luca è uno chef alle prime armi. Lavora in un ristorante tipico dei Navigli, a Milano. Ogni sera, prepara piatti deliziosi. Questa sera, il suo obiettivo è il risotto alla milanese. Il ristorante è pieno e l'atmosfera è vivace. Luca sente un po' di ansia. Mentre cucina, Luca controlla gli ingredienti. All'improvviso, si accorge di una grande mancanza: lo zafferano. 'Oh no!' pensa, 'Non posso fare il risotto senza zafferano!' La situazione è critica. Deve trovare una soluzione rapidamente. Non può deludere i clienti. 'Devo chiamare Marco,' si dice. Marco è un suo amico e fornitore di spezie nel quartiere. È sempre disponibile ad aiutare. Luca afferra il telefono e compone il numero di Marco. 'Ciao Marco, ho bisogno di te,' dice con urgenza. Marco risponde subito: 'Certo, Luca! Arrivo subito.' Luca si sente sollevato. Nel frattempo, continua a mescolare il riso, sperando di non bruciarlo. Il profumo del burro e del parmigiano riempie il ristorante. Finalmente, Marco arriva con lo zafferano. 'Ecco qua!' dice felice, consegnando il pacchetto a Luca. 'Grazie, Marco! Sei un salvatore!' Luca sorride e aggiunge lo zafferano al risotto. Il colore giallo brillante illumina il piatto. Quando il risotto è pronto, Luca lo serve ai clienti. 'Buon appetito!' dice con entusiasmo. Gli ospiti assaporano il piatto e i loro volti si illuminano. Luca si sente fiero. Ha superato la prova. La serata si conclude con successo. Luca sa che la cucina è un'arte che richiede passione e aiuto. Sorridendo,",
+      "badDefs": [
+        {
+          "index": 10,
+          "word": "piatto",
+          "type": "noun",
+          "originalDefinition": "A dish, both the plate itself and the food served on it.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 12
+        }
+      ]
+    },
+    {
+      "storyId": "cmocxf2rm0002ie04b150xy1v",
+      "slug": "trastevere-un-pomeriggio-d-estate",
+      "language": "italian",
+      "variant": "italy",
+      "level": "a2",
+      "topic": "city-getting-around",
+      "storyTitle": "Trastevere, un pomeriggio d'estate",
+      "storyExcerpt": "Nel quartiere di Trastevere, un pomeriggio d'estate, Marco si perde tra le stradine acciottolate. Le case colorate e i fiori sui balconi lo circondano, creando un'atmosfera vivace e accogliente. 'Dove posso mangiare un buon piatto di cacio e pepe?' si chiede, mentre il sole splende alto nel cielo. Marco attraversa piazze piccole ma piene di vita. I ristoranti all'aperto sono pieni di persone che ridono e chiacchierano. L'aria è calda e il suono delle cicale riempie l'atmosfera, creando un senso di calma e felicità. Dopo un po’, vede un anziano signore seduto su una panchina. Si avvicina e chiede indicazioni. Il signore sorride e dice: 'Vai dritto, poi gira a sinistra. Troverai una trattoria piccola e deliziosa. Hanno il miglior cacio e pepe della zona!' Marco lo ringrazia con entusiasmo e riparte, sentendo la bocca che gli si fa acquolina. Seguendo le indicazioni, Marco si ritrova in una stradina stretta e poco illuminata. La trattoria è nascosta, ma ha un cartello colorato che dice 'Benvenuti'. Si sente un profumo delizioso di pasta e formaggio. Finalmente, entra e si siede a un tavolo vicino alla finestra. Quando il cameriere porta il piatto di cacio e pepe, gli occhi di Marco brillano. 'Che bel piatto!' pensa, mentre assapora ogni forchettata. La pasta è cremosa e il formaggio è saporito. Mentre mangia, riflette sulla bellezza di perdersi in una città così viva. A volte, le migliori avventure iniziano proprio quando si smarrisce la strada.",
+      "badDefs": [
+        {
+          "index": 13,
+          "word": "sorriso",
+          "originalDefinition": "A smile; the warm upward curve of the lips signaling friendliness.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        }
+      ]
+    },
+    {
+      "storyId": "cmogli5yt0001l404jj9zsf1a",
+      "slug": "risotto-alla-milanese-3",
+      "language": "italian",
+      "variant": "italy",
+      "level": "a2",
+      "topic": "shopping-money",
+      "storyTitle": "Risotto alla milanese",
+      "storyExcerpt": "Nel cuore di Milano, Marco, un giovane chef, si preparava per un importante concorso culinario. Voleva perfezionare il suo risotto alla milanese, un piatto che amava. Oggi, doveva comprare gli ingredienti freschi al mercato di Porta Ticinese. Marco camminò tra le bancarelle, ammirando i colori e i profumi. Ma, all'improvviso, si rese conto di una cosa. 'Oh no! Ho dimenticato il portafoglio!' pensò, preoccupato. Come poteva acquistare tutto senza soldi? Proprio in quel momento, vide Sofia, una sua amica che vendeva zafferano. Lei stava sorridendo e Marco si avvicinò, sperando in un aiuto. 'Ciao, Sofia! Ho bisogno di te, ho dimenticato i soldi,' disse a voce bassa. 'Non ti preoccupare, Marco,' rispose Sofia, 'ti presto un po' di soldi. Ma in cambio, voglio assaggiare il tuo risotto!' Marco sorrise, sollevato. Era felice di avere un'amica così disponibile. Insieme, scelsero il riso, il brodo e lo zafferano. Ogni ingrediente era importante per il suo risotto alla milanese. Marco si sentiva ispirato e, mentre Sofia lo aiutava, la loro amicizia cresceva. 'Grazie, Sofia! Non avrei potuto farlo senza di te,' disse Marco, grato. Dopo aver fatto la spesa, tornaron a casa. Marco iniziò a cucinare e l'odore del risotto riempì la cucina. Sofia assaggiò il primo cucchiaio. 'È delizioso!' esclamò. Marco era molto fiero. La giornata di shopping era diventata un momento speciale di amicizia e cucina.",
+      "badDefs": [
+        {
+          "index": 7,
+          "word": "sorridere",
+          "surface": "sorridendo",
+          "type": "verb",
+          "originalDefinition": "To smile, showing warmth or pleasure through the curve of your lips.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 12
+        }
+      ]
+    },
+    {
+      "storyId": "cmoglxwmx0002la047mrxuqmo",
+      "slug": "trastevere-ore-nove",
+      "language": "italian",
+      "variant": "italy",
+      "level": "b1",
+      "topic": "work-study",
+      "storyTitle": "Trastevere, ore nove",
+      "storyExcerpt": "Martina si siede nel piccolo caffè di Trastevere, il suo piatto di cacio e pepe fumante davanti a lei. La sua mente è confusa. Domani c'è l'esame, e le parole degli appunti danzano nella sua testa, senza fermarsi. Il brusio delle strade romane, mescolato alla musica di un artista di strada, rende difficile la concentrazione. «Devo farcela», pensa Martina, mentre assapora un boccone di pasta. Il formaggio cremoso si scioglie in bocca, ma la preoccupazione cresce. Proprio in quel momento, la sua amica Giulia entra, portando con sé due cappuccini fumanti. «Ecco, ho pensato che avresti avuto bisogno di un po' di energia!» dice, sorridendo. Giulia si siede di fronte a Martina, osservando i suoi appunti sparsi. «Hai già studiato questo capitolo?» chiede, prendendo un sorso del suo cappuccino. Martina scuote la testa. «Non riesco a concentrarmi con tutto questo rumore.» «Proviamo a trasformare il caos in qualcosa di positivo», suggerisce Giulia. «Fai finta che siamo in un'altra città, magari a Milano, dove il rumore è diverso ma l'energia è simile.» Martina ride, e per un attimo, si sente sollevata. «Hai ragione. A Milano, ci sarebbe un risotto alla milanese da assaporare.» Le due amiche continuano a studiare, mescolando il loro lavoro con risate e sogni di viaggi futuri. Il caffè si riempie di nuove idee e speranze. Con ogni boccone di cacio e pepe, la fiducia di Martina cresce. È il momento di affrontare l'esame.",
+      "badDefs": [
+        {
+          "index": 5,
+          "word": "sorridere",
+          "surface": "sorridendo",
+          "type": "verb",
+          "originalDefinition": "To smile; to show warmth or pleasure through your face.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmoglxwmx0005la04zoiibtf1",
+      "slug": "cacio-e-pepe-a-trastevere",
+      "language": "italian",
+      "variant": "italy",
+      "level": "b1",
+      "topic": "local-discoveries",
+      "storyTitle": "Cacio e Pepe a Trastevere",
+      "storyExcerpt": "Marco, un giovane chef romano, si trovava in una trattoria tradizionale a Trastevere. Era un piccolo locale, con tavoli di legno e un profumo delizioso nell'aria. Oggi era il giorno in cui voleva perfezionare la sua ricetta di cacio e pepe. Mentre osservava il cuoco anziano mescolare la pasta con il pecorino e il pepe, il suo cuore batteva forte. Qualcosa di speciale stava per accadere. Il cuoco, con mani esperte, girava la pasta e aggiungeva il formaggio. Marco notava come il pecorino si sciogliesse lentamente, creando una crema ricca. “Devi essere paziente”, disse il cuoco, senza alzare lo sguardo. Marco annuì, mentre pensava: “Ma come posso dare un tocco personale?” La sfida era bilanciare il sapore autentico con le sue idee innovative. I clienti abituali, seduti ai tavoli, osservavano il suo lavoro. Marco sentiva il loro sguardo critico. “Questo piatto deve raccontare una storia”, pensò, mentre cercava di decidere cosa aggiungere. “Forse un po’ di limone?” mormorò tra sé. Ma il cuoco scosse la testa: “No, il cacio e pepe è semplice. Non complicarlo”. Marco si rese conto che doveva ascoltare. Così, si concentrò sulla tecnica, sulla qualità degli ingredienti. Alla fine, dopo vari tentativi, Marco servì il piatto ai clienti. L’aria era piena di attesa. Quando i primi assaggi arrivarono, il silenzio parlava. Dopo un momento, i sorrisi cominciarono a diffondersi. “È eccezionale!” disse una signora, e Marco sentì una gioia immensa. Aveva trovato il suo equilibrio.",
+      "badDefs": [
+        {
+          "index": 13,
+          "word": "storia",
+          "type": "noun",
+          "originalDefinition": "A story; a narrative account of events real or imagined.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmoglxwmx0003la04nz6qydo5",
+      "slug": "navigli-al-tramonto",
+      "language": "italian",
+      "variant": "italy",
+      "level": "b1",
+      "topic": "community-celebrations",
+      "storyTitle": "Navigli al Tramonto",
+      "storyExcerpt": "Luca e Sofia si trovano sui Navigli, un quartiere vivo e colorato di Milano. Al tramonto, l'atmosfera si anima, e i due amici sentono l'eccitazione crescere. Le strade sono piene di bancarelle che offrono piatti tipici, tra cui il famoso risotto alla milanese. Sofia guarda le persone che ballano. \"Hai già assaggiato il risotto?\" chiede, con un sorriso. \"Non ancora,\" risponde Luca, \"ma non vedo l'ora!\" Il profumo del cibo riempie l'aria, e lui può già immaginare il sapore del formaggio e dello zafferano. La musica dal vivo inizia, e i suoni melodiosi delle chitarre attirano sempre più gente. I due amici si muovono verso il palco, cercando di trovare un posto migliore per godere dello spettacolo. Il ritmo contagioso invita tutti a ballare. Mentre danzano, Luca si sente parte di qualcosa di speciale. \"Questa festa è fantastica,\" dice Sofia, ridendo. \"Ogni anno, è sempre più bella!\" Lui sorride, pensando a quanto le tradizioni locali uniscano le persone. \"Guarda quelle bancarelle!\" esclama Luca, indicando una dove vendono cannoli e arancini. \"Dobbiamo provarli!\" Sofia annuisce e insieme si dirigono verso la dolcezza dei cannoli. Con ogni morso, il loro entusiasmo cresce, e i sapori ricordano loro perché amano Milano. Tra risate e brindisi con calici di vino locale, Luca riflette su quanto sia importante celebrare insieme. \"Ogni festa ci avvicina di più,\" pensa, mentre il sole scompare dietro l'orizzonte, lasciando un cielo rosa. La comunità è viva e pulsante, ed è proprio in ques",
+      "badDefs": [
+        {
+          "index": 12,
+          "word": "sorriso",
+          "type": "noun",
+          "originalDefinition": "A smile; a facial expression that signals warmth or happiness.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 14,
+          "word": "vivere",
+          "surface": "viva",
+          "type": "verb",
+          "originalDefinition": "To live; to be fully alive and engaged with life.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmogmhwou0006kz04sd1s5awm",
+      "slug": "trastevere-e-cacio-e-pepe",
+      "language": "italian",
+      "variant": "italy",
+      "level": "b2",
+      "topic": "nature-adventure",
+      "storyTitle": "Al Mercato di San Cosimato",
+      "storyExcerpt": "Giulia si trovava nel cuore di Trastevere, immersa nei profumi avvolgenti del mercato di San Cosimato. Con il sole che brillava sopra di lei, si sentiva ispirata, pronta a cercare gli ingredienti giusti per un autentico cacio e pepe. “Dove posso trovare il pecorino migliore?” pensò, mentre osservava le bancarelle piene di frutta e verdura fresca. Ad un tratto, un uomo dal sorriso caloroso si avvicinò. “Sei in cerca di qualcosa di speciale?” chiese Marco, un cuoco locale. “Sì, voglio preparare cacio e pepe,” rispose Giulia, la sua voce tremante per l’entusiasmo. Marco annuì, “Allora hai bisogno di pecorino romano e pepe nero, ma non dimenticare la pasta!” In quel momento, Giulia si sentì legata a Marco, entrambi condividendo una passione per la tradizione culinaria romana. “Hai qualche trucco da condividere?” domandò, curiosa. Marco sorrise, “Certo! La pasta deve essere al dente e l’acqua deve essere salata come il mare.” Proseguendo tra le bancarelle, Giulia notò un profumo irresistibile di arancini. “Dovrei assaggiarli!” pensò. Mentre prendeva un arancino, Marco commentò: “Sono il miglior spuntino dopo una lunga camminata.” Continuarono a conversare, scoprendo che entrambi amavano anche la pizza napoletana e i dolci come i cannoli. “La dolcezza è fondamentale in ogni piatto,” disse Giulia, assaporando l’arancino. Marco annuì, “Esattamente! Ogni ingrediente ha la sua storia.” Con un sacchetto pieno di ingredienti freschi, Giulia si sentì pronta per la sua avventura in cucina.",
+      "badDefs": [
+        {
+          "index": 13,
+          "word": "cuoco",
+          "type": "noun",
+          "originalDefinition": "A cook; someone who prepares food, often professionally.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 8
+        },
+        {
+          "index": 14,
+          "word": "sorriso",
+          "type": "noun",
+          "originalDefinition": "A smile; an expression of warmth shown through the face.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmogn9tbh0000l204uigclz9v",
+      "slug": "navigli-aperitivo-digitale",
+      "language": "italian",
+      "variant": "italy",
+      "level": "c1",
+      "topic": "technology-media",
+      "storyTitle": "Navigli, aperitivo digitale",
+      "storyExcerpt": "Martina si preparava per un aperitivo digitale nel suo appartamento a Milano, nel quartiere dei Navigli. Aveva invitato amici da tutta Italia, sperando di ricreare quell'atmosfera conviviale che tanto amava. Un risotto alla milanese fumante era sul tavolo, mentre un fresco spritz aspettava di essere gustato. Quando il momento arrivò, Martina si collegò alla piattaforma di videoconferenza. Lo schermo si riempì di volti sorridenti, ma subito si notarono i problemi di connessione. \"Ciao a tutti! Spero che vi piaccia il risotto!\" esclamò, affettando un sorriso, ma la visione di un amico che parlava senza suono la fece ridere. Ogni tanto, qualcuno riusciva a interrompere il silenzio con un \"Mi senti?\" o \"Riprova, per favore!\". La conversazione stentava a decollare, ma i loro tentativi di mantenere viva l'energia erano ammirevoli. \"Come va in Trastevere?\" chiese Marco, ma il suo audio si bloccò, e solo le labbra si muovevano. Martina pensò a come la tecnologia avesse il potere di avvicinarli, ma anche di separarli. \"Facciamo un gioco!\" propose. \"Parliamo delle nostre pizze preferite!\". Le risate riempirono l'aria, e i volti si animarono. \"Pizza napoletana ogni volta!\" rispose Lucia, mentre un altro amico mostrava il suo piatto di arancini. Il tempo passava e il risotto, ormai freddo, giaceva abbandonato. \"Magari dovremmo fare un aperitivo in presenza!\" suggerì con speranza Martina. Gli amici annuirono, ma sapevano che la distanza ci sarebbe stata anche in futuro. La serata si concl",
+      "badDefs": [
+        {
+          "index": 11,
+          "word": "brindisi",
+          "type": "noun",
+          "originalDefinition": "A toast; raising glasses together to mark a shared moment.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmogo38jn0001le04ho1pjdzh",
+      "slug": "cacio-e-pepe-a-trastevere",
+      "language": "italian",
+      "variant": "italy",
+      "level": "c2",
+      "topic": "cultural-immersion-travel-writing",
+      "storyTitle": "Una Sera d’Estate a Trastevere",
+      "storyExcerpt": "Luca si siede al tavolino di una trattoria affacciata su una piazzetta pittoresca di Trastevere. Il sole tramonta lentamente, dipingendo il cielo di tonalità arancioni e rosa. È una calda serata estiva e il profumo di cacio e pepe si mescola al rumore delle voci dei passanti. Mentre aspetta il suo piatto, osserva i turisti che si affollano, incuriositi dalle stradine acciottolate. I residenti, invece, si muovono con disinvoltura, come se conoscessero ogni angolo del quartiere. Luca si sente parte di questo miscuglio vibrante, sebbene sia nuovo a Roma. Alla sua destra, una coppia discute animatamente su quale trattoria visitare. \"Dovresti provare la pizza napoletana!\" dice la ragazza, sorridendo. Luca annuisce, ricordando il sapore della crosta croccante e del pomodoro fresco che aveva assaggiato qualche giorno prima. Quando finalmente il piatto di cacio e pepe arriva, il cuore di Luca batte forte. Il formaggio grattugiato si fonde con il pepe nero, creando una crema irresistibile. \"Questo è il vero sapore di Roma\", pensa, mentre il suo palato esplode di gioia. Ogni forchettata è un viaggio attraverso la tradizione culinaria della città. Guardando il movimento intorno a lui, Luca riflette su quanto sia straordinario come il quartiere riesca a mantenere il suo fascino autentico nonostante l'afflusso di visitatori. Qui, la storia e la modernità si intrecciano, proprio come le strade di Trastevere, piene di vita e di colori. Con un sorriso, alza il bicchiere di vino e brinda alla",
+      "badDefs": [
+        {
+          "index": 1,
+          "word": "piazzetta",
+          "type": "noun",
+          "originalDefinition": "A small, intimate square; a gathering spot tucked between buildings.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 8,
+          "word": "forchettata",
+          "type": "noun",
+          "originalDefinition": "A forkful; the amount of food lifted on a fork at once.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 12
+        },
+        {
+          "index": 10,
+          "word": "ristorante",
+          "type": "noun",
+          "originalDefinition": "A restaurant; a more formal place to dine than a trattoria.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 13,
+          "word": "genio",
+          "type": "noun",
+          "originalDefinition": "A genius; someone with rare brilliance in art, science, or thought.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        }
+      ]
+    }
+  ]
+}

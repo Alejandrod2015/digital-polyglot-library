@@ -1,0 +1,375 @@
+{
+  "slug": "tomaten-vom-wochenmarkt",
+  "storyId": "cmopvfx3q000332u1bi99q8tw",
+  "title": "Tomaten vom Wochenmarkt",
+  "level": "a1",
+  "topic": "food-everyday-life",
+  "storyText": "Es ist Samstagmorgen in Berlin. Die Sonne scheint hell über dem Boxhagener Platz in Friedrichshain. Auf dem Wochenmarkt stehen viele bunte Stände. Es riecht nach frischem Brot und reifem Gemüse. Mira geht langsam durch den Markt und sucht Tomaten für das Abendessen. Mira: Guten Morgen, Herr Klein! Welche Tomaten sind heute am reifsten? Ich möchte sie heute Abend essen. Herr Klein: Guten Morgen, Mira! Diese roten Tomaten aus Brandenburg sind perfekt. Sie kommen direkt aus der Region und kosten nur ein Euro pro Pfund. Mira: Das klingt wirklich gut. Schmecken sie auch süß? Ich mag süße Tomaten sehr gern. Herr Klein: Ja, sie sind sehr süß und saftig. Probier mal ein kleines Stück. Hier, bitte schön. Mira: Mmm, sie schmecken fantastisch! Ich nehme zwei Pfund, bitte. Haben Sie auch frisches Basilikum? Herr Klein: Natürlich, hier ist ein schöner Bund Basilikum. Das passt sehr gut zu den Tomaten. Möchtest du noch etwas anderes? Mira: Nein, danke, das ist alles für heute. Wie viel kostet alles zusammen? Herr Klein: Drei Euro fünfzig, bitte. Vielen Dank für deinen Einkauf. Frau Tan: Hallo Mira, hallo Herr Klein! Was kaufst du heute Schönes? Mira: Guten Morgen, Frau Tan! Ich kaufe Tomaten und Basilikum für das Abendessen. Frau Tan: Oh, dann mach doch einen einfachen Brotsalat! Du brauchst nur Brot, Tomaten, Olivenöl und Basilikum. Das schmeckt wunderbar im Sommer. Mira: Was für eine schöne Idee! Vielen Dank, Frau Tan. Ich kaufe gleich noch ein Brot. Herr Klein: Guten Appetit, Mira! Bis nächsten Samstag. Mira: Danke euch beiden! Tschüss und einen schönen Tag noch.",
+  "textLength": 1578,
+  "thirds": {
+    "beginning": [
+      0,
+      526
+    ],
+    "middle": [
+      526,
+      1052
+    ],
+    "end": [
+      1052,
+      1578
+    ]
+  },
+  "candidates": [
+    {
+      "word": "Basilikum",
+      "type": "other",
+      "score": 30.6,
+      "firstPos": 796,
+      "third": "middle"
+    },
+    {
+      "word": "Abendessen",
+      "type": "verb",
+      "score": 22.77,
+      "firstPos": 255,
+      "third": "beginning"
+    },
+    {
+      "word": "Brot",
+      "type": "other",
+      "score": 22.22,
+      "firstPos": 171,
+      "third": "beginning"
+    },
+    {
+      "word": "Schmecken",
+      "type": "verb",
+      "score": 20.6,
+      "firstPos": 553,
+      "third": "middle"
+    },
+    {
+      "word": "Samstagmorgen",
+      "type": "verb",
+      "score": 16.94,
+      "firstPos": 7,
+      "third": "beginning"
+    },
+    {
+      "word": "kaufe",
+      "type": "other",
+      "score": 16.6,
+      "firstPos": 1183,
+      "third": "end"
+    },
+    {
+      "word": "Pfund",
+      "type": "other",
+      "score": 16.6,
+      "firstPos": 515,
+      "third": "beginning"
+    },
+    {
+      "word": "Dank",
+      "type": "other",
+      "score": 15.6,
+      "firstPos": 946,
+      "third": "middle"
+    },
+    {
+      "word": "Euro",
+      "type": "other",
+      "score": 15.6,
+      "firstPos": 506,
+      "third": "beginning"
+    },
+    {
+      "word": "Wochenmarkt",
+      "type": "other",
+      "score": 15.49,
+      "firstPos": 108,
+      "third": "beginning"
+    },
+    {
+      "word": "nur",
+      "type": "other",
+      "score": 14.629999999999999,
+      "firstPos": 498,
+      "third": "beginning"
+    },
+    {
+      "word": "gut",
+      "type": "other",
+      "score": 14.6,
+      "firstPos": 273,
+      "third": "beginning"
+    },
+    {
+      "word": "süß",
+      "type": "other",
+      "score": 14.6,
+      "firstPos": 572,
+      "third": "middle"
+    },
+    {
+      "word": "Was",
+      "type": "other",
+      "score": 14.6,
+      "firstPos": 921,
+      "third": "middle"
+    },
+    {
+      "word": "frischem",
+      "type": "other",
+      "score": 12.25,
+      "firstPos": 162,
+      "third": "beginning"
+    },
+    {
+      "word": "scheint",
+      "type": "other",
+      "score": 11.79,
+      "firstPos": 42,
+      "third": "beginning"
+    },
+    {
+      "word": "einfachen",
+      "type": "verb",
+      "score": 11.6,
+      "firstPos": 1266,
+      "third": "end"
+    },
+    {
+      "word": "wunderbar",
+      "type": "adjective",
+      "score": 11.6,
+      "firstPos": 1355,
+      "third": "end"
+    },
+    {
+      "word": "reifsten",
+      "type": "verb",
+      "score": 11.44,
+      "firstPos": 328,
+      "third": "beginning"
+    },
+    {
+      "word": "langsam",
+      "type": "other",
+      "score": 11.04,
+      "firstPos": 205,
+      "third": "beginning"
+    },
+    {
+      "word": "brauchst",
+      "type": "other",
+      "score": 10.6,
+      "firstPos": 1290,
+      "third": "end"
+    },
+    {
+      "word": "frisches",
+      "type": "other",
+      "score": 10.6,
+      "firstPos": 787,
+      "third": "middle"
+    },
+    {
+      "word": "Möchtest",
+      "type": "other",
+      "score": 10.6,
+      "firstPos": 902,
+      "third": "middle"
+    },
+    {
+      "word": "nächsten",
+      "type": "verb",
+      "score": 10.6,
+      "firstPos": 1500,
+      "third": "end"
+    },
+    {
+      "word": "schmeckt",
+      "type": "other",
+      "score": 10.6,
+      "firstPos": 1346,
+      "third": "end"
+    },
+    {
+      "word": "wirklich",
+      "type": "adjective",
+      "score": 10.6,
+      "firstPos": 539,
+      "third": "middle"
+    },
+    {
+      "word": "zusammen",
+      "type": "verb",
+      "score": 10.6,
+      "firstPos": 1000,
+      "third": "middle"
+    },
+    {
+      "word": "stehen",
+      "type": "verb",
+      "score": 10.46,
+      "firstPos": 120,
+      "third": "beginning"
+    },
+    {
+      "word": "Stände",
+      "type": "other",
+      "score": 10.37,
+      "firstPos": 139,
+      "third": "beginning"
+    },
+    {
+      "word": "riecht",
+      "type": "other",
+      "score": 10.31,
+      "firstPos": 150,
+      "third": "beginning"
+    },
+    {
+      "word": "reifem",
+      "type": "other",
+      "score": 10.16,
+      "firstPos": 180,
+      "third": "beginning"
+    },
+    {
+      "word": "Gemüse",
+      "type": "other",
+      "score": 10.13,
+      "firstPos": 187,
+      "third": "beginning"
+    },
+    {
+      "word": "Sonne",
+      "type": "other",
+      "score": 9.82,
+      "firstPos": 36,
+      "third": "beginning"
+    },
+    {
+      "word": "Platz",
+      "type": "other",
+      "score": 9.64,
+      "firstPos": 75,
+      "third": "beginning"
+    },
+    {
+      "word": "anderes",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 925,
+      "third": "middle"
+    },
+    {
+      "word": "Einkauf",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 1071,
+      "third": "end"
+    },
+    {
+      "word": "fünfzig",
+      "type": "adjective",
+      "score": 9.6,
+      "firstPos": 1032,
+      "third": "middle"
+    },
+    {
+      "word": "kleines",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 671,
+      "third": "middle"
+    },
+    {
+      "word": "Probier",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 655,
+      "third": "middle"
+    },
+    {
+      "word": "Samstag",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 7,
+      "third": "beginning"
+    },
+    {
+      "word": "schönen",
+      "type": "verb",
+      "score": 9.6,
+      "firstPos": 1561,
+      "third": "end"
+    },
+    {
+      "word": "schöner",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 843,
+      "third": "middle"
+    },
+    {
+      "word": "Schönes",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 1140,
+      "third": "end"
+    },
+    {
+      "word": "Tschüss",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 1543,
+      "third": "end"
+    },
+    {
+      "word": "Welche",
+      "type": "other",
+      "score": 9.59,
+      "firstPos": 299,
+      "third": "beginning"
+    },
+    {
+      "word": "viele",
+      "type": "other",
+      "score": 9.43,
+      "firstPos": 127,
+      "third": "beginning"
+    },
+    {
+      "word": "bunte",
+      "type": "other",
+      "score": 9.4,
+      "firstPos": 133,
+      "third": "beginning"
+    },
+    {
+      "word": "möchte",
+      "type": "other",
+      "score": 9.38,
+      "firstPos": 342,
+      "third": "beginning"
+    },
+    {
+      "word": "durch",
+      "type": "other",
+      "score": 9.01,
+      "firstPos": 213,
+      "third": "beginning"
+    },
+    {
+      "word": "Es ist Samstagmorgen",
+      "type": "expression",
+      "score": 9,
+      "firstPos": 0,
+      "third": "beginning"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    {"storyId": "cmoncz14w0006ukuchilyfhwe", "word": "schlafen", "newDefinition": "Resting unconsciously through the night, restoring body and tired mind."},
+    {"storyId": "cmoncz14w000bukucosbh3fns", "word": "Bildschirm", "newDefinition": "Lit glass surface displaying images on phones, computers, and televisions."},
+    {"storyId": "cmoncz14w000bukucosbh3fns", "word": "klingeln", "newDefinition": "Producing a sharp ringing sound from phones, doorbells, or alarm clocks."},
+    {"storyId": "cmoncz14w000dukucpmxh7pdr", "word": "Brause", "newDefinition": "Cheap fizzy soft drink especially popular among German children at events."},
+    {"storyId": "cmoncz14w000fukuc94ux8jh6", "word": "Versprechen", "newDefinition": "Spoken pledge or, metaphorically, an early hint of something good arriving."},
+    {"storyId": "cmoncz14w0004ukucuasqpua4", "word": "Wochenende", "newDefinition": "Saturday and Sunday taken together as relaxing time off work."},
+    {"storyId": "cmoncz14w0004ukucuasqpua4", "word": "Entschuldigung", "newDefinition": "Polite expression used to apologize or get someone's attention courteously."},
+    {"storyId": "cmoni7j4f000032gnogvzmzb9", "word": "rutschen", "newDefinition": "Sliding unintentionally; words can slip out before the brain catches them."},
+    {"storyId": "cmoni7j4g000132gnokn5scmi", "word": "Klingel", "newDefinition": "Small mounted doorbell often standing in for harder unspoken topics."}
+  ]
+}

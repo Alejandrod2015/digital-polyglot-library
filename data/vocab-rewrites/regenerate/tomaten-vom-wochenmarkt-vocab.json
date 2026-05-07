@@ -1,0 +1,25 @@
+{
+  "vocab": [
+    { "word": "Wochenmarkt", "type": "noun", "definition": "Weekly open-air market where farmers sell fresh food and produce.", "third": "beginning" },
+    { "word": "Brot", "type": "noun", "definition": "Baked staple food made from flour, water, and yeast.", "third": "beginning" },
+    { "word": "Gemüse", "type": "noun", "definition": "Edible plants grown in gardens and eaten as part of meals.", "third": "beginning" },
+    { "word": "Sonne", "type": "noun", "definition": "Bright star in the sky giving daylight, warmth, and energy.", "third": "beginning" },
+    { "word": "Stand", "surface": "Stände", "type": "noun", "definition": "Small temporary booth where vendors display and sell their goods.", "third": "beginning" },
+    { "word": "reif", "surface": "reifsten", "type": "adjective", "definition": "Fully developed and ready for eating, especially fruits and vegetables.", "third": "beginning" },
+    { "word": "langsam", "type": "adverb", "definition": "Moving or happening with little speed; without rushing or hurrying.", "third": "beginning" },
+    { "word": "schmecken", "surface": "Schmecken", "type": "verb", "definition": "To have a particular flavor when eaten or tasted by someone.", "third": "middle" },
+    { "word": "süß", "type": "adjective", "definition": "Having a pleasant sugary flavor, like honey or ripe fruit.", "third": "middle" },
+    { "word": "probieren", "surface": "Probier", "type": "verb", "definition": "To try a small amount of food and judge its flavor.", "third": "middle" },
+    { "word": "klein", "surface": "kleines", "type": "adjective", "definition": "Of limited size; smaller than average in physical dimensions.", "third": "middle" },
+    { "word": "möchten", "surface": "Möchtest", "type": "verb", "definition": "To want or wish for something, expressed in a polite manner.", "third": "middle" },
+    { "word": "Dank", "type": "noun", "definition": "Expression of gratitude given to someone for help or kindness.", "third": "middle" },
+    { "word": "zusammen", "type": "adverb", "definition": "Joined as one group, total, or unit rather than separately.", "third": "middle" },
+    { "word": "kaufen", "surface": "kaufe", "type": "verb", "definition": "To get something by paying money for it from a seller.", "third": "end" },
+    { "word": "einfach", "surface": "einfachen", "type": "adjective", "definition": "Not complicated; easy to understand, prepare, or carry out.", "third": "end" },
+    { "word": "brauchen", "surface": "brauchst", "type": "verb", "definition": "To require something because it is necessary or useful in context.", "third": "end" },
+    { "word": "wunderbar", "type": "adjective", "definition": "Extremely pleasant; causing strong feelings of delight or admiration.", "third": "end" },
+    { "word": "Einkauf", "type": "noun", "definition": "Act of buying goods, or the items collected during shopping.", "third": "end" },
+    { "word": "Tschüss", "type": "expression", "definition": "Casual German farewell said when parting from friends or acquaintances.", "third": "end" },
+    { "word": "schön", "surface": "schönen", "type": "adjective", "definition": "Pleasing to look at, hear, or experience; visually or emotionally lovely.", "third": "end" }
+  ]
+}

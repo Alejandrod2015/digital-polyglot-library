@@ -1,0 +1,375 @@
+{
+  "slug": "beim-baecker-am-hackeschen-markt",
+  "storyId": "cmopvfeb1000132u1mvhliwq1",
+  "title": "Beim Bäcker am Hackeschen Markt",
+  "level": "a1",
+  "topic": "food-everyday-life",
+  "storyText": "Es ist Samstagmorgen am Hackeschen Markt in Berlin. Die kleine Bäckerei riecht herrlich nach frischem Brot. Vor der Tür warten ein paar Leute. Drinnen steht Frau Weber an der Theke. Sophie, die junge Bäckerin, lächelt freundlich. Sophie: Guten Morgen, Frau Weber! Schön, Sie heute wieder zu sehen. Was darf es sein? Frau Weber: Guten Morgen, Sophie! Ich nehme bitte sechs frische Brötchen. Sind sie noch warm? Sophie: Ja, sie sind ganz frisch aus dem Ofen. Möchten Sie auch ein Brot dazu? Frau Weber: Sehr gern. Bitte ein halbes Roggenbrot, geschnitten. Mein Mann mag Roggen sehr. Sophie: Natürlich. Ich schneide es für Sie. Möchten Sie sonst noch etwas, vielleicht einen Kuchen? Frau Weber: Heute nicht, danke. Mein Sohn kommt am Sonntag, dann kaufe ich Kuchen. Sophie: Schön! Das macht zusammen sieben Euro vierzig, bitte. Frau Weber: Hier sind acht Euro. Stimmt so. Einen schönen Tag, Sophie! Sophie: Vielen Dank, Frau Weber! Bis nächste Woche, und liebe Grüße an Ihren Mann. Lukas: Entschuldigung, guten Morgen. Haben Sie noch Sesambrötchen? Sophie: Guten Morgen! Ja, ich habe noch fünf Sesambrötchen. Wie viele möchten Sie? Lukas: Ich nehme bitte vier Stück. Und ein Stück Käsekuchen, bitte. Sophie: Gern. Der Käsekuchen ist heute besonders gut. Ist er für jemand Besonderen? Lukas: Ja, meine Schwester besucht mich heute. Sie liebt Käsekuchen aus Berlin. Sophie: Wie schön! Wohnt sie weit weg? Lukas: Sie wohnt in Hamburg und kommt nur einmal im Monat. Sophie: Dann wird sie sich bestimmt freuen. Das macht sechs Euro zwanzig. Lukas: Hier, bitte. Vielen Dank und einen schönen Samstag! Sophie: Ihnen auch! Grüßen Sie Ihre Schwester von der Bäckerei!",
+  "textLength": 1655,
+  "thirds": {
+    "beginning": [
+      0,
+      551
+    ],
+    "middle": [
+      551,
+      1102
+    ],
+    "end": [
+      1102,
+      1655
+    ]
+  },
+  "candidates": [
+    {
+      "word": "Käsekuchen",
+      "type": "verb",
+      "score": 26.6,
+      "firstPos": 1178,
+      "third": "end"
+    },
+    {
+      "word": "Möchten",
+      "type": "verb",
+      "score": 23.75,
+      "firstPos": 457,
+      "third": "beginning"
+    },
+    {
+      "word": "Sesambrötchen",
+      "type": "verb",
+      "score": 23.6,
+      "firstPos": 1031,
+      "third": "middle"
+    },
+    {
+      "word": "Bäckerei",
+      "type": "other",
+      "score": 21.7,
+      "firstPos": 63,
+      "third": "beginning"
+    },
+    {
+      "word": "Euro",
+      "type": "other",
+      "score": 20.6,
+      "firstPos": 804,
+      "third": "middle"
+    },
+    {
+      "word": "Schwester",
+      "type": "other",
+      "score": 20.6,
+      "firstPos": 1298,
+      "third": "end"
+    },
+    {
+      "word": "schönen",
+      "type": "verb",
+      "score": 18.6,
+      "firstPos": 875,
+      "third": "middle"
+    },
+    {
+      "word": "Kuchen",
+      "type": "verb",
+      "score": 17.6,
+      "firstPos": 672,
+      "third": "middle"
+    },
+    {
+      "word": "Brot",
+      "type": "other",
+      "score": 17.55,
+      "firstPos": 102,
+      "third": "beginning"
+    },
+    {
+      "word": "nehme",
+      "type": "other",
+      "score": 17.29,
+      "firstPos": 354,
+      "third": "beginning"
+    },
+    {
+      "word": "sechs",
+      "type": "other",
+      "score": 17.23,
+      "firstPos": 366,
+      "third": "beginning"
+    },
+    {
+      "word": "Samstagmorgen",
+      "type": "verb",
+      "score": 16.94,
+      "firstPos": 7,
+      "third": "beginning"
+    },
+    {
+      "word": "kommt",
+      "type": "other",
+      "score": 16.6,
+      "firstPos": 722,
+      "third": "middle"
+    },
+    {
+      "word": "macht",
+      "type": "other",
+      "score": 16.6,
+      "firstPos": 782,
+      "third": "middle"
+    },
+    {
+      "word": "Stück",
+      "type": "other",
+      "score": 16.6,
+      "firstPos": 1157,
+      "third": "end"
+    },
+    {
+      "word": "Wohnt",
+      "type": "other",
+      "score": 16.6,
+      "firstPos": 1380,
+      "third": "end"
+    },
+    {
+      "word": "Dank",
+      "type": "other",
+      "score": 15.6,
+      "firstPos": 705,
+      "third": "middle"
+    },
+    {
+      "word": "gern",
+      "type": "other",
+      "score": 15.6,
+      "firstPos": 506,
+      "third": "beginning"
+    },
+    {
+      "word": "Mann",
+      "type": "other",
+      "score": 15.6,
+      "firstPos": 559,
+      "third": "middle"
+    },
+    {
+      "word": "Mein",
+      "type": "other",
+      "score": 15.6,
+      "firstPos": 554,
+      "third": "middle"
+    },
+    {
+      "word": "Wie",
+      "type": "other",
+      "score": 14.6,
+      "firstPos": 281,
+      "third": "beginning"
+    },
+    {
+      "word": "freundlich",
+      "type": "adjective",
+      "score": 13.95,
+      "firstPos": 218,
+      "third": "beginning"
+    },
+    {
+      "word": "geschnitten",
+      "type": "verb",
+      "score": 13.6,
+      "firstPos": 541,
+      "third": "beginning"
+    },
+    {
+      "word": "herrlich",
+      "type": "adjective",
+      "score": 12.64,
+      "firstPos": 79,
+      "third": "beginning"
+    },
+    {
+      "word": "Besonderen",
+      "type": "verb",
+      "score": 12.6,
+      "firstPos": 1269,
+      "third": "end"
+    },
+    {
+      "word": "Roggenbrot",
+      "type": "other",
+      "score": 12.6,
+      "firstPos": 529,
+      "third": "beginning"
+    },
+    {
+      "word": "vielleicht",
+      "type": "other",
+      "score": 12.6,
+      "firstPos": 655,
+      "third": "middle"
+    },
+    {
+      "word": "frischem",
+      "type": "other",
+      "score": 12.58,
+      "firstPos": 93,
+      "third": "beginning"
+    },
+    {
+      "word": "Bäckerin",
+      "type": "other",
+      "score": 12.01,
+      "firstPos": 200,
+      "third": "beginning"
+    },
+    {
+      "word": "besonders",
+      "type": "other",
+      "score": 11.6,
+      "firstPos": 1236,
+      "third": "end"
+    },
+    {
+      "word": "Drinnen",
+      "type": "verb",
+      "score": 11.31,
+      "firstPos": 143,
+      "third": "beginning"
+    },
+    {
+      "word": "Brötchen",
+      "type": "verb",
+      "score": 11.17,
+      "firstPos": 380,
+      "third": "beginning"
+    },
+    {
+      "word": "lächelt",
+      "type": "other",
+      "score": 10.98,
+      "firstPos": 210,
+      "third": "beginning"
+    },
+    {
+      "word": "kleine",
+      "type": "other",
+      "score": 10.73,
+      "firstPos": 56,
+      "third": "beginning"
+    },
+    {
+      "word": "riecht",
+      "type": "other",
+      "score": 10.67,
+      "firstPos": 72,
+      "third": "beginning"
+    },
+    {
+      "word": "bestimmt",
+      "type": "other",
+      "score": 10.6,
+      "firstPos": 1486,
+      "third": "end"
+    },
+    {
+      "word": "schneide",
+      "type": "other",
+      "score": 10.6,
+      "firstPos": 604,
+      "third": "middle"
+    },
+    {
+      "word": "zusammen",
+      "type": "verb",
+      "score": 10.6,
+      "firstPos": 788,
+      "third": "middle"
+    },
+    {
+      "word": "warten",
+      "type": "verb",
+      "score": 10.43,
+      "firstPos": 120,
+      "third": "beginning"
+    },
+    {
+      "word": "frische",
+      "type": "other",
+      "score": 10.2,
+      "firstPos": 93,
+      "third": "beginning"
+    },
+    {
+      "word": "Markt",
+      "type": "other",
+      "score": 9.85,
+      "firstPos": 35,
+      "third": "beginning"
+    },
+    {
+      "word": "besucht",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 1308,
+      "third": "end"
+    },
+    {
+      "word": "nächste",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 933,
+      "third": "middle"
+    },
+    {
+      "word": "Samstag",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 7,
+      "third": "beginning"
+    },
+    {
+      "word": "Sonntag",
+      "type": "other",
+      "score": 9.6,
+      "firstPos": 731,
+      "third": "middle"
+    },
+    {
+      "word": "vierzig",
+      "type": "adjective",
+      "score": 9.6,
+      "firstPos": 809,
+      "third": "middle"
+    },
+    {
+      "word": "zwanzig",
+      "type": "adjective",
+      "score": 9.6,
+      "firstPos": 1524,
+      "third": "end"
+    },
+    {
+      "word": "Leute",
+      "type": "other",
+      "score": 9.34,
+      "firstPos": 136,
+      "third": "beginning"
+    },
+    {
+      "word": "steht",
+      "type": "other",
+      "score": 9.28,
+      "firstPos": 151,
+      "third": "beginning"
+    },
+    {
+      "word": "Theke",
+      "type": "other",
+      "score": 9.13,
+      "firstPos": 175,
+      "third": "beginning"
+    }
+  ]
+}

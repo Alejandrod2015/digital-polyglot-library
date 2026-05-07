@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    {"storyId": "cmocxf2rm0001ie040t5bt276", "word": "piatto", "newDefinition": "Round dish holding food, also naming the meal served on it."},
+    {"storyId": "cmocxf2rm0002ie04b150xy1v", "word": "sorriso", "newDefinition": "Warm upward curve of lips signaling friendliness or quiet pleasure."},
+    {"storyId": "cmogli5yt0001l404jj9zsf1a", "word": "sorridere", "newDefinition": "Curving the lips upward to show warmth, pleasure, or kindness."},
+    {"storyId": "cmoglxwmx0002la047mrxuqmo", "word": "sorridere", "newDefinition": "Curving the lips upward to express warmth or pleasure outward."},
+    {"storyId": "cmoglxwmx0005la04zoiibtf1", "word": "storia", "newDefinition": "Narrative account of events, real or imagined, told to listeners."},
+    {"storyId": "cmoglxwmx0003la04nz6qydo5", "word": "sorriso", "newDefinition": "Warm facial expression curving lips upward to signal happiness."},
+    {"storyId": "cmoglxwmx0003la04nz6qydo5", "word": "vivere", "newDefinition": "Being fully alive and engaged with the rhythms of life."},
+    {"storyId": "cmogmhwou0006kz04sd1s5awm", "word": "cuoco", "newDefinition": "Skilled person preparing meals, often as a working profession."},
+    {"storyId": "cmogmhwou0006kz04sd1s5awm", "word": "sorriso", "newDefinition": "Warm expression on the face, lips curved upward in greeting."},
+    {"storyId": "cmogn9tbh0000l204uigclz9v", "word": "brindisi", "newDefinition": "Raising glasses together with words to celebrate a shared moment."},
+    {"storyId": "cmogo38jn0001le04ho1pjdzh", "word": "piazzetta", "newDefinition": "Small intimate square tucked between buildings, perfect for gathering."},
+    {"storyId": "cmogo38jn0001le04ho1pjdzh", "word": "forchettata", "newDefinition": "Quantity of food lifted onto a fork in one bite."},
+    {"storyId": "cmogo38jn0001le04ho1pjdzh", "word": "ristorante", "newDefinition": "Formal dining establishment serving full meals at separate tables."},
+    {"storyId": "cmogo38jn0001le04ho1pjdzh", "word": "genio", "newDefinition": "Rare brilliance in someone shaping art, science, or thought."}
+  ]
+}

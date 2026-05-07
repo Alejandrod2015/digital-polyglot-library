@@ -33,7 +33,7 @@ const VOICE_MAP: Record<string, string> = {
   narrator: V.moritz,
   Eva: V.gesaTess,
   Lara: V.enniah,
-  Marc: V.sebastian,
+  Marc: V.luca,
 };
 
 const AMBIENT_PATH = path.resolve(

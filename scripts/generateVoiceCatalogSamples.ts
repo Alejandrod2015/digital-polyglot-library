@@ -80,7 +80,7 @@ async function run() {
   const voices: { name: string; id: string }[] = [
     { name: "Moritz Morgenstern",  id: GERMAN_DIALOGUE_VOICES.moritz },
     { name: "ENNIAH",              id: GERMAN_DIALOGUE_VOICES.enniah },
-    { name: "Sebastian",           id: GERMAN_DIALOGUE_VOICES.sebastian },
+    { name: "Luca",                id: GERMAN_DIALOGUE_VOICES.luca },
     { name: "Eleonore",            id: GERMAN_DIALOGUE_VOICES.eleonore },
   ];
 

@@ -1,0 +1,438 @@
+{
+  "stories": [
+    {
+      "storyId": "cmogo94ew0001jv040vlzny18",
+      "slug": "trastevere-al-tramonto-2",
+      "language": "italian",
+      "variant": "italy",
+      "level": "c2",
+      "topic": "cultural-immersion-travel-writing",
+      "storyTitle": "Trastevere al Tramonto",
+      "storyExcerpt": "Al tramonto, Marco si perde tra le vie acciottolate di Trastevere, immerso nel fascino dei colori dorati che avvolgono il quartiere. I suoi pensieri vagano mentre il sole si abbassa, dipingendo il cielo di sfumature calde e invitanti. Si ferma in una piccola trattoria, dove un profumo inebriante di cacio e pepe lo accoglie. «Che piacere», pensa, osservando il cuoco che mescola gli ingredienti con maestria. Il piatto, semplicemente delizioso, rappresenta la tradizione culinaria romana. L'atmosfera è vivace; i musicisti di strada suonano melodie familiari, creando un sottofondo perfetto. Marco sente la felicità della vita romana che scorre intorno a lui: le risate, le chiacchiere, le famiglie che si riuniscono per la cena. È un momento di pura gioia. Ogni morso di cacio e pepe lo riporta a ricordi d'infanzia. La semplicità di questo piatto gli fa apprezzare la bellezza autentica della cucina italiana. Il sale e il pepe si fondono in un'armonia perfetta, ogni assaggio è un viaggio nei sapori. Marco osserva i passanti mentre riflette sulla vita. I colori del tramonto si mescolano ai viveri dei ristoranti, creando un quadro da ammirare. «Roma è davvero unica», si dice. I pensieri di Marco si perdono nella magia del momento. Quando finisce il pasto, decide di passeggiare lungo le vie di Trastevere. Ogni angolo racconta una storia, ogni pietra conserva un segreto. Le luci delle lanterne cominciano a brillare mentre la notte avanza, e Marco si sente parte di qualcosa di straordinario",
+      "badDefs": [
+        {
+          "index": 8,
+          "word": "serata",
+          "surface": "sera",
+          "type": "noun",
+          "originalDefinition": "An evening, typically spent socializing or relaxing after the day.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 16,
+          "word": "sorridere",
+          "type": "verb",
+          "originalDefinition": "To smile; to show warmth or pleasure with the face.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmolrnlda000532s9ke3pqnyu",
+      "slug": "cacio-e-pepe-a-trastevere-2",
+      "language": "italian",
+      "variant": "italy",
+      "level": "a1",
+      "topic": "food-everyday-life",
+      "storyTitle": "Cacio e Pepe a Trastevere",
+      "storyExcerpt": "Un profumo di formaggio riempie l'aria. Giulia cammina per le stradine di Trastevere. Le strade sono strette e acciottolate. 'Ho bisogno di ispirazione,' pensa. Dopo un po', vede una trattoria. La trattoria è piccola e accogliente. Giulia entra e si siede. 'Un piatto di cacio e pepe, per favore,' dice al cameriere. Il cameriere sorride. 'Subito!' Risponde. Giulia guarda il menu. I colori del cibo sono vivaci. Sente la musica di un chitarrista fuori. 'Che bel suono,' pensa. Arriva il piatto. Il cacio e pepe è caldo e profumato. Giulia prende una forchetta e assaggia. 'È delizioso!' esclama. Un uomo anziano vicino a lei la guarda. 'Cacio e pepe è un piatto semplice, ma buono,' dice. Giulia sorride e risponde, 'Sì, è vero!'. L'uomo racconta storie di Trastevere. Parla di artisti e di feste. Giulia ascolta con attenzione. Le storie la ispirano. 'Grazie per le storie,' dice Giulia. 'Possono aiutarmi nel mio progetto.' L'uomo sorride. 'Spero di sì. Trastevere è piena di vita.' Giulia guarda il suo piatto. Pensa a come scrivere. La cucina è un'arte, come la storia. Un'idea nuova nasce nella sua mente.",
+      "badDefs": [
+        {
+          "index": 4,
+          "word": "camere",
+          "surface": "cameriere",
+          "type": "noun",
+          "originalDefinition": "A waiter; the person who serves food and drinks at restaurants.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 7,
+          "word": "suono",
+          "type": "noun",
+          "originalDefinition": "A sound; what your ears pick up from voices or instruments.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 8,
+          "word": "forchetta",
+          "type": "noun",
+          "originalDefinition": "A fork; a small utensil with prongs used for eating.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 14,
+          "word": "progetto",
+          "type": "noun",
+          "originalDefinition": "A project; a planned piece of work with a goal.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 17,
+          "word": "scrivere",
+          "type": "verb",
+          "originalDefinition": "To write; to put words down on paper or screen.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 18,
+          "word": "ascoltare",
+          "surface": "ascolta",
+          "type": "verb",
+          "originalDefinition": "To listen; to pay close attention to sounds or words.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmolsbuwa000d32s9a5mvwfrc",
+      "slug": "quartieri-spagnoli-pizza-margherita-5",
+      "language": "italian",
+      "variant": "italy",
+      "level": "a1",
+      "topic": "food-everyday-life",
+      "storyTitle": "Quartieri Spagnoli, pizza margherita",
+      "storyExcerpt": "Il forno è caldo e Marco sente il profumo della mozzarella. Oggi è una serata intensa. I turisti aspettano con pazienza. 'Una pizza margherita, per favore!' dice una donna. Marco sorride e inizia a lavorare. La farina è bianca e leggera. Marco stende l'impasto con le mani. 'Devo muovermi,' pensa. La fila cresce. Ma all'improvviso, il forno fa un rumore strano. 'No, no, no!' Marco è preoccupato. La pizza deve cuocere. Un uomo con una maglietta blu entra. 'Cosa succede?' chiede. 'Il forno non funziona!' risponde Marco, ansioso. 'Prova a controllare la temperatura,' suggerisce l'uomo. Marco annuisce e apre il forno. È troppo freddo. La donna aspetta. 'Dove è la mia pizza?' chiede. Marco si sente in difficoltà. 'Scusa, un momento!' dice. Aggiusta la temperatura e aspetta. Il forno inizia a scaldarsi. Finalmente, dopo pochi minuti, il forno è caldo. Marco mette la pizza dentro. 'Grazie per l'aiuto!' dice all'uomo. 'Prego,' risponde l'uomo, sorridendo. Marco guarda la pizza e spera. La serata non è finita. Quando la pizza è pronta, il profumo riempie la pizzeria. Marco la tira fuori. 'Ecco la tua pizza!' dice, felice. La donna sorride e assaggia. 'È deliziosa!' esclama. Marco sorride, sollevato. La serata va avanti.",
+      "badDefs": [
+        {
+          "index": 0,
+          "word": "forno",
+          "type": "noun",
+          "originalDefinition": "An oven; an enclosed space heated for baking food inside.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 4,
+          "word": "turista",
+          "type": "noun",
+          "originalDefinition": "A tourist; someone traveling for pleasure or to see new places.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 5,
+          "word": "cuocere",
+          "type": "verb",
+          "originalDefinition": "To cook; to prepare food using heat from an oven.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 8,
+          "word": "sorriso",
+          "type": "noun",
+          "originalDefinition": "A smile; the friendly curve of lips showing joy.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 9
+        },
+        {
+          "index": 17,
+          "word": "serata",
+          "type": "noun",
+          "originalDefinition": "An evening, often spent socializing, working, or relaxing with others.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmomyotyr0001328dkfucstiz",
+      "slug": "oltrarno-bistecca-fiorentina-9",
+      "language": "italian",
+      "variant": "italy",
+      "level": "a1",
+      "topic": "food-everyday-life",
+      "storyTitle": "Oltrarno, bistecca fiorentina",
+      "storyExcerpt": "Nel cuore dell'Oltrarno, a Firenze, c'è un'osteria piccola e accogliente. Marco, un giovane appassionato di cucina, entra con grande entusiasmo. Oggi, vuole mangiare una bistecca fiorentina. Il profumo della carne grigliata è delizioso. Marco si siede al tavolo e guarda il menù. È un po' confuso. Ci sono molti piatti tipici. Mentre aspetta, nota una coppia di turisti. I due sembrano in difficoltà con il menù. Marco decide di aiutarli. “Ciao!” dice Marco. “Posso aiutarvi?” La coppia sorride e risponde, “Sì, per favore! Non capiamo tutto.” Marco spiega i piatti. “La bistecca fiorentina è molto buona. È grande e saporita!” I turisti ascoltano con attenzione. “E cosa ci consiglieresti?” chiedono. “Potete provare anche i cantucci con il vin santo. Sono dolci tipici,” risponde Marco con un sorriso. La coppia sembra felice. “Grazie! Non conosciamo la cucina toscana,” dicono. Marco racconta storie della tradizione culinaria di Firenze. “In estate, mangiamo spesso all’aperto nei ristoranti di Oltrarno. È molto bello.” Il cameriere porta finalmente la bistecca fiorentina. Marco guarda il piatto e sente l’acquolina in bocca. “Wow! È fantastica!” esclama. I turisti ridono e dicono, “Non vediamo l'ora di provarla!” La serata continua con risate e buon cibo. Marco si sente felice di condividere la sua passione per la cucina. “La cucina è un modo per unire le persone,” pensa. E così, la cena diventa un bellissimo scambio culturale.",
+      "badDefs": [
+        {
+          "index": 12,
+          "word": "mangiare",
+          "originalDefinition": "To eat; the act of consuming food at a meal.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmoncz14x000hukuc6c9t367z",
+      "slug": "newsroom-am-spittelmarkt",
+      "language": "german",
+      "variant": "germany",
+      "level": "c1",
+      "topic": "technology-media",
+      "storyTitle": "Newsroom am Spittelmarkt",
+      "storyExcerpt": "Olga liest die Mail das dritte Mal. Sie hat das Gefühl, dass das Wiederholen nichts ändert, aber tut es trotzdem. Auf dem Bildschirm steht: \"Ende der Print-Ausgabe in sechs Monaten.\" Der Newsroom am Spittelmarkt ist still wie an einem Sonntag. Donnerstagvormittag, halb elf. Drei Kollegen tippen, einer telefoniert leise mit einer Quelle. Olga erinnert sich, dass es hier einmal anders klang. 1999 hatte sie angefangen, vier Jahre nach dem Mauerfall, als das Telefon noch an einer Spirale hing und ein Anruf in den Newsroom oft bedeutete: jemand möchte etwas loswerden, was keiner laut sagen konnte. Sie hat zweiundzwanzig Jahre Schlagzeilen geschrieben, geändert, am Druckermorgen noch einmal entschärft. Sie weiß noch, wie der Tonfall klang, mit dem ein erfahrener Setzer \"die Eins steht\" rief. Heute klingelt das Telefon kaum noch. Quellen melden sich auf Signal. Pressemitteilungen kommen über Newsletter. Die Generation, die sie ausgebildet hat, googelt sich Hintergründe so präzise zusammen, dass es manchmal weh tut, ihnen zuzuschauen. Olga ist nicht naiv. Eine gedruckte Zeitung im Jahr 2025 ist eine Liebeserklärung, kein Geschäftsmodell. Die Anzeigen sind weg, die Leser sterben langsamer, aber sie sterben. Sie weiß, dass die Entscheidung richtig ist. Sie unterschreibt sie innerlich, bevor jemand sie um Zustimmung bittet. Trotzdem. Sie geht zum Fenster und schaut auf die Leipziger Straße. Eine Straßenbahn schleift den Bogen. Sie denkt daran, dass jeder Beruf irgendwann diesen Donnerst",
+      "badDefs": [
+        {
+          "index": 1,
+          "word": "Bildschirm",
+          "type": "noun",
+          "originalDefinition": "A screen, especially a computer monitor used for reading or writing.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        }
+      ]
+    },
+    {
+      "storyId": "cmoncz14x000lukuc78clupr3",
+      "slug": "die-hexen-vom-brocken",
+      "language": "german",
+      "variant": "germany",
+      "level": "c2",
+      "topic": "folklore-legends",
+      "storyTitle": "Die Hexen vom Brocken",
+      "storyExcerpt": "Die Gruppe vor ihr atmet schwer. April auf dem Brocken: nasser Schnee, sechs Grad, ein Wind, der jeden Reim aus der Geschichte schält. Vera hat diesen Spaziergang in acht Jahren vielleicht zweihundert Mal gegangen. \"Hier\", sagt sie, deutet auf den runden Granitgipfel, \"trafen sich angeblich die Hexen Mitteleuropas in der Walpurgisnacht. Auf Besen geritten, wenn man der Erzählung folgt. Goethe hat die Szene in den Faust eingebaut und damit der Region einen Tourismus garantiert, der sonst nicht existieren würde.\" Schweigen. Acht Touristen, die Hände in den Anoraktaschen. Niemand fragt nach. Andere Gruppen lachen an dieser Stelle. Diese starrt nur auf die Steinplatte. Vera merkt, dass sie heute kürzer formuliert. Sonst hätte sie hinzugefügt, dass die kirchlichen Quellen die Hexenflüge als Erfindung der Inquisition zur Legitimation der Verfolgung beschrieben. Heute lässt sie es weg. Wozu jemandem, der schon nicht mehr glaubt, auch das Gerüst der Geschichte demontieren? Sie merkt es: Die Erzählung passt sich an. In jeder Gruppe wählt sie unbewusst andere Akzente. Skeptiker bekommen die Inquisition. Romantiker bekommen Goethe. Schulklassen bekommen die Besen. Was bleibt, fragt sie sich heute zum ersten Mal so deutlich, wenn niemand mehr daran glaubt? Folklore, sagt der Veranstalter. Sie misstraut dem Wort. Folklore klingt nach Konservierung, nach Vitrine. Eher, denkt sie, ist es ein Gefäß, das immer wieder mit etwas anderem gefüllt wird. Mit der Angst der einen, der Sehnsucht der a",
+      "badDefs": [
+        {
+          "index": 0,
+          "word": "Reim",
+          "type": "noun",
+          "originalDefinition": "A rhyme; loosely, the rhythmic logic and coherence of a story.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 5,
+          "word": "Besen",
+          "type": "noun",
+          "originalDefinition": "A broom; in legend the stylised aerial vehicle, otherwise a household tool.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 12
+        },
+        {
+          "index": 8,
+          "word": "Erfindung",
+          "type": "noun",
+          "originalDefinition": "An invention, fictional or technological; here, narratives constructed to justify persecution.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 17,
+          "word": "Sehnsucht",
+          "type": "noun",
+          "originalDefinition": "A deep, often unfulfillable longing, central to German Romantic literature traditions.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 18,
+          "word": "Nieselregen",
+          "type": "noun",
+          "originalDefinition": "A fine, persistent drizzle, common on German peaks in spring weather.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        }
+      ]
+    },
+    {
+      "storyId": "cmoncz14w000cukucqfl0hlf8",
+      "slug": "ruckkehr-an-den-schlachtensee",
+      "language": "german",
+      "variant": "germany",
+      "level": "b1",
+      "topic": "personal-stories-memories",
+      "storyTitle": "Rückkehr an den Schlachtensee",
+      "storyExcerpt": "Mira steigt am S-Bahnhof Schlachtensee aus. Sie war seit zehn Jahren nicht mehr hier. Der Bahnhof sieht fast genauso aus wie früher. Nur das Café an der Ecke ist neu. Sie geht den Weg zum See. Es ist später Nachmittag, ein Werktag, der Wald fast leer. Nur ein paar Jogger laufen vorbei. Mira mag die Stille. Als Kind kam sie jedes Wochenende hierher. Ihre Großmutter wohnte in der Nähe in einem kleinen Reihenhaus in Zehlendorf. Sie nahm Mira mit zum Schwimmen, zum Picknick, zum Brotwerfen für die Enten. Mira erreicht das Ufer. Das Wasser glitzert im niedrigen Licht. Sie setzt sich auf eine alte Holzbank. Genau diese Bank kennt sie. Hier saßen sie damals oft. \"Schau, wie blau das Wasser ist,\" hatte ihre Großmutter immer gesagt. \"Schöner als jedes Meer.\" Mira lächelt leise bei der Erinnerung. Damals fand sie diesen Satz übertrieben. Jetzt versteht sie ihn. Eine Ente schwimmt nahe ans Ufer. Mira hat kein Brot dabei. \"Tut mir leid,\" murmelt sie. Die Ente schwimmt weiter, ohne enttäuscht zu wirken. Mira atmet tief ein. Es riecht nach Kiefern und nasser Erde. Ihre Großmutter starb vor drei Jahren. Mira war damals beruflich in München. Sie kam zur Beerdigung, dann nicht mehr zurück. Berlin tat plötzlich weh. Heute ist sie wieder hier, aber nicht weil sie etwas Bestimmtes will. Ein Vater geht mit seiner kleinen Tochter vorbei. Das Mädchen lacht und zeigt auf eine Möwe. Mira spürt etwas in der Brust. Etwas Warmes und Trauriges zugleich. Es ist nicht schlimm. Es fühlt sich richtig an. Sie",
+      "badDefs": [
+        {
+          "index": 1,
+          "word": "Werktag",
+          "type": "noun",
+          "originalDefinition": "A weekday; a regular working day outside Sundays and holidays.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 5,
+          "word": "Erinnerung",
+          "type": "noun",
+          "originalDefinition": "A memory; a recollection of something experienced in the past.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 7,
+          "word": "murmeln",
+          "surface": "murmelt",
+          "type": "verb",
+          "originalDefinition": "To murmur; to speak softly, almost under one's breath.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 9
+        },
+        {
+          "index": 9,
+          "word": "atmen",
+          "surface": "atmet",
+          "type": "verb",
+          "originalDefinition": "To breathe; to draw air into and release from the lungs.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 10,
+          "word": "Beerdigung",
+          "type": "noun",
+          "originalDefinition": "A funeral; the ceremony for burying or honoring the dead.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 11,
+          "word": "weh tun",
+          "surface": "tat weh",
+          "type": "expression",
+          "originalDefinition": "To hurt, in body or in heart; to cause pain.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 13,
+          "word": "Brust",
+          "type": "noun",
+          "originalDefinition": "The chest; in stories, where strong emotions are often felt.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmoncz14w0009ukuca9dj5c4q",
+      "slug": "versp-tung-in-frankfurt",
+      "language": "german",
+      "variant": "germany",
+      "level": "b1",
+      "topic": "travel-discovery",
+      "storyTitle": "Verspätung in Frankfurt",
+      "storyExcerpt": "Lars sitzt im Terminal B des Frankfurter Flughafens. Auf der Anzeigetafel: \"LH 1234 Lissabon — verspätet, neue Abflugzeit 21:30.\" Er schaut auf die Uhr. 19:15. Über zwei Stunden Wartezeit. Die Hochzeit von Jonas beginnt um 22 Uhr in Lissabon. Selbst wenn der Flug pünktlich um halb zehn losgeht, kommt Lars erst um Mitternacht an. Vielleicht später. Er kauft sich einen Kaffee. Vier Euro fünfzig. Lars zuckt leicht, zahlt aber. Er setzt sich neben einen Mann, der laut telefoniert. Niemand spricht miteinander hier. Lars öffnet das Foto von Jonas und ihm aus der Studienzeit. Sie waren beste Freunde damals. Sie haben sich seit fast vier Jahren nicht mehr getroffen. Warum fliegt er eigentlich? Jonas hatte vor zwei Monaten angerufen. \"Ich heirate. Du musst kommen.\" Lars hatte sofort \"natürlich\" gesagt. Aber das Gefühl danach war kompliziert. Vielleicht aus Pflichtgefühl. Vielleicht um zu zeigen, dass die Freundschaft noch existiert. Vielleicht auch, weil er hofft, dass dort etwas wieder beginnt, was schon lange leise verschwunden ist. Eine Durchsage: \"Wir bedauern, der Flug nach Lissabon ist auf 22:00 Uhr verschoben.\" Stille im Terminal. Ein paar Leute fluchen leise. Lars atmet aus. Er rechnet noch einmal. Selbst mit Glück wäre er erst um zwei Uhr morgens da. Die Hochzeit wäre vorbei. Er würde nur zur Aftershow kommen, wenn überhaupt jemand wartet. Soll er einfach umkehren? Niemand würde es ihm vorwerfen. Niemand würde es überhaupt merken, außer Jonas vielleicht, in einem Moment am nä",
+      "badDefs": [
+        {
+          "index": 0,
+          "word": "Verspätung",
+          "type": "noun",
+          "originalDefinition": "A delay, especially affecting trains, flights, or scheduled appointments.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 9
+        },
+        {
+          "index": 16,
+          "word": "Entscheidung",
+          "type": "noun",
+          "originalDefinition": "A decision; the moment of choosing one option over alternative possibilities.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 19,
+          "word": "merken",
+          "type": "verb",
+          "originalDefinition": "To notice, realize, or remember something through perception or attention.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmoncz14x000mukuckdq7tjw5",
+      "slug": "auf-der-glienicker-brucke",
+      "language": "german",
+      "variant": "germany",
+      "level": "c2",
+      "topic": "opinions-debate",
+      "storyTitle": "Auf der Glienicker Brücke",
+      "storyExcerpt": "Auf der Glienicker Brücke pfeift der Aprilwind so, als wollte er die Trennung zwischen Berlin und Potsdam noch einmal nachzeichnen, fünfunddreißig Jahre nach ihrem Ende. Karl und Heike sind kurz vor der Mitte stehen geblieben. Wie immer. Auf jener weißen Linie, die früher Grenze war und heute eine Touristenattraktion mit Foto-Smartphone-Stativ. Sie haben den ritualisierten Halt nie kommentiert. \"Das Museum hat wieder neu konzeptioniert\", sagt Heike, \"ich finde, sie schreiben unsere Erfahrung zu glatt zusammen.\" \"Eure Erfahrung\", korrigiert Karl, freundlich, aber präzise. \"Ich kann mich nicht hineinerzählen.\" \"Genau das meine ich. Wer schreibt, wenn keiner aus dem Osten am Schreibtisch sitzt?\" \"Sitzen denn keine? Ich dachte, das hätte sich…\" \"Nominell. Tatsächlich kommen die meisten Kuratoren über westdeutsche Lehrstühle. Du weißt, wie Karrieren laufen.\" Karl nickt, hört aber nicht auf zu denken. \"Aber wenn nur Erlebte erzählen dürfen, was bleibt dann vom historischen Diskurs übrig? Erinnerung ist auch eine intellektuelle Leistung, nicht nur Erfahrung.\" \"Klar. Aber ohne den Anspruch der Erlebten wird sie schnell Belletristik.\" Sie schweigen einen Moment, beobachten ein Boot, das unter ihnen den Jungfernsee teilt. Ein Reiher steht auf dem Steg, regungslos, fast preußisch. \"Weißt du\", sagt Heike leiser, \"wir streiten um Dinge, über die wir uns früher nie streiten mussten, weil wir uns gegenseitig nicht gefunden hätten.\" \"Das ist\", sagt Karl, \"vielleicht das Schönste, was unsere ",
+      "badDefs": [
+        {
+          "index": 0,
+          "word": "pfeifen",
+          "surface": "pfeift",
+          "type": "verb",
+          "originalDefinition": "To whistle, by mouth or by wind passing through a narrow gap.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 12
+        },
+        {
+          "index": 1,
+          "word": "Trennung",
+          "type": "noun",
+          "originalDefinition": "A separation, including political division or the parting of two people.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        }
+      ]
+    }
+  ]
+}

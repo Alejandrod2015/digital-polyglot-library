@@ -78,7 +78,11 @@ function shortenContext(input?: string, maxLength = 72): string | undefined {
   return `${clean.slice(0, maxLength - 1).trimEnd()}…`;
 }
 
-function toBlocks(text: string): StoryBlock[] {
+function toBlocks(text: string | null | undefined): StoryBlock[] {
+  // Defensa: aunque el tipado dice `string`, en runtime puede llegar
+  // undefined (selection construida desde una story sin `text`
+  // populated). Antes esto crasheaba en el `text.replace` de abajo.
+  if (typeof text !== "string" || text.length === 0) return [];
   const blocks: StoryBlock[] = [];
   const blockRegex = /<(p|blockquote)[^>]*>([\s\S]*?)<\/\1>/gi;
   let match: RegExpExecArray | null = blockRegex.exec(text);
@@ -224,23 +228,26 @@ function renderHighlightedParagraph(
     const isActualHighlight = highlightStyle !== baseTextStyle;
 
     if (isActualHighlight) {
-      // Wrap the highlighted word in an inline <View> so the background
-      // respects borderRadius (iOS's TextKit ignores borderRadius on a
-      // nested <Text>, but a <View> inline inside a <Text> renders via
-      // NSTextAttachment and keeps its own styles, including rounded
-      // corners). The inner <Text> still owns the onPress so tapping the
-      // pill opens the vocab popup.
+      // Wrapper two-layer y styles IDÉNTICOS al path karaoke
+      // (`karaokeWordOuter` + `karaokeWordContainerVocab` +
+      // `karaokeWordTextVocabWhite`). Así cuando wordTimings carga y
+      // el render salta de legacy → karaoke, el pill no cambia ni
+      // posición ni color de texto: la transición es 0-frames visible.
+      // El texto se mantiene BLANCO sobre cyan (es lo que el diseño
+      // pidió y lo que karaoke ya hacía).
       nodes.push(
         <View
           key={`${paragraphKey}-voc-${key++}`}
-          style={styles.highlightedPill}
+          style={styles.karaokeWordOuter}
         >
-          <Text
-            style={styles.highlightedPillText}
-            onPress={vocabItem ? () => onWordPress(vocabItem, text) : undefined}
-          >
-            {matchedText}
-          </Text>
+          <View style={styles.karaokeWordContainerVocab}>
+            <Text
+              style={styles.karaokeWordTextVocabWhite}
+              onPress={vocabItem ? () => onWordPress(vocabItem, text) : undefined}
+            >
+              {matchedText}
+            </Text>
+          </View>
         </View>
       );
     } else {
@@ -282,6 +289,38 @@ type KaraokeParagraph = {
   charStart: number;
   charEnd: number;
 };
+
+/**
+ * Tokeniza un texto plano en words sin tiempos. Usado como fallback
+ * mientras el endpoint de wordTimings reales (con startSec/endSec)
+ * carga del backend, o cuando la story no los tiene. Sin esto, el
+ * reader caía a `renderHighlightedParagraph` (highlights vocab
+ * simples sin la estructura de karaoke) durante el primer paint y
+ * se notaba un flash de medio segundo cuando los tiempos llegaban
+ * y el render saltaba al karaoke completo. Con este fallback el
+ * render karaoke se ejecuta SIEMPRE desde el primer paint; la
+ * única diferencia con los tiempos reales es que activeWordIndex
+ * permanece null hasta que llegan, pero eso solo importa cuando
+ * el audio empieza a reproducirse.
+ */
+function buildSyntheticWordTimings(plainText: string): AudioWordTimingsPayload {
+  const words: StoryWordToken[] = [];
+  const regex = /[\p{L}\p{N}][\p{L}\p{N}'\-]*/gu;
+  let match: RegExpExecArray | null = regex.exec(plainText);
+  while (match) {
+    const text = match[0];
+    const charStart = match.index;
+    const charEnd = charStart + text.length;
+    words.push({ text, charStart, charEnd, startSec: null, endSec: null });
+    match = regex.exec(plainText);
+  }
+  return {
+    version: 1,
+    audioDurationSec: null,
+    storyPlainText: plainText,
+    words,
+  };
+}
 
 function splitKaraokeParagraphs(plainText: string): KaraokeParagraph[] {
   const out: KaraokeParagraph[] = [];
@@ -627,9 +666,19 @@ export function ReaderScreen(args: {
     };
   }, [story.slug, sessionToken]);
 
+  // wordTimings reales del backend cuando estén disponibles; sino,
+  // un payload sintético tokenizado del texto local. Garantiza que
+  // el karaoke render se use SIEMPRE (incluso antes del fetch),
+  // eliminando el flash legacy del primer paint.
+  const effectiveWordTimings = useMemo<AudioWordTimingsPayload>(() => {
+    if (wordTimings) return wordTimings;
+    const fromText = typeof story.text === "string" ? story.text : "";
+    const fromBlocks = blocks.length > 0 ? blocks.map((b) => b.text).join("\n") : "";
+    return buildSyntheticWordTimings(fromText || fromBlocks);
+  }, [wordTimings, story.text, blocks]);
   const karaokeBlocks = useMemo(
-    () => (wordTimings ? splitKaraokeParagraphs(wordTimings.storyPlainText) : []),
-    [wordTimings]
+    () => splitKaraokeParagraphs(effectiveWordTimings.storyPlainText),
+    [effectiveWordTimings]
   );
   const karaokeVocabLookup = useMemo(() => buildVocabLookup(vocab), [vocab]);
 
@@ -680,6 +729,109 @@ export function ReaderScreen(args: {
     }, 50);
     return () => clearInterval(interval);
   }, [wordTimings, story.id]);
+
+  // Smart autoscroll para historias con karaoke (wordTimings).
+  //
+  // Tres fases:
+  //   1. INTRO: la palabra activa va apareciendo arriba (Y < 40 % del
+  //      viewport). El scroll se queda en 0 — el usuario lee desde el
+  //      principio del texto sin que la pantalla se mueva.
+  //   2. STEADY: cuando la palabra activa cruza el 40 % vertical, el
+  //      scroll empieza a moverse para dejarla anclada en ese 40 %
+  //      mientras el resto del texto rueda por debajo.
+  //   3. OUTRO: cuando el scroll alcanza el límite máximo (último
+  //      contenido tocando el bottom de la pantalla), se queda allí.
+  //      La palabra activa sigue avanzando dentro del viewport hacia
+  //      el bottom hasta el final, sin que aparezcan espacios vacíos.
+  //
+  // El callback de `onProgressChange` arriba ya NO scrollea cuando hay
+  // wordTimings — este efecto es la única fuente de scroll para
+  // karaoke.
+  const lastSmartScrollYRef = useRef(0);
+  // Offset Y del bloque de texto (`textCard`) dentro del ScrollView.
+  // Capturado en su onLayout. blockOffsetsRef sólo guarda offsets
+  // relativos al textCard, así que para obtener la Y absoluta de una
+  // palabra dentro del documento sumamos este offset (cubre el cover
+  // image, top bar y todo lo que está antes del texto).
+  const textCardOffsetRef = useRef(0);
+  // Altura medida del playerDock sticky en el bottom (vocab overlay
+  // y smart autoscroll necesitan saber cuánto del viewport está
+  // tapado). Antes era un padding hardcodeado (118) que se quedó
+  // corto cuando el sticky player creció a ~132 px.
+  const [playerDockHeight, setPlayerDockHeight] = useState(132);
+  useEffect(() => {
+    if (activeWordIndex === null) return;
+    if (!wordTimings) return;
+    if (!scrollViewRef.current) return;
+    // Misma grace window que el scroll lineal: si el usuario está
+    // tocando vocab pills, no movemos el ScrollView durante 1.8 s para
+    // que el target del tap no se desplace bajo el dedo.
+    if (Date.now() - lastUserTouchAtRef.current < 1800) return;
+
+    const word = wordTimings.words[activeWordIndex];
+    if (!word) return;
+
+    // Encontrar el párrafo que contiene esta palabra.
+    const paragraphIndex = karaokeBlocks.findIndex(
+      (p) => word.charStart >= p.charStart && word.charStart < p.charEnd
+    );
+    if (paragraphIndex < 0) return;
+
+    const paragraph = karaokeBlocks[paragraphIndex];
+    const blockY = blockOffsetsRef.current[paragraphIndex];
+    if (typeof blockY !== "number") return;
+
+    // Altura del párrafo: diferencia con el siguiente, o hasta el
+    // final del contenido si es el último.
+    const nextBlockY = blockOffsetsRef.current[paragraphIndex + 1];
+    const blockHeight =
+      typeof nextBlockY === "number"
+        ? nextBlockY - blockY
+        : Math.max(40, contentHeightRef.current - blockY);
+
+    // Posición Y aproximada de la palabra dentro del documento. Usamos
+    // la fracción de caracteres (charStart de la palabra dentro del
+    // rango del párrafo) asumiendo distribución uniforme. No es
+    // pixel-perfect (las palabras con vocab pill ocupan más, los
+    // saltos de línea no son uniformes) pero sí lo bastante cercana
+    // para que el efecto se sienta natural a 40 % de anchor.
+    const charFraction =
+      (word.charStart - paragraph.charStart) /
+      Math.max(1, paragraph.charEnd - paragraph.charStart);
+    // Y absoluta dentro del ScrollView = offset del textCard +
+    // offset del párrafo dentro del textCard + fracción dentro del
+    // párrafo. Sin sumar `textCardOffsetRef` el cálculo ignora todo
+    // lo que está arriba del texto (cover, hero) y wordY queda muy
+    // bajo, haciendo que el scroll no arranque hasta que la palabra
+    // está cerca del fondo de la pantalla.
+    const wordY = textCardOffsetRef.current + blockY + charFraction * blockHeight;
+
+    const viewportHeight = viewportHeightRef.current;
+    const contentHeight = contentHeightRef.current;
+    const scrollableHeight = Math.max(contentHeight - viewportHeight, 0);
+    if (scrollableHeight <= 0 || viewportHeight <= 0) return;
+
+    // El player dock es un overlay sticky en el bottom (~130-150 px)
+    // que tapa la parte inferior del ScrollView. El "viewport visible"
+    // de lectura no es la altura total, sino lo que queda arriba del
+    // player. Sin descontarlo, el anchor al 40 % cae demasiado abajo
+    // (sobre el área tapada) y la palabra activa visualmente queda
+    // cerca del player antes de que arranque el scroll.
+    const visibleHeight = Math.max(viewportHeight - playerDockHeight, viewportHeight * 0.5);
+    const targetAnchor = visibleHeight * 0.4;
+    // Clamp a [0, scrollableHeight]: las fases INTRO y OUTRO emergen
+    // automáticamente del clamp.
+    const targetScroll = Math.max(0, Math.min(scrollableHeight, wordY - targetAnchor));
+
+    // Throttle por delta para evitar pisar animaciones consecutivas
+    // (cada `scrollTo({ animated: true })` dura ~250 ms en iOS). 4 px
+    // es el umbral mínimo donde el ojo nota un movimiento.
+    if (Math.abs(targetScroll - lastSmartScrollYRef.current) < 4) return;
+    lastSmartScrollYRef.current = targetScroll;
+
+    scrollViewRef.current.scrollTo({ y: targetScroll, animated: true });
+  }, [activeWordIndex, wordTimings, karaokeBlocks, playerDockHeight]);
+
   const preferredAudioUrl =
     typeof resolvedAudioUrl === "string" && resolvedAudioUrl.trim() ? resolvedAudioUrl : story.audio;
   const audioUrl =
@@ -692,12 +844,6 @@ export function ReaderScreen(args: {
       : preferredAudioUrl;
   const isOfflineAudio = typeof audioUrl === "string" && audioUrl.startsWith("file://");
   const [selectedVocab, setSelectedVocab] = useState<VocabItem | null>(null);
-  // Altura medida del playerDock; el vocab overlay deja un margen igual
-  // a esa altura + un pequeño gap para que la burbuja del vocab nunca
-  // quede tapada por el player. Antes era un padding hardcodeado (118)
-  // que se quedó corto cuando el sticky player creció a ~132 px y los
-  // últimos píxeles del vocab card quedaban detrás del slider.
-  const [playerDockHeight, setPlayerDockHeight] = useState(132);
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
   // Animated values for the end-of-story prompt. Entrance is a spring-in
   // (backdrop fades, card slides up with a small overshoot and scales to 1)
@@ -830,6 +976,14 @@ export function ReaderScreen(args: {
   const viewportHeightRef = useRef(0);
   const lastAutoScrollRatioRef = useRef(0);
   const lastScrollRatioRef = useRef(0);
+  // Timestamp of the user's most recent touch on the ScrollView. While
+  // the autoscroll's animated `scrollTo` is in flight (~300 ms per
+  // tick), the inline vocab pills are visually moving under the
+  // user's finger and iOS hit-tests against the destination frame, so
+  // taps land on the wrong word or miss entirely. We suspend the
+  // autoscroll for a short grace window after each touch so the user
+  // has a stable target.
+  const lastUserTouchAtRef = useRef(0);
   const blockOffsetsRef = useRef<number[]>([]);
   const hasRestoredPositionRef = useRef(false);
   const lastTrackedReadingRatioRef = useRef<number | null>(null);
@@ -842,11 +996,101 @@ export function ReaderScreen(args: {
   useEffect(() => {
     setLocalCoverFailed(false);
   }, [story.id]);
+
+  // Animación de "descarga completada": cuando `isAvailableOffline`
+  // pasa de false a true, lanzamos un pulse + scale en el botón
+  // (icon de check verde) para que el usuario sienta que algo bueno
+  // pasó, además del icon estático. Un bounce de 0.92 → 1.25 → 1
+  // con un halo verde que se expande y desvanece.
+  const downloadCompleteScale = useRef(new Animated.Value(1)).current;
+  const downloadCompleteHaloOpacity = useRef(new Animated.Value(0)).current;
+  const downloadCompleteHaloScale = useRef(new Animated.Value(0.6)).current;
+  // Spin loop para el icon "loader" mientras la descarga corre. Sin
+  // esto el icon era estático y parecía un asset, no un indicador
+  // de progreso. 900 ms por vuelta es estándar (similar a iOS UIKit).
+  const downloadLoadingRotate = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    if (!isDownloadingOffline) {
+      downloadLoadingRotate.setValue(0);
+      return;
+    }
+    downloadLoadingRotate.setValue(0);
+    const loop = Animated.loop(
+      Animated.timing(downloadLoadingRotate, {
+        toValue: 1,
+        duration: 900,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      })
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [isDownloadingOffline, downloadLoadingRotate]);
+  const wasAvailableOfflineRef = useRef(isAvailableOffline);
+  useEffect(() => {
+    const wasAvailable = wasAvailableOfflineRef.current;
+    wasAvailableOfflineRef.current = isAvailableOffline;
+    if (wasAvailable || !isAvailableOffline) return;
+    // Reset y dispara la animación de "completado".
+    downloadCompleteScale.setValue(0.9);
+    downloadCompleteHaloOpacity.setValue(0.7);
+    downloadCompleteHaloScale.setValue(0.6);
+    Animated.parallel([
+      Animated.sequence([
+        Animated.spring(downloadCompleteScale, {
+          toValue: 1.25,
+          friction: 4,
+          tension: 140,
+          useNativeDriver: true,
+        }),
+        Animated.spring(downloadCompleteScale, {
+          toValue: 1,
+          friction: 5,
+          tension: 120,
+          useNativeDriver: true,
+        }),
+      ]),
+      Animated.timing(downloadCompleteHaloScale, {
+        toValue: 2.2,
+        duration: 600,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.timing(downloadCompleteHaloOpacity, {
+        toValue: 0,
+        duration: 600,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, [
+    isAvailableOffline,
+    downloadCompleteScale,
+    downloadCompleteHaloOpacity,
+    downloadCompleteHaloScale,
+  ]);
   const preferLocalCover =
     typeof resolvedCoverUrl === "string" &&
     resolvedCoverUrl.startsWith("file://") &&
     !localCoverFailed;
-  const coverUrl = preferLocalCover ? resolvedCoverUrl : remoteCoverUrl;
+  const desiredCoverUrl = preferLocalCover ? resolvedCoverUrl : remoteCoverUrl;
+  // Bloquear el swap http→file que ocurre cuando el usuario descarga
+  // la story DENTRO del reader: ese swap dispara un re-load del Image
+  // que parpadea ~150 ms con la portada vacía. Cualquier OTRO cambio
+  // (file→http del fallback al fallar el local, primer load, refresh
+  // de URL remota) se aplica normalmente.
+  const [initialCoverUrl, setInitialCoverUrl] = useState<string | null | undefined>(undefined);
+  useEffect(() => {
+    setInitialCoverUrl(undefined);
+  }, [story.id]);
+  useEffect(() => {
+    setInitialCoverUrl((current) => (current === undefined ? desiredCoverUrl : current));
+  }, [desiredCoverUrl]);
+  const initialIsHttp =
+    typeof initialCoverUrl === "string" && /^https?:\/\//.test(initialCoverUrl);
+  const desiredIsFile =
+    typeof desiredCoverUrl === "string" && desiredCoverUrl.startsWith("file://");
+  const coverUrl = initialIsHttp && desiredIsFile ? initialCoverUrl : desiredCoverUrl;
   // The reader does not render anything based on the active block index
   // (it's only used to persist progress on scroll). Keeping it in state
   // would trigger a full re-render of the reader on every block boundary
@@ -882,6 +1126,7 @@ export function ReaderScreen(args: {
 
     lastTrackedStoryId.current = story.id;
     lastAutoScrollRatioRef.current = 0;
+    lastSmartScrollYRef.current = 0;
     lastScrollRatioRef.current = initialProgress?.progressRatio ?? 0;
     blockOffsetsRef.current = [];
     hasRestoredPositionRef.current = false;
@@ -1023,6 +1268,12 @@ export function ReaderScreen(args: {
         decelerationRate="normal"
         keyboardShouldPersistTaps="handled"
         contentInsetAdjustmentBehavior="automatic"
+        onTouchStart={() => {
+          lastUserTouchAtRef.current = Date.now();
+        }}
+        onTouchEnd={() => {
+          lastUserTouchAtRef.current = Date.now();
+        }}
         onScroll={handleScroll}
         // 32 ms ≈ 30 Hz is plenty for progress tracking; cuts the JS-side
         // scroll handler cost in half vs 60 Hz (16 ms) without any
@@ -1076,17 +1327,47 @@ export function ReaderScreen(args: {
                 pressed ? styles.iconButtonPressed : null,
               ]}
             >
-              <Feather
-                name={
-                  isDownloadingOffline
-                    ? "loader"
-                    : isAvailableOffline
-                      ? "check-circle"
-                      : "download-cloud"
-                }
-                size={18}
-                color={isAvailableOffline ? "#8ef0c6" : "#dbe9ff"}
+              {/* Halo verde que se expande y desvanece al completar la
+                  descarga. pointerEvents="none" para no bloquear el
+                  Pressable. */}
+              <Animated.View
+                pointerEvents="none"
+                style={[
+                  styles.iconButtonDownloadHalo,
+                  {
+                    opacity: downloadCompleteHaloOpacity,
+                    transform: [{ scale: downloadCompleteHaloScale }],
+                  },
+                ]}
               />
+              <Animated.View
+                style={{
+                  transform: [
+                    { scale: downloadCompleteScale },
+                    // Spin solo durante el download. Linear loop de
+                    // 0→360deg cada 900 ms. Cuando termina la
+                    // descarga el reset del effect lo deja en 0.
+                    {
+                      rotate: downloadLoadingRotate.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: ["0deg", "360deg"],
+                      }),
+                    },
+                  ],
+                }}
+              >
+                <Feather
+                  name={
+                    isDownloadingOffline
+                      ? "loader"
+                      : isAvailableOffline
+                        ? "check-circle"
+                        : "download-cloud"
+                  }
+                  size={18}
+                  color={isAvailableOffline ? "#8ef0c6" : "#dbe9ff"}
+                />
+              </Animated.View>
             </Pressable>
           </View>
         </View>
@@ -1111,78 +1392,76 @@ export function ReaderScreen(args: {
         ) : null}
 
         <View style={styles.textWrap}>
-          <View style={styles.textCard}>
-            {wordTimings && karaokeBlocks.length > 0
-              ? (() => {
-                  // Shared dedup set so each vocab word becomes a pill
-                  // only the first time it appears across the whole
-                  // story, matching the legacy reader behavior.
-                  const karaokeAlreadyHighlighted = new Set<string>();
-                  return karaokeBlocks.map((paragraph, index) => (
-                    <Pressable
-                      key={`${story.id}-k-${index}`}
-                      onPress={() => {
-                        if (selectedVocab) setSelectedVocab(null);
-                      }}
-                      style={styles.paragraphBlock}
-                      onLayout={(event) => {
-                        blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
-                        restoreReadingPosition();
-                      }}
-                    >
-                      {renderKaraokeParagraph({
-                        paragraph,
-                        payloadText: wordTimings.storyPlainText,
-                        words: wordTimings.words,
-                        activeWordIndex,
-                        vocabLookup: karaokeVocabLookup,
-                        paragraphKey: `${story.id}-k-${index}`,
-                        onWordPress: (item, contextSentence) =>
-                          setSelectedVocab(
-                            contextSentence ? { ...item, note: contextSentence } : item
-                          ),
-                        variant: "paragraph",
-                        alreadyHighlighted: karaokeAlreadyHighlighted,
-                      })}
-                    </Pressable>
-                  ));
-                })()
-              : (() => {
-                  // Set compartido a través de TODOS los párrafos de la
-                  // historia, así una palabra del vocab queda resaltada
-                  // sólo la primera vez que aparece. Antes vivía dentro
-                  // de renderHighlightedParagraph y se reiniciaba por
-                  // párrafo, por lo que la misma palabra se resaltaba en
-                  // párrafos distintos.
-                  const alreadyHighlightedShared = new Set<string>();
-                  return blocks.map((block, index) => (
-                    <Pressable
-                      key={`${story.id}-${index}`}
-                      onPress={() => {
-                        if (selectedVocab) setSelectedVocab(null);
-                      }}
-                      style={[
-                        block.type === "quote" ? styles.quoteBlock : styles.paragraphBlock,
-                      ]}
-                      onLayout={(event) => {
-                        blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
-                        restoreReadingPosition();
-                      }}
-                    >
-                      {renderHighlightedParagraph(
-                        block.text,
-                        vocab,
-                        `${story.id}-${index}`,
-                        (word, contextSentence) =>
-                          setSelectedVocab(
-                            contextSentence ? { ...word, note: contextSentence } : word
-                          ),
-                        block.type,
-                        alreadyHighlightedShared
-                      )}
-                    </Pressable>
-                  ));
-                })()}
+          <View
+            style={styles.textCard}
+            onLayout={(event) => {
+              // Mide la Y del textCard relativa al ScrollView.
+              // `blockOffsetsRef` solo guarda offsets relativos a este
+              // textCard (cada Pressable de párrafo da su layout.y respecto
+              // al padre directo). Para que el smart autoscroll calcule
+              // bien la Y absoluta de una palabra dentro del documento,
+              // hay que sumar este offset (cover image, top bar, hero,
+              // espacios, todo lo que está arriba del bloque de texto).
+              // Lo capturamos cada vez que el textCard se relayoutea,
+              // así sigue siendo correcto si una imagen se carga tarde y
+              // empuja todo hacia abajo.
+              const target = event.currentTarget as unknown as {
+                measureLayout?: (
+                  relativeTo: unknown,
+                  onSuccess: (x: number, y: number) => void,
+                  onFail?: () => void
+                ) => void;
+              };
+              const scrollNode = scrollViewRef.current as unknown as
+                | { getScrollableNode?: () => unknown }
+                | null;
+              if (target.measureLayout && scrollNode?.getScrollableNode) {
+                target.measureLayout(
+                  scrollNode.getScrollableNode(),
+                  (_x, y) => {
+                    textCardOffsetRef.current = y;
+                  },
+                  () => undefined
+                );
+              }
+            }}
+          >
+            {(() => {
+              // Render unificado: siempre karaoke. Cuando los wordTimings
+              // reales no llegaron todavía, `effectiveWordTimings` cae
+              // al payload sintético. Eliminado el path legacy
+              // `renderHighlightedParagraph` que causaba el flash de
+              // medio segundo durante el primer paint.
+              const karaokeAlreadyHighlighted = new Set<string>();
+              return karaokeBlocks.map((paragraph, index) => (
+                <Pressable
+                  key={`${story.id}-k-${index}`}
+                  onPress={() => {
+                    if (selectedVocab) setSelectedVocab(null);
+                  }}
+                  style={styles.paragraphBlock}
+                  onLayout={(event) => {
+                    blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
+                    restoreReadingPosition();
+                  }}
+                >
+                  {renderKaraokeParagraph({
+                    paragraph,
+                    payloadText: effectiveWordTimings.storyPlainText,
+                    words: effectiveWordTimings.words,
+                    activeWordIndex,
+                    vocabLookup: karaokeVocabLookup,
+                    paragraphKey: `${story.id}-k-${index}`,
+                    onWordPress: (item, contextSentence) =>
+                      setSelectedVocab(
+                        contextSentence ? { ...item, note: contextSentence } : item
+                      ),
+                    variant: "paragraph",
+                    alreadyHighlighted: karaokeAlreadyHighlighted,
+                  })}
+                </Pressable>
+              ));
+            })()}
           </View>
 
           {isOfflineAudio ? (
@@ -1430,6 +1709,13 @@ export function ReaderScreen(args: {
               return;
             }
 
+            // Honor the user's touch grace window: do not animate the
+            // ScrollView while the user is tapping vocab pills, otherwise
+            // the inline targets move under their finger.
+            if (Date.now() - lastUserTouchAtRef.current < 1800) {
+              return;
+            }
+
             const scrollableHeight = Math.max(contentHeightRef.current - viewportHeightRef.current, 0);
             if (scrollableHeight <= 0 || !scrollViewRef.current) {
               return;
@@ -1442,6 +1728,16 @@ export function ReaderScreen(args: {
             );
             activeBlockIndexRef.current = estimatedBlockIndex;
             trackReadingPosition(nextRatio, estimatedBlockIndex);
+            // Scroll lineal sólo cuando NO hay karaoke. Con karaoke
+            // (wordTimings presente) un useEffect aparte conduce un
+            // scroll inteligente que ancla la palabra activa al 40%
+            // vertical de la pantalla — leer "del medio" mientras el
+            // texto rueda por debajo. Sin wordTimings no tenemos
+            // posición de palabra, así que caemos al mapeo lineal
+            // ratio→Y que ya funcionaba.
+            if (wordTimings) {
+              return;
+            }
             scrollViewRef.current.scrollTo({
               y: nextRatio * scrollableHeight,
               animated: true,
@@ -1508,6 +1804,15 @@ const styles = StyleSheet.create({
     // active, not just the icon colour.
     backgroundColor: "rgba(248, 193, 92, 0.14)",
     borderColor: "rgba(248, 193, 92, 0.38)",
+  },
+  iconButtonDownloadHalo: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: 999,
+    backgroundColor: "#8ef0c6",
   },
   iconButtonActiveDownloaded: {
     // Soft green tint for the "downloaded and ready offline" state.
@@ -1815,38 +2120,13 @@ const styles = StyleSheet.create({
   // text's natural width — zero horizontal padding, just a tight
   // rounded background — to avoid the surrounding line being pushed
   // sideways every time the highlight advances.
-  karaokeActivePill: {
-    backgroundColor: "#fcd34d",
-    borderRadius: 6,
-    paddingHorizontal: 0,
-    paddingVertical: 1,
-    transform: [{ translateY: -4 }],
-  },
-  karaokeActivePillText: {
-    color: "#1a1205",
-    fontSize: 20,
-    // Medium weight: visibly matches the paragraph's optical density
-    // without the ~3-4 px width gain of true bold (700) that was
-    // pushing surrounding words around. Goes a hair beyond regular
-    // to compensate for iOS rendering Text-inside-View slightly
-    // thinner than top-level paragraph Text.
-    fontWeight: "500",
-    lineHeight: 20,
-  },
-  // Inline highlight for non-vocab active words. Uses a plain <Text>
-  // with backgroundColor (no inline <View>) so the layout box is
-  // exactly the same as a non-highlighted word and surrounding text
-  // never moves. The lineHeight is set tight to fontSize so the
-  // colored background hugs the glyph cap-height instead of filling
-  // the paragraph's full 40 px line. borderRadius is honored on iOS
-  // Text background since RN 0.71+, so the corners come out rounded.
-  karaokeActiveInlineText: {
-    color: "#1a1205",
-    fontSize: 20,
-    lineHeight: 24,
-    backgroundColor: "#fcd34d",
-    borderRadius: 6,
-  },
+  // Estilos legacy `karaokeActivePill`, `karaokeActivePillText` e
+  // `karaokeActiveInlineText` (con `#fcd34d`, amarillo vivo) eliminados.
+  // El active highlight actual vive en `karaokeWordContainerActive` /
+  // `karaokeWordContainerActiveVocab` con el `#f8c15c` unificado de
+  // todos los popups y badges de la app. Tener dos amarillos
+  // distintos provocaba un flash cuando el motor de styles aplicaba
+  // primero los legacy y después los nuevos.
   // === Per-word inline <View> wrappers (every karaoke word) ===
   // Two-layer structure to give the inline attachment the same baseline
   // as the surrounding paragraph text. The outer wrapper occupies the

@@ -190,19 +190,69 @@ function MobileAppRoot() {
       // cold-start needs some proof of prior sign-in, and online the
       // first 401 naturally triggers sign-out via the Shell.
       let effectiveToken: string | null = storedToken;
-      if (storedToken && !decodeMobileSessionToken(storedToken)) {
-        await clearMobileSessionToken();
-        effectiveToken = null;
+      let decodedToken: ReturnType<typeof decodeMobileSessionToken> = null;
+      if (storedToken) {
+        decodedToken = decodeMobileSessionToken(storedToken);
+        if (!decodedToken) {
+          await clearMobileSessionToken();
+          effectiveToken = null;
+        }
+      }
+
+      // Backfill defensivo del sessionAnchor: si tenemos token válido
+      // pero NO hay anchor en disco, lo guardamos AHORA derivándolo
+      // del token. Importante: AWAIT (no fire-and-forget) — si la app
+      // se cerraba antes de que el write terminara, el archivo
+      // quedaba sin escribir y la siguiente apertura offline tiraba
+      // al usuario al AuthScreen. Con await garantizamos que el
+      // anchor está en disco antes de continuar.
+      let effectiveAnchor: SessionAnchor | null = storedAnchor;
+      if (!effectiveAnchor && decodedToken) {
+        effectiveAnchor = {
+          userId: decodedToken.sub,
+          email: decodedToken.email,
+          name: decodedToken.name,
+          plan: decodedToken.plan,
+          targetLanguages: decodedToken.targetLanguages,
+          booksCount: decodedToken.booksCount,
+          storiesCount: decodedToken.storiesCount,
+          savedAt: new Date().toISOString(),
+        };
+        await saveSessionAnchor(effectiveAnchor);
       }
 
       setSessionToken((currentToken) => currentToken ?? effectiveToken);
-      setSessionAnchor((currentAnchor) => currentAnchor ?? storedAnchor);
+      setSessionAnchor((currentAnchor) => currentAnchor ?? effectiveAnchor);
       setLoadingSession(false);
     }
 
     void hydrateSession();
     return () => { cancelled = true; };
   }, []);
+
+  // Defensa extra: cada vez que `sessionToken` se setea a uno válido,
+  // garantizamos que el anchor en disco está actualizado. Cubre los
+  // casos en que `hydrateSession` no llegó a backfillar (porque
+  // SecureStore retornó null en ese cold-start) y luego, al venir
+  // online, Clerk auto-sync mintió un token nuevo: ahí guardamos el
+  // anchor que la próxima apertura offline va a necesitar.
+  useEffect(() => {
+    if (!sessionToken) return;
+    const decoded = decodeMobileSessionToken(sessionToken);
+    if (!decoded) return;
+    const anchor: SessionAnchor = {
+      userId: decoded.sub,
+      email: decoded.email,
+      name: decoded.name,
+      plan: decoded.plan,
+      targetLanguages: decoded.targetLanguages,
+      booksCount: decoded.booksCount,
+      storiesCount: decoded.storiesCount,
+      savedAt: new Date().toISOString(),
+    };
+    void saveSessionAnchor(anchor);
+    setSessionAnchor((current) => current ?? anchor);
+  }, [sessionToken]);
 
   // Auto-sync existing Clerk session into a mobile session token
   useEffect(() => {
@@ -461,7 +511,21 @@ export default function App() {
     Nunito_900Black,
   });
 
-  if (!fontsLoaded && !fontError) {
+  // Timeout defensivo. `useFonts` puede colgarse sin error en un cold
+  // start offline si las fonts no estaban cacheadas y la red no
+  // responde — `fontsLoaded` permanece false y `fontError` nunca se
+  // setea. Antes el app quedaba congelada en un View vacío con color
+  // de fondo (el usuario veía "solo el azul, ni el logo"). Después de
+  // 3 segundos, forzamos el render con system fonts como fallback.
+  // El comentario original ya reconocía este caso pero no estaba
+  // implementado.
+  const [fontTimeout, setFontTimeout] = useState(false);
+  useEffect(() => {
+    const id = setTimeout(() => setFontTimeout(true), 3000);
+    return () => clearTimeout(id);
+  }, []);
+
+  if (!fontsLoaded && !fontError && !fontTimeout) {
     // Render NOTHING during font loading — the native splash
     // (kept up via SplashScreen.preventAutoHideAsync at module
     // load) is still covering the screen, so the user sees

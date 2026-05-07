@@ -1,0 +1,181 @@
+{
+  "stories": [
+    {
+      "storyId": "cmoncz14w0006ukuchilyfhwe",
+      "slug": "apotheke-in-schwabing",
+      "language": "german",
+      "variant": "germany",
+      "level": "a2",
+      "topic": "health-wellbeing",
+      "storyTitle": "Apotheke in Schwabing",
+      "storyExcerpt": "Sophie wohnt in Schwabing. Heute fühlt sie sich nicht gut. Sie hat starke Kopfschmerzen. Sie weiß nicht, warum. \"Ich brauche etwas dagegen,\" denkt sie. Sie zieht sich an und geht aus dem Haus. Die Apotheke ist nur zwei Straßen weit weg. In der Apotheke ist es ruhig. Ein älterer Mann arbeitet dort. \"Guten Tag,\" sagt Sophie. \"Können Sie mir helfen?\" \"Natürlich. Ich bin Herr Wagner. Was haben Sie?\" Sophie hält ihren Kopf. \"Ich habe seit heute Morgen Kopfschmerzen. Sie sind ziemlich stark.\" Herr Wagner schaut sie kurz an. \"Haben Sie auch Fieber?\" \"Nein, kein Fieber.\" \"Und wie haben Sie geschlafen?\" Sophie überlegt. \"Schlecht. Ich war gestern lange am Computer. Vielleicht zu lange.\" \"Trinken Sie genug Wasser?\" \"Nicht wirklich, ehrlich gesagt.\" Herr Wagner nickt. \"Das ist oft das Problem. Stress, wenig Schlaf, wenig Wasser. Nehmen Sie diese Tablette. Aber nur eine, nicht zwei.\" Er gibt ihr eine kleine Schachtel. \"Das kostet sieben Euro.\" Sophie zahlt. \"Vielen Dank. Was kann ich noch tun?\" \"Trinken Sie heute viel Wasser. Gehen Sie spazieren. Schlafen Sie früh ein. Morgen geht es Ihnen besser.\" Sophie lächelt schwach. \"Das klingt einfach. Ich versuche es.\" \"Und wenn die Schmerzen morgen noch da sind, kommen Sie wieder.\" \"Mache ich. Vielen Dank, Herr Wagner.\" \"Gute Besserung, Sophie!\" Sophie geht langsam nach Hause. Die frische Luft tut gut. Zu Hause trinkt sie ein großes Glas Wasser. Sie nimmt die Tablette. Dann legt sie sich aufs Sofa und schließt die Augen.",
+      "badDefs": [
+        {
+          "index": 5,
+          "word": "schlafen",
+          "surface": "geschlafen",
+          "type": "verb",
+          "originalDefinition": "To sleep; the past participle is geschlafen, used with haben.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmoncz14w000bukucosbh3fns",
+      "slug": "allein-im-karneval",
+      "language": "german",
+      "variant": "germany",
+      "level": "b1",
+      "topic": "community-celebrations",
+      "storyTitle": "Allein im Karneval",
+      "storyExcerpt": "Sebastian steht auf dem Heumarkt in Köln. Es ist Rosenmontag. Verkleidete Menschen singen, tanzen, schreien \"Alaaf!\". Eigentlich sollte er fröhlich sein. Er trägt nur einen roten Hut, kein Kostüm. Eine Trommel spielt direkt hinter ihm. Sebastian zuckt zusammen. Er sucht Tom, seinen Kollegen aus dem Büro. Tom ist verschwunden. Auf dem Handy: \"Sind weiter zum Alter Markt. Komm nach!\" Sebastian überlegt. Sechshundert Meter durch dichtes Gedränge. Er weiß, er sollte gehen. Aber sein Herz schlägt schneller, und er hat plötzlich keine Lust mehr. Er geht in die andere Richtung, eine ruhige Seitenstraße hinunter. Die Geräusche werden leiser. Nach fünf Minuten findet er ein kleines Café. Drinnen sitzen drei Leute, niemand verkleidet. \"Einen Kaffee, bitte,\" sagt er zur Bedienung. Sie nickt. \"Brauchen Sie eine Pause vom Trubel?\" \"So ähnlich.\" Sie lächelt verständnisvoll und bringt ihm den Kaffee. Sebastian setzt sich ans Fenster. Verkleidete Menschen ziehen draußen vorbei, eng umschlungen, lachend. Etwas in ihm fühlt sich klein und leise. Vielleicht ist das nicht sein Fest. Vielleicht ist er einfach nicht der Typ für laute Massen. Diese Erkenntnis tut etwas weh, aber sie wirkt auch ehrlich. Sein Handy klingelt. Tom. Sebastian starrt auf den Bildschirm und lässt es einfach klingeln. \"Möchten Sie noch etwas?\" fragt die Bedienung. \"Vielleicht ein Stück Kuchen.\" \"Apfelstrudel?\" \"Ja, gern.\" Er hat keine Eile mehr. Draußen geht der Karneval weiter. Sebastian bleibt im Café. Er ist nicht traur",
+      "badDefs": [
+        {
+          "index": 14,
+          "word": "Bildschirm",
+          "type": "noun",
+          "originalDefinition": "A screen, especially of a phone or computer in modern usage.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        },
+        {
+          "index": 15,
+          "word": "klingeln",
+          "surface": "klingelt",
+          "type": "verb",
+          "originalDefinition": "To ring; said of phones, doorbells, and alarm clocks alike.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmoncz14w000dukucpmxh7pdr",
+      "slug": "hertha-gegen-hamburg",
+      "language": "german",
+      "variant": "germany",
+      "level": "b2",
+      "topic": "sports-entertainment",
+      "storyTitle": "Hertha gegen Hamburg",
+      "storyExcerpt": "Jens drückt Linus die Hand, während sie durch das Tor zum Olympiastadion strömen. Linus trägt Hertha-Schal, Hertha-Mütze, sogar Hertha-Schminke auf der Wange. \"Onkel Jens, wer schießt heute das erste Tor?\" \"Wir hoffen, wir.\" Das war Stufe eins der Antwort, die ein Onkel gibt. Stufe zwei wäre: meistens nicht. Sie finden ihre Plätze in der Ostkurve. Jens hat die Tickets ein halbes Jahr vorher gekauft. Linus' Gesicht in dem Moment, als das Stadion sich öffnet — leuchtet wie eine Glühbirne. Das Spiel beginnt. Nach achtzehn Minuten steht es null zu eins. Nach dreiunddreißig Minuten null zu zwei. Linus schaut Jens fragend an. \"Das wird wieder gut\", sagt Jens. Es wird nicht wieder gut. Halbzeit. Bratwurst, Brause. Linus ist tapfer. \"Hamburg hatte einfach Glück, oder?\" Jens nickt langsam. Zweite Halbzeit, neunundsechzigste Minute, das dritte Tor für den HSV. Jubel auf der Gästeseite. Jens spürt den Schlag im Bauch. Bei Linus dauert es länger. Erst beim Schlusspfiff bricht es heraus. \"Warum gehen wir dann überhaupt hin?\" Jens nimmt ihn auf den Arm. Linus ist eigentlich zu groß dafür. Egal. \"Weil wir sie nicht alleine lassen, wenn es schlecht läuft.\" Linus hört auf zu weinen, langsamer als Jens gehofft hatte. Und Jens denkt: Das war keine Antwort für ein Kind. Das war die ehrliche Antwort. Vielleicht hat er sie sich seit zwanzig Jahren genau so gegeben, ohne dass sie jemand laut gesagt hat. Sie laufen langsam zum S-Bahnhof. Linus bittet, dass sie nächste Saison wiederkommen. Jens läche",
+      "badDefs": [
+        {
+          "index": 10,
+          "word": "Brause",
+          "type": "noun",
+          "originalDefinition": "A cheap, sweet, fizzy soft drink popular among German children.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmoncz14w000fukuc94ux8jh6",
+      "slug": "sonnenaufgang-am-wannsee",
+      "language": "german",
+      "variant": "germany",
+      "level": "b2",
+      "topic": "nature-adventure",
+      "storyTitle": "Sonnenaufgang am Wannsee",
+      "storyExcerpt": "Halb fünf. Clara stellt das Fahrrad neben den Steg. Es ist noch dunkel, aber nicht mehr ganz. Der Wannsee liegt schwarz und glatt vor ihr, als hätte ihn jemand frisch aufgegossen. Seit drei Wochen schläft sie schlecht. Heute Nacht hatte sie um drei aufgegeben, sich angezogen und ist losgefahren, ohne nachzudenken. Sie setzt sich auf das Holz. Es ist kalt durch die Hose. Egal. Ein Vogel ruft, weit weg. Dann ein zweiter, näher. Es klingt eher wie ein Gespräch, das schon lange läuft, ohne dass Menschen davon wissen. Clara atmet die feuchte Luft ein. Sie riecht nach Schilf und nasser Erde. Auf der anderen Seite wird der Himmel blasser. Noch kein Orange, nur ein erstes Versprechen davon. Im Kopf taucht die Liste auf. Mail an Robert, Steuerunterlagen, Geburtstag. Sie schiebt sie weg. Sie versucht es mit einem alten Trick: zählen, was sie sieht. Drei Schwäne am Ufer. Eine grüne Boje. Ein zerbrochener Ast im Wasser. Ein Ruderer, weit draußen, ohne Schatten. Es funktioniert. Eine Minute lang ist da nur das Wasser und sie. Dann kehrt die Liste zurück, leise. Aber Clara weiß: das ist normal. Sie wollte die Liste nicht verbannen. Sie wollte nur kurz daran erinnert werden, dass die Welt auch ohne ihre Erledigungen funktioniert. Der Himmel wird jetzt orange. Fast plötzlich. Die Schwäne heben den Kopf. Etwas Helles bewegt sich auf dem Wasser, ein Spiegel der Sonne, lange bevor die Sonne selbst sichtbar ist. Clara fühlt nichts Großes. Keine Erleuchtung, keinen Plan. Nur Müdigkeit, die jetzt ",
+      "badDefs": [
+        {
+          "index": 7,
+          "word": "Versprechen",
+          "type": "noun",
+          "originalDefinition": "A promise; metaphorically, an early hint of something good arriving soon.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        }
+      ]
+    },
+    {
+      "storyId": "cmoncz14w0004ukucuasqpua4",
+      "slug": "anna-am-winterfeldtmarkt",
+      "language": "german",
+      "variant": "germany",
+      "level": "a1",
+      "topic": "greetings-simple-questions",
+      "storyTitle": "Anna am Winterfeldtmarkt",
+      "storyExcerpt": "Anna wacht früh auf. Heute ist Samstag. Sie geht zum Winterfeldtmarkt. Der Markt ist in Schöneberg. Anna mag den Markt sehr. Anna geht zum Brotstand. Frau Müller arbeitet dort. \"Guten Morgen!\" sagt Anna. \"Guten Morgen!\" sagt Frau Müller. \"Wie geht es dir?\" \"Mir geht es gut, danke!\" antwortet Anna. \"Und dir?\" \"Auch gut, danke! Was möchtest du heute kaufen?\" Anna schaut auf das frische Brot. \"Ich brauche Brot. Was ist heute gut?\" Frau Müller lächelt. \"Das Roggenbrot ist heute frisch. Es schmeckt sehr gut.\" \"Wie viel kostet es?\" fragt Anna. \"Drei Euro fünfzig.\" \"Okay, ich nehme eins, bitte.\" Frau Müller packt das Brot vorsichtig ein. \"Möchtest du auch Käse?\" fragt Frau Müller. \"Vielleicht. Was hast du?\" \"Wir haben Gouda, Camembert, und Brie.\" \"Ich nehme Gouda, bitte.\" Frau Müller schneidet den Käse vorsichtig. \"Ist das genug?\" fragt sie. \"Ja, perfekt. Danke.\" \"Bitte. Sonst noch etwas, Anna?\" \"Nein, das ist alles.\" Anna gibt ihr das Geld. \"Hier, bitte.\" \"Danke! Schönes Wochenende, Anna.\" \"Dir auch, Frau Müller!\" Anna geht weiter. Sie sieht viele andere Stände. Es gibt Obst, Gemüse, und Blumen. Sie kauft auch zwei Äpfel. Eine alte Dame fragt Anna: \"Entschuldigung, wo ist der Käsestand?\" Anna lächelt. \"Dort drüben, links.\" \"Vielen Dank, junge Frau!\" Anna findet den Markt wirklich schön. Die Menschen sind freundlich und nett. Sie sprechen miteinander. Anna fühlt sich gut hier. Nach dem Markt geht Anna nach Hause. Sie hat eine volle Tasche. \"Bis nächsten Samstag!\" denkt sie. Sie läch",
+      "badDefs": [
+        {
+          "index": 12,
+          "word": "Wochenende",
+          "type": "noun",
+          "originalDefinition": "The weekend; Saturday and Sunday taken together as time off.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        },
+        {
+          "index": 15,
+          "word": "Entschuldigung",
+          "type": "noun",
+          "originalDefinition": "An apology, or a polite way to get someone's attention.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    },
+    {
+      "storyId": "cmoni7j4f000032gnogvzmzb9",
+      "slug": "br-tchen-in-der-sonnenallee",
+      "language": "german",
+      "variant": "germany",
+      "level": "c2",
+      "topic": "identity-belonging-abroad",
+      "storyTitle": "Brötchen in der Sonnenallee",
+      "storyExcerpt": "Die Bäckerei in der Sonnenallee ist um zehn fast leer. Leyla nimmt den letzten Tisch am Fenster. Draußen rollen die Lieferwagen, Arabisch und Türkisch und Berlinerisch mischen sich in der Luft, ohne sich zu vereinen. Gestern Abend hat sie ihre Mutter zum Flughafen gebracht. Zwei Wochen Adana im Wohnzimmer. Tee, Vorwürfe, Lachen. Heute morgen sind die Wände wieder weiß, die Wohnung wieder ihre eigene, und sie weiß nicht, ob sie sich freut. Sie hatte sich auf diese Stille gefreut. Jetzt fehlt ihr das Türkisch im Kopf so plötzlich, als hätte jemand die Heizung abgestellt. Der Bäcker, vielleicht fünfzig, ruft etwas Arabisch ins Hinterzimmer. Leyla versteht zwei Wörter. Mehr nicht. Ihre Eltern sprachen kurdisch zuhause, ihre Großmutter türkisch. Arabisch hat sie nie gelernt, obwohl die Hälfte ihrer Nachbarschaft es spricht. Sie steht auf, holt sich ein Brötchen mit Sesam. \"Ein Sesamring, bitte\", sagt sie auf Deutsch. Dann, fast automatisch: \"Schukran.\" Es rutscht ihr heraus. Der Bäcker lächelt höflich. \"Bitte sehr.\" Auf Deutsch. Sie sind beide gerade höflich genug, um das nicht weiter zu kommentieren. Leyla setzt sich wieder. Drei Sprachen in einem Atemzug, und keine davon vollständig ihre. Sie denkt daran, wie ihre Mutter gestern beim Abschied gesagt hatte: \"Du bist hier zuhause, Kızım. Es ist gut so.\" Es war ein liebevoller Satz. Aber Leyla weiß heute, dass Heimat keine Adresse ist. Heimat ist eine bestimmte Konfiguration von Stimmen, die man im Kopf trägt. Solange sie alle glei",
+      "badDefs": [
+        {
+          "index": 8,
+          "word": "rutschen",
+          "surface": "rutscht heraus",
+          "type": "verb",
+          "originalDefinition": "To slip; 'es rutscht heraus' captures words leaving the mouth unconsciously.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 11
+        }
+      ]
+    },
+    {
+      "storyId": "cmoni7j4g000132gnokn5scmi",
+      "slug": "bei-vater-in-wilmersdorf",
+      "language": "german",
+      "variant": "germany",
+      "level": "c2",
+      "topic": "handling-difficult-situations",
+      "storyTitle": "Bei Vater in Wilmersdorf",
+      "storyExcerpt": "Walter öffnet die Tür mit dem üblichen Witz: \"Du bist zu früh, Junge.\" Aufgeräumt wirkt die Wohnung trotzdem. Christoph nimmt den Mantel ab. Sechs Zimmer, Stuckdecken, Bücher in Reihen, Pfeifentabak, der seit Jahrzehnten in den Wänden steht. Walter wohnt seit fünfundvierzig Jahren hier. Seit vier davon allein. \"Tee?\", fragt Walter. \"Mama hat den, den du magst, immer aus Hamburg geholt. Ich glaube, ich habe noch eine Dose.\" Christoph nickt. Er ist nicht wegen Tee gekommen. Beide wissen das. Die nächsten zwei Stunden werden eine choreografierte Annäherung an einen Satz, der noch nicht ausgesprochen werden darf. Sie reden über das Buch, das Walter gerade liest. Über den Bundesrat. Über die kaputte Klingel, die der Hausverwaltung schon zweimal gemeldet wurde. Dann, in einer kleinen Pause: \"Frau Krause hat mich angerufen\", sagt Christoph möglichst beiläufig. \"Wegen letzter Woche.\" Walter blickt in seine Tasse. \"Eine Kleinigkeit. Ich war kurz aus der Küche, der Topf war fast leer. Es hat nicht einmal richtig gequalmt.\" \"Frau Krause sagte, das war das zweite Mal in zehn Tagen.\" Stille. Christoph zwingt sich, sie auszuhalten. Er wartet die Sekunden, in denen Vater und Sohn beide sehen, wovor sie sich beide fürchten. Walter schaut auf. \"Ich weiß, was du vorschlagen wirst.\" Die Stimme ist ruhiger, als Christoph erwartet hat. \"Und ich werde heute nein sagen. Vielleicht in einem halben Jahr nicht mehr.\" Christoph nickt langsam. Er hatte Argumente vorbereitet. Er hatte Broschüren in der T",
+      "badDefs": [
+        {
+          "index": 8,
+          "word": "Klingel",
+          "type": "noun",
+          "originalDefinition": "A doorbell; small object often standing in for harder topics.",
+          "reasons": [
+            "leading-gloss"
+          ],
+          "wordCount": 10
+        }
+      ]
+    }
+  ]
+}

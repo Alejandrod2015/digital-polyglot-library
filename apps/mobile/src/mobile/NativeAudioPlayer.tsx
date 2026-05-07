@@ -257,7 +257,19 @@ export function NativeAudioPlayer({
           // player recovering is worse UX than a silent swap.
           const isLocalFile = normalizedSrc.startsWith("file://");
           if (!isLocalFile) {
-            setError(`Audio unavailable: ${message}`);
+            // Mensaje amigable para errores de red conocidos. -1009 es
+            // NSURLErrorNotConnectedToInternet (modo avión / sin red);
+            // -1001 es timeout. Para estos no exponemos el detalle
+            // técnico de Apple — el usuario ya sabe que está sin red,
+            // lo que necesita saber es que esa story no está descargada
+            // para escucharla offline.
+            const isOffline =
+              /-1009|NotConnectedToInternet|NSURLErrorDomain.*-1009/.test(message) ||
+              /-1001|TimedOut/.test(message);
+            const friendly = isOffline
+              ? "You're offline. Download this story to listen without an internet connection."
+              : `Audio unavailable: ${message}`;
+            setError(friendly);
           }
           onLoadError?.({ src: normalizedSrc, reason: message });
         }

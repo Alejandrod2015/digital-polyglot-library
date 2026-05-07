@@ -1,0 +1,161 @@
+{
+  "title": "Eiscafé am Sommerabend",
+  "synopsis": "Es ist ein warmer Sommerabend in Berlin. Lara kommt in ein kleines Eiscafé. Eva, die Verkäuferin, hilft ihr bei der Auswahl. Bald kommt auch Marc und bestellt sein Eis. Die drei reden kurz über das schöne Wetter.",
+  "text": "Es ist ein warmer Sommerabend in Berlin. Das kleine Eiscafé an der Ecke ist voll. Es riecht nach süßen Waffeln und frischen Beeren. Draußen sitzen viele Leute auf der Terrasse und lachen. Drinnen steht Eva hinter der Theke und lächelt freundlich.\n\nLara: Guten Abend! Oh, so viele Sorten heute.\nEva: Guten Abend! Ja, wir haben heute zwölf Sorten. Möchten Sie eine Empfehlung?\nLara: Ja, bitte. Was schmeckt heute besonders gut?\nEva: Die Schokolade ist sehr cremig. Die Vanille ist mild und süß.\nLara: Und die anderen Sorten?\nEva: Die Erdbeere ist fruchtig und frisch. Die Zitrone schmeckt ein bisschen sauer.\nLara: Hmm, schwierige Wahl. Alles klingt sehr lecker.\nEva: Möchten Sie eine kleine Probe von der Erdbeere?\nLara: Oh ja, bitte. Mmm, das schmeckt wirklich gut.\nLara: Ich nehme einen kleinen Becher mit zwei Kugeln.\nEva: Welche Kugeln möchten Sie denn?\nLara: Eine Kugel Erdbeere und eine Kugel Schokolade, bitte.\nEva: Gerne. Möchten Sie auch Sahne dazu?\nLara: Nein danke, heute nur das Eis.\n\nMarc: Hallo Lara! Entschuldige bitte, ich bin spät.\nLara: Hallo Marc! Kein Problem, ich warte gern hier.\nMarc: Was hast du bestellt?\nLara: Erdbeere und Schokolade. Sehr lecker.\nMarc: Guten Abend! Ich nehme bitte eine Waffel mit Vanille und Zitrone.\nEva: Sofort. Möchten Sie auch ein Glas Wasser dazu?\nMarc: Ja, gern. Es ist heute wirklich heiß draußen.\nLara: Stimmt, der Abend ist sehr warm. Wir können draußen sitzen.\nMarc: Gute Idee. Ein Tisch ist noch frei.\nEva: Hier, bitte schön. Lassen Sie es sich schmecken!\nLara: Danke, Eva. Das sieht toll aus.\nMarc: Vielen Dank. Bis bald!\nEva: Tschüss, einen schönen Abend noch!",
+  "vocab": [
+    {
+      "word": "warm",
+      "surface": "warm",
+      "type": "adjective",
+      "definition": "having a moderately high temperature; pleasantly heated by sun",
+      "third": "beginning"
+    },
+    {
+      "word": "Sommerabend",
+      "surface": "Sommerabend",
+      "type": "noun",
+      "definition": "evening hours during the summer season, often warm and bright",
+      "third": "beginning"
+    },
+    {
+      "word": "Ecke",
+      "surface": "Ecke",
+      "type": "noun",
+      "definition": "corner where two streets or two walls meet",
+      "third": "beginning"
+    },
+    {
+      "word": "voll",
+      "surface": "voll",
+      "type": "adjective",
+      "definition": "filled to capacity, with no empty space remaining inside",
+      "third": "beginning"
+    },
+    {
+      "word": "riechen",
+      "surface": "riecht",
+      "type": "verb",
+      "definition": "to give off or perceive a particular smell or odor",
+      "third": "beginning"
+    },
+    {
+      "word": "Waffel",
+      "surface": "Waffeln",
+      "type": "noun",
+      "definition": "crisp baked batter cake with a grid pattern surface",
+      "third": "beginning"
+    },
+    {
+      "word": "Terrasse",
+      "surface": "Terrasse",
+      "type": "noun",
+      "definition": "outdoor paved area beside a café for seating customers",
+      "third": "beginning"
+    },
+    {
+      "word": "Theke",
+      "surface": "Theke",
+      "type": "noun",
+      "definition": "long counter where staff serve customers food or drinks",
+      "third": "beginning"
+    },
+    {
+      "word": "Empfehlung",
+      "surface": "Empfehlung",
+      "type": "noun",
+      "definition": "suggestion from someone familiar with the options on offer",
+      "third": "middle"
+    },
+    {
+      "word": "schmecken",
+      "surface": "schmeckt",
+      "type": "verb",
+      "definition": "to taste a certain way; to be enjoyable on the palate",
+      "third": "middle"
+    },
+    {
+      "word": "cremig",
+      "surface": "cremig",
+      "type": "adjective",
+      "definition": "smooth and rich in texture, similar to soft cream",
+      "third": "middle"
+    },
+    {
+      "word": "fruchtig",
+      "surface": "fruchtig",
+      "type": "adjective",
+      "definition": "tasting clearly of fresh fruit, often light and pleasant",
+      "third": "middle"
+    },
+    {
+      "word": "sauer",
+      "surface": "sauer",
+      "type": "adjective",
+      "definition": "sharp and tart in flavor, like citrus or vinegar",
+      "third": "middle"
+    },
+    {
+      "word": "Becher",
+      "surface": "Becher",
+      "type": "noun",
+      "definition": "small open cup made of paper or plastic for desserts",
+      "third": "middle"
+    },
+    {
+      "word": "Kugel",
+      "surface": "Kugeln",
+      "type": "noun",
+      "definition": "round scoop or ball, often used for portions of ice cream",
+      "third": "middle"
+    },
+    {
+      "word": "spät",
+      "surface": "spät",
+      "type": "adjective",
+      "definition": "later than expected or after the agreed meeting time",
+      "third": "end"
+    },
+    {
+      "word": "warten",
+      "surface": "warte",
+      "type": "verb",
+      "definition": "to remain in place, expecting someone or something to come",
+      "third": "end"
+    },
+    {
+      "word": "bestellen",
+      "surface": "bestellt",
+      "type": "verb",
+      "definition": "to ask staff to bring a chosen food or drink",
+      "third": "end"
+    },
+    {
+      "word": "lecker",
+      "surface": "lecker",
+      "type": "adjective",
+      "definition": "tasty and pleasant to eat, with a delicious flavor",
+      "third": "end"
+    },
+    {
+      "word": "heiß",
+      "surface": "heiß",
+      "type": "adjective",
+      "definition": "having a very high temperature, often uncomfortable for people",
+      "third": "end"
+    },
+    {
+      "word": "Tisch",
+      "surface": "Tisch",
+      "type": "noun",
+      "definition": "piece of furniture with a flat top for eating or working",
+      "third": "end"
+    },
+    {
+      "word": "frei",
+      "surface": "frei",
+      "type": "adjective",
+      "definition": "available and not occupied or reserved by another person",
+      "third": "end"
+    }
+  ]
+}

@@ -39,6 +39,7 @@ export async function POST(request: Request) {
         audioSegments: result.audioSegments as any,
         audioFilename: result.filename,
         audioStatus: "ready",
+        voiceId: result.voiceId,
         audioQaStatus: result.audioQa?.status ?? null,
         audioQaScore: result.audioQa?.score ?? null,
         audioQaNotes: result.audioQa?.notes?.join("\n") ?? null,

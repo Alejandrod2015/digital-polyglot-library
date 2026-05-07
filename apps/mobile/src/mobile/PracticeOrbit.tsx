@@ -27,7 +27,6 @@ export type PracticeModeKey = "meaning" | "context" | "listening" | "match";
 export type PracticeOrbitProps = {
   topicLabel: string | null;
   totalDue: number;
-  estimatedMinutes: number;
   xpReward: number;
   modeBreakdown: Record<PracticeModeKey, number>;
   streakDays: number;
@@ -178,7 +177,6 @@ const UpNextCard = memo(function UpNextCard({
 export function PracticeOrbit({
   topicLabel,
   totalDue,
-  estimatedMinutes,
   xpReward,
   modeBreakdown,
   streakDays,
@@ -272,7 +270,6 @@ export function PracticeOrbit({
           <View style={styles.centerOrbInner}>
             <Feather name="play" size={28} color="#0c1626" />
             <Text style={styles.centerOrbStart}>START</Text>
-            <Text style={styles.centerOrbDuration}>~{estimatedMinutes} MIN</Text>
           </View>
         </Pressable>
       </View>
@@ -421,12 +418,6 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     letterSpacing: 1.4,
     marginTop: 2,
-  },
-  centerOrbDuration: {
-    color: "rgba(12,22,38,0.7)",
-    fontSize: 11,
-    fontWeight: "800",
-    letterSpacing: 0.6,
   },
   legendRow: {
     flexDirection: "row",

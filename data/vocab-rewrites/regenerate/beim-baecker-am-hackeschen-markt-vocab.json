@@ -1,0 +1,26 @@
+{
+  "vocab": [
+    { "word": "Bäckerei", "type": "noun", "definition": "Small shop where bread, rolls, and pastries are baked and sold.", "third": "beginning" },
+    { "word": "Brot", "type": "noun", "definition": "Loaf of baked dough, a daily staple in German cuisine.", "third": "beginning" },
+    { "word": "riechen", "surface": "riecht", "type": "verb", "definition": "To perceive an odor through the nose, smelling something pleasant.", "third": "beginning" },
+    { "word": "frisch", "surface": "frischem", "type": "adjective", "definition": "Recently made or harvested, not stale, still at peak quality.", "third": "beginning" },
+    { "word": "warten", "type": "verb", "definition": "To pass time expecting something or someone to arrive.", "third": "beginning" },
+    { "word": "Theke", "type": "noun", "definition": "Long counter in a shop where customers are served food.", "third": "beginning" },
+    { "word": "lächeln", "surface": "lächelt", "type": "verb", "definition": "To form a friendly facial expression by curving the lips upward.", "third": "beginning" },
+    { "word": "freundlich", "type": "adjective", "definition": "Kind and welcoming in manner toward other people.", "third": "beginning" },
+    { "word": "Brötchen", "type": "noun", "definition": "Small round bread roll commonly eaten at German breakfast tables.", "third": "beginning" },
+    { "word": "Roggenbrot", "type": "noun", "definition": "Dark loaf made from rye flour, traditional in German bakeries.", "third": "beginning" },
+    { "word": "schneiden", "surface": "schneide", "type": "verb", "definition": "To divide something into pieces using a knife or blade.", "third": "middle" },
+    { "word": "Kuchen", "type": "noun", "definition": "Sweet baked dessert often served with afternoon coffee in Germany.", "third": "middle" },
+    { "word": "Mann", "type": "noun", "definition": "Adult male person, often referring to one's husband in conversation.", "third": "middle" },
+    { "word": "zusammen", "type": "adverb", "definition": "Together as a single combined amount, often used at checkout.", "third": "middle" },
+    { "word": "Dank", "type": "noun", "definition": "Expression of gratitude offered after receiving help or service.", "third": "middle" },
+    { "word": "schön", "surface": "schönen", "type": "adjective", "definition": "Pleasant or beautiful, conveying warmth in everyday German wishes.", "third": "middle" },
+    { "word": "Sesambrötchen", "type": "noun", "definition": "Bread roll topped with sesame seeds for added flavor and crunch.", "third": "middle" },
+    { "word": "Stück", "type": "noun", "definition": "Single piece or portion cut from a larger whole.", "third": "end" },
+    { "word": "Käsekuchen", "type": "noun", "definition": "Creamy baked cake made with quark or cheese, popular German dessert.", "third": "end" },
+    { "word": "Schwester", "type": "noun", "definition": "Female sibling sharing one or both parents with another person.", "third": "end" },
+    { "word": "wohnen", "surface": "Wohnt", "type": "verb", "definition": "To have one's home or live regularly in a place.", "third": "end" },
+    { "word": "freuen", "type": "verb", "definition": "To feel happiness or anticipation about something pleasant happening.", "third": "end" }
+  ]
+}

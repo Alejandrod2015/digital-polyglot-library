@@ -36,12 +36,19 @@ export const DEFAULT_AMBIENT_VOLUME = 0.10;
 export const GERMAN_DIALOGUE_VOICES = {
   // All native-DE. License terms verified against the ElevenLabs API:
   //   moritz, enniah → premade default voices (no notice_period, perpetual)
-  //   sebastian, eleonore → professional shared, 730 days (2 years, max available)
+  //   eleonore, luca → professional shared, 730 days (2 years, max available)
   // No US-accent voices in this set (Sarah and Liam retired).
+  //
+  // BANNED voices (do NOT add back):
+  //   - Thorsten (Piper/Coqui, all variants) — monotone "deprimente"
+  //   - Bark Speaker 3 — muffled / monotone
+  //   - Simon Sunday (ElevenLabs) — monotone "deprimente"
+  //   - Sebastian "qVRpsZJDV29g1CIPzssm" — uptalk; every line ends like a
+  //     question. Rejected when used as a 9-year-old. Replaced by Luca.
   moritz:    "Ww7Sq9tx9CCOiNOwWgsx", // M middle-aged, native DE, baritone — narrator
   enniah:    "WHaUUVTDq47Yqc9aDbkH", // F middle-aged, native DE, warm — primary female
   gesaTess:  "cllvQaMvj0ZKxH88HGEn", // F middle-aged, native DE, "trustworthy host" — calmer baseline than ENNIAH
-  sebastian: "qVRpsZJDV29g1CIPzssm", // M young, native DE, calm authentic — younger male
+  luca:      "mmAbrxFQ9xjByXyBpqrK", // M young, native DE, dynamic engaging — younger male (replaces banned Sebastian)
   eleonore:  "8SdTD5IMgFKT1jp7JbPC", // F middle-aged, native DE, mature narrator — "Frau" roles
 } as const;
 
@@ -138,6 +145,7 @@ export async function generateAndUploadAudio(
   assetId: string | null;
   audioSegments: AudioSegment[];
   audioQa: AudioQaResult;
+  voiceId: string;
 } | null> {
   try {
     // 🔹 El audio debe narrar primero el título, luego hacer una pausa y empezar la historia.
@@ -251,6 +259,7 @@ export async function generateAndUploadAudio(
         assetId: null,
         audioSegments: transcription.audioSegments,
         audioQa,
+        voiceId: `elevenlabs/${selectedVoice}`,
       };
     }
 
@@ -279,6 +288,7 @@ export async function generateAndUploadAudio(
       assetId: asset._id,
       audioSegments: transcription.audioSegments,
       audioQa,
+      voiceId: `elevenlabs/${selectedVoice}`,
     };
   } catch (err) {
     console.error("[elevenlabs] 💥 Failed to generate/upload audio:", err);

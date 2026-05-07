@@ -1,0 +1,414 @@
+{
+  "rewrites": [
+    {
+      "storyId": "cmocxf2rm0001ie040t5bt276",
+      "word": "piatto",
+      "newDefinition": "Round dish holding food, also naming the meal served on it."
+    },
+    {
+      "storyId": "cmocxf2rm0002ie04b150xy1v",
+      "word": "sorriso",
+      "newDefinition": "Warm upward curve of lips signaling friendliness or quiet pleasure."
+    },
+    {
+      "storyId": "cmogli5yt0001l404jj9zsf1a",
+      "word": "sorridere",
+      "newDefinition": "Curving the lips upward to show warmth, pleasure, or kindness."
+    },
+    {
+      "storyId": "cmoglxwmx0002la047mrxuqmo",
+      "word": "sorridere",
+      "newDefinition": "Curving the lips upward to express warmth or pleasure outward."
+    },
+    {
+      "storyId": "cmoglxwmx0005la04zoiibtf1",
+      "word": "storia",
+      "newDefinition": "Narrative account of events, real or imagined, told to listeners."
+    },
+    {
+      "storyId": "cmoglxwmx0003la04nz6qydo5",
+      "word": "sorriso",
+      "newDefinition": "Warm facial expression curving lips upward to signal happiness."
+    },
+    {
+      "storyId": "cmoglxwmx0003la04nz6qydo5",
+      "word": "vivere",
+      "newDefinition": "Being fully alive and engaged with the rhythms of life."
+    },
+    {
+      "storyId": "cmogmhwou0006kz04sd1s5awm",
+      "word": "cuoco",
+      "newDefinition": "Skilled person preparing meals, often as a working profession."
+    },
+    {
+      "storyId": "cmogmhwou0006kz04sd1s5awm",
+      "word": "sorriso",
+      "newDefinition": "Warm expression on the face, lips curved upward in greeting."
+    },
+    {
+      "storyId": "cmogn9tbh0000l204uigclz9v",
+      "word": "brindisi",
+      "newDefinition": "Raising glasses together with words to celebrate a shared moment."
+    },
+    {
+      "storyId": "cmogo38jn0001le04ho1pjdzh",
+      "word": "piazzetta",
+      "newDefinition": "Small intimate square tucked between buildings, perfect for gathering."
+    },
+    {
+      "storyId": "cmogo38jn0001le04ho1pjdzh",
+      "word": "forchettata",
+      "newDefinition": "Quantity of food lifted onto a fork in one bite."
+    },
+    {
+      "storyId": "cmogo38jn0001le04ho1pjdzh",
+      "word": "ristorante",
+      "newDefinition": "Formal dining establishment serving full meals at separate tables."
+    },
+    {
+      "storyId": "cmogo38jn0001le04ho1pjdzh",
+      "word": "genio",
+      "newDefinition": "Rare brilliance in someone shaping art, science, or thought."
+    },
+    {
+      "storyId": "cmogo94ew0001jv040vlzny18",
+      "word": "serata",
+      "newDefinition": "Hours after sunset spent socializing, dining, or unwinding with company."
+    },
+    {
+      "storyId": "cmogo94ew0001jv040vlzny18",
+      "word": "sorridere",
+      "newDefinition": "Curving the lips upward to express warmth, pleasure, or quiet welcome."
+    },
+    {
+      "storyId": "cmolrnlda000532s9ke3pqnyu",
+      "word": "camere",
+      "newDefinition": "Restaurant staff member taking orders and bringing food to tables."
+    },
+    {
+      "storyId": "cmolrnlda000532s9ke3pqnyu",
+      "word": "suono",
+      "newDefinition": "Vibration in the air registered by the ear as music or noise."
+    },
+    {
+      "storyId": "cmolrnlda000532s9ke3pqnyu",
+      "word": "forchetta",
+      "newDefinition": "Pronged utensil used for spearing pasta and lifting bites to mouth."
+    },
+    {
+      "storyId": "cmolrnlda000532s9ke3pqnyu",
+      "word": "progetto",
+      "newDefinition": "Planned undertaking with a clear goal and steps toward completion."
+    },
+    {
+      "storyId": "cmolrnlda000532s9ke3pqnyu",
+      "word": "scrivere",
+      "newDefinition": "Forming letters and words on paper or screen to record meaning."
+    },
+    {
+      "storyId": "cmolrnlda000532s9ke3pqnyu",
+      "word": "ascoltare",
+      "newDefinition": "Paying focused attention to sounds, voices, or stories around you."
+    },
+    {
+      "storyId": "cmolsbuwa000d32s9a5mvwfrc",
+      "word": "forno",
+      "newDefinition": "Enclosed heated chamber used for baking pizza, bread, or roasted dishes."
+    },
+    {
+      "storyId": "cmolsbuwa000d32s9a5mvwfrc",
+      "word": "turista",
+      "newDefinition": "Person traveling for pleasure, exploring places far from home."
+    },
+    {
+      "storyId": "cmolsbuwa000d32s9a5mvwfrc",
+      "word": "cuocere",
+      "newDefinition": "Preparing food by applying heat until ready to eat."
+    },
+    {
+      "storyId": "cmolsbuwa000d32s9a5mvwfrc",
+      "word": "sorriso",
+      "newDefinition": "Friendly upward curve of the lips, signaling warmth or amusement."
+    },
+    {
+      "storyId": "cmolsbuwa000d32s9a5mvwfrc",
+      "word": "serata",
+      "newDefinition": "Stretch of evening hours spent working, dining, or relaxing socially."
+    },
+    {
+      "storyId": "cmomyotyr0001328dkfucstiz",
+      "word": "mangiare",
+      "newDefinition": "Consuming food, often as part of a shared meal."
+    },
+    {
+      "storyId": "cmoncz14x000hukuc6c9t367z",
+      "word": "Bildschirm",
+      "newDefinition": "Glowing display surface where text, images, or news appear."
+    },
+    {
+      "storyId": "cmoncz14x000lukuc78clupr3",
+      "word": "Reim",
+      "newDefinition": "Matched sound endings; loosely, the rhythmic coherence of a story."
+    },
+    {
+      "storyId": "cmoncz14x000lukuc78clupr3",
+      "word": "Besen",
+      "newDefinition": "Bristled cleaning tool, mythologized in folklore as a witch's vehicle."
+    },
+    {
+      "storyId": "cmoncz14x000lukuc78clupr3",
+      "word": "Erfindung",
+      "newDefinition": "Fabricated narrative or device, here built to justify persecution."
+    },
+    {
+      "storyId": "cmoncz14x000lukuc78clupr3",
+      "word": "Sehnsucht",
+      "newDefinition": "Aching unfulfillable longing central to German Romantic literary tradition."
+    },
+    {
+      "storyId": "cmoncz14x000lukuc78clupr3",
+      "word": "Nieselregen",
+      "newDefinition": "Light persistent drizzle, common on German peaks during cool spring."
+    },
+    {
+      "storyId": "cmoncz14w000cukucqfl0hlf8",
+      "word": "Werktag",
+      "newDefinition": "Ordinary working weekday outside Sundays and public holidays."
+    },
+    {
+      "storyId": "cmoncz14w000cukucqfl0hlf8",
+      "word": "Erinnerung",
+      "newDefinition": "Mental recollection of something experienced or witnessed in the past."
+    },
+    {
+      "storyId": "cmoncz14w000cukucqfl0hlf8",
+      "word": "murmeln",
+      "newDefinition": "Speaking softly under one's breath, barely above a whisper."
+    },
+    {
+      "storyId": "cmoncz14w000cukucqfl0hlf8",
+      "word": "atmen",
+      "newDefinition": "Drawing air into the lungs and releasing it again steadily."
+    },
+    {
+      "storyId": "cmoncz14w000cukucqfl0hlf8",
+      "word": "Beerdigung",
+      "newDefinition": "Solemn ceremony for burying or honoring someone who has died."
+    },
+    {
+      "storyId": "cmoncz14w000cukucqfl0hlf8",
+      "word": "weh tun",
+      "newDefinition": "Causing pain in body or heart; making something ache."
+    },
+    {
+      "storyId": "cmoncz14w000cukucqfl0hlf8",
+      "word": "Brust",
+      "newDefinition": "Upper torso between neck and stomach, where strong emotions register."
+    },
+    {
+      "storyId": "cmoncz14w0009ukuca9dj5c4q",
+      "word": "Verspätung",
+      "newDefinition": "Delayed arrival or departure, especially of trains, flights, or appointments."
+    },
+    {
+      "storyId": "cmoncz14w0009ukuca9dj5c4q",
+      "word": "Entscheidung",
+      "newDefinition": "Chosen path among options, marking commitment to one possibility."
+    },
+    {
+      "storyId": "cmoncz14w0009ukuca9dj5c4q",
+      "word": "merken",
+      "newDefinition": "Picking up on something through perception, memory, or close attention."
+    },
+    {
+      "storyId": "cmoncz14x000mukuckdq7tjw5",
+      "word": "pfeifen",
+      "newDefinition": "Producing a high tone with the mouth or wind through gaps."
+    },
+    {
+      "storyId": "cmoncz14x000mukuckdq7tjw5",
+      "word": "Trennung",
+      "newDefinition": "Pulling apart of two sides, whether political border or human relationship."
+    },
+    {
+      "storyId": "cmoncz14w0008ukucsdk7ltzb",
+      "word": "warten",
+      "newDefinition": "Lingering in one place, expecting someone or something to arrive."
+    },
+    {
+      "storyId": "cmoncz14w0008ukucsdk7ltzb",
+      "word": "Sonne",
+      "newDefinition": "Bright star warming the sky, central to weather small talk."
+    },
+    {
+      "storyId": "cmoncz14w0008ukucsdk7ltzb",
+      "word": "Möwe",
+      "newDefinition": "Coastal seabird with white feathers, screeching loudly above harbors and piers."
+    },
+    {
+      "storyId": "cmoncz14w0003ukucbibol5s1",
+      "word": "Zeitung",
+      "newDefinition": "Folded sheets of daily printed news, sold each morning at kiosks."
+    },
+    {
+      "storyId": "cmoncz14w0003ukucbibol5s1",
+      "word": "Fenster",
+      "newDefinition": "Glass-paneled opening in a wall, letting in light and view."
+    },
+    {
+      "storyId": "cmoncz14w0003ukucbibol5s1",
+      "word": "Buch",
+      "newDefinition": "Bound printed pages read for pleasure, study, or quiet escape."
+    },
+    {
+      "storyId": "cmoncz14w0003ukucbibol5s1",
+      "word": "Woche",
+      "newDefinition": "Span of seven consecutive days marking time between recurring events."
+    },
+    {
+      "storyId": "cmoncz14w0003ukucbibol5s1",
+      "word": "arbeiten",
+      "newDefinition": "To hold a job, doing tasks in exchange for pay."
+    },
+    {
+      "storyId": "cmoncz14w0003ukucbibol5s1",
+      "word": "Buchhandlung",
+      "newDefinition": "Retail shop selling new books, often with knowledgeable staff recommendations."
+    },
+    {
+      "storyId": "cmoncz14w0003ukucbibol5s1",
+      "word": "Käse",
+      "newDefinition": "Pressed dairy made from milk, central to German breakfast tables."
+    },
+    {
+      "storyId": "cmoncz14x000jukuccqplucy9",
+      "word": "Hüfte",
+      "newDefinition": "Curved bony joint connecting torso to leg, often aching with age."
+    },
+    {
+      "storyId": "cmoncz14x000jukuccqplucy9",
+      "word": "Enkel",
+      "newDefinition": "Younger generation descended from one's children, observing family rituals fade."
+    },
+    {
+      "storyId": "cmoncz14w000aukucwxpat4fv",
+      "word": "Buchhandlung",
+      "newDefinition": "Independent shop selling new and curated books to neighborhood readers."
+    },
+    {
+      "storyId": "cmoncz14w000aukucwxpat4fv",
+      "word": "Umschlag",
+      "newDefinition": "Folded paper sleeve sealing letters, contracts, and important offers inside."
+    },
+    {
+      "storyId": "cmoncz14w000aukucwxpat4fv",
+      "word": "Gehalt",
+      "newDefinition": "Regular monthly pay received from an employer for steady work."
+    },
+    {
+      "storyId": "cmoncz14w000aukucwxpat4fv",
+      "word": "wiegen",
+      "newDefinition": "Carrying weight, literally on a scale or figuratively on conscience."
+    },
+    {
+      "storyId": "cmoncz14x000iukuc5w4fzg6w",
+      "word": "zaghaft",
+      "newDefinition": "Hesitant and tentative, lacking confidence in each careful brushstroke."
+    },
+    {
+      "storyId": "cmoncz14x000iukuc5w4fzg6w",
+      "word": "Berater",
+      "newDefinition": "Trusted advisor offering opinions, sometimes the inner critic disrupting flow."
+    },
+    {
+      "storyId": "cmoncz14x000iukuc5w4fzg6w",
+      "word": "Pinsel",
+      "newDefinition": "Bristled tool dipped in paint, transferring color onto waiting canvas."
+    },
+    {
+      "storyId": "cmoncz14w0002ukucenj11v6i",
+      "word": "Mädchen",
+      "newDefinition": "Young female child, grammatically neuter due to its diminutive ending."
+    },
+    {
+      "storyId": "cmoncz14w0007ukucmdug6e9b",
+      "word": "Treppe",
+      "newDefinition": "Series of steps connecting one floor to another inside buildings."
+    },
+    {
+      "storyId": "cmoncz14x000gukuclg9q02mi",
+      "word": "Pflaumenmus",
+      "newDefinition": "Thick dark plum spread, slowly cooked down with warm autumn spices."
+    },
+    {
+      "storyId": "cmoncz14x000gukuclg9q02mi",
+      "word": "Verschwörung",
+      "newDefinition": "Secret plot among multiple parties, often invoked playfully about coincidences."
+    },
+    {
+      "storyId": "cmoncz14w0005ukucu7eusk55",
+      "word": "Geburtstag",
+      "newDefinition": "Annual celebration marking the day someone was born, with cake."
+    },
+    {
+      "storyId": "cmoncz14w0005ukucu7eusk55",
+      "word": "Laden",
+      "newDefinition": "Small storefront selling goods, often independently owned within a neighborhood."
+    },
+    {
+      "storyId": "cmoncz14w0005ukucu7eusk55",
+      "word": "Karte",
+      "newDefinition": "Small printed rectangle: greeting, postcard, ticket, or playing card."
+    },
+    {
+      "storyId": "cmoncz14w0005ukucu7eusk55",
+      "word": "schreiben",
+      "newDefinition": "Forming letters or words with pen, marking thoughts onto paper."
+    },
+    {
+      "storyId": "cmoncz14w0006ukuchilyfhwe",
+      "word": "schlafen",
+      "newDefinition": "Resting unconsciously through the night, restoring body and tired mind."
+    },
+    {
+      "storyId": "cmoncz14w000bukucosbh3fns",
+      "word": "Bildschirm",
+      "newDefinition": "Lit glass surface displaying images on phones, computers, and televisions."
+    },
+    {
+      "storyId": "cmoncz14w000bukucosbh3fns",
+      "word": "klingeln",
+      "newDefinition": "Producing a sharp ringing sound from phones, doorbells, or alarm clocks."
+    },
+    {
+      "storyId": "cmoncz14w000dukucpmxh7pdr",
+      "word": "Brause",
+      "newDefinition": "Cheap fizzy soft drink especially popular among German children at events."
+    },
+    {
+      "storyId": "cmoncz14w000fukuc94ux8jh6",
+      "word": "Versprechen",
+      "newDefinition": "Spoken pledge or, metaphorically, an early hint of something good arriving."
+    },
+    {
+      "storyId": "cmoncz14w0004ukucuasqpua4",
+      "word": "Wochenende",
+      "newDefinition": "Saturday and Sunday taken together as relaxing time off work."
+    },
+    {
+      "storyId": "cmoncz14w0004ukucuasqpua4",
+      "word": "Entschuldigung",
+      "newDefinition": "Polite expression used to apologize or get someone's attention courteously."
+    },
+    {
+      "storyId": "cmoni7j4f000032gnogvzmzb9",
+      "word": "rutschen",
+      "newDefinition": "Sliding unintentionally; words can slip out before the brain catches them."
+    },
+    {
+      "storyId": "cmoni7j4g000132gnokn5scmi",
+      "word": "Klingel",
+      "newDefinition": "Small mounted doorbell often standing in for harder unspoken topics."
+    }
+  ]
+}

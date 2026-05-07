@@ -1,0 +1,28 @@
+{
+  "title": "Beim Bäcker am Hackeschen Markt",
+  "synopsis": "An einem Samstagmorgen am Hackeschen Markt in Berlin riecht die kleine Bäckerei nach frischem Brot. Frau Weber, eine Stammkundin, kauft frische Brötchen und ein halbes Roggenbrot. Die Bäckerin Sophie begrüßt sie mit Namen und schneidet das Brot. Danach kommt der junge Lukas und fragt nach Sesambrötchen und einem Stück Käsekuchen für seine Schwester. Sophie und Lukas sprechen kurz und freundlich über den Besuch.",
+  "text": "Es ist Samstagmorgen am Hackeschen Markt in Berlin. Die kleine Bäckerei riecht herrlich nach frischem Brot. Vor der Tür warten ein paar Leute. Drinnen steht Frau Weber an der Theke. Sophie, die junge Bäckerin, lächelt freundlich.\n\nSophie: Guten Morgen, Frau Weber! Schön, Sie heute wieder zu sehen. Was darf es sein?\nFrau Weber: Guten Morgen, Sophie! Ich nehme bitte sechs frische Brötchen. Sind sie noch warm?\nSophie: Ja, sie sind ganz frisch aus dem Ofen. Möchten Sie auch ein Brot dazu?\nFrau Weber: Sehr gern. Bitte ein halbes Roggenbrot, geschnitten. Mein Mann mag Roggen sehr.\nSophie: Natürlich. Ich schneide es für Sie. Möchten Sie sonst noch etwas, vielleicht einen Kuchen?\nFrau Weber: Heute nicht, danke. Mein Sohn kommt am Sonntag, dann kaufe ich Kuchen.\nSophie: Schön! Das macht zusammen sieben Euro vierzig, bitte.\nFrau Weber: Hier sind acht Euro. Stimmt so. Einen schönen Tag, Sophie!\nSophie: Vielen Dank, Frau Weber! Bis nächste Woche, und liebe Grüße an Ihren Mann.\nLukas: Entschuldigung, guten Morgen. Haben Sie noch Sesambrötchen?\nSophie: Guten Morgen! Ja, ich habe noch fünf Sesambrötchen. Wie viele möchten Sie?\nLukas: Ich nehme bitte vier Stück. Und ein Stück Käsekuchen, bitte.\nSophie: Gern. Der Käsekuchen ist heute besonders gut. Ist er für jemand Besonderen?\nLukas: Ja, meine Schwester besucht mich heute. Sie liebt Käsekuchen aus Berlin.\nSophie: Wie schön! Wohnt sie weit weg?\nLukas: Sie wohnt in Hamburg und kommt nur einmal im Monat.\nSophie: Dann wird sie sich bestimmt freuen. Das macht sechs Euro zwanzig.\nLukas: Hier, bitte. Vielen Dank und einen schönen Samstag!\nSophie: Ihnen auch! Grüßen Sie Ihre Schwester von der Bäckerei!",
+  "vocab": [
+    { "word": "Bäckerei", "surface": "Bäckerei", "definition": "Small shop where bread, rolls, and pastries are baked and sold.", "type": "noun" },
+    { "word": "Brötchen", "surface": "Brötchen", "definition": "Small round bread roll, a staple of German breakfast tables.", "type": "noun" },
+    { "word": "Sesambrötchen", "surface": "Sesambrötchen", "definition": "Bread roll topped with sesame seeds for extra nutty flavor.", "type": "noun" },
+    { "word": "Roggenbrot", "surface": "Roggenbrot", "definition": "Dense dark loaf made from rye flour, popular across Germany.", "type": "noun" },
+    { "word": "Käsekuchen", "surface": "Käsekuchen", "definition": "Sweet baked dessert made with quark cheese and a crust base.", "type": "noun" },
+    { "word": "Theke", "surface": "Theke", "definition": "Long counter in a shop where staff serve customers directly.", "type": "noun" },
+    { "word": "Ofen", "surface": "Ofen", "definition": "Heated chamber where bread, cakes, and other foods are baked.", "type": "noun" },
+    { "word": "frisch", "surface": "frische", "definition": "Recently made or harvested, still warm or full of flavor.", "type": "adjective" },
+    { "word": "warm", "surface": "warm", "definition": "Pleasantly heated, between cool and hot in temperature range.", "type": "adjective" },
+    { "word": "schneiden", "surface": "schneide", "definition": "To divide bread or food into slices using a knife.", "type": "verb" },
+    { "word": "kaufen", "surface": "kaufe", "definition": "To buy goods or services in exchange for money.", "type": "verb" },
+    { "word": "nehmen", "surface": "nehme", "definition": "To take or pick up an item, often when ordering food.", "type": "verb" },
+    { "word": "möchten", "surface": "möchten", "definition": "Polite verb form expressing wishes, similar to would like.", "type": "verb" },
+    { "word": "besuchen", "surface": "besucht", "definition": "To visit a person or place for a friendly stay.", "type": "verb" },
+    { "word": "Schwester", "surface": "Schwester", "definition": "Female sibling sharing one or both parents with another person.", "type": "noun" },
+    { "word": "Mann", "surface": "Mann", "definition": "Adult male person, often used to mean husband in context.", "type": "noun" },
+    { "word": "Sohn", "surface": "Sohn", "definition": "Male child in relation to his mother and father.", "type": "noun" },
+    { "word": "Hackescher Markt", "surface": "Hackeschen Markt", "definition": "Lively square in central Berlin known for shops and cafés.", "type": "other" },
+    { "word": "Samstagmorgen", "surface": "Samstagmorgen", "definition": "Early hours of Saturday, traditional time for German bakery visits.", "type": "noun" },
+    { "word": "Stück", "surface": "Stück", "definition": "Single portion or piece cut from a larger whole item.", "type": "noun" },
+    { "word": "Grüße", "surface": "Grüße", "definition": "Friendly regards or greetings passed along to another person.", "type": "noun" }
+  ]
+}

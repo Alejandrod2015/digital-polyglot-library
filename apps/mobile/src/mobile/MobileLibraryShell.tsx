@@ -34,6 +34,7 @@ import {
   formatVariantLabel,
   VARIANT_LABELS,
   VARIANT_OPTIONS_BY_LANGUAGE,
+  type AudioWordTimingsPayload,
   type Book,
   type Level,
   type Story,
@@ -73,7 +74,8 @@ import {
 import { LanguageSwitchSheet, type LanguageSwitchEntry } from "./LanguageSwitchSheet";
 import { OnboardingFlow, type OnboardingPayload } from "./OnboardingFlow";
 import { PracticeCelebration } from "./PracticeCelebration";
-import { PracticeExitConfirm } from "./PracticeExitConfirm";
+import { PracticeExitSheet } from "./PracticeExitSheet";
+import { PracticeCountdown } from "./PracticeCountdown";
 import { ReaderSkeleton } from "./ReaderSkeleton";
 import { useOfflineStatus } from "../lib/useOfflineStatus";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
@@ -1668,6 +1670,28 @@ export function MobileLibraryShell(args: {
   const [practiceSelectedOption, setPracticeSelectedOption] = useState<string | null>(null);
   const [practiceRevealed, setPracticeRevealed] = useState(false);
   const [practiceComplete, setPracticeComplete] = useState(false);
+  // Countdown 3-2-1-GO antes del primer ejercicio. true durante los
+  // 3 seg iniciales; mientras está activo el timer y el autoplay del
+  // ejercicio NO arrancan, así el usuario tiene un buffer para
+  // ubicarse antes de que aparezca la primera pregunta.
+  const [practiceCountdownActive, setPracticeCountdownActive] = useState(false);
+  // Indica que el ejercicio actual fue revelado por timeout (no por
+  // tap manual del usuario). La UI muestra un banner "Time's up" para
+  // que el usuario sepa que falló por agotar el timer en lugar de
+  // creer que la respuesta correcta era lo que tapeó (que tapeó nada).
+  // Se resetea junto con `practiceRevealed` en cada `advancePractice`
+  // y al iniciar la sesión.
+  const [practiceTimedOut, setPracticeTimedOut] = useState(false);
+  // Pausa global de la sesión: detiene el timer, cancela el
+  // auto-advance schedule, y silencia el autoplay del audio. Tap manual
+  // en TTS/Story/HQ sigue funcionando para que el usuario pueda
+  // escuchar tranquilo durante la pausa.
+  const [practicePaused, setPracticePaused] = useState(false);
+  // Segundos que faltan en el timer del ejercicio actual. Se setea a 10
+  // al iniciar cada ejercicio y baja 1 cada segundo. Al llegar a 0
+  // revela la respuesta correcta, marca como wrong y dispara el
+  // auto-advance.
+  const [practiceTimerRemaining, setPracticeTimerRemaining] = useState(10);
   // Controls the "Exit without finishing?" confirmation overlay. Back button
   // opens it when the user is mid-session (has started at least one exercise
   // and hasn't completed the round). The Done button after completion skips
@@ -1873,6 +1897,12 @@ export function MobileLibraryShell(args: {
   const practiceCompletionTrackedRef = useRef(false);
   const practiceClipSoundRef = useRef<Audio.Sound | null>(null);
   const practiceHqSoundRef = useRef<Audio.Sound | null>(null);
+  // Tracks the id del último ejercicio cuyo autoplay ya disparó. Se
+  // resetea en openPracticeMode para que la primera reproducción de
+  // cada sesión nueva siempre dispare. Declarado acá arriba (no en el
+  // effect del autoplay donde se usa) para que `openPracticeMode`
+  // pueda escribirlo sin caer en TDZ.
+  const lastAutoplayedExerciseIdRef = useRef<string | null>(null);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
   // Animated values for the "session complete" celebration. Driven by
@@ -2521,6 +2551,13 @@ export function MobileLibraryShell(args: {
   // them what they need to finish first instead of the tap silently
   // doing nothing. Auto-dismissed by an effect below.
   const [lockedStoryHint, setLockedStoryHint] = useState<string | null>(null);
+  // No-op del debug trace que estuvo activo para diagnosticar el bug
+  // de apertura de stories. Lo dejamos cableado por si vuelve a hacer
+  // falta — los call-sites siguen llamando `showDebug(...)` pero el
+  // contenido no se renderiza.
+  const showDebug = useCallback((_text: string) => {
+    // intentionally empty
+  }, []);
   const lockedHintAnim = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     if (!lockedStoryHint) {
@@ -3394,15 +3431,41 @@ export function MobileLibraryShell(args: {
     let cancelled = false;
 
     async function hydrateOfflineState() {
-      // FORCE: skip persisted journey cache on cold start. Backend
-      // changed (journey_story_read no longer marks audioFinished) and
-      // the on-disk cache was serving the stale "next" pointer for
-      // multiple sessions even after force-quit. Always start with an
-      // empty journey ref and let the network hydrate populate it.
-      const snapshot = await loadOfflineSnapshot(PREVIEW_OFFLINE_USER_ID);
+      // Cargamos el offlineSnapshot Y el journey cache de disco en
+      // paralelo. Antes este efecto sobreescribía el journey cache
+      // con `{}` para descartar un pointer "next" stale tras un
+      // backend change; el efecto colateral fatal era que cold-start
+      // offline NUNCA tenía journey para mostrar (la app entraba al
+      // shell pero el path quedaba vacío).
+      // Solución: NO destruir el cache. Cuando el usuario está
+      // online, el fetch fresco sobreescribe el cache stale por
+      // entries actualizados. Cuando está offline, el cache es lo
+      // único que tenemos para renderear el path.
+      const [snapshot, journeyCache] = await Promise.all([
+        loadOfflineSnapshot(PREVIEW_OFFLINE_USER_ID),
+        loadJourneyCache<MobileJourneyPayload>(PREVIEW_OFFLINE_USER_ID),
+      ]);
       if (cancelled) return;
       setOfflineSnapshot(snapshot);
-      void saveJourneyCache<MobileJourneyPayload>(PREVIEW_OFFLINE_USER_ID, {});
+      if (journeyCache) {
+        for (const [language, payload] of Object.entries(journeyCache)) {
+          if (payload) journeyCacheByLanguageRef.current.set(language, payload);
+        }
+        // Seed inmediato del journey state desde el cache para que el
+        // path renderice cold-start offline. Sin esto, el ref tenía el
+        // payload pero `remoteJourney` quedaba null hasta que el fetch
+        // online resolviera (que offline nunca pasa). Tomamos la
+        // primera lengua disponible; si después el flujo online setea
+        // otra activa, la sobreescribe.
+        const firstEntry = Object.entries(journeyCache).find(
+          ([, payload]) => payload != null
+        );
+        if (firstEntry) {
+          const [language, payload] = firstEntry;
+          setRemoteJourney(payload);
+          setActiveJourneyLanguage((current) => current ?? language);
+        }
+      }
     }
 
     void hydrateOfflineState();
@@ -3463,6 +3526,22 @@ export function MobileLibraryShell(args: {
 
   const offlineStoriesById = useMemo(
     () => new Map((offlineSnapshot?.stories ?? []).map((story) => [story.storyId, story])),
+    [offlineSnapshot?.stories]
+  );
+  // Lookup adicional por storySlug. CRÍTICO: las stories descargadas
+  // desde el journey (vía /api/standalone-stories) se guardan con el
+  // storyId del endpoint standalone, que NO coincide con el storyId
+  // del journey API. El reader abre la story con el id del journey y
+  // el lookup por id no encontraba el offline copy → cover y audio
+  // caían a las URLs HTTP y fallaban offline. El slug es estable
+  // entre ambos endpoints.
+  const offlineStoriesBySlug = useMemo(
+    () =>
+      new Map(
+        (offlineSnapshot?.stories ?? [])
+          .filter((story) => typeof story.storySlug === "string" && story.storySlug.length > 0)
+          .map((story) => [story.storySlug as string, story])
+      ),
     [offlineSnapshot?.stories]
   );
 
@@ -3782,11 +3861,14 @@ export function MobileLibraryShell(args: {
         .map((story) => {
           const selection = resolveStorySelection(story.storyId);
           if (!selection) return null;
-          const offlineStory = offlineStoriesById.get(story.storyId);
+          const offlineStory =
+            (selection.story.slug
+              ? offlineStoriesBySlug.get(selection.story.slug)
+              : undefined) ?? offlineStoriesById.get(story.storyId);
           return { remote: story, selection, offlineStory };
         })
         .filter((item): item is NonNullable<typeof item> => item !== null),
-    [offlineStoriesById, remoteStories]
+    [offlineStoriesById, offlineStoriesBySlug, remoteStories]
   );
 
   const favoriteCards = useMemo(
@@ -4640,11 +4722,38 @@ export function MobileLibraryShell(args: {
         timeoutMs: 15000,
       });
       const standalone = payload.stories?.[0];
-      if (!standalone) return;
-      const nextSnapshot = await saveStandaloneStoryOffline(PREVIEW_OFFLINE_USER_ID, standalone);
+      if (!standalone) {
+        setLockedStoryHint("No se pudo descargar: el servidor no devolvió datos.");
+        return;
+      }
+      const nextSnapshot = await saveStandaloneStoryOffline(
+        PREVIEW_OFFLINE_USER_ID,
+        standalone
+      );
       setOfflineSnapshot(nextSnapshot);
+      // Verificación dura: el snapshot dice "descargada" pero ¿los
+      // archivos realmente quedaron en disco? Si `cacheRemoteFile`
+      // falló silenciosamente (red intermitente, server error, URL
+      // muerta), `localCoverUri` y `localAudioUri` pueden ser null y
+      // la story quedaba marcada como descargada sin tener los media.
+      // Avisamos al usuario en lugar de fingir éxito.
+      const saved = nextSnapshot.stories.find((s) => s.storyId === standalone.id);
+      const coverOk = Boolean(saved?.localCoverUri);
+      const audioOk = Boolean(saved?.localAudioUri);
+      if (!coverOk || !audioOk) {
+        const missing = [
+          !coverOk ? "imagen" : null,
+          !audioOk ? "audio" : null,
+        ]
+          .filter(Boolean)
+          .join(" + ");
+        setLockedStoryHint(
+          `Descarga incompleta (${missing} no se pudo guardar). Verifica tu conexión y vuelve a intentar.`
+        );
+      }
     } catch (error) {
       console.error("[mobile journey] failed to download journey story offline", error);
+      setLockedStoryHint("No se pudo descargar la historia. Verifica tu conexión.");
     } finally {
       setOfflineStoryIdInFlight(null);
     }
@@ -4751,7 +4860,9 @@ export function MobileLibraryShell(args: {
   }
 
   async function openJourneyStory(story: MobileJourneyTopicSummary["stories"][number]) {
+    showDebug(`tap: ${story.storySlug ?? "no-slug"}`);
     if (!story.storySlug) {
+      showDebug("abort: no slug");
       // Surface the failure instead of silently doing nothing —
       // the user reported "tap and nothing happens", which traced
       // back to journey stories whose slug never made it into the
@@ -4769,10 +4880,27 @@ export function MobileLibraryShell(args: {
     // vocab (older downloads saved before vocabRaw was persisted), try the
     // network first so the reader can still highlight words; if the network
     // fails we fall back to the local text-only copy further down.
-    const offlineCopy = offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug);
+    // Lookup primero por slug (estable entre journey y standalone API):
+    // los IDs difieren porque journey usa Postgres id y standalone usa
+    // otra serie. El slug es el único identificador estable.
+    const offlineCopy =
+      (story.storySlug
+        ? offlineStoriesBySlug.get(story.storySlug)
+        : undefined) ??
+      offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug);
     const hasOfflineVocab =
       typeof offlineCopy?.vocabRaw === "string" && offlineCopy.vocabRaw.trim().length > 0;
-    if (offlineCopy?.text && hasOfflineVocab) {
+    showDebug(
+      `lookup: snap=${offlineSnapshot?.stories.length ?? 0} found=${offlineCopy ? "Y" : "N"} text=${offlineCopy?.text ? "Y" : "N"} vocab=${hasOfflineVocab ? "Y" : "N"}`
+    );
+    // Si la story está descargada (tiene text local), abrir directo
+    // sin pasar por fetch network. Antes el flow exigía vocab además
+    // del text, y caía al fetch online cuando faltaba vocab; offline
+    // ese fetch fallaba siempre y aunque el catch tenía fallback,
+    // cualquier inconsistencia silenciosa del flow podía quedar el
+    // tap sin abrir nada. Saltarse el round-trip cuando tenemos
+    // datos locales es lo más robusto.
+    if (offlineCopy?.text) {
       const standalone: MobileStandaloneStory = {
         id: offlineCopy.storyId,
         slug: offlineCopy.storySlug ?? story.storySlug,
@@ -4798,6 +4926,7 @@ export function MobileLibraryShell(args: {
     // ~150ms so a fast response doesn't flash a placeholder. Clear it
     // on every exit path below (success, no-result, network failure).
     const skeletonTimer = setTimeout(() => setOpeningStoryId(story.id), 150);
+    showDebug(`fetch start: token=${sessionToken ? "Y" : "N"}`);
     try {
       const payload = await apiFetch<{ stories?: MobileStandaloneStory[] }>({
         baseUrl: mobileConfig.apiBaseUrl,
@@ -4806,6 +4935,7 @@ export function MobileLibraryShell(args: {
         timeoutMs: 15000,
       });
       const standalone = payload.stories?.[0];
+      showDebug(`fetch ok: ${standalone ? "got story" : "no story in payload"}`);
       if (!standalone) {
         clearTimeout(skeletonTimer);
         setOpeningStoryId(null);
@@ -4817,6 +4947,7 @@ export function MobileLibraryShell(args: {
       }
       clearTimeout(skeletonTimer);
       setOpeningStoryId(null);
+      showDebug("openSelection (network)");
       openSelection(createSelectionFromStandaloneStory(standalone));
       // If this story is already downloaded offline but was saved before
       // vocabRaw was persisted, backfill the snapshot so next offline open
@@ -4832,10 +4963,13 @@ export function MobileLibraryShell(args: {
     } catch (error) {
       clearTimeout(skeletonTimer);
       setOpeningStoryId(null);
+      const errMsg = error instanceof Error ? error.message : String(error);
+      showDebug(`fetch fail: ${errMsg.slice(0, 40)}`);
       console.error("[mobile journey] failed to open journey story", error);
       // We're likely offline AND the local copy has no vocab. Better to open
       // the text-only version than to do nothing.
       if (offlineCopy?.text) {
+        showDebug("openSelection (fallback)");
         const standalone: MobileStandaloneStory = {
           id: offlineCopy.storyId,
           slug: offlineCopy.storySlug ?? story.storySlug,
@@ -4854,6 +4988,16 @@ export function MobileLibraryShell(args: {
           localAudioUri: offlineCopy.localAudioUri ?? null,
         };
         openSelection(createSelectionFromStandaloneStory(standalone));
+      } else {
+        showDebug("dead-end: no offline + no net");
+        // Sin offline copy y sin red: feedback claro al usuario en
+        // lugar de tap silencioso. Antes el catch terminaba sin hacer
+        // nada visible y el reporte era "no deja hacer tap en las
+        // historias" — el tap funcionaba, simplemente no había nada
+        // que abrir.
+        setLockedStoryHint(
+          "Esta historia no está descargada. Conéctate a internet o descárgala primero."
+        );
       }
     }
   }
@@ -5340,6 +5484,7 @@ export function MobileLibraryShell(args: {
     setPracticeScore(0);
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
+    setPracticeTimedOut(false);
     setPracticeComplete(false);
     setPracticeLastResult(null);
     setPracticeSessionStreak(0);
@@ -5352,6 +5497,27 @@ export function MobileLibraryShell(args: {
     setMatchedWords([]);
     setLastPracticeActivityAt(new Date().toISOString());
     setMenuOpen(false);
+    // Arranca con countdown activo + pausa off + timer en 10 seg.
+    // Estos states se reinician en cada apertura para que la sesión
+    // siempre empiece "limpia".
+    setPracticeCountdownActive(true);
+    setPracticePaused(false);
+    setPracticeTimerRemaining(10);
+    // Reset del ref del autoplay. Sin esto, si la sesión anterior
+    // terminó en un ejercicio cuyo id se repite por azar en la nueva
+    // (improbable pero posible con palabras compartidas), el autoplay
+    // no dispararía. Más importante: garantiza que la primera vez
+    // SIEMPRE suene aunque el ref tenga basura de un mount previo del
+    // shell. Hay que llamarlo aquí (no en el effect) porque el effect
+    // mismo escribe el ref y nunca lo resetea.
+    lastAutoplayedExerciseIdRef.current = null;
+    // Parar cualquier audio del reader que pueda estar sonando si
+    // venimos directo del end-of-story prompt: el story sound puede
+    // continuar reproduciéndose en background y enmascarar el
+    // autoplay del primer ejercicio.
+    void stopPracticeContextClip();
+    void stopPracticeHqClip();
+    getOptionalSpeechModule()?.stop();
   }
 
   /**
@@ -5433,6 +5599,7 @@ export function MobileLibraryShell(args: {
     setPracticeScore(0);
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
+    setPracticeTimedOut(false);
     setPracticeComplete(false);
     setPracticeLastResult(null);
     setPracticeSessionStreak(0);
@@ -5594,20 +5761,26 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  // Back-arrow handler. If the session is already complete OR the user
-  // hasn't actually attempted anything yet, we close immediately — there's
-  // nothing meaningful to "lose". If they're mid-session, we surface a
-  // confirmation overlay so a stray tap doesn't wipe their streak/score.
+  // Back-arrow handler. Si la sesión ya está completa, cerramos directo
+  // (no hay nada que ofrecer). En cualquier otro caso mostramos el
+  // popup de confirm: el usuario abrió Practice intencionalmente y un
+  // tap accidental en back no debería cerrar la sesión sin chance de
+  // reanudar, ni siquiera en el primer ejercicio antes de tapear nada
+  // (el countdown 3-2-1 ya gastó su atención, lo último que queremos
+  // es perderla por un tap perdido).
+  //
+  // Pausamos la sesión al abrir el sheet para que el timer no siga
+  // corriendo mientras el usuario decide.
   function requestClosePracticeSession() {
     if (practiceComplete) {
       closePracticeSession();
       return;
     }
-    const attemptedAnything = practiceIndex > 0 || practiceRevealed || practiceSelectedOption !== null;
-    if (!attemptedAnything) {
+    if (!activePracticeMode) {
       closePracticeSession();
       return;
     }
+    setPracticePaused(true);
     setPracticeExitConfirmVisible(true);
   }
 
@@ -5660,6 +5833,7 @@ export function MobileLibraryShell(args: {
     setPracticeScore(0);
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
+    setPracticeTimedOut(false);
     setPracticeComplete(false);
     setPracticeLastResult(null);
     setPracticeSessionStreak(0);
@@ -5688,10 +5862,162 @@ export function MobileLibraryShell(args: {
     setPracticeIndex((current) => current + 1);
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
+    setPracticeTimedOut(false);
     setPracticeLastResult(null);
     setActiveMatchWord(null); setWrongMatchAttempt(null);
     setMatchedWords([]);
   }
+
+  // ─── Practice timer + auto-advance + autoplay del audio ───────────
+  //
+  // Tres useEffects que cooperan para una sesión "auto-pilot":
+  //   1. Reset del timer a 10 seg en cada ejercicio nuevo.
+  //   2. Tick del timer cada segundo; al llegar a 0 marca como wrong
+  //      (timeout) y revela la respuesta correcta.
+  //   3. Auto-advance 1.5 seg después de revelar (manual o por
+  //      timeout) → siguiente ejercicio.
+  //   4. Autoplay del mejor audio (HQ→TTS) al arrancar cada ejercicio.
+  //
+  // Todos los effects respetan `practicePaused`: al pausar, el timer
+  // se congela, el auto-advance se cancela, y los autoplays no
+  // disparan. Tap manual en TTS/Story/HQ sigue funcionando para que
+  // el usuario pueda escuchar tranquilo durante la pausa.
+  //
+  // Tampoco corren durante el countdown 3-2-1 inicial (se respeta
+  // `practiceCountdownActive`).
+
+  // (1) Reset del timer cuando cambia el ejercicio actual o cuando
+  // arranca una sesión nueva. 10 seg para multiple-choice y match
+  // por igual (decisión: igual para todo, simple y predecible).
+  useEffect(() => {
+    if (!activePracticeMode) return;
+    setPracticeTimerRemaining(10);
+  }, [practiceIndex, activePracticeMode]);
+
+  // (2) Tick del timer. Solo decrementa cuando hay ejercicio activo,
+  // no en countdown, no pausado, no revelado, no completo, y el
+  // ejercicio actual es multiple-choice. Match tiene su propio flow
+  // de pares con su propia presión de tiempo implícita; meterle un
+  // timer global lo descoordinaría. Cuando llega a 0 dispara el
+  // timeout-as-wrong en el siguiente effect.
+  useEffect(() => {
+    if (!activePracticeMode) return;
+    if (practiceCountdownActive) return;
+    if (practicePaused) return;
+    if (practiceRevealed) return;
+    if (practiceComplete) return;
+    if (practiceTimerRemaining <= 0) return;
+    const current = practiceExercises[practiceIndex];
+    if (!current || current.kind !== "multiple-choice") return;
+    const id = setTimeout(() => {
+      setPracticeTimerRemaining((value) => Math.max(0, value - 1));
+    }, 1000);
+    return () => clearTimeout(id);
+  }, [
+    activePracticeMode,
+    practiceCountdownActive,
+    practicePaused,
+    practiceRevealed,
+    practiceComplete,
+    practiceTimerRemaining,
+    practiceExercises,
+    practiceIndex,
+  ]);
+
+  // (3) Cuando el timer llega a 0 sin haber revelado: marcar como
+  // timeout (wrong por defecto). Replicamos el flow completo de una
+  // respuesta incorrecta manual: revelar, romper la racha de la
+  // sesión, anotar "again" en `practiceReviewScores` (alimenta el SRS
+  // del backend), y disparar el sonido de feedback negativo. Sin esto
+  // el timeout no actualizaba el SRS y la palabra quedaba due
+  // permanentemente. El effect (4) de auto-advance se encarga del
+  // paso al siguiente ejercicio. Sólo aplica a multiple-choice; el
+  // ejercicio de match tiene su propio flujo de pares y no entra al
+  // contador de timer global (filtrado en effect (1) abajo).
+  useEffect(() => {
+    if (!activePracticeMode) return;
+    if (practiceCountdownActive) return;
+    if (practicePaused) return;
+    if (practiceRevealed) return;
+    if (practiceComplete) return;
+    if (practiceTimerRemaining > 0) return;
+    const current = practiceExercises[practiceIndex];
+    if (!current || current.kind !== "multiple-choice") return;
+    setPracticeRevealed(true);
+    setPracticeTimedOut(true);
+    setPracticeLastResult("wrong");
+    setPracticeSessionStreak(0);
+    setPracticeReviewScores((currentScores) => ({
+      ...currentScores,
+      [normalizePracticeWord(current.favorite.word)]: "again",
+    }));
+    if (practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint") {
+      // Para checkpoints registramos el timeout con un sentinel
+      // distinto de cualquier opción real; el backend lo trata como
+      // respuesta inválida (wrong) y no como una opción del set.
+      setPracticeCheckpointResponses((currentResponses) => ({
+        ...currentResponses,
+        [current.id]: "__TIMEOUT__",
+      }));
+    }
+    void playPracticeFeedbackSound(false);
+  }, [
+    activePracticeMode,
+    practiceCountdownActive,
+    practicePaused,
+    practiceRevealed,
+    practiceComplete,
+    practiceTimerRemaining,
+    practiceExercises,
+    practiceIndex,
+    practiceLaunchContext,
+  ]);
+
+  // (4) Auto-advance 1.5 seg después de revelar. Sólo aplica a
+  // multiple-choice; en match el usuario completa los pares uno por
+  // uno y prefiere ver el resultado completo antes de pasar, así que
+  // ese flow se mantiene manual. Si el usuario pausa durante la
+  // ventana de 1.5 seg, el cleanup cancela el timeout; al despausar,
+  // el effect re-corre y vuelve a programar.
+  useEffect(() => {
+    if (!practiceRevealed) return;
+    if (practiceComplete) return;
+    if (practicePaused) return;
+    const current = practiceExercises[practiceIndex];
+    if (!current || current.kind !== "multiple-choice") return;
+    const id = setTimeout(() => {
+      advancePractice();
+    }, 1500);
+    return () => clearTimeout(id);
+  }, [practiceRevealed, practiceComplete, practicePaused, practiceExercises, practiceIndex]);
+
+  // (5) Autoplay del audio del ejercicio nuevo. Dispara una sola vez
+  // por ejercicio gracias al ref que recuerda el último id que ya
+  // sonó. Espera a que termine el countdown y a que la pausa esté
+  // off, así no arranca el audio si el usuario pausa antes del primer
+  // tick. El ref se declara arriba (junto a practiceClipSoundRef) para
+  // que openPracticeMode pueda resetearlo sin TDZ.
+  useEffect(() => {
+    if (!activePracticeMode) return;
+    if (practiceCountdownActive) return;
+    if (practicePaused) return;
+    if (practiceComplete) return;
+    if (practiceRevealed) return;
+    const exId = currentPracticeExercise?.id ?? null;
+    if (!exId) return;
+    if (lastAutoplayedExerciseIdRef.current === exId) return;
+    lastAutoplayedExerciseIdRef.current = exId;
+    void playPracticeContextClipBest();
+    // playPracticeContextClipBest tiene su propia lógica HQ→TTS y
+    // maneja errores adentro; no necesitamos un catch aquí.
+  }, [
+    activePracticeMode,
+    practiceCountdownActive,
+    practicePaused,
+    practiceComplete,
+    practiceRevealed,
+    currentPracticeExercise?.id,
+  ]);
 
   function choosePracticeOption(option: string) {
     if (practiceRevealed || practiceComplete) return;
@@ -6001,9 +6327,20 @@ export function MobileLibraryShell(args: {
   }
 
   async function playPracticeContextClipStoryOnly() {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") {
+      console.log("[mobile practice] Story skipped: not a multiple-choice exercise");
+      return;
+    }
     const clip = currentPracticeExercise.audioClip;
-    if (!clip) return;
+    if (!clip) {
+      console.log("[mobile practice] Story skipped: no audioClip");
+      return;
+    }
+    console.log("[mobile practice] Story attempt", {
+      storySlug: clip.storySlug,
+      hasSegmentId: !!clip.segmentId,
+      sentence: clip.sentence?.slice(0, 60),
+    });
     if (playingPracticeClipId === currentPracticeExercise.id) {
       await stopPracticeContextClip();
       return;
@@ -6013,6 +6350,13 @@ export function MobileLibraryShell(args: {
     const baseAudioUrl = resolvePracticeAudioUri(storyAudio?.audioUrl);
     const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
     const audioUrl = segmentClipUrl ?? baseAudioUrl;
+    console.log("[mobile practice] Story resolution", {
+      hasStoryAudio: !!storyAudio,
+      hasSegment: !!segment,
+      hasBaseAudioUrl: !!baseAudioUrl,
+      hasSegmentClipUrl: !!segmentClipUrl,
+      finalUrl: audioUrl ? audioUrl.slice(0, 80) : null,
+    });
     // Si no hay audio del story disponible, no hay nada que tocar como
     // "Story". El botón ya viene gateado por `storyAvailable` en el
     // render, esto es solo defensa.
@@ -6073,9 +6417,20 @@ export function MobileLibraryShell(args: {
   }
 
   async function playPracticeContextClipHqOnly() {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") {
+      console.log("[mobile practice] HQ skipped: not a multiple-choice exercise");
+      return;
+    }
     const clip = currentPracticeExercise.audioClip;
-    if (!clip?.sentence) return;
+    if (!clip?.sentence) {
+      console.log("[mobile practice] HQ skipped: no clip.sentence", { hasClip: !!clip, hasSentence: !!clip?.sentence });
+      return;
+    }
+    console.log("[mobile practice] HQ attempt", {
+      sentence: clip.sentence.slice(0, 60),
+      language: clip.language ?? "(null→german fallback)",
+      hasStorySlug: !!clip.storySlug,
+    });
     if (playingHqPracticeClipId === currentPracticeExercise.id) {
       await stopPracticeHqClip();
       return;
@@ -6096,7 +6451,10 @@ export function MobileLibraryShell(args: {
           token: sessionToken ?? undefined,
           body: { sentence: clip.sentence, language: clip.language ?? "german" },
         });
-        if (!resp?.url) return;
+        if (!resp?.url) {
+          console.log("[mobile practice] HQ endpoint returned no url", { resp });
+          return;
+        }
         url = resp.url;
         setHqUrlBySentence((prev) => ({ ...prev, [cacheKey]: url! }));
       } catch (err) {
@@ -6104,6 +6462,7 @@ export function MobileLibraryShell(args: {
         return;
       }
     }
+    console.log("[mobile practice] HQ url resolved", { url: url.slice(0, 80) });
 
     try {
       await Audio.setAudioModeAsync({
@@ -6125,6 +6484,25 @@ export function MobileLibraryShell(args: {
     } catch (err) {
       console.error("[mobile practice] HQ playback failed", err);
       await stopPracticeHqClip();
+    }
+  }
+
+  /**
+   * Autoplay del ejercicio actual: SOLO Story. Sin fallback a HQ ni
+   * TTS. Si Story falla (no hay storySlug, audio no cacheado, segment
+   * matching falló, etc.), no suena nada — eso permite detectar el
+   * problema en lugar de enmascararlo con un TTS robotic. Cuando
+   * Story funcione bien para todos los casos, podemos volver a
+   * agregar fallbacks. Mientras tanto, el silencio es diagnóstico.
+   */
+  async function playPracticeContextClipBest() {
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    const clip = currentPracticeExercise.audioClip;
+    if (!clip) return;
+    try {
+      await playPracticeContextClipStoryOnly();
+    } catch (err) {
+      console.error("[mobile practice] autoplay Story failed", err);
     }
   }
 
@@ -8021,14 +8399,6 @@ export function MobileLibraryShell(args: {
     [duePracticeItems]
   );
 
-  const orbitEstimatedMinutes = useMemo(() => {
-    const total = duePracticeItems.length;
-    if (total === 0) return 0;
-    // ~24s por ejercicio, máximo 10 ejercicios por sesión.
-    const exercises = Math.min(10, total);
-    return Math.max(1, Math.round((exercises * 24) / 60));
-  }, [duePracticeItems]);
-
   const orbitDailyGoalPercent = useMemo(() => {
     const goal = 50; // XP / día (placeholder hasta exponer el goal real)
     const today = remoteProgress?.gamification?.todayXp ?? 0;
@@ -8073,7 +8443,6 @@ export function MobileLibraryShell(args: {
           <PracticeOrbit
             topicLabel={favoriteWords.length === 0 ? null : orbitTopicLabel}
             totalDue={duePracticeItems.length}
-            estimatedMinutes={orbitEstimatedMinutes}
             xpReward={12}
             modeBreakdown={orbitModeBreakdown}
             streakDays={orbitStreak}
@@ -8108,16 +8477,81 @@ export function MobileLibraryShell(args: {
               </Text>
               <Text style={styles.practiceSessionTitle}>{activePracticeCard.title}</Text>
             </View>
-            <View
-              style={[
-                styles.practiceModeIconWrap,
-                styles.practiceSessionIconWrap,
-                { borderColor: `${activePracticeCard.accent}55` },
-              ]}
+            {/* Botón pausa/reanudar. Toggle del state global
+                `practicePaused`. Cuando está activo el icon es ⏸; cuando
+                pausado pasa a ▶. La pausa congela el timer, cancela el
+                auto-advance, silencia el autoplay y DETIENE cualquier
+                audio que esté sonando (TTS, Story o HQ) para que el
+                pause sea audible y no solo visual. Tap manual en
+                TTS/Story/HQ sigue funcionando para que el usuario
+                pueda escuchar tranquilo durante la pausa.
+                hitSlop generoso (10) porque el botón es chico. */}
+            <Pressable
+              onPress={() => {
+                setPracticePaused((current) => {
+                  const next = !current;
+                  if (next) {
+                    // Pausando: detener todo el audio en curso.
+                    void stopPracticeContextClip();
+                    void stopPracticeHqClip();
+                    getOptionalSpeechModule()?.stop();
+                    setSpeakingPracticePromptId(null);
+                  } else {
+                    // Despausando: el effect de autoplay no vuelve a
+                    // disparar porque su ref `lastAutoplayedExerciseIdRef`
+                    // ya tiene el id del ejercicio actual. Lo reseteamos
+                    // para que el effect detecte un "ejercicio nuevo"
+                    // y vuelva a tocar el audio. Si no, el play de un
+                    // pause/play es solo visual: barra retoma pero sin
+                    // sonido.
+                    lastAutoplayedExerciseIdRef.current = null;
+                  }
+                  return next;
+                });
+              }}
+              hitSlop={10}
+              style={styles.practiceSessionPauseButton}
+              accessibilityRole="button"
+              accessibilityLabel={practicePaused ? "qa-practice-resume" : "qa-practice-pause"}
+              testID={practicePaused ? "qa-practice-resume" : "qa-practice-pause"}
             >
-              <PracticeModeIcon icon={activePracticeCard.icon} color={activePracticeCard.accent} />
-            </View>
+              <Feather
+                name={practicePaused ? "play" : "pause"}
+                size={16}
+                color="#f5f7fb"
+              />
+            </Pressable>
           </View>
+
+          {/* Barra de timer del ejercicio. Solo visible mientras hay
+              sesión activa post-countdown, no completa, y el
+              ejercicio actual es multiple-choice (match no usa el
+              timer). Decrece de 100% a 0% en 10 seg. Si el usuario
+              pausa, la barra se tiñe de naranja para señalizar que el
+              timer está congelado. */}
+          {!practiceCountdownActive &&
+          !practiceComplete &&
+          !practiceLaunchLoading &&
+          currentPracticeExercise?.kind === "multiple-choice" ? (
+            <View style={styles.practiceTimerBarTrack}>
+              <View
+                style={[
+                  styles.practiceTimerBarFill,
+                  {
+                    width: `${Math.max(0, Math.min(100, (practiceTimerRemaining / 10) * 100))}%`,
+                    // Amarillo SIEMPRE en la barra del timer; rojo
+                    // cuando crítico (≤3 seg). Antes usaba el
+                    // `activePracticeCard.accent` que en el modo
+                    // "Context" es `tokenColor.streak` (`#fb923c`,
+                    // naranja) y chocaba feo con el azul del fondo.
+                    // El amarillo `#f8c15c` es el mismo de los popups
+                    // y el endOfStory.
+                    backgroundColor: practiceTimerRemaining <= 3 ? "#f87171" : "#f8c15c",
+                  },
+                ]}
+              />
+            </View>
+          ) : null}
 
           {practiceLaunchLoading ? (
             <View style={styles.practiceLaunchLoaderCard}>
@@ -8409,9 +8843,11 @@ export function MobileLibraryShell(args: {
                     >
                       {practiceLastResult === "correct"
                         ? "Correct"
-                        : practiceLastResult === "wrong"
-                          ? "Try again"
-                          : "In progress"}
+                        : practiceTimedOut
+                          ? "Time's up!"
+                          : practiceLastResult === "wrong"
+                            ? "Try again"
+                            : "In progress"}
                     </Text>
                   </View>
                   <View style={styles.practiceScorePill}>
@@ -8433,7 +8869,6 @@ export function MobileLibraryShell(args: {
                     : null,
                 ]}
                 showsVerticalScrollIndicator={false}
-                bounces={false}
               >
                 <Animated.View
                   style={{
@@ -8718,13 +9153,44 @@ export function MobileLibraryShell(args: {
           ) : null}
         </View>
         {practiceExitConfirmVisible ? (
-          <PracticeExitConfirm
+          <PracticeExitSheet
             accent={activePracticeCard?.accent ?? tokenColor.xp}
-            onKeepGoing={() => setPracticeExitConfirmVisible(false)}
-            onExit={confirmExitPracticeSession}
+            exercisesDone={practiceIndex}
+            exercisesTotal={practiceExercises.length}
+            // `practiceScore` cuenta sólo aciertos. Si los 4 ejercicios
+            // hechos fueron timeout/wrong, el score es 0 y el sheet
+            // muestra "Don't give up" en lugar de un falso "Nice work".
+            exercisesCorrect={practiceScore}
+            onContinuePracticing={() => {
+              // Cierra el sheet y reanuda. La pausa se levanta para
+              // que el timer y el auto-advance retomen donde quedaron.
+              setPracticeExitConfirmVisible(false);
+              setPracticePaused(false);
+            }}
+            onExitAnyway={() => {
+              // Cierra la sesión y manda al usuario al journey (Home
+              // tab) sin importar de dónde haya entrado a Practice.
+              // Importante: `closePracticeSession` para sesiones
+              // source === "story" mid-sesión hace
+              // `setSelection(practiceReturnSelection)` reabriendo el
+              // reader como overlay; nuestro `setActiveScreen("home")`
+              // sólo no alcanza porque el reader queda encima. Por eso
+              // limpiamos selection explícitamente: el botón promete
+              // journey, debe llevar a journey.
+              setPracticeExitConfirmVisible(false);
+              closePracticeSession();
+              setSelection(null);
+              setActiveScreen("home");
+            }}
           />
         ) : null}
         <PracticeCelebration active={practicePerfectActive} />
+        {practiceCountdownActive ? (
+          <PracticeCountdown
+            accent={activePracticeCard.accent}
+            onComplete={() => setPracticeCountdownActive(false)}
+          />
+        ) : null}
       </View>
     ) : null;
 
@@ -10625,9 +11091,10 @@ export function MobileLibraryShell(args: {
               <Text style={styles.journeyNodePillLabel} numberOfLines={2}>
                 {pillLabel}
               </Text>
-              {durationMin != null ? (
-                <Text style={styles.journeyNodePillSub}>{durationMin} min</Text>
-              ) : null}
+              {/* Duración eliminada: el usuario no quiere ver "X min"
+                  bajo el título de la story porque sólo aparecía en
+                  algunas (las que tenían text offline cacheado) y la
+                  inconsistencia se notaba. */}
             </View>
           </Pressable>
           );
@@ -11299,7 +11766,14 @@ export function MobileLibraryShell(args: {
                     const offlineVocab: string[] = [];
                     const seenWords = new Set<string>();
                     for (const story of topic.stories) {
+                      // Lookup primero por slug (estable entre journey
+                      // y standalone API), después por id. Sin esto,
+                      // las stories descargadas vía journey no
+                      // matcheaban porque sus storyIds difieren.
                       const offlineCopy =
+                        (story.storySlug
+                          ? offlineStoriesBySlug.get(story.storySlug)
+                          : undefined) ??
                         offlineStoriesById.get(story.id) ??
                         offlineSnapshot?.stories.find(
                           (s) => s.storySlug === story.storySlug
@@ -11326,6 +11800,9 @@ export function MobileLibraryShell(args: {
                     // even when the user has only downloaded some.
                     const offlineCoverage = topic.stories.filter((s) => {
                       const cached =
+                        (s.storySlug
+                          ? offlineStoriesBySlug.get(s.storySlug)
+                          : undefined) ??
                         offlineStoriesById.get(s.id) ??
                         offlineSnapshot?.stories.find(
                           (cs) => cs.storySlug === s.storySlug
@@ -11732,11 +12209,6 @@ export function MobileLibraryShell(args: {
                                 >
                                   {pillLabel}
                                 </Text>
-                                {durationMin != null ? (
-                                  <Text style={[styles.journeyNodePillSub, styles.journeyNodePillSubNext]}>
-                                    {durationMin} min
-                                  </Text>
-                                ) : null}
                               </View>
                             </Pressable>
                           </View>
@@ -11826,9 +12298,6 @@ export function MobileLibraryShell(args: {
                               <Text style={styles.journeyNodePillLabel} numberOfLines={2}>
                                 {pillLabel}
                               </Text>
-                              {durationMin != null ? (
-                                <Text style={styles.journeyNodePillSub}>{durationMin} min</Text>
-                              ) : null}
                             </View>
                           </Pressable>
                         )}
@@ -12214,7 +12683,14 @@ export function MobileLibraryShell(args: {
   );
 
   if (selection) {
-    const offlineStory = offlineStoriesById.get(selection.story.id);
+    // Buscar primero por slug (estable entre journey API y standalone API)
+    // y caer al lookup por id como fallback. Sin el slug-first, las
+    // stories descargadas desde el journey nunca matcheaban con el
+    // selection.story.id porque el endpoint standalone usa otro id.
+    const offlineStory =
+      (selection.story.slug
+        ? offlineStoriesBySlug.get(selection.story.slug)
+        : undefined) ?? offlineStoriesById.get(selection.story.id);
     const currentStoryIndex = selection.book.stories.findIndex((story) => story.id === selection.story.id);
     const previousStory = currentStoryIndex > 0 ? selection.book.stories[currentStoryIndex - 1] : null;
     const nextStory =
@@ -13714,10 +14190,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     zIndex: 60,
+    // Shadow externa para separar el botón del fondo y darle peso de
+    // "botón flotante" sin bevels raros ni borders gruesos.
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.35,
-    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.4,
+    shadowRadius: 10,
     elevation: 8,
   },
   journeyScrollTopButtonPressed: {
@@ -17216,6 +17694,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 8,
   },
+  practiceSessionPauseButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.14)",
+    backgroundColor: "rgba(6,16,28,0.22)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  practiceTimerBarTrack: {
+    height: 4,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    overflow: "hidden",
+    marginTop: 2,
+    marginBottom: 4,
+  },
+  practiceTimerBarFill: {
+    height: "100%",
+    borderRadius: 999,
+  },
   practiceSessionClose: {
     width: 40,
     height: 40,
@@ -17364,8 +17864,12 @@ const styles = StyleSheet.create({
     // fix now is to make the content elements (sentence + options)
     // larger so they naturally fill the space, while still
     // scrolling normally on smaller phones where they overflow.
+    // PaddingBottom 40: en iPhones más chicos (SE, mini) las 4
+    // opciones + el footer hint quedaban tapados por la última
+    // opción cortada. 40px da espacio de respiración para que
+    // siempre se vea la opción completa + el botón de check.
     flexGrow: 1,
-    paddingBottom: 16,
+    paddingBottom: 40,
   },
   practiceQuestionCard: {
     // Intrinsic height (no flex) so the card hugs its content. The

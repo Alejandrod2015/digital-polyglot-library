@@ -1,6 +1,15 @@
 import * as SecureStore from "expo-secure-store";
+import * as FileSystem from "expo-file-system/legacy";
 
 const MOBILE_SESSION_KEY = "digital-polyglot/mobile-session-token";
+// Backup del token en filesystem plano. Sí, es menos seguro que
+// Keychain, pero SecureStore puede retornar null en cold-start
+// offline (antes de que el dispositivo desbloquee el keychain) y eso
+// dejaba al usuario en AuthScreen sin manera de recuperarse. El token
+// es un JWT con expiración corta — la pérdida de seguridad por
+// guardarlo en plain es menor que la pérdida de usabilidad por dejar
+// la app inutilizable offline.
+const TOKEN_BACKUP_PATH = `${FileSystem.documentDirectory ?? ""}digital-polyglot/mobile-session-token.txt`;
 
 export type MobileSessionPayload = {
   aud: "digital-polyglot-mobile";
@@ -57,26 +66,72 @@ export function decodeMobileSessionToken(token: string): MobileSessionPayload | 
   }
 }
 
-export async function loadMobileSessionToken(): Promise<string | null> {
+async function ensureTokenBackupDir(): Promise<void> {
+  const parent = `${FileSystem.documentDirectory ?? ""}digital-polyglot`;
   try {
-    return await SecureStore.getItemAsync(MOBILE_SESSION_KEY);
+    const info = await FileSystem.getInfoAsync(parent);
+    if (!info.exists) {
+      await FileSystem.makeDirectoryAsync(parent, { intermediates: true });
+    }
+  } catch {
+    // ignore
+  }
+}
+
+async function loadTokenBackup(): Promise<string | null> {
+  try {
+    const info = await FileSystem.getInfoAsync(TOKEN_BACKUP_PATH);
+    if (!info.exists) return null;
+    const raw = await FileSystem.readAsStringAsync(TOKEN_BACKUP_PATH);
+    const trimmed = raw.trim();
+    return trimmed.length > 0 ? trimmed : null;
   } catch {
     return null;
   }
 }
 
-export async function saveMobileSessionToken(token: string): Promise<void> {
+async function saveTokenBackup(token: string): Promise<void> {
   try {
-    await SecureStore.setItemAsync(MOBILE_SESSION_KEY, token);
+    await ensureTokenBackupDir();
+    await FileSystem.writeAsStringAsync(TOKEN_BACKUP_PATH, token);
   } catch {
-    // Keep preview mode available even if secure storage is unavailable.
+    // ignore
   }
 }
 
-export async function clearMobileSessionToken(): Promise<void> {
+async function clearTokenBackup(): Promise<void> {
   try {
-    await SecureStore.deleteItemAsync(MOBILE_SESSION_KEY);
+    await FileSystem.deleteAsync(TOKEN_BACKUP_PATH, { idempotent: true });
   } catch {
-    // Best effort.
+    // ignore
   }
+}
+
+export async function loadMobileSessionToken(): Promise<string | null> {
+  // Read both in parallel; SecureStore is preferred but the filesystem
+  // backup catches the case where SecureStore returns null on a cold
+  // offline start (Keychain not yet unlocked, intermittent Keychain
+  // failures, etc.).
+  const [secure, backup] = await Promise.all([
+    SecureStore.getItemAsync(MOBILE_SESSION_KEY).catch(() => null),
+    loadTokenBackup(),
+  ]);
+  return secure ?? backup ?? null;
+}
+
+export async function saveMobileSessionToken(token: string): Promise<void> {
+  // Write to both locations. SecureStore for security; filesystem so
+  // that an offline cold-start (where SecureStore can return null
+  // before Keychain unlocks) still has a recoverable token.
+  await Promise.all([
+    SecureStore.setItemAsync(MOBILE_SESSION_KEY, token).catch(() => undefined),
+    saveTokenBackup(token),
+  ]);
+}
+
+export async function clearMobileSessionToken(): Promise<void> {
+  await Promise.all([
+    SecureStore.deleteItemAsync(MOBILE_SESSION_KEY).catch(() => undefined),
+    clearTokenBackup(),
+  ]);
 }

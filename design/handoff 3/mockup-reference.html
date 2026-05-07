@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Language Switcher · Variante B (reference)</title>
+<style>
+  :root {
+    --ink0:#fff; --ink1:rgba(255,255,255,0.85); --ink2:rgba(255,255,255,0.65);
+    --ink3:rgba(255,255,255,0.45); --line:rgba(255,255,255,0.10);
+    --lime:#bef264; --sky:#7dd3fc; --streak:#fb923c;
+  }
+  html,body{margin:0;background:#0a0f1a;font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;color:#fff}
+  .stage{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .phone{width:390px;height:780px;border-radius:42px;overflow:hidden;position:relative;background:#08264d;box-shadow:0 30px 80px rgba(0,0,0,0.6)}
+  .scrim{position:absolute;inset:0;background:rgba(5,24,52,0.55)}
+  .behind{position:absolute;inset:0;filter:brightness(0.45) blur(1px);background:linear-gradient(180deg,#0a2b56,#051834)}
+  .sheet{position:absolute;left:0;right:0;bottom:0;height:560px;background:linear-gradient(180deg,#0a2b56 0%,#051834 100%);
+    border-top-left-radius:28px;border-top-right-radius:28px;border:1px solid var(--line);border-bottom:none;
+    box-shadow:0 -20px 50px rgba(0,0,0,0.6);display:flex;flex-direction:column}
+  .grab{width:44px;height:5px;border-radius:999px;background:rgba(255,255,255,0.25);margin:10px auto 0}
+  .head{padding:18px 22px 4px}
+  .kicker{font-size:10.5px;font-weight:900;letter-spacing:.22em;color:var(--ink3)}
+  .title{font-size:22px;font-weight:900;letter-spacing:-.02em;margin-top:4px}
+  .list{flex:1;overflow-y:auto;padding:10px 16px 0;display:flex;flex-direction:column;gap:8px}
+  .row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:18px;border:1px solid var(--line);
+    background:rgba(255,255,255,0.035);text-align:left;color:#fff;cursor:pointer;width:100%;font-family:inherit}
+  .row.active{border:1.5px solid rgba(190,242,100,0.4);
+    background:linear-gradient(135deg,rgba(190,242,100,0.12),rgba(125,211,252,0.06))}
+  .ring{position:relative;width:46px;height:46px;flex-shrink:0}
+  .ring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+  .flag{position:absolute;inset:5px;display:flex;align-items:center;justify-content:center;font-size:26px;line-height:1}
+  .meta{flex:1;min-width:0}
+  .name{font-size:15.5px;font-weight:900;letter-spacing:-.015em;color:#fff}
+  .variant{font-size:10px;font-weight:700;color:var(--ink3);margin-left:6px}
+  .stats{display:flex;align-items:center;gap:10px;margin-top:4px;font-size:12px;font-weight:900;letter-spacing:-.02em}
+  .stat{display:inline-flex;align-items:center;gap:3px}
+  .pill{padding:2px 7px;border-radius:6px;background:rgba(125,211,252,.1);color:var(--sky);font-size:9.5px;font-weight:900;letter-spacing:.05em}
+  .active-tag{padding:4px 10px;border-radius:999px;background:var(--lime);color:#0a2b56;font-size:9.5px;font-weight:900;letter-spacing:.14em}
+  .chev{color:var(--ink3);font-size:18px}
+  .footer{padding:12px 16px 22px;border-top:1px solid var(--line);display:flex;gap:8px}
+  .btn{flex:1;padding:12px;border-radius:14px;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;font-family:inherit}
+  .btn-secondary{background:rgba(255,255,255,0.04);border:1px solid var(--line);color:var(--ink1)}
+  .btn-primary{background:rgba(125,211,252,0.08);border:1px solid rgba(125,211,252,0.28);color:var(--sky)}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="phone">
+    <div class="behind"></div>
+    <div class="scrim"></div>
+    <div class="sheet">
+      <div class="grab"></div>
+      <div class="head">
+        <div class="kicker">SWITCH LANGUAGE</div>
+        <div class="title">4 journeys in progress</div>
+      </div>
+      <div class="list" id="list"></div>
+      <div class="footer">
+        <button class="btn btn-secondary">⚙ See all</button>
+        <button class="btn btn-primary">+ Add language</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const C = 2 * Math.PI * 20.5;
+const LANGS = [
+  { name:"German",  variant:"Hochdeutsch", flag:"🇩🇪", level:"A2", streak:7,  xp:1240, progress:42, active:true  },
+  { name:"Spanish", variant:"Mexico",      flag:"🇲🇽", level:"B1", streak:21, xp:8450, progress:78, active:false },
+  { name:"French",  variant:null,          flag:"🇫🇷", level:"A1", streak:0,  xp:120,  progress:8,  active:false },
+  { name:"Japanese",variant:null,          flag:"🇯🇵", level:"A1", streak:3,  xp:560,  progress:18, active:false },
+];
+function fmtXP(n){ return n>=1000 ? (n/1000).toFixed(1)+"k" : n }
+const list = document.getElementById("list");
+list.innerHTML = LANGS.map(L => {
+  const dash = (L.progress/100) * C;
+  const ringStroke = L.active ? "#bef264" : "#7dd3fc";
+  const streakColor = L.streak > 0 ? "var(--streak)" : "var(--ink3)";
+  return `
+    <button class="row${L.active ? " active":""}">
+      <div class="ring">
+        <svg width="46" height="46">
+          <circle cx="23" cy="23" r="20.5" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2.5"/>
+          <circle cx="23" cy="23" r="20.5" fill="none" stroke="${ringStroke}" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="${dash} ${C}"/>
+        </svg>
+        <div class="flag">${L.flag}</div>
+      </div>
+      <div class="meta">
+        <div><span class="name">${L.name}</span>${L.variant?`<span class="variant">· ${L.variant}</span>`:""}</div>
+        <div class="stats">
+          <span class="stat" style="color:${streakColor}">🔥 ${L.streak}</span>
+          <span class="stat" style="color:var(--lime)">⚡ ${fmtXP(L.xp)}</span>
+          <span class="pill">${L.level}</span>
+        </div>
+      </div>
+      ${L.active ? `<span class="active-tag">ACTIVE</span>` : `<span class="chev">›</span>`}
+    </button>`;
+}).join("");
+</script>
+</body>
+</html>
