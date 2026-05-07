@@ -62,8 +62,12 @@ next-env.d.ts
 
 # Piper TTS voice models (download via scripts/tts/download_piper_voices.sh)
 scripts/tts/piper-voices/
-# Python virtualenv used by the TTS pipeline (recreated via scripts/tts/setup.sh)
+# Python virtualenvs used by the TTS pipeline (recreated via scripts/tts/setup.sh
+# or per-engine extras for Chatterbox / Qwen3 etc.). All variants must be
+# ignored, otherwise multi-hundred-MB libtorch / llvmlite blobs get committed
+# and rejected by GitHub's 100 MB limit.
 scripts/tts/.venv/
+scripts/tts/.venv-*/
 # F5 cloned voice WAVs (per-user data, sourced manually)
 scripts/tts/cloned-voices/
 # Claude Code runtime artifacts
