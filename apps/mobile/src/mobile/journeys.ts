@@ -138,6 +138,65 @@ export function focusIcon(focus: JourneyFocus): {
 }
 
 /**
+ * Devuelve el icono apropiado para un journey, prefiriendo el match
+ * por keyword en `label` (Studio Journey.name) antes que el focus
+ * legacy. Bajo el modelo "un track por Studio Journey" todos los
+ * journeys tienen `focus: "General"` hardcoded, así que `focusIcon`
+ * devolvía coffee para todos. Esto deriva el icono del label real
+ * ("Viajero" → send, "Business" → briefcase, etc.) cubriendo ES/EN.
+ *
+ * Para journeys legacy sin label cae al `focusIcon` original.
+ */
+export function journeyIcon(journey: { focus: JourneyFocus; label?: string | null }): {
+  feather: "send" | "briefcase" | "star" | "coffee" | "book-open";
+  emoji: string;
+} {
+  const label = (journey.label ?? "").trim().toLowerCase();
+  if (!label) return focusIcon(journey.focus);
+
+  // Travel-related keywords. Cubre ES + EN + variantes.
+  if (
+    label.includes("viaj") || // viajero, viaje
+    label.includes("travel") ||
+    label.includes("tourist") ||
+    label.includes("trip")
+  ) {
+    return { feather: "send", emoji: "✈" };
+  }
+  // Business / work keywords.
+  if (
+    label.includes("business") ||
+    label.includes("career") ||
+    label.includes("trabajo") ||
+    label.includes("negocio") ||
+    label.includes("profesional") ||
+    label.includes("professional")
+  ) {
+    return { feather: "briefcase", emoji: "💼" };
+  }
+  // Culture keywords.
+  if (
+    label.includes("cultur") || // culture, cultura, cultural
+    label.includes("heritage") ||
+    label.includes("herencia")
+  ) {
+    return { feather: "star", emoji: "🎭" };
+  }
+  // Conversation / casual: coffee fits "let's chat over coffee".
+  if (
+    label.includes("conversa") || // conversational, conversacional, conversation
+    label.includes("everyday") ||
+    label.includes("daily") ||
+    label.includes("casual")
+  ) {
+    return { feather: "coffee", emoji: "☕" };
+  }
+  // Genérico: book-open en lugar de coffee porque es más neutral
+  // para un journey que no encaja en ninguna categoría conocida.
+  return { feather: "book-open", emoji: "📖" };
+}
+
+/**
  * Long-form "Spanish · Travelers" used in sheet rows + panel cards.
  * The middle-dot separator matches `journeyChipLabel` so the language
  * + focus pairing reads consistently across surfaces (cards, sheets,

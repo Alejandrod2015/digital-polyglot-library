@@ -19,6 +19,7 @@ import {
   focusShortLabel,
   journeyDisplayName,
   journeyFlagVariant,
+  journeyIcon,
   journeyId,
 } from "./journeys";
 import type { JourneyFocus } from "../../../../src/lib/onboarding";
@@ -405,7 +406,12 @@ export function JourneysPanel({
                 progress: 0,
               };
               const focusLabel = focusShortLabel(journey.focus);
-              const icon = focusIcon(journey.focus);
+              // `journeyIcon` deriva el icono del label real
+              // ("Viajero" → send, "Business" → briefcase, etc.) en
+              // lugar de mirar `focus` que bajo el modelo nuevo
+              // siempre vale "General" → coffee. Antes el card pintaba
+              // taza de café para TODOS los journeys.
+              const icon = journeyIcon(journey);
               // Título = solo el idioma. El nombre específico del
               // journey ("Conversational", "Viajero", "Travelers"…)
               // se mueve a la sub-línea para que la línea del idioma
