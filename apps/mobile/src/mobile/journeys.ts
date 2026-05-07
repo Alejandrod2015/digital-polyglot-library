@@ -137,62 +137,116 @@ export function focusIcon(focus: JourneyFocus): {
   }
 }
 
+/** Subset de Feather icon names que `journeyIcon` puede devolver.
+ *  Todos están en `@expo/vector-icons` Feather set v4. Mantener
+ *  alineado con `JourneyIconMatcher` abajo. */
+export type JourneyFeatherIcon =
+  | "send"        // travel
+  | "briefcase"   // work
+  | "star"        // culture
+  | "coffee"      // conversational
+  | "book-open"   // study / generic
+  | "music"       // music
+  | "activity"    // sports / fitness
+  | "cpu"         // tech
+  | "camera"      // art / photo
+  | "heart"       // health / love / family
+  | "film"        // media / cine
+  | "map"         // exploration
+  | "users"       // social / community
+  | "shopping-bag" // shopping / commerce
+  | "smile"       // kids / fun
+  | "headphones"; // podcast / audio
+
 /**
  * Devuelve el icono apropiado para un journey, prefiriendo el match
  * por keyword en `label` (Studio Journey.name) antes que el focus
  * legacy. Bajo el modelo "un track por Studio Journey" todos los
  * journeys tienen `focus: "General"` hardcoded, así que `focusIcon`
- * devolvía coffee para todos. Esto deriva el icono del label real
- * ("Viajero" → send, "Business" → briefcase, etc.) cubriendo ES/EN.
+ * devolvía coffee para todos.
+ *
+ * El planner de Studio permite nombres de journey libres — no está
+ * constrained a los 4 JOURNEY_FOCUS_OPTIONS clásicos. Por eso este
+ * matcher cubre 16 categorías con keywords ES + EN + IT/PT/DE
+ * cuando aplica, en orden de especificidad. El primer match gana.
  *
  * Para journeys legacy sin label cae al `focusIcon` original.
  */
 export function journeyIcon(journey: { focus: JourneyFocus; label?: string | null }): {
-  feather: "send" | "briefcase" | "star" | "coffee" | "book-open";
+  feather: JourneyFeatherIcon;
   emoji: string;
 } {
   const label = (journey.label ?? "").trim().toLowerCase();
-  if (!label) return focusIcon(journey.focus);
+  if (!label) {
+    const fb = focusIcon(journey.focus);
+    return { feather: fb.feather, emoji: fb.emoji };
+  }
 
-  // Travel-related keywords. Cubre ES + EN + variantes.
-  if (
-    label.includes("viaj") || // viajero, viaje
-    label.includes("travel") ||
-    label.includes("tourist") ||
-    label.includes("trip")
-  ) {
+  // Travel / exploración. ES "viaj" cubre viajero/viaje/viajar.
+  if (/viaj|travel|tourist|turist|trip|nomad|nómada|adventur|aventur/.test(label)) {
     return { feather: "send", emoji: "✈" };
   }
-  // Business / work keywords.
-  if (
-    label.includes("business") ||
-    label.includes("career") ||
-    label.includes("trabajo") ||
-    label.includes("negocio") ||
-    label.includes("profesional") ||
-    label.includes("professional")
-  ) {
+  // Business / work / career.
+  if (/business|career|trabaj|negoci|profesion|professional|work|empresa|corporat/.test(label)) {
     return { feather: "briefcase", emoji: "💼" };
   }
-  // Culture keywords.
-  if (
-    label.includes("cultur") || // culture, cultura, cultural
-    label.includes("heritage") ||
-    label.includes("herencia")
-  ) {
+  // Health / wellness / fitness.
+  if (/health|salud|wellness|bienestar|fitness|deport|sport|workout|gym/.test(label)) {
+    return { feather: "activity", emoji: "🏃" };
+  }
+  // Music / podcast.
+  if (/music|música|musica|podcast|cancion|song|band/.test(label)) {
+    return { feather: "music", emoji: "🎵" };
+  }
+  // Tech / coding.
+  if (/tech|tecnolog|coding|programac|developer|software|engineer/.test(label)) {
+    return { feather: "cpu", emoji: "💻" };
+  }
+  // Art / photography / cinema.
+  if (/photo|foto|art\b|arte\b|paint|pintur|design|diseñ/.test(label)) {
+    return { feather: "camera", emoji: "🎨" };
+  }
+  if (/cinema|cine\b|film|movie|pelicul|película/.test(label)) {
+    return { feather: "film", emoji: "🎬" };
+  }
+  // Audio / listening / radio.
+  if (/audio\b|radio|listen|escuch/.test(label)) {
+    return { feather: "headphones", emoji: "🎧" };
+  }
+  // Family / community / heritage learner.
+  if (/family|familia|heritage|herencia|community|comunidad|social|amigos/.test(label)) {
+    return { feather: "users", emoji: "👥" };
+  }
+  // Culture (broad).
+  if (/cultur|tradicion|tradition|history|histori|folklor/.test(label)) {
     return { feather: "star", emoji: "🎭" };
   }
-  // Conversation / casual: coffee fits "let's chat over coffee".
-  if (
-    label.includes("conversa") || // conversational, conversacional, conversation
-    label.includes("everyday") ||
-    label.includes("daily") ||
-    label.includes("casual")
-  ) {
+  // Shopping / commerce.
+  if (/shop|compra|market|mercad|store|tienda|retail/.test(label)) {
+    return { feather: "shopping-bag", emoji: "🛍" };
+  }
+  // Kids / fun / playful.
+  if (/kids|niño|infantil|child|fun\b|diversion|diversión|play/.test(label)) {
+    return { feather: "smile", emoji: "😀" };
+  }
+  // Maps / urban / geography (distinct from "send" which is travel-flow).
+  if (/city|ciudad|urban|neighborhood|barrio|geograph|geografía|geografia/.test(label)) {
+    return { feather: "map", emoji: "🗺" };
+  }
+  // Romance / love / dating.
+  if (/love|amor|dating|cita\b|relationship|relacion/.test(label)) {
+    return { feather: "heart", emoji: "❤" };
+  }
+  // Conversation / casual / daily life: coffee fits "chat over coffee".
+  if (/conversa|everyday|daily|cotidian|casual|small.?talk|charl/.test(label)) {
     return { feather: "coffee", emoji: "☕" };
   }
-  // Genérico: book-open en lugar de coffee porque es más neutral
-  // para un journey que no encaja en ninguna categoría conocida.
+  // Food / cooking / cuisine.
+  if (/food|comida|cuisine|cocina|kitchen|cooking|recipe|receta|gastron/.test(label)) {
+    return { feather: "coffee", emoji: "🍴" };
+  }
+  // Genérico: book-open. Más neutral que coffee para un journey que
+  // no matchee ninguna categoría — sugiere "lectura/estudio".
   return { feather: "book-open", emoji: "📖" };
 }
 
