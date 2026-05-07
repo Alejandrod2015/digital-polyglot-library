@@ -114,7 +114,7 @@ export function statusColor(status: RoadmapStatus): { bg: string; fg: string } {
 }
 
 export const ASSET_ROADMAP: AssetRoadmap = {
-  lastUpdated: "2026-05-07 (Movida 2 piece 4)",
+  lastUpdated: "2026-05-07 (Movida 2 grade UI)",
   thesisHeadline: "DPL como instrumento de captura de 3 corpora licenciables",
   thesisSummary:
     "La app B2C es la herramienta. El asset real son tres corpora estructurados que se pueden licenciar o vender por separado a labs de IA, plataformas de TTS y editoriales. Pre-launch = momento más barato para arquitecturar el data layer.",
@@ -202,7 +202,12 @@ export const ASSET_ROADMAP: AssetRoadmap = {
         {
           title: "Update de nextReviewAt y streak tras cada respuesta (server-side helper + endpoints)",
           status: "deployed",
-          note: "applyReviewToFavorite en src/lib/practiceReview.ts orquesta FSRS + Prisma. Endpoints POST /api/practice/review (web) y POST /api/mobile/practice/review (mobile). Reciben { word, grade 1-4 }, devuelven { intervalDays, nextReviewAt, streak, card }. UI de grade buttons en practice flow es follow-up cuando esté ready",
+          note: "applyReviewToFavorite en src/lib/practiceReview.ts orquesta FSRS + Prisma. Endpoints POST /api/practice/review (web) y POST /api/mobile/practice/review (mobile)",
+        },
+        {
+          title: "UI de Again/Hard/Good/Easy en flow de práctica web",
+          status: "deployed",
+          note: "4 grade buttons reemplazan al Continue cuando el exercise tiene un word claro. Cada click llama POST /api/practice/review con grade 1-4 y avanza. Match-meaning (multi-word) sigue mostrando Continue. Mobile pendiente",
         },
       ],
     },
@@ -235,6 +240,20 @@ export const ASSET_ROADMAP: AssetRoadmap = {
   // arriba. Editar este array al cerrar cada commit/sesión para que la
   // página /studio/progreso refleje "qué hicimos cuándo y por qué".
   workLog: [
+    {
+      date: "2026-05-07",
+      title: "Movida 2: grade UI Again/Hard/Good/Easy en práctica web",
+      scope: "Movida 2 (SRS engine)",
+      summary:
+        "El motor SRS ya no es solo backend; ahora los usuarios web ven 4 botones después de cada respuesta y le dicen al sistema qué tan bien la sabían. Cada click alimenta el modelo.",
+      highlights: [
+        "Sustituye al botón Continue en el feedback section de practice/page.tsx",
+        "Solo aparece cuando el exercise tiene una palabra clara (no en match_meaning multi-word)",
+        "Llama POST /api/practice/review con grade 1-4 y avanza al siguiente exercise",
+        "Fire-and-forget: si la network falla, igual avanza para no bloquear UX",
+        "Mobile (MobileLibraryShell) pendiente, en active dev de karaoke",
+      ],
+    },
     {
       date: "2026-05-07",
       title: "Bitácora del proyecto",

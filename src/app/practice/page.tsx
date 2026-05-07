@@ -356,6 +356,7 @@ export default function PracticePage() {
   const [matchAnswers, setMatchAnswers] = useState<Record<string, string>>({});
   const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
   const [revealedIds, setRevealedIds] = useState<string[]>([]);
+  const [isGrading, setIsGrading] = useState(false);
   const [score, setScore] = useState(0);
   const [sessionComplete, setSessionComplete] = useState(false);
   const [streak, setStreak] = useState(0);
@@ -1095,6 +1096,53 @@ export default function PracticePage() {
       return;
     }
     setSessionComplete(true);
+  };
+
+  // FSRS grade derivation: which favorite word does this exercise score against?
+  // match_meaning has multiple words at once and is skipped here (no grade UI;
+  // user just sees Continue). All other types map cleanly to a single word.
+  const getExerciseGradingWord = (exercise: PracticeExercise | null): string | null => {
+    if (!exercise) return null;
+    if (exercise.type === "meaning_in_context") return exercise.word;
+    if (
+      exercise.type === "fill_blank" ||
+      exercise.type === "natural_expression" ||
+      exercise.type === "listen_choose"
+    ) {
+      return exercise.answer;
+    }
+    return null; // match_meaning
+  };
+
+  const getFavoriteLanguageForWord = (word: string): string | undefined => {
+    const fav = favorites.find((f) => f.word === word);
+    return fav?.language ?? undefined;
+  };
+
+  // Submit FSRS grade (1-4) for the current exercise's word and advance.
+  // Network call is fire-and-forget for UX: any failure logs and still
+  // advances, so a flaky connection never blocks the practice flow.
+  const gradeAndAdvance = async (grade: 1 | 2 | 3 | 4) => {
+    if (isGrading) return;
+    const word = getExerciseGradingWord(currentExercise);
+    if (!word) {
+      goNext();
+      return;
+    }
+    setIsGrading(true);
+    try {
+      const language = getFavoriteLanguageForWord(word);
+      await fetch("/api/practice/review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ word, grade, ...(language ? { language } : {}) }),
+      });
+    } catch (err) {
+      console.warn("[practice] FSRS grade submission failed; advancing anyway", err);
+    } finally {
+      setIsGrading(false);
+      goNext();
+    }
   };
 
   const restart = () => {
@@ -2180,19 +2228,56 @@ export default function PracticePage() {
                         </p>
                       ) : null}
                     </div>
-                    <div className="mt-1 flex items-center justify-center">
-                      <button
-                        type="button"
-                        onClick={goNext}
-                        className={`inline-flex min-w-[152px] justify-center rounded-full px-5 py-2 text-[12px] font-black uppercase tracking-[0.16em] shadow-[0_10px_24px_rgba(0,0,0,0.18)] ${
-                          lastResult === "correct"
-                            ? "bg-emerald-300 text-slate-950 shadow-[0_10px_24px_rgba(110,231,183,0.22)] hover:bg-emerald-200"
-                            : "bg-rose-400 text-slate-950 shadow-[0_10px_24px_rgba(251,113,133,0.2)] hover:bg-rose-300"
-                        }`}
-                      >
-                        {exerciseIndex >= exercises.length - 1 ? "Finish" : "Continue"}
-                      </button>
-                    </div>
+                    {getExerciseGradingWord(currentExercise) ? (
+                      <div className="mt-1 flex flex-wrap items-center justify-center gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => void gradeAndAdvance(1)}
+                          disabled={isGrading}
+                          className="inline-flex min-w-[68px] justify-center rounded-full bg-rose-400 px-3 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-slate-950 shadow-[0_8px_18px_rgba(251,113,133,0.22)] transition hover:bg-rose-300 disabled:opacity-50 sm:min-w-[80px] sm:px-4 sm:text-[12px]"
+                        >
+                          Again
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => void gradeAndAdvance(2)}
+                          disabled={isGrading}
+                          className="inline-flex min-w-[68px] justify-center rounded-full bg-amber-300 px-3 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-slate-950 shadow-[0_8px_18px_rgba(252,211,77,0.22)] transition hover:bg-amber-200 disabled:opacity-50 sm:min-w-[80px] sm:px-4 sm:text-[12px]"
+                        >
+                          Hard
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => void gradeAndAdvance(3)}
+                          disabled={isGrading}
+                          className="inline-flex min-w-[68px] justify-center rounded-full bg-emerald-300 px-3 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-slate-950 shadow-[0_8px_18px_rgba(110,231,183,0.22)] transition hover:bg-emerald-200 disabled:opacity-50 sm:min-w-[80px] sm:px-4 sm:text-[12px]"
+                        >
+                          Good
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => void gradeAndAdvance(4)}
+                          disabled={isGrading}
+                          className="inline-flex min-w-[68px] justify-center rounded-full bg-sky-300 px-3 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-slate-950 shadow-[0_8px_18px_rgba(125,211,252,0.22)] transition hover:bg-sky-200 disabled:opacity-50 sm:min-w-[80px] sm:px-4 sm:text-[12px]"
+                        >
+                          Easy
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="mt-1 flex items-center justify-center">
+                        <button
+                          type="button"
+                          onClick={goNext}
+                          className={`inline-flex min-w-[152px] justify-center rounded-full px-5 py-2 text-[12px] font-black uppercase tracking-[0.16em] shadow-[0_10px_24px_rgba(0,0,0,0.18)] ${
+                            lastResult === "correct"
+                              ? "bg-emerald-300 text-slate-950 shadow-[0_10px_24px_rgba(110,231,183,0.22)] hover:bg-emerald-200"
+                              : "bg-rose-400 text-slate-950 shadow-[0_10px_24px_rgba(251,113,133,0.2)] hover:bg-rose-300"
+                          }`}
+                        >
+                          {exerciseIndex >= exercises.length - 1 ? "Finish" : "Continue"}
+                        </button>
+                      </div>
+                    )}
                   </>
                 ) : (
                   <>
