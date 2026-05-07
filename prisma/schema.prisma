@@ -277,11 +277,13 @@ model JourneyStory {
   vocab      Json?
   wordCount  Int?
   vocabCount Int?
+  arcType    String?
   sanityId   String?
   coverDone     Boolean             @default(false)
   coverUrl      String?
   audioUrl      String?
   audioSegments Json?
+  audioWordTimings Json?
   audioFilename String?
   audioStatus   String              @default("pending")
   audioUrlPreview      String?

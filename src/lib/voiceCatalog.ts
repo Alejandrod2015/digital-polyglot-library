@@ -119,21 +119,22 @@ export const VOICE_CATALOG: VoiceEntry[] = [
 
   // Qwen3 1.7B-VoiceDesign (Apache 2.0): personajes generados por descripción libre.
   { id: "qwen17/es-madrid_55m",       engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Madrid 55 (Qwen3 1.7B VD)",     status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/es-barcelona_45m-v2", engine: "qwen", language: "spanish", region: "ES",    gender: "m", label: "Barcelona 45 v2 (soft-spoken)",  status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
 
   // Italian via Qwen3 1.7B-VoiceDesign (Apache 2.0)
-  { id: "qwen17/it-roma_30f",     engine: "qwen", language: "italian", region: "IT", gender: "f", label: "Roma 30 (Qwen3 1.7B VD)",     status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/it-milano_45m",   engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Milano 45 (Qwen3 1.7B VD)",   status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/it-napoli_28m",   engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Napoli 28 (Qwen3 1.7B VD)",   status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/it-firenze_55f",  engine: "qwen", language: "italian", region: "IT", gender: "f", label: "Firenze 55 (Qwen3 1.7B VD)",  status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/it-bologna_35m",  engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Bologna 35 (Qwen3 1.7B VD)",  status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-roma_30f",     engine: "qwen", language: "italian", region: "IT", gender: "f", label: "Roma 30 (Qwen3 1.7B VD)",     status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-milano_45m",   engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Milano 45 (Qwen3 1.7B VD)",   status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-firenze_55f",  engine: "qwen", language: "italian", region: "IT", gender: "f", label: "Firenze 55 (Qwen3 1.7B VD)",  status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-bologna_35m",  engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Bologna 35 (Qwen3 1.7B VD)",  status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
 
   // Brazilian Portuguese via Qwen3 1.7B-VoiceDesign (Apache 2.0)
-  { id: "qwen17/pt-saopaulo_30f",      engine: "qwen", language: "portuguese", region: "BR", gender: "f", label: "São Paulo 30 (Qwen3 1.7B VD)",      status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/pt-rio_45m",           engine: "qwen", language: "portuguese", region: "BR", gender: "m", label: "Rio 45 (Qwen3 1.7B VD)",            status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/pt-salvador_28f",      engine: "qwen", language: "portuguese", region: "BR", gender: "f", label: "Salvador 28 (Qwen3 1.7B VD)",       status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/pt-portoalegre_55m",   engine: "qwen", language: "portuguese", region: "BR", gender: "m", label: "Porto Alegre 55 (Qwen3 1.7B VD)",   status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/pt-belohorizonte_35f", engine: "qwen", language: "portuguese", region: "BR", gender: "f", label: "Belo Horizonte 35 (Qwen3 1.7B VD)", status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/pt-salvador_28f",      engine: "qwen", language: "portuguese", region: "BR", gender: "f", label: "Salvador 28 (Qwen3 1.7B VD)",       status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/pt-belohorizonte_35f", engine: "qwen", language: "portuguese", region: "BR", gender: "f", label: "Belo Horizonte 35 (Qwen3 1.7B VD)", status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+
+  // Round 2: ajustes (Barcelona menos soft, Napoli/SãoPaulo más calmos, Salvador-style variación Recife).
+  { id: "qwen17/es-barcelona_45m-v3", engine: "qwen", language: "spanish",    region: "LATAM", gender: "m", label: "Barcelona 45 v3 (intermedio)",   status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-napoli_28m-v2",    engine: "qwen", language: "italian",    region: "IT",    gender: "m", label: "Napoli 28 v2 (calmo)",           status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/pt-saopaulo_30f-v2",  engine: "qwen", language: "portuguese", region: "BR",    gender: "f", label: "São Paulo 30 v2 (volumen bajo)", status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/pt-recife_32f",       engine: "qwen", language: "portuguese", region: "BR",    gender: "f", label: "Recife 32 (variación NE)",       status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
 
   // Voice clones via Chatterbox (modelo MIT) usando refs OpenSLR 72 (CC-BY-SA Google).
   // El output hereda la licencia más restrictiva del input → CC-BY-SA-4.0.
@@ -217,6 +218,8 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   { id: "qwen17/es-madrid_30f",    engine: "qwen", language: "spanish", region: "ES", gender: "f", label: "Madrid 30 (Qwen3 1.7B VD)",     status: "discarded", reason: "Calidad/entonación no convenció en testing.", license: "Apache-2.0" },
   { id: "qwen17/es-sevilla_28f",   engine: "qwen", language: "spanish", region: "ES", gender: "f", label: "Sevilla 28 (Qwen3 1.7B VD)",    status: "discarded", reason: "Calidad/entonación no convenció en testing.", license: "Apache-2.0" },
   { id: "qwen17/es-valencia_35f",  engine: "qwen", language: "spanish", region: "ES", gender: "f", label: "Valencia 35 (Qwen3 1.7B VD)",   status: "discarded", reason: "Calidad/entonación no convenció en testing.", license: "Apache-2.0" },
+  { id: "qwen17/pt-rio_45m",         engine: "qwen", language: "portuguese", region: "BR", gender: "m", label: "Rio 45 (Qwen3 1.7B VD)",         status: "discarded", reason: "Rechazada en testing.", license: "Apache-2.0" },
+  { id: "qwen17/pt-portoalegre_55m", engine: "qwen", language: "portuguese", region: "BR", gender: "m", label: "Porto Alegre 55 (Qwen3 1.7B VD)", status: "discarded", reason: "Rechazada en testing.", license: "Apache-2.0" },
 ];
 
 export const DEFAULT_VOICE_BY_LANGUAGE: Record<string, string> = {

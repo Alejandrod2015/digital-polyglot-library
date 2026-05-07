@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Children, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+=======
+import { Children, useCallback, useEffect, useMemo, useRef, useState } from "react";
+>>>>>>> origin/main
 import * as SecureStore from "expo-secure-store";
 import * as Haptics from "expo-haptics";
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
@@ -7109,6 +7113,39 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  // Reader comprehension events. Captures per-word interactions for adaptive
+  // learning + corpus asset value. Fire-and-forget; failures are logged but
+  // never block reader UX.
+  async function trackReaderEvent(
+    eventType:
+      | "vocab_clicked"
+      | "word_dwell"
+      | "audio_segment_replay"
+      | "story_abandoned"
+      | "vocab_marked_known"
+      | "vocab_marked_unknown",
+    payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
+  ) {
+    if (!sessionToken) return;
+    try {
+      await apiFetch<{ success: true }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/mobile/metrics",
+        token: sessionToken,
+        method: "POST",
+        body: {
+          storySlug: payload.storySlug,
+          bookSlug: payload.bookSlug,
+          eventType,
+          value: payload.value,
+          metadata: payload.metadata ?? {},
+        },
+      });
+    } catch (error) {
+      console.error("[mobile reader] failed to track reader event", error);
+    }
+  }
+
   useEffect(() => {
     practiceStartTrackedRef.current = false;
     practiceCompletionTrackedRef.current = false;
@@ -10376,6 +10413,7 @@ export function MobileLibraryShell(args: {
             toValue: 0.85,
             duration: 1100,
             easing: Easing.inOut(Easing.ease),
+<<<<<<< HEAD
             // JS-driven (useNativeDriver:false) a propósito. Con
             // native driver el loop se quedaba congelado al cambiar
             // de tab + interactuar + volver a home: el rearm del
@@ -10390,12 +10428,21 @@ export function MobileLibraryShell(args: {
             // + nextStoryFloatStyle), así que JS driver vuelve a ser
             // seguro y resuelve el problema del rearm.
             useNativeDriver: false,
+=======
+            // useNativeDriver:true saca la oscilación del hilo JS:
+            // tanto opacity (halo) como transform.translateY (float)
+            // son props soportadas nativamente. Antes con
+            // useNativeDriver:false el loop se congelaba bajo carga
+            // de renders; el AppState rearm a continuación cubre el
+            // caso de Low Power Mode al volver al foreground.
+            useNativeDriver: true,
+>>>>>>> origin/main
           }),
           Animated.timing(journeyNextPulse, {
             toValue: 0.25,
             duration: 1100,
             easing: Easing.inOut(Easing.ease),
-            useNativeDriver: false,
+            useNativeDriver: true,
           }),
         ])
       );
@@ -12738,6 +12785,7 @@ export function MobileLibraryShell(args: {
           onOpenPractice={() => void openStoryPractice(selection)}
           isFavoriteWord={isFavoriteWord}
           onToggleFavoriteWord={(item, contextSentence) => void toggleFavoriteWord(item, contextSentence)}
+          onTrackReaderEvent={trackReaderEvent}
         />
       </View>
     );
@@ -13064,7 +13112,11 @@ export function MobileLibraryShell(args: {
   // ser un array PLANO (no un fragment con conditional-null siblings),
   // si no `stickyHeaderIndices` no resuelve correctamente las
   // posiciones — fue exactamente lo que rompió el intento anterior.
+<<<<<<< HEAD
   // `Children.toArray` aplana el fragment y filtra los nulls,
+=======
+  // `React.Children.toArray` aplana el fragment y filtra los nulls,
+>>>>>>> origin/main
   // dejando el array que journeyStickyIndices espera.
   if (useNativeJourneySticky) {
     content = Children.toArray(journeyView.props.children);

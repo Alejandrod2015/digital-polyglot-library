@@ -19,6 +19,7 @@ import {
   getRecommendedPracticeModeFromOnboarding,
   getDuePracticeItems,
   getSpeechSynthesisLang,
+  sortPracticeItemsByDueness,
   PracticeAudioClip,
   PracticeExercise,
   PracticeFavoriteItem,
@@ -476,7 +477,17 @@ export default function PracticePage() {
         if (!res.ok) throw new Error(`Error ${res.status}`);
         const data = (await res.json()) as PracticeFavoriteItem[] | JourneyPracticeSource;
         if (!cancelled) {
-          setFavorites(Array.isArray(data) ? data : Array.isArray(data.items) ? data.items : []);
+          // Default favorites mode: pre-sort by FSRS dueness so the practice
+          // queue starts with the most-overdue items. Journey and story
+          // practice keep their server-defined order (curriculum / story
+          // sequence is intentional there).
+          const rawItems = Array.isArray(data)
+            ? data
+            : Array.isArray(data.items)
+              ? data.items
+              : [];
+          const isDefaultFavoritesMode = !isJourneyPractice && !isStoryPractice;
+          setFavorites(isDefaultFavoritesMode ? sortPracticeItemsByDueness(rawItems) : rawItems);
           setPrefabExercises(!Array.isArray(data) && Array.isArray(data.exercises) ? data.exercises : []);
           setCheckpointToken(!Array.isArray(data) && typeof data.checkpointToken === "string" ? data.checkpointToken : null);
           setJourneyReviewMeta(
@@ -489,12 +500,14 @@ export default function PracticePage() {
         if (!cancelled) {
           const cachedData = await readCachedJson<PracticeFavoriteItem[] | JourneyPracticeSource>(requestUrl);
           if (cachedData) {
+            const cachedItems = Array.isArray(cachedData)
+              ? cachedData
+              : Array.isArray(cachedData.items)
+                ? cachedData.items
+                : [];
+            const isDefaultFavoritesMode = !isJourneyPractice && !isStoryPractice;
             setFavorites(
-              Array.isArray(cachedData)
-                ? cachedData
-                : Array.isArray(cachedData.items)
-                  ? cachedData.items
-                  : []
+              isDefaultFavoritesMode ? sortPracticeItemsByDueness(cachedItems) : cachedItems
             );
             setPrefabExercises(
               !Array.isArray(cachedData) && Array.isArray(cachedData.exercises)
@@ -517,7 +530,7 @@ export default function PracticePage() {
 
           if (!isJourneyPractice && !isStoryPractice) {
             const localFavorites = readLocalPracticeFavorites(user?.id ?? null);
-            setFavorites(localFavorites);
+            setFavorites(sortPracticeItemsByDueness(localFavorites));
             setPrefabExercises([]);
             setCheckpointToken(null);
             setLoadState(localFavorites.length > 0 ? "ready" : "error");
@@ -1083,6 +1096,49 @@ export default function PracticePage() {
       return;
     }
     setSessionComplete(true);
+  };
+
+  // FSRS grade derivation: which favorite word does this exercise score against?
+  // match_meaning has multiple words at once and is skipped here (no grade UI;
+  // user just sees Continue). All other types map cleanly to a single word.
+  const getExerciseGradingWord = (exercise: PracticeExercise | null): string | null => {
+    if (!exercise) return null;
+    if (exercise.type === "meaning_in_context") return exercise.word;
+    if (
+      exercise.type === "fill_blank" ||
+      exercise.type === "natural_expression" ||
+      exercise.type === "listen_choose"
+    ) {
+      return exercise.answer;
+    }
+    return null; // match_meaning
+  };
+
+  const getFavoriteLanguageForWord = (word: string): string | undefined => {
+    const fav = favorites.find((f) => f.word === word);
+    return fav?.language ?? undefined;
+  };
+
+  // Auto-grade: when the user clicks Continue, derive the FSRS grade from
+  // whether they answered correctly. Correct → 3 (Good), wrong → 1 (Again).
+  // Fire-and-forget POST to /api/practice/review so the SRS state updates
+  // without changing the user-visible UX. Any failure logs and still
+  // advances; a flaky connection never blocks the practice flow.
+  const continueWithAutoGrade = () => {
+    const word = getExerciseGradingWord(currentExercise);
+    if (word && lastResult) {
+      const grade: 1 | 3 = lastResult === "correct" ? 3 : 1;
+      const language = getFavoriteLanguageForWord(word);
+      // Intentionally not awaited: advance immediately, send grade in background.
+      void fetch("/api/practice/review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ word, grade, ...(language ? { language } : {}) }),
+      }).catch((err) => {
+        console.warn("[practice] auto-grade submission failed", err);
+      });
+    }
+    goNext();
   };
 
   const restart = () => {
@@ -2248,7 +2304,7 @@ export default function PracticePage() {
                     <div className="mt-1 flex items-center justify-center">
                       <button
                         type="button"
-                        onClick={goNext}
+                        onClick={continueWithAutoGrade}
                         className={`inline-flex min-w-[152px] justify-center rounded-full px-5 py-2 text-[12px] font-black uppercase tracking-[0.16em] shadow-[0_10px_24px_rgba(0,0,0,0.18)] ${
                           lastResult === "correct"
                             ? "bg-emerald-300 text-slate-950 shadow-[0_10px_24px_rgba(110,231,183,0.22)] hover:bg-emerald-200"

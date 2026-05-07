@@ -446,6 +446,30 @@ export function getDuePracticeItems(items: PracticeFavoriteItem[]): PracticeFavo
   });
 }
 
+// SRS-aware ordering: items whose nextReviewAt is in the past come first
+// (lapsed/new), then scheduled-future ascending. Uses the same comparator the
+// server side /api/practice/due endpoint applies, so client and server agree
+// on dueness even when the client is hydrating from cache. Pure-additive
+// helper; existing sort paths in getPracticeSource stay untouched to preserve
+// their source-weight prioritisation. Use this when you want plain dueness
+// ordering, e.g. on the entry to a practice session.
+export function sortPracticeItemsByDueness(
+  items: PracticeFavoriteItem[]
+): PracticeFavoriteItem[] {
+  const now = Date.now();
+  const dueness = (item: PracticeFavoriteItem): number => {
+    if (!item.nextReviewAt) return Number.NEGATIVE_INFINITY;
+    const parsed = Date.parse(item.nextReviewAt);
+    return Number.isFinite(parsed) ? parsed : Number.NEGATIVE_INFINITY;
+  };
+  return [...items].sort((a, b) => {
+    const aDue = dueness(a);
+    const bDue = dueness(b);
+    if (aDue !== bDue) return aDue - bDue;
+    return a.word.localeCompare(b.word);
+  });
+}
+
 function getPracticeSource(
   items: PracticeFavoriteItem[],
   prefs?: OnboardingPracticePrefs
