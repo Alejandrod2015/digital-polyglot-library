@@ -78,7 +78,7 @@ The migration is additive (4 `ALTER TABLE ADD COLUMN IF NOT EXISTS`), zero risk 
 | Piece | State |
 |---|---|
 | FSRS-4.5 algorithm in `src/lib/fsrs.ts` (+ tests + adapter from current Favorite shape) | Deployed to main |
-| Endpoint `GET /api/practice/due` (returns vocab to review today, ordered by dueness) | Not started |
+| Endpoint `GET /api/practice/due` (web + mobile mirror, ordered by dueness) | Deployed to main |
 | Integration with `practice_session_started` so practice loads SRS-due items first | Not started |
 | Update `nextReviewAt`/`streak` after each grade via existing `PATCH /api/favorites` (UI for grade + call FSRS) | Not started |
 
