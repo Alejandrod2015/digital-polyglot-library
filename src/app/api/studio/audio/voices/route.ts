@@ -20,6 +20,12 @@ export async function GET() {
     gender: c.gender === "m" ? "m" : "f",
     label: `${c.name} (clonada${c.region ? `, ${c.region}` : ""})`,
     status: "approved",
+    // Cloned voices are F5-TTS clones of user-supplied reference audio.
+    // The license of the underlying voice depends on the consent the user
+    // captured when uploading the reference. Until ClonedVoice carries
+    // explicit consent fields, mark these as Unverified so the gallery
+    // badge prompts a manual check before any commercial reuse.
+    license: "Unverified",
   }));
   return NextResponse.json({ voices: [...VOICE_CATALOG, ...dynamic] });
 }

@@ -20,7 +20,12 @@ type CandidateSelectionItem = {
   type?: string;
 };
 
-export type DeterministicCandidate = {
+// Internal helper type used by extractDeterministicCandidates below.
+// Kept un-exported because Next.js route.ts files only allow exports of
+// HTTP method handlers and route config (runtime, dynamic, etc). To use
+// outside this file, move both the type and extractDeterministicCandidates
+// to a src/lib/ module.
+type DeterministicCandidate = {
   word: string;
   score: number;
   typeHint?: string;
@@ -325,7 +330,7 @@ function chooseBestSurface(surfaceCounts: Map<string, number>): string {
     })[0]?.[0] ?? "";
 }
 
-export function extractDeterministicCandidates(text: string, language?: string, max = 140): DeterministicCandidate[] {
+function extractDeterministicCandidates(text: string, language?: string, max = 140): DeterministicCandidate[] {
   const stopwords = getStopwords(language);
   const tokenMatches = [...text.matchAll(/[\p{L}][\p{L}\p{M}'’-]*/gu)];
   const unigramStats = new Map<
