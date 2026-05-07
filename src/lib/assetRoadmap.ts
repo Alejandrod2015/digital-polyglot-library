@@ -36,6 +36,15 @@ export type AssetCorpus = {
   buyers: string;
 };
 
+export type WorkLogEntry = {
+  date: string; // YYYY-MM-DD
+  title: string;
+  scope: string;
+  summary: string;
+  highlights: string[];
+  commits?: string[];
+};
+
 export type AssetRoadmap = {
   lastUpdated: string;
   thesisHeadline: string;
@@ -44,6 +53,7 @@ export type AssetRoadmap = {
   wedge: string;
   whyNow: string;
   movidas: Movida[];
+  workLog: WorkLogEntry[];
 };
 
 // Contribution to a movida's progress %, by piece status.
@@ -219,6 +229,155 @@ export const ASSET_ROADMAP: AssetRoadmap = {
           status: "not_started",
         },
       ],
+    },
+  ],
+  // Bitácora: chronological log de cada bloque de trabajo. Más reciente
+  // arriba. Editar este array al cerrar cada commit/sesión para que la
+  // página /studio/progreso refleje "qué hicimos cuándo y por qué".
+  workLog: [
+    {
+      date: "2026-05-07",
+      title: "Bitácora del proyecto",
+      scope: "Infra de visibilidad",
+      summary:
+        "Esta misma sección. Te permite ver cronológicamente todo lo hecho sin tener que leer git ni preguntarme.",
+      highlights: [
+        "Nuevo tipo WorkLogEntry en assetRoadmap.ts (data file)",
+        "Sección 'Bitácora' al final de /studio/progreso renderizando estos entries",
+        "Cada vez que avance algo, edito una línea acá y aparece en producción",
+      ],
+    },
+    {
+      date: "2026-05-07",
+      title: "Movida 2 pieza 4: helper server-side + endpoints de review",
+      scope: "Movida 2 (SRS engine)",
+      summary:
+        "Cuando un usuario califica una palabra (Again/Hard/Good/Easy), el server hace los cálculos FSRS y guarda el nuevo estado. Sin UI todavía, pero el backend está listo para que cualquier cliente lo llame.",
+      highlights: [
+        "applyReviewToFavorite() en src/lib/practiceReview.ts: lee favorito, corre FSRS, persiste",
+        "POST /api/practice/review (web) y POST /api/mobile/practice/review (mobile)",
+        "Body: { word, grade 1-4, language? } → response: { intervalDays, nextReviewAt, streak, card }",
+      ],
+      commits: ["55a8cd2"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Movida 2 pieza 3: cola de práctica ordenada por SRS",
+      scope: "Movida 2 (SRS engine)",
+      summary:
+        "Cuando el usuario abre /practice sin contexto de journey/story, las palabras vienen ordenadas por urgencia: primero las atrasadas o nuevas, después las programadas hacia el futuro.",
+      highlights: [
+        "sortPracticeItemsByDueness() en src/lib/practiceExercises.ts",
+        "Aplicado en 3 paths del practice/page.tsx: live fetch, cache JSON, localStorage fallback",
+        "Journey/story practice mantienen su orden curricular (intencional)",
+      ],
+      commits: ["30cc8eb"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Movida 2 pieza 2: endpoint /api/practice/due",
+      scope: "Movida 2 (SRS engine)",
+      summary:
+        "API que cualquier cliente puede llamar para preguntar 'qué palabras debería repasar este usuario ahora'. Web y mobile, mismo contrato.",
+      highlights: [
+        "GET /api/practice/due y /api/mobile/practice/due",
+        "Query params: limit (default 20, max 100), language opcional",
+        "Devuelve items ordenados por dueness + total + dueCount",
+      ],
+      commits: ["69869be"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Movida 2 pieza 1: algoritmo FSRS-4.5 implementado",
+      scope: "Movida 2 (SRS engine)",
+      summary:
+        "El motor que calcula 'cuándo debe repasar el usuario esta palabra' basado en cómo le fue históricamente. Mismo que usa Anki, refinado por la comunidad open-source.",
+      highlights: [
+        "src/lib/fsrs.ts (~190 líneas, sin dependencias externas)",
+        "12 tests en src/lib/__tests__/fsrs.test.ts",
+        "API: reviewCard(), newCard(), favoriteToFsrsCard() (adapter), compareByDueness()",
+        "Adapter aproxima desde el schema actual hasta que migremos a columnas FSRS completas",
+      ],
+      commits: ["a501a42"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Página /studio/progreso para visualizar el roadmap",
+      scope: "Infra de visibilidad",
+      summary:
+        "Donde estás leyendo esto. Tarjetas de los 3 corpora, barras de progreso por movida, badges de status por pieza. Un solo lugar para ver cómo va todo.",
+      highlights: [
+        "Nueva sección 'ESTUDIO' en el sidebar del Studio admin",
+        "Datos en src/lib/assetRoadmap.ts; espejo en docs/asset-roadmap.md",
+        "Cálculo de progreso: deployed=100%, local_only=70%, in_progress=40%, not_started=0",
+      ],
+      commits: ["57fef97"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Movida 1: data layer foundation",
+      scope: "Movida 1 (Data layer)",
+      summary:
+        "La plomería que captura cada interacción del usuario como dato etiquetado para el corpus. Backend acepta los eventos, mobile emite el primero.",
+      highlights: [
+        "6 nuevos eventos en /api/metrics y /api/mobile/metrics: vocab_clicked, word_dwell, audio_segment_replay, story_abandoned, vocab_marked_known/unknown",
+        "Mobile ReaderScreen emite vocab_clicked en karaoke + legacy paths",
+        "Schema con 4 columnas nuevas en JourneyStory (register, generationCohort, culturalTags, voiceProvenance) PENDIENTE de aplicar migration",
+      ],
+      commits: ["a7d8392", "4d6416c"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Asset roadmap doc en repo + memoria persistente",
+      scope: "Estrategia",
+      summary:
+        "Documentamos la tesis del asset (3 corpora, heritage wedge, comparables, exit math) en dos lugares: visible en el repo (docs/) y en la memoria de Claude para que persista entre sesiones.",
+      highlights: [
+        "docs/asset-roadmap.md con tesis + movidas + estado",
+        "3 archivos de memoria: project_asset_thesis, project_movidas_roadmap, feedback_verify_vercel_deploy",
+        "MEMORY.md indexado para que arranque cargada en cualquier futura sesión",
+      ],
+      commits: ["c7dbee9", "3e357f4"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Fix: builds de Vercel desbloqueados",
+      scope: "Infra",
+      summary:
+        "Tu commit 5f256da del 6 de mayo introdujo un import roto que bloqueaba TODOS los builds de Vercel desde entonces. Restauramos la función que faltaba.",
+      highlights: [
+        "src/lib/objectStorage.ts: getPublicObjectUrl() restaurada (vivía en otra branch sin mergear)",
+        "Builds de Vercel volvieron a pasar y propagaron a producción todos los cambios pendientes",
+      ],
+      commits: ["cd2c410"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Páginas legales en alemán + bilingual toggle",
+      scope: "Legal",
+      summary:
+        "Versión DE de Privacy, Impressum, Cookies, Términos y Data Deletion. Cada página tiene un link para alternar entre idiomas. Importante porque operás desde Hamburg y serás revisado por App Store en alemán.",
+      highlights: [
+        "5 páginas nuevas en /<ruta>/de con terminología legal alemana formal (Sie-form)",
+        "Toggle 'Auf Deutsch lesen' / 'Read in English' en cada par",
+        "Cláusula de precedencia: para usuarios en Alemania prevalece la versión alemana",
+      ],
+      commits: ["39bd017", "73baae5"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Privacy Policy reescrita para habilitar la tesis del asset",
+      scope: "Legal",
+      summary:
+        "Tu Privacy original cerraba la puerta a vender el corpus. La reescribimos para autorizar uso agregado/anonimizado en ML, partnerships y exit, sin perder protección al usuario.",
+      highlights: [
+        "Lista completa de 10 procesadores (incluyendo OpenAI, Anthropic, ElevenLabs, Sanity, Modal)",
+        "Cláusula de Business Transfers (M&A) agregada",
+        "Tabla de retención por categoría (incluyendo §147 AO 10 años para registros fiscales)",
+        "Hamburgische Beauftragte für Datenschutz nombrada como autoridad",
+        "'We do not sell identifiable personal data' (vs 'no sell ANY data') desbloquea licencia anonimizada",
+      ],
+      commits: ["673cb08", "328c33e"],
     },
   ],
 };

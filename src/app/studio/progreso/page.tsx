@@ -7,6 +7,7 @@ import {
   statusLabel,
   type Movida,
   type RoadmapPiece,
+  type WorkLogEntry,
 } from "@/lib/assetRoadmap";
 
 const ACCENT = "#14b8a6";
@@ -106,6 +107,79 @@ function PieceRow({ piece }: { piece: RoadmapPiece }) {
         <StatusBadge piece={piece} />
       </div>
     </div>
+  );
+}
+
+function WorkLogCard({ entry }: { entry: WorkLogEntry }) {
+  return (
+    <article
+      style={{
+        background: CARD_BG,
+        border: `1px solid ${CARD_BORDER}`,
+        borderRadius: 10,
+        padding: "16px 20px",
+      }}
+    >
+      <header style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 8, flexWrap: "wrap" }}>
+        <span
+          style={{
+            fontSize: 11,
+            fontWeight: 600,
+            color: "var(--muted)",
+            fontVariantNumeric: "tabular-nums",
+            opacity: 0.85,
+          }}
+        >
+          {entry.date}
+        </span>
+        <span
+          style={{
+            fontSize: 10,
+            fontWeight: 700,
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            color: ACCENT,
+            background: ACCENT_SOFT,
+            padding: "2px 8px",
+            borderRadius: 5,
+          }}
+        >
+          {entry.scope}
+        </span>
+        <h3 style={{ fontSize: 14, fontWeight: 600, margin: 0, color: "var(--foreground)", flex: 1 }}>
+          {entry.title}
+        </h3>
+        {entry.commits && entry.commits.length > 0 && (
+          <span
+            style={{
+              fontSize: 11,
+              fontFamily: "ui-monospace, monospace",
+              color: "var(--muted)",
+              opacity: 0.7,
+            }}
+          >
+            {entry.commits.join(" · ")}
+          </span>
+        )}
+      </header>
+      <p style={{ fontSize: 13, color: "var(--muted)", margin: "0 0 10px", lineHeight: 1.55 }}>
+        {entry.summary}
+      </p>
+      <ul
+        style={{
+          margin: 0,
+          paddingLeft: 18,
+          fontSize: 12,
+          color: "var(--muted)",
+          lineHeight: 1.65,
+          opacity: 0.92,
+        }}
+      >
+        {entry.highlights.map((line, i) => (
+          <li key={i}>{line}</li>
+        ))}
+      </ul>
+    </article>
   );
 }
 
@@ -328,6 +402,52 @@ export default async function StudioProgresoPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {ASSET_ROADMAP.movidas.map((movida) => (
               <MovidaCard key={movida.id} movida={movida} />
+            ))}
+          </div>
+        </section>
+
+        {/* Bitácora — chronological log of every block of work, most recent first. */}
+        <section>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              justifyContent: "space-between",
+              margin: "8px 0 12px",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "var(--muted)",
+                margin: 0,
+              }}
+            >
+              Bitácora
+            </h2>
+            <span style={{ fontSize: 11, color: "var(--muted)", opacity: 0.7 }}>
+              {ASSET_ROADMAP.workLog.length} entradas, más reciente arriba
+            </span>
+          </div>
+          <p
+            style={{
+              fontSize: 12,
+              color: "var(--muted)",
+              opacity: 0.8,
+              margin: "0 0 14px",
+              lineHeight: 1.55,
+            }}
+          >
+            Cada bloque de trabajo queda acá en lenguaje claro. Editado en{" "}
+            <code style={{ fontFamily: "ui-monospace, monospace" }}>src/lib/assetRoadmap.ts</code>
+            {" "}cuando avanza algo nuevo, aparece automáticamente al rebuildar.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {ASSET_ROADMAP.workLog.map((entry, i) => (
+              <WorkLogCard key={`${entry.date}-${i}`} entry={entry} />
             ))}
           </div>
         </section>
