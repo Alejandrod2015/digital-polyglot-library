@@ -59,6 +59,7 @@ import {
   areJourneysEqual,
   dedupeJourneysById,
   findActiveJourney,
+  cefrFromCoarseLevel,
   focusShortLabel,
   journeyDisplayName,
   journeyFlagVariant,
@@ -2198,18 +2199,12 @@ export function MobileLibraryShell(args: {
     Korean: { streak: 0, xpTotal: 0, progress: 0 },
     Chinese: { streak: 0, xpTotal: 0, progress: 0 },
   };
-  // Mapping our coarse preferredLevel (Beginner / Intermediate /
-  // Advanced) to a CEFR-ish pill string. Today this is global, so the
-  // pill is the same for every row — visual approximation, mirrored
-  // from the web variant B.
-  function cefrFromPreferredLevel(value?: string | null): string | null {
-    if (!value) return null;
-    const key = value.trim().toLowerCase();
-    if (key === "beginner") return "A1";
-    if (key === "intermediate") return "B1";
-    if (key === "advanced") return "C1";
-    return null;
-  }
+  // Mapping coarse → CEFR ahora vive en `journeys.ts` como
+  // `cefrFromCoarseLevel` para que el card del JourneysPanel y el row
+  // de la sheet de switch idiomas usen exactamente la misma fuente.
+  // Antes había dos copias y empezaron a diferir — la sheet mostraba
+  // "B1" y el card "Intermediate" para el mismo journey.
+  const cefrFromPreferredLevel = cefrFromCoarseLevel;
   // When the user has no target languages picked yet (legacy onboarding
   // or a fresh account that skipped the survey), the sheet shows every
   // supported language so they can start a journey from there. Tapping

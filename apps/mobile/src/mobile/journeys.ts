@@ -64,6 +64,24 @@ export function journeyFlagVariant(journey: {
 }
 
 /**
+ * Mapping del coarse preferredLevel (Beginner / Intermediate /
+ * Advanced) a una etiqueta CEFR (A1 / B1 / C1). Centralizado para
+ * que la sheet de switch y el card del panel coincidan; antes la
+ * sheet mostraba "B1" y el card mostraba "Intermediate" para el
+ * mismo journey, lo que se veía como bug.
+ */
+export function cefrFromCoarseLevel(value?: string | null): string | null {
+  if (!value) return null;
+  const key = value.trim().toLowerCase();
+  if (key === "beginner") return "A1";
+  if (key === "intermediate") return "B1";
+  if (key === "advanced") return "C1";
+  // Si el valor ya viene en CEFR (A1/A2/B1/...), devuélvelo en upper.
+  if (/^[abc][12]$/i.test(key)) return key.toUpperCase();
+  return null;
+}
+
+/**
  * Build the deterministic id for a journey. Centralized so the
  * lower-casing rules can't drift between callers.
  */

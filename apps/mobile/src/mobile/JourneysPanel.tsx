@@ -13,6 +13,7 @@ import { Feather } from "@expo/vector-icons";
 import { LanguageFlag } from "./LanguageFlag";
 import {
   type Journey,
+  cefrFromCoarseLevel,
   existingJourneyKeys,
   focusIcon,
   focusShortLabel,
@@ -411,6 +412,11 @@ export function JourneysPanel({
               // no quede tan larga ("Portuguese · Conversational" se
               // partía a dos visuales).
               const journeyNameLabel = (journey.label ?? "").trim() || focusLabel;
+              // Level: pasamos por cefrFromCoarseLevel para que el
+              // card muestre "B1" en lugar de "Intermediate", igual
+              // que la sheet de switch idiomas. Antes había
+              // inconsistencia entre las dos vistas del mismo journey.
+              const levelLabel = cefrFromCoarseLevel(journey.level);
               return (
                 <Pressable
                   key={journey.id}
@@ -436,7 +442,7 @@ export function JourneysPanel({
                         />
                         <Text style={styles.cardSubText}>
                           {journeyNameLabel}
-                          {journey.level ? ` · ${journey.level}` : ""}
+                          {levelLabel ? ` · ${levelLabel}` : ""}
                         </Text>
                       </View>
                     </View>
