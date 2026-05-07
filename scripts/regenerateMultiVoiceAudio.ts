@@ -118,6 +118,7 @@ async function run() {
       title: story.title,
       voiceMap: assignment.voiceMap,
       ambientPath: assignment.ambientFile ?? null,
+      language: "german", // todas las stories del script son alemanas
     });
     if (!result) {
       console.warn(`  failed; skipping DB update`);

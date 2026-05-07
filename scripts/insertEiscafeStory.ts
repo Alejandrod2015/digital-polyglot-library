@@ -124,6 +124,7 @@ async function run() {
     title: data.title,
     voiceMap: VOICE_MAP,
     ambientPath: AMBIENT_PATH,
+    language: "german",
   });
   if (!result) {
     console.warn("Audio generation failed; story stays as draft");

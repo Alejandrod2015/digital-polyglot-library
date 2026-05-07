@@ -4,6 +4,7 @@ import crypto from "node:crypto";
 import { sanityWriteClient } from "@/sanity";
 import { buildAudioSegmentsFromTranscript, type AudioSegment, type TranscriptSegment } from "@/lib/audioSegments";
 import { analyzeDeliveryQuality, analyzeTranscriptQuality, type AudioQaResult } from "@/lib/audioQa";
+import { alignAudioOnModal } from "@/lib/audioWordTimings";
 import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 
 // Default ElevenLabs voice settings used across all journey TTS calls.
@@ -392,18 +393,146 @@ export function parseDialogueSegments(storyText: string): DialogueSegment[] {
 //
 // Sufijos del key (versionados para invalidar cache cuando cambia el
 // pipeline):
-//   trim-v1: se agregó silenceremove para limpiar artefactos de cola.
-//   trim-v2: stability 0.8→0.9 + previous_text/next_text + end-trim
-//            duro de 60 ms para matar la "phantom syllable" que aparecía
-//            al final de la oración aunque silenceremove no la tocara.
+//   trim-v1: silenceremove para clicks/breaths.
+//   trim-v2: stability 0.9 + previous_text/next_text + end-trim 60ms
+//            para "phantom syllable".
+//   trim-v3: trim por alineación forzada (aeneas en Modal). Reemplaza
+//            silenceremove + end-trim duro: corta exactamente al final
+//            de la última palabra alineada + 30 ms de margen, content-
+//            aware en lugar de threshold-based. Si Modal align falla,
+//            cae al pipeline trim-v2 como fallback.
 function multivoiceSegmentCacheKey(voiceId: string, softenedText: string): string {
   const settingsFingerprint = JSON.stringify(DEFAULT_VOICE_SETTINGS);
   const hash = crypto
     .createHash("sha256")
-    .update(`${voiceId}|${settingsFingerprint}|${softenedText}|trim-v2`)
+    .update(`${voiceId}|${settingsFingerprint}|${softenedText}|trim-v3`)
     .digest("hex")
     .slice(0, 24);
   return `media/multivoice-segments/${hash}.mp3`;
+}
+
+/**
+ * Recorta el segmento exactamente al final de la última palabra
+ * alineada (+30 ms de margen) y al inicio de la primera (-50 ms).
+ * Solución content-aware al phantom-syllable: no depende de threshold
+ * de silencio porque el artefacto es VOCAL, no silencio.
+ *
+ * Flujo:
+ *  1. Sube el buffer a R2 con la cache key del segmento (necesario
+ *     para que aeneas tenga una URL pública).
+ *  2. Llama a `alignAudioOnModal` con el texto plano + idioma.
+ *  3. Lee `firstWord.startSec` y `lastWord.endSec`.
+ *  4. ffmpeg atrim al rango exacto.
+ *  5. Re-sube el buffer recortado a la misma cache key (overwrite).
+ *
+ * Devuelve el buffer recortado, o `null` si la alineación falló (el
+ * caller cae al trim heurístico viejo). Idempotente: ejecutarla 2
+ * veces sobre el mismo segmento devuelve audio equivalente.
+ */
+async function alignTrimSegment(args: {
+  rawBuffer: Buffer;
+  plainText: string;
+  language: string;
+  cacheKey: string;
+}): Promise<Buffer | null> {
+  const { rawBuffer, plainText, language, cacheKey } = args;
+
+  // 1. Upload raw para que aeneas pueda leerlo via URL pública.
+  try {
+    await uploadPublicObject({
+      key: cacheKey,
+      body: rawBuffer,
+      contentType: "audio/mpeg",
+    });
+  } catch (err) {
+    console.warn(`[elevenlabs] align upload-raw failed: ${err instanceof Error ? err.message : err}`);
+    return null;
+  }
+  const audioUrl = getPublicObjectUrl(cacheKey);
+  if (!audioUrl) {
+    console.warn("[elevenlabs] align skipped: cache URL not resolvable");
+    return null;
+  }
+
+  // 2. Aeneas align.
+  let tokens;
+  try {
+    const result = await alignAudioOnModal({ audioUrl, plainText, language });
+    tokens = result.tokens;
+  } catch (err) {
+    console.warn(`[elevenlabs] aeneas align failed: ${err instanceof Error ? err.message : err}`);
+    return null;
+  }
+  if (!tokens || tokens.length === 0) {
+    console.warn("[elevenlabs] aeneas returned 0 tokens");
+    return null;
+  }
+
+  // 3. Compute trim window. Margen 50 ms al inicio (para no cortar
+  // la primera consonante) y 30 ms al final (deja un breath natural).
+  const firstStart = tokens[0]?.startSec;
+  const lastEnd = tokens[tokens.length - 1]?.endSec;
+  if (typeof lastEnd !== "number" || !Number.isFinite(lastEnd) || lastEnd <= 0) {
+    console.warn("[elevenlabs] aeneas missing endSec for last token");
+    return null;
+  }
+  const trimStartSec = Math.max(0, (typeof firstStart === "number" ? firstStart : 0) - 0.05);
+  const trimEndSec = lastEnd + 0.03;
+
+  // 4. ffmpeg atrim + re-encode (192 kbps libmp3lame igual que la
+  // pasada anterior). asetpts para resetear timestamps y que el
+  // concat demuxer no se queje del PTS.
+  const { writeFile, mkdtemp, rm, readFile } = await import("fs/promises");
+  const { tmpdir } = await import("os");
+  const path = await import("path");
+  const { spawn } = await import("child_process");
+
+  const dir = await mkdtemp(path.join(tmpdir(), "align-trim-"));
+  let trimmedBuffer: Buffer;
+  try {
+    const inPath = path.join(dir, "in.mp3");
+    const outPath = path.join(dir, "out.mp3");
+    await writeFile(inPath, rawBuffer);
+    await new Promise<void>((resolve, reject) => {
+      const proc = spawn("ffmpeg", [
+        "-y",
+        "-loglevel", "error",
+        "-i", inPath,
+        "-af",
+        `atrim=start=${trimStartSec.toFixed(3)}:end=${trimEndSec.toFixed(3)},asetpts=PTS-STARTPTS`,
+        "-c:a", "libmp3lame",
+        "-b:a", "192k",
+        outPath,
+      ]);
+      let stderr = "";
+      proc.stderr.on("data", (chunk) => { stderr += chunk.toString(); });
+      proc.on("error", reject);
+      proc.on("close", (code) => {
+        if (code === 0) resolve();
+        else reject(new Error(`ffmpeg align-trim exit ${code}: ${stderr.slice(0, 400)}`));
+      });
+    });
+    trimmedBuffer = await readFile(outPath);
+  } catch (err) {
+    console.warn(`[elevenlabs] align-trim ffmpeg failed: ${err instanceof Error ? err.message : err}`);
+    return null;
+  } finally {
+    await rm(dir, { recursive: true, force: true }).catch(() => {});
+  }
+
+  // 5. Re-upload trimmed to the same cache key (overwrite the raw).
+  try {
+    await uploadPublicObject({
+      key: cacheKey,
+      body: trimmedBuffer,
+      contentType: "audio/mpeg",
+    });
+  } catch (err) {
+    console.warn(`[elevenlabs] align upload-trimmed failed: ${err instanceof Error ? err.message : err}`);
+    // No es fatal — devolvemos el buffer recortado de todos modos; la
+    // cache va a quedar con el raw, próxima vez se re-genera.
+  }
+  return trimmedBuffer;
 }
 
 // Pasa el buffer del segmento por dos limpiezas en cascada:
@@ -477,6 +606,10 @@ async function ttsSegment(args: {
    *  a veces genera 1-2 fonemas del siguiente token (la "phantom
    *  syllable" reportada). Pasar incluso un espacio o "." ayuda. */
   nextText?: string;
+  /** Idioma del segmento (para el aeneas align). Si no se pasa, el
+   *  align trim se salta y el segmento sale solo con el silenceremove
+   *  + end-trim heurístico viejo. */
+  language?: string;
 }): Promise<Buffer | null> {
   const softened = softenPunctuationForTts(args.text);
 
@@ -533,29 +666,43 @@ async function ttsSegment(args: {
   }
   const rawBuffer = Buffer.from(await response.arrayBuffer());
 
-  // Pasa por silenceremove para limpiar la cola de artefactos. Si ffmpeg
-  // falla (binario ausente, segmento corrupto), caemos al buffer crudo
-  // así el pipeline nunca se queda sin audio por un fallo de filtro.
-  const cleanedBuffer = await trimSegmentArtifacts(rawBuffer).catch((err) => {
-    console.warn(
-      `[elevenlabs] segment trim failed, using raw buffer: ${err instanceof Error ? err.message : err}`
-    );
-    return rawBuffer;
-  });
-
-  // Best-effort cache write. If R2 isn't configured or upload fails, the
-  // current generation still succeeds; the next regen will just miss again.
-  try {
-    await uploadPublicObject({
-      key: cacheKey,
-      body: cleanedBuffer,
-      contentType: "audio/mpeg",
+  // Trim por alineación forzada: cortar al final de la última palabra
+  // alineada por aeneas, no en N ms ciegos. Es content-aware y
+  // engine-agnostic. Si Modal align falla (no hay STUDIO_AUDIO_TOKEN,
+  // endpoint caído, segmento muy corto sin tokens, etc.) caemos al
+  // pipeline heurístico viejo (silenceremove + end-trim 60 ms).
+  let finalBuffer: Buffer | null = null;
+  if (args.language) {
+    finalBuffer = await alignTrimSegment({
+      rawBuffer,
+      plainText: softened,
+      language: args.language,
+      cacheKey,
     });
-  } catch (err) {
-    console.warn(`[elevenlabs] segment cache write failed: ${err instanceof Error ? err.message : err}`);
+  }
+  if (!finalBuffer) {
+    // Fallback heurístico: silenceremove + end-trim duro 60 ms.
+    const cleanedBuffer = await trimSegmentArtifacts(rawBuffer).catch((err) => {
+      console.warn(
+        `[elevenlabs] segment trim failed, using raw buffer: ${err instanceof Error ? err.message : err}`
+      );
+      return rawBuffer;
+    });
+    // Cache write para el fallback (alignTrimSegment ya escribió en
+    // el caso happy-path).
+    try {
+      await uploadPublicObject({
+        key: cacheKey,
+        body: cleanedBuffer,
+        contentType: "audio/mpeg",
+      });
+    } catch (err) {
+      console.warn(`[elevenlabs] segment cache write failed: ${err instanceof Error ? err.message : err}`);
+    }
+    return cleanedBuffer;
   }
 
-  return cleanedBuffer;
+  return finalBuffer;
 }
 
 // Each ElevenLabs MP3 starts with a Xing/Info frame announcing the per-segment
@@ -674,6 +821,10 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   voiceMap: Record<string, string>; // speaker name (lowercased) → voice ID; "narrator" key required
   ambientPath?: string | null;       // absolute path to a looped ambient MP3
   ambientVolume?: number;            // 0.0-1.0, default 0.15
+  /** Idioma de la historia ("german", "spanish", …). Requerido para
+   *  el aeneas align trim por segmento. Si no se pasa, los segmentos
+   *  caen al trim heurístico viejo (silenceremove + 60 ms). */
+  language?: string;
 }): Promise<{
   url: string;
   filename: string;
@@ -732,6 +883,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       apiKey,
       previousText,
       nextText,
+      language: args.language,
     });
     if (!buf) return null;
     audioBuffers.push(buf);
