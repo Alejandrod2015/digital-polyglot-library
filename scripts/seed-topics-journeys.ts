@@ -2,7 +2,7 @@ import { PrismaClient } from "../src/generated/prisma";
 const prisma = new PrismaClient();
 
 const UNIVERSAL_TOPICS = [
-  "Food & Everyday Life",
+  "Food & Drink",
   "Home & Family",
   "Travel & Discovery",
   "Work & Study",

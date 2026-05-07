@@ -27,16 +27,19 @@ If you change a rule here, also update the matching feedback file in `~/.claude/
 
 ## 3. Body
 
-### Format (depends on the journey)
+### Format (depends on the journey + audio tier)
 
-The Conversacional German journey uses **multi-voice dialogue** stories: a narrator opens the scene, then characters speak in `Speaker: line` blocks. ElevenLabs `parseDialogueSegments` (lib/elevenlabs.ts:352) only recognizes that format, so audio must be generated against it.
+Both Conversacional and Viajero now default to **multi-voice dialogue**: a narrator opens the scene, then characters speak in `Speaker: line` blocks. The format-vs-backend table below captures the historical and current defaults — if you start a new story today, go multi-voice.
 
-| Journey type | Body format | Audio backend |
-| --- | --- | --- |
-| Conversacional (DE) | Plain text. Narrator paragraph(s), then `Speaker: line` blocks separated by `\n` within a section. Section breaks `\n\n`. NO HTML tags. | ElevenLabs multi-voice |
-| Single-voice narrative (older Conversacional, all Viajero) | HTML with `<blockquote>...</blockquote>` per paragraph. Quoted speech embedded inside narrator prose. | ElevenLabs single-voice |
+| Journey type | Audio tier | Body format | Audio backend |
+| --- | --- | --- | --- |
+| Conversacional (DE) | Paid | Plain text. Narrator paragraphs + `Speaker: line` blocks (`\n` between, `\n\n` between sections). NO HTML. | ElevenLabs multi-voice (`generateAndUploadMultiVoiceAudio`) |
+| Viajero (free) | **Free, default** | Same plain-text multi-voice format as above. NO HTML. | Local TTS multi-voice (Kokoro narrator + Chatterbox MTL clones for characters, ref audio = approved Apache-2.0 sample mp3 in `/public/voice-samples`) |
+| Legacy single-voice | n/a (deprecated) | HTML with `<blockquote>...</blockquote>` per paragraph. Quoted speech embedded inside narrator prose. | ElevenLabs single-voice |
 
-**Default for new Conversacional DE stories: multi-voice plain-text.** Don't use `<blockquote>` for new ones. The two A1 holdouts on legacy HTML format (`Anna am Winterfeldtmarkt`, `Sonntag in Prenzlauer Berg`) need converting when their audio gets regenerated.
+**Default for new stories regardless of journey: multi-voice plain-text.** Don't write `<blockquote>` HTML in new bodies. Legacy stories still on `<blockquote>` (DE Conversacional `Anna am Winterfeldtmarkt`, `Sonntag in Prenzlauer Berg`; the very first Viajero `Tinto en La Candelaria` before the multi-voice migration) only need converting if/when their audio is regenerated.
+
+**Why this changed**: when Viajero was first defined, all audio was paid (ElevenLabs single-voice was the cheapest path). Now that Apache 2.0 / MIT / CC0 LATAM voices exist (Kokoro Dora + Qwen3-VoiceDesign personas cloned via Chatterbox), free multi-voice is feasible and richer than free single-voice, so Viajero defaults flipped. **Don't quote the old "all Viajero is single-voice" rule from earlier versions of this doc** — it is obsolete.
 
 ### Narrator
 
@@ -114,6 +117,7 @@ Use one of the eight values above. The field is required for every new story and
 - **Separable verbs**: when picking a separable verb (`anlügen`, `fernsehen`, `aufmachen`, `zuhören`, `abräumen`), the `surface` field MUST be a single contiguous string that actually appears in the body. If the body splits the verb (`lüg mich nicht an`, `Marie räumt den Tisch ab`), use the lemma form (`anlügen`, `abräumen`) as both `word` AND `surface`, NOT the separated form. Otherwise the karaoke pill matcher fails because the surface is not a literal substring of the body.
 - Multi-word entries only for genuinely lexicalized expressions (`auf einmal`, `schon mal`, `mein Schatz`, `tut mir leid`). Not arbitrary descriptive fragments.
 - The `type` field drives the karaoke pill color, so accuracy matters: an adjective tagged as `verb` shows in the wrong color.
+- **Distribute vocab across the body**: aim for roughly 3-5 vocab items per paragraph, NOT more than ~30% of items in any single paragraph. If you pick vocab linearly while reading the body you tend to cluster everything in the opening narrator beat (that's where descriptive nouns and setup verbs live), and the rest of the story has zero vocab pills. The pedagogical contract is that the learner encounters teachable items throughout the audio. Pre-save check: count vocab items per paragraph; if any paragraph has 0 and another has 6+, rebalance before saving.
 
 ## 5. Cover image
 
@@ -202,6 +206,7 @@ Before running the `save` script, walk through these ten binary questions. If an
 14. Does every named character in the synopsis (proper noun) also appear in the body, and vice versa? No "Klaus said" in the synopsis when the body says "Anna said".
 15. For separable verbs in vocab, is the `surface` a contiguous substring of the body? If not, the surface should be the lemma (`anlügen`), not the split form (`lüg an`).
 16. Is the body in the correct format for the journey type? Multi-voice Conversacional DE stories use `Speaker: line` plain text, NOT `<blockquote>` HTML.
+17. Is the vocab distributed across the body? Roughly 3-5 items per paragraph; no paragraph has 0 while another has 6+. (Pre-save sanity check: scan ¶ counts.)
 
 If 12 or more answers are `yes`, save. If fewer, revise.
 

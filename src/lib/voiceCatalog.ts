@@ -132,7 +132,11 @@ export const VOICE_CATALOG: VoiceEntry[] = [
 
   // Round 2: ajustes (Barcelona menos soft, Napoli/SãoPaulo más calmos, Salvador-style variación Recife).
   { id: "qwen17/es-barcelona_45m-v3", engine: "qwen", language: "spanish",    region: "LATAM", gender: "m", label: "Barcelona 45 v3 (intermedio)",   status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
-  { id: "qwen17/it-napoli_28m-v2",    engine: "qwen", language: "italian",    region: "IT",    gender: "m", label: "Napoli 28 v2 (calmo)",           status: "candidate", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  // Spain Spanish con prompt fonológico peninsular explícito (distinción c/z=θ vs s).
+  { id: "qwen17/es-madrid_38m-castellano",     engine: "qwen", language: "spanish", region: "LATAM", gender: "m", label: "Madrid 38 castellano (Qwen3 1.7B VD)",     status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/es-bilbao_35m-norte-v2",       engine: "qwen", language: "spanish", region: "ES",    gender: "m", label: "Bilbao 35 norte v2 (less energy)",          status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/es-castile_38f-castellano-v2", engine: "qwen", language: "spanish", region: "LATAM", gender: "f", label: "Castile 38 castellano v2 (alto, L alveolar)", status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
+  { id: "qwen17/it-napoli_28m-v4",             engine: "qwen", language: "italian", region: "IT",    gender: "m", label: "Napoli 28 v4 (intermedio menos)",                  status: "approved", license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
   { id: "qwen17/pt-saopaulo_30f-v2",  engine: "qwen", language: "portuguese", region: "BR",    gender: "f", label: "São Paulo 30 v2 (volumen bajo)", status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
   { id: "qwen17/pt-recife_32f",       engine: "qwen", language: "portuguese", region: "BR",    gender: "f", label: "Recife 32 (variación NE)",       status: "approved",  license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
 
@@ -220,6 +224,11 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   { id: "qwen17/es-valencia_35f",  engine: "qwen", language: "spanish", region: "ES", gender: "f", label: "Valencia 35 (Qwen3 1.7B VD)",   status: "discarded", reason: "Calidad/entonación no convenció en testing.", license: "Apache-2.0" },
   { id: "qwen17/pt-rio_45m",         engine: "qwen", language: "portuguese", region: "BR", gender: "m", label: "Rio 45 (Qwen3 1.7B VD)",         status: "discarded", reason: "Rechazada en testing.", license: "Apache-2.0" },
   { id: "qwen17/pt-portoalegre_55m", engine: "qwen", language: "portuguese", region: "BR", gender: "m", label: "Porto Alegre 55 (Qwen3 1.7B VD)", status: "discarded", reason: "Rechazada en testing.", license: "Apache-2.0" },
+  { id: "qwen17/it-napoli_28m-v2",            engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Napoli 28 v2 (calmo)",                   status: "discarded", reason: "Demasiado calmo; superado por v3 y siguientes.", license: "Apache-2.0" },
+  { id: "qwen17/it-napoli_28m-v3",            engine: "qwen", language: "italian", region: "IT", gender: "m", label: "Napoli 28 v3 (intermedio)",              status: "discarded", reason: "Mejor que v2 pero algo exagerado; reemplazada por v4.", license: "Apache-2.0" },
+  { id: "qwen17/es-salamanca_42f-castellano", engine: "qwen", language: "spanish", region: "ES", gender: "f", label: "Salamanca 42 castellano (Qwen3 1.7B VD)", status: "discarded", reason: "L estilo inglés velarizada + pitch demasiado agudo; rechazada en testing.", license: "Apache-2.0" },
+  { id: "qwen17/es-bilbao_35m-norte",          engine: "qwen", language: "spanish", region: "ES", gender: "m", label: "Bilbao 35 norte (Qwen3 1.7B VD)",           status: "discarded", reason: "Demasiado exagerado; superado por v2.", license: "Apache-2.0" },
+  { id: "qwen17/es-castile_45f-castellano-v3", engine: "qwen", language: "spanish", region: "ES", gender: "f", label: "Castile 45 castellano v3 (contralto, grave)", status: "discarded", reason: "Rechazada en testing.", license: "Apache-2.0" },
 ];
 
 export const DEFAULT_VOICE_BY_LANGUAGE: Record<string, string> = {
