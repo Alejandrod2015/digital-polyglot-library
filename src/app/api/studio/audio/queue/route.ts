@@ -19,6 +19,7 @@ export async function GET() {
     },
     select: {
       id: true,
+      slug: true,
       title: true,
       level: true,
       topic: true,

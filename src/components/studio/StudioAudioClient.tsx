@@ -1,9 +1,13 @@
 "use client";
 
 import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import type { AccentTag } from "@/lib/voiceCatalog";
+import { compatScore, compatBadge, type CompatScore } from "@/lib/voiceAccentCompat";
+import { inferStorySetting } from "@/lib/dialogueStorySettings";
 
 type StoryRow = {
   id: string;
+  slug: string | null;
   title: string | null;
   level: string;
   topic: string;
@@ -32,6 +36,7 @@ type VoiceEntry = {
   engine: "kokoro" | "piper" | "f5" | "coqui" | "bark" | "elevenlabs" | "chatterbox" | "qwen";
   language: string;
   region?: string;
+  accentTags?: AccentTag[];
   gender: "f" | "m";
   label: string;
   status: "approved" | "candidate" | "discarded";
@@ -955,6 +960,65 @@ function DialoguePanel({
   const [advanced, setAdvanced] = useState(false);
   const hasExisting = !!story.dialogueSpec && story.dialogueSpec.length > 0;
 
+  // Setting de la historia para Capa 2 (gate de casting). Si no hay
+  // mapping conocido, `inferStorySetting` devuelve null y el compat
+  // score cae a "unknown" — el UI no aplica restricciones.
+  const storySetting = useMemo(
+    () =>
+      inferStorySetting({
+        slug: story.slug,
+        language: story.journey.language,
+        variant: story.journey.variant,
+      }),
+    [story.slug, story.journey.language, story.journey.variant]
+  );
+
+  // Voces ordenadas por compatibility score: perfect → acceptable →
+  // unknown → block. Dentro de cada bucket, alfabético por label.
+  const sortedVoices = useMemo(() => {
+    const order: Record<CompatScore, number> = { perfect: 0, acceptable: 1, unknown: 2, block: 3 };
+    return [...voices]
+      .map((v) => ({ voice: v, compat: compatScore(v.accentTags, storySetting) }))
+      .sort((a, b) => {
+        const oa = order[a.compat.score];
+        const ob = order[b.compat.score];
+        if (oa !== ob) return oa - ob;
+        return a.voice.label.localeCompare(b.voice.label);
+      });
+  }, [voices, storySetting]);
+
+  // Wrap del onCastChange con confirm modal cuando se elige una voz
+  // con score "block" (mismatch grosero contra el setting). Voces
+  // unknown/acceptable/perfect pasan directo. El usuario puede aceptar
+  // explícitamente para casos legítimos (turista extranjero, etc.).
+  const handleCastChange = useCallback(
+    (speaker: string, voiceId: string) => {
+      if (!voiceId) {
+        onCastChange(speaker, voiceId);
+        return;
+      }
+      const voice = voices.find((v) => v.id === voiceId);
+      if (!voice) {
+        onCastChange(speaker, voiceId);
+        return;
+      }
+      const result = compatScore(voice.accentTags, storySetting);
+      if (result.score === "block") {
+        const ok = window.confirm(
+          `⚠ Mismatch de acento para ${speaker}\n\n` +
+            `Voz: ${voice.label}\n` +
+            `Tags: ${voice.accentTags?.join(", ") ?? "(sin tags)"}\n` +
+            `Setting: ${storySetting ?? "desconocido"}\n\n` +
+            `${result.reason}\n\n` +
+            `¿Confirmar de todos modos? (úsalo para casos como un personaje extranjero intencional)`
+        );
+        if (!ok) return;
+      }
+      onCastChange(speaker, voiceId);
+    },
+    [voices, storySetting, onCastChange]
+  );
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -986,8 +1050,25 @@ function DialoguePanel({
                 <span style={{ fontSize: 11, color: "var(--muted)" }}>
                   {detection.segments.length} segmentos · {detection.speakers.length} personajes
                 </span>
+                {storySetting && (
+                  <span
+                    style={{
+                      fontSize: 10,
+                      color: "var(--muted)",
+                      padding: "2px 6px",
+                      borderRadius: 10,
+                      border: "1px solid var(--card-border)",
+                    }}
+                    title="Setting inferido para el gate de compat de acento. Edita src/lib/dialogueStorySettings.ts para ajustar."
+                  >
+                    setting: {storySetting}
+                  </span>
+                )}
                 <div style={{ flex: 1 }} />
                 <button onClick={onDetect} style={{ ...btnSmall, fontSize: 11 }}>Re-detectar</button>
+              </div>
+              <div style={{ fontSize: 10, color: "var(--muted)" }}>
+                🟢 match perfecto · 🟡 aceptable · ⚪ sin auditar · 🔴 no recomendado (confirma antes de aceptar)
               </div>
 
               <div style={{ display: "grid", gridTemplateColumns: "minmax(120px, 200px) 1fr", gap: 8, alignItems: "center" }}>
@@ -1001,11 +1082,18 @@ function DialoguePanel({
                       </div>
                       <select
                         value={cast[speaker] ?? ""}
-                        onChange={(e) => onCastChange(speaker, e.target.value)}
-                        style={{ ...selectStyle, maxWidth: 320 }}
+                        onChange={(e) => handleCastChange(speaker, e.target.value)}
+                        style={{ ...selectStyle, maxWidth: 360 }}
                       >
                         <option value="">— elige voz —</option>
-                        {voices.map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
+                        {sortedVoices.map(({ voice: v, compat }) => {
+                          const badge = compatBadge(compat.score);
+                          return (
+                            <option key={v.id} value={v.id}>
+                              {badge.emoji} {v.label}
+                            </option>
+                          );
+                        })}
                       </select>
                     </Fragment>
                   );

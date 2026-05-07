@@ -158,6 +158,17 @@ type StoredJourney = {
   label: string | null;
 };
 
+// Códigos regionales conocidos que el campo `variant` legacy podía
+// guardar antes del modelo "un track por Studio Journey". Si el
+// `variant` actual matchea uno de estos y `region` no está set, lo
+// usamos para backfill — así journeys legacy heredan `region` la
+// próxima vez que el server los reescribe (efecto "lazy migration"
+// sin necesidad de tocar la DB).
+const KNOWN_REGION_CODES = new Set<string>([
+  "latam", "spain", "us", "uk", "br", "brazil", "pt", "portugal",
+  "germany", "austria", "france", "canada-fr", "italy", "south-korea",
+]);
+
 function normalizeJourneysArray(value: unknown): StoredJourney[] | null {
   if (!Array.isArray(value)) return null;
   const out: StoredJourney[] = [];
@@ -169,11 +180,20 @@ function normalizeJourneysArray(value: unknown): StoredJourney[] | null {
     const language = typeof j.language === "string" && j.language.trim() ? j.language.trim() : null;
     if (!id || !language || seen.has(id)) continue;
     seen.add(id);
+    const variant = typeof j.variant === "string" && j.variant.trim() ? j.variant.trim() : null;
+    let region = typeof j.region === "string" && j.region.trim() ? j.region.trim() : null;
+    // Lazy backfill: journeys creados antes del campo `region` tienen
+    // su código regional guardado en `variant` (porque ese era el modelo
+    // legacy). Si `variant` parece un código regional conocido (no un
+    // cuid de Studio Journey) y `region` está vacío, copiamos.
+    if (!region && variant && KNOWN_REGION_CODES.has(variant.toLowerCase())) {
+      region = variant.toLowerCase();
+    }
     out.push({
       id,
       language,
-      variant: typeof j.variant === "string" && j.variant.trim() ? j.variant.trim() : null,
-      region: typeof j.region === "string" && j.region.trim() ? j.region.trim() : null,
+      variant,
+      region,
       focus:
         typeof j.focus === "string" && j.focus.trim()
           ? (normalizeJourneyFocusPreference(j.focus) ?? "General")
