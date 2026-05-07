@@ -115,7 +115,7 @@ export function statusColor(status: RoadmapStatus): { bg: string; fg: string } {
 }
 
 export const ASSET_ROADMAP: AssetRoadmap = {
-  lastUpdated: "2026-05-07 (Movida 2 auto-grade revert)",
+  lastUpdated: "2026-05-07 (Movida 1 schema deployed)",
   thesisHeadline: "DPL como instrumento de captura de 3 corpora licenciables",
   thesisSummary:
     "La app B2C es la herramienta. El asset real son tres corpora estructurados que se pueden licenciar o vender por separado a labs de IA, plataformas de TTS y editoriales. Pre-launch = momento más barato para arquitecturar el data layer.",
@@ -170,8 +170,8 @@ export const ASSET_ROADMAP: AssetRoadmap = {
         },
         {
           title: "Schema fields en JourneyStory (register, generationCohort, culturalTags, voiceProvenance) + migration SQL",
-          status: "local_only",
-          note: "Aplicar migration a DB de producción ANTES de pushear; si no, queries 500",
+          status: "deployed",
+          note: "DB de producción ya tiene las 4 columnas (Neon). Vacías por defecto. Listas para tagear historias por dialecto/registro/cohorte/voiceProvenance",
         },
         {
           title: "Wiring de los otros 5 eventos (word_dwell, audio_segment_replay, story_abandoned, vocab_marked_known/unknown)",
@@ -247,6 +247,48 @@ export const ASSET_ROADMAP: AssetRoadmap = {
   // arriba. Editar este array al cerrar cada commit/sesión para que la
   // página /studio/progreso refleje "qué hicimos cuándo y por qué".
   workLog: [
+    {
+      date: "2026-05-07",
+      title: "Schema dialect/heritage aplicado en producción",
+      scope: "Movida 1 (Captura de datos)",
+      summary:
+        "Las 4 columnas para tagear historias por dialecto, registro, cohorte y proveniencia de voz ya están en la DB de producción. Listas para usarse cuando quieras empezar a etiquetar historias.",
+      highlights: [
+        "Migration aplicada: 20260507000000_add_journey_story_dialect_metadata",
+        "DB Neon: 4 columnas nuevas en dp_journey_stories_v1 (register TEXT[], generationCohort TEXT, culturalTags TEXT[], voiceProvenance JSONB)",
+        "Default vacías; sin impacto en historias existentes",
+        "Movida 1 cierra al 100% una vez los 5 eventos de comprensión restantes tengan UI trigger",
+      ],
+      commits: ["786a571"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Fix: Vercel build desbloqueado tras merge del otro chat",
+      scope: "Infra",
+      summary:
+        "Tras mergear la rama del otro chat (voice catalog + multi-voice Viajero) a main, Vercel falló por dos errores de tipos. Identificados y corregidos.",
+      highlights: [
+        "src/app/api/generate-vocab/route.ts: removido `export` del type y función (Next.js 15 prohíbe exports no-Route en route.ts)",
+        "src/app/api/studio/audio/voices/route.ts: agregado `license: 'Unverified'` a ClonedVoice → VoiceEntry mapping (license ahora es required)",
+        "Ambos errores invisibles en hot reload local; solo aparecen en `next build`",
+      ],
+      commits: ["af96f6b"],
+    },
+    {
+      date: "2026-05-07",
+      title: "Merge: voice catalog + Viajero LATAM stories + Studio rediseñado",
+      scope: "Estudio (otro chat)",
+      summary:
+        "Fast-forward del trabajo del otro chat a main. Trae todo el rediseño del Studio: voice catalog 100% gratis con badges de licencia, gallery con 4 secciones, Studio Monitor con variant pill, 2 stories Viajero LATAM live.",
+      highlights: [
+        "Voice catalog: ES + LATAM + IT + BR completos. DE solo Bark Speaker 4. Todos Apache 2.0/MIT/CC0",
+        "Gallery redesign con secciones por categoría + pills de región + license badges",
+        "Topic rename: Food & Everyday Life → Food & Drink",
+        "Spec: Viajero default multi-voz, vocab distribuido 3-5 por párrafo",
+        "Stories en producción: Tinto en La Candelaria, Carnitas en Coyoacán",
+      ],
+      commits: ["bd06956", "a4696cf"],
+    },
     {
       date: "2026-05-07",
       title: "Auto-grade silencioso en práctica (sin cambio de UX)",
