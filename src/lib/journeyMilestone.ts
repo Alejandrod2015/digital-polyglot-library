@@ -72,34 +72,8 @@ export const JOURNEY_MILESTONE_CHIME_URI = createToneWavDataUri([
   { frequency: 1046.5, durationMs: 125, gain: 0.16 },
 ]);
 
-// Cheerful C-major arpeggio for a correct practice answer. Four short
-// ascending notes (C5 → E5 → G5 → C6) feel reward-like and noticeably
-// better than the original two-tone "ding" without being long enough
-// to feel intrusive between exercises.
-export const PRACTICE_CORRECT_SOUND_URI = createToneWavDataUri([
-  { frequency: 523.25, durationMs: 55, gain: 0.16 },
-  { frequency: 659.25, durationMs: 55, gain: 0.16 },
-  { frequency: 783.99, durationMs: 65, gain: 0.17 },
-  { frequency: 1046.5, durationMs: 130, gain: 0.18 },
-]);
-
-// Soft "wrong" cue — a brief two-tone descent that sounds neutral
-// rather than punishing. Lower gain on the second tone so it tapers
-// out quickly. Keeps the practice flow encouraging.
-export const PRACTICE_WRONG_SOUND_URI = createToneWavDataUri([
-  { frequency: 311.13, durationMs: 70, gain: 0.13 },
-  { frequency: 246.94, durationMs: 130, gain: 0.1 },
-]);
-
-// "Perfect score" chime — bouncing C-major arpeggio that resolves on
-// a high C. Played on top of the correct sound when the user finishes
-// a session with 100% so the moment feels distinctly different from a
-// normal "good answer".
-export const PRACTICE_PERFECT_CHIME_URI = createToneWavDataUri([
-  { frequency: 523.25, durationMs: 70, gain: 0.16 },
-  { frequency: 659.25, durationMs: 70, gain: 0.17 },
-  { frequency: 783.99, durationMs: 70, gain: 0.17 },
-  { frequency: 1046.5, durationMs: 70, gain: 0.18 },
-  { frequency: 783.99, durationMs: 60, gain: 0.16 },
-  { frequency: 1046.5, durationMs: 220, gain: 0.2 },
-]);
+// Practice feedback chimes (correct/wrong/perfect) ahora viven en
+// `apps/mobile/src/lib/practiceSoundUris.ts` con samples reales (Kenney
+// Interface Sounds, CC0). Antes eran tonos sintéticos generados acá;
+// se movieron para que el bundle web no cargue ~17KB de base64 que
+// solo usa la app mobile.

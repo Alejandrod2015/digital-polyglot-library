@@ -182,7 +182,12 @@ import {
   type OnboardingGoal,
 } from "../../../../src/lib/onboarding";
 import { buildJourneyTrackInsights } from "./journeyTrackInsights";
-import { JOURNEY_MILESTONE_CHIME_URI, PRACTICE_CORRECT_SOUND_URI, PRACTICE_PERFECT_CHIME_URI, PRACTICE_WRONG_SOUND_URI } from "../../../../src/lib/journeyMilestone";
+import { JOURNEY_MILESTONE_CHIME_URI } from "../../../../src/lib/journeyMilestone";
+import {
+  PRACTICE_CORRECT_SOUND_URI,
+  PRACTICE_PERFECT_CHIME_URI,
+  PRACTICE_WRONG_SOUND_URI,
+} from "../lib/practiceSoundUris";
 
 type ReaderSelection = {
   book: Book;
