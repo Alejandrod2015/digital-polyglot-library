@@ -4,6 +4,8 @@ import { syncCreateStoryMirror } from '@/lib/createStoryMirror';
 import { getPublicUserStories, getUserStoryById } from '@/lib/userStories';
 import { getMobileSessionFromRequest } from '@/lib/mobileSession';
 import { prisma } from '@/lib/prisma';
+import { getStandaloneStoriesBySlugs } from '@/lib/standaloneStories';
+import { getStandaloneStoryAudioSegments } from '@/lib/standaloneStoryAudioSegments';
 
 export async function GET(req: NextRequest) {
   try {
@@ -124,6 +126,31 @@ export async function GET(req: NextRequest) {
         if (story.slug && !seen.has(story.slug)) {
           seen.add(story.slug);
           merged.push(story);
+        }
+      }
+
+      // Para los slugs que no matchean ni UserStory ni JourneyStory,
+      // probamos Sanity (standalone stories de los libros tipo
+      // "colloquial-german-stories"). Estas viven en CMS, no en DB.
+      // Incluimos solo las que tienen audioUrl publicado; los segments
+      // alineados solo existen para las que están en el registry
+      // hardcoded (`standaloneStoryAudioSegments`), para las demás
+      // devolvemos `[]` y el cliente reproduce desde el inicio del MP3
+      // (mejor que botón disabled silencioso).
+      const unmatched = slugs.filter((s) => !seen.has(s));
+      if (unmatched.length > 0) {
+        try {
+          const sanityStories = await getStandaloneStoriesBySlugs(unmatched);
+          for (const story of sanityStories) {
+            if (!story.slug || seen.has(story.slug)) continue;
+            const audioUrl = story.audioUrl;
+            if (typeof audioUrl !== "string" || !audioUrl.trim()) continue;
+            const segments = getStandaloneStoryAudioSegments(story.slug);
+            seen.add(story.slug);
+            merged.push({ slug: story.slug, audioUrl, audioSegments: segments });
+          }
+        } catch (err) {
+          console.error("[user-stories] Sanity standalone fallback failed:", err);
         }
       }
 
