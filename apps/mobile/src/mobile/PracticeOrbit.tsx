@@ -66,6 +66,14 @@ const RING_STROKE = 28;
 const RING_RADIUS = (RING_SIZE - RING_STROKE) / 2;
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
 
+// Estimación grosera de duración: el timer por ejercicio es ~10s, así
+// que 6 ejercicios ≈ 1 min. Redondeamos hacia arriba con piso de 1
+// para que no diga "0 min" cuando solo hay 1-2 dues.
+function estimateSessionMinutes(totalDue: number): number {
+  if (totalDue <= 0) return 0;
+  return Math.max(1, Math.round((totalDue * 10) / 60));
+}
+
 type RingSegment = {
   mode: PracticeModeKey;
   count: number;
@@ -114,15 +122,20 @@ const HeaderChips = memo(function HeaderChips({
   streakDays: number;
   dailyGoalPercent: number;
 }) {
+  // Cada chip lleva un label microscópico (`STREAK`, `GOAL`) para que
+  // el número no quede ambiguo. Sin label el usuario no sabía si "1"
+  // era racha de días, sesiones del día o ítems en cola.
   return (
     <View style={styles.headerChipsRow}>
       <View style={styles.headerChip}>
         <Feather name="zap" size={12} color="#fb923c" />
         <Text style={styles.headerChipText}>{streakDays}</Text>
+        <Text style={styles.headerChipLabel}>STREAK</Text>
       </View>
       <View style={styles.headerChip}>
         <Feather name="trending-up" size={12} color="#7dd3fc" />
         <Text style={styles.headerChipText}>{Math.min(100, Math.round(dailyGoalPercent))}%</Text>
+        <Text style={styles.headerChipLabel}>GOAL</Text>
       </View>
     </View>
   );
@@ -133,17 +146,27 @@ const Legend = memo(function Legend({
 }: {
   breakdown: Record<PracticeModeKey, number>;
 }) {
+  // 2x2 grid en lugar de wrap libre. Antes los 4 modos caían 3+1 con
+  // "Match" colgando solo abajo, asimetría rara. El grid garantiza
+  // que el bloque se vea cuadrado siempre.
+  const visible = MODE_ORDER.filter((mode) => breakdown[mode] > 0);
+  const rows: PracticeModeKey[][] = [];
+  for (let i = 0; i < visible.length; i += 2) {
+    rows.push(visible.slice(i, i + 2));
+  }
   return (
-    <View style={styles.legendRow}>
-      {MODE_ORDER.map((mode) =>
-        breakdown[mode] > 0 ? (
-          <View key={mode} style={styles.legendItem}>
-            <View style={[styles.legendDot, { backgroundColor: MODE_COLORS[mode] }]} />
-            <Text style={styles.legendLabel}>{MODE_LABELS[mode]}</Text>
-            <Text style={styles.legendCount}>{breakdown[mode]}</Text>
-          </View>
-        ) : null
-      )}
+    <View style={styles.legendGrid}>
+      {rows.map((row, idx) => (
+        <View key={idx} style={styles.legendRow}>
+          {row.map((mode) => (
+            <View key={mode} style={styles.legendItem}>
+              <View style={[styles.legendDot, { backgroundColor: MODE_COLORS[mode] }]} />
+              <Text style={styles.legendLabel}>{MODE_LABELS[mode]}</Text>
+              <Text style={styles.legendCount}>{breakdown[mode]}</Text>
+            </View>
+          ))}
+        </View>
+      ))}
     </View>
   );
 });
@@ -165,9 +188,16 @@ const UpNextCard = memo(function UpNextCard({
         ) : null}
       </View>
       {words.map((entry) => (
+        // Layout en columna: la palabra arriba y la definición abajo.
+        // Antes estaban en la misma fila y el ancho fijo de la palabra
+        // empujaba la def fuera de pantalla, cortándola a mitad de
+        // palabra ("excite", "in o", "journey adventure."). Con
+        // numberOfLines=2 + ellipsis garantizamos un corte limpio.
         <View key={entry.word} style={styles.upNextRow}>
           <Text style={styles.upNextWord}>{entry.word}</Text>
-          <Text style={styles.upNextTranslation}>{entry.translation}</Text>
+          <Text style={styles.upNextTranslation} numberOfLines={2} ellipsizeMode="tail">
+            {entry.translation}
+          </Text>
         </View>
       ))}
     </View>
@@ -222,13 +252,6 @@ export function PracticeOrbit({
         </Text>
       ) : null}
 
-      <View style={styles.dueBadgeWrap}>
-        <View style={styles.dueBadge}>
-          <Text style={styles.dueBadgeNumber}>{totalDue}</Text>
-          <Text style={styles.dueBadgeLabel}>DUE</Text>
-        </View>
-      </View>
-
       <View style={styles.ringWrap}>
         <Svg width={RING_SIZE} height={RING_SIZE}>
           <G rotation="-90" origin={`${RING_SIZE / 2}, ${RING_SIZE / 2}`}>
@@ -257,6 +280,19 @@ export function PracticeOrbit({
             ))}
           </G>
         </Svg>
+        {/*
+          Orbe central. Antes era verde menta `#86efac` — el MISMO verde
+          que el segmento "Context" del anillo, así que visualmente
+          parecía que el segmento se metía dentro del botón. Ahora va
+          en navy `#152844` (mismo card de los popups end-of-story /
+          practice-exit) con play+START en el amarillo brand
+          `#f8c15c`. Mismo lenguaje que los CTA primarios del resto
+          de la app.
+
+          Adentro: número grande `34` + caption `DUE` arriba del play
+          para que el contador esté centralizado, no flotando suelto
+          encima del anillo como antes.
+        */}
         <Pressable
           onPress={onStart}
           accessibilityRole="button"
@@ -268,11 +304,26 @@ export function PracticeOrbit({
           ]}
         >
           <View style={styles.centerOrbInner}>
-            <Feather name="play" size={28} color="#0c1626" />
-            <Text style={styles.centerOrbStart}>START</Text>
+            <Text style={styles.centerOrbCount}>{totalDue}</Text>
+            <Text style={styles.centerOrbCountLabel}>DUE</Text>
+            <View style={styles.centerOrbDivider} />
+            <View style={styles.centerOrbCta}>
+              <Feather name="play" size={18} color="#0e1727" />
+              <Text style={styles.centerOrbStart}>START</Text>
+            </View>
           </View>
         </Pressable>
       </View>
+
+      {/* Tagline de sesión: minutos estimados + cantidad de skills.
+          Reemplaza al chip flotante "34 DUE" que antes vivía sobre el
+          anillo. Ahora el conteo va dentro del orbe y aquí solo
+          comunicamos qué tipo de sesión vas a hacer. */}
+      <Text style={styles.sessionMeta}>
+        ~{estimateSessionMinutes(totalDue)} min
+        {" · "}
+        {MODE_ORDER.filter((m) => modeBreakdown[m] > 0).length} skills
+      </Text>
 
       <Legend breakdown={modeBreakdown} />
 
@@ -312,7 +363,11 @@ const styles = StyleSheet.create({
   shell: {
     paddingHorizontal: 20,
     paddingTop: 6,
-    paddingBottom: 32,
+    // Padding inferior holgado para que las skill cards de
+    // "Single-skill drills" no queden ocultas detrás de la tab bar
+    // flotante (~58 pt + safe area). El parent `container` ya aporta
+    // 56 pt; con 80 acá quedamos en 136 pt totales, suficiente.
+    paddingBottom: 80,
   },
   headerRow: {
     flexDirection: "row",
@@ -333,7 +388,7 @@ const styles = StyleSheet.create({
   headerChip: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 4,
+    gap: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 999,
@@ -343,6 +398,12 @@ const styles = StyleSheet.create({
     color: "#f5f7fb",
     fontSize: 13,
     fontWeight: "800",
+  },
+  headerChipLabel: {
+    color: "#9cb0c9",
+    fontSize: 9,
+    fontWeight: "800",
+    letterSpacing: 1.1,
   },
   topicLine: {
     color: "#cdd9ec",
@@ -355,34 +416,6 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontWeight: "900",
   },
-  dueBadgeWrap: {
-    alignItems: "center",
-    marginBottom: -18,
-    zIndex: 2,
-  },
-  dueBadge: {
-    backgroundColor: "#0a1424",
-    paddingHorizontal: 14,
-    paddingVertical: 6,
-    borderRadius: 12,
-    flexDirection: "row",
-    alignItems: "baseline",
-    gap: 6,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.08)",
-  },
-  dueBadgeNumber: {
-    color: "#ffffff",
-    fontSize: 28,
-    fontWeight: "900",
-    letterSpacing: 0.4,
-  },
-  dueBadgeLabel: {
-    color: "#cdd9ec",
-    fontSize: 11,
-    fontWeight: "800",
-    letterSpacing: 1.2,
-  },
   ringWrap: {
     width: RING_SIZE,
     height: RING_SIZE,
@@ -390,46 +423,92 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  // Orbe interior: navy `#152844` (mismo card de popups) en lugar del
+  // verde menta que chocaba con el segmento Context. Bordeamos con un
+  // navy levemente más claro para que tenga relieve sobre el bg.
   centerOrb: {
     position: "absolute",
-    width: RING_SIZE - RING_STROKE * 2 - 18,
-    height: RING_SIZE - RING_STROKE * 2 - 18,
+    width: RING_SIZE - RING_STROKE * 2 - 10,
+    height: RING_SIZE - RING_STROKE * 2 - 10,
     borderRadius: 999,
-    backgroundColor: "#86efac",
+    backgroundColor: "#152844",
+    borderWidth: 1,
+    borderColor: "#2d476b",
     alignItems: "center",
     justifyContent: "center",
     shadowColor: "#000",
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.35,
     shadowRadius: 14,
     shadowOffset: { width: 0, height: 6 },
     elevation: 6,
   },
   centerOrbPressed: {
-    opacity: 0.85,
+    opacity: 0.9,
     transform: [{ scale: 0.97 }],
   },
   centerOrbInner: {
     alignItems: "center",
     justifyContent: "center",
+    paddingHorizontal: 8,
+  },
+  centerOrbCount: {
+    color: "#ffffff",
+    fontSize: 38,
+    fontWeight: "900",
+    letterSpacing: 0.4,
+    lineHeight: 42,
+  },
+  centerOrbCountLabel: {
+    color: "#9cb0c9",
+    fontSize: 9,
+    fontWeight: "800",
+    letterSpacing: 1.4,
+    marginTop: -2,
+  },
+  centerOrbDivider: {
+    width: 28,
+    height: 1,
+    backgroundColor: "rgba(255,255,255,0.12)",
+    marginVertical: 8,
+  },
+  centerOrbCta: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
   },
   centerOrbStart: {
-    color: "#0c1626",
-    fontSize: 14,
+    color: "#0e1727",
+    fontSize: 12,
     fontWeight: "900",
-    letterSpacing: 1.4,
-    marginTop: 2,
+    letterSpacing: 1.2,
+  },
+  sessionMeta: {
+    marginTop: 12,
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "700",
+    letterSpacing: 0.4,
+    textAlign: "center",
+  },
+  legendGrid: {
+    marginTop: 14,
+    alignSelf: "center",
+    gap: 8,
   },
   legendRow: {
     flexDirection: "row",
-    flexWrap: "wrap",
     justifyContent: "center",
-    gap: 14,
-    marginTop: 14,
+    gap: 18,
   },
   legendItem: {
     flexDirection: "row",
     alignItems: "center",
     gap: 6,
+    minWidth: 110,
   },
   legendDot: {
     width: 8,
@@ -459,7 +538,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: 6,
+    marginBottom: 8,
   },
   upNextEyebrow: {
     color: "#7d8aa5",
@@ -473,20 +552,22 @@ const styles = StyleSheet.create({
     fontWeight: "800",
   },
   upNextRow: {
-    flexDirection: "row",
-    alignItems: "baseline",
-    gap: 8,
-    paddingVertical: 3,
+    flexDirection: "column",
+    paddingVertical: 6,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: "rgba(255,255,255,0.05)",
   },
   upNextWord: {
     color: "#ffffff",
     fontSize: 14,
     fontWeight: "900",
+    marginBottom: 2,
   },
   upNextTranslation: {
     color: "#cdd9ec",
     fontSize: 13,
     fontWeight: "600",
+    lineHeight: 17,
   },
   skillSection: {
     marginTop: 22,
