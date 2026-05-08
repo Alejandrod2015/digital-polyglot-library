@@ -6364,10 +6364,33 @@ export function MobileLibraryShell(args: {
       hasSegmentClipUrl: !!segmentClipUrl,
       finalUrl: audioUrl ? audioUrl.slice(0, 80) : null,
     });
-    // Si no hay audio del story disponible, no hay nada que tocar como
-    // "Story". El botón ya viene gateado por `storyAvailable` en el
-    // render, esto es solo defensa.
-    if (!audioUrl) return;
+    // Si no hay audio del story disponible, caemos a la voz del
+    // sistema (speechSynthesis) en lugar de quedar en silencio. La
+    // voz suena robótica pero garantiza que el botón Play SIEMPRE
+    // produce sonido — el usuario lo prefiere a un botón disabled
+    // sin explicación. El fallback a ElevenLabs sigue desactivado
+    // (cache-only, no genera).
+    if (!audioUrl) {
+      const Speech = getOptionalSpeechModule();
+      const speechText = clip.sentence?.trim();
+      if (Speech && speechText) {
+        await stopPracticeContextClip();
+        await stopPracticeHqClip();
+        Speech.stop();
+        setSpeakingPracticePromptId(currentPracticeExercise.id);
+        const lang = getSpeechSynthesisLang(clip.language);
+        Speech.speak(speechText, {
+          language: lang,
+          voice: getBestVoiceFor(lang),
+          rate: 0.92,
+          pitch: 1,
+          onDone: () => setSpeakingPracticePromptId((c) => (c === currentPracticeExercise.id ? null : c)),
+          onStopped: () => setSpeakingPracticePromptId((c) => (c === currentPracticeExercise.id ? null : c)),
+          onError: () => setSpeakingPracticePromptId((c) => (c === currentPracticeExercise.id ? null : c)),
+        });
+      }
+      return;
+    }
 
     await stopPracticeContextClip();
     await stopPracticeHqClip();
@@ -8990,58 +9013,28 @@ export function MobileLibraryShell(args: {
                       // raramente reproduce algo. El botón vive aún para
                       // que el usuario pueda re-tocar play o pausar el
                       // audio del autoplay.
-                      // Texto diagnóstico DEBUG: cuando el botón Play
-                      // está disabled, mostramos por qué (loading,
-                      // story sin audio, slug sin match) abajo del
-                      // botón. Sin esto el botón se ve gris y no
-                      // sabemos si es race del prefetch, story sin
-                      // audio en DB, o un mismatch. Quitar cuando esté
-                      // resuelto.
-                      const slugRaw = clip.storySlug ?? "";
-                      const slugNorm = normalizeStorySlug(slugRaw);
-                      const audioMap =
-                        clip.storySource === "standalone"
-                          ? standaloneStoryAudioBySlug
-                          : userStoryAudioBySlug;
-                      const inMap = slugNorm in audioMap;
-                      const reason = !slugRaw
-                        ? "[debug] no storySlug en clip"
-                        : !inMap
-                          ? `[debug] prefetch pendiente o slug no en map (src=${clip.storySource}, slug=${slugNorm.slice(0, 24)})`
-                          : !storyAudio?.audioUrl
-                            ? `[debug] story sin audioUrl en DB (slug=${slugNorm.slice(0, 24)})`
-                            : null;
+                      // Botón Play siempre habilitado. La función
+                      // intenta primero el audio real de la historia
+                      // y cae a speechSynthesis (voz del sistema) si
+                      // no hay segmento disponible — sonido garantizado
+                      // sin pagar ElevenLabs.
+                      const ttsActive = speakingPracticePromptId === exId;
+                      const isPlaying = storyActive || ttsActive;
                       return (
-                        <View style={{ marginTop: 8 }}>
-                          <View style={{ flexDirection: "row", gap: 6 }}>
-                            <Pressable
-                              onPress={() => { void playPracticeContextClipStoryOnly(); }}
-                              disabled={!storyAvailable}
-                              style={[
-                                styles.practiceListenButton,
-                                !storyAvailable ? styles.practiceListenButtonDisabled : null,
-                              ]}
-                            >
-                              <Feather
-                                name={storyActive ? "square" : "play"}
-                                size={14}
-                                color={storyAvailable ? "#f5f7fb" : "#8ea2bc"}
-                              />
-                              <Text
-                                style={[
-                                  styles.practiceListenButtonText,
-                                  !storyAvailable ? styles.practiceListenButtonTextDisabled : null,
-                                ]}
-                              >
-                                {storyActive ? "Stop" : "Play"}
-                              </Text>
-                            </Pressable>
-                          </View>
-                          {!storyAvailable && reason ? (
-                            <Text style={{ color: "#9cb0c9", fontSize: 10, marginTop: 4, fontWeight: "600" }}>
-                              {reason}
+                        <View style={{ flexDirection: "row", gap: 6, marginTop: 8 }}>
+                          <Pressable
+                            onPress={() => { void playPracticeContextClipStoryOnly(); }}
+                            style={styles.practiceListenButton}
+                          >
+                            <Feather
+                              name={isPlaying ? "square" : "play"}
+                              size={14}
+                              color="#f5f7fb"
+                            />
+                            <Text style={styles.practiceListenButtonText}>
+                              {isPlaying ? "Stop" : "Play"}
                             </Text>
-                          ) : null}
+                          </Pressable>
                         </View>
                       );
                     })() : null}
