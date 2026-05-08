@@ -8973,9 +8973,7 @@ export function MobileLibraryShell(args: {
                     {currentPracticeExercise.audioClip ? (() => {
                       const clip = currentPracticeExercise.audioClip;
                       const exId = currentPracticeExercise.id;
-                      const ttsActive = speakingPracticePromptId === exId;
                       const storyActive = playingPracticeClipId === exId;
-                      const hqActive = playingHqPracticeClipId === exId;
                       const storyAudio =
                         clip.storySource === "standalone"
                           ? standaloneStoryAudioBySlug[normalizeStorySlug(clip.storySlug)]
@@ -8985,21 +8983,15 @@ export function MobileLibraryShell(args: {
                       // oración: en ese caso la función arranca el
                       // audio desde el inicio en vez de silencio.
                       const storyAvailable = Boolean(storyAudio?.audioUrl);
+                      // Solo dejamos el botón Story (audio real de la
+                      // historia). TTS (speechSynthesis on-device) y HQ
+                      // (ElevenLabs) se sacaron porque ya no aportan: TTS
+                      // suena robótico y HQ está en cache-only así que
+                      // raramente reproduce algo. El botón vive aún para
+                      // que el usuario pueda re-tocar play o pausar el
+                      // audio del autoplay.
                       return (
-                        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
-                          <Pressable
-                            onPress={() => { void playPracticeContextClipTtsOnly(); }}
-                            disabled={!practiceSpeechAvailable}
-                            style={[
-                              styles.practiceListenButton,
-                              !practiceSpeechAvailable ? styles.practiceListenButtonDisabled : null,
-                            ]}
-                          >
-                            <Feather name={ttsActive ? "square" : "volume-2"} size={14} color={practiceSpeechAvailable ? "#f5f7fb" : "#8ea2bc"} />
-                            <Text style={[styles.practiceListenButtonText, !practiceSpeechAvailable ? styles.practiceListenButtonTextDisabled : null]}>
-                              {ttsActive ? "Stop" : "TTS"}
-                            </Text>
-                          </Pressable>
+                        <View style={{ flexDirection: "row", gap: 6, marginTop: 8 }}>
                           <Pressable
                             onPress={() => { void playPracticeContextClipStoryOnly(); }}
                             disabled={!storyAvailable}
@@ -9008,18 +9000,18 @@ export function MobileLibraryShell(args: {
                               !storyAvailable ? styles.practiceListenButtonDisabled : null,
                             ]}
                           >
-                            <Feather name={storyActive ? "square" : "play"} size={14} color={storyAvailable ? "#f5f7fb" : "#8ea2bc"} />
-                            <Text style={[styles.practiceListenButtonText, !storyAvailable ? styles.practiceListenButtonTextDisabled : null]}>
-                              {storyActive ? "Stop" : "Story"}
-                            </Text>
-                          </Pressable>
-                          <Pressable
-                            onPress={() => { void playPracticeContextClipHqOnly(); }}
-                            style={styles.practiceListenButton}
-                          >
-                            <Feather name={hqActive ? "square" : "volume-2"} size={14} color="#f5f7fb" />
-                            <Text style={styles.practiceListenButtonText}>
-                              {hqActive ? "Stop" : "HQ"}
+                            <Feather
+                              name={storyActive ? "square" : "play"}
+                              size={14}
+                              color={storyAvailable ? "#f5f7fb" : "#8ea2bc"}
+                            />
+                            <Text
+                              style={[
+                                styles.practiceListenButtonText,
+                                !storyAvailable ? styles.practiceListenButtonTextDisabled : null,
+                              ]}
+                            >
+                              {storyActive ? "Stop" : "Play"}
                             </Text>
                           </Pressable>
                         </View>
