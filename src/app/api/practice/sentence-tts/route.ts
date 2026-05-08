@@ -11,13 +11,14 @@
  */
 
 import { auth } from "@clerk/nextjs/server";
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import crypto from "node:crypto";
 import {
   DEFAULT_VOICE_SETTINGS,
   GERMAN_DIALOGUE_VOICES,
   softenPunctuationForTts,
 } from "@/lib/elevenlabs";
+import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 
 export const maxDuration = 30;
@@ -44,8 +45,15 @@ function cacheKey(args: { sentence: string; language: string; variant: string; v
   return `media/practice/tts/${hash}.mp3`;
 }
 
-export async function POST(request: Request) {
-  const { userId } = await auth();
+export async function POST(request: NextRequest) {
+  // Aceptamos auth de Clerk (web) o JWT mobile. Antes solo Clerk
+  // funcionaba, así que la app mobile (que firma con custom JWT
+  // `digital-polyglot-mobile`) recibía 401 silencioso y los botones
+  // "HQ" del Practice no producían audio. Patrón espejo del resto de
+  // las rutas user-* que también soportan ambos.
+  const { userId: clerkUserId } = await auth();
+  const mobileSession = getMobileSessionFromRequest(request);
+  const userId = clerkUserId ?? mobileSession?.sub ?? null;
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   let body: Body;
