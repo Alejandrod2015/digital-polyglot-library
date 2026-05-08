@@ -154,6 +154,38 @@ export async function GET(req: NextRequest) {
         }
       }
 
+      // Tercer caso de slugs corruptos en favoritos legacy:
+      // `auf-reisen-im-zug-rkp550` (6 chars hex añadidos al final)
+      // donde la slug real es `auf-reisen-im-zug`. Algún flujo de
+      // save-favorite agregó un sufijo aleatorio. Para los slugs
+      // que aún no matchearon, probamos quitando un sufijo de 6
+      // caracteres alfanuméricos y re-consultamos UserStory. Mapeamos
+      // el resultado de vuelta al slug original que envió el cliente.
+      const stillUnmatched = slugs.filter((s) => !seen.has(s));
+      const suffixPattern = /^(.+)-[a-z0-9]{6}$/i;
+      const stripCandidates = new Map<string, string>(); // strippedSlug -> originalSlug
+      for (const slug of stillUnmatched) {
+        const m = slug.match(suffixPattern);
+        if (m && m[1]) stripCandidates.set(m[1], slug);
+      }
+      if (stripCandidates.size > 0) {
+        const stripped = Array.from(stripCandidates.keys());
+        const recoveredUserStories = await prisma.userStory.findMany({
+          where: {
+            slug: { in: stripped },
+            ...(effectiveUserId ? { OR: [{ public: true }, { userId: effectiveUserId }] } : { public: true }),
+          },
+          select: { slug: true, audioUrl: true, audioSegments: true },
+        });
+        for (const story of recoveredUserStories) {
+          if (!story.slug) continue;
+          const originalSlug = stripCandidates.get(story.slug);
+          if (!originalSlug || seen.has(originalSlug)) continue;
+          seen.add(originalSlug);
+          merged.push({ slug: originalSlug, audioUrl: story.audioUrl, audioSegments: story.audioSegments });
+        }
+      }
+
       await prisma.$disconnect();
       return NextResponse.json({ stories: merged });
     }
