@@ -8425,14 +8425,10 @@ export function MobileLibraryShell(args: {
   // funciona como fallback honesto.
   const orbitTopicLabel = "Your saved words";
 
-  const orbitUpNextWords = useMemo(
-    () =>
-      duePracticeItems.slice(0, 3).map((item) => ({
-        word: item.word,
-        translation: item.translation,
-      })),
-    [duePracticeItems]
-  );
+  // `orbitUpNextWords` removido: el card "Up Next" se sacó de la
+  // pantalla Practice para que todo el contenido entre sin scroll.
+  // Si volvemos a mostrar palabras antes de empezar, recuperar el
+  // useMemo desde git.
 
   const orbitDailyGoalPercent = useMemo(() => {
     const goal = 50; // XP / día (placeholder hasta exponer el goal real)
@@ -8482,8 +8478,6 @@ export function MobileLibraryShell(args: {
             modeBreakdown={orbitModeBreakdown}
             streakDays={orbitStreak}
             dailyGoalPercent={orbitDailyGoalPercent}
-            upNextWords={orbitUpNextWords}
-            upNextRemainingCount={Math.max(0, duePracticeItems.length - 3)}
             onStart={() => void openPracticeMode(recommendedPracticeMode ?? "meaning")}
             onPickSkill={(mode) => void openPracticeMode(mode)}
             emptyState={favoriteWords.length === 0}

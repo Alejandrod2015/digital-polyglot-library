@@ -1,5 +1,5 @@
-import { memo, useMemo } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
+import { Animated, Easing, Pressable, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import Svg, { Circle, G } from "react-native-svg";
 
@@ -31,8 +31,16 @@ export type PracticeOrbitProps = {
   modeBreakdown: Record<PracticeModeKey, number>;
   streakDays: number;
   dailyGoalPercent: number;
-  upNextWords: Array<{ word: string; translation: string }>;
-  upNextRemainingCount: number;
+  /**
+   * @deprecated Up Next card was removed para que la pantalla entre
+   * sin scroll. La prop sigue en el type para no romper call-sites
+   * en transición; cualquier valor se ignora.
+   */
+  upNextWords?: Array<{ word: string; translation: string }>;
+  /**
+   * @deprecated Ver `upNextWords`.
+   */
+  upNextRemainingCount?: number;
   onStart: () => void;
   onPickSkill: (mode: PracticeModeKey) => void;
   emptyState?: boolean;
@@ -61,8 +69,12 @@ const MODE_LABELS: Record<PracticeModeKey, string> = {
 
 const MODE_ORDER: PracticeModeKey[] = ["meaning", "context", "listening", "match"];
 
-const RING_SIZE = 240;
-const RING_STROKE = 28;
+// Ring un poco más chico que la versión inicial (240 → 210) para
+// que con el grid 2x2 de skill cards quepa todo el contenido sin
+// scroll en iPhone 12 (~720pt usables tras tab bar). Stroke 24 mantiene
+// la presencia visual pese al diámetro reducido.
+const RING_SIZE = 210;
+const RING_STROKE = 24;
 const RING_RADIUS = (RING_SIZE - RING_STROKE) / 2;
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
 
@@ -141,66 +153,82 @@ const HeaderChips = memo(function HeaderChips({
   );
 });
 
-const Legend = memo(function Legend({
-  breakdown,
-}: {
-  breakdown: Record<PracticeModeKey, number>;
-}) {
-  // 2x2 grid en lugar de wrap libre. Antes los 4 modos caían 3+1 con
-  // "Match" colgando solo abajo, asimetría rara. El grid garantiza
-  // que el bloque se vea cuadrado siempre.
-  const visible = MODE_ORDER.filter((mode) => breakdown[mode] > 0);
-  const rows: PracticeModeKey[][] = [];
-  for (let i = 0; i < visible.length; i += 2) {
-    rows.push(visible.slice(i, i + 2));
-  }
-  return (
-    <View style={styles.legendGrid}>
-      {rows.map((row, idx) => (
-        <View key={idx} style={styles.legendRow}>
-          {row.map((mode) => (
-            <View key={mode} style={styles.legendItem}>
-              <View style={[styles.legendDot, { backgroundColor: MODE_COLORS[mode] }]} />
-              <Text style={styles.legendLabel}>{MODE_LABELS[mode]}</Text>
-              <Text style={styles.legendCount}>{breakdown[mode]}</Text>
-            </View>
-          ))}
-        </View>
-      ))}
-    </View>
-  );
-});
+/**
+ * Hook que cuenta de 0 a `target` con un easing cubic-out en
+ * `durationMs`. Usado para "rollup" videogame de los números (DUE
+ * central + counts de cada skill card). El render se hace cada frame
+ * con setState; para 4-5 contadores simultáneos a 60fps no es
+ * problema. Cuando cambia el target arranca una nueva animación.
+ */
+function useRollup(target: number, durationMs = 700): number {
+  const [value, setValue] = useState(0);
+  const startRef = useRef<number | null>(null);
+  const fromRef = useRef(0);
+  const rafRef = useRef<number | null>(null);
 
-const UpNextCard = memo(function UpNextCard({
-  words,
-  remaining,
+  useEffect(() => {
+    fromRef.current = value;
+    startRef.current = Date.now();
+    function tick() {
+      const start = startRef.current ?? Date.now();
+      const elapsed = Date.now() - start;
+      const t = Math.min(1, elapsed / durationMs);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const next = Math.round(fromRef.current + (target - fromRef.current) * eased);
+      setValue(next);
+      if (t < 1) rafRef.current = requestAnimationFrame(tick) as unknown as number;
+    }
+    if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(tick) as unknown as number;
+    return () => {
+      if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target, durationMs]);
+
+  return value;
+}
+
+const SkillCard = memo(function SkillCard({
+  mode,
+  count,
+  onPress,
 }: {
-  words: Array<{ word: string; translation: string }>;
-  remaining: number;
+  mode: PracticeModeKey;
+  count: number;
+  onPress: () => void;
 }) {
-  if (words.length === 0) return null;
+  // Card de "skill drill" con look videogame: bg tinteado del color
+  // del modo (bajo alpha), borde del mismo color a alpha medio, e
+  // icono en chip lleno. Hace match visual con el segmento del anillo
+  // de arriba — yellow card = yellow segment, pink card = pink
+  // segment, etc. Counts hacen rollup de 0 → N al montar.
+  const color = MODE_COLORS[mode];
+  const animatedCount = useRollup(count, 700);
   return (
-    <View style={styles.upNextCard}>
-      <View style={styles.upNextHeader}>
-        <Text style={styles.upNextEyebrow}>UP NEXT</Text>
-        {remaining > 0 ? (
-          <Text style={styles.upNextRemaining}>+{remaining} more</Text>
-        ) : null}
-      </View>
-      {words.map((entry) => (
-        // Layout en columna: la palabra arriba y la definición abajo.
-        // Antes estaban en la misma fila y el ancho fijo de la palabra
-        // empujaba la def fuera de pantalla, cortándola a mitad de
-        // palabra ("excite", "in o", "journey adventure."). Con
-        // numberOfLines=2 + ellipsis garantizamos un corte limpio.
-        <View key={entry.word} style={styles.upNextRow}>
-          <Text style={styles.upNextWord}>{entry.word}</Text>
-          <Text style={styles.upNextTranslation} numberOfLines={2} ellipsizeMode="tail">
-            {entry.translation}
-          </Text>
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={`qa-practice-skill-${mode}`}
+      testID={`qa-practice-skill-${mode}`}
+      style={({ pressed }) => [
+        styles.skillCard,
+        {
+          backgroundColor: `${color}1F`,
+          borderColor: `${color}66`,
+          shadowColor: color,
+        },
+        pressed ? styles.skillCardPressed : null,
+      ]}
+    >
+      <View style={styles.skillCardHeader}>
+        <View style={[styles.skillIconChip, { backgroundColor: `${color}40` }]}>
+          <Feather name={MODE_ICONS[mode]} size={18} color={color} />
         </View>
-      ))}
-    </View>
+        <Text style={styles.skillCount}>{animatedCount}</Text>
+      </View>
+      <Text style={styles.skillCardLabel}>{MODE_LABELS[mode].toUpperCase()}</Text>
+    </Pressable>
   );
 });
 
@@ -211,8 +239,6 @@ export function PracticeOrbit({
   modeBreakdown,
   streakDays,
   dailyGoalPercent,
-  upNextWords,
-  upNextRemainingCount,
   onStart,
   onPickSkill,
   emptyState,
@@ -221,6 +247,59 @@ export function PracticeOrbit({
     () => buildRingSegments(modeBreakdown, totalDue),
     [modeBreakdown, totalDue]
   );
+
+  // Animaciones del anillo + orbe central (look "videogame"):
+  //   - mountProgress: fade + scale-in del anillo entero al primer
+  //     paint. One-shot; no reinicia.
+  //   - orbPulse: loop continuo 0↔1 que mueve scale del orbe entre
+  //     1.0 y 1.05 — efecto de "respiración" para hacer obvio que
+  //     ese círculo es el CTA principal. useNativeDriver=true así no
+  //     molesta al hilo de JS mientras el usuario mira.
+  //   - rolledDue / rolledCounts: animan los números 0 → N en mount
+  //     (videogame stat reveal). Implementado con `useRollup`.
+  const mountProgress = useRef(new Animated.Value(0)).current;
+  const orbPulse = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(mountProgress, {
+      toValue: 1,
+      duration: 520,
+      easing: Easing.out(Easing.cubic),
+      useNativeDriver: true,
+    }).start();
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(orbPulse, {
+          toValue: 1,
+          duration: 1100,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+        Animated.timing(orbPulse, {
+          toValue: 0,
+          duration: 1100,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+      ])
+    );
+    loop.start();
+    return () => {
+      loop.stop();
+    };
+  }, [mountProgress, orbPulse]);
+
+  const ringOpacity = mountProgress;
+  const ringScale = mountProgress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0.9, 1],
+  });
+  const orbScale = orbPulse.interpolate({
+    inputRange: [0, 1],
+    outputRange: [1, 1.05],
+  });
+
+  const rolledDue = useRollup(totalDue, 800);
 
   if (emptyState) {
     return (
@@ -252,7 +331,12 @@ export function PracticeOrbit({
         </Text>
       ) : null}
 
-      <View style={styles.ringWrap}>
+      <Animated.View
+        style={[
+          styles.ringWrap,
+          { opacity: ringOpacity, transform: [{ scale: ringScale }] },
+        ]}
+      >
         <Svg width={RING_SIZE} height={RING_SIZE}>
           <G rotation="-90" origin={`${RING_SIZE / 2}, ${RING_SIZE / 2}`}>
             {/* Track de fondo */}
@@ -281,80 +365,66 @@ export function PracticeOrbit({
           </G>
         </Svg>
         {/*
-          Orbe central. Antes era verde menta `#86efac` — el MISMO verde
-          que el segmento "Context" del anillo, así que visualmente
-          parecía que el segmento se metía dentro del botón. Ahora va
-          en navy `#152844` (mismo card de los popups end-of-story /
-          practice-exit) con play+START en el amarillo brand
-          `#f8c15c`. Mismo lenguaje que los CTA primarios del resto
-          de la app.
+          Orbe central. Navy `#152844` (mismo card de los popups
+          end-of-story / practice-exit) con play+START en una pill
+          amarilla `#f8c15c` — mismo lenguaje que los CTA primarios
+          del resto de la app. Adentro: número grande con rollup
+          0 → N + caption `DUE` arriba del play, así el contador
+          queda centralizado en el CTA en vez de flotando.
 
-          Adentro: número grande `34` + caption `DUE` arriba del play
-          para que el contador esté centralizado, no flotando suelto
-          encima del anillo como antes.
+          La Animated.View externa aplica un pulse continuo de scale
+          1 ↔ 1.05 para que el orbe respire — call-to-action visual.
         */}
-        <Pressable
-          onPress={onStart}
-          accessibilityRole="button"
-          accessibilityLabel="Start practice session"
-          testID="qa-practice-start"
-          style={({ pressed }) => [
-            styles.centerOrb,
-            pressed ? styles.centerOrbPressed : null,
-          ]}
-        >
-          <View style={styles.centerOrbInner}>
-            <Text style={styles.centerOrbCount}>{totalDue}</Text>
-            <Text style={styles.centerOrbCountLabel}>DUE</Text>
-            <View style={styles.centerOrbDivider} />
-            <View style={styles.centerOrbCta}>
-              <Feather name="play" size={18} color="#0e1727" />
-              <Text style={styles.centerOrbStart}>START</Text>
+        <Animated.View style={[styles.centerOrbWrap, { transform: [{ scale: orbScale }] }]}>
+          <Pressable
+            onPress={onStart}
+            accessibilityRole="button"
+            accessibilityLabel="Start practice session"
+            testID="qa-practice-start"
+            style={({ pressed }) => [
+              styles.centerOrb,
+              pressed ? styles.centerOrbPressed : null,
+            ]}
+          >
+            <View style={styles.centerOrbInner}>
+              <Text style={styles.centerOrbCount}>{rolledDue}</Text>
+              <Text style={styles.centerOrbCountLabel}>DUE</Text>
+              <View style={styles.centerOrbDivider} />
+              <View style={styles.centerOrbCta}>
+                <Feather name="play" size={18} color="#0e1727" />
+                <Text style={styles.centerOrbStart}>START</Text>
+              </View>
             </View>
-          </View>
-        </Pressable>
-      </View>
+          </Pressable>
+        </Animated.View>
+      </Animated.View>
 
-      {/* Tagline de sesión: minutos estimados + cantidad de skills.
-          Reemplaza al chip flotante "34 DUE" que antes vivía sobre el
-          anillo. Ahora el conteo va dentro del orbe y aquí solo
-          comunicamos qué tipo de sesión vas a hacer. */}
+      {/* Tagline de sesión bajo el anillo: minutos estimados + skills
+          activos. Sustituye a la leyenda separada (que ahora vive
+          implícita en los skill cards de abajo, mismo color que el
+          segmento del anillo). */}
       <Text style={styles.sessionMeta}>
         ~{estimateSessionMinutes(totalDue)} min
         {" · "}
         {MODE_ORDER.filter((m) => modeBreakdown[m] > 0).length} skills
+        {" · +"}{xpReward} XP
       </Text>
 
-      <Legend breakdown={modeBreakdown} />
-
-      <UpNextCard words={upNextWords} remaining={upNextRemainingCount} />
-
-      <View style={styles.skillSection}>
-        <Text style={styles.skillSectionEyebrow}>OR PICK A SKILL</Text>
-        <Text style={styles.skillSectionTitle}>Single-skill drills</Text>
-        <View style={styles.skillRow}>
-          {MODE_ORDER.map((mode) => (
-            <Pressable
-              key={mode}
-              onPress={() => onPickSkill(mode)}
-              accessibilityRole="button"
-              accessibilityLabel={`qa-practice-skill-${mode}`}
-              testID={`qa-practice-skill-${mode}`}
-              style={({ pressed }) => [
-                styles.skillCard,
-                pressed ? styles.skillCardPressed : null,
-              ]}
-            >
-              <View style={[styles.skillIconWrap, { backgroundColor: `${MODE_COLORS[mode]}33` }]}>
-                <Feather name={MODE_ICONS[mode]} size={16} color={MODE_COLORS[mode]} />
-              </View>
-              <Text style={styles.skillLabel}>{MODE_LABELS[mode]}</Text>
-            </Pressable>
-          ))}
-        </View>
+      {/* Grid 2x2 de skill cards. Cada card tintada con el color de
+          su segmento del anillo arriba: el usuario reconoce de un
+          vistazo que la card amarilla corresponde al arco amarillo,
+          la verde al verde, etc. Reemplaza al row horizontal de
+          tarjetitas chiquitas que se cortaba bajo la tab bar. */}
+      <View style={styles.skillGrid}>
+        {MODE_ORDER.map((mode) => (
+          <SkillCard
+            key={mode}
+            mode={mode}
+            count={modeBreakdown[mode] ?? 0}
+            onPress={() => onPickSkill(mode)}
+          />
+        ))}
       </View>
-
-      <Text style={styles.xpFootnote}>+{xpReward} XP available</Text>
     </View>
   );
 }
@@ -363,11 +433,10 @@ const styles = StyleSheet.create({
   shell: {
     paddingHorizontal: 20,
     paddingTop: 6,
-    // Padding inferior holgado para que las skill cards de
-    // "Single-skill drills" no queden ocultas detrás de la tab bar
-    // flotante (~58 pt + safe area). El parent `container` ya aporta
-    // 56 pt; con 80 acá quedamos en 136 pt totales, suficiente.
-    paddingBottom: 80,
+    // Padding inferior suficiente para clearing de la tab bar
+    // flotante. El parent `container` aporta 56 pt; con 24 acá
+    // quedamos en 80 pt totales — la screen entra sin scroll.
+    paddingBottom: 24,
   },
   headerRow: {
     flexDirection: "row",
@@ -423,11 +492,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  // Wrapper externo del orbe: aplica el pulse continuo (scale loop)
+  // sin tener que bindear el `useNativeDriver:true` a un Pressable.
+  // Solo Animated.View soporta el driver nativo en transform.
+  centerOrbWrap: {
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   // Orbe interior: navy `#152844` (mismo card de popups) en lugar del
   // verde menta que chocaba con el segmento Context. Bordeamos con un
   // navy levemente más claro para que tenga relieve sobre el bg.
   centerOrb: {
-    position: "absolute",
     width: RING_SIZE - RING_STROKE * 2 - 10,
     height: RING_SIZE - RING_STROKE * 2 - 10,
     borderRadius: 999,
@@ -453,10 +529,10 @@ const styles = StyleSheet.create({
   },
   centerOrbCount: {
     color: "#ffffff",
-    fontSize: 38,
+    fontSize: 34,
     fontWeight: "900",
     letterSpacing: 0.4,
-    lineHeight: 42,
+    lineHeight: 38,
   },
   centerOrbCountLabel: {
     color: "#9cb0c9",
@@ -487,140 +563,64 @@ const styles = StyleSheet.create({
     letterSpacing: 1.2,
   },
   sessionMeta: {
-    marginTop: 12,
-    color: "#9cb0c9",
+    marginTop: 14,
+    color: "#cdd9ec",
     fontSize: 12,
     fontWeight: "700",
     letterSpacing: 0.4,
     textAlign: "center",
   },
-  legendGrid: {
-    marginTop: 14,
-    alignSelf: "center",
-    gap: 8,
-  },
-  legendRow: {
+  // Skill grid 2x2 con cards "videogame": tinte del color del modo,
+  // borde mismo color a alpha medio, sombra coloreada para que tenga
+  // glow tonal. La proporción del color en el screen hace que la card
+  // amarilla sea reconocible como "el modo amarillo del anillo".
+  skillGrid: {
+    marginTop: 16,
     flexDirection: "row",
-    justifyContent: "center",
-    gap: 18,
-  },
-  legendItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-    minWidth: 110,
-  },
-  legendDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 999,
-  },
-  legendLabel: {
-    color: "#cdd9ec",
-    fontSize: 12,
-    fontWeight: "700",
-  },
-  legendCount: {
-    color: "#ffffff",
-    fontSize: 12,
-    fontWeight: "900",
-  },
-  upNextCard: {
-    marginTop: 18,
-    backgroundColor: "rgba(255,255,255,0.04)",
-    borderRadius: 14,
-    paddingHorizontal: 14,
-    paddingVertical: 12,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.05)",
-  },
-  upNextHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: 8,
-  },
-  upNextEyebrow: {
-    color: "#7d8aa5",
-    fontSize: 10,
-    fontWeight: "800",
-    letterSpacing: 1.4,
-  },
-  upNextRemaining: {
-    color: "#7dd3fc",
-    fontSize: 11,
-    fontWeight: "800",
-  },
-  upNextRow: {
-    flexDirection: "column",
-    paddingVertical: 6,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: "rgba(255,255,255,0.05)",
-  },
-  upNextWord: {
-    color: "#ffffff",
-    fontSize: 14,
-    fontWeight: "900",
-    marginBottom: 2,
-  },
-  upNextTranslation: {
-    color: "#cdd9ec",
-    fontSize: 13,
-    fontWeight: "600",
-    lineHeight: 17,
-  },
-  skillSection: {
-    marginTop: 22,
-  },
-  skillSectionEyebrow: {
-    color: "#7d8aa5",
-    fontSize: 10,
-    fontWeight: "800",
-    letterSpacing: 1.4,
-    marginBottom: 4,
-  },
-  skillSectionTitle: {
-    color: "#ffffff",
-    fontSize: 15,
-    fontWeight: "900",
-    marginBottom: 10,
-  },
-  skillRow: {
-    flexDirection: "row",
+    flexWrap: "wrap",
     gap: 10,
   },
   skillCard: {
-    flex: 1,
-    backgroundColor: "rgba(255,255,255,0.04)",
-    borderRadius: 14,
-    paddingVertical: 14,
-    paddingHorizontal: 10,
-    alignItems: "center",
-    gap: 8,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.05)",
+    width: "48%",
+    minHeight: 92,
+    borderRadius: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+    borderWidth: 1.5,
+    justifyContent: "space-between",
+    shadowOpacity: 0.25,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 3,
   },
   skillCardPressed: {
-    opacity: 0.7,
+    opacity: 0.8,
+    transform: [{ scale: 0.97 }],
   },
-  skillIconWrap: {
-    width: 36,
-    height: 36,
+  skillCardHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  skillIconChip: {
+    width: 34,
+    height: 34,
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
   },
-  skillLabel: {
+  skillCount: {
+    color: "#ffffff",
+    fontSize: 24,
+    fontWeight: "900",
+    letterSpacing: 0.2,
+  },
+  skillCardLabel: {
     color: "#ffffff",
     fontSize: 12,
-    fontWeight: "800",
-  },
-  xpFootnote: {
-    marginTop: 16,
-    color: "#cdd9ec",
-    fontSize: 12,
-    fontWeight: "700",
-    textAlign: "center",
+    fontWeight: "900",
+    letterSpacing: 1.2,
+    marginTop: 6,
   },
   emptyCard: {
     marginTop: 30,
