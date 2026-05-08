@@ -1240,6 +1240,7 @@ export default function MonitorClient() {
       }).map((j) => {
         const pct = j.stats.total > 0 ? Math.round((j.stats.published / j.stats.total) * 100) : 0;
         const lang = allLanguages.find((l) => l.code === j.language);
+        const variantLabel = lang?.variants?.find((v) => v.code === j.variant)?.label || j.variant;
         const isEditing = editingJourneyId === j.id;
         const isExpanded = expandedJourneyIds.has(j.id);
 
@@ -1265,6 +1266,11 @@ export default function MonitorClient() {
                   <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)" }}>·</span>
                   <span onClick={(e) => { e.stopPropagation(); setEditingJourneyId(j.id); setEditName(j.name); }}
                     style={{ fontSize: 15, fontWeight: 700, color: "var(--foreground)", cursor: "text" }} title="Clic para renombrar">{j.name}</span>
+                  {variantLabel && (
+                    <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 4, backgroundColor: "rgba(20,184,166,0.15)", color: "#2dd4bf", letterSpacing: 0.4, textTransform: "uppercase" }} title={`Variante: ${variantLabel}`}>
+                      {variantLabel}
+                    </span>
+                  )}
                 </>
               )}
               <span style={{ fontSize: 12, color: "var(--muted)" }}>

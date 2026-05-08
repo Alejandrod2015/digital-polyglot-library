@@ -142,7 +142,7 @@ async function main() {
           id: "a1", title: "A1", subtitle: "First steps",
           topics: [
             { slug: "community-celebrations", label: "Community & Celebrations" },
-            { slug: "food-daily-life", label: "Food & Everyday Life" },
+            { slug: "food-daily-life", label: "Food & Drink" },
             { slug: "places-getting-around", label: "Places & Getting Around" },
             { slug: "home-family", label: "Home & Family" },
             { slug: "nature-adventure", label: "Nature & Adventure" },

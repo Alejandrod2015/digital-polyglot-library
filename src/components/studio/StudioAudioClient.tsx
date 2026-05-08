@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import { ENGINE_INFO, type Engine } from "@/lib/voiceCatalog";
 
 type StoryRow = {
   id: string;
@@ -23,14 +24,22 @@ type StoryRow = {
 
 type QueueResponse = { stories: StoryRow[] };
 
+type LicenseCode =
+  | "Apache-2.0" | "MIT" | "CC0" | "CC-BY-3.0" | "CC-BY-4.0" | "CC-BY-SA-4.0"
+  | "ElevenLabs-Premade" | "ElevenLabs-Pro-2yr" | "Public-Domain" | "Unverified";
+
 type VoiceEntry = {
   id: string;
-  engine: "kokoro" | "piper" | "f5" | "coqui" | "bark";
+  engine: "kokoro" | "piper" | "f5" | "coqui" | "bark" | "elevenlabs" | "chatterbox" | "qwen";
   language: string;
   region?: string;
   gender: "f" | "m";
   label: string;
-  status: "approved" | "candidate";
+  status: "approved" | "candidate" | "discarded";
+  reason?: string;
+  license?: LicenseCode;
+  licenseSource?: string;
+  attribution?: string;
 };
 
 type ClonedVoice = {
@@ -590,6 +599,23 @@ const VOICE_LANG_LABELS: Record<string, string> = {
   portuguese: "Português",
 };
 
+// Sub-headings inside each language section. Order also drives display order.
+const VOICE_REGION_LABELS: Record<string, string> = {
+  ES: "España",
+  LATAM: "Latinoamérica",
+  MX: "México",
+  AR: "Argentina",
+  CO: "Colombia",
+  PE: "Perú",
+  BR: "Brasil",
+  PT: "Portugal",
+  IT: "Italia",
+  DE: "Alemania",
+  FR: "Francia",
+  US: "Estados Unidos",
+};
+const VOICE_REGION_ORDER = Object.keys(VOICE_REGION_LABELS);
+
 function safeVoiceId(voiceId: string): string {
   return voiceId.replace(/[^a-zA-Z0-9_-]/g, "_");
 }
@@ -611,9 +637,22 @@ function VoiceGallerySection({
   voices: VoiceEntry[];
   clonedVoices: ClonedVoice[];
 }) {
-  const approved = useMemo(() => voices.filter((v) => v.status === "approved" && v.engine !== "f5"), [voices]);
+  const internalApproved = useMemo(
+    () => voices.filter((v) => v.status === "approved" && v.engine !== "f5" && v.engine !== "elevenlabs"),
+    [voices],
+  );
+  const elevenlabsApproved = useMemo(
+    () => voices.filter((v) => v.status === "approved" && v.engine === "elevenlabs"),
+    [voices],
+  );
   const candidates = useMemo(() => voices.filter((v) => v.status === "candidate" && v.engine !== "f5"), [voices]);
-  const total = approved.length + candidates.length + clonedVoices.length;
+  const discarded = useMemo(() => voices.filter((v) => v.status === "discarded"), [voices]);
+  const total =
+    internalApproved.length +
+    elevenlabsApproved.length +
+    candidates.length +
+    clonedVoices.length +
+    discarded.length;
 
   return (
     <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
@@ -627,14 +666,22 @@ function VoiceGallerySection({
         <span style={{ color: "var(--muted)" }}>{open ? "▾" : "▸"}</span>
       </button>
       {open && (
-        <div style={{ padding: 12, borderTop: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 14 }}>
+        <div style={{ padding: "10px 12px", borderTop: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 10 }}>
           <VoiceSubsection
-            title="Aprobadas"
-            description="Voces validadas. Disponibles en el dropdown de cada historia."
+            title="Internas (TTS local)"
+            description="Voces que corren on-prem (Piper / Bark / Coqui). Costo cero por uso."
             color="#14b8a6"
-            voices={approved}
+            voices={internalApproved}
             clonedVoices={[]}
-            emptyMsg="Aún no hay voces aprobadas."
+            emptyMsg="Aún no hay voces internas aprobadas."
+          />
+          <VoiceSubsection
+            title="ElevenLabs (TTS externo)"
+            description="Voces de ElevenLabs. Pago por carácter generado; usadas para narrador y diálogos en alemán."
+            color="#3b82f6"
+            voices={elevenlabsApproved}
+            clonedVoices={[]}
+            emptyMsg="Aún no hay voces de ElevenLabs aprobadas."
           />
           <VoiceSubsection
             title="Por aprobar"
@@ -644,6 +691,15 @@ function VoiceGallerySection({
             clonedVoices={clonedVoices}
             emptyMsg="No hay candidatas en testing. Cuando se sumen voces nuevas para evaluar, aparecerán aquí."
           />
+          <VoiceSubsection
+            title="Descartadas"
+            description="Voces rechazadas; quedan aquí como memoria para no volver a sumarlas."
+            color="#ef4444"
+            voices={discarded}
+            clonedVoices={[]}
+            emptyMsg="Sin voces descartadas registradas."
+            defaultOpen={false}
+          />
         </div>
       )}
     </div>
@@ -651,7 +707,7 @@ function VoiceGallerySection({
 }
 
 function VoiceSubsection({
-  title, description, color, voices, clonedVoices, emptyMsg,
+  title, description, color, voices, clonedVoices, emptyMsg, defaultOpen = true,
 }: {
   title: string;
   description: string;
@@ -659,7 +715,9 @@ function VoiceSubsection({
   voices: VoiceEntry[];
   clonedVoices: ClonedVoice[];
   emptyMsg: string;
+  defaultOpen?: boolean;
 }) {
+  const [open, setOpen] = useState(defaultOpen);
   const staticByLang = useMemo(() => {
     const map: Record<string, VoiceEntry[]> = {};
     for (const v of voices) (map[v.language] ??= []).push(v);
@@ -674,50 +732,271 @@ function VoiceSubsection({
   const total = voices.length + clonedVoices.length;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8, paddingLeft: 10, borderLeft: `3px solid ${color}` }}>
-      <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 6, paddingLeft: 10, borderLeft: `3px solid ${color}` }}>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        style={{ display: "flex", alignItems: "baseline", gap: 8, background: "transparent", border: "none", padding: 0, cursor: "pointer", textAlign: "left", color: "inherit" }}
+      >
+        <span style={{ fontSize: 10, color: "var(--muted)", width: 10 }}>{open ? "▾" : "▸"}</span>
         <span style={{ fontSize: 12, fontWeight: 700, color }}>{title}</span>
         <span style={{ fontSize: 11, color: "var(--muted)" }}>· {total}</span>
         <span style={{ fontSize: 10, color: "var(--muted)", marginLeft: 4 }}>{description}</span>
-      </div>
-      {total === 0 ? (
+      </button>
+      {!open ? null : total === 0 ? (
         <div style={{ fontSize: 11, color: "var(--muted)", fontStyle: "italic" }}>{emptyMsg}</div>
       ) : (
-        allLangs.map((lang) => (
-          <div key={lang} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            <div style={{ fontSize: 10, fontWeight: 700, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5 }}>
-              {VOICE_LANG_LABELS[lang] ?? lang} <span style={{ fontWeight: 400 }}>· {(staticByLang[lang]?.length ?? 0) + (clonedByLang[lang]?.length ?? 0)}</span>
+        <>
+        <EnginesLegend voices={voices} />
+        {allLangs.map((lang) => {
+          const langStatic = staticByLang[lang] ?? [];
+          const langCloned = clonedByLang[lang] ?? [];
+          const regionBuckets = new Map<string, VoiceEntry[]>();
+          for (const v of langStatic) {
+            const key = v.region ?? "—";
+            const bucket = regionBuckets.get(key) ?? [];
+            bucket.push(v);
+            regionBuckets.set(key, bucket);
+          }
+          const sortedRegions = Array.from(regionBuckets.keys()).sort((a, b) => {
+            const ai = VOICE_REGION_ORDER.indexOf(a);
+            const bi = VOICE_REGION_ORDER.indexOf(b);
+            if (ai === -1 && bi === -1) return a.localeCompare(b);
+            if (ai === -1) return 1;
+            if (bi === -1) return -1;
+            return ai - bi;
+          });
+          const flatCount = langStatic.length + langCloned.length;
+          // Single-region (PT, IT, DE today) → skip region sub-headers, render a flat grid.
+          // Multi-region (Español) → keep tight region sub-headers for navigation.
+          const useFlat = sortedRegions.length <= 1;
+          return (
+            <div key={lang} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5 }}>
+                {VOICE_LANG_LABELS[lang] ?? lang} <span style={{ fontWeight: 400 }}>· {flatCount}</span>
+              </div>
+              {useFlat ? (
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 4 }}>
+                  {langStatic.map((v) => (
+                    <VoiceCard
+                      key={v.id}
+                      title={v.label}
+                      subtitle={`${v.engine}/${v.id.split("/").pop()}`}
+                      regionTag={v.region}
+                      gender={v.gender}
+                      url={sampleUrl(v, false)}
+                      reason={v.reason}
+                      license={v.license}
+                      licenseSource={v.licenseSource}
+                      attribution={v.attribution}
+                    />
+                  ))}
+                  {langCloned.map((c) => (
+                    <VoiceCard key={c.id} title={c.name} subtitle={`f5 (clonada)`} regionTag={c.region ?? undefined} gender={c.gender === "m" ? "m" : "f"} url={`/voice-samples/f5_${c.id}.wav`} />
+                  ))}
+                </div>
+              ) : (
+                <>
+                  {sortedRegions.map((region) => (
+                    <div key={region} style={{ display: "flex", flexDirection: "column", gap: 3 }}>
+                      <div style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5, opacity: 0.75 }}>
+                        {VOICE_REGION_LABELS[region] ?? region} <span style={{ fontWeight: 400 }}>· {regionBuckets.get(region)!.length}</span>
+                      </div>
+                      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 4 }}>
+                        {regionBuckets.get(region)!.map((v) => (
+                          <VoiceCard
+                            key={v.id}
+                            title={v.label}
+                            subtitle={`${v.engine}/${v.id.split("/").pop()}`}
+                            regionTag={v.region}
+                            gender={v.gender}
+                            url={sampleUrl(v, false)}
+                            reason={v.reason}
+                            license={v.license}
+                            licenseSource={v.licenseSource}
+                            attribution={v.attribution}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                  {langCloned.length > 0 && (
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 4 }}>
+                      {langCloned.map((c) => (
+                        <VoiceCard key={c.id} title={c.name} subtitle={`f5 (clonada)`} regionTag={c.region ?? undefined} gender={c.gender === "m" ? "m" : "f"} url={`/voice-samples/f5_${c.id}.wav`} />
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 4 }}>
-              {(staticByLang[lang] ?? []).map((v) => (
-                <VoiceCard key={v.id} title={v.label} subtitle={`${v.engine}/${v.id.split("/").pop()}`} regionTag={v.region} gender={v.gender} url={sampleUrl(v, false)} />
-              ))}
-              {(clonedByLang[lang] ?? []).map((c) => (
-                <VoiceCard key={c.id} title={c.name} subtitle={`f5 (clonada)`} regionTag={c.region ?? undefined} gender={c.gender === "m" ? "m" : "f"} url={`/voice-samples/f5_${c.id}.wav`} />
-              ))}
-            </div>
-          </div>
-        ))
+          );
+        })}
+        </>
       )}
     </div>
   );
 }
 
+function EnginesLegend({ voices }: { voices: VoiceEntry[] }) {
+  const [open, setOpen] = useState(false);
+  const enginesPresent = useMemo(() => {
+    const set = new Set<Engine>();
+    for (const v of voices) set.add(v.engine);
+    // Stable order: non-AR first (kokoro, piper), then AR alphabetical.
+    const order: Engine[] = ["kokoro", "piper", "f5", "coqui", "bark", "elevenlabs", "chatterbox", "qwen"];
+    return order.filter((e) => set.has(e));
+  }, [voices]);
+  if (enginesPresent.length === 0) return null;
+  return (
+    <div style={{ marginBottom: 4, padding: "6px 8px", borderRadius: 6, background: "rgba(255,255,255,0.02)", border: "1px solid var(--card-border)" }}>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        style={{ display: "flex", alignItems: "center", gap: 6, background: "transparent", border: "none", padding: 0, cursor: "pointer", textAlign: "left", color: "inherit" }}
+      >
+        <span style={{ fontSize: 10, color: "var(--muted)" }}>{open ? "▾" : "▸"}</span>
+        <span style={{ fontSize: 10, fontWeight: 700, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5 }}>
+          Motores presentes
+        </span>
+        <span style={{ fontSize: 10, color: "var(--muted)", fontWeight: 400 }}>· {enginesPresent.length}</span>
+        {!open && (
+          <span style={{ fontSize: 10, color: "var(--muted)", marginLeft: 4 }}>
+            {enginesPresent.map((e) => ENGINE_INFO[e].label.split(" (")[0]).join(", ")}
+          </span>
+        )}
+      </button>
+      {open && (
+        <div style={{ marginTop: 6, display: "flex", flexDirection: "column", gap: 8 }}>
+          {enginesPresent.map((e) => {
+            const info = ENGINE_INFO[e];
+            const archColor = info.architecture === "non-AR" ? "#14b8a6" : "#eab308";
+            return (
+              <div key={e} style={{ display: "flex", flexDirection: "column", gap: 3, paddingLeft: 6, borderLeft: `2px solid ${archColor}` }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 6, flexWrap: "wrap" }}>
+                  <span style={{ fontSize: 11, fontWeight: 700 }}>{info.label}</span>
+                  <span
+                    style={{
+                      fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3,
+                      background: archColor, color: "#000",
+                    }}
+                    title={info.architecture === "non-AR" ? "non-autoregressive: cero phantoms" : "autoregressive: phantom risk"}
+                  >
+                    {info.architecture}
+                  </span>
+                </div>
+                <ul style={{ margin: 0, paddingLeft: 14, fontSize: 10, color: "var(--foreground)", lineHeight: 1.4 }}>
+                  {info.pros.map((p, i) => (
+                    <li key={`p${i}`} style={{ color: "#86efac" }}>{p}</li>
+                  ))}
+                  {info.cons.map((c, i) => (
+                    <li key={`c${i}`} style={{ color: "#fca5a5" }}>{c}</li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Region pill colors: subtle, semi-distinguishable so the gallery is scannable
+// without becoming a rainbow. Falls back to neutral for unknown regions.
+const REGION_PILL_BG: Record<string, string> = {
+  ES: "rgba(245, 158, 11, 0.18)",   // amber (España)
+  LATAM: "rgba(20, 184, 166, 0.18)", // teal
+  MX: "rgba(132, 204, 22, 0.18)",    // lime
+  CO: "rgba(59, 130, 246, 0.18)",    // blue
+  AR: "rgba(168, 85, 247, 0.18)",    // violet
+  PE: "rgba(244, 114, 182, 0.18)",   // pink
+  CL: "rgba(239, 68, 68, 0.18)",     // red
+  VE: "rgba(234, 179, 8, 0.18)",     // yellow
+  PR: "rgba(14, 165, 233, 0.18)",    // sky
+  BR: "rgba(34, 197, 94, 0.18)",     // green
+  PT: "rgba(217, 70, 239, 0.18)",    // fuchsia
+  IT: "rgba(16, 185, 129, 0.18)",    // emerald
+  DE: "rgba(99, 102, 241, 0.18)",    // indigo
+  FR: "rgba(56, 189, 248, 0.18)",    // light blue
+  US: "rgba(148, 163, 184, 0.18)",   // slate
+};
+const REGION_PILL_FG: Record<string, string> = {
+  ES: "#fbbf24", LATAM: "#2dd4bf", MX: "#a3e635", CO: "#60a5fa",
+  AR: "#c084fc", PE: "#f9a8d4", CL: "#f87171", VE: "#facc15",
+  PR: "#38bdf8", BR: "#4ade80", PT: "#e879f9", IT: "#34d399",
+  DE: "#818cf8", FR: "#7dd3fc", US: "#cbd5e1",
+};
+
+// License-tier coloring: how "clean" the audio output is for a paid app.
+//   green  = 100% yours, no obligations (Apache 2.0, MIT, CC0)
+//   yellow = attribution required, no share-alike (CC-BY-3.0/4.0)
+//   orange = attribution + share-alike viral (CC-BY-SA-4.0)
+//   blue   = vendor terms, perpetual or with notice period (ElevenLabs)
+//   gray   = unverified / public-domain-leaning but not formally licensed
+const LICENSE_TIER: Record<LicenseCode, { bg: string; fg: string; label: string }> = {
+  "Apache-2.0":          { bg: "rgba(34, 197, 94, 0.18)",  fg: "#4ade80", label: "Apache 2.0" },
+  "MIT":                 { bg: "rgba(34, 197, 94, 0.18)",  fg: "#4ade80", label: "MIT" },
+  "CC0":                 { bg: "rgba(34, 197, 94, 0.18)",  fg: "#4ade80", label: "CC0" },
+  "CC-BY-3.0":           { bg: "rgba(234, 179, 8, 0.18)",  fg: "#facc15", label: "CC-BY 3.0" },
+  "CC-BY-4.0":           { bg: "rgba(234, 179, 8, 0.18)",  fg: "#facc15", label: "CC-BY 4.0" },
+  "CC-BY-SA-4.0":        { bg: "rgba(249, 115, 22, 0.20)", fg: "#fb923c", label: "CC-BY-SA 4.0" },
+  "ElevenLabs-Premade":  { bg: "rgba(59, 130, 246, 0.18)", fg: "#60a5fa", label: "EL premade" },
+  "ElevenLabs-Pro-2yr":  { bg: "rgba(59, 130, 246, 0.18)", fg: "#60a5fa", label: "EL pro 730d" },
+  "Public-Domain":       { bg: "rgba(148, 163, 184, 0.18)", fg: "#94a3b8", label: "PD (sin verificar)" },
+  "Unverified":          { bg: "rgba(148, 163, 184, 0.18)", fg: "#94a3b8", label: "sin verificar" },
+};
+
 function VoiceCard({
-  title, subtitle, regionTag, gender, url,
-}: { title: string; subtitle: string; regionTag?: string; gender: "f" | "m"; url: string }) {
+  title, subtitle, regionTag, gender, url, reason, license, licenseSource, attribution,
+}: {
+  title: string; subtitle: string; regionTag?: string; gender: "f" | "m"; url: string; reason?: string;
+  license?: LicenseCode; licenseSource?: string; attribution?: string;
+}) {
+  const pillBg = regionTag ? REGION_PILL_BG[regionTag] ?? "rgba(148, 163, 184, 0.15)" : null;
+  const pillFg = regionTag ? REGION_PILL_FG[regionTag] ?? "#94a3b8" : null;
+  const lic = license ? LICENSE_TIER[license] : null;
+  const licTooltip = [
+    license ? `Licencia: ${license}` : null,
+    licenseSource ? `Fuente: ${licenseSource}` : null,
+    attribution ? `Atribución: ${attribution}` : null,
+  ].filter(Boolean).join("\n");
   return (
     <div
       title={subtitle}
-      style={{ padding: "6px 8px", borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", display: "flex", flexDirection: "column", gap: 4 }}
+      style={{ padding: "5px 7px", borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", display: "flex", flexDirection: "column", gap: 3 }}
     >
-      <div style={{ fontSize: 12, fontWeight: 600, lineHeight: 1.25, wordBreak: "break-word" }}>
-        {title}
-        <span style={{ fontSize: 10, color: "var(--muted)", marginLeft: 6, fontWeight: 400 }}>
-          {regionTag ? `${regionTag} ` : ""}{gender === "m" ? "M" : "F"}
+      <div style={{ display: "flex", alignItems: "center", gap: 5, lineHeight: 1.2 }}>
+        {regionTag && (
+          <span style={{ fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3, backgroundColor: pillBg!, color: pillFg!, letterSpacing: 0.3, flexShrink: 0 }}>
+            {regionTag}
+          </span>
+        )}
+        <span style={{ fontSize: 9, color: "var(--muted)", fontWeight: 600, flexShrink: 0 }}>
+          {gender === "m" ? "M" : "F"}
+        </span>
+        <span style={{ fontSize: 11, fontWeight: 600, lineHeight: 1.2, wordBreak: "break-word", flex: 1, minWidth: 0 }}>
+          {title}
         </span>
       </div>
-      <audio src={url} controls preload="none" style={{ width: "100%", height: 26 }} />
+      {lic && (
+        <div title={licTooltip} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+          <span style={{ fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3, backgroundColor: lic.bg, color: lic.fg, letterSpacing: 0.2 }}>
+            {lic.label}
+          </span>
+          {attribution && (
+            <span style={{ fontSize: 8, color: "var(--muted)", fontStyle: "italic" }}>
+              requiere atribución
+            </span>
+          )}
+        </div>
+      )}
+      {reason && (
+        <div style={{ fontSize: 9, color: "#ef4444", lineHeight: 1.25 }}>
+          {reason}
+        </div>
+      )}
+      <audio src={url} controls preload="none" style={{ width: "100%", height: 24 }} />
     </div>
   );
 }

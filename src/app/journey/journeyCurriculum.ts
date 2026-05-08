@@ -44,7 +44,7 @@ const a1LatamTopics: JourneyTopicPlan[] = [
     "colombian-spanish-stories-for-beginners:la-feria-de-las-flores",
     "colombian-spanish-stories-for-beginners:la-fiesta-en-cartagena",
   ]),
-  topic("food-daily-life", "Food & Everyday Life", 1, [
+  topic("food-daily-life", "Food & Drink", 1, [
     "colombian-spanish-stories-for-beginners:el-mercado-de-medellin",
     "colombian-spanish-stories-for-beginners:el-secreto-del-cafe",
     "colombian-spanish-stories-for-beginners:el-festival-de-la-arepa",

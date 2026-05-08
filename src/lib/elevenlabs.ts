@@ -145,6 +145,7 @@ export async function generateAndUploadAudio(
   assetId: string | null;
   audioSegments: AudioSegment[];
   audioQa: AudioQaResult;
+  voiceId: string;
 } | null> {
   try {
     // 🔹 El audio debe narrar primero el título, luego hacer una pausa y empezar la historia.
@@ -258,6 +259,7 @@ export async function generateAndUploadAudio(
         assetId: null,
         audioSegments: transcription.audioSegments,
         audioQa,
+        voiceId: `elevenlabs/${selectedVoice}`,
       };
     }
 
@@ -286,6 +288,7 @@ export async function generateAndUploadAudio(
       assetId: asset._id,
       audioSegments: transcription.audioSegments,
       audioQa,
+      voiceId: `elevenlabs/${selectedVoice}`,
     };
   } catch (err) {
     console.error("[elevenlabs] 💥 Failed to generate/upload audio:", err);
