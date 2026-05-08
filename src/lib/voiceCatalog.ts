@@ -29,6 +29,145 @@ export type Engine = "kokoro" | "piper" | "f5" | "coqui" | "bark" | "elevenlabs"
 export type VoiceStatus = "approved" | "candidate" | "discarded";
 
 /**
+ * Pros and cons of each TTS engine, surfaced in the Studio gallery so future
+ * casting decisions can be made at a glance. Updated as we learn more.
+ *
+ * Source of truth for the trade-offs we discovered while building the
+ * audio pipeline. See chat history + `feedback_*` memories for context.
+ */
+export type EngineInfo = {
+  /** Short human-friendly engine label. */
+  label: string;
+  /** Architecture: "non-AR" (deterministic, no phantoms) vs "AR" (autoregressive, phantom risk). */
+  architecture: "non-AR" | "AR";
+  /** What this engine is good at. */
+  pros: string[];
+  /** Trade-offs / limitations. */
+  cons: string[];
+};
+
+export const ENGINE_INFO: Record<Engine, EngineInfo> = {
+  kokoro: {
+    label: "Kokoro (StyleTTS2-based, hexgrad)",
+    architecture: "non-AR",
+    pros: [
+      "Cero phantoms: arquitectura non-AR genera audio determinístico en una pasada.",
+      "Apache 2.0 puro (modelo + pesos); outputs son tuyos sin restricciones.",
+      "Rápido en CPU (~real-time).",
+      "82M params, footprint pequeño (~316 MB).",
+    ],
+    cons: [
+      "Expresividad baja: prosodia plana, NO entona preguntas, NO transmite emoción.",
+      "Sin voice cloning: solo 3 voces fijas español (Dora F LATAM, Alex M, Santa M ES kids).",
+      "Pronunciación falla en nombres propios y palabras extranjeras (phonemizer rule-based).",
+      "No soporta SSML ni control fino.",
+    ],
+  },
+  piper: {
+    label: "Piper (Rhasspy)",
+    architecture: "non-AR",
+    pros: [
+      "Cero phantoms (non-AR).",
+      "MIT (varía por voz; revisar MODEL_CARD individual).",
+      "Modelos chiquitos (~50 MB), muy rápidos.",
+      "30+ idiomas.",
+    ],
+    cons: [
+      "Calidad inferior a Kokoro para español (timbral metálico ocasional).",
+      "Sin voice cloning.",
+      "Algunas voces requieren atribución (CC-BY 3.0 como Sharvard).",
+      "Expresividad mínima.",
+    ],
+  },
+  f5: {
+    label: "F5-TTS",
+    architecture: "AR",
+    pros: [
+      "Voice cloning bilingüe (EN+ZH) con ~10 seg de ref.",
+      "Apache 2.0.",
+    ],
+    cons: [
+      "Cross-lingual (ej. ref EN → output ES) suena artificial.",
+      "Phantoms autoregresivos.",
+      "Modelo pesado (~1.3 GB).",
+    ],
+  },
+  coqui: {
+    label: "Coqui (XTTS-v2 y derivados)",
+    architecture: "AR",
+    pros: [
+      "Voice cloning multilingüe maduro (17 idiomas).",
+      "Calidad alta para cloning.",
+    ],
+    cons: [
+      "CPML: modelo + pesos NO son comerciales sin license deal con Coqui (que cerró). Bloqueante para apps monetizadas.",
+      "Phantoms autoregresivos.",
+    ],
+  },
+  bark: {
+    label: "Bark (Suno)",
+    architecture: "AR",
+    pros: [
+      "MIT puro.",
+      "Genera vocalizaciones (risas, suspiros, ruidos) además de speech.",
+      "Multilingüe sin cloning (10+ speakers preset por idioma).",
+    ],
+    cons: [
+      "Lento incluso en GPU.",
+      "Lottery: misma seed produce calidad inconsistente segmento a segmento.",
+      "Phantoms y truncamientos frecuentes.",
+      "Tendencia a prosodia monótona ('deprimente') en muchos speakers.",
+    ],
+  },
+  elevenlabs: {
+    label: "ElevenLabs",
+    architecture: "AR",
+    pros: [
+      "Top calidad y top expresividad del mercado.",
+      "Diccionario de pronunciación manual (palabras raras).",
+      "Tags emocionales explícitos en v3 ([laugh], [sigh], [whisper]).",
+      "Cloning con ~1 min de audio.",
+      "30+ idiomas con calidad nativa.",
+    ],
+    cons: [
+      "Pago por carácter generado ($0.30 / 1k chars en plan creator).",
+      "Términos de servicio: voces 'professional shared' caducan con 730 días notice del dueño.",
+      "Vendor lock-in: si ElevenLabs cierra o cambia precios, tu pipeline queda atado.",
+    ],
+  },
+  chatterbox: {
+    label: "Chatterbox MTL (Resemble AI)",
+    architecture: "AR",
+    pros: [
+      "MIT puro (modelo + pesos).",
+      "Voice cloning multilingüe (23 idiomas) con ~10 seg de ref.",
+      "Calidad alta, bench cerca de ElevenLabs en algunos idiomas.",
+      "Watermark Perth detecta AI-generated (transparencia).",
+    ],
+    cons: [
+      "Phantoms autoregresivos frecuentes (alignment_repetition trigger común).",
+      "Lento en CPU sin flash-attn.",
+      "Modelo grande (~3 GB).",
+    ],
+  },
+  qwen: {
+    label: "Qwen3-TTS (Alibaba)",
+    architecture: "AR",
+    pros: [
+      "Apache 2.0 puro (modelo + pesos).",
+      "Multilingüe nativo (10 idiomas), incluye español LATAM por defecto.",
+      "0.6B-CustomVoice tiene 9 speakers built-in reproducibles entre llamadas.",
+      "1.7B-VoiceDesign genera personajes desde descripción libre.",
+    ],
+    cons: [
+      "Phantoms autoregresivos similares a Chatterbox.",
+      "Speakers built-in no son nativos español: pueden sonar acentuados (Aiden funciona, Dylan/Uncle Fu requirieron role-prompts específicos).",
+      "1.7B requiere ~3 GB en disco; no determinístico al re-generar (cada call es voz nueva en VoiceDesign).",
+    ],
+  },
+};
+
+/**
  * Accent / dialect tags. Más granulares que `region` (que sólo
  * distingue LATAM/ES/BR/etc.) y permiten castear voces que matcheen
  * realmente la ambientación de la historia. Una voz puede llevar

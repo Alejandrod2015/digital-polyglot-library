@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
-import type { AccentTag } from "@/lib/voiceCatalog";
+import { ENGINE_INFO, type AccentTag, type Engine } from "@/lib/voiceCatalog";
 import { compatScore, compatBadge, type CompatScore } from "@/lib/voiceAccentCompat";
 import { inferStorySetting } from "@/lib/dialogueStorySettings";
 
@@ -76,6 +76,7 @@ export default function StudioAudioClient() {
   const [clonedVoices, setClonedVoices] = useState<ClonedVoice[]>([]);
   const [showClonedSection, setShowClonedSection] = useState(false);
   const [showVoiceGallery, setShowVoiceGallery] = useState(false);
+  const [showQueue, setShowQueue] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<StatusFilter>("missing");
   const [language, setLanguage] = useState<string>("all");
@@ -345,38 +346,6 @@ export default function StudioAudioClient() {
         onError={(msg) => setError(msg)}
       />
 
-      <div style={{ padding: 16, borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-        <label style={{ display: "flex", flexDirection: "column", fontSize: 12, color: "var(--muted)" }}>
-          Estado
-          <select value={filter} onChange={(e) => setFilter(e.target.value as StatusFilter)} style={selectStyle}>
-            <option value="missing">Sin audio</option>
-            <option value="ready">Con audio</option>
-            <option value="failed">Falladas</option>
-            <option value="all">Todas</option>
-          </select>
-        </label>
-        <label style={{ display: "flex", flexDirection: "column", fontSize: 12, color: "var(--muted)" }}>
-          Idioma
-          <select value={language} onChange={(e) => setLanguage(e.target.value)} style={selectStyle}>
-            {languages.map((l) => <option key={l} value={l}>{l}</option>)}
-          </select>
-        </label>
-        <div style={{ flex: 1 }} />
-        <button
-          onClick={() => void load()}
-          style={btnGhost}
-        >
-          Recargar
-        </button>
-        <button
-          onClick={() => void runBatch()}
-          disabled={batchRunning || filtered.filter((s) => !s.audioUrl).length === 0}
-          style={{ ...btnPrimary, opacity: batchRunning ? 0.6 : 1 }}
-        >
-          {batchRunning && progress ? `Generando ${progress.done}/${progress.total}` : `Generar lote (${filtered.filter((s) => !s.audioUrl && SUPPORTED_LANGS.has(s.journey.language.toLowerCase())).length})`}
-        </button>
-      </div>
-
       {error && (
         <div style={{ padding: 12, borderRadius: 8, backgroundColor: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", color: "#ef4444", fontSize: 13 }}>
           {error}
@@ -385,14 +354,56 @@ export default function StudioAudioClient() {
 
       {!stories && <div className="studio-skeleton" style={{ height: 240 }} />}
 
-      {stories && filtered.length === 0 && (
-        <div style={{ padding: 24, textAlign: "center", color: "var(--muted)", fontSize: 14 }}>
-          No hay historias que coincidan con el filtro.
-        </div>
-      )}
-
-      {stories && filtered.length > 0 && (
-        <div style={{ borderRadius: 10, border: "1px solid var(--card-border)", overflow: "hidden", backgroundColor: "var(--card-bg)" }}>
+      {stories && (
+        <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
+          <button
+            onClick={() => setShowQueue((v) => !v)}
+            style={{ width: "100%", padding: "12px 16px", background: "transparent", border: "none", color: "var(--foreground)", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 13 }}
+          >
+            <span style={{ fontWeight: 600 }}>
+              Cola de historias <span style={{ color: "var(--muted)", fontWeight: 400 }}>· {filtered.length}</span>
+              {(() => {
+                const batchable = filtered.filter((s) => !s.audioUrl && SUPPORTED_LANGS.has(s.journey.language.toLowerCase())).length;
+                return batchable > 0 ? <span style={{ marginLeft: 8, fontSize: 11, color: "#eab308", fontWeight: 500 }}>· lote: {batchable} pendientes</span> : null;
+              })()}
+            </span>
+            <span style={{ color: "var(--muted)" }}>{showQueue ? "▾" : "▸"}</span>
+          </button>
+          {showQueue && (
+          <div style={{ borderTop: "1px solid var(--card-border)", padding: "12px 16px", display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+            <label style={{ display: "flex", flexDirection: "column", fontSize: 12, color: "var(--muted)" }}>
+              Estado
+              <select value={filter} onChange={(e) => setFilter(e.target.value as StatusFilter)} style={selectStyle}>
+                <option value="missing">Sin audio</option>
+                <option value="ready">Con audio</option>
+                <option value="failed">Falladas</option>
+                <option value="all">Todas</option>
+              </select>
+            </label>
+            <label style={{ display: "flex", flexDirection: "column", fontSize: 12, color: "var(--muted)" }}>
+              Idioma
+              <select value={language} onChange={(e) => setLanguage(e.target.value)} style={selectStyle}>
+                {languages.map((l) => <option key={l} value={l}>{l}</option>)}
+              </select>
+            </label>
+            <div style={{ flex: 1 }} />
+            <button onClick={() => void load()} style={btnGhost}>Recargar</button>
+            <button
+              onClick={() => void runBatch()}
+              disabled={batchRunning || filtered.filter((s) => !s.audioUrl).length === 0}
+              style={{ ...btnPrimary, opacity: batchRunning ? 0.6 : 1 }}
+            >
+              {batchRunning && progress ? `Generando ${progress.done}/${progress.total}` : `Generar lote (${filtered.filter((s) => !s.audioUrl && SUPPORTED_LANGS.has(s.journey.language.toLowerCase())).length})`}
+            </button>
+          </div>
+          )}
+          {showQueue && filtered.length === 0 && (
+            <div style={{ borderTop: "1px solid var(--card-border)", padding: 24, textAlign: "center", color: "var(--muted)", fontSize: 14 }}>
+              No hay historias que coincidan con el filtro.
+            </div>
+          )}
+          {showQueue && filtered.length > 0 && (
+          <div style={{ borderTop: "1px solid var(--card-border)", overflow: "hidden" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead style={{ backgroundColor: "rgba(255,255,255,0.03)", textAlign: "left" }}>
               <tr>
@@ -538,6 +549,8 @@ export default function StudioAudioClient() {
               })}
             </tbody>
           </table>
+          </div>
+          )}
         </div>
       )}
     </div>
@@ -750,7 +763,9 @@ function VoiceSubsection({
       {!open ? null : total === 0 ? (
         <div style={{ fontSize: 11, color: "var(--muted)", fontStyle: "italic" }}>{emptyMsg}</div>
       ) : (
-        allLangs.map((lang) => {
+        <>
+        <EnginesLegend voices={voices} />
+        {allLangs.map((lang) => {
           const langStatic = staticByLang[lang] ?? [];
           const langCloned = clonedByLang[lang] ?? [];
           const regionBuckets = new Map<string, VoiceEntry[]>();
@@ -833,7 +848,71 @@ function VoiceSubsection({
               )}
             </div>
           );
-        })
+        })}
+        </>
+      )}
+    </div>
+  );
+}
+
+function EnginesLegend({ voices }: { voices: VoiceEntry[] }) {
+  const [open, setOpen] = useState(false);
+  const enginesPresent = useMemo(() => {
+    const set = new Set<Engine>();
+    for (const v of voices) set.add(v.engine);
+    const order: Engine[] = ["kokoro", "piper", "f5", "coqui", "bark", "elevenlabs", "chatterbox", "qwen"];
+    return order.filter((e) => set.has(e));
+  }, [voices]);
+  if (enginesPresent.length === 0) return null;
+  return (
+    <div style={{ marginBottom: 4, padding: "6px 8px", borderRadius: 6, background: "rgba(255,255,255,0.02)", border: "1px solid var(--card-border)" }}>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        style={{ display: "flex", alignItems: "center", gap: 6, background: "transparent", border: "none", padding: 0, cursor: "pointer", textAlign: "left", color: "inherit" }}
+      >
+        <span style={{ fontSize: 10, color: "var(--muted)" }}>{open ? "▾" : "▸"}</span>
+        <span style={{ fontSize: 10, fontWeight: 700, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5 }}>
+          Motores presentes
+        </span>
+        <span style={{ fontSize: 10, color: "var(--muted)", fontWeight: 400 }}>· {enginesPresent.length}</span>
+        {!open && (
+          <span style={{ fontSize: 10, color: "var(--muted)", marginLeft: 4 }}>
+            {enginesPresent.map((e) => ENGINE_INFO[e].label.split(" (")[0]).join(", ")}
+          </span>
+        )}
+      </button>
+      {open && (
+        <div style={{ marginTop: 6, display: "flex", flexDirection: "column", gap: 8 }}>
+          {enginesPresent.map((e) => {
+            const info = ENGINE_INFO[e];
+            const archColor = info.architecture === "non-AR" ? "#14b8a6" : "#eab308";
+            return (
+              <div key={e} style={{ display: "flex", flexDirection: "column", gap: 3, paddingLeft: 6, borderLeft: `2px solid ${archColor}` }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 6, flexWrap: "wrap" }}>
+                  <span style={{ fontSize: 11, fontWeight: 700 }}>{info.label}</span>
+                  <span
+                    style={{
+                      fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3,
+                      background: archColor, color: "#000",
+                    }}
+                    title={info.architecture === "non-AR" ? "non-autoregressive: cero phantoms" : "autoregressive: phantom risk"}
+                  >
+                    {info.architecture}
+                  </span>
+                </div>
+                <ul style={{ margin: 0, paddingLeft: 14, fontSize: 10, color: "var(--foreground)", lineHeight: 1.4 }}>
+                  {info.pros.map((p, i) => (
+                    <li key={`p${i}`} style={{ color: "#86efac" }}>{p}</li>
+                  ))}
+                  {info.cons.map((c, i) => (
+                    <li key={`c${i}`} style={{ color: "#fca5a5" }}>{c}</li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
       )}
     </div>
   );
