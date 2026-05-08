@@ -8990,30 +8990,58 @@ export function MobileLibraryShell(args: {
                       // raramente reproduce algo. El botón vive aún para
                       // que el usuario pueda re-tocar play o pausar el
                       // audio del autoplay.
+                      // Texto diagnóstico DEBUG: cuando el botón Play
+                      // está disabled, mostramos por qué (loading,
+                      // story sin audio, slug sin match) abajo del
+                      // botón. Sin esto el botón se ve gris y no
+                      // sabemos si es race del prefetch, story sin
+                      // audio en DB, o un mismatch. Quitar cuando esté
+                      // resuelto.
+                      const slugRaw = clip.storySlug ?? "";
+                      const slugNorm = normalizeStorySlug(slugRaw);
+                      const audioMap =
+                        clip.storySource === "standalone"
+                          ? standaloneStoryAudioBySlug
+                          : userStoryAudioBySlug;
+                      const inMap = slugNorm in audioMap;
+                      const reason = !slugRaw
+                        ? "[debug] no storySlug en clip"
+                        : !inMap
+                          ? `[debug] prefetch pendiente o slug no en map (src=${clip.storySource}, slug=${slugNorm.slice(0, 24)})`
+                          : !storyAudio?.audioUrl
+                            ? `[debug] story sin audioUrl en DB (slug=${slugNorm.slice(0, 24)})`
+                            : null;
                       return (
-                        <View style={{ flexDirection: "row", gap: 6, marginTop: 8 }}>
-                          <Pressable
-                            onPress={() => { void playPracticeContextClipStoryOnly(); }}
-                            disabled={!storyAvailable}
-                            style={[
-                              styles.practiceListenButton,
-                              !storyAvailable ? styles.practiceListenButtonDisabled : null,
-                            ]}
-                          >
-                            <Feather
-                              name={storyActive ? "square" : "play"}
-                              size={14}
-                              color={storyAvailable ? "#f5f7fb" : "#8ea2bc"}
-                            />
-                            <Text
+                        <View style={{ marginTop: 8 }}>
+                          <View style={{ flexDirection: "row", gap: 6 }}>
+                            <Pressable
+                              onPress={() => { void playPracticeContextClipStoryOnly(); }}
+                              disabled={!storyAvailable}
                               style={[
-                                styles.practiceListenButtonText,
-                                !storyAvailable ? styles.practiceListenButtonTextDisabled : null,
+                                styles.practiceListenButton,
+                                !storyAvailable ? styles.practiceListenButtonDisabled : null,
                               ]}
                             >
-                              {storyActive ? "Stop" : "Play"}
+                              <Feather
+                                name={storyActive ? "square" : "play"}
+                                size={14}
+                                color={storyAvailable ? "#f5f7fb" : "#8ea2bc"}
+                              />
+                              <Text
+                                style={[
+                                  styles.practiceListenButtonText,
+                                  !storyAvailable ? styles.practiceListenButtonTextDisabled : null,
+                                ]}
+                              >
+                                {storyActive ? "Stop" : "Play"}
+                              </Text>
+                            </Pressable>
+                          </View>
+                          {!storyAvailable && reason ? (
+                            <Text style={{ color: "#9cb0c9", fontSize: 10, marginTop: 4, fontWeight: "600" }}>
+                              {reason}
                             </Text>
-                          </Pressable>
+                          ) : null}
                         </View>
                       );
                     })() : null}
