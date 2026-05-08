@@ -36,7 +36,22 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ stories: [] });
       }
 
-      const [userStories, journeyStories] = await Promise.all([
+      // Algunos favoritos legacy guardan `storySlug` con el formato
+      // `journey-{cuid}` (el cuid es el JourneyStory.id interno) en
+      // lugar del slug real. Sin esta resolución el endpoint nunca
+      // matchea esas filas y mobile no encuentra el audio. Extraemos
+      // los IDs así matcheamos por id O por slug, retornando los
+      // resultados con el slug pseudo-slug original para que el
+      // lookup del cliente (que usa el mismo `journey-{id}` como key)
+      // siga funcionando.
+      const journeyIdsFromPseudoSlugs = new Map<string, string>();
+      for (const slug of slugs) {
+        const match = slug.match(/^journey-([a-z0-9]{20,})$/i);
+        if (match && match[1]) journeyIdsFromPseudoSlugs.set(match[1], slug);
+      }
+      const pseudoIds = Array.from(journeyIdsFromPseudoSlugs.keys());
+
+      const [userStories, journeyStoriesBySlug, journeyStoriesById] = await Promise.all([
         prisma.userStory.findMany({
           where: {
             slug: { in: slugs },
@@ -66,7 +81,34 @@ export async function GET(req: NextRequest) {
             audioSegments: true,
           },
         }),
+        pseudoIds.length > 0
+          ? prisma.journeyStory.findMany({
+              where: {
+                id: { in: pseudoIds },
+                status: "published",
+                audioUrl: { not: null },
+              },
+              select: {
+                id: true,
+                slug: true,
+                audioUrl: true,
+                audioSegments: true,
+              },
+            })
+          : Promise.resolve([] as Array<{ id: string; slug: string | null; audioUrl: string | null; audioSegments: unknown }>),
       ]);
+
+      // Para los matches por ID, sustituimos el slug retornado por el
+      // pseudo-slug original que el cliente envió, así su lookup en
+      // `userStoryAudioBySlug[slug]` encuentra la entrada.
+      const journeyStories = [
+        ...journeyStoriesBySlug,
+        ...journeyStoriesById.map((s) => ({
+          slug: journeyIdsFromPseudoSlugs.get(s.id) ?? s.slug,
+          audioUrl: s.audioUrl,
+          audioSegments: s.audioSegments,
+        })),
+      ];
 
       // De-dup por slug: si ambos modelos tienen la misma slug, gana
       // UserStory (la fuente más antigua y específica del usuario).

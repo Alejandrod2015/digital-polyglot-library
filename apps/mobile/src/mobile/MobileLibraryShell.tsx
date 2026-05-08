@@ -6364,33 +6364,7 @@ export function MobileLibraryShell(args: {
       hasSegmentClipUrl: !!segmentClipUrl,
       finalUrl: audioUrl ? audioUrl.slice(0, 80) : null,
     });
-    // Si no hay audio del story disponible, caemos a la voz del
-    // sistema (speechSynthesis) en lugar de quedar en silencio. La
-    // voz suena robótica pero garantiza que el botón Play SIEMPRE
-    // produce sonido — el usuario lo prefiere a un botón disabled
-    // sin explicación. El fallback a ElevenLabs sigue desactivado
-    // (cache-only, no genera).
-    if (!audioUrl) {
-      const Speech = getOptionalSpeechModule();
-      const speechText = clip.sentence?.trim();
-      if (Speech && speechText) {
-        await stopPracticeContextClip();
-        await stopPracticeHqClip();
-        Speech.stop();
-        setSpeakingPracticePromptId(currentPracticeExercise.id);
-        const lang = getSpeechSynthesisLang(clip.language);
-        Speech.speak(speechText, {
-          language: lang,
-          voice: getBestVoiceFor(lang),
-          rate: 0.92,
-          pitch: 1,
-          onDone: () => setSpeakingPracticePromptId((c) => (c === currentPracticeExercise.id ? null : c)),
-          onStopped: () => setSpeakingPracticePromptId((c) => (c === currentPracticeExercise.id ? null : c)),
-          onError: () => setSpeakingPracticePromptId((c) => (c === currentPracticeExercise.id ? null : c)),
-        });
-      }
-      return;
-    }
+    if (!audioUrl) return;
 
     await stopPracticeContextClip();
     await stopPracticeHqClip();
