@@ -6495,39 +6495,29 @@ export function MobileLibraryShell(args: {
   }
 
   /**
-   * Autoplay del ejercicio actual con cadena Story → HQ → silencio.
-   * Story (audio real grabado de la historia) es la mejor opción
-   * cuando existe; si la oración no tiene segmento de audio
-   * matcheable, caemos a HQ (ElevenLabs Moritz, expresivo, cacheado
-   * en R2 desde el primer fetch). Nunca caemos a TTS on-device en
-   * autoplay porque el speechSynthesis nativo iOS suena robotizado y
-   * el usuario lo califica explícitamente como "no expresivo".
+   * Autoplay del ejercicio actual: SOLO Story. Nunca HQ ni TTS.
    *
-   * El usuario puede tocar manualmente el botón TTS si quiere la voz
-   * del sistema; el botón HQ sigue exponiendo HQ on-demand también.
+   * Story = audio real grabado de la historia, ya pago/generado al
+   * publicar la historia y cacheado en R2. Reproducir un segmento es
+   * gratis. Cuando la oración no tiene segmento matcheable, dejamos
+   * silencio antes que disparar generación adicional en ElevenLabs
+   * desde Practice (ese gasto no se justifica para clips sueltos que
+   * raramente se reusan).
+   *
+   * El botón "HQ" en el render manual sigue presente — si la oración
+   * ya tiene un MP3 cacheado en R2 de un play anterior, se reusa
+   * gratis; si no, el endpoint devuelve 404 y el botón no toca nada.
+   * El botón "TTS" sigue invocando speechSynthesis on-device para
+   * quien quiera la voz del sistema.
    */
   async function playPracticeContextClipBest() {
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
     const clip = currentPracticeExercise.audioClip;
     if (!clip) return;
-
-    // Intentamos Story primero. `playPracticeContextClipStoryOnly`
-    // setea `playingPracticeClipId` cuando un Audio.Sound se carga
-    // exitosamente; si no hay audioUrl resuelto, retorna sin tocar
-    // ese estado, así que podemos detectar fallo silencioso.
     try {
       await playPracticeContextClipStoryOnly();
     } catch (err) {
       console.error("[mobile practice] autoplay Story failed", err);
-    }
-    if (practiceClipSoundRef.current) return; // Story arrancó OK
-    // Story no produjo audio (no había clip URL resoluble). Probamos
-    // HQ. Igual de defensivo: HQ valida que la oración exista y que
-    // el endpoint devuelva URL.
-    try {
-      await playPracticeContextClipHqOnly();
-    } catch (err) {
-      console.error("[mobile practice] autoplay HQ fallback failed", err);
     }
   }
 

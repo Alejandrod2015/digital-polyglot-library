@@ -23,6 +23,21 @@ import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 
 export const maxDuration = 30;
 
+/**
+ * Cache-only mode: cuando es `true` el endpoint NUNCA llama a
+ * ElevenLabs. Si la oración ya fue generada anteriormente (web) el
+ * MP3 cacheado en R2 sigue siendo servido — gratis. Si no existe,
+ * devolvemos 404 y el cliente cae al siguiente fallback (silencio
+ * en mobile, browser speechSynthesis en web).
+ *
+ * Decisión de producto: el audio "real" que necesita Practice ya
+ * existe como segmento alineado de las historias originales. Generar
+ * TTS adicional para oraciones sueltas pagaría ElevenLabs por
+ * contenido que rara vez se reusa lo suficiente para justificar el
+ * gasto.
+ */
+const PRACTICE_TTS_CACHE_ONLY = true;
+
 type Body = {
   sentence?: string;
   language?: string;
@@ -78,8 +93,19 @@ export async function POST(request: NextRequest) {
       const head = await fetch(publicUrl, { method: "HEAD" });
       if (head.ok) return NextResponse.json({ url: publicUrl, cached: true });
     } catch {
-      // Fall through to fresh generation if HEAD fails.
+      // Fall through to the cache-miss path below.
     }
+  }
+
+  if (PRACTICE_TTS_CACHE_ONLY) {
+    // Cache miss + flag activado: no pagamos ElevenLabs. El cliente
+    // recibe 404 y cae a su próximo fallback (silencio en mobile,
+    // speechSynthesis en web). Mantenemos status code semánticamente
+    // correcto para que el cliente distinga miss de error real.
+    return NextResponse.json(
+      { error: "Not cached", code: "NOT_CACHED" },
+      { status: 404 }
+    );
   }
 
   const apiKey = process.env.ELEVENLABS_API_KEY;
