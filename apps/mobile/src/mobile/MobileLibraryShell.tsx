@@ -9197,19 +9197,28 @@ export function MobileLibraryShell(args: {
               setPracticePaused(false);
             }}
             onExitAnyway={() => {
-              // Cierra la sesión y manda al usuario al journey (Home
-              // tab) sin importar de dónde haya entrado a Practice.
-              // Importante: `closePracticeSession` para sesiones
-              // source === "story" mid-sesión hace
-              // `setSelection(practiceReturnSelection)` reabriendo el
-              // reader como overlay; nuestro `setActiveScreen("home")`
-              // sólo no alcanza porque el reader queda encima. Por eso
-              // limpiamos selection explícitamente: el botón promete
-              // journey, debe llevar a journey.
+              // El destino al salir depende de cómo entró el usuario:
+              //   - story  : venía del reader (end-of-story prompt).
+              //              `closePracticeSession` mid-sesión reabre
+              //              el reader (setSelection); como Exit
+              //              Anyway promete salir, lo limpiamos y
+              //              vamos al journey.
+              //   - journey: venía de un checkpoint del path; al
+              //              salir, `closePracticeSession` ya manda
+              //              a home, no hace falta forzar nada.
+              //   - favorites (entrada desde el tab Practice del
+              //              menú inferior): el usuario sigue en la
+              //              pestaña Practice, no debe rebotar a
+              //              home. Dejamos que `closePracticeSession`
+              //              limpie estado sin tocar `activeScreen`,
+              //              y el render vuelve al orbit.
+              const sourceBeforeClose = practiceLaunchContext.source;
               setPracticeExitConfirmVisible(false);
               closePracticeSession();
-              setSelection(null);
-              setActiveScreen("home");
+              if (sourceBeforeClose === "story") {
+                setSelection(null);
+                setActiveScreen("home");
+              }
             }}
           />
         ) : null}
