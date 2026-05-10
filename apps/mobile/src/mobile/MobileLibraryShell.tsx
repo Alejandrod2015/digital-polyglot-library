@@ -926,15 +926,25 @@ const REGION_OPTIONS_BY_LANGUAGE: Partial<Record<(typeof LANGUAGE_OPTIONS)[numbe
   Portuguese: ["Brazil", "Portugal"],
   Italian: ["Italy"],
 };
-const CLIP_START_PADDING_SEC = 0.08;
-// Trim es heurístico contra el drift de Whisper (`endSec` se estira 100-400 ms
-// hacia la siguiente oración). Para segments derivados de aeneas (id empieza
-// con `sentence-`) el `endSec` es exacto y no necesita trim. Resolución por id
-// vía `clipEndTrimForSegment` más abajo.
+// Padding/trim heurísticos calibrados contra el drift del aligner. Whisper
+// subestima `startSec` y sobreestima `endSec`, así que necesita 80 ms de
+// padding al inicio y 500 ms de trim al final. Aeneas (id empieza con
+// `sentence-`) pone `startSec` exacto en el onset de la primera palabra y
+// `endSec` exacto en el final de la última, así que NO se debe padear ni
+// trimear: cualquier padding al inicio entra en la cola del segment previo
+// (oyes "antes"), cualquier trim al final corta la última sílaba.
+const CLIP_START_PADDING_SEC_WHISPER = 0.08;
+const CLIP_START_PADDING_SEC_AENEAS = 0.0;
 const CLIP_END_TRIM_SEC_WHISPER = 0.5;
 const CLIP_END_TRIM_SEC_AENEAS = 0.0;
+function isAeneasSegment(segment: AudioSegment): boolean {
+  return segment.id.startsWith("sentence-");
+}
+function clipStartPaddingForSegment(segment: AudioSegment): number {
+  return isAeneasSegment(segment) ? CLIP_START_PADDING_SEC_AENEAS : CLIP_START_PADDING_SEC_WHISPER;
+}
 function clipEndTrimForSegment(segment: AudioSegment): number {
-  return segment.id.startsWith("sentence-") ? CLIP_END_TRIM_SEC_AENEAS : CLIP_END_TRIM_SEC_WHISPER;
+  return isAeneasSegment(segment) ? CLIP_END_TRIM_SEC_AENEAS : CLIP_END_TRIM_SEC_WHISPER;
 }
 const CHECKPOINT_PASS_THRESHOLD = 0.8;
 
@@ -6679,7 +6689,7 @@ export function MobileLibraryShell(args: {
       const rawStartSec = hasDirectClip
         ? 0
         : hasSegmentRange
-          ? Math.max(0, segment.startSec - CLIP_START_PADDING_SEC)
+          ? Math.max(0, segment.startSec - clipStartPaddingForSegment(segment))
           : 0;
       const rawEndSec = hasSegmentRange
         ? Math.max(rawStartSec + 0.2, segment.endSec - clipEndTrimForSegment(segment))
@@ -6691,6 +6701,13 @@ export function MobileLibraryShell(args: {
       // the first callback after audio starts already sees the correct
       // upper bound.
       practiceClipStopAtMillisRef.current = hasSegmentRange ? rawEndSec * 1000 : null;
+      console.log("[mobile practice] Story play", {
+        segmentId: segment?.id ?? null,
+        segStart: segment?.startSec?.toFixed(3) ?? null,
+        segEnd: segment?.endSec?.toFixed(3) ?? null,
+        playFromMs: Math.round(Math.max(0, rawStartSec * 1000)),
+        stopAtMs: hasSegmentRange ? Math.round(rawEndSec * 1000) : null,
+      });
       const { sound } = await Audio.Sound.createAsync(
         { uri: audioUrl },
         { shouldPlay: true, positionMillis: Math.max(0, rawStartSec * 1000) },
@@ -6926,7 +6943,7 @@ export function MobileLibraryShell(args: {
       const shouldUseDirectClip = Boolean(segmentClipUrl);
       const rawStartSec = shouldUseDirectClip
         ? 0
-        : Math.max(0, segment.startSec - CLIP_START_PADDING_SEC);
+        : Math.max(0, segment.startSec - clipStartPaddingForSegment(segment));
       const rawEndSec = shouldUseDirectClip
         ? Number.NaN
         : Math.max(rawStartSec + 0.2, segment.endSec - clipEndTrimForSegment(segment));
