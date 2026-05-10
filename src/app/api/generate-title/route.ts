@@ -25,6 +25,46 @@ type Body = {
   extraExistingTitles?: string[];
 };
 
+function titleShape(value: string): string {
+  const normalized = normalizeTitle(value);
+  if (!normalized) return "unknown";
+
+  if (/\b(en|in|a|am|au|al|im|an|à)\b/.test(normalized)) return "anchor-in-place";
+  if (/\b(para|per|fur|pour)\b/.test(normalized)) return "anchor-for-person";
+  if (/\b(con|sin|ohne|senza|sans|mit)\b/.test(normalized)) return "anchor-with-modifier";
+  if (/\b(uno|una|dos|tres|four|five|tre|due|zwei|drei|un|deux)\b/.test(normalized)) return "anchor-with-number";
+  return "single-anchor";
+}
+
+function buildPatternGuidance(existingTitles: string[]): string {
+  if (existingTitles.length < 3) return "";
+
+  const counts = new Map<string, number>();
+  for (const title of existingTitles) {
+    const shape = titleShape(title);
+    counts.set(shape, (counts.get(shape) ?? 0) + 1);
+  }
+
+  const mostCommon = [...counts.entries()].sort((a, b) => b[1] - a[1])[0];
+  if (!mostCommon) return "";
+
+  const [shape, count] = mostCommon;
+  if (count < 3) return "";
+
+  const shapeAdvice =
+    shape === "anchor-in-place"
+      ? `\n\n# Syntax variety requirement\nThe existing titles lean too heavily on the shell "[anchor] + preposition + place" (for example "X en Y" or "X in Y"). Do NOT default to that shell on this attempt. Keep the cultural specificity, but choose a different structure.`
+      : shape === "anchor-for-person"
+        ? `\n\n# Syntax variety requirement\nThe existing titles already overuse the shell "[anchor] + for + person". Choose a different structure this time.`
+        : shape === "anchor-with-modifier"
+          ? `\n\n# Syntax variety requirement\nThe existing titles already overuse the shell "[anchor] + modifier". Choose a different structure this time.`
+          : shape === "anchor-with-number"
+            ? `\n\n# Syntax variety requirement\nThe existing titles already overuse the shell "[number] + anchor" or "[anchor] + number". Choose a different structure this time.`
+            : `\n\n# Syntax variety requirement\nThe existing titles already overuse bare single-anchor titles. Choose a different structure this time while staying concrete.`;
+
+  return shapeAdvice;
+}
+
 function normalizeTitle(value: string): string {
   return value
     .trim()
@@ -108,6 +148,7 @@ export async function POST(req: Request) {
     const existingTitlesBlock = existingTitles.length
       ? `\n\n# Titles already used — do NOT repeat their cultural anchor\nThe titles below already exist. Pick a fresh anchor (a different neighborhood, dish, venue, named object) characteristic of the same region but not appearing in this list:\n${existingTitles.slice(0, 80).join(" | ")}`
       : "";
+    const patternGuidanceBlock = buildPatternGuidance(existingTitles);
 
     for (let attempt = 0; attempt < 3; attempt += 1) {
       const retryBlock =
@@ -126,6 +167,10 @@ That is the only hard requirement. Everything else below is advice on taste, not
 
 # Keep it simple. Do NOT over-engineer.
 Think of real book titles. "Mrs. Dalloway". "Der Prozess". "El Aleph". They are concrete names, not packed sentences. Most good titles contain ONE cultural element and nothing else. A second element (a small number, a name, an absence, a time) is OPTIONAL — include it only when the synopsis makes it feel natural, never to satisfy a checklist.
+
+# Also avoid falling into one safe shell
+If the recent titles all share the same syntax, do NOT keep cloning that syntax. Keep the specificity, rotate the shape.
+The goal is not "more complicated" titles. The goal is titles that feel individually memorable when seen side by side.
 
 ## The single most common failure to avoid: stacking layers
 If your title combines three or more of these into one title, you have over-engineered it:
@@ -156,6 +201,13 @@ When tempted to add a second or third detail: delete elements instead of adding 
 ## Level 3 (rare — only when the absence is culturally essential to the dish):
 - "Choripán sin chimichurri" — chimichurri is structurally essential to a choripán, so its absence is meaningful
 
+## Healthy title-shape variety (use these to avoid formula)
+- "[anchor], [small concrete detail]" — "Bar Trieste, mesa cinco"
+- "[anchor] para [name]" — "Tres arepas para Lucía"
+- "[absence/problem] + [anchor]" — "Sin cambio para el tinto"
+- "[time/number] + [anchor]" — "Dos minutos para el ceviche"
+- "[named object] + [anchor]" — "La bolsa de Miraflores"
+
 Default to Level 1. Go to Level 2 only if Level 1 feels too bare for this particular synopsis. Go to Level 3 almost never.
 
 # Banned patterns (hard rejects)
@@ -171,6 +223,7 @@ ${region ? `- Region / cultural context: ${region}` : ""}
 ${topic ? `- Story topic: "${topic}"` : ""}
 ${synopsis ? `- Synopsis: "${synopsis}" — mine it for ONE concrete noun (a dish, neighborhood, object, venue, character name) and build the title around that noun. Do not try to reflect every detail of the synopsis.` : ""}
 ${existingTitlesBlock}
+${patternGuidanceBlock}
 
 # Output
 Return ONLY the title text in ${language}. No quotes, no explanation.
@@ -181,7 +234,7 @@ ${retryBlock}
         model: "gpt-4o",
         temperature: 0.7,
         messages: [
-          { role: "system", content: "You write concise, restrained story titles anchored in one cultural element. You prefer simple titles to elaborate ones, and you never stack multiple anchors. Return plain text only." },
+          { role: "system", content: "You write concise, restrained story titles anchored in one cultural element. You prefer simple titles to elaborate ones, but you also avoid reusing the same title shell over and over. You never stack multiple anchors. Return plain text only." },
           { role: "user", content: prompt },
         ],
       });

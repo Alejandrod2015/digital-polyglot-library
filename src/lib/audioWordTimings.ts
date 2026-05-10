@@ -8,6 +8,7 @@
 // tokens with character offsets and start/end seconds. We persist that JSON
 // directly into the JourneyStory.audioWordTimings column.
 
+import { alignStorySentencesToWords, type AudioSegment } from "@/lib/audioSegments";
 import { prisma } from "@/lib/prisma";
 
 export const AUDIO_WORD_TIMINGS_VERSION = 1 as const;
@@ -181,28 +182,86 @@ export async function generateWordTimingsForStory(
   if (!story.text) throw new Error(`JourneyStory ${storyId} has no text`);
   if (!story.audioUrl) throw new Error(`JourneyStory ${storyId} has no audioUrl`);
 
-  const storyPlainText = extractStoryPlainText(story.text);
-  if (!storyPlainText) throw new Error(`Story ${storyId} plain text is empty after stripping`);
-
-  const { fullText, bodyOffset } = buildAlignmentText(story.title ?? "", storyPlainText);
-
-  const language = story.journey.language;
-  const { audioDurationSec, tokens } = await alignAudioOnModal({
+  const { payload, segments } = await alignStoryAudio({
+    text: story.text,
+    title: story.title,
     audioUrl: story.audioUrl,
+    language: story.journey.language,
+    storyId,
+  });
+
+  await prisma.journeyStory.update({
+    where: { id: storyId },
+    data: {
+      audioWordTimings: payload as unknown as object,
+      ...(segments.length > 0 ? { audioSegments: segments as unknown as object } : {}),
+    },
+  });
+
+  return payload;
+}
+
+/** Same alignment + segment derivation, but for `UserStory` rows.
+ * Used by the practice flow when the favorite's storySlug points to a
+ * user-generated (Polyglot create-page) story rather than a Studio journey
+ * story. UserStory has no `audioWordTimings` column, so we only persist
+ * `audioSegments`. The reader doesn't run karaoke for these. */
+export async function generateAudioSegmentsForUserStory(storyId: string): Promise<{
+  segmentCount: number;
+  audioDurationSec: number | null;
+}> {
+  const story = await prisma.userStory.findUnique({
+    where: { id: storyId },
+    select: { id: true, text: true, audioUrl: true, title: true, language: true },
+  });
+
+  if (!story) throw new Error(`UserStory ${storyId} not found`);
+  if (!story.text) throw new Error(`UserStory ${storyId} has no text`);
+  if (!story.audioUrl) throw new Error(`UserStory ${storyId} has no audioUrl`);
+
+  const { payload, segments } = await alignStoryAudio({
+    text: story.text,
+    title: story.title,
+    audioUrl: story.audioUrl,
+    language: story.language,
+    storyId,
+  });
+
+  if (segments.length === 0) {
+    throw new Error("Aeneas alignment produced 0 segments");
+  }
+
+  await prisma.userStory.update({
+    where: { id: storyId },
+    data: { audioSegments: segments as unknown as object },
+  });
+
+  return { segmentCount: segments.length, audioDurationSec: payload.audioDurationSec };
+}
+
+async function alignStoryAudio(args: {
+  text: string;
+  title: string | null;
+  audioUrl: string;
+  language: string;
+  storyId: string;
+}): Promise<{ payload: AudioWordTimingsPayload; segments: AudioSegment[] }> {
+  const storyPlainText = extractStoryPlainText(args.text);
+  if (!storyPlainText) throw new Error(`Story ${args.storyId} plain text is empty after stripping`);
+
+  const { fullText, bodyOffset } = buildAlignmentText(args.title ?? "", storyPlainText);
+
+  const { audioDurationSec, tokens } = await alignAudioOnModal({
+    audioUrl: args.audioUrl,
     plainText: fullText,
-    language,
+    language: args.language,
   });
 
   if (tokens.length === 0) {
     throw new Error("Modal align returned zero usable tokens");
   }
 
-  // Strip title-prefix tokens. We keep only the tokens whose charStart
-  // lies inside the body region (>= bodyOffset) and re-base their char
-  // ranges so they index into `storyPlainText` rather than the augmented
-  // alignment text. The startSec/endSec values stay absolute on the
-  // audio timeline, which is exactly what the renderer needs to know
-  // when the body actually begins.
+  // Strip title-prefix tokens. Body-relative charOffsets, absolute sec.
   const bodyTokens: StoryWordToken[] = tokens
     .filter((t) => t.charStart >= bodyOffset)
     .map((t) => ({
@@ -224,12 +283,42 @@ export async function generateWordTimingsForStory(
     words: bodyTokens,
   };
 
-  await prisma.journeyStory.update({
-    where: { id: storyId },
-    data: { audioWordTimings: payload as unknown as object },
-  });
+  const segments = deriveSegmentsFromBodyTokens(storyPlainText, bodyTokens);
+  return { payload, segments };
+}
 
-  return payload;
+function deriveSegmentsFromBodyTokens(
+  storyPlainText: string,
+  bodyTokens: StoryWordToken[]
+): AudioSegment[] {
+  const transcriptWords = bodyTokens
+    .filter((t) => typeof t.startSec === "number" && typeof t.endSec === "number")
+    .map((t) => ({ word: t.text, start: t.startSec ?? 0, end: t.endSec ?? 0 }));
+  if (transcriptWords.length === 0) return [];
+  const segments = alignStorySentencesToWords(storyPlainText, transcriptWords);
+  return clampSegmentEndsToNextStart(segments);
+}
+
+// Garantía estructural de que un clip no salpique audio del siguiente segment.
+// Aeneas ancla con precisión el INICIO de cada palabra (onset audible) pero
+// arrastra hasta ~200 ms de drift en el final por decay vocálico y, en
+// historias multi-voz, por absorber tokens huérfanos del speaker label
+// ("Anna:") al inicio de la siguiente oración. Forzar
+// `endSec[i] <= startSec[i+1] - GUARD` hace imposible reproducir audio
+// fuera del segment, aunque aeneas haya driftado dentro de la oración.
+// En el peor caso queda un margencito de silencio inter-oración audible al
+// final del clip, lo que es preferible a cortar habla o derramar al siguiente.
+const NEXT_SEGMENT_GUARD_SEC = 0.02;
+function clampSegmentEndsToNextStart(segments: AudioSegment[]): AudioSegment[] {
+  if (segments.length <= 1) return segments;
+  return segments.map((segment, index) => {
+    const next = segments[index + 1];
+    if (!next) return segment;
+    const upperBound = next.startSec - NEXT_SEGMENT_GUARD_SEC;
+    if (!Number.isFinite(upperBound) || upperBound <= segment.startSec) return segment;
+    if (segment.endSec <= upperBound) return segment;
+    return { ...segment, endSec: upperBound };
+  });
 }
 
 export function coerceAudioWordTimings(raw: unknown): AudioWordTimingsPayload | null {

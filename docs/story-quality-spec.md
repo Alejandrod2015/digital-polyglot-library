@@ -118,6 +118,7 @@ Use one of the eight values above. The field is required for every new story and
 - Multi-word entries only for genuinely lexicalized expressions (`auf einmal`, `schon mal`, `mein Schatz`, `tut mir leid`). Not arbitrary descriptive fragments.
 - The `type` field drives the karaoke pill color, so accuracy matters: an adjective tagged as `verb` shows in the wrong color.
 - **Distribute vocab across the body**: aim for roughly 3-5 vocab items per paragraph, NOT more than ~30% of items in any single paragraph. If you pick vocab linearly while reading the body you tend to cluster everything in the opening narrator beat (that's where descriptive nouns and setup verbs live), and the rest of the story has zero vocab pills. The pedagogical contract is that the learner encounters teachable items throughout the audio. Pre-save check: count vocab items per paragraph; if any paragraph has 0 and another has 6+, rebalance before saving.
+- **No long consecutive highlight runs**: do not allow more than 2 vocab pills in a row at render time. Two adjacent pills are acceptable when the phrase naturally demands it; 3 or more consecutive highlighted items read like worksheet markup and break immersion. Technical rule: if the first occurrences of selected vocab create a run of 3+ adjacent highlights, rebalance the selection before saving.
 
 ## 5. Cover image
 
@@ -461,4 +462,3 @@ When generating a new story:
 3. Use the closer reference example for tone calibration: §A for low-intensity beats, §B for the engagement target.
 4. Generate, then run yourself through the §9 pre-save checklist.
 5. Save only when 8+ checklist items pass.
-

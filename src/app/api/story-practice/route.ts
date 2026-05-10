@@ -55,12 +55,24 @@ export async function GET(request: NextRequest) {
     const resolvedStandalone = standaloneStory ?? journeyStory;
 
     if (resolvedStandalone) {
+      // sourcePath: solo marcar `?source=standalone` cuando la historia
+      // viene de Sanity (CMS) y vive en el registry hardcoded de
+      // standaloneStoryAudioSegments. Para JourneyStory (Studio) pasamos
+      // sin query: el móvil resuelve `storySource = "user"` y consulta
+      // `/api/user-stories`, que SÍ encuentra la JourneyStory por slug y
+      // devuelve audioUrl + audioSegments aeneas. Marcarla como standalone
+      // mandaba la fetch a `/api/standalone-story-audio` que solo conoce
+      // 1 historia y dejaba el resto sin audio en práctica.
+      const isSanityStandalone = standaloneStory != null;
+      const sourcePath = isSanityStandalone
+        ? `/stories/${resolvedStandalone.slug}?source=standalone`
+        : `/stories/${resolvedStandalone.slug}`;
       storyItems = buildPracticeItemsFromStory({
         title: resolvedStandalone.title,
         slug: resolvedStandalone.slug,
         text: resolvedStandalone.text,
         language: resolvedStandalone.language,
-        sourcePath: `/stories/${resolvedStandalone.slug}?source=standalone`,
+        sourcePath,
         vocab: parseLooseVocab(resolvedStandalone.vocabRaw),
         practiceSource: "curriculum",
       });

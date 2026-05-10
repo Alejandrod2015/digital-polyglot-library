@@ -15,6 +15,7 @@ import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVarian
 export type StoryJSON = {
   title: string;
   text: string;
+  arcType: string;
   vocab: { word: string; surface?: string; definition: string; type?: string }[];
 };
 
@@ -43,6 +44,7 @@ export type GenerateStoryParams = {
    * pick simpler equivalents. Closes the audit→regenerate feedback loop.
    */
   wordsToAvoid?: string[];
+  existingArcTypes?: string[];
 };
 
 const MAX_GENERATION_ATTEMPTS = 3;
@@ -60,6 +62,56 @@ function sanitizeGeneratedStoryText(input: string): string {
     .replace(/\s+([,.;:!?])/g, "$1")
     .replace(/([.!?])(?:\s*[.!?]){1,}/g, "$1")
     .trim();
+}
+
+function hasLegacyHtmlStoryMarkup(text: string): boolean {
+  return /<(?:p|blockquote|div|span|br)\b/i.test(text);
+}
+
+function extractSpeakerNames(text: string): string[] {
+  const speakerRegex = /^([\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}):\s+\S.*$/gmu;
+  const speakers = new Set<string>();
+  let match: RegExpExecArray | null = speakerRegex.exec(text);
+  while (match) {
+    const name = match[1]?.trim();
+    if (name) speakers.add(name);
+    match = speakerRegex.exec(text);
+  }
+  return [...speakers];
+}
+
+function countSpeakerLines(text: string): number {
+  const speakerRegex = /^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+\S.*$/gmu;
+  return [...text.matchAll(speakerRegex)].length;
+}
+
+function hasNarratorOpeningParagraph(text: string): boolean {
+  const firstBlock = text.split(/\n{2,}/).map((block) => block.trim()).find(Boolean) ?? "";
+  if (!firstBlock) return false;
+  if (/^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+/u.test(firstBlock)) return false;
+  return /[\p{L}].+[.!?]/u.test(firstBlock);
+}
+
+function isValidMultiVoiceJourneyBody(text: string): { ok: boolean; reason?: string } {
+  if (hasLegacyHtmlStoryMarkup(text)) {
+    return { ok: false, reason: "Body used legacy HTML markup; must be plain text multi-voice." };
+  }
+
+  if (!hasNarratorOpeningParagraph(text)) {
+    return { ok: false, reason: "Body must open with a narrator paragraph before dialogue." };
+  }
+
+  const speakerLines = countSpeakerLines(text);
+  if (speakerLines < 4) {
+    return { ok: false, reason: `Only ${speakerLines} speaker lines; need at least 4.` };
+  }
+
+  const speakers = extractSpeakerNames(text);
+  if (speakers.length < 2) {
+    return { ok: false, reason: `Only ${speakers.length} named speaker; need at least 2 distinct speakers.` };
+  }
+
+  return { ok: true };
 }
 
 function truncateToWordLimit(text: string, maxWords: number): string {
@@ -83,6 +135,7 @@ function isValidStoryJSON(data: unknown): data is StoryJSON {
     data !== null &&
     typeof (data as StoryJSON).title === "string" &&
     typeof (data as StoryJSON).text === "string" &&
+    typeof (data as StoryJSON).arcType === "string" &&
     Array.isArray((data as StoryJSON).vocab)
   );
 }
@@ -148,6 +201,7 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     existingSynopses = [],
     usedCharacterNames = [],
     wordsToAvoid = [],
+    existingArcTypes = [],
   } = params;
   const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
 
@@ -197,6 +251,9 @@ The reader should finish this story feeling something different from what the pr
   const usedNamesClause = usedCharacterNames.length
     ? `\nNEVER reuse these character names (they already appear in other stories): ${usedCharacterNames.join(", ")}. Invent completely new, fresh character names.`
     : "";
+  const existingArcTypesClause = existingArcTypes.length
+    ? `\nRecent arc types already used nearby in this journey: ${existingArcTypes.join(", ")}. Prefer a different arc type unless the synopsis absolutely requires otherwise.`
+    : "";
 
   let previousFeedback = "";
   let finalPayload: StoryJSON | null = null;
@@ -227,7 +284,14 @@ Never start with a one-word translation followed by punctuation (e.g. "Silence;"
 Never start with article + noun (or article + noun + gender) followed by punctuation. Forbidden: "A book; bound pages...", "The market; vendors selling...", "A newspaper (f); printed news...", "To work; to do a job...". The first clause must already be doing definitional work, not announcing the gloss before the colon. Instead lead with a richer descriptor that integrates the meaning: "Bound printed pages read for pleasure or study", "Open-air gathering of vendors selling food and produce", "Daily printed news, read at home or in cafés".
 Never use em-dashes (—); use semicolons, colons, commas, or parentheses instead.
 Never return one-word literal translations.
-Wrap each paragraph inside <blockquote> ... </blockquote>.
+Body format is REQUIRED:
+- Plain text only. NO HTML. Do NOT use <blockquote>, <p>, <span>, or any tags.
+- Open with one short narrator paragraph in close third person.
+- After that, use multi-voice dialogue blocks in the exact form: Speaker: line
+- Separate paragraphs/turns with blank lines.
+- Use at least 2 distinct named speakers.
+- Use at least 4 total speaker lines.
+- The narrator may return briefly between dialogue sections, but the story must clearly read as multi-voice, not as single-voice prose with a few quoted lines.
 
 Requirements:
 Use a close third-person narrator with strong internal focalization.
@@ -248,6 +312,39 @@ Use a close third-person narrator with strong internal focalization.
 - Keep paragraphs short and dynamic (usually 1-3 sentences per paragraph).
 - Avoid long expository narrator blocks; reduce detached description and increase character-centered viewpoint.
 - Include frequent dialogue beats and immediate reactions to keep pacing lively.
+- Do NOT let the body collapse into a single-character internal monologue. The reader should hear distinct people talking.
+- The opening must feel authored, not templated. Avoid reusing the same camera move across stories.
+- Do NOT default to this opening formula:
+  - "Es [day/time] en [place]."
+  - then a smell/weather sentence
+  - then "X enters/walks/sees a small local place"
+  - then a short inventory of tables, counter, window, or objects
+- Specifically, avoid opening with "Es ..." unless there is a strong reason. Vary the first sentence shape across stories.
+- Rotate among different opening strategies:
+  - start with a concrete action already in progress
+  - start with a line of dialogue, then reveal place/time
+  - start with a striking object or sound tied to the conflict
+  - start from the protagonist's inner tension before naming the setting
+  - start with a small physical gesture that already implies the problem
+- Delay at least one of these on purpose in many stories: the exact place, the exact time of day, the food item, or the full visual layout of the venue. Do not front-load all scene metadata in the first four sentences.
+- Never use the same order every time: time -> place -> smell -> protagonist arrives -> inventory of the shop.
+- If you mention sensory detail early, vary the sense; do not rely mostly on smell. Sound, texture, heat, light, crowd pressure, or body tension are equally valid.
+- Choose exactly ONE arc type for the story and make the whole story execute it clearly:
+  - white-lie
+  - last-minute-decision
+  - return-after-years
+  - unspoken-subtext
+  - plan-falls-short
+  - late-reveal
+  - small-stake
+  - open-ending
+  - daily-encounter
+- The default transaction template is BANNED unless the synopsis explicitly forces it: protagonist asks for a specific food or drink, the item is unavailable, staff offers an alternative, protagonist tries it, likes it, and leaves warmly promising to return.
+- Also avoid these fallback endings unless the arc explicitly demands them:
+  - "esta muy rico" / "que rico" as the emotional payoff
+  - a generic promise to come back another day
+  - everyone smiling and parting warmly after a tiny inconvenience
+- If the setting is a cafe, market, fonda, bakery, or stall, the food can stay central, but the arc must carry a fresh emotional or narrative movement beyond simple substitution or service recovery.${existingArcTypesClause}
 - Length target: ${TARGET_STORY_WORDS_MIN}-${TARGET_STORY_WORDS_MAX} words.
 - Absolute minimum: ${MIN_STORY_WORDS} words.
 - Hard maximum: ${HARD_STORY_WORDS_MAX} words.${existingTitlesClause}${usedNamesClause}${tonalVarietyClause}
@@ -257,6 +354,7 @@ Return ONLY valid JSON:
 {
   "title": "string",
   "text": "string",
+  "arcType": "white-lie|last-minute-decision|return-after-years|unspoken-subtext|plan-falls-short|late-reveal|small-stake|open-ending|daily-encounter",
   "vocab": [{ "word": "string", "surface": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang" }]
 }
 `;
@@ -295,11 +393,18 @@ Return ONLY valid JSON:
 
     const raw = parsed as StoryJSON;
     const title = resolvedProvidedTitle || raw.title.trim() || "Untitled";
+    const arcType = raw.arcType.trim();
     const sanitized = sanitizeGeneratedStoryText(raw.text);
     const text =
       countStoryWords(sanitized) > HARD_STORY_WORDS_MAX
         ? truncateToWordLimit(sanitized, HARD_STORY_WORDS_MAX)
         : sanitized;
+
+    const formatCheck = isValidMultiVoiceJourneyBody(text);
+    if (!formatCheck.ok) {
+      previousFeedback = formatCheck.reason ?? "Story body did not satisfy required multi-voice format.";
+      continue;
+    }
 
     const wordCount = countStoryWords(text);
     if (wordCount < MIN_STORY_WORDS) {
@@ -318,11 +423,11 @@ Return ONLY valid JSON:
 
     if (improvedVocab.length < MIN_VOCAB_ITEMS) {
       previousFeedback = `vocab had ${improvedVocab.length} items after filtering, need at least ${MIN_VOCAB_ITEMS}. Return more candidate items next time (aim for 22).`;
-      finalPayload = { title, text, vocab: improvedVocab };
+      finalPayload = { title, text, arcType, vocab: improvedVocab };
       continue;
     }
 
-    finalPayload = { title, text, vocab: improvedVocab };
+    finalPayload = { title, text, arcType, vocab: improvedVocab };
     break;
   }
 

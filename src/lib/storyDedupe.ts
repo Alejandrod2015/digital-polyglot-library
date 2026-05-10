@@ -125,6 +125,13 @@ You are checking if a new story synopsis duplicates the narrative arc of any exi
 
 Two synopses are "the same story" when they share the CORE situation, conflict, OR payoff — for example: both are "character orders food, gets the wrong dish, stays polite", or both are "character meets old friend by chance and reminisces". Sharing only the SETTING (same neighborhood, same cuisine) is NOT enough — say NOT similar in that case.
 
+Treat these as the SAME underlying arc even if the food, city, or exact object changes:
+- customer wants a specific item, it is unavailable, worker offers substitute, customer accepts it and leaves pleasantly surprised
+- customer does not know a local word, worker explains it kindly, customer leaves having learned the word
+- tiny service hiccup resolves immediately and the emotional payoff is simply that the food tastes good
+
+Be stricter than a casual reader. If the new synopsis would feel predictably interchangeable with an existing food-market or cafe story after swapping the dish and neighborhood, mark it as similar.
+
 Existing synopses:
 ${numbered}
 

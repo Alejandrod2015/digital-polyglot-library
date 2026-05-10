@@ -114,6 +114,15 @@ Characters must behave in ways that make sense for the setting:
 - Don't use "Anschlussflug" / "connecting flight" / equivalents unless the earlier sentences establish they are already in transit.
 - The conflict must emerge from the specific situation, not from a generic "time is running out" cliché dropped in.
 
+## Rule 7: Avoid the overused service-recovery template
+Unless the title or topic absolutely requires it, do NOT default to this pattern:
+- the customer asks for a specific food or drink
+- the item is unavailable or not ready
+- the worker offers an alternative
+- the customer tries it, likes it, and leaves pleasantly surprised
+
+Also avoid synopsis endings whose only payoff is "the food is actually delicious" or "the character promises to come back another day". For food stories, the setting can stay culinary, but the conflict or reveal must carry the scene.
+
 # Output shape
 - 2 to 4 sentences, 45 to 90 words total, in ${language}.
 - Mention the main character(s) by a simple name or role.

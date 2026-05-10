@@ -93,14 +93,22 @@ export async function POST(request: Request) {
   try {
     const existingStories = await prisma.journeyStory.findMany({
       where: { journeyId: story.journeyId, title: { not: null }, id: { not: storyId } },
-      select: { title: true, text: true, topic: true, synopsis: true },
+      select: { title: true, text: true, topic: true, synopsis: true, level: true, arcType: true, slotIndex: true },
     });
     const existingTitles = existingStories.map((s) => s.title).filter(Boolean) as string[];
 
     // LLM-extracted character names across the whole journey so reuse is
     // detected cross-topic, and tokens like "Trastevere" or "Lunedì" don't
     // leak in as false-positive person names the way the old regex did.
-    type ExistingRow = { title: string | null; text: string | null; topic: string; synopsis: string | null };
+    type ExistingRow = {
+      title: string | null;
+      text: string | null;
+      topic: string;
+      synopsis: string | null;
+      level: string;
+      arcType: string | null;
+      slotIndex: number;
+    };
     const journeyTexts: string[] = (existingStories as ExistingRow[])
       .map((s) => s.text ?? "")
       .filter((t) => t.length > 0);
@@ -113,6 +121,11 @@ export async function POST(request: Request) {
     const existingSynopsesForJudge = (existingStories as ExistingRow[])
       .map((s) => ({ title: s.title ?? "", synopsis: s.synopsis ?? "" }))
       .filter((s) => s.synopsis.length > 0);
+    const existingArcTypes = (existingStories as ExistingRow[])
+      .filter((s) => s.topic === story.topic && s.level === story.level && typeof s.arcType === "string" && s.arcType.trim().length > 0)
+      .sort((a, b) => b.slotIndex - a.slotIndex)
+      .slice(0, 3)
+      .map((s) => s.arcType!.trim());
 
     const origin = new URL(request.url).origin;
     const detailedRegion = getDetailedRegionDescription(story.journey.variant, story.journey.language);
@@ -194,6 +207,7 @@ export async function POST(request: Request) {
       existingSynopses: existingSynopsesForJudge,
       usedCharacterNames,
       wordsToAvoid,
+      existingArcTypes,
     });
 
     if (!payload) {
@@ -212,6 +226,7 @@ export async function POST(request: Request) {
         slug,
         text: payload.text,
         synopsis,
+        arcType: payload.arcType,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         vocab: payload.vocab as any,
         wordCount,
@@ -229,6 +244,7 @@ export async function POST(request: Request) {
       title: updated.title,
       slug: updated.slug,
       synopsis: updated.synopsis,
+      arcType: updated.arcType,
       wordCount: updated.wordCount,
       vocabCount: updated.vocabCount,
       status: updated.status,

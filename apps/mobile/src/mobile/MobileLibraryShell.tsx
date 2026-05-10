@@ -6,6 +6,7 @@ import {
   Alert,
   Animated,
   AppState,
+  useWindowDimensions,
   Easing,
   findNodeHandle,
   Linking,
@@ -926,7 +927,15 @@ const REGION_OPTIONS_BY_LANGUAGE: Partial<Record<(typeof LANGUAGE_OPTIONS)[numbe
   Italian: ["Italy"],
 };
 const CLIP_START_PADDING_SEC = 0.08;
-const CLIP_END_TRIM_SEC = 0.5;
+// Trim es heurístico contra el drift de Whisper (`endSec` se estira 100-400 ms
+// hacia la siguiente oración). Para segments derivados de aeneas (id empieza
+// con `sentence-`) el `endSec` es exacto y no necesita trim. Resolución por id
+// vía `clipEndTrimForSegment` más abajo.
+const CLIP_END_TRIM_SEC_WHISPER = 0.5;
+const CLIP_END_TRIM_SEC_AENEAS = 0.0;
+function clipEndTrimForSegment(segment: AudioSegment): number {
+  return segment.id.startsWith("sentence-") ? CLIP_END_TRIM_SEC_AENEAS : CLIP_END_TRIM_SEC_WHISPER;
+}
 const CHECKPOINT_PASS_THRESHOLD = 0.8;
 
 const SUGGESTED_INTERESTS = [
@@ -978,21 +987,76 @@ function findSegmentForClip(
   clip: PracticeAudioClip | null | undefined
 ): AudioSegment | null {
   if (!storyAudio || !clip) return null;
-  if (clip.storySource !== "standalone") {
-    return findBestAudioSegmentLegacy(storyAudio.audioSegments, clip.sentence);
-  }
 
+  // Probar siempre segmentId primero: viene del sourcePath del favorite y es
+  // el match más fiable, independiente del storySource. Antes esto solo se
+  // usaba para standalone; las journey caían siempre al matching textual con
+  // overlap 0.72, que devuelve segments vecinos cuando la oración guardada
+  // no es idéntica a la alineada por aeneas, cortando audio a media frase.
   const segmentId = typeof clip.segmentId === "string" ? clip.segmentId.trim() : "";
   const exactById = segmentId
     ? storyAudio.audioSegments.find((segment) => segment.id === segmentId) ?? null
     : null;
-
   if (exactById) return exactById;
+
+  // `targetWord` es el dato más fiable: ES la palabra que el usuario está
+  // practicando, y siempre vive en exactamente la(s) oración(es) del cuerpo
+  // donde aparece. El matcher por `clip.sentence` es ruidoso porque devuelve
+  // segments adyacentes cuando el overlap textual es parcial (favoritos
+  // con definición guardada como exampleSentence, oraciones largas
+  // cortadas en varios segments aeneas, etc.). Probamos targetWord PRIMERO
+  // y solo caemos al matcher textual si la palabra no está unívocamente
+  // en un segment.
+  const byWord = findSegmentByTargetWord(storyAudio.audioSegments, clip.targetWord, clip.sentence);
+  if (byWord) return byWord;
+
+  if (clip.storySource !== "standalone") {
+    return findBestAudioSegmentLegacy(storyAudio.audioSegments, clip.sentence);
+  }
 
   return findBestAudioSegment(storyAudio.audioSegments, clip.sentence, {
     targetWord: clip.targetWord,
     mode: "strict",
   });
+}
+
+function findSegmentByTargetWord(
+  segments: AudioSegment[],
+  targetWord: string | null | undefined,
+  contextSentence?: string | null
+): AudioSegment | null {
+  const word = typeof targetWord === "string" ? targetWord.trim().toLowerCase() : "";
+  if (!word || segments.length === 0) return null;
+  // Coincidencia exacta como token suelto. Evita matches falsos cuando la
+  // palabra aparece como parte de otra ("piepen" dentro de "verpiepen").
+  const wordPattern = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}\\b`, "i");
+  const candidates: AudioSegment[] = [];
+  for (const segment of segments) {
+    const haystack = segment.normalizedText || segment.text;
+    if (haystack && wordPattern.test(haystack)) candidates.push(segment);
+  }
+  if (candidates.length === 0) return null;
+  if (candidates.length === 1) return candidates[0];
+  // Palabra repetida en varios segments: desempata por overlap con la
+  // oración guardada en el favorite. Si el contexto no ayuda, devuelve la
+  // primera ocurrencia.
+  const ctx = typeof contextSentence === "string" ? contextSentence.trim().toLowerCase() : "";
+  if (!ctx) return candidates[0];
+  const ctxTokens = new Set(ctx.split(/[^\p{L}\p{M}]+/u).filter(Boolean));
+  let best = candidates[0];
+  let bestScore = -1;
+  for (const segment of candidates) {
+    const segTokens = (segment.normalizedText || segment.text || "")
+      .toLowerCase()
+      .split(/[^\p{L}\p{M}]+/u)
+      .filter(Boolean);
+    const overlap = segTokens.filter((token) => ctxTokens.has(token)).length;
+    if (overlap > bestScore) {
+      bestScore = overlap;
+      best = segment;
+    }
+  }
+  return best;
 }
 
 function toClipPlaybackLoadedSnapshot(status: AVPlaybackStatus) {
@@ -1434,6 +1498,22 @@ function formatStreakLabel(days: number): string {
   return `${days}-day streak`;
 }
 
+function getPracticeComboTier(streak: number): 0 | 1 | 2 | 3 | 4 | 5 {
+  if (streak >= 10) return 5;
+  if (streak >= 8) return 4;
+  if (streak >= 6) return 3;
+  if (streak >= 4) return 2;
+  if (streak >= 2) return 1;
+  return 0;
+}
+
+function getPracticeComboLabel(streak: number, tier: 0 | 1 | 2 | 3 | 4 | 5): string {
+  if (tier >= 5) return `Perfect x${streak}`;
+  if (tier === 4) return `On fire x${streak}`;
+  if (tier === 3) return `Hot streak x${streak}`;
+  return `Bonus x${streak}`;
+}
+
 function normalizeLanguageSelection(items: string[]): string[] {
   const allowed = new Set(LANGUAGE_OPTIONS);
   return Array.from(new Set(items.filter((item): item is (typeof LANGUAGE_OPTIONS)[number] => allowed.has(item as never))));
@@ -1714,6 +1794,12 @@ export function MobileLibraryShell(args: {
   const [hqUrlBySentence, setHqUrlBySentence] = useState<Record<string, string>>({});
   const [practiceLastResult, setPracticeLastResult] = useState<"correct" | "wrong" | null>(null);
   const [practiceSessionStreak, setPracticeSessionStreak] = useState(0);
+  const [practiceComboToast, setPracticeComboToast] = useState<{
+    streak: number;
+    tier: 0 | 1 | 2 | 3 | 4 | 5;
+    label: string;
+  } | null>(null);
+  const [practiceComboBurstActive, setPracticeComboBurstActive] = useState(false);
   const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
   const [matchedWords, setMatchedWords] = useState<string[]>([]);
   // Tracks the most recent wrong match attempt so the UI can flash the
@@ -1733,6 +1819,14 @@ export function MobileLibraryShell(args: {
   // Restored by closePracticeSession so tapping back out of the reader after
   // a practice session returns them to where they came from, not "practice".
   const [practicePreviousScreen, setPracticePreviousScreen] = useState<MobileScreen | null>(null);
+  const { height: viewportHeight } = useWindowDimensions();
+  const practiceComboToastOpacity = useRef(new Animated.Value(0)).current;
+  const practiceComboToastScale = useRef(new Animated.Value(0.92)).current;
+  const practiceComboToastHalo = useRef(new Animated.Value(0)).current;
+  const comboToastDismissRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const comboBurstDismissRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isCompactMeaningViewport = viewportHeight < 880;
+  const isTightMeaningViewport = viewportHeight < 780;
   const [practiceReviewScores, setPracticeReviewScores] = useState<Record<string, ReviewScore>>({});
   const [practiceCheckpointToken, setPracticeCheckpointToken] = useState<string | null>(null);
   const [practiceCheckpointResponses, setPracticeCheckpointResponses] = useState<Record<string, string>>({});
@@ -1740,7 +1834,6 @@ export function MobileLibraryShell(args: {
     "idle" | "saving" | "saved" | "error"
   >("idle");
   const [practiceJourneyReviewMeta, setPracticeJourneyReviewMeta] = useState<JourneyReviewMeta | null>(null);
-  const [favoritePracticeModeKind, setFavoritePracticeModeKind] = useState<"due" | "all" | "related">("due");
   const [selectedFavoriteType, setSelectedFavoriteType] = useState<string>("all");
   const [savedBookIds, setSavedBookIds] = useState<string[]>(() =>
     CATALOG_BOOKS.map((book) => book.id).slice(0, 2)
@@ -1912,6 +2005,7 @@ export function MobileLibraryShell(args: {
   const lastAutoplayedExerciseIdRef = useRef<string | null>(null);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
+  const practiceCelebrationSoundRef = useRef<Audio.Sound | null>(null);
   // Animated values for the "session complete" celebration. Driven by
   // an effect that fires when practiceComplete flips to true; reset
   // whenever the session is closed or the round restarts.
@@ -3435,6 +3529,114 @@ export function MobileLibraryShell(args: {
   }, [journeyMilestone, journeyMilestoneAnim]);
 
   useEffect(() => {
+    if (!practiceComboToast) {
+      practiceComboToastOpacity.setValue(0);
+      practiceComboToastScale.setValue(0.92);
+      practiceComboToastHalo.setValue(0);
+      if (comboToastDismissRef.current) {
+        clearTimeout(comboToastDismissRef.current);
+        comboToastDismissRef.current = null;
+      }
+      return;
+    }
+
+    const tier = practiceComboToast.tier;
+    const pulseCount = Math.min(Math.max(tier - 1, 0), 4);
+    const holdMs = tier >= 5 ? 2200 : tier >= 4 ? 1950 : tier >= 3 ? 1750 : tier >= 2 ? 1580 : 1400;
+    const baseScale = tier >= 5 ? 1.12 : tier >= 4 ? 1.1 : tier >= 3 ? 1.08 : tier >= 2 ? 1.06 : 1.02;
+
+    practiceComboToastOpacity.setValue(0);
+    practiceComboToastScale.setValue(0.88);
+    practiceComboToastHalo.setValue(0);
+    Animated.parallel([
+      Animated.timing(practiceComboToastOpacity, {
+        toValue: 1,
+        duration: tier >= 4 ? 280 : 220,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }),
+      Animated.timing(practiceComboToastHalo, {
+        toValue: 1,
+        duration: tier >= 4 ? 320 : 240,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.sequence([
+        Animated.spring(practiceComboToastScale, {
+          toValue: baseScale,
+          friction: tier >= 4 ? 4.5 : 5.5,
+          tension: tier >= 4 ? 180 : 150,
+          useNativeDriver: true,
+        }),
+        ...Array.from({ length: pulseCount }, (_, index) =>
+          Animated.sequence([
+            Animated.timing(practiceComboToastScale, {
+              toValue: baseScale + (index === pulseCount - 1 && tier >= 5 ? 0.06 : 0.03),
+              duration: tier >= 4 ? 105 : 90,
+              easing: Easing.out(Easing.quad),
+              useNativeDriver: true,
+            }),
+            Animated.spring(practiceComboToastScale, {
+              toValue: tier >= 3 ? 1.02 : 1,
+              friction: 5.5,
+              tension: 170,
+              useNativeDriver: true,
+            }),
+          ])
+        ),
+      ]),
+    ]).start();
+
+    if (comboToastDismissRef.current) {
+      clearTimeout(comboToastDismissRef.current);
+    }
+    comboToastDismissRef.current = setTimeout(() => {
+      Animated.parallel([
+        Animated.timing(practiceComboToastOpacity, {
+          toValue: 0,
+          duration: 220,
+          easing: Easing.in(Easing.quad),
+          useNativeDriver: true,
+        }),
+        Animated.timing(practiceComboToastHalo, {
+          toValue: 0,
+          duration: 220,
+          easing: Easing.in(Easing.quad),
+          useNativeDriver: true,
+        }),
+        Animated.timing(practiceComboToastScale, {
+          toValue: 0.96,
+          duration: 220,
+          easing: Easing.in(Easing.quad),
+          useNativeDriver: true,
+        }),
+      ]).start(() => {
+        setPracticeComboToast((current) =>
+          current?.streak === practiceComboToast.streak ? null : current
+        );
+      });
+    }, holdMs);
+
+    return () => {
+      if (comboToastDismissRef.current) {
+        clearTimeout(comboToastDismissRef.current);
+        comboToastDismissRef.current = null;
+      }
+    };
+  }, [practiceComboToast, practiceComboToastHalo, practiceComboToastOpacity, practiceComboToastScale]);
+
+  useEffect(() => {
+    if (!activePracticeMode || practiceComplete) {
+      setPracticeComboToast(null);
+      setPracticeComboBurstActive(false);
+      if (comboBurstDismissRef.current) {
+        clearTimeout(comboBurstDismissRef.current);
+        comboBurstDismissRef.current = null;
+      }
+    }
+  }, [activePracticeMode, practiceComplete]);
+
+  useEffect(() => {
     let cancelled = false;
 
     async function hydrateOfflineState() {
@@ -3903,58 +4105,13 @@ export function MobileLibraryShell(args: {
       ({ item }) => (item.language ?? "").trim().toLowerCase() === activeJourneyLanguageLower
     );
   }, [favoriteCards, activeJourneyLanguageLower]);
-  // Slugs de las stories que están en el nivel actual del journey
-  // activo (primer nivel desbloqueado). Sirven como criterio para el
-  // filtro "Related" — palabras saved que viven en stories cercanas
-  // a donde el usuario está parado en el path.
-  const currentLevelStorySlugs = useMemo(() => {
-    const set = new Set<string>();
-    if (!remoteJourney?.tracks?.length) return set;
-    const variantId = getJourneyVariantFromPreferences(
-      remoteJourney.language ?? "Spanish",
-      preferences.preferredVariant,
-      preferences.preferredRegion
-    );
-    const track =
-      remoteJourney.tracks.find((t) => t.id === variantId) ?? remoteJourney.tracks[0] ?? null;
-    if (!track) return set;
-    const level = track.levels.find((l) => l.unlocked) ?? track.levels[0] ?? null;
-    if (!level) return set;
-    for (const topic of level.topics ?? []) {
-      for (const story of topic.stories ?? []) {
-        if (story.storySlug) set.add(story.storySlug);
-      }
-    }
-    return set;
-  }, [remoteJourney, preferences.preferredVariant, preferences.preferredRegion]);
   const nowMillis = useMemo(() => Date.now(), [favoriteWords]);
-  const journeyKindFilteredCards = useMemo(() => {
-    if (favoritePracticeModeKind === "due") {
-      return journeyScopedFavoriteCards.filter(({ item }) => {
-        if (!item.nextReviewAt) return false;
-        const ts = Date.parse(item.nextReviewAt);
-        return Number.isFinite(ts) && ts <= nowMillis;
-      });
-    }
-    if (favoritePracticeModeKind === "related") {
-      if (currentLevelStorySlugs.size === 0) return [];
-      return journeyScopedFavoriteCards.filter(
-        ({ item }) => item.storySlug && currentLevelStorySlugs.has(item.storySlug)
-      );
-    }
-    return journeyScopedFavoriteCards;
-  }, [
-    journeyScopedFavoriteCards,
-    favoritePracticeModeKind,
-    currentLevelStorySlugs,
-    nowMillis,
-  ]);
   const filteredFavoriteCards = useMemo(
     () =>
-      journeyKindFilteredCards.filter(({ item }) =>
+      journeyScopedFavoriteCards.filter(({ item }) =>
         selectedFavoriteType === "all" ? true : getFavoriteType(item) === selectedFavoriteType
       ),
-    [journeyKindFilteredCards, selectedFavoriteType]
+    [journeyScopedFavoriteCards, selectedFavoriteType]
   );
   // Counts mostrados en cada pill (siempre journey-scoped, sin importar
   // el tipo seleccionado, para que el usuario vea cuántas palabras hay
@@ -3967,18 +4124,6 @@ export function MobileLibraryShell(args: {
     }, 0);
   }, [journeyScopedFavoriteCards, nowMillis]);
   const journeyAllCount = journeyScopedFavoriteCards.length;
-  const journeyRelatedCount = useMemo(() => {
-    if (currentLevelStorySlugs.size === 0) return 0;
-    return journeyScopedFavoriteCards.reduce(
-      (n, { item }) =>
-        item.storySlug && currentLevelStorySlugs.has(item.storySlug) ? n + 1 : n,
-      0
-    );
-  }, [journeyScopedFavoriteCards, currentLevelStorySlugs]);
-  const showFavoriteLanguageChip = useMemo(() => {
-    const langs = new Set(favoriteWords.map((w) => w.language).filter(Boolean));
-    return langs.size > 1;
-  }, [favoriteWords]);
   const relatedPracticeCandidates = useMemo(() => {
     const base = favoriteWords.filter((item) =>
       selectedFavoriteType === "all" ? true : getFavoriteType(item) === selectedFavoriteType
@@ -5797,6 +5942,7 @@ export function MobileLibraryShell(args: {
   }
 
   function closePracticeSession() {
+    void stopAllPracticeAudio();
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
     setActivePracticeMode(null);
@@ -5857,6 +6003,7 @@ export function MobileLibraryShell(args: {
     void stopPracticeContextClip();
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
+    setPracticeComboToast(null);
     if (practiceIndex >= practiceExercises.length - 1) {
       setPracticeComplete(true);
       setPracticeRevealed(false);
@@ -5950,6 +6097,10 @@ export function MobileLibraryShell(args: {
     if (practiceTimerRemaining > 0) return;
     const current = practiceExercises[practiceIndex];
     if (!current || current.kind !== "multiple-choice") return;
+    if (practiceSelectedOption) {
+      resolvePracticeMultipleChoiceAnswer(current, practiceSelectedOption, true);
+      return;
+    }
     setPracticeRevealed(true);
     setPracticeTimedOut(true);
     setPracticeLastResult("wrong");
@@ -5977,6 +6128,7 @@ export function MobileLibraryShell(args: {
     practiceTimerRemaining,
     practiceExercises,
     practiceIndex,
+    practiceSelectedOption,
     practiceLaunchContext,
   ]);
 
@@ -6033,14 +6185,67 @@ export function MobileLibraryShell(args: {
     setPracticeSelectedOption(option);
   }
 
+  function resolvePracticeMultipleChoiceAnswer(
+    current: Extract<PracticeExercise, { kind: "multiple-choice" }>,
+    option: string,
+    timedOut = false
+  ) {
+    const isCorrect = option === current.answer;
+    setPracticeRevealed(true);
+    setPracticeTimedOut(timedOut);
+    setPracticeReviewScores((currentScores) => ({
+      ...currentScores,
+      [normalizePracticeWord(current.favorite.word)]: isCorrect ? "good" : "again",
+    }));
+    if (practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint") {
+      setPracticeCheckpointResponses((currentResponses) => ({
+        ...currentResponses,
+        [current.id]: option,
+      }));
+    }
+    if (isCorrect) {
+      setPracticeScore((value) => value + 1);
+      setPracticeLastResult("correct");
+      setPracticeSessionStreak((value) => {
+        const next = value + 1;
+        triggerPracticeComboToast(next);
+        return next;
+      });
+    } else {
+      setPracticeLastResult("wrong");
+      setPracticeSessionStreak(0);
+    }
+    void playPracticeFeedbackSound(isCorrect);
+  }
+
+  function triggerPracticeComboToast(nextStreak: number) {
+    const tier = getPracticeComboTier(nextStreak);
+    if (tier === 0) return;
+    setPracticeComboToast({
+      streak: nextStreak,
+      tier,
+      label: getPracticeComboLabel(nextStreak, tier),
+    });
+    if (comboBurstDismissRef.current) {
+      clearTimeout(comboBurstDismissRef.current);
+      comboBurstDismissRef.current = null;
+    }
+    if (tier >= 5) {
+      setPracticeComboBurstActive(true);
+      comboBurstDismissRef.current = setTimeout(() => {
+        setPracticeComboBurstActive(false);
+        comboBurstDismissRef.current = null;
+      }, 1350);
+    } else {
+      setPracticeComboBurstActive(false);
+    }
+    void playPracticeComboSound(tier);
+    void playPracticeComboHaptic(tier);
+  }
+
   async function playPracticeFeedbackSound(correct: boolean) {
     try {
-      const prev = practiceFeedbackSoundRef.current;
-      if (prev) {
-        practiceFeedbackSoundRef.current = null;
-        await prev.stopAsync().catch(() => undefined);
-        await prev.unloadAsync().catch(() => undefined);
-      }
+      await stopPracticeFeedbackSound();
       const { sound } = await Audio.Sound.createAsync(
         { uri: correct ? PRACTICE_CORRECT_SOUND_URI : PRACTICE_WRONG_SOUND_URI },
         { shouldPlay: true, volume: 0.8 }
@@ -6135,12 +6340,17 @@ export function MobileLibraryShell(args: {
    */
   async function playPracticePerfectChime() {
     try {
+      await stopPracticeCelebrationSound();
       const { sound } = await Audio.Sound.createAsync(
         { uri: PRACTICE_PERFECT_CHIME_URI },
         { shouldPlay: true, volume: 0.9 }
       );
+      practiceCelebrationSoundRef.current = sound;
       sound.setOnPlaybackStatusUpdate((status) => {
         if ("didJustFinish" in status && status.didJustFinish) {
+          if (practiceCelebrationSoundRef.current === sound) {
+            practiceCelebrationSoundRef.current = null;
+          }
           void sound.unloadAsync().catch(() => undefined);
         }
       });
@@ -6149,33 +6359,55 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  async function playPracticeComboSound(tier: 0 | 1 | 2 | 3 | 4 | 5) {
+    try {
+      await stopPracticeCelebrationSound();
+      const { sound } = await Audio.Sound.createAsync(
+        { uri: PRACTICE_PERFECT_CHIME_URI },
+        {
+          shouldPlay: true,
+          volume:
+            tier >= 5 ? 0.88 : tier >= 4 ? 0.76 : tier >= 3 ? 0.64 : tier >= 2 ? 0.54 : 0.42,
+        }
+      );
+      practiceCelebrationSoundRef.current = sound;
+      sound.setOnPlaybackStatusUpdate((status) => {
+        if ("didJustFinish" in status && status.didJustFinish) {
+          if (practiceCelebrationSoundRef.current === sound) {
+            practiceCelebrationSoundRef.current = null;
+          }
+          void sound.unloadAsync().catch(() => undefined);
+        }
+      });
+    } catch {
+      // Best-effort only.
+    }
+  }
+
+  async function playPracticeComboHaptic(tier: 0 | 1 | 2 | 3 | 4 | 5) {
+    try {
+      if (tier >= 5) {
+        await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+        return;
+      }
+      const impactStyle =
+        tier >= 4
+          ? Haptics.ImpactFeedbackStyle.Heavy
+          : tier >= 3
+            ? Haptics.ImpactFeedbackStyle.Medium
+            : Haptics.ImpactFeedbackStyle.Light;
+      await Haptics.impactAsync(impactStyle);
+    } catch {
+      // Haptics are best-effort only.
+    }
+  }
+
   function checkPracticeAnswer() {
     if (practiceRevealed || practiceComplete) return;
     const current = practiceExercises[practiceIndex];
     if (!current || current.kind !== "multiple-choice") return;
     if (!practiceSelectedOption) return;
-
-    const option = practiceSelectedOption;
-    setPracticeRevealed(true);
-    setPracticeReviewScores((currentScores) => ({
-      ...currentScores,
-      [normalizePracticeWord(current.favorite.word)]: option === current.answer ? "good" : "again",
-    }));
-    if (practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint") {
-      setPracticeCheckpointResponses((currentResponses) => ({
-        ...currentResponses,
-        [current.id]: option,
-      }));
-    }
-    if (option === current.answer) {
-      setPracticeScore((value) => value + 1);
-      setPracticeLastResult("correct");
-      setPracticeSessionStreak((value) => value + 1);
-    } else {
-      setPracticeLastResult("wrong");
-      setPracticeSessionStreak(0);
-    }
-    void playPracticeFeedbackSound(option === current.answer);
+    resolvePracticeMultipleChoiceAnswer(current, practiceSelectedOption);
   }
 
   function playPracticePrompt() {
@@ -6303,6 +6535,32 @@ export function MobileLibraryShell(args: {
     try { await sound.unloadAsync(); } catch { /* ignore */ }
   }
 
+  async function stopAndUnloadPracticeSound(
+    ref: { current: Audio.Sound | null }
+  ) {
+    const sound = ref.current;
+    ref.current = null;
+    if (!sound) return;
+    try { await sound.stopAsync(); } catch { /* ignore */ }
+    try { await sound.unloadAsync(); } catch { /* ignore */ }
+  }
+
+  async function stopPracticeFeedbackSound() {
+    await stopAndUnloadPracticeSound(practiceFeedbackSoundRef);
+  }
+
+  async function stopPracticeCelebrationSound() {
+    await stopAndUnloadPracticeSound(practiceCelebrationSoundRef);
+  }
+
+  async function stopAllPracticeAudio() {
+    await stopPracticeContextClip();
+    await stopPracticeHqClip();
+    await stopPracticeFeedbackSound();
+    await stopPracticeCelebrationSound();
+    getOptionalSpeechModule()?.stop();
+  }
+
   // Three focused helpers for the practice context buttons. Each one stops
   // the others first so only one playback is active at a time.
 
@@ -6364,6 +6622,42 @@ export function MobileLibraryShell(args: {
       hasSegmentClipUrl: !!segmentClipUrl,
       finalUrl: audioUrl ? audioUrl.slice(0, 80) : null,
     });
+    // Caemos a TTS de sistema cuando NO podemos reproducir un segment del
+    // Story con timing exacto: o no hay audioUrl resoluble, o el matcher no
+    // encontró segment dentro del story. Robot voice, sí, pero corta donde
+    // corresponde y nunca queda silencio. Ojo: este check tiene que ir ANTES
+    // del `if (!audioUrl) return;` porque historias sin audio (JourneyStory
+    // sin audioUrl, libros Sanity sin segments registrados) entran por aquí.
+    if ((!segment || !audioUrl) && clip.sentence?.trim()) {
+      const speechText = clip.sentence.trim();
+      const Speech = getOptionalSpeechModule();
+      if (!Speech) return;
+      await stopPracticeContextClip();
+      await stopPracticeHqClip();
+      Speech.stop();
+      setSpeakingPracticePromptId(currentPracticeExercise.id);
+      const fallbackLang = getSpeechSynthesisLang(clip.language);
+      Speech.speak(speechText, {
+        language: fallbackLang,
+        voice: getBestVoiceFor(fallbackLang),
+        rate: 0.92,
+        pitch: 1,
+        onDone: () =>
+          setSpeakingPracticePromptId((cur) =>
+            cur === currentPracticeExercise.id ? null : cur
+          ),
+        onStopped: () =>
+          setSpeakingPracticePromptId((cur) =>
+            cur === currentPracticeExercise.id ? null : cur
+          ),
+        onError: () =>
+          setSpeakingPracticePromptId((cur) =>
+            cur === currentPracticeExercise.id ? null : cur
+          ),
+      });
+      return;
+    }
+
     if (!audioUrl) return;
 
     await stopPracticeContextClip();
@@ -6377,11 +6671,9 @@ export function MobileLibraryShell(args: {
         allowsRecordingIOS: false,
         interruptionModeIOS: InterruptionModeIOS.DoNotMix,
       });
-      // Si tenemos segment con start/end y NO hay clipUrl directo,
-      // saltamos al inicio del segmento y paramos al final. Si no hay
-      // segment, tocamos el audio completo desde el inicio (mejor que
-      // silencio cuando el matching de oración falla pero el story
-      // sí tiene audio).
+      // Aquí siempre llegamos con segment != null (el branch sin segment ya
+      // cayó a expo-speech arriba). Mantenemos `hasSegmentRange` por si en
+      // el futuro hay clipUrl directo y queremos diferenciar.
       const hasDirectClip = Boolean(segmentClipUrl);
       const hasSegmentRange = !hasDirectClip && segment != null;
       const rawStartSec = hasDirectClip
@@ -6390,8 +6682,15 @@ export function MobileLibraryShell(args: {
           ? Math.max(0, segment.startSec - CLIP_START_PADDING_SEC)
           : 0;
       const rawEndSec = hasSegmentRange
-        ? Math.max(rawStartSec + 0.2, segment.endSec - CLIP_END_TRIM_SEC)
+        ? Math.max(rawStartSec + 0.2, segment.endSec - clipEndTrimForSegment(segment))
         : Number.NaN;
+      // Set stopAt BEFORE createAsync. createAsync starts playback as soon
+      // as it resolves, and its status callback may fire before the next
+      // line runs. If the ref is null at that moment, the stop check is
+      // skipped and the clip plays past `endSec`. Setting before guarantees
+      // the first callback after audio starts already sees the correct
+      // upper bound.
+      practiceClipStopAtMillisRef.current = hasSegmentRange ? rawEndSec * 1000 : null;
       const { sound } = await Audio.Sound.createAsync(
         { uri: audioUrl },
         { shouldPlay: true, positionMillis: Math.max(0, rawStartSec * 1000) },
@@ -6412,7 +6711,6 @@ export function MobileLibraryShell(args: {
         }
       );
       practiceClipSoundRef.current = sound;
-      practiceClipStopAtMillisRef.current = hasSegmentRange ? rawEndSec * 1000 : null;
       setPlayingPracticeClipId(currentPracticeExercise.id);
     } catch (error) {
       console.error("[mobile practice] story clip playback failed", error);
@@ -6631,8 +6929,12 @@ export function MobileLibraryShell(args: {
         : Math.max(0, segment.startSec - CLIP_START_PADDING_SEC);
       const rawEndSec = shouldUseDirectClip
         ? Number.NaN
-        : Math.max(rawStartSec + 0.2, segment.endSec - CLIP_END_TRIM_SEC);
+        : Math.max(rawStartSec + 0.2, segment.endSec - clipEndTrimForSegment(segment));
 
+      // Set stopAt before createAsync to avoid the same race documented in
+      // playPracticeContextClipStoryOnly: callback may fire before the
+      // post-await assignment, see ref=null, skip the stop check.
+      practiceClipStopAtMillisRef.current = shouldUseDirectClip ? null : rawEndSec * 1000;
       const { sound } = await Audio.Sound.createAsync(
         { uri: audioUrl },
         { shouldPlay: true, positionMillis: Math.max(0, rawStartSec * 1000) },
@@ -6654,7 +6956,6 @@ export function MobileLibraryShell(args: {
       );
 
       practiceClipSoundRef.current = sound;
-      practiceClipStopAtMillisRef.current = shouldUseDirectClip ? null : rawEndSec * 1000;
       setPlayingPracticeClipId(currentPracticeExercise.id);
     } catch (error) {
       console.error("[mobile practice] exact clip playback failed", error);
@@ -6703,7 +7004,11 @@ export function MobileLibraryShell(args: {
       setPracticeScore((value) => value + 1);
       setPracticeRevealed(true);
       setPracticeLastResult("correct");
-      setPracticeSessionStreak((value) => value + 1);
+      setPracticeSessionStreak((value) => {
+        const next = value + 1;
+        triggerPracticeComboToast(next);
+        return next;
+      });
       setPracticeReviewScores((currentScores) => {
         const nextScores = { ...currentScores };
         for (const pair of current.pairs) {
@@ -8502,9 +8807,20 @@ export function MobileLibraryShell(args: {
   // (`globalJourneyNextStoryId`, `activeJourneyTrack`, etc.) que están
   // declarados más abajo. Sin esto el "next-step CTA" del result card
   // dispararía ReferenceError por TDZ.
-  const renderPracticeSessionView = () =>
-    activePracticeMode && activePracticeCard ? (
-      <View style={styles.practiceSessionShell}>
+  const renderPracticeSessionView = () => {
+    const timerVisualColor =
+      practiceTimerRemaining <= 2 ? "#ff5f5f" : practiceTimerRemaining <= 5 ? "#ff9a57" : "#f8c15c";
+    return activePracticeMode && activePracticeCard ? (
+      <View
+        style={[
+          styles.practiceSessionShell,
+          currentPracticeExercise?.kind === "multiple-choice" &&
+          currentPracticeExercise.mode === "meaning" &&
+          isCompactMeaningViewport
+            ? styles.practiceSessionShellCompact
+            : null,
+        ]}
+      >
         <View style={styles.practiceSessionCard}>
           <View style={styles.practiceSessionHeader}>
             <Pressable onPress={requestClosePracticeSession} style={styles.practiceSessionClose}>
@@ -8514,52 +8830,101 @@ export function MobileLibraryShell(args: {
               <Text style={[styles.practiceSessionEyebrow, { color: activePracticeCard.accent }]}>
                 {activePracticeCard.eyebrow}
               </Text>
-              <Text style={styles.practiceSessionTitle}>{activePracticeCard.title}</Text>
+              <View style={styles.practiceSessionTitleRow}>
+                <Text style={styles.practiceSessionTitle}>{activePracticeCard.title}</Text>
+                {practiceComboToast ? (
+                  <Animated.View
+                    pointerEvents="none"
+                    style={[
+                      styles.practiceHeaderBonusWrap,
+                      {
+                        opacity: practiceComboToastOpacity,
+                        transform: [
+                          {
+                            translateY: practiceComboToastOpacity.interpolate({
+                              inputRange: [0, 1],
+                              outputRange: [6, 0],
+                            }),
+                          },
+                          { scale: practiceComboToastScale },
+                        ],
+                      },
+                    ]}
+                  >
+                    <Animated.View
+                      style={[
+                        styles.practiceHeaderBonusHalo,
+                        practiceComboToast.tier >= 5
+                          ? styles.practiceHeaderBonusHaloTier5
+                          : practiceComboToast.tier >= 4
+                            ? styles.practiceHeaderBonusHaloTier4
+                            : practiceComboToast.tier >= 3
+                              ? styles.practiceHeaderBonusHaloTier3
+                              : practiceComboToast.tier >= 2
+                                ? styles.practiceHeaderBonusHaloTier2
+                                : null,
+                        {
+                          opacity: practiceComboToastHalo.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [0, practiceComboToast.tier >= 5 ? 0.9 : practiceComboToast.tier >= 4 ? 0.72 : practiceComboToast.tier >= 3 ? 0.58 : 0.42],
+                          }),
+                          transform: [
+                            {
+                              scale: practiceComboToastHalo.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0.76, practiceComboToast.tier >= 5 ? 1.32 : practiceComboToast.tier >= 4 ? 1.22 : 1.1],
+                              }),
+                            },
+                          ],
+                        },
+                      ]}
+                    />
+                    <View
+                      style={[
+                        styles.practiceHeaderBonusPill,
+                        practiceComboToast.tier >= 5
+                          ? styles.practiceHeaderBonusPillTier5
+                          : practiceComboToast.tier >= 4
+                            ? styles.practiceHeaderBonusPillTier4
+                            : practiceComboToast.tier >= 3
+                              ? styles.practiceHeaderBonusPillTier3
+                              : practiceComboToast.tier >= 2
+                                ? styles.practiceHeaderBonusPillTier2
+                                : null,
+                      ]}
+                    >
+                      <MaterialCommunityIcons
+                        name={
+                          practiceComboToast.tier >= 5
+                            ? "crown"
+                            : practiceComboToast.tier >= 4
+                              ? "rocket-launch"
+                              : "fire"
+                        }
+                        size={12}
+                        color="#0a1424"
+                      />
+                      <Text style={styles.practiceHeaderBonusText}>{practiceComboToast.label}</Text>
+                    </View>
+                  </Animated.View>
+                ) : null}
+              </View>
             </View>
-            {/* Botón pausa/reanudar. Toggle del state global
-                `practicePaused`. Cuando está activo el icon es ⏸; cuando
-                pausado pasa a ▶. La pausa congela el timer, cancela el
-                auto-advance, silencia el autoplay y DETIENE cualquier
-                audio que esté sonando (TTS, Story o HQ) para que el
-                pause sea audible y no solo visual. Tap manual en
-                TTS/Story/HQ sigue funcionando para que el usuario
-                pueda escuchar tranquilo durante la pausa.
-                hitSlop generoso (10) porque el botón es chico. */}
-            <Pressable
-              onPress={() => {
-                setPracticePaused((current) => {
-                  const next = !current;
-                  if (next) {
-                    // Pausando: detener todo el audio en curso.
-                    void stopPracticeContextClip();
-                    void stopPracticeHqClip();
-                    getOptionalSpeechModule()?.stop();
-                    setSpeakingPracticePromptId(null);
-                  } else {
-                    // Despausando: el effect de autoplay no vuelve a
-                    // disparar porque su ref `lastAutoplayedExerciseIdRef`
-                    // ya tiene el id del ejercicio actual. Lo reseteamos
-                    // para que el effect detecte un "ejercicio nuevo"
-                    // y vuelva a tocar el audio. Si no, el play de un
-                    // pause/play es solo visual: barra retoma pero sin
-                    // sonido.
-                    lastAutoplayedExerciseIdRef.current = null;
-                  }
-                  return next;
-                });
-              }}
-              hitSlop={10}
-              style={styles.practiceSessionPauseButton}
-              accessibilityRole="button"
-              accessibilityLabel={practicePaused ? "qa-practice-resume" : "qa-practice-pause"}
-              testID={practicePaused ? "qa-practice-resume" : "qa-practice-pause"}
-            >
-              <Feather
-                name={practicePaused ? "play" : "pause"}
-                size={16}
-                color="#f5f7fb"
-              />
-            </Pressable>
+            {!practiceCountdownActive &&
+            !practiceComplete &&
+            !practiceLaunchLoading &&
+            currentPracticeExercise?.kind === "multiple-choice" ? (
+              <View
+                style={[
+                  styles.practiceTimerBadge,
+                  { borderColor: `${timerVisualColor}55`, backgroundColor: `${timerVisualColor}18` },
+                ]}
+              >
+                <Text style={[styles.practiceTimerBadgeText, { color: timerVisualColor }]}>
+                  {practiceTimerRemaining}s
+                </Text>
+              </View>
+            ) : null}
           </View>
 
           {/* Barra de timer del ejercicio. Solo visible mientras hay
@@ -8585,7 +8950,7 @@ export function MobileLibraryShell(args: {
                     // naranja) y chocaba feo con el azul del fondo.
                     // El amarillo `#f8c15c` es el mismo de los popups
                     // y el endOfStory.
-                    backgroundColor: practiceTimerRemaining <= 3 ? "#f87171" : "#f8c15c",
+                    backgroundColor: timerVisualColor,
                   },
                 ]}
               />
@@ -8847,56 +9212,142 @@ export function MobileLibraryShell(args: {
             </Animated.View>
           ) : currentPracticeExercise ? (
             <>
-              <View style={styles.practiceSessionMeta}>
-                <View style={styles.practiceSessionProgressWrap}>
-                  <Text style={styles.practiceSessionProgressLabel}>{practiceProgressLabel}</Text>
-                  <View style={styles.practiceSessionProgressTrack}>
-                    <View
-                      style={[
-                        styles.practiceSessionProgressBar,
-                        {
-                          width: `${((practiceIndex + 1) / Math.max(practiceExercises.length, 1)) * 100}%`,
-                          backgroundColor: activePracticeCard.accent,
-                        },
-                      ]}
-                    />
-                  </View>
-                </View>
-                <Text style={styles.practiceSessionHelper}>{currentPracticeExercise.helper}</Text>
-                <View style={styles.practiceSessionStatusRow}>
+              {currentPracticeExercise.kind === "multiple-choice" &&
+              currentPracticeExercise.mode === "meaning" ? (
+                <View
+                  style={[
+                    styles.practiceMeaningMeta,
+                    isCompactMeaningViewport ? styles.practiceMeaningMetaCompact : null,
+                  ]}
+                >
                   <View
                     style={[
-                      styles.practiceSessionStatusPill,
-                      practiceLastResult === "correct"
-                        ? styles.practiceSessionStatusPillCorrect
-                        : practiceLastResult === "wrong"
-                          ? styles.practiceSessionStatusPillWrong
-                          : null,
+                      styles.practiceMeaningProgressRow,
+                      isCompactMeaningViewport ? styles.practiceMeaningProgressRowCompact : null,
                     ]}
                   >
-                    <Text
+                    <View style={styles.practiceMeaningProgressTrack}>
+                      {Array.from({ length: Math.max(practiceExercises.length, 10) }).map((_, index) => {
+                        const isDone = index < practiceIndex + 1;
+                        const isCurrent = index === practiceIndex;
+                        return (
+                          <View
+                            key={`meaning-segment-${index}`}
+                            style={[
+                              styles.practiceMeaningProgressSegment,
+                              isCompactMeaningViewport ? styles.practiceMeaningProgressSegmentCompact : null,
+                              isDone ? styles.practiceMeaningProgressSegmentDone : null,
+                              isCurrent ? styles.practiceMeaningProgressSegmentCurrent : null,
+                            ]}
+                          />
+                        );
+                      })}
+                    </View>
+                    <View style={styles.practiceMeaningLivesRow}>
+                      {[0, 1, 2].map((heartIndex) => (
+                        <MaterialCommunityIcons
+                          key={`meaning-heart-${heartIndex}`}
+                          name="heart"
+                          size={21}
+                          color="#ffd25f"
+                        />
+                      ))}
+                    </View>
+                  </View>
+
+                  <View
+                    style={[
+                      styles.practiceMeaningBadgeRow,
+                      isCompactMeaningViewport ? styles.practiceMeaningBadgeRowCompact : null,
+                    ]}
+                  >
+                    <View
                       style={[
-                        styles.practiceSessionStatusText,
-                        practiceLastResult ? styles.practiceSessionStatusTextActive : null,
+                        styles.practiceMeaningTopicPill,
+                        isCompactMeaningViewport ? styles.practiceMeaningTopicPillCompact : null,
                       ]}
                     >
-                      {practiceLastResult === "correct"
-                        ? "Correct"
-                        : practiceTimedOut
-                          ? "Time's up!"
-                          : practiceLastResult === "wrong"
-                            ? "Try again"
-                            : "In progress"}
-                    </Text>
-                  </View>
-                  <View style={styles.practiceScorePill}>
-                    <Text style={styles.practiceScorePillText}>Streak {practiceSessionStreak}</Text>
-                  </View>
-                  <View style={styles.practiceScorePill}>
-                    <Text style={styles.practiceScorePillText}>Score {practiceScore}</Text>
+                      <View style={styles.practiceMeaningTopicDot} />
+                      <Text style={styles.practiceMeaningTopicText}>
+                        {(practiceLaunchContext.source === "journey"
+                          ? practiceLaunchContext.topicLabel
+                          : activePracticeCard.eyebrow) || "Word quest"}
+                      </Text>
+                    </View>
+                    <View style={styles.practiceMeaningStatsRight}>
+                      <View
+                        style={[
+                          styles.practiceMeaningStatPill,
+                          isCompactMeaningViewport ? styles.practiceMeaningStatPillCompact : null,
+                        ]}
+                      >
+                        <Feather name="zap" size={12} color="#ffd25f" />
+                        <Text style={styles.practiceMeaningStatText}>+{6 + practiceScore * 3}</Text>
+                      </View>
+                      <View
+                        style={[
+                          styles.practiceMeaningGemPill,
+                          isCompactMeaningViewport ? styles.practiceMeaningGemPillCompact : null,
+                        ]}
+                      >
+                        <MaterialCommunityIcons name="diamond-stone" size={12} color="#d8b4fe" />
+                        <Text style={styles.practiceMeaningGemText}>{Math.max(1, practiceSessionStreak)}</Text>
+                      </View>
+                    </View>
                   </View>
                 </View>
-              </View>
+              ) : (
+                <View style={styles.practiceSessionMeta}>
+                  <View style={styles.practiceSessionProgressWrap}>
+                    <Text style={styles.practiceSessionProgressLabel}>{practiceProgressLabel}</Text>
+                    <View style={styles.practiceSessionProgressTrack}>
+                      <View
+                        style={[
+                          styles.practiceSessionProgressBar,
+                          {
+                            width: `${((practiceIndex + 1) / Math.max(practiceExercises.length, 1)) * 100}%`,
+                            backgroundColor: activePracticeCard.accent,
+                          },
+                        ]}
+                      />
+                    </View>
+                  </View>
+                  <Text style={styles.practiceSessionHelper}>{currentPracticeExercise.helper}</Text>
+                  <View style={styles.practiceSessionStatusRow}>
+                    <View
+                      style={[
+                        styles.practiceSessionStatusPill,
+                        practiceLastResult === "correct"
+                          ? styles.practiceSessionStatusPillCorrect
+                          : practiceLastResult === "wrong"
+                            ? styles.practiceSessionStatusPillWrong
+                            : null,
+                      ]}
+                    >
+                      <Text
+                        style={[
+                          styles.practiceSessionStatusText,
+                          practiceLastResult ? styles.practiceSessionStatusTextActive : null,
+                        ]}
+                      >
+                        {practiceLastResult === "correct"
+                          ? "Correct"
+                          : practiceTimedOut
+                            ? "Time's up!"
+                            : practiceLastResult === "wrong"
+                              ? "Try again"
+                              : "In progress"}
+                      </Text>
+                    </View>
+                    <View style={styles.practiceScorePill}>
+                      <Text style={styles.practiceScorePillText}>Streak {practiceSessionStreak}</Text>
+                    </View>
+                    <View style={styles.practiceScorePill}>
+                      <Text style={styles.practiceScorePillText}>Score {practiceScore}</Text>
+                    </View>
+                  </View>
+                </View>
+              )}
 
               <ScrollView
                 style={styles.practiceExerciseScroll}
@@ -8905,6 +9356,11 @@ export function MobileLibraryShell(args: {
                   currentPracticeExercise.kind === "multiple-choice" &&
                   currentPracticeExercise.mode === "meaning"
                     ? styles.practiceExerciseScrollContentMeaning
+                    : null,
+                  currentPracticeExercise.kind === "multiple-choice" &&
+                  currentPracticeExercise.mode === "meaning" &&
+                  isCompactMeaningViewport
+                    ? styles.practiceExerciseScrollContentMeaningCompact
                     : null,
                 ]}
                 showsVerticalScrollIndicator={false}
@@ -8932,13 +9388,79 @@ export function MobileLibraryShell(args: {
                       isMeaningExercise ? styles.practiceQuestionCardMeaning : null,
                     ]}
                   >
-                    <Text style={styles.practicePrompt}>{currentPracticeExercise.prompt}</Text>
-                    {currentPracticeExercise.mode === "meaning" || currentPracticeExercise.mode === "listening" ? (
-                      <View style={styles.practiceTargetWrap}>
-                        <Text style={styles.practiceTargetLabel}>Target word</Text>
-                        <Text style={styles.practiceTargetWord}>{currentPracticeExercise.favorite.word}</Text>
+                    {isMeaningExercise ? (
+                      <View
+                        style={[
+                          styles.practiceMeaningHeroCard,
+                          isCompactMeaningViewport ? styles.practiceMeaningHeroCardCompact : null,
+                        ]}
+                      >
+                        <View
+                          style={[
+                            styles.practiceMeaningHeroTopRow,
+                            isCompactMeaningViewport ? styles.practiceMeaningHeroTopRowCompact : null,
+                          ]}
+                        >
+                          <Text
+                            style={[
+                              styles.practiceMeaningTargetWord,
+                              isCompactMeaningViewport ? styles.practiceMeaningTargetWordCompact : null,
+                            ]}
+                          >
+                            {currentPracticeExercise.favorite.word}
+                          </Text>
+                          <Pressable
+                            onPress={() => {
+                              void playPracticeContextClip();
+                            }}
+                            disabled={!currentPracticeExercise.audioClip}
+                            style={[
+                              styles.practiceMeaningAudioButton,
+                              isCompactMeaningViewport ? styles.practiceMeaningAudioButtonCompact : null,
+                              !currentPracticeExercise.audioClip ? styles.practiceMeaningAudioButtonDisabled : null,
+                            ]}
+                          >
+                            <Feather
+                              name={
+                                speakingPracticePromptId === currentPracticeExercise.id ||
+                                playingPracticeClipId === currentPracticeExercise.id
+                                  ? "square"
+                                  : "volume-2"
+                              }
+                              size={18}
+                              color={currentPracticeExercise.audioClip ? "#9fe8ff" : "rgba(159,232,255,0.35)"}
+                            />
+                          </Pressable>
+                        </View>
+                        {currentPracticeExercise.sentence ? (
+                          <View
+                            style={[
+                              styles.practiceMeaningSentenceCard,
+                              isCompactMeaningViewport ? styles.practiceMeaningSentenceCardCompact : null,
+                            ]}
+                          >
+                            <Text
+                              style={[
+                                styles.practiceMeaningSentence,
+                                isCompactMeaningViewport ? styles.practiceMeaningSentenceCompact : null,
+                              ]}
+                            >
+                              {currentPracticeExercise.sentence}
+                            </Text>
+                          </View>
+                        ) : null}
                       </View>
-                    ) : null}
+                    ) : (
+                      <>
+                        <Text style={styles.practicePrompt}>{currentPracticeExercise.prompt}</Text>
+                        {currentPracticeExercise.mode === "meaning" || currentPracticeExercise.mode === "listening" ? (
+                          <View style={styles.practiceTargetWrap}>
+                            <Text style={styles.practiceTargetLabel}>Target word</Text>
+                            <Text style={styles.practiceTargetWord}>{currentPracticeExercise.favorite.word}</Text>
+                          </View>
+                        ) : null}
+                      </>
+                    )}
                     {currentPracticeExercise.mode === "listening" ? (
                       <Pressable
                         onPress={playPracticePrompt}
@@ -8967,7 +9489,7 @@ export function MobileLibraryShell(args: {
                         </Text>
                       </Pressable>
                     ) : null}
-                    {currentPracticeExercise.audioClip ? (() => {
+                    {currentPracticeExercise.audioClip && !isMeaningExercise ? (() => {
                       const clip = currentPracticeExercise.audioClip;
                       const exId = currentPracticeExercise.id;
                       const storyActive = playingPracticeClipId === exId;
@@ -9012,7 +9534,7 @@ export function MobileLibraryShell(args: {
                         </View>
                       );
                     })() : null}
-                    {currentPracticeExercise.sentence ? (
+                    {currentPracticeExercise.sentence && !isMeaningExercise ? (
                       <Text
                         style={[
                           styles.practiceSentence,
@@ -9039,13 +9561,14 @@ export function MobileLibraryShell(args: {
                         </Text>
                       </Pressable>
                     ) : null}
-                    <View
-                      style={[
-                        styles.practiceOptions,
-                        isMeaningExercise ? styles.practiceOptionsMeaning : null,
-                      ]}
-                    >
-                      {currentPracticeExercise.options.map((option) => {
+                      <View
+                        style={[
+                          styles.practiceOptions,
+                          isMeaningExercise ? styles.practiceOptionsMeaning : null,
+                          isMeaningExercise && isCompactMeaningViewport ? styles.practiceOptionsMeaningCompact : null,
+                        ]}
+                      >
+                      {currentPracticeExercise.options.map((option, optionIndex) => {
                         const isSelected = practiceSelectedOption === option;
                         const isCorrect = practiceRevealed && option === currentPracticeExercise.answer;
                         const isWrong = practiceRevealed && isSelected && option !== currentPracticeExercise.answer;
@@ -9057,20 +9580,49 @@ export function MobileLibraryShell(args: {
                             style={[
                               styles.practiceOption,
                               isMeaningExercise ? styles.practiceOptionMeaning : null,
+                              isMeaningExercise && isCompactMeaningViewport ? styles.practiceOptionMeaningCompact : null,
+                              isMeaningExercise && isTightMeaningViewport ? styles.practiceOptionMeaningTight : null,
                               isSelected ? styles.practiceOptionSelected : null,
                               isCorrect ? styles.practiceOptionCorrect : null,
                               isWrong ? styles.practiceOptionWrong : null,
                             ]}
                           >
-                            <Text
-                              style={[
-                                styles.practiceOptionText,
-                                isMeaningExercise ? styles.practiceOptionTextMeaning : null,
-                                isCorrect || isWrong ? styles.practiceOptionTextOnAccent : null,
-                              ]}
-                            >
-                              {option}
-                            </Text>
+                            {isMeaningExercise ? (
+                              <>
+                                <View
+                                  style={[
+                                    styles.practiceMeaningOptionAccent,
+                                    optionIndex % 4 === 0
+                                      ? styles.practiceMeaningOptionAccentA
+                                      : optionIndex % 4 === 1
+                                        ? styles.practiceMeaningOptionAccentB
+                                        : optionIndex % 4 === 2
+                                          ? styles.practiceMeaningOptionAccentC
+                                          : styles.practiceMeaningOptionAccentD,
+                                  ]}
+                                />
+                                <Text
+                                  style={[
+                                    styles.practiceOptionText,
+                                    styles.practiceOptionTextMeaning,
+                                    isCompactMeaningViewport ? styles.practiceOptionTextMeaningCompact : null,
+                                    isCorrect || isWrong ? styles.practiceOptionTextOnAccent : null,
+                                  ]}
+                                >
+                                  {option}
+                                </Text>
+                              </>
+                            ) : (
+                              <Text
+                                style={[
+                                  styles.practiceOptionText,
+                                  isMeaningExercise ? styles.practiceOptionTextMeaning : null,
+                                  isCorrect || isWrong ? styles.practiceOptionTextOnAccent : null,
+                                ]}
+                              >
+                                {option}
+                              </Text>
+                            )}
                           </Pressable>
                         );
                       })}
@@ -9164,6 +9716,33 @@ export function MobileLibraryShell(args: {
                       {practiceIndex >= practiceExercises.length - 1 ? "Finish" : "Next"}
                     </Text>
                   </Pressable>
+                ) : currentPracticeExercise.kind === "multiple-choice" &&
+                  currentPracticeExercise.mode === "meaning" &&
+                  !practiceSelectedOption ? (
+                  <View
+                    style={[
+                      styles.practiceFooterButton,
+                      styles.practiceMeaningFooterIdle,
+                      isCompactMeaningViewport ? styles.practiceMeaningFooterButtonCompact : null,
+                    ]}
+                  >
+                    <Text style={styles.practiceMeaningFooterIdleText}>Pick an answer</Text>
+                  </View>
+                ) : currentPracticeExercise.kind === "multiple-choice" &&
+                  currentPracticeExercise.mode === "meaning" &&
+                  practiceSelectedOption ? (
+                  <Pressable
+                    onPress={checkPracticeAnswer}
+                    style={[
+                      styles.inlineButton,
+                      styles.primaryButton,
+                      styles.practiceFooterButton,
+                      styles.practiceMeaningFooterButton,
+                      isCompactMeaningViewport ? styles.practiceMeaningFooterButtonCompact : null,
+                    ]}
+                  >
+                    <Text style={[styles.inlineButtonText, styles.primaryButtonText, styles.practiceMeaningFooterButtonText]}>Check answer</Text>
+                  </Pressable>
                 ) : currentPracticeExercise.kind === "multiple-choice" && practiceSelectedOption ? (
                   <Pressable onPress={checkPracticeAnswer} style={[styles.inlineButton, styles.primaryButton, styles.practiceFooterButton]}>
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Check</Text>
@@ -9222,7 +9801,7 @@ export function MobileLibraryShell(args: {
             }}
           />
         ) : null}
-        <PracticeCelebration active={practicePerfectActive} />
+        <PracticeCelebration active={practicePerfectActive || practiceComboBurstActive} />
         {practiceCountdownActive ? (
           <PracticeCountdown
             accent={activePracticeCard.accent}
@@ -9231,34 +9810,52 @@ export function MobileLibraryShell(args: {
         ) : null}
       </View>
     ) : null;
+  };
 
   const favoritesView = (
     <>
       <View style={styles.favoritesHero}>
         <View style={styles.heroHeaderRow}>
-          <View style={styles.favoritesHeroTextBlock}>
-            <Text style={styles.eyebrow}>Favorites</Text>
-            <Text style={styles.favoritesHeroTitle}>
-              {activeJourney
-                ? `${activeJourney.language} vocabulary`
-                : "Saved vocabulary"}
-            </Text>
+          <View style={styles.favoritesHeroLead}>
+            <Pressable
+              onPress={() => setLanguageSwitchOpen(true)}
+              hitSlop={12}
+              style={({ pressed }) => [
+                styles.journeyHeaderFlagBadge,
+                styles.favoritesHeroFlagWrap,
+                pressed ? styles.journeyHeaderFlagBadgePressed : null,
+              ]}
+              accessibilityRole="button"
+              accessibilityLabel="Choose favorites language"
+            >
+              <LanguageFlag
+                language={activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null}
+                variant={activeJourney ? journeyFlagVariant(activeJourney) : preferences.preferredVariant}
+                size={28}
+              />
+              {(() => {
+                const lang = activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null;
+                const code = languageShortCode(lang);
+                if (!code) return null;
+                return <Text style={styles.favoritesHeroFlagCode}>{code}</Text>;
+              })()}
+              <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
+            </Pressable>
+            <View style={styles.favoritesHeroTextBlock}>
+              <Text style={styles.favoritesHeroTitle}>Favorites</Text>
+            </View>
           </View>
-          <MenuTrigger onPress={() => setMenuOpen(true)} />
+          <View style={styles.favoritesHeroMenuWrap}>
+            <MenuTrigger onPress={() => setMenuOpen(true)} />
+          </View>
         </View>
         {favoriteCards.length > 0 ? (
           <View style={styles.favoritesHeroStats}>
-            {journeyDueCount > 0 ? (
-              <View style={styles.favoritesCompactPill}>
-                <Text style={styles.favoritesCompactDueText}>{journeyDueCount} due</Text>
-              </View>
-            ) : null}
-            <View style={styles.favoritesCompactPill}>
-              <Text style={styles.favoritesCompactPillText}>{journeyAllCount} in journey</Text>
-            </View>
-            <View style={styles.favoritesCompactPill}>
-              <Text style={styles.favoritesCompactPillText}>{formatStreakLabel(Math.max(maxFavoriteStreak, 1))}</Text>
-            </View>
+            <Text style={styles.favoritesHeroStatText}>{journeyAllCount} in journey</Text>
+            <Text style={styles.favoritesHeroStatDivider}>·</Text>
+            <Text style={styles.favoritesHeroStatText}>
+              {dueFavoritesCount} {dueFavoritesCount === 1 ? "ready now" : "ready now"}
+            </Text>
           </View>
         ) : null}
       </View>
@@ -9266,63 +9863,6 @@ export function MobileLibraryShell(args: {
       {favoriteCards.length > 0 ? (
         <>
           <View style={styles.favoritesCompactBar}>
-            <View style={styles.favoritesCompactActions}>
-              {/* Pills journey-scoped: filtran la lista visible (no
-                  navegan a Practice). El botón "Practice these" abajo
-                  arranca la sesión respetando el filtro activo. */}
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoritesModePills}>
-                <Pressable
-                  onPress={() => setFavoritePracticeModeKind("due")}
-                  style={[
-                    styles.favoritesModePill,
-                    favoritePracticeModeKind === "due" ? styles.favoritesModePillActive : null,
-                  ]}
-                >
-                  <Text
-                    style={[
-                      styles.favoritesModePillText,
-                      favoritePracticeModeKind === "due" ? styles.favoritesModePillTextActive : null,
-                    ]}
-                  >
-                    Due ({journeyDueCount})
-                  </Text>
-                </Pressable>
-                <Pressable
-                  onPress={() => setFavoritePracticeModeKind("all")}
-                  style={[
-                    styles.favoritesModePill,
-                    favoritePracticeModeKind === "all" ? styles.favoritesModePillActive : null,
-                  ]}
-                >
-                  <Text
-                    style={[
-                      styles.favoritesModePillText,
-                      favoritePracticeModeKind === "all" ? styles.favoritesModePillTextActive : null,
-                    ]}
-                  >
-                    All ({journeyAllCount})
-                  </Text>
-                </Pressable>
-                {journeyRelatedCount > 0 ? (
-                  <Pressable
-                    onPress={() => setFavoritePracticeModeKind("related")}
-                    style={[
-                      styles.favoritesModePill,
-                      favoritePracticeModeKind === "related" ? styles.favoritesModePillActive : null,
-                    ]}
-                  >
-                    <Text
-                      style={[
-                        styles.favoritesModePillText,
-                        favoritePracticeModeKind === "related" ? styles.favoritesModePillTextActive : null,
-                      ]}
-                    >
-                      Related ({journeyRelatedCount})
-                    </Text>
-                  </Pressable>
-                ) : null}
-              </ScrollView>
-            </View>
             {availableFavoriteTypes.length > 2 ? (
               <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoriteFilterChips}>
                 {availableFavoriteTypes.map((type) => (
@@ -9357,26 +9897,15 @@ export function MobileLibraryShell(args: {
               Date.parse(item.nextReviewAt) <= Date.now();
             return (
             <View key={key} style={styles.favoriteCard}>
+              <View style={styles.favoriteAccentRail} />
               <View style={styles.favoriteHeader}>
                 <View style={styles.favoriteIdentity}>
                   <View style={styles.favoriteWordRow}>
                     <Text style={styles.favoriteWord}>{item.word}</Text>
-                    <View style={styles.favoriteTypeChip}>
-                      <Text style={styles.favoriteTypeChipText}>{getFavoriteTypeLabel(getFavoriteType(item))}</Text>
-                    </View>
-                    {showFavoriteLanguageChip && item.language ? (
-                      <View style={styles.favoriteTypeChip}>
-                        <Text style={styles.favoriteTypeChipText}>{item.language.toUpperCase()}</Text>
-                      </View>
-                    ) : null}
-                    <View style={[styles.favoriteTypeChip, isDue ? styles.favoriteTypeChipDue : null]}>
-                      <Text style={styles.favoriteTypeChipText}>
-                        {isDue ? "Due today" : "Scheduled"}
-                      </Text>
-                    </View>
+                    <Text style={styles.favoriteInlineType}>{getFavoriteTypeLabel(getFavoriteType(item))}</Text>
                   </View>
-                  <Text style={styles.favoriteDefinition} numberOfLines={1}>
-                    {item.translation}
+                  <Text style={styles.favoriteMeta} numberOfLines={1}>
+                    {item.storyTitle ?? item.translation ?? "Saved from reader"}
                   </Text>
                 </View>
                 <Pressable
@@ -9385,16 +9914,15 @@ export function MobileLibraryShell(args: {
                   hitSlop={12}
                   onPress={() => void removeFavoriteItem(item)}
                   style={({ pressed }) => [
-                    styles.favoriteRemove,
-                    pressed ? styles.favoriteRemovePressed : null,
+                    styles.favoriteRemoveCircle,
+                    pressed ? styles.favoriteRemoveCirclePressed : null,
                   ]}
                 >
-                  <Feather name="x" size={14} color="#f5b5b5" />
-                  <Text style={styles.favoriteRemoveText}>Remove</Text>
+                  <Feather name="x" size={16} color="rgba(219,233,255,0.48)" />
                 </Pressable>
               </View>
-              <Text style={styles.favoriteMeta} numberOfLines={1}>
-                {item.storyTitle ?? "Saved from reader"}
+              <Text style={styles.favoriteDefinition} numberOfLines={2}>
+                {item.translation}
               </Text>
               {selection ? (
                 <Pressable
@@ -9406,9 +9934,9 @@ export function MobileLibraryShell(args: {
                         offlineStoriesById.get(selection.story.id)?.localAudioUri ?? selection.story.audio,
                     })
                   }
-                  style={styles.favoriteOpenButton}
+                  style={styles.favoriteCardOverlayTap}
                 >
-                  <Text style={styles.favoriteOpenButtonText}>Open story</Text>
+                  <Text style={styles.favoriteCardOverlayTapText}>Open story</Text>
                 </Pressable>
               ) : null}
             </View>
@@ -9423,24 +9951,20 @@ export function MobileLibraryShell(args: {
                   recommendedPracticeMode,
                   false,
                   buildPracticeFavorites(itemsForPractice),
-                  favoritePracticeModeKind
+                  "all"
                 );
               }}
               style={styles.favoritesPracticeCta}
             >
               <Feather name="play-circle" size={18} color={tokenBg[1]} />
               <Text style={styles.favoritesPracticeCtaText}>
-                {`Practice these (${filteredFavoriteCards.length})`}
+                {`Practice ${filteredFavoriteCards.length} words`}
               </Text>
             </Pressable>
           ) : (
             <View style={styles.favoritesEmptyFilter}>
               <Text style={styles.favoritesEmptyFilterText}>
-                {favoritePracticeModeKind === "due"
-                  ? "Nothing due right now."
-                  : favoritePracticeModeKind === "related"
-                    ? "No saved words from your current level yet."
-                    : "No favorites match this filter."}
+                No favorites match this filter.
               </Text>
             </View>
           )}
@@ -17330,45 +17854,59 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
   favoriteCard: {
-    backgroundColor: "#14243b",
-    borderRadius: 22,
+    position: "relative",
+    backgroundColor: "#163055",
+    borderRadius: 24,
     borderWidth: 1,
-    borderColor: "#27405f",
-    padding: 12,
-    gap: 3,
+    borderColor: "rgba(67,101,148,0.34)",
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    gap: 6,
+    overflow: "hidden",
+  },
+  favoriteAccentRail: {
+    position: "absolute",
+    left: 0,
+    top: 16,
+    bottom: 16,
+    width: 4,
+    borderTopRightRadius: 999,
+    borderBottomRightRadius: 999,
+    backgroundColor: "#ffbf2f",
   },
   favoriteHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     gap: 12,
+    alignItems: "flex-start",
   },
   favoriteWordRow: {
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: "center",
+    alignItems: "baseline",
     gap: 8,
   },
   favoriteIdentity: {
     flex: 1,
-    gap: 2,
+    gap: 4,
   },
   favoriteWord: {
-    // Pure white per the user's request — the previous "#fff6d7"
-    // gave the word a yellow tint that didn't match the rest of the
-    // typography on the favorites card.
     color: "#ffffff",
-    fontSize: 20,
-    fontWeight: "800",
+    fontSize: 22,
+    fontWeight: "900",
+    letterSpacing: -0.5,
   },
   favoriteDefinition: {
-    color: "#eef4ff",
-    fontSize: 12,
-    lineHeight: 16,
+    color: "#f2f6ff",
+    fontSize: 14,
+    lineHeight: 19,
+    fontWeight: "700",
   },
   favoriteMeta: {
-    color: "#9cb0c9",
-    fontSize: 11,
-    lineHeight: 14,
+    color: "rgba(214,225,242,0.72)",
+    fontSize: 12,
+    lineHeight: 16,
+    fontStyle: "italic",
   },
   favoriteTypeChip: {
     borderRadius: 999,
@@ -17386,6 +17924,12 @@ const styles = StyleSheet.create({
     color: "#dbe9ff",
     fontSize: 11,
     fontWeight: "700",
+  },
+  favoriteInlineType: {
+    color: "rgba(214,225,242,0.52)",
+    fontSize: 12,
+    fontWeight: "800",
+    textTransform: "lowercase",
   },
   favoriteRemove: {
     alignSelf: "flex-start",
@@ -17408,6 +17952,21 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "700",
   },
+  favoriteRemoveCircle: {
+    width: 38,
+    height: 38,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+    backgroundColor: "rgba(255,255,255,0.05)",
+    alignItems: "center",
+    justifyContent: "center",
+    flexShrink: 0,
+  },
+  favoriteRemoveCirclePressed: {
+    backgroundColor: "rgba(255,255,255,0.09)",
+    borderColor: "rgba(255,255,255,0.12)",
+  },
   favoriteOpenButton: {
     alignSelf: "flex-start",
     borderRadius: 999,
@@ -17418,6 +17977,18 @@ const styles = StyleSheet.create({
   favoriteOpenButtonText: {
     color: "#14243b",
     fontSize: 13,
+    fontWeight: "800",
+  },
+  favoriteCardOverlayTap: {
+    alignSelf: "flex-start",
+    marginTop: 2,
+    borderRadius: 999,
+    paddingHorizontal: 0,
+    paddingVertical: 0,
+  },
+  favoriteCardOverlayTapText: {
+    color: "#8fc7ff",
+    fontSize: 12,
     fontWeight: "800",
   },
   favoriteMiniCard: {
@@ -17439,33 +18010,64 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   favoritesHero: {
-    gap: 8,
+    gap: 10,
     paddingTop: 8,
-    paddingBottom: 2,
+    paddingBottom: 6,
+  },
+  favoritesHeroLead: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    flex: 1,
+  },
+  favoritesHeroFlagWrap: {
+    minWidth: 0,
+    height: 42,
+    gap: 8,
+  },
+  favoritesHeroFlagCode: {
+    color: "#f5f7fb",
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 0.3,
+    textTransform: "uppercase",
   },
   favoritesHeroTextBlock: {
     flex: 1,
-    gap: 2,
   },
   favoritesHeroTitle: {
     color: "#f5f7fb",
-    fontSize: 22,
-    fontWeight: "800",
-    lineHeight: 26,
+    fontSize: 24,
+    fontWeight: "900",
+    lineHeight: 28,
+  },
+  favoritesHeroMenuWrap: {
+    marginLeft: 12,
   },
   favoritesHeroStats: {
     flexDirection: "row",
-    gap: 6,
+    alignItems: "center",
+    gap: 8,
     flexWrap: "wrap",
   },
+  favoritesHeroStatBullet: {
+    color: "#ffcf56",
+    fontSize: 14,
+    fontWeight: "900",
+    lineHeight: 16,
+  },
+  favoritesHeroStatText: {
+    color: "#edf4ff",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  favoritesHeroStatDivider: {
+    color: "rgba(219,233,255,0.38)",
+    fontSize: 14,
+    fontWeight: "900",
+  },
   favoritesCompactBar: {
-    gap: 8,
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: "#27405f",
-    backgroundColor: "#14243b",
-    paddingHorizontal: 10,
-    paddingVertical: 8,
+    gap: 12,
   },
   favoritesCompactStats: {
     flexDirection: "row",
@@ -17493,30 +18095,65 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   favoritesModePills: {
-    gap: 6,
+    paddingRight: 8,
+  },
+  favoritesModeRail: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(58,88,129,0.34)",
+    backgroundColor: "#0d2444",
+    padding: 6,
   },
   favoritesModePill: {
     borderRadius: 999,
-    borderWidth: 1,
-    borderColor: "#35506f",
-    backgroundColor: "#1a2f48",
-    paddingHorizontal: 12,
-    paddingVertical: 7,
+    minWidth: 132,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    paddingHorizontal: 18,
+    paddingVertical: 12,
   },
   favoritesModePillActive: {
-    borderColor: "#5b92ff",
-    backgroundColor: "#274b74",
+    backgroundColor: "#ffbf2f",
+    shadowColor: "#ffbf2f",
+    shadowOpacity: 0.28,
+    shadowRadius: 10,
   },
   favoritesModePillText: {
-    color: "#dbe9ff",
-    fontSize: 12,
-    fontWeight: "700",
+    color: "rgba(237,244,255,0.88)",
+    fontSize: 15,
+    fontWeight: "900",
   },
   favoritesModePillTextActive: {
-    color: "#ffffff",
+    color: "#0f223f",
+  },
+  favoritesModeCountBadge: {
+    minWidth: 24,
+    height: 24,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 7,
+  },
+  favoritesModeCountBadgeActive: {
+    backgroundColor: "rgba(15,34,63,0.14)",
+  },
+  favoritesModeCountBadgeText: {
+    color: "#edf4ff",
+    fontSize: 12,
+    fontWeight: "900",
+  },
+  favoritesModeCountBadgeTextActive: {
+    color: "#0f223f",
   },
   favoriteFilterChips: {
-    gap: 6,
+    gap: 8,
+    paddingRight: 8,
   },
   favoritesPracticeCta: {
     marginTop: 16,
@@ -17529,16 +18166,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    gap: 8,
-    paddingVertical: 14,
-    borderRadius: 16,
-    backgroundColor: tokenColor.xp,
+    gap: 10,
+    paddingVertical: 20,
+    borderRadius: 24,
+    backgroundColor: "#ffbf2f",
+    shadowColor: "#ffbf2f",
+    shadowOpacity: 0.28,
+    shadowRadius: 16,
   },
   favoritesPracticeCtaText: {
-    color: tokenBg[1],
-    fontSize: 15,
+    color: "#17253b",
+    fontSize: 16,
     fontWeight: "900",
-    letterSpacing: 0.3,
+    letterSpacing: 0.2,
   },
   favoritesEmptyFilter: {
     marginTop: 16,
@@ -17728,6 +18368,11 @@ const styles = StyleSheet.create({
     paddingTop: 32,
     paddingBottom: 22,
   },
+  practiceSessionShellCompact: {
+    paddingHorizontal: 16,
+    paddingTop: 24,
+    paddingBottom: 18,
+  },
   practiceSessionCard: {
     flex: 1,
     // Background and border removed — the practice session now lives on the
@@ -17752,6 +18397,20 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(6,16,28,0.22)",
     alignItems: "center",
     justifyContent: "center",
+  },
+  practiceTimerBadge: {
+    minWidth: 56,
+    height: 40,
+    borderRadius: 20,
+    borderWidth: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 12,
+  },
+  practiceTimerBadgeText: {
+    fontSize: 16,
+    fontWeight: "900",
+    letterSpacing: 0.2,
   },
   practiceTimerBarTrack: {
     height: 4,
@@ -17779,6 +18438,78 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 2,
   },
+  practiceSessionTitleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    minHeight: 30,
+  },
+  practiceHeaderBonusWrap: {
+    position: "relative",
+  },
+  practiceHeaderBonusHalo: {
+    position: "absolute",
+    top: -10,
+    bottom: -10,
+    left: -14,
+    right: -14,
+    borderRadius: 999,
+    backgroundColor: "#ffc93a",
+  },
+  practiceHeaderBonusHaloTier2: {
+    backgroundColor: "#ffd25f",
+  },
+  practiceHeaderBonusHaloTier3: {
+    backgroundColor: "#ffb347",
+  },
+  practiceHeaderBonusHaloTier4: {
+    backgroundColor: "#ff8a47",
+  },
+  practiceHeaderBonusHaloTier5: {
+    backgroundColor: "#ffe27a",
+  },
+  practiceHeaderBonusPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    flexShrink: 0,
+    borderRadius: 999,
+    backgroundColor: "#ffc93a",
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    shadowColor: "#ffc93a",
+    shadowOpacity: 0.28,
+    shadowRadius: 10,
+  },
+  practiceHeaderBonusPillTier2: {
+    shadowOpacity: 0.36,
+    shadowRadius: 14,
+  },
+  practiceHeaderBonusPillTier3: {
+    backgroundColor: "#ffbe43",
+    shadowColor: "#ffbe43",
+    shadowOpacity: 0.44,
+    shadowRadius: 18,
+  },
+  practiceHeaderBonusPillTier4: {
+    backgroundColor: "#ffab38",
+    shadowColor: "#ff9c36",
+    shadowOpacity: 0.56,
+    shadowRadius: 22,
+  },
+  practiceHeaderBonusPillTier5: {
+    backgroundColor: "#ffe27a",
+    shadowColor: "#ffe27a",
+    shadowOpacity: 0.68,
+    shadowRadius: 26,
+  },
+  practiceHeaderBonusText: {
+    color: "#0a1424",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 0.4,
+    textTransform: "uppercase",
+  },
   practiceSessionEyebrow: {
     color: "rgba(255,255,255,0.62)",
     fontSize: 10,
@@ -17787,6 +18518,7 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
   practiceSessionTitle: {
+    flexShrink: 1,
     color: "#ffffff",
     fontSize: 22,
     fontWeight: "900",
@@ -17855,6 +18587,151 @@ const styles = StyleSheet.create({
   },
   practiceSessionStatusTextActive: {
     color: "#f5f7fb",
+  },
+  practiceMeaningMeta: {
+    gap: 12,
+    marginBottom: 8,
+  },
+  practiceMeaningMetaCompact: {
+    gap: 10,
+    marginBottom: 4,
+  },
+  practiceMeaningProgressRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14,
+  },
+  practiceMeaningProgressRowCompact: {
+    gap: 10,
+  },
+  practiceMeaningProgressTrack: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  practiceMeaningProgressSegment: {
+    flex: 1,
+    height: 8,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.11)",
+  },
+  practiceMeaningProgressSegmentCompact: {
+    height: 6,
+  },
+  practiceMeaningProgressSegmentDone: {
+    backgroundColor: "#72f2b3",
+    shadowColor: "#72f2b3",
+    shadowOpacity: 0.45,
+    shadowRadius: 8,
+  },
+  practiceMeaningProgressSegmentCurrent: {
+    backgroundColor: "#8ff7c5",
+  },
+  practiceMeaningLivesRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  practiceMeaningBadgeRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
+  },
+  practiceMeaningBadgeRowCompact: {
+    alignItems: "flex-start",
+    gap: 10,
+  },
+  practiceMeaningTopicPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(114,242,179,0.18)",
+    backgroundColor: "rgba(42,95,118,0.42)",
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    shadowColor: "#72f2b3",
+    shadowOpacity: 0.18,
+    shadowRadius: 10,
+  },
+  practiceMeaningTopicPillCompact: {
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+  },
+  practiceMeaningTopicDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 999,
+    backgroundColor: "#72f2b3",
+    shadowColor: "#72f2b3",
+    shadowOpacity: 0.45,
+    shadowRadius: 8,
+  },
+  practiceMeaningTopicText: {
+    color: "#72f2b3",
+    fontSize: 11,
+    fontWeight: "900",
+    letterSpacing: 1.3,
+    textTransform: "uppercase",
+  },
+  practiceMeaningStatsRight: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+  practiceMeaningStatPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    borderRadius: 18,
+    backgroundColor: "rgba(255, 208, 95, 0.12)",
+    borderWidth: 1,
+    borderColor: "rgba(255, 208, 95, 0.12)",
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    shadowColor: "#ffd25f",
+    shadowOpacity: 0.28,
+    shadowRadius: 12,
+  },
+  practiceMeaningStatPillCompact: {
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+  },
+  practiceMeaningStatText: {
+    color: "#ffd25f",
+    fontSize: 18,
+    fontWeight: "900",
+    letterSpacing: 0.4,
+  },
+  practiceMeaningGemPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    borderRadius: 18,
+    backgroundColor: "rgba(154, 130, 255, 0.18)",
+    borderWidth: 1,
+    borderColor: "rgba(154, 130, 255, 0.15)",
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+  practiceMeaningGemPillCompact: {
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+  },
+  practiceMeaningGemText: {
+    color: "#d8b4fe",
+    fontSize: 16,
+    fontWeight: "900",
+  },
+  practiceMeaningComboText: {
+    color: "#0a1424",
+    fontSize: 16,
+    fontWeight: "900",
+    letterSpacing: 0.8,
+    textTransform: "uppercase",
   },
   practiceRecoveryCard: {
     gap: 8,
@@ -18062,9 +18939,14 @@ const styles = StyleSheet.create({
   practiceExerciseScrollContentMeaning: {
     paddingBottom: 72,
   },
+  practiceExerciseScrollContentMeaningCompact: {
+    paddingBottom: 24,
+  },
   practiceQuestionCardMeaning: {
-    padding: 12,
-    gap: 10,
+    backgroundColor: "transparent",
+    borderWidth: 0,
+    padding: 0,
+    gap: 16,
   },
   practiceSentenceMeaning: {
     color: "rgba(226,232,244,0.8)",
@@ -18074,17 +18956,170 @@ const styles = StyleSheet.create({
     marginVertical: 0,
   },
   practiceOptionsMeaning: {
-    gap: 6,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    gap: 14,
+  },
+  practiceOptionsMeaningCompact: {
+    gap: 10,
   },
   practiceOptionMeaning: {
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.1)",
-    paddingVertical: 10,
+    width: "48%",
+    minHeight: 148,
+    borderRadius: 22,
+    borderWidth: 1.5,
+    borderColor: "rgba(97, 146, 201, 0.26)",
+    backgroundColor: "rgba(19,54,107,0.92)",
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#020817",
+    shadowOpacity: 0.24,
+    shadowRadius: 14,
+    gap: 12,
+  },
+  practiceOptionMeaningCompact: {
+    minHeight: 126,
+    borderRadius: 20,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+  },
+  practiceOptionMeaningTight: {
+    minHeight: 112,
   },
   practiceOptionTextMeaning: {
-    fontSize: 13,
+    fontSize: 16,
+    fontWeight: "800",
+    lineHeight: 23,
+    color: "rgba(245,247,251,0.96)",
+    textAlign: "center",
+  },
+  practiceOptionTextMeaningCompact: {
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  practiceMeaningHeroCard: {
+    borderRadius: 28,
+    borderWidth: 1.5,
+    borderColor: "rgba(67,124,188,0.38)",
+    backgroundColor: "#133f7c",
+    paddingHorizontal: 22,
+    paddingVertical: 18,
+    gap: 18,
+    shadowColor: "#06111f",
+    shadowOpacity: 0.34,
+    shadowRadius: 16,
+  },
+  practiceMeaningHeroCardCompact: {
+    borderRadius: 24,
+    paddingHorizontal: 18,
+    paddingVertical: 16,
+    gap: 14,
+  },
+  practiceMeaningHeroTopRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
+  },
+  practiceMeaningHeroTopRowCompact: {
+    gap: 8,
+  },
+  practiceMeaningTargetWord: {
+    flex: 1,
+    color: "#ffffff",
+    fontSize: 34,
+    fontWeight: "900",
+    lineHeight: 38,
+    letterSpacing: -1.2,
+    textAlign: "center",
+  },
+  practiceMeaningTargetWordCompact: {
+    fontSize: 28,
+    lineHeight: 31,
+  },
+  practiceMeaningAudioButton: {
+    width: 42,
+    height: 42,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(82,160,214,0.18)",
+    borderWidth: 1,
+    borderColor: "rgba(159,232,255,0.14)",
+  },
+  practiceMeaningAudioButtonCompact: {
+    width: 38,
+    height: 38,
+  },
+  practiceMeaningAudioButtonDisabled: {
+    opacity: 0.45,
+  },
+  practiceMeaningSentenceCard: {
+    borderRadius: 20,
+    backgroundColor: "rgba(10,28,58,0.72)",
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+  },
+  practiceMeaningSentenceCardCompact: {
+    borderRadius: 18,
+    paddingHorizontal: 14,
+    paddingVertical: 13,
+  },
+  practiceMeaningSentence: {
+    color: "rgba(226,232,244,0.78)",
+    fontSize: 16,
     fontWeight: "700",
-    lineHeight: 16,
+    lineHeight: 24,
+    textAlign: "center",
+  },
+  practiceMeaningSentenceCompact: {
+    fontSize: 15,
+    lineHeight: 22,
+  },
+  practiceMeaningOptionAccent: {
+    width: 44,
+    height: 10,
+    borderRadius: 999,
+  },
+  practiceMeaningOptionAccentA: {
+    backgroundColor: "#ffd25f",
+  },
+  practiceMeaningOptionAccentB: {
+    backgroundColor: "#9fe8ff",
+  },
+  practiceMeaningOptionAccentC: {
+    backgroundColor: "#f0abfc",
+  },
+  practiceMeaningOptionAccentD: {
+    backgroundColor: "#72f2b3",
+  },
+  practiceMeaningFooterIdle: {
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+  },
+  practiceMeaningFooterIdleText: {
+    color: "rgba(226,232,244,0.34)",
+    fontSize: 15,
+    fontWeight: "900",
+    letterSpacing: 2.2,
+    textTransform: "uppercase",
+  },
+  practiceMeaningFooterButton: {
+    backgroundColor: "#ffc93a",
+    shadowColor: "#ffc93a",
+    shadowOpacity: 0.26,
+    shadowRadius: 14,
+  },
+  practiceMeaningFooterButtonCompact: {
+    paddingVertical: 14,
+    borderRadius: 16,
+  },
+  practiceMeaningFooterButtonText: {
+    color: "#0a1424",
   },
   practiceOptionTextOnAccent: {
     color: "#0a1424",

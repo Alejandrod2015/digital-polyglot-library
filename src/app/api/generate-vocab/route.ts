@@ -31,6 +31,18 @@ type DeterministicCandidate = {
   typeHint?: string;
 };
 
+type TokenSpan = {
+  normalized: string;
+  start: number;
+  end: number;
+};
+
+type SelectedRange = {
+  item: CandidateSelectionItem;
+  startToken: number;
+  endToken: number;
+};
+
 type GenerateVocabBody = {
   text?: string;
   language?: string;
@@ -452,6 +464,148 @@ function indexSelectionsInText(
   });
 }
 
+function tokenizeWordSpans(text: string): TokenSpan[] {
+  return [...text.matchAll(/[\p{L}][\p{L}\p{M}'’-]*/gu)]
+    .map((match) => {
+      const raw = match[0] ?? "";
+      const index = match.index ?? -1;
+      const normalized = normalizeToken(raw);
+      if (!normalized || index < 0) return null;
+      return {
+        normalized,
+        start: index,
+        end: index + raw.length,
+      };
+    })
+    .filter((item): item is TokenSpan => item !== null);
+}
+
+function findFirstTokenRange(
+  item: CandidateSelectionItem,
+  tokenSpans: TokenSpan[]
+): { startToken: number; endToken: number } | null {
+  const probe = item.surface ?? item.word;
+  const phraseTokens = splitWordTokens(probe);
+  if (phraseTokens.length === 0) return null;
+
+  for (let i = 0; i <= tokenSpans.length - phraseTokens.length; i += 1) {
+    let matches = true;
+    for (let j = 0; j < phraseTokens.length; j += 1) {
+      if (tokenSpans[i + j]?.normalized !== phraseTokens[j]) {
+        matches = false;
+        break;
+      }
+    }
+    if (matches) {
+      return { startToken: i, endToken: i + phraseTokens.length - 1 };
+    }
+  }
+
+  return null;
+}
+
+function locateSelectionRanges(
+  selected: CandidateSelectionItem[],
+  text: string
+): SelectedRange[] {
+  const tokenSpans = tokenizeWordSpans(text);
+  return selected
+    .map((item) => {
+      const range = findFirstTokenRange(item, tokenSpans);
+      if (!range) return null;
+      return { item, ...range };
+    })
+    .filter((entry): entry is SelectedRange => entry !== null)
+    .sort((a, b) => a.startToken - b.startToken);
+}
+
+function exceedsMaxConsecutiveHighlights(
+  ranges: SelectedRange[],
+  maxConsecutive: number
+): boolean {
+  let run = 0;
+  let previous: SelectedRange | null = null;
+
+  for (const range of ranges) {
+    if (!previous) {
+      run = 1;
+      previous = range;
+      continue;
+    }
+
+    if (range.startToken <= previous.endToken + 1) {
+      run += 1;
+    } else {
+      run = 1;
+    }
+
+    if (run > maxConsecutive) return true;
+    previous = range;
+  }
+
+  return false;
+}
+
+function buildCandidateSelectionItem(candidate: DeterministicCandidate): CandidateSelectionItem {
+  return {
+    word: candidate.word,
+    ...(candidate.typeHint ? { type: candidate.typeHint } : {}),
+  };
+}
+
+function enforceMaxConsecutiveHighlights(args: {
+  selected: CandidateSelectionItem[];
+  candidates: DeterministicCandidate[];
+  text: string;
+  maxConsecutive?: number;
+}): CandidateSelectionItem[] {
+  const maxConsecutive = args.maxConsecutive ?? 2;
+  let working = [...args.selected];
+
+  for (let pass = 0; pass < 8; pass += 1) {
+    const ranges = locateSelectionRanges(working, args.text);
+    if (!exceedsMaxConsecutiveHighlights(ranges, maxConsecutive)) break;
+
+    let runLength = 1;
+    let violationIndex = -1;
+    for (let i = 1; i < ranges.length; i += 1) {
+      if (ranges[i].startToken <= ranges[i - 1].endToken + 1) {
+        runLength += 1;
+      } else {
+        runLength = 1;
+      }
+      if (runLength > maxConsecutive) {
+        violationIndex = i;
+        break;
+      }
+    }
+
+    if (violationIndex === -1) break;
+
+    const violating = ranges[violationIndex];
+    const violatingKey = (violating.item.surface ?? violating.item.word).toLowerCase();
+    const withoutViolating = working.filter(
+      (item) => (item.surface ?? item.word).toLowerCase() !== violatingKey
+    );
+    const existingKeys = new Set(
+      withoutViolating.map((item) => (item.surface ?? item.word).toLowerCase())
+    );
+
+    const replacement = args.candidates
+      .filter((candidate) => !existingKeys.has(candidate.word.toLowerCase()))
+      .map((candidate) => buildCandidateSelectionItem(candidate))
+      .find((candidateItem) => {
+        const next = [...withoutViolating, candidateItem];
+        const nextRanges = locateSelectionRanges(next, args.text);
+        return !exceedsMaxConsecutiveHighlights(nextRanges, maxConsecutive);
+      });
+
+    working = replacement ? [...withoutViolating, replacement] : withoutViolating;
+  }
+
+  return working;
+}
+
 // After the LLM picks vocab, ensure the picks cover all THIRDS of the text.
 // If a third has 0 picks, swap the lowest-priority pick from the most-loaded
 // third for the highest-scored unselected candidate that lives in the empty
@@ -806,7 +960,13 @@ export async function POST(req: Request) {
         candidates: deterministicCandidates,
         text,
       });
-      if (selected.length > 0) {
+      const declustered = enforceMaxConsecutiveHighlights({
+        selected,
+        candidates: deterministicCandidates,
+        text,
+        maxConsecutive: 2,
+      });
+      if (declustered.length > 0) {
         vocab = await requestDefinitionsForSelection({
           text,
           language,
@@ -814,7 +974,7 @@ export async function POST(req: Request) {
           cefrLevel,
           level,
           topic,
-          selected,
+          selected: declustered,
         });
       }
     }

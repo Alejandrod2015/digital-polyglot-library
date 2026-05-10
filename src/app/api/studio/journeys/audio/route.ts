@@ -3,8 +3,9 @@ import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
+import { generateWordTimingsForStory } from "@/lib/audioWordTimings";
 
-export const maxDuration = 120;
+export const maxDuration = 300;
 
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -46,7 +47,24 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.json({ ok: true, audioUrl: result.url, audioQa: result.audioQa });
+    // Run forced alignment (aeneas via Modal) over the full mp3 + plain
+    // text. This persists `audioWordTimings` AND overwrites the whisper-
+    // derived `audioSegments` with per-sentence boundaries that match the
+    // actual end of speech. Practice clips need this precision; the karaoke
+    // reader benefits too. Best-effort: if alignment fails, we keep the
+    // whisper segments saved above so playback still works.
+    let alignmentApplied = false;
+    try {
+      await generateWordTimingsForStory(storyId);
+      alignmentApplied = true;
+    } catch (alignError) {
+      console.warn(
+        "[journeys/audio] aeneas alignment failed, keeping whisper segments:",
+        alignError instanceof Error ? alignError.message : alignError
+      );
+    }
+
+    return NextResponse.json({ ok: true, audioUrl: result.url, audioQa: result.audioQa, alignmentApplied });
   } catch (error) {
     console.error("[journeys/audio] Failed:", error);
     await prisma.journeyStory.update({ where: { id: storyId }, data: { audioStatus: "failed" } }).catch(() => {});
