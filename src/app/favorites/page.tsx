@@ -16,6 +16,7 @@ import {
   getVocabTypeLabel,
   normalizeVocabType,
 } from '@/lib/vocabTypes';
+import { MasteryBadge } from '@/components/MasteryBadge';
 
 const MIN_RELATED_PRACTICE_ITEMS = 3;
 const RELATED_PRACTICE_MAX = 20;
@@ -1006,6 +1007,11 @@ export default function FavoritesPage() {
                             {formatLanguageCode(fav.language)}
                           </span>
                         ) : null}
+                      <MasteryBadge
+                        lastReviewedAt={meta?.lastReviewedAt ?? fav.lastReviewedAt ?? null}
+                        nextReviewAt={meta?.nextReviewAt ?? fav.nextReviewAt ?? null}
+                        streak={meta?.streak ?? fav.streak ?? 0}
+                      />
                       <span
                         className={`text-[11px] px-2 py-0.5 rounded-full border ${
                           due

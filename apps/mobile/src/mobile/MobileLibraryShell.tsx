@@ -134,6 +134,7 @@ import {
   updateFavoriteReviewOnServer,
   type MobileFavoriteItem,
 } from "./vocabFavorites";
+import { getMasteryLevel } from "../../../../src/lib/mastery";
 import {
   buildMixedPracticeSession,
   buildPracticeSession,
@@ -9355,6 +9356,12 @@ export function MobileLibraryShell(args: {
               !item.nextReviewAt ||
               Number.isNaN(Date.parse(item.nextReviewAt)) ||
               Date.parse(item.nextReviewAt) <= Date.now();
+            const mastery = getMasteryLevel({
+              lastReviewedAt: item.lastReviewedAt ?? null,
+              nextReviewAt: item.nextReviewAt ?? null,
+              streak: item.streak ?? 0,
+            });
+            const masteryNumeric = mastery.level === 0 ? "Nueva" : `${mastery.level}/5`;
             return (
             <View key={key} style={styles.favoriteCard}>
               <View style={styles.favoriteHeader}>
@@ -9369,6 +9376,19 @@ export function MobileLibraryShell(args: {
                         <Text style={styles.favoriteTypeChipText}>{item.language.toUpperCase()}</Text>
                       </View>
                     ) : null}
+                    <View
+                      style={[
+                        styles.favoriteTypeChip,
+                        styles.favoriteMasteryChip,
+                        { backgroundColor: mastery.bgColor, borderColor: mastery.borderColor },
+                      ]}
+                      accessibilityLabel={`Dominio: ${mastery.label}`}
+                    >
+                      <View style={[styles.favoriteMasteryDot, { backgroundColor: mastery.color }]} />
+                      <Text style={styles.favoriteTypeChipText}>
+                        {masteryNumeric} · {mastery.label}
+                      </Text>
+                    </View>
                     <View style={[styles.favoriteTypeChip, isDue ? styles.favoriteTypeChipDue : null]}>
                       <Text style={styles.favoriteTypeChipText}>
                         {isDue ? "Due today" : "Scheduled"}
@@ -17386,6 +17406,16 @@ const styles = StyleSheet.create({
     color: "#dbe9ff",
     fontSize: 11,
     fontWeight: "700",
+  },
+  favoriteMasteryChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  favoriteMasteryDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
   },
   favoriteRemove: {
     alignSelf: "flex-start",
