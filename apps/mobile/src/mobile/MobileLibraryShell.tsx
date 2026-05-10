@@ -135,6 +135,7 @@ import {
   updateFavoriteReviewOnServer,
   type MobileFavoriteItem,
 } from "./vocabFavorites";
+import { getMasteryLevel } from "../../../../src/lib/mastery";
 import {
   buildMixedPracticeSession,
   buildPracticeSession,
@@ -9912,6 +9913,12 @@ export function MobileLibraryShell(args: {
               !item.nextReviewAt ||
               Number.isNaN(Date.parse(item.nextReviewAt)) ||
               Date.parse(item.nextReviewAt) <= Date.now();
+            const mastery = getMasteryLevel({
+              lastReviewedAt: item.lastReviewedAt ?? null,
+              nextReviewAt: item.nextReviewAt ?? null,
+              streak: item.streak ?? 0,
+            });
+            const masteryNumeric = mastery.level === 0 ? "Nueva" : `${mastery.level}/5`;
             return (
             <View key={key} style={styles.favoriteCard}>
               <View style={styles.favoriteAccentRail} />
@@ -9920,6 +9927,18 @@ export function MobileLibraryShell(args: {
                   <View style={styles.favoriteWordRow}>
                     <Text style={styles.favoriteWord}>{item.word}</Text>
                     <Text style={styles.favoriteInlineType}>{getFavoriteTypeLabel(getFavoriteType(item))}</Text>
+                    <View
+                      style={[
+                        styles.favoriteMasteryChip,
+                        { backgroundColor: mastery.bgColor, borderColor: mastery.borderColor },
+                      ]}
+                      accessibilityLabel={`Dominio: ${mastery.label}`}
+                    >
+                      <View style={[styles.favoriteMasteryDot, { backgroundColor: mastery.color }]} />
+                      <Text style={styles.favoriteMasteryText}>
+                        {masteryNumeric} · {mastery.label}
+                      </Text>
+                    </View>
                   </View>
                   <Text style={styles.favoriteMeta} numberOfLines={1}>
                     {item.storyTitle ?? item.translation ?? "Saved from reader"}
@@ -17947,6 +17966,25 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "800",
     textTransform: "lowercase",
+  },
+  favoriteMasteryChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    borderRadius: 999,
+    borderWidth: 1,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+  },
+  favoriteMasteryDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+  },
+  favoriteMasteryText: {
+    color: "#dbe9ff",
+    fontSize: 11,
+    fontWeight: "700",
   },
   favoriteRemove: {
     alignSelf: "flex-start",
