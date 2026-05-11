@@ -26,6 +26,7 @@ config({ path: ".env" });
 import { PrismaClient } from "../src/generated/prisma";
 import { books } from "../src/data/books";
 import { alignStoryAudio } from "../src/lib/audioWordTimings";
+import { correctAlignmentDrift } from "../src/lib/correctAlignmentDrift";
 
 type Args = {
   slug: string | null;
@@ -132,21 +133,34 @@ async function main() {
         storyId: story.slug,
       });
 
+      // Drift correction: aeneas a veces marca el primer token del
+      // cuerpo antes de que el narrador realmente lo pronuncie cuando
+      // la pausa post-título es larga. Detectamos el primer silencio
+      // largo con ffmpeg y, si los timestamps están adelantados,
+      // empujamos todos los tokens en bloque. Sin coste si la
+      // alineación ya estaba bien (offsetApplied = 0).
+      const { tokens: correctedTokens, offsetApplied } = await correctAlignmentDrift({
+        audioUrl: story.audioUrl,
+        tokens: payload.words,
+      });
+      const correctedPayload = { ...payload, words: correctedTokens };
+
       await prisma.catalogStoryAudioTimings.upsert({
         where: { slug: story.slug },
         create: {
           slug: story.slug,
-          audioWordTimings: payload as unknown as object,
-          audioDurationSec: payload.audioDurationSec,
+          audioWordTimings: correctedPayload as unknown as object,
+          audioDurationSec: correctedPayload.audioDurationSec,
         },
         update: {
-          audioWordTimings: payload as unknown as object,
-          audioDurationSec: payload.audioDurationSec,
+          audioWordTimings: correctedPayload as unknown as object,
+          audioDurationSec: correctedPayload.audioDurationSec,
         },
       });
 
       const elapsed = Math.round((Date.now() - t0) / 1000);
-      console.log(`${label} OK (${payload.words.length} tokens, ${elapsed}s)`);
+      const driftNote = offsetApplied > 0 ? ` drift+${offsetApplied.toFixed(2)}s` : "";
+      console.log(`${label} OK (${correctedTokens.length} tokens, ${elapsed}s${driftNote})`);
       ok += 1;
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
