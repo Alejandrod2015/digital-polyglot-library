@@ -50,7 +50,10 @@ function rowToStory(row: CatalogStoryRow): Story {
     slug: row.slug,
     title: row.title,
     text: row.text,
-    audio: row.audio,
+    // Prefer the R2-hosted audio when present; fall back to the legacy
+    // cdn.sanity.io url. The migration script populates audioUrl; setting
+    // it back to NULL is the rollback path.
+    audio: row.audioUrl ?? row.audio,
     createdAt: row.sourceCreatedAt?.toISOString(),
     updatedAt: row.sourceUpdatedAt?.toISOString(),
     cover: row.cover ?? undefined,
@@ -77,7 +80,7 @@ function rowToBook(row: CatalogBookRow, stories: CatalogStoryRow[]): Book {
     subtitle: row.subtitle ?? undefined,
     createdAt: row.sourceCreatedAt?.toISOString(),
     updatedAt: row.sourceUpdatedAt?.toISOString(),
-    cover: row.cover,
+    cover: row.coverUrl ?? row.cover,
     theme: row.theme.length > 0 ? row.theme : undefined,
     audioFolder: row.audioFolder,
     storeUrl: row.storeUrl ?? undefined,
@@ -123,12 +126,12 @@ export async function getCatalogBookMeta(
 ): Promise<{ title: string; cover: string; description: string } | null> {
   const row = await prisma.catalogBook.findUnique({
     where: { slug },
-    select: { title: true, cover: true, description: true },
+    select: { title: true, cover: true, coverUrl: true, description: true },
   });
   if (!row) return null;
   return {
     title: row.title,
-    cover: row.cover,
+    cover: row.coverUrl ?? row.cover,
     description: row.description,
   };
 }

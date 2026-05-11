@@ -541,6 +541,7 @@ model CatalogBook {
   description     String    @default("")
   subtitle        String?
   cover           String    @default("/covers/default.jpg")
+  coverUrl        String?
   theme           String[]  @default([])
   language        String
   variant         String?
@@ -576,6 +577,7 @@ model CatalogStory {
   title            String
   text             String
   audio            String    @default("")
+  audioUrl         String?
   cover            String?
   coverUrl         String?
   topic            String?
