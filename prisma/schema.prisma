@@ -53,8 +53,8 @@ model Topic {
 
   journeyTypes TopicJourneyType[]
 
-  @@map("dp_topics_v1")
   @@index([sortOrder])
+  @@map("dp_topics_v1")
 }
 
 model Language {
@@ -67,8 +67,8 @@ model Language {
 
   variants LanguageVariant[]
 
-  @@map("dp_languages_v1")
   @@index([sortOrder])
+  @@map("dp_languages_v1")
 }
 
 model LanguageVariant {
@@ -82,9 +82,9 @@ model LanguageVariant {
 
   language Language @relation(fields: [languageId], references: [id], onDelete: Cascade)
 
-  @@map("dp_language_variants_v1")
   @@unique([languageId, code])
   @@index([languageId])
+  @@map("dp_language_variants_v1")
 }
 
 model Level {
@@ -95,8 +95,8 @@ model Level {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@map("dp_levels_v1")
   @@index([sortOrder])
+  @@map("dp_levels_v1")
 }
 
 model JourneyType {
@@ -109,23 +109,23 @@ model JourneyType {
 
   topics TopicJourneyType[]
 
-  @@map("dp_journey_types_v1")
   @@index([sortOrder])
+  @@map("dp_journey_types_v1")
 }
 
 model TopicJourneyType {
-  id            String      @id @default(cuid())
+  id            String   @id @default(cuid())
   topicId       String
   journeyTypeId String
-  createdAt     DateTime    @default(now())
+  createdAt     DateTime @default(now())
 
   topic       Topic       @relation(fields: [topicId], references: [id], onDelete: Cascade)
   journeyType JourneyType @relation(fields: [journeyTypeId], references: [id], onDelete: Cascade)
 
   @@unique([topicId, journeyTypeId])
-  @@map("dp_topic_journey_types_v1")
   @@index([topicId])
   @@index([journeyTypeId])
+  @@map("dp_topic_journey_types_v1")
 }
 
 model StudioMember {
@@ -154,72 +154,72 @@ model AgentRun {
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
 
-  @@map("dp_agent_runs_v1")
   @@index([agentKind, status, createdAt])
   @@index([parentRunId])
+  @@map("dp_agent_runs_v1")
 }
 
 model CurriculumBrief {
-  id            String              @id @default(cuid())
-  language      String
-  variant       String
-  level         String
-  journeyKey    String
-  topicSlug     String
-  storySlot     Int
-  journeyFocus  String?             @default("General")
-  title         String
-  brief         Json
-  status        AgentArtifactStatus @default(draft)
-  sourceRunId   String?
-  createdAt     DateTime            @default(now())
-  updatedAt     DateTime            @updatedAt
+  id           String              @id @default(cuid())
+  language     String
+  variant      String
+  level        String
+  journeyKey   String
+  topicSlug    String
+  storySlot    Int
+  journeyFocus String?             @default("General")
+  title        String
+  brief        Json
+  status       AgentArtifactStatus @default(draft)
+  sourceRunId  String?
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
 
-  @@map("dp_curriculum_briefs_v1")
   @@index([language, variant, level])
   @@index([journeyKey, topicSlug, storySlot])
   @@index([status])
+  @@map("dp_curriculum_briefs_v1")
 }
 
 model StoryDraft {
-  id               String              @id @default(cuid())
-  briefId          String?
-  sourceStoryId    String?
-  title            String
-  slug             String?
-  text             String
-  synopsis         String?
-  vocab            Json?
-  metadata         Json?
-  status           AgentArtifactStatus @default(draft)
-  sourceRunId      String?
-  latestQaRunId    String?
-  createdAt        DateTime            @default(now())
-  updatedAt        DateTime            @updatedAt
+  id            String              @id @default(cuid())
+  briefId       String?
+  sourceStoryId String?
+  title         String
+  slug          String?
+  text          String
+  synopsis      String?
+  vocab         Json?
+  metadata      Json?
+  status        AgentArtifactStatus @default(draft)
+  sourceRunId   String?
+  latestQaRunId String?
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
 
-  @@map("dp_story_drafts_v1")
   @@index([briefId])
   @@index([sourceStoryId])
   @@index([status])
+  @@map("dp_story_drafts_v1")
 }
 
 model QAReview {
-  id                String   @id @default(cuid())
-  storyDraftId      String?
-  sourceStoryId     String?
-  sourceRunId       String?
-  status            String
-  score             Float?
-  report            Json
-  correctedText     String?
-  correctedVocab    Json?
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  id             String   @id @default(cuid())
+  storyDraftId   String?
+  sourceStoryId  String?
+  sourceRunId    String?
+  status         String
+  score          Float?
+  report         Json
+  correctedText  String?
+  correctedVocab Json?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
-  @@map("dp_qa_reviews_v1")
   @@index([storyDraftId])
   @@index([sourceStoryId])
   @@index([status, createdAt])
+  @@map("dp_qa_reviews_v1")
 }
 
 enum JourneyStatus {
@@ -239,8 +239,8 @@ model ClonedVoice {
   createdBy    String?
   createdAt    DateTime @default(now())
 
-  @@map("dp_cloned_voices_v1")
   @@index([language])
+  @@map("dp_cloned_voices_v1")
 }
 
 model Journey {
@@ -258,64 +258,64 @@ model Journey {
 
   stories JourneyStory[]
 
-  @@map("dp_journeys_v1")
   @@index([status])
   @@index([language, variant])
+  @@map("dp_journeys_v1")
 }
 
 model JourneyStory {
-  id         String              @id @default(cuid())
-  journeyId  String
-  level      String
-  topic      String
-  slotIndex  Int
-  status     AgentArtifactStatus @default(draft)
-  title      String?
-  slug       String?
-  text       String?
-  synopsis   String?
-  vocab      Json?
-  wordCount  Int?
-  vocabCount Int?
-  arcType    String?
+  id                   String              @id @default(cuid())
+  journeyId            String
+  level                String
+  topic                String
+  slotIndex            Int
+  status               AgentArtifactStatus @default(draft)
+  title                String?
+  slug                 String?
+  text                 String?
+  synopsis             String?
+  vocab                Json?
+  wordCount            Int?
+  vocabCount           Int?
+  arcType              String?
   // Dialect / heritage-learner asset metadata. All optional; backfilled by
   // the editorial workflow as content is tagged. Foundation for filtering
   // the corpus by register, cohort, or cultural variant.
-  register         String[] @default([])
-  generationCohort String?
-  culturalTags     String[] @default([])
-  voiceProvenance  Json?
-  sanityId   String?
-  coverDone     Boolean             @default(false)
-  coverUrl      String?
-  audioUrl      String?
-  audioSegments Json?
-  audioWordTimings Json?
-  audioFilename String?
-  audioStatus   String              @default("pending")
+  register             String[]            @default([])
+  generationCohort     String?
+  culturalTags         String[]            @default([])
+  voiceProvenance      Json?
+  sanityId             String?
+  coverDone            Boolean             @default(false)
+  coverUrl             String?
+  audioUrl             String?
+  audioSegments        Json?
+  audioWordTimings     Json?
+  audioFilename        String?
+  audioStatus          String              @default("pending")
   audioUrlPreview      String?
   audioFilenamePreview String?
   ambientTag           String?
   voiceId              String?
   dialogueSpec         Json?
-  audioQaStatus String?
-  audioQaScore  Float?
-  audioQaNotes  String?
+  audioQaStatus        String?
+  audioQaScore         Float?
+  audioQaNotes         String?
   // Vocabulary-level audit (LLM-as-judge against story.level CEFR).
   // Cleared whenever text is regenerated; refilled by /audit-level.
-  auditScore     Float?
-  auditOffenders Json?
-  auditedAt      DateTime?
-  error         String?
-  createdAt  DateTime            @default(now())
-  updatedAt  DateTime            @updatedAt
+  auditScore           Float?
+  auditOffenders       Json?
+  auditedAt            DateTime?
+  error                String?
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
 
   journey Journey @relation(fields: [journeyId], references: [id], onDelete: Cascade)
 
-  @@map("dp_journey_stories_v1")
+  @@unique([journeyId, level, topic, slotIndex])
   @@index([journeyId, level, topic])
   @@index([status])
-  @@unique([journeyId, level, topic, slotIndex])
+  @@map("dp_journey_stories_v1")
 }
 
 model StudioConfig {
@@ -348,23 +348,23 @@ enum BillingStatus {
 }
 
 model Favorite {
-  id          String   @id @default(cuid())
-  userId      String
-  word        String
-  translation String
-  wordType    String?
+  id              String    @id @default(cuid())
+  userId          String
+  word            String
+  translation     String
+  wordType        String?
   exampleSentence String?
-  storySlug   String?
-  storyTitle  String?
-  sourcePath  String?
-  language    String?
-  createdAt   DateTime @default(now())
-  nextReviewAt DateTime?
-  lastReviewedAt DateTime?
-  streak      Int      @default(0)
+  storySlug       String?
+  storyTitle      String?
+  sourcePath      String?
+  language        String?
+  createdAt       DateTime  @default(now())
+  nextReviewAt    DateTime?
+  lastReviewedAt  DateTime?
+  streak          Int       @default(0)
 
-  @@index([userId])
   @@unique([userId, word], name: "userId_word")
+  @@index([userId])
 }
 
 model LibraryBook {
@@ -375,8 +375,8 @@ model LibraryBook {
   coverUrl  String
   createdAt DateTime @default(now())
 
-  @@index([userId])
   @@unique([userId, bookId], name: "userId_bookId")
+  @@index([userId])
 }
 
 model LibraryStory {
@@ -388,8 +388,8 @@ model LibraryStory {
   bookId    String
   createdAt DateTime @default(now())
 
-  @@index([userId])
   @@unique([userId, storyId], name: "userId_storyId")
+  @@index([userId])
 }
 
 // Word-level audio alignments for stories that live in the static
@@ -416,11 +416,11 @@ model ClaimToken {
   createdAt      DateTime  @default(now())
   expiresAt      DateTime?
 
-  @@map("dp_claim_tokens_v1")
   @@index([buyerEmail])
   @@index([recipientEmail])
   @@index([redeemedBy])
   @@index([createdAt])
+  @@map("dp_claim_tokens_v1")
 }
 
 model UserStory {
@@ -446,60 +446,60 @@ model UserStory {
   coverFilename String?
   createdAt     DateTime @default(now())
 
-  @@map("dp_user_stories_v1")
   @@index([userId])
   @@index([createdAt])
+  @@map("dp_user_stories_v1")
 }
 
 model UserMetric {
-  id         String   @id @default(cuid())
-  userId     String
-  bookSlug   String?
-  storySlug  String
-  eventType  String   // "audio_play", "audio_pause", "audio_complete", "scroll", etc.
-  value      Float?
-  metadata   Json?
-  createdAt  DateTime @default(now())
+  id        String   @id @default(cuid())
+  userId    String
+  bookSlug  String?
+  storySlug String
+  eventType String // "audio_play", "audio_pause", "audio_complete", "scroll", etc.
+  value     Float?
+  metadata  Json?
+  createdAt DateTime @default(now())
 
-  @@map("dp_user_metrics_v1")
   @@index([userId])
   @@index([storySlug])
   @@index([createdAt])
   @@index([userId, eventType, createdAt])
   @@index([userId, storySlug, createdAt])
+  @@map("dp_user_metrics_v1")
 }
 
 model ContinueListeningEntry {
-  id           String   @id @default(cuid())
-  userId       String
-  bookSlug     String
-  storySlug    String
-  progressSec  Int?
+  id               String   @id @default(cuid())
+  userId           String
+  bookSlug         String
+  storySlug        String
+  progressSec      Int?
   audioDurationSec Int?
-  lastPlayedAt DateTime @default(now())
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  lastPlayedAt     DateTime @default(now())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
-  @@map("dp_continue_listening_v1")
   @@unique([userId, bookSlug, storySlug], name: "userId_bookSlug_storySlug")
   @@index([userId])
   @@index([lastPlayedAt])
   @@index([userId, lastPlayedAt])
+  @@map("dp_continue_listening_v1")
 }
 
 model WeeklyMetricsSnapshot {
-  id             String   @id @default(cuid())
-  weekStart      DateTime
-  weekEnd        DateTime
-  totalPlays     Int
-  totalCompletions Int
+  id                String   @id @default(cuid())
+  weekStart         DateTime
+  weekEnd           DateTime
+  totalPlays        Int
+  totalCompletions  Int
   avgCompletionRate Float
-  avgDuration    Float?
-  createdAt      DateTime @default(now())
+  avgDuration       Float?
+  createdAt         DateTime @default(now())
 
-  @@map("dp_weekly_metrics_v1")
   @@index([weekStart])
   @@index([weekEnd])
+  @@map("dp_weekly_metrics_v1")
 }
 
 model BillingEntitlement {
@@ -522,8 +522,82 @@ model BillingEntitlement {
   createdAt              DateTime      @default(now())
   updatedAt              DateTime      @updatedAt
 
-  @@map("dp_billing_entitlements_v1")
   @@index([source, status])
   @@index([expiresAt])
   @@index([productId])
+  @@map("dp_billing_entitlements_v1")
+}
+
+// Public catalog: target of the Sanity -> Studio migration.
+// Each row mirrors a Book / Story from src/data/books (which itself mirrors
+// the Sanity dataset). Treated as read-only from app code; writes happen via
+// the scripts/migrateBookToStudioCatalog.ts ETL only.
+//
+// `id` is the slug (stable, human-readable) so the ETL can upsert by id.
+model CatalogBook {
+  id              String    @id
+  slug            String    @unique
+  title           String
+  description     String    @default("")
+  subtitle        String?
+  cover           String    @default("/covers/default.jpg")
+  theme           String[]  @default([])
+  language        String
+  variant         String?
+  region          String?
+  level           String
+  cefrLevel       String?
+  topic           String?
+  formality       String?
+  audioFolder     String    @default("")
+  storeUrl        String?
+  published       Boolean   @default(true)
+  sourceCreatedAt DateTime?
+  sourceUpdatedAt DateTime?
+  migratedFrom    String?
+  sanityId        String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  stories CatalogStory[]
+
+  @@index([language, level])
+  @@index([published])
+  @@map("dp_catalog_books_v1")
+}
+
+// `id` is composed as `${bookId}:${storySlug}` so two books can share story
+// slugs without collision, and so upserts are idempotent against the source.
+model CatalogStory {
+  id               String    @id
+  bookId           String
+  slug             String
+  position         Int
+  title            String
+  text             String
+  audio            String    @default("")
+  cover            String?
+  coverUrl         String?
+  topic            String?
+  tags             String[]  @default([])
+  vocab            Json?
+  language         String?
+  variant          String?
+  region           String?
+  level            String?
+  cefrLevel        String?
+  formality        String?
+  overrideMetadata Boolean   @default(false)
+  sourceCreatedAt  DateTime?
+  sourceUpdatedAt  DateTime?
+  migratedFrom     String?
+  sanityId         String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  book CatalogBook @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  @@unique([bookId, slug])
+  @@index([bookId, position])
+  @@map("dp_catalog_stories_v1")
 }

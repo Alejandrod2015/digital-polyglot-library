@@ -1,12 +1,25 @@
 // /src/lib/books.ts
 import { client as sanityClient } from "@/sanity/lib/client";
 import { resolvePublicMediaUrl } from "@/lib/publicMedia";
+import { getCatalogBookMeta } from "@/lib/catalog";
+import { shouldReadBookFromStudio } from "@/lib/featureFlags";
 
 /**
  * Obtiene los metadatos de un libro desde Sanity por su slug.
  * Se usa tanto en /api/claim/[token]/route.ts como en /lib/email.ts.
  */
 export async function getBookMeta(slug: string) {
+  if (shouldReadBookFromStudio(slug)) {
+    const meta = await getCatalogBookMeta(slug);
+    if (meta) {
+      return {
+        title: meta.title,
+        cover: resolvePublicMediaUrl(meta.cover) ?? meta.cover,
+        description: meta.description,
+      };
+    }
+  }
+
   try {
     const query = `*[_type == "book" && slug.current == $slug][0]{
       title,
@@ -57,6 +70,11 @@ export async function getBookMeta(slug: string) {
  * Devuelve solo el título (por eficiencia), útil para emails.
  */
 export async function getBookTitle(slug: string): Promise<string> {
+  if (shouldReadBookFromStudio(slug)) {
+    const meta = await getCatalogBookMeta(slug);
+    if (meta) return meta.title;
+  }
+
   try {
     const query = `*[_type == "book" && slug.current == $slug][0]{ title }`;
     const book = await sanityClient.fetch<{ title?: string } | null>(query, { slug });

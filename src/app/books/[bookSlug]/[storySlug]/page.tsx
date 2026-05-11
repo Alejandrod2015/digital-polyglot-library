@@ -20,6 +20,8 @@ import {
 import { canAccessStoryContent } from "@domain/access";
 import { getLockedStoryPreviewHtml } from "@domain/lockedStoryPreview";
 import { freshClient } from "@/sanity/lib/client";
+import { getCatalogStory } from "@/lib/catalog";
+import { shouldReadBookFromStudio } from "@/lib/featureFlags";
 import type { Book, Story } from "@/types/books";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
@@ -123,9 +125,12 @@ async function getLiveBookStory(bookSlug: string, storySlug: string): Promise<Li
 export default async function StoryPage({ params, searchParams }: StoryPageProps) {
   const { bookSlug, storySlug } = await params;
   const { returnTo, returnLabel, from } = await searchParams;
-  const staticBook = Object.values(books).find((b) => b.slug === bookSlug);
-  const staticStory = staticBook?.stories.find((s) => s.slug === storySlug);
-  const shouldTryLive = process.env.NODE_ENV !== "production";
+  const studio = shouldReadBookFromStudio(bookSlug)
+    ? await getCatalogStory(bookSlug, storySlug)
+    : null;
+  const staticBook = studio?.book ?? Object.values(books).find((b) => b.slug === bookSlug);
+  const staticStory = studio?.story ?? staticBook?.stories.find((s) => s.slug === storySlug);
+  const shouldTryLive = !studio && process.env.NODE_ENV !== "production";
   const live = shouldTryLive && (!staticBook || !staticStory || (!staticStory.cover && !staticStory.coverUrl))
     ? await getLiveBookStory(bookSlug, storySlug)
     : null;
