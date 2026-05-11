@@ -81,14 +81,4 @@ export const structure: StructureResolver = (S) =>
         .schemaType("standaloneStory")
         .child(S.documentTypeList("standaloneStory").title("All Individual Stories")),
 
-      S.divider(),
-
-      S.listItem()
-        .title("📅 Story Scheduler")
-        .child(
-          S.document()
-            .schemaType("storyScheduler")
-            .documentId("storyScheduler")
-            .title("Story Scheduler")
-        ),
     ]);
