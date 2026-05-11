@@ -1102,7 +1102,7 @@ function DialoguePanel({
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ fontSize: 12, color: "var(--muted)" }}>
-          Multi-voz: detecta personajes en el texto, asigna una voz a cada uno, guarda y "Regenerar" usa el casting automáticamente.
+          Multi-voz: detecta personajes en el texto, asigna una voz a cada uno, guarda y &ldquo;Regenerar&rdquo; usa el casting automáticamente.
         </div>
         <button onClick={() => setAdvanced((v) => !v)} style={{ ...btnSmall, fontSize: 11 }}>
           {advanced ? "Volver al modo casting" : "Modo avanzado (JSON)"}
@@ -1374,7 +1374,7 @@ function ClonedVoicesSection({
                 <div key={v.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: 8, borderRadius: 6, border: "1px solid var(--card-border)" }}>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontWeight: 600, fontSize: 13 }}>{v.name} <span style={{ color: "var(--muted)", fontWeight: 400 }}>· {v.language}{v.region ? ` (${v.region})` : ""} · {v.gender === "m" ? "M" : "F"}</span></div>
-                    <div style={{ fontSize: 11, color: "var(--muted)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }} title={v.refText}>"{v.refText}"</div>
+                    <div style={{ fontSize: 11, color: "var(--muted)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }} title={v.refText}>&ldquo;{v.refText}&rdquo;</div>
                   </div>
                   <code style={{ fontSize: 10, color: "var(--muted)" }}>f5/{v.id}</code>
                   <button onClick={() => void remove(v.id, v.name)} style={btnSmall}>Borrar</button>

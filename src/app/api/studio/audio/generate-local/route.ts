@@ -201,7 +201,7 @@ export async function POST(request: Request) {
   // Resolve the chosen voice. If voiceId starts with "f5/", look it up in ClonedVoice;
   // otherwise look it up in the static catalog. Default by language if unset.
   const chosenVoiceId = story.voiceId || DEFAULT_VOICE_BY_LANGUAGE[langKey] || null;
-  let resolvedVoiceId = chosenVoiceId;
+  const resolvedVoiceId = chosenVoiceId;
   let refAudioPath: string | null = null;
   let refText: string | null = null;
 
