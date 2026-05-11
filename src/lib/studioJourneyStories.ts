@@ -1,5 +1,16 @@
-import { randomUUID } from "crypto";
-import { rawServerClient, writeClient } from "@/sanity/lib/client";
+// /src/lib/studioJourneyStories.ts
+//
+// Studio Next.js editor surface for journey-eligible standalone stories.
+// Originally backed by Sanity `standaloneStory`; now reads and writes
+// directly against Prisma `StandaloneStory` after the Sanity -> Studio
+// cutover. The public API (types and functions) is preserved so the
+// existing UI components, API routes, and agent tools keep working.
+//
+// "draft" semantics from Sanity Studio do not map cleanly to Prisma; we
+// expose `hasDraft = false` and `hasPublished = true` for every row.
+
+import { prisma } from "@/lib/prisma";
+import type { Prisma, StandaloneStory } from "@/generated/prisma";
 import { JOURNEY_FOCUS_OPTIONS, type JourneyFocus } from "@/lib/onboarding";
 import { getJourneyCurriculumPlans } from "@/lib/journeyCurriculumSource";
 
@@ -39,45 +50,6 @@ export type StudioJourneyStory = {
   audioDeliveryQaNotes: string;
   audioDeliveryQaCheckedAt: string;
   updatedAt: string;
-};
-
-type SanityJourneyStoryDoc = {
-  _id: string;
-  _updatedAt?: string;
-  title?: string;
-  slug?: { current?: string };
-  synopsis?: string;
-  text?: string;
-  vocabRaw?: string;
-  coverUrl?: string;
-  audioUrl?: string;
-  language?: string;
-  variant?: string;
-  region_es?: string;
-  region_en?: string;
-  region_de?: string;
-  region_fr?: string;
-  region_it?: string;
-  region_pt?: string;
-  cefrLevel?: string;
-  topic?: string;
-  focus?: string;
-  journeyTopic?: string;
-  journeyOrder?: number;
-  journeyFocus?: string;
-  journeyEligible?: boolean;
-  published?: boolean;
-  storyVocabQualityRaw?: string;
-  vocabValidationRaw?: string;
-  audioQaStatus?: string;
-  audioQaScore?: number;
-  audioQaNotes?: string;
-  audioQaTranscript?: string;
-  audioQaCheckedAt?: string;
-  audioDeliveryQaStatus?: string;
-  audioDeliveryQaScore?: number;
-  audioDeliveryQaNotes?: string;
-  audioDeliveryQaCheckedAt?: string;
 };
 
 export type JourneyStoryPatch = {
@@ -120,159 +92,73 @@ export type JourneyCoverageGap = {
   existingStories: number;
 };
 
-function baseId(id: string): string {
-  return id.replace(/^drafts\./, "");
-}
-
-function regionFromDoc(doc: SanityJourneyStoryDoc): string {
-  return (
-    doc.region_es ??
-    doc.region_en ??
-    doc.region_de ??
-    doc.region_fr ??
-    doc.region_it ??
-    doc.region_pt ??
-    ""
-  );
-}
-
-function toStudioStory(
-  id: string,
-  draftDoc: SanityJourneyStoryDoc | undefined,
-  publishedDoc: SanityJourneyStoryDoc | undefined
-): StudioJourneyStory {
-  const active = draftDoc ?? publishedDoc;
+function toStudioStory(row: StandaloneStory): StudioJourneyStory {
   return {
-    id,
-    documentId: id,
-    draftId: `drafts.${id}`,
-    hasDraft: Boolean(draftDoc),
-    hasPublished: Boolean(publishedDoc),
-    title: active?.title ?? "",
-    slug: active?.slug?.current ?? "",
-    synopsis: active?.synopsis ?? "",
-    text: active?.text ?? "",
-    vocabRaw: active?.vocabRaw ?? "",
-    coverUrl: active?.coverUrl ?? "",
-    audioUrl: active?.audioUrl ?? "",
-    language: active?.language ?? "spanish",
-    variant: active?.variant ?? "latam",
-    region: active ? regionFromDoc(active) : "",
-    cefrLevel: active?.cefrLevel ?? "a1",
-    topic: active?.topic ?? "",
-    languageFocus: active?.focus ?? "mixed",
-    journeyTopic: active?.journeyTopic ?? "",
+    id: row.id,
+    documentId: row.id,
+    draftId: `drafts.${row.id}`,
+    hasDraft: false,
+    hasPublished: true,
+    title: row.title ?? "",
+    slug: row.slug ?? "",
+    synopsis: row.synopsis ?? "",
+    text: row.text ?? "",
+    vocabRaw: row.vocabRaw ?? "",
+    coverUrl: row.coverUrl ?? row.cover ?? "",
+    audioUrl: row.audioUrl ?? row.audio ?? "",
+    language: row.language ?? "spanish",
+    variant: row.variant ?? "latam",
+    region: row.region ?? "",
+    cefrLevel: row.cefrLevel ?? "a1",
+    topic: row.topic ?? "",
+    languageFocus: row.focus ?? "mixed",
+    journeyTopic: row.journeyTopic ?? "",
     journeyOrder:
-      typeof active?.journeyOrder === "number" && Number.isFinite(active.journeyOrder)
-        ? active.journeyOrder
+      typeof row.journeyOrder === "number" && Number.isFinite(row.journeyOrder)
+        ? row.journeyOrder
         : null,
-    journeyFocus: active?.journeyFocus ?? "General",
-    journeyEligible: Boolean(active?.journeyEligible ?? true),
-    published: Boolean(active?.published ?? false),
-    storyVocabQualityRaw: active?.storyVocabQualityRaw ?? "",
-    vocabValidationRaw: active?.vocabValidationRaw ?? "",
-    audioQaStatus: active?.audioQaStatus ?? "",
+    journeyFocus: row.journeyFocus ?? "General",
+    journeyEligible: Boolean(row.journeyEligible),
+    published: Boolean(row.published),
+    storyVocabQualityRaw: row.storyVocabQualityRaw ?? "",
+    vocabValidationRaw: row.vocabValidationRaw ?? "",
+    audioQaStatus: row.audioQaStatus ?? "",
     audioQaScore:
-      typeof active?.audioQaScore === "number" && Number.isFinite(active.audioQaScore)
-        ? active.audioQaScore
+      typeof row.audioQaScore === "number" && Number.isFinite(row.audioQaScore)
+        ? row.audioQaScore
         : null,
-    audioQaNotes: active?.audioQaNotes ?? "",
-    audioQaTranscript: active?.audioQaTranscript ?? "",
-    audioQaCheckedAt: active?.audioQaCheckedAt ?? "",
-    audioDeliveryQaStatus: active?.audioDeliveryQaStatus ?? "",
+    audioQaNotes: row.audioQaNotes ?? "",
+    audioQaTranscript: row.audioQaTranscript ?? "",
+    audioQaCheckedAt: row.audioQaCheckedAt?.toISOString() ?? "",
+    audioDeliveryQaStatus: row.audioDeliveryQaStatus ?? "",
     audioDeliveryQaScore:
-      typeof active?.audioDeliveryQaScore === "number" && Number.isFinite(active.audioDeliveryQaScore)
-        ? active.audioDeliveryQaScore
+      typeof row.audioDeliveryQaScore === "number" && Number.isFinite(row.audioDeliveryQaScore)
+        ? row.audioDeliveryQaScore
         : null,
-    audioDeliveryQaNotes: active?.audioDeliveryQaNotes ?? "",
-    audioDeliveryQaCheckedAt: active?.audioDeliveryQaCheckedAt ?? "",
-    updatedAt: active?._updatedAt ?? "",
+    audioDeliveryQaNotes: row.audioDeliveryQaNotes ?? "",
+    audioDeliveryQaCheckedAt: row.audioDeliveryQaCheckedAt?.toISOString() ?? "",
+    updatedAt: row.updatedAt.toISOString(),
   };
 }
 
-function regionFieldForLanguage(language: string): string {
-  switch (language) {
-    case "english":
-      return "region_en";
-    case "german":
-      return "region_de";
-    case "french":
-      return "region_fr";
-    case "italian":
-      return "region_it";
-    case "portuguese":
-      return "region_pt";
-    case "spanish":
-    default:
-      return "region_es";
-  }
+function journeyWhere(): Prisma.StandaloneStoryWhereInput {
+  return {
+    OR: [
+      { journeyEligible: true },
+      { journeyTopic: { not: null } },
+      { journeyOrder: { not: null } },
+      { journeyFocus: { not: null } },
+    ],
+  };
 }
 
 export async function listStudioJourneyStories(): Promise<StudioJourneyStory[]> {
-  const docs = await rawServerClient.fetch<SanityJourneyStoryDoc[]>(`
-    *[
-      _type == "standaloneStory" &&
-      (
-        journeyEligible == true ||
-        defined(journeyTopic) ||
-        defined(journeyOrder) ||
-        defined(journeyFocus)
-      )
-    ] | order(_updatedAt desc) {
-      _id,
-      _updatedAt,
-      title,
-      slug,
-      synopsis,
-      text,
-      vocabRaw,
-      coverUrl,
-      audioUrl,
-      language,
-      variant,
-      region_es,
-      region_en,
-      region_de,
-      region_fr,
-      region_it,
-      region_pt,
-      cefrLevel,
-      topic,
-      focus,
-      journeyTopic,
-      journeyOrder,
-      journeyFocus,
-      journeyEligible,
-      published,
-      storyVocabQualityRaw,
-      vocabValidationRaw,
-      audioQaStatus,
-      audioQaScore,
-      audioQaNotes,
-      audioQaTranscript,
-      audioQaCheckedAt,
-      audioDeliveryQaStatus,
-      audioDeliveryQaScore,
-      audioDeliveryQaNotes,
-      audioDeliveryQaCheckedAt
-    }
-  `);
-
-  const merged = new Map<
-    string,
-    { draftDoc?: SanityJourneyStoryDoc; publishedDoc?: SanityJourneyStoryDoc }
-  >();
-
-  for (const doc of docs) {
-    const id = baseId(doc._id);
-    const current = merged.get(id) ?? {};
-    if (doc._id.startsWith("drafts.")) current.draftDoc = doc;
-    else current.publishedDoc = doc;
-    merged.set(id, current);
-  }
-
-  return Array.from(merged.entries())
-    .map(([id, row]) => toStudioStory(id, row.draftDoc, row.publishedDoc))
+  const rows = await prisma.standaloneStory.findMany({
+    where: journeyWhere(),
+    orderBy: [{ updatedAt: "desc" }],
+  });
+  return rows
+    .map(toStudioStory)
     .sort((a, b) => {
       const orderA = a.journeyOrder ?? Number.MAX_SAFE_INTEGER;
       const orderB = b.journeyOrder ?? Number.MAX_SAFE_INTEGER;
@@ -296,186 +182,100 @@ export async function listStudioJourneyStoriesForVariant(
 }
 
 export async function getStudioJourneyStory(id: string): Promise<StudioJourneyStory | null> {
-  const docs = await rawServerClient.fetch<SanityJourneyStoryDoc[]>(
-    `
-    *[
-      _type == "standaloneStory" &&
-      (_id == $publishedId || _id == $draftId)
-    ] {
-      _id,
-      _updatedAt,
-      title,
-      slug,
-      synopsis,
-      text,
-      vocabRaw,
-      coverUrl,
-      audioUrl,
-      language,
-      variant,
-      region_es,
-      region_en,
-      region_de,
-      region_fr,
-      region_it,
-      region_pt,
-      cefrLevel,
-      topic,
-      focus,
-      journeyTopic,
-      journeyOrder,
-      journeyFocus,
-      journeyEligible,
-      published,
-      storyVocabQualityRaw,
-      vocabValidationRaw,
-      audioQaStatus,
-      audioQaScore,
-      audioQaNotes,
-      audioQaTranscript,
-      audioQaCheckedAt,
-      audioDeliveryQaStatus,
-      audioDeliveryQaScore,
-      audioDeliveryQaNotes,
-      audioDeliveryQaCheckedAt
-    }
-  `,
-    { publishedId: id, draftId: `drafts.${id}` }
-  );
+  const row = await prisma.standaloneStory.findUnique({ where: { id } });
+  return row ? toStudioStory(row) : null;
+}
 
-  if (!docs.length) return null;
-  const draftDoc = docs.find((doc) => doc._id.startsWith("drafts."));
-  const publishedDoc = docs.find((doc) => !doc._id.startsWith("drafts."));
-  return toStudioStory(id, draftDoc, publishedDoc);
+function patchToData(patch: JourneyStoryPatch): Prisma.StandaloneStoryUpdateInput {
+  const data: Prisma.StandaloneStoryUpdateInput = {};
+  if (patch.title !== undefined) data.title = patch.title;
+  if (patch.slug !== undefined) data.slug = patch.slug;
+  if (patch.synopsis !== undefined) data.synopsis = patch.synopsis;
+  if (patch.text !== undefined) data.text = patch.text;
+  if (patch.vocabRaw !== undefined) data.vocabRaw = patch.vocabRaw;
+  if (patch.coverUrl !== undefined) data.coverUrl = patch.coverUrl;
+  if (patch.audioUrl !== undefined) data.audioUrl = patch.audioUrl;
+  if (patch.language !== undefined) data.language = patch.language;
+  if (patch.variant !== undefined) data.variant = patch.variant;
+  if (patch.region !== undefined) data.region = patch.region;
+  if (patch.cefrLevel !== undefined) data.cefrLevel = patch.cefrLevel;
+  if (patch.topic !== undefined) data.topic = patch.topic;
+  if (patch.languageFocus !== undefined) data.focus = patch.languageFocus;
+  if (patch.journeyTopic !== undefined) data.journeyTopic = patch.journeyTopic;
+  if (patch.journeyOrder !== undefined) data.journeyOrder = patch.journeyOrder;
+  if (patch.journeyFocus !== undefined) data.journeyFocus = patch.journeyFocus;
+  if (patch.journeyEligible !== undefined) data.journeyEligible = patch.journeyEligible;
+  if (patch.published !== undefined) data.published = patch.published;
+  if (patch.storyVocabQualityRaw !== undefined) data.storyVocabQualityRaw = patch.storyVocabQualityRaw;
+  if (patch.vocabValidationRaw !== undefined) data.vocabValidationRaw = patch.vocabValidationRaw;
+  if (patch.audioQaStatus !== undefined) data.audioQaStatus = patch.audioQaStatus;
+  if (patch.audioQaScore !== undefined) data.audioQaScore = patch.audioQaScore;
+  if (patch.audioDeliveryQaStatus !== undefined) data.audioDeliveryQaStatus = patch.audioDeliveryQaStatus;
+  return data;
 }
 
 export async function createStudioJourneyStory(): Promise<StudioJourneyStory> {
   return createStudioJourneyStoryWithSeed();
 }
 
+function newJourneyStoryId(): string {
+  // Use a slug-safe random id so it can be addressed by /studio routes
+  // without escape gymnastics.
+  return `journey-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+}
+
 export async function createStudioJourneyStoryWithSeed(
   seed: JourneyStoryPatch = {}
 ): Promise<StudioJourneyStory> {
-  const publishedId = randomUUID();
-  const draftId = `drafts.${publishedId}`;
-  const language = seed.language ?? "spanish";
-  const regionField = regionFieldForLanguage(language);
-  const created = await writeClient.createIfNotExists({
-    _id: draftId,
-    _type: "standaloneStory",
-    sourceType: "sanity",
-    language,
-    variant: seed.variant ?? "latam",
-    [regionField]: seed.region ?? "colombia",
-    cefrLevel: seed.cefrLevel ?? "a1",
-    focus: seed.languageFocus ?? "mixed",
-    topic: seed.topic ?? "",
-    journeyEligible: seed.journeyEligible ?? true,
-    journeyTopic: seed.journeyTopic ?? "",
-    journeyOrder: seed.journeyOrder ?? undefined,
-    journeyFocus: seed.journeyFocus ?? "General",
-    published: seed.published ?? false,
-    title: seed.title ?? "Untitled Journey Story",
-    synopsis: seed.synopsis ?? "",
-    text: seed.text ?? "",
-    vocabRaw: seed.vocabRaw ?? "",
-    coverUrl: seed.coverUrl ?? "",
-    audioUrl: seed.audioUrl ?? "",
-    slug: seed.slug ? { _type: "slug", current: seed.slug } : undefined,
+  const id = newJourneyStoryId();
+  const created = await prisma.standaloneStory.create({
+    data: {
+      id,
+      slug: seed.slug ?? id,
+      sourceType: "studio",
+      language: seed.language ?? "spanish",
+      variant: seed.variant ?? "latam",
+      region: seed.region ?? "colombia",
+      cefrLevel: seed.cefrLevel ?? "a1",
+      focus: seed.languageFocus ?? "mixed",
+      topic: seed.topic ?? "",
+      journeyEligible: seed.journeyEligible ?? true,
+      journeyTopic: seed.journeyTopic ?? "",
+      journeyOrder: seed.journeyOrder ?? null,
+      journeyFocus: seed.journeyFocus ?? "General",
+      published: seed.published ?? false,
+      title: seed.title ?? "Untitled Journey Story",
+      synopsis: seed.synopsis ?? "",
+      text: seed.text ?? "",
+      vocabRaw: seed.vocabRaw ?? "",
+      coverUrl: seed.coverUrl ?? null,
+      audioUrl: seed.audioUrl ?? null,
+    },
   });
-
-  return toStudioStory(publishedId, created as SanityJourneyStoryDoc, undefined);
+  return toStudioStory(created);
 }
 
 export async function patchStudioJourneyStory(
   id: string,
   patch: JourneyStoryPatch
 ): Promise<StudioJourneyStory> {
-  const current = await getStudioJourneyStory(id);
-  if (!current) {
-    throw new Error("Story not found");
-  }
-
-  const draftId = `drafts.${id}`;
-  const regionField = regionFieldForLanguage(patch.language ?? current.language);
-
-  let tx = writeClient.transaction();
-
-  tx = tx.createIfNotExists({
-    _id: draftId,
-    _type: "standaloneStory",
-    title: current.title || "Untitled Journey Story",
-    language: current.language,
-    variant: current.variant,
-    [regionFieldForLanguage(current.language)]: current.region || "",
-    cefrLevel: current.cefrLevel,
-    focus: current.languageFocus,
-    topic: current.topic,
-    journeyEligible: current.journeyEligible,
-    journeyTopic: current.journeyTopic,
-    journeyOrder: current.journeyOrder ?? undefined,
-    journeyFocus: current.journeyFocus,
-    published: current.published,
-    synopsis: current.synopsis,
-    text: current.text,
-    vocabRaw: current.vocabRaw,
-    coverUrl: current.coverUrl,
-    audioUrl: current.audioUrl,
-    slug: current.slug ? { _type: "slug", current: current.slug } : undefined,
-  });
-
-  const setPatch: Record<string, unknown> = {};
-  if (patch.title !== undefined) setPatch.title = patch.title;
-  if (patch.slug !== undefined) setPatch.slug = { _type: "slug", current: patch.slug };
-  if (patch.synopsis !== undefined) setPatch.synopsis = patch.synopsis;
-  if (patch.text !== undefined) setPatch.text = patch.text;
-  if (patch.vocabRaw !== undefined) setPatch.vocabRaw = patch.vocabRaw;
-  if (patch.coverUrl !== undefined) setPatch.coverUrl = patch.coverUrl;
-  if (patch.audioUrl !== undefined) setPatch.audioUrl = patch.audioUrl;
-  if (patch.language !== undefined) setPatch.language = patch.language;
-  if (patch.variant !== undefined) setPatch.variant = patch.variant;
-  if (patch.cefrLevel !== undefined) setPatch.cefrLevel = patch.cefrLevel;
-  if (patch.topic !== undefined) setPatch.topic = patch.topic;
-  if (patch.languageFocus !== undefined) setPatch.focus = patch.languageFocus;
-  if (patch.journeyTopic !== undefined) setPatch.journeyTopic = patch.journeyTopic;
-  if (patch.journeyOrder !== undefined) setPatch.journeyOrder = patch.journeyOrder;
-  if (patch.journeyFocus !== undefined) setPatch.journeyFocus = patch.journeyFocus;
-  if (patch.journeyEligible !== undefined) setPatch.journeyEligible = patch.journeyEligible;
-  if (patch.published !== undefined) setPatch.published = patch.published;
-  if (patch.region !== undefined) {
-    setPatch.region_es = undefined;
-    setPatch.region_en = undefined;
-    setPatch.region_de = undefined;
-    setPatch.region_fr = undefined;
-    setPatch.region_it = undefined;
-    setPatch.region_pt = undefined;
-    setPatch[regionField] = patch.region;
-  }
-
-  const unsetFields: string[] = [];
-  if (patch.region !== undefined) {
-    for (const field of ["region_es", "region_en", "region_de", "region_fr", "region_it", "region_pt"]) {
-      if (field !== regionField) unsetFields.push(field);
+  try {
+    const updated = await prisma.standaloneStory.update({
+      where: { id },
+      data: patchToData(patch),
+    });
+    return toStudioStory(updated);
+  } catch (err) {
+    if ((err as { code?: string }).code === "P2025") {
+      throw new Error("Story not found");
     }
+    throw err;
   }
-
-  tx = tx.patch(draftId, (builder) => {
-    let next = builder.set(setPatch);
-    if (unsetFields.length) next = next.unset(unsetFields);
-    return next;
-  });
-
-  await tx.commit();
-  const updated = await getStudioJourneyStory(id);
-  if (!updated) throw new Error("Story not found after save");
-  return updated;
 }
 
 export async function duplicateStudioJourneyStory(id: string): Promise<StudioJourneyStory> {
   const current = await getStudioJourneyStory(id);
-  if (!current) {
-    throw new Error("Story not found");
-  }
+  if (!current) throw new Error("Story not found");
 
   return createStudioJourneyStoryWithSeed({
     title: current.title ? `${current.title} Copy` : "Untitled Journey Story Copy",
@@ -500,11 +300,12 @@ export async function duplicateStudioJourneyStory(id: string): Promise<StudioJou
 }
 
 export async function deleteStudioJourneyStory(id: string): Promise<void> {
-  const draftId = `drafts.${id}`;
-  await Promise.allSettled([
-    writeClient.delete(draftId),
-    writeClient.delete(id),
-  ]);
+  try {
+    await prisma.standaloneStory.delete({ where: { id } });
+  } catch (err) {
+    if ((err as { code?: string }).code === "P2025") return;
+    throw err;
+  }
 }
 
 export async function getJourneyCoverageGaps(
@@ -524,13 +325,13 @@ export async function getJourneyCoverageGaps(
             const storyVariant = story.variant.trim().toLowerCase();
             const storyLevel = story.cefrLevel.trim().toLowerCase();
             const storyTopic = story.journeyTopic.trim().toLowerCase();
-            const sameSlot =
+            return (
               (story.journeyOrder ?? 1) === order &&
               storyTopic === topic.slug &&
               storyLevel === level.id &&
               storyVariant === variantPlan.variantId.toLowerCase() &&
-              storyLanguage === variantPlan.language.toLowerCase();
-            return sameSlot;
+              storyLanguage === variantPlan.language.toLowerCase()
+            );
           });
 
           const generalExists = candidates.some(
