@@ -73,6 +73,22 @@ export function LevelTestRunner({
 
   const currentQuestion: LevelTestQuestion | undefined = questions[questionIndex];
 
+  // Shufflear las opciones por pregunta. Sin esto, las 30 preguntas del
+  // banco tienen `answer === options[0]`, así que un usuario que toque
+  // siempre el primer botón obtiene 10/10 sin leer una sola pregunta.
+  // El shuffle se recalcula al cambiar de pregunta para que cada round
+  // reordene fresco; la validación sigue siendo por string-match contra
+  // `currentQuestion.answer`, así que el shuffle es invisible al resto.
+  const shuffledOptions = useMemo<readonly string[]>(() => {
+    if (!currentQuestion) return [];
+    const copy = [...currentQuestion.options];
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }, [currentQuestion]);
+
   // Reset state every time the runner opens.
   useEffect(() => {
     if (open) {
@@ -239,7 +255,7 @@ export function LevelTestRunner({
             </View>
 
             <View style={styles.options}>
-              {currentQuestion.options.map((option) => {
+              {shuffledOptions.map((option) => {
                 const isSelected = selectedOption === option;
                 const isCorrect = revealed && option === currentQuestion.answer;
                 const isWrong = revealed && isSelected && option !== currentQuestion.answer;

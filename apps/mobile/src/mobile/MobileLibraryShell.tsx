@@ -138,6 +138,10 @@ import {
 } from "./vocabFavorites";
 import { getMasteryLevel } from "../../../../src/lib/mastery";
 import {
+  getEffectiveUnlockedLevelCount,
+  getJourneyTopicCheckpointKey,
+} from "../../../../src/lib/journeyUnlock";
+import {
   buildMixedPracticeSession,
   buildPracticeSession,
   getRecommendedPracticeModeFromOnboarding,
@@ -1892,6 +1896,12 @@ export function MobileLibraryShell(args: {
   const [hqUrlBySentence, setHqUrlBySentence] = useState<Record<string, string>>({});
   const [practiceLastResult, setPracticeLastResult] = useState<"correct" | "wrong" | null>(null);
   const [practiceSessionStreak, setPracticeSessionStreak] = useState(0);
+  // Mejor combo alcanzado durante la sesión (no se resetea al fallar)
+  // y timestamp de arranque, ambos consumidos por la result card para
+  // mostrar XP ganado + combo máximo + duración estilo Duolingo.
+  const [practiceMaxStreak, setPracticeMaxStreak] = useState(0);
+  const practiceSessionStartedAtRef = useRef<number | null>(null);
+  const [practiceSessionDurationMs, setPracticeSessionDurationMs] = useState<number | null>(null);
   const [practiceComboToast, setPracticeComboToast] = useState<{
     streak: number;
     tier: 0 | 1 | 2 | 3 | 4 | 5;
@@ -5745,6 +5755,9 @@ export function MobileLibraryShell(args: {
     setPracticeComplete(false);
     setPracticeLastResult(null);
     setPracticeSessionStreak(0);
+    setPracticeMaxStreak(0);
+    setPracticeSessionDurationMs(null);
+    practiceSessionStartedAtRef.current = Date.now();
     setPracticeReviewScores({});
     setPracticeCheckpointToken(null);
     setPracticeCheckpointResponses({});
@@ -6115,6 +6128,10 @@ export function MobileLibraryShell(args: {
       setPracticeSelectedOption(null);
       setActiveMatchWord(null); setWrongMatchAttempt(null);
       setMatchedWords([]);
+      // Capturar duración total de la sesión para la result card.
+      if (practiceSessionStartedAtRef.current !== null) {
+        setPracticeSessionDurationMs(Date.now() - practiceSessionStartedAtRef.current);
+      }
       return;
     }
 
@@ -6313,6 +6330,7 @@ export function MobileLibraryShell(args: {
       setPracticeLastResult("correct");
       setPracticeSessionStreak((value) => {
         const next = value + 1;
+        setPracticeMaxStreak((prevMax) => (next > prevMax ? next : prevMax));
         triggerPracticeComboToast(next);
         return next;
       });
@@ -9499,6 +9517,53 @@ export function MobileLibraryShell(args: {
                     ? "Every answer correct. Your words are locked in for the next step."
                     : `${practiceExercises.length - practiceScore} to review · keep going.`}
               </Text>
+              {(() => {
+                // Stats estilo Duolingo: XP ganado + combo máximo +
+                // duración. XP se calcula como:
+                //   acierto = 10 XP
+                //   bonus por combo > 3 = (maxStreak - 3) × 5
+                //   perfecto = +25 XP
+                const isPerfect =
+                  practiceScore === practiceExercises.length && practiceExercises.length > 0;
+                const xpFromCorrect = practiceScore * 10;
+                const xpFromCombo = Math.max(0, practiceMaxStreak - 3) * 5;
+                const xpFromPerfect = isPerfect ? 25 : 0;
+                const xpTotal = xpFromCorrect + xpFromCombo + xpFromPerfect;
+                const durationMs = practiceSessionDurationMs ?? 0;
+                const totalSeconds = Math.max(0, Math.round(durationMs / 1000));
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+                const durationLabel = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
+                const accuracyPct = practiceExercises.length > 0
+                  ? Math.round((practiceScore / practiceExercises.length) * 100)
+                  : 0;
+                return (
+                  <View style={styles.practiceResultStatsRow}>
+                    <View style={styles.practiceResultStatPill}>
+                      <Feather name="zap" size={14} color="#ffd25f" />
+                      <Text style={styles.practiceResultStatValue}>+{xpTotal}</Text>
+                      <Text style={styles.practiceResultStatLabel}>XP</Text>
+                    </View>
+                    <View style={styles.practiceResultStatPill}>
+                      <MaterialCommunityIcons name="fire" size={14} color="#fb923c" />
+                      <Text style={styles.practiceResultStatValue}>{practiceMaxStreak}</Text>
+                      <Text style={styles.practiceResultStatLabel}>combo</Text>
+                    </View>
+                    <View style={styles.practiceResultStatPill}>
+                      <Feather name="target" size={14} color="#9fe8ff" />
+                      <Text style={styles.practiceResultStatValue}>{accuracyPct}%</Text>
+                      <Text style={styles.practiceResultStatLabel}>acierto</Text>
+                    </View>
+                    {durationMs > 0 ? (
+                      <View style={styles.practiceResultStatPill}>
+                        <Feather name="clock" size={14} color="#c4b5fd" />
+                        <Text style={styles.practiceResultStatValue}>{durationLabel}</Text>
+                        <Text style={styles.practiceResultStatLabel}>tiempo</Text>
+                      </View>
+                    ) : null}
+                  </View>
+                );
+              })()}
               {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint" ? (
                 <Text style={styles.practiceResultStatusText}>
                   {practiceCheckpointSaveState === "saving"
@@ -11259,8 +11324,56 @@ export function MobileLibraryShell(args: {
         preferences.preferredVariant,
         preferences.preferredRegion
       );
-    return remoteJourney.tracks.find((track) => track.id === preferredTrackId) ?? remoteJourney.tracks[0] ?? null;
-  }, [preferences.preferredRegion, preferences.preferredVariant, remoteJourney, selectedJourneyTrackId]);
+    const baseTrack =
+      remoteJourney.tracks.find((track) => track.id === preferredTrackId) ?? remoteJourney.tracks[0] ?? null;
+    if (!baseTrack) return null;
+
+    // Recalcular `unlocked` por nivel client-side, replicando lo que
+    // hace el web en JourneyClient.tsx:135-145. El backend devuelve
+    // `unlocked` pero no aplica el override del placement test
+    // (preferences.journeyPlacementLevel) ni se entera cuando una
+    // historia recién terminada debería abrir el nivel siguiente sin
+    // refetch. Cómputo:
+    //   1. Construir Set<string> de stories completadas y checkpoints
+    //      pasados desde el state que ya viene en `baseTrack`.
+    //   2. baseUnlockedCount: cuántos niveles abrir por progreso real
+    //      (story complete + checkpoint pass al 75% threshold).
+    //   3. Si el placement test posicionó al usuario en B1, mínimo 3
+    //      niveles abiertos (A1, A2, B1).
+    //   4. Marcar dinámicamente `level.unlocked = idx < count`.
+    const completedStoryKeys = new Set<string>();
+    const passedCheckpointKeys = new Set<string>();
+    for (const level of baseTrack.levels) {
+      for (const topic of level.topics) {
+        if (topic.checkpointPassed) {
+          passedCheckpointKeys.add(getJourneyTopicCheckpointKey(baseTrack.id, level.id, topic.slug));
+        }
+        for (const story of topic.stories) {
+          if (story.completed) completedStoryKeys.add(story.progressKey);
+        }
+      }
+    }
+    const unlockedLevelCount = getEffectiveUnlockedLevelCount(
+      baseTrack.levels,
+      completedStoryKeys,
+      passedCheckpointKeys,
+      preferences.journeyPlacementLevel,
+      baseTrack.id
+    );
+    return {
+      ...baseTrack,
+      levels: baseTrack.levels.map((level, idx) => ({
+        ...level,
+        unlocked: idx < unlockedLevelCount,
+      })),
+    };
+  }, [
+    preferences.preferredRegion,
+    preferences.preferredVariant,
+    preferences.journeyPlacementLevel,
+    remoteJourney,
+    selectedJourneyTrackId,
+  ]);
   const activeJourneyLevel = useMemo(() => {
     if (!activeJourneyTrack?.levels?.length) return null;
     return (
@@ -20070,6 +20183,38 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 23,
     textAlign: "center",
+  },
+  practiceResultStatsRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: 10,
+    marginTop: 14,
+  },
+  practiceResultStatPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+    backgroundColor: "rgba(255,255,255,0.04)",
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+  },
+  practiceResultStatValue: {
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "900",
+    letterSpacing: -0.2,
+  },
+  practiceResultStatLabel: {
+    color: "rgba(226,232,244,0.62)",
+    fontSize: 11,
+    fontWeight: "800",
+    textTransform: "uppercase",
+    letterSpacing: 0.8,
+    marginLeft: 2,
   },
   practiceResultStatusText: {
     color: "#b8c9df",
