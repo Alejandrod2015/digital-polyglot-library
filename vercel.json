@@ -1,4 +1,10 @@
 {
   "installCommand": "npm ci --no-workspaces",
-  "ignoreCommand": "bash scripts/vercel-ignore-build.sh"
+  "ignoreCommand": "bash scripts/vercel-ignore-build.sh",
+  "crons": [
+    {
+      "path": "/api/cron/catalog-health",
+      "schedule": "0 6 * * *"
+    }
+  ]
 }
