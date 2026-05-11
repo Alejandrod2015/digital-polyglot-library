@@ -10,7 +10,7 @@
 
 import { alignStorySentencesToWords, type AudioSegment } from "@/lib/audioSegments";
 import { prisma } from "@/lib/prisma";
-import { extractStoryPlainText } from "./storyPlainText";
+import { extractStoryPlainText, stripSpeakerLabels } from "./storyPlainText";
 
 export const AUDIO_WORD_TIMINGS_VERSION = 1 as const;
 
@@ -227,7 +227,37 @@ export async function generateAudioSegmentsForUserStory(storyId: string): Promis
   return { segmentCount: segments.length, audioDurationSec: payload.audioDurationSec };
 }
 
-async function alignStoryAudio(args: {
+/**
+ * Remap aeneas tokens from an "alignment text" coordinate space (the
+ * version we sent to Modal, with speaker labels stripped) back to the
+ * original story text (with labels). Tokens are guaranteed to appear
+ * in the same order in both texts because the strip only removes whole
+ * substrings, so a linear cursor + indexOf is enough.
+ */
+function remapTokensToOriginal(
+  tokens: StoryWordToken[],
+  alignmentText: string,
+  originalText: string
+): StoryWordToken[] {
+  const out: StoryWordToken[] = [];
+  let cursor = 0;
+  for (const token of tokens) {
+    const slice = alignmentText.slice(token.charStart, token.charEnd);
+    const idx = originalText.indexOf(slice, cursor);
+    if (idx < 0) continue;
+    out.push({
+      text: token.text,
+      charStart: idx,
+      charEnd: idx + slice.length,
+      startSec: token.startSec,
+      endSec: token.endSec,
+    });
+    cursor = idx + slice.length;
+  }
+  return out;
+}
+
+export async function alignStoryAudio(args: {
   text: string;
   title: string | null;
   audioUrl: string;
@@ -237,7 +267,15 @@ async function alignStoryAudio(args: {
   const storyPlainText = extractStoryPlainText(args.text);
   if (!storyPlainText) throw new Error(`Story ${args.storyId} plain text is empty after stripping`);
 
-  const { fullText, bodyOffset } = buildAlignmentText(args.title ?? "", storyPlainText);
+  // Speaker labels ("Tomás: ", "Don Beto: ") are visual cues that the
+  // narrator never pronounces. Sending them to aeneas makes the
+  // aligner reserve time for them and drift every subsequent word
+  // forward. Strip them for alignment; the reader still gets the
+  // original text (with labels) for display, and we remap each token
+  // back to the original char-space after alignment.
+  const { stripped: alignmentPlainText } = stripSpeakerLabels(storyPlainText);
+
+  const { fullText, bodyOffset } = buildAlignmentText(args.title ?? "", alignmentPlainText);
 
   const { audioDurationSec, tokens } = await alignAudioOnModal({
     audioUrl: args.audioUrl,
@@ -249,8 +287,8 @@ async function alignStoryAudio(args: {
     throw new Error("Modal align returned zero usable tokens");
   }
 
-  // Strip title-prefix tokens. Body-relative charOffsets, absolute sec.
-  const bodyTokens: StoryWordToken[] = tokens
+  // Strip title-prefix tokens; coords are still in alignmentPlainText space.
+  const bodyTokensInAlignmentSpace: StoryWordToken[] = tokens
     .filter((t) => t.charStart >= bodyOffset)
     .map((t) => ({
       text: t.text,
@@ -260,9 +298,17 @@ async function alignStoryAudio(args: {
       endSec: t.endSec,
     }));
 
-  if (bodyTokens.length === 0) {
+  if (bodyTokensInAlignmentSpace.length === 0) {
     throw new Error("Modal align returned no body tokens after stripping title prefix");
   }
+
+  // Remap from alignment text (no labels) to original text (with labels).
+  // Idempotent when the original has no labels (alignmentPlainText ===
+  // storyPlainText), so journey stories are unaffected by this change.
+  const bodyTokens =
+    alignmentPlainText === storyPlainText
+      ? bodyTokensInAlignmentSpace
+      : remapTokensToOriginal(bodyTokensInAlignmentSpace, alignmentPlainText, storyPlainText);
 
   const payload: AudioWordTimingsPayload = {
     version: AUDIO_WORD_TIMINGS_VERSION,

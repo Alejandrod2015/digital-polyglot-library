@@ -110,47 +110,24 @@ export function getJourneyProgressKeyFromSource(
   return null;
 }
 
-export function isJourneyStoryComplete(
-  story: Pick<JourneyStoryItem, "progressKey">,
-  completedStoryKeys: Set<string>
-): boolean {
-  return completedStoryKeys.has(story.progressKey);
-}
-
-export function getJourneyTopicRequiredStoryCount(
-  topic: Pick<JourneyTopic, "stories" | "storyTarget">
-): number {
-  if (topic.stories.length === 0) return 0;
-  if (typeof topic.storyTarget === "number" && Number.isFinite(topic.storyTarget)) {
-    return Math.max(1, Math.min(topic.storyTarget, topic.stories.length));
-  }
-  return topic.stories.length;
-}
-
-export function getJourneyTopicCompletedStoryCount(
-  topic: Pick<JourneyTopic, "stories">,
-  completedStoryKeys: Set<string>
-): number {
-  return topic.stories.filter((story) => isJourneyStoryComplete(story, completedStoryKeys)).length;
-}
-
-export function isJourneyTopicComplete(
-  topic: Pick<JourneyTopic, "stories" | "storyTarget">,
-  completedStoryKeys: Set<string>
-): boolean {
-  const requiredStoryCount = getJourneyTopicRequiredStoryCount(topic);
-  if (requiredStoryCount === 0) return false;
-  return getJourneyTopicCompletedStoryCount(topic, completedStoryKeys) >= requiredStoryCount;
-}
-
-/**
- * A topic only gates progression if it has at least one published story.
- * Empty topics (planned in Studio but not yet authored) are visible
- * placeholders that do not block the user from advancing past them.
- */
-function isTopicGating(topic: Pick<JourneyTopic, "stories">): boolean {
-  return topic.stories.length > 0;
-}
+// Las funciones puras de unlock viven en src/lib/journeyUnlock para
+// que web (este módulo) y mobile compartan exactamente la misma lógica
+// y mantengamos una sola fuente de verdad de la política de
+// desbloqueo.
+import {
+  isJourneyStoryComplete,
+  getJourneyTopicRequiredStoryCount,
+  getJourneyTopicCompletedStoryCount,
+  isJourneyTopicComplete,
+  isTopicGating,
+} from "@/lib/journeyUnlock";
+export {
+  isJourneyStoryComplete,
+  getJourneyTopicRequiredStoryCount,
+  getJourneyTopicCompletedStoryCount,
+  isJourneyTopicComplete,
+  isTopicGating,
+};
 
 export function getUnlockedTopicCount(
   level: Pick<JourneyLevel, "topics">,
@@ -177,57 +154,10 @@ export function getUnlockedTopicCount(
   return Math.min(unlockedCount, level.topics.length);
 }
 
-// Fraction of a level's gating topics that must be cleared (story complete +
-// checkpoint passed) for the level to count as "done" via the effort path.
-// 75% leaves room for the user to skip a topic that doesn't resonate without
-// being held back from the next CEFR level. The express path (passing the
-// level test from the locked-story popup) bypasses this entirely.
-const LEVEL_COMPLETION_THRESHOLD = 0.75;
-
-export function isJourneyLevelComplete(
-  level: Pick<JourneyLevel, "id" | "topics">,
-  completedStoryKeys: Set<string>,
-  passedCheckpointKeys: Set<string>,
-  variantId?: string
-): boolean {
-  if (level.topics.length === 0) return false;
-
-  // Only gating topics (with at least one story) decide whether the level is
-  // "done". Empty placeholder topics are skipped from this count. A level with
-  // zero gating topics can never be auto-completed, which is the right outcome
-  // for Spanish-style "scaffold only, no published content yet" cases.
-  const gatingTopics = level.topics.filter(isTopicGating);
-  if (gatingTopics.length === 0) return false;
-
-  const required = Math.max(1, Math.ceil(gatingTopics.length * LEVEL_COMPLETION_THRESHOLD));
-  let cleared = 0;
-  for (const topic of gatingTopics) {
-    if (!isJourneyTopicComplete(topic, completedStoryKeys)) continue;
-    if (!passedCheckpointKeys.has(getJourneyTopicCheckpointKey(variantId, level.id, topic.slug))) continue;
-    cleared += 1;
-    if (cleared >= required) return true;
-  }
-  return false;
-}
-
-export function getUnlockedLevelCount(
-  levels: Array<Pick<JourneyLevel, "id" | "topics">>,
-  completedStoryKeys: Set<string>,
-  passedCheckpointKeys: Set<string>,
-  variantId?: string
-): number {
-  if (levels.length === 0) return 0;
-
-  let unlockedCount = 1;
-  for (let index = 0; index < levels.length - 1; index += 1) {
-    if (!isJourneyLevelComplete(levels[index], completedStoryKeys, passedCheckpointKeys, variantId)) {
-      break;
-    }
-    unlockedCount += 1;
-  }
-
-  return Math.min(unlockedCount, levels.length);
-}
+// Re-export desde el módulo compartido. La política (75% threshold,
+// topic gating, etc.) vive en src/lib/journeyUnlock para que mobile
+// y web no se desincronicen al cambiarla.
+export { isJourneyLevelComplete, getUnlockedLevelCount } from "@/lib/journeyUnlock";
 
 export function getUnlockedStoryCount(
   topic: Pick<JourneyTopic, "stories" | "storyTarget">,
@@ -244,13 +174,8 @@ export function getUnlockedStoryCount(
   return Math.min(unlockedCount, topic.stories.length);
 }
 
-export function getJourneyTopicCheckpointKey(
-  variantId: string | undefined,
-  levelId: string,
-  topicSlug: string
-): string {
-  return `${variantId ?? "default"}:${levelId}:${topicSlug}`;
-}
+import { getJourneyTopicCheckpointKey } from "@/lib/journeyUnlock";
+export { getJourneyTopicCheckpointKey };
 
 export function getJourneyTopicPracticeKey(
   variantId: string | undefined,
@@ -271,21 +196,12 @@ const journeyLevelMeta: Record<CefrLevel, { id: string; title: string; subtitle:
 
 const DEFAULT_LANGUAGE = "Spanish";
 const DEFAULT_VARIANT_ORDER = ["latam", "spain", "us", "uk", "brazil", "portugal", "germany", "austria", "france", "canada-fr", "italy"];
-export const JOURNEY_LEVEL_IDS = ["a1", "a2", "b1", "b2", "c1", "c2"] as const;
-
-export function normalizeJourneyPlacementLevel(value: unknown): string | null {
-  if (typeof value !== "string") return null;
-  const normalized = value.trim().toLowerCase();
-  return JOURNEY_LEVEL_IDS.includes(normalized as (typeof JOURNEY_LEVEL_IDS)[number]) ? normalized : null;
-}
-
-export function getJourneyPlacementLevelIndex<
-  TLevel extends { id: string }
->(levels: TLevel[], placementLevelId: string | null | undefined): number {
-  const normalizedPlacement = normalizeJourneyPlacementLevel(placementLevelId);
-  if (!normalizedPlacement) return -1;
-  return levels.findIndex((level) => level.id === normalizedPlacement);
-}
+export {
+  JOURNEY_LEVEL_IDS,
+  normalizeJourneyPlacementLevel,
+  getJourneyPlacementLevelIndex,
+} from "@/lib/journeyUnlock";
+import { JOURNEY_LEVEL_IDS } from "@/lib/journeyUnlock";
 
 function slugifyTopic(topic: string) {
   return topic

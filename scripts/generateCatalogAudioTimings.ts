@@ -25,14 +25,7 @@ config({ path: ".env" });
 
 import { PrismaClient } from "../src/generated/prisma";
 import { books } from "../src/data/books";
-import {
-  AUDIO_WORD_TIMINGS_VERSION,
-  alignAudioOnModal,
-  buildAlignmentText,
-  type AudioWordTimingsPayload,
-  type StoryWordToken,
-} from "../src/lib/audioWordTimings";
-import { extractStoryPlainText } from "../src/lib/storyPlainText";
+import { alignStoryAudio } from "../src/lib/audioWordTimings";
 
 type Args = {
   slug: string | null;
@@ -125,66 +118,35 @@ async function main() {
     }
 
     try {
-      const storyPlainText = extractStoryPlainText(story.text);
-      if (!storyPlainText) {
-        console.warn(`${label} SKIP (empty plain text)`);
-        continue;
-      }
-      const { fullText, bodyOffset } = buildAlignmentText(story.title, storyPlainText);
-
       const t0 = Date.now();
-      const { audioDurationSec, tokens } = await alignAudioOnModal({
+      // alignStoryAudio handles everything: extractStoryPlainText,
+      // stripSpeakerLabels (so aeneas doesn't drift on "Tomás:" cues
+      // the narrator never reads), buildAlignmentText for the title
+      // prefix, the Modal call, and remapping tokens back to the
+      // original-with-labels text space.
+      const { payload } = await alignStoryAudio({
+        text: story.text,
+        title: story.title,
         audioUrl: story.audioUrl,
-        plainText: fullText,
         language: story.language,
+        storyId: story.slug,
       });
-
-      if (tokens.length === 0) {
-        console.warn(`${label} SKIP (Modal returned zero tokens)`);
-        fail += 1;
-        continue;
-      }
-
-      // Drop title-prefix tokens; rebase charStart/charEnd to the body
-      // coordinate space (same convention as JourneyStory payload).
-      const bodyTokens: StoryWordToken[] = tokens
-        .filter((t) => t.charStart >= bodyOffset)
-        .map((t) => ({
-          text: t.text,
-          charStart: t.charStart - bodyOffset,
-          charEnd: t.charEnd - bodyOffset,
-          startSec: t.startSec,
-          endSec: t.endSec,
-        }));
-
-      if (bodyTokens.length === 0) {
-        console.warn(`${label} SKIP (no body tokens after stripping title)`);
-        fail += 1;
-        continue;
-      }
-
-      const payload: AudioWordTimingsPayload = {
-        version: AUDIO_WORD_TIMINGS_VERSION,
-        audioDurationSec,
-        storyPlainText,
-        words: bodyTokens,
-      };
 
       await prisma.catalogStoryAudioTimings.upsert({
         where: { slug: story.slug },
         create: {
           slug: story.slug,
           audioWordTimings: payload as unknown as object,
-          audioDurationSec,
+          audioDurationSec: payload.audioDurationSec,
         },
         update: {
           audioWordTimings: payload as unknown as object,
-          audioDurationSec,
+          audioDurationSec: payload.audioDurationSec,
         },
       });
 
       const elapsed = Math.round((Date.now() - t0) / 1000);
-      console.log(`${label} OK (${bodyTokens.length} tokens, ${elapsed}s)`);
+      console.log(`${label} OK (${payload.words.length} tokens, ${elapsed}s)`);
       ok += 1;
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
