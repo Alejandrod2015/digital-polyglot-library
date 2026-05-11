@@ -601,3 +601,64 @@ model CatalogStory {
   @@index([bookId, position])
   @@map("dp_catalog_stories_v1")
 }
+
+// Public standalone stories: target of the second wave of the
+// Sanity -> Studio migration. Each row mirrors a `standaloneStory` document
+// from Sanity. Unlike CatalogStory, these are not grouped under a book.
+//
+// `id` is the slug so the ETL can upsert by id. Editorial fields and QA
+// reports are preserved as-is to keep the door open for re-implementing the
+// Sanity editor inside Studio (Next.js) later.
+model StandaloneStory {
+  id                String    @id
+  slug              String    @unique
+  sourceType        String    @default("sanity")
+  createStoryId     String?
+  createStoryUserId String?
+  language          String?
+  variant           String?
+  region            String?
+  level             String?
+  cefrLevel         String?
+  focus             String?
+  topic             String?
+  journeyEligible   Boolean   @default(false)
+  journeyTopic      String?
+  journeyOrder      Int?
+  journeyFocus      String?
+  title             String
+  synopsis          String?
+  text              String    @default("")
+  vocabRaw          String?
+  vocab             Json?
+  cover             String?
+  coverUrl          String?
+  audio             String?
+  audioUrl          String?
+  audioQaStatus            String?
+  audioQaScore             Float?
+  audioQaNotes             String?
+  audioQaTranscript        String?
+  audioQaCheckedAt         DateTime?
+  audioDeliveryQaStatus    String?
+  audioDeliveryQaScore     Float?
+  audioDeliveryQaNotes     String?
+  audioDeliveryQaCheckedAt DateTime?
+  storyVocabQualityRaw     String?
+  vocabValidationRaw       String?
+  published         Boolean   @default(false)
+  sanityId          String?
+  migratedFrom      String?
+  sourceCreatedAt   DateTime?
+  sourceUpdatedAt   DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([language, level])
+  @@index([cefrLevel])
+  @@index([sourceType])
+  @@index([journeyEligible, journeyTopic, journeyOrder])
+  @@index([published])
+  @@index([sanityId])
+  @@map("dp_standalone_stories_v1")
+}

@@ -4,6 +4,15 @@ import { freshClient } from "@/sanity/lib/client";
 import { resolveContentVariant } from "@/lib/languageVariant";
 import type { CefrLevel, Level } from "@/types/books";
 import { getJourneyFocusFromLearningGoal, normalizeJourneyFocus, type JourneyFocus } from "@/lib/onboarding";
+import { shouldReadStandaloneFromStudio } from "@/lib/featureFlags";
+import {
+  getStudioStandaloneStoryBySlug,
+  getStudioStandaloneStoriesBySlugs,
+  getStudioStandaloneStoriesByIds,
+  getAllPublishedStudioStandaloneStories,
+  getJourneyEligibleStudioStandaloneStories,
+  type RawStandaloneStory,
+} from "@/lib/catalog";
 
 export type PublicStandaloneStory = {
   id: string;
@@ -61,7 +70,9 @@ const legacyLevelFallback: Record<Level, CefrLevel> = {
   advanced: "c1",
 };
 
-function normalizeStandaloneStory(story: PublicStandaloneStory): PublicStandaloneStory {
+function normalizeStandaloneStory(
+  story: PublicStandaloneStory | RawStandaloneStory
+): PublicStandaloneStory {
   const resolvedLevel =
     typeof story.level === "string" &&
     ["beginner", "intermediate", "advanced"].includes(story.level)
@@ -87,6 +98,10 @@ function normalizeStandaloneStory(story: PublicStandaloneStory): PublicStandalon
 
 const getPublishedStandaloneStoriesCached = unstable_cache(
   async (): Promise<PublicStandaloneStory[]> => {
+    if (shouldReadStandaloneFromStudio()) {
+      const rows = await getAllPublishedStudioStandaloneStories();
+      return rows.map(normalizeStandaloneStory);
+    }
     const query = groq`*[_type == "standaloneStory" && published == true] | order(_createdAt desc){
       ${standaloneStoryFields}
     }`;
@@ -99,6 +114,10 @@ const getPublishedStandaloneStoriesCached = unstable_cache(
 );
 
 async function getPublishedJourneyStandaloneStories(): Promise<PublicStandaloneStory[]> {
+  if (shouldReadStandaloneFromStudio()) {
+    const rows = await getJourneyEligibleStudioStandaloneStories();
+    return rows.map(normalizeStandaloneStory);
+  }
   const query = groq`*[
     _type == "standaloneStory" &&
     journeyEligible == true
@@ -149,6 +168,10 @@ export async function getPublishedStandaloneStories(
 export async function getStandaloneStoryBySlug(
   slug: string
 ): Promise<PublicStandaloneStory | null> {
+  if (shouldReadStandaloneFromStudio()) {
+    const raw = await getStudioStandaloneStoryBySlug(slug);
+    return raw ? normalizeStandaloneStory(raw) : null;
+  }
   const getStandaloneStoryBySlugCached = unstable_cache(
     async (cachedSlug: string): Promise<PublicStandaloneStory | null> => {
       const query = groq`*[
@@ -174,6 +197,11 @@ export async function getStandaloneStoriesByIds(
 ): Promise<PublicStandaloneStory[]> {
   if (ids.length === 0) return [];
 
+  if (shouldReadStandaloneFromStudio()) {
+    const rows = await getStudioStandaloneStoriesByIds(ids);
+    return rows.map(normalizeStandaloneStory);
+  }
+
   const query = groq`*[
     _type == "standaloneStory" &&
     published == true &&
@@ -191,17 +219,20 @@ export async function getStandaloneStoriesBySlugs(
 ): Promise<PublicStandaloneStory[]> {
   if (slugs.length === 0) return [];
 
-  const query = groq`*[
-    _type == "standaloneStory" &&
-    published == true &&
-    slug.current in $slugs
-  ]{
-    ${standaloneStoryFields}
-  }`;
-
-  const sanityStories = (await freshClient.fetch<PublicStandaloneStory[]>(query, { slugs })).map(
-    normalizeStandaloneStory
-  );
+  const sanityStories = shouldReadStandaloneFromStudio()
+    ? (await getStudioStandaloneStoriesBySlugs(slugs)).map(normalizeStandaloneStory)
+    : await (async () => {
+        const query = groq`*[
+          _type == "standaloneStory" &&
+          published == true &&
+          slug.current in $slugs
+        ]{
+          ${standaloneStoryFields}
+        }`;
+        return (await freshClient.fetch<PublicStandaloneStory[]>(query, { slugs })).map(
+          normalizeStandaloneStory
+        );
+      })();
 
   // Also resolve slugs from Prisma JourneyStory rows — stories created in the
   // Studio live there, not in Sanity, and the reader needs them to open.

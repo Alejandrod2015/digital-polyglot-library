@@ -16,6 +16,7 @@ import type {
 import type {
   CatalogBook as CatalogBookRow,
   CatalogStory as CatalogStoryRow,
+  StandaloneStory as StandaloneStoryRow,
 } from "@/generated/prisma";
 
 function asLevel(v: string | null): Level {
@@ -130,4 +131,101 @@ export async function getCatalogBookMeta(
     cover: row.cover,
     description: row.description,
   };
+}
+
+// Raw shape that mirrors what the existing GROQ projection returns for
+// standaloneStory. Intentionally untyped on `journeyFocus` so that
+// normalizeStandaloneStory() in src/lib/standaloneStories.ts can run the
+// same post-processing it already applies to Sanity results.
+export type RawStandaloneStory = {
+  id: string;
+  slug: string;
+  title: string;
+  text: string;
+  vocabRaw: string | null;
+  theme: string[];
+  language: string | null;
+  variant: string | null;
+  region: string | null;
+  level: string | null;
+  cefrLevel: string | null;
+  focus: string | null;
+  journeyFocus: string | null;
+  topic: string | null;
+  journeyEligible: boolean | null;
+  journeyTopic: string | null;
+  journeyOrder: number | null;
+  coverUrl: string | null;
+  audioUrl: string | null;
+  createdAt: string;
+};
+
+function rowToRawStandaloneStory(row: StandaloneStoryRow): RawStandaloneStory {
+  return {
+    id: row.sanityId ?? row.id,
+    slug: row.slug,
+    title: row.title,
+    text: row.text,
+    vocabRaw: row.vocabRaw,
+    theme: [],
+    language: row.language,
+    variant: row.variant,
+    region: row.region,
+    level: row.level,
+    cefrLevel: row.cefrLevel,
+    focus: row.focus,
+    journeyFocus: row.journeyFocus,
+    topic: row.topic,
+    journeyEligible: row.journeyEligible,
+    journeyTopic: row.journeyTopic,
+    journeyOrder: row.journeyOrder,
+    coverUrl: row.coverUrl ?? row.cover ?? null,
+    audioUrl: row.audioUrl ?? row.audio ?? null,
+    createdAt: (row.sourceCreatedAt ?? row.createdAt).toISOString(),
+  };
+}
+
+export async function getStudioStandaloneStoryBySlug(
+  slug: string
+): Promise<RawStandaloneStory | null> {
+  const row = await prisma.standaloneStory.findFirst({
+    where: { slug, published: true },
+  });
+  return row ? rowToRawStandaloneStory(row) : null;
+}
+
+export async function getStudioStandaloneStoriesBySlugs(
+  slugs: string[]
+): Promise<RawStandaloneStory[]> {
+  if (slugs.length === 0) return [];
+  const rows = await prisma.standaloneStory.findMany({
+    where: { slug: { in: slugs }, published: true },
+  });
+  return rows.map(rowToRawStandaloneStory);
+}
+
+export async function getStudioStandaloneStoriesByIds(
+  sanityIds: string[]
+): Promise<RawStandaloneStory[]> {
+  if (sanityIds.length === 0) return [];
+  const rows = await prisma.standaloneStory.findMany({
+    where: { sanityId: { in: sanityIds }, published: true },
+  });
+  return rows.map(rowToRawStandaloneStory);
+}
+
+export async function getAllPublishedStudioStandaloneStories(): Promise<RawStandaloneStory[]> {
+  const rows = await prisma.standaloneStory.findMany({
+    where: { published: true },
+    orderBy: { sourceCreatedAt: "desc" },
+  });
+  return rows.map(rowToRawStandaloneStory);
+}
+
+export async function getJourneyEligibleStudioStandaloneStories(): Promise<RawStandaloneStory[]> {
+  const rows = await prisma.standaloneStory.findMany({
+    where: { journeyEligible: true },
+    orderBy: { sourceCreatedAt: "desc" },
+  });
+  return rows.map(rowToRawStandaloneStory);
 }

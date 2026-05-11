@@ -22,3 +22,14 @@ export function shouldReadBookFromStudio(bookSlug: string): boolean {
 export function studioBookSlugs(): string[] {
   return Array.from(PARSED_STUDIO_BOOKS);
 }
+
+// Global toggle for the StandaloneStory wave. Boolean (not per-slug) because
+// the catalog has ~65 stories shared across web reader, mobile API, favorites
+// and user-stories endpoints. Flipping the flag swaps the data source for all
+// of them at once. Set READ_STANDALONE_STORIES_FROM_STUDIO=true to enable.
+const STANDALONE_FROM_STUDIO =
+  (process.env.READ_STANDALONE_STORIES_FROM_STUDIO ?? "").trim().toLowerCase() === "true";
+
+export function shouldReadStandaloneFromStudio(): boolean {
+  return STANDALONE_FROM_STUDIO;
+}
