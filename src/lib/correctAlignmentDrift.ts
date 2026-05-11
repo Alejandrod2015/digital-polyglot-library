@@ -112,6 +112,7 @@ export async function correctAlignmentDrift(args: {
   if (!firstToken || firstToken.startSec === null) {
     return { tokens, offsetApplied: 0, detectedSilenceEnd: null };
   }
+  const firstTokenStartSec: number = firstToken.startSec;
 
   // Detect silences with a strict minimum duration so we skip the
   // tiny pauses (200-350 ms) that exist between words inside the
@@ -127,7 +128,7 @@ export async function correctAlignmentDrift(args: {
   // before aeneas's first body token; if there is no such silence,
   // there is no measurable title-to-body drift to correct.
   const candidate = silences
-    .filter((s) => s.start < firstToken.startSec + 1)
+    .filter((s) => s.start < firstTokenStartSec + 1)
     .slice(-1)[0] ?? null;
 
   if (!candidate) {
@@ -137,7 +138,7 @@ export async function correctAlignmentDrift(args: {
   // Drift is positive when the silence ends AFTER aeneas's first
   // token (aeneas placed the word too early). Negative or near-zero
   // means alignment is already good.
-  const drift = candidate.end - firstToken.startSec;
+  const drift = candidate.end - firstTokenStartSec;
   if (drift < minDriftSec) {
     return { tokens, offsetApplied: 0, detectedSilenceEnd: candidate.end };
   }
