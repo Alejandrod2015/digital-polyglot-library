@@ -28,6 +28,7 @@
     "@prisma/client": "^6.17.1",
     "dotenv": "^17.2.3",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.38.0",
     "lucide-react": "^0.544.0",
     "next": "^15.5.7",
     "openai": "^5.23.2",
