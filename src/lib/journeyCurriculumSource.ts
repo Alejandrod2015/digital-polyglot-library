@@ -1,108 +1,19 @@
-import { unstable_cache } from "next/cache";
-import { rawServerClient, freshClient, writeClient } from "@/sanity/lib/client";
+// /src/lib/journeyCurriculumSource.ts
+//
+// Source of journey curriculum plans. Previously read from Sanity
+// `journeyVariantPlan` docs; after the Sanity -> Studio cutover the
+// hardcoded fallback is the only source. If the project needs an editable
+// curriculum again, add a Prisma model and migrate this module to read
+// from it. Until then, edit the curriculum in code.
+
 import {
   JOURNEY_CURRICULUM as FALLBACK_CURRICULUM,
   type JourneyLevelPlan,
   type JourneyVariantPlan,
 } from "@/app/journey/journeyCurriculum";
 
-type SanityJourneyTopicPlan = {
-  slug?: string;
-  label?: string;
-  storyTarget?: number;
-};
-
-type SanityJourneyLevelPlan = {
-  id?: string;
-  title?: string;
-  subtitle?: string;
-  topicTarget?: number;
-  storyTargetPerTopic?: number;
-  topics?: SanityJourneyTopicPlan[];
-};
-
-type SanityJourneyVariantPlan = {
-  _id: string;
-  language?: string;
-  variantId?: string;
-  journeyType?: string;
-  levels?: SanityJourneyLevelPlan[];
-};
-
-function normalizeLevel(level: SanityJourneyLevelPlan): JourneyLevelPlan | null {
-  if (!level.id || !level.title || !level.subtitle || !Array.isArray(level.topics)) return null;
-  const topics = level.topics
-    .filter((topic): topic is Required<Pick<SanityJourneyTopicPlan, "slug" | "label" | "storyTarget">> =>
-      Boolean(topic.slug && topic.label && typeof topic.storyTarget === "number")
-    )
-    .map((topic) => ({
-      slug: topic.slug,
-      label: topic.label,
-      storyTarget: topic.storyTarget,
-      checkpoint: "mixed" as const,
-    }));
-
-  return {
-    id: level.id,
-    title: level.title,
-    subtitle: level.subtitle,
-    topicTarget:
-      typeof level.topicTarget === "number" && Number.isFinite(level.topicTarget)
-        ? level.topicTarget
-        : topics.length,
-    storyTargetPerTopic:
-      typeof level.storyTargetPerTopic === "number" && Number.isFinite(level.storyTargetPerTopic)
-        ? level.storyTargetPerTopic
-        : 1,
-    topics,
-  };
-}
-
-function normalizeVariant(doc: SanityJourneyVariantPlan): JourneyVariantPlan | null {
-  if (!doc.language || !doc.variantId || !Array.isArray(doc.levels)) return null;
-  const levels = doc.levels.map(normalizeLevel).filter(Boolean) as JourneyLevelPlan[];
-  if (!levels.length) return null;
-  return {
-    language: doc.language,
-    variantId: doc.variantId,
-    ...(doc.journeyType ? { journeyType: doc.journeyType } : {}),
-    levels,
-  };
-}
-
-const getPublishedCurriculumCached = unstable_cache(
-  async (): Promise<JourneyVariantPlan[]> => {
-    // Use rawServerClient (with token) so pipeline/agents can see all docs
-    const docs = await rawServerClient.fetch<SanityJourneyVariantPlan[]>(
-      `*[_type == "journeyVariantPlan"] | order(language asc, variantId asc){
-        _id,
-        language,
-        variantId,
-        journeyType,
-        levels[]{
-          id,
-          title,
-          subtitle,
-          topicTarget,
-          storyTargetPerTopic,
-          topics[]{
-            slug,
-            label,
-            storyTarget
-          }
-        }
-      }`
-    );
-
-    const normalized = docs.map(normalizeVariant).filter(Boolean) as JourneyVariantPlan[];
-    return normalized.length ? normalized : FALLBACK_CURRICULUM;
-  },
-  ["journey-curriculum-v2"],
-  { revalidate: 60, tags: ["journey-curriculum"] }
-);
-
 export async function getJourneyCurriculumPlans(): Promise<JourneyVariantPlan[]> {
-  return getPublishedCurriculumCached();
+  return FALLBACK_CURRICULUM;
 }
 
 export async function getJourneyVariantPlanAsync(
@@ -132,27 +43,7 @@ export async function getJourneyLevelPlanAsync(
 }
 
 export async function listJourneyVariantPlansForStudio(): Promise<JourneyVariantPlan[]> {
-  const docs = await rawServerClient.fetch<SanityJourneyVariantPlan[]>(
-    `*[_type == "journeyVariantPlan"] | order(language asc, variantId asc){
-      _id,
-      language,
-      variantId,
-      levels[]{
-        id,
-        title,
-        subtitle,
-        topicTarget,
-        storyTargetPerTopic,
-        topics[]{
-          slug,
-          label,
-          storyTarget
-        }
-      }
-    }`
-  );
-  const normalized = docs.map(normalizeVariant).filter(Boolean) as JourneyVariantPlan[];
-  return normalized.length ? normalized : FALLBACK_CURRICULUM;
+  return FALLBACK_CURRICULUM;
 }
 
 export async function getJourneyVariantPlanForStudio(
@@ -172,28 +63,13 @@ export async function getJourneyVariantPlanForStudio(
   );
 }
 
-export async function saveJourneyVariantPlanForStudio(plan: JourneyVariantPlan): Promise<void> {
-  const jType = (plan.journeyType ?? "generico").toLowerCase();
-  const docId = `journey-variant-plan.${plan.language.toLowerCase()}.${plan.variantId.toLowerCase()}.${jType}`;
-  await writeClient.createOrReplace({
-    _id: docId,
-    _type: "journeyVariantPlan",
-    language: plan.language.toLowerCase(),
-    variantId: plan.variantId.toLowerCase(),
-    journeyType: jType,
-    levels: plan.levels.map((level) => ({
-      _type: "journeyLevelPlan",
-      id: level.id,
-      title: level.title,
-      subtitle: level.subtitle,
-      topicTarget: level.topicTarget,
-      storyTargetPerTopic: level.storyTargetPerTopic,
-      topics: level.topics.map((topic) => ({
-        _type: "journeyTopicPlan",
-        slug: topic.slug,
-        label: topic.label,
-        storyTarget: topic.storyTarget,
-      })),
-    })),
-  });
+// Writes are not supported after the Sanity cutover. Kept as a no-op so
+// existing Studio components do not throw on submit; persistence requires
+// editing src/app/journey/journeyCurriculum.ts in code.
+export async function saveJourneyVariantPlanForStudio(
+  _plan: JourneyVariantPlan
+): Promise<void> {
+  console.warn(
+    "[journeyCurriculumSource] saveJourneyVariantPlanForStudio is a no-op after the Sanity cutover. Edit src/app/journey/journeyCurriculum.ts in code."
+  );
 }

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
 import { inferTopicFromText } from "@/lib/topicClassifier";
-import { buildSanityCorsHeaders } from "@/lib/sanityCors";
+import { buildApiCorsHeaders } from "@/lib/apiCors";
 import { improveVocabDefinitions } from "@/lib/vocabQuality";
 import { isInvalidMultiwordVocab, normalizeToken } from "@/lib/vocabSelection";
 import { resolveCanonicalVocabEntry } from "@/lib/vocabWordNormalization";
@@ -109,7 +109,7 @@ function parseStoryPayload(content: string): unknown {
 
 export async function POST(req: Request) {
   const origin = req.headers.get("origin");
-  const corsHeaders = buildSanityCorsHeaders(origin);
+  const corsHeaders = buildApiCorsHeaders(origin);
 
   try {
     let body = {};
@@ -308,6 +308,6 @@ export async function OPTIONS(req: Request) {
   const origin = req.headers.get("origin");
   return new NextResponse(null, {
     status: 204,
-    headers: buildSanityCorsHeaders(origin),
+    headers: buildApiCorsHeaders(origin),
   });
 }

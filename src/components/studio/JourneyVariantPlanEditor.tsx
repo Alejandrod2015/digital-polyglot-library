@@ -17,9 +17,11 @@ type Props = {
   highlightedFocus?: string | null;
 };
 
-function legacyPlanHref(plan: Pick<JourneyVariantPlan, "language" | "variantId">) {
-  const docId = `journey-variant-plan.${plan.language.toLowerCase()}.${plan.variantId.toLowerCase()}`;
-  return `/studio/sanity/intent/edit/id=${encodeURIComponent(docId)};type=journeyVariantPlan`;
+function legacyPlanHref(_plan: Pick<JourneyVariantPlan, "language" | "variantId">) {
+  // The Sanity Studio mount is gone. Journey variant plans live in
+  // src/app/journey/journeyCurriculum.ts as a hardcoded fallback; editing
+  // requires a code change. This link now stays in-app as a no-op.
+  return "#";
 }
 
 function slugify(s: string) {

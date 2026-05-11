@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import { buildSanityCorsHeaders } from "@/lib/sanityCors";
+import { buildApiCorsHeaders } from "@/lib/apiCors";
 import { cefrPromptLabel } from "@domain/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 
@@ -32,7 +32,7 @@ type Body = {
 
 export async function POST(req: Request) {
   const origin = req.headers.get("origin");
-  const corsHeaders = buildSanityCorsHeaders(origin);
+  const corsHeaders = buildApiCorsHeaders(origin);
 
   try {
     const body = (await req.json()) as Body;
@@ -165,6 +165,6 @@ export async function OPTIONS(req: Request) {
   const origin = req.headers.get("origin");
   return new NextResponse(null, {
     status: 204,
-    headers: buildSanityCorsHeaders(origin),
+    headers: buildApiCorsHeaders(origin),
   });
 }

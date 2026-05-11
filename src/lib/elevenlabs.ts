@@ -1,7 +1,6 @@
 // /src/lib/elevenlabs.ts
 import OpenAI from "openai";
 import crypto from "node:crypto";
-import { sanityWriteClient } from "@/sanity";
 import { buildAudioSegmentsFromTranscript, type AudioSegment, type TranscriptSegment } from "@/lib/audioSegments";
 import { analyzeDeliveryQuality, analyzeTranscriptQuality, type AudioQaResult } from "@/lib/audioQa";
 import { alignAudioOnModal } from "@/lib/audioWordTimings";
@@ -265,33 +264,8 @@ export async function generateAndUploadAudio(
       };
     }
 
-    console.log("[elevenlabs] ↩ Falling back to Sanity asset storage");
-
-    const asset = await sanityWriteClient.assets.upload("file", buffer, {
-      filename,
-      contentType: "audio/mpeg",
-    });
-
-    if (!asset?._id) {
-      console.error("[elevenlabs] ❌ Sanity upload failed (no asset returned)");
-      return null;
-    }
-
-    const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "9u7ilulp";
-    const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
-    const fileId = asset._id.replace("file-", "").replace("-mp3", "");
-    const url = `https://cdn.sanity.io/files/${projectId}/${dataset}/${fileId}.mp3`;
-
-    console.log("[elevenlabs] ✅ Audio uploaded to Sanity:", filename, "→", url);
-
-    return {
-      url,
-      filename,
-      assetId: asset._id,
-      audioSegments: transcription.audioSegments,
-      audioQa,
-      voiceId: `elevenlabs/${selectedVoice}`,
-    };
+    console.warn("[elevenlabs] R2 upload returned null; object storage may be unconfigured.");
+    return null;
   } catch (err) {
     console.error("[elevenlabs] 💥 Failed to generate/upload audio:", err);
     return null;

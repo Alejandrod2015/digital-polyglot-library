@@ -1,4 +1,3 @@
-import { sanityWriteClient as writeClient } from "@/sanity";
 import { uploadPublicObject } from "@/lib/objectStorage";
 
 export type CoverParams = {
@@ -375,19 +374,8 @@ export async function generateAndUploadCover({
       return { url: uploaded.url, filename };
     }
 
-    const asset = await writeClient.assets.upload("image", buffer, {
-      filename,
-      contentType: "image/png",
-    });
-
-    if (!asset?._id) return null;
-
-    const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "9u7ilulp";
-    const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
-    const fileId = asset._id.replace("image-", "").replace("-png", "");
-    const url = `https://cdn.sanity.io/images/${projectId}/${dataset}/${fileId}.png`;
-
-    return { url, filename };
+    console.warn("[cover] R2 upload returned null; object storage may be unconfigured.");
+    return null;
   } catch (err) {
     console.error("[cover] Failed to generate/upload with Flux:", err);
     return null;

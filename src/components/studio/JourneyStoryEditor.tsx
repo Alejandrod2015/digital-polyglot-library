@@ -8,9 +8,10 @@ import StudioToast, { showToast } from "@/components/studio/StudioToast";
 
 type Props = { story: StudioJourneyStory };
 
-function legacyStoryHref(story: Pick<StudioJourneyStory, "draftId" | "documentId" | "hasDraft">) {
-  const documentId = story.hasDraft ? story.draftId : story.documentId;
-  return `/studio/sanity/intent/edit/id=${encodeURIComponent(documentId)};type=standaloneStory`;
+function legacyStoryHref(story: Pick<StudioJourneyStory, "documentId">) {
+  // Both journey-eligible and plain standalone stories now live in the
+  // unified StandaloneStory editor. The old Sanity mount is gone.
+  return `/studio/standalone-stories/${encodeURIComponent(story.documentId)}`;
 }
 
 /* ── Validation rules ── */
@@ -255,7 +256,7 @@ export default function JourneyStoryEditor({ story }: Props) {
         </div>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
           <StudioActionLink href="/studio/journey-stories" className="studio-btn-ghost" style={btn} pendingLabel="Abriendo historias...">Volver a la lista</StudioActionLink>
-          <StudioActionLink href={legacyStoryHref(form)} className="studio-btn-ghost" style={btn} pendingLabel="Abriendo Sanity...">Abrir en Sanity</StudioActionLink>
+          <StudioActionLink href={legacyStoryHref(form)} className="studio-btn-ghost" style={btn} pendingLabel="Abriendo editor...">Abrir en editor</StudioActionLink>
           <button onClick={() => void duplicate()} disabled={duplicating || isNavigating} className="studio-btn-ghost" style={{ ...btn, opacity: duplicating || isNavigating ? 0.6 : 1 }}>
             {duplicating ? "Duplicando..." : isNavigating ? "Abriendo..." : "Duplicar"}
           </button>
@@ -469,7 +470,7 @@ export default function JourneyStoryEditor({ story }: Props) {
                   Abrir historia publicada
                 </StudioActionLink>
               ) : null}
-              <StudioActionLink href={legacyStoryHref(form)} className="studio-btn-ghost" style={btn} pendingLabel="Abriendo Sanity...">Abrir en Sanity</StudioActionLink>
+              <StudioActionLink href={legacyStoryHref(form)} className="studio-btn-ghost" style={btn} pendingLabel="Abriendo editor...">Abrir en editor</StudioActionLink>
             </div>
             <p style={{ fontSize: 11, color: "var(--muted)", marginTop: 10, fontFamily: "monospace" }}>
               ID: {form.documentId}

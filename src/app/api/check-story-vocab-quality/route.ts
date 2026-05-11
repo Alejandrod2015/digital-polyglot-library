@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { buildSanityCorsHeaders } from "@/lib/sanityCors";
+import { buildApiCorsHeaders } from "@/lib/apiCors";
 import { assessStoryVocabQuality } from "@/lib/storyVocabQuality";
 
 type Body = {
@@ -13,7 +13,7 @@ function stripHtml(text: string): string {
 
 export async function POST(req: Request) {
   const origin = req.headers.get("origin");
-  const corsHeaders = buildSanityCorsHeaders(origin);
+  const corsHeaders = buildApiCorsHeaders(origin);
 
   try {
     let body: Body = {};
@@ -47,7 +47,7 @@ export async function OPTIONS(req: Request) {
   const origin = req.headers.get("origin");
   return new NextResponse(null, {
     status: 204,
-    headers: buildSanityCorsHeaders(origin),
+    headers: buildApiCorsHeaders(origin),
   });
 }
 

@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
-import { buildSanityCorsHeaders } from "@/lib/sanityCors";
+import { prisma } from "@/lib/prisma";
+import { buildApiCorsHeaders } from "@/lib/apiCors";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -103,22 +102,24 @@ function tooSimilarToExisting(title: string, existingTitles: string[]): boolean 
 }
 
 async function getExistingGeneratedTitles(documentId?: string): Promise<string[]> {
-  const query = groq`*[_type in ["story", "standaloneStory"] && defined(title)]{
-    _id,
-    title
-  }`;
-
-  const rows = await client.fetch<Array<{ _id?: string; title?: string }>>(query);
-  const excludedIds = documentId ? new Set([documentId, `drafts.${documentId}`]) : null;
+  // Reads titles already present in the Studio catalog (CatalogStory +
+  // StandaloneStory) so the title generator avoids duplicates. The caller
+  // can pass `documentId` to exclude the row being edited.
+  const [catalogStories, standaloneStories] = await Promise.all([
+    prisma.catalogStory.findMany({ select: { id: true, title: true } }),
+    prisma.standaloneStory.findMany({ select: { id: true, title: true } }),
+  ]);
+  const excluded = documentId ? new Set([documentId, `drafts.${documentId}`]) : null;
+  const rows = [...catalogStories, ...standaloneStories];
   return rows
-    .filter((row) => !(excludedIds && typeof row._id === "string" && excludedIds.has(row._id)))
-    .map((row) => (typeof row.title === "string" ? row.title.trim() : ""))
+    .filter((row) => !excluded || !excluded.has(row.id))
+    .map((row) => row.title?.trim() ?? "")
     .filter((title) => title.length > 0);
 }
 
 export async function POST(req: Request) {
   const origin = req.headers.get("origin");
-  const corsHeaders = buildSanityCorsHeaders(origin);
+  const corsHeaders = buildApiCorsHeaders(origin);
 
   try {
     const body = (await req.json()) as Body;
@@ -265,6 +266,6 @@ export async function OPTIONS(req: Request) {
   const origin = req.headers.get("origin");
   return new NextResponse(null, {
     status: 204,
-    headers: buildSanityCorsHeaders(origin),
+    headers: buildApiCorsHeaders(origin),
   });
 }

@@ -59,7 +59,6 @@ const NAV_SECTIONS = [
   /studio/content      → Content Agent
   /studio/drafts       → Borradores
   /studio/journey-builder → Creador de Journeys
-  /studio/sanity       → Sanity CMS
   /studio/team         → Equipo
   /studio/directive    → Directriz
 */

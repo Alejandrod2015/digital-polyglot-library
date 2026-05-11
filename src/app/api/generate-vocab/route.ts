@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { isInvalidMultiwordVocab, normalizeToken, splitWordTokens } from "@/lib/vocabSelection";
 import { resolveCanonicalVocabEntry } from "@/lib/vocabWordNormalization";
-import { buildSanityCorsHeaders } from "@/lib/sanityCors";
+import { buildApiCorsHeaders } from "@/lib/apiCors";
 import { cefrPromptLabel } from "@domain/cefr";
 import { buildVariantPromptClause, normalizeVariant } from "@/lib/languageVariant";
 import { isLowValueStudyWord } from "@/lib/vocabPedagogy";
@@ -896,7 +896,7 @@ ${candidateBlock}
 
 export async function POST(req: Request) {
   const origin = req.headers.get("origin");
-  const corsHeaders = buildSanityCorsHeaders(origin);
+  const corsHeaders = buildApiCorsHeaders(origin);
 
   try {
     if (!process.env.OPENAI_API_KEY) {
@@ -1197,6 +1197,6 @@ export async function OPTIONS(req: Request) {
   const origin = req.headers.get("origin");
   return new NextResponse(null, {
     status: 204,
-    headers: buildSanityCorsHeaders(origin),
+    headers: buildApiCorsHeaders(origin),
   });
 }

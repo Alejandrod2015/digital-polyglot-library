@@ -1,20 +1,6 @@
 // /src/lib/email.ts
 import { Resend } from "resend";
-import { client as sanityClient } from "@/sanity/lib/client";
-
-/**
- * Gets the book title from Sanity by its slug.
- */
-async function getBookTitle(slug: string): Promise<string> {
-  try {
-    const query = `*[_type == "book" && slug.current == $slug][0]{ title }`;
-    const result = await sanityClient.fetch<{ title?: string } | null>(query, { slug });
-    return result?.title ?? slug;
-  } catch (err) {
-    console.error("⚠️ Error fetching title from Sanity for:", slug, err);
-    return slug;
-  }
-}
+import { getBookTitle } from "@/lib/books";
 
 /**
  * Sends the email with the access link to the books.
@@ -38,7 +24,6 @@ export async function sendClaimEmail({
     return "skipped";
   }
 
-  // 🔹 Get titles from Sanity
   const titles = await Promise.all(books.map((slug) => getBookTitle(slug)));
   const claimUrl = `${baseUrl}/claim/${token}`;
 
