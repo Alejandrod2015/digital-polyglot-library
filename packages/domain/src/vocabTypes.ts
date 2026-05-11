@@ -55,14 +55,50 @@ function compact(value: string): string {
   return value.replace(/\s+/g, " ").trim();
 }
 
+// Sufijos españoles que identifican un tipo gramatical con alta
+// confianza. Se evalúan después de los heurísticos de la definición
+// (que tienen más señal cuando la definición empieza con "to" o un
+// artículo).
+const SPANISH_NOUN_SUFFIXES = [
+  "ción", "sión", "dad", "tad", "tud", "aje", "anza", "encia", "ancia",
+  "miento", "ismo", "ista", "ería", "ero", "era", "azo", "ote",
+];
+const SPANISH_ADJECTIVE_SUFFIXES = [
+  "oso", "osa", "ivo", "iva", "able", "ible", "iento", "ienta",
+];
+const SPANISH_VERB_INFINITIVE = /(?:ar|er|ir)$/;
+
 export function inferVocabTypeFromWordAndDefinition(word?: string, definition?: string): VocabTypeKey | null {
   const normalizedWord = typeof word === "string" ? compact(word).toLowerCase() : "";
   const normalizedDef = typeof definition === "string" ? compact(definition).toLowerCase() : "";
 
+  // Multi-word entries are always expressions, sin importar la definición.
   if (normalizedWord.includes(" ") || normalizedWord.includes("-")) return "expression";
+
+  // Señal por la forma de la definición (más confiable cuando existe).
   if (normalizedDef.startsWith("to ")) return "verb";
   if (/^(a|an|the)\s+/.test(normalizedDef)) return "noun";
-  if (normalizedWord.endsWith("ly")) return "adverb";
+
+  // Adverbios: -ly (inglés) / -mente (español).
+  if (normalizedWord.endsWith("ly") || normalizedWord.endsWith("mente")) return "adverb";
+
+  // Sufijos españoles inequívocos (alta precisión, sin ambigüedad).
+  if (SPANISH_NOUN_SUFFIXES.some((s) => normalizedWord.endsWith(s))) return "noun";
+  if (SPANISH_ADJECTIVE_SUFFIXES.some((s) => normalizedWord.endsWith(s))) return "adjective";
+
+  // Verbos en infinitivo: -ar, -er, -ir con al menos 4 letras para evitar
+  // falsos positivos en monosílabos comunes (sustantivos cortos como
+  // "mar", "ver", "sur" caerían acá pero no son verbos en infinitivo).
+  if (normalizedWord.length >= 4 && SPANISH_VERB_INFINITIVE.test(normalizedWord)) {
+    return "verb";
+  }
+
+  // Si llegamos hasta acá y tenemos definición, la mayoría del vocab de
+  // libros son sustantivos comunes (objetos, lugares, conceptos). Es
+  // mejor adivinar "noun" que caer al gris genérico de "other". Para
+  // entradas sin definición devolvemos null y dejamos que el caller
+  // decida (ej. caer a "other").
+  if (normalizedDef.length > 3) return "noun";
 
   return null;
 }

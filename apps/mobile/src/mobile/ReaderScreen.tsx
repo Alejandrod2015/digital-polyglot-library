@@ -34,6 +34,7 @@ import { ProgressiveImage } from "./ProgressiveImage";
 import { getCoverUrl } from "./coverUrl";
 import { apiFetch } from "../lib/api";
 import { mobileConfig } from "../config";
+import { extractStoryPlainText } from "../../../../src/lib/storyPlainText";
 
 type StoryBlock = {
   type: "paragraph" | "quote";
@@ -693,6 +694,7 @@ export function ReaderScreen(args: {
   // interval (e.g. German "in" at ~160ms) still get highlighted.
   const lastPlaybackRef = useRef<{
     positionMillis: number;
+    durationMillis: number;
     wallClockMs: number;
     isPlaying: boolean;
     rate: number;
@@ -735,7 +737,13 @@ export function ReaderScreen(args: {
   const effectiveWordTimings = useMemo<AudioWordTimingsPayload>(() => {
     const base = (() => {
       if (wordTimings) return wordTimings;
-      const fromText = typeof story.text === "string" ? story.text : "";
+      // Las historias del catálogo guardan su body como HTML (envuelto en
+      // <p>, <blockquote>, <span class="vocab-word">). El render karaoke
+      // asume que `storyPlainText` ya viene como texto plano (igual que
+      // el payload aeneas del backend para journeys), así que tenemos
+      // que strippear las tags antes de tokenizar. Sin esto el lector
+      // muestra el HTML crudo como si fuera el cuerpo del cuento.
+      const fromText = typeof story.text === "string" ? extractStoryPlainText(story.text) : "";
       const fromBlocks = blocks.length > 0 ? blocks.map((b) => b.text).join("\n") : "";
       return buildSyntheticWordTimings(fromText || fromBlocks);
     })();
@@ -761,6 +769,13 @@ export function ReaderScreen(args: {
     lastResolvedIndexRef.current = null;
   }, [story.id]);
   useEffect(() => {
+    // El cursor solo avanza cuando hay wordTimings reales del backend.
+    // Para journeys vienen de `JourneyStory.audioWordTimings` (aeneas).
+    // Para historias del catálogo vienen de `CatalogStoryAudioTimings`,
+    // populado por `scripts/generateCatalogAudioTimings.ts`. Si una
+    // historia aún no fue alineada, el cursor queda en null (texto sin
+    // resaltado pero con vocab pills); ya no hay heurística lineal que
+    // produzca desfase o jitter.
     if (!wordTimings) {
       setActiveWordIndex(null);
       lastResolvedIndexRef.current = null;
@@ -771,6 +786,7 @@ export function ReaderScreen(args: {
       if (!snap) return;
       const elapsedMs = snap.isPlaying ? Math.min(Date.now() - snap.wallClockMs, 700) : 0;
       const estimatedSec = (snap.positionMillis + elapsedMs * snap.rate) / 1000;
+
       // El index space tiene que ser EL MISMO que usa el renderer.
       // `effectiveWordTimings.words` filtra etiquetas de speaker; si
       // resolviéramos contra `wordTimings.words` sin filtrar, el
@@ -782,17 +798,12 @@ export function ReaderScreen(args: {
       let resolved = rawIdx;
       if (rawIdx === null && lastIdx !== null && snap.isPlaying) {
         // Mid-playback `null` from extrapolation overshoot: keep the
-        // last index instead of clearing the highlight, otherwise the
-        // first word visibly blinks twice as the snapshot oscillates
-        // around its startSec boundary on the very first activation.
+        // last index instead of clearing the highlight.
         resolved = lastIdx;
       } else if (rawIdx !== null && lastIdx !== null && rawIdx < lastIdx) {
-        // Treat backward steps of one or two words as jitter (extrapolation
-        // overshooting the player's next reported position). Bigger jumps
-        // are real seeks: let them through.
-        if (lastIdx - rawIdx < 3) {
-          resolved = lastIdx;
-        }
+        // Backward steps of 1-2 words are jitter; bigger jumps are
+        // real seeks and let through.
+        if (lastIdx - rawIdx < 3) resolved = lastIdx;
       }
       lastResolvedIndexRef.current = resolved;
       setActiveWordIndex((prev) => (prev === resolved ? prev : resolved));
@@ -1757,6 +1768,7 @@ export function ReaderScreen(args: {
             if (wordTimings && playback.isLoaded) {
               lastPlaybackRef.current = {
                 positionMillis: playback.positionMillis,
+                durationMillis: playback.durationMillis,
                 wallClockMs: Date.now(),
                 isPlaying: playback.isPlaying,
                 rate: playback.rate || 1,

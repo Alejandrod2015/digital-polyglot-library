@@ -33,6 +33,7 @@ import {
   formatTopic,
   formatVariant,
   formatVariantLabel,
+  resolveCefrLevel,
   VARIANT_LABELS,
   VARIANT_OPTIONS_BY_LANGUAGE,
   type AudioWordTimingsPayload,
@@ -949,6 +950,87 @@ function clipEndTrimForSegment(segment: AudioSegment): number {
 }
 const CHECKPOINT_PASS_THRESHOLD = 0.8;
 
+// Visual identity per topic for Explore story cards: solid background,
+// large translucent icon centered, short uppercase label. Keys match the
+// topic strings stored in book/story data. Unknown topics fall back to
+// the "default" entry below.
+type TopicVisual = {
+  bg: string;
+  icon: keyof typeof MaterialCommunityIcons.glyphMap;
+  label: string;
+};
+// Todos los `bg` están elegidos para que el texto oscuro `#0a1424` que
+// va dentro del pill tenga contraste WCAG AA (luminancia alta). Si
+// agregás un topic nuevo, mantené el patrón "200/300 tone" para que
+// nunca repitamos el bug del pill oscuro con texto negro.
+const TOPIC_VISUALS: Record<string, TopicVisual> = {
+  "Culture & Traditions": { bg: "#f4a032", icon: "ferris-wheel", label: "Culture" },
+  "Culture": { bg: "#f4a032", icon: "ferris-wheel", label: "Culture" },
+  "History & Places": { bg: "#5eead4", icon: "train", label: "History" },
+  "Food & Cooking": { bg: "#fbbf24", icon: "silverware-fork-knife", label: "Food" },
+  "Food": { bg: "#fbbf24", icon: "silverware-fork-knife", label: "Food" },
+  "Family & Community": { bg: "#fb7185", icon: "account-group", label: "Family" },
+  "Travel & Transportation": { bg: "#93c5fd", icon: "airplane", label: "Travel" },
+  "Nature & Environment": { bg: "#86efac", icon: "leaf", label: "Nature" },
+  "Mystery & Crime": { bg: "#c4b5fd", icon: "magnify", label: "Mystery" },
+  "Emotions & Personal Growth": { bg: "#ddd6fe", icon: "heart-pulse", label: "Growth" },
+  "School & Learning": { bg: "#a5b4fc", icon: "book-open-variant", label: "Learning" },
+  "Health & Wellness": { bg: "#fbcfe8", icon: "heart-circle", label: "Wellness" },
+  "Work & Career": { bg: "#cbd5e1", icon: "briefcase", label: "Work" },
+  "Money & Shopping": { bg: "#bef264", icon: "cash-multiple", label: "Money" },
+  "Relationships": { bg: "#fda4af", icon: "account-heart", label: "Love" },
+  "Romance": { bg: "#fda4af", icon: "account-heart", label: "Love" },
+  "Love": { bg: "#fda4af", icon: "account-heart", label: "Love" },
+  "Technology & Media": { bg: "#7dd3fc", icon: "cellphone", label: "Tech" },
+  "Music & Entertainment": { bg: "#fde68a", icon: "music", label: "Music" },
+  "Music": { bg: "#fde68a", icon: "music", label: "Music" },
+  "Dance": { bg: "#fda4af", icon: "music", label: "Dance" },
+  "Sports": { bg: "#fdba74", icon: "soccer", label: "Sports" },
+  "Art": { bg: "#fda4af", icon: "palette", label: "Art" },
+  default: { bg: "#cbd5e1", icon: "bookmark", label: "Story" },
+};
+// Reglas centralizadas: una sola fuente de verdad para "qué historia
+// entra en qué colección". Se usa tanto para contar (en el carrusel
+// de Collections) como para filtrar el grid cuando una colección está
+// activa. Lives fuera del component para que las deps de useMemo sean
+// estables.
+function matchCollectionRule(
+  key: string,
+  item: { topic: string; readMinutes: number; hasAudio: boolean }
+): boolean {
+  const topic = item.topic.toLowerCase();
+  const includes = (...needles: string[]) => needles.some((n) => topic.includes(n.toLowerCase()));
+  switch (key) {
+    case "quick-reads":
+      return item.readMinutes <= 5;
+    case "listen-tonight":
+      return item.hasAudio;
+    case "cafe-break":
+      return item.readMinutes >= 3 && item.readMinutes <= 5 && includes("culture", "family", "food");
+    case "before-bed":
+      return item.hasAudio && includes("emotions", "nature");
+    case "for-trip":
+      return includes("travel", "history");
+    default:
+      return true;
+  }
+}
+
+function getTopicVisual(topic: string | null | undefined): TopicVisual {
+  if (!topic) return TOPIC_VISUALS.default;
+  const exact = TOPIC_VISUALS[topic];
+  if (exact) return exact;
+  // Topic no mapeado (típicamente vienen de Sanity para standalones):
+  // derivamos un label corto del topic real para no mostrar "Story"
+  // genérico. "Music & Entertainment" → "Music", "Romance" → "Romance".
+  const shortLabel = topic.split(/[&,]/)[0].trim().split(/\s+/)[0] || "Story";
+  return {
+    bg: TOPIC_VISUALS.default.bg,
+    icon: TOPIC_VISUALS.default.icon,
+    label: shortLabel,
+  };
+}
+
 const SUGGESTED_INTERESTS = [
   "Coffee",
   "Sustainability",
@@ -1750,6 +1832,11 @@ export function MobileLibraryShell(args: {
   const [selectedExploreLanguage, setSelectedExploreLanguage] = useState<string>("All");
   const [selectedExploreRegion, setSelectedExploreRegion] = useState<string>("All");
   const [selectedExploreTopic, setSelectedExploreTopic] = useState<string>("All");
+  // Una colección abierta muestra su propia página con la lista completa
+  // de stories que matchean. Funciona igual que `expandedExploreSection`
+  // pero el universo se calcula con `matchCollectionRule` en vez de los
+  // filtros globales de explore.
+  const [expandedCollectionKey, setExpandedCollectionKey] = useState<string | null>(null);
   const [selection, setSelection] = useState<ReaderSelection | null>(null);
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [selectedBookTab, setSelectedBookTab] = useState<BookDetailTab>("stories");
@@ -1830,7 +1917,14 @@ export function MobileLibraryShell(args: {
   // Restored by closePracticeSession so tapping back out of the reader after
   // a practice session returns them to where they came from, not "practice".
   const [practicePreviousScreen, setPracticePreviousScreen] = useState<MobileScreen | null>(null);
-  const { height: viewportHeight } = useWindowDimensions();
+  const { height: viewportHeight, width: viewportWidth } = useWindowDimensions();
+  // Explore story-grid sizing: 2 columns across the section's horizontal
+  // padding (24 outer + 14 between cards). Height follows a 0.78 aspect
+  // ratio. Computed eagerly so cards render with explicit dimensions
+  // (RN's aspectRatio + percentage-width + flex-wrap combo sometimes
+  // collapses to zero height in scroll views).
+  const exploreCardWidth = Math.max(140, (viewportWidth - 24 * 2 - 14) / 2);
+  const exploreCardHeight = Math.round(exploreCardWidth / 0.78);
   const practiceComboToastOpacity = useRef(new Animated.Value(0)).current;
   const practiceComboToastScale = useRef(new Animated.Value(0.92)).current;
   const practiceComboToastHalo = useRef(new Animated.Value(0)).current;
@@ -8006,6 +8100,182 @@ export function MobileLibraryShell(args: {
     [exploreBaseFilteredBooks, preferences.interests, preferences.learningGoal, selectedExploreTopic]
   );
 
+  // Grid items with raw topic + read-time, used by the 2x2 hero grid in
+  // Explore. Same selection as `filteredExploreStories` (slice 12), but
+  // carries the original `topic` string so we can map it to an accent
+  // colour, plus the story cover URL so each card has its own artwork.
+  type ExploreGridItem = {
+    key: string;
+    title: string;
+    topic: string;
+    levelLabel: string;
+    coverUrl: string;
+    readMinutes: number;
+    xpReward: number;
+    hasAudio: boolean;
+    qaLabel?: string;
+    onPress: () => void;
+  };
+  const exploreStoryUniverse = useMemo<ExploreGridItem[]>(() => {
+    const items: ExploreGridItem[] = [];
+    for (const book of exploreBaseFilteredBooks) {
+      for (const story of book.stories) {
+        const storyTopic = formatTopic(story.topic ?? book.topic);
+        if (selectedExploreTopic !== "All" && storyTopic !== selectedExploreTopic) continue;
+        const resolved = resolveStorySelection(story.id, book, story);
+        if (!resolved) continue;
+        const rawText = typeof story.text === "string" ? story.text : "";
+        const wordCount = rawText.split(/\s+/).filter(Boolean).length;
+        const readMinutes = Math.max(1, Math.round(wordCount / 180));
+        const xpReward = 12 + readMinutes * 2;
+        const cefr = resolveCefrLevel(
+          story.cefrLevel ?? book.cefrLevel ?? null,
+          story.level ?? book.level
+        );
+        items.push({
+          key: `explore-grid-${story.id}`,
+          title: story.title,
+          topic: (story.topic ?? book.topic ?? "") as string,
+          levelLabel: cefr ? CEFR_LEVEL_LABELS[cefr] : LEVEL_LABELS[story.level ?? book.level],
+          coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? book.cover),
+          readMinutes,
+          xpReward,
+          hasAudio: !!story.audio,
+          onPress: () => openSelection(resolved),
+        });
+      }
+    }
+    // Merge standalone stories so users see ONE unified Stories grid.
+    for (const standalone of filteredStandaloneStoryCards) {
+      // standalone.meta is e.g. "Beginner · Family & Community"; topic is
+      // whatever after the last "·".
+      const metaParts = standalone.meta.split("·").map((s) => s.trim());
+      const topic = metaParts.length > 1 ? metaParts[metaParts.length - 1] : "";
+      const broadLevel = metaParts.length > 1 ? metaParts[0] : "";
+      const cefr = resolveCefrLevel(null, broadLevel);
+      items.push({
+        key: standalone.key,
+        title: standalone.title,
+        topic,
+        levelLabel: cefr ? CEFR_LEVEL_LABELS[cefr] : broadLevel || "—",
+        coverUrl: standalone.coverUrl,
+        readMinutes: 4,
+        xpReward: 16,
+        // El badge del standalone es "Audio ready" cuando audioUrl existe.
+        // Lo usamos como proxy de hasAudio para que las reglas de colección
+        // se apliquen sin pegarnos a la fuente original.
+        hasAudio: standalone.badge === "Audio ready",
+        onPress: standalone.onPress ?? (() => {}),
+      });
+    }
+    items.sort((a, b) => {
+      const aScore = scoreTopicLabelAgainstOnboarding(
+        `${a.title} ${a.topic}`,
+        preferences.interests,
+        preferences.learningGoal
+      );
+      const bScore = scoreTopicLabelAgainstOnboarding(
+        `${b.title} ${b.topic}`,
+        preferences.interests,
+        preferences.learningGoal
+      );
+      return bScore - aScore || a.title.localeCompare(b.title);
+    });
+    return items;
+  }, [exploreBaseFilteredBooks, filteredStandaloneStoryCards, preferences.interests, preferences.learningGoal, selectedExploreTopic]);
+
+  // El grid principal nunca aplica filter de colección; ese se hace en
+  // la página dedicada (expandedCollectionKey). Aquí solo recortamos a
+  // 6 cards "destacadas".
+  const exploreStoryGridItems = useMemo<ExploreGridItem[]>(
+    () => exploreStoryUniverse.slice(0, 6),
+    [exploreStoryUniverse]
+  );
+
+  // Items que se muestran en la vista expandida de una colección.
+  const expandedCollectionItems = useMemo<ExploreGridItem[]>(() => {
+    if (!expandedCollectionKey) return [];
+    return exploreStoryUniverse.filter((item) =>
+      matchCollectionRule(expandedCollectionKey, item)
+    );
+  }, [exploreStoryUniverse, expandedCollectionKey]);
+
+  // Curated collections derived from the same filtered story pool: no new
+  // data needed, the rules below count matching stories per "mood".
+  // Adding a new collection = add a new counter + push entry to the
+  // return array; nada de Sanity ni schemas hasta que necesitemos
+  // curación manual fuera del repo.
+  const exploreCollections = useMemo(() => {
+    let quickReads = 0;
+    let listenTonight = 0;
+    let cafeBreak = 0;
+    let beforeBed = 0;
+    let forTrip = 0;
+    const matchesAny = (value: string, needles: string[]) =>
+      needles.some((needle) => value.toLowerCase().includes(needle.toLowerCase()));
+    for (const book of exploreBaseFilteredBooks) {
+      for (const story of book.stories) {
+        const rawText = typeof story.text === "string" ? story.text : "";
+        const wordCount = rawText.split(/\s+/).filter(Boolean).length;
+        const readMinutes = Math.max(1, Math.round(wordCount / 180));
+        const topic = (story.topic ?? book.topic ?? "") as string;
+        if (readMinutes <= 5) quickReads += 1;
+        if (story.audio) listenTonight += 1;
+        if (readMinutes >= 3 && readMinutes <= 5 && matchesAny(topic, ["Culture", "Family", "Food"])) {
+          cafeBreak += 1;
+        }
+        if (story.audio && matchesAny(topic, ["Emotions", "Nature"])) {
+          beforeBed += 1;
+        }
+        if (matchesAny(topic, ["Travel", "History"])) {
+          forTrip += 1;
+        }
+      }
+    }
+    return [
+      {
+        key: "quick-reads",
+        title: "Quick reads",
+        subtitle: "< 5 min",
+        countLabel: `${quickReads} stories`,
+        bg: "#f4f0ff",
+        accent: "#7c3aed",
+      },
+      {
+        key: "listen-tonight",
+        title: "Listen tonight",
+        subtitle: "Audio-first",
+        countLabel: `${listenTonight} stories`,
+        bg: "#f6c177",
+        accent: "#7c2d12",
+      },
+      {
+        key: "cafe-break",
+        title: "Café break",
+        subtitle: "Culture & family",
+        countLabel: `${cafeBreak} stories`,
+        bg: "#fed7aa",
+        accent: "#9a3412",
+      },
+      {
+        key: "before-bed",
+        title: "Antes de dormir",
+        subtitle: "Calma + audio",
+        countLabel: `${beforeBed} stories`,
+        bg: "#e0e7ff",
+        accent: "#312e81",
+      },
+      {
+        key: "for-trip",
+        title: "Para el viaje",
+        subtitle: "Travel & history",
+        countLabel: `${forTrip} stories`,
+        bg: "#cffafe",
+        accent: "#0e7490",
+      },
+    ];
+  }, [exploreBaseFilteredBooks]);
+
   useEffect(() => {
     if (!__DEV__) return;
 
@@ -8394,9 +8664,23 @@ export function MobileLibraryShell(args: {
           <View style={styles.heroTextBlock}>
             <Text style={styles.eyebrow}>Browse</Text>
             <Text style={styles.title}>Explore</Text>
-            <Text style={styles.subtitle}>Search, filter and browse stories and books.</Text>
           </View>
-          <MenuTrigger onPress={() => setMenuOpen(true)} />
+          <View style={styles.exploreHeaderActions}>
+            <Pressable
+              onPress={() => setExplorePickerSection("language")}
+              style={styles.exploreLanguagePill}
+            >
+              <LanguageFlag
+                language={selectedExploreLanguage === "All" ? "Spanish" : selectedExploreLanguage}
+                size={20}
+              />
+              <Text style={styles.exploreLanguagePillText}>
+                {selectedExploreLanguage === "All" ? "ALL" : formatLanguageCode(selectedExploreLanguage)}
+              </Text>
+              <Feather name="chevron-down" size={14} color="#dbe9ff" />
+            </Pressable>
+            <MenuTrigger onPress={() => setMenuOpen(true)} />
+          </View>
         </View>
       </View>
 
@@ -8491,27 +8775,6 @@ export function MobileLibraryShell(args: {
           ) : null}
         </View>
 
-        <View style={styles.exploreCompactFiltersRow}>
-          <View style={styles.exploreCompactFilterField}>
-            <Text style={styles.exploreCompactFilterLabel}>Language</Text>
-            <Pressable onPress={() => setExplorePickerSection("language")} style={styles.exploreCompactFilterButton}>
-              <Text style={styles.exploreCompactFilterValue}>
-                {selectedExploreLanguage === "All" ? "All languages" : selectedExploreLanguage}
-              </Text>
-              <Feather name="chevron-down" size={16} color="#9cb0c9" />
-            </Pressable>
-          </View>
-
-          <View style={styles.exploreCompactFilterField}>
-            <Text style={styles.exploreCompactFilterLabel}>Region</Text>
-            <Pressable onPress={() => setExplorePickerSection("region")} style={styles.exploreCompactFilterButton}>
-              <Text style={styles.exploreCompactFilterValue}>
-                {selectedExploreRegion === "All" ? "All regions" : formatRegion(selectedExploreRegion)}
-              </Text>
-              <Feather name="chevron-down" size={16} color="#9cb0c9" />
-            </Pressable>
-          </View>
-        </View>
       </View>
 
       {__DEV__ && filteredExploreBooks.length > 0 ? (
@@ -8539,23 +8802,49 @@ export function MobileLibraryShell(args: {
             onPress={() => {
               setSelectedExploreTopic("All");
             }}
-            style={[styles.filterChip, selectedExploreTopic === "All" ? styles.filterChipActive : null]}
+            style={[
+              styles.filterChip,
+              styles.filterChipWithIcon,
+              selectedExploreTopic === "All" ? styles.filterChipActive : null,
+            ]}
           >
+            <Feather
+              name="plus"
+              size={14}
+              color={selectedExploreTopic === "All" ? "#0a1424" : "#dbe9ff"}
+            />
             <Text style={[styles.filterChipText, selectedExploreTopic === "All" ? styles.filterChipTextActive : null]}>
               All topics
             </Text>
           </Pressable>
-          {exploreTopicChips.map((chip) => (
-            <Pressable
-              key={`topic-${chip.label}`}
-              onPress={() => setSelectedExploreTopic(chip.label)}
-              style={[styles.filterChip, selectedExploreTopic === chip.label ? styles.filterChipActive : null]}
-            >
-              <Text style={[styles.filterChipText, selectedExploreTopic === chip.label ? styles.filterChipTextActive : null]}>
-                {chip.label} ({chip.count})
-              </Text>
-            </Pressable>
-          ))}
+          {exploreTopicChips.map((chip) => {
+            const visual = getTopicVisual(chip.label);
+            const isActive = selectedExploreTopic === chip.label;
+            return (
+              <Pressable
+                key={`topic-${chip.label}`}
+                onPress={() => setSelectedExploreTopic(chip.label)}
+                style={[
+                  styles.filterChip,
+                  styles.filterChipWithIcon,
+                  isActive ? styles.filterChipActive : null,
+                  isActive ? { backgroundColor: visual.bg, borderColor: visual.bg } : null,
+                ]}
+              >
+                <MaterialCommunityIcons
+                  name={visual.icon}
+                  size={14}
+                  color={isActive ? "#0a1424" : visual.bg}
+                />
+                <Text style={[styles.filterChipText, isActive ? styles.filterChipTextActive : null]}>
+                  {chip.label}
+                </Text>
+                <Text style={[styles.filterChipCount, isActive ? styles.filterChipCountActive : null]}>
+                  {chip.count}
+                </Text>
+              </Pressable>
+            );
+          })}
         </ScrollView>
       </View>
 
@@ -8610,7 +8899,99 @@ export function MobileLibraryShell(args: {
         </Pressable>
       </Modal>
 
-      {expandedExploreSection ? (
+      {expandedCollectionKey ? (() => {
+        const collection = exploreCollections.find((c) => c.key === expandedCollectionKey);
+        if (!collection) return null;
+        return (
+          <View style={styles.section}>
+            <Pressable
+              onPress={() => {
+                setExpandedCollectionKey(null);
+                shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+              }}
+              style={styles.secondaryButton}
+            >
+              <Text style={styles.secondaryButtonText}>← Back to Explore</Text>
+            </Pressable>
+            <View
+              style={[
+                styles.exploreCollectionPageHero,
+                { backgroundColor: collection.bg },
+              ]}
+            >
+              <Text style={[styles.exploreCollectionPageEyebrow, { color: collection.accent }]}>
+                Collection
+              </Text>
+              <Text style={[styles.exploreCollectionPageTitle, { color: collection.accent }]}>
+                {collection.title}
+              </Text>
+              <Text style={[styles.exploreCollectionPageSubtitle, { color: collection.accent }]}>
+                {collection.subtitle}
+              </Text>
+              <View
+                style={[
+                  styles.exploreCollectionPageCountPill,
+                  { backgroundColor: collection.accent },
+                ]}
+              >
+                <Text style={{ color: collection.bg, fontSize: 11, fontWeight: "900", letterSpacing: 0.4 }}>
+                  {expandedCollectionItems.length} stories
+                </Text>
+              </View>
+            </View>
+            {expandedCollectionItems.length > 0 ? (
+              <View style={styles.exploreStoriesGrid}>
+                {expandedCollectionItems.map((item) => {
+                  const visual = getTopicVisual(item.topic);
+                  return (
+                    <Pressable
+                      key={`collection-${item.key}`}
+                      onPress={item.onPress}
+                      style={[
+                        styles.exploreStoryHeroCard,
+                        { width: exploreCardWidth, height: exploreCardHeight },
+                      ]}
+                    >
+                      <ProgressiveImage
+                        uri={item.coverUrl}
+                        style={styles.exploreStoryHeroImage}
+                        resizeMode="cover"
+                      />
+                      <View style={styles.exploreStoryHeroImageOverlay} />
+                      <View style={styles.exploreStoryHeroLevelBadge}>
+                        <Text style={styles.exploreStoryHeroLevelText}>{item.levelLabel}</Text>
+                      </View>
+                      <View
+                        style={[
+                          styles.exploreStoryHeroTopicPill,
+                          { backgroundColor: visual.bg },
+                        ]}
+                      >
+                        <Text style={styles.exploreStoryHeroTopicPillText}>{visual.label}</Text>
+                      </View>
+                      <View style={styles.exploreStoryHeroFooter}>
+                        <Text style={styles.exploreStoryHeroTitle} numberOfLines={2}>
+                          {item.title}
+                        </Text>
+                        <View style={styles.exploreStoryHeroMetrics}>
+                          <Feather name="clock" size={11} color="rgba(255,255,255,0.78)" />
+                          <Text style={styles.exploreStoryHeroMetricText}>{item.readMinutes} m</Text>
+                        </View>
+                      </View>
+                    </Pressable>
+                  );
+                })}
+              </View>
+            ) : (
+              <View style={styles.emptyCard}>
+                <Text style={styles.emptyTitle}>No stories in this collection</Text>
+                <Text style={styles.metaLine}>Try a different language or topic filter.</Text>
+              </View>
+            )}
+            <View style={styles.exploreBottomSpacer} />
+          </View>
+        );
+      })() : expandedExploreSection ? (
         <View style={styles.section}>
           <Pressable onPress={() => { setExpandedExploreSection(null); shellScrollRef.current?.scrollTo({ y: 0, animated: false }); }} style={styles.secondaryButton}>
             <Text style={styles.secondaryButtonText}>Back to Explore</Text>
@@ -8630,22 +9011,61 @@ export function MobileLibraryShell(args: {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <View>
-                <Text style={styles.sectionEyebrow}>Read</Text>
-                <Text style={styles.sectionTitle}>Stories</Text>
+                <Text style={styles.exploreSectionEyebrow}>For you</Text>
+                <Text style={styles.exploreSectionTitle}>Stories</Text>
               </View>
               <View style={styles.sectionHeaderActions}>
-                <Text style={styles.helperText}>{filteredExploreStories.length} stories</Text>
-                {filteredExploreStories.length > 4 ? (
+                <Text style={styles.helperText}>{exploreStoryUniverse.length} stories</Text>
+                {exploreStoryUniverse.length > 6 ? (
                   <Pressable onPress={() => { setExpandedExploreSection("stories"); shellScrollRef.current?.scrollTo({ y: 0, animated: false }); }}>
-                    <Text style={styles.sectionHeaderActionText}>See all</Text>
+                    <Text style={styles.exploreSeeAllLink}>See all →</Text>
                   </Pressable>
                 ) : null}
               </View>
             </View>
-            {filteredExploreStories.length > 0 ? (
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-                {filteredExploreStories.map((item) => (<BookHomeCard key={`explore-story-${item.key}`} item={{ key: item.key, title: item.title, coverUrl: item.coverUrl, subtitle: item.subtitle, meta: item.meta, qaLabel: item.key === filteredExploreStories[0]?.key ? "qa-explore-story-card-0" : undefined, onPress: item.onPress ?? (() => {}) }} />))}
-              </ScrollView>
+            {exploreStoryGridItems.length > 0 ? (
+              <View style={styles.exploreStoriesGrid}>
+                {exploreStoryGridItems.map((item) => {
+                  const visual = getTopicVisual(item.topic);
+                  return (
+                    <Pressable
+                      key={item.key}
+                      onPress={item.onPress}
+                      style={[
+                        styles.exploreStoryHeroCard,
+                        { width: exploreCardWidth, height: exploreCardHeight },
+                      ]}
+                    >
+                      <ProgressiveImage
+                        uri={item.coverUrl}
+                        style={styles.exploreStoryHeroImage}
+                        resizeMode="cover"
+                      />
+                      <View style={styles.exploreStoryHeroImageOverlay} />
+                      <View style={styles.exploreStoryHeroLevelBadge}>
+                        <Text style={styles.exploreStoryHeroLevelText}>{item.levelLabel}</Text>
+                      </View>
+                      <View
+                        style={[
+                          styles.exploreStoryHeroTopicPill,
+                          { backgroundColor: visual.bg },
+                        ]}
+                      >
+                        <Text style={styles.exploreStoryHeroTopicPillText}>{visual.label}</Text>
+                      </View>
+                      <View style={styles.exploreStoryHeroFooter}>
+                        <Text style={styles.exploreStoryHeroTitle} numberOfLines={2}>
+                          {item.title}
+                        </Text>
+                        <View style={styles.exploreStoryHeroMetrics}>
+                          <Feather name="clock" size={11} color="rgba(255,255,255,0.78)" />
+                          <Text style={styles.exploreStoryHeroMetricText}>{item.readMinutes} m</Text>
+                        </View>
+                      </View>
+                    </Pressable>
+                  );
+                })}
+              </View>
             ) : (
               <View style={styles.emptyCard}>
                 <Text style={styles.emptyTitle}>No stories match those filters</Text>
@@ -8657,22 +9077,96 @@ export function MobileLibraryShell(args: {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <View>
-                <Text style={styles.sectionEyebrow}>Library</Text>
-                <Text style={styles.sectionTitle}>Books</Text>
+                <Text style={styles.exploreSectionEyebrow}>Curated</Text>
+                <Text style={styles.exploreSectionTitle}>Collections</Text>
+              </View>
+            </View>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              decelerationRate="normal"
+              contentContainerStyle={styles.exploreCollectionsCarousel}
+            >
+              {exploreCollections.map((collection) => (
+                <Pressable
+                  key={collection.key}
+                  onPress={() => {
+                    setExpandedCollectionKey(collection.key);
+                    shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+                  }}
+                  style={[styles.exploreCollectionCard, { backgroundColor: collection.bg }]}
+                >
+                  <Text style={[styles.exploreCollectionTitle, { color: collection.accent }]}>
+                    {collection.title}
+                  </Text>
+                  <Text style={[styles.exploreCollectionSubtitle, { color: collection.accent }]}>
+                    {collection.subtitle}
+                  </Text>
+                  <View style={[styles.exploreCollectionCountPill, { backgroundColor: collection.accent }]}>
+                    <Text style={[styles.exploreCollectionCountText, { color: collection.bg }]}>
+                      {collection.countLabel}
+                    </Text>
+                  </View>
+                </Pressable>
+              ))}
+            </ScrollView>
+          </View>
+
+          <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+              <View>
+                <Text style={styles.exploreSectionEyebrow}>Listen & read</Text>
+                <Text style={styles.exploreSectionTitle}>Books</Text>
               </View>
               <View style={styles.sectionHeaderActions}>
                 <Text style={styles.helperText}>{filteredExploreBooks.length} books</Text>
-                {filteredExploreBooks.length > 4 ? (
+                {filteredExploreBooks.length > 3 ? (
                   <Pressable onPress={() => { setExpandedExploreSection("books"); shellScrollRef.current?.scrollTo({ y: 0, animated: false }); }}>
-                    <Text style={styles.sectionHeaderActionText}>See all</Text>
+                    <Text style={styles.exploreSeeAllLink}>See all →</Text>
                   </Pressable>
                 ) : null}
               </View>
             </View>
             {filteredExploreBooks.length > 0 ? (
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-                {filteredExploreBooks.map((book) => (<BookWebCard key={`explore-book-${book.id}`} item={{ key: book.id, title: book.title, coverUrl: getCoverUrl(book.cover), language: formatLanguage(book.language), region: formatRegion(book.region), level: book.level, statsLine: `${book.stories.length} stories`, topicsLine: formatTopic(book.topic), description: book.description ?? book.subtitle ?? undefined, qaLabel: book.id === filteredExploreBooks[0]?.id ? "qa-explore-book-card-0" : undefined, onPress: () => openBook(book) }} />))}
-              </ScrollView>
+              <View style={styles.exploreBooksVerticalStack}>
+                {filteredExploreBooks.slice(0, 3).map((book) => {
+                  const totalMinutes = book.stories.reduce((sum, story) => {
+                    const text = typeof story.text === "string" ? story.text : "";
+                    const words = text.split(/\s+/).filter(Boolean).length;
+                    return sum + Math.max(1, Math.round(words / 180));
+                  }, 0);
+                  const bookCefr = resolveCefrLevel(book.cefrLevel ?? null, book.level);
+                  const bookLevelLabel = bookCefr ? CEFR_LEVEL_LABELS[bookCefr] : LEVEL_LABELS[book.level];
+                  return (
+                    <Pressable
+                      key={`explore-book-${book.id}`}
+                      onPress={() => openBook(book)}
+                      style={styles.exploreBookRow}
+                    >
+                      <ProgressiveImage
+                        uri={getCoverUrl(book.cover)}
+                        style={styles.exploreBookThumb}
+                        resizeMode="cover"
+                      />
+                      <View style={styles.exploreBookBody}>
+                        <Text style={styles.exploreBookEyebrow}>
+                          BOOK · {bookLevelLabel}
+                        </Text>
+                        <Text style={styles.exploreBookTitle} numberOfLines={1}>
+                          {book.title}
+                        </Text>
+                        <View style={styles.exploreBookMetricsRow}>
+                          <MaterialCommunityIcons name="book-open-variant" size={12} color="#9cb0c9" />
+                          <Text style={styles.exploreBookMetricText}>{book.stories.length} ch</Text>
+                          <Feather name="clock" size={11} color="#9cb0c9" />
+                          <Text style={styles.exploreBookMetricText}>{totalMinutes} min</Text>
+                        </View>
+                      </View>
+                      <Feather name="chevron-right" size={18} color="#9cb0c9" />
+                    </Pressable>
+                  );
+                })}
+              </View>
             ) : (
               <View style={styles.emptyCard}>
                 <Text style={styles.emptyTitle}>No books match those filters</Text>
@@ -8681,34 +9175,7 @@ export function MobileLibraryShell(args: {
             )}
           </View>
 
-          {sessionToken && filteredStandaloneStoryCards.length > 0 ? (
-            <View style={styles.section} accessibilityLabel="qa-explore-individual-stories-section" testID="qa-explore-individual-stories-section">
-              <View style={styles.sectionHeader}>
-                <View>
-                  <Text style={styles.sectionEyebrow}>Standalone</Text>
-                  <Text style={styles.sectionTitle}>Individual stories</Text>
-                </View>
-                <View style={styles.sectionHeaderActions}>
-                  {loadingRemote ? <Text style={styles.helperText}>Refreshing…</Text> : null}
-                  {filteredStandaloneStoryCards.length > 4 ? (
-                    <Pressable onPress={() => { setExpandedExploreSection("standalone"); shellScrollRef.current?.scrollTo({ y: 0, animated: false }); }}>
-                      <Text style={styles.sectionHeaderActionText}>See all</Text>
-                    </Pressable>
-                  ) : null}
-                </View>
-              </View>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-                {filteredStandaloneStoryCards.map((item) => (<BookHomeCard key={`explore-individual-${item.key}`} item={{ key: item.key, title: item.title, coverUrl: item.coverUrl, subtitle: item.subtitle, meta: item.meta, onPress: item.onPress ?? (() => {}) }} />))}
-              </ScrollView>
-            </View>
-          ) : (
-            <View style={styles.section}>
-              <View style={styles.emptyCard}>
-                <Text style={styles.emptyTitle}>No individual stories match those filters</Text>
-                <Text style={styles.metaLine}>Try a broader language, region or topic.</Text>
-              </View>
-            </View>
-          )}
+          <View style={styles.exploreBottomSpacer} />
         </>
       )}
     </>
@@ -9230,8 +9697,8 @@ export function MobileLibraryShell(args: {
             </Animated.View>
           ) : currentPracticeExercise ? (
             <>
-              {currentPracticeExercise.kind === "multiple-choice" &&
-              currentPracticeExercise.mode === "meaning" ? (
+              {currentPracticeExercise.kind === "multiple-choice" ||
+              currentPracticeExercise.kind === "match" ? (
                 <View
                   style={[
                     styles.practiceMeaningMeta,
@@ -9314,69 +9781,16 @@ export function MobileLibraryShell(args: {
                     </View>
                   </View>
                 </View>
-              ) : (
-                <View style={styles.practiceSessionMeta}>
-                  <View style={styles.practiceSessionProgressWrap}>
-                    <Text style={styles.practiceSessionProgressLabel}>{practiceProgressLabel}</Text>
-                    <View style={styles.practiceSessionProgressTrack}>
-                      <View
-                        style={[
-                          styles.practiceSessionProgressBar,
-                          {
-                            width: `${((practiceIndex + 1) / Math.max(practiceExercises.length, 1)) * 100}%`,
-                            backgroundColor: activePracticeCard.accent,
-                          },
-                        ]}
-                      />
-                    </View>
-                  </View>
-                  <Text style={styles.practiceSessionHelper}>{currentPracticeExercise.helper}</Text>
-                  <View style={styles.practiceSessionStatusRow}>
-                    <View
-                      style={[
-                        styles.practiceSessionStatusPill,
-                        practiceLastResult === "correct"
-                          ? styles.practiceSessionStatusPillCorrect
-                          : practiceLastResult === "wrong"
-                            ? styles.practiceSessionStatusPillWrong
-                            : null,
-                      ]}
-                    >
-                      <Text
-                        style={[
-                          styles.practiceSessionStatusText,
-                          practiceLastResult ? styles.practiceSessionStatusTextActive : null,
-                        ]}
-                      >
-                        {practiceLastResult === "correct"
-                          ? "Correct"
-                          : practiceTimedOut
-                            ? "Time's up!"
-                            : practiceLastResult === "wrong"
-                              ? "Try again"
-                              : "In progress"}
-                      </Text>
-                    </View>
-                    <View style={styles.practiceScorePill}>
-                      <Text style={styles.practiceScorePillText}>Streak {practiceSessionStreak}</Text>
-                    </View>
-                    <View style={styles.practiceScorePill}>
-                      <Text style={styles.practiceScorePillText}>Score {practiceScore}</Text>
-                    </View>
-                  </View>
-                </View>
-              )}
+              ) : null}
 
               <ScrollView
                 style={styles.practiceExerciseScroll}
                 contentContainerStyle={[
                   styles.practiceExerciseScrollContent,
-                  currentPracticeExercise.kind === "multiple-choice" &&
-                  currentPracticeExercise.mode === "meaning"
+                  currentPracticeExercise.kind === "multiple-choice"
                     ? styles.practiceExerciseScrollContentMeaning
                     : null,
                   currentPracticeExercise.kind === "multiple-choice" &&
-                  currentPracticeExercise.mode === "meaning" &&
                   isCompactMeaningViewport
                     ? styles.practiceExerciseScrollContentMeaningCompact
                     : null,
@@ -9390,29 +9804,66 @@ export function MobileLibraryShell(args: {
                   }}
                 >
                 {currentPracticeExercise.kind === "multiple-choice" ? (
-                  // The "make options + sentence bigger to fill the card on
-                  // tall devices" pass that fixes the empty space below the
-                  // prompt for context / listening / match. Meaning already
-                  // had the right vertical balance with the original sizes,
-                  // so we keep its smaller typography + tighter spacing —
-                  // otherwise meaning ends up taller than the screen and
-                  // forces a scroll.
+                  // Unified styling for ALL multiple-choice modes (meaning,
+                  // context, listening): gaming meta header, hero card with
+                  // mode-specific content, options as 2x2 grid with accent
+                  // bars. Hero content:
+                  //   - meaning: word grande + sentence card debajo
+                  //   - context (fill_blank, natural_expression): sentence
+                  //     con `___` como protagonista + audio button
+                  //   - listening: botón Play XL centrado (la palabra está
+                  //     oculta hasta reveal)
                   (() => {
-                    const isMeaningExercise = currentPracticeExercise.mode === "meaning";
+                    const mcMode = currentPracticeExercise.mode;
+                    const isMeaning = mcMode === "meaning";
+                    const isContext = mcMode === "context";
+                    const isListening = mcMode === "listening";
+                    const audioActive =
+                      speakingPracticePromptId === currentPracticeExercise.id ||
+                      playingPracticeClipId === currentPracticeExercise.id;
                     return (
                   <View
                     style={[
                       styles.practiceQuestionCard,
-                      isMeaningExercise ? styles.practiceQuestionCardMeaning : null,
+                      styles.practiceQuestionCardMeaning,
                     ]}
                   >
-                    {isMeaningExercise ? (
-                      <View
-                        style={[
-                          styles.practiceMeaningHeroCard,
-                          isCompactMeaningViewport ? styles.practiceMeaningHeroCardCompact : null,
-                        ]}
-                      >
+                    <View
+                      style={[
+                        styles.practiceMeaningHeroCard,
+                        isCompactMeaningViewport ? styles.practiceMeaningHeroCardCompact : null,
+                      ]}
+                    >
+                      {isListening ? (
+                        <View style={styles.practiceHeroListenWrap}>
+                          <Pressable
+                            onPress={playPracticePrompt}
+                            disabled={!practiceSpeechAvailable}
+                            style={[
+                              styles.practiceHeroListenButton,
+                              !practiceSpeechAvailable ? styles.practiceHeroListenButtonDisabled : null,
+                            ]}
+                          >
+                            <Feather
+                              name={audioActive ? "square" : "volume-2"}
+                              size={40}
+                              color={practiceSpeechAvailable ? "#9fe8ff" : "#8ea2bc"}
+                            />
+                          </Pressable>
+                          <Text style={styles.practiceHeroListenLabel}>
+                            {!practiceSpeechAvailable
+                              ? "Voice unavailable"
+                              : audioActive
+                                ? "Stop"
+                                : "Tap to listen"}
+                          </Text>
+                          {practiceRevealed ? (
+                            <Text style={styles.practiceHeroListenWord}>
+                              {currentPracticeExercise.favorite.word}
+                            </Text>
+                          ) : null}
+                        </View>
+                      ) : isContext ? (
                         <View
                           style={[
                             styles.practiceMeaningHeroTopRow,
@@ -9421,147 +9872,80 @@ export function MobileLibraryShell(args: {
                         >
                           <Text
                             style={[
-                              styles.practiceMeaningTargetWord,
-                              isCompactMeaningViewport ? styles.practiceMeaningTargetWordCompact : null,
+                              styles.practiceHeroContextSentence,
+                              isCompactMeaningViewport ? styles.practiceHeroContextSentenceCompact : null,
                             ]}
                           >
-                            {currentPracticeExercise.favorite.word}
+                            {currentPracticeExercise.sentence}
                           </Text>
-                          <Pressable
-                            onPress={() => {
-                              void playPracticeContextClip();
-                            }}
-                            disabled={!currentPracticeExercise.audioClip}
-                            style={[
-                              styles.practiceMeaningAudioButton,
-                              isCompactMeaningViewport ? styles.practiceMeaningAudioButtonCompact : null,
-                              !currentPracticeExercise.audioClip ? styles.practiceMeaningAudioButtonDisabled : null,
-                            ]}
-                          >
-                            <Feather
-                              name={
-                                speakingPracticePromptId === currentPracticeExercise.id ||
-                                playingPracticeClipId === currentPracticeExercise.id
-                                  ? "square"
-                                  : "volume-2"
-                              }
-                              size={18}
-                              color={currentPracticeExercise.audioClip ? "#9fe8ff" : "rgba(159,232,255,0.35)"}
-                            />
-                          </Pressable>
+                          {currentPracticeExercise.audioClip ? (
+                            <Pressable
+                              onPress={() => { void playPracticeContextClipStoryOnly(); }}
+                              style={[
+                                styles.practiceMeaningAudioButton,
+                                isCompactMeaningViewport ? styles.practiceMeaningAudioButtonCompact : null,
+                              ]}
+                            >
+                              <Feather
+                                name={audioActive ? "square" : "volume-2"}
+                                size={18}
+                                color="#9fe8ff"
+                              />
+                            </Pressable>
+                          ) : null}
                         </View>
-                        {currentPracticeExercise.sentence ? (
+                      ) : (
+                        <>
                           <View
                             style={[
-                              styles.practiceMeaningSentenceCard,
-                              isCompactMeaningViewport ? styles.practiceMeaningSentenceCardCompact : null,
+                              styles.practiceMeaningHeroTopRow,
+                              isCompactMeaningViewport ? styles.practiceMeaningHeroTopRowCompact : null,
                             ]}
                           >
                             <Text
                               style={[
-                                styles.practiceMeaningSentence,
-                                isCompactMeaningViewport ? styles.practiceMeaningSentenceCompact : null,
+                                styles.practiceMeaningTargetWord,
+                                isCompactMeaningViewport ? styles.practiceMeaningTargetWordCompact : null,
                               ]}
                             >
-                              {currentPracticeExercise.sentence}
+                              {currentPracticeExercise.favorite.word}
                             </Text>
+                            <Pressable
+                              onPress={() => { void playPracticeContextClip(); }}
+                              disabled={!currentPracticeExercise.audioClip}
+                              style={[
+                                styles.practiceMeaningAudioButton,
+                                isCompactMeaningViewport ? styles.practiceMeaningAudioButtonCompact : null,
+                                !currentPracticeExercise.audioClip ? styles.practiceMeaningAudioButtonDisabled : null,
+                              ]}
+                            >
+                              <Feather
+                                name={audioActive ? "square" : "volume-2"}
+                                size={18}
+                                color={currentPracticeExercise.audioClip ? "#9fe8ff" : "rgba(159,232,255,0.35)"}
+                              />
+                            </Pressable>
                           </View>
-                        ) : null}
-                      </View>
-                    ) : (
-                      <>
-                        <Text style={styles.practicePrompt}>{currentPracticeExercise.prompt}</Text>
-                        {currentPracticeExercise.mode === "meaning" || currentPracticeExercise.mode === "listening" ? (
-                          <View style={styles.practiceTargetWrap}>
-                            <Text style={styles.practiceTargetLabel}>Target word</Text>
-                            <Text style={styles.practiceTargetWord}>{currentPracticeExercise.favorite.word}</Text>
-                          </View>
-                        ) : null}
-                      </>
-                    )}
-                    {currentPracticeExercise.mode === "listening" ? (
-                      <Pressable
-                        onPress={playPracticePrompt}
-                        disabled={!practiceSpeechAvailable}
-                        style={[
-                          styles.practiceListenButton,
-                          !practiceSpeechAvailable ? styles.practiceListenButtonDisabled : null,
-                        ]}
-                      >
-                        <Feather
-                          name={speakingPracticePromptId === currentPracticeExercise.id ? "square" : "volume-2"}
-                          size={16}
-                          color={practiceSpeechAvailable ? "#f5f7fb" : "#8ea2bc"}
-                        />
-                        <Text
-                          style={[
-                            styles.practiceListenButtonText,
-                            !practiceSpeechAvailable ? styles.practiceListenButtonTextDisabled : null,
-                          ]}
-                        >
-                          {!practiceSpeechAvailable
-                            ? "Voice unavailable in this build"
-                            : speakingPracticePromptId === currentPracticeExercise.id
-                              ? "Stop"
-                              : "Play"}
-                        </Text>
-                      </Pressable>
-                    ) : null}
-                    {currentPracticeExercise.audioClip && !isMeaningExercise ? (() => {
-                      const clip = currentPracticeExercise.audioClip;
-                      const exId = currentPracticeExercise.id;
-                      const storyActive = playingPracticeClipId === exId;
-                      const storyAudio =
-                        clip.storySource === "standalone"
-                          ? standaloneStoryAudioBySlug[normalizeStorySlug(clip.storySlug)]
-                          : userStoryAudioBySlug[normalizeStorySlug(clip.storySlug)];
-                      // Story button enabled si el story tiene audio,
-                      // aunque no se haya matcheado un segmento por
-                      // oración: en ese caso la función arranca el
-                      // audio desde el inicio en vez de silencio.
-                      const storyAvailable = Boolean(storyAudio?.audioUrl);
-                      // Solo dejamos el botón Story (audio real de la
-                      // historia). TTS (speechSynthesis on-device) y HQ
-                      // (ElevenLabs) se sacaron porque ya no aportan: TTS
-                      // suena robótico y HQ está en cache-only así que
-                      // raramente reproduce algo. El botón vive aún para
-                      // que el usuario pueda re-tocar play o pausar el
-                      // audio del autoplay.
-                      // Botón Play siempre habilitado. La función
-                      // intenta primero el audio real de la historia
-                      // y cae a speechSynthesis (voz del sistema) si
-                      // no hay segmento disponible — sonido garantizado
-                      // sin pagar ElevenLabs.
-                      const ttsActive = speakingPracticePromptId === exId;
-                      const isPlaying = storyActive || ttsActive;
-                      return (
-                        <View style={{ flexDirection: "row", gap: 6, marginTop: 8 }}>
-                          <Pressable
-                            onPress={() => { void playPracticeContextClipStoryOnly(); }}
-                            style={styles.practiceListenButton}
-                          >
-                            <Feather
-                              name={isPlaying ? "square" : "play"}
-                              size={14}
-                              color="#f5f7fb"
-                            />
-                            <Text style={styles.practiceListenButtonText}>
-                              {isPlaying ? "Stop" : "Play"}
-                            </Text>
-                          </Pressable>
-                        </View>
-                      );
-                    })() : null}
-                    {currentPracticeExercise.sentence && !isMeaningExercise ? (
-                      <Text
-                        style={[
-                          styles.practiceSentence,
-                          isMeaningExercise ? styles.practiceSentenceMeaning : null,
-                        ]}
-                      >
-                        {currentPracticeExercise.sentence}
-                      </Text>
-                    ) : null}
+                          {currentPracticeExercise.sentence ? (
+                            <View
+                              style={[
+                                styles.practiceMeaningSentenceCard,
+                                isCompactMeaningViewport ? styles.practiceMeaningSentenceCardCompact : null,
+                              ]}
+                            >
+                              <Text
+                                style={[
+                                  styles.practiceMeaningSentence,
+                                  isCompactMeaningViewport ? styles.practiceMeaningSentenceCompact : null,
+                                ]}
+                              >
+                                {currentPracticeExercise.sentence}
+                              </Text>
+                            </View>
+                          ) : null}
+                        </>
+                      )}
+                    </View>
                     {practiceRevealed &&
                     practiceLaunchContext.source === "favorites" &&
                     practiceLaunchContext.kind === "related" &&
@@ -9582,8 +9966,8 @@ export function MobileLibraryShell(args: {
                       <View
                         style={[
                           styles.practiceOptions,
-                          isMeaningExercise ? styles.practiceOptionsMeaning : null,
-                          isMeaningExercise && isCompactMeaningViewport ? styles.practiceOptionsMeaningCompact : null,
+                          styles.practiceOptionsMeaning,
+                          isCompactMeaningViewport ? styles.practiceOptionsMeaningCompact : null,
                         ]}
                       >
                       {currentPracticeExercise.options.map((option, optionIndex) => {
@@ -9597,50 +9981,36 @@ export function MobileLibraryShell(args: {
                             disabled={practiceRevealed}
                             style={[
                               styles.practiceOption,
-                              isMeaningExercise ? styles.practiceOptionMeaning : null,
-                              isMeaningExercise && isCompactMeaningViewport ? styles.practiceOptionMeaningCompact : null,
-                              isMeaningExercise && isTightMeaningViewport ? styles.practiceOptionMeaningTight : null,
+                              styles.practiceOptionMeaning,
+                              isCompactMeaningViewport ? styles.practiceOptionMeaningCompact : null,
+                              isTightMeaningViewport ? styles.practiceOptionMeaningTight : null,
                               isSelected ? styles.practiceOptionSelected : null,
                               isCorrect ? styles.practiceOptionCorrect : null,
                               isWrong ? styles.practiceOptionWrong : null,
                             ]}
                           >
-                            {isMeaningExercise ? (
-                              <>
-                                <View
-                                  style={[
-                                    styles.practiceMeaningOptionAccent,
-                                    optionIndex % 4 === 0
-                                      ? styles.practiceMeaningOptionAccentA
-                                      : optionIndex % 4 === 1
-                                        ? styles.practiceMeaningOptionAccentB
-                                        : optionIndex % 4 === 2
-                                          ? styles.practiceMeaningOptionAccentC
-                                          : styles.practiceMeaningOptionAccentD,
-                                  ]}
-                                />
-                                <Text
-                                  style={[
-                                    styles.practiceOptionText,
-                                    styles.practiceOptionTextMeaning,
-                                    isCompactMeaningViewport ? styles.practiceOptionTextMeaningCompact : null,
-                                    isCorrect || isWrong ? styles.practiceOptionTextOnAccent : null,
-                                  ]}
-                                >
-                                  {option}
-                                </Text>
-                              </>
-                            ) : (
-                              <Text
-                                style={[
-                                  styles.practiceOptionText,
-                                  isMeaningExercise ? styles.practiceOptionTextMeaning : null,
-                                  isCorrect || isWrong ? styles.practiceOptionTextOnAccent : null,
-                                ]}
-                              >
-                                {option}
-                              </Text>
-                            )}
+                            <View
+                              style={[
+                                styles.practiceMeaningOptionAccent,
+                                optionIndex % 4 === 0
+                                  ? styles.practiceMeaningOptionAccentA
+                                  : optionIndex % 4 === 1
+                                    ? styles.practiceMeaningOptionAccentB
+                                    : optionIndex % 4 === 2
+                                      ? styles.practiceMeaningOptionAccentC
+                                      : styles.practiceMeaningOptionAccentD,
+                              ]}
+                            />
+                            <Text
+                              style={[
+                                styles.practiceOptionText,
+                                styles.practiceOptionTextMeaning,
+                                isCompactMeaningViewport ? styles.practiceOptionTextMeaningCompact : null,
+                                isCorrect || isWrong ? styles.practiceOptionTextOnAccent : null,
+                              ]}
+                            >
+                              {option}
+                            </Text>
                           </Pressable>
                         );
                       })}
@@ -9648,10 +10018,39 @@ export function MobileLibraryShell(args: {
                   </View>
                     );
                   })()
-                ) : (
-                  <View style={styles.practiceQuestionCard}>
-                    <Text style={styles.practicePrompt}>{currentPracticeExercise.prompt}</Text>
-                    <Text style={styles.practiceSentence}>Tap a word, then choose its meaning.</Text>
+                ) : (() => {
+                  const totalPairs = currentPracticeExercise.pairs.length;
+                  const matchedCount = matchedWords.length;
+                  const accentForPair = (pairWord: string) => {
+                    const idx = currentPracticeExercise.pairs.findIndex((p) => p.word === pairWord);
+                    return idx % 4 === 0
+                      ? styles.practiceMeaningOptionAccentA
+                      : idx % 4 === 1
+                        ? styles.practiceMeaningOptionAccentB
+                        : idx % 4 === 2
+                          ? styles.practiceMeaningOptionAccentC
+                          : styles.practiceMeaningOptionAccentD;
+                  };
+                  return (
+                  <View
+                    style={[
+                      styles.practiceQuestionCard,
+                      styles.practiceQuestionCardMeaning,
+                    ]}
+                  >
+                    <View
+                      style={[
+                        styles.practiceMeaningHeroCard,
+                        isCompactMeaningViewport ? styles.practiceMeaningHeroCardCompact : null,
+                      ]}
+                    >
+                      <Text style={styles.practiceMatchHeroLabel}>
+                        {activeMatchWord ? "Now choose the matching meaning" : "Tap a word, then its meaning"}
+                      </Text>
+                      <Text style={styles.practiceMatchHeroCounter}>
+                        {matchedCount} / {totalPairs}
+                      </Text>
+                    </View>
                     <View style={styles.practiceMatchColumns}>
                       <View style={styles.practiceMatchColumn}>
                         <Text style={styles.practiceMatchLabel}>Words</Text>
@@ -9674,6 +10073,12 @@ export function MobileLibraryShell(args: {
                                 isWrong ? styles.practiceMatchChipWrong : null,
                               ]}
                             >
+                              <View
+                                style={[
+                                  styles.practiceMatchAccent,
+                                  accentForPair(pair.word),
+                                ]}
+                              />
                               <Text
                                 style={[
                                   styles.practiceMatchChipText,
@@ -9709,6 +10114,14 @@ export function MobileLibraryShell(args: {
                                 isWrong ? styles.practiceMatchChipWrong : null,
                               ]}
                             >
+                              {matchedPair ? (
+                                <View
+                                  style={[
+                                    styles.practiceMatchAccent,
+                                    accentForPair(matchedPair.word),
+                                  ]}
+                                />
+                              ) : null}
                               <Text
                                 style={[
                                   styles.practiceMatchMeaningText,
@@ -9723,7 +10136,8 @@ export function MobileLibraryShell(args: {
                       </View>
                     </View>
                   </View>
-                )}
+                  );
+                })()}
                 </Animated.View>
               </ScrollView>
 
@@ -9735,7 +10149,6 @@ export function MobileLibraryShell(args: {
                     </Text>
                   </Pressable>
                 ) : currentPracticeExercise.kind === "multiple-choice" &&
-                  currentPracticeExercise.mode === "meaning" &&
                   !practiceSelectedOption ? (
                   <View
                     style={[
@@ -9747,7 +10160,6 @@ export function MobileLibraryShell(args: {
                     <Text style={styles.practiceMeaningFooterIdleText}>Pick an answer</Text>
                   </View>
                 ) : currentPracticeExercise.kind === "multiple-choice" &&
-                  currentPracticeExercise.mode === "meaning" &&
                   practiceSelectedOption ? (
                   <Pressable
                     onPress={checkPracticeAnswer}
@@ -9760,10 +10172,6 @@ export function MobileLibraryShell(args: {
                     ]}
                   >
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText, styles.practiceMeaningFooterButtonText]}>Check answer</Text>
-                  </Pressable>
-                ) : currentPracticeExercise.kind === "multiple-choice" && practiceSelectedOption ? (
-                  <Pressable onPress={checkPracticeAnswer} style={[styles.inlineButton, styles.primaryButton, styles.practiceFooterButton]}>
-                    <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Check</Text>
                   </Pressable>
                 ) : (
                   <Text style={styles.practiceFooterHint}>
@@ -9918,7 +10326,6 @@ export function MobileLibraryShell(args: {
               nextReviewAt: item.nextReviewAt ?? null,
               streak: item.streak ?? 0,
             });
-            const masteryNumeric = mastery.level === 0 ? "Nueva" : `${mastery.level}/5`;
             return (
             <View key={key} style={styles.favoriteCard}>
               <View style={styles.favoriteAccentRail} />
@@ -9927,18 +10334,22 @@ export function MobileLibraryShell(args: {
                   <View style={styles.favoriteWordRow}>
                     <Text style={styles.favoriteWord}>{item.word}</Text>
                     <Text style={styles.favoriteInlineType}>{getFavoriteTypeLabel(getFavoriteType(item))}</Text>
-                    <View
-                      style={[
-                        styles.favoriteMasteryChip,
-                        { backgroundColor: mastery.bgColor, borderColor: mastery.borderColor },
-                      ]}
-                      accessibilityLabel={`Dominio: ${mastery.label}`}
-                    >
-                      <View style={[styles.favoriteMasteryDot, { backgroundColor: mastery.color }]} />
-                      <Text style={styles.favoriteMasteryText}>
-                        {masteryNumeric} · {mastery.label}
-                      </Text>
-                    </View>
+                  </View>
+                  <View
+                    style={styles.favoriteMasteryBar}
+                    accessibilityLabel={`Dominio: ${mastery.label} (${mastery.level} de 5)`}
+                  >
+                    {[1, 2, 3, 4, 5].map((tier) => (
+                      <View
+                        key={`mastery-${tier}`}
+                        style={[
+                          styles.favoriteMasterySegment,
+                          tier <= mastery.level
+                            ? { backgroundColor: mastery.color }
+                            : null,
+                        ]}
+                      />
+                    ))}
                   </View>
                   <Text style={styles.favoriteMeta} numberOfLines={1}>
                     {item.storyTitle ?? item.translation ?? "Saved from reader"}
@@ -15348,14 +15759,14 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
   },
   exploreSearchClearText: {
-    color: "#92a8c3",
+    color: "#b7cae5",
     fontSize: 12,
-    fontWeight: "600",
+    fontWeight: "700",
   },
   exploreSearchHint: {
-    color: "#8ea3bf",
+    color: "#a8b8d0",
     fontSize: 11,
-    fontWeight: "500",
+    fontWeight: "600",
     paddingHorizontal: 2,
   },
   qaDevOnlyRow: {
@@ -15489,8 +15900,8 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
   },
   filterChipActive: {
-    backgroundColor: "#1c4f86",
-    borderColor: "#3f79ba",
+    backgroundColor: "#9fe8ff",
+    borderColor: "#9fe8ff",
   },
   filterChipText: {
     color: "#dbe9ff",
@@ -15498,7 +15909,271 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   filterChipTextActive: {
+    color: "#0a1424",
+  },
+  filterChipWithIcon: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  filterChipCount: {
+    color: "rgba(219,233,255,0.55)",
+    fontSize: 11,
+    fontWeight: "700",
+  },
+  filterChipCountActive: {
+    color: "rgba(10,20,36,0.6)",
+  },
+  exploreHeaderActions: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  exploreLanguagePill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+    backgroundColor: "rgba(255,255,255,0.04)",
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+  exploreLanguagePillText: {
+    color: "#dbe9ff",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 0.6,
+    textTransform: "uppercase",
+  },
+  exploreSectionEyebrow: {
+    color: "#f8c15c",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 1.6,
+    textTransform: "uppercase",
+  },
+  exploreSectionTitle: {
     color: "#ffffff",
+    fontSize: 28,
+    fontWeight: "900",
+    lineHeight: 32,
+    letterSpacing: -0.8,
+    marginTop: 2,
+  },
+  exploreSeeAllLink: {
+    color: "#9fe8ff",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+  exploreStoriesGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+  },
+  exploreCollectionPageHero: {
+    borderRadius: 22,
+    paddingHorizontal: 18,
+    paddingVertical: 18,
+    gap: 4,
+    marginBottom: 6,
+  },
+  exploreCollectionPageEyebrow: {
+    fontSize: 11,
+    fontWeight: "900",
+    letterSpacing: 1.6,
+    textTransform: "uppercase",
+    opacity: 0.85,
+  },
+  exploreCollectionPageTitle: {
+    fontSize: 28,
+    fontWeight: "900",
+    lineHeight: 32,
+    letterSpacing: -0.6,
+  },
+  exploreCollectionPageSubtitle: {
+    fontSize: 13,
+    fontWeight: "700",
+    opacity: 0.78,
+  },
+  exploreCollectionPageCountPill: {
+    alignSelf: "flex-start",
+    borderRadius: 999,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    marginTop: 10,
+  },
+  exploreStoryHeroCard: {
+    borderRadius: 22,
+    overflow: "hidden",
+    marginBottom: 14,
+    backgroundColor: "#1a2a44",
+    position: "relative",
+  },
+  exploreStoryHeroImage: {
+    ...StyleSheet.absoluteFillObject,
+    width: "100%",
+    height: "100%",
+  },
+  exploreStoryHeroImageOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(7,15,28,0.36)",
+  },
+  exploreStoryHeroLevelBadge: {
+    position: "absolute",
+    top: 12,
+    left: 12,
+    borderRadius: 8,
+    paddingHorizontal: 9,
+    paddingVertical: 4,
+    backgroundColor: "rgba(255,255,255,0.94)",
+    zIndex: 2,
+  },
+  exploreStoryHeroLevelText: {
+    color: "#0a1424",
+    fontSize: 11,
+    fontWeight: "900",
+    letterSpacing: 0.6,
+  },
+  exploreStoryHeroFooter: {
+    position: "absolute",
+    left: 12,
+    right: 12,
+    bottom: 12,
+    gap: 4,
+    zIndex: 2,
+  },
+  exploreStoryHeroTopicPill: {
+    position: "absolute",
+    top: 12,
+    right: 12,
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    zIndex: 2,
+  },
+  exploreStoryHeroTopicPillText: {
+    color: "#0a1424",
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 1.1,
+    textTransform: "uppercase",
+  },
+  exploreStoryHeroTitle: {
+    color: "#ffffff",
+    fontSize: 16,
+    fontWeight: "900",
+    lineHeight: 19,
+    letterSpacing: -0.3,
+    textShadowColor: "rgba(0,0,0,0.4)",
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
+  },
+  exploreStoryHeroMetrics: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    marginTop: 2,
+  },
+  exploreStoryHeroMetricText: {
+    color: "rgba(255,255,255,0.88)",
+    fontSize: 11,
+    fontWeight: "800",
+    marginRight: 4,
+  },
+  exploreCollectionsCarousel: {
+    gap: 12,
+    paddingRight: 12,
+  },
+  exploreCollectionCard: {
+    width: 168,
+    minHeight: 116,
+    borderRadius: 20,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    justifyContent: "space-between",
+  },
+  exploreCollectionTitle: {
+    fontSize: 18,
+    fontWeight: "900",
+    letterSpacing: -0.4,
+  },
+  exploreCollectionSubtitle: {
+    fontSize: 12,
+    fontWeight: "800",
+    opacity: 0.78,
+    marginTop: 2,
+  },
+  exploreCollectionCountPill: {
+    alignSelf: "flex-start",
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    marginTop: 12,
+  },
+  exploreCollectionCountText: {
+    fontSize: 11,
+    fontWeight: "900",
+    letterSpacing: 0.4,
+  },
+  exploreBooksVerticalStack: {
+    gap: 10,
+  },
+  exploreBookRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14,
+    borderRadius: 18,
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.06)",
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+  },
+  exploreBookThumb: {
+    width: 60,
+    height: 60,
+    borderRadius: 14,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  exploreBookBody: {
+    flex: 1,
+    gap: 3,
+  },
+  exploreBookEyebrow: {
+    color: "#f8c15c",
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 1.2,
+    textTransform: "uppercase",
+  },
+  exploreBookTitle: {
+    color: "#ffffff",
+    fontSize: 17,
+    fontWeight: "900",
+    letterSpacing: -0.3,
+  },
+  exploreBookMetricsRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    marginTop: 2,
+  },
+  exploreBookMetricText: {
+    color: "#9cb0c9",
+    fontSize: 11,
+    fontWeight: "700",
+    marginRight: 6,
+  },
+  exploreBottomSpacer: {
+    // El ScrollView del shell tiene paddingBottom 56 (suficiente para
+    // Home). En Explore, las cards grandes del grid 2x2 + la fila final
+    // de Books quedaban tapadas por la barra de tabs. Este spacer suma
+    // el clearance extra que necesita esta pantalla sin afectar al
+    // resto.
+    height: 48,
   },
   accountCard: {
     backgroundColor: "#18304d",
@@ -17967,24 +18642,22 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     textTransform: "lowercase",
   },
-  favoriteMasteryChip: {
+  favoriteMasteryBar: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 6,
+    gap: 4,
+    marginTop: 6,
+    marginBottom: 2,
+  },
+  favoriteMasterySegment: {
+    // 5 píldoras horizontales que actúan como termómetro de dominio.
+    // Vacías (level 0): el track de fondo translúcido; llenas: pintadas
+    // con `mastery.color` desde el render (un único color por palabra
+    // según su nivel actual, no un degradado).
+    width: 24,
+    height: 5,
     borderRadius: 999,
-    borderWidth: 1,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-  },
-  favoriteMasteryDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-  },
-  favoriteMasteryText: {
-    color: "#dbe9ff",
-    fontSize: 11,
-    fontWeight: "700",
+    backgroundColor: "rgba(255,255,255,0.12)",
   },
   favoriteRemove: {
     alignSelf: "flex-start",
@@ -19134,6 +19807,54 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
   },
+  practiceHeroContextSentence: {
+    flex: 1,
+    color: "#ffffff",
+    fontSize: 22,
+    fontWeight: "800",
+    lineHeight: 30,
+    letterSpacing: -0.2,
+    textAlign: "center",
+  },
+  practiceHeroContextSentenceCompact: {
+    fontSize: 19,
+    lineHeight: 26,
+  },
+  practiceHeroListenWrap: {
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 14,
+    paddingVertical: 12,
+  },
+  practiceHeroListenButton: {
+    width: 96,
+    height: 96,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(82,160,214,0.20)",
+    borderWidth: 2,
+    borderColor: "rgba(159,232,255,0.32)",
+    shadowColor: "#9fe8ff",
+    shadowOpacity: 0.28,
+    shadowRadius: 18,
+  },
+  practiceHeroListenButtonDisabled: {
+    opacity: 0.45,
+  },
+  practiceHeroListenLabel: {
+    color: "rgba(226,232,244,0.72)",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 2,
+    textTransform: "uppercase",
+  },
+  practiceHeroListenWord: {
+    color: "#ffffff",
+    fontSize: 24,
+    fontWeight: "900",
+    letterSpacing: -0.4,
+  },
   practiceMeaningOptionAccent: {
     width: 44,
     height: 10,
@@ -19194,13 +19915,36 @@ const styles = StyleSheet.create({
     letterSpacing: 1.2,
     textTransform: "uppercase",
   },
+  practiceMatchHeroLabel: {
+    color: "rgba(226,232,244,0.78)",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 1.6,
+    textTransform: "uppercase",
+    textAlign: "center",
+  },
+  practiceMatchHeroCounter: {
+    color: "#ffffff",
+    fontSize: 34,
+    fontWeight: "900",
+    lineHeight: 38,
+    letterSpacing: -0.6,
+    textAlign: "center",
+  },
+  practiceMatchAccent: {
+    width: 28,
+    height: 6,
+    borderRadius: 999,
+    marginBottom: 6,
+  },
   practiceMatchChip: {
-    minHeight: 44,
-    borderRadius: 16,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.1)",
-    backgroundColor: "rgba(255,255,255,0.04)",
+    minHeight: 56,
+    borderRadius: 18,
+    borderWidth: 1.5,
+    borderColor: "rgba(97,146,201,0.26)",
+    backgroundColor: "rgba(19,54,107,0.92)",
     paddingHorizontal: 10,
+    paddingVertical: 10,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -19225,12 +19969,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   practiceMatchMeaning: {
-    minHeight: 44,
-    borderRadius: 16,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.1)",
-    backgroundColor: "rgba(255,255,255,0.04)",
+    minHeight: 56,
+    borderRadius: 18,
+    borderWidth: 1.5,
+    borderColor: "rgba(97,146,201,0.26)",
+    backgroundColor: "rgba(19,54,107,0.92)",
     paddingHorizontal: 10,
+    paddingVertical: 10,
     alignItems: "center",
     justifyContent: "center",
   },

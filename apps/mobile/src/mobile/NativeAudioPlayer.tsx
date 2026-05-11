@@ -429,11 +429,11 @@ export function NativeAudioPlayer({
         {variant === "sticky" && canGoPrevious ? (
           <Pressable
             onPress={onPrevious}
-            style={styles.iconButton}
+            style={[styles.iconButton, styles.chapterNavButton]}
             accessibilityLabel="qa-player-previous"
             testID="qa-player-previous"
           >
-            <Feather name="skip-back" size={22} color="#dbe9ff" />
+            <Feather name="skip-back" size={18} color="rgba(219,233,255,0.7)" />
           </Pressable>
         ) : null}
 
@@ -471,11 +471,11 @@ export function NativeAudioPlayer({
         {variant === "sticky" && canGoNext ? (
           <Pressable
             onPress={onNext}
-            style={styles.iconButton}
+            style={[styles.iconButton, styles.chapterNavButton]}
             accessibilityLabel="qa-player-next"
             testID="qa-player-next"
           >
-            <Feather name="skip-forward" size={22} color="#dbe9ff" />
+            <Feather name="skip-forward" size={18} color="rgba(219,233,255,0.7)" />
           </Pressable>
         ) : null}
 
@@ -580,7 +580,7 @@ const styles = StyleSheet.create({
     borderColor: "#18314e",
     paddingTop: 8,
     paddingBottom: 10,
-    paddingHorizontal: 14,
+    paddingHorizontal: 22,
   },
   topTrackRow: {
     flexDirection: "row",
@@ -715,6 +715,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     position: "relative",
+  },
+  // Override solo para los botones de capítulo anterior/siguiente en
+  // variant="sticky". Más chicos y opacidad reducida para que actúen
+  // como secundarios al lado del play + back-10/fwd-10. Las historias
+  // de journey nunca renderizan estos botones (canGoPrevious=false),
+  // así que su panel sigue exactamente igual.
+  chapterNavButton: {
+    width: 32,
+    height: 32,
   },
   iconButtonText: {
     color: "#dbe9ff",
