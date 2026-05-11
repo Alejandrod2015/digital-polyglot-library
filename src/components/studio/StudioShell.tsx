@@ -25,6 +25,7 @@ const NAV_SECTIONS = [
     items: [
       { href: "/studio/journey-manager", label: "Journey Manager", icon: "pen", exact: false },
       { href: "/studio/journey-stories", label: "Biblioteca", icon: "book", exact: false },
+      { href: "/studio/standalone-stories", label: "Standalone stories", icon: "file-text", exact: false },
       { href: "/studio/audio", label: "Audio propio", icon: "globe", exact: false },
       { href: "/studio/covers", label: "Covers", icon: "layers", exact: false },
     ],
