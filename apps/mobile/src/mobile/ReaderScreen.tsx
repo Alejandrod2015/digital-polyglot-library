@@ -755,10 +755,14 @@ export function ReaderScreen(args: {
   );
   const karaokeVocabLookup = useMemo(() => buildVocabLookup(vocab), [vocab]);
 
-  // 50 ms tick that interpolates the audio position between the
-  // 500 ms callbacks from NativeAudioPlayer. Short words (<300 ms)
-  // would otherwise be skipped because the player update interval
-  // is coarser than the word duration.
+  // 25 ms tick that interpolates the audio position between the
+  // 500 ms callbacks from NativeAudioPlayer. Short connector words
+  // ("y", "a", "la", "que") can last 60-100 ms in fluent speech, so a
+  // coarser sampler (50 ms) sometimes "jumped over" them — the cursor
+  // would go from word i to i+2 without ever landing on i+1. At 25 ms
+  // we get ~40 Hz, enough to catch words down to ~50 ms reliably; the
+  // setState is a no-op when the value didn't change, so the doubled
+  // tick rate has no real React work attached.
   //
   // Index-level monotonic smoothing prevents the back-and-forth jitter
   // caused by my wall-clock extrapolation over-shooting the player's
@@ -807,7 +811,7 @@ export function ReaderScreen(args: {
       }
       lastResolvedIndexRef.current = resolved;
       setActiveWordIndex((prev) => (prev === resolved ? prev : resolved));
-    }, 50);
+    }, 25);
     return () => clearInterval(interval);
   }, [wordTimings, effectiveWordTimings, story.id]);
 

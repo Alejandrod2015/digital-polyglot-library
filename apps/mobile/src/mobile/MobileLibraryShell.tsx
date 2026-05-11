@@ -6163,12 +6163,15 @@ export function MobileLibraryShell(args: {
   // `practiceCountdownActive`).
 
   // (1) Reset del timer cuando cambia el ejercicio actual o cuando
-  // arranca una sesión nueva. 10 seg para multiple-choice y match
-  // por igual (decisión: igual para todo, simple y predecible).
+  // arranca una sesión nueva. Multiple-choice usa 10 seg (una decisión
+  // rápida con 4 opciones). Match usa 15 seg porque requiere 4 toques
+  // (palabra+definición × 4 pares) y un poco más de lectura.
   useEffect(() => {
     if (!activePracticeMode) return;
-    setPracticeTimerRemaining(10);
-  }, [practiceIndex, activePracticeMode]);
+    const current = practiceExercises[practiceIndex];
+    const seconds = current?.kind === "match" ? 15 : 10;
+    setPracticeTimerRemaining(seconds);
+  }, [practiceIndex, activePracticeMode, practiceExercises]);
 
   // (2) Tick del timer. Solo decrementa cuando hay ejercicio activo,
   // no en countdown, no pausado, no revelado, no completo, y el
@@ -6184,7 +6187,13 @@ export function MobileLibraryShell(args: {
     if (practiceComplete) return;
     if (practiceTimerRemaining <= 0) return;
     const current = practiceExercises[practiceIndex];
-    if (!current || current.kind !== "multiple-choice") return;
+    if (!current) return;
+    // El timer corre para multiple-choice y match. En match se detiene
+    // automáticamente cuando todos los pares quedan matched (ya no
+    // hay nada por hacer y no queremos disparar un timeout "wrong"
+    // sobre un ejercicio que el usuario ya resolvió).
+    if (current.kind === "match" && matchedWords.length >= current.pairs.length) return;
+    if (current.kind !== "multiple-choice" && current.kind !== "match") return;
     const id = setTimeout(() => {
       setPracticeTimerRemaining((value) => Math.max(0, value - 1));
     }, 1000);
@@ -6198,6 +6207,7 @@ export function MobileLibraryShell(args: {
     practiceTimerRemaining,
     practiceExercises,
     practiceIndex,
+    matchedWords.length,
   ]);
 
   // (3) Cuando el timer llega a 0 sin haber revelado: marcar como
@@ -6218,7 +6228,32 @@ export function MobileLibraryShell(args: {
     if (practiceComplete) return;
     if (practiceTimerRemaining > 0) return;
     const current = practiceExercises[practiceIndex];
-    if (!current || current.kind !== "multiple-choice") return;
+    if (!current) return;
+
+    if (current.kind === "match") {
+      // Timeout en match: si todos los pares ya están matched no
+      // pasa nada (el tick effect ya lo evita). Si quedan pares por
+      // resolver, marcamos como wrong, anotamos "again" para cada
+      // par no completado y dejamos que el auto-advance siga.
+      if (matchedWords.length >= current.pairs.length) return;
+      setPracticeRevealed(true);
+      setPracticeTimedOut(true);
+      setPracticeLastResult("wrong");
+      setPracticeSessionStreak(0);
+      setPracticeReviewScores((currentScores) => {
+        const next = { ...currentScores };
+        for (const pair of current.pairs) {
+          if (!matchedWords.includes(pair.word)) {
+            next[normalizePracticeWord(pair.word)] = "again";
+          }
+        }
+        return next;
+      });
+      void playPracticeFeedbackSound(false);
+      return;
+    }
+
+    if (current.kind !== "multiple-choice") return;
     if (practiceSelectedOption) {
       resolvePracticeMultipleChoiceAnswer(current, practiceSelectedOption, true);
       return;
@@ -6252,6 +6287,7 @@ export function MobileLibraryShell(args: {
     practiceIndex,
     practiceSelectedOption,
     practiceLaunchContext,
+    matchedWords,
   ]);
 
   // (4) Auto-advance 1.5 seg después de revelar. Sólo aplica a
@@ -9413,52 +9449,56 @@ export function MobileLibraryShell(args: {
                 ) : null}
               </View>
             </View>
-            {!practiceCountdownActive &&
-            !practiceComplete &&
-            !practiceLaunchLoading &&
-            currentPracticeExercise?.kind === "multiple-choice" ? (
-              <View
-                style={[
-                  styles.practiceTimerBadge,
-                  { borderColor: `${timerVisualColor}55`, backgroundColor: `${timerVisualColor}18` },
-                ]}
-              >
-                <Text style={[styles.practiceTimerBadgeText, { color: timerVisualColor }]}>
-                  {practiceTimerRemaining}s
-                </Text>
-              </View>
-            ) : null}
+            {(() => {
+              // Badge "Xs" arriba a la derecha. Visible para
+              // multiple-choice (10 s) y para match (15 s). En match se
+              // oculta cuando todos los pares ya están matched para no
+              // distraer en los últimos 1-2 segundos antes del auto-advance.
+              if (practiceCountdownActive || practiceComplete || practiceLaunchLoading) return null;
+              const kind = currentPracticeExercise?.kind;
+              if (kind !== "multiple-choice" && kind !== "match") return null;
+              if (kind === "match" && currentPracticeExercise && matchedWords.length >= currentPracticeExercise.pairs.length) {
+                return null;
+              }
+              return (
+                <View
+                  style={[
+                    styles.practiceTimerBadge,
+                    { borderColor: `${timerVisualColor}55`, backgroundColor: `${timerVisualColor}18` },
+                  ]}
+                >
+                  <Text style={[styles.practiceTimerBadgeText, { color: timerVisualColor }]}>
+                    {practiceTimerRemaining}s
+                  </Text>
+                </View>
+              );
+            })()}
           </View>
 
-          {/* Barra de timer del ejercicio. Solo visible mientras hay
-              sesión activa post-countdown, no completa, y el
-              ejercicio actual es multiple-choice (match no usa el
-              timer). Decrece de 100% a 0% en 10 seg. Si el usuario
-              pausa, la barra se tiñe de naranja para señalizar que el
-              timer está congelado. */}
-          {!practiceCountdownActive &&
-          !practiceComplete &&
-          !practiceLaunchLoading &&
-          currentPracticeExercise?.kind === "multiple-choice" ? (
-            <View style={styles.practiceTimerBarTrack}>
-              <View
-                style={[
-                  styles.practiceTimerBarFill,
-                  {
-                    width: `${Math.max(0, Math.min(100, (practiceTimerRemaining / 10) * 100))}%`,
-                    // Amarillo SIEMPRE en la barra del timer; rojo
-                    // cuando crítico (≤3 seg). Antes usaba el
-                    // `activePracticeCard.accent` que en el modo
-                    // "Context" es `tokenColor.streak` (`#fb923c`,
-                    // naranja) y chocaba feo con el azul del fondo.
-                    // El amarillo `#f8c15c` es el mismo de los popups
-                    // y el endOfStory.
-                    backgroundColor: timerVisualColor,
-                  },
-                ]}
-              />
-            </View>
-          ) : null}
+          {/* Barra de timer del ejercicio: multiple-choice = 10 s,
+              match = 15 s. Misma regla de visibilidad que el badge. */}
+          {(() => {
+            if (practiceCountdownActive || practiceComplete || practiceLaunchLoading) return null;
+            const kind = currentPracticeExercise?.kind;
+            if (kind !== "multiple-choice" && kind !== "match") return null;
+            if (kind === "match" && currentPracticeExercise && matchedWords.length >= currentPracticeExercise.pairs.length) {
+              return null;
+            }
+            const totalSec = kind === "match" ? 15 : 10;
+            return (
+              <View style={styles.practiceTimerBarTrack}>
+                <View
+                  style={[
+                    styles.practiceTimerBarFill,
+                    {
+                      width: `${Math.max(0, Math.min(100, (practiceTimerRemaining / totalSec) * 100))}%`,
+                      backgroundColor: timerVisualColor,
+                    },
+                  ]}
+                />
+              </View>
+            );
+          })()}
 
           {practiceLaunchLoading ? (
             <View style={styles.practiceLaunchLoaderCard}>
@@ -10096,6 +10136,40 @@ export function MobileLibraryShell(args: {
                           ? styles.practiceMeaningOptionAccentC
                           : styles.practiceMeaningOptionAccentD;
                   };
+                  // Orden independiente de palabras vs definiciones,
+                  // estable por ejercicio (no re-shufflea en cada render).
+                  // De-sync la fila visual i: la palabra de pairs[i] queda
+                  // al lado de shuffledMeanings[i], que normalmente NO es
+                  // pair[i].answer; el usuario tiene que pulsar la palabra
+                  // y luego buscar su definición correcta en otra fila.
+                  const wordRowOrder = currentPracticeExercise.pairs;
+                  const meaningRowOrder = (() => {
+                    const meanings = currentPracticeExercise.pairs.map((p) => p.answer);
+                    // Fisher-Yates basado en exercise id (mismo orden cada
+                    // render para que las filas no salten al re-renderear).
+                    const seed = currentPracticeExercise.id.split("").reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 0);
+                    const rng = (() => {
+                      let s = seed || 1;
+                      return () => {
+                        s = (s * 1664525 + 1013904223) >>> 0;
+                        return s / 0x100000000;
+                      };
+                    })();
+                    const arr = [...meanings];
+                    for (let i = arr.length - 1; i > 0; i -= 1) {
+                      const j = Math.floor(rng() * (i + 1));
+                      [arr[i], arr[j]] = [arr[j], arr[i]];
+                    }
+                    // Si por azar el shuffle quedó idéntico al orden de
+                    // palabras (efecto trivial: cada fila ya es la
+                    // pareja correcta), rotamos un puesto para garantizar
+                    // que al menos una fila esté de-sync.
+                    const sameOrder = arr.every((m, i) => m === currentPracticeExercise.pairs[i].answer);
+                    if (sameOrder && arr.length > 1) {
+                      arr.push(arr.shift()!);
+                    }
+                    return arr;
+                  })();
                   return (
                   <View
                     style={[
@@ -10116,89 +10190,75 @@ export function MobileLibraryShell(args: {
                         {matchedCount} / {totalPairs}
                       </Text>
                     </View>
-                    <View style={styles.practiceMatchColumns}>
-                      <View style={styles.practiceMatchColumn}>
-                        <Text style={styles.practiceMatchLabel}>Words</Text>
-                        {currentPracticeExercise.pairs.map((pair) => {
-                          const isMatched = matchedWords.includes(pair.word);
-                          const isActive = activeMatchWord === pair.word;
-                          const isWrong = wrongMatchAttempt?.word === pair.word;
-                          return (
+                    <View style={styles.practiceMatchRows}>
+                      {wordRowOrder.map((pair, rowIdx) => {
+                        const meaning = meaningRowOrder[rowIdx];
+                        const isWordMatched = matchedWords.includes(pair.word);
+                        const isWordActive = activeMatchWord === pair.word;
+                        const isWordWrong = wrongMatchAttempt?.word === pair.word;
+                        const matchedPairForMeaning = currentPracticeExercise.pairs.find(
+                          (p) => p.answer === meaning && matchedWords.includes(p.word)
+                        );
+                        const isMeaningWrong = wrongMatchAttempt?.value === meaning;
+                        return (
+                          <View key={pair.word} style={styles.practiceMatchRow}>
                             <Pressable
-                              key={pair.word}
                               onPress={() => {
                                 if (practiceRevealed) return;
                                 if (wrongMatchAttempt) return;
+                                if (isWordMatched) return;
                                 setActiveMatchWord((current) => (current === pair.word ? null : pair.word));
                               }}
                               style={[
-                                styles.practiceMatchChip,
-                                isActive ? styles.practiceMatchChipActive : null,
-                                isMatched ? styles.practiceMatchChipCorrect : null,
-                                isWrong ? styles.practiceMatchChipWrong : null,
+                                styles.practiceMatchRowWord,
+                                isWordActive ? styles.practiceMatchChipActive : null,
+                                isWordMatched ? styles.practiceMatchChipCorrect : null,
+                                isWordWrong ? styles.practiceMatchChipWrong : null,
                               ]}
                             >
                               <View
                                 style={[
-                                  styles.practiceMatchAccent,
+                                  styles.practiceMatchRowAccent,
                                   accentForPair(pair.word),
                                 ]}
                               />
                               <Text
                                 style={[
-                                  styles.practiceMatchChipText,
-                                  isMatched ? styles.practiceOptionTextOnAccent : null,
+                                  styles.practiceMatchRowWordText,
+                                  isWordMatched ? styles.practiceOptionTextOnAccent : null,
                                 ]}
+                                numberOfLines={2}
                               >
                                 {pair.word}
                               </Text>
                             </Pressable>
-                          );
-                        })}
-                      </View>
-                      <View style={styles.practiceMatchColumn}>
-                        <Text style={styles.practiceMatchLabel}>Meanings</Text>
-                        {currentPracticeExercise.pairs.map((pair) => pair.answer).map((meaning) => {
-                          const matchedPair = currentPracticeExercise.pairs.find(
-                            (pair) => pair.answer === meaning && matchedWords.includes(pair.word)
-                          );
-                          const isWrong = wrongMatchAttempt?.value === meaning;
-                          return (
                             <Pressable
-                              key={meaning}
                               onPress={() => chooseMatchValue(meaning)}
                               disabled={
                                 practiceRevealed ||
                                 !activeMatchWord ||
-                                Boolean(matchedPair) ||
+                                Boolean(matchedPairForMeaning) ||
                                 Boolean(wrongMatchAttempt)
                               }
                               style={[
-                                styles.practiceMatchMeaning,
-                                matchedPair ? styles.practiceMatchChipCorrect : null,
-                                isWrong ? styles.practiceMatchChipWrong : null,
+                                styles.practiceMatchRowMeaning,
+                                matchedPairForMeaning ? styles.practiceMatchChipCorrect : null,
+                                isMeaningWrong ? styles.practiceMatchChipWrong : null,
                               ]}
                             >
-                              {matchedPair ? (
-                                <View
-                                  style={[
-                                    styles.practiceMatchAccent,
-                                    accentForPair(matchedPair.word),
-                                  ]}
-                                />
-                              ) : null}
                               <Text
                                 style={[
-                                  styles.practiceMatchMeaningText,
-                                  matchedPair ? styles.practiceOptionTextOnAccent : null,
+                                  styles.practiceMatchRowMeaningText,
+                                  matchedPairForMeaning ? styles.practiceOptionTextOnAccent : null,
                                 ]}
+                                numberOfLines={4}
                               >
                                 {meaning}
                               </Text>
                             </Pressable>
-                          );
-                        })}
-                      </View>
+                          </View>
+                        );
+                      })}
                     </View>
                   </View>
                   );
@@ -20049,6 +20109,60 @@ const styles = StyleSheet.create({
     height: 6,
     borderRadius: 999,
     marginBottom: 6,
+  },
+  // Layout en filas: cada fila tiene la palabra a la izquierda (con
+  // barrita accent vertical) y una definición a la derecha. La palabra
+  // y la definición de la misma fila NO son necesariamente pareja
+  // correcta — el usuario tiene que conectarlas manualmente.
+  practiceMatchRows: {
+    gap: 12,
+  },
+  practiceMatchRow: {
+    flexDirection: "row",
+    alignItems: "stretch",
+    gap: 10,
+  },
+  practiceMatchRowWord: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    borderRadius: 16,
+    borderWidth: 1.5,
+    borderColor: "rgba(97,146,201,0.26)",
+    backgroundColor: "rgba(19,54,107,0.92)",
+    paddingHorizontal: 12,
+    paddingVertical: 14,
+    minHeight: 64,
+  },
+  // Barrita vertical accent a la izquierda de la palabra.
+  practiceMatchRowAccent: {
+    width: 4,
+    alignSelf: "stretch",
+    borderRadius: 999,
+  },
+  practiceMatchRowWordText: {
+    color: "#f5f7fb",
+    fontSize: 15,
+    fontWeight: "900",
+    flex: 1,
+  },
+  practiceMatchRowMeaning: {
+    flex: 1.4,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+    backgroundColor: "rgba(7,18,31,0.66)",
+    paddingHorizontal: 14,
+    paddingVertical: 14,
+    justifyContent: "center",
+    minHeight: 64,
+  },
+  practiceMatchRowMeaningText: {
+    color: "rgba(226,232,244,0.92)",
+    fontSize: 12,
+    lineHeight: 16,
+    fontWeight: "600",
   },
   practiceMatchChip: {
     minHeight: 56,
