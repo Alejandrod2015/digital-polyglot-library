@@ -19,10 +19,7 @@ import {
 } from "@/lib/publicMedia";
 import { canAccessStoryContent } from "@domain/access";
 import { getLockedStoryPreviewHtml } from "@domain/lockedStoryPreview";
-import { freshClient } from "@/sanity/lib/client";
 import { getCatalogStory } from "@/lib/catalog";
-import { shouldReadBookFromStudio } from "@/lib/featureFlags";
-import type { Book, Story } from "@/types/books";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
 
@@ -35,107 +32,16 @@ type StoryPageProps = {
   }>;
 };
 
-type LiveBookStoryResult = {
-  book: Book;
-  story: Story;
-} | null;
-
-async function getLiveBookStory(bookSlug: string, storySlug: string): Promise<LiveBookStoryResult> {
-  const query = `*[_type == "book" && slug.current == $bookSlug && published == true][0]{
-    "id": coalesce(id.current, slug.current, _id),
-    "slug": coalesce(slug.current, id.current, _id),
-    title,
-    description,
-    level,
-    language,
-    region,
-    topic,
-    formality,
-    audioFolder,
-    storeUrl,
-    "cover": select(
-      defined(cover.asset->url) => cover.asset->url,
-      "/covers/default.jpg"
-    ),
-    "story": *[_type == "story" && references(^._id) && slug.current == $storySlug && published == true][0]{
-      "id": coalesce(slug.current, _id),
-      "slug": coalesce(slug.current, _id),
-      title,
-      text,
-      "audio": coalesce(audio.asset->url, ""),
-      "cover": select(
-        defined(cover.asset->url) => cover.asset->url,
-        null
-      ),
-      coverUrl,
-      topic,
-      vocabRaw,
-      level,
-      cefrLevel,
-      language,
-      region,
-      variant
-    }
-  }`;
-
-  const result = await freshClient.fetch<Record<string, unknown> | null>(query, { bookSlug, storySlug });
-  if (!result || typeof result !== "object") return null;
-  const story = result.story as Record<string, unknown> | undefined;
-  if (!story || typeof story !== "object") return null;
-
-  const normalizedStory: Story = {
-    id: typeof story.id === "string" ? story.id : storySlug,
-    slug: typeof story.slug === "string" ? story.slug : storySlug,
-    title: typeof story.title === "string" ? story.title : "Untitled",
-    text: typeof story.text === "string" ? story.text : "",
-    audio: typeof story.audio === "string" ? story.audio : "",
-    cover: typeof story.cover === "string" ? story.cover : undefined,
-    coverUrl: typeof story.coverUrl === "string" ? story.coverUrl : undefined,
-    topic: typeof story.topic === "string" ? story.topic : undefined,
-    vocab: Array.isArray(story.vocabRaw) ? (story.vocabRaw as Story["vocab"]) : [],
-    level: typeof story.level === "string" ? (story.level as Story["level"]) : undefined,
-    cefrLevel: typeof story.cefrLevel === "string" ? (story.cefrLevel as Story["cefrLevel"]) : undefined,
-    language: typeof story.language === "string" ? story.language : undefined,
-    region: typeof story.region === "string" ? story.region : undefined,
-    variant: typeof story.variant === "string" ? story.variant : undefined,
-  };
-
-  const normalizedBook: Book = {
-    id: typeof result.id === "string" ? result.id : bookSlug,
-    slug: typeof result.slug === "string" ? result.slug : bookSlug,
-    title: typeof result.title === "string" ? result.title : bookSlug,
-    description: typeof result.description === "string" ? result.description : "",
-    level: typeof result.level === "string" ? (result.level as Book["level"]) : "beginner",
-    language: typeof result.language === "string" ? result.language : "english",
-    region: typeof result.region === "string" ? result.region : undefined,
-    topic: typeof result.topic === "string" ? result.topic : undefined,
-    formality:
-      typeof result.formality === "string"
-        ? (result.formality as Book["formality"])
-        : undefined,
-    audioFolder: typeof result.audioFolder === "string" ? result.audioFolder : "",
-    storeUrl: typeof result.storeUrl === "string" ? result.storeUrl : undefined,
-    cover: typeof result.cover === "string" ? result.cover : "/covers/default.jpg",
-    stories: [normalizedStory],
-  };
-
-  return { book: normalizedBook, story: normalizedStory };
-}
-
 export default async function StoryPage({ params, searchParams }: StoryPageProps) {
   const { bookSlug, storySlug } = await params;
   const { returnTo, returnLabel, from } = await searchParams;
-  const studio = shouldReadBookFromStudio(bookSlug)
-    ? await getCatalogStory(bookSlug, storySlug)
-    : null;
-  const staticBook = studio?.book ?? Object.values(books).find((b) => b.slug === bookSlug);
-  const staticStory = studio?.story ?? staticBook?.stories.find((s) => s.slug === storySlug);
-  const shouldTryLive = !studio && process.env.NODE_ENV !== "production";
-  const live = shouldTryLive && (!staticBook || !staticStory || (!staticStory.cover && !staticStory.coverUrl))
-    ? await getLiveBookStory(bookSlug, storySlug)
-    : null;
-  const book = live?.book ?? staticBook;
-  const story = live?.story ?? staticStory;
+  // Studio catalog is the source of truth; static dump is a last-resort
+  // fallback for slugs that haven't been migrated.
+  const studio = await getCatalogStory(bookSlug, storySlug);
+  const fallbackBook = Object.values(books).find((b) => b.slug === bookSlug);
+  const fallbackStory = fallbackBook?.stories.find((s) => s.slug === storySlug);
+  const book = studio?.book ?? fallbackBook;
+  const story = studio?.story ?? fallbackStory;
 
   if (!book || !story) {
     return <div className="p-8 text-center">Historia no encontrada.</div>;

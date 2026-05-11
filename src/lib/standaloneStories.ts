@@ -1,10 +1,7 @@
 import { unstable_cache } from "next/cache";
-import { groq } from "next-sanity";
-import { freshClient } from "@/sanity/lib/client";
 import { resolveContentVariant } from "@/lib/languageVariant";
 import type { CefrLevel, Level } from "@/types/books";
 import { getJourneyFocusFromLearningGoal, normalizeJourneyFocus, type JourneyFocus } from "@/lib/onboarding";
-import { shouldReadStandaloneFromStudio } from "@/lib/featureFlags";
 import {
   getStudioStandaloneStoryBySlug,
   getStudioStandaloneStoriesBySlugs,
@@ -41,29 +38,6 @@ type GetPublishedStandaloneStoriesOptions = {
   includeJourneyStories?: boolean;
 };
 
-const standaloneStoryFields = `
-  "id": _id,
-  "slug": slug.current,
-  title,
-  text,
-  vocabRaw,
-  "theme": coalesce(theme, []),
-  language,
-  variant,
-  "region": coalesce(region_es, region_en, region_fr, region_it, region_pt, region_de),
-  level,
-  cefrLevel,
-  focus,
-  journeyFocus,
-  topic,
-  journeyEligible,
-  journeyTopic,
-  journeyOrder,
-  "coverUrl": coalesce(coverUrl, cover.asset->url),
-  "audioUrl": coalesce(audioUrl, audio.asset->url),
-  "createdAt": _createdAt
-`;
-
 const legacyLevelFallback: Record<Level, CefrLevel> = {
   beginner: "a1",
   intermediate: "b1",
@@ -98,35 +72,16 @@ function normalizeStandaloneStory(
 
 const getPublishedStandaloneStoriesCached = unstable_cache(
   async (): Promise<PublicStandaloneStory[]> => {
-    if (shouldReadStandaloneFromStudio()) {
-      const rows = await getAllPublishedStudioStandaloneStories();
-      return rows.map(normalizeStandaloneStory);
-    }
-    const query = groq`*[_type == "standaloneStory" && published == true] | order(_createdAt desc){
-      ${standaloneStoryFields}
-    }`;
-
-    const stories = await freshClient.fetch<PublicStandaloneStory[]>(query);
-    return stories.map(normalizeStandaloneStory);
+    const rows = await getAllPublishedStudioStandaloneStories();
+    return rows.map(normalizeStandaloneStory);
   },
-  ["published-standalone-stories-v1"],
+  ["published-standalone-stories-v2"],
   { revalidate: 60, tags: ["published-standalone-stories"] }
 );
 
 async function getPublishedJourneyStandaloneStories(): Promise<PublicStandaloneStory[]> {
-  if (shouldReadStandaloneFromStudio()) {
-    const rows = await getJourneyEligibleStudioStandaloneStories();
-    return rows.map(normalizeStandaloneStory);
-  }
-  const query = groq`*[
-    _type == "standaloneStory" &&
-    journeyEligible == true
-  ] | order(_createdAt desc){
-    ${standaloneStoryFields}
-  }`;
-
-  const stories = await freshClient.fetch<PublicStandaloneStory[]>(query);
-  return stories.map(normalizeStandaloneStory);
+  const rows = await getJourneyEligibleStudioStandaloneStories();
+  return rows.map(normalizeStandaloneStory);
 }
 
 export function isJourneyAssignedStandaloneStory(
@@ -147,15 +102,16 @@ export async function getPublishedStandaloneStories(
   options: GetPublishedStandaloneStoriesOptions = {}
 ): Promise<PublicStandaloneStory[]> {
   if (options.includeJourneyStories) {
-    const [sanityStories, prismaStories] = await Promise.all([
+    const [studioStories, prismaJourneyStories] = await Promise.all([
       getPublishedJourneyStandaloneStories(),
-      // Dynamic import avoids a circular dependency (journeyStories imports PublicStandaloneStory from this module).
+      // Dynamic import avoids a circular dependency (journeyStories imports
+      // PublicStandaloneStory from this module).
       import("@/lib/journeyStories").then((m) => m.getPublishedJourneyStories()),
     ]);
-    const sanitySlugs = new Set(sanityStories.map((story) => story.slug));
-    const merged = [...sanityStories];
-    for (const story of prismaStories) {
-      if (sanitySlugs.has(story.slug)) continue;
+    const seen = new Set(studioStories.map((story) => story.slug));
+    const merged = [...studioStories];
+    for (const story of prismaJourneyStories) {
+      if (seen.has(story.slug)) continue;
       merged.push(story);
     }
     return merged;
@@ -168,50 +124,16 @@ export async function getPublishedStandaloneStories(
 export async function getStandaloneStoryBySlug(
   slug: string
 ): Promise<PublicStandaloneStory | null> {
-  if (shouldReadStandaloneFromStudio()) {
-    const raw = await getStudioStandaloneStoryBySlug(slug);
-    return raw ? normalizeStandaloneStory(raw) : null;
-  }
-  const getStandaloneStoryBySlugCached = unstable_cache(
-    async (cachedSlug: string): Promise<PublicStandaloneStory | null> => {
-      const query = groq`*[
-        _type == "standaloneStory" &&
-        published == true &&
-        slug.current == $slug
-      ][0]{
-        ${standaloneStoryFields}
-      }`;
-
-      const story = await freshClient.fetch<PublicStandaloneStory | null>(query, { slug: cachedSlug });
-      return story ? normalizeStandaloneStory(story) : null;
-    },
-    ["published-standalone-story-by-slug-v1", slug],
-    { revalidate: 60, tags: ["published-standalone-stories", `standalone-story:${slug}`] }
-  );
-
-  return getStandaloneStoryBySlugCached(slug);
+  const raw = await getStudioStandaloneStoryBySlug(slug);
+  return raw ? normalizeStandaloneStory(raw) : null;
 }
 
 export async function getStandaloneStoriesByIds(
   ids: string[]
 ): Promise<PublicStandaloneStory[]> {
   if (ids.length === 0) return [];
-
-  if (shouldReadStandaloneFromStudio()) {
-    const rows = await getStudioStandaloneStoriesByIds(ids);
-    return rows.map(normalizeStandaloneStory);
-  }
-
-  const query = groq`*[
-    _type == "standaloneStory" &&
-    published == true &&
-    _id in $ids
-  ]{
-    ${standaloneStoryFields}
-  }`;
-
-  const stories = await freshClient.fetch<PublicStandaloneStory[]>(query, { ids });
-  return stories.map(normalizeStandaloneStory);
+  const rows = await getStudioStandaloneStoriesByIds(ids);
+  return rows.map(normalizeStandaloneStory);
 }
 
 export async function getStandaloneStoriesBySlugs(
@@ -219,31 +141,21 @@ export async function getStandaloneStoriesBySlugs(
 ): Promise<PublicStandaloneStory[]> {
   if (slugs.length === 0) return [];
 
-  const sanityStories = shouldReadStandaloneFromStudio()
-    ? (await getStudioStandaloneStoriesBySlugs(slugs)).map(normalizeStandaloneStory)
-    : await (async () => {
-        const query = groq`*[
-          _type == "standaloneStory" &&
-          published == true &&
-          slug.current in $slugs
-        ]{
-          ${standaloneStoryFields}
-        }`;
-        return (await freshClient.fetch<PublicStandaloneStory[]>(query, { slugs })).map(
-          normalizeStandaloneStory
-        );
-      })();
+  const studioStories = (await getStudioStandaloneStoriesBySlugs(slugs)).map(
+    normalizeStandaloneStory
+  );
 
   // Also resolve slugs from Prisma JourneyStory rows — stories created in the
-  // Studio live there, not in Sanity, and the reader needs them to open.
-  const foundSlugs = new Set(sanityStories.map((s) => s.slug));
+  // Studio live there, not in the standalone catalog, and the reader needs
+  // them to open.
+  const foundSlugs = new Set(studioStories.map((s) => s.slug));
   const missingSlugs = slugs.filter((s) => !foundSlugs.has(s));
-  if (missingSlugs.length === 0) return sanityStories;
+  if (missingSlugs.length === 0) return studioStories;
 
   const { getJourneyStoryBySlug } = await import("@/lib/journeyStories");
   const prismaStories = (
     await Promise.all(missingSlugs.map((slug) => getJourneyStoryBySlug(slug)))
   ).filter((story): story is PublicStandaloneStory => Boolean(story));
 
-  return [...sanityStories, ...prismaStories];
+  return [...studioStories, ...prismaStories];
 }

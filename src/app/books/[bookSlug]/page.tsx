@@ -2,7 +2,6 @@ import { books } from "@/data/books";
 import BackButton from "@/components/BackButton";
 import BookStorefront from "@/components/BookStorefront";
 import { getCatalogBook } from "@/lib/catalog";
-import { shouldReadBookFromStudio } from "@/lib/featureFlags";
 
 type BookPageProps = {
   params: Promise<{ bookSlug: string }>;
@@ -17,9 +16,9 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
   const { bookSlug } = await params;
   const { from, returnTo, returnLabel } = await searchParams;
 
-  const studioBook = shouldReadBookFromStudio(bookSlug)
-    ? await getCatalogBook(bookSlug)
-    : null;
+  // Studio (Prisma) catalog is the source of truth; fall back to the static
+  // dump only if the slug hasn't been migrated yet (legacy hand-off).
+  const studioBook = await getCatalogBook(bookSlug);
   const book = studioBook ?? Object.values(books).find((b) => b.slug === bookSlug);
   if (!book) {
     return <div className="p-8 text-center">Libro no encontrado.</div>;

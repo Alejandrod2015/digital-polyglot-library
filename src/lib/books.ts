@@ -1,86 +1,29 @@
 // /src/lib/books.ts
-import { client as sanityClient } from "@/sanity/lib/client";
 import { resolvePublicMediaUrl } from "@/lib/publicMedia";
 import { getCatalogBookMeta } from "@/lib/catalog";
-import { shouldReadBookFromStudio } from "@/lib/featureFlags";
 
 /**
- * Obtiene los metadatos de un libro desde Sanity por su slug.
- * Se usa tanto en /api/claim/[token]/route.ts como en /lib/email.ts.
+ * Metadatos de un libro por slug. Lee directo del catálogo Studio (Prisma).
+ * Se usa en /api/claim/[token]/route.ts y en /lib/email.ts.
  */
 export async function getBookMeta(slug: string) {
-  if (shouldReadBookFromStudio(slug)) {
-    const meta = await getCatalogBookMeta(slug);
-    if (meta) {
-      return {
-        title: meta.title,
-        cover: resolvePublicMediaUrl(meta.cover) ?? meta.cover,
-        description: meta.description,
-      };
-    }
-  }
-
-  try {
-    const query = `*[_type == "book" && slug.current == $slug][0]{
-      title,
-      "cover": cover.asset->url,
-      description
-    }`;
-
-    const book = await sanityClient.fetch<{
-      title?: string;
-      cover?: string;
-      description?: string;
-    } | null>(query, { slug });
-
-    if (!book) {
-      console.warn(`⚠️ Libro no encontrado en Sanity: ${slug}`);
-      return {
-        title: slug,
-        cover: "/covers/default.jpg",
-        description: "",
-      };
-    }
-
-    // 🔧 Asegura que el cover sea una URL válida y no una cadena vacía
-    const validCover =
-      resolvePublicMediaUrl(book.cover) ??
-      (book.cover
-        ? book.cover.startsWith("http")
-          ? book.cover
-          : `https://cdn.sanity.io${book.cover}`
-        : "/covers/default.jpg");
-
-    return {
-      title: book.title ?? slug,
-      cover: validCover,
-      description: book.description ?? "",
-    };
-  } catch (err) {
-    console.error(`💥 Error obteniendo libro desde Sanity (${slug}):`, err);
+  const meta = await getCatalogBookMeta(slug);
+  if (!meta) {
     return {
       title: slug,
       cover: "/covers/default.jpg",
       description: "",
     };
   }
+  return {
+    title: meta.title,
+    cover: resolvePublicMediaUrl(meta.cover) ?? meta.cover,
+    description: meta.description,
+  };
 }
 
-/**
- * Devuelve solo el título (por eficiencia), útil para emails.
- */
+/** Solo el título — útil para emails. */
 export async function getBookTitle(slug: string): Promise<string> {
-  if (shouldReadBookFromStudio(slug)) {
-    const meta = await getCatalogBookMeta(slug);
-    if (meta) return meta.title;
-  }
-
-  try {
-    const query = `*[_type == "book" && slug.current == $slug][0]{ title }`;
-    const book = await sanityClient.fetch<{ title?: string } | null>(query, { slug });
-    return book?.title ?? slug;
-  } catch (err) {
-    console.error(`⚠️ Error obteniendo título desde Sanity (${slug}):`, err);
-    return slug;
-  }
+  const meta = await getCatalogBookMeta(slug);
+  return meta?.title ?? slug;
 }
