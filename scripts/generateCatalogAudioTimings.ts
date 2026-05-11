@@ -133,16 +133,18 @@ async function main() {
         storyId: story.slug,
       });
 
-      // Drift correction: aeneas a veces marca el primer token del
-      // cuerpo antes de que el narrador realmente lo pronuncie cuando
-      // la pausa post-título es larga. Detectamos el primer silencio
-      // largo con ffmpeg y, si los timestamps están adelantados,
-      // empujamos todos los tokens en bloque. Sin coste si la
-      // alineación ya estaba bien (offsetApplied = 0).
-      const { tokens: correctedTokens, offsetApplied } = await correctAlignmentDrift({
-        audioUrl: story.audioUrl,
-        tokens: payload.words,
-      });
+      // Multi-anchor drift correction: aeneas reparte los tokens
+      // linealmente dentro de cada bloque, así que cualquier pausa
+      // larga del narrador (post-título, entre párrafos, entre
+      // frases) introduce drift acumulado. Detectamos todos los
+      // silencios ≥ 0.5 s con ffmpeg y anclamos el primer token
+      // después de cada silencio a `silence.end` si quedó adelantado.
+      // El offset solo crece; nunca empujamos tokens hacia atrás.
+      const { tokens: correctedTokens, anchors, totalOffsetApplied } =
+        await correctAlignmentDrift({
+          audioUrl: story.audioUrl,
+          tokens: payload.words,
+        });
       const correctedPayload = { ...payload, words: correctedTokens };
 
       await prisma.catalogStoryAudioTimings.upsert({
@@ -159,7 +161,10 @@ async function main() {
       });
 
       const elapsed = Math.round((Date.now() - t0) / 1000);
-      const driftNote = offsetApplied > 0 ? ` drift+${offsetApplied.toFixed(2)}s` : "";
+      const driftNote =
+        anchors.length > 0
+          ? ` anchors=${anchors.length} totalDrift+${totalOffsetApplied.toFixed(2)}s`
+          : "";
       console.log(`${label} OK (${correctedTokens.length} tokens, ${elapsed}s${driftNote})`);
       ok += 1;
     } catch (error) {

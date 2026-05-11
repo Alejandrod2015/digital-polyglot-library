@@ -1,17 +1,18 @@
-// Detect & correct aeneas drift caused by long pauses between title
-// and body that aeneas underweights when distributing tokens linearly.
+// Multi-anchor drift correction for aeneas alignments.
 //
-// Symptom: aeneas marks the first body token several hundred ms BEFORE
-// the narrator actually starts the body. Every subsequent timestamp
-// inherits that bias, so the karaoke cursor runs ahead of the voice
-// for the entire story.
+// aeneas distributes tokens **linearly** inside each alignment block,
+// so any long pause in the narration (after the title, between
+// paragraphs, between sentences, dramatic pauses) shows up as drift:
+// aeneas places the post-pause tokens earlier than the narrator
+// actually speaks them. Linear distribution can't recover those
+// non-uniform gaps on its own.
 //
-// Heuristic: find the first long silence in the audio (using
-// ffmpeg silencedetect) that ends roughly where the title narration
-// finishes. If aeneas placed the first body token BEFORE that
-// silence ends, shift all tokens forward by the gap. Only applies
-// when the drift is meaningful (>= 0.25 s) to avoid touching stories
-// that aeneas already aligned correctly.
+// We post-process aeneas's output by running ffmpeg silencedetect to
+// find every meaningful pause in the audio, then walking the tokens
+// in order and "anchoring" the first token after each detected
+// silence to `silence.end`. The shift propagates forward as a running
+// offset that only ever grows (we never push tokens backward, since
+// that would over-correct when aeneas was already late or accurate).
 //
 // Server-only module: uses child_process / ffmpeg. Do NOT import from
 // the mobile bundle. The mobile reader consumes the corrected payload
@@ -80,75 +81,152 @@ async function detectSilences(
   });
 }
 
+export type DriftAnchor = {
+  /** Index of the token that was anchored to silence.end. */
+  tokenIndex: number;
+  /** ffmpeg silence span end (in seconds from start of audio). */
+  silenceEnd: number;
+  /** Drift applied at this anchor (added to the running offset). */
+  driftAdded: number;
+  /** Running offset AFTER this anchor was applied. */
+  cumulativeOffset: number;
+};
+
 /**
- * Apply drift correction to a token array given the audio URL. Returns
- * an object with the corrected tokens and the offset that was applied
- * (positive when aeneas was ahead of the voice). When no correction
- * was needed, `offsetApplied` is 0 and the tokens are returned
- * untouched.
+ * Multi-anchor drift correction.
  *
- * Strategy:
- *   1. Find the first body token startSec.
- *   2. Find the first silence span in the audio whose `end` is within
- *      [firstToken.startSec - 3s, firstToken.startSec + 6s]. That
- *      window covers the title-to-body transition for any realistic
- *      title length (1-10 s).
- *   3. If the silence ends AFTER the first token's startSec by at
- *      least 0.25 s, shift every token by (silence.end - firstToken).
+ * Algorithm:
+ *   1. Detect every silence ≥ `minSilenceSec` (default 0.5 s) in the audio.
+ *   2. Walk the tokens in order with a running `currentOffset` (starts 0).
+ *   3. Whenever we cross a silence (i.e. aeneas's original start for the
+ *      current token is later than the silence's start, and the previous
+ *      token's original start was earlier than the silence's start), check
+ *      whether the current token + currentOffset still lands BEFORE
+ *      `silence.end - minDriftSec`. If so, push currentOffset forward so
+ *      this token lands exactly at `silence.end`. The bump propagates to
+ *      every subsequent token.
+ *
+ * Returns the corrected tokens plus a list of every anchor that fired,
+ * which is useful for telemetry and debugging individual stories.
+ *
+ * Notes:
+ *   - currentOffset only ever grows. We never apply a negative shift
+ *     because aeneas being "late" is rare and a negative push could
+ *     over-correct in ways that are hard to recover from.
+ *   - `minSilenceSec` defaults to 0.5 s, conservative enough to skip
+ *     intra-word breaths (typically 200-400 ms) but still catch the
+ *     post-title and inter-paragraph gaps we actually care about.
  */
 export async function correctAlignmentDrift(args: {
   audioUrl: string;
   tokens: StoryWordToken[];
-  // Minimum drift (in seconds) before we apply a correction. Below
-  // this threshold the alignment is considered good enough and we
-  // skip the adjustment.
+  /** Minimum drift (s) before an anchor fires. Default 0.25. */
   minDriftSec?: number;
-}): Promise<{ tokens: StoryWordToken[]; offsetApplied: number; detectedSilenceEnd: number | null }> {
+  /** Minimum silence duration (s) to consider as an anchor. Default 0.5. */
+  minSilenceSec?: number;
+  /** ffmpeg silencedetect noise threshold in dB. Default -35. */
+  thresholdDb?: number;
+}): Promise<{
+  tokens: StoryWordToken[];
+  anchors: DriftAnchor[];
+  /** Final cumulative offset applied to the tail of the story. */
+  totalOffsetApplied: number;
+}> {
   const { audioUrl, tokens } = args;
   const minDriftSec = args.minDriftSec ?? 0.25;
-  if (tokens.length === 0) return { tokens, offsetApplied: 0, detectedSilenceEnd: null };
+  const minSilenceSec = args.minSilenceSec ?? 0.5;
+  const thresholdDb = args.thresholdDb ?? -35;
 
-  const firstToken = tokens.find((t) => t.startSec !== null);
-  if (!firstToken || firstToken.startSec === null) {
-    return { tokens, offsetApplied: 0, detectedSilenceEnd: null };
-  }
-  const firstTokenStartSec: number = firstToken.startSec;
-
-  // Detect silences with a strict minimum duration so we skip the
-  // tiny pauses (200-350 ms) that exist between words inside the
-  // title narration. The post-title pause that we care about is
-  // typically 400-1500 ms long.
-  const silences = await detectSilences(audioUrl, { thresholdDb: -35, minDurationSec: 0.4 });
-  // We only care about the silence that separates the title from the
-  // body — i.e. the LAST long silence that begins before (or right
-  // around) the first body token's startSec. Earlier versions of this
-  // helper looked at any silence within a wide window and would pick
-  // a silence AFTER the first sentence instead, applying a 5 s shift
-  // that wrecked the alignment. The pause that matters always starts
-  // before aeneas's first body token; if there is no such silence,
-  // there is no measurable title-to-body drift to correct.
-  const candidate = silences
-    .filter((s) => s.start < firstTokenStartSec + 1)
-    .slice(-1)[0] ?? null;
-
-  if (!candidate) {
-    return { tokens, offsetApplied: 0, detectedSilenceEnd: null };
+  if (tokens.length === 0) {
+    return { tokens, anchors: [], totalOffsetApplied: 0 };
   }
 
-  // Drift is positive when the silence ends AFTER aeneas's first
-  // token (aeneas placed the word too early). Negative or near-zero
-  // means alignment is already good.
-  const drift = candidate.end - firstTokenStartSec;
-  if (drift < minDriftSec) {
-    return { tokens, offsetApplied: 0, detectedSilenceEnd: candidate.end };
+  const silences = await detectSilences(audioUrl, {
+    thresholdDb,
+    minDurationSec: minSilenceSec,
+  });
+  // ffmpeg returns silences in chronological order; keep that invariant.
+  silences.sort((a, b) => a.start - b.start);
+
+  if (silences.length === 0) {
+    return { tokens, anchors: [], totalOffsetApplied: 0 };
   }
 
-  // Aeneas placed the first body word BEFORE the narrator actually
-  // started speaking it. Push every token forward by `drift`.
-  const corrected = tokens.map((t) => ({
-    ...t,
-    startSec: t.startSec !== null ? t.startSec + drift : null,
-    endSec: t.endSec !== null ? t.endSec + drift : null,
-  }));
-  return { tokens: corrected, offsetApplied: drift, detectedSilenceEnd: candidate.end };
+  const corrected: StoryWordToken[] = [];
+  const anchors: DriftAnchor[] = [];
+  let currentOffset = 0;
+  let silIdx = 0;
+  let prevOriginalStart: number | null = null;
+
+  for (let i = 0; i < tokens.length; i += 1) {
+    const t = tokens[i];
+    if (t.startSec === null) {
+      corrected.push({ ...t });
+      continue;
+    }
+    const originalStart = t.startSec;
+
+    // Advance past any silences whose start is before this token's
+    // original start AND were not yet considered. For each such
+    // silence we ask: "Is this token the first one after the silence?"
+    // — true when the previous token's original start was before the
+    // silence's start (or there is no previous token).
+    while (silIdx < silences.length && silences[silIdx].start < originalStart) {
+      const sil = silences[silIdx];
+      const isFirstAfter =
+        prevOriginalStart === null || prevOriginalStart < sil.start;
+      if (isFirstAfter) {
+        const positionWithOffset = originalStart + currentOffset;
+        const gap = sil.end - positionWithOffset;
+        if (gap >= minDriftSec) {
+          // Aeneas was ahead of the narrator at this silence —
+          // push every remaining token forward so this one starts
+          // exactly at silence.end.
+          currentOffset += gap;
+          anchors.push({
+            tokenIndex: i,
+            silenceEnd: sil.end,
+            driftAdded: gap,
+            cumulativeOffset: currentOffset,
+          });
+        } else if (gap <= -minDriftSec) {
+          // Aeneas was BEHIND the narrator (token marked after the
+          // silence already ended). Pulling tokens back is safe as
+          // long as the previous corrected token still ends before
+          // the silence — otherwise we'd invert the order. Cap the
+          // pullback to preserve the invariant prev.endSec ≤ sil.end.
+          const lastCorrected = corrected[corrected.length - 1];
+          const prevEnd =
+            lastCorrected && lastCorrected.endSec !== null
+              ? lastCorrected.endSec
+              : lastCorrected && lastCorrected.startSec !== null
+                ? lastCorrected.startSec
+                : -Infinity;
+          // Headroom before we would overlap the previous token.
+          const maxBackwardShift = sil.end - prevEnd;
+          const desiredShift = gap; // negative
+          const appliedShift = Math.max(desiredShift, -Math.max(0, maxBackwardShift));
+          if (appliedShift <= -minDriftSec) {
+            currentOffset += appliedShift;
+            anchors.push({
+              tokenIndex: i,
+              silenceEnd: sil.end,
+              driftAdded: appliedShift,
+              cumulativeOffset: currentOffset,
+            });
+          }
+        }
+      }
+      silIdx += 1;
+    }
+
+    corrected.push({
+      ...t,
+      startSec: originalStart + currentOffset,
+      endSec: t.endSec !== null ? t.endSec + currentOffset : null,
+    });
+    prevOriginalStart = originalStart;
+  }
+
+  return { tokens: corrected, anchors, totalOffsetApplied: currentOffset };
 }

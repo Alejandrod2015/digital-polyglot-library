@@ -36,6 +36,16 @@ PIPER_VOICES = {
     "piper/it_IT-paola-medium":    "it_IT-paola-medium",
 }
 
+# Note on engines: Kokoro and Bark were considered for ES / DE practice
+# audio respectively but neither could be deployed reliably (Kokoro
+# image build blocked on the GitHub Releases asset download from inside
+# the Modal container; Bark image build dwarfed everything else at
+# ~6 GB of torch + transformers and the only candidate German voice was
+# already flagged in the project memory as "flat/monotone — rejected").
+# Until a workaround is in place we ship the Piper-only deployment that
+# has been running since 2026-05-03; Spanish practice clips fall back to
+# `piper/es_ES-sharvard-medium` (also Apache-2.0).
+
 PIPER_HF_PATHS = {
     "es_ES-sharvard-medium": "es/es_ES/sharvard/medium/es_ES-sharvard-medium",
     "pt_BR-cadu-medium":     "pt/pt_BR/cadu/medium/pt_BR-cadu-medium",
@@ -63,6 +73,14 @@ image = (
     .pip_install("piper-tts==1.2.0", "fastapi[standard]==0.115.5")
     .run_function(_download_piper_voices)
 )
+
+
+# Kokoro and Bark images removed from this deployment for now. The Kokoro
+# image build kept blocking on the GitHub Releases asset fetch inside the
+# Modal container; Bark needed torch + transformers (~6 GB) and the only
+# candidate DE voice was already in the project's "rejected — monotone"
+# memory bucket. Re-introduce in a separate, smaller deploy once each
+# engine has a clean download path and an audition-approved preset.
 
 # Forced-alignment image: aeneas needs espeak + python-dev for native build.
 # Pinned numpy<2 because aeneas 1.7.3 was released pre-numpy-2 and breaks
@@ -220,6 +238,12 @@ def synthesize(payload: dict):
     public_url = _r2_upload(mp3_bytes, key, "audio/mpeg")
 
     return {"url": public_url, "filename": safe_name, "bytes": len(mp3_bytes)}
+
+
+# synthesize_kokoro and synthesize_bark endpoints omitted intentionally
+# until each engine has a reliable image build path and (for Bark) an
+# audition-approved voice preset. See the engine-removal note near the
+# top of this file for the full rationale.
 
 
 # Map app-level language strings to aeneas BCP-47 / ISO-639-3 task languages.
