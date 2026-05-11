@@ -65,7 +65,7 @@ async function main() {
     const published = await prisma.standaloneStory.findMany({
       where: { published: true },
       orderBy: { sourceCreatedAt: "asc" },
-      select: { slug: true, title: true, language: true, cefrLevel: true, audioUrl: true, coverUrl: true, vocab: true, sourceType: true },
+      select: { slug: true, title: true, language: true, cefrLevel: true, audio: true, audioUrl: true, cover: true, coverUrl: true, vocab: true, sourceType: true },
     });
 
     console.log(`Host: ${HOST}`);
@@ -119,12 +119,12 @@ async function main() {
     for (const s of published) {
       const api = apiBySlug.get(s.slug);
       if (!api) continue;
-      const studioHasAudio = Boolean(s.audioUrl);
+      const studioHasAudio = Boolean(s.audioUrl) || Boolean(s.audio);
       const apiHasAudio = Boolean(api.audioUrl);
       if (studioHasAudio !== apiHasAudio) {
         fieldIssues.push({ slug: s.slug, issue: `audio drift: studio=${studioHasAudio} api=${apiHasAudio}` });
       }
-      const studioHasCover = Boolean(s.coverUrl);
+      const studioHasCover = Boolean(s.coverUrl) || Boolean(s.cover);
       const apiHasCover = Boolean(api.coverUrl);
       if (studioHasCover !== apiHasCover) {
         fieldIssues.push({ slug: s.slug, issue: `cover drift: studio=${studioHasCover} api=${apiHasCover}` });
