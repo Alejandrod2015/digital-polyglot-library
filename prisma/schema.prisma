@@ -392,6 +392,19 @@ model LibraryStory {
   @@unique([userId, storyId], name: "userId_storyId")
 }
 
+// Word-level audio alignments for stories that live in the static
+// catalog (`src/data/books/*.ts`), generated via Modal/aeneas (the same
+// pipeline that powers `JourneyStory.audioWordTimings`). Stored by slug
+// because the catalog is TS-static — there is no parent table to
+// extend. Populated by `scripts/generateCatalogAudioTimings.ts`; served
+// by `/api/mobile/audio-word-timings` when the journey lookup misses.
+model CatalogStoryAudioTimings {
+  slug              String   @id
+  audioWordTimings  Json
+  audioDurationSec  Float?
+  updatedAt         DateTime @updatedAt
+}
+
 model ClaimToken {
   id             String    @id @default(cuid())
   token          String    @unique

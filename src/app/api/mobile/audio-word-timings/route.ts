@@ -1,8 +1,12 @@
-// Mobile-side companion to the studio word-timings pipeline.
-// Returns the AudioWordTimingsPayload for a given JourneyStory slug,
-// or { timings: null } when no alignment exists. The mobile reader uses
-// this to opt into the highlighted body render. Safe to call for every
-// story; the payload is null for any story that hasn't been aligned.
+// Mobile-side companion to the studio word-timings pipeline. Returns
+// the AudioWordTimingsPayload for a given story slug, looking it up in
+// two places:
+//   1. `JourneyStory.audioWordTimings` (curriculum stories).
+//   2. `CatalogStoryAudioTimings` (static catalog stories, populated by
+//      `scripts/generateCatalogAudioTimings.ts`).
+// `{ timings: null }` when neither has an alignment. Safe to call for
+// every story; the mobile reader opts into highlighted render only when
+// the payload is non-null.
 
 export const runtime = "nodejs";
 
@@ -24,13 +28,22 @@ export async function GET(req: NextRequest): Promise<Response> {
   }
 
   try {
-    const row = await prisma.journeyStory.findFirst({
+    const journeyRow = await prisma.journeyStory.findFirst({
       where: { slug, status: "published" },
       select: { audioWordTimings: true },
     });
 
-    const timings = coerceAudioWordTimings(row?.audioWordTimings ?? null);
-    return NextResponse.json({ timings });
+    const journeyTimings = coerceAudioWordTimings(journeyRow?.audioWordTimings ?? null);
+    if (journeyTimings) {
+      return NextResponse.json({ timings: journeyTimings });
+    }
+
+    const catalogRow = await prisma.catalogStoryAudioTimings.findUnique({
+      where: { slug },
+      select: { audioWordTimings: true },
+    });
+    const catalogTimings = coerceAudioWordTimings(catalogRow?.audioWordTimings ?? null);
+    return NextResponse.json({ timings: catalogTimings });
   } catch (error) {
     console.error("[mobile/audio-word-timings] failed", error);
     return NextResponse.json({ timings: null });

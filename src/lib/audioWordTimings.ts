@@ -10,6 +10,7 @@
 
 import { alignStorySentencesToWords, type AudioSegment } from "@/lib/audioSegments";
 import { prisma } from "@/lib/prisma";
+import { extractStoryPlainText } from "./storyPlainText";
 
 export const AUDIO_WORD_TIMINGS_VERSION = 1 as const;
 
@@ -55,20 +56,7 @@ const STUDIO_LANGUAGE_TO_ALIGN: Record<string, string> = {
   fr: "french",
 };
 
-export function extractStoryPlainText(rawText: string): string {
-  const stripped = rawText
-    .replace(/<\/blockquote>\s*<blockquote>/gi, "\n")
-    .replace(/<\/p>\s*<p>/gi, "\n")
-    .replace(/<br\s*\/?\s*>/gi, "\n")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\r\n?/g, "\n")
-    .replace(/\\n/g, "\n")
-    .replace(/[ \t]+/g, " ")
-    .replace(/[ \t]+\n/g, "\n")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
-  return stripped;
-}
+export { extractStoryPlainText };
 
 function resolveAlignUrl(): string {
   const explicit = (process.env.STUDIO_AUDIO_ALIGN_URL || "").trim();
@@ -149,7 +137,7 @@ export async function alignAudioOnModal(args: {
 // prefix the alignment treats the title's audio segment as if it were the
 // first body word, which makes the highlight jump to body word #1 while
 // the narrator is still speaking the title.
-function buildAlignmentText(titleRaw: string, bodyPlain: string): {
+export function buildAlignmentText(titleRaw: string, bodyPlain: string): {
   fullText: string;
   bodyOffset: number;
 } {
