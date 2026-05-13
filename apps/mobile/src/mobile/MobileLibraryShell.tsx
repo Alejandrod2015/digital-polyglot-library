@@ -1714,6 +1714,7 @@ export function MobileLibraryShell(args: {
   const [playingPracticeClipId, setPlayingPracticeClipId] = useState<string | null>(null);
   const [playingHqPracticeClipId, setPlayingHqPracticeClipId] = useState<string | null>(null);
   const [hqUrlBySentence, setHqUrlBySentence] = useState<Record<string, string>>({});
+  const [playingFavoriteKey, setPlayingFavoriteKey] = useState<string | null>(null);
   const [practiceLastResult, setPracticeLastResult] = useState<"correct" | "wrong" | null>(null);
   const [practiceSessionStreak, setPracticeSessionStreak] = useState(0);
   const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
@@ -1906,6 +1907,7 @@ export function MobileLibraryShell(args: {
   const practiceCompletionTrackedRef = useRef(false);
   const practiceClipSoundRef = useRef<Audio.Sound | null>(null);
   const practiceHqSoundRef = useRef<Audio.Sound | null>(null);
+  const favoriteHqSoundRef = useRef<Audio.Sound | null>(null);
   // Tracks the id del último ejercicio cuyo autoplay ya disparó. Se
   // resetea en openPracticeMode para que la primera reproducción de
   // cada sesión nueva siempre dispare. Declarado acá arriba (no en el
@@ -6304,6 +6306,74 @@ export function MobileLibraryShell(args: {
     try { await sound.unloadAsync(); } catch { /* ignore */ }
   }
 
+  async function stopFavoriteAudio() {
+    const sound = favoriteHqSoundRef.current;
+    setPlayingFavoriteKey(null);
+    if (!sound) return;
+    favoriteHqSoundRef.current = null;
+    try { await sound.stopAsync(); } catch { /* ignore */ }
+    try { await sound.unloadAsync(); } catch { /* ignore */ }
+  }
+
+  // Plays the favorite's word through the same Modal-hosted Kokoro/Piper
+  // voice that practice uses. Tapping a card that is already playing
+  // stops it (toggle). Uses the language to pick a voice; per-story
+  // voiceId threading lives elsewhere and can be plugged in later.
+  async function playFavoriteAudio(key: string, item: MobileFavoriteItem) {
+    if (playingFavoriteKey === key) {
+      await stopFavoriteAudio();
+      return;
+    }
+    await stopFavoriteAudio();
+
+    const sentence = item.word?.trim();
+    if (!sentence) return;
+    const language = item.language?.trim() || "german";
+
+    let url: string;
+    try {
+      const resp = await apiFetch<{ url?: string }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/practice/sentence-tts",
+        method: "POST",
+        token: sessionToken ?? undefined,
+        body: { sentence, language },
+        timeoutMs: 45000,
+      });
+      if (!resp?.url) return;
+      url = resp.url;
+    } catch (err) {
+      console.error("[favorites play] tts request failed", err);
+      return;
+    }
+
+    try {
+      try { await Audio.setIsEnabledAsync(false); } catch { /* best-effort */ }
+      await new Promise((resolve) => setTimeout(resolve, 200));
+      await Audio.setIsEnabledAsync(true);
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        staysActiveInBackground: false,
+      });
+      const { sound } = await Audio.Sound.createAsync(
+        { uri: url },
+        { shouldPlay: true, volume: 1.0 },
+        (status) => {
+          if ("didJustFinish" in status && status.didJustFinish) {
+            void stopFavoriteAudio();
+          }
+        }
+      );
+      favoriteHqSoundRef.current = sound;
+      setPlayingFavoriteKey(key);
+    } catch (err) {
+      console.error("[favorites play] playback failed", err);
+      await stopFavoriteAudio();
+    }
+  }
+
   // Three focused helpers for the practice context buttons. Each one stops
   // the others first so only one playback is active at a time.
 
@@ -9367,6 +9437,22 @@ export function MobileLibraryShell(args: {
               <View style={styles.favoriteHeader}>
                 <View style={styles.favoriteIdentity}>
                   <View style={styles.favoriteWordRow}>
+                    <Pressable
+                      accessibilityRole="button"
+                      accessibilityLabel={`Play ${item.word}`}
+                      hitSlop={10}
+                      onPress={() => { void playFavoriteAudio(key, item); }}
+                      style={({ pressed }) => [
+                        styles.favoritePlayButton,
+                        (pressed || playingFavoriteKey === key) ? styles.favoritePlayButtonActive : null,
+                      ]}
+                    >
+                      <Feather
+                        name={playingFavoriteKey === key ? "square" : "play"}
+                        size={12}
+                        color="#9fe8ff"
+                      />
+                    </Pressable>
                     <Text style={styles.favoriteWord}>{item.word}</Text>
                     <View style={styles.favoriteTypeChip}>
                       <Text style={styles.favoriteTypeChipText}>{getFavoriteTypeLabel(getFavoriteType(item))}</Text>
@@ -17420,6 +17506,21 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
+  },
+  favoritePlayButton: {
+    width: 26,
+    height: 26,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(159,232,255,0.32)",
+    backgroundColor: "rgba(159,232,255,0.08)",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 8,
+  },
+  favoritePlayButtonActive: {
+    backgroundColor: "rgba(159,232,255,0.20)",
+    borderColor: "rgba(159,232,255,0.60)",
   },
   favoriteRemove: {
     alignSelf: "flex-start",
