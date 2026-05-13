@@ -67,11 +67,13 @@ const PRACTICE_VOICES: Record<string, string> = {
   italian: "piper/it_IT-paola-medium",
 };
 
-// Engine prefix → Modal endpoint path suffix. The Modal app exposes
-// `synthesize` (Piper) and `synthesize_kokoro`.
+// Engine prefix → Modal endpoint subdomain segment. Modal renders the
+// function name `synthesize_kokoro` as `synthesize-kokoro` in the public
+// URL (underscores become dashes); the key here MUST be the URL form,
+// not the Python identifier, or the request 404s.
 const ENGINE_TO_MODAL_FN: Record<string, string> = {
   piper: "synthesize",
-  kokoro: "synthesize_kokoro",
+  kokoro: "synthesize-kokoro",
 };
 
 function pickVoice(language: string): string | null {
