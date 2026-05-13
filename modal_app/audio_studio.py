@@ -32,6 +32,7 @@ import modal
 
 PIPER_VOICES = {
     "piper/es_ES-sharvard-medium": "es_ES-sharvard-medium",
+    "piper/es_MX-claude-high":     "es_MX-claude-high",
     "piper/pt_BR-cadu-medium":     "pt_BR-cadu-medium",
     "piper/it_IT-paola-medium":    "it_IT-paola-medium",
 }
@@ -48,6 +49,7 @@ PIPER_VOICES = {
 
 PIPER_HF_PATHS = {
     "es_ES-sharvard-medium": "es/es_ES/sharvard/medium/es_ES-sharvard-medium",
+    "es_MX-claude-high":     "es/es_MX/claude/high/es_MX-claude-high",
     "pt_BR-cadu-medium":     "pt/pt_BR/cadu/medium/pt_BR-cadu-medium",
     "it_IT-paola-medium":    "it/it_IT/paola/medium/it_IT-paola-medium",
 }

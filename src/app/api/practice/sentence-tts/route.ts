@@ -49,6 +49,7 @@ type Body = {
 // PIPER_VOICES in modal_app/audio_studio.py.
 const SUPPORTED_PIPER_VOICES = new Set<string>([
   "piper/es_ES-sharvard-medium",
+  "piper/es_MX-claude-high",
   "piper/pt_BR-cadu-medium",
   "piper/it_IT-paola-medium",
 ]);
@@ -58,7 +59,7 @@ const SUPPORTED_PIPER_VOICES = new Set<string>([
 // the strings in sync with PRACTICE_VOICE_TO_MODAL_PATH below and with
 // modal_app/audio_studio.py's PIPER_VOICES / KOKORO_VOICES maps.
 const PRACTICE_VOICES: Record<string, string> = {
-  spanish: "piper/es_ES-sharvard-medium",
+  spanish: "piper/es_MX-claude-high",
   portuguese: "piper/pt_BR-cadu-medium",
   italian: "piper/it_IT-paola-medium",
 };
