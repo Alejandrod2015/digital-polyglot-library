@@ -1,6 +1,7 @@
 import { Children, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import * as SecureStore from "expo-secure-store";
 import * as Haptics from "expo-haptics";
+import * as FileSystem from "expo-file-system/legacy";
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
 import {
   Alert,
@@ -1917,6 +1918,7 @@ export function MobileLibraryShell(args: {
   // default voice changed. The endpoint itself is cache-first against
   // R2, so the round-trip is cheap enough to not warrant a duplicate
   // client-side map.
+  const [playingFavoriteKey, setPlayingFavoriteKey] = useState<string | null>(null);
   const [practiceLastResult, setPracticeLastResult] = useState<"correct" | "wrong" | null>(null);
   const [practiceSessionStreak, setPracticeSessionStreak] = useState(0);
   // Mejor combo alcanzado durante la sesión (no se resetea al fallar)
@@ -2146,6 +2148,7 @@ export function MobileLibraryShell(args: {
   const practiceCompletionTrackedRef = useRef(false);
   const practiceClipSoundRef = useRef<Audio.Sound | null>(null);
   const practiceHqSoundRef = useRef<Audio.Sound | null>(null);
+  const favoriteHqSoundRef = useRef<Audio.Sound | null>(null);
   // Tracks the id del último ejercicio cuyo autoplay ya disparó. Se
   // resetea en openPracticeMode para que la primera reproducción de
   // cada sesión nueva siempre dispare. Declarado acá arriba (no en el
@@ -4272,6 +4275,15 @@ export function MobileLibraryShell(args: {
       ),
     [journeyScopedFavoriteCards, selectedFavoriteType]
   );
+  // Warm the R2 cache for the first batch of visible favorites when the
+  // user opens the Favorites tab.
+  useEffect(() => {
+    if (activeScreen !== "favorites") return;
+    if (filteredFavoriteCards.length === 0) return;
+    const batch = filteredFavoriteCards.slice(0, 8);
+    void Promise.all(batch.map(({ item, key }) => prefetchFavoriteAudio(item, key)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeScreen, filteredFavoriteCards.length]);
   // Counts mostrados en cada pill (siempre journey-scoped, sin importar
   // el tipo seleccionado, para que el usuario vea cuántas palabras hay
   // en cada modo antes de tocar).
@@ -6932,6 +6944,141 @@ export function MobileLibraryShell(args: {
     practiceHqSoundRef.current = null;
     try { await sound.stopAsync(); } catch { /* ignore */ }
     try { await sound.unloadAsync(); } catch { /* ignore */ }
+  }
+
+  async function stopFavoriteAudio() {
+    const sound = favoriteHqSoundRef.current;
+    setPlayingFavoriteKey(null);
+    if (!sound) return;
+    favoriteHqSoundRef.current = null;
+    try { await sound.stopAsync(); } catch { /* ignore */ }
+    try { await sound.unloadAsync(); } catch { /* ignore */ }
+  }
+
+  // Plays the favorite's word through the same Modal-hosted Kokoro/Piper
+  // voice that practice uses. Tapping a card that is already playing
+  // stops it (toggle).
+  async function playFavoriteAudio(key: string, item: MobileFavoriteItem) {
+    if (playingFavoriteKey === key) {
+      await stopFavoriteAudio();
+      return;
+    }
+    await stopFavoriteAudio();
+
+    // Fast path: prefetched MP3 sitting on local disk — load file://
+    // directly, no network. ~150ms tap-to-sound.
+    const localUri = prefetchedFavoriteFilesRef.current.get(key);
+    let url: string | null = localUri ?? null;
+
+    if (!url) {
+      const sentence = item.word?.trim();
+      if (!sentence) return;
+      const langInput = (item.language ?? activeJourneyLanguage ?? "").trim().toLowerCase();
+      const LANG_MAP: Record<string, string> = {
+        es: "spanish", spanish: "spanish", español: "spanish", castellano: "spanish",
+        it: "italian", italian: "italian", italiano: "italian",
+        pt: "portuguese", portuguese: "portuguese", português: "portuguese", portugues: "portuguese",
+        de: "german", german: "german", deutsch: "german",
+        en: "english", english: "english",
+        fr: "french", french: "french",
+      };
+      const language = LANG_MAP[langInput] ?? langInput;
+      if (!language) {
+        console.warn("[favorites play] missing language, skipping", { word: sentence });
+        return;
+      }
+      try {
+        const resp = await apiFetch<{ url?: string }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/practice/sentence-tts",
+          method: "POST",
+          token: sessionToken ?? undefined,
+          body: { sentence, language },
+          timeoutMs: 45000,
+        });
+        if (!resp?.url) return;
+        url = resp.url;
+      } catch (err) {
+        console.error("[favorites play] tts request failed", err);
+        return;
+      }
+    }
+
+    try {
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        staysActiveInBackground: false,
+      });
+      const { sound } = await Audio.Sound.createAsync(
+        { uri: url },
+        { shouldPlay: true, volume: 1.0 },
+        (status) => {
+          if ("didJustFinish" in status && status.didJustFinish) {
+            void stopFavoriteAudio();
+          }
+        }
+      );
+      favoriteHqSoundRef.current = sound;
+      setPlayingFavoriteKey(key);
+    } catch (err) {
+      console.error("[favorites play] playback failed", err);
+      await stopFavoriteAudio();
+    }
+  }
+
+  // Downloads MP3s to local disk for visible favorites. Tap then loads
+  // from `file://` (no network), so total tap-to-sound is ~150ms (FS
+  // read + decode + audio session). The endpoint round-trip + R2
+  // download (~1.5s) happens once during prefetch, off the user's
+  // critical path.
+  const prefetchedFavoriteKeysRef = useRef<Set<string>>(new Set());
+  const prefetchedFavoriteFilesRef = useRef<Map<string, string>>(new Map());
+  const FAV_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}favorite-audio/`;
+  async function prefetchFavoriteAudio(item: MobileFavoriteItem, key: string) {
+    if (prefetchedFavoriteKeysRef.current.has(key)) return;
+    const sentence = item.word?.trim();
+    if (!sentence) return;
+    const langInput = (item.language ?? activeJourneyLanguage ?? "").trim().toLowerCase();
+    const LANG_MAP: Record<string, string> = {
+      es: "spanish", spanish: "spanish",
+      it: "italian", italian: "italian",
+      pt: "portuguese", portuguese: "portuguese",
+      de: "german", german: "german",
+      en: "english", english: "english",
+      fr: "french", french: "french",
+    };
+    const language = LANG_MAP[langInput] ?? langInput;
+    if (!language) return;
+    prefetchedFavoriteKeysRef.current.add(key);
+    try {
+      const resp = await apiFetch<{ url?: string }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/practice/sentence-tts",
+        method: "POST",
+        token: sessionToken ?? undefined,
+        body: { sentence, language },
+        timeoutMs: 45000,
+      });
+      if (!resp?.url) {
+        prefetchedFavoriteKeysRef.current.delete(key);
+        return;
+      }
+      try { await FileSystem.makeDirectoryAsync(FAV_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+      // Hash-derived filename keeps the same favorite reusable across
+      // sessions; collisions are scoped to the cache dir which the OS
+      // can clear at will.
+      const safeName = `${language}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 40)}.mp3`;
+      const fileUri = `${FAV_AUDIO_DIR}${safeName}`;
+      const info = await FileSystem.getInfoAsync(fileUri);
+      if (!info.exists) {
+        await FileSystem.downloadAsync(resp.url, fileUri);
+      }
+      prefetchedFavoriteFilesRef.current.set(key, fileUri);
+    } catch {
+      prefetchedFavoriteKeysRef.current.delete(key);
+    }
   }
 
   async function stopAndUnloadPracticeSound(
@@ -11005,134 +11152,163 @@ export function MobileLibraryShell(args: {
             const conjugationEntry = isVerb ? conjugationCache[conjugationKey] : undefined;
             const conjugationsExpanded = isVerb && expandedConjugations.has(conjugationKey);
             return (
-            <View key={key} style={styles.favoriteCard}>
-              <View style={styles.favoriteAccentRail} />
-              <View style={styles.favoriteHeader}>
-                <View style={styles.favoriteIdentity}>
-                  <View style={styles.favoriteWordRow}>
-                    <Text style={styles.favoriteWord}>{item.word}</Text>
-                    <Text style={styles.favoriteInlineType}>{getFavoriteTypeLabel(favoriteType)}</Text>
-                  </View>
-                  <View
-                    style={styles.favoriteMasteryBar}
-                    accessibilityLabel={`Dominio: ${mastery.label} (${mastery.level} de 5)`}
-                  >
-                    {[1, 2, 3, 4, 5].map((tier) => (
-                      <View
-                        key={`mastery-${tier}`}
-                        style={[
-                          styles.favoriteMasterySegment,
-                          tier <= mastery.level
-                            ? { backgroundColor: mastery.color }
-                            : null,
-                        ]}
-                      />
-                    ))}
-                  </View>
-                  {isVerb ? (
-                    <Pressable
-                      accessibilityRole="button"
-                      accessibilityLabel={
-                        conjugationsExpanded ? "Hide conjugations" : "Show conjugations"
-                      }
-                      hitSlop={8}
-                      onPress={() => void toggleFavoriteConjugations(item)}
-                      style={({ pressed }) => [
-                        styles.favoriteConjugationsChip,
-                        conjugationsExpanded ? styles.favoriteConjugationsChipOpen : null,
-                        pressed ? styles.favoriteConjugationsChipPressed : null,
-                      ]}
-                    >
-                      <Feather
-                        name={conjugationsExpanded ? "chevron-up" : "chevron-down"}
-                        size={12}
-                        color="#dbe9ff"
-                      />
-                      <Text style={styles.favoriteConjugationsChipText}>
-                        {conjugationEntry?.status === "loading"
-                          ? "Cargando…"
-                          : conjugationEntry?.status === "ready"
-                          ? `Conjugaciones de ${conjugationEntry.payload.infinitive}`
-                          : "Conjugaciones"}
-                      </Text>
-                    </Pressable>
-                  ) : null}
-                  {isVerb && conjugationsExpanded ? (
-                    <View style={styles.favoriteConjugationsPanel}>
-                      {conjugationEntry?.status === "ready" ? (
-                        conjugationEntry.payload.tenses.map((tense) => (
-                          <View key={tense.name} style={styles.favoriteConjugationsTense}>
-                            <Text style={styles.favoriteConjugationsTenseName}>{tense.name}</Text>
-                            {tense.forms.map((form, idx) => (
-                              <View
-                                key={`${tense.name}-${idx}`}
-                                style={styles.favoriteConjugationsRow}
-                              >
-                                <Text style={styles.favoriteConjugationsPerson}>{form.person}</Text>
-                                <Text style={styles.favoriteConjugationsForm}>{form.form}</Text>
-                              </View>
-                            ))}
-                          </View>
-                        ))
-                      ) : conjugationEntry?.status === "loading" ? (
-                        <Text style={styles.favoriteConjugationsMuted}>Cargando conjugaciones…</Text>
-                      ) : conjugationEntry?.status === "not-verb" ? (
-                        <Text style={styles.favoriteConjugationsMuted}>
-                          No se encontraron conjugaciones para esta palabra.
-                        </Text>
-                      ) : (
-                        <View style={styles.favoriteConjugationsErrorRow}>
-                          <Text style={styles.favoriteConjugationsMuted}>
-                            No pudimos cargar las conjugaciones.
-                          </Text>
-                          <Pressable
-                            accessibilityRole="button"
-                            hitSlop={8}
-                            onPress={() => void toggleFavoriteConjugations(item)}
-                            style={styles.favoriteConjugationsRetry}
-                          >
-                            <Text style={styles.favoriteConjugationsRetryText}>Reintentar</Text>
-                          </Pressable>
-                        </View>
-                      )}
+            <SwipeableFavoriteCard
+              key={key}
+              onDelete={() => {
+                Alert.alert(
+                  "Delete favorite",
+                  `Remove "${item.word}" from your favorites?`,
+                  [
+                    { text: "Cancel", style: "cancel" },
+                    {
+                      text: "Delete",
+                      style: "destructive",
+                      onPress: () => void removeFavoriteItem(item),
+                    },
+                  ]
+                );
+              }}
+              onAddToCollection={() => {
+                Alert.alert(
+                  "Collections",
+                  "Word collections are coming soon. You'll be able to group favorites by theme (food, travel, verbs, etc.) and practice them together.",
+                  [{ text: "OK" }]
+                );
+              }}
+            >
+              <View style={styles.favoriteCard}>
+                <View style={styles.favoriteAccentRail} />
+                <View style={styles.favoriteHeader}>
+                  <View style={styles.favoriteIdentity}>
+                    <View style={styles.favoriteWordRow}>
+                      <Text style={styles.favoriteWord}>{item.word}</Text>
+                      <Text style={styles.favoriteInlineType}>{getFavoriteTypeLabel(favoriteType)}</Text>
                     </View>
-                  ) : null}
-                  <Text style={styles.favoriteMeta} numberOfLines={1}>
-                    {item.storyTitle ?? item.translation ?? "Saved from reader"}
-                  </Text>
+                    <View
+                      style={styles.favoriteMasteryBar}
+                      accessibilityLabel={`Dominio: ${mastery.label} (${mastery.level} de 5)`}
+                    >
+                      {[1, 2, 3, 4, 5].map((tier) => (
+                        <View
+                          key={`mastery-${tier}`}
+                          style={[
+                            styles.favoriteMasterySegment,
+                            tier <= mastery.level
+                              ? { backgroundColor: mastery.color }
+                              : null,
+                          ]}
+                        />
+                      ))}
+                    </View>
+                    {isVerb ? (
+                      <Pressable
+                        accessibilityRole="button"
+                        accessibilityLabel={
+                          conjugationsExpanded ? "Hide conjugations" : "Show conjugations"
+                        }
+                        hitSlop={8}
+                        onPress={() => void toggleFavoriteConjugations(item)}
+                        style={({ pressed }) => [
+                          styles.favoriteConjugationsChip,
+                          conjugationsExpanded ? styles.favoriteConjugationsChipOpen : null,
+                          pressed ? styles.favoriteConjugationsChipPressed : null,
+                        ]}
+                      >
+                        <Feather
+                          name={conjugationsExpanded ? "chevron-up" : "chevron-down"}
+                          size={12}
+                          color="#dbe9ff"
+                        />
+                        <Text style={styles.favoriteConjugationsChipText}>
+                          {conjugationEntry?.status === "loading"
+                            ? "Cargando…"
+                            : conjugationEntry?.status === "ready"
+                            ? `Conjugaciones de ${conjugationEntry.payload.infinitive}`
+                            : "Conjugaciones"}
+                        </Text>
+                      </Pressable>
+                    ) : null}
+                    {isVerb && conjugationsExpanded ? (
+                      <View style={styles.favoriteConjugationsPanel}>
+                        {conjugationEntry?.status === "ready" ? (
+                          conjugationEntry.payload.tenses.map((tense) => (
+                            <View key={tense.name} style={styles.favoriteConjugationsTense}>
+                              <Text style={styles.favoriteConjugationsTenseName}>{tense.name}</Text>
+                              {tense.forms.map((form, idx) => (
+                                <View
+                                  key={`${tense.name}-${idx}`}
+                                  style={styles.favoriteConjugationsRow}
+                                >
+                                  <Text style={styles.favoriteConjugationsPerson}>{form.person}</Text>
+                                  <Text style={styles.favoriteConjugationsForm}>{form.form}</Text>
+                                </View>
+                              ))}
+                            </View>
+                          ))
+                        ) : conjugationEntry?.status === "loading" ? (
+                          <Text style={styles.favoriteConjugationsMuted}>Cargando conjugaciones…</Text>
+                        ) : conjugationEntry?.status === "not-verb" ? (
+                          <Text style={styles.favoriteConjugationsMuted}>
+                            No se encontraron conjugaciones para esta palabra.
+                          </Text>
+                        ) : (
+                          <View style={styles.favoriteConjugationsErrorRow}>
+                            <Text style={styles.favoriteConjugationsMuted}>
+                              No pudimos cargar las conjugaciones.
+                            </Text>
+                            <Pressable
+                              accessibilityRole="button"
+                              hitSlop={8}
+                              onPress={() => void toggleFavoriteConjugations(item)}
+                              style={styles.favoriteConjugationsRetry}
+                            >
+                              <Text style={styles.favoriteConjugationsRetryText}>Reintentar</Text>
+                            </Pressable>
+                          </View>
+                        )}
+                      </View>
+                    ) : null}
+                    <Text style={styles.favoriteMeta} numberOfLines={1}>
+                      {item.storyTitle ?? item.translation ?? "Saved from reader"}
+                    </Text>
+                  </View>
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel={`Play ${item.word}`}
+                    hitSlop={12}
+                    onPress={() => { void playFavoriteAudio(key, item); }}
+                    style={({ pressed }) => [
+                      styles.favoritePlayCircle,
+                      (pressed || playingFavoriteKey === key) ? styles.favoritePlayCircleActive : null,
+                    ]}
+                  >
+                    <Feather
+                      name={playingFavoriteKey === key ? "square" : "play"}
+                      size={16}
+                      color="#9fe8ff"
+                    />
+                  </Pressable>
                 </View>
-                <Pressable
-                  accessibilityRole="button"
-                  accessibilityLabel={`Remove ${item.word}`}
-                  hitSlop={12}
-                  onPress={() => void removeFavoriteItem(item)}
-                  style={({ pressed }) => [
-                    styles.favoriteRemoveCircle,
-                    pressed ? styles.favoriteRemoveCirclePressed : null,
-                  ]}
-                >
-                  <Feather name="x" size={16} color="rgba(219,233,255,0.48)" />
-                </Pressable>
+                <Text style={styles.favoriteDefinition} numberOfLines={2}>
+                  {item.translation}
+                </Text>
+                {selection ? (
+                  <Pressable
+                    onPress={() =>
+                      openSelection({
+                        book: selection.book,
+                        story: selection.story,
+                        resolvedAudioUrl:
+                          offlineStoriesById.get(selection.story.id)?.localAudioUri ?? selection.story.audio,
+                      })
+                    }
+                    style={styles.favoriteCardOverlayTap}
+                  >
+                    <Text style={styles.favoriteCardOverlayTapText}>Open story</Text>
+                  </Pressable>
+                ) : null}
               </View>
-              <Text style={styles.favoriteDefinition} numberOfLines={2}>
-                {item.translation}
-              </Text>
-              {selection ? (
-                <Pressable
-                  onPress={() =>
-                    openSelection({
-                      book: selection.book,
-                      story: selection.story,
-                      resolvedAudioUrl:
-                        offlineStoriesById.get(selection.story.id)?.localAudioUri ?? selection.story.audio,
-                    })
-                  }
-                  style={styles.favoriteCardOverlayTap}
-                >
-                  <Text style={styles.favoriteCardOverlayTapText}>Open story</Text>
-                </Pressable>
-              ) : null}
-            </View>
+            </SwipeableFavoriteCard>
           );
           })}
           {filteredFavoriteCards.length > 0 ? (
@@ -15793,6 +15969,149 @@ function MenuTrigger({ onPress }: { onPress: () => void }) {
   );
 }
 
+// Swipe-left reveals the action panel (Delete, Add to collection).
+// Pure PanResponder + Animated so we don't need to add
+// react-native-gesture-handler and rebuild the iOS native bundle.
+function SwipeableFavoriteCard({
+  onDelete,
+  onAddToCollection,
+  children,
+}: {
+  onDelete: () => void;
+  onAddToCollection?: () => void;
+  children: React.ReactNode;
+}) {
+  const ACTION_WIDTH = onAddToCollection ? 168 : 84;
+  // A flick faster than this (px/ms) snaps to the next state regardless
+  // of how far the finger traveled — same UX as iOS Mail/Messages.
+  const VELOCITY_THRESHOLD = 0.18;
+  const DISTANCE_THRESHOLD = 18;
+  const translateX = useRef(new Animated.Value(0)).current;
+  const currentOffsetRef = useRef(0);
+
+  function springTo(target: number, velocity = 0) {
+    currentOffsetRef.current = target;
+    Animated.spring(translateX, {
+      toValue: target,
+      velocity,
+      useNativeDriver: true,
+      bounciness: 0,
+      speed: 24,
+    }).start();
+  }
+
+  const panResponder = useRef(
+    PanResponder.create({
+      // Capture: claim the gesture as soon as it's clearly horizontal,
+      // before the parent ScrollView decides it's a scroll. Without this
+      // the ScrollView wins on iOS for any swipe that's not perfectly
+      // horizontal and the card never moves.
+      onMoveShouldSetPanResponderCapture: (_e, g) => Math.abs(g.dx) > 2 && Math.abs(g.dx) > Math.abs(g.dy),
+      onMoveShouldSetPanResponder: (_e, g) => Math.abs(g.dx) > 2 && Math.abs(g.dx) > Math.abs(g.dy),
+      onPanResponderMove: (_e, g) => {
+        const base = currentOffsetRef.current;
+        const next = Math.min(0, base + g.dx);
+        const clamped = Math.max(-ACTION_WIDTH, next);
+        translateX.setValue(clamped);
+      },
+      onPanResponderRelease: (_e, g) => {
+        // Intent-based: any leftward drag from closed state opens fully;
+        // any rightward drag from open state closes fully. If the user
+        // saw any sliver of the action panel, that counts as intent —
+        // they don't have to drag all the way to make it stick.
+        const base = currentOffsetRef.current;
+        let target: number;
+        if (base === 0 && g.dx < -2) {
+          target = -ACTION_WIDTH;
+        } else if (base === -ACTION_WIDTH && g.dx > 2) {
+          target = 0;
+        } else {
+          target = base;
+        }
+        springTo(target, g.vx);
+      },
+      onPanResponderTerminate: () => {
+        springTo(currentOffsetRef.current);
+      },
+    })
+  ).current;
+
+  function closePanel() {
+    springTo(0);
+  }
+
+  return (
+    <View style={swipeStyles.row}>
+      <View style={swipeStyles.actionPanel}>
+        {onAddToCollection ? (
+          <Pressable
+            onPress={() => { closePanel(); onAddToCollection(); }}
+            style={swipeStyles.collectionAction}
+            accessibilityRole="button"
+            accessibilityLabel="Add to collection"
+          >
+            <Feather name="folder-plus" size={18} color="#ffffff" />
+            <Text style={swipeStyles.actionText}>Collection</Text>
+          </Pressable>
+        ) : null}
+        <Pressable
+          onPress={() => { closePanel(); onDelete(); }}
+          style={swipeStyles.deleteAction}
+          accessibilityRole="button"
+          accessibilityLabel="Delete"
+        >
+          <Feather name="trash-2" size={18} color="#ffffff" />
+          <Text style={swipeStyles.actionText}>Delete</Text>
+        </Pressable>
+      </View>
+      <Animated.View
+        style={[swipeStyles.cardWrap, { transform: [{ translateX }] }]}
+        {...panResponder.panHandlers}
+      >
+        {children}
+      </Animated.View>
+    </View>
+  );
+}
+
+const swipeStyles = StyleSheet.create({
+  row: {
+    position: "relative",
+  },
+  cardWrap: {
+    // Keeps the card opaque so the action panel stays hidden until the
+    // user swipes. Matches the page background-ish dark navy.
+    backgroundColor: "#0a162a",
+  },
+  actionPanel: {
+    position: "absolute",
+    right: 0,
+    top: 0,
+    bottom: 0,
+    flexDirection: "row",
+    alignItems: "stretch",
+  },
+  deleteAction: {
+    width: 84,
+    backgroundColor: "#c0392b",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 4,
+  },
+  collectionAction: {
+    width: 84,
+    backgroundColor: "#2e6cb8",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 4,
+  },
+  actionText: {
+    color: "#ffffff",
+    fontSize: 11,
+    fontWeight: "700",
+  },
+});
+
 function BottomTabIcon({ tab, active }: { tab: BottomTab; active: boolean }) {
   const color = active ? "#ffffff" : "#9cb0c9";
   if (tab === "home") return <Feather name="home" size={18} color={color} />;
@@ -19395,7 +19714,11 @@ const styles = StyleSheet.create({
   favoriteWordRow: {
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: "baseline",
+    // alignItems was "baseline" — switched to "center" because RN's
+    // Yoga engine crashes in iOS Release when a baseline-aligned row
+    // contains a non-text child (Pressable / View). Visually identical
+    // for our two-text + small-icon row.
+    alignItems: "center",
     gap: 8,
   },
   favoriteIdentity: {
@@ -19545,6 +19868,34 @@ const styles = StyleSheet.create({
     color: "#dbe9ff",
     fontSize: 11,
     fontWeight: "700",
+  },
+  favoritePlayButton: {
+    width: 26,
+    height: 26,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(159,232,255,0.32)",
+    backgroundColor: "rgba(159,232,255,0.08)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  favoritePlayCircle: {
+    width: 32,
+    height: 32,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(159,232,255,0.32)",
+    backgroundColor: "rgba(159,232,255,0.10)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  favoritePlayCircleActive: {
+    backgroundColor: "rgba(159,232,255,0.22)",
+    borderColor: "rgba(159,232,255,0.60)",
+  },
+  favoritePlayButtonActive: {
+    backgroundColor: "rgba(159,232,255,0.20)",
+    borderColor: "rgba(159,232,255,0.60)",
   },
   favoriteRemove: {
     alignSelf: "flex-start",
