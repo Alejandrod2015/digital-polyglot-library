@@ -207,10 +207,11 @@ type MobileScreen =
   | "favorites"
   | "journey"
   | "library"
+  | "progress"
   | "settings"
   | "create";
 
-type BottomTab = "home" | "explore" | "practice" | "favorites" | "journey" | "signin";
+type BottomTab = "home" | "explore" | "practice" | "favorites" | "progress" | "signin";
 type MenuIconName =
   | "settings"
   | "library"
@@ -4240,7 +4241,7 @@ export function MobileLibraryShell(args: {
         { key: "explore", label: "Explore" },
         { key: "practice", label: "Practice" },
         { key: "favorites", label: "Favorites" },
-        { key: "journey", label: "Library" },
+        { key: "progress", label: "Progress" },
       ]
     : [
         { key: "home", label: "Home" },
@@ -4277,7 +4278,6 @@ export function MobileLibraryShell(args: {
       return tab === "practice" || tab === "favorites";
     }
     if (activeOnboardingTourTarget === "explore") return tab === "explore";
-    if (activeOnboardingTourTarget === "journey") return tab === "journey";
     if (activeOnboardingTourTarget === "home") return tab === "home";
     return false;
   }
@@ -13127,6 +13127,7 @@ export function MobileLibraryShell(args: {
   if (activeScreen === "favorites") content = favoritesView;
   if (activeScreen === "journey") content = homeView;
   if (activeScreen === "library") content = libraryView;
+  if (activeScreen === "progress") content = progressView;
   if (activeScreen === "settings") content = settingsView;
   if (activeScreen === "create") content = createView;
   // Cuando usamos sticky nativo iOS, los hijos del ScrollView deben
@@ -13910,6 +13911,14 @@ export function MobileLibraryShell(args: {
                     }}
                   />
                   <MenuLink
+                    label="Library"
+                    icon="journey"
+                    onPress={() => {
+                      setActiveScreen("journey");
+                      setMenuOpen(false);
+                    }}
+                  />
+                  <MenuLink
                     label="My Library"
                     icon="library"
                     onPress={() => {
@@ -13925,11 +13934,6 @@ export function MobileLibraryShell(args: {
                       setMenuOpen(false);
                     }}
                   />
-                  {/* Journey link removed in build 68 — it's already
-                      in the bottom tab nav so the side menu entry was
-                      a duplicate. The "journey" icon in MenuIcon is
-                      still defined in case Journey re-enters the
-                      menu under a different label later. */}
 
                   {effectivePlan === "free" ? (
                     <MenuLink
@@ -14050,7 +14054,7 @@ function BottomTabIcon({ tab, active }: { tab: BottomTab; active: boolean }) {
   if (tab === "explore") return <Feather name="compass" size={18} color={color} />;
   if (tab === "practice") return <MaterialCommunityIcons name="brain" size={19} color={color} />;
   if (tab === "favorites") return <Feather name="star" size={18} color={color} />;
-  if (tab === "journey") return <Feather name="book" size={18} color={color} />;
+  if (tab === "progress") return <Feather name="bar-chart-2" size={18} color={color} />;
   if (tab === "signin") return <Feather name="log-in" size={18} color={color} />;
   return <Feather name="circle" size={18} color={color} />;
 }
