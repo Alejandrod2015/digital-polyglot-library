@@ -54,26 +54,23 @@ PIPER_HF_PATHS = {
     "it_IT-paola-medium":    "it/it_IT/paola/medium/it_IT-paola-medium",
 }
 
+# Piper voices live on a Modal Volume now (uploaded via `modal volume put
+# polyglot-piper-voices /tmp/piper-voices /`). The previous approach
+# baked them into the image via `.run_function(_download_piper_voices)`,
+# but that download kept stalling in the build container against the
+# HuggingFace LFS redirect — image builds ran > 50 min with no progress.
+# Pulling from a Volume removes the build-time download entirely and the
+# function just mmaps the .onnx files at cold start.
 VOICES_DIR = Path("/voices")
-
-
-def _download_piper_voices():
-    import urllib.request
-    VOICES_DIR.mkdir(exist_ok=True)
-    base = "https://huggingface.co/rhasspy/piper-voices/resolve/main"
-    for name, path in PIPER_HF_PATHS.items():
-        for ext in ("onnx", "onnx.json"):
-            out = VOICES_DIR / f"{name}.{ext}"
-            if out.exists() and out.stat().st_size > 0:
-                continue
-            urllib.request.urlretrieve(f"{base}/{path}.{ext}", out)
+piper_voices_volume = modal.Volume.from_name(
+    "polyglot-piper-voices", create_if_missing=True
+)
 
 
 image = (
     modal.Image.debian_slim(python_version="3.11")
     .apt_install("ffmpeg", "espeak-ng", "libespeak-ng1")
     .pip_install("piper-tts==1.2.0", "fastapi[standard]==0.115.5")
-    .run_function(_download_piper_voices)
 )
 
 
@@ -198,6 +195,7 @@ def _synth_piper(narration: str, voice_name: str) -> bytes:
         modal.Secret.from_name("polyglot-r2"),
         modal.Secret.from_name("polyglot-audio-studio-token"),
     ],
+    volumes={str(VOICES_DIR): piper_voices_volume},
     timeout=180,
     cpu=2,
     memory=2048,
