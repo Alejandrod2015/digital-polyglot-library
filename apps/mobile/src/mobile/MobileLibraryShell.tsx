@@ -1421,6 +1421,23 @@ function getFavoriteType(item: MobileFavoriteItem): string {
   return item.wordType?.trim().toLowerCase() || "other";
 }
 
+type ConjugationForm = { person: string; form: string };
+type ConjugationTense = { name: string; forms: ConjugationForm[] };
+type ConjugationPayload = {
+  infinitive: string;
+  translation: string;
+  tenses: ConjugationTense[];
+};
+type ConjugationCacheEntry =
+  | { status: "loading" }
+  | { status: "error" }
+  | { status: "not-verb" }
+  | { status: "ready"; payload: ConjugationPayload };
+
+function buildConjugationKey(item: MobileFavoriteItem): string {
+  return `${(item.language ?? "").trim().toLowerCase()}::${normalizeFavoriteWord(item.word)}`;
+}
+
 function getFavoriteTypeLabel(type: string): string {
   if (type === "all") return "All types";
   if (type === "noun") return "Noun";
@@ -1973,6 +1990,8 @@ export function MobileLibraryShell(args: {
   );
   const [readingProgress, setReadingProgress] = useState<ReadingProgress[]>([]);
   const [favoriteWords, setFavoriteWords] = useState<MobileFavoriteItem[]>([]);
+  const [conjugationCache, setConjugationCache] = useState<Record<string, ConjugationCacheEntry>>({});
+  const [expandedConjugations, setExpandedConjugations] = useState<Set<string>>(() => new Set());
   const [didHydrateState, setDidHydrateState] = useState(false);
   const [offlineSnapshot, setOfflineSnapshot] = useState<OfflineLibrarySnapshot | null>(null);
   const [offlineStoryIdInFlight, setOfflineStoryIdInFlight] = useState<string | null>(null);
@@ -5129,6 +5148,60 @@ export function MobileLibraryShell(args: {
   function isFavoriteWord(word: string) {
     const normalized = normalizeFavoriteWord(word);
     return favoriteWords.some((item) => normalizeFavoriteWord(item.word) === normalized);
+  }
+
+  async function toggleFavoriteConjugations(item: MobileFavoriteItem) {
+    const key = buildConjugationKey(item);
+    const wasExpanded = expandedConjugations.has(key);
+
+    setExpandedConjugations((prev) => {
+      const next = new Set(prev);
+      if (wasExpanded) {
+        next.delete(key);
+      } else {
+        next.add(key);
+      }
+      return next;
+    });
+
+    if (wasExpanded) return;
+
+    const cached = conjugationCache[key];
+    if (cached && cached.status !== "error") return;
+
+    setConjugationCache((prev) => ({ ...prev, [key]: { status: "loading" } }));
+
+    if (!sessionToken) {
+      setConjugationCache((prev) => ({ ...prev, [key]: { status: "error" } }));
+      return;
+    }
+
+    try {
+      const result = await apiFetch<ConjugationPayload | { isVerb: false }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/mobile/conjugations",
+        token: sessionToken,
+        method: "POST",
+        body: { word: item.word, language: item.language ?? "" },
+        timeoutMs: 15000,
+      });
+
+      if (result && typeof result === "object" && "isVerb" in result && result.isVerb === false) {
+        setConjugationCache((prev) => ({ ...prev, [key]: { status: "not-verb" } }));
+        return;
+      }
+
+      if (result && typeof result === "object" && "tenses" in result && Array.isArray((result as ConjugationPayload).tenses)) {
+        setConjugationCache((prev) => ({
+          ...prev,
+          [key]: { status: "ready", payload: result as ConjugationPayload },
+        }));
+      } else {
+        setConjugationCache((prev) => ({ ...prev, [key]: { status: "error" } }));
+      }
+    } catch {
+      setConjugationCache((prev) => ({ ...prev, [key]: { status: "error" } }));
+    }
   }
 
   async function openWebPath(path: string) {
@@ -10926,6 +10999,11 @@ export function MobileLibraryShell(args: {
               nextReviewAt: item.nextReviewAt ?? null,
               streak: item.streak ?? 0,
             });
+            const favoriteType = getFavoriteType(item);
+            const isVerb = favoriteType === "verb";
+            const conjugationKey = buildConjugationKey(item);
+            const conjugationEntry = isVerb ? conjugationCache[conjugationKey] : undefined;
+            const conjugationsExpanded = isVerb && expandedConjugations.has(conjugationKey);
             return (
             <View key={key} style={styles.favoriteCard}>
               <View style={styles.favoriteAccentRail} />
@@ -10933,7 +11011,7 @@ export function MobileLibraryShell(args: {
                 <View style={styles.favoriteIdentity}>
                   <View style={styles.favoriteWordRow}>
                     <Text style={styles.favoriteWord}>{item.word}</Text>
-                    <Text style={styles.favoriteInlineType}>{getFavoriteTypeLabel(getFavoriteType(item))}</Text>
+                    <Text style={styles.favoriteInlineType}>{getFavoriteTypeLabel(favoriteType)}</Text>
                   </View>
                   <View
                     style={styles.favoriteMasteryBar}
@@ -10951,6 +11029,74 @@ export function MobileLibraryShell(args: {
                       />
                     ))}
                   </View>
+                  {isVerb ? (
+                    <Pressable
+                      accessibilityRole="button"
+                      accessibilityLabel={
+                        conjugationsExpanded ? "Hide conjugations" : "Show conjugations"
+                      }
+                      hitSlop={8}
+                      onPress={() => void toggleFavoriteConjugations(item)}
+                      style={({ pressed }) => [
+                        styles.favoriteConjugationsChip,
+                        conjugationsExpanded ? styles.favoriteConjugationsChipOpen : null,
+                        pressed ? styles.favoriteConjugationsChipPressed : null,
+                      ]}
+                    >
+                      <Feather
+                        name={conjugationsExpanded ? "chevron-up" : "chevron-down"}
+                        size={12}
+                        color="#dbe9ff"
+                      />
+                      <Text style={styles.favoriteConjugationsChipText}>
+                        {conjugationEntry?.status === "loading"
+                          ? "Cargando…"
+                          : conjugationEntry?.status === "ready"
+                          ? `Conjugaciones de ${conjugationEntry.payload.infinitive}`
+                          : "Conjugaciones"}
+                      </Text>
+                    </Pressable>
+                  ) : null}
+                  {isVerb && conjugationsExpanded ? (
+                    <View style={styles.favoriteConjugationsPanel}>
+                      {conjugationEntry?.status === "ready" ? (
+                        conjugationEntry.payload.tenses.map((tense) => (
+                          <View key={tense.name} style={styles.favoriteConjugationsTense}>
+                            <Text style={styles.favoriteConjugationsTenseName}>{tense.name}</Text>
+                            {tense.forms.map((form, idx) => (
+                              <View
+                                key={`${tense.name}-${idx}`}
+                                style={styles.favoriteConjugationsRow}
+                              >
+                                <Text style={styles.favoriteConjugationsPerson}>{form.person}</Text>
+                                <Text style={styles.favoriteConjugationsForm}>{form.form}</Text>
+                              </View>
+                            ))}
+                          </View>
+                        ))
+                      ) : conjugationEntry?.status === "loading" ? (
+                        <Text style={styles.favoriteConjugationsMuted}>Cargando conjugaciones…</Text>
+                      ) : conjugationEntry?.status === "not-verb" ? (
+                        <Text style={styles.favoriteConjugationsMuted}>
+                          No se encontraron conjugaciones para esta palabra.
+                        </Text>
+                      ) : (
+                        <View style={styles.favoriteConjugationsErrorRow}>
+                          <Text style={styles.favoriteConjugationsMuted}>
+                            No pudimos cargar las conjugaciones.
+                          </Text>
+                          <Pressable
+                            accessibilityRole="button"
+                            hitSlop={8}
+                            onPress={() => void toggleFavoriteConjugations(item)}
+                            style={styles.favoriteConjugationsRetry}
+                          >
+                            <Text style={styles.favoriteConjugationsRetryText}>Reintentar</Text>
+                          </Pressable>
+                        </View>
+                      )}
+                    </View>
+                  ) : null}
                   <Text style={styles.favoriteMeta} numberOfLines={1}>
                     {item.storyTitle ?? item.translation ?? "Saved from reader"}
                   </Text>
@@ -19313,6 +19459,92 @@ const styles = StyleSheet.create({
     height: 5,
     borderRadius: 999,
     backgroundColor: "rgba(255,255,255,0.12)",
+  },
+  favoriteConjugationsChip: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    marginTop: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#35506f",
+    backgroundColor: "#1a2f48",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  favoriteConjugationsChipOpen: {
+    borderColor: "#5b7ba6",
+    backgroundColor: "#22385a",
+  },
+  favoriteConjugationsChipPressed: {
+    opacity: 0.7,
+  },
+  favoriteConjugationsChipText: {
+    color: "#dbe9ff",
+    fontSize: 11,
+    fontWeight: "700",
+  },
+  favoriteConjugationsPanel: {
+    marginTop: 8,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "rgba(91,123,166,0.35)",
+    backgroundColor: "rgba(13,24,40,0.6)",
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    gap: 10,
+  },
+  favoriteConjugationsTense: {
+    gap: 2,
+  },
+  favoriteConjugationsTenseName: {
+    color: "#9ab4d9",
+    fontSize: 11,
+    fontWeight: "800",
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
+    marginBottom: 2,
+  },
+  favoriteConjugationsRow: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    gap: 8,
+  },
+  favoriteConjugationsPerson: {
+    color: "rgba(214,225,242,0.6)",
+    fontSize: 12,
+    fontWeight: "600",
+    minWidth: 72,
+  },
+  favoriteConjugationsForm: {
+    color: "#ffffff",
+    fontSize: 13,
+    fontWeight: "700",
+    flexShrink: 1,
+  },
+  favoriteConjugationsMuted: {
+    color: "rgba(214,225,242,0.6)",
+    fontSize: 12,
+    fontStyle: "italic",
+  },
+  favoriteConjugationsErrorRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 8,
+  },
+  favoriteConjugationsRetry: {
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#5b7ba6",
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+  },
+  favoriteConjugationsRetryText: {
+    color: "#dbe9ff",
+    fontSize: 11,
+    fontWeight: "700",
   },
   favoriteRemove: {
     alignSelf: "flex-start",
