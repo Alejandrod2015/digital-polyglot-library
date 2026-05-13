@@ -5985,6 +5985,9 @@ export function MobileLibraryShell(args: {
     setPracticeComplete(false);
     setPracticeLastResult(null);
     setPracticeSessionStreak(0);
+    setPracticeMaxStreak(0);
+    setPracticeSessionDurationMs(null);
+    practiceSessionStartedAtRef.current = Date.now();
     setPracticeReviewScores({});
     setPracticeCheckpointToken(null);
     setPracticeCheckpointResponses({});
@@ -6127,6 +6130,9 @@ export function MobileLibraryShell(args: {
       setPracticeComplete(false);
       setPracticeLastResult(null);
       setPracticeSessionStreak(0);
+      setPracticeMaxStreak(0);
+      setPracticeSessionDurationMs(null);
+      practiceSessionStartedAtRef.current = Date.now();
       setPracticeReviewScores({});
       setPracticeCheckpointToken(
         args.kind === "checkpoint" && typeof payload.checkpointToken === "string"
@@ -6226,6 +6232,9 @@ export function MobileLibraryShell(args: {
     setPracticeComplete(false);
     setPracticeLastResult(null);
     setPracticeSessionStreak(0);
+    setPracticeMaxStreak(0);
+    setPracticeSessionDurationMs(null);
+    practiceSessionStartedAtRef.current = null;
     setPracticeReviewScores({});
     setPracticeCheckpointToken(null);
     setPracticeCheckpointResponses({});
@@ -6561,12 +6570,13 @@ export function MobileLibraryShell(args: {
     if (isCorrect) {
       setPracticeScore((value) => value + 1);
       setPracticeLastResult("correct");
-      setPracticeSessionStreak((value) => {
-        const next = value + 1;
-        setPracticeMaxStreak((prevMax) => (next > prevMax ? next : prevMax));
-        triggerPracticeComboToast(next);
-        return next;
-      });
+      // maxStreak + combo toast se derivan del cambio en sessionStreak
+      // vía useEffect — evitamos el anti-pattern de side-effects dentro
+      // del updater (en StrictMode el updater corre 2 veces, lo cual
+      // duplicaba sonido/haptic, y bajo concurrent rendering la
+      // actualización de maxStreak podía perderse si el componente
+      // re-renderizaba entre medio, dejando "0 combo" en la result card).
+      setPracticeSessionStreak((value) => value + 1);
     } else {
       setPracticeLastResult("wrong");
       setPracticeSessionStreak(0);
@@ -6598,6 +6608,20 @@ export function MobileLibraryShell(args: {
     void playPracticeComboSound(tier);
     void playPracticeComboHaptic(tier);
   }
+
+  // Deriva maxStreak + dispara el combo toast cada vez que el streak
+  // sube. Vive como effect (no inline en los handlers) para garantizar
+  // que el update de maxStreak ocurre DESPUÉS del commit de
+  // sessionStreak, sin importar si el handler es multiple-choice o
+  // match. Antes esto se hacía dentro del updater de
+  // setPracticeSessionStreak — pattern frágil bajo concurrent mode /
+  // StrictMode que dejaba combo=0 en la result card.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (practiceSessionStreak <= 0) return;
+    setPracticeMaxStreak((prev) => (practiceSessionStreak > prev ? practiceSessionStreak : prev));
+    triggerPracticeComboToast(practiceSessionStreak);
+  }, [practiceSessionStreak]);
 
   async function playPracticeFeedbackSound(correct: boolean) {
     try {
@@ -7713,17 +7737,12 @@ export function MobileLibraryShell(args: {
       setPracticeScore((value) => value + 1);
       setPracticeRevealed(true);
       setPracticeLastResult("correct");
-      setPracticeSessionStreak((value) => {
-        const next = value + 1;
-        // Mirror what resolvePracticeMultipleChoiceAnswer does — track the
-        // session-wide max so the result screen's "combo" pill reflects
-        // match-only sessions too (without this, finishing 3 match
-        // exercises in a row showed combo=0 because only multiple-choice
-        // updated practiceMaxStreak).
-        setPracticeMaxStreak((prevMax) => (next > prevMax ? next : prevMax));
-        triggerPracticeComboToast(next);
-        return next;
-      });
+      // maxStreak + combo toast se derivan del cambio en sessionStreak
+      // vía useEffect (mismo path que multiple-choice). Antes lo
+      // hacíamos dentro del updater, lo cual fallaba en sesiones de
+      // puro match porque el side-effect anidado podía perderse y la
+      // result card mostraba combo=0.
+      setPracticeSessionStreak((value) => value + 1);
       setPracticeReviewScores((currentScores) => {
         const nextScores = { ...currentScores };
         for (const pair of current.pairs) {
@@ -10887,7 +10906,6 @@ export function MobileLibraryShell(args: {
                                   styles.practiceMatchRowWordText,
                                   isWordMatched ? styles.practiceOptionTextOnAccent : null,
                                 ]}
-                                numberOfLines={2}
                               >
                                 {pair.word}
                               </Text>
@@ -10917,7 +10935,6 @@ export function MobileLibraryShell(args: {
                                   styles.practiceMatchRowMeaningText,
                                   matchedPairForMeaning ? styles.practiceOptionTextOnAccent : null,
                                 ]}
-                                numberOfLines={4}
                               >
                                 {meaning}
                               </Text>
