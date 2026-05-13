@@ -31,6 +31,9 @@ export type PublicStandaloneStory = {
   journeyOrder: number | null;
   coverUrl: string | null;
   audioUrl: string | null;
+  /** Narration voiceId stored in DB (Studio journeys only). When set,
+   *  practice TTS uses this voice instead of the language default. */
+  voiceId: string | null;
   createdAt: string;
 };
 

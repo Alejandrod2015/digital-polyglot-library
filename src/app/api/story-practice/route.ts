@@ -75,6 +75,7 @@ export async function GET(request: NextRequest) {
         sourcePath,
         vocab: parseLooseVocab(resolvedStandalone.vocabRaw),
         practiceSource: "curriculum",
+        voiceId: resolvedStandalone.voiceId,
       });
     } else {
       const mirror = await getCreateStoryMirrorBySlug(storySlug);
@@ -127,6 +128,14 @@ export async function GET(request: NextRequest) {
     orderBy: { createdAt: "desc" },
   });
 
+  // Look up the journey voiceId once for this story so every favorite
+  // attached to it carries the same voice hint to the TTS endpoint.
+  const journeyVoice = await prisma.journeyStory.findFirst({
+    where: { slug: storySlug },
+    select: { voiceId: true },
+  });
+  const storyVoiceId = journeyVoice?.voiceId ?? null;
+
   const savedItems: PracticeFavoriteItem[] = savedFavorites.map((favorite) => ({
     word: favorite.word,
     translation: favorite.translation,
@@ -138,6 +147,7 @@ export async function GET(request: NextRequest) {
     language: favorite.language,
     nextReviewAt: favorite.nextReviewAt ? favorite.nextReviewAt.toISOString() : null,
     practiceSource: "user_saved",
+    voiceId: storyVoiceId,
   }));
 
   const items = mergePracticeItemsByWord([...storyItems, ...savedItems]);

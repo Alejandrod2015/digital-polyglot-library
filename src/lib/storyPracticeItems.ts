@@ -78,6 +78,9 @@ export function buildPracticeItemsFromStory(params: {
   sourcePath: string;
   vocab: VocabItem[] | LooseVocabItem[];
   practiceSource?: PracticeFavoriteItem["practiceSource"];
+  /** Narration voiceId; propagated so practice TTS can render in the
+   *  same voice the user heard reading the story. */
+  voiceId?: string | null;
 }): PracticeFavoriteItem[] {
   const storyTitle = normalizeText(params.title);
   const storySlug = normalizeText(params.slug);
@@ -85,6 +88,7 @@ export function buildPracticeItemsFromStory(params: {
   const language = normalizeText(params.language ?? "") || null;
   const sourcePath = normalizeText(params.sourcePath);
   const practiceSource = params.practiceSource ?? "curriculum";
+  const voiceId = params.voiceId ?? null;
 
   if (!storySlug || !sourcePath) return [];
 
@@ -114,6 +118,7 @@ export function buildPracticeItemsFromStory(params: {
       sourcePath,
       language,
       practiceSource,
+      voiceId,
     });
   }
 

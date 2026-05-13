@@ -18,6 +18,7 @@ function toPublicStory(s: {
   coverDone: boolean;
   coverUrl: string | null;
   audioUrl: string | null;
+  voiceId: string | null;
   journey: { language: string; variant: string };
   createdAt: Date;
 }): PublicStandaloneStory {
@@ -50,6 +51,7 @@ function toPublicStory(s: {
     journeyOrder: null,
     coverUrl: s.coverUrl ?? null,
     audioUrl: s.audioUrl ?? null,
+    voiceId: s.voiceId ?? null,
     createdAt: s.createdAt.toISOString(),
   };
 }

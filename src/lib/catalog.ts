@@ -160,6 +160,7 @@ export type RawStandaloneStory = {
   journeyOrder: number | null;
   coverUrl: string | null;
   audioUrl: string | null;
+  voiceId: string | null;
   createdAt: string;
 };
 
@@ -184,6 +185,10 @@ function rowToRawStandaloneStory(row: StandaloneStoryRow): RawStandaloneStory {
     journeyOrder: row.journeyOrder,
     coverUrl: row.coverUrl ?? row.cover ?? null,
     audioUrl: row.audioUrl ?? row.audio ?? null,
+    // StandaloneStory rows from Sanity legacy don't carry a voiceId
+    // column (Studio-generated journeys do via JourneyStory.voiceId
+    // which is read elsewhere). Default to null.
+    voiceId: null,
     createdAt: (row.sourceCreatedAt ?? row.createdAt).toISOString(),
   };
 }
