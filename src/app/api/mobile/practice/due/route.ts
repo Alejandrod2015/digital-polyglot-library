@@ -55,10 +55,30 @@ export async function GET(req: NextRequest): Promise<Response> {
       },
     });
 
+    // Per-story voiceId hint: practice TTS picks the voice used to
+    // narrate the story (when it's a Studio-generated JourneyStory).
+    // Catalog stories don't carry a voiceId (their audio was produced
+    // with ElevenLabs which is paid + not in our licence-clean cast),
+    // so they fall through to the language default downstream.
+    const slugs = Array.from(
+      new Set(favorites.map((f) => f.storySlug).filter((s): s is string => Boolean(s)))
+    );
+    const journeyVoiceRows = slugs.length
+      ? await prisma.journeyStory.findMany({
+          where: { slug: { in: slugs } },
+          select: { slug: true, voiceId: true },
+        })
+      : [];
+    const voiceBySlug = new Map<string, string>();
+    for (const row of journeyVoiceRows) {
+      if (row.slug && row.voiceId) voiceBySlug.set(row.slug, row.voiceId);
+    }
+
     const now = new Date();
     const sorted = [...favorites].sort((a, b) => compareByDueness(a, b, now));
     const due = sorted.slice(0, limit).map((fav) => ({
       ...fav,
+      voiceId: fav.storySlug ? voiceBySlug.get(fav.storySlug) ?? null : null,
       isDue: fav.nextReviewAt === null || fav.nextReviewAt.getTime() <= now.getTime(),
       nextReviewAt: fav.nextReviewAt ? fav.nextReviewAt.toISOString() : null,
       lastReviewedAt: fav.lastReviewedAt ? fav.lastReviewedAt.toISOString() : null,

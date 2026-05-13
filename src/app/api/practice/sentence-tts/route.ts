@@ -40,7 +40,18 @@ type Body = {
   sentence?: string;
   language?: string;
   variant?: string;
+  /** Hint: voice the source story was narrated with. Honoured only
+   *  if it's a Piper voice the Modal app knows how to synthesize. */
+  voiceId?: string;
 };
+
+// Voices the Modal Piper endpoint accepts. Kept in sync with
+// PIPER_VOICES in modal_app/audio_studio.py.
+const SUPPORTED_PIPER_VOICES = new Set<string>([
+  "piper/es_ES-sharvard-medium",
+  "piper/pt_BR-cadu-medium",
+  "piper/it_IT-paola-medium",
+]);
 
 // Default per-language voice for practice clips. These are the engines
 // the user explicitly approved as licence-clean for production. Keep
@@ -95,6 +106,7 @@ export async function POST(request: NextRequest) {
   const sentence = typeof body.sentence === "string" ? body.sentence.trim() : "";
   const language = typeof body.language === "string" ? body.language.trim() : "";
   const variant = typeof body.variant === "string" ? body.variant.trim() : "";
+  const hintedVoiceId = typeof body.voiceId === "string" ? body.voiceId.trim() : "";
   if (!sentence || !language) {
     return NextResponse.json({ error: "sentence and language required" }, { status: 400 });
   }
@@ -102,7 +114,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "sentence too long (max 500 chars)" }, { status: 400 });
   }
 
-  const voiceId = pickVoice(language);
+  // Prefer the story's actual narration voice when the client supplies
+  // one AND the Modal Piper endpoint can render it. Otherwise fall back
+  // to the language default. This keeps practice audio consistent with
+  // the reader for Studio-generated journeys; catalog stories (no
+  // voiceId in DB) just get the default voice.
+  const voiceId = hintedVoiceId && SUPPORTED_PIPER_VOICES.has(hintedVoiceId)
+    ? hintedVoiceId
+    : pickVoice(language);
   if (!voiceId) {
     return NextResponse.json(
       { error: "No licence-clean voice for this language", code: "UNSUPPORTED_LANGUAGE" },

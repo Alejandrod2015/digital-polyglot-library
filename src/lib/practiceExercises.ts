@@ -19,6 +19,8 @@ export type PracticeFavoriteItem = {
   language?: string | null;
   nextReviewAt?: string | null;
   practiceSource?: "curriculum" | "user_saved" | "both" | null;
+  /** Voice the source story was narrated with, when known. */
+  voiceId?: string | null;
 };
 
 export type PracticeMode =
@@ -90,6 +92,10 @@ export type PracticeAudioClip = {
   language?: string | null;
   targetWord?: string | null;
   segmentId?: string | null;
+  /** Voice the source story was narrated with. Forwarded to the
+   *  practice TTS endpoint so the audio clip uses the same voice as
+   *  the reader (when it's a Piper voice the Modal app supports). */
+  voiceId?: string | null;
 };
 
 export type PracticeExercise =
@@ -316,6 +322,7 @@ function buildAudioClip(item: PracticeFavoriteItem, sentence: string): PracticeA
     language: item.language ?? null,
     targetWord: normalizeText(item.word) || null,
     segmentId: getSegmentIdFromSourcePath(item.sourcePath),
+    voiceId: item.voiceId ?? null,
   };
 }
 
