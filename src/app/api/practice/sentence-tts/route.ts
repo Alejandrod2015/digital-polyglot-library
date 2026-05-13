@@ -86,8 +86,15 @@ function modalEndpointFor(voiceId: string): string | null {
   return base.replace(/-synthesize(?=\.modal\.run\/?$)/, `-${fn}`);
 }
 
+// Bumping CACHE_VERSION invalidates every previously cached R2 path
+// without needing to delete the bucket. Use whenever the rendering
+// engine changes in a way that should force a regeneration (e.g. we
+// swap a default voice — old voices still cached under v1 are now
+// unreachable because every lookup goes through v2's hashes).
+const CACHE_VERSION = "v2";
+
 function cacheKey(args: { sentence: string; language: string; variant: string; voiceId: string }): string {
-  const payload = `${args.language}|${args.variant}|${args.voiceId}|${args.sentence}`;
+  const payload = `${CACHE_VERSION}|${args.language}|${args.variant}|${args.voiceId}|${args.sentence}`;
   const hash = crypto.createHash("sha256").update(payload).digest("hex").slice(0, 24);
   return `media/practice/tts/${hash}.mp3`;
 }
@@ -163,7 +170,7 @@ export async function POST(request: NextRequest) {
   // because we re-derive the URL via getPublicObjectUrl(generatedKey).
   const generatedKey = `media/generated/audio/practice-${crypto
     .createHash("sha256")
-    .update(`${language}|${variant}|${voiceId}|${sentence}`)
+    .update(`${CACHE_VERSION}|${language}|${variant}|${voiceId}|${sentence}`)
     .digest("hex")
     .slice(0, 24)}.mp3`;
   const generatedFilename = generatedKey.split("/").pop()!.replace(/\.mp3$/, "");

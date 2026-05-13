@@ -40,14 +40,15 @@ export async function POST(request: NextRequest) {
     ? hintedVoiceId
     : pickVoice(language);
 
+  const CACHE_VERSION = "v2";
   const cacheKey = (() => {
-    const payload = `${language}|${variant}|${voiceId}|${sentence}`;
+    const payload = `${CACHE_VERSION}|${language}|${variant}|${voiceId}|${sentence}`;
     const hash = crypto.createHash("sha256").update(payload).digest("hex").slice(0, 24);
     return `media/practice/tts/${hash}.mp3`;
   })();
   const generatedKey = `media/generated/audio/practice-${crypto
     .createHash("sha256")
-    .update(`${language}|${variant}|${voiceId}|${sentence}`)
+    .update(`${CACHE_VERSION}|${language}|${variant}|${voiceId}|${sentence}`)
     .digest("hex")
     .slice(0, 24)}.mp3`;
 
