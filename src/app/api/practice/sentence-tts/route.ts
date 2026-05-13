@@ -52,6 +52,9 @@ const SUPPORTED_PIPER_VOICES = new Set<string>([
   "piper/es_MX-claude-high",
   "piper/pt_BR-cadu-medium",
   "piper/it_IT-paola-medium",
+  "kokoro/ef_dora",
+  "kokoro/em_alex",
+  "kokoro/em_santa",
 ]);
 
 // Default per-language voice for practice clips. These are the engines
@@ -59,16 +62,16 @@ const SUPPORTED_PIPER_VOICES = new Set<string>([
 // the strings in sync with PRACTICE_VOICE_TO_MODAL_PATH below and with
 // modal_app/audio_studio.py's PIPER_VOICES / KOKORO_VOICES maps.
 const PRACTICE_VOICES: Record<string, string> = {
-  spanish: "piper/es_MX-claude-high",
+  spanish: "kokoro/ef_dora",
   portuguese: "piper/pt_BR-cadu-medium",
   italian: "piper/it_IT-paola-medium",
 };
 
-// Engine prefix → Modal endpoint path suffix. The Modal app currently
-// exposes one `synthesize` endpoint (Piper). Keep this map structured
-// so re-adding Kokoro / Bark later is a one-line change.
+// Engine prefix → Modal endpoint path suffix. The Modal app exposes
+// `synthesize` (Piper) and `synthesize_kokoro`.
 const ENGINE_TO_MODAL_FN: Record<string, string> = {
   piper: "synthesize",
+  kokoro: "synthesize_kokoro",
 };
 
 function pickVoice(language: string): string | null {
@@ -91,7 +94,7 @@ function modalEndpointFor(voiceId: string): string | null {
 // engine changes in a way that should force a regeneration (e.g. we
 // swap a default voice — old voices still cached under v1 are now
 // unreachable because every lookup goes through v2's hashes).
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v3";
 
 function cacheKey(args: { sentence: string; language: string; variant: string; voiceId: string }): string {
   const payload = `${CACHE_VERSION}|${args.language}|${args.variant}|${args.voiceId}|${args.sentence}`;

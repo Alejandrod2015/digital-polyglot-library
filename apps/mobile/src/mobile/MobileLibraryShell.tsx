@@ -213,10 +213,11 @@ type MobileScreen =
   | "favorites"
   | "journey"
   | "library"
+  | "progress"
   | "settings"
   | "create";
 
-type BottomTab = "home" | "explore" | "practice" | "favorites" | "journey" | "signin";
+type BottomTab = "home" | "explore" | "practice" | "favorites" | "progress" | "signin";
 type MenuIconName =
   | "settings"
   | "library"
@@ -1178,6 +1179,7 @@ function buildPracticeFavorites(items: MobileFavoriteItem[]): PracticeFavoriteIt
       language: item.language ?? null,
       nextReviewAt: item.nextReviewAt ?? null,
       practiceSource: "user_saved" as const,
+      voiceId: item.voiceId ?? null,
     }));
 }
 
@@ -1893,7 +1895,11 @@ export function MobileLibraryShell(args: {
   const [speakingPracticePromptId, setSpeakingPracticePromptId] = useState<string | null>(null);
   const [playingPracticeClipId, setPlayingPracticeClipId] = useState<string | null>(null);
   const [playingHqPracticeClipId, setPlayingHqPracticeClipId] = useState<string | null>(null);
-  const [hqUrlBySentence, setHqUrlBySentence] = useState<Record<string, string>>({});
+  // hqUrlBySentence cache removed intentionally: it was keyed only by
+  // language+sentence and kept serving stale R2 URLs after the backend
+  // default voice changed. The endpoint itself is cache-first against
+  // R2, so the round-trip is cheap enough to not warrant a duplicate
+  // client-side map.
   const [practiceLastResult, setPracticeLastResult] = useState<"correct" | "wrong" | null>(null);
   const [practiceSessionStreak, setPracticeSessionStreak] = useState(0);
   // Mejor combo alcanzado durante la sesión (no se resetea al fallar)
@@ -1908,14 +1914,23 @@ export function MobileLibraryShell(args: {
     label: string;
   } | null>(null);
   const [practiceComboBurstActive, setPracticeComboBurstActive] = useState(false);
+  // Match exercise flow:
+  //   - `activeMatchWord` / `activeMatchMeaning` track the half-selection
+  //     while the user has tapped one side and not yet picked the other.
+  //   - `pendingPairings` holds the user-built pairs that have NOT been
+  //     validated yet (word → meaning). The user is free to undo any of
+  //     these by tapping either side again.
+  //   - `matchedWords` is the set of pairs that have ALREADY been
+  //     validated as correct (after pressing Check). They lock and stay
+  //     pinned with the green "correct" treatment.
+  //   - `wrongMatchWords` is the list of words flagged red during the
+  //     post-Check flash; cleared after ~900 ms when those pairings are
+  //     broken so the user can retry.
   const [activeMatchWord, setActiveMatchWord] = useState<string | null>(null);
+  const [activeMatchMeaning, setActiveMatchMeaning] = useState<string | null>(null);
   const [matchedWords, setMatchedWords] = useState<string[]>([]);
-  // Tracks the most recent wrong match attempt so the UI can flash the
-  // mis-tapped row red briefly. Cleared on a short timer (700 ms) and
-  // when the user moves on to the next exercise. Without this state
-  // the previous behavior silently swallowed wrong taps — the user
-  // simply couldn't make a mistake, which read as a broken exercise.
-  const [wrongMatchAttempt, setWrongMatchAttempt] = useState<{ word: string; value: string } | null>(null);
+  const [pendingPairings, setPendingPairings] = useState<Record<string, string>>({});
+  const [wrongMatchWords, setWrongMatchWords] = useState<string[]>([]);
   const [practiceLaunchContext, setPracticeLaunchContext] = useState<PracticeLaunchContext>({
     source: "favorites",
   });
@@ -3929,11 +3944,21 @@ export function MobileLibraryShell(args: {
 
     return items;
   }, []);
+  // Stats tiles for the Account tab. Four-up grid in the mockup is
+  // BOOKS / STORIES / FAVORITES / HOURS, so we expose minutesListened
+  // as a decimal-hours figure rather than dropping a fifth pill for
+  // plan info (the plan lives in its own card right above).
+  const hoursListenedDisplay = (() => {
+    const minutes = remoteProgress?.minutesListened ?? 0;
+    if (minutes <= 0) return "0";
+    const hours = minutes / 60;
+    return hours >= 10 ? `${Math.round(hours)}` : hours.toFixed(1);
+  })();
   const remoteSummaryItems = [
-    { label: "Saved books", value: `${effectiveRemoteBooksCount}` },
-    { label: "Saved stories", value: `${effectiveRemoteStoriesCount}` },
+    { label: "Books", value: `${effectiveRemoteBooksCount}` },
+    { label: "Stories", value: `${effectiveRemoteStoriesCount}` },
     { label: "Favorites", value: `${remoteProgress?.wordsLearned ?? favoriteWords.length}` },
-    { label: "Plan", value: remoteEntitlement?.plan ?? sessionPlan ?? "free" },
+    { label: "Hours", value: hoursListenedDisplay },
   ];
   const progressStats = useMemo<ProgressStat[]>(
     () => [
@@ -4499,7 +4524,7 @@ export function MobileLibraryShell(args: {
         { key: "explore", label: "Explore" },
         { key: "practice", label: "Practice" },
         { key: "favorites", label: "Favorites" },
-        { key: "journey", label: "Library" },
+        { key: "progress", label: "Progress" },
       ]
     : [
         { key: "home", label: "Home" },
@@ -4536,7 +4561,6 @@ export function MobileLibraryShell(args: {
       return tab === "practice" || tab === "favorites";
     }
     if (activeOnboardingTourTarget === "explore") return tab === "explore";
-    if (activeOnboardingTourTarget === "journey") return tab === "journey";
     if (activeOnboardingTourTarget === "home") return tab === "home";
     return false;
   }
@@ -5763,8 +5787,11 @@ export function MobileLibraryShell(args: {
     setPracticeCheckpointResponses({});
     setPracticeCheckpointSaveState("idle");
     setPracticeJourneyReviewMeta(null);
-    setActiveMatchWord(null); setWrongMatchAttempt(null);
+    setActiveMatchWord(null);
+    setActiveMatchMeaning(null);
     setMatchedWords([]);
+    setPendingPairings({});
+    setWrongMatchWords([]);
     setLastPracticeActivityAt(new Date().toISOString());
     setMenuOpen(false);
     // Arranca con countdown activo + pausa off + timer en 10 seg.
@@ -5878,8 +5905,11 @@ export function MobileLibraryShell(args: {
     setPracticeCheckpointResponses({});
     setPracticeCheckpointSaveState("idle");
     setPracticeJourneyReviewMeta(null);
-    setActiveMatchWord(null); setWrongMatchAttempt(null);
+    setActiveMatchWord(null);
+    setActiveMatchMeaning(null);
     setMatchedWords([]);
+    setPendingPairings({});
+    setWrongMatchWords([]);
     setSelection(null);
     setActiveScreen("practice");
   }
@@ -6021,8 +6051,11 @@ export function MobileLibraryShell(args: {
       setPracticeCheckpointResponses({});
       setPracticeCheckpointSaveState("idle");
       setPracticeJourneyReviewMeta(reviewMeta);
-      setActiveMatchWord(null); setWrongMatchAttempt(null);
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
       setMatchedWords([]);
+      setPendingPairings({});
+      setWrongMatchWords([]);
       setActiveScreen("practice");
     } catch (error) {
       setPracticeSeedItems(null);
@@ -6113,8 +6146,11 @@ export function MobileLibraryShell(args: {
     setPracticeCheckpointResponses({});
     setPracticeCheckpointSaveState("idle");
     setPracticeJourneyReviewMeta(null);
-    setActiveMatchWord(null); setWrongMatchAttempt(null);
+    setActiveMatchWord(null);
+    setActiveMatchMeaning(null);
     setMatchedWords([]);
+    setPendingPairings({});
+    setWrongMatchWords([]);
   }
 
   function advancePractice() {
@@ -6126,8 +6162,11 @@ export function MobileLibraryShell(args: {
       setPracticeComplete(true);
       setPracticeRevealed(false);
       setPracticeSelectedOption(null);
-      setActiveMatchWord(null); setWrongMatchAttempt(null);
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
       setMatchedWords([]);
+      setPendingPairings({});
+      setWrongMatchWords([]);
       // Capturar duración total de la sesión para la result card.
       if (practiceSessionStartedAtRef.current !== null) {
         setPracticeSessionDurationMs(Date.now() - practiceSessionStartedAtRef.current);
@@ -6140,8 +6179,11 @@ export function MobileLibraryShell(args: {
     setPracticeRevealed(false);
     setPracticeTimedOut(false);
     setPracticeLastResult(null);
-    setActiveMatchWord(null); setWrongMatchAttempt(null);
+    setActiveMatchWord(null);
+    setActiveMatchMeaning(null);
     setMatchedWords([]);
+    setPendingPairings({});
+    setWrongMatchWords([]);
   }
 
   // ─── Practice timer + auto-advance + autoplay del audio ───────────
@@ -6189,10 +6231,15 @@ export function MobileLibraryShell(args: {
     const current = practiceExercises[practiceIndex];
     if (!current) return;
     // El timer corre para multiple-choice y match. En match se detiene
-    // automáticamente cuando todos los pares quedan matched (ya no
-    // hay nada por hacer y no queremos disparar un timeout "wrong"
-    // sobre un ejercicio que el usuario ya resolvió).
-    if (current.kind === "match" && matchedWords.length >= current.pairs.length) return;
+    // tanto cuando todos los pares están validados (matched) como
+    // cuando el usuario ya formó los N pares tentativos (filled ===
+    // total): en ese punto el ejercicio espera el tap de Check y no
+    // tiene sentido seguir presionando con el countdown — la siguiente
+    // decisión ya no depende del tiempo.
+    if (current.kind === "match") {
+      const filled = matchedWords.length + Object.keys(pendingPairings).length;
+      if (filled >= current.pairs.length) return;
+    }
     if (current.kind !== "multiple-choice" && current.kind !== "match") return;
     const id = setTimeout(() => {
       setPracticeTimerRemaining((value) => Math.max(0, value - 1));
@@ -6208,6 +6255,7 @@ export function MobileLibraryShell(args: {
     practiceExercises,
     practiceIndex,
     matchedWords.length,
+    pendingPairings,
   ]);
 
   // (3) Cuando el timer llega a 0 sin haber revelado: marcar como
@@ -6231,15 +6279,37 @@ export function MobileLibraryShell(args: {
     if (!current) return;
 
     if (current.kind === "match") {
-      // Timeout en match: si todos los pares ya están matched no
-      // pasa nada (el tick effect ya lo evita). Si quedan pares por
-      // resolver, marcamos como wrong, anotamos "again" para cada
-      // par no completado y dejamos que el auto-advance siga.
+      // Timeout en match. Tres ramas según cuánto haya armado el usuario:
+      //   1. Todos los pares ya validados (matched === total): nada que
+      //      hacer; el tick effect ya frenó el contador antes pero
+      //      llegamos aquí por race condition. Salimos.
+      //   2. Pendings cubren los slots restantes (filled === total): el
+      //      usuario terminó de emparejar y solo le faltaba pulsar
+      //      Check. Evaluamos lo que tiene en vez de penalizar todo —
+      //      es lo justo: no podemos saber si iba a confirmar o seguir
+      //      ajustando, pero al menos los correctos cuentan.
+      //   3. Filled < total: pares sin formar todavía. Marcamos todos
+      //      los no-matched como "again" en SRS y revelamos como wrong.
       if (matchedWords.length >= current.pairs.length) return;
+      const filled = matchedWords.length + Object.keys(pendingPairings).length;
+      if (filled >= current.pairs.length) {
+        validateMatchPairings();
+        return;
+      }
+      // Wrong-all timeout: clean every transient piece of match state so
+      // the result screen doesn't render leftover active/pending chips
+      // (otherwise an in-flight selection shows up with its blue active
+      // border on the "Time's up" frame, which looked broken to the
+      // user). matchedWords stays untouched so locked-correct pairs
+      // keep their green treatment.
       setPracticeRevealed(true);
       setPracticeTimedOut(true);
       setPracticeLastResult("wrong");
       setPracticeSessionStreak(0);
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
+      setPendingPairings({});
+      setWrongMatchWords([]);
       setPracticeReviewScores((currentScores) => {
         const next = { ...currentScores };
         for (const pair of current.pairs) {
@@ -6288,6 +6358,7 @@ export function MobileLibraryShell(args: {
     practiceSelectedOption,
     practiceLaunchContext,
     matchedWords,
+    pendingPairings,
   ]);
 
   // (4) Auto-advance 1.5 seg después de revelar. Sólo aplica a
@@ -6334,6 +6405,47 @@ export function MobileLibraryShell(args: {
     practiceComplete,
     practiceRevealed,
     currentPracticeExercise?.id,
+  ]);
+
+  // (5b) Prefetch HQ TTS for the next 1-2 exercises by firing a
+  // no-await POST to the practice TTS endpoint. The endpoint is
+  // R2-cache-first, so the synthesis happens (or doesn't, on a R2
+  // hit) while the user is busy with the current question. We don't
+  // store the resulting URL in client state — the playback path
+  // re-fetches and gets the R2-hot URL near-instantly.
+  useEffect(() => {
+    if (!activePracticeMode) return;
+    if (practiceComplete) return;
+    if (!sessionToken) return;
+    const ahead = practiceExercises.slice(practiceIndex + 1, practiceIndex + 3);
+    for (const ex of ahead) {
+      if (ex.kind !== "multiple-choice") continue;
+      const clip = ex.audioClip;
+      if (!clip?.sentence) continue;
+      void apiFetch<{ url?: string }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/practice/sentence-tts",
+        method: "POST",
+        token: sessionToken,
+        // Same 45 s ceiling rationale as the playback path — prefetch
+        // has to survive Modal cold starts too, otherwise the cache
+        // never gets warmed.
+        timeoutMs: 45000,
+        body: {
+          sentence: clip.sentence,
+          language: clip.language ?? "german",
+          voiceId: clip.voiceId ?? undefined,
+        },
+      }).catch(() => {
+        // Silent: prefetch is opportunistic, not load-bearing.
+      });
+    }
+  }, [
+    activePracticeMode,
+    practiceComplete,
+    practiceExercises,
+    practiceIndex,
+    sessionToken,
   ]);
 
   function choosePracticeOption(option: string) {
@@ -6569,26 +6681,81 @@ export function MobileLibraryShell(args: {
     resolvePracticeMultipleChoiceAnswer(current, practiceSelectedOption);
   }
 
-  function playPracticePrompt() {
+  async function playPracticePrompt() {
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
     if (currentPracticeExercise.mode !== "listening") return;
     const speechText = currentPracticeExercise.speechText?.trim();
+    const language = currentPracticeExercise.language ?? null;
     if (!speechText) return;
+
+    // Toggle: tapping the button while it's already playing stops the
+    // current playback (HQ or fallback).
+    if (playingHqPracticeClipId === currentPracticeExercise.id) {
+      await stopPracticeHqClip();
+      return;
+    }
+    if (speakingPracticePromptId === currentPracticeExercise.id) {
+      getOptionalSpeechModule()?.stop();
+      setSpeakingPracticePromptId(null);
+      return;
+    }
+
+    // Route through the same HQ Piper path as the other practice
+    // modes (meaning, context, match) so the listening mode uses the
+    // same Modal-served voice instead of the iOS system TTS. Falls
+    // back to expo-speech only when HQ truly fails.
+    await stopPracticeContextClip();
+    await stopPracticeHqClip();
+    let hqUrl: string | undefined;
+    try {
+      const resp = await apiFetch<{ url?: string }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/practice/sentence-tts",
+        method: "POST",
+        token: sessionToken ?? undefined,
+        timeoutMs: 45000,
+        body: {
+          sentence: speechText,
+          language: language ?? "german",
+        },
+      });
+      hqUrl = resp?.url;
+    } catch {
+      hqUrl = undefined;
+    }
+
+    if (hqUrl) {
+      try {
+        await Audio.setAudioModeAsync({
+          playsInSilentModeIOS: true,
+          allowsRecordingIOS: false,
+          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        });
+        const { sound } = await Audio.Sound.createAsync(
+          { uri: hqUrl },
+          { shouldPlay: true },
+          (status) => {
+            if ("didJustFinish" in status && status.didJustFinish) {
+              void stopPracticeHqClip();
+            }
+          }
+        );
+        practiceHqSoundRef.current = sound;
+        setPlayingHqPracticeClipId(currentPracticeExercise.id);
+        return;
+      } catch {
+        // Fall through to expo-speech fallback below.
+      }
+    }
+
     const Speech = getOptionalSpeechModule();
     if (!Speech) {
       setSpeakingPracticePromptId(null);
       return;
     }
-
-    if (speakingPracticePromptId === currentPracticeExercise.id) {
-      Speech.stop();
-      setSpeakingPracticePromptId(null);
-      return;
-    }
-
     Speech.stop();
     setSpeakingPracticePromptId(currentPracticeExercise.id);
-    const speechLang = getSpeechSynthesisLang(currentPracticeExercise.language);
+    const speechLang = getSpeechSynthesisLang(language);
     Speech.speak(speechText, {
       language: speechLang,
       voice: getBestVoiceFor(speechLang),
@@ -6781,13 +6948,22 @@ export function MobileLibraryShell(args: {
       hasSegmentClipUrl: !!segmentClipUrl,
       finalUrl: audioUrl ? audioUrl.slice(0, 80) : null,
     });
-    // Caemos a TTS de sistema cuando NO podemos reproducir un segment del
-    // Story con timing exacto: o no hay audioUrl resoluble, o el matcher no
-    // encontró segment dentro del story. Robot voice, sí, pero corta donde
-    // corresponde y nunca queda silencio. Ojo: este check tiene que ir ANTES
-    // del `if (!audioUrl) return;` porque historias sin audio (JourneyStory
-    // sin audioUrl, libros Sanity sin segments registrados) entran por aquí.
+    // Sin segment del Story disponible: intentamos primero HQ TTS
+    // (Kokoro/Piper en Modal). Sólo si HQ falla (red, idioma sin voz
+    // local soportada, Modal caído) caemos al TTS del sistema. El
+    // expo-speech del dispositivo es la "voz robótica" que el usuario
+    // reportó como mala calidad; mantenerlo como último recurso evita
+    // silencio total pero no debería ser la opción principal.
     if ((!segment || !audioUrl) && clip.sentence?.trim()) {
+      try {
+        await playPracticeContextClipHqOnly();
+        // Si arrancó, playingHqPracticeClipId queda set; si no, fue
+        // un return temprano y caemos al speech-synth abajo.
+        if (playingHqPracticeClipId === currentPracticeExercise.id) return;
+      } catch (err) {
+        console.log("[mobile practice] HQ fallback failed, using device TTS", err);
+      }
+
       const speechText = clip.sentence.trim();
       const Speech = getOptionalSpeechModule();
       if (!Speech) return;
@@ -6885,20 +7061,9 @@ export function MobileLibraryShell(args: {
   }
 
   async function playPracticeContextClipHqOnly() {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") {
-      console.log("[mobile practice] HQ skipped: not a multiple-choice exercise");
-      return;
-    }
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
     const clip = currentPracticeExercise.audioClip;
-    if (!clip?.sentence) {
-      console.log("[mobile practice] HQ skipped: no clip.sentence", { hasClip: !!clip, hasSentence: !!clip?.sentence });
-      return;
-    }
-    console.log("[mobile practice] HQ attempt", {
-      sentence: clip.sentence.slice(0, 60),
-      language: clip.language ?? "(null→german fallback)",
-      hasStorySlug: !!clip.storySlug,
-    });
+    if (!clip?.sentence) return;
     if (playingHqPracticeClipId === currentPracticeExercise.id) {
       await stopPracticeHqClip();
       return;
@@ -6908,27 +7073,31 @@ export function MobileLibraryShell(args: {
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
 
-    const cacheKey = `${clip.language ?? ""}|${clip.sentence}`;
-    let url = hqUrlBySentence[cacheKey];
-    if (!url) {
-      try {
-        const resp = await apiFetch<{ url?: string }>({
-          baseUrl: mobileConfig.apiBaseUrl,
-          path: "/api/practice/sentence-tts",
-          method: "POST",
-          token: sessionToken ?? undefined,
-          body: { sentence: clip.sentence, language: clip.language ?? "german" },
-        });
-        if (!resp?.url) {
-          console.log("[mobile practice] HQ endpoint returned no url", { resp });
-          return;
-        }
-        url = resp.url;
-        setHqUrlBySentence((prev) => ({ ...prev, [cacheKey]: url! }));
-      } catch (err) {
-        console.error("[mobile practice] HQ TTS request failed", err);
+    let url: string | undefined;
+    try {
+      const resp = await apiFetch<{ url?: string }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/practice/sentence-tts",
+        method: "POST",
+        token: sessionToken ?? undefined,
+        // 45 s timeout covers Modal cold start (image load + first
+        // synth) without leaving the client hung indefinitely if the
+        // endpoint is genuinely down.
+        timeoutMs: 45000,
+        body: {
+          sentence: clip.sentence,
+          language: clip.language ?? "german",
+          voiceId: clip.voiceId ?? undefined,
+        },
+      });
+      if (!resp?.url) {
+        console.log("[mobile practice] HQ endpoint returned no url");
         return;
       }
+      url = resp.url;
+    } catch (err) {
+      console.error("[mobile practice] HQ TTS request failed", err);
+      return;
     }
     console.log("[mobile practice] HQ url resolved", { url: url.slice(0, 80) });
 
@@ -6958,28 +7127,56 @@ export function MobileLibraryShell(args: {
   /**
    * Autoplay del ejercicio actual: SOLO Story. Nunca HQ ni TTS.
    *
-   * Story = audio real grabado de la historia, ya pago/generado al
-   * publicar la historia y cacheado en R2. Reproducir un segmento es
-   * gratis. Cuando la oración no tiene segmento matcheable, dejamos
-   * silencio antes que disparar generación adicional en ElevenLabs
-   * desde Practice (ese gasto no se justifica para clips sueltos que
-   * raramente se reusan).
+   * Autoplay path for practice: always generate a fresh TTS clip via
+   * `/api/practice/sentence-tts` (Piper on Modal, cached in R2). The
+   * old behaviour ranked Story segments first, but those segments are
+   * cut from the original narration with aeneas timings — they fall
+   * short or run long when the alignment drifts, and they drag in any
+   * background music / ambient noise the story had. A purpose-built
+   * Piper clip is shorter, exact and clean. expo-speech stays as the
+   * very last fallback for languages or sentences the endpoint can't
+   * serve (e.g. German until a licence-clean voice ships).
    *
-   * El botón "HQ" en el render manual sigue presente — si la oración
-   * ya tiene un MP3 cacheado en R2 de un play anterior, se reusa
-   * gratis; si no, el endpoint devuelve 404 y el botón no toca nada.
-   * El botón "TTS" sigue invocando speechSynthesis on-device para
-   * quien quiera la voz del sistema.
+   * The "Story" button in the manual clip player still works for users
+   * who want to hear the line in the narrator's voice (with ambient).
    */
   async function playPracticeContextClipBest() {
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
     const clip = currentPracticeExercise.audioClip;
     if (!clip) return;
     try {
-      await playPracticeContextClipStoryOnly();
+      await playPracticeContextClipHqOnly();
+      if (playingHqPracticeClipId === currentPracticeExercise.id) return;
     } catch (err) {
-      console.error("[mobile practice] autoplay Story failed", err);
+      console.log("[mobile practice] autoplay HQ failed, falling back to device TTS", err);
     }
+
+    const speechText = clip.sentence?.trim();
+    const Speech = getOptionalSpeechModule();
+    if (!speechText || !Speech) return;
+    await stopPracticeContextClip();
+    await stopPracticeHqClip();
+    Speech.stop();
+    setSpeakingPracticePromptId(currentPracticeExercise.id);
+    const fallbackLang = getSpeechSynthesisLang(clip.language);
+    Speech.speak(speechText, {
+      language: fallbackLang,
+      voice: getBestVoiceFor(fallbackLang),
+      rate: 0.92,
+      pitch: 1,
+      onDone: () =>
+        setSpeakingPracticePromptId((cur) =>
+          cur === currentPracticeExercise.id ? null : cur
+        ),
+      onStopped: () =>
+        setSpeakingPracticePromptId((cur) =>
+          cur === currentPracticeExercise.id ? null : cur
+        ),
+      onError: () =>
+        setSpeakingPracticePromptId((cur) =>
+          cur === currentPracticeExercise.id ? null : cur
+        ),
+    });
   }
 
   async function playPracticeContextClip() {
@@ -7129,59 +7326,187 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  function chooseMatchValue(value: string) {
+  // Match exercise flow: the user assembles ALL pairs first (no
+  // mid-tap feedback), then taps Check to validate the whole set.
+  // Tapping a word or a meaning either (a) sets it as the active
+  // selection if the opposite side has nothing selected, (b) forms a
+  // pending pair if the opposite side already has a half-selection,
+  // or (c) breaks an existing pending pair if the tapped item is
+  // already paired. Once all `pairs.length` slots are filled the
+  // Check button appears; pressing it locks the correct pairs as
+  // matched, flashes the wrong ones red briefly, then releases the
+  // wrong ones so the user can retry. The exercise completes when
+  // every pair has been validated as correct.
+  function tapMatchWord(word: string) {
     if (practiceComplete) return;
+    if (practiceRevealed) return;
+    if (wrongMatchWords.length > 0) return;
     const current = practiceExercises[practiceIndex];
     if (!current || current.kind !== "match") return;
-    if (!activeMatchWord) return;
+    // Already locked-correct: cannot be touched.
+    if (matchedWords.includes(word)) return;
 
-    const pair = current.pairs.find((entry) => entry.word === activeMatchWord);
-    if (!pair) return;
+    const existingPair = pendingPairings[word];
 
-    if (pair.answer !== value) {
-      // Wrong match: previously this branch silently returned, which
-      // made the exercise feel broken (the user would tap an option
-      // and nothing happened). Now we surface the miss: flash the
-      // mis-tapped row red, mark the word as "again" in SRS, drop
-      // the streak, and clear the active selection so the user can
-      // retry without an extra tap.
-      setWrongMatchAttempt({ word: activeMatchWord, value });
-      setPracticeSessionStreak(0);
-      setPracticeLastResult("wrong");
-      setPracticeReviewScores((currentScores) => ({
-        ...currentScores,
-        [normalizePracticeWord(activeMatchWord)]: "again",
-      }));
-      void playPracticeFeedbackSound(false);
-      // Hold the red flash long enough to register as feedback,
-      // then deselect so a new tap starts a fresh attempt.
-      setTimeout(() => {
-        setWrongMatchAttempt(null);
-        setActiveMatchWord(null); setWrongMatchAttempt(null);
-      }, 700);
+    // Tap on a word that has a pending pair AND there's a meaning
+    // half-selected → re-assign: drop the old pair, form a fresh one
+    // with the active meaning. Skip when the active meaning is the
+    // same one already paired with this word (no-op).
+    if (existingPair && activeMatchMeaning && existingPair !== activeMatchMeaning) {
+      setPendingPairings((curr) => {
+        const next = { ...curr };
+        delete next[word];
+        // If the active meaning was paired with another word, that pair breaks too.
+        for (const w of Object.keys(next)) {
+          if (next[w] === activeMatchMeaning) delete next[w];
+        }
+        next[word] = activeMatchMeaning;
+        return next;
+      });
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
       return;
     }
 
-    const nextMatched = [...matchedWords, activeMatchWord];
-    setMatchedWords(nextMatched);
-    setActiveMatchWord(null); setWrongMatchAttempt(null);
+    // Plain break: tap on a word with a pending pair → free both sides.
+    if (existingPair) {
+      setPendingPairings((curr) => {
+        const next = { ...curr };
+        delete next[word];
+        return next;
+      });
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
+      return;
+    }
 
-    if (nextMatched.length === current.pairs.length) {
+    // Form pair with the half-selected meaning. If that meaning happens
+    // to be in another pending pair, that older pair breaks.
+    if (activeMatchMeaning) {
+      setPendingPairings((curr) => {
+        const next = { ...curr };
+        for (const w of Object.keys(next)) {
+          if (next[w] === activeMatchMeaning) delete next[w];
+        }
+        next[word] = activeMatchMeaning;
+        return next;
+      });
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
+      return;
+    }
+
+    // Otherwise toggle this word as the active half-selection.
+    setActiveMatchWord((curr) => (curr === word ? null : word));
+  }
+
+  function tapMatchMeaning(meaning: string) {
+    if (practiceComplete) return;
+    if (practiceRevealed) return;
+    if (wrongMatchWords.length > 0) return;
+    const current = practiceExercises[practiceIndex];
+    if (!current || current.kind !== "match") return;
+
+    // If this meaning belongs to a locked-correct pair → cannot be touched.
+    const lockedPairForMeaning = current.pairs.find(
+      (p) => p.answer === meaning && matchedWords.includes(p.word)
+    );
+    if (lockedPairForMeaning) return;
+
+    const pendingWord = Object.keys(pendingPairings).find(
+      (w) => pendingPairings[w] === meaning
+    );
+
+    // Re-assign branch: meaning is pending with someone else, but the
+    // user has a different word half-selected → drop the old pair, form
+    // the new one. Skip when the active word IS the pending one (no-op).
+    if (pendingWord && activeMatchWord && activeMatchWord !== pendingWord) {
+      setPendingPairings((curr) => {
+        const next = { ...curr };
+        delete next[pendingWord];
+        // If the active word already had a pair, that breaks too.
+        delete next[activeMatchWord];
+        next[activeMatchWord] = meaning;
+        return next;
+      });
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
+      return;
+    }
+
+    // Plain break: tap on a meaning that already has a pending pair.
+    if (pendingWord) {
+      setPendingPairings((curr) => {
+        const next = { ...curr };
+        delete next[pendingWord];
+        return next;
+      });
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
+      return;
+    }
+
+    // Form pair with the half-selected word. If the word was already
+    // in another pending pair, that older pair breaks.
+    if (activeMatchWord) {
+      setPendingPairings((curr) => {
+        const next = { ...curr };
+        delete next[activeMatchWord];
+        next[activeMatchWord] = meaning;
+        return next;
+      });
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
+      return;
+    }
+
+    // Otherwise toggle this meaning as the active half-selection.
+    setActiveMatchMeaning((curr) => (curr === meaning ? null : meaning));
+  }
+
+  function validateMatchPairings() {
+    if (practiceComplete) return;
+    if (practiceRevealed) return;
+    if (wrongMatchWords.length > 0) return;
+    const current = practiceExercises[practiceIndex];
+    if (!current || current.kind !== "match") return;
+
+    // Only validate when all remaining slots are filled.
+    const filled = Object.keys(pendingPairings).length + matchedWords.length;
+    if (filled < current.pairs.length) return;
+
+    const newlyCorrect: string[] = [];
+    const newlyWrong: string[] = [];
+    for (const [word, meaning] of Object.entries(pendingPairings)) {
+      const expected = current.pairs.find((p) => p.word === word)?.answer;
+      if (expected === meaning) newlyCorrect.push(word);
+      else newlyWrong.push(word);
+    }
+
+    if (newlyWrong.length === 0) {
+      // Full success.
+      const finalMatched = [...matchedWords, ...newlyCorrect];
+      setMatchedWords(finalMatched);
+      setPendingPairings({});
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
       setPracticeScore((value) => value + 1);
       setPracticeRevealed(true);
       setPracticeLastResult("correct");
       setPracticeSessionStreak((value) => {
         const next = value + 1;
+        // Mirror what resolvePracticeMultipleChoiceAnswer does — track the
+        // session-wide max so the result screen's "combo" pill reflects
+        // match-only sessions too (without this, finishing 3 match
+        // exercises in a row showed combo=0 because only multiple-choice
+        // updated practiceMaxStreak).
+        setPracticeMaxStreak((prevMax) => (next > prevMax ? next : prevMax));
         triggerPracticeComboToast(next);
         return next;
       });
       setPracticeReviewScores((currentScores) => {
         const nextScores = { ...currentScores };
         for (const pair of current.pairs) {
-          // Only mark pairs that weren't previously flagged as
-          // "again" — otherwise a perfect finish after one or two
-          // misses would erase the SRS "again" signal and the user
-          // wouldn't see the word pop back for review.
           const key = normalizePracticeWord(pair.word);
           if (nextScores[key] !== "again") {
             nextScores[key] = "good";
@@ -7190,7 +7515,44 @@ export function MobileLibraryShell(args: {
         return nextScores;
       });
       void playPracticeFeedbackSound(true);
+      return;
     }
+
+    // Partial: lock the correct ones, flash the wrong ones red,
+    // then break those pending pairings so the user can retry.
+    setMatchedWords((curr) => [...curr, ...newlyCorrect]);
+    setWrongMatchWords(newlyWrong);
+    // Promote-then-prune in the same render: pull the correct entries
+    // out of pendingPairings immediately so the counter doesn't
+    // double-count them while the wrong flash plays (matchedWords
+    // already has them; pendings should only retain wrong entries to
+    // keep the red highlight rendering until the 900 ms timer breaks
+    // them).
+    setPendingPairings((curr) => {
+      const next = { ...curr };
+      for (const word of newlyCorrect) delete next[word];
+      return next;
+    });
+    setPracticeSessionStreak(0);
+    setPracticeLastResult("wrong");
+    setPracticeReviewScores((currentScores) => {
+      const next = { ...currentScores };
+      for (const word of newlyWrong) {
+        next[normalizePracticeWord(word)] = "again";
+      }
+      return next;
+    });
+    void playPracticeFeedbackSound(false);
+    setTimeout(() => {
+      setPendingPairings((curr) => {
+        const next = { ...curr };
+        for (const word of newlyWrong) delete next[word];
+        return next;
+      });
+      setWrongMatchWords([]);
+      setActiveMatchWord(null);
+      setActiveMatchMeaning(null);
+    }, 900);
   }
 
   async function openFeedback() {
@@ -9592,13 +9954,13 @@ export function MobileLibraryShell(args: {
                     <View style={styles.practiceResultStatPill}>
                       <Feather name="target" size={14} color="#9fe8ff" />
                       <Text style={styles.practiceResultStatValue}>{accuracyPct}%</Text>
-                      <Text style={styles.practiceResultStatLabel}>acierto</Text>
+                      <Text style={styles.practiceResultStatLabel}>accuracy</Text>
                     </View>
                     {durationMs > 0 ? (
                       <View style={styles.practiceResultStatPill}>
                         <Feather name="clock" size={14} color="#c4b5fd" />
                         <Text style={styles.practiceResultStatValue}>{durationLabel}</Text>
-                        <Text style={styles.practiceResultStatLabel}>tiempo</Text>
+                        <Text style={styles.practiceResultStatLabel}>time</Text>
                       </View>
                     ) : null}
                   </View>
@@ -9985,7 +10347,7 @@ export function MobileLibraryShell(args: {
                           </Text>
                           {currentPracticeExercise.audioClip ? (
                             <Pressable
-                              onPress={() => { void playPracticeContextClipStoryOnly(); }}
+                              onPress={() => { void playPracticeContextClipHqOnly(); }}
                               style={[
                                 styles.practiceMeaningAudioButton,
                                 isCompactMeaningViewport ? styles.practiceMeaningAudioButtonCompact : null,
@@ -10016,7 +10378,7 @@ export function MobileLibraryShell(args: {
                               {currentPracticeExercise.favorite.word}
                             </Text>
                             <Pressable
-                              onPress={() => { void playPracticeContextClip(); }}
+                              onPress={() => { void playPracticeContextClipHqOnly(); }}
                               disabled={!currentPracticeExercise.audioClip}
                               style={[
                                 styles.practiceMeaningAudioButton,
@@ -10184,38 +10546,116 @@ export function MobileLibraryShell(args: {
                       ]}
                     >
                       <Text style={styles.practiceMatchHeroLabel}>
-                        {activeMatchWord ? "Now choose the matching meaning" : "Tap a word, then its meaning"}
+                        {(() => {
+                          // Distinguish three reveal flavours:
+                          //   - All pairs matched correctly → celebrate.
+                          //   - Revealed by timeout with some pairs still
+                          //     unsolved → acknowledge instead of lying.
+                          //   - Revealed by validation where every pending
+                          //     pair was wrong → same conciliatory copy.
+                          if (practiceRevealed) {
+                            return matchedWords.length >= totalPairs
+                              ? "Nice! All pairs locked in."
+                              : "Time's up. Moving on.";
+                          }
+                          const filled =
+                            Object.keys(pendingPairings).length + matchedWords.length;
+                          if (wrongMatchWords.length > 0) return "Some pairs were wrong; try again";
+                          if (filled >= totalPairs) return "Tap Check to validate your pairs";
+                          if (activeMatchWord) return "Now choose the matching meaning";
+                          if (activeMatchMeaning) return "Now choose the matching word";
+                          return "Tap a word, then its meaning";
+                        })()}
                       </Text>
                       <Text style={styles.practiceMatchHeroCounter}>
-                        {matchedCount} / {totalPairs}
+                        {matchedCount + Object.keys(pendingPairings).length} / {totalPairs}
                       </Text>
                     </View>
                     <View style={styles.practiceMatchRows}>
                       {wordRowOrder.map((pair, rowIdx) => {
                         const meaning = meaningRowOrder[rowIdx];
+
+                        // Word side state
                         const isWordMatched = matchedWords.includes(pair.word);
                         const isWordActive = activeMatchWord === pair.word;
-                        const isWordWrong = wrongMatchAttempt?.word === pair.word;
+                        const wordPendingMeaning = pendingPairings[pair.word];
+                        const isWordPending = Boolean(wordPendingMeaning) && !isWordMatched;
+                        const isWordWrong = wrongMatchWords.includes(pair.word);
+
+                        // Meaning side state — uses the meaning rendered on this row
+                        // (NOT pair.answer; the columns are independently shuffled).
                         const matchedPairForMeaning = currentPracticeExercise.pairs.find(
                           (p) => p.answer === meaning && matchedWords.includes(p.word)
                         );
-                        const isMeaningWrong = wrongMatchAttempt?.value === meaning;
+                        const pendingWordForMeaning = Object.keys(pendingPairings).find(
+                          (w) => pendingPairings[w] === meaning
+                        );
+                        const isMeaningActive = activeMatchMeaning === meaning;
+                        const isMeaningPending = Boolean(pendingWordForMeaning) && !matchedPairForMeaning;
+                        const isMeaningWrong = Boolean(
+                          pendingWordForMeaning && wrongMatchWords.includes(pendingWordForMeaning)
+                        );
+
+                        // Accent color: shared by the paired word & meaning.
+                        // For words: the accent comes from the WORD's index.
+                        // For meanings: the accent comes from the WORD it is paired with
+                        // (locked or pending). Unpaired meanings get no accent.
+                        const meaningPairedWord = matchedPairForMeaning?.word ?? pendingWordForMeaning ?? null;
+                        const meaningAccentStyle = meaningPairedWord
+                          ? accentForPair(meaningPairedWord)
+                          : null;
+
+                        // Disable rules — enforce "no two selections of the same side at once".
+                        // Word side: lock if matched/wrong, or if a different word is already
+                        //   half-selected (forces user to deselect it first).
+                        // Meaning side: same logic mirrored.
+                        const flashing = wrongMatchWords.length > 0;
+                        const wordDisabled =
+                          practiceRevealed ||
+                          flashing ||
+                          isWordMatched ||
+                          (activeMatchWord !== null && activeMatchWord !== pair.word && !isWordPending);
+                        const meaningDisabled =
+                          practiceRevealed ||
+                          flashing ||
+                          Boolean(matchedPairForMeaning) ||
+                          (activeMatchMeaning !== null && activeMatchMeaning !== meaning && !isMeaningPending);
+
+                        // A word is "dimmed" when it's neither the active half-selection
+                        // nor part of any pair (pending/matched/wrong) AND the user has
+                        // an active selection going on. Same for meanings. Without the
+                        // dim style the user couldn't tell which chips were locked out
+                        // by the "no two selections of the same side at once" rule.
+                        const wordDimmed =
+                          wordDisabled &&
+                          !isWordActive &&
+                          !isWordPending &&
+                          !isWordMatched &&
+                          !isWordWrong;
+                        const meaningDimmed =
+                          meaningDisabled &&
+                          !isMeaningActive &&
+                          !isMeaningPending &&
+                          !matchedPairForMeaning &&
+                          !isMeaningWrong;
                         return (
                           <View key={pair.word} style={styles.practiceMatchRow}>
                             <Pressable
-                              onPress={() => {
-                                if (practiceRevealed) return;
-                                if (wrongMatchAttempt) return;
-                                if (isWordMatched) return;
-                                setActiveMatchWord((current) => (current === pair.word ? null : pair.word));
-                              }}
+                              onPress={() => tapMatchWord(pair.word)}
+                              disabled={wordDisabled}
                               style={[
                                 styles.practiceMatchRowWord,
                                 isWordActive ? styles.practiceMatchChipActive : null,
+                                isWordPending ? styles.practiceMatchChipPending : null,
                                 isWordMatched ? styles.practiceMatchChipCorrect : null,
                                 isWordWrong ? styles.practiceMatchChipWrong : null,
+                                wordDimmed ? styles.practiceMatchChipDimmed : null,
                               ]}
                             >
+                              {/* Identifier color: the word's per-pair accent is shown
+                                  from the very first frame so the user can spot all four
+                                  groups at a glance before forming any pair. Once
+                                  matched / pending / wrong, the same colour persists. */}
                               <View
                                 style={[
                                   styles.practiceMatchRowAccent,
@@ -10233,19 +10673,25 @@ export function MobileLibraryShell(args: {
                               </Text>
                             </Pressable>
                             <Pressable
-                              onPress={() => chooseMatchValue(meaning)}
-                              disabled={
-                                practiceRevealed ||
-                                !activeMatchWord ||
-                                Boolean(matchedPairForMeaning) ||
-                                Boolean(wrongMatchAttempt)
-                              }
+                              onPress={() => tapMatchMeaning(meaning)}
+                              disabled={meaningDisabled}
                               style={[
                                 styles.practiceMatchRowMeaning,
+                                isMeaningActive ? styles.practiceMatchChipActive : null,
+                                isMeaningPending && meaningAccentStyle ? styles.practiceMatchChipPending : null,
                                 matchedPairForMeaning ? styles.practiceMatchChipCorrect : null,
                                 isMeaningWrong ? styles.practiceMatchChipWrong : null,
+                                meaningDimmed ? styles.practiceMatchChipDimmed : null,
                               ]}
                             >
+                              {meaningAccentStyle ? (
+                                <View
+                                  style={[
+                                    styles.practiceMatchRowAccent,
+                                    meaningAccentStyle,
+                                  ]}
+                                />
+                              ) : null}
                               <Text
                                 style={[
                                   styles.practiceMatchRowMeaningText,
@@ -10298,13 +10744,42 @@ export function MobileLibraryShell(args: {
                   >
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText, styles.practiceMeaningFooterButtonText]}>Check answer</Text>
                   </Pressable>
-                ) : (
+                ) : currentPracticeExercise.kind === "match" ? (() => {
+                  // Match footer: hint until all pairs are formed, then Check button.
+                  const totalPairs = currentPracticeExercise.pairs.length;
+                  const filled = Object.keys(pendingPairings).length + matchedWords.length;
+                  const allFilled = filled >= totalPairs;
+                  const flashing = wrongMatchWords.length > 0;
+                  if (allFilled && !flashing) {
+                    return (
+                      <Pressable
+                        onPress={validateMatchPairings}
+                        style={[
+                          styles.inlineButton,
+                          styles.primaryButton,
+                          styles.practiceFooterButton,
+                          styles.practiceMeaningFooterButton,
+                          isCompactMeaningViewport ? styles.practiceMeaningFooterButtonCompact : null,
+                        ]}
+                      >
+                        <Text style={[styles.inlineButtonText, styles.primaryButtonText, styles.practiceMeaningFooterButtonText]}>Check</Text>
+                      </Pressable>
+                    );
+                  }
+                  return (
+                    <Text style={styles.practiceFooterHint}>
+                      {flashing
+                        ? "Some pairs were wrong; try again."
+                        : activeMatchWord
+                          ? "Now choose the matching meaning."
+                          : activeMatchMeaning
+                            ? "Now choose the matching word."
+                            : "Pair every word with its meaning."}
+                    </Text>
+                  );
+                })() : (
                   <Text style={styles.practiceFooterHint}>
-                    {currentPracticeExercise.kind === "match"
-                      ? activeMatchWord
-                        ? "Now choose the matching meaning."
-                        : "Choose a word to begin."
-                      : "Select an answer to continue."}
+                    Select an answer to continue.
                   </Text>
                 )}
               </View>
@@ -14251,6 +14726,7 @@ export function MobileLibraryShell(args: {
   if (activeScreen === "favorites") content = favoritesView;
   if (activeScreen === "journey") content = homeView;
   if (activeScreen === "library") content = libraryView;
+  if (activeScreen === "progress") content = progressView;
   if (activeScreen === "settings") content = settingsView;
   if (activeScreen === "create") content = createView;
   // Cuando usamos sticky nativo iOS, los hijos del ScrollView deben
@@ -15034,6 +15510,14 @@ export function MobileLibraryShell(args: {
                     }}
                   />
                   <MenuLink
+                    label="Library"
+                    icon="journey"
+                    onPress={() => {
+                      setActiveScreen("journey");
+                      setMenuOpen(false);
+                    }}
+                  />
+                  <MenuLink
                     label="My Library"
                     icon="library"
                     onPress={() => {
@@ -15049,11 +15533,6 @@ export function MobileLibraryShell(args: {
                       setMenuOpen(false);
                     }}
                   />
-                  {/* Journey link removed in build 68 — it's already
-                      in the bottom tab nav so the side menu entry was
-                      a duplicate. The "journey" icon in MenuIcon is
-                      still defined in case Journey re-enters the
-                      menu under a different label later. */}
 
                   {effectivePlan === "free" ? (
                     <MenuLink
@@ -15174,7 +15653,7 @@ function BottomTabIcon({ tab, active }: { tab: BottomTab; active: boolean }) {
   if (tab === "explore") return <Feather name="compass" size={18} color={color} />;
   if (tab === "practice") return <MaterialCommunityIcons name="brain" size={19} color={color} />;
   if (tab === "favorites") return <Feather name="star" size={18} color={color} />;
-  if (tab === "journey") return <Feather name="book" size={18} color={color} />;
+  if (tab === "progress") return <Feather name="bar-chart-2" size={18} color={color} />;
   if (tab === "signin") return <Feather name="log-in" size={18} color={color} />;
   return <Feather name="circle" size={18} color={color} />;
 }
@@ -15319,10 +15798,13 @@ const styles = StyleSheet.create({
     gap: 18,
     paddingHorizontal: 24,
     paddingTop: 28,
-    // Just enough clearance to clear the floating bottom tab bar
-    // (~58 pt). Earlier 80 pt left a noticeable empty stretch under
-    // the last carousel on Home; we trade slack for a tighter end.
-    paddingBottom: 56,
+    // Clearance for the floating bottom tab bar + safe-area inset on
+    // notched iPhones (~80 pt bar + ~34 pt home-indicator inset). The
+    // earlier 56 pt left Settings' Sign out / Support buttons hidden
+    // behind the nav; 110 pt clears them and the Personalize grid's
+    // save button without re-introducing the empty-stretch problem on
+    // Home (the last carousel ends well above this padding).
+    paddingBottom: 110,
   },
   containerGrow: {
     flexGrow: 1,
@@ -20135,11 +20617,17 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     minHeight: 64,
   },
-  // Barrita vertical accent a la izquierda de la palabra.
+  // Barrita vertical accent a la izquierda de la palabra. Sólo se pinta
+  // del color del par cuando esa fila ya está emparejada (pending o
+  // matched); cuando la palabra todavía no tiene par, queda muy tenue
+  // para no sugerir un código de color que el usuario no eligió.
   practiceMatchRowAccent: {
     width: 4,
     alignSelf: "stretch",
     borderRadius: 999,
+  },
+  practiceMatchRowAccentIdle: {
+    backgroundColor: "rgba(245,247,251,0.10)",
   },
   practiceMatchRowWordText: {
     color: "#f5f7fb",
@@ -20149,13 +20637,15 @@ const styles = StyleSheet.create({
   },
   practiceMatchRowMeaning: {
     flex: 1.4,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
     borderRadius: 16,
     borderWidth: 1,
     borderColor: "rgba(255,255,255,0.08)",
     backgroundColor: "rgba(7,18,31,0.66)",
-    paddingHorizontal: 14,
-    paddingVertical: 14,
-    justifyContent: "center",
+    paddingHorizontal: 12,
+    paddingVertical: 12,
     minHeight: 64,
   },
   practiceMatchRowMeaningText: {
@@ -20163,6 +20653,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 16,
     fontWeight: "600",
+    flex: 1,
   },
   practiceMatchChip: {
     minHeight: 56,
@@ -20179,6 +20670,14 @@ const styles = StyleSheet.create({
     borderColor: "#67b5ff",
     backgroundColor: "rgba(103,181,255,0.14)",
   },
+  // Pending pair — formed by the user but not yet validated. Brighter
+  // background so the row reads as "linked", but no green: green means
+  // "confirmed correct after Check". The accent bar on each side carries
+  // the per-pair color (A/B/C/D) so paired word+meaning visually rhyme.
+  practiceMatchChipPending: {
+    borderColor: "rgba(245,247,251,0.42)",
+    backgroundColor: "rgba(245,247,251,0.08)",
+  },
   practiceMatchChipCorrect: {
     borderColor: "#6ee7b7",
     backgroundColor: "#6ee7b7",
@@ -20188,6 +20687,14 @@ const styles = StyleSheet.create({
     // visual feedback is consistent across all four practice modes.
     borderColor: "#fb7185",
     backgroundColor: "rgba(251,113,133,0.22)",
+  },
+  // Applied when the chip cannot be tapped right now because the user
+  // has the OTHER side half-selected and this chip is the "same type"
+  // as the active one (e.g. another word while a word is already
+  // active). Communicates the lockout without changing the chip's
+  // identity colour.
+  practiceMatchChipDimmed: {
+    opacity: 0.4,
   },
   practiceMatchChipText: {
     color: "#f5f7fb",

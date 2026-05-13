@@ -74,12 +74,38 @@ image = (
 )
 
 
-# Kokoro and Bark images removed from this deployment for now. The Kokoro
-# image build kept blocking on the GitHub Releases asset fetch inside the
-# Modal container; Bark needed torch + transformers (~6 GB) and the only
-# candidate DE voice was already in the project's "rejected — monotone"
-# memory bucket. Re-introduce in a separate, smaller deploy once each
-# engine has a clean download path and an audition-approved preset.
+# Kokoro: Apache-2.0, high-quality ONNX TTS. We mount the model + voices
+# from a Modal Volume (`polyglot-kokoro`) populated locally via
+# `modal volume put` to bypass the GitHub Releases LFS stall that
+# bricked the earlier `.run_function(_download_kokoro_assets)` approach.
+KOKORO_DIR = Path("/kokoro")
+KOKORO_MODEL_FILE = "kokoro-v1.0.onnx"
+KOKORO_VOICES_FILE = "voices-v1.0.bin"
+
+KOKORO_VOICES = {
+    # voiceId → (kokoro voice name, kokoro lang code accepted by the
+    # phonemizer/espeak backend). The "e*" voice prefix is the kokoro
+    # naming for Spanish models; the runtime lang code must be "es".
+    "kokoro/ef_dora":  ("ef_dora",  "es"),
+    "kokoro/em_alex":  ("em_alex",  "es"),
+    "kokoro/em_santa": ("em_santa", "es"),
+}
+
+kokoro_image = (
+    modal.Image.debian_slim(python_version="3.11")
+    # espeak-ng is required by kokoro-onnx → phonemizer for non-English
+    # languages (it produces the phonemes the model expects).
+    .apt_install("ffmpeg", "espeak-ng", "libespeak-ng1")
+    .pip_install("kokoro-onnx==0.4.9", "soundfile==0.12.1", "fastapi[standard]==0.115.5")
+)
+
+kokoro_voices_volume = modal.Volume.from_name(
+    "polyglot-kokoro", create_if_missing=True
+)
+
+# Bark image removed for now. The candidate DE voice has not been
+# audition-approved and torch + transformers (~6 GB) is too heavy to
+# block other engine work. Re-introduce in a follow-up deploy.
 
 # Forced-alignment image: aeneas needs espeak + python-dev for native build.
 # Pinned numpy<2 because aeneas 1.7.3 was released pre-numpy-2 and breaks
@@ -164,6 +190,39 @@ def _r2_upload(buffer: bytes, key: str, content_type: str) -> str:
     return f"{public_base}/{encoded_key}"
 
 
+def _synth_kokoro(narration: str, voice_name: str, lang_code: str) -> bytes:
+    """Kokoro-onnx synthesis. Model + voices live on the
+    `polyglot-kokoro` Modal Volume mounted at /kokoro (so cold starts
+    don't re-download the ~340 MB checkpoint).
+    """
+    import soundfile as sf
+    from kokoro_onnx import Kokoro
+
+    model_path = KOKORO_DIR / KOKORO_MODEL_FILE
+    voices_path = KOKORO_DIR / KOKORO_VOICES_FILE
+    if not model_path.exists() or not voices_path.exists():
+        raise RuntimeError(
+            f"Kokoro assets missing on volume "
+            f"(model={model_path.exists()}, voices={voices_path.exists()})"
+        )
+
+    kokoro = Kokoro(str(model_path), str(voices_path))
+    samples, sr = kokoro.create(narration, voice=voice_name, lang=lang_code)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        wav = Path(tmp) / "out.wav"
+        mp3 = Path(tmp) / "out.mp3"
+        sf.write(str(wav), samples, sr)
+        ff = subprocess.run(
+            ["ffmpeg", "-y", "-i", str(wav), "-codec:a", "libmp3lame", "-b:a", "128k", str(mp3), "-loglevel", "error"],
+            capture_output=True,
+            check=False,
+        )
+        if ff.returncode != 0 or not mp3.exists():
+            raise RuntimeError(f"ffmpeg failed ({ff.returncode}): {ff.stderr.decode()[-300:]}")
+        return mp3.read_bytes()
+
+
 def _synth_piper(narration: str, voice_name: str) -> bytes:
     onnx = VOICES_DIR / f"{voice_name}.onnx"
     if not onnx.exists():
@@ -240,10 +299,54 @@ def synthesize(payload: dict):
     return {"url": public_url, "filename": safe_name, "bytes": len(mp3_bytes)}
 
 
-# synthesize_kokoro and synthesize_bark endpoints omitted intentionally
-# until each engine has a reliable image build path and (for Bark) an
-# audition-approved voice preset. See the engine-removal note near the
-# top of this file for the full rationale.
+@app.function(
+    image=kokoro_image,
+    secrets=[
+        modal.Secret.from_name("polyglot-r2"),
+        modal.Secret.from_name("polyglot-audio-studio-token"),
+    ],
+    volumes={str(KOKORO_DIR): kokoro_voices_volume},
+    timeout=180,
+    cpu=2,
+    memory=2048,
+)
+@modal.fastapi_endpoint(method="POST", docs=False)
+def synthesize_kokoro(payload: dict):
+    """Kokoro-onnx synthesize endpoint. Same body contract as
+    `synthesize` but voiceId must be one of KOKORO_VOICES.
+    """
+    from fastapi import HTTPException
+
+    expected = os.environ.get("STUDIO_AUDIO_TOKEN", "")
+    presented = (payload.get("_token") or "").strip()
+    if not expected or not hmac.compare_digest(expected, presented):
+        raise HTTPException(status_code=401, detail="Unauthorized")
+
+    voice_id = (payload.get("voiceId") or "").strip()
+    text = (payload.get("text") or "").strip()
+    title = payload.get("title")
+    filename = (payload.get("filename") or "").strip() or f"narration_{int(datetime.now(timezone.utc).timestamp())}"
+
+    if not text:
+        raise HTTPException(status_code=400, detail="Missing text")
+    voice_entry = KOKORO_VOICES.get(voice_id)
+    if not voice_entry:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unsupported voiceId: {voice_id}. Supported: {list(KOKORO_VOICES)}",
+        )
+    voice_name, lang_code = voice_entry
+
+    narration = _build_narration(title, text)
+    mp3_bytes = _synth_kokoro(narration, voice_name, lang_code)
+
+    safe_name = filename.replace("/", "_") if not filename.endswith(".mp3") else filename
+    if not safe_name.endswith(".mp3"):
+        safe_name = f"{safe_name}.mp3"
+    key = f"media/generated/audio/{safe_name}"
+    public_url = _r2_upload(mp3_bytes, key, "audio/mpeg")
+
+    return {"url": public_url, "filename": safe_name, "bytes": len(mp3_bytes)}
 
 
 # Map app-level language strings to aeneas BCP-47 / ISO-639-3 task languages.
