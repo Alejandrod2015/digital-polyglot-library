@@ -389,16 +389,95 @@ function splitKaraokeParagraphs(plainText: string): KaraokeParagraph[] {
   return out;
 }
 
+function stripDiacritics(value: string): string {
+  // NFD decomposes accented characters into base + combining marks; we
+  // then drop the combining marks (\p{M}) so "café" → "cafe", "über" →
+  // "uber", "niño" → "nino". Lets the matcher accept either form when
+  // the LLM-generated story and the vocab list happen to disagree on
+  // accent placement (a real source of missed highlights).
+  return value.normalize("NFD").replace(/\p{M}/gu, "");
+}
+
+// German nominal forms are usually registered as "der Hund" / "die
+// Katze" / "das Auto" in the vocab list, but the story body uses the
+// noun bare ("Hund", "Katze") and inflected ("Hunde", "Katzen"). We
+// also strip plural / indefinite articles. Idempotent for non-DE
+// vocab (no prefix to strip).
+function stripGermanArticle(value: string): string {
+  return value.replace(
+    /^(?:der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines)\s+/i,
+    ""
+  );
+}
+
 function buildVocabLookup(vocab: VocabItem[]): Map<string, VocabItem> {
   const map = new Map<string, VocabItem>();
+  const register = (key: string, item: VocabItem) => {
+    const k = key.toLowerCase().trim();
+    if (!k) return;
+    // First registration wins: an earlier vocab entry's primary form
+    // should not be hijacked by a later entry's variant key, otherwise
+    // a noun in the text could end up displaying the definition of a
+    // homograph from later in the list.
+    if (!map.has(k)) map.set(k, item);
+  };
   for (const item of vocab) {
-    const surface =
-      typeof item.surface === "string" && item.surface.trim() ? item.surface.trim() : "";
+    const surface = typeof item.surface === "string" ? item.surface.trim() : "";
     const word = typeof item.word === "string" ? item.word.trim() : "";
-    if (surface) map.set(surface.toLowerCase(), item);
-    if (word) map.set(word.toLowerCase(), item);
+    for (const primary of [surface, word]) {
+      if (!primary) continue;
+      register(primary, item);
+      const stripped = stripDiacritics(primary);
+      if (stripped !== primary) register(stripped, item);
+      const noArticle = stripGermanArticle(primary);
+      if (noArticle !== primary) {
+        register(noArticle, item);
+        const noArticleStripped = stripDiacritics(noArticle);
+        if (noArticleStripped !== noArticle) register(noArticleStripped, item);
+      }
+    }
   }
   return map;
+}
+
+/**
+ * Token → VocabItem with light-weight variant matching beyond exact
+ * lookup. Order: exact lowercase → accent-stripped → drop trailing
+ * "-s" (regular ES/IT/PT/EN plural) → drop trailing "-es" (regular
+ * Spanish plural, e.g. "papeles" → "papel"). Each fallback also tries
+ * the accent-stripped form. Returns null when nothing matches so the
+ * renderer falls through to the plain-text path.
+ *
+ * Conservative on purpose: no verb conjugation lemmatization, no
+ * German umlaut + plural transforms. Those would need a real
+ * morphological analyzer to avoid false positives, which is beyond
+ * what we can do on-device.
+ */
+function lookupVocabToken(
+  lookup: Map<string, VocabItem>,
+  token: string
+): VocabItem | null {
+  if (!token) return null;
+  const lower = token.toLowerCase();
+  const exact = lookup.get(lower);
+  if (exact) return exact;
+  const stripped = stripDiacritics(lower);
+  if (stripped !== lower) {
+    const strippedHit = lookup.get(stripped);
+    if (strippedHit) return strippedHit;
+  }
+  if (lower.length > 3 && lower.endsWith("s")) {
+    const singular = lower.slice(0, -1);
+    const singularHit = lookup.get(singular) ?? lookup.get(stripDiacritics(singular));
+    if (singularHit) return singularHit;
+    if (lower.length > 4 && lower.endsWith("es")) {
+      const singularEs = lower.slice(0, -2);
+      const singularEsHit =
+        lookup.get(singularEs) ?? lookup.get(stripDiacritics(singularEs));
+      if (singularEsHit) return singularEsHit;
+    }
+  }
+  return null;
 }
 
 // Vocab pill background per grammatical type. Each color is a saturated
@@ -501,7 +580,7 @@ function renderKaraokeParagraph(args: {
     }
 
     const isActive = activeWordIndex === i;
-    const vocabItem = vocabLookup.get(w.text.toLowerCase()) ?? null;
+    const vocabItem = lookupVocabToken(vocabLookup, w.text);
     const vocabKey = vocabItem ? (vocabItem.word ?? w.text).toLowerCase() : null;
     const isFirstVocabHit = vocabKey !== null && !alreadyHighlighted.has(vocabKey);
     if (isFirstVocabHit && vocabKey !== null) alreadyHighlighted.add(vocabKey);
@@ -543,18 +622,35 @@ function renderKaraokeParagraph(args: {
     // baseline (otherwise iOS aligns adjacent gap text to the View's
     // own shorter baseline, which makes periods and commas float above
     // the line). The inner <View> is the visible short rounded pill.
-    nodes.push(
-      <View key={`${paragraphKey}-w-${i}`} style={styles.karaokeWordOuter}>
-        <View style={containerStyle}>
-          <Text
-            style={wordTextStyle}
-            onPress={vocabItem ? () => onWordPress(vocabItem, paragraph.text) : undefined}
-          >
-            {w.text}
-          </Text>
+    //
+    // Vocab words wrap the outer in a <Pressable> with a generous
+    // hitSlop so the tap target extends past the visible pill — small
+    // pills like "de", "la", "in" used to require a near-pixel-perfect
+    // tap, especially in mid-scroll. Pressable handles touches at the
+    // gesture-responder level so it never conflicts with the parent
+    // <Pressable> wrapper (paragraph blank-space close-on-tap).
+    if (vocabItem) {
+      nodes.push(
+        <Pressable
+          key={`${paragraphKey}-w-${i}`}
+          style={styles.karaokeWordOuter}
+          hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+          onPress={() => onWordPress(vocabItem, paragraph.text)}
+        >
+          <View style={containerStyle}>
+            <Text style={wordTextStyle}>{w.text}</Text>
+          </View>
+        </Pressable>
+      );
+    } else {
+      nodes.push(
+        <View key={`${paragraphKey}-w-${i}`} style={styles.karaokeWordOuter}>
+          <View style={containerStyle}>
+            <Text style={wordTextStyle}>{w.text}</Text>
+          </View>
         </View>
-      </View>
-    );
+      );
+    }
 
     cursor = w.charEnd;
   }
@@ -929,6 +1025,12 @@ export function ReaderScreen(args: {
       : preferredAudioUrl;
   const isOfflineAudio = typeof audioUrl === "string" && audioUrl.startsWith("file://");
   const [selectedVocab, setSelectedVocab] = useState<VocabItem | null>(null);
+  // Scale spring for the vocab panel "Save" button. Pops the button
+  // when the user taps to favorite a word so the action feels
+  // tactile, matching the bookmark / download micro-animations in
+  // the top bar. No pop on unsave — we only celebrate the positive
+  // outcome.
+  const saveButtonScale = useRef(new Animated.Value(1)).current;
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
   // Animated values for the end-of-story prompt. Entrance is a spring-in
   // (backdrop fades, card slides up with a small overshoot and scales to 1)
@@ -1069,6 +1171,14 @@ export function ReaderScreen(args: {
   // autoscroll for a short grace window after each touch so the user
   // has a stable target.
   const lastUserTouchAtRef = useRef(0);
+  // Live scroll Y, updated on every onScroll. Used to cancel any
+  // animated `scrollTo` that is still in flight when the user touches
+  // the screen: doing an instant scrollTo to the current Y stops the
+  // animation mid-frame so the pills underneath the finger stop
+  // moving. Without this, taps land on the destination frame instead
+  // of where the user sees the pill, which is what "tap during scroll
+  // sometimes fails" feels like.
+  const currentScrollYRef = useRef(0);
   const blockOffsetsRef = useRef<number[]>([]);
   const hasRestoredPositionRef = useRef(false);
   const lastTrackedReadingRatioRef = useRef<number | null>(null);
@@ -1306,6 +1416,7 @@ export function ReaderScreen(args: {
     const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
     contentHeightRef.current = contentSize.height;
     viewportHeightRef.current = layoutMeasurement.height;
+    currentScrollYRef.current = contentOffset.y;
     const scrollableHeight = Math.max(contentSize.height - layoutMeasurement.height, 1);
     const ratio = Math.min(1, Math.max(0, contentOffset.y / scrollableHeight));
     lastScrollRatioRef.current = ratio;
@@ -1355,6 +1466,17 @@ export function ReaderScreen(args: {
         contentInsetAdjustmentBehavior="automatic"
         onTouchStart={() => {
           lastUserTouchAtRef.current = Date.now();
+          // Cancel any animated scrollTo still in flight by snapping
+          // to the current Y instantly. The visible pills under the
+          // finger stop moving immediately, so iOS hit-tests against
+          // the actual rendered frame instead of the animation's
+          // destination. Without this, taps during the 250 ms window
+          // after an autoscroll tick frequently miss because the
+          // pill has already drifted by the time the tap registers.
+          scrollViewRef.current?.scrollTo({
+            y: currentScrollYRef.current,
+            animated: false,
+          });
         }}
         onTouchEnd={() => {
           lastUserTouchAtRef.current = Date.now();
@@ -1711,23 +1833,59 @@ export function ReaderScreen(args: {
                 <Text style={styles.vocabBubbleDefinition}>{compactDefinition}</Text>
               ) : null}
               <View style={styles.vocabActionRow}>
-                <Pressable
-                  onPress={() => onToggleFavoriteWord(selectedVocab, selectedVocab.note)}
-                  style={[
-                    styles.vocabAction,
-                    isFavoriteWord(selectedVocab.word) ? styles.vocabActionActive : null,
-                  ]}
-                >
-                  <Feather
-                    name="heart"
-                    size={14}
-                    color="#ffffff"
-                    style={isFavoriteWord(selectedVocab.word) ? styles.vocabActionIconActive : undefined}
-                  />
-                  <Text style={styles.vocabActionText}>
-                    {isFavoriteWord(selectedVocab.word) ? "Saved" : "Save"}
-                  </Text>
-                </Pressable>
+                {(() => {
+                  const isSavedWord = isFavoriteWord(selectedVocab.word);
+                  return (
+                    <Animated.View style={{ transform: [{ scale: saveButtonScale }] }}>
+                      <Pressable
+                        onPress={() => {
+                          const wasSaved = isFavoriteWord(selectedVocab.word);
+                          onToggleFavoriteWord(selectedVocab, selectedVocab.note);
+                          if (!wasSaved) {
+                            // Pop only on save (positive action). On
+                            // unsave the chip just toggles back to its
+                            // resting state — no celebration needed.
+                            Animated.sequence([
+                              Animated.spring(saveButtonScale, {
+                                toValue: 1.12,
+                                friction: 4,
+                                tension: 180,
+                                useNativeDriver: true,
+                              }),
+                              Animated.spring(saveButtonScale, {
+                                toValue: 1,
+                                friction: 5,
+                                tension: 120,
+                                useNativeDriver: true,
+                              }),
+                            ]).start();
+                          }
+                        }}
+                        accessibilityLabel={isSavedWord ? "Remove from saved words" : "Save word"}
+                        hitSlop={6}
+                        style={({ pressed }) => [
+                          styles.vocabAction,
+                          isSavedWord ? styles.vocabActionActive : null,
+                          pressed ? styles.vocabActionPressed : null,
+                        ]}
+                      >
+                        <MaterialCommunityIcons
+                          name={isSavedWord ? "heart" : "heart-plus-outline"}
+                          size={16}
+                          color={isSavedWord ? "#0e1727" : "#ffffff"}
+                        />
+                        <Text
+                          style={[
+                            styles.vocabActionText,
+                            isSavedWord ? styles.vocabActionTextActive : null,
+                          ]}
+                        >
+                          {isSavedWord ? "Saved" : "Save word"}
+                        </Text>
+                      </Pressable>
+                    </Animated.View>
+                  );
+                })()}
               </View>
             </View>
           </Pressable>
@@ -2380,26 +2538,50 @@ const styles = StyleSheet.create({
   vocabAction: {
     alignSelf: "flex-start",
     borderRadius: 999,
-    paddingHorizontal: 14,
+    paddingHorizontal: 16,
     paddingVertical: 10,
-    backgroundColor: "#21456c",
+    backgroundColor: "#1e3a5f",
+    borderWidth: 1,
+    // Cool cyan hint on the resting state so the chip reads as
+    // "tap me to keep this word" rather than as flat metadata. The
+    // glow matches the sky-blue family used by vocab pills, so the
+    // user feels like they are saving the same hue they just tapped.
+    borderColor: "rgba(125, 211, 252, 0.5)",
     alignItems: "center",
     flexDirection: "row",
-    gap: 6,
+    gap: 8,
+    shadowColor: "#000000",
+    shadowOpacity: 0.18,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
   },
   vocabActionActive: {
-    backgroundColor: "#745224",
+    // Gold matches the bookmark icon in the top bar and the karaoke
+    // active highlight — both signals already mean "this is yours
+    // now". Reusing the hue ties the save action into the same
+    // visual language instead of inventing a third color.
+    backgroundColor: "#f8c15c",
+    borderColor: "rgba(248, 193, 92, 0.95)",
+    shadowColor: "#f8c15c",
+    shadowOpacity: 0.45,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 4 },
+  },
+  vocabActionPressed: {
+    opacity: 0.85,
   },
   vocabActionRow: {
     flexDirection: "row",
     justifyContent: "flex-start",
   },
-  vocabActionIconActive: {
-    opacity: 1,
-  },
   vocabActionText: {
     color: "#ffffff",
-    fontSize: 13,
+    fontSize: 14,
+    fontWeight: "700",
+    letterSpacing: 0.2,
+  },
+  vocabActionTextActive: {
+    color: "#0e1727",
     fontWeight: "800",
   },
   playerDock: {
