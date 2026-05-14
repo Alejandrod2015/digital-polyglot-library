@@ -130,6 +130,41 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
   );
   const [error, setError] = useState<string | null>(null);
   const [touchedSlug, setTouchedSlug] = useState(false);
+  type GenerateKind = "text" | "vocab" | "cover" | "audio";
+  const [generating, setGenerating] = useState<GenerateKind | null>(null);
+  const [genStatus, setGenStatus] = useState<string | null>(null);
+
+  async function runGenerator(kind: GenerateKind) {
+    if (isNew) {
+      setError("Guarda la historia primero. Los generadores trabajan sobre una historia existente.");
+      return;
+    }
+    if (generating) return;
+    setGenerating(kind);
+    setError(null);
+    setGenStatus(`Generando ${kind}...`);
+    try {
+      const res = await fetch(
+        `/api/studio/standalone-stories/${encodeURIComponent(id)}/generate-${kind}`,
+        { method: "POST", headers: { "content-type": "application/json" } }
+      );
+      if (!res.ok) {
+        const j = (await res.json().catch(() => ({}))) as { error?: string };
+        throw new Error(j.error ?? `Generation failed (${res.status})`);
+      }
+      const j = (await res.json()) as { story: Partial<StudioStandaloneStory> };
+      // Merge only the fields the endpoint actually updated, so other in-flight
+      // edits in the form don't get wiped.
+      setForm((prev) => ({ ...prev, ...j.story }));
+      setGenStatus(`✓ ${kind} listo`);
+      setTimeout(() => setGenStatus(null), 2500);
+    } catch (e) {
+      setError((e as Error).message);
+      setGenStatus(null);
+    } finally {
+      setGenerating(null);
+    }
+  }
 
   useEffect(() => {
     if (isNew) return;
@@ -297,6 +332,22 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
         </div>
       )}
 
+      {genStatus && (
+        <div
+          style={{
+            padding: "8px 14px",
+            background: "rgba(20, 184, 166, 0.1)",
+            border: "1px solid rgba(20, 184, 166, 0.3)",
+            borderRadius: 6,
+            color: "#14b8a6",
+            fontSize: 12,
+            marginBottom: 14,
+          }}
+        >
+          {genStatus}
+        </div>
+      )}
+
       {/* Metadata */}
       <div style={card}>
         <h3 style={{ margin: 0, marginBottom: 12, fontSize: 14 }}>Metadata</h3>
@@ -401,7 +452,18 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
 
       {/* Content */}
       <div style={card}>
-        <h3 style={{ margin: 0, marginBottom: 12, fontSize: 14 }}>Contenido</h3>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+          <h3 style={{ margin: 0, fontSize: 14 }}>Contenido</h3>
+          <button
+            type="button"
+            onClick={() => runGenerator("text")}
+            disabled={generating !== null || isNew}
+            style={{ ...btnGhost, fontSize: 12 }}
+            title={isNew ? "Guarda la historia primero" : "Generar título + texto con IA"}
+          >
+            {generating === "text" ? "Generando…" : "🪄 Generate story"}
+          </button>
+        </div>
         <label style={label}>Sinopsis</label>
         <textarea
           style={{ ...input, minHeight: 70, fontFamily: "inherit" }}
@@ -419,7 +481,18 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
 
       {/* Vocab */}
       <div style={card}>
-        <h3 style={{ margin: 0, marginBottom: 12, fontSize: 14 }}>Vocabulary</h3>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+          <h3 style={{ margin: 0, fontSize: 14 }}>Vocabulary</h3>
+          <button
+            type="button"
+            onClick={() => runGenerator("vocab")}
+            disabled={generating !== null || isNew}
+            style={{ ...btnGhost, fontSize: 12 }}
+            title={isNew ? "Guarda la historia primero" : "Extraer vocab del texto con IA"}
+          >
+            {generating === "vocab" ? "Generando…" : "🧠 Generate vocabulary"}
+          </button>
+        </div>
         <label style={label}>vocabRaw (JSON array de {"{ word, definition, type? }"})</label>
         <textarea
           style={{ ...input, minHeight: 200, fontFamily: "ui-monospace, monospace", fontSize: 12 }}
@@ -433,7 +506,29 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
 
       {/* Media */}
       <div style={card}>
-        <h3 style={{ margin: 0, marginBottom: 12, fontSize: 14 }}>Media</h3>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12, flexWrap: "wrap", gap: 8 }}>
+          <h3 style={{ margin: 0, fontSize: 14 }}>Media</h3>
+          <div style={{ display: "flex", gap: 8 }}>
+            <button
+              type="button"
+              onClick={() => runGenerator("cover")}
+              disabled={generating !== null || isNew}
+              style={{ ...btnGhost, fontSize: 12 }}
+              title={isNew ? "Guarda la historia primero" : "Generar cover con Flux + subir a R2"}
+            >
+              {generating === "cover" ? "Generando…" : "🖼️ Generate cover"}
+            </button>
+            <button
+              type="button"
+              onClick={() => runGenerator("audio")}
+              disabled={generating !== null || isNew}
+              style={{ ...btnGhost, fontSize: 12 }}
+              title={isNew ? "Guarda la historia primero" : "Narrar con ElevenLabs + subir a R2"}
+            >
+              {generating === "audio" ? "Generando…" : "🎙️ Generate audio"}
+            </button>
+          </div>
+        </div>
         <FieldRow>
           <div>
             <label style={label}>Cover URL (R2 preferido)</label>
