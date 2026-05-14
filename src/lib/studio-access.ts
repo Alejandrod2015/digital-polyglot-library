@@ -45,6 +45,7 @@ const ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
     "studio:journey-builder",
     "studio:drafts",
     "studio:standalone-stories",
+    "studio:catalog-books",
   ],
   content_creator: [
     "studio:view",
@@ -52,6 +53,7 @@ const ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
     "studio:journey-stories",
     "studio:journey-builder",
     "studio:standalone-stories",
+    "studio:catalog-books",
   ],
 };
 
@@ -66,6 +68,7 @@ const PATH_PERMISSIONS: Array<{ pattern: RegExp; permission: string }> = [
   { pattern: /^\/studio\/planner/, permission: "studio:planner" },
   { pattern: /^\/studio\/journey-stories/, permission: "studio:journey-stories" },
   { pattern: /^\/studio\/standalone-stories/, permission: "studio:standalone-stories" },
+  { pattern: /^\/studio\/catalog-books/, permission: "studio:catalog-books" },
   { pattern: /^\/studio\/journey-builder/, permission: "studio:journey-builder" },
   { pattern: /^\/studio\/sanity/, permission: "studio:sanity" },
   { pattern: /^\/studio\/drafts/, permission: "studio:drafts" },
