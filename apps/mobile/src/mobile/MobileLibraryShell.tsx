@@ -130,6 +130,7 @@ import {
   saveStandaloneStoryOffline,
   type OfflineLibrarySnapshot,
 } from "../lib/offlineStore";
+import { tryBuildOfflineStoryPractice } from "../lib/offlinePracticeFetch";
 import type { PushRegistrationState } from "../notifications/registerPush";
 import { syncDailyReminderSchedule, type ReminderDestination } from "../notifications/dailyReminder";
 import {
@@ -6223,6 +6224,35 @@ export function MobileLibraryShell(args: {
   }
 
   /**
+   * Premium-gated offline fallback for story practice. Builds items +
+   * synthetic sentence-level audio segments from the local offline copy
+   * when the snapshot has `text + vocabRaw + wordTimingsRaw`. Injects the
+   * segments into the appropriate audio-by-slug state map so the practice
+   * player's `findSegmentForClip` resolves them the same way it does
+   * online. Returns null when offline build isn't possible (non-premium,
+   * missing snapshot, missing required fields, etc.).
+   */
+  function tryOfflineStoryPracticeFallback(slug: string): PracticeFavoriteItem[] | null {
+    if (!canDownloadOffline) return null;
+    const bundle = tryBuildOfflineStoryPractice({
+      storySlug: slug,
+      offlineSnapshot,
+    });
+    if (!bundle) return null;
+    const normalizedSlug = slug.toLowerCase();
+    const audioData: StoryAudioData = {
+      audioUrl: bundle.audio.audioUrl,
+      audioSegments: bundle.audio.audioSegments,
+    };
+    if (bundle.storySource === "standalone") {
+      setStandaloneStoryAudioBySlug((current) => ({ ...current, [normalizedSlug]: audioData }));
+    } else {
+      setUserStoryAudioBySlug((current) => ({ ...current, [normalizedSlug]: audioData }));
+    }
+    return bundle.items;
+  }
+
+  /**
    * Background fetch kicked off when the reader opens. Stores the
    * resulting items so `openStoryPractice` is instant when the user
    * taps the end-of-story prompt. Idempotent: a second call for the
@@ -6245,8 +6275,13 @@ export function MobileLibraryShell(args: {
         practicePrefetchBySlugRef.current.set(slug, items);
       })
       .catch(() => {
-        // Swallow — openStoryPractice will retry with a live fetch and
-        // surface the error there if it still fails.
+        // Network fetch failed (likely offline). For premium users with a
+        // downloaded story we can still seed the cache from the local
+        // snapshot so `openStoryPractice` resolves instantly later.
+        const offlineItems = tryOfflineStoryPracticeFallback(slug);
+        if (offlineItems && offlineItems.length > 0) {
+          practicePrefetchBySlugRef.current.set(slug, offlineItems);
+        }
       })
       .finally(() => {
         practicePrefetchInFlightRef.current.delete(slug);
@@ -6338,6 +6373,16 @@ export function MobileLibraryShell(args: {
       setPracticeLaunchLoading(false);
       commitStoryPracticeItems(selection, items);
     } catch (error) {
+      // Network fetch failed. Try the offline build before surfacing an
+      // error so premium users with a downloaded copy can still practice
+      // in the metro / on a plane / etc.
+      const offlineItems = tryOfflineStoryPracticeFallback(selection.story.slug);
+      if (offlineItems && offlineItems.length > 0) {
+        practicePrefetchBySlugRef.current.set(selection.story.slug, offlineItems);
+        setPracticeLaunchLoading(false);
+        commitStoryPracticeItems(selection, offlineItems);
+        return;
+      }
       setPracticeLaunchLoading(false);
       setPracticeSeedItems(null);
       setPracticeLoadError(error instanceof Error ? error.message : "Could not load story practice.");
@@ -10933,7 +10978,7 @@ export function MobileLibraryShell(args: {
                           >
                             {currentPracticeExercise.sentence}
                           </Text>
-                          {currentPracticeExercise.audioClip ? (
+                          {currentPracticeExercise.audioClip && !isOffline ? (
                             <Pressable
                               onPress={() => { void playPracticeContextClipHqOnly(); }}
                               style={[
@@ -10967,17 +11012,17 @@ export function MobileLibraryShell(args: {
                             </Text>
                             <Pressable
                               onPress={() => { void playPracticeContextClipHqOnly(); }}
-                              disabled={!currentPracticeExercise.audioClip}
+                              disabled={!currentPracticeExercise.audioClip || isOffline}
                               style={[
                                 styles.practiceMeaningAudioButton,
                                 isCompactMeaningViewport ? styles.practiceMeaningAudioButtonCompact : null,
-                                !currentPracticeExercise.audioClip ? styles.practiceMeaningAudioButtonDisabled : null,
+                                !currentPracticeExercise.audioClip || isOffline ? styles.practiceMeaningAudioButtonDisabled : null,
                               ]}
                             >
                               <Feather
                                 name={audioActive ? "square" : "volume-2"}
                                 size={18}
-                                color={currentPracticeExercise.audioClip ? "#9fe8ff" : "rgba(159,232,255,0.35)"}
+                                color={currentPracticeExercise.audioClip && !isOffline ? "#9fe8ff" : "rgba(159,232,255,0.35)"}
                               />
                             </Pressable>
                           </View>
