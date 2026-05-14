@@ -2,7 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
-import { generateStoryPayload } from "@/lib/storyGenerator";
+import { extractFirstSentence, generateStoryPayload } from "@/lib/storyGenerator";
 
 export const maxDuration = 60;
 
@@ -87,6 +87,13 @@ export async function POST(request: Request) {
       for (const m of matches) { if (!stop.has(m)) usedNames.add(m); }
     }
     const usedCharacterNames = [...usedNames].slice(0, 30);
+    // First sentences of every other story in the journey — feeds the
+    // opening-variety constraint in the generator so the regenerated
+    // body's first sentence is structurally distinct from existing ones.
+    const existingOpenings = (existingStories as Array<{ text: string | null }>)
+      .filter((s) => Boolean(s.text))
+      .map((s) => extractFirstSentence(s.text))
+      .filter((s: string) => s.length > 0);
 
     // Generate new story with existing title and synopsis
     const detailedRegion = getDetailedRegionDescription(story.journey.variant, story.journey.language);
@@ -101,6 +108,7 @@ export async function POST(request: Request) {
       synopsis: story.synopsis || "",
       existingTitles,
       usedCharacterNames,
+      existingOpenings,
     });
 
     if (!payload) {

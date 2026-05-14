@@ -45,6 +45,20 @@ export type GenerateStoryParams = {
    */
   wordsToAvoid?: string[];
   existingArcTypes?: string[];
+  /**
+   * First sentences of each story already in the same journey. Injected
+   * into the prompt as a hard constraint: the new story's opening MUST
+   * be syntactically distinct from every one of these. No prescribed
+   * "right" opening — variety is enforced negatively, not via a fixed
+   * rotation menu (which the model just memorizes and reuses).
+   */
+  existingOpenings?: string[];
+  /**
+   * Body style for the generated story.
+   * - "multivoice" (default): narrator opener + `Speaker: line` dialogue blocks; >=2 named speakers, >=4 speaker lines. This is what the studio pipeline ships today; the prompt block is byte-identical to the historical one. Works at every CEFR level.
+   * - "narrator": continuous prose carried by a close-third-person narrator. Dialogue stays embedded with quotation marks. Works at every CEFR level; the caller decides. Observed tendency (DE A1 experiment 2026-05-14): narrator prose drags grammar (Präteritum, declined-preposition relatives, zu-infinitives) toward A2+ even when the lexicon stays A1, because dialogue-free narration uses literary tenses. Multivoice avoids this because speaker turns force present + Perfekt. Use this knowledge when picking the style, not as a hard wall. Kept fully independent from the multi-voice prompt: changing one MUST NOT change the other.
+   */
+  storyStyle?: "multivoice" | "narrator";
 };
 
 const MAX_GENERATION_ATTEMPTS = 3;
@@ -66,6 +80,44 @@ function sanitizeGeneratedStoryText(input: string): string {
 
 function hasLegacyHtmlStoryMarkup(text: string): boolean {
   return /<(?:p|blockquote|div|span|br)\b/i.test(text);
+}
+
+/**
+ * Extract the first sentence of a story body. Handles three formats:
+ *  - Plain-text multivoice (current default): take the narrator opening
+ *    paragraph (everything before the first `Speaker:` line block), then
+ *    its first sentence.
+ *  - Legacy `<blockquote>...` HTML: take the first blockquote, then its
+ *    first sentence.
+ *  - Anything else: take the first sentence of the trimmed text.
+ *
+ * Used by the journey-generate / regenerate-text routes to feed the
+ * model the actual openings of prior stories so the new opening can be
+ * required to differ syntactically. Returns `""` for empty input.
+ */
+export function extractFirstSentence(text: string | null | undefined): string {
+  if (!text) return "";
+  let working = text.trim();
+  if (!working) return "";
+
+  const bqMatch = working.match(/<blockquote>([\s\S]*?)<\/blockquote>/i);
+  if (bqMatch) {
+    working = bqMatch[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  } else {
+    const blocks = working.split(/\n{2,}/);
+    const firstBlock = blocks[0]?.trim() ?? "";
+    const lines = firstBlock.split("\n");
+    const narratorLines: string[] = [];
+    for (const line of lines) {
+      if (/^[\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}:\s+/u.test(line)) break;
+      narratorLines.push(line);
+    }
+    working = narratorLines.join(" ").trim();
+  }
+
+  if (!working) return "";
+  const sentenceMatch = working.match(/^[^.!?…]+[.!?…]/);
+  return (sentenceMatch ? sentenceMatch[0] : working).trim();
 }
 
 function extractSpeakerNames(text: string): string[] {
@@ -113,6 +165,75 @@ function isValidMultiVoiceJourneyBody(text: string): { ok: boolean; reason?: str
 
   return { ok: true };
 }
+
+/**
+ * Validator for the NARRATOR-STYLE body. Lives next to the multi-voice
+ * validator above but is fully independent: it must never share gates
+ * with isValidMultiVoiceJourneyBody.
+ *
+ * Rules:
+ *  - Same HTML ban as multivoice (we are not bringing back blockquote markup).
+ *  - The body must NOT look like multi-voice: if the model emits 3+ `Speaker: line`
+ *    blocks it slipped into the wrong style and we reject.
+ *  - The first block must be a real prose paragraph, not a speaker tag.
+ */
+function isValidNarratorJourneyBody(text: string): { ok: boolean; reason?: string } {
+  if (hasLegacyHtmlStoryMarkup(text)) {
+    return { ok: false, reason: "Body used legacy HTML markup; must be plain text prose." };
+  }
+
+  const speakerLines = countSpeakerLines(text);
+  if (speakerLines >= 3) {
+    return {
+      ok: false,
+      reason: `Body looks like multi-voice (${speakerLines} 'Speaker: line' blocks). Narrator style must keep dialogue embedded inside prose with quotation marks; do not label lines with character names.`,
+    };
+  }
+
+  if (!hasNarratorOpeningParagraph(text)) {
+    return { ok: false, reason: "Body must open with a prose paragraph (not a 'Speaker: line' block)." };
+  }
+
+  return { ok: true };
+}
+
+// ──────────────────────────────────────────────────────────────────────────
+// STYLE BLOCKS — body-format and style-specific Requirements bullets.
+//
+// These two constants are kept INDEPENDENT on purpose. The studio pipeline
+// ships multi-voice by default; the narrator variant exists for experiments
+// (and for languages where free multi-voice TTS is not viable). Touching
+// one MUST NOT touch the other. Do not factor them through a shared helper.
+// ──────────────────────────────────────────────────────────────────────────
+
+// Multi-voice body format. Byte-identical to the historical prompt block.
+const MULTIVOICE_BODY_FORMAT_BLOCK = `Body format is REQUIRED:
+- Plain text only. NO HTML. Do NOT use <blockquote>, <p>, <span>, or any tags.
+- Open with one short narrator paragraph in close third person.
+- After that, use multi-voice dialogue blocks in the exact form: Speaker: line
+- Separate paragraphs/turns with blank lines.
+- Use at least 2 distinct named speakers.
+- Use at least 4 total speaker lines.
+- The narrator may return briefly between dialogue sections, but the story must clearly read as multi-voice, not as single-voice prose with a few quoted lines.`;
+
+// Multi-voice pacing bullets (the two bullets in the Requirements section that
+// are style-specific). Byte-identical to the historical prompt.
+const MULTIVOICE_PACING_BULLETS = `- Include frequent dialogue beats and immediate reactions to keep pacing lively.
+- Do NOT let the body collapse into a single-character internal monologue. The reader should hear distinct people talking.`;
+
+// Narrator body format. Used ONLY when params.storyStyle === "narrator".
+const NARRATOR_BODY_FORMAT_BLOCK = `Body format is REQUIRED:
+- Plain text only. NO HTML. Do NOT use <blockquote>, <p>, <span>, or any tags.
+- Continuous prose carried by a close third-person narrator with strong internal focalization. A single TTS voice will read the whole body, so do NOT split lines by speaker.
+- Do NOT use the multi-voice "Speaker: line" format. Do NOT prefix any paragraph with a character name followed by a colon.
+- Dialogue is allowed and welcome, but it MUST stay embedded inside narrative paragraphs, using standard quotation marks native to the target language («», "", or curly quotes). Never use em-dashes as dialogue delimiters (em-dashes are banned project-wide).
+- Split the body into 4 or more prose paragraphs separated by blank lines.
+- Quoted speech is a beat inside the prose, never the structural skeleton of the story.
+- A single-character contemplative arc is fully valid in this style; the narrator can carry the whole story without a second speaker.`;
+
+// Narrator pacing bullets. Replace the multi-voice cluster bullet-for-bullet.
+const NARRATOR_PACING_BULLETS = `- Maintain pacing through swift scene cuts, concrete sensory beats, and short paragraphs; embedded dialogue is welcome but never required.
+- A single-protagonist arc is fully valid; the narrator can carry the entire story without a second speaker. Internal monologue and contemplative scenes are explicitly allowed.`;
 
 function truncateToWordLimit(text: string, maxWords: number): string {
   const words = text.trim().split(/\s+/).filter(Boolean);
@@ -202,12 +323,31 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     usedCharacterNames = [],
     wordsToAvoid = [],
     existingArcTypes = [],
+    existingOpenings = [],
+    storyStyle = "multivoice",
   } = params;
-  const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
 
   const learnerProfile = cefrPromptLabel(cefrLevel, level);
   const cefrCode = resolveCefrLevel(cefrLevel, level);
   const cefrLabel = cefrCode ? cefrCode.toUpperCase() : "";
+
+  // Note (not enforced): the 2026-05-14 narrator-A1 experiment with
+  // `Pellkartoffeln am Abend` (DE) showed that continuous prose narration
+  // tends to pull grammar (Präteritum, declined-preposition relatives,
+  // zu-infinitives) toward A2+ even when the lexicon stays A1. The
+  // multivoice format constrains grammar mechanically via speaker turns;
+  // narrator prose does not. Worth knowing when choosing the style, but
+  // the caller decides — generator does not gate on level.
+
+  // Select the style-specific blocks/validator once per call. The branches
+  // are intentionally fully separate; see the comment above the constants.
+  const bodyFormatBlock =
+    storyStyle === "narrator" ? NARRATOR_BODY_FORMAT_BLOCK : MULTIVOICE_BODY_FORMAT_BLOCK;
+  const pacingBullets =
+    storyStyle === "narrator" ? NARRATOR_PACING_BULLETS : MULTIVOICE_PACING_BULLETS;
+  const validateBody =
+    storyStyle === "narrator" ? isValidNarratorJourneyBody : isValidMultiVoiceJourneyBody;
+  const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
   // Lexical constraint applies on every generation: keep the whole story
   // body — not only the highlighted vocab items — within the target CEFR
   // level. Narrow on purpose: lexicon only, no constraints on tense,
@@ -254,6 +394,24 @@ The reader should finish this story feeling something different from what the pr
   const existingArcTypesClause = existingArcTypes.length
     ? `\nRecent arc types already used nearby in this journey: ${existingArcTypes.join(", ")}. Prefer a different arc type unless the synopsis absolutely requires otherwise.`
     : "";
+  // Opening-variety constraint. The model has a strong tendency at A1 to
+  // default to "Es ist [time] [place]." or some other safe formula it
+  // memorized from training. Prescriptive rotation menus ("rotate among
+  // 5 strategies") just become the new fallback. Instead, we list the
+  // ACTUAL first sentences already in the journey and require the new
+  // opening to be syntactically distinct from every one of them — no
+  // prescribed correct shape, just a forbidden set that grows with each
+  // saved story.
+  const existingOpeningsClause = existingOpenings.length
+    ? `\n\nOPENING VARIETY (HARD CONSTRAINT, read carefully):
+These are the first sentences of every story already in this journey:
+${existingOpenings.slice(0, 24).map((o, i) => `[${i + 1}] ${o}`).join("\n")}
+Your story's first sentence MUST be syntactically distinct from every one of these. Do not echo their word order, their grammatical shape, their setup pattern, or their lead element. Specifically:
+- If many of them start with "Es ist [time-marker] ...", yours must NOT start with "Es ist" — not as a softer variant, not at all.
+- If many of them lead with a time-marker followed by a place-marker, yours must lead with something else entirely.
+- Vary verb position, sentence type (declarative / fragment / line of dialogue), subject placement, and the kind of detail you front-load (action, sensory, internal, environmental, object, character gesture).
+There is NO prescribed correct opening shape. Invent the opening you think serves THIS story best, with the only rule that it must not echo any of the openings above. The set of forbidden patterns grows with every saved story — variety is enforced cumulatively, not by a fixed rotation menu.`
+    : "";
 
   let previousFeedback = "";
   let finalPayload: StoryJSON | null = null;
@@ -284,14 +442,7 @@ Never start with a one-word translation followed by punctuation (e.g. "Silence;"
 Never start with article + noun (or article + noun + gender) followed by punctuation. Forbidden: "A book; bound pages...", "The market; vendors selling...", "A newspaper (f); printed news...", "To work; to do a job...". The first clause must already be doing definitional work, not announcing the gloss before the colon. Instead lead with a richer descriptor that integrates the meaning: "Bound printed pages read for pleasure or study", "Open-air gathering of vendors selling food and produce", "Daily printed news, read at home or in cafés".
 Never use em-dashes (—); use semicolons, colons, commas, or parentheses instead.
 Never return one-word literal translations.
-Body format is REQUIRED:
-- Plain text only. NO HTML. Do NOT use <blockquote>, <p>, <span>, or any tags.
-- Open with one short narrator paragraph in close third person.
-- After that, use multi-voice dialogue blocks in the exact form: Speaker: line
-- Separate paragraphs/turns with blank lines.
-- Use at least 2 distinct named speakers.
-- Use at least 4 total speaker lines.
-- The narrator may return briefly between dialogue sections, but the story must clearly read as multi-voice, not as single-voice prose with a few quoted lines.
+${bodyFormatBlock}
 
 CRITICAL — no non-vocalized sounds, ever. The narrator voice is a real TTS (ElevenLabs) that CANNOT render laughs, sighs, hums, or stage directions. Any of these in the body breaks the audio and the story has to be re-written:
 - NO laughter spelled out: "haha", "jaja", "jeje", "Hahaha", "ja ja", "hehe", "kkk", etc.
@@ -318,23 +469,10 @@ Use a close third-person narrator with strong internal focalization.
 - Keep the narrative specific and vivid (concrete scenes, actions, and consequences), not generic.
 - Keep paragraphs short and dynamic (usually 1-3 sentences per paragraph).
 - Avoid long expository narrator blocks; reduce detached description and increase character-centered viewpoint.
-- Include frequent dialogue beats and immediate reactions to keep pacing lively.
-- Do NOT let the body collapse into a single-character internal monologue. The reader should hear distinct people talking.
-- The opening must feel authored, not templated. Avoid reusing the same camera move across stories.
-- Do NOT default to this opening formula:
-  - "Es [day/time] en [place]."
-  - then a smell/weather sentence
-  - then "X enters/walks/sees a small local place"
-  - then a short inventory of tables, counter, window, or objects
-- Specifically, avoid opening with "Es ..." unless there is a strong reason. Vary the first sentence shape across stories.
-- Rotate among different opening strategies:
-  - start with a concrete action already in progress
-  - start with a line of dialogue, then reveal place/time
-  - start with a striking object or sound tied to the conflict
-  - start from the protagonist's inner tension before naming the setting
-  - start with a small physical gesture that already implies the problem
-- Delay at least one of these on purpose in many stories: the exact place, the exact time of day, the food item, or the full visual layout of the venue. Do not front-load all scene metadata in the first four sentences.
-- Never use the same order every time: time -> place -> smell -> protagonist arrives -> inventory of the shop.
+${pacingBullets}
+- The opening must feel authored, not templated. The hard constraint on opening variety is enforced separately below (see "OPENING VARIETY") — that section, NOT a fixed rotation menu, is the source of truth on what your first sentence can look like.
+- Do NOT default to this scene-setup formula in the first few sentences: time-marker, place-marker, smell/weather sentence, then "X enters/walks/sees a small local place", then a short inventory of tables / counter / window. Even if your first sentence is not literally "Es ist [time] [place]", front-loading all scene metadata in the same predictable order makes every story feel templated. Delay at least one of these on purpose: the exact place, the exact time of day, the food item, or the full visual layout of the venue.
+- If you mention sensory detail early, vary the sense; do not rely mostly on smell. Sound, texture, heat, light, crowd pressure, body tension, or an overheard fragment are equally valid.
 - If you mention sensory detail early, vary the sense; do not rely mostly on smell. Sound, texture, heat, light, crowd pressure, or body tension are equally valid.
 - Choose exactly ONE arc type for the story and make the whole story execute it clearly:
   - white-lie
@@ -354,7 +492,7 @@ Use a close third-person narrator with strong internal focalization.
 - If the setting is a cafe, market, fonda, bakery, or stall, the food can stay central, but the arc must carry a fresh emotional or narrative movement beyond simple substitution or service recovery.${existingArcTypesClause}
 - Length target: ${TARGET_STORY_WORDS_MIN}-${TARGET_STORY_WORDS_MAX} words.
 - Absolute minimum: ${MIN_STORY_WORDS} words.
-- Hard maximum: ${HARD_STORY_WORDS_MAX} words.${existingTitlesClause}${usedNamesClause}${tonalVarietyClause}
+- Hard maximum: ${HARD_STORY_WORDS_MAX} words.${existingTitlesClause}${usedNamesClause}${tonalVarietyClause}${existingOpeningsClause}
 ${retryClause}
 
 Return ONLY valid JSON:
@@ -407,9 +545,13 @@ Return ONLY valid JSON:
         ? truncateToWordLimit(sanitized, HARD_STORY_WORDS_MAX)
         : sanitized;
 
-    const formatCheck = isValidMultiVoiceJourneyBody(text);
+    const formatCheck = validateBody(text);
     if (!formatCheck.ok) {
-      previousFeedback = formatCheck.reason ?? "Story body did not satisfy required multi-voice format.";
+      previousFeedback =
+        formatCheck.reason ??
+        (storyStyle === "narrator"
+          ? "Story body did not satisfy required narrator-style format."
+          : "Story body did not satisfy required multi-voice format.");
       continue;
     }
 

@@ -41,6 +41,12 @@ Both Conversacional and Viajero now default to **multi-voice dialogue**: a narra
 
 **Why this changed**: when Viajero was first defined, all audio was paid (ElevenLabs single-voice was the cheapest path). Now that Apache 2.0 / MIT / CC0 LATAM voices exist (Kokoro Dora + Qwen3-VoiceDesign personas cloned via Chatterbox), free multi-voice is feasible and richer than free single-voice, so Viajero defaults flipped. **Don't quote the old "all Viajero is single-voice" rule from earlier versions of this doc** — it is obsolete.
 
+### Narrator-style alternative
+
+`storyGenerator` also accepts `storyStyle: "narrator"`, which generates continuous third-person prose with no `Speaker: line` blocks. Dialogue, if any, stays embedded in paragraphs with quotation marks. Use it when you need a single-voice TTS render (e.g. languages where a free multi-voice cast is not viable yet) or when the story is structurally contemplative / single-protagonist.
+
+**Observed tendency (informational, not enforced):** the 2026-05-14 `Pellkartoffeln am Abend` DE A1 experiment showed that narrator prose drags grammar (Präteritum, declined-preposition relatives like `in der sie kochte`, `zu`-infinitive constructions like `Art zu essen`) toward A2+ even with strict A1 lexical guardrails. Multi-voice avoids this because speaker turns mechanically constrain grammar to present + Perfekt with simple clauses. So at A1/A2 narrator may yield grammar a notch above target — caller decides whether the trade-off is acceptable. The generator does not gate on level.
+
 ### Narrator
 
 - Opens with a full sentence, e.g. "Es ist Samstagnachmittag in Berlin." NOT a verbless fragment ("Samstagnachmittag in Berlin.") — that reads as a stage label, not narration.

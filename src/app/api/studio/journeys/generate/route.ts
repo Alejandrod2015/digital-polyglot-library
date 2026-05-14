@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateSlug } from "@/agents/content/tools";
-import { generateStoryPayload } from "@/lib/storyGenerator";
+import { extractFirstSentence, generateStoryPayload } from "@/lib/storyGenerator";
 import { extractCharacterNames, findSimilarSynopsis } from "@/lib/storyDedupe";
 import { VARIANT_LABELS, type LanguageVariant } from "@domain/languageVariant";
 
@@ -126,6 +126,13 @@ export async function POST(request: Request) {
       .sort((a, b) => b.slotIndex - a.slotIndex)
       .slice(0, 3)
       .map((s) => s.arcType!.trim());
+    // First sentences of every story already in the journey. Feed the
+    // generator so it can enforce opening-shape variety against the
+    // accumulated set, instead of falling back to "Es ist [time] [place]"
+    // or any other memorized formula.
+    const existingOpenings = (existingStories as ExistingRow[])
+      .map((s) => extractFirstSentence(s.text))
+      .filter((s) => s.length > 0);
 
     const origin = new URL(request.url).origin;
     const detailedRegion = getDetailedRegionDescription(story.journey.variant, story.journey.language);
@@ -208,6 +215,7 @@ export async function POST(request: Request) {
       usedCharacterNames,
       wordsToAvoid,
       existingArcTypes,
+      existingOpenings,
     });
 
     if (!payload) {
