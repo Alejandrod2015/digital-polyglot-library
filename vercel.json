@@ -5,6 +5,10 @@
     {
       "path": "/api/cron/catalog-health",
       "schedule": "0 6 * * *"
+    },
+    {
+      "path": "/api/cron/voice-availability",
+      "schedule": "30 6 * * *"
     }
   ]
 }

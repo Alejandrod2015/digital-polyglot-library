@@ -51,7 +51,8 @@ export const GERMAN_DIALOGUE_VOICES = {
   moritz:    "Ww7Sq9tx9CCOiNOwWgsx", // M middle-aged, native DE, baritone — narrator
   enniah:    "WHaUUVTDq47Yqc9aDbkH", // F middle-aged, native DE, warm — primary female
   gesaTess:  "cllvQaMvj0ZKxH88HGEn", // F middle-aged, native DE, "trustworthy host" — calmer baseline than ENNIAH
-  luca:      "mmAbrxFQ9xjByXyBpqrK", // M young, native DE, dynamic engaging — younger male (replaces banned Sebastian)
+  luca:      "mmAbrxFQ9xjByXyBpqrK", // M young, native DE, dynamic engaging — kept for casual young roles. Mild uptone on declaratives (less severe than Sebastian).
+  michael:   "KSEa36Zojh7KLdIkb8Qu", // M young, native DE, "youthful + calm narrative" — preferred for teen/younger characters where Luca's uptone reads as uncertainty.
   eleonore:  "8SdTD5IMgFKT1jp7JbPC", // F middle-aged, native DE, mature narrator — "Frau" roles
 } as const;
 

@@ -76,8 +76,8 @@ const VOICE_ASSIGNMENTS: VoiceAssignment[] = [
     slug: "apfelkuchen-in-wedding-2",
     voiceMap: {
       narrator: V.moritz,
-      Hilde: V.eleonore, // F mature, "Frau" roles — calza Oma Hilde
-      Paul: V.luca,      // M young dynamic — reemplaza a Sebastian para el chico de 9 años
+      Hilde: V.eleonore,  // F mature, "Frau" roles
+      Paul: V.michael,    // M youthful + calm — Luca had mild uptone that read as uncertain. Michael is the catalog go-to for teen-and-younger from 2026-05-14 onward.
     },
     ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3"),
   },
