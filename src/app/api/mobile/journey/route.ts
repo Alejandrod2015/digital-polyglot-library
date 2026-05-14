@@ -136,6 +136,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     return {
       id: track.id,
       label: track.label,
+      variant: track.variant ?? null,
       insights: buildJourneyTrackInsights(
         track,
         completedStoryKeys,

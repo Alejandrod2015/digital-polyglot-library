@@ -694,6 +694,11 @@ type MobileJourneyTrackInsights = {
 type MobileJourneyTrackSummary = {
   id: string;
   label: string;
+  /** Studio Journey.variant ("latam", "spain", "br", "pt", "germany"…)
+   *  used to pick the flag when the user's stored Journey only carries
+   *  a Studio cuid in its own `variant` field and never persisted a
+   *  separate `region`. Server populates from JourneyVariantTrack. */
+  variant?: string | null;
   insights: MobileJourneyTrackInsights;
   unlockedLevelCount: number;
   totalLevelCount: number;
@@ -2474,6 +2479,22 @@ export function MobileLibraryShell(args: {
   ];
   const hasUserJourneys = preferences.journeys.length > 0;
   const activeJourney = findActiveJourney(preferences.journeys, preferences.activeJourneyId);
+  // Flag variant resolver. journeyFlagVariant() returns null when the
+  // user's Journey has only a Studio cuid in `variant` and no separate
+  // `region`. In that case we lookup the corresponding track on the
+  // server payload (`remoteJourney.tracks`) and use its variant code
+  // (e.g. "latam") so LanguageFlag can render Colombia / Brazil / etc.
+  // Falls back to preferences.preferredVariant as a last resort.
+  const activeJourneyFlagVariant = (() => {
+    if (!activeJourney) return preferences.preferredVariant;
+    const direct = journeyFlagVariant(activeJourney);
+    if (direct) return direct;
+    if (activeJourney.variant && remoteJourney?.tracks) {
+      const track = remoteJourney.tracks.find((t) => t.id === activeJourney.variant);
+      if (track?.variant) return track.variant;
+    }
+    return preferences.preferredVariant;
+  })();
   // Build the rows the JourneySwitchSheet renders: one row per journey
   // (= one row per (language, variant, focus) tuple). Stats are still
   // language-level mocks for now — when per-journey progress lands the
@@ -9534,60 +9555,90 @@ export function MobileLibraryShell(args: {
         </ScrollView>
       </View>
 
-      <Modal transparent visible={explorePickerSection !== null} animationType="fade" onRequestClose={() => setExplorePickerSection(null)}>
-        <Pressable style={styles.modalBackdrop} onPress={() => setExplorePickerSection(null)}>
-          <Pressable style={styles.createPickerModal} onPress={() => {}}>
-            <View style={styles.createPickerHeader}>
-              <Text style={styles.sectionTitle}>{explorePickerSection === "language" ? "Language" : "Region"}</Text>
-              <Pressable onPress={() => setExplorePickerSection(null)} style={styles.readerIconButton}>
+      <Modal
+        transparent
+        visible={explorePickerSection !== null}
+        animationType="slide"
+        onRequestClose={() => setExplorePickerSection(null)}
+      >
+        <Pressable style={styles.exploreLangSheetBackdrop} onPress={() => setExplorePickerSection(null)}>
+          <Pressable style={styles.exploreLangSheetPanel} onPress={() => {}}>
+            <View style={styles.exploreLangSheetGrabber} />
+            <View style={styles.exploreLangSheetHeader}>
+              <Text style={styles.exploreLangSheetTitle}>
+                {explorePickerSection === "language" ? "Choose language" : "Choose region"}
+              </Text>
+              <Pressable
+                onPress={() => setExplorePickerSection(null)}
+                style={styles.exploreLangSheetCloseBtn}
+                accessibilityRole="button"
+                accessibilityLabel="Close"
+                hitSlop={8}
+              >
                 <Feather name="x" size={18} color="#dbe9ff" />
               </Pressable>
             </View>
 
             {explorePickerSection === "language" ? (
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.filterChips}>
-                {exploreFilters.languages.map((language) => (
-                  <Pressable
-                    key={language}
-                    onPress={() => {
-                      setSelectedExploreLanguage(language);
-                      // Sync the journey-scope language so Favorites +
-                      // Practice reflect the same choice — picking a
-                      // language in any section propagates to all.
-                      // "All" is Explore-only; skip the sync there so we
-                      // don't blow away the journey selection.
-                      if (language !== "All") {
-                        setActiveJourneyLanguage(language);
-                      }
-                      setExplorePickerSection(null);
-                    }}
-                    style={[styles.filterChip, selectedExploreLanguage === language ? styles.filterChipActive : null]}
-                  >
-                    <Text style={[styles.filterChipText, selectedExploreLanguage === language ? styles.filterChipTextActive : null]}>
-                      {language}
-                    </Text>
-                  </Pressable>
-                ))}
-              </ScrollView>
+              <View style={styles.exploreLangSheetList}>
+                {exploreFilters.languages.map((language) => {
+                  const isActive = selectedExploreLanguage === language;
+                  return (
+                    <Pressable
+                      key={language}
+                      onPress={() => {
+                        setSelectedExploreLanguage(language);
+                        if (language !== "All") setActiveJourneyLanguage(language);
+                        setExplorePickerSection(null);
+                      }}
+                      style={[
+                        styles.exploreLangSheetRow,
+                        isActive ? styles.exploreLangSheetRowActive : null,
+                      ]}
+                    >
+                      {language !== "All" ? (
+                        <LanguageFlag language={language} size={28} />
+                      ) : (
+                        <View style={styles.exploreLangSheetAllBadge}>
+                          <Feather name="globe" size={16} color="#1a1305" />
+                        </View>
+                      )}
+                      <Text style={styles.exploreLangSheetRowLabel}>{language}</Text>
+                      {isActive ? (
+                        <Feather name="check" size={18} color="#f8c15c" />
+                      ) : null}
+                    </Pressable>
+                  );
+                })}
+              </View>
             ) : null}
 
             {explorePickerSection === "region" ? (
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.filterChips}>
-                {exploreFilters.regions.map((region) => (
-                  <Pressable
-                    key={region}
-                    onPress={() => {
-                      setSelectedExploreRegion(region);
-                      setExplorePickerSection(null);
-                    }}
-                    style={[styles.filterChip, selectedExploreRegion === region ? styles.filterChipActive : null]}
-                  >
-                    <Text style={[styles.filterChipText, selectedExploreRegion === region ? styles.filterChipTextActive : null]}>
-                      {region === "All" ? region : formatRegion(region)}
-                    </Text>
-                  </Pressable>
-                ))}
-              </ScrollView>
+              <View style={styles.exploreLangSheetList}>
+                {exploreFilters.regions.map((region) => {
+                  const isActive = selectedExploreRegion === region;
+                  return (
+                    <Pressable
+                      key={region}
+                      onPress={() => {
+                        setSelectedExploreRegion(region);
+                        setExplorePickerSection(null);
+                      }}
+                      style={[
+                        styles.exploreLangSheetRow,
+                        isActive ? styles.exploreLangSheetRowActive : null,
+                      ]}
+                    >
+                      <Text style={styles.exploreLangSheetRowLabel}>
+                        {region === "All" ? region : formatRegion(region)}
+                      </Text>
+                      {isActive ? (
+                        <Feather name="check" size={18} color="#f8c15c" />
+                      ) : null}
+                    </Pressable>
+                  );
+                })}
+              </View>
             ) : null}
           </Pressable>
         </Pressable>
@@ -9976,7 +10027,7 @@ export function MobileLibraryShell(args: {
                 >
                   <LanguageFlag
                     language={activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null}
-                    variant={activeJourney ? journeyFlagVariant(activeJourney) : preferences.preferredVariant}
+                    variant={activeJourneyFlagVariant}
                     size={28}
                   />
                   {(() => {
@@ -11165,7 +11216,7 @@ export function MobileLibraryShell(args: {
             >
               <LanguageFlag
                 language={activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null}
-                variant={activeJourney ? journeyFlagVariant(activeJourney) : preferences.preferredVariant}
+                variant={activeJourneyFlagVariant}
                 size={28}
               />
               {(() => {
@@ -13547,11 +13598,7 @@ export function MobileLibraryShell(args: {
       >
         <LanguageFlag
           language={activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null}
-          variant={
-            activeJourney
-              ? journeyFlagVariant(activeJourney)
-              : preferences.preferredVariant
-          }
+          variant={activeJourneyFlagVariant}
           size={28}
         />
         {(() => {
@@ -21774,6 +21821,81 @@ const styles = StyleSheet.create({
   modalBackdrop: {
     flex: 1,
     backgroundColor: "rgba(2, 8, 18, 0.62)",
+    justifyContent: "center",
+  },
+  exploreLangSheetBackdrop: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.55)",
+    justifyContent: "flex-end",
+  },
+  exploreLangSheetPanel: {
+    backgroundColor: "#0d1b2e",
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    borderWidth: 1,
+    borderColor: "rgba(248,193,92,0.18)",
+    paddingTop: 10,
+    paddingBottom: 28,
+    paddingHorizontal: 18,
+    gap: 10,
+  },
+  exploreLangSheetGrabber: {
+    alignSelf: "center",
+    width: 40,
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: "rgba(219,233,255,0.25)",
+    marginBottom: 6,
+  },
+  exploreLangSheetHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 4,
+  },
+  exploreLangSheetTitle: {
+    color: "#ffffff",
+    fontSize: 18,
+    fontWeight: "900",
+    letterSpacing: -0.2,
+  },
+  exploreLangSheetCloseBtn: {
+    width: 32,
+    height: 32,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.06)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  exploreLangSheetList: {
+    gap: 6,
+  },
+  exploreLangSheetRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 12,
+    borderRadius: 12,
+    backgroundColor: "rgba(248,193,92,0.06)",
+  },
+  exploreLangSheetRowActive: {
+    backgroundColor: "rgba(248,193,92,0.16)",
+    borderWidth: 1,
+    borderColor: "rgba(248,193,92,0.36)",
+  },
+  exploreLangSheetRowLabel: {
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "700",
+    flex: 1,
+  },
+  exploreLangSheetAllBadge: {
+    width: 28,
+    height: 28,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+    alignItems: "center",
     justifyContent: "center",
   },
   readerIconButton: {

@@ -64,19 +64,51 @@ const SPECS: Record<string, FlagSpec> = {
  *   - Spanish → "es" (default — Spain flag) or "latam" (Colombia
  *     flag, picked as a distinctive LATAM signal that's visually
  *     unrelated to Italy/Mexico/etc.)
+ *
+ * Both language + variant are normalized case-insensitively. We
+ * also accept several aliases per region so a journey persisted with
+ * "LATAM", "es-LA", a country code like "MX" / "CO", or even a
+ * Studio Journey cuid stored alongside a separate region field still
+ * resolves to the right flag.
  */
-function pickSpec(language: string | null | undefined, variant?: string | null): FlagSpec | undefined {
+const LATAM_REGION_CODES = new Set<string>([
+  "latam", "es-la", "es-419",
+  // Country codes (lowercase) that imply LATAM Spanish.
+  "mx", "co", "ar", "pe", "cl", "ec", "ve", "uy", "py", "bo", "cr", "pa", "do", "cu", "gt", "hn", "sv", "ni", "pr",
+  // Spanish country names spelled out (some legacy data does this).
+  "mexico", "colombia", "argentina", "peru", "chile", "ecuador", "venezuela", "uruguay", "paraguay", "bolivia",
+]);
+const SPAIN_REGION_CODES = new Set<string>(["es", "spain", "españa", "espana"]);
+const UK_REGION_CODES = new Set<string>(["uk", "gb", "england", "britain", "united-kingdom"]);
+const PORTUGAL_REGION_CODES = new Set<string>(["pt", "portugal"]);
+
+function normLang(language: string | null | undefined): string | undefined {
   if (!language) return undefined;
-  if (language === "English") {
-    return variant === "uk" ? { kind: "uk" } : { kind: "us" };
+  const trimmed = language.trim();
+  if (!trimmed) return undefined;
+  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase();
+}
+
+function pickSpec(language: string | null | undefined, variant?: string | null): FlagSpec | undefined {
+  const lang = normLang(language);
+  if (!lang) return undefined;
+  const v = variant?.trim().toLowerCase() ?? "";
+  if (lang === "English") {
+    return UK_REGION_CODES.has(v) ? { kind: "uk" } : { kind: "us" };
   }
-  if (language === "Portuguese") {
-    return variant === "pt" ? SPECS.Portuguese : { kind: "brazil" };
+  if (lang === "Portuguese") {
+    return PORTUGAL_REGION_CODES.has(v) ? SPECS.Portuguese : { kind: "brazil" };
   }
-  if (language === "Spanish") {
-    return variant === "latam" ? COLOMBIA_SPEC : SPECS.Spanish;
+  if (lang === "Spanish") {
+    // LATAM matches FIRST (broadest set). Spain wins on explicit "es"/
+    // "spain". Anything unrecognized (e.g., a Studio cuid) falls back
+    // to Spain — that was the previous default and remains the safe
+    // bet when the region is genuinely unknown.
+    if (LATAM_REGION_CODES.has(v)) return COLOMBIA_SPEC;
+    if (SPAIN_REGION_CODES.has(v)) return SPECS.Spanish;
+    return SPECS.Spanish;
   }
-  return SPECS[language];
+  return SPECS[lang];
 }
 
 export function LanguageFlag({

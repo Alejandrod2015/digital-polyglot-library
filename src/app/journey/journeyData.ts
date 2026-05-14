@@ -48,6 +48,10 @@ export type JourneyLevel = {
 export type JourneyVariantTrack = {
   id: string;
   label: string;
+  /** Studio Journey.variant (e.g. "latam", "spain", "br", "pt"). Used
+   *  client-side to pick the flag when the user's stored Journey only
+   *  has the cuid in `variant` and never persisted a separate region. */
+  variant: string | null;
   levels: JourneyLevel[];
 };
 
@@ -611,6 +615,7 @@ async function buildJourneyVariantsFromStudio(
     tracks.push({
       id: journey.id,
       label: trackLabel,
+      variant: (journey.variant ?? "").trim().toLowerCase() || null,
       levels,
     });
   }

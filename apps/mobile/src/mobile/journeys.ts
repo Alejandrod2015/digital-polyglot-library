@@ -55,12 +55,30 @@ export type Journey = {
  * Prefiere `journey.region` (modelo nuevo) y cae a `journey.variant`
  * para journeys legacy donde el variant guardaba el código regional
  * directo.
+ *
+ * En el modelo nuevo `variant` guarda un cuid del Studio Journey
+ * (e.g. "cmoncz14v0000ukucfz2az85r"), NO un código regional. Si lo
+ * pasáramos como variant a LanguageFlag, el matcher fallaría y la
+ * bandera se renderizaría con el default del idioma (Spain para
+ * Spanish), perdiendo el LATAM. Detectamos cuids por su forma
+ * (Prisma cuid v1 son 25 chars de [a-z0-9] empezando por "cm" o "c"
+ * + base36) y los descartamos cuando no hay region.
  */
+function looksLikeCuid(value: string): boolean {
+  // cuid v1: 25 chars, base36, starts with "c". cuid2: 24 chars, base36.
+  return /^c[a-z0-9]{23,24}$/.test(value);
+}
+
 export function journeyFlagVariant(journey: {
   region?: string | null;
   variant: string | null;
 }): string | null {
-  return (journey.region?.trim() || journey.variant?.trim() || null) as string | null;
+  const region = journey.region?.trim();
+  if (region) return region;
+  const variant = journey.variant?.trim();
+  if (!variant) return null;
+  if (looksLikeCuid(variant)) return null;
+  return variant;
 }
 
 /**
