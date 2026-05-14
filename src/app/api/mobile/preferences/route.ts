@@ -15,7 +15,11 @@ import {
   getJourneyFocusFromLearningGoal,
   normalizeJourneyFocus,
 } from "@/lib/onboarding";
-import { REMINDER_HOUR_OPTIONS, normalizeReminderHour, normalizeRemindersEnabled } from "@/lib/reminders";
+import {
+  normalizeReminderHour,
+  normalizeReminderMinute,
+  normalizeRemindersEnabled,
+} from "@/lib/reminders";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -54,7 +58,6 @@ const ALLOWED_VARIANTS = new Set(
 const ALLOWED_GOALS = new Set<string>(ONBOARDING_GOAL_OPTIONS);
 const ALLOWED_JOURNEY_FOCUSES = new Set<string>(JOURNEY_FOCUS_OPTIONS);
 const ALLOWED_DAILY_MINUTES = new Set<number>(ONBOARDING_DAILY_MINUTES_OPTIONS);
-const ALLOWED_REMINDER_HOURS = new Set<number>(REMINDER_HOUR_OPTIONS);
 
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
@@ -226,8 +229,12 @@ function serializePreferences(metadata: Record<string, unknown>) {
     dailyMinutes: typeof metadata.dailyMinutes === "number" ? normalizeDailyMinutes(metadata.dailyMinutes) : null,
     remindersEnabled: metadata.remindersEnabled === true,
     reminderHour:
-      typeof metadata.reminderHour === "number" && ALLOWED_REMINDER_HOURS.has(metadata.reminderHour)
+      typeof metadata.reminderHour === "number"
         ? normalizeReminderHour(metadata.reminderHour)
+        : null,
+    reminderMinute:
+      typeof metadata.reminderMinute === "number"
+        ? normalizeReminderMinute(metadata.reminderMinute)
         : null,
     journeyPlacementLevel:
       typeof metadata.journeyPlacementLevel === "string"
@@ -303,6 +310,9 @@ export async function POST(req: NextRequest): Promise<Response> {
     : undefined;
   const reminderHour = Object.prototype.hasOwnProperty.call(payload, "reminderHour")
     ? normalizeReminderHour(payload.reminderHour)
+    : undefined;
+  const reminderMinute = Object.prototype.hasOwnProperty.call(payload, "reminderMinute")
+    ? normalizeReminderMinute(payload.reminderMinute)
     : undefined;
   const journeyPlacementLevel = Object.prototype.hasOwnProperty.call(payload, "journeyPlacementLevel")
     ? normalizeJourneyPlacementLevel(payload.journeyPlacementLevel)
@@ -382,6 +392,11 @@ export async function POST(req: NextRequest): Promise<Response> {
   if (reminderHour !== undefined) {
     if (reminderHour) updatedMetadata.reminderHour = reminderHour;
     else delete updatedMetadata.reminderHour;
+  }
+
+  if (reminderMinute !== undefined) {
+    if (reminderMinute !== null) updatedMetadata.reminderMinute = reminderMinute;
+    else delete updatedMetadata.reminderMinute;
   }
 
   if (journeyPlacementLevel !== undefined) {

@@ -28,6 +28,11 @@ export type OfflineLibraryStory = {
   // reader can highlight vocabulary when opening the story offline (or when
   // the offline copy is used even online to skip the network fetch).
   vocabRaw?: string | null;
+  // JSON-encoded AudioWordTimingsPayload. Persisted al download para
+  // que el karaoke funcione offline; sin esto el Reader hacía un
+  // fetch a `/api/mobile/audio-word-timings` que offline falla silente
+  // y cae al fallback sintético que no avanza con el audio.
+  wordTimingsRaw?: string | null;
   audioUrl?: string | null;
   localCoverUri?: string | null;
   localAudioUri?: string | null;
@@ -347,6 +352,12 @@ function toOfflineBook(book: Book): OfflineLibraryBook {
 }
 
 function toOfflineStory(book: Book, story: Story): OfflineLibraryStory {
+  // CRITICAL: persist `text` + `vocabRaw`. Sin estos, el snapshot
+  // guarda metadata pero no el cuerpo de la historia, y openJourneyStory
+  // offline cae a `if (offlineCopy?.text)` → false → fetch network →
+  // falla → "This story isn't downloaded". Pre-fix sólo guardaba audio
+  // y cover (el check verde aparecía aunque no había nada para leer
+  // offline).
   return {
     id: `story-${story.id}`,
     storyId: story.id,
@@ -356,9 +367,13 @@ function toOfflineStory(book: Book, story: Story): OfflineLibraryStory {
     storySlug: story.slug,
     bookSlug: book.slug,
     language: story.language ?? book.language,
+    variant: story.variant ?? book.variant,
     region: story.region ?? book.region,
     level: story.level ?? book.level,
+    cefrLevel: story.cefrLevel ?? book.cefrLevel,
     topic: story.topic ?? book.topic,
+    text: story.text,
+    vocabRaw: Array.isArray(story.vocab) ? JSON.stringify(story.vocab) : null,
     audioUrl: story.audio,
   };
 }
@@ -366,7 +381,8 @@ function toOfflineStory(book: Book, story: Story): OfflineLibraryStory {
 export async function saveStoryOffline(
   userId: string,
   book: Book,
-  story: Story
+  story: Story,
+  extras?: { wordTimingsRaw?: string | null }
 ): Promise<OfflineLibrarySnapshot> {
   const current = (await loadOfflineSnapshot(userId)) ?? {
     books: [],
@@ -379,9 +395,16 @@ export async function saveStoryOffline(
     ? current.books
     : [...current.books, toOfflineBook(book)];
 
+  const enriched = (base: OfflineLibraryStory): OfflineLibraryStory => ({
+    ...base,
+    wordTimingsRaw: extras?.wordTimingsRaw ?? base.wordTimingsRaw,
+  });
+
   const nextStories = current.stories.some((item) => item.storyId === story.id)
-    ? current.stories.map((item) => (item.storyId === story.id ? { ...item, ...toOfflineStory(book, story) } : item))
-    : [...current.stories, toOfflineStory(book, story)];
+    ? current.stories.map((item) =>
+        item.storyId === story.id ? enriched({ ...item, ...toOfflineStory(book, story) }) : item
+      )
+    : [...current.stories, enriched(toOfflineStory(book, story))];
 
   return hydrateOfflineAssets(userId, {
     ...current,
@@ -399,6 +422,7 @@ export async function saveStandaloneStoryOffline(
     title: string;
     text: string;
     vocabRaw?: string | null;
+    wordTimingsRaw?: string | null;
     language?: string | null;
     variant?: string | null;
     region?: string | null;
@@ -432,6 +456,7 @@ export async function saveStandaloneStoryOffline(
     topic: story.topic ?? undefined,
     text: story.text,
     vocabRaw: story.vocabRaw ?? undefined,
+    wordTimingsRaw: story.wordTimingsRaw ?? undefined,
     audioUrl: story.audioUrl ?? undefined,
   };
 

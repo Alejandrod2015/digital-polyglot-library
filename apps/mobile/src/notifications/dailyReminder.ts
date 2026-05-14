@@ -1,6 +1,5 @@
 import {
   buildDailyReminderCopy,
-  formatReminderHour,
   type DailyReminderContext,
   type ReminderDestination,
 } from "@/lib/reminders";
@@ -57,21 +56,19 @@ async function clearExistingReminderSchedules(
   );
 }
 
-function buildNextReminderDate(hour: number, activeToday: boolean): Date {
-  const now = new Date();
-  const next = new Date(now);
-  next.setHours(hour, 0, 0, 0);
-
-  if (activeToday || next.getTime() <= now.getTime()) {
-    next.setDate(next.getDate() + 1);
-  }
-
-  return next;
+function formatHM(hour: number, minute: number): string {
+  const normalizedHour = ((Math.trunc(hour) % 24) + 24) % 24;
+  const min = ((Math.trunc(minute) % 60) + 60) % 60;
+  const suffix = normalizedHour >= 12 ? "PM" : "AM";
+  const displayHour = normalizedHour % 12 === 0 ? 12 : normalizedHour % 12;
+  return `${displayHour}:${min.toString().padStart(2, "0")} ${suffix}`;
 }
 
 export async function syncDailyReminderSchedule(args: {
   enabled: boolean;
   hour: number | null;
+  /** Minuto del día (0/15/30/45). Default 0. */
+  minute?: number | null;
   learningGoal: OnboardingGoal | null;
   dailyMinutes: number | null;
   context?: DailyReminderContext | null;
@@ -81,12 +78,13 @@ export async function syncDailyReminderSchedule(args: {
   const {
     enabled,
     hour,
+    minute,
     learningGoal,
     dailyMinutes,
     context,
-    activeToday = false,
     requestPermissions = false,
   } = args;
+  const resolvedMinute = typeof minute === "number" && Number.isFinite(minute) ? minute : 0;
   const Notifications = getNotificationsModule();
 
   if (!Notifications) {
@@ -119,7 +117,12 @@ export async function syncDailyReminderSchedule(args: {
     }
 
     const copy = buildDailyReminderCopy({ learningGoal, dailyMinutes, context });
-    const nextReminderAt = buildNextReminderDate(hour, activeToday);
+    // Trigger DAILY-recurring (repeats every day). Antes pasábamos un Date
+    // único (`trigger: nextReminderAt as never`), lo que disparaba la
+    // notificación una sola vez y no se repetía — el usuario nunca recibía
+    // el reminder al día siguiente. Con `{ type: "daily", hour, minute,
+    // repeats: true }` iOS programa una entrada que dispara cada día a la
+    // hora local del device.
     await Notifications.scheduleNotificationAsync({
       content: {
         title: copy.title,
@@ -127,15 +130,14 @@ export async function syncDailyReminderSchedule(args: {
         sound: true,
         data: { tag: DAILY_LOOP_REMINDER_TAG, target: copy.target },
       },
-      trigger: nextReminderAt as never,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      trigger: { type: "daily", hour, minute: resolvedMinute, repeats: true } as any,
     });
 
     return {
       status: "scheduled",
-      message: activeToday
-        ? `Daily reminder set for tomorrow at ${formatReminderHour(hour)}.`
-        : `Daily reminder set for ${formatReminderHour(hour)}.`,
-      scheduledFor: nextReminderAt.toISOString(),
+      message: `Daily reminder set for ${formatHM(hour, resolvedMinute)}.`,
+      scheduledFor: formatHM(hour, resolvedMinute),
     };
   } catch (error) {
     return {

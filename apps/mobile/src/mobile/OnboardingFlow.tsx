@@ -12,6 +12,7 @@ import {
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { LanguageFlag } from "./LanguageFlag";
 import { LevelTestRunner } from "./LevelTestRunner";
+import { TimePickerSheet } from "./TimePickerSheet";
 import { type CEFRLevel, hasLevelTest } from "./levelTest";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
@@ -57,6 +58,7 @@ export type OnboardingPayload = {
   dailyMinutes: 5 | 10 | 15 | 30;
   remindersEnabled: boolean;
   reminderHour: number | null;
+  reminderMinute?: number | null;
 };
 
 type OnboardingLevel = "Brand new" | "A few words" | "Some";
@@ -188,10 +190,10 @@ const GOAL_OPTIONS: Array<{
   { minutes: 30, title: "Intense", hint: "30 min / day" },
 ];
 
-const REMINDER_HOURS = [8, 12, 19, 21];
-
-function formatHour(hour: number): string {
-  return `${hour.toString().padStart(2, "0")}:00`;
+function formatHour(hour: number, minute: number = 0): string {
+  const hh = hour.toString().padStart(2, "0");
+  const mm = minute.toString().padStart(2, "0");
+  return `${hh}:${mm}`;
 }
 
 export function OnboardingFlow({
@@ -235,6 +237,8 @@ export function OnboardingFlow({
   const [dailyMinutes, setDailyMinutes] = useState<5 | 10 | 15 | 30 | null>(15);
   const [remindersEnabled, setRemindersEnabled] = useState(true);
   const [reminderHour, setReminderHour] = useState<number | null>(19);
+  const [reminderMinute, setReminderMinute] = useState<number | null>(0);
+  const [timePickerOpen, setTimePickerOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   // Slide animation between steps. translateX 24→0 + fade-in.
@@ -336,6 +340,7 @@ export function OnboardingFlow({
         dailyMinutes,
         remindersEnabled,
         reminderHour: remindersEnabled ? reminderHour : null,
+        reminderMinute: remindersEnabled ? reminderMinute ?? 0 : null,
       });
     } finally {
       setSubmitting(false);
@@ -557,25 +562,17 @@ export function OnboardingFlow({
               </View>
               {remindersEnabled ? (
                 <View style={styles.hourRow}>
-                  {REMINDER_HOURS.map((hour) => {
-                    const selected = reminderHour === hour;
-                    return (
-                      <Pressable
-                        key={hour}
-                        onPress={() => setReminderHour(hour)}
-                        style={[styles.hourChip, selected ? styles.hourChipSelected : null]}
-                      >
-                        <Text
-                          style={[
-                            styles.hourText,
-                            selected ? styles.hourTextSelected : null,
-                          ]}
-                        >
-                          {formatHour(hour)}
-                        </Text>
-                      </Pressable>
-                    );
-                  })}
+                  <Pressable
+                    onPress={() => setTimePickerOpen(true)}
+                    style={[styles.hourChip, styles.hourChipSelected]}
+                    accessibilityRole="button"
+                  >
+                    <Text style={[styles.hourText, styles.hourTextSelected]}>
+                      {reminderHour !== null
+                        ? formatHour(reminderHour, reminderMinute ?? 0)
+                        : "Choose time"}
+                    </Text>
+                  </Pressable>
                 </View>
               ) : null}
             </View>
@@ -742,6 +739,7 @@ export function OnboardingFlow({
                 dailyMinutes,
                 remindersEnabled,
                 reminderHour: remindersEnabled ? reminderHour : null,
+        reminderMinute: remindersEnabled ? reminderMinute ?? 0 : null,
               });
             } finally {
               setSubmitting(false);
@@ -750,6 +748,18 @@ export function OnboardingFlow({
           onCancel={() => setLevelTestOpen(false)}
         />
       ) : null}
+
+      <TimePickerSheet
+        open={timePickerOpen}
+        initialHour={reminderHour ?? 18}
+        initialMinute={reminderMinute ?? 0}
+        onClose={() => setTimePickerOpen(false)}
+        onConfirm={(hour, minute) => {
+          setReminderHour(hour);
+          setReminderMinute(minute);
+          setTimePickerOpen(false);
+        }}
+      />
     </View>
   );
 }

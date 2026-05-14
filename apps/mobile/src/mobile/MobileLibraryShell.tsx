@@ -56,6 +56,7 @@ import { HomeSkeleton } from "./HomeSkeleton";
 import { LanguageFlag } from "./LanguageFlag";
 import { JourneysPanel } from "./JourneysPanel";
 import { LegalSheet } from "./LegalSheet";
+import { TimePickerSheet } from "./TimePickerSheet";
 import { LevelTestRunner } from "./LevelTestRunner";
 import { hasLevelTest } from "./levelTest";
 import { ExtendedSplash } from "./ExtendedSplash";
@@ -133,7 +134,10 @@ import type { PushRegistrationState } from "../notifications/registerPush";
 import { syncDailyReminderSchedule, type ReminderDestination } from "../notifications/dailyReminder";
 import {
   addFavoriteOnServer,
+  appendPendingFavoriteOp,
+  drainPendingFavoriteOps,
   loadLocalFavorites,
+  loadPendingFavoriteOps,
   removeFavoriteOnServer,
   saveLocalFavorites,
   syncFavoritesFromServer,
@@ -148,6 +152,7 @@ import {
   addItemToCollection,
   removeItemFromCollection,
   collectionWordKey,
+  collectionsForLanguage,
   type FavoriteCollection,
 } from "./collections";
 import { getMasteryLevel } from "../../../../src/lib/mastery";
@@ -176,6 +181,8 @@ import {
   buildDailyReminderCopy,
   formatReminderHour,
   normalizeReminderHour,
+  normalizeReminderMinute,
+  REMINDER_MINUTE_OPTIONS,
   normalizeRemindersEnabled,
 } from "../../../../src/lib/reminders";
 import {
@@ -228,6 +235,7 @@ type MobileScreen =
   | "journey"
   | "library"
   | "progress"
+  | "menu"
   | "settings"
   | "create";
 
@@ -253,7 +261,6 @@ type SettingsSection =
   | "goal"
   | "journeyFocus"
   | "dailyMinutes";
-type ExploreSection = "language" | "region";
 type Plan = "free" | "basic" | "premium" | "polyglot";
 
 const PREVIEW_OFFLINE_USER_ID = "preview-ios";
@@ -499,6 +506,8 @@ type MobilePreferences = {
   dailyMinutes: number | null;
   remindersEnabled: boolean;
   reminderHour: number | null;
+  /** Minuto del día (0/15/30/45). Optional; ausente se trata como :00. */
+  reminderMinute?: number | null;
   journeyPlacementLevel: string | null;
   onboardingSurveyCompletedAt: string | null;
   onboardingTourCompletedAt: string | null;
@@ -1211,7 +1220,11 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
         kind: "multiple-choice",
         prompt: exercise.prompt,
         helper: "Choose the meaning that fits this word.",
-        sentence: exercise.sentence,
+        // sentence intentionally null in meaning mode — the user only
+        // sees the target word + audio + meaning options. The full
+        // sentence is still passed via audioClip / favorite for audio
+        // playback + spaced-rep storage.
+        sentence: null,
         options: exercise.options,
         answer: exercise.answer,
         audioClip: exercise.audioClip ?? null,
@@ -1852,7 +1865,6 @@ export function MobileLibraryShell(args: {
   const [exploreQuery, setExploreQuery] = useState("");
   const [isExploreSearchFocused, setIsExploreSearchFocused] = useState(false);
   const [homeFeedMode, setHomeFeedMode] = useState<HomeFeedMode>("stories");
-  const [explorePickerSection, setExplorePickerSection] = useState<ExploreSection | null>(null);
   const [expandedExploreSection, setExpandedExploreSection] = useState<"stories" | "books" | "standalone" | null>(null);
   const [selectedExploreLanguage, setSelectedExploreLanguage] = useState<string>("All");
   const [selectedExploreRegion, setSelectedExploreRegion] = useState<string>("All");
@@ -1920,6 +1932,10 @@ export function MobileLibraryShell(args: {
   // R2, so the round-trip is cheap enough to not warrant a duplicate
   // client-side map.
   const [playingFavoriteKey, setPlayingFavoriteKey] = useState<string | null>(null);
+  // Coordinates "only one swipe panel open at a time" across the
+  // favorites list. SwipeableFavoriteCard reports its key when the
+  // panel snaps open; every other card listens and animates shut.
+  const [openSwipeKey, setOpenSwipeKey] = useState<string | null>(null);
   const [practiceLastResult, setPracticeLastResult] = useState<"correct" | "wrong" | null>(null);
   const [practiceSessionStreak, setPracticeSessionStreak] = useState(0);
   // Mejor combo alcanzado durante la sesión (no se resetea al fallar)
@@ -2142,6 +2158,16 @@ export function MobileLibraryShell(args: {
   const [journeyMilestone, setJourneyMilestone] = useState<JourneyMilestone | null>(null);
   const [activeJourneyLanguage, setActiveJourneyLanguage] = useState<string | null>(null);
   const [activeJourneyLanguageHydrated, setActiveJourneyLanguageHydrated] = useState(false);
+  // Vista derivada: las colecciones que pertenecen al idioma del journey
+  // activo. La fuente (`collections`) sigue siendo global porque
+  // persistimos a SecureStore con una sola key; al render filtramos para
+  // que crear "Mi favoritas" en alemán no la haga visible en español.
+  // Las collections legacy (sin language) se infieren por wordKeys o se
+  // muestran globalmente si tienen palabras de varios idiomas.
+  const visibleCollections = useMemo(
+    () => collectionsForLanguage(collections, activeJourneyLanguage ?? null),
+    [collections, activeJourneyLanguage]
+  );
   const [journeyLanguageLoading, setJourneyLanguageLoading] = useState(false);
   const [journeyVariantPickerOpen, setJourneyVariantPickerOpen] = useState(false);
   const [journeyInsightsByLanguage, setJourneyInsightsByLanguage] = useState<Record<string, LanguageInsightsSummary | null>>({});
@@ -2187,6 +2213,13 @@ export function MobileLibraryShell(args: {
   // tap of the flag chip in the journey top strip and replaces the
   // old full-screen "My Languages" hub.
   const [languageSwitchOpen, setLanguageSwitchOpen] = useState(false);
+  // Context the sheet is opened from: "switch" (default — picking the
+  // active journey from any top-bar flag) or "explore-filter" (picking
+  // the Explore tab's language filter, which also exposes an "All"
+  // option). The mode lets the same sheet UI back two intents without
+  // forking the visual.
+  const [languageSwitchMode, setLanguageSwitchMode] =
+    useState<"switch" | "explore-filter">("switch");
   // Full-screen panel that opens from the sheet's single "Add journey"
   // CTA. Shows every journey as a rich card and hosts the 2-step
   // (language → focus) creator. Replaces the legacy "See all" /
@@ -2203,6 +2236,7 @@ export function MobileLibraryShell(args: {
   // entry in the side menu. Replaces the inline list that used to
   // sit at the bottom of the menu.
   const [legalSheetOpen, setLegalSheetOpen] = useState(false);
+  const [timePickerOpen, setTimePickerOpen] = useState(false);
   // Bottom-sheet popup for the streak / level / XP stats in the
   // journey top bar. Replaces the previous behavior of jumping to
   // the Progress tab when the user tapped one of those badges —
@@ -2277,7 +2311,21 @@ export function MobileLibraryShell(args: {
 
   // (1) Load stored journeys → override if more detailed.
   useEffect(() => {
-    if (!didHydratePreferences) return;
+    // El gate normal es `didHydratePreferences`, que sólo flippea a
+    // true cuando el fetch a `/api/mobile/preferences` resuelve. Eso
+    // funciona online. Offline (sin red pero con token cached) el
+    // fetch falla, `didHydratePreferences` queda false, y este effect
+    // nunca corría → los journeys persistidos en disk no se cargaban
+    // y el usuario veía los sintéticos del anchor (settings de
+    // instalación). NO podemos simplemente marcar
+    // `didHydratePreferences=true` en el catch porque eso dispara el
+    // gate del onboarding (que asume usuario nuevo cuando las
+    // preferences están vacías). En lugar: usamos un segundo path —
+    // si tenemos anchor (sessionUserId) Y el fetch ya falló
+    // (preferencesStatus === "error"), también destrabamos el restore.
+    const offlineDegraded =
+      Boolean(sessionUserId) && preferencesStatus === "error";
+    if (!didHydratePreferences && !offlineDegraded) return;
     if (journeysRestored) return;
     void (async () => {
       const stored = await loadStoredJourneys();
@@ -2297,7 +2345,7 @@ export function MobileLibraryShell(args: {
       // value.
       setJourneysRestored(true);
     })();
-  }, [didHydratePreferences, journeysRestored]);
+  }, [didHydratePreferences, journeysRestored, sessionUserId, preferencesStatus]);
 
   // (2) Save journeys to disk on every change — only AFTER the
   // restore-from-disk pass has completed, to avoid the overwrite
@@ -2489,19 +2537,64 @@ export function MobileLibraryShell(args: {
   ];
   const hasUserJourneys = preferences.journeys.length > 0;
   const activeJourney = findActiveJourney(preferences.journeys, preferences.activeJourneyId);
+  // Keep the last-fetched journey payload per language so switching back to
+  // a previously-opened language renders instantly (no empty flash) while we
+  // silently re-fetch in the background to refresh stats / unlocks. Mirrored
+  // to disk so a cold-start offline can still render Journey for any
+  // language the user has opened before.
+  //
+  // Declarado ANTES de los entries / resolvers que lo consultan (variant
+  // fallback offline). Antes vivía 450 líneas más abajo y el journeySwitchEntries
+  // crasheaba la app en mount con ReferenceError (temporal dead zone).
+  const journeyCacheByLanguageRef = useRef<Map<string, MobileJourneyPayload>>(new Map());
   // Flag variant resolver. journeyFlagVariant() returns null when the
   // user's Journey has only a Studio cuid in `variant` and no separate
   // `region`. In that case we lookup the corresponding track on the
   // server payload (`remoteJourney.tracks`) and use its variant code
   // (e.g. "latam") so LanguageFlag can render Colombia / Brazil / etc.
   // Falls back to preferences.preferredVariant as a last resort.
+  //
+  // Offline note: `remoteJourney` se hidrata desde disk al cold-start
+  // sin red, así que estos lookups siguen funcionando con el cache —
+  // PERO si el cache se guardó antes de que la API empezara a emitir
+  // `track.variant`, el id-match retorna null. Para esos casos
+  // tenemos un fallback adicional: agarrar el variant del primer
+  // track con variant poblado (sea cual sea el id), porque los
+  // tracks de un mismo Journey comparten familia regional (todos
+  // LATAM o todos UK, etc.) — nunca mezclamos España + LATAM en el
+  // mismo Journey.
   const activeJourneyFlagVariant = (() => {
     if (!activeJourney) return preferences.preferredVariant;
     const direct = journeyFlagVariant(activeJourney);
     if (direct) return direct;
-    if (activeJourney.variant && remoteJourney?.tracks) {
-      const track = remoteJourney.tracks.find((t) => t.id === activeJourney.variant);
-      if (track?.variant) return track.variant;
+    // GUARD CRÍTICO: solo usar remoteJourney.tracks como fuente de
+    // variant si remoteJourney pertenece al mismo idioma que el
+    // activeJourney. Sin esto, al cold-start offline el remoteJourney
+    // puede ser el último journey cargado online (e.g. alemán) pero
+    // el activeJourney persistido es otro (e.g. español) — el resolver
+    // sacaba el variant de los tracks alemanes y pintaba bandera de
+    // Alemania al lado de historias españolas. El usuario veía el
+    // mismatch hasta que cambiaba de journey y volvía (lo que dispara
+    // un fetch fresco del journey correcto).
+    const remoteMatchesActive =
+      remoteJourney?.language?.toLowerCase() === activeJourney.language?.toLowerCase();
+    if (remoteMatchesActive && remoteJourney?.tracks) {
+      if (activeJourney.variant) {
+        const track = remoteJourney.tracks.find((t) => t.id === activeJourney.variant);
+        if (track?.variant) return track.variant;
+      }
+      const firstWithVariant = remoteJourney.tracks.find((t) => t.variant);
+      if (firstWithVariant?.variant) return firstWithVariant.variant;
+    }
+    // Como último fallback, mirar en el journey cache por idioma.
+    const cached = journeyCacheByLanguageRef.current.get(activeJourney.language.toLowerCase());
+    if (cached?.tracks) {
+      if (activeJourney.variant) {
+        const track = cached.tracks.find((t) => t.id === activeJourney.variant);
+        if (track?.variant) return track.variant;
+      }
+      const firstWithVariant = cached.tracks.find((t) => t.variant);
+      if (firstWithVariant?.variant) return firstWithVariant.variant;
     }
     return preferences.preferredVariant;
   })();
@@ -2521,7 +2614,19 @@ export function MobileLibraryShell(args: {
     // mayúscula y el row terminaba mostrando "· CMONCZ14V0000…", que
     // es ruido para el usuario. La región canónica vive en
     // `journey.region` (y para journeys legacy en `journey.variant`).
-    const flagRegion = journeyFlagVariant(journey);
+    //
+    // Fallback offline: si journey.region/variant están vacíos pero
+    // tenemos cache local del journey para ese idioma, sacamos el
+    // variant del primer track con variant poblado. Mismo principio
+    // que activeJourneyFlagVariant — los tracks de un Journey siempre
+    // pertenecen a una sola familia regional.
+    let flagRegion = journeyFlagVariant(journey);
+    if (!flagRegion) {
+      const langKey = journey.language.toLowerCase();
+      const cached = journeyCacheByLanguageRef.current.get(langKey);
+      const firstWithVariant = cached?.tracks?.find((t) => t.variant);
+      if (firstWithVariant?.variant) flagRegion = firstWithVariant.variant;
+    }
     const rawVariant = (flagRegion ?? "").trim().toLowerCase();
     const variantLabel = VARIANT_LABELS[rawVariant as keyof typeof VARIANT_LABELS] ?? null;
     return {
@@ -2835,10 +2940,10 @@ export function MobileLibraryShell(args: {
   // them what they need to finish first instead of the tap silently
   // doing nothing. Auto-dismissed by an effect below.
   const [lockedStoryHint, setLockedStoryHint] = useState<string | null>(null);
-  // No-op del debug trace que estuvo activo para diagnosticar el bug
-  // de apertura de stories. Lo dejamos cableado por si vuelve a hacer
-  // falta — los call-sites siguen llamando `showDebug(...)` pero el
-  // contenido no se renderiza.
+  // No-op del debug trace. Lo dejamos cableado (call-sites llaman
+  // `showDebug("...")`) por si vuelve a hacer falta — la última caza
+  // fue para el bug de vocab offline. Para re-activar: hacer que esta
+  // función acumule en state y renderizar el overlay (ver historial).
   const showDebug = useCallback((_text: string) => {
     // intentionally empty
   }, []);
@@ -2944,12 +3049,6 @@ export function MobileLibraryShell(args: {
   const [practicePerfectActive, setPracticePerfectActive] = useState(false);
   const storyOpenedAtRef = useRef<number>(0);
   const hasSeededExplorePreferencesRef = useRef(false);
-  // Keep the last-fetched journey payload per language so switching back to
-  // a previously-opened language renders instantly (no empty flash) while we
-  // silently re-fetch in the background to refresh stats / unlocks. Mirrored
-  // to disk so a cold-start offline can still render Journey for any
-  // language the user has opened before.
-  const journeyCacheByLanguageRef = useRef<Map<string, MobileJourneyPayload>>(new Map());
   const saveJourneyCacheToDisk = useCallback(() => {
     const serializable: Record<string, MobileJourneyPayload> = {};
     journeyCacheByLanguageRef.current.forEach((value, key) => {
@@ -3006,18 +3105,34 @@ export function MobileLibraryShell(args: {
     let cancelled = false;
 
     async function hydrateFavorites() {
+      if (!sessionUserId) {
+        showDebug(`fav hydrate: skip no-userId off=${isOffline ? "Y" : "N"}`);
+        return;
+      }
+      showDebug(`fav hydrate: start userId=${sessionUserId.slice(0, 8)} off=${isOffline ? "Y" : "N"} tok=${sessionToken ? "Y" : "N"}`);
+
       const local = await loadLocalFavorites(sessionUserId);
+      showDebug(`fav local: ${local.length}`);
       if (!cancelled) setFavoriteWords(local);
 
-      if (!sessionToken) return;
+      if (!sessionToken) {
+        showDebug(`fav hydrate: no token, stop`);
+        return;
+      }
+
+      const pendingBefore = await loadPendingFavoriteOps(sessionUserId);
+      showDebug(`fav queue before: ${pendingBefore.length}`);
+      const stillPending = await drainPendingFavoriteOps(sessionToken, sessionUserId);
+      showDebug(`fav drain: still=${stillPending.length}`);
 
       try {
         const remote = await syncFavoritesFromServer(sessionToken);
         if (cancelled) return;
+        showDebug(`fav remote: ${remote.length}`);
         setFavoriteWords(remote);
         await saveLocalFavorites(sessionUserId, remote);
-      } catch {
-        // Keep local cache.
+      } catch (err) {
+        showDebug(`fav sync err: ${(err as Error).message?.slice(0, 30)}`);
       }
     }
 
@@ -3026,7 +3141,14 @@ export function MobileLibraryShell(args: {
     return () => {
       cancelled = true;
     };
-  }, [sessionToken, sessionUserId]);
+    // `isOffline` está en las deps para que cuando el OS confirme que
+    // la red regresó (NetInfo flip de true→false), el effect re-corra
+    // y dispare el drain de la pending queue + un pull fresco del
+    // server. Sin esto, los add/remove offline solo se sincronizaban
+    // tras matar y reabrir la app — el usuario veía únicamente la
+    // palabra recién agregada offline porque el state in-memory tenía
+    // el snapshot pre-airplane y nunca se refrescaba.
+  }, [sessionToken, sessionUserId, isOffline]);
 
   useEffect(() => {
     let cancelled = false;
@@ -3488,7 +3610,15 @@ export function MobileLibraryShell(args: {
   // vez que detecta mismatch — el backend sigue ganando, pero el flag y
   // el contenido nunca se separan.
   useEffect(() => {
-    if (!didHydratePreferences) return;
+    // Gate: normalmente esperamos al hidrate online. Offline el hidrate
+    // falla y `didHydratePreferences` queda false; sin un fallback, este
+    // reconcile no corre y `activeJourneyLanguage` queda desincronizado
+    // de `activeJourney?.language` — el resultado visible eran historias
+    // de un idioma con la bandera de OTRO. Mismo patrón offline-degraded
+    // que el load de stored journeys.
+    const offlineDegraded =
+      Boolean(sessionUserId) && preferencesStatus === "error" && journeysRestored;
+    if (!didHydratePreferences && !offlineDegraded) return;
     const backendLang = activeJourney?.language?.trim() ?? null;
     if (backendLang) {
       const sameLang =
@@ -3505,6 +3635,9 @@ export function MobileLibraryShell(args: {
     preferences.targetLanguages,
     activeJourneyLanguage,
     activeJourney,
+    sessionUserId,
+    preferencesStatus,
+    journeysRestored,
   ]);
 
   // Cross-section sync: when the journey language changes (from
@@ -3628,6 +3761,9 @@ export function MobileLibraryShell(args: {
           dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
           remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
           reminderHour: normalizeReminderHour(next.reminderHour),
+          reminderMinute: normalizeReminderMinute(
+            (next as { reminderMinute?: unknown }).reminderMinute
+          ),
           journeyPlacementLevel:
             typeof next.journeyPlacementLevel === "string" ? next.journeyPlacementLevel : null,
           onboardingSurveyCompletedAt:
@@ -3645,6 +3781,7 @@ export function MobileLibraryShell(args: {
         const reminderState = await syncDailyReminderSchedule({
           enabled: normalized.remindersEnabled,
           hour: normalized.reminderHour,
+          minute: normalized.reminderMinute ?? 0,
           learningGoal: normalized.learningGoal,
           dailyMinutes: normalized.dailyMinutes,
           context: null,
@@ -3660,6 +3797,12 @@ export function MobileLibraryShell(args: {
         }
         setPreferencesStatus("error");
         setPreferencesHint(error instanceof Error ? error.message : "Could not load settings.");
+        // No marcamos `didHydratePreferences=true` aquí: si lo hacemos
+        // offline, las preferences quedan vacías (sin
+        // onboardingSurveyCompletedAt) y el gate de onboarding cree
+        // que es un usuario nuevo, mandándolo al onboarding tras un
+        // kill+open offline. El restore de journeys se desbloquea por
+        // un effect aparte que reacciona al fallo offline-con-anchor.
       } finally {
         if (!cancelled) setPreferencesLoading(false);
       }
@@ -3865,6 +4008,10 @@ export function MobileLibraryShell(args: {
         loadJourneyCache<MobileJourneyPayload>(PREVIEW_OFFLINE_USER_ID),
       ]);
       if (cancelled) return;
+      const snapSize = snapshot?.stories.length ?? 0;
+      const firstSlug = snapshot?.stories[0]?.storySlug ?? "-";
+      const firstText = snapshot?.stories[0]?.text ? "Y" : "N";
+      showDebug(`hidrate: snap=${snapSize} slug0=${firstSlug} text0=${firstText}`);
       setOfflineSnapshot(snapshot);
       if (journeyCache) {
         for (const [language, payload] of Object.entries(journeyCache)) {
@@ -3873,10 +4020,27 @@ export function MobileLibraryShell(args: {
         // Seed inmediato del journey state desde el cache para que el
         // path renderice cold-start offline. Sin esto, el ref tenía el
         // payload pero `remoteJourney` quedaba null hasta que el fetch
-        // online resolviera (que offline nunca pasa). Tomamos la
-        // primera lengua disponible; si después el flujo online setea
-        // otra activa, la sobreescribe.
-        const firstEntry = Object.entries(journeyCache).find(
+        // online resolviera (que offline nunca pasa).
+        //
+        // Prioridad: leer el último idioma activo persistido en
+        // SecureStore ("digital-polyglot/active-journey-language") y
+        // usar ese cache. Antes tomábamos el primer entry del Map
+        // (orden no-determinístico), lo que offline producía un
+        // mismatch: la bandera del journey activo (e.g. alemán) con
+        // historias del primer entry (e.g. español).
+        let seedLanguage: string | null = null;
+        try {
+          const stored = await SecureStore.getItemAsync("digital-polyglot/active-journey-language");
+          seedLanguage = typeof stored === "string" ? stored.trim().toLowerCase() : null;
+        } catch {
+          // SecureStore unavailable; cae al firstEntry abajo.
+        }
+        const matchingEntry = seedLanguage
+          ? Object.entries(journeyCache).find(
+              ([lang, payload]) => lang.toLowerCase() === seedLanguage && payload != null
+            )
+          : null;
+        const firstEntry = matchingEntry ?? Object.entries(journeyCache).find(
           ([, payload]) => payload != null
         );
         if (firstEntry) {
@@ -4314,16 +4478,26 @@ export function MobileLibraryShell(args: {
 
   const favoriteCards = useMemo(
     () =>
-      sortPracticeItemsByOnboarding(favoriteWords, onboardingPracticePrefs, true)
-        .map((item) => {
-          const selection = item.storySlug ? resolveStorySelection(item.storySlug) : null;
-          return {
-            key: buildFavoriteIdentity(item),
-            item,
-            selection,
-          };
-        }),
-    [favoriteWords, onboardingPracticePrefs]
+      // Most-recent-first. Mantenemos el orden natural del array:
+      // - el server retorna favorites con `orderBy: [{ createdAt: "desc" }]`,
+      //   así que los items que llegan vía syncFavoritesFromServer ya están
+      //   newest-first;
+      // - las adiciones locales (toggleFavoriteWord / saveFavoriteItem)
+      //   hacen `unshift` (prepend) en lugar de `push`, así un item
+      //   recién guardado offline también queda arriba.
+      // Antes pasábamos por `sortPracticeItemsByOnboarding` que mezclaba
+      // criterios de cola de practice (due first + score onboarding) con
+      // una vista que el usuario lee como "mis favoritos en orden": guardar
+      // una palabra y no verla arriba parecía bug.
+      favoriteWords.map((item) => {
+        const selection = item.storySlug ? resolveStorySelection(item.storySlug) : null;
+        return {
+          key: buildFavoriteIdentity(item),
+          item,
+          selection,
+        };
+      }),
+    [favoriteWords]
   );
   // Journeys-first: el listado de favoritos por defecto se acota al
   // idioma del journey activo. La lógica anterior mezclaba palabras
@@ -5098,7 +5272,31 @@ export function MobileLibraryShell(args: {
     }
     setOfflineStoryIdInFlight(story.id);
     try {
-      const nextSnapshot = await saveStoryOffline(PREVIEW_OFFLINE_USER_ID, book, story);
+      // Fetch word timings en paralelo al save. Sin esto el karaoke
+      // offline cae al fallback sintético (que NO avanza con el
+      // audio); fetch ahora una sola vez y persistir junto a la
+      // story para que el Reader offline los lea directo del snapshot.
+      let wordTimingsRaw: string | null = null;
+      if (sessionToken) {
+        try {
+          const timings = await apiFetch<{ timings?: unknown }>({
+            baseUrl: mobileConfig.apiBaseUrl,
+            path: `/api/mobile/audio-word-timings?slug=${encodeURIComponent(story.slug)}`,
+            method: "GET",
+            token: sessionToken,
+            timeoutMs: 8000,
+          });
+          if (timings?.timings) {
+            wordTimingsRaw = JSON.stringify(timings.timings);
+          }
+        } catch {
+          // Karaoke offline degrades gracefully al sintético; el resto
+          // del flow (texto, audio, cover) continúa.
+        }
+      }
+      const nextSnapshot = await saveStoryOffline(PREVIEW_OFFLINE_USER_ID, book, story, {
+        wordTimingsRaw,
+      });
       setOfflineSnapshot(nextSnapshot);
     } finally {
       setOfflineStoryIdInFlight(null);
@@ -5124,9 +5322,27 @@ export function MobileLibraryShell(args: {
         setLockedStoryHint("Couldn't download: the server returned no data.");
         return;
       }
+      // Fetch word timings (mismo patrón que downloadStoryOffline)
+      // para que el karaoke funcione offline. Fallo silencioso degrada
+      // al fallback sintético sin romper el resto del download.
+      let wordTimingsRaw: string | null = null;
+      try {
+        const timings = await apiFetch<{ timings?: unknown }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: `/api/mobile/audio-word-timings?slug=${encodeURIComponent(standalone.slug)}`,
+          method: "GET",
+          token: sessionToken,
+          timeoutMs: 8000,
+        });
+        if (timings?.timings) {
+          wordTimingsRaw = JSON.stringify(timings.timings);
+        }
+      } catch {
+        // ignore
+      }
       const nextSnapshot = await saveStandaloneStoryOffline(
         PREVIEW_OFFLINE_USER_ID,
-        standalone
+        { ...standalone, wordTimingsRaw }
       );
       setOfflineSnapshot(nextSnapshot);
       // Verificación dura: el snapshot dice "descargada" pero ¿los
@@ -5140,13 +5356,13 @@ export function MobileLibraryShell(args: {
       const audioOk = Boolean(saved?.localAudioUri);
       if (!coverOk || !audioOk) {
         const missing = [
-          !coverOk ? "imagen" : null,
+          !coverOk ? "image" : null,
           !audioOk ? "audio" : null,
         ]
           .filter(Boolean)
           .join(" + ");
         setLockedStoryHint(
-          `Descarga incompleta (${missing} no se pudo guardar). Verifica tu conexión y vuelve a intentar.`
+          `Download incomplete (${missing} could not be saved). Check your connection and try again.`
         );
       }
     } catch (error) {
@@ -5158,10 +5374,12 @@ export function MobileLibraryShell(args: {
   }
 
   async function removeStoryFromOffline(story: Story | { id: string }) {
+    showDebug(`remove offline: id=${story.id}`);
     setOfflineStoryIdInFlight(story.id);
     try {
       const nextSnapshot = await removeStoryOffline(PREVIEW_OFFLINE_USER_ID, story.id);
       setOfflineSnapshot(nextSnapshot);
+      showDebug(`removed. snap=${nextSnapshot.stories.length}`);
     } finally {
       setOfflineStoryIdInFlight(null);
     }
@@ -5184,11 +5402,20 @@ export function MobileLibraryShell(args: {
     const exists = favoriteWordsByKey.has(identity);
     const nextItems = exists
       ? favoriteWords.filter((entry) => buildFavoriteIdentity(entry) !== identity)
-      : [...favoriteWords, favorite];
+      : [favorite, ...favoriteWords];
 
     setFavoriteWords(nextItems);
     await saveLocalFavorites(sessionUserId, nextItems);
+    showDebug(`fav toggle: ${exists ? "remove" : "add"} "${favorite.word}" userId=${sessionUserId?.slice(0, 8) ?? "-"}`);
 
+    // Try the server now if we have a token; on failure (or no token —
+    // offline / signed-out-but-anchored), persist the operation in the
+    // pending queue so the next hydrate replays it before pulling from
+    // the server. Without this, the optimistic state silently disappears
+    // when connectivity returns.
+    const op = exists
+      ? ({ kind: "remove" as const, word: favorite.word, queuedAt: new Date().toISOString() })
+      : ({ kind: "add" as const, item: favorite, queuedAt: new Date().toISOString() });
     if (sessionToken) {
       try {
         if (exists) {
@@ -5196,25 +5423,33 @@ export function MobileLibraryShell(args: {
         } else {
           await addFavoriteOnServer(sessionToken, favorite);
         }
-      } catch {
-        // keep optimistic state
+        showDebug(`fav server ok`);
+      } catch (err) {
+        await appendPendingFavoriteOp(sessionUserId, op);
+        showDebug(`fav server fail → queued: ${(err as Error).message?.slice(0, 30)}`);
       }
+    } else {
+      await appendPendingFavoriteOp(sessionUserId, op);
+      showDebug(`fav no-token → queued`);
     }
   }
 
   async function saveFavoriteItem(item: MobileFavoriteItem) {
     const identity = buildFavoriteIdentity(item);
     if (favoriteWordsByKey.has(identity)) return;
-    const nextItems = [...favoriteWords, item];
+    const nextItems = [item, ...favoriteWords];
     setFavoriteWords(nextItems);
     await saveLocalFavorites(sessionUserId, nextItems);
 
+    const op = { kind: "add" as const, item, queuedAt: new Date().toISOString() };
     if (sessionToken) {
       try {
         await addFavoriteOnServer(sessionToken, item);
       } catch {
-        // keep optimistic state
+        await appendPendingFavoriteOp(sessionUserId, op);
       }
+    } else {
+      await appendPendingFavoriteOp(sessionUserId, op);
     }
   }
 
@@ -5224,12 +5459,15 @@ export function MobileLibraryShell(args: {
     setFavoriteWords(nextItems);
     await saveLocalFavorites(sessionUserId, nextItems);
 
+    const op = { kind: "remove" as const, word: item.word, queuedAt: new Date().toISOString() };
     if (sessionToken) {
       try {
         await removeFavoriteOnServer(sessionToken, item.word);
       } catch {
-        // keep optimistic state
+        await appendPendingFavoriteOp(sessionUserId, op);
       }
+    } else {
+      await appendPendingFavoriteOp(sessionUserId, op);
     }
   }
 
@@ -5254,7 +5492,12 @@ export function MobileLibraryShell(args: {
   async function createAndAddToCollection(name: string, item: MobileFavoriteItem) {
     const trimmed = name.trim();
     if (!trimmed) return;
-    const fresh = addItemToCollection(createCollection(trimmed), item);
+    // Las colecciones son per-idioma: el lenguaje viene del item que la
+    // está creando (si lo tiene) o del journey activo como fallback.
+    // Así crear "Mi favoritas" desde una palabra alemana NO la hace
+    // visible en el journey español.
+    const language = item.language ?? activeJourneyLanguage ?? null;
+    const fresh = addItemToCollection(createCollection(trimmed, language), item);
     await persistCollections([...collections, fresh]);
   }
 
@@ -5309,8 +5552,27 @@ export function MobileLibraryShell(args: {
     const hasOfflineVocab =
       typeof offlineCopy?.vocabRaw === "string" && offlineCopy.vocabRaw.trim().length > 0;
     showDebug(
-      `lookup: snap=${offlineSnapshot?.stories.length ?? 0} found=${offlineCopy ? "Y" : "N"} text=${offlineCopy?.text ? "Y" : "N"} vocab=${hasOfflineVocab ? "Y" : "N"}`
+      `lookup: try=${story.storySlug} snap=${offlineSnapshot?.stories.length ?? 0} found=${offlineCopy ? "Y" : "N"} text=${offlineCopy?.text ? "Y" : "N"} audio=${offlineCopy?.localAudioUri ? "Y" : "N"}`
     );
+    if (!offlineCopy && (offlineSnapshot?.stories.length ?? 0) > 0) {
+      // Print what we DO have so we can spot slug mismatches between the
+      // journey path and the saved snapshot (different prefix, suffix, etc.)
+      const slugs = (offlineSnapshot?.stories ?? []).map((s) => s.storySlug).filter(Boolean).slice(0, 3).join(",");
+      showDebug(`snap slugs: ${slugs}`);
+    }
+    if (offlineCopy?.localAudioUri) {
+      // Verify the audio file actually exists on disk. The snapshot's
+      // localAudioUri can be stale if the URL hash changed (R2
+      // regeneration) or if the file was evicted between cold-starts.
+      // Print the result inline so a tap-to-play "stuck loading"
+      // report can be diagnosed without a debug build.
+      try {
+        const info = await FileSystem.getInfoAsync(offlineCopy.localAudioUri);
+        showDebug(`audio file: exists=${info.exists ? "Y" : "N"} size=${(info as { size?: number }).size ?? "?"}`);
+      } catch (err) {
+        showDebug(`audio file: probe-error ${(err as Error).message?.slice(0, 30)}`);
+      }
+    }
     // Si la story está descargada (tiene text local), abrir directo
     // sin pasar por fetch network. Antes el flow exigía vocab además
     // del text, y caía al fetch online cuando faltaba vocab; offline
@@ -5414,7 +5676,7 @@ export function MobileLibraryShell(args: {
         // historias" — el tap funcionaba, simplemente no había nada
         // que abrir.
         setLockedStoryHint(
-          "Esta historia no está descargada. Conéctate a internet o descárgala primero."
+          "This story isn't downloaded. Connect to the internet or download it first."
         );
       }
     }
@@ -7047,7 +7309,10 @@ export function MobileLibraryShell(args: {
 
     if (!url) {
       const sentence = item.word?.trim();
-      if (!sentence) return;
+      if (!sentence) {
+        setLockedStoryHint("Can't play: missing word text.");
+        return;
+      }
       const langInput = (item.language ?? activeJourneyLanguage ?? "").trim().toLowerCase();
       const LANG_MAP: Record<string, string> = {
         es: "spanish", spanish: "spanish", español: "spanish", castellano: "spanish",
@@ -7059,7 +7324,7 @@ export function MobileLibraryShell(args: {
       };
       const language = LANG_MAP[langInput] ?? langInput;
       if (!language) {
-        console.warn("[favorites play] missing language, skipping", { word: sentence });
+        setLockedStoryHint(`Can't play: no language for "${sentence}".`);
         return;
       }
       try {
@@ -7071,10 +7336,14 @@ export function MobileLibraryShell(args: {
           body: { sentence, language },
           timeoutMs: 45000,
         });
-        if (!resp?.url) return;
+        if (!resp?.url) {
+          setLockedStoryHint("Can't play: server returned no audio URL.");
+          return;
+        }
         url = resp.url;
       } catch (err) {
-        console.error("[favorites play] tts request failed", err);
+        const msg = err instanceof Error ? err.message : String(err);
+        setLockedStoryHint(`Can't play: ${msg.slice(0, 80)}`);
         return;
       }
     }
@@ -7098,7 +7367,8 @@ export function MobileLibraryShell(args: {
       favoriteHqSoundRef.current = sound;
       setPlayingFavoriteKey(key);
     } catch (err) {
-      console.error("[favorites play] playback failed", err);
+      const msg = err instanceof Error ? err.message : String(err);
+      setLockedStoryHint(`Playback failed: ${msg.slice(0, 80)}`);
       await stopFavoriteAudio();
     }
   }
@@ -7871,9 +8141,10 @@ export function MobileLibraryShell(args: {
       return;
     }
     if (tab === "menu") {
-      // Hamburger tab opens the side menu overlay instead of swapping
-      // activeScreen — Progress, Library, Settings, etc. live inside it.
-      setMenuOpen(true);
+      // Hamburger tab routes to a full Menu screen (sibling of Home /
+      // Explore / Practice / Favorites). Items inside the menu still
+      // navigate to Progress, Library, Settings, etc.
+      setActiveScreen("menu");
       return;
     }
     if (activeScreen === "settings" && preferencesDirty) {
@@ -8950,46 +9221,61 @@ export function MobileLibraryShell(args: {
         }
       }
     }
+    // Paleta dark-tinted alineada con los tokens de marca: cada card
+    // toma un acento del token system (cyan / energy / streak / gems /
+    // xp) sobre un fondo navy semi-transparente. Reemplaza la versión
+    // anterior de cards pastel claras que rompían con el resto de la
+    // UI dark.
     return [
       {
         key: "quick-reads",
         title: "Quick reads",
         subtitle: "< 5 min",
+        count: quickReads,
         countLabel: `${quickReads} stories`,
-        bg: "#f4f0ff",
-        accent: "#7c3aed",
+        bg: "#0e2a44",
+        border: "rgba(125, 211, 252, 0.32)",
+        accent: "#7dd3fc",
       },
       {
         key: "listen-tonight",
         title: "Listen tonight",
         subtitle: "Audio-first",
+        count: listenTonight,
         countLabel: `${listenTonight} stories`,
-        bg: "#f6c177",
-        accent: "#7c2d12",
+        bg: "#2a1a36",
+        border: "rgba(240, 171, 252, 0.32)",
+        accent: "#f0abfc",
       },
       {
         key: "cafe-break",
-        title: "Café break",
+        title: "Coffee break",
         subtitle: "Culture & family",
+        count: cafeBreak,
         countLabel: `${cafeBreak} stories`,
-        bg: "#fed7aa",
-        accent: "#9a3412",
+        bg: "#2b1e14",
+        border: "rgba(251, 146, 60, 0.34)",
+        accent: "#fb923c",
       },
       {
         key: "before-bed",
-        title: "Antes de dormir",
-        subtitle: "Calma + audio",
+        title: "Before bed",
+        subtitle: "Calm + audio",
+        count: beforeBed,
         countLabel: `${beforeBed} stories`,
-        bg: "#e0e7ff",
-        accent: "#312e81",
+        bg: "#1d1f3a",
+        border: "rgba(196, 181, 253, 0.32)",
+        accent: "#c4b5fd",
       },
       {
         key: "for-trip",
-        title: "Para el viaje",
+        title: "For the trip",
         subtitle: "Travel & history",
+        count: forTrip,
         countLabel: `${forTrip} stories`,
-        bg: "#cffafe",
-        accent: "#0e7490",
+        bg: "#2a2210",
+        border: "rgba(252, 211, 77, 0.34)",
+        accent: "#fcd34d",
       },
     ];
   }, [exploreBaseFilteredBooks]);
@@ -9380,7 +9666,10 @@ export function MobileLibraryShell(args: {
         <View style={styles.heroHeaderRow}>
           <View style={styles.favoritesHeroLead}>
             <Pressable
-              onPress={() => setExplorePickerSection("language")}
+              onPress={() => {
+                setLanguageSwitchMode("explore-filter");
+                setLanguageSwitchOpen(true);
+              }}
               hitSlop={12}
               style={({ pressed }) => [
                 styles.journeyHeaderFlagBadge,
@@ -9570,95 +9859,6 @@ export function MobileLibraryShell(args: {
         </ScrollView>
       </View>
 
-      <Modal
-        transparent
-        visible={explorePickerSection !== null}
-        animationType="slide"
-        onRequestClose={() => setExplorePickerSection(null)}
-      >
-        <Pressable style={styles.exploreLangSheetBackdrop} onPress={() => setExplorePickerSection(null)}>
-          <Pressable style={styles.exploreLangSheetPanel} onPress={() => {}}>
-            <View style={styles.exploreLangSheetGrabber} />
-            <View style={styles.exploreLangSheetHeader}>
-              <Text style={styles.exploreLangSheetTitle}>
-                {explorePickerSection === "language" ? "Choose language" : "Choose region"}
-              </Text>
-              <Pressable
-                onPress={() => setExplorePickerSection(null)}
-                style={styles.exploreLangSheetCloseBtn}
-                accessibilityRole="button"
-                accessibilityLabel="Close"
-                hitSlop={8}
-              >
-                <Feather name="x" size={18} color="#dbe9ff" />
-              </Pressable>
-            </View>
-
-            {explorePickerSection === "language" ? (
-              <View style={styles.exploreLangSheetList}>
-                {exploreFilters.languages.map((language) => {
-                  const isActive = selectedExploreLanguage === language;
-                  return (
-                    <Pressable
-                      key={language}
-                      onPress={() => {
-                        setSelectedExploreLanguage(language);
-                        if (language !== "All") setActiveJourneyLanguage(language);
-                        setExplorePickerSection(null);
-                      }}
-                      style={[
-                        styles.exploreLangSheetRow,
-                        isActive ? styles.exploreLangSheetRowActive : null,
-                      ]}
-                    >
-                      {language !== "All" ? (
-                        <LanguageFlag language={language} size={28} />
-                      ) : (
-                        <View style={styles.exploreLangSheetAllBadge}>
-                          <Feather name="globe" size={16} color="#1a1305" />
-                        </View>
-                      )}
-                      <Text style={styles.exploreLangSheetRowLabel}>{language}</Text>
-                      {isActive ? (
-                        <Feather name="check" size={18} color="#f8c15c" />
-                      ) : null}
-                    </Pressable>
-                  );
-                })}
-              </View>
-            ) : null}
-
-            {explorePickerSection === "region" ? (
-              <View style={styles.exploreLangSheetList}>
-                {exploreFilters.regions.map((region) => {
-                  const isActive = selectedExploreRegion === region;
-                  return (
-                    <Pressable
-                      key={region}
-                      onPress={() => {
-                        setSelectedExploreRegion(region);
-                        setExplorePickerSection(null);
-                      }}
-                      style={[
-                        styles.exploreLangSheetRow,
-                        isActive ? styles.exploreLangSheetRowActive : null,
-                      ]}
-                    >
-                      <Text style={styles.exploreLangSheetRowLabel}>
-                        {region === "All" ? region : formatRegion(region)}
-                      </Text>
-                      {isActive ? (
-                        <Feather name="check" size={18} color="#f8c15c" />
-                      ) : null}
-                    </Pressable>
-                  );
-                })}
-              </View>
-            ) : null}
-          </Pressable>
-        </Pressable>
-      </Modal>
-
       {expandedCollectionKey ? (() => {
         const collection = exploreCollections.find((c) => c.key === expandedCollectionKey);
         if (!collection) return null;
@@ -9834,6 +10034,7 @@ export function MobileLibraryShell(args: {
             )}
           </View>
 
+          {exploreCollections.some((c) => c.count > 0) ? (
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <View>
@@ -9847,19 +10048,22 @@ export function MobileLibraryShell(args: {
               decelerationRate="normal"
               contentContainerStyle={styles.exploreCollectionsCarousel}
             >
-              {exploreCollections.map((collection) => (
+              {exploreCollections.filter((c) => c.count > 0).map((collection) => (
                 <Pressable
                   key={collection.key}
                   onPress={() => {
                     setExpandedCollectionKey(collection.key);
                     shellScrollRef.current?.scrollTo({ y: 0, animated: false });
                   }}
-                  style={[styles.exploreCollectionCard, { backgroundColor: collection.bg }]}
+                  style={[
+                    styles.exploreCollectionCard,
+                    { backgroundColor: collection.bg, borderColor: collection.border },
+                  ]}
                 >
                   <Text style={[styles.exploreCollectionTitle, { color: collection.accent }]}>
                     {collection.title}
                   </Text>
-                  <Text style={[styles.exploreCollectionSubtitle, { color: collection.accent }]}>
+                  <Text style={[styles.exploreCollectionSubtitle, { color: "rgba(255,255,255,0.72)" }]}>
                     {collection.subtitle}
                   </Text>
                   <View style={[styles.exploreCollectionCountPill, { backgroundColor: collection.accent }]}>
@@ -9871,6 +10075,7 @@ export function MobileLibraryShell(args: {
               ))}
             </ScrollView>
           </View>
+          ) : null}
 
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
@@ -10030,7 +10235,10 @@ export function MobileLibraryShell(args: {
             <View style={styles.heroHeaderRow}>
               <View style={styles.favoritesHeroLead}>
                 <Pressable
-                  onPress={() => setLanguageSwitchOpen(true)}
+                  onPress={() => {
+                    setLanguageSwitchMode("switch");
+                    setLanguageSwitchOpen(true);
+                  }}
                   hitSlop={12}
                   style={({ pressed }) => [
                     styles.journeyHeaderFlagBadge,
@@ -10541,14 +10749,17 @@ export function MobileLibraryShell(args: {
             </Animated.View>
           ) : currentPracticeExercise ? (
             <>
-              {currentPracticeExercise.kind === "multiple-choice" ||
-              currentPracticeExercise.kind === "match" ? (
-                <View
-                  style={[
-                    styles.practiceMeaningMeta,
-                    isCompactMeaningViewport ? styles.practiceMeaningMetaCompact : null,
-                  ]}
-                >
+              {/* Top meta strip (progress dots + topic + XP). Shared
+                  across all practice modes, including match — match's
+                  own internal hero panel (instructions + counter) was
+                  removed to free vertical space for the word/meaning
+                  chips, but this header stays. */}
+              <View
+                style={[
+                  styles.practiceMeaningMeta,
+                  isCompactMeaningViewport ? styles.practiceMeaningMetaCompact : null,
+                ]}
+              >
                   <View
                     style={[
                       styles.practiceMeaningProgressRow,
@@ -10625,7 +10836,6 @@ export function MobileLibraryShell(args: {
                     </View>
                   </View>
                 </View>
-              ) : null}
 
               <ScrollView
                 style={styles.practiceExerciseScroll}
@@ -10701,11 +10911,12 @@ export function MobileLibraryShell(args: {
                                 ? "Stop"
                                 : "Tap to listen"}
                           </Text>
-                          {practiceRevealed ? (
-                            <Text style={styles.practiceHeroListenWord}>
-                              {currentPracticeExercise.favorite.word}
-                            </Text>
-                          ) : null}
+                          {/* Intentionally NO word reveal under the
+                              icon when resolved — showing the answer
+                              there defeats the listening exercise's
+                              purpose (the user should match what they
+                              HEARD against the options, not read it
+                              after the fact). */}
                         </View>
                       ) : isContext ? (
                         <View
@@ -10916,38 +11127,12 @@ export function MobileLibraryShell(args: {
                       styles.practiceQuestionCardMeaning,
                     ]}
                   >
-                    <View
-                      style={[
-                        styles.practiceMeaningHeroCard,
-                        isCompactMeaningViewport ? styles.practiceMeaningHeroCardCompact : null,
-                      ]}
-                    >
-                      <Text style={styles.practiceMatchHeroLabel}>
-                        {(() => {
-                          // Distinguish three reveal flavours:
-                          //   - All pairs matched correctly → celebrate.
-                          //   - Revealed by timeout with some pairs still
-                          //     unsolved → acknowledge instead of lying.
-                          //   - Revealed by validation where every pending
-                          //     pair was wrong → same conciliatory copy.
-                          if (practiceRevealed) {
-                            return matchedWords.length >= totalPairs
-                              ? "Nice! All pairs locked in."
-                              : "Time's up. Moving on.";
-                          }
-                          const filled =
-                            Object.keys(pendingPairings).length + matchedWords.length;
-                          if (wrongMatchWords.length > 0) return "Some pairs were wrong; try again";
-                          if (filled >= totalPairs) return "Tap Check to validate your pairs";
-                          if (activeMatchWord) return "Now choose the matching meaning";
-                          if (activeMatchMeaning) return "Now choose the matching word";
-                          return "Tap a word, then its meaning";
-                        })()}
-                      </Text>
-                      <Text style={styles.practiceMatchHeroCounter}>
-                        {matchedCount + Object.keys(pendingPairings).length} / {totalPairs}
-                      </Text>
-                    </View>
+                    {/* Hero panel (texto de instrucciones + contador
+                        X/Y) eliminado a pedido del usuario para liberar
+                        espacio vertical para los chips de palabras y
+                        significados. El estado del ejercicio (matches
+                        formados) ya se ve en los chips coloreados;
+                        las instrucciones eran ruido. */}
                     <View style={styles.practiceMatchRows}>
                       {wordRowOrder.map((pair, rowIdx) => {
                         const meaning = meaningRowOrder[rowIdx];
@@ -11219,7 +11404,10 @@ export function MobileLibraryShell(args: {
         <View style={styles.heroHeaderRow}>
           <View style={styles.favoritesHeroLead}>
             <Pressable
-              onPress={() => setLanguageSwitchOpen(true)}
+              onPress={() => {
+                setLanguageSwitchMode("switch");
+                setLanguageSwitchOpen(true);
+              }}
               hitSlop={12}
               style={({ pressed }) => [
                 styles.journeyHeaderFlagBadge,
@@ -11260,7 +11448,7 @@ export function MobileLibraryShell(args: {
 
       {favoriteCards.length > 0 ? (
         <>
-          {collections.length > 0 ? (
+          {visibleCollections.length > 0 ? (
             <View style={styles.favoritesCompactBar}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoriteFilterChips}>
                 <Pressable
@@ -11279,7 +11467,7 @@ export function MobileLibraryShell(args: {
                     All ({favoriteWords.length})
                   </Text>
                 </Pressable>
-                {collections.map((collection) => (
+                {visibleCollections.map((collection) => (
                   <Pressable
                     key={collection.id}
                     onPress={() => setSelectedCollectionId(collection.id)}
@@ -11346,6 +11534,9 @@ export function MobileLibraryShell(args: {
             return (
             <SwipeableFavoriteCard
               key={key}
+              swipeKey={key}
+              openSwipeKey={openSwipeKey}
+              onSwipeOpenChange={setOpenSwipeKey}
               word={item.word}
               onDeleteConfirmed={() => void removeFavoriteItem(item)}
               onAddToCollection={() => {
@@ -11960,7 +12151,6 @@ export function MobileLibraryShell(args: {
 
   const settingsView = (
     <MobileSettingsScreen
-      headerAction={<MenuTrigger onPress={() => setMenuOpen(true)} />}
       achievements={
         remoteProgress?.gamification
           ? {
@@ -12053,12 +12243,23 @@ export function MobileLibraryShell(args: {
       onPressRemindersOff={() =>
         setPreferences((current) => ({ ...current, remindersEnabled: false, reminderHour: null }))
       }
-      reminderOptions={REMINDER_HOUR_OPTIONS.map((hour) => ({
-        key: `reminder-${hour}`,
-        label: formatReminderHour(hour),
-        active: preferences.reminderHour === hour,
-        onPress: () => setPreferences((current) => ({ ...current, reminderHour: hour })),
-      }))}
+      // Un solo chip que muestra la hora actual y al tap abre el
+      // TimePickerSheet (wheel picker tipo iOS). Mucho más limpio que
+      // 96 chips horizontales scrolleables.
+      reminderOptions={[
+        {
+          key: "reminder-current",
+          label:
+            preferences.reminderHour !== null
+              ? formatReminderHour(
+                  preferences.reminderHour,
+                  preferences.reminderMinute ?? 0
+                )
+              : "Choose time",
+          active: preferences.reminderHour !== null,
+          onPress: () => setTimePickerOpen(true),
+        },
+      ]}
       reminderPreviewTitle={preferences.remindersEnabled ? reminderPreview.title : null}
       reminderPreviewBody={preferences.remindersEnabled ? reminderPreview.body : null}
       reminderHint={reminderHint ?? "Enable one short nudge a day."}
@@ -12731,6 +12932,7 @@ export function MobileLibraryShell(args: {
       const reminderState = await syncDailyReminderSchedule({
         enabled: preferences.remindersEnabled,
         hour: preferences.reminderHour,
+        minute: preferences.reminderMinute ?? 0,
         learningGoal: preferences.learningGoal,
         dailyMinutes: preferences.dailyMinutes,
         context:
@@ -13600,7 +13802,10 @@ export function MobileLibraryShell(args: {
   const journeyPathTopBar = (
     <View style={styles.journeyTopStripFixed}>
       <Pressable
-        onPress={() => setLanguageSwitchOpen(true)}
+        onPress={() => {
+          setLanguageSwitchMode("switch");
+          setLanguageSwitchOpen(true);
+        }}
         accessibilityRole="button"
         accessibilityLabel="qa-journey-language-switch"
         testID="qa-journey-language-switch"
@@ -14187,7 +14392,7 @@ export function MobileLibraryShell(args: {
                     <View style={styles.journeyTopicEmptyState}>
                       <Feather name="clock" size={16} color="rgba(255,255,255,0.55)" />
                       <Text style={styles.journeyTopicEmptyText}>
-                        Aún no hay historias
+                        No stories yet
                       </Text>
                     </View>
                   ) : null}
@@ -14195,7 +14400,14 @@ export function MobileLibraryShell(args: {
                   {topic.stories.map((story, storyIdx) => {
                     const offlineCopy = offlineStoriesById.get(story.id)
                       ?? offlineSnapshot?.stories.find((s) => s.storySlug === story.storySlug);
-                    const isOfflineReady = Boolean(offlineCopy);
+                    // Una story SOLO cuenta como "descargada" si tiene el
+                    // texto persistido. Entries viejas del snapshot
+                    // (creadas por la versión bugueada de `toOfflineStory`
+                    // que no guardaba `text` ni `vocabRaw`) siguen
+                    // presentes pero no sirven para leer offline; tratarlas
+                    // como "no descargadas" hace que el botón "Download"
+                    // vuelva a aparecer y el tap descargue de verdad.
+                    const isOfflineReady = Boolean(offlineCopy?.text);
                     const isDownloading = offlineStoryIdInFlight === story.id;
                     // Duration shown on the pill: computed from the local
                     // text when the story has been downloaded. Journey
@@ -14798,6 +15010,7 @@ export function MobileLibraryShell(args: {
           story={selection.story}
           resolvedAudioUrl={offlineStory?.localAudioUri ?? selection.resolvedAudioUrl ?? selection.story.audio}
           resolvedCoverUrl={offlineStory?.localCoverUri ?? selection.resolvedCoverUrl ?? null}
+          cachedWordTimingsRaw={offlineStory?.wordTimingsRaw ?? null}
           sessionToken={sessionToken}
           onBack={() => setSelection(null)}
           canGoPrevious={Boolean(previousStory)}
@@ -14825,7 +15038,7 @@ export function MobileLibraryShell(args: {
             readingProgress.find((entry) => entry.storyId === selection.story.id) ?? null
           }
           onTrackProgress={handleReaderTrackProgress}
-          isAvailableOffline={Boolean(offlineStory)}
+          isAvailableOffline={Boolean(offlineStory?.text)}
           isDownloadingOffline={offlineStoryIdInFlight === selection.story.id}
           onDownloadOffline={() => void downloadStoryOffline(selection.book, selection.story)}
           onRemoveOffline={() => void removeStoryFromOffline(selection.story)}
@@ -15147,6 +15360,80 @@ export function MobileLibraryShell(args: {
   // IA swap: tab "Home" muestra Journey path (lo más actionable a diario)
   // y tab "Library" (era "Journey" en bottom nav) muestra el contenido
   // de browsing/recomendaciones que antes vivía en Home.
+  const menuView = (
+    <>
+      <View style={styles.favoritesHero}>
+        <View style={styles.heroHeaderRow}>
+          <View style={styles.favoritesHeroLead}>
+            <View style={styles.favoritesHeroTextBlock}>
+              <Text style={styles.favoritesHeroTitle}>Menu</Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      {isSignedIn ? (
+        <>
+          <Text style={styles.menuScreenSectionTitle}>Your activity</Text>
+          <View style={styles.menuScreenSection}>
+            <MenuScreenRow icon="progress" label="Progress" onPress={() => setActiveScreen("progress")} accent="#a8e845" />
+            <MenuScreenRow icon="journey" label="Library" onPress={() => setActiveScreen("journey")} accent="#7dd3fc" />
+            <MenuScreenRow icon="library" label="My Library" onPress={() => setActiveScreen("library")} accent="#7dd3fc" />
+          </View>
+
+          <Text style={styles.menuScreenSectionTitle}>Create</Text>
+          <View style={styles.menuScreenSection}>
+            <MenuScreenRow icon="create" label="Create story" onPress={() => setActiveScreen("create")} accent="#a892ff" />
+            {effectivePlan === "free" ? (
+              <MenuScreenRow
+                icon="story"
+                label="Story of the Week"
+                onPress={() => {
+                  const spotlight = getSpotlightSelection();
+                  if (spotlight) openSelection(spotlight);
+                }}
+                accent="#f8c15c"
+              />
+            ) : null}
+            {effectivePlan === "basic" ? (
+              <MenuScreenRow
+                icon="story"
+                label="Story of the Day"
+                onPress={() => {
+                  const spotlight = getSpotlightSelection();
+                  if (spotlight) openSelection(spotlight);
+                }}
+                accent="#f8c15c"
+              />
+            ) : null}
+          </View>
+
+          <Text style={styles.menuScreenSectionTitle}>Account</Text>
+          <View style={styles.menuScreenSection}>
+            {(effectivePlan === "free" || effectivePlan === "basic") ? (
+              <MenuScreenRow icon="upgrade" label="Upgrade" onPress={() => void openWebPath("/plans")} accent="#f8c15c" />
+            ) : null}
+            <MenuScreenRow icon="settings" label="Settings" onPress={() => setActiveScreen("settings")} accent="#9cb0c9" />
+            {effectivePlan === "polyglot" ? (
+              <MenuScreenRow icon="settings" label="Test mode" onPress={() => { void handleTestModeReset(); }} accent="#9cb0c9" />
+            ) : null}
+            <MenuScreenRow icon="signout" label="Sign out" onPress={() => { onSignOut?.(); }} accent="#ef4444" />
+          </View>
+
+          <View style={styles.menuScreenLegalRow}>
+            <Pressable onPress={() => setLegalSheetOpen(true)} hitSlop={8}>
+              <Text style={styles.menuScreenLegalText}>Legal · Privacy · Terms</Text>
+            </Pressable>
+          </View>
+        </>
+      ) : (
+        <View style={styles.menuScreenSection}>
+          <MenuScreenRow icon="signin" label="Sign in" onPress={() => onRequestSignIn?.()} accent="#7dd3fc" />
+          <MenuScreenRow icon="legal" label="Legal" onPress={() => setLegalSheetOpen(true)} accent="#9cb0c9" />
+        </View>
+      )}
+    </>
+  );
+
   let content: React.ReactNode = journeyView;
   if (activeScreen === "explore") content = exploreView;
   if (activeScreen === "practice") content = practiceView;
@@ -15154,6 +15441,7 @@ export function MobileLibraryShell(args: {
   if (activeScreen === "journey") content = homeView;
   if (activeScreen === "library") content = libraryView;
   if (activeScreen === "progress") content = progressView;
+  if (activeScreen === "menu") content = menuView;
   if (activeScreen === "settings") content = settingsView;
   if (activeScreen === "create") content = createView;
   // Cuando usamos sticky nativo iOS, los hijos del ScrollView deben
@@ -15173,7 +15461,7 @@ export function MobileLibraryShell(args: {
           during the initial in-flight window. Tappable to retry. */}
       {isOffline && (isSignedIn || Boolean(sessionUserId)) ? (
         <Pressable
-          accessibilityLabel="Sin conexión. Toca para reintentar."
+          accessibilityLabel="Offline. Tap to retry."
           onPress={() => {
             // Bump the refresh counter to re-trigger the hydrate effect.
             // If we're still offline the banner will reappear; if network
@@ -15184,7 +15472,7 @@ export function MobileLibraryShell(args: {
         >
           <View style={styles.offlineBannerDot} />
           <Text style={styles.offlineBannerText} numberOfLines={1}>
-            Sin conexión — biblioteca descargada
+            Offline · downloaded library
           </Text>
           <Feather name="refresh-cw" size={13} color="#f5e0b5" />
         </Pressable>
@@ -15236,7 +15524,7 @@ export function MobileLibraryShell(args: {
           // with a small padding so the title baseline lines up across
           // the four primary tabs.
           !useNativeJourneySticky &&
-          (activeScreen === "explore" || activeScreen === "practice" || activeScreen === "favorites")
+          (activeScreen === "explore" || activeScreen === "practice" || activeScreen === "favorites" || activeScreen === "menu")
             ? { paddingTop: 6 }
             : null,
         ]}
@@ -15405,11 +15693,10 @@ export function MobileLibraryShell(args: {
           eclipse swap without the flicker the floating overlay
           had.) */}
 
-      {/* Floating "back to top" arrow on the journey screen.
-          Visible after the user has scrolled past ~280pt so it
-          doesn't crowd the top of the path. Tapping smoothly
-          scrolls back to y=0. Sits above the bottom tab nav and
-          uses safe-area-aware bottom inset. */}
+      {/* Floating FAB en el journey: mismo chevron-up, pero al tap
+          hace SCROLL hasta la posición de la story "next" dentro del
+          path en lugar de scroll-to-top. Si todo está completo o aún
+          no medimos la Y del topic correspondiente, fallback a top. */}
       {activeScreen === "home" &&
       !journeyDetailTopicId &&
       !openingStoryId &&
@@ -15417,10 +15704,23 @@ export function MobileLibraryShell(args: {
       showJourneyScrollTop ? (
         <Pressable
           onPress={() => {
-            shellScrollRef.current?.scrollTo({ y: 0, animated: true });
+            let targetY: number | null = null;
+            if (globalJourneyNextStoryId && activeJourneyTrack) {
+              for (const level of activeJourneyTrack.levels) {
+                for (const topic of level.topics) {
+                  if (topic.stories.some((s) => s.id === globalJourneyNextStoryId)) {
+                    const layout = topicLayoutsRef.current.get(topic.slug);
+                    if (layout) targetY = layout.y;
+                    break;
+                  }
+                }
+                if (targetY !== null) break;
+              }
+            }
+            shellScrollRef.current?.scrollTo({ y: targetY ?? 0, animated: true });
           }}
           accessibilityRole="button"
-          accessibilityLabel="Scroll to top of journey"
+          accessibilityLabel="Scroll to next story"
           style={({ pressed }) => [
             styles.journeyScrollTopButton,
             pressed ? styles.journeyScrollTopButtonPressed : null,
@@ -15443,8 +15743,32 @@ export function MobileLibraryShell(args: {
       <LanguageSwitchSheet
         open={languageSwitchOpen}
         onClose={() => setLanguageSwitchOpen(false)}
-        journeys={journeySwitchEntries}
-        onSelect={handleJourneySwitch}
+        journeys={
+          languageSwitchMode === "explore-filter"
+            ? journeySwitchEntries.map((entry) => ({
+                ...entry,
+                // En este modo `active` representa "este idioma está
+                // seleccionado como filtro Explore", no el journey activo.
+                active: entry.language === selectedExploreLanguage,
+              }))
+            : journeySwitchEntries
+        }
+        onSelect={
+          languageSwitchMode === "explore-filter"
+            ? async (id) => {
+                // Modo Explore: cambiar el journey activo (id + language).
+                // Antes sólo seteábamos `activeJourneyLanguage` pensando
+                // en "filtrar sin cambiar journey", pero el reconcile
+                // effect que sincroniza activeJourneyLanguage ↔
+                // activeJourney.language revertía el cambio en el
+                // siguiente render porque `activeJourneyId` seguía
+                // apuntando al journey viejo. Solución: cambiar el
+                // journey activo de verdad — el cross-section sync
+                // propaga el cambio al filtro Explore automáticamente.
+                await handleJourneySwitch(id);
+              }
+            : handleJourneySwitch
+        }
         onAddJourney={() => {
           // Close the sheet and open the full-screen "Your journeys"
           // panel where the user can browse all journeys + start a
@@ -15452,6 +15776,21 @@ export function MobileLibraryShell(args: {
           setLanguageSwitchOpen(false);
           setJourneysPanelOpen(true);
         }}
+        showAllOption={languageSwitchMode === "explore-filter"}
+        allActive={
+          languageSwitchMode === "explore-filter" && selectedExploreLanguage === "All"
+        }
+        onSelectAll={() => {
+          setSelectedExploreLanguage("All");
+          setLanguageSwitchOpen(false);
+        }}
+        headerEyebrow={
+          languageSwitchMode === "explore-filter" ? "EXPLORE FILTER" : undefined
+        }
+        headerTitle={
+          languageSwitchMode === "explore-filter" ? "Browse by language" : undefined
+        }
+        hideFooter={languageSwitchMode === "explore-filter"}
       />
 
       <JourneysPanel
@@ -15487,6 +15826,23 @@ export function MobileLibraryShell(args: {
           void openWebPath(link.path);
         }}
       />
+
+      <TimePickerSheet
+        open={timePickerOpen}
+        initialHour={preferences.reminderHour ?? 18}
+        initialMinute={preferences.reminderMinute ?? 0}
+        onClose={() => setTimePickerOpen(false)}
+        onConfirm={(hour, minute) => {
+          setPreferences((current) => ({
+            ...current,
+            reminderHour: hour,
+            reminderMinute: minute,
+          }));
+          setPreferencesStatus("idle");
+          setTimePickerOpen(false);
+        }}
+      />
+
 
       {/* Progress sheet — opens when the user taps the streak / level
           / XP badges in the journey top bar. Same content as the
@@ -16021,7 +16377,10 @@ export function MobileLibraryShell(args: {
                 </Pressable>
               )}
 
-              {collections.map((collection) => {
+              {collectionsForLanguage(
+                collections,
+                addToCollectionTarget?.language ?? activeJourneyLanguage ?? null
+              ).map((collection) => {
                 const inIt = addToCollectionTarget
                   ? isItemInCollection(collection, addToCollectionTarget)
                   : false;
@@ -16051,9 +16410,12 @@ export function MobileLibraryShell(args: {
                 );
               })}
 
-              {collections.length === 0 && !newCollectionInputVisible ? (
+              {collectionsForLanguage(
+                collections,
+                addToCollectionTarget?.language ?? activeJourneyLanguage ?? null
+              ).length === 0 && !newCollectionInputVisible ? (
                 <Text style={styles.collectionModalEmpty}>
-                  No collections yet. Tap "New collection" to create your first one.
+                  No collections yet for this language. Tap "New collection" to create one.
                 </Text>
               ) : null}
             </ScrollView>
@@ -16358,11 +16720,20 @@ function AnimatedProgressBar({
 
 function SwipeableFavoriteCard({
   word,
+  swipeKey,
+  openSwipeKey,
+  onSwipeOpenChange,
   onDeleteConfirmed,
   onAddToCollection,
   children,
 }: {
   word: string;
+  /** Stable identity for this card so the parent can coordinate which
+   *  one is currently open. Two cards open at once feels broken; the
+   *  parent enforces single-open by tracking the open key. */
+  swipeKey: string;
+  openSwipeKey: string | null;
+  onSwipeOpenChange: (key: string | null) => void;
   onDeleteConfirmed: () => void;
   onAddToCollection?: () => void;
   children: React.ReactNode;
@@ -16370,6 +16741,21 @@ function SwipeableFavoriteCard({
   const ACTION_WIDTH = onAddToCollection ? 168 : 84;
   const translateX = useRef(new Animated.Value(0)).current;
   const currentOffsetRef = useRef(0);
+  // When another card claims the open slot, animate this one shut.
+  // Effect is keyed on `openSwipeKey` so each card reacts when the
+  // parent changes which key is allowed to stay open.
+  useEffect(() => {
+    if (openSwipeKey !== swipeKey && currentOffsetRef.current !== 0) {
+      currentOffsetRef.current = 0;
+      Animated.spring(translateX, {
+        toValue: 0,
+        useNativeDriver: true,
+        bounciness: 0,
+        speed: 24,
+      }).start();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openSwipeKey]);
   // Exit animation drives opacity + scaleY (height collapse via transform
   // since native driver can't animate raw layout height). The card stays
   // mounted for ~260ms after the user confirms delete, slides off-screen,
@@ -16457,6 +16843,10 @@ function SwipeableFavoriteCard({
           target = base;
         }
         springTo(target, g.vx);
+        // Tell the parent which key (if any) is now in the open slot.
+        // Parent's `openSwipeKey` state drives the auto-close effect
+        // on every other card.
+        onSwipeOpenChange(target === -ACTION_WIDTH ? swipeKey : null);
       },
       onPanResponderTerminate: () => {
         springTo(currentOffsetRef.current);
@@ -16484,8 +16874,8 @@ function SwipeableFavoriteCard({
               accessibilityRole="button"
               accessibilityLabel="Add to collection"
             >
-              <Feather name="folder-plus" size={18} color="#051834" />
-              <Text style={[swipeStyles.actionText, swipeStyles.actionTextDark]}>Collection</Text>
+              <Feather name="folder-plus" size={18} color="#7dd3fc" />
+              <Text style={[swipeStyles.actionText, { color: "#7dd3fc" }]}>Collection</Text>
             </Pressable>
           ) : null}
           <Pressable
@@ -16494,8 +16884,8 @@ function SwipeableFavoriteCard({
             accessibilityRole="button"
             accessibilityLabel="Delete"
           >
-            <Feather name="trash-2" size={18} color="#ffffff" />
-            <Text style={swipeStyles.actionText}>Delete</Text>
+            <Feather name="trash-2" size={18} color="#fca5a5" />
+            <Text style={[swipeStyles.actionText, { color: "#fca5a5" }]}>Delete</Text>
           </Pressable>
         </View>
         <Animated.View
@@ -16527,20 +16917,25 @@ const swipeStyles = StyleSheet.create({
     alignItems: "stretch",
   },
   deleteAction: {
-    // Matches the red used in mastery level 1 (FSRS "review now"), the
-    // app's existing destructive accent — no invented hex.
+    // Estilo dark-tinted (paridad con las collection cards de Explore):
+    // bg navy oscuro + borde rojo translúcido + icono/text en rojo
+    // claro (fca5a5, mismo family que el destructive #ef4444). Sustituye
+    // el bloque rojo sólido que se sentía pesado al lado del card.
     width: 84,
-    backgroundColor: "#ef4444",
+    backgroundColor: "#2a1416",
+    borderLeftWidth: 1,
+    borderLeftColor: "rgba(239, 68, 68, 0.32)",
     alignItems: "center",
     justifyContent: "center",
     gap: 4,
   },
   collectionAction: {
-    // Token color.gems lavender — distinctive from the practice lime
-    // and the XP gold; reads as a "library / save" accent across
-    // favorites + collections.
+    // Mismo patrón dark-tinted: bg navy con tinte cyan + borde cyan
+    // translúcido + icono/text en cyan brillante (#7dd3fc, el token).
     width: 84,
-    backgroundColor: "#f8c15c",
+    backgroundColor: "#0e2a44",
+    borderLeftWidth: 1,
+    borderLeftColor: "rgba(125, 211, 252, 0.32)",
     alignItems: "center",
     justifyContent: "center",
     gap: 4,
@@ -16561,9 +16956,53 @@ function BottomTabIcon({ tab, active }: { tab: BottomTab; active: boolean }) {
   if (tab === "explore") return <Feather name="compass" size={18} color={color} />;
   if (tab === "practice") return <MaterialCommunityIcons name="brain" size={19} color={color} />;
   if (tab === "favorites") return <Feather name="star" size={18} color={color} />;
-  if (tab === "menu") return <Feather name="menu" size={20} color={color} />;
+  if (tab === "menu") return <Feather name="menu" size={18} color={color} />;
   if (tab === "signin") return <Feather name="log-in" size={18} color={color} />;
   return <Feather name="circle" size={18} color={color} />;
+}
+
+// Polished row used in the Menu *screen* (bottom-tab Menu). Different
+// from MenuLink which still drives the legacy slide-over modal. This
+// version has a tinted icon circle and a card background so the screen
+// reads as a real destination, not a flat list.
+function MenuScreenRow({
+  icon,
+  label,
+  onPress,
+  accent,
+}: {
+  icon: MenuIconName;
+  label: string;
+  onPress: () => void;
+  /** Hex used for the icon glyph + the soft tint of the circle behind
+   *  it. Matches the destination's category palette. */
+  accent: string;
+}) {
+  return (
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => [
+        styles.menuScreenRow,
+        pressed ? styles.menuScreenRowPressed : null,
+      ]}
+      accessibilityRole="button"
+    >
+      <View style={[styles.menuScreenRowIcon, { backgroundColor: hexWithAlpha(accent, 0.15) }]}>
+        <MenuIcon icon={icon} tone="default" />
+      </View>
+      <Text style={styles.menuScreenRowLabel}>{label}</Text>
+      <Feather name="chevron-right" size={18} color="rgba(219,233,255,0.45)" />
+    </Pressable>
+  );
+}
+
+function hexWithAlpha(hex: string, alpha: number): string {
+  // hex like "#a8e845" → "rgba(168,232,69,0.15)". Minimal parser.
+  const h = hex.replace("#", "");
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
 }
 
 function MenuLink(args: {
@@ -17654,6 +18093,7 @@ const styles = StyleSheet.create({
     width: 168,
     minHeight: 116,
     borderRadius: 20,
+    borderWidth: 1,
     paddingHorizontal: 16,
     paddingVertical: 14,
     justifyContent: "space-between",
@@ -21850,81 +22290,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(2, 8, 18, 0.62)",
     justifyContent: "center",
   },
-  exploreLangSheetBackdrop: {
-    flex: 1,
-    backgroundColor: "rgba(0,0,0,0.55)",
-    justifyContent: "flex-end",
-  },
-  exploreLangSheetPanel: {
-    backgroundColor: "#0d1b2e",
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
-    borderWidth: 1,
-    borderColor: "rgba(248,193,92,0.18)",
-    paddingTop: 10,
-    paddingBottom: 28,
-    paddingHorizontal: 18,
-    gap: 10,
-  },
-  exploreLangSheetGrabber: {
-    alignSelf: "center",
-    width: 40,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: "rgba(219,233,255,0.25)",
-    marginBottom: 6,
-  },
-  exploreLangSheetHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: 4,
-  },
-  exploreLangSheetTitle: {
-    color: "#ffffff",
-    fontSize: 18,
-    fontWeight: "900",
-    letterSpacing: -0.2,
-  },
-  exploreLangSheetCloseBtn: {
-    width: 32,
-    height: 32,
-    borderRadius: 999,
-    backgroundColor: "rgba(255,255,255,0.06)",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  exploreLangSheetList: {
-    gap: 6,
-  },
-  exploreLangSheetRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-    paddingVertical: 12,
-    paddingHorizontal: 12,
-    borderRadius: 12,
-    backgroundColor: "rgba(248,193,92,0.06)",
-  },
-  exploreLangSheetRowActive: {
-    backgroundColor: "rgba(248,193,92,0.16)",
-    borderWidth: 1,
-    borderColor: "rgba(248,193,92,0.36)",
-  },
-  exploreLangSheetRowLabel: {
-    color: "#ffffff",
-    fontSize: 15,
-    fontWeight: "700",
-    flex: 1,
-  },
-  exploreLangSheetAllBadge: {
-    width: 28,
-    height: 28,
-    borderRadius: 999,
-    backgroundColor: "#f8c15c",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   readerIconButton: {
     width: 42,
     height: 42,
@@ -22930,6 +23295,62 @@ const styles = StyleSheet.create({
   },
   menuContent: {
     gap: 10,
+  },
+  // Menu *screen* layout (bottom tab → activeScreen === "menu").
+  menuScreenList: {
+    gap: 8,
+    paddingTop: 4,
+  },
+  menuScreenSectionTitle: {
+    color: "rgba(219,233,255,0.55)",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 1.4,
+    textTransform: "uppercase",
+    marginTop: 18,
+    marginBottom: 8,
+  },
+  menuScreenSection: {
+    backgroundColor: "rgba(255,255,255,0.04)",
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.06)",
+    overflow: "hidden",
+  },
+  menuScreenRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14,
+    paddingHorizontal: 14,
+    paddingVertical: 14,
+    borderBottomWidth: 1,
+    borderBottomColor: "rgba(255,255,255,0.04)",
+  },
+  menuScreenRowPressed: {
+    backgroundColor: "rgba(255,255,255,0.05)",
+  },
+  menuScreenRowIcon: {
+    width: 34,
+    height: 34,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  menuScreenRowLabel: {
+    flex: 1,
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "700",
+  },
+  menuScreenLegalRow: {
+    marginTop: 18,
+    alignItems: "center",
+    paddingVertical: 10,
+  },
+  menuScreenLegalText: {
+    color: "rgba(219,233,255,0.45)",
+    fontSize: 12,
+    fontWeight: "600",
   },
   menuLink: {
     borderRadius: 14,
