@@ -16,6 +16,7 @@ import {
   PanResponder,
   Platform,
   Pressable,
+  RefreshControl,
   ScrollView,
   StyleSheet,
   Text,
@@ -2112,6 +2113,15 @@ export function MobileLibraryShell(args: {
   // Tap the offline banner → increment this to trigger a fresh hydrate
   // without waiting for the next natural refresh cycle.
   const [remoteRefreshCounter, setRemoteRefreshCounter] = useState(0);
+  // Pull-to-refresh on the main shell ScrollView. Independent from
+  // `loadingRemote` (which drives the full-screen spinner during the
+  // initial cold-start hydrate); this one only controls the native iOS
+  // pull spinner so it disappears the moment the hydrate finishes.
+  const [pullRefreshing, setPullRefreshing] = useState(false);
+  const onPullRefresh = useCallback(() => {
+    setPullRefreshing(true);
+    setRemoteRefreshCounter((prev) => prev + 1);
+  }, []);
   const [remoteProgress, setRemoteProgress] = useState<MobileProgressPayload | null>(null);
   const [activeGamificationCelebration, setActiveGamificationCelebration] = useState<GamificationCelebration | null>(null);
   const [dismissedCelebrationIds, setDismissedCelebrationIds] = useState<Set<string>>(new Set());
@@ -3270,6 +3280,11 @@ export function MobileLibraryShell(args: {
       setRemoteError(errors.length > 0 ? errors.join("  ") : null);
       setLoadingRemote(false);
       setDidFirstHydrate(true);
+      // Always drop the pull-to-refresh spinner once the hydrate cycle
+      // finishes, regardless of partial failures — the user pulled, we
+      // attempted the fetch, the spinner has done its job. If the network
+      // was bad and content didn't update, the offline banner will say so.
+      setPullRefreshing(false);
     }
 
     void hydrateRemoteLibrary();
@@ -15230,6 +15245,18 @@ export function MobileLibraryShell(args: {
         decelerationRate="normal"
         keyboardShouldPersistTaps="handled"
         contentInsetAdjustmentBehavior="never"
+        // Native iOS pull-to-refresh on the shell ScrollView. Triggers a
+        // fresh hydrate (library + journey + entitlement + progress +
+        // continue-listening). The spinner clears in the hydrate effect.
+        // tintColor matches the warm cream accent already used in other
+        // shell ornaments (offline banner dot etc.).
+        refreshControl={
+          <RefreshControl
+            refreshing={pullRefreshing}
+            onRefresh={onPullRefresh}
+            tintColor="#f5e0b5"
+          />
+        }
         // Sticky nativo iOS sólo en path mode. Los hijos del
         // ScrollView se generan con `Children.toArray(...)` justo
         // arriba del return, así que los índices apuntan exactamente
