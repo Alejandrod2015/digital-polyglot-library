@@ -459,7 +459,7 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   },
 
   // ── Discarded (kept here so the gallery can remember why) ─────────────────
-  { id: "elevenlabs/qVRpsZJDV29g1CIPzssm", engine: "elevenlabs", language: "german", region: "DE", gender: "m", label: "Sebastian", status: "discarded", reason: "Uptalk: cada frase termina como pregunta. Reemplazado por Luca.", license: "ElevenLabs-Pro-2yr" },
+  { id: "elevenlabs/qVRpsZJDV29g1CIPzssm", engine: "elevenlabs", language: "german", region: "DE", gender: "m", label: "Sebastian", status: "discarded", reason: "Aburrida y de adulto cuando se usa para un niño/joven (rechazada como Paul de 9 años en Apfelkuchen in Wedding 2026-05-14) + uptalk: cada frase termina como pregunta. Reemplazado por Luca.", license: "ElevenLabs-Pro-2yr" },
   { id: "elevenlabs/TX3LPaxmHKxFdv7VOQHJ", engine: "elevenlabs", language: "german", region: "US", gender: "m", label: "Liam (premade)", status: "discarded", reason: "Acento gringo se cuela en eleven_multilingual_v2 cuando habla alemán.", license: "ElevenLabs-Premade" },
   { id: "bark/de_speaker_3",               engine: "bark",       language: "german", region: "DE", gender: "m", label: "Bark Speaker 3", status: "discarded", reason: "Voz apagada/monótona; el usuario la describió como deprimente.", license: "MIT" },
   { id: "piper/de_DE-thorsten-medium",     engine: "piper",      language: "german", region: "DE", gender: "m", label: "Thorsten (todas las variantes)", status: "discarded", reason: "Monótona/deprimente en cualquier variante (Piper y Coqui).", license: "Unverified" },

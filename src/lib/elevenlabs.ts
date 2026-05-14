@@ -44,8 +44,10 @@ export const GERMAN_DIALOGUE_VOICES = {
   //   - Thorsten (Piper/Coqui, all variants) — monotone "deprimente"
   //   - Bark Speaker 3 — muffled / monotone
   //   - Simon Sunday (ElevenLabs) — monotone "deprimente"
-  //   - Sebastian "qVRpsZJDV29g1CIPzssm" — uptalk; every line ends like a
-  //     question. Rejected when used as a 9-year-old. Replaced by Luca.
+  //   - Sebastian "qVRpsZJDV29g1CIPzssm" — uptalk AND sounds boring /
+  //     adult when used for a kid; rejected as Paul (9 yrs) in
+  //     Apfelkuchen in Wedding (2026-05-14). Replaced by Luca for any
+  //     young male role.
   moritz:    "Ww7Sq9tx9CCOiNOwWgsx", // M middle-aged, native DE, baritone — narrator
   enniah:    "WHaUUVTDq47Yqc9aDbkH", // F middle-aged, native DE, warm — primary female
   gesaTess:  "cllvQaMvj0ZKxH88HGEn", // F middle-aged, native DE, "trustworthy host" — calmer baseline than ENNIAH

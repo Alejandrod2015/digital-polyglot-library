@@ -293,6 +293,13 @@ Body format is REQUIRED:
 - Use at least 4 total speaker lines.
 - The narrator may return briefly between dialogue sections, but the story must clearly read as multi-voice, not as single-voice prose with a few quoted lines.
 
+CRITICAL — no non-vocalized sounds, ever. The narrator voice is a real TTS (ElevenLabs) that CANNOT render laughs, sighs, hums, or stage directions. Any of these in the body breaks the audio and the story has to be re-written:
+- NO laughter spelled out: "haha", "jaja", "jeje", "Hahaha", "ja ja", "hehe", "kkk", etc.
+- NO hesitation/filler sounds: "hmm", "hmmm", "uhm", "ehm", "uh", "eh", "mh", "ahh".
+- NO reaction sounds: "mmm" (as a sound), "oh!", "ohh", "aww", "ay", "uy", "ugh", "wow", "ay dios", "Mein Gott".
+- NO stage directions inside dialogue: "(laughs)", "(sighs)", "[ríe]", "*pause*".
+Render reactions as REAL WORDS instead: instead of "Hahaha! Ich auch, fast." write "Ich auch, fast." — the laugh is implied. Instead of "Mmm! Wieso ist roher Teig so lecker?" write "Wieso ist roher Teig so lecker?". If a character needs to express surprise, joy, or disgust, use complete words ("Was für ein Glück", "Ich war ungeduldig", "Das schmeckt seltsam") — never paralinguistic spelling.
+
 Requirements:
 Use a close third-person narrator with strong internal focalization.
 - The narrator is NOT a character.

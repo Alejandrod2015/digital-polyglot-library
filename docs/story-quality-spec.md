@@ -56,6 +56,17 @@ Both Conversacional and Viajero now default to **multi-voice dialogue**: a narra
 - Callbacks within the story (a phrase reused with a twist late) build cohesion.
 - Lexical level matches the target CEFR. One level above is normal exposure (i+1); two levels above is a real problem to fix before saving.
 
+### Non-vocalized sounds (HARD BAN)
+
+ElevenLabs (and the entire TTS pipeline) cannot render laughs, hums, sighs, or stage directions naturally — they come out either silent, comically mispronounced, or as a flat dictionary read ("ha-ha-ha"). Anything in the body that the narrator can't say as real words breaks the audio. **NEVER include in any story body**:
+
+- Laughter spellings: `haha`, `Hahaha`, `jaja`, `jeje`, `hehe`, `ja ja`, `kkk`, `LOL`.
+- Hesitation / filler sounds: `hmm`, `hmmm`, `uhm`, `ehm`, `uh`, `eh`, `ah`, `mh`.
+- Reaction sounds: `mmm` (as a sound, not the adverb), `oh!`, `ohh`, `aww`, `ay`, `uy`, `ugh`, `wow`.
+- Stage directions inside dialogue: `(laughs)`, `(sighs)`, `[ríe]`, `*pause*`, `[muttering]`.
+
+**Render reactions as real words instead.** "Hahaha! Ich auch, fast." → "Ich auch, fast." The laugh is implied by the context. "Mmm! Wieso ist roher Teig so lecker?" → "Wieso ist roher Teig so lecker?". Use concrete vocabulary to convey emotion: `Ich war ungeduldig`, `Das schmeckt seltsam`, `Was für ein Glück`, `Komisch`, `Schade`. Pre-save check: grep the body for any of these tokens and remove before save — they're a hard defect, not stylistic preference.
+
 ### Length
 
 - Target 220-280 words. Hard maximum 320. Hard minimum 180.

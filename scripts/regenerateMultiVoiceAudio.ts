@@ -67,6 +67,20 @@ const VOICE_ASSIGNMENTS: VoiceAssignment[] = [
     },
     ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3"),
   },
+  {
+    // Apfelkuchen in Wedding — Oma Hilde y Paul (9 años) horneando en el
+    // apartamento de la abuela. Original audio (2026-05-05) usó Sebastian
+    // para Paul; rechazado por el usuario como "aburrida y de adulto".
+    // Sebastian ahora está doblemente baneado (uptalk + adult-for-kid).
+    // No tenemos ambient de cocina; cafeteria_de.mp3 es el más bajo perfil.
+    slug: "apfelkuchen-in-wedding-2",
+    voiceMap: {
+      narrator: V.moritz,
+      Hilde: V.eleonore, // F mature, "Frau" roles — calza Oma Hilde
+      Paul: V.luca,      // M young dynamic — reemplaza a Sebastian para el chico de 9 años
+    },
+    ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3"),
+  },
 ];
 
 async function run() {
