@@ -708,6 +708,10 @@ export function ReaderScreen(args: {
   // if the image fails to load we fall back to story.cover / story.coverUrl
   // (remote) automatically so a missing / corrupt local file still renders.
   resolvedCoverUrl?: string | null;
+  // JSON-encoded AudioWordTimingsPayload persisted in the offline snapshot
+  // alongside the story body. When present we skip the network fetch to
+  // `/api/mobile/audio-word-timings` so karaoke keeps working offline.
+  cachedWordTimingsRaw?: string | null;
   sessionToken?: string | null;
   onBack: () => void;
   canGoPrevious?: boolean;
@@ -750,6 +754,7 @@ export function ReaderScreen(args: {
     story,
     resolvedAudioUrl,
     resolvedCoverUrl,
+    cachedWordTimingsRaw,
     sessionToken,
     onBack,
     canGoPrevious = false,
@@ -797,8 +802,24 @@ export function ReaderScreen(args: {
   } | null>(null);
   useEffect(() => {
     let cancelled = false;
-    setWordTimings(null);
     setActiveWordIndex(null);
+
+    // Hidrate desde el snapshot offline si la story se descargó con
+    // sus word timings. Esto deja el karaoke funcional sin red. Si
+    // no hay cache, hacemos el fetch como antes.
+    let cached: AudioWordTimingsPayload | null = null;
+    if (cachedWordTimingsRaw) {
+      try {
+        const parsed = JSON.parse(cachedWordTimingsRaw) as AudioWordTimingsPayload;
+        if (parsed && Array.isArray(parsed.words) && parsed.words.length > 0) {
+          cached = parsed;
+        }
+      } catch {
+        // ignore — corrupto, fetch fresco
+      }
+    }
+    setWordTimings(cached);
+
     (async () => {
       try {
         const data = await apiFetch<{ timings?: AudioWordTimingsPayload | null }>({
@@ -814,13 +835,13 @@ export function ReaderScreen(args: {
           setWordTimings(timings);
         }
       } catch {
-        // Silent fallback to legacy reader render.
+        // Silent fallback al cached (si había) o al render sintético.
       }
     })();
     return () => {
       cancelled = true;
     };
-  }, [story.slug, sessionToken]);
+  }, [story.slug, sessionToken, cachedWordTimingsRaw]);
 
   // wordTimings reales del backend cuando estén disponibles; sino,
   // un payload sintético tokenizado del texto local. Garantiza que

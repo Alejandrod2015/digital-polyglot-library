@@ -304,9 +304,6 @@ export function PracticeOrbit({
   if (emptyState) {
     return (
       <View style={styles.shell}>
-        <View style={styles.headerRow}>
-          <Text style={styles.eyebrow}>PRACTICE</Text>
-        </View>
         <View style={styles.emptyCard}>
           <Feather name="bookmark" size={28} color="#cdd9ec" />
           <Text style={styles.emptyTitle}>No words to review yet</Text>
@@ -320,8 +317,11 @@ export function PracticeOrbit({
 
   return (
     <View style={styles.shell}>
+      {/* Streak + daily-goal chips moved here from the old header row;
+          the PRACTICE eyebrow was redundant with the shell-level
+          flag+title block, so the row is now just the chips. */}
       <View style={styles.headerRow}>
-        <Text style={styles.eyebrow}>PRACTICE</Text>
+        <View style={{ flex: 1 }} />
         <HeaderChips streakDays={streakDays} dailyGoalPercent={dailyGoalPercent} />
       </View>
 

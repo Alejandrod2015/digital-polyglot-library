@@ -1,12 +1,25 @@
 import type { OnboardingGoal } from "@/lib/onboarding";
 
-export const REMINDER_HOUR_OPTIONS = [8, 12, 18, 20] as const;
+// 24 chips, una por cada hora del día. Antes era [8, 12, 18, 20]
+// (4 slots fijos) pero el usuario quería poder elegir cualquier hora.
+// Para granularidad de minuto usamos REMINDER_MINUTE_OPTIONS (cada 15
+// minutos) — combinadas dan 96 slots posibles "HH:MM".
+export const REMINDER_HOUR_OPTIONS = [
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+  12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+] as const;
+
+export const REMINDER_MINUTE_OPTIONS = [0, 15, 30, 45] as const;
 
 export type ReminderHour = (typeof REMINDER_HOUR_OPTIONS)[number];
+export type ReminderMinute = (typeof REMINDER_MINUTE_OPTIONS)[number];
 
 export type SharedReminderState = {
   remindersEnabled: boolean;
   reminderHour: ReminderHour | null;
+  /** Minuto del día (0/15/30/45). Optional para back-compat con
+   *  preferences sin minuto guardado; ausente se trata como :00. */
+  reminderMinute?: ReminderMinute | null;
 };
 
 export type DailyReminderContext = {
@@ -41,12 +54,25 @@ export function normalizeReminderHour(value: unknown): ReminderHour | null {
   return REMINDER_HOUR_OPTIONS.find((option) => option === value) ?? null;
 }
 
-export function formatReminderHour(hour: number | null | undefined): string {
+export function normalizeReminderMinute(value: unknown): ReminderMinute | null {
+  if (typeof value !== "number" || !Number.isFinite(value)) return null;
+  return REMINDER_MINUTE_OPTIONS.find((option) => option === value) ?? null;
+}
+
+export function formatReminderHour(
+  hour: number | null | undefined,
+  minute: number | null | undefined = 0
+): string {
   if (typeof hour !== "number" || !Number.isFinite(hour)) return "Not set";
-  const normalized = ((Math.trunc(hour) % 24) + 24) % 24;
-  const suffix = normalized >= 12 ? "PM" : "AM";
-  const displayHour = normalized % 12 === 0 ? 12 : normalized % 12;
-  return `${displayHour}:00 ${suffix}`;
+  const normalizedHour = ((Math.trunc(hour) % 24) + 24) % 24;
+  const min =
+    typeof minute === "number" && Number.isFinite(minute)
+      ? ((Math.trunc(minute) % 60) + 60) % 60
+      : 0;
+  const suffix = normalizedHour >= 12 ? "PM" : "AM";
+  const displayHour = normalizedHour % 12 === 0 ? 12 : normalizedHour % 12;
+  const minStr = min.toString().padStart(2, "0");
+  return `${displayHour}:${minStr} ${suffix}`;
 }
 
 export function buildDailyReminderCopy(args: {

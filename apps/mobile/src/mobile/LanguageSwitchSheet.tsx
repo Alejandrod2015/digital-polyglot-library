@@ -67,6 +67,22 @@ type Props = {
   /** Open the full-screen "Your journeys" panel where the user can
    *  add a new (language, focus) combination. */
   onAddJourney: () => void;
+  /** When true, prepends an "All languages" row (used by Explore to
+   *  disable the language filter while keeping cross-language
+   *  browsing). The row is highlighted when `allActive` is true. */
+  showAllOption?: boolean;
+  /** Whether the "All" row should render as active. Ignored when
+   *  `showAllOption` is false. */
+  allActive?: boolean;
+  /** Called when the user picks the "All languages" row. */
+  onSelectAll?: () => void;
+  /** Override the header eyebrow / title. Useful for Explore where
+   *  "Switch journey" doesn't match the user's intent (they're picking
+   *  a filter, not changing journeys). */
+  headerEyebrow?: string;
+  headerTitle?: string;
+  /** Hide the "Add journey" footer (Explore doesn't need it). */
+  hideFooter?: boolean;
 };
 
 // How far below the screen the sheet starts. Generous enough that
@@ -81,6 +97,12 @@ export function LanguageSwitchSheet({
   journeys,
   onSelect,
   onAddJourney,
+  showAllOption = false,
+  allActive = false,
+  onSelectAll,
+  headerEyebrow,
+  headerTitle: headerTitleProp,
+  hideFooter = false,
 }: Props) {
   const backdrop = useRef(new Animated.Value(0)).current;
   // IMPORTANT: initial value MUST be SHEET_TRAVEL (off-screen), not 0.
@@ -193,10 +215,12 @@ export function LanguageSwitchSheet({
   }
 
   const headerCount = journeys.length;
-  const headerTitle =
+  const defaultHeaderTitle =
     headerCount <= 1
       ? "Your journey"
       : `${headerCount} journeys in progress`;
+  const finalHeaderTitle = headerTitleProp ?? defaultHeaderTitle;
+  const finalHeaderEyebrow = headerEyebrow ?? "SWITCH JOURNEY";
 
   return (
     <View style={styles.fill} pointerEvents="box-none">
@@ -224,8 +248,8 @@ export function LanguageSwitchSheet({
         </View>
 
         <View style={styles.headerBlock}>
-          <Text style={styles.headerEyebrow}>SWITCH JOURNEY</Text>
-          <Text style={styles.headerTitle}>{headerTitle}</Text>
+          <Text style={styles.headerEyebrow}>{finalHeaderEyebrow}</Text>
+          <Text style={styles.headerTitle}>{finalHeaderTitle}</Text>
         </View>
 
         <ScrollView
@@ -233,6 +257,55 @@ export function LanguageSwitchSheet({
           showsVerticalScrollIndicator={false}
           bounces={false}
         >
+          {showAllOption ? (
+            <Pressable
+              key="__all__"
+              onPress={() => {
+                if (switchingTo) return;
+                onSelectAll?.();
+              }}
+              style={[
+                styles.row,
+                allActive ? styles.rowActive : styles.rowInactive,
+                switchingTo ? styles.rowDisabled : null,
+              ]}
+            >
+              <View
+                style={[
+                  styles.flagRing,
+                  {
+                    borderColor: allActive
+                      ? "rgba(252, 211, 77, 0.85)"
+                      : "rgba(125, 211, 252, 0.55)",
+                    backgroundColor: "rgba(125, 211, 252, 0.10)",
+                  },
+                ]}
+              >
+                <Feather name="globe" size={22} color="#dbe9ff" />
+              </View>
+
+              <View style={styles.rowMeta}>
+                <View style={styles.rowTitleLine}>
+                  <Text style={styles.rowName} numberOfLines={1}>
+                    All languages
+                  </Text>
+                </View>
+                <View style={styles.rowStats}>
+                  <Text style={styles.rowAllSubtitle} numberOfLines={1}>
+                    Browse stories across every journey
+                  </Text>
+                </View>
+              </View>
+
+              {allActive ? (
+                <View style={styles.activePill}>
+                  <Text style={styles.activePillText}>ACTIVE</Text>
+                </View>
+              ) : (
+                <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.45)" />
+              )}
+            </Pressable>
+          ) : null}
           {journeys.map((journey) => {
             const isSwitching = switchingTo === journey.id;
             const disabled = Boolean(switchingTo) && !isSwitching;
@@ -323,24 +396,26 @@ export function LanguageSwitchSheet({
           })}
         </ScrollView>
 
-        <View style={styles.footer}>
-          {/* Single CTA — opens the full-screen "Your journeys"
-              panel where the user manages all journeys + creates new
-              ones. The sheet's "See all" button is gone because the
-              panel itself is the see-all view. */}
-          <Pressable
-            onPress={() => {
-              if (switchingTo) return;
-              onAddJourney();
-            }}
-            style={[styles.footerButton, styles.footerButtonAccent, styles.footerButtonFull]}
-          >
-            <Feather name="plus" size={13} color={tokenColor.cyan} />
-            <Text style={[styles.footerButtonText, { color: tokenColor.cyan }]}>
-              Add journey
-            </Text>
-          </Pressable>
-        </View>
+        {hideFooter ? null : (
+          <View style={styles.footer}>
+            {/* Single CTA — opens the full-screen "Your journeys"
+                panel where the user manages all journeys + creates new
+                ones. The sheet's "See all" button is gone because the
+                panel itself is the see-all view. */}
+            <Pressable
+              onPress={() => {
+                if (switchingTo) return;
+                onAddJourney();
+              }}
+              style={[styles.footerButton, styles.footerButtonAccent, styles.footerButtonFull]}
+            >
+              <Feather name="plus" size={13} color={tokenColor.cyan} />
+              <Text style={[styles.footerButtonText, { color: tokenColor.cyan }]}>
+                Add journey
+              </Text>
+            </Pressable>
+          </View>
+        )}
       </Animated.View>
     </View>
   );
@@ -469,6 +544,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 3,
+  },
+  rowAllSubtitle: {
+    color: "rgba(255,255,255,0.55)",
+    fontSize: 11.5,
+    fontWeight: "600",
+    letterSpacing: -0.1,
   },
   rowStatText: {
     fontSize: 12,
