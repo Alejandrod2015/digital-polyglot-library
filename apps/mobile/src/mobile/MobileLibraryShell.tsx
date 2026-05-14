@@ -10,9 +10,11 @@ import {
   useWindowDimensions,
   Easing,
   findNodeHandle,
+  KeyboardAvoidingView,
   Linking,
   Modal,
   PanResponder,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -137,6 +139,16 @@ import {
   updateFavoriteReviewOnServer,
   type MobileFavoriteItem,
 } from "./vocabFavorites";
+import {
+  loadCollections,
+  saveCollections,
+  createCollection,
+  isItemInCollection,
+  addItemToCollection,
+  removeItemFromCollection,
+  collectionWordKey,
+  type FavoriteCollection,
+} from "./collections";
 import { getMasteryLevel } from "../../../../src/lib/mastery";
 import {
   getEffectiveUnlockedLevelCount,
@@ -218,7 +230,7 @@ type MobileScreen =
   | "settings"
   | "create";
 
-type BottomTab = "home" | "explore" | "practice" | "favorites" | "progress" | "signin";
+type BottomTab = "home" | "explore" | "practice" | "favorites" | "menu" | "signin";
 type MenuIconName =
   | "settings"
   | "library"
@@ -228,7 +240,8 @@ type MenuIconName =
   | "signin"
   | "legal"
   | "journey"
-  | "create";
+  | "create"
+  | "progress";
 type HomeFeedMode = "stories" | "books";
 type SaveStatus = "idle" | "saving" | "saved" | "error";
 type CreateSection = "language" | "level" | "region" | "topic";
@@ -978,7 +991,7 @@ const TOPIC_VISUALS: Record<string, TopicVisual> = {
   "Family & Community": { bg: "#fb7185", icon: "account-group", label: "Family" },
   "Travel & Transportation": { bg: "#93c5fd", icon: "airplane", label: "Travel" },
   "Nature & Environment": { bg: "#86efac", icon: "leaf", label: "Nature" },
-  "Mystery & Crime": { bg: "#c4b5fd", icon: "magnify", label: "Mystery" },
+  "Mystery & Crime": { bg: "#f8c15c", icon: "magnify", label: "Mystery" },
   "Emotions & Personal Growth": { bg: "#ddd6fe", icon: "heart-pulse", label: "Growth" },
   "School & Learning": { bg: "#a5b4fc", icon: "book-open-variant", label: "Learning" },
   "Health & Wellness": { bg: "#fbcfe8", icon: "heart-circle", label: "Wellness" },
@@ -1109,14 +1122,13 @@ function findSegmentForClip(
   const byWord = findSegmentByTargetWord(storyAudio.audioSegments, clip.targetWord, clip.sentence);
   if (byWord) return byWord;
 
-  if (clip.storySource !== "standalone") {
-    return findBestAudioSegmentLegacy(storyAudio.audioSegments, clip.sentence);
-  }
-
-  return findBestAudioSegment(storyAudio.audioSegments, clip.sentence, {
-    targetWord: clip.targetWord,
-    mode: "strict",
-  });
+  // If neither segmentId nor a unique-targetWord match found the right
+  // chunk, DON'T fall back to the noisy textual-overlap matcher. It
+  // returns adjacent segments when the saved sentence isn't byte-equal
+  // to the aeneas-aligned one, which produces audio that says something
+  // different from the displayed text. Returning null here makes the
+  // caller fall to HQ TTS, which synthesizes the exact clip.sentence.
+  return null;
 }
 
 function findSegmentByTargetWord(
@@ -1420,23 +1432,6 @@ function normalizeFavoriteWord(word: string): string {
 
 function getFavoriteType(item: MobileFavoriteItem): string {
   return item.wordType?.trim().toLowerCase() || "other";
-}
-
-type ConjugationForm = { person: string; form: string };
-type ConjugationTense = { name: string; forms: ConjugationForm[] };
-type ConjugationPayload = {
-  infinitive: string;
-  translation: string;
-  tenses: ConjugationTense[];
-};
-type ConjugationCacheEntry =
-  | { status: "loading" }
-  | { status: "error" }
-  | { status: "not-verb" }
-  | { status: "ready"; payload: ConjugationPayload };
-
-function buildConjugationKey(item: MobileFavoriteItem): string {
-  return `${(item.language ?? "").trim().toLowerCase()}::${normalizeFavoriteWord(item.word)}`;
 }
 
 function getFavoriteTypeLabel(type: string): string {
@@ -1992,8 +1987,13 @@ export function MobileLibraryShell(args: {
   );
   const [readingProgress, setReadingProgress] = useState<ReadingProgress[]>([]);
   const [favoriteWords, setFavoriteWords] = useState<MobileFavoriteItem[]>([]);
-  const [conjugationCache, setConjugationCache] = useState<Record<string, ConjugationCacheEntry>>({});
-  const [expandedConjugations, setExpandedConjugations] = useState<Set<string>>(() => new Set());
+  const [collections, setCollections] = useState<FavoriteCollection[]>([]);
+  const [selectedCollectionId, setSelectedCollectionId] = useState<string | null>(null);
+  // When non-null, the "Add to collection" modal is open for this favorite.
+  const [addToCollectionTarget, setAddToCollectionTarget] = useState<MobileFavoriteItem | null>(null);
+  // When true, a TextInput row is shown at the top of the modal for creating a new collection.
+  const [newCollectionInputVisible, setNewCollectionInputVisible] = useState(false);
+  const [newCollectionDraft, setNewCollectionDraft] = useState("");
   const [didHydrateState, setDidHydrateState] = useState(false);
   const [offlineSnapshot, setOfflineSnapshot] = useState<OfflineLibrarySnapshot | null>(null);
   const [offlineStoryIdInFlight, setOfflineStoryIdInFlight] = useState<string | null>(null);
@@ -2998,6 +2998,16 @@ export function MobileLibraryShell(args: {
   }, [sessionToken, sessionUserId]);
 
   useEffect(() => {
+    let cancelled = false;
+    async function hydrateCollections() {
+      const stored = await loadCollections(sessionUserId);
+      if (!cancelled) setCollections(stored);
+    }
+    void hydrateCollections();
+    return () => { cancelled = true; };
+  }, [sessionUserId]);
+
+  useEffect(() => {
     if (!didHydrateState) return;
 
     void saveMobilePreviewState({
@@ -3460,6 +3470,18 @@ export function MobileLibraryShell(args: {
     activeJourneyLanguage,
     activeJourney,
   ]);
+
+  // Cross-section sync: when the journey language changes (from
+  // Favorites / Practice / Library), propagate to Explore unless the
+  // user explicitly chose "All" there. Keeps the three surfaces showing
+  // the same language without forcing the user to re-pick in each.
+  useEffect(() => {
+    if (!activeJourneyLanguage) return;
+    if (selectedExploreLanguage === "All") return;
+    if (selectedExploreLanguage.toLowerCase() === activeJourneyLanguage.toLowerCase()) return;
+    setSelectedExploreLanguage(activeJourneyLanguage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeJourneyLanguage]);
 
   // If we restored a language from SecureStore, re-fetch the journey with that
   // explicit language so the initial (no-param) fetch doesn't overwrite it with
@@ -4018,20 +4040,32 @@ export function MobileLibraryShell(args: {
     }),
     [preferences.dailyMinutes, preferences.interests, preferences.learningGoal]
   );
+  // Scope practice to the active journey language so changing language
+  // anywhere (Favorites pill, Explore picker, Practice flag) actually
+  // changes what the user practices. Without this filter the orbit
+  // counts and the exercise pool mixed all languages together.
+  const journeyScopedFavoriteWords = useMemo(() => {
+    const lang = (activeJourneyLanguage ?? activeJourney?.language ?? "").trim().toLowerCase();
+    if (!lang) return favoriteWords;
+    return favoriteWords.filter(
+      (item) => (item.language ?? "").trim().toLowerCase() === lang
+    );
+  }, [favoriteWords, activeJourneyLanguage, activeJourney]);
+
   const duePracticeItems = useMemo(
-    () => sortPracticeItemsByOnboarding(getDuePracticeItems(buildPracticeFavorites(favoriteWords)), onboardingPracticePrefs, true),
-    [favoriteWords, onboardingPracticePrefs]
+    () => sortPracticeItemsByOnboarding(getDuePracticeItems(buildPracticeFavorites(journeyScopedFavoriteWords)), onboardingPracticePrefs, true),
+    [journeyScopedFavoriteWords, onboardingPracticePrefs]
   );
 
   const recommendedPracticeMode = useMemo<PracticeModeKey>(() => {
-    const base = getRecommendedPracticeModeFromItems(buildPracticeFavorites(favoriteWords));
+    const base = getRecommendedPracticeModeFromItems(buildPracticeFavorites(journeyScopedFavoriteWords));
     const personalized = getRecommendedPracticeModeFromOnboarding(
-      buildPracticeFavorites(favoriteWords),
+      buildPracticeFavorites(journeyScopedFavoriteWords),
       base,
       onboardingPracticePrefs
     );
     return personalized === "natural" ? "context" : personalized;
-  }, [favoriteWords, onboardingPracticePrefs]);
+  }, [journeyScopedFavoriteWords, onboardingPracticePrefs]);
 
   const recommendedPracticeLabel =
     PRACTICE_MODE_CARDS.find((card) => card.key === recommendedPracticeMode)?.title ?? "Meaning";
@@ -4269,11 +4303,17 @@ export function MobileLibraryShell(args: {
   }, [favoriteCards, activeJourneyLanguageLower]);
   const nowMillis = useMemo(() => Date.now(), [favoriteWords]);
   const filteredFavoriteCards = useMemo(
-    () =>
-      journeyScopedFavoriteCards.filter(({ item }) =>
-        selectedFavoriteType === "all" ? true : getFavoriteType(item) === selectedFavoriteType
-      ),
-    [journeyScopedFavoriteCards, selectedFavoriteType]
+    () => {
+      const selectedCollection = selectedCollectionId
+        ? collections.find((c) => c.id === selectedCollectionId)
+        : null;
+      return journeyScopedFavoriteCards.filter(({ item }) => {
+        if (selectedFavoriteType !== "all" && getFavoriteType(item) !== selectedFavoriteType) return false;
+        if (selectedCollection && !selectedCollection.wordKeys.includes(collectionWordKey(item))) return false;
+        return true;
+      });
+    },
+    [journeyScopedFavoriteCards, selectedFavoriteType, selectedCollectionId, collections]
   );
   // Warm the R2 cache for the first batch of visible favorites when the
   // user opens the Favorites tab.
@@ -4555,7 +4595,7 @@ export function MobileLibraryShell(args: {
         { key: "explore", label: "Explore" },
         { key: "practice", label: "Practice" },
         { key: "favorites", label: "Favorites" },
-        { key: "progress", label: "Progress" },
+        { key: "menu", label: "Menu" },
       ]
     : [
         { key: "home", label: "Home" },
@@ -5045,7 +5085,7 @@ export function MobileLibraryShell(args: {
       });
       const standalone = payload.stories?.[0];
       if (!standalone) {
-        setLockedStoryHint("No se pudo descargar: el servidor no devolvió datos.");
+        setLockedStoryHint("Couldn't download: the server returned no data.");
         return;
       }
       const nextSnapshot = await saveStandaloneStoryOffline(
@@ -5075,7 +5115,7 @@ export function MobileLibraryShell(args: {
       }
     } catch (error) {
       console.error("[mobile journey] failed to download journey story offline", error);
-      setLockedStoryHint("No se pudo descargar la historia. Verifica tu conexión.");
+      setLockedStoryHint("Couldn't download the story. Check your connection.");
     } finally {
       setOfflineStoryIdInFlight(null);
     }
@@ -5162,58 +5202,24 @@ export function MobileLibraryShell(args: {
     return favoriteWords.some((item) => normalizeFavoriteWord(item.word) === normalized);
   }
 
-  async function toggleFavoriteConjugations(item: MobileFavoriteItem) {
-    const key = buildConjugationKey(item);
-    const wasExpanded = expandedConjugations.has(key);
+  async function persistCollections(next: FavoriteCollection[]) {
+    setCollections(next);
+    await saveCollections(sessionUserId, next);
+  }
 
-    setExpandedConjugations((prev) => {
-      const next = new Set(prev);
-      if (wasExpanded) {
-        next.delete(key);
-      } else {
-        next.add(key);
-      }
-      return next;
+  async function toggleCollectionMembership(collectionId: string, item: MobileFavoriteItem) {
+    const next = collections.map((c) => {
+      if (c.id !== collectionId) return c;
+      return isItemInCollection(c, item) ? removeItemFromCollection(c, item) : addItemToCollection(c, item);
     });
+    await persistCollections(next);
+  }
 
-    if (wasExpanded) return;
-
-    const cached = conjugationCache[key];
-    if (cached && cached.status !== "error") return;
-
-    setConjugationCache((prev) => ({ ...prev, [key]: { status: "loading" } }));
-
-    if (!sessionToken) {
-      setConjugationCache((prev) => ({ ...prev, [key]: { status: "error" } }));
-      return;
-    }
-
-    try {
-      const result = await apiFetch<ConjugationPayload | { isVerb: false }>({
-        baseUrl: mobileConfig.apiBaseUrl,
-        path: "/api/mobile/conjugations",
-        token: sessionToken,
-        method: "POST",
-        body: { word: item.word, language: item.language ?? "" },
-        timeoutMs: 15000,
-      });
-
-      if (result && typeof result === "object" && "isVerb" in result && result.isVerb === false) {
-        setConjugationCache((prev) => ({ ...prev, [key]: { status: "not-verb" } }));
-        return;
-      }
-
-      if (result && typeof result === "object" && "tenses" in result && Array.isArray((result as ConjugationPayload).tenses)) {
-        setConjugationCache((prev) => ({
-          ...prev,
-          [key]: { status: "ready", payload: result as ConjugationPayload },
-        }));
-      } else {
-        setConjugationCache((prev) => ({ ...prev, [key]: { status: "error" } }));
-      }
-    } catch {
-      setConjugationCache((prev) => ({ ...prev, [key]: { status: "error" } }));
-    }
+  async function createAndAddToCollection(name: string, item: MobileFavoriteItem) {
+    const trimmed = name.trim();
+    if (!trimmed) return;
+    const fresh = addItemToCollection(createCollection(trimmed), item);
+    await persistCollections([...collections, fresh]);
   }
 
   async function openWebPath(path: string) {
@@ -5243,7 +5249,7 @@ export function MobileLibraryShell(args: {
       // the user reported "tap and nothing happens", which traced
       // back to journey stories whose slug never made it into the
       // payload (a data inconsistency on the Studio side).
-      setLockedStoryHint("Esta historia aún no está disponible. Prueba con otra.");
+      setLockedStoryHint("This story isn't available yet. Try another one.");
       return;
     }
 
@@ -5318,7 +5324,7 @@ export function MobileLibraryShell(args: {
         // The journey points at this slug but the standalone
         // catalog doesn't have it. Tell the user instead of
         // failing silently.
-        setLockedStoryHint("No se pudo cargar esta historia. Inténtalo de nuevo.");
+        setLockedStoryHint("Couldn't load this story. Try again.");
         return;
       }
       clearTimeout(skeletonTimer);
@@ -5842,7 +5848,7 @@ export function MobileLibraryShell(args: {
     }
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
-    const sourceItems = overrideItems ?? practiceSeedItems ?? buildPracticeFavorites(favoriteWords);
+    const sourceItems = overrideItems ?? practiceSeedItems ?? buildPracticeFavorites(journeyScopedFavoriteWords);
     const exercises = buildPracticeExercisesFromItems(sourceItems, mode, review, onboardingPracticePrefs);
     if (exercises.length === 0) return;
     setPracticeSeedItems(sourceItems);
@@ -6554,6 +6560,15 @@ export function MobileLibraryShell(args: {
     option: string,
     timedOut = false
   ) {
+    // Stop any in-flight audio the moment the user commits an answer —
+    // HQ clip, context clip, and on-device speech. Without this the TTS
+    // keeps reading the sentence after the user has already chosen,
+    // which feels noisy and clashes with the correct/wrong feedback SFX.
+    void stopPracticeHqClip();
+    void stopPracticeContextClip();
+    getOptionalSpeechModule()?.stop();
+    setSpeakingPracticePromptId(null);
+
     const isCorrect = option === current.answer;
     setPracticeRevealed(true);
     setPracticeTimedOut(timedOut);
@@ -7719,6 +7734,12 @@ export function MobileLibraryShell(args: {
     const filled = Object.keys(pendingPairings).length + matchedWords.length;
     if (filled < current.pairs.length) return;
 
+    // Stop any in-flight prompt audio the moment the user taps Check.
+    void stopPracticeHqClip();
+    void stopPracticeContextClip();
+    getOptionalSpeechModule()?.stop();
+    setSpeakingPracticePromptId(null);
+
     const newlyCorrect: string[] = [];
     const newlyWrong: string[] = [];
     for (const [word, meaning] of Object.entries(pendingPairings)) {
@@ -7811,6 +7832,12 @@ export function MobileLibraryShell(args: {
   function handleBottomTabPress(tab: BottomTab) {
     if (tab === "signin") {
       onRequestSignIn?.();
+      return;
+    }
+    if (tab === "menu") {
+      // Hamburger tab opens the side menu overlay instead of swapping
+      // activeScreen — Progress, Library, Settings, etc. live inside it.
+      setMenuOpen(true);
       return;
     }
     if (activeScreen === "settings" && preferencesDirty) {
@@ -9124,7 +9151,6 @@ export function MobileLibraryShell(args: {
             <Text style={styles.title}>Library</Text>
             <Text style={styles.subtitle}>Continue, discover and jump into your next story.</Text>
           </View>
-          <MenuTrigger onPress={() => setMenuOpen(true)} />
         </View>
       </View>
 
@@ -9314,27 +9340,32 @@ export function MobileLibraryShell(args: {
 
   const exploreView = (
     <>
-      <View style={styles.hero}>
+      <View style={styles.favoritesHero}>
         <View style={styles.heroHeaderRow}>
-          <View style={styles.heroTextBlock}>
-            <Text style={styles.eyebrow}>Browse</Text>
-            <Text style={styles.title}>Explore</Text>
-          </View>
-          <View style={styles.exploreHeaderActions}>
+          <View style={styles.favoritesHeroLead}>
             <Pressable
               onPress={() => setExplorePickerSection("language")}
-              style={styles.exploreLanguagePill}
+              hitSlop={12}
+              style={({ pressed }) => [
+                styles.journeyHeaderFlagBadge,
+                styles.favoritesHeroFlagWrap,
+                pressed ? styles.journeyHeaderFlagBadgePressed : null,
+              ]}
+              accessibilityRole="button"
+              accessibilityLabel="Choose explore language"
             >
               <LanguageFlag
                 language={selectedExploreLanguage === "All" ? "Spanish" : selectedExploreLanguage}
-                size={20}
+                size={28}
               />
-              <Text style={styles.exploreLanguagePillText}>
+              <Text style={styles.favoritesHeroFlagCode}>
                 {selectedExploreLanguage === "All" ? "ALL" : formatLanguageCode(selectedExploreLanguage)}
               </Text>
-              <Feather name="chevron-down" size={14} color="#dbe9ff" />
+              <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
             </Pressable>
-            <MenuTrigger onPress={() => setMenuOpen(true)} />
+            <View style={styles.favoritesHeroTextBlock}>
+              <Text style={styles.favoritesHeroTitle}>Explore</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -9520,6 +9551,14 @@ export function MobileLibraryShell(args: {
                     key={language}
                     onPress={() => {
                       setSelectedExploreLanguage(language);
+                      // Sync the journey-scope language so Favorites +
+                      // Practice reflect the same choice — picking a
+                      // language in any section propagates to all.
+                      // "All" is Explore-only; skip the sync there so we
+                      // don't blow away the journey selection.
+                      if (language !== "All") {
+                        setActiveJourneyLanguage(language);
+                      }
                       setExplorePickerSection(null);
                     }}
                     style={[styles.filterChip, selectedExploreLanguage === language ? styles.filterChipActive : null]}
@@ -9921,6 +9960,39 @@ export function MobileLibraryShell(args: {
         </>
       ) : (
         <>
+          <View style={styles.favoritesHero}>
+            <View style={styles.heroHeaderRow}>
+              <View style={styles.favoritesHeroLead}>
+                <Pressable
+                  onPress={() => setLanguageSwitchOpen(true)}
+                  hitSlop={12}
+                  style={({ pressed }) => [
+                    styles.journeyHeaderFlagBadge,
+                    styles.favoritesHeroFlagWrap,
+                    pressed ? styles.journeyHeaderFlagBadgePressed : null,
+                  ]}
+                  accessibilityRole="button"
+                  accessibilityLabel="Choose practice language"
+                >
+                  <LanguageFlag
+                    language={activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null}
+                    variant={activeJourney ? journeyFlagVariant(activeJourney) : preferences.preferredVariant}
+                    size={28}
+                  />
+                  {(() => {
+                    const lang = activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null;
+                    const code = languageShortCode(lang);
+                    if (!code) return null;
+                    return <Text style={styles.favoritesHeroFlagCode}>{code}</Text>;
+                  })()}
+                  <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
+                </Pressable>
+                <View style={styles.favoritesHeroTextBlock}>
+                  <Text style={styles.favoritesHeroTitle}>Practice</Text>
+                </View>
+              </View>
+            </View>
+          </View>
           {practiceLoadError ? (
             <View style={[styles.card, styles.accountCard, styles.practiceErrorCard]}>
               <Text style={styles.errorText}>{practiceLoadError}</Text>
@@ -10197,7 +10269,7 @@ export function MobileLibraryShell(args: {
                     </View>
                     {durationMs > 0 ? (
                       <View style={styles.practiceResultStatPill}>
-                        <Feather name="clock" size={14} color="#c4b5fd" />
+                        <Feather name="clock" size={14} color="#f8c15c" />
                         <Text style={styles.practiceResultStatValue}>{durationLabel}</Text>
                         <Text style={styles.practiceResultStatLabel}>time</Text>
                       </View>
@@ -11108,9 +11180,6 @@ export function MobileLibraryShell(args: {
               <Text style={styles.favoritesHeroTitle}>Favorites</Text>
             </View>
           </View>
-          <View style={styles.favoritesHeroMenuWrap}>
-            <MenuTrigger onPress={() => setMenuOpen(true)} />
-          </View>
         </View>
         {favoriteCards.length > 0 ? (
           <View style={styles.favoritesHeroStats}>
@@ -11125,6 +11194,47 @@ export function MobileLibraryShell(args: {
 
       {favoriteCards.length > 0 ? (
         <>
+          {collections.length > 0 ? (
+            <View style={styles.favoritesCompactBar}>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoriteFilterChips}>
+                <Pressable
+                  onPress={() => setSelectedCollectionId(null)}
+                  style={[
+                    styles.filterChip,
+                    selectedCollectionId === null ? styles.filterChipActive : null,
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.filterChipText,
+                      selectedCollectionId === null ? styles.filterChipTextActive : null,
+                    ]}
+                  >
+                    All ({favoriteWords.length})
+                  </Text>
+                </Pressable>
+                {collections.map((collection) => (
+                  <Pressable
+                    key={collection.id}
+                    onPress={() => setSelectedCollectionId(collection.id)}
+                    style={[
+                      styles.filterChip,
+                      selectedCollectionId === collection.id ? styles.filterChipActive : null,
+                    ]}
+                  >
+                    <Text
+                      style={[
+                        styles.filterChipText,
+                        selectedCollectionId === collection.id ? styles.filterChipTextActive : null,
+                      ]}
+                    >
+                      {collection.name} ({collection.wordKeys.length})
+                    </Text>
+                  </Pressable>
+                ))}
+              </ScrollView>
+            </View>
+          ) : null}
           <View style={styles.favoritesCompactBar}>
             {availableFavoriteTypes.length > 2 ? (
               <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.favoriteFilterChips}>
@@ -11164,33 +11274,18 @@ export function MobileLibraryShell(args: {
               streak: item.streak ?? 0,
             });
             const favoriteType = getFavoriteType(item);
-            const isVerb = favoriteType === "verb";
-            const conjugationKey = buildConjugationKey(item);
-            const conjugationEntry = isVerb ? conjugationCache[conjugationKey] : undefined;
-            const conjugationsExpanded = isVerb && expandedConjugations.has(conjugationKey);
+            const synonymsLine = item.synonyms && item.synonyms.length > 0
+              ? item.synonyms.join(", ")
+              : null;
             return (
             <SwipeableFavoriteCard
               key={key}
-              onDelete={() => {
-                Alert.alert(
-                  "Delete favorite",
-                  `Remove "${item.word}" from your favorites?`,
-                  [
-                    { text: "Cancel", style: "cancel" },
-                    {
-                      text: "Delete",
-                      style: "destructive",
-                      onPress: () => void removeFavoriteItem(item),
-                    },
-                  ]
-                );
-              }}
+              word={item.word}
+              onDeleteConfirmed={() => void removeFavoriteItem(item)}
               onAddToCollection={() => {
-                Alert.alert(
-                  "Collections",
-                  "Word collections are coming soon. You'll be able to group favorites by theme (food, travel, verbs, etc.) and practice them together.",
-                  [{ text: "OK" }]
-                );
+                setAddToCollectionTarget(item);
+                setNewCollectionInputVisible(false);
+                setNewCollectionDraft("");
               }}
             >
               <View style={styles.favoriteCard}>
@@ -11217,76 +11312,8 @@ export function MobileLibraryShell(args: {
                         />
                       ))}
                     </View>
-                    {isVerb ? (
-                      <Pressable
-                        accessibilityRole="button"
-                        accessibilityLabel={
-                          conjugationsExpanded ? "Hide conjugations" : "Show conjugations"
-                        }
-                        hitSlop={8}
-                        onPress={() => void toggleFavoriteConjugations(item)}
-                        style={({ pressed }) => [
-                          styles.favoriteConjugationsChip,
-                          conjugationsExpanded ? styles.favoriteConjugationsChipOpen : null,
-                          pressed ? styles.favoriteConjugationsChipPressed : null,
-                        ]}
-                      >
-                        <Feather
-                          name={conjugationsExpanded ? "chevron-up" : "chevron-down"}
-                          size={12}
-                          color="#dbe9ff"
-                        />
-                        <Text style={styles.favoriteConjugationsChipText}>
-                          {conjugationEntry?.status === "loading"
-                            ? "Cargando…"
-                            : conjugationEntry?.status === "ready"
-                            ? `Conjugaciones de ${conjugationEntry.payload.infinitive}`
-                            : "Conjugaciones"}
-                        </Text>
-                      </Pressable>
-                    ) : null}
-                    {isVerb && conjugationsExpanded ? (
-                      <View style={styles.favoriteConjugationsPanel}>
-                        {conjugationEntry?.status === "ready" ? (
-                          conjugationEntry.payload.tenses.map((tense) => (
-                            <View key={tense.name} style={styles.favoriteConjugationsTense}>
-                              <Text style={styles.favoriteConjugationsTenseName}>{tense.name}</Text>
-                              {tense.forms.map((form, idx) => (
-                                <View
-                                  key={`${tense.name}-${idx}`}
-                                  style={styles.favoriteConjugationsRow}
-                                >
-                                  <Text style={styles.favoriteConjugationsPerson}>{form.person}</Text>
-                                  <Text style={styles.favoriteConjugationsForm}>{form.form}</Text>
-                                </View>
-                              ))}
-                            </View>
-                          ))
-                        ) : conjugationEntry?.status === "loading" ? (
-                          <Text style={styles.favoriteConjugationsMuted}>Cargando conjugaciones…</Text>
-                        ) : conjugationEntry?.status === "not-verb" ? (
-                          <Text style={styles.favoriteConjugationsMuted}>
-                            No se encontraron conjugaciones para esta palabra.
-                          </Text>
-                        ) : (
-                          <View style={styles.favoriteConjugationsErrorRow}>
-                            <Text style={styles.favoriteConjugationsMuted}>
-                              No pudimos cargar las conjugaciones.
-                            </Text>
-                            <Pressable
-                              accessibilityRole="button"
-                              hitSlop={8}
-                              onPress={() => void toggleFavoriteConjugations(item)}
-                              style={styles.favoriteConjugationsRetry}
-                            >
-                              <Text style={styles.favoriteConjugationsRetryText}>Reintentar</Text>
-                            </Pressable>
-                          </View>
-                        )}
-                      </View>
-                    ) : null}
                     <Text style={styles.favoriteMeta} numberOfLines={1}>
-                      {item.storyTitle ?? item.translation ?? "Saved from reader"}
+                      {synonymsLine ?? item.storyTitle ?? item.translation ?? "Saved from reader"}
                     </Text>
                   </View>
                   <Pressable
@@ -11296,13 +11323,20 @@ export function MobileLibraryShell(args: {
                     onPress={() => { void playFavoriteAudio(key, item); }}
                     style={({ pressed }) => [
                       styles.favoritePlayCircle,
-                      (pressed || playingFavoriteKey === key) ? styles.favoritePlayCircleActive : null,
+                      pressed ? styles.favoritePlayCirclePressed : null,
+                      playingFavoriteKey === key ? styles.favoritePlayCircleActive : null,
                     ]}
                   >
-                    <Feather
-                      name={playingFavoriteKey === key ? "square" : "play"}
+                    <Ionicons
+                      name={playingFavoriteKey === key ? "stop" : "play"}
                       size={16}
-                      color="#9fe8ff"
+                      color={playingFavoriteKey === key ? "#1a1305" : "#f8c15c"}
+                      style={{
+                        // Optical centering: Ionicons "play" glyph has
+                        // empty space on the left; nudge it right so the
+                        // triangle visually centers in the circle.
+                        marginLeft: playingFavoriteKey === key ? 0 : 2,
+                      }}
                     />
                   </Pressable>
                 </View>
@@ -13507,6 +13541,7 @@ export function MobileLibraryShell(args: {
         hitSlop={12}
         style={({ pressed }) => [
           styles.journeyHeaderFlagBadge,
+          styles.favoritesHeroFlagWrap,
           pressed ? styles.journeyHeaderFlagBadgePressed : null,
         ]}
       >
@@ -13517,13 +13552,13 @@ export function MobileLibraryShell(args: {
               ? journeyFlagVariant(activeJourney)
               : preferences.preferredVariant
           }
-          size={34}
+          size={28}
         />
         {(() => {
           const lang = activeJourney?.language ?? activeJourneyLanguage ?? preferences.targetLanguages[0] ?? null;
           const code = languageShortCode(lang);
           if (!code) return null;
-          return <Text style={styles.journeyHeaderLanguageCode}>{code}</Text>;
+          return <Text style={styles.favoritesHeroFlagCode}>{code}</Text>;
         })()}
         <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
       </Pressable>
@@ -13557,7 +13592,6 @@ export function MobileLibraryShell(args: {
           </View>
         </Pressable>
       ) : null}
-      <MenuTrigger onPress={() => setMenuOpen(true)} />
     </View>
   );
 
@@ -13616,7 +13650,6 @@ export function MobileLibraryShell(args: {
               <Text style={styles.journeyHeroTitle}>{activeJourneyTopic.label}</Text>
               <Text style={styles.journeyHeroSubtitle}>Read the stories, practice, then clear the checkpoint.</Text>
             </View>
-            <MenuTrigger onPress={() => setMenuOpen(true)} />
           </View>
         </View>
       ) : null}
@@ -14365,12 +14398,12 @@ export function MobileLibraryShell(args: {
     const weekLabel = `Week ${weekNum} · ${tmpDate.getUTCFullYear()}`;
 
     const twinkles = [
-      { left: 22, top: 38, size: 5, color: "#f5d77a" },
-      { left: 196, top: 50, size: 4, color: "#f5a261" },
-      { left: 178, top: 28, size: 5, color: "#f5d77a" },
-      { left: 14, top: 132, size: 5, color: "#5dd9e8" },
-      { left: 204, top: 124, size: 4, color: "#5dd9e8" },
-      { left: 30, top: 196, size: 4, color: "#f5d77a" },
+      { left: 22, top: 38, size: 5, color: "#f5d77a", delay: 0 },
+      { left: 196, top: 50, size: 4, color: "#f5a261", delay: 300 },
+      { left: 178, top: 28, size: 5, color: "#f5d77a", delay: 600 },
+      { left: 14, top: 132, size: 5, color: "#5dd9e8", delay: 900 },
+      { left: 204, top: 124, size: 4, color: "#5dd9e8", delay: 200 },
+      { left: 30, top: 196, size: 4, color: "#f5d77a", delay: 500 },
     ];
 
     const bars = [
@@ -14388,25 +14421,23 @@ export function MobileLibraryShell(args: {
 
         <View style={styles.progressStreakHero}>
           {twinkles.map((t, i) => (
-            <View
+            <AnimatedTwinkle
               key={i}
-              style={{
-                position: "absolute",
-                left: t.left,
-                top: t.top,
-                width: t.size,
-                height: t.size,
-                borderRadius: t.size / 2,
-                backgroundColor: t.color,
-                opacity: 0.85,
-              }}
+              left={t.left}
+              top={t.top}
+              size={t.size}
+              color={t.color}
+              delay={t.delay}
             />
           ))}
+          <StreakHalo />
           <View style={styles.progressStreakRing} />
           <View style={styles.progressStreakCenter}>
-            <Text style={styles.progressStreakFlame}>🔥</Text>
             <Text style={styles.progressStreakValue}>{streak}</Text>
-            <Text style={styles.progressStreakLabel}>DAY STREAK</Text>
+            <View style={styles.progressStreakLabelRow}>
+              <Feather name="zap" size={12} color="#f5d77a" />
+              <Text style={styles.progressStreakLabel}>DAY STREAK</Text>
+            </View>
           </View>
         </View>
 
@@ -14482,12 +14513,7 @@ export function MobileLibraryShell(args: {
                     </Text>
                   </View>
                   <View style={styles.progressWeekRowTrack}>
-                    <View
-                      style={[
-                        styles.progressWeekRowFill,
-                        { width: `${pct}%`, backgroundColor: bar.color },
-                      ]}
-                    />
+                    <AnimatedProgressBar pct={pct} color={bar.color} />
                   </View>
                 </View>
               );
@@ -15141,6 +15167,16 @@ export function MobileLibraryShell(args: {
         contentContainerStyle={[
           styles.container,
           useNativeJourneySticky ? { paddingTop: 0 } : null,
+          // Explore / Practice / Favorites siblings of Home in the bottom
+          // nav — match the same visual top as Home (in path mode the
+          // ScrollView starts at 0 because JourneyPathTop already
+          // provides clearance). For these screens we mimic that clearance
+          // with a small padding so the title baseline lines up across
+          // the four primary tabs.
+          !useNativeJourneySticky &&
+          (activeScreen === "explore" || activeScreen === "practice" || activeScreen === "favorites")
+            ? { paddingTop: 6 }
+            : null,
         ]}
         scrollEnabled
         showsVerticalScrollIndicator={false}
@@ -15826,6 +15862,138 @@ export function MobileLibraryShell(args: {
         })}
       </View>
 
+      <Modal
+        visible={addToCollectionTarget !== null}
+        animationType="fade"
+        transparent
+        onRequestClose={() => setAddToCollectionTarget(null)}
+      >
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : undefined}
+          style={styles.collectionModalBackdrop}
+        >
+          <Pressable
+            style={StyleSheet.absoluteFillObject}
+            onPress={() => setAddToCollectionTarget(null)}
+            accessibilityRole="button"
+            accessibilityLabel="Close"
+          />
+          <View style={styles.collectionModalPanel}>
+            <View style={styles.collectionModalHeader}>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.collectionModalEyebrow}>Add to collection</Text>
+                <Text style={styles.collectionModalTitle} numberOfLines={1}>
+                  {addToCollectionTarget?.word ?? ""}
+                </Text>
+              </View>
+              <Pressable
+                onPress={() => setAddToCollectionTarget(null)}
+                style={styles.collectionModalCloseBtn}
+                accessibilityRole="button"
+                accessibilityLabel="Close"
+                hitSlop={8}
+              >
+                <Feather name="x" size={20} color="#dbe9ff" />
+              </Pressable>
+            </View>
+            <ScrollView
+              contentContainerStyle={styles.collectionModalList}
+              keyboardShouldPersistTaps="handled"
+              showsVerticalScrollIndicator={false}
+            >
+              {newCollectionInputVisible ? (
+                <View style={styles.collectionModalNewRow}>
+                  <TextInput
+                    value={newCollectionDraft}
+                    onChangeText={setNewCollectionDraft}
+                    placeholder="Collection name"
+                    placeholderTextColor="rgba(214,225,242,0.5)"
+                    autoFocus
+                    style={styles.collectionModalInput}
+                    onSubmitEditing={() => {
+                      const target = addToCollectionTarget;
+                      if (target && newCollectionDraft.trim()) {
+                        void createAndAddToCollection(newCollectionDraft, target);
+                        setNewCollectionInputVisible(false);
+                        setNewCollectionDraft("");
+                        setAddToCollectionTarget(null);
+                      }
+                    }}
+                  />
+                  <Pressable
+                    onPress={() => {
+                      const target = addToCollectionTarget;
+                      if (target && newCollectionDraft.trim()) {
+                        void createAndAddToCollection(newCollectionDraft, target);
+                        setNewCollectionInputVisible(false);
+                        setNewCollectionDraft("");
+                        setAddToCollectionTarget(null);
+                      }
+                    }}
+                    style={styles.collectionModalCreateBtn}
+                    accessibilityRole="button"
+                  >
+                    <Text style={styles.collectionModalCreateBtnText}>Create</Text>
+                  </Pressable>
+                </View>
+              ) : (
+                <Pressable
+                  onPress={() => setNewCollectionInputVisible(true)}
+                  style={styles.collectionModalRow}
+                  accessibilityRole="button"
+                >
+                  <Feather name="plus" size={18} color="#9fe8ff" />
+                  <Text style={styles.collectionModalRowText}>New collection</Text>
+                </Pressable>
+              )}
+
+              {collections.map((collection) => {
+                const inIt = addToCollectionTarget
+                  ? isItemInCollection(collection, addToCollectionTarget)
+                  : false;
+                return (
+                  <Pressable
+                    key={collection.id}
+                    onPress={() => {
+                      const target = addToCollectionTarget;
+                      if (!target) return;
+                      void toggleCollectionMembership(collection.id, target);
+                    }}
+                    style={styles.collectionModalRow}
+                    accessibilityRole="button"
+                  >
+                    <Feather
+                      name={inIt ? "check-square" : "square"}
+                      size={18}
+                      color={inIt ? "#9fe8ff" : "rgba(219,233,255,0.5)"}
+                    />
+                    <Text style={styles.collectionModalRowText}>
+                      {collection.name}
+                    </Text>
+                    <Text style={styles.collectionModalRowCount}>
+                      {collection.wordKeys.length}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+
+              {collections.length === 0 && !newCollectionInputVisible ? (
+                <Text style={styles.collectionModalEmpty}>
+                  No collections yet. Tap "New collection" to create your first one.
+                </Text>
+              ) : null}
+            </ScrollView>
+            <Pressable
+              onPress={() => setAddToCollectionTarget(null)}
+              style={styles.collectionModalDoneBtn}
+              accessibilityRole="button"
+            >
+              <Text style={styles.collectionModalDoneBtnText}>Done</Text>
+            </Pressable>
+          </View>
+        </KeyboardAvoidingView>
+      </Modal>
+
       <Modal visible={menuOpen} animationType="slide" transparent onRequestClose={() => setMenuOpen(false)}>
         <View style={styles.menuBackdrop}>
           <Pressable style={styles.menuDismissZone} onPress={() => setMenuOpen(false)} />
@@ -15840,6 +16008,14 @@ export function MobileLibraryShell(args: {
             <ScrollView contentContainerStyle={styles.menuContent}>
               {isSignedIn ? (
                 <>
+                  <MenuLink
+                    label="Progress"
+                    icon="progress"
+                    onPress={() => {
+                      setActiveScreen("progress");
+                      setMenuOpen(false);
+                    }}
+                  />
                   <MenuLink
                     label="Settings"
                     icon="settings"
@@ -15989,22 +16165,145 @@ function MenuTrigger({ onPress }: { onPress: () => void }) {
 // Swipe-left reveals the action panel (Delete, Add to collection).
 // Pure PanResponder + Animated so we don't need to add
 // react-native-gesture-handler and rebuild the iOS native bundle.
+// Animated twinkle dot for the streak hero. Each instance owns its own
+// opacity loop with a staggered delay so the cluster blinks at different
+// phases, not in lockstep.
+function AnimatedTwinkle({
+  left,
+  top,
+  size,
+  color,
+  delay,
+}: {
+  left: number;
+  top: number;
+  size: number;
+  color: string;
+  delay: number;
+}) {
+  const opacity = useRef(new Animated.Value(0.3)).current;
+  useEffect(() => {
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(opacity, { toValue: 1, duration: 900, delay, useNativeDriver: true }),
+        Animated.timing(opacity, { toValue: 0.2, duration: 900, useNativeDriver: true }),
+      ])
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [opacity, delay]);
+  return (
+    <Animated.View
+      style={{
+        position: "absolute",
+        left,
+        top,
+        width: size,
+        height: size,
+        borderRadius: size / 2,
+        backgroundColor: color,
+        opacity,
+      }}
+    />
+  );
+}
+
+// Soft halo pulse behind the streak number. Replaces the flame emoji
+// that read like a birthday candle. The halo expands + dims, then
+// contracts + brightens, giving the hero ring a heartbeat without
+// crowding the number itself.
+function StreakHalo() {
+  const scale = useRef(new Animated.Value(0.85)).current;
+  const opacity = useRef(new Animated.Value(0.55)).current;
+  useEffect(() => {
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.parallel([
+          Animated.timing(scale, { toValue: 1.15, duration: 1400, useNativeDriver: true }),
+          Animated.timing(opacity, { toValue: 0.15, duration: 1400, useNativeDriver: true }),
+        ]),
+        Animated.parallel([
+          Animated.timing(scale, { toValue: 0.85, duration: 1400, useNativeDriver: true }),
+          Animated.timing(opacity, { toValue: 0.55, duration: 1400, useNativeDriver: true }),
+        ]),
+      ])
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [scale, opacity]);
+  return (
+    <Animated.View
+      pointerEvents="none"
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        width: 140,
+        height: 140,
+        marginLeft: -70,
+        marginTop: -70,
+        borderRadius: 70,
+        backgroundColor: "rgba(245,215,122,0.18)",
+        opacity,
+        transform: [{ scale }],
+      }}
+    />
+  );
+}
+
+// Animated fill bar for the weekly goals. On mount, animates the width
+// from 0 → target so the user sees the bar grow each time they open
+// Progress.
+function AnimatedProgressBar({
+  pct,
+  color,
+}: {
+  pct: number;
+  color: string;
+}) {
+  const widthAnim = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.timing(widthAnim, {
+      toValue: pct,
+      duration: 900,
+      delay: 120,
+      useNativeDriver: false,
+    }).start();
+  }, [pct, widthAnim]);
+  return (
+    <Animated.View
+      style={{
+        height: 8,
+        borderRadius: 999,
+        backgroundColor: color,
+        width: widthAnim.interpolate({ inputRange: [0, 100], outputRange: ["0%", "100%"] }),
+      }}
+    />
+  );
+}
+
 function SwipeableFavoriteCard({
-  onDelete,
+  word,
+  onDeleteConfirmed,
   onAddToCollection,
   children,
 }: {
-  onDelete: () => void;
+  word: string;
+  onDeleteConfirmed: () => void;
   onAddToCollection?: () => void;
   children: React.ReactNode;
 }) {
   const ACTION_WIDTH = onAddToCollection ? 168 : 84;
-  // A flick faster than this (px/ms) snaps to the next state regardless
-  // of how far the finger traveled — same UX as iOS Mail/Messages.
-  const VELOCITY_THRESHOLD = 0.18;
-  const DISTANCE_THRESHOLD = 18;
   const translateX = useRef(new Animated.Value(0)).current;
   const currentOffsetRef = useRef(0);
+  // Exit animation drives opacity + scaleY (height collapse via transform
+  // since native driver can't animate raw layout height). The card stays
+  // mounted for ~260ms after the user confirms delete, slides off-screen,
+  // fades, and shrinks vertically — only then we call onDeleteConfirmed
+  // so the row removal from the list doesn't visually pop.
+  const exitOpacity = useRef(new Animated.Value(1)).current;
+  const exitScaleY = useRef(new Animated.Value(1)).current;
+  const exitTranslateX = useRef(new Animated.Value(0)).current;
 
   function springTo(target: number, velocity = 0) {
     currentOffsetRef.current = target;
@@ -16017,14 +16316,56 @@ function SwipeableFavoriteCard({
     }).start();
   }
 
+  function runExitAnimation() {
+    Animated.parallel([
+      // Continue leftward in the same direction as the swipe gesture —
+      // sliding right would feel like a snap-back after the user already
+      // committed to the left action.
+      Animated.timing(exitTranslateX, {
+        toValue: -500,
+        duration: 240,
+        useNativeDriver: true,
+      }),
+      Animated.timing(exitOpacity, {
+        toValue: 0,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+      Animated.timing(exitScaleY, {
+        toValue: 0,
+        duration: 260,
+        delay: 60,
+        useNativeDriver: true,
+      }),
+    ]).start(() => {
+      onDeleteConfirmed();
+    });
+  }
+
+  function handleDeletePress() {
+    springTo(0);
+    Alert.alert(
+      "Delete favorite",
+      `Remove "${word}" from your favorites?`,
+      [
+        { text: "Cancel", style: "cancel" },
+        { text: "Delete", style: "destructive", onPress: () => runExitAnimation() },
+      ]
+    );
+  }
+
   const panResponder = useRef(
     PanResponder.create({
-      // Capture: claim the gesture as soon as it's clearly horizontal,
-      // before the parent ScrollView decides it's a scroll. Without this
-      // the ScrollView wins on iOS for any swipe that's not perfectly
-      // horizontal and the card never moves.
-      onMoveShouldSetPanResponderCapture: (_e, g) => Math.abs(g.dx) > 2 && Math.abs(g.dx) > Math.abs(g.dy),
-      onMoveShouldSetPanResponder: (_e, g) => Math.abs(g.dx) > 2 && Math.abs(g.dx) > Math.abs(g.dy),
+      // Capture as soon as the gesture is clearly horizontal. Lowering
+      // the threshold to 1px catches slow drags whose deltas accumulate
+      // sub-pixel — iOS would otherwise hand the gesture to the parent
+      // ScrollView and the card would never move during a slow swipe.
+      onMoveShouldSetPanResponderCapture: (_e, g) => Math.abs(g.dx) > 1 && Math.abs(g.dx) >= Math.abs(g.dy),
+      onMoveShouldSetPanResponder: (_e, g) => Math.abs(g.dx) > 1 && Math.abs(g.dx) >= Math.abs(g.dy),
+      // Once we've claimed the swipe, don't let the parent ScrollView
+      // reclaim it mid-drag (which manifested as the card sticking and
+      // not following the finger on slow horizontal pans).
+      onPanResponderTerminationRequest: () => false,
       onPanResponderMove: (_e, g) => {
         const base = currentOffsetRef.current;
         const next = Math.min(0, base + g.dx);
@@ -16032,10 +16373,6 @@ function SwipeableFavoriteCard({
         translateX.setValue(clamped);
       },
       onPanResponderRelease: (_e, g) => {
-        // Intent-based: any leftward drag from closed state opens fully;
-        // any rightward drag from open state closes fully. If the user
-        // saw any sliver of the action panel, that counts as intent —
-        // they don't have to drag all the way to make it stick.
         const base = currentOffsetRef.current;
         let target: number;
         if (base === 0 && g.dx < -2) {
@@ -16058,36 +16395,43 @@ function SwipeableFavoriteCard({
   }
 
   return (
-    <View style={swipeStyles.row}>
-      <View style={swipeStyles.actionPanel}>
-        {onAddToCollection ? (
+    <Animated.View
+      style={{
+        opacity: exitOpacity,
+        transform: [{ translateX: exitTranslateX }, { scaleY: exitScaleY }],
+      }}
+    >
+      <View style={swipeStyles.row}>
+        <View style={swipeStyles.actionPanel}>
+          {onAddToCollection ? (
+            <Pressable
+              onPress={() => { closePanel(); onAddToCollection(); }}
+              style={swipeStyles.collectionAction}
+              accessibilityRole="button"
+              accessibilityLabel="Add to collection"
+            >
+              <Feather name="folder-plus" size={18} color="#051834" />
+              <Text style={[swipeStyles.actionText, swipeStyles.actionTextDark]}>Collection</Text>
+            </Pressable>
+          ) : null}
           <Pressable
-            onPress={() => { closePanel(); onAddToCollection(); }}
-            style={swipeStyles.collectionAction}
+            onPress={handleDeletePress}
+            style={swipeStyles.deleteAction}
             accessibilityRole="button"
-            accessibilityLabel="Add to collection"
+            accessibilityLabel="Delete"
           >
-            <Feather name="folder-plus" size={18} color="#ffffff" />
-            <Text style={swipeStyles.actionText}>Collection</Text>
+            <Feather name="trash-2" size={18} color="#ffffff" />
+            <Text style={swipeStyles.actionText}>Delete</Text>
           </Pressable>
-        ) : null}
-        <Pressable
-          onPress={() => { closePanel(); onDelete(); }}
-          style={swipeStyles.deleteAction}
-          accessibilityRole="button"
-          accessibilityLabel="Delete"
+        </View>
+        <Animated.View
+          style={[swipeStyles.cardWrap, { transform: [{ translateX }] }]}
+          {...panResponder.panHandlers}
         >
-          <Feather name="trash-2" size={18} color="#ffffff" />
-          <Text style={swipeStyles.actionText}>Delete</Text>
-        </Pressable>
+          {children}
+        </Animated.View>
       </View>
-      <Animated.View
-        style={[swipeStyles.cardWrap, { transform: [{ translateX }] }]}
-        {...panResponder.panHandlers}
-      >
-        {children}
-      </Animated.View>
-    </View>
+    </Animated.View>
   );
 }
 
@@ -16109,15 +16453,20 @@ const swipeStyles = StyleSheet.create({
     alignItems: "stretch",
   },
   deleteAction: {
+    // Matches the red used in mastery level 1 (FSRS "review now"), the
+    // app's existing destructive accent — no invented hex.
     width: 84,
-    backgroundColor: "#c0392b",
+    backgroundColor: "#ef4444",
     alignItems: "center",
     justifyContent: "center",
     gap: 4,
   },
   collectionAction: {
+    // Token color.gems lavender — distinctive from the practice lime
+    // and the XP gold; reads as a "library / save" accent across
+    // favorites + collections.
     width: 84,
-    backgroundColor: "#2e6cb8",
+    backgroundColor: "#f8c15c",
     alignItems: "center",
     justifyContent: "center",
     gap: 4,
@@ -16127,6 +16476,9 @@ const swipeStyles = StyleSheet.create({
     fontSize: 11,
     fontWeight: "700",
   },
+  actionTextDark: {
+    color: "#051834",
+  },
 });
 
 function BottomTabIcon({ tab, active }: { tab: BottomTab; active: boolean }) {
@@ -16135,7 +16487,7 @@ function BottomTabIcon({ tab, active }: { tab: BottomTab; active: boolean }) {
   if (tab === "explore") return <Feather name="compass" size={18} color={color} />;
   if (tab === "practice") return <MaterialCommunityIcons name="brain" size={19} color={color} />;
   if (tab === "favorites") return <Feather name="star" size={18} color={color} />;
-  if (tab === "progress") return <Feather name="bar-chart-2" size={18} color={color} />;
+  if (tab === "menu") return <Feather name="menu" size={20} color={color} />;
   if (tab === "signin") return <Feather name="log-in" size={18} color={color} />;
   return <Feather name="circle" size={18} color={color} />;
 }
@@ -16176,6 +16528,7 @@ function MenuIcon({ icon, tone = "default" }: { icon: MenuIconName; tone?: "defa
   if (icon === "upgrade") return <MaterialCommunityIcons name="crown-outline" size={18} color={color} />;
   if (icon === "signout") return <Feather name="log-out" size={18} color={color} />;
   if (icon === "signin") return <Feather name="log-in" size={18} color={color} />;
+  if (icon === "progress") return <Feather name="bar-chart-2" size={18} color={color} />;
   return <Feather name="shield" size={18} color={color} />;
 }
 
@@ -17037,8 +17390,8 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
   },
   filterChipActive: {
-    backgroundColor: "#9fe8ff",
-    borderColor: "#9fe8ff",
+    backgroundColor: "#f8c15c",
+    borderColor: "#f8c15c",
   },
   filterChipText: {
     color: "#dbe9ff",
@@ -19800,115 +20153,41 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     backgroundColor: "rgba(255,255,255,0.12)",
   },
-  favoriteConjugationsChip: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 4,
-    marginTop: 8,
-    borderRadius: 999,
-    borderWidth: 1,
-    borderColor: "#35506f",
-    backgroundColor: "#1a2f48",
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-  },
-  favoriteConjugationsChipOpen: {
-    borderColor: "#5b7ba6",
-    backgroundColor: "#22385a",
-  },
-  favoriteConjugationsChipPressed: {
-    opacity: 0.7,
-  },
-  favoriteConjugationsChipText: {
-    color: "#dbe9ff",
-    fontSize: 11,
-    fontWeight: "700",
-  },
-  favoriteConjugationsPanel: {
-    marginTop: 8,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: "rgba(91,123,166,0.35)",
-    backgroundColor: "rgba(13,24,40,0.6)",
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    gap: 10,
-  },
-  favoriteConjugationsTense: {
-    gap: 2,
-  },
-  favoriteConjugationsTenseName: {
-    color: "#9ab4d9",
-    fontSize: 11,
-    fontWeight: "800",
-    textTransform: "uppercase",
-    letterSpacing: 0.5,
-    marginBottom: 2,
-  },
-  favoriteConjugationsRow: {
-    flexDirection: "row",
-    alignItems: "baseline",
-    gap: 8,
-  },
-  favoriteConjugationsPerson: {
-    color: "rgba(214,225,242,0.6)",
-    fontSize: 12,
-    fontWeight: "600",
-    minWidth: 72,
-  },
-  favoriteConjugationsForm: {
-    color: "#ffffff",
-    fontSize: 13,
-    fontWeight: "700",
-    flexShrink: 1,
-  },
-  favoriteConjugationsMuted: {
-    color: "rgba(214,225,242,0.6)",
-    fontSize: 12,
-    fontStyle: "italic",
-  },
-  favoriteConjugationsErrorRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 8,
-  },
-  favoriteConjugationsRetry: {
-    borderRadius: 999,
-    borderWidth: 1,
-    borderColor: "#5b7ba6",
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-  },
-  favoriteConjugationsRetryText: {
-    color: "#dbe9ff",
-    fontSize: 11,
-    fontWeight: "700",
-  },
   favoritePlayButton: {
     width: 26,
     height: 26,
     borderRadius: 999,
     borderWidth: 1,
-    borderColor: "rgba(159,232,255,0.32)",
-    backgroundColor: "rgba(159,232,255,0.08)",
+    borderColor: "rgba(248,193,92,0.36)",
+    backgroundColor: "rgba(248,193,92,0.10)",
     alignItems: "center",
     justifyContent: "center",
   },
   favoritePlayCircle: {
-    width: 32,
-    height: 32,
+    width: 36,
+    height: 36,
     borderRadius: 999,
-    borderWidth: 1,
-    borderColor: "rgba(159,232,255,0.32)",
-    backgroundColor: "rgba(159,232,255,0.10)",
+    borderWidth: 1.5,
+    borderColor: "rgba(248,193,92,0.55)",
+    backgroundColor: "rgba(248,193,92,0.10)",
     alignItems: "center",
     justifyContent: "center",
+    // Subtle outer glow via shadow — gives the button physical depth
+    // without competing with the word's typographic prominence.
+    shadowColor: "#f8c15c",
+    shadowOpacity: 0.35,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 0 },
+  },
+  favoritePlayCirclePressed: {
+    backgroundColor: "rgba(248,193,92,0.22)",
+    transform: [{ scale: 0.94 }],
   },
   favoritePlayCircleActive: {
-    backgroundColor: "rgba(159,232,255,0.22)",
-    borderColor: "rgba(159,232,255,0.60)",
+    backgroundColor: "#f8c15c",
+    borderColor: "#f8c15c",
+    shadowOpacity: 0.7,
+    shadowRadius: 10,
   },
   favoritePlayButtonActive: {
     backgroundColor: "rgba(159,232,255,0.20)",
@@ -22143,7 +22422,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "900",
     letterSpacing: 2.4,
-    marginTop: 2,
+  },
+  progressStreakLabelRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    marginTop: 6,
   },
   progressLevelPill: {
     flexDirection: "row",
@@ -22326,6 +22610,135 @@ const styles = StyleSheet.create({
   },
   menuDismissZone: {
     flex: 1,
+  },
+  collectionModalBackdrop: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.55)",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 16,
+  },
+  collectionModalPanel: {
+    width: "100%",
+    maxWidth: 420,
+    maxHeight: "70%",
+    backgroundColor: "#0d1b2e",
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "rgba(248,193,92,0.18)",
+    paddingTop: 20,
+    paddingBottom: 16,
+    paddingHorizontal: 18,
+    flexDirection: "column",
+    shadowColor: "#000",
+    shadowOpacity: 0.5,
+    shadowRadius: 24,
+    shadowOffset: { width: 0, height: 8 },
+  },
+  collectionModalHeader: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    marginBottom: 16,
+    gap: 12,
+  },
+  collectionModalEyebrow: {
+    color: "rgba(248,193,92,0.7)",
+    fontSize: 11,
+    fontWeight: "800",
+    textTransform: "uppercase",
+    letterSpacing: 0.8,
+    marginBottom: 4,
+  },
+  collectionModalTitle: {
+    color: "#ffffff",
+    fontSize: 22,
+    fontWeight: "900",
+    letterSpacing: -0.3,
+  },
+  collectionModalCloseBtn: {
+    width: 32,
+    height: 32,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.06)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  collectionModalList: {
+    gap: 6,
+    paddingVertical: 4,
+  },
+  collectionModalRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 12,
+    borderRadius: 10,
+    backgroundColor: "rgba(248,193,92,0.08)",
+  },
+  collectionModalRowText: {
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "700",
+    flex: 1,
+  },
+  collectionModalRowCount: {
+    color: "rgba(214,225,242,0.55)",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  collectionModalNewRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    paddingVertical: 8,
+  },
+  collectionModalInput: {
+    flex: 1,
+    backgroundColor: "rgba(248,193,92,0.10)",
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "600",
+    borderWidth: 1,
+    borderColor: "rgba(248,193,92,0.36)",
+  },
+  collectionModalCreateBtn: {
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderRadius: 10,
+    // Token color.gems lavender — matches the play button + collection
+    // swipe action; library-surface family.
+    backgroundColor: "#f8c15c",
+  },
+  collectionModalCreateBtnText: {
+    color: "#1a1305",
+    fontWeight: "800",
+    fontSize: 13,
+  },
+  collectionModalEmpty: {
+    color: "rgba(214,225,242,0.55)",
+    fontSize: 13,
+    paddingHorizontal: 12,
+    paddingVertical: 16,
+    textAlign: "center",
+  },
+  collectionModalDoneBtn: {
+    marginTop: 8,
+    paddingVertical: 12,
+    alignItems: "center",
+    borderRadius: 10,
+    backgroundColor: "rgba(248,193,92,0.14)",
+    borderWidth: 1,
+    borderColor: "rgba(248,193,92,0.36)",
+  },
+  collectionModalDoneBtnText: {
+    color: "#dbe9ff",
+    fontSize: 14,
+    fontWeight: "800",
   },
   menuPanel: {
     width: 292,

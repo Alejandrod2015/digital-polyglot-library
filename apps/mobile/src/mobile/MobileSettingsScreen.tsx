@@ -1,6 +1,6 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Feather } from "@expo/vector-icons";
-import { Linking, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Linking, Modal, Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from "react-native";
 
 type AchievementSummary = {
   totalXp: number;
@@ -41,9 +41,19 @@ type PickerOption = {
   onPress: () => void;
 };
 
+type SettingsTab = "account" | "personalize" | "privacy";
+
 type Props = {
   headerAction?: ReactNode;
+  /**
+   * Display name for the user card. If omitted we derive a name from
+   * `sessionEmail` (capitalised local-part). Falls back to "You".
+   */
+  displayName?: string | null;
+  onPressEditProfile?: () => void;
   achievements?: AchievementSummary | null;
+  /** Short label for the plan (e.g. "polyglot plan"). */
+  planName?: string;
   planLabel: string;
   planBody: string;
   billingCta: string;
@@ -67,6 +77,8 @@ type Props = {
   onPressSignOut?: () => void;
   showSignIn: boolean;
   onPressSignIn?: () => void;
+  /** Optional handler for the "Support" button at the bottom of Account. */
+  onPressSupport?: () => void;
   pickerVisible: boolean;
   pickerTitle: string;
   onClosePicker: () => void;
@@ -80,9 +92,30 @@ type Props = {
   onRemoveInterest: (interest: string) => void;
 };
 
+function deriveName(displayName: string | null | undefined, email: string | null | undefined): string {
+  if (displayName && displayName.trim()) return displayName.trim();
+  if (email) {
+    const local = email.split("@")[0] ?? "";
+    if (local) {
+      // Capitalise: "yuri" → "Yuri", "alejandro.delcarpio" → "Alejandro".
+      const first = local.split(/[._-]/)[0] ?? local;
+      return first.charAt(0).toUpperCase() + first.slice(1).toLowerCase();
+    }
+  }
+  return "You";
+}
+
+function initialOf(name: string): string {
+  const ch = name.trim().charAt(0).toUpperCase();
+  return ch || "Y";
+}
+
 export function MobileSettingsScreen({
   headerAction,
+  displayName,
+  onPressEditProfile,
   achievements,
+  planName,
   planLabel,
   planBody,
   billingCta,
@@ -106,6 +139,7 @@ export function MobileSettingsScreen({
   onPressSignOut,
   showSignIn,
   onPressSignIn,
+  onPressSupport,
   pickerVisible,
   pickerTitle,
   onClosePicker,
@@ -118,242 +152,327 @@ export function MobileSettingsScreen({
   selectedInterests,
   onRemoveInterest,
 }: Props) {
+  const [activeTab, setActiveTab] = useState<SettingsTab>("account");
+  const name = deriveName(displayName, sessionEmail);
+  const initial = initialOf(name);
+  const activeReminder = reminderOptions.find((option) => option.active) ?? null;
+  const planDisplayName = planName ?? (planLabel.replace(/^Current plan:\s*/i, "").trim() || "polyglot plan");
+
   return (
     <>
       <View style={styles.hero}>
         <View style={styles.heroHeaderRow}>
-          <View style={styles.heroTextBlock}>
-            <Text style={styles.eyebrow}>Settings</Text>
-            <Text style={styles.title}>Account & device</Text>
-            <Text style={styles.subtitle}>Plan, defaults and account actions.</Text>
-          </View>
+          <Text style={styles.heroTitle}>Settings</Text>
           {headerAction}
         </View>
       </View>
 
+      <View style={styles.tabRow}>
+        {(["account", "personalize", "privacy"] as const).map((tab) => {
+          const isActive = activeTab === tab;
+          const label = tab === "account" ? "Account" : tab === "personalize" ? "Personalize" : "Privacy";
+          return (
+            <Pressable
+              key={tab}
+              onPress={() => setActiveTab(tab)}
+              style={[styles.tab, isActive ? styles.tabActive : null]}
+            >
+              <Text style={[styles.tabText, isActive ? styles.tabTextActive : null]}>{label}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
+
       <View style={styles.settingsSections}>
-        {achievements ? (
-          <View style={[styles.card, styles.accountCard]}>
-            <View style={styles.sectionHeader}>
-              <View>
-                <Text style={styles.sectionEyebrow}>Profile</Text>
-                <Text style={styles.sectionTitle}>Achievements shelf</Text>
+        {activeTab === "account" ? (
+          <>
+            {/* User card */}
+            <View style={styles.userCard}>
+              <View style={styles.userCardTopRow}>
+                <View style={styles.avatar}>
+                  <Text style={styles.avatarText}>{initial}</Text>
+                </View>
+                <View style={styles.userCardMeta}>
+                  <View style={styles.userNameRow}>
+                    <Text style={styles.userName} numberOfLines={1}>
+                      {name}
+                    </Text>
+                    {achievements ? (
+                      <Text style={styles.userLevelTag}> · Level {achievements.currentLevel}</Text>
+                    ) : null}
+                  </View>
+                  <Text style={styles.userSubLine} numberOfLines={1}>
+                    {achievements
+                      ? `${achievements.totalXp} XP · ${achievements.dailyStreak}-day streak`
+                      : (sessionEmail ?? "")}
+                  </Text>
+                </View>
+                {onPressEditProfile ? (
+                  <Pressable onPress={onPressEditProfile} style={styles.userCardEditBtn}>
+                    <Feather name="edit-2" size={14} color="#dbe9ff" />
+                  </Pressable>
+                ) : null}
               </View>
-              <Text style={styles.helperText}>{achievements.totalXp} XP</Text>
+
+              {achievements ? (
+                <>
+                  <View style={styles.progressMetaRow}>
+                    <Text style={styles.progressMetaCurrent}>
+                      {achievements.currentLevelXp} / {achievements.nextLevelXp} XP
+                    </Text>
+                    <Text style={styles.progressMetaNext}>NEXT: LV {achievements.currentLevel + 1}</Text>
+                  </View>
+                  <View style={styles.progressTrack}>
+                    <View
+                      style={[
+                        styles.progressFill,
+                        {
+                          width: `${Math.min(
+                            100,
+                            Math.round(
+                              (achievements.currentLevelXp / Math.max(achievements.nextLevelXp, 1)) * 100
+                            )
+                          )}%`,
+                        },
+                      ]}
+                    />
+                  </View>
+
+                  <View style={styles.badgeRow}>
+                    {achievements.badges.slice(0, 5).map((badge) => (
+                      <View
+                        key={`badge-${badge.id}`}
+                        style={[
+                          styles.badgeChip,
+                          badge.unlocked ? styles.badgeChipActive : styles.badgeChipMuted,
+                        ]}
+                      >
+                        <Text
+                          style={[
+                            styles.badgeChipText,
+                            badge.unlocked ? styles.badgeChipTextActive : styles.badgeChipTextMuted,
+                          ]}
+                          numberOfLines={1}
+                        >
+                          {badge.label}
+                        </Text>
+                      </View>
+                    ))}
+                    <Text style={styles.badgeCounter}>
+                      {achievements.badges.filter((b) => b.unlocked).length}/{achievements.badges.length}
+                    </Text>
+                  </View>
+                </>
+              ) : null}
             </View>
 
-            <View style={styles.gamificationBadgeRow}>
-              <View style={styles.gamificationPill}>
-                <Feather name="zap" size={14} color="#ffd36b" />
-                <Text style={styles.gamificationPillText}>{achievements.dailyStreak}-day streak</Text>
+            {/* Plan card */}
+            <View style={styles.planCard}>
+              <View style={styles.planIcon}>
+                <Feather name="zap" size={16} color="#f8c15c" />
               </View>
-              <View style={styles.gamificationPill}>
-                <Feather name="award" size={14} color="#8ef0c6" />
-                <Text style={styles.gamificationPillText}>Level {achievements.currentLevel}</Text>
-              </View>
-            </View>
-
-            <View style={styles.gamificationTrack}>
-              <View
-                style={[
-                  styles.gamificationFill,
-                  {
-                    width: `${Math.round(
-                      (achievements.currentLevelXp / Math.max(achievements.nextLevelXp, 1)) * 100
-                    )}%`,
-                  },
-                ]}
-              />
-            </View>
-            <Text style={styles.gamificationTrackMeta}>
-              {achievements.currentLevelXp} / {achievements.nextLevelXp} XP to next level
-            </Text>
-
-            <View style={styles.gamificationBadgeSection}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionEyebrow}>Unlocked badges</Text>
-                <Text style={styles.helperText}>
-                  {achievements.badges.filter((badge) => badge.unlocked).length}/{achievements.badges.length}
+              <View style={styles.planCopy}>
+                <Text style={styles.planName}>{planDisplayName}</Text>
+                <Text style={styles.planBody} numberOfLines={1}>
+                  {planBody}
                 </Text>
               </View>
-              <View style={styles.gamificationBadgeWrap}>
-                {achievements.badges.map((badge) => (
-                  <View
-                    key={`settings-badge-${badge.id}`}
-                    style={[
-                      styles.gamificationBadgeChip,
-                      badge.unlocked ? styles.gamificationBadgeChipUnlocked : styles.gamificationBadgeChipLocked,
-                    ]}
-                  >
-                    <Text
-                      style={[
-                        styles.gamificationBadgeChipText,
-                        badge.unlocked ? styles.gamificationBadgeChipTextUnlocked : styles.gamificationBadgeChipTextLocked,
-                      ]}
-                    >
-                      {badge.label}
-                    </Text>
+              <Pressable onPress={onPressBilling} style={styles.planCta}>
+                <Text style={styles.planCtaText}>{billingCta}</Text>
+              </Pressable>
+            </View>
+
+            {/* Stats grid 4-up */}
+            {summaryItems.length > 0 ? (
+              <View style={styles.statsRow}>
+                {summaryItems.slice(0, 4).map((item) => (
+                  <View key={item.label} style={styles.statTile}>
+                    <Text style={styles.statValue}>{item.value}</Text>
+                    <Text style={styles.statLabel}>{item.label.toUpperCase()}</Text>
                   </View>
                 ))}
               </View>
+            ) : null}
+
+            {/* Daily reminder */}
+            <View style={styles.reminderCard}>
+              <View style={styles.reminderHeader}>
+                <View style={styles.reminderIcon}>
+                  <Feather name="bell" size={16} color="#dbe9ff" />
+                </View>
+                <View style={styles.reminderCopy}>
+                  <Text style={styles.reminderTitle}>Daily reminder</Text>
+                  <Text style={styles.reminderSub} numberOfLines={1}>
+                    {!remindersEnabled
+                      ? "Off"
+                      : activeReminder
+                        ? `Once a day at ${activeReminder.label}`
+                        : "On · pick a time"}
+                  </Text>
+                </View>
+                <Switch
+                  value={remindersEnabled}
+                  onValueChange={(v) => (v ? onPressRemindersOn() : onPressRemindersOff())}
+                  trackColor={{ false: "#27405f", true: "#f8c15c" }}
+                  thumbColor={remindersEnabled ? "#fff7e2" : "#9cb0c9"}
+                  ios_backgroundColor="#27405f"
+                />
+              </View>
+
+              {remindersEnabled ? (
+                <ScrollView
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  contentContainerStyle={styles.reminderChips}
+                >
+                  {reminderOptions.map((option) => (
+                    <Pressable
+                      key={option.key}
+                      onPress={option.onPress}
+                      style={[styles.reminderChip, option.active ? styles.reminderChipActive : null]}
+                    >
+                      <Text
+                        style={[styles.reminderChipText, option.active ? styles.reminderChipTextActive : null]}
+                      >
+                        {option.label}
+                      </Text>
+                    </Pressable>
+                  ))}
+                </ScrollView>
+              ) : null}
+              {pushMessage ? <Text style={styles.helperText}>{pushMessage}</Text> : null}
+              {reminderHint ? <Text style={styles.helperText}>{reminderHint}</Text> : null}
             </View>
-          </View>
+
+            {/* Footer actions */}
+            <View style={styles.footerRow}>
+              {showSignOut && onPressSignOut ? (
+                <Pressable onPress={onPressSignOut} style={[styles.footerButton, styles.footerButtonGhost]}>
+                  <Feather name="log-out" size={16} color="#dbe9ff" />
+                  <Text style={styles.footerButtonText}>Sign out</Text>
+                </Pressable>
+              ) : null}
+              {showSignIn && onPressSignIn ? (
+                <Pressable onPress={onPressSignIn} style={[styles.footerButton, styles.footerButtonPrimary]}>
+                  <Text style={[styles.footerButtonText, styles.footerButtonTextPrimary]}>Sign in</Text>
+                </Pressable>
+              ) : null}
+              <Pressable
+                onPress={
+                  onPressSupport ??
+                  (() =>
+                    void Linking.openURL(
+                      "mailto:support@digitalpolyglot.com?subject=Digital%20Polyglot%20iOS%20Feedback"
+                    ))
+                }
+                style={[styles.footerButton, styles.footerButtonGhost]}
+              >
+                <Text style={styles.footerButtonText}>Support</Text>
+              </Pressable>
+            </View>
+          </>
         ) : null}
 
-        <View style={styles.billingCard}>
-          <View style={styles.billingHeader}>
-            <View style={styles.billingCopy}>
-              <Text style={styles.sectionEyebrow}>Billing</Text>
-              <Text style={styles.sectionTitle}>{planLabel}</Text>
-              <Text style={styles.metaLine}>{planBody}</Text>
-            </View>
-          </View>
-          <Pressable onPress={onPressBilling} style={[styles.inlineButton, styles.primaryButton, styles.billingButton]}>
-            <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>{billingCta}</Text>
-          </Pressable>
-          {sessionEmail ? <Text style={styles.accountMeta}>{sessionEmail}</Text> : null}
-        </View>
-
-        <View style={[styles.card, styles.preferenceCard]}>
-          <Text style={styles.sectionTitle}>Personalization</Text>
-          <Text style={styles.metaLine}>Edit your defaults here without a long form.</Text>
-          <View style={styles.accordion}>
-            {personalizationRows.map((row) => (
-              <View key={row.id} style={styles.sectionCard}>
-                <Pressable onPress={row.onPress} style={styles.sectionCardHeader}>
-                  <View style={styles.sectionCardHeaderText}>
-                    <Text style={styles.sectionLabel}>{row.label}</Text>
-                    <Text style={styles.sectionValue}>{row.value}</Text>
-                  </View>
-                  <Feather name="chevron-right" size={18} color="#dbe9ff" />
-                </Pressable>
-              </View>
-            ))}
-          </View>
-
-          <View style={styles.settingsSaveRow}>
-            <Pressable
-              onPress={onPressSave}
-              disabled={saveDisabled}
-              style={[styles.inlineButton, styles.primaryButton, saveDisabled ? styles.disabledActionButton : null]}
-            >
-              <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>{saveLabel}</Text>
-            </Pressable>
-            <Text style={styles.helperText}>{preferencesHint}</Text>
-          </View>
-        </View>
-
-        <View style={[styles.card, styles.preferenceCard]}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>Daily reminders</Text>
-              <Text style={styles.sectionTitle}>Keep the loop alive</Text>
-            </View>
-          </View>
-          <Text style={styles.metaLine}>
-            iPhone uses local notifications at the time you pick here. Web keeps the schedule synced.
-          </Text>
-          <View style={styles.filterChipsWrap}>
-            <Pressable onPress={onPressRemindersOn} style={[styles.filterChip, remindersEnabled ? styles.filterChipActive : null]}>
-              <Text style={[styles.filterChipText, remindersEnabled ? styles.filterChipTextActive : null]}>
-                Reminders on
-              </Text>
-            </Pressable>
-            <Pressable onPress={onPressRemindersOff} style={[styles.filterChip, !remindersEnabled ? styles.filterChipActive : null]}>
-              <Text style={[styles.filterChipText, !remindersEnabled ? styles.filterChipTextActive : null]}>
-                Reminders off
-              </Text>
-            </Pressable>
-          </View>
-          {remindersEnabled ? (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.filterChips}>
-              {reminderOptions.map((option) => (
+        {activeTab === "personalize" ? (
+          <View style={styles.personalizeWrap}>
+            {/* 2-column grid keeps all 7 preferences visible without
+                requiring scroll on iPhone 12-sized screens. */}
+            <View style={styles.personalizeGrid}>
+              {personalizationRows.map((row) => (
                 <Pressable
-                  key={option.key}
-                  onPress={option.onPress}
-                  style={[styles.filterChip, option.active ? styles.filterChipActive : null]}
+                  key={row.id}
+                  onPress={row.onPress}
+                  style={styles.personalizeTile}
                 >
-                  <Text style={[styles.filterChipText, option.active ? styles.filterChipTextActive : null]}>
-                    {option.label}
+                  <Text style={styles.personalizeLabel} numberOfLines={1}>
+                    {row.label}
+                  </Text>
+                  <Text style={styles.personalizeValue} numberOfLines={1}>
+                    {row.value}
                   </Text>
                 </Pressable>
               ))}
-            </ScrollView>
-          ) : null}
+            </View>
 
-          {remindersEnabled && reminderPreviewTitle && reminderPreviewBody ? (
-            <View style={styles.legalCard}>
-              <View style={styles.settingsActionCopy}>
-                <Text style={styles.settingsActionTitle}>Preview</Text>
-                <Text style={styles.settingsActionText}>{reminderPreviewTitle}</Text>
-              </View>
-              <Text style={styles.legalBody}>{reminderPreviewBody}</Text>
-            </View>
-          ) : null}
-          <Text style={styles.helperText}>{reminderHint}</Text>
-        </View>
-
-        <View style={styles.settingsLegalSection}>
-          <Text style={styles.sectionEyebrow}>Privacy & legal</Text>
-          <View style={styles.settingsLegalRow}>
-            <Feather name="shield" size={16} color="#9cb0c9" />
-            <View style={styles.settingsLegalCopy}>
-              <Text style={styles.settingsLegalTitle}>Privacy</Text>
-              <Text style={styles.settingsLegalText}>Account, progress, favorites and usage data for authentication, personalization and billing.</Text>
-            </View>
-          </View>
-          <View style={styles.settingsLegalDivider} />
-          <View style={styles.settingsLegalRow}>
-            <Feather name="sliders" size={16} color="#9cb0c9" />
-            <View style={styles.settingsLegalCopy}>
-              <Text style={styles.settingsLegalTitle}>Cookies</Text>
-              <Text style={styles.settingsLegalText}>Essential storage for sign-in and core behavior. Analytics is consent-based.</Text>
-            </View>
-          </View>
-          <View style={styles.settingsLegalDivider} />
-          <View style={styles.settingsLegalRow}>
-            <Feather name="file-text" size={16} color="#9cb0c9" />
-            <View style={styles.settingsLegalCopy}>
-              <Text style={styles.settingsLegalTitle}>Terms</Text>
-              <Text style={styles.settingsLegalText}>Personal, non-exclusive access subject to fair use and platform policies.</Text>
-            </View>
-          </View>
-          <View style={styles.settingsLegalDivider} />
-          <View style={styles.settingsLegalRow}>
-            <Feather name="trash-2" size={16} color="#9cb0c9" />
-            <View style={styles.settingsLegalCopy}>
-              <Text style={styles.settingsLegalTitle}>Data deletion</Text>
-              <Text style={styles.settingsLegalText}>Request account or data deletion directly from iPhone.</Text>
-            </View>
-          </View>
-          <View style={styles.legalActions}>
-            <Pressable onPress={() => void Linking.openURL("mailto:support@digitalpolyglot.com?subject=Data%20Deletion%20Request")} style={[styles.inlineButton, styles.primaryButton]}>
-              <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Request deletion</Text>
+            <Pressable
+              onPress={onPressSave}
+              disabled={saveDisabled}
+              style={[
+                styles.inlineButton,
+                styles.primaryButton,
+                styles.personalizeSaveBtn,
+                saveDisabled ? styles.disabledActionButton : null,
+              ]}
+            >
+              <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>{saveLabel}</Text>
             </Pressable>
-            <Pressable onPress={() => void Linking.openURL("mailto:support@digitalpolyglot.com?subject=Privacy%20Question")} style={styles.inlineButton}>
-              <Text style={styles.inlineButtonText}>Contact support</Text>
-            </Pressable>
+            {preferencesHint ? (
+              <Text style={[styles.helperText, { textAlign: "center" }]} numberOfLines={1}>
+                {preferencesHint}
+              </Text>
+            ) : null}
           </View>
-        </View>
-
-        <View style={styles.summaryGrid}>
-          {summaryItems.map((item) => (
-            <View key={item.label} style={styles.summaryTile}>
-              <Text style={styles.summaryValue}>{item.value}</Text>
-              <Text style={styles.summaryLabel}>{item.label}</Text>
-            </View>
-          ))}
-        </View>
-        {pushMessage ? <Text style={styles.helperText}>{pushMessage}</Text> : null}
-        {showSignOut && onPressSignOut ? (
-          <Pressable onPress={onPressSignOut} style={[styles.inlineButton, styles.ghostButton]}>
-            <Text style={styles.inlineButtonText}>Sign out</Text>
-          </Pressable>
         ) : null}
-        {showSignIn && onPressSignIn ? (
-          <Pressable onPress={onPressSignIn} style={[styles.inlineButton, styles.primaryButton]}>
-            <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Sign in</Text>
-          </Pressable>
+
+        {activeTab === "privacy" ? (
+          <View style={styles.settingsLegalSection}>
+            <Text style={styles.sectionEyebrow}>Privacy & legal</Text>
+            <View style={styles.settingsLegalRow}>
+              <Feather name="shield" size={16} color="#9cb0c9" />
+              <View style={styles.settingsLegalCopy}>
+                <Text style={styles.settingsLegalTitle}>Privacy</Text>
+                <Text style={styles.settingsLegalText}>
+                  Account, progress, favorites and usage data for authentication, personalization and billing.
+                </Text>
+              </View>
+            </View>
+            <View style={styles.settingsLegalDivider} />
+            <View style={styles.settingsLegalRow}>
+              <Feather name="sliders" size={16} color="#9cb0c9" />
+              <View style={styles.settingsLegalCopy}>
+                <Text style={styles.settingsLegalTitle}>Cookies</Text>
+                <Text style={styles.settingsLegalText}>
+                  Essential storage for sign-in and core behavior. Analytics is consent-based.
+                </Text>
+              </View>
+            </View>
+            <View style={styles.settingsLegalDivider} />
+            <View style={styles.settingsLegalRow}>
+              <Feather name="file-text" size={16} color="#9cb0c9" />
+              <View style={styles.settingsLegalCopy}>
+                <Text style={styles.settingsLegalTitle}>Terms</Text>
+                <Text style={styles.settingsLegalText}>
+                  Personal, non-exclusive access subject to fair use and platform policies.
+                </Text>
+              </View>
+            </View>
+            <View style={styles.settingsLegalDivider} />
+            <View style={styles.settingsLegalRow}>
+              <Feather name="trash-2" size={16} color="#9cb0c9" />
+              <View style={styles.settingsLegalCopy}>
+                <Text style={styles.settingsLegalTitle}>Data deletion</Text>
+                <Text style={styles.settingsLegalText}>Request account or data deletion directly from iPhone.</Text>
+              </View>
+            </View>
+            <View style={styles.legalActions}>
+              <Pressable
+                onPress={() =>
+                  void Linking.openURL("mailto:support@digitalpolyglot.com?subject=Data%20Deletion%20Request")
+                }
+                style={[styles.inlineButton, styles.primaryButton]}
+              >
+                <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Request deletion</Text>
+              </Pressable>
+              <Pressable
+                onPress={() =>
+                  void Linking.openURL("mailto:support@digitalpolyglot.com?subject=Privacy%20Question")
+                }
+                style={styles.inlineButton}
+              >
+                <Text style={styles.inlineButtonText}>Contact support</Text>
+              </Pressable>
+            </View>
+          </View>
         ) : null}
       </View>
 
@@ -410,13 +529,27 @@ export function MobileSettingsScreen({
                 {selectedInterests.length > 0 ? (
                   <View style={styles.preferenceChips}>
                     {selectedInterests.map((interest) => (
-                      <Pressable key={interest} onPress={() => onRemoveInterest(interest)} style={styles.preferenceChip}>
+                      <Pressable
+                        key={interest}
+                        onPress={() => onRemoveInterest(interest)}
+                        style={styles.preferenceChip}
+                      >
                         <Text style={styles.preferenceChipText}>{interest} ×</Text>
                       </Pressable>
                     ))}
                   </View>
                 ) : null}
               </>
+            ) : null}
+
+            {reminderPreviewTitle && reminderPreviewBody ? (
+              <View style={styles.legalCard}>
+                <View style={styles.settingsActionCopy}>
+                  <Text style={styles.settingsActionTitle}>Preview</Text>
+                  <Text style={styles.settingsActionText}>{reminderPreviewTitle}</Text>
+                </View>
+                <Text style={styles.legalBody}>{reminderPreviewBody}</Text>
+              </View>
             ) : null}
           </Pressable>
         </Pressable>
@@ -427,9 +560,8 @@ export function MobileSettingsScreen({
 
 const styles = StyleSheet.create({
   hero: {
-    gap: 8,
-    paddingTop: 12,
-    paddingBottom: 4,
+    paddingTop: 6,
+    paddingBottom: 0,
   },
   heroHeaderRow: {
     flexDirection: "row",
@@ -437,28 +569,339 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     gap: 16,
   },
-  heroTextBlock: {
-    flex: 1,
-    gap: 8,
+  heroTitle: {
+    color: "#f5f7fb",
+    fontSize: 28,
+    fontWeight: "800",
+    letterSpacing: -0.4,
   },
-  eyebrow: {
+
+  /* Tabs */
+  tabRow: {
+    flexDirection: "row",
+    gap: 6,
+    backgroundColor: "#0f1f34",
+    borderRadius: 18,
+    padding: 4,
+    marginTop: 10,
+    borderWidth: 1,
+    borderColor: "#1e3450",
+  },
+  tab: {
+    flex: 1,
+    paddingVertical: 9,
+    borderRadius: 14,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  tabActive: {
+    backgroundColor: "#1f3553",
+  },
+  tabText: {
+    color: "#9cb0c9",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+  tabTextActive: {
     color: "#f8c15c",
+  },
+
+  /* User card */
+  userCard: {
+    backgroundColor: "#14243b",
+    borderRadius: 20,
+    padding: 14,
+    gap: 10,
+    borderWidth: 1,
+    borderColor: "#27405f",
+  },
+  userCardTopRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+  },
+  avatar: {
+    width: 44,
+    height: 44,
+    borderRadius: 12,
+    backgroundColor: "#f8c15c",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  avatarText: {
+    color: "#10233a",
+    fontSize: 20,
+    fontWeight: "800",
+  },
+  userCardMeta: {
+    flex: 1,
+    gap: 4,
+  },
+  userNameRow: {
+    flexDirection: "row",
+    alignItems: "baseline",
+  },
+  userName: {
+    color: "#f5f7fb",
+    fontSize: 18,
+    fontWeight: "800",
+  },
+  userLevelTag: {
+    color: "#9cb0c9",
+    fontSize: 14,
+    fontWeight: "700",
+  },
+  userSubLine: {
+    color: "#9cb0c9",
+    fontSize: 13,
+    fontWeight: "600",
+  },
+  userCardEditBtn: {
+    width: 34,
+    height: 34,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#35506f",
+    backgroundColor: "#172b43",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  progressMetaRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  progressMetaCurrent: {
+    color: "#f5f7fb",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  progressMetaNext: {
+    color: "#9cb0c9",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 1,
+  },
+  progressTrack: {
+    height: 8,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    overflow: "hidden",
+  },
+  progressFill: {
+    height: "100%",
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+  },
+
+  badgeRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: 6,
+  },
+  badgeChip: {
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderWidth: 1,
+  },
+  badgeChipActive: {
+    borderColor: "rgba(248,193,92,0.55)",
+    backgroundColor: "rgba(248,193,92,0.16)",
+  },
+  badgeChipMuted: {
+    borderColor: "#29435f",
+    backgroundColor: "#102238",
+  },
+  badgeChipText: {
     fontSize: 12,
     fontWeight: "700",
-    letterSpacing: 1.6,
-    textTransform: "uppercase",
   },
-  title: {
+  badgeChipTextActive: {
+    color: "#f8d48a",
+  },
+  badgeChipTextMuted: {
+    color: "#7f95b2",
+  },
+  badgeCounter: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "700",
+    marginLeft: "auto",
+  },
+
+  /* Plan card */
+  planCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    backgroundColor: "#14243b",
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: "#27405f",
+  },
+  planIcon: {
+    width: 30,
+    height: 30,
+    borderRadius: 9,
+    backgroundColor: "rgba(248,193,92,0.16)",
+    borderWidth: 1,
+    borderColor: "rgba(248,193,92,0.36)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  planCopy: {
+    flex: 1,
+    gap: 1,
+  },
+  planName: {
     color: "#f5f7fb",
-    fontSize: 34,
+    fontSize: 14,
     fontWeight: "800",
-    lineHeight: 38,
   },
-  subtitle: {
-    color: "#b8c4d9",
+  planBody: {
+    color: "#9cb0c9",
+    fontSize: 11,
+  },
+  planCta: {
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 12,
+    backgroundColor: "#f8c15c",
+  },
+  planCtaText: {
+    color: "#10233a",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+
+  /* Stats */
+  statsRow: {
+    flexDirection: "row",
+    gap: 8,
+  },
+  statTile: {
+    flex: 1,
+    minWidth: 0,
+    backgroundColor: "#14243b",
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "#27405f",
+    paddingVertical: 10,
+    paddingHorizontal: 4,
+    alignItems: "center",
+    gap: 2,
+  },
+  statValue: {
+    color: "#f5f7fb",
+    fontSize: 20,
+    fontWeight: "800",
+  },
+  statLabel: {
+    color: "#9cb0c9",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1,
+  },
+
+  /* Reminder */
+  reminderCard: {
+    backgroundColor: "#14243b",
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: "#27405f",
+    padding: 12,
+    gap: 10,
+  },
+  reminderHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+  reminderIcon: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: "#1f3553",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  reminderCopy: {
+    flex: 1,
+    gap: 2,
+  },
+  reminderTitle: {
+    color: "#f5f7fb",
     fontSize: 15,
-    lineHeight: 22,
+    fontWeight: "800",
   },
+  reminderSub: {
+    color: "#9cb0c9",
+    fontSize: 12,
+  },
+  reminderChips: {
+    gap: 8,
+    paddingRight: 8,
+  },
+  reminderChip: {
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#29435f",
+    backgroundColor: "#102238",
+  },
+  reminderChipActive: {
+    borderColor: "rgba(248,193,92,0.55)",
+    backgroundColor: "rgba(248,193,92,0.16)",
+  },
+  reminderChipText: {
+    color: "#9cb0c9",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  reminderChipTextActive: {
+    color: "#f8d48a",
+  },
+
+  /* Footer row */
+  footerRow: {
+    flexDirection: "row",
+    gap: 8,
+    marginTop: 2,
+  },
+  footerButton: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    paddingVertical: 12,
+    borderRadius: 14,
+    borderWidth: 1,
+  },
+  footerButtonGhost: {
+    borderColor: "#29435f",
+    backgroundColor: "#102238",
+  },
+  footerButtonPrimary: {
+    borderColor: "#f8c15c",
+    backgroundColor: "#f8c15c",
+  },
+  footerButtonText: {
+    color: "#dbe9ff",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  footerButtonTextPrimary: {
+    color: "#10233a",
+  },
+
+  /* Shared / reused */
   card: {
     backgroundColor: "#14243b",
     borderRadius: 28,
@@ -466,15 +909,6 @@ const styles = StyleSheet.create({
     gap: 14,
     borderWidth: 1,
     borderColor: "#27405f",
-  },
-  accountCard: {
-    gap: 14,
-  },
-  sectionHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 12,
   },
   sectionEyebrow: {
     color: "#f8c15c",
@@ -485,9 +919,9 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     color: "#f5f7fb",
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: "800",
-    lineHeight: 32,
+    lineHeight: 30,
   },
   helperText: {
     color: "#9cb0c9",
@@ -499,101 +933,48 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 21,
   },
-  gamificationBadgeRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8,
-  },
-  gamificationPill: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-    borderRadius: 999,
-    backgroundColor: "#203554",
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-  },
-  gamificationPillText: {
-    color: "#e8f1ff",
-    fontSize: 12,
-    fontWeight: "800",
-  },
-  gamificationTrack: {
-    height: 8,
-    borderRadius: 999,
-    backgroundColor: "rgba(255,255,255,0.08)",
-    overflow: "hidden",
-  },
-  gamificationFill: {
-    height: "100%",
-    borderRadius: 999,
-    backgroundColor: "#f8c15c",
-  },
-  gamificationTrackMeta: {
-    color: "#9cb0c9",
-    fontSize: 12,
-    lineHeight: 18,
-  },
-  gamificationBadgeSection: {
-    gap: 10,
-  },
-  gamificationBadgeWrap: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8,
-  },
-  gamificationBadgeChip: {
-    borderRadius: 999,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderWidth: 1,
-  },
-  gamificationBadgeChipUnlocked: {
-    borderColor: "rgba(248,193,92,0.45)",
-    backgroundColor: "rgba(248,193,92,0.16)",
-  },
-  gamificationBadgeChipLocked: {
-    borderColor: "#29435f",
-    backgroundColor: "#102238",
-  },
-  gamificationBadgeChipText: {
-    fontSize: 12,
-    fontWeight: "700",
-  },
-  gamificationBadgeChipTextUnlocked: {
-    color: "#f8d48a",
-  },
-  gamificationBadgeChipTextLocked: {
-    color: "#7f95b2",
-  },
-  billingCard: {
-    gap: 10,
-    borderRadius: 24,
-    borderWidth: 1,
-    borderColor: "#29435f",
-    backgroundColor: "#102238",
-    padding: 16,
-  },
-  billingHeader: {
-    gap: 8,
-  },
-  billingCopy: {
-    gap: 6,
-  },
-  billingButton: {
-    alignSelf: "stretch",
-    marginTop: 4,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  accountMeta: {
-    color: "#9cb0c9",
-    fontSize: 13,
-    lineHeight: 18,
-  },
   preferenceCard: {
     gap: 10,
-    marginTop: 12,
+  },
+  /* Personalize tab — compact 2-column grid + save button. Designed
+     so the 7 preference tiles + the save button fit on one screen on
+     iPhone 12 without scrolling. */
+  personalizeWrap: {
+    gap: 10,
+  },
+  personalizeGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
+  },
+  personalizeTile: {
+    flexBasis: "48.5%",
+    flexGrow: 1,
+    minHeight: 56,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: "#27405f",
+    backgroundColor: "#14243b",
+    paddingHorizontal: 12,
+    paddingVertical: 9,
+    gap: 2,
+  },
+  personalizeLabel: {
+    color: "#9cb0c9",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1,
+    textTransform: "uppercase",
+  },
+  personalizeValue: {
+    color: "#f5f7fb",
+    fontSize: 14,
+    fontWeight: "700",
+  },
+  personalizeSaveBtn: {
+    alignSelf: "stretch",
+    alignItems: "center",
+    marginTop: 4,
   },
   accordion: {
     gap: 10,
@@ -644,9 +1025,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#f8c15c",
     borderColor: "#f8c15c",
   },
-  ghostButton: {
-    backgroundColor: "#15263d",
-  },
   inlineButtonText: {
     color: "#dbe9ff",
     fontSize: 13,
@@ -657,15 +1035,6 @@ const styles = StyleSheet.create({
   },
   disabledActionButton: {
     opacity: 0.45,
-  },
-  filterChipsWrap: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 10,
-  },
-  filterChips: {
-    gap: 10,
-    paddingRight: 10,
   },
   filterChip: {
     borderRadius: 999,
@@ -688,7 +1057,8 @@ const styles = StyleSheet.create({
     color: "#10233a",
   },
   settingsSections: {
-    gap: 16,
+    gap: 10,
+    marginTop: 10,
   },
   settingsLegalSection: {
     gap: 14,
@@ -736,17 +1106,6 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     gap: 10,
   },
-  settingsActionRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: "#29435f",
-    backgroundColor: "#0f1f34",
-    paddingHorizontal: 14,
-    paddingVertical: 12,
-  },
   settingsActionCopy: {
     flex: 1,
     gap: 2,
@@ -760,31 +1119,6 @@ const styles = StyleSheet.create({
     color: "#c3d0e2",
     fontSize: 13,
     lineHeight: 19,
-  },
-  summaryGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 10,
-  },
-  summaryTile: {
-    flexBasis: "47%",
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: "#29435f",
-    backgroundColor: "#102238",
-    paddingHorizontal: 14,
-    paddingVertical: 12,
-    gap: 4,
-  },
-  summaryValue: {
-    color: "#ffffff",
-    fontSize: 18,
-    fontWeight: "800",
-  },
-  summaryLabel: {
-    color: "#9cb0c9",
-    fontSize: 12,
-    fontWeight: "700",
   },
   modalBackdrop: {
     flex: 1,

@@ -14,6 +14,17 @@ export type MobileFavoriteItem = {
   nextReviewAt?: string | null;
   lastReviewedAt?: string | null;
   streak?: number | null;
+  /** Voice the source story was narrated with. Populated by the
+   *  /api/mobile/practice/due endpoint for Studio journeys; catalog
+   *  stories leave this null so the TTS endpoint falls back to the
+   *  language default. */
+  voiceId?: string | null;
+  /** Synonyms generated alongside the vocab item at story creation time
+   *  (0-3 entries, target language). When present, the favorite card
+   *  shows them in place of the source story title. Backfill happens in
+   *  the story-generation pipeline; until that lands, this field stays
+   *  undefined on existing favorites. */
+  synonyms?: string[] | null;
 };
 
 function getFavoritesKey(userId?: string | null) {

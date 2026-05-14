@@ -80,12 +80,23 @@ async function ensureMediaDirectory(kind: "images" | "audio"): Promise<string> {
   return path;
 }
 
+// 8-char djb2 hash of the source URL. Mixed into the cache filename so
+// that when a story's remote audio is re-generated upstream (different
+// MP3 URL) the destination path changes too — old caches no longer
+// shadow the new file. Pure JS, no crypto module needed.
+function hashUrl(url: string): string {
+  let h = 5381;
+  for (let i = 0; i < url.length; i += 1) h = ((h << 5) + h + url.charCodeAt(i)) | 0;
+  return (h >>> 0).toString(36).padStart(7, "0").slice(0, 8);
+}
+
 function buildMediaPath(kind: "images" | "audio", key: string, sourceUrl: string): string {
   const safeKey = key.replace(/[^a-zA-Z0-9._-]/g, "-");
   const cleanUrl = sourceUrl.split("?")[0] ?? sourceUrl;
   const maybeExtension = cleanUrl.split(".").pop() ?? "";
   const extension = maybeExtension && maybeExtension.length <= 5 ? maybeExtension : "bin";
-  return `${MEDIA_ROOT}/${kind}/${safeKey}.${extension}`;
+  const urlHash = hashUrl(cleanUrl);
+  return `${MEDIA_ROOT}/${kind}/${safeKey}-${urlHash}.${extension}`;
 }
 
 // MIN_AUDIO_BYTES is deliberately small — just large enough to reject
@@ -279,23 +290,40 @@ export async function hydrateOfflineAssets(
   );
 
   const stories = await Promise.all(
-    snapshot.stories.map(async (story) => ({
-      ...story,
-      localCoverUri:
-        story.localCoverUri ??
-        (await cacheRemoteFile({
-          kind: "images",
-          key: `story-cover-${userId}-${story.storyId}`,
-          sourceUrl: story.coverUrl,
-        })),
-      localAudioUri:
-        story.localAudioUri ??
-        (await cacheRemoteFile({
-          kind: "audio",
-          key: `story-audio-${userId}-${story.storyId}`,
-          sourceUrl: story.audioUrl,
-        })),
-    }))
+    snapshot.stories.map(async (story) => {
+      // The cached path embeds an 8-char hash of the remote URL (see
+      // `buildMediaPath`). When upstream regenerates the audio (different
+      // R2 filename), the hash changes — so a stale `localAudioUri` that
+      // doesn't match the current expected path is invalid; drop it so
+      // the cacher re-downloads from the new URL.
+      const expectedAudioPath = story.audioUrl
+        ? buildMediaPath("audio", `story-audio-${userId}-${story.storyId}`, story.audioUrl)
+        : null;
+      const audioStale =
+        story.localAudioUri && expectedAudioPath && story.localAudioUri !== expectedAudioPath;
+      const expectedCoverPath = story.coverUrl
+        ? buildMediaPath("images", `story-cover-${userId}-${story.storyId}`, story.coverUrl)
+        : null;
+      const coverStale =
+        story.localCoverUri && expectedCoverPath && story.localCoverUri !== expectedCoverPath;
+      return {
+        ...story,
+        localCoverUri:
+          (coverStale ? null : story.localCoverUri) ??
+          (await cacheRemoteFile({
+            kind: "images",
+            key: `story-cover-${userId}-${story.storyId}`,
+            sourceUrl: story.coverUrl,
+          })),
+        localAudioUri:
+          (audioStale ? null : story.localAudioUri) ??
+          (await cacheRemoteFile({
+            kind: "audio",
+            key: `story-audio-${userId}-${story.storyId}`,
+            sourceUrl: story.audioUrl,
+          })),
+      };
+    })
   );
 
   const nextSnapshot: OfflineLibrarySnapshot = {
