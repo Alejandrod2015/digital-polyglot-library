@@ -102,31 +102,33 @@ export function normalizeDefinition(definition: string): string {
   return compact[0].toUpperCase() + compact.slice(1);
 }
 
+// Hard UI constraint: definiciones se muestran en chips de match/
+// meaning que no pueden wrap. Tope 50 chars, mínimo 3 palabras para
+// que no quede una traducción literal pelada ("Idea"). Antes el rango
+// era 6-18 palabras lo que generaba paráfrasis tipo "An idea or
+// concept about something abstract that..." que rompían el layout.
+export const DEFINITION_MAX_CHARS = 50;
+export const DEFINITION_MIN_WORDS = 3;
+export const DEFINITION_MAX_WORDS = 7;
+
 export function hasDetailedDefinition(definition: string): boolean {
-  const wc = wordCount(definition);
-  return wc >= 6 && wc <= 18;
+  const trimmed = definition.trim();
+  if (trimmed.length > DEFINITION_MAX_CHARS) return false;
+  const wc = wordCount(trimmed);
+  return wc >= DEFINITION_MIN_WORDS && wc <= DEFINITION_MAX_WORDS;
 }
 
 export function isLikelyDirectTranslation(definition: string): boolean {
+  // Con el nuevo formato corto, defs como "An idea or concept" (4
+  // palabras, 18 chars) son válidas aunque parezcan "traducción
+  // directa". Sólo rechazamos casos puramente pelados: una palabra
+  // sin contexto, o "to <verb>" / "<article> <noun>" sin nada más.
   const normalized = definition.trim().toLowerCase();
-  const wc = wordCount(normalized);
   if (!normalized) return true;
-  if (wc <= 2) return true;
-  if (/^to\s+[a-z][a-z'\-\s]*$/i.test(normalized) && wc <= 4) return true;
-  if (/^(a|an|the)\s+[a-z][a-z'\-\s]*$/i.test(normalized) && wc <= 4) return true;
-  if (/^[a-z][a-z'\-]*$/i.test(normalized)) return true;
-  const firstClause = normalized.split(/[,:;—-]/, 1)[0]?.trim() ?? "";
-  const firstClauseWords = wordCount(firstClause);
-  if (
-    /[,:;—-]/.test(normalized) &&
-    firstClauseWords > 0 &&
-    firstClauseWords <= 4 &&
-    (/^to\s+[a-z][a-z'\-\s]*$/i.test(firstClause) ||
-      /^(a|an|the)\s+[a-z][a-z'\-\s]*$/i.test(firstClause) ||
-      /^[a-z][a-z'\-\s]*$/i.test(firstClause))
-  ) {
-    return true;
-  }
+  const wc = wordCount(normalized);
+  if (wc === 1) return true;
+  if (/^to\s+[a-z][a-z'\-]*$/i.test(normalized)) return true;
+  if (/^(a|an|the)\s+[a-z][a-z'\-]*$/i.test(normalized)) return true;
   return false;
 }
 

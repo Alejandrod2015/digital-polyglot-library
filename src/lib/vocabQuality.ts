@@ -214,13 +214,11 @@ Context:
 Rules:
 - Keep exactly the same "word" and preserve "type" when present.
 - Keep exactly the same "surface" when present.
-- Each definition must be 8-14 English words.
-- Read like a dictionary entry: describe the concept the word names, not the word itself.
-- Lead with the noun/concept, an infinitive verb ("To join..."), or a descriptive adjective phrase. Integrate any usage hint or short example into the same sentence.
-- Never start with: "Refers to", "Describes", "Used to", "Used for", "Used in", "Used as", "Used when", "Means", "Means to", "Conveys", "Speaks to", "Brings", "This word", "A type of", "A person who", "Someone who", "Something that", "The action of", "The state of", "The quality of".
-- Never start with a one-word translation followed by punctuation (e.g. "Silence;", "Hurry,", "Homeland:"). Also forbidden: article + noun followed by punctuation ("A book;", "The market;", "A book (f);", "To work;"). The first clause must already define, not announce the gloss before the colon.
+- HARD LIMIT: each definition must be 3-7 English words AND no more than 50 characters total (counting spaces). Both bounds are mandatory; the chip cannot wrap.
+- Style: concise gloss in the spirit of a translation app (Linguee/Reverso). Lead with the noun/concept, an infinitive ("To stir..."), or a descriptive adjective phrase. Two senses joined by ";" or "," are fine.
 - Never use em-dashes; use semicolons, colons, commas, or parentheses instead.
-- Never return a direct translation equivalent. Explain practical meaning or usage nuance in context.
+- Never return a bare one-word literal translation ("Idea", "Stir"); add one clarifying word or sense ("An idea or concept", "To stir gently").
+- Never write long descriptive paraphrases that exceed the limits.
 - Return ONLY a valid JSON array with objects: { "word", "surface?", "definition", "type?" }.
 `;
 
@@ -249,12 +247,10 @@ Rules:
 Rewrite ONLY these low-quality definitions.
 Rules:
 - Keep same "word", "surface" when present, and "type".
-- Each definition must be 8-14 English words and read like a dictionary entry.
-- Describe the concept the word names, not the word itself. Lead with the noun/concept, an infinitive ("To join..."), or a descriptive adjective phrase.
-- Never start with: "Refers to", "Describes", "Used to", "Used for", "Used in", "Used as", "Used when", "Means", "Means to", "Conveys", "Speaks to", "Brings", "This word", "A type of", "Someone who", "Something that", "The action of", "The state of", "The quality of".
-- Never start with a one-word translation followed by punctuation (e.g. "Silence;", "Hurry,"). Also forbidden: article + noun followed by punctuation ("A book;", "The market;", "To work;").
-- Never use em-dashes; use semicolons, colons, commas, or parentheses instead.
-- Never return direct translation equivalents.
+- HARD LIMIT: 3-7 English words AND ≤50 characters total per definition. Both bounds mandatory.
+- Style: concise gloss, like a translation app. Lead with the concept, an infinitive ("To stir"), or an adjective phrase.
+- Never use em-dashes; use semicolons, colons, commas, parentheses.
+- Never return a bare one-word translation; add one clarifying word.
 - Return ONLY valid JSON array.
 `;
 

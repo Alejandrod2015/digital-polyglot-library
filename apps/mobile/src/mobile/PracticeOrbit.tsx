@@ -95,11 +95,14 @@ type RingSegment = {
 };
 
 function buildRingSegments(
-  breakdown: Record<PracticeModeKey, number>,
-  total: number
+  breakdown: Record<PracticeModeKey, number>
 ): RingSegment[] {
   // Cada segmento ocupa una porción del ring proporcional a su count.
   // Dejamos un gap pequeño entre segmentos para que se lean separados.
+  // El "total" del anillo se deriva del breakdown mismo (suma) en vez
+  // de venir como prop externa — así el `count/total` siempre cuadra
+  // independiente de la semántica del breakdown (palabras vs ejercicios).
+  const total = MODE_ORDER.reduce((sum, mode) => sum + (breakdown[mode] ?? 0), 0);
   const GAP_DEG = 4;
   const totalGapDeg = GAP_DEG * MODE_ORDER.filter((m) => breakdown[m] > 0).length;
   const usableDeg = 360 - totalGapDeg;
@@ -244,8 +247,8 @@ export function PracticeOrbit({
   emptyState,
 }: PracticeOrbitProps) {
   const segments = useMemo(
-    () => buildRingSegments(modeBreakdown, totalDue),
-    [modeBreakdown, totalDue]
+    () => buildRingSegments(modeBreakdown),
+    [modeBreakdown]
   );
 
   // Animaciones del anillo + orbe central (look "videogame"):

@@ -228,17 +228,62 @@ function getDistractorWords(
   pool: PracticeFavoriteItem[],
   max = 3
 ): string[] {
-  return shuffle(
-    uniqueByWord(
-      pool.filter(
-        (candidate) =>
-          normalizeKey(candidate.word) !== normalizeKey(item.word) &&
-          normalizeText(candidate.word)
-      )
+  // Distractores grammar-aware: si el target es "mit Nachdruck"
+  // (frase preposicional) y los distractores son `Trubel` (sustantivo)
+  // + `rühren` (verbo) + `Sichtweisen` (sustantivo plural), el usuario
+  // resuelve por descarte gramatical, no por comprensión. Filtramos el
+  // pool por (a) misma "forma" multi-word/single-word y (b) mismo
+  // wordType normalizado cuando esté disponible. Si no hay suficientes
+  // candidatos del mismo tipo, completamos con el pool general para no
+  // dejar el ejercicio con menos de 4 opciones.
+  const targetWord = normalizeText(item.word);
+  const targetIsMultiword = targetWord.includes(" ");
+  const targetType = normalizeVocabType(item.wordType, {
+    word: item.word,
+    definition: item.translation,
+  });
+
+  const eligible = uniqueByWord(
+    pool.filter(
+      (candidate) =>
+        normalizeKey(candidate.word) !== normalizeKey(item.word) &&
+        normalizeText(candidate.word)
     )
-  )
-    .slice(0, max)
-    .map((candidate) => candidate.word);
+  );
+
+  const sameShapeAndType = eligible.filter((candidate) => {
+    const candidateIsMultiword = normalizeText(candidate.word).includes(" ");
+    if (candidateIsMultiword !== targetIsMultiword) return false;
+    if (!targetType) return true;
+    const candidateType = normalizeVocabType(candidate.wordType, {
+      word: candidate.word,
+      definition: candidate.translation,
+    });
+    return candidateType === targetType;
+  });
+
+  const sameShape = eligible.filter((candidate) => {
+    const candidateIsMultiword = normalizeText(candidate.word).includes(" ");
+    return candidateIsMultiword === targetIsMultiword;
+  });
+
+  const picked: string[] = [];
+  const seen = new Set<string>();
+  const drainFrom = (source: PracticeFavoriteItem[]) => {
+    for (const candidate of shuffle(source)) {
+      if (picked.length >= max) break;
+      const key = normalizeKey(candidate.word);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      picked.push(candidate.word);
+    }
+  };
+
+  drainFrom(sameShapeAndType);
+  if (picked.length < max) drainFrom(sameShape);
+  if (picked.length < max) drainFrom(eligible);
+
+  return picked;
 }
 
 function getDistractorMeanings(
@@ -260,14 +305,43 @@ function getDistractorMeanings(
 }
 
 function getSentenceWithBlank(item: PracticeFavoriteItem): string | null {
-  const sentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
-    ? getContextSentence(item)
-    : normalizeText(item.exampleSentence);
+  // Siempre partir de `getContextSentence`: ya hace el split por
+  // `.!?` y elige la oración que contiene la palabra objetivo. Si
+  // antes usábamos `exampleSentence` crudo para items no-standalone,
+  // un example multi-oración terminaba blankeando la palabra en (por
+  // ej.) la segunda oración y después `shortenSentence` se quedaba
+  // con la primera — el usuario veía la primera oración intacta sin
+  // blank, con la respuesta correcta en un párrafo descartado.
+  const sentence = getContextSentence(item);
   const word = normalizeText(item.word);
   if (!sentence || !word) return null;
   const pattern = new RegExp(escapeRegExp(word), "i");
   if (!pattern.test(sentence)) return null;
-  return shortenSentence(sentence.replace(pattern, "_____"));
+  // Pasamos el anchor `_____` a shortenSentence para que cuando tenga
+  // que recortar por puntuación/comas, conserve siempre el chunk con
+  // el blank. Sin esto, una oración larga con varios commas dejaba al
+  // usuario con la primera cláusula sin blank y opciones sin sentido.
+  const shortened = shortenSentence(sentence.replace(pattern, "_____"), "_____");
+  return stripOrphanLeadingPunctuation(shortened);
+}
+
+// El splitter de `audioSegments` corta oraciones inmediatamente
+// después de `.!?` (más comilla opcional), así que la "narrative
+// tail" de un diálogo (`..."Algo", sagte X.`) sale como una oración
+// que empieza con coma, comillas sueltas o dos puntos. Antes de
+// mostrar al usuario, limpiamos esa basura del inicio. NO tocamos
+// `¿` ni `¡` (puntuación inicial significativa en español).
+function stripOrphanLeadingPunctuation(sentence: string): string {
+  const cleaned = sentence
+    .replace(/^[\s,;:"'“”«»\-–—]+/, "")
+    .trim();
+  if (!cleaned) return sentence;
+  // Capitalizamos la primera letra si quedó en minúsculas — en
+  // alemán las oraciones empiezan en mayúscula y, tras strippear el
+  // diálogo, el verbo ("sagte", "rief") queda al inicio.
+  const first = cleaned.charAt(0);
+  const upper = first.toLocaleUpperCase();
+  return first !== upper ? upper + cleaned.slice(1) : cleaned;
 }
 
 function getContextSentence(item: PracticeFavoriteItem): string {
@@ -287,15 +361,27 @@ function getContextSentence(item: PracticeFavoriteItem): string {
   );
 }
 
-function shortenSentence(sentence: string): string {
+function shortenSentence(sentence: string, anchor?: string): string {
   const normalized = normalizeText(sentence);
   if (!normalized) return "";
+
+  // En cada nivel de corte (oración, cláusula, ventana de palabras)
+  // preferimos el chunk que contiene el anchor (típicamente `_____`
+  // para fill_blank). Sin esto, el corte se queda siempre con la
+  // primera parte y descarta la que tenía la palabra clave.
+  const pickRelevant = (parts: string[], fallback: string): string => {
+    if (anchor) {
+      const withAnchor = parts.find((part) => part.includes(anchor));
+      if (withAnchor) return withAnchor;
+    }
+    return parts[0] ?? fallback;
+  };
 
   const splitOnStrongPunctuation = normalized
     .split(/(?<=[.!?])\s+/)
     .map((part) => part.trim())
     .filter(Boolean);
-  const firstSentence = splitOnStrongPunctuation[0] ?? normalized;
+  const firstSentence = pickRelevant(splitOnStrongPunctuation, normalized);
 
   if (firstSentence.length <= 140) return firstSentence;
 
@@ -303,12 +389,25 @@ function shortenSentence(sentence: string): string {
     .split(/,\s+/)
     .map((part) => part.trim())
     .filter(Boolean);
-  const firstClause = splitOnComma[0] ?? firstSentence;
+  const firstClause = pickRelevant(splitOnComma, firstSentence);
 
   if (firstClause.length <= 110) return firstClause;
 
   const words = firstClause.split(/\s+/).filter(Boolean);
   if (words.length <= 14) return firstClause;
+  // Ventana de 14 palabras: si tenemos anchor, la centramos sobre la
+  // posición del anchor para no perderlo aunque esté al final.
+  if (anchor) {
+    const idx = words.findIndex((part) => part.includes(anchor));
+    if (idx >= 0) {
+      const start = Math.max(0, idx - 6);
+      const end = Math.min(words.length, start + 14);
+      const slice = words.slice(start, end);
+      const prefix = start > 0 ? "..." : "";
+      const suffix = end < words.length ? "..." : "";
+      return `${prefix}${slice.join(" ")}${suffix}`;
+    }
+  }
   return `${words.slice(0, 14).join(" ")}...`;
 }
 
@@ -362,7 +461,7 @@ function createMeaningContextExercise(
   const fullSentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
     ? getContextSentence(item)
     : normalizeText(item.exampleSentence);
-  const sentence = shortenSentence(fullSentence);
+  const sentence = stripOrphanLeadingPunctuation(shortenSentence(fullSentence));
   if (!sentence) return null;
   const options = shuffle([
     item.translation,

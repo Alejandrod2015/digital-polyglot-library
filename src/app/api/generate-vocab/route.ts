@@ -760,8 +760,10 @@ Rules:
 - Keep every "surface" exactly as provided.
 - Set "word" to the dictionary/root form learners should study.
 - Keep "type" when provided, or infer one label among ["verb","noun","adjective","expression","slang","other"].
-- Each definition must have 6-18 words.
-- Explain practical meaning or usage nuance in context, not a direct translation.
+- HARD LIMIT: each definition must be 3-7 English words AND ≤50 characters total (counting spaces). Both bounds mandatory — UI chip cannot wrap.
+- Style: concise gloss like a translation app (Linguee/Reverso). Lead with the concept, an infinitive ("To stir..."), or an adjective phrase.
+- Never use em-dashes; use semicolons, colons, commas, parentheses.
+- Never return a bare one-word translation; add at least one clarifying word.
 - Start each definition with a capital letter.
 - Story language: ${args.language}.
 - Learner level: ${cefrPromptLabel(args.cefrLevel, args.level)}.
@@ -1097,10 +1099,10 @@ Return ONLY valid JSON array with same items.
 Rewrite ONLY these low-quality definitions.
 Rules:
 - Keep same "word", "surface" when present, and "type".
-- Each definition must be 8-18 words.
-- Explain meaning in English with context/usage nuance.
-- Never return direct translation equivalents.
-- Never begin with a direct gloss plus comma/colon.
+- HARD LIMIT: 3-7 English words AND ≤50 characters per definition.
+- Style: concise gloss, like a translation app. Lead with concept, infinitive, or adjective phrase.
+- Never use em-dashes; use semicolons, colons, commas, parentheses.
+- Never return a bare one-word translation; add at least one clarifying word.
 - Start each definition with a capital letter.
 Return ONLY valid JSON array.
 `;

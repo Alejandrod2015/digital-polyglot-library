@@ -677,7 +677,7 @@ ${variantClause}
 - Each item must have:
   - "word": dictionary/root form learners should study
   - "surface": exact form as it appears in the story text
-  - "definition": clear English explanation with 8-18 words, including nuance or typical usage in context
+  - "definition": clear English gloss, HARD LIMIT 3-7 words AND ≤50 characters total (UI chip cannot wrap). Style like a translation app (Linguee/Reverso).
   - "type": one label among ["verb","noun","adjective","adverb","expression","slang","other"]
 - Prefer high-learning-value items that are practical, reusable, nuanced, or culturally grounded.
 - Do not include duplicates.
@@ -815,9 +815,10 @@ Write a vivid, modern story in ${language}${regionClause} for a ${learnerProfile
 ${resolvedTopic ? `The topic is "${resolvedTopic}".` : "Choose a concrete, modern topic that fits the level."}
 ${variantClause}
 All vocabulary definitions must be written in clear English, regardless of the story language.
-Each vocabulary definition must be a pedagogical explanation (8-18 words), with usage nuance in context.
-Never return one-word literal translations.
-Never begin a definition with a direct gloss plus comma/colon, such as "To change, ..." or "Important, ...".
+HARD LIMIT: each definition must be 3-7 English words AND ≤50 characters total (counting spaces). Both bounds mandatory — UI chip cannot wrap.
+Style: concise gloss like a translation app (Linguee/Reverso). Lead with the concept, an infinitive ("To stir..."), or an adjective phrase. Two senses joined by ";" or "," are fine.
+Never use em-dashes; use semicolons, colons, commas, parentheses.
+Never return a bare one-word translation; add at least one clarifying word.
 Wrap each paragraph inside <blockquote> ... </blockquote>.
 
 Requirements:

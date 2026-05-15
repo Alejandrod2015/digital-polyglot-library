@@ -49,10 +49,10 @@ Rewrite the definition of each vocabulary item into strong learner-friendly Engl
 Rules:
 - Keep the same "word", preserve "surface" when present, and keep "type".
 - Return ONLY a JSON array.
-- Each "definition" must be 6-18 words.
-- Explain practical meaning or usage nuance.
-- Do NOT use one-word glosses.
-- Do NOT start with a direct translation followed by comma or colon.
+- HARD LIMIT: each "definition" must be 3-7 English words AND ≤50 characters. Both bounds mandatory (UI chip cannot wrap).
+- Style: concise gloss, like a translation app (Linguee/Reverso). Lead with concept, infinitive, or adjective phrase.
+- Never use em-dashes; use semicolons, colons, commas, parentheses.
+- Never return a bare one-word literal translation; add at least one clarifying word.
 - Keep the word itself unchanged.
 `;
 

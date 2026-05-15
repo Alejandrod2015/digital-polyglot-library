@@ -435,13 +435,11 @@ ${titleClause}
 ${variantClause}
 Return 18-22 vocabulary items (aim for 20). After post-processing filters transparent cognates and invalid multi-word fragments, this yields roughly 15-17 keeper items — the target the app needs.
 All vocabulary definitions must be written in clear English, regardless of the story language.
-Each definition must be 8-14 English words and read like a dictionary entry: describe the concept the word names, not the word itself.
-Lead with the noun/concept, with an infinitive verb ("To join..."), or with a descriptive adjective phrase. Integrate any usage hint or short example into the same sentence.
-Never start a definition with: "Refers to", "Describes", "Used to", "Used for", "Used in", "Used as", "Used when", "Means", "Means to", "Conveys", "Speaks to", "Brings", "This word", "A type of", "A person who", "Someone who", "Something that", "The action of", "The state of", "The quality of".
-Never start with a one-word translation followed by punctuation (e.g. "Silence;", "Hurry,", "Homeland:") — that is a translation in disguise, not a definition.
-Never start with article + noun (or article + noun + gender) followed by punctuation. Forbidden: "A book; bound pages...", "The market; vendors selling...", "A newspaper (f); printed news...", "To work; to do a job...". The first clause must already be doing definitional work, not announcing the gloss before the colon. Instead lead with a richer descriptor that integrates the meaning: "Bound printed pages read for pleasure or study", "Open-air gathering of vendors selling food and produce", "Daily printed news, read at home or in cafés".
+HARD LIMIT: each definition must be 3-7 English words AND no more than 50 characters total (counting spaces). Both bounds are mandatory; do not exceed either. Treat this as a UI constraint: the definition must fit on a small mobile chip without wrapping.
+Style: a concise gloss in the spirit of a translation app (Linguee/Reverso/DeepL). Lead with the noun/concept, with an infinitive verb ("To join..."), or with a descriptive adjective phrase. Two senses joined by ";" or "," are fine if they stay under the limit.
 Never use em-dashes (—); use semicolons, colons, commas, or parentheses instead.
-Never return one-word literal translations.
+Never return a single word with no qualifier (e.g. "Idea", "Stir"). Add at least one clarifying word or sense ("An idea or concept", "To stir gently").
+Never write long descriptive paraphrases ("An idea or concept about something abstract"); compress to the essential gloss.
 ${bodyFormatBlock}
 
 CRITICAL — no non-vocalized sounds, ever. The narrator voice is a real TTS (ElevenLabs) that CANNOT render laughs, sighs, hums, or stage directions. Any of these in the body breaks the audio and the story has to be re-written:

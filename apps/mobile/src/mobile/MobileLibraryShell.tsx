@@ -47,6 +47,7 @@ import {
   type VocabItem,
 } from "@digital-polyglot/domain";
 import { requireOptionalNativeModule } from "expo-modules-core";
+import Svg, { Circle, G } from "react-native-svg";
 import { ReaderScreen } from "./ReaderScreen";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
@@ -2196,6 +2197,12 @@ export function MobileLibraryShell(args: {
   // effect del autoplay donde se usa) para que `openPracticeMode`
   // pueda escribirlo sin caer en TDZ.
   const lastAutoplayedExerciseIdRef = useRef<string | null>(null);
+  // Context mode: el audio NO suena durante el ejercicio (el usuario
+  // tiene que pensar el blank sin pista auditiva). Sólo suena DESPUÉS
+  // de revelar, con la oración ya completada. Este ref evita que el
+  // efecto re-dispare el audio si el usuario pausa/despausa o si re-
+  // renderizamos mientras revealed está activo.
+  const lastContextRevealAudioIdRef = useRef<string | null>(null);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
   const practiceCelebrationSoundRef = useRef<Audio.Sound | null>(null);
@@ -2205,6 +2212,10 @@ export function MobileLibraryShell(args: {
   const practiceCompleteOpacity = useRef(new Animated.Value(0)).current;
   const practiceCompleteScale = useRef(new Animated.Value(0.85)).current;
   const practiceCompleteTranslate = useRef(new Animated.Value(20)).current;
+  // Rotación continua del shine que recorre el anillo del score
+  // ("brillo que recorra el círculo"). Loop infinito mientras la
+  // pantalla de resultado está visible. Native driver = sin churn JS.
+  const practiceCompleteShine = useRef(new Animated.Value(0)).current;
   // Per-exercise entrance animation: each new exercise slides up + fades
   // in so the transition feels deliberate instead of an instant swap.
   const practiceExerciseOpacity = useRef(new Animated.Value(1)).current;
@@ -6197,6 +6208,7 @@ export function MobileLibraryShell(args: {
     // shell. Hay que llamarlo aquí (no en el effect) porque el effect
     // mismo escribe el ref y nunca lo resetea.
     lastAutoplayedExerciseIdRef.current = null;
+    lastContextRevealAudioIdRef.current = null;
     // Parar cualquier audio del reader que pueda estar sonando si
     // venimos directo del end-of-story prompt: el story sound puede
     // continuar reproduciéndose en background y enmascarar el
@@ -6759,21 +6771,67 @@ export function MobileLibraryShell(args: {
     pendingPairings,
   ]);
 
-  // (4) Auto-advance 1.5 seg después de revelar. Sólo aplica a
-  // multiple-choice; en match el usuario completa los pares uno por
-  // uno y prefiere ver el resultado completo antes de pasar, así que
-  // ese flow se mantiene manual. Si el usuario pausa durante la
-  // ventana de 1.5 seg, el cleanup cancela el timeout; al despausar,
-  // el effect re-corre y vuelve a programar.
+  // (3.5) Auto-validar match en cuanto el usuario forma todos los
+  // pares. El tick del timer ya se pausa cuando `filled === total`
+  // (no tiene sentido contar tiempo sobre algo que ya está armado),
+  // pero antes el usuario tenía que pulsar un botón "Check" para
+  // disparar el verdict — al usuario le parecía un freeze porque el
+  // contador quedaba a la mitad sin avanzar. Con este effect el
+  // veredicto sale solo ~350 ms después de armar el último par: lo
+  // suficiente para que se vea visualmente armado antes del flash
+  // verde/rojo, y sin requerir un tap extra.
+  useEffect(() => {
+    if (!activePracticeMode) return;
+    if (practiceRevealed) return;
+    if (practiceComplete) return;
+    if (practicePaused) return;
+    if (wrongMatchWords.length > 0) return;
+    const current = practiceExercises[practiceIndex];
+    if (!current || current.kind !== "match") return;
+    const filled = matchedWords.length + Object.keys(pendingPairings).length;
+    if (filled < current.pairs.length) return;
+    const id = setTimeout(() => {
+      validateMatchPairings();
+    }, 350);
+    return () => clearTimeout(id);
+  }, [
+    activePracticeMode,
+    practiceRevealed,
+    practiceComplete,
+    practicePaused,
+    practiceExercises,
+    practiceIndex,
+    matchedWords,
+    pendingPairings,
+    wrongMatchWords.length,
+  ]);
+
+  // (4) Auto-advance después de revelar. Multiple-choice y match.
+  // Match antes era manual (esperaba tap de "Next") porque pensábamos
+  // que el usuario quería ver el resultado completo antes de pasar,
+  // pero en práctica esto rompía el flow: el ejercicio quedaba
+  // congelado en la pantalla de verdict hasta que el usuario notara
+  // el botón. Ahora avanza solo, igual que multiple-choice.
+  //
+  // Context mode usa una ventana más larga (3000 ms vs 1500 ms) para
+  // dar tiempo a que suene el audio de la oración completa. Match usa
+  // 2200 ms para que se vea el flash verde/rojo final con calma.
   useEffect(() => {
     if (!practiceRevealed) return;
     if (practiceComplete) return;
     if (practicePaused) return;
     const current = practiceExercises[practiceIndex];
-    if (!current || current.kind !== "multiple-choice") return;
+    if (!current) return;
+    if (current.kind !== "multiple-choice" && current.kind !== "match") return;
+    const delay =
+      current.kind === "match"
+        ? 2200
+        : current.mode === "context"
+          ? 3000
+          : 1500;
     const id = setTimeout(() => {
       advancePractice();
-    }, 1500);
+    }, delay);
     return () => clearTimeout(id);
   }, [practiceRevealed, practiceComplete, practicePaused, practiceExercises, practiceIndex]);
 
@@ -6791,6 +6849,16 @@ export function MobileLibraryShell(args: {
     if (practiceRevealed) return;
     const exId = currentPracticeExercise?.id ?? null;
     if (!exId) return;
+    // Context mode (fill_blank / natural_expression): no autoplay.
+    // El usuario tiene que pensar la palabra correcta sin pista
+    // auditiva. El audio se reproduce sólo DESPUÉS de revelar, con
+    // la oración ya completada (otro effect más abajo lo dispara).
+    if (
+      currentPracticeExercise?.kind === "multiple-choice" &&
+      currentPracticeExercise.mode === "context"
+    ) {
+      return;
+    }
     if (lastAutoplayedExerciseIdRef.current === exId) return;
     lastAutoplayedExerciseIdRef.current = exId;
     void playPracticeContextClipBest();
@@ -6803,6 +6871,41 @@ export function MobileLibraryShell(args: {
     practiceComplete,
     practiceRevealed,
     currentPracticeExercise?.id,
+    currentPracticeExercise?.kind,
+    currentPracticeExercise?.mode,
+  ]);
+
+  // (5c) Context mode reveal audio. Cuando el usuario revela la
+  // respuesta (correcta, incorrecta o por timeout), reproducimos el
+  // audio HQ de la oración completa para reforzar la pronunciación
+  // de la palabra en su contexto natural. Esto reemplaza el autoplay
+  // que tenían los otros modos. El ref evita re-disparos si el effect
+  // re-corre mientras revealed sigue true.
+  useEffect(() => {
+    if (!activePracticeMode) return;
+    if (!practiceRevealed) return;
+    if (practiceComplete) return;
+    if (practicePaused) return;
+    if (!currentPracticeExercise) return;
+    if (currentPracticeExercise.kind !== "multiple-choice") return;
+    if (currentPracticeExercise.mode !== "context") return;
+    if (!currentPracticeExercise.audioClip) return;
+    const exId = currentPracticeExercise.id;
+    if (lastContextRevealAudioIdRef.current === exId) return;
+    lastContextRevealAudioIdRef.current = exId;
+    // Pequeño delay para que el SFX de correct/wrong se escuche
+    // primero (es corto, ~400 ms) y el audio de la oración no se
+    // pise con él.
+    const timer = setTimeout(() => {
+      void playPracticeContextClipHqOnly();
+    }, 450);
+    return () => clearTimeout(timer);
+  }, [
+    activePracticeMode,
+    practiceRevealed,
+    practiceComplete,
+    practicePaused,
+    currentPracticeExercise,
   ]);
 
   // (5b) Prefetch HQ TTS for the next 1-2 exercises by firing a
@@ -6986,6 +7089,7 @@ export function MobileLibraryShell(args: {
       practiceCompleteOpacity.setValue(0);
       practiceCompleteScale.setValue(0.85);
       practiceCompleteTranslate.setValue(20);
+      practiceCompleteShine.setValue(0);
       setPracticePerfectActive(false);
       return;
     }
@@ -7009,6 +7113,17 @@ export function MobileLibraryShell(args: {
         useNativeDriver: true,
       }),
     ]).start();
+    // Loop infinito del shine recorriendo el anillo. ~3.2s por vuelta:
+    // suficiente para que se perciba como "brillo" y no como spinner.
+    const shineLoop = Animated.loop(
+      Animated.timing(practiceCompleteShine, {
+        toValue: 1,
+        duration: 3200,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      })
+    );
+    shineLoop.start();
     // Perfect score → confetti + a louder chime overlay.
     if (
       practiceExercises.length > 0 &&
@@ -7017,11 +7132,15 @@ export function MobileLibraryShell(args: {
       setPracticePerfectActive(true);
       void playPracticePerfectChime();
     }
+    return () => {
+      shineLoop.stop();
+    };
   }, [
     practiceComplete,
     practiceCompleteOpacity,
     practiceCompleteScale,
     practiceCompleteTranslate,
+    practiceCompleteShine,
     practiceExercises.length,
     practiceScore,
   ]);
@@ -10146,42 +10265,29 @@ export function MobileLibraryShell(args: {
     </>
   );
 
-  // Distribución visual de las palabras due en los 4 modos para el ring
-  // del PracticeOrbit. Por ahora es ponderada (40/30/20/10), no por
-  // propiedades reales de cada palabra. Funciona para el preview;
-  // cuando implementemos la sesión mixta real, este breakdown puede
-  // alimentarse desde el mismo builder.
+  // Distribución del orbit basada SÓLO en items due. Antes contaba
+  // sobre todos los items (review=false) y por eso el chip nunca
+  // bajaba: si tenías 12 palabras, "match: 3 ejercicios" se quedaba
+  // en 3 incluso después de practicarlas porque el builder seguía
+  // armando 3 ejercicios con esas mismas palabras. Ahora cada count
+  // = ejercicios armados a partir de los items todavía pendientes
+  // de review en SRS, así "0" significa "ya practicaste todo lo
+  // que tocaba". Si el usuario igual quiere repaso libre, el card
+  // sigue siendo tappeable y `openPracticeMode(mode, true)` cae al
+  // pool general cuando dueItems está vacío.
   const orbitModeBreakdown = useMemo(() => {
-    const totalDue = duePracticeItems.length;
-    if (totalDue === 0) return { meaning: 0, context: 0, listening: 0, match: 0 };
-    const weights: Record<OrbitModeKey, number> = {
-      meaning: 0.4,
-      context: 0.3,
-      listening: 0.2,
-      match: 0.1,
-    };
-    const result: Record<OrbitModeKey, number> = {
-      meaning: Math.floor(totalDue * weights.meaning),
-      context: Math.floor(totalDue * weights.context),
-      listening: Math.floor(totalDue * weights.listening),
-      match: Math.floor(totalDue * weights.match),
-    };
-    const order: OrbitModeKey[] = ["meaning", "context", "listening", "match"];
-    let assigned = order.reduce((sum, key) => sum + result[key], 0);
-    let i = 0;
-    while (assigned < totalDue) {
-      result[order[i % order.length]] += 1;
-      assigned += 1;
-      i += 1;
+    if (duePracticeItems.length === 0) {
+      return { meaning: 0, context: 0, listening: 0, match: 0 };
     }
-    // Match agrupa de 4 en 4 en backend; si total < 4 lo dejamos en 0
-    // y reparto a meaning para no mostrar "Match 1" sin sentido visual.
-    if (totalDue < 4 && result.match > 0) {
-      result.meaning += result.match;
-      result.match = 0;
-    }
-    return result;
-  }, [duePracticeItems]);
+    const sizeFor = (mode: OrbitModeKey) =>
+      buildPracticeExercisesFromItems(duePracticeItems, mode, false, onboardingPracticePrefs).length;
+    return {
+      meaning: sizeFor("meaning"),
+      context: sizeFor("context"),
+      listening: sizeFor("listening"),
+      match: sizeFor("match"),
+    };
+  }, [duePracticeItems, onboardingPracticePrefs]);
 
   // Topic label: por ahora fijo. El campo "From {topic}" del mockup
   // requiere saber el topic dominante de las palabras due, lo cual
@@ -10279,8 +10385,8 @@ export function MobileLibraryShell(args: {
             modeBreakdown={orbitModeBreakdown}
             streakDays={orbitStreak}
             dailyGoalPercent={orbitDailyGoalPercent}
-            onStart={() => void openPracticeMode(recommendedPracticeMode ?? "meaning")}
-            onPickSkill={(mode) => void openPracticeMode(mode)}
+            onStart={() => void openPracticeMode(recommendedPracticeMode ?? "meaning", true)}
+            onPickSkill={(mode) => void openPracticeMode(mode, true)}
             emptyState={favoriteWords.length === 0}
           />
         </>
@@ -10464,54 +10570,17 @@ export function MobileLibraryShell(args: {
                 },
               ]}
             >
-              {practiceScore === practiceExercises.length && practiceExercises.length > 0 ? (
-                // Perfect-score header: trophy ring + bouncing emoji-style
-                // wordmark. Replaces the small "Session complete" pill so
-                // the moment feels noticeably different from a normal
-                // finish.
-                <>
-                  <View style={styles.practicePerfectRing}>
-                    <View style={styles.practicePerfectRingInner}>
-                      <Feather name="award" size={28} color={tokenBg[1]} />
-                    </View>
-                  </View>
-                  <Text style={styles.practicePerfectTitle}>Perfect!</Text>
-                  <Text style={styles.practiceResultScore}>
-                    {practiceScore}/{practiceExercises.length}
-                  </Text>
-                </>
-              ) : (
-                <>
-                  <View style={styles.practiceFocusPill}>
-                    <Feather name="award" size={13} color={activePracticeCard.accent} />
-                    <Text style={styles.practiceFocusPillText}>Session complete</Text>
-                  </View>
-                  <Text style={styles.practiceResultScore}>
-                    {practiceScore}/{practiceExercises.length}
-                  </Text>
-                </>
-              )}
-              <Text style={styles.practiceResultText}>
-                {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint"
-                  ? checkpointPassed
-                    ? practiceCheckpointSaveState === "saved"
-                      ? "Checkpoint passed. The next step is now available."
-                      : practiceCheckpointSaveState === "error"
-                        ? "Checkpoint passed, but we could not save it yet."
-                        : "Checkpoint passed. Saving your result..."
-                    : `${Math.max(0, Math.ceil(CHECKPOINT_PASS_THRESHOLD * practiceExercises.length) - practiceScore)} more correct answers needed to pass.`
-                  : practiceScore === practiceExercises.length
-                    ? "Every answer correct. Your words are locked in for the next step."
-                    : `${practiceExercises.length - practiceScore} to review · keep going.`}
-              </Text>
+              {/* Layout nuevo basado en mockup: chips en esquinas +
+                  anillo segmentado con score al centro + saludo
+                  personalizado + 2 stat cards + WHAT'S NEXT con 3
+                  acciones horizontales. Reemplaza la lista vertical
+                  que se sentía pobre y desbalanceada. */}
               {(() => {
-                // Stats estilo Duolingo: XP ganado + combo máximo +
-                // duración. XP se calcula como:
-                //   acierto = 10 XP
-                //   bonus por combo > 3 = (maxStreak - 3) × 5
-                //   perfecto = +25 XP
-                const isPerfect =
-                  practiceScore === practiceExercises.length && practiceExercises.length > 0;
+                const isCheckpoint =
+                  practiceLaunchContext.source === "journey" &&
+                  practiceLaunchContext.kind === "checkpoint";
+                const N = practiceExercises.length;
+                const isPerfect = practiceScore === N && N > 0;
                 const xpFromCorrect = practiceScore * 10;
                 const xpFromCombo = Math.max(0, practiceMaxStreak - 3) * 5;
                 const xpFromPerfect = isPerfect ? 25 : 0;
@@ -10521,231 +10590,365 @@ export function MobileLibraryShell(args: {
                 const minutes = Math.floor(totalSeconds / 60);
                 const seconds = totalSeconds % 60;
                 const durationLabel = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
-                const accuracyPct = practiceExercises.length > 0
-                  ? Math.round((practiceScore / practiceExercises.length) * 100)
-                  : 0;
+                const accuracyPct = N > 0 ? Math.round((practiceScore / N) * 100) : 0;
+
+                // Resultado por ejercicio, en orden. Para multiple-
+                // choice se mira el reviewScore de la palabra; para
+                // match basta con que cualquier par del set haya
+                // fallado para considerar el ejercicio entero wrong.
+                const results: ("correct" | "wrong")[] = practiceExercises.map((ex) => {
+                  if (ex.kind === "match") {
+                    const anyWrong = ex.pairs.some(
+                      (p) => practiceReviewScores[normalizePracticeWord(p.word)] === "again"
+                    );
+                    return anyWrong ? "wrong" : "correct";
+                  }
+                  const sc = practiceReviewScores[normalizePracticeWord(ex.favorite.word)];
+                  return sc === "again" ? "wrong" : "correct";
+                });
+
+                const firstName = (sessionName ?? "").trim().split(/\s+/)[0] || null;
+                const greeting = isPerfect
+                  ? firstName
+                    ? `PERFECT, ${firstName.toUpperCase()}.`
+                    : "PERFECT RUN."
+                  : firstName
+                    ? `NICE RUN, ${firstName.toUpperCase()}.`
+                    : "SESSION COMPLETE.";
+                let headline: string;
+                if (isCheckpoint) {
+                  headline = checkpointPassed
+                    ? "Checkpoint cleared."
+                    : "Almost there — try again.";
+                } else if (isPerfect) {
+                  headline = "Every answer locked in.";
+                } else if (accuracyPct >= 70) {
+                  headline = "You're sharper than last time.";
+                } else if (accuracyPct >= 40) {
+                  headline = "Solid practice — keep going.";
+                } else {
+                  headline = "These ones need another pass.";
+                }
+                const subtext = isCheckpoint
+                  ? checkpointPassed
+                    ? "Next step unlocked."
+                    : `${Math.max(0, Math.ceil(CHECKPOINT_PASS_THRESHOLD * N) - practiceScore)} more correct to pass.`
+                  : `${practiceScore} of ${N} correct.`;
+
+                // Anillo segmentado. Mantenemos el SVG inline para no
+                // proliferar archivos; cada Circle es un segmento con
+                // strokeDasharray + offset (mismo trick que el orbit).
+                const RING_SIZE = 220;
+                const RING_STROKE = 18;
+                const RING_RADIUS = (RING_SIZE - RING_STROKE) / 2;
+                const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
+                const segCount = Math.max(N, 1);
+                const gapDeg = segCount <= 10 ? 4 : 2;
+                const usableDeg = 360 - gapDeg * segCount;
+                const segDeg = usableDeg / segCount;
+                const segLen = (segDeg / 360) * RING_CIRCUMFERENCE;
+
                 return (
-                  <View style={styles.practiceResultStatsRow}>
-                    <View style={styles.practiceResultStatPill}>
-                      <Feather name="zap" size={14} color="#ffd25f" />
-                      <Text style={styles.practiceResultStatValue}>+{xpTotal}</Text>
-                      <Text style={styles.practiceResultStatLabel}>XP</Text>
-                    </View>
-                    <View style={styles.practiceResultStatPill}>
-                      <MaterialCommunityIcons name="fire" size={14} color="#fb923c" />
-                      <Text style={styles.practiceResultStatValue}>{practiceMaxStreak}</Text>
-                      <Text style={styles.practiceResultStatLabel}>combo</Text>
-                    </View>
-                    <View style={styles.practiceResultStatPill}>
-                      <Feather name="target" size={14} color="#9fe8ff" />
-                      <Text style={styles.practiceResultStatValue}>{accuracyPct}%</Text>
-                      <Text style={styles.practiceResultStatLabel}>accuracy</Text>
-                    </View>
-                    {durationMs > 0 ? (
-                      <View style={styles.practiceResultStatPill}>
-                        <Feather name="clock" size={14} color="#f8c15c" />
-                        <Text style={styles.practiceResultStatValue}>{durationLabel}</Text>
-                        <Text style={styles.practiceResultStatLabel}>time</Text>
+                  <>
+                    {/* Chips en esquinas */}
+                    <View style={styles.practiceResultCornerChips}>
+                      <View style={styles.practiceResultCornerChip}>
+                        <Feather name="zap" size={13} color="#ffd25f" />
+                        <Text style={styles.practiceResultCornerChipValue}>+{xpTotal}</Text>
+                        <Text style={styles.practiceResultCornerChipLabel}>XP</Text>
                       </View>
+                      <View style={styles.practiceResultCornerChip}>
+                        <MaterialCommunityIcons name="fire" size={13} color="#fb923c" />
+                        <Text style={styles.practiceResultCornerChipValue}>x{practiceMaxStreak}</Text>
+                        <Text style={styles.practiceResultCornerChipLabel}>COMBO</Text>
+                      </View>
+                    </View>
+
+                    {/* Anillo + score centrado + shine arc que recorre.
+                        El shine es un arco luminoso (no un punto) que
+                        rota sobre el anillo, así da la sensación del
+                        círculo "brillando" por tramos en vez de un
+                        planeta orbitando alrededor. Dos arcos
+                        layered: uno ancho con baja opacidad (halo) y
+                        otro fino con alta opacidad (core). */}
+                    <View style={styles.practiceResultRingWrap}>
+                      <Svg width={RING_SIZE} height={RING_SIZE}>
+                        <G rotation={-90} originX={RING_SIZE / 2} originY={RING_SIZE / 2}>
+                          {Array.from({ length: segCount }).map((_, i) => {
+                            const startDeg = i * (segDeg + gapDeg);
+                            const offset = -(startDeg / 360) * RING_CIRCUMFERENCE;
+                            const isWrong = N > 0 && results[i] === "wrong";
+                            const color = N === 0
+                              ? "rgba(255,255,255,0.08)"
+                              : isWrong
+                                ? "#fb7185"
+                                : "#facc15";
+                            return (
+                              <Circle
+                                key={`seg-${i}`}
+                                cx={RING_SIZE / 2}
+                                cy={RING_SIZE / 2}
+                                r={RING_RADIUS}
+                                stroke={color}
+                                strokeWidth={RING_STROKE}
+                                fill="none"
+                                strokeDasharray={`${segLen}, ${RING_CIRCUMFERENCE}`}
+                                strokeDashoffset={offset}
+                                strokeLinecap="round"
+                              />
+                            );
+                          })}
+                        </G>
+                      </Svg>
+                      <Animated.View
+                        pointerEvents="none"
+                        style={[
+                          styles.practiceResultShineLayer,
+                          {
+                            width: RING_SIZE,
+                            height: RING_SIZE,
+                            transform: [
+                              {
+                                rotate: practiceCompleteShine.interpolate({
+                                  inputRange: [0, 1],
+                                  outputRange: ["0deg", "360deg"],
+                                }),
+                              },
+                            ],
+                          },
+                        ]}
+                      >
+                        <Svg width={RING_SIZE} height={RING_SIZE}>
+                          <G rotation={-90} originX={RING_SIZE / 2} originY={RING_SIZE / 2}>
+                            {/* Halo ancho, opacidad baja: la "luz" se
+                                sale del stroke del anillo y crea un
+                                resplandor difuso al pasar por encima. */}
+                            <Circle
+                              cx={RING_SIZE / 2}
+                              cy={RING_SIZE / 2}
+                              r={RING_RADIUS}
+                              stroke="rgba(255, 247, 200, 0.18)"
+                              strokeWidth={RING_STROKE + 14}
+                              fill="none"
+                              strokeDasharray={`${RING_CIRCUMFERENCE * 0.22}, ${RING_CIRCUMFERENCE}`}
+                              strokeLinecap="round"
+                            />
+                            {/* Core: arco fino bien luminoso pegado al
+                                stroke del anillo, es lo que "ilumina"
+                                el segmento por el que pasa. */}
+                            <Circle
+                              cx={RING_SIZE / 2}
+                              cy={RING_SIZE / 2}
+                              r={RING_RADIUS}
+                              stroke="rgba(255, 247, 200, 0.55)"
+                              strokeWidth={RING_STROKE}
+                              fill="none"
+                              strokeDasharray={`${RING_CIRCUMFERENCE * 0.14}, ${RING_CIRCUMFERENCE}`}
+                              strokeLinecap="round"
+                            />
+                          </G>
+                        </Svg>
+                      </Animated.View>
+                      <View style={styles.practiceResultRingCenter} pointerEvents="none">
+                        <Text style={styles.practiceResultScoreCaption}>SCORE</Text>
+                        <Text style={styles.practiceResultRingScore}>
+                          <Text style={styles.practiceResultRingScoreNum}>{practiceScore}</Text>
+                          <Text style={styles.practiceResultRingScoreSep}>/{N}</Text>
+                        </Text>
+                      </View>
+                    </View>
+
+                    {/* Saludo + headline */}
+                    <View style={styles.practiceResultMessage}>
+                      <Text style={styles.practiceResultGreeting}>{greeting}</Text>
+                      <Text style={styles.practiceResultHeadline}>{headline}</Text>
+                      <Text style={styles.practiceResultSubtext}>{subtext}</Text>
+                    </View>
+
+                    {/* Stats fila 2 cards */}
+                    <View style={styles.practiceResultStatsRow}>
+                      <View style={styles.practiceResultStatCard}>
+                        <Feather name="target" size={20} color="#9fe8ff" />
+                        <View style={styles.practiceResultStatCardText}>
+                          <Text style={styles.practiceResultStatValueLarge}>{accuracyPct}%</Text>
+                          <Text style={styles.practiceResultStatLabelLarge}>accuracy</Text>
+                        </View>
+                      </View>
+                      <View style={styles.practiceResultStatCard}>
+                        <Feather name="clock" size={20} color="#f8c15c" />
+                        <View style={styles.practiceResultStatCardText}>
+                          <Text style={styles.practiceResultStatValueLarge}>
+                            {durationMs > 0 ? durationLabel : "—"}
+                          </Text>
+                          <Text style={styles.practiceResultStatLabelLarge}>time</Text>
+                        </View>
+                      </View>
+                    </View>
+                  </>
+                );
+              })()}
+              {/* WHAT'S NEXT zone — 3 acción cards horizontales.
+                  Reemplaza la pila vertical de botones primary +
+                  secondary + extra. Cada card encapsula su micro-
+                  contexto ("Review N due · ~Y min", "Fix N · You
+                  missed", "Replay · Same N"). El primario (yellow
+                  filled) cambia según contexto:
+                  - Checkpoint fallido: Retry checkpoint
+                  - Hay dues: Review N due
+                  - Hay próximo paso en journey: Continue to {title}
+                  - Fallback: Back to journey
+                */}
+              {(() => {
+                const isCheckpoint =
+                  practiceLaunchContext.source === "journey" &&
+                  practiceLaunchContext.kind === "checkpoint";
+
+                // Resolver next-story para el caso "no quedan dues".
+                let nextStory:
+                  | MobileJourneyTopicSummary["stories"][number]
+                  | null = null;
+                if (!isCheckpoint && globalJourneyNextStoryId && activeJourneyTrack) {
+                  for (const lvl of activeJourneyTrack.levels) {
+                    for (const tp of lvl.topics) {
+                      const found = tp.stories.find(
+                        (s) => s.id === globalJourneyNextStoryId
+                      );
+                      if (found) {
+                        nextStory = found;
+                        break;
+                      }
+                    }
+                    if (nextStory) break;
+                  }
+                }
+
+                // Primary card setup
+                let primaryAction: { onPress: () => void; title: string; subtitle: string; icon: React.ComponentProps<typeof Feather>["name"] };
+                if (isCheckpoint && !checkpointPassed) {
+                  primaryAction = {
+                    onPress: () => void openPracticeMode(activePracticeMode, false),
+                    title: "Retry",
+                    subtitle: "Checkpoint",
+                    icon: "rotate-cw",
+                  };
+                } else if (dueFavoritesCount > 0 && !isCheckpoint) {
+                  const estMin = Math.max(1, Math.round((dueFavoritesCount * 10) / 60));
+                  primaryAction = {
+                    onPress: () => void openPracticeMode(recommendedPracticeMode, true),
+                    title: "Review",
+                    subtitle: `${dueFavoritesCount} due · ${estMin} min`,
+                    icon: "play",
+                  };
+                } else if (nextStory) {
+                  const captured = nextStory;
+                  primaryAction = {
+                    onPress: () => {
+                      closePracticeSession();
+                      void openJourneyStory(captured);
+                    },
+                    title: "Continue",
+                    subtitle: (nextStory.title?.trim() || "next story").slice(0, 22),
+                    icon: "arrow-right",
+                  };
+                } else {
+                  primaryAction = {
+                    onPress: () => {
+                      closePracticeSession();
+                      setActiveScreen("home");
+                    },
+                    title: "Done",
+                    subtitle: "Back to journey",
+                    icon: "home",
+                  };
+                }
+
+                const showFix = practiceMissedItems.length > 0 && !isCheckpoint;
+                const showReplay = !isCheckpoint || checkpointPassed;
+
+                return (
+                  <View style={styles.practiceResultWhatsNext}>
+                    <Text style={styles.practiceResultWhatsNextLabel}>WHAT'S NEXT</Text>
+                    <View style={styles.practiceResultWhatsNextRow}>
+                      <Pressable
+                        onPress={primaryAction.onPress}
+                        style={[
+                          styles.practiceWhatsNextCard,
+                          styles.practiceWhatsNextCardPrimary,
+                        ]}
+                      >
+                        <View style={[styles.practiceWhatsNextIconWrap, styles.practiceWhatsNextIconWrapPrimary]}>
+                          <Feather name={primaryAction.icon} size={16} color="#0a1424" />
+                        </View>
+                        <Text style={[styles.practiceWhatsNextTitle, styles.practiceWhatsNextTitlePrimary]}>
+                          {primaryAction.title}
+                        </Text>
+                        <Text style={[styles.practiceWhatsNextSubtitle, styles.practiceWhatsNextSubtitlePrimary]}>
+                          {primaryAction.subtitle}
+                        </Text>
+                      </Pressable>
+
+                      {showFix ? (
+                        <Pressable
+                          onPress={() =>
+                            void openPracticeMode(activePracticeMode, true, practiceMissedItems)
+                          }
+                          style={styles.practiceWhatsNextCard}
+                        >
+                          <View style={[styles.practiceWhatsNextIconWrap, styles.practiceWhatsNextIconWrapDanger]}>
+                            <Feather name="x-circle" size={16} color="#fb7185" />
+                          </View>
+                          <Text style={styles.practiceWhatsNextTitle}>
+                            Fix {practiceMissedItems.length}
+                          </Text>
+                          <Text style={styles.practiceWhatsNextSubtitle}>You missed</Text>
+                        </Pressable>
+                      ) : null}
+
+                      {showReplay ? (
+                        <Pressable
+                          onPress={() => void openPracticeMode(activePracticeMode, false)}
+                          style={styles.practiceWhatsNextCard}
+                        >
+                          <View style={[styles.practiceWhatsNextIconWrap, styles.practiceWhatsNextIconWrapNeutral]}>
+                            <Feather name="rotate-ccw" size={16} color="#b8c9df" />
+                          </View>
+                          <Text style={styles.practiceWhatsNextTitle}>Replay</Text>
+                          <Text style={styles.practiceWhatsNextSubtitle}>
+                            Same {practiceExercises.length}
+                          </Text>
+                        </Pressable>
+                      ) : null}
+                    </View>
+
+                    {/* Recovery hint debajo de los 3 cards para
+                        checkpoints fallidos con palabras flojas. */}
+                    {isCheckpoint && !checkpointPassed && checkpointRecoveryMode && checkpointMissedItems.length > 0 ? (
+                      <Pressable
+                        onPress={() =>
+                          void openPracticeMode(checkpointRecoveryMode, true, checkpointMissedItems)
+                        }
+                        style={styles.practiceResultRecoveryButton}
+                      >
+                        <Feather name="target" size={14} color="#facc15" />
+                        <Text style={styles.practiceResultRecoveryButtonText}>
+                          Review weak spots
+                        </Text>
+                      </Pressable>
+                    ) : null}
+
+                    {/* Checkpoint save state hint (saving / saved / error). */}
+                    {isCheckpoint && practiceCheckpointSaveState !== "idle" ? (
+                      <Text style={styles.practiceResultCheckpointStatus}>
+                        {practiceCheckpointSaveState === "saving"
+                          ? "Saving checkpoint…"
+                          : practiceCheckpointSaveState === "saved"
+                            ? "Checkpoint saved · next step unlocked"
+                            : "Checkpoint passed but not saved yet"}
+                      </Text>
                     ) : null}
                   </View>
                 );
               })()}
-              {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint" ? (
-                <Text style={styles.practiceResultStatusText}>
-                  {practiceCheckpointSaveState === "saving"
-                    ? "Saving checkpoint..."
-                    : practiceCheckpointSaveState === "saved"
-                      ? "Checkpoint saved. The next step is now available."
-                      : practiceCheckpointSaveState === "error"
-                        ? "Checkpoint passed, but we could not save it yet."
-                        : "Checkpoint ready to save."}
-                </Text>
-              ) : null}
-              {practiceLaunchContext.source === "journey" &&
-              practiceLaunchContext.kind === "checkpoint" &&
-              !checkpointPassed &&
-              checkpointRecoveryWords.length > 0 ? (
-                <View style={styles.practiceRecoveryCard}>
-                  <Text style={styles.practiceRecoveryTitle}>Review these first</Text>
-                  <Text style={styles.practiceRecoveryBody}>
-                    Focus on {checkpointRecoveryWords.join(" · ")} before retrying the checkpoint.
-                  </Text>
-                  {checkpointRecoveryMode ? (
-                    <Text style={styles.practiceRecoveryHint}>
-                      Best next step: {getPracticeModeLabel(checkpointRecoveryMode)} review.
-                    </Text>
-                  ) : null}
-                  <View style={styles.practiceRecoveryWords}>
-                    {checkpointRecoveryWords.map((word) => (
-                      <View key={word} style={styles.practiceRecoveryWordChip}>
-                        <Text style={styles.practiceRecoveryWordText}>{word}</Text>
-                      </View>
-                    ))}
-                  </View>
-                </View>
-              ) : null}
-              {practiceLaunchContext.source === "journey" &&
-              practiceLaunchContext.reviewFocus &&
-              (practiceJourneyReviewMeta?.dueCount ?? practiceLaunchContext.reviewDueCount ?? 0) > 0 ? (
-                <Text style={styles.practiceResultStatusText}>
-                  Review focus: {(practiceJourneyReviewMeta?.dueCount ?? practiceLaunchContext.reviewDueCount ?? 0)} due
-                  {(practiceJourneyReviewMeta?.focusWords ?? practiceLaunchContext.focusWords ?? []).length > 0
-                    ? ` · ${(practiceJourneyReviewMeta?.focusWords ?? practiceLaunchContext.focusWords ?? [])
-                        .slice(0, 3)
-                        .join(" · ")}`
-                    : ""}
-                </Text>
-              ) : null}
-              <View style={styles.practiceResultActions}>
-                {/* PRIMARY CTA = "next step" único y forward-looking:
-                    1. Si quedan palabras due en favoritos → "Review N more due"
-                    2. Si hay próxima historia en el path del journey → "Continue to {title}"
-                    3. Fallback → "Back to journey"
-                    Para checkpoint NO pasado, lo escondemos para que el
-                    "Retry checkpoint" (abajo) sea el camino obvio. */}
-                {(() => {
-                  const inCheckpoint =
-                    practiceLaunchContext.source === "journey" &&
-                    practiceLaunchContext.kind === "checkpoint";
-                  if (inCheckpoint && !checkpointPassed) return null;
-
-                  // Encontrar la story object del global next pointer
-                  let nextStory:
-                    | MobileJourneyTopicSummary["stories"][number]
-                    | null = null;
-                  if (globalJourneyNextStoryId && activeJourneyTrack) {
-                    for (const lvl of activeJourneyTrack.levels) {
-                      for (const tp of lvl.topics) {
-                        const found = tp.stories.find(
-                          (s) => s.id === globalJourneyNextStoryId
-                        );
-                        if (found) {
-                          nextStory = found;
-                          break;
-                        }
-                      }
-                      if (nextStory) break;
-                    }
-                  }
-
-                  // Si quedan due (y no fue checkpoint), proponer otra ronda.
-                  if (dueFavoritesCount > 0 && !inCheckpoint) {
-                    return (
-                      <Pressable
-                        onPress={() =>
-                          void openPracticeMode(recommendedPracticeMode, true)
-                        }
-                        style={[
-                          styles.inlineButton,
-                          styles.primaryButton,
-                          styles.practiceResultActionButton,
-                        ]}
-                      >
-                        <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
-                          Review {dueFavoritesCount} more due
-                        </Text>
-                      </Pressable>
-                    );
-                  }
-
-                  if (nextStory) {
-                    const nextTitle = nextStory.title?.trim() || "next story";
-                    const captured = nextStory;
-                    return (
-                      <Pressable
-                        onPress={() => {
-                          closePracticeSession();
-                          void openJourneyStory(captured);
-                        }}
-                        style={[
-                          styles.inlineButton,
-                          styles.primaryButton,
-                          styles.practiceResultActionButton,
-                        ]}
-                      >
-                        <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
-                          Continue to {nextTitle}
-                        </Text>
-                      </Pressable>
-                    );
-                  }
-
-                  return (
-                    <Pressable
-                      onPress={() => {
-                        closePracticeSession();
-                        setActiveScreen("home");
-                      }}
-                      style={[
-                        styles.inlineButton,
-                        styles.primaryButton,
-                        styles.practiceResultActionButton,
-                      ]}
-                    >
-                      <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
-                        Back to journey
-                      </Text>
-                    </Pressable>
-                  );
-                })()}
-
-                {/* SECONDARY CTAs (lo que antes eran primary):
-                    Retry checkpoint / Review N wrongs / Play again. */}
-                {practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint" ? (
-                  <Pressable
-                    onPress={() => void openPracticeMode(activePracticeMode, false)}
-                    style={[styles.inlineButton, styles.practiceResultActionButton]}
-                  >
-                    <Text style={styles.inlineButtonText}>
-                      Retry checkpoint
-                    </Text>
-                  </Pressable>
-                ) : practiceMissedItems.length > 0 ? (
-                  <Pressable
-                    onPress={() => void openPracticeMode(activePracticeMode, true, practiceMissedItems)}
-                    style={[styles.inlineButton, styles.practiceResultActionButton]}
-                  >
-                    <Text style={styles.inlineButtonText}>
-                      Review {practiceMissedItems.length} wrong{practiceMissedItems.length === 1 ? "" : "s"}
-                    </Text>
-                  </Pressable>
-                ) : (
-                  <Pressable
-                    onPress={() => void openPracticeMode(activePracticeMode, false)}
-                    style={[styles.inlineButton, styles.practiceResultActionButton]}
-                  >
-                    <Text style={styles.inlineButtonText}>
-                      Play again
-                    </Text>
-                  </Pressable>
-                )}
-
-                {/* Recovery weak spots para checkpoint failed sigue ahí. */}
-                {practiceLaunchContext.source === "journey" &&
-                practiceLaunchContext.kind === "checkpoint" &&
-                !checkpointPassed &&
-                checkpointRecoveryMode &&
-                checkpointMissedItems.length > 0 ? (
-                  <Pressable
-                    onPress={() => void openPracticeMode(checkpointRecoveryMode, true, checkpointMissedItems)}
-                    style={[styles.inlineButton, styles.practiceResultActionButton]}
-                  >
-                    <Text style={styles.inlineButtonText}>Review weak spots</Text>
-                  </Pressable>
-                ) : null}
-
-                {/* "Play again" extra cuando el secundario ya es "Review wrongs". */}
-                {practiceMissedItems.length > 0 &&
-                !(practiceLaunchContext.source === "journey" && practiceLaunchContext.kind === "checkpoint") ? (
-                  <Pressable
-                    onPress={() => void openPracticeMode(activePracticeMode, false)}
-                    style={[styles.inlineButton, styles.practiceResultActionButton]}
-                  >
-                    <Text style={styles.inlineButtonText}>Play again</Text>
-                  </Pressable>
-                ) : null}
-              </View>
             </Animated.View>
           ) : currentPracticeExercise ? (
             <>
@@ -10767,7 +10970,13 @@ export function MobileLibraryShell(args: {
                     ]}
                   >
                     <View style={styles.practiceMeaningProgressTrack}>
-                      {Array.from({ length: Math.max(practiceExercises.length, 10) }).map((_, index) => {
+                      {/* Antes paddeábamos a `Math.max(N, 10)` para
+                          que las sesiones cortas "se vieran llenas",
+                          pero con eso un match de 1 ejercicio mostraba
+                          10 dots y daba la sensación de que faltaban
+                          9 — desincronizado con el "1 pendiente" del
+                          orbit. Ahora cada dot = un ejercicio real. */}
+                      {Array.from({ length: practiceExercises.length }).map((_, index) => {
                         const isDone = index < practiceIndex + 1;
                         const isCurrent = index === practiceIndex;
                         return (
@@ -10931,9 +11140,14 @@ export function MobileLibraryShell(args: {
                               isCompactMeaningViewport ? styles.practiceHeroContextSentenceCompact : null,
                             ]}
                           >
-                            {currentPracticeExercise.sentence}
+                            {practiceRevealed && currentPracticeExercise.sentence
+                              ? currentPracticeExercise.sentence.replace(
+                                  /_{3,}/g,
+                                  currentPracticeExercise.answer
+                                )
+                              : currentPracticeExercise.sentence}
                           </Text>
-                          {currentPracticeExercise.audioClip ? (
+                          {practiceRevealed && currentPracticeExercise.audioClip ? (
                             <Pressable
                               onPress={() => { void playPracticeContextClipHqOnly(); }}
                               style={[
@@ -11061,7 +11275,6 @@ export function MobileLibraryShell(args: {
                                 styles.practiceOptionText,
                                 styles.practiceOptionTextMeaning,
                                 isCompactMeaningViewport ? styles.practiceOptionTextMeaningCompact : null,
-                                isCorrect || isWrong ? styles.practiceOptionTextOnAccent : null,
                               ]}
                             >
                               {option}
@@ -11127,12 +11340,34 @@ export function MobileLibraryShell(args: {
                       styles.practiceQuestionCardMeaning,
                     ]}
                   >
-                    {/* Hero panel (texto de instrucciones + contador
-                        X/Y) eliminado a pedido del usuario para liberar
-                        espacio vertical para los chips de palabras y
-                        significados. El estado del ejercicio (matches
-                        formados) ya se ve en los chips coloreados;
-                        las instrucciones eran ruido. */}
+                    {/* "ALL PAIRED" banner — aparece SÓLO cuando el
+                        usuario completa todos los pares correctamente
+                        (revealed + lastResult==="correct"). Vive en
+                        la ventana de 2.2 s antes del auto-advance.
+                        El banner sustituye el flash verde del chip
+                        completo y le da al usuario la sensación de
+                        cierre de ejercicio. */}
+                    {practiceRevealed && practiceLastResult === "correct" ? (
+                      <View style={styles.practiceMatchAllPairedBanner}>
+                        <View style={styles.practiceMatchAllPairedIconWrap}>
+                          <MaterialCommunityIcons name="fire" size={20} color="#fb923c" />
+                        </View>
+                        <View style={styles.practiceMatchAllPairedTextWrap}>
+                          <Text style={styles.practiceMatchAllPairedLabel}>ALL PAIRED</Text>
+                          <Text style={styles.practiceMatchAllPairedSubtitle}>
+                            +{Math.max(1, currentPracticeExercise.pairs.length) * 3} XP
+                            {practiceMaxStreak >= 3 ? " · combo bonus" : ""}
+                          </Text>
+                        </View>
+                        {practiceMaxStreak >= 3 ? (
+                          <View style={styles.practiceMatchAllPairedMultiplier}>
+                            <Text style={styles.practiceMatchAllPairedMultiplierText}>
+                              ×2
+                            </Text>
+                          </View>
+                        ) : null}
+                      </View>
+                    ) : null}
                     <View style={styles.practiceMatchRows}>
                       {wordRowOrder.map((pair, rowIdx) => {
                         const meaning = meaningRowOrder[rowIdx];
@@ -11227,7 +11462,7 @@ export function MobileLibraryShell(args: {
                               <Text
                                 style={[
                                   styles.practiceMatchRowWordText,
-                                  isWordMatched ? styles.practiceOptionTextOnAccent : null,
+                                  isWordMatched ? styles.practiceMatchRowWordTextMatched : null,
                                 ]}
                               >
                                 {pair.word}
@@ -11256,11 +11491,27 @@ export function MobileLibraryShell(args: {
                               <Text
                                 style={[
                                   styles.practiceMatchRowMeaningText,
-                                  matchedPairForMeaning ? styles.practiceOptionTextOnAccent : null,
                                 ]}
                               >
                                 {meaning}
                               </Text>
+                              {/* Per-row status badge. ✓ verde si el
+                                  par fue matched correctamente; ✗ rojo
+                                  si está en estado wrong (flash) o si
+                                  cayó timeout sin haber sido matched.
+                                  El badge ocupa el lado derecho del
+                                  chip, igual que en el mockup, y
+                                  reemplaza el "fondo verde sólido"
+                                  como señal de éxito. */}
+                              {matchedPairForMeaning ? (
+                                <View style={[styles.practiceMatchRowBadge, styles.practiceMatchRowBadgeCorrect]}>
+                                  <Feather name="check" size={14} color="#6ee7b7" />
+                                </View>
+                              ) : isMeaningWrong ? (
+                                <View style={[styles.practiceMatchRowBadge, styles.practiceMatchRowBadgeWrong]}>
+                                  <Feather name="x" size={14} color="#fb7185" />
+                                </View>
+                              ) : null}
                             </Pressable>
                           </View>
                         );
@@ -11305,25 +11556,16 @@ export function MobileLibraryShell(args: {
                     <Text style={[styles.inlineButtonText, styles.primaryButtonText, styles.practiceMeaningFooterButtonText]}>Check answer</Text>
                   </Pressable>
                 ) : currentPracticeExercise.kind === "match" ? (() => {
-                  // Match footer: hint until all pairs are formed, then Check button.
+                  // Match footer: sólo hint. El veredicto se dispara
+                  // solo desde el effect de auto-validación (~350 ms
+                  // después del último pair); ya no hay botón "Check".
                   const totalPairs = currentPracticeExercise.pairs.length;
                   const filled = Object.keys(pendingPairings).length + matchedWords.length;
                   const allFilled = filled >= totalPairs;
                   const flashing = wrongMatchWords.length > 0;
                   if (allFilled && !flashing) {
                     return (
-                      <Pressable
-                        onPress={validateMatchPairings}
-                        style={[
-                          styles.inlineButton,
-                          styles.primaryButton,
-                          styles.practiceFooterButton,
-                          styles.practiceMeaningFooterButton,
-                          isCompactMeaningViewport ? styles.practiceMeaningFooterButtonCompact : null,
-                        ]}
-                      >
-                        <Text style={[styles.inlineButtonText, styles.primaryButtonText, styles.practiceMeaningFooterButtonText]}>Check</Text>
-                      </Pressable>
+                      <Text style={styles.practiceFooterHint}>Checking…</Text>
                     );
                   }
                   return (
@@ -21689,13 +21931,20 @@ const styles = StyleSheet.create({
     borderColor: "#67b5ff",
     backgroundColor: "rgba(103,181,255,0.14)",
   },
+  // Correct/Wrong: dejamos el card oscuro como base y sólo teñimos
+  // sutilmente el fondo + reforzamos el borde con el color de feedback.
+  // El "todo el panel pintado en sólido" se veía como flash de tarjeta
+  // saturada que rompía la jerarquía visual del resto del ejercicio
+  // (sentence, accent bar, etc.). Con la versión tinted el texto sigue
+  // siendo legible en su color original (claro) y la señal verde/rojo
+  // queda clara sin gritar.
   practiceOptionCorrect: {
     borderColor: "#6ee7b7",
-    backgroundColor: "#6ee7b7",
+    backgroundColor: "rgba(110,231,183,0.18)",
   },
   practiceOptionWrong: {
     borderColor: "#fb7185",
-    backgroundColor: "#fb7185",
+    backgroundColor: "rgba(251,113,133,0.18)",
   },
   practiceOptionText: {
     // 13 → 16: bigger option labels match the larger sentence above.
@@ -22072,8 +22321,85 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(245,247,251,0.08)",
   },
   practiceMatchChipCorrect: {
-    borderColor: "#6ee7b7",
-    backgroundColor: "#6ee7b7",
+    // Antes era verde sólido sobre toda la card, lo cual pisaba el
+    // accent bar del color del par y se veía como flash. Ahora sólo
+    // refuerza el borde y deja el fondo dark — el feedback de
+    // "correcto" lo da el ✓ a la derecha y el accent bar lleno.
+    borderColor: "rgba(110,231,183,0.55)",
+    backgroundColor: "rgba(110,231,183,0.10)",
+  },
+  practiceMatchRowWordTextMatched: {
+    // Cuando un par se completa el texto de la palabra se tinta de
+    // verde para que coincida con el ✓ y el borde del chip-meaning.
+    color: "#6ee7b7",
+  },
+  practiceMatchRowBadge: {
+    width: 28,
+    height: 28,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: 8,
+  },
+  practiceMatchRowBadgeCorrect: {
+    backgroundColor: "rgba(110,231,183,0.15)",
+    borderWidth: 1,
+    borderColor: "rgba(110,231,183,0.4)",
+  },
+  practiceMatchRowBadgeWrong: {
+    backgroundColor: "rgba(251,113,133,0.15)",
+    borderWidth: 1,
+    borderColor: "rgba(251,113,133,0.4)",
+  },
+  practiceMatchAllPairedBanner: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "rgba(251,146,60,0.32)",
+    backgroundColor: "rgba(251,146,60,0.10)",
+    marginBottom: 12,
+  },
+  practiceMatchAllPairedIconWrap: {
+    width: 38,
+    height: 38,
+    borderRadius: 12,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(251,146,60,0.18)",
+  },
+  practiceMatchAllPairedTextWrap: {
+    flex: 1,
+  },
+  practiceMatchAllPairedLabel: {
+    color: "#fb923c",
+    fontSize: 11,
+    fontWeight: "900",
+    letterSpacing: 2,
+    textTransform: "uppercase",
+  },
+  practiceMatchAllPairedSubtitle: {
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "800",
+    marginTop: 2,
+  },
+  practiceMatchAllPairedMultiplier: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(251,146,60,0.4)",
+    backgroundColor: "rgba(20,16,36,0.55)",
+  },
+  practiceMatchAllPairedMultiplierText: {
+    color: "#fb923c",
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 0.4,
   },
   practiceMatchChipWrong: {
     // Same red palette as the multiple-choice "wrong" option, so the
@@ -22148,10 +22474,242 @@ const styles = StyleSheet.create({
   },
   practiceResultCard: {
     flex: 1,
-    justifyContent: "center",
+    // space-between distribuye el contenido en bandas (chips arriba,
+    // ring + greeting al medio, stats, actions abajo) en vez de
+    // colapsar todo al centro y dejar la mitad superior e inferior
+    // vacías.
+    justifyContent: "space-between",
     alignItems: "center",
-    gap: 14,
+    paddingHorizontal: 16,
+    paddingTop: 18,
+    paddingBottom: 16,
+    gap: 8,
+  },
+  practiceResultCornerChips: {
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  practiceResultCornerChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
     paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+    backgroundColor: "rgba(255,255,255,0.04)",
+  },
+  practiceResultCornerChipValue: {
+    color: "#ffffff",
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: -0.2,
+  },
+  practiceResultCornerChipLabel: {
+    color: "rgba(226,232,244,0.6)",
+    fontSize: 10,
+    fontWeight: "800",
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    marginLeft: 2,
+  },
+  practiceResultRingWrap: {
+    width: 220,
+    height: 220,
+    alignItems: "center",
+    justifyContent: "center",
+    position: "relative",
+  },
+  practiceResultShineLayer: {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    // Wrap del SVG con el arco luminoso. Al rotar la layer 360° el
+    // arco recorre la circunferencia del anillo, dando la sensación
+    // de que el círculo mismo se ilumina por tramos (no un punto
+    // orbitando).
+  },
+  practiceResultRingCenter: {
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  practiceResultScoreCaption: {
+    color: "rgba(226,232,244,0.55)",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 2.2,
+    textTransform: "uppercase",
+    marginBottom: 4,
+  },
+  practiceResultRingScore: {
+    color: "#ffffff",
+    fontSize: 52,
+    fontWeight: "900",
+    letterSpacing: -1,
+    lineHeight: 54,
+    textAlign: "center",
+  },
+  practiceResultRingScoreNum: {
+    color: "#ffffff",
+  },
+  practiceResultRingScoreSep: {
+    color: "rgba(226,232,244,0.4)",
+  },
+  practiceResultMessage: {
+    alignItems: "center",
+    gap: 4,
+    paddingHorizontal: 8,
+  },
+  practiceResultGreeting: {
+    color: "#6ee7b7",
+    fontSize: 12,
+    fontWeight: "800",
+    letterSpacing: 2.2,
+    textTransform: "uppercase",
+  },
+  practiceResultHeadline: {
+    color: "#ffffff",
+    fontSize: 22,
+    fontWeight: "900",
+    lineHeight: 28,
+    textAlign: "center",
+    letterSpacing: -0.4,
+    marginTop: 4,
+  },
+  practiceResultSubtext: {
+    color: "rgba(226,232,244,0.62)",
+    fontSize: 13,
+    lineHeight: 18,
+    textAlign: "center",
+    marginTop: 2,
+  },
+  practiceResultStatsRow: {
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: 10,
+  },
+  practiceResultStatCard: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+    backgroundColor: "rgba(255,255,255,0.04)",
+    paddingHorizontal: 14,
+    paddingVertical: 14,
+  },
+  practiceResultStatCardText: {
+    flexShrink: 1,
+  },
+  practiceResultStatValueLarge: {
+    color: "#ffffff",
+    fontSize: 20,
+    fontWeight: "900",
+    letterSpacing: -0.4,
+    lineHeight: 24,
+  },
+  practiceResultStatLabelLarge: {
+    color: "rgba(226,232,244,0.6)",
+    fontSize: 11,
+    fontWeight: "800",
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    marginTop: 2,
+  },
+  practiceResultWhatsNext: {
+    width: "100%",
+    gap: 10,
+  },
+  practiceResultWhatsNextLabel: {
+    color: "rgba(226,232,244,0.5)",
+    fontSize: 11,
+    fontWeight: "800",
+    textTransform: "uppercase",
+    letterSpacing: 2,
+  },
+  practiceResultWhatsNextRow: {
+    flexDirection: "row",
+    gap: 10,
+  },
+  practiceWhatsNextCard: {
+    flex: 1,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.08)",
+    backgroundColor: "rgba(255,255,255,0.04)",
+    paddingHorizontal: 12,
+    paddingVertical: 14,
+    gap: 6,
+  },
+  practiceWhatsNextCardPrimary: {
+    backgroundColor: "#facc15",
+    borderColor: "#facc15",
+  },
+  practiceWhatsNextIconWrap: {
+    width: 32,
+    height: 32,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.06)",
+    marginBottom: 4,
+  },
+  practiceWhatsNextIconWrapPrimary: {
+    backgroundColor: "rgba(10,20,36,0.18)",
+  },
+  practiceWhatsNextIconWrapDanger: {
+    backgroundColor: "rgba(251,113,133,0.12)",
+  },
+  practiceWhatsNextIconWrapNeutral: {
+    backgroundColor: "rgba(184,201,223,0.1)",
+  },
+  practiceWhatsNextTitle: {
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "900",
+    letterSpacing: -0.2,
+  },
+  practiceWhatsNextTitlePrimary: {
+    color: "#0a1424",
+  },
+  practiceWhatsNextSubtitle: {
+    color: "rgba(226,232,244,0.6)",
+    fontSize: 11,
+    fontWeight: "700",
+  },
+  practiceWhatsNextSubtitlePrimary: {
+    color: "rgba(10,20,36,0.7)",
+  },
+  practiceResultRecoveryButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    paddingVertical: 10,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "rgba(250,204,21,0.32)",
+    backgroundColor: "rgba(250,204,21,0.08)",
+  },
+  practiceResultRecoveryButtonText: {
+    color: "#facc15",
+    fontSize: 12,
+    fontWeight: "800",
+    letterSpacing: 0.6,
+    textTransform: "uppercase",
+  },
+  practiceResultCheckpointStatus: {
+    color: "rgba(226,232,244,0.55)",
+    fontSize: 12,
+    textAlign: "center",
+    marginTop: 4,
   },
   practiceLaunchLoaderCard: {
     flex: 1,
@@ -22185,68 +22743,11 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
     textAlign: "center",
   },
-  practiceResultScore: {
-    color: "#ffffff",
-    fontSize: 54,
-    fontWeight: "900",
-    lineHeight: 58,
-    textAlign: "center",
-  },
-  practiceResultText: {
-    color: "rgba(226,232,244,0.82)",
-    fontSize: 16,
-    lineHeight: 23,
-    textAlign: "center",
-  },
-  practiceResultStatsRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    gap: 10,
-    marginTop: 14,
-  },
-  practiceResultStatPill: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-    borderRadius: 999,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.08)",
-    backgroundColor: "rgba(255,255,255,0.04)",
-    paddingHorizontal: 14,
-    paddingVertical: 8,
-  },
-  practiceResultStatValue: {
-    color: "#ffffff",
-    fontSize: 15,
-    fontWeight: "900",
-    letterSpacing: -0.2,
-  },
-  practiceResultStatLabel: {
-    color: "rgba(226,232,244,0.62)",
-    fontSize: 11,
-    fontWeight: "800",
-    textTransform: "uppercase",
-    letterSpacing: 0.8,
-    marginLeft: 2,
-  },
-  practiceResultStatusText: {
-    color: "#b8c9df",
-    fontSize: 13,
-    lineHeight: 19,
-    textAlign: "center",
-  },
-  practiceResultActions: {
-    width: "100%",
-    flexDirection: "column",
-    alignItems: "center",
-    gap: 10,
-    marginTop: 6,
-  },
-  practiceResultActionButton: {
-    minWidth: 220,
-    alignSelf: "center",
-  },
+  // Estilos legacy retirados (practiceResultScore / Text / StatsRow /
+  // StatPill / StatValue / StatLabel / StatusText / Actions /
+  // ActionButton). Reemplazados por el rediseño con anillo + chips
+  // arriba + WHAT'S NEXT abajo. Si vuelves a necesitarlos, ver git
+  // history en este archivo.
   createFeatureGrid: {
     gap: 10,
   },
