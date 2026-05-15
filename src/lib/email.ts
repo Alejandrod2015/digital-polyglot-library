@@ -29,9 +29,13 @@ export async function sendBetaConfirmationEmail({
     "Thanks for applying to the Digital Polyglot beta.",
     "",
     `We received your application (target language: ${targetLanguage}).`,
-    "We'll review it and send you a TestFlight invite when a spot opens.",
+    "Most applicants hear back within 1-2 weeks once a TestFlight spot opens.",
     "",
-    "If you have questions, reply to this email or write to support@digitalpolyglot.com.",
+    "Once you're in, you can send feedback two ways:",
+    "  1) The Support button in the app's Settings screen.",
+    "  2) TestFlight's built-in feedback (shake your phone or use the screenshot button).",
+    "",
+    "If you have questions before then, reply to this email or write to support@digitalpolyglot.com.",
     "",
     "— Digital Polyglot",
   ].join("\n");
@@ -66,8 +70,17 @@ export async function sendBetaConfirmationEmail({
                     Thanks for applying to the Digital Polyglot beta. We received your application for <strong>${targetLanguage}</strong>.
                   </p>
                   <p style="margin:0 0 16px;color:#374151;">
-                    We'll review it and send you a TestFlight invite when a spot opens. You don't need to do anything in the meantime.
+                    Most applicants hear back within 1-2 weeks once a TestFlight spot opens. You don't need to do anything in the meantime.
                   </p>
+
+                  <h2 style="margin:24px 0 8px;font-size:15px;color:#111827;">Once you're in</h2>
+                  <p style="margin:0 0 12px;color:#374151;font-size:14px;">
+                    Your feedback matters more than anything during the beta. You can send it two ways:
+                  </p>
+                  <ul style="margin:0 0 16px;padding-left:20px;color:#374151;font-size:14px;line-height:1.7;">
+                    <li>The <strong>Support</strong> button inside the app's Settings screen.</li>
+                    <li>TestFlight's built-in feedback (screenshot + comment).</li>
+                  </ul>
 
                   <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
 
@@ -82,7 +95,7 @@ export async function sendBetaConfirmationEmail({
             <tr>
               <td style="background:#F3F4F6;padding:16px 24px;">
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#6B7280;font-size:12px;text-align:center;">
-                  © ${new Date().getFullYear()} Digital Polyglot • reader.digitalpolyglot.com
+                  © ${new Date().getFullYear()} Digital Polyglot • digitalpolyglot.com
                 </div>
               </td>
             </tr>
@@ -208,7 +221,7 @@ export async function sendClaimEmail({
             <tr>
               <td style="background:#F3F4F6;padding:16px 24px;">
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#6B7280;font-size:12px;text-align:center;">
-                  © ${new Date().getFullYear()} Digital Polyglot • reader.digitalpolyglot.com
+                  © ${new Date().getFullYear()} Digital Polyglot • digitalpolyglot.com
                 </div>
               </td>
             </tr>
