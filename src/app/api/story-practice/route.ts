@@ -10,6 +10,29 @@ import { getJourneyStoryBySlug } from "@/lib/journeyStories";
 import { getCreateStoryMirrorBySlug } from "@/lib/userStories";
 import { buildPracticeItemsFromStory, parseLooseVocab } from "@/lib/storyPracticeItems";
 import { mergePracticeItemsByWord, type PracticeFavoriteItem } from "@/lib/practiceExercises";
+import { coerceAudioWordTimings } from "@/lib/audioWordTimings";
+import type { AudioWordTimingsPayload } from "@digital-polyglot/domain";
+
+/**
+ * Aeneas word-level alignment for a story. Tries JourneyStory first
+ * (Studio-published curriculum), then `CatalogStoryAudioTimings` (the
+ * sidecar table that holds timings for static catalog stories).
+ * Returns null when the story has no alignment yet — practice items
+ * still build, but their audio falls back to HQ TTS on mobile.
+ */
+async function getAudioWordTimingsForSlug(slug: string): Promise<AudioWordTimingsPayload | null> {
+  const journeyRow = await prisma.journeyStory.findFirst({
+    where: { slug, status: "published" },
+    select: { audioWordTimings: true },
+  });
+  const journey = coerceAudioWordTimings(journeyRow?.audioWordTimings ?? null);
+  if (journey) return journey;
+  const catalogRow = await prisma.catalogStoryAudioTimings.findUnique({
+    where: { slug },
+    select: { audioWordTimings: true },
+  });
+  return coerceAudioWordTimings(catalogRow?.audioWordTimings ?? null);
+}
 
 export async function GET(request: NextRequest) {
   const mobileSession = getMobileSessionFromRequest(request);
@@ -37,6 +60,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Story not found" }, { status: 404 });
     }
 
+    const audioWordTimings = await getAudioWordTimingsForSlug(story.slug);
     storyItems = buildPracticeItemsFromStory({
       title: story.title,
       slug: story.slug,
@@ -45,6 +69,7 @@ export async function GET(request: NextRequest) {
       sourcePath: `/books/${book.slug}/${story.slug}`,
       vocab: story.vocab ?? [],
       practiceSource: "curriculum",
+      audioWordTimings,
     });
   } else {
     // Try Sanity standalones first, then Prisma journey stories (Studio-created),
@@ -67,6 +92,7 @@ export async function GET(request: NextRequest) {
       const sourcePath = isSanityStandalone
         ? `/stories/${resolvedStandalone.slug}?source=standalone`
         : `/stories/${resolvedStandalone.slug}`;
+      const audioWordTimings = await getAudioWordTimingsForSlug(resolvedStandalone.slug);
       storyItems = buildPracticeItemsFromStory({
         title: resolvedStandalone.title,
         slug: resolvedStandalone.slug,
@@ -76,6 +102,7 @@ export async function GET(request: NextRequest) {
         vocab: parseLooseVocab(resolvedStandalone.vocabRaw),
         practiceSource: "curriculum",
         voiceId: resolvedStandalone.voiceId,
+        audioWordTimings,
       });
     } else {
       const mirror = await getCreateStoryMirrorBySlug(storySlug);
@@ -108,6 +135,7 @@ export async function GET(request: NextRequest) {
       }
 
       const resolvedSlug = mirror?.slug ?? userStory?.slug ?? storySlug;
+      const audioWordTimings = await getAudioWordTimingsForSlug(resolvedSlug);
       storyItems = buildPracticeItemsFromStory({
         title: mirror?.title ?? userStory?.title ?? "Untitled story",
         slug: resolvedSlug,
@@ -116,6 +144,7 @@ export async function GET(request: NextRequest) {
         sourcePath: `/stories/${resolvedSlug}?source=polyglot`,
         vocab: parseLooseVocab(mirror?.vocabRaw ?? userStory?.vocab ?? []),
         practiceSource: "curriculum",
+        audioWordTimings,
       });
     }
   }

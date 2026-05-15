@@ -1,6 +1,8 @@
 import type { VocabItem } from "@/types/books";
+import type { AudioWordTimingsPayload } from "@digital-polyglot/domain";
 import type { PracticeFavoriteItem } from "@/lib/practiceExercises";
 import { normalizeVocabType } from "@/lib/vocabTypes";
+import { computePracticeAudioRanges } from "@/lib/practiceAudioRanges";
 
 type LooseVocabItem = {
   word: string;
@@ -81,6 +83,11 @@ export function buildPracticeItemsFromStory(params: {
   /** Narration voiceId; propagated so practice TTS can render in the
    *  same voice the user heard reading the story. */
   voiceId?: string | null;
+  /** Story's aeneas word-level alignment. When provided, each vocab
+   *  item gets exact audio start/end ranges, eliminating the need for
+   *  fuzzy segment matching on mobile. Pass null for legacy stories
+   *  without alignment (audio falls back to HQ TTS at runtime). */
+  audioWordTimings?: AudioWordTimingsPayload | null;
 }): PracticeFavoriteItem[] {
   const storyTitle = normalizeText(params.title);
   const storySlug = normalizeText(params.slug);
@@ -89,6 +96,7 @@ export function buildPracticeItemsFromStory(params: {
   const sourcePath = normalizeText(params.sourcePath);
   const practiceSource = params.practiceSource ?? "curriculum";
   const voiceId = params.voiceId ?? null;
+  const timings = params.audioWordTimings ?? null;
 
   if (!storySlug || !sourcePath) return [];
 
@@ -103,6 +111,14 @@ export function buildPracticeItemsFromStory(params: {
       normalizeText("note" in item && typeof item.note === "string" ? item.note : "") ||
       getContextSentence(cleanText, word) ||
       undefined;
+
+    const ranges = timings
+      ? computePracticeAudioRanges({
+          targetWord: word,
+          timings,
+          preferredContext: exampleSentence ?? null,
+        })
+      : null;
 
     items.push({
       word,
@@ -119,6 +135,10 @@ export function buildPracticeItemsFromStory(params: {
       language,
       practiceSource,
       voiceId,
+      audioWordStartSec: ranges?.audioWordStartSec ?? null,
+      audioWordEndSec: ranges?.audioWordEndSec ?? null,
+      audioSentenceStartSec: ranges?.audioSentenceStartSec ?? null,
+      audioSentenceEndSec: ranges?.audioSentenceEndSec ?? null,
     });
   }
 

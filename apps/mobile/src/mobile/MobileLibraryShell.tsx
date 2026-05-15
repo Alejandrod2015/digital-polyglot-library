@@ -2209,6 +2209,13 @@ export function MobileLibraryShell(args: {
   const practiceCompletionTrackedRef = useRef(false);
   const practiceClipSoundRef = useRef<Audio.Sound | null>(null);
   const practiceHqSoundRef = useRef<Audio.Sound | null>(null);
+  // Pre-creado para context-mode: el Sound se monta en background con
+  // `shouldPlay: false` mientras el usuario lee la oración. Al revelar
+  // la respuesta llamamos `replayAsync()` y el audio sale en ~50 ms en
+  // vez de los 200-500 ms que tarda `createAsync` desde cero. Único
+  // sound preloaded por vez (el ejercicio current); se descarga al
+  // cambiar de ejercicio.
+  const preloadedHqSoundRef = useRef<{ exId: string; sound: Audio.Sound } | null>(null);
   const favoriteHqSoundRef = useRef<Audio.Sound | null>(null);
   // Tracks the id del último ejercicio cuyo autoplay ya disparó. Se
   // resetea en openPracticeMode para que la primera reproducción de
@@ -2986,13 +2993,19 @@ export function MobileLibraryShell(args: {
   // them what they need to finish first instead of the tap silently
   // doing nothing. Auto-dismissed by an effect below.
   const [lockedStoryHint, setLockedStoryHint] = useState<string | null>(null);
-  // No-op del debug trace. Lo dejamos cableado (call-sites llaman
-  // `showDebug("...")`) por si vuelve a hacer falta — la última caza
-  // fue para el bug de vocab offline. Para re-activar: hacer que esta
-  // función acumule en state y renderizar el overlay (ver historial).
-  const showDebug = useCallback((_text: string) => {
-    // intentionally empty
-  }, []);
+  // Debug trace overlay. Inactivo en producción. Para reactivar al
+  // depurar audio o algún flujo: poner DEBUG_TRACE_ON=true y rebuildear.
+  // Los call-sites llaman `showDebug("…")` sin condicional; cuando el
+  // flag está off, la función es no-op (no acumula, no renderiza).
+  const DEBUG_TRACE_ON = false;
+  const [debugTrace, setDebugTrace] = useState<string[]>([]);
+  const showDebug = useCallback((text: string) => {
+    if (!DEBUG_TRACE_ON) return;
+    setDebugTrace((prev) => {
+      const next = [...prev, `${new Date().toISOString().slice(14, 23)} ${text}`];
+      return next.slice(-12);
+    });
+  }, [DEBUG_TRACE_ON]);
   const lockedHintAnim = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     if (!lockedStoryHint) {
@@ -6260,6 +6273,12 @@ export function MobileLibraryShell(args: {
     lastContextRevealAudioIdRef.current = null;
     practicePrefetchSeenRef.current.clear();
     practiceAudioFilesRef.current.clear();
+    // Liberar el Sound pre-creado de la sesión anterior, si quedó vivo.
+    const stalePreload = preloadedHqSoundRef.current;
+    if (stalePreload) {
+      preloadedHqSoundRef.current = null;
+      void stalePreload.sound.unloadAsync().catch(() => undefined);
+    }
     setContextAudioFinishedFor(null);
     setLoadingPracticeAudioId(null);
     // Parar cualquier audio del reader que pueda estar sonando si
@@ -6896,11 +6915,17 @@ export function MobileLibraryShell(args: {
         const id = setTimeout(() => advancePractice(), 500);
         return () => clearTimeout(id);
       }
-      // Audio todavía pendiente. Esperamos hasta 6 s como red de
-      // seguridad (cubre cold-starts de Modal). Cuando el callback
-      // `didJustFinish` publique en `contextAudioFinishedFor`, este
-      // effect re-corre y entra a la rama de arriba.
-      const cap = setTimeout(() => advancePractice(), 6000);
+      // Audio todavía pendiente. Cap fijo de 10 s para cubrir
+      // cold-starts de Modal + Audio.Sound.createAsync lento +
+      // oraciones largas a tempo 0.75. Antes el cap variaba entre
+      // 4 s y 10 s según `loadingPracticeAudioId` / `playingHqPracticeClipId`,
+      // pero esos flags se setean DENTRO de `playPracticeContextClipHqOnly`
+      // después de varios `await`. En cache-hit con createAsync lento,
+      // el cap de 4 s se disparaba antes de que el sound arrancara y
+      // `stillCurrent()` abortaba el audio en silencio. Cuando el
+      // callback `didJustFinish` publique en `contextAudioFinishedFor`,
+      // este effect re-corre y entra a la rama de arriba.
+      const cap = setTimeout(() => advancePractice(), 10000);
       return () => clearTimeout(cap);
     }
 
@@ -6971,6 +6996,14 @@ export function MobileLibraryShell(args: {
   // de la palabra en su contexto natural. Esto reemplaza el autoplay
   // que tenían los otros modos. El ref evita re-disparos si el effect
   // re-corre mientras revealed sigue true.
+  //
+  // Disparo inmediato (sin setTimeout): el usuario espera oír el
+  // audio "justo después de validar". El SFX de correcto/incorrecto
+  // (~300 ms) se layerea con el inicio de la voz; iOS audio mixer lo
+  // maneja sin pisarlos. Antes había un delay de 450 ms para que el
+  // SFX terminara primero, pero sumado a los ~200-500 ms de
+  // `Audio.Sound.createAsync` y al posible cold-start de Modal, el
+  // audio quedaba sonando sobre el siguiente ejercicio.
   useEffect(() => {
     if (!activePracticeMode) return;
     if (!practiceRevealed) return;
@@ -6983,13 +7016,16 @@ export function MobileLibraryShell(args: {
     const exId = currentPracticeExercise.id;
     if (lastContextRevealAudioIdRef.current === exId) return;
     lastContextRevealAudioIdRef.current = exId;
-    // Pequeño delay para que el SFX de correct/wrong se escuche
-    // primero (es corto, ~400 ms) y el audio de la oración no se
-    // pise con él.
-    const timer = setTimeout(() => {
-      void playPracticeContextClipHqOnly();
-    }, 450);
-    return () => clearTimeout(timer);
+    showDebug("5c reveal: story path");
+    // Usar la pista narrada del cuento (mismo audio, misma voz que el
+    // usuario escuchó leyendo) en vez de una re-generación TTS. La
+    // función `playPracticeContextClipStoryOnly` busca el segmento de
+    // aeneas que matchea con `clip` y reproduce la franja exacta del
+    // mp3. Si no encuentra segmento, cae internamente a HQ TTS y, si
+    // ese también falla, a expo-speech. Cubre todos los idiomas y
+    // todas las voces (incluidas las chatterbox que el endpoint de
+    // /api/practice/sentence-tts no soporta).
+    void playPracticeContextClipStoryOnly();
   }, [
     activePracticeMode,
     practiceRevealed,
@@ -7024,6 +7060,7 @@ export function MobileLibraryShell(args: {
       const key = `${lang}::${voice ?? ""}::${sentence}`;
       if (practicePrefetchSeenRef.current.has(key)) return;
       practicePrefetchSeenRef.current.add(key);
+      showDebug(`queueWarm start ${JSON.stringify({ lang, voice, sentence: sentence.slice(0, 40) }).slice(0,140)}`);
       // Fire-and-forget: obtenemos la URL del endpoint y bajamos el
       // MP3 a disco. El playback path después chequea
       // `practiceAudioFilesRef` y carga `file://` directo, evitando
@@ -7039,18 +7076,26 @@ export function MobileLibraryShell(args: {
             body: { sentence, language: lang, voiceId: voice },
           });
           if (!resp?.url) {
+            showDebug(`queueWarm: endpoint returned no url ${JSON.stringify({ key }).slice(0,140)}`);
             practicePrefetchSeenRef.current.delete(key);
             return;
           }
+          showDebug(`queueWarm: got url ${JSON.stringify({ key, url: resp.url.slice(0, 80) }).slice(0,140)}`);
           try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
-          const safeName = `${lang}-${(voice ?? "v")}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+          const voiceSafe = (voice ?? "v").replace(/[^a-z0-9]+/gi, "_");
+          const safeName = `${lang}-${voiceSafe}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
           const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
           const info = await FileSystem.getInfoAsync(fileUri);
           if (!info.exists) {
+            showDebug(`queueWarm: downloading ${JSON.stringify({ key }).slice(0,140)}`);
             await FileSystem.downloadAsync(resp.url, fileUri);
+          } else {
+            showDebug(`queueWarm: file already on disk ${JSON.stringify({ key }).slice(0,140)}`);
           }
           practiceAudioFilesRef.current.set(key, fileUri);
-        } catch {
+          showDebug(`queueWarm: cached uri set ${JSON.stringify({ key, mapSize: practiceAudioFilesRef.current.size }).slice(0,140)}`);
+        } catch (err) {
+          showDebug(`queueWarm: caught error ${JSON.stringify({ key, err: err instanceof Error ? err.message : String(err) }).slice(0,140)}`);
           practicePrefetchSeenRef.current.delete(key);
         }
       })();
@@ -7082,6 +7127,104 @@ export function MobileLibraryShell(args: {
     practiceIndex,
     sessionToken,
   ]);
+
+  // [DEBUG LOG TAG] todos los logs de esta sección llevan "[ctx-audio]"
+  //
+  // (5d) Pre-cargar el Audio.Sound del ejercicio context actual mientras
+  // el usuario lee la oración. `Audio.Sound.createAsync({ shouldPlay: false })`
+  // monta el decoder, configura el audio session y deja el sound listo
+  // para `replayAsync()` en <50 ms al revelar la respuesta. Sin esto, la
+  // misma llamada con `shouldPlay: true` tarda 200-500 ms desde cero
+  // (parseo + decoder + session) y el usuario percibe el lag tras
+  // pulsar la respuesta. Espera a que `queueWarm` deposite el MP3 en
+  // disco antes de armar el Sound; si no llega en 5 s, abandona y el
+  // reveal flow cae al path lento de `playPracticeContextClipHqOnly`.
+  useEffect(() => {
+    if (!activePracticeMode) return;
+    if (practiceComplete) return;
+    if (!currentPracticeExercise) return;
+    if (currentPracticeExercise.kind !== "multiple-choice") return;
+    if (currentPracticeExercise.mode !== "context") return;
+    const clip = currentPracticeExercise.audioClip;
+    if (!clip?.sentence) {
+      showDebug(`5d skip: no clip.sentence ${JSON.stringify({ exId: currentPracticeExercise.id, hasClip: !!clip }).slice(0,140)}`);
+      return;
+    }
+    const exId = currentPracticeExercise.id;
+    showDebug(`5d enter ${JSON.stringify({ exId, sentence: clip.sentence.slice(0, 40), lang: clip.language, voiceId: clip.voiceId }).slice(0,140)}`);
+
+    // Ya hay un preload para este exercise → nada que hacer.
+    if (preloadedHqSoundRef.current?.exId === exId) {
+      showDebug(`5d already preloaded ${JSON.stringify({ exId }).slice(0,140)}`);
+      return;
+    }
+
+    let cancelled = false;
+    void (async () => {
+      // Cambio de ejercicio: descargar el preload anterior.
+      const prev = preloadedHqSoundRef.current;
+      if (prev) {
+        showDebug(`5d unloading prev preload ${JSON.stringify({ prevExId: prev.exId }).slice(0,140)}`);
+        try { await prev.sound.unloadAsync(); } catch { /* ignore */ }
+        preloadedHqSoundRef.current = null;
+      }
+      if (cancelled) return;
+
+      const lang = clip.language ?? "italian";
+      const voiceId = clip.voiceId ?? undefined;
+      const cacheKey = `${lang}::${voiceId ?? ""}::${clip.sentence}`;
+
+      // queueWarm baja el MP3 a disco en background; el archivo puede no
+      // estar listo en este tick. Poll cada 100 ms hasta 5 s.
+      let cachedUri: string | undefined;
+      for (let i = 0; i < 50; i += 1) {
+        cachedUri = practiceAudioFilesRef.current.get(cacheKey);
+        if (cachedUri || cancelled) break;
+        if (i === 0) showDebug(`5d polling cache ${JSON.stringify({ cacheKey }).slice(0,140)}`);
+        await new Promise<void>((resolve) => setTimeout(resolve, 100));
+      }
+      if (cancelled) { showDebug("5d cancelled during poll"); return; }
+      if (!cachedUri) {
+        showDebug(`5d gave up: queueWarm never cached ${JSON.stringify({ cacheKey, mapSize: practiceAudioFilesRef.current.size }).slice(0,140)}`);
+        return;
+      }
+      showDebug(`5d cached uri ready ${JSON.stringify({ cachedUri: cachedUri.slice(0, 80), elapsed_ms: "see prev log" }).slice(0,140)}`);
+
+      try {
+        showDebug("5d setAudioMode start");
+        await Audio.setAudioModeAsync({
+          playsInSilentModeIOS: true,
+          allowsRecordingIOS: false,
+          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        });
+        if (cancelled) return;
+        showDebug("5d createAsync start");
+        const { sound } = await Audio.Sound.createAsync(
+          { uri: cachedUri },
+          { shouldPlay: false, rate: 0.75, shouldCorrectPitch: true },
+          (status) => {
+            if ("didJustFinish" in status && status.didJustFinish) {
+              showDebug(`sound didJustFinish ${JSON.stringify({ exId }).slice(0,140)}`);
+              void stopPracticeHqClip();
+              setContextAudioFinishedFor(exId);
+            }
+          }
+        );
+        showDebug(`5d createAsync done ${JSON.stringify({ exId }).slice(0,140)}`);
+        if (cancelled) {
+          showDebug("5d cancelled after create, unloading");
+          try { await sound.unloadAsync(); } catch { /* ignore */ }
+          return;
+        }
+        preloadedHqSoundRef.current = { exId, sound };
+        showDebug(`5d preload READY ${JSON.stringify({ exId }).slice(0,140)}`);
+      } catch (err) {
+        showDebug(`5d preload Sound failed ${JSON.stringify(err).slice(0,140)}`);
+      }
+    })();
+
+    return () => { cancelled = true; };
+  }, [activePracticeMode, practiceComplete, currentPracticeExercise]);
 
   function choosePracticeOption(option: string) {
     if (practiceRevealed || practiceComplete) return;
@@ -7795,13 +7938,36 @@ export function MobileLibraryShell(args: {
       return;
     }
     const storyAudio = await ensurePracticeClipStoryAudio(clip);
-    const segment = findSegmentForClip(storyAudio, clip);
+    let segment = findSegmentForClip(storyAudio, clip);
+    // Server-side pre-computed timings from aeneas word alignment win
+    // over the fuzzy heuristic. When `clip.audioSentenceStartSec/EndSec`
+    // are set, synthesize a segment with those exact boundaries — same
+    // playback code path, just with deterministic ranges instead of
+    // word-token guessing.
+    const explicitStart = clip.audioSentenceStartSec;
+    const explicitEnd = clip.audioSentenceEndSec;
+    if (
+      typeof explicitStart === "number" &&
+      typeof explicitEnd === "number" &&
+      explicitEnd > explicitStart
+    ) {
+      segment = {
+        id: segment?.id ?? "inline-range",
+        text: clip.sentence,
+        normalizedText: segment?.normalizedText ?? clip.sentence,
+        startSec: explicitStart,
+        endSec: explicitEnd,
+        index: segment?.index ?? 0,
+        ...(segment?.clipUrl ? { clipUrl: segment.clipUrl } : {}),
+      } as AudioSegment;
+    }
     const baseAudioUrl = resolvePracticeAudioUri(storyAudio?.audioUrl);
     const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
     const audioUrl = segmentClipUrl ?? baseAudioUrl;
     console.log("[mobile practice] Story resolution", {
       hasStoryAudio: !!storyAudio,
       hasSegment: !!segment,
+      explicitRange: typeof explicitStart === "number" ? `${explicitStart}-${explicitEnd}` : null,
       hasBaseAudioUrl: !!baseAudioUrl,
       hasSegmentClipUrl: !!segmentClipUrl,
       finalUrl: audioUrl ? audioUrl.slice(0, 80) : null,
@@ -7868,14 +8034,15 @@ export function MobileLibraryShell(args: {
       // cayó a expo-speech arriba). Mantenemos `hasSegmentRange` por si en
       // el futuro hay clipUrl directo y queremos diferenciar.
       const hasDirectClip = Boolean(segmentClipUrl);
+      const segmentNonNull = segment as AudioSegment;
       const hasSegmentRange = !hasDirectClip && segment != null;
       const rawStartSec = hasDirectClip
         ? 0
         : hasSegmentRange
-          ? Math.max(0, segment.startSec - clipStartPaddingForSegment(segment))
+          ? Math.max(0, segmentNonNull.startSec - clipStartPaddingForSegment(segmentNonNull))
           : 0;
       const rawEndSec = hasSegmentRange
-        ? Math.max(rawStartSec + 0.2, segment.endSec - clipEndTrimForSegment(segment))
+        ? Math.max(rawStartSec + 0.2, segmentNonNull.endSec - clipEndTrimForSegment(segmentNonNull))
         : Number.NaN;
       // Set stopAt BEFORE createAsync. createAsync starts playback as soon
       // as it resolves, and its status callback may fire before the next
@@ -7979,7 +8146,8 @@ export function MobileLibraryShell(args: {
           return;
         }
         try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
-        const safeName = `${lang}-${voiceId ?? "v"}-${word.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+        const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
+        const safeName = `${lang}-${voiceSafe}-${word.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
         const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
         const info = await FileSystem.getInfoAsync(fileUri);
         if (!info.exists) {
@@ -8040,10 +8208,12 @@ export function MobileLibraryShell(args: {
   }
 
   async function playPracticeContextClipHqOnly() {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    showDebug(`playHqOnly entry exId=${currentPracticeExercise?.id?.slice(-6)} kind=${currentPracticeExercise?.kind}`);
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") { showDebug("playHqOnly skip: not multiple-choice"); return; }
     const clip = currentPracticeExercise.audioClip;
-    if (!clip?.sentence) return;
+    if (!clip?.sentence) { showDebug("playHqOnly skip: no clip.sentence"); return; }
     if (playingHqPracticeClipId === currentPracticeExercise.id) {
+      showDebug("playHqOnly toggle stop");
       await stopPracticeHqClip();
       return;
     }
@@ -8079,7 +8249,8 @@ export function MobileLibraryShell(args: {
           return;
         }
         try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
-        const safeName = `${lang}-${voiceId ?? "v"}-${clip.sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+        const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
+        const safeName = `${lang}-${voiceSafe}-${clip.sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
         const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
         const info = await FileSystem.getInfoAsync(fileUri);
         if (!info.exists) {
@@ -16005,6 +16176,15 @@ export function MobileLibraryShell(args: {
 
   return (
     <View style={styles.shell}>
+      {/* DEBUG OVERLAY (temporal): traza de eventos audio. Quitar tras
+          encontrar el bug — DEBUG_TRACE_ON=false desactiva. */}
+      {debugTrace.length > 0 ? (
+        <View style={{ position: "absolute", top: 60, right: 4, zIndex: 9999, backgroundColor: "rgba(0,0,0,0.85)", padding: 4, maxWidth: 280, borderRadius: 4 }} pointerEvents="none">
+          {debugTrace.map((line, idx) => (
+            <Text key={idx} style={{ color: "#9fe8ff", fontSize: 9, fontFamily: "Menlo" }} numberOfLines={2}>{line}</Text>
+          ))}
+        </View>
+      ) : null}
       {/* Subtle "you're offline" banner. Only appears once we've actually
           tried to hydrate and every request failed — so it does not flash
           during the initial in-flight window. Tappable to retry. */}

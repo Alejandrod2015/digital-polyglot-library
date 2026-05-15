@@ -21,6 +21,15 @@ export type PracticeFavoriteItem = {
   practiceSource?: "curriculum" | "user_saved" | "both" | null;
   /** Voice the source story was narrated with, when known. */
   voiceId?: string | null;
+  /** Pre-computed exact audio ranges from the source story's aeneas
+   *  word timings. When non-null, the mobile player skips fuzzy segment
+   *  matching and plays the exact range from the story mp3. Null when
+   *  the story has no aeneas alignment or the word doesn't appear as a
+   *  literal token in the story plain text → fall back to HQ TTS. */
+  audioWordStartSec?: number | null;
+  audioWordEndSec?: number | null;
+  audioSentenceStartSec?: number | null;
+  audioSentenceEndSec?: number | null;
 };
 
 export type PracticeMode =
@@ -96,6 +105,12 @@ export type PracticeAudioClip = {
    *  practice TTS endpoint so the audio clip uses the same voice as
    *  the reader (when it's a Piper voice the Modal app supports). */
   voiceId?: string | null;
+  /** Pre-computed audio ranges. Mobile plays this exact range from the
+   *  story mp3 when set, bypassing fuzzy segment matching. */
+  audioWordStartSec?: number | null;
+  audioWordEndSec?: number | null;
+  audioSentenceStartSec?: number | null;
+  audioSentenceEndSec?: number | null;
 };
 
 export type PracticeExercise =
@@ -422,6 +437,13 @@ function buildAudioClip(item: PracticeFavoriteItem, sentence: string): PracticeA
     targetWord: normalizeText(item.word) || null,
     segmentId: getSegmentIdFromSourcePath(item.sourcePath),
     voiceId: item.voiceId ?? null,
+    // Forward server-side pre-computed timings so the mobile player
+    // can skip fuzzy segment matching. Null on items where the source
+    // story has no aeneas alignment.
+    audioWordStartSec: item.audioWordStartSec ?? null,
+    audioWordEndSec: item.audioWordEndSec ?? null,
+    audioSentenceStartSec: item.audioSentenceStartSec ?? null,
+    audioSentenceEndSec: item.audioSentenceEndSec ?? null,
   };
 }
 
