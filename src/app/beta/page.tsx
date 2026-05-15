@@ -24,36 +24,35 @@ const VALUE_BULLETS = [
   {
     icon: (
       <svg {...ICON_PROPS} aria-hidden>
-        <path d="M12 3l1.9 4.6L19 9l-4 3.4L16.2 18 12 15.5 7.8 18 9 12.4 5 9l5.1-1.4L12 3z" />
-      </svg>
-    ),
-    title: "Early access",
-    body: "Be among the first to use the iOS app, weeks before public launch.",
-  },
-  {
-    icon: (
-      <svg {...ICON_PROPS} aria-hidden>
-        <path d="M12 19l7-7 3 3-7 7-3-3z" />
-        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-        <path d="M2 2l7.586 7.586" />
-        <circle cx="11" cy="11" r="2" />
-      </svg>
-    ),
-    title: "Shape the product",
-    body: "Your feedback directly informs what we build for heritage and serious learners.",
-  },
-  {
-    icon: (
-      <svg {...ICON_PROPS} aria-hidden>
         <path d="M3 18v-13a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v13" />
         <path d="M13 18v-13a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v13" />
         <path d="M3 18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2" />
-        <path d="M7 8h0" />
-        <path d="M17 8h0" />
       </svg>
     ),
-    title: "Real content, real audio",
-    body: "Stories and audiobooks crafted for learners who care about cultural depth.",
+    title: "Stories worth finishing",
+    body: "Real plots, real culture, real language. Not drills, not flashcards.",
+  },
+  {
+    icon: (
+      <svg {...ICON_PROPS} aria-hidden>
+        <path d="M3 12v3a9 9 0 0 0 18 0v-3" />
+        <path d="M3 12a9 9 0 0 1 18 0" />
+        <rect x="3" y="12" width="4" height="7" rx="1" />
+        <rect x="17" y="12" width="4" height="7" rx="1" />
+      </svg>
+    ),
+    title: "Native audio, word-synced",
+    body: "Listen to native speakers at natural pace. Every word lights up as it's spoken.",
+  },
+  {
+    icon: (
+      <svg {...ICON_PROPS} aria-hidden>
+        <circle cx="12" cy="8" r="4" />
+        <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+      </svg>
+    ),
+    title: "Heritage-aware",
+    body: "Built for learners who grew up around a language, not just those starting from zero.",
   },
 ];
 
@@ -76,11 +75,11 @@ export default function BetaPage() {
             iOS Beta · TestFlight
           </p>
           <h1 className="max-w-2xl text-3xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl">
-            Read your way into a new language.
+            Stories that pull you into a new language.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--muted)] sm:text-lg">
-            We&apos;re inviting a small group of readers to test the Digital Polyglot iOS app before launch.
-            Apply in under a minute.
+            Native-audio stories crafted for heritage speakers and serious learners. We&apos;re inviting a small
+            group to test the iOS app before launch. Apply in under a minute.
           </p>
         </header>
 
@@ -101,12 +100,24 @@ export default function BetaPage() {
 
         <BetaSignupForm />
 
-        <p className="mt-8 text-center text-xs text-[var(--muted)]">
-          We read every application personally. Questions?{" "}
-          <a className="underline hover:text-[var(--foreground)]" href="mailto:support@digitalpolyglot.com">
-            support@digitalpolyglot.com
+        <div className="mt-8 flex flex-col items-center gap-3 text-center text-xs text-[var(--muted)]">
+          <a
+            className="inline-flex items-center gap-1.5 rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] px-4 py-2 font-semibold text-[var(--foreground)] transition hover:border-[var(--studio-accent)] hover:text-[var(--studio-accent)]"
+            href="/explore"
+          >
+            Browse a sample story first
+            <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
-        </p>
+          <p>
+            We review every application personally. Questions?{" "}
+            <a className="underline hover:text-[var(--foreground)]" href="mailto:support@digitalpolyglot.com">
+              support@digitalpolyglot.com
+            </a>
+          </p>
+        </div>
       </div>
     </main>
   );
