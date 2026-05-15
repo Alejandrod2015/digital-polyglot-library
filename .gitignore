@@ -74,3 +74,4 @@ scripts/tts/cloned-voices/
 scripts/tts/whisper-models/
 # Claude Code runtime artifacts
 .claude/scheduled_tasks.lock
+data/vocab-shorten/

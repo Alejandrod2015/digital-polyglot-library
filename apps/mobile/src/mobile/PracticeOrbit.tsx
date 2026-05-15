@@ -390,12 +390,25 @@ export function PracticeOrbit({
             ]}
           >
             <View style={styles.centerOrbInner}>
-              <Text style={styles.centerOrbCount}>{rolledDue}</Text>
-              <Text style={styles.centerOrbCountLabel}>DUE</Text>
+              {totalDue > 0 ? (
+                <>
+                  <Text style={styles.centerOrbCount}>{rolledDue}</Text>
+                  <Text style={styles.centerOrbCountLabel}>DUE</Text>
+                </>
+              ) : (
+                <>
+                  <Feather name="check-circle" size={28} color="#6ee7b7" />
+                  <Text style={[styles.centerOrbCountLabel, styles.centerOrbCaughtUpLabel]}>
+                    ALL CAUGHT UP
+                  </Text>
+                </>
+              )}
               <View style={styles.centerOrbDivider} />
               <View style={styles.centerOrbCta}>
                 <Feather name="play" size={18} color="#0e1727" />
-                <Text style={styles.centerOrbStart}>START</Text>
+                <Text style={styles.centerOrbStart}>
+                  {totalDue > 0 ? "START" : "PRACTICE"}
+                </Text>
               </View>
             </View>
           </Pressable>
@@ -543,6 +556,10 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     letterSpacing: 1.4,
     marginTop: -2,
+  },
+  centerOrbCaughtUpLabel: {
+    color: "#6ee7b7",
+    marginTop: 6,
   },
   centerOrbDivider: {
     width: 28,

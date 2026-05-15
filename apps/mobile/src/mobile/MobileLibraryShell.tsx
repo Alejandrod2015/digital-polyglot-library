@@ -6158,7 +6158,17 @@ export function MobileLibraryShell(args: {
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
     const sourceItems = overrideItems ?? practiceSeedItems ?? buildPracticeFavorites(journeyScopedFavoriteWords);
-    const exercises = buildPracticeExercisesFromItems(sourceItems, mode, review, onboardingPracticePrefs);
+    // Si el usuario pidió un session de review (review=true) pero los
+    // dues actuales no son suficientes para construir ejercicios de
+    // este modo (ej.: match necesita 4 candidatos y solo hay 3 dues,
+    // o los dues no tienen oraciones de ejemplo), caemos a un sesión
+    // "fresca" sobre el pool completo de favoritos antes de bloquear
+    // el tap. Sin esto, el botón START de la orbita queda dead cuando
+    // el chip muestra 0.
+    let exercises = buildPracticeExercisesFromItems(sourceItems, mode, review, onboardingPracticePrefs);
+    if (exercises.length === 0 && review) {
+      exercises = buildPracticeExercisesFromItems(sourceItems, mode, false, onboardingPracticePrefs);
+    }
     if (exercises.length === 0) return;
     setPracticeSeedItems(sourceItems);
     setPracticeLaunchContext((current) => ({
@@ -10664,13 +10674,12 @@ export function MobileLibraryShell(args: {
                       </View>
                     </View>
 
-                    {/* Anillo + score centrado + shine arc que recorre.
-                        El shine es un arco luminoso (no un punto) que
-                        rota sobre el anillo, así da la sensación del
-                        círculo "brillando" por tramos en vez de un
-                        planeta orbitando alrededor. Dos arcos
-                        layered: uno ancho con baja opacidad (halo) y
-                        otro fino con alta opacidad (core). */}
+                    {/* Anillo segmentado: cada segmento = 1 ejercicio
+                        (yellow correct, red wrong). Sin shine arriba;
+                        si en el futuro queremos un efecto, hay que
+                        pensarlo en serio (gradient stroke, glow nativo)
+                        en vez de capas rotantes que se sentían como
+                        spinners. */}
                     <View style={styles.practiceResultRingWrap}>
                       <Svg width={RING_SIZE} height={RING_SIZE}>
                         <G rotation={-90} originX={RING_SIZE / 2} originY={RING_SIZE / 2}>
@@ -10700,55 +10709,6 @@ export function MobileLibraryShell(args: {
                           })}
                         </G>
                       </Svg>
-                      <Animated.View
-                        pointerEvents="none"
-                        style={[
-                          styles.practiceResultShineLayer,
-                          {
-                            width: RING_SIZE,
-                            height: RING_SIZE,
-                            transform: [
-                              {
-                                rotate: practiceCompleteShine.interpolate({
-                                  inputRange: [0, 1],
-                                  outputRange: ["0deg", "360deg"],
-                                }),
-                              },
-                            ],
-                          },
-                        ]}
-                      >
-                        <Svg width={RING_SIZE} height={RING_SIZE}>
-                          <G rotation={-90} originX={RING_SIZE / 2} originY={RING_SIZE / 2}>
-                            {/* Halo ancho, opacidad baja: la "luz" se
-                                sale del stroke del anillo y crea un
-                                resplandor difuso al pasar por encima. */}
-                            <Circle
-                              cx={RING_SIZE / 2}
-                              cy={RING_SIZE / 2}
-                              r={RING_RADIUS}
-                              stroke="rgba(255, 247, 200, 0.18)"
-                              strokeWidth={RING_STROKE + 14}
-                              fill="none"
-                              strokeDasharray={`${RING_CIRCUMFERENCE * 0.22}, ${RING_CIRCUMFERENCE}`}
-                              strokeLinecap="round"
-                            />
-                            {/* Core: arco fino bien luminoso pegado al
-                                stroke del anillo, es lo que "ilumina"
-                                el segmento por el que pasa. */}
-                            <Circle
-                              cx={RING_SIZE / 2}
-                              cy={RING_SIZE / 2}
-                              r={RING_RADIUS}
-                              stroke="rgba(255, 247, 200, 0.55)"
-                              strokeWidth={RING_STROKE}
-                              fill="none"
-                              strokeDasharray={`${RING_CIRCUMFERENCE * 0.14}, ${RING_CIRCUMFERENCE}`}
-                              strokeLinecap="round"
-                            />
-                          </G>
-                        </Svg>
-                      </Animated.View>
                       <View style={styles.practiceResultRingCenter} pointerEvents="none">
                         <Text style={styles.practiceResultScoreCaption}>SCORE</Text>
                         <Text style={styles.practiceResultRingScore}>
@@ -11289,8 +11249,16 @@ export function MobileLibraryShell(args: {
                 ) : (() => {
                   const totalPairs = currentPracticeExercise.pairs.length;
                   const matchedCount = matchedWords.length;
+                  // Paleta por par. Antes solo devolvía el style del
+                  // accent bar; ahora también devolvemos el hex puro
+                  // para tintar texto, borde y ✓ con el mismo color,
+                  // así cada fila queda visualmente coherente (no
+                  // todas verde por defecto).
+                  const PAIR_COLORS = ["#ffd25f", "#9fe8ff", "#f0abfc", "#72f2b3"] as const;
+                  const indexForPair = (pairWord: string) =>
+                    currentPracticeExercise.pairs.findIndex((p) => p.word === pairWord);
                   const accentForPair = (pairWord: string) => {
-                    const idx = currentPracticeExercise.pairs.findIndex((p) => p.word === pairWord);
+                    const idx = indexForPair(pairWord);
                     return idx % 4 === 0
                       ? styles.practiceMeaningOptionAccentA
                       : idx % 4 === 1
@@ -11298,6 +11266,10 @@ export function MobileLibraryShell(args: {
                         : idx % 4 === 2
                           ? styles.practiceMeaningOptionAccentC
                           : styles.practiceMeaningOptionAccentD;
+                  };
+                  const accentColorForPair = (pairWord: string) => {
+                    const idx = indexForPair(pairWord);
+                    return PAIR_COLORS[((idx % 4) + 4) % 4];
                   };
                   // Orden independiente de palabras vs definiciones,
                   // estable por ejercicio (no re-shufflea en cada render).
@@ -11340,37 +11312,10 @@ export function MobileLibraryShell(args: {
                       styles.practiceQuestionCardMeaning,
                     ]}
                   >
-                    {/* "ALL PAIRED" banner — aparece SÓLO cuando el
-                        usuario completa todos los pares correctamente
-                        (revealed + lastResult==="correct"). Vive en
-                        la ventana de 2.2 s antes del auto-advance.
-                        El banner sustituye el flash verde del chip
-                        completo y le da al usuario la sensación de
-                        cierre de ejercicio. */}
-                    {practiceRevealed && practiceLastResult === "correct" ? (
-                      <View style={styles.practiceMatchAllPairedBanner}>
-                        <View style={styles.practiceMatchAllPairedIconWrap}>
-                          <MaterialCommunityIcons name="fire" size={20} color="#fb923c" />
-                        </View>
-                        <View style={styles.practiceMatchAllPairedTextWrap}>
-                          <Text style={styles.practiceMatchAllPairedLabel}>ALL PAIRED</Text>
-                          <Text style={styles.practiceMatchAllPairedSubtitle}>
-                            +{Math.max(1, currentPracticeExercise.pairs.length) * 3} XP
-                            {practiceMaxStreak >= 3 ? " · combo bonus" : ""}
-                          </Text>
-                        </View>
-                        {practiceMaxStreak >= 3 ? (
-                          <View style={styles.practiceMatchAllPairedMultiplier}>
-                            <Text style={styles.practiceMatchAllPairedMultiplierText}>
-                              ×2
-                            </Text>
-                          </View>
-                        ) : null}
-                      </View>
-                    ) : null}
                     <View style={styles.practiceMatchRows}>
                       {wordRowOrder.map((pair, rowIdx) => {
                         const meaning = meaningRowOrder[rowIdx];
+                        const pairColor = accentColorForPair(pair.word);
 
                         // Word side state
                         const isWordMatched = matchedWords.includes(pair.word);
@@ -11435,6 +11380,15 @@ export function MobileLibraryShell(args: {
                           !isMeaningPending &&
                           !matchedPairForMeaning &&
                           !isMeaningWrong;
+                        // Color del par que corresponde a la MEANING row
+                        // (puede no coincidir con la palabra de esta fila
+                        // porque ambas columnas están shuffleadas indep.).
+                        const meaningPairColor =
+                          matchedPairForMeaning
+                            ? accentColorForPair(matchedPairForMeaning.word)
+                            : pendingWordForMeaning
+                              ? accentColorForPair(pendingWordForMeaning)
+                              : null;
                         return (
                           <View key={pair.word} style={styles.practiceMatchRow}>
                             <Pressable
@@ -11444,7 +11398,7 @@ export function MobileLibraryShell(args: {
                                 styles.practiceMatchRowWord,
                                 isWordActive ? styles.practiceMatchChipActive : null,
                                 isWordPending ? styles.practiceMatchChipPending : null,
-                                isWordMatched ? styles.practiceMatchChipCorrect : null,
+                                isWordMatched ? { borderColor: pairColor, backgroundColor: `${pairColor}1A` } : null,
                                 isWordWrong ? styles.practiceMatchChipWrong : null,
                                 wordDimmed ? styles.practiceMatchChipDimmed : null,
                               ]}
@@ -11462,7 +11416,7 @@ export function MobileLibraryShell(args: {
                               <Text
                                 style={[
                                   styles.practiceMatchRowWordText,
-                                  isWordMatched ? styles.practiceMatchRowWordTextMatched : null,
+                                  isWordMatched ? { color: pairColor } : null,
                                 ]}
                               >
                                 {pair.word}
@@ -11475,7 +11429,9 @@ export function MobileLibraryShell(args: {
                                 styles.practiceMatchRowMeaning,
                                 isMeaningActive ? styles.practiceMatchChipActive : null,
                                 isMeaningPending && meaningAccentStyle ? styles.practiceMatchChipPending : null,
-                                matchedPairForMeaning ? styles.practiceMatchChipCorrect : null,
+                                matchedPairForMeaning && meaningPairColor
+                                  ? { borderColor: meaningPairColor, backgroundColor: `${meaningPairColor}1A` }
+                                  : null,
                                 isMeaningWrong ? styles.practiceMatchChipWrong : null,
                                 meaningDimmed ? styles.practiceMatchChipDimmed : null,
                               ]}
@@ -11495,17 +11451,23 @@ export function MobileLibraryShell(args: {
                               >
                                 {meaning}
                               </Text>
-                              {/* Per-row status badge. ✓ verde si el
-                                  par fue matched correctamente; ✗ rojo
-                                  si está en estado wrong (flash) o si
-                                  cayó timeout sin haber sido matched.
-                                  El badge ocupa el lado derecho del
-                                  chip, igual que en el mockup, y
-                                  reemplaza el "fondo verde sólido"
-                                  como señal de éxito. */}
-                              {matchedPairForMeaning ? (
-                                <View style={[styles.practiceMatchRowBadge, styles.practiceMatchRowBadgeCorrect]}>
-                                  <Feather name="check" size={14} color="#6ee7b7" />
+                              {/* Per-row status badge: ✓ tintado con el
+                                  color del par (amarillo/azul/rosa/verde)
+                                  cuando matched correctamente; ✗ rojo si
+                                  está en estado wrong (flash). El color
+                                  matches el word text y el border para
+                                  que cada fila quede visualmente coherente. */}
+                              {matchedPairForMeaning && meaningPairColor ? (
+                                <View
+                                  style={[
+                                    styles.practiceMatchRowBadge,
+                                    {
+                                      backgroundColor: `${meaningPairColor}26`,
+                                      borderColor: `${meaningPairColor}66`,
+                                    },
+                                  ]}
+                                >
+                                  <Feather name="check" size={14} color={meaningPairColor} />
                                 </View>
                               ) : isMeaningWrong ? (
                                 <View style={[styles.practiceMatchRowBadge, styles.practiceMatchRowBadgeWrong]}>
