@@ -673,29 +673,76 @@ function findActiveKaraokeWordIndex(
   words: StoryWordToken[],
   positionSec: number
 ): number | null {
-  // Each token's effective window is [startSec, nextToken.startSec).
-  // Aeneas occasionally emits zero-duration windows (startSec === endSec)
-  // for short connector words; trusting endSec literally would mean those
-  // words never get highlighted because the 50 ms sampler almost never
-  // hits an exact-ms boundary. Walking startSecs avoids that hole and
-  // also covers any inter-word silence cleanly.
+  // La ventana efectiva de cada token es [startSec, próximo startSec
+  // estrictamente mayor). Aeneas emite zero-duration windows
+  // (startSec === endSec) para palabras cortas/conectores; por eso
+  // ignoramos endSec y caminamos por startSecs.
+  //
+  // CLUSTER FIX: aeneas también asigna el MISMO startSec a varias
+  // palabras consecutivas cuando se pronuncian fusionadas ("y la",
+  // "de los", "what's the"...). Si solo devolviéramos el primer
+  // índice del cluster, los siguientes nunca se resaltarían. Acá
+  // detectamos el cluster y repartimos su ventana en partes iguales
+  // entre las palabras del cluster — la mejor aproximación cuando
+  // aeneas no midió mejor.
   let last: number | null = null;
-  for (let i = 0; i < words.length; i += 1) {
+  let i = 0;
+  while (i < words.length) {
     const w = words[i];
-    if (w.startSec === null) continue;
+    if (w.startSec === null) {
+      i += 1;
+      continue;
+    }
     if (positionSec < w.startSec) break;
+
+    const clusterStart = w.startSec;
+    const cluster: number[] = [i];
+    let j = i + 1;
+    while (j < words.length) {
+      const c = words[j].startSec;
+      if (c === null) {
+        j += 1;
+        continue;
+      }
+      if (c === clusterStart) {
+        cluster.push(j);
+        j += 1;
+        continue;
+      }
+      break;
+    }
+
     let nextStart: number | null = null;
-    for (let j = i + 1; j < words.length; j += 1) {
-      const candidate = words[j].startSec;
-      if (candidate !== null && candidate > w.startSec) {
-        nextStart = candidate;
+    let k = j;
+    while (k < words.length) {
+      const c = words[k].startSec;
+      if (c !== null && c > clusterStart) {
+        nextStart = c;
         break;
       }
+      k += 1;
     }
+
     if (nextStart === null || positionSec < nextStart) {
-      return i;
+      if (cluster.length === 1) return cluster[0];
+      // Reparto equitativo. En la cola (sin nextStart definido) usamos
+      // un slot fijo de 150 ms — duración típica de una palabra corta
+      // narrada — así el último cluster del audio también avanza por
+      // sus palabras en vez de quedarse pegado en la primera.
+      const FALLBACK_SLOT_SEC = 0.15;
+      const slot = nextStart !== null
+        ? (nextStart - clusterStart) / cluster.length
+        : FALLBACK_SLOT_SEC;
+      const offset = positionSec - clusterStart;
+      const idxInCluster = Math.min(
+        cluster.length - 1,
+        Math.max(0, Math.floor(offset / slot))
+      );
+      return cluster[idxInCluster];
     }
-    last = i;
+
+    last = cluster[cluster.length - 1];
+    i = j;
   }
   return last;
 }

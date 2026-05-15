@@ -4,6 +4,7 @@ import * as Haptics from "expo-haptics";
 import * as FileSystem from "expo-file-system/legacy";
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
 import {
+  ActivityIndicator,
   Alert,
   Animated,
   AppState,
@@ -1927,12 +1928,30 @@ export function MobileLibraryShell(args: {
   const [speakingPracticePromptId, setSpeakingPracticePromptId] = useState<string | null>(null);
   const [playingPracticeClipId, setPlayingPracticeClipId] = useState<string | null>(null);
   const [playingHqPracticeClipId, setPlayingHqPracticeClipId] = useState<string | null>(null);
+  // Id del ejercicio context cuyo audio de reveal terminó de sonar.
+  // El auto-advance espera por esto antes de pasar al siguiente, así
+  // el audio nunca se escucha mientras ya estás en el próximo
+  // ejercicio. Se resetea en advancePractice + openPracticeMode.
+  const [contextAudioFinishedFor, setContextAudioFinishedFor] = useState<string | null>(null);
+  // Id del ejercicio cuyo audio se está cargando (network o decode).
+  // Muestra spinner en el botón mientras tanto, para que el usuario
+  // no tapee 4 veces creyendo que no se registró.
+  const [loadingPracticeAudioId, setLoadingPracticeAudioId] = useState<string | null>(null);
   // hqUrlBySentence cache removed intentionally: it was keyed only by
   // language+sentence and kept serving stale R2 URLs after the backend
   // default voice changed. The endpoint itself is cache-first against
   // R2, so the round-trip is cheap enough to not warrant a duplicate
   // client-side map.
   const [playingFavoriteKey, setPlayingFavoriteKey] = useState<string | null>(null);
+  // `loadingFavoriteKey` se muestra como spinner en el botón play del
+  // card mientras el TTS está siendo fetched/decoded. Sin esto, durante
+  // un cold-start de Modal (~10 s) el usuario tap-tap-tap pensando que
+  // no se registró, y al rato los audios sonaban TODOS juntos.
+  const [loadingFavoriteKey, setLoadingFavoriteKey] = useState<string | null>(null);
+  // Sequence id por tap: si un tap posterior llega antes de que el
+  // anterior termine de cargar audio, el anterior se descarta en
+  // silencio. Previene la cascada de audios simultáneos.
+  const favoriteRequestSeqRef = useRef(0);
   // Coordinates "only one swipe panel open at a time" across the
   // favorites list. SwipeableFavoriteCard reports its key when the
   // panel snaps open; every other card listens and animates shut.
@@ -2203,6 +2222,22 @@ export function MobileLibraryShell(args: {
   // efecto re-dispare el audio si el usuario pausa/despausa o si re-
   // renderizamos mientras revealed está activo.
   const lastContextRevealAudioIdRef = useRef<string | null>(null);
+  // Dedupe del prefetch de audios de la sesión: cada (sentence, lang,
+  // voiceId) se pide solo una vez. Se limpia al cerrar la sesión.
+  const practicePrefetchSeenRef = useRef<Set<string>>(new Set());
+  // Cache local del MP3 descargado, por (sentence, lang, voiceId) →
+  // file://. El playback path lo chequea primero: si está ahí, evita
+  // el round-trip al endpoint + descarga (tap-to-sound ~150 ms vs
+  // 1-2 s sobre red). El R2 server-side cachea el archivo entre
+  // sesiones; lo local hace el primer tap dentro de la sesión instant.
+  const practiceAudioFilesRef = useRef<Map<string, string>>(new Map());
+  // Sequence id por tap del audio de practice. Cada llamada a un
+  // play function (meaning word, context HQ, listen prompt, etc.)
+  // incrementa este contador. Si una llamada posterior llega antes
+  // de que la anterior termine de cargar, la anterior se descarta
+  // en silencio en cada paso async. Sin esto, multi-tap durante un
+  // cold-start de Modal hacía sonar 4 audios juntos al final.
+  const practiceAudioSeqRef = useRef(0);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
   const practiceCelebrationSoundRef = useRef<Audio.Sound | null>(null);
@@ -4536,12 +4571,16 @@ export function MobileLibraryShell(args: {
     },
     [journeyScopedFavoriteCards, selectedFavoriteType, selectedCollectionId, collections]
   );
-  // Warm the R2 cache for the first batch of visible favorites when the
-  // user opens the Favorites tab.
+  // Warm el cache local de MP3s para los favoritos visibles cuando el
+  // usuario abre la tab. Antes solo prefetcheábamos los primeros 8;
+  // un usuario con 30+ favs que tapeaba el 9º se comía un cold-start
+  // de Modal (~10 s). Ahora prefetcheamos hasta 50 en paralelo. R2
+  // cachea el resultado, así que sesiones siguientes son casi
+  // gratis.
   useEffect(() => {
     if (activeScreen !== "favorites") return;
     if (filteredFavoriteCards.length === 0) return;
-    const batch = filteredFavoriteCards.slice(0, 8);
+    const batch = filteredFavoriteCards.slice(0, 50);
     void Promise.all(batch.map(({ item, key }) => prefetchFavoriteAudio(item, key)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeScreen, filteredFavoriteCards.length]);
@@ -6219,6 +6258,10 @@ export function MobileLibraryShell(args: {
     // mismo escribe el ref y nunca lo resetea.
     lastAutoplayedExerciseIdRef.current = null;
     lastContextRevealAudioIdRef.current = null;
+    practicePrefetchSeenRef.current.clear();
+    practiceAudioFilesRef.current.clear();
+    setContextAudioFinishedFor(null);
+    setLoadingPracticeAudioId(null);
     // Parar cualquier audio del reader que pueda estar sonando si
     // venimos directo del end-of-story prompt: el story sound puede
     // continuar reproduciéndose en background y enmascarar el
@@ -6575,9 +6618,20 @@ export function MobileLibraryShell(args: {
 
   function advancePractice() {
     void stopPracticeContextClip();
+    // Cortar también cualquier HQ clip que pudiera estar sonando del
+    // ejercicio anterior. Sin esto, en context mode el audio del
+    // reveal podía seguir reproduciéndose mientras el usuario ya
+    // veía el siguiente ejercicio.
+    void stopPracticeHqClip();
+    // Cancelamos cualquier fetch de audio practice en curso del
+    // ejercicio anterior. Si hay una request lenta de Modal aún
+    // pendiente, cuando resuelva se va a descartar en silencio.
+    practiceAudioSeqRef.current += 1;
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
     setPracticeComboToast(null);
+    setContextAudioFinishedFor(null);
+    setLoadingPracticeAudioId(null);
     if (practiceIndex >= practiceExercises.length - 1) {
       setPracticeComplete(true);
       setPracticeRevealed(false);
@@ -6817,15 +6871,15 @@ export function MobileLibraryShell(args: {
   ]);
 
   // (4) Auto-advance después de revelar. Multiple-choice y match.
-  // Match antes era manual (esperaba tap de "Next") porque pensábamos
-  // que el usuario quería ver el resultado completo antes de pasar,
-  // pero en práctica esto rompía el flow: el ejercicio quedaba
-  // congelado en la pantalla de verdict hasta que el usuario notara
-  // el botón. Ahora avanza solo, igual que multiple-choice.
-  //
-  // Context mode usa una ventana más larga (3000 ms vs 1500 ms) para
-  // dar tiempo a que suene el audio de la oración completa. Match usa
-  // 2200 ms para que se vea el flash verde/rojo final con calma.
+  // - Meaning / listening: 1500 ms (lectura rápida del resultado).
+  // - Match: 2200 ms (un poco más para que se vea el flash verde/rojo
+  //   final con calma).
+  // - Context: NO usa delay fijo. Espera a que el audio del reveal
+  //   termine de sonar (cuyo id se publica vía `contextAudioFinishedFor`)
+  //   más un beat de 500 ms; con un cap de 6 s para no quedar pegados
+  //   si el audio fallara. Antes había un timer fijo de 3 s que cortaba
+  //   audios largos a la mitad y el sonido seguía mientras el usuario
+  //   ya estaba en el siguiente ejercicio.
   useEffect(() => {
     if (!practiceRevealed) return;
     if (practiceComplete) return;
@@ -6833,17 +6887,34 @@ export function MobileLibraryShell(args: {
     const current = practiceExercises[practiceIndex];
     if (!current) return;
     if (current.kind !== "multiple-choice" && current.kind !== "match") return;
-    const delay =
-      current.kind === "match"
-        ? 2200
-        : current.mode === "context"
-          ? 3000
-          : 1500;
-    const id = setTimeout(() => {
-      advancePractice();
-    }, delay);
+
+    if (current.kind === "multiple-choice" && current.mode === "context") {
+      const hasAudio = !!current.audioClip;
+      const audioDone = contextAudioFinishedFor === current.id;
+      if (!hasAudio || audioDone) {
+        // Sin audio que esperar, o ya terminó. Pequeña pausa visual.
+        const id = setTimeout(() => advancePractice(), 500);
+        return () => clearTimeout(id);
+      }
+      // Audio todavía pendiente. Esperamos hasta 6 s como red de
+      // seguridad (cubre cold-starts de Modal). Cuando el callback
+      // `didJustFinish` publique en `contextAudioFinishedFor`, este
+      // effect re-corre y entra a la rama de arriba.
+      const cap = setTimeout(() => advancePractice(), 6000);
+      return () => clearTimeout(cap);
+    }
+
+    const delay = current.kind === "match" ? 2200 : 1500;
+    const id = setTimeout(() => advancePractice(), delay);
     return () => clearTimeout(id);
-  }, [practiceRevealed, practiceComplete, practicePaused, practiceExercises, practiceIndex]);
+  }, [
+    practiceRevealed,
+    practiceComplete,
+    practicePaused,
+    practiceExercises,
+    practiceIndex,
+    contextAudioFinishedFor,
+  ]);
 
   // (5) Autoplay del audio del ejercicio nuevo. Dispara una sola vez
   // por ejercicio gracias al ref que recuerda el último id que ya
@@ -6871,9 +6942,18 @@ export function MobileLibraryShell(args: {
     }
     if (lastAutoplayedExerciseIdRef.current === exId) return;
     lastAutoplayedExerciseIdRef.current = exId;
-    void playPracticeContextClipBest();
-    // playPracticeContextClipBest tiene su propia lógica HQ→TTS y
-    // maneja errores adentro; no necesitamos un catch aquí.
+    // Meaning: SOLO la palabra (no la oración). Otros modos
+    // (listening/match) usan playPracticeContextClipBest que es
+    // no-op cuando no hay audioClip — su propio play button se
+    // encarga del audio en esos modos.
+    if (
+      currentPracticeExercise?.kind === "multiple-choice" &&
+      currentPracticeExercise.mode === "meaning"
+    ) {
+      void playPracticeMeaningAudio();
+    } else {
+      void playPracticeContextClipBest();
+    }
   }, [
     activePracticeMode,
     practiceCountdownActive,
@@ -6918,38 +6998,82 @@ export function MobileLibraryShell(args: {
     currentPracticeExercise,
   ]);
 
-  // (5b) Prefetch HQ TTS for the next 1-2 exercises by firing a
-  // no-await POST to the practice TTS endpoint. The endpoint is
-  // R2-cache-first, so the synthesis happens (or doesn't, on a R2
-  // hit) while the user is busy with the current question. We don't
-  // store the resulting URL in client state — the playback path
-  // re-fetches and gets the R2-hot URL near-instantly.
+  // (5b) Prefetch HQ TTS para TODOS los ejercicios restantes (incluído
+  // el current). Antes solo prefetcheábamos los próximos 2, lo cual
+  // dejaba el current context exercise sin warm (porque autoplay-skip
+  // lo evita) — y al revelar la respuesta el HQ venía con cold-start
+  // de Modal de 5-15s, así el audio del anterior podía escucharse en
+  // el siguiente exercise. El ref `practicePrefetchSeenRef` dedupa
+  // las llamadas: cada (sentence, language, voiceId) se pide UNA vez
+  // por sesión. R2 cachea el resultado, así que el reuso es free.
   useEffect(() => {
     if (!activePracticeMode) return;
     if (practiceComplete) return;
     if (!sessionToken) return;
-    const ahead = practiceExercises.slice(practiceIndex + 1, practiceIndex + 3);
+    const ahead = practiceExercises.slice(practiceIndex);
+    // Para cada ejercicio prefetcheamos EL TEXTO QUE SE VA A PLAYBACK,
+    // no siempre la oración completa:
+    //   - meaning  → la palabra objetivo (favorite.word)
+    //   - context  → la oración (clip.sentence, sonará post-reveal)
+    //   - listening → la palabra (speechText)
+    //   - match    → nada (no usa Modal TTS)
+    // Antes prefetcheábamos siempre `clip.sentence`, lo cual dejaba
+    // el audio del meaning (que es solo la palabra) cold cuando el
+    // usuario tapeaba el botón.
+    const queueWarm = (sentence: string, lang: string, voice: string | undefined) => {
+      const key = `${lang}::${voice ?? ""}::${sentence}`;
+      if (practicePrefetchSeenRef.current.has(key)) return;
+      practicePrefetchSeenRef.current.add(key);
+      // Fire-and-forget: obtenemos la URL del endpoint y bajamos el
+      // MP3 a disco. El playback path después chequea
+      // `practiceAudioFilesRef` y carga `file://` directo, evitando
+      // 1-2 s de round-trip + descarga en cada tap.
+      void (async () => {
+        try {
+          const resp = await apiFetch<{ url?: string }>({
+            baseUrl: mobileConfig.apiBaseUrl,
+            path: "/api/practice/sentence-tts",
+            method: "POST",
+            token: sessionToken,
+            timeoutMs: 45000,
+            body: { sentence, language: lang, voiceId: voice },
+          });
+          if (!resp?.url) {
+            practicePrefetchSeenRef.current.delete(key);
+            return;
+          }
+          try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+          const safeName = `${lang}-${(voice ?? "v")}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+          const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+          const info = await FileSystem.getInfoAsync(fileUri);
+          if (!info.exists) {
+            await FileSystem.downloadAsync(resp.url, fileUri);
+          }
+          practiceAudioFilesRef.current.set(key, fileUri);
+        } catch {
+          practicePrefetchSeenRef.current.delete(key);
+        }
+      })();
+    };
     for (const ex of ahead) {
       if (ex.kind !== "multiple-choice") continue;
       const clip = ex.audioClip;
-      if (!clip?.sentence) continue;
-      void apiFetch<{ url?: string }>({
-        baseUrl: mobileConfig.apiBaseUrl,
-        path: "/api/practice/sentence-tts",
-        method: "POST",
-        token: sessionToken,
-        // Same 45 s ceiling rationale as the playback path — prefetch
-        // has to survive Modal cold starts too, otherwise the cache
-        // never gets warmed.
-        timeoutMs: 45000,
-        body: {
-          sentence: clip.sentence,
-          language: clip.language ?? "german",
-          voiceId: clip.voiceId ?? undefined,
-        },
-      }).catch(() => {
-        // Silent: prefetch is opportunistic, not load-bearing.
-      });
+      const lang = clip?.language ?? "italian";
+      const voice = clip?.voiceId ?? undefined;
+      if (ex.mode === "meaning") {
+        const word = ex.favorite.word?.trim();
+        if (word) queueWarm(word, lang, voice);
+        continue;
+      }
+      if (ex.mode === "context") {
+        if (clip?.sentence) queueWarm(clip.sentence, lang, voice);
+        continue;
+      }
+      if (ex.mode === "listening") {
+        const speech = ex.speechText?.trim();
+        if (speech) queueWarm(speech, lang, voice);
+        continue;
+      }
     }
   }, [
     activePracticeMode,
@@ -7415,6 +7539,7 @@ export function MobileLibraryShell(args: {
   async function stopFavoriteAudio() {
     const sound = favoriteHqSoundRef.current;
     setPlayingFavoriteKey(null);
+    setLoadingFavoriteKey(null);
     if (!sound) return;
     favoriteHqSoundRef.current = null;
     try { await sound.stopAsync(); } catch { /* ignore */ }
@@ -7423,13 +7548,20 @@ export function MobileLibraryShell(args: {
 
   // Plays the favorite's word through the same Modal-hosted Kokoro/Piper
   // voice that practice uses. Tapping a card that is already playing
-  // stops it (toggle).
+  // stops it (toggle). Cada llamada arranca con un `mySeq` único; si
+  // entre el inicio y el play efectivo el usuario tapeó otro card,
+  // todos los pasos async chequean `stillCurrent()` y abortan en
+  // silencio. Sin esto, durante un Modal cold-start de 10 s el
+  // usuario podía dispararse 4 fetches y oír las 4 voces juntas.
   async function playFavoriteAudio(key: string, item: MobileFavoriteItem) {
     if (playingFavoriteKey === key) {
       await stopFavoriteAudio();
       return;
     }
     await stopFavoriteAudio();
+
+    const mySeq = ++favoriteRequestSeqRef.current;
+    const stillCurrent = () => favoriteRequestSeqRef.current === mySeq;
 
     // Fast path: prefetched MP3 sitting on local disk — load file://
     // directly, no network. ~150ms tap-to-sound.
@@ -7439,7 +7571,10 @@ export function MobileLibraryShell(args: {
     if (!url) {
       const sentence = item.word?.trim();
       if (!sentence) {
-        setLockedStoryHint("Can't play: missing word text.");
+        // Mensajes user-facing para audio de vocab. El detalle técnico
+        // queda en console.error para debug; al usuario solo le
+        // mostramos algo accionable.
+        if (stillCurrent()) setLockedStoryHint("Audio isn't available for this word.");
         return;
       }
       const langInput = (item.language ?? activeJourneyLanguage ?? "").trim().toLowerCase();
@@ -7453,9 +7588,12 @@ export function MobileLibraryShell(args: {
       };
       const language = LANG_MAP[langInput] ?? langInput;
       if (!language) {
-        setLockedStoryHint(`Can't play: no language for "${sentence}".`);
+        if (stillCurrent()) setLockedStoryHint("Audio isn't available for this word.");
         return;
       }
+      // Solo mostramos el spinner en el slow-path (necesitamos fetch).
+      // En el fast-path local skipeamos para no parpadear.
+      if (stillCurrent()) setLoadingFavoriteKey(key);
       try {
         const resp = await apiFetch<{ url?: string }>({
           baseUrl: mobileConfig.apiBaseUrl,
@@ -7465,16 +7603,26 @@ export function MobileLibraryShell(args: {
           body: { sentence, language },
           timeoutMs: 45000,
         });
+        if (!stillCurrent()) return;
         if (!resp?.url) {
-          setLockedStoryHint("Can't play: server returned no audio URL.");
+          setLoadingFavoriteKey(null);
+          setLockedStoryHint("Audio for this word isn't ready yet.");
           return;
         }
         url = resp.url;
       } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
-        setLockedStoryHint(`Can't play: ${msg.slice(0, 80)}`);
+        console.error("[mobile favorites] favorite audio request failed", err);
+        if (stillCurrent()) {
+          setLoadingFavoriteKey(null);
+          setLockedStoryHint("Audio isn't available right now. Try again in a moment.");
+        }
         return;
       }
+    }
+
+    if (!stillCurrent()) {
+      setLoadingFavoriteKey((curr) => (curr === key ? null : curr));
+      return;
     }
 
     try {
@@ -7484,6 +7632,10 @@ export function MobileLibraryShell(args: {
         interruptionModeIOS: InterruptionModeIOS.DoNotMix,
         staysActiveInBackground: false,
       });
+      if (!stillCurrent()) {
+        setLoadingFavoriteKey((curr) => (curr === key ? null : curr));
+        return;
+      }
       const { sound } = await Audio.Sound.createAsync(
         { uri: url },
         { shouldPlay: true, volume: 1.0 },
@@ -7493,11 +7645,22 @@ export function MobileLibraryShell(args: {
           }
         }
       );
+      if (!stillCurrent()) {
+        // Otro tap llegó mientras estábamos creando el sound. Lo
+        // descargamos sin reproducir para no superponer voces.
+        setLoadingFavoriteKey((curr) => (curr === key ? null : curr));
+        try { await sound.unloadAsync(); } catch { /* ignore */ }
+        return;
+      }
       favoriteHqSoundRef.current = sound;
       setPlayingFavoriteKey(key);
+      setLoadingFavoriteKey(null);
     } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      setLockedStoryHint(`Playback failed: ${msg.slice(0, 80)}`);
+      console.error("[mobile favorites] favorite audio playback failed", err);
+      if (stillCurrent()) {
+        setLoadingFavoriteKey(null);
+        setLockedStoryHint("Audio isn't available right now. Try again in a moment.");
+      }
       await stopFavoriteAudio();
     }
   }
@@ -7510,6 +7673,7 @@ export function MobileLibraryShell(args: {
   const prefetchedFavoriteKeysRef = useRef<Set<string>>(new Set());
   const prefetchedFavoriteFilesRef = useRef<Map<string, string>>(new Map());
   const FAV_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}favorite-audio/`;
+  const PRACTICE_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}practice-audio/`;
   async function prefetchFavoriteAudio(item: MobileFavoriteItem, key: string) {
     if (prefetchedFavoriteKeysRef.current.has(key)) return;
     const sentence = item.word?.trim();
@@ -7754,6 +7918,127 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  /**
+   * Audio del modo meaning: SOLO la palabra objetivo, no la oración.
+   * El usuario está mirando la palabra grande y debe elegir su
+   * significado; oír la oración entera distrae de la tarea (y antes
+   * mezclaba el audio con el TTS del dispositivo cuando el HQ tardaba).
+   *
+   * Diseño:
+   * - Toggle: si el HQ ya está reproduciendo para este ejercicio,
+   *   un nuevo tap lo para.
+   * - Seq id: multi-taps durante un cold-start de Modal cancelan al
+   *   anterior; solo suena el último.
+   * - SIN fallback a expo-speech. Antes el path "best" tenía una
+   *   carrera entre HQ y device TTS que terminaba sonando los dos;
+   *   acá si HQ falla, mostramos un hint amable en vez de duplicar.
+   */
+  async function playPracticeMeaningAudio() {
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
+    if (currentPracticeExercise.mode !== "meaning") return;
+    const word = currentPracticeExercise.favorite.word?.trim();
+    if (!word) return;
+
+    if (playingHqPracticeClipId === currentPracticeExercise.id) {
+      await stopPracticeHqClip();
+      return;
+    }
+
+    const mySeq = ++practiceAudioSeqRef.current;
+    const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
+
+    await stopPracticeContextClip();
+    await stopPracticeHqClip();
+    getOptionalSpeechModule()?.stop();
+    setSpeakingPracticePromptId(null);
+
+    const lang = currentPracticeExercise.audioClip?.language
+      ?? currentPracticeExercise.favorite.language
+      ?? activeJourneyLanguage
+      ?? "italian";
+    const voiceId = currentPracticeExercise.audioClip?.voiceId ?? undefined;
+    const cacheKey = `${lang}::${voiceId ?? ""}::${word}`;
+
+    let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
+    if (!uri) {
+      // Fast-path miss: bajamos URL + descargamos MP3 a disco (igual
+      // que el prefetch). Próximo tap del mismo audio es instant.
+      setLoadingPracticeAudioId(currentPracticeExercise.id);
+      try {
+        const resp = await apiFetch<{ url?: string }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/practice/sentence-tts",
+          method: "POST",
+          token: sessionToken ?? undefined,
+          timeoutMs: 45000,
+          body: { sentence: word, language: lang, voiceId },
+        });
+        if (!stillCurrent()) return;
+        if (!resp?.url) {
+          setLoadingPracticeAudioId(null);
+          return;
+        }
+        try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+        const safeName = `${lang}-${voiceId ?? "v"}-${word.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+        const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+        const info = await FileSystem.getInfoAsync(fileUri);
+        if (!info.exists) {
+          await FileSystem.downloadAsync(resp.url, fileUri);
+        }
+        if (!stillCurrent()) {
+          setLoadingPracticeAudioId((curr) => (curr === currentPracticeExercise.id ? null : curr));
+          return;
+        }
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
+      } catch (err) {
+        console.error("[mobile practice] meaning word audio fetch failed", err);
+        if (stillCurrent()) setLoadingPracticeAudioId(null);
+        return;
+      }
+    }
+
+    if (!stillCurrent()) {
+      setLoadingPracticeAudioId((curr) => (curr === currentPracticeExercise.id ? null : curr));
+      return;
+    }
+
+    const exIdAtPlay = currentPracticeExercise.id;
+    try {
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+      });
+      if (!stillCurrent()) return;
+      const { sound } = await Audio.Sound.createAsync(
+        { uri },
+        // rate 0.65 + shouldCorrectPitch para que la voz se escuche
+        // más lenta sin bajar de tono. Más lento que la lectura
+        // narrada (0.80) y que el context clip (0.75) porque la
+        // palabra suelta no tiene contexto rítmico que ayude a
+        // parsearla; learners necesitan mas tiempo por sílaba.
+        { shouldPlay: true, rate: 0.65, shouldCorrectPitch: true },
+        (status) => {
+          if ("didJustFinish" in status && status.didJustFinish) {
+            void stopPracticeHqClip();
+          }
+        }
+      );
+      if (!stillCurrent()) {
+        try { await sound.unloadAsync(); } catch { /* ignore */ }
+        return;
+      }
+      practiceHqSoundRef.current = sound;
+      setPlayingHqPracticeClipId(exIdAtPlay);
+      setLoadingPracticeAudioId(null);
+    } catch (err) {
+      console.error("[mobile practice] meaning word audio playback failed", err);
+      await stopPracticeHqClip();
+      if (stillCurrent()) setLoadingPracticeAudioId(null);
+    }
+  }
+
   async function playPracticeContextClipHqOnly() {
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
     const clip = currentPracticeExercise.audioClip;
@@ -7762,38 +8047,64 @@ export function MobileLibraryShell(args: {
       await stopPracticeHqClip();
       return;
     }
+
+    const mySeq = ++practiceAudioSeqRef.current;
+    const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
+
     await stopPracticeContextClip();
     await stopPracticeHqClip();
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
 
-    let url: string | undefined;
-    try {
-      const resp = await apiFetch<{ url?: string }>({
-        baseUrl: mobileConfig.apiBaseUrl,
-        path: "/api/practice/sentence-tts",
-        method: "POST",
-        token: sessionToken ?? undefined,
-        // 45 s timeout covers Modal cold start (image load + first
-        // synth) without leaving the client hung indefinitely if the
-        // endpoint is genuinely down.
-        timeoutMs: 45000,
-        body: {
-          sentence: clip.sentence,
-          language: clip.language ?? "german",
-          voiceId: clip.voiceId ?? undefined,
-        },
-      });
-      if (!resp?.url) {
-        console.log("[mobile practice] HQ endpoint returned no url");
+    const lang = clip.language ?? "italian";
+    const voiceId = clip.voiceId ?? undefined;
+    const cacheKey = `${lang}::${voiceId ?? ""}::${clip.sentence}`;
+    let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
+
+    if (!uri) {
+      setLoadingPracticeAudioId(currentPracticeExercise.id);
+      try {
+        const resp = await apiFetch<{ url?: string }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/practice/sentence-tts",
+          method: "POST",
+          token: sessionToken ?? undefined,
+          timeoutMs: 45000,
+          body: { sentence: clip.sentence, language: lang, voiceId },
+        });
+        if (!stillCurrent()) return;
+        if (!resp?.url) {
+          setLoadingPracticeAudioId(null);
+          console.log("[mobile practice] HQ endpoint returned no url");
+          return;
+        }
+        try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+        const safeName = `${lang}-${voiceId ?? "v"}-${clip.sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+        const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+        const info = await FileSystem.getInfoAsync(fileUri);
+        if (!info.exists) {
+          await FileSystem.downloadAsync(resp.url, fileUri);
+        }
+        if (!stillCurrent()) {
+          setLoadingPracticeAudioId((curr) => (curr === currentPracticeExercise.id ? null : curr));
+          return;
+        }
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
+      } catch (err) {
+        console.error("[mobile practice] HQ TTS request failed", err);
+        if (stillCurrent()) setLoadingPracticeAudioId(null);
         return;
       }
-      url = resp.url;
-    } catch (err) {
-      console.error("[mobile practice] HQ TTS request failed", err);
+    }
+
+    if (!stillCurrent()) {
+      setLoadingPracticeAudioId((curr) => (curr === currentPracticeExercise.id ? null : curr));
       return;
     }
-    console.log("[mobile practice] HQ url resolved", { url: url.slice(0, 80) });
+
+    const exIdAtPlay = currentPracticeExercise.id;
+    const isContextAtPlay = currentPracticeExercise.mode === "context";
 
     try {
       await Audio.setAudioModeAsync({
@@ -7801,20 +8112,33 @@ export function MobileLibraryShell(args: {
         allowsRecordingIOS: false,
         interruptionModeIOS: InterruptionModeIOS.DoNotMix,
       });
+      if (!stillCurrent()) return;
       const { sound } = await Audio.Sound.createAsync(
-        { uri: url },
-        { shouldPlay: true },
+        { uri },
+        { shouldPlay: true, rate: 0.75, shouldCorrectPitch: true },
         (status) => {
           if ("didJustFinish" in status && status.didJustFinish) {
             void stopPracticeHqClip();
+            if (isContextAtPlay) {
+              setContextAudioFinishedFor(exIdAtPlay);
+            }
           }
         }
       );
+      if (!stillCurrent()) {
+        try { await sound.unloadAsync(); } catch { /* ignore */ }
+        return;
+      }
       practiceHqSoundRef.current = sound;
-      setPlayingHqPracticeClipId(currentPracticeExercise.id);
+      setPlayingHqPracticeClipId(exIdAtPlay);
+      setLoadingPracticeAudioId(null);
     } catch (err) {
       console.error("[mobile practice] HQ playback failed", err);
       await stopPracticeHqClip();
+      if (stillCurrent()) setLoadingPracticeAudioId(null);
+      if (isContextAtPlay) {
+        setContextAudioFinishedFor(exIdAtPlay);
+      }
     }
   }
 
@@ -10952,16 +11276,13 @@ export function MobileLibraryShell(args: {
                         );
                       })}
                     </View>
-                    <View style={styles.practiceMeaningLivesRow}>
-                      {[0, 1, 2].map((heartIndex) => (
-                        <MaterialCommunityIcons
-                          key={`meaning-heart-${heartIndex}`}
-                          name="heart"
-                          size={21}
-                          color="#ffd25f"
-                        />
-                      ))}
-                    </View>
+                    {/* Antes acá vivía un row de 3 corazones hardcoded
+                        que nunca decrementaban (cosméticos). Los
+                        sacamos: el wrong ya se comunica con combo
+                        break, segmento rojo en el progress track, y
+                        el ring rojo del result. Sumar "vidas" sin
+                        lose condition era ruido + frame adversarial
+                        que choca con el tono del app. */}
                   </View>
 
                   <View
@@ -11043,7 +11364,9 @@ export function MobileLibraryShell(args: {
                     const isListening = mcMode === "listening";
                     const audioActive =
                       speakingPracticePromptId === currentPracticeExercise.id ||
-                      playingPracticeClipId === currentPracticeExercise.id;
+                      playingPracticeClipId === currentPracticeExercise.id ||
+                      playingHqPracticeClipId === currentPracticeExercise.id;
+                    const audioLoading = loadingPracticeAudioId === currentPracticeExercise.id;
                     return (
                   <View
                     style={[
@@ -11067,18 +11390,24 @@ export function MobileLibraryShell(args: {
                               !practiceSpeechAvailable ? styles.practiceHeroListenButtonDisabled : null,
                             ]}
                           >
-                            <Feather
-                              name={audioActive ? "square" : "volume-2"}
-                              size={40}
-                              color={practiceSpeechAvailable ? "#9fe8ff" : "#8ea2bc"}
-                            />
+                            {audioLoading ? (
+                              <ActivityIndicator size="large" color="#9fe8ff" />
+                            ) : (
+                              <Feather
+                                name={audioActive ? "pause" : "volume-2"}
+                                size={40}
+                                color={practiceSpeechAvailable ? "#9fe8ff" : "#8ea2bc"}
+                              />
+                            )}
                           </Pressable>
                           <Text style={styles.practiceHeroListenLabel}>
                             {!practiceSpeechAvailable
                               ? "Voice unavailable"
-                              : audioActive
-                                ? "Stop"
-                                : "Tap to listen"}
+                              : audioLoading
+                                ? "Loading…"
+                                : audioActive
+                                  ? "Playing"
+                                  : "Tap to listen"}
                           </Text>
                           {/* Intentionally NO word reveal under the
                               icon when resolved — showing the answer
@@ -11115,11 +11444,15 @@ export function MobileLibraryShell(args: {
                                 isCompactMeaningViewport ? styles.practiceMeaningAudioButtonCompact : null,
                               ]}
                             >
-                              <Feather
-                                name={audioActive ? "square" : "volume-2"}
-                                size={18}
-                                color="#9fe8ff"
-                              />
+                              {audioLoading ? (
+                                <ActivityIndicator size="small" color="#9fe8ff" />
+                              ) : (
+                                <Feather
+                                  name={audioActive ? "pause" : "volume-2"}
+                                  size={18}
+                                  color="#9fe8ff"
+                                />
+                              )}
                             </Pressable>
                           ) : null}
                         </View>
@@ -11140,7 +11473,7 @@ export function MobileLibraryShell(args: {
                               {currentPracticeExercise.favorite.word}
                             </Text>
                             <Pressable
-                              onPress={() => { void playPracticeContextClipHqOnly(); }}
+                              onPress={() => { void playPracticeMeaningAudio(); }}
                               disabled={!currentPracticeExercise.audioClip}
                               style={[
                                 styles.practiceMeaningAudioButton,
@@ -11148,11 +11481,15 @@ export function MobileLibraryShell(args: {
                                 !currentPracticeExercise.audioClip ? styles.practiceMeaningAudioButtonDisabled : null,
                               ]}
                             >
-                              <Feather
-                                name={audioActive ? "square" : "volume-2"}
-                                size={18}
-                                color={currentPracticeExercise.audioClip ? "#9fe8ff" : "rgba(159,232,255,0.35)"}
-                              />
+                              {audioLoading ? (
+                                <ActivityIndicator size="small" color="#9fe8ff" />
+                              ) : (
+                                <Feather
+                                  name={audioActive ? "pause" : "volume-2"}
+                                  size={18}
+                                  color={currentPracticeExercise.audioClip ? "#9fe8ff" : "rgba(159,232,255,0.35)"}
+                                />
+                              )}
                             </Pressable>
                           </View>
                           {currentPracticeExercise.sentence ? (
@@ -11788,17 +12125,25 @@ export function MobileLibraryShell(args: {
                       playingFavoriteKey === key ? styles.favoritePlayCircleActive : null,
                     ]}
                   >
-                    <Ionicons
-                      name={playingFavoriteKey === key ? "stop" : "play"}
-                      size={16}
-                      color={playingFavoriteKey === key ? "#1a1305" : "#f8c15c"}
-                      style={{
-                        // Optical centering: Ionicons "play" glyph has
-                        // empty space on the left; nudge it right so the
-                        // triangle visually centers in the circle.
-                        marginLeft: playingFavoriteKey === key ? 0 : 2,
-                      }}
-                    />
+                    {loadingFavoriteKey === key ? (
+                      // Spinner mientras se descarga/genera el TTS.
+                      // Da feedback inmediato de "estoy en eso, no
+                      // sigas tapeando" — previene la cascada de
+                      // requests en Modal cold-start.
+                      <ActivityIndicator size="small" color="#f8c15c" />
+                    ) : (
+                      <Ionicons
+                        name={playingFavoriteKey === key ? "stop" : "play"}
+                        size={16}
+                        color={playingFavoriteKey === key ? "#1a1305" : "#f8c15c"}
+                        style={{
+                          // Optical centering: Ionicons "play" glyph has
+                          // empty space on the left; nudge it right so the
+                          // triangle visually centers in the circle.
+                          marginLeft: playingFavoriteKey === key ? 0 : 2,
+                        }}
+                      />
+                    )}
                   </Pressable>
                 </View>
                 <Text style={styles.favoriteDefinition} numberOfLines={2}>
@@ -21607,11 +21952,6 @@ const styles = StyleSheet.create({
   },
   practiceMeaningProgressSegmentCurrent: {
     backgroundColor: "#8ff7c5",
-  },
-  practiceMeaningLivesRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
   },
   practiceMeaningBadgeRow: {
     flexDirection: "row",
