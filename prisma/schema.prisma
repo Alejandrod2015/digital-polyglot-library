@@ -417,6 +417,31 @@ model CatalogStoryAudioTimings {
   updatedAt         DateTime @updatedAt
 }
 
+// Beta tester applications. Public form at /beta writes here; admin reviews
+// at /studio/beta-signups and triggers TestFlight invites manually in App
+// Store Connect. `status` lifecycle: pending -> invited -> accepted | declined.
+model BetaSignup {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  nativeLanguage String
+  targetLanguage String
+  currentLevel   String
+  hasIPhone      Boolean
+  currentApps    String?
+  weeklyHours    String
+  referralSource String?
+  consentedAt    DateTime
+  status         String    @default("pending")
+  notes          String?
+  invitedAt      DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("dp_beta_signups_v1")
+}
+
 model ClaimToken {
   id             String    @id @default(cuid())
   token          String    @unique

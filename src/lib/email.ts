@@ -3,6 +3,118 @@ import { Resend } from "resend";
 import { getBookTitle } from "@/lib/books";
 
 /**
+ * Confirmation sent after someone applies to the beta program at /beta.
+ * Transactional only (no marketing). Replies route to support.
+ */
+export async function sendBetaConfirmationEmail({
+  to,
+  targetLanguage,
+}: {
+  to: string;
+  targetLanguage: string;
+}): Promise<"sent" | "skipped" | "failed"> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.EMAIL_FROM;
+  const replyTo = "support@digitalpolyglot.com";
+
+  if (!apiKey || !from) {
+    console.warn("⚠️ RESEND_API_KEY or EMAIL_FROM not defined, skipping beta confirmation email");
+    return "skipped";
+  }
+
+  const subject = "We received your beta application 🎉";
+  const preheader = "You're on the list. We'll be in touch soon.";
+
+  const text = [
+    "Thanks for applying to the Digital Polyglot beta.",
+    "",
+    `We received your application (target language: ${targetLanguage}).`,
+    "We'll review it and send you a TestFlight invite when a spot opens.",
+    "",
+    "If you have questions, reply to this email or write to support@digitalpolyglot.com.",
+    "",
+    "— Digital Polyglot",
+  ].join("\n");
+
+  const html = `
+  <div style="background:#f6f8fb;padding:24px 0;">
+    <span style="display:none!important;visibility:hidden;opacity:0;color:transparent;height:0;width:0;overflow:hidden;">
+      ${preheader}
+    </span>
+
+    <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center">
+          <table role="presentation" cellpadding="0" cellspacing="0" width="560"
+                 style="width:560px;max-width:560px;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+
+            <tr>
+              <td style="background:#0D1B2A;padding:20px 24px;">
+                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#E5E7EB;font-size:14px;">
+                  <strong style="color:#fff;font-size:16px;">Digital Polyglot</strong><br/>
+                  Your digital library for language learning
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:24px;">
+                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#111827;line-height:1.6;">
+
+                  <h1 style="margin:0 0 12px;font-size:22px;">🎉 You're on the list</h1>
+                  <p style="margin:0 0 16px;color:#374151;">
+                    Thanks for applying to the Digital Polyglot beta. We received your application for <strong>${targetLanguage}</strong>.
+                  </p>
+                  <p style="margin:0 0 16px;color:#374151;">
+                    We'll review it and send you a TestFlight invite when a spot opens. You don't need to do anything in the meantime.
+                  </p>
+
+                  <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
+
+                  <p style="font-size:12px;color:#6B7280;margin:0;text-align:center;">
+                    Questions? Reply to this email or write to
+                    <a href="mailto:support@digitalpolyglot.com" style="color:#0ea5e9;">support@digitalpolyglot.com</a>.
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="background:#F3F4F6;padding:16px 24px;">
+                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#6B7280;font-size:12px;text-align:center;">
+                  © ${new Date().getFullYear()} Digital Polyglot • reader.digitalpolyglot.com
+                </div>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  `;
+
+  try {
+    const resend = new Resend(apiKey);
+    await resend.emails.send({
+      from,
+      to,
+      subject,
+      html,
+      text,
+      replyTo,
+      tags: [{ name: "type", value: "transactional" }, { name: "category", value: "beta-confirmation" }],
+    });
+
+    console.log(`📧 Beta confirmation email sent to ${to}`);
+    return "sent";
+  } catch (err) {
+    console.error("❌ Error sending beta confirmation email:", err);
+    return "failed";
+  }
+}
+
+/**
  * Sends the email with the access link to the books.
  */
 export async function sendClaimEmail({

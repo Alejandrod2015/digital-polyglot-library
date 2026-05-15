@@ -62,6 +62,7 @@ const PATH_PERMISSIONS: Array<{ pattern: RegExp; permission: string }> = [
   { pattern: /^\/studio\/settings/, permission: "studio:settings" },
   { pattern: /^\/studio\/config/, permission: "studio:config" },
   { pattern: /^\/studio\/team/, permission: "studio:team" },
+  { pattern: /^\/studio\/beta-signups/, permission: "studio:beta-signups" },
   { pattern: /^\/studio\/metrics/, permission: "studio:metrics" },
   { pattern: /^\/studio\/qa/, permission: "studio:qa" },
   { pattern: /^\/studio\/content/, permission: "studio:content" },

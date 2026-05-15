@@ -47,6 +47,7 @@ const NAV_SECTIONS = [
     label: "ADMIN",
     items: [
       { href: "/studio/config", label: "Reglas pedagógicas", icon: "sliders", exact: false },
+      { href: "/studio/beta-signups", label: "Beta Signups", icon: "users", exact: false },
       { href: "/studio/settings", label: "Settings", icon: "settings", exact: false },
     ],
   },
