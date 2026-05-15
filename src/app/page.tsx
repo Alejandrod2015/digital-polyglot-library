@@ -1,10 +1,19 @@
 // /src/app/page.tsx (server)
+import { auth } from "@clerk/nextjs/server";
 import HomeClient from "./HomeClient";
+import LandingPage from "@/components/LandingPage";
 import { getLatestHomeReleases } from "@/lib/homeReleases";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
-export const revalidate = 3600;
+
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return <LandingPage />;
+  }
+
   const [{ latestBooks, latestStories, latestPolyglotStories }, featured] = await Promise.all([
     getLatestHomeReleases({ limit: 10 }),
     getFeaturedStories(),

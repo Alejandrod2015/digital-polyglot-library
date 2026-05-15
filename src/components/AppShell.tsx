@@ -2,6 +2,7 @@
 
 import { Suspense } from "react";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@clerk/nextjs";
 import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
 import MobileTabBar from "@/components/MobileTabBar";
@@ -20,13 +21,19 @@ type AppShellProps = {
 
 export default function AppShell({ children, currentVersion }: AppShellProps) {
   const pathname = usePathname() ?? "";
+  const { isSignedIn, isLoaded } = useAuth();
   const isStudioView = pathname.startsWith("/studio");
+  const isGuestLanding = pathname === "/" && isLoaded && !isSignedIn;
   const isAuthFlowView =
     pathname.startsWith("/auth/") ||
     pathname.startsWith("/mobile-auth") ||
     pathname.startsWith("/sign-in") ||
     pathname.startsWith("/sign-up") ||
     pathname.startsWith("/beta");
+
+  if (isGuestLanding) {
+    return <>{children}</>;
+  }
 
   if (isAuthFlowView) {
     return (
