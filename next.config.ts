@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const WP_ORIGIN = process.env.WP_ORIGIN_HOST ?? "https://wp.digitalpolyglot.com";
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   eslint: {
@@ -26,6 +28,23 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+  },
+  async rewrites() {
+    return [
+      { source: "/blog", destination: `${WP_ORIGIN}/blog/` },
+      { source: "/blog/:path*", destination: `${WP_ORIGIN}/blog/:path*` },
+      { source: "/wp-content/:path*", destination: `${WP_ORIGIN}/wp-content/:path*` },
+      { source: "/wp-includes/:path*", destination: `${WP_ORIGIN}/wp-includes/:path*` },
+      { source: "/wp-json/:path*", destination: `${WP_ORIGIN}/wp-json/:path*` },
+    ];
+  },
+  async redirects() {
+    return [
+      { source: "/about-us", destination: "/", permanent: true },
+      { source: "/about-us/", destination: "/", permanent: true },
+      { source: "/careers", destination: "/", permanent: true },
+      { source: "/careers/", destination: "/", permanent: true },
+    ];
   },
 };
 
