@@ -4,6 +4,10 @@ const WP_ORIGIN = process.env.WP_ORIGIN_HOST ?? "https://wp.digitalpolyglot.com"
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Disable Next.js's automatic 308 from /path/ to /path so the blog
+  // middleware can proxy the WP origin with the trailing slash WP
+  // expects, without the user being redirected mid-flight.
+  skipTrailingSlashRedirect: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
