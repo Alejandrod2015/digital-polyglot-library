@@ -6,10 +6,8 @@ export default clerkMiddleware(async (auth, req) => {
   const host = req.headers.get("host")?.toLowerCase() ?? "";
   const isProd = process.env.NODE_ENV === "production";
 
-  if (host === "beta.digitalpolyglot.com" && url === "/") {
-    const target = req.nextUrl.clone();
-    target.pathname = "/beta";
-    return NextResponse.rewrite(target);
+  if (host === "beta.digitalpolyglot.com") {
+    return NextResponse.redirect("https://digitalpolyglot.com/beta", 308);
   }
 
   // Mobile API routes use the app's own signed mobile session token, not Clerk's
