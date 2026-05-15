@@ -9,19 +9,49 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const ICON_PROPS = {
+  width: 24,
+  height: 24,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.75,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
 const VALUE_BULLETS = [
   {
-    icon: "🎯",
+    icon: (
+      <svg {...ICON_PROPS} aria-hidden>
+        <path d="M12 3l1.9 4.6L19 9l-4 3.4L16.2 18 12 15.5 7.8 18 9 12.4 5 9l5.1-1.4L12 3z" />
+      </svg>
+    ),
     title: "Early access",
     body: "Be among the first to use the iOS app, weeks before public launch.",
   },
   {
-    icon: "🗣️",
+    icon: (
+      <svg {...ICON_PROPS} aria-hidden>
+        <path d="M12 19l7-7 3 3-7 7-3-3z" />
+        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+        <path d="M2 2l7.586 7.586" />
+        <circle cx="11" cy="11" r="2" />
+      </svg>
+    ),
     title: "Shape the product",
     body: "Your feedback directly informs what we build for heritage and serious learners.",
   },
   {
-    icon: "📚",
+    icon: (
+      <svg {...ICON_PROPS} aria-hidden>
+        <path d="M3 18v-13a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v13" />
+        <path d="M13 18v-13a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v13" />
+        <path d="M3 18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2" />
+        <path d="M7 8h0" />
+        <path d="M17 8h0" />
+      </svg>
+    ),
     title: "Real content, real audio",
     body: "Stories and audiobooks crafted for learners who care about cultural depth.",
   },
@@ -60,7 +90,7 @@ export default function BetaPage() {
               key={b.title}
               className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5"
             >
-              <div className="mb-2 text-2xl" aria-hidden>
+              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--studio-accent-soft)] text-[var(--studio-accent)]">
                 {b.icon}
               </div>
               <h3 className="mb-1 text-sm font-bold text-[var(--foreground)]">{b.title}</h3>
