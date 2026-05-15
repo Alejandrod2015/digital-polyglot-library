@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      {
+        source: "/",
+        destination: "/beta",
+        has: [{ type: "host", value: "beta.digitalpolyglot.com" }],
+      },
       { source: "/blog", destination: `${WP_ORIGIN}/blog/` },
       { source: "/blog/:path*", destination: `${WP_ORIGIN}/blog/:path*` },
       { source: "/wp-content/:path*", destination: `${WP_ORIGIN}/wp-content/:path*` },
