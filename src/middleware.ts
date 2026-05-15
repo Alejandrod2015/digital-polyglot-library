@@ -3,7 +3,14 @@ import { NextResponse } from "next/server";
 
 export default clerkMiddleware(async (auth, req) => {
   const url = req.nextUrl.pathname;
+  const host = req.headers.get("host")?.toLowerCase() ?? "";
   const isProd = process.env.NODE_ENV === "production";
+
+  if (host === "beta.digitalpolyglot.com" && url === "/") {
+    const target = req.nextUrl.clone();
+    target.pathname = "/beta";
+    return NextResponse.rewrite(target);
+  }
 
   // Mobile API routes use the app's own signed mobile session token, not Clerk's
   // session JWT header/cookie flow. Let them pass through untouched.
