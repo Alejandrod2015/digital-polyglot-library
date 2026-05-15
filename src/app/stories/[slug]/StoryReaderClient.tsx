@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import VocabPanel from "@/components/VocabPanel";
 import StoryContent from "@/components/StoryContent";
+import { trackGa4Event } from "@/lib/ga4";
 
 type VocabItem = { word: string; surface?: string; definition: string; type?: string };
 
@@ -22,6 +23,16 @@ export default function StoryReaderClient({ story }: { story: StoryData }) {
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [definition, setDefinition] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    trackGa4Event("story_started", {
+      story_slug: story.slug,
+      surface: "standalone",
+      language: story.language ?? "unknown",
+      level: story.level ?? "unknown",
+      has_audio: typeof story.audioUrl === "string" && story.audioUrl.trim() !== "",
+    });
+  }, [story.slug, story.language, story.level, story.audioUrl]);
 
   // ✅ Auto-scroll sincronizado con el progreso del audio (adaptativo al layout)
 useEffect(() => {

@@ -13,6 +13,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
+import { trackGa4Event } from "@/lib/ga4";
 
 const TRACKED_PLAYER_EVENTS = new Set([
   "audio_play",
@@ -427,6 +428,7 @@ export default function Player({
 
     const handleEnded = async () => {
       await trackMetric(storySlug, bookSlug, "audio_complete", duration);
+      trackGa4Event("story_completed", { story_slug: storySlug, book_slug: bookSlug ?? "standalone", duration_sec: Math.round(duration) });
       void releaseWakeLock();
       if (nextStorySlug) {
         router.push(`/books/${bookSlug}/${nextStorySlug}${navigationSuffix}`);
@@ -489,6 +491,7 @@ export default function Player({
           );
           void requestWakeLock();
           await trackMetric(storySlug, bookSlug, "audio_play");
+          trackGa4Event("audio_played", { story_slug: storySlug, book_slug: bookSlug ?? "standalone" });
         })
         .catch((err) => console.error("[audio] play failed", err));
     }

@@ -4,10 +4,21 @@ import { Book, Story } from "@/types/books";
 import { useEffect, useRef } from "react";
 import Player from "@/components/Player";
 import StoryContent from "@/components/StoryContent";
+import { trackGa4Event } from "@/lib/ga4";
 
 export default function StoryReaderClient({ book, story }: { book: Book; story: Story }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const hasStoryAudio = typeof story.audio === "string" && story.audio.trim() !== "";
+
+  useEffect(() => {
+    trackGa4Event("story_started", {
+      story_slug: story.slug,
+      book_slug: book.slug,
+      language: story.language ?? book.language ?? "unknown",
+      level: story.level ?? book.level ?? "unknown",
+      has_audio: hasStoryAudio,
+    });
+  }, [story.slug, book.slug, story.language, book.language, story.level, book.level, hasStoryAudio]);
   const currentIndex = book.stories.findIndex((s) => s.slug === story.slug || s.id === story.id);
   const prevStorySlug = currentIndex > 0 ? book.stories[currentIndex - 1]?.slug ?? null : null;
   const nextStorySlug =
