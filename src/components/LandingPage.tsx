@@ -1,7 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { trackGa4Event } from "@/lib/ga4";
 
 const SHOP_URL = "https://shop.digitalpolyglot.com";
+
+function track(cta: string) {
+  trackGa4Event("landing_cta_click", { cta });
+}
 
 const ICON_PROPS = {
   width: 22,
@@ -109,12 +116,14 @@ export default function LandingPage() {
           <div className="flex items-center gap-2">
             <Link
               href="/sign-in"
+              onClick={() => track("nav_sign_in")}
               className="hidden rounded-full px-4 py-2 text-sm font-semibold text-[var(--muted)] transition hover:text-[var(--foreground)] sm:inline-block"
             >
               Sign in
             </Link>
             <Link
               href="/sign-up"
+              onClick={() => track("nav_get_started")}
               className="rounded-full bg-[var(--studio-accent)] px-4 py-2 text-sm font-bold text-[#0b1220] transition hover:brightness-110"
             >
               Get started
@@ -139,12 +148,14 @@ export default function LandingPage() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
             <Link
               href="/sign-up"
+              onClick={() => track("hero_webapp")}
               className="inline-flex items-center justify-center rounded-full bg-[var(--studio-accent)] px-6 py-3 text-base font-bold text-[#0b1220] transition hover:brightness-110"
             >
               Try the webapp free
             </Link>
             <a
               href={SHOP_URL}
+              onClick={() => track("hero_shop")}
               className="inline-flex items-center justify-center rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] px-6 py-3 text-base font-semibold text-[var(--foreground)] transition hover:border-[var(--studio-accent)] hover:text-[var(--studio-accent)]"
             >
               Browse print and ebooks
@@ -185,6 +196,7 @@ export default function LandingPage() {
         <div className="mt-8 flex justify-center">
           <Link
             href="/sign-up"
+            onClick={() => track("webapp_section")}
             className="inline-flex items-center gap-2 rounded-full bg-[var(--studio-accent)] px-5 py-2.5 text-sm font-bold text-[#0b1220] transition hover:brightness-110"
           >
             Start reading free
@@ -215,6 +227,7 @@ export default function LandingPage() {
             <a
               key={b.cover}
               href={SHOP_URL}
+              onClick={() => track("shop_cover")}
               className="group flex flex-col gap-3 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-3 transition hover:border-[var(--studio-accent)]"
             >
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-black/20">
@@ -239,6 +252,7 @@ export default function LandingPage() {
         <div className="mt-8 flex justify-center">
           <a
             href={SHOP_URL}
+            onClick={() => track("shop_section")}
             className="inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] px-5 py-2.5 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--studio-accent)] hover:text-[var(--studio-accent)]"
           >
             Visit the shop
@@ -267,6 +281,7 @@ export default function LandingPage() {
             </div>
             <Link
               href="/beta"
+              onClick={() => track("beta_section")}
               className="inline-flex items-center gap-2 rounded-full bg-[var(--studio-accent)] px-5 py-3 text-sm font-bold text-[#0b1220] transition hover:brightness-110"
             >
               Join the beta

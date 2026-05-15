@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackGa4Event } from "@/lib/ga4";
 
 const NATIVE_LANGUAGES = [
   "English",
@@ -127,6 +128,11 @@ export default function BetaSignupForm() {
         return;
       }
       setSubmitted({ duplicate: data.duplicate === true });
+      trackGa4Event("beta_apply", {
+        duplicate: data.duplicate === true,
+        target_language: targetLanguage,
+        native_language: nativeLanguage,
+      });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Network error. Please try again.");
     } finally {

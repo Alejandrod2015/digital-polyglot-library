@@ -31,8 +31,6 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
-      { source: "/blog", destination: `${WP_ORIGIN}/blog/` },
-      { source: "/blog/:path*", destination: `${WP_ORIGIN}/blog/:path*/` },
       { source: "/wp-content/:path*", destination: `${WP_ORIGIN}/wp-content/:path*` },
       { source: "/wp-includes/:path*", destination: `${WP_ORIGIN}/wp-includes/:path*` },
       { source: "/wp-json/:path*", destination: `${WP_ORIGIN}/wp-json/:path*` },
