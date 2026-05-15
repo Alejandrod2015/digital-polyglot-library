@@ -2,10 +2,36 @@
 
 import { useState } from "react";
 
+const NATIVE_LANGUAGES = [
+  "English",
+  "Spanish",
+  "Portuguese",
+  "German",
+  "Italian",
+  "French",
+  "Mandarin",
+  "Arabic",
+  "Russian",
+  "Hindi",
+  "Korean",
+  "Japanese",
+  "Turkish",
+];
+
+const TARGET_LANGUAGES = ["Spanish", "German", "Italian", "Portuguese", "French"];
+
+const LEVELS = [
+  { value: "beginner", label: "Beginner" },
+  { value: "intermediate", label: "Intermediate" },
+  { value: "advanced", label: "Advanced" },
+];
+
 type FormState = {
   email: string;
   nativeLanguage: string;
+  nativeLanguageOther: string;
   targetLanguage: string;
+  targetLanguageOther: string;
   currentLevel: string;
   hasIPhone: "yes" | "no" | "";
   consent: boolean;
@@ -14,7 +40,9 @@ type FormState = {
 const initialState: FormState = {
   email: "",
   nativeLanguage: "",
+  nativeLanguageOther: "",
   targetLanguage: "",
+  targetLanguageOther: "",
   currentLevel: "",
   hasIPhone: "",
   consent: false,
@@ -23,7 +51,16 @@ const initialState: FormState = {
 const labelStyle = "mb-1.5 block text-sm font-semibold text-[var(--foreground)]";
 const inputStyle =
   "w-full rounded-xl border border-[var(--card-border)] bg-[var(--background)]/60 px-4 py-3 text-sm text-[var(--foreground)] placeholder:text-[var(--muted)] transition focus:border-[var(--studio-accent)] focus:bg-[var(--background)] focus:outline-none focus:ring-2 focus:ring-[var(--studio-accent-soft)]";
+const selectStyle = `${inputStyle} appearance-none bg-[image:linear-gradient(45deg,transparent_50%,var(--muted)_50%),linear-gradient(135deg,var(--muted)_50%,transparent_50%)] bg-[position:calc(100%-18px)_calc(50%-3px),calc(100%-13px)_calc(50%-3px)] bg-[size:5px_5px,5px_5px] bg-no-repeat pr-10`;
 const helperStyle = "mt-1.5 text-xs text-[var(--muted)]";
+
+function chipClass(active: boolean) {
+  return `flex cursor-pointer items-center justify-center rounded-xl border px-4 py-3 text-center text-sm font-semibold transition ${
+    active
+      ? "border-[var(--studio-accent)] bg-[var(--studio-accent-soft)] text-[var(--foreground)] shadow-[inset_0_0_0_1px_var(--studio-accent)]"
+      : "border-[var(--card-border)] bg-transparent text-[var(--muted)] hover:border-[var(--chip-border)] hover:text-[var(--foreground)]"
+  }`;
+}
 
 export default function BetaSignupForm() {
   const [form, setForm] = useState<FormState>(initialState);
@@ -33,6 +70,14 @@ export default function BetaSignupForm() {
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
+  }
+
+  function resolvedNativeLanguage(): string {
+    return form.nativeLanguage === "Other" ? form.nativeLanguageOther.trim() : form.nativeLanguage;
+  }
+
+  function resolvedTargetLanguage(): string {
+    return form.targetLanguage === "Other" ? form.targetLanguageOther.trim() : form.targetLanguage;
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -47,6 +92,20 @@ export default function BetaSignupForm() {
       setError("Please let us know whether you have an iPhone.");
       return;
     }
+    const nativeLanguage = resolvedNativeLanguage();
+    const targetLanguage = resolvedTargetLanguage();
+    if (!nativeLanguage) {
+      setError("Please pick or type your native language.");
+      return;
+    }
+    if (!targetLanguage) {
+      setError("Please pick or type the language you want to learn.");
+      return;
+    }
+    if (!form.currentLevel) {
+      setError("Please pick your current level.");
+      return;
+    }
 
     setSubmitting(true);
     try {
@@ -55,9 +114,9 @@ export default function BetaSignupForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: form.email,
-          nativeLanguage: form.nativeLanguage,
-          targetLanguage: form.targetLanguage,
-          currentLevel: form.currentLevel,
+          nativeLanguage,
+          targetLanguage,
+          currentLevel: LEVELS.find((l) => l.value === form.currentLevel)?.label ?? form.currentLevel,
           hasIPhone: form.hasIPhone === "yes",
           consent: form.consent,
         }),
@@ -120,61 +179,95 @@ export default function BetaSignupForm() {
           <label htmlFor="nativeLanguage" className={labelStyle}>
             Native language
           </label>
-          <input
+          <select
             id="nativeLanguage"
-            type="text"
             required
             value={form.nativeLanguage}
             onChange={(e) => update("nativeLanguage", e.target.value)}
-            className={inputStyle}
-            placeholder="English, Spanish (heritage)..."
-          />
+            className={selectStyle}
+          >
+            <option value="" disabled>
+              Pick one
+            </option>
+            {NATIVE_LANGUAGES.map((l) => (
+              <option key={l} value={l}>
+                {l}
+              </option>
+            ))}
+            <option value="Other">Other...</option>
+          </select>
+          {form.nativeLanguage === "Other" && (
+            <input
+              type="text"
+              required
+              value={form.nativeLanguageOther}
+              onChange={(e) => update("nativeLanguageOther", e.target.value)}
+              className={`${inputStyle} mt-2`}
+              placeholder="Your native language"
+              maxLength={100}
+            />
+          )}
         </div>
 
         <div>
           <label htmlFor="targetLanguage" className={labelStyle}>
             Language you want to learn
           </label>
-          <input
+          <select
             id="targetLanguage"
-            type="text"
             required
             value={form.targetLanguage}
             onChange={(e) => update("targetLanguage", e.target.value)}
-            className={inputStyle}
-            placeholder="German, Italian..."
-          />
+            className={selectStyle}
+          >
+            <option value="" disabled>
+              Pick one
+            </option>
+            {TARGET_LANGUAGES.map((l) => (
+              <option key={l} value={l}>
+                {l}
+              </option>
+            ))}
+            <option value="Other">Other...</option>
+          </select>
+          {form.targetLanguage === "Other" && (
+            <input
+              type="text"
+              required
+              value={form.targetLanguageOther}
+              onChange={(e) => update("targetLanguageOther", e.target.value)}
+              className={`${inputStyle} mt-2`}
+              placeholder="Which language?"
+              maxLength={100}
+            />
+          )}
         </div>
       </div>
 
       <div>
-        <label htmlFor="currentLevel" className={labelStyle}>
-          Your current level
-        </label>
-        <input
-          id="currentLevel"
-          type="text"
-          required
-          value={form.currentLevel}
-          onChange={(e) => update("currentLevel", e.target.value)}
-          className={inputStyle}
-          placeholder="I understand but don't speak / A2 / spoke as a child..."
-        />
-        <p className={helperStyle}>Free-form. CEFR levels, life context, anything that helps us understand you.</p>
+        <span className={labelStyle}>Your current level</span>
+        <div className="grid grid-cols-3 gap-2">
+          {LEVELS.map((opt) => (
+            <label key={opt.value} className={chipClass(form.currentLevel === opt.value)}>
+              <input
+                type="radio"
+                name="currentLevel"
+                value={opt.value}
+                checked={form.currentLevel === opt.value}
+                onChange={() => update("currentLevel", opt.value)}
+                className="sr-only"
+              />
+              {opt.label}
+            </label>
+          ))}
+        </div>
       </div>
 
       <div>
         <span className={labelStyle}>Do you have an iPhone running iOS 17 or newer?</span>
         <div className="grid grid-cols-2 gap-3">
           {(["yes", "no"] as const).map((value) => (
-            <label
-              key={value}
-              className={`flex cursor-pointer items-center justify-center rounded-xl border px-4 py-3 text-sm font-semibold transition ${
-                form.hasIPhone === value
-                  ? "border-[var(--studio-accent)] bg-[var(--studio-accent-soft)] text-[var(--foreground)] shadow-[inset_0_0_0_1px_var(--studio-accent)]"
-                  : "border-[var(--card-border)] bg-transparent text-[var(--muted)] hover:border-[var(--chip-border)] hover:text-[var(--foreground)]"
-              }`}
-            >
+            <label key={value} className={chipClass(form.hasIPhone === value)}>
               <input
                 type="radio"
                 name="hasIPhone"
