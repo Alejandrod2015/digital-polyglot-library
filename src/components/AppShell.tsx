@@ -25,7 +25,8 @@ export default function AppShell({ children, currentVersion }: AppShellProps) {
     pathname.startsWith("/auth/") ||
     pathname.startsWith("/mobile-auth") ||
     pathname.startsWith("/sign-in") ||
-    pathname.startsWith("/sign-up");
+    pathname.startsWith("/sign-up") ||
+    pathname.startsWith("/beta");
 
   if (isAuthFlowView) {
     return (

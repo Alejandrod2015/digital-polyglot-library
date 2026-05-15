@@ -428,7 +428,7 @@ model BetaSignup {
   currentLevel   String
   hasIPhone      Boolean
   currentApps    String?
-  weeklyHours    String
+  weeklyHours    String?
   referralSource String?
   consentedAt    DateTime
   status         String    @default("pending")

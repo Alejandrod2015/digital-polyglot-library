@@ -2,17 +2,12 @@
 
 import { useState } from "react";
 
-type WeeklyHours = "15min" | "1h" | "several_hours";
-
 type FormState = {
   email: string;
   nativeLanguage: string;
   targetLanguage: string;
   currentLevel: string;
   hasIPhone: "yes" | "no" | "";
-  currentApps: string;
-  weeklyHours: WeeklyHours | "";
-  referralSource: string;
   consent: boolean;
 };
 
@@ -22,16 +17,13 @@ const initialState: FormState = {
   targetLanguage: "",
   currentLevel: "",
   hasIPhone: "",
-  currentApps: "",
-  weeklyHours: "",
-  referralSource: "",
   consent: false,
 };
 
 const labelStyle = "mb-1.5 block text-sm font-semibold text-[var(--foreground)]";
 const inputStyle =
-  "w-full rounded-lg border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2.5 text-sm text-[var(--foreground)] placeholder:text-[var(--muted)] focus:border-[var(--studio-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--studio-accent-soft)]";
-const helperStyle = "mt-1 text-xs text-[var(--muted)]";
+  "w-full rounded-xl border border-[var(--card-border)] bg-[var(--background)]/60 px-4 py-3 text-sm text-[var(--foreground)] placeholder:text-[var(--muted)] transition focus:border-[var(--studio-accent)] focus:bg-[var(--background)] focus:outline-none focus:ring-2 focus:ring-[var(--studio-accent-soft)]";
+const helperStyle = "mt-1.5 text-xs text-[var(--muted)]";
 
 export default function BetaSignupForm() {
   const [form, setForm] = useState<FormState>(initialState);
@@ -55,10 +47,6 @@ export default function BetaSignupForm() {
       setError("Please let us know whether you have an iPhone.");
       return;
     }
-    if (!form.weeklyHours) {
-      setError("Please pick a weekly time commitment.");
-      return;
-    }
 
     setSubmitting(true);
     try {
@@ -71,9 +59,6 @@ export default function BetaSignupForm() {
           targetLanguage: form.targetLanguage,
           currentLevel: form.currentLevel,
           hasIPhone: form.hasIPhone === "yes",
-          currentApps: form.currentApps || null,
-          weeklyHours: form.weeklyHours,
-          referralSource: form.referralSource || null,
           consent: form.consent,
         }),
       });
@@ -92,11 +77,14 @@ export default function BetaSignupForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-8 text-center">
+      <div className="rounded-3xl border border-[var(--studio-accent)]/30 bg-gradient-to-b from-[var(--studio-accent-soft)] to-[var(--card-bg)] p-10 text-center">
+        <div className="mb-3 text-4xl" aria-hidden>
+          🎉
+        </div>
         <h2 className="text-2xl font-bold">
-          {submitted.duplicate ? "You're already on the list" : "Application received 🎉"}
+          {submitted.duplicate ? "You're already on the list" : "Application received"}
         </h2>
-        <p className="mt-3 text-[var(--muted)]">
+        <p className="mx-auto mt-3 max-w-md text-sm text-[var(--muted)]">
           {submitted.duplicate
             ? "We already have your application on file. We'll be in touch as spots open."
             : "Thanks for applying. We sent a confirmation to your email and will follow up with a TestFlight invite when a spot opens."}
@@ -108,12 +96,12 @@ export default function BetaSignupForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 sm:p-8"
+      className="space-y-5 rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.5)] sm:p-8"
       noValidate
     >
       <div>
         <label htmlFor="email" className={labelStyle}>
-          Email <span className="text-red-400">*</span>
+          Email
         </label>
         <input
           id="email"
@@ -127,40 +115,41 @@ export default function BetaSignupForm() {
         />
       </div>
 
-      <div>
-        <label htmlFor="nativeLanguage" className={labelStyle}>
-          Native language <span className="text-red-400">*</span>
-        </label>
-        <input
-          id="nativeLanguage"
-          type="text"
-          required
-          value={form.nativeLanguage}
-          onChange={(e) => update("nativeLanguage", e.target.value)}
-          className={inputStyle}
-          placeholder="e.g. English, Spanish (heritage), Mandarin"
-        />
-        <p className={helperStyle}>If you grew up around more than one language, list all of them.</p>
-      </div>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="nativeLanguage" className={labelStyle}>
+            Native language
+          </label>
+          <input
+            id="nativeLanguage"
+            type="text"
+            required
+            value={form.nativeLanguage}
+            onChange={(e) => update("nativeLanguage", e.target.value)}
+            className={inputStyle}
+            placeholder="English, Spanish (heritage)..."
+          />
+        </div>
 
-      <div>
-        <label htmlFor="targetLanguage" className={labelStyle}>
-          Language you want to learn or reconnect with <span className="text-red-400">*</span>
-        </label>
-        <input
-          id="targetLanguage"
-          type="text"
-          required
-          value={form.targetLanguage}
-          onChange={(e) => update("targetLanguage", e.target.value)}
-          className={inputStyle}
-          placeholder="e.g. German, Italian, Portuguese"
-        />
+        <div>
+          <label htmlFor="targetLanguage" className={labelStyle}>
+            Language you want to learn
+          </label>
+          <input
+            id="targetLanguage"
+            type="text"
+            required
+            value={form.targetLanguage}
+            onChange={(e) => update("targetLanguage", e.target.value)}
+            className={inputStyle}
+            placeholder="German, Italian..."
+          />
+        </div>
       </div>
 
       <div>
         <label htmlFor="currentLevel" className={labelStyle}>
-          How would you describe your current level? <span className="text-red-400">*</span>
+          Your current level
         </label>
         <input
           id="currentLevel"
@@ -169,23 +158,21 @@ export default function BetaSignupForm() {
           value={form.currentLevel}
           onChange={(e) => update("currentLevel", e.target.value)}
           className={inputStyle}
-          placeholder="e.g. I understand but don't speak, A2, spoke as a child"
+          placeholder="I understand but don't speak / A2 / spoke as a child..."
         />
         <p className={helperStyle}>Free-form. CEFR levels, life context, anything that helps us understand you.</p>
       </div>
 
       <div>
-        <span className={labelStyle}>
-          Do you have an iPhone running iOS 17 or newer? <span className="text-red-400">*</span>
-        </span>
-        <div className="flex gap-3">
+        <span className={labelStyle}>Do you have an iPhone running iOS 17 or newer?</span>
+        <div className="grid grid-cols-2 gap-3">
           {(["yes", "no"] as const).map((value) => (
             <label
               key={value}
-              className={`flex flex-1 cursor-pointer items-center justify-center rounded-lg border px-4 py-2.5 text-sm font-medium transition ${
+              className={`flex cursor-pointer items-center justify-center rounded-xl border px-4 py-3 text-sm font-semibold transition ${
                 form.hasIPhone === value
-                  ? "border-[var(--studio-accent)] bg-[var(--studio-accent-soft)] text-[var(--foreground)]"
-                  : "border-[var(--card-border)] bg-transparent text-[var(--muted)] hover:border-[var(--chip-border)]"
+                  ? "border-[var(--studio-accent)] bg-[var(--studio-accent-soft)] text-[var(--foreground)] shadow-[inset_0_0_0_1px_var(--studio-accent)]"
+                  : "border-[var(--card-border)] bg-transparent text-[var(--muted)] hover:border-[var(--chip-border)] hover:text-[var(--foreground)]"
               }`}
             >
               <input
@@ -203,90 +190,24 @@ export default function BetaSignupForm() {
         <p className={helperStyle}>The beta runs on TestFlight, which is iOS-only for now.</p>
       </div>
 
-      <div>
-        <label htmlFor="currentApps" className={labelStyle}>
-          What language apps do you use today, and what frustrates you about them?
-        </label>
-        <textarea
-          id="currentApps"
-          rows={3}
-          value={form.currentApps}
-          onChange={(e) => update("currentApps", e.target.value)}
-          className={inputStyle}
-          placeholder="Optional. Helps us understand your context."
-        />
-      </div>
-
-      <div>
-        <span className={labelStyle}>
-          Weekly time you can give to the beta <span className="text-red-400">*</span>
-        </span>
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
-          {([
-            { value: "15min", label: "~15 min / week" },
-            { value: "1h", label: "~1 hour / week" },
-            { value: "several_hours", label: "Several hours / week" },
-          ] as const).map((opt) => (
-            <label
-              key={opt.value}
-              className={`flex cursor-pointer items-center justify-center rounded-lg border px-3 py-2.5 text-sm font-medium transition ${
-                form.weeklyHours === opt.value
-                  ? "border-[var(--studio-accent)] bg-[var(--studio-accent-soft)] text-[var(--foreground)]"
-                  : "border-[var(--card-border)] bg-transparent text-[var(--muted)] hover:border-[var(--chip-border)]"
-              }`}
-            >
-              <input
-                type="radio"
-                name="weeklyHours"
-                value={opt.value}
-                checked={form.weeklyHours === opt.value}
-                onChange={() => update("weeklyHours", opt.value)}
-                className="sr-only"
-              />
-              {opt.label}
-            </label>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="referralSource" className={labelStyle}>
-          How did you hear about us?
-        </label>
+      <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-[var(--card-border)] bg-[var(--background)]/40 p-4 text-xs leading-relaxed text-[var(--muted)]">
         <input
-          id="referralSource"
-          type="text"
-          value={form.referralSource}
-          onChange={(e) => update("referralSource", e.target.value)}
-          className={inputStyle}
-          placeholder="Optional. E.g. bought a book, Instagram, a friend"
+          type="checkbox"
+          checked={form.consent}
+          onChange={(e) => update("consent", e.target.checked)}
+          className="mt-0.5 h-4 w-4 flex-shrink-0 accent-[var(--studio-accent)]"
         />
-      </div>
-
-      <div className="rounded-lg border border-[var(--card-border)] bg-[var(--background)] p-4">
-        <label className="flex cursor-pointer items-start gap-3 text-sm text-[var(--muted)]">
-          <input
-            type="checkbox"
-            checked={form.consent}
-            onChange={(e) => update("consent", e.target.checked)}
-            className="mt-0.5 h-4 w-4 flex-shrink-0 accent-[var(--studio-accent)]"
-          />
-          <span>
-            I agree to my data being processed for the Digital Polyglot beta program as described in the{" "}
-            <a className="underline text-[var(--foreground)]" href="/privacy" target="_blank" rel="noreferrer">
-              Privacy Policy
-            </a>
-            . I can request deletion any time via{" "}
-            <a className="underline text-[var(--foreground)]" href="/data-deletion" target="_blank" rel="noreferrer">
-              data deletion
-            </a>
-            .
-          </span>
-        </label>
-      </div>
+        <span>
+          I agree to my data being processed for the Digital Polyglot beta program as described in the{" "}
+          <a className="underline text-[var(--foreground)]" href="/privacy" target="_blank" rel="noreferrer">
+            Privacy Policy
+          </a>
+          . I can request deletion any time.
+        </span>
+      </label>
 
       {error && (
-        <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+        <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
           {error}
         </div>
       )}
@@ -294,9 +215,9 @@ export default function BetaSignupForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="w-full rounded-lg bg-[var(--studio-accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--studio-accent-hover)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-xl bg-[var(--studio-accent)] px-6 py-3.5 text-sm font-bold tracking-wide text-white shadow-[0_10px_30px_-10px_var(--studio-accent-glow)] transition hover:bg-[var(--studio-accent-hover)] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {submitting ? "Sending..." : "Apply for the beta"}
+        {submitting ? "Sending..." : "Apply for the beta →"}
       </button>
     </form>
   );
