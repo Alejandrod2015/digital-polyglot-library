@@ -75,19 +75,6 @@ export default function PhoneDemo() {
 
   return (
     <div className={styles.phoneStage} aria-hidden="true">
-      <div className={`${styles.anno} ${styles.anno1}`}>
-        <span>word-synced narration</span>
-        <span className={styles.annoLine} />
-      </div>
-      <div className={`${styles.anno} ${styles.anno2}`}>
-        <span>tap any word to translate</span>
-        <span className={styles.annoLine} />
-      </div>
-      <div className={`${styles.anno} ${styles.anno3}`}>
-        <span>0.5× to 1.5× pace</span>
-        <span className={styles.annoLine} />
-      </div>
-
       <div className={styles.phone}>
         <div className={styles.phoneNotch} />
         <div className={styles.phoneStatus}>

@@ -74,7 +74,7 @@ export default function LandingPage() {
               <p className={styles.heroSub}>
                 Real fiction with word-synced narration. Tap any word for an
                 instant translation. Built for heritage speakers and serious
-                learners — Spanish, German, Portuguese, Italian.
+                learners.
               </p>
               <div className={styles.heroCtas}>
                 <Link
@@ -114,7 +114,7 @@ export default function LandingPage() {
               What you get
             </span>
             <h2 className={styles.sectionTitle}>
-              Read, listen, look up —{" "}
+              Read, listen, look up{" "}
               <span className={styles.lime}>in one tap.</span>
             </h2>
             <p className={styles.sectionLead}>
@@ -148,7 +148,7 @@ export default function LandingPage() {
               <h4>Tap to translate</h4>
               <p>
                 One tap, glossed in context. Save the word, come back to it
-                later — no flashcards required.
+                later. No flashcards required.
               </p>
             </div>
             <div className={styles.feat}>
@@ -171,7 +171,7 @@ export default function LandingPage() {
               </div>
               <h4>Spanish dialects</h4>
               <p>
-                Mexican, Argentinian and Castilian — published as separate
+                Mexican, Argentinian and Castilian, published as separate
                 collections so you read the variant you actually want.
               </p>
             </div>
@@ -191,8 +191,8 @@ export default function LandingPage() {
               Languages
             </span>
             <h2 className={styles.sectionTitle}>
-              Four languages.{" "}
-              <span className={styles.lime}>Six voices.</span>
+              Pick a language.{" "}
+              <span className={styles.lime}>Open a story.</span>
             </h2>
           </div>
 
