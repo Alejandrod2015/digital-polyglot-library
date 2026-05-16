@@ -113,6 +113,14 @@
   color: rgba(255, 255, 255, 0.45);
   margin-bottom: 32px;
 }
+.postHero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 0 0 36px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
 
 /* Prose styles for the rendered MDX body */
 .prose {

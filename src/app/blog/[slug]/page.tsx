@@ -82,6 +82,10 @@ export default async function BlogPostPage(
           {post.excerpt && (
             <p className={blog.postSub}>{post.excerpt}</p>
           )}
+          {post.hero && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img className={blog.postHero} src={post.hero} alt="" />
+          )}
           <div
             className={blog.prose}
             dangerouslySetInnerHTML={{ __html: html }}
