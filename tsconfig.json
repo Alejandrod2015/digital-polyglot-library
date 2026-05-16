@@ -18,7 +18,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@domain": ["./packages/domain/src/index.ts"],
-      "@domain/*": ["./packages/domain/src/*"]
+      "@domain/*": ["./packages/domain/src/*"],
+      "@digital-polyglot/domain": ["./packages/domain/src/index.ts"],
+      "@digital-polyglot/domain/*": ["./packages/domain/src/*"]
     }
   },
   "include": [
