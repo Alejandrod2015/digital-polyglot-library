@@ -1,0 +1,195 @@
+/* Beta phone mockup styles. Sits inside the same .phone frame from
+ * LandingPage.module.css and only restyles the screen content to mirror
+ * the iOS reader screenshot (cover + vocab pills + audio player). */
+
+.screen {
+  position: absolute;
+  inset: 0;
+  padding: 44px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 12px;
+}
+.iconBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.85);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.headerActions {
+  display: flex;
+  gap: 6px;
+}
+
+.title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 40%, rgba(252, 211, 77, 0.35), transparent 60%),
+    linear-gradient(135deg, #a36d3a 0%, #6b4226 55%, #2c1a10 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.coverScene {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+}
+.coverEmoji {
+  display: inline-block;
+  transform: translateY(-2px);
+}
+
+.body {
+  flex: 1;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  overflow: hidden;
+}
+
+.vocab {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 6px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+.vocabSky {
+  background: #1e8fae;
+  color: #ffffff;
+}
+.vocabMaroon {
+  background: #8a2f3a;
+  color: #fbdfe4;
+}
+
+.player {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 10px 12px 12px;
+}
+.playerScrub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ts {
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.65);
+  min-width: 26px;
+  text-align: center;
+}
+.scrubTrack {
+  position: relative;
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+.scrubFill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 999px;
+}
+.scrubHandle {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.playerControls {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.controlSmall {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.skipLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -38%);
+  font-size: 8px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1;
+  pointer-events: none;
+}
+.controlPlay {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px -4px rgba(37, 99, 235, 0.65);
+}
+.controlSpeed {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+}

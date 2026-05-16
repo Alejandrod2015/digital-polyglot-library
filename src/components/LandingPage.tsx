@@ -73,8 +73,7 @@ export default function LandingPage() {
               </h1>
               <p className={styles.heroSub}>
                 Real fiction with word-synced narration. Tap any word for an
-                instant translation. Built for heritage speakers and serious
-                learners.
+                instant translation. Read at your own pace.
               </p>
               <div className={styles.heroCtas}>
                 <Link
@@ -154,25 +153,14 @@ export default function LandingPage() {
             <div className={styles.feat}>
               <div className={`${styles.featIco} ${styles.featIcoFire}`}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s-7-4-7-11a7 7 0 014-6.5A5 5 0 0014 8a4 4 0 015 4c0 5-7 10-7 10z" />
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
                 </svg>
               </div>
-              <h4>Heritage-aware</h4>
+              <h4>Read at your pace</h4>
               <p>
-                Made for learners who grew up around the language. Comprehension
-                first; alphabet drills, never.
-              </p>
-            </div>
-            <div className={styles.feat}>
-              <div className={`${styles.featIco} ${styles.featIcoGold}`}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-                </svg>
-              </div>
-              <h4>Spanish dialects</h4>
-              <p>
-                Mexican, Argentinian and Castilian, published as separate
-                collections so you read the variant you actually want.
+                0.5× to 1.5× without the voice turning chipmunk on you. Slow
+                hard paragraphs, breeze through easy ones.
               </p>
             </div>
           </div>
