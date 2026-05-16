@@ -1,3 +1,6 @@
+// SW build tag: 2026-05-16T18-bump1 (byte-diff forces Chrome to re-install
+// this worker on next page load, which in turn refreshes any leftover
+// state from the previous self-unregistering worker).
 // No-op service worker. Exists ONLY so Chrome considers the site
 // installable and fires the `beforeinstallprompt` event, which the
 // in-app InstallAppHint listens for. This worker intentionally:

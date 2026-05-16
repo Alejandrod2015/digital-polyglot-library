@@ -3,7 +3,10 @@
 import { useEffect, useState } from "react";
 import { Share, X } from "lucide-react";
 
-const DISMISS_KEY = "dp-install-hint-dismissed";
+// Versioned key. Bumping the suffix forces the hint to reappear for
+// users who dismissed an earlier iteration (the original copy was
+// non-interactive; v2 actually fires the native install dialog).
+const DISMISS_KEY = "dp-install-hint-dismissed-v2";
 
 type Platform = "ios" | "android" | "other";
 
