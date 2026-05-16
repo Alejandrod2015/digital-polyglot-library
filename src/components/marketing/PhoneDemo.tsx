@@ -3,34 +3,54 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./LandingPage.module.css";
 
+type VocabKind = "sky" | "green";
+
 type Word = {
   t: string;
   s: number;
   e: number;
-  vocab?: boolean;
+  vocab?: VocabKind;
 };
 
 const WORDS: Word[] = [
-  { t: "Era", s: 0.0, e: 0.55 },
-  { t: "julio", s: 0.55, e: 1.25 },
-  { t: "cuando", s: 1.25, e: 1.85 },
-  { t: "el", s: 1.85, e: 2.05 },
-  { t: "abuelo", s: 2.05, e: 2.85, vocab: true },
-  { t: "me", s: 2.85, e: 3.15 },
-  { t: "mandó", s: 3.15, e: 3.95 },
-  { t: "aquella", s: 3.95, e: 4.55 },
-  { t: "carta", s: 4.55, e: 5.25, vocab: true },
-  { t: "amarillenta", s: 5.25, e: 6.45, vocab: true },
-  { t: "desde", s: 6.45, e: 6.95 },
-  { t: "Oaxaca.", s: 6.95, e: 8.05 },
+  { t: "Es", s: 0.0, e: 0.35 },
+  { t: "jueves", s: 0.35, e: 0.9 },
+  { t: "al", s: 0.9, e: 1.05 },
+  { t: "mediodía.", s: 1.05, e: 1.85 },
+  { t: "La", s: 1.85, e: 2.05 },
+  { t: "fonda", s: 2.05, e: 2.6, vocab: "sky" },
+  { t: "de", s: 2.6, e: 2.75 },
+  { t: "San", s: 2.75, e: 3.0 },
+  { t: "Ángel", s: 3.0, e: 3.55 },
+  { t: "está", s: 3.55, e: 4.0 },
+  { t: "abierta", s: 4.0, e: 4.6 },
+  { t: "y", s: 4.6, e: 4.75 },
+  { t: "huele", s: 4.75, e: 5.25 },
+  { t: "a", s: 5.25, e: 5.4 },
+  { t: "mole.", s: 5.4, e: 6.0, vocab: "sky" },
+  { t: "En", s: 6.0, e: 6.2 },
+  { t: "la", s: 6.2, e: 6.3 },
+  { t: "cocina,", s: 6.3, e: 6.85 },
+  { t: "doña", s: 6.85, e: 7.15 },
+  { t: "Luz", s: 7.15, e: 7.5 },
+  { t: "mueve", s: 7.5, e: 7.95 },
+  { t: "una", s: 7.95, e: 8.15 },
+  { t: "olla", s: 8.15, e: 8.55, vocab: "sky" },
+  { t: "grande.", s: 8.55, e: 9.15 },
+  { t: "Hoy", s: 9.15, e: 9.4 },
+  { t: "está", s: 9.4, e: 9.75 },
+  { t: "cansada.", s: 9.75, e: 10.6, vocab: "green" },
 ];
-const DURATION = 8.5;
+const DURATION = 11;
 
 function fmt(t: number) {
   const m = Math.floor(t / 60);
   const s = Math.floor(t % 60);
   return `${m}:${String(s).padStart(2, "0")}`;
 }
+
+const TIP_TRIGGER_WORD = "cansada.";
+const TOTAL_SECONDS = 70; // displayed timestamp ceiling (1:10)
 
 export default function PhoneDemo() {
   const prefersReducedMotion =
@@ -66,12 +86,13 @@ export default function PhoneDemo() {
 
   useEffect(() => {
     if (prefersReducedMotion) return;
-    const id = setInterval(() => setShowTip((s) => !s), 5200);
+    const id = setInterval(() => setShowTip((s) => !s), 5800);
     return () => clearInterval(id);
   }, [prefersReducedMotion]);
 
   const activeIdx = WORDS.findIndex((w) => t >= w.s && t < w.e);
   const progress = Math.min(1, t / DURATION);
+  const displayTimestamp = fmt(progress * TOTAL_SECONDS);
 
   return (
     <div className={styles.phoneStage} aria-hidden="true">
@@ -80,12 +101,6 @@ export default function PhoneDemo() {
         <div className={styles.phoneStatus}>
           <span>9:41</span>
           <div className="icons">
-            <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor">
-              <rect x="0" y="6" width="3" height="5" rx="0.5" />
-              <rect x="4" y="4" width="3" height="7" rx="0.5" />
-              <rect x="8" y="2" width="3" height="9" rx="0.5" />
-              <rect x="12" y="0" width="3" height="11" rx="0.5" />
-            </svg>
             <svg width="14" height="11" viewBox="0 0 14 11" fill="none" stroke="currentColor" strokeWidth="1.2">
               <path
                 d="M1 4 a8 8 0 0 1 12 0M3 6.5 a5 5 0 0 1 8 0M5 9 a2.5 2.5 0 0 1 4 0"
@@ -101,108 +116,96 @@ export default function PhoneDemo() {
         </div>
 
         <div className={styles.phoneScreen}>
-          <div className={styles.readerTop}>
-            <button className={styles.iconBtn} type="button">
+          <div className={styles.readerHeaderRow}>
+            <button className={styles.iconBtnRound} type="button" aria-label="Back">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
-            <div className={styles.langPill}>
-              <span className={styles.langPillFlag}>🇲🇽</span>
-              Español
-              <span className={styles.langPillLvl}>B1</span>
+            <div className={styles.readerHeaderActions}>
+              <button className={styles.iconBtnRound} type="button" aria-label="Save">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M6 3h12v18l-6-4-6 4V3z" />
+                </svg>
+              </button>
+              <button className={styles.iconBtnRound} type="button" aria-label="Download">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+              </button>
             </div>
-            <button className={styles.iconBtn} type="button">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                <path d="M6 3h12v18l-6-4-6 4V3z" />
-              </svg>
-            </button>
           </div>
 
-          <div className={styles.readerMeta}>
-            <div className={styles.readerMetaSmall}>Short fiction</div>
-            <h3>La carta del abuelo</h3>
+          <h3 className={styles.readerTitleCentered}>Mole en San Ángel</h3>
+
+          <div className={styles.coverWarm} aria-hidden="true">
+            <span className={styles.coverPot}>🍲</span>
           </div>
 
-          <div className={styles.readerText}>
+          <div className={styles.readerBody}>
             {WORDS.map((w, i) => {
-              const cls = [
+              const isActive = i === activeIdx;
+              const tokenClasses = [
                 styles.w,
-                i === activeIdx ? styles.wActive : "",
-                i < activeIdx ? styles.wRead : "",
-                w.vocab ? styles.wVocab : "",
+                isActive ? styles.wActiveGold : "",
+                !isActive && w.vocab === "sky" ? styles.vocabSky : "",
+                !isActive && w.vocab === "green" ? styles.vocabGreen : "",
               ]
                 .filter(Boolean)
                 .join(" ");
               return (
                 <span key={i}>
                   <span
-                    className={cls}
+                    className={tokenClasses}
                     onClick={() => {
                       setT(w.s);
-                      if (w.vocab) setShowTip(true);
+                      if (w.vocab === "green" || w.t === TIP_TRIGGER_WORD) {
+                        setShowTip(true);
+                      }
                     }}
                   >
                     {w.t}
-                  </span>{" "}
+                  </span>
+                  {" "}
                 </span>
               );
             })}
           </div>
 
           {showTip && (
-            <div className={styles.wordTip} onClick={() => setShowTip(false)}>
-              <div className={styles.wordTipRow1}>
-                <div className={styles.wordTipWord}>amarillenta</div>
-                <div className={styles.wordTipPos}>adj.</div>
-              </div>
-              <div className={styles.wordTipDef}>
-                yellowed; faded with age, as old paper.
-              </div>
-              <div className={styles.wordTipActs}>
-                <button type="button">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                    <path d="M11 5L6 9H2v6h4l5 4V5zM19 9c1.5 1 1.5 5 0 6" />
-                  </svg>
-                  Listen
-                </button>
-                <button type="button" className={styles.wordTipActsPrimary}>
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6">
-                    <path d="M12 5v14M5 12h14" />
-                  </svg>
-                  Save
-                </button>
-              </div>
+            <div className={styles.vocabPanel}>
+              <button
+                className={styles.vocabPanelClose}
+                type="button"
+                onClick={() => setShowTip(false)}
+                aria-label="Close"
+              >
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+              <div className={styles.vocabPanelWord}>cansada</div>
+              <span className={styles.vocabPosGreen}>ADJECTIVE</span>
+              <p className={styles.vocabPanelDef}>Low on energy from work</p>
+              <button className={styles.vocabSaveBtn} type="button">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  <line x1="17" y1="9" x2="17" y2="13" />
+                  <line x1="15" y1="11" x2="19" y2="11" />
+                </svg>
+                Save word
+              </button>
             </div>
           )}
 
-          <div className={styles.readerPlayer}>
-            <button
-              className={styles.playBtn}
-              type="button"
-              onClick={() => setPlaying((p) => !p)}
-              aria-label={playing ? "Pause" : "Play"}
-            >
-              {playing ? (
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                  <rect x="6" y="4" width="4" height="16" rx="1" />
-                  <rect x="14" y="4" width="4" height="16" rx="1" />
-                </svg>
-              ) : (
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M7 4l13 8-13 8V4z" />
-                </svg>
-              )}
-            </button>
-            <div className={styles.playerInfo}>
-              <div className={styles.playerInfoRow}>
-                <span className={styles.playerInfoNow}>Native narration</span>
-                <span className={styles.playerInfoTs}>
-                  {fmt(t)} / {fmt(DURATION)}
-                </span>
-              </div>
+          <div className={styles.audioBar}>
+            <div className={styles.audioScrub}>
+              <span className={styles.audioTs}>{displayTimestamp}</span>
               <div
-                className={styles.playerProgress}
+                className={styles.audioTrack}
                 onClick={(e) => {
                   const r = e.currentTarget.getBoundingClientRect();
                   const ratio = Math.max(
@@ -213,14 +216,55 @@ export default function PhoneDemo() {
                 }}
               >
                 <div
-                  className={styles.playerProgressFill}
+                  className={styles.audioFill}
                   style={{ width: `${progress * 100}%` }}
                 />
+                <div
+                  className={styles.audioHandle}
+                  style={{ left: `${progress * 100}%` }}
+                />
               </div>
+              <span className={styles.audioTs}>1:10</span>
             </div>
-            <button className={styles.speedTag} type="button">
-              1.0×
-            </button>
+            <div className={styles.audioControls}>
+              <button className={styles.audioSkip} type="button" aria-label="Back 10s">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
+                  <path d="M3 3v5h5" />
+                </svg>
+                <span className={styles.audioSkipLabel}>10</span>
+              </button>
+              <button
+                className={styles.audioPlay}
+                type="button"
+                onClick={() => setPlaying((p) => !p)}
+                aria-label={playing ? "Pause" : "Play"}
+              >
+                {playing ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+                    <rect x="6" y="4" width="4" height="16" rx="1" />
+                    <rect x="14" y="4" width="4" height="16" rx="1" />
+                  </svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                )}
+              </button>
+              <button className={styles.audioSkip} type="button" aria-label="Forward 10s">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 12a9 9 0 1 1-3-6.7L21 8" />
+                  <path d="M21 3v5h-5" />
+                </svg>
+                <span className={styles.audioSkipLabel}>10</span>
+              </button>
+              <button className={styles.audioSpeed} type="button">
+                1x
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="18 15 12 9 6 15" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
