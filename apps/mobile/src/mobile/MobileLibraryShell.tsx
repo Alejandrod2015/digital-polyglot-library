@@ -7919,20 +7919,9 @@ export function MobileLibraryShell(args: {
   }
 
   async function playPracticeContextClipStoryOnly() {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") {
-      console.log("[mobile practice] Story skipped: not a multiple-choice exercise");
-      return;
-    }
+    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
     const clip = currentPracticeExercise.audioClip;
-    if (!clip) {
-      console.log("[mobile practice] Story skipped: no audioClip");
-      return;
-    }
-    console.log("[mobile practice] Story attempt", {
-      storySlug: clip.storySlug,
-      hasSegmentId: !!clip.segmentId,
-      sentence: clip.sentence?.slice(0, 60),
-    });
+    if (!clip) return;
     if (playingPracticeClipId === currentPracticeExercise.id) {
       await stopPracticeContextClip();
       return;
@@ -7964,14 +7953,6 @@ export function MobileLibraryShell(args: {
     const baseAudioUrl = resolvePracticeAudioUri(storyAudio?.audioUrl);
     const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
     const audioUrl = segmentClipUrl ?? baseAudioUrl;
-    console.log("[mobile practice] Story resolution", {
-      hasStoryAudio: !!storyAudio,
-      hasSegment: !!segment,
-      explicitRange: typeof explicitStart === "number" ? `${explicitStart}-${explicitEnd}` : null,
-      hasBaseAudioUrl: !!baseAudioUrl,
-      hasSegmentClipUrl: !!segmentClipUrl,
-      finalUrl: audioUrl ? audioUrl.slice(0, 80) : null,
-    });
     // Sin segment del Story disponible: intentamos primero HQ TTS
     // (Kokoro/Piper en Modal). Sólo si HQ falla (red, idioma sin voz
     // local soportada, Modal caído) caemos al TTS del sistema. El
@@ -7984,8 +7965,8 @@ export function MobileLibraryShell(args: {
         // Si arrancó, playingHqPracticeClipId queda set; si no, fue
         // un return temprano y caemos al speech-synth abajo.
         if (playingHqPracticeClipId === currentPracticeExercise.id) return;
-      } catch (err) {
-        console.log("[mobile practice] HQ fallback failed, using device TTS", err);
+      } catch {
+        // HQ fell through; fall back to expo-speech below as last resort.
       }
 
       const speechText = clip.sentence.trim();
@@ -8051,13 +8032,6 @@ export function MobileLibraryShell(args: {
       // the first callback after audio starts already sees the correct
       // upper bound.
       practiceClipStopAtMillisRef.current = hasSegmentRange ? rawEndSec * 1000 : null;
-      console.log("[mobile practice] Story play", {
-        segmentId: segment?.id ?? null,
-        segStart: segment?.startSec?.toFixed(3) ?? null,
-        segEnd: segment?.endSec?.toFixed(3) ?? null,
-        playFromMs: Math.round(Math.max(0, rawStartSec * 1000)),
-        stopAtMs: hasSegmentRange ? Math.round(rawEndSec * 1000) : null,
-      });
       const { sound } = await Audio.Sound.createAsync(
         { uri: audioUrl },
         { shouldPlay: true, positionMillis: Math.max(0, rawStartSec * 1000) },
@@ -8245,7 +8219,6 @@ export function MobileLibraryShell(args: {
         if (!stillCurrent()) return;
         if (!resp?.url) {
           setLoadingPracticeAudioId(null);
-          console.log("[mobile practice] HQ endpoint returned no url");
           return;
         }
         try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
@@ -8336,8 +8309,8 @@ export function MobileLibraryShell(args: {
     try {
       await playPracticeContextClipHqOnly();
       if (playingHqPracticeClipId === currentPracticeExercise.id) return;
-    } catch (err) {
-      console.log("[mobile practice] autoplay HQ failed, falling back to device TTS", err);
+    } catch {
+      // HQ unavailable for this clip; expo-speech fallback below.
     }
 
     const speechText = clip.sentence?.trim();
