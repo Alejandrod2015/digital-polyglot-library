@@ -1,5 +1,5 @@
 import type { VocabItem } from "@/types/books";
-import type { AudioWordTimingsPayload } from "@digital-polyglot/domain";
+import type { AudioWordTimingsPayload } from "@domain";
 import type { PracticeFavoriteItem } from "@/lib/practiceExercises";
 import { normalizeVocabType } from "@/lib/vocabTypes";
 import { computePracticeAudioRanges } from "@/lib/practiceAudioRanges";

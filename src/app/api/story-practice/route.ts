@@ -11,7 +11,7 @@ import { getCreateStoryMirrorBySlug } from "@/lib/userStories";
 import { buildPracticeItemsFromStory, parseLooseVocab } from "@/lib/storyPracticeItems";
 import { mergePracticeItemsByWord, type PracticeFavoriteItem } from "@/lib/practiceExercises";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimings";
-import type { AudioWordTimingsPayload } from "@digital-polyglot/domain";
+import type { AudioWordTimingsPayload } from "@domain";
 
 /**
  * Aeneas word-level alignment for a story. Tries JourneyStory first

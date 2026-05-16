@@ -14,7 +14,7 @@
  * Caller treats nulls as "no precise range available" and routes to
  * HQ TTS fallback.
  */
-import type { AudioWordTimingsPayload, StoryWordToken } from "@digital-polyglot/domain";
+import type { AudioWordTimingsPayload, StoryWordToken } from "@domain";
 
 const SENTENCE_BOUNDARY = /[.!?…]/;
 
