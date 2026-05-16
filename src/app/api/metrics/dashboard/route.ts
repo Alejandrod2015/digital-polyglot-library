@@ -572,7 +572,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       _count: { _all: true },
       orderBy: { _count: { bookId: "desc" } },
       take: 20,
-    }) : Promise.resolve(0),
+    }) : Promise.resolve([]),
     needsOverviewData ? prisma.libraryStory.count({
       where: {
         createdAt: { gte: from, lte: to },
