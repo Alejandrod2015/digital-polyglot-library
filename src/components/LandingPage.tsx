@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { trackGa4Event } from "@/lib/ga4";
 import PhoneDemo from "./marketing/PhoneDemo";
+import MarketingNav from "./marketing/MarketingNav";
 import styles from "./marketing/LandingPage.module.css";
 
 function track(cta: string) {
@@ -30,34 +31,7 @@ function Ring() {
 export default function LandingPage() {
   return (
     <div className={styles.page}>
-      <nav className={styles.nav}>
-        <div className={`${styles.frame} ${styles.navInner}`}>
-          <Link href="/" className={styles.brand}>
-            Digital Polyglot
-          </Link>
-          <div className={styles.navLinks}>
-            <a href="#features">Features</a>
-            <a href="#languages">Languages</a>
-            <Link href="/beta">iPhone beta</Link>
-          </div>
-          <div className={styles.navCta}>
-            <Link
-              href="/sign-in"
-              onClick={() => track("nav_sign_in")}
-              className={`${styles.btn} ${styles.btnQuiet}`}
-            >
-              Sign in
-            </Link>
-            <Link
-              href="/sign-up"
-              onClick={() => track("nav_get_started")}
-              className={`${styles.btn} ${styles.btnPrimary}`}
-            >
-              Get started
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <MarketingNav />
 
       <header className={styles.hero}>
         <div className={styles.frame}>

@@ -4,6 +4,28 @@ import { notFound } from "next/navigation";
 import { getAllBlogSlugs, getBlogPost, renderBlogContent } from "@/lib/blog";
 import landing from "@/components/marketing/LandingPage.module.css";
 import blog from "@/components/marketing/Blog.module.css";
+import MarketingNav from "@/components/marketing/MarketingNav";
+import ReadingProgress from "@/components/blog/ReadingProgress";
+import InlineNewsletter from "@/components/blog/InlineNewsletter";
+
+// Splits the rendered article HTML so we can insert the inline newsletter
+// at a natural break (the second <h2>, falling back to the 6th </p>).
+// Reading-research consistently shows mid-article CTAs convert 3-5x better
+// than footer-only equivalents.
+function splitForInlineCta(html: string): [string, string] {
+  const headings = [...html.matchAll(/<\/h2>/g)];
+  if (headings.length >= 2) {
+    const idx = headings[1].index! + "</h2>".length;
+    return [html.slice(0, idx), html.slice(idx)];
+  }
+  const paras = [...html.matchAll(/<\/p>/g)];
+  if (paras.length >= 6) {
+    const idx = paras[5].index! + "</p>".length;
+    return [html.slice(0, idx), html.slice(idx)];
+  }
+  // Short article: skip the split so the CTA only shows the footer copy.
+  return [html, ""];
+}
 
 type Params = { slug: string };
 
@@ -41,35 +63,12 @@ export default async function BlogPostPage(
   const post = getBlogPost(slug);
   if (!post) notFound();
   const html = await renderBlogContent(post.content);
+  const [htmlBefore, htmlAfter] = splitForInlineCta(html);
 
   return (
     <main className={landing.page}>
-      <nav className={landing.nav}>
-        <div className={`${landing.frame} ${landing.navInner}`}>
-          <Link href="/" className={landing.brand}>
-            Digital Polyglot
-          </Link>
-          <div className={landing.navLinks}>
-            <Link href="/blog">Blog</Link>
-            <Link href="/#features">Features</Link>
-            <Link href="/beta">iPhone beta</Link>
-          </div>
-          <div className={landing.navCta}>
-            <Link
-              href="/sign-in"
-              className={`${landing.btn} ${landing.btnQuiet}`}
-            >
-              Sign in
-            </Link>
-            <Link
-              href="/sign-up"
-              className={`${landing.btn} ${landing.btnPrimary}`}
-            >
-              Get started
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <MarketingNav />
+      <ReadingProgress />
 
       <article className={landing.frame}>
         <div className={blog.post}>
@@ -88,8 +87,17 @@ export default async function BlogPostPage(
           )}
           <div
             className={blog.prose}
-            dangerouslySetInnerHTML={{ __html: html }}
+            dangerouslySetInnerHTML={{ __html: htmlBefore }}
           />
+          {htmlAfter && (
+            <>
+              <InlineNewsletter />
+              <div
+                className={blog.prose}
+                dangerouslySetInnerHTML={{ __html: htmlAfter }}
+              />
+            </>
+          )}
         </div>
       </article>
     </main>

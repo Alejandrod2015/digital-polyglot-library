@@ -17,22 +17,27 @@ import rehypeStringify from "rehype-stringify";
 import {
   type BlogPostMeta,
   classifyDialect,
+  classifyType,
   computeReadingMinutes,
 } from "@/lib/blog-shared";
 
 export type {
   BlogPostMeta,
   DialectKey,
+  PostTypeKey,
   BlogSeries,
 } from "@/lib/blog-shared";
 export {
   DIALECTS,
+  POST_TYPES,
   classifyDialect,
+  classifyType,
   computeReadingMinutes,
   getBlogSeries,
   getDialectCounts,
   getDialectMeta,
   getFeaturedPost,
+  getPostTypeCounts,
 } from "@/lib/blog-shared";
 
 export type BlogPost = BlogPostMeta & {
@@ -66,6 +71,7 @@ function parseFile(filename: string): BlogPost {
   };
   post.readingMinutes = computeReadingMinutes(content);
   post.dialect = classifyDialect(post);
+  post.type = classifyType(post);
   return post;
 }
 
