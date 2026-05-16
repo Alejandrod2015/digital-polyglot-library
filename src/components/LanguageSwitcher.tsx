@@ -310,7 +310,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                           cy={RING_SIZE / 2}
                           r={RING_R}
                           fill="none"
-                          stroke={row.active ? "#bef264" : "#7dd3fc"}
+                          stroke={row.active ? "#fcd34d" : "#7dd3fc"}
                           strokeWidth={2.5}
                           strokeLinecap="round"
                           strokeDasharray={`${ringDash} ${RING_C}`}
@@ -349,7 +349,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                         </span>
                         <span
                           className="inline-flex items-center gap-[3px] text-[12px] font-black tracking-[-0.02em]"
-                          style={{ color: "#bef264" }}
+                          style={{ color: "#fcd34d" }}
                         >
                           <Zap size={11} />
                           {row.xpTotal >= 1000

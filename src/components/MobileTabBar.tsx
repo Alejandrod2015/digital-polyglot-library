@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Brain, ChevronDown, Compass, Home, LogIn, Settings, Sparkles, Star } from "lucide-react";
+import { Brain, ChevronDown, Compass, Home, LogIn, Menu, Sparkles, Star } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { formatVariantLabel } from "@/lib/languageVariant";
@@ -93,7 +93,7 @@ export default function MobileTabBar() {
           { href: "/explore", label: "Explore", icon: Compass },
           { href: "/practice", label: "Practice", icon: Brain },
           { href: "/favorites", label: "Favorites", icon: Star },
-          { href: "/settings", label: "Settings", icon: Settings },
+          { href: "/settings", label: "Menu", icon: Menu },
         ]
     : [
         { href: "/", label: "Home", icon: Home },

@@ -427,7 +427,7 @@ export default async function JourneyTopicPage({
             </div>
             <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/8">
               <div
-                className="h-full rounded-full bg-[linear-gradient(90deg,#bef264,#38bdf8)]"
+                className="h-full rounded-full bg-[linear-gradient(90deg,var(--color-xp),#38bdf8)]"
                 style={{ width: `${Math.max(6, trackInsights.score)}%` }}
               />
             </div>

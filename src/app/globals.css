@@ -66,7 +66,7 @@
      consistent as the palette evolves (e.g. if streak ever
      shifts hue, everything "streak"-colored moves together). */
   --color-cyan:   #7dd3fc; /* links, sky CTAs */
-  --color-xp:     #bef264; /* XP, completion, ACTIVE pill */
+  --color-xp:     #fcd34d; /* XP, completion, ACTIVE pill — mirrors apps/mobile/src/theme/tokens.ts (iOS = source of truth) */
   --color-streak: #fb923c; /* streak, day counters */
   --color-gems:   #c4b5fd; /* gems, premium hints */
   --color-gold:   #fcd34d; /* rewards, achievements */
