@@ -65,10 +65,10 @@ const NAV_SECTIONS = [
   /studio/directive    → Directriz
 */
 
-/* ── Colors ── */
-const ACCENT = "#14b8a6";
-const ACCENT_SOFT = "rgba(20, 184, 166, 0.15)";
-const SIDEBAR_BG = "#080f1a";
+/* ── Colors (aligned with the landing + iOS app palette) ── */
+const ACCENT = "#fcd34d"; // gold — primary brand accent
+const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
+const SIDEBAR_BG = "#051834"; // bg-0 from landing tokens
 const SIDEBAR_BORDER = "rgba(255, 255, 255, 0.08)";
 
 function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
@@ -146,7 +146,18 @@ export default function StudioShell({
   const sidebarWidth = collapsed ? SIDEBAR_WIDTH_COLLAPSED : SIDEBAR_WIDTH_EXPANDED;
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+    <div
+      className="studio-shell-root"
+      style={{
+        display: "flex",
+        minHeight: "100vh",
+        color: "#ffffff",
+        backgroundColor: "#051834",
+        backgroundImage:
+          "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(29, 67, 122, 0.30) 0%, transparent 60%), linear-gradient(180deg, #08264d 0%, #051834 60%, #051834 100%)",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* ── Sidebar ── */}
       <aside
         style={{
