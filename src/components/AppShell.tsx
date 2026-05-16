@@ -17,14 +17,23 @@ import ServiceWorkerBootstrap from "@/components/ServiceWorkerBootstrap";
 type AppShellProps = {
   children: React.ReactNode;
   currentVersion: string;
+  initialIsSignedIn: boolean;
 };
 
-export default function AppShell({ children, currentVersion }: AppShellProps) {
+export default function AppShell({
+  children,
+  currentVersion,
+  initialIsSignedIn,
+}: AppShellProps) {
   const pathname = usePathname() ?? "";
-  const { isSignedIn, isLoaded } = useAuth();
+  const { isSignedIn: clientIsSignedIn, isLoaded } = useAuth();
+  // Use the server-resolved auth state until Clerk hydrates on the client.
+  // This avoids flashing the signed-in chrome on the marketing home for
+  // unauthenticated visitors.
+  const isSignedIn = isLoaded ? clientIsSignedIn : initialIsSignedIn;
   const isStudioView = pathname.startsWith("/studio");
   const isMarketingView =
-    (pathname === "/" && isLoaded && !isSignedIn) ||
+    (pathname === "/" && !isSignedIn) ||
     pathname.startsWith("/beta") ||
     pathname === "/blog" ||
     pathname.startsWith("/blog/");
