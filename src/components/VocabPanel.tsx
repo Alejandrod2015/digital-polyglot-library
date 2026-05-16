@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { X, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { VocabItem } from "@/types/books";
 import { useUser } from "@clerk/nextjs";
+import BottomSheet from "@/components/ui/BottomSheet";
 import { normalizeVocabType } from "@/lib/vocabTypes";
 import {
   coerceAudioSegments,
@@ -294,53 +295,47 @@ export default function VocabPanel({
     }
   };
 
-  if (!selectedWord) return null;
+  const handleClose = () => {
+    setSelectedWord(null);
+    setDefinition(null);
+    setSelectedSentence(undefined);
+    setSelectedSourcePath(undefined);
+    setIsFav(false);
+    if (onClose) onClose();
+  };
 
   return (
-    <div
-      id="vocab-panel"
-      className="fixed bottom-24 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-gray-800 text-white p-4 rounded-xl shadow-xl z-[60]"
+    <BottomSheet
+      open={!!selectedWord}
+      onClose={handleClose}
+      eyebrow="Vocabulary"
+      title={selectedWord ?? undefined}
     >
-      <div className="flex justify-between items-center mb-2">
-        <h3 className="text-xl font-bold">{selectedWord}</h3>
-        <button
-          onClick={() => {
-            setSelectedWord(null);
-            setDefinition(null);
-            setSelectedSentence(undefined);
-            setSelectedSourcePath(undefined);
-            setIsFav(false);
-            if (onClose) onClose();
-          }}
-          aria-label="Close vocab panel"
-        >
-          <X className="w-5 h-5 text-gray-400 hover:text-white" />
-        </button>
-      </div>
+      <div id="vocab-panel" className="pb-2">
+        {definition ? (
+          <p className="text-white/85 text-base leading-relaxed">{definition}</p>
+        ) : (
+          <p className="text-white/50 italic">No definition available</p>
+        )}
 
-      {definition ? (
-        <p className="text-gray-300 text-base">{definition}</p>
-      ) : (
-        <p className="text-gray-500 italic">No definition available</p>
-      )}
-
-      <div className="mt-4">
-        <button
-          onClick={toggleFavorite}
-          className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 transition ${
-            isFav
-              ? "bg-red-600 hover:bg-red-700"
-              : "bg-blue-600 hover:bg-blue-700"
-          } text-white`}
-        >
-          <Heart
-            className={`w-4 h-4 ${
-              isFav ? "fill-red-400 text-red-400" : "text-white"
-            }`}
-          />
-          {isFav ? "Remove from Favorites" : "Add to Favorites"}
-        </button>
+        <div className="mt-5">
+          <button
+            onClick={toggleFavorite}
+            className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
+              isFav
+                ? "bg-rose-500/90 hover:bg-rose-500"
+                : "bg-sky-500/90 hover:bg-sky-500"
+            } text-white`}
+          >
+            <Heart
+              className={`w-4 h-4 ${
+                isFav ? "fill-white text-white" : "text-white"
+              }`}
+            />
+            {isFav ? "Remove from Favorites" : "Add to Favorites"}
+          </button>
+        </div>
       </div>
-    </div>
+    </BottomSheet>
   );
 }
