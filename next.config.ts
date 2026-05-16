@@ -51,6 +51,23 @@ const nextConfig: NextConfig = {
       { source: "/careers/", destination: "/", permanent: true },
     ];
   },
+  async headers() {
+    // WordPress hard-codes http:// in some image URLs and srcsets. The browser
+    // blocks those as mixed content on our https pages. This header tells the
+    // browser to silently upgrade http→https for any resource the blog HTML
+    // references, so the images load through our wp-content rewrite without
+    // touching WordPress siteurl settings.
+    return [
+      {
+        source: "/blog",
+        headers: [{ key: "Content-Security-Policy", value: "upgrade-insecure-requests" }],
+      },
+      {
+        source: "/blog/:path*",
+        headers: [{ key: "Content-Security-Policy", value: "upgrade-insecure-requests" }],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
