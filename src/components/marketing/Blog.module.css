@@ -162,6 +162,19 @@
 .prose a:hover {
   text-decoration-color: #fcd34d;
 }
+/* rehype-autolink wraps each heading in an anchor; strip the link styling
+ * so headings keep their normal look while still being click-to-anchor. */
+.prose h2 a,
+.prose h3 a,
+.prose h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+.prose h2 a:hover,
+.prose h3 a:hover,
+.prose h4 a:hover {
+  color: #fcd34d;
+}
 .prose code {
   font-family:
     ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
