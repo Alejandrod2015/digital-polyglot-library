@@ -14,39 +14,31 @@ export default function ServiceWorkerBootstrap({ currentVersion = "dev-local" }:
   useEffect(() => {
     if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
 
-    const unregisterAllServiceWorkers = async () => {
+    // Register the no-op SW (public/sw.js). It exists only so Chrome
+    // considers the site installable and fires beforeinstallprompt,
+    // which InstallAppHint listens for. As a one-time migration for
+    // users that still have an older caching SW from before this was
+    // disabled, also delete any leftover `dp-*` caches that the old
+    // SW may have populated.
+    const registerNoopServiceWorker = async () => {
       try {
-        const hadController = Boolean(navigator.serviceWorker.controller);
-        const registrations = await navigator.serviceWorker.getRegistrations();
-        const hadRegistrations = registrations.length > 0;
-
-        await Promise.all(registrations.map((registration) => registration.unregister()));
-
         if ("caches" in window) {
           const cacheKeys = await window.caches.keys();
-          await Promise.all(cacheKeys.filter((key) => key.startsWith("dp-")).map((key) => window.caches.delete(key)));
+          await Promise.all(
+            cacheKeys
+              .filter((key) => key.startsWith("dp-"))
+              .map((key) => window.caches.delete(key))
+          );
         }
-
-        const reloadKey = "dp-sw-cleanup-reloaded";
-        const shouldReload =
-          (hadController || hadRegistrations) &&
-          window.sessionStorage.getItem(reloadKey) !== "1";
-
-        if (shouldReload) {
-          window.sessionStorage.setItem(reloadKey, "1");
-          window.location.reload();
-          return;
-        }
-
-        if (!hadController && !hadRegistrations) {
-          window.sessionStorage.removeItem(reloadKey);
-        }
+        await navigator.serviceWorker.register("/sw.js");
       } catch (error) {
-        console.error("[sw] cleanup failed", error);
+        // Installability degrades gracefully to the manual hint copy
+        // when registration fails (private mode, locked-down policies).
+        console.error("[sw] registration failed", error);
       }
     };
 
-    void unregisterAllServiceWorkers();
+    void registerNoopServiceWorker();
   }, []);
 
   useEffect(() => {

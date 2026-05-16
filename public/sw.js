@@ -1,26 +1,17 @@
-const CACHE_PREFIX = "dp-";
-
+// No-op service worker. Exists ONLY so Chrome considers the site
+// installable and fires the `beforeinstallprompt` event, which the
+// in-app InstallAppHint listens for. This worker intentionally:
+//   - caches nothing
+//   - intercepts no fetches (no `fetch` handler -> requests go to network)
+//   - serves no offline content
+// As a result it cannot serve stale content, which is what the old
+// caching SW was apparently disabled for. If a future requirement
+// needs real caching, do it in a separate worker with explicit
+// versioning and revisit the disable history first.
 self.addEventListener("install", (event) => {
   event.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    (async () => {
-      const keys = await caches.keys();
-      await Promise.all(
-        keys.filter((key) => key.startsWith(CACHE_PREFIX)).map((key) => caches.delete(key))
-      );
-
-      await self.clients.claim();
-
-      const registrations = await self.registration.unregister();
-      if (registrations) {
-        const clients = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
-        for (const client of clients) {
-          client.postMessage({ type: "DP_SW_DISABLED" });
-        }
-      }
-    })()
-  );
+  event.waitUntil(self.clients.claim());
 });
