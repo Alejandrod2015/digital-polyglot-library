@@ -68,11 +68,13 @@ export default function LandingPage() {
                 iPhone beta · invite only
               </span>
               <h1>
-                Stories that read <span className={styles.lime}>with</span> you.
+                Read the way{" "}
+                <span className={styles.lime}>people really talk.</span>
               </h1>
               <p className={styles.heroSub}>
-                Stories with word-synced narration and tap-to-translate vocab.
-                Built for people who already love reading.
+                Short stories with word-synced narration and tap-to-translate
+                vocab. Day-to-day expressions, slang and cultural detail in
+                context, not in lists.
               </p>
               <div className={styles.heroCtas}>
                 <Link
