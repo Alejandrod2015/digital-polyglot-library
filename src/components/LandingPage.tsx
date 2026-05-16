@@ -87,18 +87,12 @@ export default function LandingPage() {
 
       <header className="sticky top-0 z-30 border-b border-[var(--card-border)] bg-[var(--background)]/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
-          <Link href="/" className="flex items-center gap-2.5">
-            <Image
-              src="/digital-polyglot-logo.png"
-              alt="Digital Polyglot"
-              width={36}
-              height={36}
-              className="h-9 w-9"
-              priority
-            />
-            <span className="hidden text-base font-extrabold tracking-tight sm:inline">
-              Digital Polyglot
-            </span>
+          <Link
+            href="/"
+            className="flex items-center text-[15px] font-extrabold tracking-tight"
+          >
+            <span className="text-[var(--studio-accent)]">Digital</span>
+            <span className="ml-1.5 text-[var(--foreground)]">Polyglot</span>
           </Link>
 
           <nav className="hidden items-center gap-7 text-sm font-semibold text-[var(--muted)] md:flex">
@@ -296,15 +290,9 @@ export default function LandingPage() {
 
       <footer className="border-t border-[var(--card-border)] px-6 py-10 text-sm text-[var(--muted)]">
         <div className="mx-auto flex max-w-5xl flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-2.5">
-            <Image
-              src="/digital-polyglot-logo.png"
-              alt="Digital Polyglot"
-              width={28}
-              height={28}
-              className="h-7 w-7"
-            />
-            <span className="font-bold text-[var(--foreground)]">Digital Polyglot</span>
+          <div className="flex items-center text-sm font-extrabold tracking-tight">
+            <span className="text-[var(--studio-accent)]">Digital</span>
+            <span className="ml-1.5 text-[var(--foreground)]">Polyglot</span>
           </div>
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <a href="/blog" className="hover:text-[var(--foreground)]">Blog</a>
