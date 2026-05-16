@@ -48,6 +48,21 @@ export default function GA4Tracker() {
     };
   }, [consentKey]);
 
+  // Attach the Clerk user id as the GA4 user_id so authenticated sessions
+  // can be linked across visits and so funnels (landing CTA → signup →
+  // story open → return) resolve to the same person.
+  useEffect(() => {
+    if (!isLoaded) return;
+    if (!GA4_MEASUREMENT_ID) return;
+    if (!hasAnalyticsConsent) return;
+    if (isInternalUser) return;
+    if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+    if (user?.id) {
+      window.gtag("set", "user_properties", { clerk_id: user.id });
+      window.gtag("config", GA4_MEASUREMENT_ID, { user_id: user.id });
+    }
+  }, [isLoaded, hasAnalyticsConsent, isInternalUser, user?.id]);
+
   useEffect(() => {
     if (!isLoaded) return;
     if (!GA4_MEASUREMENT_ID) return;
