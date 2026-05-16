@@ -1,3 +1,8 @@
+// Server-side blog loader. Reads MDX files from content/blog/, parses
+// frontmatter, renders markdown to HTML. Client-safe types and helpers
+// live in src/lib/blog-shared.ts so the toolbar can import them without
+// pulling node:fs into the client bundle.
+
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
@@ -9,15 +14,26 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeStringify from "rehype-stringify";
 
-export type BlogPostMeta = {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  author?: string;
-  tags?: string[];
-  hero?: string;
-};
+import {
+  type BlogPostMeta,
+  classifyDialect,
+  computeReadingMinutes,
+} from "@/lib/blog-shared";
+
+export type {
+  BlogPostMeta,
+  DialectKey,
+  BlogSeries,
+} from "@/lib/blog-shared";
+export {
+  DIALECTS,
+  classifyDialect,
+  computeReadingMinutes,
+  getBlogSeries,
+  getDialectCounts,
+  getDialectMeta,
+  getFeaturedPost,
+} from "@/lib/blog-shared";
 
 export type BlogPost = BlogPostMeta & {
   content: string;
@@ -37,16 +53,20 @@ function parseFile(filename: string): BlogPost {
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
   const slug = (data.slug as string | undefined) ?? filename.replace(/\.mdx?$/, "");
-  return {
+  const post: BlogPost = {
     slug,
     title: String(data.title ?? slug),
     date: String(data.date ?? ""),
     excerpt: String(data.excerpt ?? ""),
     author: data.author as string | undefined,
     tags: Array.isArray(data.tags) ? (data.tags as string[]) : undefined,
+    categories: Array.isArray(data.categories) ? (data.categories as string[]) : undefined,
     hero: data.hero as string | undefined,
     content,
   };
+  post.readingMinutes = computeReadingMinutes(content);
+  post.dialect = classifyDialect(post);
+  return post;
 }
 
 export function listBlogPosts(): BlogPostMeta[] {
@@ -60,7 +80,6 @@ export function getBlogPost(slug: string): BlogPost | null {
   const file = readAllFiles().find((name) => {
     const stem = name.replace(/\.mdx?$/, "");
     if (stem === slug) return true;
-    // Allow `slug:` frontmatter override
     const post = parseFile(name);
     return post.slug === slug;
   });
