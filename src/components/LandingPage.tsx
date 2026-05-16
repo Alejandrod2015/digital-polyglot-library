@@ -33,7 +33,6 @@ export default function LandingPage() {
       <nav className={styles.nav}>
         <div className={`${styles.frame} ${styles.navInner}`}>
           <Link href="/" className={styles.brand}>
-            <span className={styles.brandMark}>Dp</span>
             Digital Polyglot
           </Link>
           <div className={styles.navLinks}>
