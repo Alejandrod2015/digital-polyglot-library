@@ -392,17 +392,17 @@
   bottom: 118px;
   background: linear-gradient(180deg, #112a52 0%, #0a2349 100%);
   border: 1px solid rgba(125, 211, 252, 0.20);
-  border-radius: 18px;
-  padding: 14px 16px 16px;
+  border-radius: 16px;
+  padding: 10px 12px 11px;
   box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.6);
   z-index: 6;
 }
 .vocabPanelClose {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 22px;
-  height: 22px;
+  top: 7px;
+  right: 7px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   border: none;
@@ -412,40 +412,41 @@
   cursor: pointer;
 }
 .vocabPanelWord {
-  font-size: 19px;
+  font-size: 15px;
   font-weight: 900;
   letter-spacing: -0.02em;
   color: #ffffff;
+  line-height: 1.1;
 }
 .vocabPosGreen {
   display: inline-block;
-  margin-top: 4px;
-  padding: 3px 8px;
-  border-radius: 6px;
+  margin-top: 3px;
+  padding: 2px 6px;
+  border-radius: 5px;
   background: rgba(46, 141, 107, 0.20);
   color: #34d399;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 900;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 .vocabPanelDef {
-  margin: 8px 0 12px;
-  font-size: 13px;
+  margin: 5px 0 7px;
+  font-size: 11.5px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.92);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 .vocabSaveBtn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 7px 14px;
+  gap: 5px;
+  padding: 4px 10px;
   border-radius: 999px;
   background: transparent;
   border: 1.5px solid rgba(125, 211, 252, 0.45);
   color: var(--sky);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 900;
   cursor: pointer;
 }
