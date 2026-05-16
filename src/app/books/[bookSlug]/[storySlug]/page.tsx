@@ -8,6 +8,8 @@ import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 import StoryClientGate from "./StoryClientGate";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import StoryContent from "@/components/StoryContent";
+import HighlightedStoryReader from "@/components/HighlightedStoryReader";
+import { prisma } from "@/lib/prisma";
 import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
@@ -46,6 +48,21 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   if (!book || !story) {
     return <div className="p-8 text-center">Historia no encontrada.</div>;
   }
+
+  // Opt-in word-level karaoke. Only stories aligned via the studio
+  // pipeline have `audioWordTimings` populated; the rest stay on the
+  // plain StoryContent path. Mirrors the lookup in
+  // src/app/stories/[slug]/page.tsx so the books reader matches iOS,
+  // which already consumes the same payload via /api/mobile/audio-word-timings.
+  const journeyStoryRow = await prisma.journeyStory
+    .findFirst({
+      where: { slug: story.slug, status: "published" },
+      select: { audioWordTimings: true },
+    })
+    .catch(() => null);
+  const audioWordTimings = journeyStoryRow?.audioWordTimings ?? null;
+  const hasWordTimings =
+    audioWordTimings !== null && typeof audioWordTimings === "object";
 
   const { userId } = await auth();
   const [user, featured] = await Promise.all([
@@ -137,7 +154,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   if (resolvedReturnHref) practiceParams.set("returnTo", resolvedReturnHref);
   if (resolvedReturnLabel) practiceParams.set("returnLabel", resolvedReturnLabel);
   return (
-    <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground">
+    <div className="relative max-w-5xl mx-auto pt-1 px-5 md:px-8 pb-[8rem] text-foreground">
       <ScrollToTopOnPathChange />
       {/* Botón de guardar */}
       <div className="absolute top-[-2.75rem] right-6 z-30 sm:right-8">
@@ -152,7 +169,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
 
       {/* Título */}
       <div className="relative mb-7 pt-2">
-        <h1 className="text-4xl font-bold text-[var(--foreground)] text-center">{story.title}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] text-center">{story.title}</h1>
         <div className="mt-3 flex flex-wrap justify-center gap-2">
           <LevelBadge level={story.level ?? book.level} />
           <LanguageBadge language={story.language ?? book.language} />
@@ -164,7 +181,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
       {storyCoverUrl ? (
         <div className="mb-7">
           <div className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-[#102746] md:h-[220px] lg:h-[240px]">
-            <div className="relative w-full md:hidden aspect-[16/10]">
+            <div className="relative w-full md:hidden aspect-[2/1]">
               <Image
                 src={storyCoverUrl}
                 alt={story.title}
@@ -240,11 +257,16 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
         }
       >
         {hasFullAccess ? (
-          <>
-            <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
+          <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
+            {hasWordTimings ? (
+              <HighlightedStoryReader
+                story={{ vocab: story.vocab ?? [] }}
+                audioWordTimings={audioWordTimings}
+              />
+            ) : (
               <StoryContent text={visibleText} sentencesPerParagraph={3} vocab={story.vocab ?? []} />
-            </div>
-          </>
+            )}
+          </div>
         ) : (
           <div
             className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6"
