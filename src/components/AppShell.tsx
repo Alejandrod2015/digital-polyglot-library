@@ -6,6 +6,7 @@ import { useAuth } from "@clerk/nextjs";
 import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
 import MobileTabBar from "@/components/MobileTabBar";
+import InstallAppHint from "@/components/InstallAppHint";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
 import FeedbackButton from "@/components/FeedbackButton";
 import NavigationTimingTracker from "@/components/NavigationTimingTracker";
@@ -88,6 +89,7 @@ export default function AppShell({
       <CookieConsentBanner />
 
       <>
+        <InstallAppHint />
         <MobileTabBar />
         <FeedbackButton />
       </>
