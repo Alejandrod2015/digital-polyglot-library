@@ -32,52 +32,73 @@ const FALLBACK_ADMIN: StudioMember = {
 };
 
 // ─── Default permission matrix (used as fallback when no override
-// is persisted in StudioConfig.role_permissions yet) ────────────
+// is persisted in StudioConfig.role_permissions yet). Limited to
+// CONTENIDO + PLANNING; ESTUDIO and ADMIN stay admin-only. ──────
 const DEFAULT_ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
   admin: ["*"],
   manager: [
     "studio:view",
-    "studio:metrics",
-    "studio:qa",
-    "studio:content",
-    "studio:planner",
-    "studio:sanity",
     "studio:journey-stories",
-    "studio:journey-builder",
-    "studio:drafts",
+    "studio:library",
     "studio:standalone-stories",
     "studio:catalog-books",
+    "studio:sanity",
+    "studio:covers",
+    "studio:journey-builder",
+    "studio:content",
+    "studio:drafts",
+    "studio:qa",
     "studio:validar",
+    "studio:temas",
+    "studio:planner",
   ],
   content_creator: [
     "studio:view",
-    "studio:content",
     "studio:journey-stories",
-    "studio:journey-builder",
+    "studio:library",
     "studio:standalone-stories",
     "studio:catalog-books",
+    "studio:journey-builder",
+    "studio:content",
+    "studio:drafts",
     "studio:validar",
+    "studio:temas",
   ],
 };
 
 // Permissions that can be toggled per role from the Studio Settings
-// page. Every entry maps to a Sidebar/route. studio:view stays implicit
-// for any non-admin so they can land on /studio at all.
+// page. Limited to CONTENIDO + PLANNING entries by design — ESTUDIO
+// (Progreso, Métricas) and ADMIN (Reglas pedagógicas, Beta Signups,
+// Settings) are admin-only and not configurable per role.
 export const TOGGLEABLE_PERMISSIONS: Array<{ id: string; label: string }> = [
-  { id: "studio:metrics", label: "Métricas" },
-  { id: "studio:qa", label: "QA" },
-  { id: "studio:content", label: "Content Agent" },
-  { id: "studio:planner", label: "Planner" },
+  // CONTENIDO
   { id: "studio:journey-stories", label: "Journey Manager" },
-  { id: "studio:journey-builder", label: "Creador de Journeys" },
+  { id: "studio:library", label: "Biblioteca" },
   { id: "studio:standalone-stories", label: "Standalone Stories" },
   { id: "studio:catalog-books", label: "Catálogo de Libros" },
+  { id: "studio:sanity", label: "Audio propio" },
+  { id: "studio:covers", label: "Covers" },
+  { id: "studio:journey-builder", label: "Creador de Journeys" },
+  { id: "studio:content", label: "Content Agent" },
   { id: "studio:drafts", label: "Borradores" },
-  { id: "studio:sanity", label: "Audio propio / Sanity" },
+  { id: "studio:qa", label: "QA" },
   { id: "studio:validar", label: "Validar" },
-  { id: "studio:beta-signups", label: "Beta Signups" },
-  { id: "studio:config", label: "Reglas pedagógicas" },
+  // PLANNING
+  { id: "studio:temas", label: "Temas, Idiomas y Niveles" },
+  { id: "studio:planner", label: "Planner" },
 ];
+
+// Hrefs that are admin-only no matter what the matrix says. The
+// sidebar hides them for non-admins and the Settings matrix never
+// surfaces toggles for them.
+export const ADMIN_ONLY_HREFS = new Set<string>([
+  "/studio/settings",
+  "/studio/progreso",
+  "/studio/metrics",
+  "/studio/config",
+  "/studio/beta-signups",
+  "/studio/team",
+]);
 
 let rolePermissionsCache: Record<StudioRole, string[]> | null = null;
 let rolePermissionsCacheTs = 0;
@@ -154,6 +175,7 @@ const PATH_PERMISSIONS: Array<{ pattern: RegExp; permission: string }> = [
   { pattern: /^\/studio\/team/, permission: "studio:team" },
   { pattern: /^\/studio\/beta-signups/, permission: "studio:beta-signups" },
   { pattern: /^\/studio\/metrics/, permission: "studio:metrics" },
+  { pattern: /^\/studio\/progreso/, permission: "studio:progreso" },
   { pattern: /^\/studio\/qa/, permission: "studio:qa" },
   { pattern: /^\/studio\/content/, permission: "studio:content" },
   { pattern: /^\/studio\/planner/, permission: "studio:planner" },
@@ -162,6 +184,11 @@ const PATH_PERMISSIONS: Array<{ pattern: RegExp; permission: string }> = [
   { pattern: /^\/studio\/catalog-books/, permission: "studio:catalog-books" },
   { pattern: /^\/studio\/journey-builder/, permission: "studio:journey-builder" },
   { pattern: /^\/studio\/sanity/, permission: "studio:sanity" },
+  { pattern: /^\/studio\/audio/, permission: "studio:sanity" },
+  { pattern: /^\/studio\/library/, permission: "studio:library" },
+  { pattern: /^\/studio\/biblioteca/, permission: "studio:library" },
+  { pattern: /^\/studio\/covers/, permission: "studio:covers" },
+  { pattern: /^\/studio\/temas/, permission: "studio:temas" },
   { pattern: /^\/studio\/drafts/, permission: "studio:drafts" },
   { pattern: /^\/studio\/validar/, permission: "studio:validar" },
   { pattern: /^\/studio/, permission: "studio:view" },

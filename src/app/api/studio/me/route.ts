@@ -3,6 +3,7 @@
 import { NextResponse } from "next/server";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import {
+  ADMIN_ONLY_HREFS,
   getEffectivePermissionsForRole,
   getRequiredPermission,
   getStudioMember,
@@ -51,12 +52,13 @@ export async function GET() {
       ? ["*"]
       : await getEffectivePermissionsForRole(member.role);
   // Admins see everything; non-admins are filtered by the live matrix
-  // saved in StudioConfig.role_permissions.
+  // saved in StudioConfig.role_permissions. ADMIN_ONLY_HREFS (ESTUDIO
+  // + ADMIN groups) are hidden no matter what the matrix says.
   const allowedHrefs =
     member.role === "admin"
       ? NAV_HREFS
       : NAV_HREFS.filter((href) => {
-          if (href === "/studio/settings") return false; // admin-only
+          if (ADMIN_ONLY_HREFS.has(href)) return false;
           const required = getRequiredPermission(href);
           if (required === "studio:view") return true; // homepage stays open
           return permissions.includes(required);
