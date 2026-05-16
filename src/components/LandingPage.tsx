@@ -71,7 +71,7 @@ export default function LandingPage() {
                 Stories that read <span className={styles.lime}>with</span> you.
               </h1>
               <p className={styles.heroSub}>
-                Stories with word-synced narration and instant tap-to-translate.
+                Stories with word-synced narration and tap-to-translate vocab.
                 Built for people who already love reading.
               </p>
               <div className={styles.heroCtas}>
@@ -80,7 +80,7 @@ export default function LandingPage() {
                   onClick={() => track("hero_start_reading")}
                   className={`${styles.btn} ${styles.btnPrimary}`}
                 >
-                  Start reading free
+                  Get started free
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
@@ -178,8 +178,8 @@ export default function LandingPage() {
               Languages
             </span>
             <h2 className={styles.sectionTitle}>
-              Pick a language{" "}
-              <span className={styles.lime}>to read in.</span>
+              Live today in Spanish.{" "}
+              <span className={styles.lime}>German, Portuguese, Italian are next.</span>
             </h2>
           </div>
 
@@ -229,7 +229,7 @@ export default function LandingPage() {
           <h2>
             Open a story. <span className={styles.lime}>Press play.</span>
           </h2>
-          <p>That&apos;s the entire onboarding. No card. No quiz.</p>
+          <p>Sign up and you&apos;re in. No card to enter. No quiz to pass.</p>
           <div className={styles.ctaFinalCtas}>
             <Link
               href="/sign-up"
