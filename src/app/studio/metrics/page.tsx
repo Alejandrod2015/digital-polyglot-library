@@ -46,6 +46,8 @@ type DashboardData = {
   topStoriesByMinutes: Array<{ storySlug: string; listenedMinutes: number; listeners: number }>;
   topSavedStories: Array<{ storySlug: string; saves: number }>;
   topSavedBooks: Array<{ bookSlug: string; saves: number }>;
+  signups: { total: number; last7d: number; last30d: number };
+  recentSignups: Array<{ userId: string; email: string | null; createdAt: string }>;
   trialFunnel: {
     started: number; startedWithPm: number; day1Active: number; converted: number;
     canceled: number; conversionRate: number; day1ActivationRate: number; cancelRate: number;
@@ -108,6 +110,8 @@ const EMPTY_DATA: DashboardData = {
   range: { from: "", to: "", days: 30 },
   kpis: { dau: 0, wau: 0, activeUsersInRange: 0, plays: 0, completions: 0, completionRate: 0, uniqueStories: 0, uniqueBooks: 0, avgMinutesPerActiveUser: 0, totalListenedMinutes: 0, savedStories: 0, savedBooks: 0 },
   daily: [], topStories: [], topBooks: [], topStoriesByMinutes: [], topSavedStories: [], topSavedBooks: [],
+  signups: { total: 0, last7d: 0, last30d: 0 },
+  recentSignups: [],
   trialFunnel: { started: 0, startedWithPm: 0, day1Active: 0, converted: 0, canceled: 0, conversionRate: 0, day1ActivationRate: 0, cancelRate: 0 },
   recentTrialStarts: [], recentReminderTaps: [], recentReminderOpens: [],
   checkoutFunnel: { plansViewed: 0, checkoutStarted: 0, checkoutRedirected: 0, checkoutFailed: 0, checkoutStartRate: 0, checkoutRedirectRate: 0 },
@@ -364,24 +368,70 @@ export default function MetricsDashboard() {
 
     if (section === "acquisition") {
       return (
-        <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-          <div className="studio-card" style={cardCompact}>
-            <p style={kpiLabel}>Plans viewed</p>
-            <p style={kpiValue}>{data.checkoutFunnel.plansViewed}</p>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {/* Signups (Clerk webhook → UserMetric) */}
+          <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Signups (total)</p>
+              <p style={kpiValue}>{data.signups.total}</p>
+            </div>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Last 7 days</p>
+              <p style={kpiValue}>{data.signups.last7d}</p>
+            </div>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Last 30 days</p>
+              <p style={kpiValue}>{data.signups.last30d}</p>
+            </div>
           </div>
-          <div className="studio-card" style={cardCompact}>
-            <p style={kpiLabel}>Checkout started</p>
-            <p style={kpiValue}>{data.checkoutFunnel.checkoutStarted}</p>
-            <p style={subLabel}>{data.checkoutFunnel.checkoutStartRate}% from plans view</p>
+
+          <div style={card}>
+            <h3 style={heading}>Recent signups</h3>
+            {data.recentSignups.length === 0 && <p style={{ ...emptyText, marginTop: 8 }}>No signups tracked yet. The Clerk webhook writes a signup_completed event on user.created.</p>}
+            {data.recentSignups.length > 0 && (
+              <div style={{ overflowX: "auto", marginTop: 8 }}>
+                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+                  <thead>
+                    <tr>
+                      <th style={thStyle}>When</th>
+                      <th style={thStyle}>Email</th>
+                      <th style={thStyle}>Clerk user id</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.recentSignups.map((row) => (
+                      <tr key={`${row.userId}-${row.createdAt}`}>
+                        <td style={tdStyle}>{new Date(row.createdAt).toLocaleString()}</td>
+                        <td style={tdStyle}>{row.email ?? "—"}</td>
+                        <td style={{ ...tdStyle, fontFamily: "monospace", fontSize: 11, color: "var(--muted)" }}>{row.userId}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
-          <div className="studio-card" style={cardCompact}>
-            <p style={kpiLabel}>Checkout redirect</p>
-            <p style={kpiValue}>{data.checkoutFunnel.checkoutRedirected}</p>
-            <p style={subLabel}>{data.checkoutFunnel.checkoutRedirectRate}% from checkout start</p>
-          </div>
-          <div className="studio-card" style={cardCompact}>
-            <p style={kpiLabel}>Checkout failed</p>
-            <p style={kpiValue}>{data.checkoutFunnel.checkoutFailed}</p>
+
+          {/* Checkout funnel */}
+          <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Plans viewed</p>
+              <p style={kpiValue}>{data.checkoutFunnel.plansViewed}</p>
+            </div>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Checkout started</p>
+              <p style={kpiValue}>{data.checkoutFunnel.checkoutStarted}</p>
+              <p style={subLabel}>{data.checkoutFunnel.checkoutStartRate}% from plans view</p>
+            </div>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Checkout redirect</p>
+              <p style={kpiValue}>{data.checkoutFunnel.checkoutRedirected}</p>
+              <p style={subLabel}>{data.checkoutFunnel.checkoutRedirectRate}% from checkout start</p>
+            </div>
+            <div className="studio-card" style={cardCompact}>
+              <p style={kpiLabel}>Checkout failed</p>
+              <p style={kpiValue}>{data.checkoutFunnel.checkoutFailed}</p>
+            </div>
           </div>
         </div>
       );

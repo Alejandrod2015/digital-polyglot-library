@@ -41,6 +41,7 @@ const NAV_SECTIONS = [
     label: "ESTUDIO",
     items: [
       { href: "/studio/progreso", label: "Progreso del proyecto", icon: "chart", exact: false },
+      { href: "/studio/metrics", label: "Métricas", icon: "chart", exact: false },
     ],
   },
   {
@@ -55,7 +56,6 @@ const NAV_SECTIONS = [
 
 /* ── Hidden pages (all routes still work, just not in sidebar) ──
   /studio              → Resumen
-  /studio/metrics      → Métricas
   /studio/qa           → QA
   /studio/planner      → Planner
   /studio/content      → Content Agent

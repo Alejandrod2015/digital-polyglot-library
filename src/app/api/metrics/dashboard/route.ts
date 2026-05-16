@@ -109,6 +109,16 @@ type DashboardResponse = {
     bookSlug: string;
     saves: number;
   }>;
+  signups: {
+    total: number;
+    last7d: number;
+    last30d: number;
+  };
+  recentSignups: Array<{
+    userId: string;
+    email: string | null;
+    createdAt: string;
+  }>;
   trialFunnel: {
     started: number;
     startedWithPm: number;
@@ -234,6 +244,8 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
     topStoriesByMinutes: [],
     topSavedStories: [],
     topSavedBooks: [],
+    signups: { total: 0, last7d: 0, last30d: 0 },
+    recentSignups: [],
     trialFunnel: {
       started: 0,
       startedWithPm: 0,
@@ -450,6 +462,10 @@ export async function GET(req: NextRequest): Promise<Response> {
   const needsJourneyFunnelData = needsFunnelsData;
   const needsReminderFunnelData = needsFunnelsData;
   const needsTrialData = needsFunnelsData;
+  const needsSignupData = needsOverviewData || needsAcquisitionData;
+
+  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+  const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
 
   const [
     events,
@@ -470,6 +486,10 @@ export async function GET(req: NextRequest): Promise<Response> {
     journeyFunnelRows,
     reminderFunnelRows,
     reminderDestinationRows,
+    signupTotalCount,
+    signupLast7dCount,
+    signupLast30dCount,
+    recentSignupRows,
   ] =
     await Promise.all([
     needsEventData ? prisma.userMetric.findMany({
@@ -695,6 +715,34 @@ export async function GET(req: NextRequest): Promise<Response> {
       },
       take: 5000,
     }) : Promise.resolve([]),
+    // Signup totals + rolling windows + recent signups list.
+    needsSignupData
+      ? prisma.userMetric.count({ where: { eventType: "signup_completed" } })
+      : Promise.resolve(0),
+    needsSignupData
+      ? prisma.userMetric.count({
+          where: {
+            eventType: "signup_completed",
+            createdAt: { gte: sevenDaysAgo },
+          },
+        })
+      : Promise.resolve(0),
+    needsSignupData
+      ? prisma.userMetric.count({
+          where: {
+            eventType: "signup_completed",
+            createdAt: { gte: thirtyDaysAgo },
+          },
+        })
+      : Promise.resolve(0),
+    needsSignupData
+      ? prisma.userMetric.findMany({
+          where: { eventType: "signup_completed" },
+          select: { userId: true, createdAt: true, metadata: true },
+          orderBy: { createdAt: "desc" },
+          take: 25,
+        })
+      : Promise.resolve([]),
     ]);
 
   const plays = events.filter((e) => e.eventType === "audio_play").length;
@@ -853,6 +901,28 @@ export async function GET(req: NextRequest): Promise<Response> {
     eventType: row.eventType,
     createdAt: row.createdAt.toISOString(),
   }));
+
+  type SignupRow = {
+    userId: string;
+    createdAt: Date;
+    metadata: unknown;
+  };
+  const signupRows = recentSignupRows as SignupRow[];
+  const signupEmails = needsSignupData
+    ? await resolveUserEmails(signupRows.map((row) => row.userId))
+    : new Map<string, string | null>();
+  const recentSignups = signupRows.map((row) => {
+    const meta =
+      row.metadata && typeof row.metadata === "object"
+        ? (row.metadata as Record<string, unknown>)
+        : null;
+    const metaEmail = typeof meta?.email === "string" ? meta.email : null;
+    return {
+      userId: row.userId,
+      email: signupEmails.get(row.userId) ?? metaEmail,
+      createdAt: row.createdAt.toISOString(),
+    };
+  });
   const reminderTapUserEmails = needsReminderFunnelData
     ? await resolveUserEmails((recentReminderTapRows as ReminderTapRow[]).map((row) => row.userId))
     : new Map<string, string | null>();
@@ -980,6 +1050,12 @@ export async function GET(req: NextRequest): Promise<Response> {
     topStoriesByMinutes,
     topSavedStories,
     topSavedBooks,
+    signups: {
+      total: signupTotalCount as number,
+      last7d: signupLast7dCount as number,
+      last30d: signupLast30dCount as number,
+    },
+    recentSignups,
     trialFunnel: {
       started: trialCounts.started,
       startedWithPm: trialCounts.startedWithPm,

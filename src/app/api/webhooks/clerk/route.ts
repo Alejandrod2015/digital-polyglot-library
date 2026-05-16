@@ -7,12 +7,40 @@ type UserDeletedEvent = {
   data: { id: string };
 };
 
+type UserCreatedEvent = {
+  type: "user.created";
+  data: {
+    id: string;
+    created_at?: number;
+    email_addresses?: Array<{ email_address?: string }>;
+    primary_email_address_id?: string;
+  };
+};
+
 function isUserDeletedEvent(evt: unknown): evt is UserDeletedEvent {
   if (typeof evt !== "object" || evt === null) return false;
   const e = evt as Record<string, unknown>;
   if (e.type !== "user.deleted") return false;
   const data = e.data as Record<string, unknown> | undefined;
   return typeof data?.id === "string";
+}
+
+function isUserCreatedEvent(evt: unknown): evt is UserCreatedEvent {
+  if (typeof evt !== "object" || evt === null) return false;
+  const e = evt as Record<string, unknown>;
+  if (e.type !== "user.created") return false;
+  const data = e.data as Record<string, unknown> | undefined;
+  return typeof data?.id === "string";
+}
+
+function pickPrimaryEmail(evt: UserCreatedEvent): string | null {
+  const list = evt.data.email_addresses ?? [];
+  if (!list.length) return null;
+  const primaryId = evt.data.primary_email_address_id;
+  const primary = primaryId
+    ? list.find((e) => (e as { id?: string }).id === primaryId)
+    : list[0];
+  return primary?.email_address ?? null;
 }
 
 export async function POST(req: Request) {
@@ -51,6 +79,28 @@ export async function POST(req: Request) {
       ]);
 
       console.log(`🧹 Datos del usuario ${userId} eliminados/anonimizados`);
+    }
+
+    if (isUserCreatedEvent(eventUnknown)) {
+      const userId = eventUnknown.data.id;
+      const email = pickPrimaryEmail(eventUnknown);
+      const createdAtMs = eventUnknown.data.created_at;
+      // Surface the signup as a UserMetric event so the Studio dashboard
+      // can count signups alongside the rest of the funnel.
+      await prisma.userMetric.create({
+        data: {
+          userId,
+          storySlug: "__auth__",
+          bookSlug: "signup",
+          eventType: "signup_completed",
+          metadata: {
+            email,
+            source: "clerk",
+            createdAt: createdAtMs ? new Date(createdAtMs).toISOString() : null,
+          },
+        },
+      });
+      console.log(`✅ Signup tracked for ${userId}`);
     }
 
     return NextResponse.json({ received: true });
