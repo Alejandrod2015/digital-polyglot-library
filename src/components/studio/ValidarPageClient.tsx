@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type CheckStatus = "pass" | "fail" | "warn";
 
@@ -22,17 +22,23 @@ type ValidateResponse = {
   } | null;
 };
 
-const LANGUAGE_OPTIONS = [
-  { code: "", label: "(no especificar)" },
-  { code: "ES", label: "Español" },
-  { code: "DE", label: "Alemán" },
-  { code: "IT", label: "Italiano" },
-  { code: "PT", label: "Portugués" },
-  { code: "FR", label: "Francés" },
-  { code: "EN", label: "Inglés" },
-];
+type Topic = { slug: string; label: string };
+type Level = {
+  id: string;
+  title: string;
+  subtitle: string;
+  topics: Topic[];
+};
+type JourneyOption = {
+  id: string;
+  name: string;
+  language: string;
+  languageCode: string;
+  variant: string;
+  levels: Level[];
+};
 
-const LEVEL_OPTIONS = ["", "A1", "A2", "B1", "B2", "C1", "C2"];
+type OptionsResponse = { journeys: JourneyOption[] };
 
 const STATUS_COLOR: Record<CheckStatus, string> = {
   pass: "bg-emerald-500/15 text-emerald-300 border-emerald-500/40",
@@ -47,14 +53,56 @@ const STATUS_BADGE: Record<CheckStatus, string> = {
 };
 
 export default function ValidarPageClient() {
-  const [raw, setRaw] = useState("");
+  const [options, setOptions] = useState<JourneyOption[] | null>(null);
+  const [optionsError, setOptionsError] = useState<string | null>(null);
+
   const [journeyId, setJourneyId] = useState("");
-  const [level, setLevel] = useState("");
-  const [topic, setTopic] = useState("");
-  const [language, setLanguage] = useState("");
+  const [levelId, setLevelId] = useState("");
+  const [topicSlug, setTopicSlug] = useState("");
+
+  const [raw, setRaw] = useState("");
   const [result, setResult] = useState<ValidateResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Load options on mount
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/studio/validar/options", { cache: "no-store" })
+      .then(async (r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return (await r.json()) as OptionsResponse;
+      })
+      .then((data) => {
+        if (!cancelled) setOptions(data.journeys ?? []);
+      })
+      .catch((e: unknown) => {
+        if (!cancelled) {
+          setOptionsError(e instanceof Error ? e.message : String(e));
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const selectedJourney = useMemo(
+    () => options?.find((j) => j.id === journeyId) ?? null,
+    [options, journeyId]
+  );
+  const selectedLevel = useMemo(
+    () => selectedJourney?.levels.find((l) => l.id === levelId) ?? null,
+    [selectedJourney, levelId]
+  );
+
+  // Reset cascading when parent changes
+  useEffect(() => {
+    setLevelId("");
+    setTopicSlug("");
+  }, [journeyId]);
+  useEffect(() => {
+    setTopicSlug("");
+  }, [levelId]);
 
   async function handleSubmit() {
     setLoading(true);
@@ -67,9 +115,9 @@ export default function ValidarPageClient() {
         body: JSON.stringify({
           raw,
           journeyId: journeyId || undefined,
-          level: level || undefined,
-          topic: topic || undefined,
-          language: language || undefined,
+          level: levelId || undefined,
+          topic: topicSlug || undefined,
+          language: selectedJourney?.languageCode || undefined,
         }),
       });
       if (!res.ok) {
@@ -91,62 +139,89 @@ export default function ValidarPageClient() {
     setError(null);
   }
 
+  const ctxReady = !!journeyId && !!levelId && !!topicSlug;
+
   return (
     <div className="space-y-6">
-      <div className="grid gap-4 md:grid-cols-4">
+      {optionsError && (
+        <div className="rounded-md border border-amber-500/40 bg-amber-500/10 px-4 py-2 text-xs text-amber-200">
+          No se pudo cargar la lista de journeys ({optionsError}). Puedes igual pegar el JSON y validar
+          la estructura básica, pero los checks de vocabulario cruzado entre historias no se activan.
+        </div>
+      )}
+
+      <div className="grid gap-4 md:grid-cols-3">
         <label className="flex flex-col gap-1 text-sm">
-          <span className="text-neutral-400">Idioma</span>
+          <span className="text-neutral-400">Journey</span>
           <select
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-            className="rounded-md border border-neutral-700 bg-neutral-900 px-2 py-1.5 text-neutral-100"
-          >
-            {LANGUAGE_OPTIONS.map((o) => (
-              <option key={o.code} value={o.code}>
-                {o.label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="flex flex-col gap-1 text-sm">
-          <span className="text-neutral-400">Nivel CEFR</span>
-          <select
-            value={level}
-            onChange={(e) => setLevel(e.target.value)}
-            className="rounded-md border border-neutral-700 bg-neutral-900 px-2 py-1.5 text-neutral-100"
-          >
-            {LEVEL_OPTIONS.map((l) => (
-              <option key={l} value={l}>
-                {l || "(no especificar)"}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="flex flex-col gap-1 text-sm">
-          <span className="text-neutral-400">Topic slug</span>
-          <input
-            type="text"
-            value={topic}
-            onChange={(e) => setTopic(e.target.value)}
-            placeholder="food-daily-life"
-            className="rounded-md border border-neutral-700 bg-neutral-900 px-2 py-1.5 text-neutral-100"
-          />
-        </label>
-        <label className="flex flex-col gap-1 text-sm">
-          <span className="text-neutral-400">Journey ID</span>
-          <input
-            type="text"
             value={journeyId}
             onChange={(e) => setJourneyId(e.target.value)}
-            placeholder="opcional, activa checks cross-historia"
-            className="rounded-md border border-neutral-700 bg-neutral-900 px-2 py-1.5 text-neutral-100"
-          />
+            disabled={!options}
+            className="rounded-md border border-neutral-700 bg-neutral-900 px-2 py-1.5 text-neutral-100 disabled:opacity-50"
+          >
+            <option value="">{options ? "Elige un journey…" : "Cargando…"}</option>
+            {options?.map((j) => (
+              <option key={j.id} value={j.id}>
+                {j.name} ({j.languageCode || j.language} · {j.variant})
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="flex flex-col gap-1 text-sm">
+          <span className="text-neutral-400">Nivel</span>
+          <select
+            value={levelId}
+            onChange={(e) => setLevelId(e.target.value)}
+            disabled={!selectedJourney}
+            className="rounded-md border border-neutral-700 bg-neutral-900 px-2 py-1.5 text-neutral-100 disabled:opacity-50"
+          >
+            <option value="">
+              {selectedJourney ? "Elige un nivel…" : "Primero elige journey"}
+            </option>
+            {selectedJourney?.levels.map((l) => (
+              <option key={l.id} value={l.id}>
+                {l.title}
+                {l.subtitle ? ` — ${l.subtitle}` : ""}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="flex flex-col gap-1 text-sm">
+          <span className="text-neutral-400">Tema</span>
+          <select
+            value={topicSlug}
+            onChange={(e) => setTopicSlug(e.target.value)}
+            disabled={!selectedLevel || selectedLevel.topics.length === 0}
+            className="rounded-md border border-neutral-700 bg-neutral-900 px-2 py-1.5 text-neutral-100 disabled:opacity-50"
+          >
+            <option value="">
+              {!selectedLevel
+                ? "Primero elige nivel"
+                : selectedLevel.topics.length === 0
+                  ? "Este nivel no tiene temas cargados"
+                  : "Elige un tema…"}
+            </option>
+            {selectedLevel?.topics.map((t) => (
+              <option key={t.slug} value={t.slug}>
+                {t.label}
+              </option>
+            ))}
+          </select>
         </label>
       </div>
 
+      {ctxReady && (
+        <div className="rounded-md border border-emerald-500/30 bg-emerald-500/5 px-3 py-2 text-xs text-emerald-200">
+          Listo. Al validar se compararán palabras, títulos y nombres contra las historias que ya
+          existan en este tema.
+        </div>
+      )}
+
       <div>
         <label className="mb-1 block text-sm text-neutral-400">
-          Pega aquí el JSON que devolvió el Custom GPT
+          Pega aquí el texto que te dio el asistente (el JSON)
         </label>
         <textarea
           value={raw}
