@@ -106,6 +106,10 @@ function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
   }
 }
 
+const SIDEBAR_WIDTH_EXPANDED = 240;
+const SIDEBAR_WIDTH_COLLAPSED = 64;
+const SIDEBAR_COLLAPSED_KEY = "dp-studio-sidebar-collapsed";
+
 export default function StudioShell({
   children,
   title,
@@ -114,6 +118,7 @@ export default function StudioShell({
 }: StudioShellProps) {
   const pathname = usePathname() ?? "";
   const [testMode, setTestMode] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
     fetch("/api/studio/settings")
@@ -121,6 +126,24 @@ export default function StudioShell({
       .then((data) => { if (data?.testMode) setTestMode(true); })
       .catch(() => {});
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const stored = window.localStorage.getItem(SIDEBAR_COLLAPSED_KEY);
+    if (stored === "1") setCollapsed(true);
+  }, []);
+
+  const toggleCollapsed = () => {
+    setCollapsed((prev) => {
+      const next = !prev;
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(SIDEBAR_COLLAPSED_KEY, next ? "1" : "0");
+      }
+      return next;
+    });
+  };
+
+  const sidebarWidth = collapsed ? SIDEBAR_WIDTH_COLLAPSED : SIDEBAR_WIDTH_EXPANDED;
 
   return (
     <div style={{ display: "flex", minHeight: "100vh", backgroundColor: "var(--background)", color: "var(--foreground)" }}>
@@ -131,19 +154,21 @@ export default function StudioShell({
           top: 0,
           left: 0,
           bottom: 0,
-          width: 240,
+          width: sidebarWidth,
           background: SIDEBAR_BG,
           borderRight: `1px solid ${SIDEBAR_BORDER}`,
           display: "flex",
           flexDirection: "column",
           zIndex: 40,
           overflowY: "auto",
+          overflowX: "hidden",
+          transition: "width 0.18s ease",
         }}
       >
         {/* Brand */}
         <div
           style={{
-            padding: "20px 20px 16px",
+            padding: collapsed ? "20px 12px 16px" : "20px 20px 16px",
             display: "flex",
             alignItems: "center",
             gap: 8,
@@ -173,31 +198,67 @@ export default function StudioShell({
                 <polyline points="2 12 12 17 22 12" />
               </svg>
             </div>
-            <span style={{ fontSize: 15, fontWeight: 700, color: "var(--foreground)" }}>
-              Digital Polyglot
-            </span>
+            {!collapsed && (
+              <span style={{ fontSize: 15, fontWeight: 700, color: "var(--foreground)" }}>
+                Digital Polyglot
+              </span>
+            )}
           </StudioActionLink>
-          <span
-            style={{
-              fontSize: 10,
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              color: ACCENT,
-              background: ACCENT_SOFT,
-              padding: "2px 6px",
-              borderRadius: 4,
-              marginLeft: "auto",
-            }}
-          >
-            STUDIO
-          </span>
+          {!collapsed && (
+            <span
+              style={{
+                fontSize: 10,
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                color: ACCENT,
+                background: ACCENT_SOFT,
+                padding: "2px 6px",
+                borderRadius: 4,
+                marginLeft: "auto",
+              }}
+            >
+              STUDIO
+            </span>
+          )}
         </div>
+
+        {/* Collapse toggle */}
+        <button
+          type="button"
+          onClick={toggleCollapsed}
+          aria-label={collapsed ? "Expandir menú" : "Plegar menú"}
+          title={collapsed ? "Expandir menú" : "Plegar menú"}
+          style={{
+            position: "absolute",
+            top: 22,
+            right: collapsed ? "50%" : 10,
+            transform: collapsed ? "translateX(50%)" : "none",
+            width: 24,
+            height: 24,
+            borderRadius: 6,
+            background: "rgba(255,255,255,0.05)",
+            border: `1px solid ${SIDEBAR_BORDER}`,
+            color: "var(--muted)",
+            display: "grid",
+            placeItems: "center",
+            cursor: "pointer",
+            zIndex: 1,
+          }}
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+            {collapsed ? (
+              <polyline points="9 18 15 12 9 6" />
+            ) : (
+              <polyline points="15 18 9 12 15 6" />
+            )}
+          </svg>
+        </button>
 
         {/* Nav sections */}
         <nav style={{ padding: "12px 0", flex: 1 }}>
           {NAV_SECTIONS.map((section, si) => (
-            <div key={section.label || `s${si}`} style={{ padding: "0 12px", marginBottom: 8 }}>
-              {section.label && (
+            <div key={section.label || `s${si}`} style={{ padding: collapsed ? "0 8px" : "0 12px", marginBottom: 8 }}>
+              {section.label && !collapsed && (
                 <span
                   style={{
                     display: "block",
@@ -213,6 +274,16 @@ export default function StudioShell({
                   {section.label}
                 </span>
               )}
+              {section.label && collapsed && (
+                <div
+                  aria-hidden
+                  style={{
+                    height: 1,
+                    background: SIDEBAR_BORDER,
+                    margin: "12px 8px 6px",
+                  }}
+                />
+              )}
               {section.items.map((item) => {
                 const active = item.exact
                   ? pathname === item.href
@@ -227,7 +298,8 @@ export default function StudioShell({
                       alignItems: "center",
                       gap: 10,
                       width: "100%",
-                      padding: "8px 10px",
+                      padding: collapsed ? "10px 0" : "8px 10px",
+                      justifyContent: collapsed ? "center" : "flex-start",
                       borderRadius: 8,
                       fontSize: 14,
                       fontWeight: active ? 600 : 500,
@@ -239,7 +311,7 @@ export default function StudioShell({
                     }}
                   >
                     <NavIcon name={item.icon} />
-                    <span>{item.label}</span>
+                    {!collapsed && <span>{item.label}</span>}
                   </StudioActionLink>
                 );
               })}
@@ -249,7 +321,7 @@ export default function StudioShell({
       </aside>
 
       {/* ── Main area ── */}
-      <div style={{ marginLeft: 240, flex: 1, minWidth: 0 }}>
+      <div style={{ marginLeft: sidebarWidth, flex: 1, minWidth: 0, transition: "margin-left 0.18s ease" }}>
         {/* Test mode banner */}
         {testMode && (
           <div style={{
