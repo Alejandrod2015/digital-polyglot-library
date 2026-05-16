@@ -6,6 +6,7 @@ import { computePracticeAudioRanges } from "@/lib/practiceAudioRanges";
 
 type LooseVocabItem = {
   word: string;
+  surface?: string | null;
   definition: string;
   type?: string | null;
   note?: string | null;
@@ -33,11 +34,12 @@ export function parseLooseVocab(input: unknown): LooseVocabItem[] {
       if (!item || typeof item !== "object") continue;
       const record = item as Record<string, unknown>;
       const word = normalizeText(typeof record.word === "string" ? record.word : "");
+      const surface = normalizeText(typeof record.surface === "string" ? record.surface : "") || null;
       const definition = normalizeText(typeof record.definition === "string" ? record.definition : "");
       const type = normalizeText(typeof record.type === "string" ? record.type : "") || null;
       const note = normalizeText(typeof record.note === "string" ? record.note : "") || null;
       if (!word || !definition) continue;
-      output.push({ word, definition, type, note });
+      output.push({ word, surface, definition, type, note });
     }
 
     return output;
@@ -107,14 +109,27 @@ export function buildPracticeItemsFromStory(params: {
     const translation = normalizeText(item.definition);
     if (!word || !translation) continue;
 
+    // The `word` is the lemma we teach; `surface` is the form actually
+    // present in the story body. When both exist we prefer `surface` for
+    // the audio range lookup so a vocab like {word:"comprare", surface:"compra"}
+    // resolves to the conjugated token in the text instead of falling
+    // back to TTS because the infinitive isn't in the body.
+    const surfaceCandidate = normalizeText(
+      "surface" in item && typeof (item as { surface?: unknown }).surface === "string"
+        ? ((item as { surface?: string }).surface as string)
+        : "",
+    );
+    const lookupWord = surfaceCandidate || word;
+
     const exampleSentence =
       normalizeText("note" in item && typeof item.note === "string" ? item.note : "") ||
+      getContextSentence(cleanText, lookupWord) ||
       getContextSentence(cleanText, word) ||
       undefined;
 
     const ranges = timings
       ? computePracticeAudioRanges({
-          targetWord: word,
+          targetWord: lookupWord,
           timings,
           preferredContext: exampleSentence ?? null,
         })

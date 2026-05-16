@@ -16,6 +16,7 @@
 import { readFileSync } from "node:fs";
 import { PrismaClient } from "../src/generated/prisma";
 import { generateSlug } from "../src/agents/content/tools";
+import { validateVocabAgainstText } from "../src/lib/vocabSurfaceValidation";
 
 const prisma = new PrismaClient();
 
@@ -137,6 +138,21 @@ function validatePayload(raw: unknown): {
   if (vocab.length < 15) {
     throw new Error(`Vocab must have at least 15 valid items, got ${vocab.length}.`);
   }
+
+  // Surface-in-text gate: every vocab item must appear as a literal token
+  // in the story body, otherwise computePracticeAudioRanges can't resolve
+  // a deterministic audio range and the exercise falls back to TTS.
+  const surfaceCheck = validateVocabAgainstText(vocab, text);
+  if (!surfaceCheck.ok) {
+    const lines = surfaceCheck.issues.map((i) => {
+      const hint = i.suggestion ? ` → did you mean surface="${i.suggestion}"?` : "";
+      return `  - "${i.word}" (surface="${i.declaredSurface}") not found in text${hint}`;
+    });
+    throw new Error(
+      `Vocab surface gate failed (${surfaceCheck.issues.length} items missing from text):\n${lines.join("\n")}`,
+    );
+  }
+
   return { title, synopsis, text, vocab };
 }
 

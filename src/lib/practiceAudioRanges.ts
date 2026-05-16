@@ -56,14 +56,35 @@ function pickStartSec(words: StoryWordToken[], rangeStart: number, rangeEnd: num
 }
 
 function pickEndSec(words: StoryWordToken[], rangeStart: number, rangeEnd: number): number | null {
+  let lastOverlapIdx = -1;
   for (let i = words.length - 1; i >= 0; i -= 1) {
     const token = words[i];
     if (token.charStart >= rangeEnd) continue;
     if (token.charEnd <= rangeStart) break;
     if (typeof token.endSec === "number" && Number.isFinite(token.endSec)) {
+      lastOverlapIdx = i;
+      const next = words[i + 1];
+      // Some aeneas tokens (often at end-of-paragraph or end-of-story)
+      // come back with endSec === startSec — a 0-duration artifact.
+      // Look forward through subsequent tokens for a startSec that
+      // actually advances. If none does (whole tail collapsed), pad.
+      const startSec = typeof token.startSec === "number" ? token.startSec : null;
+      if (startSec !== null && token.endSec <= startSec) {
+        for (let j = i + 1; j < words.length; j += 1) {
+          const ahead = words[j];
+          if (typeof ahead.startSec === "number" && Number.isFinite(ahead.startSec) && ahead.startSec > startSec) {
+            return ahead.startSec;
+          }
+        }
+        return token.endSec + 0.3;
+      }
+      // Reference `next` so TS doesn't complain — kept in case future
+      // logic wants to peek without re-indexing.
+      void next;
       return token.endSec;
     }
   }
+  if (lastOverlapIdx === -1) return null;
   return null;
 }
 
@@ -100,7 +121,12 @@ export function computePracticeAudioRanges(args: {
   if (!plainText) return EMPTY;
 
   // Match the surface form as a whole token, case-insensitive.
-  const matcher = new RegExp(`\\b${escapeRegExp(word)}\\b`, "giu");
+  // Use Unicode-aware lookarounds because the JS `\b` is ASCII-only and
+  // fails on accented words like città, ragù, c'è or past-tense arrivò.
+  const matcher = new RegExp(
+    `(?<![\\p{L}\\p{M}])${escapeRegExp(word)}(?![\\p{L}\\p{M}])`,
+    "giu",
+  );
   const matches: Array<{ start: number; end: number }> = [];
   let m: RegExpExecArray | null;
   while ((m = matcher.exec(plainText)) !== null) {
