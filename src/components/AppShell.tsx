@@ -24,7 +24,10 @@ export default function AppShell({ children, currentVersion }: AppShellProps) {
   const { isSignedIn, isLoaded } = useAuth();
   const isStudioView = pathname.startsWith("/studio");
   const isMarketingView =
-    (pathname === "/" && isLoaded && !isSignedIn) || pathname.startsWith("/beta");
+    (pathname === "/" && isLoaded && !isSignedIn) ||
+    pathname.startsWith("/beta") ||
+    pathname === "/blog" ||
+    pathname.startsWith("/blog/");
   const isAuthFlowView =
     pathname.startsWith("/auth/") ||
     pathname.startsWith("/mobile-auth") ||
