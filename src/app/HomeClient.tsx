@@ -315,7 +315,9 @@ export default function HomeClient({
         const storyCover =
           typeof storyMeta.cover === "string" && storyMeta.cover.trim() !== ""
             ? storyMeta.cover
-            : null;
+            : typeof storyMeta.coverUrl === "string" && storyMeta.coverUrl.trim() !== ""
+              ? storyMeta.coverUrl
+              : null;
         const cover =
           storyCover ??
           (typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
@@ -438,7 +440,9 @@ export default function HomeClient({
     const storyCover =
       typeof storyMeta.cover === "string" && storyMeta.cover.trim() !== ""
         ? storyMeta.cover
-        : null;
+        : typeof storyMeta.coverUrl === "string" && storyMeta.coverUrl.trim() !== ""
+          ? storyMeta.coverUrl
+          : null;
     const cover =
       storyCover ??
       (typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
