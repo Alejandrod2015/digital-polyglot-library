@@ -1,0 +1,28 @@
+{
+  "title": "Guayoyo en Chacaíto",
+  "synopsis": "Una plancha caliente suena junto a la ventana y el olor de mantequilla llena la arepera en Chacaíto. Valeria entra antes del trabajo para comprar una arepa sencilla, pero la caja no tiene cambio para un billete grande. Mientras espera, habla con Darío y con la señora de la cocina sobre el barrio, los buses y el café de la mañana. Al final, una pequeña solución cambia el ritmo del desayuno.",
+  "arcType": "small-stake",
+  "text": "Valeria mira la fila corta de la arepera y guarda su bolso bajo el brazo. La plancha suena fuerte y el olor de mantequilla llega hasta la puerta.\n\nValeria: Buenos días. Quiero una arepa con queso y un guayoyo.\n\nDarío: Sale rápido. Pero tengo un detalle. No tengo cambio para cien.\n\nValeria: Qué mala suerte. Solo traje ese billete.\n\nDarío: La señora Miriam puede ayudar. Ella siempre guarda monedas.\n\nMiriam: Guardo pocas hoy. Desde temprano viene mucha gente.\n\nValeria: El bus pasó tarde y yo salí apurada. Pensé que aquí sería más fácil.\n\nDarío: En esta esquina todo parece fácil, pero a veces cuesta.\n\nMiriam: Mira, muchacha, tengo para una parte. Falta un poco.\n\nValeria: También tengo unas monedas en el bolso. Nunca las uso.\n\nDarío: Entonces sí alcanza.\n\nValeria: Menos mal. Ese guayoyo me salva la mañana.\n\nMiriam: Siempre dices eso cuando vienes.\n\nValeria: Porque es verdad. El café de mi oficina parece agua.\n\nDarío: Aquí la plancha trabaja desde las cinco. Por eso vuelve tanta gente.\n\nValeria: Y por eso la fila llega hasta la acera algunos días.\n\nMiriam: Hoy está tranquila. El viernes pasado fue un desastre.\n\nDarío: Listo, una arepa calentita.\n\nValeria: Gracias. La próxima vez traigo sencillo, para no empezar otra aventura antes del trabajo.",
+  "vocab": [
+    { "word": "fila", "definition": "line of waiting people", "type": "noun" },
+    { "word": "guardar", "surface": "guarda", "definition": "keep something safe", "type": "verb" },
+    { "word": "bolso", "definition": "small personal bag", "type": "noun" },
+    { "word": "brazo", "definition": "upper body limb", "type": "noun" },
+    { "word": "plancha", "definition": "flat hot cooking surface", "type": "noun" },
+    { "word": "queso", "definition": "Dairy product made from milk", "type": "noun" },
+    { "word": "detalle", "definition": "small issue or problem", "type": "noun" },
+    { "word": "cambio", "definition": "money returned after payment", "type": "noun" },
+    { "word": "billete", "definition": "paper money note", "type": "noun" },
+    { "word": "moneda", "surface": "monedas", "definition": "small metal money piece", "type": "noun" },
+    { "word": "apurado", "surface": "apurada", "definition": "in a rush", "type": "adjective" },
+    { "word": "esquina", "definition": "street corner area", "type": "noun" },
+    { "word": "costar", "surface": "cuesta", "definition": "be difficult to do", "type": "verb" },
+    { "word": "alcanzar", "surface": "alcanza", "definition": "be enough for need", "type": "verb" },
+    { "word": "salvar", "surface": "salva", "definition": "help in difficult moment", "type": "verb" },
+    { "word": "oficina", "definition": "place for desk work", "type": "noun" },
+    { "word": "acera", "definition": "sidewalk beside street", "type": "noun" },
+    { "word": "desastre", "definition": "complete messy situation", "type": "noun" },
+    { "word": "calentito", "surface": "calentita", "definition": "Pleasantly warm temperature", "type": "adjective" },
+    { "word": "sencillo", "definition": "small bills and coins", "type": "noun" }
+  ]
+}

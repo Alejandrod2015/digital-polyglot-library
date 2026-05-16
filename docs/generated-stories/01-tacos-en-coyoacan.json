@@ -1,0 +1,28 @@
+{
+  "title": "Tacos en Coyoacán",
+  "synopsis": "Un plato con cebolla y salsa espera sobre una mesa pequeña cerca del mercado. Elena busca un boleto para el concierto del sábado, pero la fila es larga y el vendedor parece cansado. Martín llega con una bolsa de pan dulce y escucha la conversación. Mientras comen tacos bajo una luz amarilla, Elena piensa en volver a casa sin entrada.",
+  "arcType": "last-minute-decision",
+  "text": "La fila avanza muy lento frente al mercado de Coyoacán, y Elena mira el reloj de su teléfono por tercera vez.\n\nElena: Todavía faltan muchas personas. Creo que ya no voy a comprar el boleto.\n\nVendedor: Quedan pocos. La gente llegó temprano hoy.\n\nElena: Yo salí tarde del trabajo. También olvidé mi cartera en la oficina y tuve que regresar.\n\nMartín: Traigo pan dulce de la esquina. Puedo guardar tu lugar unos minutos si quieres sentarte.\n\nElena: Gracias, pero no quiero perder más tiempo. Además, el concierto es hasta el sábado.\n\nMartín: Mi hermana toca en ese grupo. Por eso vine temprano. Cada año pasa lo mismo.\n\nElena: Entonces conoces bien esta fila.\n\nMartín: Conozco la fila y los tacos del puesto de enfrente. El olor de la carne llega hasta aquí.\n\nElena: Ahora tengo más hambre que ganas de esperar.\n\nMartín: Mira, todavía avanzamos. Hace diez minutos estábamos junto al señor del sombrero verde.\n\nElena: Es cierto. También dijiste que el pan dulce era para compartir y todavía tienes la bolsa cerrada.\n\nMartín: Porque esperaba el momento correcto.\n\nElena: Ya casi es tu turno. Compra tus boletos primero.\n\nVendedor: Solo queda una entrada.\n\nMartín: Entonces no necesito dos. Elena, toma la última. Yo puedo escuchar a mi hermana otro día.\n\nElena: Hace un momento quería irme. Ahora no sé si aceptar.\n\nMartín: El concierto empieza a las ocho. Tal vez todavía compartimos esos tacos.",
+  "vocab": [
+    { "word": "fila", "definition": "line of waiting people", "type": "noun" },
+    { "word": "quedar", "surface": "Quedan", "definition": "still be available", "type": "verb" },
+    { "word": "cartera", "definition": "wallet for money", "type": "noun" },
+    { "word": "regresar", "definition": "go back somewhere", "type": "verb" },
+    { "word": "guardar", "definition": "keep place for someone", "type": "verb" },
+    { "word": "perder", "definition": "miss or waste", "type": "verb" },
+    { "word": "además", "definition": "in addition to that", "type": "adverb" },
+    { "word": "puesto", "definition": "small street food stand", "type": "noun" },
+    { "word": "olor", "definition": "smell in the air", "type": "noun" },
+    { "word": "carne", "definition": "meat used for food", "type": "noun" },
+    { "word": "hambre", "definition": "need or desire food", "type": "noun" },
+    { "word": "avanzar", "surface": "avanzamos", "definition": "move forward slowly", "type": "verb" },
+    { "word": "sombrero", "definition": "hat with wide brim", "type": "noun" },
+    { "word": "compartir", "definition": "give part to another", "type": "verb" },
+    { "word": "cerrado", "surface": "cerrada", "definition": "not open right now", "type": "adjective" },
+    { "word": "turno", "definition": "moment to act", "type": "noun" },
+    { "word": "entrada", "definition": "ticket for an event", "type": "noun" },
+    { "word": "aceptar", "definition": "say yes to offer", "type": "verb" },
+    { "word": "tal vez", "definition": "possibly or maybe", "type": "expression" },
+    { "word": "esquina", "definition": "corner between two streets", "type": "noun" }
+  ]
+}

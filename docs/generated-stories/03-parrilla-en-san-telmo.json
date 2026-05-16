@@ -1,0 +1,28 @@
+{
+  "title": "Parrilla en San Telmo",
+  "synopsis": "El humo sube desde una parrilla pequeña y las sillas de plástico ocupan media vereda. Pablo corta pan mientras Camila lleva una fuente con chorizos calientes. Hablan del barrio, del fútbol y de un vecino nuevo que nunca sale a la calle. Durante el almuerzo, Pablo insiste en que el asado es solo una reunión tranquila entre amigos. Al final, una frase de Camila cambia el sentido de toda la tarde.",
+  "arcType": "late-reveal",
+  "text": "La carne chisporrotea sobre la parrilla y Pablo mira la calle angosta de San Telmo desde la puerta abierta.\n\nPablo: Traje más carbón. Hoy viene mucha gente.\n\nCamila: Entonces poné otra mesa. La fuente está llena y el pan se enfría rápido.\n\nPablo: El olor llega hasta la esquina. Seguro aparece Raúl otra vez.\n\nCamila: El vecino nuevo nunca aparece. Siempre tiene la persiana baja.\n\nPablo: Capaz trabaja de noche. En este barrio pasa mucho.\n\nCamila: Igual, dejé un plato extra. Mi tía hace eso siempre.\n\nPablo acomoda los cubiertos y escucha una radio vieja desde la casa de al lado. El aire tibio mueve una servilleta sobre la mesa.\n\nRaúl: Buen domingo, gente. Desde media cuadra se siente el asado.\n\nPablo: Llegás justo. Falta poco para la tira.\n\nRaúl: Traje una gaseosa y hielo. En mi casa no entra nadie hoy.\n\nCamila: Sentate acá. Después probás la morcilla.\n\nRaúl: ¿Y el vecino nuevo? Nunca habla con nadie.\n\nPablo: Mejor así. Algunos quieren tranquilidad.\n\nCamila: O capaz esperan una invitación.\n\nPablo sirve la carne y corta un pedazo más grande para el plato vacío. Mira la puerta cada pocos minutos.\n\nRaúl: Al final sobra comida.\n\nPablo: No importa. Mañana comemos otra vez.\n\nCamila: Entonces ya le podés decir la verdad.\n\nPablo: ¿Qué verdad?\n\nCamila: Que este asado no era por el domingo. Era para conocer a tu padre antes de que venda la casa.",
+  "vocab": [
+    { "word": "parrilla", "definition": "metal grill for cooking", "type": "noun" },
+    { "word": "chisporrotear", "surface": "chisporrotea", "definition": "make small crackling sounds", "type": "verb" },
+    { "word": "carbón", "definition": "black fuel for fire", "type": "noun" },
+    { "word": "fuente", "definition": "large serving dish", "type": "noun" },
+    { "word": "enfriarse", "surface": "enfría", "definition": "become less warm", "type": "verb" },
+    { "word": "esquina", "definition": "street corner in city", "type": "noun" },
+    { "word": "persiana", "definition": "rolling window shutter", "type": "noun" },
+    { "word": "capaz", "definition": "perhaps, maybe true", "type": "adverb" },
+    { "word": "acomodar", "surface": "acomoda", "definition": "put things in order", "type": "verb" },
+    { "word": "cubierto", "surface": "cubiertos", "definition": "fork, knife, spoon set", "type": "noun" },
+    { "word": "tibio", "definition": "slightly warm temperature", "type": "adjective" },
+    { "word": "servilleta", "definition": "cloth or paper napkin", "type": "noun" },
+    { "word": "media cuadra", "definition": "half a city block", "type": "expression" },
+    { "word": "faltar", "surface": "falta", "definition": "remain before completion", "type": "verb" },
+    { "word": "morcilla", "definition": "blood sausage food", "type": "noun" },
+    { "word": "tranquilidad", "definition": "state of calm silence", "type": "noun" },
+    { "word": "invitación", "definition": "request to attend event", "type": "noun" },
+    { "word": "sobrar", "surface": "sobra", "definition": "remain after use", "type": "verb" },
+    { "word": "pedazo", "definition": "small cut or portion", "type": "noun" },
+    { "word": "vender", "surface": "venda", "definition": "give in exchange for money", "type": "verb" }
+  ]
+}

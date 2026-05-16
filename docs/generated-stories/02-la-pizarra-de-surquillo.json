@@ -1,0 +1,27 @@
+{
+  "title": "La pizarra de Surquillo",
+  "synopsis": "Los vasos fríos y el ruido de platos llenan una cevichería pequeña cerca del mercado de Surquillo. Nico llega al mediodía para probar un ceviche famoso, pero el local ya no tiene pescado fresco. Teresa intenta ayudarlo mientras Rubén cambia el menú a cada rato. Nico piensa en irse, aunque una sopa caliente y una vieja promesa cambian el plan del día.",
+  "arcType": "plan-falls-short",
+  "text": "Nico miró la pizarra azul de la cevichería mientras el ventilador movía el aire caliente del mediodía.\n\nTeresa: Hoy el ceviche sale rápido. La gente llegó temprano.\n\nNico: Yo también vine temprano, pero el bus quedó parado en la avenida.\n\nRubén: Ya no queda pescado para ceviche. Solo tenemos sopa de mariscos y arroz con pota.\n\nNico: Qué mala suerte. Caminé desde el mercado con mucha hambre.\n\nTeresa: La sopa está buena. Mi hermano la prepara desde la mañana.\n\nNico: Yo quería ceviche. Mi padre siempre pedía ceviche aquí cuando trabajaba cerca.\n\nRubén: Entonces conoces esta mesa pequeña junto a la ventana.\n\nNico: Sí. Mi padre dejaba su gorra sobre esa silla.\n\nTeresa: La gorra azul todavía está en una foto vieja detrás de la caja.\n\nNico miró la pared. La luz entraba por la ventana y tocaba una foto pequeña con un hombre joven y una gorra azul.\n\nNico: Mi plan era comer rápido y volver a la oficina.\n\nRubén: El plan cambió, pero la sopa no espera mucho tiempo.\n\nTeresa: También tenemos cancha y ají. No es un mal almuerzo.\n\nNico: Está bien. Tráiganme la sopa.\n\nRubén: Buena decisión. A veces la gente viene por ceviche y vuelve por otra cosa.\n\nNico: Tal vez yo también vuelva. Mi padre siempre cambiaba de pedido en este lugar.",
+  "vocab": [
+    { "word": "pizarra", "definition": "board with written menu", "type": "noun" },
+    { "word": "ventilador", "definition": "machine that moves air", "type": "noun" },
+    { "word": "quedar", "surface": "quedó", "definition": "stop working or moving", "type": "verb" },
+    { "word": "avenida", "definition": "wide city street", "type": "noun" },
+    { "word": "pota", "definition": "large squid for cooking", "type": "noun" },
+    { "word": "hambre", "definition": "need or desire food", "type": "noun" },
+    { "word": "preparar", "surface": "prepara", "definition": "make food ready", "type": "verb" },
+    { "word": "gorra", "definition": "cap with a visor", "type": "noun" },
+    { "word": "silla", "definition": "seat for one person", "type": "noun" },
+    { "word": "pared", "definition": "inside side of room", "type": "noun" },
+    { "word": "caja", "definition": "place to pay money", "type": "noun" },
+    { "word": "tocar", "surface": "tocaba", "definition": "reach or hit lightly", "type": "verb" },
+    { "word": "almuerzo", "definition": "Lunch eaten around midday", "type": "noun" },
+    { "word": "volver", "surface": "vuelve", "definition": "come again later", "type": "verb" },
+    { "word": "cancha", "definition": "toasted corn snack", "type": "noun" },
+    { "word": "ají", "definition": "spicy pepper sauce", "type": "noun" },
+    { "word": "pedido", "definition": "Order placed at a venue", "type": "noun" },
+    { "word": "suerte", "definition": "good or bad fortune", "type": "noun" },
+    { "word": "mediodía", "definition": "middle hour of day", "type": "noun" }
+  ]
+}

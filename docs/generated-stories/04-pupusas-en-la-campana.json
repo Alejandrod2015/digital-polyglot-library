@@ -1,0 +1,28 @@
+{
+  "title": "Pupusas en La Campana",
+  "synopsis": "Las mesas de plástico están llenas y una radio pequeña suena cerca de la cocina en una pupusería de San Salvador. Diego llega tarde y busca una silla mientras Julia termina su cena. Entre platos calientes y curtido, los dos hablan de una mochila perdida. Diego cuenta una historia sencilla para no preocupar a su hermana, pero la verdad aparece poco a poco cuando pide otra pupusa.",
+  "arcType": "white-lie",
+  "text": "Diego miró las luces amarillas de la pupusería La Campana y dejó la mochila debajo de la mesa vacía. El aire estaba tibio y la radio sonaba muy bajo cerca de la plancha.\n\nJulia: Pensé que no venías. Ya casi termino.\n\nDiego: El bus pasó tarde otra vez. Por eso llegué después.\n\nJulia: Pedí una pupusa de frijol para ti. Todavía está caliente.\n\nDiego: Entonces hoy sí tengo suerte.\n\nJulia: ¿Y la mochila azul de tu trabajo?\n\nDiego: La dejé en la oficina. Mañana la traigo.\n\nJulia: Qué raro. Siempre la cargas.\n\nDiego tomó un poco de curtido y vio la calle por un momento. Un vendedor pasaba con una linterna pequeña.\n\nDiego: Hoy no quería cargar tanto peso.\n\nJulia: Bueno, al menos no olvidaste la billetera. La otra vez pagué yo.\n\nDiego: Y todavía hablas de eso.\n\nJulia: Porque después caminamos veinte minutos hasta la casa.\n\nLa señora de la cocina puso otra pupusa en el plato. Diego partió un pedazo despacio y evitó mirar la silla vacía.\n\nJulia: ¿Seguro que la mochila está en la oficina?\n\nDiego: Claro. Está cerca del escritorio.\n\nJulia: Entonces mañana puedes traer el libro de mamá.\n\nDiego dejó el tenedor sobre la mesa.\n\nDiego: En realidad, creo que la dejé en el bus.\n\nJulia: Diego.\n\nDiego: No quería decirlo. Mamá guarda ese libro ahí y pensé que te ibas a enojar.\n\nJulia: Primero comé. Después vemos si todavía pasa ese bus por el centro.",
+  "vocab": [
+    { "word": "mochila", "definition": "bag carried on back", "type": "noun" },
+    { "word": "plancha", "definition": "hot metal cooking surface", "type": "noun" },
+    { "word": "llegar", "surface": "llegué", "definition": "come to a place", "type": "verb" },
+    { "word": "frijol", "definition": "small edible bean", "type": "noun" },
+    { "word": "suerte", "definition": "good thing happening", "type": "noun" },
+    { "word": "curtido", "definition": "pickled cabbage salad", "type": "noun" },
+    { "word": "vendedor", "definition": "person selling things", "type": "noun" },
+    { "word": "linterna", "definition": "portable electric light", "type": "noun" },
+    { "word": "cargar", "surface": "cargas", "definition": "carry something heavy", "type": "verb" },
+    { "word": "billetera", "definition": "small money holder", "type": "noun" },
+    { "word": "caminar", "surface": "caminamos", "definition": "move forward on foot", "type": "verb" },
+    { "word": "despacio", "definition": "at a slow speed", "type": "adverb" },
+    { "word": "evitar", "surface": "evitó", "definition": "stay away from something", "type": "verb" },
+    { "word": "escritorio", "definition": "table for office work", "type": "noun" },
+    { "word": "tenedor", "definition": "tool used to eat", "type": "noun" },
+    { "word": "enojarse", "surface": "enojar", "definition": "become angry with someone", "type": "verb" },
+    { "word": "centro", "definition": "main area of city", "type": "noun" },
+    { "word": "por un momento", "definition": "for a short time", "type": "expression" },
+    { "word": "peso", "definition": "heaviness of an object", "type": "noun" },
+    { "word": "partir", "surface": "partió", "definition": "divide into smaller pieces", "type": "verb" }
+  ]
+}
