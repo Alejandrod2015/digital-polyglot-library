@@ -38,6 +38,9 @@ const nextConfig: NextConfig = {
       { source: "/wp-content/:path*", destination: `${WP_ORIGIN}/wp-content/:path*` },
       { source: "/wp-includes/:path*", destination: `${WP_ORIGIN}/wp-includes/:path*` },
       { source: "/wp-json/:path*", destination: `${WP_ORIGIN}/wp-json/:path*` },
+      { source: "/sitemap.xml", destination: `${WP_ORIGIN}/sitemap.xml` },
+      { source: "/sitemap_index.xml", destination: `${WP_ORIGIN}/sitemap_index.xml` },
+      { source: "/:slug(\\w+-sitemap).xml", destination: `${WP_ORIGIN}/:slug.xml` },
     ];
   },
   async redirects() {
