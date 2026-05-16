@@ -5,7 +5,7 @@ import landing from "@/components/marketing/LandingPage.module.css";
 
 export const metadata: Metadata = {
   title: "Join the beta · Digital Polyglot",
-  description: "Apply for early access to the Digital Polyglot iOS app.",
+  description: "Apply for early access to the Digital Polyglot iPhone app.",
   robots: { index: true, follow: true },
 };
 
@@ -28,7 +28,7 @@ export default function BetaPage() {
           <header className="mb-10 flex flex-col items-center text-center">
             <span className={landing.kicker}>
               <span className={landing.kickerDot} />
-              iOS beta · TestFlight open
+              iPhone beta · invite only
             </span>
             <h1
               className="mt-5 max-w-2xl text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl"
@@ -38,7 +38,7 @@ export default function BetaPage() {
               <span className={landing.lime}>into a new language.</span>
             </h1>
             <p className="mt-5 max-w-xl text-base font-bold leading-relaxed text-white/65 sm:text-lg">
-              We&apos;re inviting a small group to test the iOS app before
+              We&apos;re inviting a small group to test the iPhone app before
               launch. Apply in under a minute.
             </p>
           </header>

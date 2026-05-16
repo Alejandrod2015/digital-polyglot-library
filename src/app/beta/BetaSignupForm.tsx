@@ -152,7 +152,7 @@ export default function BetaSignupForm() {
         <p className="mx-auto mt-3 max-w-md text-sm font-bold text-white/65">
           {submitted.duplicate
             ? "We already have your application on file. We'll be in touch as spots open."
-            : "Thanks for applying. We sent a confirmation to your email and will follow up with a TestFlight invite when a spot opens."}
+            : "Thanks for applying. We sent a confirmation to your email and will follow up with an invite when a spot opens."}
         </p>
       </div>
     );
@@ -270,7 +270,7 @@ export default function BetaSignupForm() {
       </div>
 
       <div>
-        <span className={labelStyle}>Do you have an iPhone running iOS 17 or newer?</span>
+        <span className={labelStyle}>Do you have an iPhone with iOS 17 or newer?</span>
         <div className="grid grid-cols-2 gap-3">
           {(["yes", "no"] as const).map((value) => (
             <label key={value} className={chipClass(form.hasIPhone === value)}>
@@ -286,7 +286,7 @@ export default function BetaSignupForm() {
             </label>
           ))}
         </div>
-        <p className={helperStyle}>The beta runs on TestFlight, which is iOS-only for now.</p>
+        <p className={helperStyle}>The beta is iPhone-only for now.</p>
       </div>
 
       <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-xs font-bold leading-relaxed text-white/65">

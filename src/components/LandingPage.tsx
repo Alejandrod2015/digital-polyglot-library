@@ -38,7 +38,7 @@ export default function LandingPage() {
           <div className={styles.navLinks}>
             <a href="#features">Features</a>
             <a href="#languages">Languages</a>
-            <Link href="/beta">iOS beta</Link>
+            <Link href="/beta">iPhone beta</Link>
           </div>
           <div className={styles.navCta}>
             <Link
@@ -65,7 +65,7 @@ export default function LandingPage() {
             <div className={styles.heroCopy}>
               <span className={styles.kicker}>
                 <span className={styles.kickerDot} />
-                iOS beta · TestFlight open
+                iPhone beta · invite only
               </span>
               <h1>
                 Stories that read <span className={styles.lime}>with</span> you.
@@ -90,7 +90,7 @@ export default function LandingPage() {
                   onClick={() => track("hero_ios_beta")}
                   className={`${styles.btn} ${styles.btnSky}`}
                 >
-                  ⚡ Join the iOS beta
+                  ⚡ Join the iPhone beta
                 </Link>
               </div>
             </div>
@@ -132,8 +132,8 @@ export default function LandingPage() {
               </div>
               <h4>Word-synced audio</h4>
               <p>
-                Every word lights up as it&apos;s read by a native voice. Slow it
-                down without distortion.
+                Every word lights up while it&apos;s read aloud. Slow the
+                narration down without distortion.
               </p>
             </div>
             <div className={styles.feat}>
@@ -158,8 +158,8 @@ export default function LandingPage() {
               </div>
               <h4>Read at your pace</h4>
               <p>
-                0.5× to 1.5× without the voice turning chipmunk on you. Slow
-                hard paragraphs, breeze through easy ones.
+                0.5× to 1.5× with the pitch kept natural. Slow hard paragraphs,
+                breeze through easy ones.
               </p>
             </div>
           </div>
@@ -249,7 +249,7 @@ export default function LandingPage() {
               onClick={() => track("cta_final_ios_beta")}
               className={`${styles.btn} ${styles.btnSky}`}
             >
-              ⚡ Join the iOS beta
+              ⚡ Join the iPhone beta
             </Link>
           </div>
         </div>
