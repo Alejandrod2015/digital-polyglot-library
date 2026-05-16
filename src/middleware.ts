@@ -2,10 +2,10 @@ import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 const WP_ORIGIN = process.env.WP_ORIGIN_HOST ?? "https://wp.digitalpolyglot.com";
-// Toggle the blog backend. When BLOG_BACKEND === "mdx" the local Next.js
-// routes under /blog handle the requests directly. Anything else (including
-// unset) keeps the legacy WP proxy. Default stays on WP until cutover.
-const BLOG_BACKEND = process.env.BLOG_BACKEND ?? "wp";
+// Toggle the blog backend. Default is the local MDX routes under
+// app/blog/*. Setting BLOG_BACKEND=wp falls back to the legacy WordPress
+// proxy (kept as an escape hatch while we confirm the cutover).
+const BLOG_BACKEND = process.env.BLOG_BACKEND ?? "mdx";
 
 export default clerkMiddleware(async (auth, req) => {
   const url = req.nextUrl.pathname;

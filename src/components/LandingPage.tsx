@@ -261,7 +261,7 @@ export default function LandingPage() {
             © {new Date().getFullYear()} Digital Polyglot
           </span>
           <div className={styles.footLinks}>
-            <a href="https://www.digitalpolyglot.com/blog">Blog</a>
+            <Link href="/blog">Blog</Link>
             <a href="https://shop.digitalpolyglot.com">Shop</a>
             <Link href="/privacy">Privacy</Link>
             <Link href="/terms">Terms</Link>
