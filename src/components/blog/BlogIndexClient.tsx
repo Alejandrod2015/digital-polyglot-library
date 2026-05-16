@@ -8,7 +8,7 @@
 // children render-function so we keep the JSX DRY without sending big
 // HTML strings over the wire.
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { type BlogPostMeta, type DialectKey, DIALECTS, getDialectMeta } from "@/lib/blog-shared";
 import blog from "@/components/marketing/Blog.module.css";
@@ -29,6 +29,8 @@ function authorInitials(name?: string): string {
   return ((parts[0]?.[0] ?? "") + (parts[1]?.[0] ?? "")).toUpperCase() || "DP";
 }
 
+const PAGE_SIZE = 12;
+
 export default function BlogIndexClient({
   posts,
   chipCounts,
@@ -39,6 +41,13 @@ export default function BlogIndexClient({
   const [activeChip, setActiveChip] = useState<ChipKey>("all");
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<"latest" | "popular" | "oldest">("latest");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  // Reset the page window whenever the user changes a filter or sort
+  // so the new result set starts from the top.
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [activeChip, query, sort]);
 
   const filtered = useMemo(() => {
     let arr = posts;
@@ -131,7 +140,7 @@ export default function BlogIndexClient({
             No posts match those filters.
           </p>
         )}
-        {filtered.map((post) => {
+        {filtered.slice(0, visibleCount).map((post) => {
           const dialect = getDialectMeta(post.dialect ?? "essays");
           return (
             <Link key={post.slug} href={`/blog/${post.slug}`} className={blog.postCard}>
@@ -158,6 +167,24 @@ export default function BlogIndexClient({
           );
         })}
       </div>
+
+      {filtered.length > visibleCount && (
+        <div className={blog.loadMoreWrap}>
+          <button
+            type="button"
+            className={blog.loadMore}
+            onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
+          >
+            Show {Math.min(PAGE_SIZE, filtered.length - visibleCount)} more
+            <span style={{ color: "rgba(255,255,255,0.45)", marginLeft: 6 }}>
+              ({filtered.length - visibleCount} left)
+            </span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" aria-hidden>
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+        </div>
+      )}
     </>
   );
 }
