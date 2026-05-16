@@ -283,12 +283,12 @@
   color: var(--ink-0);
   z-index: 4;
 }
-.phoneStatus .icons {
+.statusIcons {
   display: flex;
-  gap: 4px;
+  gap: 6px;
   align-items: center;
 }
-.phoneStatus .icons svg { display: block; }
+.statusIcons svg { display: block; }
 .phoneScreen {
   position: absolute;
   inset: 0;

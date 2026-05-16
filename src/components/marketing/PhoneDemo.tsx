@@ -104,7 +104,7 @@ export default function PhoneDemo() {
         <div className={styles.phoneNotch} />
         <div className={styles.phoneStatus}>
           <span>9:41</span>
-          <div className="icons">
+          <div className={styles.statusIcons}>
             <svg width="13" height="10" viewBox="0 0 13 10" fill="none" stroke="currentColor" strokeWidth="1.3">
               <path
                 d="M1 3.5 a7 7 0 0 1 11 0M2.6 5.6 a4.5 4.5 0 0 1 7.8 0M4.4 7.7 a2.2 2.2 0 0 1 4.2 0"
