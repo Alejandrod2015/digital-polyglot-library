@@ -71,8 +71,8 @@ export default function LandingPage() {
                 Stories that read <span className={styles.lime}>with</span> you.
               </h1>
               <p className={styles.heroSub}>
-                Real fiction with word-synced narration. Tap any word for an
-                instant translation. Read at your own pace.
+                Stories with word-synced narration and instant tap-to-translate.
+                Built for people who already love reading.
               </p>
               <div className={styles.heroCtas}>
                 <Link
@@ -116,8 +116,8 @@ export default function LandingPage() {
               <span className={styles.lime}>in one tap.</span>
             </h2>
             <p className={styles.sectionLead}>
-              No streaks. No pop-quizzes. Just real stories and the quietest
-              help you&apos;ve ever had reading them.
+              No streaks. No pop-quizzes. Just stories and the quietest help
+              you&apos;ve ever had reading them.
             </p>
           </div>
 
@@ -178,8 +178,8 @@ export default function LandingPage() {
               Languages
             </span>
             <h2 className={styles.sectionTitle}>
-              Pick a language.{" "}
-              <span className={styles.lime}>Open a story.</span>
+              Pick a language{" "}
+              <span className={styles.lime}>to read in.</span>
             </h2>
           </div>
 
@@ -191,9 +191,6 @@ export default function LandingPage() {
               </div>
               <div>
                 <div className={styles.langName}>Spanish</div>
-                <div className={styles.langVariant}>
-                  Mexican · Argentinian · Castilian
-                </div>
               </div>
             </div>
             <div className={styles.langRow}>
