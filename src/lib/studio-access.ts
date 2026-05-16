@@ -31,8 +31,9 @@ const FALLBACK_ADMIN: StudioMember = {
   name: "Alejandro",
 };
 
-// ─── Permission matrix ─────────────────────────────────────────
-const ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
+// ─── Default permission matrix (used as fallback when no override
+// is persisted in StudioConfig.role_permissions yet) ────────────
+const DEFAULT_ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
   admin: ["*"],
   manager: [
     "studio:view",
@@ -58,6 +59,93 @@ const ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
     "studio:validar",
   ],
 };
+
+// Permissions that can be toggled per role from the Studio Settings
+// page. Every entry maps to a Sidebar/route. studio:view stays implicit
+// for any non-admin so they can land on /studio at all.
+export const TOGGLEABLE_PERMISSIONS: Array<{ id: string; label: string }> = [
+  { id: "studio:metrics", label: "Métricas" },
+  { id: "studio:qa", label: "QA" },
+  { id: "studio:content", label: "Content Agent" },
+  { id: "studio:planner", label: "Planner" },
+  { id: "studio:journey-stories", label: "Journey Manager" },
+  { id: "studio:journey-builder", label: "Creador de Journeys" },
+  { id: "studio:standalone-stories", label: "Standalone Stories" },
+  { id: "studio:catalog-books", label: "Catálogo de Libros" },
+  { id: "studio:drafts", label: "Borradores" },
+  { id: "studio:sanity", label: "Audio propio / Sanity" },
+  { id: "studio:validar", label: "Validar" },
+  { id: "studio:beta-signups", label: "Beta Signups" },
+  { id: "studio:config", label: "Reglas pedagógicas" },
+];
+
+let rolePermissionsCache: Record<StudioRole, string[]> | null = null;
+let rolePermissionsCacheTs = 0;
+const ROLE_PERMISSIONS_TTL_MS = 60_000;
+
+async function loadRolePermissionsConfig(): Promise<Record<StudioRole, string[]>> {
+  const now = Date.now();
+  if (rolePermissionsCache && now - rolePermissionsCacheTs < ROLE_PERMISSIONS_TTL_MS) {
+    return rolePermissionsCache;
+  }
+  const defaults = {
+    admin: [...DEFAULT_ROLE_PERMISSIONS.admin],
+    manager: [...DEFAULT_ROLE_PERMISSIONS.manager],
+    content_creator: [...DEFAULT_ROLE_PERMISSIONS.content_creator],
+  };
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const row = await (prisma as any).studioConfig.findUnique({
+      where: { key: "role_permissions" },
+    });
+    if (!row?.value || typeof row.value !== "object") {
+      rolePermissionsCache = defaults;
+      rolePermissionsCacheTs = now;
+      return defaults;
+    }
+    const value = row.value as Partial<Record<StudioRole, string[]>>;
+    rolePermissionsCache = {
+      admin: ["*"],
+      manager: Array.isArray(value.manager) ? value.manager : defaults.manager,
+      content_creator: Array.isArray(value.content_creator)
+        ? value.content_creator
+        : defaults.content_creator,
+    };
+    rolePermissionsCacheTs = now;
+    return rolePermissionsCache;
+  } catch {
+    rolePermissionsCache = defaults;
+    rolePermissionsCacheTs = now;
+    return defaults;
+  }
+}
+
+export function invalidateRolePermissionsCache(): void {
+  rolePermissionsCache = null;
+  rolePermissionsCacheTs = 0;
+}
+
+export async function getRolePermissions(): Promise<Record<StudioRole, string[]>> {
+  return loadRolePermissionsConfig();
+}
+
+export async function saveRolePermissions(input: {
+  manager: string[];
+  content_creator: string[];
+}): Promise<void> {
+  const allowed = new Set(TOGGLEABLE_PERMISSIONS.map((p) => p.id));
+  const sanitized = {
+    manager: input.manager.filter((p) => allowed.has(p)),
+    content_creator: input.content_creator.filter((p) => allowed.has(p)),
+  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  await (prisma as any).studioConfig.upsert({
+    where: { key: "role_permissions" },
+    create: { key: "role_permissions", value: sanitized },
+    update: { value: sanitized },
+  });
+  invalidateRolePermissionsCache();
+}
 
 // ─── Path → permission mapping ─────────────────────────────────
 const PATH_PERMISSIONS: Array<{ pattern: RegExp; permission: string }> = [
@@ -136,10 +224,30 @@ export async function getStudioMembers(): Promise<StudioMember[]> {
   return loadMembers();
 }
 
-/** Check if a role has a specific permission. */
+/** Check if a role has a specific permission (sync, uses static defaults).
+ *  Used by code paths that can't await; the editable matrix is queried
+ *  separately via getEffectivePermissionsForRole. */
 export function hasPermission(role: StudioRole, permission: string): boolean {
-  const perms = ROLE_PERMISSIONS[role];
+  const perms = DEFAULT_ROLE_PERMISSIONS[role];
   return perms.includes("*") || perms.includes(permission);
+}
+
+/** Async: returns the live (DB-backed, editable) permission list for a role. */
+export async function getEffectivePermissionsForRole(
+  role: StudioRole,
+): Promise<string[]> {
+  const matrix = await loadRolePermissionsConfig();
+  return matrix[role] ?? [];
+}
+
+/** Async: check using the live matrix (admin always allowed). */
+export async function hasPermissionLive(
+  role: StudioRole,
+  permission: string,
+): Promise<boolean> {
+  if (role === "admin") return true;
+  const perms = await getEffectivePermissionsForRole(role);
+  return perms.includes(permission) || permission === "studio:view";
 }
 
 /** Get the required permission for a given studio path. */

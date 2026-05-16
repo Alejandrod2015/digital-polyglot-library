@@ -119,11 +119,29 @@ export default function StudioShell({
   const pathname = usePathname() ?? "";
   const [testMode, setTestMode] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
+  // null = either still loading or admin (admin → see all). When the
+  // current user is a non-admin team member, allowedHrefs is the Set of
+  // routes they can reach.
+  const [allowedHrefs, setAllowedHrefs] = useState<Set<string> | null>(null);
 
   useEffect(() => {
     fetch("/api/studio/settings")
       .then((r) => r.ok ? r.json() : null)
       .then((data) => { if (data?.testMode) setTestMode(true); })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/studio/me")
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        if (!data) return;
+        if (data.role === "admin") {
+          setAllowedHrefs(null); // admin sees all
+        } else if (Array.isArray(data.allowedHrefs)) {
+          setAllowedHrefs(new Set(data.allowedHrefs as string[]));
+        }
+      })
       .catch(() => {});
   }, []);
 
@@ -265,9 +283,15 @@ export default function StudioShell({
           </svg>
         </button>
 
-        {/* Nav sections */}
+        {/* Nav sections (filtered by current user's role) */}
         <nav style={{ padding: "12px 0", flex: 1 }}>
-          {NAV_SECTIONS.map((section, si) => (
+          {NAV_SECTIONS.map((rawSection, si) => {
+            const filteredItems = rawSection.items.filter(
+              (item) => !allowedHrefs || allowedHrefs.has(item.href),
+            );
+            if (filteredItems.length === 0) return null;
+            const section = { ...rawSection, items: filteredItems };
+            return (
             <div key={section.label || `s${si}`} style={{ padding: collapsed ? "0 8px" : "0 12px", marginBottom: 8 }}>
               {section.label && !collapsed && (
                 <span
@@ -327,7 +351,8 @@ export default function StudioShell({
                 );
               })}
             </div>
-          ))}
+            );
+          })}
         </nav>
       </aside>
 
