@@ -49,17 +49,17 @@ const initialState: FormState = {
   consent: false,
 };
 
-const labelStyle = "mb-1.5 block text-sm font-semibold text-[var(--foreground)]";
+const labelStyle = "mb-1.5 block text-sm font-extrabold text-white";
 const inputStyle =
-  "w-full rounded-xl border border-[var(--card-border)] bg-[var(--background)]/60 px-4 py-3 text-sm text-[var(--foreground)] placeholder:text-[var(--muted)] transition focus:border-[var(--studio-accent)] focus:bg-[var(--background)] focus:outline-none focus:ring-2 focus:ring-[var(--studio-accent-soft)]";
-const selectStyle = `${inputStyle} appearance-none bg-[image:linear-gradient(45deg,transparent_50%,var(--muted)_50%),linear-gradient(135deg,var(--muted)_50%,transparent_50%)] bg-[position:calc(100%-18px)_calc(50%-3px),calc(100%-13px)_calc(50%-3px)] bg-[size:5px_5px,5px_5px] bg-no-repeat pr-10`;
-const helperStyle = "mt-1.5 text-xs text-[var(--muted)]";
+  "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-bold text-white placeholder:text-white/40 transition focus:border-[#fcd34d] focus:bg-white/[0.06] focus:outline-none focus:ring-2 focus:ring-[#fcd34d33]";
+const selectStyle = `${inputStyle} appearance-none bg-[image:linear-gradient(45deg,transparent_50%,rgba(255,255,255,0.45)_50%),linear-gradient(135deg,rgba(255,255,255,0.45)_50%,transparent_50%)] bg-[position:calc(100%-18px)_calc(50%-3px),calc(100%-13px)_calc(50%-3px)] bg-[size:5px_5px,5px_5px] bg-no-repeat pr-10`;
+const helperStyle = "mt-1.5 text-xs font-bold text-white/45";
 
 function chipClass(active: boolean) {
-  return `flex cursor-pointer items-center justify-center rounded-xl border px-4 py-3 text-center text-sm font-semibold transition ${
+  return `flex cursor-pointer items-center justify-center rounded-xl border px-4 py-3 text-center text-sm font-extrabold transition ${
     active
-      ? "border-[var(--studio-accent)] bg-[var(--studio-accent-soft)] text-[var(--foreground)] shadow-[inset_0_0_0_1px_var(--studio-accent)]"
-      : "border-[var(--card-border)] bg-transparent text-[var(--muted)] hover:border-[var(--chip-border)] hover:text-[var(--foreground)]"
+      ? "border-[#fcd34d4d] bg-[#fcd34d1a] text-[#fcd34d] shadow-[inset_0_0_0_1px_#fcd34d80]"
+      : "border-white/10 bg-transparent text-white/65 hover:border-white/20 hover:text-white"
   }`;
 }
 
@@ -142,14 +142,14 @@ export default function BetaSignupForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-3xl border border-[var(--studio-accent)]/30 bg-gradient-to-b from-[var(--studio-accent-soft)] to-[var(--card-bg)] p-10 text-center">
+      <div className="rounded-3xl border border-[#fcd34d4d] bg-gradient-to-b from-[#fcd34d1a] to-white/[0.03] p-10 text-center">
         <div className="mb-3 text-4xl" aria-hidden>
           🎉
         </div>
-        <h2 className="text-2xl font-bold">
+        <h2 className="text-2xl font-extrabold tracking-tight text-white">
           {submitted.duplicate ? "You're already on the list" : "Application received"}
         </h2>
-        <p className="mx-auto mt-3 max-w-md text-sm text-[var(--muted)]">
+        <p className="mx-auto mt-3 max-w-md text-sm font-bold text-white/65">
           {submitted.duplicate
             ? "We already have your application on file. We'll be in touch as spots open."
             : "Thanks for applying. We sent a confirmation to your email and will follow up with a TestFlight invite when a spot opens."}
@@ -161,7 +161,7 @@ export default function BetaSignupForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5 rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.5)] sm:p-8"
+      className="space-y-5 rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.55)] sm:p-8"
       noValidate
     >
       <div>
@@ -289,16 +289,16 @@ export default function BetaSignupForm() {
         <p className={helperStyle}>The beta runs on TestFlight, which is iOS-only for now.</p>
       </div>
 
-      <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-[var(--card-border)] bg-[var(--background)]/40 p-4 text-xs leading-relaxed text-[var(--muted)]">
+      <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-xs font-bold leading-relaxed text-white/65">
         <input
           type="checkbox"
           checked={form.consent}
           onChange={(e) => update("consent", e.target.checked)}
-          className="mt-0.5 h-4 w-4 flex-shrink-0 accent-[var(--studio-accent)]"
+          className="mt-0.5 h-4 w-4 flex-shrink-0 accent-[#fcd34d]"
         />
         <span>
           I agree to my data being processed for the Digital Polyglot beta program as described in the{" "}
-          <a className="underline text-[var(--foreground)]" href="/privacy" target="_blank" rel="noreferrer">
+          <a className="underline text-white" href="/privacy" target="_blank" rel="noreferrer">
             Privacy Policy
           </a>
           . I can request deletion any time.
@@ -306,7 +306,7 @@ export default function BetaSignupForm() {
       </label>
 
       {error && (
-        <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+        <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-bold text-red-300">
           {error}
         </div>
       )}
@@ -314,7 +314,7 @@ export default function BetaSignupForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="w-full rounded-xl bg-[var(--studio-accent)] px-6 py-3.5 text-sm font-bold tracking-wide text-white shadow-[0_10px_30px_-10px_var(--studio-accent-glow)] transition hover:bg-[var(--studio-accent-hover)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-2xl bg-[#fcd34d] px-6 py-3.5 text-sm font-black tracking-tight text-[#051834] shadow-[0_10px_30px_-10px_rgba(252,211,77,0.6)] transition hover:bg-[#fde889] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {submitting ? "Sending..." : "Apply for the beta →"}
       </button>
