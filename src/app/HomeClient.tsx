@@ -945,15 +945,6 @@ export default function HomeClient({
   const onboardingGoal = onboardingState.learningGoal;
   const onboardingDailyMinutes = onboardingState.dailyMinutes;
   const onboardingInterests = onboardingState.interests;
-  const dueFavoriteSignalsCount = useMemo(
-    () =>
-      favoriteSignals.filter((favorite) => {
-        if (!favorite.nextReviewAt) return true;
-        const dueAt = Date.parse(favorite.nextReviewAt);
-        return Number.isNaN(dueAt) || dueAt <= Date.now();
-      }).length,
-    [favoriteSignals]
-  );
   function withReturnContext(href: string) {
     const [base, existingQuery = ""] = href.split("?");
     const params = new URLSearchParams(existingQuery);
@@ -962,53 +953,6 @@ export default function HomeClient({
     params.set("from", "home");
     return `${base}?${params.toString()}`;
   }
-
-  const dailyLoopSummary = useMemo(() => {
-    const preferredMinutes =
-      typeof onboardingDailyMinutes === "number" && onboardingDailyMinutes > 0 ? onboardingDailyMinutes : 5;
-    const practiceHref = `/practice?mode=${encodeURIComponent(
-      dueFavoriteSignalsCount > 0 ? "context" : "meaning"
-    )}&returnTo=${encodeURIComponent("/")}&returnLabel=${encodeURIComponent("Home")}`;
-
-    if (continueListening.length > 0) {
-      return {
-        eyebrow: "Today’s loop",
-        title: "Resume, review, then keep moving",
-        body:
-          dueFavoriteSignalsCount > 0
-            ? `${dueFavoriteSignalsCount} due ${dueFavoriteSignalsCount === 1 ? "word is" : "words are"} waiting after your story.`
-            : `You already have a story in motion. A quick ${preferredMinutes}-minute review after reading will keep the rhythm alive.`,
-        primaryLabel: "Resume story",
-        primaryHref: continueListening[0]
-          ? withReturnContext(`/books/${continueListening[0].bookSlug}/${continueListening[0].storySlug}`)
-          : "/",
-        secondaryLabel: "Start review",
-        secondaryHref: practiceHref,
-      };
-    }
-
-    if (dueFavoriteSignalsCount > 0) {
-      return {
-        eyebrow: "Today’s loop",
-        title: "Clear your due review first",
-        body: `${dueFavoriteSignalsCount} saved ${dueFavoriteSignalsCount === 1 ? "word is" : "words are"} ready for a fast ${preferredMinutes}-minute session.`,
-        primaryLabel: "Start review",
-        primaryHref: practiceHref,
-        secondaryLabel: "Open Journey",
-        secondaryHref: "/journey",
-      };
-    }
-
-    return {
-      eyebrow: "Today’s loop",
-      title: "Pick one story and one short review",
-      body: `Aim for one authentic story and a ${preferredMinutes}-minute practice pass today.`,
-      primaryLabel: "Open Journey",
-      primaryHref: "/journey",
-      secondaryLabel: "Browse stories",
-      secondaryHref: "/explore",
-    };
-  }, [continueListening, dueFavoriteSignalsCount, onboardingDailyMinutes]);
 
   const bookMetaBySlug = useMemo(() => {
     const map = new Map<string, { statsLine?: string; topicsLine?: string }>();
@@ -1924,36 +1868,6 @@ export default function HomeClient({
             </div>
           </div>
         </div>
-      ) : null}
-
-      {isPersonalizationReady ? (
-        <section data-tour-target="home" className={`w-full max-w-5xl pt-6 md:pt-8 mb-8 md:mb-10 ${getTourSectionClass("home")}`}>
-          <div className="rounded-[1.8rem] border border-[var(--card-border)] bg-[linear-gradient(180deg,#18304d_0%,#14243b_100%)] p-5 shadow-[0_18px_50px_rgba(6,17,38,0.22)]">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
-              {dailyLoopSummary.eyebrow}
-            </p>
-            <div className="mt-3 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <div className="max-w-2xl">
-                <h2 className="text-2xl font-semibold text-[var(--foreground)]">{dailyLoopSummary.title}</h2>
-                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{dailyLoopSummary.body}</p>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href={dailyLoopSummary.primaryHref}
-                  className="inline-flex rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white hover:opacity-90"
-                >
-                  {dailyLoopSummary.primaryLabel}
-                </Link>
-                <Link
-                  href={dailyLoopSummary.secondaryHref}
-                  className="inline-flex rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-                >
-                  {dailyLoopSummary.secondaryLabel}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
       ) : null}
 
       {/* Free featured story for free/basic users */}
