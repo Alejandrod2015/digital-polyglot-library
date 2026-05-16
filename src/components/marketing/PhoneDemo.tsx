@@ -1,7 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import styles from "./LandingPage.module.css";
+
+const COVER_URL =
+  "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/covers/journey-stories/mole-en-san-angel-1778228912112.png";
 
 type VocabKind = "sky" | "green";
 
@@ -101,16 +105,16 @@ export default function PhoneDemo() {
         <div className={styles.phoneStatus}>
           <span>9:41</span>
           <div className="icons">
-            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" stroke="currentColor" strokeWidth="1.2">
+            <svg width="13" height="10" viewBox="0 0 13 10" fill="none" stroke="currentColor" strokeWidth="1.3">
               <path
-                d="M1 4 a8 8 0 0 1 12 0M3 6.5 a5 5 0 0 1 8 0M5 9 a2.5 2.5 0 0 1 4 0"
+                d="M1 3.5 a7 7 0 0 1 11 0M2.6 5.6 a4.5 4.5 0 0 1 7.8 0M4.4 7.7 a2.2 2.2 0 0 1 4.2 0"
                 strokeLinecap="round"
               />
             </svg>
             <svg width="22" height="11" viewBox="0 0 22 11" fill="none">
-              <rect x="0.5" y="0.5" width="18" height="10" rx="2.5" stroke="currentColor" opacity="0.5" />
+              <rect x="0.5" y="0.5" width="18" height="10" rx="2.5" stroke="currentColor" opacity="0.45" />
               <rect x="2" y="2" width="15" height="7" rx="1.5" fill="currentColor" />
-              <path d="M20 4 v3" stroke="currentColor" opacity="0.5" />
+              <path d="M20 4 v3" stroke="currentColor" opacity="0.45" strokeLinecap="round" />
             </svg>
           </div>
         </div>
@@ -141,7 +145,14 @@ export default function PhoneDemo() {
           <h3 className={styles.readerTitleCentered}>Mole en San Ángel</h3>
 
           <div className={styles.coverWarm} aria-hidden="true">
-            <span className={styles.coverPot}>🍲</span>
+            <Image
+              src={COVER_URL}
+              alt=""
+              fill
+              sizes="280px"
+              className={styles.coverImage}
+              priority
+            />
           </div>
 
           <div className={styles.readerBody}>

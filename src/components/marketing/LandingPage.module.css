@@ -338,16 +338,11 @@
   overflow: hidden;
   margin: 0 0 10px;
   position: relative;
-  background:
-    radial-gradient(ellipse 60% 50% at 30% 40%, rgba(252, 211, 77, 0.35), transparent 60%),
-    linear-gradient(135deg, #b87a3f 0%, #7a4a28 55%, #2c1a10 100%);
+  background: #1a1a1d;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-  display: grid;
-  place-items: center;
 }
-.coverPot {
-  font-size: 38px;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+.coverImage {
+  object-fit: cover;
 }
 
 /* Body text with karaoke + per-word vocab pills (sky/green). */
@@ -393,7 +388,8 @@
   position: absolute;
   left: 12px;
   right: 12px;
-  bottom: 96px;
+  /* Sit clearly above the audio bar (audio bar ends ~105px from bottom). */
+  bottom: 118px;
   background: linear-gradient(180deg, #112a52 0%, #0a2349 100%);
   border: 1px solid rgba(125, 211, 252, 0.20);
   border-radius: 18px;
