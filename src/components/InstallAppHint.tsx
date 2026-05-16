@@ -79,7 +79,7 @@ export default function InstallAppHint() {
         </div>
         <div className="min-w-0 flex-1">
           <p className="text-[13.5px] font-semibold leading-tight">
-            Install Polyglot
+            Install Digital Polyglot
           </p>
           <p className="mt-0.5 text-[11.5px] leading-snug text-white/70">
             {instruction}
