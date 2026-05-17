@@ -9,7 +9,7 @@ import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 import { getJourneyStoryBySlug } from "@/lib/journeyStories";
 import { getCreateStoryMirrorBySlug } from "@/lib/userStories";
 import { buildPracticeItemsFromStory, parseLooseVocab } from "@/lib/storyPracticeItems";
-import { mergePracticeItemsByWord, type PracticeFavoriteItem } from "@/lib/practiceExercises";
+import { mergePracticeItemsByWord, type PracticeExercise, type PracticeFavoriteItem } from "@/lib/practiceExercises";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimings";
 import type { AudioWordTimingsPayload } from "@domain";
 
@@ -180,5 +180,100 @@ export async function GET(request: NextRequest) {
   }));
 
   const items = mergePracticeItemsByWord([...storyItems, ...savedItems]);
-  return NextResponse.json({ items });
+
+  // If an editorially curated practice set exists for this journey
+  // story, surface its exercises in the response. The mobile client
+  // prefers `exercises` when present and falls back to building from
+  // `items` otherwise — so legacy clients keep working.
+  const persistedExercises = await loadPersistedExercises(storySlug);
+
+  return NextResponse.json({ items, exercises: persistedExercises ?? undefined });
+}
+
+async function loadPersistedExercises(storySlug: string): Promise<PracticeExercise[] | null> {
+  if (!storySlug) return null;
+  const set = await prisma.storyPracticeSet.findFirst({
+    where: { story: { slug: storySlug, status: "published" } },
+    include: { exercises: { orderBy: { orderIndex: "asc" } } },
+  });
+  if (!set || set.exercises.length === 0) return null;
+  const out: PracticeExercise[] = [];
+  for (const row of set.exercises) {
+    const payload = (row.payload ?? {}) as Record<string, unknown>;
+    const prompt = typeof payload.prompt === "string" ? payload.prompt : "";
+    switch (row.type) {
+      case "fill_blank": {
+        const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const answer = typeof payload.answer === "string" ? payload.answer : row.word;
+        out.push({
+          id: `fill_blank:${row.id}`,
+          type: "fill_blank",
+          prompt,
+          sentence: row.sentence,
+          storySlug,
+          audioClip: (payload.audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never) ?? null,
+          options,
+          answer,
+        });
+        break;
+      }
+      case "meaning_in_context": {
+        const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const answer = typeof payload.answer === "string" ? payload.answer : "";
+        out.push({
+          id: `meaning_in_context:${row.id}`,
+          type: "meaning_in_context",
+          prompt,
+          word: row.word,
+          sentence: row.sentence,
+          storySlug,
+          audioClip: (payload.audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never) ?? null,
+          options,
+          answer,
+        });
+        break;
+      }
+      case "natural_expression": {
+        const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const answer = typeof payload.answer === "string" ? payload.answer : row.word;
+        out.push({
+          id: `natural_expression:${row.id}`,
+          type: "natural_expression",
+          prompt,
+          sentence: row.sentence,
+          storySlug,
+          audioClip: (payload.audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never) ?? null,
+          options,
+          answer,
+        });
+        break;
+      }
+      case "listen_choose": {
+        const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const answer = typeof payload.answer === "string" ? payload.answer : row.word;
+        const language = typeof payload.language === "string" ? payload.language : null;
+        out.push({
+          id: `listen_choose:${row.id}`,
+          type: "listen_choose",
+          prompt,
+          speechText: row.sentence,
+          language,
+          options,
+          answer,
+        });
+        break;
+      }
+      case "match_meaning": {
+        const pairs = Array.isArray(payload.pairs) ? (payload.pairs as Array<{ word: string; answer: string; options: string[] }>) : [];
+        out.push({
+          id: `match_meaning:${row.id}`,
+          type: "match_meaning",
+          prompt,
+          pairs,
+        });
+        break;
+      }
+    }
+  }
+  return out;
 }

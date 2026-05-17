@@ -257,6 +257,7 @@ export default function JourneyStoryEditor({ story }: Props) {
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
           <StudioActionLink href="/studio/journey-stories" className="studio-btn-ghost" style={btn} pendingLabel="Abriendo historias...">Volver a la lista</StudioActionLink>
           <StudioActionLink href={legacyStoryHref(form)} className="studio-btn-ghost" style={btn} pendingLabel="Abriendo editor...">Abrir en editor</StudioActionLink>
+          <StudioActionLink href={`/studio/journey-stories/${encodeURIComponent(form.id)}/practice`} className="studio-btn-ghost" style={btn} pendingLabel="Abriendo práctica...">Ejercicios de práctica</StudioActionLink>
           <button onClick={() => void duplicate()} disabled={duplicating || isNavigating} className="studio-btn-ghost" style={{ ...btn, opacity: duplicating || isNavigating ? 0.6 : 1 }}>
             {duplicating ? "Duplicando..." : isNavigating ? "Abriendo..." : "Duplicar"}
           </button>

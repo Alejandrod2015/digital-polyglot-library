@@ -2989,7 +2989,15 @@ export function MobileLibraryShell(args: {
   // already in memory and the transition is instant. Falls back to a
   // live fetch with a loading indicator if the user is faster than
   // the network.
-  const practicePrefetchBySlugRef = useRef<Map<string, PracticeFavoriteItem[]>>(new Map());
+  const practicePrefetchBySlugRef = useRef<
+    Map<
+      string,
+      {
+        items: PracticeFavoriteItem[];
+        exercises?: import("../../../../src/lib/practiceExercises").PracticeExercise[];
+      }
+    >
+  >(new Map());
   const practicePrefetchInFlightRef = useRef<Set<string>>(new Set());
   // Visible while a story-practice fetch is in flight after the user
   // tapped "Start practice" but the prefetch hadn't finished. Drives
@@ -6327,14 +6335,18 @@ export function MobileLibraryShell(args: {
     if (practicePrefetchBySlugRef.current.has(slug)) return;
     if (practicePrefetchInFlightRef.current.has(slug)) return;
     practicePrefetchInFlightRef.current.add(slug);
-    void apiFetch<{ items: PracticeFavoriteItem[] }>({
+    void apiFetch<{
+      items: PracticeFavoriteItem[];
+      exercises?: import("../../../../src/lib/practiceExercises").PracticeExercise[];
+    }>({
       baseUrl: mobileConfig.apiBaseUrl,
       path: buildStoryPracticePath(selection),
       token: sessionToken,
     })
       .then((payload) => {
         const items = Array.isArray(payload.items) ? payload.items : [];
-        practicePrefetchBySlugRef.current.set(slug, items);
+        const exercises = Array.isArray(payload.exercises) ? payload.exercises : undefined;
+        practicePrefetchBySlugRef.current.set(slug, { items, exercises });
       })
       .catch(() => {
         // Swallow — openStoryPractice will retry with a live fetch and
@@ -6350,8 +6362,20 @@ export function MobileLibraryShell(args: {
    * state. Pulled out of openStoryPractice so the prefetch path and
    * the live-fetch path share the exact same setter sequence.
    */
-  function commitStoryPracticeItems(selection: ReaderSelection, items: PracticeFavoriteItem[]) {
-    const exercises = buildPracticeExercisesFromItems(items, "context", false, onboardingPracticePrefs);
+  function commitStoryPracticeItems(
+    selection: ReaderSelection,
+    items: PracticeFavoriteItem[],
+    persistedExercises?: import("../../../../src/lib/practiceExercises").PracticeExercise[]
+  ) {
+    // Prefer the editorially curated set when the backend returned
+    // one; the curated content is what the Studio editor approved, so
+    // both the order and the distractors stay stable across runs.
+    // Fall back to building exercises from the raw items pool when no
+    // set exists for this story.
+    const exercises =
+      persistedExercises && persistedExercises.length > 0
+        ? persistedExercises.map(mapSharedExerciseToMobile)
+        : buildPracticeExercisesFromItems(items, "context", false, onboardingPracticePrefs);
     if (exercises.length === 0) {
       setPracticeLoadError("This story does not have practice items yet.");
       setActiveScreen("practice");
@@ -6407,7 +6431,7 @@ export function MobileLibraryShell(args: {
     // Fast path: items already in cache from the reader's prefetch.
     const cached = practicePrefetchBySlugRef.current.get(selection.story.slug);
     if (cached) {
-      commitStoryPracticeItems(selection, cached);
+      commitStoryPracticeItems(selection, cached.items, cached.exercises);
       return;
     }
 
@@ -6420,15 +6444,19 @@ export function MobileLibraryShell(args: {
     setSelection(null);
 
     try {
-      const payload = await apiFetch<{ items: PracticeFavoriteItem[] }>({
+      const payload = await apiFetch<{
+        items: PracticeFavoriteItem[];
+        exercises?: import("../../../../src/lib/practiceExercises").PracticeExercise[];
+      }>({
         baseUrl: mobileConfig.apiBaseUrl,
         path: buildStoryPracticePath(selection),
         token: sessionToken,
       });
       const items = Array.isArray(payload.items) ? payload.items : [];
-      practicePrefetchBySlugRef.current.set(selection.story.slug, items);
+      const exercises = Array.isArray(payload.exercises) ? payload.exercises : undefined;
+      practicePrefetchBySlugRef.current.set(selection.story.slug, { items, exercises });
       setPracticeLaunchLoading(false);
-      commitStoryPracticeItems(selection, items);
+      commitStoryPracticeItems(selection, items, exercises);
     } catch (error) {
       setPracticeLaunchLoading(false);
       setPracticeSeedItems(null);

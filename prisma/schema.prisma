@@ -312,10 +312,58 @@ model JourneyStory {
 
   journey Journey @relation(fields: [journeyId], references: [id], onDelete: Cascade)
 
+  practiceSet StoryPracticeSet?
+
   @@unique([journeyId, level, topic, slotIndex])
   @@index([journeyId, level, topic])
   @@index([status])
   @@map("dp_journey_stories_v1")
+}
+
+/// Editorially curated set of practice exercises for one JourneyStory.
+/// One row per story (1:1). When present, the mobile end-of-story flow
+/// reads from this set instead of generating exercises on the fly. Lets
+/// us edit individual exercises in Studio without redeploying.
+model StoryPracticeSet {
+  id        String   @id @default(cuid())
+  storyId   String   @unique
+  story     JourneyStory @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  exercises StoryPracticeExercise[]
+  /// When false, the seed script will overwrite this set the next time
+  /// it runs. Set to true once an editor has reviewed/approved.
+  locked    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("dp_story_practice_sets_v1")
+}
+
+/// Individual exercise inside a StoryPracticeSet. `orderIndex` is the
+/// position in the session (0..N-1, typically 0..9).
+model StoryPracticeExercise {
+  id         String   @id @default(cuid())
+  setId      String
+  set        StoryPracticeSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+  orderIndex Int
+  /// One of: fill_blank | meaning_in_context | listen_choose | natural_expression
+  type       String
+  /// Target vocab word (the right answer for fill_blank/natural, the
+  /// prompt for meaning/listening).
+  word       String
+  /// Sentence shown on screen. For fill_blank this contains "_____".
+  sentence   String
+  /// Pre-rendered mp3 in R2 (clean Piper + 150 ms tail). Null until the
+  /// audio job runs.
+  audioUrl   String?
+  /// `{ options: string[], answer: string }` for choice exercises;
+  /// `{ pairs: [{word, meaning}], extras: string[] }` for match.
+  payload    Json
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([setId, orderIndex])
+  @@index([setId])
+  @@map("dp_story_practice_exercises_v1")
 }
 
 model StudioConfig {
