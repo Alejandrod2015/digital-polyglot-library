@@ -337,8 +337,12 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
                 </thead>
                 <tbody>
                   {filteredStories.map((story) => {
+                    const isJourney = story.source === "journey";
                     const st = story.hasDraft ? "Borrador" : story.published ? "Publicada" : "Falta borrador";
                     const stColor = story.hasDraft ? "#f59e0b" : story.published ? "#10b981" : "#6b7280";
+                    const langLabel = story.language
+                      ? story.language.charAt(0).toUpperCase() + story.language.slice(1)
+                      : "";
                     return (
                       <tr
                         key={story.id}
@@ -346,12 +350,19 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
                         className="studio-table-row"
                       >
                         <td style={{ padding: "10px 14px" }}>
-                          <div style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)" }}>{story.title || "Sin título"}</div>
+                          <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+                            <div style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)" }}>{story.title || "Sin título"}</div>
+                            {isJourney ? (
+                              <Badge color="#a78bfa">
+                                {langLabel ? `${langLabel} · ${story.journeyName ?? "Journey"}` : (story.journeyName ?? "Journey")}
+                              </Badge>
+                            ) : null}
+                          </div>
                           <div style={{ fontSize: 12, color: "var(--muted)", fontFamily: "monospace" }}>{story.slug || "sin-slug"}</div>
                         </td>
                         <td style={{ padding: "10px 14px" }}><Badge color="#3b82f6">{story.cefrLevel.toUpperCase()}</Badge></td>
                         <td style={{ padding: "10px 14px" }}>
-                          <div style={{ fontSize: 13, color: "var(--foreground)" }}>{story.journeyTopic || "—"}</div>
+                          <div style={{ fontSize: 13, color: "var(--foreground)" }}>{story.journeyTopic || story.topic || "—"}</div>
                           <div style={{ fontSize: 12, color: "var(--muted)" }}>Orden {story.journeyOrder ?? "—"}</div>
                         </td>
                         <td style={{ padding: "10px 14px", fontSize: 13, color: "var(--muted)" }}>{story.journeyFocus}</td>
@@ -361,16 +372,42 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
                         </td>
                         <td style={{ padding: "10px 14px" }}>
                           <div style={{ display: "flex", gap: 4 }}>
-                            <StudioActionLink href={`/studio/journey-stories/${story.id}`} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Abriendo historia...">Editar</StudioActionLink>
-                            <StudioActionLink
-                              href={`/studio/journey-builder/${encodeURIComponent(story.language ? story.language.charAt(0).toUpperCase() + story.language.slice(1) : "Spanish")}/${encodeURIComponent(story.variant)}?level=${encodeURIComponent(story.cefrLevel)}&topic=${encodeURIComponent(story.journeyTopic)}&slot=${story.journeyOrder ?? 1}&focus=${encodeURIComponent(story.journeyFocus || "General")}`}
-                              className={BTN_GHOST_CLASS}
-                              style={btnGhost}
-                              pendingLabel="Abriendo creador..."
-                            >
-                              Hueco
-                            </StudioActionLink>
-                            <StudioActionLink href={legacyStoryHref(story)} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Abriendo Sanity...">Sanity</StudioActionLink>
+                            {isJourney ? (
+                              <>
+                                {/* journeyStory rows: jump to the practice
+                                    editor (works directly by id) and to
+                                    Journey Manager for the full editor. */}
+                                <StudioActionLink
+                                  href={`/studio/journey-stories/${story.id}/practice`}
+                                  className={BTN_GHOST_CLASS}
+                                  style={btnGhost}
+                                  pendingLabel="Abriendo ejercicios..."
+                                >
+                                  Ejercicios
+                                </StudioActionLink>
+                                <StudioActionLink
+                                  href={`/studio/journey-manager`}
+                                  className={BTN_GHOST_CLASS}
+                                  style={btnGhost}
+                                  pendingLabel="Abriendo Journey Manager..."
+                                >
+                                  Manager
+                                </StudioActionLink>
+                              </>
+                            ) : (
+                              <>
+                                <StudioActionLink href={`/studio/journey-stories/${story.id}`} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Abriendo historia...">Editar</StudioActionLink>
+                                <StudioActionLink
+                                  href={`/studio/journey-builder/${encodeURIComponent(story.language ? story.language.charAt(0).toUpperCase() + story.language.slice(1) : "Spanish")}/${encodeURIComponent(story.variant)}?level=${encodeURIComponent(story.cefrLevel)}&topic=${encodeURIComponent(story.journeyTopic)}&slot=${story.journeyOrder ?? 1}&focus=${encodeURIComponent(story.journeyFocus || "General")}`}
+                                  className={BTN_GHOST_CLASS}
+                                  style={btnGhost}
+                                  pendingLabel="Abriendo creador..."
+                                >
+                                  Hueco
+                                </StudioActionLink>
+                                <StudioActionLink href={legacyStoryHref(story)} className={BTN_GHOST_CLASS} style={btnGhost} pendingLabel="Abriendo Sanity...">Sanity</StudioActionLink>
+                              </>
+                            )}
                           </div>
                         </td>
                       </tr>
