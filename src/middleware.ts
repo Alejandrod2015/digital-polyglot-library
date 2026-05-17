@@ -67,6 +67,19 @@ export default clerkMiddleware(async (auth, req) => {
     );
   }
 
+  // Legacy WooCommerce webhook endpoints use the root path with a wc-api or
+  // wc-ajax query parameter (Stripe Classic, PayPal Standard, refresh-cart
+  // fragments, etc.). After the apex moved to Vercel the home page would
+  // swallow these as 200 OK without ever running the WC handler, silently
+  // dropping every payment webhook. Forward them to WP intact.
+  if (
+    url === "/" &&
+    (req.nextUrl.searchParams.has("wc-api") ||
+      req.nextUrl.searchParams.has("wc-ajax"))
+  ) {
+    return NextResponse.rewrite(new URL(`/${req.nextUrl.search}`, WP_ORIGIN));
+  }
+
   // Mobile API routes use the app's own signed mobile session token, not Clerk's
   // session JWT header/cookie flow. Let them pass through untouched.
   if (url.startsWith("/api/mobile/")) {
