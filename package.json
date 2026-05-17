@@ -9,7 +9,7 @@
     "dev": "prisma generate && next dev",
     "dev:web": "next dev",
     "dev:mobile": "npm run start --prefix apps/mobile",
-    "build": "prisma migrate deploy && prisma generate && next build",
+    "build": "prisma generate && next build",
     "ios": "npm run ios --prefix apps/mobile",
     "start": "next start",
     "lint": "next lint",
