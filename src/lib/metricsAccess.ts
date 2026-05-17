@@ -15,9 +15,18 @@ let internalIdsCache: InternalIdsCache | null = null;
 const INTERNAL_IDS_TTL_MS = 5 * 60 * 1000;
 
 /**
- * Returns the Clerk userIds of all studio members (owner + managers +
- * content_creators), used to exclude internal traffic from /api/metrics/*
- * dashboards. Cached for 5 minutes.
+ * Returns the Clerk userIds to exclude from /api/metrics/* dashboards
+ * so the numbers reflect external usage only. Two sources are merged:
+ *
+ *   1) `getStudioMembers()` emails -> Clerk userIds (lookup by email).
+ *      Catches anyone who registered with the same email used on the
+ *      studio team table.
+ *   2) `METRICS_EXCLUDE_USER_IDS` env var (comma-separated). Manual
+ *      fallback for testers whose Clerk profile uses a different
+ *      email than the studio team table, or for legacy/deleted Clerk
+ *      users who still own historical metric rows.
+ *
+ * Cached for 5 minutes.
  */
 export async function getInternalUserIds(): Promise<string[]> {
   if (
@@ -44,6 +53,15 @@ export async function getInternalUserIds(): Promise<string[]> {
     } catch (error) {
       console.warn("[metricsAccess] failed to resolve internal user", email, error);
     }
+  }
+
+  // Manual override: tester userIds set in Vercel env. Useful for
+  // accounts whose Clerk email doesn't match the studio_members row,
+  // or for stale/deleted Clerk users that still have rows in
+  // UserMetric we want to ignore.
+  const manualEnv = process.env.METRICS_EXCLUDE_USER_IDS ?? "";
+  for (const id of manualEnv.split(",").map((s) => s.trim()).filter(Boolean)) {
+    ids.push(id);
   }
 
   const unique = Array.from(new Set(ids));
