@@ -7,6 +7,33 @@ const WP_ORIGIN = process.env.WP_ORIGIN_HOST ?? "https://wp.digitalpolyglot.com"
 // proxy (kept as an escape hatch while we confirm the cutover).
 const BLOG_BACKEND = process.env.BLOG_BACKEND ?? "mdx";
 
+// Path prefixes that still live on the WordPress origin and must be
+// reverse-proxied so the change to the apex A record (now → Vercel) doesn't
+// 404 them. Order doesn't matter; matching is prefix-based with a slash
+// boundary so e.g. /shop matches /shop and /shop/foo but not /shopping-cart.
+const WP_PROXY_PREFIXES = [
+  "/cart",
+  "/checkout",
+  "/shop",
+  "/my-account",
+  "/product",
+  "/product-category",
+  "/feed",
+  "/comments",
+  "/contact",
+  "/free-e-book",
+  "/e-books",
+  "/podcasts",
+  "/members",
+  "/wp-admin",
+];
+
+function isWordPressPath(pathname: string): boolean {
+  return WP_PROXY_PREFIXES.some(
+    (p) => pathname === p || pathname.startsWith(`${p}/`),
+  );
+}
+
 export default clerkMiddleware(async (auth, req) => {
   const url = req.nextUrl.pathname;
   const host = req.headers.get("host")?.toLowerCase() ?? "";
@@ -23,6 +50,17 @@ export default clerkMiddleware(async (auth, req) => {
   // /blog/foo and /blog/foo/ as canonical. When BLOG_BACKEND === "mdx",
   // the request falls through to the Next.js routes in app/blog/*.
   if (BLOG_BACKEND !== "mdx" && (url === "/blog" || url.startsWith("/blog/"))) {
+    const upstreamPath = url.endsWith("/") ? url : `${url}/`;
+    return NextResponse.rewrite(
+      new URL(upstreamPath + req.nextUrl.search, WP_ORIGIN),
+    );
+  }
+
+  // WordPress-served legacy paths (WooCommerce checkout, RSS feed, WP admin,
+  // and a handful of pages that still live on the WP origin). Proxied here so
+  // the user keeps seeing www.digitalpolyglot.com in the URL bar; otherwise
+  // the change to the apex A record would 404 them on Vercel.
+  if (isWordPressPath(url)) {
     const upstreamPath = url.endsWith("/") ? url : `${url}/`;
     return NextResponse.rewrite(
       new URL(upstreamPath + req.nextUrl.search, WP_ORIGIN),
