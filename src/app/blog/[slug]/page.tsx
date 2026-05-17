@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllBlogSlugs, getBlogPost, renderBlogContent } from "@/lib/blog";
 import landing from "@/components/marketing/LandingPage.module.css";
 import blog from "@/components/marketing/Blog.module.css";
+import MarketingNav from "@/components/marketing/MarketingNav";
 
 type Params = { slug: string };
 
@@ -44,32 +45,7 @@ export default async function BlogPostPage(
 
   return (
     <main className={landing.page}>
-      <nav className={landing.nav}>
-        <div className={`${landing.frame} ${landing.navInner}`}>
-          <Link href="/" className={landing.brand}>
-            Digital Polyglot
-          </Link>
-          <div className={landing.navLinks}>
-            <Link href="/blog">Blog</Link>
-            <Link href="/#features">Features</Link>
-            <Link href="/beta">iPhone beta</Link>
-          </div>
-          <div className={landing.navCta}>
-            <Link
-              href="/sign-in"
-              className={`${landing.btn} ${landing.btnQuiet}`}
-            >
-              Sign in
-            </Link>
-            <Link
-              href="/sign-up"
-              className={`${landing.btn} ${landing.btnPrimary}`}
-            >
-              Get started
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <MarketingNav />
 
       <article className={landing.frame}>
         <div className={blog.post}>

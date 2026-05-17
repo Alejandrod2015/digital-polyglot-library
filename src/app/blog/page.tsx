@@ -12,6 +12,7 @@ import {
 import landing from "@/components/marketing/LandingPage.module.css";
 import blog from "@/components/marketing/Blog.module.css";
 import BlogIndexClient from "@/components/blog/BlogIndexClient";
+import MarketingNav from "@/components/marketing/MarketingNav";
 
 export const metadata: Metadata = {
   title: "Notes from the library · Digital Polyglot",
@@ -56,29 +57,7 @@ export default function BlogIndex() {
 
   return (
     <main className={landing.page}>
-      {/* Nav (same shape as the marketing landing's, with /blog marked active) */}
-      <nav className={landing.nav}>
-        <div className={`${landing.frame} ${landing.navInner}`}>
-          <Link href="/" className={landing.brand}>
-            Digital Polyglot
-          </Link>
-          <div className={landing.navLinks}>
-            <Link href="/blog" style={{ color: "#fff", background: "rgba(255,255,255,0.06)" }}>
-              Blog
-            </Link>
-            <a href="https://shop.digitalpolyglot.com">Shop</a>
-            <Link href="/beta">iPhone beta</Link>
-          </div>
-          <div className={landing.navCta}>
-            <Link href="/sign-in" className={`${landing.btn} ${landing.btnQuiet}`}>
-              Sign in
-            </Link>
-            <Link href="/sign-up" className={`${landing.btn} ${landing.btnPrimary}`}>
-              Get started
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <MarketingNav />
 
       <div className={landing.frame}>
         {/* Hero */}
