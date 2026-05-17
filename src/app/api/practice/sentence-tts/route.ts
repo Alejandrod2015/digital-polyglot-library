@@ -25,8 +25,12 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse, type NextRequest } from "next/server";
 import crypto from "node:crypto";
+import { spawn } from "node:child_process";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
-import { getPublicObjectUrl } from "@/lib/objectStorage";
+import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 
 // Bark cold-starts on GPU can take ~30-60 s; the rest of the engines
 // respond in 5-10 s. Set the route's max duration high enough to cover
@@ -96,7 +100,46 @@ function modalEndpointFor(voiceId: string): string | null {
 // engine changes in a way that should force a regeneration (e.g. we
 // swap a default voice — old voices still cached under v1 are now
 // unreachable because every lookup goes through v2's hashes).
-const CACHE_VERSION = "v3";
+// v4: append 150 ms trailing silence to every Modal-rendered mp3 so the
+// last fonema decays naturally instead of cutting on the final sample.
+// Piper does not insert tail silence when the input ends with `.` or
+// `!`/`?` — the audio terminates abruptly at audible volume and the ear
+// reads it as "iba a decir una letra más". Padding kills that artifact.
+const CACHE_VERSION = "v4";
+
+function runFfmpeg(args: string[]): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const proc = spawn("ffmpeg", args);
+    let stderr = "";
+    proc.stderr.on("data", (c) => { stderr += c.toString(); });
+    proc.on("error", reject);
+    proc.on("close", (code) => {
+      if (code === 0) resolve();
+      else reject(new Error(`ffmpeg exit ${code}: ${stderr.slice(0, 300)}`));
+    });
+  });
+}
+
+async function appendTrailingSilence(sourceUrl: string, padSec: number): Promise<Buffer> {
+  const workDir = mkdtempSync(join(tmpdir(), "tts-pad-"));
+  const inPath = join(workDir, "in.mp3");
+  const outPath = join(workDir, "out.mp3");
+  try {
+    const r = await fetch(sourceUrl);
+    if (!r.ok) throw new Error(`download ${r.status}`);
+    writeFileSync(inPath, Buffer.from(await r.arrayBuffer()));
+    await runFfmpeg([
+      "-y", "-loglevel", "error",
+      "-i", inPath,
+      "-af", `apad=pad_dur=${padSec}`,
+      "-codec:a", "libmp3lame", "-b:a", "128k",
+      outPath,
+    ]);
+    return readFileSync(outPath);
+  } finally {
+    rmSync(workDir, { recursive: true, force: true });
+  }
+}
 
 function cacheKey(args: { sentence: string; language: string; variant: string; voiceId: string }): string {
   const payload = `${CACHE_VERSION}|${args.language}|${args.variant}|${args.voiceId}|${args.sentence}`;
@@ -217,5 +260,24 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Post-process: append trailing silence so the audio ends with a
+  // natural decay instead of cutting on the last sample. See CACHE_VERSION
+  // header for rationale. If ffmpeg fails, fall back to the raw mp3 — a
+  // tail-clipped clip is still better than no audio at all.
+  try {
+    const padded = await appendTrailingSilence(modalResp.url, 0.15);
+    const uploaded = await uploadPublicObject({
+      key: generatedKey,
+      body: padded,
+      contentType: "audio/mpeg",
+    });
+    if (uploaded?.url) {
+      return NextResponse.json({ url: uploaded.url, cached: false, voiceId });
+    }
+  } catch (err) {
+    console.warn(
+      `[practice/sentence-tts] silence pad failed, returning raw: ${err instanceof Error ? err.message : err}`
+    );
+  }
   return NextResponse.json({ url: modalResp.url, cached: false, voiceId });
 }

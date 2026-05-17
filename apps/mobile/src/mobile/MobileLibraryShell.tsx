@@ -2229,6 +2229,13 @@ export function MobileLibraryShell(args: {
   // efecto re-dispare el audio si el usuario pausa/despausa o si re-
   // renderizamos mientras revealed está activo.
   const lastContextRevealAudioIdRef = useRef<string | null>(null);
+  // Identifier of the slot that the user EXPLICITLY revealed (selected
+  // an option or hit the timeout). Set on reveal, cleared on advance.
+  // The context-reveal effect only fires when this matches the current
+  // slot's id, which closes the race where React commits practiceIndex
+  // before practiceRevealed and the effect sees a stale `revealed=true`
+  // on the new slot.
+  const revealedSlotIdRef = useRef<string | null>(null);
   // Dedupe del prefetch de audios de la sesión: cada (sentence, lang,
   // voiceId) se pide solo una vez. Se limpia al cerrar la sesión.
   const practicePrefetchSeenRef = useRef<Set<string>>(new Set());
@@ -6271,6 +6278,7 @@ export function MobileLibraryShell(args: {
     // mismo escribe el ref y nunca lo resetea.
     lastAutoplayedExerciseIdRef.current = null;
     lastContextRevealAudioIdRef.current = null;
+    revealedSlotIdRef.current = null;
     practicePrefetchSeenRef.current.clear();
     practiceAudioFilesRef.current.clear();
     // Liberar el Sound pre-creado de la sesión anterior, si quedó vivo.
@@ -6636,6 +6644,10 @@ export function MobileLibraryShell(args: {
   }
 
   function advancePractice() {
+    // Clear synchronously so effect 5c — which can race against the
+    // batched setPracticeRevealed(false) and see a stale revealed=true
+    // on the new slot — sees the ref empty and bails out.
+    revealedSlotIdRef.current = null;
     void stopPracticeContextClip();
     // Cortar también cualquier HQ clip que pudiera estar sonando del
     // ejercicio anterior. Sin esto, en context mode el audio del
@@ -6821,6 +6833,7 @@ export function MobileLibraryShell(args: {
       resolvePracticeMultipleChoiceAnswer(current, practiceSelectedOption, true);
       return;
     }
+    revealedSlotIdRef.current = current.id;
     setPracticeRevealed(true);
     setPracticeTimedOut(true);
     setPracticeLastResult("wrong");
@@ -7014,18 +7027,31 @@ export function MobileLibraryShell(args: {
     if (currentPracticeExercise.mode !== "context") return;
     if (!currentPracticeExercise.audioClip) return;
     const exId = currentPracticeExercise.id;
+    // Race guard: this effect re-runs whenever currentPracticeExercise
+    // changes. On advance, React commits the new index before the new
+    // practiceRevealed=false on RN, so the effect can see revealed=true
+    // (stale) on the NEW slot pre-reveal. The ref is set synchronously
+    // when the user actually reveals a slot and cleared synchronously
+    // on advance — bypasses React batching entirely.
+    if (revealedSlotIdRef.current !== exId) return;
     if (lastContextRevealAudioIdRef.current === exId) return;
     lastContextRevealAudioIdRef.current = exId;
-    showDebug("5c reveal: story path");
-    // Usar la pista narrada del cuento (mismo audio, misma voz que el
-    // usuario escuchó leyendo) en vez de una re-generación TTS. La
-    // función `playPracticeContextClipStoryOnly` busca el segmento de
-    // aeneas que matchea con `clip` y reproduce la franja exacta del
-    // mp3. Si no encuentra segmento, cae internamente a HQ TTS y, si
-    // ese también falla, a expo-speech. Cubre todos los idiomas y
-    // todas las voces (incluidas las chatterbox que el endpoint de
-    // /api/practice/sentence-tts no soporta).
-    void playPracticeContextClipStoryOnly();
+    // Use a freshly synthesized short mp3 (Piper Modal via
+    // /api/practice/sentence-tts, cached on R2) instead of replaying a
+    // window of the original story mp3. This avoids three problems
+    // with the story-path:
+    //   - The story mp3 has ambient mixed in, which leaks into the
+    //     practice exercise; the TTS endpoint produces clean voice.
+    //   - Playback uses an aeneas range on a big file; tiny drift
+    //     between endSec and the actual stop produces "se cuela una
+    //     palabra" of the adjacent sentence. A short discrete mp3 has
+    //     no neighbours to leak.
+    //   - HqOnly has the seq-guard fence (shouldPlay:false → check →
+    //     playAsync) so a mid-flight Next never plays a fragment.
+    // The clip's voiceId (e.g. piper/it_IT-paola-medium) is forwarded
+    // to the endpoint, so the synthesized voice matches the reader's
+    // narration voice for stories whose voiceId is tracked + supported.
+    void playPracticeContextClipHqOnly();
   }, [
     activePracticeMode,
     practiceRevealed,
@@ -7248,6 +7274,7 @@ export function MobileLibraryShell(args: {
     setSpeakingPracticePromptId(null);
 
     const isCorrect = option === current.answer;
+    revealedSlotIdRef.current = current.id;
     setPracticeRevealed(true);
     setPracticeTimedOut(timedOut);
     setPracticeReviewScores((currentScores) => ({
@@ -7926,7 +7953,14 @@ export function MobileLibraryShell(args: {
       await stopPracticeContextClip();
       return;
     }
+    // Cancellation token. advancePractice bumps the seq on each
+    // slot transition; we capture the value at entry (without
+    // incrementing — this function calls HqOnly internally and HqOnly
+    // bumps its own seq, so incrementing here would invalidate ourselves).
+    const mySeq = practiceAudioSeqRef.current;
+    const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
     const storyAudio = await ensurePracticeClipStoryAudio(clip);
+    if (!stillCurrent()) return;
     let segment = findSegmentForClip(storyAudio, clip);
     // Server-side pre-computed timings from aeneas word alignment win
     // over the fuzzy heuristic. When `clip.audioSentenceStartSec/EndSec`
@@ -8032,9 +8066,15 @@ export function MobileLibraryShell(args: {
       // the first callback after audio starts already sees the correct
       // upper bound.
       practiceClipStopAtMillisRef.current = hasSegmentRange ? rawEndSec * 1000 : null;
+      if (!stillCurrent()) return;
+      // Load with shouldPlay:false so playback does NOT start when the
+      // Promise resolves. If the user tapped Next mid-load, the Sound
+      // can be silently unloaded; with shouldPlay:true the audio leaks
+      // a fragment between createAsync resolving and unloadAsync taking
+      // effect, which is exactly the "se cuelan palabras" symptom.
       const { sound } = await Audio.Sound.createAsync(
         { uri: audioUrl },
-        { shouldPlay: true, positionMillis: Math.max(0, rawStartSec * 1000) },
+        { shouldPlay: false, positionMillis: Math.max(0, rawStartSec * 1000) },
         (status) => {
           const loaded = toClipPlaybackLoadedSnapshot(status);
           if (!loaded) {
@@ -8051,8 +8091,17 @@ export function MobileLibraryShell(args: {
           }
         }
       );
+      if (!stillCurrent()) {
+        try { await sound.unloadAsync(); } catch { /* ignore */ }
+        return;
+      }
       practiceClipSoundRef.current = sound;
       setPlayingPracticeClipId(currentPracticeExercise.id);
+      // Now safe to start: ref is set, stop functions can reach this
+      // Sound, and no other slot is in flight.
+      try { await sound.playAsync(); } catch {
+        await stopPracticeContextClip();
+      }
     } catch (error) {
       console.error("[mobile practice] story clip playback failed", error);
       await stopPracticeContextClip();
@@ -8153,6 +8202,10 @@ export function MobileLibraryShell(args: {
         interruptionModeIOS: InterruptionModeIOS.DoNotMix,
       });
       if (!stillCurrent()) return;
+      // shouldPlay:false so the Sound doesn't leak a fragment between
+      // createAsync resolving and unloadAsync taking effect when the
+      // user has already moved to a different slot. We start playback
+      // only after the stillCurrent + ref-assignment fence below.
       const { sound } = await Audio.Sound.createAsync(
         { uri },
         // rate 0.65 + shouldCorrectPitch para que la voz se escuche
@@ -8160,7 +8213,7 @@ export function MobileLibraryShell(args: {
         // narrada (0.80) y que el context clip (0.75) porque la
         // palabra suelta no tiene contexto rítmico que ayude a
         // parsearla; learners necesitan mas tiempo por sílaba.
-        { shouldPlay: true, rate: 0.65, shouldCorrectPitch: true },
+        { shouldPlay: false, rate: 0.65, shouldCorrectPitch: true },
         (status) => {
           if ("didJustFinish" in status && status.didJustFinish) {
             void stopPracticeHqClip();
@@ -8174,6 +8227,7 @@ export function MobileLibraryShell(args: {
       practiceHqSoundRef.current = sound;
       setPlayingHqPracticeClipId(exIdAtPlay);
       setLoadingPracticeAudioId(null);
+      try { await sound.playAsync(); } catch { await stopPracticeHqClip(); }
     } catch (err) {
       console.error("[mobile practice] meaning word audio playback failed", err);
       await stopPracticeHqClip();
@@ -8204,10 +8258,12 @@ export function MobileLibraryShell(args: {
     const voiceId = clip.voiceId ?? undefined;
     const cacheKey = `${lang}::${voiceId ?? ""}::${clip.sentence}`;
     let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
+    showDebug(`Hq cache ${uri ? "HIT" : "miss"} voiceId=${voiceId ?? "null"} sent=${clip.sentence.slice(0,25)}`);
 
     if (!uri) {
       setLoadingPracticeAudioId(currentPracticeExercise.id);
       try {
+        showDebug(`Hq apiFetch /api/practice/sentence-tts ...`);
         const resp = await apiFetch<{ url?: string }>({
           baseUrl: mobileConfig.apiBaseUrl,
           path: "/api/practice/sentence-tts",
@@ -8216,8 +8272,10 @@ export function MobileLibraryShell(args: {
           timeoutMs: 45000,
           body: { sentence: clip.sentence, language: lang, voiceId },
         });
-        if (!stillCurrent()) return;
+        showDebug(`Hq apiFetch resp url=${resp?.url ? resp.url.slice(-40) : "EMPTY"}`);
+        if (!stillCurrent()) { showDebug("Hq abort post-fetch"); return; }
         if (!resp?.url) {
+          showDebug("Hq NO URL → bail");
           setLoadingPracticeAudioId(null);
           return;
         }
@@ -8257,9 +8315,17 @@ export function MobileLibraryShell(args: {
         interruptionModeIOS: InterruptionModeIOS.DoNotMix,
       });
       if (!stillCurrent()) return;
+      // shouldPlay:false + deferred playAsync — same fence as the
+      // story and meaning paths, so a mid-flight Next never leaks a
+      // fragment of the HQ TTS clip.
+      // TEST: rate 1.0 (no pitch correction). If audio is audible at this
+      // setting but inaudible with rate 0.75 + shouldCorrectPitch:true, it
+      // confirms the iOS pitch shifter silently produces empty output for
+      // mp3 inputs at Piper's 22050 Hz sample rate. Real fix in that case
+      // is to pre-stretch the audio server-side and play at rate 1.0 here.
       const { sound } = await Audio.Sound.createAsync(
         { uri },
-        { shouldPlay: true, rate: 0.75, shouldCorrectPitch: true },
+        { shouldPlay: false, rate: 1.0, shouldCorrectPitch: false },
         (status) => {
           if ("didJustFinish" in status && status.didJustFinish) {
             void stopPracticeHqClip();
@@ -8270,13 +8336,47 @@ export function MobileLibraryShell(args: {
         }
       );
       if (!stillCurrent()) {
+        showDebug("Hq abort post-create");
         try { await sound.unloadAsync(); } catch { /* ignore */ }
         return;
       }
       practiceHqSoundRef.current = sound;
       setPlayingHqPracticeClipId(exIdAtPlay);
       setLoadingPracticeAudioId(null);
+      // Diagnostic: capture file size + initial status so we can tell whether
+      // playAsync is really emitting audio. If positionMillis advances after
+      // 600 ms the sound is playing (silence is then a hardware/output issue);
+      // if it stays at 0 the sound silently failed despite playAsync OK.
+      try {
+        const info = await FileSystem.getInfoAsync(uri!);
+        showDebug(`Hq file exists=${(info as { exists?: boolean }).exists} size=${(info as { size?: number }).size ?? "?"}`);
+      } catch { /* ignore */ }
+      try {
+        const pre = await sound.getStatusAsync();
+        const d = "durationMillis" in pre ? pre.durationMillis : undefined;
+        const loaded = "isLoaded" in pre ? pre.isLoaded : false;
+        const vol = "volume" in pre ? pre.volume : undefined;
+        showDebug(`Hq pre-play loaded=${loaded} dur=${d ?? "?"} vol=${vol ?? "?"}`);
+      } catch { /* ignore */ }
+      showDebug(`Hq playAsync...`);
+      try {
+        await sound.playAsync();
+        showDebug("Hq playAsync OK");
+        // 600 ms later, poll status to see if position advanced.
+        setTimeout(() => {
+          sound.getStatusAsync().then((s) => {
+            const pos = "positionMillis" in s ? s.positionMillis : "?";
+            const playing = "isPlaying" in s ? s.isPlaying : "?";
+            const rate = "rate" in s ? s.rate : "?";
+            showDebug(`Hq +600ms playing=${playing} pos=${pos} rate=${rate}`);
+          }).catch(() => {});
+        }, 600);
+      } catch (e) {
+        showDebug(`Hq playAsync FAIL ${(e as Error)?.message?.slice(0,40)}`);
+        await stopPracticeHqClip();
+      }
     } catch (err) {
+      showDebug(`Hq outer catch ${(err as Error)?.message?.slice(0,40)}`);
       console.error("[mobile practice] HQ playback failed", err);
       await stopPracticeHqClip();
       if (stillCurrent()) setLoadingPracticeAudioId(null);
@@ -11144,19 +11244,6 @@ export function MobileLibraryShell(args: {
                     : `${Math.max(0, Math.ceil(CHECKPOINT_PASS_THRESHOLD * N) - practiceScore)} more correct to pass.`
                   : `${practiceScore} of ${N} correct.`;
 
-                // Anillo segmentado. Mantenemos el SVG inline para no
-                // proliferar archivos; cada Circle es un segmento con
-                // strokeDasharray + offset (mismo trick que el orbit).
-                const RING_SIZE = 220;
-                const RING_STROKE = 18;
-                const RING_RADIUS = (RING_SIZE - RING_STROKE) / 2;
-                const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
-                const segCount = Math.max(N, 1);
-                const gapDeg = segCount <= 10 ? 4 : 2;
-                const usableDeg = 360 - gapDeg * segCount;
-                const segDeg = usableDeg / segCount;
-                const segLen = (segDeg / 360) * RING_CIRCUMFERENCE;
-
                 return (
                   <>
                     {/* Chips en esquinas */}
@@ -11173,49 +11260,16 @@ export function MobileLibraryShell(args: {
                       </View>
                     </View>
 
-                    {/* Anillo segmentado: cada segmento = 1 ejercicio
-                        (yellow correct, red wrong). Sin shine arriba;
-                        si en el futuro queremos un efecto, hay que
-                        pensarlo en serio (gradient stroke, glow nativo)
-                        en vez de capas rotantes que se sentían como
-                        spinners. */}
-                    <View style={styles.practiceResultRingWrap}>
-                      <Svg width={RING_SIZE} height={RING_SIZE}>
-                        <G rotation={-90} originX={RING_SIZE / 2} originY={RING_SIZE / 2}>
-                          {Array.from({ length: segCount }).map((_, i) => {
-                            const startDeg = i * (segDeg + gapDeg);
-                            const offset = -(startDeg / 360) * RING_CIRCUMFERENCE;
-                            const isWrong = N > 0 && results[i] === "wrong";
-                            const color = N === 0
-                              ? "rgba(255,255,255,0.08)"
-                              : isWrong
-                                ? "#fb7185"
-                                : "#facc15";
-                            return (
-                              <Circle
-                                key={`seg-${i}`}
-                                cx={RING_SIZE / 2}
-                                cy={RING_SIZE / 2}
-                                r={RING_RADIUS}
-                                stroke={color}
-                                strokeWidth={RING_STROKE}
-                                fill="none"
-                                strokeDasharray={`${segLen}, ${RING_CIRCUMFERENCE}`}
-                                strokeDashoffset={offset}
-                                strokeLinecap="round"
-                              />
-                            );
-                          })}
-                        </G>
-                      </Svg>
-                      <View style={styles.practiceResultRingCenter} pointerEvents="none">
-                        <Text style={styles.practiceResultScoreCaption}>SCORE</Text>
-                        <Text style={styles.practiceResultRingScore}>
-                          <Text style={styles.practiceResultRingScoreNum}>{practiceScore}</Text>
-                          <Text style={styles.practiceResultRingScoreSep}>/{N}</Text>
-                        </Text>
-                      </View>
-                    </View>
+                    {/* Animated result ring: arc fills 0 → score/total
+                        with a single color bucketed by accuracy (green
+                        ≥80, amber ≥50, red below). Centre number counts
+                        up in lockstep. See PracticeResultRing at the
+                        bottom of this file. */}
+                    <PracticeResultRing
+                      score={practiceScore}
+                      total={N}
+                      accuracyPct={accuracyPct}
+                    />
 
                     {/* Saludo + headline */}
                     <View style={styles.practiceResultMessage}>
@@ -24405,5 +24459,140 @@ const styles = StyleSheet.create({
     color: "#dbe9ff",
     fontSize: 15,
     fontWeight: "700",
+  },
+});
+
+// Animated SVG circle for the practice-result ring.
+const AnimatedRingCircle = Animated.createAnimatedComponent(Circle);
+
+/**
+ * Result ring rendered on the practice summary screen. The arc fills
+ * from 0 to `score/total` while the centre number counts up from 0 to
+ * `score`, both completing in the same window. Color buckets the
+ * accuracy: green ≥80, amber ≥50, red below.
+ *
+ * Self-contained: owns its dimensions and styles so it can be dropped
+ * in anywhere without touching the global StyleSheet at module bottom.
+ */
+function PracticeResultRing({
+  score,
+  total,
+  accuracyPct,
+}: {
+  score: number;
+  total: number;
+  accuracyPct: number;
+}) {
+  const SIZE = 220;
+  const STROKE = 18;
+  const RADIUS = (SIZE - STROKE) / 2;
+  const CIRC = 2 * Math.PI * RADIUS;
+  const targetRatio = total > 0 ? Math.max(0, Math.min(1, score / total)) : 0;
+  const fillAnim = useRef(new Animated.Value(0)).current;
+  const numAnim = useRef(new Animated.Value(0)).current;
+  const [displayScore, setDisplayScore] = useState(0);
+
+  const color =
+    accuracyPct >= 80 ? "#22c55e" : accuracyPct >= 50 ? "#f59e0b" : "#fb7185";
+
+  useEffect(() => {
+    const listener = numAnim.addListener(({ value }) =>
+      setDisplayScore(Math.round(value))
+    );
+    Animated.parallel([
+      Animated.timing(fillAnim, {
+        toValue: targetRatio,
+        duration: 1200,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: false,
+      }),
+      Animated.timing(numAnim, {
+        toValue: score,
+        duration: 1200,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: false,
+      }),
+    ]).start();
+    return () => numAnim.removeListener(listener);
+  }, [score, targetRatio, fillAnim, numAnim]);
+
+  const dashOffset = fillAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [CIRC, 0],
+  });
+
+  return (
+    <View style={ringStyles.wrap}>
+      <Svg width={SIZE} height={SIZE}>
+        <G rotation={-90} originX={SIZE / 2} originY={SIZE / 2}>
+          <Circle
+            cx={SIZE / 2}
+            cy={SIZE / 2}
+            r={RADIUS}
+            stroke="rgba(255,255,255,0.08)"
+            strokeWidth={STROKE}
+            fill="none"
+          />
+          <AnimatedRingCircle
+            cx={SIZE / 2}
+            cy={SIZE / 2}
+            r={RADIUS}
+            stroke={color}
+            strokeWidth={STROKE}
+            fill="none"
+            strokeDasharray={`${CIRC}, ${CIRC}`}
+            strokeDashoffset={dashOffset}
+            strokeLinecap="round"
+          />
+        </G>
+      </Svg>
+      <View style={ringStyles.center} pointerEvents="none">
+        <Text style={ringStyles.caption}>SCORE</Text>
+        <Text style={ringStyles.score}>
+          <Text style={ringStyles.scoreNum}>{displayScore}</Text>
+          <Text style={ringStyles.scoreSep}>/{total}</Text>
+        </Text>
+      </View>
+    </View>
+  );
+}
+
+const ringStyles = StyleSheet.create({
+  wrap: {
+    width: 220,
+    height: 220,
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 16,
+    marginBottom: 24,
+  },
+  center: {
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  caption: {
+    color: "#94a3b8",
+    fontSize: 12,
+    fontWeight: "700",
+    letterSpacing: 2,
+    marginBottom: 4,
+  },
+  score: {
+    flexDirection: "row",
+    alignItems: "baseline",
+  },
+  scoreNum: {
+    color: "#ffffff",
+    fontSize: 56,
+    fontWeight: "800",
+    lineHeight: 60,
+  },
+  scoreSep: {
+    color: "#475569",
+    fontSize: 40,
+    fontWeight: "800",
+    lineHeight: 60,
   },
 });
