@@ -686,6 +686,15 @@ body[data-mx-metrics="true"] aside {
 body[data-mx-metrics="true"] aside [style*="border-bottom"] {
   border-bottom-color: var(--mx-border) !important;
 }
+/* El StudioShell pinta su propio fondo via inline style en
+ * `.studio-shell-root` (gradiente azul + radial top-center). Como es
+ * inline, las CSS variables del body no lo afectan: hay que tumbarlo
+ * con !important sobre la clase directamente. */
+body[data-mx-metrics="true"] .studio-shell-root {
+  background-color: var(--mx-bg-1) !important;
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgba(20, 184, 166, 0.06), transparent) !important;
+}
 
 .mx-root {
   font-family: var(--mx-font);
