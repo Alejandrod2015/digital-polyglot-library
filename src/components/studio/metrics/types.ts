@@ -46,6 +46,7 @@ export type DashboardData = {
     storySlug: string;
     listenedMinutes: number;
     listeners: number;
+    language: string | null;
   }>;
   topSavedStories: Array<{ storySlug: string; saves: number }>;
   topSavedBooks: Array<{ bookSlug: string; saves: number }>;

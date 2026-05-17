@@ -119,6 +119,11 @@ type DashboardResponse = {
     storySlug: string;
     listenedMinutes: number;
     listeners: number;
+    /** Canonical language code (es / it / de / fr / pt / en) resolved from
+     * the story's metadata. `null` when the slug doesn't match any known
+     * source. Replaces the previous slug-regex heuristic on the client
+     * that produced false positives (e.g. "dia-de-muertos" → "de"). */
+    language: string | null;
   }>;
   topSavedStories: Array<{
     storySlug: string;
@@ -425,6 +430,169 @@ async function resolveStoryIdsForSlug(slug: string): Promise<string[]> {
       ...standaloneStories.map((story) => story.id),
     ])
   );
+}
+
+/**
+ * For every story slug, returns its canonical language code (es / it / de /
+ * fr / pt / en). Looks in the local catalog first (Book.language inherits
+ * to its stories), then UserStory.language, then StandaloneStory.language.
+ * Slugs that can't be resolved get `null` (no language chip rendered).
+ */
+async function resolveStoryLanguageMap(
+  storySlugs: string[]
+): Promise<Map<string, string>> {
+  if (storySlugs.length === 0) return new Map();
+
+  const slugSet = new Set(storySlugs);
+  const out = new Map<string, string>();
+
+  // 1) Local catalog. Each Book has a language; every story inside
+  // inherits that language for display purposes.
+  for (const book of Object.values(books)) {
+    const lang = (book as { language?: string }).language;
+    if (!lang) continue;
+    for (const story of book.stories) {
+      if (slugSet.has(story.slug)) {
+        out.set(story.slug, normalizeLanguageCode(lang));
+      }
+    }
+  }
+
+  // 2) UserStory + StandaloneStory for whatever still isn't resolved.
+  const unresolved = storySlugs.filter((s) => !out.has(s));
+  if (unresolved.length === 0) return out;
+
+  const [userStories, standaloneStories] = await Promise.all([
+    prisma.userStory.findMany({
+      where: { slug: { in: unresolved } },
+      select: { slug: true, language: true },
+    }),
+    getStandaloneStoriesBySlugs(unresolved),
+  ]);
+
+  for (const s of userStories) {
+    if (s.language) out.set(s.slug, normalizeLanguageCode(s.language));
+  }
+  for (const s of standaloneStories) {
+    const lang = (s as { language?: string | null }).language;
+    if (lang && !out.has(s.slug)) out.set(s.slug, normalizeLanguageCode(lang));
+  }
+  return out;
+}
+
+/**
+ * Map raw `LibraryBook.bookId` -> human title. Three strategies in order:
+ *   1) Exact match against CatalogBook.id (post-cutover schema where
+ *      stored bookIds match catalog ids).
+ *   2) Fuzzy match against CatalogBook.slug for legacy DP-* SKUs
+ *      (Stripe-style product codes that contain the catalog slug
+ *      uppercased + a trailing variant suffix).
+ *   3) LibraryBook.title (often equals the SKU, but harmless fallback).
+ *   4) Humanise the SKU directly (strip DP-, drop trailing --XXX suffix
+ *      blocks, lowercase, replace dashes with spaces, title-case) so the
+ *      dashboard at least reads as English rather than as a raw code.
+ */
+async function resolveBookTitleMap(
+  bookIds: string[]
+): Promise<Map<string, string>> {
+  if (bookIds.length === 0) return new Map();
+  const [exactCatalog, libraryRows, allCatalog] = await Promise.all([
+    prisma.catalogBook.findMany({
+      where: { id: { in: bookIds } },
+      select: { id: true, title: true },
+    }),
+    prisma.libraryBook.findMany({
+      where: { bookId: { in: bookIds } },
+      select: { bookId: true, title: true },
+      distinct: ["bookId"],
+    }),
+    prisma.catalogBook.findMany({
+      select: { slug: true, title: true },
+    }),
+  ]);
+  const exactById = new Map(exactCatalog.map((r) => [r.id, r.title]));
+  const libraryTitle = new Map(libraryRows.map((r) => [r.bookId, r.title]));
+  const out = new Map<string, string>();
+
+  for (const id of bookIds) {
+    const exact = exactById.get(id);
+    if (exact) {
+      out.set(id, exact);
+      continue;
+    }
+    const fuzzy = matchCatalogByLegacySku(id, allCatalog);
+    if (fuzzy) {
+      out.set(id, fuzzy);
+      continue;
+    }
+    const fromLibrary = libraryTitle.get(id);
+    if (fromLibrary && fromLibrary !== id) {
+      out.set(id, fromLibrary);
+      continue;
+    }
+    out.set(id, humaniseSku(id));
+  }
+  return out;
+}
+
+/** Strip Shopify-style "DP-" prefix + trailing variant codes, then look up
+ *  a CatalogBook whose slug contains ALL of the cleaned SKU's tokens
+ *  (in any order, but every token must appear). This avoids the trap where
+ *  "short-stories-in" wrongly matches `short-stories-in-argentinian-...`
+ *  for a Puerto Rican SKU. */
+function matchCatalogByLegacySku(
+  bookId: string,
+  catalog: Array<{ slug: string; title: string }>
+): string | null {
+  // Stripe-style codes follow `DP-<NAME>--<VARIANT>`. Split on `--` and
+  // keep only the name half; strip trailing dashes; normalise to lower.
+  const lower = bookId.toLowerCase().replace(/^dp-/, "");
+  const beforeVariant = lower.split("--")[0];
+  const cleaned = beforeVariant.replace(/-+$/, "");
+  if (!cleaned) return null;
+  // Solo match estricto: el catalog slug debe empezar literalmente con el
+  // SKU limpio. Probamos también dropping trailing tokens (1 a la vez)
+  // para tolerar truncations, PERO solo si la cola del SKU NO contenía
+  // tokens "distintivos" como gentilicios — esos sí deberían disqualify.
+  // Definimos distintivos por longitud: cualquier token >= 6 chars
+  // (puerto, rican, colombian, argentinian, etc.) es load-bearing.
+  const tokens = cleaned.split("-").filter(Boolean);
+  for (let take = tokens.length; take >= 3; take -= 1) {
+    const droppedTail = tokens.slice(take);
+    const hasDistinctiveDropped = droppedTail.some((t) => t.length >= 6);
+    if (hasDistinctiveDropped) break;
+    const prefix = tokens.slice(0, take).join("-");
+    const match = catalog.find((c) =>
+      c.slug.toLowerCase().startsWith(prefix)
+    );
+    if (match) return match.title;
+  }
+  return null;
+}
+
+function humaniseSku(value: string): string {
+  return value
+    .replace(/^DP-/i, "")
+    .replace(/-+/g, " ")
+    .trim()
+    .toLowerCase()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+/**
+ * Normalises whatever language string the catalog stores ("spanish",
+ * "italiano", "Deutsch", "de-DE"…) into the 2-letter code the client
+ * components expect for the LangTag chip.
+ */
+function normalizeLanguageCode(value: string): string {
+  const v = value.trim().toLowerCase();
+  if (v.startsWith("es") || v === "spanish" || v === "castellano") return "es";
+  if (v.startsWith("it") || v === "italian" || v === "italiano") return "it";
+  if (v.startsWith("de") || v === "german" || v === "deutsch") return "de";
+  if (v.startsWith("fr") || v === "french" || v.startsWith("français")) return "fr";
+  if (v.startsWith("pt") || v === "portuguese" || v === "português") return "pt";
+  if (v.startsWith("en") || v === "english") return "en";
+  return v.slice(0, 2);
 }
 
 async function resolveStorySlugMap(storyIds: string[]): Promise<Map<string, string>> {
@@ -1071,7 +1239,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     .sort((a, b) => b.plays - a.plays)
     .slice(0, 10);
 
-  const topStoriesByMinutes = Array.from(byStorySeconds.entries())
+  const topStoriesByMinutesPre = Array.from(byStorySeconds.entries())
     .map(([storySlugValue, listenedSeconds]) => ({
       storySlug: storySlugValue,
       listenedMinutes: Math.round((listenedSeconds / 60) * 10) / 10,
@@ -1079,6 +1247,14 @@ export async function GET(req: NextRequest): Promise<Response> {
     }))
     .sort((a, b) => b.listenedMinutes - a.listenedMinutes)
     .slice(0, 10);
+  const storyLanguageMap =
+    topStoriesByMinutesPre.length > 0
+      ? await resolveStoryLanguageMap(topStoriesByMinutesPre.map((s) => s.storySlug))
+      : new Map<string, string>();
+  const topStoriesByMinutes = topStoriesByMinutesPre.map((s) => ({
+    ...s,
+    language: storyLanguageMap.get(s.storySlug) ?? null,
+  }));
 
   const savedStorySlugMap = needsSavedCountsData
     ? await resolveStorySlugMap((savedStoryRows as SavedStoryRow[]).map((row) => row.storyId))
@@ -1090,9 +1266,15 @@ export async function GET(req: NextRequest): Promise<Response> {
     }))
     .slice(0, 10);
 
+  // Resolve raw bookIds (Stripe-style product codes) to display titles
+  // pulled from LibraryBook.title so the dashboard shows "Colombian
+  // Spanish Stories for Beginners" instead of "DP-COLOMBIAN-...".
+  const bookTitleMap = needsSavedCountsData
+    ? await resolveBookTitleMap((savedBookRows as SavedBookRow[]).map((row) => row.bookId))
+    : new Map<string, string>();
   const topSavedBooks = (savedBookRows as SavedBookRow[])
     .map((row) => ({
-      bookSlug: row.bookId,
+      bookSlug: bookTitleMap.get(row.bookId) ?? row.bookId,
       saves: row._count._all,
     }))
     .slice(0, 10);

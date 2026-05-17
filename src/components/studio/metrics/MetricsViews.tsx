@@ -12,7 +12,7 @@ import {
   fmt,
 } from "./MetricsPrimitives";
 import { deriveInsights } from "./deriveInsights";
-import { inferLangFromSlug, sparkSeries, toAreaChartData } from "./dailyHelpers";
+import { sparkSeries, toAreaChartData } from "./dailyHelpers";
 import type { DashboardData } from "./types";
 
 /**
@@ -213,7 +213,7 @@ export function ResumenView({ data }: { data: DashboardData }) {
           </div>
           <div className="mx-barlist">
             {data.topStoriesByMinutes.slice(0, 8).map((story) => {
-              const lang = inferLangFromSlug(story.storySlug);
+              const lang = story.language;
               return (
                 <BarRow
                   key={story.storySlug}
@@ -416,7 +416,7 @@ export function EngagementView({ data }: { data: DashboardData }) {
             </thead>
             <tbody>
               {data.topStoriesByMinutes.map((story, i) => {
-                const lang = inferLangFromSlug(story.storySlug);
+                const lang = story.language;
                 const widthPct =
                   maxStoryMinutes === 0
                     ? 0
@@ -473,7 +473,10 @@ export function EngagementView({ data }: { data: DashboardData }) {
           </div>
           <div className="mx-barlist">
             {data.topBooks.map((book) => {
-              const lang = inferLangFromSlug(book.bookSlug);
+              // Books no traen language en este payload todavía. Sin tag
+              // hasta que el server lo exponga (evita falsos positivos
+              // como "DP-COLOMBIAN" -> "es" por el sufijo "-co-").
+              const lang: string | null = null;
               const accent =
                 book.completionRate >= 60
                   ? "var(--mx-pos)"
