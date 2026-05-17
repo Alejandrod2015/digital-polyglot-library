@@ -58,7 +58,12 @@ export default withSentryConfig(nextConfig, {
   org: "digital-polyglot",
   project: "digital-polyglot",
   silent: !process.env.CI,
-  widenClientFileUpload: true,
+  // widenClientFileUpload uploads source maps for ALL client bundles
+  // (including node_modules), which added ~30 CPU-min per build × ~97
+  // builds/month = ~$15/mo of pure overage. Default behavior still
+  // uploads source maps for our own code, which is what we actually
+  // need for readable stack traces in Sentry.
+  widenClientFileUpload: false,
   hideSourceMaps: true,
   disableLogger: true,
 });
