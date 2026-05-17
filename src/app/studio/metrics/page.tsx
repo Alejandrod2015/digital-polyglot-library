@@ -1,164 +1,184 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import StudioShell from "@/components/studio/StudioShell";
+import {
+  ComingSoonView,
+  EngagementView,
+  FunnelsView,
+  ResumenView,
+} from "@/components/studio/metrics/MetricsViews";
+import {
+  fmt,
+  KpiCard,
+} from "@/components/studio/metrics/MetricsPrimitives";
+import type {
+  DashboardData,
+  MetricsSection,
+  PipelineData,
+} from "@/components/studio/metrics/types";
 
-const MetricsOverviewChart = dynamic(
-  () => import("@/components/studio/MetricsOverviewChart"),
-  {
-    ssr: false,
-    loading: () => <div className="studio-skeleton" style={{ height: 320, width: "100%" }} />,
-  }
-);
-
-const MetricsEngagementChart = dynamic(
-  () => import("@/components/studio/MetricsEngagementChart"),
-  {
-    ssr: false,
-    loading: () => <div className="studio-skeleton" style={{ height: 400, width: "100%" }} />,
-  }
-);
-
-type MetricsSection =
-  | "overview"
-  | "acquisition"
-  | "engagement"
-  | "learning"
-  | "content"
-  | "funnels"
-  | "audience"
-  | "experiments"
-  | "alerts"
-  | "exports";
-
-type DashboardData = {
-  range: { from: string; to: string; days: number };
-  kpis: {
-    dau: number; wau: number; activeUsersInRange: number; plays: number;
-    completions: number; completionRate: number; uniqueStories: number;
-    uniqueBooks: number; avgMinutesPerActiveUser: number; totalListenedMinutes: number;
-    savedStories: number; savedBooks: number;
-  };
-  daily: Array<{ date: string; plays: number; completions: number; completionRate: number }>;
-  topStories: Array<{ storySlug: string; plays: number; completions: number; completionRate: number }>;
-  topBooks: Array<{ bookSlug: string; plays: number; completions: number; completionRate: number }>;
-  topStoriesByMinutes: Array<{ storySlug: string; listenedMinutes: number; listeners: number }>;
-  topSavedStories: Array<{ storySlug: string; saves: number }>;
-  topSavedBooks: Array<{ bookSlug: string; saves: number }>;
-  signups: { total: number; last7d: number; last30d: number };
-  recentSignups: Array<{ userId: string; email: string | null; createdAt: string }>;
-  trialFunnel: {
-    started: number; startedWithPm: number; day1Active: number; converted: number;
-    canceled: number; conversionRate: number; day1ActivationRate: number; cancelRate: number;
-  };
-  recentTrialStarts: Array<{ userId: string; email: string | null; eventType: string; createdAt: string }>;
-  recentReminderTaps: Array<{ userId: string; email: string | null; eventType: string; destination: string | null; source: string | null; createdAt: string }>;
-  recentReminderOpens: Array<{ userId: string; email: string | null; eventType: string; destination: string | null; createdAt: string }>;
-  checkoutFunnel: {
-    plansViewed: number; checkoutStarted: number; checkoutRedirected: number;
-    checkoutFailed: number; checkoutStartRate: number; checkoutRedirectRate: number;
-  };
-  upgradeCtaSources: Array<{ source: string; clicks: number }>;
-  journeyFunnel: {
-    variantSelected: number; levelSelected: number; topicOpened: number;
-    nextActionClicked: number; reviewCtaClicked: number; checkpointRecoveryClicked: number;
-    recommendedModeOpened: number; topicOpenRateFromVariant: number;
-    nextActionRateFromTopicOpen: number; reviewRateFromTopicOpen: number;
-  };
-  reminderFunnel: {
-    scheduled: number; tapped: number; destinationOpened: number;
-    tapRateFromScheduled: number; openRateFromTap: number;
-    destinationBreakdown: Array<{ destination: string; opens: number }>;
-  };
-};
-
-type PipelineData = {
-  agentRuns: {
-    total: number;
-    byKind: { planner: number; content: number; qa: number };
-    byStatus: { completed: number; failed: number; running: number };
-    last7Days: Array<{ date: string; completed: number; failed: number }>;
-  };
-  drafts: {
-    total: number;
-    byStatus: {
-      draft: number;
-      generated: number;
-      qa_pass: number;
-      qa_fail: number;
-      needs_review: number;
-      approved: number;
-      published: number;
-    };
-    avgQaScore: number | null;
-    qaPassRate: number;
-    last7Days: Array<{ date: string; created: number; published: number }>;
-  };
-  briefs: {
-    total: number;
-    pending: number;
-    completed: number;
-  };
-  pipeline: {
-    avgTimeToPublish: number | null;
-    contentPerDay: number;
-  };
-};
+/**
+ * Studio · Métricas. Editorial dashboard built on the `--mx-*` token
+ * layer. Resumen / Engagement / Funnels are the primary views; the
+ * other seven sections are visible but de-emphasized in the tab bar
+ * (they keep their existing renderers as "coming soon" cards or, in
+ * the case of Audiencia and Contenido, render the data we already
+ * compute).
+ */
 
 const EMPTY_DATA: DashboardData = {
   range: { from: "", to: "", days: 30 },
-  kpis: { dau: 0, wau: 0, activeUsersInRange: 0, plays: 0, completions: 0, completionRate: 0, uniqueStories: 0, uniqueBooks: 0, avgMinutesPerActiveUser: 0, totalListenedMinutes: 0, savedStories: 0, savedBooks: 0 },
-  daily: [], topStories: [], topBooks: [], topStoriesByMinutes: [], topSavedStories: [], topSavedBooks: [],
+  kpis: {
+    dau: 0,
+    wau: 0,
+    activeUsersInRange: 0,
+    plays: 0,
+    completions: 0,
+    completionRate: 0,
+    uniqueStories: 0,
+    uniqueBooks: 0,
+    avgMinutesPerActiveUser: 0,
+    totalListenedMinutes: 0,
+    savedStories: 0,
+    savedBooks: 0,
+  },
+  daily: [],
+  topStories: [],
+  topBooks: [],
+  topStoriesByMinutes: [],
+  topSavedStories: [],
+  topSavedBooks: [],
   signups: { total: 0, last7d: 0, last30d: 0 },
   recentSignups: [],
-  trialFunnel: { started: 0, startedWithPm: 0, day1Active: 0, converted: 0, canceled: 0, conversionRate: 0, day1ActivationRate: 0, cancelRate: 0 },
-  recentTrialStarts: [], recentReminderTaps: [], recentReminderOpens: [],
-  checkoutFunnel: { plansViewed: 0, checkoutStarted: 0, checkoutRedirected: 0, checkoutFailed: 0, checkoutStartRate: 0, checkoutRedirectRate: 0 },
+  trialFunnel: {
+    started: 0,
+    startedWithPm: 0,
+    day1Active: 0,
+    converted: 0,
+    canceled: 0,
+    conversionRate: 0,
+    day1ActivationRate: 0,
+    cancelRate: 0,
+  },
+  recentTrialStarts: [],
+  recentReminderTaps: [],
+  recentReminderOpens: [],
+  checkoutFunnel: {
+    plansViewed: 0,
+    checkoutStarted: 0,
+    checkoutRedirected: 0,
+    checkoutFailed: 0,
+    checkoutStartRate: 0,
+    checkoutRedirectRate: 0,
+  },
   upgradeCtaSources: [],
-  journeyFunnel: { variantSelected: 0, levelSelected: 0, topicOpened: 0, nextActionClicked: 0, reviewCtaClicked: 0, checkpointRecoveryClicked: 0, recommendedModeOpened: 0, topicOpenRateFromVariant: 0, nextActionRateFromTopicOpen: 0, reviewRateFromTopicOpen: 0 },
-  reminderFunnel: { scheduled: 0, tapped: 0, destinationOpened: 0, tapRateFromScheduled: 0, openRateFromTap: 0, destinationBreakdown: [] },
+  journeyFunnel: {
+    variantSelected: 0,
+    levelSelected: 0,
+    topicOpened: 0,
+    nextActionClicked: 0,
+    reviewCtaClicked: 0,
+    checkpointRecoveryClicked: 0,
+    recommendedModeOpened: 0,
+    topicOpenRateFromVariant: 0,
+    nextActionRateFromTopicOpen: 0,
+    reviewRateFromTopicOpen: 0,
+  },
+  reminderFunnel: {
+    scheduled: 0,
+    tapped: 0,
+    destinationOpened: 0,
+    tapRateFromScheduled: 0,
+    openRateFromTap: 0,
+    destinationBreakdown: [],
+  },
+  audience: {
+    onboardingFunnel: {
+      started: 0,
+      step1Completed: 0,
+      step2Completed: 0,
+      step3Completed: 0,
+      finished: 0,
+      abandoned: 0,
+      levelTestStarted: 0,
+      levelTestCompleted: 0,
+      step1Rate: 0,
+      step2Rate: 0,
+      step3Rate: 0,
+      finishRate: 0,
+      levelTestCompleteRate: 0,
+    },
+    weeklyActivity: {
+      activeUsersLast7Days: 0,
+      usersOver5Min: 0,
+      usersOver10Min: 0,
+      usersOver30Min: 0,
+      usersOver60Min: 0,
+      activationRate10MinPct: 0,
+      medianMinutes: 0,
+      avgMinutesLast7Days: 0,
+      distribution: [],
+    },
+  },
 };
 
-/* ── shared style tokens ── */
-const card: React.CSSProperties = { borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)", padding: 20 };
-const cardCompact: React.CSSProperties = { ...card, padding: 16 };
-const input: React.CSSProperties = { height: 40, width: "100%", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", color: "var(--foreground)", padding: "0 12px", fontSize: 14, outline: "none" };
-const btnPrimary: React.CSSProperties = { height: 40, borderRadius: 8, border: "none", backgroundColor: "var(--primary)", color: "#fff", padding: "0 20px", fontSize: 14, fontWeight: 600, cursor: "pointer", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8 };
-const sectionLabel: React.CSSProperties = { fontSize: 12, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" as const, letterSpacing: "0.05em" };
-const heading: React.CSSProperties = { fontSize: 16, fontWeight: 700, color: "var(--foreground)", margin: "0 0 14px" };
-const kpiValue: React.CSSProperties = { fontSize: 28, fontWeight: 700, color: "var(--foreground)", margin: "6px 0 0", lineHeight: 1.2 };
-const kpiLabel: React.CSSProperties = { fontSize: 13, color: "var(--muted)", fontWeight: 500 };
-const subLabel: React.CSSProperties = { fontSize: 12, color: "var(--muted)", marginTop: 2 };
-const emptyText: React.CSSProperties = { fontSize: 13, color: "var(--muted)" };
-const listRow: React.CSSProperties = { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 12px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", fontSize: 13 };
-const thStyle: React.CSSProperties = { padding: "8px 12px", fontSize: 12, fontWeight: 600, color: "var(--muted)", textAlign: "left" as const, borderBottom: "1px solid var(--card-border)" };
-const tdStyle: React.CSSProperties = { padding: "8px 12px", fontSize: 13, color: "var(--foreground)", borderBottom: "1px solid var(--card-border)", verticalAlign: "top" as const };
+const EMPTY_PIPELINE_DATA: PipelineData = {
+  agentRuns: {
+    total: 0,
+    byKind: { planner: 0, content: 0, qa: 0 },
+    byStatus: { completed: 0, failed: 0, running: 0 },
+    last7Days: [],
+  },
+  drafts: {
+    total: 0,
+    byStatus: {
+      draft: 0,
+      generated: 0,
+      qa_pass: 0,
+      qa_fail: 0,
+      needs_review: 0,
+      approved: 0,
+      published: 0,
+    },
+    avgQaScore: null,
+    qaPassRate: 0,
+    last7Days: [],
+  },
+  briefs: { total: 0, pending: 0, completed: 0 },
+  pipeline: { avgTimeToPublish: null, contentPerDay: 0 },
+};
 
-const SECTIONS: Array<{ key: MetricsSection; label: string }> = [
+const PRIMARY_TABS: Array<{ key: MetricsSection; label: string }> = [
   { key: "overview", label: "Resumen" },
-  { key: "acquisition", label: "Adquisición" },
   { key: "engagement", label: "Engagement" },
-  { key: "learning", label: "Aprendizaje" },
-  { key: "content", label: "Contenido" },
   { key: "funnels", label: "Funnels" },
+];
+
+const MUTED_TABS: Array<{ key: MetricsSection; label: string }> = [
+  { key: "acquisition", label: "Adquisición" },
   { key: "audience", label: "Audiencia" },
+  { key: "content", label: "Contenido" },
+  { key: "learning", label: "Aprendizaje" },
   { key: "experiments", label: "Experimentos" },
   { key: "alerts", label: "Alertas" },
   { key: "exports", label: "Exportaciones" },
 ];
 
-const EMPTY_PIPELINE_DATA: PipelineData = {
-  agentRuns: { total: 0, byKind: { planner: 0, content: 0, qa: 0 }, byStatus: { completed: 0, failed: 0, running: 0 }, last7Days: [] },
-  drafts: { total: 0, byStatus: { draft: 0, generated: 0, qa_pass: 0, qa_fail: 0, needs_review: 0, approved: 0, published: 0 }, avgQaScore: null, qaPassRate: 0, last7Days: [] },
-  briefs: { total: 0, pending: 0, completed: 0 },
-  pipeline: { avgTimeToPublish: null, contentPerDay: 0 },
-};
+const RANGE_OPTIONS = ["7", "30", "90", "180"];
+
+function formatRangeLabel(from: string, to: string) {
+  if (!from || !to) return "—";
+  return `${from.slice(0, 10)} → ${to.slice(0, 10)}`;
+}
 
 export default function MetricsDashboard() {
   const [data, setData] = useState<DashboardData>(EMPTY_DATA);
-  const [pipelineData, setPipelineData] = useState<PipelineData>(EMPTY_PIPELINE_DATA);
-  const [sectionCache, setSectionCache] = useState<Partial<Record<MetricsSection, DashboardData>>>({});
+  const [pipelineData, setPipelineData] =
+    useState<PipelineData>(EMPTY_PIPELINE_DATA);
+  const [sectionCache, setSectionCache] = useState<
+    Partial<Record<MetricsSection, DashboardData>>
+  >({});
   const [days, setDays] = useState("30");
   const [bookSlug, setBookSlug] = useState("");
   const [storySlug, setStorySlug] = useState("");
@@ -166,7 +186,34 @@ export default function MetricsDashboard() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  async function loadMetrics(targetSection: MetricsSection = section, force = false) {
+  async function loadPipelineMetrics() {
+    setLoading(true);
+    setErrorMessage(null);
+    try {
+      const res = await fetch("/api/metrics/pipeline");
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
+      }
+      const json = (await res.json()) as PipelineData;
+      setPipelineData(json);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      const message = msg.includes("403")
+        ? "No tienes acceso a métricas."
+        : `No se pudieron cargar las métricas de pipeline: ${msg}`;
+      setErrorMessage(message);
+      console.error("Error loading pipeline metrics:", err);
+      setPipelineData(EMPTY_PIPELINE_DATA);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function loadMetrics(
+    targetSection: MetricsSection = section,
+    force = false
+  ) {
     if (targetSection === "content") {
       return loadPipelineMetrics();
     }
@@ -203,30 +250,6 @@ export default function MetricsDashboard() {
     }
   }
 
-  async function loadPipelineMetrics() {
-    setLoading(true);
-    setErrorMessage(null);
-    try {
-      const res = await fetch("/api/metrics/pipeline");
-      if (!res.ok) {
-        const body = await res.text().catch(() => "");
-        throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
-      }
-      const json = (await res.json()) as PipelineData;
-      setPipelineData(json);
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      const message = msg.includes("403")
-        ? "No tienes acceso a métricas."
-        : `No se pudieron cargar las métricas de pipeline: ${msg}`;
-      setErrorMessage(message);
-      console.error("Error loading pipeline metrics:", err);
-      setPipelineData(EMPTY_PIPELINE_DATA);
-    } finally {
-      setLoading(false);
-    }
-  }
-
   useEffect(() => {
     if (section === "content") {
       void loadPipelineMetrics();
@@ -237,9 +260,13 @@ export default function MetricsDashboard() {
       return;
     }
     const timeoutId = window.setTimeout(() => {
-      window.requestAnimationFrame(() => { void loadMetrics(section); });
+      window.requestAnimationFrame(() => {
+        void loadMetrics(section);
+      });
     }, 0);
-    return () => { window.clearTimeout(timeoutId); };
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [section]);
 
@@ -248,659 +275,668 @@ export default function MetricsDashboard() {
     setData(EMPTY_DATA);
   }, [bookSlug, days, storySlug]);
 
-  /* ── KPI definitions ── */
-  const kpis = [
-    { label: "DAU", value: data.kpis.dau },
-    { label: "WAU", value: data.kpis.wau },
-    { label: "Active Users (Range)", value: data.kpis.activeUsersInRange },
-    { label: "Plays", value: data.kpis.plays },
-    { label: "Completions", value: data.kpis.completions },
-    { label: "Completion Rate", value: `${data.kpis.completionRate}%` },
-    { label: "Unique Stories", value: data.kpis.uniqueStories },
-    { label: "Unique Books", value: data.kpis.uniqueBooks },
-    { label: "Avg Min / Active User", value: data.kpis.avgMinutesPerActiveUser },
-    { label: "Total Listened (min)", value: data.kpis.totalListenedMinutes },
-    { label: "Stories Saved", value: data.kpis.savedStories },
-    { label: "Books Saved", value: data.kpis.savedBooks },
-  ];
+  function handleExport() {
+    const qs = new URLSearchParams();
+    qs.set("section", section);
+    qs.set("days", days);
+    if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
+    if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
+    window.location.href = `/api/metrics/export?${qs.toString()}`;
+  }
 
-  /* ── Spinner element ── */
-  const spinner = (
-    <span style={{ width: 14, height: 14, border: "2px solid rgba(255,255,255,0.4)", borderTopColor: "#fff", borderRadius: "50%", display: "inline-block", animation: "spin 0.6s linear infinite" }} />
-  );
+  function renderActiveSection() {
+    if (section === "overview") return <ResumenView data={data} />;
+    if (section === "engagement") return <EngagementView data={data} />;
+    if (section === "funnels") return <FunnelsView data={data} />;
 
-  /* ── Empty section placeholder ── */
-  function EmptySection({ title, description }: { title: string; description: string }) {
+    if (section === "audience") {
+      return <AudienceView data={data} />;
+    }
+    if (section === "content") {
+      return <ContentView data={pipelineData} />;
+    }
+    if (section === "acquisition") {
+      return <AcquisitionView data={data} />;
+    }
+    if (section === "learning") {
+      return (
+        <ComingSoonView
+          title="Learning outcomes"
+          description="Retención de vocabulario, performance de streak y progreso por idioma/nivel."
+        />
+      );
+    }
+    if (section === "experiments") {
+      return (
+        <ComingSoonView
+          title="Experimentos"
+          description="Compara variantes A/B para covers, títulos, CTAs y copy del paywall."
+        />
+      );
+    }
+    if (section === "alerts") {
+      return (
+        <ComingSoonView
+          title="Alertas"
+          description="Umbrales para caídas de completion rate, anomalías de tráfico y fallos de pipeline o API."
+        />
+      );
+    }
     return (
-      <div style={card}>
-        <h3 style={heading}>{title}</h3>
-        <p style={emptyText}>{description}</p>
-      </div>
+      <ComingSoonView
+        title="Exportaciones"
+        description="Exporta snapshots semanales y conecta BI tools (Looker Studio, Metabase) con credenciales read-only."
+      />
     );
   }
 
-  /* ── Section content renderer ── */
-  function renderSectionContent() {
-    if (section === "overview") {
-      return (
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-            {kpis.map((kpi) => (
-              <div key={kpi.label} className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>{kpi.label}</p>
-                <p style={kpiValue}>{kpi.value}</p>
-              </div>
-            ))}
-          </div>
-
-          <div style={card}>
-            <h3 style={heading}>Daily trend (plays vs completions)</h3>
-            <MetricsOverviewChart data={data.daily} />
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-            <div style={card}>
-              <h3 style={heading}>Most listened stories (minutes)</h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                {data.topStoriesByMinutes.map((story) => (
-                  <div key={story.storySlug} className="studio-table-row" style={listRow}>
-                    <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{story.storySlug}</span>
-                    <span style={{ color: "var(--muted)", fontSize: 12 }}>{story.listenedMinutes} min · {story.listeners} listeners</span>
-                  </div>
-                ))}
-                {data.topStoriesByMinutes.length === 0 && <p style={emptyText}>No data for current filters.</p>}
-              </div>
-            </div>
-
-            <div style={card}>
-              <h3 style={heading}>Most saved stories</h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                {data.topSavedStories.map((story) => (
-                  <div key={story.storySlug} className="studio-table-row" style={listRow}>
-                    <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{story.storySlug}</span>
-                    <span style={{ color: "var(--muted)", fontSize: 12 }}>{story.saves} saves</span>
-                  </div>
-                ))}
-                {data.topSavedStories.length === 0 && <p style={emptyText}>No data for current filters.</p>}
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (section === "engagement") {
-      return (
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <div style={card}>
-            <h3 style={heading}>Top stories by usage</h3>
-            <MetricsEngagementChart data={data.topStories} />
-          </div>
-
-          <div style={card}>
-            <h3 style={heading}>Top books by usage</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {data.topBooks.map((book) => (
-                <div key={book.bookSlug} className="studio-table-row" style={listRow}>
-                  <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{book.bookSlug}</span>
-                  <span style={{ color: "var(--muted)", fontSize: 12 }}>Plays {book.plays} · Completions {book.completions} · CR {book.completionRate}%</span>
-                </div>
-              ))}
-              {data.topBooks.length === 0 && <p style={emptyText}>No data for current filters.</p>}
-            </div>
-          </div>
-
-          <div style={card}>
-            <h3 style={heading}>Top saved books</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {data.topSavedBooks.map((book) => (
-                <div key={book.bookSlug} className="studio-table-row" style={listRow}>
-                  <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{book.bookSlug}</span>
-                  <span style={{ color: "var(--muted)", fontSize: 12 }}>{book.saves} saves</span>
-                </div>
-              ))}
-              {data.topSavedBooks.length === 0 && <p style={emptyText}>No data for current filters.</p>}
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (section === "acquisition") {
-      return (
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {/* Signups (Clerk webhook → UserMetric) */}
-          <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Signups (total)</p>
-              <p style={kpiValue}>{data.signups.total}</p>
-            </div>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Last 7 days</p>
-              <p style={kpiValue}>{data.signups.last7d}</p>
-            </div>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Last 30 days</p>
-              <p style={kpiValue}>{data.signups.last30d}</p>
-            </div>
-          </div>
-
-          <div style={card}>
-            <h3 style={heading}>Recent signups</h3>
-            {data.recentSignups.length === 0 && <p style={{ ...emptyText, marginTop: 8 }}>No signups tracked yet. The Clerk webhook writes a signup_completed event on user.created.</p>}
-            {data.recentSignups.length > 0 && (
-              <div style={{ overflowX: "auto", marginTop: 8 }}>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-                  <thead>
-                    <tr>
-                      <th style={thStyle}>When</th>
-                      <th style={thStyle}>Email</th>
-                      <th style={thStyle}>Clerk user id</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.recentSignups.map((row) => (
-                      <tr key={`${row.userId}-${row.createdAt}`}>
-                        <td style={tdStyle}>{new Date(row.createdAt).toLocaleString()}</td>
-                        <td style={tdStyle}>{row.email ?? "—"}</td>
-                        <td style={{ ...tdStyle, fontFamily: "monospace", fontSize: 11, color: "var(--muted)" }}>{row.userId}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </div>
-
-          {/* Checkout funnel */}
-          <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Plans viewed</p>
-              <p style={kpiValue}>{data.checkoutFunnel.plansViewed}</p>
-            </div>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Checkout started</p>
-              <p style={kpiValue}>{data.checkoutFunnel.checkoutStarted}</p>
-              <p style={subLabel}>{data.checkoutFunnel.checkoutStartRate}% from plans view</p>
-            </div>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Checkout redirect</p>
-              <p style={kpiValue}>{data.checkoutFunnel.checkoutRedirected}</p>
-              <p style={subLabel}>{data.checkoutFunnel.checkoutRedirectRate}% from checkout start</p>
-            </div>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Checkout failed</p>
-              <p style={kpiValue}>{data.checkoutFunnel.checkoutFailed}</p>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (section === "learning") {
-      return <EmptySection title="Learning Outcomes" description="Track vocabulary retention, streak performance, and progress by language/level. You can connect favorites + review outcomes in this section." />;
-    }
-
-    if (section === "content") {
-      return (
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {/* Agent Runs KPIs */}
-          <div style={card}>
-            <h3 style={heading}>Agent Runs</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Total Runs</p>
-                <p style={kpiValue}>{pipelineData.agentRuns.total}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Completed</p>
-                <p style={kpiValue}>{pipelineData.agentRuns.byStatus.completed}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Failed</p>
-                <p style={{ ...kpiValue, color: pipelineData.agentRuns.byStatus.failed > 0 ? "#ef4444" : "var(--foreground)" }}>{pipelineData.agentRuns.byStatus.failed}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Running</p>
-                <p style={kpiValue}>{pipelineData.agentRuns.byStatus.running}</p>
-              </div>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginTop: 12 }}>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Planner Runs</p>
-                <p style={kpiValue}>{pipelineData.agentRuns.byKind.planner}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Content Runs</p>
-                <p style={kpiValue}>{pipelineData.agentRuns.byKind.content}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>QA Runs</p>
-                <p style={kpiValue}>{pipelineData.agentRuns.byKind.qa}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Story Drafts KPIs */}
-          <div style={card}>
-            <h3 style={heading}>Story Drafts</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Total Drafts</p>
-                <p style={kpiValue}>{pipelineData.drafts.total}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>QA Pass Rate</p>
-                <p style={kpiValue}>{pipelineData.drafts.qaPassRate}%</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Avg QA Score</p>
-                <p style={kpiValue}>{pipelineData.drafts.avgQaScore !== null ? pipelineData.drafts.avgQaScore.toFixed(2) : "N/A"}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Published</p>
-                <p style={kpiValue}>{pipelineData.drafts.byStatus.published}</p>
-              </div>
-            </div>
-            <div style={{ marginTop: 12 }}>
-              <p style={{ ...sectionLabel, marginBottom: 8 }}>Drafts by Status</p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 10 }}>
-                {[
-                  { label: "Draft", value: pipelineData.drafts.byStatus.draft },
-                  { label: "Generated", value: pipelineData.drafts.byStatus.generated },
-                  { label: "QA Pass", value: pipelineData.drafts.byStatus.qa_pass },
-                  { label: "QA Fail", value: pipelineData.drafts.byStatus.qa_fail },
-                  { label: "Needs Review", value: pipelineData.drafts.byStatus.needs_review },
-                  { label: "Approved", value: pipelineData.drafts.byStatus.approved },
-                  { label: "Published", value: pipelineData.drafts.byStatus.published },
-                ].map((item) => (
-                  <div key={item.label} style={{ padding: "10px 8px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)", textAlign: "center" as const }}>
-                    <p style={{ ...kpiLabel, fontSize: 12 }}>{item.label}</p>
-                    <p style={{ ...kpiValue, fontSize: 20 }}>{item.value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Curriculum Briefs KPIs */}
-          <div style={card}>
-            <h3 style={heading}>Curriculum Briefs</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Total Briefs</p>
-                <p style={kpiValue}>{pipelineData.briefs.total}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Pending</p>
-                <p style={kpiValue}>{pipelineData.briefs.pending}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Completed</p>
-                <p style={kpiValue}>{pipelineData.briefs.completed}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Pipeline Metrics */}
-          <div style={card}>
-            <h3 style={heading}>Pipeline Performance</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12 }}>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Avg Time to Publish</p>
-                <p style={kpiValue}>{pipelineData.pipeline.avgTimeToPublish !== null ? `${Math.round(pipelineData.pipeline.avgTimeToPublish)} min` : "N/A"}</p>
-              </div>
-              <div className="studio-card" style={cardCompact}>
-                <p style={kpiLabel}>Content per Day</p>
-                <p style={kpiValue}>{pipelineData.pipeline.contentPerDay.toFixed(1)}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Last 7 Days Trend */}
-          <div style={card}>
-            <h3 style={heading}>Last 7 Days Trend</h3>
-            <p style={sectionLabel}>Drafts Created vs Published</p>
-            <table style={{ width: "100%", marginTop: 12 }}>
-              <thead>
-                <tr>
-                  <th style={thStyle}>Date</th>
-                  <th style={thStyle}>Created</th>
-                  <th style={thStyle}>Published</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pipelineData.drafts.last7Days.map((item) => (
-                  <tr key={item.date}>
-                    <td style={tdStyle}>{new Date(item.date).toLocaleDateString("es-ES", { month: "short", day: "numeric" })}</td>
-                    <td style={tdStyle}>{item.created}</td>
-                    <td style={tdStyle}>{item.published}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            {pipelineData.drafts.last7Days.length === 0 && <p style={{ ...emptyText, marginTop: 12 }}>No data available for the last 7 days.</p>}
-          </div>
-
-          {/* Agent Runs Last 7 Days */}
-          <div style={card}>
-            <h3 style={heading}>Agent Runs Last 7 Days</h3>
-            <table style={{ width: "100%", marginTop: 12 }}>
-              <thead>
-                <tr>
-                  <th style={thStyle}>Date</th>
-                  <th style={thStyle}>Completed</th>
-                  <th style={thStyle}>Failed</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pipelineData.agentRuns.last7Days.map((item) => (
-                  <tr key={item.date}>
-                    <td style={tdStyle}>{new Date(item.date).toLocaleDateString("es-ES", { month: "short", day: "numeric" })}</td>
-                    <td style={tdStyle}>{item.completed}</td>
-                    <td style={{ ...tdStyle, color: item.failed > 0 ? "#ef4444" : "var(--foreground)" }}>{item.failed}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            {pipelineData.agentRuns.last7Days.length === 0 && <p style={{ ...emptyText, marginTop: 12 }}>No data available for the last 7 days.</p>}
-          </div>
-        </div>
-      );
-    }
-
-    if (section === "funnels") {
-      return (
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {/* Trial funnel */}
-          <div className="studio-kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Trial Started</p>
-              <p style={kpiValue}>{data.trialFunnel.started}</p>
-            </div>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Day-1 Active</p>
-              <p style={kpiValue}>{data.trialFunnel.day1Active}</p>
-              <p style={subLabel}>{data.trialFunnel.day1ActivationRate}% activation</p>
-            </div>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Converted</p>
-              <p style={kpiValue}>{data.trialFunnel.converted}</p>
-              <p style={subLabel}>{data.trialFunnel.conversionRate}% conversion</p>
-            </div>
-            <div className="studio-card" style={cardCompact}>
-              <p style={kpiLabel}>Canceled</p>
-              <p style={kpiValue}>{data.trialFunnel.canceled}</p>
-              <p style={subLabel}>{data.trialFunnel.cancelRate}% cancel rate</p>
-            </div>
-          </div>
-
-          {/* Journey funnel */}
-          <div style={card}>
-            <h3 style={heading}>Journey funnel</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
-              {[
-                { label: "Variants selected", value: data.journeyFunnel.variantSelected },
-                { label: "Topics opened", value: data.journeyFunnel.topicOpened, sub: `${data.journeyFunnel.topicOpenRateFromVariant}% from variant select` },
-                { label: "Next action clicks", value: data.journeyFunnel.nextActionClicked, sub: `${data.journeyFunnel.nextActionRateFromTopicOpen}% from topic open` },
-                { label: "Review CTA clicks", value: data.journeyFunnel.reviewCtaClicked, sub: `${data.journeyFunnel.reviewRateFromTopicOpen}% from topic open` },
-              ].map((item) => (
-                <div key={item.label} style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
-                  <p style={kpiLabel}>{item.label}</p>
-                  <p style={{ ...kpiValue, fontSize: 24 }}>{item.value}</p>
-                  {item.sub && <p style={subLabel}>{item.sub}</p>}
-                </div>
-              ))}
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginTop: 12 }}>
-              {[
-                { label: "Level selections", value: data.journeyFunnel.levelSelected },
-                { label: "Checkpoint recovery", value: data.journeyFunnel.checkpointRecoveryClicked },
-                { label: "Recommended mode opens", value: data.journeyFunnel.recommendedModeOpened },
-              ].map((item) => (
-                <div key={item.label} style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
-                  <p style={kpiLabel}>{item.label}</p>
-                  <p style={{ ...kpiValue, fontSize: 22 }}>{item.value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Reminders funnel */}
-          <div style={card}>
-            <h3 style={heading}>Reminders funnel</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
-              <div style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
-                <p style={kpiLabel}>Scheduled</p>
-                <p style={{ ...kpiValue, fontSize: 24 }}>{data.reminderFunnel.scheduled}</p>
-              </div>
-              <div style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
-                <p style={kpiLabel}>Tapped</p>
-                <p style={{ ...kpiValue, fontSize: 24 }}>{data.reminderFunnel.tapped}</p>
-                <p style={subLabel}>{data.reminderFunnel.tapRateFromScheduled}% from scheduled</p>
-              </div>
-              <div style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
-                <p style={kpiLabel}>Destination opened</p>
-                <p style={{ ...kpiValue, fontSize: 24 }}>{data.reminderFunnel.destinationOpened}</p>
-                <p style={subLabel}>{data.reminderFunnel.openRateFromTap}% from tap</p>
-              </div>
-            </div>
-            <div style={{ marginTop: 12, padding: "10px 14px", borderRadius: 8, border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
-              <p style={{ ...sectionLabel, marginBottom: 10 }}>Destination breakdown</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                {data.reminderFunnel.destinationBreakdown.map((row) => (
-                  <div key={row.destination} style={{ display: "flex", justifyContent: "space-between", padding: "4px 0", fontSize: 13 }}>
-                    <span style={{ fontWeight: 600, color: "var(--foreground)", textTransform: "capitalize" as const }}>{row.destination}</span>
-                    <span style={{ color: "var(--muted)" }}>{row.opens} opens</span>
-                  </div>
-                ))}
-                {data.reminderFunnel.destinationBreakdown.length === 0 && <p style={emptyText}>No reminder opens for current filters.</p>}
-              </div>
-            </div>
-          </div>
-
-          {/* Recent reminder taps table */}
-          <div style={card}>
-            <h3 style={heading}>Recent reminder taps</h3>
-            <p style={{ ...emptyText, marginBottom: 12 }}>Most recent notification taps, including where the push tried to send the user.</p>
-            <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", minWidth: 860, borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Tapped at</th>
-                    <th style={thStyle}>Email</th>
-                    <th style={thStyle}>User ID</th>
-                    <th style={thStyle}>Destination</th>
-                    <th style={thStyle}>Source</th>
-                    <th style={thStyle}>Event</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.recentReminderTaps.map((row) => (
-                    <tr key={`${row.userId}-${row.createdAt}-${row.destination ?? "unknown"}`} className="studio-table-row">
-                      <td style={tdStyle}>{new Date(row.createdAt).toLocaleString()}</td>
-                      <td style={tdStyle}>{row.email ?? "Unknown"}</td>
-                      <td style={{ ...tdStyle, fontFamily: "monospace", fontSize: 11 }}>{row.userId}</td>
-                      <td style={tdStyle}>{row.destination ?? "Unknown"}</td>
-                      <td style={tdStyle}>{row.source ?? "Unknown"}</td>
-                      <td style={tdStyle}>{row.eventType}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {data.recentReminderTaps.length === 0 && <p style={{ ...emptyText, marginTop: 8 }}>No recent reminder taps for current filters.</p>}
-          </div>
-
-          {/* Recent reminder opens table */}
-          <div style={card}>
-            <h3 style={heading}>Recent reminder destination opens</h3>
-            <p style={{ ...emptyText, marginBottom: 12 }}>The destinations users actually reached after tapping a reminder.</p>
-            <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", minWidth: 760, borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Opened at</th>
-                    <th style={thStyle}>Email</th>
-                    <th style={thStyle}>User ID</th>
-                    <th style={thStyle}>Destination</th>
-                    <th style={thStyle}>Event</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.recentReminderOpens.map((row) => (
-                    <tr key={`${row.userId}-${row.createdAt}-${row.destination ?? "unknown"}`} className="studio-table-row">
-                      <td style={tdStyle}>{new Date(row.createdAt).toLocaleString()}</td>
-                      <td style={tdStyle}>{row.email ?? "Unknown"}</td>
-                      <td style={{ ...tdStyle, fontFamily: "monospace", fontSize: 11 }}>{row.userId}</td>
-                      <td style={tdStyle}>{row.destination ?? "Unknown"}</td>
-                      <td style={tdStyle}>{row.eventType}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {data.recentReminderOpens.length === 0 && <p style={{ ...emptyText, marginTop: 8 }}>No recent reminder destination opens for current filters.</p>}
-          </div>
-
-          {/* Recent trial starts */}
-          <div style={card}>
-            <h3 style={heading}>Recent trial starts</h3>
-            <p style={{ ...emptyText, marginBottom: 12 }}>These events fire when a Stripe checkout session is created, so they can include abandoned checkouts.</p>
-            <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", minWidth: 720, borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Started at</th>
-                    <th style={thStyle}>Email</th>
-                    <th style={thStyle}>User ID</th>
-                    <th style={thStyle}>Event</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.recentTrialStarts.map((row) => (
-                    <tr key={`${row.userId}-${row.createdAt}-${row.eventType}`} className="studio-table-row">
-                      <td style={tdStyle}>{new Date(row.createdAt).toLocaleString()}</td>
-                      <td style={tdStyle}>{row.email ?? "Unknown"}</td>
-                      <td style={{ ...tdStyle, fontFamily: "monospace", fontSize: 11 }}>{row.userId}</td>
-                      <td style={tdStyle}>{row.eventType}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {data.recentTrialStarts.length === 0 && <p style={{ ...emptyText, marginTop: 8 }}>No recent trial starts for current filters.</p>}
-          </div>
-
-          {/* Upgrade CTA sources */}
-          <div style={card}>
-            <h3 style={heading}>Upgrade CTA performance by source</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {data.upgradeCtaSources.map((row) => (
-                <div key={row.source} className="studio-table-row" style={listRow}>
-                  <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{row.source}</span>
-                  <span style={{ color: "var(--muted)", fontSize: 12 }}>{row.clicks} clicks</span>
-                </div>
-              ))}
-              {data.upgradeCtaSources.length === 0 && <p style={emptyText}>No CTA clicks for current filters.</p>}
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (section === "audience") {
-      return <EmptySection title="Audience" description="Segment new vs returning users, cohorts by week, and behavior by country/device/target language." />;
-    }
-    if (section === "experiments") {
-      return <EmptySection title="Experiments" description="Store and compare A/B test variants for covers, titles, CTAs, and paywall copy." />;
-    }
-    if (section === "alerts") {
-      return <EmptySection title="Alerts" description="Set thresholds for completion-rate drops, traffic anomalies, and pipeline/API failures." />;
-    }
-    return <EmptySection title="Exports" description="Export weekly snapshots and connect BI tools (Looker Studio/Metabase) with read-only credentials." />;
-  }
+  const periodLabel = formatRangeLabel(data.range.from, data.range.to);
 
   return (
     <StudioShell
       title="Métricas"
-      description="Sigue las historias, libros, journeys, recordatorios y funnels que más importan para tomar mejores decisiones editoriales."
+      description="Tendencia diaria, engagement por historia, funnels y onboarding — todo en un solo panel editorial."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
         { label: "Métricas" },
       ]}
     >
-      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-
-        {/* ── Filter toolbar ── */}
-        <form autoComplete="off" onSubmit={(e) => { e.preventDefault(); void loadMetrics(section, true); }} style={{ ...card, display: "flex", flexWrap: "wrap", alignItems: "flex-end", gap: 12 }}>
-          <div style={{ flex: "0 0 150px" }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Rango</label>
-            <select value={days} onChange={(e) => setDays(e.target.value)} className="studio-input" style={input}>
-              <option value="7">Últimos 7 días</option>
-              <option value="30">Últimos 30 días</option>
-              <option value="90">Últimos 90 días</option>
-              <option value="180">Últimos 180 días</option>
-            </select>
-          </div>
-          <div style={{ flex: "1 1 160px" }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Slug del libro</label>
-            <input value={bookSlug} onChange={(e) => setBookSlug(e.target.value)} placeholder="Filtrar por bookSlug" className="studio-input" style={input} autoComplete="off" data-1p-ignore data-lpignore="true" />
-          </div>
-          <div style={{ flex: "1 1 160px" }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Slug de la historia</label>
-            <input value={storySlug} onChange={(e) => setStorySlug(e.target.value)} placeholder="Filtrar por storySlug" className="studio-input" style={input} autoComplete="off" data-1p-ignore data-lpignore="true" />
-          </div>
-          <button
-            type="submit"
-            disabled={loading}
-            className="studio-btn-primary"
-            style={{ ...btnPrimary, opacity: loading ? 0.7 : 1, flexShrink: 0 }}
+      <div className="mx-root" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 16,
+            flexWrap: "wrap",
+          }}
+        >
+          <p
+            style={{
+              margin: 0,
+              fontSize: 13,
+              color: "var(--mx-muted)",
+              maxWidth: 720,
+            }}
           >
-            {loading ? spinner : null}
-            {loading ? "Cargando..." : "Actualizar"}
-          </button>
+            Datos en vivo · período actual{" "}
+            <span className="mx-mono" style={{ color: "var(--mx-fg-soft)" }}>
+              {periodLabel}
+            </span>
+          </p>
+          <span className="mx-live">
+            <span className="mx-live__dot" />
+            live data
+          </span>
+        </div>
+
+        <form
+          autoComplete="off"
+          className="mx-filters"
+          onSubmit={(e) => {
+            e.preventDefault();
+            void loadMetrics(section, true);
+          }}
+        >
+          <div className="mx-filters__group">
+            <span className="mx-filters__label">Rango</span>
+            <div className="mx-segmented">
+              {RANGE_OPTIONS.map((option) => {
+                const active = option === days;
+                return (
+                  <button
+                    type="button"
+                    key={option}
+                    onClick={() => setDays(option)}
+                    className={
+                      active
+                        ? "mx-segmented__btn mx-segmented__btn--active"
+                        : "mx-segmented__btn"
+                    }
+                  >
+                    {option}d
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="mx-filters__group mx-filters__group--input">
+            <span className="mx-filters__label">Libro</span>
+            <div className="mx-input">
+              <span className="mx-input__icon">⌕</span>
+              <input
+                value={bookSlug}
+                onChange={(e) => setBookSlug(e.target.value)}
+                placeholder="bookSlug"
+                autoComplete="off"
+                data-1p-ignore
+                data-lpignore="true"
+              />
+              {bookSlug && (
+                <button
+                  type="button"
+                  className="mx-input__clear"
+                  onClick={() => setBookSlug("")}
+                  aria-label="Limpiar libro"
+                >
+                  ×
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className="mx-filters__group mx-filters__group--input">
+            <span className="mx-filters__label">Historia</span>
+            <div className="mx-input">
+              <span className="mx-input__icon">⌕</span>
+              <input
+                value={storySlug}
+                onChange={(e) => setStorySlug(e.target.value)}
+                placeholder="storySlug"
+                autoComplete="off"
+                data-1p-ignore
+                data-lpignore="true"
+              />
+              {storySlug && (
+                <button
+                  type="button"
+                  className="mx-input__clear"
+                  onClick={() => setStorySlug("")}
+                  aria-label="Limpiar historia"
+                >
+                  ×
+                </button>
+              )}
+            </div>
+          </div>
+
+          <span className="mx-filters__spacer" />
+
+          <div className="mx-filters__actions">
+            <button
+              type="button"
+              className="mx-btn"
+              onClick={handleExport}
+              title="Exporta el rango actual como CSV"
+            >
+              ⤓ Exportar
+            </button>
+            <button
+              type="submit"
+              className="mx-btn mx-btn--primary"
+              disabled={loading}
+            >
+              {loading ? "Cargando…" : "Actualizar"}
+            </button>
+          </div>
         </form>
 
         {errorMessage && (
-          <div style={{ padding: "12px 16px", borderRadius: 8, backgroundColor: "rgba(239, 68, 68, 0.1)", border: "1px solid rgba(239, 68, 68, 0.3)", color: "#ef4444", fontSize: 14, fontWeight: 500 }}>
+          <div
+            style={{
+              padding: "12px 16px",
+              borderRadius: 8,
+              backgroundColor: "rgba(239, 68, 68, 0.1)",
+              border: "1px solid rgba(239, 68, 68, 0.3)",
+              color: "#fca5a5",
+              fontSize: 14,
+              fontWeight: 500,
+            }}
+          >
             {errorMessage}
           </div>
         )}
 
-        {/* ── Section tabs ── */}
-        <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
-          {SECTIONS.map((item) => {
-            const active = item.key === section;
-            return (
-              <button
-                key={item.key}
-                onClick={() => setSection(item.key)}
-                className={active ? "" : "studio-btn-ghost"}
-                style={{
-                  height: 34,
-                  borderRadius: 8,
-                  border: active ? "none" : "1px solid var(--card-border)",
-                  backgroundColor: active ? "var(--primary)" : "transparent",
-                  color: active ? "#fff" : "var(--foreground)",
-                  padding: "0 14px",
-                  fontSize: 13,
-                  fontWeight: active ? 600 : 500,
-                  cursor: "pointer",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {item.label}
-              </button>
-            );
-          })}
+        <div className="mx-tabs">
+          <div className="mx-tabs__main">
+            {PRIMARY_TABS.map((tab) => {
+              const active = tab.key === section;
+              return (
+                <button
+                  type="button"
+                  key={tab.key}
+                  onClick={() => setSection(tab.key)}
+                  className={active ? "mx-tab mx-tab--active" : "mx-tab"}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+          <div className="mx-tabs__more">
+            {MUTED_TABS.map((tab) => {
+              const active = tab.key === section;
+              return (
+                <button
+                  type="button"
+                  key={tab.key}
+                  onClick={() => setSection(tab.key)}
+                  className={
+                    active
+                      ? "mx-tab mx-tab--muted mx-tab--active"
+                      : "mx-tab mx-tab--muted"
+                  }
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* ── Section content ── */}
-        <div key={section} className="studio-section-fade">
-          {renderSectionContent()}
-        </div>
+        <div key={section}>{renderActiveSection()}</div>
       </div>
     </StudioShell>
+  );
+}
+
+// ── Audience view (preserves the funnel + activation rate work) ──
+function AudienceView({ data }: { data: DashboardData }) {
+  const ob = data.audience.onboardingFunnel;
+  const wk = data.audience.weeklyActivity;
+  const maxBucketUsers = Math.max(
+    1,
+    ...wk.distribution.map((b) => b.users)
+  );
+  return (
+    <div className="mx-view">
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Onboarding</div>
+            <h3 className="mx-panel__title">Drop-off por paso</h3>
+          </div>
+          <span className="mx-panel__hint">
+            cuenta solo desde el deploy del tracking
+          </span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard label="Started" value={ob.started} />
+          <KpiCard
+            label="Step 1 → 2"
+            value={ob.step1Completed}
+            hint={`${ob.step1Rate}% del start`}
+          />
+          <KpiCard
+            label="Step 2 → 3"
+            value={ob.step2Completed}
+            hint={`${ob.step2Rate}% del start`}
+          />
+          <KpiCard
+            label="Step 3 → 4"
+            value={ob.step3Completed}
+            hint={`${ob.step3Rate}% del start`}
+          />
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 10,
+            marginTop: 10,
+          }}
+        >
+          <KpiCard
+            label="Finished"
+            value={ob.finished}
+            accent="xp"
+            hint={`${ob.finishRate}% completion`}
+          />
+          <KpiCard label="Abandoned (step 1)" value={ob.abandoned} />
+          <KpiCard label="Level test started" value={ob.levelTestStarted} />
+          <KpiCard
+            label="Level test completed"
+            value={ob.levelTestCompleted}
+            accent="cyan"
+            hint={`${ob.levelTestCompleteRate}% pass-through`}
+          />
+        </div>
+      </div>
+
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Weekly activation</div>
+            <h3 className="mx-panel__title">Últimos 7 días</h3>
+          </div>
+          <span className="mx-panel__hint">
+            ≥10 min/sem = activation rate
+          </span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard label="Active users (7d)" value={wk.activeUsersLast7Days} />
+          <KpiCard
+            label="≥10 min/sem"
+            value={wk.usersOver10Min}
+            accent="xp"
+            hint={`${wk.activationRate10MinPct}% activation rate`}
+          />
+          <KpiCard
+            label="Avg min/user"
+            value={wk.avgMinutesLast7Days}
+            accent="gold"
+          />
+          <KpiCard
+            label="Median min/user"
+            value={wk.medianMinutes}
+            accent="gold"
+          />
+        </div>
+
+        <div className="mx-panel__sub">Distribución (users por min/sem)</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {wk.distribution.map((row) => {
+            const widthPct = Math.round((row.users / maxBucketUsers) * 100);
+            return (
+              <div
+                key={row.bucket}
+                style={{ display: "flex", alignItems: "center", gap: 12 }}
+              >
+                <span
+                  style={{
+                    width: 90,
+                    fontSize: 12,
+                    color: "var(--mx-muted)",
+                    fontFamily: "var(--mx-mono)",
+                  }}
+                >
+                  {row.bucket}
+                </span>
+                <div
+                  style={{
+                    flex: 1,
+                    height: 18,
+                    borderRadius: 6,
+                    background: "var(--mx-bg-input)",
+                    border: "1px solid var(--mx-border)",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: `${widthPct}%`,
+                      height: "100%",
+                      background: "var(--mx-accent)",
+                      opacity: 0.85,
+                    }}
+                  />
+                </div>
+                <span
+                  style={{
+                    width: 60,
+                    textAlign: "right",
+                    fontSize: 13,
+                    fontWeight: 700,
+                    color: "var(--mx-fg)",
+                    fontFamily: "var(--mx-mono)",
+                  }}
+                >
+                  {row.users}
+                </span>
+              </div>
+            );
+          })}
+          {wk.distribution.length === 0 && (
+            <p style={{ fontSize: 12.5, color: "var(--mx-muted)" }}>
+              Sin datos los últimos 7 días.
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Acquisition view: signups + checkout funnel KPIs ──
+function AcquisitionView({ data }: { data: DashboardData }) {
+  const cf = data.checkoutFunnel;
+  return (
+    <div className="mx-view">
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Top of funnel</div>
+            <h3 className="mx-panel__title">Signups</h3>
+          </div>
+          <span className="mx-panel__hint">
+            Clerk webhook (signup_completed)
+          </span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard label="Signups (total)" value={data.signups.total} />
+          <KpiCard
+            label="Últimos 7 días"
+            value={data.signups.last7d}
+            accent="cyan"
+          />
+          <KpiCard
+            label="Últimos 30 días"
+            value={data.signups.last30d}
+            accent="cyan"
+          />
+        </div>
+      </div>
+
+      {data.recentSignups.length > 0 && (
+        <div className="mx-panel">
+          <div className="mx-panel__head">
+            <div>
+              <div className="mx-panel__eyebrow">Recent</div>
+              <h3 className="mx-panel__title">Últimos signups</h3>
+            </div>
+            <span className="mx-panel__hint">25 más recientes</span>
+          </div>
+          <div style={{ overflowX: "auto" }}>
+            <table className="mx-table">
+              <thead>
+                <tr>
+                  <th style={{ width: 160 }}>Cuándo</th>
+                  <th>Email</th>
+                  <th>User ID</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.recentSignups.map((row) => (
+                  <tr key={`${row.userId}-${row.createdAt}`}>
+                    <td className="mx-table__when">
+                      {new Date(row.createdAt).toLocaleString("es-ES", {
+                        day: "2-digit",
+                        month: "short",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                    </td>
+                    <td>{row.email ?? "—"}</td>
+                    <td className="mx-mono">{row.userId}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Checkout</div>
+            <h3 className="mx-panel__title">Plans → Stripe</h3>
+          </div>
+          <span className="mx-panel__hint">
+            {cf.checkoutStartRate}% start rate
+          </span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard label="Plans viewed" value={cf.plansViewed} />
+          <KpiCard
+            label="Checkout started"
+            value={cf.checkoutStarted}
+            accent="cyan"
+            hint={`${cf.checkoutStartRate}% del plans view`}
+          />
+          <KpiCard
+            label="Checkout redirected"
+            value={cf.checkoutRedirected}
+            accent="xp"
+            hint={`${cf.checkoutRedirectRate}% del checkout start`}
+          />
+          <KpiCard
+            label="Checkout failed"
+            value={cf.checkoutFailed}
+            accent="accent"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Content view: pipeline metrics ──
+function ContentView({ data }: { data: PipelineData }) {
+  return (
+    <div className="mx-view">
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Pipeline</div>
+            <h3 className="mx-panel__title">Agent runs</h3>
+          </div>
+          <span className="mx-panel__hint">
+            {data.agentRuns.total} runs · {data.agentRuns.byStatus.failed} failed
+          </span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard label="Total runs" value={data.agentRuns.total} />
+          <KpiCard
+            label="Completed"
+            value={data.agentRuns.byStatus.completed}
+            accent="xp"
+          />
+          <KpiCard
+            label="Failed"
+            value={data.agentRuns.byStatus.failed}
+            accent="accent"
+          />
+          <KpiCard label="Running" value={data.agentRuns.byStatus.running} />
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 10,
+            marginTop: 10,
+          }}
+        >
+          <KpiCard label="Planner" value={data.agentRuns.byKind.planner} />
+          <KpiCard label="Content" value={data.agentRuns.byKind.content} />
+          <KpiCard label="QA" value={data.agentRuns.byKind.qa} />
+        </div>
+      </div>
+
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Drafts</div>
+            <h3 className="mx-panel__title">Story drafts</h3>
+          </div>
+          <span className="mx-panel__hint">
+            QA pass {data.drafts.qaPassRate}% · published{" "}
+            {data.drafts.byStatus.published}
+          </span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard label="Total drafts" value={data.drafts.total} />
+          <KpiCard
+            label="QA pass rate"
+            value={data.drafts.qaPassRate}
+            suffix="%"
+            accent="xp"
+          />
+          <KpiCard
+            label="Avg QA score"
+            value={
+              data.drafts.avgQaScore !== null
+                ? data.drafts.avgQaScore.toFixed(2)
+                : "—"
+            }
+            accent="gold"
+          />
+          <KpiCard
+            label="Published"
+            value={data.drafts.byStatus.published}
+            accent="xp"
+          />
+        </div>
+      </div>
+
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Pipeline performance</div>
+            <h3 className="mx-panel__title">Throughput</h3>
+          </div>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard
+            label="Avg time to publish"
+            value={
+              data.pipeline.avgTimeToPublish !== null
+                ? Math.round(data.pipeline.avgTimeToPublish)
+                : "—"
+            }
+            suffix="min"
+            accent="gold"
+          />
+          <KpiCard
+            label="Content per day"
+            value={fmt(data.pipeline.contentPerDay)}
+            accent="cyan"
+          />
+        </div>
+      </div>
+    </div>
   );
 }

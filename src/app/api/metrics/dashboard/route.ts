@@ -64,6 +64,25 @@ type DashboardResponse = {
     to: string;
     days: number;
   };
+  prevRange?: {
+    from: string;
+    to: string;
+    days: number;
+  };
+  prevKpis?: {
+    dau: number;
+    wau: number;
+    activeUsersInRange: number;
+    plays: number;
+    completions: number;
+    completionRate: number;
+    uniqueStories: number;
+    uniqueBooks: number;
+    avgMinutesPerActiveUser: number;
+    totalListenedMinutes: number;
+    savedStories: number;
+    savedBooks: number;
+  };
   kpis: {
     dau: number;
     wau: number;
@@ -185,6 +204,34 @@ type DashboardResponse = {
       opens: number;
     }>;
   };
+  audience: {
+    onboardingFunnel: {
+      started: number;
+      step1Completed: number;
+      step2Completed: number;
+      step3Completed: number;
+      finished: number;
+      abandoned: number;
+      levelTestStarted: number;
+      levelTestCompleted: number;
+      step1Rate: number;
+      step2Rate: number;
+      step3Rate: number;
+      finishRate: number;
+      levelTestCompleteRate: number;
+    };
+    weeklyActivity: {
+      activeUsersLast7Days: number;
+      usersOver5Min: number;
+      usersOver10Min: number;
+      usersOver30Min: number;
+      usersOver60Min: number;
+      activationRate10MinPct: number;
+      medianMinutes: number;
+      avgMinutesLast7Days: number;
+      distribution: Array<{ bucket: string; users: number }>;
+    };
+  };
 };
 
 type DashboardSection =
@@ -287,6 +334,34 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
       tapRateFromScheduled: 0,
       openRateFromTap: 0,
       destinationBreakdown: [],
+    },
+    audience: {
+      onboardingFunnel: {
+        started: 0,
+        step1Completed: 0,
+        step2Completed: 0,
+        step3Completed: 0,
+        finished: 0,
+        abandoned: 0,
+        levelTestStarted: 0,
+        levelTestCompleted: 0,
+        step1Rate: 0,
+        step2Rate: 0,
+        step3Rate: 0,
+        finishRate: 0,
+        levelTestCompleteRate: 0,
+      },
+      weeklyActivity: {
+        activeUsersLast7Days: 0,
+        usersOver5Min: 0,
+        usersOver10Min: 0,
+        usersOver30Min: 0,
+        usersOver60Min: 0,
+        activationRate10MinPct: 0,
+        medianMinutes: 0,
+        avgMinutesLast7Days: 0,
+        distribution: [],
+      },
     },
   };
 }
@@ -454,6 +529,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   const needsEngagementData = section === "engagement";
   const needsAcquisitionData = section === "acquisition";
   const needsFunnelsData = section === "funnels";
+  const needsAudienceData = section === "audience";
   const needsEventData = needsOverviewData || needsEngagementData;
   const needsProgressData = needsOverviewData;
   const needsActiveUsersData = needsOverviewData;
@@ -466,6 +542,21 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
   const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+
+  // Audience uses a fixed 7-day window for the "active users / 10 min per
+  // week" computation, independent of the dashboard `days` filter. The
+  // onboarding funnel still respects the user's date range so editorial
+  // can see how recent cohorts compare against earlier ones.
+  const last7DaysStart = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+  // Period-over-period window: same length as current range, shifted
+  // back by `days`. So if current is [from..to] (30 days), prev is
+  // [from - 30d .. from]. The endpoint computes a coarse comparable
+  // KPI set so the Resumen view can render deltas on every hero card.
+  const periodMs = to.getTime() - from.getTime();
+  const prevTo = new Date(from.getTime());
+  const prevFrom = new Date(from.getTime() - periodMs);
+  const needsPrevData = needsOverviewData;
 
   const [
     events,
@@ -490,6 +581,13 @@ export async function GET(req: NextRequest): Promise<Response> {
     signupLast7dCount,
     signupLast30dCount,
     recentSignupRows,
+    onboardingFunnelRows,
+    weeklyProgressRows,
+    prevEvents,
+    prevProgressRows,
+    prevActiveUsersRows,
+    prevSavedStoriesTotal,
+    prevSavedBooksTotal,
   ] =
     await Promise.all([
     needsEventData ? prisma.userMetric.findMany({
@@ -743,6 +841,101 @@ export async function GET(req: NextRequest): Promise<Response> {
           take: 25,
         })
       : Promise.resolve([]),
+    // Onboarding funnel raw rows. Volume is low (one row per user per
+    // event), so we fetch and bucket in memory to get the per-step
+    // breakdown from metadata.step that a single groupBy can't express.
+    needsAudienceData ? prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: from, lte: to },
+        storySlug: "onboarding",
+        eventType: {
+          in: [
+            "onboarding_started",
+            "onboarding_step_completed",
+            "onboarding_finished",
+            "onboarding_abandoned",
+            "onboarding_level_test_started",
+            "onboarding_level_test_completed",
+          ],
+        },
+      },
+      select: {
+        eventType: true,
+        metadata: true,
+      },
+      take: 10000,
+    }) : Promise.resolve([]),
+    // Weekly activity: progress rows over the last 7 days. We compute
+    // listened seconds per user (max per user+story to avoid double-counting
+    // pause/continue) and bucket users by minutes/week.
+    needsAudienceData ? prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: last7DaysStart, lte: now },
+        eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
+      },
+      select: {
+        userId: true,
+        storySlug: true,
+        value: true,
+        metadata: true,
+      },
+      take: 50000,
+    }) : Promise.resolve([]),
+    // ── Period-over-period: same shape as `events` but for the
+    // previous window. Used to derive `prevKpis` for deltas.
+    needsPrevData ? prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: prevFrom, lt: prevTo },
+        eventType: { in: ["audio_play", "audio_complete"] },
+        ...(storySlug ? { storySlug } : {}),
+        ...(bookSlug ? { bookSlug } : {}),
+      },
+      select: {
+        userId: true,
+        bookSlug: true,
+        storySlug: true,
+        eventType: true,
+        createdAt: true,
+      },
+      take: 20000,
+    }) : Promise.resolve([]),
+    needsPrevData ? prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: prevFrom, lt: prevTo },
+        eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
+        ...(storySlug ? { storySlug } : {}),
+        ...(bookSlug ? { bookSlug } : {}),
+      },
+      select: {
+        userId: true,
+        storySlug: true,
+        value: true,
+        metadata: true,
+      },
+      take: 50000,
+    }) : Promise.resolve([]),
+    needsPrevData ? prisma.userMetric.findMany({
+      where: {
+        createdAt: { gte: prevFrom, lt: prevTo },
+        ...(storySlug ? { storySlug } : {}),
+        ...(bookSlug ? { bookSlug } : {}),
+      },
+      distinct: ["userId"],
+      select: { userId: true },
+    }) : Promise.resolve([]),
+    needsPrevData ? prisma.libraryStory.count({
+      where: {
+        createdAt: { gte: prevFrom, lt: prevTo },
+        ...savedStoryFilter,
+        ...(bookSlug ? { bookId: bookSlug } : {}),
+      },
+    }) : Promise.resolve(0),
+    needsPrevData ? prisma.libraryBook.count({
+      where: {
+        createdAt: { gte: prevFrom, lt: prevTo },
+        ...(bookSlug ? { bookId: bookSlug } : {}),
+      },
+    }) : Promise.resolve(0),
     ]);
 
   const plays = events.filter((e) => e.eventType === "audio_play").length;
@@ -1028,8 +1221,184 @@ export async function GET(req: NextRequest): Promise<Response> {
     .map(([destination, opens]) => ({ destination, opens }))
     .sort((a, b) => b.opens - a.opens || a.destination.localeCompare(b.destination));
 
+  // ── Audience: onboarding funnel ──
+  // We count each event type, then derive per-step completions by reading
+  // metadata.step on `onboarding_step_completed` rows. Step 4 is implicit
+  // in `onboarding_finished`, so we never look for step=4 here.
+  const onboardingCounts = {
+    started: 0,
+    step1Completed: 0,
+    step2Completed: 0,
+    step3Completed: 0,
+    finished: 0,
+    abandoned: 0,
+    levelTestStarted: 0,
+    levelTestCompleted: 0,
+  };
+  for (const row of onboardingFunnelRows as Array<{
+    eventType: string;
+    metadata: unknown;
+  }>) {
+    switch (row.eventType) {
+      case "onboarding_started":
+        onboardingCounts.started += 1;
+        break;
+      case "onboarding_finished":
+        onboardingCounts.finished += 1;
+        break;
+      case "onboarding_abandoned":
+        onboardingCounts.abandoned += 1;
+        break;
+      case "onboarding_level_test_started":
+        onboardingCounts.levelTestStarted += 1;
+        break;
+      case "onboarding_level_test_completed":
+        onboardingCounts.levelTestCompleted += 1;
+        break;
+      case "onboarding_step_completed": {
+        const meta =
+          row.metadata && typeof row.metadata === "object"
+            ? (row.metadata as Record<string, unknown>)
+            : null;
+        const step = typeof meta?.step === "number" ? meta.step : null;
+        if (step === 1) onboardingCounts.step1Completed += 1;
+        else if (step === 2) onboardingCounts.step2Completed += 1;
+        else if (step === 3) onboardingCounts.step3Completed += 1;
+        break;
+      }
+      default:
+        break;
+    }
+  }
+  const pct = (num: number, den: number) =>
+    den > 0 ? Math.round((num / den) * 100) : 0;
+
+  // ── Audience: weekly activity distribution ──
+  // Sum max-listened-seconds per user across all stories in the last
+  // 7 days, then bucket users by minutes/week. This is the "activation
+  // rate" view that aggregate avgMinutesPerActiveUser can't surface.
+  const byUserStoryMaxSecondsWeekly = new Map<string, number>();
+  for (const row of weeklyProgressRows as ProgressRow[]) {
+    const value = getProgressValue(row);
+    if (!Number.isFinite(value) || value <= 0) continue;
+    const key = `${row.userId}::${row.storySlug}`;
+    const prev = byUserStoryMaxSecondsWeekly.get(key) ?? 0;
+    if (value > prev) byUserStoryMaxSecondsWeekly.set(key, value);
+  }
+  const byUserSecondsWeekly = new Map<string, number>();
+  for (const [key, seconds] of byUserStoryMaxSecondsWeekly.entries()) {
+    const [uid] = key.split("::");
+    byUserSecondsWeekly.set(uid, (byUserSecondsWeekly.get(uid) ?? 0) + seconds);
+  }
+  const weeklyMinutesPerUser = Array.from(byUserSecondsWeekly.values())
+    .map((s) => s / 60)
+    .sort((a, b) => a - b);
+  const activeUsersLast7Days = weeklyMinutesPerUser.length;
+  const usersOver5Min = weeklyMinutesPerUser.filter((m) => m >= 5).length;
+  const usersOver10Min = weeklyMinutesPerUser.filter((m) => m >= 10).length;
+  const usersOver30Min = weeklyMinutesPerUser.filter((m) => m >= 30).length;
+  const usersOver60Min = weeklyMinutesPerUser.filter((m) => m >= 60).length;
+  const totalWeeklyMinutes = weeklyMinutesPerUser.reduce((sum, m) => sum + m, 0);
+  const avgMinutesLast7Days =
+    activeUsersLast7Days > 0
+      ? Math.round((totalWeeklyMinutes / activeUsersLast7Days) * 10) / 10
+      : 0;
+  const medianMinutes =
+    activeUsersLast7Days > 0
+      ? Math.round(
+          weeklyMinutesPerUser[Math.floor(activeUsersLast7Days / 2)] * 10
+        ) / 10
+      : 0;
+  // Buckets are mutually exclusive. The "5-10" bucket represents users
+  // who reached at least 5 min/week but didn't hit the 10-min threshold.
+  const distribution = [
+    {
+      bucket: "<5 min",
+      users: activeUsersLast7Days - usersOver5Min,
+    },
+    {
+      bucket: "5-10 min",
+      users: usersOver5Min - usersOver10Min,
+    },
+    {
+      bucket: "10-30 min",
+      users: usersOver10Min - usersOver30Min,
+    },
+    {
+      bucket: "30-60 min",
+      users: usersOver30Min - usersOver60Min,
+    },
+    {
+      bucket: "60+ min",
+      users: usersOver60Min,
+    },
+  ];
+
+  // ── Period-over-period KPIs ──
+  // Build a comparable KPI set from the previous-window queries. We
+  // compute the same shape as `kpis` so the client can drive deltas
+  // generically. uniqueStories/uniqueBooks are derived from prev events,
+  // and avg-minutes/total-minutes from prev progress rows.
+  let prevKpisPayload: DashboardResponse["prevKpis"] | undefined;
+  if (needsPrevData) {
+    let prevPlays = 0;
+    let prevCompletions = 0;
+    const prevByStory = new Set<string>();
+    const prevByBook = new Set<string>();
+    for (const row of prevEvents as EventRow[]) {
+      if (row.eventType === "audio_play") prevPlays += 1;
+      else if (row.eventType === "audio_complete") prevCompletions += 1;
+      prevByStory.add(row.storySlug);
+      if (row.bookSlug) prevByBook.add(row.bookSlug);
+    }
+    const prevCompletionRate =
+      prevPlays > 0 ? Math.round((prevCompletions / prevPlays) * 100) : 0;
+    const prevByUserStoryMaxSeconds = new Map<string, number>();
+    for (const row of prevProgressRows as ProgressRow[]) {
+      const value = getProgressValue(row);
+      if (!Number.isFinite(value) || value <= 0) continue;
+      const key = `${row.userId}::${row.storySlug}`;
+      const prev = prevByUserStoryMaxSeconds.get(key) ?? 0;
+      if (value > prev) prevByUserStoryMaxSeconds.set(key, value);
+    }
+    const prevTotalListenedSeconds = Array.from(
+      prevByUserStoryMaxSeconds.values()
+    ).reduce((sum, s) => sum + s, 0);
+    const prevActiveUsers = (prevActiveUsersRows as Array<{ userId: string }>).length;
+    const prevTotalListenedMinutes =
+      Math.round((prevTotalListenedSeconds / 60) * 10) / 10;
+    const prevAvgMinutesPerActiveUser =
+      prevActiveUsers > 0
+        ? Math.round(((prevTotalListenedSeconds / prevActiveUsers) / 60) * 10) / 10
+        : 0;
+    prevKpisPayload = {
+      dau: 0,
+      wau: 0,
+      activeUsersInRange: prevActiveUsers,
+      plays: prevPlays,
+      completions: prevCompletions,
+      completionRate: prevCompletionRate,
+      uniqueStories: prevByStory.size,
+      uniqueBooks: prevByBook.size,
+      avgMinutesPerActiveUser: prevAvgMinutesPerActiveUser,
+      totalListenedMinutes: prevTotalListenedMinutes,
+      savedStories: prevSavedStoriesTotal as number,
+      savedBooks: prevSavedBooksTotal as number,
+    };
+  }
+
   const payload: DashboardResponse = {
     ...createEmptyDashboardResponse(from, to, days),
+    ...(prevKpisPayload
+      ? {
+          prevRange: {
+            from: prevFrom.toISOString(),
+            to: prevTo.toISOString(),
+            days,
+          },
+          prevKpis: prevKpisPayload,
+        }
+      : {}),
     kpis: {
       dau: dauRows.length,
       wau: wauRows.length,
@@ -1104,6 +1473,30 @@ export async function GET(req: NextRequest): Promise<Response> {
           ? Math.round((reminderCounts.destinationOpened / reminderCounts.tapped) * 100)
           : 0,
       destinationBreakdown: reminderDestinationBreakdown,
+    },
+    audience: {
+      onboardingFunnel: {
+        ...onboardingCounts,
+        step1Rate: pct(onboardingCounts.step1Completed, onboardingCounts.started),
+        step2Rate: pct(onboardingCounts.step2Completed, onboardingCounts.started),
+        step3Rate: pct(onboardingCounts.step3Completed, onboardingCounts.started),
+        finishRate: pct(onboardingCounts.finished, onboardingCounts.started),
+        levelTestCompleteRate: pct(
+          onboardingCounts.levelTestCompleted,
+          onboardingCounts.levelTestStarted
+        ),
+      },
+      weeklyActivity: {
+        activeUsersLast7Days,
+        usersOver5Min,
+        usersOver10Min,
+        usersOver30Min,
+        usersOver60Min,
+        activationRate10MinPct: pct(usersOver10Min, activeUsersLast7Days),
+        medianMinutes,
+        avgMinutesLast7Days,
+        distribution,
+      },
     },
   };
 
