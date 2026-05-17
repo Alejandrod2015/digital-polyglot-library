@@ -4,17 +4,17 @@
   /* Dark theme defaults */
   --background: #0b1220;
   --surface: #111a2b;
-  --bg-sidebar: #0b1e36;
+  --bg-sidebar: #071326;
   --bg-content: #0b1e36;
   --bg-player: rgba(7, 16, 30, 0.94);
   --player-border-top: rgba(255, 255, 255, 0.14);
 
-  /* Studio accent (gold — aligned with landing + iOS app palette) */
-  --studio-accent: #fcd34d;
-  --studio-accent-hover: #fde889;
-  --studio-accent-soft: rgba(252, 211, 77, 0.14);
-  --studio-accent-glow: rgba(252, 211, 77, 0.32);
-  --studio-sidebar-bg: #051834;
+  /* Studio accent (teal) */
+  --studio-accent: #14b8a6;
+  --studio-accent-hover: #0d9488;
+  --studio-accent-soft: rgba(20, 184, 166, 0.15);
+  --studio-accent-glow: rgba(20, 184, 166, 0.3);
+  --studio-sidebar-bg: #080f1a;
   --studio-sidebar-border: rgba(255, 255, 255, 0.08);
   --foreground: #e6eaf2;
   --muted: #9aa7bd;
@@ -66,7 +66,7 @@
      consistent as the palette evolves (e.g. if streak ever
      shifts hue, everything "streak"-colored moves together). */
   --color-cyan:   #7dd3fc; /* links, sky CTAs */
-  --color-xp:     #fcd34d; /* XP, completion, ACTIVE pill — mirrors apps/mobile/src/theme/tokens.ts (iOS = source of truth) */
+  --color-xp:     #bef264; /* XP, completion, ACTIVE pill */
   --color-streak: #fb923c; /* streak, day counters */
   --color-gems:   #c4b5fd; /* gems, premium hints */
   --color-gold:   #fcd34d; /* rewards, achievements */
@@ -102,7 +102,8 @@
   --mx-pos: #4ade80;
   --mx-neg: #f87171;
   --mx-warn: #fbbf24;
-  --mx-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --mx-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --mx-font: var(--font-inter), system-ui, sans-serif;
   --mx-pad-panel: 18px;
   --mx-gap-grid: 12px;
 }
@@ -143,7 +144,7 @@
 :root[data-theme="dark"] {
   --background: #0b1220;
   --surface: #111a2b;
-  --bg-sidebar: #0b1e36;
+  --bg-sidebar: #071326;
   --bg-content: #0b1e36;
   --bg-player: rgba(7, 16, 30, 0.94);
   --player-border-top: rgba(255, 255, 255, 0.14);
@@ -179,7 +180,7 @@
 :root[data-theme="light"] {
   --background: #eef3fb;
   --surface: #f7f9fd;
-  --bg-sidebar: #eef3fb;
+  --bg-sidebar: #e2ecfa;
   --bg-content: #eef3fb;
   --bg-player: rgba(238, 243, 251, 0.96);
   --player-border-top: rgba(15, 23, 42, 0.16);
@@ -216,7 +217,7 @@
   :root:not([data-theme]) {
     --background: #eef3fb;
     --surface: #f7f9fd;
-    --bg-sidebar: #eef3fb;
+    --bg-sidebar: #e2ecfa;
     --bg-content: #eef3fb;
     --bg-player: rgba(238, 243, 251, 0.96);
     --player-border-top: rgba(15, 23, 42, 0.16);
@@ -666,8 +667,26 @@ body {
  * Used by /studio/metrics. Token-driven via --mx-* vars.
  * =======================================================*/
 .mx-root {
+  font-family: var(--mx-font);
   font-feature-settings: "cv11", "ss01", "tnum";
   font-variant-numeric: tabular-nums;
+  color: var(--mx-fg);
+  /* Override del fondo del StudioShell con el navy editorial. El
+   * radial-gradient teal en la esquina superior derecha replica el
+   * decorado del prototipo. Se bleed-extiende fuera del padding del
+   * <main> del shell (24px arriba, 32px laterales, 48px abajo) para
+   * que el dark llegue a los bordes visibles del área de contenido. */
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(20, 184, 166, 0.06), transparent),
+    var(--mx-bg-1);
+  margin: -24px -32px -48px;
+  padding: 24px 32px 48px;
+  min-height: calc(100vh - 100px);
+}
+
+.mx-root .mx-mono,
+.mx-root code {
+  font-family: var(--mx-mono);
 }
 
 .mx-view { display: flex; flex-direction: column; gap: 18px; }
@@ -894,6 +913,7 @@ body {
 }
 .mx-tab--muted:hover { color: var(--mx-muted); }
 .mx-tab--muted.mx-tab--active { color: var(--mx-fg-soft); border-bottom-color: var(--mx-accent); }
+.mx-tab__icon { font-size: 11px; opacity: 0.85; }
 
 /* ── Legend ── */
 .mx-legend { display: inline-flex; align-items: center; gap: 14px; font-size: 11.5px; color: var(--mx-muted); }

@@ -49,8 +49,6 @@ const EMPTY_DATA: DashboardData = {
   topStoriesByMinutes: [],
   topSavedStories: [],
   topSavedBooks: [],
-  signups: { total: 0, last7d: 0, last30d: 0 },
-  recentSignups: [],
   trialFunnel: {
     started: 0,
     startedWithPm: 0,
@@ -155,14 +153,14 @@ const PRIMARY_TABS: Array<{ key: MetricsSection; label: string }> = [
   { key: "funnels", label: "Funnels" },
 ];
 
-const MUTED_TABS: Array<{ key: MetricsSection; label: string }> = [
-  { key: "acquisition", label: "Adquisición" },
-  { key: "audience", label: "Audiencia" },
-  { key: "content", label: "Contenido" },
-  { key: "learning", label: "Aprendizaje" },
-  { key: "experiments", label: "Experimentos" },
-  { key: "alerts", label: "Alertas" },
-  { key: "exports", label: "Exportaciones" },
+const MUTED_TABS: Array<{ key: MetricsSection; label: string; icon: string }> = [
+  { key: "acquisition", label: "Adquisición", icon: "↗" },
+  { key: "audience", label: "Audiencia", icon: "◍" },
+  { key: "content", label: "Contenido", icon: "≡" },
+  { key: "learning", label: "Aprendizaje", icon: "✓" },
+  { key: "experiments", label: "Experimentos", icon: "⚗" },
+  { key: "alerts", label: "Alertas", icon: "!" },
+  { key: "exports", label: "Exportaciones", icon: "↧" },
 ];
 
 const RANGE_OPTIONS = ["7", "30", "90", "180"];
@@ -335,7 +333,7 @@ export default function MetricsDashboard() {
   return (
     <StudioShell
       title="Métricas"
-      description="Tendencia diaria, engagement por historia, funnels y onboarding — todo en un solo panel editorial."
+      description="Cómo se comportan tus historias, libros, journeys y recordatorios."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
         { label: "Métricas" },
@@ -359,14 +357,17 @@ export default function MetricsDashboard() {
               maxWidth: 720,
             }}
           >
-            Datos en vivo · período actual{" "}
+            Últimos {data.range.days} días{" "}
             <span className="mx-mono" style={{ color: "var(--mx-fg-soft)" }}>
               {periodLabel}
             </span>
           </p>
           <span className="mx-live">
             <span className="mx-live__dot" />
-            live data
+            Datos en vivo · actualizado{" "}
+            <span className="mx-mono" style={{ marginLeft: 4 }}>
+              ahora
+            </span>
           </span>
         </div>
 
@@ -518,6 +519,7 @@ export default function MetricsDashboard() {
                       : "mx-tab mx-tab--muted"
                   }
                 >
+                  <span className="mx-tab__icon">{tab.icon}</span>
                   {tab.label}
                 </button>
               );
@@ -700,117 +702,36 @@ function AudienceView({ data }: { data: DashboardData }) {
   );
 }
 
-// ── Acquisition view: signups + checkout funnel KPIs ──
+// ── Acquisition view: just the checkout funnel KPIs ──
 function AcquisitionView({ data }: { data: DashboardData }) {
   const cf = data.checkoutFunnel;
   return (
     <div className="mx-view">
-      <div className="mx-panel">
-        <div className="mx-panel__head">
-          <div>
-            <div className="mx-panel__eyebrow">Top of funnel</div>
-            <h3 className="mx-panel__title">Signups</h3>
-          </div>
-          <span className="mx-panel__hint">
-            Clerk webhook (signup_completed)
-          </span>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 10,
-          }}
-        >
-          <KpiCard label="Signups (total)" value={data.signups.total} />
-          <KpiCard
-            label="Últimos 7 días"
-            value={data.signups.last7d}
-            accent="cyan"
-          />
-          <KpiCard
-            label="Últimos 30 días"
-            value={data.signups.last30d}
-            accent="cyan"
-          />
-        </div>
-      </div>
-
-      {data.recentSignups.length > 0 && (
-        <div className="mx-panel">
-          <div className="mx-panel__head">
-            <div>
-              <div className="mx-panel__eyebrow">Recent</div>
-              <h3 className="mx-panel__title">Últimos signups</h3>
-            </div>
-            <span className="mx-panel__hint">25 más recientes</span>
-          </div>
-          <div style={{ overflowX: "auto" }}>
-            <table className="mx-table">
-              <thead>
-                <tr>
-                  <th style={{ width: 160 }}>Cuándo</th>
-                  <th>Email</th>
-                  <th>User ID</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.recentSignups.map((row) => (
-                  <tr key={`${row.userId}-${row.createdAt}`}>
-                    <td className="mx-table__when">
-                      {new Date(row.createdAt).toLocaleString("es-ES", {
-                        day: "2-digit",
-                        month: "short",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </td>
-                    <td>{row.email ?? "—"}</td>
-                    <td className="mx-mono">{row.userId}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-
-      <div className="mx-panel">
-        <div className="mx-panel__head">
-          <div>
-            <div className="mx-panel__eyebrow">Checkout</div>
-            <h3 className="mx-panel__title">Plans → Stripe</h3>
-          </div>
-          <span className="mx-panel__hint">
-            {cf.checkoutStartRate}% start rate
-          </span>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 10,
-          }}
-        >
-          <KpiCard label="Plans viewed" value={cf.plansViewed} />
-          <KpiCard
-            label="Checkout started"
-            value={cf.checkoutStarted}
-            accent="cyan"
-            hint={`${cf.checkoutStartRate}% del plans view`}
-          />
-          <KpiCard
-            label="Checkout redirected"
-            value={cf.checkoutRedirected}
-            accent="xp"
-            hint={`${cf.checkoutRedirectRate}% del checkout start`}
-          />
-          <KpiCard
-            label="Checkout failed"
-            value={cf.checkoutFailed}
-            accent="accent"
-          />
-        </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: 10,
+        }}
+      >
+        <KpiCard label="Plans viewed" value={cf.plansViewed} />
+        <KpiCard
+          label="Checkout started"
+          value={cf.checkoutStarted}
+          accent="cyan"
+          hint={`${cf.checkoutStartRate}% del plans view`}
+        />
+        <KpiCard
+          label="Checkout redirected"
+          value={cf.checkoutRedirected}
+          accent="xp"
+          hint={`${cf.checkoutRedirectRate}% del checkout start`}
+        />
+        <KpiCard
+          label="Checkout failed"
+          value={cf.checkoutFailed}
+          accent="accent"
+        />
       </div>
     </div>
   );

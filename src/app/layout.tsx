@@ -2,8 +2,7 @@
 
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
-import { Nunito } from "next/font/google";
+import { Inter, JetBrains_Mono, Nunito } from "next/font/google";
 import "./globals.css";
 import { clerkAppearance } from "@/lib/clerkAppearance";
 import AppShell from "@/components/AppShell";
@@ -17,6 +16,23 @@ const nunito = Nunito({
   subsets: ["latin"],
   weight: ["400", "700", "800", "900"],
   variable: "--font-nunito",
+  display: "swap",
+});
+
+// Inter + JetBrains Mono são las fuentes editoriales de /studio/metrics.
+// El handoff las define como load-bearing para legibilidad analítica
+// (tabular-nums + tight letter-spacing). Se exponen como vars y se
+// aplican solo dentro de `.mx-root` para no afectar al resto del app.
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-jetbrains-mono",
   display: "swap",
 });
 
@@ -54,24 +70,15 @@ export default async function RootLayout({
     process.env.VERCEL_URL ||
     "dev-local";
 
-  // Resolve auth on the server so AppShell can decide marketing-vs-shell
-  // synchronously during SSR. Without this, useAuth() hydrates client-side
-  // and unauth visitors briefly see the signed-in chrome flash before the
-  // landing takes over.
-  let initialIsSignedIn = false;
-  try {
-    const { userId } = await auth();
-    initialIsSignedIn = !!userId;
-  } catch {
-    initialIsSignedIn = false;
-  }
-
   return (
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
       appearance={clerkAppearance}
     >
-      <html lang="en" className={`${nunito.variable} bg-[var(--bg-content)]`}>
+      <html
+        lang="en"
+        className={`${nunito.variable} ${inter.variable} ${jetbrainsMono.variable} bg-[var(--bg-content)]`}
+      >
         <head>
           <meta name="theme-color" content="#0b1e36" />
           <meta
@@ -82,12 +89,7 @@ export default async function RootLayout({
 
         {/* ✅ layout estable: usa min-h-screen, no h-screen */}
         <body className="bg-[var(--bg-content)] text-[var(--foreground)] min-h-screen flex flex-col pt-[env(safe-area-inset-top)]">
-          <AppShell
-            currentVersion={currentVersion}
-            initialIsSignedIn={initialIsSignedIn}
-          >
-            {children}
-          </AppShell>
+          <AppShell currentVersion={currentVersion}>{children}</AppShell>
         </body>
       </html>
     </ClerkProvider>
