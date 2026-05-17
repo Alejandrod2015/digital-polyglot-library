@@ -43,9 +43,9 @@ function asTrimmedString(v: unknown, max = 500): string | null {
   return trimmed.slice(0, max);
 }
 
-function normalizeAttribution(raw: unknown): Record<string, string> | null {
-  if (!raw || typeof raw !== "object") return null;
-  const src = raw as AttributionInput;
+function normalizeAttribution(raw: unknown): Record<string, string> {
+  if (!raw || typeof raw !== "object") return {};
+  const src = raw as AttributionInput & { timezone?: unknown };
   const fields: Array<[string, unknown]> = [
     ["utmSource", src.utmSource],
     ["utmMedium", src.utmMedium],
@@ -54,13 +54,45 @@ function normalizeAttribution(raw: unknown): Record<string, string> | null {
     ["utmTerm", src.utmTerm],
     ["referrer", src.referrer],
     ["landingUrl", src.landingUrl],
+    ["timezone", src.timezone],
   ];
   const cleaned: Record<string, string> = {};
   for (const [key, value] of fields) {
     const str = asTrimmedString(value, 500);
     if (str) cleaned[key] = str;
   }
-  return Object.keys(cleaned).length > 0 ? cleaned : null;
+  return cleaned;
+}
+
+// Pull geo + language + UA from the request. Vercel injects geo headers
+// for every edge request; on local dev they're absent and we get
+// undefined, which is fine.
+function captureServerAttribution(req: NextRequest): Record<string, string> {
+  const h = req.headers;
+  const decode = (v: string | null) => {
+    if (!v) return undefined;
+    try {
+      return decodeURIComponent(v);
+    } catch {
+      return v;
+    }
+  };
+  const out: Record<string, string> = {};
+  const country = decode(h.get("x-vercel-ip-country"));
+  const region = decode(h.get("x-vercel-ip-country-region"));
+  const city = decode(h.get("x-vercel-ip-city"));
+  const tz = h.get("x-vercel-ip-timezone");
+  // Keep only the primary preferred language tag (e.g. "en-US" from
+  // "en-US,en;q=0.9,es;q=0.8").
+  const lang = h.get("accept-language")?.split(",")[0]?.trim();
+  const ua = h.get("user-agent")?.slice(0, 500);
+  if (country) out.country = country;
+  if (region) out.region = region;
+  if (city) out.city = city;
+  if (tz) out.timezoneServer = tz;
+  if (lang) out.browserLanguage = lang;
+  if (ua) out.userAgent = ua;
+  return out;
 }
 
 export async function POST(req: NextRequest) {
@@ -81,7 +113,17 @@ export async function POST(req: NextRequest) {
   const referralSource = asTrimmedString(body.referralSource, 200);
   const applicationReason = asTrimmedString(body.applicationReason, APPLICATION_REASON_MAX);
   const consent = body.consent === true;
-  const attribution = normalizeAttribution(body.attribution);
+  // Merge browser-side attribution (utm, referrer, landing url, tz) with
+  // server-side attribution (geo from Vercel + accept-language + user-agent).
+  // Server side is the trustier source, so it overrides if both are present.
+  const clientAttribution = normalizeAttribution(body.attribution);
+  const serverAttribution = captureServerAttribution(req);
+  const mergedAttribution: Record<string, string> = {
+    ...clientAttribution,
+    ...serverAttribution,
+  };
+  const attribution =
+    Object.keys(mergedAttribution).length > 0 ? mergedAttribution : null;
 
   if (!email || !EMAIL_REGEX.test(email)) {
     return NextResponse.json({ error: "Valid email is required" }, { status: 400 });

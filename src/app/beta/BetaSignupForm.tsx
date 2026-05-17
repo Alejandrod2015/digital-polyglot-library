@@ -65,6 +65,7 @@ type AttributionPayload = {
   utmTerm?: string;
   referrer?: string;
   landingUrl?: string;
+  timezone?: string;
 };
 
 function readPersistedAttribution(): AttributionPayload | null {
@@ -83,6 +84,12 @@ function captureAttribution(): AttributionPayload {
   if (typeof window === "undefined") return {};
   const params = new URLSearchParams(window.location.search);
   const get = (k: string) => params.get(k)?.trim() || undefined;
+  let timezone: string | undefined;
+  try {
+    timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || undefined;
+  } catch {
+    timezone = undefined;
+  }
   const attribution: AttributionPayload = {
     utmSource: get("utm_source"),
     utmMedium: get("utm_medium"),
@@ -91,6 +98,7 @@ function captureAttribution(): AttributionPayload {
     utmTerm: get("utm_term"),
     referrer: document.referrer?.trim() || undefined,
     landingUrl: window.location.href,
+    timezone,
   };
   // Drop empty keys
   return Object.fromEntries(

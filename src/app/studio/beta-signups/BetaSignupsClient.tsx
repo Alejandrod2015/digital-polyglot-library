@@ -12,6 +12,13 @@ type Attribution = {
   utmTerm?: string;
   referrer?: string;
   landingUrl?: string;
+  timezone?: string;
+  country?: string;
+  region?: string;
+  city?: string;
+  timezoneServer?: string;
+  browserLanguage?: string;
+  userAgent?: string;
 };
 
 type Signup = {
@@ -53,8 +60,29 @@ const card: React.CSSProperties = {
   borderRadius: 10,
   backgroundColor: "var(--card-bg)",
   border: "1px solid var(--card-border)",
-  padding: 20,
+  padding: "12px 14px",
 };
+
+// Map ISO 3166-1 alpha-2 country code to flag emoji (each letter offset
+// to its regional indicator counterpart in unicode).
+function countryFlag(code?: string): string {
+  if (!code || code.length !== 2) return "";
+  const A = 0x1f1e6;
+  const baseA = "A".charCodeAt(0);
+  const a = code.toUpperCase().charCodeAt(0);
+  const b = code.toUpperCase().charCodeAt(1);
+  if (a < baseA || a > baseA + 25 || b < baseA || b > baseA + 25) return "";
+  return String.fromCodePoint(A + (a - baseA)) + String.fromCodePoint(A + (b - baseA));
+}
+
+function formatLocation(r: { attribution: Attribution | null }): string | null {
+  if (!r.attribution) return null;
+  const { city, region, country } = r.attribution;
+  const parts = [city, region, country].filter(Boolean);
+  if (parts.length === 0) return null;
+  const flag = countryFlag(country);
+  return [flag, parts.join(", ")].filter(Boolean).join(" ");
+}
 
 const inputStyle: React.CSSProperties = {
   height: 36,
@@ -324,123 +352,131 @@ export default function BetaSignupsClient() {
       )}
 
       {/* List */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        {visible.map((r) => (
-          <div key={r.id} style={card}>
-            <div style={{ display: "flex", justifyContent: "space-between", gap: 12, marginBottom: 10, flexWrap: "wrap" }}>
-              <div style={{ minWidth: 0 }}>
-                <p style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)", margin: 0 }}>{r.email}</p>
-                <p style={{ fontSize: 12, color: "var(--muted)", margin: "2px 0 0" }}>
-                  {new Date(r.createdAt).toLocaleString()}
-                  {!r.hasIPhone && (
-                    <span style={{ marginLeft: 8, color: "#f87171", fontWeight: 600 }}>· no iPhone</span>
-                  )}
-                </p>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {visible.map((r) => {
+          const location = formatLocation(r);
+          const utm = r.attribution?.utmSource
+            ? [r.attribution.utmSource, r.attribution.utmMedium, r.attribution.utmCampaign]
+                .filter(Boolean)
+                .join("/")
+            : null;
+          return (
+            <div key={r.id} style={card}>
+              {/* Header: email + meta on left, status + actions on right */}
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+                <div style={{ minWidth: 0, flex: 1 }}>
+                  <p style={{ fontSize: 13, fontWeight: 600, color: "var(--foreground)", margin: 0, overflow: "hidden", textOverflow: "ellipsis" }}>
+                    {r.email}
+                  </p>
+                  <p style={{ fontSize: 11, color: "var(--muted)", margin: "1px 0 0" }}>
+                    {new Date(r.createdAt).toLocaleString(undefined, { dateStyle: "short", timeStyle: "short" })}
+                    {location && <span> · {location}</span>}
+                    {!r.hasIPhone && (
+                      <span style={{ marginLeft: 6, color: "#f87171", fontWeight: 600 }}>· no iPhone</span>
+                    )}
+                  </p>
+                </div>
+                <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
+                  <span style={statusBadge(r.status)}>{STATUSES.find((s) => s.value === r.status)?.label}</span>
+                  <select
+                    style={{ ...inputStyle, height: 26, fontSize: 11 }}
+                    value={r.status}
+                    onChange={(e) => void updateStatus(r.id, e.target.value as Status)}
+                  >
+                    {STATUSES.map((s) => (
+                      <option key={s.value} value={s.value}>
+                        {s.label}
+                      </option>
+                    ))}
+                  </select>
+                  <button style={{ ...ghostBtn, color: "#f87171", borderColor: "rgba(239,68,68,0.3)", height: 26, fontSize: 11, padding: "0 8px" }} onClick={() => void remove(r.id, r.email)}>
+                    Delete
+                  </button>
+                </div>
               </div>
-              <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
-                <span style={statusBadge(r.status)}>{STATUSES.find((s) => s.value === r.status)?.label}</span>
-                <select
-                  style={{ ...inputStyle, height: 28, fontSize: 12 }}
-                  value={r.status}
-                  onChange={(e) => void updateStatus(r.id, e.target.value as Status)}
-                >
-                  {STATUSES.map((s) => (
-                    <option key={s.value} value={s.value}>
-                      {s.label}
-                    </option>
-                  ))}
-                </select>
-                <button style={{ ...ghostBtn, color: "#f87171", borderColor: "rgba(239,68,68,0.3)" }} onClick={() => void remove(r.id, r.email)}>
-                  Delete
-                </button>
-              </div>
-            </div>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-                gap: 10,
-                fontSize: 13,
-                color: "var(--foreground)",
-              }}
-            >
-              <Field label="Native" value={r.nativeLanguage} />
-              <Field label="Target" value={r.targetLanguage} />
-              <Field label="Level" value={r.currentLevel} />
-              <Field label="Weekly time" value={HOURS_LABEL[r.weeklyHours] ?? r.weeklyHours} />
-              {r.motivation && <Field label="Learning for" value={r.motivation} />}
-              {r.referralSource && <Field label="Heard via" value={r.referralSource} />}
-              {r.attribution?.utmSource && (
-                <Field
-                  label="UTM"
-                  value={[r.attribution.utmSource, r.attribution.utmCampaign]
-                    .filter(Boolean)
-                    .join(" / ")}
-                />
+              {/* Inline data row: language / level / hours / motivation / referral / utm */}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "4px 12px", fontSize: 12, color: "var(--foreground)", marginTop: 6 }}>
+                <InlineField label="From" value={r.nativeLanguage} />
+                <InlineField label="→" value={`${r.targetLanguage} · ${r.currentLevel}`} />
+                <InlineField label="Hrs" value={HOURS_LABEL[r.weeklyHours] ?? r.weeklyHours} />
+                {r.motivation && <InlineField label="For" value={r.motivation} />}
+                {r.referralSource && <InlineField label="Via" value={r.referralSource} />}
+                {utm && <InlineField label="UTM" value={utm} mono />}
+                {!utm && r.attribution?.referrer && (
+                  <InlineField label="Ref" value={shortHost(r.attribution.referrer)} mono />
+                )}
+              </div>
+
+              {/* Application reason — single-line collapsed with details */}
+              {r.applicationReason && (
+                <details style={{ marginTop: 6, fontSize: 12 }}>
+                  <summary style={{ cursor: "pointer", color: "var(--muted)", listStyle: "none" }}>
+                    <span style={{ fontWeight: 600 }}>Why applied: </span>
+                    <span style={{ color: "var(--foreground)" }}>
+                      {r.applicationReason.length > 90
+                        ? `${r.applicationReason.slice(0, 90).trim()}…`
+                        : r.applicationReason}
+                    </span>
+                  </summary>
+                  <p style={{ marginTop: 6, color: "var(--foreground)", whiteSpace: "pre-wrap" }}>
+                    {r.applicationReason}
+                  </p>
+                </details>
               )}
-            </div>
 
-            {r.applicationReason && (
-              <div style={{ marginTop: 10 }}>
-                <p style={{ fontSize: 11, color: "var(--muted)", fontWeight: 600, margin: "0 0 4px" }}>
-                  Why they applied
-                </p>
-                <p style={{ fontSize: 13, color: "var(--foreground)", margin: 0, whiteSpace: "pre-wrap" }}>
-                  {r.applicationReason}
-                </p>
-              </div>
-            )}
+              {/* Legacy current apps field — collapsed details */}
+              {r.currentApps && (
+                <details style={{ marginTop: 4, fontSize: 12 }}>
+                  <summary style={{ cursor: "pointer", color: "var(--muted)", listStyle: "none" }}>
+                    <span style={{ fontWeight: 600 }}>Apps: </span>
+                    <span style={{ color: "var(--foreground)" }}>
+                      {r.currentApps.length > 90 ? `${r.currentApps.slice(0, 90).trim()}…` : r.currentApps}
+                    </span>
+                  </summary>
+                  <p style={{ marginTop: 6, color: "var(--foreground)", whiteSpace: "pre-wrap" }}>{r.currentApps}</p>
+                </details>
+              )}
 
-            {r.attribution?.referrer && !r.attribution?.utmSource && (
-              <p style={{ marginTop: 8, fontSize: 11, color: "var(--muted)" }}>
-                Referrer: {r.attribution.referrer}
-              </p>
-            )}
-
-            {r.currentApps && (
-              <div style={{ marginTop: 10 }}>
-                <p style={{ fontSize: 11, color: "var(--muted)", fontWeight: 600, margin: "0 0 4px" }}>Current apps / frustrations</p>
-                <p style={{ fontSize: 13, color: "var(--foreground)", margin: 0, whiteSpace: "pre-wrap" }}>{r.currentApps}</p>
-              </div>
-            )}
-
-            <div style={{ marginTop: 10 }}>
-              <p style={{ fontSize: 11, color: "var(--muted)", fontWeight: 600, margin: "0 0 4px" }}>Admin notes</p>
-              {editingNotesId === r.id ? (
-                <div style={{ display: "flex", gap: 6 }}>
-                  <textarea
-                    style={{ ...inputStyle, height: 60, padding: "8px 10px", flex: 1, resize: "vertical" }}
-                    value={draftNotes}
-                    onChange={(e) => setDraftNotes(e.target.value)}
-                  />
-                  <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                    <button style={btn} onClick={() => void saveNotes(r.id)}>Save</button>
-                    <button
-                      style={ghostBtn}
-                      onClick={() => {
-                        setEditingNotesId(null);
-                        setDraftNotes("");
-                      }}
-                    >
-                      Cancel
-                    </button>
+              {/* Admin notes — inline single line, click to edit */}
+              <div style={{ marginTop: 6, fontSize: 12 }}>
+                {editingNotesId === r.id ? (
+                  <div style={{ display: "flex", gap: 6 }}>
+                    <textarea
+                      style={{ ...inputStyle, height: 56, padding: "6px 10px", flex: 1, resize: "vertical", fontSize: 12 }}
+                      value={draftNotes}
+                      onChange={(e) => setDraftNotes(e.target.value)}
+                      autoFocus
+                    />
+                    <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                      <button style={{ ...btn, height: 26, fontSize: 11 }} onClick={() => void saveNotes(r.id)}>Save</button>
+                      <button
+                        style={{ ...ghostBtn, height: 26, fontSize: 11, padding: "0 8px" }}
+                        onClick={() => {
+                          setEditingNotesId(null);
+                          setDraftNotes("");
+                        }}
+                      >
+                        Cancel
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <div
-                  style={{ fontSize: 13, color: r.notes ? "var(--foreground)" : "var(--muted)", cursor: "pointer", whiteSpace: "pre-wrap" }}
-                  onClick={() => {
-                    setEditingNotesId(r.id);
-                    setDraftNotes(r.notes ?? "");
-                  }}
-                >
-                  {r.notes || "Click to add notes..."}
-                </div>
-              )}
+                ) : (
+                  <div
+                    style={{ color: r.notes ? "var(--foreground)" : "var(--muted)", cursor: "pointer", whiteSpace: "pre-wrap" }}
+                    onClick={() => {
+                      setEditingNotesId(r.id);
+                      setDraftNotes(r.notes ?? "");
+                    }}
+                  >
+                    <span style={{ fontWeight: 600, color: "var(--muted)" }}>Notes: </span>
+                    {r.notes || "click to add"}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
 
         {visible.length === 0 && (
           <p style={{ fontSize: 13, color: "var(--muted)", textAlign: "center", padding: 24 }}>
@@ -452,11 +488,38 @@ export default function BetaSignupsClient() {
   );
 }
 
-function Field({ label, value }: { label: string; value: string }) {
+function InlineField({
+  label,
+  value,
+  mono,
+}: {
+  label: string;
+  value: string;
+  mono?: boolean;
+}) {
   return (
-    <div>
-      <p style={{ fontSize: 11, color: "var(--muted)", fontWeight: 600, margin: "0 0 2px" }}>{label}</p>
-      <p style={{ fontSize: 13, color: "var(--foreground)", margin: 0 }}>{value}</p>
-    </div>
+    <span style={{ whiteSpace: "nowrap" }}>
+      <span style={{ color: "var(--muted)", fontWeight: 600 }}>{label} </span>
+      <span
+        style={{
+          color: "var(--foreground)",
+          fontFamily: mono
+            ? "ui-monospace, SFMono-Regular, Menlo, monospace"
+            : "inherit",
+          fontSize: mono ? 11 : "inherit",
+        }}
+      >
+        {value}
+      </span>
+    </span>
   );
+}
+
+function shortHost(url: string): string {
+  try {
+    const u = new URL(url);
+    return u.host.replace(/^www\./, "");
+  } catch {
+    return url.length > 40 ? `${url.slice(0, 40)}…` : url;
+  }
 }
