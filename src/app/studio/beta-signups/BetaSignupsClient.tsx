@@ -4,6 +4,16 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 type Status = "pending" | "invited" | "accepted" | "declined";
 
+type Attribution = {
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  referrer?: string;
+  landingUrl?: string;
+};
+
 type Signup = {
   id: string;
   email: string;
@@ -14,6 +24,9 @@ type Signup = {
   currentApps: string | null;
   weeklyHours: string;
   referralSource: string | null;
+  motivation: string | null;
+  applicationReason: string | null;
+  attribution: Attribution | null;
   consentedAt: string;
   status: Status;
   notes: string | null;
@@ -195,6 +208,13 @@ export default function BetaSignupsClient() {
       "weeklyHours",
       "currentApps",
       "referralSource",
+      "motivation",
+      "applicationReason",
+      "utmSource",
+      "utmMedium",
+      "utmCampaign",
+      "referrer",
+      "landingUrl",
       "status",
       "createdAt",
     ];
@@ -204,6 +224,7 @@ export default function BetaSignupsClient() {
     };
     const lines = [header.join(",")];
     for (const r of rows) {
+      const attr = r.attribution ?? {};
       lines.push(
         [
           r.email,
@@ -214,6 +235,13 @@ export default function BetaSignupsClient() {
           r.weeklyHours,
           r.currentApps ?? "",
           r.referralSource ?? "",
+          r.motivation ?? "",
+          r.applicationReason ?? "",
+          attr.utmSource ?? "",
+          attr.utmMedium ?? "",
+          attr.utmCampaign ?? "",
+          attr.referrer ?? "",
+          attr.landingUrl ?? "",
           r.status,
           r.createdAt,
         ]
@@ -341,8 +369,34 @@ export default function BetaSignupsClient() {
               <Field label="Target" value={r.targetLanguage} />
               <Field label="Level" value={r.currentLevel} />
               <Field label="Weekly time" value={HOURS_LABEL[r.weeklyHours] ?? r.weeklyHours} />
+              {r.motivation && <Field label="Learning for" value={r.motivation} />}
               {r.referralSource && <Field label="Heard via" value={r.referralSource} />}
+              {r.attribution?.utmSource && (
+                <Field
+                  label="UTM"
+                  value={[r.attribution.utmSource, r.attribution.utmCampaign]
+                    .filter(Boolean)
+                    .join(" / ")}
+                />
+              )}
             </div>
+
+            {r.applicationReason && (
+              <div style={{ marginTop: 10 }}>
+                <p style={{ fontSize: 11, color: "var(--muted)", fontWeight: 600, margin: "0 0 4px" }}>
+                  Why they applied
+                </p>
+                <p style={{ fontSize: 13, color: "var(--foreground)", margin: 0, whiteSpace: "pre-wrap" }}>
+                  {r.applicationReason}
+                </p>
+              </div>
+            )}
+
+            {r.attribution?.referrer && !r.attribution?.utmSource && (
+              <p style={{ marginTop: 8, fontSize: 11, color: "var(--muted)" }}>
+                Referrer: {r.attribution.referrer}
+              </p>
+            )}
 
             {r.currentApps && (
               <div style={{ marginTop: 10 }}>

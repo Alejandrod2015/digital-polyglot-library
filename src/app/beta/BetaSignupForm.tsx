@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { trackGa4Event } from "@/lib/ga4";
 
 const NATIVE_LANGUAGES = [
@@ -27,6 +27,77 @@ const LEVELS = [
   { value: "advanced", label: "Advanced" },
 ];
 
+const WEEKLY_HOURS = [
+  { value: "1-3", label: "1-3 hrs" },
+  { value: "4-7", label: "4-7 hrs" },
+  { value: "8+", label: "8+ hrs" },
+];
+
+const MOTIVATIONS = [
+  "Travel",
+  "Family connection",
+  "Work",
+  "Move abroad",
+  "Just for fun",
+  "Other",
+];
+
+const REFERRAL_SOURCES = [
+  "Instagram",
+  "TikTok",
+  "Google search",
+  "Friend",
+  "Podcast",
+  "Blog or article",
+  "Other",
+];
+
+const APPLICATION_REASON_MIN = 20;
+const APPLICATION_REASON_MAX = 1000;
+
+const ATTRIBUTION_STORAGE_KEY = "dp_beta_attribution_v1";
+
+type AttributionPayload = {
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  referrer?: string;
+  landingUrl?: string;
+};
+
+function readPersistedAttribution(): AttributionPayload | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" ? (parsed as AttributionPayload) : null;
+  } catch {
+    return null;
+  }
+}
+
+function captureAttribution(): AttributionPayload {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const get = (k: string) => params.get(k)?.trim() || undefined;
+  const attribution: AttributionPayload = {
+    utmSource: get("utm_source"),
+    utmMedium: get("utm_medium"),
+    utmCampaign: get("utm_campaign"),
+    utmContent: get("utm_content"),
+    utmTerm: get("utm_term"),
+    referrer: document.referrer?.trim() || undefined,
+    landingUrl: window.location.href,
+  };
+  // Drop empty keys
+  return Object.fromEntries(
+    Object.entries(attribution).filter(([, v]) => Boolean(v)),
+  ) as AttributionPayload;
+}
+
 type FormState = {
   email: string;
   nativeLanguage: string;
@@ -35,6 +106,12 @@ type FormState = {
   targetLanguageOther: string;
   currentLevel: string;
   hasIPhone: "yes" | "no" | "";
+  weeklyHours: string;
+  motivation: string;
+  motivationOther: string;
+  referralSource: string;
+  referralSourceOther: string;
+  applicationReason: string;
   consent: boolean;
 };
 
@@ -46,6 +123,12 @@ const initialState: FormState = {
   targetLanguageOther: "",
   currentLevel: "",
   hasIPhone: "",
+  weeklyHours: "",
+  motivation: "",
+  motivationOther: "",
+  referralSource: "",
+  referralSourceOther: "",
+  applicationReason: "",
   consent: false,
 };
 
@@ -68,6 +151,26 @@ export default function BetaSignupForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState<null | { duplicate?: boolean }>(null);
   const [error, setError] = useState<string | null>(null);
+  // Captured once on mount so UTM + referrer survive any internal nav the
+  // visitor does between landing and submit.
+  const attributionRef = useRef<AttributionPayload>({});
+
+  useEffect(() => {
+    const persisted = readPersistedAttribution();
+    if (persisted && Object.keys(persisted).length > 0) {
+      attributionRef.current = persisted;
+      return;
+    }
+    const fresh = captureAttribution();
+    attributionRef.current = fresh;
+    if (Object.keys(fresh).length > 0) {
+      try {
+        window.sessionStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(fresh));
+      } catch {
+        // sessionStorage blocked: keep the in-memory copy and move on.
+      }
+    }
+  }, []);
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -79,6 +182,16 @@ export default function BetaSignupForm() {
 
   function resolvedTargetLanguage(): string {
     return form.targetLanguage === "Other" ? form.targetLanguageOther.trim() : form.targetLanguage;
+  }
+
+  function resolvedMotivation(): string {
+    return form.motivation === "Other" ? form.motivationOther.trim() : form.motivation;
+  }
+
+  function resolvedReferralSource(): string {
+    return form.referralSource === "Other"
+      ? form.referralSourceOther.trim()
+      : form.referralSource;
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -107,6 +220,27 @@ export default function BetaSignupForm() {
       setError("Please pick your current level.");
       return;
     }
+    if (!form.weeklyHours) {
+      setError("Please pick how many hours per week you'll dedicate.");
+      return;
+    }
+    const motivation = resolvedMotivation();
+    if (!motivation) {
+      setError("Please tell us why you're learning.");
+      return;
+    }
+    const referralSource = resolvedReferralSource();
+    if (!referralSource) {
+      setError("Please tell us how you heard about us.");
+      return;
+    }
+    const applicationReason = form.applicationReason.trim();
+    if (applicationReason.length < APPLICATION_REASON_MIN) {
+      setError(
+        `Please write at least ${APPLICATION_REASON_MIN} characters about why you're applying.`,
+      );
+      return;
+    }
 
     setSubmitting(true);
     try {
@@ -119,7 +253,12 @@ export default function BetaSignupForm() {
           targetLanguage,
           currentLevel: LEVELS.find((l) => l.value === form.currentLevel)?.label ?? form.currentLevel,
           hasIPhone: form.hasIPhone === "yes",
+          weeklyHours: form.weeklyHours,
+          motivation,
+          referralSource,
+          applicationReason,
           consent: form.consent,
+          attribution: attributionRef.current,
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -287,6 +426,111 @@ export default function BetaSignupForm() {
           ))}
         </div>
         <p className={helperStyle}>The beta is iPhone-only for now.</p>
+      </div>
+
+      <div>
+        <span className={labelStyle}>Hours per week you'll dedicate</span>
+        <div className="grid grid-cols-3 gap-2">
+          {WEEKLY_HOURS.map((opt) => (
+            <label key={opt.value} className={chipClass(form.weeklyHours === opt.value)}>
+              <input
+                type="radio"
+                name="weeklyHours"
+                value={opt.value}
+                checked={form.weeklyHours === opt.value}
+                onChange={() => update("weeklyHours", opt.value)}
+                className="sr-only"
+              />
+              {opt.label}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="motivation" className={labelStyle}>
+          Why are you learning?
+        </label>
+        <select
+          id="motivation"
+          required
+          value={form.motivation}
+          onChange={(e) => update("motivation", e.target.value)}
+          className={selectStyle}
+        >
+          <option value="" disabled>
+            Pick one
+          </option>
+          {MOTIVATIONS.map((m) => (
+            <option key={m} value={m}>
+              {m}
+            </option>
+          ))}
+        </select>
+        {form.motivation === "Other" && (
+          <input
+            type="text"
+            required
+            value={form.motivationOther}
+            onChange={(e) => update("motivationOther", e.target.value)}
+            className={`${inputStyle} mt-2`}
+            placeholder="Your reason"
+            maxLength={200}
+          />
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="referralSource" className={labelStyle}>
+          How did you hear about us?
+        </label>
+        <select
+          id="referralSource"
+          required
+          value={form.referralSource}
+          onChange={(e) => update("referralSource", e.target.value)}
+          className={selectStyle}
+        >
+          <option value="" disabled>
+            Pick one
+          </option>
+          {REFERRAL_SOURCES.map((s) => (
+            <option key={s} value={s}>
+              {s}
+            </option>
+          ))}
+        </select>
+        {form.referralSource === "Other" && (
+          <input
+            type="text"
+            required
+            value={form.referralSourceOther}
+            onChange={(e) => update("referralSourceOther", e.target.value)}
+            className={`${inputStyle} mt-2`}
+            placeholder="Where did you hear about us?"
+            maxLength={200}
+          />
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="applicationReason" className={labelStyle}>
+          Why are you applying to the beta?
+        </label>
+        <textarea
+          id="applicationReason"
+          required
+          value={form.applicationReason}
+          onChange={(e) => update("applicationReason", e.target.value)}
+          className={`${inputStyle} min-h-[96px] resize-y`}
+          placeholder="A few sentences. What do you want to get out of it?"
+          minLength={APPLICATION_REASON_MIN}
+          maxLength={APPLICATION_REASON_MAX}
+        />
+        <p className={helperStyle}>
+          {form.applicationReason.trim().length}/{APPLICATION_REASON_MAX} · min{" "}
+          {APPLICATION_REASON_MIN}
+        </p>
       </div>
 
       <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-xs font-bold leading-relaxed text-white/65">

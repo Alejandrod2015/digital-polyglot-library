@@ -469,21 +469,30 @@ model CatalogStoryAudioTimings {
 // at /studio/beta-signups and triggers TestFlight invites manually in App
 // Store Connect. `status` lifecycle: pending -> invited -> accepted | declined.
 model BetaSignup {
-  id             String    @id @default(cuid())
-  email          String    @unique
-  nativeLanguage String
-  targetLanguage String
-  currentLevel   String
-  hasIPhone      Boolean
-  currentApps    String?
-  weeklyHours    String?
-  referralSource String?
-  consentedAt    DateTime
-  status         String    @default("pending")
-  notes          String?
-  invitedAt      DateTime?
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  id                String    @id @default(cuid())
+  email             String    @unique
+  nativeLanguage    String
+  targetLanguage    String
+  currentLevel      String
+  hasIPhone         Boolean
+  currentApps       String?
+  weeklyHours       String?
+  referralSource    String?
+  // New required fields (added 2026-05-17). Existing rows pre-migration
+  // will have these NULL; the form going forward requires them.
+  motivation        String?
+  applicationReason String?
+  // Silent attribution captured from the browser at form mount:
+  // utm_source/medium/campaign/content/term, document.referrer, and the
+  // landing URL the visitor first arrived at. Lets us source traffic
+  // without asking.
+  attribution       Json?
+  consentedAt       DateTime
+  status            String    @default("pending")
+  notes             String?
+  invitedAt         DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
 
   @@index([status])
   @@index([createdAt])
