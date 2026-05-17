@@ -75,6 +75,20 @@ type Props = {
   comingSoonLanguages?: ReadonlySet<string>;
   onComplete: (payload: OnboardingPayload) => Promise<void> | void;
   onCancel?: () => void;
+  /** Fire-and-forget tracker injected by the shell so OnboardingFlow
+   *  stays unaware of session/auth details. Used to record funnel
+   *  events (started / step_completed / finished / abandoned /
+   *  level_test_started / level_test_completed) into UserMetric. */
+  trackEvent?: (
+    eventType:
+      | "onboarding_started"
+      | "onboarding_step_completed"
+      | "onboarding_finished"
+      | "onboarding_abandoned"
+      | "onboarding_level_test_started"
+      | "onboarding_level_test_completed",
+    metadata?: Record<string, unknown>
+  ) => void;
 };
 
 type LanguageOption = {
@@ -202,6 +216,7 @@ export function OnboardingFlow({
   comingSoonLanguages,
   onComplete,
   onCancel,
+  trackEvent,
 }: Props) {
   // 4-step flow:
   //   1. Languages
@@ -240,6 +255,15 @@ export function OnboardingFlow({
   const [reminderMinute, setReminderMinute] = useState<number | null>(0);
   const [timePickerOpen, setTimePickerOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  // Fire onboarding_started exactly once per mount. The ref guard
+  // protects against StrictMode double-invokes and re-renders.
+  const startedRef = useRef(false);
+  useEffect(() => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    trackEvent?.("onboarding_started", { testMode: Boolean(testMode) });
+  }, [trackEvent, testMode]);
 
   // Slide animation between steps. translateX 24→0 + fade-in.
   const slide = useRef(new Animated.Value(0)).current;
@@ -304,7 +328,16 @@ export function OnboardingFlow({
         );
       }
     }
+    // Record the step the user just completed before navigating. We
+    // emit this for steps 1-3; step 4 is implicit in onboarding_finished.
     if (step < 4) {
+      trackEvent?.("onboarding_step_completed", {
+        step,
+        selectionsCount: selectedKeys.length,
+        whysCount: whys.size,
+        dailyMinutes,
+        remindersEnabled,
+      });
       setStep(((step + 1) as 1 | 2 | 3 | 4));
       return;
     }
@@ -313,6 +346,7 @@ export function OnboardingFlow({
 
   function handleBack() {
     if (step === 1) {
+      trackEvent?.("onboarding_abandoned", { step });
       onCancel?.();
       return;
     }
@@ -341,6 +375,18 @@ export function OnboardingFlow({
         remindersEnabled,
         reminderHour: remindersEnabled ? reminderHour : null,
         reminderMinute: remindersEnabled ? reminderMinute ?? 0 : null,
+      });
+      trackEvent?.("onboarding_finished", {
+        languages: Array.from(new Set(selectedOptions.map((option) => option.name))),
+        primaryLanguage: selectedOptions[0]?.name ?? null,
+        primaryVariant: selectedOptions[0]?.variantCode ?? null,
+        languagesCount: selectedOptions.length,
+        whysCount: whys.size,
+        selfReportedLevel: level,
+        testedLevel,
+        tookLevelTest: testedLevel !== null,
+        dailyMinutes,
+        remindersEnabled,
       });
     } finally {
       setSubmitting(false);
@@ -648,7 +694,13 @@ export function OnboardingFlow({
                 runner is a full-screen modal that overlays this flow. */}
             {language && hasLevelTest(language) ? (
               <Pressable
-                onPress={() => setLevelTestOpen(true)}
+                onPress={() => {
+                  trackEvent?.("onboarding_level_test_started", {
+                    language,
+                    variant: selectedOptions[0]?.variantCode ?? null,
+                  });
+                  setLevelTestOpen(true);
+                }}
                 style={styles.levelTestCta}
               >
                 <View style={styles.levelTestCtaIcon}>
@@ -718,6 +770,10 @@ export function OnboardingFlow({
             // the user on step 4 wondering why nothing happened.)
             setTestedLevel(result.level);
             setLevelTestOpen(false);
+            trackEvent?.("onboarding_level_test_completed", {
+              language,
+              cefrLevel: result.level,
+            });
             if (selectedOptions.length === 0 || !dailyMinutes) return;
             setSubmitting(true);
             try {
@@ -740,6 +796,18 @@ export function OnboardingFlow({
                 remindersEnabled,
                 reminderHour: remindersEnabled ? reminderHour : null,
         reminderMinute: remindersEnabled ? reminderMinute ?? 0 : null,
+              });
+              trackEvent?.("onboarding_finished", {
+                languages: Array.from(new Set(selectedOptions.map((option) => option.name))),
+                primaryLanguage: selectedOptions[0]?.name ?? null,
+                primaryVariant: selectedOptions[0]?.variantCode ?? null,
+                languagesCount: selectedOptions.length,
+                whysCount: whys.size,
+                selfReportedLevel: level,
+                testedLevel: result.level,
+                tookLevelTest: true,
+                dailyMinutes,
+                remindersEnabled,
               });
             } finally {
               setSubmitting(false);
