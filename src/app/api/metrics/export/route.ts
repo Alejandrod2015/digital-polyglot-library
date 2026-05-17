@@ -3,7 +3,7 @@ export const runtime = "nodejs";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { isMetricsAccessAllowed } from "@/lib/metricsAccess";
+import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
 
 /**
  * CSV export of the daily plays/completions series for the requested
@@ -41,8 +41,15 @@ export async function GET(req: NextRequest): Promise<Response> {
   const now = new Date();
   const from = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
 
+  // Same exclusion as the live dashboard: drop internal traffic so the
+  // CSV reflects external usage only.
+  const internalIds = await getInternalUserIds();
+  const excludeInternal =
+    internalIds.length > 0 ? { userId: { notIn: internalIds } } : {};
+
   const rows = await prisma.userMetric.findMany({
     where: {
+      ...excludeInternal,
       createdAt: { gte: from, lte: now },
       eventType: { in: ["audio_play", "audio_complete"] },
       ...(storySlug ? { storySlug } : {}),

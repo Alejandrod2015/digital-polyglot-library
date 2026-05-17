@@ -4,7 +4,7 @@ import { createClerkClient } from "@clerk/backend";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { isMetricsAccessAllowed } from "@/lib/metricsAccess";
+import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
 import { books } from "@/data/books";
 import { getStandaloneStoriesByIds, getStandaloneStoriesBySlugs } from "@/lib/standaloneStories";
 
@@ -510,6 +510,12 @@ export async function GET(req: NextRequest): Promise<Response> {
   const bookSlug = search.get("bookSlug")?.trim() || null;
   const storyIdsForFilter = storySlug ? await resolveStoryIdsForSlug(storySlug) : [];
   const savedStoryFilter = getSavedStoryFilter(storySlug, storyIdsForFilter);
+  // Exclude internal traffic (the user + studio team) from every count
+  // so the dashboard reflects external users only. Studio members are
+  // looked up via Clerk by their team email and cached for 5 minutes.
+  const internalIds = await getInternalUserIds();
+  const excludeInternal =
+    internalIds.length > 0 ? { userId: { notIn: internalIds } } : {};
   const cacheKey = JSON.stringify({
     userId,
     section,
@@ -592,6 +598,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     await Promise.all([
     needsEventData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         eventType: { in: ["audio_play", "audio_complete"] },
         ...(storySlug ? { storySlug } : {}),
@@ -609,6 +616,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsOverviewData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: new Date(now.getTime() - 24 * 60 * 60 * 1000), lte: now },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
@@ -618,6 +626,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsOverviewData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000), lte: now },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
@@ -627,6 +636,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsProgressData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
         ...(storySlug ? { storySlug } : {}),
@@ -643,6 +653,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsActiveUsersData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
@@ -653,6 +664,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsSavedCountsData ? prisma.libraryStory.groupBy({
       by: ["storyId"],
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         ...savedStoryFilter,
         ...(bookSlug ? { bookId: bookSlug } : {}),
@@ -664,6 +676,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsSavedCountsData ? prisma.libraryBook.groupBy({
       by: ["bookId"],
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         ...(bookSlug ? { bookId: bookSlug } : {}),
       },
@@ -673,6 +686,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsOverviewData ? prisma.libraryStory.count({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         ...savedStoryFilter,
         ...(bookSlug ? { bookId: bookSlug } : {}),
@@ -680,6 +694,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve(0),
     needsOverviewData ? prisma.libraryBook.count({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         ...(bookSlug ? { bookId: bookSlug } : {}),
       },
@@ -687,6 +702,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsTrialData ? prisma.userMetric.groupBy({
       by: ["eventType"],
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         storySlug: "__plans__",
         bookSlug: "billing",
@@ -704,6 +720,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsTrialData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         storySlug: "__plans__",
         bookSlug: "billing",
@@ -719,6 +736,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsReminderFunnelData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -735,6 +753,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsReminderFunnelData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -752,6 +771,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsCheckoutData ? prisma.userMetric.groupBy({
       by: ["eventType"],
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         storySlug: "__plans__",
         bookSlug: "billing",
@@ -764,6 +784,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsFunnelsData ? prisma.userMetric.groupBy({
       by: ["storySlug"],
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         eventType: "upgrade_cta_clicked",
         storySlug: { startsWith: "__upgrade_" },
@@ -773,6 +794,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsJourneyFunnelData ? prisma.userMetric.groupBy({
       by: ["eventType"],
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         bookSlug: "journey",
         eventType: {
@@ -792,6 +814,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsReminderFunnelData ? prisma.userMetric.groupBy({
       by: ["eventType"],
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -803,6 +826,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsReminderFunnelData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         storySlug: "daily-loop",
         bookSlug: "mobile",
@@ -815,11 +839,14 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     // Signup totals + rolling windows + recent signups list.
     needsSignupData
-      ? prisma.userMetric.count({ where: { eventType: "signup_completed" } })
+      ? prisma.userMetric.count({
+          where: { ...excludeInternal, eventType: "signup_completed" },
+        })
       : Promise.resolve(0),
     needsSignupData
       ? prisma.userMetric.count({
           where: {
+            ...excludeInternal,
             eventType: "signup_completed",
             createdAt: { gte: sevenDaysAgo },
           },
@@ -828,6 +855,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     needsSignupData
       ? prisma.userMetric.count({
           where: {
+            ...excludeInternal,
             eventType: "signup_completed",
             createdAt: { gte: thirtyDaysAgo },
           },
@@ -835,7 +863,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       : Promise.resolve(0),
     needsSignupData
       ? prisma.userMetric.findMany({
-          where: { eventType: "signup_completed" },
+          where: { ...excludeInternal, eventType: "signup_completed" },
           select: { userId: true, createdAt: true, metadata: true },
           orderBy: { createdAt: "desc" },
           take: 25,
@@ -846,6 +874,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     // breakdown from metadata.step that a single groupBy can't express.
     needsAudienceData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: from, lte: to },
         storySlug: "onboarding",
         eventType: {
@@ -870,6 +899,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     // pause/continue) and bucket users by minutes/week.
     needsAudienceData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: last7DaysStart, lte: now },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
       },
@@ -885,6 +915,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     // previous window. Used to derive `prevKpis` for deltas.
     needsPrevData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: prevFrom, lt: prevTo },
         eventType: { in: ["audio_play", "audio_complete"] },
         ...(storySlug ? { storySlug } : {}),
@@ -901,6 +932,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsPrevData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: prevFrom, lt: prevTo },
         eventType: { in: ["audio_pause", "audio_complete", "continue_listening"] },
         ...(storySlug ? { storySlug } : {}),
@@ -916,6 +948,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsPrevData ? prisma.userMetric.findMany({
       where: {
+        ...excludeInternal,
         createdAt: { gte: prevFrom, lt: prevTo },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
@@ -925,6 +958,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve([]),
     needsPrevData ? prisma.libraryStory.count({
       where: {
+        ...excludeInternal,
         createdAt: { gte: prevFrom, lt: prevTo },
         ...savedStoryFilter,
         ...(bookSlug ? { bookId: bookSlug } : {}),
@@ -932,6 +966,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     }) : Promise.resolve(0),
     needsPrevData ? prisma.libraryBook.count({
       where: {
+        ...excludeInternal,
         createdAt: { gte: prevFrom, lt: prevTo },
         ...(bookSlug ? { bookId: bookSlug } : {}),
       },
