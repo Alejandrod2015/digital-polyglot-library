@@ -112,7 +112,7 @@ export function ResumenView({ data }: { data: DashboardData }) {
 
       <div className="mx-subkpi-grid">
         <KpiCard
-          label="Active users (rango)"
+          label="Active users"
           value={k.activeUsersInRange}
           prev={p?.activeUsersInRange}
         />
@@ -133,7 +133,7 @@ export function ResumenView({ data }: { data: DashboardData }) {
           prev={p?.uniqueBooks}
         />
         <KpiCard
-          label="Avg min / active user"
+          label="Avg min/user"
           value={k.avgMinutesPerActiveUser}
           prev={p?.avgMinutesPerActiveUser}
           accent="gold"
