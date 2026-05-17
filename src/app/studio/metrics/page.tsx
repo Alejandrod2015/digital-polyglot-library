@@ -49,6 +49,8 @@ const EMPTY_DATA: DashboardData = {
   topStoriesByMinutes: [],
   topSavedStories: [],
   topSavedBooks: [],
+  signups: { total: 0, last7d: 0, last30d: 0 },
+  recentSignups: [],
   trialFunnel: {
     started: 0,
     startedWithPm: 0,
