@@ -49,7 +49,7 @@ export default async function StoryPracticeSetPage({ params }: Props) {
       description="Set persistido de ejercicios al terminar esta historia. Los users ven exactamente esto, en este orden."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
-        { label: "Journey stories", href: "/studio/journey-stories" },
+        { label: "Stories library", href: "/studio/journey-stories" },
         { label: story.title ?? story.slug ?? storyId, href: `/studio/journey-stories/${storyId}` },
         { label: "Práctica" },
       ]}

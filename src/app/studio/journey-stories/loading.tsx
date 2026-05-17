@@ -3,7 +3,7 @@ import StudioShell from "@/components/studio/StudioShell";
 export default function JourneyStoriesLoading() {
   return (
     <StudioShell
-      title="Journey stories"
+      title="Stories library"
       description="Cargando historias, huecos y acciones editoriales..."
     >
       <div style={{ display: "grid", gap: 16 }}>

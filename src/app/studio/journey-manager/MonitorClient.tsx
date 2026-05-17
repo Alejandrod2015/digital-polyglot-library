@@ -1510,6 +1510,28 @@ export default function MonitorClient() {
                                             </button>
                                           )}
                                           {s.status === "published" && s.coverDone && s.audioStatus === "ready" && <span style={{ fontSize: 9, color: "#22c55e" }}>✓</span>}
+                                          {/* Quick jump to the practice exercises editor for this
+                                              story. The /studio/journey-stories/[id]/practice route
+                                              already reads from journeyStory by id, so this is the
+                                              fastest path to listen to + edit per-exercise audio. */}
+                                          <a
+                                            href={`/studio/journey-stories/${s.id}/practice`}
+                                            onClick={(e) => e.stopPropagation()}
+                                            style={{
+                                              ...btnSecondary,
+                                              fontSize: 10,
+                                              height: 24,
+                                              padding: "0 8px",
+                                              color: "#a78bfa",
+                                              borderColor: "rgba(167,139,250,0.3)",
+                                              textDecoration: "none",
+                                              display: "inline-flex",
+                                              alignItems: "center",
+                                            }}
+                                            title="Abrir editor de ejercicios de práctica con audio por fila"
+                                          >
+                                            Ejercicios
+                                          </a>
                                           <button onClick={() => setConfirmAction({ message: `Eliminar "${s.title || "Historia " + (s.slotIndex + 1)}"?`, onConfirm: () => deleteStory(s.id) })}
                                             style={deleteBtn} title="Eliminar historia">&#x2716;</button>
                                         </div>

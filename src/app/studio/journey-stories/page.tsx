@@ -7,11 +7,11 @@ export default async function JourneyStoriesPage() {
 
   return (
     <StudioShell
-      title="Journey stories"
+      title="Stories library"
       description="Aquí puedes revisar y editar historias existentes. Para crear journeys nuevos y completarlos, la entrada principal ahora es el creador."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
-        { label: "Journey stories" },
+        { label: "Stories library" },
       ]}
     >
       <JourneyStoriesPageClient />
