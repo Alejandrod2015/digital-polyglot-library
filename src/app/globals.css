@@ -4,7 +4,7 @@
   /* Dark theme defaults */
   --background: #0b1220;
   --surface: #111a2b;
-  --bg-sidebar: #071326;
+  --bg-sidebar: #0b1e36;
   --bg-content: #0b1e36;
   --bg-player: rgba(7, 16, 30, 0.94);
   --player-border-top: rgba(255, 255, 255, 0.14);
@@ -109,7 +109,7 @@
 :root[data-theme="dark"] {
   --background: #0b1220;
   --surface: #111a2b;
-  --bg-sidebar: #071326;
+  --bg-sidebar: #0b1e36;
   --bg-content: #0b1e36;
   --bg-player: rgba(7, 16, 30, 0.94);
   --player-border-top: rgba(255, 255, 255, 0.14);
@@ -145,7 +145,7 @@
 :root[data-theme="light"] {
   --background: #eef3fb;
   --surface: #f7f9fd;
-  --bg-sidebar: #e2ecfa;
+  --bg-sidebar: #eef3fb;
   --bg-content: #eef3fb;
   --bg-player: rgba(238, 243, 251, 0.96);
   --player-border-top: rgba(15, 23, 42, 0.16);
@@ -182,7 +182,7 @@
   :root:not([data-theme]) {
     --background: #eef3fb;
     --surface: #f7f9fd;
-    --bg-sidebar: #e2ecfa;
+    --bg-sidebar: #eef3fb;
     --bg-content: #eef3fb;
     --bg-player: rgba(238, 243, 251, 0.96);
     --player-border-top: rgba(15, 23, 42, 0.16);
