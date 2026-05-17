@@ -68,8 +68,9 @@ const NAV_SECTIONS = [
 /* ── Colors (aligned with the landing + iOS app palette) ── */
 const ACCENT = "#fcd34d"; // gold — primary brand accent
 const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
-const SIDEBAR_BG = "#051834"; // bg-0 from landing tokens
-const SIDEBAR_BORDER = "rgba(255, 255, 255, 0.08)";
+// Navy editorial palette (mismas vars `--mx-*` que /studio/metrics).
+const SIDEBAR_BG = "#060d1c";
+const SIDEBAR_BORDER = "rgba(255, 255, 255, 0.07)";
 
 function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
   const props = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -170,9 +171,12 @@ export default function StudioShell({
         display: "flex",
         minHeight: "100vh",
         color: "#ffffff",
-        backgroundColor: "#051834",
+        // Navy editorial palette del handoff de Métricas, ahora aplicado
+        // a TODO el Studio para consistencia (Journey Manager, Catálogo,
+        // etc.). El radial teal sutil reemplaza el ex-gradiente azul.
+        backgroundColor: "#0a1628",
         backgroundImage:
-          "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(29, 67, 122, 0.30) 0%, transparent 60%), linear-gradient(180deg, #08264d 0%, #051834 60%, #051834 100%)",
+          "radial-gradient(1200px 600px at 80% -10%, rgba(20, 184, 166, 0.06), transparent)",
         backgroundRepeat: "no-repeat",
       }}
     >

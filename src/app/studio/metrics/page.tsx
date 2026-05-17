@@ -275,17 +275,6 @@ export default function MetricsDashboard() {
     setData(EMPTY_DATA);
   }, [bookSlug, days, storySlug]);
 
-  // Force the editorial navy palette across the page chrome (header,
-  // sidebar, body bg) while this page is mounted. We toggle a data
-  // attribute on <body> so the override is scoped — other Studio
-  // pages keep their existing teal-on-blue theme.
-  useEffect(() => {
-    document.body.dataset.mxMetrics = "true";
-    return () => {
-      delete document.body.dataset.mxMetrics;
-    };
-  }, []);
-
   function handleExport() {
     const qs = new URLSearchParams();
     qs.set("section", section);
