@@ -400,9 +400,25 @@ export default function JourneyStoryEditor({ story }: Props) {
                 <input value={form.audioUrl} onChange={(e) => update("audioUrl", e.target.value)} placeholder="https://..." className="studio-input" style={field} />
               </div>
               {form.audioUrl.trim() ? (
-                <a href={form.audioUrl} target="_blank" rel="noreferrer" style={{ ...btn, width: "fit-content" }}>
-                  Abrir audio
-                </a>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  {/* Inline player so revisors don't have to open a new
+                      tab + Studio's media path is dual-engine (Piper vs
+                      ElevenLabs) and we want side-by-side comparison. */}
+                  <audio
+                    controls
+                    preload="none"
+                    src={form.audioUrl}
+                    style={{ width: "100%", height: 36 }}
+                  />
+                  <a
+                    href={form.audioUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ ...btn, width: "fit-content" }}
+                  >
+                    Abrir audio en pestaña nueva
+                  </a>
+                </div>
               ) : null}
             </div>
           </div>

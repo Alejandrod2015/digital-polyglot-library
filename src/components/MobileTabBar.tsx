@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Brain, ChevronDown, Compass, Home, LogIn, Menu, Sparkles, Star } from "lucide-react";
+import { ChevronDown, Compass, Home, LogIn, Map, Menu, Sparkles, Star } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { formatVariantLabel } from "@/lib/languageVariant";
@@ -83,22 +83,22 @@ export default function MobileTabBar() {
     ? plan === "polyglot"
       ? [
           { href: "/", label: "Home", icon: Home },
+          { href: "/journey", label: "Journey", icon: Map },
           { href: "/explore", label: "Explore", icon: Compass },
-          { href: "/practice", label: "Practice", icon: Brain },
           { href: "/favorites", label: "Favorites", icon: Star },
           { href: "/create", label: "Create", icon: Sparkles },
         ]
       : [
           { href: "/", label: "Home", icon: Home },
+          { href: "/journey", label: "Journey", icon: Map },
           { href: "/explore", label: "Explore", icon: Compass },
-          { href: "/practice", label: "Practice", icon: Brain },
           { href: "/favorites", label: "Favorites", icon: Star },
           { href: "/settings", label: "Menu", icon: Menu },
         ]
     : [
         { href: "/", label: "Home", icon: Home },
+        { href: "/journey", label: "Journey", icon: Map },
         { href: "/explore", label: "Explore", icon: Compass },
-        { href: "/practice", label: "Practice", icon: Brain },
         { href: "/favorites", label: "Favorites", icon: Star },
         { href: "/sign-in", label: "Sign in", icon: LogIn },
       ];

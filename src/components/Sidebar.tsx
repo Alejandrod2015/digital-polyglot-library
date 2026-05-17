@@ -15,6 +15,7 @@ import {
   LogOut,
   Sparkles,
   Crown,
+  Map,
 } from "lucide-react";
 import {
   SignedIn,
@@ -158,6 +159,15 @@ export default function Sidebar({ onClose }: SidebarProps) {
         </Link>
 
         <Link
+          href="/journey"
+          onClick={handleNavClick}
+          data-tour-target="journey"
+          className={`${navLinkClass} ${navLinkHighlight("journey")}`}
+        >
+          <Map size={22} /> Journey
+        </Link>
+
+        <Link
           href="/explore"
           onClick={handleNavClick}
           data-tour-target="explore"
@@ -172,7 +182,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
           data-tour-target="practice-favorites"
           className={`${navLinkClass} ${navLinkHighlight("practice-favorites")}`}
         >
-          <Brain size={22} /> Practice
+          <Brain size={22} /> Review
         </Link>
 
         <Link

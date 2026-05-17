@@ -18,7 +18,7 @@ export default async function JourneyStoryEditorPage({
       description="Mantén la autoría del Journey dentro de Studio mientras el runtime sigue leyendo desde la capa actual de contenido."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
-        { label: "Biblioteca de historias", href: "/studio/journey-stories" },
+        { label: "Journey stories", href: "/studio/journey-stories" },
         { label: "Editar historia" },
       ]}
     >
