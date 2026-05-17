@@ -264,10 +264,25 @@ function ExerciseEditModal({
   );
 }
 
-const th: React.CSSProperties = { padding: "8px 10px", fontWeight: 600, fontSize: 12, color: "#475569" };
-const td: React.CSSProperties = { padding: "10px", verticalAlign: "top", fontSize: 13 };
+// Styles use Studio CSS vars (--background, --foreground, --card-bg,
+// --card-border, --muted, --primary) so the editor renders correctly
+// in both light and dark themes. Earlier version hardcoded #fff /
+// #475569 / etc., which made every input text invisible in the dark
+// Studio chrome (dark text on dark background).
+const th: React.CSSProperties = {
+  padding: "8px 10px",
+  fontWeight: 600,
+  fontSize: 12,
+  color: "var(--muted)",
+};
+const td: React.CSSProperties = {
+  padding: "10px",
+  verticalAlign: "top",
+  fontSize: 13,
+  color: "var(--foreground)",
+};
 const btnPrimary: React.CSSProperties = {
-  background: "#0f172a",
+  background: "var(--primary)",
   color: "#fff",
   border: "none",
   padding: "8px 14px",
@@ -277,9 +292,9 @@ const btnPrimary: React.CSSProperties = {
   fontWeight: 600,
 };
 const btnSecondary: React.CSSProperties = {
-  background: "#e2e8f0",
-  color: "#0f172a",
-  border: "none",
+  background: "var(--card-bg)",
+  color: "var(--foreground)",
+  border: "1px solid var(--card-border)",
   padding: "8px 14px",
   borderRadius: 6,
   cursor: "pointer",
@@ -288,7 +303,7 @@ const btnSecondary: React.CSSProperties = {
 const btnLink: React.CSSProperties = {
   background: "none",
   border: "none",
-  color: "#2563eb",
+  color: "var(--primary)",
   cursor: "pointer",
   fontSize: 13,
   fontWeight: 500,
@@ -296,7 +311,7 @@ const btnLink: React.CSSProperties = {
 const modalOverlay: React.CSSProperties = {
   position: "fixed",
   inset: 0,
-  background: "rgba(15,23,42,0.5)",
+  background: "rgba(0, 0, 0, 0.55)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -304,7 +319,9 @@ const modalOverlay: React.CSSProperties = {
   padding: 16,
 };
 const modal: React.CSSProperties = {
-  background: "#fff",
+  background: "var(--background)",
+  color: "var(--foreground)",
+  border: "1px solid var(--card-border)",
   borderRadius: 8,
   padding: 20,
   width: "100%",
@@ -318,13 +335,15 @@ const lbl: React.CSSProperties = {
   marginBottom: 4,
   fontSize: 12,
   fontWeight: 600,
-  color: "#475569",
+  color: "var(--muted)",
 };
 const inp: React.CSSProperties = {
   width: "100%",
   padding: "8px 10px",
-  border: "1px solid #cbd5e1",
+  border: "1px solid var(--card-border)",
   borderRadius: 6,
   fontSize: 13,
   boxSizing: "border-box",
+  background: "var(--card-bg)",
+  color: "var(--foreground)",
 };
