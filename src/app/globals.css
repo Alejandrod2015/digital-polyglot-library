@@ -666,6 +666,27 @@ body {
  * Metrics dashboard (.mx-*) — editorial analytics layout.
  * Used by /studio/metrics. Token-driven via --mx-* vars.
  * =======================================================*/
+/* Page-scoped override: cuando /studio/metrics está montada, body
+ * gana `data-mx-metrics="true"` y todo el chrome (sidebar, header,
+ * background) se repinta en el navy editorial del handoff. El resto
+ * del Studio conserva su teal/yellow theme intacto porque el data
+ * attribute solo existe en esta ruta. */
+body[data-mx-metrics="true"] {
+  /* Sobrescribe los tokens del Studio para que TODO el chrome (incluyendo
+   * el div outer del StudioShell que usa inline style `var(--background)`
+   * en el contenedor principal) se pinte en navy editorial. */
+  --background: var(--mx-bg-1);
+  --bg-content: var(--mx-bg-1);
+  background-color: var(--mx-bg-1) !important;
+}
+body[data-mx-metrics="true"] aside {
+  background: var(--mx-bg-sidebar) !important;
+  border-right-color: var(--mx-border) !important;
+}
+body[data-mx-metrics="true"] aside [style*="border-bottom"] {
+  border-bottom-color: var(--mx-border) !important;
+}
+
 .mx-root {
   font-family: var(--mx-font);
   font-feature-settings: "cv11", "ss01", "tnum";

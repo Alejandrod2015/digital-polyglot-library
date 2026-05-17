@@ -49,8 +49,6 @@ const EMPTY_DATA: DashboardData = {
   topStoriesByMinutes: [],
   topSavedStories: [],
   topSavedBooks: [],
-  signups: { total: 0, last7d: 0, last30d: 0 },
-  recentSignups: [],
   trialFunnel: {
     started: 0,
     startedWithPm: 0,
@@ -274,6 +272,17 @@ export default function MetricsDashboard() {
     setSectionCache({});
     setData(EMPTY_DATA);
   }, [bookSlug, days, storySlug]);
+
+  // Force the editorial navy palette across the page chrome (header,
+  // sidebar, body bg) while this page is mounted. We toggle a data
+  // attribute on <body> so the override is scoped — other Studio
+  // pages keep their existing teal-on-blue theme.
+  useEffect(() => {
+    document.body.dataset.mxMetrics = "true";
+    return () => {
+      delete document.body.dataset.mxMetrics;
+    };
+  }, []);
 
   function handleExport() {
     const qs = new URLSearchParams();
