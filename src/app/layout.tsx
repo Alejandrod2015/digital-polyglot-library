@@ -2,6 +2,7 @@
 
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { Inter, JetBrains_Mono, Nunito } from "next/font/google";
 import "./globals.css";
 import { clerkAppearance } from "@/lib/clerkAppearance";
@@ -70,6 +71,12 @@ export default async function RootLayout({
     process.env.VERCEL_URL ||
     "dev-local";
 
+  // Resolve auth on the server so AppShell can render the right shell
+  // (sidebar+tabbar for signed-in, plain marketing chrome for guests)
+  // without a flash before Clerk hydrates on the client.
+  const { userId } = await auth();
+  const initialIsSignedIn = Boolean(userId);
+
   return (
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
@@ -89,7 +96,12 @@ export default async function RootLayout({
 
         {/* ✅ layout estable: usa min-h-screen, no h-screen */}
         <body className="bg-[var(--bg-content)] text-[var(--foreground)] min-h-screen flex flex-col pt-[env(safe-area-inset-top)]">
-          <AppShell currentVersion={currentVersion}>{children}</AppShell>
+          <AppShell
+            currentVersion={currentVersion}
+            initialIsSignedIn={initialIsSignedIn}
+          >
+            {children}
+          </AppShell>
         </body>
       </html>
     </ClerkProvider>
