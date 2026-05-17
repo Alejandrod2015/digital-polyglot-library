@@ -92,13 +92,21 @@ export default clerkMiddleware(async (auth, req) => {
       return NextResponse.next();
     }
 
+    // Bypass for admin direct-link sharing via `?key=...` or `x-metrics-key`
+    // header. Lets ops dashboards (e.g. uptime checks) hit the panel without
+    // a Clerk session, gated by the server-side METRICS_DASHBOARD_KEY env.
     const expectedKey = process.env.METRICS_DASHBOARD_KEY?.trim();
     const providedKey =
       req.headers.get("x-metrics-key")?.trim() ?? req.nextUrl.searchParams.get("key")?.trim();
 
-    if (!expectedKey || !providedKey || providedKey !== expectedKey) {
-      return new NextResponse("Not Found", { status: 404 });
+    if (expectedKey && providedKey && providedKey === expectedKey) {
+      return NextResponse.next();
     }
+
+    // Signed-out + no key: send to home rather than a bare 404. The admin
+    // route still doesn't advertise itself in the nav for non-authenticated
+    // users, so this isn't a discoverability leak.
+    return NextResponse.redirect(new URL("/", req.url));
   }
 
   return NextResponse.next();
