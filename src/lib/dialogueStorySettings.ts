@@ -3,7 +3,7 @@
  * Capa 2 de reglas voz-región: cuando el casting UI necesita saber
  * "qué accent debería sonar en esta historia", consulta este mapa.
  *
- * Cuando la migration `dialect/heritage metadata` (commit 786a571)
+ * Cuando la migration de dialect/register metadata (commit 786a571)
  * se despliegue, este archivo se reemplaza por una lectura de
  * `JourneyStory.culturalTags` y se borra. Mientras tanto, registro
  * manual por slug.

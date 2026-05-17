@@ -10,7 +10,7 @@ DPL is the instrument that captures three separately licensable corpora:
 - **Asset B — AI Content-Generation Quality Corpus.** `AgentRun` history + `StoryDraft` + `QAReview` + audit scores. Training data for "how to make good language-learning content with structured QA." Buyers: education-tuned model labs, publishers (Pearson, Cornelsen, Klett).
 - **Asset C — Voice Diversity Library.** `ClonedVoice` + Modal/Piper pipeline + R2 cache + word-level alignment. Dialectal voices that ElevenLabs/Cartesia underserve. Buyers: TTS companies.
 
-**Wedge:** heritage learners (60M+ US Hispanics + diaspora communities) wanting their family's specific dialect, not Madrid Spanish or neutral. Pay 3-5x premium.
+**Product framing:** the app is for learners who want vocabulary in context with diverse content; positioning is on the breadth of authentic dialectal content and the in-context vocab loop, not on a demographic segment.
 
 **Why now:** app is pre-launch; this is the cheapest moment to architect the data layer. Retrofitting metadata once data is unlabeled is 100x more expensive.
 
@@ -22,11 +22,11 @@ Three operational movidas execute the thesis. Order matters: each stage feeds th
 |---|---|---|---|---|
 | 1 | Data layer foundation | In progress | 2026-05-07 | — |
 | 2 | SRS engine on `Favorite` scaffolding | Not started | — | — |
-| 3 | Day-1 dialect/heritage positioning | Not started | — | — |
+| 3 | Day-1 vocab-in-context positioning | Not started | — | — |
 
 ## Movida 1 — Data layer foundation
 
-Schema fields for dialect/heritage tagging on `JourneyStory` + 6 new comprehension events in `ALLOWED_EVENT_TYPES` + ReaderScreen wiring to emit them.
+Schema fields for dialect/register tagging on `JourneyStory` + 6 new comprehension events in `ALLOWED_EVENT_TYPES` + ReaderScreen wiring to emit them.
 
 **Sub-pieces and deploy state:**
 
@@ -87,16 +87,16 @@ The FSRS lib is self-contained: 4 exported functions (`reviewCard`, `newCard`, `
 
 **Why this matters for the asset:** converts the app from passive reader into a personalized living curriculum. Each user's SRS state becomes lock-in (losing it = losing months of progress). The signal generated is high-value training data for Asset A.
 
-## Movida 3 — Day-1 dialect/heritage positioning
+## Movida 3 — Day-1 vocab-in-context positioning
 
-Branding/copy work, not engineering. Landing page + tagline + onboarding need to make the dialect-conscious / heritage-friendly position clear before launch. Drives the right user segment, which drives the right corpus.
+Branding/copy work, not engineering. Landing page + tagline + onboarding emphasize the in-context vocabulary loop and the breadth of authentic content (dialectal/regional variety available to any learner). Per user direction 2026-05-17, positioning does not target a demographic segment.
 
 **Pieces (not started):**
 
-- Landing page copy emphasizing dialect/regional/heritage angle (not "language learning" generic)
-- Onboarding flow: ask user about heritage/region/family language background; route to matching dialect content
-- Marketing surface for the heritage segment (TikTok hispano-gringo, IG, etc.)
-- Pricing tier reflecting premium positioning ($20-30/mo, not $7)
+- Landing page copy emphasizing in-context vocab + diverse content angle (not "language learning" generic, not demographic)
+- Onboarding flow: surface preferred dialect/region for content routing, treated as a preference not an identity claim
+- Marketing surfaces sized to the broad learner audience
+- Pricing tier reflecting depth-of-content positioning
 
 ## Deploy cadence pattern (applies to all movidas)
 

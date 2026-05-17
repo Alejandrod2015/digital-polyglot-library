@@ -143,7 +143,7 @@ export const ASSET_ROADMAP: AssetRoadmap = {
     },
   ],
   wedge:
-    "Heritage learners: 60M+ US Hispanos + diáspora italiana/alemana/polaca/coreana/vietnamita. Quieren el dialecto de su familia, no Madrid genérico. Pagan 3-5x más que aprendices funcionales.",
+    "Producto para aprender vocabulario en contexto con contenido diverso. La diferenciación está en la profundidad dialectal/regional del catálogo (disponible para cualquier learner), no en una demografía objetivo.",
   whyNow:
     "App pre-launch. Cada día sin tagging genera datos sin etiquetar. Retrofitting metadata cuando ya hay miles de usuarios cuesta 100x más.",
   movidas: [
@@ -218,26 +218,26 @@ export const ASSET_ROADMAP: AssetRoadmap = {
     },
     {
       id: 3,
-      title: "Posicionamiento dialectal/heritage",
+      title: "Posicionamiento de vocabulario en contexto",
       subtitle:
-        "El producto y la marca dejan claro que enseñamos el dialecto real de la familia, no español neutro. Define qué usuarios atraemos y a qué precio.",
+        "El producto y la marca dejan claro que el valor es leer y escuchar contenido diverso aprendiendo vocabulario en su contexto real. La profundidad dialectal del catálogo es la prueba, no el target.",
       goal:
-        "Branding y copy para que el wedge de heritage learners esté claro desde el launch",
+        "Branding y copy para que el wedge de vocabulario-en-contexto con contenido diverso esté claro desde el launch",
       pieces: [
         {
-          title: "Landing page con copy de dialecto/heritage (no genérico)",
+          title: "Landing page con copy enfocado en vocabulario en contexto + contenido diverso",
           status: "not_started",
         },
         {
-          title: "Onboarding: pregunta sobre heritage/región/familia, ruta a contenido del dialecto correspondiente",
+          title: "Onboarding: preferencia de dialecto/región para rutear contenido, sin asumir identidad",
           status: "not_started",
         },
         {
-          title: "Pricing tier reflejando posicionamiento premium ($20-30/mo)",
+          title: "Pricing tier reflejando el valor de la profundidad del catálogo",
           status: "not_started",
         },
         {
-          title: "Marketing surface para segmento heritage (TikTok hispano-gringo, IG)",
+          title: "Marketing surfaces dimensionadas para el público amplio de learners",
           status: "not_started",
         },
       ],
@@ -249,7 +249,7 @@ export const ASSET_ROADMAP: AssetRoadmap = {
   workLog: [
     {
       date: "2026-05-07",
-      title: "Schema dialect/heritage aplicado en producción",
+      title: "Schema dialect/register aplicado en producción",
       scope: "Movida 1 (Captura de datos)",
       summary:
         "Las 4 columnas para tagear historias por dialecto, registro, cohorte y proveniencia de voz ya están en la DB de producción. Listas para usarse cuando quieras empezar a etiquetar historias.",
@@ -399,7 +399,7 @@ export const ASSET_ROADMAP: AssetRoadmap = {
       title: "Asset roadmap doc en repo + memoria persistente",
       scope: "Estrategia",
       summary:
-        "Documentamos la tesis del asset (3 corpora, heritage wedge, comparables, exit math) en dos lugares: visible en el repo (docs/) y en la memoria de Claude para que persista entre sesiones.",
+        "Documentamos la tesis del asset (3 corpora, comparables, exit math) en dos lugares: visible en el repo (docs/) y en la memoria de Claude para que persista entre sesiones.",
       highlights: [
         "docs/asset-roadmap.md con tesis + movidas + estado",
         "3 archivos de memoria: project_asset_thesis, project_movidas_roadmap, feedback_verify_vercel_deploy",
