@@ -855,13 +855,13 @@ export default function MonitorClient() {
     return "#ef4444";
   }
 
-  function storyAction(s: StoryRow) {
+  function storyAction(s: StoryRow): { label: string; title?: string; disabled: boolean; onClick: () => void } | null {
     const busy = busyStories.has(s.id);
     if (busy) return { label: "...", disabled: true, onClick: () => {} };
     if (s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review")
-      return { label: "Generar historia", disabled: false, onClick: () => generateStory(s.id) };
+      return { label: "Generar historia", title: "Genera título, sinopsis, cuerpo y vocabulario con Claude. Aún no publica.", disabled: false, onClick: () => generateStory(s.id) };
     if (s.status === "generated" || s.status === "qa_pass" || s.status === "approved")
-      return { label: "Publicar", disabled: false, onClick: () => publishStory(s.id) };
+      return { label: "Publicar", title: "Hace la historia visible en el reader. El audio y la cover, si ya están listos, se publican junto con ella. Si no, puedes generarlos antes o después de publicar.", disabled: false, onClick: () => publishStory(s.id) };
     // After publish, Cover and Audio are independent buttons rendered separately
     return null;
   }
@@ -913,8 +913,8 @@ export default function MonitorClient() {
     const loadingDetail = loadingDetailIds.has(s.id);
     const showText = showTextIds.has(s.id);
     const showVocab = showVocabIds.has(s.id);
-    const statusText = s.status === "published" ? (s.coverDone ? "Completa" : "En Sanity") :
-      s.status === "generated" ? "Generada" : s.status === "draft" ? "Pendiente" : s.status;
+    const statusText = s.status === "published" ? (s.coverDone ? "Completa" : "Publicada (sin cover)") :
+      s.status === "generated" ? "Generada" : s.status === "draft" ? "Borrador" : s.status;
 
     return (
       <div style={{ padding: "10px 8px 10px 28px", display: "flex", flexDirection: "column", gap: 8, borderTop: "1px solid rgba(255,255,255,0.04)" }}>
@@ -1442,7 +1442,7 @@ export default function MonitorClient() {
                                           {s.wordCount != null && <span style={chipStyle}>{s.wordCount}w</span>}
                                           {s.vocabCount != null && <span style={chipStyle}>{s.vocabCount}v</span>}
                                           {action && (
-                                            <button onClick={() => action.onClick()} disabled={action.disabled}
+                                            <button onClick={() => action.onClick()} disabled={action.disabled} title={action.title}
                                               style={{ ...btnPrimary(action.disabled), fontSize: 10, height: 24, padding: "0 10px",
                                                 ...(s.status === "generated" ? { backgroundColor: "#3b82f6" } : {}),
                                                 ...(s.status === "published" && !s.coverDone ? { backgroundColor: "transparent", border: "1px solid var(--card-border)", color: "var(--foreground)" } : {}),
@@ -1495,14 +1495,16 @@ export default function MonitorClient() {
                                               Regenerar cover
                                             </button>
                                           )}
-                                          {s.status === "published" && s.audioStatus !== "ready" && !busyStories.has(s.id) && (
+                                          {["generated", "qa_pass", "approved", "published"].includes(s.status) && s.audioStatus !== "ready" && !busyStories.has(s.id) && (
                                             <button onClick={() => generateAudio(s.id)}
+                                              title="Genera el audio (TTS) de la historia. Si publicas después, el audio queda disponible junto con el texto. También se puede generar después de publicar."
                                               style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
                                               Generar audio
                                             </button>
                                           )}
                                           {s.audioStatus === "ready" && !busyStories.has(s.id) && (
                                             <button onClick={() => generateAudio(s.id)}
+                                              title="Reemplaza el audio actual por uno nuevo. La historia mantiene su estado de publicación."
                                               style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
                                               Regenerar audio
                                             </button>

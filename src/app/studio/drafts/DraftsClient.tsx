@@ -159,6 +159,20 @@ export default function DraftsClient() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      <div style={{
+        padding: "10px 12px",
+        borderRadius: 6,
+        background: "rgba(234,179,8,0.10)",
+        border: "1px solid rgba(234,179,8,0.35)",
+        color: "#eab308",
+        fontSize: 12,
+        lineHeight: 1.45,
+      }}>
+        <strong>Página legacy.</strong> Esta vista publica a Sanity (CMS antiguo) y ya no alimenta al reader. Para publicar historias usa{" "}
+        <Link href="/studio/journey-manager" style={{ color: "#eab308", textDecoration: "underline", fontWeight: 600 }}>
+          Journey Manager
+        </Link>. Esta página queda solo para inspeccionar borradores generados por el pipeline anterior.
+      </div>
       {error && (
         <div style={{ padding: "4px 8px", borderRadius: 4, background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", color: "#ef4444", fontSize: 11 }}>
           {error}
