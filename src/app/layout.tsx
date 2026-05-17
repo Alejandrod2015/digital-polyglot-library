@@ -4,9 +4,11 @@ import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { Inter, JetBrains_Mono, Nunito } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import { clerkAppearance } from "@/lib/clerkAppearance";
 import AppShell from "@/components/AppShell";
+import VisitLogger from "@/components/VisitLogger";
 
 // Nunito as the primary UI font. `variable` exposes it as a CSS custom
 // property (consumed in globals.css via `var(--font-nunito)`), and
@@ -102,6 +104,11 @@ export default async function RootLayout({
           >
             {children}
           </AppShell>
+          {/* First-party visit logger. Suspense so useSearchParams
+              doesn't force a CSR fallback on the whole tree. */}
+          <Suspense fallback={null}>
+            <VisitLogger />
+          </Suspense>
         </body>
       </html>
     </ClerkProvider>

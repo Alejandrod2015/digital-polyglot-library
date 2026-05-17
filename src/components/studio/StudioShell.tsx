@@ -42,6 +42,7 @@ const NAV_SECTIONS = [
     items: [
       { href: "/studio/progreso", label: "Progreso del proyecto", icon: "chart", exact: false },
       { href: "/studio/metrics", label: "Métricas", icon: "chart", exact: false },
+      { href: "/studio/visits", label: "Page visits", icon: "globe", exact: false },
     ],
   },
   {

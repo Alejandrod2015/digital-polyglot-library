@@ -499,6 +499,49 @@ model BetaSignup {
   @@map("dp_beta_signups_v1")
 }
 
+// One row per page view. Server-side, cookie-less, GDPR-friendly:
+// no PII, only hashed IP (sha256 + salt, truncated to /24) and a
+// rotating session cookie. Captures geo from Vercel edge headers and
+// UTM/referrer/landing from the client. Lets us answer "where did
+// this visit come from?" for 100% of visitors regardless of analytics
+// consent, since this is first-party telemetry necessary for site
+// operation (debugging, abuse prevention, capacity planning).
+model PageVisit {
+  id              String   @id @default(cuid())
+  path            String
+  referrer        String?
+  landingUrl      String?
+  utmSource       String?
+  utmMedium       String?
+  utmCampaign     String?
+  utmContent      String?
+  utmTerm         String?
+  country         String?
+  region          String?
+  city            String?
+  timezone        String?
+  browserLanguage String?
+  deviceCategory  String?
+  userAgent       String?
+  // sha256(rawIp + APP_SECRET) truncated to /24 worth of entropy.
+  // Lets us count uniques without ever storing a recoverable IP.
+  ipHashed        String?
+  // Random opaque ID stored in a httpOnly first-party cookie. Survives
+  // ~30 min of inactivity. Strictly necessary cookie, no consent needed.
+  sessionId       String?
+  // Whether this row was logged before the user accepted analytics.
+  // Useful if we ever want to retroactively scrub pre-consent data.
+  preConsent      Boolean  @default(true)
+  createdAt       DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([path])
+  @@index([sessionId])
+  @@index([country])
+  @@index([utmSource])
+  @@map("dp_page_visits_v1")
+}
+
 model ClaimToken {
   id             String    @id @default(cuid())
   token          String    @unique

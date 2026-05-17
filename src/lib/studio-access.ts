@@ -97,6 +97,7 @@ export const ADMIN_ONLY_HREFS = new Set<string>([
   "/studio/metrics",
   "/studio/config",
   "/studio/beta-signups",
+  "/studio/visits",
   "/studio/team",
 ]);
 
@@ -175,6 +176,7 @@ const PATH_PERMISSIONS: Array<{ pattern: RegExp; permission: string }> = [
   { pattern: /^\/studio\/team/, permission: "studio:team" },
   { pattern: /^\/studio\/beta-signups/, permission: "studio:beta-signups" },
   { pattern: /^\/studio\/metrics/, permission: "studio:metrics" },
+  { pattern: /^\/studio\/visits/, permission: "studio:visits" },
   { pattern: /^\/studio\/progreso/, permission: "studio:progreso" },
   { pattern: /^\/studio\/qa/, permission: "studio:qa" },
   { pattern: /^\/studio\/content/, permission: "studio:content" },
