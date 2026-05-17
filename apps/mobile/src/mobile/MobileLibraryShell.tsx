@@ -9100,6 +9100,37 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  // Onboarding funnel tracker. Fire-and-forget so a failed metric write
+  // never blocks the survey. Uses "onboarding" as the synthetic storySlug
+  // so the row is queryable but doesn't collide with a real story.
+  async function trackOnboardingMetric(
+    eventType:
+      | "onboarding_started"
+      | "onboarding_step_completed"
+      | "onboarding_finished"
+      | "onboarding_abandoned"
+      | "onboarding_level_test_started"
+      | "onboarding_level_test_completed",
+    metadata?: Record<string, unknown>
+  ) {
+    if (!sessionToken) return;
+    try {
+      await apiFetch<{ success: true }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/mobile/metrics",
+        token: sessionToken,
+        method: "POST",
+        body: {
+          storySlug: "onboarding",
+          eventType,
+          metadata: metadata ?? {},
+        },
+      });
+    } catch (error) {
+      console.error("[mobile onboarding] failed to track onboarding metric", error);
+    }
+  }
+
   async function trackReminderMetric(
     eventType: "reminder_scheduled" | "reminder_destination_opened",
     extra?: Record<string, unknown>
@@ -16033,6 +16064,9 @@ export function MobileLibraryShell(args: {
         // does a full reset instead and runs onboarding normally.
         testMode={false}
         comingSoonLanguages={comingSoonLanguages}
+        trackEvent={(eventType, metadata) => {
+          void trackOnboardingMetric(eventType, metadata);
+        }}
         onComplete={async (payload) => {
           // Set activeScreen BEFORE the await: when the gate flips
           // (onboardingSurveyCompletedAt set inside commitOnboarding)

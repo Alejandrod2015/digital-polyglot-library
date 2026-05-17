@@ -44,6 +44,14 @@ const ALLOWED_EVENT_TYPES = new Set([
   "checkout_redirected",
   "checkout_failed",
   "upgrade_cta_clicked",
+  // Onboarding funnel events. Fired by OnboardingFlow to measure drop-off
+  // per step and overall completion rate. metadata.step is 1-4.
+  "onboarding_started",
+  "onboarding_step_completed",
+  "onboarding_finished",
+  "onboarding_abandoned",
+  "onboarding_level_test_started",
+  "onboarding_level_test_completed",
   // Reader comprehension events (foundation for adaptive learning + asset corpus).
   // value = duration_ms when applicable; metadata carries word, language,
   // variant, voiceId, audioPositionMs, register, etc.
