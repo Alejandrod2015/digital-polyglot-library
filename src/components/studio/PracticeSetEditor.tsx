@@ -125,7 +125,7 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
       setError("Falta el idioma del journey para regenerar audio.");
       return;
     }
-    const ttsSentence = ex.sentence.replace(/_+/g, ex.word);
+    const ttsSentence = sanitizeForTts(ex.sentence, ex.word);
     setBusyId(ex.id);
     setError(null);
     try {
@@ -511,6 +511,22 @@ function ExerciseRow({
                   onChange={(e) => setSentence(e.target.value)}
                   style={{ ...inp, minHeight: 56 }}
                 />
+                {ttsHintFor(sentence) ? (
+                  <div
+                    style={{
+                      fontSize: 11,
+                      color: "#fbbf24",
+                      background: "rgba(251, 191, 36, 0.08)",
+                      border: "1px solid rgba(251, 191, 36, 0.3)",
+                      padding: "6px 10px",
+                      borderRadius: 6,
+                      marginTop: 4,
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    ⚠ {ttsHintFor(sentence)}
+                  </div>
+                ) : null}
               </Field>
               <Field label="Opciones (una por línea)">
                 <textarea
@@ -756,6 +772,44 @@ function PauseIcon({ size }: { size: number }) {
       <rect x="7" y="1.5" width="2.5" height="9" rx="0.5" fill="currentColor" />
     </svg>
   );
+}
+
+// Clean a stored sentence before handing it to TTS. The story
+// generator occasionally leaves orphan straight quotes/apostrophes
+// after the sentence-ending punctuation (e.g. `Grazie per l'aiuto!'`)
+// because the dialog was stripped of its opening quote upstream. TTS
+// engines read those orphans as a glottal click at the very end of
+// the clip ("sonido raro"); strip them here so regenerated audio is
+// clean even when the underlying text still has the artefact.
+export function sanitizeForTts(sentence: string, word: string): string {
+  let s = sentence.replace(/_+/g, word);
+  // Strip straight apostrophes/quotes that trail sentence-ending
+  // punctuation. Curly quotes (« » " " ' ') are kept; those are
+  // intentional dialog closers TTS can voice naturally.
+  s = s.replace(/([.!?])['"]+\s*$/, "$1");
+  // Strip a lone straight apostrophe/quote at the very end with no
+  // closing pair earlier in the string.
+  if (/['"]$/.test(s)) {
+    const last = s.at(-1)!;
+    const earlier = s.slice(0, -1);
+    const opens = (earlier.match(new RegExp(`\\${last}`, "g")) ?? []).length;
+    if (opens % 2 === 0) s = earlier;
+  }
+  return s.trim();
+}
+
+// Returns a short editor hint when the sentence has obvious noise
+// (orphan trailing quotes/apostrophes). Shown next to the Frase input
+// in the inline edit panel so revisors fix the source instead of
+// repeatedly hitting Regenerar.
+function ttsHintFor(sentence: string): string | null {
+  if (/([.!?])['"]+\s*$/.test(sentence)) {
+    return "La frase termina con una comilla suelta tras la puntuación; el TTS la lee como un click. Bórrala y regenera.";
+  }
+  if (/['"]$/.test(sentence)) {
+    return "La frase termina con una comilla huérfana. Considera quitarla antes de regenerar el audio.";
+  }
+  return null;
 }
 
 function formatTime(seconds: number): string {
