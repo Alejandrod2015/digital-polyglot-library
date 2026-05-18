@@ -218,6 +218,11 @@ import {
   PRACTICE_PERFECT_CHIME_URI,
   PRACTICE_WRONG_SOUND_URI,
 } from "../lib/practiceSoundUris";
+import {
+  PRACTICE_RING_FILL_GOOD_URI,
+  PRACTICE_RING_FILL_BAD_URI,
+  PRACTICE_PERFECT_URI,
+} from "../lib/practiceRingSoundUris";
 
 type ReaderSelection = {
   book: Book;
@@ -6346,6 +6351,7 @@ export function MobileLibraryShell(args: {
       .then((payload) => {
         const items = Array.isArray(payload.items) ? payload.items : [];
         const exercises = Array.isArray(payload.exercises) ? payload.exercises : undefined;
+        showDebug(`prefetch ${slug.slice(0, 30)} items=${items.length} exercises=${exercises?.length ?? "n/a"}`);
         practicePrefetchBySlugRef.current.set(slug, { items, exercises });
       })
       .catch(() => {
@@ -6431,9 +6437,11 @@ export function MobileLibraryShell(args: {
     // Fast path: items already in cache from the reader's prefetch.
     const cached = practicePrefetchBySlugRef.current.get(selection.story.slug);
     if (cached) {
+      showDebug(`open story ${selection.story.slug.slice(0, 30)} cache items=${cached.items.length} exercises=${cached.exercises?.length ?? "n/a"}`);
       commitStoryPracticeItems(selection, cached.items, cached.exercises);
       return;
     }
+    showDebug(`open story ${selection.story.slug.slice(0, 30)} no cache, fetching`);
 
     // Slow path: user beat the prefetch. Switch to the practice tab
     // immediately with a loading indicator so the reader doesn't sit
@@ -6454,6 +6462,7 @@ export function MobileLibraryShell(args: {
       });
       const items = Array.isArray(payload.items) ? payload.items : [];
       const exercises = Array.isArray(payload.exercises) ? payload.exercises : undefined;
+      showDebug(`live fetch ${selection.story.slug.slice(0, 30)} items=${items.length} exercises=${exercises?.length ?? "n/a"}`);
       practicePrefetchBySlugRef.current.set(selection.story.slug, { items, exercises });
       setPracticeLaunchLoading(false);
       commitStoryPracticeItems(selection, items, exercises);
@@ -14112,6 +14121,13 @@ export function MobileLibraryShell(args: {
               nodeVariant === "audioFinished" ? styles.journeyNodePillAudioFinished : null,
               nodeVariant === "locked" ? styles.journeyNodePillLocked : null,
               nodeVariant === "step" ? styles.journeyNodePillStep : null,
+              // Both "audio finished" and "completed" wear the topic's
+              // panel color on their outline, so the row reads as
+              // "belongs to this topic" rather than the previous fixed
+              // emerald which clashed with non-green topics.
+              nodeVariant === "completed" || nodeVariant === "audioFinished"
+                ? { borderColor: topicColor, borderWidth: 2 }
+                : null,
               // La "next" usa la variante E elegida: sólida del color
               // del topic + sheen overlay arriba (renderizado abajo) +
               // glow pulsante + shimmer cada 4 s + float vertical sutil.
@@ -14154,33 +14170,24 @@ export function MobileLibraryShell(args: {
                       resizeMode="cover"
                     />
                   </View>
-                  {/* Status badge — completed gets a green check
-                      ("you mastered this"), audioFinished gets a
-                      headphones icon ("you've heard this but the
-                      exercises are pending"), locked gets the
-                      padlock. step doesn't render a badge. */}
-                  {nodeVariant === "completed" ||
-                  nodeVariant === "audioFinished" ||
-                  nodeVariant === "locked" ? (
+                  {/* Status badge — only `completed` and `locked` render
+                      a badge. `audioFinished` keeps the green outline
+                      around the whole card but doesn't get a check yet,
+                      so the user can tell at a glance "I finished
+                      reading this" (green outline only) vs "I also
+                      mastered the practice exercises" (green outline +
+                      green check). */}
+                  {nodeVariant === "completed" || nodeVariant === "locked" ? (
                     <View
                       style={[
                         styles.journeyNodePillThumbBadge,
                         nodeVariant === "completed"
-                          ? styles.journeyNodePillThumbBadgeCompleted
-                          : nodeVariant === "audioFinished"
-                            ? styles.journeyNodePillThumbBadgeAudioFinished
-                            : styles.journeyNodePillThumbBadgeLocked,
+                          ? { backgroundColor: topicColor }
+                          : styles.journeyNodePillThumbBadgeLocked,
                       ]}
                     >
                       {nodeVariant === "completed" ? (
                         <Feather name="check" size={11} color="#0c1626" />
-                      ) : nodeVariant === "audioFinished" ? (
-                        // Outline check (same shape as the green
-                        // mastery check) to convey "started, not
-                        // mastered" — the badge style itself is
-                        // hollow cyan, see journeyNodePillThumb-
-                        // BadgeAudioFinished.
-                        <Feather name="check" size={11} color="#7dd3fc" />
                       ) : (
                         <Feather name="lock" size={10} color="#cdd9ec" />
                       )}
@@ -14190,7 +14197,10 @@ export function MobileLibraryShell(args: {
               ) : nodeVariant === "completed" ? (
                 <Feather name="check" size={18} color="#0c1626" />
               ) : nodeVariant === "audioFinished" ? (
-                <Feather name="check" size={16} color="#7dd3fc" />
+                // No icon — the green outline around the whole card is
+                // the only indicator for "audio finished, exercises
+                // pending". A check would imply "fully done".
+                null
               ) : nodeVariant === "locked" ? (
                 <Feather name="lock" size={15} color="#7a8aa5" />
               ) : (
@@ -19959,17 +19969,16 @@ const styles = StyleSheet.create({
     lineHeight: 17,
   },
   journeyNodePillCompleted: {
-    // Soft green wash + emerald edge — "you mastered this".
-    // Subido de 0.1 → 0.18 para que la pill no se sienta muerta;
-    // el "next" sigue dominando por su fondo sólido del topic.
-    backgroundColor: "rgba(110, 231, 183, 0.18)",
-    borderColor: "rgba(110, 231, 183, 0.55)",
+    // Background wash kept very light so the topic-coloured outline
+    // (applied inline at the call-site, see borderColor above) is the
+    // dominant signal. The badge inside the thumbnail differentiates
+    // "completed" from "audioFinished" — see ThumbBadgeCompleted.
+    backgroundColor: "rgba(255, 255, 255, 0.04)",
   },
   journeyNodePillAudioFinished: {
-    // Cool muted cyan — "you've been here, exercises pending".
-    // Subido de 0.08 → 0.16 por la misma razón.
-    backgroundColor: "rgba(125, 211, 252, 0.16)",
-    borderColor: "rgba(125, 211, 252, 0.42)",
+    // Same light wash as completed — the topic-coloured outline marks
+    // both states. The completed state adds a check badge on top.
+    backgroundColor: "rgba(255, 255, 255, 0.04)",
   },
   journeyNodePillLocked: {
     // Locked SÍ debe verse atenuado (es la única razón válida para
@@ -20036,14 +20045,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#34d399",
   },
   journeyNodePillThumbBadgeAudioFinished: {
-    // Outline cyan — same check shape as the green mastery badge
-    // but hollow, so the metaphor reads as "started, not finished".
-    // The check inside is also cyan (matching the border) and
-    // contrasts against the dark canvas behind the transparent
-    // fill.
-    backgroundColor: "transparent",
-    borderColor: "#7dd3fc",
-    borderWidth: 1.5,
+    // Unified with the completed badge (solid emerald) per user
+    // feedback — both states read as "done" visually.
+    backgroundColor: "#34d399",
+    borderWidth: 2,
+    borderColor: tokenBg[1],
   },
   journeyNodePillThumbBadgeLocked: {
     backgroundColor: tokenBg[3],
@@ -24541,8 +24547,67 @@ function PracticeResultRing({
         useNativeDriver: false,
       }),
     ]).start();
-    return () => numAnim.removeListener(listener);
-  }, [score, targetRatio, fillAnim, numAnim]);
+
+    // Audio: ring-fill sweep during the 1.2s animation (green if
+    // accuracy ≥80, amber/red otherwise). When the user nails a
+    // perfect score, the "fairy win" jingle drops at the moment the
+    // ring reaches full.
+    let cancelled = false;
+    let fillSound: Audio.Sound | null = null;
+    let perfectSound: Audio.Sound | null = null;
+    let perfectTimer: ReturnType<typeof setTimeout> | null = null;
+    void (async () => {
+      try {
+        // playsInSilentModeIOS:true so the ring sweep is audible even
+        // when the user keeps the iPhone hardware silent switch on, the
+        // same trick the per-question feedback sounds already use.
+        await Audio.setAudioModeAsync({
+          playsInSilentModeIOS: true,
+          allowsRecordingIOS: false,
+          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        }).catch(() => undefined);
+        const uri =
+          accuracyPct >= 80 ? PRACTICE_RING_FILL_GOOD_URI : PRACTICE_RING_FILL_BAD_URI;
+        const { sound } = await Audio.Sound.createAsync(
+          { uri },
+          { shouldPlay: true, volume: 0.85 }
+        );
+        if (cancelled) {
+          await sound.unloadAsync().catch(() => undefined);
+          return;
+        }
+        fillSound = sound;
+      } catch {
+        // best-effort, mute is acceptable
+      }
+    })();
+    if (total > 0 && score === total) {
+      perfectTimer = setTimeout(async () => {
+        if (cancelled) return;
+        try {
+          const { sound } = await Audio.Sound.createAsync(
+            { uri: PRACTICE_PERFECT_URI },
+            { shouldPlay: true, volume: 0.9 }
+          );
+          if (cancelled) {
+            await sound.unloadAsync().catch(() => undefined);
+            return;
+          }
+          perfectSound = sound;
+        } catch {
+          // best-effort
+        }
+      }, 1200);
+    }
+
+    return () => {
+      cancelled = true;
+      numAnim.removeListener(listener);
+      if (perfectTimer) clearTimeout(perfectTimer);
+      fillSound?.unloadAsync().catch(() => undefined);
+      perfectSound?.unloadAsync().catch(() => undefined);
+    };
+  }, [score, total, targetRatio, accuracyPct, fillAnim, numAnim]);
 
   const dashOffset = fillAnim.interpolate({
     inputRange: [0, 1],
