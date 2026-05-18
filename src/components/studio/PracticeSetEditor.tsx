@@ -5,13 +5,12 @@
 // click "Editar" on a row and an edit panel slides down underneath it,
 // so editors can compare across rows without losing context.
 //
-// Audio actions per exercise (Regenerar / Subir / Quitar) live inside
-// the expanded panel, alongside text/options/answer fields. Top-level
-// actions (Regenerar set / Forzar / Bloquear) stay above the table.
-// All colors flow through Studio CSS vars so the editor reads the
-// same in light or dark chrome.
+// The audio cell uses a custom MiniAudioPlayer instead of the native
+// <audio controls>. The browser-default widget is a hard visual scar
+// against the Studio's dark editorial chrome; a small circular play
+// button + progress bar matches the surrounding type system.
 
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 
 type Exercise = {
   id: string;
@@ -43,6 +42,17 @@ const TYPE_LABEL: Record<string, string> = {
   natural_expression: "Expresión natural",
   listen_choose: "Escucha y elige",
   match_meaning: "Empareja",
+};
+
+// Semantic color per exercise type. The hexes are chosen for ~AA
+// contrast on the navy Studio background; they reuse the palette of
+// the Studio metrics tab so badges feel native here too.
+const TYPE_COLOR: Record<string, string> = {
+  fill_blank: "#60a5fa", // blue
+  meaning_in_context: "#a78bfa", // violet
+  natural_expression: "#f59e0b", // amber
+  listen_choose: "#34d399", // green
+  match_meaning: "#f472b6", // pink
 };
 
 export default function PracticeSetEditor({ storyId, storyTitle, language, set }: Props) {
@@ -80,8 +90,6 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
     setCurrentSet({ ...currentSet, locked: !currentSet.locked });
   }
 
-  // Centralizes exercise state mutation so per-exercise actions (save,
-  // regen, upload, clear) all funnel through one updater.
   function applyExerciseUpdate(updated: Exercise) {
     setCurrentSet((s) =>
       s
@@ -117,7 +125,6 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
       setError("Falta el idioma del journey para regenerar audio.");
       return;
     }
-    // Strip the fill-blank placeholder so TTS reads the full sentence.
     const ttsSentence = ex.sentence.replace(/_+/g, ex.word);
     setBusyId(ex.id);
     setError(null);
@@ -196,14 +203,18 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
   }
 
   const COL_COUNT = 6;
+  const audioReadyCount = currentSet?.exercises.filter((e) => Boolean(e.audioUrl)).length ?? 0;
+  const totalCount = currentSet?.exercises.length ?? 0;
 
   return (
     <div style={{ maxWidth: 1200, margin: "0 auto", padding: "16px 16px 32px" }}>
-      <header style={{ marginBottom: 12 }}>
-        <h1 style={{ fontSize: 20, fontWeight: 700, color: "var(--foreground)", margin: 0 }}>{storyTitle}</h1>
+      <header style={{ marginBottom: 14 }}>
+        <h1 style={{ fontSize: 20, fontWeight: 700, color: "var(--foreground)", margin: 0, letterSpacing: -0.2 }}>
+          {storyTitle}
+        </h1>
         <p style={{ color: "var(--muted)", fontSize: 12, margin: "4px 0 0", maxWidth: 720 }}>
-          10 ejercicios persistidos. Editar uno lo fija; bloquea el set cuando esté revisado para que la
-          regeneración no lo sobrescriba.
+          {totalCount} ejercicios. Editar uno lo fija; bloquea el set cuando esté revisado para que la regeneración
+          no lo sobrescriba.
         </p>
       </header>
 
@@ -214,8 +225,8 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
           alignItems: "center",
           gap: 8,
           marginBottom: 12,
-          padding: 10,
-          borderRadius: 8,
+          padding: "10px 12px",
+          borderRadius: 10,
           background: "var(--card-bg)",
           border: "1px solid var(--card-border)",
         }}
@@ -237,10 +248,13 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
               Forzar regeneración
             </button>
             <button onClick={() => void toggleLocked()} style={btnSecondary}>
-              {currentSet.locked ? "Desbloquear" : "Bloquear (aprobado)"}
+              {currentSet.locked ? "🔒 Desbloquear" : "Bloquear (aprobado)"}
             </button>
+            <span style={{ fontSize: 11, color: "var(--muted)", marginLeft: 4 }}>
+              {audioReadyCount}/{totalCount} con audio
+            </span>
             <span style={{ marginLeft: "auto", fontSize: 11, color: "var(--muted)" }}>
-              {currentSet.locked ? "🔒 bloqueado · " : ""}actualizado {new Date(currentSet.updatedAt).toLocaleString()}
+              actualizado {new Date(currentSet.updatedAt).toLocaleString()}
             </span>
           </>
         )}
@@ -268,7 +282,7 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
             background: "var(--card-bg)",
             border: "1px solid var(--card-border)",
             padding: 24,
-            borderRadius: 8,
+            borderRadius: 10,
             textAlign: "center",
             color: "var(--muted)",
           }}
@@ -280,20 +294,20 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
         <div
           style={{
             border: "1px solid var(--card-border)",
-            borderRadius: 8,
+            borderRadius: 10,
             overflow: "hidden",
             background: "var(--card-bg)",
           }}
         >
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead>
-              <tr style={{ background: "var(--card-bg)", textAlign: "left" }}>
-                <th style={{ ...th, width: 36 }}>#</th>
-                <th style={{ ...th, width: 130 }}>Tipo</th>
-                <th style={{ ...th, width: 120 }}>Palabra</th>
+              <tr style={{ textAlign: "left" }}>
+                <th style={{ ...th, width: 40 }}>#</th>
+                <th style={{ ...th, width: 150 }}>Tipo</th>
+                <th style={{ ...th, width: 130 }}>Palabra</th>
                 <th style={th}>Frase</th>
-                <th style={{ ...th, width: 200 }}>Audio</th>
-                <th style={{ ...th, width: 80 }} aria-label="Acciones" />
+                <th style={{ ...th, width: 220 }}>Audio</th>
+                <th style={{ ...th, width: 76 }} aria-label="Acciones" />
               </tr>
             </thead>
             <tbody>
@@ -325,9 +339,10 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
   );
 }
 
-// One table row + its expanded edit panel underneath. Kept as its own
-// component so the per-row local state (draft values during edit)
-// doesn't trigger re-renders of sibling rows.
+// ─────────────────────────────────────────────────────────────────────
+// Row + expanded edit panel
+// ─────────────────────────────────────────────────────────────────────
+
 function ExerciseRow({
   exercise,
   isEditing,
@@ -367,10 +382,6 @@ function ExerciseRow({
   );
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  // Re-hydrate local state from props when the row is opened / the
-  // server-side audioUrl changes (e.g. after regenerate). React only
-  // calls useState's initial expression on mount, so without this the
-  // panel would show stale audioUrl after a server round-trip.
   function resetFromProps() {
     setWord(exercise.word);
     setSentence(exercise.sentence);
@@ -405,32 +416,60 @@ function ExerciseRow({
     });
   }
 
+  const typeColor = TYPE_COLOR[exercise.type] ?? "var(--muted)";
+
   return (
     <>
-      <tr style={{ borderTop: "1px solid var(--card-border)" }} className="studio-table-row">
-        <td style={{ ...td, color: "var(--muted)", fontVariantNumeric: "tabular-nums" }}>
+      <tr
+        className="studio-table-row"
+        style={{
+          borderTop: "1px solid var(--card-border)",
+          background: isEditing ? "rgba(255,255,255,0.025)" : "transparent",
+        }}
+      >
+        <td
+          style={{
+            ...td,
+            color: "var(--muted)",
+            fontVariantNumeric: "tabular-nums",
+            position: "relative",
+          }}
+        >
+          {isEditing ? (
+            <span
+              aria-hidden
+              style={{
+                position: "absolute",
+                left: 0,
+                top: 0,
+                bottom: 0,
+                width: 3,
+                background: "var(--primary)",
+              }}
+            />
+          ) : null}
           {exercise.orderIndex + 1}
         </td>
-        <td style={{ ...td, color: "var(--muted)", fontSize: 12 }}>
-          {TYPE_LABEL[exercise.type] ?? exercise.type}
+        <td style={td}>
+          <TypeBadge color={typeColor}>{TYPE_LABEL[exercise.type] ?? exercise.type}</TypeBadge>
         </td>
-        <td style={{ ...td, fontWeight: 600 }}>{exercise.word || <span style={{ color: "var(--muted)" }}>—</span>}</td>
-        <td style={{ ...td, color: "var(--foreground)", lineHeight: 1.35 }}>
-          <span style={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+        <td style={{ ...td, fontWeight: 600, color: "var(--foreground)" }}>
+          {exercise.word || <span style={{ color: "var(--muted)" }}>—</span>}
+        </td>
+        <td style={{ ...td, color: "var(--foreground)", lineHeight: 1.4 }}>
+          <span
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
             {exercise.sentence || <span style={{ color: "var(--muted)" }}>—</span>}
           </span>
         </td>
         <td style={td}>
-          {exercise.audioUrl ? (
-            <audio
-              controls
-              src={exercise.audioUrl}
-              preload="none"
-              style={{ height: 28, width: "100%", maxWidth: 200 }}
-            />
-          ) : (
-            <span style={{ color: "var(--muted)", fontSize: 12 }}>sin audio</span>
-          )}
+          <MiniAudioPlayer url={exercise.audioUrl} />
         </td>
         <td style={td}>
           <button
@@ -442,7 +481,7 @@ function ExerciseRow({
                 onToggleEdit();
               }
             }}
-            style={{ ...btnLink, fontWeight: 600 }}
+            style={isEditing ? btnChipActive : btnChip}
           >
             {isEditing ? "Cerrar" : "Editar"}
           </button>
@@ -453,11 +492,11 @@ function ExerciseRow({
           <td colSpan={colCount} style={{ padding: 0 }}>
             <div
               style={{
-                padding: "14px 16px 18px",
-                borderTop: "1px solid var(--card-border)",
+                padding: "16px 18px 20px",
+                borderTop: "1px dashed var(--card-border)",
                 display: "grid",
                 gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
-                gap: "12px 18px",
+                gap: "14px 20px",
               }}
             >
               <Field label="Palabra">
@@ -477,25 +516,32 @@ function ExerciseRow({
                 <textarea
                   value={optionsText}
                   onChange={(e) => setOptionsText(e.target.value)}
-                  style={{ ...inp, minHeight: 80, fontFamily: "var(--font-jetbrains-mono), monospace" }}
+                  style={{
+                    ...inp,
+                    minHeight: 90,
+                    fontFamily: "var(--font-jetbrains-mono), ui-monospace, monospace",
+                    fontSize: 12,
+                  }}
                 />
               </Field>
               <Field label="Audio">
-                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   <input
                     value={audioUrl}
                     onChange={(e) => setAudioUrl(e.target.value)}
-                    style={inp}
+                    style={{ ...inp, fontSize: 12, fontFamily: "var(--font-jetbrains-mono), ui-monospace, monospace" }}
                     placeholder="https://...mp3"
                   />
-                  {(audioUrl || exercise.audioUrl) ? (
-                    <audio
-                      controls
-                      src={audioUrl || exercise.audioUrl || undefined}
-                      preload="none"
-                      style={{ height: 32, width: "100%" }}
-                    />
-                  ) : null}
+                  <div
+                    style={{
+                      padding: 10,
+                      borderRadius: 8,
+                      background: "var(--background)",
+                      border: "1px solid var(--card-border)",
+                    }}
+                  >
+                    <MiniAudioPlayer url={audioUrl || exercise.audioUrl} expanded />
+                  </div>
                   <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                     <button
                       onClick={onRegen}
@@ -503,7 +549,7 @@ function ExerciseRow({
                       style={btnSecondary}
                       title="Regenera el clip con el motor TTS y guarda la URL nueva."
                     >
-                      {isBusy ? "Regenerando..." : "Regenerar audio"}
+                      {isBusy ? "Trabajando..." : "Regenerar audio"}
                     </button>
                     <button
                       onClick={() => fileInputRef.current?.click()}
@@ -511,7 +557,7 @@ function ExerciseRow({
                       style={btnSecondary}
                       title="Sube tu propio mp3/wav (máx 5 MB) y reemplaza el audio actual."
                     >
-                      {isBusy ? "Subiendo..." : "Subir audio"}
+                      Subir audio
                     </button>
                     <input
                       ref={fileInputRef}
@@ -527,7 +573,7 @@ function ExerciseRow({
                     <button
                       onClick={onClearAudio}
                       disabled={isBusy || locked || !exercise.audioUrl}
-                      style={btnSecondary}
+                      style={btnSecondaryDanger}
                       title="Borra la URL para que el próximo Regenerar set la rellene."
                     >
                       Quitar audio
@@ -540,7 +586,7 @@ function ExerciseRow({
                   Cancelar
                 </button>
                 <button onClick={handleSave} disabled={isBusy || locked} style={btnPrimary}>
-                  Guardar
+                  Guardar cambios
                 </button>
               </div>
             </div>
@@ -551,28 +597,236 @@ function ExerciseRow({
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────
+// MiniAudioPlayer — replaces native <audio controls> with a small
+// circular play button + scrubber + time. Keeps the row visually quiet
+// and matches the Studio chrome.
+// ─────────────────────────────────────────────────────────────────────
+
+function MiniAudioPlayer({ url, expanded }: { url: string | null | undefined; expanded?: boolean }) {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [playing, setPlaying] = useState(false);
+  const [duration, setDuration] = useState<number>(0);
+  const [currentTime, setCurrentTime] = useState<number>(0);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setPlaying(false);
+    setCurrentTime(0);
+    setDuration(0);
+    setReady(false);
+  }, [url]);
+
+  if (!url) {
+    return (
+      <div style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--muted)", fontSize: 12 }}>
+        <span
+          aria-hidden
+          style={{
+            width: 8,
+            height: 8,
+            borderRadius: 999,
+            border: "1px solid var(--muted)",
+            opacity: 0.5,
+          }}
+        />
+        Sin audio
+      </div>
+    );
+  }
+
+  function toggle() {
+    const el = audioRef.current;
+    if (!el) return;
+    if (el.paused) void el.play();
+    else el.pause();
+  }
+
+  function seek(e: React.MouseEvent<HTMLDivElement>) {
+    const el = audioRef.current;
+    if (!el || !duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    el.currentTime = Math.max(0, Math.min(duration, duration * pct));
+  }
+
+  const pct = duration > 0 ? (currentTime / duration) * 100 : 0;
+  const remaining = Math.max(0, duration - currentTime);
+  const timeLabel = formatTime(playing ? remaining : duration);
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+        height: expanded ? 36 : 28,
+        width: "100%",
+      }}
+    >
+      <button
+        type="button"
+        onClick={toggle}
+        disabled={!ready && !playing}
+        aria-label={playing ? "Pausar" : "Reproducir"}
+        style={{
+          width: expanded ? 32 : 28,
+          height: expanded ? 32 : 28,
+          minWidth: expanded ? 32 : 28,
+          borderRadius: 999,
+          border: "none",
+          background: playing ? "var(--primary)" : "rgba(255,255,255,0.08)",
+          color: playing ? "#fff" : "var(--foreground)",
+          cursor: ready ? "pointer" : "wait",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          transition: "background 0.15s",
+          padding: 0,
+        }}
+      >
+        {playing ? <PauseIcon size={12} /> : <PlayIcon size={12} />}
+      </button>
+      <div
+        onClick={seek}
+        style={{
+          flex: 1,
+          height: 4,
+          background: "rgba(255,255,255,0.08)",
+          borderRadius: 999,
+          cursor: duration > 0 ? "pointer" : "default",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: `${pct}%`,
+            background: "var(--primary)",
+            borderRadius: 999,
+            transition: playing ? "width 0.1s linear" : "none",
+          }}
+        />
+      </div>
+      <span
+        style={{
+          fontSize: 11,
+          color: "var(--muted)",
+          fontVariantNumeric: "tabular-nums",
+          minWidth: 32,
+          textAlign: "right",
+        }}
+      >
+        {timeLabel}
+      </span>
+      <audio
+        ref={audioRef}
+        src={url}
+        preload="metadata"
+        onLoadedMetadata={(e) => {
+          const d = (e.target as HTMLAudioElement).duration;
+          if (Number.isFinite(d)) setDuration(d);
+          setReady(true);
+        }}
+        onTimeUpdate={(e) => setCurrentTime((e.target as HTMLAudioElement).currentTime)}
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={() => {
+          setPlaying(false);
+          setCurrentTime(0);
+        }}
+      />
+    </div>
+  );
+}
+
+function PlayIcon({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 12 12" aria-hidden focusable="false">
+      <path d="M3 1.5 L10 6 L3 10.5 Z" fill="currentColor" />
+    </svg>
+  );
+}
+function PauseIcon({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 12 12" aria-hidden focusable="false">
+      <rect x="2.5" y="1.5" width="2.5" height="9" rx="0.5" fill="currentColor" />
+      <rect x="7" y="1.5" width="2.5" height="9" rx="0.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function formatTime(seconds: number): string {
+  if (!Number.isFinite(seconds) || seconds <= 0) return "0:00";
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60).toString().padStart(2, "0");
+  return `${m}:${s}`;
+}
+
+function TypeBadge({ color, children }: { color: string; children: React.ReactNode }) {
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 6,
+        padding: "3px 9px",
+        borderRadius: 999,
+        fontSize: 11,
+        fontWeight: 600,
+        background: `${color}1f`,
+        color,
+        border: `1px solid ${color}33`,
+        whiteSpace: "nowrap",
+      }}
+    >
+      <span
+        aria-hidden
+        style={{
+          width: 6,
+          height: 6,
+          borderRadius: 999,
+          background: color,
+          flexShrink: 0,
+        }}
+      />
+      {children}
+    </span>
+  );
+}
+
 function Field({ label, children, span }: { label: string; children: React.ReactNode; span?: 1 | 2 }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 4, gridColumn: span === 2 ? "1 / -1" : undefined }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 6,
+        gridColumn: span === 2 ? "1 / -1" : undefined,
+      }}
+    >
       <label style={lbl}>{label}</label>
       {children}
     </div>
   );
 }
 
-// ── Styles (theme-aware) ─────────────────────────────────────────────
+// ─── Styles (theme-aware) ────────────────────────────────────────────
 
 const th: React.CSSProperties = {
-  padding: "8px 12px",
+  padding: "10px 14px",
   fontWeight: 600,
   fontSize: 11,
   color: "var(--muted)",
   textTransform: "uppercase",
-  letterSpacing: 0.3,
+  letterSpacing: 0.4,
   borderBottom: "1px solid var(--card-border)",
+  background: "rgba(255,255,255,0.015)",
 };
 const td: React.CSSProperties = {
-  padding: "8px 12px",
+  padding: "12px 14px",
   verticalAlign: "middle",
   fontSize: 13,
   color: "var(--foreground)",
@@ -581,16 +835,26 @@ const btnPrimary: React.CSSProperties = {
   background: "var(--primary)",
   color: "#fff",
   border: "none",
-  padding: "7px 14px",
+  padding: "8px 14px",
   borderRadius: 6,
   cursor: "pointer",
   fontSize: 13,
   fontWeight: 600,
 };
 const btnSecondary: React.CSSProperties = {
-  background: "var(--card-bg)",
+  background: "rgba(255,255,255,0.04)",
   color: "var(--foreground)",
   border: "1px solid var(--card-border)",
+  padding: "7px 12px",
+  borderRadius: 6,
+  cursor: "pointer",
+  fontSize: 12,
+  fontWeight: 500,
+};
+const btnSecondaryDanger: React.CSSProperties = {
+  background: "transparent",
+  color: "#fca5a5",
+  border: "1px solid rgba(239, 68, 68, 0.35)",
   padding: "7px 12px",
   borderRadius: 6,
   cursor: "pointer",
@@ -601,31 +865,43 @@ const btnGhost: React.CSSProperties = {
   background: "transparent",
   color: "var(--muted)",
   border: "1px solid var(--card-border)",
-  padding: "7px 12px",
+  padding: "8px 14px",
   borderRadius: 6,
   cursor: "pointer",
-  fontSize: 12,
+  fontSize: 13,
 };
-const btnLink: React.CSSProperties = {
-  background: "none",
-  border: "none",
+const btnChip: React.CSSProperties = {
+  background: "transparent",
   color: "var(--primary)",
+  border: "1px solid var(--card-border)",
+  padding: "5px 12px",
+  borderRadius: 999,
   cursor: "pointer",
   fontSize: 12,
-  padding: "4px 6px",
+  fontWeight: 600,
+};
+const btnChipActive: React.CSSProperties = {
+  background: "var(--primary)",
+  color: "#0b1e36",
+  border: "1px solid var(--primary)",
+  padding: "5px 12px",
+  borderRadius: 999,
+  cursor: "pointer",
+  fontSize: 12,
+  fontWeight: 700,
 };
 const lbl: React.CSSProperties = {
-  fontSize: 11,
-  fontWeight: 600,
+  fontSize: 10,
+  fontWeight: 700,
   color: "var(--muted)",
   textTransform: "uppercase",
-  letterSpacing: 0.3,
+  letterSpacing: 0.6,
 };
 const inp: React.CSSProperties = {
   width: "100%",
-  padding: "7px 10px",
+  padding: "8px 11px",
   border: "1px solid var(--card-border)",
-  borderRadius: 6,
+  borderRadius: 7,
   fontSize: 13,
   boxSizing: "border-box",
   background: "var(--background)",
