@@ -341,17 +341,18 @@ export default function StudioShell({
         aria-label={collapsed ? "Expandir menú" : "Plegar menú"}
         title={collapsed ? "Expandir menú" : "Plegar menú"}
         style={{
+          // Mismo "tab handle" en ambos estados, colgando del borde
+          // derecho del sidebar. Evita overlap con logo, "STUDIO" chip
+          // o iconos del nav. Posicion consistente = UX más predecible.
           position: "fixed",
           top: 22,
-          left: collapsed
-            ? `${sidebarWidth - 12}px`
-            : `${sidebarWidth - 34}px`,
+          left: `${sidebarWidth - 12}px`,
           width: 24,
           height: 24,
-          borderRadius: collapsed ? "0 6px 6px 0" : 6,
-          background: collapsed ? SIDEBAR_BG : "rgba(255,255,255,0.05)",
+          borderRadius: "0 6px 6px 0",
+          background: SIDEBAR_BG,
           border: `1px solid ${SIDEBAR_BORDER}`,
-          borderLeft: collapsed ? "none" : `1px solid ${SIDEBAR_BORDER}`,
+          borderLeft: "none",
           color: "var(--muted)",
           display: "grid",
           placeItems: "center",
