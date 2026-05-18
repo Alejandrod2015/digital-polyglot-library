@@ -11,6 +11,11 @@
 // button + progress bar matches the surrounding type system.
 
 import { useEffect, useRef, useState, useTransition } from "react";
+import {
+  isDirtyPracticeSentence,
+  preparePracticeSentenceForTts,
+  sanitizePracticeSentence,
+} from "@/lib/sanitizePracticeSentence";
 
 type Exercise = {
   id: string;
@@ -125,7 +130,7 @@ export default function PracticeSetEditor({ storyId, storyTitle, language, set }
       setError("Falta el idioma del journey para regenerar audio.");
       return;
     }
-    const ttsSentence = sanitizeForTts(ex.sentence, ex.word);
+    const ttsSentence = preparePracticeSentenceForTts(ex.sentence, ex.word);
     setBusyId(ex.id);
     setError(null);
     try {
@@ -407,10 +412,13 @@ function ExerciseRow({
       options,
       answer,
     };
+    // Belt-and-suspenders: server PATCH already sanitizes, but cleaning
+    // here too means the local UI updates immediately without a
+    // round-trip mismatch.
     onSave({
       ...exercise,
       word,
-      sentence,
+      sentence: sanitizePracticeSentence(sentence),
       audioUrl: audioUrl.trim() || null,
       payload: newPayload,
     });
@@ -511,7 +519,7 @@ function ExerciseRow({
                   onChange={(e) => setSentence(e.target.value)}
                   style={{ ...inp, minHeight: 56 }}
                 />
-                {ttsHintFor(sentence) ? (
+                {isDirtyPracticeSentence(sentence) ? (
                   <div
                     style={{
                       fontSize: 11,
@@ -522,9 +530,29 @@ function ExerciseRow({
                       borderRadius: 6,
                       marginTop: 4,
                       lineHeight: 1.4,
+                      display: "flex",
+                      gap: 8,
+                      alignItems: "center",
+                      flexWrap: "wrap",
                     }}
                   >
-                    ⚠ {ttsHintFor(sentence)}
+                    <span>⚠ La frase termina con una comilla huérfana. Se limpiará automáticamente al guardar.</span>
+                    <button
+                      type="button"
+                      onClick={() => setSentence(sanitizePracticeSentence(sentence))}
+                      style={{
+                        marginLeft: "auto",
+                        background: "rgba(251, 191, 36, 0.18)",
+                        border: "1px solid rgba(251, 191, 36, 0.4)",
+                        color: "#fbbf24",
+                        padding: "3px 8px",
+                        borderRadius: 4,
+                        fontSize: 11,
+                        cursor: "pointer",
+                      }}
+                    >
+                      Limpiar ahora
+                    </button>
                   </div>
                 ) : null}
               </Field>
@@ -772,44 +800,6 @@ function PauseIcon({ size }: { size: number }) {
       <rect x="7" y="1.5" width="2.5" height="9" rx="0.5" fill="currentColor" />
     </svg>
   );
-}
-
-// Clean a stored sentence before handing it to TTS. The story
-// generator occasionally leaves orphan straight quotes/apostrophes
-// after the sentence-ending punctuation (e.g. `Grazie per l'aiuto!'`)
-// because the dialog was stripped of its opening quote upstream. TTS
-// engines read those orphans as a glottal click at the very end of
-// the clip ("sonido raro"); strip them here so regenerated audio is
-// clean even when the underlying text still has the artefact.
-export function sanitizeForTts(sentence: string, word: string): string {
-  let s = sentence.replace(/_+/g, word);
-  // Strip straight apostrophes/quotes that trail sentence-ending
-  // punctuation. Curly quotes (« » " " ' ') are kept; those are
-  // intentional dialog closers TTS can voice naturally.
-  s = s.replace(/([.!?])['"]+\s*$/, "$1");
-  // Strip a lone straight apostrophe/quote at the very end with no
-  // closing pair earlier in the string.
-  if (/['"]$/.test(s)) {
-    const last = s.at(-1)!;
-    const earlier = s.slice(0, -1);
-    const opens = (earlier.match(new RegExp(`\\${last}`, "g")) ?? []).length;
-    if (opens % 2 === 0) s = earlier;
-  }
-  return s.trim();
-}
-
-// Returns a short editor hint when the sentence has obvious noise
-// (orphan trailing quotes/apostrophes). Shown next to the Frase input
-// in the inline edit panel so revisors fix the source instead of
-// repeatedly hitting Regenerar.
-function ttsHintFor(sentence: string): string | null {
-  if (/([.!?])['"]+\s*$/.test(sentence)) {
-    return "La frase termina con una comilla suelta tras la puntuación; el TTS la lee como un click. Bórrala y regenera.";
-  }
-  if (/['"]$/.test(sentence)) {
-    return "La frase termina con una comilla huérfana. Considera quitarla antes de regenerar el audio.";
-  }
-  return null;
 }
 
 function formatTime(seconds: number): string {
