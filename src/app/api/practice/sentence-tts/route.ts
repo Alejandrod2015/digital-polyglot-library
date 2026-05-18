@@ -105,7 +105,13 @@ function modalEndpointFor(voiceId: string): string | null {
 // Piper does not insert tail silence when the input ends with `.` or
 // `!`/`?` — the audio terminates abruptly at audible volume and the ear
 // reads it as "iba a decir una letra más". Padding kills that artifact.
-const CACHE_VERSION = "v4";
+// v5: also slow tempo to 0.80 (matches narration default per
+// project_audio_defaults memory). Piper Paola defaults are too fast for
+// A1 learners practicing words; the 20% slowdown is barely perceptible
+// in quality (atempo WSOLA stays in [0.5,2]) but materially improves
+// comprehension of individual word boundaries.
+const CACHE_VERSION = "v5";
+const PRACTICE_TEMPO = 0.80;
 
 function runFfmpeg(args: string[]): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -120,18 +126,27 @@ function runFfmpeg(args: string[]): Promise<void> {
   });
 }
 
-async function appendTrailingSilence(sourceUrl: string, padSec: number): Promise<Buffer> {
-  const workDir = mkdtempSync(join(tmpdir(), "tts-pad-"));
+async function postProcessPracticeAudio(
+  sourceUrl: string,
+  padSec: number,
+  tempo: number
+): Promise<Buffer> {
+  const workDir = mkdtempSync(join(tmpdir(), "tts-pp-"));
   const inPath = join(workDir, "in.mp3");
   const outPath = join(workDir, "out.mp3");
   try {
     const r = await fetch(sourceUrl);
     if (!r.ok) throw new Error(`download ${r.status}`);
     writeFileSync(inPath, Buffer.from(await r.arrayBuffer()));
+    // Filter chain: slow first, then pad. apad on a slowed-down clip
+    // gives the same audible silence regardless of tempo. atempo stays
+    // in [0.5, 2] which is the WSOLA-safe range (no pitch shift, no
+    // audible artifacts on speech).
+    const filters = [`atempo=${tempo}`, `apad=pad_dur=${padSec}`].join(",");
     await runFfmpeg([
       "-y", "-loglevel", "error",
       "-i", inPath,
-      "-af", `apad=pad_dur=${padSec}`,
+      "-af", filters,
       "-codec:a", "libmp3lame", "-b:a", "128k",
       outPath,
     ]);
@@ -260,15 +275,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Post-process: append trailing silence so the audio ends with a
-  // natural decay instead of cutting on the last sample. See CACHE_VERSION
-  // header for rationale. If ffmpeg fails, fall back to the raw mp3 — a
-  // tail-clipped clip is still better than no audio at all.
+  // Post-process: slow to PRACTICE_TEMPO + append trailing silence so
+  // the audio ends with a natural decay instead of cutting on the last
+  // sample. See CACHE_VERSION header for rationale. If ffmpeg fails, fall
+  // back to the raw mp3 — a tail-clipped, native-tempo clip is still
+  // better than no audio at all.
   try {
-    const padded = await appendTrailingSilence(modalResp.url, 0.15);
+    const processed = await postProcessPracticeAudio(modalResp.url, 0.15, PRACTICE_TEMPO);
     const uploaded = await uploadPublicObject({
       key: generatedKey,
-      body: padded,
+      body: processed,
       contentType: "audio/mpeg",
     });
     if (uploaded?.url) {
@@ -276,7 +292,7 @@ export async function POST(request: NextRequest) {
     }
   } catch (err) {
     console.warn(
-      `[practice/sentence-tts] silence pad failed, returning raw: ${err instanceof Error ? err.message : err}`
+      `[practice/sentence-tts] post-process failed, returning raw: ${err instanceof Error ? err.message : err}`
     );
   }
   return NextResponse.json({ url: modalResp.url, cached: false, voiceId });

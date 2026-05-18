@@ -7110,16 +7110,39 @@ export function MobileLibraryShell(args: {
     // Antes prefetcheábamos siempre `clip.sentence`, lo cual dejaba
     // el audio del meaning (que es solo la palabra) cold cuando el
     // usuario tapeaba el botón.
-    const queueWarm = (sentence: string, lang: string, voice: string | undefined) => {
+    const queueWarm = (sentence: string, lang: string, voice: string | undefined, cachedUrl: string | null | undefined) => {
       const key = `${lang}::${voice ?? ""}::${sentence}`;
       if (practicePrefetchSeenRef.current.has(key)) return;
       practicePrefetchSeenRef.current.add(key);
-      showDebug(`queueWarm start ${JSON.stringify({ lang, voice, sentence: sentence.slice(0, 40) }).slice(0,140)}`);
-      // Fire-and-forget: obtenemos la URL del endpoint y bajamos el
-      // MP3 a disco. El playback path después chequea
-      // `practiceAudioFilesRef` y carga `file://` directo, evitando
-      // 1-2 s de round-trip + descarga en cada tap.
+      showDebug(`queueWarm start ${JSON.stringify({ lang, voice, sentence: sentence.slice(0, 40), cached: !!cachedUrl }).slice(0,140)}`);
+      // Fire-and-forget: prefer the editor-prebaked cachedUrl when set
+      // (no Modal round-trip → no cold-start risk). Falls back to the
+      // sentence-tts endpoint only when no cached url is present.
       void (async () => {
+        try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+        const voiceSafe = (voice ?? "v").replace(/[^a-z0-9]+/gi, "_");
+        const safeName = `${lang}-${voiceSafe}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+        const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+        const info = await FileSystem.getInfoAsync(fileUri);
+        if (info.exists) {
+          practiceAudioFilesRef.current.set(key, fileUri);
+          showDebug(`queueWarm: on disk ${JSON.stringify({ key }).slice(0,140)}`);
+          return;
+        }
+
+        // 1) cached path (Studio-prebaked) — no Modal hit
+        if (cachedUrl) {
+          try {
+            await FileSystem.downloadAsync(cachedUrl, fileUri);
+            practiceAudioFilesRef.current.set(key, fileUri);
+            showDebug(`queueWarm: cached download ok ${JSON.stringify({ key }).slice(0,140)}`);
+            return;
+          } catch (err) {
+            showDebug(`queueWarm: cached download failed, will try Modal ${JSON.stringify({ key, err: err instanceof Error ? err.message.slice(0, 80) : "?" }).slice(0,140)}`);
+          }
+        }
+
+        // 2) Modal fallback
         try {
           const resp = await apiFetch<{ url?: string }>({
             baseUrl: mobileConfig.apiBaseUrl,
@@ -7134,20 +7157,9 @@ export function MobileLibraryShell(args: {
             practicePrefetchSeenRef.current.delete(key);
             return;
           }
-          showDebug(`queueWarm: got url ${JSON.stringify({ key, url: resp.url.slice(0, 80) }).slice(0,140)}`);
-          try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
-          const voiceSafe = (voice ?? "v").replace(/[^a-z0-9]+/gi, "_");
-          const safeName = `${lang}-${voiceSafe}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
-          const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
-          const info = await FileSystem.getInfoAsync(fileUri);
-          if (!info.exists) {
-            showDebug(`queueWarm: downloading ${JSON.stringify({ key }).slice(0,140)}`);
-            await FileSystem.downloadAsync(resp.url, fileUri);
-          } else {
-            showDebug(`queueWarm: file already on disk ${JSON.stringify({ key }).slice(0,140)}`);
-          }
+          await FileSystem.downloadAsync(resp.url, fileUri);
           practiceAudioFilesRef.current.set(key, fileUri);
-          showDebug(`queueWarm: cached uri set ${JSON.stringify({ key, mapSize: practiceAudioFilesRef.current.size }).slice(0,140)}`);
+          showDebug(`queueWarm: Modal download ok ${JSON.stringify({ key }).slice(0,140)}`);
         } catch (err) {
           showDebug(`queueWarm: caught error ${JSON.stringify({ key, err: err instanceof Error ? err.message : String(err) }).slice(0,140)}`);
           practicePrefetchSeenRef.current.delete(key);
@@ -7159,18 +7171,19 @@ export function MobileLibraryShell(args: {
       const clip = ex.audioClip;
       const lang = clip?.language ?? "italian";
       const voice = clip?.voiceId ?? undefined;
+      const cached = clip?.cachedUrl ?? null;
       if (ex.mode === "meaning") {
         const word = ex.favorite.word?.trim();
-        if (word) queueWarm(word, lang, voice);
+        if (word) queueWarm(word, lang, voice, cached);
         continue;
       }
       if (ex.mode === "context") {
-        if (clip?.sentence) queueWarm(clip.sentence, lang, voice);
+        if (clip?.sentence) queueWarm(clip.sentence, lang, voice, cached);
         continue;
       }
       if (ex.mode === "listening") {
         const speech = ex.speechText?.trim();
-        if (speech) queueWarm(speech, lang, voice);
+        if (speech) queueWarm(speech, lang, voice, cached);
         continue;
       }
     }
@@ -7621,32 +7634,12 @@ export function MobileLibraryShell(args: {
       }
     }
 
-    const Speech = getOptionalSpeechModule();
-    if (!Speech) {
-      setSpeakingPracticePromptId(null);
-      return;
-    }
-    Speech.stop();
-    setSpeakingPracticePromptId(currentPracticeExercise.id);
-    const speechLang = getSpeechSynthesisLang(language);
-    Speech.speak(speechText, {
-      language: speechLang,
-      voice: getBestVoiceFor(speechLang),
-      rate: 0.95,
-      pitch: 1,
-      onDone: () =>
-        setSpeakingPracticePromptId((current) =>
-          current === currentPracticeExercise.id ? null : current
-        ),
-      onStopped: () =>
-        setSpeakingPracticePromptId((current) =>
-          current === currentPracticeExercise.id ? null : current
-        ),
-      onError: () =>
-        setSpeakingPracticePromptId((current) =>
-          current === currentPracticeExercise.id ? null : current
-        ),
-    });
+    // expo-speech fallback removed by policy 2026-05-18: el usuario
+    // reportó la voz device-local como "robótica horrible" y prefiere
+    // silencio cuando el HQ TTS no responde. Mejor un play que no suena
+    // que un play que suena artificial.
+    setSpeakingPracticePromptId(null);
+    return;
   }
 
   function resolvePracticeAudioUri(value: string | null | undefined): string | null {
@@ -7947,30 +7940,12 @@ export function MobileLibraryShell(args: {
   // the others first so only one playback is active at a time.
 
   async function playPracticeContextClipTtsOnly() {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
-    const clip = currentPracticeExercise.audioClip;
-    const speechText = clip?.sentence?.trim();
-    const Speech = getOptionalSpeechModule();
-    if (!speechText || !Speech) return;
-    if (speakingPracticePromptId === currentPracticeExercise.id) {
-      Speech.stop();
-      setSpeakingPracticePromptId(null);
-      return;
-    }
-    await stopPracticeContextClip();
-    await stopPracticeHqClip();
-    Speech.stop();
-    setSpeakingPracticePromptId(currentPracticeExercise.id);
-    const lang = getSpeechSynthesisLang(clip?.language);
-    Speech.speak(speechText, {
-      language: lang,
-      voice: getBestVoiceFor(lang),
-      rate: 0.92,
-      pitch: 1,
-      onDone: () => setSpeakingPracticePromptId((c) => c === currentPracticeExercise.id ? null : c),
-      onStopped: () => setSpeakingPracticePromptId((c) => c === currentPracticeExercise.id ? null : c),
-      onError: () => setSpeakingPracticePromptId((c) => c === currentPracticeExercise.id ? null : c),
-    });
+    // expo-speech TTS removido por política 2026-05-18: voz device-local
+    // sonaba "robótica horrible". Esta función queda como noop; los
+    // callers se mantienen wired para no romper la signature pero ya
+    // no emiten audio. Si el HQ TTS (Modal Piper/Kokoro) falla, mejor
+    // silencio que voz artificial.
+    return;
   }
 
   async function playPracticeContextClipStoryOnly() {
@@ -8015,51 +7990,18 @@ export function MobileLibraryShell(args: {
     const baseAudioUrl = resolvePracticeAudioUri(storyAudio?.audioUrl);
     const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
     const audioUrl = segmentClipUrl ?? baseAudioUrl;
-    // Sin segment del Story disponible: intentamos primero HQ TTS
-    // (Kokoro/Piper en Modal). Sólo si HQ falla (red, idioma sin voz
-    // local soportada, Modal caído) caemos al TTS del sistema. El
-    // expo-speech del dispositivo es la "voz robótica" que el usuario
-    // reportó como mala calidad; mantenerlo como último recurso evita
-    // silencio total pero no debería ser la opción principal.
+    // Sin segment del Story disponible: intentamos HQ TTS (Kokoro/Piper
+    // en Modal). Si HQ falla NO caemos a expo-speech — el usuario
+    // prefirió silencio sobre la voz device-local "robótica horrible"
+    // (decisión 2026-05-18).
     if ((!segment || !audioUrl) && clip.sentence?.trim()) {
       try {
         await playPracticeContextClipHqOnly();
-        // Si arrancó, playingHqPracticeClipId queda set; si no, fue
-        // un return temprano y caemos al speech-synth abajo.
-        if (playingHqPracticeClipId === currentPracticeExercise.id) return;
       } catch {
-        // HQ fell through; fall back to expo-speech below as last resort.
+        // HQ failed; no audio plays. Per policy, no expo-speech fallback.
       }
-
-      const speechText = clip.sentence.trim();
-      const Speech = getOptionalSpeechModule();
-      if (!Speech) return;
-      await stopPracticeContextClip();
-      await stopPracticeHqClip();
-      Speech.stop();
-      setSpeakingPracticePromptId(currentPracticeExercise.id);
-      const fallbackLang = getSpeechSynthesisLang(clip.language);
-      Speech.speak(speechText, {
-        language: fallbackLang,
-        voice: getBestVoiceFor(fallbackLang),
-        rate: 0.92,
-        pitch: 1,
-        onDone: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-        onStopped: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-        onError: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-      });
       return;
     }
-
     if (!audioUrl) return;
 
     await stopPracticeContextClip();
@@ -8178,9 +8120,36 @@ export function MobileLibraryShell(args: {
     const cacheKey = `${lang}::${voiceId ?? ""}::${word}`;
 
     let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
+    // Prefer the editor-prebaked R2 mp3 when available — it eliminates
+    // Modal cold-start failures (decisión 2026-05-18). Studio's
+    // PracticeSetEditor regenerates these from the editor surface.
+    const cachedUrl = currentPracticeExercise.audioClip?.cachedUrl ?? null;
+    if (!uri && cachedUrl) {
+      try {
+        await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true });
+      } catch { /* exists */ }
+      const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
+      const safeName = `${lang}-${voiceSafe}-cached-${word.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+      const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+      const info = await FileSystem.getInfoAsync(fileUri);
+      if (!info.exists) {
+        try {
+          await FileSystem.downloadAsync(cachedUrl, fileUri);
+        } catch (err) {
+          console.warn("[mobile practice] cached download failed, will try Modal fallback", err);
+        }
+      }
+      const infoAfter = await FileSystem.getInfoAsync(fileUri);
+      if (infoAfter.exists) {
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
+      }
+    }
     if (!uri) {
-      // Fast-path miss: bajamos URL + descargamos MP3 a disco (igual
-      // que el prefetch). Próximo tap del mismo audio es instant.
+      // Fast-path miss + no cached: bajamos URL + descargamos MP3 a
+      // disco. Solo aquí caemos a Modal Piper (puede fallar en
+      // cold-start; con `cachedUrl` ya cubierto, este path es el último
+      // recurso). Próximo tap del mismo audio es instant.
       setLoadingPracticeAudioId(currentPracticeExercise.id);
       try {
         const resp = await apiFetch<{ url?: string }>({
@@ -8287,6 +8256,35 @@ export function MobileLibraryShell(args: {
     const cacheKey = `${lang}::${voiceId ?? ""}::${clip.sentence}`;
     let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
     showDebug(`Hq cache ${uri ? "HIT" : "miss"} voiceId=${voiceId ?? "null"} sent=${clip.sentence.slice(0,25)}`);
+
+    // Prefer the editor-prebaked R2 mp3 (audioClip.cachedUrl) when
+    // available — bypasses Modal Piper at runtime so cold-starts can't
+    // produce silent plays. Falls through to the Modal TTS endpoint
+    // only when no cached url is set on the exercise (legacy stories or
+    // newly-generated exercises whose audios were never regen'd).
+    const cachedUrl = clip.cachedUrl ?? null;
+    if (!uri && cachedUrl) {
+      try {
+        await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true });
+      } catch { /* exists */ }
+      const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
+      const safeName = `${lang}-${voiceSafe}-cached-${clip.sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+      const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+      const info = await FileSystem.getInfoAsync(fileUri);
+      if (!info.exists) {
+        try {
+          showDebug(`Hq using cachedUrl ${cachedUrl.slice(-40)}`);
+          await FileSystem.downloadAsync(cachedUrl, fileUri);
+        } catch (err) {
+          showDebug(`Hq cached download failed: ${err instanceof Error ? err.message.slice(0, 80) : "?"}`);
+        }
+      }
+      const infoAfter = await FileSystem.getInfoAsync(fileUri);
+      if (infoAfter.exists) {
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
+      }
+    }
 
     if (!uri) {
       setLoadingPracticeAudioId(currentPracticeExercise.id);
@@ -8436,37 +8434,11 @@ export function MobileLibraryShell(args: {
     if (!clip) return;
     try {
       await playPracticeContextClipHqOnly();
-      if (playingHqPracticeClipId === currentPracticeExercise.id) return;
     } catch {
-      // HQ unavailable for this clip; expo-speech fallback below.
+      // HQ TTS unavailable for this clip. Per policy (2026-05-18), no
+      // expo-speech fallback — silence is preferred over the device's
+      // robotic voice.
     }
-
-    const speechText = clip.sentence?.trim();
-    const Speech = getOptionalSpeechModule();
-    if (!speechText || !Speech) return;
-    await stopPracticeContextClip();
-    await stopPracticeHqClip();
-    Speech.stop();
-    setSpeakingPracticePromptId(currentPracticeExercise.id);
-    const fallbackLang = getSpeechSynthesisLang(clip.language);
-    Speech.speak(speechText, {
-      language: fallbackLang,
-      voice: getBestVoiceFor(fallbackLang),
-      rate: 0.92,
-      pitch: 1,
-      onDone: () =>
-        setSpeakingPracticePromptId((cur) =>
-          cur === currentPracticeExercise.id ? null : cur
-        ),
-      onStopped: () =>
-        setSpeakingPracticePromptId((cur) =>
-          cur === currentPracticeExercise.id ? null : cur
-        ),
-      onError: () =>
-        setSpeakingPracticePromptId((cur) =>
-          cur === currentPracticeExercise.id ? null : cur
-        ),
-    });
   }
 
   async function playPracticeContextClip() {
@@ -8475,41 +8447,15 @@ export function MobileLibraryShell(args: {
     if (!clip) return;
 
     if (clip.storySource === "user") {
-      const speechText = clip.sentence?.trim();
-      const Speech = getOptionalSpeechModule();
-      if (!speechText || !Speech) {
-        setSpeakingPracticePromptId(null);
-        return;
+      // User-created stories don't ship narrated audio. Previously fell
+      // back to expo-speech; removed by policy 2026-05-18 (robotic voice
+      // worse than silence). Try HQ TTS once; if Modal doesn't have a
+      // voice for this language/sentence, the button is a no-op.
+      try {
+        await playPracticeContextClipHqOnly();
+      } catch {
+        // No fallback. Silence.
       }
-
-      if (speakingPracticePromptId === currentPracticeExercise.id) {
-        Speech.stop();
-        setSpeakingPracticePromptId(null);
-        return;
-      }
-
-      await stopPracticeContextClip();
-      Speech.stop();
-      setSpeakingPracticePromptId(currentPracticeExercise.id);
-      const contextLang = getSpeechSynthesisLang(clip.language);
-      Speech.speak(speechText, {
-        language: contextLang,
-        voice: getBestVoiceFor(contextLang),
-        rate: 0.92,
-        pitch: 1,
-        onDone: () =>
-          setSpeakingPracticePromptId((current) =>
-            current === currentPracticeExercise.id ? null : current
-          ),
-        onStopped: () =>
-          setSpeakingPracticePromptId((current) =>
-            current === currentPracticeExercise.id ? null : current
-          ),
-        onError: () =>
-          setSpeakingPracticePromptId((current) =>
-            current === currentPracticeExercise.id ? null : current
-          ),
-      });
       return;
     }
 
@@ -8530,38 +8476,17 @@ export function MobileLibraryShell(args: {
     const baseAudioUrl = resolvePracticeAudioUri(storyAudio?.audioUrl);
     const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
     const audioUrl = segmentClipUrl ?? baseAudioUrl;
-    // Journey stories don't yet ship with per-sentence alignment segments, so
-    // there's no precise clip we can scrub into. Instead of silently no-oping
-    // the Play button, fall back to on-device TTS of the context sentence in
-    // the story's language. Works for every journey story, uses the right
-    // voice (it-IT, de-DE, etc.), and the audio sync is accurate enough for
-    // a short sentence.
+    // Journey stories without per-sentence alignment used to fall back
+    // to on-device TTS here. Removed 2026-05-18: usuario prefiere
+    // silencio sobre la voz device-local "robótica". Si no hay segment
+    // ni audioUrl, intentamos HQ TTS de Modal y si tampoco hay, no
+    // suena nada.
     if (!audioUrl || !segment) {
-      const speechText = clip.sentence?.trim();
-      const Speech = getOptionalSpeechModule();
-      if (!speechText || !Speech) return;
-      await stopPracticeContextClip();
-      Speech.stop();
-      setSpeakingPracticePromptId(currentPracticeExercise.id);
-      const fallbackLang = getSpeechSynthesisLang(clip.language);
-      Speech.speak(speechText, {
-        language: fallbackLang,
-        voice: getBestVoiceFor(fallbackLang),
-        rate: 0.92,
-        pitch: 1,
-        onDone: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-        onStopped: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-        onError: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-      });
+      try {
+        await playPracticeContextClipHqOnly();
+      } catch {
+        // Silence.
+      }
       return;
     }
 

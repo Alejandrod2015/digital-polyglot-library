@@ -111,6 +111,11 @@ export type PracticeAudioClip = {
   audioWordEndSec?: number | null;
   audioSentenceStartSec?: number | null;
   audioSentenceEndSec?: number | null;
+  /** Pre-rendered mp3 URL persisted in R2 for this exercise. When set,
+   *  the mobile client plays this URL directly instead of calling the
+   *  Modal Piper endpoint, eliminating cold-start failures. The editor
+   *  (re)generates these from Studio via the regen-audio endpoint. */
+  cachedUrl?: string | null;
 };
 
 export type PracticeExercise =

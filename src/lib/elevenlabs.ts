@@ -37,7 +37,7 @@ export const DEFAULT_AMBIENT_VOLUME = 0.10;
 export const GERMAN_DIALOGUE_VOICES = {
   // All native-DE. License terms verified against the ElevenLabs API:
   //   moritz, enniah → premade default voices (no notice_period, perpetual)
-  //   eleonore, luca → professional shared, 730 days (2 years, max available)
+  //   eleonore → professional shared, 730 days (2 years, max available)
   // No US-accent voices in this set (Sarah and Liam retired).
   //
   // BANNED voices (do NOT add back):
@@ -46,13 +46,14 @@ export const GERMAN_DIALOGUE_VOICES = {
   //   - Simon Sunday (ElevenLabs) — monotone "deprimente"
   //   - Sebastian "qVRpsZJDV29g1CIPzssm" — uptalk AND sounds boring /
   //     adult when used for a kid; rejected as Paul (9 yrs) in
-  //     Apfelkuchen in Wedding (2026-05-14). Replaced by Luca for any
-  //     young male role.
+  //     Apfelkuchen in Wedding (2026-05-14).
+  //   - Gesa Tess "cllvQaMvj0ZKxH88HGEn" — solo testing, nunca usada en
+  //     producción; removida 2026-05-18.
+  //   - Luca "mmAbrxFQ9xjByXyBpqrK" — solo testing, nunca usada en
+  //     producción; removida 2026-05-18.
   moritz:    "Ww7Sq9tx9CCOiNOwWgsx", // M middle-aged, native DE, baritone — narrator
   enniah:    "WHaUUVTDq47Yqc9aDbkH", // F middle-aged, native DE, warm — primary female
-  gesaTess:  "cllvQaMvj0ZKxH88HGEn", // F middle-aged, native DE, "trustworthy host" — calmer baseline than ENNIAH
-  luca:      "mmAbrxFQ9xjByXyBpqrK", // M young, native DE, dynamic engaging — kept for casual young roles. Mild uptone on declaratives (less severe than Sebastian).
-  michael:   "KSEa36Zojh7KLdIkb8Qu", // M young, native DE, "youthful + calm narrative" — preferred for teen/younger characters where Luca's uptone reads as uncertainty.
+  michael:   "KSEa36Zojh7KLdIkb8Qu", // M young, native DE, "youthful + calm narrative" — preferred for teen/younger characters.
   eleonore:  "8SdTD5IMgFKT1jp7JbPC", // F middle-aged, native DE, mature narrator — "Frau" roles
 } as const;
 

@@ -48,6 +48,7 @@ const NAV_SECTIONS = [
     label: "PLANIFICACIÓN",
     items: [
       { href: "/studio/planning", label: "Temas, Idiomas y Niveles", icon: "grid", exact: false },
+      { href: "/studio/validar", label: "Validar historia", icon: "file-text", exact: false },
     ],
   },
   {

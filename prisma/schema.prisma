@@ -297,6 +297,11 @@ model JourneyStory {
   audioFilenamePreview String?
   ambientTag           String?
   voiceId              String?
+  /// Voice override for the practice exercises' TTS. When null, the
+  /// practice pipeline falls back to the per-language default (Paola
+  /// for italian, Dora for spanish, Cadu for portuguese). Independent
+  /// from `voiceId` (which is the narration voice for the full story).
+  practiceVoiceId      String?
   dialogueSpec         Json?
   audioQaStatus        String?
   audioQaScore         Float?

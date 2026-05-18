@@ -20,6 +20,8 @@ export default async function StoryPracticeSetPage({ params }: Props) {
       title: true,
       level: true,
       topic: true,
+      practiceVoiceId: true,
+      journey: { select: { language: true } },
       practiceSet: {
         select: {
           id: true,
@@ -58,6 +60,8 @@ export default async function StoryPracticeSetPage({ params }: Props) {
       <PracticeSetEditor
         storyId={story.id}
         storyTitle={story.title ?? story.slug ?? storyId}
+        practiceVoiceId={story.practiceVoiceId}
+        language={story.journey?.language ?? null}
         set={
           story.practiceSet
             ? {

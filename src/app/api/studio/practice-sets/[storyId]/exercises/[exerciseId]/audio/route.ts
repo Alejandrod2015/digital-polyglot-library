@@ -28,6 +28,33 @@ async function gate(): Promise<NextResponse | null> {
   return null;
 }
 
+/** Returns the text to send to Piper for this exercise. Prefers
+ *  payload.audioClip.sentence (full sentence) over the display column
+ *  `sentence` (may contain `_____`). Falls back to replacing the blank
+ *  with the answer when audioClip is absent. */
+function resolveTTSText(exercise: {
+  sentence: string;
+  word: string;
+  payload: unknown;
+}): string {
+  const payload = (exercise.payload ?? {}) as Record<string, unknown>;
+  const clip = payload.audioClip as Record<string, unknown> | null | undefined;
+  const clipSentence = clip && typeof clip.sentence === "string" ? clip.sentence.trim() : "";
+  if (clipSentence) return clipSentence;
+
+  const raw = (exercise.sentence ?? "").trim();
+  if (!raw) return "";
+  const hasBlank = /_{3,}/.test(raw);
+  if (!hasBlank) return raw;
+
+  const answer =
+    typeof payload.answer === "string" && payload.answer.trim()
+      ? payload.answer.trim()
+      : exercise.word.trim();
+  if (!answer) return raw;
+  return raw.replace(/_{3,}/g, answer);
+}
+
 export async function POST(
   req: NextRequest,
   { params }: { params: Promise<{ storyId: string; exerciseId: string }> }
@@ -46,6 +73,7 @@ export async function POST(
           story: {
             select: {
               voiceId: true,
+              practiceVoiceId: true,
               journey: { select: { language: true, variant: true } },
             },
           },
@@ -63,14 +91,26 @@ export async function POST(
     );
   }
 
-  const sentence = (exercise.sentence ?? "").trim();
+  // The DB column `sentence` is the display form ("Mmm, _____!" for
+  // fill_blank). Piper reads the underscores as silence/garbage, so the
+  // audio ends up missing the target word. The generator stores the
+  // full sentence in `payload.audioClip.sentence`; prefer that, and fall
+  // back to substituting `_____` with the answer when missing.
+  const sentence = resolveTTSText(exercise);
   if (!sentence) {
     return NextResponse.json({ error: "Este ejercicio no tiene frase para sintetizar." }, { status: 400 });
   }
   const journey = exercise.set.story.journey;
   const language = journey?.language ?? "";
   const variant = journey?.variant ?? "";
-  const voiceId = exercise.set.story.voiceId ?? undefined;
+  // Practice voice priority: per-story override → narration voice (when
+  // it happens to be a supported practice voice) → language default
+  // (handled downstream by sentence-tts).
+  const { resolvePracticeVoice } = await import("@/lib/practiceVoices");
+  const voiceId =
+    resolvePracticeVoice(exercise.set.story.practiceVoiceId, language) ??
+    exercise.set.story.voiceId ??
+    undefined;
   if (!language) {
     return NextResponse.json({ error: "Idioma del journey no disponible." }, { status: 400 });
   }

@@ -269,6 +269,9 @@ export default function MonitorClient() {
   const [practiceSetById, setPracticeSetById] = useState<
     Map<string, { id: string; locked: boolean; updatedAt: string; exercises: Array<{ id: string; orderIndex: number; type: string; word: string; sentence: string; audioUrl: string | null; payload: Record<string, unknown>; featured: boolean }> } | null>
   >(new Map());
+  const [practiceMetaById, setPracticeMetaById] = useState<
+    Map<string, { practiceVoiceId: string | null; language: string | null }>
+  >(new Map());
   const [practiceLoadingIds, setPracticeLoadingIds] = useState<Set<string>>(new Set());
 
   type LevelAuditHighlight = { word: string; surface: string; estimatedLevel: string };
@@ -838,6 +841,10 @@ export default function MonitorClient() {
       if (res.ok) {
         const data = await res.json();
         setPracticeSetById((prev) => new Map(prev).set(storyId, data.set ?? null));
+        setPracticeMetaById((prev) => new Map(prev).set(storyId, {
+          practiceVoiceId: data.practiceVoiceId ?? null,
+          language: data.language ?? null,
+        }));
       } else {
         setPracticeSetById((prev) => new Map(prev).set(storyId, null));
       }
@@ -1545,6 +1552,8 @@ export default function MonitorClient() {
                                                 storyId={s.id}
                                                 storyTitle={s.title || `Historia ${s.slotIndex + 1}`}
                                                 set={practiceSetById.get(s.id) ?? null}
+                                                practiceVoiceId={practiceMetaById.get(s.id)?.practiceVoiceId ?? null}
+                                                language={practiceMetaById.get(s.id)?.language ?? null}
                                               />
                                             )}
                                           </div>

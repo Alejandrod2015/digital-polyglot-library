@@ -440,23 +440,8 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   },
   // Voces canónicas del set GERMAN_DIALOGUE_VOICES (`src/lib/elevenlabs.ts`).
   // Antes vivían solo en ese módulo; faltaban del catálogo y por eso el audit
-  // de cobertura no las contaba ni el gallery las podía mostrar. Sincronizadas
-  // aquí con tags y license para que el sistema las trate como ciudadanos
-  // de primera.
-  {
-    id: "elevenlabs/cllvQaMvj0ZKxH88HGEn", engine: "elevenlabs", language: "german", region: "DE", gender: "f",
-    label: "Gesa Tess (femenino mature, trustworthy host, 2yr)", status: "approved",
-    accentTags: ["german-hochdeutsch"],
-    license: "ElevenLabs-Pro-2yr",
-    licenseSource: "ElevenLabs Professional Shared library; voice owner can give 730-day notice to retire.",
-  },
-  {
-    id: "elevenlabs/mmAbrxFQ9xjByXyBpqrK", engine: "elevenlabs", language: "german", region: "DE", gender: "m",
-    label: "Luca (masculino joven, dynamic engaging, 2yr)", status: "approved",
-    accentTags: ["german-hochdeutsch"],
-    license: "ElevenLabs-Pro-2yr",
-    licenseSource: "ElevenLabs Professional Shared library; voice owner can give 730-day notice to retire. Reemplaza a Sebastian (uptalk) per memoria.",
-  },
+  // de cobertura no las contaba ni el gallery las podía mostrar.
+  // Gesa Tess + Luca removidas 2026-05-18 (solo testing, nunca usadas).
 
   // ── Discarded (kept here so the gallery can remember why) ─────────────────
   { id: "elevenlabs/qVRpsZJDV29g1CIPzssm", engine: "elevenlabs", language: "german", region: "DE", gender: "m", label: "Sebastian", status: "discarded", reason: "Aburrida y de adulto cuando se usa para un niño/joven (rechazada como Paul de 9 años en Apfelkuchen in Wedding 2026-05-14) + uptalk: cada frase termina como pregunta. Reemplazado por Luca.", license: "ElevenLabs-Pro-2yr" },

@@ -1,8 +1,17 @@
 "use client";
 
-import { Fragment, useState, useTransition } from "react";
+import { Fragment, useEffect, useState, useTransition } from "react";
 import MiniPlayer from "@/components/studio/MiniPlayer";
 import MediaUploadField from "@/components/studio/MediaUploadField";
+
+type VoiceOption = {
+  id: string;
+  engine: "piper" | "kokoro";
+  label: string;
+  language: string;
+  region?: string;
+  gender: "m" | "f";
+};
 
 type Exercise = {
   id: string;
@@ -28,6 +37,12 @@ type Props = {
   storyId: string;
   storyTitle: string;
   set: Set | null;
+  /** Voz de práctica seleccionada para la historia (override por historia).
+   *  Null = usa el default por idioma del pipeline. */
+  practiceVoiceId?: string | null;
+  /** Idioma del journey al que pertenece la historia. Necesario para
+   *  filtrar la lista de voces disponibles. */
+  language?: string | null;
 };
 
 const TYPE_LABEL: Record<string, string> = {
@@ -38,11 +53,31 @@ const TYPE_LABEL: Record<string, string> = {
   match_meaning: "Empareja",
 };
 
-export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
+export default function PracticeSetEditor({ storyId, storyTitle, set, practiceVoiceId: initialVoice, language }: Props) {
   const [currentSet, setCurrentSet] = useState<Set | null>(set);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
+  const [voices, setVoices] = useState<VoiceOption[]>([]);
+  const [practiceVoiceId, setPracticeVoiceId] = useState<string | null>(initialVoice ?? null);
+  const [savingVoice, setSavingVoice] = useState(false);
+
+  // Load the voices that the Modal pipeline can actually synthesize for
+  // this language. Empty list → no override possible; the dropdown stays
+  // disabled with a tooltip explaining it.
+  useEffect(() => {
+    let cancelled = false;
+    if (!language) { setVoices([]); return; }
+    (async () => {
+      try {
+        const res = await fetch(`/api/studio/practice-voices/${encodeURIComponent(language)}`);
+        if (!res.ok) return;
+        const data = (await res.json()) as { voices: VoiceOption[] };
+        if (!cancelled) setVoices(data.voices ?? []);
+      } catch { /* ignore */ }
+    })();
+    return () => { cancelled = true; };
+  }, [language]);
 
   async function regenerate(force: boolean) {
     setError(null);
@@ -56,8 +91,9 @@ export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
       setError((body as { error?: string }).error ?? `HTTP ${res.status}`);
       return;
     }
-    const data = (await res.json()) as { set: Set };
+    const data = (await res.json()) as { set: Set; practiceVoiceId?: string | null };
     setCurrentSet(data.set);
+    if (data.practiceVoiceId !== undefined) setPracticeVoiceId(data.practiceVoiceId ?? null);
   }
 
   async function toggleLocked() {
@@ -69,6 +105,31 @@ export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
     });
     if (!res.ok) return;
     setCurrentSet({ ...currentSet, locked: !currentSet.locked });
+  }
+
+  async function changeVoice(next: string | null) {
+    setSavingVoice(true);
+    setError(null);
+    // Optimistic update so the dropdown reflects the change immediately.
+    const prev = practiceVoiceId;
+    setPracticeVoiceId(next);
+    try {
+      const res = await fetch(`/api/studio/practice-sets/${storyId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ practiceVoiceId: next }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        setError((body as { error?: string }).error ?? `HTTP ${res.status}`);
+        setPracticeVoiceId(prev);
+      }
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+      setPracticeVoiceId(prev);
+    } finally {
+      setSavingVoice(false);
+    }
   }
 
   async function toggleFeatured(exercise: Exercise) {
@@ -138,6 +199,29 @@ export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
           >
             {currentSet ? "Regenerar set" : "Generar set"}
           </button>
+          <label
+            className="jm-row jm-row--tight"
+            style={{ gap: 4, fontSize: 11, color: "var(--mx-muted)" }}
+            title={
+              voices.length === 0
+                ? `No hay voces de práctica aprobadas para ${language ?? "este idioma"} en Modal.`
+                : "Voz que se usará al regenerar audios de los ejercicios. Cambiar no regenera; aplica a la próxima regeneración."
+            }
+          >
+            <span>Voz:</span>
+            <select
+              className="jm-input"
+              style={{ minWidth: 200, height: 26, fontSize: 11, padding: "0 8px" }}
+              value={practiceVoiceId ?? ""}
+              disabled={voices.length === 0 || savingVoice}
+              onChange={(e) => void changeVoice(e.target.value || null)}
+            >
+              <option value="">Default de {language ?? "idioma"}</option>
+              {voices.map((v) => (
+                <option key={v.id} value={v.id}>{v.label}</option>
+              ))}
+            </select>
+          </label>
           {currentSet && (
             <>
               <button

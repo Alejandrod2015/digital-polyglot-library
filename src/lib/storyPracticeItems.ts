@@ -57,6 +57,101 @@ export function parseLooseVocab(input: unknown): LooseVocabItem[] {
   return [];
 }
 
+/**
+ * Re-orders practice items so the editorially most valuable ones come
+ * first. Score combines three signals:
+ *   - frequency in the story body (word repeated in text → more context
+ *     for retention, stronger anchor for spaced review)
+ *   - grammar-type diversity (round-robin across verb / noun / adj /
+ *     expression so featured doesn't end up 8 nouns and 2 verbs)
+ *   - original vocab order (tie-breaker, preserves editor intent)
+ *
+ * Used by `buildAndPersistStoryPracticeSet` to rank items BEFORE feeding
+ * them into the featured plan, so the 10 that surface end-of-story are
+ * the highest-value ones rather than just the first 10 in the JSON.
+ *
+ * Returns a new array — does not mutate input.
+ */
+export function rankItemsForFeatured(
+  items: PracticeFavoriteItem[],
+  text: string | null | undefined
+): PracticeFavoriteItem[] {
+  if (items.length === 0) return items;
+  const cleanText = stripHtml(text ?? "").toLowerCase();
+
+  // Type buckets. Round-robin across these so the top of the list
+  // covers grammar diversity. Anything we can't classify (unknown type)
+  // sits in `other`.
+  const buckets = new Map<string, PracticeFavoriteItem[]>();
+  const counted = items.map((item, originalIndex) => {
+    const lemma = (item.word || "").toLowerCase().trim();
+    // Frequency: search the body using a light stem so verb conjugations
+    // and noun plurals count too. Lemma `amare` (5ch) stems to `ama`,
+    // which catches `ama / ami / amo / amavo / amare` etc. Italian /
+    // Spanish / Portuguese morphology lives almost entirely in suffixes
+    // so a prefix-stem match is a decent first approximation without
+    // pulling a real lemmatizer.
+    let frequency = 0;
+    if (lemma && cleanText) {
+      const stemLen = Math.max(3, lemma.length - 2);
+      const stem = lemma.slice(0, stemLen);
+      const escaped = stem.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      // \bstem\w* — word starting with the stem, any suffix.
+      const re = new RegExp(`\\b${escaped}\\w*`, "g");
+      frequency = (cleanText.match(re) || []).length;
+    }
+    // Items with a non-null example sentence already proved they appear
+    // somewhere in the body; bump them by 1 so frequency never reads 0
+    // for words the story actually uses (the prefix-stem heuristic still
+    // misses irregulars).
+    if (frequency === 0 && item.exampleSentence) frequency = 1;
+    return { item, originalIndex, frequency };
+  });
+
+  // Sort each bucket by frequency desc (then position asc).
+  for (const c of counted) {
+    const bucket = (c.item.wordType ?? "other").toLowerCase();
+    const list = buckets.get(bucket) ?? [];
+    list.push(c.item);
+    buckets.set(bucket, list);
+  }
+  for (const [bucket, list] of buckets) {
+    list.sort((a, b) => {
+      const fa = counted.find((x) => x.item === a)!.frequency;
+      const fb = counted.find((x) => x.item === b)!.frequency;
+      if (fb !== fa) return fb - fa;
+      const ia = counted.find((x) => x.item === a)!.originalIndex;
+      const ib = counted.find((x) => x.item === b)!.originalIndex;
+      return ia - ib;
+    });
+    buckets.set(bucket, list);
+  }
+
+  // Round-robin pick from buckets so featured is diverse. Order of
+  // buckets favours expressions + verbs first (highest pedagogical
+  // value: collocations + conjugations beat bare nouns), then nouns,
+  // then adjectives, then anything else.
+  const bucketOrder = ["expression", "verb", "noun", "adjective", "adj", "phrase", "idiom", "other"];
+  const orderedBuckets = [
+    ...bucketOrder.filter((name) => buckets.has(name) && (buckets.get(name)?.length ?? 0) > 0),
+    ...Array.from(buckets.keys()).filter((name) => !bucketOrder.includes(name)),
+  ];
+
+  const ranked: PracticeFavoriteItem[] = [];
+  while (ranked.length < items.length) {
+    let anyTaken = false;
+    for (const bucketName of orderedBuckets) {
+      const list = buckets.get(bucketName);
+      if (!list || list.length === 0) continue;
+      ranked.push(list.shift()!);
+      anyTaken = true;
+      if (ranked.length === items.length) break;
+    }
+    if (!anyTaken) break;
+  }
+  return ranked;
+}
+
 function getContextSentence(text: string, word: string): string | null {
   const cleanText = stripHtml(text);
   const normalizedWord = normalizeText(word).toLowerCase();

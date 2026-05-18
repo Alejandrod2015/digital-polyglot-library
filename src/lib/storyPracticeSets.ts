@@ -12,7 +12,7 @@
  * deduplicates by word inside one call).
  */
 import { prisma } from "@/lib/prisma";
-import { buildPracticeItemsFromStory } from "@/lib/storyPracticeItems";
+import { buildPracticeItemsFromStory, rankItemsForFeatured } from "@/lib/storyPracticeItems";
 import { buildMixedPracticeSession, type PracticeExercise, type PracticeMode } from "@/lib/practiceExercises";
 
 const FEATURED_PLAN: PracticeMode[] = ["context", "meaning", "listening", "context", "meaning", "listening", "natural", "context", "meaning", "context"];
@@ -86,9 +86,12 @@ export async function buildAndPersistStoryPracticeSet(
   });
   if (items.length < 3) return { status: "skipped", reason: "no-vocab" };
 
-  // Featured: the 10 that show end-of-story. Same plan as before so
-  // existing behavior is preserved.
-  const featured = buildMixedPracticeSession(items, FEATURED_PLAN, FEATURED_SIZE);
+  // Featured: the 10 that show end-of-story. Items are pre-ranked by
+  // pedagogical value (text frequency + grammar diversity) so the slots
+  // get filled with the words most worth practicing, not just the
+  // first 10 in the vocab JSON.
+  const rankedItems = rankItemsForFeatured(items, story.text);
+  const featured = buildMixedPracticeSession(rankedItems, FEATURED_PLAN, FEATURED_SIZE);
   if (featured.length === 0) return { status: "skipped", reason: "no-vocab" };
 
   // Pool extension: capped at min(POOL_TARGET_SIZE - featured.length, items.length).

@@ -209,6 +209,15 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
   for (const row of set.exercises) {
     const payload = (row.payload ?? {}) as Record<string, unknown>;
     const prompt = typeof payload.prompt === "string" ? payload.prompt : "";
+    // Inject the persisted R2 mp3 url into the audioClip so the mobile
+    // client can play it directly without hitting Modal Piper at
+    // runtime. Modal cold-starts caused intermittent silent plays; the
+    // editor pre-generates these audios from Studio so by the time a
+    // user reaches the exercise, the mp3 is already on R2.
+    const rawClip = (payload.audioClip ?? null) as Record<string, unknown> | null;
+    const audioClip = rawClip
+      ? { ...rawClip, cachedUrl: row.audioUrl ?? null }
+      : (row.audioUrl ? { cachedUrl: row.audioUrl } : null);
     switch (row.type) {
       case "fill_blank": {
         const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
@@ -219,7 +228,7 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
           prompt,
           sentence: row.sentence,
           storySlug,
-          audioClip: (payload.audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never) ?? null,
+          audioClip: audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never,
           options,
           answer,
         });
@@ -235,7 +244,7 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
           word: row.word,
           sentence: row.sentence,
           storySlug,
-          audioClip: (payload.audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never) ?? null,
+          audioClip: audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never,
           options,
           answer,
         });
@@ -250,7 +259,7 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
           prompt,
           sentence: row.sentence,
           storySlug,
-          audioClip: (payload.audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never) ?? null,
+          audioClip: audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never,
           options,
           answer,
         });
