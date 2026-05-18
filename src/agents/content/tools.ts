@@ -21,8 +21,15 @@ export function generateSlug(
 ): string {
   const titleSlug = title
     .toLowerCase()
-    .replace(/[áéíóúüñç]/g, (char) => {
-      const map: Record<string, string> = { á: "a", é: "e", í: "i", ó: "o", ú: "u", ü: "u", ñ: "n", ç: "c" };
+    // German umlauts and ß use the standard transliteration ae/oe/ue/ss so
+    // slugs stay readable (e.g. "Beim Bäcker" → "beim-baecker", not "beim-b-cker").
+    // Romance accents collapse to their base letter.
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
+    .replace(/ß/g, "ss")
+    .replace(/[áéíóúñç]/g, (char) => {
+      const map: Record<string, string> = { á: "a", é: "e", í: "i", ó: "o", ú: "u", ñ: "n", ç: "c" };
       return map[char] || char;
     })
     .replace(/[^a-z0-9]+/g, "-")
