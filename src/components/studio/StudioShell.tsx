@@ -256,38 +256,6 @@ export default function StudioShell({
           )}
         </div>
 
-        {/* Collapse toggle */}
-        <button
-          type="button"
-          onClick={toggleCollapsed}
-          aria-label={collapsed ? "Expandir menú" : "Plegar menú"}
-          title={collapsed ? "Expandir menú" : "Plegar menú"}
-          style={{
-            position: "absolute",
-            top: 22,
-            right: collapsed ? "50%" : 10,
-            transform: collapsed ? "translateX(50%)" : "none",
-            width: 24,
-            height: 24,
-            borderRadius: 6,
-            background: "rgba(255,255,255,0.05)",
-            border: `1px solid ${SIDEBAR_BORDER}`,
-            color: "var(--muted)",
-            display: "grid",
-            placeItems: "center",
-            cursor: "pointer",
-            zIndex: 1,
-          }}
-        >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-            {collapsed ? (
-              <polyline points="9 18 15 12 9 6" />
-            ) : (
-              <polyline points="15 18 9 12 15 6" />
-            )}
-          </svg>
-        </button>
-
         {/* Nav sections (filtered by current user's role) */}
         <nav style={{ padding: "12px 0", flex: 1 }}>
           {NAV_SECTIONS.map((rawSection, si) => {
@@ -360,6 +328,46 @@ export default function StudioShell({
           })}
         </nav>
       </aside>
+
+      {/* Collapse toggle. Renderizado FUERA del aside (que tiene
+          overflow-x: hidden) para poder colgar como un "tab handle" al
+          borde derecho del sidebar sin ser clipeado. Cuando expandido,
+          va al top-right del brand area; cuando colapsado, queda en el
+          borde derecho del sidebar — siempre visible y nunca encima
+          del logo. */}
+      <button
+        type="button"
+        onClick={toggleCollapsed}
+        aria-label={collapsed ? "Expandir menú" : "Plegar menú"}
+        title={collapsed ? "Expandir menú" : "Plegar menú"}
+        style={{
+          position: "fixed",
+          top: 22,
+          left: collapsed
+            ? `${sidebarWidth - 12}px`
+            : `${sidebarWidth - 34}px`,
+          width: 24,
+          height: 24,
+          borderRadius: collapsed ? "0 6px 6px 0" : 6,
+          background: collapsed ? SIDEBAR_BG : "rgba(255,255,255,0.05)",
+          border: `1px solid ${SIDEBAR_BORDER}`,
+          borderLeft: collapsed ? "none" : `1px solid ${SIDEBAR_BORDER}`,
+          color: "var(--muted)",
+          display: "grid",
+          placeItems: "center",
+          cursor: "pointer",
+          zIndex: 50,
+          transition: "left 0.18s ease",
+        }}
+      >
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+          {collapsed ? (
+            <polyline points="9 18 15 12 9 6" />
+          ) : (
+            <polyline points="15 18 9 12 15 6" />
+          )}
+        </svg>
+      </button>
 
       {/* ── Main area ── */}
       <div style={{ marginLeft: sidebarWidth, flex: 1, minWidth: 0, transition: "margin-left 0.18s ease" }}>
