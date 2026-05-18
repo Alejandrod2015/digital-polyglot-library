@@ -180,6 +180,12 @@ export default function MetricsDashboard() {
     Partial<Record<MetricsSection, DashboardData>>
   >({});
   const [days, setDays] = useState("30");
+  // Rango personalizado: cuando `customFrom` y `customTo` están seteados,
+  // la API recibe `from`/`to` en vez de `days`. El preset queda visible
+  // pero ninguno aparece como "active" (gestión por el `isCustom` flag).
+  const [customFrom, setCustomFrom] = useState("");
+  const [customTo, setCustomTo] = useState("");
+  const isCustom = customFrom !== "" && customTo !== "";
   const [bookSlug, setBookSlug] = useState("");
   const [storySlug, setStorySlug] = useState("");
   const [section, setSection] = useState<MetricsSection>("overview");
@@ -226,7 +232,18 @@ export default function MetricsDashboard() {
     try {
       const qs = new URLSearchParams();
       qs.set("section", targetSection);
-      qs.set("days", days);
+      if (isCustom) {
+        // Pasar ISO strings; el route handler hace parseDate(). Si la API
+        // recibe ambos `from` y `to`, ignora `days`. Calculamos un `days`
+        // aproximado para que el chart no degenere.
+        qs.set("from", new Date(customFrom).toISOString());
+        qs.set("to", new Date(`${customTo}T23:59:59`).toISOString());
+        const ms =
+          new Date(customTo).getTime() - new Date(customFrom).getTime();
+        qs.set("days", String(Math.max(1, Math.round(ms / 86400000) + 1)));
+      } else {
+        qs.set("days", days);
+      }
       if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
       if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
       const res = await fetch(`/api/metrics/dashboard?${qs.toString()}`);
@@ -270,15 +287,34 @@ export default function MetricsDashboard() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [section]);
 
+  // Cuando cambia un filtro, invalidamos cache y disparamos refetch
+  // automático. NO reseteamos `data` a EMPTY_DATA — mantenemos los
+  // números viejos visibles mientras la nueva fetch carga (el spinner
+  // del botón "Actualizar" indica el cambio en curso). Excepción: cuando
+  // se está editando un rango personalizado a medias (solo una fecha
+  // seteada) no refetchea, espera a tener ambos o ninguno.
   useEffect(() => {
+    const customIncomplete =
+      (customFrom !== "" && customTo === "") ||
+      (customFrom === "" && customTo !== "");
+    if (customIncomplete) return;
     setSectionCache({});
-    setData(EMPTY_DATA);
-  }, [bookSlug, days, storySlug]);
+    void loadMetrics(section, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bookSlug, days, storySlug, customFrom, customTo]);
 
   function handleExport() {
     const qs = new URLSearchParams();
     qs.set("section", section);
-    qs.set("days", days);
+    if (isCustom) {
+      qs.set("from", new Date(customFrom).toISOString());
+      qs.set("to", new Date(`${customTo}T23:59:59`).toISOString());
+      const ms =
+        new Date(customTo).getTime() - new Date(customFrom).getTime();
+      qs.set("days", String(Math.max(1, Math.round(ms / 86400000) + 1)));
+    } else {
+      qs.set("days", days);
+    }
     if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
     if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
     window.location.href = `/api/metrics/export?${qs.toString()}`;
@@ -385,12 +421,16 @@ export default function MetricsDashboard() {
             <span className="mx-filters__label">Rango</span>
             <div className="mx-segmented">
               {RANGE_OPTIONS.map((option) => {
-                const active = option === days;
+                const active = option === days && !isCustom;
                 return (
                   <button
                     type="button"
                     key={option}
-                    onClick={() => setDays(option)}
+                    onClick={() => {
+                      setDays(option);
+                      setCustomFrom("");
+                      setCustomTo("");
+                    }}
                     className={
                       active
                         ? "mx-segmented__btn mx-segmented__btn--active"
@@ -402,6 +442,63 @@ export default function MetricsDashboard() {
                 );
               })}
             </div>
+          </div>
+
+          <div className="mx-filters__group">
+            <span className="mx-filters__label">Personalizado</span>
+            <input
+              type="date"
+              value={customFrom}
+              max={customTo || undefined}
+              onChange={(e) => setCustomFrom(e.target.value)}
+              aria-label="Desde"
+              className="mx-date-input"
+              style={{
+                background: "var(--mx-bg-input)",
+                border: "1px solid var(--mx-border)",
+                borderRadius: 7,
+                padding: "5px 8px",
+                color: "var(--mx-fg)",
+                fontSize: 12,
+                fontFamily: "var(--mx-mono)",
+                outline: "none",
+                colorScheme: "dark",
+              }}
+            />
+            <span style={{ color: "var(--mx-muted)", fontSize: 12 }}>→</span>
+            <input
+              type="date"
+              value={customTo}
+              min={customFrom || undefined}
+              onChange={(e) => setCustomTo(e.target.value)}
+              aria-label="Hasta"
+              className="mx-date-input"
+              style={{
+                background: "var(--mx-bg-input)",
+                border: "1px solid var(--mx-border)",
+                borderRadius: 7,
+                padding: "5px 8px",
+                color: "var(--mx-fg)",
+                fontSize: 12,
+                fontFamily: "var(--mx-mono)",
+                outline: "none",
+                colorScheme: "dark",
+              }}
+            />
+            {isCustom && (
+              <button
+                type="button"
+                className="mx-input__clear"
+                onClick={() => {
+                  setCustomFrom("");
+                  setCustomTo("");
+                }}
+                title="Volver al rango preestablecido"
+                aria-label="Limpiar rango personalizado"
+              >
+                ×
+              </button>
+            )}
           </div>
 
           <div className="mx-filters__group mx-filters__group--input">

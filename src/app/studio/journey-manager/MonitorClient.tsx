@@ -1,6 +1,54 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import PracticeSetEditor from "@/components/studio/PracticeSetEditor";
+import MiniPlayer from "@/components/studio/MiniPlayer";
+import { getIsoLanguageTag } from "@/lib/languageFlags";
+
+// ── Inline SVG icons (no emoji) ──
+type IconName =
+  | "chevron"
+  | "edit"
+  | "x"
+  | "plus"
+  | "minus"
+  | "bolt"
+  | "refresh"
+  | "check"
+  | "play"
+  | "pause"
+  | "external"
+  | "trash";
+
+function Icon({ name, size = 14 }: { name: IconName; size?: number }) {
+  const common = { width: size, height: size, viewBox: "0 0 16 16", fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  switch (name) {
+    case "chevron":
+      return (<svg {...common}><polyline points="6 4 10 8 6 12" /></svg>);
+    case "edit":
+      return (<svg {...common}><path d="M10.5 2.5l3 3-7.5 7.5H3v-3z" /></svg>);
+    case "x":
+      return (<svg {...common}><line x1="4" y1="4" x2="12" y2="12" /><line x1="12" y1="4" x2="4" y2="12" /></svg>);
+    case "plus":
+      return (<svg {...common}><line x1="8" y1="3" x2="8" y2="13" /><line x1="3" y1="8" x2="13" y2="8" /></svg>);
+    case "minus":
+      return (<svg {...common}><line x1="3" y1="8" x2="13" y2="8" /></svg>);
+    case "bolt":
+      return (<svg {...common}><polygon points="9 1.5 3.5 9 7.5 9 6.5 14.5 12.5 7 8.5 7 9 1.5" /></svg>);
+    case "refresh":
+      return (<svg {...common}><path d="M2.5 7.5a5.5 5.5 0 0 1 9.5-3.2M13.5 8.5a5.5 5.5 0 0 1-9.5 3.2" /><polyline points="11.5 1.5 12 4.5 9 4.8" /><polyline points="4.5 14.5 4 11.5 7 11.2" /></svg>);
+    case "check":
+      return (<svg {...common}><polyline points="3 8.5 6.5 12 13 4.5" /></svg>);
+    case "play":
+      return (<svg {...common} fill="currentColor" stroke="none"><polygon points="4 3 13 8 4 13" /></svg>);
+    case "pause":
+      return (<svg {...common} fill="currentColor" stroke="none"><rect x="4" y="3" width="3" height="10" /><rect x="9" y="3" width="3" height="10" /></svg>);
+    case "external":
+      return (<svg {...common}><path d="M6 3H3v10h10v-3" /><polyline points="9 3 13 3 13 7" /><line x1="13" y1="3" x2="8" y2="8" /></svg>);
+    case "trash":
+      return (<svg {...common}><polyline points="3 4 13 4" /><path d="M5 4v9h6V4" /><path d="M7 4V2.5h2V4" /></svg>);
+  }
+}
 
 // ── Config ──
 
@@ -9,7 +57,7 @@ type LevelItem = { code: string; label: string };
 type TopicItem = { slug: string; label: string; defaultLevel?: string };
 type JourneyTypeItem = { id: string; slug: string; label: string };
 
-// ── Single-select custom dropdown (matches TopicDropdown style) ──
+// ── Single-select custom dropdown ──
 function SingleSelectDropdown({ options, value, onChange, placeholder }: {
   options: { value: string; label: string }[];
   value: string;
@@ -30,31 +78,29 @@ function SingleSelectDropdown({ options, value, onChange, placeholder }: {
   }, [open]);
 
   return (
-    <div ref={ref} style={{ position: "relative" }}>
-      <div onClick={() => setOpen(!open)}
-        style={{ display: "flex", gap: 3, alignItems: "center", padding: "4px 8px", borderRadius: 5, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", cursor: "pointer", height: 30, width: 150 }}>
+    <div ref={ref} className="jm-select">
+      <div className="jm-select__trigger" onClick={() => setOpen(!open)}>
         {selectedOption ? (
-          <span style={{ padding: "0 5px", borderRadius: 3, fontSize: 11, fontWeight: 600, backgroundColor: "rgba(20,184,166,0.15)", border: "1px solid rgba(20,184,166,0.3)", color: "#14b8a6", whiteSpace: "nowrap" }}>
-            {selectedOption.label}
-          </span>
+          <span className="jm-chip jm-chip--teal">{selectedOption.label}</span>
         ) : (
-          <span style={{ fontSize: 11, color: "var(--muted)" }}>{placeholder}</span>
+          <span className="jm-select__placeholder">{placeholder}</span>
         )}
-        <span style={{ marginLeft: "auto", fontSize: 8, color: "var(--muted)", paddingLeft: 4 }}>▼</span>
+        <span className="jm-select__caret">▾</span>
       </div>
       {open && (
-        <div style={{ position: "absolute", top: "calc(100% + 2px)", left: 0, minWidth: "100%", width: "max-content", padding: 4, borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "#0d1520", zIndex: 100, maxHeight: 220, overflowY: "auto", boxShadow: "0 8px 24px rgba(0,0,0,0.5)" }}>
+        <div className="jm-select__menu">
           {options.map((o) => {
             const isSelected = o.value === value;
             return (
-              <div key={o.value}
+              <div
+                key={o.value}
                 onClick={() => { onChange(o.value); setOpen(false); }}
-                style={{ display: "flex", alignItems: "center", gap: 6, padding: "4px 8px", borderRadius: 4, cursor: "pointer",
-                  backgroundColor: isSelected ? "rgba(20,184,166,0.1)" : "transparent" }}>
-                <span style={{ width: 12, height: 12, borderRadius: 6, border: `1.5px solid ${isSelected ? "#14b8a6" : "var(--card-border)"}`, backgroundColor: isSelected ? "#14b8a6" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 8, color: "#fff", flexShrink: 0 }}>
+                className={`jm-select__option ${isSelected ? "jm-select__option--selected" : ""}`}
+              >
+                <span className={`jm-select__option-mark jm-select__option-mark--radio ${isSelected ? "jm-select__option-mark--selected" : ""}`}>
                   {isSelected && "●"}
                 </span>
-                <span style={{ fontSize: 11, color: "var(--foreground)", whiteSpace: "nowrap" }}>{o.label}</span>
+                <span>{o.label}</span>
               </div>
             );
           })}
@@ -75,7 +121,6 @@ function TopicDropdown({ available, selected, disabled, onToggle }: {
   const ref = useRef<HTMLDivElement>(null);
   const selectedItems = available.filter((t) => selected.has(t.slug));
 
-  // Close on click outside
   useEffect(() => {
     if (!open) return;
     const handler = (e: MouseEvent) => {
@@ -86,44 +131,41 @@ function TopicDropdown({ available, selected, disabled, onToggle }: {
   }, [open]);
 
   return (
-    <div ref={ref} style={{ position: "relative", flex: 1 }}>
-      {/* Selected chips + trigger */}
-      <div onClick={() => setOpen(!open)}
-        style={{ display: "flex", gap: 3, alignItems: "center", flexWrap: "wrap", padding: "2px 6px", borderRadius: 5, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", cursor: "pointer", minHeight: 22 }}>
+    <div ref={ref} className="jm-multi">
+      <div className="jm-multi__trigger" onClick={() => setOpen(!open)}>
         {selectedItems.map((t) => (
-          <span key={t.slug} style={{ padding: "0 5px", borderRadius: 3, fontSize: 9, fontWeight: 600, backgroundColor: "rgba(20,184,166,0.15)", border: "1px solid rgba(20,184,166,0.3)", color: "#14b8a6", whiteSpace: "nowrap" }}>
+          <span key={t.slug} className="jm-multi__pill">
             {t.label}
-            <span onClick={(e) => { e.stopPropagation(); onToggle(t.slug); }} style={{ marginLeft: 3, cursor: "pointer", opacity: 0.5, fontSize: 8 }}>x</span>
+            <span className="jm-multi__pill-x" onClick={(e) => { e.stopPropagation(); onToggle(t.slug); }}>×</span>
           </span>
         ))}
-        {selectedItems.length === 0 && <span style={{ fontSize: 10, color: "var(--muted)" }}>Seleccionar temas...</span>}
-        <span style={{ marginLeft: "auto", fontSize: 8, color: "var(--muted)", paddingLeft: 4 }}>▼</span>
+        {selectedItems.length === 0 && <span className="jm-select__placeholder" style={{ fontSize: 11 }}>Seleccionar temas…</span>}
+        <span className="jm-select__caret" style={{ marginLeft: "auto" }}>▾</span>
       </div>
-
-      {/* Dropdown popup */}
       {open && (
-        <div style={{ position: "absolute", top: "calc(100% + 2px)", left: 0, width: 260, padding: 4, borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "#0d1520", zIndex: 100, maxHeight: 220, overflowY: "auto", boxShadow: "0 8px 24px rgba(0,0,0,0.5)" }}>
+        <div className="jm-select__menu" style={{ width: 280 }}>
           {available.map((t) => {
             const taken = disabled.get(t.slug);
             const isSelected = selected.has(t.slug);
             if (taken) {
               return (
-                <div key={t.slug} style={{ display: "flex", alignItems: "center", gap: 6, padding: "3px 8px", opacity: 0.3 }}>
-                  <span style={{ width: 12, height: 12, borderRadius: 2, border: "1.5px solid var(--card-border)", flexShrink: 0 }} />
-                  <span style={{ fontSize: 11 }}>{t.label}</span>
-                  <span style={{ fontSize: 8, color: "var(--muted)" }}>({taken})</span>
+                <div key={t.slug} className="jm-select__option jm-select__option--disabled">
+                  <span className="jm-select__option-mark" />
+                  <span>{t.label}</span>
+                  <span className="jm-dim" style={{ fontSize: 10, marginLeft: "auto" }}>({taken})</span>
                 </div>
               );
             }
             return (
-              <div key={t.slug}
+              <div
+                key={t.slug}
+                className={`jm-select__option ${isSelected ? "jm-select__option--selected" : ""}`}
                 onClick={() => onToggle(t.slug)}
-                style={{ display: "flex", alignItems: "center", gap: 6, padding: "3px 8px", borderRadius: 4, cursor: "pointer",
-                  backgroundColor: isSelected ? "rgba(20,184,166,0.1)" : "transparent" }}>
-                <span style={{ width: 12, height: 12, borderRadius: 2, border: `1.5px solid ${isSelected ? "#14b8a6" : "var(--card-border)"}`, backgroundColor: isSelected ? "#14b8a6" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 8, color: "#fff", flexShrink: 0 }}>
-                  {isSelected && "✓"}
+              >
+                <span className={`jm-select__option-mark ${isSelected ? "jm-select__option-mark--selected" : ""}`}>
+                  {isSelected && <Icon name="check" size={9} />}
                 </span>
-                <span style={{ fontSize: 11, color: "var(--foreground)" }}>{t.label}</span>
+                <span>{t.label}</span>
               </div>
             );
           })}
@@ -132,96 +174,6 @@ function TopicDropdown({ available, selected, disabled, onToggle }: {
     </div>
   );
 }
-
-// ── Mini audio player ──
-function MiniPlayer({ src, width = 180 }: { src: string; width?: number }) {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [playing, setPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-
-  useEffect(() => {
-    const el = audioRef.current;
-    if (!el) return;
-    const onTime = () => { setCurrentTime(el.currentTime); setProgress(el.duration ? (el.currentTime / el.duration) * 100 : 0); };
-    const onMeta = () => setDuration(el.duration || 0);
-    const onEnd = () => setPlaying(false);
-    el.addEventListener("timeupdate", onTime);
-    el.addEventListener("loadedmetadata", onMeta);
-    el.addEventListener("ended", onEnd);
-    return () => { el.removeEventListener("timeupdate", onTime); el.removeEventListener("loadedmetadata", onMeta); el.removeEventListener("ended", onEnd); };
-  }, []);
-
-  function togglePlay() {
-    const el = audioRef.current;
-    if (!el) return;
-    if (playing) el.pause(); else void el.play();
-    setPlaying(!playing);
-  }
-
-  function seek(e: React.MouseEvent<HTMLDivElement>) {
-    const el = audioRef.current;
-    if (!el || !el.duration) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    el.currentTime = ((e.clientX - rect.left) / rect.width) * el.duration;
-  }
-
-  const fmt = (s: number) => { const m = Math.floor(s / 60); return `${m}:${String(Math.floor(s % 60)).padStart(2, "0")}`; };
-
-  return (
-    <div style={{ width, display: "flex", alignItems: "center", gap: 6, padding: "4px 8px", borderRadius: 6, backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid var(--card-border)" }}>
-      <audio ref={audioRef} src={src} preload="metadata" />
-      <button onClick={togglePlay} style={{ background: "none", border: "none", cursor: "pointer", padding: 0, fontSize: 14, color: "#14b8a6", lineHeight: 1 }}>
-        {playing ? "⏸" : "▶"}
-      </button>
-      <div onClick={seek} style={{ flex: 1, height: 4, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.1)", cursor: "pointer", position: "relative" }}>
-        <div style={{ height: "100%", width: `${progress}%`, backgroundColor: "#14b8a6", borderRadius: 2, transition: "width 0.1s" }} />
-      </div>
-      <span style={{ fontSize: 9, color: "var(--muted)", whiteSpace: "nowrap", minWidth: 30, textAlign: "right" }}>
-        {duration > 0 ? fmt(currentTime) : "—"}
-      </span>
-    </div>
-  );
-}
-
-// ── Styles ──
-
-const card: React.CSSProperties = {
-  padding: 16, borderRadius: 10, backgroundColor: "var(--card-bg)",
-  border: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 10,
-};
-const pill = (active: boolean): React.CSSProperties => ({
-  padding: "4px 12px", borderRadius: 6, border: `1px solid ${active ? "#14b8a6" : "var(--card-border)"}`,
-  backgroundColor: active ? "rgba(20,184,166,0.15)" : "transparent",
-  color: active ? "#14b8a6" : "var(--muted)", fontSize: 13, fontWeight: 600, cursor: "pointer",
-});
-const sectionLabel: React.CSSProperties = {
-  margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "#14b8a6",
-};
-const fieldLabel: React.CSSProperties = {
-  fontSize: 11, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" as const,
-};
-const btnPrimary = (disabled?: boolean): React.CSSProperties => ({
-  height: 34, padding: "0 18px", borderRadius: 7, border: "none",
-  backgroundColor: "#14b8a6", color: "#fff", fontWeight: 700, fontSize: 13,
-  cursor: disabled ? "not-allowed" : "pointer", opacity: disabled ? 0.5 : 1,
-});
-const btnSecondary: React.CSSProperties = {
-  height: 28, padding: "0 12px", borderRadius: 6, border: "1px solid var(--card-border)",
-  backgroundColor: "transparent", color: "var(--foreground)", fontWeight: 600, fontSize: 12, cursor: "pointer",
-};
-const chipStyle: React.CSSProperties = {
-  padding: "2px 8px", borderRadius: 4, fontSize: 11, fontWeight: 600,
-  backgroundColor: "rgba(20,184,166,0.08)", border: "1px solid rgba(20,184,166,0.15)", color: "var(--foreground)",
-};
-const iconBtn: React.CSSProperties = {
-  background: "none", border: "none", cursor: "pointer", padding: 2, fontSize: 12, lineHeight: 1, opacity: 0.5,
-};
-const deleteBtn: React.CSSProperties = {
-  background: "none", border: "none", cursor: "pointer", padding: "2px 4px", fontSize: 10, lineHeight: 1,
-  color: "#ef4444", opacity: 0.6, borderRadius: 3,
-};
 
 // ── Types ──
 
@@ -237,9 +189,6 @@ type StoryRow = {
   vocabCount: number | null; sanityId: string | null; coverDone: boolean;
   coverUrl: string | null; audioUrl: string | null; audioStatus: string;
   audioQaStatus: string | null; audioQaScore: number | null; audioQaNotes: string | null;
-  // Persisted vocabulary-level audit (refreshed by /audit-level, cleared
-  // by any endpoint that mutates `text`). The frontend hydrates the
-  // auditResults map from these on load so refreshes don't lose state.
   auditScore?: number | null;
   auditOffenders?: { summary?: string; highlights?: { word: string; surface: string; estimatedLevel: string }[] } | null;
   auditedAt?: string | null;
@@ -248,18 +197,37 @@ type StoryRow = {
 type TopicGroup = { journeyId: string; level: string; topic: string; label: string; stories: StoryRow[] };
 
 // ── Confirm dialog ──
-function ConfirmDialog({ message, onConfirm, onCancel, confirmLabel, confirmColor }: { message: string; onConfirm: () => void; onCancel: () => void; confirmLabel?: string; confirmColor?: string }) {
+function ConfirmDialog({ message, onConfirm, onCancel, confirmLabel, confirmTone }: {
+  message: string;
+  onConfirm: () => void;
+  onCancel: () => void;
+  confirmLabel?: string;
+  confirmTone?: "red" | "amber" | "purple" | "primary";
+}) {
+  const toneClass = confirmTone === "primary" ? "jm-btn--primary"
+    : confirmTone === "amber" ? "jm-btn-tone-amber"
+    : confirmTone === "purple" ? "jm-btn-tone-purple"
+    : "jm-btn-tone-red";
   return (
-    <div style={{ position: "fixed", inset: 0, backgroundColor: "rgba(0,0,0,0.6)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 9999 }}>
-      <div style={{ ...card, maxWidth: 360, padding: 20, gap: 14 }}>
-        <p style={{ margin: 0, fontSize: 13, color: "var(--foreground)" }}>{message}</p>
-        <div style={{ display: "flex", gap: 8, justifyContent: "flex-end" }}>
-          <button onClick={onCancel} style={btnSecondary}>Cancelar</button>
-          <button onClick={onConfirm} style={{ ...btnPrimary(), backgroundColor: confirmColor ?? "#ef4444" }}>{confirmLabel ?? "Eliminar"}</button>
+    <div className="jm-backdrop">
+      <div className="jm-modal">
+        <p className="jm-modal__msg">{message}</p>
+        <div className="jm-row" style={{ justifyContent: "flex-end" }}>
+          <button onClick={onCancel} className="jm-btn jm-btn--sm">Cancelar</button>
+          <button onClick={onConfirm} className={`jm-btn jm-btn--sm ${toneClass}`}>{confirmLabel ?? "Eliminar"}</button>
         </div>
       </div>
     </div>
   );
+}
+
+// Status → sdot class helper
+function statusDotClass(status: string, coverDone?: boolean, audioStatus?: string) {
+  if (status === "published" && coverDone && audioStatus === "ready") return "jm-sdot--published";
+  if (status === "published") return "jm-sdot--partial";
+  if (status === "generated" || status === "qa_pass" || status === "approved") return "jm-sdot--generated";
+  if (status === "draft") return "jm-sdot--draft";
+  return "jm-sdot--fail";
 }
 
 // ── Component ──
@@ -271,10 +239,9 @@ export default function MonitorClient() {
   const [allLanguages, setAllLanguages] = useState<LanguageItem[]>([]);
   const [allLevels, setAllLevels] = useState<LevelItem[]>([]);
   const topicLabels: Record<string, string> = Object.fromEntries(allTopics.map((t) => [t.slug, t.label]));
-  const [showCreateForm, setShowCreateForm] = useState(false);
   const [journeyFilter, setJourneyFilter] = useState<"all" | "pending" | "complete">("all");
 
-  // Create form — language/variant set after data loads
+  // Create form
   const [allJourneyTypes, setAllJourneyTypes] = useState<JourneyTypeItem[]>([]);
   const [journeyType, setJourneyType] = useState("");
   const [filteredTopics, setFilteredTopics] = useState<TopicItem[]>([]);
@@ -285,19 +252,24 @@ export default function MonitorClient() {
   const [storiesPerTopic, setStoriesPerTopic] = useState(1);
   const [creating, setCreating] = useState(false);
 
-  // Expanded journeys/topics (support multiple open)
+  // Expanded journeys/topics
   const [expandedJourneyIds, setExpandedJourneyIds] = useState<Set<string>>(new Set());
   const [expandedTopics, setExpandedTopics] = useState<Set<string>>(new Set());
   const [stories, setStories] = useState<StoryRow[]>([]);
   const [busyStories, setBusyStories] = useState<Set<string>>(new Set());
 
-  // Story detail panel (support multiple open stories)
+  // Story detail panel
   type StoryDetailData = { title?: string; text?: string; synopsis?: string; vocab?: any[] };
   const [expandedStoryIds, setExpandedStoryIds] = useState<Set<string>>(new Set());
   const [storyDetails, setStoryDetails] = useState<Map<string, StoryDetailData>>(new Map());
   const [showTextIds, setShowTextIds] = useState<Set<string>>(new Set());
   const [showVocabIds, setShowVocabIds] = useState<Set<string>>(new Set());
   const [loadingDetailIds, setLoadingDetailIds] = useState<Set<string>>(new Set());
+  const [showPracticeIds, setShowPracticeIds] = useState<Set<string>>(new Set());
+  const [practiceSetById, setPracticeSetById] = useState<
+    Map<string, { id: string; locked: boolean; updatedAt: string; exercises: Array<{ id: string; orderIndex: number; type: string; word: string; sentence: string; audioUrl: string | null; payload: Record<string, unknown> }> } | null>
+  >(new Map());
+  const [practiceLoadingIds, setPracticeLoadingIds] = useState<Set<string>>(new Set());
 
   type LevelAuditHighlight = { word: string; surface: string; estimatedLevel: string };
   type LevelAuditData = { cefrLevel: string; score: number; summary: string; highlights: LevelAuditHighlight[]; ranAt: number };
@@ -309,7 +281,7 @@ export default function MonitorClient() {
   const [lastReplacements, setLastReplacements] = useState<Map<string, AdjustReplacement[]>>(new Map());
 
   // Confirm dialog & edit
-  const [confirmAction, setConfirmAction] = useState<{ message: string; onConfirm: () => void; confirmLabel?: string; confirmColor?: string } | null>(null);
+  const [confirmAction, setConfirmAction] = useState<{ message: string; onConfirm: () => void; confirmLabel?: string; confirmTone?: "red" | "amber" | "purple" | "primary" } | null>(null);
   const [editingJourneyId, setEditingJourneyId] = useState<string | null>(null);
   const [editName, setEditName] = useState("");
   const [editingStructureId, setEditingStructureId] = useState<string | null>(null);
@@ -324,7 +296,6 @@ export default function MonitorClient() {
       if (res.ok) {
         const topics: TopicItem[] = await res.json();
         setFilteredTopics(topics);
-        // Auto-distribute topics to levels based on defaultLevel
         const byLevel: Record<string, Set<string>> = {};
         for (const t of topics) {
           const lvl = t.defaultLevel?.toLowerCase();
@@ -336,9 +307,9 @@ export default function MonitorClient() {
         setTopicsByLevel(byLevel);
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [journeyType]);
 
-  // Use filtered topics for the create form, fall back to allTopics
   const availableTopics = journeyType ? filteredTopics : allTopics;
 
   function toggleSet<T>(set: Set<T>, val: T): Set<T> {
@@ -356,7 +327,6 @@ export default function MonitorClient() {
       setTopicsByLevel(t);
     } else {
       n.add(level);
-      // Start with empty topics — user picks what's available
       setTopicsByLevel({ ...topicsByLevel, [level]: new Set() });
     }
     setSelectedLevels(n);
@@ -367,7 +337,6 @@ export default function MonitorClient() {
     setTopicsByLevel({ ...topicsByLevel, [level]: toggleSet(current, topic) });
   }
 
-  // Total stories count
   const totalStories = [...selectedLevels].reduce((sum, level) => {
     const topics = topicsByLevel[level];
     return sum + (topics?.size ?? 0) * storiesPerTopic;
@@ -388,7 +357,6 @@ export default function MonitorClient() {
       if (lRes.ok) {
         const langs = await lRes.json();
         setAllLanguages(langs);
-        // Set defaults if not yet set
         if (!language && langs.length > 0) {
           setLanguage(langs[0].code);
           setVariant(langs[0].variants?.[0]?.code || "");
@@ -397,6 +365,7 @@ export default function MonitorClient() {
       if (lvRes.ok) setAllLevels(await lvRes.json());
       if (jtRes.ok) setAllJourneyTypes(await jtRes.json());
     } finally { setLoading(false); }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => { void loadJourneys(); }, [loadJourneys]);
@@ -436,9 +405,6 @@ export default function MonitorClient() {
   }
 
   function hydrateAuditFromStories(rows: StoryRow[]) {
-    // Same threshold as the auditor lib: highlights must be 2+ levels
-    // above target. Applied here too so audits cached in the DB before
-    // the threshold change get filtered at render time.
     const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2"];
     const updates: [string, LevelAuditData][] = [];
     for (const r of rows) {
@@ -505,10 +471,8 @@ export default function MonitorClient() {
 
   async function toggleJourney(j: JourneySummary) {
     if (expandedJourneyIds.has(j.id)) {
-      // Collapse this journey: remove its stories and collapse its topics
       setExpandedJourneyIds((prev) => { const n = new Set(prev); n.delete(j.id); return n; });
       setStories((prev) => prev.filter((s) => s.journeyId !== j.id));
-      // Collapse topics belonging to this journey (keys prefixed with journeyId would be cleaner, but we collapse all for safety)
       return;
     }
     setExpandedJourneyIds((prev) => new Set(prev).add(j.id));
@@ -533,9 +497,6 @@ export default function MonitorClient() {
   async function generateStory(storyId: string) {
     setBusyStories((s) => new Set(s).add(storyId));
     try {
-      // If this story was just audited and offenders are still on screen,
-      // send them as wordsToAvoid so the next draft can explicitly avoid
-      // them — closes the audit→regenerate loop.
       const lastAudit = auditResults.get(storyId);
       const wordsToAvoid = lastAudit?.highlights.map((h) => h.word) ?? [];
       const res = await fetch("/api/studio/journeys/generate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId, wordsToAvoid }) });
@@ -548,7 +509,6 @@ export default function MonitorClient() {
       setStories((prev) => prev.map((s) => s.id === storyId
         ? { ...s, status: "generated", title: data.title ?? s.title, synopsis: data.synopsis ?? s.synopsis, slug: data.slug ?? s.slug, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount, error: null }
         : s));
-      // Story changed — previous audit and replacements are stale.
       setAuditResults((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
       setLastReplacements((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
       if (expandedStoryIds.has(storyId)) {
@@ -558,9 +518,6 @@ export default function MonitorClient() {
           setStoryDetails((prev) => new Map(prev).set(storyId, detail));
         }
       }
-      // Auto-audit the fresh story so the next regenerate already has
-      // fresh seeds. Inlined to share the same busy state — no spinner
-      // flash.
       try {
         const auditRes = await fetch("/api/studio/journeys/audit-level", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ storyId }) });
         if (auditRes.ok) {
@@ -582,7 +539,6 @@ export default function MonitorClient() {
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
   }
 
-
   async function adjustLevel(storyId: string) {
     const audit = auditResults.get(storyId);
     if (!audit || audit.highlights.length === 0) return;
@@ -600,21 +556,17 @@ export default function MonitorClient() {
         return;
       }
       if (data.noImprovement) {
-        // Endpoint kept the story unchanged — tell the user, refresh nothing.
-        window.alert("El ajuste no logró bajar el conteo de palabras fuera de nivel después de varios intentos. La historia se dejó como estaba. Probá Regenerar texto si querés un texto distinto.");
+        window.alert("El ajuste no logró bajar el conteo de palabras fuera de nivel después de varios intentos. La historia se dejó como estaba. Prueba Regenerar texto si quieres un texto distinto.");
         return;
       }
       setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, wordCount: data.wordCount ?? s.wordCount, vocabCount: data.vocabCount ?? s.vocabCount } : s));
       const replacements: AdjustReplacement[] = Array.isArray(data.replacements) ? data.replacements : [];
       setLastReplacements((prev) => new Map(prev).set(storyId, replacements));
-      // Refresh detail with the new text.
       const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
       if (detailRes.ok) {
         const detail = await detailRes.json();
         setStoryDetails((prev) => new Map(prev).set(storyId, detail));
       }
-      // The endpoint did the audit internally and returned it — populate
-      // straight from the response, no extra round-trip from the client.
       if (data.audit && typeof data.audit.score === "number") {
         setAuditResults((prev) => new Map(prev).set(storyId, {
           cefrLevel: data.audit.cefrLevel,
@@ -651,8 +603,6 @@ export default function MonitorClient() {
         highlights: data.highlights ?? [],
         ranAt: Date.now(),
       }));
-      // Lazy-load the story detail if it isn't loaded yet, so the audit
-      // panel renders inside the open editor.
       if (!storyDetails.has(storyId)) {
         const detailRes = await fetch(`/api/studio/journeys/story?id=${storyId}`);
         if (detailRes.ok) {
@@ -793,7 +743,6 @@ export default function MonitorClient() {
     } finally { setBusyStories((s) => { const n = new Set(s); n.delete(storyId); return n; }); }
   }
 
-  // Add a new story slot to a topic via API
   async function addStoryToTopic(journeyId: string, level: string, topic: string) {
     const existing = stories.filter((s) => s.level === level && s.topic === topic);
     const nextSlot = existing.length > 0 ? Math.max(...existing.map((s) => s.slotIndex)) + 1 : 0;
@@ -809,7 +758,6 @@ export default function MonitorClient() {
     } catch { /* ignore */ }
   }
 
-  // Generate all pending stories in a topic sequentially
   async function generateAllInTopic(group: TopicGroup) {
     const pending = group.stories.filter((s) => s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review");
     for (const s of pending) {
@@ -817,7 +765,6 @@ export default function MonitorClient() {
     }
   }
 
-  // Generate all pending stories in an entire level (across all topics) sequentially
   async function generateAllInLevel(journeyId: string, level: string) {
     const pending = stories.filter((s) =>
       s.journeyId === journeyId &&
@@ -843,32 +790,22 @@ export default function MonitorClient() {
         }
       },
       confirmLabel: "Regenerar",
-      confirmColor: "#f59e0b",
+      confirmTone: "amber",
     });
   }
 
-  function dotColor(status: string, coverDone?: boolean, audioStatus?: string) {
-    if (status === "published" && coverDone && audioStatus === "ready") return "#22c55e";
-    if (status === "published") return "#86efac";
-    if (status === "generated" || status === "qa_pass" || status === "approved") return "#3b82f6";
-    if (status === "draft") return "rgba(255,255,255,0.15)";
-    return "#ef4444";
-  }
-
-  function storyAction(s: StoryRow): { label: string; title?: string; disabled: boolean; onClick: () => void } | null {
+  function storyAction(s: StoryRow): { label: string; title?: string; disabled: boolean; onClick: () => void; tone: "primary" | "info" } | null {
     const busy = busyStories.has(s.id);
-    if (busy) return { label: "...", disabled: true, onClick: () => {} };
+    if (busy) return { label: "…", disabled: true, onClick: () => {}, tone: "primary" };
     if (s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review")
-      return { label: "Generar historia", title: "Genera título, sinopsis, cuerpo y vocabulario con Claude. Aún no publica.", disabled: false, onClick: () => generateStory(s.id) };
+      return { label: "Generar historia", title: "Genera título, sinopsis, cuerpo y vocabulario con Claude. Aún no publica.", disabled: false, onClick: () => generateStory(s.id), tone: "primary" };
     if (s.status === "generated" || s.status === "qa_pass" || s.status === "approved")
-      return { label: "Publicar", title: "Hace la historia visible en el reader. El audio y la cover, si ya están listos, se publican junto con ella. Si no, puedes generarlos antes o después de publicar.", disabled: false, onClick: () => publishStory(s.id) };
-    // After publish, Cover and Audio are independent buttons rendered separately
+      return { label: "Publicar", title: "Hace la historia visible en el reader. El audio y la cover, si ya están listos, se publican junto con ella.", disabled: false, onClick: () => publishStory(s.id), tone: "primary" };
     return null;
   }
 
   async function toggleStoryDetail(storyId: string) {
     if (expandedStoryIds.has(storyId)) {
-      // Close this one only
       setExpandedStoryIds((prev) => { const n = new Set(prev); n.delete(storyId); return n; });
       setStoryDetails((prev) => { const n = new Map(prev); n.delete(storyId); return n; });
       setShowTextIds((prev) => { const n = new Set(prev); n.delete(storyId); return n; });
@@ -888,13 +825,33 @@ export default function MonitorClient() {
     }
   }
 
+  async function togglePracticeFor(storyId: string) {
+    if (showPracticeIds.has(storyId)) {
+      setShowPracticeIds((prev) => { const n = new Set(prev); n.delete(storyId); return n; });
+      return;
+    }
+    setShowPracticeIds((prev) => new Set(prev).add(storyId));
+    if (practiceSetById.has(storyId)) return;
+    setPracticeLoadingIds((prev) => new Set(prev).add(storyId));
+    try {
+      const res = await fetch(`/api/studio/practice-sets/${storyId}`);
+      if (res.ok) {
+        const data = await res.json();
+        setPracticeSetById((prev) => new Map(prev).set(storyId, data.set ?? null));
+      } else {
+        setPracticeSetById((prev) => new Map(prev).set(storyId, null));
+      }
+    } finally {
+      setPracticeLoadingIds((prev) => { const n = new Set(prev); n.delete(storyId); return n; });
+    }
+  }
+
   async function updateStoryField(storyId: string, field: "title" | "synopsis", value: string) {
     try {
       await fetch("/api/studio/journeys/story", {
         method: "PATCH", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: storyId, [field]: value }),
       });
-      // Update local state
       if (field === "title") {
         setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, title: value } : s));
       }
@@ -906,184 +863,181 @@ export default function MonitorClient() {
     } catch { /* ignore */ }
   }
 
-  // Renders the inline story editor panel
+  // ── Story editor (expanded inline) ──
   function renderStoryEditor(s: StoryRow) {
     if (!expandedStoryIds.has(s.id)) return null;
     const storyDetail = storyDetails.get(s.id);
     const loadingDetail = loadingDetailIds.has(s.id);
     const showText = showTextIds.has(s.id);
     const showVocab = showVocabIds.has(s.id);
-    const statusText = s.status === "published" ? (s.coverDone ? "Completa" : "Publicada (sin cover)") :
-      s.status === "generated" ? "Generada" : s.status === "draft" ? "Borrador" : s.status;
+    const statusText = s.status === "published" ? (s.coverDone ? "Completa" : "Publicada (sin cover)")
+      : s.status === "generated" ? "Generada"
+      : s.status === "draft" ? "Borrador"
+      : s.status;
+    const statusTone =
+      s.status === "published" && s.coverDone && s.audioStatus === "ready" ? "jm-chip--green"
+      : s.status === "published" ? "jm-chip--green"
+      : s.status === "generated" || s.status === "qa_pass" || s.status === "approved" ? "jm-chip--teal"
+      : s.status === "draft" ? "jm-chip"
+      : "jm-chip--red";
 
     return (
-      <div style={{ padding: "10px 8px 10px 28px", display: "flex", flexDirection: "column", gap: 8, borderTop: "1px solid rgba(255,255,255,0.04)" }}>
-        {loadingDetail && <span style={{ fontSize: 10, color: "var(--muted)" }}>Cargando...</span>}
+      <div className="jm-editor">
+        {loadingDetail && <span className="jm-dim" style={{ fontSize: 11 }}>Cargando…</span>}
 
         {storyDetail && (
           <>
-            {/* Two-column layout: left = cover + audio, right = title + synopsis + stats */}
-            <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-              {/* Left: cover + audio stacked */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 6, flexShrink: 0 }}>
-                {s.coverUrl && <img src={s.coverUrl} alt="Cover" style={{ width: 180, height: 120, objectFit: "cover", borderRadius: 6, border: "1px solid var(--card-border)" }} />}
-                {s.audioUrl && <MiniPlayer src={s.audioUrl} width={180} />}
+            <div className="jm-editor__grid">
+              <div className="jm-editor__media">
+                {s.coverUrl && <img className="jm-editor__cover" src={s.coverUrl} alt="" />}
+                {s.audioUrl && <MiniPlayer src={s.audioUrl} />}
               </div>
 
-              {/* Right: title, synopsis, stats, actions */}
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6, minWidth: 0 }}>
-                {/* Title + synopsis side by side */}
-                <div style={{ display: "flex", gap: 8 }}>
-                  <div style={{ flex: 1 }}>
-                    <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Titulo</span>
-                    <input
-                      value={storyDetail.title ?? ""}
-                      onChange={(e) => setStoryDetails((prev) => new Map(prev).set(s.id, { ...storyDetail, title: e.target.value }))}
-                      onBlur={(e) => updateStoryField(s.id, "title", e.target.value)}
-                      style={{ padding: "3px 6px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 12, width: "100%", marginTop: 2 }}
-                    />
-                  </div>
-                </div>
-
-                {/* Synopsis */}
+              <div className="jm-editor__body">
                 <div>
-                  <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Synopsis</span>
-                  <textarea
-                    value={storyDetail.synopsis ?? ""}
-                    onChange={(e) => setStoryDetails((prev) => new Map(prev).set(s.id, { ...storyDetail, synopsis: e.target.value }))}
-                    onBlur={(e) => updateStoryField(s.id, "synopsis", e.target.value)}
-                    rows={2}
-                    style={{ padding: "3px 6px", borderRadius: 4, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 11, resize: "vertical", fontFamily: "inherit", width: "100%", marginTop: 2 }}
+                  <label className="jm-field-label">Título</label>
+                  <input
+                    className="jm-input"
+                    value={storyDetail.title ?? ""}
+                    onChange={(e) => setStoryDetails((prev) => new Map(prev).set(s.id, { ...storyDetail, title: e.target.value }))}
+                    onBlur={(e) => updateStoryField(s.id, "title", e.target.value)}
                   />
                 </div>
 
-                {/* Stats + actions in one row */}
-                <div style={{ display: "flex", gap: 5, alignItems: "center", flexWrap: "wrap" }}>
-                  <span style={{ ...chipStyle, backgroundColor: dotColor(s.status, s.coverDone, s.audioStatus) + "22", borderColor: dotColor(s.status, s.coverDone, s.audioStatus) + "44", color: dotColor(s.status, s.coverDone, s.audioStatus) }}>{statusText}</span>
-                  {s.wordCount != null && <span style={chipStyle}>{s.wordCount}w</span>}
-                  {s.vocabCount != null && <span style={chipStyle}>{s.vocabCount}v</span>}
-                  <span style={{ flex: 1 }} />
-                  <button onClick={() => setShowTextIds((prev) => { const n = new Set(prev); if (n.has(s.id)) n.delete(s.id); else n.add(s.id); return n; })}
-                    style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", ...(showText ? { borderColor: "#14b8a6", color: "#14b8a6" } : {}) }}>
-                    {showText ? "Ocultar texto" : "Texto"}
+                <div>
+                  <label className="jm-field-label">Synopsis</label>
+                  <textarea
+                    className="jm-input"
+                    rows={3}
+                    value={storyDetail.synopsis ?? ""}
+                    onChange={(e) => setStoryDetails((prev) => new Map(prev).set(s.id, { ...storyDetail, synopsis: e.target.value }))}
+                    onBlur={(e) => updateStoryField(s.id, "synopsis", e.target.value)}
+                  />
+                </div>
+
+                <div className="jm-row jm-row--tight jm-row--wrap">
+                  <span className={`jm-chip ${statusTone}`}>{statusText}</span>
+                  {s.wordCount != null && <span className="jm-chip jm-chip--mono">{s.wordCount}w</span>}
+                  {s.vocabCount != null && <span className="jm-chip jm-chip--mono">{s.vocabCount}v</span>}
+                  <span className="jm-row__spacer" />
+                  <button
+                    className={`jm-btn jm-btn--sm ${showText ? "jm-btn-tone-teal" : ""}`}
+                    onClick={() => setShowTextIds((prev) => { const n = new Set(prev); if (n.has(s.id)) n.delete(s.id); else n.add(s.id); return n; })}
+                  >
+                    {showText ? "Ocultar texto" : "Ver texto"}
                   </button>
-                  <button onClick={() => setShowVocabIds((prev) => { const n = new Set(prev); if (n.has(s.id)) n.delete(s.id); else n.add(s.id); return n; })}
-                    style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", ...(showVocab ? { borderColor: "#14b8a6", color: "#14b8a6" } : {}) }}>
+                  <button
+                    className={`jm-btn jm-btn--sm ${showVocab ? "jm-btn-tone-teal" : ""}`}
+                    onClick={() => setShowVocabIds((prev) => { const n = new Set(prev); if (n.has(s.id)) n.delete(s.id); else n.add(s.id); return n; })}
+                  >
                     {showVocab ? "Ocultar vocab" : `Vocab (${s.vocabCount || 0})`}
                   </button>
                   {s.slug && s.status === "published" && (
-                    <a href={`/stories/${s.slug}`} target="_blank" rel="noopener"
-                      style={{ fontSize: 10, color: "#14b8a6", textDecoration: "none", fontWeight: 600 }}>
-                      Abrir ↗
+                    <a href={`/stories/${s.slug}`} target="_blank" rel="noopener" className="jm-btn jm-btn-tone-teal jm-btn--sm">
+                      Abrir <Icon name="external" size={11} />
                     </a>
                   )}
                 </div>
 
-                {/* Tools row: secondary polish actions */}
-                <div style={{ display: "flex", gap: 5, alignItems: "center", flexWrap: "wrap", paddingTop: 4, borderTop: "1px dashed rgba(255,255,255,0.04)", marginTop: 2 }}>
-                  <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase", marginRight: 4 }}>Herramientas</span>
+                <div className="jm-tool-row">
+                  <span className="jm-tool-row__label">Herramientas</span>
                   {s.title && !busyStories.has(s.id) && (
-                    <button onClick={() => regenerateTitle(s.id)}
-                      style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
-                      Regenerar título
+                    <button className="jm-btn jm-btn-tone-amber jm-btn--sm" onClick={() => regenerateTitle(s.id)}>
+                      <Icon name="refresh" size={11} /> Regenerar título
                     </button>
                   )}
                   {s.title && !busyStories.has(s.id) && (
-                    <button onClick={() => regenerateSynopsis(s.id)}
-                      style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
-                      Regenerar synopsis
+                    <button className="jm-btn jm-btn-tone-amber jm-btn--sm" onClick={() => regenerateSynopsis(s.id)}>
+                      <Icon name="refresh" size={11} /> Regenerar synopsis
                     </button>
                   )}
                   {s.vocabCount != null && s.vocabCount > 0 && !busyStories.has(s.id) && (
-                    <button onClick={() => validateVocab(s.id)}
-                      style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
+                    <button className="jm-btn jm-btn-tone-teal jm-btn--sm" onClick={() => validateVocab(s.id)}>
                       Validar vocab
                     </button>
                   )}
                   {s.audioUrl && !busyStories.has(s.id) && (
-                    <button onClick={() => analyzeAudio(s.id)}
-                      style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
+                    <button className="jm-btn jm-btn-tone-teal jm-btn--sm" onClick={() => analyzeAudio(s.id)}>
                       Analizar audio
                     </button>
                   )}
                 </div>
 
-                {/* Audio QA results */}
                 {s.audioQaStatus && (
-                  <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap", paddingTop: 2 }}>
-                    <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>Audio QA</span>
-                    <span style={{ ...chipStyle, fontSize: 9, color: s.audioQaStatus === "pass" ? "#22c55e" : s.audioQaStatus === "fail" ? "#ef4444" : "#f59e0b" }}>
+                  <div className="jm-row jm-row--tight jm-row--wrap">
+                    <span className="jm-tool-row__label">Audio QA</span>
+                    <span className={`jm-chip ${s.audioQaStatus === "pass" ? "jm-chip--green" : s.audioQaStatus === "fail" ? "jm-chip--red" : "jm-chip--amber"}`}>
                       {s.audioQaStatus}{s.audioQaScore != null ? ` · ${Math.round(s.audioQaScore * 100)}%` : ""}
                     </span>
                     {s.audioQaNotes && (
-                      <span style={{ fontSize: 10, color: "var(--muted)", fontStyle: "italic" }} title={s.audioQaNotes}>
+                      <span className="jm-dim" style={{ fontSize: 11, fontStyle: "italic" }} title={s.audioQaNotes}>
                         {s.audioQaNotes.split("\n")[0].slice(0, 80)}
                       </span>
                     )}
                   </div>
                 )}
 
-                {/* Vocabulary level audit + adjust progress + replacements panel */}
                 {(auditResults.has(s.id) || adjustProgress.has(s.id) || lastReplacements.has(s.id)) && (() => {
                   const audit = auditResults.get(s.id);
                   const progress = adjustProgress.get(s.id);
                   const replacements = lastReplacements.get(s.id) ?? [];
-                  const scoreColor = !audit ? "#a78bfa" : audit.score >= 90 ? "#22c55e" : audit.score >= 70 ? "#f59e0b" : "#ef4444";
+                  const scoreTone = !audit ? "jm-chip--purple"
+                    : audit.score >= 90 ? "jm-chip--green"
+                    : audit.score >= 70 ? "jm-chip--amber"
+                    : "jm-chip--red";
                   const progressLabel = progress === "adjusting" ? "Ajustando texto…" : progress === "auditing" ? "Re-auditando nivel…" : null;
                   return (
-                    <div style={{ display: "flex", flexDirection: "column", gap: 6, paddingTop: 4, borderTop: "1px dashed rgba(255,255,255,0.04)", marginTop: 2 }}>
-                      <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
-                        <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>
-                          Nivel {audit?.cefrLevel ?? s.level.toUpperCase()}
-                        </span>
+                    <div className="jm-audit">
+                      <div className="jm-row jm-row--tight jm-row--wrap">
+                        <span className="jm-tool-row__label">Nivel {audit?.cefrLevel ?? s.level.toUpperCase()}</span>
                         {audit && (
-                          <span style={{ ...chipStyle, fontSize: 10, color: scoreColor, borderColor: scoreColor + "55", backgroundColor: scoreColor + "11", fontWeight: 600 }}>
-                            {audit.score}%
-                          </span>
+                          <span className={`jm-chip jm-chip--mono ${scoreTone}`}>{audit.score}%</span>
                         )}
                         {audit && audit.summary && (
-                          <span style={{ fontSize: 10, color: "var(--muted)", fontStyle: "italic", flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={audit.summary}>
+                          <span className="jm-dim" style={{ fontSize: 11, fontStyle: "italic", flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={audit.summary}>
                             {audit.summary}
                           </span>
                         )}
                         {progressLabel && (
-                          <span style={{ fontSize: 10, color: "#14b8a6", fontStyle: "italic" }}>
-                            {progressLabel}
-                          </span>
+                          <span style={{ fontSize: 11, color: "var(--mx-accent)", fontStyle: "italic" }}>{progressLabel}</span>
                         )}
-                        <span style={{ flex: audit && audit.summary ? 0 : 1 }} />
+                        <span className="jm-row__spacer" />
                         {audit && audit.highlights.length > 0 && audit.score < 95 && !busyStories.has(s.id) && (
-                          <button onClick={() => adjustLevel(s.id)}
-                            title={`Reescribir solo las frases con palabras que destacan, manteniendo el resto del texto idéntico`}
-                            style={{ ...btnSecondary, fontSize: 10, height: 22, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
+                          <button
+                            className="jm-btn jm-btn-tone-teal jm-btn--sm"
+                            onClick={() => adjustLevel(s.id)}
+                            title="Reescribir solo las frases con palabras que destacan"
+                          >
                             Ajustar nivel
                           </button>
                         )}
-                        <button onClick={() => {
-                          setAuditResults((prev) => { const n = new Map(prev); n.delete(s.id); return n; });
-                          setLastReplacements((prev) => { const n = new Map(prev); n.delete(s.id); return n; });
-                        }}
-                          style={{ ...btnSecondary, fontSize: 9, height: 18, padding: "0 6px", color: "var(--muted)", borderColor: "var(--card-border)" }}>
+                        <button
+                          className="jm-btn jm-btn--xs jm-btn--ghost"
+                          onClick={() => {
+                            setAuditResults((prev) => { const n = new Map(prev); n.delete(s.id); return n; });
+                            setLastReplacements((prev) => { const n = new Map(prev); n.delete(s.id); return n; });
+                          }}
+                        >
                           Ocultar
                         </button>
                       </div>
                       {audit && audit.highlights.length > 0 && (
-                        <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
-                          <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>
-                            Palabras que destacan
-                          </span>
-                          <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+                        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                          <span className="jm-tool-row__label">Palabras que destacan</span>
+                          <div className="jm-row jm-row--tight jm-row--wrap" style={{ gap: 4 }}>
                             {audit.highlights.map((h, i) => {
-                              const lvlColor = h.estimatedLevel === "C2" || h.estimatedLevel === "C1" ? "#ef4444"
-                                : h.estimatedLevel === "B2" ? "#f97316"
-                                : h.estimatedLevel === "B1" ? "#f59e0b"
-                                : "#a78bfa";
+                              const lvlClass =
+                                h.estimatedLevel === "C2" || h.estimatedLevel === "C1" ? "jm-chip--red"
+                                : h.estimatedLevel === "B2" ? "jm-chip--amber"
+                                : h.estimatedLevel === "B1" ? "jm-chip--amber"
+                                : "jm-chip--purple";
                               return (
-                                <span key={i} title={`${h.word} (lemma) — estimado ${h.estimatedLevel}`}
-                                  style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 6px", borderRadius: 3, fontSize: 10, backgroundColor: lvlColor + "11", border: `1px solid ${lvlColor}44`, color: "var(--foreground)" }}>
-                                  <span style={{ fontSize: 8, fontWeight: 700, color: lvlColor }}>{h.estimatedLevel}</span>
+                                <span key={i} className={`jm-audit__highlight ${lvlClass}`} title={`${h.word} — estimado ${h.estimatedLevel}`}>
+                                  <span className="jm-audit__lvl">{h.estimatedLevel}</span>
                                   <strong>{h.surface}</strong>
-                                  {h.surface.toLowerCase() !== h.word.toLowerCase() && <span style={{ color: "var(--muted)" }}>({h.word})</span>}
+                                  {h.surface.toLowerCase() !== h.word.toLowerCase() && (
+                                    <span className="jm-dim">({h.word})</span>
+                                  )}
                                 </span>
                               );
                             })}
@@ -1092,15 +1046,13 @@ export default function MonitorClient() {
                       )}
                       {replacements.length > 0 && (
                         <div style={{ display: "flex", flexDirection: "column", gap: 3, paddingTop: 4 }}>
-                          <span style={{ fontSize: 9, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase" }}>
-                            Último ajuste — {replacements.length} reemplazo{replacements.length === 1 ? "" : "s"}
-                          </span>
+                          <span className="jm-tool-row__label">Último ajuste — {replacements.length} reemplazo{replacements.length === 1 ? "" : "s"}</span>
                           <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                             {replacements.map((r, i) => (
-                              <div key={i} style={{ display: "flex", gap: 6, alignItems: "center", fontSize: 11, lineHeight: 1.4 }}>
-                                <span style={{ color: "#ef4444", textDecoration: "line-through" }}>{r.from}</span>
-                                <span style={{ color: "var(--muted)" }}>→</span>
-                                <span style={{ color: "#22c55e", fontWeight: 500 }}>{r.to}</span>
+                              <div key={i} className="jm-rep">
+                                <span className="jm-rep__from">{r.from}</span>
+                                <span className="jm-rep__arrow">→</span>
+                                <span className="jm-rep__to">{r.to}</span>
                               </div>
                             ))}
                           </div>
@@ -1112,19 +1064,15 @@ export default function MonitorClient() {
               </div>
             </div>
 
-            {/* Collapsible text */}
             {showText && storyDetail.text && (
-              <div style={{ fontSize: 12, color: "var(--foreground)", lineHeight: 1.6, maxHeight: 200, overflow: "auto", padding: 10, borderRadius: 5, backgroundColor: "rgba(255,255,255,0.02)", border: "1px solid var(--card-border)", whiteSpace: "pre-wrap" }}>
-                {storyDetail.text}
-              </div>
+              <div className="jm-text">{storyDetail.text}</div>
             )}
 
-            {/* Collapsible vocab */}
             {showVocab && storyDetail.vocab && storyDetail.vocab.length > 0 && (
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+              <div className="jm-vocab-list">
                 {storyDetail.vocab.map((v: any, i: number) => (
-                  <span key={i} style={{ padding: "2px 6px", borderRadius: 3, fontSize: 10, backgroundColor: "rgba(20,184,166,0.08)", border: "1px solid rgba(20,184,166,0.2)", color: "var(--foreground)" }}>
-                    <strong>{v.word}</strong>{v.translation && <span style={{ color: "var(--muted)" }}> — {v.translation}</span>}
+                  <span key={i} className="jm-vocab">
+                    <strong>{v.word}</strong>{v.translation && <span className="jm-dim"> — {v.translation}</span>}
                   </span>
                 ))}
               </div>
@@ -1132,42 +1080,46 @@ export default function MonitorClient() {
           </>
         )}
 
-        {s.error && <p style={{ margin: 0, fontSize: 10, color: "#ef4444" }}>{s.error}</p>}
+        {s.error && <p style={{ margin: 0, fontSize: 11, color: "var(--mx-neg)" }}>{s.error}</p>}
       </div>
     );
   }
 
-
   // ═══════════════════ RENDER ═══════════════════
-
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-
+    <div className="jm-root">
       {confirmAction && (
-        <ConfirmDialog message={confirmAction.message}
-          confirmLabel={confirmAction.confirmLabel} confirmColor={confirmAction.confirmColor}
+        <ConfirmDialog
+          message={confirmAction.message}
+          confirmLabel={confirmAction.confirmLabel}
+          confirmTone={confirmAction.confirmTone}
           onConfirm={() => { confirmAction.onConfirm(); setConfirmAction(null); }}
-          onCancel={() => setConfirmAction(null)} />
+          onCancel={() => setConfirmAction(null)}
+        />
       )}
 
       {/* ══ Nuevo Journey ══ */}
-      <div style={{ ...card, gap: 10, padding: "16px 18px", ...(allLanguages.length === 0 ? { opacity: 0.5, pointerEvents: "none" } : {}) }}>
-        <p style={sectionLabel}>Nuevo Journey</p>
+      <section className={`jm-panel ${allLanguages.length === 0 ? "jm-empty" : ""}`} style={allLanguages.length === 0 ? { opacity: 0.5, pointerEvents: "none" } : undefined}>
+        <header className="jm-panel__head">
+          <div>
+            <p className="jm-eyebrow">Nuevo Journey</p>
+            <h2 className="jm-panel__title">Crear una nueva colección</h2>
+          </div>
+          <div className="jm-row jm-row--tight" style={{ marginLeft: "auto" }}>
+            <span className="jm-mono jm-dim" style={{ fontSize: 12 }}>
+              <strong>{totalStories}</strong> {totalStories === 1 ? "historia" : "historias"}
+            </span>
+            <button
+              className="jm-btn jm-btn--primary"
+              onClick={() => void createJourney()}
+              disabled={creating || totalStories === 0 || !journeyType}
+            >
+              <Icon name="plus" size={12} /> {creating ? "Creando…" : "Crear journey"}
+            </button>
+          </div>
+        </header>
 
-        {/* Row 1: count + create button */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12, justifyContent: "flex-end" }}>
-          <span style={{ fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>
-            {totalStories} {totalStories === 1 ? "historia" : "historias"}
-          </span>
-          <button onClick={() => void createJourney()} disabled={creating || totalStories === 0 || !journeyType}
-            style={btnPrimary(creating || totalStories === 0 || !journeyType)}>
-            {creating ? "Creando..." : "Crear journey"}
-          </button>
-        </div>
-
-        {/* Row 2: Journey type + Language + Region + Levels + stories/topic */}
-        <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+        <div className="jm-row jm-row--wrap">
           <SingleSelectDropdown
             options={allJourneyTypes.map((jt) => ({ value: jt.slug, label: jt.label }))}
             value={journeyType}
@@ -1188,17 +1140,30 @@ export default function MonitorClient() {
               placeholder="Variante"
             />
           )}
-          <span style={{ width: 1, height: 18, backgroundColor: "var(--card-border)" }} />
-          {allLevels.map((l) => <button key={l.code} onClick={() => toggleLevel(l.code)} style={pill(selectedLevels.has(l.code))}>{l.code.toUpperCase()}</button>)}
-          <span style={{ width: 1, height: 18, backgroundColor: "var(--card-border)" }} />
-          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <input type="number" min={1} max={10} value={storiesPerTopic} onChange={(e) => setStoriesPerTopic(Math.max(1, parseInt(e.target.value) || 1))}
-              style={{ padding: "4px 6px", borderRadius: 6, border: "1px solid var(--card-border)", backgroundColor: "rgba(255,255,255,0.02)", color: "var(--foreground)", fontSize: 13, width: 38, textAlign: "center" }} />
-            <span style={{ fontSize: 12, color: "var(--muted)" }}>historia/tema</span>
+          <span className="jm-row__sep" />
+          {allLevels.map((l) => (
+            <button
+              key={l.code}
+              onClick={() => toggleLevel(l.code)}
+              className={`jm-btn jm-btn--sm ${selectedLevels.has(l.code) ? "jm-btn-tone-teal" : ""}`}
+            >
+              {l.code.toUpperCase()}
+            </button>
+          ))}
+          <span className="jm-row__sep" />
+          <div className="jm-row jm-row--tight">
+            <input
+              type="number"
+              min={1}
+              max={10}
+              value={storiesPerTopic}
+              onChange={(e) => setStoriesPerTopic(Math.max(1, parseInt(e.target.value) || 1))}
+              className="jm-input jm-input--num"
+            />
+            <span className="jm-dim" style={{ fontSize: 12 }}>historia / tema</span>
           </div>
         </div>
 
-        {/* Row 3+: Topics PER LEVEL with dropdown (exclusive across levels) */}
         {[...selectedLevels].sort().map((level) => {
           const levelTopics = topicsByLevel[level] ?? new Set();
           const takenByOther = new Map<string, string>();
@@ -1207,8 +1172,8 @@ export default function MonitorClient() {
             for (const t of otherTopics) takenByOther.set(t, otherLevel.toUpperCase());
           }
           return (
-            <div key={level} style={{ display: "flex", gap: 8, alignItems: "center" }}>
-              <span style={{ fontSize: 13, fontWeight: 700, color: "#14b8a6", width: 26, flexShrink: 0 }}>{level.toUpperCase()}</span>
+            <div key={level} className="jm-row">
+              <span className="jm-level-code">{level.toUpperCase()}</span>
               <TopicDropdown
                 available={availableTopics}
                 selected={levelTopics}
@@ -1218,21 +1183,28 @@ export default function MonitorClient() {
             </div>
           );
         })}
-      </div>
+      </section>
 
-      {/* ══ Journeys list ══ */}
+      {/* ══ Filter tabs ══ */}
       {journeys.length > 0 && (
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 4 }}>
-          {(["all", "pending", "complete"] as const).map((f) => (
-            <button key={f} onClick={() => setJourneyFilter(f)}
-              style={{ ...pill(journeyFilter === f), padding: "3px 10px" }}>
-              {f === "all" ? "Todos" : f === "pending" ? "Pendientes" : "Completos"}
-            </button>
-          ))}
+        <div className="jm-row" style={{ justifyContent: "flex-end" }}>
+          <div className="jm-segmented">
+            {(["all", "pending", "complete"] as const).map((f) => (
+              <button
+                key={f}
+                onClick={() => setJourneyFilter(f)}
+                className={`jm-segmented__btn ${journeyFilter === f ? "jm-segmented__btn--active" : ""}`}
+              >
+                {f === "all" ? "Todos" : f === "pending" ? "Pendientes" : "Completos"}
+              </button>
+            ))}
+          </div>
         </div>
       )}
-      {loading && <p style={{ fontSize: 11, color: "var(--muted)" }}>Cargando...</p>}
 
+      {loading && <p className="jm-dim" style={{ fontSize: 12 }}>Cargando…</p>}
+
+      {/* ══ Journeys list ══ */}
       {journeys.filter((j) => {
         if (journeyFilter === "pending") return j.stats.published < j.stats.total;
         if (journeyFilter === "complete") return j.stats.total > 0 && j.stats.published === j.stats.total;
@@ -1243,100 +1215,112 @@ export default function MonitorClient() {
         const variantLabel = lang?.variants?.find((v) => v.code === j.variant)?.label || j.variant;
         const isEditing = editingJourneyId === j.id;
         const isExpanded = expandedJourneyIds.has(j.id);
+        const isComplete = j.stats.total > 0 && j.stats.published === j.stats.total;
 
         return (
-          <div key={j.id} style={{ ...card, gap: 0, padding: 0, overflow: "hidden" }}>
-            {/* Journey header row */}
-            <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 16px", cursor: "pointer" }}
-              onClick={() => void toggleJourney(j)}>
-              <span style={{ fontSize: 12, color: "var(--muted)", transform: isExpanded ? "rotate(90deg)" : "none", transition: "transform 0.15s" }}>▶</span>
+          <article key={j.id} className={`jm-journey ${isExpanded ? "jm-journey--open" : ""}`}>
+            <header className="jm-j-head" onClick={() => void toggleJourney(j)}>
+              <span className={`jm-j-head__caret ${isExpanded ? "jm-j-head__caret--open" : ""}`}>
+                <Icon name="chevron" />
+              </span>
+              <span className="jm-lang-tag">{getIsoLanguageTag(lang?.label || j.language)}</span>
               {isEditing ? (
-                <>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: "#14b8a6" }}>{lang?.label || j.language}</span>
-                  <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)" }}>·</span>
-                  <input autoFocus value={editName} onChange={(e) => setEditName(e.target.value)}
-                    onClick={(e) => e.stopPropagation()}
-                    onKeyDown={(e) => { if (e.key === "Enter") void renameJourney(j.id, editName); if (e.key === "Escape") setEditingJourneyId(null); }}
-                    onBlur={() => void renameJourney(j.id, editName)}
-                    style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid #14b8a6", backgroundColor: "transparent", color: "var(--foreground)", fontSize: 15, fontWeight: 700, width: 220 }} />
-                </>
+                <input
+                  autoFocus
+                  className="jm-input"
+                  style={{ width: 240, height: 28, fontWeight: 600 }}
+                  value={editName}
+                  onChange={(e) => setEditName(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
+                  onKeyDown={(e) => { if (e.key === "Enter") void renameJourney(j.id, editName); if (e.key === "Escape") setEditingJourneyId(null); }}
+                  onBlur={() => void renameJourney(j.id, editName)}
+                />
               ) : (
-                <>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: "#14b8a6" }}>{lang?.label || j.language}</span>
-                  <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)" }}>·</span>
-                  <span onClick={(e) => { e.stopPropagation(); setEditingJourneyId(j.id); setEditName(j.name); }}
-                    style={{ fontSize: 15, fontWeight: 700, color: "var(--foreground)", cursor: "text" }} title="Clic para renombrar">{j.name}</span>
-                  {variantLabel && (
-                    <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 4, backgroundColor: "rgba(20,184,166,0.15)", color: "#2dd4bf", letterSpacing: 0.4, textTransform: "uppercase" }} title={`Variante: ${variantLabel}`}>
-                      {variantLabel}
-                    </span>
-                  )}
-                </>
+                <span
+                  className="jm-j-head__name"
+                  onClick={(e) => { e.stopPropagation(); setEditingJourneyId(j.id); setEditName(j.name); }}
+                  title="Click para renombrar"
+                >
+                  {j.name}
+                </span>
               )}
-              <span style={{ fontSize: 12, color: "var(--muted)" }}>
+              {variantLabel && (
+                <span className="jm-chip jm-chip--teal jm-chip--mono">{variantLabel.toUpperCase()}</span>
+              )}
+              <span className="jm-j-head__meta">
                 {j.levels.map((l) => l.toUpperCase()).join(", ")} · {j.topics.length} temas
               </span>
-              <span style={{ flex: 1 }} />
-              <span style={chipStyle}>{j.stats.published}/{j.stats.total} publicadas</span>
-
-              {/* Progress bar mini */}
-              <div style={{ width: 80, height: 4, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.06)", overflow: "hidden" }}>
-                <div style={{ height: "100%", width: `${pct}%`, backgroundColor: "#14b8a6", borderRadius: 2 }} />
+              <span className="jm-row__spacer" />
+              <span className="jm-j-head__count">
+                <strong>{j.stats.published}</strong>/{j.stats.total} publicadas
+              </span>
+              <div className="jm-j-head__bar">
+                <div
+                  className={`jm-j-head__bar-fill ${isComplete ? "jm-j-head__bar-fill--complete" : ""}`}
+                  style={{ width: `${pct}%` }}
+                />
               </div>
+              <button
+                className={`jm-btn jm-btn--icon jm-btn--ghost ${editingStructureId === j.id ? "jm-btn-tone-teal" : ""}`}
+                onClick={(e) => { e.stopPropagation(); setEditingStructureId(editingStructureId === j.id ? null : j.id); }}
+                title="Editar niveles"
+              >
+                <Icon name="edit" size={12} />
+              </button>
+              <button
+                className="jm-btn jm-btn--icon jm-btn--ghost"
+                style={{ color: "var(--mx-neg)" }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setConfirmAction({
+                    message: `Eliminar "${j.name}" con ${j.stats.total} historia${j.stats.total === 1 ? "" : "s"} (${j.stats.published} publicada${j.stats.published === 1 ? "" : "s"})? Esta acción es irreversible.`,
+                    onConfirm: () => deleteJourney(j.id),
+                    confirmTone: "red",
+                  });
+                }}
+                title="Eliminar"
+              >
+                <Icon name="x" size={12} />
+              </button>
+            </header>
 
-              <button onClick={(e) => { e.stopPropagation(); setEditingStructureId(editingStructureId === j.id ? null : j.id); }} style={{ ...iconBtn, color: editingStructureId === j.id ? "#14b8a6" : undefined }} title="Editar niveles">✏️</button>
-              <button onClick={(e) => { e.stopPropagation(); setConfirmAction({ message: `⚠️ Eliminar "${j.name}" con ${j.stats.total} historia${j.stats.total === 1 ? "" : "s"} (${j.stats.published} publicada${j.stats.published === 1 ? "" : "s"})? Esta acción es irreversible y no se puede deshacer.`, onConfirm: () => deleteJourney(j.id) }); }}
-                style={deleteBtn} title="Eliminar">&#x2716;</button>
-            </div>
-
-            {/* Level editor panel */}
             {editingStructureId === j.id && (
-              <div onClick={(e) => e.stopPropagation()} style={{ borderTop: "1px solid var(--card-border)", padding: "10px 16px", backgroundColor: "rgba(20,184,166,0.03)", display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-                <span style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)" }}>Niveles:</span>
+              <div className="jm-level-editor" onClick={(e) => e.stopPropagation()}>
+                <span className="jm-tool-row__label">Niveles</span>
                 {allLevels.map((l) => {
                   const hasLevel = j.levels.includes(l.code);
-                  const storyCount = hasLevel ? j.stats.total : 0; // approximate
                   return (
-                    <button key={l.code}
+                    <button
+                      key={l.code}
                       onClick={() => {
                         if (hasLevel) {
                           const levelStories = stories.filter((s) => s.level === l.code);
-                          const count = levelStories.length || Math.round(j.stats.total / j.levels.length);
+                          const count = levelStories.length || Math.round(j.stats.total / Math.max(j.levels.length, 1));
                           setConfirmAction({
-                            message: `⚠️ Quitar nivel ${l.code.toUpperCase()} eliminará ~${count} historia${count === 1 ? "" : "s"}. Esta acción es irreversible.`,
+                            message: `Quitar nivel ${l.code.toUpperCase()} eliminará ~${count} historia${count === 1 ? "" : "s"}. Esta acción es irreversible.`,
                             onConfirm: () => removeLevelFromJourney(j.id, l.code),
+                            confirmTone: "red",
                           });
                         } else {
                           void addLevelToJourney(j.id, l.code);
                         }
                       }}
-                      style={{
-                        ...pill(hasLevel),
-                        position: "relative",
-                      }}>
+                      className={`jm-btn jm-btn--sm ${hasLevel ? "jm-btn-tone-teal" : ""}`}
+                    >
                       {l.code.toUpperCase()}
-                      {hasLevel && <span style={{ marginLeft: 4, fontSize: 9, opacity: 0.5 }}>✕</span>}
-                      {!hasLevel && <span style={{ marginLeft: 4, fontSize: 9, opacity: 0.5 }}>+</span>}
+                      {hasLevel ? <Icon name="x" size={10} /> : <Icon name="plus" size={10} />}
                     </button>
                   );
                 })}
               </div>
             )}
 
-            {/* Expanded: grouped by LEVEL, then topics within */}
             {isExpanded && (() => {
               const journeyStories = stories.filter((s) => s.journeyId === j.id);
               const topicGroups = getTopicGroupsForJourney(j.id);
-              // Group by level
               const levels = [...new Set(journeyStories.map((s) => s.level))].sort();
-              // Curatorial order from `journey.topics[]` (the same array
-              // mobile reads) — used to sort the topic rows within each
-              // level so Studio mirrors what the user sees on the mobile
-              // path. Topics not present in the array fall to the end.
               const journeyTopicOrder: Record<string, number> = {};
-              j.topics.forEach((slug, idx) => {
-                journeyTopicOrder[slug] = idx;
-              });
+              j.topics.forEach((slug, idx) => { journeyTopicOrder[slug] = idx; });
               const sortByJourneyOrder = (a: string, b: string) => {
                 const ai = journeyTopicOrder[a];
                 const bi = journeyTopicOrder[b];
@@ -1346,7 +1330,7 @@ export default function MonitorClient() {
                 return ai - bi;
               };
               return (
-                <div style={{ borderTop: "1px solid var(--card-border)", padding: "4px 12px 8px", display: "flex", flexDirection: "column", gap: 2 }}>
+                <div className="jm-j-body">
                   {levels.map((level) => {
                     const levelTopics = topicGroups
                       .filter((g) => g.level === level)
@@ -1358,190 +1342,222 @@ export default function MonitorClient() {
 
                     return (
                       <div key={level}>
-                        {/* Level header */}
-                        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 4px 2px" }}>
-                          <span style={{ fontSize: 13, fontWeight: 700, color: "#14b8a6", letterSpacing: "0.05em" }}>{level.toUpperCase()}</span>
-                          <span style={{ flex: 1, height: 1, backgroundColor: "rgba(20,184,166,0.15)" }} />
+                        <div className="jm-level-head">
+                          <span className="jm-level-code">{level.toUpperCase()}</span>
+                          <span className="jm-level-head__rule" />
                           {levelPending > 0 && (
-                            <button onClick={(e) => { e.stopPropagation(); void generateAllInLevel(j.id, level); }}
+                            <button
+                              className="jm-btn jm-btn--primary jm-btn--sm"
+                              onClick={(e) => { e.stopPropagation(); void generateAllInLevel(j.id, level); }}
                               disabled={levelBusy}
-                              title={`Generar todas las historias pendientes del nivel ${level.toUpperCase()} (${levelPending})`}
-                              style={{ ...btnPrimary(levelBusy), fontSize: 9, height: 22, padding: "0 10px" }}>
-                              {levelBusy ? "Generando..." : `⚡ Generar nivel ${level.toUpperCase()} (${levelPending})`}
+                              title={`Generar todas las historias pendientes del nivel ${level.toUpperCase()}`}
+                            >
+                              <Icon name="bolt" size={11} /> {levelBusy ? "Generando…" : `Generar nivel ${level.toUpperCase()} (${levelPending})`}
                             </button>
                           )}
                           {levelPending === 0 && levelTotal > 0 && (
-                            <button onClick={(e) => { e.stopPropagation(); void regenerateAllInLevel(j.id, level); }}
+                            <button
+                              className="jm-btn jm-btn-tone-amber jm-btn--sm"
+                              onClick={(e) => { e.stopPropagation(); void regenerateAllInLevel(j.id, level); }}
                               disabled={levelBusy}
-                              title={`Regenerar todas las historias del nivel ${level.toUpperCase()}`}
-                              style={{ ...btnPrimary(levelBusy), fontSize: 9, height: 22, padding: "0 10px", backgroundColor: "#f59e0b" }}>
-                              {levelBusy ? "Regenerando..." : `⟳ Regenerar nivel ${level.toUpperCase()}`}
+                            >
+                              <Icon name="refresh" size={11} /> {levelBusy ? "Regenerando…" : `Regenerar nivel ${level.toUpperCase()}`}
                             </button>
                           )}
-                          <span style={{ ...chipStyle, fontSize: 8 }}>{levelGen}/{levelTotal}</span>
+                          <span className="jm-chip jm-chip--mono">{levelGen}/{levelTotal}</span>
                         </div>
 
-                        {/* Topics in this level */}
                         {levelTopics.map((group) => {
                           const key = `${group.journeyId}:${group.level}:${group.topic}`;
                           const isTopicOpen = expandedTopics.has(key);
                           const gen = group.stories.filter((s) => ["generated", "qa_pass", "approved", "published"].includes(s.status)).length;
                           const pendingCount = group.stories.filter((s) => s.status === "draft" || s.status === "qa_fail" || s.status === "needs_review").length;
                           const topicBusy = group.stories.some((s) => busyStories.has(s.id));
+                          const allDone = group.stories.length > 0 && gen === group.stories.length;
 
                           return (
                             <div key={key}>
-                              {/* Topic row */}
-                              <div onClick={() => { setExpandedTopics((prev) => { const n = new Set(prev); if (n.has(key)) n.delete(key); else n.add(key); return n; }); }}
-                                style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 8px 4px 16px", borderRadius: 5, cursor: "pointer",
-                                  backgroundColor: isTopicOpen ? "rgba(20,184,166,0.04)" : "transparent" }}>
-                                <span style={{ fontSize: 14, color: "var(--foreground)", fontWeight: 500 }}>{group.label}</span>
-                                <div style={{ display: "flex", gap: 3, marginLeft: 4 }}>
+                              <div
+                                className={`jm-topic-row ${isTopicOpen ? "jm-topic-row--open" : ""}`}
+                                onClick={() => setExpandedTopics((prev) => { const n = new Set(prev); if (n.has(key)) n.delete(key); else n.add(key); return n; })}
+                              >
+                                <span className={`jm-topic-row__label ${allDone ? "jm-topic-row__label--done" : ""}`}>{group.label}</span>
+                                <div className="jm-topic-dots">
                                   {group.stories.map((s) => (
-                                    <span key={s.id} style={{ width: 8, height: 8, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                      {busyStories.has(s.id) ? (
-                                        <span style={{ display: "inline-block", width: 8, height: 8, border: "1.5px solid rgba(245,158,11,0.3)", borderTopColor: "#f59e0b", borderRadius: "50%", animation: "spin 0.6s linear infinite" }} />
-                                      ) : (
-                                        <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: dotColor(s.status, s.coverDone, s.audioStatus) }} />
-                                      )}
+                                    <span key={s.id} className="jm-story__dot-cell">
+                                      {busyStories.has(s.id)
+                                        ? <span className="jm-spinner" />
+                                        : <span className={`jm-sdot ${statusDotClass(s.status, s.coverDone, s.audioStatus)}`} />}
                                     </span>
                                   ))}
                                 </div>
-                                <span style={{ flex: 1 }} />
+                                <span className="jm-row__spacer" />
                                 {pendingCount > 0 && (
-                                  <button onClick={(e) => { e.stopPropagation(); void generateAllInTopic(group); }}
+                                  <button
+                                    className="jm-btn jm-btn--primary jm-btn--sm"
+                                    onClick={(e) => { e.stopPropagation(); void generateAllInTopic(group); }}
                                     disabled={topicBusy}
-                                    style={{ ...btnPrimary(topicBusy), fontSize: 9, height: 22, padding: "0 8px" }}>
-                                    {topicBusy ? "Generando..." : `Generar todas (${pendingCount})`}
+                                  >
+                                    {topicBusy ? "Generando…" : `Generar todas (${pendingCount})`}
                                   </button>
                                 )}
-                                <span style={{ ...chipStyle, fontSize: 9 }}>{gen}/{group.stories.length}</span>
-                                <span style={{ fontSize: 10, color: "var(--muted)", transform: isTopicOpen ? "rotate(90deg)" : "none", transition: "transform 0.15s" }}>▶</span>
+                                <span className="jm-chip jm-chip--mono">{gen}/{group.stories.length}</span>
+                                <span className={`jm-j-head__caret ${isTopicOpen ? "jm-j-head__caret--open" : ""}`}>
+                                  <Icon name="chevron" size={12} />
+                                </span>
                               </div>
 
-                              {/* Stories inside topic */}
                               {isTopicOpen && (
-                                <div style={{ paddingLeft: 36, display: "flex", flexDirection: "column", gap: 1 }}>
+                                <div className="jm-stories">
                                   {group.stories.map((s) => {
                                     const action = storyAction(s);
                                     const isDetailOpen = expandedStoryIds.has(s.id);
                                     return (
                                       <div key={s.id}>
-                                        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 8px", borderRadius: 4, fontSize: 11 }}>
-                                          <span style={{ width: 8, height: 8, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                            {busyStories.has(s.id) ? (
-                                              <span style={{ display: "inline-block", width: 8, height: 8, border: "1.5px solid rgba(245,158,11,0.3)", borderTopColor: "#f59e0b", borderRadius: "50%", animation: "spin 0.6s linear infinite" }} />
-                                            ) : (
-                                              <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: dotColor(s.status, s.coverDone, s.audioStatus) }} />
-                                            )}
+                                        <div className="jm-story">
+                                          <span className="jm-story__dot-cell">
+                                            {busyStories.has(s.id)
+                                              ? <span className="jm-spinner" />
+                                              : <span className={`jm-sdot ${statusDotClass(s.status, s.coverDone, s.audioStatus)}`} />}
                                           </span>
-                                          <span onClick={() => s.title ? void toggleStoryDetail(s.id) : undefined}
-                                            style={{ flex: 1, color: isDetailOpen ? "#14b8a6" : "var(--foreground)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", cursor: s.title ? "pointer" : "default" }}>
+                                          <span
+                                            className={`jm-story__title ${isDetailOpen ? "jm-story__title--open" : ""}`}
+                                            onClick={() => s.title ? void toggleStoryDetail(s.id) : undefined}
+                                            style={{ cursor: s.title ? "pointer" : "default" }}
+                                          >
                                             {s.title || `Historia ${s.slotIndex + 1}`}
                                           </span>
-                                          {s.wordCount != null && <span style={chipStyle}>{s.wordCount}w</span>}
-                                          {s.vocabCount != null && <span style={chipStyle}>{s.vocabCount}v</span>}
+                                          {s.wordCount != null && <span className="jm-chip jm-chip--mono">{s.wordCount}w</span>}
+                                          {s.vocabCount != null && <span className="jm-chip jm-chip--mono">{s.vocabCount}v</span>}
                                           {action && (
-                                            <button onClick={() => action.onClick()} disabled={action.disabled} title={action.title}
-                                              style={{ ...btnPrimary(action.disabled), fontSize: 10, height: 24, padding: "0 10px",
-                                                ...(s.status === "generated" ? { backgroundColor: "#3b82f6" } : {}),
-                                                ...(s.status === "published" && !s.coverDone ? { backgroundColor: "transparent", border: "1px solid var(--card-border)", color: "var(--foreground)" } : {}),
-                                              }}>{action.label}</button>
+                                            <button
+                                              className="jm-btn jm-btn--primary jm-btn--sm"
+                                              onClick={() => action.onClick()}
+                                              disabled={action.disabled}
+                                              title={action.title}
+                                            >
+                                              {action.label}
+                                            </button>
                                           )}
                                           {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
-                                            <button onClick={() => setConfirmAction({
-                                              message: `Regenerar texto de "${s.title}"? Sobreescribirá el contenido actual (título, sinopsis, historia, vocabulario).${s.status === "published" ? " La historia volverá a estado 'generada' y dejará de ser visible hasta que se republique." : ""}`,
-                                              onConfirm: () => generateStory(s.id),
-                                              confirmLabel: "Regenerar",
-                                              confirmColor: "#f59e0b",
-                                            })}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
+                                            <button
+                                              className="jm-btn jm-btn-tone-teal jm-btn--sm"
+                                              onClick={() => setConfirmAction({
+                                                message: `Regenerar texto de "${s.title}"? Sobreescribirá el contenido actual (título, sinopsis, historia, vocabulario).${s.status === "published" ? " La historia volverá a estado 'generada' y dejará de ser visible hasta que se republique." : ""}`,
+                                                onConfirm: () => generateStory(s.id),
+                                                confirmLabel: "Regenerar",
+                                                confirmTone: "amber",
+                                              })}
+                                              title="Regenera todo el contenido (título, sinopsis, historia, vocab)"
+                                            >
                                               Regenerar texto
                                             </button>
                                           )}
                                           {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
-                                            <button onClick={() => void auditLevel(s.id)}
-                                              title={`Auditar el texto de la historia para ver qué % de palabras está dentro del nivel ${s.level.toUpperCase()}`}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
+                                            <button
+                                              className="jm-btn jm-btn-tone-teal jm-btn--sm"
+                                              onClick={() => void auditLevel(s.id)}
+                                              title={`Auditar nivel ${s.level.toUpperCase()}`}
+                                            >
                                               Auditar nivel
                                             </button>
                                           )}
                                           {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
-                                            <button onClick={() => setConfirmAction({
-                                              message: `Regenerar historia de "${s.title}"? Solo se actualizará el texto de la historia, no el título ni la sinopsis.`,
-                                              onConfirm: () => regenerateStoryText(s.id),
-                                              confirmLabel: "Regenerar",
-                                              confirmColor: "#8b5cf6",
-                                            })}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#8b5cf6", borderColor: "rgba(139,92,246,0.3)" }}>
+                                            <button
+                                              className="jm-btn jm-btn-tone-purple jm-btn--sm"
+                                              onClick={() => setConfirmAction({
+                                                message: `Regenerar historia de "${s.title}"? Solo se actualizará el texto de la historia, no el título ni la sinopsis.`,
+                                                onConfirm: () => regenerateStoryText(s.id),
+                                                confirmLabel: "Regenerar",
+                                                confirmTone: "purple",
+                                              })}
+                                            >
                                               Regenerar historia
                                             </button>
                                           )}
                                           {s.title && s.status !== "draft" && !busyStories.has(s.id) && (
-                                            <button onClick={() => regenerateVocab(s.id)}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
+                                            <button
+                                              className="jm-btn jm-btn-tone-teal jm-btn--sm"
+                                              onClick={() => regenerateVocab(s.id)}
+                                            >
                                               Regenerar vocab
                                             </button>
                                           )}
                                           {s.status === "published" && !s.coverDone && !busyStories.has(s.id) && (
-                                            <button onClick={() => generateCover(s.id)}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
+                                            <button className="jm-btn jm-btn--sm" onClick={() => generateCover(s.id)}>
                                               Generar cover
                                             </button>
                                           )}
                                           {s.coverDone && !busyStories.has(s.id) && (
-                                            <button onClick={() => generateCover(s.id)}
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
-                                              Regenerar cover
+                                            <button className="jm-btn jm-btn-tone-amber jm-btn--sm" onClick={() => generateCover(s.id)}>
+                                              <Icon name="refresh" size={11} /> Regenerar cover
                                             </button>
                                           )}
                                           {["generated", "qa_pass", "approved", "published"].includes(s.status) && s.audioStatus !== "ready" && !busyStories.has(s.id) && (
-                                            <button onClick={() => generateAudio(s.id)}
-                                              title="Genera el audio (TTS) de la historia. Si publicas después, el audio queda disponible junto con el texto. También se puede generar después de publicar."
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "var(--foreground)", borderColor: "var(--card-border)" }}>
+                                            <button
+                                              className="jm-btn jm-btn--sm"
+                                              onClick={() => generateAudio(s.id)}
+                                              title="Genera el audio (TTS) de la historia"
+                                            >
                                               Generar audio
                                             </button>
                                           )}
                                           {s.audioStatus === "ready" && !busyStories.has(s.id) && (
-                                            <button onClick={() => generateAudio(s.id)}
-                                              title="Reemplaza el audio actual por uno nuevo. La historia mantiene su estado de publicación."
-                                              style={{ ...btnSecondary, fontSize: 10, height: 24, padding: "0 8px", color: "#f59e0b", borderColor: "rgba(245,158,11,0.3)" }}>
-                                              Regenerar audio
+                                            <button
+                                              className="jm-btn jm-btn-tone-amber jm-btn--sm"
+                                              onClick={() => generateAudio(s.id)}
+                                              title="Reemplaza el audio actual"
+                                            >
+                                              <Icon name="refresh" size={11} /> Regenerar audio
                                             </button>
                                           )}
-                                          {s.status === "published" && s.coverDone && s.audioStatus === "ready" && <span style={{ fontSize: 9, color: "#22c55e" }}>✓</span>}
-                                          {/* Quick jump to the practice exercises editor for this
-                                              story. The /studio/journey-stories/[id]/practice route
-                                              already reads from journeyStory by id, so this is the
-                                              fastest path to listen to + edit per-exercise audio. */}
-                                          <a
-                                            href={`/studio/journey-stories/${s.id}/practice`}
-                                            onClick={(e) => e.stopPropagation()}
-                                            style={{
-                                              ...btnSecondary,
-                                              fontSize: 10,
-                                              height: 24,
-                                              padding: "0 8px",
-                                              color: "#a78bfa",
-                                              borderColor: "rgba(167,139,250,0.3)",
-                                              textDecoration: "none",
-                                              display: "inline-flex",
-                                              alignItems: "center",
-                                            }}
-                                            title="Abrir editor de ejercicios de práctica con audio por fila"
+                                          {s.status === "published" && s.coverDone && s.audioStatus === "ready" && (
+                                            <span style={{ color: "var(--mx-pos)" }} title="Historia completa"><Icon name="check" size={12} /></span>
+                                          )}
+                                          <button
+                                            type="button"
+                                            className={`jm-btn jm-btn-tone-purple jm-btn--sm ${showPracticeIds.has(s.id) ? "" : ""}`}
+                                            onClick={(e) => { e.stopPropagation(); void togglePracticeFor(s.id); }}
+                                            title="Mostrar / ocultar editor de ejercicios"
                                           >
-                                            Ejercicios
-                                          </a>
-                                          <button onClick={() => setConfirmAction({ message: `Eliminar "${s.title || "Historia " + (s.slotIndex + 1)}"?`, onConfirm: () => deleteStory(s.id) })}
-                                            style={deleteBtn} title="Eliminar historia">&#x2716;</button>
+                                            <Icon name="chevron" size={10} /> Ejercicios
+                                          </button>
+                                          <button
+                                            className="jm-btn jm-btn--icon jm-btn--ghost jm-btn--sm"
+                                            style={{ color: "var(--mx-neg)" }}
+                                            onClick={() => setConfirmAction({
+                                              message: `Eliminar "${s.title || "Historia " + (s.slotIndex + 1)}"?`,
+                                              onConfirm: () => deleteStory(s.id),
+                                              confirmTone: "red",
+                                            })}
+                                            title="Eliminar historia"
+                                          >
+                                            <Icon name="trash" size={11} />
+                                          </button>
                                         </div>
                                         {renderStoryEditor(s)}
+                                        {showPracticeIds.has(s.id) && (
+                                          <div className="jm-practice-wrap">
+                                            {practiceLoadingIds.has(s.id) ? (
+                                              <p className="jm-dim" style={{ fontSize: 12, margin: 0 }}>Cargando ejercicios…</p>
+                                            ) : (
+                                              <PracticeSetEditor
+                                                storyId={s.id}
+                                                storyTitle={s.title || `Historia ${s.slotIndex + 1}`}
+                                                set={practiceSetById.get(s.id) ?? null}
+                                              />
+                                            )}
+                                          </div>
+                                        )}
                                       </div>
                                     );
                                   })}
-                                  <button onClick={() => void addStoryToTopic(j.id, group.level, group.topic)}
-                                    style={{ ...btnSecondary, alignSelf: "flex-start", marginTop: 4, marginLeft: 8, fontSize: 10, color: "#14b8a6", borderColor: "rgba(20,184,166,0.3)" }}>
-                                    + Agregar historia
+                                  <button
+                                    className="jm-btn jm-btn-tone-teal jm-btn--sm"
+                                    style={{ alignSelf: "flex-start", marginTop: 4, marginLeft: 8 }}
+                                    onClick={() => void addStoryToTopic(j.id, group.level, group.topic)}
+                                  >
+                                    <Icon name="plus" size={11} /> Agregar historia
                                   </button>
                                 </div>
                               )}
@@ -1554,7 +1570,7 @@ export default function MonitorClient() {
                 </div>
               );
             })()}
-          </div>
+          </article>
         );
       })}
     </div>

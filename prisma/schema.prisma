@@ -712,6 +712,11 @@ model CatalogStory {
   slug             String
   position         Int
   title            String
+  // Short editorial blurb used by the reader preview, social cards, and
+  // SEO. Distinct from `text` (full body). Matches the `synopsis` field
+  // that exists on JourneyStory + StandaloneStory; added to CatalogStory
+  // in migration 20260518120000 so all three story models converge.
+  synopsis         String?
   text             String
   audio            String    @default("")
   audioUrl         String?

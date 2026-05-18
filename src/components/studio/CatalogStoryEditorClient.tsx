@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import MediaUploadField from "@/components/studio/MediaUploadField";
 import type { StudioCatalogStory } from "@/lib/studioCatalogBooks";
 
 type Props = { bookId: string; storyId: string };
@@ -409,22 +410,19 @@ export default function CatalogStoryEditorClient({ bookId, storyId }: Props) {
       <div style={card}>
         <h3 style={{ margin: 0, marginBottom: 12, fontSize: 14 }}>Media</h3>
         <FieldRow>
-          <div>
-            <label style={label}>Cover URL (R2 preferido)</label>
-            <input style={input} value={form.coverUrl ?? ""} onChange={(e) => patch("coverUrl", e.target.value || null)} />
-          </div>
-          <div>
-            <label style={label}>Audio URL (R2 preferido)</label>
-            <input style={input} value={form.audioUrl ?? ""} onChange={(e) => patch("audioUrl", e.target.value || null)} />
-          </div>
+          <MediaUploadField
+            kind="cover"
+            label="Cover (sube imagen o pega URL)"
+            value={form.coverUrl ?? null}
+            onChange={(url) => patch("coverUrl", url)}
+          />
+          <MediaUploadField
+            kind="audio"
+            label="Audio (sube archivo o pega URL)"
+            value={form.audioUrl ?? null}
+            onChange={(url) => patch("audioUrl", url)}
+          />
         </FieldRow>
-        {form.coverUrl && (
-          // eslint-disable-next-line @next/next/no-img-element -- admin preview
-          <img src={form.coverUrl} alt="cover preview" style={{ maxWidth: 140, marginTop: 12, borderRadius: 6 }} />
-        )}
-        {form.audioUrl && (
-          <audio controls src={form.audioUrl} style={{ width: "100%", marginTop: 12 }} />
-        )}
       </div>
     </div>
   );

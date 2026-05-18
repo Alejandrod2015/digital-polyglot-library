@@ -21,24 +21,39 @@ const NAV_SECTIONS = [
     ],
   },
   {
+    // Todo lo que es contenido editorial con texto narrativo: journeys
+    // (curados por curriculum), libros (= grupos de historias),
+    // historias sueltas, y la vista global de búsqueda. Ordenados de
+    // más estructurado (journey) a menos (historias sueltas), con la
+    // vista global al final como "punto de entrada para encontrar algo
+    // que ya existe".
     label: "CONTENIDO",
     items: [
       { href: "/studio/journey-manager", label: "Journey Manager", icon: "pen", exact: false },
-      { href: "/studio/journey-stories", label: "Stories library", icon: "book", exact: false },
-      { href: "/studio/standalone-stories", label: "Standalone stories", icon: "file-text", exact: false },
       { href: "/studio/catalog-books", label: "Catálogo de libros", icon: "database", exact: false },
-      { href: "/studio/audio", label: "Audio propio", icon: "globe", exact: false },
-      { href: "/studio/covers", label: "Covers", icon: "layers", exact: false },
+      { href: "/studio/standalone-stories", label: "Historias sueltas", icon: "file-text", exact: false },
+      { href: "/studio/journey-stories", label: "Todas las historias", icon: "book", exact: false },
     ],
   },
   {
-    label: "PLANNING",
+    // Assets multimedia que se generan y se enganchan a las historias
+    // pero viven en su propio surface (gallery / batch generation).
+    label: "MULTIMEDIA",
+    items: [
+      { href: "/studio/covers", label: "Portadas", icon: "layers", exact: false },
+      { href: "/studio/audio", label: "Voces y audios", icon: "globe", exact: false },
+    ],
+  },
+  {
+    label: "PLANIFICACIÓN",
     items: [
       { href: "/studio/planning", label: "Temas, Idiomas y Niveles", icon: "grid", exact: false },
     ],
   },
   {
-    label: "ESTUDIO",
+    // Datos analíticos del proyecto. Antes se llamaba "ESTUDIO" lo cual
+    // colisionaba con el nombre de la app entera ("Studio").
+    label: "DATOS",
     items: [
       { href: "/studio/progreso", label: "Progreso del proyecto", icon: "chart", exact: false },
       { href: "/studio/metrics", label: "Métricas", icon: "chart", exact: false },
@@ -429,7 +444,7 @@ export default function StudioShell({
         </header>
 
         {/* Content */}
-        <main style={{ padding: "24px 32px 48px", maxWidth: 1200 }}>
+        <main style={{ padding: "24px 32px 48px" }}>
           {children}
         </main>
       </div>
