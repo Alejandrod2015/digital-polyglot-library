@@ -1,14 +1,27 @@
 /**
- * Build + persist a JourneyStory's practice set (the 10-exercise
- * editorial pool the mobile end-of-story screen reads from). Shared
- * by the seed script and the Studio "regenerate" endpoint.
+ * Build + persist a JourneyStory's practice set. As of the pool-unification
+ * migration (20260518180000) this set holds BOTH:
+ *   - The 10 featured exercises that show on the end-of-story screen
+ *     (orderIndex 0–9, featured=true).
+ *   - The extended pool (orderIndex 10+, featured=false) used by the
+ *     Practice tab when picking exercises by language.
+ *
+ * Featured slots follow the original PLAN. Pool slots cycle through the
+ * same plan again so we get the same format mix without duplicating the
+ * same vocab item back-to-back (`buildMixedPracticeSession` already
+ * deduplicates by word inside one call).
  */
 import { prisma } from "@/lib/prisma";
 import { buildPracticeItemsFromStory } from "@/lib/storyPracticeItems";
 import { buildMixedPracticeSession, type PracticeExercise, type PracticeMode } from "@/lib/practiceExercises";
 
-const PLAN: PracticeMode[] = ["context", "meaning", "listening", "context", "meaning", "listening", "natural", "context", "meaning", "context"];
-const TARGET_SIZE = 10;
+const FEATURED_PLAN: PracticeMode[] = ["context", "meaning", "listening", "context", "meaning", "listening", "natural", "context", "meaning", "context"];
+const POOL_EXTENSION_PLAN: PracticeMode[] = ["context", "meaning", "listening", "natural", "context", "meaning", "listening", "natural", "context", "meaning"];
+const FEATURED_SIZE = 10;
+// Hard cap on total pool size so generation cost stays bounded even for
+// stories with very rich vocab. Set generously — the actual cap per
+// story is min(this, vocab.length * 2) inside `buildMixedPracticeSession`.
+const POOL_TARGET_SIZE = 30;
 
 export type BuildResult =
   | { status: "created" | "updated"; count: number }
@@ -73,9 +86,27 @@ export async function buildAndPersistStoryPracticeSet(
   });
   if (items.length < 3) return { status: "skipped", reason: "no-vocab" };
 
-  const exercises = buildMixedPracticeSession(items, PLAN, TARGET_SIZE);
-  if (exercises.length === 0) return { status: "skipped", reason: "no-vocab" };
+  // Featured: the 10 that show end-of-story. Same plan as before so
+  // existing behavior is preserved.
+  const featured = buildMixedPracticeSession(items, FEATURED_PLAN, FEATURED_SIZE);
+  if (featured.length === 0) return { status: "skipped", reason: "no-vocab" };
 
+  // Pool extension: capped at min(POOL_TARGET_SIZE - featured.length, items.length).
+  // We pass the FULL item list again — buildMixedPracticeSession dedupes
+  // within a single call, so we won't ship two fill_blank for the same
+  // word here. There IS overlap with featured (same word can appear in
+  // both featured and pool), which is fine: Practice tab queries by
+  // language and lemma, not by featured flag, so duplicates broaden the
+  // pool rather than hurt it.
+  const poolExtensionBudget = Math.max(0, POOL_TARGET_SIZE - featured.length);
+  const poolExtra = poolExtensionBudget > 0
+    ? buildMixedPracticeSession(items, POOL_EXTENSION_PLAN, poolExtensionBudget)
+    : [];
+
+  const allExercises = [...featured, ...poolExtra];
+  if (allExercises.length === 0) return { status: "skipped", reason: "no-vocab" };
+
+  const language = story.journey.language;
   const wasUpdate = !!story.practiceSet;
   await prisma.$transaction(async (tx) => {
     if (story.practiceSet) {
@@ -87,7 +118,7 @@ export async function buildAndPersistStoryPracticeSet(
         storyId,
         locked: false,
         exercises: {
-          create: exercises.map((ex, i) => {
+          create: allExercises.map((ex, i) => {
             const { word, sentence, payload } = buildPayload(ex);
             return {
               orderIndex: i,
@@ -96,6 +127,8 @@ export async function buildAndPersistStoryPracticeSet(
               sentence,
               audioUrl: null,
               payload: payload as never,
+              featured: i < FEATURED_SIZE,
+              language,
             };
           }),
         },
@@ -103,5 +136,5 @@ export async function buildAndPersistStoryPracticeSet(
     });
   });
 
-  return { status: wasUpdate ? "updated" : "created", count: exercises.length };
+  return { status: wasUpdate ? "updated" : "created", count: allExercises.length };
 }

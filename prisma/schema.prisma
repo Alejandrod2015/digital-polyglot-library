@@ -358,11 +358,23 @@ model StoryPracticeExercise {
   /// `{ options: string[], answer: string }` for choice exercises;
   /// `{ pairs: [{word, meaning}], extras: string[] }` for match.
   payload    Json
+  /// Whether this exercise appears on the end-of-story screen. The 10
+  /// editor-approved ones are featured=true; the rest live in the pool
+  /// and only surface in the Practice tab. Default true so the legacy
+  /// 10-exercise sets behave identically pre/post migration.
+  featured   Boolean  @default(true)
+  /// Denormalized from JourneyStory.journey.language. Lets the Practice
+  /// tab query the pool by language without 3-table joins. Nullable for
+  /// resilience; backfilled at migration time.
+  language   String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
   @@unique([setId, orderIndex])
   @@index([setId])
+  @@index([language])
+  @@index([featured])
+  @@index([word, language])
   @@map("dp_story_practice_exercises_v1")
 }
 

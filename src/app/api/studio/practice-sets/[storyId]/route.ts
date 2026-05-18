@@ -44,6 +44,7 @@ function serialize(set: NonNullable<Awaited<ReturnType<typeof loadSet>>>) {
       sentence: e.sentence,
       audioUrl: e.audioUrl,
       payload: e.payload,
+      featured: e.featured,
     })),
   };
 }

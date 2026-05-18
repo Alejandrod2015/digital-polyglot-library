@@ -267,7 +267,7 @@ export default function MonitorClient() {
   const [loadingDetailIds, setLoadingDetailIds] = useState<Set<string>>(new Set());
   const [showPracticeIds, setShowPracticeIds] = useState<Set<string>>(new Set());
   const [practiceSetById, setPracticeSetById] = useState<
-    Map<string, { id: string; locked: boolean; updatedAt: string; exercises: Array<{ id: string; orderIndex: number; type: string; word: string; sentence: string; audioUrl: string | null; payload: Record<string, unknown> }> } | null>
+    Map<string, { id: string; locked: boolean; updatedAt: string; exercises: Array<{ id: string; orderIndex: number; type: string; word: string; sentence: string; audioUrl: string | null; payload: Record<string, unknown>; featured: boolean }> } | null>
   >(new Map());
   const [practiceLoadingIds, setPracticeLoadingIds] = useState<Set<string>>(new Set());
 

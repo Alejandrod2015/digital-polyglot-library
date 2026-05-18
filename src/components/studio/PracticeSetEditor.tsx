@@ -12,6 +12,9 @@ type Exercise = {
   sentence: string;
   audioUrl: string | null;
   payload: Record<string, unknown>;
+  // Featured ones show on the end-of-story screen. The rest live in the
+  // global pool the Practice tab pulls from. Editor can toggle freely.
+  featured: boolean;
 };
 
 type Set = {
@@ -68,6 +71,31 @@ export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
     setCurrentSet({ ...currentSet, locked: !currentSet.locked });
   }
 
+  async function toggleFeatured(exercise: Exercise) {
+    const next = !exercise.featured;
+    // Optimistic update so the chip flips immediately.
+    setCurrentSet((s) =>
+      s
+        ? { ...s, exercises: s.exercises.map((e) => (e.id === exercise.id ? { ...e, featured: next } : e)) }
+        : s
+    );
+    const res = await fetch(`/api/studio/practice-sets/${storyId}/exercises/${exercise.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ featured: next }),
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      setError((body as { error?: string }).error ?? `HTTP ${res.status}`);
+      // Roll back.
+      setCurrentSet((s) =>
+        s
+          ? { ...s, exercises: s.exercises.map((e) => (e.id === exercise.id ? { ...e, featured: exercise.featured } : e)) }
+          : s
+      );
+    }
+  }
+
   async function saveExercise(updated: Exercise) {
     const res = await fetch(`/api/studio/practice-sets/${storyId}/exercises/${updated.id}`, {
       method: "PATCH",
@@ -99,7 +127,7 @@ export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
         <div className="jm-ex__head-main">
           <h3 className="jm-ex__title">{storyTitle}</h3>
           <p className="jm-ex__sub">
-            Estos son los 10 ejercicios que verá el usuario al terminar la historia. Si editas alguno, queda fijo. Bloquea el set cuando ya esté revisado para que la regeneración no lo sobrescriba.
+            Pool completo de ejercicios. Los marcados como <strong>Featured</strong> aparecen al terminar la historia (10 max). Los demás viven en el pool global que la pestaña <em>Practice</em> del móvil usa por idioma. Bloquea el set cuando ya esté revisado para que la regeneración no lo sobrescriba.
           </p>
         </div>
         <div className="jm-ex__actions">
@@ -144,6 +172,7 @@ export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
           <thead>
             <tr>
               <th>#</th>
+              <th>Featured</th>
               <th>Tipo</th>
               <th>Palabra</th>
               <th>Frase (lo que se muestra y se manda al TTS)</th>
@@ -152,12 +181,34 @@ export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
             </tr>
           </thead>
           <tbody>
-            {currentSet.exercises.map((ex) => {
+            {(() => {
+              const featuredCount = currentSet.exercises.filter((e) => e.featured).length;
+              const FEATURED_CAP = 10;
+              return currentSet.exercises.map((ex) => {
               const isEditing = editingId === ex.id;
+              const canFeature = ex.featured || featuredCount < FEATURED_CAP;
               return (
                 <Fragment key={ex.id}>
                   <tr className={isEditing ? "jm-ex-row--editing" : ""}>
                     <td className="jm-ex-table__num">{ex.orderIndex + 1}</td>
+                    <td>
+                      <button
+                        type="button"
+                        className={`jm-chip jm-chip--mono ${ex.featured ? "jm-chip--brand" : ""}`}
+                        onClick={() => void toggleFeatured(ex)}
+                        disabled={!canFeature && !ex.featured}
+                        title={
+                          ex.featured
+                            ? "Aparece end-of-story. Click para sacar del featured."
+                            : canFeature
+                              ? "Solo en pool. Click para incluirlo end-of-story."
+                              : `Hay ${FEATURED_CAP} featured ya. Quita uno antes de agregar otro.`
+                        }
+                        style={{ cursor: !canFeature && !ex.featured ? "not-allowed" : "pointer", opacity: !canFeature && !ex.featured ? 0.45 : 1, border: "none" }}
+                      >
+                        {ex.featured ? "★ Featured" : "Pool"}
+                      </button>
+                    </td>
                     <td className="jm-ex-table__type">{TYPE_LABEL[ex.type] ?? ex.type}</td>
                     <td className="jm-ex-table__word">{ex.word}</td>
                     <td>{ex.sentence}</td>
@@ -199,7 +250,8 @@ export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
                   )}
                 </Fragment>
               );
-            })}
+            });
+            })()}
           </tbody>
         </table>
       )}

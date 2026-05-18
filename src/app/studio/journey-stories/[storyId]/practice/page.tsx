@@ -35,6 +35,7 @@ export default async function StoryPracticeSetPage({ params }: Props) {
               sentence: true,
               audioUrl: true,
               payload: true,
+              featured: true,
             },
           },
         },
@@ -71,6 +72,7 @@ export default async function StoryPracticeSetPage({ params }: Props) {
                   sentence: e.sentence,
                   audioUrl: e.audioUrl,
                   payload: e.payload as Record<string, unknown>,
+                  featured: e.featured,
                 })),
               }
             : null
