@@ -6,7 +6,7 @@ export default function StudioCoversPage() {
     <StudioShell
       eyebrow="Generación de imágenes"
       title="Covers"
-      description="Genera 3 variantes de cover en paralelo para una historia y elegí la que mejor encaje. Cada generación cuesta ~$0.15-0.30 en Flux Pro (3 imágenes)."
+      description="Genera y gestiona la portada de cada historia."
       breadcrumbs={[{ label: "Studio", href: "/studio" }, { label: "Covers" }]}
     >
       <StudioCoversClient />
