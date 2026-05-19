@@ -49,38 +49,101 @@ export default function MediaUploadField({ kind, value, onChange, label, onUploa
 
   const labels = LABELS[kind];
 
+  async function sha256Hex(file: File): Promise<string> {
+    const buf = await file.arrayBuffer();
+    const digest = await crypto.subtle.digest("SHA-256", buf);
+    return Array.from(new Uint8Array(digest))
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+  }
+
+  // Presigned-URL upload: get a signed PUT URL from our API (small JSON
+  // request), then PUT the bytes straight to R2. Bypasses the Vercel 4.5 MB
+  // request body limit. Used for audio; covers stay on the legacy path
+  // because they're small and the dedupe round-trip would just add latency.
+  async function uploadViaPresignedUrl(file: File) {
+    const hash = (await sha256Hex(file)).slice(0, 24);
+
+    const signRes = await fetch("/api/studio/media/upload-url", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        kind,
+        contentType: file.type || "application/octet-stream",
+        size: file.size,
+        hash,
+        filename: file.name,
+      }),
+    });
+    if (!signRes.ok) {
+      const detail = await signRes.json().catch(() => ({} as { error?: string }));
+      throw new Error(detail.error ?? `HTTP ${signRes.status}`);
+    }
+    const signed = (await signRes.json()) as {
+      uploadUrl: string | null;
+      publicUrl: string;
+      key: string;
+      cached: boolean;
+    };
+
+    if (signed.cached || !signed.uploadUrl) {
+      setProgress(100);
+      return { url: signed.publicUrl, key: signed.key, filename: file.name, size: file.size };
+    }
+
+    await new Promise<void>((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("PUT", signed.uploadUrl!);
+      xhr.upload.onprogress = (ev) => {
+        if (ev.lengthComputable) setProgress(Math.round((ev.loaded / ev.total) * 100));
+      };
+      xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300) resolve();
+        else reject(new Error(`R2 PUT falló (HTTP ${xhr.status}).`));
+      };
+      xhr.onerror = () => reject(new Error("Error de red durante la subida a R2."));
+      xhr.send(file);
+    });
+
+    return { url: signed.publicUrl, key: signed.key, filename: file.name, size: file.size };
+  }
+
+  // Legacy flow: POST multipart/form-data to /api/studio/media/upload. Used
+  // only for covers (small enough to fit under the Vercel body limit).
+  async function uploadViaProxy(file: File) {
+    const fd = new FormData();
+    fd.append("file", file, file.name || `upload.${kind === "cover" ? "png" : "mp3"}`);
+    fd.append("kind", kind);
+
+    return await new Promise<{ url: string; key: string; filename: string; size: number }>(
+      (resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/api/studio/media/upload");
+        xhr.upload.onprogress = (ev) => {
+          if (ev.lengthComputable) setProgress(Math.round((ev.loaded / ev.total) * 100));
+        };
+        xhr.onload = () => {
+          try {
+            const json = JSON.parse(xhr.responseText);
+            if (xhr.status >= 200 && xhr.status < 300) resolve(json);
+            else reject(new Error(json?.error ?? `HTTP ${xhr.status}`));
+          } catch {
+            reject(new Error(`HTTP ${xhr.status}`));
+          }
+        };
+        xhr.onerror = () => reject(new Error("Error de red durante la subida."));
+        xhr.send(fd);
+      }
+    );
+  }
+
   async function uploadFile(file: File) {
     setError(null);
     setUploading(true);
     setProgress(0);
 
     try {
-      const fd = new FormData();
-      fd.append("file", file, file.name || `upload.${kind === "cover" ? "png" : "mp3"}`);
-      fd.append("kind", kind);
-
-      // Use XHR so we can surface upload progress. fetch() doesn't expose it.
-      const result = await new Promise<{ url: string; key: string; filename: string; size: number; error?: string }>(
-        (resolve, reject) => {
-          const xhr = new XMLHttpRequest();
-          xhr.open("POST", "/api/studio/media/upload");
-          xhr.upload.onprogress = (ev) => {
-            if (ev.lengthComputable) setProgress(Math.round((ev.loaded / ev.total) * 100));
-          };
-          xhr.onload = () => {
-            try {
-              const json = JSON.parse(xhr.responseText);
-              if (xhr.status >= 200 && xhr.status < 300) resolve(json);
-              else reject(new Error(json?.error ?? `HTTP ${xhr.status}`));
-            } catch {
-              reject(new Error(`HTTP ${xhr.status}`));
-            }
-          };
-          xhr.onerror = () => reject(new Error("Error de red durante la subida."));
-          xhr.send(fd);
-        }
-      );
-
+      const result = kind === "audio" ? await uploadViaPresignedUrl(file) : await uploadViaProxy(file);
       onChange(result.url);
       onUploaded?.(result);
     } catch (err) {
