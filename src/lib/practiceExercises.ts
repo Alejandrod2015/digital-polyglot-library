@@ -324,7 +324,16 @@ function getDistractorMeanings(
   return out;
 }
 
-function getSentenceWithBlank(item: PracticeFavoriteItem): string | null {
+/**
+ * Builds the blanked sentence AND captures the form actually present in
+ * the sentence (the inflected one), so fill_blank can show the
+ * conjugated form as the correct answer instead of the lemma. The lemma
+ * stored in vocab (`preparare`) doesn't make sense as the gap-fill
+ * answer when the original sentence had `preparava`.
+ */
+function getSentenceWithBlank(
+  item: PracticeFavoriteItem
+): { sentence: string; matchedForm: string } | null {
   // Siempre partir de `getContextSentence`: ya hace el split por
   // `.!?` y elige la oración que contiene la palabra objetivo. Si
   // antes usábamos `exampleSentence` crudo para items no-standalone,
@@ -338,6 +347,7 @@ function getSentenceWithBlank(item: PracticeFavoriteItem): string | null {
 
   // Try literal match first.
   let pattern = new RegExp(escapeRegExp(word), "i");
+  let isStemFallback = false;
   if (!pattern.test(sentence)) {
     // Stem fallback for inflected forms. The lemma stored in vocab is
     // often the dictionary form (`amare`), but the story body uses the
@@ -350,13 +360,19 @@ function getSentenceWithBlank(item: PracticeFavoriteItem): string | null {
     const stem = word.slice(0, stemLen);
     pattern = new RegExp(`\\b${escapeRegExp(stem)}\\w*`, "i");
     if (!pattern.test(sentence)) return null;
+    isStemFallback = true;
   }
+  // Capture the actual surface form in the sentence (e.g. "preparava")
+  // so callers can use it as the answer instead of the lemma
+  // ("preparare"). For the literal match the surface form IS the lemma.
+  const matchResult = sentence.match(pattern);
+  const matchedForm = isStemFallback && matchResult ? matchResult[0] : word;
   // Pasamos el anchor `_____` a shortenSentence para que cuando tenga
   // que recortar por puntuación/comas, conserve siempre el chunk con
   // el blank. Sin esto, una oración larga con varios commas dejaba al
   // usuario con la primera cláusula sin blank y opciones sin sentido.
   const shortened = shortenSentence(sentence.replace(pattern, "_____"), "_____");
-  return stripOrphanLeadingPunctuation(shortened);
+  return { sentence: stripOrphanLeadingPunctuation(shortened), matchedForm };
 }
 
 // El splitter de `audioSegments` corta oraciones inmediatamente
@@ -479,19 +495,24 @@ function createFillBlankExercise(
   pool: PracticeFavoriteItem[]
 ): FillBlankExercise | null {
   const fullSentence = getContextSentence(item);
-  const sentence = getSentenceWithBlank(item);
-  if (!sentence || !fullSentence) return null;
-  const options = shuffle([item.word, ...getDistractorWords(item, getLanguagePool(item.language, pool))]);
+  const blanked = getSentenceWithBlank(item);
+  if (!blanked || !fullSentence) return null;
+  // Answer = the surface form actually present in the sentence
+  // (`preparava` if the lemma is `preparare`). Showing the lemma as
+  // the gap-fill answer didn't match the grammatical context the
+  // learner was reading, so the option set felt nonsensical.
+  const answerForm = blanked.matchedForm;
+  const options = shuffle([answerForm, ...getDistractorWords(item, getLanguagePool(item.language, pool))]);
   if (options.length < 4) return null;
   return {
     id: `fill_blank:${normalizeKey(item.word)}`,
     type: "fill_blank",
     prompt: "Complete the sentence with the right word or expression.",
-    sentence,
+    sentence: blanked.sentence,
     storySlug: item.storySlug ?? null,
     audioClip: buildAudioClip(item, fullSentence),
     options,
-    answer: item.word,
+    answer: answerForm,
   };
 }
 
@@ -527,23 +548,24 @@ function createNaturalExpressionExercise(
   pool: PracticeFavoriteItem[]
 ): NaturalExpressionExercise | null {
   if (!isExpression(item)) return null;
-  const sentence = getSentenceWithBlank(item);
+  const blanked = getSentenceWithBlank(item);
   const fullSentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
     ? getContextSentence(item)
     : normalizeText(item.exampleSentence);
-  if (!sentence || !fullSentence) return null;
+  if (!blanked || !fullSentence) return null;
+  const answerForm = blanked.matchedForm;
   const expressionPool = getLanguagePool(item.language, pool).filter((candidate) => isExpression(candidate));
-  const options = shuffle([item.word, ...getDistractorWords(item, expressionPool)]);
+  const options = shuffle([answerForm, ...getDistractorWords(item, expressionPool)]);
   if (options.length < 4) return null;
   return {
     id: `natural_expression:${normalizeKey(item.word)}`,
     type: "natural_expression",
     prompt: "Which expression sounds natural here?",
-    sentence,
+    sentence: blanked.sentence,
     storySlug: item.storySlug ?? null,
-    audioClip: buildAudioClip(item, isStandaloneSourcePath(item.sourcePath, item.storySlug) ? fullSentence : sentence),
+    audioClip: buildAudioClip(item, isStandaloneSourcePath(item.sourcePath, item.storySlug) ? fullSentence : blanked.sentence),
     options,
-    answer: item.word,
+    answer: answerForm,
   };
 }
 

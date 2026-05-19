@@ -110,8 +110,16 @@ function modalEndpointFor(voiceId: string): string | null {
 // A1 learners practicing words; the 20% slowdown is barely perceptible
 // in quality (atempo WSOLA stays in [0.5,2]) but materially improves
 // comprehension of individual word boundaries.
-const CACHE_VERSION = "v5";
-const PRACTICE_TEMPO = 0.80;
+// v7: drop the server-side atempo entirely. The mobile client already
+// passes `rate: 0.65/0.75` to expo-av at playback time and expo-av
+// applies AVPlayer's pitch-corrected WSOLA — much higher quality than
+// our ffmpeg pass. Both layers compounded (0.80 × 0.65 = 0.52) was
+// stretching vowels into a "possessed voice" timbre on isolated words
+// and short expressions. The server now stores native-rate audio; the
+// client owns the listening tempo. Trailing silence (apad) stays so
+// the last phoneme decays naturally.
+const CACHE_VERSION = "v7";
+const PRACTICE_TEMPO = 1.0; // No server-side slowdown — client controls rate.
 
 function runFfmpeg(args: string[]): Promise<void> {
   return new Promise((resolve, reject) => {
