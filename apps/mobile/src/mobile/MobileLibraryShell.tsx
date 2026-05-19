@@ -8,6 +8,7 @@ import {
   Alert,
   Animated,
   AppState,
+  Dimensions,
   useWindowDimensions,
   Easing,
   findNodeHandle,
@@ -245,6 +246,7 @@ type BottomTab = "home" | "explore" | "practice" | "favorites" | "menu" | "signi
 type MenuIconName =
   | "settings"
   | "library"
+  | "saved"
   | "story"
   | "upgrade"
   | "signout"
@@ -7864,7 +7866,12 @@ export function MobileLibraryShell(args: {
   const prefetchedFavoriteKeysRef = useRef<Set<string>>(new Set());
   const prefetchedFavoriteFilesRef = useRef<Map<string, string>>(new Map());
   const FAV_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}favorite-audio/`;
-  const PRACTICE_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}practice-audio/`;
+  // v2 suffix invalidates locally cached MP3s from before the
+  // server-side atempo removal (route v7). Old files were rendered at
+  // 0.80x and then played at rate 0.65 on the client → 0.52x combined,
+  // sounding "possessed". Bumping the dir forces a fresh download from
+  // the new native-rate server cache.
+  const PRACTICE_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}practice-audio-v2/`;
   async function prefetchFavoriteAudio(item: MobileFavoriteItem, key: string) {
     if (prefetchedFavoriteKeysRef.current.has(key)) return;
     const sentence = item.word?.trim();
@@ -8205,12 +8212,15 @@ export function MobileLibraryShell(args: {
       // only after the stillCurrent + ref-assignment fence below.
       const { sound } = await Audio.Sound.createAsync(
         { uri },
-        // rate 0.65 + shouldCorrectPitch para que la voz se escuche
-        // más lenta sin bajar de tono. Más lento que la lectura
-        // narrada (0.80) y que el context clip (0.75) porque la
-        // palabra suelta no tiene contexto rítmico que ayude a
-        // parsearla; learners necesitan mas tiempo por sílaba.
-        { shouldPlay: false, rate: 0.65, shouldCorrectPitch: true },
+        // rate 1.0 — no client-side time-stretching for the meaning
+        // word audio. AVPlayer's WSOLA on iOS produces formant smearing
+        // when stretching short mono 22050 Hz mp3s (Piper Paola, Piper
+        // Sharvard) at extreme rates: a 0.65 stretch turned the female
+        // voice into a "possessed/deep" timbre. Words don't need a
+        // rhythmic crutch the way sentences do, so native rate gives a
+        // clean signal. The slower experience for learners stays on
+        // the context (sentence) clip via its own 0.75 rate.
+        { shouldPlay: false, rate: 1.0, shouldCorrectPitch: false },
         (status) => {
           if ("didJustFinish" in status && status.didJustFinish) {
             void stopPracticeHqClip();
@@ -9210,7 +9220,11 @@ export function MobileLibraryShell(args: {
 
   // Reader comprehension events. Captures per-word interactions for adaptive
   // learning + corpus asset value. Fire-and-forget; failures are logged but
-  // never block reader UX.
+  // never block reader UX. `audio_complete` is the canonical "user finished
+  // the story audio" signal — the journey screen uses it to flip a story's
+  // `audioFinished` flag (see src/lib/journeyProgress.ts). Without it the
+  // journey would never repaint completed pills for mobile-only listeners,
+  // because /api/continue-listening filters out >= 95% rows.
   async function trackReaderEvent(
     eventType:
       | "vocab_clicked"
@@ -9218,7 +9232,8 @@ export function MobileLibraryShell(args: {
       | "audio_segment_replay"
       | "story_abandoned"
       | "vocab_marked_known"
-      | "vocab_marked_unknown",
+      | "vocab_marked_unknown"
+      | "audio_complete",
     payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
   ) {
     if (!sessionToken) return;
@@ -9236,6 +9251,13 @@ export function MobileLibraryShell(args: {
           metadata: payload.metadata ?? {},
         },
       });
+      // When the user finishes a story audio, refresh the journey so the
+      // pill repaints (border = topic color, check badge bottom-right).
+      // Fire-and-forget; the metric POST is the source of truth, the
+      // refetch is only for instant visual feedback.
+      if (eventType === "audio_complete" && activeJourneyLanguage) {
+        void loadJourneyForLanguage(activeJourneyLanguage, { clearPrevious: false });
+      }
     } catch (error) {
       console.error("[mobile reader] failed to track reader event", error);
     }
@@ -9369,6 +9391,7 @@ export function MobileLibraryShell(args: {
     void (async () => {
       await trackPracticeMetric("practice_session_completed");
 
+      let checkpointWasSaved = false;
       if (
         sessionToken &&
         practiceLaunchContext.source === "journey" &&
@@ -9388,10 +9411,25 @@ export function MobileLibraryShell(args: {
             },
           });
           setPracticeCheckpointSaveState("saved");
+          checkpointWasSaved = true;
         } catch (error) {
           console.error("[mobile practice] failed to save checkpoint", error);
           setPracticeCheckpointSaveState("error");
         }
+      }
+
+      // Refresh the journey after a practice session that originated
+      // from a journey context. `practice_session_completed` updates
+      // `practicedTopicKeys` server-side, and a passed checkpoint
+      // flips every audioFinished story in the topic to `completed`
+      // (emerald badge). Without this refetch the user has to manually
+      // re-enter the journey screen to see the new state.
+      if (
+        sessionToken &&
+        activeJourneyLanguage &&
+        (practiceLaunchContext.source === "journey" || checkpointWasSaved)
+      ) {
+        void loadJourneyForLanguage(activeJourneyLanguage, { clearPrevious: false });
       }
 
       const reviewableFavorites = favoriteWords.filter((item) =>
@@ -12393,7 +12431,7 @@ export function MobileLibraryShell(args: {
       <View style={styles.hero}>
         <View style={styles.heroHeaderRow}>
           <View style={styles.heroTextBlock}>
-            <Text style={styles.eyebrow}>My Library</Text>
+            <Text style={styles.eyebrow}>Saved</Text>
             <Text style={styles.title}>Your saved reading</Text>
             <Text style={styles.subtitle}>Saved, synced and ready to resume.</Text>
           </View>
@@ -13370,6 +13408,85 @@ export function MobileLibraryShell(args: {
     journeyAutoScrolledRef.current = null;
   }, [activeJourneyTrack?.id, globalJourneyNextStoryId]);
 
+  // Center the "next" story pill vertically in the journey viewport
+  // on first open. measureLayout reports the pill's Y inside the
+  // shell ScrollView. We target (pillY + pillH/2 - viewport/2) so the
+  // pill sits at the middle. The result is clamped to [0, maxScroll]:
+  // if the next pill is in the upper half (first story of A1), the
+  // computed target is negative and scrollTo clamps to 0 — leaves the
+  // top header visible. Same on the lower edge: scrollTo clamps to
+  // contentHeight - viewportHeight so the last story never tries to
+  // pull past the bottom.
+  useEffect(() => {
+    if (activeScreen !== "home") return;
+    if (!globalJourneyNextStoryId) return;
+    if (!activeJourneyTrack?.id) return;
+    const trackKey = `${activeJourneyTrack.id}::${globalJourneyNextStoryId}`;
+    if (journeyAutoScrolledRef.current === trackKey) return;
+    // Two RAFs: first lets the layout settle after the journey path
+    // mounts; second runs after the topic-panel sticky measurements
+    // are committed (they push the next pill's Y down by ~64px each).
+    let cancelled = false;
+    const tryCenter = (attempt: number) => {
+      if (cancelled) return;
+      const pill = journeyNextNodeRef.current;
+      const scroll = shellScrollRef.current;
+      if (!pill || !scroll) {
+        if (attempt < 8) {
+          setTimeout(() => tryCenter(attempt + 1), 80);
+        }
+        return;
+      }
+      // measureLayout against the inner host of ScrollView. RN's API
+      // accepts the ScrollView ref directly here on iOS.
+      const scrollNode = scroll as unknown as {
+        measureLayout?: typeof pill.measureLayout;
+      };
+      // Type guard: prefer measureLayout when both nodes expose it.
+      if (typeof pill.measureLayout !== "function" || !scrollNode) {
+        return;
+      }
+      try {
+        // findNodeHandle is the safe path for measureLayout's first
+        // argument across RN versions; using the ref directly works on
+        // iOS but the typed signature wants a node tag.
+        pill.measureLayout(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          scroll as any,
+          (_x: number, y: number, _w: number, h: number) => {
+            if (cancelled) return;
+            const { height: viewportH } = Dimensions.get("window");
+            // Use 45% of viewport instead of 50% so the pill sits
+            // slightly above center — reading naturally pulls the eye
+            // a bit higher than geometric middle, and the "what's
+            // next" pill earns more visual weight just above the
+            // fold than buried under it.
+            const target = Math.max(0, y + h / 2 - viewportH * 0.45);
+            // animated:false → posición inicial, no scroll motion. El
+            // usuario abre el journey y la "next" ya está en el medio
+            // desde el primer frame, en lugar de ver la página "saltar"
+            // después de cargar.
+            scroll.scrollTo({ y: target, animated: false });
+            journeyAutoScrolledRef.current = trackKey;
+          },
+          () => {
+            // measureLayout failed (node detached). Try once more.
+            if (attempt < 8) setTimeout(() => tryCenter(attempt + 1), 80);
+          }
+        );
+      } catch {
+        if (attempt < 8) setTimeout(() => tryCenter(attempt + 1), 80);
+      }
+    };
+    // Initial delay = 1 frame after journey mount; subsequent retries
+    // back off if the pill isn't measurable yet.
+    const id = setTimeout(() => tryCenter(0), 120);
+    return () => {
+      cancelled = true;
+      clearTimeout(id);
+    };
+  }, [activeScreen, activeJourneyTrack?.id, globalJourneyNextStoryId]);
+
   // Loop del halo + float de la story "next". Se rearma ante varias
   // señales para no quedar "muerto":
   //   - El journey se vuelve visible (activeScreen pasa a "home").
@@ -13919,6 +14036,15 @@ export function MobileLibraryShell(args: {
         // are cheap insurance against any duplicate-key dedupe bug
         // similar to the topic-panel one we just fixed.
         key={`sn-${level.id}-${topic.slug}-${story.id}`}
+        ref={(node) => {
+          // Capture the "next" pill's View node so the journey screen
+          // can center it on first open. The center-on-open effect
+          // (see useEffect on activeScreen / globalJourneyNextStoryId)
+          // measures this node against shellScrollRef and scrolls.
+          if (isNextAction) {
+            journeyNextNodeRef.current = node;
+          }
+        }}
         style={[
           styles.journeyPathNodeRow,
           { paddingLeft: waveOffsetPx },
@@ -14037,12 +14163,13 @@ export function MobileLibraryShell(args: {
               nodeVariant === "audioFinished" ? styles.journeyNodePillAudioFinished : null,
               nodeVariant === "locked" ? styles.journeyNodePillLocked : null,
               nodeVariant === "step" ? styles.journeyNodePillStep : null,
-              // Completed stories adopt the topic banner color on the
-              // border so a finished pill visually belongs to its topic
-              // (instead of every completed story looking emerald-green
+              // Stories the user has already touched (audio finished or
+              // fully completed) adopt the topic banner color on the
+              // border, so a "read" pill visually belongs to its topic
+              // (instead of every read story looking emerald/cyan
               // regardless of which panel it sits under). The check
               // badge bottom-right keeps the mastery signal.
-              nodeVariant === "completed"
+              nodeVariant === "completed" || nodeVariant === "audioFinished"
                 ? { borderColor: topicColor, borderWidth: 2 }
                 : null,
               // La "next" usa la variante E elegida: sólida del color
@@ -14087,36 +14214,18 @@ export function MobileLibraryShell(args: {
                       resizeMode="cover"
                     />
                   </View>
-                  {/* Status badge — completed gets a green check
-                      ("you mastered this"), audioFinished gets a
-                      headphones icon ("you've heard this but the
-                      exercises are pending"), locked gets the
-                      padlock. step doesn't render a badge. */}
-                  {nodeVariant === "completed" ||
-                  nodeVariant === "audioFinished" ||
-                  nodeVariant === "locked" ? (
+                  {/* Lock icon stays on the thumb (small, secondary
+                      state). The "mastered/listened" check badge now
+                      lives at the bottom-right of the whole pill
+                      (rendered below as a sibling of icon + text). */}
+                  {nodeVariant === "locked" ? (
                     <View
                       style={[
                         styles.journeyNodePillThumbBadge,
-                        nodeVariant === "completed"
-                          ? styles.journeyNodePillThumbBadgeCompleted
-                          : nodeVariant === "audioFinished"
-                            ? styles.journeyNodePillThumbBadgeAudioFinished
-                            : styles.journeyNodePillThumbBadgeLocked,
+                        styles.journeyNodePillThumbBadgeLocked,
                       ]}
                     >
-                      {nodeVariant === "completed" ? (
-                        <Feather name="check" size={11} color="#0c1626" />
-                      ) : nodeVariant === "audioFinished" ? (
-                        // Outline check (same shape as the green
-                        // mastery check) to convey "started, not
-                        // mastered" — the badge style itself is
-                        // hollow cyan, see journeyNodePillThumb-
-                        // BadgeAudioFinished.
-                        <Feather name="check" size={11} color="#7dd3fc" />
-                      ) : (
-                        <Feather name="lock" size={10} color="#cdd9ec" />
-                      )}
+                      <Feather name="lock" size={10} color="#cdd9ec" />
                     </View>
                   ) : null}
                 </>
@@ -14139,6 +14248,28 @@ export function MobileLibraryShell(args: {
                   algunas (las que tenían text offline cacheado) y la
                   inconsistencia se notaba. */}
             </View>
+            {/* Corner badge anchored to the bottom-right of the whole
+                pill (not the thumb), with a soft shadow + white ring
+                so the check reads as a lifted seal sitting on top of
+                the banner instead of an overlay clipped over the
+                cover image. */}
+            {nodeVariant === "completed" || nodeVariant === "audioFinished" ? (
+              <View
+                pointerEvents="none"
+                style={[
+                  styles.journeyNodePillCornerBadge,
+                  nodeVariant === "completed"
+                    ? styles.journeyNodePillCornerBadgeCompleted
+                    : styles.journeyNodePillCornerBadgeAudioFinished,
+                ]}
+              >
+                <Feather
+                  name="check"
+                  size={14}
+                  color={nodeVariant === "completed" ? "#ffffff" : "#7dd3fc"}
+                />
+              </View>
+            ) : null}
           </Pressable>
           );
           return nextFloatStyle ? (
@@ -16124,8 +16255,8 @@ export function MobileLibraryShell(args: {
           <Text style={styles.menuScreenSectionTitle}>Your activity</Text>
           <View style={styles.menuScreenSection}>
             <MenuScreenRow icon="progress" label="Progress" onPress={() => setActiveScreen("progress")} accent="#a8e845" />
-            <MenuScreenRow icon="journey" label="Library" onPress={() => setActiveScreen("journey")} accent="#7dd3fc" />
-            <MenuScreenRow icon="library" label="My Library" onPress={() => setActiveScreen("library")} accent="#7dd3fc" />
+            <MenuScreenRow icon="library" label="Library" onPress={() => setActiveScreen("journey")} accent="#7dd3fc" />
+            <MenuScreenRow icon="saved" label="Saved" onPress={() => setActiveScreen("library")} accent="#7dd3fc" />
           </View>
 
           <Text style={styles.menuScreenSectionTitle}>Create</Text>
@@ -16450,10 +16581,11 @@ export function MobileLibraryShell(args: {
           eclipse swap without the flicker the floating overlay
           had.) */}
 
-      {/* Floating FAB en el journey: mismo chevron-up, pero al tap
-          hace SCROLL hasta la posición de la story "next" dentro del
-          path en lugar de scroll-to-top. Si todo está completo o aún
-          no medimos la Y del topic correspondiente, fallback a top. */}
+      {/* Floating FAB en el journey: el tap centra la story "next" en
+          la mitad del viewport — misma lógica que el auto-center on
+          journey-open, pero con animación porque es gesto explícito
+          del usuario. Si no podemos medir el pill (no hay next, o el
+          node aún no se mountó), fallback a top. */}
       {activeScreen === "home" &&
       !journeyDetailTopicId &&
       !openingStoryId &&
@@ -16461,20 +16593,32 @@ export function MobileLibraryShell(args: {
       showJourneyScrollTop ? (
         <Pressable
           onPress={() => {
-            let targetY: number | null = null;
-            if (globalJourneyNextStoryId && activeJourneyTrack) {
-              for (const level of activeJourneyTrack.levels) {
-                for (const topic of level.topics) {
-                  if (topic.stories.some((s) => s.id === globalJourneyNextStoryId)) {
-                    const layout = topicLayoutsRef.current.get(topic.slug);
-                    if (layout) targetY = layout.y;
-                    break;
-                  }
-                }
-                if (targetY !== null) break;
-              }
+            const pill = journeyNextNodeRef.current;
+            const scroll = shellScrollRef.current;
+            if (!pill || !scroll) {
+              scroll?.scrollTo({ y: 0, animated: true });
+              return;
             }
-            shellScrollRef.current?.scrollTo({ y: targetY ?? 0, animated: true });
+            try {
+              pill.measureLayout(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                scroll as any,
+                (_x: number, y: number, _w: number, h: number) => {
+                  const { height: viewportH } = Dimensions.get("window");
+                  // 45% del viewport (mismo offset que el auto-center
+                  // on open): la mirada lee un poco arriba del centro
+                  // geométrico, así el pill queda donde el usuario lo
+                  // espera ver al "ir a lo que toca".
+                  const target = Math.max(0, y + h / 2 - viewportH * 0.45);
+                  scroll.scrollTo({ y: target, animated: true });
+                },
+                () => {
+                  scroll.scrollTo({ y: 0, animated: true });
+                }
+              );
+            } catch {
+              scroll.scrollTo({ y: 0, animated: true });
+            }
           }}
           accessibilityRole="button"
           accessibilityLabel="Scroll to next story"
@@ -17219,15 +17363,15 @@ export function MobileLibraryShell(args: {
                   />
                   <MenuLink
                     label="Library"
-                    icon="journey"
+                    icon="library"
                     onPress={() => {
                       setActiveScreen("journey");
                       setMenuOpen(false);
                     }}
                   />
                   <MenuLink
-                    label="My Library"
-                    icon="library"
+                    label="Saved"
+                    icon="saved"
                     onPress={() => {
                       setActiveScreen("library");
                       setMenuOpen(false);
@@ -17792,6 +17936,7 @@ function MenuIcon({ icon, tone = "default" }: { icon: MenuIconName; tone?: "defa
   const color = tone === "accent" ? "#f8d48a" : "#dbe9ff";
   if (icon === "settings") return <Feather name="settings" size={18} color={color} />;
   if (icon === "library") return <Feather name="book-open" size={18} color={color} />;
+  if (icon === "saved") return <Feather name="bookmark" size={18} color={color} />;
   if (icon === "journey") return <MaterialCommunityIcons name="map-marker-path" size={18} color={color} />;
   if (icon === "create") return <Ionicons name="sparkles-outline" size={18} color={color} />;
   if (icon === "story") return <Feather name="book" size={18} color={color} />;
@@ -19990,6 +20135,34 @@ const styles = StyleSheet.create({
   journeyNodePillThumbBadgeStep: {
     backgroundColor: tokenBg[3],
   },
+  // Corner badge anchored to the bottom-right of the whole pill (not
+  // the thumb). Larger and "lifted" via a soft drop shadow + white
+  // ring so it reads as a seal placed on top of the banner.
+  journeyNodePillCornerBadge: {
+    position: "absolute",
+    bottom: 8,
+    right: 8,
+    width: 24,
+    height: 24,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#000",
+    shadowOpacity: 0.35,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  journeyNodePillCornerBadgeCompleted: {
+    backgroundColor: "#10b981",
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.92)",
+  },
+  journeyNodePillCornerBadgeAudioFinished: {
+    backgroundColor: "rgba(8, 21, 36, 0.85)",
+    borderWidth: 1.5,
+    borderColor: "#7dd3fc",
+  },
   journeyNodePillThumbBadgeNumber: {
     color: "#dbe9ff",
     fontSize: 10,
@@ -20023,6 +20196,11 @@ const styles = StyleSheet.create({
   journeyNodePillTextStack: {
     flex: 1,
     minWidth: 0,
+    // Reserves the bottom-right corner for the completion badge so the
+    // title (which can wrap to 2 lines) never lands underneath the
+    // check seal. Badge is 24px wide + 8px from the edge = ~32px of
+    // safe zone.
+    paddingRight: 28,
   },
   journeyNodePillLabel: {
     color: "#ffffff",
