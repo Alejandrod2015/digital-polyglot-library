@@ -357,28 +357,28 @@
 }
 .w {
   display: inline-block;
-  padding: 1px 0;
-  border-radius: 6px;
-  transition: background 0.25s ease, color 0.25s ease, padding 0.25s ease;
+  padding: 0 3px;
+  margin-inline: -3px;
+  border-radius: 4px;
+  font-weight: 900;
+  transition: background 0.2s ease, color 0.2s ease;
   cursor: pointer;
+}
+.paraBreak {
+  display: block;
+  height: 10px;
 }
 .wActiveGold {
   background: #fcd34d;
   color: #051834;
-  padding: 1px 7px;
-  font-weight: 900;
 }
 .vocabSky {
   background: #1e8fae;
   color: #ffffff;
-  padding: 1px 7px;
-  font-weight: 900;
 }
 .vocabGreen {
   background: #2e8d6b;
   color: #ffffff;
-  padding: 1px 7px;
-  font-weight: 900;
 }
 
 /* Vocab panel (replaces the older word-tip): drawer-style card sitting
@@ -425,6 +425,18 @@
   border-radius: 5px;
   background: rgba(46, 141, 107, 0.20);
   color: #34d399;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.vocabPosSky {
+  display: inline-block;
+  margin-top: 3px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: rgba(30, 143, 174, 0.22);
+  color: #7dd3fc;
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 0.12em;
