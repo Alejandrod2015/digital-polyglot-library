@@ -335,8 +335,22 @@ function getSentenceWithBlank(item: PracticeFavoriteItem): string | null {
   const sentence = getContextSentence(item);
   const word = normalizeText(item.word);
   if (!sentence || !word) return null;
-  const pattern = new RegExp(escapeRegExp(word), "i");
-  if (!pattern.test(sentence)) return null;
+
+  // Try literal match first.
+  let pattern = new RegExp(escapeRegExp(word), "i");
+  if (!pattern.test(sentence)) {
+    // Stem fallback for inflected forms. The lemma stored in vocab is
+    // often the dictionary form (`amare`), but the story body uses the
+    // conjugated form (`amava`, `amo`, `ami`). Romance + Germanic
+    // morphology lives in suffixes, so a prefix-stem match catches the
+    // common cases without dragging in a real lemmatizer. Without this
+    // the Fix-N button on end-of-story practice silently no-oped: every
+    // verb item failed to produce a fill_blank exercise.
+    const stemLen = Math.max(3, word.length - 2);
+    const stem = word.slice(0, stemLen);
+    pattern = new RegExp(`\\b${escapeRegExp(stem)}\\w*`, "i");
+    if (!pattern.test(sentence)) return null;
+  }
   // Pasamos el anchor `_____` a shortenSentence para que cuando tenga
   // que recortar por puntuación/comas, conserve siempre el chunk con
   // el blank. Sin esto, una oración larga con varios commas dejaba al
