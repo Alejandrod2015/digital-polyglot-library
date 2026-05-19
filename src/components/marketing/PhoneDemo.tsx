@@ -14,6 +14,7 @@ type Word = {
   s: number;
   e: number;
   vocab?: VocabKind;
+  breakBefore?: boolean;
 };
 
 const WORDS: Word[] = [
@@ -41,11 +42,24 @@ const WORDS: Word[] = [
   { t: "una", s: 7.95, e: 8.15 },
   { t: "olla", s: 8.15, e: 8.55, vocab: "sky" },
   { t: "grande.", s: 8.55, e: 9.15 },
-  { t: "Hoy", s: 9.15, e: 9.4 },
+  { t: "Hoy", s: 9.15, e: 9.4, breakBefore: true },
   { t: "está", s: 9.4, e: 9.75 },
   { t: "cansada.", s: 9.75, e: 10.6, vocab: "green" },
+  { t: "Pero", s: 10.7, e: 10.95 },
+  { t: "ella", s: 10.95, e: 11.2 },
+  { t: "sonríe.", s: 11.2, e: 11.85 },
+  { t: "Don", s: 11.95, e: 12.2 },
+  { t: "Pedro", s: 12.2, e: 12.75 },
+  { t: "pide", s: 12.75, e: 13.15 },
+  { t: "su", s: 13.15, e: 13.3 },
+  { t: "mole", s: 13.3, e: 13.7, vocab: "sky" },
+  { t: "también.", s: 13.7, e: 14.4 },
+  { t: "Comen", s: 14.5, e: 14.85 },
+  { t: "juntos", s: 14.85, e: 15.25 },
+  { t: "en", s: 15.25, e: 15.4 },
+  { t: "silencio.", s: 15.4, e: 16.1 },
 ];
-const DURATION = 11;
+const DURATION = 16.5;
 
 function fmt(t: number) {
   const m = Math.floor(t / 60);
@@ -53,7 +67,7 @@ function fmt(t: number) {
   return `${m}:${String(s).padStart(2, "0")}`;
 }
 
-const TIP_TRIGGER_WORD = "cansada.";
+const TIP_TRIGGER_WORD = "fonda";
 const TOTAL_SECONDS = 70; // displayed timestamp ceiling (1:10)
 
 export default function PhoneDemo() {
@@ -64,6 +78,7 @@ export default function PhoneDemo() {
   const [t, setT] = useState(0);
   const [playing, setPlaying] = useState(!prefersReducedMotion);
   const [showTip, setShowTip] = useState(false);
+  const [manuallyClosed, setManuallyClosed] = useState(false);
   const raf = useRef<number | null>(null);
   const last = useRef<number | null>(null);
 
@@ -78,7 +93,11 @@ export default function PhoneDemo() {
       last.current = now;
       setT((p) => {
         const next = p + dt;
-        return next > DURATION ? 0 : next;
+        if (next > DURATION) {
+          setManuallyClosed(false);
+          return 0;
+        }
+        return next;
       });
       raf.current = requestAnimationFrame(tick);
     };
@@ -89,10 +108,18 @@ export default function PhoneDemo() {
   }, [playing]);
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
-    const id = setInterval(() => setShowTip((s) => !s), 5800);
-    return () => clearInterval(id);
-  }, [prefersReducedMotion]);
+    if (prefersReducedMotion) {
+      setShowTip(!manuallyClosed);
+      return;
+    }
+    if (manuallyClosed) {
+      setShowTip(false);
+      return;
+    }
+    const trigger = WORDS.find((w) => w.t === TIP_TRIGGER_WORD);
+    if (!trigger) return;
+    setShowTip(t >= trigger.s && t < DURATION - 0.5);
+  }, [t, prefersReducedMotion, manuallyClosed]);
 
   const activeIdx = WORDS.findIndex((w) => t >= w.s && t < w.e);
   const progress = Math.min(1, t / DURATION);
@@ -168,11 +195,13 @@ export default function PhoneDemo() {
                 .join(" ");
               return (
                 <span key={i}>
+                  {w.breakBefore && <span className={styles.paraBreak} aria-hidden="true" />}
                   <span
                     className={tokenClasses}
                     onClick={() => {
                       setT(w.s);
-                      if (w.vocab === "green" || w.t === TIP_TRIGGER_WORD) {
+                      if (w.t === TIP_TRIGGER_WORD) {
+                        setManuallyClosed(false);
                         setShowTip(true);
                       }
                     }}
@@ -190,7 +219,10 @@ export default function PhoneDemo() {
               <button
                 className={styles.vocabPanelClose}
                 type="button"
-                onClick={() => setShowTip(false)}
+                onClick={() => {
+                  setShowTip(false);
+                  setManuallyClosed(true);
+                }}
                 aria-label="Close"
               >
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
@@ -198,9 +230,9 @@ export default function PhoneDemo() {
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </button>
-              <div className={styles.vocabPanelWord}>cansada</div>
-              <span className={styles.vocabPosGreen}>ADJECTIVE</span>
-              <p className={styles.vocabPanelDef}>Low on energy from work</p>
+              <div className={styles.vocabPanelWord}>fonda</div>
+              <span className={styles.vocabPosSky}>NOUN</span>
+              <p className={styles.vocabPanelDef}>Small home-style Mexican eatery</p>
               <button className={styles.vocabSaveBtn} type="button">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
