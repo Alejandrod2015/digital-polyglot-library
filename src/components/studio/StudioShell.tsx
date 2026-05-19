@@ -21,18 +21,13 @@ const NAV_SECTIONS = [
     ],
   },
   {
-    // Todo lo que es contenido editorial con texto narrativo: journeys
-    // (curados por curriculum), libros (= grupos de historias),
-    // historias sueltas, y la vista global de búsqueda. Ordenados de
-    // más estructurado (journey) a menos (historias sueltas), con la
-    // vista global al final como "punto de entrada para encontrar algo
-    // que ya existe".
+    // Contenido editorial con texto narrativo: journeys (curados por
+    // curriculum) y libros (= grupos de historias). Las vistas sueltas
+    // y la búsqueda global pasaron a "DEPRECATED" al final del menú.
     label: "CONTENIDO",
     items: [
       { href: "/studio/journey-manager", label: "Journey Manager", icon: "pen", exact: false },
       { href: "/studio/catalog-books", label: "Catálogo de libros", icon: "database", exact: false },
-      { href: "/studio/standalone-stories", label: "Historias sueltas", icon: "file-text", exact: false },
-      { href: "/studio/journey-stories", label: "Todas las historias", icon: "book", exact: false },
     ],
   },
   {
@@ -67,6 +62,16 @@ const NAV_SECTIONS = [
       { href: "/studio/config", label: "Reglas pedagógicas", icon: "sliders", exact: false },
       { href: "/studio/beta-signups", label: "Beta Signups", icon: "users", exact: false },
       { href: "/studio/settings", label: "Settings", icon: "settings", exact: false },
+    ],
+  },
+  {
+    // Vistas legacy que mantenemos accesibles pero ya no son el flujo
+    // editorial principal. Todo el contenido nuevo entra por Journey
+    // Manager o Catálogo de libros.
+    label: "DEPRECATED",
+    items: [
+      { href: "/studio/standalone-stories", label: "Historias sueltas", icon: "file-text", exact: false },
+      { href: "/studio/journey-stories", label: "Todas las historias", icon: "book", exact: false },
     ],
   },
 ];
