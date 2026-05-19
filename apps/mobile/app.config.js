@@ -92,7 +92,7 @@ const config = {
     // `autoIncrement: true` NO funciona aquí porque EAS no muta JS.
     // Bumpear manualmente cada release a (max submitted on App Store
     // Connect) + 1.
-    buildNumber: "262",
+    buildNumber: "263",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },

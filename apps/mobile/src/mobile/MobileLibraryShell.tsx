@@ -14037,6 +14037,14 @@ export function MobileLibraryShell(args: {
               nodeVariant === "audioFinished" ? styles.journeyNodePillAudioFinished : null,
               nodeVariant === "locked" ? styles.journeyNodePillLocked : null,
               nodeVariant === "step" ? styles.journeyNodePillStep : null,
+              // Completed stories adopt the topic banner color on the
+              // border so a finished pill visually belongs to its topic
+              // (instead of every completed story looking emerald-green
+              // regardless of which panel it sits under). The check
+              // badge bottom-right keeps the mastery signal.
+              nodeVariant === "completed"
+                ? { borderColor: topicColor, borderWidth: 2 }
+                : null,
               // La "next" usa la variante E elegida: sólida del color
               // del topic + sheen overlay arriba (renderizado abajo) +
               // glow pulsante + shimmer cada 4 s + float vertical sutil.
@@ -15273,6 +15281,12 @@ export function MobileLibraryShell(args: {
                               nodeVariant === "completed" ? styles.journeyNodePillCompleted : null,
                               nodeVariant === "locked" ? styles.journeyNodePillLocked : null,
                               nodeVariant === "step" ? styles.journeyNodePillStep : null,
+                              nodeVariant === "completed"
+                                ? {
+                                    borderColor: topicPanelColor(topic.slug, level.id),
+                                    borderWidth: 2,
+                                  }
+                                : null,
                             ]}
                           >
                             <View
