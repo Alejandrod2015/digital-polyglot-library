@@ -6234,9 +6234,22 @@ export function MobileLibraryShell(args: {
     // "fresca" sobre el pool completo de favoritos antes de bloquear
     // el tap. Sin esto, el botón START de la orbita queda dead cuando
     // el chip muestra 0.
-    let exercises = buildPracticeExercisesFromItems(sourceItems, mode, review, onboardingPracticePrefs);
+    let effectiveMode = mode;
+    let exercises = buildPracticeExercisesFromItems(sourceItems, effectiveMode, review, onboardingPracticePrefs);
     if (exercises.length === 0 && review) {
-      exercises = buildPracticeExercisesFromItems(sourceItems, mode, false, onboardingPracticePrefs);
+      exercises = buildPracticeExercisesFromItems(sourceItems, effectiveMode, false, onboardingPracticePrefs);
+    }
+    // Fix-flow fallback: el WHAT'S NEXT "Fix N" pasa los pocos items
+    // fallados como overrideItems. Si el modo activo era match (≥4
+    // candidatos) o context (necesita exampleSentence) y los missed
+    // no alcanzan, sin esto el tap quedaba dead. meaning solo pide
+    // 1 item con definición, así garantizamos sesión revisable.
+    if (exercises.length === 0 && overrideItems && overrideItems.length > 0 && effectiveMode !== "meaning") {
+      const fallback = buildPracticeExercisesFromItems(sourceItems, "meaning", false, onboardingPracticePrefs);
+      if (fallback.length > 0) {
+        effectiveMode = "meaning";
+        exercises = fallback;
+      }
     }
     if (exercises.length === 0) return;
     setPracticeSeedItems(sourceItems);
@@ -6247,7 +6260,7 @@ export function MobileLibraryShell(args: {
     // Warm up the iOS voice cache once so the first listening prompt
     // already uses an Enhanced/Premium voice instead of the default.
     void ensureBestVoicesLoaded();
-    setActivePracticeMode(mode);
+    setActivePracticeMode(effectiveMode);
     setPracticeLoadError(null);
     setPracticeExercises(exercises);
     setPracticeIndex(0);
@@ -7471,13 +7484,14 @@ export function MobileLibraryShell(args: {
       })
     );
     shineLoop.start();
-    // Perfect score → confetti + a louder chime overlay.
+    // Perfect score → confetti + a louder chime overlay + success haptic.
     if (
       practiceExercises.length > 0 &&
       practiceScore === practiceExercises.length
     ) {
       setPracticePerfectActive(true);
       void playPracticePerfectChime();
+      void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => undefined);
     }
     return () => {
       shineLoop.stop();
