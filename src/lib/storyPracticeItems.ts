@@ -63,6 +63,85 @@ export function parseLooseVocab(input: unknown): LooseVocabItem[] {
   return [];
 }
 
+/**
+ * Minimum word count for a fill_blank sentence to feel like a real
+ * test. Below this, the surrounding context is so thin that the
+ * learner solves the exercise by article/elision matching alone
+ * (e.g. "Guarda l'_____.") rather than by knowing the target word.
+ */
+const MIN_FILL_BLANK_WORDS = 5;
+const QUOTE_CHARS = /[“”"«»]/;
+
+/**
+ * When the natural sentence containing the target word is shorter
+ * than MIN_FILL_BLANK_WORDS, try to expand it with one adjacent
+ * sentence from the SAME paragraph. Mitigations:
+ *   - Never cross paragraph (scene) boundaries
+ *   - Never glue a dialogue sentence to a narration sentence
+ *   - Never use a neighbor that already contains the target word
+ *     (would expose the answer outside the blank)
+ *   - Returns the original sentence when none of these are satisfied
+ */
+function padFillBlankContext(
+  rawSentence: string,
+  htmlText: string,
+  targetWord: string,
+): string {
+  const trimmed = rawSentence.trim();
+  if (!trimmed) return trimmed;
+  const wordCount = trimmed.split(/\s+/).filter(Boolean).length;
+  if (wordCount >= MIN_FILL_BLANK_WORDS) return trimmed;
+
+  const stripped = stripHtml(htmlText);
+  if (!stripped) return trimmed;
+
+  const targetKey = trimmed.toLowerCase();
+  const targetLower = targetWord.toLowerCase();
+
+  // stripHtml turns </blockquote> into \n, so paragraph = blockquote
+  // for our journey stories. Sentence-split happens only inside a
+  // single paragraph, so adjacency can't cross scenes.
+  const paragraphs = stripped.split(/\n+/).map((p) => p.trim()).filter(Boolean);
+
+  let paragraph: string[] | null = null;
+  let idx = -1;
+  for (const para of paragraphs) {
+    const sentences = para
+      .split(/(?<=[.!?][”’"'»]?)\s+/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const i = sentences.findIndex((s) => s.toLowerCase() === targetKey);
+    if (i >= 0) {
+      paragraph = sentences;
+      idx = i;
+      break;
+    }
+  }
+  if (!paragraph || idx < 0) return trimmed;
+
+  const sentenceHasQuote = QUOTE_CHARS.test(trimmed);
+  const safeNeighbor = (n: string | undefined): string | null => {
+    if (!n) return null;
+    if (QUOTE_CHARS.test(n) !== sentenceHasQuote) return null;
+    if (n.toLowerCase().includes(targetLower)) return null;
+    return n;
+  };
+
+  // Prefer pre-context: setting the scene before the blank reads more
+  // naturally than tacking a follow-up after.
+  const prev = safeNeighbor(paragraph[idx - 1]);
+  if (prev) {
+    const merged = `${prev} ${trimmed}`;
+    if (merged.split(/\s+/).filter(Boolean).length >= MIN_FILL_BLANK_WORDS) return merged;
+  }
+  const next = safeNeighbor(paragraph[idx + 1]);
+  if (next) {
+    const merged = `${trimmed} ${next}`;
+    if (merged.split(/\s+/).filter(Boolean).length >= MIN_FILL_BLANK_WORDS) return merged;
+  }
+  return trimmed;
+}
+
 function getContextSentence(text: string, word: string): string | null {
   const cleanText = stripHtml(text);
   const normalizedWord = normalizeText(word).toLowerCase();
@@ -139,6 +218,17 @@ export function buildPracticeItemsFromStory(params: {
       getContextSentence(cleanText, word) ||
       undefined;
 
+    // Compute the padded fill_blank-only context. We only set this
+    // field when padding actually happened, so meaning_in_context and
+    // favorites keep using the concise exampleSentence.
+    const paddedFillBlankContext = exampleSentence
+      ? padFillBlankContext(exampleSentence, params.text ?? "", lookupWord)
+      : "";
+    const fillBlankContext =
+      paddedFillBlankContext && paddedFillBlankContext !== exampleSentence
+        ? paddedFillBlankContext
+        : null;
+
     const ranges = timings
       ? computePracticeAudioRanges({
           targetWord: lookupWord,
@@ -168,6 +258,7 @@ export function buildPracticeItemsFromStory(params: {
       language,
       practiceSource,
       priority,
+      fillBlankContext,
       voiceId,
       audioWordStartSec: ranges?.audioWordStartSec ?? null,
       audioWordEndSec: ranges?.audioWordEndSec ?? null,

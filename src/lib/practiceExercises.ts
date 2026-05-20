@@ -23,6 +23,13 @@ export type PracticeFavoriteItem = {
    *  is more teachable. Used by getPracticeSource as the top tiebreaker
    *  so the best items become exercises first. */
   priority?: number | null;
+  /** Padded version of the example sentence used only by fill_blank
+   *  when the natural sentence is too short to genuinely test the word
+   *  (e.g. "Guarda l'_____." leaves the learner with the article as
+   *  the sole clue). Null when no padding was needed or possible.
+   *  Pre-computed at item-build time so we don't need access to the
+   *  full story text at exercise-build time. */
+  fillBlankContext?: string | null;
   /** Voice the source story was narrated with, when known. */
   voiceId?: string | null;
   /** Pre-computed exact audio ranges from the source story's aeneas
@@ -360,14 +367,21 @@ function getDistractorMeanings(
 }
 
 function getSentenceWithBlank(item: PracticeFavoriteItem): string | null {
-  // Siempre partir de `getContextSentence`: ya hace el split por
-  // `.!?` y elige la oración que contiene la palabra objetivo. Si
-  // antes usábamos `exampleSentence` crudo para items no-standalone,
-  // un example multi-oración terminaba blankeando la palabra en (por
-  // ej.) la segunda oración y después `shortenSentence` se quedaba
-  // con la primera — el usuario veía la primera oración intacta sin
-  // blank, con la respuesta correcta en un párrafo descartado.
-  const sentence = getContextSentence(item);
+  // Prefer the padded fill_blank-specific context when it exists. The
+  // padding is intentional (covers cases like "Guarda l'_____." where
+  // the bare sentence offers only the article as a clue); skipping
+  // getContextSentence here avoids its splitter picking the lone
+  // anchor chunk back out of the padded version.
+  const padded = normalizeText(item.fillBlankContext);
+  // Siempre partir de `getContextSentence` (cuando no hay padding):
+  // ya hace el split por `.!?` y elige la oración que contiene la
+  // palabra objetivo. Si antes usábamos `exampleSentence` crudo para
+  // items no-standalone, un example multi-oración terminaba blankeando
+  // la palabra en (por ej.) la segunda oración y después
+  // `shortenSentence` se quedaba con la primera — el usuario veía la
+  // primera oración intacta sin blank, con la respuesta correcta en
+  // un párrafo descartado.
+  const sentence = padded || getContextSentence(item);
   const word = normalizeText(item.word);
   if (!sentence || !word) return null;
   const pattern = new RegExp(escapeRegExp(word), "i");
@@ -419,6 +433,12 @@ function getContextSentence(item: PracticeFavoriteItem): string {
 function shortenSentence(sentence: string, anchor?: string): string {
   const normalized = normalizeText(sentence);
   if (!normalized) return "";
+  // Early return when the whole input is already short enough. The
+  // split tier below would otherwise undo a deliberately padded short
+  // sentence by picking back just the chunk containing the anchor —
+  // exactly the behavior we want for long favorites (>140 chars) but
+  // not for short padded fill_blank contexts.
+  if (normalized.length <= 140) return normalized;
 
   // En cada nivel de corte (oración, cláusula, ventana de palabras)
   // preferimos el chunk que contiene el anchor (típicamente `_____`
