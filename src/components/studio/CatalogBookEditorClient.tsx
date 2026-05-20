@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import MediaUploadField from "@/components/studio/MediaUploadField";
 import type {
   StudioCatalogBook,
   StudioCatalogStory,
@@ -356,8 +357,12 @@ export default function CatalogBookEditorClient({ id }: Props) {
         <div style={{ height: 14 }} />
         <FieldRow>
           <div>
-            <label style={label}>Cover URL (R2 preferido)</label>
-            <input style={input} value={form.coverUrl ?? ""} onChange={(e) => patch("coverUrl", e.target.value || null)} />
+            <MediaUploadField
+              kind="cover"
+              label="Cover (sube imagen o pega URL)"
+              value={form.coverUrl ?? null}
+              onChange={(url) => patch("coverUrl", url)}
+            />
           </div>
           <div>
             <label style={label}>Store URL</label>
@@ -368,10 +373,6 @@ export default function CatalogBookEditorClient({ id }: Props) {
             <input style={input} value={form.audioFolder ?? ""} onChange={(e) => patch("audioFolder", e.target.value)} />
           </div>
         </FieldRow>
-        {form.coverUrl && (
-          // eslint-disable-next-line @next/next/no-img-element -- admin preview
-          <img src={form.coverUrl} alt="cover preview" style={{ maxWidth: 140, marginTop: 12, borderRadius: 6 }} />
-        )}
       </div>
 
       {/* Stories inside the book */}

@@ -34,6 +34,7 @@ export async function PATCH(
     word?: string;
     audioUrl?: string | null;
     payload?: Record<string, unknown>;
+    featured?: boolean;
   };
 
   // Make sure the exercise belongs to a set owned by this story so we
@@ -58,6 +59,7 @@ export async function PATCH(
       ...(body.payload && typeof body.payload === "object"
         ? { payload: body.payload as never }
         : {}),
+      ...(typeof body.featured === "boolean" ? { featured: body.featured } : {}),
     },
   });
 
@@ -70,6 +72,7 @@ export async function PATCH(
       sentence: updated.sentence,
       audioUrl: updated.audioUrl,
       payload: updated.payload,
+      featured: updated.featured,
     },
   });
 }

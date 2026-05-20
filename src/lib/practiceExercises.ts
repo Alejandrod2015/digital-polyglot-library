@@ -19,17 +19,6 @@ export type PracticeFavoriteItem = {
   language?: string | null;
   nextReviewAt?: string | null;
   practiceSource?: "curriculum" | "user_saved" | "both" | null;
-  /** Pedagogical priority 1-3 assigned by the vocab generator. Higher
-   *  is more teachable. Used by getPracticeSource as the top tiebreaker
-   *  so the best items become exercises first. */
-  priority?: number | null;
-  /** Padded version of the example sentence used only by fill_blank
-   *  when the natural sentence is too short to genuinely test the word
-   *  (e.g. "Guarda l'_____." leaves the learner with the article as
-   *  the sole clue). Null when no padding was needed or possible.
-   *  Pre-computed at item-build time so we don't need access to the
-   *  full story text at exercise-build time. */
-  fillBlankContext?: string | null;
   /** Voice the source story was narrated with, when known. */
   voiceId?: string | null;
   /** Pre-computed exact audio ranges from the source story's aeneas
@@ -122,6 +111,11 @@ export type PracticeAudioClip = {
   audioWordEndSec?: number | null;
   audioSentenceStartSec?: number | null;
   audioSentenceEndSec?: number | null;
+  /** Pre-rendered mp3 URL persisted in R2 for this exercise. When set,
+   *  the mobile client plays this URL directly instead of calling the
+   *  Modal Piper endpoint, eliminating cold-start failures. The editor
+   *  (re)generates these from Studio via the regen-audio endpoint. */
+  cachedUrl?: string | null;
 };
 
 export type PracticeExercise =
@@ -288,14 +282,10 @@ function getDistractorWords(
     return candidateType === targetType;
   });
 
-  // Intentionally NO cascade to "same shape but any POS". The
-  // earlier `sameShape` fallback let a noun like `grembiule` become a
-  // distractor for an adjective target whenever the same-POS pool was
-  // thin, undoing the POS guarantee at exactly the moments the
-  // exercise needed it most. If we can't fill 3 distractors from the
-  // same-POS bucket, the exercise simply returns fewer distractors
-  // and the upstream `options.length < 4` check skips the exercise —
-  // we'd rather drop the slot than ship a trivially-eliminable one.
+  const sameShape = eligible.filter((candidate) => {
+    const candidateIsMultiword = normalizeText(candidate.word).includes(" ");
+    return candidateIsMultiword === targetIsMultiword;
+  });
 
   const picked: string[] = [];
   const seen = new Set<string>();
@@ -310,6 +300,8 @@ function getDistractorWords(
   };
 
   drainFrom(sameShapeAndType);
+  if (picked.length < max) drainFrom(sameShape);
+  if (picked.length < max) drainFrom(eligible);
 
   return picked;
 }
@@ -319,86 +311,68 @@ function getDistractorMeanings(
   pool: PracticeFavoriteItem[],
   max = 3
 ): string[] {
-  // Mirror getDistractorWords: filter by POS so a noun target gets
-  // noun-translation distractors, a verb target gets verb-translation
-  // distractors, etc. Without this, meaning_in_context is trivial
-  // process-of-elimination — the learner picks the only option whose
-  // POS fits the sentence slot, without actually knowing the Italian
-  // word. Cascade to the general pool if the same-POS bucket runs out
-  // so the exercise still has 4 options.
-  const targetType = normalizeVocabType(item.wordType, {
-    word: item.word,
-    definition: item.translation,
-  });
-
-  const eligible = uniqueByWord(
-    pool.filter(
-      (candidate) =>
-        normalizeKey(candidate.word) !== normalizeKey(item.word) &&
-        normalizeText(candidate.translation),
-    ),
-  );
-
-  const sameType = targetType
-    ? eligible.filter((candidate) => {
-        const candidateType = normalizeVocabType(candidate.wordType, {
-          word: candidate.word,
-          definition: candidate.translation,
-        });
-        return candidateType === targetType;
-      })
-    : eligible;
-
   const seen = new Set<string>([normalizeKey(item.translation)]);
   const out: string[] = [];
-  const drainFrom = (source: PracticeFavoriteItem[]) => {
-    for (const candidate of shuffle(source)) {
-      if (out.length >= max) break;
-      const translation = normalizeText(candidate.translation);
-      const key = normalizeKey(translation);
-      if (!translation || seen.has(key)) continue;
-      seen.add(key);
-      out.push(translation);
-    }
-  };
-
-  // Intentionally NO cascade to the general pool. Falling back to
-  // mixed-POS translations would reintroduce the exact failure we are
-  // trying to prevent (a noun answer next to a verb gloss = trivial
-  // elimination). If the same-POS bucket can't yield 3 candidates we
-  // return fewer; the upstream caller drops the exercise instead of
-  // shipping a trivially-eliminable one.
-  drainFrom(sameType);
-
+  for (const candidate of shuffle(pool)) {
+    const translation = normalizeText(candidate.translation);
+    const key = normalizeKey(translation);
+    if (!translation || seen.has(key)) continue;
+    seen.add(key);
+    out.push(translation);
+    if (out.length >= max) break;
+  }
   return out;
 }
 
-function getSentenceWithBlank(item: PracticeFavoriteItem): string | null {
-  // Prefer the padded fill_blank-specific context when it exists. The
-  // padding is intentional (covers cases like "Guarda l'_____." where
-  // the bare sentence offers only the article as a clue); skipping
-  // getContextSentence here avoids its splitter picking the lone
-  // anchor chunk back out of the padded version.
-  const padded = normalizeText(item.fillBlankContext);
-  // Siempre partir de `getContextSentence` (cuando no hay padding):
-  // ya hace el split por `.!?` y elige la oración que contiene la
-  // palabra objetivo. Si antes usábamos `exampleSentence` crudo para
-  // items no-standalone, un example multi-oración terminaba blankeando
-  // la palabra en (por ej.) la segunda oración y después
-  // `shortenSentence` se quedaba con la primera — el usuario veía la
-  // primera oración intacta sin blank, con la respuesta correcta en
-  // un párrafo descartado.
-  const sentence = padded || getContextSentence(item);
+/**
+ * Builds the blanked sentence AND captures the form actually present in
+ * the sentence (the inflected one), so fill_blank can show the
+ * conjugated form as the correct answer instead of the lemma. The lemma
+ * stored in vocab (`preparare`) doesn't make sense as the gap-fill
+ * answer when the original sentence had `preparava`.
+ */
+function getSentenceWithBlank(
+  item: PracticeFavoriteItem
+): { sentence: string; matchedForm: string } | null {
+  // Siempre partir de `getContextSentence`: ya hace el split por
+  // `.!?` y elige la oración que contiene la palabra objetivo. Si
+  // antes usábamos `exampleSentence` crudo para items no-standalone,
+  // un example multi-oración terminaba blankeando la palabra en (por
+  // ej.) la segunda oración y después `shortenSentence` se quedaba
+  // con la primera — el usuario veía la primera oración intacta sin
+  // blank, con la respuesta correcta en un párrafo descartado.
+  const sentence = getContextSentence(item);
   const word = normalizeText(item.word);
   if (!sentence || !word) return null;
-  const pattern = new RegExp(escapeRegExp(word), "i");
-  if (!pattern.test(sentence)) return null;
+
+  // Try literal match first.
+  let pattern = new RegExp(escapeRegExp(word), "i");
+  let isStemFallback = false;
+  if (!pattern.test(sentence)) {
+    // Stem fallback for inflected forms. The lemma stored in vocab is
+    // often the dictionary form (`amare`), but the story body uses the
+    // conjugated form (`amava`, `amo`, `ami`). Romance + Germanic
+    // morphology lives in suffixes, so a prefix-stem match catches the
+    // common cases without dragging in a real lemmatizer. Without this
+    // the Fix-N button on end-of-story practice silently no-oped: every
+    // verb item failed to produce a fill_blank exercise.
+    const stemLen = Math.max(3, word.length - 2);
+    const stem = word.slice(0, stemLen);
+    pattern = new RegExp(`\\b${escapeRegExp(stem)}\\w*`, "i");
+    if (!pattern.test(sentence)) return null;
+    isStemFallback = true;
+  }
+  // Capture the actual surface form in the sentence (e.g. "preparava")
+  // so callers can use it as the answer instead of the lemma
+  // ("preparare"). For the literal match the surface form IS the lemma.
+  const matchResult = sentence.match(pattern);
+  const matchedForm = isStemFallback && matchResult ? matchResult[0] : word;
   // Pasamos el anchor `_____` a shortenSentence para que cuando tenga
   // que recortar por puntuación/comas, conserve siempre el chunk con
   // el blank. Sin esto, una oración larga con varios commas dejaba al
   // usuario con la primera cláusula sin blank y opciones sin sentido.
   const shortened = shortenSentence(sentence.replace(pattern, "_____"), "_____");
-  return stripOrphanLeadingPunctuation(shortened);
+  return { sentence: stripOrphanLeadingPunctuation(shortened), matchedForm };
 }
 
 // El splitter de `audioSegments` corta oraciones inmediatamente
@@ -440,12 +414,6 @@ function getContextSentence(item: PracticeFavoriteItem): string {
 function shortenSentence(sentence: string, anchor?: string): string {
   const normalized = normalizeText(sentence);
   if (!normalized) return "";
-  // Early return when the whole input is already short enough. The
-  // split tier below would otherwise undo a deliberately padded short
-  // sentence by picking back just the chunk containing the anchor —
-  // exactly the behavior we want for long favorites (>140 chars) but
-  // not for short padded fill_blank contexts.
-  if (normalized.length <= 140) return normalized;
 
   // En cada nivel de corte (oración, cláusula, ventana de palabras)
   // preferimos el chunk que contiene el anchor (típicamente `_____`
@@ -459,11 +427,8 @@ function shortenSentence(sentence: string, anchor?: string): string {
     return parts[0] ?? fallback;
   };
 
-  // Allow an optional closing quote between the sentence terminator
-  // and the whitespace so that `bello."Il cameriere...` splits into
-  // two parts instead of one glued chunk.
   const splitOnStrongPunctuation = normalized
-    .split(/(?<=[.!?][”’"'»]?)\s+/)
+    .split(/(?<=[.!?])\s+/)
     .map((part) => part.trim())
     .filter(Boolean);
   const firstSentence = pickRelevant(splitOnStrongPunctuation, normalized);
@@ -530,19 +495,24 @@ function createFillBlankExercise(
   pool: PracticeFavoriteItem[]
 ): FillBlankExercise | null {
   const fullSentence = getContextSentence(item);
-  const sentence = getSentenceWithBlank(item);
-  if (!sentence || !fullSentence) return null;
-  const options = shuffle([item.word, ...getDistractorWords(item, getLanguagePool(item.language, pool))]);
+  const blanked = getSentenceWithBlank(item);
+  if (!blanked || !fullSentence) return null;
+  // Answer = the surface form actually present in the sentence
+  // (`preparava` if the lemma is `preparare`). Showing the lemma as
+  // the gap-fill answer didn't match the grammatical context the
+  // learner was reading, so the option set felt nonsensical.
+  const answerForm = blanked.matchedForm;
+  const options = shuffle([answerForm, ...getDistractorWords(item, getLanguagePool(item.language, pool))]);
   if (options.length < 4) return null;
   return {
     id: `fill_blank:${normalizeKey(item.word)}`,
     type: "fill_blank",
     prompt: "Complete the sentence with the right word or expression.",
-    sentence,
+    sentence: blanked.sentence,
     storySlug: item.storySlug ?? null,
     audioClip: buildAudioClip(item, fullSentence),
     options,
-    answer: item.word,
+    answer: answerForm,
   };
 }
 
@@ -578,23 +548,24 @@ function createNaturalExpressionExercise(
   pool: PracticeFavoriteItem[]
 ): NaturalExpressionExercise | null {
   if (!isExpression(item)) return null;
-  const sentence = getSentenceWithBlank(item);
+  const blanked = getSentenceWithBlank(item);
   const fullSentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
     ? getContextSentence(item)
     : normalizeText(item.exampleSentence);
-  if (!sentence || !fullSentence) return null;
+  if (!blanked || !fullSentence) return null;
+  const answerForm = blanked.matchedForm;
   const expressionPool = getLanguagePool(item.language, pool).filter((candidate) => isExpression(candidate));
-  const options = shuffle([item.word, ...getDistractorWords(item, expressionPool)]);
+  const options = shuffle([answerForm, ...getDistractorWords(item, expressionPool)]);
   if (options.length < 4) return null;
   return {
     id: `natural_expression:${normalizeKey(item.word)}`,
     type: "natural_expression",
     prompt: "Which expression sounds natural here?",
-    sentence,
+    sentence: blanked.sentence,
     storySlug: item.storySlug ?? null,
-    audioClip: buildAudioClip(item, isStandaloneSourcePath(item.sourcePath, item.storySlug) ? fullSentence : sentence),
+    audioClip: buildAudioClip(item, isStandaloneSourcePath(item.sourcePath, item.storySlug) ? fullSentence : blanked.sentence),
     options,
-    answer: item.word,
+    answer: answerForm,
   };
 }
 
@@ -604,19 +575,11 @@ function createListenChooseExercise(
 ): ListenChooseExercise | null {
   const options = shuffle([item.word, ...getDistractorWords(item, getLanguagePool(item.language, pool))]);
   if (options.length < 4) return null;
-  // Render the example sentence (not the isolated word) so the learner
-  // trains to recognize the target inside connected speech. Picking the
-  // right written option then requires actually identifying the word in
-  // natural prosody, not just matching a clear isolated pronunciation
-  // to its spelling. Falls back to the word alone when the item has no
-  // context sentence (legacy rows without exampleSentence).
-  const contextSentence = normalizeText(item.exampleSentence ?? "");
-  const speechText = contextSentence || item.word;
   return {
     id: `listen_choose:${normalizeKey(item.word)}`,
     type: "listen_choose",
     prompt: "Listen and choose the word you hear.",
-    speechText,
+    speechText: item.word,
     language: item.language ?? null,
     options,
     answer: item.word,
@@ -699,9 +662,6 @@ function getPracticeSource(
     [...pool].sort((a, b) => {
       const weightDiff = sourceWeight(b) - sourceWeight(a);
       if (weightDiff !== 0) return weightDiff;
-      const aPrio = typeof a.priority === "number" ? a.priority : 0;
-      const bPrio = typeof b.priority === "number" ? b.priority : 0;
-      if (aPrio !== bPrio) return bPrio - aPrio;
       const aReview = a.nextReviewAt ? Date.parse(a.nextReviewAt) : Number.NaN;
       const bReview = b.nextReviewAt ? Date.parse(b.nextReviewAt) : Number.NaN;
       if (Number.isFinite(aReview) && Number.isFinite(bReview) && aReview !== bReview) {
@@ -801,26 +761,6 @@ function getExerciseAnchor(exercise: PracticeExercise): string {
   }
 }
 
-// Underlying source sentence for an exercise, normalized so identical
-// sentences across different modes (e.g. fill_blank with blank vs
-// meaning_in_context with the original word) collide. Used to keep
-// the mixed session from showing the same sentence in two slots.
-function getExerciseSentenceKey(exercise: PracticeExercise): string | null {
-  switch (exercise.type) {
-    case "fill_blank":
-    case "natural_expression":
-      return exercise.sentence
-        ? normalizeKey(exercise.sentence.replace(/_+/g, exercise.answer))
-        : null;
-    case "meaning_in_context":
-      return exercise.sentence ? normalizeKey(exercise.sentence) : null;
-    case "listen_choose":
-      return exercise.speechText ? normalizeKey(exercise.speechText) : null;
-    case "match_meaning":
-      return null;
-  }
-}
-
 export function buildMixedPracticeSession(
   items: PracticeFavoriteItem[],
   plan: PracticeMode[],
@@ -832,23 +772,7 @@ export function buildMixedPracticeSession(
   );
   const nextIndexByMode = new Map<PracticeMode, number>(plan.map((mode) => [mode, 0]));
   const usedAnchors = new Set<string>();
-  // Cross-mode sentence dedup: keep the same source sentence from
-  // appearing in two slots of the set (e.g. one as fill_blank for word
-  // A and another as meaning_in_context for word B). The per-mode
-  // seenSentences in buildPracticeSession only protected within-mode.
-  const usedSentences = new Set<string>();
   const exercises: PracticeExercise[] = [];
-
-  const tryAdd = (candidate: PracticeExercise): boolean => {
-    const anchor = getExerciseAnchor(candidate);
-    if (usedAnchors.has(anchor)) return false;
-    const sentKey = getExerciseSentenceKey(candidate);
-    if (sentKey && usedSentences.has(sentKey)) return false;
-    usedAnchors.add(anchor);
-    if (sentKey) usedSentences.add(sentKey);
-    exercises.push(candidate);
-    return true;
-  };
 
   for (const mode of plan) {
     if (exercises.length >= maxExercises) break;
@@ -858,7 +782,11 @@ export function buildMixedPracticeSession(
     while (index < session.length) {
       const candidate = session[index];
       index += 1;
-      if (tryAdd(candidate)) break;
+      const anchor = getExerciseAnchor(candidate);
+      if (usedAnchors.has(anchor)) continue;
+      usedAnchors.add(anchor);
+      exercises.push(candidate);
+      break;
     }
 
     nextIndexByMode.set(mode, index);
@@ -874,7 +802,10 @@ export function buildMixedPracticeSession(
     while (index < session.length && exercises.length < maxExercises) {
       const candidate = session[index];
       index += 1;
-      tryAdd(candidate);
+      const anchor = getExerciseAnchor(candidate);
+      if (usedAnchors.has(anchor)) continue;
+      usedAnchors.add(anchor);
+      exercises.push(candidate);
     }
 
     nextIndexByMode.set(mode, index);

@@ -21,25 +21,35 @@ const NAV_SECTIONS = [
     ],
   },
   {
+    // Contenido editorial con texto narrativo: journeys (curados por
+    // curriculum) y libros (= grupos de historias). Las vistas sueltas
+    // y la búsqueda global pasaron a "DEPRECATED" al final del menú.
     label: "CONTENIDO",
     items: [
       { href: "/studio/journey-manager", label: "Journey Manager", icon: "pen", exact: false },
-      { href: "/studio/journey-stories", label: "Stories library", icon: "book", exact: false },
-      { href: "/studio/practice-sets", label: "Sets de práctica", icon: "check", exact: false },
-      { href: "/studio/standalone-stories", label: "Standalone stories", icon: "file-text", exact: false },
       { href: "/studio/catalog-books", label: "Catálogo de libros", icon: "database", exact: false },
-      { href: "/studio/audio", label: "Audio propio", icon: "globe", exact: false },
-      { href: "/studio/covers", label: "Covers", icon: "layers", exact: false },
     ],
   },
   {
-    label: "PLANNING",
+    // Assets multimedia que se generan y se enganchan a las historias
+    // pero viven en su propio surface (gallery / batch generation).
+    label: "MULTIMEDIA",
+    items: [
+      { href: "/studio/covers", label: "Portadas", icon: "layers", exact: false },
+      { href: "/studio/audio", label: "Voces y audios", icon: "globe", exact: false },
+    ],
+  },
+  {
+    label: "PLANIFICACIÓN",
     items: [
       { href: "/studio/planning", label: "Temas, Idiomas y Niveles", icon: "grid", exact: false },
+      { href: "/studio/validar", label: "Validar historia", icon: "file-text", exact: false },
     ],
   },
   {
-    label: "ESTUDIO",
+    // Datos analíticos del proyecto. Antes se llamaba "ESTUDIO" lo cual
+    // colisionaba con el nombre de la app entera ("Studio").
+    label: "DATOS",
     items: [
       { href: "/studio/progreso", label: "Progreso del proyecto", icon: "chart", exact: false },
       { href: "/studio/metrics", label: "Métricas", icon: "chart", exact: false },
@@ -52,6 +62,16 @@ const NAV_SECTIONS = [
       { href: "/studio/config", label: "Reglas pedagógicas", icon: "sliders", exact: false },
       { href: "/studio/beta-signups", label: "Beta Signups", icon: "users", exact: false },
       { href: "/studio/settings", label: "Settings", icon: "settings", exact: false },
+    ],
+  },
+  {
+    // Vistas legacy que mantenemos accesibles pero ya no son el flujo
+    // editorial principal. Todo el contenido nuevo entra por Journey
+    // Manager o Catálogo de libros.
+    label: "DEPRECATED",
+    items: [
+      { href: "/studio/standalone-stories", label: "Historias sueltas", icon: "file-text", exact: false },
+      { href: "/studio/journey-stories", label: "Todas las historias", icon: "book", exact: false },
     ],
   },
 ];
@@ -104,8 +124,6 @@ function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
       return <svg {...props}><line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" /><line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" /><line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" /><line x1="1" y1="14" x2="7" y2="14" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="17" y1="16" x2="23" y2="16" /></svg>;
     case "settings":
       return <svg {...props}><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>;
-    case "check":
-      return <svg {...props}><polyline points="20 6 9 17 4 12" /></svg>;
     default:
       return null;
   }
@@ -432,7 +450,7 @@ export default function StudioShell({
         </header>
 
         {/* Content */}
-        <main style={{ padding: "24px 32px 48px", maxWidth: 1200 }}>
+        <main style={{ padding: "24px 32px 48px" }}>
           {children}
         </main>
       </div>

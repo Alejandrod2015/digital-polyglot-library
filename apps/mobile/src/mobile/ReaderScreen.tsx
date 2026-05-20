@@ -792,7 +792,8 @@ export function ReaderScreen(args: {
       | "audio_segment_replay"
       | "story_abandoned"
       | "vocab_marked_known"
-      | "vocab_marked_unknown",
+      | "vocab_marked_unknown"
+      | "audio_complete",
     payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
   ) => void;
 }) {
@@ -1211,9 +1212,15 @@ export function ReaderScreen(args: {
   // Only auto-open the practice prompt once per story view so dismissing it
   // doesn't cause it to re-pop every time the user scrolls near the bottom.
   const promptShownForStoryRef = useRef<string | null>(null);
+  // Tracks whether we've already emitted `audio_complete` for the active
+  // story. The expo-av status update keeps firing after `didJustFinish`
+  // (looping isPlaying=false ticks), so without this guard we'd flood the
+  // metrics endpoint with duplicate completion events.
+  const audioCompleteFiredForStoryRef = useRef<string | null>(null);
   useEffect(() => {
     setEndOfStoryPromptVisible(false);
     promptShownForStoryRef.current = null;
+    audioCompleteFiredForStoryRef.current = null;
   }, [story.id]);
 
   function maybeFireEndOfStoryPrompt() {
@@ -2021,6 +2028,37 @@ export function ReaderScreen(args: {
               // now the single source of truth for the end-of-story prompt.
               if (playback.didJustFinish) {
                 maybeFireEndOfStoryPrompt();
+                // Tell the server the story audio is done so the journey
+                // pill flips to "audioFinished" (border = topic color,
+                // check badge bottom-right). Guarded against duplicates
+                // because didJustFinish can re-fire when the player
+                // re-emits ticks at position=duration.
+                if (
+                  audioCompleteFiredForStoryRef.current !== story.id &&
+                  onTrackReaderEvent &&
+                  story.slug
+                ) {
+                  audioCompleteFiredForStoryRef.current = story.id;
+                  // El journey siempre usa `standalone:<slug>` como
+                  // progressKey para sus stories (ver
+                  // src/app/journey/journeyData.ts:561), aunque la
+                  // story venga de un libro del catálogo. Si
+                  // mandáramos `<bookSlug>:<slug>` el set lookup en
+                  // `getCompletedJourneyStoryKeys` no haría match y el
+                  // pill del journey nunca se repintaría.
+                  const progressKey = `standalone:${story.slug}`;
+                  onTrackReaderEvent("audio_complete", {
+                    storySlug: story.slug,
+                    bookSlug: book.slug,
+                    value: Math.round((playback.durationMillis ?? 0) / 1000),
+                    metadata: {
+                      progressKey,
+                      progressSec: Math.round((playback.positionMillis ?? 0) / 1000),
+                      audioDurationSec: Math.round((playback.durationMillis ?? 0) / 1000),
+                      source: "mobile_reader",
+                    },
+                  });
+                }
               }
             }
 

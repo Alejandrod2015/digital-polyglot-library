@@ -1,6 +1,17 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { Fragment, useEffect, useState, useTransition } from "react";
+import MiniPlayer from "@/components/studio/MiniPlayer";
+import MediaUploadField from "@/components/studio/MediaUploadField";
+
+type VoiceOption = {
+  id: string;
+  engine: "piper" | "kokoro";
+  label: string;
+  language: string;
+  region?: string;
+  gender: "m" | "f";
+};
 
 type Exercise = {
   id: string;
@@ -10,6 +21,9 @@ type Exercise = {
   sentence: string;
   audioUrl: string | null;
   payload: Record<string, unknown>;
+  // Featured ones show on the end-of-story screen. The rest live in the
+  // global pool the Practice tab pulls from. Editor can toggle freely.
+  featured: boolean;
 };
 
 type Set = {
@@ -23,819 +37,454 @@ type Props = {
   storyId: string;
   storyTitle: string;
   set: Set | null;
+  /** Voz de práctica seleccionada para la historia (override por historia).
+   *  Null = usa el default por idioma del pipeline. */
+  practiceVoiceId?: string | null;
+  /** Idioma del journey al que pertenece la historia. Necesario para
+   *  filtrar la lista de voces disponibles. */
+  language?: string | null;
 };
 
-const TYPE_META: Record<string, { label: string; emoji: string; tint: string }> = {
-  fill_blank:         { label: "Completa la frase",   emoji: "✏️", tint: "#3b82f6" },
-  meaning_in_context: { label: "Significado",         emoji: "💡", tint: "#a855f7" },
-  natural_expression: { label: "Expresión natural",   emoji: "🗣️", tint: "#ec4899" },
-  listen_choose:      { label: "Escucha y elige",     emoji: "🎧", tint: "#06b6d4" },
-  match_meaning:      { label: "Empareja",            emoji: "🧩", tint: "#f97316" },
+const TYPE_LABEL: Record<string, string> = {
+  fill_blank: "Completa la frase",
+  meaning_in_context: "Significado",
+  natural_expression: "Expresión natural",
+  listen_choose: "Escucha y elige",
+  match_meaning: "Empareja",
 };
 
-const COLORS = {
-  bg: "#0a1424",
-  card: "#0f1e34",
-  cardOpen: "#13243f",
-  border: "rgba(148, 163, 184, 0.18)",
-  borderStrong: "rgba(148, 163, 184, 0.35)",
-  text: "#e5edf7",
-  muted: "#94a3b8",
-  primary: "#facc15",
-  green: "#22c55e",
-  red: "#fb7185",
-  amber: "#f59e0b",
-};
-
-export default function PracticeSetEditor({ storyId, storyTitle, set }: Props) {
+export default function PracticeSetEditor({ storyId, storyTitle, set, practiceVoiceId: initialVoice, language }: Props) {
   const [currentSet, setCurrentSet] = useState<Set | null>(set);
-  const [pending, setPending] = useState<string | null>(null); // operation in flight
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
-  const [openId, setOpenId] = useState<string | null>(null);
+  const [voices, setVoices] = useState<VoiceOption[]>([]);
+  const [practiceVoiceId, setPracticeVoiceId] = useState<string | null>(initialVoice ?? null);
+  const [savingVoice, setSavingVoice] = useState(false);
+
+  // Load the voices that the Modal pipeline can actually synthesize for
+  // this language. Empty list → no override possible; the dropdown stays
+  // disabled with a tooltip explaining it.
+  useEffect(() => {
+    let cancelled = false;
+    if (!language) { setVoices([]); return; }
+    (async () => {
+      try {
+        const res = await fetch(`/api/studio/practice-voices/${encodeURIComponent(language)}`);
+        if (!res.ok) return;
+        const data = (await res.json()) as { voices: VoiceOption[] };
+        if (!cancelled) setVoices(data.voices ?? []);
+      } catch { /* ignore */ }
+    })();
+    return () => { cancelled = true; };
+  }, [language]);
 
   async function regenerate(force: boolean) {
     setError(null);
-    setPending(force ? "force" : "regen");
-    try {
-      const res = await fetch(`/api/studio/practice-sets/${storyId}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ force }),
-      });
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error((body as { error?: string }).error ?? `HTTP ${res.status}`);
-      }
-      const data = (await res.json()) as { set: Set };
-      setCurrentSet(data.set);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-    } finally {
-      setPending(null);
+    const res = await fetch(`/api/studio/practice-sets/${storyId}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ force }),
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      setError((body as { error?: string }).error ?? `HTTP ${res.status}`);
+      return;
     }
+    const data = (await res.json()) as { set: Set; practiceVoiceId?: string | null };
+    setCurrentSet(data.set);
+    if (data.practiceVoiceId !== undefined) setPracticeVoiceId(data.practiceVoiceId ?? null);
   }
 
   async function toggleLocked() {
     if (!currentSet) return;
-    setPending("lock");
+    const res = await fetch(`/api/studio/practice-sets/${storyId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ locked: !currentSet.locked }),
+    });
+    if (!res.ok) return;
+    setCurrentSet({ ...currentSet, locked: !currentSet.locked });
+  }
+
+  async function changeVoice(next: string | null) {
+    setSavingVoice(true);
+    setError(null);
+    // Optimistic update so the dropdown reflects the change immediately.
+    const prev = practiceVoiceId;
+    setPracticeVoiceId(next);
     try {
       const res = await fetch(`/api/studio/practice-sets/${storyId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ locked: !currentSet.locked }),
+        body: JSON.stringify({ practiceVoiceId: next }),
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = (await res.json()) as { set: Set };
-      setCurrentSet(data.set);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        setError((body as { error?: string }).error ?? `HTTP ${res.status}`);
+        setPracticeVoiceId(prev);
+      }
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+      setPracticeVoiceId(prev);
     } finally {
-      setPending(null);
+      setSavingVoice(false);
+    }
+  }
+
+  async function toggleFeatured(exercise: Exercise) {
+    const next = !exercise.featured;
+    // Optimistic update so the chip flips immediately.
+    setCurrentSet((s) =>
+      s
+        ? { ...s, exercises: s.exercises.map((e) => (e.id === exercise.id ? { ...e, featured: next } : e)) }
+        : s
+    );
+    const res = await fetch(`/api/studio/practice-sets/${storyId}/exercises/${exercise.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ featured: next }),
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      setError((body as { error?: string }).error ?? `HTTP ${res.status}`);
+      // Roll back.
+      setCurrentSet((s) =>
+        s
+          ? { ...s, exercises: s.exercises.map((e) => (e.id === exercise.id ? { ...e, featured: exercise.featured } : e)) }
+          : s
+      );
     }
   }
 
   async function saveExercise(updated: Exercise) {
-    setError(null);
-    setPending(`save:${updated.id}`);
-    try {
-      const res = await fetch(`/api/studio/practice-sets/${storyId}/exercises/${updated.id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          sentence: updated.sentence,
-          word: updated.word,
-          audioUrl: updated.audioUrl,
-          payload: updated.payload,
-        }),
-      });
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error((body as { error?: string }).error ?? `HTTP ${res.status}`);
-      }
-      const data = (await res.json()) as { exercise: Exercise };
-      setCurrentSet((s) =>
-        s ? { ...s, exercises: s.exercises.map((e) => (e.id === updated.id ? data.exercise : e)) } : s
-      );
-      setOpenId(null);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-    } finally {
-      setPending(null);
+    const res = await fetch(`/api/studio/practice-sets/${storyId}/exercises/${updated.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sentence: updated.sentence,
+        word: updated.word,
+        audioUrl: updated.audioUrl,
+        payload: updated.payload,
+      }),
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      setError((body as { error?: string }).error ?? `HTTP ${res.status}`);
+      return;
     }
+    const data = (await res.json()) as { exercise: Exercise };
+    setCurrentSet((s) =>
+      s
+        ? { ...s, exercises: s.exercises.map((e) => (e.id === updated.id ? data.exercise : e)) }
+        : s
+    );
+    setEditingId(null);
   }
 
   return (
-    <div style={shell}>
-      {/* Header / actions */}
-      <div style={header}>
-        <div>
-          <h1 style={h1}>{storyTitle}</h1>
-          <p style={subtitle}>
-            Set persistido de práctica. {currentSet ? `${currentSet.exercises.length} ejercicios` : "Sin set generado"}.{" "}
-            {currentSet && (
-              <span style={{ color: COLORS.muted, fontSize: 12 }}>
-                Actualizado {new Date(currentSet.updatedAt).toLocaleString()}
-              </span>
-            )}
+    <div className="jm-ex">
+      <header className="jm-ex__head">
+        <div className="jm-ex__head-main">
+          <h3 className="jm-ex__title">{storyTitle}</h3>
+          <p className="jm-ex__sub">
+            Pool completo de ejercicios. Los marcados como <strong>Featured</strong> aparecen al terminar la historia (10 max). Los demás viven en el pool global que la pestaña <em>Practice</em> del móvil usa por idioma. Bloquea el set cuando ya esté revisado para que la regeneración no lo sobrescriba.
           </p>
         </div>
-        <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
-          {currentSet && (
-            <button
-              onClick={() => void toggleLocked()}
-              disabled={!!pending}
-              style={currentSet.locked ? btnLocked : btnGhost}
-              title={currentSet.locked ? "Aprobado: protegido contra regenerar" : "Marcar como aprobado"}
-            >
-              {currentSet.locked ? "🔒 Aprobado" : "🔓 Borrador"}
-            </button>
-          )}
+        <div className="jm-ex__actions">
           <button
-            onClick={() => void regenerate(!!currentSet)}
-            disabled={!!pending || currentSet?.locked}
-            style={btnPrimary}
-            title={currentSet?.locked ? "Desbloquea para regenerar" : "Regenera todos los ejercicios desde el builder"}
+            className="jm-btn jm-btn--primary jm-btn--sm"
+            onClick={() => startTransition(() => void regenerate(false))}
+            disabled={pending}
           >
-            {pending === "regen" || pending === "force" ? "Regenerando…" : currentSet ? "Regenerar set" : "Generar set"}
+            {currentSet ? "Regenerar set" : "Generar set"}
           </button>
-        </div>
-      </div>
-
-      {error && (
-        <div style={errBanner}>
-          ✗ {error}
-        </div>
-      )}
-
-      {/* Body */}
-      {!currentSet ? (
-        <EmptyState onGenerate={() => void regenerate(false)} pending={!!pending} />
-      ) : (
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          {currentSet.exercises.map((ex) => (
-            <ExerciseCard
-              key={ex.id}
-              exercise={ex}
-              isOpen={openId === ex.id}
-              onToggle={() => setOpenId(openId === ex.id ? null : ex.id)}
-              onSave={saveExercise}
-              saving={pending === `save:${ex.id}`}
-              locked={currentSet.locked}
-              storyId={storyId}
-            />
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function EmptyState({ onGenerate, pending }: { onGenerate: () => void; pending: boolean }) {
-  return (
-    <div style={{ ...card, padding: 48, textAlign: "center" }}>
-      <div style={{ fontSize: 40, marginBottom: 12 }}>📝</div>
-      <h3 style={{ fontSize: 18, fontWeight: 700, color: COLORS.text, marginBottom: 6 }}>
-        Aún no tiene set de práctica
-      </h3>
-      <p style={{ color: COLORS.muted, fontSize: 14, marginBottom: 20 }}>
-        Genera 10 ejercicios automáticamente desde el vocab de la historia. Después puedes editarlos uno a uno.
-      </p>
-      <button onClick={onGenerate} disabled={pending} style={btnPrimary}>
-        {pending ? "Generando…" : "Generar set"}
-      </button>
-    </div>
-  );
-}
-
-function ExerciseCard({
-  exercise,
-  isOpen,
-  onToggle,
-  onSave,
-  saving,
-  locked,
-  storyId,
-}: {
-  exercise: Exercise;
-  isOpen: boolean;
-  onToggle: () => void;
-  onSave: (updated: Exercise) => void;
-  saving: boolean;
-  locked: boolean;
-  storyId: string;
-}) {
-  const meta = TYPE_META[exercise.type] ?? { label: exercise.type, emoji: "•", tint: COLORS.muted };
-  const isListening = exercise.type === "listen_choose";
-
-  return (
-    <div
-      style={{
-        ...card,
-        background: isOpen ? COLORS.cardOpen : COLORS.card,
-        borderColor: isOpen ? COLORS.borderStrong : COLORS.border,
-      }}
-    >
-      {/* Compact header */}
-      <button
-        onClick={onToggle}
-        style={cardHeaderBtn}
-        title={isOpen ? "Contraer" : "Editar"}
-      >
-        <span style={{ ...orderBubble, background: meta.tint }}>{exercise.orderIndex + 1}</span>
-        <div style={{ flex: 1, minWidth: 0, textAlign: "left" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-            <span style={{ fontSize: 16 }}>{meta.emoji}</span>
-            <span style={{ ...typePill, color: meta.tint, borderColor: meta.tint }}>{meta.label}</span>
-            <span style={{ color: COLORS.primary, fontWeight: 700, fontSize: 14 }}>{exercise.word}</span>
-          </div>
-          {!isListening && (
-            <div style={{ color: COLORS.muted, fontSize: 13, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-              {exercise.sentence}
-            </div>
+          <label
+            className="jm-row jm-row--tight"
+            style={{ gap: 4, fontSize: 11, color: "var(--mx-muted)" }}
+            title={
+              voices.length === 0
+                ? `No hay voces de práctica aprobadas para ${language ?? "este idioma"} en Modal.`
+                : "Voz que se usará al regenerar audios de los ejercicios. Cambiar no regenera; aplica a la próxima regeneración."
+            }
+          >
+            <span>Voz:</span>
+            <select
+              className="jm-input"
+              style={{ minWidth: 200, height: 26, fontSize: 11, padding: "0 8px" }}
+              value={practiceVoiceId ?? ""}
+              disabled={voices.length === 0 || savingVoice}
+              onChange={(e) => void changeVoice(e.target.value || null)}
+            >
+              <option value="">Default de {language ?? "idioma"}</option>
+              {voices.map((v) => (
+                <option key={v.id} value={v.id}>{v.label}</option>
+              ))}
+            </select>
+          </label>
+          {currentSet && (
+            <>
+              <button
+                className="jm-btn jm-btn-tone-amber jm-btn--sm"
+                onClick={() => startTransition(() => void regenerate(true))}
+                disabled={pending || currentSet.locked}
+              >
+                Forzar regeneración
+              </button>
+              <button
+                className={`jm-btn jm-btn--sm ${currentSet.locked ? "jm-btn-tone-teal" : ""}`}
+                onClick={() => void toggleLocked()}
+              >
+                {currentSet.locked ? "Desbloquear" : "Bloquear (aprobado)"}
+              </button>
+              <span className="jm-ex__updated">
+                actualizado {new Date(currentSet.updatedAt).toLocaleString()}
+              </span>
+            </>
           )}
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <AudioIndicator url={exercise.audioUrl} compact />
-          <span style={{ color: COLORS.muted, fontSize: 12 }}>{isOpen ? "▴" : "▾"}</span>
-        </div>
-      </button>
+      </header>
 
-      {/* Expanded edit form — `key` forces remount with fresh state. */}
-      {isOpen && (
-        <ExerciseEditForm
-          key={exercise.id}
-          exercise={exercise}
-          onCancel={onToggle}
-          onSave={onSave}
-          saving={saving}
-          locked={locked}
-          storyId={storyId}
-        />
+      {error && <div className="jm-ex__error">{error}</div>}
+
+      {!currentSet ? (
+        <div className="jm-ex-empty">
+          Este story no tiene un set de práctica todavía. Pulsa <strong>Generar set</strong> para crearlo desde el vocab.
+        </div>
+      ) : (
+        <table className="jm-ex-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Featured</th>
+              <th>Tipo</th>
+              <th>Palabra</th>
+              <th>Frase (lo que se muestra y se manda al TTS)</th>
+              <th>Audio</th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            {(() => {
+              const featuredCount = currentSet.exercises.filter((e) => e.featured).length;
+              const FEATURED_CAP = 10;
+              return currentSet.exercises.map((ex) => {
+              const isEditing = editingId === ex.id;
+              const canFeature = ex.featured || featuredCount < FEATURED_CAP;
+              return (
+                <Fragment key={ex.id}>
+                  <tr className={isEditing ? "jm-ex-row--editing" : ""}>
+                    <td className="jm-ex-table__num">{ex.orderIndex + 1}</td>
+                    <td>
+                      <button
+                        type="button"
+                        className={`jm-chip jm-chip--mono ${ex.featured ? "jm-chip--brand" : ""}`}
+                        onClick={() => void toggleFeatured(ex)}
+                        disabled={!canFeature && !ex.featured}
+                        title={
+                          ex.featured
+                            ? "Aparece end-of-story. Click para sacar del featured."
+                            : canFeature
+                              ? "Solo en pool. Click para incluirlo end-of-story."
+                              : `Hay ${FEATURED_CAP} featured ya. Quita uno antes de agregar otro.`
+                        }
+                        style={{ cursor: !canFeature && !ex.featured ? "not-allowed" : "pointer", opacity: !canFeature && !ex.featured ? 0.45 : 1, border: "none" }}
+                      >
+                        {ex.featured ? "★ Featured" : "Pool"}
+                      </button>
+                    </td>
+                    <td className="jm-ex-table__type">{TYPE_LABEL[ex.type] ?? ex.type}</td>
+                    <td className="jm-ex-table__word">{ex.word}</td>
+                    <td>{ex.sentence}</td>
+                    <td className="jm-ex-table__audio">
+                      {ex.audioUrl ? (
+                        <MiniPlayer src={ex.audioUrl} width={220} />
+                      ) : (
+                        <span className="jm-ex-table__audio-empty">pendiente</span>
+                      )}
+                    </td>
+                    <td>
+                      <button
+                        className="jm-btn--link"
+                        onClick={() => setEditingId(isEditing ? null : ex.id)}
+                      >
+                        {isEditing ? "Cerrar" : "Editar"}
+                      </button>
+                    </td>
+                  </tr>
+                  {isEditing && (
+                    <tr>
+                      <td colSpan={6} className="jm-ex-edit-cell">
+                        <ExerciseEditPanel
+                          exercise={ex}
+                          storyId={storyId}
+                          locked={currentSet?.locked ?? false}
+                          onCancel={() => setEditingId(null)}
+                          onSave={(updated) => void saveExercise(updated)}
+                          onAudioRegenerated={(updated) => {
+                            setCurrentSet((s) =>
+                              s
+                                ? { ...s, exercises: s.exercises.map((e) => (e.id === updated.id ? updated : e)) }
+                                : s
+                            );
+                          }}
+                        />
+                      </td>
+                    </tr>
+                  )}
+                </Fragment>
+              );
+            });
+            })()}
+          </tbody>
+        </table>
       )}
     </div>
   );
 }
 
-function ExerciseEditForm({
+function ExerciseEditPanel({
   exercise,
+  storyId,
+  locked,
   onCancel,
   onSave,
-  saving,
-  locked,
-  storyId,
+  onAudioRegenerated,
 }: {
   exercise: Exercise;
+  storyId: string;
+  locked: boolean;
   onCancel: () => void;
   onSave: (updated: Exercise) => void;
-  saving: boolean;
-  locked: boolean;
-  storyId: string;
+  onAudioRegenerated: (updated: Exercise) => void;
 }) {
-  const initialOptions = useMemo(() => {
-    const raw = (exercise.payload as { options?: unknown }).options;
-    return Array.isArray(raw) ? (raw as string[]) : [];
-  }, [exercise.payload]);
-  const initialAnswer = useMemo(() => {
-    const a = (exercise.payload as { answer?: unknown }).answer;
-    return typeof a === "string" ? a : exercise.word;
-  }, [exercise.payload, exercise.word]);
-
-  const [word, setWord] = useState(exercise.word);
   const [sentence, setSentence] = useState(exercise.sentence);
-  const [options, setOptions] = useState<string[]>(initialOptions);
-  const [answer, setAnswer] = useState(initialAnswer);
+  const [word, setWord] = useState(exercise.word);
   const [audioUrl, setAudioUrl] = useState(exercise.audioUrl ?? "");
+  const [regenerating, setRegenerating] = useState(false);
+  const [audioError, setAudioError] = useState<string | null>(null);
+  const optionsRaw = Array.isArray((exercise.payload as { options?: unknown }).options)
+    ? ((exercise.payload as { options: string[] }).options.join("\n"))
+    : "";
+  const [optionsText, setOptionsText] = useState(optionsRaw);
+  const [answer, setAnswer] = useState(
+    typeof (exercise.payload as { answer?: string }).answer === "string"
+      ? (exercise.payload as { answer: string }).answer
+      : exercise.word
+  );
 
-  // Defensive: if the parent passes a different exercise without remount
-  // (e.g. data refresh), re-sync the form to the new values.
-  useEffect(() => {
-    setWord(exercise.word);
-    setSentence(exercise.sentence);
-    setOptions(initialOptions);
-    setAnswer(initialAnswer);
-    setAudioUrl(exercise.audioUrl ?? "");
-  }, [exercise.id, exercise.audioUrl, exercise.sentence, exercise.word, initialOptions, initialAnswer]);
-
-  const meta = TYPE_META[exercise.type] ?? { label: exercise.type, emoji: "•", tint: COLORS.muted };
-  const answerInOptions = options.includes(answer);
-  const sentenceHasBlank = sentence.includes("_____");
-  const isFillLike = exercise.type === "fill_blank" || exercise.type === "natural_expression";
-  const isListening = exercise.type === "listen_choose";
-
-  function updateOption(idx: number, value: string) {
-    setOptions((prev) => {
-      const next = [...prev];
-      const old = next[idx];
-      next[idx] = value;
-      // If the changed option WAS the answer, keep it as the answer.
-      if (old === answer) setAnswer(value);
-      return next;
-    });
-  }
-  function removeOption(idx: number) {
-    setOptions((prev) => prev.filter((_, i) => i !== idx));
-  }
-  function addOption() {
-    setOptions((prev) => [...prev, ""]);
-  }
-
-  function submit() {
-    const cleanedOptions = options.map((o) => o.trim()).filter(Boolean);
-    const newPayload: Record<string, unknown> = { ...exercise.payload, options: cleanedOptions, answer };
-    onSave({
-      ...exercise,
-      word: word.trim(),
-      sentence: sentence.trim(),
-      audioUrl: audioUrl.trim() || null,
-      payload: newPayload,
-    });
+  async function regenerateAudio() {
+    setAudioError(null);
+    setRegenerating(true);
+    try {
+      const res = await fetch(
+        `/api/studio/practice-sets/${storyId}/exercises/${exercise.id}/audio`,
+        { method: "POST" }
+      );
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        const msg = (body as { error?: string }).error ?? `HTTP ${res.status}`;
+        setAudioError(msg);
+        return;
+      }
+      const data = (await res.json()) as { exercise: Exercise };
+      setAudioUrl(data.exercise.audioUrl ?? "");
+      onAudioRegenerated(data.exercise);
+    } catch (err) {
+      setAudioError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setRegenerating(false);
+    }
   }
 
   return (
-    <div style={formBody}>
-      {/* Mock preview */}
-      <div style={previewWrap}>
-        <div style={previewLabel}>Vista previa (cómo se ve en mobile)</div>
-        <div style={previewPhone}>
-          <div style={previewPrompt}>{meta.label.toUpperCase()}</div>
-          {isListening ? (
-            <div style={previewListenChip}>🎧 escucha la frase</div>
-          ) : (
-            <div style={previewSentence}>
-              {sentence.split("_____").map((chunk, i, arr) => (
-                <span key={i}>
-                  {chunk}
-                  {i < arr.length - 1 && <span style={previewBlank}>_____</span>}
-                </span>
-              ))}
-            </div>
-          )}
-          <div style={previewOptionsGrid}>
-            {options.length === 0 && (
-              <div style={{ color: COLORS.red, fontSize: 12 }}>(sin opciones)</div>
-            )}
-            {options.map((opt, i) => (
-              <div
-                key={i}
-                style={{
-                  ...previewOption,
-                  borderColor: opt === answer ? COLORS.green : COLORS.border,
-                  background: opt === answer ? "rgba(34,197,94,0.12)" : "transparent",
-                }}
-              >
-                {opt || <em style={{ color: COLORS.muted }}>(vacío)</em>}
-              </div>
-            ))}
-          </div>
-        </div>
+    <div className="jm-ex-edit">
+      <div className="jm-ex-edit__head">
+        <h4 className="jm-ex-edit__title">Editando ejercicio #{exercise.orderIndex + 1}</h4>
+        <span className="jm-ex-edit__tag">{TYPE_LABEL[exercise.type] ?? exercise.type}</span>
       </div>
 
-      {/* Fields */}
-      <div style={fieldsCol}>
-        <Field label="Palabra objetivo">
-          <input value={word} onChange={(e) => setWord(e.target.value)} style={inp} disabled={locked} />
-        </Field>
+      <div className="jm-ex-edit__grid">
+        <div>
+          <label className="jm-field-label">Palabra</label>
+          <input className="jm-input" value={word} onChange={(e) => setWord(e.target.value)} />
+        </div>
+        <div>
+          <label className="jm-field-label">Respuesta correcta</label>
+          <input className="jm-input" value={answer} onChange={(e) => setAnswer(e.target.value)} />
+        </div>
 
-        <Field
-          label={isFillLike ? 'Frase (usa "_____" donde va el blank)' : isListening ? "Texto a escuchar (lo que dice el audio)" : "Frase"}
-          warn={isFillLike && !sentenceHasBlank ? 'Falta el marcador "_____"' : null}
-        >
+        <div className="jm-ex-edit__full">
+          <label className="jm-field-label">Frase (puede contener &quot;_____&quot; para fill-blank)</label>
           <textarea
+            className="jm-input"
+            rows={3}
             value={sentence}
             onChange={(e) => setSentence(e.target.value)}
-            style={{ ...inp, minHeight: 64, fontFamily: "inherit" }}
-            disabled={locked}
           />
-        </Field>
+        </div>
 
-        <Field
-          label="Opciones (la verde es la correcta)"
-          warn={
-            options.length < 2 ? "Mínimo 2 opciones"
-            : !answerInOptions ? "La respuesta correcta no está entre las opciones"
-            : null
-          }
-        >
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            {options.map((opt, i) => (
-              <div key={i} style={{ display: "flex", gap: 6, alignItems: "center" }}>
-                <button
-                  onClick={() => setAnswer(opt)}
-                  disabled={locked}
-                  style={{
-                    ...answerRadio,
-                    background: opt === answer ? COLORS.green : "transparent",
-                    borderColor: opt === answer ? COLORS.green : COLORS.borderStrong,
-                  }}
-                  title="Marcar como respuesta correcta"
-                >
-                  {opt === answer ? "✓" : ""}
-                </button>
-                <input
-                  value={opt}
-                  onChange={(e) => updateOption(i, e.target.value)}
-                  style={{ ...inp, flex: 1 }}
-                  disabled={locked}
-                />
-                <button
-                  onClick={() => removeOption(i)}
-                  disabled={locked || options.length <= 2}
-                  style={iconBtn}
-                  title="Quitar"
-                >
-                  ×
-                </button>
-              </div>
-            ))}
-            <button onClick={addOption} disabled={locked} style={addBtn}>+ Agregar opción</button>
+        <div className="jm-ex-edit__full">
+          <label className="jm-field-label">Opciones (una por línea)</label>
+          <textarea
+            className="jm-input jm-input--mono"
+            rows={4}
+            value={optionsText}
+            onChange={(e) => setOptionsText(e.target.value)}
+          />
+        </div>
+
+        <div className="jm-ex-edit__full">
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+            <label className="jm-field-label" style={{ margin: 0 }}>Audio</label>
+            <span style={{ flex: 1 }} />
+            <button
+              type="button"
+              className="jm-btn jm-btn-tone-amber jm-btn--sm"
+              onClick={() => void regenerateAudio()}
+              disabled={regenerating || locked || !sentence.trim()}
+              title={locked ? "Desbloquea el set para regenerar audio" : "Regenera el TTS del ejercicio usando la frase actual"}
+            >
+              {regenerating ? "Regenerando…" : "Regenerar audio"}
+            </button>
           </div>
-        </Field>
-
-        <Field label="Audio del ejercicio">
-          <AudioField
-            url={audioUrl}
-            onChange={setAudioUrl}
-            disabled={locked}
-            storyId={storyId}
-            exerciseId={exercise.id}
+          <MediaUploadField
+            kind="audio"
+            value={audioUrl || null}
+            onChange={(url) => setAudioUrl(url ?? "")}
           />
-        </Field>
+          {audioError && (
+            <div className="jm-ex__error" style={{ marginTop: 8 }}>{audioError}</div>
+          )}
+        </div>
       </div>
 
-      {/* Footer */}
-      <div style={footer}>
-        <button onClick={onCancel} disabled={saving} style={btnGhost}>Cancelar</button>
+      <div className="jm-ex-edit__actions">
+        <button className="jm-btn jm-btn--sm" onClick={onCancel}>Cancelar</button>
         <button
-          onClick={submit}
-          disabled={saving || locked || options.length < 2 || !answerInOptions || !word.trim() || !sentence.trim()}
-          style={btnPrimary}
+          className="jm-btn jm-btn--primary jm-btn--sm"
+          onClick={() => {
+            const options = optionsText
+              .split("\n")
+              .map((s) => s.trim())
+              .filter(Boolean);
+            const newPayload: Record<string, unknown> = {
+              ...exercise.payload,
+              options,
+              answer,
+            };
+            onSave({
+              ...exercise,
+              word,
+              sentence,
+              audioUrl: audioUrl.trim() || null,
+              payload: newPayload,
+            });
+          }}
         >
-          {saving ? "Guardando…" : "Guardar cambios"}
+          Guardar
         </button>
       </div>
     </div>
   );
 }
-
-function Field({ label, warn, children }: { label: string; warn?: string | null; children: React.ReactNode }) {
-  return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-        <label style={fieldLbl}>{label}</label>
-        {warn && <span style={{ color: COLORS.amber, fontSize: 11 }}>⚠ {warn}</span>}
-      </div>
-      {children}
-    </div>
-  );
-}
-
-function AudioField({
-  url,
-  onChange,
-  disabled,
-  storyId,
-  exerciseId,
-}: {
-  url: string;
-  onChange: (v: string) => void;
-  disabled: boolean;
-  storyId: string;
-  exerciseId: string;
-}) {
-  const [busy, setBusy] = useState<"regen" | "upload" | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  async function regenerate() {
-    setBusy("regen");
-    setError(null);
-    try {
-      const res = await fetch(`/api/studio/practice-sets/${storyId}/exercises/${exerciseId}/audio`, {
-        method: "POST",
-      });
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error((body as { error?: string }).error ?? `HTTP ${res.status}`);
-      }
-      const data = (await res.json()) as { audioUrl: string };
-      onChange(data.audioUrl);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-    } finally {
-      setBusy(null);
-    }
-  }
-
-  async function upload(file: File) {
-    setBusy("upload");
-    setError(null);
-    try {
-      const form = new FormData();
-      form.append("file", file);
-      const res = await fetch(`/api/studio/practice-sets/${storyId}/exercises/${exerciseId}/audio`, {
-        method: "POST",
-        body: form,
-      });
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error((body as { error?: string }).error ?? `HTTP ${res.status}`);
-      }
-      const data = (await res.json()) as { audioUrl: string };
-      onChange(data.audioUrl);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-    } finally {
-      setBusy(null);
-    }
-  }
-
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-      {url ? (
-        <div style={audioPlayerBox}>
-          <audio controls src={url} style={{ flex: 1, height: 36 }} preload="none" />
-        </div>
-      ) : (
-        <div style={audioEmpty}>
-          <span style={{ color: COLORS.muted, fontSize: 12 }}>Sin audio pre-rendido. Regenera para que use la voz del cuento, o sube uno propio.</span>
-        </div>
-      )}
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <button
-          onClick={regenerate}
-          disabled={disabled || !!busy}
-          style={btnGhostSm}
-          title="Genera el audio con la voz del cuento (Piper/Kokoro vía Modal)"
-        >
-          {busy === "regen" ? "Regenerando…" : "🔄 Regenerar con TTS"}
-        </button>
-        <label style={btnGhostSm}>
-          {busy === "upload" ? "Subiendo…" : "📤 Subir audio propio"}
-          <input
-            type="file"
-            accept="audio/mpeg,audio/mp3,audio/wav,audio/x-wav,audio/mp4,audio/x-m4a,audio/m4a,.mp3,.wav,.m4a"
-            style={{ display: "none" }}
-            disabled={disabled || !!busy}
-            onChange={(e) => {
-              const file = e.target.files?.[0];
-              if (file) void upload(file);
-              e.target.value = "";
-            }}
-          />
-        </label>
-        {url && (
-          <button onClick={() => onChange("")} disabled={disabled || !!busy} style={btnGhostSm}>
-            Limpiar
-          </button>
-        )}
-      </div>
-      {error && <div style={{ color: COLORS.red, fontSize: 12 }}>✗ {error}</div>}
-    </div>
-  );
-}
-
-function AudioIndicator({ url, compact }: { url: string | null; compact?: boolean }) {
-  if (!url) {
-    return (
-      <span style={{ color: COLORS.muted, fontSize: 11, fontWeight: 600 }}>
-        {compact ? "sin audio" : "—"}
-      </span>
-    );
-  }
-  return (
-    <audio
-      controls
-      src={url}
-      preload="none"
-      style={{ height: 28, maxWidth: compact ? 180 : 240 }}
-      onClick={(e) => e.stopPropagation()}
-    />
-  );
-}
-
-// ─── styles ──────────────────────────────────────────────────────────
-
-const shell: React.CSSProperties = {
-  maxWidth: 980,
-  margin: "0 auto",
-  padding: "20px 16px 64px",
-  color: COLORS.text,
-};
-const header: React.CSSProperties = {
-  display: "flex",
-  alignItems: "flex-start",
-  justifyContent: "space-between",
-  gap: 16,
-  marginBottom: 20,
-  flexWrap: "wrap",
-};
-const h1: React.CSSProperties = { fontSize: 22, fontWeight: 800, color: COLORS.text, margin: 0, marginBottom: 4 };
-const subtitle: React.CSSProperties = { color: COLORS.muted, fontSize: 13, margin: 0 };
-const errBanner: React.CSSProperties = {
-  background: "rgba(251,113,133,0.1)",
-  border: `1px solid ${COLORS.red}`,
-  color: COLORS.red,
-  padding: "10px 14px",
-  borderRadius: 8,
-  fontSize: 13,
-  marginBottom: 16,
-};
-const card: React.CSSProperties = {
-  background: COLORS.card,
-  border: `1px solid ${COLORS.border}`,
-  borderRadius: 10,
-  overflow: "hidden",
-  transition: "background 120ms, border-color 120ms",
-};
-const cardHeaderBtn: React.CSSProperties = {
-  display: "flex",
-  alignItems: "center",
-  gap: 14,
-  padding: "12px 16px",
-  width: "100%",
-  background: "transparent",
-  border: "none",
-  color: "inherit",
-  cursor: "pointer",
-  textAlign: "left",
-};
-const orderBubble: React.CSSProperties = {
-  width: 28,
-  height: 28,
-  borderRadius: 999,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  color: "#fff",
-  fontWeight: 700,
-  fontSize: 13,
-  flexShrink: 0,
-};
-const typePill: React.CSSProperties = {
-  fontSize: 11,
-  fontWeight: 600,
-  padding: "2px 8px",
-  borderRadius: 999,
-  border: "1px solid",
-  textTransform: "uppercase",
-  letterSpacing: 0.4,
-};
-const formBody: React.CSSProperties = {
-  padding: "16px 20px 20px",
-  borderTop: `1px solid ${COLORS.border}`,
-  display: "grid",
-  gridTemplateColumns: "minmax(0, 320px) 1fr",
-  gap: 20,
-};
-const previewWrap: React.CSSProperties = { display: "flex", flexDirection: "column", gap: 6 };
-const previewLabel: React.CSSProperties = { color: COLORS.muted, fontSize: 11, fontWeight: 600, letterSpacing: 0.5 };
-const previewPhone: React.CSSProperties = {
-  background: "#020617",
-  border: `1px solid ${COLORS.border}`,
-  borderRadius: 18,
-  padding: 16,
-  fontSize: 13,
-};
-const previewPrompt: React.CSSProperties = { color: "#facc15", fontSize: 10, fontWeight: 700, letterSpacing: 1, marginBottom: 10 };
-const previewSentence: React.CSSProperties = { color: COLORS.text, fontSize: 15, lineHeight: 1.4, marginBottom: 14 };
-const previewBlank: React.CSSProperties = {
-  display: "inline-block",
-  minWidth: 70,
-  borderBottom: "2px solid #facc15",
-  color: "transparent",
-  margin: "0 2px",
-};
-const previewListenChip: React.CSSProperties = {
-  display: "inline-block",
-  padding: "8px 14px",
-  borderRadius: 999,
-  border: `1px solid ${COLORS.border}`,
-  color: COLORS.muted,
-  marginBottom: 14,
-};
-const previewOptionsGrid: React.CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: 8,
-};
-const previewOption: React.CSSProperties = {
-  border: "1px solid",
-  borderRadius: 8,
-  padding: "8px 10px",
-  fontSize: 13,
-  color: COLORS.text,
-  textAlign: "center",
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  whiteSpace: "nowrap",
-};
-const fieldsCol: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  gap: 14,
-  minWidth: 0,
-};
-const fieldLbl: React.CSSProperties = { fontSize: 12, fontWeight: 600, color: COLORS.muted, letterSpacing: 0.3 };
-const inp: React.CSSProperties = {
-  width: "100%",
-  padding: "8px 10px",
-  border: `1px solid ${COLORS.borderStrong}`,
-  borderRadius: 6,
-  fontSize: 13,
-  background: "#0a1424",
-  color: COLORS.text,
-  boxSizing: "border-box",
-};
-const answerRadio: React.CSSProperties = {
-  width: 24,
-  height: 24,
-  borderRadius: 999,
-  border: "2px solid",
-  cursor: "pointer",
-  color: "#0a1424",
-  fontWeight: 700,
-  flexShrink: 0,
-};
-const iconBtn: React.CSSProperties = {
-  width: 28,
-  height: 28,
-  border: "none",
-  background: "transparent",
-  color: COLORS.muted,
-  fontSize: 18,
-  cursor: "pointer",
-  flexShrink: 0,
-};
-const iconBtnSm: React.CSSProperties = { ...iconBtn, width: 24, height: 24, fontSize: 14 };
-const addBtn: React.CSSProperties = {
-  background: "transparent",
-  border: `1px dashed ${COLORS.borderStrong}`,
-  color: COLORS.muted,
-  padding: "8px",
-  borderRadius: 6,
-  cursor: "pointer",
-  fontSize: 12,
-  fontWeight: 600,
-};
-const audioPlayerBox: React.CSSProperties = {
-  display: "flex",
-  alignItems: "center",
-  gap: 8,
-  background: "#0a1424",
-  border: `1px solid ${COLORS.borderStrong}`,
-  borderRadius: 6,
-  padding: 4,
-};
-const audioEmpty: React.CSSProperties = {
-  background: "#0a1424",
-  border: `1px dashed ${COLORS.borderStrong}`,
-  borderRadius: 6,
-  padding: 12,
-};
-const footer: React.CSSProperties = {
-  gridColumn: "1 / -1",
-  display: "flex",
-  justifyContent: "flex-end",
-  gap: 10,
-  marginTop: 8,
-  paddingTop: 16,
-  borderTop: `1px solid ${COLORS.border}`,
-};
-const btnPrimary: React.CSSProperties = {
-  background: COLORS.primary,
-  color: "#0a1424",
-  border: "none",
-  padding: "10px 18px",
-  borderRadius: 6,
-  cursor: "pointer",
-  fontSize: 13,
-  fontWeight: 700,
-};
-const btnGhost: React.CSSProperties = {
-  background: "transparent",
-  color: COLORS.text,
-  border: `1px solid ${COLORS.borderStrong}`,
-  padding: "10px 18px",
-  borderRadius: 6,
-  cursor: "pointer",
-  fontSize: 13,
-  fontWeight: 600,
-};
-const btnLocked: React.CSSProperties = {
-  ...btnGhost,
-  background: "rgba(34,197,94,0.12)",
-  borderColor: COLORS.green,
-  color: COLORS.green,
-};
-const btnGhostSm: React.CSSProperties = {
-  background: "transparent",
-  color: COLORS.text,
-  border: `1px solid ${COLORS.borderStrong}`,
-  padding: "6px 12px",
-  borderRadius: 6,
-  cursor: "pointer",
-  fontSize: 12,
-  fontWeight: 600,
-  display: "inline-flex",
-  alignItems: "center",
-  gap: 4,
-};

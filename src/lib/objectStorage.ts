@@ -196,6 +196,87 @@ export async function uploadPublicObject(
   };
 }
 
+type PresignedPutResult = {
+  uploadUrl: string;
+  publicUrl: string;
+  key: string;
+};
+
+// Generate a SigV4 presigned PUT URL the browser can use to upload a file
+// directly to R2, bypassing the Vercel 4.5 MB request body limit. Returns
+// null when object storage isn't configured.
+//
+// The client must PUT with no extra headers beyond what the URL implies; we
+// only sign `host` so the upload is robust to browser-injected headers. The
+// payload itself is treated as UNSIGNED-PAYLOAD so the client doesn't need
+// to hash the bytes before uploading.
+export function getPresignedPutUrl(input: {
+  key: string;
+  expiresInSeconds?: number;
+}): PresignedPutResult | null {
+  const config = getObjectStorageConfig();
+  if (!config) return null;
+
+  const expires = Math.min(Math.max(input.expiresInSeconds ?? 600, 60), 3600);
+  const normalizedKey = input.key.replace(/^\/+/, "");
+  const url = buildStorageUrl(config, normalizedKey);
+
+  const now = new Date();
+  const amzDate = now.toISOString().replace(/[:-]|\.\d{3}/g, "");
+  const dateStamp = amzDate.slice(0, 8);
+  const credentialScope = `${dateStamp}/${config.region}/s3/aws4_request`;
+  const signedHeaders = "host";
+
+  const queryEntries: Array<[string, string]> = (
+    [
+      ["X-Amz-Algorithm", "AWS4-HMAC-SHA256"],
+      ["X-Amz-Credential", `${config.accessKeyId}/${credentialScope}`],
+      ["X-Amz-Date", amzDate],
+      ["X-Amz-Expires", String(expires)],
+      ["X-Amz-SignedHeaders", signedHeaders],
+    ] as Array<[string, string]>
+  ).sort(([a], [b]) => a.localeCompare(b));
+
+  const canonicalQueryString = queryEntries
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .join("&");
+
+  const canonicalHeaders = `host:${url.host}\n`;
+
+  const canonicalRequest = [
+    "PUT",
+    url.pathname,
+    canonicalQueryString,
+    canonicalHeaders,
+    signedHeaders,
+    "UNSIGNED-PAYLOAD",
+  ].join("\n");
+
+  const stringToSign = [
+    "AWS4-HMAC-SHA256",
+    amzDate,
+    credentialScope,
+    toHexSha256(canonicalRequest),
+  ].join("\n");
+
+  const signingKey = hmacSha256(
+    hmacSha256(
+      hmacSha256(hmacSha256(`AWS4${config.secretAccessKey}`, dateStamp), config.region),
+      "s3"
+    ),
+    "aws4_request"
+  );
+  const signature = createHmac("sha256", signingKey).update(stringToSign).digest("hex");
+
+  const uploadUrl = `${url.origin}${url.pathname}?${canonicalQueryString}&X-Amz-Signature=${signature}`;
+
+  return {
+    uploadUrl,
+    publicUrl: buildPublicUrl(config, normalizedKey),
+    key: normalizedKey,
+  };
+}
+
 export async function copyRemoteAssetToObjectStorage(args: {
   sourceUrl: string;
   key: string;

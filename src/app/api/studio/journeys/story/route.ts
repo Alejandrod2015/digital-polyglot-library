@@ -44,12 +44,30 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
 
-  const { id, title, synopsis } = body;
+  const { id, title, synopsis, practiceVoiceId } = body;
   if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
 
-  const data: Record<string, string> = {};
+  const data: Record<string, string | null> = {};
   if (title !== undefined) data.title = title;
   if (synopsis !== undefined) data.synopsis = synopsis;
+  // practiceVoiceId can be explicitly set to null to clear the override
+  // and fall back to the per-language default. Validate against the
+  // supported voice list to avoid persisting unknown ids that would
+  // 404 at TTS time.
+  if (practiceVoiceId !== undefined) {
+    if (practiceVoiceId === null || practiceVoiceId === "") {
+      data.practiceVoiceId = null;
+    } else if (typeof practiceVoiceId === "string") {
+      const { isPracticeVoiceSupported } = await import("@/lib/practiceVoices");
+      if (!isPracticeVoiceSupported(practiceVoiceId)) {
+        return NextResponse.json(
+          { error: `practiceVoiceId "${practiceVoiceId}" no es una voz soportada por el pipeline de práctica.` },
+          { status: 400 }
+        );
+      }
+      data.practiceVoiceId = practiceVoiceId;
+    }
+  }
 
   if (Object.keys(data).length === 0)
     return NextResponse.json({ error: "Nothing to update" }, { status: 400 });
@@ -57,7 +75,7 @@ export async function PATCH(request: Request) {
   const updated = await prisma.journeyStory.update({
     where: { id },
     data,
-    select: { id: true, title: true, synopsis: true },
+    select: { id: true, title: true, synopsis: true, practiceVoiceId: true },
   });
 
   return NextResponse.json(updated);

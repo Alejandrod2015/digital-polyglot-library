@@ -44,17 +44,28 @@ function serialize(set: NonNullable<Awaited<ReturnType<typeof loadSet>>>) {
       sentence: e.sentence,
       audioUrl: e.audioUrl,
       payload: e.payload,
+      featured: e.featured,
     })),
   };
+}
+
+async function loadStoryMeta(storyId: string) {
+  return prisma.journeyStory.findUnique({
+    where: { id: storyId },
+    select: { practiceVoiceId: true, journey: { select: { language: true } } },
+  });
 }
 
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ storyId: string }> }) {
   const denied = await gate();
   if (denied) return denied;
   const { storyId } = await params;
-  const set = await loadSet(storyId);
-  if (!set) return NextResponse.json({ set: null });
-  return NextResponse.json({ set: serialize(set) });
+  const [set, meta] = await Promise.all([loadSet(storyId), loadStoryMeta(storyId)]);
+  return NextResponse.json({
+    set: set ? serialize(set) : null,
+    practiceVoiceId: meta?.practiceVoiceId ?? null,
+    language: meta?.journey.language ?? null,
+  });
 }
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ storyId: string }> }) {
@@ -66,21 +77,58 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ sto
   if (result.status === "skipped") {
     return NextResponse.json({ error: `Skipped: ${result.reason}` }, { status: 409 });
   }
-  const set = await loadSet(storyId);
-  return NextResponse.json({ status: result.status, set: set ? serialize(set) : null });
+  const [set, meta] = await Promise.all([loadSet(storyId), loadStoryMeta(storyId)]);
+  return NextResponse.json({
+    status: result.status,
+    set: set ? serialize(set) : null,
+    practiceVoiceId: meta?.practiceVoiceId ?? null,
+    language: meta?.journey.language ?? null,
+  });
 }
 
 export async function PATCH(req: NextRequest, { params }: { params: Promise<{ storyId: string }> }) {
   const denied = await gate();
   if (denied) return denied;
   const { storyId } = await params;
-  const body = (await req.json().catch(() => ({}))) as { locked?: boolean };
-  if (typeof body.locked !== "boolean") {
-    return NextResponse.json({ error: "Missing `locked` boolean" }, { status: 400 });
+  const body = (await req.json().catch(() => ({}))) as { locked?: boolean; practiceVoiceId?: string | null };
+
+  if (typeof body.locked !== "boolean" && body.practiceVoiceId === undefined) {
+    return NextResponse.json({ error: "Missing `locked` or `practiceVoiceId`" }, { status: 400 });
   }
-  const set = await prisma.storyPracticeSet.findUnique({ where: { storyId } });
-  if (!set) return NextResponse.json({ error: "Not found" }, { status: 404 });
-  await prisma.storyPracticeSet.update({ where: { id: set.id }, data: { locked: body.locked } });
+
+  // Lock toggle lives on the set row.
+  if (typeof body.locked === "boolean") {
+    const set = await prisma.storyPracticeSet.findUnique({ where: { storyId } });
+    if (!set) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    await prisma.storyPracticeSet.update({ where: { id: set.id }, data: { locked: body.locked } });
+  }
+
+  // practiceVoiceId lives on the parent JourneyStory (it applies to
+  // future audio regens, not the set itself).
+  if (body.practiceVoiceId !== undefined) {
+    const value = body.practiceVoiceId;
+    if (value === null || value === "") {
+      await prisma.journeyStory.update({ where: { id: storyId }, data: { practiceVoiceId: null } });
+    } else if (typeof value === "string") {
+      const { isPracticeVoiceSupported } = await import("@/lib/practiceVoices");
+      if (!isPracticeVoiceSupported(value)) {
+        return NextResponse.json(
+          { error: `practiceVoiceId "${value}" no es una voz soportada por el pipeline de práctica.` },
+          { status: 400 }
+        );
+      }
+      await prisma.journeyStory.update({ where: { id: storyId }, data: { practiceVoiceId: value } });
+    }
+  }
+
   const fresh = await loadSet(storyId);
-  return NextResponse.json({ set: fresh ? serialize(fresh) : null });
+  const story = await prisma.journeyStory.findUnique({
+    where: { id: storyId },
+    select: { practiceVoiceId: true, journey: { select: { language: true } } },
+  });
+  return NextResponse.json({
+    set: fresh ? serialize(fresh) : null,
+    practiceVoiceId: story?.practiceVoiceId ?? null,
+    language: story?.journey.language ?? null,
+  });
 }

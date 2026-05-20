@@ -8,6 +8,7 @@ import {
   Alert,
   Animated,
   AppState,
+  Dimensions,
   useWindowDimensions,
   Easing,
   findNodeHandle,
@@ -218,11 +219,6 @@ import {
   PRACTICE_PERFECT_CHIME_URI,
   PRACTICE_WRONG_SOUND_URI,
 } from "../lib/practiceSoundUris";
-import {
-  PRACTICE_RING_FILL_GOOD_URI,
-  PRACTICE_RING_FILL_BAD_URI,
-  PRACTICE_PERFECT_URI,
-} from "../lib/practiceRingSoundUris";
 
 type ReaderSelection = {
   book: Book;
@@ -250,6 +246,7 @@ type BottomTab = "home" | "explore" | "practice" | "favorites" | "menu" | "signi
 type MenuIconName =
   | "settings"
   | "library"
+  | "saved"
   | "story"
   | "upgrade"
   | "signout"
@@ -6237,22 +6234,9 @@ export function MobileLibraryShell(args: {
     // "fresca" sobre el pool completo de favoritos antes de bloquear
     // el tap. Sin esto, el botón START de la orbita queda dead cuando
     // el chip muestra 0.
-    let effectiveMode = mode;
-    let exercises = buildPracticeExercisesFromItems(sourceItems, effectiveMode, review, onboardingPracticePrefs);
+    let exercises = buildPracticeExercisesFromItems(sourceItems, mode, review, onboardingPracticePrefs);
     if (exercises.length === 0 && review) {
-      exercises = buildPracticeExercisesFromItems(sourceItems, effectiveMode, false, onboardingPracticePrefs);
-    }
-    // Fix-flow fallback: el WHAT'S NEXT "Fix N" pasa los pocos items
-    // fallados como overrideItems. Si el modo activo era match (≥4
-    // candidatos) o context (necesita exampleSentence) y los missed
-    // no alcanzan, sin esto el tap quedaba dead. meaning solo pide
-    // 1 item con definición, así garantizamos sesión revisable.
-    if (exercises.length === 0 && overrideItems && overrideItems.length > 0 && effectiveMode !== "meaning") {
-      const fallback = buildPracticeExercisesFromItems(sourceItems, "meaning", false, onboardingPracticePrefs);
-      if (fallback.length > 0) {
-        effectiveMode = "meaning";
-        exercises = fallback;
-      }
+      exercises = buildPracticeExercisesFromItems(sourceItems, mode, false, onboardingPracticePrefs);
     }
     if (exercises.length === 0) return;
     setPracticeSeedItems(sourceItems);
@@ -6263,7 +6247,7 @@ export function MobileLibraryShell(args: {
     // Warm up the iOS voice cache once so the first listening prompt
     // already uses an Enhanced/Premium voice instead of the default.
     void ensureBestVoicesLoaded();
-    setActivePracticeMode(effectiveMode);
+    setActivePracticeMode(mode);
     setPracticeLoadError(null);
     setPracticeExercises(exercises);
     setPracticeIndex(0);
@@ -6364,7 +6348,6 @@ export function MobileLibraryShell(args: {
       .then((payload) => {
         const items = Array.isArray(payload.items) ? payload.items : [];
         const exercises = Array.isArray(payload.exercises) ? payload.exercises : undefined;
-        showDebug(`prefetch ${slug.slice(0, 30)} items=${items.length} exercises=${exercises?.length ?? "n/a"}`);
         practicePrefetchBySlugRef.current.set(slug, { items, exercises });
       })
       .catch(() => {
@@ -6450,11 +6433,9 @@ export function MobileLibraryShell(args: {
     // Fast path: items already in cache from the reader's prefetch.
     const cached = practicePrefetchBySlugRef.current.get(selection.story.slug);
     if (cached) {
-      showDebug(`open story ${selection.story.slug.slice(0, 30)} cache items=${cached.items.length} exercises=${cached.exercises?.length ?? "n/a"}`);
       commitStoryPracticeItems(selection, cached.items, cached.exercises);
       return;
     }
-    showDebug(`open story ${selection.story.slug.slice(0, 30)} no cache, fetching`);
 
     // Slow path: user beat the prefetch. Switch to the practice tab
     // immediately with a loading indicator so the reader doesn't sit
@@ -6475,7 +6456,6 @@ export function MobileLibraryShell(args: {
       });
       const items = Array.isArray(payload.items) ? payload.items : [];
       const exercises = Array.isArray(payload.exercises) ? payload.exercises : undefined;
-      showDebug(`live fetch ${selection.story.slug.slice(0, 30)} items=${items.length} exercises=${exercises?.length ?? "n/a"}`);
       practicePrefetchBySlugRef.current.set(selection.story.slug, { items, exercises });
       setPracticeLaunchLoading(false);
       commitStoryPracticeItems(selection, items, exercises);
@@ -7132,16 +7112,39 @@ export function MobileLibraryShell(args: {
     // Antes prefetcheábamos siempre `clip.sentence`, lo cual dejaba
     // el audio del meaning (que es solo la palabra) cold cuando el
     // usuario tapeaba el botón.
-    const queueWarm = (sentence: string, lang: string, voice: string | undefined) => {
+    const queueWarm = (sentence: string, lang: string, voice: string | undefined, cachedUrl: string | null | undefined) => {
       const key = `${lang}::${voice ?? ""}::${sentence}`;
       if (practicePrefetchSeenRef.current.has(key)) return;
       practicePrefetchSeenRef.current.add(key);
-      showDebug(`queueWarm start ${JSON.stringify({ lang, voice, sentence: sentence.slice(0, 40) }).slice(0,140)}`);
-      // Fire-and-forget: obtenemos la URL del endpoint y bajamos el
-      // MP3 a disco. El playback path después chequea
-      // `practiceAudioFilesRef` y carga `file://` directo, evitando
-      // 1-2 s de round-trip + descarga en cada tap.
+      showDebug(`queueWarm start ${JSON.stringify({ lang, voice, sentence: sentence.slice(0, 40), cached: !!cachedUrl }).slice(0,140)}`);
+      // Fire-and-forget: prefer the editor-prebaked cachedUrl when set
+      // (no Modal round-trip → no cold-start risk). Falls back to the
+      // sentence-tts endpoint only when no cached url is present.
       void (async () => {
+        try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+        const voiceSafe = (voice ?? "v").replace(/[^a-z0-9]+/gi, "_");
+        const safeName = `${lang}-${voiceSafe}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+        const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+        const info = await FileSystem.getInfoAsync(fileUri);
+        if (info.exists) {
+          practiceAudioFilesRef.current.set(key, fileUri);
+          showDebug(`queueWarm: on disk ${JSON.stringify({ key }).slice(0,140)}`);
+          return;
+        }
+
+        // 1) cached path (Studio-prebaked) — no Modal hit
+        if (cachedUrl) {
+          try {
+            await FileSystem.downloadAsync(cachedUrl, fileUri);
+            practiceAudioFilesRef.current.set(key, fileUri);
+            showDebug(`queueWarm: cached download ok ${JSON.stringify({ key }).slice(0,140)}`);
+            return;
+          } catch (err) {
+            showDebug(`queueWarm: cached download failed, will try Modal ${JSON.stringify({ key, err: err instanceof Error ? err.message.slice(0, 80) : "?" }).slice(0,140)}`);
+          }
+        }
+
+        // 2) Modal fallback
         try {
           const resp = await apiFetch<{ url?: string }>({
             baseUrl: mobileConfig.apiBaseUrl,
@@ -7156,20 +7159,9 @@ export function MobileLibraryShell(args: {
             practicePrefetchSeenRef.current.delete(key);
             return;
           }
-          showDebug(`queueWarm: got url ${JSON.stringify({ key, url: resp.url.slice(0, 80) }).slice(0,140)}`);
-          try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
-          const voiceSafe = (voice ?? "v").replace(/[^a-z0-9]+/gi, "_");
-          const safeName = `${lang}-${voiceSafe}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
-          const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
-          const info = await FileSystem.getInfoAsync(fileUri);
-          if (!info.exists) {
-            showDebug(`queueWarm: downloading ${JSON.stringify({ key }).slice(0,140)}`);
-            await FileSystem.downloadAsync(resp.url, fileUri);
-          } else {
-            showDebug(`queueWarm: file already on disk ${JSON.stringify({ key }).slice(0,140)}`);
-          }
+          await FileSystem.downloadAsync(resp.url, fileUri);
           practiceAudioFilesRef.current.set(key, fileUri);
-          showDebug(`queueWarm: cached uri set ${JSON.stringify({ key, mapSize: practiceAudioFilesRef.current.size }).slice(0,140)}`);
+          showDebug(`queueWarm: Modal download ok ${JSON.stringify({ key }).slice(0,140)}`);
         } catch (err) {
           showDebug(`queueWarm: caught error ${JSON.stringify({ key, err: err instanceof Error ? err.message : String(err) }).slice(0,140)}`);
           practicePrefetchSeenRef.current.delete(key);
@@ -7181,18 +7173,19 @@ export function MobileLibraryShell(args: {
       const clip = ex.audioClip;
       const lang = clip?.language ?? "italian";
       const voice = clip?.voiceId ?? undefined;
+      const cached = clip?.cachedUrl ?? null;
       if (ex.mode === "meaning") {
         const word = ex.favorite.word?.trim();
-        if (word) queueWarm(word, lang, voice);
+        if (word) queueWarm(word, lang, voice, cached);
         continue;
       }
       if (ex.mode === "context") {
-        if (clip?.sentence) queueWarm(clip.sentence, lang, voice);
+        if (clip?.sentence) queueWarm(clip.sentence, lang, voice, cached);
         continue;
       }
       if (ex.mode === "listening") {
         const speech = ex.speechText?.trim();
-        if (speech) queueWarm(speech, lang, voice);
+        if (speech) queueWarm(speech, lang, voice, cached);
         continue;
       }
     }
@@ -7478,14 +7471,13 @@ export function MobileLibraryShell(args: {
       })
     );
     shineLoop.start();
-    // Perfect score → confetti + a louder chime overlay + success haptic.
+    // Perfect score → confetti + a louder chime overlay.
     if (
       practiceExercises.length > 0 &&
       practiceScore === practiceExercises.length
     ) {
       setPracticePerfectActive(true);
       void playPracticePerfectChime();
-      void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => undefined);
     }
     return () => {
       shineLoop.stop();
@@ -7644,32 +7636,12 @@ export function MobileLibraryShell(args: {
       }
     }
 
-    const Speech = getOptionalSpeechModule();
-    if (!Speech) {
-      setSpeakingPracticePromptId(null);
-      return;
-    }
-    Speech.stop();
-    setSpeakingPracticePromptId(currentPracticeExercise.id);
-    const speechLang = getSpeechSynthesisLang(language);
-    Speech.speak(speechText, {
-      language: speechLang,
-      voice: getBestVoiceFor(speechLang),
-      rate: 0.95,
-      pitch: 1,
-      onDone: () =>
-        setSpeakingPracticePromptId((current) =>
-          current === currentPracticeExercise.id ? null : current
-        ),
-      onStopped: () =>
-        setSpeakingPracticePromptId((current) =>
-          current === currentPracticeExercise.id ? null : current
-        ),
-      onError: () =>
-        setSpeakingPracticePromptId((current) =>
-          current === currentPracticeExercise.id ? null : current
-        ),
-    });
+    // expo-speech fallback removed by policy 2026-05-18: el usuario
+    // reportó la voz device-local como "robótica horrible" y prefiere
+    // silencio cuando el HQ TTS no responde. Mejor un play que no suena
+    // que un play que suena artificial.
+    setSpeakingPracticePromptId(null);
+    return;
   }
 
   function resolvePracticeAudioUri(value: string | null | undefined): string | null {
@@ -7894,7 +7866,12 @@ export function MobileLibraryShell(args: {
   const prefetchedFavoriteKeysRef = useRef<Set<string>>(new Set());
   const prefetchedFavoriteFilesRef = useRef<Map<string, string>>(new Map());
   const FAV_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}favorite-audio/`;
-  const PRACTICE_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}practice-audio/`;
+  // v2 suffix invalidates locally cached MP3s from before the
+  // server-side atempo removal (route v7). Old files were rendered at
+  // 0.80x and then played at rate 0.65 on the client → 0.52x combined,
+  // sounding "possessed". Bumping the dir forces a fresh download from
+  // the new native-rate server cache.
+  const PRACTICE_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}practice-audio-v2/`;
   async function prefetchFavoriteAudio(item: MobileFavoriteItem, key: string) {
     if (prefetchedFavoriteKeysRef.current.has(key)) return;
     const sentence = item.word?.trim();
@@ -7970,30 +7947,12 @@ export function MobileLibraryShell(args: {
   // the others first so only one playback is active at a time.
 
   async function playPracticeContextClipTtsOnly() {
-    if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
-    const clip = currentPracticeExercise.audioClip;
-    const speechText = clip?.sentence?.trim();
-    const Speech = getOptionalSpeechModule();
-    if (!speechText || !Speech) return;
-    if (speakingPracticePromptId === currentPracticeExercise.id) {
-      Speech.stop();
-      setSpeakingPracticePromptId(null);
-      return;
-    }
-    await stopPracticeContextClip();
-    await stopPracticeHqClip();
-    Speech.stop();
-    setSpeakingPracticePromptId(currentPracticeExercise.id);
-    const lang = getSpeechSynthesisLang(clip?.language);
-    Speech.speak(speechText, {
-      language: lang,
-      voice: getBestVoiceFor(lang),
-      rate: 0.92,
-      pitch: 1,
-      onDone: () => setSpeakingPracticePromptId((c) => c === currentPracticeExercise.id ? null : c),
-      onStopped: () => setSpeakingPracticePromptId((c) => c === currentPracticeExercise.id ? null : c),
-      onError: () => setSpeakingPracticePromptId((c) => c === currentPracticeExercise.id ? null : c),
-    });
+    // expo-speech TTS removido por política 2026-05-18: voz device-local
+    // sonaba "robótica horrible". Esta función queda como noop; los
+    // callers se mantienen wired para no romper la signature pero ya
+    // no emiten audio. Si el HQ TTS (Modal Piper/Kokoro) falla, mejor
+    // silencio que voz artificial.
+    return;
   }
 
   async function playPracticeContextClipStoryOnly() {
@@ -8038,51 +7997,18 @@ export function MobileLibraryShell(args: {
     const baseAudioUrl = resolvePracticeAudioUri(storyAudio?.audioUrl);
     const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
     const audioUrl = segmentClipUrl ?? baseAudioUrl;
-    // Sin segment del Story disponible: intentamos primero HQ TTS
-    // (Kokoro/Piper en Modal). Sólo si HQ falla (red, idioma sin voz
-    // local soportada, Modal caído) caemos al TTS del sistema. El
-    // expo-speech del dispositivo es la "voz robótica" que el usuario
-    // reportó como mala calidad; mantenerlo como último recurso evita
-    // silencio total pero no debería ser la opción principal.
+    // Sin segment del Story disponible: intentamos HQ TTS (Kokoro/Piper
+    // en Modal). Si HQ falla NO caemos a expo-speech — el usuario
+    // prefirió silencio sobre la voz device-local "robótica horrible"
+    // (decisión 2026-05-18).
     if ((!segment || !audioUrl) && clip.sentence?.trim()) {
       try {
         await playPracticeContextClipHqOnly();
-        // Si arrancó, playingHqPracticeClipId queda set; si no, fue
-        // un return temprano y caemos al speech-synth abajo.
-        if (playingHqPracticeClipId === currentPracticeExercise.id) return;
       } catch {
-        // HQ fell through; fall back to expo-speech below as last resort.
+        // HQ failed; no audio plays. Per policy, no expo-speech fallback.
       }
-
-      const speechText = clip.sentence.trim();
-      const Speech = getOptionalSpeechModule();
-      if (!Speech) return;
-      await stopPracticeContextClip();
-      await stopPracticeHqClip();
-      Speech.stop();
-      setSpeakingPracticePromptId(currentPracticeExercise.id);
-      const fallbackLang = getSpeechSynthesisLang(clip.language);
-      Speech.speak(speechText, {
-        language: fallbackLang,
-        voice: getBestVoiceFor(fallbackLang),
-        rate: 0.92,
-        pitch: 1,
-        onDone: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-        onStopped: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-        onError: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-      });
       return;
     }
-
     if (!audioUrl) return;
 
     await stopPracticeContextClip();
@@ -8201,9 +8127,36 @@ export function MobileLibraryShell(args: {
     const cacheKey = `${lang}::${voiceId ?? ""}::${word}`;
 
     let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
+    // Prefer the editor-prebaked R2 mp3 when available — it eliminates
+    // Modal cold-start failures (decisión 2026-05-18). Studio's
+    // PracticeSetEditor regenerates these from the editor surface.
+    const cachedUrl = currentPracticeExercise.audioClip?.cachedUrl ?? null;
+    if (!uri && cachedUrl) {
+      try {
+        await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true });
+      } catch { /* exists */ }
+      const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
+      const safeName = `${lang}-${voiceSafe}-cached-${word.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+      const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+      const info = await FileSystem.getInfoAsync(fileUri);
+      if (!info.exists) {
+        try {
+          await FileSystem.downloadAsync(cachedUrl, fileUri);
+        } catch (err) {
+          console.warn("[mobile practice] cached download failed, will try Modal fallback", err);
+        }
+      }
+      const infoAfter = await FileSystem.getInfoAsync(fileUri);
+      if (infoAfter.exists) {
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
+      }
+    }
     if (!uri) {
-      // Fast-path miss: bajamos URL + descargamos MP3 a disco (igual
-      // que el prefetch). Próximo tap del mismo audio es instant.
+      // Fast-path miss + no cached: bajamos URL + descargamos MP3 a
+      // disco. Solo aquí caemos a Modal Piper (puede fallar en
+      // cold-start; con `cachedUrl` ya cubierto, este path es el último
+      // recurso). Próximo tap del mismo audio es instant.
       setLoadingPracticeAudioId(currentPracticeExercise.id);
       try {
         const resp = await apiFetch<{ url?: string }>({
@@ -8259,12 +8212,15 @@ export function MobileLibraryShell(args: {
       // only after the stillCurrent + ref-assignment fence below.
       const { sound } = await Audio.Sound.createAsync(
         { uri },
-        // rate 0.65 + shouldCorrectPitch para que la voz se escuche
-        // más lenta sin bajar de tono. Más lento que la lectura
-        // narrada (0.80) y que el context clip (0.75) porque la
-        // palabra suelta no tiene contexto rítmico que ayude a
-        // parsearla; learners necesitan mas tiempo por sílaba.
-        { shouldPlay: false, rate: 0.65, shouldCorrectPitch: true },
+        // rate 1.0 — no client-side time-stretching for the meaning
+        // word audio. AVPlayer's WSOLA on iOS produces formant smearing
+        // when stretching short mono 22050 Hz mp3s (Piper Paola, Piper
+        // Sharvard) at extreme rates: a 0.65 stretch turned the female
+        // voice into a "possessed/deep" timbre. Words don't need a
+        // rhythmic crutch the way sentences do, so native rate gives a
+        // clean signal. The slower experience for learners stays on
+        // the context (sentence) clip via its own 0.75 rate.
+        { shouldPlay: false, rate: 1.0, shouldCorrectPitch: false },
         (status) => {
           if ("didJustFinish" in status && status.didJustFinish) {
             void stopPracticeHqClip();
@@ -8310,6 +8266,35 @@ export function MobileLibraryShell(args: {
     const cacheKey = `${lang}::${voiceId ?? ""}::${clip.sentence}`;
     let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
     showDebug(`Hq cache ${uri ? "HIT" : "miss"} voiceId=${voiceId ?? "null"} sent=${clip.sentence.slice(0,25)}`);
+
+    // Prefer the editor-prebaked R2 mp3 (audioClip.cachedUrl) when
+    // available — bypasses Modal Piper at runtime so cold-starts can't
+    // produce silent plays. Falls through to the Modal TTS endpoint
+    // only when no cached url is set on the exercise (legacy stories or
+    // newly-generated exercises whose audios were never regen'd).
+    const cachedUrl = clip.cachedUrl ?? null;
+    if (!uri && cachedUrl) {
+      try {
+        await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true });
+      } catch { /* exists */ }
+      const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
+      const safeName = `${lang}-${voiceSafe}-cached-${clip.sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+      const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+      const info = await FileSystem.getInfoAsync(fileUri);
+      if (!info.exists) {
+        try {
+          showDebug(`Hq using cachedUrl ${cachedUrl.slice(-40)}`);
+          await FileSystem.downloadAsync(cachedUrl, fileUri);
+        } catch (err) {
+          showDebug(`Hq cached download failed: ${err instanceof Error ? err.message.slice(0, 80) : "?"}`);
+        }
+      }
+      const infoAfter = await FileSystem.getInfoAsync(fileUri);
+      if (infoAfter.exists) {
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
+      }
+    }
 
     if (!uri) {
       setLoadingPracticeAudioId(currentPracticeExercise.id);
@@ -8459,37 +8444,11 @@ export function MobileLibraryShell(args: {
     if (!clip) return;
     try {
       await playPracticeContextClipHqOnly();
-      if (playingHqPracticeClipId === currentPracticeExercise.id) return;
     } catch {
-      // HQ unavailable for this clip; expo-speech fallback below.
+      // HQ TTS unavailable for this clip. Per policy (2026-05-18), no
+      // expo-speech fallback — silence is preferred over the device's
+      // robotic voice.
     }
-
-    const speechText = clip.sentence?.trim();
-    const Speech = getOptionalSpeechModule();
-    if (!speechText || !Speech) return;
-    await stopPracticeContextClip();
-    await stopPracticeHqClip();
-    Speech.stop();
-    setSpeakingPracticePromptId(currentPracticeExercise.id);
-    const fallbackLang = getSpeechSynthesisLang(clip.language);
-    Speech.speak(speechText, {
-      language: fallbackLang,
-      voice: getBestVoiceFor(fallbackLang),
-      rate: 0.92,
-      pitch: 1,
-      onDone: () =>
-        setSpeakingPracticePromptId((cur) =>
-          cur === currentPracticeExercise.id ? null : cur
-        ),
-      onStopped: () =>
-        setSpeakingPracticePromptId((cur) =>
-          cur === currentPracticeExercise.id ? null : cur
-        ),
-      onError: () =>
-        setSpeakingPracticePromptId((cur) =>
-          cur === currentPracticeExercise.id ? null : cur
-        ),
-    });
   }
 
   async function playPracticeContextClip() {
@@ -8498,41 +8457,15 @@ export function MobileLibraryShell(args: {
     if (!clip) return;
 
     if (clip.storySource === "user") {
-      const speechText = clip.sentence?.trim();
-      const Speech = getOptionalSpeechModule();
-      if (!speechText || !Speech) {
-        setSpeakingPracticePromptId(null);
-        return;
+      // User-created stories don't ship narrated audio. Previously fell
+      // back to expo-speech; removed by policy 2026-05-18 (robotic voice
+      // worse than silence). Try HQ TTS once; if Modal doesn't have a
+      // voice for this language/sentence, the button is a no-op.
+      try {
+        await playPracticeContextClipHqOnly();
+      } catch {
+        // No fallback. Silence.
       }
-
-      if (speakingPracticePromptId === currentPracticeExercise.id) {
-        Speech.stop();
-        setSpeakingPracticePromptId(null);
-        return;
-      }
-
-      await stopPracticeContextClip();
-      Speech.stop();
-      setSpeakingPracticePromptId(currentPracticeExercise.id);
-      const contextLang = getSpeechSynthesisLang(clip.language);
-      Speech.speak(speechText, {
-        language: contextLang,
-        voice: getBestVoiceFor(contextLang),
-        rate: 0.92,
-        pitch: 1,
-        onDone: () =>
-          setSpeakingPracticePromptId((current) =>
-            current === currentPracticeExercise.id ? null : current
-          ),
-        onStopped: () =>
-          setSpeakingPracticePromptId((current) =>
-            current === currentPracticeExercise.id ? null : current
-          ),
-        onError: () =>
-          setSpeakingPracticePromptId((current) =>
-            current === currentPracticeExercise.id ? null : current
-          ),
-      });
       return;
     }
 
@@ -8553,38 +8486,17 @@ export function MobileLibraryShell(args: {
     const baseAudioUrl = resolvePracticeAudioUri(storyAudio?.audioUrl);
     const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
     const audioUrl = segmentClipUrl ?? baseAudioUrl;
-    // Journey stories don't yet ship with per-sentence alignment segments, so
-    // there's no precise clip we can scrub into. Instead of silently no-oping
-    // the Play button, fall back to on-device TTS of the context sentence in
-    // the story's language. Works for every journey story, uses the right
-    // voice (it-IT, de-DE, etc.), and the audio sync is accurate enough for
-    // a short sentence.
+    // Journey stories without per-sentence alignment used to fall back
+    // to on-device TTS here. Removed 2026-05-18: usuario prefiere
+    // silencio sobre la voz device-local "robótica". Si no hay segment
+    // ni audioUrl, intentamos HQ TTS de Modal y si tampoco hay, no
+    // suena nada.
     if (!audioUrl || !segment) {
-      const speechText = clip.sentence?.trim();
-      const Speech = getOptionalSpeechModule();
-      if (!speechText || !Speech) return;
-      await stopPracticeContextClip();
-      Speech.stop();
-      setSpeakingPracticePromptId(currentPracticeExercise.id);
-      const fallbackLang = getSpeechSynthesisLang(clip.language);
-      Speech.speak(speechText, {
-        language: fallbackLang,
-        voice: getBestVoiceFor(fallbackLang),
-        rate: 0.92,
-        pitch: 1,
-        onDone: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-        onStopped: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-        onError: () =>
-          setSpeakingPracticePromptId((cur) =>
-            cur === currentPracticeExercise.id ? null : cur
-          ),
-      });
+      try {
+        await playPracticeContextClipHqOnly();
+      } catch {
+        // Silence.
+      }
       return;
     }
 
@@ -9308,7 +9220,11 @@ export function MobileLibraryShell(args: {
 
   // Reader comprehension events. Captures per-word interactions for adaptive
   // learning + corpus asset value. Fire-and-forget; failures are logged but
-  // never block reader UX.
+  // never block reader UX. `audio_complete` is the canonical "user finished
+  // the story audio" signal — the journey screen uses it to flip a story's
+  // `audioFinished` flag (see src/lib/journeyProgress.ts). Without it the
+  // journey would never repaint completed pills for mobile-only listeners,
+  // because /api/continue-listening filters out >= 95% rows.
   async function trackReaderEvent(
     eventType:
       | "vocab_clicked"
@@ -9316,7 +9232,8 @@ export function MobileLibraryShell(args: {
       | "audio_segment_replay"
       | "story_abandoned"
       | "vocab_marked_known"
-      | "vocab_marked_unknown",
+      | "vocab_marked_unknown"
+      | "audio_complete",
     payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
   ) {
     if (!sessionToken) return;
@@ -9334,6 +9251,13 @@ export function MobileLibraryShell(args: {
           metadata: payload.metadata ?? {},
         },
       });
+      // When the user finishes a story audio, refresh the journey so the
+      // pill repaints (border = topic color, check badge bottom-right).
+      // Fire-and-forget; the metric POST is the source of truth, the
+      // refetch is only for instant visual feedback.
+      if (eventType === "audio_complete" && activeJourneyLanguage) {
+        void loadJourneyForLanguage(activeJourneyLanguage, { clearPrevious: false });
+      }
     } catch (error) {
       console.error("[mobile reader] failed to track reader event", error);
     }
@@ -9467,6 +9391,7 @@ export function MobileLibraryShell(args: {
     void (async () => {
       await trackPracticeMetric("practice_session_completed");
 
+      let checkpointWasSaved = false;
       if (
         sessionToken &&
         practiceLaunchContext.source === "journey" &&
@@ -9486,10 +9411,25 @@ export function MobileLibraryShell(args: {
             },
           });
           setPracticeCheckpointSaveState("saved");
+          checkpointWasSaved = true;
         } catch (error) {
           console.error("[mobile practice] failed to save checkpoint", error);
           setPracticeCheckpointSaveState("error");
         }
+      }
+
+      // Refresh the journey after a practice session that originated
+      // from a journey context. `practice_session_completed` updates
+      // `practicedTopicKeys` server-side, and a passed checkpoint
+      // flips every audioFinished story in the topic to `completed`
+      // (emerald badge). Without this refetch the user has to manually
+      // re-enter the journey screen to see the new state.
+      if (
+        sessionToken &&
+        activeJourneyLanguage &&
+        (practiceLaunchContext.source === "journey" || checkpointWasSaved)
+      ) {
+        void loadJourneyForLanguage(activeJourneyLanguage, { clearPrevious: false });
       }
 
       const reviewableFavorites = favoriteWords.filter((item) =>
@@ -12491,7 +12431,7 @@ export function MobileLibraryShell(args: {
       <View style={styles.hero}>
         <View style={styles.heroHeaderRow}>
           <View style={styles.heroTextBlock}>
-            <Text style={styles.eyebrow}>My Library</Text>
+            <Text style={styles.eyebrow}>Saved</Text>
             <Text style={styles.title}>Your saved reading</Text>
             <Text style={styles.subtitle}>Saved, synced and ready to resume.</Text>
           </View>
@@ -13468,6 +13408,85 @@ export function MobileLibraryShell(args: {
     journeyAutoScrolledRef.current = null;
   }, [activeJourneyTrack?.id, globalJourneyNextStoryId]);
 
+  // Center the "next" story pill vertically in the journey viewport
+  // on first open. measureLayout reports the pill's Y inside the
+  // shell ScrollView. We target (pillY + pillH/2 - viewport/2) so the
+  // pill sits at the middle. The result is clamped to [0, maxScroll]:
+  // if the next pill is in the upper half (first story of A1), the
+  // computed target is negative and scrollTo clamps to 0 — leaves the
+  // top header visible. Same on the lower edge: scrollTo clamps to
+  // contentHeight - viewportHeight so the last story never tries to
+  // pull past the bottom.
+  useEffect(() => {
+    if (activeScreen !== "home") return;
+    if (!globalJourneyNextStoryId) return;
+    if (!activeJourneyTrack?.id) return;
+    const trackKey = `${activeJourneyTrack.id}::${globalJourneyNextStoryId}`;
+    if (journeyAutoScrolledRef.current === trackKey) return;
+    // Two RAFs: first lets the layout settle after the journey path
+    // mounts; second runs after the topic-panel sticky measurements
+    // are committed (they push the next pill's Y down by ~64px each).
+    let cancelled = false;
+    const tryCenter = (attempt: number) => {
+      if (cancelled) return;
+      const pill = journeyNextNodeRef.current;
+      const scroll = shellScrollRef.current;
+      if (!pill || !scroll) {
+        if (attempt < 8) {
+          setTimeout(() => tryCenter(attempt + 1), 80);
+        }
+        return;
+      }
+      // measureLayout against the inner host of ScrollView. RN's API
+      // accepts the ScrollView ref directly here on iOS.
+      const scrollNode = scroll as unknown as {
+        measureLayout?: typeof pill.measureLayout;
+      };
+      // Type guard: prefer measureLayout when both nodes expose it.
+      if (typeof pill.measureLayout !== "function" || !scrollNode) {
+        return;
+      }
+      try {
+        // findNodeHandle is the safe path for measureLayout's first
+        // argument across RN versions; using the ref directly works on
+        // iOS but the typed signature wants a node tag.
+        pill.measureLayout(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          scroll as any,
+          (_x: number, y: number, _w: number, h: number) => {
+            if (cancelled) return;
+            const { height: viewportH } = Dimensions.get("window");
+            // Use 45% of viewport instead of 50% so the pill sits
+            // slightly above center — reading naturally pulls the eye
+            // a bit higher than geometric middle, and the "what's
+            // next" pill earns more visual weight just above the
+            // fold than buried under it.
+            const target = Math.max(0, y + h / 2 - viewportH * 0.45);
+            // animated:false → posición inicial, no scroll motion. El
+            // usuario abre el journey y la "next" ya está en el medio
+            // desde el primer frame, en lugar de ver la página "saltar"
+            // después de cargar.
+            scroll.scrollTo({ y: target, animated: false });
+            journeyAutoScrolledRef.current = trackKey;
+          },
+          () => {
+            // measureLayout failed (node detached). Try once more.
+            if (attempt < 8) setTimeout(() => tryCenter(attempt + 1), 80);
+          }
+        );
+      } catch {
+        if (attempt < 8) setTimeout(() => tryCenter(attempt + 1), 80);
+      }
+    };
+    // Initial delay = 1 frame after journey mount; subsequent retries
+    // back off if the pill isn't measurable yet.
+    const id = setTimeout(() => tryCenter(0), 120);
+    return () => {
+      cancelled = true;
+      clearTimeout(id);
+    };
+  }, [activeScreen, activeJourneyTrack?.id, globalJourneyNextStoryId]);
+
   // Loop del halo + float de la story "next". Se rearma ante varias
   // señales para no quedar "muerto":
   //   - El journey se vuelve visible (activeScreen pasa a "home").
@@ -14017,6 +14036,15 @@ export function MobileLibraryShell(args: {
         // are cheap insurance against any duplicate-key dedupe bug
         // similar to the topic-panel one we just fixed.
         key={`sn-${level.id}-${topic.slug}-${story.id}`}
+        ref={(node) => {
+          // Capture the "next" pill's View node so the journey screen
+          // can center it on first open. The center-on-open effect
+          // (see useEffect on activeScreen / globalJourneyNextStoryId)
+          // measures this node against shellScrollRef and scrolls.
+          if (isNextAction) {
+            journeyNextNodeRef.current = node;
+          }
+        }}
         style={[
           styles.journeyPathNodeRow,
           { paddingLeft: waveOffsetPx },
@@ -14135,10 +14163,12 @@ export function MobileLibraryShell(args: {
               nodeVariant === "audioFinished" ? styles.journeyNodePillAudioFinished : null,
               nodeVariant === "locked" ? styles.journeyNodePillLocked : null,
               nodeVariant === "step" ? styles.journeyNodePillStep : null,
-              // Both "audio finished" and "completed" wear the topic's
-              // panel color on their outline, so the row reads as
-              // "belongs to this topic" rather than the previous fixed
-              // emerald which clashed with non-green topics.
+              // Stories the user has already touched (audio finished or
+              // fully completed) adopt the topic banner color on the
+              // border, so a "read" pill visually belongs to its topic
+              // (instead of every read story looking emerald/cyan
+              // regardless of which panel it sits under). The check
+              // badge bottom-right keeps the mastery signal.
               nodeVariant === "completed" || nodeVariant === "audioFinished"
                 ? { borderColor: topicColor, borderWidth: 2 }
                 : null,
@@ -14184,37 +14214,25 @@ export function MobileLibraryShell(args: {
                       resizeMode="cover"
                     />
                   </View>
-                  {/* Status badge — only `completed` and `locked` render
-                      a badge. `audioFinished` keeps the green outline
-                      around the whole card but doesn't get a check yet,
-                      so the user can tell at a glance "I finished
-                      reading this" (green outline only) vs "I also
-                      mastered the practice exercises" (green outline +
-                      green check). */}
-                  {nodeVariant === "completed" || nodeVariant === "locked" ? (
+                  {/* Lock icon stays on the thumb (small, secondary
+                      state). The "mastered/listened" check badge now
+                      lives at the bottom-right of the whole pill
+                      (rendered below as a sibling of icon + text). */}
+                  {nodeVariant === "locked" ? (
                     <View
                       style={[
                         styles.journeyNodePillThumbBadge,
-                        nodeVariant === "completed"
-                          ? { backgroundColor: topicColor }
-                          : styles.journeyNodePillThumbBadgeLocked,
+                        styles.journeyNodePillThumbBadgeLocked,
                       ]}
                     >
-                      {nodeVariant === "completed" ? (
-                        <Feather name="check" size={11} color="#0c1626" />
-                      ) : (
-                        <Feather name="lock" size={10} color="#cdd9ec" />
-                      )}
+                      <Feather name="lock" size={10} color="#cdd9ec" />
                     </View>
                   ) : null}
                 </>
               ) : nodeVariant === "completed" ? (
                 <Feather name="check" size={18} color="#0c1626" />
               ) : nodeVariant === "audioFinished" ? (
-                // No icon — the green outline around the whole card is
-                // the only indicator for "audio finished, exercises
-                // pending". A check would imply "fully done".
-                null
+                <Feather name="check" size={16} color="#7dd3fc" />
               ) : nodeVariant === "locked" ? (
                 <Feather name="lock" size={15} color="#7a8aa5" />
               ) : (
@@ -14230,6 +14248,28 @@ export function MobileLibraryShell(args: {
                   algunas (las que tenían text offline cacheado) y la
                   inconsistencia se notaba. */}
             </View>
+            {/* Corner badge anchored to the bottom-right of the whole
+                pill (not the thumb), with a soft shadow + white ring
+                so the check reads as a lifted seal sitting on top of
+                the banner instead of an overlay clipped over the
+                cover image. */}
+            {nodeVariant === "completed" || nodeVariant === "audioFinished" ? (
+              <View
+                pointerEvents="none"
+                style={[
+                  styles.journeyNodePillCornerBadge,
+                  nodeVariant === "completed"
+                    ? styles.journeyNodePillCornerBadgeCompleted
+                    : styles.journeyNodePillCornerBadgeAudioFinished,
+                ]}
+              >
+                <Feather
+                  name="check"
+                  size={14}
+                  color={nodeVariant === "completed" ? "#ffffff" : "#7dd3fc"}
+                />
+              </View>
+            ) : null}
           </Pressable>
           );
           return nextFloatStyle ? (
@@ -15372,6 +15412,12 @@ export function MobileLibraryShell(args: {
                               nodeVariant === "completed" ? styles.journeyNodePillCompleted : null,
                               nodeVariant === "locked" ? styles.journeyNodePillLocked : null,
                               nodeVariant === "step" ? styles.journeyNodePillStep : null,
+                              nodeVariant === "completed"
+                                ? {
+                                    borderColor: topicPanelColor(topic.slug, level.id),
+                                    borderWidth: 2,
+                                  }
+                                : null,
                             ]}
                           >
                             <View
@@ -16209,8 +16255,8 @@ export function MobileLibraryShell(args: {
           <Text style={styles.menuScreenSectionTitle}>Your activity</Text>
           <View style={styles.menuScreenSection}>
             <MenuScreenRow icon="progress" label="Progress" onPress={() => setActiveScreen("progress")} accent="#a8e845" />
-            <MenuScreenRow icon="journey" label="Library" onPress={() => setActiveScreen("journey")} accent="#7dd3fc" />
-            <MenuScreenRow icon="library" label="My Library" onPress={() => setActiveScreen("library")} accent="#7dd3fc" />
+            <MenuScreenRow icon="library" label="Library" onPress={() => setActiveScreen("journey")} accent="#7dd3fc" />
+            <MenuScreenRow icon="saved" label="Saved" onPress={() => setActiveScreen("library")} accent="#7dd3fc" />
           </View>
 
           <Text style={styles.menuScreenSectionTitle}>Create</Text>
@@ -16535,10 +16581,11 @@ export function MobileLibraryShell(args: {
           eclipse swap without the flicker the floating overlay
           had.) */}
 
-      {/* Floating FAB en el journey: mismo chevron-up, pero al tap
-          hace SCROLL hasta la posición de la story "next" dentro del
-          path en lugar de scroll-to-top. Si todo está completo o aún
-          no medimos la Y del topic correspondiente, fallback a top. */}
+      {/* Floating FAB en el journey: el tap centra la story "next" en
+          la mitad del viewport — misma lógica que el auto-center on
+          journey-open, pero con animación porque es gesto explícito
+          del usuario. Si no podemos medir el pill (no hay next, o el
+          node aún no se mountó), fallback a top. */}
       {activeScreen === "home" &&
       !journeyDetailTopicId &&
       !openingStoryId &&
@@ -16546,20 +16593,32 @@ export function MobileLibraryShell(args: {
       showJourneyScrollTop ? (
         <Pressable
           onPress={() => {
-            let targetY: number | null = null;
-            if (globalJourneyNextStoryId && activeJourneyTrack) {
-              for (const level of activeJourneyTrack.levels) {
-                for (const topic of level.topics) {
-                  if (topic.stories.some((s) => s.id === globalJourneyNextStoryId)) {
-                    const layout = topicLayoutsRef.current.get(topic.slug);
-                    if (layout) targetY = layout.y;
-                    break;
-                  }
-                }
-                if (targetY !== null) break;
-              }
+            const pill = journeyNextNodeRef.current;
+            const scroll = shellScrollRef.current;
+            if (!pill || !scroll) {
+              scroll?.scrollTo({ y: 0, animated: true });
+              return;
             }
-            shellScrollRef.current?.scrollTo({ y: targetY ?? 0, animated: true });
+            try {
+              pill.measureLayout(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                scroll as any,
+                (_x: number, y: number, _w: number, h: number) => {
+                  const { height: viewportH } = Dimensions.get("window");
+                  // 45% del viewport (mismo offset que el auto-center
+                  // on open): la mirada lee un poco arriba del centro
+                  // geométrico, así el pill queda donde el usuario lo
+                  // espera ver al "ir a lo que toca".
+                  const target = Math.max(0, y + h / 2 - viewportH * 0.45);
+                  scroll.scrollTo({ y: target, animated: true });
+                },
+                () => {
+                  scroll.scrollTo({ y: 0, animated: true });
+                }
+              );
+            } catch {
+              scroll.scrollTo({ y: 0, animated: true });
+            }
           }}
           accessibilityRole="button"
           accessibilityLabel="Scroll to next story"
@@ -17304,15 +17363,15 @@ export function MobileLibraryShell(args: {
                   />
                   <MenuLink
                     label="Library"
-                    icon="journey"
+                    icon="library"
                     onPress={() => {
                       setActiveScreen("journey");
                       setMenuOpen(false);
                     }}
                   />
                   <MenuLink
-                    label="My Library"
-                    icon="library"
+                    label="Saved"
+                    icon="saved"
                     onPress={() => {
                       setActiveScreen("library");
                       setMenuOpen(false);
@@ -17877,6 +17936,7 @@ function MenuIcon({ icon, tone = "default" }: { icon: MenuIconName; tone?: "defa
   const color = tone === "accent" ? "#f8d48a" : "#dbe9ff";
   if (icon === "settings") return <Feather name="settings" size={18} color={color} />;
   if (icon === "library") return <Feather name="book-open" size={18} color={color} />;
+  if (icon === "saved") return <Feather name="bookmark" size={18} color={color} />;
   if (icon === "journey") return <MaterialCommunityIcons name="map-marker-path" size={18} color={color} />;
   if (icon === "create") return <Ionicons name="sparkles-outline" size={18} color={color} />;
   if (icon === "story") return <Feather name="book" size={18} color={color} />;
@@ -19983,16 +20043,17 @@ const styles = StyleSheet.create({
     lineHeight: 17,
   },
   journeyNodePillCompleted: {
-    // Background wash kept very light so the topic-coloured outline
-    // (applied inline at the call-site, see borderColor above) is the
-    // dominant signal. The badge inside the thumbnail differentiates
-    // "completed" from "audioFinished" — see ThumbBadgeCompleted.
-    backgroundColor: "rgba(255, 255, 255, 0.04)",
+    // Soft green wash + emerald edge — "you mastered this".
+    // Subido de 0.1 → 0.18 para que la pill no se sienta muerta;
+    // el "next" sigue dominando por su fondo sólido del topic.
+    backgroundColor: "rgba(110, 231, 183, 0.18)",
+    borderColor: "rgba(110, 231, 183, 0.55)",
   },
   journeyNodePillAudioFinished: {
-    // Same light wash as completed — the topic-coloured outline marks
-    // both states. The completed state adds a check badge on top.
-    backgroundColor: "rgba(255, 255, 255, 0.04)",
+    // Cool muted cyan — "you've been here, exercises pending".
+    // Subido de 0.08 → 0.16 por la misma razón.
+    backgroundColor: "rgba(125, 211, 252, 0.16)",
+    borderColor: "rgba(125, 211, 252, 0.42)",
   },
   journeyNodePillLocked: {
     // Locked SÍ debe verse atenuado (es la única razón válida para
@@ -20059,17 +20120,48 @@ const styles = StyleSheet.create({
     backgroundColor: "#34d399",
   },
   journeyNodePillThumbBadgeAudioFinished: {
-    // Unified with the completed badge (solid emerald) per user
-    // feedback — both states read as "done" visually.
-    backgroundColor: "#34d399",
-    borderWidth: 2,
-    borderColor: tokenBg[1],
+    // Outline cyan — same check shape as the green mastery badge
+    // but hollow, so the metaphor reads as "started, not finished".
+    // The check inside is also cyan (matching the border) and
+    // contrasts against the dark canvas behind the transparent
+    // fill.
+    backgroundColor: "transparent",
+    borderColor: "#7dd3fc",
+    borderWidth: 1.5,
   },
   journeyNodePillThumbBadgeLocked: {
     backgroundColor: tokenBg[3],
   },
   journeyNodePillThumbBadgeStep: {
     backgroundColor: tokenBg[3],
+  },
+  // Corner badge anchored to the bottom-right of the whole pill (not
+  // the thumb). Larger and "lifted" via a soft drop shadow + white
+  // ring so it reads as a seal placed on top of the banner.
+  journeyNodePillCornerBadge: {
+    position: "absolute",
+    bottom: 8,
+    right: 8,
+    width: 24,
+    height: 24,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#000",
+    shadowOpacity: 0.35,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  journeyNodePillCornerBadgeCompleted: {
+    backgroundColor: "#10b981",
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.92)",
+  },
+  journeyNodePillCornerBadgeAudioFinished: {
+    backgroundColor: "rgba(8, 21, 36, 0.85)",
+    borderWidth: 1.5,
+    borderColor: "#7dd3fc",
   },
   journeyNodePillThumbBadgeNumber: {
     color: "#dbe9ff",
@@ -20104,6 +20196,11 @@ const styles = StyleSheet.create({
   journeyNodePillTextStack: {
     flex: 1,
     minWidth: 0,
+    // Reserves the bottom-right corner for the completion badge so the
+    // title (which can wrap to 2 lines) never lands underneath the
+    // check seal. Badge is 24px wide + 8px from the edge = ~32px of
+    // safe zone.
+    paddingRight: 28,
   },
   journeyNodePillLabel: {
     color: "#ffffff",
@@ -24561,67 +24658,8 @@ function PracticeResultRing({
         useNativeDriver: false,
       }),
     ]).start();
-
-    // Audio: ring-fill sweep during the 1.2s animation (green if
-    // accuracy ≥80, amber/red otherwise). When the user nails a
-    // perfect score, the "fairy win" jingle drops at the moment the
-    // ring reaches full.
-    let cancelled = false;
-    let fillSound: Audio.Sound | null = null;
-    let perfectSound: Audio.Sound | null = null;
-    let perfectTimer: ReturnType<typeof setTimeout> | null = null;
-    void (async () => {
-      try {
-        // playsInSilentModeIOS:true so the ring sweep is audible even
-        // when the user keeps the iPhone hardware silent switch on, the
-        // same trick the per-question feedback sounds already use.
-        await Audio.setAudioModeAsync({
-          playsInSilentModeIOS: true,
-          allowsRecordingIOS: false,
-          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
-        }).catch(() => undefined);
-        const uri =
-          accuracyPct >= 80 ? PRACTICE_RING_FILL_GOOD_URI : PRACTICE_RING_FILL_BAD_URI;
-        const { sound } = await Audio.Sound.createAsync(
-          { uri },
-          { shouldPlay: true, volume: 0.85 }
-        );
-        if (cancelled) {
-          await sound.unloadAsync().catch(() => undefined);
-          return;
-        }
-        fillSound = sound;
-      } catch {
-        // best-effort, mute is acceptable
-      }
-    })();
-    if (total > 0 && score === total) {
-      perfectTimer = setTimeout(async () => {
-        if (cancelled) return;
-        try {
-          const { sound } = await Audio.Sound.createAsync(
-            { uri: PRACTICE_PERFECT_URI },
-            { shouldPlay: true, volume: 0.9 }
-          );
-          if (cancelled) {
-            await sound.unloadAsync().catch(() => undefined);
-            return;
-          }
-          perfectSound = sound;
-        } catch {
-          // best-effort
-        }
-      }, 500);
-    }
-
-    return () => {
-      cancelled = true;
-      numAnim.removeListener(listener);
-      if (perfectTimer) clearTimeout(perfectTimer);
-      fillSound?.unloadAsync().catch(() => undefined);
-      perfectSound?.unloadAsync().catch(() => undefined);
-    };
-  }, [score, total, targetRatio, accuracyPct, fillAnim, numAnim]);
+    return () => numAnim.removeListener(listener);
+  }, [score, targetRatio, fillAnim, numAnim]);
 
   const dashOffset = fillAnim.interpolate({
     inputRange: [0, 1],

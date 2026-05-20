@@ -66,3 +66,30 @@ export function isVariantValidForLanguage(
   if (!options) return false;
   return options.some((option) => option.value === variant);
 }
+
+// ISO 639-1 two-letter codes used by the editorial Studio surfaces
+// (Journey Manager, Catalog Books) as compact lang tags. Maps both the
+// canonical full name ("Spanish") and the slug form ("spanish") that the
+// DB stores. NEVER use slice(0, 3) on the full name — produces nonsense
+// like "SPA", "ITA", "POR".
+const ISO_BY_LANGUAGE: Record<string, string> = {
+  english: "EN",
+  spanish: "ES",
+  french: "FR",
+  german: "DE",
+  italian: "IT",
+  portuguese: "PT",
+  japanese: "JA",
+  korean: "KO",
+  chinese: "ZH",
+};
+
+/**
+ * Compact ISO 639-1 two-letter tag for a language name or slug.
+ * Returns "??" for unknown languages so callers never crash.
+ */
+export function getIsoLanguageTag(language: string | null | undefined): string {
+  if (!language) return "??";
+  const key = language.toLowerCase().trim();
+  return ISO_BY_LANGUAGE[key] ?? language.slice(0, 2).toUpperCase();
+}

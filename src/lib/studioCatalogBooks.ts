@@ -36,6 +36,7 @@ export type StudioCatalogStory = {
   slug: string;
   position: number;
   title: string;
+  synopsis: string | null;
   text: string;
   audio: string;
   audioUrl: string | null;
@@ -88,6 +89,7 @@ function storyToDto(row: CatalogStory): StudioCatalogStory {
     slug: row.slug,
     position: row.position,
     title: row.title,
+    synopsis: row.synopsis,
     text: row.text,
     audio: row.audio,
     audioUrl: row.audioUrl,
@@ -140,6 +142,7 @@ const STORY_PATCH_KEYS = [
   "slug",
   "position",
   "title",
+  "synopsis",
   "text",
   "audio",
   "audioUrl",
@@ -326,6 +329,7 @@ export async function createStudioCatalogStory(
       slug: patch.slug,
       position: patch.position ?? nextPosition,
       title: patch.title,
+      synopsis: patch.synopsis ?? null,
       text: patch.text ?? "",
       audio: patch.audio ?? "",
       audioUrl: patch.audioUrl ?? null,
