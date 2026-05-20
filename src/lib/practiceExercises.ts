@@ -288,10 +288,14 @@ function getDistractorWords(
     return candidateType === targetType;
   });
 
-  const sameShape = eligible.filter((candidate) => {
-    const candidateIsMultiword = normalizeText(candidate.word).includes(" ");
-    return candidateIsMultiword === targetIsMultiword;
-  });
+  // Intentionally NO cascade to "same shape but any POS". The
+  // earlier `sameShape` fallback let a noun like `grembiule` become a
+  // distractor for an adjective target whenever the same-POS pool was
+  // thin, undoing the POS guarantee at exactly the moments the
+  // exercise needed it most. If we can't fill 3 distractors from the
+  // same-POS bucket, the exercise simply returns fewer distractors
+  // and the upstream `options.length < 4` check skips the exercise —
+  // we'd rather drop the slot than ship a trivially-eliminable one.
 
   const picked: string[] = [];
   const seen = new Set<string>();
@@ -306,8 +310,6 @@ function getDistractorWords(
   };
 
   drainFrom(sameShapeAndType);
-  if (picked.length < max) drainFrom(sameShape);
-  if (picked.length < max) drainFrom(eligible);
 
   return picked;
 }
@@ -360,8 +362,13 @@ function getDistractorMeanings(
     }
   };
 
+  // Intentionally NO cascade to the general pool. Falling back to
+  // mixed-POS translations would reintroduce the exact failure we are
+  // trying to prevent (a noun answer next to a verb gloss = trivial
+  // elimination). If the same-POS bucket can't yield 3 candidates we
+  // return fewer; the upstream caller drops the exercise instead of
+  // shipping a trivially-eliminable one.
   drainFrom(sameType);
-  if (out.length < max) drainFrom(eligible);
 
   return out;
 }
