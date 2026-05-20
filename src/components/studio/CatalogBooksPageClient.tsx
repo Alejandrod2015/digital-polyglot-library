@@ -516,6 +516,14 @@ export default function CatalogBooksPageClient() {
   async function createStory(bookId: string) {
     if (!newStoryDraft || newStoryDraft.bookId !== bookId) return;
     const form = newStoryDraft.form;
+    // Clear stale "__new__" error from a previous failed attempt so the
+    // user gets a fresh signal on each click.
+    setStoryErrors((prev) => {
+      if (!prev.has("__new__")) return prev;
+      const n = new Map(prev);
+      n.delete("__new__");
+      return n;
+    });
     if (!form.title?.trim() || !form.slug?.trim()) {
       setNewStoryDraft({ ...newStoryDraft, form: { ...form } });
       return;
@@ -643,7 +651,9 @@ export default function CatalogBooksPageClient() {
           <div className="jm-j-body">
             <BookEditorPanel
               form={newBookDraft}
-              onPatch={(k, v) => setNewBookDraft({ ...newBookDraft, [k]: v })}
+              onPatch={(k, v) =>
+                setNewBookDraft((prev) => (prev ? { ...prev, [k]: v } : prev))
+              }
               isNew
               autoSlug
             />
@@ -745,7 +755,21 @@ export default function CatalogBooksPageClient() {
                         <div className="jm-row" style={{ marginBottom: 8 }}>
                           <span className="jm-eyebrow" style={{ margin: 0 }}>Nueva historia</span>
                           <span className="jm-row__spacer" />
-                          <button className="jm-btn jm-btn--sm" onClick={() => setNewStoryDraft(null)} disabled={creatingStory}>
+                          <button
+                            className="jm-btn jm-btn--sm"
+                            onClick={() => {
+                              setNewStoryDraft(null);
+                              // Drop any "__new__" error so it doesn't reappear
+                              // when the editor re-opens.
+                              setStoryErrors((prev) => {
+                                if (!prev.has("__new__")) return prev;
+                                const n = new Map(prev);
+                                n.delete("__new__");
+                                return n;
+                              });
+                            }}
+                            disabled={creatingStory}
+                          >
                             Cancelar
                           </button>
                           <button
@@ -756,9 +780,18 @@ export default function CatalogBooksPageClient() {
                             {creatingStory ? "Creando…" : "Crear historia"}
                           </button>
                         </div>
+                        {storyErrors.get("__new__") && (
+                          <div className="jm-ex__error" style={{ marginBottom: 8 }}>
+                            {storyErrors.get("__new__")}
+                          </div>
+                        )}
                         <StoryEditorPanel
                           form={newStoryDraft.form}
-                          onPatch={(k, v) => setNewStoryDraft({ bookId: b.id, form: { ...newStoryDraft.form, [k]: v } })}
+                          onPatch={(k, v) =>
+                            setNewStoryDraft((prev) =>
+                              prev ? { bookId: prev.bookId, form: { ...prev.form, [k]: v } } : prev
+                            )
+                          }
                           autoSlug
                         />
                       </div>
