@@ -28,6 +28,11 @@ export const DEFAULT_VOICE_SETTINGS = {
 // fighting the dialogue. 0.15 was a touch hot.
 export const DEFAULT_AMBIENT_VOLUME = 0.10;
 
+// Tempo applied to every narrator track via ffmpeg `atempo` (preserves pitch).
+// 0.80 = 80% of original speed. Aligns with the project audio default
+// documented in user memory ("Audio defaults: 0.80x + 7% ambient").
+export const DEFAULT_NARRATION_TEMPO = 0.80;
+
 // Approved native-German voices for multi-character dialogue stories. All IDs
 // were verified against the ElevenLabs shared library with langs=de:standard.
 // Previous code labelled Ww7Sq9tx9CCOiNOwWgsx as "Carl" but that voice is
