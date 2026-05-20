@@ -5,15 +5,21 @@ import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   BookOpenText,
+  ChevronDown,
   Headphones,
   MessageCircleMore,
+  Play,
   Shapes,
   Sparkles,
+  TrendingUp,
   Volume2,
   X,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
+import { getLanguageFlag } from "@/lib/languageFlags";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import {
   buildPracticeSession,
   getRecommendedPracticeModeFromOnboarding,
@@ -363,6 +369,7 @@ export default function PracticePage() {
   const [sessionComplete, setSessionComplete] = useState(false);
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [pendingCountdownMode, setPendingCountdownMode] = useState<PracticeMode | null>(null);
+  const [languageSwitcherOpen, setLanguageSwitcherOpen] = useState(false);
   const [streak, setStreak] = useState(0);
   const [lastResult, setLastResult] = useState<"correct" | "wrong" | null>(null);
   const [playingClipId, setPlayingClipId] = useState<string | null>(null);
@@ -1542,14 +1549,14 @@ export default function PracticePage() {
     typeof onboardingPracticePrefs.dailyMinutes === "number" && onboardingPracticePrefs.dailyMinutes > 0
       ? onboardingPracticePrefs.dailyMinutes
       : 5;
-  const practiceLoopSummary = useMemo(() => {
+  const practiceSummary = useMemo(() => {
     if (isReviewFocus && reviewDueCount > 0) {
-      return `You have ${reviewDueCount} due ${reviewDueCount === 1 ? "item" : "items"} waiting in this topic. ${reviewRecommendedLabel} is the best next move for your ${preferredPracticeMinutes}-minute plan.`;
+      return `You have ${reviewDueCount} due ${reviewDueCount === 1 ? "item" : "items"} waiting in this topic. ${reviewRecommendedLabel} is the best next move for your ${preferredPracticeMinutes}-minute session.`;
     }
     if (dueFavorites.length > 0) {
-      return `${dueFavorites.length} saved ${dueFavorites.length === 1 ? "word is" : "words are"} ready. ${reviewRecommendedLabel} is the best quick review for your ${preferredPracticeMinutes}-minute plan.`;
+      return `${dueFavorites.length} saved ${dueFavorites.length === 1 ? "word is" : "words are"} ready. ${reviewRecommendedLabel} is the best quick review for your ${preferredPracticeMinutes}-minute session.`;
     }
-    return `Pick one fast mode and keep the loop moving. This setup is tuned for a ${preferredPracticeMinutes}-minute practice pass.`;
+    return `Pick one mode and start a quick ${preferredPracticeMinutes}-minute round.`;
   }, [dueFavorites.length, isReviewFocus, preferredPracticeMinutes, reviewDueCount, reviewRecommendedLabel]);
   const requestedMode =
     requestedModeParam === "meaning" ||
@@ -2388,18 +2395,142 @@ export default function PracticePage() {
     );
   }
 
+  // Active language + variant for the iPhone-style flag pill at the top of
+  // the mobile hero. Falls back to a globe when neither value is known.
+  const activeLanguageName = (() => {
+    const tl = user?.publicMetadata?.targetLanguages;
+    if (Array.isArray(tl) && typeof tl[0] === "string") return tl[0] as string;
+    return null;
+  })();
+  const activeVariantKey =
+    typeof user?.publicMetadata?.preferredVariant === "string"
+      ? (user.publicMetadata.preferredVariant as string)
+      : null;
+  const activeFlag = activeLanguageName ? getLanguageFlag(activeLanguageName, activeVariantKey) : "🌐";
+  const activeLangShort = activeLanguageName
+    ? activeLanguageName.slice(0, 2).toUpperCase()
+    : "??";
+
+  // Mobile shows the 4 iPhone modes (no "natural"). Desktop keeps all 5.
+  const mobileModeCards = modeCards.filter((card) => card.mode !== "natural");
+  const dueCount = dueFavorites.length;
+  const xpReward = dueCount * 10;
+
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(248,220,154,0.08),transparent_28%),linear-gradient(180deg,#042349_0%,#062148_45%,#031a3d_100%)] p-4 pb-24 text-[var(--foreground)] sm:p-6 sm:pb-24">
-      <div className="mb-4 px-1 sm:mb-6">
+    <div
+      className="min-h-screen p-4 pb-24 text-[var(--foreground)] sm:p-6 sm:pb-24 -mx-1 -my-6 sm:mx-0 sm:my-0"
+      style={{
+        background:
+          "radial-gradient(circle at top, rgba(248,220,154,0.08), transparent 28%), linear-gradient(180deg, var(--bg-content) 0%, #062148 45%, #031a3d 100%)",
+      }}
+    >
+      {/* ── MOBILE HERO (iPhone-style) ── */}
+      <div className="sm:hidden">
+        {/* Flag pill + title. Tapping the pill opens the LanguageSwitcher
+            bottom sheet (same component used in MobileTabBar). */}
+        <div className="flex items-center gap-4 mb-6">
+          <button
+            type="button"
+            onClick={() => setLanguageSwitcherOpen(true)}
+            className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 pl-1.5 pr-3 py-1.5 active:bg-white/[0.1] transition-colors"
+            aria-label="Switch language"
+          >
+            <span
+              className="rounded-full bg-black/30 grid place-items-center text-lg leading-none"
+              style={{ width: 28, height: 28 }}
+            >
+              {activeFlag}
+            </span>
+            <span className="text-[13px] font-extrabold text-white">{activeLangShort}</span>
+            <ChevronDown size={14} className="text-white/55" />
+          </button>
+          <h1 className="text-[28px] font-black tracking-tight text-white leading-none">
+            {isReviewFocus && reviewDueCount > 0 ? "Review" : "Practice"}
+          </h1>
+        </div>
+
+        {/* Two chips: STREAK + DUE (GOAL needs backend data we don't have
+            client-side; using DUE which is the actionable number here). */}
+        <div className="flex items-center justify-center gap-3 mb-5">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.04] border border-white/8 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-white/80">
+            <Zap size={13} className="text-[#fb923c]" />
+            <span className="text-base font-black text-white leading-none">{practiceStreakDays}</span>
+            Streak
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.04] border border-white/8 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-white/80">
+            <TrendingUp size={13} className="text-emerald-300" />
+            <span className="text-base font-black text-white leading-none">{dueCount}</span>
+            Due
+          </span>
+        </div>
+
+        <p className="text-center text-[14px] text-white/72 mb-3">
+          From <span className="font-extrabold text-white">Your saved words</span>
+        </p>
+
+        {/* DONUT: a real square (260x260) so rounded-full makes a circle.
+            Pixel-fixed via inline style because Tailwind v4 JIT silently
+            drops some arbitrary values when the file is large. */}
+        <div className="flex justify-center mb-3">
+          <button
+            type="button"
+            onClick={() => {
+              if (dueCount === 0) return;
+              void trackUiMetric("practice_recommended_mode_opened", {
+                mode: reviewRecommendedMode,
+                source: "orbit_cta",
+              });
+              setPendingCountdownMode(reviewRecommendedMode);
+            }}
+            disabled={dueCount === 0}
+            className="relative grid place-items-center disabled:opacity-60"
+            style={{
+              width: 260,
+              height: 260,
+              borderRadius: "50%",
+              background:
+                "radial-gradient(circle, rgba(11,30,58,0.95) 0%, rgba(8,22,46,0.95) 60%, rgba(5,15,35,0.95) 100%)",
+              boxShadow:
+                "inset 0 0 0 12px rgba(255,255,255,0.025), inset 0 0 0 13px rgba(255,255,255,0.04), 0 30px 60px rgba(0,0,0,0.4)",
+            }}
+            aria-label="Start recommended practice"
+          >
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center">
+                <span
+                  className="font-black text-white leading-none"
+                  style={{ fontSize: 64 }}
+                >
+                  {dueCount}
+                </span>
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55 mt-1">
+                  Due
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-[var(--color-gold)] px-5 py-2 text-[13px] font-black uppercase tracking-[0.14em] text-[#2a1a02]">
+                <Play size={14} fill="currentColor" />
+                Start
+              </div>
+            </div>
+          </button>
+        </div>
+
+        <p className="text-center text-[12px] text-white/55 mb-5">
+          ~{Math.max(1, Math.round(dueCount * 0.3))} min · {dueCount === 0 ? "0" : "1"} skill · +{xpReward} XP
+        </p>
+      </div>
+
+      {/* ── DESKTOP HERO (original layout) ── */}
+      <div className="hidden sm:block mb-4 px-1 sm:mb-6">
         <div className={`mb-2 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] ${isReviewFocus && reviewDueCount > 0 ? "bg-amber-300/12 text-amber-100" : "bg-white/8 text-[rgba(255,246,214,0.86)]"}`}>
           <Sparkles size={13} />
           {isReviewFocus && reviewDueCount > 0 ? "Review focus" : "Pick a mode"}
         </div>
-        <h1 className="text-[2rem] font-black tracking-tight text-white sm:text-[2.5rem]">
+        <h1 className="text-[2.5rem] font-black tracking-tight text-white">
           {isReviewFocus && reviewDueCount > 0 ? "Review this topic" : "Practice"}
         </h1>
-        <p className="mt-1 max-w-xl text-sm leading-6 text-[rgba(226,232,244,0.78)] sm:text-base">
-          {practiceLoopSummary}
+        <p className="mt-1 max-w-xl text-base leading-6 text-[rgba(226,232,244,0.78)]">
+          {practiceSummary}
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200/20 bg-amber-300/12 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-100">
@@ -2457,7 +2588,36 @@ export default function PracticePage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-2 xl:grid-cols-3">
+      {/* ── MOBILE CARDS: 2x2 iPhone-style (no description, counter on
+          right, icon top-left, big title centered). Filters out "natural"
+          mode to match iPhone's 4-skill layout. ── */}
+      <div className="grid grid-cols-2 gap-3 sm:hidden">
+        {mobileModeCards.map((card) => (
+          <button
+            key={card.mode}
+            type="button"
+            onClick={() => setPendingCountdownMode(card.mode)}
+            className={`group relative overflow-hidden rounded-[1.5rem] border p-3 text-left transition active:scale-[0.99] ${card.shellClass}`}
+          >
+            <div className="relative flex h-full flex-col">
+              <div className="flex items-start justify-between gap-2 mb-3">
+                <span
+                  className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-[0.75rem] ${card.iconClass}`}
+                >
+                  <card.icon size={17} />
+                </span>
+                <span className="text-[26px] font-black leading-none text-white">0</span>
+              </div>
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/70 leading-tight">
+                {card.title}
+              </p>
+            </div>
+          </button>
+        ))}
+      </div>
+
+      {/* ── DESKTOP CARDS (original layout, all 5 modes) ── */}
+      <div className="hidden sm:grid grid-cols-2 gap-3 xl:grid-cols-3">
         {modeCards.map((card) => (
           <button
             key={card.mode}
@@ -2517,6 +2677,10 @@ export default function PracticePage() {
           }}
         />
       ) : null}
+      <LanguageSwitcher
+        open={languageSwitcherOpen}
+        onClose={() => setLanguageSwitcherOpen(false)}
+      />
     </div>
   );
 }

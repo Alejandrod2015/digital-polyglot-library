@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Heart } from "lucide-react";
+import { Heart, X } from "lucide-react";
 import { VocabItem } from "@/types/books";
 import { useUser } from "@clerk/nextjs";
-import BottomSheet from "@/components/ui/BottomSheet";
-import { normalizeVocabType } from "@/lib/vocabTypes";
+import { normalizeVocabType, getVocabTypeLabel, type VocabTypeKey } from "@/lib/vocabTypes";
 import {
   coerceAudioSegments,
   findBestAudioSegment,
@@ -41,6 +40,18 @@ function getContextSentence(raw: string | undefined, word: string): string | und
 }
 
 const MAX_CONTEXT_CHARS = 160;
+
+// Mirror del catálogo de fondos del bubble de iPhone
+// (ReaderScreen.tsx → VOCAB_TYPE_BACKGROUNDS). Mantener en sync para
+// que la asociación pill→popup se sienta exactamente igual.
+const VOCAB_TYPE_BG: Record<VocabTypeKey, string> = {
+  verb: "rgba(248, 113, 113, 0.6)",
+  noun: "rgba(56, 189, 248, 0.65)",
+  adjective: "rgba(52, 211, 153, 0.6)",
+  adverb: "rgba(167, 139, 250, 0.65)",
+  expression: "rgba(244, 114, 182, 0.6)",
+  other: "rgba(148, 163, 184, 0.55)",
+};
 
 function shortenContext(raw: string | undefined, word: string): string | undefined {
   if (!raw) return undefined;
@@ -304,38 +315,150 @@ export default function VocabPanel({
     if (onClose) onClose();
   };
 
+  // Tipo normalizado del vocab seleccionado para pintar el badge.
+  const selectedType: VocabTypeKey | null = selectedWord
+    ? normalizeVocabType(
+        story.vocab?.find(
+          (v) => v.word === selectedWord || v.surface === selectedWord
+        )?.type,
+        { word: selectedWord, definition: definition ?? "" }
+      )
+    : null;
+
+  if (!selectedWord) return null;
+
   return (
-    <BottomSheet
-      open={!!selectedWord}
-      onClose={handleClose}
-      eyebrow="Vocabulary"
-      title={selectedWord ?? undefined}
+    // Overlay flotante: la burbuja vive justo arriba del Player dock, no
+    // como un bottom-sheet full-width. `pointer-events-none` deja pasar
+    // taps en las palabras detrás del overlay (para saltar de una a otra
+    // sin cerrar primero); la burbuja reactiva eventos con
+    // `pointer-events-auto`. Mismo patrón que ReaderScreen.tsx en iPhone.
+    //
+    // El Player web (Player.tsx) mide ~110px (progress bar + controls +
+    // px-4 py-3). Le sumamos 12px de gap y el safe-area-inset-bottom para
+    // que la burbuja no quede sobre el dock. Se hace por inline style
+    // porque Tailwind v4 JIT a veces tira `pb-[max(...,calc(...))]`.
+    <div
+      className="fixed inset-x-0 z-[70] flex justify-center px-[18px] pointer-events-none"
+      style={{
+        // El Player web (Player.tsx) mide ~92px. Sumamos 6px de gap para
+        // que la burbuja se vea pegada al dock sin tocarlo.
+        bottom: "max(98px, calc(92px + env(safe-area-inset-bottom) + 6px))",
+      }}
+      aria-label="qa-reader-vocab-overlay"
     >
-      <div id="vocab-panel" className="pb-2">
+      <div
+        id="vocab-panel"
+        className="w-full max-w-md pointer-events-auto"
+        style={{
+          background: "#0f2138",
+          border: "1px solid #28415f",
+          borderRadius: 20,
+          padding: "16px 18px",
+          boxShadow: "0 8px 14px rgba(0,0,0,0.22)",
+        }}
+      >
+        {/* Header: word + type badge (left) · close × (right) */}
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex flex-1 flex-col gap-0.5 min-w-0">
+            <span
+              className="text-white truncate"
+              style={{ fontSize: 22, fontWeight: 800 }}
+            >
+              {selectedWord}
+            </span>
+            {selectedType && selectedType !== "other" ? (
+              <span
+                className="self-start"
+                style={{
+                  backgroundColor: VOCAB_TYPE_BG[selectedType],
+                  color: "#ffffff",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                  padding: "2px 8px",
+                  borderRadius: 999,
+                  marginTop: 4,
+                }}
+              >
+                {getVocabTypeLabel(selectedType)}
+              </span>
+            ) : null}
+          </div>
+          <button
+            type="button"
+            onClick={handleClose}
+            aria-label="Close"
+            className="shrink-0 grid place-items-center"
+            style={{
+              width: 32,
+              height: 32,
+              borderRadius: 999,
+              backgroundColor: "#213754",
+              color: "#dbe9ff",
+            }}
+          >
+            <X size={16} strokeWidth={2.6} />
+          </button>
+        </div>
+
+        {/* Definition */}
         {definition ? (
-          <p className="text-white/85 text-base leading-relaxed">{definition}</p>
+          <p
+            className="text-[#eef4ff] mt-1.5"
+            style={{ fontSize: 15, lineHeight: "22px" }}
+          >
+            {definition}
+          </p>
         ) : (
-          <p className="text-white/50 italic">No definition available</p>
+          <p className="text-white/50 italic mt-1.5" style={{ fontSize: 15 }}>
+            No definition available
+          </p>
         )}
 
-        <div className="mt-5">
+        {/* Action row: save chip — cyan glow at rest, gold when active */}
+        <div className="mt-3 flex">
           <button
+            type="button"
             onClick={toggleFavorite}
-            className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
+            aria-label={isFav ? "Remove from saved words" : "Save word"}
+            className="inline-flex items-center gap-2 transition-all"
+            style={
               isFav
-                ? "bg-rose-500/90 hover:bg-rose-500"
-                : "bg-sky-500/90 hover:bg-sky-500"
-            } text-white`}
+                ? {
+                    backgroundColor: "#f8c15c",
+                    border: "1px solid rgba(248, 193, 92, 0.95)",
+                    color: "#0e1727",
+                    fontWeight: 800,
+                    fontSize: 14,
+                    letterSpacing: "0.012em",
+                    padding: "10px 16px",
+                    borderRadius: 999,
+                    boxShadow: "0 4px 12px rgba(248, 193, 92, 0.45)",
+                  }
+                : {
+                    backgroundColor: "#1e3a5f",
+                    border: "1px solid rgba(125, 211, 252, 0.5)",
+                    color: "#ffffff",
+                    fontWeight: 700,
+                    fontSize: 14,
+                    letterSpacing: "0.012em",
+                    padding: "10px 16px",
+                    borderRadius: 999,
+                    boxShadow: "0 2px 6px rgba(0, 0, 0, 0.18)",
+                  }
+            }
           >
             <Heart
-              className={`w-4 h-4 ${
-                isFav ? "fill-white text-white" : "text-white"
-              }`}
+              size={16}
+              strokeWidth={2.4}
+              fill={isFav ? "currentColor" : "none"}
             />
-            {isFav ? "Remove from Favorites" : "Add to Favorites"}
+            {isFav ? "Saved" : "Save word"}
           </button>
         </div>
       </div>
-    </BottomSheet>
+    </div>
   );
 }

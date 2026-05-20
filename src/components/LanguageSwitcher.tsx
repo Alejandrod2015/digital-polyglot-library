@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronRight, Flame, Loader2, Plus, Settings, Zap } from "lucide-react";
+import { ChevronRight, Loader2, Plus, Star, Zap } from "lucide-react";
 import { formatVariantLabel } from "@/lib/languageVariant";
 import { getLanguageFlag, isVariantValidForLanguage } from "@/lib/languageFlags";
 
@@ -176,22 +176,11 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
     }
   }
 
-  // "See all" → settings, scrolled to the languages section.
-  function goToSeeAll() {
-    onClose();
-    router.push("/settings#languages");
-  }
-
-  // "Add language" → settings, languages section, with the add flow open.
+  // "Add journey" → settings, languages section, with the add flow open.
   function goToAddLanguage() {
     onClose();
     router.push("/settings#languages?add=1");
   }
-
-  // Geometry for the progress ring around each flag.
-  const RING_SIZE = 46;
-  const RING_R = 20.5;
-  const RING_C = 2 * Math.PI * RING_R;
 
   return (
     <AnimatePresence>
@@ -245,10 +234,10 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
             </div>
 
             <div className="px-[22px] pt-3 pb-1">
-              <div className="text-[10.5px] font-black tracking-[0.22em] text-white/60 uppercase">
-                Switch language
+              <div className="text-[10.5px] font-black tracking-[0.22em] text-white/55 uppercase">
+                Switch journey
               </div>
-              <div className="mt-1 text-[22px] font-black leading-tight tracking-[-0.02em] text-white">
+              <div className="mt-1 text-[26px] font-black leading-tight tracking-[-0.02em] text-white">
                 {targetLanguages.length === 1
                   ? "Your journey"
                   : `${targetLanguages.length} journeys in progress`}
@@ -256,13 +245,12 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
             </div>
 
             <div
-              className="flex-1 overflow-y-auto px-4 pt-3 flex flex-col gap-2"
+              className="flex-1 overflow-y-auto px-[22px] pt-4 flex flex-col gap-3"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {rows.map((row) => {
                 const isSwitching = switchingTo === row.name;
                 const disabled = Boolean(switchingTo) && !isSwitching;
-                const ringDash = (row.progress / 100) * RING_C;
                 return (
                   <button
                     type="button"
@@ -270,94 +258,73 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                     onClick={() => switchLanguage(row.name)}
                     disabled={disabled || isSwitching}
                     className={[
-                      "flex items-center gap-3 p-3 rounded-[18px] text-left transition-colors",
+                      "flex items-center gap-3.5 p-3.5 rounded-[18px] text-left transition-colors",
                       row.active
-                        ? "border-[1.5px] border-lime-300/40"
-                        : "border border-[var(--card-border)] bg-white/[0.035] hover:bg-white/[0.06]",
+                        ? "border-[1.5px]"
+                        : "border border-white/8 bg-white/[0.025] hover:bg-white/[0.05]",
                       disabled ? "opacity-40" : "",
                     ].join(" ")}
                     style={
                       row.active
                         ? {
-                            background:
-                              "linear-gradient(135deg, rgba(190,242,100,0.12), rgba(125,211,252,0.06))",
+                            background: "rgba(252, 211, 77, 0.04)",
+                            borderColor: "rgba(252, 211, 77, 0.55)",
                           }
-                        : undefined
+                        : { background: "rgba(255, 255, 255, 0.025)" }
                     }
                   >
-                    {/* Flag with progress ring */}
+                    {/* Flag tile: square with inner border (iPhone-style) */}
                     <div
-                      className="relative flex-shrink-0"
-                      style={{ width: RING_SIZE, height: RING_SIZE }}
+                      aria-hidden
+                      className="shrink-0 grid place-items-center text-[28px] leading-none"
+                      style={{
+                        width: 52,
+                        height: 52,
+                        borderRadius: 14,
+                        background: "rgba(255,255,255,0.03)",
+                        boxShadow:
+                          "inset 0 0 0 1.5px rgba(125,211,252,0.45), inset 0 0 0 4px rgba(8,22,46,0.95), inset 0 0 0 5.5px rgba(125,211,252,0.25)",
+                      }}
                     >
-                      <svg
-                        width={RING_SIZE}
-                        height={RING_SIZE}
-                        className="absolute inset-0"
-                        style={{ transform: "rotate(-90deg)" }}
-                        aria-hidden
-                      >
-                        <circle
-                          cx={RING_SIZE / 2}
-                          cy={RING_SIZE / 2}
-                          r={RING_R}
-                          fill="none"
-                          stroke="rgba(255,255,255,0.08)"
-                          strokeWidth={2.5}
-                        />
-                        <circle
-                          cx={RING_SIZE / 2}
-                          cy={RING_SIZE / 2}
-                          r={RING_R}
-                          fill="none"
-                          stroke={row.active ? "#fcd34d" : "#7dd3fc"}
-                          strokeWidth={2.5}
-                          strokeLinecap="round"
-                          strokeDasharray={`${ringDash} ${RING_C}`}
-                        />
-                      </svg>
-                      <div
-                        aria-hidden
-                        className="absolute inset-[5px] flex items-center justify-center text-[26px] leading-none"
-                      >
-                        {row.flag}
-                      </div>
+                      {row.flag}
                     </div>
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-baseline gap-1.5 whitespace-nowrap overflow-hidden">
-                        <span className="text-[15.5px] font-black tracking-[-0.015em] text-white truncate">
+                        <span className="text-[17px] font-black tracking-[-0.015em] text-white truncate">
                           {row.name}
                         </span>
                         {row.variantLabel ? (
-                          <span className="text-[10px] font-bold text-white/55 whitespace-nowrap">
+                          <span className="text-[12px] font-bold text-white/45 whitespace-nowrap">
                             · {row.variantLabel}
                           </span>
                         ) : null}
                       </div>
 
-                      {/* Stats row: streak · xp · CEFR */}
-                      <div className="mt-1 flex items-center gap-2.5">
+                      {/* Stats row: ⚡streak · ⭐xp · [CEFR] */}
+                      <div className="mt-1.5 flex items-center gap-3">
                         <span
-                          className="inline-flex items-center gap-[3px] text-[12px] font-black tracking-[-0.02em]"
+                          className="inline-flex items-center gap-1 text-[13px] font-black tracking-[-0.02em]"
                           style={{
-                            color: row.streak > 0 ? "#fb923c" : "rgba(255,255,255,0.45)",
+                            color: row.streak > 0 ? "#fb923c" : "rgba(255,255,255,0.4)",
                           }}
                         >
-                          <Flame size={11} />
+                          <Zap size={12} fill="currentColor" strokeWidth={0} />
                           {row.streak}
                         </span>
                         <span
-                          className="inline-flex items-center gap-[3px] text-[12px] font-black tracking-[-0.02em]"
-                          style={{ color: "#fcd34d" }}
+                          className="inline-flex items-center gap-1 text-[13px] font-black tracking-[-0.02em]"
+                          style={{
+                            color: row.xpTotal > 0 ? "#fcd34d" : "rgba(255,255,255,0.4)",
+                          }}
                         >
-                          <Zap size={11} />
+                          <Star size={12} fill="currentColor" strokeWidth={0} />
                           {row.xpTotal >= 1000
                             ? `${(row.xpTotal / 1000).toFixed(1)}k`
                             : row.xpTotal}
                         </span>
                         {row.level ? (
-                          <span className="inline-block rounded-md px-[7px] py-[2px] text-[9.5px] font-black tracking-wider text-sky-300 bg-sky-300/10">
+                          <span className="inline-block rounded-md px-2 py-[3px] text-[10px] font-black tracking-wider text-sky-300 bg-sky-300/12">
                             {row.level}
                           </span>
                         ) : null}
@@ -365,37 +332,35 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                     </div>
 
                     {isSwitching ? (
-                      <Loader2 size={16} className="text-white/70 animate-spin flex-shrink-0" />
+                      <Loader2 size={16} className="text-white/70 animate-spin shrink-0" />
                     ) : row.active ? (
-                      <span className="flex-shrink-0 rounded-full bg-lime-300 px-2.5 py-1 text-[9.5px] font-black tracking-[0.14em] text-[#0a2b56]">
+                      <span
+                        className="shrink-0 rounded-full px-3 py-1.5 text-[10px] font-black tracking-[0.14em]"
+                        style={{
+                          background: "#fcd34d",
+                          color: "#2a1a02",
+                        }}
+                      >
                         ACTIVE
                       </span>
                     ) : (
-                      <ChevronRight size={16} className="text-white/45 flex-shrink-0" />
+                      <ChevronRight size={18} className="text-white/45 shrink-0" />
                     )}
                   </button>
                 );
               })}
             </div>
 
-            <div className="mt-3 border-t border-white/10 px-4 pt-3 flex gap-2">
-              <button
-                type="button"
-                onClick={goToSeeAll}
-                disabled={Boolean(switchingTo)}
-                className="flex-1 rounded-[14px] border border-white/10 bg-white/[0.04] py-3 text-[12.5px] font-bold text-white/80 hover:bg-white/[0.07] disabled:opacity-50 inline-flex items-center justify-center gap-1.5"
-              >
-                <Settings size={13} />
-                See all
-              </button>
+            {/* Single "+ Add journey" full-width button at the bottom */}
+            <div className="mt-3 border-t border-white/10 px-[22px] pt-3">
               <button
                 type="button"
                 onClick={goToAddLanguage}
                 disabled={Boolean(switchingTo)}
-                className="flex-1 rounded-[14px] border border-sky-300/30 bg-sky-300/10 py-3 text-[12.5px] font-bold text-sky-300 hover:bg-sky-300/15 disabled:opacity-50 inline-flex items-center justify-center gap-1.5"
+                className="w-full rounded-[16px] border border-sky-300/20 bg-sky-300/[0.06] py-3.5 text-[15px] font-bold text-sky-300 hover:bg-sky-300/10 disabled:opacity-50 inline-flex items-center justify-center gap-2"
               >
-                <Plus size={13} />
-                Add language
+                <Plus size={16} strokeWidth={2.6} />
+                Add journey
               </button>
             </div>
           </motion.div>

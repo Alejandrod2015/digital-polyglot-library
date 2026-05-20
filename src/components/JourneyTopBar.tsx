@@ -1,7 +1,5 @@
 "use client";
 
-import { useUser } from "@clerk/nextjs";
-
 type Stats = {
   /** Energy / lightning units shown in the topbar (orange icon). */
   energy?: number;
@@ -23,6 +21,8 @@ type Props = {
   stats?: Stats;
   /** Called when the language pill is tapped (opens the LanguageSwitcher sheet). */
   onTapLanguage?: () => void;
+  /** Called when the stats group is tapped (opens the progress sheet). */
+  onTapStats?: () => void;
 };
 
 /**
@@ -31,8 +31,7 @@ type Props = {
  *
  * iPhone reference: the journey screen header (flag + IT + chevron · ⚡ 8 · 🏆 Lv 7 · ⭐ 1.4k).
  */
-export default function JourneyTopBar({ language, stats, onTapLanguage }: Props) {
-  const { user } = useUser();
+export default function JourneyTopBar({ language, stats, onTapLanguage, onTapStats }: Props) {
   const fmtNum = (n?: number) => {
     if (n == null) return "0";
     if (n >= 1000) return `${(n / 1000).toFixed(1)}k`;
@@ -53,7 +52,13 @@ export default function JourneyTopBar({ language, stats, onTapLanguage }: Props)
         <span className="text-[var(--muted)] text-sm">▾</span>
       </button>
 
-      <div className="inline-flex items-center gap-6 whitespace-nowrap font-black tabular-nums">
+      <button
+        type="button"
+        onClick={onTapStats}
+        disabled={!onTapStats}
+        aria-label="Open progress"
+        className="inline-flex items-center gap-6 whitespace-nowrap font-black tabular-nums rounded-full px-3 py-1.5 -mx-3 -my-1.5 hover:bg-white/[0.04] transition-colors disabled:cursor-default disabled:hover:bg-transparent"
+      >
         <span className="inline-flex items-center gap-2 text-[#fb923c] text-[17px]">
           <span className="text-lg leading-none">⚡</span>
           {fmtNum(stats?.energy ?? 0)}
@@ -66,7 +71,7 @@ export default function JourneyTopBar({ language, stats, onTapLanguage }: Props)
           <span className="text-lg leading-none">⭐</span>
           {fmtNum(stats?.xp ?? 0)}
         </span>
-      </div>
+      </button>
     </header>
   );
 }

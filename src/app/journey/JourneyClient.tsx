@@ -14,6 +14,7 @@ import type { JourneyDueReviewItem } from "@/lib/journeyProgress";
 import { JourneyLanguageHub } from "@/components/JourneyLanguageHub";
 import { TopicPreviewSheet } from "@/components/TopicPreviewSheet";
 import JourneyTopBar from "@/components/JourneyTopBar";
+import BottomSheet from "@/components/ui/BottomSheet";
 import JourneyTopicBanner from "@/components/JourneyTopicBanner";
 import JourneyStoryCard, { type StoryNodeState } from "@/components/JourneyStoryCard";
 
@@ -132,6 +133,8 @@ export default function JourneyClient({
     ctaDisabledLabel?: string;
   } | null;
   const [previewTopic, setPreviewTopic] = useState<PreviewState>(null);
+  const [languageSheetOpen, setLanguageSheetOpen] = useState(false);
+  const [statsSheetOpen, setStatsSheetOpen] = useState(false);
 
   const selectedTrack = useMemo(
     () => tracks.find((track) => track.id === selectedVariantId) ?? tracks[0] ?? null,
@@ -351,7 +354,8 @@ export default function JourneyClient({
       <JourneyTopBar
         language={language}
         stats={stats}
-        onTapLanguage={() => router.push("/settings#languages")}
+        onTapLanguage={() => setLanguageSheetOpen(true)}
+        onTapStats={() => setStatsSheetOpen(true)}
       />
 
       {tracks.length > 1 ? (
@@ -427,6 +431,137 @@ export default function JourneyClient({
         ctaHref={previewTopic?.ctaHref ?? null}
         ctaDisabledLabel={previewTopic?.ctaDisabledLabel ?? null}
       />
+
+      {/* Language picker sheet (tap on flag pill in top bar). Mirrors the
+          mobile LanguageSwitcher: lists every track with flag + label +
+          variant; tap switches the active track. */}
+      <BottomSheet
+        open={languageSheetOpen}
+        onClose={() => setLanguageSheetOpen(false)}
+        eyebrow="Switch journey"
+        title="Choose a language"
+        ariaLabel="Language switcher"
+      >
+        <ul className="flex flex-col gap-2 pb-6">
+          {tracks.map((track) => {
+            const pill = pillForTrack(track);
+            const isSelected = track.id === selectedTrack.id;
+            return (
+              <li key={track.id}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedVariantId(track.id);
+                    void trackJourneyMetric("journey_variant_selected", {
+                      variantId: track.id,
+                    });
+                    setLanguageSheetOpen(false);
+                  }}
+                  className={`flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-colors ${
+                    isSelected
+                      ? "border-[color:var(--color-gold)]/60 bg-[color:var(--color-gold)]/10"
+                      : "border-white/10 bg-white/[0.03] hover:bg-white/[0.06]"
+                  }`}
+                >
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/10 text-2xl">
+                    {pill.flag}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-[15px] font-extrabold text-white">
+                      {track.label}
+                    </span>
+                    <span className="block text-xs text-white/60">
+                      {pill.code} · {track.variant ?? track.id}
+                    </span>
+                  </span>
+                  {isSelected ? (
+                    <span className="text-[color:var(--color-gold)] text-xl leading-none">
+                      ✓
+                    </span>
+                  ) : null}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </BottomSheet>
+
+      {/* Stats sheet (tap on stats group in top bar). Mirrors the mobile
+          progress sheet: shows energy / level / xp with their meaning
+          and a link to the full /progress page. */}
+      <BottomSheet
+        open={statsSheetOpen}
+        onClose={() => setStatsSheetOpen(false)}
+        eyebrow="Your progress"
+        title="Today's stats"
+        ariaLabel="Progress overview"
+      >
+        <ul className="flex flex-col gap-2 pb-2">
+          <li className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#fb923c]/15 text-2xl">
+              ⚡
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-[15px] font-extrabold text-white">
+                Energy
+              </span>
+              <span className="block text-xs text-white/60">
+                XP earned today
+              </span>
+            </span>
+            <span className="text-[20px] font-black tabular-nums text-[#fb923c]">
+              {stats.energy}
+            </span>
+          </li>
+          <li className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[color:var(--color-gold)]/15 text-2xl">
+              🏆
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-[15px] font-extrabold text-white">
+                Level
+              </span>
+              <span className="block text-xs text-white/60">
+                Earn XP to level up
+              </span>
+            </span>
+            <span className="text-[20px] font-black tabular-nums text-[color:var(--color-gold)]">
+              Lv&nbsp;{stats.level}
+            </span>
+          </li>
+          <li className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[color:var(--color-cyan)]/15 text-2xl">
+              ⭐
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-[15px] font-extrabold text-white">
+                Total XP
+              </span>
+              <span className="block text-xs text-white/60">
+                Across all journeys
+              </span>
+            </span>
+            <span className="text-[20px] font-black tabular-nums text-[color:var(--color-cyan)]">
+              {stats.xp >= 1000 ? `${(stats.xp / 1000).toFixed(1)}k` : stats.xp}
+            </span>
+          </li>
+        </ul>
+        <div className="pb-6 pt-3">
+          <button
+            type="button"
+            onClick={() => {
+              setStatsSheetOpen(false);
+              router.push("/progress");
+            }}
+            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[color:var(--color-gold)] px-4 py-3 text-[15px] font-extrabold text-[#2a1a02] hover:opacity-90"
+          >
+            View full progress
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </BottomSheet>
     </div>
   );
 }

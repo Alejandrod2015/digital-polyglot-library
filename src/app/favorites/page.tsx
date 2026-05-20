@@ -3,6 +3,10 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
+import { ChevronDown, Play, Square } from 'lucide-react';
+import { getLanguageFlag } from '@/lib/languageFlags';
+import { getSpeechSynthesisLang } from '@/lib/practiceExercises';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { books } from '@/data/books';
 import { formatLanguageCode } from '@domain/displayFormat';
 import {
@@ -232,6 +236,35 @@ export default function FavoritesPage() {
   const [practiceScoresByKey, setPracticeScoresByKey] = useState<Record<string, ReviewScore>>({});
   const [revealedPracticeKeys, setRevealedPracticeKeys] = useState<string[]>([]);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
+  const [languageSwitcherOpen, setLanguageSwitcherOpen] = useState(false);
+  // Which favorite word is currently being read aloud (so its play button
+  // can flip to a "stop" icon). null when nothing is playing.
+  const [playingWordKey, setPlayingWordKey] = useState<string | null>(null);
+
+  // Pronounce a favorite via the Web Speech API. Prefer the example
+  // sentence if present (gives natural prosody); fall back to the word.
+  // Tapping the same word again stops the playback. Tapping a different
+  // word cancels the current utterance and starts the new one.
+  const playWord = (fav: FavoriteItem) => {
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+    const synth = window.speechSynthesis;
+    const key = `${fav.word}-${fav.language ?? ''}`;
+    // Toggle off if same word
+    if (playingWordKey === key) {
+      synth.cancel();
+      setPlayingWordKey(null);
+      return;
+    }
+    synth.cancel();
+    const text = fav.exampleSentence?.trim() || fav.word;
+    const utt = new SpeechSynthesisUtterance(text);
+    utt.lang = getSpeechSynthesisLang(fav.language);
+    utt.rate = 0.9;
+    utt.onend = () => setPlayingWordKey((cur) => (cur === key ? null : cur));
+    utt.onerror = () => setPlayingWordKey((cur) => (cur === key ? null : cur));
+    setPlayingWordKey(key);
+    synth.speak(utt);
+  };
   const onboardingPracticePrefs = useMemo<OnboardingPracticePrefs>(() => {
     const metadata = user?.publicMetadata ?? {};
     const interests = Array.isArray(metadata.interests)
@@ -392,30 +425,6 @@ export default function FavoritesPage() {
     () => sortPracticeItemsByOnboarding(favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now)), onboardingPracticePrefs, true),
     [favorites, now, onboardingPracticePrefs, srsMap]
   );
-  const dailyLoopSummary = useMemo(() => {
-    const preferredMinutes =
-      typeof onboardingPracticePrefs.dailyMinutes === 'number' && onboardingPracticePrefs.dailyMinutes > 0
-        ? onboardingPracticePrefs.dailyMinutes
-        : 5;
-
-    if (dueFavorites.length > 0) {
-      return {
-        title: 'Clear your due review first',
-        body: `${dueFavorites.length} saved ${dueFavorites.length === 1 ? 'word is' : 'words are'} ready for a fast ${preferredMinutes}-minute round.`,
-        primaryLabel: 'Practice due',
-        secondaryLabel: 'Back to Journey',
-        secondaryHref: '/journey',
-      };
-    }
-
-    return {
-      title: 'Grow the next review round',
-      body: `You are clear for now. Read one more story and save a few words to keep your ${preferredMinutes}-minute habit alive.`,
-      primaryLabel: 'Practice all',
-      secondaryLabel: 'Open Journey',
-      secondaryHref: '/journey',
-    };
-  }, [dueFavorites.length, onboardingPracticePrefs.dailyMinutes]);
   const currentPractice = practiceQueue[practiceIndex] ?? null;
   const currentPracticeIdentity = currentPractice ? getFavoriteIdentity(currentPractice) : null;
   const currentPracticeKey =
@@ -691,9 +700,88 @@ export default function FavoritesPage() {
     setPracticeIndex((idx) => Math.max(0, idx - 1));
   };
 
+  // ── iPhone-style mobile bits ──
+  const activeLanguageName = (() => {
+    const tl = user?.publicMetadata?.targetLanguages;
+    if (Array.isArray(tl) && typeof tl[0] === 'string') return tl[0] as string;
+    return null;
+  })();
+  const activeVariantKey =
+    typeof user?.publicMetadata?.preferredVariant === 'string'
+      ? (user.publicMetadata.preferredVariant as string)
+      : null;
+  const activeFlag = activeLanguageName ? getLanguageFlag(activeLanguageName, activeVariantKey) : '🌐';
+  const activeLangShort = activeLanguageName ? activeLanguageName.slice(0, 2).toUpperCase() : '??';
+  // "9 in journey": favorites that came from journey stories. We use the
+  // sourcePath as the marker — anything under /journey or with a storySlug
+  // counts as journey-sourced. Falls back to total favorites - dueFavorites.
+  const journeyFavoritesCount = favorites.filter((f) => Boolean(f.storySlug)).length;
+  const readyNowCount = dueFavorites.length;
+
   return (
-    <div className="p-6 sm:p-8 max-w-2xl mx-auto text-[var(--foreground)]">
-      <div className="mb-6 flex items-end justify-between gap-3">
+    <div className="p-4 sm:p-8 max-w-2xl mx-auto text-[var(--foreground)] pb-24">
+      {/* ── MOBILE HERO (iPhone-style) ── */}
+      <div className="sm:hidden mb-5">
+        <div className="flex items-center gap-4 mb-3">
+          <button
+            type="button"
+            onClick={() => setLanguageSwitcherOpen(true)}
+            className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 pl-1.5 pr-3 py-1.5 active:bg-white/[0.1] transition-colors"
+            aria-label="Switch language"
+          >
+            <span
+              className="rounded-full bg-black/30 grid place-items-center text-lg leading-none"
+              style={{ width: 28, height: 28 }}
+            >
+              {activeFlag}
+            </span>
+            <span className="text-[13px] font-extrabold text-white">{activeLangShort}</span>
+            <ChevronDown size={14} className="text-white/55" />
+          </button>
+          <h1 className="text-[28px] font-black tracking-tight text-white leading-none">Favorites</h1>
+        </div>
+        <p className="text-[13px] font-bold text-white/90">
+          {journeyFavoritesCount} in journey
+          <span className="text-white/35"> · </span>
+          {readyNowCount} ready now
+        </p>
+      </div>
+
+      {/* ── MOBILE TYPE FILTER (horizontal scroll pills) ── */}
+      {favorites.length > 0 ? (
+        <div className="sm:hidden -mx-4 px-4 mb-4 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+          <div className="flex gap-2 w-max">
+            <button
+              type="button"
+              onClick={() => setPracticeType('all')}
+              className={`rounded-full px-4 py-2 text-[13px] font-bold transition-colors shrink-0 ${
+                practiceType === 'all'
+                  ? 'bg-[var(--color-gold)] text-[#2a1a02]'
+                  : 'bg-white/[0.05] border border-white/10 text-white/85'
+              }`}
+            >
+              All types
+            </button>
+            {availablePracticeTypes.map((type) => (
+              <button
+                key={type}
+                type="button"
+                onClick={() => setPracticeType(type)}
+                className={`rounded-full px-4 py-2 text-[13px] font-bold transition-colors shrink-0 ${
+                  practiceType === type
+                    ? 'bg-[var(--color-gold)] text-[#2a1a02]'
+                    : 'bg-white/[0.05] border border-white/10 text-white/85'
+                }`}
+              >
+                {getVocabTypeLabel(type)} ({favoriteTypeCounts[type] ?? 0})
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {/* ── DESKTOP HERO (original) ── */}
+      <div className="hidden sm:flex mb-6 items-end justify-between gap-3">
         <div>
           <h1 className="text-3xl font-bold">Favorites</h1>
           <p className="text-sm text-[var(--muted)] mt-1">
@@ -755,29 +843,6 @@ export default function FavoritesPage() {
         ) : null}
       </div>
 
-      {favorites.length > 0 ? (
-        <div className="mb-6 rounded-[1.6rem] border border-[var(--card-border)] bg-[linear-gradient(180deg,#18304d_0%,#14243b_100%)] p-5 shadow-[0_18px_50px_rgba(6,17,38,0.18)]">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">Today&apos;s loop</p>
-          <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">{dailyLoopSummary.title}</h2>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">{dailyLoopSummary.body}</p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <button
-              type="button"
-              onClick={() => startPractice(dueFavorites.length > 0)}
-              className="inline-flex rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white hover:opacity-90"
-            >
-              {dailyLoopSummary.primaryLabel}
-            </button>
-            <Link
-              href={dailyLoopSummary.secondaryHref}
-              className="inline-flex rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              {dailyLoopSummary.secondaryLabel}
-            </Link>
-          </div>
-        </div>
-      ) : null}
-
       {practiceMode && currentPractice ? (
         <div className="mb-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 sm:p-5">
           <div className="mb-3 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--muted)]">
@@ -807,14 +872,6 @@ export default function FavoritesPage() {
                 <p className="text-sm text-[var(--muted)] mb-3 italic border-l-2 border-[var(--card-border)] pl-3">
                   {currentPractice.exampleSentence}
                 </p>
-              ) : null}
-              {currentPractice.sourcePath ? (
-                <a
-                  href={currentPractice.sourcePath}
-                  className="inline-flex mb-3 text-sm text-[var(--primary)] hover:opacity-85"
-                >
-                  Open story
-                </a>
               ) : null}
               {!favoriteIdentitySet.has(getFavoriteIdentity(currentPractice)) ? (
                 <div className="mb-3">
@@ -981,7 +1038,84 @@ export default function FavoritesPage() {
               </div>
             </div>
           ) : (
-            <ul className="space-y-4">
+            <>
+            {/* ── MOBILE CARDS (iPhone-style: word + type, segmented
+                progress, story context italic, definition, play button) ── */}
+            <ul className="sm:hidden space-y-3">
+              {sortedFavorites.map((fav) => {
+                const meta = srsMap[normalizeWord(fav.word)];
+                const streak = meta?.streak ?? fav.streak ?? 0;
+                // 5-segment progress bar. Each segment lights up per
+                // streak step (capped at 5). Empty segments are dimmed.
+                const segments = Array.from({ length: 5 }, (_, i) => i < Math.min(streak, 5));
+                const type = normalizeVocabType(fav.wordType, {
+                  word: fav.word,
+                  definition: fav.translation,
+                }) ?? 'other';
+                return (
+                  <li
+                    key={`m-${fav.word}`}
+                    className="relative rounded-2xl border border-white/8 bg-[#0c2342] pl-3 pr-3 py-3"
+                  >
+                    {/* gold left accent bar */}
+                    <span
+                      aria-hidden
+                      className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full bg-[var(--color-gold)]"
+                    />
+                    <div className="flex items-center gap-3">
+                      <div className="min-w-0 flex-1 pl-1">
+                        <div className="flex items-baseline gap-2">
+                          <p className="text-[22px] font-black leading-none text-white truncate">
+                            {fav.word}
+                          </p>
+                          <span className="text-[11px] font-bold text-white/45">
+                            {getVocabTypeLabel(type).toLowerCase()}
+                          </span>
+                        </div>
+                        <div className="mt-2 flex gap-1">
+                          {segments.map((on, i) => (
+                            <span
+                              key={i}
+                              className={`h-1 w-7 rounded-full ${on ? 'bg-[var(--color-gold)]' : 'bg-white/12'}`}
+                            />
+                          ))}
+                        </div>
+                        {fav.storyTitle ? (
+                          <p className="mt-2 text-[12px] italic text-white/55 truncate">
+                            {fav.storyTitle}
+                          </p>
+                        ) : null}
+                        <p className="mt-0.5 text-[14px] font-bold text-white leading-snug line-clamp-2">
+                          {fav.translation}
+                        </p>
+                      </div>
+                      {(() => {
+                        const key = `${fav.word}-${fav.language ?? ''}`;
+                        const playing = playingWordKey === key;
+                        return (
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              playWord(fav);
+                            }}
+                            aria-label={playing ? `Stop ${fav.word}` : `Pronounce ${fav.word}`}
+                            className="shrink-0 w-11 h-11 rounded-full bg-transparent border-2 border-[var(--color-gold)] grid place-items-center text-[var(--color-gold)] hover:bg-[var(--color-gold)]/10 transition-colors"
+                          >
+                            {playing ? (
+                              <Square size={14} fill="currentColor" />
+                            ) : (
+                              <Play size={16} fill="currentColor" />
+                            )}
+                          </button>
+                        );
+                      })()}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            <ul className="hidden sm:block space-y-4">
               {sortedFavorites.map((fav) => {
                 const meta = srsMap[normalizeWord(fav.word)];
                 const due = isDue(meta, now);
@@ -1031,15 +1165,21 @@ export default function FavoritesPage() {
                         </p>
                       ) : null}
                       <div className="mt-3 flex items-center gap-2">
-                      {fav.sourcePath ? (
-                        <a
-                          href={fav.sourcePath}
-                          className="text-sm text-[var(--primary)] hover:opacity-85 transition-colors"
-                        >
-                          Open story
-                        </a>
-                      ) : null}
-                    </div>
+                        {(() => {
+                          const key = `${fav.word}-${fav.language ?? ''}`;
+                          const playing = playingWordKey === key;
+                          return (
+                            <button
+                              type="button"
+                              onClick={() => playWord(fav)}
+                              className="inline-flex items-center gap-1.5 text-sm text-[var(--primary)] hover:opacity-85 transition-colors"
+                            >
+                              {playing ? <Square size={14} fill="currentColor" /> : <Play size={14} fill="currentColor" />}
+                              {playing ? 'Stop' : 'Pronounce'}
+                            </button>
+                          );
+                        })()}
+                      </div>
                     </div>
                     <button
                       onClick={() => removeFavorite(fav.word)}
@@ -1066,9 +1206,14 @@ export default function FavoritesPage() {
                 </li>
               )})}
             </ul>
+            </>
           )}
         </div>
       </div>
+      <LanguageSwitcher
+        open={languageSwitcherOpen}
+        onClose={() => setLanguageSwitcherOpen(false)}
+      />
     </div>
   );
 }
