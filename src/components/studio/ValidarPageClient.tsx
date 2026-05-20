@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import ValidarResultView from "./ValidarResultView";
 
 type AgentRun = {
   id: string;
@@ -49,18 +50,6 @@ type JourneyOption = {
 };
 
 type OptionsResponse = { journeys: JourneyOption[] };
-
-const STATUS_COLOR: Record<CheckStatus, string> = {
-  pass: "bg-emerald-500/15 text-emerald-300 border-emerald-500/40",
-  warn: "bg-amber-500/15 text-amber-300 border-amber-500/40",
-  fail: "bg-rose-500/15 text-rose-300 border-rose-500/40",
-};
-
-const STATUS_BADGE: Record<CheckStatus, string> = {
-  pass: "OK",
-  warn: "⚠",
-  fail: "✗",
-};
 
 export default function ValidarPageClient() {
   const [options, setOptions] = useState<JourneyOption[] | null>(null);
@@ -295,58 +284,14 @@ export default function ValidarPageClient() {
       )}
 
       {result && (
-        <div className="space-y-3">
-          <div className="flex flex-wrap items-center gap-4 rounded-md border border-neutral-700 bg-neutral-900/40 px-4 py-3 text-sm">
-            <span
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                result.ok
-                  ? "bg-emerald-500/20 text-emerald-300"
-                  : "bg-rose-500/20 text-rose-300"
-              }`}
-            >
-              {result.ok ? "LISTA PARA SUBIR" : "NO LISTA"}
-            </span>
-            <span className="text-neutral-300">
-              {result.summary.pass} OK · {result.summary.warn} avisos ·{" "}
-              {result.summary.fail} fallos
-            </span>
-            {result.parsed?.title && (
-              <span className="text-neutral-400">
-                <span className="text-neutral-500">Historia:</span>{" "}
-                {result.parsed.title}{" "}
-                {result.parsed.arcType && (
-                  <span className="ml-1 rounded bg-neutral-800 px-1.5 py-0.5 text-xs">
-                    {result.parsed.arcType}
-                  </span>
-                )}
-              </span>
-            )}
-            {typeof result.existingCount === "number" && result.existingCount > 0 && (
-              <span className="text-neutral-500">
-                Comparado contra {result.existingCount} historia(s) en el tema
-              </span>
-            )}
-          </div>
-
-          <ul className="space-y-1.5">
-            {result.checks.map((c) => (
-              <li
-                key={c.id}
-                className={`flex items-start gap-3 rounded-md border px-3 py-2 text-sm ${STATUS_COLOR[c.status]}`}
-              >
-                <span className="font-mono text-xs font-semibold leading-5">
-                  {STATUS_BADGE[c.status]}
-                </span>
-                <div className="flex-1">
-                  <div className="font-medium">{c.label}</div>
-                  {c.detail && (
-                    <div className="mt-0.5 text-xs opacity-80">{c.detail}</div>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ValidarResultView
+          ok={result.ok}
+          checks={result.checks}
+          summary={result.summary}
+          parsed={result.parsed}
+          existingCount={result.existingCount}
+          rawInput={raw}
+        />
       )}
 
       {/* ── Run history (collapsible) ── */}
@@ -392,7 +337,7 @@ export default function ValidarPageClient() {
                 aquí.
               </p>
             ) : (
-              <ul className="space-y-1">
+              <ul className="space-y-1.5">
                 {runHistory.map((run) => {
                   const isExpanded = expandedRun === run.id;
                   const input = (run.input ?? {}) as {
@@ -400,20 +345,36 @@ export default function ValidarPageClient() {
                     level?: string | null;
                     language?: string | null;
                     existingCount?: number;
+                    raw?: string;
+                    payload?: { title?: unknown } | null;
                   };
                   const output = (run.output ?? null) as {
                     ok?: boolean;
                     summary?: { pass: number; warn: number; fail: number };
+                    checks?: Check[];
+                    parsed?: { title?: string; arcType?: string } | null;
                   } | null;
                   const created = new Date(run.createdAt).toLocaleString();
-                  const statusColor =
-                    run.status === "completed"
-                      ? "text-emerald-300"
-                      : run.status === "needs_review"
-                        ? "text-amber-300"
-                        : run.status === "failed"
-                          ? "text-rose-300"
-                          : "text-neutral-400";
+                  // Resuelve un título legible incluso si el JSON falló parseo.
+                  const payloadTitle =
+                    input.payload && typeof input.payload.title === "string"
+                      ? (input.payload.title as string)
+                      : null;
+                  const rawTitleMatch =
+                    typeof input.raw === "string"
+                      ? input.raw.match(/"title"\s*:\s*"([^"]+)"/)
+                      : null;
+                  const rawTitle = rawTitleMatch ? rawTitleMatch[1] : null;
+                  const displayTitle =
+                    output?.parsed?.title ?? payloadTitle ?? rawTitle ?? null;
+                  const titleIsFallback = !output?.parsed?.title && !!displayTitle;
+                  // Friendly status label + colour.
+                  const statusInfo =
+                    run.status === "failed" || run.errorMessage
+                      ? { label: "Falló", color: "bg-rose-500/20 text-rose-300" }
+                      : output?.ok
+                        ? { label: "Lista para subir", color: "bg-emerald-500/20 text-emerald-300" }
+                        : { label: "No lista", color: "bg-amber-500/20 text-amber-300" };
                   return (
                     <li
                       key={run.id}
@@ -422,40 +383,83 @@ export default function ValidarPageClient() {
                       <button
                         type="button"
                         onClick={() => setExpandedRun(isExpanded ? null : run.id)}
-                        className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-xs"
+                        className="flex w-full items-start justify-between gap-3 px-3 py-2.5 text-left text-xs hover:bg-neutral-900/40"
                       >
-                        <span className="flex flex-1 items-center gap-3 truncate">
-                          <span className={`font-mono ${statusColor}`}>
-                            {run.status}
+                        <span className="flex flex-1 flex-col gap-1 min-w-0">
+                          <span className="flex flex-wrap items-center gap-2">
+                            <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${statusInfo.color}`}>
+                              {statusInfo.label}
+                            </span>
+                            {displayTitle ? (
+                              <span
+                                className={`truncate font-medium ${titleIsFallback ? "text-amber-200" : "text-neutral-200"}`}
+                                title={
+                                  titleIsFallback
+                                    ? "Título extraído del texto crudo (JSON con errores)"
+                                    : undefined
+                                }
+                              >
+                                {displayTitle}
+                              </span>
+                            ) : (
+                              <span className="text-neutral-500 italic">Sin título</span>
+                            )}
+                            {output?.parsed?.arcType && (
+                              <span className="rounded bg-neutral-800 px-1.5 py-0.5 text-[10px] text-neutral-300">
+                                {output.parsed.arcType}
+                              </span>
+                            )}
                           </span>
-                          {output?.summary && (
-                            <span className="text-neutral-400">
-                              {output.summary.pass} OK · {output.summary.warn}{" "}
-                              avisos · {output.summary.fail} fallos
-                            </span>
-                          )}
-                          {input.topic && (
-                            <span className="truncate text-neutral-500">
-                              {input.level?.toUpperCase()} · {input.topic}
-                            </span>
-                          )}
+                          <span className="flex flex-wrap items-center gap-2 text-neutral-400">
+                            {output?.summary && (
+                              <span>
+                                {output.summary.fail > 0
+                                  ? `${output.summary.fail} ${output.summary.fail === 1 ? "problema" : "problemas"}`
+                                  : output.summary.warn > 0
+                                    ? `${output.summary.warn} aviso${output.summary.warn === 1 ? "" : "s"}`
+                                    : "todo OK"}
+                              </span>
+                            )}
+                            {input.topic && (
+                              <span className="truncate text-neutral-500">
+                                · {input.level?.toUpperCase()} / {input.topic}
+                              </span>
+                            )}
+                          </span>
                         </span>
-                        <span className="shrink-0 text-neutral-500">{created}</span>
+                        <span className="shrink-0 text-neutral-500 text-[11px]">{created}</span>
                       </button>
                       {isExpanded && (
-                        <div className="border-t border-neutral-800 px-3 py-2 text-[11px]">
-                          {run.errorMessage && (
-                            <p className="mb-2 text-rose-300">
-                              Error: {run.errorMessage}
-                            </p>
+                        <div className="border-t border-neutral-800 px-3 py-3">
+                          {output?.checks && output.checks.length > 0 ? (
+                            <ValidarResultView
+                              ok={output?.ok ?? false}
+                              checks={output.checks}
+                              summary={
+                                output?.summary ?? { pass: 0, warn: 0, fail: 0 }
+                              }
+                              parsed={output?.parsed ?? null}
+                              status={run.status}
+                              meta={{
+                                topic: input.topic ?? null,
+                                level: input.level ?? null,
+                                createdAt: run.createdAt,
+                              }}
+                              errorMessage={run.errorMessage}
+                              rawInput={input.raw ?? null}
+                            />
+                          ) : (
+                            <>
+                              {run.errorMessage && (
+                                <div className="rounded-md border border-rose-500/40 bg-rose-500/10 px-3 py-2 text-xs text-rose-200">
+                                  <span className="font-semibold">Error técnico:</span> {run.errorMessage}
+                                </div>
+                              )}
+                              <p className="mt-2 text-[11px] text-neutral-500 italic">
+                                No hay detalle de checks para esta corrida.
+                              </p>
+                            </>
                           )}
-                          <pre className="max-h-64 overflow-auto whitespace-pre-wrap font-mono text-[11px] text-neutral-400">
-                            {JSON.stringify(
-                              { input: run.input, output: run.output },
-                              null,
-                              2
-                            )}
-                          </pre>
                         </div>
                       )}
                     </li>
