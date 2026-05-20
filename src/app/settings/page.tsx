@@ -6,7 +6,7 @@ import { useUser } from "@clerk/nextjs";
 import { Bell, Flame, Sparkles, Trophy } from "lucide-react";
 import { getCookieConsentKey } from "@/components/CookieConsentBanner";
 import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel } from "@/lib/languageVariant";
-import { REMINDER_HOUR_OPTIONS, formatReminderHour } from "@/lib/reminders";
+import { REMINDER_HOUR_OPTIONS, REMINDER_MINUTE_OPTIONS, formatReminderHour } from "@/lib/reminders";
 
 type LanguageOption = { code: string; name: string };
 type Plan = "free" | "basic" | "premium" | "polyglot" | "owner" | undefined;
@@ -146,6 +146,8 @@ export default function SettingsPage() {
   const [persistedRemindersEnabled, setPersistedRemindersEnabled] = useState(false);
   const [reminderHour, setReminderHour] = useState<number | "">("");
   const [persistedReminderHour, setPersistedReminderHour] = useState<number | "">("");
+  const [reminderMinute, setReminderMinute] = useState<number>(0);
+  const [persistedReminderMinute, setPersistedReminderMinute] = useState<number>(0);
   const [status, setStatus] = useState<SaveStatus>("idle");
   const [hint, setHint] = useState("");
   const [themePref, setThemePref] = useState<ThemePref>("system");
@@ -191,7 +193,8 @@ export default function SettingsPage() {
       preferredRegion !== persistedPreferredRegion ||
       preferredVariant !== persistedPreferredVariant ||
       remindersEnabled !== persistedRemindersEnabled ||
-      reminderHour !== persistedReminderHour,
+      reminderHour !== persistedReminderHour ||
+      reminderMinute !== persistedReminderMinute,
     [
       selected,
       persisted,
@@ -207,6 +210,8 @@ export default function SettingsPage() {
       persistedRemindersEnabled,
       reminderHour,
       persistedReminderHour,
+      reminderMinute,
+      persistedReminderMinute,
     ]
   );
 
@@ -228,6 +233,8 @@ export default function SettingsPage() {
     const currentRemindersEnabled = user?.publicMetadata?.remindersEnabled === true;
     const currentReminderHour =
       typeof user?.publicMetadata?.reminderHour === "number" ? user.publicMetadata.reminderHour : "";
+    const currentReminderMinute =
+      typeof user?.publicMetadata?.reminderMinute === "number" ? user.publicMetadata.reminderMinute : 0;
     setSelected(current);
     setPersisted(current);
     setInterests(currentInterests);
@@ -242,6 +249,8 @@ export default function SettingsPage() {
     setPersistedRemindersEnabled(currentRemindersEnabled);
     setReminderHour(currentReminderHour);
     setPersistedReminderHour(currentReminderHour);
+    setReminderMinute(currentReminderMinute);
+    setPersistedReminderMinute(currentReminderMinute);
     setStatus("idle");
     setHint("");
   }, [isLoaded, user]);
@@ -325,6 +334,7 @@ export default function SettingsPage() {
           preferredVariant: preferredVariant || null,
           remindersEnabled,
           reminderHour: remindersEnabled && typeof reminderHour === "number" ? reminderHour : null,
+          reminderMinute: remindersEnabled && typeof reminderHour === "number" ? reminderMinute : null,
         }),
       });
       if (!res.ok) throw new Error(`Error ${res.status}`);
@@ -345,6 +355,7 @@ export default function SettingsPage() {
         typeof record?.preferredVariant === "string" ? record.preferredVariant : "";
       const serverRemindersEnabled = record?.remindersEnabled === true;
       const serverReminderHour = typeof record?.reminderHour === "number" ? record.reminderHour : "";
+      const serverReminderMinute = typeof record?.reminderMinute === "number" ? record.reminderMinute : 0;
       setSelected(serverTL);
       setPersisted(serverTL);
       setInterests(serverInterests);
@@ -359,6 +370,8 @@ export default function SettingsPage() {
       setPersistedRemindersEnabled(serverRemindersEnabled);
       setReminderHour(serverReminderHour);
       setPersistedReminderHour(serverReminderHour);
+      setReminderMinute(serverReminderMinute);
+      setPersistedReminderMinute(serverReminderMinute);
       setStatus("saved");
       await user?.reload();
     } catch (err) {
@@ -775,6 +788,24 @@ export default function SettingsPage() {
                   }`}
                 >
                   {formatReminderHour(hour)}
+                </button>
+              ))}
+            </div>
+            <h3 className="mb-3 mt-4 text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Minute</h3>
+            <div className="flex flex-wrap gap-2">
+              {REMINDER_MINUTE_OPTIONS.map((minute) => (
+                <button
+                  key={minute}
+                  type="button"
+                  onClick={() => setReminderMinute(minute)}
+                  disabled={typeof reminderHour !== "number"}
+                  className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${
+                    reminderMinute === minute && typeof reminderHour === "number"
+                      ? "bg-[var(--primary)] border-[var(--primary)] text-white"
+                      : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
+                  }`}
+                >
+                  :{minute.toString().padStart(2, "0")}
                 </button>
               ))}
             </div>

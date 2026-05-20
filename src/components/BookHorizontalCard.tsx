@@ -12,12 +12,19 @@ function stripHtml(input?: string): string {
   return (input ?? "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 }
 
-function excerpt(text?: string, max = 132): string {
+function excerpt(text?: string, max = 160): string {
   const clean = stripHtml(text);
   if (!clean) return "";
   if (clean.length <= max) return clean;
   return `${clean.slice(0, max).trimEnd()}...`;
 }
+
+export type BookStat = {
+  /** Big bold number (e.g. "20", "~65 min", "7/20"). */
+  value: string | number;
+  /** Lowercase suffix label (e.g. "stories", "min", "done"). */
+  label?: string;
+};
 
 type BookHorizontalCardProps = {
   title: string;
@@ -25,7 +32,9 @@ type BookHorizontalCardProps = {
   language?: string;
   variant?: string;
   region?: string;
-  meta?: string;
+  /** Inline stats row "20 stories · ~65 min · 7/20 done". */
+  stats?: BookStat[];
+  /** Legacy single-line stats string. Rendered when `stats` is empty. */
   statsLine?: string;
   topicsLine?: string;
   level?: string;
@@ -34,13 +43,23 @@ type BookHorizontalCardProps = {
   footer?: ReactNode;
 };
 
+/**
+ * Card spec from handoff v2 §6:
+ *   - padding 20px
+ *   - grid 122px 1fr, gap 20px, align-items center, min-height 222px
+ *   - cover: aspect 2/3, radius 10px, heavy box-shadow
+ *   - title 18px / 900 / -0.015em
+ *   - stats inline "20 stories · ~65 min · 7/20 done" — strongs are foreground 900,
+ *     labels are muted
+ *   - footer slot for "Start book" + "+ Library" CTAs (rendered by caller)
+ */
 export default function BookHorizontalCard({
   title,
   cover,
   language,
   variant,
   region,
-  meta,
+  stats,
   statsLine,
   topicsLine,
   level,
@@ -49,37 +68,51 @@ export default function BookHorizontalCard({
   footer,
 }: BookHorizontalCardProps) {
   return (
-    <div className="flex flex-col h-full rounded-2xl overflow-hidden border border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] hover:shadow-md transition-all duration-200">
+    <div className="flex min-h-[222px] items-center gap-5 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 transition-all duration-150 hover:-translate-y-0.5 hover:bg-[var(--card-bg-hover)]">
       <Link
         href={href}
-        className="flex items-start gap-2.5 w-full p-4 h-full min-h-[168px] sm:min-h-[196px] md:items-center md:gap-5 md:p-5 md:min-h-[230px]"
+        aria-label={title}
+        className="block w-[122px] shrink-0 shadow-[0_14px_28px_-10px_rgba(0,0,0,0.55),0_4px_10px_-4px_rgba(0,0,0,0.4)]"
       >
-        <div className="w-[84px] sm:w-[106px] md:w-[34%] md:max-w-[122px] flex-shrink-0">
-          <Cover src={cover ?? "/covers/default.jpg"} alt={title} />
-        </div>
-
-        <div className="flex flex-col justify-start text-left flex-1 text-[var(--foreground)] min-w-0">
-          <div className="mb-1 md:mb-2 flex flex-wrap items-center gap-2">
-            <LevelBadge level={level} />
-            <LanguageBadge language={language} />
-            <VariantBadge variant={variant} />
-            <RegionBadge region={region} />
-          </div>
-          <p className="font-semibold text-[1.05rem] leading-tight mb-1.5 md:mb-2 line-clamp-3 md:line-clamp-2">
-            {title}
-          </p>
-          {meta ? <p className="text-sm text-[var(--muted)]">{meta}</p> : null}
-          {statsLine ? <p className="text-xs text-[var(--muted)] mt-1">{statsLine}</p> : null}
-          {topicsLine ? <p className="text-xs text-[var(--muted)] mt-1 line-clamp-1">{topicsLine}</p> : null}
-          {description ? (
-            <p className="text-sm text-[var(--muted)] mt-1.5 line-clamp-1 md:mt-2 md:line-clamp-3">
-              {excerpt(description, 132)}
-            </p>
-          ) : null}
-        </div>
+        <Cover src={cover ?? "/covers/default.jpg"} alt={title} className="w-[122px]" />
       </Link>
 
-      {footer ? <div className="border-t border-[var(--card-border)] px-3 py-2">{footer}</div> : null}
+      <div className="flex min-w-0 flex-col gap-2 text-[var(--foreground)]">
+        <div className="flex flex-wrap items-center gap-1.5">
+          <LevelBadge level={level} />
+          <LanguageBadge language={language} />
+          <VariantBadge variant={variant} />
+          <RegionBadge region={region} />
+        </div>
+        <Link
+          href={href}
+          className="text-[18px] font-black leading-[1.2] tracking-[-0.015em] text-[var(--foreground)] line-clamp-2 hover:underline"
+          style={{ textWrap: "balance" }}
+        >
+          {title}
+        </Link>
+        {stats && stats.length > 0 ? (
+          <div className="flex flex-wrap gap-4 tabular-nums text-[12.5px] font-bold text-[var(--muted)]">
+            {stats.map((stat, index) => (
+              <span key={index} className="inline-flex items-baseline gap-1 whitespace-nowrap">
+                <strong className="font-black text-[var(--foreground)]">{stat.value}</strong>
+                {stat.label ? <span>{stat.label}</span> : null}
+              </span>
+            ))}
+          </div>
+        ) : statsLine ? (
+          <p className="text-xs text-[var(--muted)]">{statsLine}</p>
+        ) : null}
+        {topicsLine ? (
+          <p className="line-clamp-1 text-[12.5px] font-bold text-[var(--muted)]">{topicsLine}</p>
+        ) : null}
+        {description ? (
+          <p className="line-clamp-2 text-[13.5px] font-semibold leading-[1.5] text-[var(--muted)]">
+            {excerpt(description, 160)}
+          </p>
+        ) : null}
+        {footer ? <div className="mt-1 flex items-center gap-2.5">{footer}</div> : null}
+      </div>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import {
   validateGeneratedStory,
   type ExistingStorySummary,
 } from "@/lib/validateGeneratedStory";
+import { persistAgentRun } from "@/lib/agentPersistence";
 
 type ValidateBody = {
   raw?: string;
@@ -86,6 +87,8 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  const startedAt = new Date().toISOString();
+
   try {
     const existing = await loadExistingStories(body.journeyId, body.level, body.topic);
     const result = validateGeneratedStory(
@@ -97,6 +100,36 @@ export async function POST(req: NextRequest) {
         existing,
       }
     );
+
+    // Persist the run so /studio/validar can render a collapsible
+    // history pane the same way QA / Planner / Content do.
+    // Best-effort: a DB failure must not break the validation
+    // response, so we swallow errors and just log.
+    void persistAgentRun({
+      agentKind: "validar",
+      status: result.ok ? "completed" : "needs_review",
+      input: {
+        raw: typeof input === "string" ? input : undefined,
+        payload: typeof input === "string" ? undefined : (input as Record<string, unknown>),
+        journeyId: body.journeyId ?? null,
+        level: body.level ?? null,
+        topic: body.topic ?? null,
+        language: body.language ?? null,
+        existingCount: existing.length,
+      },
+      output: {
+        ok: result.ok,
+        checks: result.checks,
+        summary: result.summary,
+        parsed: result.parsed,
+      } as unknown as Record<string, unknown>,
+      toolsUsed: [],
+      startedAt,
+      completedAt: new Date().toISOString(),
+    }).catch((err) => {
+      console.error("[studio/validar] persistAgentRun failed", err);
+    });
+
     return NextResponse.json({
       ok: result.ok,
       checks: result.checks,
@@ -106,6 +139,25 @@ export async function POST(req: NextRequest) {
     });
   } catch (error) {
     console.error("[studio/validar] failed", error);
+    void persistAgentRun({
+      agentKind: "validar",
+      status: "failed",
+      input: {
+        raw: typeof input === "string" ? input : undefined,
+        payload: typeof input === "string" ? undefined : (input as Record<string, unknown>),
+        journeyId: body.journeyId ?? null,
+        level: body.level ?? null,
+        topic: body.topic ?? null,
+        language: body.language ?? null,
+      },
+      output: null,
+      errorMessage: error instanceof Error ? error.message : "Validation failed",
+      toolsUsed: [],
+      startedAt,
+      completedAt: new Date().toISOString(),
+    }).catch((err) => {
+      console.error("[studio/validar] persistAgentRun (failure) failed", err);
+    });
     return NextResponse.json({ error: "Validation failed" }, { status: 500 });
   }
 }

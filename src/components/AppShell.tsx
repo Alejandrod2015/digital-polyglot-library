@@ -14,6 +14,8 @@ import ThemeController from "@/components/ThemeController";
 import GA4Tracker from "@/components/GA4Tracker";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import ServiceWorkerBootstrap from "@/components/ServiceWorkerBootstrap";
+import { OfflineIndicator } from "@/components/OfflineIndicator";
+import { StreakCelebration } from "@/components/StreakCelebration";
 
 type AppShellProps = {
   children: React.ReactNode;
@@ -74,6 +76,8 @@ export default function AppShell({
         <ThemeController />
         <ServiceWorkerBootstrap currentVersion={currentVersion} />
         <BackNavigationHandler />
+        <OfflineIndicator />
+        <StreakCelebration />
       </>
 
       <Suspense fallback={null}>

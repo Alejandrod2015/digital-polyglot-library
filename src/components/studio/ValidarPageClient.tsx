@@ -2,6 +2,16 @@
 
 import { useEffect, useMemo, useState } from "react";
 
+type AgentRun = {
+  id: string;
+  agentKind: string;
+  status: string;
+  input: unknown;
+  output: unknown;
+  errorMessage: string | null;
+  createdAt: string;
+};
+
 type CheckStatus = "pass" | "fail" | "warn";
 
 type Check = {
@@ -65,6 +75,33 @@ export default function ValidarPageClient() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Run history (same pattern as QAClient / PlannerClient).
+  const [runHistory, setRunHistory] = useState<AgentRun[]>([]);
+  const [historyLoading, setHistoryLoading] = useState(true);
+  const [historyError, setHistoryError] = useState<string | null>(null);
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [expandedRun, setExpandedRun] = useState<string | null>(null);
+
+  async function loadRunHistory() {
+    try {
+      const res = await fetch("/api/agents/runs?kind=validar&limit=20");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = (await res.json()) as { runs: AgentRun[] };
+      setRunHistory(data.runs);
+      setHistoryError(null);
+    } catch (err) {
+      setHistoryError(
+        err instanceof Error ? err.message : "No se pudo cargar el historial de ejecuciones."
+      );
+    } finally {
+      setHistoryLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    void loadRunHistory();
+  }, []);
+
   // Load options on mount
   useEffect(() => {
     let cancelled = false;
@@ -126,6 +163,8 @@ export default function ValidarPageClient() {
       }
       const json = (await res.json()) as ValidateResponse;
       setResult(json);
+      setHistoryLoading(true);
+      await loadRunHistory();
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
     } finally {
@@ -309,6 +348,124 @@ export default function ValidarPageClient() {
           </ul>
         </div>
       )}
+
+      {/* ── Run history (collapsible) ── */}
+      <div className="rounded-md border border-neutral-700 bg-neutral-900/40">
+        <div
+          onClick={() => setHistoryOpen(!historyOpen)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setHistoryOpen(!historyOpen);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          className="flex cursor-pointer items-center justify-between px-4 py-2.5 text-sm text-neutral-200 hover:bg-neutral-800/40"
+        >
+          <span>
+            Historial de validaciones{" "}
+            <span className="text-neutral-500">
+              ({historyLoading ? "…" : runHistory.length})
+            </span>
+          </span>
+          <span
+            className="text-neutral-400"
+            style={{
+              fontSize: 12,
+              transform: historyOpen ? "rotate(180deg)" : "none",
+              transition: "transform 120ms",
+            }}
+          >
+            ▾
+          </span>
+        </div>
+        {historyOpen && (
+          <div className="border-t border-neutral-800 px-3 py-3">
+            {historyLoading ? (
+              <p className="px-1 text-xs text-neutral-500">Cargando…</p>
+            ) : historyError ? (
+              <p className="px-1 text-xs text-rose-400">{historyError}</p>
+            ) : runHistory.length === 0 ? (
+              <p className="px-1 text-xs text-neutral-500">
+                Aún no hay validaciones guardadas. Cada validación queda registrada
+                aquí.
+              </p>
+            ) : (
+              <ul className="space-y-1">
+                {runHistory.map((run) => {
+                  const isExpanded = expandedRun === run.id;
+                  const input = (run.input ?? {}) as {
+                    topic?: string | null;
+                    level?: string | null;
+                    language?: string | null;
+                    existingCount?: number;
+                  };
+                  const output = (run.output ?? null) as {
+                    ok?: boolean;
+                    summary?: { pass: number; warn: number; fail: number };
+                  } | null;
+                  const created = new Date(run.createdAt).toLocaleString();
+                  const statusColor =
+                    run.status === "completed"
+                      ? "text-emerald-300"
+                      : run.status === "needs_review"
+                        ? "text-amber-300"
+                        : run.status === "failed"
+                          ? "text-rose-300"
+                          : "text-neutral-400";
+                  return (
+                    <li
+                      key={run.id}
+                      className="rounded-md border border-neutral-800 bg-neutral-950/40"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setExpandedRun(isExpanded ? null : run.id)}
+                        className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-xs"
+                      >
+                        <span className="flex flex-1 items-center gap-3 truncate">
+                          <span className={`font-mono ${statusColor}`}>
+                            {run.status}
+                          </span>
+                          {output?.summary && (
+                            <span className="text-neutral-400">
+                              {output.summary.pass} OK · {output.summary.warn}{" "}
+                              avisos · {output.summary.fail} fallos
+                            </span>
+                          )}
+                          {input.topic && (
+                            <span className="truncate text-neutral-500">
+                              {input.level?.toUpperCase()} · {input.topic}
+                            </span>
+                          )}
+                        </span>
+                        <span className="shrink-0 text-neutral-500">{created}</span>
+                      </button>
+                      {isExpanded && (
+                        <div className="border-t border-neutral-800 px-3 py-2 text-[11px]">
+                          {run.errorMessage && (
+                            <p className="mb-2 text-rose-300">
+                              Error: {run.errorMessage}
+                            </p>
+                          )}
+                          <pre className="max-h-64 overflow-auto whitespace-pre-wrap font-mono text-[11px] text-neutral-400">
+                            {JSON.stringify(
+                              { input: run.input, output: run.output },
+                              null,
+                              2
+                            )}
+                          </pre>
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

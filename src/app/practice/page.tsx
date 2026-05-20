@@ -37,6 +37,9 @@ import {
   type OnboardingPracticePrefs,
 } from "@/lib/onboarding";
 import { isStandaloneSourcePath } from "@/lib/storySource";
+import { PracticeExitConfirm } from "@/components/PracticeExitConfirm";
+import { PracticeCountdown } from "@/components/PracticeCountdown";
+import { Confetti } from "@/components/Confetti";
 
 type LoadState = "loading" | "ready" | "error";
 type StoryAudioData = {
@@ -358,6 +361,8 @@ export default function PracticePage() {
   const [revealedIds, setRevealedIds] = useState<string[]>([]);
   const [score, setScore] = useState(0);
   const [sessionComplete, setSessionComplete] = useState(false);
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
+  const [pendingCountdownMode, setPendingCountdownMode] = useState<PracticeMode | null>(null);
   const [streak, setStreak] = useState(0);
   const [lastResult, setLastResult] = useState<"correct" | "wrong" | null>(null);
   const [playingClipId, setPlayingClipId] = useState<string | null>(null);
@@ -400,6 +405,7 @@ export default function PracticePage() {
   const [checkpointToken, setCheckpointToken] = useState<string | null>(null);
   const [checkpointResponses, setCheckpointResponses] = useState<Record<string, string>>({});
   const [journeyReviewMeta, setJourneyReviewMeta] = useState<JourneyPracticeSource["review"]>(null);
+  const [practiceStreakDays, setPracticeStreakDays] = useState<number>(0);
   const practiceStartTrackedRef = useRef(false);
   const practiceCompletionTrackedRef = useRef(false);
   const autoOpenedModeRef = useRef<string | null>(null);
@@ -702,6 +708,7 @@ export default function PracticePage() {
   }, []);
 
   const closeSession = useCallback(() => {
+    setShowExitConfirm(false);
     if (isJourneyPractice && journeyReturnHref) {
       window.location.href = journeyReturnHref;
       return;
@@ -716,6 +723,14 @@ export default function PracticePage() {
     }
     setSelectedMode(null);
   }, [isJourneyPractice, isStoryPractice, journeyReturnHref, storyReturnHref]);
+  const hasSessionProgress = revealedIds.length > 0;
+  const attemptCloseSession = useCallback(() => {
+    if (!sessionComplete && hasSessionProgress) {
+      setShowExitConfirm(true);
+      return;
+    }
+    closeSession();
+  }, [closeSession, hasSessionProgress, sessionComplete]);
 
   const trackPracticeMetric = useCallback(
     async (
@@ -805,6 +820,27 @@ export default function PracticePage() {
     practiceStartTrackedRef.current = false;
     practiceCompletionTrackedRef.current = false;
   }, [favorites.length, prefabExercises.length, selectedMode]);
+
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    const load = async () => {
+      try {
+        const res = await fetch("/api/progress");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (cancelled) return;
+        const streak = typeof data?.practiceStreakDays === "number" ? data.practiceStreakDays : 0;
+        setPracticeStreakDays(streak);
+      } catch {
+        // Non-blocking; chip just stays at 0.
+      }
+    };
+    void load();
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
 
   const reviewDueCount = journeyReviewMeta?.dueCount ?? 0;
   const reviewFocusWords = Array.isArray(journeyReviewMeta?.focusWords) ? journeyReviewMeta.focusWords : [];
@@ -1685,7 +1721,7 @@ export default function PracticePage() {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={closeSession}
+              onClick={attemptCloseSession}
               className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
               aria-label="Close practice"
             >
@@ -1756,6 +1792,7 @@ export default function PracticePage() {
                     }}
                   />
                 ))}
+                <Confetti active={score === exercises.length && exercises.length > 0} />
 
                 <div className="relative flex h-full flex-col">
                   <div
@@ -2341,6 +2378,12 @@ export default function PracticePage() {
             ) : null}
           </div>
         </div>
+        {showExitConfirm ? (
+          <PracticeExitConfirm
+            onKeepGoing={() => setShowExitConfirm(false)}
+            onExit={closeSession}
+          />
+        ) : null}
       </div>
     );
   }
@@ -2358,6 +2401,22 @@ export default function PracticePage() {
         <p className="mt-1 max-w-xl text-sm leading-6 text-[rgba(226,232,244,0.78)] sm:text-base">
           {practiceLoopSummary}
         </p>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200/20 bg-amber-300/12 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-100">
+            <span className="text-base font-black leading-none">{practiceStreakDays}</span>
+            <span className="opacity-80">Streak</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200/20 bg-sky-300/12 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-sky-100">
+            <span className="text-base font-black leading-none">{dueFavorites.length}</span>
+            <span className="opacity-80">Due</span>
+          </span>
+          {dueFavorites.length > 0 ? (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200/20 bg-emerald-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-100">
+              <span className="text-base font-black leading-none">+{dueFavorites.length * 10}</span>
+              <span className="opacity-80">Xp ready</span>
+            </span>
+          ) : null}
+        </div>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           {(isReviewFocus && reviewDueCount > 0) || dueFavorites.length > 0 ? (
             <button
@@ -2367,7 +2426,7 @@ export default function PracticePage() {
                   mode: reviewRecommendedMode,
                   source: isReviewFocus && reviewDueCount > 0 ? "review_focus_cta" : "practice_loop_cta",
                 });
-                openSession(reviewRecommendedMode);
+                setPendingCountdownMode(reviewRecommendedMode);
               }}
               className="inline-flex items-center justify-center rounded-full border border-amber-200/20 bg-amber-300 px-4 py-2.5 text-sm font-black text-slate-950 shadow-[0_10px_24px_rgba(252,211,77,0.22)] hover:brightness-105"
             >
@@ -2403,7 +2462,7 @@ export default function PracticePage() {
           <button
             key={card.mode}
             type="button"
-            onClick={() => openSession(card.mode)}
+            onClick={() => setPendingCountdownMode(card.mode)}
             className={`group relative overflow-hidden rounded-[1.8rem] border p-4 text-left transition active:scale-[0.99] sm:rounded-[2rem] sm:p-5 ${card.shellClass}`}
           >
             <div
@@ -2449,6 +2508,15 @@ export default function PracticePage() {
           </button>
         ))}
       </div>
+      {pendingCountdownMode ? (
+        <PracticeCountdown
+          onComplete={() => {
+            const mode = pendingCountdownMode;
+            setPendingCountdownMode(null);
+            if (mode) openSession(mode);
+          }}
+        />
+      ) : null}
     </div>
   );
 }

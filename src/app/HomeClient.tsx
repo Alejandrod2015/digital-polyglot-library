@@ -6,9 +6,17 @@ import Link from "next/link";
 import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
+import StoryVerticalCard from "@/components/StoryVerticalCard";
 import LevelBadge from "@/components/LevelBadge";
 import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
+import { PullToRefresh } from "@/components/PullToRefresh";
+import HomeTopbar from "@/components/HomeTopbar";
+import StoryOfDayHero from "@/components/StoryOfDayHero";
+import ContinueCard from "@/components/ContinueCard";
+import SectionHead from "@/components/SectionHead";
+import useEmblaCarousel from "embla-carousel-react";
+import { Play } from "lucide-react";
 import { books } from "@/data/books";
 import { formatTopic } from "@domain/displayFormat";
 import { getBookCardMeta } from "@domain/bookCardMeta";
@@ -242,6 +250,29 @@ function estimateReadMinutes(text?: string): number {
   return Math.max(1, Math.ceil(words / 180));
 }
 
+/**
+ * Compact series label like "Colombian Spanish · Beginners" from a full
+ * book title and level. The mockup uses this short format above each
+ * card title so a long book title doesn't truncate the series line.
+ * Falls back to the bookTitle when we can't extract a clean head.
+ */
+function formatShortSeries(bookTitle?: string, level?: string): string {
+  const cleanTitle = (bookTitle ?? "").trim();
+  const cap = (s: string) =>
+    s.length ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s;
+  const headMatch = cleanTitle.match(/^([A-Za-záéíóúñ]+\s+[A-Za-záéíóúñ]+)/);
+  const head = headMatch?.[1]
+    ? headMatch[1]
+        .split(/\s+/)
+        .map((word) => cap(word))
+        .join(" ")
+    : cleanTitle;
+  if (!level) return head;
+  const cleanLevel = level.trim();
+  const tail = `${cap(cleanLevel)}${/s$/i.test(cleanLevel) ? "" : "s"}`;
+  return `${head} · ${tail}`;
+}
+
 function formatRemainingDuration(totalSeconds?: number, progressSec?: number): string {
   if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:-- left";
   const safeProgress =
@@ -305,6 +336,9 @@ export default function HomeClient({
   const { user, isLoaded } = useUser();
   const { userId, isLoaded: isAuthLoaded } = useAuth();
 
+  const [continueEmblaRef, continueEmblaApi] = useEmblaCarousel({ align: "start", dragFree: true });
+  const [booksEmblaRef, booksEmblaApi] = useEmblaCarousel({ align: "start", dragFree: true });
+  const [storiesEmblaRef, storiesEmblaApi] = useEmblaCarousel({ align: "start", dragFree: true });
   const [continueListening, setContinueListening] = useState<ContinueItem[]>(() =>
     initialContinueListening
       .map((item) => {
@@ -1353,19 +1387,24 @@ export default function HomeClient({
   ]);
 
   const featuredFreeStory = useMemo(() => {
-    const targetSlug =
-      plan === "basic"
-        ? featuredDaySlug ?? featuredWeekSlug
-        : plan === "free"
-          ? featuredWeekSlug
-          : null;
+    // Hero "Story of the Day" renders for every plan; the "Free today"
+    // gold pill is gated separately to free/basic via showFreeTodayPill.
+    const targetSlug = featuredDaySlug ?? featuredWeekSlug;
     if (!targetSlug) return null;
 
     for (const book of Object.values(books)) {
       const story = book.stories.find((s) => s.slug === targetSlug);
       if (!story) continue;
+      const wordCount = typeof story.text === "string"
+        ? story.text.replace(/<[^>]+>/g, " ").trim().split(/\s+/).filter(Boolean).length
+        : 0;
+      const runtimeMin = wordCount > 0 ? Math.max(1, Math.round(wordCount / 150)) : null;
+      const newWords = Array.isArray(story.vocab) ? story.vocab.length : null;
+      const description = typeof book.description === "string" && book.description.trim()
+        ? book.description.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
+        : null;
       return {
-        label: plan === "basic" ? "Story of the Day" : "Story of the Week",
+        label: featuredDaySlug ? "Story of the Day" : "Story of the Week",
         href: withReturnContext(`/books/${book.slug}/${story.slug}`),
         title: story.title,
         bookTitle: book.title,
@@ -1379,6 +1418,10 @@ export default function HomeClient({
         region: story.region ?? book.region,
         level: story.level ?? book.level,
         topic: story.topic ?? book.topic,
+        description,
+        runtimeMin,
+        newWords,
+        chapters: book.stories.length,
       };
     }
     return null;
@@ -1447,49 +1490,81 @@ export default function HomeClient({
   const renderContinueCard = (
     item: ContinueItem,
     options?: { recommendation?: boolean; reason?: string }
-  ) => (
-    <Link
-      key={`${item.bookSlug}:${item.storySlug}`}
-      href={withReturnContext(`/books/${item.bookSlug}/${item.storySlug}`)}
-      className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
-    >
-      <div className="w-full h-48 bg-[color:var(--surface)]">
-        <img
-          src={item.cover}
-          alt={item.title}
-          className="object-cover w-full h-full"
-        />
-      </div>
-
-      <div className="p-5 flex flex-col flex-1 text-left">
-        <div>
-          {options?.recommendation ? (
-            <p className="inline-flex text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--foreground)] bg-[var(--chip-bg)] border border-[var(--chip-border)] rounded-full px-2 py-0.5 mb-2">
-              {options.reason ?? "Recommended"}
-            </p>
+  ) => {
+    const progressRatio =
+      typeof item.progressSec === "number" &&
+      typeof item.audioDurationSec === "number" &&
+      item.audioDurationSec > 0
+        ? Math.min(1, Math.max(0, item.progressSec / item.audioDurationSec))
+        : 0;
+    return (
+      <Link
+        key={`${item.bookSlug}:${item.storySlug}`}
+        href={withReturnContext(`/books/${item.bookSlug}/${item.storySlug}`)}
+        className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] text-left transition-all duration-150 hover:-translate-y-0.5 hover:bg-[var(--card-bg-hover)]"
+      >
+        <div
+          className="relative w-full overflow-hidden"
+          style={{
+            aspectRatio: "4 / 3",
+            background: "linear-gradient(135deg, #13315e 0%, #051834 100%)",
+          }}
+        >
+          {item.cover ? (
+            <img
+              src={item.cover}
+              alt={item.title}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
           ) : null}
-          <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
-            {item.title}
-          </h3>
-          <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
-            {item.bookTitle}
-          </p>
+          {options?.recommendation ? (
+            <span className="absolute left-3 top-3 z-[2] inline-flex rounded-full bg-[color:var(--color-gold)]/95 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#2a1a02]">
+              {options.reason ?? "Recommended"}
+            </span>
+          ) : null}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-3 right-3 z-[2] grid h-10 w-10 translate-y-1.5 place-items-center rounded-full bg-[var(--color-gold)] text-[#2a1a02] opacity-0 shadow-[0_8px_22px_-6px_rgba(0,0,0,0.5)] transition-all duration-200 ease-out group-hover:translate-y-0 group-hover:opacity-100"
+          >
+            <Play size={16} fill="currentColor" />
+          </span>
+          <span
+            aria-hidden="true"
+            className="absolute inset-x-0 bottom-0 z-[2] h-[3px] bg-white/[0.18]"
+          >
+            <span
+              className="block h-full bg-[var(--color-gold)] transition-all"
+              style={{ width: `${Math.max(0, Math.round(progressRatio * 100))}%` }}
+            />
+          </span>
         </div>
 
-        <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-1 flex-col gap-2 px-4 pb-4 pt-3.5">
+          <p className="line-clamp-1 text-[12px] font-extrabold leading-[1.3] text-[var(--color-gold)]">
+            {item.bookTitle}
+          </p>
+          <h3 className="m-0 line-clamp-2 text-base font-black leading-[1.2] tracking-[-0.015em] text-[var(--foreground)]">
+            {item.title}
+          </h3>
+          <div className="flex flex-wrap items-center gap-1.5">
             <LevelBadge level={item.level} />
             <LanguageBadge language={item.language} />
             <RegionBadge region={item.region} />
           </div>
-          <p>
-            {formatRemainingDuration(item.audioDurationSec, item.progressSec)} ·{" "}
-            {formatTopic(item.topic)}
+          <p className="mt-auto inline-flex items-center gap-2 pt-1.5 text-[12px] font-bold tabular-nums text-[var(--muted)]">
+            <span>{formatRemainingDuration(item.audioDurationSec, item.progressSec)}</span>
+            {item.topic ? (
+              <>
+                <span aria-hidden="true" className="inline-block h-[3px] w-[3px] rounded-full bg-[var(--muted)]" />
+                <span>{formatTopic(item.topic)}</span>
+              </>
+            ) : null}
           </p>
         </div>
-      </div>
-    </Link>
-  );
+      </Link>
+    );
+  };
 
   const onboardingSteps = [
     {
@@ -1733,8 +1808,14 @@ export default function HomeClient({
   };
 
   return (
-    <div className="min-h-full w-full flex flex-col items-center px-8 pb-28">
+    <PullToRefresh onRefresh={() => window.location.reload()}>
+    <div className="min-h-full w-full flex flex-col items-stretch px-6 sm:px-10 pb-28 max-w-[1480px] mx-auto">
       <>
+      {user ? (
+        <div className="w-full pt-6">
+          <HomeTopbar continueCount={continueListening.length} />
+        </div>
+      ) : null}
       {shouldShowSurvey ? (
         <div className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/70 px-4 backdrop-blur-sm">
           <div className="w-full max-w-2xl rounded-[1.75rem] border border-[var(--card-border)] bg-[linear-gradient(180deg,#112847_0%,#0d2038_100%)] p-6 shadow-[0_24px_60px_rgba(4,12,28,0.45)]">
@@ -1870,137 +1951,116 @@ export default function HomeClient({
         </div>
       ) : null}
 
-      {/* Free featured story for free/basic users */}
+      {/* Hero: shown for everyone when we have a featured story; pill is
+          gated to free/basic inside StoryOfDayHero. First placement: when
+          there is no continue-listening to surface above. */}
       {isPersonalizationReady && featuredFreeStory && continueListening.length === 0 && (
-        <section className="w-full max-w-5xl text-center pt-8 md:pt-10 mb-10 md:mb-12">
-          <p className="text-xs uppercase tracking-[0.18em] text-[var(--primary)] mb-3">
-            {featuredFreeStory.label}
-          </p>
-          <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Your free story</h2>
-          <div className="max-w-[520px] mx-auto">
-            <Link
-              href={featuredFreeStory.href}
-              className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
-            >
-              <div className="w-full aspect-[16/10] bg-[color:var(--surface)]">
-                <img
-                  src={featuredFreeStory.cover}
-                  alt={featuredFreeStory.title}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-              <div className="p-5 flex flex-col flex-1 text-left">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
-                    {featuredFreeStory.title}
-                  </h3>
-                  <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
-                    {featuredFreeStory.bookTitle}
-                  </p>
-                </div>
-                <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <LevelBadge level={featuredFreeStory.level} />
-                    <LanguageBadge language={featuredFreeStory.language} />
-                    <RegionBadge region={featuredFreeStory.region} />
-                  </div>
-                  <p>{formatTopic(featuredFreeStory.topic)}</p>
-                </div>
-              </div>
-            </Link>
-          </div>
+        <section className="w-full mb-14">
+          <SectionHead title="Your free story" sub="Hand-picked for your level and interests" />
+          <StoryOfDayHero
+            story={{
+              href: featuredFreeStory.href,
+              title: featuredFreeStory.title,
+              bookTitle: featuredFreeStory.bookTitle,
+              coverUrl: featuredFreeStory.cover,
+              description: featuredFreeStory.description ?? undefined,
+              level: featuredFreeStory.level,
+              language: featuredFreeStory.language,
+              region: featuredFreeStory.region,
+              topic: featuredFreeStory.topic ? formatTopic(featuredFreeStory.topic) : undefined,
+              durationMin: featuredFreeStory.runtimeMin ?? undefined,
+              newWords: featuredFreeStory.newWords ?? undefined,
+              chapters: featuredFreeStory.chapters ?? undefined,
+            }}
+            plan={plan as "free" | "basic" | "premium" | "polyglot"}
+          />
         </section>
       )}
 
       {/* Continue listening */}
       {isPersonalizationReady && continueListening.length > 0 && (
-        <section className="w-full max-w-5xl text-center pt-8 md:pt-10 mb-10 md:mb-12">
-          <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Continue listening</h2>
+        <section className="w-full pt-8 md:pt-10 text-left mb-14">
+          <SectionHead
+            title="Continue listening"
+            sub={`${continueListening.length} ${continueListening.length === 1 ? "story" : "stories"} started · keep your streak alive`}
+            seeAllHref="/my-library?tab=in-progress"
+            onPrev={() => continueEmblaApi?.scrollPrev()}
+            onNext={() => continueEmblaApi?.scrollNext()}
+          />
 
-          <div className="md:hidden">
-            <StoryCarousel
-              items={mobileContinueCards}
-              renderItem={(entry) =>
-                renderContinueCard(entry.item, {
-                  recommendation: entry.kind === "recommendation",
-                  reason: entry.reason,
-                })
-              }
-            />
-          </div>
-
-          <div className="hidden md:block">
-            {continueListening.length <= 3 ? (
-              <div className="flex justify-center gap-4">
-                {continueListening.map((item) => (
+          <div className="overflow-hidden" ref={continueEmblaRef}>
+            <div className="flex gap-4">
+              {continueListening.map((item) => {
+                const remaining = formatRemainingDuration(item.audioDurationSec, item.progressSec);
+                const timeLeft = remaining.replace(/ left$/, "");
+                const rawPct =
+                  item.audioDurationSec && item.audioDurationSec > 0
+                    ? Math.round(((item.progressSec ?? 0) / item.audioDurationSec) * 100)
+                    : 0;
+                // The mockup always shows a visible amber bar on every
+                // Continue Listening card. If a story is in this row at
+                // all the user has at least opened it, so floor the
+                // value to 4% so the bar is never invisible.
+                const pct = Math.max(4, Math.min(100, rawPct));
+                // Mockup uses a short "Colombian Spanish · Beginners"
+                // series label. Extract the first two capitalized words
+                // of the book title and pluralize the level so we get
+                // the same compact format from the real book title.
+                const shortSeries = formatShortSeries(item.bookTitle, item.level);
+                return (
                   <div
                     key={`${item.bookSlug}:${item.storySlug}`}
-                    className={continueDesktopCardWidthClass}
+                    className="shrink-0 w-[260px]"
                   >
-                    {renderContinueCard(item)}
+                    <ContinueCard
+                      story={{
+                        href: withReturnContext(`/books/${item.bookSlug}/${item.storySlug}`),
+                        coverUrl: item.cover,
+                        bookTitle: shortSeries,
+                        title: item.title,
+                        level: item.level,
+                        language: item.language,
+                        region: item.region,
+                        timeLeft,
+                        topic: item.topic ? formatTopic(item.topic) : undefined,
+                        progressPct: pct,
+                      }}
+                    />
                   </div>
-                ))}
-              </div>
-            ) : (
-              <div>
-                <StoryCarousel
-                  items={continueListening}
-                  renderItem={(item) => renderContinueCard(item)}
-                />
-              </div>
-            )}
+                );
+              })}
+            </div>
           </div>
         </section>
       )}
 
       {isPersonalizationReady && featuredFreeStory && continueListening.length > 0 && (
-        <section className="w-full max-w-5xl text-center mb-10 md:mb-12">
-          <p className="text-xs uppercase tracking-[0.18em] text-[var(--primary)] mb-3">
-            {featuredFreeStory.label}
-          </p>
-          <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Your free story</h2>
-          <div className="max-w-[520px] mx-auto">
-            <Link
-              href={featuredFreeStory.href}
-              className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md h-full cursor-pointer"
-            >
-              <div className="w-full aspect-[16/10] bg-[color:var(--surface)]">
-                <img
-                  src={featuredFreeStory.cover}
-                  alt={featuredFreeStory.title}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-              <div className="p-5 flex flex-col flex-1 text-left">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
-                    {featuredFreeStory.title}
-                  </h3>
-                  <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
-                    {featuredFreeStory.bookTitle}
-                  </p>
-                </div>
-                <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <LevelBadge level={featuredFreeStory.level} />
-                    <LanguageBadge language={featuredFreeStory.language} />
-                    <RegionBadge region={featuredFreeStory.region} />
-                  </div>
-                  <p>{formatTopic(featuredFreeStory.topic)}</p>
-                </div>
-              </div>
-            </Link>
-          </div>
+        <section className="w-full mb-14">
+          <SectionHead title="Your free story" sub="Hand-picked for your level and interests" />
+          <StoryOfDayHero
+            story={{
+              href: featuredFreeStory.href,
+              title: featuredFreeStory.title,
+              bookTitle: featuredFreeStory.bookTitle,
+              coverUrl: featuredFreeStory.cover,
+              description: featuredFreeStory.description ?? undefined,
+              level: featuredFreeStory.level,
+              language: featuredFreeStory.language,
+              region: featuredFreeStory.region,
+              topic: featuredFreeStory.topic ? formatTopic(featuredFreeStory.topic) : undefined,
+              durationMin: featuredFreeStory.runtimeMin ?? undefined,
+              newWords: featuredFreeStory.newWords ?? undefined,
+              chapters: featuredFreeStory.chapters ?? undefined,
+            }}
+            plan={plan as "free" | "basic" | "premium" | "polyglot"}
+          />
         </section>
       )}
 
-      {canShowPersonalizedRecommendations && recommendedStories.length > 0 && (
-        <section className="mb-10 md:mb-12 text-center w-full max-w-5xl">
+      {false && canShowPersonalizedRecommendations && recommendedStories.length > 0 && (
+        <section className="mb-10 md:mb-12 w-full text-left">
           <div className="mb-6">
-            <p className="text-xs uppercase tracking-[0.18em] text-[var(--primary)] mb-2">
-              Premium personalization
-            </p>
-            <h2 className="text-2xl font-semibold text-[var(--foreground)]">Recommended for you</h2>
+            <SectionHead title="Recommended for you" sub="Picked for your level + interests" />
           </div>
 
           <div>
@@ -2050,98 +2110,104 @@ export default function HomeClient({
       )}
 
       {/* Latest Books */}
-      <section className="mb-10 md:mb-12 text-center w-full max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Latest Books</h2>
+      <section className="w-full text-left mb-14">
+        <SectionHead
+          title="Latest books"
+          sub="Multi-chapter collections, written for your level"
+          seeAllHref="/explore"
+          onPrev={() => booksEmblaApi?.scrollPrev()}
+          onNext={() => booksEmblaApi?.scrollNext()}
+        />
 
-        <div className="md:hidden">
-          <StoryCarousel
-            items={filteredBooks.slice(0, MOBILE_LIMIT)}
-            mobileItemClassName="w-[82%] sm:w-[62%]"
-            renderItem={(book) => (
-              <BookHorizontalCard
-                key={book.slug}
-                href={`/books/${book.slug}?from=home`}
-                title={book.title}
-                cover={book.cover}
-                level={book.level}
-                language={book.language}
-                region={book.region}
-                statsLine={bookMetaBySlug.get(book.slug)?.statsLine}
-                topicsLine={bookMetaBySlug.get(book.slug)?.topicsLine}
-                description={book.description}
-              />
-            )}
-          />
-        </div>
-
-        <div className="hidden md:block">
-          <ReleaseCarousel
-            items={filteredBooks.slice(0, DESKTOP_LIMIT)}
-            itemClassName="md:flex-[0_0_46%] lg:flex-[0_0_46%] xl:flex-[0_0_46%]"
-            renderItem={(book) => (
-              <BookHorizontalCard
-                title={book.title}
-                cover={book.cover}
-                level={book.level}
-                language={book.language}
-                region={book.region}
-                statsLine={bookMetaBySlug.get(book.slug)?.statsLine}
-                topicsLine={bookMetaBySlug.get(book.slug)?.topicsLine}
-                description={book.description}
-                href={`/books/${book.slug}?from=home`}
-              />
-            )}
-          />
+        <div className="overflow-hidden" ref={booksEmblaRef}>
+          <div className="flex gap-4">
+            {filteredBooks.slice(0, DESKTOP_LIMIT).map((book) => {
+              const fullBook = Object.values(books).find((b) => b.slug === book.slug);
+              const firstStorySlug = fullBook?.stories[0]?.slug;
+              const storiesCount = fullBook?.stories.length ?? 0;
+              const statsLineRaw = bookMetaBySlug.get(book.slug)?.statsLine ?? "";
+              const minMatch = statsLineRaw.match(/~?(\d+)\s*min/);
+              const stats = [
+                storiesCount > 0
+                  ? { value: storiesCount, label: storiesCount === 1 ? "story" : "stories" }
+                  : null,
+                minMatch ? { value: `~${minMatch[1]} min` } : null,
+              ].filter(Boolean) as Array<{ value: string | number; label?: string }>;
+              return (
+                <div
+                  key={book.slug}
+                  className="shrink-0 w-[calc(100%-8px)] sm:w-[calc(50%-8px)] min-w-[440px] max-w-[640px]"
+                >
+                  <BookHorizontalCard
+                    href={`/books/${book.slug}?from=home`}
+                    title={book.title}
+                    cover={book.cover}
+                    level={book.level}
+                    language={book.language}
+                    region={book.region}
+                    stats={stats}
+                    topicsLine={bookMetaBySlug.get(book.slug)?.topicsLine}
+                    description={book.description}
+                    footer={
+                      <>
+                        {firstStorySlug ? (
+                          <Link
+                            href={`/books/${book.slug}/${firstStorySlug}?from=home`}
+                            className="inline-flex items-center gap-2 rounded-full bg-[var(--color-gold)] px-[18px] py-3 text-[14px] font-extrabold text-[#2a1a02] transition hover:bg-[#f59e0b] hover:-translate-y-0.5"
+                          >
+                            <Play size={14} fill="currentColor" />
+                            Start book
+                          </Link>
+                        ) : null}
+                        <Link
+                          href="/my-library"
+                          className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-extrabold text-[var(--color-gold)] transition hover:bg-[rgba(252,211,77,0.16)]"
+                        >
+                          + Library
+                        </Link>
+                      </>
+                    }
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* Latest Stories */}
       <section
         data-tour-target="reader"
-        className={`mb-10 md:mb-12 text-center w-full max-w-5xl ${getTourSectionClass("reader")}`}
+        className={`w-full text-left mb-14 ${getTourSectionClass("reader")}`}
       >
-        <h2 className="text-2xl font-semibold mb-6 text-[var(--foreground)]">Latest Stories</h2>
+        <SectionHead
+          title="Latest stories"
+          sub="Short and bite-sized, perfect for a coffee break"
+          seeAllHref="/explore"
+          onPrev={() => storiesEmblaApi?.scrollPrev()}
+          onNext={() => storiesEmblaApi?.scrollNext()}
+        />
 
-        <div>
-          <StoryCarousel
-            items={latestHomeStories}
-            renderItem={(story) => {
-              return (
-              <Link
+        <div className="overflow-hidden" ref={storiesEmblaRef}>
+          <div className="flex gap-4">
+            {latestHomeStories.map((story) => (
+              <div
                 key={story.key}
-                href={story.href}
-                className="flex flex-col bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] border border-[var(--card-border)] transition-all duration-200 rounded-2xl overflow-hidden shadow-md cursor-pointer"
+                className="shrink-0 w-[calc(50%-8px)] sm:w-[calc(33.333%-11px)] md:w-[calc(25%-12px)] min-w-[240px]"
               >
-                <div className="w-full h-48 bg-[color:var(--surface)]">
-                  <img
-                    src={story.coverUrl}
-                    alt={story.title}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-
-                <div className="p-5 flex flex-col text-left">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">
-                      {story.title}
-                    </h3>
-                    <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">
-                      {story.subtitle}
-                    </p>
-                  </div>
-
-                  <div className="mt-3 text-sm text-[var(--muted)]">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <LevelBadge level={story.level} />
-                      <LanguageBadge language={story.language} />
-                      <RegionBadge region={story.region} />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              );
-            }}
-          />
+                <StoryVerticalCard
+                  href={story.href}
+                  title={story.title}
+                  coverUrl={story.coverUrl}
+                  subtitle={formatShortSeries(story.subtitle, story.level)}
+                  level={story.level}
+                  language={story.language}
+                  region={story.region}
+                  topic={story.detail}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="md:hidden mt-4 text-[var(--muted)] text-sm">
@@ -2150,5 +2216,6 @@ export default function HomeClient({
       </section>
       </>
     </div>
+    </PullToRefresh>
   );
 }

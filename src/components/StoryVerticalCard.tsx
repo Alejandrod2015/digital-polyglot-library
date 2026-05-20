@@ -15,6 +15,8 @@ type StoryVerticalCardProps = {
   excerpt?: string;
   meta?: string;
   metaSecondary?: string;
+  /** Topic line shown at the bottom (12.5/700/muted). */
+  topic?: string;
   level?: string;
   language?: string;
   variant?: string;
@@ -23,6 +25,14 @@ type StoryVerticalCardProps = {
   footer?: ReactNode;
 };
 
+/**
+ * Card spec from handoff v2 §7:
+ *   - image area aspect-ratio 4/3 (not the legacy h-48)
+ *   - body padding 18px 18px 20px, gap 10px
+ *   - subtitle: 12.5px / 800 / gold (--color-gold)
+ *   - title: 17px / 900 / -0.015em
+ *   - topic footer line at the bottom: 12.5px / 700 / muted
+ */
 export default function StoryVerticalCard({
   href,
   title,
@@ -31,6 +41,7 @@ export default function StoryVerticalCard({
   excerpt,
   meta,
   metaSecondary,
+  topic,
   level,
   language,
   variant,
@@ -40,41 +51,49 @@ export default function StoryVerticalCard({
 }: StoryVerticalCardProps) {
   return (
     <div
-      className={`flex flex-col rounded-2xl overflow-hidden border border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)] transition-all duration-200 shadow-md ${className}`}
+      className={`flex flex-col overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] transition-all duration-150 hover:-translate-y-0.5 hover:bg-[var(--card-bg-hover)] ${className}`}
     >
-      <Link
-        href={href}
-        className="flex flex-col"
-      >
-        <div className="w-full h-48 bg-[var(--surface)]">
+      <Link href={href} className="flex flex-1 flex-col">
+        <div className="dp-aspect-4-3 relative w-full overflow-hidden bg-[var(--surface)]">
           <img
             src={coverUrl || "/covers/default.jpg"}
             alt={title}
-            className="object-cover w-full h-full"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
 
-        <div className="p-5 text-left">
-          <div>
-            <div className="mb-2 flex flex-wrap items-center gap-2">
-              <LevelBadge level={level} />
-              <LanguageBadge language={language} />
-              <VariantBadge variant={variant} />
-              <RegionBadge region={region} />
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)] line-clamp-2">{title}</h3>
-            {subtitle ? (
-              <p className="text-[var(--primary)] text-sm leading-relaxed line-clamp-1">{subtitle}</p>
-            ) : null}
-            {excerpt ? <p className="mt-2 text-sm text-[var(--muted)] line-clamp-3">{excerpt}</p> : null}
+        <div className="flex flex-1 flex-col gap-2.5 px-[18px] pb-5 pt-[18px] text-left">
+          {subtitle ? (
+            <p className="m-0 text-[12.5px] font-extrabold text-[var(--color-gold)]">
+              {subtitle}
+            </p>
+          ) : null}
+          <h3
+            className="m-0 line-clamp-2 text-[17px] font-black leading-[1.2] tracking-[-0.015em] text-[var(--foreground)]"
+            style={{ textWrap: "balance" }}
+          >
+            {title}
+          </h3>
+          {excerpt ? (
+            <p className="line-clamp-3 text-[13.5px] font-semibold leading-[1.5] text-[var(--muted)]">
+              {excerpt}
+            </p>
+          ) : null}
+          <div className="flex flex-wrap items-center gap-1.5">
+            <LevelBadge level={level} />
+            <LanguageBadge language={language} />
+            <VariantBadge variant={variant} />
+            <RegionBadge region={region} />
           </div>
-
-          {(meta || metaSecondary) && (
-            <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
+          {(meta || metaSecondary) ? (
+            <div className="space-y-1 text-sm text-[var(--muted)]">
               {meta ? <p>{meta}</p> : null}
               {metaSecondary ? <p>{metaSecondary}</p> : null}
             </div>
-          )}
+          ) : null}
+          {topic ? (
+            <p className="mt-auto pt-1 text-[12.5px] font-bold text-[var(--muted)]">{topic}</p>
+          ) : null}
         </div>
       </Link>
 

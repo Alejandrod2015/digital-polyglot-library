@@ -18,7 +18,7 @@ export default function Cover({ src = "/globe.svg", alt, className = "" }: Cover
 
   return (
     <div
-  className={`relative aspect-[2/3] rounded-2xl overflow-hidden 
+  className={`dp-aspect-2-3 relative rounded-2xl overflow-hidden
               bg-[#0D1B2A] shadow-lg ring-1 ring-white/10 ${className}`}
 >
       {isRemote ? (

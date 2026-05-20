@@ -26,6 +26,7 @@ import {
   useClerk,
 } from "@clerk/nextjs";
 import { clerkAppearance } from "../lib/clerkAppearance";
+import StreakCard from "@/components/StreakCard";
 
 type Plan = "free" | "basic" | "premium" | "polyglot";
 
@@ -33,18 +34,16 @@ interface SidebarProps {
   onClose?: () => void;
 }
 
-function PlanBadge() {
+function PlanBadge({ inline = false }: { inline?: boolean } = {}) {
   const { user } = useUser();
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
-  const styles: Record<Plan, string> = {
-    free: "bg-[var(--chip-bg)] text-[var(--chip-text)]",
-    basic: "bg-blue-600/30 text-blue-200",
-    premium: "bg-[var(--chip-bg)] text-[var(--chip-text)]",
-    polyglot: "bg-[var(--chip-bg)] text-[var(--chip-text)]",
-  };
+  // Plan badge: blue chip per handoff v2 spec for all plans
+  // (rgba(37,99,235,0.30) bg + #bfdbfe text). Premium/polyglot keep
+  // the blue look in the profile row to match the mockup; the plan
+  // identity is conveyed via Clerk metadata, not via badge colour.
   return (
     <span
-      className={`ml-auto inline-flex items-center rounded-md px-2 py-0.5 text-[11px] font-semibold ${styles[plan]}`}
+      className={`${inline ? "" : "ml-auto "}inline-flex w-fit items-center rounded-[5px] bg-blue-600/30 px-1.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.04em] text-blue-200`}
       title={`Plan: ${plan}`}
     >
       {plan}
@@ -79,8 +78,69 @@ function SignInButtonCustom({ onClose }: { onClose?: () => void }) {
 
 export default function Sidebar({ onClose }: SidebarProps) {
   const { user } = useUser();
+  const pathname = usePathname();
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
   const [onboardingTourTarget, setOnboardingTourTarget] = useState("");
+  const [reviewDueCount, setReviewDueCount] = useState<number>(0);
+  const [streakDays, setStreakDays] = useState<number>(0);
+
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    const load = async () => {
+      try {
+        const res = await fetch("/api/favorites");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (cancelled || !Array.isArray(data)) return;
+        const now = Date.now();
+        const dueCount = data.filter((item: { dueAt?: string | null }) => {
+          if (!item?.dueAt) return false;
+          const dueAt = new Date(item.dueAt).getTime();
+          return Number.isFinite(dueAt) && dueAt <= now;
+        }).length;
+        setReviewDueCount(dueCount);
+      } catch {
+        // non-blocking
+      }
+    };
+    void load();
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    const load = async () => {
+      try {
+        const res = await fetch("/api/progress");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (cancelled) return;
+        const value =
+          typeof data?.practiceStreakDays === "number"
+            ? data.practiceStreakDays
+            : typeof data?.streakDays === "number"
+              ? data.streakDays
+              : 0;
+        setStreakDays(value);
+      } catch {
+        // non-blocking
+      }
+    };
+    void load();
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  const isActiveRoute = (href: string) => {
+    if (!pathname) return false;
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   const trackUpgradeCta = async (source: string) => {
     try {
@@ -116,98 +176,108 @@ export default function Sidebar({ onClose }: SidebarProps) {
   }, []);
 
   const navLinkClass =
-    "flex items-center gap-3 text-[var(--nav-text-muted)] hover:text-[var(--nav-text)] transition-colors";
+    "flex items-center gap-3.5 rounded-[10px] px-3 py-2.5 text-[15px] font-bold text-[var(--muted)] hover:bg-white/[0.04] hover:text-[var(--foreground)] transition-colors";
+
+  const navLinkActiveClass =
+    "flex items-center gap-3.5 rounded-[10px] bg-[color:var(--color-gold)]/[0.18] px-3 py-2.5 text-[15px] font-bold text-[var(--foreground)] [&_svg]:text-[var(--color-gold)] transition-colors";
+
+  const linkClass = (href: string) => (isActiveRoute(href) ? navLinkActiveClass : navLinkClass);
 
   const navLinkHighlight = (target: string) =>
     onboardingTourTarget === target
-      ? "rounded-xl border border-[var(--primary)]/45 bg-[var(--primary)]/12 px-3 py-2 text-[var(--nav-text)] shadow-[0_0_0_1px_rgba(163,230,53,0.15)]"
+      ? "rounded-xl border border-[color:var(--color-gold)]/45 bg-[color:var(--color-gold)]/12 px-3 py-2 text-[var(--nav-text)] shadow-[0_0_0_1px_rgba(252,211,77,0.18)]"
       : "";
 
   return (
-    <div className="flex flex-col h-full w-full bg-[var(--bg-sidebar)] text-[var(--foreground)] p-6">
+    <div className="flex h-full w-full flex-col gap-5 bg-[var(--bg-sidebar)] px-5 py-6 text-[var(--foreground)]">
       {/* Logo */}
-      <div className="mb-5 flex justify-center">
-        <Link href="/" onClick={handleNavClick}>
-          <Image
-            src="/digital-polyglot-logo.png"
-            alt="Digital Polyglot"
-            width={180}
-            height={180}
-            priority
-            className="dp-logo-dark"
-          />
-          <Image
-            src="/digital-polyglot-logo-light.png"
-            alt="Digital Polyglot"
-            width={180}
-            height={180}
-            priority
-            className="dp-logo-light"
-          />
-        </Link>
-      </div>
+      <Link
+        href="/"
+        onClick={handleNavClick}
+        className="mb-5 flex items-center gap-3 px-1.5 py-1"
+      >
+        <span
+          aria-hidden="true"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-[10px] bg-[var(--color-gold)] text-[#2a1a02] font-black text-[18px] leading-none tracking-[-0.04em]"
+        >
+          dp
+        </span>
+        <span className="flex flex-col leading-[1.1]">
+          <span className="text-[16px] font-black tracking-[-0.01em] text-[var(--foreground)]">
+            Digital
+          </span>
+          <span className="text-[12px] font-bold text-[var(--muted)]">
+            Polyglot
+          </span>
+        </span>
+      </Link>
 
       {/* Navigation */}
-      <nav className="flex flex-col space-y-6 text-lg font-medium">
+      <nav className="flex flex-col gap-0.5">
         <Link
           href="/"
           onClick={handleNavClick}
           data-tour-target="home"
-          className={`${navLinkClass} ${navLinkHighlight("home")}`}
+          className={`${linkClass("/")} ${navLinkHighlight("home")}`}
         >
-          <Home size={22} /> Home
+          <Home size={20} /> Home
         </Link>
 
         <Link
           href="/journey"
           onClick={handleNavClick}
           data-tour-target="journey"
-          className={`${navLinkClass} ${navLinkHighlight("journey")}`}
+          className={`${linkClass("/journey")} ${navLinkHighlight("journey")}`}
         >
-          <Map size={22} /> Journey
+          <Map size={20} /> Journey
         </Link>
 
         <Link
           href="/explore"
           onClick={handleNavClick}
           data-tour-target="explore"
-          className={`${navLinkClass} ${navLinkHighlight("explore")}`}
+          className={`${linkClass("/explore")} ${navLinkHighlight("explore")}`}
         >
-          <Compass size={22} /> Explore
+          <Compass size={20} /> Explore
         </Link>
 
         <Link
           href="/practice"
           onClick={handleNavClick}
           data-tour-target="practice-favorites"
-          className={`${navLinkClass} ${navLinkHighlight("practice-favorites")}`}
+          className={`${linkClass("/practice")} ${navLinkHighlight("practice-favorites")}`}
         >
-          <Brain size={22} /> Review
+          <Brain size={20} /> Review
+          {reviewDueCount > 0 ? (
+            <span className="ml-auto inline-flex min-w-[1.4rem] items-center justify-center rounded-full bg-[var(--color-gold)] px-1.5 py-0.5 text-[10px] font-extrabold text-slate-950">
+              {reviewDueCount}
+            </span>
+          ) : null}
         </Link>
 
         <Link
           href="/my-library"
           onClick={handleNavClick}
-          className={navLinkClass}
+          className={linkClass("/my-library")}
         >
-          <BookMarked size={22} /> My Library
+          <BookMarked size={20} /> My Library
         </Link>
 
         <Link
           href="/favorites"
           onClick={handleNavClick}
           data-tour-target="practice-favorites"
-          className={`${navLinkClass} ${navLinkHighlight("practice-favorites")}`}
+          className={`${linkClass("/favorites")} ${navLinkHighlight("practice-favorites")}`}
         >
-          <Star size={22} /> Favorites
+          <Star size={20} /> Favorites
         </Link>
 
         <Link
           href="/progress"
           onClick={handleNavClick}
-          className={navLinkClass}
+          className={linkClass("/progress")}
         >
-          <ChartNoAxesColumn size={22} /> Progress
+          <ChartNoAxesColumn size={20} /> Progress
         </Link>
 
         {/* Polyglot plan only */}
@@ -215,72 +285,77 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Link
             href="/create"
             onClick={handleNavClick}
-            className={navLinkClass}
+            className={linkClass("/create")}
           >
-            <Sparkles size={22} /> Create
+            <Sparkles size={20} /> Create
           </Link>
         )}
 
-        {/* Free / Basic plan special stories */}
-        {plan === "free" && (
-          <Link
-            href="/story-of-the-week"
-            onClick={handleNavClick}
-            className={navLinkClass}
-          >
-            <BookMarked size={22} /> Story of the Week
-          </Link>
-        )}
-
-        {plan === "basic" && (
-          <Link
-            href="/story-of-the-day"
-            onClick={handleNavClick}
-            className={navLinkClass}
-          >
-            <BookMarked size={22} /> Story of the Day
-          </Link>
-        )}
+        <Link
+          href={plan === "basic" || plan === "premium" || plan === "polyglot" ? "/story-of-the-day" : "/story-of-the-week"}
+          onClick={handleNavClick}
+          className={linkClass(plan === "basic" || plan === "premium" || plan === "polyglot" ? "/story-of-the-day" : "/story-of-the-week")}
+        >
+          <BookMarked size={20} />{" "}
+          {plan === "basic" || plan === "premium" || plan === "polyglot" ? "Story of the Day" : "Story of the Week"}
+        </Link>
 
         {(!user || plan === "free" || plan === "basic") && (
           <Link
             href="/plans"
             onClick={handleNavClick}
-            className="flex items-center gap-3 text-amber-300/90 hover:text-amber-200 transition-colors"
+            className="flex items-center gap-3 rounded-xl px-3 py-2 text-[color:var(--color-gold)] hover:bg-[color:var(--color-gold)]/10 transition-colors"
           >
-            <Crown size={22} /> Upgrade
+            <Crown size={20} /> Upgrade
           </Link>
         )}
 
         <Link
           href="/settings"
           onClick={handleNavClick}
-          className={navLinkClass}
+          className={linkClass("/settings")}
         >
-          <Settings size={22} /> Settings
+          <Settings size={20} /> Settings
         </Link>
       </nav>
 
+      <SignedIn>
+        <StreakCard days={streakDays} />
+      </SignedIn>
+
       {/* Auth controls */}
-      <div className="mt-8 space-y-3">
+      <div className="mt-6 space-y-3">
         <SignedOut>
           <SignInButtonCustom onClose={onClose} />
         </SignedOut>
 
         <SignedIn>
-          <div className="flex items-center gap-3">
-            <UserButton appearance={{ elements: { userButtonAvatarBox: "h-7 w-7" } }} />
-            <PlanBadge />
+          <div className="flex items-center gap-2.5 rounded-[12px] border border-[var(--card-border)] bg-[var(--card-bg)] p-2">
+            <UserButton
+              appearance={{
+                elements: {
+                  userButtonAvatarBox:
+                    "h-8 w-8 bg-gradient-to-br from-indigo-500 to-blue-500",
+                },
+              }}
+            />
+            <div className="flex min-w-0 flex-1 flex-col leading-[1.2]">
+              <span className="truncate text-[13.5px] font-bold text-[var(--foreground)]">
+                {user?.firstName?.trim() || user?.username || "You"}
+              </span>
+              <PlanBadge inline />
+            </div>
+            <SignOutButton>
+              <button
+                onClick={onClose}
+                aria-label="Sign out"
+                title="Sign out"
+                className="ml-auto inline-grid h-[30px] w-[30px] shrink-0 place-items-center rounded-lg text-[var(--muted)] transition hover:bg-white/[0.06] hover:text-[var(--foreground)]"
+              >
+                <LogOut className="h-4 w-4" />
+              </button>
+            </SignOutButton>
           </div>
-          <SignOutButton>
-            <button
-              onClick={onClose}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--chip-border)] bg-[var(--chip-bg)] hover:opacity-90 px-3 py-2 text-sm font-medium text-[var(--foreground)]"
-            >
-              <LogOut className="h-4 w-4" />
-              Sign out
-            </button>
-          </SignOutButton>
         </SignedIn>
 
         <div className="border-t border-[var(--nav-border)] pt-3 text-[11px] text-[var(--nav-text-muted)]/80">

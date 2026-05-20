@@ -5,6 +5,7 @@ import { trackGa4Event } from "@/lib/ga4";
 import MarketingNav from "./marketing/MarketingNav";
 import PhoneDemo from "./marketing/PhoneDemo";
 import styles from "./marketing/LandingPage.module.css";
+import { SignUpIncentiveBar } from "./SignUpIncentiveBar";
 
 function track(cta: string) {
   trackGa4Event("landing_cta_click", { cta });
@@ -242,6 +243,7 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+      <SignUpIncentiveBar />
     </div>
   );
 }

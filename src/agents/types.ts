@@ -1,4 +1,4 @@
-export type AgentKind = "planner" | "content" | "qa";
+export type AgentKind = "planner" | "content" | "qa" | "validar";
 
 export type AgentRunStatus =
   | "queued"

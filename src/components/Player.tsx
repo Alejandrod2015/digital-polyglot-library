@@ -11,6 +11,7 @@ import {
   SkipBack,
   SkipForward,
   ChevronUp,
+  Moon,
 } from "lucide-react";
 import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia";
 import { trackGa4Event } from "@/lib/ga4";
@@ -145,6 +146,48 @@ export default function Player({
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [sleepEndsAt, setSleepEndsAt] = useState<number | null>(null);
+  const [sleepRemainingMs, setSleepRemainingMs] = useState(0);
+  const [showSleepMenu, setShowSleepMenu] = useState(false);
+  const [loopA, setLoopA] = useState<number | null>(null);
+  const [loopB, setLoopB] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (loopA === null || loopB === null) return;
+    if (loopB <= loopA) return;
+    const audio = audioRef.current;
+    if (!audio) return;
+    const handler = () => {
+      if (audio.currentTime >= loopB) {
+        audio.currentTime = loopA;
+      }
+    };
+    audio.addEventListener("timeupdate", handler);
+    return () => audio.removeEventListener("timeupdate", handler);
+  }, [loopA, loopB]);
+
+  useEffect(() => {
+    if (sleepEndsAt === null) {
+      setSleepRemainingMs(0);
+      return;
+    }
+    const tick = () => {
+      const remaining = sleepEndsAt - Date.now();
+      if (remaining <= 0) {
+        setSleepRemainingMs(0);
+        setSleepEndsAt(null);
+        if (audioRef.current && !audioRef.current.paused) {
+          audioRef.current.pause();
+          setIsPlaying(false);
+        }
+        return;
+      }
+      setSleepRemainingMs(remaining);
+    };
+    tick();
+    const id = window.setInterval(tick, 1000);
+    return () => window.clearInterval(id);
+  }, [sleepEndsAt]);
 
   const wakeLockRef = useRef<WakeLockSentinel | null>(null);
   const lastPersistedProgressRef = useRef<number | null>(null);
@@ -306,6 +349,82 @@ export default function Player({
 
     return false;
   }, []);
+
+  useEffect(() => {
+    if (typeof navigator === "undefined" || !("mediaSession" in navigator)) return;
+    const ms = navigator.mediaSession;
+    if (continueMeta) {
+      try {
+        ms.metadata = new MediaMetadata({
+          title: continueMeta.title,
+          artist: continueMeta.bookTitle,
+          album: continueMeta.language ?? undefined,
+          artwork: continueMeta.cover
+            ? [
+                { src: continueMeta.cover, sizes: "256x256", type: "image/png" },
+                { src: continueMeta.cover, sizes: "512x512", type: "image/png" },
+              ]
+            : undefined,
+        });
+      } catch {
+        // MediaMetadata not supported in this browser.
+      }
+    }
+
+    const handlerPlay = () => {
+      audioRef.current?.play().catch(() => {});
+      setIsPlaying(true);
+    };
+    const handlerPause = () => {
+      audioRef.current?.pause();
+      setIsPlaying(false);
+    };
+    const handlerSeekBack = () => {
+      if (!audioRef.current) return;
+      audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - 15);
+    };
+    const handlerSeekForward = () => {
+      if (!audioRef.current) return;
+      audioRef.current.currentTime = Math.min(
+        audioRef.current.duration || Infinity,
+        audioRef.current.currentTime + 15
+      );
+    };
+    const handlerPrev = prevStorySlug
+      ? () => {
+          router.push(`/books/${bookSlug}/${prevStorySlug}${navigationSuffix}`);
+        }
+      : null;
+    const handlerNext = nextStorySlug
+      ? () => {
+          router.push(`/books/${bookSlug}/${nextStorySlug}${navigationSuffix}`);
+        }
+      : null;
+
+    try {
+      ms.setActionHandler("play", handlerPlay);
+      ms.setActionHandler("pause", handlerPause);
+      ms.setActionHandler("seekbackward", handlerSeekBack);
+      ms.setActionHandler("seekforward", handlerSeekForward);
+      ms.setActionHandler("previoustrack", handlerPrev);
+      ms.setActionHandler("nexttrack", handlerNext);
+    } catch {
+      // Some Action types may not be supported.
+    }
+
+    return () => {
+      try {
+        ms.setActionHandler("play", null);
+        ms.setActionHandler("pause", null);
+        ms.setActionHandler("seekbackward", null);
+        ms.setActionHandler("seekforward", null);
+        ms.setActionHandler("previoustrack", null);
+        ms.setActionHandler("nexttrack", null);
+      } catch {
+        // ignore
+      }
+    };
+  }, [bookSlug, continueMeta, navigationSuffix, nextStorySlug, prevStorySlug, router, storySlug]);
 
   // ✅ tracking: carga de audio
   useEffect(() => {
@@ -604,6 +723,105 @@ export default function Player({
             <SkipForward className="w-6 h-6" />
           </Link>
         )}
+
+        {/* A-B loop */}
+        <div className="ml-2 flex items-center gap-1">
+          <button
+            type="button"
+            onClick={() => {
+              if (!audioRef.current) return;
+              if (loopA !== null && loopB === null) {
+                setLoopA(null);
+                return;
+              }
+              setLoopA(audioRef.current.currentTime);
+              setLoopB(null);
+            }}
+            aria-label="Loop start (A)"
+            title="Set loop start"
+            className={`text-[11px] font-black w-7 h-7 rounded border ${
+              loopA !== null
+                ? "border-emerald-300/40 bg-emerald-400/15 text-emerald-100"
+                : "border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            }`}
+          >
+            A
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              if (!audioRef.current) return;
+              if (loopA === null) {
+                setLoopA(audioRef.current.currentTime);
+                return;
+              }
+              if (loopB !== null) {
+                setLoopA(null);
+                setLoopB(null);
+                return;
+              }
+              const end = audioRef.current.currentTime;
+              if (end <= loopA) return;
+              setLoopB(end);
+              audioRef.current.currentTime = loopA;
+            }}
+            aria-label="Loop end (B)"
+            title="Set loop end and start loop"
+            className={`text-[11px] font-black w-7 h-7 rounded border ${
+              loopB !== null
+                ? "border-emerald-300/40 bg-emerald-400/15 text-emerald-100"
+                : "border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            }`}
+          >
+            B
+          </button>
+        </div>
+
+        {/* Sleep timer */}
+        <div className="ml-2 relative">
+          <button
+            onClick={() => setShowSleepMenu((v) => !v)}
+            aria-label="Sleep timer"
+            className={`border text-sm rounded px-2 py-1 flex items-center gap-1 ${
+              sleepEndsAt !== null
+                ? "border-indigo-300/40 bg-indigo-400/15 text-indigo-100 hover:bg-indigo-400/20"
+                : "border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+            }`}
+          >
+            <Moon className="w-4 h-4" />
+            {sleepEndsAt !== null ? (
+              <span className="tabular-nums">{formatTime(sleepRemainingMs / 1000)}</span>
+            ) : null}
+          </button>
+
+          {showSleepMenu && (
+            <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-[var(--surface)] border border-[var(--card-border)] rounded-lg shadow-lg py-1 text-sm z-50 min-w-[120px]">
+              {[
+                { label: "Off", minutes: 0 },
+                { label: "5 min", minutes: 5 },
+                { label: "10 min", minutes: 10 },
+                { label: "15 min", minutes: 15 },
+                { label: "30 min", minutes: 30 },
+                { label: "45 min", minutes: 45 },
+              ].map((opt) => (
+                <button
+                  key={opt.label}
+                  onClick={() => {
+                    if (opt.minutes === 0) {
+                      setSleepEndsAt(null);
+                    } else {
+                      setSleepEndsAt(Date.now() + opt.minutes * 60_000);
+                    }
+                    setShowSleepMenu(false);
+                  }}
+                  className="block w-full text-left px-4 py-1 hover:bg-[var(--card-bg-hover)]"
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
 
         {/* Selector personalizado */}
         <div className="ml-2 relative">

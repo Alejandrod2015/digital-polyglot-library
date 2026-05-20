@@ -1,0 +1,48 @@
+/* ============================================================
+ * Journey screen — append to src/app/globals.css
+ * Adds the pulsing halo for the active "next" story card, plus
+ * a single rescue class so the halo positioning works the same
+ * across Tailwind v4 JIT inconsistencies (same pattern used by
+ * .dp-aspect-* rescue classes already in this file).
+ * ============================================================ */
+
+.dp-journey-card {
+  position: relative;
+  isolation: isolate; /* contain the ::before halo behind the card */
+  /* 3D button stack — inset highlight on top + 4px dark stack below */
+  box-shadow:
+    inset 0  2px 0 rgba(255,255,255,0.08),
+    inset 0 -1px 0 rgba(0,0,0,0.20),
+    0 4px 0 rgba(0,0,0,0.35);
+}
+.dp-journey-card:active {
+  box-shadow:
+    inset 0  2px 0 rgba(255,255,255,0.08),
+    inset 0 -1px 0 rgba(0,0,0,0.20),
+    0 1px 0 rgba(0,0,0,0.35);
+}
+
+/* Active (next) story — brighter stack + cyan/topic-color pulsing halo
+ * underneath. `--tp-color` is set inline on the card element. */
+.dp-journey-card.active-card {
+  box-shadow:
+    inset 0  2px 0 rgba(255,255,255,0.30),
+    inset 0 -2px 0 rgba(0,0,0,0.20),
+    0 5px 0 rgba(0,0,0,0.40);
+}
+.dp-journey-card.active-card::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 30px;
+  background: var(--tp-color, #1f7ee0);
+  filter: blur(22px);
+  opacity: 0.55;
+  z-index: -1;
+  animation: dp-journey-halo 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes dp-journey-halo {
+  0%, 100% { opacity: 0.35; transform: scale(0.94); }
+  50%      { opacity: 0.75; transform: scale(1.04); }
+}

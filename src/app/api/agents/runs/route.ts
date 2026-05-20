@@ -21,9 +21,9 @@ export async function GET(request: Request) {
     const kind = url.searchParams.get("kind") as AgentKind | null;
     const limit = parseInt(url.searchParams.get("limit") || "50", 10);
 
-    if (!kind || !["planner", "content", "qa"].includes(kind)) {
+    if (!kind || !["planner", "content", "qa", "validar"].includes(kind)) {
       return NextResponse.json(
-        { error: "Invalid or missing 'kind' query parameter. Must be 'planner', 'content', or 'qa'." },
+        { error: "Invalid or missing 'kind' query parameter. Must be 'planner', 'content', 'qa', or 'validar'." },
         { status: 400 }
       );
     }

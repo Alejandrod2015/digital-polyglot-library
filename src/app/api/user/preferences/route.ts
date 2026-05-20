@@ -14,7 +14,13 @@ import {
   getJourneyFocusFromLearningGoal,
   normalizeJourneyFocus,
 } from "@/lib/onboarding";
-import { REMINDER_HOUR_OPTIONS, normalizeReminderHour, normalizeRemindersEnabled } from "@/lib/reminders";
+import {
+  REMINDER_HOUR_OPTIONS,
+  REMINDER_MINUTE_OPTIONS,
+  normalizeReminderHour,
+  normalizeReminderMinute,
+  normalizeRemindersEnabled,
+} from "@/lib/reminders";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -51,6 +57,7 @@ const ALLOWED_GOALS = new Set<string>(ONBOARDING_GOAL_OPTIONS);
 const ALLOWED_JOURNEY_FOCUSES = new Set<string>(JOURNEY_FOCUS_OPTIONS);
 const ALLOWED_DAILY_MINUTES = new Set<number>(ONBOARDING_DAILY_MINUTES_OPTIONS);
 const ALLOWED_REMINDER_HOURS = new Set<number>(REMINDER_HOUR_OPTIONS);
+const ALLOWED_REMINDER_MINUTES = new Set<number>(REMINDER_MINUTE_OPTIONS);
 
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((v) => typeof v === "string");
@@ -202,6 +209,7 @@ export async function POST(req: Request) {
     const hasDailyMinutes = Object.prototype.hasOwnProperty.call(body ?? {}, "dailyMinutes");
     const hasRemindersEnabled = Object.prototype.hasOwnProperty.call(body ?? {}, "remindersEnabled");
     const hasReminderHour = Object.prototype.hasOwnProperty.call(body ?? {}, "reminderHour");
+    const hasReminderMinute = Object.prototype.hasOwnProperty.call(body ?? {}, "reminderMinute");
     const hasJourneyPlacementLevel = Object.prototype.hasOwnProperty.call(body ?? {}, "journeyPlacementLevel");
     const hasOnboardingSurveyCompletedAt = Object.prototype.hasOwnProperty.call(body ?? {}, "onboardingSurveyCompletedAt");
     const hasOnboardingTourCompletedAt = Object.prototype.hasOwnProperty.call(body ?? {}, "onboardingTourCompletedAt");
@@ -217,6 +225,7 @@ export async function POST(req: Request) {
     const dailyMinutes = body?.dailyMinutes;
     const remindersEnabled = body?.remindersEnabled;
     const reminderHour = body?.reminderHour;
+    const reminderMinute = body?.reminderMinute;
     const journeyPlacementLevel = body?.journeyPlacementLevel;
     const onboardingSurveyCompletedAt = body?.onboardingSurveyCompletedAt;
     const onboardingTourCompletedAt = body?.onboardingTourCompletedAt;
@@ -256,6 +265,9 @@ export async function POST(req: Request) {
     }
     if (hasReminderHour && reminderHour !== null && typeof reminderHour !== "number") {
       return NextResponse.json({ error: "Invalid reminderHour: expected number|null" }, { status: 400 });
+    }
+    if (hasReminderMinute && reminderMinute !== null && typeof reminderMinute !== "number") {
+      return NextResponse.json({ error: "Invalid reminderMinute: expected number|null" }, { status: 400 });
     }
     if (hasJourneyPlacementLevel && journeyPlacementLevel !== null && typeof journeyPlacementLevel !== "string") {
       return NextResponse.json({ error: "Invalid journeyPlacementLevel: expected string|null" }, { status: 400 });
@@ -339,6 +351,11 @@ export async function POST(req: Request) {
       : typeof existing.reminderHour === "number" && ALLOWED_REMINDER_HOURS.has(existing.reminderHour)
         ? normalizeReminderHour(existing.reminderHour)
         : null;
+    const normalizedReminderMinute = hasReminderMinute
+      ? normalizeReminderMinute(reminderMinute)
+      : typeof existing.reminderMinute === "number" && ALLOWED_REMINDER_MINUTES.has(existing.reminderMinute)
+        ? normalizeReminderMinute(existing.reminderMinute)
+        : null;
     const normalizedJourneyPlacementLevel = hasJourneyPlacementLevel
       ? normalizeJourneyPlacementLevel(journeyPlacementLevel)
       : typeof existing.journeyPlacementLevel === "string"
@@ -413,6 +430,12 @@ export async function POST(req: Request) {
       delete updatedMetadata.reminderHour;
     }
 
+    if (typeof normalizedReminderMinute === "number") {
+      updatedMetadata.reminderMinute = normalizedReminderMinute;
+    } else {
+      delete updatedMetadata.reminderMinute;
+    }
+
     if (normalizedJourneyPlacementLevel) {
       updatedMetadata.journeyPlacementLevel = normalizedJourneyPlacementLevel;
     } else {
@@ -471,6 +494,8 @@ export async function POST(req: Request) {
     const finalRemindersEnabled = finalMeta.remindersEnabled === true;
     const finalReminderHour =
       typeof finalMeta.reminderHour === "number" ? normalizeReminderHour(finalMeta.reminderHour) : null;
+    const finalReminderMinute =
+      typeof finalMeta.reminderMinute === "number" ? normalizeReminderMinute(finalMeta.reminderMinute) : null;
     const finalJourneyPlacementLevel =
       typeof finalMeta.journeyPlacementLevel === "string"
         ? normalizeJourneyPlacementLevel(finalMeta.journeyPlacementLevel)
@@ -497,6 +522,7 @@ export async function POST(req: Request) {
         dailyMinutes: finalDailyMinutes,
         remindersEnabled: finalRemindersEnabled,
         reminderHour: finalReminderHour,
+        reminderMinute: finalReminderMinute,
         journeyPlacementLevel: finalJourneyPlacementLevel,
         onboardingSurveyCompletedAt: finalOnboardingSurveyCompletedAt,
         onboardingTourCompletedAt: finalOnboardingTourCompletedAt,
