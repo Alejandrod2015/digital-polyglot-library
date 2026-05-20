@@ -14,6 +14,7 @@
 import { prisma } from "@/lib/prisma";
 import { buildPracticeItemsFromStory, rankItemsForFeatured } from "@/lib/storyPracticeItems";
 import { buildMixedPracticeSession, type PracticeExercise, type PracticeMode } from "@/lib/practiceExercises";
+import { sanitizePracticeSentence } from "@/lib/sanitizePracticeSentence";
 
 const FEATURED_PLAN: PracticeMode[] = ["context", "meaning", "listening", "context", "meaning", "listening", "natural", "context", "meaning", "context"];
 const POOL_EXTENSION_PLAN: PracticeMode[] = ["context", "meaning", "listening", "natural", "context", "meaning", "listening", "natural", "context", "meaning"];
@@ -127,7 +128,9 @@ export async function buildAndPersistStoryPracticeSet(
               orderIndex: i,
               type: ex.type,
               word,
-              sentence,
+              // Strip orphan trailing quotes the upstream generator
+              // sometimes leaves; otherwise TTS clicks at the end.
+              sentence: sanitizePracticeSentence(sentence),
               audioUrl: null,
               payload: payload as never,
               featured: i < FEATURED_SIZE,

@@ -50,6 +50,17 @@ export type StudioJourneyStory = {
   audioDeliveryQaNotes: string;
   audioDeliveryQaCheckedAt: string;
   updatedAt: string;
+  // "standalone" → row lives in prisma.standaloneStory (legacy library).
+  // "journey"    → row lives in prisma.journeyStory (real journey content
+  //                like Italian Traveler, German Conversational, etc).
+  // The Stories library list merges both so revisors can see every story
+  // in one place; the editor + action affordances branch on this field.
+  source?: "standalone" | "journey";
+  // Only populated for `source === "journey"` rows. The Journey name +
+  // language combo lets the UI show "Italian / Traveler" badges and
+  // route the "Manager" action back to the right parent journey.
+  journeyId?: string | null;
+  journeyName?: string | null;
 };
 
 export type JourneyStoryPatch = {
@@ -138,6 +149,83 @@ function toStudioStory(row: StandaloneStory): StudioJourneyStory {
     audioDeliveryQaNotes: row.audioDeliveryQaNotes ?? "",
     audioDeliveryQaCheckedAt: row.audioDeliveryQaCheckedAt?.toISOString() ?? "",
     updatedAt: row.updatedAt.toISOString(),
+    source: "standalone",
+  };
+}
+
+// Map a JourneyStory + its parent Journey to the same shape the Studio
+// list UI consumes. Fields the standalone model has but JourneyStory
+// doesn't (QA pills, vocabValidationRaw, etc.) are returned as empty so
+// the table renders cleanly without TS gymnastics.
+type JourneyStoryWithJourney = {
+  id: string;
+  title: string | null;
+  slug: string | null;
+  synopsis: string | null;
+  text: string | null;
+  vocab: Prisma.JsonValue | null;
+  coverUrl: string | null;
+  audioUrl: string | null;
+  level: string;
+  topic: string;
+  slotIndex: number;
+  status: string;
+  audioQaStatus: string | null;
+  audioQaScore: number | null;
+  audioQaNotes: string | null;
+  updatedAt: Date;
+  journeyId: string;
+  journey: {
+    id: string;
+    name: string;
+    language: string;
+    variant: string;
+  };
+};
+
+function toStudioJourneyStory(row: JourneyStoryWithJourney): StudioJourneyStory {
+  return {
+    id: row.id,
+    documentId: row.id,
+    draftId: `drafts.${row.id}`,
+    hasDraft: false,
+    hasPublished: row.status === "published",
+    title: row.title ?? "",
+    slug: row.slug ?? "",
+    synopsis: row.synopsis ?? "",
+    text: row.text ?? "",
+    vocabRaw: row.vocab ? JSON.stringify(row.vocab) : "",
+    coverUrl: row.coverUrl ?? "",
+    audioUrl: row.audioUrl ?? "",
+    language: row.journey.language,
+    variant: row.journey.variant,
+    region: row.journey.variant,
+    cefrLevel: row.level,
+    topic: row.topic,
+    languageFocus: "mixed",
+    journeyTopic: row.topic,
+    journeyOrder: typeof row.slotIndex === "number" ? row.slotIndex + 1 : null,
+    journeyFocus: row.journey.name,
+    journeyEligible: true,
+    published: row.status === "published",
+    storyVocabQualityRaw: "",
+    vocabValidationRaw: "",
+    audioQaStatus: row.audioQaStatus ?? "",
+    audioQaScore:
+      typeof row.audioQaScore === "number" && Number.isFinite(row.audioQaScore)
+        ? row.audioQaScore
+        : null,
+    audioQaNotes: row.audioQaNotes ?? "",
+    audioQaTranscript: "",
+    audioQaCheckedAt: "",
+    audioDeliveryQaStatus: "",
+    audioDeliveryQaScore: null,
+    audioDeliveryQaNotes: "",
+    audioDeliveryQaCheckedAt: "",
+    updatedAt: row.updatedAt.toISOString(),
+    source: "journey",
+    journeyId: row.journeyId,
+    journeyName: row.journey.name,
   };
 }
 
@@ -153,18 +241,52 @@ function journeyWhere(): Prisma.StandaloneStoryWhereInput {
 }
 
 export async function listStudioJourneyStories(): Promise<StudioJourneyStory[]> {
-  const rows = await prisma.standaloneStory.findMany({
-    where: journeyWhere(),
-    orderBy: [{ updatedAt: "desc" }],
+  // Pull both tables in parallel so the Stories library shows the full
+  // catalog: legacy `standaloneStory` rows (kept around for QA and
+  // direct edits) plus the real `journeyStory` content that actually
+  // ships in the journeys (Italian Traveler, German Conversational,
+  // etc.). The list UI branches on `story.source` for action buttons.
+  const [standaloneRows, journeyRows] = await Promise.all([
+    prisma.standaloneStory.findMany({
+      where: journeyWhere(),
+      orderBy: [{ updatedAt: "desc" }],
+    }),
+    prisma.journeyStory.findMany({
+      orderBy: [{ updatedAt: "desc" }],
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        synopsis: true,
+        text: true,
+        vocab: true,
+        coverUrl: true,
+        audioUrl: true,
+        level: true,
+        topic: true,
+        slotIndex: true,
+        status: true,
+        audioQaStatus: true,
+        audioQaScore: true,
+        audioQaNotes: true,
+        updatedAt: true,
+        journeyId: true,
+        journey: {
+          select: { id: true, name: true, language: true, variant: true },
+        },
+      },
+    }),
+  ]);
+
+  const standalone = standaloneRows.map(toStudioStory);
+  const journey = journeyRows.map((r) => toStudioJourneyStory(r as JourneyStoryWithJourney));
+
+  return [...standalone, ...journey].sort((a, b) => {
+    const orderA = a.journeyOrder ?? Number.MAX_SAFE_INTEGER;
+    const orderB = b.journeyOrder ?? Number.MAX_SAFE_INTEGER;
+    if (orderA !== orderB) return orderA - orderB;
+    return (b.updatedAt ?? "").localeCompare(a.updatedAt ?? "");
   });
-  return rows
-    .map(toStudioStory)
-    .sort((a, b) => {
-      const orderA = a.journeyOrder ?? Number.MAX_SAFE_INTEGER;
-      const orderB = b.journeyOrder ?? Number.MAX_SAFE_INTEGER;
-      if (orderA !== orderB) return orderA - orderB;
-      return (b.updatedAt ?? "").localeCompare(a.updatedAt ?? "");
-    });
 }
 
 export async function listStudioJourneyStoriesForVariant(

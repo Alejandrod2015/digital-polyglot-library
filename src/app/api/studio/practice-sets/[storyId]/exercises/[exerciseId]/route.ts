@@ -10,6 +10,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isStudioMember } from "@/lib/studio-access";
+import { sanitizePracticeSentence } from "@/lib/sanitizePracticeSentence";
 
 async function gate(): Promise<NextResponse | null> {
   const { userId } = await auth();
@@ -50,10 +51,15 @@ export async function PATCH(
     return NextResponse.json({ error: "Set is locked. Unlock first." }, { status: 409 });
   }
 
+  // Sanitize the incoming sentence so we never persist the orphan
+  // trailing-quote pattern that breaks TTS. Idempotent on clean text.
+  const cleanedSentence =
+    typeof body.sentence === "string" ? sanitizePracticeSentence(body.sentence) : undefined;
+
   const updated = await prisma.storyPracticeExercise.update({
     where: { id: exerciseId },
     data: {
-      ...(typeof body.sentence === "string" ? { sentence: body.sentence } : {}),
+      ...(cleanedSentence !== undefined ? { sentence: cleanedSentence } : {}),
       ...(typeof body.word === "string" ? { word: body.word } : {}),
       ...(body.audioUrl !== undefined ? { audioUrl: body.audioUrl } : {}),
       ...(body.payload && typeof body.payload === "object"

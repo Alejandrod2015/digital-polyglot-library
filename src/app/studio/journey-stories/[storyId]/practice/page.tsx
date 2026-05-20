@@ -20,7 +20,6 @@ export default async function StoryPracticeSetPage({ params }: Props) {
       title: true,
       level: true,
       topic: true,
-      practiceVoiceId: true,
       journey: { select: { language: true } },
       practiceSet: {
         select: {
@@ -37,7 +36,6 @@ export default async function StoryPracticeSetPage({ params }: Props) {
               sentence: true,
               audioUrl: true,
               payload: true,
-              featured: true,
             },
           },
         },
@@ -60,8 +58,7 @@ export default async function StoryPracticeSetPage({ params }: Props) {
       <PracticeSetEditor
         storyId={story.id}
         storyTitle={story.title ?? story.slug ?? storyId}
-        practiceVoiceId={story.practiceVoiceId}
-        language={story.journey?.language ?? null}
+        language={story.journey?.language ?? ""}
         set={
           story.practiceSet
             ? {
@@ -76,7 +73,6 @@ export default async function StoryPracticeSetPage({ params }: Props) {
                   sentence: e.sentence,
                   audioUrl: e.audioUrl,
                   payload: e.payload as Record<string, unknown>,
-                  featured: e.featured,
                 })),
               }
             : null

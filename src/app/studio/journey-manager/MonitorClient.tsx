@@ -1552,8 +1552,7 @@ export default function MonitorClient() {
                                                 storyId={s.id}
                                                 storyTitle={s.title || `Historia ${s.slotIndex + 1}`}
                                                 set={practiceSetById.get(s.id) ?? null}
-                                                practiceVoiceId={practiceMetaById.get(s.id)?.practiceVoiceId ?? null}
-                                                language={practiceMetaById.get(s.id)?.language ?? null}
+                                                language={practiceMetaById.get(s.id)?.language ?? ""}
                                               />
                                             )}
                                           </div>
