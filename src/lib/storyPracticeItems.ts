@@ -68,8 +68,14 @@ function getContextSentence(text: string, word: string): string | null {
   const normalizedWord = normalizeText(word).toLowerCase();
   if (!cleanText || !normalizedWord) return null;
 
+  // Tolerate an optional closing quote/guillemet between the
+  // sentence-ending punctuation and the whitespace. The previous
+  // /(?<=[.!?])\s+/ missed cases like `bello."\nIl cameriere...` —
+  // the smart quote after the period blocked the split, gluing two
+  // sentences into one and breaking practice exercises that surfaced
+  // the joined chunk as "context".
   const sentences = cleanText
-    .split(/(?<=[.!?])\s+/)
+    .split(/(?<=[.!?][”’"'»]?)\s+/)
     .map((sentence) => sentence.trim())
     .filter(Boolean);
 

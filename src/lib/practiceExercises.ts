@@ -396,8 +396,11 @@ function shortenSentence(sentence: string, anchor?: string): string {
     return parts[0] ?? fallback;
   };
 
+  // Allow an optional closing quote between the sentence terminator
+  // and the whitespace so that `bello."Il cameriere...` splits into
+  // two parts instead of one glued chunk.
   const splitOnStrongPunctuation = normalized
-    .split(/(?<=[.!?])\s+/)
+    .split(/(?<=[.!?][”’"'»]?)\s+/)
     .map((part) => part.trim())
     .filter(Boolean);
   const firstSentence = pickRelevant(splitOnStrongPunctuation, normalized);
