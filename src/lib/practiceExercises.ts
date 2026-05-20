@@ -774,6 +774,26 @@ function getExerciseAnchor(exercise: PracticeExercise): string {
   }
 }
 
+// Underlying source sentence for an exercise, normalized so identical
+// sentences across different modes (e.g. fill_blank with blank vs
+// meaning_in_context with the original word) collide. Used to keep
+// the mixed session from showing the same sentence in two slots.
+function getExerciseSentenceKey(exercise: PracticeExercise): string | null {
+  switch (exercise.type) {
+    case "fill_blank":
+    case "natural_expression":
+      return exercise.sentence
+        ? normalizeKey(exercise.sentence.replace(/_+/g, exercise.answer))
+        : null;
+    case "meaning_in_context":
+      return exercise.sentence ? normalizeKey(exercise.sentence) : null;
+    case "listen_choose":
+      return exercise.speechText ? normalizeKey(exercise.speechText) : null;
+    case "match_meaning":
+      return null;
+  }
+}
+
 export function buildMixedPracticeSession(
   items: PracticeFavoriteItem[],
   plan: PracticeMode[],
@@ -785,7 +805,23 @@ export function buildMixedPracticeSession(
   );
   const nextIndexByMode = new Map<PracticeMode, number>(plan.map((mode) => [mode, 0]));
   const usedAnchors = new Set<string>();
+  // Cross-mode sentence dedup: keep the same source sentence from
+  // appearing in two slots of the set (e.g. one as fill_blank for word
+  // A and another as meaning_in_context for word B). The per-mode
+  // seenSentences in buildPracticeSession only protected within-mode.
+  const usedSentences = new Set<string>();
   const exercises: PracticeExercise[] = [];
+
+  const tryAdd = (candidate: PracticeExercise): boolean => {
+    const anchor = getExerciseAnchor(candidate);
+    if (usedAnchors.has(anchor)) return false;
+    const sentKey = getExerciseSentenceKey(candidate);
+    if (sentKey && usedSentences.has(sentKey)) return false;
+    usedAnchors.add(anchor);
+    if (sentKey) usedSentences.add(sentKey);
+    exercises.push(candidate);
+    return true;
+  };
 
   for (const mode of plan) {
     if (exercises.length >= maxExercises) break;
@@ -795,11 +831,7 @@ export function buildMixedPracticeSession(
     while (index < session.length) {
       const candidate = session[index];
       index += 1;
-      const anchor = getExerciseAnchor(candidate);
-      if (usedAnchors.has(anchor)) continue;
-      usedAnchors.add(anchor);
-      exercises.push(candidate);
-      break;
+      if (tryAdd(candidate)) break;
     }
 
     nextIndexByMode.set(mode, index);
@@ -815,10 +847,7 @@ export function buildMixedPracticeSession(
     while (index < session.length && exercises.length < maxExercises) {
       const candidate = session[index];
       index += 1;
-      const anchor = getExerciseAnchor(candidate);
-      if (usedAnchors.has(anchor)) continue;
-      usedAnchors.add(anchor);
-      exercises.push(candidate);
+      tryAdd(candidate);
     }
 
     nextIndexByMode.set(mode, index);
