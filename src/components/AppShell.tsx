@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@clerk/nextjs";
 import Sidebar from "../components/Sidebar";
-import MobileMenu from "../components/MobileMenu";
 import MobileTabBar from "@/components/MobileTabBar";
 import InstallAppHint from "@/components/InstallAppHint";
 import BackNavigationHandler from "@/components/BackNavigationHandler";
@@ -72,7 +71,6 @@ export default function AppShell({
           <Sidebar />
         </aside>
 
-        <MobileMenu />
         <ThemeController />
         <ServiceWorkerBootstrap currentVersion={currentVersion} />
         <BackNavigationHandler />

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ChevronDown, Compass, Home, LogIn, Map, Menu, Sparkles, Star } from "lucide-react";
+import { Brain, ChevronDown, Compass, Home, LogIn, Menu, Star } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { formatVariantLabel } from "@/lib/languageVariant";
@@ -79,29 +79,27 @@ export default function MobileTabBar() {
 
   if (isStoryReaderPath(pathname) || isHiddenPath(pathname) || practiceActive) return null;
 
+  // Bottom tabs: matches iPhone app exactly (Home, Explore, Practice,
+  // Favorites, Menu/Sign in). Journey is not surfaced here — paid users
+  // get to it via the sidebar entry on desktop. Plan-specific extras
+  // (Create) live in the sidebar, not the tab bar.
   const tabs = isSignedIn
-    ? plan === "polyglot"
-      ? [
-          { href: "/", label: "Home", icon: Home },
-          { href: "/journey", label: "Journey", icon: Map },
-          { href: "/explore", label: "Explore", icon: Compass },
-          { href: "/favorites", label: "Favorites", icon: Star },
-          { href: "/create", label: "Create", icon: Sparkles },
-        ]
-      : [
-          { href: "/", label: "Home", icon: Home },
-          { href: "/journey", label: "Journey", icon: Map },
-          { href: "/explore", label: "Explore", icon: Compass },
-          { href: "/favorites", label: "Favorites", icon: Star },
-          { href: "/settings", label: "Menu", icon: Menu },
-        ]
+    ? [
+        { href: "/", label: "Home", icon: Home },
+        { href: "/explore", label: "Explore", icon: Compass },
+        { href: "/practice", label: "Practice", icon: Brain },
+        { href: "/favorites", label: "Favorites", icon: Star },
+        { href: "/settings", label: "Menu", icon: Menu },
+      ]
     : [
         { href: "/", label: "Home", icon: Home },
-        { href: "/journey", label: "Journey", icon: Map },
         { href: "/explore", label: "Explore", icon: Compass },
+        { href: "/practice", label: "Practice", icon: Brain },
         { href: "/favorites", label: "Favorites", icon: Star },
         { href: "/sign-in", label: "Sign in", icon: LogIn },
       ];
+  // Suppress unused-prop warning. plan is read elsewhere in the bar.
+  void plan;
 
   return (
     <>

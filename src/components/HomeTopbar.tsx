@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Bell } from "lucide-react";
+import { Search } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 
 type Props = {
@@ -27,17 +27,24 @@ export default function HomeTopbar({ continueCount }: Props) {
 
   return (
     <header className="flex items-center gap-4 mb-8">
-      <div className="flex flex-col">
+      {/* Title column: takes all available space and is allowed to shrink
+          so it never gets squeezed into one-word-per-line by the search
+          input next to it on narrow viewports. */}
+      <div className="flex min-w-0 flex-1 flex-col">
         <span className="text-[13px] font-bold text-[var(--muted)]">
           {greetWord}
           {firstName ? `, ${firstName}` : ""}
         </span>
-        <h1 className="text-[26px] font-black tracking-[-0.02em] leading-tight mt-0.5 text-[var(--foreground)]">
+        <h1 className="text-[22px] sm:text-[26px] font-black tracking-[-0.02em] leading-tight mt-0.5 text-[var(--foreground)]">
           {title}
         </h1>
       </div>
 
-      <div className="ml-auto flex items-center gap-3">
+      {/* Right-side actions. Mobile sees nothing here (search lives on
+          /explore, matching the iPhone app). Desktop shows the search
+          pill from md+. The notifications bell was removed: nothing was
+          wired to it yet, so it added noise without a payoff. */}
+      <div className="hidden md:flex shrink-0 items-center gap-3">
         <div className="flex items-center gap-2.5 px-4 py-2.5 w-[320px] max-w-full bg-[var(--card-bg)] border border-[var(--card-border)] rounded-full text-[var(--muted)] focus-within:border-[var(--color-gold)] transition-colors">
           <Search size={16} />
           <input
@@ -48,13 +55,6 @@ export default function HomeTopbar({ continueCount }: Props) {
             ⌘K
           </kbd>
         </div>
-        <button
-          aria-label="Notifications"
-          className="w-10 h-10 grid place-items-center rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--card-bg-hover)] relative shrink-0 transition-colors"
-        >
-          <Bell size={18} />
-          <span className="absolute top-2 right-2.5 w-2 h-2 rounded-full bg-[#fb923c] border-2 border-[var(--bg-content)]" />
-        </button>
       </div>
     </header>
   );

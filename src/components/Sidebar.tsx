@@ -189,28 +189,30 @@ export default function Sidebar({ onClose }: SidebarProps) {
       : "";
 
   return (
-    <div className="flex h-full w-full flex-col gap-5 bg-[var(--bg-sidebar)] px-5 py-6 text-[var(--foreground)]">
-      {/* Logo */}
-      <Link
-        href="/"
-        onClick={handleNavClick}
-        className="mb-5 flex items-center gap-3 px-1.5 py-1"
-      >
-        <span
-          aria-hidden="true"
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-[10px] bg-[var(--color-gold)] text-[#2a1a02] font-black text-[18px] leading-none tracking-[-0.04em]"
-        >
-          dp
-        </span>
-        <span className="flex flex-col leading-[1.1]">
-          <span className="text-[16px] font-black tracking-[-0.01em] text-[var(--foreground)]">
-            Digital
-          </span>
-          <span className="text-[12px] font-bold text-[var(--muted)]">
-            Polyglot
-          </span>
-        </span>
-      </Link>
+    <div className="flex h-full w-full flex-col gap-5 overflow-y-auto bg-[var(--bg-sidebar)] px-5 py-6 text-[var(--foreground)]">
+      {/* Logo. Use width/height that match the natural aspect ratio of the
+          PNG (916x432 ≈ 2.12:1) so the image doesn't get distorted into a
+          square and crowd the nav items below. */}
+      <div className="mb-2 flex justify-center">
+        <Link href="/" onClick={handleNavClick} className="block">
+          <Image
+            src="/digital-polyglot-logo.png"
+            alt="Digital Polyglot"
+            width={160}
+            height={76}
+            priority
+            className="dp-logo-dark h-auto w-[160px]"
+          />
+          <Image
+            src="/digital-polyglot-logo-light.png"
+            alt="Digital Polyglot"
+            width={160}
+            height={76}
+            priority
+            className="dp-logo-light h-auto w-[160px]"
+          />
+        </Link>
+      </div>
 
       {/* Navigation */}
       <nav className="flex flex-col gap-0.5">
@@ -223,14 +225,18 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Home size={20} /> Home
         </Link>
 
-        <Link
-          href="/journey"
-          onClick={handleNavClick}
-          data-tour-target="journey"
-          className={`${linkClass("/journey")} ${navLinkHighlight("journey")}`}
-        >
-          <Map size={20} /> Journey
-        </Link>
+        {/* Journey: gated to Polyglot/Premium plans. Free/basic users see
+            the rest of the nav without this entry (matches mobile app). */}
+        {(plan === "polyglot" || plan === "premium") && (
+          <Link
+            href="/journey"
+            onClick={handleNavClick}
+            data-tour-target="journey"
+            className={`${linkClass("/journey")} ${navLinkHighlight("journey")}`}
+          >
+            <Map size={20} /> Journey
+          </Link>
+        )}
 
         <Link
           href="/explore"
@@ -247,7 +253,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
           data-tour-target="practice-favorites"
           className={`${linkClass("/practice")} ${navLinkHighlight("practice-favorites")}`}
         >
-          <Brain size={20} /> Review
+          <Brain size={20} /> Practice
           {reviewDueCount > 0 ? (
             <span className="ml-auto inline-flex min-w-[1.4rem] items-center justify-center rounded-full bg-[var(--color-gold)] px-1.5 py-0.5 text-[10px] font-extrabold text-slate-950">
               {reviewDueCount}
