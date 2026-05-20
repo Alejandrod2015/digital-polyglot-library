@@ -19,6 +19,10 @@ export type PracticeFavoriteItem = {
   language?: string | null;
   nextReviewAt?: string | null;
   practiceSource?: "curriculum" | "user_saved" | "both" | null;
+  /** Pedagogical priority 1-3 assigned by the vocab generator. Higher
+   *  is more teachable. Used by getPracticeSource as the top tiebreaker
+   *  so the best items become exercises first. */
+  priority?: number | null;
   /** Voice the source story was narrated with, when known. */
   voiceId?: string | null;
   /** Pre-computed exact audio ranges from the source story's aeneas
@@ -621,6 +625,9 @@ function getPracticeSource(
     [...pool].sort((a, b) => {
       const weightDiff = sourceWeight(b) - sourceWeight(a);
       if (weightDiff !== 0) return weightDiff;
+      const aPrio = typeof a.priority === "number" ? a.priority : 0;
+      const bPrio = typeof b.priority === "number" ? b.priority : 0;
+      if (aPrio !== bPrio) return bPrio - aPrio;
       const aReview = a.nextReviewAt ? Date.parse(a.nextReviewAt) : Number.NaN;
       const bReview = b.nextReviewAt ? Date.parse(b.nextReviewAt) : Number.NaN;
       if (Number.isFinite(aReview) && Number.isFinite(bReview) && aReview !== bReview) {

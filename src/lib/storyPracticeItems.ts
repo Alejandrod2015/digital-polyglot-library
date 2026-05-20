@@ -110,13 +110,7 @@ export function buildPracticeItemsFromStory(params: {
 
   const items: PracticeFavoriteItem[] = [];
 
-  const orderedVocab = [...params.vocab].sort((a, b) => {
-    const pa = typeof (a as { priority?: unknown }).priority === "number" ? (a as { priority: number }).priority : 0;
-    const pb = typeof (b as { priority?: unknown }).priority === "number" ? (b as { priority: number }).priority : 0;
-    return pb - pa;
-  });
-
-  for (const item of orderedVocab) {
+  for (const item of params.vocab) {
     const word = normalizeText(item.word);
     const translation = normalizeText(item.definition);
     if (!word || !translation) continue;
@@ -147,6 +141,12 @@ export function buildPracticeItemsFromStory(params: {
         })
       : null;
 
+    const priorityField = (item as { priority?: unknown }).priority;
+    const priority =
+      typeof priorityField === "number" && priorityField >= 1 && priorityField <= 3
+        ? Math.round(priorityField)
+        : null;
+
     items.push({
       word,
       translation,
@@ -161,6 +161,7 @@ export function buildPracticeItemsFromStory(params: {
       sourcePath,
       language,
       practiceSource,
+      priority,
       voiceId,
       audioWordStartSec: ranges?.audioWordStartSec ?? null,
       audioWordEndSec: ranges?.audioWordEndSec ?? null,
