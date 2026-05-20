@@ -577,11 +577,19 @@ function createListenChooseExercise(
 ): ListenChooseExercise | null {
   const options = shuffle([item.word, ...getDistractorWords(item, getLanguagePool(item.language, pool))]);
   if (options.length < 4) return null;
+  // Render the example sentence (not the isolated word) so the learner
+  // trains to recognize the target inside connected speech. Picking the
+  // right written option then requires actually identifying the word in
+  // natural prosody, not just matching a clear isolated pronunciation
+  // to its spelling. Falls back to the word alone when the item has no
+  // context sentence (legacy rows without exampleSentence).
+  const contextSentence = normalizeText(item.exampleSentence ?? "");
+  const speechText = contextSentence || item.word;
   return {
     id: `listen_choose:${normalizeKey(item.word)}`,
     type: "listen_choose",
     prompt: "Listen and choose the word you hear.",
-    speechText: item.word,
+    speechText,
     language: item.language ?? null,
     options,
     answer: item.word,
