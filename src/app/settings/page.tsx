@@ -741,7 +741,7 @@ export default function SettingsPage() {
         <div className="flex items-start justify-between gap-3">
           <div>
             <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Daily reminders</h2>
-            <p className="mt-2 text-base font-semibold text-[var(--foreground)]">Keep the daily loop alive</p>
+            <p className="mt-2 text-base font-semibold text-[var(--foreground)]">Practice reminder</p>
             <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
               iPhone uses local notifications at the time you pick here. Web keeps the schedule synced.
             </p>

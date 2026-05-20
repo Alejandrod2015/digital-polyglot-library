@@ -149,7 +149,7 @@ export function buildDailyReminderCopy(args: {
     default:
       return {
         title: "Stay in the language today",
-        body: `A quick ${preferredMinutes}-minute session is enough to keep your daily loop alive.`,
+        body: `A quick ${preferredMinutes}-minute session is enough to stay on track today.`,
         target: { kind: "journey" },
       };
   }
