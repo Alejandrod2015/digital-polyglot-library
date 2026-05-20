@@ -460,11 +460,21 @@ VOCAB SELECTION RULES (HARD constraints; items violating these are wasted slots)
 3. ONE FORM PER LEMMA. If the story uses several inflections of the same verb (dice / dicono / dicendo), return only one — usually the infinitive (dire) or the form most teachable at this CEFR level. Same rule for nouns (sorriso vs. sorrisi) and adjectives (alto vs. alti). Pick the single most useful surface form per lemma.
 4. NEVER return basic copulas / auxiliaries (sono, è, ha, sta, fa as "do/make" filler) UNLESS the item is a notable construction worth teaching.
 
-PRIORITY RANKING. Each item carries a "priority" 1-3:
-- 3 (must-teach): concrete, novel for a learner at this level, broadly useful beyond this story, culturally specific or sensory (nouns for objects, sensory adjectives, useful verbs like "to fill / to taste / to explain"). The downstream practice picker uses the highest priority items first.
-- 2 (useful): helpful but secondary, slightly more abstract or domain-bound.
+PRIORITY RANKING. Each item carries a "priority" 1-3. The downstream practice picker uses the highest priority items first, so priority 3 is the bar that actually defines what the learner practices.
+
+- 3 (must-teach, productive): high-frequency word at the requested CEFR level that the learner needs to be able to PRODUCE (say, write, recall from memory), not just recognize. Examples for A1: andare, fare, dire, prendere, mattina, sera, acqua, sole, vicino, lontano, per favore, grazie, buongiorno-style functional chunks. Examples for B1+: affrontare, riuscire a, nonostante, accorgersi. Use CEFR frequency lists as your mental anchor (Marzano corpus / CILS lists for Italian, comparable lists for other languages).
+- 2 (useful, receptive): the learner only needs to recognize it when reading or listening, not produce it. Specialized nouns tied to the scene (pescatore, grembiule, capolavoro), lower-frequency descriptors, vivid sensory terms that enrich the story but the learner won't use daily.
 - 1 (filler): include only if needed to reach 18 items and nothing better remains.
-Aim for at least 10 items at priority 3. Do not flood the list with verbs alone; balance nouns, adjectives, and verbs in priority 3.
+
+PART-OF-SPEECH BALANCE in priority 3. The practice slots cover the priority-3 items first, so a P3 list of "12 nouns" produces a learner who can name objects but can't conjugate a sentence. Target this distribution inside priority 3:
+- ~40% nouns (concrete world the learner names)
+- ~35% verbs (actions, including conjugated forms learners need at this level)
+- ~15% adjectives (high-frequency descriptors: caldo, freddo, lento, veloce, bello, brutto, piccolo, grande, etc.)
+- ~10% expressions or functional adverbs (idiomatic chunks the learner uses: per favore, non vedere l'ora, all'aperto, spesso, subito)
+
+If the story is verb-light, push some verbs into priority 3 anyway by choosing the most useful forms; do not pad with extra nouns.
+
+DO NOT skip "basic-sounding" core words just because they feel obvious. For A1, words like andare, fare, dire, mattina, sera, acqua, sole, vicino, lontano, bello are exactly the productive backbone the learner needs to consolidate. They belong in priority 3, not priority 2.
 HARD LIMIT: each definition must be 3-7 English words AND no more than 50 characters total (counting spaces). Both bounds are mandatory; do not exceed either. Treat this as a UI constraint: the definition must fit on a small mobile chip without wrapping.
 Style: a concise gloss in the spirit of a translation app (Linguee/Reverso/DeepL). Lead with the noun/concept, with an infinitive verb ("To join..."), or with a descriptive adjective phrase. Two senses joined by ";" or "," are fine if they stay under the limit.
 Never use em-dashes (—); use semicolons, colons, commas, or parentheses instead.
