@@ -10,6 +10,7 @@ type LooseVocabItem = {
   definition: string;
   type?: string | null;
   note?: string | null;
+  priority?: number | null;
 };
 
 function normalizeText(value: string | null | undefined): string {
@@ -38,8 +39,13 @@ export function parseLooseVocab(input: unknown): LooseVocabItem[] {
       const definition = normalizeText(typeof record.definition === "string" ? record.definition : "");
       const type = normalizeText(typeof record.type === "string" ? record.type : "") || null;
       const note = normalizeText(typeof record.note === "string" ? record.note : "") || null;
+      const priorityRaw = record.priority;
+      const priority =
+        typeof priorityRaw === "number" && priorityRaw >= 1 && priorityRaw <= 3
+          ? Math.round(priorityRaw)
+          : null;
       if (!word || !definition) continue;
-      output.push({ word, surface, definition, type, note });
+      output.push({ word, surface, definition, type, note, priority });
     }
 
     return output;
@@ -104,7 +110,13 @@ export function buildPracticeItemsFromStory(params: {
 
   const items: PracticeFavoriteItem[] = [];
 
-  for (const item of params.vocab) {
+  const orderedVocab = [...params.vocab].sort((a, b) => {
+    const pa = typeof (a as { priority?: unknown }).priority === "number" ? (a as { priority: number }).priority : 0;
+    const pb = typeof (b as { priority?: unknown }).priority === "number" ? (b as { priority: number }).priority : 0;
+    return pb - pa;
+  });
+
+  for (const item of orderedVocab) {
     const word = normalizeText(item.word);
     const translation = normalizeText(item.definition);
     if (!word || !translation) continue;

@@ -5,6 +5,7 @@ export type VocabItem = {
   surface?: string;
   definition: string;
   type?: string;
+  priority?: number;
 };
 
 function wordCount(text: string): number {
@@ -154,11 +155,22 @@ export function normalizeVocab(raw: unknown): VocabItem[] {
           ? record.meaning.trim()
           : "";
     const type = typeof record.type === "string" ? record.type.trim() : undefined;
+    const priorityRaw = record.priority;
+    const priority =
+      typeof priorityRaw === "number" && priorityRaw >= 1 && priorityRaw <= 3
+        ? Math.round(priorityRaw)
+        : undefined;
     if (!word || !definition) continue;
     const key = word.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    output.push({ word, ...(surface ? { surface } : {}), definition, ...(type ? { type } : {}) });
+    output.push({
+      word,
+      ...(surface ? { surface } : {}),
+      definition,
+      ...(type ? { type } : {}),
+      ...(priority ? { priority } : {}),
+    });
   }
 
   return output;
@@ -181,7 +193,11 @@ function parseModelJson(content: string): unknown {
 
 function replaceDefinitions(base: VocabItem[], rewritten: VocabItem[]): VocabItem[] {
   const rewrittenByKey = new Map(rewritten.map((item) => [item.word.toLowerCase(), item] as const));
-  return base.map((item) => rewrittenByKey.get(item.word.toLowerCase()) ?? item);
+  return base.map((item) => {
+    const r = rewrittenByKey.get(item.word.toLowerCase());
+    if (!r) return item;
+    return { ...item, definition: r.definition };
+  });
 }
 
 export async function improveVocabDefinitions(

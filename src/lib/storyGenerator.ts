@@ -16,7 +16,13 @@ export type StoryJSON = {
   title: string;
   text: string;
   arcType: string;
-  vocab: { word: string; surface?: string; definition: string; type?: string }[];
+  vocab: {
+    word: string;
+    surface?: string;
+    definition: string;
+    type?: string;
+    priority?: number;
+  }[];
 };
 
 export type GenerateStoryParams = {
@@ -279,16 +285,23 @@ function sanitizeGeneratedVocab(
       language,
     });
     const definition = typeof item.definition === "string" ? item.definition.trim() : "";
+    const priorityRaw = (item as { priority?: unknown }).priority;
+    const priority =
+      typeof priorityRaw === "number" && priorityRaw >= 1 && priorityRaw <= 3
+        ? Math.round(priorityRaw)
+        : undefined;
     if (!word || !definition) continue;
     if (isInvalidMultiwordVocab(word, { type, storyText })) continue;
     const key = normalizeToken(word);
     if (!key || seen.has(key)) continue;
     seen.add(key);
-    out.push(
-      type
-        ? { word, ...(surface && surface !== word ? { surface } : {}), definition, type }
-        : { word, ...(surface && surface !== word ? { surface } : {}), definition }
-    );
+    out.push({
+      word,
+      ...(surface && surface !== word ? { surface } : {}),
+      definition,
+      ...(type ? { type } : {}),
+      ...(priority ? { priority } : {}),
+    });
   }
 
   return out;
@@ -435,6 +448,23 @@ ${titleClause}
 ${variantClause}
 Return 18-22 vocabulary items (aim for 20). After post-processing filters transparent cognates and invalid multi-word fragments, this yields roughly 15-17 keeper items — the target the app needs.
 All vocabulary definitions must be written in clear English, regardless of the story language.
+
+VOCAB SELECTION RULES (HARD constraints; items violating these are wasted slots):
+
+1. NEVER include words an educated adult already knows without studying the language. This covers:
+   - International food/drink loanwords: pizza, mozzarella, espresso, cappuccino, latte, cannoli, gelato, pasta, sushi, kimchi, croissant, baguette, tofu, salsa, taco, tortilla, tapas, paella, bratwurst, pretzel, sashimi, ramen, miso, kebab.
+   - Global cultural terms: ciao, bravo, mafia, paparazzi, fiesta, samurai, sake, opera, aria, prima donna, maestro, finale, soprano.
+   - Brand-like internationalisms and obvious menu nouns the reader sees on signs in any major city.
+   - If you would not bother translating it in a travel guide for English readers, exclude it.
+2. NEVER include transparent cognates with English at the requested CEFR level (importante, normale, generale, sociale, speciale, naturale, finale, attentamente, contento, curioso, gruppo, parte, etc.). If a beginner can guess the meaning from English in under one second, do not waste a slot.
+3. ONE FORM PER LEMMA. If the story uses several inflections of the same verb (dice / dicono / dicendo), return only one — usually the infinitive (dire) or the form most teachable at this CEFR level. Same rule for nouns (sorriso vs. sorrisi) and adjectives (alto vs. alti). Pick the single most useful surface form per lemma.
+4. NEVER return basic copulas / auxiliaries (sono, è, ha, sta, fa as "do/make" filler) UNLESS the item is a notable construction worth teaching.
+
+PRIORITY RANKING. Each item carries a "priority" 1-3:
+- 3 (must-teach): concrete, novel for a learner at this level, broadly useful beyond this story, culturally specific or sensory (nouns for objects, sensory adjectives, useful verbs like "to fill / to taste / to explain"). The downstream practice picker uses the highest priority items first.
+- 2 (useful): helpful but secondary, slightly more abstract or domain-bound.
+- 1 (filler): include only if needed to reach 18 items and nothing better remains.
+Aim for at least 10 items at priority 3. Do not flood the list with verbs alone; balance nouns, adjectives, and verbs in priority 3.
 HARD LIMIT: each definition must be 3-7 English words AND no more than 50 characters total (counting spaces). Both bounds are mandatory; do not exceed either. Treat this as a UI constraint: the definition must fit on a small mobile chip without wrapping.
 Style: a concise gloss in the spirit of a translation app (Linguee/Reverso/DeepL). Lead with the noun/concept, with an infinitive verb ("To join..."), or with a descriptive adjective phrase. Two senses joined by ";" or "," are fine if they stay under the limit.
 Never use em-dashes (—); use semicolons, colons, commas, or parentheses instead.
@@ -498,7 +528,7 @@ Return ONLY valid JSON:
   "title": "string",
   "text": "string",
   "arcType": "white-lie|last-minute-decision|return-after-years|unspoken-subtext|plan-falls-short|late-reveal|small-stake|open-ending|daily-encounter",
-  "vocab": [{ "word": "string", "surface": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang" }]
+  "vocab": [{ "word": "string", "surface": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang", "priority": 1 }]
 }
 `;
 
