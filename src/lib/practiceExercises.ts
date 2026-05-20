@@ -310,16 +310,52 @@ function getDistractorMeanings(
   pool: PracticeFavoriteItem[],
   max = 3
 ): string[] {
+  // Mirror getDistractorWords: filter by POS so a noun target gets
+  // noun-translation distractors, a verb target gets verb-translation
+  // distractors, etc. Without this, meaning_in_context is trivial
+  // process-of-elimination — the learner picks the only option whose
+  // POS fits the sentence slot, without actually knowing the Italian
+  // word. Cascade to the general pool if the same-POS bucket runs out
+  // so the exercise still has 4 options.
+  const targetType = normalizeVocabType(item.wordType, {
+    word: item.word,
+    definition: item.translation,
+  });
+
+  const eligible = uniqueByWord(
+    pool.filter(
+      (candidate) =>
+        normalizeKey(candidate.word) !== normalizeKey(item.word) &&
+        normalizeText(candidate.translation),
+    ),
+  );
+
+  const sameType = targetType
+    ? eligible.filter((candidate) => {
+        const candidateType = normalizeVocabType(candidate.wordType, {
+          word: candidate.word,
+          definition: candidate.translation,
+        });
+        return candidateType === targetType;
+      })
+    : eligible;
+
   const seen = new Set<string>([normalizeKey(item.translation)]);
   const out: string[] = [];
-  for (const candidate of shuffle(pool)) {
-    const translation = normalizeText(candidate.translation);
-    const key = normalizeKey(translation);
-    if (!translation || seen.has(key)) continue;
-    seen.add(key);
-    out.push(translation);
-    if (out.length >= max) break;
-  }
+  const drainFrom = (source: PracticeFavoriteItem[]) => {
+    for (const candidate of shuffle(source)) {
+      if (out.length >= max) break;
+      const translation = normalizeText(candidate.translation);
+      const key = normalizeKey(translation);
+      if (!translation || seen.has(key)) continue;
+      seen.add(key);
+      out.push(translation);
+    }
+  };
+
+  drainFrom(sameType);
+  if (out.length < max) drainFrom(eligible);
+
   return out;
 }
 
