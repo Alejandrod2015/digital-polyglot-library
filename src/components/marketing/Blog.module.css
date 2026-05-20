@@ -69,8 +69,56 @@
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  padding-bottom: 32px;
+  padding-bottom: 18px;
+}
+.toolbarTypes {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-bottom: 28px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.typeChip {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 6px 11px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.typeChip:hover { color: #ffffff; }
+.typeChipActive {
+  color: #fcd34d;
+  border-color: rgba(252, 211, 77, 0.40);
+  background: rgba(252, 211, 77, 0.08);
+}
+.rssBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.rssBtn:hover {
+  color: #fcd34d;
+  border-color: rgba(252, 211, 77, 0.45);
 }
 .chips {
   display: flex;
@@ -209,6 +257,16 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
+}
+.featuredKicker {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
 }
 .featuredMark { color: #fcd34d; }
 .featuredMark::before {
@@ -429,6 +487,18 @@
   gap: 8px;
   padding: 4px 4px 4px 0;
 }
+.postByline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.02em;
+}
+.bylineSep {
+  color: rgba(255, 255, 255, 0.30);
+}
 .postBodyTitle {
   margin: 0;
   color: #ffffff;
@@ -451,6 +521,87 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* ────────────── INLINE CROSS-SELL ────────────── */
+/* Lives inside .postList so it inherits the same grid rhythm as a card,
+ * but uses the gold accent + tighter copy to read as a CTA, not a post. */
+
+.crossSell {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 22px;
+  align-items: center;
+  padding: 22px 24px;
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse 50% 100% at 0% 50%, rgba(252, 211, 77, 0.18) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(252, 211, 77, 0.06) 0%, rgba(252, 211, 77, 0.02) 100%);
+  border: 1px solid rgba(252, 211, 77, 0.30);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+.crossSell:hover {
+  border-color: rgba(252, 211, 77, 0.55);
+  transform: translateY(-1px);
+}
+@media (max-width: 640px) {
+  .crossSell { grid-template-columns: 1fr; gap: 14px; }
+}
+.crossSellCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.crossSellKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fcd34d;
+}
+.crossSellDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #fcd34d;
+  box-shadow: 0 0 10px rgba(252, 211, 77, 0.65);
+}
+.crossSellTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.crossSellTitle em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+}
+.crossSellSub {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.crossSellCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 18px;
+  background: #fcd34d;
+  color: #051834;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px -6px rgba(252, 211, 77, 0.5);
+}
+.crossSell:hover .crossSellCta svg { transform: translateX(2px); transition: transform 0.2s; }
 
 /* ────────────── SIDEBAR ────────────── */
 

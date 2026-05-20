@@ -13,6 +13,7 @@ export type BlogPostMeta = {
   hero?: string;
   readingMinutes?: number;
   dialect?: DialectKey;
+  type?: PostTypeKey;
 };
 
 export type DialectKey =
@@ -22,6 +23,46 @@ export type DialectKey =
   | "latam"
   | "brazilian"
   | "essays";
+
+export type PostTypeKey =
+  | "phrases"
+  | "grammar"
+  | "vocab"
+  | "guide"
+  | "essay";
+
+export const POST_TYPES: Array<{ key: PostTypeKey; label: string }> = [
+  { key: "phrases", label: "Phrases" },
+  { key: "grammar", label: "Grammar" },
+  { key: "vocab", label: "Vocab" },
+  { key: "guide", label: "Guide" },
+  { key: "essay", label: "Essay" },
+];
+
+// Same heuristic the per-post cover badge uses, hoisted here so the
+// toolbar and the badge stay in sync.
+export function classifyType(post: { title: string }): PostTypeKey {
+  const t = post.title.toLowerCase();
+  if (/phrase|expression|saying|idiom/.test(t)) return "phrases";
+  if (/verb|adjective|noun|grammar|conjugat/.test(t)) return "grammar";
+  if (/vocab|word|slang/.test(t)) return "vocab";
+  if (/guide|how to|tips|ways/.test(t)) return "guide";
+  return "essay";
+}
+
+export function getPostTypeCounts(posts: BlogPostMeta[]): Record<PostTypeKey, number> {
+  const out: Record<PostTypeKey, number> = {
+    phrases: 0,
+    grammar: 0,
+    vocab: 0,
+    guide: 0,
+    essay: 0,
+  };
+  for (const p of posts) {
+    out[p.type ?? classifyType(p)] += 1;
+  }
+  return out;
+}
 
 export const DIALECTS: Array<{
   key: DialectKey;

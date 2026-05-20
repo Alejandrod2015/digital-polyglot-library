@@ -3,10 +3,12 @@ import Link from "next/link";
 import {
   type BlogPostMeta,
   type DialectKey,
+  type PostTypeKey,
   getBlogSeries,
   getDialectCounts,
   getDialectMeta,
   getFeaturedPost,
+  getPostTypeCounts,
   listBlogPosts,
 } from "@/lib/blog";
 import landing from "@/components/marketing/LandingPage.module.css";
@@ -34,12 +36,6 @@ function shortDate(iso: string) {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
-function authorInitials(name?: string): string {
-  if (!name) return "DP";
-  const parts = name.split(/\s+/).filter(Boolean);
-  return ((parts[0]?.[0] ?? "") + (parts[1]?.[0] ?? "")).toUpperCase() || "DP";
-}
-
 export default function BlogIndex() {
   const posts: BlogPostMeta[] = listBlogPosts();
   const featured = getFeaturedPost(posts);
@@ -49,6 +45,11 @@ export default function BlogIndex() {
   const chipCounts: Record<"all" | DialectKey, number> = {
     all: posts.length,
     ...dialectCounts,
+  };
+  const typeCountsRaw = getPostTypeCounts(posts);
+  const typeCounts: Record<"all" | PostTypeKey, number> = {
+    all: posts.length,
+    ...typeCountsRaw,
   };
   const dialectsCount = Object.values(dialectCounts).filter((n) => n > 0).length;
   const series = getBlogSeries(posts);
@@ -118,24 +119,21 @@ export default function BlogIndex() {
                 )}
               </div>
               <div className={blog.featuredBody}>
-                <div className={blog.postTag}>
+                <div className={blog.featuredKicker}>
                   <span className={blog.featuredMark}>Featured</span>
                   <span className={blog.sep}>·</span>
-                  <span>{getDialectMeta(featured.dialect ?? "essays").short}</span>
+                  <span>{formatDate(featured.date).toUpperCase()}</span>
+                  <span className={blog.sep}>·</span>
+                  <span>BY {(featured.author ?? "Digital Polyglot").toUpperCase()}</span>
                 </div>
                 <h2 className={blog.featuredTitle}>{featured.title}</h2>
                 {featured.excerpt && (
                   <p className={blog.featuredExcerpt}>{featured.excerpt}</p>
                 )}
                 <div className={blog.postMeta}>
-                  <span className={blog.postMetaAuthor}>
-                    <span className={blog.avatar}>{authorInitials(featured.author)}</span>
-                    {featured.author ?? "Digital Polyglot"}
-                  </span>
-                  <span className={blog.metaDot} />
-                  <span>{formatDate(featured.date)}</span>
-                  <span className={blog.metaDot} />
                   <span>{featured.readingMinutes ?? 6} min read</span>
+                  <span className={blog.metaDot} />
+                  <span>{getDialectMeta(featured.dialect ?? "essays").short}</span>
                   <span className={blog.langDot}>
                     <span aria-hidden>{getDialectMeta(featured.dialect ?? "essays").flag}</span>
                     {getDialectMeta(featured.dialect ?? "essays").label}
@@ -155,7 +153,11 @@ export default function BlogIndex() {
         {/* Main grid: post list (client toolbar) + sidebar */}
         <section className={blog.mainGrid}>
           <div>
-            <BlogIndexClient posts={rest} chipCounts={chipCounts} />
+            <BlogIndexClient
+              posts={rest}
+              chipCounts={chipCounts}
+              typeCounts={typeCounts}
+            />
           </div>
 
           <aside className={blog.sidebar}>

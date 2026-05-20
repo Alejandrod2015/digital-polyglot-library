@@ -1,62 +1,65 @@
 "use client";
 
+// Single source of truth for the marketing-area nav (landing, /beta, /blog,
+// /blog/[slug]). Each route used to render its own copy of the same nav
+// markup, which drifted (Blog vs Features) and read as "two separate sites"
+// once /blog moved off WordPress. This component is rendered everywhere so
+// the menu looks identical no matter where the visitor lands.
+//
+// `active` highlights one entry by href prefix; pass undefined on the home
+// page to skip highlighting altogether.
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { trackGa4Event } from "@/lib/ga4";
 import styles from "./LandingPage.module.css";
 
-const SHOP_URL = "https://shop.digitalpolyglot.com";
+const LINKS: Array<{ href: string; label: string; external?: boolean }> = [
+  { href: "/blog", label: "Blog" },
+  { href: "/beta", label: "iPhone beta" },
+  { href: "https://shop.digitalpolyglot.com", label: "Shop", external: true },
+];
 
 function track(cta: string) {
-  trackGa4Event("nav_click", { cta });
+  trackGa4Event("landing_cta_click", { cta });
 }
 
-const ACTIVE_LINK_STYLE: React.CSSProperties = {
-  color: "#fff",
-  background: "rgba(255,255,255,0.06)",
-};
-
 export default function MarketingNav() {
-  const pathname = usePathname() ?? "";
-  const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
-  const isBeta = pathname === "/beta" || pathname.startsWith("/beta/");
-
+  const pathname = usePathname() ?? "/";
   return (
     <nav className={styles.nav}>
       <div className={`${styles.frame} ${styles.navInner}`}>
-        <Link href="/" className={styles.brand} onClick={() => track("logo")}>
+        <Link href="/" className={styles.brand}>
           Digital Polyglot
         </Link>
         <div className={styles.navLinks}>
-          <Link
-            href="/blog"
-            onClick={() => track("blog")}
-            style={isBlog ? ACTIVE_LINK_STYLE : undefined}
-          >
-            Blog
-          </Link>
-          <a href={SHOP_URL} onClick={() => track("shop")}>
-            Shop
-          </a>
-          <Link
-            href="/beta"
-            onClick={() => track("beta")}
-            style={isBeta ? ACTIVE_LINK_STYLE : undefined}
-          >
-            iPhone beta
-          </Link>
+          {LINKS.map((l) => {
+            const isActive = !l.external && pathname.startsWith(l.href);
+            const activeStyle = isActive
+              ? { color: "#fff", background: "rgba(255,255,255,0.06)" }
+              : undefined;
+            return l.external ? (
+              <a key={l.href} href={l.href} style={activeStyle}>
+                {l.label}
+              </a>
+            ) : (
+              <Link key={l.href} href={l.href} style={activeStyle}>
+                {l.label}
+              </Link>
+            );
+          })}
         </div>
         <div className={styles.navCta}>
           <Link
             href="/sign-in"
-            onClick={() => track("sign_in")}
+            onClick={() => track("nav_sign_in")}
             className={`${styles.btn} ${styles.btnQuiet}`}
           >
             Sign in
           </Link>
           <Link
             href="/sign-up"
-            onClick={() => track("get_started")}
+            onClick={() => track("nav_get_started")}
             className={`${styles.btn} ${styles.btnPrimary}`}
           >
             Get started
