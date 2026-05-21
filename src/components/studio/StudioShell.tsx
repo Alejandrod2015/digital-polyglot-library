@@ -37,6 +37,7 @@ const NAV_SECTIONS = [
     items: [
       { href: "/studio/covers", label: "Portadas", icon: "layers", exact: false },
       { href: "/studio/audio", label: "Voces y audios", icon: "globe", exact: false },
+      { href: "/studio/audio-editor", label: "Audio Editor BETA", icon: "sliders", exact: false },
     ],
   },
   {

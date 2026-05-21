@@ -140,6 +140,18 @@ async function run() {
     }
     console.log(`  uploaded: ${result.url}`);
 
+    // Persist the dry stem URL in voiceProvenance JSON so the audio
+    // editor can splice voice-on-voice and re-render ambient
+    // continuously over the result (zero shimmer at the seam).
+    const { mergeVoiceProvenance } = await import("../src/lib/voiceProvenance");
+    const provenance = mergeVoiceProvenance(story.voiceProvenance, {
+      dryUrl: result.dryUrl,
+      dryFilename: result.dryFilename,
+      // Clear any stale preview-dry pointers from a previous edit session.
+      previewDryUrl: null,
+      previewDryFilename: null,
+    });
+
     await prisma.journeyStory.update({
       where: { id: story.id },
       data: {
@@ -150,9 +162,10 @@ async function run() {
         audioQaStatus: result.audioQa?.status ?? null,
         audioQaScore: result.audioQa?.score ?? null,
         audioQaNotes: result.audioQa?.notes?.join("\n") ?? null,
+        voiceProvenance: provenance as unknown as object,
       },
     });
-    console.log(`  DB updated`);
+    console.log(`  DB updated${result.dryUrl ? " (dry stem stored)" : ""}`);
   }
 
   await prisma.$disconnect();

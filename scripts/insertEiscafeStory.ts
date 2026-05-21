@@ -134,6 +134,12 @@ async function run() {
   }
   console.log(`Audio uploaded: ${result.url}`);
 
+  const { mergeVoiceProvenance } = await import("../src/lib/voiceProvenance");
+  const provenance = mergeVoiceProvenance(null, {
+    dryUrl: result.dryUrl,
+    dryFilename: result.dryFilename,
+  });
+
   await prisma.journeyStory.update({
     where: { id: created.id },
     data: {
@@ -145,9 +151,10 @@ async function run() {
       audioQaScore: result.audioQa?.score ?? null,
       audioQaNotes: result.audioQa?.notes?.join("\n") ?? null,
       status: "published",
+      voiceProvenance: provenance as unknown as object,
     },
   });
-  console.log("Published.");
+  console.log(`Published.${result.dryUrl ? " (dry stem stored)" : ""}`);
 
   await prisma.$disconnect();
 }

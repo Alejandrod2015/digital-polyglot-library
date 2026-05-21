@@ -811,6 +811,13 @@ export async function generateAndUploadMultiVoiceAudio(args: {
 }): Promise<{
   url: string;
   filename: string;
+  /** R2 URL to the post-loudnorm, pre-ambient buffer. Callers should
+   *  persist this in `voiceProvenance.dryUrl` so the audio editor can
+   *  splice into the dry stem and re-render ambient continuously,
+   *  avoiding the "shimmer at the seam" inherent to splicing mixed
+   *  audio. Null when no ambient mix happened (then `url` === dry). */
+  dryUrl: string | null;
+  dryFilename: string | null;
   audioSegments: AudioSegment[];
   audioQa: AudioQaResult;
   speakerVoiceMap: Record<string, string>;
@@ -874,10 +881,42 @@ export async function generateAndUploadMultiVoiceAudio(args: {
 
   const concatBuffer = await concatMp3Buffers(audioBuffers);
   const normalized = await normalizeLoudness(concatBuffer);
+
+  // Upload the dry stem (voices-only, post-loudnorm, pre-ambient mix)
+  // BEFORE merging ambient. The dry stem enables seam-less splices in
+  // the audio editor: the editor splices voice-on-voice, then re-renders
+  // ambient continuously over the spliced output. Without this stem,
+  // editor splices must re-mix ambient locally in the new tramo, which
+  // produces an audible phase shift at the seam (ambient loop starts
+  // from sample 0 instead of continuing the master's phase).
+  const baseFilename = filenameFromTitle(args.title);
+  const ts = Date.now();
+  let dryUrl: string | null = null;
+  let dryFilename: string | null = null;
+  if (args.ambientPath) {
+    dryFilename = `${baseFilename}_multivoice_dry_${ts}.mp3`;
+    try {
+      const dryUpload = await uploadPublicObject({
+        key: `media/generated/audio/${dryFilename}`,
+        body: normalized,
+        contentType: "audio/mpeg",
+      });
+      dryUrl = dryUpload?.url ?? null;
+      if (!dryUrl) {
+        console.warn("[elevenlabs] dry-stem upload returned no url; continuing without dry");
+      }
+    } catch (err) {
+      console.warn(
+        "[elevenlabs] dry-stem upload failed (continuing without dry):",
+        err instanceof Error ? err.message : err,
+      );
+    }
+  }
+
   const combined = args.ambientPath
     ? await mixAmbient(normalized, args.ambientPath, args.ambientVolume ?? DEFAULT_AMBIENT_VOLUME)
     : normalized;
-  const filename = `${filenameFromTitle(args.title)}_multivoice_${Date.now()}.mp3`;
+  const filename = `${baseFilename}_multivoice_${ts}.mp3`;
 
   const transcription = await transcribeAudioSegments(combined, filename, [titleText, ...segments.map((s) => s.text)].join(" "));
   const audioQa = analyzeTranscriptQuality(
@@ -905,6 +944,8 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   return {
     url: uploaded.url,
     filename,
+    dryUrl,
+    dryFilename,
     audioSegments: transcription.audioSegments,
     audioQa,
     speakerVoiceMap,

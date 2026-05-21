@@ -22876,16 +22876,16 @@ const styles = StyleSheet.create({
     borderRadius: 999,
   },
   practiceMeaningOptionAccentA: {
-    backgroundColor: "#ffd25f",
+    backgroundColor: "#fbbf24",
   },
   practiceMeaningOptionAccentB: {
-    backgroundColor: "#9fe8ff",
+    backgroundColor: "#60a5fa",
   },
   practiceMeaningOptionAccentC: {
-    backgroundColor: "#f0abfc",
+    backgroundColor: "#a78bfa",
   },
   practiceMeaningOptionAccentD: {
-    backgroundColor: "#72f2b3",
+    backgroundColor: "#34d399",
   },
   practiceMeaningFooterIdle: {
     backgroundColor: "rgba(255,255,255,0.06)",
