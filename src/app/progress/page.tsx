@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { BookCheck, BookOpenCheck, BrainCircuit, Clock3, Flame, Star, Trophy } from "lucide-react";
+import { BookCheck, Crosshair, Flame, Headphones, Star, Trophy, Zap } from "lucide-react";
 
 type ProgressPayload = {
   minutesListened: number;
@@ -181,141 +181,238 @@ export default function ProgressPage() {
     );
   }
 
+  // Week label "Week 21 · 2026" — ISO week number + current year.
+  // Used in the iPhone-style top-right tag.
+  const now = new Date();
+  const weekNumber = (() => {
+    const d = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
+    const dayNum = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+    const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+    return Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
+  })();
+
+  // Ring geometry (220px outer, 200px inner).
+  const ringSize = 220;
+  const ringR = 100;
+  const ringC = 2 * Math.PI * ringR;
+  const ringDash = (Math.max(0, Math.min(1, progress.gamification.levelProgress)) * ringC);
+
+  const levelXpNow = progress.gamification.totalXp - progress.gamification.levelStartXp;
+  const levelXpMax = progress.gamification.nextLevelXp - progress.gamification.levelStartXp;
+  const weeklyStoriesPercent = weeklyPercent;
+  const totalXpDisplay = progress.gamification.totalXp >= 1000
+    ? `${(progress.gamification.totalXp / 1000).toFixed(1).replace(".", ",")}`
+    : `${progress.gamification.totalXp}`;
+
   return (
-    <div className="px-5 pb-24 pt-8 sm:px-8 max-w-6xl mx-auto text-[var(--foreground)]">
-      <div className="mb-6 flex items-end justify-between gap-4">
-        <div>
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-sky-200/70">Progress</p>
-          <h1 className="text-3xl font-bold sm:text-4xl">Your Progress</h1>
-        </div>
-        <div className="hidden rounded-full border border-sky-300/20 bg-sky-300/10 px-3 py-1 text-xs font-semibold text-sky-100 sm:inline-flex">
-          {motivationalBadge(progress)}
-        </div>
+    <div className="px-5 pb-24 pt-8 sm:px-8 mx-auto text-[var(--foreground)]" style={{ maxWidth: 480 }}>
+      {/* ── Top row: PROGRESS eyebrow + Week tag ── */}
+      <div className="flex items-baseline justify-between mb-6">
+        <p className="text-[11px] font-extrabold uppercase tracking-[0.32em] text-white/55">Progress</p>
+        <span className="text-[13px] font-bold text-white/75">
+          Week {weekNumber} · {now.getFullYear()}
+        </span>
       </div>
 
-      <div className="mb-4 rounded-[30px] border border-[#26425f] bg-[linear-gradient(180deg,#16304f_0%,#132947_100%)] p-5 shadow-[0_18px_55px_rgba(6,17,38,0.34)] sm:p-6">
-        <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="rounded-[26px] border border-[#34516f] bg-[linear-gradient(180deg,#274b74_0%,#1b3557_100%)] p-5">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-100">
-              <Flame size={14} className="text-[#ffd36b]" />
-              Story streak
-            </div>
-            <div className="flex items-end gap-3">
-              <span className="text-6xl font-bold leading-none sm:text-7xl">{progress.storyStreakDays}</span>
-              <span className="pb-1 text-sm font-medium text-slate-300 sm:text-base">
-                {progress.storyStreakDays === 1 ? "day in a row" : "days in a row"}
-              </span>
-            </div>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-slate-200/90 sm:text-base">{motivationalLine(progress)}</p>
-            <div className="mt-4 inline-flex rounded-full border border-[#3b6291] bg-[#21466d] px-3 py-1 text-xs font-bold text-[#d7efff]">
-              {motivationalBadge(progress)}
-            </div>
-          </div>
-
-          <div className="grid gap-3">
-            <div className="rounded-[24px] border border-[#34516f] bg-[#18314d] p-4">
-              <div className="mb-2 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">
-                <span>Weekly goal</span>
-                <span>{progress.weeklyStoriesFinished} / {progress.weeklyGoalStories}</span>
-              </div>
-              <div className="mb-2 h-3 rounded-full bg-[#314861] overflow-hidden">
-                <div
-                  className="h-full rounded-full bg-[linear-gradient(90deg,#71dd5a,#3dc55d)] transition-all"
-                  style={{ width: `${weeklyPercent}%` }}
-                />
-              </div>
-              <p className="text-sm font-medium text-slate-100">
-                {statLabel(progress.weeklyStoriesFinished, "story", "stories")} finished this week
-              </p>
-              <p className="mt-1 text-xs text-slate-300">
-                Listening: {progress.weeklyMinutesListened} / {progress.weeklyGoalMinutes} min
-              </p>
-              <p className="mt-1 text-xs text-slate-300">
-                Practice: {progress.weeklyPracticeSessions} / {progress.weeklyGoalPracticeSessions} sessions
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-[22px] border border-[#34516f] bg-[#18314d] p-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">This month</p>
-                <p className="mt-2 text-3xl font-bold">{progress.monthlyStoriesFinished}</p>
-                <p className="mt-1 text-xs text-slate-300">stories finished</p>
-              </div>
-              <div className="rounded-[22px] border border-[#34516f] bg-[#18314d] p-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Regions</p>
-                <p className="mt-2 text-3xl font-bold">{progress.regionsExplored}</p>
-                <p className="mt-1 text-xs text-slate-300">regions explored</p>
-              </div>
+      {/* ── Ring with day streak in the center ── */}
+      <div className="flex justify-center mb-6">
+        <div className="relative" style={{ width: ringSize, height: ringSize }}>
+          {/* Soft outer halo */}
+          <div
+            aria-hidden
+            className="absolute inset-0 rounded-full"
+            style={{
+              boxShadow: "0 0 60px rgba(190, 242, 100, 0.18), 0 0 120px rgba(190, 242, 100, 0.08)",
+            }}
+          />
+          <svg
+            width={ringSize}
+            height={ringSize}
+            className="absolute inset-0"
+            style={{ transform: "rotate(-90deg)" }}
+            aria-hidden
+          >
+            <circle
+              cx={ringSize / 2}
+              cy={ringSize / 2}
+              r={ringR}
+              fill="rgba(11, 30, 58, 0.5)"
+              stroke="rgba(190, 242, 100, 0.15)"
+              strokeWidth={6}
+            />
+            <circle
+              cx={ringSize / 2}
+              cy={ringSize / 2}
+              r={ringR}
+              fill="none"
+              stroke="#bef264"
+              strokeWidth={6}
+              strokeLinecap="round"
+              strokeDasharray={`${ringDash} ${ringC}`}
+              style={{ filter: "drop-shadow(0 0 8px rgba(190,242,100,0.5))" }}
+            />
+          </svg>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <span className="text-white font-black leading-none" style={{ fontSize: 72 }}>
+              {progress.gamification.dailyStreak}
+            </span>
+            <div className="mt-2 inline-flex items-center gap-1.5 text-[#fb923c] text-[13px] font-extrabold tracking-[0.18em]">
+              <Zap size={13} fill="currentColor" strokeWidth={0} />
+              DAY STREAK
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mb-4 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="rounded-[26px] border border-[#26425f] bg-[linear-gradient(180deg,#16304f_0%,#132947_100%)] p-5 shadow-[0_18px_40px_rgba(6,17,38,0.22)]">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-100">
-              <Flame size={14} className="text-[#ffd36b]" />
-              {progress.gamification.dailyStreak}-day streak
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#365b81] bg-[#21466d] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#dcefff]">
-              <Star size={14} className="text-[#8ef0c6]" />
-              {progress.gamification.totalXp} XP
-            </span>
-          </div>
+      {/* ── Level chip ── */}
+      <div className="flex justify-center mb-7">
+        <div
+          className="inline-flex items-center gap-2 rounded-full px-4 py-2.5"
+          style={{
+            background: "rgba(190, 242, 100, 0.08)",
+            border: "1px solid rgba(190, 242, 100, 0.35)",
+          }}
+        >
+          <Zap size={14} fill="#bef264" strokeWidth={0} />
+          <span className="text-[#bef264] font-extrabold text-[13px] tracking-[0.14em]">
+            LEVEL {progress.gamification.currentLevel} · {levelXpNow}/{levelXpMax} XP
+          </span>
+        </div>
+      </div>
 
-          <div className="mt-5 flex items-end justify-between gap-4">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Level</p>
-              <p className="mt-2 text-5xl font-bold text-white">{progress.gamification.currentLevel}</p>
-            </div>
-            <div className="text-right text-sm text-slate-300">
-              <p>{progress.gamification.todayXp} XP today</p>
-              <p>{progress.gamification.weeklyXp} XP this week</p>
-            </div>
+      {/* ── 2×2 stat grid ── */}
+      <div className="grid grid-cols-2 gap-3 mb-6">
+        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+          <div className="flex items-center gap-1.5 mb-2 text-[#bef264] text-[11px] font-extrabold uppercase tracking-[0.18em]">
+            <Zap size={11} fill="currentColor" strokeWidth={0} />
+            Total XP
           </div>
-
-          <div className="mt-4">
-            <div className="mb-2 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-              <span>Progress to next level</span>
-              <span>
-                {progress.gamification.totalXp - progress.gamification.levelStartXp} /{" "}
-                {progress.gamification.nextLevelXp - progress.gamification.levelStartXp} XP
-              </span>
-            </div>
-            <div className="h-3 overflow-hidden rounded-full bg-[#314861]">
-              <div
-                className="h-full rounded-full bg-[linear-gradient(90deg,#71dd5a,#3dc55d)] transition-all"
-                style={{ width: `${Math.round(progress.gamification.levelProgress * 100)}%` }}
-              />
-            </div>
-          </div>
+          <p className="text-white text-[34px] font-black leading-none">{totalXpDisplay}</p>
+          <p className="mt-1 text-white/55 text-[12px]">+{progress.gamification.todayXp} today</p>
         </div>
 
-        <div className="rounded-[26px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4 sm:p-5">
-          <div className="mb-4 flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2 text-sm font-semibold text-slate-100">
-              <Trophy size={18} className="text-[#ffd36b]" />
+        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+          <div className="flex items-center gap-1.5 mb-2 text-[#7dd3fc] text-[11px] font-extrabold uppercase tracking-[0.18em]">
+            <Crosshair size={11} />
+            Accuracy
+          </div>
+          <p className="text-white text-[34px] font-black leading-none">{progress.practiceAccuracy}%</p>
+          <p className="mt-1 text-white/55 text-[12px]">
+            {progress.practiceSessionsCompleted} session{progress.practiceSessionsCompleted === 1 ? "" : "s"}
+          </p>
+        </div>
+
+        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+          <div className="flex items-center gap-1.5 mb-2 text-[#a78bfa] text-[11px] font-extrabold uppercase tracking-[0.18em]">
+            <BookCheck size={11} />
+            Words
+          </div>
+          <p className="text-white text-[34px] font-black leading-none">{progress.wordsLearned}</p>
+          <p className="mt-1 text-white/55 text-[12px]">learned all-time</p>
+        </div>
+
+        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+          <div className="flex items-center gap-1.5 mb-2 text-[#fcd34d] text-[11px] font-extrabold uppercase tracking-[0.18em]">
+            <Headphones size={11} />
+            Minutes
+          </div>
+          <p className="text-white text-[34px] font-black leading-none">{progress.minutesListened}</p>
+          <p className="mt-1 text-white/55 text-[12px]">
+            {progress.storiesFinished} {progress.storiesFinished === 1 ? "story" : "stories"}
+          </p>
+        </div>
+      </div>
+
+      {/* ── This week ── */}
+      <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4 mb-6">
+        <div className="flex items-baseline justify-between mb-3">
+          <p className="text-[#7dd3fc] text-[11px] font-extrabold uppercase tracking-[0.22em]">This week</p>
+          <span className="text-white/55 text-[12px]">Resets Sun</span>
+        </div>
+        <div className="flex items-baseline justify-between mb-1.5">
+          <span className="inline-flex items-center gap-2 text-white font-extrabold text-[15px]">
+            <span className="text-[#bef264] text-lg leading-none">+</span> Stories
+          </span>
+          <span className="text-[15px] font-extrabold">
+            <span className="text-[#bef264]">{progress.weeklyStoriesFinished}</span>
+            <span className="text-white/55"> / {progress.weeklyGoalStories}</span>
+          </span>
+        </div>
+        <div className="h-2 rounded-full overflow-hidden bg-white/8">
+          <div
+            className="h-full rounded-full"
+            style={{
+              width: `${weeklyStoriesPercent}%`,
+              background: "linear-gradient(90deg, #bef264, #a3e635)",
+            }}
+          />
+        </div>
+
+        <div className="flex items-baseline justify-between mb-1.5 mt-4">
+          <span className="inline-flex items-center gap-2 text-white font-extrabold text-[15px]">
+            <span className="text-[#fcd34d] text-lg leading-none">♪</span> Minutes
+          </span>
+          <span className="text-[15px] font-extrabold">
+            <span className="text-[#fcd34d]">{progress.weeklyMinutesListened}</span>
+            <span className="text-white/55"> / {progress.weeklyGoalMinutes}</span>
+          </span>
+        </div>
+        <div className="h-2 rounded-full overflow-hidden bg-white/8">
+          <div
+            className="h-full rounded-full"
+            style={{
+              width: `${clamp((progress.weeklyMinutesListened / Math.max(1, progress.weeklyGoalMinutes)) * 100, 0, 100)}%`,
+              background: "linear-gradient(90deg, #fcd34d, #f59e0b)",
+            }}
+          />
+        </div>
+
+        <div className="flex items-baseline justify-between mb-1.5 mt-4">
+          <span className="inline-flex items-center gap-2 text-white font-extrabold text-[15px]">
+            <span className="text-[#7dd3fc] text-lg leading-none">◎</span> Practice
+          </span>
+          <span className="text-[15px] font-extrabold">
+            <span className="text-[#7dd3fc]">{progress.weeklyPracticeSessions}</span>
+            <span className="text-white/55"> / {progress.weeklyGoalPracticeSessions}</span>
+          </span>
+        </div>
+        <div className="h-2 rounded-full overflow-hidden bg-white/8">
+          <div
+            className="h-full rounded-full"
+            style={{
+              width: `${clamp((progress.weeklyPracticeSessions / Math.max(1, progress.weeklyGoalPracticeSessions)) * 100, 0, 100)}%`,
+              background: "linear-gradient(90deg, #7dd3fc, #38bdf8)",
+            }}
+          />
+        </div>
+      </div>
+
+      {/* ── Daily quests (kept; styled compact below the week stats) ── */}
+      {progress.gamification.quests.length > 0 ? (
+        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4 mb-6">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2 text-white text-[14px] font-extrabold">
+              <Trophy size={15} className="text-[#fcd34d]" />
               Daily quests
             </div>
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-              {progress.gamification.quests.filter((quest) => quest.complete).length} / {progress.gamification.quests.length}
-            </div>
+            <span className="text-white/55 text-[12px] font-bold">
+              {progress.gamification.quests.filter((q) => q.complete).length} / {progress.gamification.quests.length}
+            </span>
           </div>
-
-          <div className="space-y-3">
+          <div className="space-y-2">
             {progress.gamification.quests.map((quest) => (
               <div
                 key={quest.id}
-                className="rounded-[18px] border border-[#334860] bg-[var(--bg-content)] px-4 py-3"
+                className="rounded-[14px] border border-white/6 bg-black/20 px-3 py-2.5"
               >
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-semibold text-[var(--foreground)]">{quest.label}</p>
-                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--primary)]">
+                  <p className="text-[13px] font-bold text-white">{quest.label}</p>
+                  <span className="text-[11px] font-extrabold text-[#bef264]">
                     +{quest.rewardXp} XP
                   </span>
                 </div>
-                <div className="mt-2 flex items-center justify-between text-xs text-slate-300">
+                <div className="mt-1.5 flex items-center justify-between text-[11px] text-white/55">
                   <span>
                     {Math.min(quest.current, quest.target)} / {quest.target}
                   </span>
@@ -325,94 +422,59 @@ export default function ProgressPage() {
             ))}
           </div>
         </div>
-      </div>
+      ) : null}
 
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-        <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
-          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
-            <BookCheck size={15} /> Stories finished
+      {/* ── Achievements (compact) ── */}
+      {achievements.length > 0 ? (
+        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2 text-white text-[14px] font-extrabold">
+              <Star size={15} className="text-[#fcd34d]" fill="currentColor" />
+              Achievements
+            </div>
           </div>
-          <p className="text-3xl font-bold">{progress.storiesFinished}</p>
-        </div>
-
-        <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
-          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
-            <Clock3 size={15} /> Minutes listened
-          </div>
-          <p className="text-3xl font-bold">{progress.minutesListened}</p>
-        </div>
-
-        <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
-          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
-            <BookOpenCheck size={15} /> Books finished
-          </div>
-          <p className="text-3xl font-bold">{progress.booksFinished}</p>
-        </div>
-
-        <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
-          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
-            <Star size={15} /> Words saved
-          </div>
-          <p className="text-3xl font-bold">{progress.wordsLearned}</p>
-        </div>
-
-        <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
-          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
-            <BrainCircuit size={15} /> Practice sessions
-          </div>
-          <p className="text-3xl font-bold">{progress.practiceSessionsCompleted}</p>
-          <p className="mt-1 text-xs text-slate-300">
-            {progress.practiceAccuracy}% average accuracy
-          </p>
-        </div>
-      </div>
-
-      <div className="mt-4 rounded-[26px] border border-[var(--card-border)] bg-[var(--card-bg)] p-4 sm:p-5">
-        <div className="mb-4 flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-sm font-semibold text-slate-100">
-            <Trophy size={18} className="text-[#ffd36b]" />
-            Achievements
-          </div>
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Keep climbing</div>
-        </div>
-
-        <div className="space-y-3">
-          {achievements.map((achievement) => {
-            const percent = clamp((achievement.current / achievement.target) * 100, 0, 100);
-            return (
-              <div
-                key={achievement.label}
-                className="grid items-center gap-3 rounded-[20px] border border-[#334860] bg-[var(--bg-content)] p-3 sm:grid-cols-[72px_1fr_auto]"
-              >
+          <div className="space-y-2">
+            {achievements.map((achievement) => {
+              const percent = clamp((achievement.current / achievement.target) * 100, 0, 100);
+              return (
+                <div
+                  key={achievement.label}
+                  className="flex items-center gap-3 rounded-[14px] border border-white/6 bg-black/20 px-3 py-2.5"
+                >
                   <div
-                    className="flex h-[72px] w-[72px] items-center justify-center rounded-[18px] shadow-[inset_0_-4px_0_rgba(0,0,0,0.15)]"
-                    style={{ backgroundColor: achievement.accent }}
+                    className="grid place-items-center shrink-0"
+                    style={{
+                      width: 40,
+                      height: 40,
+                      borderRadius: 12,
+                      backgroundColor: achievement.accent,
+                    }}
                   >
-                    <Flame size={28} className="text-white" />
+                    <Flame size={18} className="text-white" />
                   </div>
-                <div>
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-lg font-bold">{achievement.label}</p>
-                    <span className="text-sm font-semibold text-slate-300">
-                      {Math.min(achievement.current, achievement.target)} / {achievement.target}
-                    </span>
-                  </div>
-                  <p className="mb-2 text-sm text-slate-300">{achievement.description}</p>
-                  <div className="h-3 rounded-full bg-[#334860] overflow-hidden">
-                    <div
-                      className="h-full rounded-full"
-                      style={{ width: `${percent}%`, backgroundColor: achievement.accent }}
-                    />
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="text-[13px] font-bold text-white truncate">{achievement.label}</p>
+                      <span className="text-[11px] font-bold text-white/55">
+                        {Math.min(achievement.current, achievement.target)}/{achievement.target}
+                      </span>
+                    </div>
+                    <div className="mt-1.5 h-1.5 rounded-full bg-white/8 overflow-hidden">
+                      <div
+                        className="h-full rounded-full"
+                        style={{ width: `${percent}%`, backgroundColor: achievement.accent }}
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="hidden text-right text-xs font-semibold uppercase tracking-[0.14em] text-slate-400 sm:block">
-                  {achievement.unlocked || percent >= 100 ? "Done" : `${Math.round(percent)}%`}
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
+      ) : null}
+
+      {/* Tiny line at the bottom — keeps the existing motivational copy. */}
+      <p className="mt-6 text-center text-[13px] text-white/55">{motivationalLine(progress)}</p>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
+  ArrowLeft,
   BookOpenText,
   ChevronDown,
   Headphones,
@@ -13,7 +14,6 @@ import {
   Sparkles,
   TrendingUp,
   Volume2,
-  X,
   Zap,
   type LucideIcon,
 } from "lucide-react";
@@ -1363,8 +1363,11 @@ export default function PracticePage() {
   const contextTextClass =
     "text-xs leading-6 text-[var(--muted)]/75 sm:text-sm";
 
+  // iPhone-style: cards compactas, NO se estiran a llenar viewport.
+  // Altura mínima 60px (suficiente para 1 línea de respuesta), max-h auto,
+  // padding moderado. Paridad con el ReaderScreen multiple-choice del iPhone.
   const answerButtonBase =
-    "flex min-h-[88px] w-full items-center rounded-[1.45rem] border px-5 py-4 text-left text-[1.05rem] font-semibold leading-snug tracking-tight transition-colors sm:min-h-[92px]";
+    "flex min-h-[60px] w-full items-center rounded-2xl border px-5 py-3.5 text-left text-[15px] font-semibold leading-snug tracking-tight transition-colors";
 
   const renderContextBlock = (
     sentence: string,
@@ -1648,6 +1651,23 @@ export default function PracticePage() {
     openSession(requestedMode);
   }, [isJourneyCheckpoint, openSession, requestedMode, selectedMode, trackUiMetric]);
 
+  // ⚠️ Reglas de hooks: este useMemo DEBE quedar antes de cualquier early
+  // return (loading, !user, error) — antes vivía hasta el render final del
+  // hero y eso disparaba "change in order of Hooks called by PracticePage".
+  const inferredLanguageFromFavs = useMemo(() => {
+    if (favorites.length === 0) return null;
+    const counts = new Map<string, number>();
+    for (const f of favorites) {
+      if (!f.language) continue;
+      counts.set(f.language, (counts.get(f.language) ?? 0) + 1);
+    }
+    let best: { lang: string; n: number } | null = null;
+    for (const [lang, n] of counts) {
+      if (!best || n > best.n) best = { lang, n };
+    }
+    return best?.lang ?? null;
+  }, [favorites]);
+
   if (!isLoaded || loadState === "loading") {
     return (
       <div className="min-h-screen p-6 pb-24 text-[var(--foreground)]">
@@ -1725,56 +1745,98 @@ export default function PracticePage() {
     return (
       <div className="-mx-1 -my-6 box-border h-[calc(100dvh-env(safe-area-inset-top))] overflow-hidden px-4 py-2.5 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] text-[var(--foreground)] sm:px-5 sm:py-4 sm:pb-[calc(env(safe-area-inset-bottom)+1rem)]">
         <div className="mx-auto grid h-full max-w-5xl grid-rows-[auto_minmax(0,1fr)_auto] gap-2 sm:grid-rows-[auto_minmax(0,1fr)_144px]">
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={attemptCloseSession}
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[var(--card-border)] bg-[var(--bg-content)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-              aria-label="Close practice"
-            >
-              <X size={20} />
-            </button>
-            <div className="min-w-0 flex-1">
-              {isReviewFocus && reviewDueCount > 0 && !isJourneyCheckpoint ? (
-                <p className="mb-1 truncate text-[11px] font-bold uppercase tracking-[0.18em] text-amber-200">
-                  {reviewDueCount} due {reviewDueCount === 1 ? "item" : "items"} prioritized in this round
+          {/* HEADER exacto al iPhone:
+              - Back arrow rounded-square
+              - Eyebrow "WORD QUEST · 02 OF 07" + título "Meaning"
+              - Anillo circular a la derecha con score (e.g. 10) y
+                progreso del ejercicio actual
+              - Fila de mini-segments por ejercicio (no big bar)
+              - Stats row: ⚡ +6 XP · 1 gem
+              XP y gem son cosméticos: +6 por respuesta, 1 gem por
+              ejercicio. */}
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={attemptCloseSession}
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] text-white hover:bg-white/10"
+                aria-label="Close practice"
+              >
+                <ArrowLeft size={18} />
+              </button>
+              <div className="min-w-0 flex-1">
+                <p className="text-[10.5px] font-extrabold uppercase tracking-[0.22em] text-white/55">
+                  {activeModeTheme?.eyebrow ?? "Word quest"}
+                  {" · "}
+                  {String(Math.min(exerciseIndex + 1, exercises.length)).padStart(2, "0")}
+                  {" OF "}
+                  {String(exercises.length).padStart(2, "0")}
                 </p>
-              ) : null}
-              <div className="mb-1.5 h-5">
-                <p
-                  className={`text-[11px] font-bold uppercase tracking-[0.2em] text-amber-200 transition-opacity duration-150 ${
-                    streak > 1 ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  {streak > 1 ? `${streak} in a row` : "\u00a0"}
+                <p className="text-[26px] font-black tracking-tight text-white leading-tight">
+                  {activeModeTheme?.title ?? "Practice"}
                 </p>
               </div>
-              <div className="h-3 overflow-hidden rounded-full bg-white/12">
-                <div
-                  className={`h-full rounded-full bg-[var(--primary)] transition-[width] duration-300 ${
-                    lastResult === "correct" && revealed ? "animate-pulse" : ""
-                  }`}
-                  style={{ width: `${progressPercent}%` }}
-                />
-              </div>
-              <div className="mt-1.5 flex items-center justify-between gap-3">
-                <div className="flex min-w-0 items-center gap-2">
-                  {activeModeTheme ? (
-                    <span
-                      className={`inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-2xl ${activeModeTheme.iconClass}`}
+              {!sessionComplete ? (
+                // Anillo circular: borde gold parcial = progreso, número
+                // dentro = score-per-question (10). Uso conic-gradient.
+                (() => {
+                  const ringPct = exercises.length > 0
+                    ? Math.min(100, Math.round((completedExerciseCount / exercises.length) * 100))
+                    : 0;
+                  return (
+                    <div
+                      className="relative grid h-12 w-12 shrink-0 place-items-center rounded-full"
+                      style={{
+                        background: `conic-gradient(var(--color-gold) ${ringPct}%, rgba(255,255,255,0.08) ${ringPct}% 100%)`,
+                      }}
                     >
-                      <activeModeTheme.icon size={15} />
-                    </span>
-                  ) : null}
-                  <p className="truncate text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
-                    {activeModeTheme?.title ?? "Practice"}
-                  </p>
-                </div>
-                {!sessionComplete ? (
-                  <p className="shrink-0 text-xs text-[var(--muted)]">{`${exerciseIndex + 1}/${exercises.length}`}</p>
-                ) : null}
-              </div>
+                      <div className="grid h-[40px] w-[40px] place-items-center rounded-full bg-[var(--background)] text-[14px] font-black text-[var(--color-gold)]">
+                        10
+                      </div>
+                    </div>
+                  );
+                })()
+              ) : null}
             </div>
+
+            {/* Mini-segments por ejercicio (uno por exercise).
+                Sin big bar arriba — iPhone sólo muestra esta fila. */}
+            <div className="flex gap-1.5">
+              {exercises.map((_, i) => {
+                const done = i < completedExerciseCount;
+                const current = i === exerciseIndex && !sessionComplete;
+                return (
+                  <span
+                    key={i}
+                    aria-hidden
+                    className="flex-1 rounded-full"
+                    style={{
+                      height: 4,
+                      background: done || current
+                        ? "var(--color-gold)"
+                        : "rgba(255,255,255,0.08)",
+                    }}
+                  />
+                );
+              })}
+            </div>
+
+            {/* Stats row: ⚡ +6 XP · ◆ 1 gem (cosmético) */}
+            {!sessionComplete ? (
+              <div className="flex items-center justify-end gap-3 text-[12px] font-extrabold">
+                <span className="inline-flex items-center gap-1 text-[var(--color-gold)]">
+                  <Zap size={13} fill="currentColor" />
+                  +{6 * Math.max(1, streak || 1)} XP
+                </span>
+                <span className="text-white/20">|</span>
+                <span className="inline-flex items-center gap-1 text-[#c4b5fd]">
+                  <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor">
+                    <path d="M6 0l3 4-3 8-3-8z" />
+                  </svg>
+                  1 gem
+                </span>
+              </div>
+            ) : null}
           </div>
 
           <div className="min-h-0 overflow-y-auto overscroll-contain pr-1">
@@ -2009,7 +2071,10 @@ export default function PracticePage() {
                 `}</style>
               </div>
             ) : currentExercise ? (
-              <div className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-[clamp(0.65rem,1.3vw,0.9rem)] shadow-md">
+              <div className="relative flex flex-col overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md">
+                {/* Card iPhone-style: padding fijo, sin h-full ni flex-1
+                    en hijos. Las opciones tienen altura natural (60px+
+                    según contenido), no estiran a llenar viewport. */}
                 {activeModeTheme ? (
                   <>
                     <div
@@ -2022,18 +2087,23 @@ export default function PracticePage() {
                     />
                   </>
                 ) : null}
-                <p className="mb-[clamp(0.35rem,0.9vh,0.6rem)] shrink-0 text-[clamp(1.15rem,2.4vw,1.8rem)] font-semibold leading-tight tracking-tight">
-                  {currentExercise.prompt}
-                </p>
+                {/* En `meaning_in_context` el iPhone NO muestra prompt
+                    arriba: la palabra-objetivo en píldora azul es self-
+                    explanatory. En los otros modos sí ayuda. */}
+                {currentExercise.type !== "meaning_in_context" ? (
+                  <p className="mb-[clamp(0.35rem,0.9vh,0.6rem)] shrink-0 text-[clamp(1.15rem,2.4vw,1.8rem)] font-semibold leading-tight tracking-tight">
+                    {currentExercise.prompt}
+                  </p>
+                ) : null}
 
                 {currentExercise.type === "fill_blank" ? (
-                  <div className="flex min-h-0 flex-1 flex-col">
+                  <div className="flex flex-col gap-3">
                     {renderContextBlock(
                       currentExercise.sentence,
                       currentExercise.audioClip,
                       currentExercise.id
                     )}
-                    <div className="grid flex-1 auto-rows-fr gap-2.5 sm:grid-cols-2">
+                    <div className="grid gap-2.5 sm:grid-cols-2">
                       {currentExercise.options.map((option) => {
                         const isSelected = selectedOption === option;
                         const isCorrect = revealed && option === currentExercise.answer;
@@ -2063,42 +2133,104 @@ export default function PracticePage() {
                 ) : null}
 
                 {currentExercise.type === "meaning_in_context" ? (
-                  <div className="flex min-h-0 flex-1 flex-col">
-                    <div className="mb-3 shrink-0">
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
-                        Target word
+                  <div className="flex flex-col gap-6 pt-4">
+                    {/* Prompt centrado + palabra-objetivo huge con play
+                        circular a la derecha. Yellow underline debajo. */}
+                    <div className="flex flex-col items-center gap-2">
+                      <p className="text-[13px] font-semibold text-white/55">
+                        What does this word mean?
                       </p>
-                      <p className="text-[clamp(2rem,4vw,2.65rem)] font-semibold leading-none tracking-tight">
-                        {currentExercise.word}
-                      </p>
+                      {(() => {
+                        const clip = currentExercise.audioClip;
+                        const isSpeaking = speakingClipId === currentExercise.id;
+                        return (
+                          <div className="flex items-center justify-center gap-3">
+                            <span className="text-[44px] font-black tracking-tight text-white leading-none">
+                              {currentExercise.word}
+                            </span>
+                            {clip ? (
+                              <button
+                                type="button"
+                                onClick={() => playTtsContextClip(currentExercise.id, clip)}
+                                aria-label={isSpeaking ? "Stop" : "Listen"}
+                                className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#1e40af] text-white hover:bg-[#1d4ed8]"
+                              >
+                                <Play size={13} fill="currentColor" />
+                              </button>
+                            ) : null}
+                          </div>
+                        );
+                      })()}
+                      {/* Yellow underline corto */}
+                      <span
+                        aria-hidden
+                        className="block rounded-full"
+                        style={{
+                          width: 64,
+                          height: 4,
+                          background: "var(--color-gold)",
+                        }}
+                      />
                     </div>
-                    {renderContextBlock(
-                      currentExercise.sentence,
-                      currentExercise.audioClip,
-                      currentExercise.id
-                    )}
-                    <div className="grid flex-1 auto-rows-fr gap-2.5">
-                      {currentExercise.options.map((option) => {
+
+                    {/* 2x2 grid con chip A/B/C/D + barra accent vertical
+                        izquierda. Colores fijos por posición:
+                        A=gold, B=sky, C=pink, D=green. */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {currentExercise.options.map((option, idx) => {
                         const isSelected = selectedOption === option;
                         const isCorrect = revealed && option === currentExercise.answer;
                         const isWrong = revealed && isSelected && option !== currentExercise.answer;
+                        const accentColors = ["#fcd34d", "#7dd3fc", "#f9a8d4", "#86efac"];
+                        const accent = accentColors[idx % accentColors.length];
+                        const letter = ["A", "B", "C", "D"][idx % 4];
+                        const stateBg = isCorrect
+                          ? "rgba(52, 211, 153, 0.16)"
+                          : isWrong
+                            ? "rgba(248, 113, 113, 0.16)"
+                            : isSelected
+                              ? "rgba(255, 255, 255, 0.05)"
+                              : "rgba(255, 255, 255, 0.025)";
+                        const stateBorder = isCorrect
+                          ? "rgba(52, 211, 153, 0.5)"
+                          : isWrong
+                            ? "rgba(248, 113, 113, 0.5)"
+                            : isSelected
+                              ? accent
+                              : "rgba(255, 255, 255, 0.1)";
                         return (
                           <button
                             key={option}
                             type="button"
                             onClick={() => chooseOption(option)}
                             disabled={revealed}
-                            className={`${answerButtonBase} ${
-                              isCorrect
-                                ? "border-emerald-300 bg-emerald-300 text-slate-950"
-                                : isWrong
-                                  ? "border-rose-400 bg-rose-400 text-slate-950"
-                                  : isSelected
-                                    ? "border-blue-400 bg-blue-500/20"
-                                    : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
-                            }`}
+                            className="relative flex min-h-[140px] flex-col items-start justify-start gap-3 overflow-hidden rounded-2xl border pl-5 pr-4 py-4 text-left text-[15px] font-bold leading-snug text-white transition-colors disabled:cursor-not-allowed"
+                            style={{
+                              background: stateBg,
+                              borderColor: stateBorder,
+                            }}
                           >
-                            {option}
+                            {/* Vertical accent bar a la izquierda */}
+                            <span
+                              aria-hidden
+                              className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full"
+                              style={{ background: accent }}
+                            />
+                            {/* Letter chip A/B/C/D arriba-izquierda */}
+                            <span
+                              aria-hidden
+                              className="inline-flex h-6 w-6 items-center justify-center rounded-md text-[11px] font-black"
+                              style={{
+                                background: `${accent}26`,
+                                color: accent,
+                                border: `1px solid ${accent}55`,
+                              }}
+                            >
+                              {letter}
+                            </span>
+                            <span className="text-[14.5px] leading-[1.35]">
+                              {option}
+                            </span>
                           </button>
                         );
                       })}
@@ -2107,13 +2239,13 @@ export default function PracticePage() {
                 ) : null}
 
                 {currentExercise.type === "natural_expression" ? (
-                  <div className="flex min-h-0 flex-1 flex-col">
+                  <div className="flex flex-col gap-3">
                     {renderContextBlock(
                       currentExercise.sentence,
                       currentExercise.audioClip,
                       currentExercise.id
                     )}
-                    <div className="grid flex-1 auto-rows-fr gap-2.5 sm:grid-cols-2">
+                    <div className="grid gap-2.5 sm:grid-cols-2">
                       {currentExercise.options.map((option) => {
                         const isSelected = selectedOption === option;
                         const isCorrect = revealed && option === currentExercise.answer;
@@ -2143,7 +2275,7 @@ export default function PracticePage() {
                 ) : null}
 
                 {currentExercise.type === "listen_choose" ? (
-                  <div className="flex min-h-0 flex-1 flex-col">
+                  <div className="flex flex-col gap-3">
                     <button
                       type="button"
                       onClick={playListenPrompt}
@@ -2152,7 +2284,7 @@ export default function PracticePage() {
                       <Volume2 size={14} />
                       {speakingClipId === currentExercise.id ? "Stop" : "Play"}
                     </button>
-                    <div className="grid flex-1 auto-rows-fr gap-2.5 sm:grid-cols-2">
+                    <div className="grid gap-2.5 sm:grid-cols-2">
                       {currentExercise.options.map((option) => {
                         const isSelected = selectedOption === option;
                         const isCorrect = revealed && option === currentExercise.answer;
@@ -2182,7 +2314,7 @@ export default function PracticePage() {
                 ) : null}
 
                 {currentExercise.type === "match_meaning" ? (
-                  <div className="flex min-h-0 flex-1 flex-col">
+                  <div className="flex flex-col gap-3">
                     <div className="mb-[clamp(0.2rem,0.6vh,0.45rem)] grid shrink-0 grid-cols-2 gap-[clamp(0.35rem,0.7vw,0.55rem)]">
                       <p className="px-1 text-center text-[clamp(0.68rem,1.1vw,0.8rem)] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
                         Words
@@ -2310,80 +2442,47 @@ export default function PracticePage() {
             )}
           </div>
 
-          <div
-            className={`min-h-[112px] overflow-hidden rounded-3xl border px-4 py-2 shadow-xl sm:min-h-0 sm:px-4 sm:py-2 ${
-              sessionComplete || !currentExercise
-                ? "border-transparent bg-transparent shadow-none"
-                : showFeedback
-                  ? lastResult === "correct"
-                    ? "border-emerald-300/30 bg-emerald-300/12"
-                    : "border-rose-300/30 bg-rose-300/14"
-                  : "border-[var(--card-border)] bg-[var(--card-bg)]"
-            }`}
-          >
-            {!sessionComplete && currentExercise ? (
-              <div className="flex h-full flex-col">
-                {showFeedback ? (
-                  <>
-                    <div className="min-h-0 flex-1">
-                      <p
-                        className={`text-lg font-bold tracking-tight sm:text-2xl ${
-                          lastResult === "correct" ? "text-emerald-200" : "text-rose-300"
-                        }`}
-                      >
-                        {lastResult === "correct"
-                          ? streak > 1
-                            ? "Awesome!"
-                            : "Good job!"
-                          : currentExercise.type === "match_meaning"
-                            ? "Check the corrected pairs above"
-                            : "Correct answer:"}
-                      </p>
-                      {lastResult === "wrong" && currentExercise.type !== "match_meaning" ? (
-                        <p className="mt-1 hidden max-w-3xl text-sm leading-5 text-rose-50 sm:block">
-                          {correctAnswerText}
-                        </p>
-                      ) : null}
-                    </div>
-                    <div className="mt-1 flex items-center justify-center">
-                      <button
-                        type="button"
-                        onClick={continueWithAutoGrade}
-                        className={`inline-flex min-w-[152px] justify-center rounded-full px-5 py-2 text-[12px] font-black uppercase tracking-[0.16em] shadow-[0_10px_24px_rgba(0,0,0,0.18)] ${
-                          lastResult === "correct"
-                            ? "bg-emerald-300 text-slate-950 shadow-[0_10px_24px_rgba(110,231,183,0.22)] hover:bg-emerald-200"
-                            : "bg-rose-400 text-slate-950 shadow-[0_10px_24px_rgba(251,113,133,0.2)] hover:bg-rose-300"
-                        }`}
-                      >
-                        {exerciseIndex >= exercises.length - 1 ? "Finish" : "Continue"}
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="min-h-0 flex-1">
-                      <p className="text-lg font-bold tracking-tight text-[var(--foreground)] sm:text-xl">
-                        Ready?
-                      </p>
-                      <p className="mt-1 hidden text-sm leading-5 text-[var(--muted)] sm:block">
-                        Choose your answer, then check it here.
-                      </p>
-                    </div>
-                    <div className="mt-1 flex items-center">
-                      <button
-                        type="button"
-                        onClick={revealCurrent}
-                        disabled={!canSubmitAnswer}
-                        className="mx-auto inline-flex min-w-[152px] justify-center rounded-full bg-[var(--primary)] px-5 py-2 text-[12px] font-black uppercase tracking-[0.16em] text-white shadow-[0_10px_24px_rgba(0,0,0,0.18)] transition hover:opacity-90 disabled:opacity-45 disabled:shadow-none"
-                      >
-                        Check answer
-                      </button>
-                    </div>
-                  </>
-                )}
-              </div>
-            ) : null}
-          </div>
+          {/* Footer iPhone exacto: botón full-width gold con "CHECK
+              ANSWER →" cuando hay respuesta; disabled gris en otro caso;
+              estado feedback verde/rojo tras revelar. */}
+          {!sessionComplete && currentExercise ? (
+            <div>
+              {showFeedback ? (
+                <button
+                  type="button"
+                  onClick={continueWithAutoGrade}
+                  className={`flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-[18px] text-[13px] font-black uppercase tracking-[0.18em] transition ${
+                    lastResult === "correct"
+                      ? "bg-emerald-300 text-slate-950 hover:bg-emerald-200"
+                      : "bg-rose-400 text-slate-950 hover:bg-rose-300"
+                  }`}
+                >
+                  {lastResult === "correct"
+                    ? exerciseIndex >= exercises.length - 1
+                      ? "Finish"
+                      : "Continue"
+                    : currentExercise.type === "match_meaning"
+                      ? "Continue"
+                      : `Continue — ${correctAnswerText}`}
+                  <span aria-hidden>→</span>
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={revealCurrent}
+                  disabled={!canSubmitAnswer}
+                  className={`flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-[18px] text-[13px] font-black uppercase tracking-[0.18em] transition ${
+                    canSubmitAnswer
+                      ? "bg-[var(--color-gold)] text-[#2a1a02] hover:bg-[#f59e0b]"
+                      : "cursor-not-allowed bg-white/[0.06] text-white/40"
+                  }`}
+                >
+                  {canSubmitAnswer ? "Check answer" : "Pick an answer"}
+                  {canSubmitAnswer ? <span aria-hidden>→</span> : null}
+                </button>
+              )}
+            </div>
+          ) : null}
         </div>
         {showExitConfirm ? (
           <PracticeExitConfirm
@@ -2395,55 +2494,68 @@ export default function PracticePage() {
     );
   }
 
-  // Active language + variant for the iPhone-style flag pill at the top of
-  // the mobile hero. Falls back to a globe when neither value is known.
-  const activeLanguageName = (() => {
+  // Active language for the flag pill. Resolution order:
+  //   1. user.publicMetadata.targetLanguages[0] (explicit preference)
+  //   2. most-common language across the user's favorites (which is what
+  //      Practice operates on anyway)
+  //   3. nothing → we hide the pill instead of showing a "🌐 ??" stub
+  const metadataLanguage = (() => {
     const tl = user?.publicMetadata?.targetLanguages;
     if (Array.isArray(tl) && typeof tl[0] === "string") return tl[0] as string;
     return null;
   })();
+  const activeLanguageName = metadataLanguage ?? inferredLanguageFromFavs;
   const activeVariantKey =
     typeof user?.publicMetadata?.preferredVariant === "string"
       ? (user.publicMetadata.preferredVariant as string)
       : null;
-  const activeFlag = activeLanguageName ? getLanguageFlag(activeLanguageName, activeVariantKey) : "🌐";
+  const activeFlag = activeLanguageName ? getLanguageFlag(activeLanguageName, activeVariantKey) : null;
   const activeLangShort = activeLanguageName
-    ? activeLanguageName.slice(0, 2).toUpperCase()
-    : "??";
+    ? (() => {
+        const map: Record<string, string> = {
+          spanish: "ES", english: "EN", french: "FR", german: "DE",
+          italian: "IT", portuguese: "PT", japanese: "JA", korean: "KO",
+          chinese: "ZH",
+        };
+        const key = activeLanguageName.toLowerCase();
+        return map[key] ?? activeLanguageName.slice(0, 2).toUpperCase();
+      })()
+    : null;
 
-  // Mobile shows the 4 iPhone modes (no "natural"). Desktop keeps all 5.
-  const mobileModeCards = modeCards.filter((card) => card.mode !== "natural");
+  // iPhone parity: show the 4 main modes (no "natural") on every viewport.
+  const visibleModeCards = modeCards.filter((card) => card.mode !== "natural");
   const dueCount = dueFavorites.length;
-  const xpReward = dueCount * 10;
 
   return (
     <div
+      // Background plano deep-navy. Sin radial gold-halo arriba y sin
+      // degradado vertical: ambos creaban el "brillo" detrás del círculo.
       className="min-h-screen p-4 pb-24 text-[var(--foreground)] sm:p-6 sm:pb-24 -mx-1 -my-6 sm:mx-0 sm:my-0"
-      style={{
-        background:
-          "radial-gradient(circle at top, rgba(248,220,154,0.08), transparent 28%), linear-gradient(180deg, var(--bg-content) 0%, #062148 45%, #031a3d 100%)",
-      }}
+      style={{ background: "#031a3d" }}
     >
-      {/* ── MOBILE HERO (iPhone-style) ── */}
-      <div className="sm:hidden">
+      <div className="mx-auto w-full max-w-[480px]">
+      {/* ── iPhone-style HERO — visible on every viewport ── */}
+      <div>
         {/* Flag pill + title. Tapping the pill opens the LanguageSwitcher
             bottom sheet (same component used in MobileTabBar). */}
         <div className="flex items-center gap-4 mb-6">
-          <button
-            type="button"
-            onClick={() => setLanguageSwitcherOpen(true)}
-            className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 pl-1.5 pr-3 py-1.5 active:bg-white/[0.1] transition-colors"
-            aria-label="Switch language"
-          >
-            <span
-              className="rounded-full bg-black/30 grid place-items-center text-lg leading-none"
-              style={{ width: 28, height: 28 }}
+          {activeFlag && activeLangShort ? (
+            <button
+              type="button"
+              onClick={() => setLanguageSwitcherOpen(true)}
+              className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 pl-1.5 pr-3 py-1.5 active:bg-white/[0.1] transition-colors"
+              aria-label="Switch language"
             >
-              {activeFlag}
-            </span>
-            <span className="text-[13px] font-extrabold text-white">{activeLangShort}</span>
-            <ChevronDown size={14} className="text-white/55" />
-          </button>
+              <span
+                className="rounded-full bg-black/30 grid place-items-center text-lg leading-none"
+                style={{ width: 28, height: 28 }}
+              >
+                {activeFlag}
+              </span>
+              <span className="text-[13px] font-extrabold text-white">{activeLangShort}</span>
+              <ChevronDown size={14} className="text-white/55" />
+            </button>
+          ) : null}
           <h1 className="text-[28px] font-black tracking-tight text-white leading-none">
             {isReviewFocus && reviewDueCount > 0 ? "Review" : "Practice"}
           </h1>
@@ -2488,10 +2600,11 @@ export default function PracticePage() {
               width: 260,
               height: 260,
               borderRadius: "50%",
-              background:
-                "radial-gradient(circle, rgba(11,30,58,0.95) 0%, rgba(8,22,46,0.95) 60%, rgba(5,15,35,0.95) 100%)",
-              boxShadow:
-                "inset 0 0 0 12px rgba(255,255,255,0.025), inset 0 0 0 13px rgba(255,255,255,0.04), 0 30px 60px rgba(0,0,0,0.4)",
+              // Sólido oscuro plano: sin radial-gradient interno, sin
+              // inset rings y sin drop-shadow. Cualquiera de esos tres
+              // generaba el aro luminoso visible alrededor del círculo.
+              background: "#0a1f43",
+              border: "1px solid rgba(255,255,255,0.06)",
             }}
             aria-label="Start recommended practice"
           >
@@ -2516,83 +2629,26 @@ export default function PracticePage() {
         </div>
 
         <p className="text-center text-[12px] text-white/55 mb-5">
-          ~{Math.max(1, Math.round(dueCount * 0.3))} min · {dueCount === 0 ? "0" : "1"} skill · +{xpReward} XP
+          ~{Math.max(1, Math.round(dueCount * 0.3))} min · {dueCount === 0 ? "0" : "1"} skill · +{dueCount * 10} XP
         </p>
       </div>
 
-      {/* ── DESKTOP HERO (original layout) ── */}
-      <div className="hidden sm:block mb-4 px-1 sm:mb-6">
-        <div className={`mb-2 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] ${isReviewFocus && reviewDueCount > 0 ? "bg-amber-300/12 text-amber-100" : "bg-white/8 text-[rgba(255,246,214,0.86)]"}`}>
-          <Sparkles size={13} />
-          {isReviewFocus && reviewDueCount > 0 ? "Review focus" : "Pick a mode"}
+      {/* Optional Back-to-Journey link shown only when we came from Journey,
+          so the user can step out without losing context. */}
+      {journeyReturnHref ? (
+        <div className="mb-4 flex justify-center">
+          <Link
+            href={journeyReturnHref}
+            className="inline-flex rounded-full border border-white/12 bg-white/6 px-4 py-2 text-xs font-semibold text-white/85 hover:bg-white/10"
+          >
+            Back to Journey
+          </Link>
         </div>
-        <h1 className="text-[2.5rem] font-black tracking-tight text-white">
-          {isReviewFocus && reviewDueCount > 0 ? "Review this topic" : "Practice"}
-        </h1>
-        <p className="mt-1 max-w-xl text-base leading-6 text-[rgba(226,232,244,0.78)]">
-          {practiceSummary}
-        </p>
-        <div className="mt-3 flex flex-wrap items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200/20 bg-amber-300/12 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-100">
-            <span className="text-base font-black leading-none">{practiceStreakDays}</span>
-            <span className="opacity-80">Streak</span>
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200/20 bg-sky-300/12 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-sky-100">
-            <span className="text-base font-black leading-none">{dueFavorites.length}</span>
-            <span className="opacity-80">Due</span>
-          </span>
-          {dueFavorites.length > 0 ? (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200/20 bg-emerald-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-100">
-              <span className="text-base font-black leading-none">+{dueFavorites.length * 10}</span>
-              <span className="opacity-80">Xp ready</span>
-            </span>
-          ) : null}
-        </div>
-        <div className="mt-4 flex flex-wrap items-center gap-3">
-          {(isReviewFocus && reviewDueCount > 0) || dueFavorites.length > 0 ? (
-            <button
-              type="button"
-              onClick={() => {
-                void trackUiMetric("practice_recommended_mode_opened", {
-                  mode: reviewRecommendedMode,
-                  source: isReviewFocus && reviewDueCount > 0 ? "review_focus_cta" : "practice_loop_cta",
-                });
-                setPendingCountdownMode(reviewRecommendedMode);
-              }}
-              className="inline-flex items-center justify-center rounded-full border border-amber-200/20 bg-amber-300 px-4 py-2.5 text-sm font-black text-slate-950 shadow-[0_10px_24px_rgba(252,211,77,0.22)] hover:brightness-105"
-            >
-              Start {reviewRecommendedLabel.toLowerCase()} review
-            </button>
-          ) : null}
-          {journeyReturnHref ? (
-            <Link
-              href={journeyReturnHref}
-              className="inline-flex rounded-full border border-white/12 bg-white/6 px-4 py-2.5 text-sm font-semibold text-white/88 hover:bg-white/10"
-            >
-              Back to Journey
-            </Link>
-          ) : null}
-          {!journeyReturnHref && dueFavorites.length === 0 ? (
-            <Link
-              href="/journey"
-              className="inline-flex rounded-full border border-white/12 bg-white/6 px-4 py-2.5 text-sm font-semibold text-white/88 hover:bg-white/10"
-            >
-              Open Journey
-            </Link>
-          ) : null}
-          {reviewLead ? (
-            <p className="text-sm text-[rgba(226,232,244,0.74)]">
-              Focus words: {reviewLead}
-            </p>
-          ) : null}
-        </div>
-      </div>
+      ) : null}
 
-      {/* ── MOBILE CARDS: 2x2 iPhone-style (no description, counter on
-          right, icon top-left, big title centered). Filters out "natural"
-          mode to match iPhone's 4-skill layout. ── */}
-      <div className="grid grid-cols-2 gap-3 sm:hidden">
-        {mobileModeCards.map((card) => (
+      {/* ── 2×2 iPhone-style skill cards (4 modes, no "natural") ── */}
+      <div className="grid grid-cols-2 gap-3">
+        {visibleModeCards.map((card) => (
           <button
             key={card.mode}
             type="button"
@@ -2616,58 +2672,7 @@ export default function PracticePage() {
         ))}
       </div>
 
-      {/* ── DESKTOP CARDS (original layout, all 5 modes) ── */}
-      <div className="hidden sm:grid grid-cols-2 gap-3 xl:grid-cols-3">
-        {modeCards.map((card) => (
-          <button
-            key={card.mode}
-            type="button"
-            onClick={() => setPendingCountdownMode(card.mode)}
-            className={`group relative overflow-hidden rounded-[1.8rem] border p-4 text-left transition active:scale-[0.99] sm:rounded-[2rem] sm:p-5 ${card.shellClass}`}
-          >
-            <div
-              aria-hidden="true"
-              className={`pointer-events-none absolute -right-8 -top-6 h-24 w-24 rounded-full ${card.orbClass} sm:h-28 sm:w-28`}
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-4 bottom-3 h-5 rounded-full bg-black/15 blur-xl"
-            />
-            <div className="relative">
-              <div className="mb-4 flex items-start justify-between gap-2">
-                <div>
-                  <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/58">
-                    {card.eyebrow}
-                  </p>
-                  <h2 className="text-[1.7rem] font-black leading-none tracking-tight text-white sm:text-[1.95rem]">
-                    {card.title}
-                  </h2>
-                </div>
-                <span
-                  className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[1.2rem] ${card.iconClass} sm:h-12 sm:w-12`}
-                >
-                  <card.icon size={20} />
-                </span>
-              </div>
-              {isReviewFocus && reviewDueCount > 0 && card.mode === reviewRecommendedMode ? (
-                <div className="mb-3 inline-flex rounded-full border border-amber-200/20 bg-amber-300/12 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-100">
-                  Recommended now
-                </div>
-              ) : null}
-              <p className="text-[12px] leading-5 text-white/84 sm:text-[13px]">
-                {card.detail}
-              </p>
-              <div className="mt-4 flex items-center justify-end gap-2">
-                <span
-                  className={`inline-flex shrink-0 rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em] ${card.buttonClass}`}
-                >
-                  Play
-                </span>
-              </div>
-            </div>
-          </button>
-        ))}
-      </div>
+      </div>{/* end .mx-auto max-w-[480px] */}
       {pendingCountdownMode ? (
         <PracticeCountdown
           onComplete={() => {

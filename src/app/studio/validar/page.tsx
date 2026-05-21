@@ -7,10 +7,11 @@ export default async function ValidarPage() {
 
   return (
     <StudioShell
-      title="Validar historia generada"
-      description="Pega un JSON de historia del Custom GPT y mira si cumple el spec antes de subirla al journey."
+      title="Validar y subir historia"
+      description="Pega el JSON que generó Claude (/generate-story), elige journey · nivel · tema, valida; si pasa, un clic sube la historia al Studio."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
+        { label: "Planteamiento" },
         { label: "Validar historia" },
       ]}
     >

@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { useUser } from "@clerk/nextjs";
-import { Bell, Flame, Sparkles, Trophy } from "lucide-react";
+import { Bell, Zap } from "lucide-react";
 import { getCookieConsentKey } from "@/components/CookieConsentBanner";
 import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel } from "@/lib/languageVariant";
 import { REMINDER_HOUR_OPTIONS, REMINDER_MINUTE_OPTIONS, formatReminderHour } from "@/lib/reminders";
@@ -220,8 +220,15 @@ export default function SettingsPage() {
     return VARIANT_OPTIONS_BY_LANGUAGE[primaryLanguage.trim().toLowerCase()] ?? [];
   }, [primaryLanguage]);
 
+  // Sync local state from publicMetadata ONLY on the first load. Subsequent
+  // `user.reload()` calls (triggered after each save) used to re-run this
+  // and clobber freshly-toggled local state, which is why the daily-reminder
+  // toggle felt stuck after the first activation.
+  const loadedOnceRef = useRef(false);
   useEffect(() => {
     if (!isLoaded) return;
+    if (loadedOnceRef.current) return;
+    loadedOnceRef.current = true;
     const current = normalizeSelection(toStringArray(user?.publicMetadata?.targetLanguages));
     const currentInterests = normalizeInterests(toStringArray(user?.publicMetadata?.interests));
     const currentLevel =
@@ -501,178 +508,202 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="min-h-screen text-[var(--foreground)] p-6 pb-24">
-      <h1 className="text-2xl font-semibold mb-2">Settings</h1>
-      <p className="text-[var(--muted)] mb-5 text-sm">
-        We use this to personalize Home, Explore, and recommendations.
-      </p>
+    <div className="px-4 sm:px-8 pt-8 pb-32 mx-auto text-[var(--foreground)]" style={{ maxWidth: 720 }}>
+      {/* ── Hero ── */}
+      <div className="mb-6">
+        <p className="text-[11px] font-extrabold uppercase tracking-[0.32em] text-white/55">Account</p>
+        <h1 className="mt-1 text-[28px] font-black tracking-tight text-white leading-none">Settings</h1>
+        <p className="mt-2 text-[13px] text-white/55">
+          We use this to personalize Home, Explore, and recommendations.
+        </p>
+      </div>
 
-      <section className="mb-6 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 text-sm text-[var(--foreground)]">
-        <div className="mb-4 flex items-start justify-between gap-3">
-          <div>
-            <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Billing</h2>
-            <p className="mt-2 text-base font-semibold">Current plan: {planLabel}</p>
-            <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
-              Manage your plan from here. Free users can review available options. Paid users can
-              update their plan based on where the subscription was purchased.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-3">
-          {hasPaidPlan ? (
-            billingSource === "google_play" ? (
-              <span className="inline-flex rounded-lg border border-[var(--card-border)] bg-[var(--card-bg-hover)] px-3 py-1.5 text-[13px] font-medium text-[var(--foreground)]">
-                Managed in Google Play
-              </span>
-            ) : (
-              <button
-                type="button"
-                onClick={openBillingPortal}
-                disabled={billingLoading}
-                className="inline-flex rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90 transition disabled:opacity-60"
-              >
-                {billingLoading ? "Opening..." : "Manage billing"}
-              </button>
-            )
-          ) : (
-            <Link
-              href="/plans"
-              className="inline-flex rounded-lg bg-amber-400/90 px-3 py-1.5 text-[13px] font-semibold text-[#1b1b1b] hover:bg-amber-300 transition-colors"
-            >
-              See plans
-            </Link>
-          )}
-          {billingError ? <span className="text-[13px] text-amber-300">{billingError}</span> : null}
-        </div>
-
-      </section>
-
+      {/* ── iPhone-style user card with level + streak + XP + badges ── */}
       {settingsProgress?.gamification ? (
-        <section className="mb-6 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 text-sm text-[var(--foreground)]">
-          <div className="mb-4 flex items-start justify-between gap-3">
-            <div>
-              <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Profile</h2>
-              <p className="mt-2 text-base font-semibold">Your achievements shelf</p>
-              <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
-                Your level, streak, XP, and unlocked badges live here permanently.
+        <div
+          className="mb-3 rounded-[20px] border p-4"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(252,211,77,0.05) 0%, rgba(125,211,252,0.03) 100%)",
+            borderColor: "rgba(252, 211, 77, 0.22)",
+          }}
+        >
+          <div className="flex items-center gap-3 mb-3">
+            <div
+              className="grid place-items-center shrink-0 text-[#2a1a02] font-black"
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 14,
+                background: "var(--color-gold)",
+                fontSize: 18,
+              }}
+            >
+              {(user?.firstName ?? user?.username ?? "Y").charAt(0).toUpperCase()}
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2">
+                <p className="font-extrabold text-white text-[16px] truncate">
+                  {user?.firstName?.trim() || user?.username || "You"}
+                </p>
+                <span className="text-[12px] font-bold text-[#fcd34d]">
+                  · Level {settingsProgress.gamification.currentLevel}
+                </span>
+              </div>
+              <p className="mt-0.5 text-[12px] text-white/55">
+                {settingsProgress.gamification.totalXp} XP · {settingsProgress.gamification.dailyStreak}-day streak
               </p>
             </div>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="rounded-[22px] border border-[#26425f] bg-[linear-gradient(180deg,#16304f_0%,#132947_100%)] p-4">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-100">
-                  <Flame size={14} className="text-[#ffd36b]" />
-                  {settingsProgress.gamification.dailyStreak}-day streak
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#365b81] bg-[#21466d] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#dcefff]">
-                  <Sparkles size={14} className="text-[#8ef0c6]" />
-                  {settingsProgress.gamification.totalXp} XP
-                </span>
-              </div>
-              <div className="mt-4 flex items-end justify-between gap-4">
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Level</p>
-                  <p className="mt-2 text-4xl font-bold text-white">{settingsProgress.gamification.currentLevel}</p>
-                </div>
-                <div className="text-right text-sm text-slate-300">
-                  <p>{settingsProgress.gamification.todayXp} XP today</p>
-                  <p>{settingsProgress.gamification.weeklyXp} XP this week</p>
-                </div>
-              </div>
-              <div className="mt-4">
-                <div className="mb-2 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-                  <span>Progress to next level</span>
-                  <span>
-                    {settingsProgress.gamification.totalXp - settingsProgress.gamification.levelStartXp} /{" "}
-                    {settingsProgress.gamification.nextLevelXp - settingsProgress.gamification.levelStartXp} XP
-                  </span>
-                </div>
-                <div className="h-3 overflow-hidden rounded-full bg-[#314861]">
-                  <div
-                    className="h-full rounded-full bg-[linear-gradient(90deg,#71dd5a,#3dc55d)]"
-                    style={{ width: `${Math.round(settingsProgress.gamification.levelProgress * 100)}%` }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-[22px] border border-[var(--card-border)] bg-[var(--bg-content)] p-4">
-              <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-slate-100">
-                <Trophy size={18} className="text-[#ffd36b]" />
-                Unlocked badges
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {settingsProgress.gamification.badges.map((badge) => (
-                  <div
-                    key={badge.id}
-                    className={[
-                      "rounded-full border px-3 py-1.5 text-xs font-semibold",
-                      badge.unlocked
-                        ? "border-white/12 bg-white/8 text-[var(--foreground)]"
-                        : "border-[var(--card-border)] bg-[var(--card-bg)] text-slate-500",
-                    ].join(" ")}
-                  >
-                    {badge.label}
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="flex items-center justify-between mb-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em]">
+            <span className="text-[#bef264]">
+              {settingsProgress.gamification.totalXp - settingsProgress.gamification.levelStartXp} / {settingsProgress.gamification.nextLevelXp - settingsProgress.gamification.levelStartXp} XP
+            </span>
+            <span className="text-white/45">Next: LV {settingsProgress.gamification.currentLevel + 1}</span>
           </div>
-        </section>
+          <div className="h-2 rounded-full overflow-hidden bg-white/8">
+            <div
+              className="h-full rounded-full"
+              style={{
+                width: `${Math.round(settingsProgress.gamification.levelProgress * 100)}%`,
+                background: "linear-gradient(90deg, #bef264, #a3e635)",
+              }}
+            />
+          </div>
+
+          {settingsProgress.gamification.badges.length > 0 ? (
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {settingsProgress.gamification.badges.map((badge) => (
+                <span
+                  key={badge.id}
+                  className="rounded-full px-2.5 py-1 text-[11px] font-extrabold"
+                  style={
+                    badge.unlocked
+                      ? { background: "rgba(252,211,77,0.18)", color: "#fcd34d", border: "1px solid rgba(252,211,77,0.35)" }
+                      : { background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.35)", border: "1px solid rgba(255,255,255,0.06)" }
+                  }
+                >
+                  {badge.label}
+                </span>
+              ))}
+            </div>
+          ) : null}
+        </div>
       ) : null}
 
-      <section className="mb-6">
-        <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Appearance</h2>
-        <div className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-1">
+      {/* ── iPhone-style plan row ── */}
+      <div className="mb-6 rounded-[20px] border border-white/8 bg-white/[0.025] p-4 flex items-center gap-3">
+        <div
+          className="grid place-items-center shrink-0"
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: 12,
+            background: "rgba(252,211,77,0.12)",
+          }}
+        >
+          <Zap size={18} className="text-[#fcd34d]" fill="currentColor" strokeWidth={0} />
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="font-extrabold text-white text-[15px] capitalize">{planLabel.toLowerCase()} plan</p>
+          <p className="text-[12px] text-white/55 truncate">
+            {hasPaidPlan
+              ? "Creation, reading, favorites and practice are unlocked."
+              : "Manage your plan or upgrade for full access."}
+          </p>
+        </div>
+        {hasPaidPlan ? (
+          billingSource === "google_play" ? (
+            <span className="shrink-0 rounded-full bg-white/[0.06] border border-white/10 px-3 py-1.5 text-[12px] font-bold text-white/75">
+              Google Play
+            </span>
+          ) : (
+            <button
+              type="button"
+              onClick={openBillingPortal}
+              disabled={billingLoading}
+              className="shrink-0 rounded-full bg-[var(--color-gold)] px-3.5 py-1.5 text-[12px] font-extrabold text-[#2a1a02] hover:brightness-105 disabled:opacity-60"
+            >
+              {billingLoading ? "Opening…" : "Manage"}
+            </button>
+          )
+        ) : (
+          <Link
+            href="/plans"
+            className="shrink-0 rounded-full bg-[var(--color-gold)] px-3.5 py-1.5 text-[12px] font-extrabold text-[#2a1a02] hover:brightness-105"
+          >
+            See plans
+          </Link>
+        )}
+      </div>
+      {billingError ? (
+        <p className="-mt-3 mb-4 text-[12px] text-amber-300">{billingError}</p>
+      ) : null}
+
+      {/* ── Appearance ── */}
+      <div className="mb-3 rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+        <p className="mb-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Appearance</p>
+        <div className="inline-flex rounded-full bg-black/25 p-1">
           {(["system", "dark", "light"] as const).map((mode) => (
             <button
               key={mode}
               type="button"
               onClick={() => setTheme(mode)}
-              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${
+              className="px-4 py-1.5 rounded-full text-[13px] font-extrabold transition-colors"
+              style={
                 themePref === mode
-                  ? "bg-[var(--primary)] text-white"
-                  : "text-[var(--foreground)]/85 hover:bg-[var(--card-bg-hover)]"
-              }`}
+                  ? { background: "var(--color-gold)", color: "#2a1a02" }
+                  : { background: "transparent", color: "rgba(255,255,255,0.55)" }
+              }
             >
               {mode === "system" ? "System" : mode === "dark" ? "Dark" : "Light"}
             </button>
           ))}
         </div>
-      </section>
+      </div>
 
-      <p className="mb-3 text-xs text-[var(--muted)]">Selected: {selected.length}</p>
-
-      <section
+      {/* ── Languages ── */}
+      <div
         id="languages-section"
-        className={`scroll-mt-20 transition-shadow duration-500 rounded-xl ${
-          languagesHighlighted
-            ? "ring-2 ring-[var(--primary)]/50 shadow-[0_0_0_4px_rgba(125,211,252,0.18)]"
-            : ""
+        className={`mb-3 rounded-[20px] border border-white/8 bg-white/[0.025] p-4 transition-shadow duration-500 ${
+          languagesHighlighted ? "ring-2 ring-[var(--color-gold)]/50" : ""
         }`}
       >
-        <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Languages</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div className="mb-3 flex items-baseline justify-between">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Languages</p>
+          <span className="text-[12px] font-bold text-white/45">{selected.length} selected</span>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
           {LANGUAGES.map((lang) => {
             const active = selected.includes(lang.code);
             return (
               <button
                 key={lang.code}
                 onClick={() => toggleLanguage(lang.code)}
-                className={`rounded-xl px-4 py-2.5 font-medium border transition-colors text-left ${
+                className="rounded-[14px] px-3 py-2.5 text-[13px] font-bold transition-colors text-left"
+                style={
                   active
-                    ? "bg-[var(--primary)] border-[var(--primary)] text-white"
-                    : "bg-[var(--card-bg)] border-[var(--card-border)] hover:bg-[var(--card-bg-hover)] text-[var(--foreground)]"
-                }`}
+                    ? {
+                        background: "rgba(252,211,77,0.12)",
+                        border: "1px solid rgba(252,211,77,0.45)",
+                        color: "#fcd34d",
+                      }
+                    : {
+                        background: "rgba(255,255,255,0.025)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                        color: "rgba(255,255,255,0.85)",
+                      }
+                }
               >
                 <span className="inline-flex items-center gap-2">
                   <span
-                    className={`inline-flex h-4 w-4 rounded-full border text-[10px] items-center justify-center ${
-                      active ? "border-white/70 bg-white/15" : "border-[var(--chip-border)]"
-                    }`}
+                    className="inline-grid h-4 w-4 place-items-center rounded-full text-[10px]"
+                    style={
+                      active
+                        ? { background: "#fcd34d", color: "#2a1a02" }
+                        : { border: "1.5px solid rgba(255,255,255,0.25)" }
+                    }
                   >
                     {active ? "✓" : ""}
                   </span>
@@ -682,145 +713,249 @@ export default function SettingsPage() {
             );
           })}
         </div>
-      </section>
+      </div>
 
-      <section className="mt-7 grid gap-4 sm:grid-cols-3">
-        <div>
-          <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Level</h2>
-          <select
-            value={preferredLevel}
-            onChange={(e) => setPreferredLevel(e.target.value)}
-            className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2.5 text-sm text-[var(--foreground)] outline-none focus:border-[var(--primary)]"
-          >
-            <option value="">No level preference</option>
-            {LEVEL_OPTIONS.map((level) => (
-              <option key={level} value={level}>
-                {level}
+      {/* ── Personalize tiles (Level / Variant / Region) ── */}
+      <div className="mb-3 rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+        <p className="mb-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Personalize</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          <label className="rounded-[14px] border border-white/8 bg-black/20 p-3 block">
+            <span className="block text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/45 mb-1.5">Level</span>
+            <select
+              value={preferredLevel}
+              onChange={(e) => setPreferredLevel(e.target.value)}
+              className="w-full bg-transparent text-[13px] font-bold text-white outline-none"
+              style={{ appearance: "none" }}
+            >
+              <option value="" className="bg-[#0b1e36]">No preference</option>
+              {LEVEL_OPTIONS.map((level) => (
+                <option key={level} value={level} className="bg-[#0b1e36]">
+                  {level}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="rounded-[14px] border border-white/8 bg-black/20 p-3 block">
+            <span className="block text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/45 mb-1.5">Variant</span>
+            <select
+              value={preferredVariant}
+              onChange={(e) => setPreferredVariant(e.target.value)}
+              disabled={availableVariants.length === 0}
+              className="w-full bg-transparent text-[13px] font-bold text-white outline-none disabled:opacity-50"
+              style={{ appearance: "none" }}
+            >
+              <option value="" className="bg-[#0b1e36]">
+                {availableVariants.length > 0 ? "No preference" : "Not available"}
               </option>
-            ))}
-          </select>
-        </div>
+              {availableVariants.map((variant) => (
+                <option key={variant.value} value={variant.value} className="bg-[#0b1e36]">
+                  {formatVariantLabel(variant.value) ?? variant.label}
+                </option>
+              ))}
+            </select>
+          </label>
 
-        <div>
-          <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Variant</h2>
-          <select
-            value={preferredVariant}
-            onChange={(e) => setPreferredVariant(e.target.value)}
-            disabled={availableVariants.length === 0}
-            className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2.5 text-sm text-[var(--foreground)] outline-none focus:border-[var(--primary)] disabled:opacity-50"
+          <label className="rounded-[14px] border border-white/8 bg-black/20 p-3 block">
+            <span className="block text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/45 mb-1.5">Region</span>
+            <select
+              value={preferredRegion}
+              onChange={(e) => setPreferredRegion(e.target.value)}
+              className="w-full bg-transparent text-[13px] font-bold text-white outline-none"
+              style={{ appearance: "none" }}
+            >
+              <option value="" className="bg-[#0b1e36]">No preference</option>
+              {REGION_OPTIONS.map((region) => (
+                <option key={region} value={region} className="bg-[#0b1e36]">
+                  {region}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+      </div>
+
+      {/* ── Daily reminder ── */}
+      <div className="mb-3 rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+        <div className="flex items-center gap-3">
+          <div
+            className="grid place-items-center shrink-0"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 12,
+              background: "rgba(125,211,252,0.1)",
+            }}
           >
-            <option value="">
-              {availableVariants.length > 0 ? "No variant preference" : "No variants for selected language"}
-            </option>
-            {availableVariants.map((variant) => (
-              <option key={variant.value} value={variant.value}>
-                {formatVariantLabel(variant.value) ?? variant.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Region</h2>
-          <select
-            value={preferredRegion}
-            onChange={(e) => setPreferredRegion(e.target.value)}
-            className="w-full rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2.5 text-sm text-[var(--foreground)] outline-none focus:border-[var(--primary)]"
-          >
-            <option value="">No region preference</option>
-            {REGION_OPTIONS.map((region) => (
-              <option key={region} value={region}>
-                {region}
-              </option>
-            ))}
-          </select>
-        </div>
-      </section>
-
-      <section className="mt-7 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Daily reminders</h2>
-            <p className="mt-2 text-base font-semibold text-[var(--foreground)]">Practice reminder</p>
-            <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
-              iPhone uses local notifications at the time you pick here. Web keeps the schedule synced.
+            <Bell size={16} className="text-[#7dd3fc]" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="font-extrabold text-white text-[15px]">Daily reminder</p>
+            <p className="text-[12px] text-white/55 truncate">
+              {!remindersEnabled
+                ? "Off"
+                : typeof reminderHour === "number"
+                  ? `Once a day at ${formatReminderHour(reminderHour)}${typeof reminderMinute === "number" ? `:${reminderMinute.toString().padStart(2, "0")}` : ""}`
+                  : "On · pick a time"}
             </p>
           </div>
-          <Bell size={18} className="mt-1 text-[var(--muted)]" />
-        </div>
-        <div className="mt-4 flex flex-wrap gap-2">
+          {/* iPhone-style toggle. Uses inline-block + transform so the knob
+              position is bulletproof against Tailwind v4 arbitrary-value
+              drops. Off-state track is light gray (matches the iOS look)
+              instead of the previous near-invisible 12% white. */}
           <button
             type="button"
-            onClick={() => setRemindersEnabled(true)}
-            className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
-              remindersEnabled
-                ? "bg-[var(--primary)] border-[var(--primary)] text-white"
-                : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
-            }`}
+            role="switch"
+            aria-checked={remindersEnabled}
+            aria-label={remindersEnabled ? "Turn reminders off" : "Turn reminders on"}
+            onClick={() => setRemindersEnabled(!remindersEnabled)}
+            className="shrink-0 relative inline-block"
+            style={{
+              width: 51,
+              height: 31,
+              borderRadius: 999,
+              background: remindersEnabled ? "#fcd34d" : "rgba(120, 120, 128, 0.5)",
+              transition: "background-color 180ms ease",
+              cursor: "pointer",
+              border: "none",
+              padding: 0,
+            }}
           >
-            Reminders on
-          </button>
-          <button
-            type="button"
-            onClick={() => setRemindersEnabled(false)}
-            className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
-              !remindersEnabled
-                ? "bg-[var(--primary)] border-[var(--primary)] text-white"
-                : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
-            }`}
-          >
-            Reminders off
+            <span
+              aria-hidden
+              style={{
+                position: "absolute",
+                top: 2,
+                left: 2,
+                width: 27,
+                height: 27,
+                borderRadius: "50%",
+                background: "#ffffff",
+                boxShadow:
+                  "0 3px 8px rgba(0, 0, 0, 0.15), 0 3px 1px rgba(0, 0, 0, 0.06)",
+                transform: remindersEnabled ? "translateX(20px)" : "translateX(0)",
+                transition: "transform 220ms cubic-bezier(0.32, 0.72, 0, 1)",
+              }}
+            />
           </button>
         </div>
-        {remindersEnabled ? (
-          <div className="mt-4">
-            <h3 className="mb-3 text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Time</h3>
-            <div className="flex flex-wrap gap-2">
-              {REMINDER_HOUR_OPTIONS.map((hour) => (
-                <button
-                  key={hour}
-                  type="button"
-                  onClick={() => setReminderHour(hour)}
-                  className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
-                    reminderHour === hour
-                      ? "bg-[var(--primary)] border-[var(--primary)] text-white"
-                      : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
-                  }`}
-                >
-                  {formatReminderHour(hour)}
-                </button>
-              ))}
-            </div>
-            <h3 className="mb-3 mt-4 text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Minute</h3>
-            <div className="flex flex-wrap gap-2">
-              {REMINDER_MINUTE_OPTIONS.map((minute) => (
-                <button
-                  key={minute}
-                  type="button"
-                  onClick={() => setReminderMinute(minute)}
-                  disabled={typeof reminderHour !== "number"}
-                  className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${
-                    reminderMinute === minute && typeof reminderHour === "number"
-                      ? "bg-[var(--primary)] border-[var(--primary)] text-white"
-                      : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
-                  }`}
-                >
-                  :{minute.toString().padStart(2, "0")}
-                </button>
-              ))}
-            </div>
-          </div>
-        ) : null}
-      </section>
 
-      <section className="mt-7">
-        <div className="flex items-center justify-between gap-3 mb-3">
-          <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)]">Interests</h2>
-          <span className="text-xs text-[var(--muted)]">
+        {remindersEnabled ? (
+          // Time picker custom: dos <select> estilizados (Hour 12h + Minute)
+          // + segmented AM/PM. Sin native browser time chrome (que se ve
+          // horrible en desktop). El estado interno sigue siendo 24h para
+          // mantener compat con REMINDER_HOUR_OPTIONS del server.
+          (() => {
+            const hh24 = typeof reminderHour === "number" ? reminderHour : 8;
+            const mm = typeof reminderMinute === "number" ? reminderMinute : 0;
+            const isPM = hh24 >= 12;
+            const hh12 = hh24 % 12 === 0 ? 12 : hh24 % 12;
+            const setFrom12h = (next12: number, nextIsPM: boolean) => {
+              const base = next12 % 12; // 12→0, 1-11 stay
+              const next24 = nextIsPM ? base + 12 : base;
+              if (REMINDER_HOUR_OPTIONS.includes(next24 as (typeof REMINDER_HOUR_OPTIONS)[number])) {
+                setReminderHour(next24 as (typeof REMINDER_HOUR_OPTIONS)[number]);
+              }
+            };
+            // Anchos fijos para que valor + chevron no se solapen. El
+            // valor se alinea a la izquierda y el chevron vive en el
+            // padding-right reservado (24px). text-align:left fuerza que
+            // el browser no centre los dígitos.
+            const selectClass =
+              "appearance-none rounded-xl bg-white/[0.04] border border-white/10 text-white font-extrabold text-[16px] focus:outline-none focus:border-white/30 cursor-pointer";
+            const selectStyle: CSSProperties = {
+              paddingLeft: 14,
+              paddingRight: 30,
+              paddingTop: 10,
+              paddingBottom: 10,
+              textAlign: "left",
+              textAlignLast: "left",
+              minWidth: 78,
+              backgroundImage:
+                "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12' fill='none'><path d='M3 4.5l3 3 3-3' stroke='rgba(255,255,255,0.55)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>\")",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "right 10px center",
+              backgroundSize: "10px 10px",
+              colorScheme: "dark",
+            };
+            return (
+              <div className="mt-4">
+                <p className="mb-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/45">
+                  Time
+                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  <select
+                    aria-label="Hour"
+                    value={hh12}
+                    onChange={(e) => setFrom12h(Number(e.target.value), isPM)}
+                    className={selectClass}
+                    style={selectStyle}
+                  >
+                    {[12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((h) => (
+                      <option key={h} value={h}>
+                        {h}
+                      </option>
+                    ))}
+                  </select>
+                  <span className="text-[18px] font-black text-white/45">:</span>
+                  <select
+                    aria-label="Minute"
+                    value={mm}
+                    onChange={(e) =>
+                      setReminderMinute(
+                        Number(e.target.value) as (typeof REMINDER_MINUTE_OPTIONS)[number]
+                      )
+                    }
+                    className={selectClass}
+                    style={selectStyle}
+                  >
+                    {REMINDER_MINUTE_OPTIONS.map((m) => (
+                      <option key={m} value={m}>
+                        {m.toString().padStart(2, "0")}
+                      </option>
+                    ))}
+                  </select>
+                  {/* Segmented AM/PM */}
+                  <div className="ml-1 inline-flex rounded-xl border border-white/10 bg-white/[0.04] p-1">
+                    {([
+                      { label: "AM", value: false },
+                      { label: "PM", value: true },
+                    ] as const).map((opt) => {
+                      const active = opt.value === isPM;
+                      return (
+                        <button
+                          key={opt.label}
+                          type="button"
+                          onClick={() => setFrom12h(hh12, opt.value)}
+                          className="rounded-lg px-3 py-1.5 text-[12px] font-extrabold transition-colors"
+                          style={
+                            active
+                              ? { background: "var(--color-gold)", color: "#2a1a02" }
+                              : { background: "transparent", color: "rgba(255,255,255,0.7)" }
+                          }
+                          aria-pressed={active}
+                        >
+                          {opt.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            );
+          })()
+        ) : null}
+      </div>
+
+      {/* ── Interests ── */}
+      <div className="mb-3 rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+        <div className="flex items-baseline justify-between mb-3">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Interests</p>
+          <span className="text-[12px] font-bold text-white/45">
             {interests.length}/{MAX_INTERESTS}
           </span>
         </div>
-        <div className="mb-3 flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 mb-3">
           {SUGGESTED_INTERESTS.map((interest) => {
             const active = interests.some((item) => item.toLowerCase() === interest.toLowerCase());
             return (
@@ -828,18 +963,19 @@ export default function SettingsPage() {
                 key={interest}
                 type="button"
                 onClick={() => toggleInterest(interest)}
-                className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+                className="rounded-full px-3 py-1.5 text-[12px] font-bold transition-colors"
+                style={
                   active
-                    ? "bg-[var(--primary)] border-[var(--primary)] text-white"
-                    : "bg-[var(--chip-bg)] border-[var(--chip-border)] text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
-                }`}
+                    ? { background: "var(--color-gold)", color: "#2a1a02" }
+                    : { background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.8)", border: "1px solid rgba(255,255,255,0.08)" }
+                }
               >
                 {interest}
               </button>
             );
           })}
         </div>
-        <div className="mb-3 flex items-center gap-2">
+        <div className="flex items-center gap-2 mb-3">
           <input
             value={interestInput}
             onChange={(e) => setInterestInput(e.target.value)}
@@ -850,24 +986,24 @@ export default function SettingsPage() {
               }
             }}
             placeholder="Add custom interest (e.g. urbanism)"
-            className="flex-1 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] px-3 py-2 text-sm text-[var(--foreground)] outline-none focus:border-[var(--primary)]"
+            className="flex-1 rounded-full bg-black/25 border border-white/8 px-4 py-2 text-[13px] text-white outline-none focus:border-[var(--color-gold)]"
           />
           <button
             type="button"
             onClick={addCustomInterest}
-            className="rounded-xl bg-[var(--primary)] px-3 py-2 text-sm font-semibold text-white hover:opacity-90"
+            className="rounded-full bg-[var(--color-gold)] px-4 py-2 text-[12px] font-extrabold text-[#2a1a02] hover:brightness-105"
           >
             Add
           </button>
         </div>
         {interests.length > 0 ? (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {interests.map((interest) => (
               <button
                 key={interest}
                 type="button"
                 onClick={() => toggleInterest(interest)}
-                className="rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] px-3 py-1 text-sm text-[var(--chip-text)] hover:bg-[var(--card-bg-hover)]"
+                className="rounded-full bg-[var(--color-gold)]/15 border border-[var(--color-gold)]/35 px-3 py-1.5 text-[12px] font-bold text-[#fcd34d] hover:bg-[var(--color-gold)]/22"
                 title="Remove interest"
               >
                 {interest} ×
@@ -875,59 +1011,57 @@ export default function SettingsPage() {
             ))}
           </div>
         ) : (
-          <p className="text-sm text-[var(--muted)]">No interests selected yet.</p>
+          <p className="text-[12px] text-white/45">No interests selected yet.</p>
         )}
-      </section>
+      </div>
 
-      <section className="mt-7 mb-6">
-        <h2 className="text-sm uppercase tracking-[0.08em] text-[var(--muted)] mb-3">Privacy & cookies</h2>
-        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
-          <p className="text-sm text-[var(--foreground)]">
-            Analytics cookies are currently{" "}
-            <span className="font-semibold">
-              {analyticsConsent === "accepted"
-                ? "accepted"
-                : analyticsConsent === "rejected"
-                ? "rejected"
-                : "not chosen yet"}
-            </span>.
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => updateAnalyticsConsent("accepted")}
-              className="rounded-lg bg-[var(--primary)] px-3 py-1.5 text-[13px] font-semibold text-white hover:opacity-90"
-            >
-              Allow analytics
-            </button>
-            <button
-              type="button"
-              onClick={() => updateAnalyticsConsent("rejected")}
-              className="rounded-lg border border-[var(--card-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Reject analytics
-            </button>
-            <Link
-              href="/cookies"
-              className="rounded-lg border border-[var(--card-border)] bg-transparent px-3 py-1.5 text-[13px] font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-            >
-              Read Cookie Policy
-            </Link>
-          </div>
+      {/* ── Privacy ── */}
+      <div className="mb-3 rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
+        <p className="mb-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Privacy &amp; cookies</p>
+        <p className="text-[13px] text-white/72">
+          Analytics cookies are currently{" "}
+          <span className="font-extrabold text-white">
+            {analyticsConsent === "accepted"
+              ? "accepted"
+              : analyticsConsent === "rejected"
+              ? "rejected"
+              : "not chosen yet"}
+          </span>.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          <button
+            type="button"
+            onClick={() => updateAnalyticsConsent("accepted")}
+            className="rounded-full bg-[var(--color-gold)] px-3.5 py-1.5 text-[12px] font-extrabold text-[#2a1a02] hover:brightness-105"
+          >
+            Allow analytics
+          </button>
+          <button
+            type="button"
+            onClick={() => updateAnalyticsConsent("rejected")}
+            className="rounded-full bg-white/[0.04] border border-white/8 px-3.5 py-1.5 text-[12px] font-bold text-white/80 hover:bg-white/[0.08]"
+          >
+            Reject analytics
+          </button>
+          <Link
+            href="/cookies"
+            className="rounded-full bg-transparent border border-white/8 px-3.5 py-1.5 text-[12px] font-bold text-white/65 hover:bg-white/[0.05]"
+          >
+            Read Cookie Policy
+          </Link>
         </div>
-      </section>
+      </div>
 
+      {/* ── Save status (sticky bottom) ── */}
       <div className="sticky bottom-[4.75rem] mt-6">
-        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)]/95 backdrop-blur px-4 py-2 text-sm text-[var(--foreground)]/90">
-          {status === "saving" ? "Saving changes..." : null}
+        <div className="rounded-full border border-white/10 bg-[var(--bg-content)]/95 backdrop-blur px-4 py-2 text-[13px] text-white/80 text-center">
+          {status === "saving" ? "Saving changes…" : null}
           {status === "saved" ? "Saved" : null}
           {status === "error" ? "Could not save" : null}
           {status === "idle" && dirty ? "Unsaved changes" : null}
           {status === "idle" && !dirty ? "Settings are up to date" : null}
           {hint ? (
-            <span className="ml-2 font-medium text-[var(--primary)]">
-              {hint}
-            </span>
+            <span className="ml-2 font-extrabold text-[var(--color-gold)]">{hint}</span>
           ) : null}
         </div>
       </div>

@@ -339,25 +339,32 @@ export default function VocabPanel({
     // que la burbuja no quede sobre el dock. Se hace por inline style
     // porque Tailwind v4 JIT a veces tira `pb-[max(...,calc(...))]`.
     <div
-      className="fixed inset-x-0 z-[70] flex justify-center px-[18px] pointer-events-none"
+      id="vocab-panel"
+      // Posicionado directamente, SIN wrapper outer con
+      // `pointer-events-none`. La burbuja ahora ES el contenedor fijo:
+      // ocupa sólo su propio espacio, así los clicks fuera de ella
+      // pasan naturalmente a las palabras detrás (no necesita el truco
+      // de pointer-events-none que estaba causando que los botones
+      // internos no reciban touch en móvil). Centrado horizontal con
+      // left:50% + translateX(-50%); en desktop el media query CSS lo
+      // re-centra sobre el main offset por el sidebar.
+      className="fixed z-[70] vocab-overlay-wrap"
+      onClick={(e) => e.stopPropagation()}
+      onMouseDown={(e) => e.stopPropagation()}
       style={{
-        // El Player web (Player.tsx) mide ~92px. Sumamos 6px de gap para
-        // que la burbuja se vea pegada al dock sin tocarlo.
         bottom: "max(98px, calc(92px + env(safe-area-inset-bottom) + 6px))",
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: "calc(100% - 36px)",
+        maxWidth: 448,
+        background: "#0f2138",
+        border: "1px solid #28415f",
+        borderRadius: 20,
+        padding: "16px 18px",
+        boxShadow: "0 8px 14px rgba(0,0,0,0.22)",
       }}
-      aria-label="qa-reader-vocab-overlay"
+      aria-label="qa-reader-vocab-bubble"
     >
-      <div
-        id="vocab-panel"
-        className="w-full max-w-md pointer-events-auto"
-        style={{
-          background: "#0f2138",
-          border: "1px solid #28415f",
-          borderRadius: 20,
-          padding: "16px 18px",
-          boxShadow: "0 8px 14px rgba(0,0,0,0.22)",
-        }}
-      >
         {/* Header: word + type badge (left) · close × (right) */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex flex-1 flex-col gap-0.5 min-w-0">
@@ -388,18 +395,25 @@ export default function VocabPanel({
           </div>
           <button
             type="button"
-            onClick={handleClose}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (process.env.NODE_ENV !== "production") {
+                console.log("[vocab-panel] close button clicked");
+              }
+              handleClose();
+            }}
             aria-label="Close"
-            className="shrink-0 grid place-items-center"
+            className="shrink-0 grid place-items-center cursor-pointer"
             style={{
               width: 32,
               height: 32,
               borderRadius: 999,
               backgroundColor: "#213754",
               color: "#dbe9ff",
+              border: "none",
             }}
           >
-            <X size={16} strokeWidth={2.6} />
+            <X size={16} strokeWidth={2.6} style={{ pointerEvents: "none" }} />
           </button>
         </div>
 
@@ -421,9 +435,15 @@ export default function VocabPanel({
         <div className="mt-3 flex">
           <button
             type="button"
-            onClick={toggleFavorite}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (process.env.NODE_ENV !== "production") {
+                console.log("[vocab-panel] save button clicked");
+              }
+              void toggleFavorite();
+            }}
             aria-label={isFav ? "Remove from saved words" : "Save word"}
-            className="inline-flex items-center gap-2 transition-all"
+            className="inline-flex items-center gap-2 transition-all cursor-pointer"
             style={
               isFav
                 ? {
@@ -458,7 +478,6 @@ export default function VocabPanel({
             {isFav ? "Saved" : "Save word"}
           </button>
         </div>
-      </div>
     </div>
   );
 }

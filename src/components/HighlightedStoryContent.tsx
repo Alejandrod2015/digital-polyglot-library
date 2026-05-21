@@ -3,8 +3,40 @@
 import * as React from "react";
 
 import type { AudioWordTimingsPayload, StoryWordToken } from "@/lib/audioWordTimings";
+import { normalizeVocabType } from "@/lib/vocabTypes";
 
-type VocabItem = { word: string; surface?: string };
+type VocabItem = { word: string; surface?: string; type?: string | null; definition?: string };
+
+// Morphology-first vocab type resolution (mismo que StoryContent).
+// La inferencia compartida en @/lib/vocabTypes cae a "noun" demasiado
+// agresivamente cuando la definición tiene formato narrativo. Acá
+// priorizamos morfología inequívoca (verb infinitive -ar/-er/-ir,
+// -mente adverb, multi-word expression) y sólo después miramos el
+// type explícito del data.
+function resolveVocabType(item: VocabItem): string {
+  const word = (item.word ?? item.surface ?? "").trim().toLowerCase();
+  const def = (item.definition ?? "").trim().toLowerCase();
+
+  if (word.includes(" ") || word.includes("-")) return "expression";
+  if (word.endsWith("mente") || word.endsWith("ly")) return "adverb";
+
+  const ADJ_SUF = ["oso", "osa", "ivo", "iva", "able", "ible", "iento", "ienta"];
+  if (ADJ_SUF.some((s) => word.endsWith(s))) return "adjective";
+
+  const NOUN_SUF = ["ción", "sión", "dad", "tad", "tud", "aje", "anza", "encia", "ancia", "miento", "ismo", "ista", "ería", "azo", "ote"];
+  if (NOUN_SUF.some((s) => word.endsWith(s))) return "noun";
+
+  if (word.length >= 4 && /(?:ar|er|ir)$/.test(word)) return "verb";
+
+  if (item.type) {
+    const explicit = normalizeVocabType(item.type);
+    if (explicit) return explicit;
+  }
+
+  if (def.startsWith("to ")) return "verb";
+
+  return "other";
+}
 
 type HighlightedStoryContentProps = {
   payload: AudioWordTimingsPayload;
@@ -96,6 +128,22 @@ export default function HighlightedStoryContent({
   onWordRef,
 }: HighlightedStoryContentProps) {
   const vocabLookup = React.useMemo(() => buildVocabLookup(vocab), [vocab]);
+  // Vocab type por palabra para colorear cada pill según categoría
+  // (verb=coral, noun=sky, adjective=emerald, adverb=purple, expression=pink).
+  // Usa resolveVocabType arriba — morfología fuerte tiene prioridad sobre
+  // la definición narrativa (que el viejo helper interpretaba mal).
+  const vocabTypeByLower = React.useMemo(() => {
+    const map = new Map<string, string>();
+    for (const item of vocab) {
+      const surface = item.surface?.trim().toLowerCase();
+      const word = item.word?.trim().toLowerCase();
+      if (!word && !surface) continue;
+      const resolved = resolveVocabType(item);
+      if (word) map.set(word, resolved);
+      if (surface && surface !== word) map.set(surface, resolved);
+    }
+    return map;
+  }, [vocab]);
   const blocks = React.useMemo(
     () => buildBlocks(payload, vocabLookup),
     [payload, vocabLookup]
@@ -136,6 +184,12 @@ export default function HighlightedStoryContent({
                 }}
                 data-word-index={piece.index}
                 {...(piece.vocabKey ? { "data-word": piece.vocabKey } : {})}
+                {...(piece.vocabKey
+                  ? {
+                      "data-vocab-type":
+                        vocabTypeByLower.get(piece.vocabKey.toLowerCase()) ?? "other",
+                    }
+                  : {})}
                 className={[baseClass, activeClass, vocabClass].filter(Boolean).join(" ")}
               >
                 {piece.token.text}

@@ -4,6 +4,53 @@
 "use client";
 
 import * as React from "react";
+import { normalizeVocabType } from "@/lib/vocabTypes";
+
+/**
+ * Stricter type resolution for vocab pills: priorizar morfología
+ * inequívoca antes que la inferencia genérica que cae a "noun"
+ * por default. Si el item trae un `type` explícito en la data, lo
+ * respetamos como autoridad final.
+ *
+ * Orden:
+ *   1. Multi-palabra → expression
+ *   2. -mente / -ly → adverb
+ *   3. -ar / -er / -ir con ≥4 chars → verb
+ *   4. Sufijos adjetivos españoles (oso/iva/able/ible/iento) → adjective
+ *   5. Sufijos sustantivos españoles (ción/dad/aje/anza/miento/ista/ería/azo/ote) → noun
+ *   6. Si data trae `type` explícito, usarlo
+ *   7. Si la definición arranca con "to " → verb (señal fuerte)
+ *   8. Fallback → "other" (slate gris, no más mentira de noun)
+ */
+function resolveVocabType(item: {
+  word?: string;
+  surface?: string;
+  type?: string | null;
+  definition?: string;
+}): string {
+  const word = (item.word ?? item.surface ?? "").trim().toLowerCase();
+  const def = (item.definition ?? "").trim().toLowerCase();
+
+  if (word.includes(" ") || word.includes("-")) return "expression";
+  if (word.endsWith("mente") || word.endsWith("ly")) return "adverb";
+
+  const ADJ_SUF = ["oso", "osa", "ivo", "iva", "able", "ible", "iento", "ienta"];
+  if (ADJ_SUF.some((s) => word.endsWith(s))) return "adjective";
+
+  const NOUN_SUF = ["ción", "sión", "dad", "tad", "tud", "aje", "anza", "encia", "ancia", "miento", "ismo", "ista", "ería", "azo", "ote"];
+  if (NOUN_SUF.some((s) => word.endsWith(s))) return "noun";
+
+  if (word.length >= 4 && /(?:ar|er|ir)$/.test(word)) return "verb";
+
+  if (item.type) {
+    const explicit = normalizeVocabType(item.type);
+    if (explicit) return explicit;
+  }
+
+  if (def.startsWith("to ")) return "verb";
+
+  return "other";
+}
 
 export type StoryContentProps = {
   text: string;
@@ -11,7 +58,11 @@ export type StoryContentProps = {
   className?: string;
   onParagraphSelect?: (e: React.MouseEvent<HTMLParagraphElement>) => void;
   renderWord?: (t: string) => React.ReactNode;
-  vocab?: Array<{ word: string; surface?: string }>;
+  // El campo `type` lo usamos para colorear el resaltado por categoría
+  // gramatical (verb/noun/adjective/adverb/expression). Mismo catálogo
+  // que la app de iPhone. `definition` se usa sólo para que
+  // normalizeVocabType pueda inferir el tipo cuando falta o es raro.
+  vocab?: Array<{ word: string; surface?: string; type?: string | null; definition?: string }>;
 };
 
 const MAX_HIGHLIGHT_WORDS = 30;
@@ -175,8 +226,9 @@ function normalizeVocabForHighlight(vocab: Array<{ word: string; surface?: strin
 
 function highlightVocabulary(
   text: string,
-  vocab: Array<{ word: string; surface?: string }>,
-  renderWord: (t: string) => React.ReactNode
+  vocab: Array<{ word: string; surface?: string; type?: string | null; definition?: string }>,
+  renderWord: (t: string) => React.ReactNode,
+  vocabTypeByLower?: Map<string, string>
 ) {
   if (text.length > MAX_TEXT_LENGTH_FOR_HIGHLIGHT) return renderWord(text);
 
@@ -222,12 +274,18 @@ function highlightVocabulary(
 
     const canonical = canonicalByLower.get(matchedText.toLowerCase()) ?? matchedText;
     const canonicalKey = canonical.toLowerCase();
+    const vocabType = vocabTypeByLower?.get(canonicalKey) ?? "other";
     if (alreadyHighlighted.has(canonicalKey)) {
       nodes.push(<React.Fragment key={`txt-${key++}`}>{renderWord(matchedText)}</React.Fragment>);
     } else {
       alreadyHighlighted.add(canonicalKey);
       nodes.push(
-        <span key={`voc-${key++}`} className="vocab-word" data-word={canonical}>
+        <span
+          key={`voc-${key++}`}
+          className="vocab-word"
+          data-word={canonical}
+          data-vocab-type={vocabType}
+        >
           {renderWord(matchedText)}
         </span>
       );
@@ -270,6 +328,22 @@ export default function StoryContent({
     () => normalizeVocabForHighlight(vocab).map((word) => ({ word })),
     [vocab]
   );
+  // Map word (lowercase) → vocab type. Usa resolveVocabType (definido
+  // arriba) que prioriza morfología fuerte sobre la definición — así
+  // verbos en -ar/-er/-ir no se confunden con sustantivos sólo porque
+  // la definición empieza con "A " en lugar de "to ".
+  const vocabTypeByLower = React.useMemo(() => {
+    const map = new Map<string, string>();
+    for (const item of vocab) {
+      const w = item.word?.trim().toLowerCase();
+      if (!w) continue;
+      const resolved = resolveVocabType(item);
+      map.set(w, resolved);
+      const surface = item.surface?.trim().toLowerCase();
+      if (surface && surface !== w) map.set(surface, resolved);
+    }
+    return map;
+  }, [vocab]);
   const htmlBlocks = React.useMemo(() => (hasHtml ? extractHtmlBlocks(text) : []), [hasHtml, text]);
 
   React.useEffect(() => {
@@ -372,10 +446,10 @@ export default function StoryContent({
             children: htmlBlocks.map((block, i) =>
               block.tag === "blockquote" ? (
                 <blockquote key={`bq-${i}`}>
-                  <p>{highlightVocabulary(block.text, safeVocab, renderWord)}</p>
+                  <p>{highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower)}</p>
                 </blockquote>
               ) : (
-                <p key={`p-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord)}</p>
+                <p key={`p-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower)}</p>
               )
             ),
           }
@@ -385,16 +459,16 @@ export default function StoryContent({
                 block.speaker ? (
                   <p key={`dlg-${i}`}>
                     <strong>{block.speaker}:</strong>{" "}
-                    {highlightVocabulary(block.text, safeVocab, renderWord)}
+                    {highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower)}
                   </p>
                 ) : (
-                  <p key={`nar-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord)}</p>
+                  <p key={`nar-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower)}</p>
                 )
               ),
             }
           : {
               children: paragraphs.map((para, i) => (
-                <p key={i}>{highlightVocabulary(para, safeVocab, renderWord)}</p>
+                <p key={i}>{highlightVocabulary(para, safeVocab, renderWord, vocabTypeByLower)}</p>
               )),
             })}
     />

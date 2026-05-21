@@ -279,21 +279,32 @@ select,
 }
 
 /* === ✅ VOCABULARY HIGHLIGHT === */
-/* Vocab is now sky-blue: warm amber is reserved for the karaoke
-   active highlight, so vocab gets a cool hue to read as a distinct
-   kind of mark. */
+/* Colored by grammatical category (paridad con iPhone
+   `ReaderScreen.tsx → VOCAB_TYPE_BACKGROUNDS`). El fallback es slate
+   para items sin categoría conocida. Usamos `!important` para ganarle
+   a cualquier rule cacheada de Tailwind/JIT que pueda quedar pinned al
+   color anterior. */
 .vocab-word {
-  background-color: rgba(125, 211, 252, 0.55);
+  background-color: rgba(148, 163, 184, 0.55) !important; /* slate = default / other */
   border-radius: 0.25rem;
   padding: 0 0.15em;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.vocab-word:hover {
-  background-color: rgba(125, 211, 252, 0.85);
-  color: #0e1727;
-}
+.vocab-word[data-vocab-type="verb"]       { background-color: rgba(248, 113, 113, 0.6) !important; }  /* coral */
+.vocab-word[data-vocab-type="noun"]       { background-color: rgba(56, 189, 248, 0.65) !important; } /* sky */
+.vocab-word[data-vocab-type="adjective"]  { background-color: rgba(52, 211, 153, 0.6) !important; }  /* emerald */
+.vocab-word[data-vocab-type="adverb"]     { background-color: rgba(167, 139, 250, 0.65) !important; }/* purple */
+.vocab-word[data-vocab-type="expression"] { background-color: rgba(244, 114, 182, 0.6) !important; } /* pink */
+
+/* Hover: same hue at higher opacity + dark text. */
+.vocab-word:hover                              { background-color: rgba(148, 163, 184, 0.9) !important; color: #0e1727; }
+.vocab-word[data-vocab-type="verb"]:hover      { background-color: rgba(248, 113, 113, 0.9) !important; color: #0e1727; }
+.vocab-word[data-vocab-type="noun"]:hover      { background-color: rgba(56, 189, 248, 0.95) !important; color: #0e1727; }
+.vocab-word[data-vocab-type="adjective"]:hover { background-color: rgba(52, 211, 153, 0.9) !important; color: #0e1727; }
+.vocab-word[data-vocab-type="adverb"]:hover    { background-color: rgba(167, 139, 250, 0.95) !important; color: #0e1727; }
+.vocab-word[data-vocab-type="expression"]:hover{ background-color: rgba(244, 114, 182, 0.9) !important; color: #0e1727; }
 
 /* === 🔹 CARRUSELES === */
 
@@ -1160,9 +1171,48 @@ body {
   display: grid;
   grid-template-columns: 1fr;
 }
+
+/* Vocab popup bubble: en desktop el sidebar fijo (16rem) empuja el
+ * <main> a la derecha, así que la burbuja también debe centrarse sobre
+ * ese offset (no sobre el viewport). El centro de main = 50vw + 8rem,
+ * y como la burbuja usa translateX(-50%), su anchor pasa a calc(50% + 8rem). */
+@media (min-width: 768px) {
+  .vocab-overlay-wrap { left: calc(50% + 8rem) !important; }
+}
+/* StoryOfDayHero: 1 col en móvil (imagen como banner arriba), 2 cols
+ * en desktop con la imagen a la izquierda. Las !important son para
+ * ganarle al `style={{display:grid, gridTemplateColumns: ...}}` inline
+ * que tenía el componente. */
+.dp-sotd-hero {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  row-gap: 12px !important;
+  column-gap: 0 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+@media (min-width: 768px) {
+  .dp-sotd-hero {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr) !important;
+    column-gap: 56px !important;
+    row-gap: 0 !important;
+    min-height: 360px !important;
+    max-height: 440px !important;
+  }
+  /* En desktop la celda del grid impone la altura; desactivamos el
+   * aspect-ratio del banner mobile para que la imagen llene el cell. */
+  .dp-sotd-img {
+    aspect-ratio: auto !important;
+    height: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .dp-hero-grid {
     grid-template-columns: 1.05fr 1fr;
+    /* Gutter between the cover and the body so the text doesn't sit
+     * flush against the image edge. */
+    column-gap: 32px;
   }
   .dp-hero-img {
     aspect-ratio: auto;

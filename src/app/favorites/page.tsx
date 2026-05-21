@@ -700,18 +700,46 @@ export default function FavoritesPage() {
     setPracticeIndex((idx) => Math.max(0, idx - 1));
   };
 
-  // ── iPhone-style mobile bits ──
-  const activeLanguageName = (() => {
+  // Active language for the flag pill. Resolution order:
+  //   1. user.publicMetadata.targetLanguages[0] (explicit preference)
+  //   2. most-common language across the user's actual favorites
+  //   3. nothing → we hide the pill instead of showing a "🌐 ??" stub
+  const metadataLanguage = (() => {
     const tl = user?.publicMetadata?.targetLanguages;
     if (Array.isArray(tl) && typeof tl[0] === 'string') return tl[0] as string;
     return null;
   })();
+  const inferredLanguageFromFavs = useMemo(() => {
+    if (favorites.length === 0) return null;
+    const counts = new Map<string, number>();
+    for (const f of favorites) {
+      if (!f.language) continue;
+      counts.set(f.language, (counts.get(f.language) ?? 0) + 1);
+    }
+    let best: { lang: string; n: number } | null = null;
+    for (const [lang, n] of counts) {
+      if (!best || n > best.n) best = { lang, n };
+    }
+    return best?.lang ?? null;
+  }, [favorites]);
+  const activeLanguageName = metadataLanguage ?? inferredLanguageFromFavs;
   const activeVariantKey =
     typeof user?.publicMetadata?.preferredVariant === 'string'
       ? (user.publicMetadata.preferredVariant as string)
       : null;
-  const activeFlag = activeLanguageName ? getLanguageFlag(activeLanguageName, activeVariantKey) : '🌐';
-  const activeLangShort = activeLanguageName ? activeLanguageName.slice(0, 2).toUpperCase() : '??';
+  const activeFlag = activeLanguageName ? getLanguageFlag(activeLanguageName, activeVariantKey) : null;
+  // Convert "Spanish" → "ES", "es" → "ES", "es-mx" → "ES", etc.
+  const activeLangShort = activeLanguageName
+    ? (() => {
+        const map: Record<string, string> = {
+          spanish: 'ES', english: 'EN', french: 'FR', german: 'DE',
+          italian: 'IT', portuguese: 'PT', japanese: 'JA', korean: 'KO',
+          chinese: 'ZH',
+        };
+        const key = activeLanguageName.toLowerCase();
+        return map[key] ?? activeLanguageName.slice(0, 2).toUpperCase();
+      })()
+    : null;
   // "9 in journey": favorites that came from journey stories. We use the
   // sourcePath as the marker — anything under /journey or with a storySlug
   // counts as journey-sourced. Falls back to total favorites - dueFavorites.
@@ -720,24 +748,26 @@ export default function FavoritesPage() {
 
   return (
     <div className="p-4 sm:p-8 max-w-2xl mx-auto text-[var(--foreground)] pb-24">
-      {/* ── MOBILE HERO (iPhone-style) ── */}
-      <div className="sm:hidden mb-5">
+      {/* ── iPhone-style hero — visible on every viewport ── */}
+      <div className="mb-5">
         <div className="flex items-center gap-4 mb-3">
-          <button
-            type="button"
-            onClick={() => setLanguageSwitcherOpen(true)}
-            className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 pl-1.5 pr-3 py-1.5 active:bg-white/[0.1] transition-colors"
-            aria-label="Switch language"
-          >
-            <span
-              className="rounded-full bg-black/30 grid place-items-center text-lg leading-none"
-              style={{ width: 28, height: 28 }}
+          {activeFlag && activeLangShort ? (
+            <button
+              type="button"
+              onClick={() => setLanguageSwitcherOpen(true)}
+              className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 pl-1.5 pr-3 py-1.5 active:bg-white/[0.1] transition-colors"
+              aria-label="Switch language"
             >
-              {activeFlag}
-            </span>
-            <span className="text-[13px] font-extrabold text-white">{activeLangShort}</span>
-            <ChevronDown size={14} className="text-white/55" />
-          </button>
+              <span
+                className="rounded-full bg-black/30 grid place-items-center text-lg leading-none"
+                style={{ width: 28, height: 28 }}
+              >
+                {activeFlag}
+              </span>
+              <span className="text-[13px] font-extrabold text-white">{activeLangShort}</span>
+              <ChevronDown size={14} className="text-white/55" />
+            </button>
+          ) : null}
           <h1 className="text-[28px] font-black tracking-tight text-white leading-none">Favorites</h1>
         </div>
         <p className="text-[13px] font-bold text-white/90">
@@ -749,7 +779,7 @@ export default function FavoritesPage() {
 
       {/* ── MOBILE TYPE FILTER (horizontal scroll pills) ── */}
       {favorites.length > 0 ? (
-        <div className="sm:hidden -mx-4 px-4 mb-4 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+        <div className="-mx-4 px-4 mb-4 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
           <div className="flex gap-2 w-max">
             <button
               type="button"
@@ -779,69 +809,6 @@ export default function FavoritesPage() {
           </div>
         </div>
       ) : null}
-
-      {/* ── DESKTOP HERO (original) ── */}
-      <div className="hidden sm:flex mb-6 items-end justify-between gap-3">
-        <div>
-          <h1 className="text-3xl font-bold">Favorites</h1>
-          <p className="text-sm text-[var(--muted)] mt-1">
-            {dueFavorites.length} due today · {favorites.length} total
-          </p>
-        </div>
-        {favorites.length > 0 ? (
-          <div className="flex flex-col items-end gap-2">
-            <div className="inline-flex rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-1">
-              <button
-                onClick={() => startPractice(true)}
-                className={getPracticeModeTabClass('due')}
-              >
-                Practice due
-              </button>
-              <button
-                onClick={() => startPractice(false)}
-                className={getPracticeModeTabClass('all')}
-              >
-                Practice all
-              </button>
-              {relatedPracticeAvailable ? (
-                <button
-                  onClick={startRelatedPractice}
-                  className={getPracticeModeTabClass('related')}
-                >
-                  Practice related
-                </button>
-              ) : null}
-            </div>
-            <div className="flex max-w-full flex-wrap justify-end gap-1.5">
-              <button
-                type="button"
-                onClick={() => setPracticeType('all')}
-                className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-colors ${
-                  practiceType === 'all'
-                    ? 'border-blue-500/40 bg-blue-500/15 text-blue-300'
-                    : 'border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]'
-                }`}
-              >
-                All types
-              </button>
-              {availablePracticeTypes.map((type) => (
-                <button
-                  key={type}
-                  type="button"
-                  onClick={() => setPracticeType(type)}
-                  className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-colors ${
-                    practiceType === type
-                      ? 'border-blue-500/40 bg-blue-500/15 text-blue-300'
-                      : 'border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]'
-                  }`}
-                >
-                  {getVocabTypeLabel(type)} ({favoriteTypeCounts[type] ?? 0})
-                </button>
-              ))}
-            </div>
-          </div>
-        ) : null}
-      </div>
 
       {practiceMode && currentPractice ? (
         <div className="mb-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-4 sm:p-5">
@@ -1038,10 +1005,9 @@ export default function FavoritesPage() {
               </div>
             </div>
           ) : (
-            <>
-            {/* ── MOBILE CARDS (iPhone-style: word + type, segmented
-                progress, story context italic, definition, play button) ── */}
-            <ul className="sm:hidden space-y-3">
+            /* iPhone-style cards: word + type, segmented progress,
+               story context italic, definition, play button. */
+            <ul className="space-y-3">
               {sortedFavorites.map((fav) => {
                 const meta = srsMap[normalizeWord(fav.word)];
                 const streak = meta?.streak ?? fav.streak ?? 0;
@@ -1115,98 +1081,6 @@ export default function FavoritesPage() {
                 );
               })}
             </ul>
-            <ul className="hidden sm:block space-y-4">
-              {sortedFavorites.map((fav) => {
-                const meta = srsMap[normalizeWord(fav.word)];
-                const due = isDue(meta, now);
-                return (
-                <li
-                  key={fav.word}
-                  className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-sm p-4 sm:p-5 shadow-[0_12px_28px_rgba(2,8,23,0.18)]"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <p className="font-bold text-2xl leading-tight">{fav.word}</p>
-                        <span className="text-[11px] px-2 py-0.5 rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]">
-                          {getVocabTypeLabel(
-                            normalizeVocabType(fav.wordType, {
-                              word: fav.word,
-                              definition: fav.translation,
-                            }) ?? 'other'
-                          )}
-                        </span>
-                        {fav.language ? (
-                          <span className="text-[11px] px-2 py-0.5 rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]">
-                            {formatLanguageCode(fav.language)}
-                          </span>
-                        ) : null}
-                      <MasteryBadge
-                        lastReviewedAt={meta?.lastReviewedAt ?? fav.lastReviewedAt ?? null}
-                        nextReviewAt={meta?.nextReviewAt ?? fav.nextReviewAt ?? null}
-                        streak={meta?.streak ?? fav.streak ?? 0}
-                      />
-                      <span
-                        className={`text-[11px] px-2 py-0.5 rounded-full border ${
-                          due
-                            ? 'border-emerald-500/40 bg-emerald-500/18 text-[var(--foreground)] font-medium'
-                            : 'border-[var(--chip-border)] bg-[var(--chip-bg)] text-[var(--chip-text)]'
-                        }`}
-                      >
-                        {due ? 'Due today' : formatNextReview(meta)}
-                      </span>
-                      </div>
-                      <p className="text-[var(--foreground)] text-[1.03rem] leading-relaxed mt-1 line-clamp-2">
-                        {fav.translation}
-                      </p>
-                      {fav.exampleSentence ? (
-                        <p className="text-[0.98rem] text-[var(--muted)] mt-1.5 line-clamp-2 italic">
-                          {fav.exampleSentence}
-                        </p>
-                      ) : null}
-                      <div className="mt-3 flex items-center gap-2">
-                        {(() => {
-                          const key = `${fav.word}-${fav.language ?? ''}`;
-                          const playing = playingWordKey === key;
-                          return (
-                            <button
-                              type="button"
-                              onClick={() => playWord(fav)}
-                              className="inline-flex items-center gap-1.5 text-sm text-[var(--primary)] hover:opacity-85 transition-colors"
-                            >
-                              {playing ? <Square size={14} fill="currentColor" /> : <Play size={14} fill="currentColor" />}
-                              {playing ? 'Stop' : 'Pronounce'}
-                            </button>
-                          );
-                        })()}
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => removeFavorite(fav.word)}
-                      aria-label={`Remove ${fav.word}`}
-                      className="shrink-0 rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] p-2 text-[var(--muted)] hover:text-red-400 hover:border-red-400/30 hover:bg-red-500/10 transition-colors"
-                      title="Remove"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1.8}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7h6m2 0H7m3-3h4a1 1 0 011 1v1H8V5a1 1 0 011-1z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </li>
-              )})}
-            </ul>
-            </>
           )}
         </div>
       </div>

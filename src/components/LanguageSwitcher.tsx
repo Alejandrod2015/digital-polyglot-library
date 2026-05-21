@@ -189,7 +189,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
           role="dialog"
           aria-modal="true"
           aria-label="Switch language"
-          className="md:hidden fixed inset-0 z-[60]"
+          className="fixed inset-0 z-[60]"
         >
           <motion.button
             type="button"

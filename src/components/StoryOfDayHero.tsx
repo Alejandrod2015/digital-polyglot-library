@@ -28,16 +28,31 @@ type Props = {
   plan: Plan;
 };
 
+/** Trim long book descriptions to ~2 sentences so the hero stays
+ *  scannable instead of becoming a wall of text on wide screens. */
+function trimDescription(raw: string, maxChars = 200): string {
+  const clean = raw.replace(/\s+/g, " ").trim();
+  if (clean.length <= maxChars) return clean;
+  const sentences = clean.match(/[^.!?]+[.!?]+/g) ?? [clean];
+  let out = "";
+  for (const s of sentences) {
+    if ((out + s).length > maxChars && out.length > 60) break;
+    out += s;
+  }
+  if (!out) out = clean.slice(0, maxChars);
+  return out.trim().endsWith(".") ? out.trim() : `${out.trim()}…`;
+}
+
 /**
  * STORY OF THE DAY HERO — the editorial 2-column layout.
  *
- * ⚠️ Layout contract (do NOT change):
+ * Layout contract:
  *   - `grid grid-cols-[1.05fr_1fr]` on desktop ≥ 980px → IMAGE LEFT, BODY RIGHT
- *   - Single column on mobile only (image becomes 16/9 banner on top)
- *   - min-height 380px, border-radius 24px
- *
- * The "Free today · resets in Xh Ym" pill is overlaid on the image
- * for free/basic plans only.
+ *   - Single column on mobile (image becomes a banner on top, capped via
+ *     dp-hero-img-cap so it doesn't dominate)
+ *   - The section is HEIGHT-CAPPED so wide viewports don't blow the
+ *     16:9 image up to full-screen. The image cell flexes to fill the
+ *     capped section height with object-cover (cropping wider covers).
  */
 export default function StoryOfDayHero({ story, plan }: Props) {
   const isFree = plan === "free" || plan === "basic";
@@ -51,9 +66,22 @@ export default function StoryOfDayHero({ story, plan }: Props) {
   const m = Math.max(0, Math.floor((diffMs % 3600000) / 60000));
 
   return (
-    <section className="dp-hero-grid relative min-h-[380px] rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] overflow-hidden">
+    <section
+      // Layout en `dp-sotd-hero` (globals.css): 1 col en móvil (imagen
+      // como banner arriba, texto debajo), 2 cols en desktop con la
+      // imagen a la izquierda y cap de altura 360–440px. Sólo el
+      // padding del card va inline.
+      className="dp-sotd-hero relative rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] overflow-hidden"
+      style={{ padding: 16 }}
+    >
       {/* ────── LEFT: image ────── */}
-      <div className="dp-hero-img dp-aspect-16-9 relative bg-[var(--surface)]">
+      {/* Aspect 16/9 en móvil para que se vea como banner editorial.
+          En desktop el grid le impone su propia altura, así que el
+          aspect-ratio se desactiva con `md:` (rescue class). */}
+      <div
+        className="dp-sotd-img relative bg-[var(--surface)] rounded-2xl overflow-hidden"
+        style={{ aspectRatio: "16 / 9" }}
+      >
         <img
           src={story.coverUrl}
           alt={story.title}
@@ -72,13 +100,16 @@ export default function StoryOfDayHero({ story, plan }: Props) {
       </div>
 
       {/* ────── RIGHT: body ────── */}
-      <div className="flex flex-col justify-center gap-4 p-9 pb-8">
+      <div
+        className="flex flex-col justify-center gap-3 overflow-hidden"
+        style={{ paddingRight: 16, paddingTop: 12, paddingBottom: 12 }}
+      >
         <span className="text-[11px] font-extrabold tracking-[0.16em] uppercase text-[var(--color-gold)] whitespace-nowrap self-start">
           Story of the day
         </span>
 
         <h1
-          className="text-[38px] font-black tracking-[-0.025em] leading-[1.05] text-[var(--foreground)] m-0"
+          className="text-[30px] font-black tracking-[-0.025em] leading-[1.05] text-[var(--foreground)] m-0"
           style={{ textWrap: "balance" }}
         >
           {story.title}
@@ -89,8 +120,15 @@ export default function StoryOfDayHero({ story, plan }: Props) {
         </div>
 
         {story.description && (
-          <p className="text-[14.5px] font-semibold leading-[1.55] text-[var(--muted)] max-w-[52ch] m-0">
-            {story.description}
+          <p
+            className="text-[13.5px] font-semibold leading-[1.5] text-[var(--muted)] max-w-[52ch] m-0 overflow-hidden"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: "vertical",
+            }}
+          >
+            {trimDescription(story.description)}
           </p>
         )}
 
