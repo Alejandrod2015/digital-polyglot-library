@@ -90,7 +90,7 @@ const PROPER_NOUN_KEEP = new Set([
 ]);
 
 function summarizeSynopsis(synopsis: string): string {
-  const firstSentence = synopsis.split(/(?<=[.!?][”’"'»]?)\s+/)[0] ?? synopsis;
+  const firstSentence = synopsis.split(/(?<=[.!?])\s+/)[0] ?? synopsis;
   const trimmed = firstSentence.length > 240 ? firstSentence.slice(0, 240) : firstSentence;
   return trimmed
     .replace(/\b[A-Z][a-zA-Z]{2,}\b/g, (token) => (PROPER_NOUN_KEEP.has(token) ? token : ""))

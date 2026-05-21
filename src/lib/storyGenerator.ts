@@ -16,13 +16,7 @@ export type StoryJSON = {
   title: string;
   text: string;
   arcType: string;
-  vocab: {
-    word: string;
-    surface?: string;
-    definition: string;
-    type?: string;
-    priority?: number;
-  }[];
+  vocab: { word: string; surface?: string; definition: string; type?: string }[];
 };
 
 export type GenerateStoryParams = {
@@ -285,23 +279,16 @@ function sanitizeGeneratedVocab(
       language,
     });
     const definition = typeof item.definition === "string" ? item.definition.trim() : "";
-    const priorityRaw = (item as { priority?: unknown }).priority;
-    const priority =
-      typeof priorityRaw === "number" && priorityRaw >= 1 && priorityRaw <= 3
-        ? Math.round(priorityRaw)
-        : undefined;
     if (!word || !definition) continue;
     if (isInvalidMultiwordVocab(word, { type, storyText })) continue;
     const key = normalizeToken(word);
     if (!key || seen.has(key)) continue;
     seen.add(key);
-    out.push({
-      word,
-      ...(surface && surface !== word ? { surface } : {}),
-      definition,
-      ...(type ? { type } : {}),
-      ...(priority ? { priority } : {}),
-    });
+    out.push(
+      type
+        ? { word, ...(surface && surface !== word ? { surface } : {}), definition, type }
+        : { word, ...(surface && surface !== word ? { surface } : {}), definition }
+    );
   }
 
   return out;
@@ -448,33 +435,6 @@ ${titleClause}
 ${variantClause}
 Return 18-22 vocabulary items (aim for 20). After post-processing filters transparent cognates and invalid multi-word fragments, this yields roughly 15-17 keeper items — the target the app needs.
 All vocabulary definitions must be written in clear English, regardless of the story language.
-
-VOCAB SELECTION RULES (HARD constraints; items violating these are wasted slots):
-
-1. NEVER include words an educated adult already knows without studying the language. This covers:
-   - International food/drink loanwords: pizza, mozzarella, espresso, cappuccino, latte, cannoli, gelato, pasta, sushi, kimchi, croissant, baguette, tofu, salsa, taco, tortilla, tapas, paella, bratwurst, pretzel, sashimi, ramen, miso, kebab.
-   - Global cultural terms: ciao, bravo, mafia, paparazzi, fiesta, samurai, sake, opera, aria, prima donna, maestro, finale, soprano.
-   - Brand-like internationalisms and obvious menu nouns the reader sees on signs in any major city.
-   - If you would not bother translating it in a travel guide for English readers, exclude it.
-2. NEVER include transparent cognates with English at the requested CEFR level (importante, normale, generale, sociale, speciale, naturale, finale, attentamente, contento, curioso, gruppo, parte, etc.). If a beginner can guess the meaning from English in under one second, do not waste a slot.
-3. ONE FORM PER LEMMA. If the story uses several inflections of the same verb (dice / dicono / dicendo), return only one — usually the infinitive (dire) or the form most teachable at this CEFR level. Same rule for nouns (sorriso vs. sorrisi) and adjectives (alto vs. alti). Pick the single most useful surface form per lemma.
-4. NEVER return basic copulas / auxiliaries (sono, è, ha, sta, fa as "do/make" filler) UNLESS the item is a notable construction worth teaching.
-
-PRIORITY RANKING. Each item carries a "priority" 1-3. The downstream practice picker uses the highest priority items first, so priority 3 is the bar that actually defines what the learner practices.
-
-- 3 (must-teach, productive): high-frequency word at the requested CEFR level that the learner needs to be able to PRODUCE (say, write, recall from memory), not just recognize. Examples for A1: andare, fare, dire, prendere, mattina, sera, acqua, sole, vicino, lontano, per favore, grazie, buongiorno-style functional chunks. Examples for B1+: affrontare, riuscire a, nonostante, accorgersi. Use CEFR frequency lists as your mental anchor (Marzano corpus / CILS lists for Italian, comparable lists for other languages).
-- 2 (useful, receptive): the learner only needs to recognize it when reading or listening, not produce it. Specialized nouns tied to the scene (pescatore, grembiule, capolavoro), lower-frequency descriptors, vivid sensory terms that enrich the story but the learner won't use daily.
-- 1 (filler): include only if needed to reach 18 items and nothing better remains.
-
-PART-OF-SPEECH BALANCE in priority 3. The practice slots cover the priority-3 items first, so a P3 list of "12 nouns" produces a learner who can name objects but can't conjugate a sentence. Target this distribution inside priority 3:
-- ~40% nouns (concrete world the learner names)
-- ~35% verbs (actions, including conjugated forms learners need at this level)
-- ~15% adjectives (high-frequency descriptors: caldo, freddo, lento, veloce, bello, brutto, piccolo, grande, etc.)
-- ~10% expressions or functional adverbs (idiomatic chunks the learner uses: per favore, non vedere l'ora, all'aperto, spesso, subito)
-
-If the story is verb-light, push some verbs into priority 3 anyway by choosing the most useful forms; do not pad with extra nouns.
-
-DO NOT skip "basic-sounding" core words just because they feel obvious. For A1, words like andare, fare, dire, mattina, sera, acqua, sole, vicino, lontano, bello are exactly the productive backbone the learner needs to consolidate. They belong in priority 3, not priority 2.
 HARD LIMIT: each definition must be 3-7 English words AND no more than 50 characters total (counting spaces). Both bounds are mandatory; do not exceed either. Treat this as a UI constraint: the definition must fit on a small mobile chip without wrapping.
 Style: a concise gloss in the spirit of a translation app (Linguee/Reverso/DeepL). Lead with the noun/concept, with an infinitive verb ("To join..."), or with a descriptive adjective phrase. Two senses joined by ";" or "," are fine if they stay under the limit.
 Never use em-dashes (—); use semicolons, colons, commas, or parentheses instead.
@@ -538,7 +498,7 @@ Return ONLY valid JSON:
   "title": "string",
   "text": "string",
   "arcType": "white-lie|last-minute-decision|return-after-years|unspoken-subtext|plan-falls-short|late-reveal|small-stake|open-ending|daily-encounter",
-  "vocab": [{ "word": "string", "surface": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang", "priority": 1 }]
+  "vocab": [{ "word": "string", "surface": "string", "definition": "string", "type": "verb|noun|adjective|adverb|expression|slang" }]
 }
 `;
 
