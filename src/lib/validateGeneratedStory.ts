@@ -369,13 +369,19 @@ export function validateGeneratedStory(
     detail: `${vocabCount} items`,
   });
 
-  // Definition rules
+  // Definition rules — see docs/story-quality-spec.md §4. The corrected
+  // target after the 2026-05-03 vocab audit is 8-14 English words per
+  // definition across all CEFR levels. The previous 3-7w window was an
+  // earlier draft that contradicted the spec and rejected the GOOD
+  // examples documented in the spec itself (kochen=10w, Linsensuppe=11w).
+  // Char cap is 120 to give German compounds room without letting truly
+  // encyclopedic definitions slip through (≈ 14w × ~8.5 chars/w).
   const badDefs: string[] = [];
   for (const v of parsed.vocab) {
     const w = countWords(v.definition);
     const c = countChars(v.definition);
-    if (w < 3 || w > 7) badDefs.push(`"${v.word}": ${w}w`);
-    else if (c > 50) badDefs.push(`"${v.word}": ${c}ch`);
+    if (w < 8 || w > 14) badDefs.push(`"${v.word}": ${w}w`);
+    else if (c > 120) badDefs.push(`"${v.word}": ${c}ch`);
     else if (BANNED_DEFINITION_OPENERS.some((re) => re.test(v.definition))) {
       badDefs.push(`"${v.word}": banned opener`);
     } else if (/—/.test(v.definition)) {
@@ -384,7 +390,7 @@ export function validateGeneratedStory(
   }
   checks.push({
     id: "vocab-definitions",
-    label: "Definitions: 3-7 words, ≤50 chars, no banned openers, no em-dash",
+    label: "Definitions: 8-14 words, ≤120 chars, no banned openers, no em-dash",
     status: badDefs.length === 0 ? "pass" : "fail",
     detail: badDefs.length ? badDefs.join("; ") : undefined,
   });
@@ -469,7 +475,12 @@ export function validateGeneratedStory(
     detail: `per ¶: [${perPara.join(", ")}]`,
   });
 
-  // Synopsis ↔ body character match
+  // Synopsis ↔ body character match — spec calls this "REQUIRED" and a
+  // "hard defect": a story whose synopsis names characters that don't
+  // appear in the body (Klaus/Sabine in synopsis, Anna/Tom in body) is
+  // rejected at save time, not flagged for human review. The proper-noun
+  // detector strips known places + day/month names; remaining false
+  // positives are rare enough that fail-on-mismatch is the right default.
   const synProperNouns = extractProperNouns(parsed.synopsis);
   const bodySpeakerSet = new Set(speakerNames.map((n) => n.toLowerCase()));
   const missingFromBody = synProperNouns.filter(
@@ -479,7 +490,7 @@ export function validateGeneratedStory(
     checks.push({
       id: "names-match",
       label: "Named characters in synopsis appear in body",
-      status: missingFromBody.length === 0 ? "pass" : "warn",
+      status: missingFromBody.length === 0 ? "pass" : "fail",
       detail: missingFromBody.length
         ? `In synopsis only: ${missingFromBody.join(", ")}`
         : undefined,
@@ -535,7 +546,11 @@ export function validateGeneratedStory(
       detail: nameClash.length ? nameClash.join(", ") : undefined,
     });
 
-    // arcType rotation
+    // arcType rotation — spec §3 "Rotation rules": (1) Do not use the
+    // same non-`daily-encounter` arcType twice in three consecutive
+    // stories of the same journey level/topic; (2) at most 2 consecutive
+    // `daily-encounter` arcs. Both are stated as imperatives ("Do not")
+    // and a third repeat is a hard rejection.
     const recent = existing.slice(-3).map((e) => e.arcType).filter(Boolean);
     const consecutiveDaily =
       parsed.arcType === "daily-encounter" &&
@@ -546,7 +561,7 @@ export function validateGeneratedStory(
     checks.push({
       id: "arctype-rotation",
       label: "arcType rotates (not same as recent stories)",
-      status: consecutiveDaily ? "fail" : isRepeat ? "warn" : "pass",
+      status: consecutiveDaily ? "fail" : isRepeat ? "fail" : "pass",
       detail: recent.length ? `Recent: ${recent.join(", ")}` : undefined,
     });
   }

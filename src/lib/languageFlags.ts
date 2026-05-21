@@ -70,8 +70,18 @@ export function isVariantValidForLanguage(
 // ISO 639-1 two-letter codes used by the editorial Studio surfaces
 // (Journey Manager, Catalog Books) as compact lang tags. Maps both the
 // canonical full name ("Spanish") and the slug form ("spanish") that the
-// DB stores. NEVER use slice(0, 3) on the full name — produces nonsense
-// like "SPA", "ITA", "POR".
+// DB stores.
+//
+// CRITICAL: NEVER derive the ISO code by slicing the full word. The
+// slice approach silently produces wrong codes for the languages where
+// ISO 639-1 doesn't match the English name's first letters:
+//   "spanish".slice(0,2)    → "sp"  (should be ES)
+//   "german".slice(0,2)     → "ge"  (should be DE)
+//   "portuguese".slice(0,2) → "po"  (should be PT)
+//   "chinese".slice(0,2)    → "ch"  (should be ZH)
+//   "japanese".slice(0,2)   → "ja"  ✓ accidentally correct
+// Always use the lookup table below. If a new language is added,
+// extend the table — don't fall back to slicing.
 const ISO_BY_LANGUAGE: Record<string, string> = {
   english: "EN",
   spanish: "ES",
@@ -86,10 +96,12 @@ const ISO_BY_LANGUAGE: Record<string, string> = {
 
 /**
  * Compact ISO 639-1 two-letter tag for a language name or slug.
- * Returns "??" for unknown languages so callers never crash.
+ * Returns "??" for unknown languages so a future "SP" doesn't sneak in
+ * via string slicing — extend ISO_BY_LANGUAGE explicitly when adding a
+ * new language to the catalog.
  */
 export function getIsoLanguageTag(language: string | null | undefined): string {
   if (!language) return "??";
   const key = language.toLowerCase().trim();
-  return ISO_BY_LANGUAGE[key] ?? language.slice(0, 2).toUpperCase();
+  return ISO_BY_LANGUAGE[key] ?? "??";
 }

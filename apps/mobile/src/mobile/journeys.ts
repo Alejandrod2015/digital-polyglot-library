@@ -271,31 +271,31 @@ export function journeyChipLabel(journey: Journey): string {
  * next to the flag (Duolingo-style). Country codes are favored over
  * strict ISO 639-1 because they pair more intuitively with the flag
  * art (people associate "JP" with Japan, not "JA").
+ *
+ * Accepts both the capitalized form ("Spanish") and the DB slug form
+ * ("spanish"). NEVER slice the full word — `"spanish".slice(0,2)` = "SP"
+ * which is wrong; the ISO code is "ES".
  */
+const LANGUAGE_SHORT_CODES: Record<string, string> = {
+  spanish: "ES",
+  german: "DE",
+  french: "FR",
+  italian: "IT",
+  portuguese: "PT",
+  japanese: "JP",
+  korean: "KR",
+  chinese: "CN",
+  english: "EN",
+};
+
 export function languageShortCode(language: string | null | undefined): string {
   if (!language) return "";
-  switch (language) {
-    case "Spanish":
-      return "ES";
-    case "German":
-      return "DE";
-    case "French":
-      return "FR";
-    case "Italian":
-      return "IT";
-    case "Portuguese":
-      return "PT";
-    case "Japanese":
-      return "JP";
-    case "Korean":
-      return "KR";
-    case "Chinese":
-      return "CN";
-    case "English":
-      return "EN";
-    default:
-      return language.slice(0, 2).toUpperCase();
-  }
+  const key = language.toLowerCase().trim();
+  const code = LANGUAGE_SHORT_CODES[key];
+  if (code) return code;
+  // Unknown language — return "??" so a future bug is visible rather
+  // than producing a misleading "SP"/"GE"/"PO" from string slicing.
+  return "??";
 }
 
 /**
