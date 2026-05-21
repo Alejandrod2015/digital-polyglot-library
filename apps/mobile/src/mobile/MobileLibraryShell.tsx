@@ -11692,6 +11692,9 @@ export function MobileLibraryShell(args: {
                         </View>
                       ) : (
                         <>
+                          <Text style={styles.practiceMeaningSubtitle}>
+                            What does this word mean?
+                          </Text>
                           <View
                             style={[
                               styles.practiceMeaningHeroTopRow,
@@ -11726,6 +11729,7 @@ export function MobileLibraryShell(args: {
                               )}
                             </Pressable>
                           </View>
+                          <View style={styles.practiceMeaningWordUnderline} />
                           {currentPracticeExercise.sentence ? (
                             <View
                               style={[
@@ -22728,22 +22732,34 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   practiceMeaningHeroCard: {
-    borderRadius: 28,
-    borderWidth: 1.5,
-    borderColor: "rgba(67,124,188,0.38)",
-    backgroundColor: "#133f7c",
-    paddingHorizontal: 22,
-    paddingVertical: 18,
-    gap: 18,
-    shadowColor: "#06111f",
-    shadowOpacity: 0.34,
-    shadowRadius: 16,
+    // Screenshot-matched: hero sits directly on the page background
+    // with no visible card around it. Padding is preserved to keep the
+    // word/audio block breathing room from the option grid below.
+    backgroundColor: "transparent",
+    borderWidth: 0,
+    paddingHorizontal: 0,
+    paddingVertical: 6,
+    gap: 14,
+    alignItems: "center",
   },
   practiceMeaningHeroCardCompact: {
-    borderRadius: 24,
-    paddingHorizontal: 18,
-    paddingVertical: 16,
-    gap: 14,
+    paddingVertical: 4,
+    gap: 10,
+  },
+  practiceMeaningSubtitle: {
+    color: "rgba(245,247,251,0.55)",
+    fontSize: 13,
+    fontWeight: "600",
+    letterSpacing: 0.2,
+    textAlign: "center",
+  },
+  practiceMeaningWordUnderline: {
+    width: 64,
+    height: 4,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+    alignSelf: "center",
+    marginTop: 2,
   },
   practiceMeaningHeroTopRow: {
     flexDirection: "row",
@@ -22757,15 +22773,15 @@ const styles = StyleSheet.create({
   practiceMeaningTargetWord: {
     flex: 1,
     color: "#ffffff",
-    fontSize: 34,
+    fontSize: 46,
     fontWeight: "900",
-    lineHeight: 38,
-    letterSpacing: -1.2,
+    lineHeight: 50,
+    letterSpacing: -1.6,
     textAlign: "center",
   },
   practiceMeaningTargetWordCompact: {
-    fontSize: 28,
-    lineHeight: 31,
+    fontSize: 38,
+    lineHeight: 42,
   },
   practiceMeaningAudioButton: {
     width: 42,
