@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { ContentDirective, PipelineBudget } from "@/agents/config/directive";
-import { DEFAULT_BUDGET } from "@/agents/config/directive";
+// Importar de `directiveTypes` (puro). `directive.ts` arrastra
+// prisma al cliente y peta el build con
+// "PrismaClient is unable to run in this browser environment".
+import type { ContentDirective, PipelineBudget } from "@/agents/config/directiveTypes";
+import { DEFAULT_BUDGET } from "@/agents/config/directiveTypes";
 
 const LANGUAGE_MAP: Record<string, string> = {
   es: "ES", pt: "PT", fr: "FR", it: "IT", de: "DE", ko: "KO", en: "EN",
