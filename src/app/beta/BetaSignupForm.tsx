@@ -107,7 +107,10 @@ function captureAttribution(): AttributionPayload {
 }
 
 type FormState = {
+  firstName: string;
   email: string;
+  appleIdEmail: string;
+  socialHandle: string;
   nativeLanguage: string;
   nativeLanguageOther: string;
   targetLanguage: string;
@@ -121,10 +124,17 @@ type FormState = {
   referralSourceOther: string;
   applicationReason: string;
   consent: boolean;
+  // Honeypot: campo oculto vía CSS. Si llega lleno = bot.
+  // Cero fricción para humanos (display:none) y atrapa el 80-90%
+  // de bots tontos que rellenan todo lo que ven.
+  website: string;
 };
 
 const initialState: FormState = {
+  firstName: "",
   email: "",
+  appleIdEmail: "",
+  socialHandle: "",
   nativeLanguage: "",
   nativeLanguageOther: "",
   targetLanguage: "",
@@ -138,7 +148,13 @@ const initialState: FormState = {
   referralSourceOther: "",
   applicationReason: "",
   consent: false,
+  website: "",
 };
+
+// Antibot: tiempo mínimo entre montaje del form y submit. Humanos
+// llenan en >5s típicamente; bots scriptados envían en <500ms. Si
+// el delta es <2.5s asumimos bot y rechazamos en el server.
+const MIN_SUBMIT_DELAY_MS = 2500;
 
 const labelStyle = "mb-1.5 block text-sm font-extrabold text-white";
 const inputStyle =
@@ -162,6 +178,10 @@ export default function BetaSignupForm() {
   // Captured once on mount so UTM + referrer survive any internal nav the
   // visitor does between landing and submit.
   const attributionRef = useRef<AttributionPayload>({});
+  // Mount timestamp para el check de time-to-submit. Si el form se
+  // envía antes de MIN_SUBMIT_DELAY_MS, asumimos bot. El server
+  // valida lo mismo recibiendo `clientMountedAt`.
+  const mountedAtRef = useRef<number>(Date.now());
 
   useEffect(() => {
     const persisted = readPersistedAttribution();
@@ -206,6 +226,29 @@ export default function BetaSignupForm() {
     e.preventDefault();
     setError(null);
 
+    // Antibot client-side. El server revalida los mismos checks, pero
+    // detenerlos acá ahorra round-trips a Resend para bots tontos.
+    if (form.website.trim().length > 0) {
+      // Honeypot filled = bot. Falso "submitted" para no señalizar el
+      // motivo del rechazo.
+      setSubmitted({});
+      return;
+    }
+    const elapsedMs = Date.now() - mountedAtRef.current;
+    if (elapsedMs < MIN_SUBMIT_DELAY_MS) {
+      // Demasiado rápido = bot. Mismo trato silencioso.
+      setSubmitted({});
+      return;
+    }
+
+    if (!form.firstName.trim()) {
+      setError("Please tell us your first name.");
+      return;
+    }
+    if (!form.appleIdEmail.trim()) {
+      setError("Please share the email tied to your Apple ID (we send the TestFlight invite there).");
+      return;
+    }
     if (!form.consent) {
       setError("Please accept the privacy notice to continue.");
       return;
@@ -256,7 +299,10 @@ export default function BetaSignupForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          firstName: form.firstName.trim(),
           email: form.email,
+          appleIdEmail: form.appleIdEmail.trim(),
+          socialHandle: form.socialHandle.trim() || undefined,
           nativeLanguage,
           targetLanguage,
           currentLevel: LEVELS.find((l) => l.value === form.currentLevel)?.label ?? form.currentLevel,
@@ -267,6 +313,9 @@ export default function BetaSignupForm() {
           applicationReason,
           consent: form.consent,
           attribution: attributionRef.current,
+          // Antibot signals para el server (revalida estos checks).
+          website: form.website,
+          clientElapsedMs: elapsedMs,
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -311,20 +360,104 @@ export default function BetaSignupForm() {
       className="space-y-5 rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.55)] sm:p-8"
       noValidate
     >
+      {/* Honeypot: campo trampa. Oculto vía CSS + atributos que
+          desincentivan autocompletado del browser y screen-readers.
+          Los bots ven el campo en el DOM y lo rellenan; humanos no
+          lo ven. */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          width: 1,
+          height: 1,
+          overflow: "hidden",
+          opacity: 0,
+          pointerEvents: "none",
+        }}
+      >
+        <label htmlFor="website-url">Your website (leave empty)</label>
+        <input
+          id="website-url"
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={(e) => update("website", e.target.value)}
+        />
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="firstName" className={labelStyle}>
+            First name
+          </label>
+          <input
+            id="firstName"
+            type="text"
+            required
+            autoComplete="given-name"
+            value={form.firstName}
+            onChange={(e) => update("firstName", e.target.value)}
+            className={inputStyle}
+            placeholder="Alex"
+            maxLength={80}
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className={labelStyle}>
+            Contact email
+          </label>
+          <input
+            id="email"
+            type="email"
+            required
+            autoComplete="email"
+            value={form.email}
+            onChange={(e) => update("email", e.target.value)}
+            className={inputStyle}
+            placeholder="you@example.com"
+          />
+        </div>
+      </div>
+
       <div>
-        <label htmlFor="email" className={labelStyle}>
-          Email
+        <label htmlFor="appleIdEmail" className={labelStyle}>
+          Apple ID email
         </label>
         <input
-          id="email"
+          id="appleIdEmail"
           type="email"
           required
           autoComplete="email"
-          value={form.email}
-          onChange={(e) => update("email", e.target.value)}
+          value={form.appleIdEmail}
+          onChange={(e) => update("appleIdEmail", e.target.value)}
           className={inputStyle}
-          placeholder="you@example.com"
+          placeholder="apple-id@icloud.com"
         />
+        <p className={helperStyle}>
+          We send the TestFlight invite to your Apple ID. It can be the same as your contact email.
+        </p>
+      </div>
+
+      <div>
+        <label htmlFor="socialHandle" className={labelStyle}>
+          LinkedIn or X handle <span className="font-bold text-white/40">(optional)</span>
+        </label>
+        <input
+          id="socialHandle"
+          type="text"
+          autoComplete="off"
+          value={form.socialHandle}
+          onChange={(e) => update("socialHandle", e.target.value)}
+          className={inputStyle}
+          placeholder="linkedin.com/in/you or @yourhandle"
+          maxLength={200}
+        />
+        <p className={helperStyle}>
+          Helps us review faster. We don&apos;t share or contact you there.
+        </p>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">

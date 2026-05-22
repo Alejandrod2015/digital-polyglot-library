@@ -85,25 +85,47 @@ export default function JourneyStoryCard({ story, color, waveOffset }: Props) {
           )}
         </div>
 
-        {/* Title */}
-        <span className={[
-          "flex-1 min-w-0 text-[18px] font-black leading-tight tracking-[-0.015em]",
-          "line-clamp-2",
-          active ? "text-white" : "text-[var(--foreground)]",
-        ].join(" ")}
-        style={{ textWrap: "balance" } as React.CSSProperties}>
+        {/* Title. Cuando la card está activa, vive sobre un fondo de
+            color saturado (azul/coral/etc). En light mode el override
+            global `.text-white → foreground dark` ennegrecería el
+            título; inline `color: #ffffff` lo evita y mantiene
+            paridad con dark. */}
+        <span
+          className="flex-1 min-w-0 text-[18px] font-black leading-tight tracking-[-0.015em] line-clamp-2"
+          style={{
+            textWrap: "balance",
+            color: active ? "#ffffff" : "var(--foreground)",
+          } as React.CSSProperties}
+        >
           {story.title}
         </span>
 
-        {/* Check / lock circle */}
+        {/* Check / lock circle. Mismo problema: en card activa el
+            check vive sobre azul; forzamos blanco inline para que el
+            override global no lo ennegrezca en light. */}
         <span
           className={[
             "w-8 h-8 rounded-full grid place-items-center shrink-0 transition-colors border-2",
-            story.state === "done"      ? "bg-[var(--color-cyan)] border-[var(--color-cyan)] text-[#082f49] [box-shadow:0_0_0_2px_rgba(125,211,252,0.20)]" : "",
-            story.state === "next"      ? "bg-white/20 border-white/30 text-white" : "",
-            story.state === "available" ? "border-[var(--card-border)] text-[var(--muted)]" : "",
-            story.state === "locked"    ? "border-[var(--card-border)] text-white/30" : "",
+            story.state === "done"      ? "bg-[var(--color-cyan)] border-[var(--color-cyan)] [box-shadow:0_0_0_2px_rgba(125,211,252,0.20)]" : "",
+            story.state === "next"      ? "" : "",
+            story.state === "available" ? "border-[var(--card-border)]" : "",
+            story.state === "locked"    ? "border-[var(--card-border)]" : "",
           ].join(" ")}
+          style={
+            story.state === "done"
+              ? { color: "#082f49" }
+              : story.state === "next"
+                ? {
+                    background: "rgba(255,255,255,0.2)",
+                    borderColor: "rgba(255,255,255,0.3)",
+                    color: "#ffffff",
+                  }
+                : story.state === "available"
+                  ? { color: active ? "rgba(255,255,255,0.85)" : "var(--muted)" }
+                  : story.state === "locked"
+                    ? { color: active ? "rgba(255,255,255,0.45)" : "rgba(120,120,128,0.5)" }
+                    : undefined
+          }
         >
           {checkContent}
         </span>

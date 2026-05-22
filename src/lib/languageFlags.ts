@@ -83,6 +83,7 @@ export function isVariantValidForLanguage(
 // Always use the lookup table below. If a new language is added,
 // extend the table — don't fall back to slicing.
 const ISO_BY_LANGUAGE: Record<string, string> = {
+  // English keys (catalog / app surface)
   english: "EN",
   spanish: "ES",
   french: "FR",
@@ -92,6 +93,24 @@ const ISO_BY_LANGUAGE: Record<string, string> = {
   japanese: "JA",
   korean: "KO",
   chinese: "ZH",
+  // Spanish-localized aliases. Studio DB `Language.label` stores names
+  // in Spanish ("Italiano", "Alemán", …) and JourneyManager passes that
+  // label directly. Without these the tag falls to "??".
+  inglés: "EN",
+  ingles: "EN",
+  español: "ES",
+  espanol: "ES",
+  francés: "FR",
+  frances: "FR",
+  alemán: "DE",
+  aleman: "DE",
+  italiano: "IT",
+  portugués: "PT",
+  portugues: "PT",
+  japonés: "JA",
+  japones: "JA",
+  coreano: "KO",
+  chino: "ZH",
 };
 
 /**

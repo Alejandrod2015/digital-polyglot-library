@@ -47,6 +47,11 @@ export type JourneyLevel = {
 
 export type JourneyVariantTrack = {
   id: string;
+  /** Human-readable slug usado en la URL (?variant=viajero-latam) en
+   *  lugar del cuid feo (cmovi4cvi000032q37a4823h3). Derivado del
+   *  nombre del Journey + variant, único por language. Para uso
+   *  interno (lookups en memoria) seguimos usando `id`. */
+  slug: string;
   label: string;
   /** Studio Journey.variant (e.g. "latam", "spain", "br", "pt"). Used
    *  client-side to pick the flag when the user's stored Journey only
@@ -468,6 +473,26 @@ const getStudioJourneysForLanguage = unstable_cache(
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
+// Mismo query pero sin filtro de language. Usado cuando el usuario
+// no tiene preference de idioma (selected = []) y queremos exponerle
+// TODOS los journeys disponibles en el sheet "Switch journey".
+const getAllStudioJourneys = unstable_cache(
+  async () => {
+    return prisma.journey.findMany({
+      where: { status: { not: "archived" } },
+      orderBy: [{ language: "asc" }, { createdAt: "asc" }],
+      include: {
+        stories: {
+          where: { status: "published", NOT: [{ text: null }, { title: null }] },
+          orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
+        },
+      },
+    });
+  },
+  ["studio-journeys-all-v1"],
+  { revalidate: 300, tags: ["published-journey-stories"] }
+);
+
 // Topic slug → canonical display label (e.g. "food-everyday-life" →
 // "Food & Everyday Life"). Slug-to-label reconstruction via string
 // replacement can't recover characters like "&" / "and" / apostrophes
@@ -503,11 +528,32 @@ const getTopicDefaultLevelBySlug = unstable_cache(
   { revalidate: 3600, tags: ["topic-labels"] }
 );
 
+// Slugify para los track URL params: "Viajero LATAM" → "viajero-latam".
+// Strip diacríticos, lowercase, separadores → "-".
+function slugifyTrackLabel(input: string): string {
+  return input
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 async function buildJourneyVariantsFromStudio(
-  language: string
+  language: string | undefined
 ): Promise<JourneyVariantTrack[]> {
-  const journeys = await getStudioJourneysForLanguage(language);
+  // `language` undefined o "*" = "No preference" del user. Trae
+  // journeys de TODOS los idiomas disponibles para que el sheet
+  // "Switch journey" liste todo. Con un language específico, filtra.
+  const journeys =
+    !language || language === "*"
+      ? await getAllStudioJourneys()
+      : await getStudioJourneysForLanguage(language);
   if (journeys.length === 0) return [];
+
+  // Dedupe map para los slugs de tracks. Si dos journeys colisionan
+  // en slug (mismo nombre normalizado), append "-2", "-3", etc.
+  const slugCounts = new Map<string, number>();
 
   const topicLabelBySlug = await getTopicLabelBySlug();
   const topicDefaultLevelBySlug = await getTopicDefaultLevelBySlug();
@@ -612,8 +658,19 @@ async function buildJourneyVariantsFromStudio(
       (journey.variant ?? "").trim().toUpperCase() ||
       "Journey";
 
+    // Build slug: prefer trackLabel ("Viajero LATAM"), fallback al
+    // variant ("latam") si el label no produce nada decente.
+    const baseSlug =
+      slugifyTrackLabel(trackLabel) ||
+      slugifyTrackLabel((journey.variant ?? "").toString()) ||
+      "journey";
+    const nextCount = (slugCounts.get(baseSlug) ?? 0) + 1;
+    slugCounts.set(baseSlug, nextCount);
+    const trackSlug = nextCount === 1 ? baseSlug : `${baseSlug}-${nextCount}`;
+
     tracks.push({
       id: journey.id,
+      slug: trackSlug,
       label: trackLabel,
       variant: (journey.variant ?? "").trim().toLowerCase() || null,
       levels,
@@ -628,11 +685,14 @@ async function buildJourneyVariantsFromStudio(
 }
 
 export async function buildJourneyVariants(
-  language = DEFAULT_LANGUAGE,
+  language?: string,
   _journeyFocus: JourneyFocus = "General"
 ): Promise<JourneyVariantTrack[]> {
   // Studio (Prisma Journey records) is the only source for the Journey tab.
   // Sanity stories are reader-only legacy content and must never appear here.
+  // language=undefined activa el modo "No preference": el helper trae
+  // journeys de TODOS los idiomas para que el sheet de switch list
+  // todos los disponibles.
   return buildJourneyVariantsFromStudio(language);
 }
 
@@ -752,15 +812,23 @@ export function buildJourneyTrackInsights(
 }
 
 export async function buildJourneyLevels(
-  variantId?: string,
+  variantIdOrSlug?: string,
   language = DEFAULT_LANGUAGE,
   journeyFocus: JourneyFocus = "General"
 ): Promise<JourneyLevel[]> {
   const tracks = await buildJourneyVariants(language, journeyFocus);
   if (tracks.length === 0) return [];
 
-  if (variantId) {
-    return tracks.find((track) => track.id === variantId)?.levels ?? [];
+  // Resuelve por slug, id, o variant code. El URL ahora usa slug
+  // ("viajero-latam") pero hay enlaces viejos con cuid o con el
+  // variant raw ("latam"); aceptamos los 3 para no romper bookmarks.
+  if (variantIdOrSlug) {
+    const lookup = variantIdOrSlug.toLowerCase();
+    const matched =
+      tracks.find((track) => track.slug === lookup) ??
+      tracks.find((track) => track.id === variantIdOrSlug) ??
+      tracks.find((track) => track.variant === lookup);
+    return matched?.levels ?? [];
   }
 
   return tracks[0]?.levels ?? [];

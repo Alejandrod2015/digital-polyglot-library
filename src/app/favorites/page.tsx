@@ -1006,9 +1006,22 @@ export default function FavoritesPage() {
             </div>
           ) : (
             /* iPhone-style cards: word + type, segmented progress,
-               story context italic, definition, play button. */
+               story context italic, definition, play button.
+               Las pills de tipo (líneas ~780) mutan `practiceType`,
+               pero antes solo filtraban Practice / Related — la lista
+               visible se mostraba completa. Ahora también filtramos
+               aquí para que las pills sí filtren lo que el user ve. */
             <ul className="space-y-3">
-              {sortedFavorites.map((fav) => {
+              {sortedFavorites
+                .filter((fav) =>
+                  practiceType === 'all'
+                    ? true
+                    : (normalizeVocabType(fav.wordType, {
+                        word: fav.word,
+                        definition: fav.translation,
+                      }) ?? 'other') === practiceType
+                )
+                .map((fav) => {
                 const meta = srsMap[normalizeWord(fav.word)];
                 const streak = meta?.streak ?? fav.streak ?? 0;
                 // 5-segment progress bar. Each segment lights up per

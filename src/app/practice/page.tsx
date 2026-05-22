@@ -904,8 +904,12 @@ export default function PracticePage() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const correct = new Audio("/sounds/practice-correct.wav");
-      const wrong = new Audio("/sounds/practice-wrong.wav");
+      // Sonidos compartidos con mobile (apps/mobile/assets/sounds).
+      // Antes la web usaba WAV viejos diferentes a los de la app
+      // iPhone; ahora ambos clientes disparan los mismos MP3 para
+      // paridad de experiencia.
+      const correct = new Audio("/sounds/practice-correct.mp3");
+      const wrong = new Audio("/sounds/practice-wrong.mp3");
       correct.preload = "auto";
       wrong.preload = "auto";
       feedbackSoundRefs.current.correct = correct;
@@ -2528,10 +2532,11 @@ export default function PracticePage() {
 
   return (
     <div
-      // Background plano deep-navy. Sin radial gold-halo arriba y sin
-      // degradado vertical: ambos creaban el "brillo" detrás del círculo.
-      className="min-h-screen p-4 pb-24 text-[var(--foreground)] sm:p-6 sm:pb-24 -mx-1 -my-6 sm:mx-0 sm:my-0"
-      style={{ background: "#031a3d" }}
+      // Background plano. Sin radial gold-halo arriba y sin degradado
+      // vertical: ambos creaban el "brillo" detrás del círculo. Usa el
+      // token --bg-content (deep-navy en dark, warm-cream en light) en
+      // vez de un hex literal para respetar el theme switch.
+      className="min-h-screen p-4 pb-24 text-[var(--foreground)] sm:p-6 sm:pb-24 -mx-1 -my-6 sm:mx-0 sm:my-0 bg-[var(--bg-content)]"
     >
       <div className="mx-auto w-full max-w-[480px]">
       {/* ── iPhone-style HERO — visible on every viewport ── */}
@@ -2595,16 +2600,14 @@ export default function PracticePage() {
               setPendingCountdownMode(reviewRecommendedMode);
             }}
             disabled={dueCount === 0}
-            className="relative grid place-items-center disabled:opacity-60"
+            // Donut sólido. Marker class `dp-practice-donut`: globals
+            // mapea su bg al tema (deep-navy en dark, white card +
+            // shadow en light) sin que escribamos hex literales aquí.
+            className="dp-practice-donut relative grid place-items-center disabled:opacity-60"
             style={{
               width: 260,
               height: 260,
               borderRadius: "50%",
-              // Sólido oscuro plano: sin radial-gradient interno, sin
-              // inset rings y sin drop-shadow. Cualquiera de esos tres
-              // generaba el aro luminoso visible alrededor del círculo.
-              background: "#0a1f43",
-              border: "1px solid rgba(255,255,255,0.06)",
             }}
             aria-label="Start recommended practice"
           >
@@ -2653,7 +2656,10 @@ export default function PracticePage() {
             key={card.mode}
             type="button"
             onClick={() => setPendingCountdownMode(card.mode)}
-            className={`group relative overflow-hidden rounded-[1.5rem] border p-3 text-left transition active:scale-[0.99] ${card.shellClass}`}
+            // dp-practice-mode marker class: el `card.shellClass` trae
+            // un gradient dark hardcoded. En light mode lo sobreescribimos
+            // a paper card blanco con tint del accent del modo.
+            className={`dp-practice-mode group relative overflow-hidden rounded-[1.5rem] border p-3 text-left transition active:scale-[0.99] ${card.shellClass}`}
           >
             <div className="relative flex h-full flex-col">
               <div className="flex items-start justify-between gap-2 mb-3">

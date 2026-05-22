@@ -61,8 +61,12 @@ export default function AppShell({
     return <>{children}</>;
   }
 
+  // `dp-app-canvas` marker class: globals.css lo usa en light mode
+  // para meter el subtle radial-gradient HANDOFF (2) §C.4 (cream + dos
+  // halos cálidos diagonales) — sin afectar studio/marketing/auth, que
+  // tienen sus propios <main> arriba en esta función.
   const mainClassName =
-    "no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 md:ml-64 px-1 py-6 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-[env(safe-area-inset-bottom)] overflow-y-auto bg-[var(--bg-content)]";
+    "dp-app-canvas no-scrollbar touch-pan-y [-webkit-overflow-scrolling:touch] flex-1 md:ml-64 px-1 py-6 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-[env(safe-area-inset-bottom)] overflow-y-auto bg-[var(--bg-content)]";
 
   return (
     <>

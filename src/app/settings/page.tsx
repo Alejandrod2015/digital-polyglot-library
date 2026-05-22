@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { useUser } from "@clerk/nextjs";
-import { Bell, Zap } from "lucide-react";
+import { Bell, LifeBuoy, LogOut, Pencil, Zap } from "lucide-react";
+import { SignOutButton } from "@clerk/nextjs";
 import { getCookieConsentKey } from "@/components/CookieConsentBanner";
 import { VARIANT_OPTIONS_BY_LANGUAGE, formatVariantLabel } from "@/lib/languageVariant";
 import { REMINDER_HOUR_OPTIONS, REMINDER_MINUTE_OPTIONS, formatReminderHour } from "@/lib/reminders";
@@ -15,6 +16,13 @@ type SaveStatus = "idle" | "saving" | "saved" | "error";
 type ThemePref = "system" | "dark" | "light";
 type SettingsProgressPayload = {
   streakDays: number;
+  // Campos usados por el Stats row 4-up del Account tab. Vienen de
+  // `/api/progress` (ProgressResponsePayload). Mismas métricas que
+  // muestra iPhone bajo `summaryItems`.
+  minutesListened?: number;
+  storiesFinished?: number;
+  booksFinished?: number;
+  wordsLearned?: number;
   gamification: {
     totalXp: number;
     todayXp: number;
@@ -155,6 +163,10 @@ export default function SettingsPage() {
   const [billingLoading, setBillingLoading] = useState(false);
   const [billingError, setBillingError] = useState("");
   const [settingsProgress, setSettingsProgress] = useState<SettingsProgressPayload | null>(null);
+  // Tabs paridad con iPhone MobileSettingsScreen: Account /
+  // Personalize / Privacy. Cada uno renderiza un subset distinto del
+  // panel; el state se inicia en "account" igual que mobile.
+  const [activeTab, setActiveTab] = useState<"account" | "personalize" | "privacy">("account");
   // Briefly highlights the Languages section when the user lands on
   // /settings#languages or /settings#languages?add=1 from the mobile
   // language switcher's "See all" / "Add language" buttons. Today the
@@ -294,6 +306,17 @@ export default function SettingsPage() {
     return () => window.clearTimeout(timer);
   }, [hint]);
 
+  // Auto-reset del sticky status. Antes "Saved" se quedaba pegado
+  // hasta el próximo cambio (el user veía "Saved" indefinidamente
+  // tras guardar). Ahora vuelve a idle a los 2.5s. "Saving" no se
+  // resetea (es estado transitorio que termina cuando llega la
+  // response). "Error" tampoco (el user debe acusar recibo).
+  useEffect(() => {
+    if (status !== "saved") return;
+    const timer = window.setTimeout(() => setStatus("idle"), 2500);
+    return () => window.clearTimeout(timer);
+  }, [status]);
+
   useEffect(() => {
     let cancelled = false;
 
@@ -427,6 +450,16 @@ export default function SettingsPage() {
     if (status === "saved") setStatus("idle");
   };
 
+  // "No preference" como toggle del grid: pulsarlo vuelve selected a
+  // []. Si después el user elige un idioma, "No preference" se
+  // desmarca automáticamente porque selected.length > 0.
+  // Semánticamente: 0 idiomas elegidos = todos aplican.
+  const noLanguagePreference = selected.length === 0;
+  const setNoLanguagePreference = () => {
+    setSelected([]);
+    if (status === "saved") setStatus("idle");
+  };
+
   const setTheme = (next: ThemePref) => {
     setThemePref(next);
     localStorage.setItem(THEME_KEY, next);
@@ -509,15 +542,53 @@ export default function SettingsPage() {
 
   return (
     <div className="px-4 sm:px-8 pt-8 pb-32 mx-auto text-[var(--foreground)]" style={{ maxWidth: 720 }}>
-      {/* ── Hero ── */}
-      <div className="mb-6">
-        <p className="text-[11px] font-extrabold uppercase tracking-[0.32em] text-white/55">Account</p>
-        <h1 className="mt-1 text-[28px] font-black tracking-tight text-white leading-none">Settings</h1>
-        <p className="mt-2 text-[13px] text-white/55">
-          We use this to personalize Home, Explore, and recommendations.
-        </p>
+      {/* ── Hero ── Solo título, como iPhone. Eyebrow + descripción
+          se eliminaron: la tab row siguiente contextualiza el panel. */}
+      <div className="mb-3">
+        <h1 className="text-[28px] font-black tracking-tight text-white leading-none">Settings</h1>
       </div>
 
+      {/* ── Tab row (Account / Personalize / Privacy) ── Pill container
+          con segmented buttons. Paridad con MobileSettingsScreen. */}
+      <div
+        className="mb-4 inline-flex w-full rounded-[18px] p-1 border"
+        style={{
+          background: "var(--chip-bg)",
+          borderColor: "var(--card-border)",
+        }}
+      >
+        {(["account", "personalize", "privacy"] as const).map((tab) => {
+          const isActive = activeTab === tab;
+          const label =
+            tab === "account" ? "Account" : tab === "personalize" ? "Personalize" : "Privacy";
+          return (
+            <button
+              key={tab}
+              type="button"
+              onClick={() => setActiveTab(tab)}
+              aria-pressed={isActive}
+              className="flex-1 rounded-[14px] py-2.5 text-[13px] font-extrabold transition-colors"
+              style={
+                isActive
+                  ? {
+                      background: "var(--card-bg)",
+                      color: "var(--color-gold)",
+                    }
+                  : {
+                      background: "transparent",
+                      color: "var(--muted)",
+                    }
+              }
+            >
+              {label}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* ─────────────── ACCOUNT TAB ─────────────── */}
+      {activeTab === "account" ? (
+        <>
       {/* ── iPhone-style user card with level + streak + XP + badges ── */}
       {settingsProgress?.gamification ? (
         <div
@@ -546,7 +617,7 @@ export default function SettingsPage() {
                 <p className="font-extrabold text-white text-[16px] truncate">
                   {user?.firstName?.trim() || user?.username || "You"}
                 </p>
-                <span className="text-[12px] font-bold text-[#fcd34d]">
+                <span className="text-[12px] font-bold text-[var(--color-gold)]">
                   · Level {settingsProgress.gamification.currentLevel}
                 </span>
               </div>
@@ -554,6 +625,24 @@ export default function SettingsPage() {
                 {settingsProgress.gamification.totalXp} XP · {settingsProgress.gamification.dailyStreak}-day streak
               </p>
             </div>
+            {/* Edit profile (pencil icon ghost) → Clerk user profile.
+                Paridad iPhone: el user card siempre lleva un edit
+                affordance a la derecha del meta. */}
+            <a
+              href="/user-profile"
+              aria-label="Edit profile"
+              className="shrink-0 grid place-items-center transition-colors hover:bg-white/[0.05]"
+              style={{
+                width: 34,
+                height: 34,
+                borderRadius: 10,
+                border: "1px solid var(--card-border)",
+                background: "var(--card-bg)",
+                color: "var(--muted)",
+              }}
+            >
+              <Pencil size={14} />
+            </a>
           </div>
 
           <div className="flex items-center justify-between mb-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em]">
@@ -577,11 +666,18 @@ export default function SettingsPage() {
               {settingsProgress.gamification.badges.map((badge) => (
                 <span
                   key={badge.id}
-                  className="rounded-full px-2.5 py-1 text-[11px] font-extrabold"
+                  // Locked badges no usan inline white-on-white (que
+                  // queda invisible en light). Pasamos a tokens
+                  // semánticos así theme switching funciona.
+                  className={`rounded-full px-2.5 py-1 text-[11px] font-extrabold ${
+                    badge.unlocked
+                      ? ""
+                      : "bg-[var(--chip-bg)] text-[var(--muted)] border border-[var(--chip-border)]"
+                  }`}
                   style={
                     badge.unlocked
-                      ? { background: "rgba(252,211,77,0.18)", color: "#fcd34d", border: "1px solid rgba(252,211,77,0.35)" }
-                      : { background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.35)", border: "1px solid rgba(255,255,255,0.06)" }
+                      ? { background: "rgba(252,211,77,0.18)", color: "var(--color-gold)", border: "1px solid rgba(252,211,77,0.35)" }
+                      : undefined
                   }
                 >
                   {badge.label}
@@ -603,7 +699,7 @@ export default function SettingsPage() {
             background: "rgba(252,211,77,0.12)",
           }}
         >
-          <Zap size={18} className="text-[#fcd34d]" fill="currentColor" strokeWidth={0} />
+          <Zap size={18} className="text-[var(--color-gold)]" fill="currentColor" strokeWidth={0} />
         </div>
         <div className="min-w-0 flex-1">
           <p className="font-extrabold text-white text-[15px] capitalize">{planLabel.toLowerCase()} plan</p>
@@ -641,10 +737,74 @@ export default function SettingsPage() {
         <p className="-mt-3 mb-4 text-[12px] text-amber-300">{billingError}</p>
       ) : null}
 
+      {/* ── Stats row 4-up (BOOKS / STORIES / FAVORITES / HOURS) ──
+          Paridad con iPhone Account tab. Datos vienen del payload de
+          /api/progress (mismo endpoint que mobile consume). Hours =
+          minutos/60, "0.9" si <10h, entero si más. */}
+      <div className="mb-3 grid grid-cols-4 gap-2">
+        {[
+          { label: "Books", value: `${settingsProgress?.booksFinished ?? 0}` },
+          { label: "Stories", value: `${settingsProgress?.storiesFinished ?? 0}` },
+          { label: "Favorites", value: `${settingsProgress?.wordsLearned ?? 0}` },
+          {
+            label: "Hours",
+            value: (() => {
+              const minutes = settingsProgress?.minutesListened ?? 0;
+              if (minutes <= 0) return "0";
+              const hours = minutes / 60;
+              return hours >= 10 ? `${Math.round(hours)}` : hours.toFixed(1);
+            })(),
+          },
+        ].map((stat) => (
+          <div
+            key={stat.label}
+            className="rounded-[16px] border border-white/8 bg-white/[0.025] py-3 px-2 text-center min-w-0"
+          >
+            <p className="text-[20px] font-black text-white leading-none">{stat.value}</p>
+            <p className="mt-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/55 truncate">
+              {stat.label}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Footer row (Sign out + Support) ── Paridad iPhone: dos
+          botones ghost side-by-side al final del Account tab. */}
+      <div className="mt-4 grid grid-cols-2 gap-2">
+        <SignOutButton>
+          <button
+            type="button"
+            className="rounded-[14px] border border-white/10 bg-white/[0.025] py-3 text-[14px] font-extrabold text-white/85 inline-flex items-center justify-center gap-2 hover:bg-white/[0.05] transition-colors"
+          >
+            <LogOut size={16} />
+            Sign out
+          </button>
+        </SignOutButton>
+        <a
+          href="mailto:support@digitalpolyglot.com?subject=Digital%20Polyglot%20Feedback"
+          className="rounded-[14px] border border-white/10 bg-white/[0.025] py-3 text-[14px] font-extrabold text-white/85 inline-flex items-center justify-center gap-2 hover:bg-white/[0.05] transition-colors"
+        >
+          <LifeBuoy size={16} />
+          Support
+        </a>
+      </div>
+        </>
+      ) : null}
+
+      {/* ─────────────── PERSONALIZE TAB ─────────────── */}
+      {activeTab === "personalize" ? (
+        <>
       {/* ── Appearance ── */}
       <div className="mb-3 rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
         <p className="mb-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Appearance</p>
-        <div className="inline-flex rounded-full bg-black/25 p-1">
+        {/* Antes `bg-black/25` daba el sunken inset en dark pero en
+            light se veía como un parche oscuro contra el card cream.
+            `var(--chip-bg)` resuelve: rgba blanco 8% en dark, cream
+            chip #f1ece0 en light. Misma sensación visual en ambos. */}
+        <div
+          className="inline-flex rounded-full p-1"
+          style={{ background: "var(--chip-bg)" }}
+        >
           {(["system", "dark", "light"] as const).map((mode) => (
             <button
               key={mode}
@@ -654,7 +814,7 @@ export default function SettingsPage() {
               style={
                 themePref === mode
                   ? { background: "var(--color-gold)", color: "#2a1a02" }
-                  : { background: "transparent", color: "rgba(255,255,255,0.55)" }
+                  : { background: "transparent", color: "var(--muted)" }
               }
             >
               {mode === "system" ? "System" : mode === "dark" ? "Dark" : "Light"}
@@ -672,9 +832,45 @@ export default function SettingsPage() {
       >
         <div className="mb-3 flex items-baseline justify-between">
           <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Languages</p>
-          <span className="text-[12px] font-bold text-white/45">{selected.length} selected</span>
+          <span className="text-[12px] font-bold text-white/45">
+            {noLanguagePreference ? "All apply" : `${selected.length} selected`}
+          </span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {/* "No preference" card: misma estructura que las cards de
+              idioma, pero con ícono globo en vez de checkbox para
+              comunicar que es semánticamente distinto (todos vs uno
+              específico). Mutex exclusive vía setSelected([]). */}
+          <button
+            key="no-preference"
+            type="button"
+            onClick={setNoLanguagePreference}
+            aria-pressed={noLanguagePreference}
+            className="rounded-[14px] px-3 py-2.5 text-[13px] font-bold transition-colors text-left"
+            style={
+              noLanguagePreference
+                ? {
+                    background: "rgba(252,211,77,0.12)",
+                    border: "1px solid rgba(252,211,77,0.45)",
+                    color: "var(--color-gold)",
+                  }
+                : {
+                    background: "var(--card-bg)",
+                    border: "1px solid var(--card-border)",
+                    color: "var(--foreground)",
+                  }
+            }
+          >
+            <span className="inline-flex items-center gap-2">
+              <span
+                aria-hidden
+                className="inline-grid h-4 w-4 place-items-center text-[11px]"
+              >
+                🌐
+              </span>
+              No preference
+            </span>
+          </button>
           {LANGUAGES.map((lang) => {
             const active = selected.includes(lang.code);
             return (
@@ -682,17 +878,20 @@ export default function SettingsPage() {
                 key={lang.code}
                 onClick={() => toggleLanguage(lang.code)}
                 className="rounded-[14px] px-3 py-2.5 text-[13px] font-bold transition-colors text-left"
+                // Inactive language buttons antes usaban
+                // `rgba(255,255,255,X)` inline → invisible en light.
+                // Pasamos a tokens semánticos.
                 style={
                   active
                     ? {
                         background: "rgba(252,211,77,0.12)",
                         border: "1px solid rgba(252,211,77,0.45)",
-                        color: "#fcd34d",
+                        color: "var(--color-gold)",
                       }
                     : {
-                        background: "rgba(255,255,255,0.025)",
-                        border: "1px solid rgba(255,255,255,0.08)",
-                        color: "rgba(255,255,255,0.85)",
+                        background: "var(--card-bg)",
+                        border: "1px solid var(--card-border)",
+                        color: "var(--foreground)",
                       }
                 }
               >
@@ -701,8 +900,8 @@ export default function SettingsPage() {
                     className="inline-grid h-4 w-4 place-items-center rounded-full text-[10px]"
                     style={
                       active
-                        ? { background: "#fcd34d", color: "#2a1a02" }
-                        : { border: "1.5px solid rgba(255,255,255,0.25)" }
+                        ? { background: "var(--color-gold)", color: "#2a1a02" }
+                        : { border: "1.5px solid var(--card-border)" }
                     }
                   >
                     {active ? "✓" : ""}
@@ -719,7 +918,10 @@ export default function SettingsPage() {
       <div className="mb-3 rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
         <p className="mb-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Personalize</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-          <label className="rounded-[14px] border border-white/8 bg-black/20 p-3 block">
+          <label
+            className="rounded-[14px] border border-white/8 p-3 block"
+            style={{ background: "var(--chip-bg)" }}
+          >
             <span className="block text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/45 mb-1.5">Level</span>
             <select
               value={preferredLevel}
@@ -736,7 +938,10 @@ export default function SettingsPage() {
             </select>
           </label>
 
-          <label className="rounded-[14px] border border-white/8 bg-black/20 p-3 block">
+          <label
+            className="rounded-[14px] border border-white/8 p-3 block"
+            style={{ background: "var(--chip-bg)" }}
+          >
             <span className="block text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/45 mb-1.5">Variant</span>
             <select
               value={preferredVariant}
@@ -756,7 +961,10 @@ export default function SettingsPage() {
             </select>
           </label>
 
-          <label className="rounded-[14px] border border-white/8 bg-black/20 p-3 block">
+          <label
+            className="rounded-[14px] border border-white/8 p-3 block"
+            style={{ background: "var(--chip-bg)" }}
+          >
             <span className="block text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/45 mb-1.5">Region</span>
             <select
               value={preferredRegion}
@@ -814,7 +1022,7 @@ export default function SettingsPage() {
               width: 51,
               height: 31,
               borderRadius: 999,
-              background: remindersEnabled ? "#fcd34d" : "rgba(120, 120, 128, 0.5)",
+              background: remindersEnabled ? "var(--color-gold)" : "rgba(120, 120, 128, 0.5)",
               transition: "background-color 180ms ease",
               cursor: "pointer",
               border: "none",
@@ -931,7 +1139,7 @@ export default function SettingsPage() {
                           style={
                             active
                               ? { background: "var(--color-gold)", color: "#2a1a02" }
-                              : { background: "transparent", color: "rgba(255,255,255,0.7)" }
+                              : { background: "transparent", color: "var(--muted)" }
                           }
                           aria-pressed={active}
                         >
@@ -967,7 +1175,7 @@ export default function SettingsPage() {
                 style={
                   active
                     ? { background: "var(--color-gold)", color: "#2a1a02" }
-                    : { background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.8)", border: "1px solid rgba(255,255,255,0.08)" }
+                    : { background: "var(--chip-bg)", color: "var(--foreground)", border: "1px solid var(--chip-border)" }
                 }
               >
                 {interest}
@@ -986,7 +1194,8 @@ export default function SettingsPage() {
               }
             }}
             placeholder="Add custom interest (e.g. urbanism)"
-            className="flex-1 rounded-full bg-black/25 border border-white/8 px-4 py-2 text-[13px] text-white outline-none focus:border-[var(--color-gold)]"
+            className="flex-1 rounded-full border border-white/8 px-4 py-2 text-[13px] text-white outline-none focus:border-[var(--color-gold)]"
+            style={{ background: "var(--chip-bg)" }}
           />
           <button
             type="button"
@@ -1003,7 +1212,7 @@ export default function SettingsPage() {
                 key={interest}
                 type="button"
                 onClick={() => toggleInterest(interest)}
-                className="rounded-full bg-[var(--color-gold)]/15 border border-[var(--color-gold)]/35 px-3 py-1.5 text-[12px] font-bold text-[#fcd34d] hover:bg-[var(--color-gold)]/22"
+                className="rounded-full bg-[var(--color-gold)]/15 border border-[var(--color-gold)]/35 px-3 py-1.5 text-[12px] font-bold text-[var(--color-gold)] hover:bg-[var(--color-gold)]/22"
                 title="Remove interest"
               >
                 {interest} ×
@@ -1014,7 +1223,12 @@ export default function SettingsPage() {
           <p className="text-[12px] text-white/45">No interests selected yet.</p>
         )}
       </div>
+        </>
+      ) : null}
 
+      {/* ─────────────── PRIVACY TAB ─────────────── */}
+      {activeTab === "privacy" ? (
+        <>
       {/* ── Privacy ── */}
       <div className="mb-3 rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
         <p className="mb-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Privacy &amp; cookies</p>
@@ -1051,6 +1265,8 @@ export default function SettingsPage() {
           </Link>
         </div>
       </div>
+        </>
+      ) : null}
 
       {/* ── Save status (sticky bottom) ── */}
       <div className="sticky bottom-[4.75rem] mt-6">

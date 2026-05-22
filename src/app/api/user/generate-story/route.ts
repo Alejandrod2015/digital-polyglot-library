@@ -677,7 +677,7 @@ ${variantClause}
 - Each item must have:
   - "word": dictionary/root form learners should study
   - "surface": exact form as it appears in the story text
-  - "definition": clear English gloss, HARD LIMIT 3-7 words AND ≤50 characters total (UI chip cannot wrap). Style like a translation app (Linguee/Reverso).
+  - "definition": clear English gloss, HARD LIMIT 8-14 words AND ≤120 characters total. Concise, practical, no clichés. Do NOT start with "Refers to", "Describes", "Used to", "Used for" or "Said when" — start with the meaning directly. Examples: "kochen → Heated ingredients in a pot to create a meal."; "vergessen → To forget, fail to remember or do something on time."
   - "type": one label among ["verb","noun","adjective","adverb","expression","slang","other"]
 - Prefer high-learning-value items that are practical, reusable, nuanced, or culturally grounded.
 - Do not include duplicates.

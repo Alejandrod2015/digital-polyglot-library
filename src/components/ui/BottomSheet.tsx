@@ -55,8 +55,12 @@ export default function BottomSheet({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
+          {/* Backdrop transparente: captura el click fuera del sheet
+              para cerrarlo, pero sin ennegrecer ni difuminar el resto
+              de la página (el user pidió explícitamente que el fondo
+              NO sea opaco). */}
           <motion.div
-            className="absolute inset-0 bg-black/55 backdrop-blur-[2px]"
+            className="absolute inset-0"
             onClick={onClose}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -81,26 +85,41 @@ export default function BottomSheet({
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 28, stiffness: 260 }}
-            className="absolute inset-x-0 bottom-0 mx-auto max-w-xl rounded-t-[28px] border border-b-0 border-[var(--card-border)] shadow-[0_-20px_50px_rgba(0,0,0,0.6)] text-white flex flex-col"
+            className="absolute inset-x-0 bottom-0 mx-auto max-w-xl rounded-t-[28px] border border-b-0 border-[var(--card-border)] shadow-[0_-20px_50px_rgba(0,0,0,0.6)] flex flex-col"
             style={{
-              background: "linear-gradient(180deg, #0a2b56 0%, #051834 100%)",
+              // Gradient con tokens: dark mode = mismo azul de antes
+              // (--bg-2 #0a2b56 → --bg-1 #051834); light mode resuelve
+              // a cream consistente con el resto de surfaces (--bg-2
+              // #e8e2d2 → --bg-1 #efe9da). Sin gradient hardcoded.
+              background:
+                "linear-gradient(180deg, var(--bg-2) 0%, var(--bg-1, var(--background)) 100%)",
+              color: "var(--foreground)",
               maxHeight,
               paddingBottom: "max(22px, env(safe-area-inset-bottom))",
             }}
           >
             <div className="flex justify-center pt-2.5 pb-1">
-              <div className="h-[5px] w-11 rounded-full bg-white/25" />
+              <div
+                className="h-[5px] w-11 rounded-full"
+                style={{ background: "var(--card-border)" }}
+              />
             </div>
 
             {eyebrow || title ? (
               <div className="px-[22px] pt-3 pb-2">
                 {eyebrow ? (
-                  <div className="text-[10.5px] font-black tracking-[0.22em] text-white/60 uppercase">
+                  <div
+                    className="text-[10.5px] font-black tracking-[0.22em] uppercase"
+                    style={{ color: "var(--muted)" }}
+                  >
                     {eyebrow}
                   </div>
                 ) : null}
                 {title ? (
-                  <div className="mt-1 text-[22px] font-black leading-tight tracking-[-0.02em] text-white">
+                  <div
+                    className="mt-1 text-[22px] font-black leading-tight tracking-[-0.02em]"
+                    style={{ color: "var(--foreground)" }}
+                  >
                     {title}
                   </div>
                 ) : null}

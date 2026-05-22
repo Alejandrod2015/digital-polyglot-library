@@ -3,11 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Brain, ChevronDown, Compass, Home, LogIn, Menu, Star } from "lucide-react";
+import { Brain, Compass, Home, LogIn, Menu, Star } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
-import LanguageSwitcher from "./LanguageSwitcher";
-import { formatVariantLabel } from "@/lib/languageVariant";
-import { getLanguageFlag } from "@/lib/languageFlags";
 
 type Plan = "free" | "basic" | "premium" | "polyglot";
 
@@ -29,27 +26,12 @@ export default function MobileTabBar() {
   const { user } = useUser();
   const [practiceActive, setPracticeActive] = useState(false);
   const [onboardingTourTarget, setOnboardingTourTarget] = useState("");
-  const [languageSwitcherOpen, setLanguageSwitcherOpen] = useState(false);
   const isSignedIn = Boolean(user);
   const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
-
-  // Active language + variant for the tiny indicator strip. Only drawn
-  // when the user has 2+ target languages (otherwise tapping the strip
-  // would be a no-op; a single-language user doesn't need to switch).
-  const rawTargetLanguages =
-    Array.isArray(user?.publicMetadata?.targetLanguages)
-      ? (user!.publicMetadata!.targetLanguages as unknown[]).filter(
-          (v): v is string => typeof v === "string"
-        )
-      : [];
-  const activeLanguage = rawTargetLanguages[0] ?? null;
-  const activeVariant =
-    typeof user?.publicMetadata?.preferredVariant === "string"
-      ? (user.publicMetadata.preferredVariant as string)
-      : null;
-  const activeVariantLabel = formatVariantLabel(activeVariant);
-  const activeFlag = activeLanguage ? getLanguageFlag(activeLanguage, activeVariant) : null;
-  const showLanguageStrip = isSignedIn && rawTargetLanguages.length >= 2;
+  // El strip de "Switch language" inferior se removió: el cambio de
+  // idioma vive ahora solo en /settings y en el chip del hero de
+  // /favorites + /practice + /journey, evitando duplicar control
+  // pegado al tab bar.
 
   useEffect(() => {
     const readPracticeState = () => {
@@ -89,7 +71,7 @@ export default function MobileTabBar() {
         { href: "/explore", label: "Explore", icon: Compass },
         { href: "/practice", label: "Practice", icon: Brain },
         { href: "/favorites", label: "Favorites", icon: Star },
-        { href: "/settings", label: "Menu", icon: Menu },
+        { href: "/menu", label: "Menu", icon: Menu },
       ]
     : [
         { href: "/", label: "Home", icon: Home },
@@ -102,27 +84,7 @@ export default function MobileTabBar() {
   void plan;
 
   return (
-    <>
     <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur">
-      {showLanguageStrip && activeLanguage && activeFlag ? (
-        <button
-          type="button"
-          onClick={() => setLanguageSwitcherOpen(true)}
-          aria-label="Switch language"
-          className="w-full flex items-center justify-center gap-2 border-b border-white/10 py-1.5 text-[12px] font-semibold text-white/80 active:bg-white/5 transition-colors"
-        >
-          <span aria-hidden className="text-[15px] leading-none">
-            {activeFlag}
-          </span>
-          <span className="truncate max-w-[60vw]">
-            {activeLanguage}
-            {activeVariantLabel ? (
-              <span className="ml-1 text-white/45">· {activeVariantLabel}</span>
-            ) : null}
-          </span>
-          <ChevronDown size={13} className="text-white/45" />
-        </button>
-      ) : null}
       <ul className="grid grid-cols-5">
         {tabs.map((tab) => {
           const active =
@@ -163,10 +125,5 @@ export default function MobileTabBar() {
         })}
       </ul>
     </nav>
-      <LanguageSwitcher
-        open={languageSwitcherOpen}
-        onClose={() => setLanguageSwitcherOpen(false)}
-      />
-    </>
   );
 }

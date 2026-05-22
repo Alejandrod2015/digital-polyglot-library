@@ -94,10 +94,18 @@ function extractStories(): StoryItem[] {
             ? book.region
             : undefined;
       const storyLevel = typeof story.level === "string" ? story.level : bookLevel;
-      const storyCover =
+      // Libros recientes (argentinian) usan `coverUrl`; los viejos `cover`.
+      // Sin ambos, las stories del argentinian caen al book cover.
+      const storyCoverRaw =
         typeof story.cover === "string" && story.cover.trim() !== ""
-          ? resolvePublicMediaUrl(story.cover) ?? story.cover
-          : bookCover;
+          ? story.cover
+          : typeof (story as { coverUrl?: unknown }).coverUrl === "string" &&
+            ((story as { coverUrl?: string }).coverUrl ?? "").trim() !== ""
+            ? (story as { coverUrl?: string }).coverUrl
+            : null;
+      const storyCover = storyCoverRaw
+        ? resolvePublicMediaUrl(storyCoverRaw) ?? storyCoverRaw
+        : bookCover;
       const rawAudio = typeof story.audio === "string" ? story.audio.trim() : "";
       const storyAudio = resolveCatalogAudioUrl(rawAudio);
       const storyTopics = [

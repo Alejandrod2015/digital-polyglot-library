@@ -2,13 +2,18 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+// IMPORTANT: NO runtime imports de `./journeyData` acá.
+// journeyData importa `@/lib/prisma` y este file es "use client".
+// Si webpack ve un runtime import en la cadena, bundlea prisma al
+// browser y peta con "PrismaClient is unable to run in this browser
+// environment". Las funciones puras viven en journeyInsights y
+// journeyUnlock. Los tipos van con `import type` (borrados en compile).
+import { buildJourneyTrackInsights } from "./journeyInsights";
 import {
-  buildJourneyTrackInsights,
   getJourneyPlacementLevelIndex,
   getUnlockedLevelCount,
-  type JourneyTrackInsights,
-  type JourneyVariantTrack,
-} from "./journeyData";
+} from "@/lib/journeyUnlock";
+import type { JourneyTrackInsights, JourneyVariantTrack } from "./journeyData";
 import { isJourneyStoryComplete } from "@/lib/journeyUnlock";
 import type { JourneyDueReviewItem } from "@/lib/journeyProgress";
 import { JourneyLanguageHub } from "@/components/JourneyLanguageHub";
@@ -202,11 +207,15 @@ export default function JourneyClient({
 
   useEffect(() => {
     if (!selectedVariantId) return;
+    // Sync URL usando el slug (clean) en lugar del cuid interno.
+    // Si el track no tiene slug por alguna razón, fallback al id.
+    const currentTrack = tracks.find((t) => t.id === selectedVariantId);
+    const slugForUrl = currentTrack?.slug ?? selectedVariantId;
     const params = new URLSearchParams(searchParams.toString());
-    if (params.get("variant") === selectedVariantId) return;
-    params.set("variant", selectedVariantId);
+    if (params.get("variant") === slugForUrl) return;
+    params.set("variant", slugForUrl);
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-  }, [pathname, router, searchParams, selectedVariantId]);
+  }, [pathname, router, searchParams, selectedVariantId, tracks]);
 
   // Pull live progress stats for the top bar (energy / level / xp).
   // Falls back silently to zeroes if the call fails.
@@ -457,21 +466,37 @@ export default function JourneyClient({
                     });
                     setLanguageSheetOpen(false);
                   }}
-                  className={`flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-colors ${
+                  className="flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-colors"
+                  style={
                     isSelected
-                      ? "border-[color:var(--color-gold)]/60 bg-[color:var(--color-gold)]/10"
-                      : "border-white/10 bg-white/[0.03] hover:bg-white/[0.06]"
-                  }`}
+                      ? {
+                          background: "rgba(252,211,77,0.12)",
+                          borderColor: "rgba(252,211,77,0.55)",
+                        }
+                      : {
+                          background: "var(--card-bg)",
+                          borderColor: "var(--card-border)",
+                        }
+                  }
                 >
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/10 text-2xl">
+                  <span
+                    className="grid h-11 w-11 shrink-0 place-items-center rounded-full text-2xl"
+                    style={{ background: "var(--card-bg-hover)" }}
+                  >
                     {pill.flag}
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-[15px] font-extrabold text-white">
+                    <span
+                      className="block text-[15px] font-extrabold"
+                      style={{ color: "var(--foreground)" }}
+                    >
                       {track.label}
                     </span>
-                    <span className="block text-xs text-white/60">
-                      {pill.code} · {track.variant ?? track.id}
+                    <span
+                      className="block text-xs"
+                      style={{ color: "var(--muted)" }}
+                    >
+                      {pill.code} · {track.variant ?? track.slug}
                     </span>
                   </span>
                   {isSelected ? (
@@ -497,15 +522,28 @@ export default function JourneyClient({
         ariaLabel="Progress overview"
       >
         <ul className="flex flex-col gap-2 pb-2">
-          <li className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+          <li
+            className="flex items-center gap-4 rounded-2xl border px-4 py-3"
+            style={{
+              background: "var(--card-bg)",
+              borderColor: "var(--card-border)",
+              color: "var(--foreground)",
+            }}
+          >
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#fb923c]/15 text-2xl">
               ⚡
             </span>
             <span className="min-w-0 flex-1">
-              <span className="block text-[15px] font-extrabold text-white">
+              <span
+                className="block text-[15px] font-extrabold"
+                style={{ color: "var(--foreground)" }}
+              >
                 Energy
               </span>
-              <span className="block text-xs text-white/60">
+              <span
+                className="block text-xs"
+                style={{ color: "var(--muted)" }}
+              >
                 XP earned today
               </span>
             </span>
@@ -513,15 +551,28 @@ export default function JourneyClient({
               {stats.energy}
             </span>
           </li>
-          <li className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+          <li
+            className="flex items-center gap-4 rounded-2xl border px-4 py-3"
+            style={{
+              background: "var(--card-bg)",
+              borderColor: "var(--card-border)",
+              color: "var(--foreground)",
+            }}
+          >
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[color:var(--color-gold)]/15 text-2xl">
               🏆
             </span>
             <span className="min-w-0 flex-1">
-              <span className="block text-[15px] font-extrabold text-white">
+              <span
+                className="block text-[15px] font-extrabold"
+                style={{ color: "var(--foreground)" }}
+              >
                 Level
               </span>
-              <span className="block text-xs text-white/60">
+              <span
+                className="block text-xs"
+                style={{ color: "var(--muted)" }}
+              >
                 Earn XP to level up
               </span>
             </span>
@@ -529,15 +580,28 @@ export default function JourneyClient({
               Lv&nbsp;{stats.level}
             </span>
           </li>
-          <li className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+          <li
+            className="flex items-center gap-4 rounded-2xl border px-4 py-3"
+            style={{
+              background: "var(--card-bg)",
+              borderColor: "var(--card-border)",
+              color: "var(--foreground)",
+            }}
+          >
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[color:var(--color-cyan)]/15 text-2xl">
               ⭐
             </span>
             <span className="min-w-0 flex-1">
-              <span className="block text-[15px] font-extrabold text-white">
+              <span
+                className="block text-[15px] font-extrabold"
+                style={{ color: "var(--foreground)" }}
+              >
                 Total XP
               </span>
-              <span className="block text-xs text-white/60">
+              <span
+                className="block text-xs"
+                style={{ color: "var(--muted)" }}
+              >
                 Across all journeys
               </span>
             </span>

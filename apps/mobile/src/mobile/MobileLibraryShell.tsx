@@ -4228,19 +4228,14 @@ export function MobileLibraryShell(args: {
     () => favoriteWords.reduce((best, item) => Math.max(best, item.streak ?? 0), 0),
     [favoriteWords]
   );
-  const favoriteTypeCounts = useMemo(
-    () =>
-      favoriteWords.reduce<Record<string, number>>((acc, item) => {
-        const type = getFavoriteType(item);
-        acc[type] = (acc[type] ?? 0) + 1;
-        return acc;
-      }, {}),
-    [favoriteWords]
-  );
-  const availableFavoriteTypes = useMemo(
-    () => ["all", ...Object.keys(favoriteTypeCounts).sort()],
-    [favoriteTypeCounts]
-  );
+  // favoriteTypeCounts + availableFavoriteTypes were originally computed
+  // from `favoriteWords` (all languages), but the filter list and the
+  // filtered results below operate on `journeyScopedFavoriteCards` (only
+  // the active journey's language). That mismatch produced "Adjective (5)"
+  // chips that returned zero results when tapped — the 5 adjectives lived
+  // in other languages and never survived the journey scope. The
+  // journey-scoped definitions live further down (line ~4595), after
+  // journeyScopedFavoriteCards has been declared.
   const allCatalogRelatedFavorites = useMemo<MobileFavoriteItem[]>(() => {
     const items: MobileFavoriteItem[] = [];
 
@@ -4587,6 +4582,22 @@ export function MobileLibraryShell(args: {
       ({ item }) => (item.language ?? "").trim().toLowerCase() === activeJourneyLanguageLower
     );
   }, [favoriteCards, activeJourneyLanguageLower]);
+  // Scoped to journey so the pill counts ALWAYS match the result count
+  // the user sees after tapping the filter. Anything that lives outside
+  // the current journey's language is invisible here on purpose.
+  const favoriteTypeCounts = useMemo(
+    () =>
+      journeyScopedFavoriteCards.reduce<Record<string, number>>((acc, { item }) => {
+        const type = getFavoriteType(item);
+        acc[type] = (acc[type] ?? 0) + 1;
+        return acc;
+      }, {}),
+    [journeyScopedFavoriteCards]
+  );
+  const availableFavoriteTypes = useMemo(
+    () => ["all", ...Object.keys(favoriteTypeCounts).sort()],
+    [favoriteTypeCounts]
+  );
   const nowMillis = useMemo(() => Date.now(), [favoriteWords]);
   const filteredFavoriteCards = useMemo(
     () => {

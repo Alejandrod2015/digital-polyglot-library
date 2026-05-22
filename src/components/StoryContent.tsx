@@ -228,7 +228,14 @@ function highlightVocabulary(
   text: string,
   vocab: Array<{ word: string; surface?: string; type?: string | null; definition?: string }>,
   renderWord: (t: string) => React.ReactNode,
-  vocabTypeByLower?: Map<string, string>
+  vocabTypeByLower?: Map<string, string>,
+  // Compartido entre llamadas para que cada palabra del vocab sólo
+  // se highlightee la PRIMERA vez en toda la historia. Si no se
+  // pasa, cada bloque dedupea independiente (modo legacy). El bug:
+  // historias multi-blockquote re-highlightean speaker labels
+  // (e.g. "Guardabosques Julio:" 6 veces) porque cada llamada
+  // arrancaba con Set vacío.
+  alreadyHighlighted?: Set<string>
 ) {
   if (text.length > MAX_TEXT_LENGTH_FOR_HIGHLIGHT) return renderWord(text);
 
@@ -256,7 +263,7 @@ function highlightVocabulary(
   }
 
   const nodes: React.ReactNode[] = [];
-  const alreadyHighlighted = new Set<string>();
+  const seenWords = alreadyHighlighted ?? new Set<string>();
   let lastIndex = 0;
   let key = 0;
   let match: RegExpExecArray | null = regex.exec(text);
@@ -275,10 +282,10 @@ function highlightVocabulary(
     const canonical = canonicalByLower.get(matchedText.toLowerCase()) ?? matchedText;
     const canonicalKey = canonical.toLowerCase();
     const vocabType = vocabTypeByLower?.get(canonicalKey) ?? "other";
-    if (alreadyHighlighted.has(canonicalKey)) {
+    if (seenWords.has(canonicalKey)) {
       nodes.push(<React.Fragment key={`txt-${key++}`}>{renderWord(matchedText)}</React.Fragment>);
     } else {
-      alreadyHighlighted.add(canonicalKey);
+      seenWords.add(canonicalKey);
       nodes.push(
         <span
           key={`voc-${key++}`}
@@ -443,33 +450,46 @@ export default function StoryContent({
       onMouseUp={onParagraphSelect}
       {...(hasHtml
         ? {
-            children: htmlBlocks.map((block, i) =>
-              block.tag === "blockquote" ? (
-                <blockquote key={`bq-${i}`}>
-                  <p>{highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower)}</p>
-                </blockquote>
-              ) : (
-                <p key={`p-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower)}</p>
-              )
-            ),
+            children: (() => {
+              // Set compartido entre TODOS los bloques de la historia,
+              // así cada palabra del vocab se highlightea sólo en su
+              // primera ocurrencia (incluso si los bloques son
+              // blockquotes distintos para cada line de diálogo).
+              const seenInStory = new Set<string>();
+              return htmlBlocks.map((block, i) =>
+                block.tag === "blockquote" ? (
+                  <blockquote key={`bq-${i}`}>
+                    <p>{highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower, seenInStory)}</p>
+                  </blockquote>
+                ) : (
+                  <p key={`p-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower, seenInStory)}</p>
+                )
+              );
+            })(),
           }
         : dialogueBlocks
           ? {
-              children: dialogueBlocks.map((block, i) =>
-                block.speaker ? (
-                  <p key={`dlg-${i}`}>
-                    <strong>{block.speaker}:</strong>{" "}
-                    {highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower)}
-                  </p>
-                ) : (
-                  <p key={`nar-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower)}</p>
-                )
-              ),
+              children: (() => {
+                const seenInStory = new Set<string>();
+                return dialogueBlocks.map((block, i) =>
+                  block.speaker ? (
+                    <p key={`dlg-${i}`}>
+                      <strong>{block.speaker}:</strong>{" "}
+                      {highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower, seenInStory)}
+                    </p>
+                  ) : (
+                    <p key={`nar-${i}`}>{highlightVocabulary(block.text, safeVocab, renderWord, vocabTypeByLower, seenInStory)}</p>
+                  )
+                );
+              })(),
             }
           : {
-              children: paragraphs.map((para, i) => (
-                <p key={i}>{highlightVocabulary(para, safeVocab, renderWord, vocabTypeByLower)}</p>
-              )),
+              children: (() => {
+                const seenInStory = new Set<string>();
+                return paragraphs.map((para, i) => (
+                  <p key={i}>{highlightVocabulary(para, safeVocab, renderWord, vocabTypeByLower, seenInStory)}</p>
+                ));
+              })(),
             })}
     />
   );

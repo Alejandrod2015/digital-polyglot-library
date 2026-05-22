@@ -130,8 +130,18 @@ export async function DELETE(request: Request) {
 }
 
 /**
- * PATCH /api/studio/journeys — update journey name, add/remove levels
- * Body: { journeyId, name?, addLevels?, removeLevels? }
+ * PATCH /api/studio/journeys — update journey name, add/remove levels,
+ * or add/remove topics from an existing journey.
+ *
+ * Body: {
+ *   journeyId,
+ *   name?,
+ *   addLevels?: string[],
+ *   removeLevels?: string[],
+ *   addTopics?: string[],     // slugs to add as new topics
+ *   removeTopics?: string[],  // slugs to remove (also deletes their stories)
+ *   journeyTypeSlug?,
+ * }
  */
 export async function PATCH(request: Request) {
   const { userId } = await auth();
@@ -146,7 +156,7 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
 
-  const { journeyId, name, addLevels, removeLevels, journeyTypeSlug } = body;
+  const { journeyId, name, addLevels, removeLevels, addTopics, removeTopics, journeyTypeSlug } = body;
   if (!journeyId) return NextResponse.json({ error: "journeyId required" }, { status: 400 });
 
   const journey = await prisma.journey.findUnique({ where: { id: journeyId } });
@@ -209,6 +219,82 @@ export async function PATCH(request: Request) {
       prisma.journey.update({ where: { id: journeyId }, data: { levels: remaining } }),
     ]);
     return NextResponse.json({ ok: true, removedLevels: removeLevels, storiesDeleted: deletedCount });
+  }
+
+  // Add topics: insertar nuevos topics al journey existente. Para
+  // cada slug que no esté ya en journey.topics, crear story slots
+  // según storiesPerTopic en el defaultLevel del topic (siempre que
+  // ese level esté en journey.levels; sino skipea el slot).
+  if (Array.isArray(addTopics) && addTopics.length > 0) {
+    const cleanSlugs = addTopics
+      .filter((s): s is string => typeof s === "string" && s.trim().length > 0)
+      .map((s) => s.trim());
+    const newSlugs = cleanSlugs.filter((s) => !journey.topics.includes(s));
+    if (newSlugs.length === 0) {
+      return NextResponse.json({ ok: true, addedTopics: [], storiesCreated: 0 });
+    }
+
+    const topicRecords = await prisma.topic.findMany({
+      where: { slug: { in: newSlugs } },
+    });
+    if (topicRecords.length === 0) {
+      return NextResponse.json({ error: "No matching topics found" }, { status: 404 });
+    }
+
+    const storyData: { journeyId: string; level: string; topic: string; slotIndex: number }[] = [];
+    const journeyLevelSet = new Set(journey.levels);
+    for (const topic of topicRecords) {
+      const level = topic.defaultLevel;
+      if (!level || !journeyLevelSet.has(level)) continue;
+      for (let i = 0; i < journey.storiesPerTopic; i++) {
+        storyData.push({ journeyId, level, topic: topic.slug, slotIndex: i });
+      }
+    }
+
+    const updatedTopics = [...new Set([...journey.topics, ...newSlugs])];
+    await prisma.$transaction([
+      ...(storyData.length > 0
+        ? [prisma.journeyStory.createMany({ data: storyData, skipDuplicates: true })]
+        : []),
+      prisma.journey.update({
+        where: { id: journeyId },
+        data: { topics: updatedTopics },
+      }),
+    ]);
+    return NextResponse.json({
+      ok: true,
+      addedTopics: newSlugs,
+      storiesCreated: storyData.length,
+    });
+  }
+
+  // Remove topics: borra los slugs del journey + sus stories.
+  // Defensive: rechaza si dejaría el journey sin temas.
+  if (Array.isArray(removeTopics) && removeTopics.length > 0) {
+    const cleanSlugs = removeTopics
+      .filter((s): s is string => typeof s === "string" && s.trim().length > 0)
+      .map((s) => s.trim());
+    const remaining = journey.topics.filter((t) => !cleanSlugs.includes(t));
+    if (remaining.length === 0) {
+      return NextResponse.json({ error: "Cannot remove all topics" }, { status: 400 });
+    }
+    const deletedCount = await prisma.journeyStory.count({
+      where: { journeyId, topic: { in: cleanSlugs } },
+    });
+    await prisma.$transaction([
+      prisma.journeyStory.deleteMany({
+        where: { journeyId, topic: { in: cleanSlugs } },
+      }),
+      prisma.journey.update({
+        where: { id: journeyId },
+        data: { topics: remaining },
+      }),
+    ]);
+    return NextResponse.json({
+      ok: true,
+      removedTopics: cleanSlugs,
+      storiesDeleted: deletedCount,
+    });
   }
 
   return NextResponse.json({ ok: true });

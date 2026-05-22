@@ -156,7 +156,7 @@ ${params.text.slice(0, 3000)}
 - Prefer: useful verbs, culturally specific terms, key expressions, and level-appropriate words
 - Avoid: basic cognates, articles, pronouns, numbers
 - "word" should be the dictionary/root form
-- "translation" must be a concise English gloss, HARD LIMIT 3-7 words AND ≤50 characters total (UI chip cannot wrap). Style like a translation app. Not a bare one-word translation.
+- "translation" must be a concise English gloss, HARD LIMIT 8-14 words AND ≤120 characters total. Start with the meaning directly — do NOT begin with "Refers to", "Describes", "Used to", "Used for" or "Said when". Concise, practical, no clichés.
 - "type" should be one of: verb, noun, adjective, adverb, expression
 - "example" should be a short example sentence using the word in context
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import ValidarResultView from "./ValidarResultView";
+import ValidationHistory from "./ValidationHistory";
 import { getIsoLanguageTag } from "@/lib/languageFlags";
 import { parseStoryInput, type StoryPayload } from "@/lib/validateGeneratedStory";
 
@@ -233,6 +234,65 @@ export default function ValidarPageClient() {
 
   const ctxReady = !!journeyId && !!levelId && !!topicSlug;
   const canStage = !!result?.ok && ctxReady && !stagedStory;
+
+  // Contador para forzar refresh del feed "Mis validaciones" después de
+  // una subida directa desde el historial. Sin esto, el badge "✓ En
+  // Studio" no aparecería hasta que la usuaria clickee Refrescar.
+  const [historyRefreshTick, setHistoryRefreshTick] = useState(0);
+
+  /**
+   * "Subir al Studio" desde una fila del feed de validaciones.
+   * Si ya hay context (journey/level/topic) en la página → POST
+   * directo a /stage con el raw guardado en esa AgentRun.
+   * Si NO hay context → cargamos el raw en el form, scrolleamos
+   * arriba, y mostramos al editor que debe elegir el destino.
+   */
+  async function stageFromHistory(historyRaw: string, _title: string) {
+    if (!ctxReady) {
+      setRaw(historyRaw);
+      setResult(null);
+      setError(null);
+      setStageError(null);
+      setStagedStory(null);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    setRaw(historyRaw);
+    setStaging(true);
+    setStageError(null);
+    try {
+      const res = await fetch("/api/studio/validar/stage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          raw: historyRaw,
+          journeyId,
+          level: levelId,
+          topic: topicSlug,
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        story?: { id: string; slug: string; slotIndex: number; title: string };
+        reason?: string;
+        error?: string;
+      };
+      if (!res.ok || !data.ok || !data.story) {
+        throw new Error(data.reason ?? data.error ?? `HTTP ${res.status}`);
+      }
+      setStagedStory(data.story);
+      setPipelineLoading(true);
+      await loadPipelineStories();
+      // Bump tick to force ValidationHistory a refrescar — la fila
+      // que acabamos de subir cambia su badge a "✓ En Studio" sin
+      // que la usuaria tenga que clickear Refrescar.
+      setHistoryRefreshTick((n) => n + 1);
+    } catch (e) {
+      setStageError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setStaging(false);
+    }
+  }
 
   // Live preview of the pasted JSON. Uses the same parser as the server
   // so what the worker sees here matches what gets validated. Returns
@@ -588,6 +648,17 @@ export default function ValidarPageClient() {
           rawInput={raw}
         />
       )}
+
+      {/* ── MIS VALIDACIONES: feed propio de la trabajadora ──
+          Cada fila se expande al click mostrando synopsis, texto y
+          vocab. Botón "↑ Subir al Studio" delega aquí:
+          - Con context → POST /stage directo (un solo clic).
+          - Sin context → carga el JSON al form y scrollea arriba. */}
+      <ValidationHistory
+        onStageDirect={stageFromHistory}
+        contextReady={ctxReady}
+        refreshSignal={historyRefreshTick}
+      />
 
       {/* ── INVENTARIO con dots por nivel ── */}
       <InventoryDots stories={pipelineStories} loading={pipelineLoading} />

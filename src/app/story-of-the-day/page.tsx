@@ -30,7 +30,7 @@ export default async function StoryOfTheDayPage() {
   if (!featured) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center p-8 text-[var(--foreground)]">
-        <p className="text-white/70">No featured story for today.</p>
+        <p className="text-[var(--muted)]">No featured story for today.</p>
         <Link
           href="/explore"
           className="mt-6 inline-flex rounded-full bg-[var(--color-gold)] px-5 py-2.5 text-sm font-extrabold text-[#2a1a02] hover:brightness-105"
@@ -74,11 +74,14 @@ export default async function StoryOfTheDayPage() {
     <div className="px-4 pb-24 pt-8 sm:px-8 mx-auto text-[var(--foreground)]" style={{ maxWidth: 720 }}>
       {/* ── Top tag row ── */}
       <div className="flex items-baseline justify-between mb-4">
-        <p className="inline-flex items-center gap-1.5 text-[#fcd34d] text-[11px] font-extrabold uppercase tracking-[0.28em]">
+        {/* Eyebrow: usa el token --color-gold (deep amber en light,
+            bright yellow en dark). Antes era hex fijo #fcd34d que en
+            light se veía lavado sobre cream. */}
+        <p className="inline-flex items-center gap-1.5 text-[var(--color-gold)] text-[11px] font-extrabold uppercase tracking-[0.28em]">
           <Sparkles size={12} strokeWidth={2.6} />
           Story of the day
         </p>
-        <span className="text-[12px] font-bold text-white/55">{today}</span>
+        <span className="text-[12px] font-bold text-[var(--muted)]">{today}</span>
       </div>
 
       {/* ── Hero cover (wide, 16:9, full-bleed at top of card) ── */}
@@ -104,13 +107,22 @@ export default async function StoryOfTheDayPage() {
               "linear-gradient(180deg, transparent 0%, rgba(11,30,58,0.85) 100%)",
           }}
         />
-        {/* Title overlay */}
+        {/* Title overlay. Va sobre un gradiente oscuro → necesita
+            texto blanco en AMBOS temas. Inline `color` fuerza blanco
+            y evita el override `text-white → dark` que aplica light
+            mode al resto de la página. */}
         <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-          <h1 className="text-[26px] sm:text-[34px] font-black tracking-tight text-white leading-tight">
+          <h1
+            className="text-[26px] sm:text-[34px] font-black tracking-tight leading-tight"
+            style={{ color: "#ffffff" }}
+          >
             {story.title}
           </h1>
-          <p className="mt-1 text-[13px] sm:text-[14px] text-white/72">
-            From <span className="font-extrabold text-white/90">{book.title}</span>
+          <p className="mt-1 text-[13px] sm:text-[14px]" style={{ color: "rgba(255,255,255,0.78)" }}>
+            From{" "}
+            <span className="font-extrabold" style={{ color: "rgba(255,255,255,0.95)" }}>
+              {book.title}
+            </span>
           </p>
         </div>
       </div>
@@ -168,7 +180,7 @@ export default async function StoryOfTheDayPage() {
       </div>
 
       {/* ── Description (trimmed) ── */}
-      <p className="mt-5 text-[15px] leading-7 text-white/80">
+      <p className="mt-5 text-[15px] leading-7 text-[var(--foreground)]">
         {description}
       </p>
 
@@ -183,14 +195,14 @@ export default async function StoryOfTheDayPage() {
         </Link>
         <Link
           href="/plans"
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-6 py-3 text-[14px] font-bold text-white/90 hover:bg-white/[0.08]"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] px-6 py-3 text-[14px] font-bold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
         >
-          <Crown size={15} className="text-[#fcd34d]" />
+          <Crown size={15} className="text-[var(--color-gold)]" />
           Unlock all stories
         </Link>
       </div>
 
-      <p className="mt-4 text-[12px] text-white/45">
+      <p className="mt-4 text-[12px] text-[var(--muted)]">
         Available today with Basic and above. New story tomorrow at midnight.
       </p>
     </div>

@@ -163,7 +163,7 @@ function humanize(check: Check): Humanized {
     case "vocab-definitions":
       return {
         text: "Algunas definiciones tienen problemas de formato",
-        hint: `Reglas: 3-7 palabras, máximo 50 caracteres, no empezar con 'Refers to', 'Describes', 'Used to', 'Used for' o 'Said when', y sin em-dash (—). Items con problemas: ${detail}`,
+        hint: `Reglas: 8-14 palabras, máximo 120 caracteres, no empezar con 'Refers to', 'Describes', 'Used to', 'Used for' o 'Said when', y sin em-dash (—). Items con problemas: ${detail}`,
       };
     case "vocab-types":
       return {

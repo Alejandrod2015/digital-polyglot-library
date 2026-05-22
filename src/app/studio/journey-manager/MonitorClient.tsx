@@ -255,6 +255,15 @@ export default function MonitorClient() {
   // Expanded journeys/topics
   const [expandedJourneyIds, setExpandedJourneyIds] = useState<Set<string>>(new Set());
   const [expandedTopics, setExpandedTopics] = useState<Set<string>>(new Set());
+  // Picker para "Agregar tema": cuando está activo, muestra una lista
+  // de topics elegibles inline dentro del nivel correspondiente. Solo
+  // un picker abierto a la vez (key = `${journeyId}:${level}`).
+  const [addTopicPicker, setAddTopicPicker] = useState<{
+    journeyId: string;
+    level: string;
+  } | null>(null);
+  const [addTopicOptions, setAddTopicOptions] = useState<TopicItem[]>([]);
+  const [addTopicLoading, setAddTopicLoading] = useState(false);
   const [stories, setStories] = useState<StoryRow[]>([]);
   const [busyStories, setBusyStories] = useState<Set<string>>(new Set());
 
@@ -461,6 +470,60 @@ export default function MonitorClient() {
 
   async function removeLevelFromJourney(journeyId: string, level: string) {
     await fetch("/api/studio/journeys", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ journeyId, removeLevels: [level] }) });
+    await loadJourneys();
+    if (expandedJourneyIds.has(journeyId)) await reloadStoriesForJourney(journeyId);
+  }
+
+  // Abre el picker "Agregar tema" para un (journey, level) específico.
+  // Carga los topics disponibles del journey type (universal +
+  // especializados) cuyo `defaultLevel` matchea el nivel y que
+  // todavía NO estén en `journey.topics`.
+  async function openAddTopicPicker(journey: JourneySummary, level: string) {
+    setAddTopicPicker({ journeyId: journey.id, level });
+    setAddTopicLoading(true);
+    setAddTopicOptions([]);
+    try {
+      const matchedType = allJourneyTypes.find(
+        (jt) => jt.label.toLowerCase() === journey.name.toLowerCase()
+      );
+      const url = matchedType
+        ? `/api/studio/topics?journeyType=${encodeURIComponent(matchedType.slug)}`
+        : `/api/studio/topics`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`topics fetch ${res.status}`);
+      const all: TopicItem[] = await res.json();
+      const journeyTopicSet = new Set(journey.topics);
+      const filtered = all.filter(
+        (t) => t.defaultLevel === level && !journeyTopicSet.has(t.slug)
+      );
+      setAddTopicOptions(filtered);
+    } catch (err) {
+      console.error("[add-topic-picker] failed to load topics:", err);
+      setAddTopicOptions([]);
+    } finally {
+      setAddTopicLoading(false);
+    }
+  }
+
+  // Agregar tema a un journey existente. Llama al endpoint PATCH
+  // (extendido para aceptar `addTopics`) y recarga el journey. El
+  // backend crea las story slots automáticamente según
+  // storiesPerTopic y el defaultLevel del topic.
+  async function addTopicsToJourney(journeyId: string, topicSlugs: string[]) {
+    if (topicSlugs.length === 0) return;
+    const journey = journeys.find((j) => j.id === journeyId);
+    const matchedType = allJourneyTypes.find(
+      (jt) => jt.label.toLowerCase() === journey?.name.toLowerCase()
+    );
+    await fetch("/api/studio/journeys", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        journeyId,
+        addTopics: topicSlugs,
+        journeyTypeSlug: matchedType?.slug,
+      }),
+    });
     await loadJourneys();
     if (expandedJourneyIds.has(journeyId)) await reloadStoriesForJourney(journeyId);
   }
@@ -1572,6 +1635,72 @@ export default function MonitorClient() {
                             </div>
                           );
                         })}
+
+                        {/* Agregar tema — paridad con "Agregar nivel". Abre
+                            picker inline con los topics disponibles del
+                            journey type para este nivel, filtrando los
+                            que ya estén. */}
+                        {(() => {
+                          const pickerOpen =
+                            addTopicPicker?.journeyId === j.id &&
+                            addTopicPicker?.level === level;
+                          return (
+                            <div style={{ marginTop: 6, marginLeft: 6 }}>
+                              {pickerOpen ? (
+                                <div className="jm-card" style={{ padding: 10 }}>
+                                  <div className="jm-row" style={{ marginBottom: 8 }}>
+                                    <span style={{ fontSize: 12, fontWeight: 600 }}>
+                                      Topics disponibles ({level.toUpperCase()})
+                                    </span>
+                                    <span className="jm-row__spacer" />
+                                    <button
+                                      className="jm-btn jm-btn--icon jm-btn--ghost jm-btn--sm"
+                                      onClick={() => setAddTopicPicker(null)}
+                                      title="Cerrar"
+                                    >
+                                      <Icon name="x" size={11} />
+                                    </button>
+                                  </div>
+                                  {addTopicLoading ? (
+                                    <p className="jm-dim" style={{ fontSize: 12, margin: 0 }}>
+                                      Cargando…
+                                    </p>
+                                  ) : addTopicOptions.length === 0 ? (
+                                    <p className="jm-dim" style={{ fontSize: 12, margin: 0 }}>
+                                      No quedan topics disponibles para este nivel.
+                                    </p>
+                                  ) : (
+                                    <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                                      {addTopicOptions.map((t) => (
+                                        <button
+                                          key={t.slug}
+                                          className="jm-btn jm-btn-tone-teal jm-btn--sm"
+                                          onClick={async () => {
+                                            await addTopicsToJourney(j.id, [t.slug]);
+                                            setAddTopicOptions((prev) =>
+                                              prev.filter((x) => x.slug !== t.slug)
+                                            );
+                                          }}
+                                          title={`Agregar topic "${t.label}"`}
+                                        >
+                                          <Icon name="plus" size={11} /> {t.label}
+                                        </button>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              ) : (
+                                <button
+                                  className="jm-btn jm-btn-tone-teal jm-btn--sm"
+                                  onClick={() => void openAddTopicPicker(j, level)}
+                                  title={`Agregar tema al nivel ${level.toUpperCase()}`}
+                                >
+                                  <Icon name="plus" size={11} /> Agregar tema
+                                </button>
+                              )}
+                            </div>
+                          );
+                        })()}
                       </div>
                     );
                   })}

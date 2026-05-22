@@ -185,77 +185,148 @@
   --badge-advanced-text: #fec3cf;
 }
 
-/* Explicit light */
+/* ============================================================
+ * LIGHT MODE — v2 "warm paper"
+ *
+ * Reemplaza el v1 frío azul-grisáceo que se sentía plano y
+ * roto. Tres principios:
+ *   1. Canvas warm cream (#f6f4ee) — NO blue-grey frío
+ *   2. Cards SOLID white (#ffffff) con shadow real, no
+ *      translucent tint (eso era el bug de v1)
+ *   3. Mayor contraste de texto (#1a1a1a near-black)
+ *
+ * Spec: design/HANDOFF (2).md sección A.2.
+ * =========================================================== */
 :root[data-theme="light"] {
-  --background: #eef3fb;
-  --surface: #f7f9fd;
-  --bg-sidebar: #e2ecfa;
-  --bg-content: #eef3fb;
-  --bg-player: rgba(238, 243, 251, 0.96);
-  --player-border-top: rgba(15, 23, 42, 0.16);
-  --foreground: #0f1d33;
-  --muted: #4d5c74;
+  --background: #f6f4ee;
+  --surface: #ffffff;
+  --bg-sidebar: #eee9de;
+  --bg-content: #f6f4ee;
+  --bg-player: rgba(246, 244, 238, 0.96);
+  --player-border-top: rgba(28, 25, 18, 0.10);
+  --foreground: #1a1a1a;
+  --muted: #6b6657;
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
-  --accent: #0f1d33;
-  --accent-hover: #334155;
-  --accent-soft: rgba(37, 99, 235, 0.2);
-  --card-bg: rgba(15, 29, 51, 0.06);
-  --card-bg-hover: rgba(15, 29, 51, 0.1);
-  --card-border: rgba(15, 29, 51, 0.14);
-  --chip-bg: rgba(15, 29, 51, 0.08);
-  --chip-border: rgba(15, 29, 51, 0.22);
-  --chip-text: #2f415d;
-  --nav-bg: rgba(226, 236, 250, 0.96);
-  --nav-border: rgba(15, 29, 51, 0.12);
-  --nav-text: #0f1d33;
-  --nav-text-muted: #4d5c74;
-  --badge-beginner-bg: rgba(16, 185, 129, 0.14);
-  --badge-beginner-border: rgba(5, 150, 105, 0.3);
-  --badge-beginner-text: #0f766e;
-  --badge-intermediate-bg: rgba(245, 158, 11, 0.14);
-  --badge-intermediate-border: rgba(217, 119, 6, 0.3);
-  --badge-intermediate-text: #9a5a00;
-  --badge-advanced-bg: rgba(244, 63, 94, 0.12);
-  --badge-advanced-border: rgba(225, 29, 72, 0.28);
-  --badge-advanced-text: #be123c;
+  --accent: #1a1a1a;
+  --accent-hover: #3a342a;
+  --accent-soft: rgba(209, 138, 31, 0.18);
+  --card-bg: #ffffff;
+  --card-bg-hover: #fbfaf6;
+  --card-border: rgba(28, 25, 18, 0.08);
+  --chip-bg: #f1ece0;
+  --chip-border: rgba(28, 25, 18, 0.10);
+  --chip-text: #3a342a;
+  --nav-bg: rgba(238, 233, 222, 0.96);
+  --nav-border: rgba(28, 25, 18, 0.10);
+  --nav-text: #1a1a1a;
+  --nav-text-muted: #6b6657;
+
+  /* Badges: solid saturated fills, no translucency, dark ink
+     so they pop sobre cream (no se ven washed-out como antes). */
+  --badge-beginner-bg: #e1f5ec;
+  --badge-beginner-border: rgba(5, 122, 85, 0.30);
+  --badge-beginner-text: #056446;
+  --badge-intermediate-bg: #fdf0d6;
+  --badge-intermediate-border: rgba(180, 111, 0, 0.32);
+  --badge-intermediate-text: #8a5200;
+  --badge-advanced-bg: #fde2e6;
+  --badge-advanced-border: rgba(190, 18, 60, 0.28);
+  --badge-advanced-text: #a91131;
+
+  /* Accent re-mapping para light. Los hues saturados de dark
+     se ven lavados sobre cream — usamos tonos más profundos.
+     `--color-gold` lo usan toggles, "See all", series labels,
+     hero eyebrow, Free Today pill, journey level stat. */
+  --color-gold: #d18a1f;
+  --color-streak: #d97757;
+  --color-gems: #7c6ad6;
+  --color-energy: #c93cbb;
+  --color-cyan: #0a8bb4;
+  --color-xp: #6a9c2e;
+
+  /* Backgrounds elevados light (warm cream scale, per HANDOFF 2 §A.2).
+     En dark estos son navy progresivo; en light son cream. Componentes
+     que usan var(--bg-0..--bg-4) los respetan automáticamente. */
+  --bg-0: #f6f4ee;
+  --bg-1: #efe9da;
+  --bg-2: #e8e2d2;
+  --bg-3: #e0d8c4;
+  --bg-4: #d4cab2;
+
+  /* Elevation: shadows definidas SÓLO en light. Las cards
+     dark mode usan bg-shift, light mode usa shadow. */
+  --shadow-card:
+    0 1px 0 rgba(28, 25, 18, 0.04),
+    0 1px 2px rgba(28, 25, 18, 0.06),
+    0 6px 14px -8px rgba(28, 25, 18, 0.10);
+  --shadow-card-hover:
+    0 1px 0 rgba(28, 25, 18, 0.04),
+    0 4px 8px rgba(28, 25, 18, 0.08),
+    0 18px 34px -16px rgba(28, 25, 18, 0.20);
+  --shadow-cover:
+    0 14px 28px -10px rgba(28, 25, 18, 0.32),
+    0 4px 10px -4px rgba(28, 25, 18, 0.18);
 }
 
-/* System theme (when no explicit data-theme is set) */
+/* System theme (when no explicit data-theme is set) — espejo
+   exacto del bloque [data-theme="light"] de arriba. */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
-    --background: #eef3fb;
-    --surface: #f7f9fd;
-    --bg-sidebar: #e2ecfa;
-    --bg-content: #eef3fb;
-    --bg-player: rgba(238, 243, 251, 0.96);
-    --player-border-top: rgba(15, 23, 42, 0.16);
-    --foreground: #0f1d33;
-    --muted: #4d5c74;
+    --background: #f6f4ee;
+    --surface: #ffffff;
+    --bg-sidebar: #eee9de;
+    --bg-content: #f6f4ee;
+    --bg-player: rgba(246, 244, 238, 0.96);
+    --player-border-top: rgba(28, 25, 18, 0.10);
+    --foreground: #1a1a1a;
+    --muted: #6b6657;
     --primary: #2563eb;
     --primary-hover: #1d4ed8;
-    --accent: #0f1d33;
-    --accent-hover: #334155;
-    --accent-soft: rgba(37, 99, 235, 0.2);
-    --card-bg: rgba(15, 29, 51, 0.06);
-    --card-bg-hover: rgba(15, 29, 51, 0.1);
-    --card-border: rgba(15, 29, 51, 0.14);
-    --chip-bg: rgba(15, 29, 51, 0.08);
-    --chip-border: rgba(15, 29, 51, 0.22);
-    --chip-text: #2f415d;
-    --nav-bg: rgba(226, 236, 250, 0.96);
-    --nav-border: rgba(15, 29, 51, 0.12);
-    --nav-text: #0f1d33;
-    --nav-text-muted: #4d5c74;
-    --badge-beginner-bg: rgba(16, 185, 129, 0.14);
-    --badge-beginner-border: rgba(5, 150, 105, 0.3);
-    --badge-beginner-text: #0f766e;
-    --badge-intermediate-bg: rgba(245, 158, 11, 0.14);
-    --badge-intermediate-border: rgba(217, 119, 6, 0.3);
-    --badge-intermediate-text: #9a5a00;
-    --badge-advanced-bg: rgba(244, 63, 94, 0.12);
-    --badge-advanced-border: rgba(225, 29, 72, 0.28);
-    --badge-advanced-text: #be123c;
+    --accent: #1a1a1a;
+    --accent-hover: #3a342a;
+    --accent-soft: rgba(209, 138, 31, 0.18);
+    --card-bg: #ffffff;
+    --card-bg-hover: #fbfaf6;
+    --card-border: rgba(28, 25, 18, 0.08);
+    --chip-bg: #f1ece0;
+    --chip-border: rgba(28, 25, 18, 0.10);
+    --chip-text: #3a342a;
+    --nav-bg: rgba(238, 233, 222, 0.96);
+    --nav-border: rgba(28, 25, 18, 0.10);
+    --nav-text: #1a1a1a;
+    --nav-text-muted: #6b6657;
+    --badge-beginner-bg: #e1f5ec;
+    --badge-beginner-border: rgba(5, 122, 85, 0.30);
+    --badge-beginner-text: #056446;
+    --badge-intermediate-bg: #fdf0d6;
+    --badge-intermediate-border: rgba(180, 111, 0, 0.32);
+    --badge-intermediate-text: #8a5200;
+    --badge-advanced-bg: #fde2e6;
+    --badge-advanced-border: rgba(190, 18, 60, 0.28);
+    --badge-advanced-text: #a91131;
+    --color-gold: #d18a1f;
+    --color-streak: #d97757;
+    --color-gems: #7c6ad6;
+    --color-energy: #c93cbb;
+    --color-cyan: #0a8bb4;
+    --color-xp: #6a9c2e;
+    --bg-0: #f6f4ee;
+    --bg-1: #efe9da;
+    --bg-2: #e8e2d2;
+    --bg-3: #e0d8c4;
+    --bg-4: #d4cab2;
+    --shadow-card:
+      0 1px 0 rgba(28, 25, 18, 0.04),
+      0 1px 2px rgba(28, 25, 18, 0.06),
+      0 6px 14px -8px rgba(28, 25, 18, 0.10);
+    --shadow-card-hover:
+      0 1px 0 rgba(28, 25, 18, 0.04),
+      0 4px 8px rgba(28, 25, 18, 0.08),
+      0 18px 34px -16px rgba(28, 25, 18, 0.20);
+    --shadow-cover:
+      0 14px 28px -10px rgba(28, 25, 18, 0.32),
+      0 4px 10px -4px rgba(28, 25, 18, 0.18);
   }
 }
 
@@ -1319,6 +1390,26 @@ body {
 .dp-journey-banner[disabled]:hover { filter: none; }
 .dp-journey-banner[disabled]:active { transform: none; margin-bottom: 32px; }
 
+/* Menu section dividers (/menu page). Líneas casi imperceptibles
+ * entre rows del mismo group. Antes usaba `divide-y` de Tailwind
+ * cuyo color default se veía como casi negro en cream. Acá fijamos
+ * alpha mínimo para que el divider exista pero no compita
+ * visualmente. */
+.dp-menu-section > a:not(:first-child),
+.dp-menu-section > button:not(:first-child) {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+:root[data-theme="dark"] .dp-menu-section > a:not(:first-child),
+:root[data-theme="dark"] .dp-menu-section > button:not(:first-child) {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .dp-menu-section > a:not(:first-child),
+  :root:not([data-theme]) .dp-menu-section > button:not(:first-child) {
+    border-top-color: rgba(255, 255, 255, 0.06);
+  }
+}
+
 /* =========================================================
  * Journey Manager (.jm-*). Editorial classes for
  * /studio/journey-manager. Same --mx-* token base as
@@ -2301,4 +2392,485 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   background: var(--mx-accent);
   border-radius: 2px;
   transition: width 0.15s ease;
+}
+
+/* ============================================================
+ * LIGHT MODE — component refinements
+ *
+ * Spec: design/HANDOFF (2).md secciones B/C/D.
+ *
+ * Estos overrides aplican SOLO cuando data-theme="light" (o el
+ * media query equivalente). El dark mode queda intacto — todo
+ * este bloque es additivo. No quitar.
+ * =========================================================== */
+
+/* --- B.1 Sidebar — active nav: white pill con shadow ---
+ * El active state dark usa `bg-[color:var(--color-gold)]/[0.18]`
+ * inline en Sidebar.tsx. Marcamos esa item con `.dp-nav-active`
+ * y aquí la pisamos en light por blanco sólido con shadow. */
+:root[data-theme="light"] .dp-nav-active {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  box-shadow:
+    0 1px 0 rgba(28, 25, 18, 0.04),
+    0 4px 10px -4px rgba(28, 25, 18, 0.10);
+}
+:root[data-theme="light"] .dp-nav-active svg {
+  color: var(--color-gold) !important;
+}
+
+/* --- B.1 Sidebar — divider con inset highlight ---
+ * Para que se lea como panel elevado y no como un slab plano. */
+:root[data-theme="light"] aside[class*="bg-[var(--bg-sidebar)]"] {
+  border-right: 1px solid rgba(28, 25, 18, 0.08);
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.6);
+}
+
+/* --- C.4 Subtle main-canvas gradient ---
+ * Cream + dos radials suaves para depth sin competir con
+ * las cards. Marker class `dp-app-canvas` añadido al <main>
+ * principal en AppShell.tsx para targetear sólo el canvas
+ * de app (no studio/marketing/auth). */
+:root[data-theme="light"] .dp-app-canvas {
+  background:
+    radial-gradient(1100px 600px at 100% -10%, #fff8e4 0%, transparent 55%),
+    radial-gradient(900px 700px at -10% 110%, #f0ece1 0%, transparent 60%),
+    var(--bg-content);
+}
+
+/* --- C.1/C.2 Hero "Story of the Day" en light ---
+ * El borde + bg ya vienen de los tokens (card-bg=#fff). Sólo
+ * añadimos shadow + ajustamos el corner pill "Free today". */
+:root[data-theme="light"] .dp-sotd-hero {
+  box-shadow: var(--shadow-card);
+}
+:root[data-theme="light"] .dp-sotd-hero:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* --- D.1 Journey story card — white con 3D shadow stack ---
+ * Dark mode usa `background: var(--bg-1)` INLINE en
+ * JourneyStoryCard. Inline gana a clases sin !important — por eso
+ * los locked story rows seguían dark navy en light. Forzamos.
+ * Active card (con `.active-card`) mantiene su color de tema y se
+ * excluye del override. */
+:root[data-theme="light"] .dp-journey-card:not(.active-card) {
+  background: #ffffff !important;
+  border-color: rgba(28, 25, 18, 0.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(28, 25, 18, 0.08),
+    0 4px 0 rgba(28, 25, 18, 0.10),
+    0 6px 14px -8px rgba(28, 25, 18, 0.14);
+}
+:root[data-theme="light"] .dp-journey-card:not(.active-card):active {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(28, 25, 18, 0.08),
+    0 1px 0 rgba(28, 25, 18, 0.10);
+}
+
+/* --- D.3 Locked topic banner: warm grey en vez de slate ---
+ * Slate `#3b4a66` viene como `style={{backgroundColor:"#3b4a66"}}`
+ * inline en JourneyTopicBanner — necesitamos !important para
+ * pisarlo. Tinta del texto también se ajusta. */
+:root[data-theme="light"] .dp-journey-banner.locked,
+:root[data-theme="light"] .j-topic-banner.locked {
+  background: #c8c2b3 !important;
+  background-color: #c8c2b3 !important;
+}
+:root[data-theme="light"] .dp-journey-banner.locked .eyebrow,
+:root[data-theme="light"] .j-topic-banner.locked .eyebrow {
+  color: rgba(255, 255, 255, 0.70);
+}
+:root[data-theme="light"] .dp-journey-banner.locked .title,
+:root[data-theme="light"] .j-topic-banner.locked .title {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Practice page: donut + mode cards ---
+ * Practice/page setea `background` INLINE en el donut y usa
+ * `card.shellClass` (gradient dark hardcoded) en los 4 mode cards.
+ * En light queda dark-on-cream → forzamos paper-card. */
+:root[data-theme="light"] .dp-practice-donut {
+  background: #ffffff !important;
+  border: 1px solid rgba(28, 25, 18, 0.06) !important;
+  box-shadow: var(--shadow-card);
+}
+:root[data-theme="light"] .dp-practice-mode {
+  background: #ffffff !important;
+  border-color: rgba(28, 25, 18, 0.08) !important;
+  box-shadow: var(--shadow-card);
+}
+/* Iconos del card de modo (Meaning/Context/Listening/Match):
+ * en dark usan `text-{accent}-100` (muy claro) sobre wash translúcido
+ * del mismo color → contraste OK contra fondo dark. En light el
+ * `text-{accent}-100` queda casi blanco sobre cream → invisible.
+ * Mapeamos a tones 700/800 que dan contraste contra el wash claro
+ * y respetan la familia cromática del modo. */
+:root[data-theme="light"] .dp-practice-mode .text-amber-100 {
+  color: #b45309 !important;
+}
+:root[data-theme="light"] .dp-practice-mode .text-emerald-100 {
+  color: #047857 !important;
+}
+:root[data-theme="light"] .dp-practice-mode .text-sky-100 {
+  color: #0369a1 !important;
+}
+:root[data-theme="light"] .dp-practice-mode .text-fuchsia-100 {
+  color: #a21caf !important;
+}
+:root[data-theme="light"] .dp-practice-mode .text-cyan-100 {
+  color: #0e7490 !important;
+}
+
+/* --- Favorites: vocab cards usan `bg-[#0c2342]` (deep-navy
+ * intencional en dark). Tailwind compila a `.bg-\[\#0c2342\]`. */
+:root[data-theme="light"] .bg-\[\#0c2342\] {
+  background-color: #ffffff !important;
+  box-shadow: var(--shadow-card);
+}
+
+/* --- Plan badge (Sidebar PlanBadge): blue-on-blue invisible
+ * en light. Per handoff §B.1: lavender chip. */
+:root[data-theme="light"] .bg-blue-600\/30 {
+  background-color: #e8e3f5 !important;
+}
+:root[data-theme="light"] .text-blue-200 {
+  color: #5b3fc0 !important;
+}
+
+/* --- Dark-navy Tailwind arbitrary backgrounds usadas como CARD
+ * surfaces en user-facing pages. Estos hex compilan a clases
+ * `.bg-\[\#XXXXXX\]` que en light queda dark-on-cream. Mapeamos
+ * todos a card-blanco-con-shadow.
+ *
+ * Cobertura: story-of-the-week, success, claim, beta, plans,
+ * stories/[slug], books/[slug]/[storySlug], BookStoriesGrid,
+ * StoryCarousel, ReleaseCarousel, ServiceWorker banners,
+ * InstallAppHint, AppUpdateBanner, BookStorefront, settings,
+ * story-of-the-day, CookieConsentBanner, StoryJourneyClient. */
+:root[data-theme="light"] .bg-\[\#0b1e36\],
+:root[data-theme="light"] .bg-\[\#0D1B2A\],
+:root[data-theme="light"] .bg-\[\#13284a\],
+:root[data-theme="light"] .bg-\[\#102746\],
+:root[data-theme="light"] .bg-\[\#0a1322\],
+:root[data-theme="light"] .bg-\[\#0d2648\],
+:root[data-theme="light"] .bg-\[\#08172b\],
+:root[data-theme="light"] .bg-\[\#0f1728\],
+:root[data-theme="light"] .bg-\[\#081a31\] {
+  background-color: #ffffff !important;
+  box-shadow: var(--shadow-card);
+}
+
+/* `bg-[#1B2347]` se usa SOLO en los nav buttons (prev/next) de los
+ * carousels (Release, Story, BookStoriesGrid). Si los pusiéramos
+ * blancos como las cards, quedarían white-on-cream sin contraste —
+ * blob fantasma. Tratamiento dedicado: chip cream tint + border
+ * visible + chevron en foreground dark. */
+:root[data-theme="light"] .bg-\[\#1B2347\] {
+  background-color: #f1ece0 !important;
+  border: 1px solid rgba(28, 25, 18, 0.12) !important;
+  box-shadow: var(--shadow-card);
+}
+:root[data-theme="light"] .bg-\[\#1B2347\] svg {
+  color: var(--foreground) !important;
+}
+
+/* --- Tailwind named light-text-on-dark colors: en light se ven
+ * lavados sobre cream. Slate/gray 50-200 son "casi blanco" usadas
+ * para titles en dark. En light → foreground dark warm. */
+:root[data-theme="light"] .text-slate-50,
+:root[data-theme="light"] .text-slate-100,
+:root[data-theme="light"] .text-slate-200,
+:root[data-theme="light"] .text-gray-50,
+:root[data-theme="light"] .text-gray-100,
+:root[data-theme="light"] .text-gray-200,
+:root[data-theme="light"] .text-zinc-50,
+:root[data-theme="light"] .text-zinc-100,
+:root[data-theme="light"] .text-zinc-200 {
+  color: #1a1a1a !important;
+}
+:root[data-theme="light"] .text-slate-300,
+:root[data-theme="light"] .text-gray-300,
+:root[data-theme="light"] .text-zinc-300 {
+  color: rgba(26, 26, 26, 0.85) !important;
+}
+
+/* --- hover:bg-white/X → en light dark-on-light hover queda como
+ * blanco-sobre-blanco invisible. Reemplazamos por chip cream sutil. */
+:root[data-theme="light"] .hover\:bg-white\/20:hover { background-color: rgba(28, 25, 18, 0.08) !important; }
+:root[data-theme="light"] .hover\:bg-white\/15:hover,
+:root[data-theme="light"] .hover\:bg-white\/10:hover,
+:root[data-theme="light"] .hover\:bg-white\/8:hover,
+:root[data-theme="light"] .hover\:bg-white\/5:hover { background-color: rgba(28, 25, 18, 0.06) !important; }
+:root[data-theme="light"] .hover\:bg-white\/\[0\.08\]:hover,
+:root[data-theme="light"] .hover\:bg-white\/\[0\.06\]:hover,
+:root[data-theme="light"] .hover\:bg-white\/\[0\.05\]:hover,
+:root[data-theme="light"] .hover\:bg-white\/\[0\.04\]:hover { background-color: rgba(28, 25, 18, 0.04) !important; }
+
+/* --- bg-black/X overlays: en light cards blancas con overlay
+ * negro semi-transparente queda como sombra borrosa. La mayoría
+ * son cover-image overlays — los suavizamos a una tinta neutra. */
+:root[data-theme="light"] .bg-black\/60,
+:root[data-theme="light"] .bg-black\/55,
+:root[data-theme="light"] .bg-black\/50,
+:root[data-theme="light"] .bg-black\/45 { background-color: rgba(28, 25, 18, 0.45) !important; }
+:root[data-theme="light"] .bg-black\/30,
+:root[data-theme="light"] .bg-black\/25,
+:root[data-theme="light"] .bg-black\/20 { background-color: rgba(28, 25, 18, 0.18) !important; }
+
+/* --- Vocab highlight readability ---
+ * Los hues translucent del dark mode (0.55-0.65 opacity) son
+ * demasiado fuertes sobre cream — bajamos opacity para que la
+ * historia siga siendo legible en light. */
+:root[data-theme="light"] .vocab-word {
+  background-color: rgba(148, 163, 184, 0.30) !important;
+  color: #1a1a1a;
+}
+:root[data-theme="light"] .vocab-word[data-vocab-type="verb"]       { background-color: rgba(248, 113, 113, 0.32) !important; }
+:root[data-theme="light"] .vocab-word[data-vocab-type="noun"]       { background-color: rgba(56, 189, 248, 0.32) !important; }
+:root[data-theme="light"] .vocab-word[data-vocab-type="adjective"]  { background-color: rgba(52, 211, 153, 0.32) !important; }
+:root[data-theme="light"] .vocab-word[data-vocab-type="adverb"]     { background-color: rgba(167, 139, 250, 0.34) !important; }
+:root[data-theme="light"] .vocab-word[data-vocab-type="expression"] { background-color: rgba(244, 114, 182, 0.32) !important; }
+:root[data-theme="light"] .vocab-word:hover                              { background-color: rgba(148, 163, 184, 0.55) !important; }
+:root[data-theme="light"] .vocab-word[data-vocab-type="verb"]:hover      { background-color: rgba(248, 113, 113, 0.55) !important; }
+:root[data-theme="light"] .vocab-word[data-vocab-type="noun"]:hover      { background-color: rgba(56, 189, 248, 0.55) !important; }
+:root[data-theme="light"] .vocab-word[data-vocab-type="adjective"]:hover { background-color: rgba(52, 211, 153, 0.55) !important; }
+:root[data-theme="light"] .vocab-word[data-vocab-type="adverb"]:hover    { background-color: rgba(167, 139, 250, 0.60) !important; }
+:root[data-theme="light"] .vocab-word[data-vocab-type="expression"]:hover{ background-color: rgba(244, 114, 182, 0.55) !important; }
+
+/* ============================================================
+ * LIGHT MODE — Tailwind utility overrides
+ *
+ * El codebase fue dark-first y muchos componentes hardcodean
+ * `text-white`, `bg-white/X`, `border-white/X` en JSX en vez de
+ * usar los tokens semánticos. En light mode esos blancos quedan
+ * invisibles sobre cream. Pisamos las utilidades de Tailwind con
+ * equivalentes apropiados sólo cuando data-theme="light".
+ *
+ * Sin esto, cambiar tokens no cambia nada visible — los hex
+ * literales ganan a las variables CSS por especificidad de hoja
+ * generada por Tailwind.
+ *
+ * Mapeo:
+ *   text-white       → foreground dark warm (#1a1a1a)
+ *   text-white/55 .. → muted warm + opacity equivalente
+ *   bg-white/N       → tinte cream warm (semitransparent dark)
+ *   border-white/N   → hairline warm
+ * =========================================================== */
+:root[data-theme="light"] .text-white { color: #1a1a1a !important; }
+:root[data-theme="light"] .text-white\/94,
+:root[data-theme="light"] .text-white\/92,
+:root[data-theme="light"] .text-white\/90,
+:root[data-theme="light"] .text-white\/88,
+:root[data-theme="light"] .text-white\/85,
+:root[data-theme="light"] .text-white\/80,
+:root[data-theme="light"] .text-white\/78,
+:root[data-theme="light"] .text-white\/75 { color: rgba(26, 26, 26, 0.92) !important; }
+:root[data-theme="light"] .text-white\/72,
+:root[data-theme="light"] .text-white\/70,
+:root[data-theme="light"] .text-white\/65,
+:root[data-theme="light"] .text-white\/60 { color: rgba(26, 26, 26, 0.75) !important; }
+:root[data-theme="light"] .text-white\/56,
+:root[data-theme="light"] .text-white\/55,
+:root[data-theme="light"] .text-white\/52,
+:root[data-theme="light"] .text-white\/50,
+:root[data-theme="light"] .text-white\/45,
+:root[data-theme="light"] .text-white\/40,
+:root[data-theme="light"] .text-white\/35 { color: var(--muted) !important; }
+
+:root[data-theme="light"] .bg-white { background-color: #ffffff !important; }
+:root[data-theme="light"] .bg-white\/20 { background-color: rgba(28, 25, 18, 0.08) !important; }
+:root[data-theme="light"] .bg-white\/10,
+:root[data-theme="light"] .bg-white\/8,
+:root[data-theme="light"] .bg-white\/6,
+:root[data-theme="light"] .bg-white\/5 { background-color: rgba(28, 25, 18, 0.05) !important; }
+:root[data-theme="light"] .bg-white\/\[0\.1\],
+:root[data-theme="light"] .bg-white\/\[0\.08\],
+:root[data-theme="light"] .bg-white\/\[0\.06\],
+:root[data-theme="light"] .bg-white\/\[0\.05\] { background-color: rgba(28, 25, 18, 0.05) !important; }
+/* `bg-white/[0.025..0.04]` se usa como SUPERFICIE de card en el
+   codebase (settings cards, daily reminder, etc.). En light deben
+   ir a blanco sólido + shadow para elevarse del canvas cream. */
+:root[data-theme="light"] .bg-white\/\[0\.04\],
+:root[data-theme="light"] .bg-white\/\[0\.03\],
+:root[data-theme="light"] .bg-white\/\[0\.025\] {
+  background-color: #ffffff !important;
+  box-shadow: var(--shadow-card);
+}
+
+:root[data-theme="light"] .border-white\/30 { border-color: rgba(28, 25, 18, 0.20) !important; }
+:root[data-theme="light"] .border-white\/20,
+:root[data-theme="light"] .border-white\/15,
+:root[data-theme="light"] .border-white\/12 { border-color: rgba(28, 25, 18, 0.14) !important; }
+:root[data-theme="light"] .border-white\/10,
+:root[data-theme="light"] .border-white\/8,
+:root[data-theme="light"] .border-white\/6 { border-color: rgba(28, 25, 18, 0.08) !important; }
+
+/* Mismos overrides para system-preference light (sin data-theme).
+   Aplica para usuarios que tienen OS en light y nunca tocaron
+   el toggle. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .text-white { color: #1a1a1a !important; }
+  :root:not([data-theme]) .text-white\/94,
+  :root:not([data-theme]) .text-white\/92,
+  :root:not([data-theme]) .text-white\/90,
+  :root:not([data-theme]) .text-white\/88,
+  :root:not([data-theme]) .text-white\/85,
+  :root:not([data-theme]) .text-white\/80,
+  :root:not([data-theme]) .text-white\/78,
+  :root:not([data-theme]) .text-white\/75 { color: rgba(26, 26, 26, 0.92) !important; }
+  :root:not([data-theme]) .text-white\/72,
+  :root:not([data-theme]) .text-white\/70,
+  :root:not([data-theme]) .text-white\/65,
+  :root:not([data-theme]) .text-white\/60 { color: rgba(26, 26, 26, 0.75) !important; }
+  :root:not([data-theme]) .text-white\/56,
+  :root:not([data-theme]) .text-white\/55,
+  :root:not([data-theme]) .text-white\/52,
+  :root:not([data-theme]) .text-white\/50,
+  :root:not([data-theme]) .text-white\/45,
+  :root:not([data-theme]) .text-white\/40,
+  :root:not([data-theme]) .text-white\/35 { color: var(--muted) !important; }
+  :root:not([data-theme]) .bg-white { background-color: #ffffff !important; }
+  :root:not([data-theme]) .bg-white\/20 { background-color: rgba(28, 25, 18, 0.08) !important; }
+  :root:not([data-theme]) .bg-white\/10,
+  :root:not([data-theme]) .bg-white\/8,
+  :root:not([data-theme]) .bg-white\/6,
+  :root:not([data-theme]) .bg-white\/5 { background-color: rgba(28, 25, 18, 0.05) !important; }
+  :root:not([data-theme]) .bg-white\/\[0\.1\],
+  :root:not([data-theme]) .bg-white\/\[0\.08\],
+  :root:not([data-theme]) .bg-white\/\[0\.06\],
+  :root:not([data-theme]) .bg-white\/\[0\.05\] { background-color: rgba(28, 25, 18, 0.05) !important; }
+  :root:not([data-theme]) .bg-white\/\[0\.04\],
+  :root:not([data-theme]) .bg-white\/\[0\.03\],
+  :root:not([data-theme]) .bg-white\/\[0\.025\] {
+    background-color: #ffffff !important;
+    box-shadow: var(--shadow-card);
+  }
+  :root:not([data-theme]) .border-white\/30 { border-color: rgba(28, 25, 18, 0.20) !important; }
+  :root:not([data-theme]) .border-white\/20,
+  :root:not([data-theme]) .border-white\/15,
+  :root:not([data-theme]) .border-white\/12 { border-color: rgba(28, 25, 18, 0.14) !important; }
+  :root:not([data-theme]) .border-white\/10,
+  :root:not([data-theme]) .border-white\/8,
+  :root:not([data-theme]) .border-white\/6 { border-color: rgba(28, 25, 18, 0.08) !important; }
+}
+
+/* Espejos para system-preference light (sin data-theme explícito).
+   Aplican los mismos overrides cuando el usuario tiene OS en light
+   y nunca tocó nuestro toggle. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .dp-nav-active {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    box-shadow:
+      0 1px 0 rgba(28, 25, 18, 0.04),
+      0 4px 10px -4px rgba(28, 25, 18, 0.10);
+  }
+  :root:not([data-theme]) .dp-nav-active svg { color: var(--color-gold) !important; }
+  :root:not([data-theme]) aside[class*="bg-[var(--bg-sidebar)]"] {
+    border-right: 1px solid rgba(28, 25, 18, 0.08);
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.6);
+  }
+  :root:not([data-theme]) .dp-app-canvas {
+    background:
+      radial-gradient(1100px 600px at 100% -10%, #fff8e4 0%, transparent 55%),
+      radial-gradient(900px 700px at -10% 110%, #f0ece1 0%, transparent 60%),
+      var(--bg-content);
+  }
+  :root:not([data-theme]) .dp-sotd-hero { box-shadow: var(--shadow-card); }
+  :root:not([data-theme]) .dp-sotd-hero:hover { box-shadow: var(--shadow-card-hover); }
+  :root:not([data-theme]) .dp-journey-card:not(.active-card) {
+    background: #ffffff !important;
+    border-color: rgba(28, 25, 18, 0.06);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -1px 0 rgba(28, 25, 18, 0.08),
+      0 4px 0 rgba(28, 25, 18, 0.10),
+      0 6px 14px -8px rgba(28, 25, 18, 0.14);
+  }
+  :root:not([data-theme]) .dp-journey-banner.locked,
+  :root:not([data-theme]) .j-topic-banner.locked {
+    background: #c8c2b3 !important;
+    background-color: #c8c2b3 !important;
+  }
+  :root:not([data-theme]) .dp-practice-donut {
+    background: #ffffff !important;
+    border: 1px solid rgba(28, 25, 18, 0.06) !important;
+    box-shadow: var(--shadow-card);
+  }
+  :root:not([data-theme]) .dp-practice-mode {
+    background: #ffffff !important;
+    border-color: rgba(28, 25, 18, 0.08) !important;
+    box-shadow: var(--shadow-card);
+  }
+  /* Mismo fix de iconos legibles, mirror para "system" + sistema light. */
+  :root:not([data-theme]) .dp-practice-mode .text-amber-100 {
+    color: #b45309 !important;
+  }
+  :root:not([data-theme]) .dp-practice-mode .text-emerald-100 {
+    color: #047857 !important;
+  }
+  :root:not([data-theme]) .dp-practice-mode .text-sky-100 {
+    color: #0369a1 !important;
+  }
+  :root:not([data-theme]) .dp-practice-mode .text-fuchsia-100 {
+    color: #a21caf !important;
+  }
+  :root:not([data-theme]) .dp-practice-mode .text-cyan-100 {
+    color: #0e7490 !important;
+  }
+  :root:not([data-theme]) .bg-\[\#0c2342\] {
+    background-color: #ffffff !important;
+    box-shadow: var(--shadow-card);
+  }
+  :root:not([data-theme]) .bg-blue-600\/30 { background-color: #e8e3f5 !important; }
+  :root:not([data-theme]) .text-blue-200 { color: #5b3fc0 !important; }
+  :root:not([data-theme]) .bg-\[\#0b1e36\],
+  :root:not([data-theme]) .bg-\[\#0D1B2A\],
+  :root:not([data-theme]) .bg-\[\#13284a\],
+  :root:not([data-theme]) .bg-\[\#102746\],
+  :root:not([data-theme]) .bg-\[\#0a1322\],
+  :root:not([data-theme]) .bg-\[\#0d2648\],
+  :root:not([data-theme]) .bg-\[\#08172b\],
+  :root:not([data-theme]) .bg-\[\#0f1728\],
+  :root:not([data-theme]) .bg-\[\#081a31\] {
+    background-color: #ffffff !important;
+    box-shadow: var(--shadow-card);
+  }
+  :root:not([data-theme]) .bg-\[\#1B2347\] {
+    background-color: #f1ece0 !important;
+    border: 1px solid rgba(28, 25, 18, 0.12) !important;
+    box-shadow: var(--shadow-card);
+  }
+  :root:not([data-theme]) .bg-\[\#1B2347\] svg { color: var(--foreground) !important; }
+  :root:not([data-theme]) .text-slate-50,
+  :root:not([data-theme]) .text-slate-100,
+  :root:not([data-theme]) .text-slate-200,
+  :root:not([data-theme]) .text-gray-50,
+  :root:not([data-theme]) .text-gray-100,
+  :root:not([data-theme]) .text-gray-200,
+  :root:not([data-theme]) .text-zinc-50,
+  :root:not([data-theme]) .text-zinc-100,
+  :root:not([data-theme]) .text-zinc-200 { color: #1a1a1a !important; }
+  :root:not([data-theme]) .text-slate-300,
+  :root:not([data-theme]) .text-gray-300,
+  :root:not([data-theme]) .text-zinc-300 { color: rgba(26, 26, 26, 0.85) !important; }
+  :root:not([data-theme]) .hover\:bg-white\/20:hover { background-color: rgba(28, 25, 18, 0.08) !important; }
+  :root:not([data-theme]) .hover\:bg-white\/15:hover,
+  :root:not([data-theme]) .hover\:bg-white\/10:hover,
+  :root:not([data-theme]) .hover\:bg-white\/8:hover,
+  :root:not([data-theme]) .hover\:bg-white\/5:hover { background-color: rgba(28, 25, 18, 0.06) !important; }
+  :root:not([data-theme]) .hover\:bg-white\/\[0\.08\]:hover,
+  :root:not([data-theme]) .hover\:bg-white\/\[0\.06\]:hover,
+  :root:not([data-theme]) .hover\:bg-white\/\[0\.05\]:hover,
+  :root:not([data-theme]) .hover\:bg-white\/\[0\.04\]:hover { background-color: rgba(28, 25, 18, 0.04) !important; }
+  :root:not([data-theme]) .bg-black\/60,
+  :root:not([data-theme]) .bg-black\/55,
+  :root:not([data-theme]) .bg-black\/50,
+  :root:not([data-theme]) .bg-black\/45 { background-color: rgba(28, 25, 18, 0.45) !important; }
+  :root:not([data-theme]) .bg-black\/30,
+  :root:not([data-theme]) .bg-black\/25,
+  :root:not([data-theme]) .bg-black\/20 { background-color: rgba(28, 25, 18, 0.18) !important; }
 }

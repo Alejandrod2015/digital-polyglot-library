@@ -274,7 +274,10 @@ function formatShortSeries(bookTitle?: string, level?: string): string {
 }
 
 function formatRemainingDuration(totalSeconds?: number, progressSec?: number): string {
-  if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "--:-- left";
+  // Sin duración (story aún sin metadata de audio cargada) → string
+  // vacío. El check `story.timeLeft && …` en ContinueCard esconde la
+  // píldora completa, así no sale "--:-- left" como placeholder feo.
+  if (!totalSeconds || !Number.isFinite(totalSeconds) || totalSeconds <= 0) return "";
   const safeProgress =
     typeof progressSec === "number" && Number.isFinite(progressSec) && progressSec > 0
       ? progressSec
@@ -1245,12 +1248,20 @@ export default function HomeClient({
         const topic = story.topic ?? bookMeta.topic;
         const normalizedText = normalizeForMatch(stripHtml(story.text ?? ""));
         const textTokens = tokenizeForMatch(story.text ?? "");
-        const coverUrl =
+        // Catálogo viejo guarda `cover`, libro argentino guarda `coverUrl`.
+        // Sin chequear ambos, stories argentinas caen al book cover.
+        const storyCoverRaw =
           typeof story.cover === "string" && story.cover.trim() !== ""
-            ? resolvePublicMediaUrl(story.cover) ?? story.cover
-            : typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
-              ? resolvePublicMediaUrl(bookMeta.cover) ?? bookMeta.cover
-              : "/covers/default.jpg";
+            ? story.cover
+            : typeof (story as { coverUrl?: unknown }).coverUrl === "string" &&
+              ((story as { coverUrl?: string }).coverUrl ?? "").trim() !== ""
+              ? (story as { coverUrl?: string }).coverUrl
+              : null;
+        const coverUrl = storyCoverRaw
+          ? resolvePublicMediaUrl(storyCoverRaw) ?? storyCoverRaw
+          : typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
+            ? resolvePublicMediaUrl(bookMeta.cover) ?? bookMeta.cover
+            : "/covers/default.jpg";
         const rawAudio = typeof story.audio === "string" ? story.audio.trim() : "";
         const audioSrc = resolveCatalogAudioUrl(rawAudio);
 
@@ -1409,11 +1420,17 @@ export default function HomeClient({
         title: story.title,
         bookTitle: book.title,
         cover:
+          // `coverUrl` (argentinian book) | `cover` (resto) → ambos chequeados
+          // antes de caer al book.cover, sino las stories argentinas pierden
+          // su imagen propia.
           typeof story.cover === "string" && story.cover.trim() !== ""
             ? story.cover
-            : typeof book.cover === "string" && book.cover.trim() !== ""
-              ? book.cover
-              : "/covers/default.jpg",
+            : typeof (story as { coverUrl?: unknown }).coverUrl === "string" &&
+              ((story as { coverUrl?: string }).coverUrl ?? "").trim() !== ""
+              ? (story as { coverUrl?: string }).coverUrl!
+              : typeof book.cover === "string" && book.cover.trim() !== ""
+                ? book.cover
+                : "/covers/default.jpg",
         language: story.language ?? book.language,
         region: story.region ?? book.region,
         level: story.level ?? book.level,
@@ -1552,15 +1569,23 @@ export default function HomeClient({
             <LanguageBadge language={item.language} />
             <RegionBadge region={item.region} />
           </div>
-          <p className="mt-auto inline-flex items-center gap-2 pt-1.5 text-[12px] font-bold tabular-nums text-[var(--muted)]">
-            <span>{formatRemainingDuration(item.audioDurationSec, item.progressSec)}</span>
-            {item.topic ? (
-              <>
-                <span aria-hidden="true" className="inline-block h-[3px] w-[3px] rounded-full bg-[var(--muted)]" />
-                <span>{formatTopic(item.topic)}</span>
-              </>
-            ) : null}
-          </p>
+          {(() => {
+            // Hide la línea time-left · topic cuando no hay duración
+            // y tampoco topic, para no dejar un párrafo vacío. Si solo
+            // falta uno, omite ese trozo + el bullet separator.
+            const remaining = formatRemainingDuration(item.audioDurationSec, item.progressSec);
+            const topic = item.topic ? formatTopic(item.topic) : "";
+            if (!remaining && !topic) return null;
+            return (
+              <p className="mt-auto inline-flex items-center gap-2 pt-1.5 text-[12px] font-bold tabular-nums text-[var(--muted)]">
+                {remaining ? <span>{remaining}</span> : null}
+                {remaining && topic ? (
+                  <span aria-hidden="true" className="inline-block h-[3px] w-[3px] rounded-full bg-[var(--muted)]" />
+                ) : null}
+                {topic ? <span>{topic}</span> : null}
+              </p>
+            );
+          })()}
         </div>
       </Link>
     );
@@ -1956,7 +1981,19 @@ export default function HomeClient({
           there is no continue-listening to surface above. */}
       {isPersonalizationReady && featuredFreeStory && continueListening.length === 0 && (
         <section className="w-full mb-14">
-          <SectionHead title="Your free story" sub="Hand-picked for your level and interests" />
+          <SectionHead
+            // Para free/basic la copy "Your free story" es literal — es
+            // la story diaria que pueden abrir sin pagar. Para
+            // premium/polyglot todo está desbloqueado, así que llamarla
+            // "Your free story" es confuso. Renombramos al rol real
+            // (Story of the day).
+            title={
+              plan === "premium" || plan === "polyglot"
+                ? "Story of the day"
+                : "Your free story"
+            }
+            sub="Hand-picked for your level and interests"
+          />
           <StoryOfDayHero
             story={{
               href: featuredFreeStory.href,
@@ -2036,7 +2073,19 @@ export default function HomeClient({
 
       {isPersonalizationReady && featuredFreeStory && continueListening.length > 0 && (
         <section className="w-full mb-14">
-          <SectionHead title="Your free story" sub="Hand-picked for your level and interests" />
+          <SectionHead
+            // Para free/basic la copy "Your free story" es literal — es
+            // la story diaria que pueden abrir sin pagar. Para
+            // premium/polyglot todo está desbloqueado, así que llamarla
+            // "Your free story" es confuso. Renombramos al rol real
+            // (Story of the day).
+            title={
+              plan === "premium" || plan === "polyglot"
+                ? "Story of the day"
+                : "Your free story"
+            }
+            sub="Hand-picked for your level and interests"
+          />
           <StoryOfDayHero
             story={{
               href: featuredFreeStory.href,

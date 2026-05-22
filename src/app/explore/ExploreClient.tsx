@@ -159,7 +159,11 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
       const storyLanguage = getString(story, "language") ?? language;
       const storyRegion = getString(story, "region") ?? region;
       const storyLevel = getString(story, "level") ?? level;
-      const storyCover = normalizeCoverUrl(getString(story, "cover"));
+      // El libro argentino guarda `coverUrl` en vez de `cover`; los otros usan `cover`.
+      // Sin chequear ambos, las stories argentinas caen al book cover por default.
+      const storyCoverRaw =
+        getString(story, "cover") || getString(story, "coverUrl") || "";
+      const storyCover = normalizeCoverUrl(storyCoverRaw);
       const coverUrl = storyCover !== "/covers/default.jpg" ? storyCover : bookCover;
       const storyTopics = toTopicList([
         ...(toTopicList(story["topic"])),
@@ -219,6 +223,14 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   const selectedTopicKey = normalizeTopicKey(topicFromUrl);
   const languageFromUrl = searchParams.get("language") ?? "";
   const regionFromUrl = searchParams.get("region") ?? "";
+  // Free-text search via topbar Cmd+K. Substring-matches contra
+  // title, topic, region, themes. Lowercase, sin diacríticos para
+  // que "panaderia" matchee "Panadería". Vacío = no filtra.
+  const qFromUrl = (searchParams.get("q") ?? "").trim();
+  const qNeedle = qFromUrl
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "");
 
   const rawTargetLanguages = user?.publicMetadata?.targetLanguages as unknown;
   const targetLanguages = useMemo(() => rawTargetLanguages ?? [], [rawTargetLanguages]);
@@ -488,12 +500,46 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
       return scorePolyglot(b) - scorePolyglot(a) || a.title.localeCompare(b.title);
     });
 
-    const preview = rankedBookStories.slice(0, 18);
+    // Free-text post-filter (Cmd+K → /explore?q=…). Aplica al final
+    // sobre los rankings ya ordenados, así no rompe scoring.
+    const norm = (s: string) =>
+      s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    const matchesQ = (haystack: string) =>
+      !qNeedle || norm(haystack).includes(qNeedle);
+
+    const qBooks = qNeedle
+      ? rankedBooks.filter((book) => {
+          if (!isRecord(book)) return false;
+          const fields = [
+            getString(book, "title"),
+            getString(book, "topic"),
+            getString(book, "region"),
+            getString(book, "description"),
+          ]
+            .filter(Boolean)
+            .join(" ");
+          return matchesQ(fields);
+        })
+      : rankedBooks;
+
+    const qBookStories = qNeedle
+      ? rankedBookStories.filter((story) =>
+          matchesQ([story.storyTitle, story.bookTitle, ...(story.topics ?? []), story.region ?? ""].join(" "))
+        )
+      : rankedBookStories;
+
+    const qPolyglotStories = qNeedle
+      ? rankedPolyglotStories.filter((story) =>
+          matchesQ([story.title, story.topic ?? "", story.region ?? "", ...(story.themes ?? [])].join(" "))
+        )
+      : rankedPolyglotStories;
+
+    const preview = qBookStories.slice(0, 18);
 
     return {
-      filteredBooks: rankedBooks,
-      filteredPolyglotStories: rankedPolyglotStories,
-      allFilteredBookStories: rankedBookStories,
+      filteredBooks: qBooks,
+      filteredPolyglotStories: qPolyglotStories,
+      allFilteredBookStories: qBookStories,
       previewBookStories: preview,
       languageChips: languageOptions,
       regionChips: regionOptions,
@@ -514,6 +560,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     learningGoal,
     dailyMinutes,
     topicFromUrl,
+    qNeedle,
   ]);
 
   const topicRows = useMemo(() => {

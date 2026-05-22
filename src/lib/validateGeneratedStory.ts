@@ -291,6 +291,48 @@ export function validateGeneratedStory(
     detail: titleBanned ? `Matches forbidden pattern: ${titleBanned}` : undefined,
   });
 
+  // Title cultural anchor (heurístico proxy del spec §1 "concrete
+  // cultural anchor: real neighborhood, specific dish, named venue,
+  // or traditional object"). Sin whitelist exhaustiva de anchors
+  // reales por journey, usamos blacklist de sustantivos genéricos:
+  // si el título contiene uno y nada más, probablemente le falta el
+  // anchor concreto. Atrapa "Una cena en casa", "Un día en Madrid",
+  // "La noche del barrio". Status warn (no fail) porque un genérico
+  // junto a un anchor válido ("Día de fiesta en Coyoacán") es
+  // aceptable.
+  const TITLE_GENERIC_NOUNS = new Set([
+    // ES
+    "día", "dia", "viaje", "comida", "casa", "noche", "tarde", "cena",
+    "mañana", "manana", "momento", "vida", "historia", "almuerzo",
+    "desayuno", "fiesta",
+    // DE
+    "tag", "reise", "essen", "haus", "nacht", "abend", "morgen",
+    "moment", "leben", "geschichte", "mittag",
+    // IT
+    "giorno", "viaggio", "cibo", "notte", "sera", "mattina", "vita",
+    "storia",
+    // PT
+    "viagem", "noite", "manhã", "manha",
+    // FR
+    "jour", "voyage", "repas", "soir", "matin", "histoire",
+  ]);
+  const titleNormalized = parsed.title
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "");
+  const titleGenericHits = titleNormalized
+    .split(/[^a-zñü]+/)
+    .filter(Boolean)
+    .filter((w) => TITLE_GENERIC_NOUNS.has(w));
+  checks.push({
+    id: "title-cultural-anchor",
+    label: "Title avoids generic nouns without concrete anchor",
+    status: titleGenericHits.length === 0 ? "pass" : "warn",
+    detail: titleGenericHits.length
+      ? `Generic noun(s): ${titleGenericHits.join(", ")}. Add a concrete anchor (neighborhood, dish, named venue).`
+      : undefined,
+  });
+
   // ─── Synopsis ──────────────────────────────────────────
   const synWords = countWords(parsed.synopsis);
   checks.push({
@@ -351,6 +393,48 @@ export function validateGeneratedStory(
     status: banHit ? "fail" : "pass",
     detail: banHit ? `Matched: ${banHit}` : undefined,
   });
+
+  // CEFR lexical red-flags. Heurística MÍNIMA: lista curada de
+  // adverbios discursivos / palabras académicas claramente B2+ que
+  // no deberían aparecer en A1/A2. Es expandible. Status warn (no
+  // fail) porque el contexto puede justificar excepciones y la
+  // lista no es exhaustiva. Para hacer este check robusto haría
+  // falta un lemma frequency list por nivel (TODO fase 2).
+  const CEFR_HIGH_WORDS: Record<string, string[]> = {
+    DE: [
+      "dementsprechend", "demnach", "infolgedessen", "mithin",
+      "dergestalt", "gewissermaßen", "hinsichtlich", "schlechterdings",
+      "keineswegs", "ebendarum", "diesbezüglich",
+    ],
+    ES: [
+      "empero", "asimismo", "ulteriormente", "consecuentemente",
+      "subsiguientemente", "presuntamente", "indudablemente",
+      "paulatinamente", "atendiendo",
+    ],
+    IT: [
+      "nondimeno", "pertanto", "sicché", "frattanto", "verosimilmente",
+      "presumibilmente", "indubbiamente", "conseguentemente",
+    ],
+  };
+  const ctxLevel = (context.level ?? "").toUpperCase();
+  const isBasic = ctxLevel === "A1" || ctxLevel === "A2";
+  const ctxLang = (context.language ?? "").toUpperCase();
+  const cefrFlags = CEFR_HIGH_WORDS[ctxLang] ?? [];
+  if (isBasic && cefrFlags.length) {
+    const bodyLowerForCefr = parsed.text.toLowerCase();
+    const cefrHits = cefrFlags.filter((w) => {
+      const re = new RegExp(`\\b${escapeRegex(w.toLowerCase())}\\b`, "i");
+      return re.test(bodyLowerForCefr);
+    });
+    checks.push({
+      id: "body-cefr-level",
+      label: `Body avoids high-CEFR discourse markers for ${ctxLevel}`,
+      status: cefrHits.length === 0 ? "pass" : "warn",
+      detail: cefrHits.length
+        ? `Found: ${cefrHits.join(", ")} (B2+/C1 markers, revisa nivel)`
+        : undefined,
+    });
+  }
 
   // ─── arcType ───────────────────────────────────────────
   checks.push({
@@ -426,6 +510,29 @@ export function validateGeneratedStory(
       : undefined,
   });
 
+  // Spec §4: separable verbs en DE. El `surface` DEBE ser una cadena
+  // contigua que aparece literalmente en el body. Si el body parte el
+  // verbo (`lüg mich nicht an`), usar la lemma (`anlügen`) como
+  // surface, NUNCA la forma separada (`lüg an`). Si lang=DE y un
+  // surface contiene espacios → el karaoke pill matcher va a fallar
+  // silenciosamente.
+  if ((context.language ?? "").toUpperCase() === "DE") {
+    const splitSurfaces = parsed.vocab.filter((v) => {
+      const surface = v.surface ?? v.word;
+      return /\s/.test(surface);
+    });
+    checks.push({
+      id: "vocab-surface-contiguous",
+      label: "Vocab surfaces are single contiguous strings (DE separable verbs)",
+      status: splitSurfaces.length === 0 ? "pass" : "fail",
+      detail: splitSurfaces.length
+        ? splitSurfaces
+            .map((v) => `${v.word}: "${v.surface ?? v.word}"`)
+            .join("; ")
+        : undefined,
+    });
+  }
+
   // Same-root duplicates
   const langForRoot = (context.language ?? "").toUpperCase();
   const rootMap = new Map<string, string[]>();
@@ -463,16 +570,32 @@ export function validateGeneratedStory(
     });
   }
 
-  // Vocab distribution per paragraph
+  // Vocab distribution per paragraph. Spec §4: aim for 3-5 items per
+  // paragraph, NOT more than ~30% of items in any single paragraph.
+  // El check anterior solo veía cluster extremo (0+ y 6+). Ahora
+  // endurecemos: si cualquier ¶ tiene >30% del total → fail. Con
+  // vocab=20 eso son 6+ items en un solo ¶; con vocab=18, 5+.
   const perPara = vocabPerParagraph(parsed.text, parsed.vocab);
   const zeroParaCount = perPara.filter((n) => n === 0).length;
   const sixPlusParaCount = perPara.filter((n) => n >= 6).length;
   const clusterIssue = zeroParaCount > 0 && sixPlusParaCount > 0;
+  const maxInOnePara = perPara.length ? Math.max(...perPara) : 0;
+  const totalVocab = parsed.vocab.length;
+  const maxPct = totalVocab > 0 ? maxInOnePara / totalVocab : 0;
+  const overCap = totalVocab > 0 && maxPct > 0.3;
   checks.push({
     id: "vocab-distribution",
-    label: "Vocab distributed across paragraphs (no cluster)",
-    status: clusterIssue ? "fail" : zeroParaCount > 2 ? "warn" : "pass",
-    detail: `per ¶: [${perPara.join(", ")}]`,
+    label: "Vocab distributed across paragraphs (no cluster, ≤30% per ¶)",
+    status:
+      overCap || clusterIssue
+        ? "fail"
+        : zeroParaCount > 2
+          ? "warn"
+          : "pass",
+    detail:
+      overCap
+        ? `Cluster: ¶ con ${maxInOnePara}/${totalVocab} items (${Math.round(maxPct * 100)}%) supera el 30% cap. per ¶: [${perPara.join(", ")}]`
+        : `per ¶: [${perPara.join(", ")}]`,
   });
 
   // Synopsis ↔ body character match — spec calls this "REQUIRED" and a
@@ -517,6 +640,39 @@ export function validateGeneratedStory(
       status: titleHit ? "fail" : "pass",
       detail: titleHit ? `Overlap with "${titleHit.title}"` : undefined,
     });
+
+    // Title-pattern monotony. Detecta cuando el generador cae en un
+    // mismo "esqueleto" repetidamente (e.g. "Peceras en Miraflores",
+    // "Faroles en Tepoztlán", "Velas en Oaxaca" — todas son
+    // "[Plural noun] en [Place]"). Skeleton = lista ordenada de
+    // function words / connectors en lowercase ("en", "de", "y",
+    // "a", "del", "la", "el", "con", "para"). Si 3+ existing comparten
+    // el skeleton del nuevo título → warn al editor.
+    const CONNECTORS = new Set([
+      "en", "de", "del", "la", "el", "los", "las", "y", "o",
+      "a", "al", "con", "por", "para", "un", "una", "que",
+    ]);
+    const skeleton = (t: string): string =>
+      t
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[̀-ͯ]/g, "")
+        .split(/[^a-z]+/)
+        .filter((w) => CONNECTORS.has(w))
+        .join(" ");
+    const newSkeleton = skeleton(parsed.title);
+    if (newSkeleton.length > 0) {
+      const matches = existing.filter((e) => skeleton(e.title) === newSkeleton);
+      checks.push({
+        id: "title-pattern-variety",
+        label: "Title structure differs from prior titles",
+        status: matches.length >= 3 ? "warn" : "pass",
+        detail:
+          matches.length >= 3
+            ? `${matches.length} prior titles share the "${newSkeleton}" skeleton — varíen la estructura`
+            : undefined,
+      });
+    }
   }
 
   // Vocab cross-story repetition

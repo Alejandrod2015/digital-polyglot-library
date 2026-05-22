@@ -357,11 +357,15 @@ export default function VocabPanel({
         transform: "translateX(-50%)",
         width: "calc(100% - 36px)",
         maxWidth: 448,
-        background: "#0f2138",
-        border: "1px solid #28415f",
+        // Tokens en vez de hex: en dark mode el browser pinta navy
+        // (--surface/--card-border valores dark); en light pinta white
+        // card con la sombra del token. Antes los hex hardcoded
+        // dejaban el panel dark sobre cream.
+        background: "var(--surface)",
+        border: "1px solid var(--card-border)",
         borderRadius: 20,
         padding: "16px 18px",
-        boxShadow: "0 8px 14px rgba(0,0,0,0.22)",
+        boxShadow: "var(--shadow-card, 0 8px 14px rgba(0,0,0,0.22))",
       }}
       aria-label="qa-reader-vocab-bubble"
     >
@@ -408,9 +412,9 @@ export default function VocabPanel({
               width: 32,
               height: 32,
               borderRadius: 999,
-              backgroundColor: "#213754",
-              color: "#dbe9ff",
-              border: "none",
+              backgroundColor: "var(--chip-bg)",
+              color: "var(--foreground)",
+              border: "1px solid var(--chip-border)",
             }}
           >
             <X size={16} strokeWidth={2.6} style={{ pointerEvents: "none" }} />
@@ -420,7 +424,7 @@ export default function VocabPanel({
         {/* Definition */}
         {definition ? (
           <p
-            className="text-[#eef4ff] mt-1.5"
+            className="mt-1.5 text-[var(--foreground)]"
             style={{ fontSize: 15, lineHeight: "22px" }}
           >
             {definition}
@@ -458,9 +462,12 @@ export default function VocabPanel({
                     boxShadow: "0 4px 12px rgba(248, 193, 92, 0.45)",
                   }
                 : {
-                    backgroundColor: "#1e3a5f",
-                    border: "1px solid rgba(125, 211, 252, 0.5)",
-                    color: "#ffffff",
+                    // Tokens en vez de hex: en light el botón Save
+                    // queda gris-cream con foreground dark; en dark
+                    // mantiene look navy con borde cyan.
+                    backgroundColor: "var(--chip-bg)",
+                    border: "1px solid var(--card-border)",
+                    color: "var(--foreground)",
                     fontWeight: 700,
                     fontSize: 14,
                     letterSpacing: "0.012em",

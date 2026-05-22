@@ -222,22 +222,30 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 28, stiffness: 260 }}
-            className="absolute inset-x-0 bottom-0 rounded-t-[28px] border border-b-0 border-[var(--card-border)] shadow-[0_-20px_50px_rgba(0,0,0,0.6)] text-white flex flex-col"
+            className="absolute inset-x-0 bottom-0 rounded-t-[28px] border border-b-0 border-[var(--card-border)] shadow-[0_-20px_50px_rgba(0,0,0,0.6)] flex flex-col"
             style={{
-              background: "linear-gradient(180deg, #0a2b56 0%, #051834 100%)",
+              // Tokens semánticos: dark mode mantiene el gradient azul
+              // (--bg-2 = #0a2b56, --bg-1 = #051834); light mode
+              // resuelve a cream (#e8e2d2 → #f6f4ee).
+              background:
+                "linear-gradient(180deg, var(--bg-2) 0%, var(--bg-1, var(--background)) 100%)",
+              color: "var(--foreground)",
               maxHeight: "85vh",
               paddingBottom: "max(22px, env(safe-area-inset-bottom))",
             }}
           >
             <div className="flex justify-center pt-2.5 pb-1">
-              <div className="h-[5px] w-11 rounded-full bg-white/25" />
+              <div
+                className="h-[5px] w-11 rounded-full"
+                style={{ background: "var(--card-border)" }}
+              />
             </div>
 
             <div className="px-[22px] pt-3 pb-1">
-              <div className="text-[10.5px] font-black tracking-[0.22em] text-white/55 uppercase">
+              <div className="text-[10.5px] font-black tracking-[0.22em] uppercase text-[var(--muted)]">
                 Switch journey
               </div>
-              <div className="mt-1 text-[26px] font-black leading-tight tracking-[-0.02em] text-white">
+              <div className="mt-1 text-[26px] font-black leading-tight tracking-[-0.02em] text-[var(--foreground)]">
                 {targetLanguages.length === 1
                   ? "Your journey"
                   : `${targetLanguages.length} journeys in progress`}
@@ -259,18 +267,19 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                     disabled={disabled || isSwitching}
                     className={[
                       "flex items-center gap-3.5 p-3.5 rounded-[18px] text-left transition-colors",
-                      row.active
-                        ? "border-[1.5px]"
-                        : "border border-white/8 bg-white/[0.025] hover:bg-white/[0.05]",
+                      row.active ? "border-[1.5px]" : "border",
                       disabled ? "opacity-40" : "",
                     ].join(" ")}
                     style={
                       row.active
                         ? {
-                            background: "rgba(252, 211, 77, 0.04)",
+                            background: "rgba(252, 211, 77, 0.08)",
                             borderColor: "rgba(252, 211, 77, 0.55)",
                           }
-                        : { background: "rgba(255, 255, 255, 0.025)" }
+                        : {
+                            background: "var(--card-bg)",
+                            borderColor: "var(--card-border)",
+                          }
                     }
                   >
                     {/* Flag tile: square with inner border (iPhone-style) */}
@@ -281,9 +290,9 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                         width: 52,
                         height: 52,
                         borderRadius: 14,
-                        background: "rgba(255,255,255,0.03)",
+                        background: "var(--card-bg-hover)",
                         boxShadow:
-                          "inset 0 0 0 1.5px rgba(125,211,252,0.45), inset 0 0 0 4px rgba(8,22,46,0.95), inset 0 0 0 5.5px rgba(125,211,252,0.25)",
+                          "inset 0 0 0 1.5px rgba(125,211,252,0.45), inset 0 0 0 4px var(--bg-2), inset 0 0 0 5.5px rgba(125,211,252,0.25)",
                       }}
                     >
                       {row.flag}
@@ -291,11 +300,11 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-baseline gap-1.5 whitespace-nowrap overflow-hidden">
-                        <span className="text-[17px] font-black tracking-[-0.015em] text-white truncate">
+                        <span className="text-[17px] font-black tracking-[-0.015em] truncate text-[var(--foreground)]">
                           {row.name}
                         </span>
                         {row.variantLabel ? (
-                          <span className="text-[12px] font-bold text-white/45 whitespace-nowrap">
+                          <span className="text-[12px] font-bold whitespace-nowrap text-[var(--muted)]">
                             · {row.variantLabel}
                           </span>
                         ) : null}
@@ -306,7 +315,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                         <span
                           className="inline-flex items-center gap-1 text-[13px] font-black tracking-[-0.02em]"
                           style={{
-                            color: row.streak > 0 ? "#fb923c" : "rgba(255,255,255,0.4)",
+                            color: row.streak > 0 ? "#fb923c" : "var(--muted)",
                           }}
                         >
                           <Zap size={12} fill="currentColor" strokeWidth={0} />
@@ -315,7 +324,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                         <span
                           className="inline-flex items-center gap-1 text-[13px] font-black tracking-[-0.02em]"
                           style={{
-                            color: row.xpTotal > 0 ? "#fcd34d" : "rgba(255,255,255,0.4)",
+                            color: row.xpTotal > 0 ? "var(--color-gold)" : "var(--muted)",
                           }}
                         >
                           <Star size={12} fill="currentColor" strokeWidth={0} />
@@ -332,19 +341,19 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                     </div>
 
                     {isSwitching ? (
-                      <Loader2 size={16} className="text-white/70 animate-spin shrink-0" />
+                      <Loader2 size={16} className="animate-spin shrink-0 text-[var(--muted)]" />
                     ) : row.active ? (
                       <span
                         className="shrink-0 rounded-full px-3 py-1.5 text-[10px] font-black tracking-[0.14em]"
                         style={{
-                          background: "#fcd34d",
+                          background: "var(--color-gold)",
                           color: "#2a1a02",
                         }}
                       >
                         ACTIVE
                       </span>
                     ) : (
-                      <ChevronRight size={18} className="text-white/45 shrink-0" />
+                      <ChevronRight size={18} className="shrink-0 text-[var(--muted)]" />
                     )}
                   </button>
                 );
@@ -352,12 +361,15 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
             </div>
 
             {/* Single "+ Add journey" full-width button at the bottom */}
-            <div className="mt-3 border-t border-white/10 px-[22px] pt-3">
+            <div
+              className="mt-3 px-[22px] pt-3"
+              style={{ borderTop: "1px solid var(--card-border)" }}
+            >
               <button
                 type="button"
                 onClick={goToAddLanguage}
                 disabled={Boolean(switchingTo)}
-                className="w-full rounded-[16px] border border-sky-300/20 bg-sky-300/[0.06] py-3.5 text-[15px] font-bold text-sky-300 hover:bg-sky-300/10 disabled:opacity-50 inline-flex items-center justify-center gap-2"
+                className="w-full rounded-[16px] border border-sky-300/30 bg-sky-300/[0.08] py-3.5 text-[15px] font-bold text-sky-300 hover:bg-sky-300/12 disabled:opacity-50 inline-flex items-center justify-center gap-2"
               >
                 <Plus size={16} strokeWidth={2.6} />
                 Add journey

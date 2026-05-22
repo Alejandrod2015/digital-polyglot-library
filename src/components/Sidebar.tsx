@@ -178,8 +178,11 @@ export default function Sidebar({ onClose }: SidebarProps) {
   const navLinkClass =
     "flex items-center gap-3.5 rounded-[10px] px-3 py-2.5 text-[15px] font-bold text-[var(--muted)] hover:bg-white/[0.04] hover:text-[var(--foreground)] transition-colors";
 
+  // `dp-nav-active` es un marker class — Tailwind solo no llega: en
+  // light mode `globals.css` lo usa para reemplazar el bg-gold/18 por
+  // una píldora blanca con shadow (paper-card treatment del HANDOFF 2).
   const navLinkActiveClass =
-    "flex items-center gap-3.5 rounded-[10px] bg-[color:var(--color-gold)]/[0.18] px-3 py-2.5 text-[15px] font-bold text-[var(--foreground)] [&_svg]:text-[var(--color-gold)] transition-colors";
+    "dp-nav-active flex items-center gap-3.5 rounded-[10px] bg-[color:var(--color-gold)]/[0.18] px-3 py-2.5 text-[15px] font-bold text-[var(--foreground)] [&_svg]:text-[var(--color-gold)] transition-colors";
 
   const linkClass = (href: string) => (isActiveRoute(href) ? navLinkActiveClass : navLinkClass);
 
@@ -225,9 +228,11 @@ export default function Sidebar({ onClose }: SidebarProps) {
           <Home size={20} /> Home
         </Link>
 
-        {/* Journey: gated to Polyglot/Premium plans. Free/basic users see
-            the rest of the nav without this entry (matches mobile app). */}
-        {(plan === "polyglot" || plan === "premium") && (
+        {/* Journey: solo visible para Premium. Polyglot ya ve Journey
+            como su Home (paridad con mobile, donde no existe entrada
+            separada para Polyglot), así que la entrada extra acá
+            sería redundante. Free/basic siguen sin verla. */}
+        {plan === "premium" && (
           <Link
             href="/journey"
             onClick={handleNavClick}
@@ -297,14 +302,28 @@ export default function Sidebar({ onClose }: SidebarProps) {
           </Link>
         )}
 
-        <Link
-          href={plan === "basic" || plan === "premium" || plan === "polyglot" ? "/story-of-the-day" : "/story-of-the-week"}
-          onClick={handleNavClick}
-          className={linkClass(plan === "basic" || plan === "premium" || plan === "polyglot" ? "/story-of-the-day" : "/story-of-the-week")}
-        >
-          <BookMarked size={20} />{" "}
-          {plan === "basic" || plan === "premium" || plan === "polyglot" ? "Story of the Day" : "Story of the Week"}
-        </Link>
+        {/* Story of the day/week gating:
+            - free  → solo "Story of the Week" (su unlock weekly)
+            - basic / premium → solo "Story of the Day" (paid, no necesitan weekly)
+            - polyglot → AMBOS (acceso total, ve las dos versiones) */}
+        {plan !== "free" && (
+          <Link
+            href="/story-of-the-day"
+            onClick={handleNavClick}
+            className={linkClass("/story-of-the-day")}
+          >
+            <BookMarked size={20} /> Story of the Day
+          </Link>
+        )}
+        {(plan === "free" || plan === "polyglot") && (
+          <Link
+            href="/story-of-the-week"
+            onClick={handleNavClick}
+            className={linkClass("/story-of-the-week")}
+          >
+            <BookMarked size={20} /> Story of the Week
+          </Link>
+        )}
 
         {(!user || plan === "free" || plan === "basic") && (
           <Link
