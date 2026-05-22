@@ -3,10 +3,13 @@
 import * as React from "react";
 
 import HighlightedStoryContent from "@/components/HighlightedStoryContent";
+// IMPORTANT: importar de `audioWordTimingsTypes` (puro) y NO de
+// `audioWordTimings` que arrastra prisma al cliente y peta el build
+// con "PrismaClient is unable to run in this browser environment".
 import {
   coerceAudioWordTimings,
   type AudioWordTimingsPayload,
-} from "@/lib/audioWordTimings";
+} from "@/lib/audioWordTimingsTypes";
 
 type VocabItem = { word: string; surface?: string; definition: string; type?: string };
 

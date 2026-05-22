@@ -2,7 +2,12 @@
 
 import * as React from "react";
 
-import type { AudioWordTimingsPayload, StoryWordToken } from "@/lib/audioWordTimings";
+// Apuntamos al archivo de TIPOS puro (sin prisma). `import type` se
+// borra en compile y Webpack no carga el módulo runtime, pero esto
+// blinda contra futuras imports runtime: si alguien convierte este
+// a `import { ... }`, no peta el client bundle con
+// "PrismaClient is unable to run in this browser environment".
+import type { AudioWordTimingsPayload, StoryWordToken } from "@/lib/audioWordTimingsTypes";
 import { normalizeVocabType } from "@/lib/vocabTypes";
 
 type VocabItem = { word: string; surface?: string; type?: string | null; definition?: string };

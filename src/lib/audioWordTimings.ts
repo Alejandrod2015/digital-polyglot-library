@@ -11,22 +11,22 @@
 import { alignStorySentencesToWords, type AudioSegment } from "@/lib/audioSegments";
 import { prisma } from "@/lib/prisma";
 import { extractStoryPlainText, stripSpeakerLabels } from "./storyPlainText";
+import {
+  AUDIO_WORD_TIMINGS_VERSION,
+  coerceAudioWordTimings,
+  type AudioWordTimingsPayload,
+  type StoryWordToken,
+} from "./audioWordTimingsTypes";
 
-export const AUDIO_WORD_TIMINGS_VERSION = 1 as const;
-
-export type StoryWordToken = {
-  text: string;
-  charStart: number;
-  charEnd: number;
-  startSec: number | null;
-  endSec: number | null;
-};
-
-export type AudioWordTimingsPayload = {
-  version: typeof AUDIO_WORD_TIMINGS_VERSION;
-  audioDurationSec: number | null;
-  storyPlainText: string;
-  words: StoryWordToken[];
+// Re-exportamos los tipos + parser puro para que los callers viejos
+// sigan funcionando sin tocar imports. Client components deberían
+// importar de `./audioWordTimingsTypes` directo para evitar arrastrar
+// prisma al bundle del browser (este archivo es server-only).
+export {
+  AUDIO_WORD_TIMINGS_VERSION,
+  coerceAudioWordTimings,
+  type AudioWordTimingsPayload,
+  type StoryWordToken,
 };
 
 type ModalAlignResponse = {
@@ -355,41 +355,5 @@ function clampSegmentEndsToNextStart(segments: AudioSegment[]): AudioSegment[] {
   });
 }
 
-export function coerceAudioWordTimings(raw: unknown): AudioWordTimingsPayload | null {
-  if (!raw || typeof raw !== "object") return null;
-  const record = raw as Record<string, unknown>;
-  if (record.version !== AUDIO_WORD_TIMINGS_VERSION) return null;
-  if (typeof record.storyPlainText !== "string") return null;
-  if (!Array.isArray(record.words)) return null;
-
-  const words: StoryWordToken[] = [];
-  for (const item of record.words) {
-    if (!item || typeof item !== "object") continue;
-    const w = item as Record<string, unknown>;
-    if (typeof w.text !== "string") continue;
-    if (typeof w.charStart !== "number" || typeof w.charEnd !== "number") continue;
-    const startSec =
-      typeof w.startSec === "number" && Number.isFinite(w.startSec) ? w.startSec : null;
-    const endSec = typeof w.endSec === "number" && Number.isFinite(w.endSec) ? w.endSec : null;
-    words.push({
-      text: w.text,
-      charStart: w.charStart,
-      charEnd: w.charEnd,
-      startSec,
-      endSec,
-    });
-  }
-  if (words.length === 0) return null;
-
-  const audioDurationSec =
-    typeof record.audioDurationSec === "number" && Number.isFinite(record.audioDurationSec)
-      ? record.audioDurationSec
-      : null;
-
-  return {
-    version: AUDIO_WORD_TIMINGS_VERSION,
-    audioDurationSec,
-    storyPlainText: record.storyPlainText,
-    words,
-  };
-}
+// coerceAudioWordTimings vive ahora en audioWordTimingsTypes.ts (puro
+// y client-safe). Re-exportado arriba para compatibilidad.
