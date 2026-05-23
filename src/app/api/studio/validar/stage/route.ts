@@ -163,7 +163,7 @@ export async function POST(req: NextRequest) {
   // Re-validate server-side against the live state of the journey.
   const startedAt = new Date().toISOString();
   const existing = await loadExisting(journeyId, level, topic);
-  const result = validateGeneratedStory(parsed, {
+  const result = await validateGeneratedStory(parsed, {
     language: languageIso,
     level,
     topic,

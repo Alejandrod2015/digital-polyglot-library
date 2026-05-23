@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import ValidarResultView from "./ValidarResultView";
 import ValidationHistory from "./ValidationHistory";
 import { getIsoLanguageTag } from "@/lib/languageFlags";
-import { parseStoryInput, type StoryPayload } from "@/lib/validateGeneratedStory";
+import { parseStoryInput, type StoryPayload } from "@/lib/storyPayload";
 
 type PipelineStory = {
   id: string;

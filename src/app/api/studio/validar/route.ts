@@ -91,7 +91,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const existing = await loadExistingStories(body.journeyId, body.level, body.topic);
-    const result = validateGeneratedStory(
+    const result = await validateGeneratedStory(
       typeof input === "string" ? input : (input as Parameters<typeof validateGeneratedStory>[0]),
       {
         language: body.language,

@@ -21,20 +21,13 @@ import { isItalianA1A2 } from "./cefr/italianA1A2";
 import { isPortugueseA1A2 } from "./cefr/portugueseA1A2";
 import { isFrenchA1A2 } from "./cefr/frenchA1A2";
 
-export type StoryVocabItem = {
-  word: string;
-  surface?: string;
-  definition: string;
-  type?: string;
-};
-
-export type StoryPayload = {
-  title: string;
-  synopsis: string;
-  arcType: string;
-  text: string;
-  vocab: StoryVocabItem[];
-};
+// Types + parser moved to ./storyPayload (pure, client-safe).
+// We re-export so existing callers (`import { ..., parseStoryInput } from
+// "@/lib/validateGeneratedStory"`) keep working without a churn refactor.
+export type { StoryPayload, StoryVocabItem } from "./storyPayload";
+export { parseStoryInput } from "./storyPayload";
+import type { StoryPayload, StoryVocabItem } from "./storyPayload";
+import { parseStoryInput } from "./storyPayload";
 
 export type ExistingStorySummary = {
   title: string;
@@ -220,46 +213,14 @@ function escapeRegex(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function isStoryPayload(x: unknown): x is StoryPayload {
-  if (!x || typeof x !== "object") return false;
-  const o = x as Record<string, unknown>;
-  return (
-    typeof o.title === "string" &&
-    typeof o.synopsis === "string" &&
-    typeof o.arcType === "string" &&
-    typeof o.text === "string" &&
-    Array.isArray(o.vocab)
-  );
-}
+// `parseStoryInput` and `isStoryPayload` now live in ./storyPayload to
+// avoid pulling server-only deps into Client Components. Re-exported at
+// top of file.
 
-/** Parse raw input string into a StoryPayload, tolerating leading code fences
- *  and stray whitespace. Returns null if it cannot be parsed. */
-export function parseStoryInput(input: string): StoryPayload | null {
-  if (!input || typeof input !== "string") return null;
-  let cleaned = input.trim();
-  cleaned = cleaned.replace(/^```(?:json)?\s*/i, "").replace(/```$/i, "").trim();
-  try {
-    const parsed = JSON.parse(cleaned) as unknown;
-    if (isStoryPayload(parsed)) return parsed;
-    return null;
-  } catch {
-    // Fallback: try to find the first {…} block
-    const m = cleaned.match(/\{[\s\S]*\}/);
-    if (!m) return null;
-    try {
-      const parsed = JSON.parse(m[0]) as unknown;
-      if (isStoryPayload(parsed)) return parsed;
-    } catch {
-      // ignore
-    }
-    return null;
-  }
-}
-
-export function validateGeneratedStory(
+export async function validateGeneratedStory(
   input: string | StoryPayload,
   context: ValidationContext = {}
-): ValidationResult {
+): Promise<ValidationResult> {
   const checks: Check[] = [];
   const parsed: StoryPayload | null = typeof input === "string" ? parseStoryInput(input) : input;
 
@@ -577,17 +538,45 @@ export function validateGeneratedStory(
   }
 
   // Vocab CEFR frequency check.
-  // ES: cubre A1/A2/B1/B2/C1 acumulativos (C2 sin restricción).
-  // DE/IT/PT/FR: solo A1/A2 por ahora (listas adicionales son fase 2).
+  // ES: hybrid — curated lemma lists (A1+A2+B1+B2+C1 acumulativos) + LLM
+  //     fallback for any lemma not in the list. C2 sin restricción.
+  //     Cached forever in src/lib/cefr/cache/spanish-llm-cache.json.
+  // DE/IT/PT/FR: solo A1/A2 con listas (LLM fallback fase 2).
   const levelKey = (context.level ?? "").toLowerCase();
   const isA1orA2 = levelKey === "a1" || levelKey === "a2";
   type SpanishCheckLevel = "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
   const VALID_ES_LEVELS = new Set<SpanishCheckLevel>([
     "a1","a2","b1","b2","c1","c2",
   ]);
-  let levelChecker: ((word: string) => boolean) | undefined;
-  if (lang === "ES" && VALID_ES_LEVELS.has(levelKey as SpanishCheckLevel)) {
-    levelChecker = (w) => isSpanishUpToLevel(w, levelKey as SpanishCheckLevel);
+
+  if (lang === "ES" && VALID_ES_LEVELS.has(levelKey as SpanishCheckLevel) && levelKey !== "c2") {
+    const { filterSpanishWordsAtOrBelow } = await import("./cefr/spanishLevelJudge");
+    const vocabWords = parsed.vocab.map((v) => v.word);
+    const { aboveLevel } = await filterSpanishWordsAtOrBelow(
+      vocabWords,
+      levelKey as SpanishCheckLevel,
+    );
+    // Threshold: >2 palabras fuera de nivel → fail. Permitimos 1-2
+    // como margen (alguna palabra clave del topic puede ser de
+    // registro algo más alto pero pedagógicamente justificada).
+    const status: CheckStatus =
+      aboveLevel.length === 0
+        ? "pass"
+        : aboveLevel.length <= 2
+          ? "warn"
+          : "fail";
+    checks.push({
+      id: "vocab-level-frequency",
+      label: `Vocab matches ${levelKey.toUpperCase()} lexical frequency (ES, list+LLM)`,
+      status,
+      detail:
+        aboveLevel.length > 0
+          ? `${aboveLevel.length} fuera de ${levelKey.toUpperCase()}: ${aboveLevel
+              .slice(0, 6)
+              .map((a) => `${a.word} (${a.judgedLevel.toUpperCase()})`)
+              .join(", ")}${aboveLevel.length > 6 ? ` …+${aboveLevel.length - 6}` : ""}`
+          : undefined,
+    });
   } else if (isA1orA2) {
     const fallbackByLang: Record<string, ((word: string) => boolean) | undefined> = {
       DE: isGermanA1A2,
@@ -595,31 +584,70 @@ export function validateGeneratedStory(
       PT: isPortugueseA1A2,
       FR: isFrenchA1A2,
     };
-    levelChecker = fallbackByLang[lang];
+    const levelChecker = fallbackByLang[lang];
+    if (levelChecker) {
+      const outOfLevel = parsed.vocab.filter((v) => !levelChecker(v.word));
+      const status: CheckStatus =
+        outOfLevel.length === 0
+          ? "pass"
+          : outOfLevel.length <= 2
+            ? "warn"
+            : "fail";
+      checks.push({
+        id: "vocab-level-frequency",
+        label: `Vocab matches ${levelKey.toUpperCase()} lexical frequency (${lang})`,
+        status,
+        detail:
+          outOfLevel.length > 0
+            ? `${outOfLevel.length} fuera de ${levelKey.toUpperCase()}: ${outOfLevel
+                .slice(0, 6)
+                .map((v) => v.word)
+                .join(", ")}${outOfLevel.length > 6 ? ` …+${outOfLevel.length - 6}` : ""}`
+            : undefined,
+      });
+    }
   }
-  if (levelChecker && levelKey !== "c2") {
-    const outOfLevel = parsed.vocab.filter((v) => !levelChecker(v.word));
-    // Threshold: >2 palabras fuera de nivel → fail. Permitimos 1-2
-    // como margen (alguna palabra clave del topic puede no estar en
-    // la lista universal).
-    const status: CheckStatus =
-      outOfLevel.length === 0
-        ? "pass"
-        : outOfLevel.length <= 2
-          ? "warn"
-          : "fail";
-    checks.push({
-      id: "vocab-level-frequency",
-      label: `Vocab matches ${levelKey.toUpperCase()} lexical frequency (${lang})`,
-      status,
-      detail:
-        outOfLevel.length > 0
-          ? `${outOfLevel.length} fuera de ${levelKey.toUpperCase()}: ${outOfLevel
-              .slice(0, 6)
-              .map((v) => v.word)
-              .join(", ")}${outOfLevel.length > 6 ? ` …+${outOfLevel.length - 6}` : ""}`
-          : undefined,
-    });
+
+  // Body CEFR check (Spanish only, all levels A1→C1).
+  //
+  // Tokenizes the story body, strips function words/stop-words, dedupes,
+  // and runs the unique content words through the same hybrid judge.
+  // This catches cases where the LLM picks A1-appropriate VOCAB items
+  // but writes the surrounding paragraph at C1 register, which would
+  // otherwise slip past the vocab-only check.
+  //
+  // Threshold for body is more permissive: stories naturally use a
+  // wider range than the curated vocab. We warn at 5%+ out-of-level
+  // content words, fail at 10%+.
+  if (lang === "ES" && VALID_ES_LEVELS.has(levelKey as SpanishCheckLevel) && levelKey !== "c2") {
+    const { extractSpanishContentWords, filterSpanishWordsAtOrBelow } = await import(
+      "./cefr/spanishLevelJudge"
+    );
+    const contentWords = extractSpanishContentWords(parsed.text);
+    if (contentWords.length >= 10) {
+      const { aboveLevel } = await filterSpanishWordsAtOrBelow(
+        contentWords,
+        levelKey as SpanishCheckLevel,
+      );
+      const pct = (aboveLevel.length / contentWords.length) * 100;
+      // Body check thresholds are more permissive than the vocab check:
+      // natural prose pulls from a wider register than the curated vocab
+      // list. We only fail when the cluster is genuinely off-level.
+      const status: CheckStatus =
+        pct < 10 ? "pass" : pct < 20 ? "warn" : "fail";
+      checks.push({
+        id: "body-level-frequency",
+        label: `Body register matches ${levelKey.toUpperCase()} (ES, list+LLM)`,
+        status,
+        detail:
+          aboveLevel.length > 0
+            ? `${aboveLevel.length}/${contentWords.length} (${pct.toFixed(1)}%) palabras de body fuera de nivel: ${aboveLevel
+                .slice(0, 8)
+                .map((a) => `${a.word}(${a.judgedLevel.toUpperCase()})`)
+                .join(", ")}${aboveLevel.length > 8 ? ` …+${aboveLevel.length - 8}` : ""}`
+            : `${contentWords.length} content words analizadas, todas ≤${levelKey.toUpperCase()}`,
+      });
+    }
   }
 
   // No-consecutive-pills check (spec §4). Vocabulario en posiciones

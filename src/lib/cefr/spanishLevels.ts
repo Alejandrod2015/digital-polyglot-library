@@ -29,9 +29,30 @@ const setUpToC1: ReadonlySet<string> = new Set([
   ...SPANISH_C1_LEMMAS,
 ]);
 
+// Strip diacritics (á→a, é→e, ñ→n, etc.) for accent-insensitive fallback.
+// Used after the direct lookup so we still prefer exact matches.
+function deburr(s: string): string {
+  return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+
+// Precomputed deburred index per set (lazy, memoized) so we can do an
+// accent-insensitive lookup in O(1) after the first call.
+const deburredIndex = new WeakMap<ReadonlySet<string>, Set<string>>();
+function getDeburredIndex(set: ReadonlySet<string>): Set<string> {
+  let idx = deburredIndex.get(set);
+  if (idx) return idx;
+  idx = new Set<string>();
+  for (const w of set) idx.add(deburr(w));
+  deburredIndex.set(set, idx);
+  return idx;
+}
+
 function lookupInSet(word: string, set: ReadonlySet<string>): boolean {
   const lemma = word.toLowerCase().trim().replace(/^(la|el|los|las|un|una|unos|unas)\s+/, "");
   if (set.has(lemma)) return true;
+  // Accent-insensitive fallback ("frustracion" still matches "frustración")
+  const deburredLemma = deburr(lemma);
+  if (deburredLemma !== lemma && getDeburredIndex(set).has(deburredLemma)) return true;
   // Plural -s
   if (lemma.endsWith("s") && lemma.length > 3 && set.has(lemma.slice(0, -1))) return true;
   if (lemma.endsWith("es") && lemma.length > 4) {
