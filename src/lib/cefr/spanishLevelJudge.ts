@@ -1,29 +1,30 @@
 // CEFR Spanish word-level judge.
 //
-// Hybrid strategy:
-//   1) Fast path: check the curated lemma lists (A1+A2+B1+B2+C1). If the word
-//      is in the cumulative set for the requested level, return true instantly.
-//   2) Long tail: words NOT in the lists (rare vocab, technical terms,
-//      sophisticated B2/C1/C2 lemmas) get judged by an LLM and cached
-//      forever in `cache/spanish-llm-cache.json`.
+// LIST-ONLY strategy (NO LLM CALLS):
+//   1) Check the curated lemma lists (A1+A2+B1+B2+C1). If the word is in
+//      the cumulative set for the requested level, it passes.
+//   2) Otherwise, check the cache (`cache/spanish-llm-cache.json`) which
+//      contains FREE pre-existing judgments from earlier sessions. This
+//      data is already paid; reading it costs nothing.
+//   3) Words found in NEITHER the list NOR the cache are flagged as
+//      above-level (default judgedLevel = "c2"). The validator surfaces
+//      them so the worker can manually replace them in ChatGPT.
 //
-// The cache file lives in src/ so it ships with the bundle. On Vercel
-// (read-only fs) we still read the bundled cache; new judgments stay in
-// process memory for the lifetime of the serverless instance. Locally
-// (dev) writes are persisted to disk so the committed cache grows over
-// time and seeds future deployments.
+// Why no LLM:
+//   The user explicitly opted out of OpenAI API spend. With ~13800
+//   cumulative lemmas in the list + a populated cache, the practical
+//   miss rate is low (~5%). Misses produce false positives that the
+//   worker resolves manually; never silent wrong-passes.
 //
-// Cost: ~$0.0001 per new word judged via gpt-4o-mini. After warm-up the
-// cache covers almost everything.
+// The OpenAI client and judgeBatchViaLLM function are kept commented
+// below for reference but NEVER invoked.
 
-// Server-only: this module touches the filesystem (cache) and uses the
-// OpenAI client. Bundling it into the client breaks webpack and would
-// also leak the API key path. The import below is a hard fence.
+// Server-only: this module touches the filesystem (cache). Bundling it
+// into the client breaks webpack. The import below is a hard fence.
 import "server-only";
 
 import { promises as fs } from "fs";
 import path from "path";
-import OpenAI from "openai";
 
 import { isSpanishUpToLevel } from "./spanishLevels";
 
@@ -90,7 +91,16 @@ function normalizeKey(word: string): string {
 
 const MODEL = "gpt-4o-mini";
 
-function buildSystemPrompt(targetLevel: SpanishLevel): string {
+// ── DEAD CODE (kept for reference; never invoked) ─────────────────────────
+// The prompt builder + LLM caller below are NOT used. They remain here so
+// that re-enabling them later is a one-line change. To re-enable, replace
+// the `aboveLevel.push` loop in `filterSpanishWordsAtOrBelow` with a call
+// to _judgeBatchViaLLM_UNUSED for the `needLLM` array. Also remove the
+// `_UNUSED` suffixes and reinstate `import OpenAI from "openai"`.
+// ─────────────────────────────────────────────────────────────────────────
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function _buildSystemPrompt_UNUSED(targetLevel: SpanishLevel): string {
   return `You are a CEFR Spanish vocabulary judge.
 
 Given a list of Spanish words or short multi-word lemmas, return strict JSON:
@@ -133,48 +143,14 @@ Output the SAME word strings the user provided, in the same order. Use neutral S
 
 type LLMJudgment = { level: SpanishLevel; replacement?: string };
 
-async function judgeBatchViaLLM(
-  words: string[],
-  targetLevel: SpanishLevel,
+// Marked _UNUSED. See note above. If you want LLM fallback back, rename
+// this to judgeBatchViaLLM and call it from filterSpanishWordsAtOrBelow.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function _judgeBatchViaLLM_UNUSED(
+  _words: string[],
+  _targetLevel: SpanishLevel,
 ): Promise<Record<string, LLMJudgment>> {
-  if (words.length === 0) return {};
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    const out: Record<string, LLMJudgment> = {};
-    for (const w of words) out[w] = { level: "c2" };
-    return out;
-  }
-  const client = new OpenAI({ apiKey });
-  const resp = await client.chat.completions.create({
-    model: MODEL,
-    temperature: 0,
-    response_format: { type: "json_object" },
-    messages: [
-      { role: "system", content: buildSystemPrompt(targetLevel) },
-      { role: "user", content: JSON.stringify({ words, targetLevel }) },
-    ],
-  });
-  const content = resp.choices[0]?.message?.content || "{}";
-  let parsed: { judgments?: { word: string; level: string; replacement?: string }[] };
-  try {
-    parsed = JSON.parse(content);
-  } catch {
-    parsed = { judgments: [] };
-  }
-  const out: Record<string, LLMJudgment> = {};
-  for (const j of parsed.judgments ?? []) {
-    const w = String(j.word ?? "").trim();
-    if (!w) continue;
-    const lv = String(j.level ?? "c2").toLowerCase() as SpanishLevel;
-    const safeLv: SpanishLevel = LEVEL_RANK[lv] ? lv : "c2";
-    const replacement =
-      typeof j.replacement === "string" && j.replacement.trim().length > 0
-        ? j.replacement.trim()
-        : undefined;
-    out[w] = { level: safeLv, replacement };
-  }
-  for (const w of words) if (!(w in out)) out[w] = { level: "c2" };
-  return out;
+  throw new Error("LLM judge disabled by config (no spend allowed).");
 }
 
 export type WordAboveLevel = {
@@ -231,28 +207,14 @@ export async function filterSpanishWordsAtOrBelow(
     needLLM.push(w);
   }
 
+  // LLM disabled by config (user opted out of OpenAI spend). Anything
+  // that's not in the curated lists AND not in the cache is treated as
+  // above the target level. The worker sees these in the validator
+  // result and replaces them manually in ChatGPT.
   if (needLLM.length > 0) {
-    const judged = await judgeBatchViaLLM(needLLM, targetLevel);
-    const now = new Date().toISOString();
     for (const w of needLLM) {
-      const j = judged[w] ?? { level: "c2" as SpanishLevel };
-      const key = wordToKey.get(w) ?? normalizeKey(w);
-      memCache![key] = {
-        level: j.level,
-        replacement: j.replacement,
-        judgedAt: now,
-      };
-      if (LEVEL_RANK[j.level] <= LEVEL_RANK[targetLevel]) {
-        atOrBelow.push(w);
-      } else {
-        aboveLevel.push({
-          word: w,
-          judgedLevel: j.level,
-          replacement: j.replacement,
-        });
-      }
+      aboveLevel.push({ word: w, judgedLevel: "c2" });
     }
-    void persistCache();
   }
   return { atOrBelow, aboveLevel };
 }
