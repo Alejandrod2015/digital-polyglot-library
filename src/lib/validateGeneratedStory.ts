@@ -15,6 +15,12 @@
  *     may miss accent variants).
  */
 
+import { isSpanishUpToLevel } from "./cefr/spanishLevels";
+import { isGermanA1A2 } from "./cefr/germanA1A2";
+import { isItalianA1A2 } from "./cefr/italianA1A2";
+import { isPortugueseA1A2 } from "./cefr/portugueseA1A2";
+import { isFrenchA1A2 } from "./cefr/frenchA1A2";
+
 export type StoryVocabItem = {
   word: string;
   surface?: string;
@@ -567,6 +573,86 @@ export function validateGeneratedStory(
       detail: cognateHits.length
         ? cognateHits.map((v) => v.word).join(", ")
         : undefined,
+    });
+  }
+
+  // Vocab CEFR frequency check.
+  // ES: cubre A1/A2/B1/B2/C1 acumulativos (C2 sin restricción).
+  // DE/IT/PT/FR: solo A1/A2 por ahora (listas adicionales son fase 2).
+  const levelKey = (context.level ?? "").toLowerCase();
+  const isA1orA2 = levelKey === "a1" || levelKey === "a2";
+  type SpanishCheckLevel = "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
+  const VALID_ES_LEVELS = new Set<SpanishCheckLevel>([
+    "a1","a2","b1","b2","c1","c2",
+  ]);
+  let levelChecker: ((word: string) => boolean) | undefined;
+  if (lang === "ES" && VALID_ES_LEVELS.has(levelKey as SpanishCheckLevel)) {
+    levelChecker = (w) => isSpanishUpToLevel(w, levelKey as SpanishCheckLevel);
+  } else if (isA1orA2) {
+    const fallbackByLang: Record<string, ((word: string) => boolean) | undefined> = {
+      DE: isGermanA1A2,
+      IT: isItalianA1A2,
+      PT: isPortugueseA1A2,
+      FR: isFrenchA1A2,
+    };
+    levelChecker = fallbackByLang[lang];
+  }
+  if (levelChecker && levelKey !== "c2") {
+    const outOfLevel = parsed.vocab.filter((v) => !levelChecker(v.word));
+    // Threshold: >2 palabras fuera de nivel → fail. Permitimos 1-2
+    // como margen (alguna palabra clave del topic puede no estar en
+    // la lista universal).
+    const status: CheckStatus =
+      outOfLevel.length === 0
+        ? "pass"
+        : outOfLevel.length <= 2
+          ? "warn"
+          : "fail";
+    checks.push({
+      id: "vocab-level-frequency",
+      label: `Vocab matches ${levelKey.toUpperCase()} lexical frequency (${lang})`,
+      status,
+      detail:
+        outOfLevel.length > 0
+          ? `${outOfLevel.length} fuera de ${levelKey.toUpperCase()}: ${outOfLevel
+              .slice(0, 6)
+              .map((v) => v.word)
+              .join(", ")}${outOfLevel.length > 6 ? ` …+${outOfLevel.length - 6}` : ""}`
+          : undefined,
+    });
+  }
+
+  // No-consecutive-pills check (spec §4). Vocabulario en posiciones
+  // adyacentes del body crea "worksheet markup feel" — pills pegados
+  // sin texto entre ellos rompen la inmersión. Tokenizamos el body,
+  // marcamos cuáles tokens son vocab match, y vemos si hay >2
+  // consecutivos. Status warn (no fail) porque depende de la frase;
+  // a veces dos palabras adyacentes son legítimamente teachable.
+  const vocabSurfaces = new Set(
+    parsed.vocab
+      .map((v) => (v.surface ?? v.word ?? "").toLowerCase().trim())
+      .filter(Boolean)
+  );
+  if (vocabSurfaces.size > 0) {
+    const bodyTokens = parsed.text
+      .toLowerCase()
+      .split(/[\s.,;:!?¡¿"()—–\-]+/u)
+      .filter(Boolean);
+    let currentRun = 0;
+    let maxRun = 0;
+    for (const tok of bodyTokens) {
+      if (vocabSurfaces.has(tok)) {
+        currentRun += 1;
+        if (currentRun > maxRun) maxRun = currentRun;
+      } else {
+        currentRun = 0;
+      }
+    }
+    checks.push({
+      id: "vocab-no-consecutive-pills",
+      label: "No 3+ consecutive vocab pills in body",
+      status: maxRun >= 3 ? "warn" : "pass",
+      detail: maxRun >= 3 ? `Max run: ${maxRun} pills consecutivos` : undefined,
     });
   }
 

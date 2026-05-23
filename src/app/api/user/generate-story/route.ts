@@ -678,6 +678,30 @@ ${variantClause}
   - "word": dictionary/root form learners should study
   - "surface": exact form as it appears in the story text
   - "definition": clear English gloss, HARD LIMIT 8-14 words AND ≤120 characters total. Concise, practical, no clichés. Do NOT start with "Refers to", "Describes", "Used to", "Used for" or "Said when" — start with the meaning directly. Examples: "kochen → Heated ingredients in a pot to create a meal."; "vergessen → To forget, fail to remember or do something on time."
+
+CEFR LEXICAL DISCIPLINE (CRITICAL for A1/A2 stories):
+- For A1 and A2 levels, select vocab from the LEARNER'S top-1500 high-frequency words. The word must be one a beginner meets in their first months — household items, daily actions, family, food, places, weather, body, clothes, common verbs, basic adjectives.
+- FORBIDDEN for A1/A2 vocab slots: rare, literary, technical, or domain-specific synonyms. The LLM tendency to "vary vocabulary" by picking thesaurus synonyms is the #1 quality leak.
+- Spanish ANTI-EXAMPLES (DO NOT pick these for A1 vocab; pick the everyday alternative shown):
+  - "anafe" → use "estufa" or "fogón"
+  - "talega" / "morral" → use "bolsa" or "mochila"
+  - "alfiletero" → use "caja de costura" or skip entirely
+  - "escabel" / "taburete" / "banquillo" → use "silla pequeña" or "asiento"
+  - "anaquel" / "estante" → use "estante" (kept) or "repisa"
+  - "gaveta" / "cajetín" → use "cajón"
+  - "biombo" → use "pared" or "separador"
+  - "visillo" → use "cortina"
+  - "alacena" → use "armario de cocina"
+  - "tablón" → use "tabla" or "madera"
+  - "cirio" → use "vela"
+  - "verja" / "peldaño" → use "puerta" / "escalón"
+  - "purificador" / "compartimiento" → use simpler nouns
+  - "burbujear" → use "hervir"
+  - "candado" / "cerrojo" → use "llave" or "cerradura"
+  - "guardarropa" → use "armario"
+  - "boina" / "visera" → use "gorra" or "sombrero"
+- The principle: if a 6-year-old native speaker wouldn't say the word, it's NOT A1 vocab even if it fits the topic. Functional everyday words beat literary ones.
+- Each item still needs to be teachable (not a cognate), but high frequency is non-negotiable for A1/A2.
   - "type": one label among ["verb","noun","adjective","adverb","expression","slang","other"]
 - Prefer high-learning-value items that are practical, reusable, nuanced, or culturally grounded.
 - Do not include duplicates.

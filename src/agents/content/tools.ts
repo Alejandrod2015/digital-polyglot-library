@@ -157,6 +157,7 @@ ${params.text.slice(0, 3000)}
 - Avoid: basic cognates, articles, pronouns, numbers
 - "word" should be the dictionary/root form
 - "translation" must be a concise English gloss, HARD LIMIT 8-14 words AND ≤120 characters total. Start with the meaning directly — do NOT begin with "Refers to", "Describes", "Used to", "Used for" or "Said when". Concise, practical, no clichés.
+- CEFR LEXICAL DISCIPLINE (A1/A2): pick vocab from the learner's top-1500 high-frequency words. The word must be one a beginner meets in their first months. FORBIDDEN: rare/literary/technical synonyms (anafe, talega, alfiletero, escabel, taburete, anaquel, gaveta, biombo, visillo, alacena, cirio, peldaño, verja, burbujear, etc.). Use everyday alternatives: estufa, bolsa, silla, cajón, armario, cortina, vela, escalón, hervir. If a 6-year-old native wouldn't say it, it's not A1 vocab — even if it fits the topic.
 - "type" should be one of: verb, noun, adjective, adverb, expression
 - "example" should be a short example sentence using the word in context
 

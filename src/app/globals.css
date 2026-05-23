@@ -2558,8 +2558,24 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 :root[data-theme="light"] .bg-\[\#0d2648\],
 :root[data-theme="light"] .bg-\[\#08172b\],
 :root[data-theme="light"] .bg-\[\#0f1728\],
-:root[data-theme="light"] .bg-\[\#081a31\] {
+:root[data-theme="light"] .bg-\[\#081a31\],
+:root[data-theme="light"] .bg-\[\#06182d\],
+:root[data-theme="light"] .bg-\[\#0b1325\],
+:root[data-theme="light"] .bg-\[\#132033\],
+:root[data-theme="light"] .bg-\[\#132d4a\],
+:root[data-theme="light"] .bg-\[\#183756\],
+:root[data-theme="light"] .bg-\[\#1a3556\],
+:root[data-theme="light"] .bg-\[\#1b3f67\],
+:root[data-theme="light"] .bg-\[\#224a76\],
+:root[data-theme="light"] .bg-\[\#314861\] {
   background-color: #ffffff !important;
+  box-shadow: var(--shadow-card);
+}
+
+/* Hex brown / coffee tint (Beta page success state). En light se
+ * mapea a cream-amber sutil. */
+:root[data-theme="light"] .bg-\[\#2b1d10\] {
+  background-color: #faf3e6 !important;
   box-shadow: var(--shadow-card);
 }
 
@@ -2835,8 +2851,21 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   :root:not([data-theme]) .bg-\[\#0d2648\],
   :root:not([data-theme]) .bg-\[\#08172b\],
   :root:not([data-theme]) .bg-\[\#0f1728\],
-  :root:not([data-theme]) .bg-\[\#081a31\] {
+  :root:not([data-theme]) .bg-\[\#081a31\],
+  :root:not([data-theme]) .bg-\[\#06182d\],
+  :root:not([data-theme]) .bg-\[\#0b1325\],
+  :root:not([data-theme]) .bg-\[\#132033\],
+  :root:not([data-theme]) .bg-\[\#132d4a\],
+  :root:not([data-theme]) .bg-\[\#183756\],
+  :root:not([data-theme]) .bg-\[\#1a3556\],
+  :root:not([data-theme]) .bg-\[\#1b3f67\],
+  :root:not([data-theme]) .bg-\[\#224a76\],
+  :root:not([data-theme]) .bg-\[\#314861\] {
     background-color: #ffffff !important;
+    box-shadow: var(--shadow-card);
+  }
+  :root:not([data-theme]) .bg-\[\#2b1d10\] {
+    background-color: #faf3e6 !important;
     box-shadow: var(--shadow-card);
   }
   :root:not([data-theme]) .bg-\[\#1B2347\] {

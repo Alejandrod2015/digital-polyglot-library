@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 // IMPORTANT: NO runtime imports de `./journeyData` acá.
 // journeyData importa `@/lib/prisma` y este file es "use client".
@@ -16,7 +16,6 @@ import {
 import type { JourneyTrackInsights, JourneyVariantTrack } from "./journeyData";
 import { isJourneyStoryComplete } from "@/lib/journeyUnlock";
 import type { JourneyDueReviewItem } from "@/lib/journeyProgress";
-import { JourneyLanguageHub } from "@/components/JourneyLanguageHub";
 import { TopicPreviewSheet } from "@/components/TopicPreviewSheet";
 import JourneyTopBar from "@/components/JourneyTopBar";
 import BottomSheet from "@/components/ui/BottomSheet";
@@ -80,9 +79,13 @@ function topicEmoji(label: string): string {
   return found?.emoji ?? "📖";
 }
 
-// Map the journey track id to the language pill code + flag shown in
-// the top bar. Falls back to a globe emoji for unmapped variants.
+// Map the journey track variant code → language pill code + flag
+// shown in the top bar. Acepta tanto códigos ISO ("de", "it") como
+// language names completos ("german", "italian") porque el field
+// `Journey.variant` viene en formato libre desde Studio. Sin esta
+// expansión, "german" caía al fallback `.slice(0,2)` y mostraba "GE".
 const LANGUAGE_PILL_BY_VARIANT: Record<string, { code: string; flag: string }> = {
+  // ── ISO short codes ──
   latam: { code: "ES", flag: "🇲🇽" },
   spain: { code: "ES", flag: "🇪🇸" },
   br: { code: "PT", flag: "🇧🇷" },
@@ -91,14 +94,38 @@ const LANGUAGE_PILL_BY_VARIANT: Record<string, { code: string; flag: string }> =
   it: { code: "IT", flag: "🇮🇹" },
   de: { code: "DE", flag: "🇩🇪" },
   jp: { code: "JA", flag: "🇯🇵" },
+  ja: { code: "JA", flag: "🇯🇵" },
   ko: { code: "KO", flag: "🇰🇷" },
   en: { code: "EN", flag: "🇬🇧" },
+  // ── Language names completos (lo que más usa Studio) ──
+  spanish: { code: "ES", flag: "🇪🇸" },
+  portuguese: { code: "PT", flag: "🇧🇷" },
+  brazilian: { code: "PT", flag: "🇧🇷" },
+  french: { code: "FR", flag: "🇫🇷" },
+  italian: { code: "IT", flag: "🇮🇹" },
+  german: { code: "DE", flag: "🇩🇪" },
+  japanese: { code: "JA", flag: "🇯🇵" },
+  korean: { code: "KO", flag: "🇰🇷" },
+  english: { code: "EN", flag: "🇬🇧" },
+  chinese: { code: "ZH", flag: "🇨🇳" },
 };
 
 function pillForTrack(track: JourneyVariantTrack | null): { code: string; flag: string } {
   if (!track) return { code: "??", flag: "🌐" };
-  const variantKey = (track.variant ?? track.id ?? "").toLowerCase();
-  return LANGUAGE_PILL_BY_VARIANT[variantKey] ?? { code: variantKey.toUpperCase().slice(0, 2) || "??", flag: "🌐" };
+  // 1) Intentar primero por `variant` (latam, spain, br, etc.)
+  const variantKey = (track.variant ?? "").toLowerCase();
+  if (variantKey && LANGUAGE_PILL_BY_VARIANT[variantKey]) {
+    return LANGUAGE_PILL_BY_VARIANT[variantKey];
+  }
+  // 2) Fallback por `language` del journey ("German" → DE 🇩🇪).
+  //    Sin esto, journeys con variant=null o variant="german" caían
+  //    al substring crudo "GE" / "??" en el pill del top bar.
+  const languageKey = (track.language ?? "").toLowerCase();
+  if (languageKey && LANGUAGE_PILL_BY_VARIANT[languageKey]) {
+    return LANGUAGE_PILL_BY_VARIANT[languageKey];
+  }
+  // 3) Último fallback: globo + "??".
+  return { code: "??", flag: "🌐" };
 }
 
 export default function JourneyClient({
@@ -115,11 +142,26 @@ export default function JourneyClient({
   const searchParams = useSearchParams();
   const firstTrackId = tracks[0]?.id ?? "";
 
-  const [selectedVariantId, setSelectedVariantId] = useState(
-    tracks.some((track) => track.id === initialVariantId)
-      ? initialVariantId
-      : searchParams.get("variant") ?? firstTrackId
-  );
+  // Resolver el variant inicial → CUID interno. El URL puede traer
+  // slug ("traveler") o CUID legacy. El state SIEMPRE es el CUID
+  // del track; sino, los lookups `tracks.find(t.id === state)` fallan
+  // y el state se queda inconsistente con la URL, lo que dispara el
+  // loop de re-sync. `initialVariantId` ya viene resuelto al CUID
+  // desde el server loader.
+  const initialStateCuid = (() => {
+    if (tracks.some((track) => track.id === initialVariantId)) {
+      return initialVariantId;
+    }
+    const urlVariant = searchParams.get("variant");
+    if (urlVariant) {
+      const matched = tracks.find(
+        (t) => t.slug === urlVariant || t.id === urlVariant
+      );
+      if (matched) return matched.id;
+    }
+    return firstTrackId;
+  })();
+  const [selectedVariantId, setSelectedVariantId] = useState(initialStateCuid);
   const [journeyPlacementLevel] = useState<string | null>(initialJourneyPlacementLevel);
   const [stats, setStats] = useState<{ energy: number; level: number; xp: number }>({
     energy: 0,
@@ -195,24 +237,32 @@ export default function JourneyClient({
     }
   };
 
-  // Keep ?variant=… in the URL in sync with the selected track.
-  useEffect(() => {
-    const nextVariantId =
-      (tracks.some((track) => track.id === initialVariantId) ? initialVariantId : searchParams.get("variant")) ??
-      firstTrackId;
-    if (nextVariantId && nextVariantId !== selectedVariantId) {
-      setSelectedVariantId(nextVariantId);
-    }
-  }, [firstTrackId, initialVariantId, searchParams, selectedVariantId, tracks]);
+  // Track del último slug que NOSOTROS escribimos al URL. Sin este
+  // ref, el efecto que sincroniza state → URL reacciona a su propio
+  // `router.replace` (porque `searchParams` cambia en el render
+  // siguiente), entra al loop y alterna entre tracks cada ~2s.
+  const lastSyncedSlugRef = useRef<string | null>(null);
 
+  // Sync state → URL. Único punto de update del URL: solo cuando
+  // CAMBIA selectedVariantId. Si el slug calculado ya es el que
+  // escribimos antes (o el que está en la URL), no-op.
+  // Deliberadamente NO existe un effect URL → state: el initial
+  // useState resuelve el variant desde la URL en mount y de ahí en
+  // adelante los clicks del sheet son la única fuente de cambio.
+  // Esto evita el loop, a cambio de no resincronizar con back/forward
+  // del browser (trade-off aceptable; la página es full-reload-safe
+  // gracias a `force-dynamic`).
   useEffect(() => {
     if (!selectedVariantId) return;
-    // Sync URL usando el slug (clean) en lugar del cuid interno.
-    // Si el track no tiene slug por alguna razón, fallback al id.
     const currentTrack = tracks.find((t) => t.id === selectedVariantId);
     const slugForUrl = currentTrack?.slug ?? selectedVariantId;
+    if (lastSyncedSlugRef.current === slugForUrl) return;
     const params = new URLSearchParams(searchParams.toString());
-    if (params.get("variant") === slugForUrl) return;
+    if (params.get("variant") === slugForUrl) {
+      lastSyncedSlugRef.current = slugForUrl;
+      return;
+    }
+    lastSyncedSlugRef.current = slugForUrl;
     params.set("variant", slugForUrl);
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   }, [pathname, router, searchParams, selectedVariantId, tracks]);
@@ -333,27 +383,6 @@ export default function JourneyClient({
     return out;
   }, [completedStoryKeySet, levels, nextStoryKeyByTopic, unlockedLevelCount]);
 
-  const languageHubTracks = useMemo(
-    () =>
-      tracks.map((track) => ({
-        track,
-        insights: buildJourneyTrackInsights(
-          track,
-          completedStoryKeySet,
-          practicedTopicKeySet,
-          passedCheckpointKeySet,
-          dueReviewItems
-        ),
-      })),
-    [
-      completedStoryKeySet,
-      dueReviewItems,
-      passedCheckpointKeySet,
-      practicedTopicKeySet,
-      tracks,
-    ]
-  );
-
   if (!selectedTrack) return null;
 
   const language = pillForTrack(selectedTrack);
@@ -367,16 +396,12 @@ export default function JourneyClient({
         onTapStats={() => setStatsSheetOpen(true)}
       />
 
-      {tracks.length > 1 ? (
-        <JourneyLanguageHub
-          tracks={languageHubTracks}
-          selectedTrackId={selectedTrack.id}
-          onSelectTrack={(trackId) => {
-            setSelectedVariantId(trackId);
-            void trackJourneyMetric("journey_variant_selected", { variantId: trackId });
-          }}
-        />
-      ) : null}
+      {/* JourneyLanguageHub (card "YOUR LANGUAGES" arriba del flow)
+          removido para paridad con iPhone. Mobile usa solo el chip
+          GE/DE/ES en el top bar (tap abre el sheet "Switch journey")
+          como mecanismo único de cambio. Tener el hub grande arriba
+          + el chip era duplicación visual y rompía el flow vertical
+          del journey path. */}
 
       <div className="flex flex-col">
         {flatTopics.map((topic, topicIndex) => {

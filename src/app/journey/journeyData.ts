@@ -53,6 +53,11 @@ export type JourneyVariantTrack = {
    *  interno (lookups en memoria) seguimos usando `id`. */
   slug: string;
   label: string;
+  /** Journey.language ("German", "Spanish", "Italian", ...). Usado
+   *  como fallback para resolver el pill code/flag en el top bar
+   *  cuando `variant` no matchea el mapa (p.ej. variant="german"
+   *  caía al fallback `.slice(0,2)` y mostraba "GE"). */
+  language: string | null;
   /** Studio Journey.variant (e.g. "latam", "spain", "br", "pt"). Used
    *  client-side to pick the flag when the user's stored Journey only
    *  has the cuid in `variant` and never persisted a separate region. */
@@ -672,6 +677,7 @@ async function buildJourneyVariantsFromStudio(
       id: journey.id,
       slug: trackSlug,
       label: trackLabel,
+      language: (journey.language ?? "").trim() || null,
       variant: (journey.variant ?? "").trim().toLowerCase() || null,
       levels,
     });

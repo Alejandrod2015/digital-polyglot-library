@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { BookCheck, Crosshair, Flame, Headphones, Star, Trophy, Zap } from "lucide-react";
+import { BookCheck, Crosshair, Headphones, Zap } from "lucide-react";
 
 type ProgressPayload = {
   minutesListened: number;
@@ -54,35 +54,6 @@ function clamp(value: number, min: number, max: number): number {
   return Math.max(min, Math.min(max, value));
 }
 
-function motivationalLine(progress: ProgressPayload): string {
-  if (progress.storyStreakDays >= 7) return "Your reading habit is real now. Protect the streak.";
-  if (progress.practiceStreakDays >= 3) return "Practice is compounding now. Keep the rhythm going.";
-  if (progress.weeklyStoriesFinished >= progress.weeklyGoalStories) return "Weekly story goal reached. Strong consistency.";
-  if (progress.regionsExplored >= 3) return "You are expanding your learning journey, not just finishing stories.";
-  return "One finished story a day is enough to keep momentum.";
-}
-
-function motivationalBadge(progress: ProgressPayload): string {
-  if (progress.storyStreakDays >= 14) return "Strong streak";
-  if (progress.storyStreakDays >= 7) return "On a roll";
-  if (progress.weeklyPracticeSessions >= progress.weeklyGoalPracticeSessions) return "Practice locked in";
-  if (progress.weeklyStoriesFinished >= progress.weeklyGoalStories) return "Goal reached";
-  return "Keep going";
-}
-
-function statLabel(count: number, singular: string, plural: string): string {
-  return `${count} ${count === 1 ? singular : plural}`;
-}
-
-type Achievement = {
-  label: string;
-  description: string;
-  current: number;
-  target: number;
-  accent: string;
-  unlocked?: boolean;
-};
-
 export default function ProgressPage() {
   const { user, isLoaded } = useUser();
   const [loading, setLoading] = useState(true);
@@ -122,26 +93,6 @@ export default function ProgressPage() {
     if (!progress) return 0;
     if (!progress.weeklyGoalStories) return 0;
     return clamp((progress.weeklyStoriesFinished / progress.weeklyGoalStories) * 100, 0, 100);
-  }, [progress]);
-
-  const achievements = useMemo<Achievement[]>(() => {
-    if (!progress) return [];
-    const progressMap: Record<string, { current: number; target: number }> = {
-      first_story: { current: progress.storiesFinished, target: 1 },
-      week_streak: { current: progress.storyStreakDays, target: 7 },
-      word_collector: { current: progress.wordsLearned, target: 25 },
-      practice_ten: { current: progress.practiceSessionsCompleted, target: 10 },
-      region_explorer: { current: progress.regionsExplored, target: 3 },
-    };
-
-    return progress.gamification.badges.map((badge) => ({
-      label: badge.label,
-      description: badge.description,
-      current: progressMap[badge.id]?.current ?? 0,
-      target: progressMap[badge.id]?.target ?? 1,
-      accent: badge.accent,
-      unlocked: badge.unlocked,
-    }));
   }, [progress]);
 
   if (!isLoaded || loading) {
@@ -237,8 +188,8 @@ export default function ProgressPage() {
               cx={ringSize / 2}
               cy={ringSize / 2}
               r={ringR}
-              fill="rgba(11, 30, 58, 0.5)"
-              stroke="rgba(190, 242, 100, 0.15)"
+              fill="var(--card-bg)"
+              stroke="rgba(190, 242, 100, 0.18)"
               strokeWidth={6}
             />
             <circle
@@ -254,7 +205,10 @@ export default function ProgressPage() {
             />
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-white font-black leading-none" style={{ fontSize: 72 }}>
+            <span
+              className="font-black leading-none"
+              style={{ fontSize: 72, color: "var(--foreground)" }}
+            >
               {progress.gamification.dailyStreak}
             </span>
             <div className="mt-2 inline-flex items-center gap-1.5 text-[#fb923c] text-[13px] font-extrabold tracking-[0.18em]">
@@ -388,93 +342,10 @@ export default function ProgressPage() {
         </div>
       </div>
 
-      {/* ── Daily quests (kept; styled compact below the week stats) ── */}
-      {progress.gamification.quests.length > 0 ? (
-        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4 mb-6">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2 text-white text-[14px] font-extrabold">
-              <Trophy size={15} className="text-[#fcd34d]" />
-              Daily quests
-            </div>
-            <span className="text-white/55 text-[12px] font-bold">
-              {progress.gamification.quests.filter((q) => q.complete).length} / {progress.gamification.quests.length}
-            </span>
-          </div>
-          <div className="space-y-2">
-            {progress.gamification.quests.map((quest) => (
-              <div
-                key={quest.id}
-                className="rounded-[14px] border border-white/6 bg-black/20 px-3 py-2.5"
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-[13px] font-bold text-white">{quest.label}</p>
-                  <span className="text-[11px] font-extrabold text-[#bef264]">
-                    +{quest.rewardXp} XP
-                  </span>
-                </div>
-                <div className="mt-1.5 flex items-center justify-between text-[11px] text-white/55">
-                  <span>
-                    {Math.min(quest.current, quest.target)} / {quest.target}
-                  </span>
-                  <span>{quest.complete ? "Done" : "In progress"}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ) : null}
-
-      {/* ── Achievements (compact) ── */}
-      {achievements.length > 0 ? (
-        <div className="rounded-[20px] border border-white/8 bg-white/[0.025] p-4">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2 text-white text-[14px] font-extrabold">
-              <Star size={15} className="text-[#fcd34d]" fill="currentColor" />
-              Achievements
-            </div>
-          </div>
-          <div className="space-y-2">
-            {achievements.map((achievement) => {
-              const percent = clamp((achievement.current / achievement.target) * 100, 0, 100);
-              return (
-                <div
-                  key={achievement.label}
-                  className="flex items-center gap-3 rounded-[14px] border border-white/6 bg-black/20 px-3 py-2.5"
-                >
-                  <div
-                    className="grid place-items-center shrink-0"
-                    style={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: 12,
-                      backgroundColor: achievement.accent,
-                    }}
-                  >
-                    <Flame size={18} className="text-white" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center justify-between gap-2">
-                      <p className="text-[13px] font-bold text-white truncate">{achievement.label}</p>
-                      <span className="text-[11px] font-bold text-white/55">
-                        {Math.min(achievement.current, achievement.target)}/{achievement.target}
-                      </span>
-                    </div>
-                    <div className="mt-1.5 h-1.5 rounded-full bg-white/8 overflow-hidden">
-                      <div
-                        className="h-full rounded-full"
-                        style={{ width: `${percent}%`, backgroundColor: achievement.accent }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      ) : null}
-
-      {/* Tiny line at the bottom — keeps the existing motivational copy. */}
-      <p className="mt-6 text-center text-[13px] text-white/55">{motivationalLine(progress)}</p>
+      {/* Daily quests + Achievements + footer motivational quitados
+          para paridad con iPhone (mobile termina en "This week"). El
+          payload de /api/progress sigue trayendo quests + badges para
+          surfaces como el user card en /settings que sí los usa. */}
     </div>
   );
 }

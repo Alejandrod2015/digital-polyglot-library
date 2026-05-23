@@ -25,11 +25,21 @@ export default async function HomePage({
   // renderizamos JourneyClient directo en /. La URL queda en home y
   // el contenido es la malla del journey. Para los demás planes
   // mantenemos el HomeClient con featured + carruseles.
-  const user = await currentUser();
-  const plan =
-    typeof user?.publicMetadata?.plan === "string"
-      ? user.publicMetadata.plan
-      : "free";
+  //
+  // currentUser() puede fallar transitoriamente (ClerkAPIResponseError:
+  // rate limit, sesión inválida, network blip). Si falla, caemos al
+  // render free para no romper la página entera; el user vuelve a
+  // tener el flujo normal en el siguiente request cuando Clerk
+  // recupera. Log a stderr para visibilidad.
+  let plan: string = "free";
+  try {
+    const user = await currentUser();
+    if (typeof user?.publicMetadata?.plan === "string") {
+      plan = user.publicMetadata.plan;
+    }
+  } catch (err) {
+    console.error("[home] currentUser() failed, falling back to free:", err);
+  }
 
   if (plan === "polyglot") {
     const { variant } = await searchParams;
