@@ -75,3 +75,7 @@ scripts/tts/whisper-models/
 # Claude Code runtime artifacts
 .claude/scheduled_tasks.lock
 data/vocab-shorten/
+
+# Safety guard runtime files (snapshots live outside repo)
+.claude/safety/audit.log
+.claude/safety/env-snapshots/
