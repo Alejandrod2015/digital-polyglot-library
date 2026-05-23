@@ -210,6 +210,34 @@ function humanize(check: Check): Humanized {
         text: "Algunos nombres de personajes ya se usaron en otra historia del tema",
         hint: `Cambia los nombres por otros del mismo registro cultural. Repetidos: ${detail}`,
       };
+    case "vocab-level-frequency": {
+      // detail formato: "N fuera de LEVEL: word1 (LV) → repl1, word2 (LV) → repl2, ..."
+      // Extraemos el LEVEL target del label (e.g. "...A1 lexical frequency...")
+      const lvMatch = check.label.match(/\b([ABC][12])\b/);
+      const tgt = lvMatch?.[1] ?? "el nivel";
+      return {
+        text: isWarn
+          ? `Hay palabras del vocab un poco por encima de ${tgt}`
+          : `Hay palabras del vocab fuera de nivel ${tgt}`,
+        hint:
+          `Cambia las palabras marcadas por sus equivalentes ${tgt} sugeridos a la derecha de la flecha (→). ` +
+          `Si la sugerencia no encaja con el contexto, elige otra palabra de nivel ${tgt} con sentido similar. ` +
+          `Detalle: ${detail}`,
+      };
+    }
+    case "body-level-frequency": {
+      const lvMatch = check.label.match(/\b([ABC][12])\b/);
+      const tgt = lvMatch?.[1] ?? "el nivel";
+      return {
+        text: isWarn
+          ? `El cuerpo usa un registro un poco por encima de ${tgt}`
+          : `El cuerpo usa demasiado vocabulario fuera de nivel ${tgt}`,
+        hint:
+          `Reescribe las frases del cuerpo que contienen las palabras marcadas, reemplazándolas por sus equivalentes ${tgt} (sugeridos con →). ` +
+          `Mantén el sentido pero baja el registro. ` +
+          `Detalle: ${detail}`,
+      };
+    }
     default:
       return { text: check.label, hint: detail || undefined };
   }
@@ -346,9 +374,16 @@ export default function ValidarResultView({
       {/* ─── FAILS: qué arreglar (primero, accionable) ─── */}
       {fails.length > 0 && (
         <section>
-          <h3 className="mb-2 text-sm font-bold text-rose-200">
-            Arregla esto antes de subir
-          </h3>
+          <div className="mb-2 flex items-center justify-between gap-2">
+            <h3 className="text-sm font-bold text-rose-200">
+              Arregla esto antes de subir
+            </h3>
+            <CopyChatGPTPromptButton
+              checks={fails}
+              level={meta?.level ?? null}
+              parsed={parsed}
+            />
+          </div>
           <ol className="space-y-2">
             {fails.map((c, i) => {
               const h = humanize(c);
@@ -452,5 +487,86 @@ export default function ValidarResultView({
         </div>
       )}
     </div>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────────
+// "Copiar prompt para ChatGPT" button. Takes the failed checks + parsed
+// story payload and bundles a single paste-able instruction so the
+// worker can hand it to ChatGPT and get a corrected story back.
+// ───────────────────────────────────────────────────────────────────────────
+
+type ParsedForPrompt =
+  | {
+      title?: string;
+      synopsis?: string;
+      text?: string;
+      vocab?: { word: string; definition: string }[];
+    }
+  | null
+  | undefined;
+
+function buildChatGPTPrompt(
+  fails: Check[],
+  level: string | null | undefined,
+  parsed: ParsedForPrompt,
+): string {
+  const lv = (level ?? "").toUpperCase();
+  const fixes = fails
+    .map((c, i) => {
+      const h = humanize(c);
+      const head = `${i + 1}. ${h.text}`;
+      const body = h.hint ? `\n   • ${h.hint}` : "";
+      return head + body;
+    })
+    .join("\n");
+  const intro = lv
+    ? `Estas son las correcciones que necesita esta historia (nivel ${lv}) según mi validador. Aplica TODAS y devuélveme la historia completa en el MISMO formato JSON original (title, synopsis, arcType, text, vocab[]). No expliques, solo el JSON.`
+    : `Estas son las correcciones que necesita esta historia según mi validador. Aplica TODAS y devuélveme la historia completa en el MISMO formato JSON original.`;
+  const vocabBlock = parsed?.vocab?.length
+    ? `\n\nVocab actual:\n${parsed.vocab
+        .map((v) => `- ${v.word}: ${v.definition}`)
+        .join("\n")}`
+    : "";
+  const storyBlock = parsed
+    ? `\n\nHistoria actual:\n\nTítulo: ${parsed.title ?? "—"}\n\nSinopsis: ${parsed.synopsis ?? "—"}\n\nCuerpo:\n${parsed.text ?? "—"}${vocabBlock}`
+    : "";
+  return `${intro}\n\nCorrecciones:\n${fixes}${storyBlock}\n\nRegenera la historia entera con todas las correcciones aplicadas. Devuelve SOLO el JSON.`;
+}
+
+function CopyChatGPTPromptButton({
+  checks,
+  level,
+  parsed,
+}: {
+  checks: Check[];
+  level: string | null | undefined;
+  parsed: ParsedForPrompt;
+}) {
+  const [copied, setCopied] = useState(false);
+  if (checks.length === 0) return null;
+  const handleCopy = async () => {
+    const text = buildChatGPTPrompt(checks, level, parsed);
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback: open a window so worker can copy manually
+      const w = window.open("", "_blank");
+      if (w) {
+        w.document.body.innerText = text;
+      }
+    }
+  };
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      className="shrink-0 rounded-md border border-rose-400/50 bg-rose-500/15 px-2.5 py-1 text-[11px] font-semibold text-rose-100 transition hover:bg-rose-500/25"
+      title="Copia un prompt con todas las correcciones para pegarlo en ChatGPT"
+    >
+      {copied ? "Copiado ✓" : "Copiar prompt para ChatGPT"}
+    </button>
   );
 }

@@ -565,17 +565,25 @@ export async function validateGeneratedStory(
         : aboveLevel.length <= 2
           ? "warn"
           : "fail";
+    // Detail includes suggested replacements when available so the worker
+    // can paste them into ChatGPT verbatim.
+    const detailParts: string[] = [];
+    if (aboveLevel.length > 0) {
+      detailParts.push(
+        `${aboveLevel.length} fuera de ${levelKey.toUpperCase()}: ${aboveLevel
+          .map((a) =>
+            a.replacement
+              ? `${a.word} (${a.judgedLevel.toUpperCase()}) → ${a.replacement}`
+              : `${a.word} (${a.judgedLevel.toUpperCase()})`,
+          )
+          .join(", ")}`,
+      );
+    }
     checks.push({
       id: "vocab-level-frequency",
       label: `Vocab matches ${levelKey.toUpperCase()} lexical frequency (ES, list+LLM)`,
       status,
-      detail:
-        aboveLevel.length > 0
-          ? `${aboveLevel.length} fuera de ${levelKey.toUpperCase()}: ${aboveLevel
-              .slice(0, 6)
-              .map((a) => `${a.word} (${a.judgedLevel.toUpperCase()})`)
-              .join(", ")}${aboveLevel.length > 6 ? ` …+${aboveLevel.length - 6}` : ""}`
-          : undefined,
+      detail: detailParts.length > 0 ? detailParts.join(" ") : undefined,
     });
   } else if (isA1orA2) {
     const fallbackByLang: Record<string, ((word: string) => boolean) | undefined> = {
@@ -635,17 +643,21 @@ export async function validateGeneratedStory(
       // list. We only fail when the cluster is genuinely off-level.
       const status: CheckStatus =
         pct < 10 ? "pass" : pct < 20 ? "warn" : "fail";
+      const bodyDetail =
+        aboveLevel.length > 0
+          ? `${aboveLevel.length}/${contentWords.length} (${pct.toFixed(1)}%) del body fuera de ${levelKey.toUpperCase()}: ${aboveLevel
+              .map((a) =>
+                a.replacement
+                  ? `${a.word} (${a.judgedLevel.toUpperCase()}) → ${a.replacement}`
+                  : `${a.word} (${a.judgedLevel.toUpperCase()})`,
+              )
+              .join(", ")}`
+          : `${contentWords.length} content words analizadas, todas ≤${levelKey.toUpperCase()}`;
       checks.push({
         id: "body-level-frequency",
         label: `Body register matches ${levelKey.toUpperCase()} (ES, list+LLM)`,
         status,
-        detail:
-          aboveLevel.length > 0
-            ? `${aboveLevel.length}/${contentWords.length} (${pct.toFixed(1)}%) palabras de body fuera de nivel: ${aboveLevel
-                .slice(0, 8)
-                .map((a) => `${a.word}(${a.judgedLevel.toUpperCase()})`)
-                .join(", ")}${aboveLevel.length > 8 ? ` …+${aboveLevel.length - 8}` : ""}`
-            : `${contentWords.length} content words analizadas, todas ≤${levelKey.toUpperCase()}`,
+        detail: bodyDetail,
       });
     }
   }
