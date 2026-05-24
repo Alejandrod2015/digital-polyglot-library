@@ -1332,12 +1332,29 @@ body {
     0 1px 0 rgba(0,0,0,0.35);
 }
 
-/* Active (next) story — brighter stack + pulsing halo */
+/* End-of-story practice prompt enter animation. */
+@keyframes dp-eos-pop {
+  0%   { transform: translateY(28px) scale(0.96); opacity: 0; }
+  100% { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+/* Active (next) story — three layered effects to scream "tap here":
+ *   1. Brighter 3D button stack (the card sits visually raised).
+ *   2. Pulsing color halo behind the card via ::before.
+ *   3. Shimmer sweep via ::after — diagonal white gradient that travels
+ *      across the surface every few seconds, mirroring the "shine"
+ *      pass on a real polished button.
+ *   4. Gentle vertical float on the whole card (animation on the
+ *      element itself), matching iPhone's `journeyNextPulseTranslateY`
+ *      so the next-action card subtly breathes up and down. */
 .dp-journey-card.active-card {
   box-shadow:
     inset 0  2px 0 rgba(255,255,255,0.30),
     inset 0 -2px 0 rgba(0,0,0,0.20),
-    0 5px 0 rgba(0,0,0,0.40);
+    0 5px 0 rgba(0,0,0,0.40),
+    0 8px 24px -8px var(--tp-color, rgba(31,126,224,0.55));
+  animation: dp-journey-float 3.2s ease-in-out infinite;
+  will-change: transform;
 }
 .dp-journey-card.active-card::before {
   content: "";
@@ -1351,9 +1368,45 @@ body {
   animation: dp-journey-halo 2.4s ease-in-out infinite;
   pointer-events: none;
 }
+/* Shimmer sweep — diagonal white light that moves across the card
+ * every 4 seconds. Built as a wide gradient that translates from
+ * -120% to +120% on the X axis. */
+.dp-journey-card.active-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    100deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 65%
+  );
+  background-size: 220% 100%;
+  background-position: 200% 0;
+  animation: dp-journey-shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
 @keyframes dp-journey-halo {
   0%, 100% { opacity: 0.35; transform: scale(0.94); }
   50%      { opacity: 0.75; transform: scale(1.04); }
+}
+@keyframes dp-journey-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+@keyframes dp-journey-shimmer {
+  0%   { background-position: 200% 0; }
+  60%  { background-position: -100% 0; }
+  100% { background-position: -100% 0; }
+}
+/* Pressed-state on active card: cancel the float so the press feels
+ * tight (otherwise it bounces against the float animation). */
+.dp-journey-card.active-card:active {
+  animation: none;
+  transform: translateY(3px);
 }
 
 /* Topic banner sizing — same rescue pattern as the card.

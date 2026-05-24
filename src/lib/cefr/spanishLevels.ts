@@ -11,6 +11,7 @@ import { SPANISH_A1_A2_LEMMAS, isSpanishA1A2 } from "./spanishA1A2";
 import { SPANISH_B1_LEMMAS } from "./spanishB1";
 import { SPANISH_B2_LEMMAS } from "./spanishB2";
 import { SPANISH_C1_LEMMAS } from "./spanishC1";
+import { spanishInfinitiveOf } from "./spanishConjugations";
 
 type SpanishLevel = "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
 
@@ -53,6 +54,13 @@ function lookupInSet(word: string, set: ReadonlySet<string>): boolean {
   // Accent-insensitive fallback ("frustracion" still matches "frustración")
   const deburredLemma = deburr(lemma);
   if (deburredLemma !== lemma && getDeburredIndex(set).has(deburredLemma)) return true;
+  // Conjugation lookup ("puedo" → "poder", "comieron" → "comer")
+  const infinitive = spanishInfinitiveOf(lemma);
+  if (infinitive) {
+    if (set.has(infinitive)) return true;
+    const deburredInf = deburr(infinitive);
+    if (deburredInf !== infinitive && getDeburredIndex(set).has(deburredInf)) return true;
+  }
   // Plural -s
   if (lemma.endsWith("s") && lemma.length > 3 && set.has(lemma.slice(0, -1))) return true;
   if (lemma.endsWith("es") && lemma.length > 4) {
@@ -104,7 +112,8 @@ export function isSpanishUpToLevel(word: string, level: SpanishLevel): boolean {
   if (level === "c1") return lookupInSet(word, setUpToC1);
   if (level === "b2") return lookupInSet(word, setUpToB2);
   if (level === "b1") return lookupInSet(word, setUpToB1);
-  // A1 or A2: use the dedicated helper (has the same normalizations
-  // but exposed standalone for legacy callers).
-  return isSpanishA1A2(word);
+  // A1 / A2: route through lookupInSet (which has conjugation + accent
+  // normalization). Fall back to isSpanishA1A2 for any case lookupInSet
+  // misses (legacy callers may have expected exact behavior).
+  return lookupInSet(word, setA1A2) || isSpanishA1A2(word);
 }

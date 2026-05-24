@@ -27,6 +27,7 @@ import { promises as fs } from "fs";
 import path from "path";
 
 import { isSpanishUpToLevel } from "./spanishLevels";
+import { isSpanishProperNoun } from "./spanishProperNouns";
 
 export type SpanishLevel = "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
 
@@ -220,15 +221,21 @@ export async function filterSpanishWordsAtOrBelow(
 }
 
 /**
- * Extract content words from a Spanish story body. Strips punctuation,
- * lowercases, splits on whitespace, removes function words (articles,
- * pronouns, common prepositions, conjunctions, auxiliaries that the level
- * judge would otherwise waste a call on). Returns unique surface forms.
+ * Extract content words from a Spanish story body.
  *
- * NOTE: We pass surface forms (not lemmas) because the LLM is smart
- * enough to interpret inflected forms ("comeríamos", "estuvieron") and
- * judge them by their underlying lemma. This avoids the complexity of a
- * full Spanish lemmatizer here.
+ * Pipeline:
+ * 1. Tokenize on punctuation/whitespace. Preserve original case for the
+ *    proper-noun pass (capitalized mid-sentence words look like names).
+ * 2. Drop stop-words (articles, prepositions, common pronouns, common
+ *    auxiliaries).
+ * 3. Drop known proper nouns (character names, places, brands) via the
+ *    SPANISH_PROPER_NOUNS set.
+ * 4. Drop CAPITALIZED tokens mid-sentence that are NOT in the lemma
+ *    lists (best-effort proper noun catcher for names we don't list).
+ * 5. Lowercase, dedupe, return.
+ *
+ * NOTE: We pass surface forms (not lemmas) because the level checker's
+ * conjugation table maps them to infinitives on lookup.
  */
 export function extractSpanishContentWords(body: string): string[] {
   const STOP = new Set<string>([
@@ -252,20 +259,37 @@ export function extractSpanishContentWords(body: string): string[] {
     // Misc
     "al",
   ]);
-  const tokens = body
-    .toLowerCase()
-    .replace(/[¿¡"'()\[\]{}—–\-_*]/g, " ")
+  // Tokenize preserving case so we can spot proper nouns.
+  const rawTokens = body
+    .replace(/[¿¡"'()\[\]{}—–_*]/g, " ")
     .split(/[\s.,;:!?"…]+/u)
     .filter(Boolean);
+
+  // Sentence boundaries: tokens at position 0 OR right after . ! ? are
+  // sentence-initial, so capitalization there is normal, not a name hint.
+  // Build a quick set of sentence-initial indexes.
+  const sentenceStart = new Set<number>([0]);
+  for (let i = 0; i < rawTokens.length - 1; i++) {
+    if (/[.!?…]$/.test(rawTokens[i])) sentenceStart.add(i + 1);
+  }
+
   const seen = new Set<string>();
   const out: string[] = [];
-  for (const t of tokens) {
-    if (t.length < 3) continue; // skip "a", "de", etc.
-    if (STOP.has(t)) continue;
-    if (/^\d+$/.test(t)) continue; // pure numbers
-    if (seen.has(t)) continue;
-    seen.add(t);
-    out.push(t);
+  for (let i = 0; i < rawTokens.length; i++) {
+    const raw = rawTokens[i].replace(/[-]+$/, "").replace(/^[-]+/, "");
+    if (!raw) continue;
+    const lower = raw.toLowerCase();
+    if (lower.length < 3) continue;
+    if (STOP.has(lower)) continue;
+    if (/^\d+$/.test(lower)) continue;
+    if (isSpanishProperNoun(lower)) continue;
+    // Mid-sentence capitalized token = likely proper noun (character /
+    // brand / place not in our list). Skip.
+    const isCapitalized = /^[A-ZÁÉÍÓÚÑÜ]/.test(raw);
+    if (isCapitalized && !sentenceStart.has(i)) continue;
+    if (seen.has(lower)) continue;
+    seen.add(lower);
+    out.push(lower);
   }
   return out;
 }

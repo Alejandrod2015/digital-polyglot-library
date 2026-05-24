@@ -298,23 +298,25 @@ export default function JourneyClient({
     };
   }, []);
 
-  // Per-topic "next" recommendation: the first not-yet-complete story
-  // inside each unlocked topic. Each active topic gets exactly one
-  // pulsing-halo card; locked levels get none.
-  const nextStoryKeyByTopic = useMemo(() => {
-    const map = new Map<string, string>();
-    levels.forEach((level, levelIndex) => {
-      if (levelIndex >= unlockedLevelCount) return;
+  // Single GLOBAL "next" recommendation across the entire journey: the
+  // first not-yet-complete story in the first incomplete topic of the
+  // lowest unlocked level. Only this ONE story gets the pulsing halo +
+  // float + button effects — same behavior as iPhone
+  // (`globalJourneyNextStoryId` in MobileLibraryShell). Previously we
+  // had one "next" per topic, which lit up the first story of every
+  // topic and broke the "this is where to tap" cue.
+  const globalNextStoryKey = useMemo<string | null>(() => {
+    for (let i = 0; i < levels.length; i++) {
+      if (i >= unlockedLevelCount) break;
+      const level = levels[i];
       for (const topic of level.topics) {
         const firstIncomplete = topic.stories.find(
           (s) => !isJourneyStoryComplete(s, completedStoryKeySet)
         );
-        if (firstIncomplete) {
-          map.set(`${level.id}:${topic.slug}`, firstIncomplete.progressKey);
-        }
+        if (firstIncomplete) return firstIncomplete.progressKey;
       }
-    });
-    return map;
+    }
+    return null;
   }, [completedStoryKeySet, levels, unlockedLevelCount]);
 
   type FlatTopic = {
@@ -342,11 +344,10 @@ export default function JourneyClient({
         // (banner with no rows). Locked levels keep their empty topics so
         // the user sees the upcoming map of what's gated.
         if (isLevelUnlocked && topic.stories.length === 0) continue;
-        const topicNextKey = nextStoryKeyByTopic.get(`${level.id}:${topic.slug}`);
         const stories = topic.stories.map((story) => {
           const isStoryComplete = isJourneyStoryComplete(story, completedStoryKeySet);
           const isNextRecommended =
-            !!topicNextKey && story.progressKey === topicNextKey;
+            !!globalNextStoryKey && story.progressKey === globalNextStoryKey;
 
           let state: StoryNodeState;
           if (!isLevelUnlocked) {
@@ -381,7 +382,7 @@ export default function JourneyClient({
       }
     });
     return out;
-  }, [completedStoryKeySet, levels, nextStoryKeyByTopic, unlockedLevelCount]);
+  }, [completedStoryKeySet, levels, globalNextStoryKey, unlockedLevelCount]);
 
   if (!selectedTrack) return null;
 

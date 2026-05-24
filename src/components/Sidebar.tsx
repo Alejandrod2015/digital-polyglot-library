@@ -344,9 +344,10 @@ export default function Sidebar({ onClose }: SidebarProps) {
         </Link>
       </nav>
 
-      <SignedIn>
-        <StreakCard days={streakDays} />
-      </SignedIn>
+      {/* Streak card — always visible (paridad iPhone). Logged-out users
+          see a zero-state "Start today to begin a streak". Logged-in users
+          see their real count from /api/me/streak. */}
+      <StreakCard days={streakDays} />
 
       {/* Auth controls */}
       <div className="mt-6 space-y-3">

@@ -223,7 +223,7 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "lámpara","bombilla","interruptor","enchufe","cable","alargador","pila","batería",
   "papel","cartón","tela","plástico","metal","madera","piedra","ladrillo","cemento",
   "envase","botella","frasco","tarro","lata","paquete","bolsa","caja","cubo","sobre",
-  "bandeja","fuente","plato","vaso","copa","jarra","jarrón","florero","cuenco",
+  "bandeja","fuente","plato","vaso","copa","jarra","florero","cuenco",
   // Materials / surfaces
   "tejado","techo","piso","suelo","pared","muro","columna","esquina","rincón",
   "patio","jardín","huerta","huerto","prado","césped","camino","sendero","vereda",
@@ -241,7 +241,7 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "plegar","doblar","desdoblar","abrir","cerrar","apretar","aflojar","atar","desatar",
   "envolver","desenvolver","cubrir","descubrir","tapar","destapar","esconder","mostrar",
   "agitar","mezclar","batir","remover","verter","llenar","vaciar","derramar","manchar",
-  "distribuir","repartir","entregar","recoger","juntar","separar","unir","dividir",
+  "repartir","entregar","recoger","juntar","separar","unir","dividir",
   "extender","encoger","estirar","apretar","apoyar","sostener","sujetar","soltar",
   "cargar","descargar","subir","bajar","alzar","levantar","apilar","colgar","descolgar",
   "encender","apagar","prender","conectar","desconectar","enchufar","desenchufar",
@@ -321,7 +321,7 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "vapor","humo","ceniza","carbón","leña","fogata","chispa","brasa","llama",
   "cresta","loma","ladera","barranco","cuesta","planicie","llanura","meseta","sabana",
   "barrio","manzana","cuadra","alameda","paseo","glorieta","rotonda","callejón",
-  "almacén","bodega","despensa","sótano","trastero","cobertizo","pasaje",
+  "sótano","pasaje",
   "vuelta","giro","curva","desvío","atajo","ruta","trayecto","recorrido",
   "salto","brinco","paso","caminata","carrera","marcha","viaje",
   "abrazo","beso","saludo","despedida","sonrisa","mueca","gesto","seña",
@@ -393,7 +393,7 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "revista","periódico","diario","catálogo","folleto","panfleto","cartel","afiche",
   "cuaderno","agenda","calendario","álbum","cuento","novela","poema","poesía",
   // Common A2 verbs / adjectives that appear
-  "burbujear","hervir","derretir","disolver","enfriar","calentar","cocer","tostar",
+  "hervir","derretir","disolver","enfriar","calentar","cocer","tostar",
   "arrastrar","empujar","jalar","tirar","levantar","apilar","colocar","ubicar",
   "extender","desplegar","plegar","doblar","enrollar","desenrollar","estirar","encoger",
   "atar","amarrar","sujetar","fijar","clavar","colgar","desprender","despegar",
@@ -401,12 +401,12 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "marcar","señalar","apuntar","subrayar","trazar","dibujar","esbozar","bosquejar",
   "examinar","revisar","controlar","verificar","comprobar","analizar","observar",
   "remover","mezclar","batir","revolver","agitar","sacudir","balancear","mecer",
-  "polvo","pelusa","mota","mota de polvo","copo","pelusilla",
+  "polvo",
   // Weather / atmosphere A2
   "sombrío","nublado","despejado","soleado","lluvioso","ventoso","tormentoso",
   "brumoso","nebuloso","gélido","helado","cálido","ardiente","tibio","fresco",
   // Decorations / objects
-  "adorno","decoración","figura","figurita","jarrón","jarrón decorativo","florero",
+  "decoración","figura","florero",
   "candelabro","portavelas","portarretrato","portarretratos","marco","cuadro",
   "espejo","espejito","mariposa","pajarito","peluche","muñeca","muñeco","juguete",
   // Hardware / nail / building A2
@@ -418,14 +418,14 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "regla","escuadra","compás","transportador","calculadora","ábaco",
   "lámpara portátil","linterna","luz recargable","pila","batería","cargador",
   // Misc functional A2
-  "baúl","arcón","cofre","maletín","portafolios","mochila","saco",
+  "maletín","mochila","saco",
   "farol","faro","farolito","linterna","velón",
 
   // ── Round 4: más A2 funcional clara ──
   "asiento","silla","banca","sentadero","butaca",
   "protector","protección","escudo","barrera","valla","cerca","reja","verja",
-  "medalla","insignia","trofeo","premio","copa","placa","escarapela",
-  "chal","pañuelo","mantón","echarpe","fular","pareo",
+  "trofeo","premio","copa",
+  "pañuelo",
   "boina","gorra","sombrero","capucha","capote",
   "pileta","piscina","alberca","tina","bañera","jacuzzi","fuente",
   "despertador","alarma","reloj despertador","sirena","campana","timbre",
@@ -464,6 +464,76 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "mirador","balcón","terraza","observatorio","atalaya","ventanilla",
   "acceso","entrada","ingreso","salida","abertura","apertura","paso",
   "acumulador","batería","pila","carga","energía","electricidad",
+
+  // === Brecha A1+A2 (vocab común que faltaba). Solo entradas confirmadas
+  // A1/A2 según Plan Curricular del Cervantes. Las B1+ que estaban aquí
+  // antes (morral, abanico, baúl, burbujear, chal, etc.) se quitaron para
+  // que el validator caze correctamente el vocab fuera de nivel. ===
+  // Lugares
+  "lugar","sitio","zona","barrio","centro","afueras","pueblo","aldea",
+  "calle","avenida","callejón","plaza","parque","jardín","paseo",
+  "esquina","cruce","semáforo","carretera","camino","sendero","ruta",
+  "puente","túnel","puerto","aeropuerto","estación","parada",
+  "cabina","kiosco","quiosco","farmacia","panadería","pastelería","heladería",
+  "carnicería","frutería","pescadería","peluquería","barbería","lavandería",
+  "zapatería","papelería","librería","biblioteca","museo","teatro","cine",
+  "circo","feria","estadio","gimnasio","piscina","cancha","pista",
+  "ubicación","situación","posición","dirección","área",
+  // Transporte
+  "vehículo","carro","auto","coche","camión","autobús","bus","tranvía","metro","tren",
+  "bote","barca","barco","bicicleta","bici","moto","patineta","patines","triciclo",
+  // Acciones de movimiento (solo A1/A2)
+  "pasar","cruzar","girar","doblar","regresar","volver","mudar","viajar",
+  "encontrar","buscar","perderse",
+  // Comunicación
+  "mensaje","aviso","anuncio","noticia","nota",
+  "cartel","letrero","señal","signo","símbolo","icono","logotipo","logo","marca","sello",
+  "conexión","red","contacto","encuentro","cita",
+  // Sistema básico
+  "sistema","programa","aplicación","servicio","función","modo","tipo",
+  "modelo","versión","clase","grupo","serie",
+  "número","código","clave","contraseña","usuario","cuenta","perfil",
+  // Tránsito
+  "tráfico","retraso","hora","minuto","segundo","reloj","alarma","despertador",
+  // Objetos comunes
+  "guitarra","piano","violín","batería","tambor","flauta",
+  "micrófono","auricular","audífono","sirena",
+  "bandera","corona","sombrilla","paraguas","ventilador",
+  "funda","caja","mochila","bolso",
+  // Cualidades / adjetivos
+  "principal","central","trasero","superior","inferior",
+  "tranquilidad","calma","paz","silencio",
+  "paisaje","vista","escena","ambiente","clima",
+  "incómodo","cómodo","fácil","difícil","sencillo","complicado","simple",
+  "amplio","ancho","estrecho",
+  "equivocado","correcto","incorrecto","exacto","seguro",
+  "roto","dañado","reparado","arreglado",
+  "atrasado","retrasado","temprano","tarde","puntual",
+  // Verbos comunes
+  "cenar","desayunar","almorzar","merendar","probar",
+  "arreglar","reparar","cambiar","faltar","sobrar","necesitar","pedir",
+  "brillar","iluminar",
+  // Casa
+  "ventilador","aire","viento","brisa",
+  "ropero","armario","clóset","closet","cajón","estante",
+  "dibujo","pintura","cuadro","retrato","póster",
+  "techo","tejado","arco","columna",
+  "fila","cola","línea","orden",
+  // Comida
+  "croissant","bollo","empanada","torta","pastel","tarta",
+  "ramo","flor","planta","árbol",
+  "unión","lazo","relación",
+  "pase","pasaje","ticket","entrada","boleto","vale",
+  "tesoro","joya",
+  // Misceláneo
+  "ventanilla","mostrador","cajero","oficina",
+  "invitado","turista","viajero",
+  "garaje","parking",
+  // Materiales
+  "metálico","plástico","madera","tela","cuero","vidrio","cristal","papel",
+  "lento","lentamente","rápidamente","despacio","veloz",
+  "abierto","cerrado","encendido","apagado","prendido","activo","inactivo",
+  "vacío","lleno","completo",
 ]);
 
 /**

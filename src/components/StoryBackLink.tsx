@@ -8,6 +8,9 @@ type StoryBackLinkProps = {
   bookSlug?: string;
   fallbackHref?: string;
   fallbackLabel?: string;
+  /** Render as a floating circular icon-only button (iPhone parity).
+   *  Default: inline pill with label. */
+  floating?: boolean;
 };
 
 type BackConfig = {
@@ -31,6 +34,7 @@ export default function StoryBackLink({
   bookSlug,
   fallbackHref,
   fallbackLabel,
+  floating = false,
 }: StoryBackLinkProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -134,6 +138,24 @@ export default function StoryBackLink({
 
     router.push(back.href);
   };
+
+  if (floating) {
+    // Fixed-position so the button stays in the top-left as the user
+    // scrolls (matches iPhone's floatingBackButton behavior). z-50 sits
+    // above the cover image (z-20) and below the bottom Player (z-50)
+    // without competing with anything else on the story page.
+    return (
+      <button
+        type="button"
+        onClick={handleBack}
+        aria-label={back.label}
+        title={back.label}
+        className="fixed left-3 top-3 z-50 inline-grid h-10 w-10 place-items-center rounded-full border border-white/[0.12] bg-[rgba(4,9,17,0.78)] text-white/95 backdrop-blur-md transition hover:bg-[rgba(4,9,17,0.92)] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 md:left-6 md:top-6"
+      >
+        <ArrowLeft className="h-5 w-5" />
+      </button>
+    );
+  }
 
   return (
     <button

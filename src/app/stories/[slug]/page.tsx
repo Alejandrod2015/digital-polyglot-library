@@ -19,6 +19,7 @@ import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
 import VocabPanel from "@/components/VocabPanel";
+import EndOfStoryPracticePrompt from "@/components/EndOfStoryPracticePrompt";
 import JourneyStoryReadTracker from "@/components/JourneyStoryReadTracker";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 import { getJourneyStoryBySlug } from "@/lib/journeyStories";
@@ -59,6 +60,11 @@ type StoryPayload = {
   level: string | null;
   coverUrl: string | null;
   source: StorySource;
+  /** True when the story comes from the Journey content table
+   *  (getJourneyStoryBySlug). Used to hide UI that doesn't belong in
+   *  the curated journey path (e.g. the "save to library" bookmark —
+   *  the journey IS the library). */
+  isJourney: boolean;
   audioSegments: unknown;
 };
 
@@ -157,6 +163,7 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
       level: polyglotStoryMirror.level ?? polyglotStory.level,
       coverUrl: polyglotStoryMirror.coverUrl ?? polyglotStory.coverUrl,
       source: "polyglot",
+      isJourney: false,
       audioSegments: polyglotStory.audioSegments,
     };
   }
@@ -175,6 +182,7 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
       level: polyglotStoryMirror?.level ?? polyglotStory.level,
       coverUrl: polyglotStoryMirror?.coverUrl ?? polyglotStory.coverUrl,
       source: "polyglot",
+      isJourney: false,
       audioSegments: polyglotStory.audioSegments,
     };
   }
@@ -193,6 +201,7 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
       level: polyglotStoryMirror.level,
       coverUrl: polyglotStoryMirror.coverUrl,
       source: "polyglot",
+      isJourney: false,
       audioSegments: null,
     };
   }
@@ -213,6 +222,7 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
       level: journeyStory.level,
       coverUrl: journeyStory.coverUrl,
       source: "standalone",
+      isJourney: true,
       audioSegments: null,
     };
   }
@@ -234,6 +244,7 @@ async function getStoryPagePayload(slug: string): Promise<StoryPayload | null> {
     level: standaloneStory.level,
     coverUrl: standaloneStory.coverUrl,
     source: "standalone",
+    isJourney: false,
     audioSegments: getStandaloneStoryAudioSegments(standaloneStory.slug),
   };
 }
@@ -377,23 +388,28 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   return (
     <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground">
       <ScrollToTopOnPathChange />
-      {/* Botón de guardar en la biblioteca */}
-      <div className="absolute top-[-2.75rem] right-6 z-30 sm:right-8">
-        <AddStoryToLibraryButton
-          storyId={resolvedStory.id}
-          bookId={resolvedStory.source}
-          title={resolvedStory.title}
-          coverUrl={coverUrl}
-          storySlug={resolvedStory.slug}
-          bookSlug={resolvedStory.source}
-          language={resolvedStory.language ?? undefined}
-          region={resolvedStory.region ?? undefined}
-          level={resolvedStory.level ?? undefined}
-          audioUrl={resolvedStory.audioUrl ?? null}
-          redirectHref={`/stories/${resolvedStory.slug}`}
-          variant="icon"
-        />
-      </div>
+      {/* Botón de guardar en la biblioteca.
+       *  OCULTO en historias de journey. El journey YA es la
+       *  biblioteca curada del usuario; "save" no aplica. Sigue
+       *  visible en standalone (Sanity) y create-story (polyglot). */}
+      {!resolvedStory.isJourney && (
+        <div className="absolute top-[-2.75rem] right-6 z-30 sm:right-8">
+          <AddStoryToLibraryButton
+            storyId={resolvedStory.id}
+            bookId={resolvedStory.source}
+            title={resolvedStory.title}
+            coverUrl={coverUrl}
+            storySlug={resolvedStory.slug}
+            bookSlug={resolvedStory.source}
+            language={resolvedStory.language ?? undefined}
+            region={resolvedStory.region ?? undefined}
+            level={resolvedStory.level ?? undefined}
+            audioUrl={resolvedStory.audioUrl ?? null}
+            redirectHref={`/stories/${resolvedStory.slug}`}
+            variant="icon"
+          />
+        </div>
+      )}
 
       {/* Título */}
       <div className="relative mb-7 pt-2">
@@ -508,6 +524,14 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
                 variantId={journeyContext.variant}
               />
             ) : null}
+            {/* iPhone parity: "Lock it in" prompt rises into view once
+                the user scrolls past the end of the body. Vocab count
+                feeds the headline ("Practice 12 words"). */}
+            <EndOfStoryPracticePrompt
+              storySlug={resolvedStory.slug}
+              storyTitle={resolvedStory.title}
+              vocabCount={safeVocab.length}
+            />
           </div>
         ) : (
           <div

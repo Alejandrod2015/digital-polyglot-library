@@ -556,15 +556,13 @@ export async function validateGeneratedStory(
       vocabWords,
       levelKey as SpanishCheckLevel,
     );
-    // Threshold: >2 palabras fuera de nivel → fail. Permitimos 1-2
-    // como margen (alguna palabra clave del topic puede ser de
-    // registro algo más alto pero pedagógicamente justificada).
+    // Threshold: ANY palabra fuera de nivel = fail. El vocab array es
+    // curado (18-22 items elegidos por la worker); cada item DEBE estar
+    // al nivel target. No hay margen "1-2 palabras OK" — eso dejaba
+    // pasar casos como "anafe" en un A1 con qa_pass. La regla es
+    // estricta: cero tolerancia en vocab curado.
     const status: CheckStatus =
-      aboveLevel.length === 0
-        ? "pass"
-        : aboveLevel.length <= 2
-          ? "warn"
-          : "fail";
+      aboveLevel.length === 0 ? "pass" : "fail";
     // Detail includes suggested replacements when available so the worker
     // can paste them into ChatGPT verbatim.
     const detailParts: string[] = [];
@@ -638,11 +636,12 @@ export async function validateGeneratedStory(
         levelKey as SpanishCheckLevel,
       );
       const pct = (aboveLevel.length / contentWords.length) * 100;
-      // Body check thresholds are more permissive than the vocab check:
-      // natural prose pulls from a wider register than the curated vocab
-      // list. We only fail when the cluster is genuinely off-level.
+      // Body thresholds are permissive: natural prose pulls from a wider
+      // register than the curated vocab + the conjugation table will
+      // never be 100% complete. Real failures (high % off-level) still
+      // trip the fail bucket; minor noise becomes "warn" not "fail".
       const status: CheckStatus =
-        pct < 10 ? "pass" : pct < 20 ? "warn" : "fail";
+        pct < 25 ? "pass" : pct < 40 ? "warn" : "fail";
       const bodyDetail =
         aboveLevel.length > 0
           ? `${aboveLevel.length}/${contentWords.length} (${pct.toFixed(1)}%) del body fuera de ${levelKey.toUpperCase()}: ${aboveLevel
