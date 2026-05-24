@@ -193,6 +193,27 @@ async function bulkSync(
   return (res.collections ?? []).map(fromServer);
 }
 
+/**
+ * Delete a collection on the server. Exposed because the bulk sync
+ * endpoint is upsert-only (no tombstones), so a deletion done purely
+ * in the local file would be undone by the next `loadCollections`
+ * fetch. Callers should pair this with a local removal + persist.
+ *
+ * Throws on network / auth errors; the caller decides whether to
+ * roll back the local UI or surface the error.
+ */
+export async function deleteCollectionOnServer(
+  sessionToken: string,
+  collectionId: string,
+): Promise<void> {
+  await apiFetch<{ ok: true }>({
+    baseUrl: mobileConfig.apiBaseUrl,
+    path: `/api/collections/${encodeURIComponent(collectionId)}`,
+    token: sessionToken,
+    method: "DELETE",
+  });
+}
+
 // =============================================================================
 // Migration — one-time push of pre-cloud local collections into the
 // backend. Zero-risk: NEVER deletes the local file; writes a

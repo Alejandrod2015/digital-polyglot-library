@@ -156,6 +156,7 @@ import {
   removeItemFromCollection,
   collectionWordKey,
   collectionsForLanguage,
+  deleteCollectionOnServer,
   type FavoriteCollection,
 } from "./collections";
 import { getMasteryLevel } from "../../../../src/lib/mastery";
@@ -5590,6 +5591,93 @@ export function MobileLibraryShell(args: {
       return isItemInCollection(c, item) ? removeItemFromCollection(c, item) : addItemToCollection(c, item);
     });
     await persistCollections(next);
+  }
+
+  async function renameCollection(id: string, rawName: string) {
+    const newName = rawName.trim();
+    if (!newName) return;
+    // Local-first edit. saveCollections then POSTs the full list to
+    // /api/collections/sync, where the server-side "keep incoming
+    // name on conflict" rule propagates the rename without needing a
+    // dedicated PATCH call.
+    const next = collections.map((c) => (c.id === id ? { ...c, name: newName } : c));
+    await persistCollections(next);
+  }
+
+  async function deleteCollection(id: string) {
+    // Optimistic: drop from UI + local cache immediately. Roll back
+    // if the server DELETE fails so the user doesn't see a "deleted"
+    // collection reappear on next launch (bulk-sync is upsert-only
+    // so we can't rely on it to propagate deletions).
+    const snapshot = collections;
+    const next = collections.filter((c) => c.id !== id);
+    setCollections(next);
+    await saveCollections(sessionUserId, next, { sessionToken: sessionToken ?? null });
+
+    if (!sessionToken) return;
+    try {
+      await deleteCollectionOnServer(sessionToken, id);
+    } catch {
+      setCollections(snapshot);
+      await saveCollections(sessionUserId, snapshot, { sessionToken: sessionToken ?? null });
+      Alert.alert(
+        "Couldn't delete",
+        "We couldn't reach the server. Try again when you're back online.",
+      );
+    }
+  }
+
+  function promptEditCollection(collection: FavoriteCollection) {
+    const wordCount = collection.wordKeys.length;
+    Alert.alert(
+      collection.name,
+      `${wordCount} ${wordCount === 1 ? "word" : "words"}`,
+      [
+        {
+          text: "Rename",
+          onPress: () => {
+            Alert.prompt(
+              "Rename collection",
+              undefined,
+              [
+                { text: "Cancel", style: "cancel" },
+                {
+                  text: "Save",
+                  onPress: (newName?: string) => {
+                    if (newName && newName.trim()) {
+                      void renameCollection(collection.id, newName);
+                    }
+                  },
+                },
+              ],
+              "plain-text",
+              collection.name,
+            );
+          },
+        },
+        {
+          text: "Delete",
+          style: "destructive",
+          onPress: () => {
+            Alert.alert(
+              "Delete collection?",
+              `"${collection.name}" and its ${wordCount} ${wordCount === 1 ? "word" : "words"} will be removed from this device and the web.`,
+              [
+                { text: "Cancel", style: "cancel" },
+                {
+                  text: "Delete",
+                  style: "destructive",
+                  onPress: () => {
+                    void deleteCollection(collection.id);
+                  },
+                },
+              ],
+            );
+          },
+        },
+        { text: "Cancel", style: "cancel" },
+      ],
+    );
   }
 
   async function createAndAddToCollection(name: string, item: MobileFavoriteItem) {
@@ -17334,8 +17422,11 @@ export function MobileLibraryShell(args: {
                       if (!target) return;
                       void toggleCollectionMembership(collection.id, target);
                     }}
+                    onLongPress={() => promptEditCollection(collection)}
+                    delayLongPress={400}
                     style={styles.collectionModalRow}
                     accessibilityRole="button"
+                    accessibilityHint="Long press to rename or delete this collection"
                   >
                     <Feather
                       name={inIt ? "check-square" : "square"}
