@@ -433,6 +433,26 @@ model Favorite {
   @@index([userId])
 }
 
+// User-defined favorite collections. Same shape as the mobile-side
+// `FavoriteCollection` (apps/mobile/src/mobile/collections.ts) so iPhone
+// can sync via this table in a future migration. Each `wordKeys` entry
+// is `${language}::${word}` lowercased — matches `collectionWordKey()`.
+model FavoriteCollection {
+  id        String   @id @default(cuid())
+  userId    String
+  name      String
+  /** Canonical language name ("Spanish", "German", ...). Optional for
+   *  backward compat with collections created without a language tag. */
+  language  String?
+  /** "${language}::${word}" lowercased entries. */
+  wordKeys  String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@map("dp_favorite_collections_v1")
+}
+
 model VerbConjugation {
   id         String   @id @default(cuid())
   language   String
