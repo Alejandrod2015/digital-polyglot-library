@@ -17422,11 +17422,8 @@ export function MobileLibraryShell(args: {
                       if (!target) return;
                       void toggleCollectionMembership(collection.id, target);
                     }}
-                    onLongPress={() => promptEditCollection(collection)}
-                    delayLongPress={400}
                     style={styles.collectionModalRow}
                     accessibilityRole="button"
-                    accessibilityHint="Long press to rename or delete this collection"
                   >
                     <Feather
                       name={inIt ? "check-square" : "square"}
@@ -17439,6 +17436,15 @@ export function MobileLibraryShell(args: {
                     <Text style={styles.collectionModalRowCount}>
                       {collection.wordKeys.length}
                     </Text>
+                    <Pressable
+                      onPress={() => promptEditCollection(collection)}
+                      hitSlop={12}
+                      style={styles.collectionModalRowEditBtn}
+                      accessibilityRole="button"
+                      accessibilityLabel={`Edit ${collection.name}`}
+                    >
+                      <Feather name="edit-2" size={15} color="rgba(219,233,255,0.65)" />
+                    </Pressable>
                   </Pressable>
                 );
               })}
@@ -24534,6 +24540,11 @@ const styles = StyleSheet.create({
     color: "rgba(214,225,242,0.55)",
     fontSize: 12,
     fontWeight: "700",
+  },
+  collectionModalRowEditBtn: {
+    padding: 6,
+    marginLeft: 2,
+    borderRadius: 8,
   },
   collectionModalNewRow: {
     flexDirection: "row",
