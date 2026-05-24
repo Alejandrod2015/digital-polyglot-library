@@ -3229,12 +3229,19 @@ export function MobileLibraryShell(args: {
   useEffect(() => {
     let cancelled = false;
     async function hydrateCollections() {
-      const stored = await loadCollections(sessionUserId);
+      // Passing sessionToken switches collections.ts into cloud-sync
+      // mode: it runs the one-time backend migration on first launch,
+      // replays any locally-pending offline edits, and then returns
+      // the canonical server snapshot. Without a token (signed out)
+      // the call is local-cache only.
+      const stored = await loadCollections(sessionUserId, {
+        sessionToken: sessionToken ?? null,
+      });
       if (!cancelled) setCollections(stored);
     }
     void hydrateCollections();
     return () => { cancelled = true; };
-  }, [sessionUserId]);
+  }, [sessionUserId, sessionToken]);
 
   useEffect(() => {
     if (!didHydrateState) return;
@@ -5569,7 +5576,12 @@ export function MobileLibraryShell(args: {
 
   async function persistCollections(next: FavoriteCollection[]) {
     setCollections(next);
-    await saveCollections(sessionUserId, next);
+    // Local-first write + best-effort backend sync. When the network
+    // call fails, collections.ts marks the file dirty so the next
+    // hydration re-pushes before fetching, preserving the offline edit.
+    await saveCollections(sessionUserId, next, {
+      sessionToken: sessionToken ?? null,
+    });
   }
 
   async function toggleCollectionMembership(collectionId: string, item: MobileFavoriteItem) {

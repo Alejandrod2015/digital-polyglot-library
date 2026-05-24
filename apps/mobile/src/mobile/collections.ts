@@ -1,6 +1,8 @@
 import * as FileSystem from "expo-file-system/legacy";
 import * as SecureStore from "expo-secure-store";
 import type { MobileFavoriteItem } from "./vocabFavorites";
+import { apiFetch, ApiError } from "../lib/api";
+import { mobileConfig } from "../config";
 
 export type FavoriteCollection = {
   id: string;
@@ -15,6 +17,14 @@ export type FavoriteCollection = {
    *  before this field landed have it undefined and `collectionsForLanguage`
    *  treats them as global until they receive an explicit migration. */
   language?: string;
+};
+
+/** Public opts accepted by load/save. With `sessionToken` set the
+ *  function syncs with the backend (`/api/collections/*`). Without it,
+ *  the function is local-only — same behaviour the file had before the
+ *  cloud sync landed. */
+export type CollectionsSyncOpts = {
+  sessionToken?: string | null;
 };
 
 // SecureStore key — sólo se lee como fallback de migración para no
@@ -32,6 +42,18 @@ const COLLECTIONS_ROOT = `${FileSystem.documentDirectory ?? ""}digital-polyglot`
 
 function getCollectionsPath(userId?: string | null): string {
   return `${COLLECTIONS_ROOT}/collections-${userId ?? "guest"}.json`;
+}
+
+function getMigrationFlagPath(userId?: string | null): string {
+  return `${COLLECTIONS_ROOT}/collections-migrated-${userId ?? "guest"}.flag`;
+}
+
+function getDirtyFlagPath(userId?: string | null): string {
+  return `${COLLECTIONS_ROOT}/collections-dirty-${userId ?? "guest"}.flag`;
+}
+
+function getBackupPath(userId: string | null | undefined, stamp: string): string {
+  return `${COLLECTIONS_ROOT}/collections-${userId ?? "guest"}.backup-${stamp}.json`;
 }
 
 async function ensureCollectionsRoot(): Promise<void> {
@@ -58,10 +80,9 @@ function sanitizeCollections(parsed: unknown): FavoriteCollection[] {
   );
 }
 
-export async function loadCollections(userId?: string | null): Promise<FavoriteCollection[]> {
+async function readLocalCollections(userId?: string | null): Promise<FavoriteCollection[]> {
   await ensureCollectionsRoot();
   const path = getCollectionsPath(userId);
-  // Path 1 (preferido): FileSystem. Persiste entre reinstalls.
   try {
     const info = await FileSystem.getInfoAsync(path);
     if (info.exists) {
@@ -71,10 +92,8 @@ export async function loadCollections(userId?: string | null): Promise<FavoriteC
   } catch {
     // ignore, fall through to legacy
   }
-  // Path 2 (migración una vez): SecureStore legacy. Si encontramos
-  // datos ahí, los rehidratamos al FileSystem y los devolvemos. Las
-  // entries de SecureStore quedan como están (no las borramos para no
-  // sorprender a builds viejos que aún corren).
+  // SecureStore legacy fallback. Entries left in place so older builds
+  // still see them; we just rehydrate to the file on first read.
   try {
     const raw = await SecureStore.getItemAsync(getCollectionsKeyLegacy(userId));
     if (raw) {
@@ -90,15 +109,258 @@ export async function loadCollections(userId?: string | null): Promise<FavoriteC
   return [];
 }
 
-export async function saveCollections(
+async function writeLocalCollections(
   userId: string | null | undefined,
-  collections: FavoriteCollection[]
+  collections: FavoriteCollection[],
 ): Promise<void> {
+  await ensureCollectionsRoot();
+  await FileSystem.writeAsStringAsync(getCollectionsPath(userId), JSON.stringify(collections));
+}
+
+async function flagExists(path: string): Promise<boolean> {
+  try {
+    const info = await FileSystem.getInfoAsync(path);
+    return info.exists;
+  } catch {
+    return false;
+  }
+}
+
+async function writeFlag(path: string, payload: object): Promise<void> {
   try {
     await ensureCollectionsRoot();
-    await FileSystem.writeAsStringAsync(getCollectionsPath(userId), JSON.stringify(collections));
+    await FileSystem.writeAsStringAsync(path, JSON.stringify(payload));
   } catch {
-    /* best-effort — local cache, server sync not in v1 */
+    /* best-effort */
+  }
+}
+
+async function clearFlag(path: string): Promise<void> {
+  try {
+    const info = await FileSystem.getInfoAsync(path);
+    if (info.exists) await FileSystem.deleteAsync(path, { idempotent: true });
+  } catch {
+    /* best-effort */
+  }
+}
+
+// =============================================================================
+// Server I/O — every server response is mirrored back to the local
+// file so an offline open still sees the latest known state. Errors
+// NEVER throw out the local file; the caller falls back to local.
+// =============================================================================
+
+type ServerCollectionResponse = {
+  id: string;
+  userId: string;
+  name: string;
+  language: string | null;
+  wordKeys: string[];
+  createdAt: string;
+  updatedAt: string;
+};
+
+function fromServer(c: ServerCollectionResponse): FavoriteCollection {
+  return {
+    id: c.id,
+    name: c.name,
+    wordKeys: Array.isArray(c.wordKeys) ? c.wordKeys : [],
+    createdAt: typeof c.createdAt === "string" ? c.createdAt : new Date().toISOString(),
+    ...(c.language ? { language: c.language } : {}),
+  };
+}
+
+async function listFromServer(sessionToken: string): Promise<FavoriteCollection[]> {
+  const res = await apiFetch<{ collections: ServerCollectionResponse[] }>({
+    baseUrl: mobileConfig.apiBaseUrl,
+    path: "/api/collections",
+    token: sessionToken,
+  });
+  return (res.collections ?? []).map(fromServer);
+}
+
+async function bulkSync(
+  sessionToken: string,
+  collections: FavoriteCollection[],
+): Promise<FavoriteCollection[]> {
+  const res = await apiFetch<{ collections: ServerCollectionResponse[] }>({
+    baseUrl: mobileConfig.apiBaseUrl,
+    path: "/api/collections/sync",
+    token: sessionToken,
+    method: "POST",
+    body: { collections },
+  });
+  return (res.collections ?? []).map(fromServer);
+}
+
+// =============================================================================
+// Migration — one-time push of pre-cloud local collections into the
+// backend. Zero-risk: NEVER deletes the local file; writes a
+// timestamped backup BEFORE doing anything mutating; the MIGRATION_OK
+// flag is the LAST write, so any failure mid-flow leaves the flag
+// absent and we retry on the next load.
+// =============================================================================
+
+async function migrateIfNeeded(
+  userId: string | null | undefined,
+  sessionToken: string,
+  local: FavoriteCollection[],
+): Promise<FavoriteCollection[] | null> {
+  const flagPath = getMigrationFlagPath(userId);
+  if (await flagExists(flagPath)) return null;
+
+  // Persistent backup BEFORE any potentially-mutating step. The
+  // backup file stays on disk forever (tiny JSON); we'd rather
+  // accumulate one per migration attempt than lose a single byte of
+  // user data to an unexpected merge.
+  if (local.length > 0) {
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+    try {
+      await FileSystem.writeAsStringAsync(
+        getBackupPath(userId, stamp),
+        JSON.stringify(local),
+      );
+    } catch {
+      // Backup write failed → abort migration. Local file untouched.
+      return null;
+    }
+  }
+
+  // Push local snapshot to backend. The endpoint set-unions wordKeys
+  // with any rows the web may already have created under the same
+  // Clerk userId, so we never drop entries from either side.
+  let merged: FavoriteCollection[];
+  try {
+    merged = await bulkSync(sessionToken, local);
+  } catch {
+    // Auth or network failure → flag stays absent, retry next time.
+    return null;
+  }
+
+  // Overwrite the canonical local file with the authoritative merged
+  // state. Done BEFORE the flag write so a crash here leaves the
+  // collections intact in cache AND triggers a retry of the same
+  // (idempotent) bulkSync next session.
+  try {
+    await writeLocalCollections(userId, merged);
+  } catch {
+    return null;
+  }
+
+  // Mark migration done. Strictly last.
+  await writeFlag(flagPath, {
+    migratedAt: new Date().toISOString(),
+    itemCount: merged.length,
+  });
+
+  return merged;
+}
+
+// =============================================================================
+// Public API. Backward-compatible: callers that don't pass
+// `sessionToken` get the original local-only behaviour (offline cache).
+// =============================================================================
+
+/**
+ * Load the user's collections.
+ *
+ * - Without `opts.sessionToken`: returns the local cache.
+ * - With `opts.sessionToken`:
+ *   1. Runs the one-time cloud migration if the MIGRATION_OK flag is
+ *      not yet on disk.
+ *   2. If the local cache is marked DIRTY from a previous failed
+ *      `saveCollections` (e.g. offline edit), pushes local first so
+ *      offline edits propagate before the server overwrites them.
+ *   3. Otherwise fetches the canonical snapshot from
+ *      `GET /api/collections` and writes it to the local cache.
+ *   - Any server error falls back to the local cache.
+ */
+export async function loadCollections(
+  userId?: string | null,
+  opts?: CollectionsSyncOpts,
+): Promise<FavoriteCollection[]> {
+  const local = await readLocalCollections(userId);
+
+  const token = opts?.sessionToken ?? null;
+  if (!token) return local;
+
+  // Migration first. Idempotent (no-ops once the flag is on disk).
+  const migrated = await migrateIfNeeded(userId, token, local);
+  if (migrated) return migrated;
+
+  // Local has pending edits that never made it to the server (offline
+  // / network failure during a prior save). Push local first so those
+  // edits aren't overwritten by the server fetch below.
+  const dirtyPath = getDirtyFlagPath(userId);
+  if (await flagExists(dirtyPath)) {
+    try {
+      const merged = await bulkSync(token, local);
+      await writeLocalCollections(userId, merged);
+      await clearFlag(dirtyPath);
+      return merged;
+    } catch {
+      // Still can't reach the server → keep dirty flag, return local.
+      return local;
+    }
+  }
+
+  // Plain fetch.
+  try {
+    const server = await listFromServer(token);
+    await writeLocalCollections(userId, server);
+    return server;
+  } catch (err) {
+    // 401 → token is stale; nothing to do here, surface local.
+    // Anything else → also surface local (offline-tolerant).
+    if (err instanceof ApiError && err.status === 401) {
+      return local;
+    }
+    return local;
+  }
+}
+
+/**
+ * Persist the user's collections.
+ *
+ * - Always writes the local cache first (offline safety net).
+ * - With `opts.sessionToken`: pushes the full set to
+ *   `POST /api/collections/sync` (idempotent set-union on the server).
+ * - On server error: writes a DIRTY flag so the next `loadCollections`
+ *   call retries the push before fetching anything from the server.
+ *   This is how offline edits eventually reach the backend without a
+ *   per-mutation queue.
+ */
+export async function saveCollections(
+  userId: string | null | undefined,
+  collections: FavoriteCollection[],
+  opts?: CollectionsSyncOpts,
+): Promise<void> {
+  try {
+    await writeLocalCollections(userId, collections);
+  } catch {
+    /* best-effort — local cache */
+  }
+
+  const token = opts?.sessionToken ?? null;
+  if (!token) return;
+
+  try {
+    const merged = await bulkSync(token, collections);
+    // Server may have keys we didn't (e.g. another device added one
+    // mid-flight). Mirror that back so we don't lose it on next read.
+    try {
+      await writeLocalCollections(userId, merged);
+    } catch {
+      /* best-effort */
+    }
+    // Successful sync → clear any prior dirty flag.
+    await clearFlag(getDirtyFlagPath(userId));
+  } catch {
+    // Sync failed. Mark dirty so the next load re-pushes before
+    // fetching, preserving the offline edits.
+    await writeFlag(getDirtyFlagPath(userId), {
+      dirtyAt: new Date().toISOString(),
+    });
   }
 }
 
