@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { X } from "lucide-react";
@@ -20,9 +20,18 @@ export type TopicPreviewSheetProps = {
   coverUrl?: string | null;
   storyCount: number;
   stories?: TopicStoryPreview[];
+  /** Story slugs in this topic. When provided, the sheet fetches the
+   *  combined vocab list across all stories and renders it as a chip
+   *  row (iPhone parity — that's the panel's content there). */
+  storySlugs?: string[];
   ctaHref?: string | null;
   ctaLabel?: string;
   ctaDisabledLabel?: string | null;
+};
+
+type VocabFetchState = {
+  words: string[];
+  loading: boolean;
 };
 
 export function TopicPreviewSheet({
@@ -34,6 +43,7 @@ export function TopicPreviewSheet({
   coverUrl,
   storyCount,
   stories,
+  storySlugs,
   ctaHref,
   ctaLabel = "Open topic",
   ctaDisabledLabel,
@@ -51,6 +61,59 @@ export function TopicPreviewSheet({
       window.removeEventListener("keydown", onKey);
     };
   }, [open, onClose]);
+
+  // Fetch vocab across all stories in the topic when the sheet opens.
+  // /api/standalone-stories?slugs=a,b,c returns vocabRaw per story; we
+  // dedupe by lowercased word and show up to ~24 chips. iPhone uses
+  // the same endpoint at MobileLibraryShell.tsx:15064.
+  const [vocab, setVocab] = useState<VocabFetchState>({ words: [], loading: false });
+  useEffect(() => {
+    if (!open || !storySlugs || storySlugs.length === 0) {
+      setVocab({ words: [], loading: false });
+      return;
+    }
+    let cancelled = false;
+    setVocab({ words: [], loading: true });
+    const url = `/api/standalone-stories?slugs=${encodeURIComponent(storySlugs.join(","))}`;
+    fetch(url, { credentials: "include" })
+      .then(async (r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        const data = (await r.json()) as {
+          stories?: Array<{ vocabRaw?: string | null; vocab?: unknown }>;
+        };
+        const seen = new Set<string>();
+        const words: string[] = [];
+        for (const s of data.stories ?? []) {
+          // Try parsed vocab first (already an array), then vocabRaw
+          // (JSON string). Both shapes appear across catalog sources.
+          let items: Array<{ word?: unknown }> = [];
+          if (Array.isArray(s.vocab)) items = s.vocab as Array<{ word?: unknown }>;
+          else if (typeof s.vocabRaw === "string") {
+            try {
+              const parsed = JSON.parse(s.vocabRaw);
+              if (Array.isArray(parsed)) items = parsed as Array<{ word?: unknown }>;
+            } catch {
+              // skip malformed
+            }
+          }
+          for (const it of items) {
+            const w = typeof it.word === "string" ? it.word.trim() : "";
+            if (!w) continue;
+            const key = w.toLowerCase();
+            if (seen.has(key)) continue;
+            seen.add(key);
+            words.push(w);
+          }
+        }
+        if (!cancelled) setVocab({ words, loading: false });
+      })
+      .catch(() => {
+        if (!cancelled) setVocab({ words: [], loading: false });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [open, storySlugs]);
 
   if (!open) return null;
 
@@ -98,10 +161,17 @@ export function TopicPreviewSheet({
         </button>
         {coverUrl ? (
           <div
-            className="relative h-32 w-full overflow-hidden rounded-[1.1rem] border"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-[1.1rem] border"
             style={{ borderColor: "var(--card-border)" }}
           >
-            <Image src={coverUrl} alt={label} fill className="object-cover" sizes="480px" />
+            <Image
+              src={coverUrl}
+              alt={label}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 480px) 100vw, 480px"
+            />
           </div>
         ) : null}
         {eyebrow ? (
@@ -130,7 +200,52 @@ export function TopicPreviewSheet({
             {description}
           </p>
         ) : null}
-        {stories && stories.length > 0 ? (
+        {/* iPhone parity: show vocabulary words from the topic as
+            chips. Falls back to story titles when no slugs were passed
+            (still useful in places where vocab fetching isn't wired). */}
+        {storySlugs && storySlugs.length > 0 ? (
+          <div className="mt-4">
+            <p
+              className="mb-2 text-[10px] font-black uppercase tracking-[0.18em]"
+              style={{ color: "var(--muted)" }}
+            >
+              Words you'll learn
+            </p>
+            {vocab.loading ? (
+              <p className="text-xs" style={{ color: "var(--muted)" }}>
+                Loading words…
+              </p>
+            ) : vocab.words.length === 0 ? (
+              <p className="text-xs" style={{ color: "var(--muted)" }}>
+                No words yet for this topic.
+              </p>
+            ) : (
+              <div className="flex flex-wrap gap-1.5">
+                {vocab.words.slice(0, 24).map((w) => (
+                  <span
+                    key={w}
+                    className="rounded-full border px-2.5 py-1 text-[12px] font-semibold"
+                    style={{
+                      background: "var(--card-bg)",
+                      borderColor: "var(--card-border)",
+                      color: "var(--foreground)",
+                    }}
+                  >
+                    {w}
+                  </span>
+                ))}
+                {vocab.words.length > 24 ? (
+                  <span
+                    className="rounded-full px-2.5 py-1 text-[12px] font-semibold"
+                    style={{ color: "var(--muted)" }}
+                  >
+                    +{vocab.words.length - 24}
+                  </span>
+                ) : null}
+              </div>
+            )}
+          </div>
+        ) : stories && stories.length > 0 ? (
           <div className="mt-4">
             <p
               className="mb-2 text-[10px] font-black uppercase tracking-[0.18em]"

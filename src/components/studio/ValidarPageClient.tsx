@@ -49,6 +49,13 @@ type ValidateResponse = {
 };
 
 type Topic = { slug: string; label: string };
+type GlobalTopic = {
+  slug: string;
+  label: string;
+  defaultLevel: string | null;
+  isUniversal: boolean;
+  journeyTypes: Array<{ slug: string; label: string }>;
+};
 type Level = {
   id: string;
   title: string;
@@ -66,9 +73,33 @@ type JourneyOption = {
 
 type OptionsResponse = { journeys: JourneyOption[] };
 
+// Niveles y temas se muestran en los dropdowns como lista global (los
+// mismos que viven en /studio/planning), no filtrados por journey. Así
+// puedes validar/stage una historia para cualquier combinación nivel ×
+// tema, aunque el journey elegido todavía no la tenga asignada
+// formalmente en su currículum.
+const LEVEL_OPTIONS: Array<{ id: string; title: string }> = [
+  { id: "A1", title: "A1" },
+  { id: "A2", title: "A2" },
+  { id: "B1", title: "B1" },
+  { id: "B2", title: "B2" },
+  { id: "C1", title: "C1" },
+  { id: "C2", title: "C2" },
+];
+
 export default function ValidarPageClient() {
   const [options, setOptions] = useState<JourneyOption[] | null>(null);
   const [optionsError, setOptionsError] = useState<string | null>(null);
+  // Topics globales (todos los registrados en Planning) con su
+  // defaultLevel + isUniversal + journeyTypes para filtrar luego en el
+  // cliente por (nivel × journey type).
+  const [allTopics, setAllTopics] = useState<GlobalTopic[]>([]);
+  // Mapa journey-type label → slug, para resolver el journey type del
+  // journey elegido (Journey.name = "Conversational"; JourneyType.slug
+  // = "conversacional", etc.).
+  const [journeyTypeLabelToSlug, setJourneyTypeLabelToSlug] = useState<
+    Record<string, string>
+  >({});
 
   const [journeyId, setJourneyId] = useState("");
   const [levelId, setLevelId] = useState("");
@@ -129,6 +160,50 @@ export default function ValidarPageClient() {
           setOptionsError(e instanceof Error ? e.message : String(e));
         }
       });
+    // Lista global de temas (paralela a /studio/planning). No bloquea el
+    // load principal; si falla, los dropdowns muestran solo lo del
+    // journey como fallback.
+    fetch("/api/studio/topics", { cache: "no-store" })
+      .then(async (r) => (r.ok ? r.json() : []))
+      .then(
+        (rows: Array<{
+          slug: string;
+          label: string;
+          defaultLevel: string | null;
+          isUniversal: boolean;
+          journeyTypes: Array<{ slug: string; label: string }>;
+        }>) => {
+          if (!cancelled && Array.isArray(rows)) {
+            setAllTopics(
+              rows.map((r) => ({
+                slug: r.slug,
+                label: r.label,
+                defaultLevel: r.defaultLevel,
+                isUniversal: !!r.isUniversal,
+                journeyTypes: Array.isArray(r.journeyTypes) ? r.journeyTypes : [],
+              }))
+            );
+          }
+        }
+      )
+      .catch(() => {
+        /* non-fatal; fall back to journey-scoped topics */
+      });
+    // Journey types (para resolver Journey.name → slug). Cargado en
+    // paralelo; si falla, el filtro por journey type se omite y solo
+    // queda el filtro por nivel.
+    fetch("/api/studio/journey-types", { cache: "no-store" })
+      .then(async (r) => (r.ok ? r.json() : []))
+      .then((rows: Array<{ slug: string; label: string }>) => {
+        if (!cancelled && Array.isArray(rows)) {
+          const map: Record<string, string> = {};
+          for (const r of rows) map[r.label.toLowerCase()] = r.slug;
+          setJourneyTypeLabelToSlug(map);
+        }
+      })
+      .catch(() => {
+        /* non-fatal */
+      });
     return () => {
       cancelled = true;
     };
@@ -138,10 +213,48 @@ export default function ValidarPageClient() {
     () => options?.find((j) => j.id === journeyId) ?? null,
     [options, journeyId]
   );
-  const selectedLevel = useMemo(
-    () => selectedJourney?.levels.find((l) => l.id === levelId) ?? null,
-    [selectedJourney, levelId]
-  );
+  // Slug del journey type del journey elegido (e.g. "conversacional"
+  // para Journey.name="Conversational"). Se usa para filtrar temas
+  // especializados; los universales siempre pasan.
+  const journeyTypeSlug = useMemo<string | null>(() => {
+    if (!selectedJourney) return null;
+    const fromName = journeyTypeLabelToSlug[selectedJourney.name.toLowerCase()];
+    if (fromName) return fromName;
+    // Fallback: si planning está incompleto, derivamos un slug ASCII
+    // simple del nombre para no quedarnos sin filtro.
+    return selectedJourney.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  }, [selectedJourney, journeyTypeLabelToSlug]);
+
+  // Lista filtrada de topics que aparecen en el dropdown Tema. Reglas
+  // (mismas que renderiza /studio/planning):
+  //   1. defaultLevel debe coincidir con el nivel elegido (lowercased).
+  //   2. el tema debe ser universal O estar asignado al journey type
+  //      del journey elegido.
+  const visibleTopics = useMemo<GlobalTopic[]>(() => {
+    if (!levelId) return [];
+    const lvl = levelId.toLowerCase();
+    return allTopics.filter((t) => {
+      if ((t.defaultLevel ?? "").toLowerCase() !== lvl) return false;
+      if (t.isUniversal) return true;
+      if (!journeyTypeSlug) return false;
+      return t.journeyTypes.some((jt) => jt.slug === journeyTypeSlug);
+    });
+  }, [allTopics, levelId, journeyTypeSlug]);
+
+  // Nivel ya no se filtra por journey: si el journey no lo tiene en su
+  // currículum lo fabricamos al vuelo para mantener el shape esperado
+  // por DestinationCard y los renders del título.
+  const selectedLevel = useMemo<Level | null>(() => {
+    if (!levelId) return null;
+    const fromJourney = selectedJourney?.levels.find((l) => l.id === levelId);
+    if (fromJourney) return fromJourney;
+    return {
+      id: levelId,
+      title: levelId,
+      subtitle: "",
+      topics: visibleTopics.map((t) => ({ slug: t.slug, label: t.label })),
+    };
+  }, [selectedJourney, levelId, visibleTopics]);
 
   // Reset cascading when parent changes
   useEffect(() => {
@@ -418,27 +531,23 @@ export default function ValidarPageClient() {
               onChange={(v) => setLevelId(v)}
               disabled={!selectedJourney}
               placeholder={selectedJourney ? "Elige un nivel…" : "Primero elige journey"}
-              options={(selectedJourney?.levels ?? []).map((l) => ({
-                value: l.id,
-                label: l.title + (l.subtitle ? ` — ${l.subtitle}` : ""),
-              }))}
+              options={LEVEL_OPTIONS.map((l) => ({ value: l.id, label: l.title }))}
             />
             <SelectPill
               label="Tema"
               value={topicSlug}
               onChange={(v) => setTopicSlug(v)}
-              disabled={!selectedLevel || (selectedLevel?.topics.length ?? 0) === 0}
+              disabled={!selectedJourney || !levelId || visibleTopics.length === 0}
               placeholder={
-                !selectedLevel
-                  ? "Primero elige nivel"
-                  : selectedLevel.topics.length === 0
-                    ? "Sin temas cargados"
-                    : "Elige un tema…"
+                !selectedJourney
+                  ? "Primero elige journey"
+                  : !levelId
+                    ? "Primero elige nivel"
+                    : visibleTopics.length === 0
+                      ? "Sin temas para este nivel"
+                      : "Elige un tema…"
               }
-              options={(selectedLevel?.topics ?? []).map((t) => ({
-                value: t.slug,
-                label: t.label,
-              }))}
+              options={visibleTopics.map((t) => ({ value: t.slug, label: t.label }))}
             />
           </div>
 
@@ -772,6 +881,9 @@ function DestinoCard({
   canStage: boolean;
   onStage: () => void;
 }) {
+  // El level fabricado en selectedLevel ya recibe la lista global de
+  // temas; solo necesitamos el slug → label lookup, sin importar si el
+  // tema vive dentro del currículum del journey o no.
   const topicLabel = level?.topics.find((t) => t.slug === topicSlug)?.label ?? topicSlug;
   const isReady = !!(journey && level && topicSlug);
   return (

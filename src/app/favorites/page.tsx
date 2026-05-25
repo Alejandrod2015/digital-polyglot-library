@@ -21,6 +21,8 @@ import {
   normalizeVocabType,
 } from '@/lib/vocabTypes';
 import { MasteryBadge } from '@/components/MasteryBadge';
+import SwipeableRow from '@/components/SwipeableRow';
+import AddToCollectionModal from '@/components/AddToCollectionModal';
 
 const MIN_RELATED_PRACTICE_ITEMS = 3;
 const RELATED_PRACTICE_MAX = 20;
@@ -235,6 +237,38 @@ export default function FavoritesPage() {
   const [practiceIndex, setPracticeIndex] = useState(0);
   const [practiceScoresByKey, setPracticeScoresByKey] = useState<Record<string, ReviewScore>>({});
   const [revealedPracticeKeys, setRevealedPracticeKeys] = useState<string[]>([]);
+  // Swipe-to-delete coordination: only one row can be swiped open at a
+  // time. The currently-open row's key lives here; opening another row
+  // closes any previously-open one. Matches iPhone behavior.
+  const [openSwipeKey, setOpenSwipeKey] = useState<string | null>(null);
+  // Add-to-collection modal target. When non-null, the modal is open
+  // and editing membership for this favorite.
+  const [collectionTarget, setCollectionTarget] = useState<{
+    word: string;
+    language: string | null;
+  } | null>(null);
+  // Collections shelf: list at top of favorites, plus active filter.
+  type CollectionRow = {
+    id: string;
+    name: string;
+    language: string | null;
+    wordKeys: string[];
+  };
+  const [collectionsList, setCollectionsList] = useState<CollectionRow[]>([]);
+  const [selectedCollectionId, setSelectedCollectionId] = useState<string | null>(null);
+  const refreshCollectionsList = async () => {
+    try {
+      const r = await fetch('/api/collections', { credentials: 'include' });
+      if (!r.ok) return;
+      const d = (await r.json()) as { collections: CollectionRow[] };
+      setCollectionsList(d.collections ?? []);
+    } catch {
+      /* offline ok */
+    }
+  };
+  useEffect(() => {
+    void refreshCollectionsList();
+  }, []);
   const [practiceType, setPracticeType] = useState<'all' | VocabTypeKey>('all');
   const [languageSwitcherOpen, setLanguageSwitcherOpen] = useState(false);
   // Which favorite word is currently being read aloud (so its play button
@@ -1011,16 +1045,69 @@ export default function FavoritesPage() {
                pero antes solo filtraban Practice / Related — la lista
                visible se mostraba completa. Ahora también filtramos
                aquí para que las pills sí filtren lo que el user ve. */
+            <>
+            {/* Collections shelf — horizontal scroll of user's lists.
+                "All" is selected by default; tap a chip to filter the
+                grid below to only words in that collection. Long-press
+                or a future swipe could expose rename/delete; for now
+                tap toggles selection. */}
+            {collectionsList.length > 0 ? (
+              <div className="mb-4 -mx-1 overflow-x-auto">
+                <div className="flex items-center gap-2 px-1 pb-1">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedCollectionId(null)}
+                    className={`shrink-0 rounded-full border px-3 py-1.5 text-[12.5px] font-bold transition ${
+                      selectedCollectionId === null
+                        ? 'border-sky-400/50 bg-sky-400/15 text-sky-100'
+                        : 'border-[var(--card-border)] bg-[var(--bg-1)] text-[var(--muted)] hover:text-[var(--foreground)]'
+                    }`}
+                  >
+                    All
+                  </button>
+                  {collectionsList.map((c) => (
+                    <button
+                      key={c.id}
+                      type="button"
+                      onClick={() =>
+                        setSelectedCollectionId((prev) => (prev === c.id ? null : c.id))
+                      }
+                      className={`shrink-0 rounded-full border px-3 py-1.5 text-[12.5px] font-bold transition ${
+                        selectedCollectionId === c.id
+                          ? 'border-sky-400/50 bg-sky-400/15 text-sky-100'
+                          : 'border-[var(--card-border)] bg-[var(--bg-1)] text-[var(--foreground)] hover:bg-white/[0.04]'
+                      }`}
+                    >
+                      {c.name}
+                      <span className="ml-1.5 text-[10.5px] font-bold text-[var(--muted)]">
+                        {c.wordKeys.length}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
             <ul className="space-y-3">
               {sortedFavorites
-                .filter((fav) =>
-                  practiceType === 'all'
-                    ? true
-                    : (normalizeVocabType(fav.wordType, {
-                        word: fav.word,
-                        definition: fav.translation,
-                      }) ?? 'other') === practiceType
-                )
+                .filter((fav) => {
+                  if (
+                    practiceType !== 'all' &&
+                    (normalizeVocabType(fav.wordType, {
+                      word: fav.word,
+                      definition: fav.translation,
+                    }) ?? 'other') !== practiceType
+                  )
+                    return false;
+                  // Collection filter: show only words in the selected
+                  // collection (key = "lang::word" lowercased).
+                  if (selectedCollectionId) {
+                    const sel = collectionsList.find((c) => c.id === selectedCollectionId);
+                    if (!sel) return true;
+                    const key = `${(fav.language ?? '').trim().toLowerCase()}::${fav.word.trim().toLowerCase()}`;
+                    return sel.wordKeys.includes(key);
+                  }
+                  return true;
+                })
                 .map((fav) => {
                 const meta = srsMap[normalizeWord(fav.word)];
                 const streak = meta?.streak ?? fav.streak ?? 0;
@@ -1031,9 +1118,20 @@ export default function FavoritesPage() {
                   word: fav.word,
                   definition: fav.translation,
                 }) ?? 'other';
+                const swipeKey = `${fav.word}::${fav.language ?? ''}`;
                 return (
-                  <li
-                    key={`m-${fav.word}`}
+                  <li key={`m-${fav.word}`} className="rounded-2xl overflow-hidden">
+                  <SwipeableRow
+                    swipeKey={swipeKey}
+                    openSwipeKey={openSwipeKey}
+                    onSwipeOpenChange={setOpenSwipeKey}
+                    onDeleteConfirmed={() => { void removeFavorite(fav.word); }}
+                    confirmLabel={fav.word}
+                    onAddToCollection={() =>
+                      setCollectionTarget({ word: fav.word, language: fav.language ?? null })
+                    }
+                  >
+                  <div
                     className="relative rounded-2xl border border-white/8 bg-[#0c2342] pl-3 pr-3 py-3"
                   >
                     {/* gold left accent bar */}
@@ -1090,16 +1188,30 @@ export default function FavoritesPage() {
                         );
                       })()}
                     </div>
+                  </div>
+                  </SwipeableRow>
                   </li>
                 );
               })}
             </ul>
+            </>
           )}
         </div>
       </div>
       <LanguageSwitcher
         open={languageSwitcherOpen}
         onClose={() => setLanguageSwitcherOpen(false)}
+      />
+      <AddToCollectionModal
+        open={collectionTarget !== null}
+        word={collectionTarget?.word ?? ""}
+        language={collectionTarget?.language ?? null}
+        onClose={() => {
+          setCollectionTarget(null);
+          // Refresh the shelf so newly-created collections + updated
+          // counts appear without a hard reload.
+          void refreshCollectionsList();
+        }}
       />
     </div>
   );

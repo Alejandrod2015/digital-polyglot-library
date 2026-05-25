@@ -41,15 +41,38 @@ that ALWAYS runs before any Bash command. It does two things:
    - `modal secret create|update --force` (irreversibly rotates a shared
      secret that Modal will not let you read back)
    - `vercel env rm` (deletes production env vars)
-   - `git push --force` / `-f`
    - `rm -rf` on `$HOME`, `/`, `..`, `*`
    - SQL `DROP TABLE`, `DROP DATABASE`, `TRUNCATE`
 
-If the guard blocks a command, **DO NOT** add `CLAUDE_AUTHORIZED=1`
-on your own to bypass it. That flag is for the user to type, or for
-you ONLY after the user has said the imperative verb in chat (e.g.
-"borra", "fuerza", "rota", "machaca"). Recovery from this kind of
-mistake cost real time and broke prod once. Ask the user first.
+3. **`git push --force` / `-f`**: hard-blocked from inside Claude. NO
+   env-var escape. If a force push is truly needed, the user runs it
+   from their own terminal outside Claude.
+
+4. **`git push` to main/master**: blocked unless the user's MOST RECENT
+   message in the Claude transcript contains an imperative push verb.
+   The hook reads `transcript_path` from the PreToolUse payload (a
+   `.jsonl` file Claude Code writes; not writable from Bash tool calls)
+   and pattern-matches against the latest user message.
+
+   - **Verbs that authorize** (case-insensitive, word-boundary): manda,
+     mandalo, mándalo, ship, shipit, shipea, shipealo, lanza, lanzalo,
+     lánzalo, push, pushea, pushealo, deploya, deployalo.
+   - **Verbs that DO NOT authorize**: dale, sí, listo, ok, perfecto, ya.
+     Generic acknowledgements are intentionally outside the gate so a
+     "dale" on an unrelated question never opens the push door.
+   - Negation guard: `no manda…` / `nunca manda…` immediately before
+     the verb does NOT count as authorization.
+   - One verb = one push. The gate resets on the next user message.
+
+   `CLAUDE_AUTHORIZED=1` and `DPL_PUSH_AUTHORIZED=1` do **NOT** bypass
+   the verb gate. The model cannot fake authorization here.
+
+If the guard blocks a non-push command, **DO NOT** add
+`CLAUDE_AUTHORIZED=1` on your own to bypass it. That flag is for the
+user to type, or for you ONLY after the user has said the imperative
+verb in chat (e.g. "borra", "fuerza", "rota", "machaca"). Recovery
+from this kind of mistake cost real time and broke prod once. Ask the
+user first.
 
 If you need to restore `.env*` after a slip-up:
 ```

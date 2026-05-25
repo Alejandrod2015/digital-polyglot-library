@@ -1388,7 +1388,10 @@ export default function MonitorClient() {
             {isExpanded && (() => {
               const journeyStories = stories.filter((s) => s.journeyId === j.id);
               const topicGroups = getTopicGroupsForJourney(j.id);
-              const levels = [...new Set(journeyStories.map((s) => s.level))].sort();
+              // Dedupe case-insensitively. Historical data sometimes
+              // mixes "A1" and "a1" on the same journey, which would
+              // otherwise render as two separate level sections.
+              const levels = [...new Set(journeyStories.map((s) => s.level.toLowerCase()))].sort();
               const journeyTopicOrder: Record<string, number> = {};
               j.topics.forEach((slug, idx) => { journeyTopicOrder[slug] = idx; });
               const sortByJourneyOrder = (a: string, b: string) => {
@@ -1402,8 +1405,11 @@ export default function MonitorClient() {
               return (
                 <div className="jm-j-body">
                   {levels.map((level) => {
+                    // `level` is already lowercased above; match the
+                    // group's stored value case-insensitively so
+                    // mixed-case rows (legacy data) still bucket here.
                     const levelTopics = topicGroups
-                      .filter((g) => g.level === level)
+                      .filter((g) => g.level.toLowerCase() === level)
                       .sort((a, b) => sortByJourneyOrder(a.topic, b.topic));
                     const levelGen = levelTopics.reduce((a, g) => a + g.stories.filter((s) => ["generated", "qa_pass", "approved", "published"].includes(s.status)).length, 0);
                     const levelTotal = levelTopics.reduce((a, g) => a + g.stories.length, 0);

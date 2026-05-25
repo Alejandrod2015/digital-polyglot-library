@@ -17,6 +17,7 @@ import type { JourneyTrackInsights, JourneyVariantTrack } from "./journeyData";
 import { isJourneyStoryComplete } from "@/lib/journeyUnlock";
 import type { JourneyDueReviewItem } from "@/lib/journeyProgress";
 import { TopicPreviewSheet } from "@/components/TopicPreviewSheet";
+import JourneyNextActionFab from "@/components/JourneyNextActionFab";
 import JourneyTopBar from "@/components/JourneyTopBar";
 import BottomSheet from "@/components/ui/BottomSheet";
 import JourneyTopicBanner from "@/components/JourneyTopicBanner";
@@ -176,6 +177,7 @@ export default function JourneyClient({
     coverUrl?: string | null;
     storyCount: number;
     stories: Array<{ slug: string; title: string }>;
+    storySlugs?: string[];
     ctaHref: string | null;
     ctaDisabledLabel?: string;
   } | null;
@@ -424,6 +426,7 @@ export default function JourneyClient({
                     coverUrl: topic.coverUrl,
                     storyCount: topic.storyCount,
                     stories: topic.stories.map((s) => ({ slug: s.slug, title: s.title })),
+                    storySlugs: topic.stories.map((s) => s.slug).filter(Boolean),
                     ctaHref: topic.stories[0]?.href ?? null,
                   });
                   void trackJourneyMetric(
@@ -454,6 +457,8 @@ export default function JourneyClient({
         })}
       </div>
 
+      <JourneyNextActionFab hasNext={globalNextStoryKey !== null} />
+
       <TopicPreviewSheet
         open={previewTopic !== null}
         onClose={() => setPreviewTopic(null)}
@@ -463,6 +468,7 @@ export default function JourneyClient({
         coverUrl={previewTopic?.coverUrl ?? null}
         storyCount={previewTopic?.storyCount ?? 0}
         stories={previewTopic?.stories ?? []}
+        storySlugs={previewTopic?.storySlugs ?? []}
         ctaHref={previewTopic?.ctaHref ?? null}
         ctaDisabledLabel={previewTopic?.ctaDisabledLabel ?? null}
       />

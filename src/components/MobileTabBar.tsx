@@ -106,7 +106,7 @@ export default function MobileTabBar() {
                         ? "practice-favorites"
                         : undefined
                 }
-                className={`flex flex-col items-center justify-center py-2.5 text-[11px] transition-colors ${
+                className={`flex flex-col items-center justify-center py-4 text-[12.5px] transition-colors ${
                   active ? "text-[var(--nav-text)]" : "text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                 } ${
                   (tab.label === "Home" && onboardingTourTarget === "home") ||
@@ -117,8 +117,8 @@ export default function MobileTabBar() {
                     : ""
                 }`}
               >
-                <Icon size={20} strokeWidth={active ? 2.4 : 2} />
-                <span className="mt-1">{tab.label}</span>
+                <Icon size={23} strokeWidth={active ? 2.4 : 2} />
+                <span className="mt-1.5">{tab.label}</span>
               </Link>
             </li>
           );

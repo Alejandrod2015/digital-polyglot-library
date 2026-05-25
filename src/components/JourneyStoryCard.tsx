@@ -52,7 +52,14 @@ export default function JourneyStoryCard({ story, color, waveOffset }: Props) {
   }[story.state];
 
   return (
-    <div className="flex items-center mb-[18px]" style={{ paddingLeft: `${waveOffset}px` }}>
+    <div
+      className="flex items-center mb-[18px]"
+      style={{ paddingLeft: `${waveOffset}px` }}
+      // Used by the yellow "scroll to next" FAB on JourneyClient to
+      // locate the active card via querySelector. Only the single
+      // global next-story row carries this attribute.
+      data-journey-next={active ? "true" : undefined}
+    >
       <a
         href={disabled ? undefined : story.href}
         aria-disabled={disabled}

@@ -141,10 +141,140 @@ if printf '%s' "$COMMAND" | grep -qE '\bvercel[[:space:]]+env[[:space:]]+rm\b'; 
     is_authorized || block "vercel env rm deletes a production environment variable. Confirm with the user first."
 fi
 
-# 6. Hard-block: git push --force / --force-with-lease / -f to remote.
+# 6. Hard-block: git push --force / --force-with-lease / -f.
+#    No env-var bypass from inside Claude. If a force push is truly
+#    needed, the user runs it from their own terminal.
 if printf '%s' "$COMMAND" | grep -qE '\bgit[[:space:]]+push\b' \
    && printf '%s' "$COMMAND" | grep -qE '(\-\-force(-with-lease)?|[[:space:]]-f([[:space:]]|$))'; then
-    is_authorized || block "git push --force can destroy history on the remote. Never do this without explicit user instruction."
+    log_audit "BLOCK_FORCE_PUSH" "$COMMAND"
+    cat >&2 <<EOF
+[safety-guard] BLOCKED: git push --force is hard-blocked from inside Claude.
+
+Force pushes are irreversible on the remote. There is no env-var
+escape hatch from inside a Claude session. If you truly need to
+force-push, run it from your own terminal.
+
+Command refused:
+  $COMMAND
+EOF
+    exit 2
+fi
+
+# 6b. git push to main/master: require the user's imperative verb in
+#     the actual Claude transcript. The transcript_path is provided by
+#     Claude Code in the hook payload (`.jsonl` file written by Claude
+#     Code, not writable by Bash tool calls). Even if the model sets
+#     CLAUDE_AUTHORIZED=1 or DPL_PUSH_AUTHORIZED=1 in the command
+#     itself, the hook here will still block unless the user's MOST
+#     RECENT message contains an imperative push verb.
+#
+#     Verbs that authorize: manda, mandalo, mándalo, ship, shipit,
+#     shipea, shipealo, lanza, lanzalo, lánzalo, push, pushea,
+#     pushealo, deploya, deployalo.
+#
+#     Verbs that DO NOT authorize: dale, sí, listo, ok, perfecto, ya.
+#     The list is kept intentionally narrow because the previous
+#     "did the user reply yes-ish?" heuristic let pushes through on
+#     generic acknowledgements.
+if printf '%s' "$COMMAND" | grep -qE '\bgit[[:space:]]+push\b'; then
+    PUSH_TARGETS_MAIN=0
+    if printf '%s' "$COMMAND" | grep -qE '(\bHEAD:(main|master)\b|[[:space:]](main|master)([[:space:]]|$)|origin[[:space:]]+(main|master)\b)'; then
+        PUSH_TARGETS_MAIN=1
+    fi
+    # Bare `git push` with no explicit refspec: assume main (most
+    # repos default-push the current branch and we're on main here).
+    if [ "$PUSH_TARGETS_MAIN" = "0" ] && ! printf '%s' "$COMMAND" | grep -qE '\bgit[[:space:]]+push[[:space:]]+[^[:space:]]'; then
+        PUSH_TARGETS_MAIN=1
+    fi
+
+    if [ "$PUSH_TARGETS_MAIN" = "1" ]; then
+        VERB_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
+import json, sys, re, os
+
+try:
+    payload = json.load(sys.stdin)
+except Exception:
+    print("missing_payload"); sys.exit(0)
+
+tp = payload.get("transcript_path") or ""
+if not tp or not os.path.exists(tp):
+    print("missing_transcript"); sys.exit(0)
+
+# Read all user messages, take the most recent one only. Stale verbs
+# from older messages do NOT carry over — each verb authorizes at
+# most one push, after which any later user message resets the gate.
+msgs = []
+try:
+    with open(tp) as f:
+        for line in f:
+            try:
+                obj = json.loads(line)
+            except Exception:
+                continue
+            if obj.get("type") != "user":
+                continue
+            content = obj.get("message", {}).get("content", "")
+            if isinstance(content, str):
+                msgs.append(content)
+            elif isinstance(content, list):
+                for part in content:
+                    if isinstance(part, dict) and part.get("type") == "text":
+                        msgs.append(part.get("text", ""))
+except Exception:
+    print("read_error"); sys.exit(0)
+
+if not msgs:
+    print("no_user_messages"); sys.exit(0)
+
+last = msgs[-1] or ""
+# Strip system-reminder envelopes and tool-result wrappers; keep only
+# the prose the user actually typed.
+last = re.sub(r"<system-reminder>.*?</system-reminder>", "", last, flags=re.DOTALL|re.IGNORECASE)
+last = re.sub(r"<task-notification>.*?</task-notification>", "", last, flags=re.DOTALL|re.IGNORECASE)
+
+verb_pat = re.compile(
+    r"\b(manda|mandalo|m[aá]ndal[oa]|ship|shipit|shipea|shipealo|"
+    r"lanza|lanzalo|l[aá]nzalo|push|pushea|pushealo|deploya|deployalo)\b",
+    re.IGNORECASE
+)
+# Sanity guard against double-negatives like "no manda nada": if the
+# 12 characters before the matched verb contain a negation, ignore it.
+for m in verb_pat.finditer(last):
+    start = max(0, m.start() - 12)
+    prefix = last[start:m.start()].lower()
+    if re.search(r"\bno\s*$", prefix) or re.search(r"\bnunca\s*$", prefix):
+        continue
+    print("ok")
+    sys.exit(0)
+print("no_verb")
+' 2>/dev/null || echo "python_error")"
+
+        if [ "$VERB_CHECK" != "ok" ]; then
+            log_audit "BLOCK_PUSH_NO_VERB[$VERB_CHECK]" "$COMMAND"
+            cat >&2 <<EOF
+[safety-guard] BLOCKED: git push to main without user verb in transcript.
+
+This guard reads YOUR ACTUAL LAST MESSAGE from the Claude transcript
+file. The model cannot fake authorization here — no env var bypass.
+
+To authorize this push, type one of these verbs in your next message:
+
+  manda / mandalo / ship / shipit / shipea / lanza / lanzalo /
+  push / pushea / pushealo / deploya
+
+Words that DO NOT authorize (kept intentionally distinct from
+generic acknowledgements): dale, sí, listo, ok, perfecto, ya.
+
+Each verb authorizes exactly one push; the gate resets as soon as
+you send another message.
+
+Diagnostic: $VERB_CHECK
+Command refused:
+  $COMMAND
+EOF
+            exit 2
+        fi
+    fi
 fi
 
 # 7. Hard-block: rm -rf on paths that look like the repo root or home.

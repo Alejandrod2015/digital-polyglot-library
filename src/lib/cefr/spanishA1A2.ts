@@ -79,7 +79,7 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "vela","fósforo","caja","bote","cubo","balde","botella","frasco","tarro",
   "olla","sartén","plato","vaso","copa","taza","tetera","cafetera","cuchara","tenedor",
   "cuchillo","servilleta","mantel","bandeja","jarra","abridor","sacacorchos",
-  "nevera","frigorífico","microondas","horno","lavadora","aspirador","plancha",
+  "nevera","frigorífico","microondas","horno","estufa","cocina","lavadora","aspirador","plancha",
 
   // ── Food / drink ──
   "comida","desayuno","almuerzo","cena","merienda","postre","plato","menú",

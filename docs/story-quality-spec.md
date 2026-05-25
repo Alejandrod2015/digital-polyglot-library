@@ -10,6 +10,7 @@ If you change a rule here, also update the matching feedback file in `~/.claude/
 
 - 2 to 6 words in the target language.
 - Exactly **one** concrete cultural anchor: real neighborhood, specific dish, named venue, or traditional object. Not generic nouns ("comida", "día", "viaje", "Essen").
+- **Anchor must be recognizable to learners at the target level.** At A1/A2, default to city or famous neighborhood that an English-native beginner can place: Coyoacán, San Telmo, Valparaíso, Miraflores, Mérida, Oaxaca, Cusco, Cartagena. Avoid obscure micro-neighborhoods that even Spanish speakers may not know (Tepozteco, Jalatlaco, Pasaje Defensa, Ascensor Reina). Rule of thumb: if the learner can't pronounce the anchor on the first read, swap for the parent city. Reserve obscure anchors for B2+ where cultural depth is part of the lesson.
 - Reads as a name, not a description.
 - Unique within the journey: no more than 50% token overlap with any existing title.
 - Banned patterns: "A/An [generic] in [city]", three or more stacked anchors, genre labels (mystery, secret, danger, escape), pronouns, "A Day in...", "The Story of X and Y".
@@ -50,6 +51,8 @@ Both Conversacional and Viajero now default to **multi-voice dialogue**: a narra
 ### Narrator
 
 - Opens with a full sentence, e.g. "Es ist Samstagnachmittag in Berlin." NOT a verbless fragment ("Samstagnachmittag in Berlin.") — that reads as a stage label, not narration.
+- **Establishes four things before the first dialogue line: where, when, atmosphere, and who-is-who.** Every character who speaks in the body must be introduced in the opening narration by name + relation (`su hermana Clara`, `su padre Iván`, `su abuelo Mateo`, `su pareja Sofía`). Never let a new speaker appear in the first dialogue without prior introduction; the reader only sees the body, the synopsis is internal metadata.
+- **Vary the opening anchor across the journey.** Rotate between time+place ("Es viernes por la noche en Coyoacán."), weather/season ("En Mérida hace mucho calor desde la mañana."), sensory hook ("Desde la cocina llega un olor suave a pan caliente."), and event-of-the-night ("Esta noche el pasaje celebra una fiesta del barrio."). Hard ban on repeated formulas like "Es de mañana en X" / "Es de tarde en Y" across more than two stories in the same journey.
 - Cadence varies: mix short and longer sentences. Five short sentences in a row reads like a list.
 - One sensory detail (smell, light, sound, temperature) anchors atmosphere. Not three; one is enough.
 - Action moves something forward. Avoid pure description.
