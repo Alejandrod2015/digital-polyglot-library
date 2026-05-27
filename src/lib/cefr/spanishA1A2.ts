@@ -106,9 +106,18 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
 
   // ── Transport ──
   "coche","auto","carro","bici","bicicleta","moto","motocicleta","autobús","bus",
-  "tren","metro","tranvía","taxi","camión","barco","avión","helicóptero",
+  "tren","metro","tranvía","taxi","camión","camioneta","barco","lancha","avión","helicóptero",
   "viaje","billete","boleto","maleta","mochila","equipaje","pasaporte","mapa",
-  "parada","estación","aeropuerto","vía","carretera","autopista","semáforo","cruce",
+  "parada","estación","aeropuerto","terminal","andén","embarcadero","muelle",
+  "vía","carretera","autopista","semáforo","cruce","puente","puente peatonal","luz roja",
+  "estacionamiento","taquilla","bocina",
+  // Regional transport types — A1 vocabulary in their respective regions.
+  // Latin-American Spanish traveler journeys lean heavily on these; the
+  // generic "autobús" is rare in actual speech in MX/AR/CO/PE.
+  "combi","colectivo","micro","minibús",
+  // Travel logistics / lodging — basic A1-A2 across the Spanish-speaking world.
+  "hostal","pensión","alojamiento","mirador","malecón","distrito","sector","barrio",
+  "visitante","sendero","senda","feria","feria artesanal","puerto",
 
   // ── Nature / weather ──
   "sol","luna","estrella","cielo","nube","lluvia","nieve","viento","hielo","tormenta",
@@ -494,7 +503,16 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "modelo","versión","clase","grupo","serie",
   "número","código","clave","contraseña","usuario","cuenta","perfil",
   // Tránsito
-  "tráfico","retraso","hora","minuto","segundo","reloj","alarma","despertador",
+  "tráfico","retraso","demorar","demorado","hora","minuto","segundo","reloj","alarma","despertador",
+  "avanzar","continuar","ajustar","mensajero","tablero","cierre","estuche","abanico",
+  // Phrases (multi-word vocab items that the worker selects as single
+  // teaching units; the validator checks them verbatim, so they live
+  // here as keys).
+  "recién hecho","tierra mojada","de todos modos","continuar derecho","movimiento bancario",
+  // Tienda / alimentación regional
+  "dulcería","medialuna",
+  // Sonido / objetos
+  "parlante","parasol","morral","cúpula","antigüedad",
   // Objetos comunes
   "guitarra","piano","violín","batería","tambor","flauta",
   "micrófono","auricular","audífono","sirena",
