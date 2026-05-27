@@ -11,6 +11,10 @@
       "schedule": "30 6 * * *"
     },
     {
+      "path": "/api/cron/revalidate-qa-pass",
+      "schedule": "0 7 * * *"
+    },
+    {
       "path": "/api/cron/weekly-metrics",
       "schedule": "0 8 * * 1"
     }
