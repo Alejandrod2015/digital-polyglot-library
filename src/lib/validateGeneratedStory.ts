@@ -300,6 +300,125 @@ export async function validateGeneratedStory(
       : undefined,
   });
 
+  // Title × topic semantic match. For topics whose meaning is sharply
+  // defined (airport vs hotel vs hospital), the title MUST reference
+  // the topic semantically — otherwise the cover image, audio voice
+  // cast, and learner expectation drift apart from the actual content.
+  // We catch the obvious case ("Praça Mauá" titled in `airport-transit`
+  // because there's no airport at Praça Mauá) without needing an LLM.
+  //
+  // Only enforced for topics where the constraint is sharp; broader
+  // topics (food-everyday-life, home-family, city-getting-around) have
+  // no strict keyword requirement because any plausible cultural
+  // anchor is acceptable.
+  const TOPIC_TITLE_KEYWORDS: Record<string, RegExp[]> = {
+    "airport-transit": [
+      /aeropuert|terminal|embarqu|vuelo|aviÃ³n|avión|check[\s-]?in|despegu|aterrizaj|chegad|partid|gate|sala\s+vip/i,
+      // common Spanish-speaking + nearby airports learners recognize
+      /\b(galeão|galeao|barajas|ezeiza|aeroparque|jorge\s+chávez|jorge\s+chavez|el\s+dorado|tocumen|santos\s+dumont|guarulhos|congonhas|charles\s+de\s+gaulle|orly|fiumicino|malpensa|jfk|laguardia|heathrow|gatwick|narita|haneda|tegel|brandenburg)\b/i,
+    ],
+    "accommodation-stays": [
+      /hotel|hostal|hostel|pensiÃ³n|pensión|albergu|alojamient|posad|habitaciÃ³n|habitación|recepciÃ³n|recepción|chalet|cabaÃ±a|cabaña|airbnb|hospedaj|residencial|departament|apartament|alquil|portal/i,
+    ],
+    "health-wellbeing": [
+      /hospital|clÃ­nic|clínic|farmaci|mÃ©dic|médic|doctor|consultori|urgenci|emergenci|enfermerÃ­a|enfermería|paramedic|salud|chequeo|consulta|jugo|infusiÃ³n|infusión|mate|tÃ©|té|hierba|spa|masaje|yoga|ejercicio|gimnasio|descanso|siesta|respiraciÃ³n|respiración|quinua|ceviche|caldo|sopa/i,
+    ],
+  };
+  const topicForTitleCheck = (context.topic ?? "").toLowerCase();
+  const titleTopicRegexes = TOPIC_TITLE_KEYWORDS[topicForTitleCheck];
+  if (titleTopicRegexes) {
+    const matched = titleTopicRegexes.some((re) => re.test(parsed.title));
+    checks.push({
+      id: "title-topic-match",
+      label: `Title semantically matches topic "${topicForTitleCheck}"`,
+      status: matched ? "pass" : "fail",
+      detail: matched
+        ? undefined
+        : `Title "${parsed.title}" doesn't reference the topic. Add a venue/event keyword that matches "${topicForTitleCheck}" (e.g. for airport-transit: aeropuerto, terminal, embarque, vuelo, or a real airport name like Galeão, Ezeiza, Barajas).`,
+    });
+  }
+
+  // Title × journey region. Spanish journeys with variant=latam must use
+  // anchors inside Latin America (Coyoacán, Barranco, Palermo, Mérida,
+  // Caracas…). A title set in Tokyo, Estambul, or Lisboa breaks the
+  // cultural contract: a learner who picks "ES · Traveler · LATAM"
+  // expects stories ABOUT Latin America, not random global cities.
+  //
+  // We don't have variant in the validation context yet, so the check is
+  // approximate: when language=es, blacklist non-Spanish-speaking cities
+  // (Tokyo, Estambul, Berlín, París, Roma, Londres, Bangkok…) and the
+  // most obvious global capitals. We do NOT include Iberian-Spain cities
+  // here because some Spanish journeys legitimately target Iberian
+  // variant; once `context.variant` is plumbed through, we can split.
+  const SPANISH_NON_LATAM_BLACKLIST = [
+    /\b(estambul|estanbul|istanbul)\b/i,
+    /\b(tokyo|tokio)\b/i,
+    /\b(berl[ií]n|berlin)\b/i,
+    /\b(par[ií]s|paris)\b/i,
+    /\b(roma|trastevere|napoli|n[áa]poles|milan|mil[áa]n|venecia|venezia|florencia|firenze|t[oó]rino)\b/i,
+    /\b(londres|london)\b/i,
+    /\b(bangkok)\b/i,
+    /\b(estocolmo|stockholm)\b/i,
+    /\b(pek[ií]n|beijing)\b/i,
+    /\b(mosc[uú]|moscow)\b/i,
+    /\b(el\s+cairo|cairo)\b/i,
+    /\b(s[ií]dney|sydney)\b/i,
+    /\b(nueva\s+york|new\s+york)\b/i,
+    /\b(los\s+[áa]ngeles)\b/i,
+    /\b(lisboa|lisbon)\b/i,
+    /\b(oporto|porto)\b/i,
+    /\b(dubl[ií]n|dublin)\b/i,
+    /\b(amsterdam|[áa]msterdam)\b/i,
+    /\b(viena|vienna)\b/i,
+    /\b(praga|prague)\b/i,
+    /\b(estoril|[áa]gora|napoli|napoles|n[áa]poles)\b/i,
+    /\b(seul|seúl|seoul)\b/i,
+    /\b(singapur|singapore)\b/i,
+    /\b(hong\s+kong)\b/i,
+    /\b(shanghai|shanghái)\b/i,
+    /\b(bangalore|delhi|mumbai)\b/i,
+    /\b(jerusal[ée]n|jerusalem|tel\s+aviv)\b/i,
+    /\b(mosc[uú]|estambul)\b/i,
+  ];
+  const titleRegionLang = (context.language ?? "").toUpperCase();
+  if (titleRegionLang === "ES") {
+    const hit = SPANISH_NON_LATAM_BLACKLIST.find((re) => re.test(parsed.title));
+    if (hit) {
+      checks.push({
+        id: "title-region-mismatch",
+        label: "Title anchor is outside the journey's region (LATAM Spanish)",
+        status: "fail",
+        detail: `Title "${parsed.title}" references a city outside Latin America. Spanish Traveler journeys default to LATAM anchors (Coyoacán, Barranco, Mérida, Palermo, etc.). Pick a Latin-American venue instead.`,
+      });
+    }
+  }
+
+  // Title language consistency. Stories tagged language=spanish should
+  // not use Portuguese-only characters (ç, ã) in the title, German β,
+  // etc. Warn (not fail) because rare cases like proper toponyms can
+  // legitimately carry foreign diacritics ("São Paulo" en historia ES
+  // sigue siendo razonable). The warn surfaces the suspicion so the
+  // worker checks before publishing.
+  const LANG_FOREIGN_CHARS: Record<string, RegExp> = {
+    ES: /[çÇãÃõÕß]/,
+    DE: /[çÇãÃõÕñÑ]/,
+    IT: /[çÇãÃõÕñÑß]/,
+    FR: /[ãÃõÕñÑß]/,
+  };
+  const titleLangCode = (context.language ?? "").toUpperCase();
+  const foreignCharRegex = LANG_FOREIGN_CHARS[titleLangCode];
+  if (foreignCharRegex) {
+    const hit = parsed.title.match(foreignCharRegex);
+    if (hit) {
+      checks.push({
+        id: "title-language-consistency",
+        label: "Title uses characters foreign to the target language",
+        status: "warn",
+        detail: `Found "${hit[0]}" in title. ${titleLangCode} stories normally don't use this character; verify the anchor is correct (toponyms like "São Paulo" are OK if intentional).`,
+      });
+    }
+  }
+
   // ─── Synopsis ──────────────────────────────────────────
   const synWords = countWords(parsed.synopsis);
   checks.push({

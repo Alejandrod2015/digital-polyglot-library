@@ -95,6 +95,21 @@ function humanize(check: Check): Humanized {
         text: "El título cae en un patrón prohibido",
         hint: "Evita 'A day in...', 'The story of...' y palabras como mystery, secret, escape, forbidden, stolen. Usa un ancla cultural concreta (barrio, plato, lugar nombrado).",
       };
+    case "title-topic-match":
+      return {
+        text: "El título no menciona el tema de la historia",
+        hint: `Para temas como airport-transit, accommodation-stays o health-wellbeing, el título debe contener una palabra que indique el venue (aeropuerto, terminal, hotel, hospital, etc.) o el nombre de un lugar real (Galeão, Barajas, Ezeiza, Santos Dumont…). Si el título nombra una plaza, parque o mercado sin relación al tema, el aprendiz se confunde antes de empezar a leer. Detalle: ${detail}`,
+      };
+    case "title-language-consistency":
+      return {
+        text: "El título usa caracteres de otro idioma",
+        hint: `Detectado: ${detail}. Verifica si es intencional (un toponimo como "São Paulo" en historia ES sí está bien, pero "Praça Mauá" en lugar de "Plaza Mauá" probablemente no).`,
+      };
+    case "title-region-mismatch":
+      return {
+        text: "El título usa una ciudad fuera de la región del journey",
+        hint: `Los journeys "ES · Traveler · LATAM" deben tener anchors dentro de Latinoamérica (Coyoacán, Barranco, Mérida, Palermo, Cartagena, Lima, Caracas, etc.). Reemplaza el lugar por uno latinoamericano que tenga sentido para la historia. ${detail}`,
+      };
     case "title-uniqueness":
       return {
         text: "Título demasiado parecido a otro ya publicado en este tema",

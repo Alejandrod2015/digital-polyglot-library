@@ -119,7 +119,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
-  const { journeyId, level, topic } = body;
+  const { journeyId, topic } = body;
+  // Normalize level to lowercase at write time. The validator and the
+  // Studio inventory both treat case-insensitively, but the unique
+  // constraint (journeyId, level, topic, slotIndex) is case-sensitive,
+  // which previously created parallel A1/a1 buckets in the topic grid.
+  const level = typeof body.level === "string" ? body.level.toLowerCase() : body.level;
   if (!journeyId || !level || !topic) {
     return NextResponse.json(
       { error: "journeyId, level and topic are required" },

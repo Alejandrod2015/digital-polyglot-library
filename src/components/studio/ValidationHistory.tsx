@@ -88,6 +88,26 @@ function timeAgo(iso: string): string {
   return `${Math.floor(diff / 86_400_000)}d`;
 }
 
+type TabKey = "pending" | "in_studio" | "all";
+
+/** True when this item still needs work from the worker. */
+function isPending(it: HistoryItem): boolean {
+  if (!it.storyExists) return true;
+  if (it.latestStatus === "needs_review") return true;
+  if (it.stageOutcome === "stage_blocked") return true;
+  if (it.storyStatus === "needs_review") return true;
+  return false;
+}
+
+/** Bucket key used to group rows: language · journey · level · topic. */
+function bucketKey(it: HistoryItem): string {
+  const lang = it.journeyLanguage ?? "—";
+  const journey = it.journeyName ?? "—";
+  const level = (it.level ?? "—").toUpperCase();
+  const topic = it.topic ?? "—";
+  return `${lang} · ${journey} · ${level} · ${topic}`;
+}
+
 export default function ValidationHistory({
   onStageDirect,
   contextReady = false,
@@ -97,6 +117,9 @@ export default function ValidationHistory({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  const [tab, setTab] = useState<TabKey>("pending");
+  const [search, setSearch] = useState("");
+  const [collapsedBuckets, setCollapsedBuckets] = useState<Set<string>>(new Set());
 
   async function load() {
     setLoading(true);
@@ -134,6 +157,40 @@ export default function ValidationHistory({
     });
   }
 
+  function toggleBucket(key: string) {
+    setCollapsedBuckets((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  }
+
+  // Filter pipeline: tab → search → group.
+  const pendingItems = items.filter(isPending);
+  const inStudioItems = items.filter(
+    (it) => it.storyExists && !isPending(it)
+  );
+  const tabItems =
+    tab === "pending"
+      ? pendingItems
+      : tab === "in_studio"
+        ? inStudioItems
+        : items;
+  const q = search.trim().toLowerCase();
+  const filtered = q
+    ? tabItems.filter((it) => it.title.toLowerCase().includes(q))
+    : tabItems;
+  const buckets = new Map<string, HistoryItem[]>();
+  for (const it of filtered) {
+    const k = bucketKey(it);
+    if (!buckets.has(k)) buckets.set(k, []);
+    buckets.get(k)!.push(it);
+  }
+  const sortedBuckets = Array.from(buckets.entries()).sort((a, b) =>
+    a[0].localeCompare(b[0])
+  );
+
   return (
     <section className="jm-panel" style={{ padding: 16, marginBottom: 16 }}>
       <header
@@ -142,6 +199,8 @@ export default function ValidationHistory({
           alignItems: "baseline",
           justifyContent: "space-between",
           marginBottom: 10,
+          flexWrap: "wrap",
+          gap: 8,
         }}
       >
         <h3
@@ -167,6 +226,57 @@ export default function ValidationHistory({
         </button>
       </header>
 
+      {/* Tabs + buscador. Default "Pendientes" para que la trabajadora
+          vea primero lo que requiere acción y no scroll infinito de
+          historias ya subidas. */}
+      <div
+        style={{
+          display: "flex",
+          gap: 6,
+          marginBottom: 10,
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <TabButton
+          active={tab === "pending"}
+          label="Pendientes"
+          count={pendingItems.length}
+          tone="warn"
+          onClick={() => setTab("pending")}
+        />
+        <TabButton
+          active={tab === "in_studio"}
+          label="En Studio"
+          count={inStudioItems.length}
+          tone="ok"
+          onClick={() => setTab("in_studio")}
+        />
+        <TabButton
+          active={tab === "all"}
+          label="Todas"
+          count={items.length}
+          tone="neutral"
+          onClick={() => setTab("all")}
+        />
+        <input
+          type="search"
+          placeholder="Buscar por título…"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          style={{
+            marginLeft: "auto",
+            fontSize: 12,
+            padding: "4px 10px",
+            borderRadius: 4,
+            border: "1px solid var(--mx-border-soft)",
+            background: "var(--mx-bg-panel)",
+            color: "var(--mx-fg)",
+            minWidth: 180,
+          }}
+        />
+      </div>
+
       {error ? (
         <p style={{ color: "var(--mx-neg)", fontSize: 12 }}>{error}</p>
       ) : loading && items.length === 0 ? (
@@ -176,21 +286,142 @@ export default function ValidationHistory({
           Aún no has validado historias. Cuando pegues un JSON y valides,
           aparecerá aquí — y verás cuáles ya subiste al Studio.
         </p>
+      ) : filtered.length === 0 ? (
+        <p style={{ color: "var(--mx-muted)", fontSize: 12 }}>
+          {q
+            ? `Sin resultados para "${search}"`
+            : tab === "pending"
+              ? "No hay validaciones pendientes. Todo en Studio."
+              : tab === "in_studio"
+                ? "Nada subido al Studio todavía."
+                : "Sin validaciones que mostrar."}
+        </p>
       ) : (
-        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-          {items.map((it) => (
-            <Row
-              key={it.runId}
-              item={it}
-              expanded={expanded.has(it.runId)}
-              onToggle={() => toggle(it.runId)}
-              onStageDirect={onStageDirect}
-              contextReady={contextReady}
-            />
-          ))}
-        </ul>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          {sortedBuckets.map(([bucket, rows]) => {
+            const isCollapsed = collapsedBuckets.has(bucket);
+            return (
+              <div key={bucket}>
+                <button
+                  type="button"
+                  onClick={() => toggleBucket(bucket)}
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    padding: "6px 8px",
+                    background: "var(--mx-bg-panel-hi)",
+                    border: "1px solid var(--mx-border-soft)",
+                    borderRadius: 4,
+                    cursor: "pointer",
+                    fontSize: 11,
+                    fontWeight: 700,
+                    color: "var(--mx-fg)",
+                    textAlign: "left",
+                    marginTop: 4,
+                  }}
+                >
+                  <span
+                    aria-hidden
+                    style={{
+                      fontSize: 9,
+                      color: "var(--mx-muted)",
+                      transform: isCollapsed ? "none" : "rotate(90deg)",
+                      transition: "transform 0.15s",
+                      width: 8,
+                    }}
+                  >
+                    ▶
+                  </span>
+                  <span style={{ flex: 1 }}>{bucket}</span>
+                  <span
+                    style={{
+                      fontSize: 10,
+                      color: "var(--mx-muted)",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {rows.length}
+                  </span>
+                </button>
+                {!isCollapsed && (
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      padding: "0 0 0 8px",
+                      margin: 0,
+                    }}
+                  >
+                    {rows.map((it) => (
+                      <Row
+                        key={it.runId}
+                        item={it}
+                        expanded={expanded.has(it.runId)}
+                        onToggle={() => toggle(it.runId)}
+                        onStageDirect={onStageDirect}
+                        contextReady={contextReady}
+                      />
+                    ))}
+                  </ul>
+                )}
+              </div>
+            );
+          })}
+        </div>
       )}
     </section>
+  );
+}
+
+function TabButton({
+  active,
+  label,
+  count,
+  tone,
+  onClick,
+}: {
+  active: boolean;
+  label: string;
+  count: number;
+  tone: "warn" | "ok" | "neutral";
+  onClick: () => void;
+}) {
+  const toneColor =
+    tone === "warn" ? "#f59e0b" : tone === "ok" ? "#22c55e" : "#7d8aa3";
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      style={{
+        fontSize: 11,
+        fontWeight: 700,
+        padding: "4px 10px",
+        borderRadius: 4,
+        border: active
+          ? `1px solid ${toneColor}`
+          : "1px solid var(--mx-border-soft)",
+        background: active ? `${toneColor}22` : "var(--mx-bg-panel)",
+        color: active ? toneColor : "var(--mx-fg)",
+        cursor: "pointer",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 6,
+      }}
+    >
+      <span>{label}</span>
+      <span
+        style={{
+          fontSize: 10,
+          opacity: 0.85,
+          padding: "1px 6px",
+          borderRadius: 8,
+          background: active ? "rgba(0,0,0,0.25)" : "var(--mx-bg-panel-hi)",
+        }}
+      >
+        {count}
+      </span>
+    </button>
   );
 }
 

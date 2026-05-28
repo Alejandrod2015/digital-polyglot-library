@@ -509,10 +509,56 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   // teaching units; the validator checks them verbatim, so they live
   // here as keys).
   "recién hecho","tierra mojada","de todos modos","continuar derecho","movimiento bancario",
+  "de un solo trago","dar vuelta","al fin","otra vez","que le vaya bien","sin querer",
   // Tienda / alimentación regional
   "dulcería","medialuna",
   // Sonido / objetos
   "parlante","parasol","morral","cúpula","antigüedad",
+  // ── Regional food / drink (Latin-American Traveler vocab) ──
+  // Vocab A1-A2 reconocible en su región: el aprendiz que visita
+  // México encuentra "tinto" / "fonda" / "mole" en menús; el que va a
+  // Argentina ve "humita" / "medialuna"; el de Lima "lúcuma" / "ceviche".
+  // Antes de esta entrada, mi lista los marcaba C2 por defecto y rompía
+  // las historias Traveler del nivel inicial.
+  "tinto","fonda","mole","guajolote","ajonjolí","carnitas","trompo","humita","lúcuma","ceviche",
+  "chipa","arepa","empanada","tamal","tamales","tortilla","churro","pastel","postre","pan",
+  // Cocina / cocción
+  "harina","masa","vapor","horno","fuego","aceite","cebolla","ajo","tomate","limón",
+  "azúcar","sal","pimienta","leche","queso","huevo","jamón","carne","pescado",
+  "voltear","mezclar","hervir","cocinar","preparar","servir","probar","hornear","picar",
+  "rebanar","amasar","batir","calentar","enfriar","derretir",
+  // Verbos cotidianos A1-A2 que faltaban
+  "rascarse","acercarse","alejarse","agacharse","levantarse","sentarse",
+  "meter","sacar","compartir","entregar","recoger","alcanzar","apoyar","empujar",
+  "tardar","apurarse","apurar","esperar","quedarse","irse","volver",
+  "firmar","anotar","escribir","leer","contar","sumar","restar",
+  "sonar","vibrar","tocar","golpear","llamar",
+  "resolver","arreglar","explicar","entender","comprender","aprender","enseñar",
+  "decidir","elegir","probar","intentar",
+  "enseguida","ahora","luego","después","antes","mientras","todavía","ya",
+  // Adjetivos / participios cotidianos
+  "angosto","ancho","estrecho","amplio","arrugado","arruinado","cansado","tranquilo",
+  "espeso","aguado","frío","caliente","tibio","fresco","seco","mojado","sucio","limpio",
+  "rico","sabroso","delicioso","amargo","dulce","salado","ácido","picante",
+  "delantal","servilleta","mantel","bandeja","tabla","cuchillo","cuchara","tenedor",
+  // Objetos cotidianos / cocina
+  "vidriera","licuadora","cafetera","tetera","cazuela","sartén","olla",
+  // Otros
+  "igual","mismo","distinto","diferente","parecido","propio","ajeno",
+  "pelota","balón","juguete","muñeca","caja","cubo","pala","cubeta",
+  "sorbo","trago","bocado","mordida","gota","chorro",
+  "pasto","césped","tierra","arena","piedra","barro","polvo",
+  "bastón","muleta","silla","banca","banco","taburete","sillón","sofá",
+  "señorita","señor","señora","don","doña","joven","viejo","anciano","muchacho","muchacha",
+  "asentir","negar","decir","contestar","responder","preguntar","gritar","susurrar","callar",
+  "pito","silbato","timbre","campana","sirena",
+  "siga","sigue","vaya","ven","mire","mira","toma","dale","espere","perdón","disculpe",
+  // Verbos/objetos restantes que faltaban tras la primera expansión
+  "canal","trajinera","orientarse","orientar","reducido","reducir",
+  "asentir","asiente","asintió","descansar","receta","prender","apagar","encender",
+  "rato","ratito","calma","tranquilidad","silencio","ruido",
+  // Lodging vocab (A2 traveler) que el validator marcaba como C2
+  "residencial","portal","apartamento","departamento","alquiler","alojarse","alquilar",
   // Objetos comunes
   "guitarra","piano","violín","batería","tambor","flauta",
   "micrófono","auricular","audífono","sirena",
