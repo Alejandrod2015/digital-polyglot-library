@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import ValidarResultView from "./ValidarResultView";
+import ValidarResultView, { humanize } from "./ValidarResultView";
 import ValidationHistory from "./ValidationHistory";
 import { getIsoLanguageTag } from "@/lib/languageFlags";
 import { parseStoryInput, type StoryPayload } from "@/lib/storyPayload";
@@ -112,6 +112,11 @@ export default function ValidarPageClient() {
   // Staging UI: confirm sheet + post-success state.
   const [staging, setStaging] = useState(false);
   const [stageError, setStageError] = useState<string | null>(null);
+  // Checks devueltos por /stage cuando la revalidación final bloquea la
+  // subida. La validación inicial pudo correr con menos contexto del
+  // journey, así que un check de título/colisión recién salta aquí. Los
+  // mostramos humanizados en el modal en vez del mensaje genérico.
+  const [stageFailChecks, setStageFailChecks] = useState<Check[] | null>(null);
   const [stageConfirmOpen, setStageConfirmOpen] = useState(false);
   const [stagedStory, setStagedStory] = useState<{
     id: string;
@@ -299,6 +304,7 @@ export default function ValidarPageClient() {
     setResult(null);
     setError(null);
     setStageError(null);
+    setStageFailChecks(null);
     setStagedStory(null);
   }
 
@@ -313,6 +319,7 @@ export default function ValidarPageClient() {
     if (!journeyId || !levelId || !topicSlug) return;
     setStaging(true);
     setStageError(null);
+    setStageFailChecks(null);
     try {
       const res = await fetch("/api/studio/validar/stage", {
         method: "POST",
@@ -329,8 +336,11 @@ export default function ValidarPageClient() {
         story?: { id: string; slug: string; slotIndex: number; title: string };
         reason?: string;
         error?: string;
+        checks?: Check[];
       };
       if (!res.ok || !data.ok || !data.story) {
+        const failed = (data.checks ?? []).filter((c) => c.status === "fail");
+        if (failed.length) setStageFailChecks(failed);
         throw new Error(data.reason ?? data.error ?? `HTTP ${res.status}`);
       }
       setStagedStory(data.story);
@@ -373,6 +383,7 @@ export default function ValidarPageClient() {
     setRaw(historyRaw);
     setStaging(true);
     setStageError(null);
+    setStageFailChecks(null);
     try {
       const res = await fetch("/api/studio/validar/stage", {
         method: "POST",
@@ -389,8 +400,11 @@ export default function ValidarPageClient() {
         story?: { id: string; slug: string; slotIndex: number; title: string };
         reason?: string;
         error?: string;
+        checks?: Check[];
       };
       if (!res.ok || !data.ok || !data.story) {
+        const failed = (data.checks ?? []).filter((c) => c.status === "fail");
+        if (failed.length) setStageFailChecks(failed);
         throw new Error(data.reason ?? data.error ?? `HTTP ${res.status}`);
       }
       setStagedStory(data.story);
@@ -633,6 +647,7 @@ export default function ValidarPageClient() {
           canStage={canStage}
           onStage={() => {
             setStageError(null);
+            setStageFailChecks(null);
             setStageConfirmOpen(true);
           }}
         />
