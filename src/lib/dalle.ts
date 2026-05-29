@@ -336,6 +336,16 @@ async function generateFluxImageBuffer(prompt: string): Promise<Buffer> {
     if (status.includes("error") || status.includes("fail")) {
       throw new Error("Flux generation failed while polling.");
     }
+    // Mirrors coverGenerator.ts: BFL returns these statuses when the
+    // safety filter rejects a prompt, but the response is otherwise a
+    // normal 200 with status="Content Moderated" (or similar). Without
+    // this check the loop keeps polling for the full 90s and throws
+    // the misleading "timed out" error, hiding the real cause.
+    if (status.includes("moderated") || status.includes("content policy") || status.includes("not found")) {
+      throw new Error(
+        `Flux rejected the prompt (status: "${status}"). Likely content moderation; try simplifying the synopsis or reducing negative constraint words in the prompt.`
+      );
+    }
   }
 
   throw new Error("Flux generation timed out while polling.");
@@ -349,35 +359,38 @@ export async function generateAndUploadCover({
   level,
   text,
 }: CoverParams): Promise<{ url: string; filename: string } | null> {
-  try {
-    const synopsis = stripHtml(text).slice(0, 1600);
-    const prompt = buildCoverPrompt({
-      title,
-      synopsis,
-      language,
-      region: region ?? "",
-      topic,
-      level,
-    });
+  // Errors propagate to the caller (the route handler decides whether
+  // to surface the real message vs. fall back gracefully).
+  // - catalog-books and standalone-stories want the real error in the
+  //   response body so the Studio UI can show Fátima what to fix.
+  // - user/generate-story wraps this in its own try/catch and just
+  //   logs the failure, so the resulting null/throw is equally fine.
+  const synopsis = stripHtml(text).slice(0, 1600);
+  const prompt = buildCoverPrompt({
+    title,
+    synopsis,
+    language,
+    region: region ?? "",
+    topic,
+    level,
+  });
 
-    const fileBase = sanitizeFileChunk(title || "story-cover");
-    const filename = `${fileBase || "story-cover"}-flux-${Date.now()}.png`;
-    const buffer = await generateFluxImageBuffer(prompt);
+  const fileBase = sanitizeFileChunk(title || "story-cover");
+  const filename = `${fileBase || "story-cover"}-flux-${Date.now()}.png`;
+  const buffer = await generateFluxImageBuffer(prompt);
 
-    const uploaded = await uploadPublicObject({
-      key: `media/generated/images/${filename}`,
-      body: buffer,
-      contentType: "image/png",
-    });
+  const uploaded = await uploadPublicObject({
+    key: `media/generated/images/${filename}`,
+    body: buffer,
+    contentType: "image/png",
+  });
 
-    if (uploaded?.url) {
-      return { url: uploaded.url, filename };
-    }
-
-    console.warn("[cover] R2 upload returned null; object storage may be unconfigured.");
-    return null;
-  } catch (err) {
-    console.error("[cover] Failed to generate/upload with Flux:", err);
-    return null;
+  if (uploaded?.url) {
+    return { url: uploaded.url, filename };
   }
+
+  // R2 upload returned no URL: throw so the caller can surface this
+  // distinctly from a Flux failure (the message before this rewrite
+  // was a generic "Flux/R2" string that hid which one was at fault).
+  throw new Error("R2 upload returned no URL after Flux generation succeeded. Check MEDIA_STORAGE_* env vars.");
 }

@@ -60,18 +60,28 @@ export async function POST(_req: NextRequest, { params }: Params) {
   const topic = story.topic ?? story.book.topic ?? "";
   const level = story.cefrLevel ?? story.book.cefrLevel ?? story.level ?? story.book.level;
 
-  const result = await generateAndUploadCover({
-    title: story.title,
-    language,
-    region,
-    topic,
-    level,
-    text: seed,
-  });
+  let result: Awaited<ReturnType<typeof generateAndUploadCover>> = null;
+  try {
+    result = await generateAndUploadCover({
+      title: story.title,
+      language,
+      region,
+      topic,
+      level,
+      text: seed,
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    console.error("[catalog-books/generate-cover] Failed:", err);
+    return NextResponse.json(
+      { error: "Cover generation failed", details: message },
+      { status: 502 }
+    );
+  }
 
   if (!result?.url) {
     return NextResponse.json(
-      { error: "Cover generation failed. Check Flux/R2 configuration." },
+      { error: "Cover generation returned no URL" },
       { status: 502 }
     );
   }

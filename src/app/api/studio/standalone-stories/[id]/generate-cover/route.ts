@@ -51,18 +51,28 @@ export async function POST(_req: NextRequest, { params }: Params) {
     );
   }
 
-  const result = await generateAndUploadCover({
-    title: story.title,
-    language: story.language ?? "spanish",
-    region: story.region ?? undefined,
-    topic: story.topic ?? story.journeyTopic ?? "",
-    level: story.cefrLevel ?? story.level ?? "a1",
-    text: seed,
-  });
+  let result: Awaited<ReturnType<typeof generateAndUploadCover>> = null;
+  try {
+    result = await generateAndUploadCover({
+      title: story.title,
+      language: story.language ?? "spanish",
+      region: story.region ?? undefined,
+      topic: story.topic ?? story.journeyTopic ?? "",
+      level: story.cefrLevel ?? story.level ?? "a1",
+      text: seed,
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    console.error("[standalone-stories/generate-cover] Failed:", err);
+    return NextResponse.json(
+      { error: "Cover generation failed", details: message },
+      { status: 502 }
+    );
+  }
 
   if (!result?.url) {
     return NextResponse.json(
-      { error: "Cover generation failed. Check Flux/R2 configuration." },
+      { error: "Cover generation returned no URL" },
       { status: 502 }
     );
   }
