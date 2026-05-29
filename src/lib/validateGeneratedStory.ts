@@ -831,6 +831,58 @@ export async function validateGeneratedStory(
       }
     }
 
+    // Bare imperative ending a dialogue turn (ES only). ElevenLabs
+    // renders short imperative sentences with rising/question
+    // intonation when they end a turn without a follow-up sentence,
+    // regardless of voice, model, stability, or punctuation
+    // (confirmed empirically in 2026-05-29 audition tests A–L on
+    // Horacio v2/v3). The only fix that survived all tests was a
+    // second complete sentence after the imperative (e.g. "Trae los
+    // vasos. Gracias.") or rephrasing as a question / declarative.
+    // Spec rule lives in docs/story-quality-spec.md §3 "Bare
+    // imperatives (HARD BAN in dialogue)". This check enforces it.
+    if (titleLangCode === "ES") {
+      // Optional subject pronoun prefix ("Tú", "Usted") + imperative verb.
+      // Spanish frequently fronts the subject pronoun for emphasis ("Tú
+      // siéntate.", "Usted espere."); without (Tú|Usted)?\s* the regex
+      // misses those even though TTS treats them as bare imperatives.
+      const SPANISH_IMPERATIVE_HEAD_RE =
+        /^(?:(?:Tú|Tu|Usted|Ustedes|Vosotros|Vosotras)\s+)?(Trae|Tráe|Pon|Pón|Mira|Mire|Espera|Espere|Ven|Venga|Dame|Deme|Toma|Tome|Saca|Saque|Abre|Abra|Cierra|Cierre|Lee|Lea|Habla|Hable|Ayuda|Ayúdame|Ayúdeme|Llama|Llame|Come|Coma|Bebe|Beba|Sigue|Siga|Para|Pare|Sube|Suba|Baja|Baje|Entra|Entre|Sal|Salga|Dale|Hazlo|Hazme|Dime|Anda|Ándale|Vete|Váyase|Pasa|Pase|Cuelga|Cuelgue|Coge|Coja|Agarra|Agarre|Busca|Busque|Lleva|Lleve|Deja|Deje|Quita|Quite|Apaga|Apague|Prende|Prenda|Enciende|Encienda|Cuenta|Cuente|Siéntate|Siéntese|Levántate|Levántese)\b/u;
+      const SPEAKER_LINE_RE = /^[\p{Lu}][\p{L}\s'-]*:\s+(.*)$/u;
+      const dialogueLines = paragraphs.filter((p) => SPEAKER_LINE_RE.test(p));
+      const offenders: string[] = [];
+      for (const line of dialogueLines) {
+        const m = line.match(SPEAKER_LINE_RE);
+        if (!m) continue;
+        const speech = m[1].trim();
+        const sentences = speech
+          .split(/(?<=[.!?…])\s+/)
+          .map((s) => s.trim())
+          .filter(Boolean);
+        if (sentences.length === 0) continue;
+        const last = sentences[sentences.length - 1];
+        if (!last.endsWith(".")) continue; // questions and `!` are fine
+        const words = last.replace(/[.…]+$/, "").split(/\s+/).filter(Boolean);
+        if (words.length > 4) continue;
+        if (!SPANISH_IMPERATIVE_HEAD_RE.test(last)) continue;
+        offenders.push(line);
+      }
+      if (offenders.length > 0) {
+        checks.push({
+          id: "dialogue-bare-imperative",
+          label: "Bare imperative ends a dialogue turn (ElevenLabs uptalk)",
+          status: "fail",
+          detail:
+            `${offenders.length} dialogue turn(s) end with a short imperative + period and no follow-up sentence. ` +
+            `ElevenLabs renders these with rising/question intonation regardless of voice or model. ` +
+            `Fix by adding a short closing sentence ("Trae los vasos. Gracias."), a vocative + closer ("Come, mija. El caldo se enfría."), ` +
+            `or rephrasing as a polite request question ("¿Me traes los vasos?") or declarative ("Necesito los vasos."). ` +
+            `Offending turn(s): ${offenders.slice(0, 3).map((l) => `"${l}"`).join("; ")}` +
+            (offenders.length > 3 ? ` (+${offenders.length - 3} more)` : ""),
+        });
+      }
+    }
+
     // City-without-country in the opening (A1 ES only). An English-
     // native A1 learner doesn't know that Coyoacán is in Mexico,
     // Barranco in Peru, San Telmo in Argentina. The opening narrator

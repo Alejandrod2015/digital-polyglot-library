@@ -65,6 +65,32 @@ Both Conversacional and Viajero now default to **multi-voice dialogue**: a narra
 - Callbacks within the story (a phrase reused with a twist late) build cohesion.
 - Lexical level matches the target CEFR. One level above is normal exposure (i+1); two levels above is a real problem to fix before saving.
 
+### Bare imperatives (HARD BAN in dialogue)
+
+Short imperatives ending in period as the ONLY sentence of a dialogue turn ("Trae los vasos.", "Siéntate.", "Mira.", "Espera.", "Ven.") render with rising/question intonation in ElevenLabs across ALL voices and models we have tested. Confirmed empirically on 2026-05-29 with Horacio (Spanish, Colombian) on "Trae los vasos de agua.":
+
+| Variant tested | Result |
+| --- | --- |
+| v2 stability=0.9 period | Question intonation |
+| v2 stability=0.9 with `!` | Question intonation |
+| v3 + various tags + stability | Question OR s-aspiration (worse) |
+| `"Trae los vasos de agua, mija."` (vocative final) | Question intonation |
+| `"Trae los seis vasos de agua que están en la nevera."` (long imperative with subordinate clause) | Question intonation |
+| `"Trae los vasos de agua. Por favor."` (imperative + 2nd sentence) | Clean declarative |
+| `"Trae los vasos de agua. Gracias."` (imperative + 2nd sentence) | Clean declarative |
+| `"¿Me traes los vasos de agua?"` (request as question) | Clean question |
+
+The pattern: only a **boundary between two complete sentences** closes the prosody. Length, punctuation, vocatives don't matter.
+
+**Writer rule (enforced by validator `dialogue-bare-imperative`):** every imperative in a dialogue turn must be accompanied by at least one of:
+
+1. Second short closing sentence — `"Trae los vasos. Gracias."` / `"Siéntate. El caldo ya está."`
+2. Vocative + second sentence — `"Come, mija. El caldo se enfría."`
+3. Rephrased as polite request question — `"¿Me traes los vasos de agua?"`
+4. Rephrased as declarative — `"Necesito los vasos de agua."`
+
+Forbidden pattern: bare imperative (≤4 words) as the only sentence of a dialogue turn ending in period.
+
 ### Non-vocalized sounds (HARD BAN)
 
 ElevenLabs (and the entire TTS pipeline) cannot render laughs, hums, sighs, or stage directions naturally — they come out either silent, comically mispronounced, or as a flat dictionary read ("ha-ha-ha"). Anything in the body that the narrator can't say as real words breaks the audio. **NEVER include in any story body**:
@@ -143,30 +169,79 @@ Use one of the eight values above. The field is required for every new story and
 
 ## 5. Cover image
 
-- Generate via Flux directly. **Bypass `buildCoverPrompt`** in `src/lib/coverGenerator.ts`: it takes only the first sentence of the synopsis and strips proper nouns, frequently leaving the prompt empty.
-- Write a custom prompt that explicitly states:
-  - Number of characters (two max in mid-shot)
-  - Their ages and relationship (older woman + young grandchild, two strangers on a bench, etc.)
-  - Concrete action they are doing
-  - Setting and one or two key props
-  - Time of day / light condition
-  - Style block: "Hand-drawn cartoon vector illustration in the style of contemporary editorial language-learning book covers (Duolingo, Babbel, Headspace, Notion). Clean rounded shapes, gentle line work, expressive but stylized faces."
-  - Palette block: cool / warm / earthy variant from `COVER_VARIANT_PALETTE`
-  - Final block: "Wide horizontal 16:9 landscape frame. No text, no letters, no captions, no logos, no borders."
-- Provider preference: Flux. Fallback Gemini Imagen, but it rejects prompts that mention the age of minors. If the cover involves a child, use Flux.
+DPL stories are for adults learning a language, NOT for children. Every cover must read as a literary novel cover, not as a kids book or a language-app mascot. The cartoon-bebé / Pixar / Duolingo aesthetic is **banned** (see user memory `feedback_cover_style.md`).
+
+### Workflow
+
+- Generate via Flux directly. **Bypass `buildCoverPrompt`** in `src/lib/coverGenerator.ts` and `src/lib/dalle.ts`: the auto-prompt path produces median "father+daughter on couch with coffee" results that don't reflect the actual story. Always write a custom prompt.
+- The custom prompt MUST explicitly include all six blocks below in this order: scene grounding → character description → key props → style → palette → frame constraints.
+
+### 1. Scene grounding (extract from the actual story)
+
+Identify the central visual hook of THIS specific story and put it at the top of the prompt. Examples:
+- "Domingo con papá" → a small kitchen table set for THREE (third plate empty)
+- "Bank im Tiergarten" → an old wooden park bench under tall trees
+- "Espresso am Kollwitzplatz" → a small round café table by a window, two espresso cups (one half-empty)
+
+If the central hook isn't in the prompt, Flux defaults to the statistical mean of the relationship type.
+
+### 2. Characters
+
+- Number (two max in mid-shot)
+- Approximate ages (specific: "around 65", "around 40") — NOT "older" / "young"
+- Relationship + role in the scene
+- Posture / what they're doing in this exact frame
+- Restrained adult expressions; NEVER "smiling at the viewer"
+
+### 3. Key props (2-4 max)
+
+- The central object that anchors the scene (the third plate, the half-finished espresso, the empty park bench)
+- One or two secondary anchors (pot of caldo, paper bag of bread, window, radio)
+- Be specific about what's IN them and HOW they're positioned
+
+### 4. Style block (mandatory wording)
+
+> Hand-drawn editorial illustration in the register of contemporary literary fiction covers (Sally Rooney, Maira Kalman) and warm editorial magazine illustrations (New Yorker, Apartamento, Kinfolk, contemporary cookbook covers). Visible line work with subtle paper-grain texture, NOT flat vector. Faces with realistic adult proportions and soft warm expressions (NEVER smiling directly at the viewer; restrained without being somber). Mood: lived-in, welcoming, atmospheric, grounded, adult.
+>
+> STRICTLY FORBIDDEN: cartoon-bebé / Pixar / Disney animation; Duolingo, Babbel, Headspace, Notion, Storyset, Freepik mascot aesthetic; oversized round heads; large anime/Pixar eyes; flat pastel color blocks; saccharine wholesome smiles; characters smiling directly at the viewer; muted / desaturated palette; sepia tones; chiaroscuro shadows; somber / melancholic mood; literary-grief aesthetic (Le Monde diplomatique, NYT op-ed gloom); gray / desaturated cinematography.
+
+The forbidden list MUST be included verbatim. Without the cartoon bans, Flux defaults to cartoon-bebé. Without the somber bans, Flux over-corrects to literary-melancholic gray. Both fail.
+
+### 5. Palette (bright daylight default)
+
+**Bright daylight naturalistic + vivid saturated** is the default for every cover. Specifically: warm amber, golden yellow, fresh sage, soft sky blue, terracotta, dusty rose. Lighting is warm and inviting — midday window light, golden hour glow, soft daylight.
+
+NEVER muted / desaturated. NEVER sepia. NEVER chiaroscuro. NEVER somber.
+
+This matches user preference documented in `project_cover_defaults.md`: "bright daylight via Flux, paleta custom bright/vivid, NO earthy preset (sale sepia)". Adult editorial does NOT equal literary melancholic — it equals warm contemporary illustration with realistic proportions.
+
+### 6. Frame constraints
+
+> Wide horizontal 16:9 landscape frame, 1536x1024 resolution. No text, no letters, no captions, no logos, no borders, no watermark.
+
+### Provider
+
+Provider preference: Flux. Fallback Gemini Imagen, but it rejects prompts that mention the age of minors. If the cover involves a child, use Flux.
 
 ## 6. Audio
 
-- Multi-voice via ElevenLabs **`eleven_v3`** by default (since 2026-05-29). Single-voice via the same lib for narration-only stories. Legacy stories rendered with `eleven_multilingual_v2` remain unchanged; only new generations switch to v3.
-- **Audio tags** (v3 only): the pipeline injects an inline tag at the start of each character segment based on a rules-based classifier (`classifyAudioTag` in `elevenlabs.ts`). Current rules:
-  - Spanish imperatives at sentence start ("Trae los vasos de agua.") → `[firm]`. Forces declarative cadence; without this, v2 reliably renders short imperatives with rising/question intonation, and v3 mishandles them less consistently.
-  - Spanish gentle/consolation moments ("Está bien", "Tranquilo", "No te preocupes") → `[gentle]`. Warm-slow cadence without the over-cheerful boost.
-  - Narrator segments → no tag (let the model run natural prose cadence).
-  - Other languages: rules to be added as we discover voice/model interactions that need explicit direction.
-- **v3 vs v2 differences** that the spec adopts:
-  - v3 does NOT support `previous_text`/`next_text` (request stitching disabled). Per-segment context lives in the audio tag.
-  - v3 voice_settings: `stability=0.5` ("Natural" preset) to honor audio tags; no `speed` field (tempo applied downstream by `applyNarrationPostProcess` ffmpeg `atempo`).
-  - No SSML break tags in v3. Use punctuation (ellipses) for pauses.
+- Multi-voice via ElevenLabs **`eleven_multilingual_v2`** by default (since 2026-05-29 — defaulted back from v3). Single-voice via the same lib for narration-only stories.
+- **v3 is opt-in per voice** via `V3_WHITELIST` in `src/lib/elevenlabs.ts`. The whitelist starts empty. To promote a voice, audition it for:
+  (a) "s" final intact on imperative-shaped text (Caribbean/Rioplatense s-aspiration is the failure mode)
+  (b) prosody stable across a full multi-segment story
+  (c) any audio tags you plan to use (`[firm]`, `[gentle]`, etc.) without regressions
+  Only after passing all three, add the voiceId to `V3_WHITELIST` with notes + date.
+- **Why v2 default** (inverted from v3 on 2026-05-29):
+  - v3 introduced s-aspiration on Horacio (Colombian voice rendering with dropped 's' like Caribbean/Andalusian/Rioplatense). Confirmed in all v3 configurations tested (stability 0.5-0.7, with/without `[firm]`/`[matter-of-fact]` tags). Bug at the model level, not configuration.
+  - v3 distorted Angela's narrator delivery (unnatural prosody on long prose).
+  - The benefit of v3 audio tags ([firm] to fix imperative uptalk) is no longer needed because the writer-side rule (no bare short imperatives in dialogue — see §3) kills the uptalk at the text level before audio.
+  - User hard rule: zero s-aspiration in any voice, any case. v2 default makes the artifact physically impossible.
+- **v2 voice_settings**: `stability=0.9, similarity_boost=0.8, style=0, speed=0.9, use_speaker_boost=true`. The `speed=0.9` stacks with the downstream ffmpeg `atempo` post-process; render per-segment with `atempo=0.889` (not 0.80) to land at 0.80x effective without double-stretch artifacts.
+- **v3 differences** (relevant only for whitelisted voices):
+  - No `previous_text`/`next_text` support (request stitching disabled).
+  - `stability=0.5` ("Natural" preset) to honor audio tags.
+  - No `speed` field; tempo handled by ffmpeg `atempo=0.80`.
+  - No SSML break tags; use punctuation for pauses.
   - Same cost per character (1 credit) on both models.
 - Voice catalog in `src/lib/elevenlabs.ts` → `GERMAN_DIALOGUE_VOICES`:
 

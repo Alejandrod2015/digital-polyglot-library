@@ -66,7 +66,7 @@ const PASS_LABELS: Record<string, string> = {
   "names-cross-story": "Nombres de personajes no usados antes",
 };
 
-function humanize(check: Check): Humanized {
+export function humanize(check: Check): Humanized {
   const detail = check.detail ?? "";
   const id = check.id;
   const isWarn = check.status === "warn";
@@ -174,6 +174,11 @@ function humanize(check: Check): Humanized {
       return {
         text: "El diálogo abre buscando objetos en vez de plantear stakes",
         hint: `Los primeros turnos del diálogo no son para ubicar tazas ni cucharas. Mueve esa logística al narrador. El primer Speaker: debe entrar con algo que tenga peso (una pregunta incómoda, una respuesta que esconde algo, una decisión pendiente). ${detail}`,
+      };
+    case "dialogue-bare-imperative":
+      return {
+        text: "Imperativo breve aislado cierra un turno de diálogo",
+        hint: `ElevenLabs renderea "Trae los vasos." (imperativo solo, en punto, ≤4 palabras) con entonación de pregunta. Pasa en cualquier voz y modelo (probado A–L). Arregla con: segunda oración corta ("Trae los vasos. Gracias."), vocativo + cierre ("Come, mija. El caldo se enfría."), o reformula como pregunta/declarativa ("¿Me traes los vasos?" / "Necesito los vasos."). ${detail}`,
       };
     case "title-uniqueness":
       return {

@@ -58,22 +58,36 @@ export type CoverVariant = "cool-cartoon" | "warm-cartoon" | "earthy-cartoon";
 
 export const COVER_VARIANTS: CoverVariant[] = ["cool-cartoon", "warm-cartoon", "earthy-cartoon"];
 
+// DPL covers must read as literary novel covers for adults, NOT as children's
+// books or language-app mascots. The cartoon-bebé / Pixar / Duolingo
+// aesthetic is BANNED (see user memory feedback_cover_style.md +
+// docs/story-quality-spec.md §5). The FORBIDDEN block below is mandatory:
+// without it Flux defaults to cartoon-bebé because that's its training-data
+// mean for "illustration of family scene".
+//
+// (Variant identifiers retain the "-cartoon" suffix as a legacy holdover;
+// the actual rendered style is editorial literary, NOT cartoon. Renaming
+// the identifiers would touch StudioCoversClient + journeys/cover-variants
+// without changing behavior.)
 const SHARED_CARTOON_STYLE = [
-  "Modern flat cartoon character illustration in the Storyset / Freepik educational-app aesthetic.",
-  "Stylized rounded faces with large expressive almond-shaped eyes,",
-  "soft gradient skin shading, simplified cel-shaded clothing, smooth clean linework, friendly approachable expressions.",
-  "Same family of illustrations used by Duolingo, Notion, Headspace and Babbel landing pages.",
+  "STYLE: Hand-drawn editorial illustration in the register of contemporary literary fiction covers (Sally Rooney, Maira Kalman) and warm editorial magazine illustrations (New Yorker, Apartamento, Kinfolk, contemporary cookbook covers).",
+  "Visible line work with subtle paper-grain texture, NOT flat vector. Faces with realistic adult proportions and soft warm expressions (NEVER smiling directly at the viewer; restrained without being somber).",
+  "Mood: lived-in, welcoming, atmospheric, grounded, adult.",
+  "",
+  "STRICTLY FORBIDDEN: cartoon-bebé / Pixar / Disney animation; Duolingo, Babbel, Headspace, Notion, Storyset, Freepik mascot aesthetic; oversized round heads; large anime/Pixar eyes; flat pastel color blocks; saccharine wholesome smiles; characters smiling directly at the viewer; muted / desaturated palette; sepia tones; chiaroscuro shadows; somber / melancholic mood; literary-grief aesthetic (Le Monde diplomatique, NYT op-ed gloom); gray / desaturated cinematography.",
 ].join(" ");
 
-// Each palette anchors a different mood but keeps the same intensity tier:
-// vivid confident saturation, never pastel, never neon.
+// Bright daylight + vivid saturated is the default for every variant.
+// "Editorial adulto" does NOT equal "literary melancholic". The variant
+// names retain their legacy "-cartoon" suffix but the actual content
+// shifts hue within a warm bright register, never into muted/sepia/somber.
 const COVER_VARIANT_PALETTE: Record<CoverVariant, string> = {
   "cool-cartoon":
-    "Color tonality: cool harmony anchored on sage green, lavender and dusty blue, with vivid confident saturation, not pastel and not washed-out. Use as many colors as the scene needs across props, clothing and environment.",
+    "PALETTE: Bright daylight naturalistic with cool-leaning hues — soft sky blue, fresh sage, dusty rose, with warm amber accents catching the key props. Vivid saturated, never muted, never chiaroscuro, never somber.",
   "warm-cartoon":
-    "Color tonality: warm harmony anchored on peach, terracotta and sage, with vivid confident saturation, not pastel and not washed-out. Use as many colors as the scene needs across props, clothing and environment.",
+    "PALETTE: Bright daylight naturalistic with warm-leaning hues — warm amber, golden yellow, terracotta, fresh sage, dusty rose. Lighting is warm and inviting (midday window light, golden hour). Vivid saturated, never muted, never sepia, never somber.",
   "earthy-cartoon":
-    "Color tonality: earthy harmony anchored on olive, rust, mustard and cream, with vivid confident saturation, not pastel and not washed-out. Use as many colors as the scene needs across props, clothing and environment.",
+    "PALETTE: Bright daylight naturalistic with earthy-leaning hues — warm ochre, mustard yellow, fresh sage, soft cream, terracotta. Vivid saturated, never muted, never sepia, never chiaroscuro.",
 };
 
 // Strip proper nouns (character names, brand names) so Imagen-style models

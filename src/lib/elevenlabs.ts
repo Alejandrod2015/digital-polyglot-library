@@ -158,11 +158,65 @@ export const GERMAN_DIALOGUE_VOICES = {
 //     2026-05-28 on Domingo con papá audition.
 //   - Juan "tL5DHtPRo8KiW5xsx8yD" (Romantic and Soft, colombian middle-aged) —
 //     rejected 2026-05-28 on Domingo con papá audition.
+//   - Tina "lZmnvfWF4ko4J7F7QDtX" (Warm, Friendly & Conversational, peruvian
+//     middle-aged) — "sounds muffled / tapada". Rejected 2026-05-29 on Una pizca
+//     de canela Lucía audition.
+//   - Esperanza "6sefJctHkzCgLShKcnrI" (Serene and Assured, colombian middle-aged)
+//     — "yells / too loud" in v3 + stability=0.5 context. Rejected 2026-05-29 on
+//     Una pizca de canela Lucía audition.
+//
+// SPAIN-ONLY voices (do NOT use for LATAM stories; reserve for future Spain
+// catalog when we add Iberian Spanish journeys):
+//   - Isabel "56yWreYpxeKhcXjVscuF" (Nurturing and poised, tagged latin american
+//     but actually Spain-Spanish accent — distinción c/z=θ, l alveolar). Strong
+//     candidate for future Spain F middle-aged roles. Identified 2026-05-29.
 export const SPANISH_DIALOGUE_VOICES = {
   angela:  "Po9nYFo9ScA7odSuQLIW", // F middle-aged, latin american, mature warm — narrator (poetry/documentary register)
   horacio: "57D8YIbQSuE3REDPO6Vm", // M middle-aged, colombian, natural+warm "safe & reliable" — older paternal male (don Hernán-type)
   luna:    "1ZhMG5ZZgJ6XpkOrB8Az", // F young, colombian, conversational warm friendly — adult-young female (Marina-type)
+  alma:    "3ttovAt5bt3Kk38UGIob", // F middle-aged, latin american (neutral), conversational warm — adult female sibling/peer (Lucía-type)
 } as const;
+
+// v3 voice WHITELIST. v2 is the safe default for every voice; v3 is
+// opt-in PER VOICE after explicit user audition confirming no
+// regressions (s-aspiration, distortion on prose, off-register
+// renders, etc).
+//
+// Why v2 default + v3 whitelist (inverted 2026-05-29):
+// - v3 introduced s-aspiration on Horacio (Caribbean/Rioplatense
+//   accent leak on a Colombian voice) — confirmed by user A/B test on
+//   "Trae los vasos de agua." in v3 stability=0.5, 0.7, with/without
+//   `[firm]` and `[matter-of-fact]` tags. All variants aspirated.
+// - v3 distorted Angela's narrator delivery — confirmed earlier same day.
+// - The benefit of v3 audio tags ([firm] to fix imperative uptalk) is
+//   no longer needed: the writer-side rule (no bare short imperatives
+//   in dialogue, enforced by validator + spec + worker prompt) kills
+//   the uptalk at the text level, BEFORE audio. So v3 lost its main
+//   structural justification.
+// - User hard rule: zero s-aspiration in any voice, any case. Defaulting
+//   to v2 makes the s-aspiration physically impossible.
+//
+// To promote a voice to v3, audition it carefully on:
+// (a) imperative-shaped text (does s stay clean?)
+// (b) a full multi-segment story (does prosody drift across segments?)
+// (c) the specific audio tags you plan to use ([firm], [gentle], etc).
+// Only after passing all three, add to V3_WHITELIST below.
+export const V3_WHITELIST: ReadonlySet<string> = new Set<string>([
+  // Empty until each voice is explicitly audited and approved.
+  // Format: "voiceId", // Voice Name — audition notes + date
+]);
+
+export function pickModelForVoice(
+  voiceId: string,
+  fallback: ElevenLabsModel
+): ElevenLabsModel {
+  // Whitelist override: voice explicitly approved for v3 wins.
+  if (V3_WHITELIST.has(voiceId)) return ELEVENLABS_MODEL_V3;
+  // Otherwise: v2 is the safe default regardless of what the caller
+  // passed. Callers that REALLY need v3 for a non-whitelisted voice
+  // must add it to the whitelist (which requires audition).
+  return ELEVENLABS_MODEL_V2;
+}
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -933,10 +987,11 @@ export async function generateAndUploadMultiVoiceAudio(args: {
    *  el aeneas align trim por segmento. Si no se pasa, los segmentos
    *  caen al trim heurístico viejo (silenceremove + 60 ms). */
   language?: string;
-  /** Modelo de TTS. Default `eleven_v3` para historias nuevas (resuelve
-   *  el uptalk de imperativos via audio tags); pasar
-   *  `eleven_multilingual_v2` explícitamente solo si necesitas el
-   *  comportamiento legacy con request stitching (previous/next text). */
+  /** Modelo de TTS fallback. Default `eleven_multilingual_v2` (v2 es el
+   *  safe default desde 2026-05-29: v3 introduce s-aspiration en algunas
+   *  voces, y la regla de escritura "no imperativos breves aislados" mata
+   *  el uptalk a nivel de texto, eliminando la justificación principal
+   *  de v3). v3 entra solo por whitelist explícito de voces auditadas. */
   model?: ElevenLabsModel;
 }): Promise<{
   url: string;
@@ -980,13 +1035,15 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       : `${titleClean}.`
     : "";
 
-  const model = args.model ?? ELEVENLABS_MODEL_V3;
+  const defaultModel = args.model ?? ELEVENLABS_MODEL_V2;
 
   const audioBuffers: Buffer[] = [];
   // Construimos la lista completa de "fragments-a-sintetizar" (title +
-  // segmentos en orden). Para v2 usamos previous_text/next_text de los
-  // fragmentos adyacentes (request stitching). Para v3 cada segmento es
-  // independiente y la dirección prosódica viene del audio tag.
+  // segmentos en orden). El modelo se decide por VOZ (no por historia)
+  // vía `pickModelForVoice`: voces narrator-tuned como Angela usan v2;
+  // voces conversacionales usan v3 con audio tags. Mezclar modelos en una
+  // misma historia es seguro porque cada segmento se rendea aparte y se
+  // cose con ffmpeg + loudnorm.
   type Frag = { text: string; voiceId: string; speaker: string };
   const fragments: Frag[] = [];
   if (titleText) fragments.push({ text: titleText, voiceId: narratorVoice, speaker: "narrator" });
@@ -999,13 +1056,15 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     const previousText = i > 0 ? fragments[i - 1].text : undefined;
     const nextText = i + 1 < fragments.length ? fragments[i + 1].text : " ";
 
+    const fragModel = pickModelForVoice(frag.voiceId, defaultModel);
+
     // For v3 only: pre-pend audio tag based on segment classification.
     // The title fragment (i=0, speaker=narrator) always classifies as
     // narrator → no tag. Character lines may get [firm] / [gentle].
     // The tag becomes part of `text` sent to ElevenLabs, so it counts
     // toward the character credit cost (small: ~7-9 chars per tag).
     let textForTts = frag.text;
-    if (model === ELEVENLABS_MODEL_V3) {
+    if (fragModel === ELEVENLABS_MODEL_V3) {
       const tag = classifyAudioTag(
         { speaker: frag.speaker, text: frag.text },
         args.language,
@@ -1020,7 +1079,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       previousText,
       nextText,
       language: args.language,
-      model,
+      model: fragModel,
     });
     if (!buf) return null;
     audioBuffers.push(buf);

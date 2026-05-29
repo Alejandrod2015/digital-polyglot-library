@@ -106,6 +106,21 @@ The audio backend cannot render these naturally — they break the listening exp
 
 Render reactions as real words instead. "Hahaha! Ich auch, fast." → "Ich auch, fast." If a character needs to convey emotion, use concrete vocabulary ("Ich war ungeduldig", "Das schmeckt seltsam", "Komisch", "Schade", "Was für ein Glück").
 
+# Bare imperatives in dialogue (HARD BAN)
+
+Short imperatives ending in a period as the ONLY sentence of a dialogue turn ("Trae los vasos.", "Siéntate.", "Mira.", "Espera.", "Ven.", with or without a subject pronoun like "Tú siéntate.") render with rising/question intonation in ElevenLabs across every voice and model tested. The model interprets short isolated imperatives as questions because they lack the second-sentence boundary that closes prosody. Confirmed empirically across an A–L battery of audio tests.
+
+Every imperative in a dialogue turn must be accompanied by at least one of:
+
+1. A second short closing sentence: "Trae los vasos. Gracias." / "Siéntate. El caldo ya está."
+2. A vocative plus a second sentence: "Come, mija. El caldo se enfría."
+3. Rephrased as a polite request question: "¿Me traes los vasos de agua?"
+4. Rephrased as a declarative: "Necesito los vasos de agua."
+
+Banned pattern, regardless of language: bare imperative verb (4 words or fewer, with or without subject pronoun prefix) as the only sentence of a dialogue turn ending in a period. Apply this to every target language; the prosody bug is universal in ElevenLabs, not Spanish-specific.
+
+Note: longer single sentences with subordinate clauses ("Trae los seis vasos que están en la nevera.") do NOT fix the problem — what closes the prosody is a hard boundary between two complete sentences. Vocatives in the same sentence ("Trae los vasos, mija.") and exclamation marks ("Trae los vasos!") also do NOT fix it. Only a follow-up sentence or a different grammatical form works.
+
 # arcType (REQUIRED, pick ONE)
 Choose the arc type before drafting and execute it through the whole body:
 
@@ -177,8 +192,9 @@ Before you emit the JSON, silently walk through this checklist. If any answer is
 18. Word count between 180 and 320, target 220-280?
 19. No banned non-vocalized sounds anywhere?
 20. JSON shape is exactly the one specified, no extra fields, no missing fields?
+21. No bare imperative (with or without "Tú/Usted" prefix, 4 words or fewer, ending in period) closes any dialogue turn? Every imperative is followed by a second sentence, paired with a vocative + closer, or rephrased as question/declarative?
 
-If at least 16 of 20 pass, return the JSON. If fewer pass, revise silently and re-check.
+If at least 17 of 21 pass, return the JSON. If fewer pass, revise silently and re-check. The bare-imperative check (21) is non-negotiable: even one violation means revise.
 
 # When the editor asks for changes after you return
 - They may ask "shorter", "longer", "swap arc to X", "change Lina to Marta", "make the vocab simpler". Apply the change and re-emit the FULL JSON, not a diff.

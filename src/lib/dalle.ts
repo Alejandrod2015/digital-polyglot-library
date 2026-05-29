@@ -114,13 +114,26 @@ function buildCoverPrompt(args: {
       ? `Strict exclusions: ${sceneHints.forbidden.join("; ")}.`
       : "";
 
+  // DPL covers must read as literary novel covers for adults, NOT as
+  // children's books or language-app mascots. The cartoon-bebé / Pixar /
+  // Duolingo aesthetic is banned (user memory feedback_cover_style.md +
+  // story-quality-spec.md §5). Without the explicit FORBIDDEN block
+  // below, Flux defaults to "cartoon family" because that's its training
+  // mean for "illustration of family scene".
   return [
     "Create a horizontal editorial illustration (1536x1024) grounded in the scene below.",
     "Depict one clear main moment with the main characters as the focal point, faces and body language readable.",
     "Include 2-4 representative objects or environment cues drawn from the scene.",
-    "Style: clean modern editorial illustration with simple shapes, clear silhouettes, soft shading, and vivid balanced colors. Clearly an illustration, not a photograph. Keep faces naturally proportioned and calm.",
+    "",
+    "STYLE: Hand-drawn editorial illustration in the register of contemporary literary fiction covers (Sally Rooney, Maira Kalman) and warm editorial magazine illustrations (New Yorker, Apartamento, Kinfolk, contemporary cookbook covers). Visible line work with subtle paper-grain texture, NOT flat vector. Faces with realistic adult proportions and soft warm expressions (NEVER smiling directly at the viewer; restrained without being somber). Mood: lived-in, welcoming, atmospheric, grounded, adult.",
+    "",
+    "STRICTLY FORBIDDEN: cartoon-bebé / Pixar / Disney animation; Duolingo, Babbel, Headspace, Notion, Storyset, Freepik mascot aesthetic; oversized round heads; large anime/Pixar eyes; flat pastel color blocks; saccharine wholesome smiles; characters smiling directly at the viewer; muted / desaturated palette; sepia tones; chiaroscuro shadows; somber / melancholic mood; literary-grief aesthetic (Le Monde diplomatique, NYT op-ed gloom); gray / desaturated cinematography.",
+    "",
+    "PALETTE: Bright daylight naturalistic + vivid saturated. Warm amber, golden yellow, fresh sage, soft sky blue, terracotta, dusty rose. Lighting is warm and inviting — midday window light, golden hour glow, soft daylight. NEVER muted, NEVER sepia, NEVER chiaroscuro, NEVER somber. Composition reads warm and alive, not gray and contemplative.",
+    "",
     "Keep the composition simple and readable at thumbnail size, with one focal area in the center or center-left.",
-    "No text, letters, logos, watermark, border, or book mockup. Single coherent scene.",
+    "Wide horizontal 16:9 landscape frame. No text, letters, logos, watermark, border, or book mockup. Single coherent scene.",
+    "",
     `Story title: ${title || "(untitled story)"}`,
     contextLine,
     characterLine,
