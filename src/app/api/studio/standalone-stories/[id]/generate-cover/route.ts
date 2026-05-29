@@ -12,6 +12,12 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateAndUploadCover } from "@/lib/dalle";
 
+// Flux polling can take up to ~90s (36 attempts × 2.5s) for cover
+// generation. Without this, the Vercel default kills the function
+// mid-poll and the route returns the generic "Flux/R2 configuration"
+// error. Mirrors `/api/studio/journeys/cover/route.ts` (maxDuration=120).
+export const maxDuration = 120;
+
 async function requireStudio(): Promise<boolean> {
   const { userId } = await auth();
   if (!userId) return false;
