@@ -32,18 +32,30 @@ async function main() {
   const prisma = new PrismaClient();
   const stories = await prisma.journeyStory.findMany({
     where: { status: "qa_pass" },
-    include: { journey: { select: { name: true, language: true } } },
+    include: { journey: { select: { name: true, language: true, variant: true } } },
     orderBy: [{ journeyId: "asc" }, { level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
   });
+
+  // Preload journey-wide title sets for the anchor-repetition and
+  // template-monotony checks (otherwise the validator would skip them).
+  const journeyTitleMap = new Map<string, string[]>();
+  const allTitleRows = await prisma.journeyStory.findMany({
+    where: { title: { not: null } },
+    select: { journeyId: true, title: true },
+  });
+  for (const r of allTitleRows) {
+    if (!journeyTitleMap.has(r.journeyId)) journeyTitleMap.set(r.journeyId, []);
+    journeyTitleMap.get(r.journeyId)!.push(r.title!);
+  }
 
   type Demote = { id: string; bucket: string; slot: number; title: string; fails: string[] };
   const toDemote: Demote[] = [];
   let pass = 0;
 
   for (const s of stories) {
-    const j: { name: string; language: string } = (s as unknown as {
-      journey: { name: string; language: string };
-    }).journey;
+    const j: { name: string; language: string; variant?: string } = (
+      s as unknown as { journey: { name: string; language: string; variant?: string } }
+    ).journey;
     const langCode = LANG_MAP[j.language] ?? "";
     const result = await validateGeneratedStory(
       {
@@ -54,7 +66,17 @@ async function main() {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         vocab: (s.vocab as any[]) ?? [],
       },
-      { language: langCode, level: s.level, topic: s.topic }
+      {
+        language: langCode,
+        level: s.level,
+        topic: s.topic,
+        variant: j.variant,
+        journeyTitles: (
+          journeyTitleMap.get(
+            (s as unknown as { journeyId: string }).journeyId
+          ) ?? []
+        ).filter((t) => t !== s.title),
+      }
     );
     const fails = result.checks.filter((c) => c.status === "fail");
     if (fails.length === 0) {
