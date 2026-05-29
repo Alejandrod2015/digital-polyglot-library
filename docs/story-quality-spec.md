@@ -157,7 +157,17 @@ Use one of the eight values above. The field is required for every new story and
 
 ## 6. Audio
 
-- Multi-voice via ElevenLabs `eleven_multilingual_v2` for German Conversacional. Single-voice via the same lib for narration-only stories.
+- Multi-voice via ElevenLabs **`eleven_v3`** by default (since 2026-05-29). Single-voice via the same lib for narration-only stories. Legacy stories rendered with `eleven_multilingual_v2` remain unchanged; only new generations switch to v3.
+- **Audio tags** (v3 only): the pipeline injects an inline tag at the start of each character segment based on a rules-based classifier (`classifyAudioTag` in `elevenlabs.ts`). Current rules:
+  - Spanish imperatives at sentence start ("Trae los vasos de agua.") → `[firm]`. Forces declarative cadence; without this, v2 reliably renders short imperatives with rising/question intonation, and v3 mishandles them less consistently.
+  - Spanish gentle/consolation moments ("Está bien", "Tranquilo", "No te preocupes") → `[gentle]`. Warm-slow cadence without the over-cheerful boost.
+  - Narrator segments → no tag (let the model run natural prose cadence).
+  - Other languages: rules to be added as we discover voice/model interactions that need explicit direction.
+- **v3 vs v2 differences** that the spec adopts:
+  - v3 does NOT support `previous_text`/`next_text` (request stitching disabled). Per-segment context lives in the audio tag.
+  - v3 voice_settings: `stability=0.5` ("Natural" preset) to honor audio tags; no `speed` field (tempo applied downstream by `applyNarrationPostProcess` ffmpeg `atempo`).
+  - No SSML break tags in v3. Use punctuation (ellipses) for pauses.
+  - Same cost per character (1 credit) on both models.
 - Voice catalog in `src/lib/elevenlabs.ts` → `GERMAN_DIALOGUE_VOICES`:
 
 | Slot | ID | Notes |

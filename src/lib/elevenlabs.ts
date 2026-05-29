@@ -24,6 +24,80 @@ export const DEFAULT_VOICE_SETTINGS = {
   use_speaker_boost: true,
 } as const;
 
+// ── Eleven v3 (Alpha) ──────────────────────────────────────────────────
+// v3 supports inline audio tags ("[firm]", "[gentle]", "[whispers]") that
+// override the model's default prosody per segment. This is the structural
+// fix to the v2 problem we documented in audit: v2 reliably renders short
+// Spanish imperatives ("Trae los vasos de agua.") with rising intonation
+// regardless of parameter tuning, because the imperative-shape-at-sentence-
+// boundary triggers a baked-in upspeak bias in `eleven_multilingual_v2`.
+//
+// v3 differences from v2:
+//   - No `previous_text` / `next_text` support (request stitching disabled).
+//     Per-segment context now lives in the audio tag we inject, not in
+//     surrounding-text hints.
+//   - No `speed` parameter in voice_settings (tempo handled downstream by
+//     `applyNarrationPostProcess` via ffmpeg `atempo`).
+//   - `stability` semantics shifted: 0.5 ("Natural" preset in the UI) is
+//     the sweet spot for honoring audio tags while keeping voice identity
+//     stable. 0.9 ("Robust") would ignore tags. 0.0-0.3 ("Creative")
+//     over-emotes.
+//   - No SSML break tags — use punctuation (ellipses) for pauses.
+export const ELEVENLABS_MODEL_V2 = "eleven_multilingual_v2" as const;
+export const ELEVENLABS_MODEL_V3 = "eleven_v3" as const;
+export type ElevenLabsModel = typeof ELEVENLABS_MODEL_V2 | typeof ELEVENLABS_MODEL_V3;
+
+export const DEFAULT_VOICE_SETTINGS_V3 = {
+  stability: 0.5,
+  similarity_boost: 0.8,
+  style: 0,
+  use_speaker_boost: true,
+} as const;
+
+/**
+ * Classify a dialogue segment and return an Eleven v3 audio tag prefix
+ * (e.g. "[firm]", "[gentle]") or "" for no tag.
+ *
+ * The rules are rules-based (not LLM) and deliberately narrow: only target
+ * the patterns we've proven trigger v2 uptalk and that v3 mishandles
+ * without explicit direction. Adding tags too broadly costs nothing in
+ * credits but flattens the model's natural expressive range.
+ *
+ * Returns empty string for narrator segments and for any text that
+ * doesn't match a known problem pattern. Safe to call on every segment.
+ */
+function classifyAudioTag(
+  segment: { speaker: string; text: string },
+  language?: string
+): string {
+  const isNarrator = segment.speaker.toLowerCase() === "narrator";
+  const text = segment.text.trim();
+  if (!text || isNarrator) return "";
+
+  const lang = (language ?? "").toLowerCase();
+
+  if (lang === "spanish") {
+    // Common Spanish tú/usted imperatives at sentence start. Tested
+    // against the v2 uptalk bug on 2026-05-29: "Trae los vasos de agua."
+    // and similar reliably rendered with question intonation. The
+    // [firm] tag in v3 forces a declarative falling cadence.
+    const SPANISH_IMPERATIVES =
+      /^(Trae|Tráe|Pon|Pón|Mira|Mire|Espera|Espere|Ven|Venga|Dame|Deme|Toma|Tome|Saca|Saque|Abre|Abra|Cierra|Cierre|Lee|Lea|Habla|Hable|Ayuda|Ayúdame|Ayúdeme|Llama|Llame|Come|Coma|Bebe|Beba|Sigue|Siga|Para|Pare|Sube|Suba|Baja|Baje|Entra|Entre|Sal|Salga|Dale|Hazlo|Hazme|Dime|Anda|Ándale|Vete|Váyase|Pasa|Pase|Cuelga|Cuelgue|Coge|Coja|Agarra|Agarre|Busca|Busque|Trae|Lleva|Lleve|Deja|Deje|Quita|Quite|Apaga|Apague|Prende|Prenda|Enciende|Encienda|Cuenta|Cuente|Para|Pare|Siéntate|Siéntese|Levántate|Levántese)\s/u;
+    if (SPANISH_IMPERATIVES.test(text)) return "[firm]";
+
+    // Soft, intimate consolation / endearment moments. The [gentle] tag
+    // keeps the cadence warm + slow without the over-cheerful boost that
+    // softenPunctuationForTts strips when we replace `!` with `.`.
+    const SPANISH_GENTLE =
+      /(está\s+bien|tranquil[oa]|no\s+te\s+preocupes|todo\s+va\s+a\s+estar\s+bien)/iu;
+    if (SPANISH_GENTLE.test(text)) return "[gentle]";
+  }
+
+  // Future: German, Italian, French, Portuguese rules. Add as we
+  // discover voice/model interactions that need explicit direction.
+  return "";
+}
+
 // Ambient bed volume (0.0-1.0). 0.10 keeps the room tone present without
 // fighting the dialogue. 0.15 was a touch hot.
 export const DEFAULT_AMBIENT_VOLUME = 0.10;
@@ -412,11 +486,20 @@ export function parseDialogueSegments(storyText: string): DialogueSegment[] {
 //            de la última palabra alineada + 30 ms de margen, content-
 //            aware en lugar de threshold-based. Si Modal align falla,
 //            cae al pipeline trim-v2 como fallback.
-function multivoiceSegmentCacheKey(voiceId: string, softenedText: string): string {
-  const settingsFingerprint = JSON.stringify(DEFAULT_VOICE_SETTINGS);
+function multivoiceSegmentCacheKey(
+  voiceId: string,
+  softenedText: string,
+  model: ElevenLabsModel = ELEVENLABS_MODEL_V2
+): string {
+  const settings =
+    model === ELEVENLABS_MODEL_V3 ? DEFAULT_VOICE_SETTINGS_V3 : DEFAULT_VOICE_SETTINGS;
+  const settingsFingerprint = JSON.stringify(settings);
+  // Model is in the fingerprint so v2 and v3 renders of the same text
+  // never collide in the cache (the same speaker + line produces
+  // perceptually different audio across model versions).
   const hash = crypto
     .createHash("sha256")
-    .update(`${voiceId}|${settingsFingerprint}|${softenedText}|trim-v3`)
+    .update(`${voiceId}|${model}|${settingsFingerprint}|${softenedText}|trim-v3`)
     .digest("hex")
     .slice(0, 24);
   return `media/multivoice-segments/${hash}.mp3`;
@@ -610,27 +693,34 @@ async function ttsSegment(args: {
   apiKey: string;
   /** Texto del segmento previo (mismo voiceId o no). Le da al modelo
    *  contexto histórico para que la prosodia inicial encaje con lo
-   *  ya dicho. Limit ~500 chars; sino el modelo se distrae. */
+   *  ya dicho. Limit ~500 chars; sino el modelo se distrae.
+   *  IGNORADO en eleven_v3 (no soporta request stitching). */
   previousText?: string;
   /** Texto del próximo segmento. Le indica al modelo dónde termina
    *  exactamente el segmento actual; sin esto, eleven_multilingual_v2
    *  a veces genera 1-2 fonemas del siguiente token (la "phantom
-   *  syllable" reportada). Pasar incluso un espacio o "." ayuda. */
+   *  syllable" reportada). Pasar incluso un espacio o "." ayuda.
+   *  IGNORADO en eleven_v3 (no soporta request stitching). */
   nextText?: string;
   /** Idioma del segmento (para el aeneas align). Si no se pasa, el
    *  align trim se salta y el segmento sale solo con el silenceremove
    *  + end-trim heurístico viejo. */
   language?: string;
+  /** Modelo de TTS. Default v2 (legacy compat). v3 habilita audio tags
+   *  inline en el texto, pero omite previous_text/next_text porque el
+   *  endpoint no los soporta. */
+  model?: ElevenLabsModel;
 }): Promise<Buffer | null> {
+  const model = args.model ?? ELEVENLABS_MODEL_V2;
   const softened = softenPunctuationForTts(args.text);
 
-  // Cache lookup: same voice + same text (after softening) + same voice
-  // settings → reuse the previously generated MP3 from R2 instead of paying
-  // ElevenLabs again.
+  // Cache lookup: same voice + same model + same text (after softening) +
+  // same voice settings → reuse the previously generated MP3 from R2
+  // instead of paying ElevenLabs again.
   // Nota: previousText/nextText NO van en la cache key. Cambiarlos
   // produciría un audio ligeramente distinto pero no significativamente
   // — y meterlos rompería la propiedad "regenero solo lo que cambió".
-  const cacheKey = multivoiceSegmentCacheKey(args.voiceId, softened);
+  const cacheKey = multivoiceSegmentCacheKey(args.voiceId, softened, model);
   const cacheUrl = getPublicObjectUrl(cacheKey);
   if (cacheUrl) {
     try {
@@ -647,20 +737,27 @@ async function ttsSegment(args: {
     }
   }
 
+  const voiceSettings =
+    model === ELEVENLABS_MODEL_V3 ? DEFAULT_VOICE_SETTINGS_V3 : DEFAULT_VOICE_SETTINGS;
   const requestBody: Record<string, unknown> = {
     text: softened,
-    model_id: "eleven_multilingual_v2",
-    voice_settings: DEFAULT_VOICE_SETTINGS,
+    model_id: model,
+    voice_settings: voiceSettings,
   };
-  // ElevenLabs API: previous_text/next_text dan al modelo contexto
-  // sobre lo que pasa antes/después del segmento actual sin consumir
-  // caracteres del cuota. Sirve para que la prosodia fluya (previous)
-  // y para señalizar boundaries explícitos (next) — el último previene
-  // la "phantom syllable" mejor que cualquier post-process. Default a
-  // " " si no se pasa, así el modelo siempre tiene un boundary signal.
-  const prev = args.previousText?.trim();
-  if (prev) requestBody.previous_text = prev.slice(-500);
-  requestBody.next_text = args.nextText?.trim() ? args.nextText.trim().slice(0, 500) : " ";
+  if (model !== ELEVENLABS_MODEL_V3) {
+    // v2 (and earlier): previous_text/next_text dan al modelo contexto
+    // sobre lo que pasa antes/después del segmento actual sin consumir
+    // caracteres del cuota. Sirve para que la prosodia fluya (previous)
+    // y para señalizar boundaries explícitos (next) — el último previene
+    // la "phantom syllable" mejor que cualquier post-process. Default a
+    // " " si no se pasa, así el modelo siempre tiene un boundary signal.
+    const prev = args.previousText?.trim();
+    if (prev) requestBody.previous_text = prev.slice(-500);
+    requestBody.next_text = args.nextText?.trim() ? args.nextText.trim().slice(0, 500) : " ";
+  }
+  // v3: no previous_text/next_text (request stitching disabled). En su
+  // lugar el caller pre-prepends audio tags ("[firm]", "[gentle]") en
+  // `text` para dirigir la prosodia explícitamente.
 
   const response = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${args.voiceId}`,
@@ -836,6 +933,11 @@ export async function generateAndUploadMultiVoiceAudio(args: {
    *  el aeneas align trim por segmento. Si no se pasa, los segmentos
    *  caen al trim heurístico viejo (silenceremove + 60 ms). */
   language?: string;
+  /** Modelo de TTS. Default `eleven_v3` para historias nuevas (resuelve
+   *  el uptalk de imperativos via audio tags); pasar
+   *  `eleven_multilingual_v2` explícitamente solo si necesitas el
+   *  comportamiento legacy con request stitching (previous/next text). */
+  model?: ElevenLabsModel;
 }): Promise<{
   url: string;
   filename: string;
@@ -878,30 +980,47 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       : `${titleClean}.`
     : "";
 
+  const model = args.model ?? ELEVENLABS_MODEL_V3;
+
   const audioBuffers: Buffer[] = [];
   // Construimos la lista completa de "fragments-a-sintetizar" (title +
-  // segmentos en orden) para poder pasar previous_text/next_text con
-  // el contexto real de cada uno. Sin esto, ElevenLabs trata cada
-  // segmento como una oración aislada y a veces le agrega 1-2 fonemas
-  // del próximo token antes del stop signal (la "phantom syllable").
-  type Frag = { text: string; voiceId: string };
+  // segmentos en orden). Para v2 usamos previous_text/next_text de los
+  // fragmentos adyacentes (request stitching). Para v3 cada segmento es
+  // independiente y la dirección prosódica viene del audio tag.
+  type Frag = { text: string; voiceId: string; speaker: string };
   const fragments: Frag[] = [];
-  if (titleText) fragments.push({ text: titleText, voiceId: narratorVoice });
+  if (titleText) fragments.push({ text: titleText, voiceId: narratorVoice, speaker: "narrator" });
   for (const seg of segments) {
     const voiceId = lowerVoiceMap[seg.speaker.toLowerCase()] ?? narratorVoice;
-    fragments.push({ text: seg.text, voiceId });
+    fragments.push({ text: seg.text, voiceId, speaker: seg.speaker });
   }
   for (let i = 0; i < fragments.length; i += 1) {
     const frag = fragments[i];
     const previousText = i > 0 ? fragments[i - 1].text : undefined;
     const nextText = i + 1 < fragments.length ? fragments[i + 1].text : " ";
+
+    // For v3 only: pre-pend audio tag based on segment classification.
+    // The title fragment (i=0, speaker=narrator) always classifies as
+    // narrator → no tag. Character lines may get [firm] / [gentle].
+    // The tag becomes part of `text` sent to ElevenLabs, so it counts
+    // toward the character credit cost (small: ~7-9 chars per tag).
+    let textForTts = frag.text;
+    if (model === ELEVENLABS_MODEL_V3) {
+      const tag = classifyAudioTag(
+        { speaker: frag.speaker, text: frag.text },
+        args.language,
+      );
+      if (tag) textForTts = `${tag} ${frag.text}`;
+    }
+
     const buf = await ttsSegment({
-      text: frag.text,
+      text: textForTts,
       voiceId: frag.voiceId,
       apiKey,
       previousText,
       nextText,
       language: args.language,
+      model,
     });
     if (!buf) return null;
     audioBuffers.push(buf);
