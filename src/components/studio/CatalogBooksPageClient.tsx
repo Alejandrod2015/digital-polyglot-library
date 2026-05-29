@@ -215,8 +215,13 @@ export default function CatalogBooksPageClient() {
         body: JSON.stringify(form),
       });
       if (!res.ok) {
-        const j = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(j.error ?? `HTTP ${res.status}`);
+        const j = (await res.json().catch(() => ({}))) as { error?: string; details?: string };
+        // Surface the real error (`details`) when the server provides
+        // one. Without this the Studio UI only sees the generic top
+        // line (e.g. "Cover generation failed") and the curator never
+        // learns what actually broke (e.g. Flux content moderation).
+        const top = j.error ?? `HTTP ${res.status}`;
+        throw new Error(j.details ? `${top}: ${j.details}` : top);
       }
       const j = (await res.json()) as { book: StudioCatalogBook };
       setBookForms((prev) => new Map(prev).set(bookId, j.book));
@@ -232,8 +237,13 @@ export default function CatalogBooksPageClient() {
     try {
       const res = await fetch(`/api/studio/catalog-books/${encodeURIComponent(b.id)}`, { method: "DELETE" });
       if (!res.ok) {
-        const j = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(j.error ?? `HTTP ${res.status}`);
+        const j = (await res.json().catch(() => ({}))) as { error?: string; details?: string };
+        // Surface the real error (`details`) when the server provides
+        // one. Without this the Studio UI only sees the generic top
+        // line (e.g. "Cover generation failed") and the curator never
+        // learns what actually broke (e.g. Flux content moderation).
+        const top = j.error ?? `HTTP ${res.status}`;
+        throw new Error(j.details ? `${top}: ${j.details}` : top);
       }
       setBooks((prev) => prev.filter((bk) => bk.id !== b.id));
       setExpandedBookIds((prev) => { const n = new Set(prev); n.delete(b.id); return n; });
@@ -258,8 +268,13 @@ export default function CatalogBooksPageClient() {
         body: JSON.stringify(newBookDraft),
       });
       if (!res.ok) {
-        const j = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(j.error ?? `HTTP ${res.status}`);
+        const j = (await res.json().catch(() => ({}))) as { error?: string; details?: string };
+        // Surface the real error (`details`) when the server provides
+        // one. Without this the Studio UI only sees the generic top
+        // line (e.g. "Cover generation failed") and the curator never
+        // learns what actually broke (e.g. Flux content moderation).
+        const top = j.error ?? `HTTP ${res.status}`;
+        throw new Error(j.details ? `${top}: ${j.details}` : top);
       }
       const j = (await res.json()) as { book: StudioCatalogBook };
       setBooks((prev) => [j.book, ...prev]);
@@ -352,8 +367,13 @@ export default function CatalogBooksPageClient() {
         { method: "PATCH", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) }
       );
       if (!res.ok) {
-        const j = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(j.error ?? `HTTP ${res.status}`);
+        const j = (await res.json().catch(() => ({}))) as { error?: string; details?: string };
+        // Surface the real error (`details`) when the server provides
+        // one. Without this the Studio UI only sees the generic top
+        // line (e.g. "Cover generation failed") and the curator never
+        // learns what actually broke (e.g. Flux content moderation).
+        const top = j.error ?? `HTTP ${res.status}`;
+        throw new Error(j.details ? `${top}: ${j.details}` : top);
       }
       const j = (await res.json()) as { story: StudioCatalogStory };
       // Slug change → id change. Re-map in caches.
@@ -387,8 +407,13 @@ export default function CatalogBooksPageClient() {
         { method: "DELETE" }
       );
       if (!res.ok) {
-        const j = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(j.error ?? `HTTP ${res.status}`);
+        const j = (await res.json().catch(() => ({}))) as { error?: string; details?: string };
+        // Surface the real error (`details`) when the server provides
+        // one. Without this the Studio UI only sees the generic top
+        // line (e.g. "Cover generation failed") and the curator never
+        // learns what actually broke (e.g. Flux content moderation).
+        const top = j.error ?? `HTTP ${res.status}`;
+        throw new Error(j.details ? `${top}: ${j.details}` : top);
       }
       setBookStories((prev) => {
         const list = prev.get(bookId) ?? [];
@@ -420,8 +445,13 @@ export default function CatalogBooksPageClient() {
         { method: "POST" }
       );
       if (!res.ok) {
-        const j = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(j.error ?? `HTTP ${res.status}`);
+        const j = (await res.json().catch(() => ({}))) as { error?: string; details?: string };
+        // Surface the real error (`details`) when the server provides
+        // one. Without this the Studio UI only sees the generic top
+        // line (e.g. "Cover generation failed") and the curator never
+        // learns what actually broke (e.g. Flux content moderation).
+        const top = j.error ?? `HTTP ${res.status}`;
+        throw new Error(j.details ? `${top}: ${j.details}` : top);
       }
       const data = await res.json();
       apply(data);
@@ -1173,7 +1203,7 @@ function StoryEditorPanel({
             disabled={!hasTitle || !hasText || anyGenerating}
             title={!hasTitle ? "Necesita título primero" : !hasText ? "Necesita texto primero" : "Genera la portada con Flux + sube a R2"}
           >
-            {generators.generating.has("cover") ? "Generando…" : "Regenerar cover"}
+            {generators.generating.has("cover") ? "Generando…" : form.coverUrl ? "Regenerar cover" : "Generar cover"}
           </button>
           {/* Regenerar audio: deshabilitado por política. ElevenLabs cobra
              por uso y la memoria del proyecto prohíbe regeneración de
