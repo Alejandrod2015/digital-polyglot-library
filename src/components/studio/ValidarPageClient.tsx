@@ -731,8 +731,47 @@ export default function ValidarPageClient() {
             </p>
 
             {stageError && (
-              <div className="mt-3 rounded-md border border-rose-500/40 bg-rose-500/10 px-3 py-2 text-xs text-rose-200">
-                {stageError}
+              <div className="mt-3 space-y-2 rounded-md border border-rose-500/40 bg-rose-500/10 px-3 py-2.5 text-xs text-rose-100">
+                {stageFailChecks && stageFailChecks.length > 0 ? (
+                  <>
+                    <p className="font-semibold text-rose-200">
+                      La revalidación contra el journey encontró{" "}
+                      {stageFailChecks.length === 1
+                        ? "1 cosa por arreglar"
+                        : `${stageFailChecks.length} cosas por arreglar`}{" "}
+                      antes de subir:
+                    </p>
+                    <ol className="space-y-1.5">
+                      {stageFailChecks.map((c, i) => {
+                        const h = humanize(c);
+                        return (
+                          <li key={c.id} className="flex items-start gap-2">
+                            <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-rose-500/30 text-[10px] font-bold">
+                              {i + 1}
+                            </span>
+                            <div className="min-w-0 flex-1 space-y-0.5">
+                              <div className="font-medium leading-snug">{h.text}</div>
+                              {h.hint && (
+                                <div className="leading-relaxed text-rose-200/90">
+                                  <span className="font-semibold text-rose-300">
+                                    Cómo arreglar:
+                                  </span>{" "}
+                                  {h.hint}
+                                </div>
+                              )}
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                    <p className="text-[11px] text-rose-300/80">
+                      Corrige el JSON, vuelve a pegarlo y valida de nuevo con este
+                      journey seleccionado.
+                    </p>
+                  </>
+                ) : (
+                  stageError
+                )}
               </div>
             )}
 
