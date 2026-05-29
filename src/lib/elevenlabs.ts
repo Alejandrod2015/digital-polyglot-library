@@ -62,6 +62,34 @@ export const GERMAN_DIALOGUE_VOICES = {
   eleonore:  "8SdTD5IMgFKT1jp7JbPC", // F middle-aged, native DE, mature narrator — "Frau" roles
 } as const;
 
+// Approved Spanish (LATAM) voices for multi-character dialogue stories. IDs
+// verified against the ElevenLabs shared library with language=es.
+// Curation principle: avoid promotional/announcer registers and theatrical
+// storyteller registers. Default to conversational, intimate, audiobook-poetry
+// voices that work for A1-A2 contemplative stories set in LATAM cities.
+//
+// BANNED voices (do NOT add back, user feedback):
+//   - Cristian "F1SMDtOTbvqlHI6wVNVa" (Neutral, Warm, Confident) — preview reads as
+//     "narrador de fútbol" / locutor institucional, demasiado declarativo para A1
+//     historias íntimas. Rejected 2026-05-28 on Domingo con papá narrator audition.
+//   - Hernando "yHD4CsKkghm19ToGLJEC" (Rich and Commanding, colombian) — "no suena
+//     como el papá", lectura comercial/autoritaria, no paternal. Rejected 2026-05-28.
+//   - El Abuelo Charlie "Yb8JGzcZyW5YYzenhRCm" (Wise-sounding, Calm) — teatral, "como
+//     narrador de cuentos para niños". Rejected 2026-05-28.
+//   - Harold "69cPH0Ypmuc48Y3Ty25o" (Natural, Friendly, Calm, 65 yrs) — buena
+//     calidad pero acento se lee como venezolano, no encaja Bogotá. Rejected 2026-05-28.
+//   - Salvatore "wfTWLJ20rcMqvU8gIiAB" (Natural Conversations & Storyteller, latin
+//     american old) — rejected 2026-05-28 on Domingo con papá audition.
+//   - Aurelio "PHNjiQZ95SnMQ7rDQsXz" (Gentle and Tender, mexican old) — rejected
+//     2026-05-28 on Domingo con papá audition.
+//   - Juan "tL5DHtPRo8KiW5xsx8yD" (Romantic and Soft, colombian middle-aged) —
+//     rejected 2026-05-28 on Domingo con papá audition.
+export const SPANISH_DIALOGUE_VOICES = {
+  angela:  "Po9nYFo9ScA7odSuQLIW", // F middle-aged, latin american, mature warm — narrator (poetry/documentary register)
+  horacio: "57D8YIbQSuE3REDPO6Vm", // M middle-aged, colombian, natural+warm "safe & reliable" — older paternal male (don Hernán-type)
+  luna:    "1ZhMG5ZZgJ6XpkOrB8Az", // F young, colombian, conversational warm friendly — adult-young female (Marina-type)
+} as const;
+
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
@@ -342,7 +370,7 @@ export function softenPunctuationForTts(text: string): string {
 export type DialogueSegment = { speaker: string; text: string };
 
 const SPEAKER_LABEL_REGEX =
-  /^\s*([A-ZÄÖÜ][A-Za-zÄÖÜäöüß.'-]*(?:\s+[A-ZÄÖÜ][A-Za-zÄÖÜäöüß.'-]*){0,3})\s*:\s+(.*\S)\s*$/u;
+  /^\s*([\p{Lu}][\p{L}\p{M}.'-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'-]*){0,3})\s*:\s+(.*\S)\s*$/u;
 
 export function parseDialogueSegments(storyText: string): DialogueSegment[] {
   const cleaned = storyText.replace(/<[^>]+>/g, " ");
