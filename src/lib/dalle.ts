@@ -13,6 +13,15 @@ function stripHtml(input: string): string {
   return input.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+// Keep only the first couple of sentences as the cover seed. Pasting the
+// full body verbatim (dialogue, charged supernatural prose) is what trips
+// Flux's "request moderated" filter; a short scene summary does not.
+function summarizeForCover(input: string): string {
+  const clean = input.replace(/\s+/g, " ").trim();
+  const sentences = clean.split(/(?<=[.!?])\s+/);
+  return sentences.slice(0, 2).join(" ").slice(0, 320);
+}
+
 function sanitizeFileChunk(input: string): string {
   return input
     .toLowerCase()
@@ -106,61 +115,19 @@ function buildCoverPrompt(args: {
       : "";
 
   return [
-    "Create a horizontal story cover image (1536x1024) that is DIRECTLY grounded in the synopsis.",
-    "",
-    "Goal:",
-    "- The image must depict ONE clear main moment from this exact story (not a generic city scene).",
-    "- Focus on the key interaction between the main characters in that moment.",
-    "- Prioritize narrative fidelity over visual experimentation.",
-    "- The composition MUST include visible human characters involved in the scene.",
-    "",
-    "Strict content rules:",
-    "- Use only people, objects, actions, and setting cues that are explicitly supported by the synopsis.",
-    "- If the synopsis implies one main character, show at least that character clearly.",
-    "- If the synopsis implies interaction/conflict, show at least two characters with readable expressions/body language.",
-    "- Include 2-4 representative objects/environment elements from the synopsis context.",
-    "- Do not invent random fantasy elements, magical creatures, surreal symbols, or unrelated scenery.",
-    "- If details are missing, keep the scene urban/everyday and believable rather than adding arbitrary details.",
-    "- The mood/expression of characters must match the emotional tone implied by the synopsis.",
-    "- No violence, aggression, or dramatic confrontation unless explicitly stated in the synopsis.",
-    "",
-    "Composition constraints:",
-    "- Keep the scene simple and readable: 1 primary interaction and at most 5 secondary people in the background.",
-    "- Avoid visual clutter and overpopulation.",
-    "- Keep one clear focal area in the center or center-left.",
-    "",
-    "Visual direction:",
-    "- Minimal, simple editorial illustration with clean shapes and clear silhouettes.",
-    "- The image must read clearly as an illustration, not a photograph.",
-    "- Human characters must be stylized and illustrated, never hyperrealistic.",
-    "- Favor flat-to-soft-shaded editorial drawing over photographic skin, pores, or lens realism.",
-    "- Use vivid, lively colors with natural balance; avoid muted or desaturated palettes.",
-    "- Match time-of-day from the synopsis, but keep subjects clearly readable (even at night).",
-    "- Keep shadows soft-to-medium and lifted enough to preserve facial and clothing detail.",
-    "- Use limited texture and low detail density; avoid painterly realism and gritty rendering.",
-    "- Keep facial features natural and calm, with simplified illustrated detail.",
-    "- Avoid sepia/yellow cast, fantasy glow, heavy filters, and neon/duotone look.",
-    "- Keep the overall mood clear, modern, and emotionally grounded.",
-    "- Clean composition, strong focal point, readable at thumbnail size.",
-    "",
-    "Hard constraints:",
-    "- No text, letters, logos, watermark, border, UI, or book mockup.",
-    "- No collage layout. Single coherent scene.",
-    "- No fairy-tale aesthetic, no dreamy fantasy ambience, no whimsical children's-book mood.",
-    "- Do not generate storefront signs or billboards with readable text.",
-    "- STRICTLY avoid anime, manga, chibi, cartoon, Pixar/3D-animated, comic-book, or cel-shaded styles.",
-    "- Avoid exaggerated facial expressions and stylized oversized eyes.",
-    "- Avoid dark cinematic grading, gloomy storm palettes, horror ambience, moody fantasy look, and hyper-detailed painterly realism.",
-    "- STRICTLY avoid photorealism, cinematic live-action stills, DSLR look, film still look, skin pores, ultra-detailed faces, realistic photography, or hyperreal human rendering.",
-    "- Do not make people look like real photographed individuals.",
-    "",
+    "Create a horizontal editorial illustration (1536x1024) grounded in the scene below.",
+    "Depict one clear main moment with the main characters as the focal point, faces and body language readable.",
+    "Include 2-4 representative objects or environment cues drawn from the scene.",
+    "Style: clean modern editorial illustration with simple shapes, clear silhouettes, soft shading, and vivid balanced colors. Clearly an illustration, not a photograph. Keep faces naturally proportioned and calm.",
+    "Keep the composition simple and readable at thumbnail size, with one focal area in the center or center-left.",
+    "No text, letters, logos, watermark, border, or book mockup. Single coherent scene.",
     `Story title: ${title || "(untitled story)"}`,
     contextLine,
     characterLine,
     requiredLine,
     forbiddenLine,
     "",
-    "Synopsis to follow literally:",
+    "Scene to depict:",
     synopsis,
   ]
     .filter(Boolean)
@@ -365,7 +332,7 @@ export async function generateAndUploadCover({
   //   response body so the Studio UI can show Fátima what to fix.
   // - user/generate-story wraps this in its own try/catch and just
   //   logs the failure, so the resulting null/throw is equally fine.
-  const synopsis = stripHtml(text).slice(0, 1600);
+  const synopsis = summarizeForCover(stripHtml(text));
   const prompt = buildCoverPrompt({
     title,
     synopsis,

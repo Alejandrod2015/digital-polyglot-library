@@ -47,10 +47,13 @@ export async function POST(_req: NextRequest, { params }: Params) {
   if (!story.title.trim()) {
     return NextResponse.json({ error: "Story needs a title before generating a cover." }, { status: 400 });
   }
-  const seed = story.text?.trim() || "";
+  // Prefer the short editorial synopsis over the full body: the body's
+  // verbatim dialogue/sensitive prose is what trips Flux moderation
+  // ("request moderated"). Mirrors standalone-stories + journeys.
+  const seed = story.synopsis?.trim() || story.text?.trim() || "";
   if (!seed) {
     return NextResponse.json(
-      { error: "Story needs body text to generate a cover from." },
+      { error: "Story needs a synopsis or body text to generate a cover from." },
       { status: 400 }
     );
   }
