@@ -176,8 +176,14 @@ function extractHtmlBlocks(html: string): HtmlBlock[] {
 // doesn't look like a dialogue (e.g. flowing prose).
 type DialogueRenderBlock = { speaker: string | null; text: string };
 
+// Unicode property classes so the matcher accepts speaker names with
+// ANY accented Latin character (Spanish "Don Hernán", Italian "Niccolò",
+// French "Hélène", Portuguese "João"), not just the ASCII + German set.
+// The old hardcoded class silently failed every line whose speaker had
+// an accent — collapsing those lines into the paragraph above because
+// the 40% dialogue-line threshold below was never reached.
 const DIALOGUE_LABEL_REGEX =
-  /^([A-ZÄÖÜ][A-Za-zÄÖÜäöüß.'-]*(?:\s+[A-ZÄÖÜ][A-Za-zÄÖÜäöüß.'-]*){0,3}):\s+(.*\S)\s*$/u;
+  /^([\p{Lu}][\p{L}\p{M}.'-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'-]*){0,3}):\s+(.*\S)\s*$/u;
 
 function detectDialogueBlocks(rawText: string): DialogueRenderBlock[] | null {
   const lines = rawText.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
