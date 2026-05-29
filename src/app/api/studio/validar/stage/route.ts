@@ -168,11 +168,21 @@ export async function POST(req: NextRequest) {
   // Re-validate server-side against the live state of the journey.
   const startedAt = new Date().toISOString();
   const existing = await loadExisting(journeyId, level, topic);
+  // Cross-journey titles for anchor-repetition and template-monotony.
+  const journeyTitlesRows = await prisma.journeyStory.findMany({
+    where: { journeyId, title: { not: null } },
+    select: { title: true },
+  });
+  const journeyTitles = journeyTitlesRows
+    .map((r) => r.title!)
+    .filter(Boolean);
   const result = await validateGeneratedStory(parsed, {
     language: languageIso,
     level,
     topic,
     existing,
+    journeyTitles,
+    variant: journey.variant ?? undefined,
   });
 
   if (!result.ok) {

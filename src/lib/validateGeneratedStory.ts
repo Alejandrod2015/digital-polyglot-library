@@ -46,6 +46,14 @@ export type ValidationContext = {
   topic?: string;
   /** Stories already in the same journey+level+topic. */
   existing?: ExistingStorySummary[];
+  /** Titles of every other story in the same journey (across all topics
+   *  and levels). Used by the anchor-repetition and title-template-
+   *  monotony checks. Pass `[]` or omit to skip those checks. */
+  journeyTitles?: string[];
+  /** Journey variant (LATAM, iberian, etc.). Used by the region check
+   *  to decide which whitelist of accepted anchors to apply. When
+   *  omitted, no region check runs. */
+  variant?: string;
 };
 
 export type CheckStatus = "pass" | "fail" | "warn";
@@ -136,6 +144,18 @@ const COGNATES_BY_LANG: Record<string, string[]> = {
   ES: [
     "importante", "normal", "social", "problema", "idea", "momento",
     "televisión", "television", "radio", "posible", "general",
+    // Transparent cognates that English-native learners decode at sight.
+    // Listing them in vocab wastes a slot. Be conservative: only words
+    // that are LITERALLY identical or near-identical to their English
+    // equivalent and add zero learning value. Borderline cases (color,
+    // minuto, día, animal) stay teachable.
+    "foto", "fotografía", "fotografia", "teléfono", "telefono",
+    "café", "cafe", "hotel", "restaurante", "pizza", "taxi",
+    "música", "musica", "computadora", "computador", "internet",
+    "doctor", "doctora", "hospital", "chocolate", "banana",
+    "piano", "guitarra", "violín", "violin", "familia",
+    "automóvil", "automovil", "metro", "actor", "actriz", "artista",
+    "fantástico", "fantastico", "perfecto", "especial",
   ],
   IT: ["importante", "normale", "sociale", "problema", "idea", "momento", "radio"],
   PT: ["importante", "normal", "social", "problema", "ideia", "momento", "rádio"],
@@ -338,58 +358,72 @@ export async function validateGeneratedStory(
     });
   }
 
-  // Title × journey region. Spanish journeys with variant=latam must use
-  // anchors inside Latin America (Coyoacán, Barranco, Palermo, Mérida,
-  // Caracas…). A title set in Tokyo, Estambul, or Lisboa breaks the
-  // cultural contract: a learner who picks "ES · Traveler · LATAM"
-  // expects stories ABOUT Latin America, not random global cities.
+  // Title × journey region. When variant=latam, every proper noun in the
+  // title must be a recognized LATAM place. We use a whitelist (not a
+  // blacklist of global non-LATAM cities) so the rule is bounded and
+  // explicit: the world of LATAM anchors grows curated, not by chasing
+  // every new global city. The list deliberately covers all Spanish-
+  // speaking LATAM countries plus Brazil cities that Spanish learners
+  // legitimately transit through (Rio, Galeão, São Paulo).
   //
-  // We don't have variant in the validation context yet, so the check is
-  // approximate: when language=es, blacklist non-Spanish-speaking cities
-  // (Tokyo, Estambul, Berlín, París, Roma, Londres, Bangkok…) and the
-  // most obvious global capitals. We do NOT include Iberian-Spain cities
-  // here because some Spanish journeys legitimately target Iberian
-  // variant; once `context.variant` is plumbed through, we can split.
-  const SPANISH_NON_LATAM_BLACKLIST = [
-    /\b(estambul|estanbul|istanbul)\b/i,
-    /\b(tokyo|tokio)\b/i,
-    /\b(berl[ií]n|berlin)\b/i,
-    /\b(par[ií]s|paris)\b/i,
-    /\b(roma|trastevere|napoli|n[áa]poles|milan|mil[áa]n|venecia|venezia|florencia|firenze|t[oó]rino)\b/i,
-    /\b(londres|london)\b/i,
-    /\b(bangkok)\b/i,
-    /\b(estocolmo|stockholm)\b/i,
-    /\b(pek[ií]n|beijing)\b/i,
-    /\b(mosc[uú]|moscow)\b/i,
-    /\b(el\s+cairo|cairo)\b/i,
-    /\b(s[ií]dney|sydney)\b/i,
-    /\b(nueva\s+york|new\s+york)\b/i,
-    /\b(los\s+[áa]ngeles)\b/i,
-    /\b(lisboa|lisbon)\b/i,
-    /\b(oporto|porto)\b/i,
-    /\b(dubl[ií]n|dublin)\b/i,
-    /\b(amsterdam|[áa]msterdam)\b/i,
-    /\b(viena|vienna)\b/i,
-    /\b(praga|prague)\b/i,
-    /\b(estoril|[áa]gora|napoli|napoles|n[áa]poles)\b/i,
-    /\b(seul|seúl|seoul)\b/i,
-    /\b(singapur|singapore)\b/i,
-    /\b(hong\s+kong)\b/i,
-    /\b(shanghai|shanghái)\b/i,
-    /\b(bangalore|delhi|mumbai)\b/i,
-    /\b(jerusal[ée]n|jerusalem|tel\s+aviv)\b/i,
-    /\b(mosc[uú]|estambul)\b/i,
-  ];
+  // Anchor IN whitelist → pass region check. Anchor NOT in whitelist
+  // (and variant=latam) → fail.
+  const LATAM_PLACES = LATAM_PLACES_SET;
+  const variantLower = (context.variant ?? "").toLowerCase();
   const titleRegionLang = (context.language ?? "").toUpperCase();
-  if (titleRegionLang === "ES") {
-    const hit = SPANISH_NON_LATAM_BLACKLIST.find((re) => re.test(parsed.title));
-    if (hit) {
-      checks.push({
-        id: "title-region-mismatch",
-        label: "Title anchor is outside the journey's region (LATAM Spanish)",
-        status: "fail",
-        detail: `Title "${parsed.title}" references a city outside Latin America. Spanish Traveler journeys default to LATAM anchors (Coyoacán, Barranco, Mérida, Palermo, etc.). Pick a Latin-American venue instead.`,
-      });
+  if (titleRegionLang === "ES" && variantLower === "latam") {
+    // Direct title scan — we cannot reuse extractProperNouns here
+    // because its STOP list strips well-known city names (Madrid,
+    // Roma, Lima, etc.) so the names-match check stays focused on
+    // character names. For region detection we *want* to catch those.
+    const norm = (s: string) =>
+      s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    const titleNorm = " " + norm(parsed.title).replace(/[^a-z0-9]+/g, " ") + " ";
+    // For each whitelist/blacklist entry, check if it appears in the
+    // title as a whole word (surrounded by non-letter). This avoids
+    // false positives like "santiago" matching "santiago de chile" or
+    // "san josé" splitting into matching tokens.
+    const isHit = (entry: string) =>
+      titleNorm.includes(" " + norm(entry).replace(/\s+/g, " ") + " ");
+    const hits = {
+      latam: [...LATAM_PLACES].filter(isHit),
+      nonLatam: [...NON_LATAM_PLACES_SET].filter(isHit),
+    };
+    const anchors = extractProperNouns(parsed.title);
+    if (anchors.length > 0 || hits.latam.length > 0 || hits.nonLatam.length > 0) {
+      // Hybrid: positive whitelist + negative blacklist.
+      //   - Any anchor in NON_LATAM_PLACES (Sevilla, Madrid, Tokyo, Roma,
+      //     Trastevere, …) → FAIL (egregious wrong-region).
+      //   - At least one anchor in LATAM whitelist → PASS.
+      //   - Neither → WARN. The title might be a generic venue type
+      //     (Pulpería, Costanera, Estancia) where the LATAM-ness is
+      //     implicit; flag for worker review without auto-demoting.
+      // LATAM check first: if any anchor is in the LATAM whitelist the
+      // title is rooted in the region, no matter what other proper
+      // nouns appear. This handles ambiguous words (Palermo BA vs
+      // Italy, Colonia UY vs Germany, Córdoba AR vs Spain) by letting
+      // the LATAM context win.
+      const hasLatamAnchor = hits.latam.length > 0;
+      if (!hasLatamAnchor) {
+        const nonLatamHit = hits.nonLatam[0];
+        if (nonLatamHit) {
+          checks.push({
+            id: "title-region-mismatch",
+            label: "Title anchor outside the journey's region (LATAM Spanish)",
+            status: "fail",
+            detail: `Anchor "${nonLatamHit}" is not Latin-American. Spanish Traveler · LATAM journeys must anchor on a Latin-American place; Spain (Madrid, Barcelona, Sevilla, Valencia, Bilbao…) is Iberian, not LATAM.`,
+          });
+        } else {
+          checks.push({
+            id: "title-region-mismatch",
+            label: "Title anchor not confirmed LATAM",
+            status: "warn",
+            detail: `Title proper nouns ${anchors
+              .map((a) => `"${a}"`)
+              .join(", ")} are not in the LATAM whitelist. If the story is set in Latin America, prefer adding a recognizable LATAM city or neighborhood to the title (Buenos Aires, Lima, La Paz, Cartagena, etc.).`,
+          });
+        }
+      }
     }
   }
 
@@ -416,6 +450,173 @@ export async function validateGeneratedStory(
         status: "warn",
         detail: `Found "${hit[0]}" in title. ${titleLangCode} stories normally don't use this character; verify the anchor is correct (toponyms like "São Paulo" are OK if intentional).`,
       });
+    }
+  }
+
+  // Title anchor repetition across the journey. If the same proper noun
+  // already appears in 2+ other titles of this journey, the journey
+  // feels like a single neighborhood instead of a varied LATAM tour.
+  // Warn at 2 repeats; fail at 3+ (genuine overuse).
+  const journeyTitles = context.journeyTitles ?? [];
+  if (journeyTitles.length > 0) {
+    const myAnchors = extractProperNouns(parsed.title);
+    if (myAnchors.length > 0) {
+      const otherAnchorCounts: Record<string, number> = {};
+      for (const t of journeyTitles) {
+        if (t === parsed.title) continue;
+        for (const a of extractProperNouns(t)) {
+          const key = a.toLowerCase();
+          otherAnchorCounts[key] = (otherAnchorCounts[key] ?? 0) + 1;
+        }
+      }
+      const repeatedAnchors = myAnchors
+        .map((a) => ({ anchor: a, count: otherAnchorCounts[a.toLowerCase()] ?? 0 }))
+        .filter((x) => x.count >= 2);
+      if (repeatedAnchors.length > 0) {
+        const worst = repeatedAnchors.reduce((a, b) => (a.count > b.count ? a : b));
+        const status: CheckStatus = worst.count >= 3 ? "fail" : "warn";
+        checks.push({
+          id: "title-anchor-repetition",
+          label: "Title anchor already used in multiple stories of this journey",
+          status,
+          detail: `Anchor "${worst.anchor}" appears in ${worst.count} other title${worst.count === 1 ? "" : "s"} of this journey. ${
+            status === "fail"
+              ? "Pick a different LATAM city to keep the journey from feeling like one neighborhood."
+              : "Consider rotating to a different city if this isn't intentional."
+          }`,
+        });
+      }
+    }
+  }
+
+  // Matches "X en|de|del|al|a la|por|junto a|frente a|cerca de|bajo|sobre Y".
+  // Hoisted because used by both monotony (with journey context) and
+  // formula-default (standalone, no context required).
+  const TITLE_FORMULA_RE =
+    /^[\p{L}\p{N}\s'.¡!¿?,]+?\s+(en|de|del|al|a\s+la|por|junto\s+al?|frente\s+al?|cerca\s+del?|bajo\s+(?:el|la|los|las)?|sobre\s+(?:el|la|los|las)?)\s+[\p{L}\p{N}\s'.,]+$/iu;
+  // Exempt openings that are clearly NOT the "Noun + en/de + Place"
+  // formula even though they share the connector token. Time
+  // fragments, days of the week, verb-initial titles, etc. should
+  // pass the formula-default check.
+  const TITLE_NON_FORMULA_STARTERS = [
+    /^antes\s+(de|del)\b/i,
+    /^despu[ée]s\s+(de|del)\b/i,
+    /^mientras\b/i,
+    /^cuando\b/i,
+    /^durante\b/i,
+    /^hoy\b/i,
+    /^ayer\b/i,
+    /^ma[ñn]ana\b/i,
+    /^(lunes|martes|mi[ée]rcoles|jueves|viernes|s[áa]bado|domingo)\b/i,
+    /^esta\s+(noche|tarde|ma[ñn]ana|semana|vez)\b/i,
+    /^(ya|no)\b/i, // mini-sentence starters: "Ya no quedan velas", "No abre hoy"
+  ];
+  const isExemptStarter = TITLE_NON_FORMULA_STARTERS.some((re) =>
+    re.test(parsed.title)
+  );
+  const titleMatchesFormula =
+    TITLE_FORMULA_RE.test(parsed.title) && !isExemptStarter;
+
+  // Title template monotony. Most stories in the LATAM Spanish journey
+  // follow a "Noun en/de/del Place" pattern. Past ~60% of titles in the
+  // same journey using one template = formulaic feel. Suggest varied
+  // structures (time fragment, day+person, progressive verb, "para X").
+  if (journeyTitles.length >= 6) {
+    const formulaTotal = journeyTitles.filter((t) => TITLE_FORMULA_RE.test(t)).length;
+    const formulaRatio = formulaTotal / journeyTitles.length;
+    if (titleMatchesFormula && formulaRatio > 0.55) {
+      checks.push({
+        id: "title-template-monotony",
+        label: "Title follows a template already overused in this journey",
+        status: "warn",
+        detail: `${Math.round(formulaRatio * 100)}% of titles in this journey already use the "X en/de/del Y" pattern. Try a different structure: time fragment ("Antes de las dos"), day + person ("Jueves con doña Luz"), progressive verb ("Mientras gira el trompo"), "para X" ("Pan de yuca para Ana"), or a full mini-sentence ("Ya no quedan velas").`,
+      });
+    }
+  }
+
+  // Title formula default. Fires whenever the title matches "X en/de/
+  // del/al Y" regardless of journey context. The pattern is the LLM
+  // default — most stories slip into it without a journey to compare
+  // against. We warn standalone too so the worker sees the formula and
+  // gets the alternative-structure menu before staging.
+  if (titleMatchesFormula) {
+    checks.push({
+      id: "title-formula-default",
+      label: "Title uses the default \"X en/de/del Y\" formula",
+      status: "warn",
+      detail: `Title "${parsed.title}" follows the default "X en/de/del Y" formula. ChatGPT defaults to this template; try a different structure to keep variety: time fragment ("Antes de las dos"), day + person ("Jueves con doña Luz"), progressive verb ("Mientras gira el trompo"), "para X" ("Pan de yuca para Ana"), or a full mini-sentence ("Ya no quedan velas"). Acceptable if the journey deliberately schedules a formulaic title, but reject otherwise.`,
+    });
+  }
+
+  // Title anchor recognizability (A1/A2 ES only). For beginner Spanish
+  // learners, a title anchored on Tungurahua/Sopocachi/Yanahuara is
+  // noise — they can't pronounce it or place it on a map. Prefer
+  // widely-known cities and famous neighborhoods. Warn (not fail)
+  // because some specific anchors are legitimate if the story builds
+  // recognition around them.
+  const recognizabilityLevel = (context.level ?? "").toLowerCase();
+  if (
+    titleLangCode === "ES" &&
+    (recognizabilityLevel === "a1" || recognizabilityLevel === "a2")
+  ) {
+    const A1_LATAM_ANCHORS = new Set([
+      // Mexico
+      "ciudad de méxico", "ciudad de mexico", "méxico", "mexico",
+      "coyoacán", "coyoacan", "xochimilco", "chapultepec", "san ángel",
+      "san angel", "polanco", "condesa", "roma norte", "oaxaca",
+      "puebla", "mérida", "merida", "cancún", "cancun", "tulum",
+      "tijuana", "guadalajara", "monterrey", "veracruz", "mazatlán",
+      "mazatlan", "san cristóbal",
+      // Argentina
+      "buenos aires", "palermo", "san telmo", "la boca", "caminito",
+      "recoleta", "belgrano", "puerto madero", "mendoza", "córdoba",
+      "cordoba", "rosario", "bariloche", "ushuaia", "mar del plata",
+      "aeroparque", "ezeiza", "mataderos",
+      // Peru
+      "lima", "miraflores", "barranco", "cusco", "cuzco", "arequipa",
+      "san isidro", "surquillo", "chorrillos", "callao",
+      "jorge chávez", "jorge chavez", "lúcuma", "ceviche",
+      // Colombia
+      "bogotá", "bogota", "medellín", "medellin", "cartagena", "cali",
+      "santa marta", "la candelaria", "candelaria", "chapinero",
+      "el poblado", "getsemaní", "getsemani", "el dorado", "laureles",
+      // Chile
+      "santiago", "valparaíso", "valparaiso", "viña del mar",
+      "vina del mar", "providencia", "lastarria", "bellavista",
+      "chiloé", "chiloe", "atacama",
+      // Venezuela
+      "caracas", "altamira",
+      // Uruguay
+      "montevideo", "colonia", "punta del este", "carrasco",
+      "tres cruces",
+      // Ecuador
+      "quito", "guayaquil", "cuenca", "baños", "banos", "salinas",
+      "otavalo",
+      // Bolivia
+      "la paz", "santa cruz", "sucre", "cochabamba", "potosí", "potosi",
+      // Paraguay
+      "asunción", "asuncion",
+      // Other capitals
+      "managua", "tegucigalpa", "san josé", "san jose", "panamá",
+      "panama", "panama city", "san salvador", "santo domingo",
+      "la habana", "havana",
+      // Brazil (Spanish-learner travels through)
+      "rio", "rio de janeiro", "são paulo", "sao paulo", "galeão",
+      "galeao",
+    ]);
+    const titleAnchors = extractProperNouns(parsed.title);
+    if (titleAnchors.length > 0) {
+      const unknown = titleAnchors.filter(
+        (a) => !A1_LATAM_ANCHORS.has(a.toLowerCase())
+      );
+      if (unknown.length > 0) {
+        checks.push({
+          id: "title-anchor-recognizability",
+          label: "Title anchor may be too obscure for A1/A2 learners",
+          status: "warn",
+          detail: `Anchor(s) "${unknown.join(", ")}" might be unrecognizable for English-native A1/A2 Spanish learners. Prefer well-known LATAM cities/neighborhoods (Coyoacán, La Candelaria, Miraflores, San Telmo, Palermo, Mérida, Oaxaca, Valparaíso, La Paz, Cartagena, Bogotá, Buenos Aires). If the obscure anchor is intentional, the story should make it discoverable through context.`,
+        });
+      }
     }
   }
 
@@ -470,6 +671,328 @@ export async function validateGeneratedStory(
     status: speakerLines >= 4 ? "pass" : "fail",
     detail: `${speakerLines} turns`,
   });
+
+  // Consecutive narrator paragraphs. Two narrator beats back-to-back
+  // (without a dialogue line between them) fragment the prose and read
+  // as a generation artifact. Combine into one paragraph or move the
+  // second beat after the next dialogue turn. Warn after the opening
+  // (we expect the opening to be one narrator block, possibly split
+  // into 2-3 short paragraphs for vocab distribution; the check fires
+  // when consecutive narrators appear MID-STORY between dialogue).
+  {
+    const paragraphs = parsed.text
+      .split(/\n{2,}/)
+      .map((p) => p.trim())
+      .filter(Boolean);
+    const isDialogueLine = (p: string) => /^[\p{Lu}][\p{L}\s'-]*:\s/u.test(p);
+    let consecutiveNarrators = 0;
+    let sawDialogue = false;
+    for (const p of paragraphs) {
+      const dialogue = isDialogueLine(p);
+      if (dialogue) {
+        sawDialogue = true;
+        consecutiveNarrators = 0;
+      } else if (sawDialogue) {
+        // We only count consecutive narrators AFTER the first dialogue
+        // line so the opening cluster (1-3 narrator paragraphs) is
+        // exempted.
+        consecutiveNarrators++;
+        if (consecutiveNarrators >= 2) break;
+      }
+    }
+    checks.push({
+      id: "body-consecutive-narrators",
+      label: "Narrator paragraphs not stacked between dialogue turns",
+      status: consecutiveNarrators >= 2 ? "warn" : "pass",
+      detail:
+        consecutiveNarrators >= 2
+          ? "Two narrator beats back-to-back without a dialogue line between. Combine into one paragraph or insert a dialogue turn between them."
+          : undefined,
+    });
+
+    // ── Narrative-quality heuristics (no LLM, all deterministic) ──
+    //
+    // Opening ficha técnica. ChatGPT often produces openings like
+    // "Elena es la madre de María. María estudia en la universidad.
+    //  Pablo trabaja en una tienda." — biography-as-list rather than
+    // scene. We detect this by counting copular/descriptive sentences
+    // at the start: ProperNoun + (es | tiene | estudia | trabaja |
+    // vive | viste | usa | lleva). Two or more in the opening = warn.
+    {
+      const firstPara = paragraphs[0] ?? "";
+      const sentences = firstPara.match(/[^.!?]+[.!?]/g) ?? [firstPara];
+      const FICHA_RE =
+        /\b[\p{Lu}][\p{Ll}]+(?:\s+[\p{Lu}][\p{Ll}]+)?\s+(?:es|son|era|eran|fue|fueron|tiene|tienen|tenía|tenían|estudia|estudian|estudiaba|trabaja|trabajan|trabajaba|vive|viven|vivía|usa|lleva|llevaba)\b/u;
+      const fichaCount = sentences.filter((s) => FICHA_RE.test(s)).length;
+      if (fichaCount >= 2) {
+        checks.push({
+          id: "opening-ficha-tecnica",
+          label: "Opening reads like a character profile, not a scene",
+          status: "warn",
+          detail: `Opening paragraph has ${fichaCount} biography-style sentences ("X es / X estudia / X trabaja"). Show the relationships through actions and gestures instead of declaring them. Example fix: "X sirve café a sus dos hijos" instead of "X es la madre de Y y Z".`,
+        });
+      }
+    }
+
+    // Sensory overload. The spec asks for ONE sensory anchor per
+    // story; multiple senses dilute the atmosphere. We count distinct
+    // sensory CATEGORIES (smell, sight-light, sound, temperature,
+    // touch, taste) in the body. 3+ categories = warn.
+    {
+      const SENSE_CATEGORIES: Record<string, RegExp> = {
+        smell: /\b(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato)\b/i,
+        light: /\b(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra)\b/i,
+        sound: /\b(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó)\b/i,
+        temperature: /\b(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa])\b/i,
+        touch: /\b(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa])\b/i,
+        taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a)\b/i,
+      };
+      const presentCategories = Object.entries(SENSE_CATEGORIES)
+        .filter(([, re]) => re.test(parsed.text))
+        .map(([cat]) => cat);
+      if (presentCategories.length >= 3) {
+        checks.push({
+          id: "body-sensory-overload",
+          label: "Body uses too many sensory categories",
+          status: "warn",
+          detail: `Found ${presentCategories.length} sensory categories (${presentCategories.join(", ")}). The spec asks for ONE clean sensory anchor per story (only smell, or only sound, etc.). Trim the extras so the chosen sense lands harder.`,
+        });
+      }
+    }
+
+    // Synopsis ↔ opening duplication. The synopsis is internal
+    // metadata; the reader never sees it. When the synopsis describes
+    // the scene (props, props, action) and the body opens with the
+    // same scene in different words, the body wastes its opening
+    // duplicating metadata instead of starting the story. We measure
+    // lexical overlap on content nouns/verbs between the synopsis and
+    // the first paragraph of the body. High overlap → warn the worker
+    // to make the synopsis a HOOK (conflict/tension) and reserve scene
+    // description for the body only.
+    {
+      const stopwords = new Set([
+        "el","la","los","las","un","una","unos","unas","de","del","y","o","a",
+        "al","en","con","por","para","que","se","su","sus","es","son","era",
+        "fue","ser","estar","está","están","esta","este","ese","esa","esos",
+        "esas","aquel","aquella","tu","tú","te","mi","yo","él","ella","ellos",
+        "no","sí","si","muy","más","menos","pero","como","cuando","donde",
+        "sobre","entre","desde","hasta","sin","todo","todos","toda","todas",
+        "uno","una","ya","aún","aun","hay","tiene","tienen","mientras",
+      ]);
+      const tokenize = (s: string) =>
+        new Set(
+          s
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9\s]/g, " ")
+            .split(/\s+/)
+            .filter((w) => w.length >= 4 && !stopwords.has(w))
+        );
+      const synTokens = tokenize(parsed.synopsis);
+      const openingPara = paragraphs[0] ?? "";
+      const openingTokens = tokenize(openingPara);
+      if (synTokens.size >= 8 && openingTokens.size >= 8) {
+        let shared = 0;
+        for (const t of synTokens) if (openingTokens.has(t)) shared++;
+        const overlap = shared / Math.min(synTokens.size, openingTokens.size);
+        if (overlap >= 0.5) {
+          checks.push({
+            id: "synopsis-opening-duplicate",
+            label: "Synopsis and body opening describe the same scene",
+            status: "warn",
+            detail: `${shared} content words overlap (${Math.round(overlap * 100)}% of the smaller set). The synopsis is internal metadata and shouldn't duplicate the body opening. Rewrite the synopsis as a HOOK: the conflict, tension, or question the story explores — not a re-description of props and actions. The body opens the scene; the synopsis explains the arc.`,
+          });
+        }
+      }
+    }
+
+    // Treasure-hunt opening dialogue. The first three speaker turns
+    // should set stakes, not locate objects. We count location words
+    // ("aquí", "allá", "cerca de", "junto a", "encima de", "debajo
+    // de", "sobre", "detrás de") in the first three speaker lines.
+    // If 2+ of the 3 contain such words, the opening dialogue is
+    // probably a treasure hunt.
+    {
+      const dialogueLines = paragraphs.filter((p) =>
+        /^[\p{Lu}][\p{L}\s'-]*:\s/u.test(p)
+      );
+      const firstThree = dialogueLines.slice(0, 3);
+      const LOCATION_RE =
+        /\b(aquí|aqui|allá|alla|allí|alli|cerca\s+de|junto\s+a|al\s+lado\s+de|encima\s+de|debajo\s+de|detrás\s+de|detras\s+de|delante\s+de|dentro\s+de|sobre\s+(?:el|la|los|las)|en\s+(?:el|la|los|las)\s+(?:mesa|silla|ventana|puerta|repisa|cajón|cajon|estante|piso|suelo|pared))\b/i;
+      const locationHits = firstThree.filter((line) => LOCATION_RE.test(line));
+      if (firstThree.length >= 3 && locationHits.length >= 2) {
+        checks.push({
+          id: "dialogue-treasure-hunt-opening",
+          label: "Opening dialogue is locating objects, not setting stakes",
+          status: "warn",
+          detail: `${locationHits.length} of the first 3 dialogue turns are about WHERE things are ("aquí", "cerca de", "junto a"). The opening dialogue should establish stakes (a question, a refusal, a hidden tension), not inventory the room. Move the object logistics to narrator and start the dialogue with something at stake.`,
+        });
+      }
+    }
+
+    // City-without-country in the opening (A1 ES only). An English-
+    // native A1 learner doesn't know that Coyoacán is in Mexico,
+    // Barranco in Peru, San Telmo in Argentina. The opening narrator
+    // should pair the first LATAM city it names with its country so
+    // the learner has a frame: "En Lima, capital de Perú,..." or "Es
+    // martes en Bogotá, Colombia,...". Without the country, the place
+    // is just a noise word.
+    if (titleLangCode === "ES" && recognizabilityLevel === "a1") {
+      // city → list of acceptable country markers. All entries are
+      // stored deburred + lowercased for accent-insensitive matching;
+      // the helper below deburrs the body the same way before lookup.
+      const CITY_COUNTRY_MAP: Array<{ cities: string[]; countries: string[] }> = [
+        // Mexico
+        { cities: ["ciudad de mexico", "cdmx", "coyoacan", "xochimilco", "chapultepec", "san angel", "polanco", "condesa", "tepoztlan", "jalatlaco", "nativitas", "puebla", "oaxaca", "merida", "cancun", "tulum", "tijuana", "guadalajara", "monterrey", "veracruz", "mazatlan", "san cristobal", "queretaro", "guanajuato", "morelia"], countries: ["mexico", "mejico"] },
+        // Argentina
+        { cities: ["buenos aires", "palermo", "san telmo", "la boca", "caminito", "recoleta", "belgrano", "once", "mataderos", "aeroparque", "ezeiza", "paseo colon", "parque rodo", "mendoza", "cordoba", "rosario", "bariloche", "ushuaia", "mar del plata", "salta", "jujuy", "tucuman"], countries: ["argentina"] },
+        // Peru
+        { cities: ["lima", "miraflores", "barranco", "cusco", "cuzco", "arequipa", "san isidro", "surquillo", "chorrillos", "callao", "trujillo", "iquitos", "puno", "chiclayo", "piura", "yanahuara", "jorge chavez"], countries: ["peru"] },
+        // Colombia
+        { cities: ["bogota", "medellin", "cartagena", "cali", "santa marta", "la candelaria", "chapinero", "el poblado", "getsemani", "laureles", "el dorado", "villa de leyva", "barranquilla", "manizales", "pereira", "chorro de quevedo", "parque 93"], countries: ["colombia"] },
+        // Chile
+        { cities: ["santiago", "valparaiso", "vina del mar", "providencia", "lastarria", "bellavista", "chiloe", "atacama", "punta arenas", "sopocachi"], countries: ["chile"] },
+        // Venezuela
+        { cities: ["caracas", "altamira", "maracaibo"], countries: ["venezuela"] },
+        // Uruguay
+        { cities: ["montevideo", "colonia", "punta del este", "carrasco", "tres cruces", "pocitos", "ciudad vieja", "la rambla"], countries: ["uruguay"] },
+        // Ecuador
+        { cities: ["quito", "guayaquil", "cuenca", "banos", "salinas", "otavalo", "tungurahua"], countries: ["ecuador"] },
+        // Bolivia
+        { cities: ["la paz", "santa cruz", "sucre", "cochabamba", "potosi", "oruro", "el alto"], countries: ["bolivia"] },
+        // Paraguay
+        { cities: ["asuncion", "mercado 4", "ciudad del este"], countries: ["paraguay"] },
+        // Central America
+        { cities: ["managua", "granada", "masaya", "leon"], countries: ["nicaragua"] },
+        { cities: ["tegucigalpa", "san pedro sula"], countries: ["honduras"] },
+        { cities: ["san jose", "monteverde", "jaco", "tortuguero", "puerto limon"], countries: ["costa rica"] },
+        { cities: ["panama"], countries: ["panama"] },
+        { cities: ["san salvador"], countries: ["el salvador"] },
+        { cities: ["antigua"], countries: ["guatemala"] },
+        // Caribbean
+        { cities: ["santo domingo", "punta cana", "puerto plata"], countries: ["republica dominicana", "dominicana"] },
+        { cities: ["la habana", "havana"], countries: ["cuba"] },
+        { cities: ["san juan", "ponce", "mayaguez"], countries: ["puerto rico"] },
+        // Brazil (Spanish-learner transit)
+        { cities: ["rio", "rio de janeiro", "sao paulo", "galeao", "santos dumont", "lapa", "praca maua"], countries: ["brasil", "brazil"] },
+      ];
+      const norm = (s: string) =>
+        s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+      // Helper: does `text` contain `word` as a whole token (Unicode-
+      // safe boundary check that handles accented letters in word
+      // characters)? We pad the text with spaces and use char-class
+      // checks instead of \b.
+      const containsWord = (text: string, word: string): boolean => {
+        const idx = text.indexOf(word);
+        if (idx === -1) return false;
+        const before = idx === 0 ? " " : text[idx - 1];
+        const after = idx + word.length >= text.length ? " " : text[idx + word.length];
+        return !/[a-z0-9]/i.test(before) && !/[a-z0-9]/i.test(after);
+      };
+      // Scope to opening narrator. We use the first non-dialogue
+      // paragraph (or the first two if the opening was split for vocab
+      // distribution). After the first speaker line the worker can
+      // mention the country once and call it a day.
+      const isDialogue = (p: string) => /^[\p{Lu}][\p{L}\s'-]*:\s/u.test(p);
+      const openingNarratorParas: string[] = [];
+      for (const p of paragraphs) {
+        if (isDialogue(p)) break;
+        openingNarratorParas.push(p);
+        if (openingNarratorParas.length >= 3) break;
+      }
+      const openingNorm = norm(openingNarratorParas.join(" "));
+      const orphanCities: string[] = [];
+      for (const { cities, countries } of CITY_COUNTRY_MAP) {
+        const matchedCity = cities.find((c) => containsWord(openingNorm, c));
+        if (!matchedCity) continue;
+        const hasCountry = countries.some((c) => containsWord(openingNorm, c));
+        if (!hasCountry) orphanCities.push(matchedCity);
+      }
+      if (orphanCities.length > 0) {
+        const unique = [...new Set(orphanCities)];
+        checks.push({
+          id: "opening-city-without-country",
+          label: "Opening names a LATAM city without its country",
+          status: "warn",
+          detail: `The opening narrator names ${unique.length === 1 ? "this city" : "these cities"} (${unique.join(", ")}) without the country. At A1, an English-native learner can't place LATAM cities geographically. Add the country in the first or second sentence: "En Coyoacán, Ciudad de México," or "Es martes en Bogotá, Colombia,".`,
+        });
+      }
+    }
+
+    // Spanish idiomatic / colloquial expressions in A1/A2 body. The
+    // learner can't deduce the meaning from the literal sense: "X
+    // manda" looks like "X sends" but means "X rules"; "está padre"
+    // looks like "is father" but means "it's cool". If the worker
+    // leaves these untaught, the learner gets the wrong meaning. Rule:
+    // every idiomatic expression in an A1/A2 body MUST be in the vocab
+    // list with type=expression OR removed. We detect a curated set
+    // and warn when it appears without a matching vocab entry.
+    if (
+      titleLangCode === "ES" &&
+      (recognizabilityLevel === "a1" || recognizabilityLevel === "a2")
+    ) {
+      const COLLOQUIAL_ES_PATTERNS: Array<{ re: RegExp; phrase: string; meaning: string }> = [
+        // "X manda(n)" — colloquial "X rules"; matches when manda(n)
+        // follows a food / object noun (not literal "send").
+        {
+          re: /\b(carnitas?|tacos?|tortillas?|salsa|chiles?|frijoles?|arepas?|empanadas?|cebiche|asado|mole|guacamole|tamales?)\s+manda(?:n)?\b/i,
+          phrase: "X manda(n)",
+          meaning: "X rules / X is the best (colloquial). Literal sense \"X sends\" misleads the learner.",
+        },
+        { re: /\b(está|qué)\s+padre\b/i, phrase: "está padre / qué padre", meaning: "It's cool / how cool (MX colloquial). Literal sense \"father\" misleads." },
+        { re: /\b(está|qué)\s+padr[íi]sim[oa]\b/i, phrase: "padrísimo", meaning: "Super cool (MX colloquial)." },
+        { re: /\bno\s+manches\b/i, phrase: "no manches", meaning: "No way / get out (MX colloquial). Literal \"don't stain\" misleads." },
+        { re: /\bvale\s+madre\b/i, phrase: "vale madre", meaning: "It doesn't matter (vulgar MX). Literal \"costs mother\" misleads." },
+        { re: /\ba\s+toda\s+madre\b/i, phrase: "a toda madre", meaning: "Great / awesome (MX colloquial)." },
+        { re: /\bhasta\s+la\s+madre\b/i, phrase: "hasta la madre", meaning: "Fed up (MX colloquial)." },
+        { re: /\b[áa]ndale\b/i, phrase: "ándale", meaning: "Come on / go on (MX colloquial interjection)." },
+        { re: /\b[óo]rale\b/i, phrase: "órale", meaning: "Wow / OK (MX colloquial interjection)." },
+        { re: /\b[óo]rale\s+pues\b/i, phrase: "órale pues", meaning: "All right then (MX colloquial)." },
+        { re: /\becharle\s+ganas\b/i, phrase: "echarle ganas", meaning: "Give it your all (MX colloquial). Literal \"throw it desires\" misleads." },
+        { re: /\bno\s+hay\s+bronca\b/i, phrase: "no hay bronca", meaning: "No problem (MX colloquial). Literal \"there's no quarrel\" misleads." },
+        { re: /\bcost[oóa]?r?\s+un\s+ojo\s+de\s+la\s+cara\b/i, phrase: "costar un ojo de la cara", meaning: "To cost an arm and a leg. Literal \"cost an eye of the face\" misleads." },
+        { re: /\becha?r(?:le)?\s+un\s+ojo\b/i, phrase: "echar un ojo", meaning: "To take a look (idiom). Literal \"throw an eye\" misleads." },
+        { re: /\btom[áa]r(?:le)?\s+el\s+pelo\b/i, phrase: "tomar el pelo", meaning: "To tease / make fun (idiom). Literal \"take the hair\" misleads." },
+        { re: /\bestar\s+en\s+las\s+nubes\b/i, phrase: "estar en las nubes", meaning: "To daydream (idiom)." },
+        { re: /\bse\s+me\s+hace\s+agua\s+la\s+boca\b/i, phrase: "se me hace agua la boca", meaning: "Makes my mouth water (idiom)." },
+        { re: /\bagarr[áa]r\s+la\s+onda\b/i, phrase: "agarrar la onda", meaning: "To catch on / get it (LATAM colloquial)." },
+        { re: /\btener\s+buena\s+onda\b/i, phrase: "tener buena onda", meaning: "To be cool / friendly (LATAM colloquial)." },
+        { re: /\bdar\s+lata\b/i, phrase: "dar lata", meaning: "To bother / be annoying (idiom). Literal \"give can\" misleads." },
+        { re: /\bbárbaro\b|\bb[áa]rbaro\b/i, phrase: "bárbaro", meaning: "Great / awesome (AR colloquial). Literal \"barbarian\" misleads." },
+        { re: /\bestar\s+al\s+pedo\b/i, phrase: "estar al pedo", meaning: "To be idle / doing nothing (AR vulgar)." },
+        { re: /\bmandar\s+fruta\b/i, phrase: "mandar fruta", meaning: "To talk nonsense (AR colloquial)." },
+      ];
+
+      // Vocab items typed as expression that already teach an idiom.
+      const taughtExpressions = new Set(
+        parsed.vocab
+          .filter((v) => (v.type ?? "").toLowerCase() === "expression")
+          .map((v) => (v.surface ?? v.word).toLowerCase().trim())
+      );
+
+      const hitsList: string[] = [];
+      for (const { re, phrase } of COLLOQUIAL_ES_PATTERNS) {
+        const match = parsed.text.match(re);
+        if (!match) continue;
+        const matched = match[0].toLowerCase().trim();
+        // If the literal matched phrase (or the phrase key) is taught
+        // as an expression in vocab, skip — the worker chose to teach it.
+        if (taughtExpressions.has(matched) || taughtExpressions.has(phrase.toLowerCase())) continue;
+        // Also skip if any taught expression is a substring of the match.
+        if ([...taughtExpressions].some((e) => matched.includes(e))) continue;
+        hitsList.push(`"${match[0]}" → ${phrase}`);
+      }
+      if (hitsList.length > 0) {
+        checks.push({
+          id: "body-idiomatic-untaught",
+          label: "Body uses colloquial idioms not in the vocab list",
+          status: "warn",
+          detail: `Found ${hitsList.length} colloquial expression(s) whose meaning the learner can't deduce from the literal sense: ${hitsList.join("; ")}. Add them to vocab as type=expression, OR rewrite with a literal equivalent.`,
+        });
+      }
+    }
+  }
 
   // ─── Banned tokens in body ─────────────────────────────
   const banHit = BANNED_BODY_TOKENS.find((re) => re.test(parsed.text));
@@ -654,6 +1177,72 @@ export async function validateGeneratedStory(
         ? cognateHits.map((v) => v.word).join(", ")
         : undefined,
     });
+  }
+
+  // Pedagogical redundancy: A0 universals that occupy a vocab slot
+  // without teaching anything new. Spanish English-native A1 learners
+  // know body parts, basic pronouns, numbers, primary colors, common
+  // greetings from any first-50-hours course. If the vocab list
+  // includes them, warn — that slot would be better spent on a
+  // multi-word expression, a regional noun, or a non-obvious verb
+  // construction. Scope to ES + A1 (where slot scarcity matters most).
+  const A0_UNIVERSALS_ES = new Set([
+    // Body parts (super basic)
+    "ojo", "ojos", "mano", "manos", "pie", "pies", "cabeza", "cara",
+    "boca", "nariz", "oreja", "orejas", "brazo", "brazos", "pierna",
+    "piernas", "dedo", "dedos",
+    // Pronouns
+    "yo", "tú", "tu", "él", "ella", "nosotros", "nosotras", "ustedes",
+    "ellos", "ellas",
+    // Numbers 1-10
+    "uno", "una", "dos", "tres", "cuatro", "cinco", "seis", "siete",
+    "ocho", "nueve", "diez",
+    // Primary colors (the abstract sense; bandera roja in title is OK)
+    "rojo", "azul", "verde", "amarillo", "blanco", "negro",
+    // Greetings / interjections
+    "hola", "adiós", "adios", "gracias", "por favor",
+    // Basics
+    "sí", "si", "no",
+  ]);
+  if (lang === "ES" && (context.level ?? "").toLowerCase() === "a1") {
+    const redundant = parsed.vocab.filter((v) =>
+      A0_UNIVERSALS_ES.has(v.word.toLowerCase().trim())
+    );
+    if (redundant.length > 0) {
+      checks.push({
+        id: "vocab-pedagogical-redundancy",
+        label: "Vocab includes A0-universal items that waste teaching slots",
+        status: "warn",
+        detail: `Found ${redundant.length} A0-universal item(s): ${redundant
+          .map((v) => v.word)
+          .join(
+            ", "
+          )}. English-native learners already have these from any first-50-hours course. Swap for a higher-yield item: a multi-word expression ("con prisa", "al fin", "otra vez"), a topic-specific noun (carnitas, trompo, mole), or a non-obvious verb construction (ponerse a, hacer falta).`,
+      });
+    }
+  }
+
+  // Minimum multi-word expressions. A vocab list of 18-22 items with
+  // zero expressions is structurally lopsided — only atomic nouns get
+  // taught, the learner never sees the lexicalized phrases that carry
+  // everyday speech ("con prisa", "al fin", "otra vez", "que le vaya
+  // bien"). Require ≥2 items typed as expression for A1/A2 ES.
+  if (
+    lang === "ES" &&
+    ((context.level ?? "").toLowerCase() === "a1" ||
+      (context.level ?? "").toLowerCase() === "a2")
+  ) {
+    const expressionCount = parsed.vocab.filter(
+      (v) => (v.type ?? "").toLowerCase() === "expression"
+    ).length;
+    if (expressionCount < 2) {
+      checks.push({
+        id: "vocab-min-expressions",
+        label: "Vocab list has too few multi-word expressions",
+        status: "warn",
+        detail: `Found ${expressionCount} item(s) typed as "expression"; minimum is 2. Multi-word lexicalized expressions ("con prisa", "al fin", "otra vez", "dar vuelta", "que le vaya bien", "echar un ojo") teach structures of everyday speech that single nouns can't. Replace 2-3 atomic items with expressions the body already uses.`,
+      });
+    }
   }
 
   // Vocab CEFR frequency check.
@@ -1007,6 +1596,122 @@ function tokenize(s: string): string[] {
     .split(/[^a-z0-9]+/)
     .filter((t) => t.length >= 3);
 }
+
+// Whitelist of LATAM places accepted as title anchors when
+// variant=latam. Includes capitals, major cities, famous neighborhoods,
+// recognized tourist destinations, key airports, and Brazil cities a
+// Spanish-speaking traveler commonly transits through. Add curated
+// entries as new approved anchors emerge; do NOT add Spanish (Iberian)
+// cities here — those belong to variant=iberian once we wire it up.
+const LATAM_PLACES_SET = new Set<string>([
+  // Mexico
+  "méxico","mexico","ciudad de méxico","ciudad de mexico","cdmx","df",
+  "coyoacán","coyoacan","xochimilco","chapultepec","san ángel","san angel",
+  "polanco","condesa","roma","roma norte","tlalpan","tepoztlán","tepoztlan",
+  "puebla","oaxaca","mérida","merida","cancún","cancun","tulum","tijuana",
+  "guadalajara","monterrey","veracruz","mazatlán","mazatlan","san cristóbal",
+  "playa del carmen","san luis potosí","san luis potosi","querétaro","queretaro",
+  "guanajuato","morelia","puerto vallarta","cozumel","aguascalientes",
+  "jalatlaco","san josé del cabo","nativitas",
+  // Argentina
+  "argentina","buenos aires","palermo","san telmo","la boca","caminito",
+  "recoleta","belgrano","puerto madero","once","villa crespo","mataderos",
+  "almagro","barracas","caballito","núñez","nunez","mendoza","córdoba","cordoba",
+  "rosario","bariloche","ushuaia","mar del plata","salta","jujuy","tucumán",
+  "tucuman","aeroparque","ezeiza","paseo colón","paseo colon","parque rodó",
+  "parque rodo",
+  // Peru
+  "perú","peru","lima","miraflores","barranco","cusco","cuzco","arequipa",
+  "san isidro","surquillo","chorrillos","callao","trujillo","iquitos",
+  "puno","chiclayo","piura","yanahuara","tucume","túcume","ayacucho",
+  "lambayeque","jorge chávez","jorge chavez","malecón de miraflores",
+  "malecon de miraflores",
+  // Colombia
+  "colombia","bogotá","bogota","medellín","medellin","cartagena","cali",
+  "santa marta","la candelaria","candelaria","chapinero","el poblado",
+  "getsemaní","getsemani","laureles","el dorado","villa de leyva",
+  "barranquilla","manizales","pereira","san agustín","san agustin",
+  "chorro de quevedo","parque 93",
+  // Chile
+  "chile","santiago","valparaíso","valparaiso","viña del mar","vina del mar",
+  "providencia","lastarria","bellavista","chiloé","chiloe","atacama",
+  "punta arenas","puerto montt","la serena","arica","iquique","sopocachi",
+  "ascensor reina","cerro artillería","cerro artilleria","ascensor",
+  // Venezuela
+  "venezuela","caracas","altamira","mérida","maracaibo","valencia",
+  "edificio altamira",
+  // Uruguay
+  "uruguay","montevideo","colonia","punta del este","carrasco",
+  "tres cruces","pocitos","ciudad vieja","la rambla","rambla",
+  // Ecuador
+  "ecuador","quito","guayaquil","cuenca","baños","banos","salinas",
+  "otavalo","cotopaxi","tungurahua",
+  // Bolivia
+  "bolivia","la paz","santa cruz","sucre","cochabamba","potosí","potosi",
+  "oruro","sopocachi","el alto",
+  // Paraguay
+  "paraguay","asunción","asuncion","mercado 4","ciudad del este",
+  // Central America
+  "managua","tegucigalpa","san josé","san jose","panamá","panama",
+  "panama city","san salvador","santo domingo","la habana","havana","cuba",
+  "antigua","san pedro sula","granada","masaya","leon","león",
+  "puerto limón","puerto limon","monteverde","jaco","tortuguero",
+  // Dominican Republic, Puerto Rico
+  "puerto plata","punta cana","puerto rico","san juan","ponce","mayagüez",
+  "mayaguez",
+  // Brazil (Spanish-speaker transit hubs)
+  "rio","rio de janeiro","são paulo","sao paulo","galeão","galeao",
+  "santos dumont","lapa","praça mauá","praca maua",
+]);
+
+// Egregious non-LATAM anchors. Stories tagged variant=latam with these
+// in the title fail outright (no judgment call needed). Covers Spain
+// (Iberian, not LATAM), major European/Asian/African capitals, and
+// non-LATAM Spanish-speaking adjacent places.
+const NON_LATAM_PLACES_SET = new Set<string>([
+  // Iberian Spain
+  "madrid","barcelona","sevilla","valencia","bilbao","granada","málaga",
+  "malaga","zaragoza","santander","san sebastián","san sebastian","toledo",
+  "córdoba", // NOTE: there's an Argentine Córdoba in LATAM whitelist; we
+              // accept the false-positive risk because the much more
+              // commonly-anchored Spanish Córdoba is what learners think
+              // of by default.
+  "salamanca","valladolid","gijón","gijon","oviedo","burgos","alicante",
+  "murcia","palma","mallorca","ibiza","menorca","tenerife",
+  // Italian
+  "roma","trastevere","milán","milan","milano","venecia","venezia",
+  "florencia","firenze","nápoles","napoles","napoli","turín","turin","torino",
+  "bolonia","bologna","palermo", // NOTE: Buenos Aires Palermo collides; LATAM
+                                  // whitelist wins via the order of checks.
+  "génova","genova","verona",
+  // Portuguese
+  "lisboa","lisbon","oporto","porto","coimbra","faro",
+  // German / Central European
+  "berlín","berlin","múnich","munich","hamburgo","colonia",
+  "frankfurt","viena","vienna","praga","prague","budapest",
+  "varsovia","warsaw","amsterdam","ámsterdam","bruselas","brussels",
+  // British / French / Northern
+  "londres","london","mánchester","manchester","liverpool","edimburgo",
+  "edinburgh","dublín","dublin","parís","paris","marsella","marseille",
+  "niza","nice","lyon","burdeos","bordeaux",
+  "estocolmo","stockholm","copenhague","copenhagen","oslo","helsinki",
+  // Eastern Europe / Russia
+  "moscú","moscow","san petersburgo","st petersburg","kiev","kyiv",
+  // Asia
+  "tokio","tokyo","kioto","kyoto","osaka","seul","seúl","seoul",
+  "pekín","beijing","shanghái","shanghai","hong kong","singapur","singapore",
+  "bangkok","mumbai","nueva delhi","delhi","bangalore",
+  // Middle East / Africa
+  "estambul","estanbul","istanbul","jerusalén","jerusalem","tel aviv",
+  "el cairo","cairo","casablanca","marrakech","ciudad del cabo","cape town",
+  // North America (non-LATAM)
+  "nueva york","new york","los ángeles","los angeles","san francisco",
+  "chicago","boston","filadelfia","philadelphia","miami","houston",
+  "atlanta","seattle","denver","las vegas","washington","toronto",
+  "montréal","montreal","vancouver","ottawa",
+  // Oceania
+  "sídney","sydney","melbourne","auckland","wellington",
+]);
 
 function finalize(checks: Check[], parsed: StoryPayload | null): ValidationResult {
   const summary = checks.reduce(

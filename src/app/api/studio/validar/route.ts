@@ -91,6 +91,25 @@ export async function POST(req: NextRequest) {
 
   try {
     const existing = await loadExistingStories(body.journeyId, body.level, body.topic);
+    // Cross-journey title set for the anchor-repetition and template-
+    // monotony checks. Skipped when no journeyId is bound (e.g. the
+    // worker is validating a draft before picking a journey).
+    let journeyTitles: string[] | undefined;
+    let variant: string | undefined;
+    if (body.journeyId) {
+      const [rows, journey] = await Promise.all([
+        prisma.journeyStory.findMany({
+          where: { journeyId: body.journeyId, title: { not: null } },
+          select: { title: true },
+        }),
+        prisma.journey.findUnique({
+          where: { id: body.journeyId },
+          select: { variant: true },
+        }),
+      ]);
+      journeyTitles = rows.map((r) => r.title!).filter(Boolean);
+      variant = journey?.variant ?? undefined;
+    }
     const result = await validateGeneratedStory(
       typeof input === "string" ? input : (input as Parameters<typeof validateGeneratedStory>[0]),
       {
@@ -98,6 +117,8 @@ export async function POST(req: NextRequest) {
         level: body.level,
         topic: body.topic,
         existing,
+        journeyTitles,
+        variant,
       }
     );
 

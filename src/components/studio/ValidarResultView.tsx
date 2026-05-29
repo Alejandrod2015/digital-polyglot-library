@@ -110,6 +110,71 @@ function humanize(check: Check): Humanized {
         text: "El título usa una ciudad fuera de la región del journey",
         hint: `Los journeys "ES · Traveler · LATAM" deben tener anchors dentro de Latinoamérica (Coyoacán, Barranco, Mérida, Palermo, Cartagena, Lima, Caracas, etc.). Reemplaza el lugar por uno latinoamericano que tenga sentido para la historia. ${detail}`,
       };
+    case "title-anchor-repetition":
+      return {
+        text: "El anchor del título ya se usó en otras historias del journey",
+        hint: `Si el mismo barrio aparece muchas veces, el journey se siente como una sola zona en vez de un recorrido por LATAM. Rota a otra ciudad o barrio reconocible. Detalle: ${detail}`,
+      };
+    case "title-template-monotony":
+      return {
+        text: "El título usa la misma plantilla que la mayoría del journey",
+        hint: `Mucho "X en Y" hace el journey monótono. Prueba otras estructuras: fragmento temporal ("Antes de las dos"), día + persona ("Jueves con doña Luz"), verbo en gerundio ("Mientras gira el trompo"), "para X" ("Pan de yuca para Ana"), o una mini-oración ("Ya no quedan velas"). ${detail}`,
+      };
+    case "title-formula-default":
+      return {
+        text: "El título cae en la fórmula default \"X en/de/del Y\"",
+        hint: `Es el patrón que ChatGPT produce por inercia. Reescribe con otra estructura: fragmento temporal ("Antes de las dos"), día + persona ("Jueves con doña Luz"), verbo en gerundio ("Mientras gira el trompo"), "para X" ("Pan de yuca para Ana"), o mini-oración ("Ya no quedan velas"). ${detail}`,
+      };
+    case "title-anchor-recognizability":
+      return {
+        text: "El anchor del título puede ser muy obscuro para A1/A2",
+        hint: `El aprendiz inglés-nativo de A1/A2 no reconoce micro-barrios. Prefiere la ciudad o un barrio famoso (Coyoacán, La Candelaria, Miraflores, San Telmo, Palermo, Mérida, Oaxaca, Valparaíso, La Paz, Cartagena). Detalle: ${detail}`,
+      };
+    case "body-consecutive-narrators":
+      return {
+        text: "Dos párrafos de narrador seguidos sin diálogo entre ellos",
+        hint: `Después del opening, los beats del narrador no se apilan: van entre turnos de diálogo. Combina los dos párrafos en uno, o muévelos a antes/después del siguiente Speaker:. ${detail}`,
+      };
+    case "opening-ficha-tecnica":
+      return {
+        text: "El opening parece ficha técnica de personajes",
+        hint: `El opening declara las relaciones ("Elena es la madre de..." / "María estudia en...") en vez de mostrarlas en acción. Reescribe esas oraciones como gestos: por ejemplo "Elena sirve café a sus dos hijos" en vez de "Elena es la madre de María y Pablo". ${detail}`,
+      };
+    case "body-sensory-overload":
+      return {
+        text: "El cuerpo mezcla demasiadas categorías sensoriales",
+        hint: `Una historia se queda mejor con UNA seña sensorial dominante (solo el olor, solo el sonido, solo la luz). Si el texto mezcla 3 o más, ninguna aterriza. Identifica la más fuerte para la atmósfera y recorta las otras. ${detail}`,
+      };
+    case "synopsis-opening-duplicate":
+      return {
+        text: "La sinopsis y el opening del cuerpo describen la misma escena",
+        hint: `La sinopsis es metadata interna — el lector NUNCA la ve. No es para describir la escena (eso lo hace el opening del cuerpo); es para resumir el conflicto/tensión de la historia (gancho de arco). Reescribe la sinopsis como un hook: qué tensión se explora, no qué pasa visualmente. ${detail}`,
+      };
+    case "vocab-pedagogical-redundancy":
+      return {
+        text: "El vocab incluye palabras A0 universales que desperdician slot",
+        hint: `Partes del cuerpo básicas (ojos, mano, cabeza), pronombres, números 1-10, colores primarios, saludos — el aprendiz inglés-nativo los tiene del primer curso. Cambia esos items por algo con más valor pedagógico: una expresión multi-palabra ("con prisa", "al fin", "otra vez"), un sustantivo regional/concreto del topic, o una construcción verbal no-obvia (ponerse a, hacer falta). ${detail}`,
+      };
+    case "vocab-min-expressions":
+      return {
+        text: "El vocab tiene muy pocas expresiones multi-palabra",
+        hint: `Una lista de 18-22 items con cero expressions es estructuralmente desbalanceada: solo se enseñan sustantivos atómicos. Mínimo 2 items con type="expression". Las expresiones lexicalizadas ("con prisa", "al fin", "otra vez", "dar vuelta", "echar un ojo", "que le vaya bien") enseñan estructuras del habla cotidiana que los sustantivos sueltos no pueden. ${detail}`,
+      };
+    case "opening-city-without-country":
+      return {
+        text: "El opening nombra una ciudad LATAM sin el país",
+        hint: `En A1, el aprendiz inglés-nativo no sabe que Coyoacán es Ciudad de México, Barranco es Lima, San Telmo es Buenos Aires. Agrega el país en la primera o segunda oración del opening: "En Coyoacán, Ciudad de México,..." o "Es lunes en Bogotá, Colombia,...". ${detail}`,
+      };
+    case "body-idiomatic-untaught":
+      return {
+        text: "El cuerpo usa modismos coloquiales sin enseñarlos en el vocab",
+        hint: `Las expresiones idiomáticas (X manda, está padre, no manches, echar un ojo, tomar el pelo, costar un ojo de la cara, bárbaro…) tienen un significado que el aprendiz inglés-nativo no deduce del sentido literal. En A1/A2 cualquier modismo debe agregarse al vocab como type="expression" o eliminarse del cuerpo. ${detail}`,
+      };
+    case "dialogue-treasure-hunt-opening":
+      return {
+        text: "El diálogo abre buscando objetos en vez de plantear stakes",
+        hint: `Los primeros turnos del diálogo no son para ubicar tazas ni cucharas. Mueve esa logística al narrador. El primer Speaker: debe entrar con algo que tenga peso (una pregunta incómoda, una respuesta que esconde algo, una decisión pendiente). ${detail}`,
+      };
     case "title-uniqueness":
       return {
         text: "Título demasiado parecido a otro ya publicado en este tema",

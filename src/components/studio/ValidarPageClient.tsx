@@ -1145,6 +1145,30 @@ function capitalize(s: string | null | undefined): string {
  * per speaker name (stable hash, distinct from narrator).
  * ────────────────────────────────────────────────────────────────────── */
 
+function SynopsisMetadata({ text }: { text: string }) {
+  const [open, setOpen] = useState(false);
+  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+  return (
+    <div className="rounded-md border border-amber-900/40 bg-amber-950/10 px-3 py-2">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between text-left"
+      >
+        <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-amber-400/90">
+          🔒 Metadata interna · sinopsis · no la ve el lector · {wordCount} palabras
+        </span>
+        <span className="text-[10px] text-amber-400/70">{open ? "▲" : "▼"}</span>
+      </button>
+      {open && (
+        <p className="mt-2 text-[12px] leading-relaxed text-amber-200/70">
+          {text}
+        </p>
+      )}
+    </div>
+  );
+}
+
 const PREVIEW_SPEAKER_COLORS = [
   "#60a5fa", // blue
   "#f472b6", // pink
@@ -1209,12 +1233,14 @@ function StoryPreview({ story }: { story: StoryPayload }) {
         {/* Title */}
         <h3 className="text-lg font-bold text-neutral-50 leading-tight">{story.title || "(sin título)"}</h3>
 
-        {/* Synopsis */}
-        {story.synopsis && (
-          <p className="border-l-2 border-neutral-700 pl-3 text-[13px] italic leading-relaxed text-neutral-300">
-            {story.synopsis}
-          </p>
-        )}
+        {/* Synopsis (internal metadata, collapsed by default).
+            Previously rendered as an italic block quote right under the
+            title, which made it look like an epigraph the reader sees.
+            That visual habit pushed worker to write scene descriptions
+            in the synopsis, then the body would duplicate the same
+            scene. Synopsis is internal: curation reference + cover
+            prompt source + names-match check. The reader never sees it. */}
+        {story.synopsis && <SynopsisMetadata text={story.synopsis} />}
 
         {/* Body */}
         <div className="space-y-3 text-[14px] leading-relaxed text-neutral-100">
