@@ -167,6 +167,11 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
   const [level, setLevel] = useState("all");
   const [topic, setTopic] = useState("all");
   const [status, setStatus] = useState("all");
+  // "Solo sin cover" toggle — surfaces stories that still need a cover
+  // image so Jazlin (designer) can work through the list without
+  // hunting visually for missing thumbnails. As covers get added the
+  // rows disappear from this view, giving natural progress signal.
+  const [coverFilter, setCoverFilter] = useState<"all" | "missing">("all");
   const [loadingCreate, setLoadingCreate] = useState(false);
   const [tab, setTab] = useState<"stories" | "gaps">("stories");
   // Default to grouped view because 100+ stories in one stream is the
@@ -209,13 +214,14 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
       if (candidate !== topic) return false;
     }
     if (skip !== "status" && status !== "all" && statusKey(s) !== status) return false;
+    if (coverFilter === "missing" && (s.coverUrl ?? "").trim()) return false;
     return true;
   }
 
   const filteredStories = useMemo(
     () => stories.filter((s) => passesExcept(s, null)),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [stories, query, language, journey, level, topic, status],
+    [stories, query, language, journey, level, topic, status, coverFilter],
   );
 
   function withCounts<T extends string>(
@@ -302,6 +308,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
     setLevel("all");
     setTopic("all");
     setStatus("all");
+    setCoverFilter("all");
   }
 
   const activeFilterCount =
@@ -310,7 +317,13 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
     (journey !== "all" ? 1 : 0) +
     (level !== "all" ? 1 : 0) +
     (topic !== "all" ? 1 : 0) +
-    (status !== "all" ? 1 : 0);
+    (status !== "all" ? 1 : 0) +
+    (coverFilter !== "all" ? 1 : 0);
+
+  const missingCoverCount = useMemo(
+    () => stories.filter((s) => !(s.coverUrl ?? "").trim()).length,
+    [stories],
+  );
 
   const filteredGaps = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -509,6 +522,24 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
               <option value="published">Publicada</option>
               <option value="pending">Falta borrador</option>
             </select>
+          </div>
+          <div style={{ flex: "0 0 auto" }}>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--muted)", marginBottom: 4 }}>Cover</label>
+            <button
+              onClick={() => setCoverFilter(coverFilter === "missing" ? "all" : "missing")}
+              className={BTN_GHOST_CLASS}
+              style={{
+                ...btnGhost,
+                height: 38,
+                borderColor: coverFilter === "missing" ? "var(--primary)" : "var(--card-border)",
+                backgroundColor: coverFilter === "missing" ? "var(--primary)" : "transparent",
+                color: coverFilter === "missing" ? "#fff" : "var(--muted)",
+                fontWeight: 600,
+              }}
+              title="Mostrar solo historias que aún no tienen cover"
+            >
+              {coverFilter === "missing" ? `✓ Solo sin cover (${missingCoverCount})` : `Solo sin cover (${missingCoverCount})`}
+            </button>
           </div>
           {activeFilterCount > 0 ? (
             <button
@@ -736,6 +767,9 @@ function renderStoryRow(story: StudioJourneyStory, hideFocusColumn: boolean) {
       <td style={{ padding: "10px 14px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
           <div style={{ fontSize: 14, fontWeight: 600, color: "var(--foreground)" }}>{story.title || "Sin título"}</div>
+          {story.generationCohort === "v2-2026-06" ? (
+            <Badge color="#16a34a">★ Nuevo sistema</Badge>
+          ) : null}
           {isJourney && !hideFocusColumn ? (
             <Badge color="#a78bfa">
               {langLabel ? `${langLabel} · ${story.journeyName ?? "Journey"}` : (story.journeyName ?? "Journey")}

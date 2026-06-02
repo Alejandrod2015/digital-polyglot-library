@@ -598,6 +598,99 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "lento","lentamente","rápidamente","despacio","veloz",
   "abierto","cerrado","encendido","apagado","prendido","activo","inactivo",
   "vacío","lleno","completo",
+
+  // ── Round 4: conversational/regional/LATAM expansion ──
+  // Words that surfaced as false-positive C2 in v2-2026-06 audits but
+  // are A1-natural for English-native LATAM-Spanish learners. Source:
+  // 23 first-cohort stories produced June 2026. Categories: time
+  // adverbials, household objects, common gestures, recurring-cast
+  // settings (fonda, mudanza, hall), Latin American color words,
+  // conversational courtesy formulas. All audited at A1 reading level.
+
+  // Time adverbials & conversational anchors
+  "al mediodía","a tiempo","esta tarde","esta noche","ahora mismo",
+  "por la mañana","por la tarde","por la noche","anoche","mediodía",
+  "primera vez","próxima vez","muchos años","mes pasado","día anterior",
+  "por ahora","ya no","ya está","ya es el momento","sin falta",
+  "tres horas","llevamos así","tiempo correcto","luz suave",
+
+  // Conversational courtesy / fillers
+  "no te preocupes","en serio","tal vez","por eso","trato hecho",
+  "no puede ser","sin conocer","darse cuenta","darse vuelta",
+  "disculpe","disculpen","pásale","marchando","ya","ahora",
+  "exactamente","exacto","exacta","excusa","excusas",
+  "tilo","mate","café","té","leche",
+
+  // LATAM affectionate / address
+  "mija","mijo","ustedes","ustedes","querido","querida","linda","lindo",
+  "chiquito","chiquita","chiquitos","chiquitas","igualito","igualita",
+  "ratito","poquito","poquita",
+
+  // LATAM food / drink / kitchen
+  "fonda","jitomate","chile","choclo","molinillo","jamaica","tele",
+  "refrigerador","termo","manteca","medialunas","medialuna","galletitas",
+  "verdulería","mesero","casera","casero","humita","humitas","pan dulce",
+  "pan caliente","reunión","silencio","postre","flan",
+
+  // LATAM building / household
+  "departamento","hall","ascensor","valija","valijas","balcón","balcones",
+  "fachada","hierro","nene","nena","luminoso","luminosa","mudanza",
+  "patio interno","planta baja","limonero","regadera","inquilino",
+  "inquilinos","cartero","cartera","bolsillo","bolsillos","delantal",
+  "bronce","mantel","servilleta","álbum",
+
+  // Common A1 verbs (frequency-high, missing from prior list)
+  "presentar","funcionar","partir","untar","notar","acompañar","detener",
+  "alegrar","regar","depender","acordarse","acostumbrarse","engañar",
+  "heredar","suspirar","destapar","empujar","voltear","sostener","molestar",
+  "asentir","explicar","invitar","despertar","sonar","probar","alegrarse",
+  "abrir","cerrar",
+
+  // Common A1 adjectives / states (left/right, sizes, fillers)
+  "izquierda","derecha","izquierdo","derecho","norte","sur","este","oeste",
+  "fino","fina","finos","finas","rápida","rápidas","quieto","quieta",
+  "junto","juntos","junta","juntas","parecido","parecida","parecidos","parecidas",
+  "contento","contenta","cansado","cansada","curioso","curiosa","escrito","escrita",
+  "calmo","calma","calmos","calmas","liviano","liviana","callado","callada",
+  "ordenado","ordenada","apagado","apagada","triste","fresco","fresca","frescas",
+  "zurdo","zurda","grueso","gruesa","hondo","honda","fría","frío","frías","fríos",
+
+  // Common A1 nouns / abstract A1
+  "asunto","coincidencia","costumbre","mayoría","presión","portada","fondo",
+  "justo","justos","belleza","pena","ruido","timbre","golpe","golpes","suave",
+  "suaves","pliegue","pliegues","rodaja","rodajas","gesto","mensaje","letra",
+  "nota","notas","margen","comedor","gente","letrero","canasta","cajón","álbum",
+  "sombrero","sombra","cines","cine","cerro","parque","plaza","puerta","ventana",
+  "almuerzo","mañana","tarde","noche","caldo","costilla","queso","cebolla",
+  "ajo","tortilla","pollo","arroz","sopa","pan","azúcar","mantequilla",
+  "abrigo","campera","liviana","sobre","caja","cajas","ojos","mano","manos",
+  "esposo","esposa","abuela","abuelo","hermano","hermana","prima","primo",
+  "tío","tía","sobrino","sobrina","nieto","nieta","vecino","vecina","vecinos",
+  "amigas","amigos","escuela","trabajo","barrio","esquina","cuadra","cuadras",
+  "edificio","pasillo","piso","sala","cocina","habitación","cuarto","baño",
+  "ratito","pedazo","frasco","frascos","huerto","sello","sellos","ventanas",
+  "amanecer","atardecer","cielo","luz","luces","aire","sol","sombra",
+
+  // A1-natural verb participles used as adjectives
+  "tomado","tomada","puesto","puesta","escrita","escritos","escritas",
+  "asado","asada","frito","frita","fritos","fritas","hervido","hervida",
+  "abierto","abierta","cerrado","cerrada","perdido","perdida","encendido",
+  "encendida","sentado","sentada","quieto","quieta","callado","callada",
+
+  // Numbers / quantities A1
+  "cuatro","cinco","seis","siete","ocho","nueve","diez","once","doce",
+  "trece","catorce","quince","veinte","treinta","cuarenta","cincuenta",
+  "cien","cientos","mil",
+
+  // Misc household / actions A1
+  "lavar","limpiar","preparar","cocinar","cortar","servir","tomar","poner",
+  "saber","entrar","salir","subir","bajar","abrir","cerrar","llegar","esperar",
+  "venir","ir","mirar","ver","oír","escuchar","hablar","decir","contar","leer",
+  "estudiar","aprender","enseñar","ayudar","comer","beber","dormir","despertar",
+  "cuidar","crecer","vivir","morir","reír","llorar","sentir","pensar","creer",
+  "querer","poder","tener","hacer","dar","traer","llevar","dejar","tocar",
+  "buscar","encontrar","trabajar","jugar","pagar","mandar","recibir","empezar",
+  "terminar","cerrar","decidir","cambiar","guardar","abrir",
 ]);
 
 /**

@@ -77,17 +77,36 @@ export type ValidationResult = {
   };
 };
 
+// 7-arc taxonomy anchored on kishōtenketsu (Japanese 4-act structure that
+// natively fits 250-word stories — engagement via reframe in act 3, not
+// Western conflict escalation). Migrated 2026-06-02 from the previous 9-arc
+// Western taxonomy after deep-research surfaced extreme usage skew
+// (3 arcs accounted for 58% of 110 stories) and converging evidence that
+// kishōtenketsu + cliffhanger rhythm + recurring cast outperforms
+// conflict-driven arcs at this word budget.
+//
+// See: docs/engagement-research-brief.pdf for sources.
+//
+// RETIRED arcs (do NOT reintroduce):
+//   - white-lie, last-minute-decision, unspoken-subtext, plan-falls-short
+//     → re-route to "reframe-turn" (all are variants of the same kishōtenketsu
+//        shape: setup → development → unexpected reframe → harmonic close)
+//   - small-stake → re-route to "harmonic-close" (low-key arcs land softly)
+//   - open-ending → absorbed into "late-reveal" or "harmonic-close"
+//                   (the ketsu act IS the resolution, even when soft)
 const VALID_ARC_TYPES = new Set([
-  "white-lie",
-  "last-minute-decision",
-  "return-after-years",
-  "unspoken-subtext",
-  "plan-falls-short",
-  "late-reveal",
-  "small-stake",
-  "open-ending",
-  "daily-encounter",
+  "reframe-turn",              // ~30% target. Workhorse kishōtenketsu: act 3 reencuadra acts 1-2.
+  "juxtaposition-discovery",   // ~15%. Two unrelated elements collide with meaning. Core ten mechanism.
+  "harmonic-close",            // ~15%. Comfort arc — completes in calm, no twist. Replaces "small-stake".
+  "mini-cliffhanger",          // ~15%. Ends on unresolved beat. PAIR with recurring character for bonding.
+  "recurring-character-callback", // ~10%. Payoff for established character.
+  "late-reveal",               // ~10%. Information withheld until final beat.
+  "daily-encounter",           // ~5%. Slice-of-life, no twist required. Kept small (was overused as default).
 ]);
+
+// "Comfort" arcs that can repeat more freely in rotation (no escalation cost).
+// All other arcs must rotate (see arctype-rotation check).
+const COMFORT_ARC_TYPES = new Set(["daily-encounter", "harmonic-close"]);
 
 const VALID_VOCAB_TYPES = new Set([
   "verb",
@@ -130,6 +149,12 @@ const BANNED_BODY_TOKENS = [
   /\(sighs?\)/i,
   /\[r[ií]e\]/i,
   /\*pause\*/i,
+  // Em-dash (U+2014) and en-dash (U+2013). User rule (2026-05-29):
+  // never use em-dashes in copy / story body / prompts. Substitute
+  // with `;`, `:`, parentheses, or break the sentence. The new-system
+  // worker has internalized this — flag any lingering em-dash as fail.
+  /—/,
+  /–/,
 ];
 
 const HTML_TAG_RE = /<(?:p|blockquote|div|span|br|strong|em|i|b|h\d|a|ul|ol|li|img)\b/i;
@@ -657,6 +682,45 @@ export async function validateGeneratedStory(
     detail: `${bodyWords} words`,
   });
 
+  // 70/30 dialogue/narrator ratio. User hard rule (2026-06-01):
+  // every story = ~70% spoken dialogue + ~30% narrator. This is the
+  // single most important structural marker of the "v2-2026-06"
+  // generation cohort. We count words inside `Speaker: line` turns vs
+  // words in non-speaker paragraphs. Speaker labels themselves are
+  // excluded (they're not spoken). Warn band: 60-80% dialogue. Fail
+  // band: <50% or >90%.
+  {
+    const lines = parsed.text.split(/\n+/);
+    let narratorWords = 0;
+    let dialogueWords = 0;
+    for (const raw of lines) {
+      const line = raw.trim();
+      if (!line) continue;
+      const m = line.match(/^[\p{Lu}][\p{L}\s'-]*:\s+(.+)$/u);
+      if (m) {
+        dialogueWords += m[1].split(/\s+/).filter(Boolean).length;
+      } else {
+        narratorWords += line.split(/\s+/).filter(Boolean).length;
+      }
+    }
+    const spoken = narratorWords + dialogueWords;
+    const dialPct = spoken > 0 ? Math.round((dialogueWords * 100) / spoken) : 0;
+    const status: CheckStatus =
+      spoken === 0 ? "fail" :
+      dialPct < 50 || dialPct > 90 ? "fail" :
+      dialPct < 60 || dialPct > 80 ? "warn" :
+      "pass";
+    checks.push({
+      id: "body-dialogue-ratio",
+      label: "Body is ~70% dialogue / 30% narrator",
+      status,
+      detail:
+        spoken === 0
+          ? "No words detected after splitting speaker lines vs narrator. Check the text format."
+          : `${dialPct}% dialogue (${dialogueWords}w) / ${100 - dialPct}% narrator (${narratorWords}w). Target: 70/30. Acceptable band: 60-80% dialogue. The v2-2026-06 spec is conversational: most of the story should be spoken by characters, narrator just sets the scene and inserts brief action beats.`,
+    });
+  }
+
   const speakerNames = extractSpeakerNames(parsed.text);
   const speakerLines = countSpeakerLines(parsed.text);
   checks.push({
@@ -730,6 +794,36 @@ export async function validateGeneratedStory(
           label: "Opening reads like a character profile, not a scene",
           status: "warn",
           detail: `Opening paragraph has ${fichaCount} biography-style sentences ("X es / X estudia / X trabaja"). Show the relationships through actions and gestures instead of declaring them. Example fix: "X sirve café a sus dos hijos" instead of "X es la madre de Y y Z".`,
+        });
+      }
+    }
+
+    // Opening-formula check. The prompt explicitly forbids opening
+    // every story with "Es [día] [tiempo] en [Ciudad], [País]" — the
+    // template ChatGPT defaults to. It collapses 20+ stories into the
+    // same first sentence and trains the reader to skip the opening.
+    // The prompt rule was easy to ignore at generation time; this
+    // mechanical check makes the constraint visible at validation.
+    // See: docs/story-quality-spec.md "Opening variety" section.
+    {
+      const firstSentence =
+        (parsed.text || "").split(/(?<=[.!?])\s+/)[0] || "";
+      const formulaWithTime =
+        /^Es\s+(lunes|martes|miércoles|jueves|viernes|sábado|domingo)\s+(al\s+mediodía|al\s+anochecer|al\s+amanecer|por\s+la\s+(mañana|tarde|noche))\s+en\s+/i;
+      const formulaBare =
+        /^Es\s+(lunes|martes|miércoles|jueves|viernes|sábado|domingo)\s+en\s+/i;
+      if (formulaWithTime.test(firstSentence) || formulaBare.test(firstSentence)) {
+        checks.push({
+          id: "opening-formula-day-time-place",
+          label: "Opening avoids the banned 'Es [día] [tiempo] en [Ciudad]' formula",
+          status: "fail",
+          detail: `First sentence uses the banned default template: "${firstSentence}". Start the body with an action, gesture, sound, smell, image, or dialogue line — never with "Es [día] [tiempo] en [Ciudad]". The city+country anchor can move to the SECOND sentence.`,
+        });
+      } else {
+        checks.push({
+          id: "opening-formula-day-time-place",
+          label: "Opening avoids the banned 'Es [día] [tiempo] en [Ciudad]' formula",
+          status: "pass",
         });
       }
     }
@@ -968,6 +1062,41 @@ export async function validateGeneratedStory(
           label: "Opening names a LATAM city without its country",
           status: "warn",
           detail: `The opening narrator names ${unique.length === 1 ? "this city" : "these cities"} (${unique.join(", ")}) without the country. At A1, an English-native learner can't place LATAM cities geographically. Add the country in the first or second sentence: "En Coyoacán, Ciudad de México," or "Es martes en Bogotá, Colombia,".`,
+        });
+      }
+
+      // Voseo detection. User rule: español neutro siempre, tú forms,
+      // NUNCA voseo rioplatense — incluso para historias ambientadas
+      // en Buenos Aires o Montevideo. Detecta el pronombre `vos` y
+      // las formas verbales más comunes (sos/tenés/querés/decís/hacés
+      // /podés/sabés/comés/venís/salís). Imperativos voseo (sentate /
+      // mirá / pasá / vení) están omitidos porque algunas formas
+      // colisionan con presente indicativo tú o con otros tiempos —
+      // bajaría la precisión. Los pronombres + presente indicativo
+      // son señales limpias y suficientes.
+      const VOSEO_PATTERNS: Array<{ re: RegExp; form: string }> = [
+        { re: /\bvos\b/i,    form: "vos (pronoun)" },
+        { re: /\bsos\b/i,    form: "sos (= eres)" },
+        { re: /\btenés\b/i,  form: "tenés (= tienes)" },
+        { re: /\bquerés\b/i, form: "querés (= quieres)" },
+        { re: /\bdecís\b/i,  form: "decís (= dices)" },
+        { re: /\bhacés\b/i,  form: "hacés (= haces)" },
+        { re: /\bpodés\b/i,  form: "podés (= puedes)" },
+        { re: /\bsabés\b/i,  form: "sabés (= sabes)" },
+        { re: /\bcomés\b/i,  form: "comés (= comes)" },
+        { re: /\bvenís\b/i,  form: "venís (= vienes)" },
+        { re: /\bsalís\b/i,  form: "salís (= sales)" },
+      ];
+      const voseoHits: string[] = [];
+      for (const { re, form } of VOSEO_PATTERNS) {
+        if (re.test(parsed.text)) voseoHits.push(form);
+      }
+      if (voseoHits.length > 0) {
+        checks.push({
+          id: "body-voseo-forms",
+          label: "Body uses voseo (vos/tenés/sos) instead of tú forms",
+          status: "fail",
+          detail: `Found ${voseoHits.length} voseo form(s): ${voseoHits.join(", ")}. The project uses español neutro with tú forms across ALL stories, including rioplatense settings (Buenos Aires, Montevideo). Rewrite with: vos → tú, sos → eres, tenés → tienes, querés → quieres, decís → dices, etc.`,
         });
       }
     }
@@ -1560,19 +1689,66 @@ export async function validateGeneratedStory(
     }
   }
 
-  // Vocab cross-story repetition
+  // Vocab cross-story repetition.
+  //
+  // Tiered after the v2-2026-06 cohort: with recurring casts (Duolingo
+  // Stories pattern, see docs/engagement-research-brief.pdf), structural
+  // overlap is unavoidable — stories set in the same fonda/edificio
+  // share words like "fonda", "ayudar", "pan", "esquina", "edificio".
+  // The check now:
+  //   - SHARED_WORLD allowlist (setting/cast-bound nouns + universal
+  //     A1 verbs) → never flagged
+  //   - ≤30% remaining overlap → warn (recurring-cast overhead)
+  //   - >30% remaining overlap → fail (insufficient vocab diversity)
   if (existing.length) {
+    const SHARED_WORLD_LEMMAS = new Set([
+      // Recurring settings (fonda, edificio, casa, pasillo, etc.)
+      "fonda","edificio","departamento","apartamento","casa","cocina","comedor",
+      "habitación","cuarto","baño","sala","pasillo","ventana","puerta","mesa",
+      "silla","cajón","álbum","álbumes","piso","hall","ascensor","patio",
+      "balcón","balcones","esquina","cuadra","cuadras","barrio","calle",
+      "parque","plaza","escuela","trabajo","oficina","mercado","tienda",
+      "verdulería","panadería",
+      // Recurring cast objects + basic kitchen
+      "olla","cuchara","plato","vaso","taza","cuchillo","mantel","servilleta",
+      "termo","pava","jarra","bandeja","sopa","pan","caldo","café","té",
+      "agua","leche","postre","azúcar",
+      // Universal A1 verbs that surface in every story
+      "ayudar","abrir","cerrar","leer","escribir","guardar","decidir","traer",
+      "llevar","poner","sacar","tomar","dar","servir","esperar","llegar",
+      "salir","entrar","subir","bajar","mirar","ver","oír","escuchar","hablar",
+      "decir","contar","preguntar","responder","ser","estar","tener","haber",
+      "hacer","ir","venir","sentir","pensar","creer","querer","poder","cuidar",
+      // Cast-bound generics
+      "mamá","papá","hijo","hija","hermano","hermana","tío","tía","sobrino",
+      "sobrina","primo","prima","abuelo","abuela","vecino","vecina","amigo","amiga",
+      // Common A1 atmosphere / noise that recurs
+      "ruido","silencio","luz","sombra","aire","sol",
+    ]);
     const usedLemmas = new Set<string>();
     for (const e of existing) for (const l of e.vocabLemmas) usedLemmas.add(l.toLowerCase());
-    const repeats = parsed.vocab.filter((v) =>
+    const allRepeats = parsed.vocab.filter((v) =>
       usedLemmas.has(v.word.toLowerCase())
     );
+    // Strip shared-world items; only "real" lexical overlap counts.
+    const realRepeats = allRepeats.filter(
+      (v) => !SHARED_WORLD_LEMMAS.has(v.word.toLowerCase())
+    );
+    const overlapRatio = parsed.vocab.length
+      ? realRepeats.length / parsed.vocab.length
+      : 0;
+    const status: CheckStatus =
+      realRepeats.length === 0
+        ? "pass"
+        : overlapRatio > 0.3
+          ? "fail"
+          : "warn";
     checks.push({
       id: "vocab-cross-story",
-      label: "Vocab not repeated from prior stories in this topic",
-      status: repeats.length === 0 ? "pass" : "fail",
-      detail: repeats.length
-        ? repeats.map((v) => v.word).join(", ")
+      label: "Vocab not repeated from prior stories in this topic (cast-aware)",
+      status,
+      detail: realRepeats.length
+        ? `${realRepeats.length} non-shared repeat(s): ${realRepeats.map((v) => v.word).join(", ")}${allRepeats.length > realRepeats.length ? ` (+${allRepeats.length - realRepeats.length} shared-world allowed)` : ""}`
         : undefined,
     });
 
@@ -1587,22 +1763,19 @@ export async function validateGeneratedStory(
       detail: nameClash.length ? nameClash.join(", ") : undefined,
     });
 
-    // arcType rotation — spec §3 "Rotation rules": (1) Do not use the
-    // same non-`daily-encounter` arcType twice in three consecutive
-    // stories of the same journey level/topic; (2) at most 2 consecutive
-    // `daily-encounter` arcs. Both are stated as imperatives ("Do not")
-    // and a third repeat is a hard rejection.
+    // arcType rotation: (1) NON-comfort arcs cannot repeat in last 3 stories;
+    // (2) comfort arcs (harmonic-close, daily-encounter) max 2 consecutive.
+    // Updated 2026-06-02 to match the 7-arc kishōtenketsu taxonomy.
     const recent = existing.slice(-3).map((e) => e.arcType).filter(Boolean);
-    const consecutiveDaily =
-      parsed.arcType === "daily-encounter" &&
-      recent.filter((a) => a === "daily-encounter").length >= 2;
-    const isRepeat =
-      parsed.arcType !== "daily-encounter" &&
-      recent.includes(parsed.arcType);
+    const isComfort = COMFORT_ARC_TYPES.has(parsed.arcType ?? "");
+    const consecutiveComfort =
+      isComfort &&
+      recent.filter((a) => COMFORT_ARC_TYPES.has(a ?? "")).length >= 2;
+    const isRepeat = !isComfort && recent.includes(parsed.arcType);
     checks.push({
       id: "arctype-rotation",
       label: "arcType rotates (not same as recent stories)",
-      status: consecutiveDaily ? "fail" : isRepeat ? "fail" : "pass",
+      status: consecutiveComfort ? "fail" : isRepeat ? "fail" : "pass",
       detail: recent.length ? `Recent: ${recent.join(", ")}` : undefined,
     });
   }

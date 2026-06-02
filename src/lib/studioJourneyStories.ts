@@ -61,6 +61,13 @@ export type StudioJourneyStory = {
   // route the "Manager" action back to the right parent journey.
   journeyId?: string | null;
   journeyName?: string | null;
+  // Generation cohort tag. Worker-facing way to identify which generation
+  // system produced the story (e.g. "v2-2026-06" = stories conformant to
+  // the post-2026-06-01 spec: 70/30 dialogue ratio, 1:30-2:00 duration,
+  // 0.94x tempo, multi-voice plain-text format, A1 strict grammar).
+  // Stories without a cohort tag were produced under earlier ad-hoc
+  // workflows and shouldn't be used as references by the worker.
+  generationCohort?: string | null;
 };
 
 export type JourneyStoryPatch = {
@@ -173,6 +180,7 @@ type JourneyStoryWithJourney = {
   audioQaStatus: string | null;
   audioQaScore: number | null;
   audioQaNotes: string | null;
+  generationCohort: string | null;
   updatedAt: Date;
   journeyId: string;
   journey: {
@@ -226,6 +234,7 @@ function toStudioJourneyStory(row: JourneyStoryWithJourney): StudioJourneyStory 
     source: "journey",
     journeyId: row.journeyId,
     journeyName: row.journey.name,
+    generationCohort: row.generationCohort ?? null,
   };
 }
 
@@ -269,6 +278,7 @@ export async function listStudioJourneyStories(): Promise<StudioJourneyStory[]> 
         audioQaStatus: true,
         audioQaScore: true,
         audioQaNotes: true,
+        generationCohort: true,
         updatedAt: true,
         journeyId: true,
         journey: {

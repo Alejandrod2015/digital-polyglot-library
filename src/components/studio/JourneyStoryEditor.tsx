@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import type { StudioJourneyStory } from "@/lib/studioJourneyStories";
 import StudioActionLink from "@/components/studio/StudioActionLink";
 import StudioToast, { showToast } from "@/components/studio/StudioToast";
+import MediaUploadField from "@/components/studio/MediaUploadField";
 
 type Props = { story: StudioJourneyStory };
 
@@ -385,16 +386,12 @@ export default function JourneyStoryEditor({ story }: Props) {
             <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)", margin: "0 0 16px" }}>Media</h3>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <div>
-                <label style={label}>URL de cover</label>
-                <input value={form.coverUrl} onChange={(e) => update("coverUrl", e.target.value)} placeholder="https://..." className="studio-input" style={field} />
-              </div>
-              {form.coverUrl.trim() ? (
-                <div style={{ borderRadius: 10, overflow: "hidden", border: "1px solid var(--card-border)", backgroundColor: "var(--background)" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={form.coverUrl} alt={form.title || "Cover"} style={{ display: "block", width: "100%", aspectRatio: "16 / 9", objectFit: "cover" }} />
-                </div>
-              ) : null}
+              <MediaUploadField
+                kind="cover"
+                label="Cover (arrastra imagen, pega archivo, o pega URL)"
+                value={form.coverUrl || null}
+                onChange={(url) => update("coverUrl", url ?? "")}
+              />
               <div>
                 <label style={label}>URL de audio</label>
                 <input value={form.audioUrl} onChange={(e) => update("audioUrl", e.target.value)} placeholder="https://..." className="studio-input" style={field} />
