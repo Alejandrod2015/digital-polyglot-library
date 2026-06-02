@@ -28,6 +28,7 @@ const NAV_SECTIONS = [
     items: [
       { href: "/studio/journey-manager", label: "Journey Manager", icon: "pen", exact: false },
       { href: "/studio/catalog-books", label: "Catálogo de libros", icon: "database", exact: false },
+      { href: "/studio/vocabulary", label: "Vocabulario", icon: "book", exact: false },
     ],
   },
   {
