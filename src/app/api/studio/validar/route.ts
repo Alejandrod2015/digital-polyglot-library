@@ -48,12 +48,16 @@ async function loadExistingStories(
       .filter((w): w is string => !!w);
 
     const characterNames = r.text ? extractSpeakerNames(r.text) : [];
+    const openingFirstSentence = r.text
+      ? (r.text.split(/\n\n+/)[0] || "").split(/(?<=[.!?])\s+/)[0] || ""
+      : "";
 
     return {
       title: r.title ?? "",
       arcType: r.arcType,
       vocabLemmas,
       characterNames,
+      openingFirstSentence,
     };
   });
 }

@@ -25,6 +25,31 @@ This is a hard constraint for this project.
 - API: Mobile calls reader.digitalpolyglot.com (production)
 - Deployments: Batch commits to avoid multiple Vercel builds
 
+## Reporting status — no absolute claims
+
+**Never** declare a multi-item or multi-check task "done", "fully corrected",
+"100% confidence", or "totalmente corregido" without explicitly listing:
+
+- `verified:` the specific checks that passed (validator, audit, tests, etc.)
+- `not verified:` the dimensions you did NOT measure (gestalt rhythm, native
+  grammar feel, cross-item repetition, real user reading, etc.)
+
+A passing validator is not equivalent to a good output. Validator coverage
+is bounded by what was coded into it; gestalt / rhythm / cross-item patterns
+require a human read.
+
+**Mandatory gestalt step** before reporting "done" on any task that touched
+3+ items in a batch (stories, voices, components, copy variants): dump the
+items side-by-side and read them consecutively as the end user would. If any
+template, phrase, structure, or pattern repeats across 3+ items, flag it
+before declaring done. This applies even when the validator is green.
+
+When the user pushes back ("are you sure?" / "did you really check?") more
+than once, do NOT defend with the same metrics. Switch the frame of review
+(structural → rhythm → tone → cross-item comparison → gestalt) until the
+user's concern is addressed or you can articulate what they're asking that
+you haven't measured.
+
 ## Safety Guard (BLOCKING — DO NOT BYPASS)
 
 This project has a Bash PreToolUse hook at `.claude/safety/pre-bash-guard.sh`
@@ -48,7 +73,19 @@ that ALWAYS runs before any Bash command. It does two things:
    env-var escape. If a force push is truly needed, the user runs it
    from their own terminal outside Claude.
 
-4. **`git push` to main/master**: blocked unless the user's MOST RECENT
+4. **ElevenLabs TTS generation** (POST to `api.elevenlabs.io/v1/text-to-speech/`):
+   hard-blocked unless the user's MOST RECENT message in the transcript
+   contains one of: "genera audio", "genera el audio", "genera los
+   audios", "regenera audio", "lanza audio", "manda audio", "render
+   audio", "renderea audio", "haz el audio". Same transcript-based gate
+   as the push verb. `CLAUDE_AUTHORIZED=1` does NOT bypass.
+
+   "Dame samples", "muéstrame las voces", "compara estas voces"
+   = preview URLs gratis del shared library (`GET /v1/shared-voices`),
+   nunca generar. Listing endpoints (GET) pasan sin gate; solo el
+   endpoint de síntesis está bloqueado.
+
+5. **`git push` to main/master**: blocked unless the user's MOST RECENT
    message in the Claude transcript contains an imperative push verb.
    The hook reads `transcript_path` from the PreToolUse payload (a
    `.jsonl` file Claude Code writes; not writable from Bash tool calls)

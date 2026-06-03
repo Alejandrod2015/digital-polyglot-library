@@ -108,40 +108,48 @@ ElevenLabs (and the entire TTS pipeline) cannot render laughs, hums, sighs, or s
 - Same target across all CEFR levels. What changes between levels is lexical and syntactic density, not volume.
 - If you go over 320, trim before saving (cut a sub-beat, tighten a dialogue exchange, remove a redundant transition). Going over is allowed only when explicitly authorized by the user for that specific story.
 
-### Arc archetype (REQUIRED)
+### Arc archetype (REQUIRED) — 7-arc kishōtenketsu taxonomy
 
-Every story must declare an `arcType` field in its JSON shape and execute that arc in the body. The default "two characters chat amably and part" pattern is BANNED unless the journey deliberately schedules it (e.g. as a calm beat between heavier stories). At A1 the lexicon is constrained but the narrative shape is not — kids' books at A1-equivalent levels carry real arcs with real stakes inside tiny vocabularies.
+Every story must declare an `arcType` field in its JSON shape and execute that arc in the body. **Migrated 2026-06-02** from the previous Western 9-arc taxonomy to a 7-arc system anchored on kishōtenketsu (Japanese 4-act structure: setup / development / reframe-turn / harmonic close). The reason: research showed kishōtenketsu natively fits 250-word stories (each act ≈ 60 words) and engagement comes from the act-3 reframe, not from Western conflict escalation — which is hard to sustain at A1 vocab budgets. See `docs/engagement-research-brief.pdf`.
 
-The eight archetypes the journey rotates through:
+The seven archetypes:
 
-| `arcType` | What it is | Concrete A1 example |
-| --- | --- | --- |
-| `white-lie` | A character tells a small lie out of kindness and almost gets caught. Reader holds dramatic irony. | A teenager lies to her grandmother on the phone that she ate the soup; grandmother asks how it tasted; the teenager improvises. |
-| `last-minute-decision` | The character changes their mind in the final beat. | A man buys roses for his ex; at her door he turns back and gives them to a stranger in the lobby. |
-| `return-after-years` | A character returns to a place that has changed or no longer recognizes them. | An older man visits a café he hasn't been to in forty years; the new barista listens politely but doesn't know him. |
-| `unspoken-subtext` | Two characters discuss something trivial while another, unspoken topic floats between them. | A landlord visits an old tenant carrying a letter and never delivers it; they make coffee and talk about the weather instead. |
-| `plan-falls-short` | What the character wanted didn't pan out; they resolve it differently. | A girl wants to buy her mother a bouquet but only has enough for one stem; the florist wraps it with a free ribbon. |
-| `late-reveal` | A line in the final beat recolors the entire conversation that came before. | Two friends meet at a café for their usual Saturday coffee; in the last exchange one mentions she is moving to Munich on Friday. |
-| `small-stake` | The character wants something concrete and faces a small, real obstacle. | At the cash register the customer realizes she forgot her wallet; the shopkeeper, who knows her by sight, lets her pay tomorrow. |
-| `open-ending` | The story closes on an unanswered question. The reader does not know how the situation ends. | A teenager waits at a U-Bahn station for someone who never shows; he decides to go home, or to go elsewhere alone — the story ends before the choice resolves. |
-| `daily-encounter` | A calm, low-stakes everyday encounter (shop, café, market, train) with at least one beat of warmth or observation that lifts it above pure transaction. Acts as a breathing space between heavier arcs in the journey. | A regular customer chats briefly with the baker about a son visiting on Sunday; the baker mentions a cake she just baked. They part on a small, specific shared moment, not a generic friendly goodbye. |
+| `arcType` | Target % | What it is | Concrete A1 example |
+| --- | --- | --- | --- |
+| `reframe-turn` | ~30% | Workhorse kishōtenketsu. Acts 1-2 set a scene; act 3 reveals/recontextualizes; act 4 closes in the new light. Replaces white-lie / last-minute-decision / unspoken-subtext / plan-falls-short. | A father lays three plates for Sunday lunch as always; daughter notices but doesn't ask; in the final beat he says the third plate is for the mother who is gone — and serves a spoonful of broth into it. |
+| `juxtaposition-discovery` | ~15% | Two unrelated elements collide with meaning — the core ten mechanism. The reader connects them in act 3. | A young woman folds tamale wrappers with her left hand; her sister watches and realizes everyone in the family folds with the left, except her — the mother is in their hands without anyone naming her. |
+| `harmonic-close` | ~15% | Comfort arc. Story completes in calm, no twist. Replaces `small-stake`. | A regular customer chats with the baker about a son visiting Sunday; the baker mentions a cake just out of the oven. They part on a small, specific moment. |
+| `mini-cliffhanger` | ~15% | Story is structurally complete BUT the final line opens a question the next story answers. PAIR with a recurring character so the reader carries the hook. | A grandmother on the phone asks her son to tell his daughter "to open the box under my bed when she comes." Conversation ends. The box stays unopened in THIS story. |
+| `recurring-character-callback` | ~10% | Payoff for an established character. The reader's history with them is the engine. | The neighbor (introduced 4 stories ago bringing soup) returns with a letter she has been holding since then. The exchange happens in real time. |
+| `late-reveal` | ~10% | Information withheld until the final beat recolors the conversation that came before. | Two friends meet for their usual Saturday coffee; in the last exchange one mentions she is moving to Munich on Friday. |
+| `daily-encounter` | ~5% | Slice-of-life, no twist required. Pure quotidian texture. Kept SMALL (was overused as default in the previous taxonomy). | At the kiosk the regular customer asks for el periódico de hoy and the same chocolatina as always. The vendor wraps it without asking. |
 
-**Rotation rules**:
+**Rotation rules** (updated for 7-arc system):
 
-1. Do not use the same non-`daily-encounter` `arcType` twice in three consecutive stories of the same journey level/topic.
-2. `daily-encounter` is the calm-mode arc and may be used more often, BUT no more than two consecutive stories at the same level may both be `daily-encounter`. After two calm beats, the next must use one of the higher-tension arcs (`white-lie`, `last-minute-decision`, `return-after-years`, `unspoken-subtext`, `plan-falls-short`, `late-reveal`, `small-stake`, `open-ending`).
+1. Non-comfort arcs (`reframe-turn`, `juxtaposition-discovery`, `mini-cliffhanger`, `recurring-character-callback`, `late-reveal`) cannot repeat in the last 3 stories of the same journey level/topic.
+2. Comfort arcs (`harmonic-close`, `daily-encounter`) max 2 consecutive. After two comfort beats, next must be non-comfort.
 
-**Forbidden default**: a story whose only beat is "two characters meet, exchange friendly small talk, part on good terms" without ANY arcType (including `daily-encounter`) shall not be saved. If you tag `daily-encounter`, you must execute its requirement: at least one beat of warmth or observation that lifts the story above pure transaction.
+**Cliffhanger rhythm across a journey**:
+
+Across any 10 consecutive stories within a journey, **50-70% should end on an unresolved beat** (i.e. use `mini-cliffhanger` OR end the final line of any other arc with an open hook). Never 100% — the bonding effect requires variation; constant cliffhangers fatigue. Research-backed (Hahn et al. 2023, Univ. of Buffalo, n=475; Chapter Chronicles NLP analysis of 9,752 Webnovel comments — see brief).
+
+**Recurring cast (REQUIRED for engagement)**:
+
+Each journey should have a defined recurring cast — 1-2 anchor characters appearing in 60-80% of stories, plus 4-8 secondary characters who reappear when their region/branch is in play. The cast for Spanish-LATAM is defined in `src/lib/journeyCasts.ts` (`SPANISH_LATAM_CAST`): familia López dispersa por Bogotá, Buenos Aires, CDMX, Lima y Santiago. **Use existing cast members wherever possible**; only introduce a fresh name when the story genuinely requires one. Voice IDs must match the cast member's `voiceSlot` exactly (no improvising voice assignments).
+
+**Forbidden default**: a story whose only beat is "two characters meet, exchange friendly small talk, part on good terms" without ANY arcType shall not be saved.
+
+**Retired arcs** (do NOT reintroduce): `white-lie`, `last-minute-decision`, `return-after-years`, `unspoken-subtext`, `plan-falls-short`, `small-stake`, `open-ending`. All re-route to `reframe-turn` or `harmonic-close` per the migration mapping in `src/lib/validateGeneratedStory.ts`.
 
 ### `arcType` field in the saved JSON
 
 In addition to the existing fields (`title`, `synopsis`, `text`, `vocab`), add:
 
 ```json
-"arcType": "late-reveal"
+"arcType": "reframe-turn"
 ```
 
-Use one of the eight values above. The field is required for every new story and tracked across the journey for the rotation rule.
+Use one of the seven values above. The field is required for every new story and validated server-side.
 
 ## 4. Vocab
 
@@ -314,8 +322,9 @@ Before running the `save` script, walk through these ten binary questions. If an
 15. For separable verbs in vocab, is the `surface` a contiguous substring of the body? If not, the surface should be the lemma (`anlügen`), not the split form (`lüg an`).
 16. Is the body in the correct format for the journey type? Multi-voice Conversacional DE stories use `Speaker: line` plain text, NOT `<blockquote>` HTML.
 17. Is the vocab distributed across the body? Roughly 3-5 items per paragraph; no paragraph has 0 while another has 6+. (Pre-save sanity check: scan ¶ counts.)
+18. **Read-the-batch gestalt step (required when working on more than one story)**: dump the first sentences of every story in the journey side-by-side and read them as a sequence. Reject if the same opening template appears 3+ times (`opening-rhythm-rotation` check enforces this mechanically, but the human read catches subtler rhythm/tone repetition the regex can't). Anchor types to rotate through: time+place, sensory hook (smell/light/sound), weather/season, action, dialogue-immediate, character apposition, object-as-anchor. Never declare a journey "done" without doing this read.
 
-If 12 or more answers are `yes`, save. If fewer, revise.
+If 13 or more answers are `yes`, save. If fewer, revise.
 
 ---
 

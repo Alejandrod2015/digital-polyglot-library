@@ -21,6 +21,21 @@ import { isItalianA1A2 } from "./cefr/italianA1A2";
 import { isPortugueseA1A2 } from "./cefr/portugueseA1A2";
 import { isFrenchA1A2 } from "./cefr/frenchA1A2";
 
+// City list mirrored from src/lib/journeyCasts.ts. Inlined because the
+// real cast module pulls in elevenlabs.ts → prisma.ts → server-only,
+// and the validator is also called from client-safe code (e.g. the
+// /studio/validar page). Keep these two lists in sync with the master
+// cast file when adding/removing journeys.
+const JOURNEY_CITY_TOKENS: Record<string, string[]> = {
+  "spanish-latam": [
+    "Bogotá", "Coyoacán", "CDMX", "Lima", "Buenos Aires", "Santiago",
+    "Miraflores", "San Telmo", "Palermo", "Valparaíso",
+  ],
+  "german-germany": [
+    "Berlin", "Kreuzberg", "München", "Schwabing", "Hamburg", "Eppendorf",
+  ],
+};
+
 // Types + parser moved to ./storyPayload (pure, client-safe).
 // We re-export so existing callers (`import { ..., parseStoryInput } from
 // "@/lib/validateGeneratedStory"`) keep working without a churn refactor.
@@ -34,6 +49,14 @@ export type ExistingStorySummary = {
   arcType?: string | null;
   vocabLemmas: string[];
   characterNames: string[];
+  /**
+   * First sentence of the body's first paragraph. Used by the
+   * `opening-rhythm-rotation` check to detect template repetition
+   * across stories in the same journey+level+topic. Omit only for
+   * legacy summaries that pre-date the field; the check skips entries
+   * without this populated.
+   */
+  openingFirstSentence?: string;
 };
 
 export type ValidationContext = {
@@ -161,10 +184,18 @@ const HTML_TAG_RE = /<(?:p|blockquote|div|span|br|strong|em|i|b|h\d|a|ul|ol|li|i
 
 const COGNATES_BY_LANG: Record<string, string[]> = {
   DE: [
+    // Spanish-flavor cognates (audience cross-coverage).
     "mathe", "kaffee", "tomate", "tomaten", "banane", "schokolade", "tee",
     "telefon", "apfel", "optimist", "chance", "computer", "familie",
     "restaurant", "park", "auto", "bus", "hotel", "adresse", "information",
     "foto", "musik", "konzert", "pizza", "spaghetti", "hamburger",
+    // English-native transparent DE cognates (added 2026-06-03). English-
+    // native A1 learners decode these at sight — including them as vocab
+    // wastes a slot. Conservative: only words that are identical or one-
+    // letter-off and readable instantly. Borderline cases (Mutter, Vater,
+    // Bruder, Schwester, Wasser, Haus, Buch) stay teachable.
+    "markt", "fisch", "hand", "person", "glas", "gläser", "papier",
+    "ball", "name", "arm", "finger", "lampe", "kamera",
   ],
   ES: [
     "importante", "normal", "social", "problema", "idea", "momento",
@@ -808,23 +839,108 @@ export async function validateGeneratedStory(
     {
       const firstSentence =
         (parsed.text || "").split(/(?<=[.!?])\s+/)[0] || "";
-      const formulaWithTime =
+      // Spanish formulas: "Es lunes en Madrid", "Es viernes por la mañana en Lima".
+      const formulaEsWithTime =
         /^Es\s+(lunes|martes|miércoles|jueves|viernes|sábado|domingo)\s+(al\s+mediodía|al\s+anochecer|al\s+amanecer|por\s+la\s+(mañana|tarde|noche))\s+en\s+/i;
-      const formulaBare =
+      const formulaEsBare =
         /^Es\s+(lunes|martes|miércoles|jueves|viernes|sábado|domingo)\s+en\s+/i;
-      if (formulaWithTime.test(firstSentence) || formulaBare.test(firstSentence)) {
+      // German formulas: ChatGPT defaults to "Es ist Samstagmorgen in
+      // Eppendorf." / "Morgens um halb acht in Berlin." / "Am Sonntag
+      // in München." / "Es ist Sonntag, ein Uhr." All of these collapse
+      // 20+ stories into the same template opener. Banned for the same
+      // reason as the Spanish formulas; see docs/story-quality-spec.md.
+      const formulaDeKombi =
+        /^Es\s+ist\s+(Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag)(morgen|abend|nacht|mittag|nachmittag)\b/i;
+      // "Es ist [(wieder|schon|noch|heute|gleich|fast)?] (Pause|Morgen|
+      //  Sonntag|...)" — direct or with one common intensifier. Avoids
+      // false positives like "Es ist sein erster Samstag" (possessive +
+      // ordinal don't read as the template).
+      const formulaDeIstTime =
+        /^Es\s+ist\s+(wieder\s+|schon\s+|noch\s+|heute\s+|gleich\s+|fast\s+)?(Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag|Morgen|Abend|Nacht|Mittag|Nachmittag|Pause|Sommer|Winter|Frühling|Herbst|Wochenende|Feierabend)\b/i;
+      const formulaDeMorgensUm =
+        /^(Morgens|Abends|Nachmittags|Mittags|Nachts)\s+um\s+/i;
+      const formulaDeAm =
+        /^Am\s+(Morgen|Abend|Nachmittag|Mittag|Wochenende|Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag)\b/i;
+      // "Donnerstag in Berlin." / "Sonntag im Frühling." — day name as
+      // standalone opener.
+      const formulaDeDayOpener =
+        /^(Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag)\s+(in|im|am|bei|um)\s+/i;
+      // "In [Ort] ist es ein [Adj] (Morgen|Tag|Abend)" — inverted form
+      // ChatGPT falls back to when "Es ist..." is forbidden.
+      const formulaDeInOrt =
+        /^(In|Im|Am)\s+\w+\s+ist\s+es\s+ein\s+\w+\s+(Morgen|Tag|Abend|Mittag|Samstagmorgen|Sonntagmorgen)\b/i;
+      const isFormula =
+        formulaEsWithTime.test(firstSentence) ||
+        formulaEsBare.test(firstSentence) ||
+        formulaDeKombi.test(firstSentence) ||
+        formulaDeIstTime.test(firstSentence) ||
+        formulaDeMorgensUm.test(firstSentence) ||
+        formulaDeAm.test(firstSentence) ||
+        formulaDeDayOpener.test(firstSentence) ||
+        formulaDeInOrt.test(firstSentence);
+      if (isFormula) {
         checks.push({
           id: "opening-formula-day-time-place",
-          label: "Opening avoids the banned 'Es [día] [tiempo] en [Ciudad]' formula",
+          label: "Opening avoids the banned 'day + time + place' template",
           status: "fail",
-          detail: `First sentence uses the banned default template: "${firstSentence}". Start the body with an action, gesture, sound, smell, image, or dialogue line — never with "Es [día] [tiempo] en [Ciudad]". The city+country anchor can move to the SECOND sentence.`,
+          detail: `First sentence uses the banned default template: "${firstSentence}". Start the body with an action, gesture, sound, smell, image, or dialogue line — never with "Es [day] [time] en/in [City]", "Es ist [Tag]morgen in [Ort]", "Morgens um [Uhrzeit]", or "Am [Tag/Morgen]". The city+country anchor can move to the SECOND sentence.`,
         });
       } else {
         checks.push({
           id: "opening-formula-day-time-place",
-          label: "Opening avoids the banned 'Es [día] [tiempo] en [Ciudad]' formula",
+          label: "Opening avoids the banned 'day + time + place' template",
           status: "pass",
         });
+      }
+    }
+
+    // Setting matches journey. Each journey has a fixed list of cities
+    // / neighborhoods (from journeyCasts.ts). Catches the failure mode
+    // where a story in the German Berlin journey opens with "Donnerstag
+    // in Bogotá." — the model bleeds settings from sibling journeys.
+    // Logic: pull all city/neighborhood names from OTHER journeys' casts
+    // and flag any that appear in the body. We do NOT enforce that the
+    // story mention its own city (some stories are interior, no city
+    // needed). We only catch foreign-journey cities.
+    {
+      const lang = (context.language ?? "").toLowerCase();
+      const variant = (context.variant ?? "").toLowerCase();
+      const ownKey = lang && variant ? `${lang}-${variant}` : "";
+      const ownTokens = JOURNEY_CITY_TOKENS[ownKey] ?? null;
+      if (ownTokens) {
+        const foreignTokens: string[] = [];
+        for (const otherKey of Object.keys(JOURNEY_CITY_TOKENS)) {
+          if (otherKey === ownKey) continue;
+          foreignTokens.push(...JOURNEY_CITY_TOKENS[otherKey]);
+        }
+        const stripDia = (s: string) =>
+          s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+        const bodyNorm = stripDia(parsed.text || "").toLowerCase();
+        const hits = new Set<string>();
+        for (const token of foreignTokens) {
+          const norm = stripDia(token).toLowerCase();
+          const re = new RegExp(
+            `(^|[^a-zäöüß])${norm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^a-zäöüß]|$)`,
+            "i"
+          );
+          if (re.test(bodyNorm)) hits.add(token);
+        }
+        if (hits.size > 0) {
+          const hitList = Array.from(hits).join(", ");
+          const ownCities = ownTokens.slice(0, 6).join(" / ");
+          checks.push({
+            id: "setting-matches-journey",
+            label: "Setting belongs to this journey",
+            status: "fail",
+            detail: `Body mentions city/neighborhood from a different journey: ${hitList}. This journey is anchored in ${ownCities}. Move the story to one of this journey's settings, or drop the foreign mention.`,
+          });
+        } else {
+          checks.push({
+            id: "setting-matches-journey",
+            label: "Setting belongs to this journey",
+            status: "pass",
+          });
+        }
       }
     }
 
@@ -1360,6 +1476,63 @@ export async function validateGeneratedStory(
     });
   }
 
+  // Definition-english-level. The vocab `definition` field is read by
+  // an A1 learner; using B1+ English words in the definition itself
+  // defeats the pedagogical purpose. The most common offenders are
+  // "container", "transparent", "barrier", "accessible", "emphasize",
+  // "ability", "gratitude", "grasp", "passage", "designate", "sensation",
+  // "genuine", "expressing", "cold-blooded", "movable". Replace with
+  // simpler A1-A2 phrasing.
+  const B1_ENGLISH_IN_DEFS = [
+    "container", "contain", "containing", "contained",
+    "transparent", "transparency",
+    "barrier", "barriers",
+    "accessible", "accessibility",
+    "emphasize", "emphasizing", "emphasis",
+    "ability", "abilities",
+    "gratitude",
+    "grasp", "grasping",
+    "passage", "passages",
+    "designate", "designated",
+    "sensation", "sensations",
+    "customary", "customs",
+    "ancestral",
+    "genuine", "genuinely",
+    "expressing", "expression",
+    "cold-blooded", "warm-blooded",
+    "movable", "moveable",
+    "device", "devices",
+    "facility", "facilities",
+    "appliance", "appliances",
+    "establishment", "establishments",
+  ];
+  {
+    const offenders: Array<{ word: string; hits: string[] }> = [];
+    for (const v of parsed.vocab) {
+      const def = (v.definition ?? "").toLowerCase();
+      if (!def) continue;
+      const hits = B1_ENGLISH_IN_DEFS.filter((w) =>
+        new RegExp(`\\b${w}\\b`, "i").test(def)
+      );
+      if (hits.length) offenders.push({ word: v.word, hits });
+    }
+    if (parsed.vocab.length > 0) {
+      checks.push({
+        id: "definition-english-level",
+        label: "Definitions use A1-A2 English vocabulary",
+        status:
+          offenders.length === 0 ? "pass" :
+          offenders.length <= 2 ? "warn" :
+          "fail",
+        detail: offenders.length
+          ? `${offenders.length} definition(s) use B1+ English: ${offenders
+              .map((o) => `[${o.word}] ${o.hits.join(",")}`)
+              .join("; ")}. The definition is FOR an A1 learner — using B1+ English defeats the purpose. Rewrite with simple, common English a beginner already knows (e.g., "container" → "thing you put things in", "transparent" → "you can see through", "ability" → "what someone can do").`
+          : undefined,
+      });
+    }
+  }
+
   // Pedagogical redundancy: A0 universals that occupy a vocab slot
   // without teaching anything new. Spanish English-native A1 learners
   // know body parts, basic pronouns, numbers, primary colors, common
@@ -1596,7 +1769,11 @@ export async function validateGeneratedStory(
   const maxInOnePara = perPara.length ? Math.max(...perPara) : 0;
   const totalVocab = parsed.vocab.length;
   const maxPct = totalVocab > 0 ? maxInOnePara / totalVocab : 0;
-  const overCap = totalVocab > 0 && maxPct > 0.3;
+  // Relaxed from 0.30 to 0.35: with 18-item lists, 6 in one ¶ (33%) is
+  // a natural concentration in opening paragraphs with multiple props.
+  // 7+ items in one ¶ (39%) is the real "everything-in-opening" failure
+  // mode the rule is meant to catch.
+  const overCap = totalVocab > 0 && maxPct > 0.35;
   checks.push({
     id: "vocab-distribution",
     label: "Vocab distributed across paragraphs (no cluster, ≤30% per ¶)",
@@ -1643,6 +1820,79 @@ export async function validateGeneratedStory(
 
   // ─── Cross-story checks ─────────────────────────────────
   const existing = context.existing ?? [];
+
+  // Opening-rhythm rotation. The spec mandates rotation between
+  // anchor types (time+place, weather/season, sensory hook, action,
+  // dialogue-immediate, character apposition) and a "hard ban on
+  // repeated formulas across more than two stories in the same
+  // journey." This check operationalizes that: fingerprint the first
+  // sentence as a set of content tokens (stopwords stripped), and if
+  // any existing story in the same journey+level+topic shares ≥4
+  // content tokens with the current opener, flag. ≥2 such siblings
+  // = third instance of the template = fail (per spec).
+  //
+  // Limitation: pure token-overlap. Two openings that share key
+  // tokens in different syntactic positions (e.g. "Jonas am Markt"
+  // vs "Markt für Jonas") would also flag. False positives possible
+  // when many stories naturally share the same protagonist's name
+  // and location keywords. The 4-of-6 threshold is empirical, not
+  // theoretical; tune if it overfires.
+  {
+    const OPENING_STOPWORDS = new Set([
+      // German
+      "der","die","das","den","dem","des","ein","eine","einer","einen","eines","einem",
+      "und","oder","aber","doch","sondern",
+      "im","am","in","an","auf","mit","bei","von","zu","zum","zur","über","unter","vor","nach","seit","aus","durch","für","gegen","ohne","um","bis","beim","vom",
+      "ist","sind","war","waren","wird","werden","hat","haben","hatte",
+      "auch","schon","noch","mehr","sehr","nur","viel","viele",
+      "heute","morgen","jetzt","dann","hier","dort","da","so",
+      "nicht","kein","keine",
+      // Spanish
+      "el","la","los","las","un","una","unos","unas","y","o","pero","de","del","al","con","por","para","sin",
+      "es","esta","este","estos","estas","ese","esa",
+      "ha","han","hay","ser","estar",
+      "muy","ya","también","aquí","allí",
+      // Italian / French / Portuguese — light coverage
+      "il","lo","gli","le","e","ma","di","da","per","è","con","un","una",
+      "le","les","des","et","ou","mais","ne","pas",
+      "o","a","os","as","do","da","dos","das","com",
+    ]);
+    function openingFingerprint(text: string): string[] {
+      const first = (text || "").split(/(?<=[.!?])\s+/)[0] || "";
+      return first
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-zäöüßñ\s]/g, " ")
+        .split(/\s+/)
+        .filter((t) => t.length > 2 && !OPENING_STOPWORDS.has(t))
+        .slice(0, 6);
+    }
+    const myFp = openingFingerprint(parsed.text);
+    const similars: string[] = [];
+    if (myFp.length >= 3) {
+      for (const ex of existing) {
+        if (!ex.openingFirstSentence) continue;
+        const exFp = openingFingerprint(ex.openingFirstSentence);
+        if (exFp.length < 3) continue;
+        const overlap = myFp.filter((t) => exFp.includes(t)).length;
+        if (overlap >= 4) similars.push(ex.title);
+      }
+    }
+    if (existing.length > 0) {
+      checks.push({
+        id: "opening-rhythm-rotation",
+        label: "Opening anchor rotates (no formula repetition across journey)",
+        status:
+          similars.length >= 2 ? "fail" :
+          similars.length === 1 ? "warn" :
+          "pass",
+        detail: similars.length > 0
+          ? `${similars.length} other ${similars.length === 1 ? "story has" : "stories have"} a near-identical opening shape: ${similars.join(", ")}. Spec §3 "Opening anchor variety" bans the same template across >2 stories in the same journey. Rotate between time+place, sensory hook (smell/light/sound), weather/season, action, dialogue-immediate, character apposition, or object-as-anchor.`
+          : undefined,
+      });
+    }
+  }
 
   // Title token overlap
   const titleTokens = tokenize(parsed.title);
@@ -1788,6 +2038,38 @@ export async function validateGeneratedStory(
         ? `${realRepeats.length} non-shared repeat(s): ${realRepeats.map((v) => v.word).join(", ")}${allRepeats.length > realRepeats.length ? ` (+${allRepeats.length - realRepeats.length} shared-world allowed)` : ""}`
         : undefined,
     });
+
+    // Journey over-representation — applies ONLY to expression-type
+    // vocab (function words / fillers like "vielleicht", "danke",
+    // "gern", "wirklich"). Content nouns/verbs (Küche, Tisch, kochen)
+    // can recur naturally across stories sharing a setting; the
+    // existing `vocab-cross-story` check (≤30% overlap) bounds those.
+    // Filler words are different — they're not setting-bound and
+    // shouldn't occupy a vocab slot in story after story (the learner
+    // meets them once in the body, doesn't need a re-taught pill).
+    {
+      const overRep: string[] = [];
+      const myExpressions = parsed.vocab
+        .filter((v) => v.type === "expression")
+        .map((v) => stripPrefix(v.word.toLowerCase(), context.language))
+        .filter(Boolean);
+      for (const w of myExpressions) {
+        const inOthers = existing.filter((ex) =>
+          ex.vocabLemmas.some((l) => stripPrefix(l.toLowerCase(), context.language) === w)
+        ).length;
+        if (inOthers >= 2) overRep.push(w);
+      }
+      if (existing.length >= 2) {
+        checks.push({
+          id: "vocab-journey-overrepresent",
+          label: "Expression-type vocab not repeated as vocab in >2 stories",
+          status: overRep.length === 0 ? "pass" : "fail",
+          detail: overRep.length
+            ? `Over-represented expressions: ${[...new Set(overRep)].join(", ")}. Each is already vocab in 2+ other stories. Filler words ("vielleicht", "danke", "gern", "wirklich") should occupy a vocab slot in at most 2 stories per journey; beyond that the learner re-meets the same item instead of new ones. Drop from vocab here and let them stay as unmarked words in the body.`
+            : undefined,
+        });
+      }
+    }
 
     // Character name reuse
     const usedNames = new Set<string>();

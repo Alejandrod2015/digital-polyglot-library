@@ -4,6 +4,7 @@ import Link from "next/link";
 import { trackGa4Event } from "@/lib/ga4";
 import MarketingNav from "./marketing/MarketingNav";
 import PhoneDemo from "./marketing/PhoneDemo";
+import PracticeDemo from "./marketing/PracticeDemo";
 import styles from "./marketing/LandingPage.module.css";
 
 function track(cta: string) {
@@ -138,6 +139,33 @@ export default function LandingPage() {
                 breeze through easy ones.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="loop"
+        className={styles.section}
+        style={{ paddingTop: 0 }}
+      >
+        <div className={styles.frame}>
+          <div className={`${styles.heroGrid} ${styles.heroGridReverse}`}>
+            <div className={styles.heroCopy}>
+              <span className={styles.kicker}>
+                <span className={styles.kickerDot} />
+                Story → Memory
+              </span>
+              <h2 className={styles.sectionTitle}>
+                The vocab you saw earlier{" "}
+                <span className={styles.lime}>comes back here.</span>
+              </h2>
+              <p className={styles.sectionLead}>
+                Practice questions are pulled from the exact sentences
+                you just read. No decontextualized lists, no random
+                flashcards. Only what you met in the story.
+              </p>
+            </div>
+            <PracticeDemo />
           </div>
         </div>
       </section>

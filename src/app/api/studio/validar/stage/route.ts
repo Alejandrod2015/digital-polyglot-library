@@ -92,11 +92,15 @@ async function loadExisting(
       })
       .filter((w): w is string => !!w);
 
+    const openingFirstSentence = r.text
+      ? (r.text.split(/\n\n+/)[0] || "").split(/(?<=[.!?])\s+/)[0] || ""
+      : "";
     return {
       title: r.title ?? "",
       arcType: r.arcType,
       vocabLemmas,
       characterNames: r.text ? extractSpeakerNames(r.text) : [],
+      openingFirstSentence,
     };
   });
 }
