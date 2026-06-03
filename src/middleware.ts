@@ -34,6 +34,20 @@ function isWordPressPath(pathname: string): boolean {
   );
 }
 
+// WordPress renders absolute asset URLs (notably WooCommerce `srcset`
+// candidates) as http://www.digitalpolyglot.com/wp-content/... Behind the
+// https-only Vercel apex the browser picks the matching srcset candidate over
+// the https `src` and blocks it as mixed content, so every product image on
+// /shop, /product, etc. renders broken. This CSP directive transparently
+// upgrades those http subresource requests to https — the https variants are
+// already served (200), so it's a page-wide, zero-cost fix that doesn't
+// restrict any sources.
+function proxyToWordPress(req: { nextUrl: { search: string } }, upstreamPath: string): NextResponse {
+  const res = NextResponse.rewrite(new URL(upstreamPath + req.nextUrl.search, WP_ORIGIN));
+  res.headers.set("Content-Security-Policy", "upgrade-insecure-requests");
+  return res;
+}
+
 export default clerkMiddleware(async (auth, req) => {
   const url = req.nextUrl.pathname;
   const host = req.headers.get("host")?.toLowerCase() ?? "";
@@ -51,9 +65,7 @@ export default clerkMiddleware(async (auth, req) => {
   // the request falls through to the Next.js routes in app/blog/*.
   if (BLOG_BACKEND !== "mdx" && (url === "/blog" || url.startsWith("/blog/"))) {
     const upstreamPath = url.endsWith("/") ? url : `${url}/`;
-    return NextResponse.rewrite(
-      new URL(upstreamPath + req.nextUrl.search, WP_ORIGIN),
-    );
+    return proxyToWordPress(req, upstreamPath);
   }
 
   // WordPress-served legacy paths (WooCommerce checkout, RSS feed, WP admin,
@@ -62,9 +74,7 @@ export default clerkMiddleware(async (auth, req) => {
   // the change to the apex A record would 404 them on Vercel.
   if (isWordPressPath(url)) {
     const upstreamPath = url.endsWith("/") ? url : `${url}/`;
-    return NextResponse.rewrite(
-      new URL(upstreamPath + req.nextUrl.search, WP_ORIGIN),
-    );
+    return proxyToWordPress(req, upstreamPath);
   }
 
   // Legacy WooCommerce webhook endpoints use the root path with a wc-api or
