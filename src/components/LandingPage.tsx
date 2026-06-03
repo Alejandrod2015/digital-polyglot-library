@@ -5,7 +5,6 @@ import { trackGa4Event } from "@/lib/ga4";
 import MarketingNav from "./marketing/MarketingNav";
 import PhoneDemo from "./marketing/PhoneDemo";
 import styles from "./marketing/LandingPage.module.css";
-import { SignUpIncentiveBar } from "./SignUpIncentiveBar";
 
 function track(cta: string) {
   trackGa4Event("landing_cta_click", { cta });
@@ -43,8 +42,8 @@ export default function LandingPage() {
                 iPhone beta · invite only
               </span>
               <h1>
-                Read the way{" "}
-                <span className={styles.lime}>people really talk.</span>
+                Learn the language{" "}
+                <span className={styles.lime}>people really speak.</span>
               </h1>
               <p className={styles.heroSub}>
                 Short stories with word-synced narration and tap-to-translate
@@ -89,12 +88,12 @@ export default function LandingPage() {
               What you get
             </span>
             <h2 className={styles.sectionTitle}>
-              Read, listen, look up{" "}
+              Stories, audio, vocab{" "}
               <span className={styles.lime}>in one tap.</span>
             </h2>
             <p className={styles.sectionLead}>
-              No streaks. No pop-quizzes. Just stories and the quietest help
-              you&apos;ve ever had reading them.
+              No streaks. No pop-quizzes. Just everyday language,
+              the quietest help you&apos;ve ever had inside a story.
             </p>
           </div>
 
@@ -109,8 +108,8 @@ export default function LandingPage() {
               </div>
               <h4>Word-synced audio</h4>
               <p>
-                Every word lights up while it&apos;s read aloud. Slow the
-                narration down without distortion.
+                Every word lights up as you hear it. Slow the narration down
+                without distortion.
               </p>
             </div>
             <div className={styles.feat}>
@@ -133,7 +132,7 @@ export default function LandingPage() {
                   <path d="M12 7v5l3 2" />
                 </svg>
               </div>
-              <h4>Read at your pace</h4>
+              <h4>Set your own pace</h4>
               <p>
                 0.5× to 1.5× with the pitch kept natural. Slow hard paragraphs,
                 breeze through easy ones.
@@ -213,7 +212,7 @@ export default function LandingPage() {
               onClick={() => track("cta_final_start_reading")}
               className={`${styles.btn} ${styles.btnPrimary}`}
             >
-              Start reading free
+              Get started free
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
@@ -243,7 +242,6 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
-      <SignUpIncentiveBar />
     </div>
   );
 }

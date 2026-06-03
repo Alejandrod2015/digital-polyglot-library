@@ -610,9 +610,12 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   // Time adverbials & conversational anchors
   "al mediodía","a tiempo","esta tarde","esta noche","ahora mismo",
   "por la mañana","por la tarde","por la noche","anoche","mediodía",
-  "primera vez","próxima vez","muchos años","mes pasado","día anterior",
-  "por ahora","ya no","ya está","ya es el momento","sin falta",
-  "tres horas","llevamos así","tiempo correcto","luz suave",
+  "primera vez","próxima vez","próxima semana","la próxima semana",
+  "esta semana","esta vez","muchos años","cuarenta años","mes pasado",
+  "día anterior","por ahora","ya no","ya está","ya es el momento",
+  "sin falta","tres horas","llevamos así","tiempo correcto","luz suave",
+  "cada jueves","cada semana","cada día","cada domingo","cada lunes",
+  "primer día","desde siempre","hace años","desde niños","fin de semana",
 
   // Conversational courtesy / fillers
   "no te preocupes","en serio","tal vez","por eso","trato hecho",
@@ -620,6 +623,9 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "disculpe","disculpen","pásale","marchando","ya","ahora",
   "exactamente","exacto","exacta","excusa","excusas",
   "tilo","mate","café","té","leche",
+  "buenos días","buenas tardes","buenas noches","buen día",
+  "blanco y negro","en tres partes","en dos partes","casi vacía",
+  "casi vacío","casi lista","casi listo","casi termino",
 
   // LATAM affectionate / address
   "mija","mijo","ustedes","ustedes","querido","querida","linda","lindo",

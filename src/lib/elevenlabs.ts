@@ -103,9 +103,15 @@ function classifyAudioTag(
 export const DEFAULT_AMBIENT_VOLUME = 0.10;
 
 // Tempo applied to every narrator track via ffmpeg `atempo` (preserves pitch).
-// 0.80 = 80% of original speed. Aligns with the project audio default
-// documented in user memory ("Audio defaults: 0.80x + 7% ambient").
-export const DEFAULT_NARRATION_TEMPO = 0.80;
+// 0.94 = 94% of original speed. History:
+//   - 2026-05-15: 0.80 (initial validated default).
+//   - 2026-06-01 morning: bumped to 0.856 per "aumenta 7%".
+//   - 2026-06-01 afternoon: bumped again to 0.94 per "dale 10% más rápido".
+//     0.856 × 1.10 ≈ 0.9416, rounded to 0.94. Near-natural speed, still slower
+//     than 1.0x so A1 learners can parse without lag.
+// atempo single chain valid range is [0.5, 2.0]; 0.94 is well within safe range
+// for quality (no formant distortion).
+export const DEFAULT_NARRATION_TEMPO = 0.94;
 
 // Approved native-German voices for multi-character dialogue stories. All IDs
 // were verified against the ElevenLabs shared library with langs=de:standard.
@@ -134,6 +140,16 @@ export const GERMAN_DIALOGUE_VOICES = {
   enniah:    "WHaUUVTDq47Yqc9aDbkH", // F middle-aged, native DE, warm — primary female
   michael:   "KSEa36Zojh7KLdIkb8Qu", // M young, native DE, "youthful + calm narrative" — preferred for teen/younger characters.
   eleonore:  "8SdTD5IMgFKT1jp7JbPC", // F middle-aged, native DE, mature narrator — "Frau" roles
+  // ── Round 2 (June 2026) — added for German conversational beta cast
+  // (Berlin / München / Hamburg). NOTE: preview volume on these 4 is a
+  // notch lower than the original 4; consider extra loudnorm headroom
+  // when rendering with these voices.
+  ela_calm:  "e3bIMyLemdwvh75g9Vpt", // F young, "Dry & Calm", narrative_story register
+  ela_warm:  "SJJe86Va82zRzg6zi2dX", // F young, "Empathetic & Warm", conversational
+  jane:      "hOBDmVrVUuqtp1I3KsIq", // F older-feeling (metadata: middle-aged), "Calm & Grounded", soft conversational
+  felix:     "IQuqJPpP2hMHjjDY2QTe", // M middle-aged, "Confident", conversational — alt to Moritz timbre
+  marius:    "JDXBO1etYlVlJZRMoYzH", // M young, professional, narrative_story — alt to Michael (round 3 pick)
+  daniel:    "wcqN36SUOZ0EhToc2OIu", // M older-feeling (metadata: middle-aged), "Calm & Real UGC", conversational
 } as const;
 
 // Approved Spanish (LATAM) voices for multi-character dialogue stories. IDs
@@ -165,16 +181,60 @@ export const GERMAN_DIALOGUE_VOICES = {
 //     — "yells / too loud" in v3 + stability=0.5 context. Rejected 2026-05-29 on
 //     Una pizca de canela Lucía audition.
 //
+// Old male LATAM audition (2026-06-01, hueco "abuelo"):
+//   - Benjamin "80lPKtzJMPh1vjYMUgwe" (Deep Smooth Rich, tagged mexican / es-MX)
+//     — Mislabeled. Usuario lo escuchó (2026-06-01) y dijo "es español de España".
+//     Recordatorio estructural: el accent tag de ElevenLabs lo pone el creador
+//     y no se verifica. Ver feedback_elevenlabs_accent_unreliable.md.
+//
+// Rioplatense audition (2026-06-01, El control no funciona Beatriz + Mateo):
+//   - Andrea "CDrROTHWaKY3O9vD3F3t" (Calm Balanced Didactic, argentine F middle-aged)
+//     — Rejected 2026-06-01 on Beatriz audition.
+//   - Argie "arMlPrYpUo1XH5F2zM6R" (Warm Argentine Female, F middle-aged)
+//     — Rejected 2026-06-01 on Beatriz audition.
+//   - Zeta "8Nz6hV5TPv151P6ZNEBV" (Calm Clear Authoritative, argentine F middle-aged)
+//     — Rejected 2026-06-01 on Beatriz audition.
+//   - Lisandro "nnTkGIqnpqpdIrWbRAtF" (Mellow and Suave, argentine M young)
+//     — Rejected 2026-06-01 on Mateo audition.
+//   - Bautista "Hw05DSJqSd5iZ9AswbcE" (Smooth and Articulated, argentine M young)
+//     — Rejected 2026-06-01 on Mateo audition.
+//   - Facundo "qnvusyIjzlSoWYJ0C2Nm" (Rhythmic and Expressive, argentine M young)
+//     — Rejected 2026-06-01 on Mateo audition.
+//   - Eduardo "hWlKHuPiFgEVc4rtnFfm" (Natural Warm Professional, argentine M middle-aged)
+//     — Rejected 2026-06-01 on Mateo audition.
+//   - Lucas "xcAUMhbpNX2WRGsuhjFy" (Solemn and calm, argentine M middle-aged)
+//     — Rejected 2026-06-01 on Mateo audition.
+//
 // SPAIN-ONLY voices (do NOT use for LATAM stories; reserve for future Spain
 // catalog when we add Iberian Spanish journeys):
 //   - Isabel "56yWreYpxeKhcXjVscuF" (Nurturing and poised, tagged latin american
 //     but actually Spain-Spanish accent — distinción c/z=θ, l alveolar). Strong
 //     candidate for future Spain F middle-aged roles. Identified 2026-05-29.
 export const SPANISH_DIALOGUE_VOICES = {
-  angela:  "Po9nYFo9ScA7odSuQLIW", // F middle-aged, latin american, mature warm — narrator (poetry/documentary register)
-  horacio: "57D8YIbQSuE3REDPO6Vm", // M middle-aged, colombian, natural+warm "safe & reliable" — older paternal male (don Hernán-type)
-  luna:    "1ZhMG5ZZgJ6XpkOrB8Az", // F young, colombian, conversational warm friendly — adult-young female (Marina-type)
-  alma:    "3ttovAt5bt3Kk38UGIob", // F middle-aged, latin american (neutral), conversational warm — adult female sibling/peer (Lucía-type)
+  // Core LATAM neutral + Colombian (original cast)
+  angela:    "Po9nYFo9ScA7odSuQLIW", // F middle-aged, latin american, mature warm — narrator (poetry/documentary register)
+  horacio:   "57D8YIbQSuE3REDPO6Vm", // M middle-aged, colombian, natural+warm "safe & reliable" — older paternal male (don Hernán-type)
+  luna:      "1ZhMG5ZZgJ6XpkOrB8Az", // F young, colombian, conversational warm friendly — adult-young female (Marina-type)
+  alma:      "3ttovAt5bt3Kk38UGIob", // F middle-aged, latin american (neutral), conversational warm — adult female sibling/peer
+  // Argentine / rioplatense
+  nieve:     "nAFxIJGj7iSTeltygOfB", // F old, argentine, "Argentine grandmother" candid + determined + pleasant — abuela mayor
+  paola:     "PoLFkTquRWtbexdwW3Xa", // F middle-aged, argentine, professional neutral versatile — madre/tía rioplatense ~45-55
+  mariana:   "9rvdnhrYoXoUt4igKpBw", // F middle-aged, argentine, intimate + assertive, deep clear emotional — peso emocional rioplatense
+  renzo:     "acHf5gp7AGOY30tJjvD4", // M young, argentine, bold + urban, modern street-smart — hombre rioplatense joven ~25-35
+  roma:      "6Mo5ciGH5nWiQacn5FYk", // F middle-aged, argentine, casual conversational — peer rioplatense (added 2026-06-01 round)
+  // Mexican (added 2026-06-01)
+  ana_sofia: "ewn5JTa3lNPY8QVuZJi6", // F young, mexican, casual conversational — joven adulta MX
+  cindy:     "pBabaO9WxfrjXjKADHma", // F young, mexican, neutral conversational — alternativa joven MX
+  emilio:    "DV9FrN0pQkPWIoxW5dvT", // M middle-aged, mexican, calm informative — papá/tío MX
+  patricio:  "77K94gl6ZCRVTHG8Gi1w", // M middle-aged, mexican, pleasant social-media — alternativa MX middle
+  tom:       "p1Q3ihQuPjyyENa1RGtl", // M young, mexican, kind sincere calm — hijo/teen MX
+  // Chilean (added 2026-06-01)
+  catalina:  "6Gr4AVmTax1pMJO0lHRK", // F young, chilean, professional conversational — joven adulta CL
+  angela_cl: "prblQcKOdF08ozhxP2mk", // F middle-aged, chilean, calm warm — mamá CL
+  vicente:   "6WgXEzo1HGn3i7ilT4Fh", // M young, chilean, confident — joven adulto CL
+  // Peruvian (added 2026-06-01)
+  elena:     "dyTONAae6PhdRb3hMKPM", // F middle-aged, peruvian, versátil natural cercana — mamá Lima
+  joselo:    "UK00oAtGYBrHBUbesfMv", // M middle-aged, peruvian, confident informative — papá/tío Lima
 } as const;
 
 // v3 voice WHITELIST. v2 is the safe default for every voice; v3 is

@@ -1618,20 +1618,27 @@ export async function validateGeneratedStory(
   // rejected at save time, not flagged for human review. The proper-noun
   // detector strips known places + day/month names; remaining false
   // positives are rare enough that fail-on-mismatch is the right default.
-  const synProperNouns = extractProperNouns(parsed.synopsis);
-  const bodySpeakerSet = new Set(speakerNames.map((n) => n.toLowerCase()));
-  const missingFromBody = synProperNouns.filter(
-    (n) => !bodySpeakerSet.has(n.toLowerCase())
-  );
-  if (synProperNouns.length > 0) {
-    checks.push({
-      id: "names-match",
-      label: "Named characters in synopsis appear in body",
-      status: missingFromBody.length === 0 ? "pass" : "fail",
-      detail: missingFromBody.length
-        ? `In synopsis only: ${missingFromBody.join(", ")}`
-        : undefined,
-    });
+  //
+  // GERMAN exception: extractProperNouns is Spanish-tuned and assumes
+  // capitalized mid-sentence words are proper nouns. German capitalizes
+  // EVERY noun, so this check would fail every German synopsis. Skip
+  // for German until a language-aware extractor exists.
+  if ((context.language ?? "").toUpperCase() !== "DE") {
+    const synProperNouns = extractProperNouns(parsed.synopsis);
+    const bodySpeakerSet = new Set(speakerNames.map((n) => n.toLowerCase()));
+    const missingFromBody = synProperNouns.filter(
+      (n) => !bodySpeakerSet.has(n.toLowerCase())
+    );
+    if (synProperNouns.length > 0) {
+      checks.push({
+        id: "names-match",
+        label: "Named characters in synopsis appear in body",
+        status: missingFromBody.length === 0 ? "pass" : "fail",
+        detail: missingFromBody.length
+          ? `In synopsis only: ${missingFromBody.join(", ")}`
+          : undefined,
+      });
+    }
   }
 
   // ─── Cross-story checks ─────────────────────────────────
@@ -1724,6 +1731,36 @@ export async function validateGeneratedStory(
       "sobrina","primo","prima","abuelo","abuela","vecino","vecina","amigo","amiga",
       // Common A1 atmosphere / noise that recurs
       "ruido","silencio","luz","sombra","aire","sol",
+      // ── German equivalents (added June 2026 for German conversational
+      // beta — same cast-recurrence pattern as LATAM). Universal A1
+      // conversational fillers + recurring setting/cast nouns.
+      "vielleicht","gern","gerne","manchmal","danke","bitte","hallo",
+      "wirklich","natürlich","tschüss","entschuldigung",
+      "tür","fenster","tasse","tassen","kanne","topf","schrank","tisch",
+      "stuhl","bett","sofa","kuchen","brot","kaffee","tee","wasser","milch",
+      "suppe","teller","löffel","gabel","messer",
+      "hand","kopf","arm","bein","auge","ohr","mund","mütze",
+      "tante","onkel","vater","mutter","mama","papa","kind","sohn","tochter",
+      "bruder","schwester","oma","opa","großmutter","großvater","freund","freundin",
+      "nachbar","nachbarin","herr","frau","fräulein","damen","herren",
+      "öffnen","öffnet","schließen","schließt","gehen","geht","kommen","kommt",
+      "sitzen","sitzt","stehen","steht","setzen","setzt","sehen","sieht","hören","hört",
+      "trinken","trinkt","essen","isst","sprechen","spricht","sagen","sagt",
+      "fragen","fragt","antworten","antwortet","wissen","weiß","kennen","kennt",
+      "haben","hat","sein","ist","werden","wird","bleiben","bleibt",
+      "park","straße","platz","markt","laden","geschäft","haus","wohnung",
+      "apfelkuchen","käsekuchen","postkarte","buch","bücher","klingeln","klingelt",
+      "sommer","winter","frühling","herbst","stück","schreiben","schrieb","geschrieben",
+      "gießen","gießt","lachen","lacht","backen","backt","gebacken","decken","deckt",
+      "erzählen","erzählt","hängen","hängt","anschauen","schaut","schaute","angeschaut",
+      // ── Round 3 — German conversational beta polish (June 2026)
+      "salz","pfeffer","zitrone","zucker","mehl","butter","sahne","milch",
+      "flur","küche","papier","marmeladenglas","kartoffel","kartoffeln","lauch",
+      "kantine","tablett","brötchen","bäckerei","schluck","forelle","kabeljau",
+      "halten","hält","gehalten","wohnen","wohnt","gewohnt","wohnst","wohne",
+      "schauen","schaut","schaute","lächeln","lächelt","gelächelt",
+      "füllen","füllt","gefüllt","erkennen","erkennt","erkannt",
+      "genau","trotzdem","langsam","schnell","leise","laut",
     ]);
     const usedLemmas = new Set<string>();
     for (const e of existing) for (const l of e.vocabLemmas) usedLemmas.add(l.toLowerCase());
