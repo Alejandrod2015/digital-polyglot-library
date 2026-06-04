@@ -478,7 +478,7 @@ export function OnboardingFlow({
                         ) : null}
                         {comingSoon ? (
                           <View style={styles.comingSoonPill}>
-                            <Text style={styles.comingSoonPillText}>PRÓXIMAMENTE</Text>
+                            <Text style={styles.comingSoonPillText}>COMING SOON</Text>
                           </View>
                         ) : null}
                         {!comingSoon && order === 1 && selectedKeys.length > 1 ? (

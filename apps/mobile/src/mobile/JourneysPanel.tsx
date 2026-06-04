@@ -588,7 +588,7 @@ export function JourneysPanel({
                     </View>
                     {comingSoon ? (
                       <View style={styles.comingSoonPill}>
-                        <Text style={styles.comingSoonPillText}>PRÓXIMAMENTE</Text>
+                        <Text style={styles.comingSoonPillText}>COMING SOON</Text>
                       </View>
                     ) : (
                       <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.4)" />
