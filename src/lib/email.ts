@@ -1,6 +1,11 @@
 // /src/lib/email.ts
 import { Resend } from "resend";
 import { getBookTitle } from "@/lib/books";
+import {
+  LIFECYCLE_BUILDERS,
+  type LifecycleKind,
+  type LifecycleData,
+} from "@/lib/emails/lifecycle";
 
 /**
  * Confirmation sent after someone applies to the beta program at /beta.
@@ -123,6 +128,67 @@ export async function sendBetaConfirmationEmail({
     return "sent";
   } catch (err) {
     console.error("❌ Error sending beta confirmation email:", err);
+    return "failed";
+  }
+}
+
+/**
+ * Welcome email sent the instant a new user signs up (Clerk user.created).
+ * Lifecycle/onboarding email, single opt-in. One single CTA: drive the user
+ * to finish their first story, which is DPL's activation (aha) moment.
+ * Uses the lifecycle design system (src/lib/emails/*).
+ */
+export async function sendWelcomeEmail({
+  to,
+  data,
+}: {
+  to: string;
+  data?: LifecycleData;
+}): Promise<"sent" | "skipped" | "failed"> {
+  return sendLifecycleEmail({ kind: "welcome", to, data });
+}
+
+/**
+ * Generic sender for any of the 9 lifecycle emails. The triggers (webhook,
+ * lifecycle cron) call this with the right `kind` and dynamic `data`.
+ * Single opt-in, transactional+lifecycle tag. A Resend failure returns
+ * "failed" and never throws (callers wrap signup-critical paths anyway).
+ */
+export async function sendLifecycleEmail({
+  kind,
+  to,
+  data,
+}: {
+  kind: LifecycleKind;
+  to: string;
+  data?: LifecycleData;
+}): Promise<"sent" | "skipped" | "failed"> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.EMAIL_FROM;
+  const replyTo = "support@digitalpolyglot.com";
+
+  if (!apiKey || !from) {
+    console.warn(`⚠️ RESEND_API_KEY or EMAIL_FROM not defined, skipping ${kind} email`);
+    return "skipped";
+  }
+
+  const { subject, html, text } = LIFECYCLE_BUILDERS[kind](data);
+
+  try {
+    const resend = new Resend(apiKey);
+    await resend.emails.send({
+      from,
+      to,
+      subject,
+      html,
+      text,
+      replyTo,
+      tags: [{ name: "type", value: "lifecycle" }, { name: "category", value: kind }],
+    });
+    console.log(`📧 Lifecycle email (${kind}) sent to ${to}`);
+    return "sent";
+  } catch (err) {
+    console.error(`❌ Error sending ${kind} email:`, err);
     return "failed";
   }
 }

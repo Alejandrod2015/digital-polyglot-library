@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Email Design Brief · Digital Polyglot</title>
+<style>
+  :root {
+    --ink: #11203a; --ink-soft: #44546f; --muted: #8190a6;
+    --line: #e3e8f0; --navy: #051834; --gold: #fcd34d; --gold-deep: #a9781a;
+    --sky-ink: #0b6fa4; --bg-card: #fbfcfe;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 11mm 12mm; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); font-size: 9px; line-height: 1.45; }
+  .wrap { display: flex; flex-direction: column; gap: 8px; }
+
+  .masthead { display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 2.5px solid var(--navy); padding-bottom: 6px; }
+  .masthead .kicker { font-size: 7px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 2px; }
+  .masthead h1 { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.05; color: var(--navy); }
+  .masthead .meta { text-align: right; font-size: 7px; color: var(--muted); line-height: 1.4; }
+
+  .intro { font-size: 8.6px; color: var(--ink-soft); line-height: 1.5; }
+  .intro strong { color: var(--ink); }
+
+  /* Brand strip */
+  .brand { display: flex; align-items: center; gap: 12px; background: var(--navy); border-radius: 8px; padding: 8px 12px; flex-wrap: wrap; }
+  .brand .sw { display: flex; align-items: center; gap: 5px; }
+  .brand .chip { width: 13px; height: 13px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.18); }
+  .brand .lbl { font-size: 7.4px; color: #cdd8ea; }
+  .brand .lbl b { color: #fff; font-weight: 700; }
+  .brand .mark { width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg,#fcd34d,#7dd3fc); color: var(--navy); font-weight: 800; font-size: 10px; line-height: 22px; text-align: center; }
+  .brand .sep { width: 1px; height: 18px; background: rgba(255,255,255,0.14); }
+  .brand .note { font-size: 7.4px; color: #9fb0c8; line-height: 1.4; flex: 1; min-width: 140px; }
+  .brand .note b { color: var(--gold); }
+
+  .sec-head { display: flex; align-items: center; gap: 8px; margin: 2px 0 1px; }
+  .sec-head h2 { font-size: 7.6px; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; color: var(--navy); white-space: nowrap; }
+  .sec-head .rule { flex: 1; height: 1px; background: var(--line); }
+  .sec-head .note { font-size: 7px; color: var(--muted); }
+
+  .rows { display: flex; flex-direction: column; gap: 5px; }
+  .row { display: grid; grid-template-columns: 16px 1fr; gap: 8px; background: var(--bg-card); border: 1px solid var(--line); border-radius: 7px; padding: 6px 10px; }
+  .row .n { width: 16px; height: 16px; border-radius: 5px; background: var(--navy); color: #fff; font-weight: 800; font-size: 8.5px; display: flex; align-items: center; justify-content: center; }
+  .row .top { display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap; }
+  .row .name { font-size: 9.6px; font-weight: 800; color: var(--ink); }
+  .row .trigger { font-size: 7px; color: var(--muted); font-family: "SF Mono", ui-monospace, Menlo, monospace; }
+  .row .purpose { font-size: 7.6px; color: var(--muted); margin-left: auto; }
+  .row .line { font-size: 8.4px; color: var(--ink-soft); margin-top: 2px; line-height: 1.5; }
+  .row .line b { color: var(--ink); font-weight: 700; }
+  .row .headline { color: var(--navy); font-weight: 800; }
+  .cta { display: inline-block; background: var(--gold); color: var(--navy); font-weight: 800; font-size: 7.8px; padding: 2px 8px; border-radius: 7px; white-space: nowrap; }
+  .mod { font-size: 7px; color: var(--sky-ink); }
+
+  .footer { border-top: 1px solid var(--line); padding-top: 5px; display: flex; justify-content: space-between; font-size: 6.6px; color: var(--muted); margin-top: 2px; }
+  code { font-family: "SF Mono", ui-monospace, Menlo, monospace; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="kicker">Digital Polyglot · Lifecycle Emails</div>
+      <h1>Email Design Brief</h1>
+    </div>
+    <div class="meta">2026-06-04 · input para Design<br>7 emails · copy EN definitivo</div>
+  </div>
+
+  <p class="intro">Brief para los mockups de la secuencia de lifecycle. <strong>1 CTA por email</strong>, north-star: terminar la primera historia y volver. Usa nuestra marca (abajo); más allá de eso, libertad de diseño.</p>
+
+  <div class="brand">
+    <div class="mark">DP</div>
+    <div class="sep"></div>
+    <div class="sw"><span class="chip" style="background:#07203f"></span><span class="lbl"><b>Navy</b> #051834 canvas</span></div>
+    <div class="sw"><span class="chip" style="background:#fcd34d"></span><span class="lbl"><b>Gold</b> #fcd34d CTA</span></div>
+    <div class="sw"><span class="chip" style="background:#7dd3fc"></span><span class="lbl"><b>Sky</b> #7dd3fc links</span></div>
+    <div class="sep"></div>
+    <div class="note">Tipografía <b>Nunito</b> (H1 weight 900, tight). Dark-first, cálido y editorial. CTA dorado con texto navy. Brand mark + hairline gold→sky.</div>
+  </div>
+
+  <div>
+    <div class="sec-head"><h2>La secuencia</h2><div class="rule"></div><span class="note">disparo por evento + ramas conductuales</span></div>
+    <div class="rows">
+
+      <div class="row">
+        <div class="n">1</div>
+        <div>
+          <div class="top"><span class="name">Welcome</span><span class="trigger">user.created · instante</span><span class="purpose">activación</span></div>
+          <div class="line"><b>Subject:</b> Welcome to Digital Polyglot 👋 · <span class="headline">“Welcome 👋 — finish your first story, it’s where everything clicks.”</span> · <span class="cta">Open your first story →</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="n">2</div>
+        <div>
+          <div class="top"><span class="name">Activation nudge</span><span class="trigger">+24h · 1ª sin terminar</span><span class="purpose">volver</span></div>
+          <div class="line"><b>Subject:</b> Your first story takes about 4 minutes · <span class="headline">“It clicks faster than you think.”</span> · <span class="cta">Finish your first story →</span> <span class="mod">· cover + % leído</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="n">3</div>
+        <div>
+          <div class="top"><span class="name">Celebration</span><span class="trigger">on story_completed (1ª)</span><span class="purpose">hábito</span></div>
+          <div class="line"><b>Subject:</b> You finished your first story 🎉 · <span class="headline">“That’s how it works.”</span> · <span class="cta">Read your next story →</span> <span class="mod">· stat chips: words · minutes</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="n">4</div>
+        <div>
+          <div class="top"><span class="name">How it works</span><span class="trigger">día 3 · educativo</span><span class="purpose">método</span></div>
+          <div class="line"><b>Subject:</b> Why reading beats memorizing · <span class="headline">“Words stick when they live in a story.”</span> · <span class="cta">Try it on a new story →</span> <span class="mod">· tip tap-a-word</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="n">5</div>
+        <div>
+          <div class="top"><span class="name">Weekly recap</span><span class="trigger">día 7</span><span class="purpose">progreso · email visual clave</span></div>
+          <div class="line"><b>Subject:</b> Your first week, in numbers · <span class="headline">“Look how far you’ve come.”</span> · <span class="cta">Keep your rhythm →</span> <span class="mod">· bloque stats: stories · words · days active</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="n">6</div>
+        <div>
+          <div class="top"><span class="name">Next story / identity</span><span class="trigger">día 10-14</span><span class="purpose">identidad</span></div>
+          <div class="line"><b>Subject:</b> You’re becoming a reader in your new language · <span class="headline">“A few stories down. Many to go.”</span> · <span class="cta">Choose your next story →</span> <span class="mod">· 2-3 story cards</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="n">7</div>
+        <div>
+          <div class="top"><span class="name">Win-back · 3 pasos</span><span class="trigger">inactivo 30-45d</span><span class="purpose">re-enganche · tono humano</span></div>
+          <div class="line"><b>7a Reminder:</b> “Your stories are still here.” <span class="cta">Open your library →</span></div>
+          <div class="line"><b>7b Value:</b> “New stories since you’ve been gone.” <span class="cta">See what’s new →</span> <span class="mod">· showcase historias nuevas</span></div>
+          <div class="line"><b>7c Sunset:</b> “We’ll stop here — your stories stay saved.” <span class="cta">Keep me in →</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div>
+    <div class="sec-head"><h2>Handoff</h2><div class="rule"></div></div>
+    <p class="intro">Entrega: mockup por email (560px) + componentes reutilizables (header, CTA, bloque de stats, story card) con specs en hex/px. Me pasas specs + assets y lo traduzco a builders en <code>src/lib/email.ts</code>.</p>
+  </div>
+
+  <div class="footer"><span>Copy y triggers: <code>docs/onboarding-automation-research.md</code> · plan en <code>/studio/onboarding</code></span><span>Digital Polyglot</span></div>
+
+</div>
+</body>
+</html>

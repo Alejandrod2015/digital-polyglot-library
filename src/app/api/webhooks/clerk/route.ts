@@ -1,6 +1,7 @@
 import { Webhook } from "svix";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { sendWelcomeEmail } from "@/lib/email";
 
 type UserDeletedEvent = {
   type: "user.deleted";
@@ -101,6 +102,16 @@ export async function POST(req: Request) {
         },
       });
       console.log(`✅ Signup tracked for ${userId}`);
+
+      // Instant welcome email (lifecycle onboarding). Wrapped so a Resend
+      // failure can never break signup tracking or the webhook 200.
+      if (email) {
+        try {
+          await sendWelcomeEmail({ to: email });
+        } catch (mailErr) {
+          console.error("❌ Welcome email threw (signup still tracked):", mailErr);
+        }
+      }
     }
 
     return NextResponse.json({ received: true });
