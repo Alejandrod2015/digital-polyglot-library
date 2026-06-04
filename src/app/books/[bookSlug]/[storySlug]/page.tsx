@@ -3,6 +3,7 @@ import VocabPanel from "@/components/VocabPanel";
 import Image from "next/image";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import Player from "@/components/Player";
+import OnboardingPlayCoachmark from "@/components/OnboardingPlayCoachmark";
 import StoryAccessInfo from "./StoryAccessInfo";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 import StoryClientGate from "./StoryClientGate";
@@ -278,6 +279,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
       {/* Player fijo visible en viewport global */}
       {hasStoryAudio ? (
         <div className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
+          <OnboardingPlayCoachmark />
           <Player
             src={story.audio}
             bookSlug={book.slug}

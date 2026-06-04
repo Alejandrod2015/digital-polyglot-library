@@ -796,6 +796,10 @@ export function ReaderScreen(args: {
       | "audio_complete",
     payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
   ) => void;
+  /** One-time coachmark pointing at the player, shown when the user lands
+   *  here straight from onboarding so they know to press play. */
+  showOnboardingPlayHint?: boolean;
+  onDismissOnboardingPlayHint?: () => void;
 }) {
   const {
     book,
@@ -822,6 +826,8 @@ export function ReaderScreen(args: {
     isFavoriteWord,
     onToggleFavoriteWord,
     onTrackReaderEvent,
+    showOnboardingPlayHint = false,
+    onDismissOnboardingPlayHint,
   } = args;
   const blocks = useMemo(() => toBlocks(story.text), [story.text]);
   const vocab = story.vocab ?? [];
@@ -1963,6 +1969,58 @@ export function ReaderScreen(args: {
                 })()}
               </View>
             </View>
+          </Pressable>
+        </View>
+      ) : null}
+
+      {showOnboardingPlayHint ? (
+        <View
+          pointerEvents="box-none"
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            bottom: playerDockHeight + 10,
+            alignItems: "center",
+            paddingHorizontal: 16,
+            zIndex: 50,
+          }}
+        >
+          <Pressable
+            onPress={onDismissOnboardingPlayHint}
+            accessibilityRole="button"
+            accessibilityLabel="Dismiss tip"
+            style={{
+              maxWidth: 340,
+              backgroundColor: "#2563eb",
+              borderRadius: 16,
+              paddingVertical: 12,
+              paddingHorizontal: 16,
+              shadowColor: "#000",
+              shadowOpacity: 0.2,
+              shadowRadius: 8,
+              shadowOffset: { width: 0, height: 4 },
+              elevation: 6,
+            }}
+          >
+            <Text style={{ color: "#fff", fontSize: 14, fontWeight: "700" }}>
+              This is your free story this week.
+            </Text>
+            <Text style={{ color: "#fff", fontSize: 13, marginTop: 2, opacity: 0.95 }}>
+              Press play below to start listening — tap to dismiss.
+            </Text>
+            <View
+              style={{
+                position: "absolute",
+                bottom: -6,
+                left: "50%",
+                marginLeft: -6,
+                width: 12,
+                height: 12,
+                backgroundColor: "#2563eb",
+                transform: [{ rotate: "45deg" }],
+              }}
+            />
           </Pressable>
         </View>
       ) : null}

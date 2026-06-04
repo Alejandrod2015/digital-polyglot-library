@@ -54,6 +54,7 @@ import { ReaderScreen } from "./ReaderScreen";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PracticeOrbit, type PracticeModeKey as OrbitModeKey } from "./PracticeOrbit";
+import { PracticeSpeaking } from "./PracticeSpeaking";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { LanguageFlag } from "./LanguageFlag";
@@ -1880,6 +1881,9 @@ export function MobileLibraryShell(args: {
   // filtros globales de explore.
   const [expandedCollectionKey, setExpandedCollectionKey] = useState<string | null>(null);
   const [selection, setSelection] = useState<ReaderSelection | null>(null);
+  // One-time coachmark: true only when the reader was opened straight from
+  // onboarding, so ReaderScreen points the user at the play button once.
+  const [showOnboardingPlayHint, setShowOnboardingPlayHint] = useState(false);
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [selectedBookTab, setSelectedBookTab] = useState<BookDetailTab>("stories");
   const [selectedBookStoryQuery, setSelectedBookStoryQuery] = useState("");
@@ -1929,6 +1933,7 @@ export function MobileLibraryShell(args: {
   // seconds so the glow is attention-grabbing but not permanent.
   const [highlightedNextStoryId, setHighlightedNextStoryId] = useState<string | null>(null);
   const [speakingPracticePromptId, setSpeakingPracticePromptId] = useState<string | null>(null);
+  const [speakingPracticeOpen, setSpeakingPracticeOpen] = useState(false);
   const [playingPracticeClipId, setPlayingPracticeClipId] = useState<string | null>(null);
   const [playingHqPracticeClipId, setPlayingHqPracticeClipId] = useState<string | null>(null);
   // Id del ejercicio context cuyo audio de reveal terminó de sonar.
@@ -11114,6 +11119,29 @@ export function MobileLibraryShell(args: {
             onPickSkill={(mode) => void openPracticeMode(mode, true)}
             emptyState={favoriteWords.length === 0}
           />
+          {effectivePlan === "polyglot" ? (
+            <Pressable
+              onPress={() => setSpeakingPracticeOpen(true)}
+              accessibilityRole="button"
+              accessibilityLabel="Open Speak with AI"
+              testID="qa-practice-speaking-entry"
+              style={({ pressed }) => [
+                styles.speakingEntryCard,
+                pressed ? styles.speakingEntryCardPressed : null,
+              ]}
+            >
+              <View style={styles.speakingEntryIcon}>
+                <Feather name="mic" size={20} color="#f8c15c" />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.speakingEntryTitle}>Speak with AI</Text>
+                <Text style={styles.speakingEntrySubtitle}>
+                  Answer one question out loud
+                </Text>
+              </View>
+              <Feather name="chevron-right" size={20} color="#9cb0c9" />
+            </Pressable>
+          ) : null}
         </>
       )}
     </>
@@ -16017,7 +16045,12 @@ export function MobileLibraryShell(args: {
           resolvedCoverUrl={offlineStory?.localCoverUri ?? selection.resolvedCoverUrl ?? null}
           cachedWordTimingsRaw={offlineStory?.wordTimingsRaw ?? null}
           sessionToken={sessionToken}
-          onBack={() => setSelection(null)}
+          showOnboardingPlayHint={showOnboardingPlayHint}
+          onDismissOnboardingPlayHint={() => setShowOnboardingPlayHint(false)}
+          onBack={() => {
+            setShowOnboardingPlayHint(false);
+            setSelection(null);
+          }}
           canGoPrevious={Boolean(previousStory)}
           canGoNext={Boolean(nextStory)}
           onPreviousStory={
@@ -16216,6 +16249,27 @@ export function MobileLibraryShell(args: {
     );
   }
 
+  if (speakingPracticeOpen) {
+    const speakingLanguage =
+      activeJourney?.language ??
+      activeJourneyLanguage ??
+      preferences.targetLanguages[0] ??
+      settingsPrimaryLanguage ??
+      "Spanish";
+    const speakingLevel = preferences.preferredLevel || "Intermediate";
+    return (
+      <View style={{ flex: 1, paddingTop: 32 }}>
+        <PracticeSpeaking
+          baseUrl={mobileConfig.apiBaseUrl}
+          token={sessionToken ?? null}
+          language={speakingLanguage}
+          level={speakingLevel}
+          onClose={() => setSpeakingPracticeOpen(false)}
+        />
+      </View>
+    );
+  }
+
   const practiceSessionRendered = renderPracticeSessionView();
   if (practiceSessionRendered) {
     return practiceSessionRendered;
@@ -16352,10 +16406,18 @@ export function MobileLibraryShell(args: {
           // Set activeScreen BEFORE the await: when the gate flips
           // (onboardingSurveyCompletedAt set inside commitOnboarding)
           // and the shell re-renders without the onboarding overlay,
-          // activeScreen is already "journey" — so the user lands
-          // directly there without a one-frame Home flash.
+          // activeScreen is already set — so the user lands directly
+          // there without a one-frame Home flash.
           setActiveScreen("home");
           setOnboardingOverride(null);
+          // Drop them straight into their free story (Story of the Week)
+          // with the player ready, plus a one-time play coachmark, instead
+          // of leaving them on the Home grid to hunt for something to play.
+          const spotlight = getSpotlightSelection();
+          if (spotlight) {
+            openSelection(spotlight);
+            setShowOnboardingPlayHint(true);
+          }
           await commitOnboarding(payload);
         }}
         onCancel={
@@ -22216,6 +22278,42 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 32,
     paddingBottom: 22,
+  },
+  speakingEntryCard: {
+    marginTop: 16,
+    marginHorizontal: 20,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    backgroundColor: "#152844",
+    borderColor: "#2d476b",
+    borderWidth: 1,
+    borderRadius: 16,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+  },
+  speakingEntryCardPressed: {
+    opacity: 0.85,
+    transform: [{ scale: 0.99 }],
+  },
+  speakingEntryIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: "rgba(248,193,92,0.18)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  speakingEntryTitle: {
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "900",
+  },
+  speakingEntrySubtitle: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    fontWeight: "600",
+    marginTop: 2,
   },
   practiceSessionShellCompact: {
     paddingHorizontal: 16,

@@ -70,6 +70,46 @@ function createPrismaClient() {
         // el promise ya está resuelto.
         await connectPromise;
 
+        // Invariante: en CUALQUIER write de JourneyStory que setee
+        // `vocab`, derivamos `vocabCount = vocab.length`. Así el campo
+        // no puede desincronizarse del array, sin importar el call-site
+        // (hay ~44). Writes que no tocan vocab quedan intactos.
+        if (model === "JourneyStory") {
+          const writeOps = new Set([
+            "create",
+            "update",
+            "upsert",
+            "createMany",
+            "updateMany",
+          ]);
+          if (writeOps.has(operation)) {
+            const a = args as {
+              data?: unknown;
+              create?: unknown;
+              update?: unknown;
+            };
+            const deriveCount = (data: unknown) => {
+              if (
+                data &&
+                typeof data === "object" &&
+                Array.isArray((data as { vocab?: unknown }).vocab)
+              ) {
+                (data as { vocabCount?: number }).vocabCount = (
+                  data as { vocab: unknown[] }
+                ).vocab.length;
+              }
+            };
+            if (operation === "upsert") {
+              deriveCount(a.create);
+              deriveCount(a.update);
+            } else if (operation === "createMany" && Array.isArray(a.data)) {
+              a.data.forEach(deriveCount);
+            } else {
+              deriveCount(a.data);
+            }
+          }
+        }
+
         const MAX_ATTEMPTS = 4;
         let lastError: unknown;
         for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {

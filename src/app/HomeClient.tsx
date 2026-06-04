@@ -3,6 +3,7 @@
 import { useMemo, useEffect, useRef, useState } from "react";
 import { useAuth, useUser } from "@clerk/nextjs";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
@@ -338,6 +339,7 @@ export default function HomeClient({
 }: Props) {
   const { user, isLoaded } = useUser();
   const { userId, isLoaded: isAuthLoaded } = useAuth();
+  const router = useRouter();
 
   const [continueEmblaRef, continueEmblaApi] = useEmblaCarousel({ align: "start", dragFree: true });
   const [booksEmblaRef, booksEmblaApi] = useEmblaCarousel({ align: "start", dragFree: true });
@@ -1821,6 +1823,27 @@ export default function HomeClient({
     });
     if (!success) return;
     setSurveyStep(0);
+    // Drop the new user straight into the story their plan can actually
+    // play (free → the weekly story, the only one unlocked), with the
+    // player ready, instead of leaving them on the Home grid where they'd
+    // open a gated story and hit the paywall before ever pressing play.
+    const playSlug = plan === "free" ? featuredWeekSlug : (featuredDaySlug ?? featuredWeekSlug);
+    let storyDest: string | null = null;
+    if (playSlug) {
+      for (const book of Object.values(books)) {
+        if (book.stories.some((s) => s.slug === playSlug)) {
+          // `welcome=onboarding` triggers a one-time coachmark on the story
+          // page that explains why they landed here and points at play.
+          storyDest = `/books/${book.slug}/${playSlug}?welcome=onboarding`;
+          break;
+        }
+      }
+    }
+    if (storyDest) {
+      router.push(storyDest);
+      return;
+    }
+    // No featured story available: fall back to the home tour.
     setTourStep(0);
   };
 
