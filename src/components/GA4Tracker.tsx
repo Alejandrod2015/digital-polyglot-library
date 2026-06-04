@@ -15,12 +15,29 @@ declare global {
   }
 }
 
-export default function GA4Tracker() {
+export default function GA4Tracker({
+  requiresConsentOptIn = true,
+}: {
+  // EEA/UK/CH: analytics only fire after explicit accept. Elsewhere
+  // (e.g. US, the bulk of blog traffic) they fire by default unless the
+  // visitor has opted out. Defaults to opt-in — the privacy-safe fallback.
+  requiresConsentOptIn?: boolean;
+}) {
   const { user, isLoaded } = useUser();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const consentKey = getCookieConsentKey();
-  const [hasAnalyticsConsent, setHasAnalyticsConsent] = useState(false);
+  const [consentChoice, setConsentChoice] = useState<string | null>(() =>
+    typeof window !== "undefined"
+      ? window.localStorage.getItem(getCookieConsentKey())
+      : null
+  );
+  // In opt-in jurisdictions analytics require an explicit "accepted".
+  // Elsewhere they are granted by default and only suppressed if the
+  // visitor explicitly rejected.
+  const hasAnalyticsConsent =
+    consentChoice === "accepted" ||
+    (!requiresConsentOptIn && consentChoice !== "rejected");
   const isInternalUser =
     Boolean(user?.publicMetadata?.internalUser) ||
     Boolean(user?.publicMetadata?.isInternal) ||
@@ -35,7 +52,7 @@ export default function GA4Tracker() {
     if (typeof window === "undefined") return;
 
     const syncConsent = () => {
-      setHasAnalyticsConsent(window.localStorage.getItem(consentKey) === "accepted");
+      setConsentChoice(window.localStorage.getItem(consentKey));
     };
 
     syncConsent();

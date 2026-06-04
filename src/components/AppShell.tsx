@@ -20,12 +20,16 @@ type AppShellProps = {
   children: React.ReactNode;
   currentVersion: string;
   initialIsSignedIn: boolean;
+  // EEA/UK/CH visitors require explicit opt-in before analytics load;
+  // resolved server-side from geo (see src/lib/geo.ts).
+  requiresConsentOptIn: boolean;
 };
 
 export default function AppShell({
   children,
   currentVersion,
   initialIsSignedIn,
+  requiresConsentOptIn,
 }: AppShellProps) {
   const pathname = usePathname() ?? "";
   const { isSignedIn: clientIsSignedIn, isLoaded } = useAuth();
@@ -55,9 +59,9 @@ export default function AppShell({
       <>
         {children}
         <Suspense fallback={null}>
-          <GA4Tracker />
+          <GA4Tracker requiresConsentOptIn={requiresConsentOptIn} />
         </Suspense>
-        <CookieConsentBanner />
+        <CookieConsentBanner requiresConsentOptIn={requiresConsentOptIn} />
       </>
     );
   }
@@ -96,7 +100,7 @@ export default function AppShell({
       </>
 
       <Suspense fallback={null}>
-        <GA4Tracker />
+        <GA4Tracker requiresConsentOptIn={requiresConsentOptIn} />
       </Suspense>
       <Suspense fallback={null}>
         <NavigationTimingTracker />
@@ -105,7 +109,7 @@ export default function AppShell({
       <main className={mainClassName}>
         {children}
       </main>
-      <CookieConsentBanner />
+      <CookieConsentBanner requiresConsentOptIn={requiresConsentOptIn} />
 
       <>
         <InstallAppHint />

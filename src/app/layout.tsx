@@ -3,10 +3,12 @@
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
+import { headers } from "next/headers";
 import { Inter, JetBrains_Mono, Nunito } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import { clerkAppearance } from "@/lib/clerkAppearance";
+import { isConsentOptInCountry } from "@/lib/geo";
 import AppShell from "@/components/AppShell";
 import VisitLogger from "@/components/VisitLogger";
 
@@ -83,6 +85,12 @@ export default async function RootLayout({
   const { userId } = await auth();
   const initialIsSignedIn = Boolean(userId);
 
+  // Geo-gate analytics consent: EEA/UK/CH require explicit opt-in, the rest
+  // (mostly US blog traffic) defaults to analytics-on with opt-out. Vercel
+  // resolves the visitor country at the edge into x-vercel-ip-country.
+  const country = (await headers()).get("x-vercel-ip-country");
+  const requiresConsentOptIn = isConsentOptInCountry(country);
+
   return (
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
@@ -105,6 +113,7 @@ export default async function RootLayout({
           <AppShell
             currentVersion={currentVersion}
             initialIsSignedIn={initialIsSignedIn}
+            requiresConsentOptIn={requiresConsentOptIn}
           >
             {children}
           </AppShell>

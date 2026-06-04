@@ -23,7 +23,13 @@ export function getCookieConsentKey() {
   return CONSENT_KEY;
 }
 
-export default function CookieConsentBanner() {
+export default function CookieConsentBanner({
+  requiresConsentOptIn = true,
+}: {
+  // Only opt-in jurisdictions (EEA/UK/CH) get the blocking consent banner.
+  // Elsewhere analytics are on by default, so the banner is suppressed.
+  requiresConsentOptIn?: boolean;
+}) {
   const [consent, setConsent] = useState<ConsentState>(null);
   const [ready, setReady] = useState(false);
 
@@ -33,6 +39,8 @@ export default function CookieConsentBanner() {
   }, []);
 
   if (!ready || consent) return null;
+  // Non-opt-in jurisdictions (e.g. US): analytics run by default, no banner.
+  if (!requiresConsentOptIn) return null;
 
   return (
     <div className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-4xl rounded-3xl border border-white/10 bg-[#081a31]/95 p-4 shadow-[0_24px_80px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:p-5">
