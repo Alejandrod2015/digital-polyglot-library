@@ -46,7 +46,20 @@ export default function AppShell({
     pathname.startsWith("/sign-up");
 
   if (isMarketingView) {
-    return <>{children}</>;
+    // Marketing views (guest home, /beta, /blog/*) render their own chrome
+    // and skip the app shell. They still need analytics + the consent
+    // banner: without these, the MDX blog (cut over from WordPress on
+    // 2026-05-16) had zero GA4 coverage, so organic blog traffic vanished
+    // from the dashboard starting 2026-05-17.
+    return (
+      <>
+        {children}
+        <Suspense fallback={null}>
+          <GA4Tracker />
+        </Suspense>
+        <CookieConsentBanner />
+      </>
+    );
   }
 
   if (isAuthFlowView) {
