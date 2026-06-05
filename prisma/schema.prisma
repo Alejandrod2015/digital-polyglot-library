@@ -304,6 +304,13 @@ model JourneyStory {
   /// from `voiceId` (which is the narration voice for the full story).
   practiceVoiceId      String?
   dialogueSpec         Json?
+  /// Single source of truth for the story's characters: name, role, age band
+  /// and gender. Both the cover prompt (character ages/genders + faithful
+  /// names) and the voice-selection pipeline read this so the two modalities
+  /// never drift. Shape: { characters: { name, role, ageBand, gender,
+  /// present }[] }. Migrated 2026-06-05 (migration
+  /// 20260605160000_add_journey_story_cast); seeded via src/lib/storyCast.ts.
+  cast                 Json?
   audioQaStatus        String?
   audioQaScore         Float?
   audioQaNotes         String?
