@@ -128,6 +128,16 @@ interface PlayerProps {
   };
 }
 
+// Static pseudo-random bar heights for the waveform (deterministic so they
+// don't flicker between renders). Fast variation + a slow swell for an organic,
+// real-audio look. 0.18..1.0 of the track height.
+const WAVEFORM_BARS = Array.from({ length: 90 }, (_, i) => {
+  const a = Math.abs(Math.sin((i + 1) * 12.9898) * 43758.5453);
+  const fast = a - Math.floor(a); // 0..1 jitter
+  const slow = (Math.sin((i + 1) * 0.5) + 1) / 2; // 0..1 swell
+  return Math.min(1, 0.18 + fast * 0.62 + slow * 0.2);
+});
+
 export default function Player({
   src,
   bookSlug,
@@ -640,18 +650,37 @@ export default function Player({
     <div className="relative w-full rounded-t-xl border-t border-[var(--player-border-top)] bg-[var(--bg-player)] px-4 py-3 text-[var(--foreground)] shadow-2xl backdrop-blur md:ml-64 md:w-[calc(100%-16rem)]">
       <audio ref={audioRef} src={resolvedSrc} preload="metadata" />
 
-      {/* barra de progreso */}
-      <div className="flex items-center gap-2 text-sm text-[var(--muted)] mb-2">
-        <span className="w-10 text-right">{formatTime(progress)}</span>
-        <input
-          type="range"
-          min={0}
-          max={duration || 0}
-          value={progress}
-          onChange={handleSeek}
-          className="w-full accent-blue-500 h-1.5"
-        />
-        <span className="w-10">{formatTime(duration)}</span>
+      {/* waveform de progreso */}
+      <div className="flex items-center gap-3 text-sm text-[var(--muted)] mb-2">
+        <span className="w-10 text-right tabular-nums">{formatTime(progress)}</span>
+        <div className="relative flex-1 h-9 flex items-center">
+          <div className="flex items-center justify-between w-full h-full overflow-hidden">
+            {WAVEFORM_BARS.map((h, i) => {
+              const played =
+                duration > 0 && (i + 0.5) / WAVEFORM_BARS.length <= progress / duration;
+              return (
+                <div
+                  key={i}
+                  style={{ height: `${Math.round(h * 100)}%` }}
+                  className={`w-[3px] shrink-0 rounded-full transition-colors ${
+                    played ? "bg-blue-500" : "bg-[var(--muted)] opacity-40"
+                  }`}
+                />
+              );
+            })}
+          </div>
+          {/* transparent range on top: keeps native drag / click / keyboard seek */}
+          <input
+            type="range"
+            min={0}
+            max={duration || 0}
+            value={progress}
+            onChange={handleSeek}
+            aria-label="Seek"
+            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+          />
+        </div>
+        <span className="w-10 tabular-nums">{formatTime(duration)}</span>
       </div>
 
       {/* controles compactos */}
@@ -667,31 +696,34 @@ export default function Player({
 
         <button
           onClick={() => skip(-15)}
-          className="relative p-1.5 rounded hover:bg-[var(--card-bg-hover)]"
+          className="relative p-1.5 rounded-full text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+          aria-label="Rewind 15 seconds"
         >
-          <RotateCcw className="w-6 h-6" />
-          <span className="absolute inset-0 flex items-center justify-center text-[8px] font-bold">
+          <RotateCcw className="w-7 h-7" strokeWidth={1.75} />
+          <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold mt-[1px]">
             15
           </span>
         </button>
 
         <button
           onClick={togglePlay}
-          className="p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white mx-2"
+          className="p-4 rounded-full bg-blue-500 hover:bg-blue-600 text-white mx-2 shadow-[0_0_26px_-2px_rgba(59,130,246,0.65)] transition-all"
+          aria-label={isPlaying ? "Pause" : "Play"}
         >
           {isPlaying ? (
-            <Pause className="w-5 h-5" />
+            <Pause className="w-6 h-6" fill="currentColor" strokeWidth={0} />
           ) : (
-            <Play className="w-5 h-5" />
+            <Play className="w-6 h-6 translate-x-[1px]" fill="currentColor" strokeWidth={0} />
           )}
         </button>
 
         <button
           onClick={() => skip(15)}
-          className="relative p-1.5 rounded hover:bg-[var(--card-bg-hover)]"
+          className="relative p-1.5 rounded-full text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
+          aria-label="Forward 15 seconds"
         >
-          <RotateCw className="w-6 h-6" />
-          <span className="absolute inset-0 flex items-center justify-center text-[8px] font-bold">
+          <RotateCw className="w-7 h-7" strokeWidth={1.75} />
+          <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold mt-[1px]">
             15
           </span>
         </button>
@@ -709,11 +741,11 @@ export default function Player({
         <div className="ml-2 relative">
           <button
             onClick={() => setShowSpeedMenu((v) => !v)}
-            className="bg-[var(--chip-bg)] border border-[var(--chip-border)] text-[var(--foreground)] text-sm rounded px-2 py-1 flex items-center gap-1 hover:bg-[var(--card-bg-hover)]"
+            className="bg-[var(--chip-bg)] border border-[var(--chip-border)] text-[var(--foreground)] text-sm font-semibold rounded-xl px-3.5 py-1.5 flex items-center gap-1.5 hover:bg-[var(--card-bg-hover)] transition-colors"
           >
             {speed.toFixed(2).replace(/\.00$/, "")}x
             <ChevronUp
-              className={`w-3 h-3 transition-transform ${
+              className={`w-3.5 h-3.5 transition-transform ${
                 showSpeedMenu ? "rotate-180" : ""
               }`}
             />

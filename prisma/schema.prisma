@@ -644,6 +644,22 @@ model UserMetric {
   @@map("dp_user_metrics_v1")
 }
 
+model EmailPreference {
+  id              String   @id @default(cuid())
+  email           String   @unique
+  userId          String?
+  // Per-category opt-in flags (default = subscribed). Transactional emails
+  // (beta confirmation, claim) never check these.
+  progress        Boolean  @default(true) // celebration, weekly recap, identity
+  reminders       Boolean  @default(true) // activation nudge, win-back series
+  unsubscribedAll Boolean  @default(false) // master kill switch (one-click unsubscribe)
+  updatedAt       DateTime @updatedAt
+  createdAt       DateTime @default(now())
+
+  @@index([userId])
+  @@map("dp_email_preferences_v1")
+}
+
 model ContinueListeningEntry {
   id               String   @id @default(cuid())
   userId           String

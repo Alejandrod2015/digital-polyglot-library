@@ -161,12 +161,6 @@ export const ONBOARDING_PLAN: OnboardingPlan = {
       kind: "celebration",
     },
     {
-      trigger: "Día 3",
-      email: "Educativo: cómo funciona el vocabulario-en-contexto / tip de uso",
-      cta: "Practica el vocabulario",
-      kind: "educational",
-    },
-    {
       trigger: "Día 7",
       email: "Progress recap: historias + vocab + racha (si aplica), loss aversion suave",
       cta: "Mantén el ritmo",
@@ -174,8 +168,8 @@ export const ONBOARDING_PLAN: OnboardingPlan = {
     },
     {
       trigger: "Día 10-14",
-      email: "Hábito / siguiente meta: progreso hacia identidad",
-      cta: "Elige tu próxima historia",
+      email: "Identidad: «ya eres lector», umbral cruzado (antes/después) + siguiente historia",
+      cta: "Sigue leyendo",
       kind: "educational",
     },
     {

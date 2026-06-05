@@ -48,6 +48,16 @@ export default function AppShell({
     pathname.startsWith("/mobile-auth") ||
     pathname.startsWith("/sign-in") ||
     pathname.startsWith("/sign-up");
+  // Standalone pages opened from an inbox (often without a session): no app
+  // chrome, the page brings its own full-screen layout.
+  const isBareView = pathname.startsWith("/account/emails");
+
+  if (isBareView) {
+    // Standalone pages opened from an inbox (often without a session): no app
+    // chrome and no analytics/consent banner; the page brings its own
+    // full-screen layout.
+    return <>{children}</>;
+  }
 
   if (isMarketingView) {
     // Marketing views (guest home, /beta, /blog/*) render their own chrome

@@ -6,6 +6,7 @@ import {
   type LifecycleKind,
   type LifecycleData,
 } from "@/lib/emails/lifecycle";
+import { shouldSendLifecycle, createEmailToken } from "@/lib/emailPreferences";
 
 /**
  * Confirmation sent after someone applies to the beta program at /beta.
@@ -172,7 +173,18 @@ export async function sendLifecycleEmail({
     return "skipped";
   }
 
-  const { subject, html, text } = LIFECYCLE_BUILDERS[kind](data);
+  // Respect granular opt-outs (fail-open: a DB error never blocks a send).
+  if (!(await shouldSendLifecycle(kind, to))) {
+    console.log(`🔕 Lifecycle email (${kind}) skipped: ${to} opted out`);
+    return "skipped";
+  }
+
+  // Signed token so unsubscribe / manage links work without a logged-in session.
+  const token = createEmailToken(to);
+  const appBase = process.env.APP_BASE_URL ?? "https://digitalpolyglot.com";
+  const unsubscribeUrl = `${appBase}/api/email/unsubscribe?token=${encodeURIComponent(token)}`;
+
+  const { subject, html, text } = LIFECYCLE_BUILDERS[kind]({ ...data, unsubscribeToken: token });
 
   try {
     const resend = new Resend(apiKey);
@@ -183,6 +195,11 @@ export async function sendLifecycleEmail({
       html,
       text,
       replyTo,
+      // RFC 8058 one-click unsubscribe (required by Gmail/Yahoo for bulk senders).
+      headers: {
+        "List-Unsubscribe": `<${unsubscribeUrl}>, <mailto:${replyTo}?subject=unsubscribe>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      },
       tags: [{ name: "type", value: "lifecycle" }, { name: "category", value: kind }],
     });
     console.log(`📧 Lifecycle email (${kind}) sent to ${to}`);

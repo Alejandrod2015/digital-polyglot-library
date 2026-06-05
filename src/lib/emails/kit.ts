@@ -50,11 +50,25 @@ export function logoImg(assetBase: string = EMAIL_ASSET_BASE, height = 24): stri
 }
 
 export function cta(label: string, href: string, block = false): string {
-  // Table-based button to force Gmail to respect background color
-  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+  // Table-based button, centered via align="center" + margin auto (text-align
+  // on the parent does NOT center a block-level table).
+  return `<table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin:0 auto;">
     <tr>
-      <td style="background:#fcd34d !important;background-color:#fcd34d !important;border-radius:16px;padding:18px 32px;text-align:center;">
+      <td align="center" style="background:#fcd34d !important;background-color:#fcd34d !important;border-radius:16px;padding:18px 32px;text-align:center;">
         <a href="${href}" style="color:#000 !important;font-family:${DPE.font};font-weight:900;font-size:18px;letter-spacing:-0.01em;text-decoration:none;display:block;white-space:nowrap;">${label}</a>
+      </td>
+    </tr>
+  </table>`;
+}
+
+/** Secondary button: a filled sky-tinted pill, lower weight than the gold
+ * primary cta() but with real presence. Border-radius + border live on the <a>
+ * (Gmail drops border-radius on a <td> that has a border). */
+export function ctaSecondary(label: string, href: string): string {
+  return `<table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin:0 auto;">
+    <tr>
+      <td align="center" style="border-radius:999px;">
+        <a href="${href}" style="display:inline-block;background:#103a5c !important;background-color:#103a5c !important;border:1.5px solid ${DPE.sky};border-radius:999px;padding:15px 32px;color:${DPE.sky} !important;font-family:${DPE.font};font-weight:800;font-size:16px;letter-spacing:-0.01em;text-decoration:none;white-space:nowrap;">${label}</a>
       </td>
     </tr>
   </table>`;
@@ -109,17 +123,31 @@ export function statTile({
 }): string {
   const col = tone === "sky" ? DPE.sky : tone === "green" ? DPE.green : DPE.gold;
   const unitHtml = unit ? `<span style="font-size:18px;margin-left:2px;">${esc(unit)}</span>` : "";
-  return `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:16px;padding:20px 14px;text-align:center;">
+  return `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:16px;padding:20px 14px;text-align:center;margin:0 auto;">
     <div style="font-family:${DPE.font};font-weight:900;font-size:38px;line-height:1;letter-spacing:-0.03em;color:${col};">${esc(n)}${unitHtml}</div>
     <div style="margin-top:9px;font-family:${DPE.font};font-weight:800;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:${DPE.muted};">${esc(label)}</div>
   </div>`;
 }
 
 export function statChip({ n, label }: { n: string; label: string }): string {
-  return `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:12px;padding:12px 16px;">
+  return `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:12px;padding:12px 16px;margin:0 auto;display:inline-block;">
     <span style="font-family:${DPE.font};font-weight:900;font-size:22px;color:${DPE.gold};letter-spacing:-0.02em;">${esc(n)}</span>
     <span style="font-family:${DPE.font};font-weight:700;font-size:13px;color:${DPE.fgSoft};margin-left:10px;">${esc(label)}</span>
   </div>`;
+}
+
+/** A wrapping cloud of word pills: gives a big "words learned" number a tangible
+ * face. Words only (no meanings) — the point is volume, not teaching. */
+export function vocabChips(words: string[]): string {
+  const pills = words
+    .map(
+      (w) =>
+        `<span style="display:inline-block;background:rgba(125,211,252,0.10);border:1px solid rgba(125,211,252,0.22);color:${DPE.fg};font-family:${DPE.font};font-weight:800;font-size:14px;padding:7px 13px;border-radius:999px;margin:0 7px 9px 0;">${esc(
+          w
+        )}</span>`
+    )
+    .join("");
+  return `<div style="text-align:left;">${pills}</div>`;
 }
 
 export function progressBar(pct: number): string {
@@ -129,6 +157,77 @@ export function progressBar(pct: number): string {
 }
 
 /* ── story cards ──────────────────────────────────────────── */
+
+/** Story preview: simulates reading experience in app (text + highlight + progress) */
+export function storyPreview({
+  title,
+  level,
+  meta,
+  teaser,
+  pct,
+  pctLabel,
+}: {
+  title: string;
+  level?: string;
+  meta?: string;
+  teaser?: string;
+  pct?: number;
+  pctLabel?: string;
+}): string {
+  const metaRow = [
+    level ? badge(level) : "",
+    meta ? `<span style="font-family:${DPE.font};font-weight:700;font-size:11.5px;color:${DPE.faint};white-space:nowrap;margin-left:8px;">${esc(meta)}</span>` : "",
+  ].join("");
+  const progressHtml =
+    typeof pct === "number"
+      ? `<div style="margin-top:14px;">${progressBar(pct)}<div style="margin-top:7px;font-family:${DPE.font};font-weight:800;font-size:11.5px;color:${DPE.gold};">${esc(pctLabel || "")}</div></div>`
+      : "";
+
+  return `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:16px;padding:18px;box-shadow:0 18px 40px -22px rgba(0,0,0,0.7);">
+    <div style="margin-bottom:12px;">${metaRow}</div>
+    <div style="font-family:${DPE.font};font-weight:900;font-size:16px;color:${DPE.fg};letter-spacing:-0.015em;margin-bottom:12px;">${esc(title)}</div>
+    <div style="font-family:${DPE.font};font-weight:700;font-size:14px;line-height:1.6;color:${DPE.fgSoft};margin-bottom:14px;">
+      ${teaser ? `<p style="margin:0;">${esc(teaser)}</p>` : ""}
+      <p style="margin:8px 0 0;opacity:0.7;">Read the full story for ${pct ? Math.ceil(100 - pct) + '%' : 'more'}…</p>
+    </div>
+    ${progressHtml}
+  </div>`;
+}
+
+/** Words learned: a clean word→meaning glossary (in English so an A1 learner
+ * gets clear proof of what they picked up). The word sits in a gold pill, the
+ * meaning beside it. */
+export function vocabGlossary({
+  glossary,
+  more,
+}: {
+  glossary: { word: string; meaning: string }[];
+  more?: number;
+}): string {
+  const rows = glossary
+    .map(
+      (g, i) => `<tr>
+        <td style="padding:${i === 0 ? "0" : "12px"} 14px 12px 0;text-align:left;vertical-align:top;white-space:nowrap;">
+          <span style="display:inline-block;font-family:${DPE.font};font-weight:900;font-size:15px;color:${DPE.goldInk};background:${DPE.gold};padding:4px 11px;border-radius:7px;">${esc(g.word)}</span>
+        </td>
+        <td style="padding:${i === 0 ? "0" : "12px"} 0 12px 0;text-align:left;vertical-align:middle;">
+          <span style="font-family:${DPE.font};font-weight:600;font-size:14px;line-height:1.45;color:${DPE.fgSoft};">${esc(g.meaning)}</span>
+        </td>
+      </tr>`
+    )
+    .join("");
+
+  const moreLine =
+    more && more > 0
+      ? `<div style="margin-top:16px;padding-top:14px;border-top:1px solid ${DPE.hair};font-family:${DPE.font};font-weight:700;font-size:12.5px;color:${DPE.muted};">and ${more} more, saved to your words.</div>`
+      : "";
+
+  return `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:16px;padding:22px 22px 20px;text-align:left;box-shadow:0 18px 40px -22px rgba(0,0,0,0.7);">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;">${rows}</table>
+    ${moreLine}
+  </div>`;
+}
+
 
 export function storyCardH({
   cover,
@@ -256,9 +355,9 @@ export function cols(cells: string[], gap = 12): string {
   let tds = "";
   cells.forEach((c, i) => {
     if (i > 0) tds += `<td width="${gap}" style="width:${gap}px;font-size:0;line-height:0;">&nbsp;</td>`;
-    tds += `<td width="${w}%" valign="top" style="vertical-align:top;width:${w}%;">${c}</td>`;
+    tds += `<td width="${w}%" valign="top" style="vertical-align:top;width:${w}%;text-align:center;">${c}</td>`;
   });
-  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;"><tr>${tds}</tr></table>`;
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;margin:0 auto;"><tr>${tds}</tr></table>`;
 }
 
 /* ── footer + shell ───────────────────────────────────────── */
@@ -267,11 +366,16 @@ function footer(
   align: "center" | "left",
   note: string | undefined,
   baseUrl: string,
-  assetBase: string
+  assetBase: string,
+  unsubscribeToken?: string
 ): string {
   const justify = align === "center" ? "center" : "left";
-  const manageUrl = `${baseUrl}/account/emails`;
-  const unsubUrl = `${baseUrl}/account/emails?unsubscribe=1`;
+  // Token-bearing links work without a logged-in session (clicked from inbox).
+  const tokenQs = unsubscribeToken ? `?token=${encodeURIComponent(unsubscribeToken)}` : "";
+  const manageUrl = `${baseUrl}/account/emails${tokenQs}`;
+  const unsubUrl = unsubscribeToken
+    ? `${baseUrl}/api/email/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`
+    : `${baseUrl}/account/emails?unsubscribe=1`;
   const noteText = note || "You're receiving this as part of your Digital Polyglot account.";
   return `<tr><td style="padding:28px 44px 34px;text-align:${justify};">
     <div style="height:1px;background:${DPE.hair};margin-bottom:22px;"></div>
@@ -294,6 +398,7 @@ export type ShellOpts = {
   footerAlign?: "center" | "left";
   baseUrl: string;
   assetBase?: string;
+  unsubscribeToken?: string;
 };
 
 /** Full email document: navy canvas, 560 centered, blocks + footer. */
@@ -304,6 +409,7 @@ export function shell({
   footerAlign = "center",
   baseUrl,
   assetBase = EMAIL_ASSET_BASE,
+  unsubscribeToken,
 }: ShellOpts): string {
   const body = blocks.map((b) => `<tr><td style="padding:0;">${b}</td></tr>`).join("");
   return `<!DOCTYPE html>
@@ -325,10 +431,12 @@ body,-webkit-text-size-adjust{-webkit-text-size-adjust:100%;-ms-text-size-adjust
 <span style="display:none!important;visibility:hidden;opacity:0;color:transparent;height:0;width:0;overflow:hidden;">${esc(preheader)}</span>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${DPE.navy}" style="width:100%;background:${DPE.navy};">
   <tr><td align="center" style="padding:0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${DPE.navy}" class="wrap" style="width:100%;max-width:560px;background:${navyBg};background-color:${DPE.navy};font-family:${DPE.font};">
+    <!--[if mso]><table role="presentation" width="560" align="center" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+    <table role="presentation" align="center" width="560" cellpadding="0" cellspacing="0" bgcolor="${DPE.navy}" class="wrap" style="width:560px;max-width:560px;margin:0 auto;background:${navyBg};background-color:${DPE.navy};font-family:${DPE.font};">
       ${body}
-      ${footer(footerAlign, footerNote, baseUrl, assetBase)}
+      ${footer(footerAlign, footerNote, baseUrl, assetBase, unsubscribeToken)}
     </table>
+    <!--[if mso]></td></tr></table><![endif]-->
   </td></tr>
 </table>
 </body></html>`;
