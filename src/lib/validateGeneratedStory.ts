@@ -189,13 +189,16 @@ const COGNATES_BY_LANG: Record<string, string[]> = {
     "telefon", "apfel", "optimist", "chance", "computer", "familie",
     "restaurant", "park", "auto", "bus", "hotel", "adresse", "information",
     "foto", "musik", "konzert", "pizza", "spaghetti", "hamburger",
-    // English-native transparent DE cognates (added 2026-06-03). English-
-    // native A1 learners decode these at sight — including them as vocab
-    // wastes a slot. Conservative: only words that are identical or one-
-    // letter-off and readable instantly. Borderline cases (Mutter, Vater,
-    // Bruder, Schwester, Wasser, Haus, Buch) stay teachable.
+    // English-native transparent DE cognates. English-native A1 learners
+    // decode these at sight — including them as vocab wastes a slot.
+    // Identical / one-letter-off / direct consonant-shift readable
+    // (V↔F, B↔P). After audit 2026-06-04 added Mann, Buch, Winter,
+    // Hunger, Sommer + family terms Mutter/Vater/Bruder.
     "markt", "fisch", "hand", "person", "glas", "gläser", "papier",
     "ball", "name", "arm", "finger", "lampe", "kamera",
+    "mann", "buch", "bücher", "winter", "hunger", "sommer",
+    "mutter", "vater", "bruder",
+    "perfekt", // identical English-German cognate
   ],
   ES: [
     "importante", "normal", "social", "problema", "idea", "momento",
@@ -1051,15 +1054,37 @@ export async function validateGeneratedStory(
     // vasos. Gracias.") or rephrasing as a question / declarative.
     // Spec rule lives in docs/story-quality-spec.md §3 "Bare
     // imperatives (HARD BAN in dialogue)". This check enforces it.
-    if (titleLangCode === "ES") {
+    if (titleLangCode === "ES" || titleLangCode === "DE") {
+      // German imperative verbs (du-form). Match at the start of the
+      // last sentence of a dialogue turn, when sentence is ≤4 words and
+      // ends in period. Includes both bare ("Sag das.") and Sie-form
+      // ("Sagen Sie das.") variants — both render with uptalk in TTS.
+      // Negative lookahead `(?!\s+ich\b)` excludes "Sage ich", "Mache
+      // ich", "Komme ich" — German V2-order declaratives where the verb
+      // looks imperative but is actually 1sg present with inverted
+      // subject. False-positive guard.
+      const GERMAN_IMPERATIVE_HEAD_RE =
+        /^(Sag|Sage|Sagen\s+Sie|Schau|Schaue|Schauen\s+Sie|Geh|Gehe|Gehen\s+Sie|Komm|Komme|Kommen\s+Sie|Mach|Mache|Machen\s+Sie|Hör|Höre|Hören\s+Sie|Schreib|Schreibe|Schreiben\s+Sie|Koch|Koche|Kochen\s+Sie|Trink|Trinke|Trinken\s+Sie|Iss|Essen\s+Sie|Nimm|Nehmen\s+Sie|Gib|Geben\s+Sie|Frag|Frage|Fragen\s+Sie|Warte|Warten\s+Sie|Bleib|Bleibe|Bleiben\s+Sie|Leg|Lege|Legen\s+Sie|Hol|Hole|Holen\s+Sie|Bring|Bringe|Bringen\s+Sie|Öffne|Öffnen\s+Sie|Schließ|Schließe|Schließen\s+Sie|Vergiss|Vergessen\s+Sie|Versuch|Versuche|Versuchen\s+Sie|Probier|Probiere|Probieren\s+Sie|Setz|Setze|Setzen\s+Sie|Steh|Stehe|Stehen\s+Sie|Stell|Stelle|Stellen\s+Sie|Hilf|Helfen\s+Sie|Glaub|Glaube|Glauben\s+Sie|Denk|Denke|Denken\s+Sie|Erzähl|Erzähle|Erzählen\s+Sie|Lies|Lesen\s+Sie|Pass|Passe|Passen\s+Sie\s+auf|Ruf|Rufe|Rufen\s+Sie\s+an)\b(?!\s+ich\b)/u;
       // Optional subject pronoun prefix ("Tú", "Usted") + imperative verb.
       // Spanish frequently fronts the subject pronoun for emphasis ("Tú
       // siéntate.", "Usted espere."); without (Tú|Usted)?\s* the regex
       // misses those even though TTS treats them as bare imperatives.
+      // Negative lookahead `(?!\s+(mí|ti|usted|...))` excludes "Para mí",
+      // "Para ti", "Para cuando vuelves" — "Para" used as preposition,
+      // not imperative of parar. Same false-positive guard as German.
       const SPANISH_IMPERATIVE_HEAD_RE =
-        /^(?:(?:Tú|Tu|Usted|Ustedes|Vosotros|Vosotras)\s+)?(Trae|Tráe|Pon|Pón|Mira|Mire|Espera|Espere|Ven|Venga|Dame|Deme|Toma|Tome|Saca|Saque|Abre|Abra|Cierra|Cierre|Lee|Lea|Habla|Hable|Ayuda|Ayúdame|Ayúdeme|Llama|Llame|Come|Coma|Bebe|Beba|Sigue|Siga|Para|Pare|Sube|Suba|Baja|Baje|Entra|Entre|Sal|Salga|Dale|Hazlo|Hazme|Dime|Anda|Ándale|Vete|Váyase|Pasa|Pase|Cuelga|Cuelgue|Coge|Coja|Agarra|Agarre|Busca|Busque|Lleva|Lleve|Deja|Deje|Quita|Quite|Apaga|Apague|Prende|Prenda|Enciende|Encienda|Cuenta|Cuente|Siéntate|Siéntese|Levántate|Levántese)\b/u;
+        /^(?:(?:Tú|Tu|Usted|Ustedes|Vosotros|Vosotras)\s+)?(Trae|Tráe|Pon|Pón|Mira|Mire|Espera|Espere|Ven|Venga|Dame|Deme|Toma|Tome|Saca|Saque|Abre|Abra|Cierra|Cierre|Lee|Lea|Habla|Hable|Ayuda|Ayúdame|Ayúdeme|Llama|Llame|Come|Coma|Bebe|Beba|Sigue|Siga|Para|Pare|Sube|Suba|Baja|Baje|Entra|Entre|Sal|Salga|Dale|Hazlo|Hazme|Dime|Anda|Ándale|Vete|Váyase|Pasa|Pase|Cuelga|Cuelgue|Coge|Coja|Agarra|Agarre|Busca|Busque|Lleva|Lleve|Deja|Deje|Quita|Quite|Apaga|Apague|Prende|Prenda|Enciende|Encienda|Cuenta|Cuente|Siéntate|Siéntese|Levántate|Levántese)\b(?!\s+(mí|ti|sí|no|usted|él|ella|nosotros|nosotras|ellos|ellas|cuando|que|qué|donde|dónde|los|las|nada|todo|siempre|nunca))/u;
+      // Multi-line paragraphs can pack several speaker turns without a
+      // blank line between them. Iterating PARAGRAPHS would only check
+      // the first turn of each; iterate each individual line that
+      // matches a speaker label so every dialogue turn is evaluated.
       const SPEAKER_LINE_RE = /^[\p{Lu}][\p{L}\s'-]*:\s+(.*)$/u;
-      const dialogueLines = paragraphs.filter((p) => SPEAKER_LINE_RE.test(p));
+      const dialogueLines: string[] = [];
+      for (const para of paragraphs) {
+        for (const line of para.split("\n")) {
+          if (SPEAKER_LINE_RE.test(line)) dialogueLines.push(line);
+        }
+      }
       const offenders: string[] = [];
       for (const line of dialogueLines) {
         const m = line.match(SPEAKER_LINE_RE);
@@ -1074,7 +1099,11 @@ export async function validateGeneratedStory(
         if (!last.endsWith(".")) continue; // questions and `!` are fine
         const words = last.replace(/[.…]+$/, "").split(/\s+/).filter(Boolean);
         if (words.length > 4) continue;
-        if (!SPANISH_IMPERATIVE_HEAD_RE.test(last)) continue;
+        const impRe =
+          titleLangCode === "ES"
+            ? SPANISH_IMPERATIVE_HEAD_RE
+            : GERMAN_IMPERATIVE_HEAD_RE;
+        if (!impRe.test(last)) continue;
         offenders.push(line);
       }
       if (offenders.length > 0) {
@@ -1354,8 +1383,8 @@ export async function validateGeneratedStory(
   const vocabCount = parsed.vocab.length;
   checks.push({
     id: "vocab-count",
-    label: "Vocab has 18-22 items",
-    status: vocabCount >= 18 && vocabCount <= 22 ? "pass" : "fail",
+    label: "Vocab has 20-25 items",
+    status: vocabCount >= 20 && vocabCount <= 25 ? "pass" : "fail",
     detail: `${vocabCount} items`,
   });
 
@@ -1576,7 +1605,7 @@ export async function validateGeneratedStory(
     }
   }
 
-  // Minimum multi-word expressions. A vocab list of 18-22 items with
+  // Minimum multi-word expressions. A vocab list of 20-25 items with
   // zero expressions is structurally lopsided — only atomic nouns get
   // taught, the learner never sees the lexicalized phrases that carry
   // everyday speech ("con prisa", "al fin", "otra vez", "que le vaya
@@ -1619,7 +1648,7 @@ export async function validateGeneratedStory(
       levelKey as SpanishCheckLevel,
     );
     // Threshold: ANY palabra fuera de nivel = fail. El vocab array es
-    // curado (18-22 items elegidos por la worker); cada item DEBE estar
+    // curado (20-25 items elegidos por la worker); cada item DEBE estar
     // al nivel target. No hay margen "1-2 palabras OK" — eso dejaba
     // pasar casos como "anafe" en un A1 con qa_pass. La regla es
     // estricta: cero tolerancia en vocab curado.

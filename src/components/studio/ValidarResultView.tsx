@@ -54,7 +54,7 @@ const PASS_LABELS: Record<string, string> = {
   "body-no-banned-tokens": "Cuerpo sin sonidos ni stage-directions",
   "arctype-valid": "arcType válido",
   "arctype-rotation": "arcType rota bien respecto a historias recientes",
-  "vocab-count": "Cantidad de vocab correcta (18-22)",
+  "vocab-count": "Cantidad de vocab correcta (20-25)",
   "vocab-definitions": "Definiciones bien formadas",
   "vocab-types": "Tipos de vocab válidos",
   "vocab-in-body": "Vocab presente en el cuerpo",
@@ -158,7 +158,7 @@ export function humanize(check: Check): Humanized {
     case "vocab-min-expressions":
       return {
         text: "El vocab tiene muy pocas expresiones multi-palabra",
-        hint: `Una lista de 18-22 items con cero expressions es estructuralmente desbalanceada: solo se enseñan sustantivos atómicos. Mínimo 2 items con type="expression". Las expresiones lexicalizadas ("con prisa", "al fin", "otra vez", "dar vuelta", "echar un ojo", "que le vaya bien") enseñan estructuras del habla cotidiana que los sustantivos sueltos no pueden. ${detail}`,
+        hint: `Una lista de 20-25 items con cero expressions es estructuralmente desbalanceada: solo se enseñan sustantivos atómicos. Mínimo 2 items con type="expression". Las expresiones lexicalizadas ("con prisa", "al fin", "otra vez", "dar vuelta", "echar un ojo", "que le vaya bien") enseñan estructuras del habla cotidiana que los sustantivos sueltos no pueden. ${detail}`,
       };
     case "opening-city-without-country":
       return {
@@ -242,7 +242,7 @@ export function humanize(check: Check): Humanized {
           };
     case "vocab-count":
       return {
-        text: `El vocab tiene ${numStr} items (debe ser 18 a 22)`,
+        text: `El vocab tiene ${numStr} items (debe ser 20 a 25)`,
         hint: "Agrega o quita items hasta el rango.",
       };
     case "vocab-definitions":

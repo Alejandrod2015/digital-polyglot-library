@@ -62,7 +62,7 @@ export type GenerateStoryParams = {
 };
 
 const MAX_GENERATION_ATTEMPTS = 3;
-const MIN_VOCAB_ITEMS = 15;
+const MIN_VOCAB_ITEMS = 20;
 
 function sanitizeGeneratedStoryText(input: string): string {
   return input
@@ -433,7 +433,11 @@ ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 ${titleClause}
 ${variantClause}
-Return 18-22 vocabulary items (aim for 20). After post-processing filters transparent cognates and invalid multi-word fragments, this yields roughly 15-17 keeper items — the target the app needs.
+Return 26-30 vocabulary items. After post-processing filters transparent cognates and invalid multi-word fragments, this must still yield at least 20 keeper items (the app's hard minimum; ideal final list is 20-25).
+Vocabulary serves TWO jobs and the list must cover both:
+1. Comprehension — gloss the words that would BLOCK this reader if unknown. At A1/A2 these are the rare, concrete, scene-specific nouns (e.g. cod, apron, lemon). Include them BECAUSE they are unfamiliar; that is the point of an in-story gloss. Do NOT skip a word just because it is low-frequency or only appears in this scene.
+2. Acquisition — high-frequency, transferable verbs/adjectives/connectors the learner reuses everywhere (to need, to take, important, nice, to pay).
+Aim for roughly one third concrete comprehension-blockers and two thirds transferable words. The only thing to exclude is "rare AND irrelevant": proper nouns (names, cities, neighborhoods, brands) are recognized without a gloss — never teach them. A rare common noun that is central to the scene IS taught.
 All vocabulary definitions must be written in clear English, regardless of the story language.
 HARD LIMIT: each definition must be 3-7 English words AND no more than 50 characters total (counting spaces). Both bounds are mandatory; do not exceed either. Treat this as a UI constraint: the definition must fit on a small mobile chip without wrapping.
 Style: a concise gloss in the spirit of a translation app (Linguee/Reverso/DeepL). Lead with the noun/concept, with an infinitive verb ("To join..."), or with a descriptive adjective phrase. Two senses joined by ";" or "," are fine if they stay under the limit.
@@ -569,7 +573,7 @@ Return ONLY valid JSON:
     });
 
     if (improvedVocab.length < MIN_VOCAB_ITEMS) {
-      previousFeedback = `vocab had ${improvedVocab.length} items after filtering, need at least ${MIN_VOCAB_ITEMS}. Return more candidate items next time (aim for 22).`;
+      previousFeedback = `vocab had ${improvedVocab.length} items after filtering, need at least ${MIN_VOCAB_ITEMS}. Return more candidate items next time (aim for 28).`;
       finalPayload = { title, text, arcType, vocab: improvedVocab };
       continue;
     }
