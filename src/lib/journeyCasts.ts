@@ -15,6 +15,15 @@
  *   2. Usar el mini-cast existente de ese país wherever possible.
  *   3. Solo inventar un nuevo nombre cuando la story lo requiere genuinamente.
  *   4. Si el país aún no tiene mini-cast definido aquí, este archivo crece.
+ *
+ * Los elencos son POR JOURNEY, no por nivel. Cuando el journey suba a A2,
+ * B1, etc., las stories nuevas REUSAN los mismos personajes (Jonas, Lena,
+ * Maja, etc.), que crecen con el alumno como en una serie. No inventar
+ * elencos nuevos por nivel. Escalar por profundidad (más historias + arcos
+ * que evolucionan + secundarios rotativos), no por más ciudades: el pool
+ * de voces es limitado (~10 por idioma) y 3 mini-casts ya usan casi todo.
+ * Contras a manejar al escribir: evitar monotonía (hacer evolucionar
+ * relaciones/situaciones) y cuidar coherencia (edades, parentescos, pasado).
  */
 
 import { SPANISH_DIALOGUE_VOICES, GERMAN_DIALOGUE_VOICES } from "@/lib/elevenlabs";
@@ -111,8 +120,8 @@ export const SPANISH_LATAM_CAST: JourneyCast = {
         {
           slug: "sofia",
           displayName: "Sofía",
-          voiceId: SPANISH_DIALOGUE_VOICES.cindy,
-          voiceSlot: "cindy",
+          voiceId: SPANISH_DIALOGUE_VOICES.ana_sofia,
+          voiceSlot: "ana_sofia",
           age: "young",
           relation: "Sobrina de Tío Beto. Vive en CDMX. Visita la fonda casi a diario.",
           description: "Anchor mexicano. 27-30 años. Su mamá murió hace años; reconstruye memoria a través de la comida familiar.",
@@ -265,6 +274,15 @@ export const GERMAN_TRAVELER_CAST: JourneyCast = {
           relation: "Abuela de Lena que visita ocasionalmente desde el campo, ~70 años.",
           description: "Anchor terciario München. Cariñosa, observadora. Su visita trae perspectiva generacional.",
         },
+        {
+          slug: "kollegin",
+          displayName: "Kollegin",
+          voiceId: GERMAN_DIALOGUE_VOICES.ela_calm,
+          voiceSlot: "ela_calm",
+          age: "young",
+          relation: "Otra colega del trabajo de Lena, ~30 años.",
+          description: "Bit role (aparece solo en der-erste-tag). Voz ela_calm reusada de Maja (Berlín, otro cast); no coinciden en esa historia.",
+        },
       ],
       notes: "Vida joven profesional en Schwabing. Through-line: Lena navega el primer año en la ciudad, balanceando trabajo nuevo, vida social y la presencia ocasional de su abuela.",
     },
@@ -299,12 +317,39 @@ export const GERMAN_TRAVELER_CAST: JourneyCast = {
           relation: "Pescadero del mercado local en Eppendorf, ~65 años.",
           description: "Anchor terciario Hamburg. Cara conocida del barrio. Recuerda a Jonas a su propio abuelo.",
         },
+        {
+          slug: "frau-hoffmann",
+          displayName: "Frau Hoffmann",
+          voiceId: GERMAN_DIALOGUE_VOICES.eleonore,
+          voiceSlot: "eleonore",
+          age: "old",
+          relation: "Esposa de Herr Hoffmann (Werner), ~65 años.",
+          description: "Secundaria recurrente Hamburg. Voz eleonore reusada de Frau Schmidt (Berlín); nunca coinciden (casts distintos por ciudad).",
+        },
+        {
+          slug: "baeckerin",
+          displayName: "Bäckerin",
+          voiceId: GERMAN_DIALOGUE_VOICES.enniah,
+          voiceSlot: "enniah",
+          age: "middle-aged",
+          relation: "Panadera del barrio de Jonas, ~50 años.",
+          description: "Bit role (aparece solo en brot-am-morgen). Voz enniah reusada de Frau Becker; no coinciden en esa historia.",
+        },
+        {
+          slug: "eine-frau",
+          displayName: "Eine Frau",
+          voiceId: GERMAN_DIALOGUE_VOICES.eleonore,
+          voiceSlot: "eleonore",
+          age: "middle-aged",
+          relation: "Transeúnte anónima en el mercado, una sola línea.",
+          description: "Bit role (aparece solo en der-erste-markt, indica dónde está el pescado). Voz eleonore; no coinciden Frau Schmidt/Frau Hoffmann en esa historia.",
+        },
       ],
       notes: "Vida cotidiana en Hamburg. Through-line: Jonas aprende a cuidarse solo (cocinar, comprar, vivir en la ciudad) con ayuda de figuras familiares-no-familiares.",
     },
   ],
   notes:
-    "Beta inicial: 3 ciudades alemanas (Berlin/München/Hamburg) × 3 anchors estables cada una, 1 voz spare (Marius). 21 stories totales (3 topics × 7) al nivel A1. Cada topic ambientado en una ciudad específica con su mini-cast: home-family→Berlin, meeting-new-people→München, food-everyday-life→Hamburg.",
+    "Beta inicial: 3 ciudades alemanas (Berlin/München/Hamburg) × 3 anchors estables cada una + roles menores (Frau Hoffmann secundaria; Bäckerin y Kollegin bit roles de una escena). 21 stories totales (3 topics × 7) al nivel A1. Cada topic ambientado en una ciudad específica: home-family→Berlin, meeting-new-people→München, food-everyday-life→Hamburg. Voces: las 9 anchors usan 9 slots; el único slot libre es Marius (MASCULINO), así que NO hay voz femenina libre — los roles femeninos menores reusan voces femeninas existentes garantizando que no choquen dentro de la misma historia. Si en el futuro se necesitan más mujeres distintas, hace falta sumar una voz femenina DE al pool. NARRADOR del journey = `gjango` (GERMAN_DIALOGUE_VOICES), elegido 2026-06-05 en reemplazo de Marius (que no gustó). Al regenerar audio, voiceMap.narrator = GERMAN_DIALOGUE_VOICES.gjango.",
 };
 
 /** Indexed by journey key for lookup. */

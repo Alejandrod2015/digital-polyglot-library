@@ -137,6 +137,8 @@ Across any 10 consecutive stories within a journey, **50-70% should end on an un
 
 Each journey should have a defined recurring cast — 1-2 anchor characters appearing in 60-80% of stories, plus 4-8 secondary characters who reappear when their region/branch is in play. The cast for Spanish-LATAM is defined in `src/lib/journeyCasts.ts` (`SPANISH_LATAM_CAST`): familia López dispersa por Bogotá, Buenos Aires, CDMX, Lima y Santiago. **Use existing cast members wherever possible**; only introduce a fresh name when the story genuinely requires one. Voice IDs must match the cast member's `voiceSlot` exactly (no improvising voice assignments).
 
+**Casts persist across levels (not per-level)** [added 2026-06-05]: a journey's recurring cast is shared across ALL its CEFR levels. When the journey grows into A2/B1/etc., new stories REUSE the same characters (they grow with the learner, like a series) — do NOT invent a fresh cast per level. Scale by depth (more stories + evolving arcs + rotating secondary characters), NOT by adding cities/casts: the dialogue-voice pool is limited (~10 per language) and 3 mini-casts already consume most of it. Trade-offs to manage while writing: avoid monotony (let relationships/situations evolve) and keep continuity (ages, relations, backstory) consistent across stories.
+
 **Forbidden default**: a story whose only beat is "two characters meet, exchange friendly small talk, part on good terms" without ANY arcType shall not be saved.
 
 **Retired arcs** (do NOT reintroduce): `white-lie`, `last-minute-decision`, `return-after-years`, `unspoken-subtext`, `plan-falls-short`, `small-stake`, `open-ending`. All re-route to `reframe-turn` or `harmonic-close` per the migration mapping in `src/lib/validateGeneratedStory.ts`.
