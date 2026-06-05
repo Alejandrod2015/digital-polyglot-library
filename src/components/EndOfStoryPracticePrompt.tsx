@@ -127,7 +127,7 @@ export default function EndOfStoryPracticePrompt({
     <>
       {visible && (
         <div
-          className="fixed inset-0 z-[60] flex items-end justify-center sm:items-center"
+          className="fixed inset-0 z-[60] flex items-center justify-center"
           role="dialog"
           aria-modal="true"
           aria-labelledby="end-of-story-title"
@@ -142,7 +142,7 @@ export default function EndOfStoryPracticePrompt({
 
           {/* Card */}
           <div
-            className="relative z-10 mx-3 mb-3 w-full max-w-md rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] px-6 pb-6 pt-7 text-center shadow-[0_24px_64px_-12px_rgba(0,0,0,0.6)] sm:mb-0"
+            className="relative z-10 mx-3 w-full max-w-md rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] px-6 pb-6 pt-7 text-center shadow-[0_24px_64px_-12px_rgba(0,0,0,0.6)]"
             style={{
               animation: "dp-eos-pop 280ms cubic-bezier(0.16, 1, 0.3, 1)",
             }}

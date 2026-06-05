@@ -150,6 +150,7 @@ export const GERMAN_DIALOGUE_VOICES = {
   felix:     "IQuqJPpP2hMHjjDY2QTe", // M middle-aged, "Confident", conversational — alt to Moritz timbre
   marius:    "JDXBO1etYlVlJZRMoYzH", // M young, professional, narrative_story — alt to Michael (round 3 pick)
   daniel:    "wcqN36SUOZ0EhToc2OIu", // M older-feeling (metadata: middle-aged), "Calm & Real UGC", conversational
+  gjango:    "wZUI6Qb377V1PsC35d6y", // M middle-aged, native DE, calm, narrative_story — JOURNEY NARRATOR (replaces Marius, 2026-06-05). Preview level is low but loudnorm (-16 LUFS) normalizes it on render. Shared-library voice: add to the ElevenLabs account before the first render.
 } as const;
 
 // Approved Spanish (LATAM) voices for multi-character dialogue stories. IDs
@@ -613,7 +614,7 @@ function multivoiceSegmentCacheKey(
   // perceptually different audio across model versions).
   const hash = crypto
     .createHash("sha256")
-    .update(`${voiceId}|${model}|${settingsFingerprint}|${softenedText}|trim-v3`)
+    .update(`${voiceId}|${model}|${settingsFingerprint}|${softenedText}|trim-v4`)
     .digest("hex")
     .slice(0, 24);
   return `media/multivoice-segments/${hash}.mp3`;
@@ -777,9 +778,17 @@ async function trimSegmentArtifacts(buffer: Buffer): Promise<Buffer> {
         "-loglevel", "error",
         "-i", inPath,
         "-af",
-        // Pasada 1: silenceremove en ambos extremos.
+        // SOLO cola. El start-trim se eliminó: pruebas offline mostraron
+        // que CUALQUIER `silenceremove` al inicio recorta ~150-200 ms sin
+        // importar el umbral (-45dB/-50dB/-60dB/-65dB peak), porque su
+        // ventana RMS arrastra el onset suave (fricativas "Sch-/S-/F-",
+        // vocales abiertas) por debajo del umbral → se comía la primera
+        // palabra de cada turno. Sin start-trim el onset queda intacto; el
+        // pequeño silencio inicial que a veces añade ElevenLabs es inocuo
+        // (y la pausa de 0.45s entre turnos ya da el espaciado). La cola
+        // (stop, -45dB) + el end-trim duro siguen matando breaths y la
+        // phantom syllable final.
         "silenceremove=" +
-          "start_periods=1:start_duration=0.05:start_threshold=-45dB:" +
           "stop_periods=-1:stop_duration=0.05:stop_threshold=-45dB," +
           // Pasada 2: end-trim duro de 60 ms vía reverse-trim-reverse.
           "areverse,atrim=start=0.06,asetpts=PTS-STARTPTS,areverse",
@@ -932,12 +941,28 @@ async function ttsSegment(args: {
 // which makes ffprobe (and some seekbars) report wrong durations and emit
 // "invalid concatenated file detected" warnings. Running the segments through
 // ffmpeg's concat demuxer produces a single clean MP3 with one Xing frame.
-async function concatMp3Buffers(buffers: Buffer[]): Promise<Buffer> {
+// `gapSec` inserts a short silence between consecutive segments so multi-voice
+// dialogue doesn't sound rushed — without it every turn butts straight into the
+// next with zero breath, which reads as robotic. The silence is generated to
+// match the segments' own sample rate + channel layout (probed from segment 0)
+// so the `-c copy` concat stays glitch-free.
+async function concatMp3Buffers(buffers: Buffer[], gapSec = 0): Promise<Buffer> {
   if (buffers.length <= 1) return Buffer.concat(buffers);
   const { writeFile, mkdtemp, rm } = await import("fs/promises");
   const { tmpdir } = await import("os");
   const path = await import("path");
   const { spawn } = await import("child_process");
+
+  const run = (cmd: string, args: string[]): Promise<string> =>
+    new Promise((resolve, reject) => {
+      const proc = spawn(cmd, args);
+      let stdout = "";
+      let stderr = "";
+      proc.stdout.on("data", (c) => { stdout += c.toString(); });
+      proc.stderr.on("data", (c) => { stderr += c.toString(); });
+      proc.on("error", reject);
+      proc.on("close", (code) => (code === 0 ? resolve(stdout) : reject(new Error(`${cmd} exit ${code}: ${stderr.slice(0, 500)}`))));
+    });
 
   const dir = await mkdtemp(path.join(tmpdir(), "mvtts-"));
   try {
@@ -947,8 +972,37 @@ async function concatMp3Buffers(buffers: Buffer[]): Promise<Buffer> {
       await writeFile(p, buffers[i]);
       segPaths.push(p);
     }
+
+    // Build the concat order, interleaving a generated silence between segments.
+    let orderedPaths = segPaths;
+    if (gapSec > 0) {
+      let sampleRate = 44100;
+      let channels = 1;
+      try {
+        const probe = await run("ffprobe", [
+          "-v", "error", "-select_streams", "a:0",
+          "-show_entries", "stream=sample_rate,channels",
+          "-of", "default=nw=1:nk=1", segPaths[0],
+        ]);
+        const nums = probe.split(/\s+/).map((n) => parseInt(n, 10)).filter((n) => Number.isFinite(n));
+        if (nums[0]) sampleRate = nums[0];
+        if (nums[1]) channels = nums[1];
+      } catch { /* fall back to 44100 mono */ }
+      const silPath = path.join(dir, "silence.mp3");
+      await run("ffmpeg", [
+        "-y", "-loglevel", "error",
+        "-f", "lavfi", "-i", `anullsrc=r=${sampleRate}:cl=${channels >= 2 ? "stereo" : "mono"}`,
+        "-t", String(gapSec), "-c:a", "libmp3lame", "-b:a", "128k", silPath,
+      ]);
+      orderedPaths = [];
+      for (let i = 0; i < segPaths.length; i += 1) {
+        orderedPaths.push(segPaths[i]);
+        if (i < segPaths.length - 1) orderedPaths.push(silPath);
+      }
+    }
+
     const listPath = path.join(dir, "list.txt");
-    await writeFile(listPath, segPaths.map((p) => `file '${p.replace(/'/g, "'\\''")}'`).join("\n"));
+    await writeFile(listPath, orderedPaths.map((p) => `file '${p.replace(/'/g, "'\\''")}'`).join("\n"));
     const outPath = path.join(dir, "out.mp3");
 
     await new Promise<void>((resolve, reject) => {
@@ -1145,7 +1199,8 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     audioBuffers.push(buf);
   }
 
-  const concatBuffer = await concatMp3Buffers(audioBuffers);
+  // 0.45s breath between turns so dialogue doesn't sound rushed/robotic.
+  const concatBuffer = await concatMp3Buffers(audioBuffers, 0.45);
   const normalized = await normalizeLoudness(concatBuffer);
 
   // Upload the dry stem (voices-only, post-loudnorm, pre-ambient mix)

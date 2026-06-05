@@ -85,9 +85,17 @@ function buildBlocks(
   let cursor = 0;
   let wordCursor = 0;
 
+  // Split on EVERY newline, not just blank-line boundaries. Multi-voice
+  // dialogue stories ("Speaker: line" turns separated by single \n) must
+  // render one paragraph per turn — and, critically, each chunk must remain a
+  // VERBATIM substring of `text` so `text.indexOf(chunk)` returns the real
+  // char offset. The old `\n{2,}` + `\n`→space collapse merged every dialogue
+  // turn into one paragraph AND broke the offset lookup (the space-collapsed
+  // chunk no longer existed in `text`, so indexOf returned -1 and the word
+  // timings mapped to the wrong characters → karaoke drift vs the audio).
   const paragraphChunks = text
-    .split(/\n{2,}/)
-    .map((chunk) => chunk.replace(/\n/g, " ").trim())
+    .split(/\n+/)
+    .map((chunk) => chunk.trim())
     .filter(Boolean);
 
   let absoluteOffset = 0;
@@ -165,6 +173,22 @@ export default function HighlightedStoryContent({
         <p key={`p-${blockIndex}`}>
           {block.pieces.map((piece, pieceIndex) => {
             if (piece.kind === "gap") {
+              // Bold the leading "Speaker:" label on dialogue turns (it is a
+              // gap, not a timed word — the audio never speaks the label).
+              const labelMatch =
+                pieceIndex === 0
+                  ? piece.text.match(
+                      /^(\s*[\p{Lu}][\p{L}\p{M}.'-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'-]*){0,3}:)(\s*)$/u
+                    )
+                  : null;
+              if (labelMatch) {
+                return (
+                  <React.Fragment key={`g-${blockIndex}-${pieceIndex}`}>
+                    <strong>{labelMatch[1]}</strong>
+                    {labelMatch[2]}
+                  </React.Fragment>
+                );
+              }
               return (
                 <React.Fragment key={`g-${blockIndex}-${pieceIndex}`}>{piece.text}</React.Fragment>
               );
