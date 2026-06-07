@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Onboarding y automatización · Resumen ejecutivo</title>
+<style>
+  :root {
+    --ink: #1a2233;
+    --ink-soft: #4a5568;
+    --muted: #7a8699;
+    --line: #e4e8ef;
+    --line-soft: #eef1f6;
+    --teal: #0d9488;
+    --teal-soft: #e6f5f3;
+    --teal-deep: #0a6e66;
+    --amber: #b7791f;
+    --amber-soft: #fdf3e0;
+    --green: #15803d;
+    --green-soft: #e7f4ec;
+    --bg-card: #fbfcfe;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4;
+    margin: 13mm 14mm;
+  }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.6px;
+    line-height: 1.5;
+    letter-spacing: 0.005em;
+  }
+
+  .page {
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ── Masthead ── */
+  .masthead {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 2.5px solid var(--ink);
+    padding-bottom: 7px;
+  }
+  .masthead .kicker {
+    font-size: 7.5px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 2px;
+  }
+  .masthead h1 {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  .masthead .meta {
+    text-align: right;
+    font-size: 7.5px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .masthead .meta strong { color: var(--ink-soft); font-weight: 700; }
+
+  /* ── Section headers ── */
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1px;
+  }
+  .sec-head h2 {
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .sec-head .rule { flex: 1; height: 1px; background: var(--line); }
+  .sec-head .note { font-size: 7.5px; color: var(--muted); white-space: nowrap; }
+
+  /* ── North star callout ── */
+  .northstar {
+    background: var(--teal-soft);
+    border: 1px solid #bfe6e1;
+    border-left: 4px solid var(--teal);
+    border-radius: 7px;
+    padding: 10px 13px;
+  }
+  .northstar .tag {
+    font-size: 7px; font-weight: 800; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--teal-deep); margin-bottom: 3px;
+  }
+  .northstar h3 {
+    font-size: 13.5px; font-weight: 800; color: var(--ink);
+    line-height: 1.2; margin-bottom: 4px; letter-spacing: -0.01em;
+  }
+  .northstar p { font-size: 9px; color: var(--ink-soft); line-height: 1.5; }
+
+  /* ── Priorities ── */
+  .prio { display: flex; flex-direction: column; gap: 5px; }
+  .prio-row {
+    display: flex; gap: 9px; align-items: flex-start;
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 6px; padding: 7px 10px;
+  }
+  .prio-num {
+    flex-shrink: 0; width: 17px; height: 17px; border-radius: 5px;
+    background: var(--teal); color: #fff; font-weight: 800; font-size: 9.5px;
+    display: flex; align-items: center; justify-content: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .prio-body { flex: 1; min-width: 0; }
+  .prio-title-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 1px; }
+  .prio-title { font-size: 10px; font-weight: 700; color: var(--ink); }
+  .prio-detail { font-size: 8.6px; color: var(--ink-soft); line-height: 1.45; }
+
+  .badge {
+    margin-left: auto; flex-shrink: 0;
+    font-size: 7px; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase; padding: 1.5px 6px; border-radius: 4px;
+  }
+  .b-alta { color: var(--green); background: var(--green-soft); }
+  .b-media { color: var(--amber); background: var(--amber-soft); }
+
+  /* ── Flow ── */
+  .flow {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 7px; padding: 11px 13px;
+    display: flex; flex-direction: column;
+  }
+  .flow-row { display: flex; gap: 10px; }
+  .flow-rail { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+  .flow-dot {
+    width: 17px; height: 17px; border-radius: 50%;
+    background: var(--teal-soft); color: var(--teal-deep);
+    border: 1.5px solid var(--teal);
+    font-weight: 800; font-size: 9px; display: flex;
+    align-items: center; justify-content: center; font-variant-numeric: tabular-nums;
+  }
+  .flow-dot.signup { background: var(--green-soft); border-color: var(--green); color: var(--green); }
+  .flow-line { flex: 1; width: 1.5px; background: var(--line); margin: 2px 0; }
+  .flow-content { flex: 1; padding-bottom: 9px; }
+  .flow-row:last-child .flow-content { padding-bottom: 0; }
+  .flow-title-row { display: flex; align-items: baseline; gap: 6px; }
+  .flow-title { font-size: 9.6px; font-weight: 700; color: var(--ink); }
+  .pill-signup {
+    font-size: 6.5px; font-weight: 800; letter-spacing: 0.06em;
+    color: #fff; background: var(--green); padding: 1px 5px; border-radius: 3px;
+  }
+  .flow-detail { font-size: 8.4px; color: var(--ink-soft); line-height: 1.42; margin-top: 1px; }
+
+  /* ── Email table ── */
+  .emails { display: flex; flex-direction: column; gap: 4px; }
+  .email-row {
+    display: grid; grid-template-columns: 1fr 2fr 0.85fr; gap: 10px;
+    align-items: start; background: var(--bg-card);
+    border: 1px solid var(--line); border-left-width: 3px;
+    border-radius: 5px; padding: 6px 10px;
+  }
+  .email-trigger { font-size: 7.8px; color: var(--muted); line-height: 1.35; font-family: "SF Mono", ui-monospace, Menlo, monospace; }
+  .email-body { font-size: 8.6px; color: var(--ink); line-height: 1.4; }
+  .email-cta { font-size: 8px; font-weight: 700; }
+
+  /* ── Phases ── */
+  .phases { display: flex; flex-direction: column; gap: 5px; }
+  .phase-row {
+    display: flex; gap: 9px; align-items: flex-start;
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 6px; padding: 7px 10px;
+  }
+  .phase-num {
+    flex-shrink: 0; width: 16px; height: 16px; border-radius: 5px;
+    background: #eef1f6; color: var(--ink-soft); font-weight: 800; font-size: 9px;
+    display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;
+  }
+  .phase-body { flex: 1; min-width: 0; }
+  .phase-title-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 1px; }
+  .phase-title { font-size: 9.6px; font-weight: 700; color: var(--ink); }
+  .phase-goal { font-size: 8.4px; color: var(--ink-soft); line-height: 1.42; }
+  .status { margin-left: auto; flex-shrink: 0; font-size: 6.8px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 1.5px 6px; border-radius: 4px; color: var(--muted); background: #f0f2f6; }
+
+  /* ── Benchmarks ── */
+  .bench { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+  .bench-cell {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 6px; padding: 6px 8px;
+  }
+  .bench-val { font-size: 13px; font-weight: 800; color: var(--teal); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; line-height: 1; }
+  .bench-metric { font-size: 7.6px; font-weight: 600; color: var(--ink); line-height: 1.2; margin-top: 2px; }
+  .bench-note { font-size: 6.8px; color: var(--muted); line-height: 1.3; margin-top: 2px; }
+
+  /* ── Caveats ── */
+  .caveats {
+    background: #fffdf5; border: 1px solid #f0e6cf; border-radius: 7px; padding: 8px 11px 8px 11px;
+  }
+  .caveats ul { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+  .caveats li { font-size: 8px; color: var(--ink-soft); line-height: 1.4; padding-left: 11px; position: relative; }
+  .caveats li::before { content: "•"; position: absolute; left: 2px; color: var(--amber); font-weight: 700; }
+
+  .footer {
+    margin-top: auto; border-top: 1px solid var(--line);
+    padding-top: 5px; display: flex; justify-content: space-between;
+    font-size: 6.8px; color: var(--muted);
+  }
+  .footer code { font-family: "SF Mono", ui-monospace, Menlo, monospace; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<!-- ════════ PAGE 1 ════════ -->
+<section class="page">
+  <div class="masthead">
+    <div>
+      <div class="kicker">Digital Polyglot Library · Resumen ejecutivo</div>
+      <h1>Onboarding y automatización de lifecycle</h1>
+    </div>
+    <div class="meta">
+      <strong>2026-06-04</strong><br>
+      Investigación: Duolingo, Babbel,<br>Busuu, Memrise + LingQ<br>
+      Verificación adversarial 3-votos
+    </div>
+  </div>
+
+  <div class="northstar">
+    <div class="tag">North star</div>
+    <h3>El «aha moment» de DPL es la primera historia terminada.</h3>
+    <p>Único evento con evidencia directa de una app casi idéntica (LingQ + Amplitude) y respaldado por un RCT peer-reviewed (storytelling supera al drill en retención de vocabulario inmediata y diferida). No definir activación como minutos de audio ni primer item guardado. La primera historia debe ser corta o segmentada para garantizar el primer remate.</p>
+  </div>
+
+  <div>
+    <div class="sec-head"><h2>Prioridades</h2><div class="rule"></div><span class="note">ordenadas por ROI</span></div>
+    <div class="prio">
+      <div class="prio-row">
+        <div class="prio-num">1</div>
+        <div class="prio-body">
+          <div class="prio-title-row"><span class="prio-title">Welcome email instantáneo (gap #1)</span><span class="badge b-alta">alta</span></div>
+          <div class="prio-detail">Hoy DPL no manda ni un email post-signup. El welcome es el activo de lifecycle de mayor apertura (~40-80%). Enganchar al webhook <code>user.created</code> + Resend. El cambio más barato y de mayor ROI.</div>
+        </div>
+      </div>
+      <div class="prio-row">
+        <div class="prio-num">2</div>
+        <div class="prio-body">
+          <div class="prio-title-row"><span class="prio-title">Producto antes de signup</span><span class="badge b-alta">alta</span></div>
+          <div class="prio-detail">Dejar leer o escuchar una historia de muestra sin cuenta; pedir registro al «guardar tu progreso». El registro temprano mata la activación. Busuu (signup antes de la lección) es el anti-patrón a evitar.</div>
+        </div>
+      </div>
+      <div class="prio-row">
+        <div class="prio-num">3</div>
+        <div class="prio-body">
+          <div class="prio-title-row"><span class="prio-title">Primera historia corta a propósito</span><span class="badge b-media">media</span></div>
+          <div class="prio-detail">LingQ partió su primera lección en tres más cortas para garantizar el primer «finish». El remate es lo que engancha; reduce la fricción del primer terminado.</div>
+        </div>
+      </div>
+      <div class="prio-row">
+        <div class="prio-num">4</div>
+        <div class="prio-body">
+          <div class="prio-title-row"><span class="prio-title">Secuencia de email front-loaded</span><span class="badge b-alta">alta</span></div>
+          <div class="prio-detail">5-6 emails en los primeros 10-14 días, welcome instantáneo, un solo CTA por email, disparo por evento más ramas conductuales, single opt-in. Win-back dentro de los primeros 3-4 días de inactividad.</div>
+        </div>
+      </div>
+      <div class="prio-row">
+        <div class="prio-num">5</div>
+        <div class="prio-body">
+          <div class="prio-title-row"><span class="prio-title">Motor de hábito = interés en el contenido</span><span class="badge b-media">media</span></div>
+          <div class="prio-detail">En long-form el predictor de fondo es «leí una historia que me importó y la entendí», no la racha. Racha como leading indicator secundario. Es la pregunta abierta a validar con datos propios.</div>
+        </div>
+      </div>
+      <div class="prio-row">
+        <div class="prio-num">6</div>
+        <div class="prio-body">
+          <div class="prio-title-row"><span class="prio-title">Paywall post-engagement (cuando haya premium)</span><span class="badge b-alta">alta</span></div>
+          <div class="prio-detail">Soft paywall con trial, tras lecciones iniciales (estilo Memrise), nunca a mitad del onboarding crítico. Freemium puro convierte ~2-3% vs trials 18-60%.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec-head"><h2>Flujo objetivo</h2><div class="rule"></div><span class="note">producto antes de signup</span></div>
+    <div class="flow">
+      <div class="flow-row">
+        <div class="flow-rail"><div class="flow-dot">1</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <div class="flow-title-row"><span class="flow-title">Landing → historia de muestra sin cuenta</span></div>
+          <div class="flow-detail">Producto primero. Historia corta con audio. Se mantiene el conversion-goal único de la landing (sin links secundarios).</div>
+        </div>
+      </div>
+      <div class="flow-row">
+        <div class="flow-rail"><div class="flow-dot">2</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <div class="flow-title-row"><span class="flow-title">Encuesta breve de personalización</span></div>
+          <div class="flow-detail">Idioma, nivel e interés, integrada en la experiencia (no como muro). Tres opciones simples por pregunta, sin taxonomías complejas.</div>
+        </div>
+      </div>
+      <div class="flow-row">
+        <div class="flow-rail"><div class="flow-dot signup">3</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <div class="flow-title-row"><span class="flow-title">Al terminar la primera historia → signup</span><span class="pill-signup">SIGNUP AQUÍ</span></div>
+          <div class="flow-detail">Aha moment alcanzado. Prompt «guarda tu progreso». Registro diferido al momento de valor.</div>
+        </div>
+      </div>
+      <div class="flow-row">
+        <div class="flow-rail"><div class="flow-dot">4</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <div class="flow-title-row"><span class="flow-title">Post-signup: nivelación opcional + tour ligero</span></div>
+          <div class="flow-detail">Nivelación como nudge, no como muro. Permiso de notificaciones con priming, después del compromiso.</div>
+        </div>
+      </div>
+      <div class="flow-row">
+        <div class="flow-rail"><div class="flow-dot">5</div></div>
+        <div class="flow-content">
+          <div class="flow-title-row"><span class="flow-title">Paywall post-engagement (cuando exista premium)</span></div>
+          <div class="flow-detail">Soft, con trial, tras lecciones iniciales. Multi-ask contextual más exit-intent suave.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Fuente completa y citas: <code>docs/onboarding-automation-research.md</code></span>
+    <span>Página 1 de 2</span>
+  </div>
+</section>
+
+<!-- ════════ PAGE 2 ════════ -->
+<section class="page">
+  <div>
+    <div class="sec-head"><h2>Secuencia de email / lifecycle</h2><div class="rule"></div><span class="note">1 CTA por email · single opt-in · disparo por evento</span></div>
+    <div class="emails">
+      <div class="email-row" style="border-left-color:#0d9488">
+        <span class="email-trigger">user.created (instantáneo)</span>
+        <span class="email-body">Welcome: qué es DPL + invita a terminar tu primera historia</span>
+        <span class="email-cta" style="color:#0d9488">Abre tu primera historia</span>
+      </div>
+      <div class="email-row" style="border-left-color:#d97706">
+        <span class="email-trigger">+24h si NO completó 1ª historia</span>
+        <span class="email-body">Nudge de activación: «tu primera historia te espera, son X minutos»</span>
+        <span class="email-cta" style="color:#d97706">Termínala ahora</span>
+      </div>
+      <div class="email-row" style="border-left-color:#15803d">
+        <span class="email-trigger">Al completar 1ª historia (conductual)</span>
+        <span class="email-body">Celebración: primer logro + sugiere la siguiente</span>
+        <span class="email-cta" style="color:#15803d">Sigue con la próxima</span>
+      </div>
+      <div class="email-row" style="border-left-color:#2563eb">
+        <span class="email-trigger">Día 3</span>
+        <span class="email-body">Educativo: cómo funciona el vocabulario-en-contexto / tip de uso</span>
+        <span class="email-cta" style="color:#2563eb">Practica el vocabulario</span>
+      </div>
+      <div class="email-row" style="border-left-color:#7c3aed">
+        <span class="email-trigger">Día 7</span>
+        <span class="email-body">Progress recap: historias + vocab + racha (si aplica), loss aversion suave</span>
+        <span class="email-cta" style="color:#7c3aed">Mantén el ritmo</span>
+      </div>
+      <div class="email-row" style="border-left-color:#2563eb">
+        <span class="email-trigger">Día 10-14</span>
+        <span class="email-body">Hábito / siguiente meta: progreso hacia identidad</span>
+        <span class="email-cta" style="color:#2563eb">Elige tu próxima historia</span>
+      </div>
+      <div class="email-row" style="border-left-color:#e11d48">
+        <span class="email-trigger">Inactivo 30-45 días</span>
+        <span class="email-body">Win-back escalado (3 emails): recordatorio suave → valor → incentivo, con sunset</span>
+        <span class="email-cta" style="color:#e11d48">Vuelve a tu historia</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec-head"><h2>Plan de implementación</h2><div class="rule"></div><span class="note">por fases · 0% en producción</span></div>
+    <div class="phases">
+      <div class="phase-row">
+        <div class="phase-num">1</div>
+        <div class="phase-body">
+          <div class="phase-title-row"><span class="phase-title">Welcome email</span><span class="status">sin empezar</span></div>
+          <div class="phase-goal">Enganchar <code>sendWelcomeEmail()</code> al webhook <code>user.created</code> vía Resend. Instantáneo, single opt-in, en try/catch para no romper el tracking de signup. Mayor ROI, primer entregable.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-num">2</div>
+        <div class="phase-body">
+          <div class="phase-title-row"><span class="phase-title">Instrumentar activación</span><span class="status">sin empezar</span></div>
+          <div class="phase-goal">Emitir <code>UserMetric story_completed</code> como north-star y exponer activation_rate + time-to-activate en <code>/studio/metrics</code>.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-num">3</div>
+        <div class="phase-body">
+          <div class="phase-title-row"><span class="phase-title">Secuencia lifecycle</span><span class="status">sin empezar</span></div>
+          <div class="phase-goal">Cron diario que evalúa el estado de cada usuario nuevo y dispara el email que toque (gating por evento). Decidir motor: Resend propio vs Customer.io / Loops.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-num">4</div>
+        <div class="phase-body">
+          <div class="phase-title-row"><span class="phase-title">Reordenar onboarding</span><span class="status">sin empezar</span></div>
+          <div class="phase-goal">Permitir abrir una historia de muestra sin cuenta y mover el prompt de registro al «guardar progreso». Cambio de producto más grande; validar con datos propios.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-num">5</div>
+        <div class="phase-body">
+          <div class="phase-title-row"><span class="phase-title">Paywall post-engagement</span><span class="status">sin empezar</span></div>
+          <div class="phase-goal">Cuando exista premium: soft paywall con trial, multi-ask contextual, exit-intent suave. Post-engagement, no en onboarding crítico.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec-head"><h2>Benchmarks del sector</h2><div class="rule"></div></div>
+    <div class="bench">
+      <div class="bench-cell"><div class="bench-val">35-40%</div><div class="bench-metric">Retención D1 educación</div><div class="bench-note">«gold» del sector</div></div>
+      <div class="bench-cell"><div class="bench-val">~2-3%</div><div class="bench-metric">Retención D30 educación</div><div class="bench-note">de las peores categorías</div></div>
+      <div class="bench-cell"><div class="bench-val">~40-80%</div><div class="bench-metric">Welcome email open</div><div class="bench-note">el más alto de la secuencia</div></div>
+      <div class="bench-cell"><div class="bench-val">~2-3%</div><div class="bench-metric">Freemium → pago</div><div class="bench-note">mediana 4.5%</div></div>
+      <div class="bench-cell"><div class="bench-val">18-60%</div><div class="bench-metric">Trial → pago</div><div class="bench-note">opt-in ~8-22%, opt-out ~35-55%</div></div>
+      <div class="bench-cell"><div class="bench-val">~39%</div><div class="bench-metric">Open email educación</div><div class="bench-note">inflado por Apple MPP</div></div>
+      <div class="bench-cell"><div class="bench-val">10-12%</div><div class="bench-metric">Win-back a 90 días</div><div class="bench-note">2-4% a 180 días</div></div>
+      <div class="bench-cell"><div class="bench-val">3-4 d</div><div class="bench-metric">Ventana de re-enganche</div><div class="bench-note">tras 7 días cae fuerte</div></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec-head"><h2>Caveats · qué no está medido</h2><div class="rule"></div></div>
+    <div class="caveats">
+      <ul>
+        <li>Racha 3.6x / 2.4x = correlación / survivorship admitida por el PM de Duolingo, NO causalidad. Direccional, nunca garantía.</li>
+        <li>Los benchmarks de hábito vienen del drill-diario de Duolingo; «una historia por día» no equivale a «una lección de 2 min». Transfieren con cuidado.</li>
+        <li>El único dato directamente pro-DPL (historias &gt; gamificado) es un solo RCT (n=90, 4 semanas). Señal fuerte, no consenso de campo.</li>
+        <li>Benchmarks de email son genéricos de edtech, no de apps de idiomas concretas. Validar con envíos propios.</li>
+        <li>No usar (refutados): +1.7% D7 racha-animación; push cap 2/día; Duolingo 5.1% conversión; precios Babbel exactos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Plan vivo en Studio → <code>/studio/onboarding</code></span>
+    <span>Página 2 de 2</span>
+  </div>
+</section>
+
+</body>
+</html>
