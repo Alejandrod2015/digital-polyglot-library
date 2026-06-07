@@ -277,6 +277,95 @@ EOF
     fi
 fi
 
+# 6c. ElevenLabs TTS spend gate. Any POST to /v1/text-to-speech (audio
+#     synthesis, paid per character) requires the user's MOST RECENT
+#     message to contain an explicit "generate audio" verb. Listing
+#     voices (GET /v1/voices, /v1/shared-voices) and downloading the
+#     free preview_url MP3s from googleapis.com / api.us.elevenlabs.io/
+#     v1/voices/.../previews are free and pass through untouched.
+#     Like the git-push gate: CLAUDE_AUTHORIZED=1 does NOT bypass — only
+#     the verb in the transcript counts.
+#
+#     User rule (2026-06-01): "samples" by default = free preview URLs.
+#     Only generate when the user explicitly says one of the verbs below.
+if printf '%s' "$COMMAND" | grep -qE 'api\.elevenlabs\.io/v1/text-to-speech/'; then
+    VERB_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
+import json, sys, re, os
+try:
+    payload = json.load(sys.stdin)
+except Exception:
+    print("missing_payload"); sys.exit(0)
+tp = payload.get("transcript_path") or ""
+if not tp or not os.path.exists(tp):
+    print("missing_transcript"); sys.exit(0)
+msgs = []
+try:
+    with open(tp) as f:
+        for line in f:
+            try:
+                obj = json.loads(line)
+            except Exception:
+                continue
+            if obj.get("type") != "user":
+                continue
+            content = obj.get("message", {}).get("content", "")
+            if isinstance(content, str):
+                msgs.append(content)
+            elif isinstance(content, list):
+                for part in content:
+                    if isinstance(part, dict) and part.get("type") == "text":
+                        msgs.append(part.get("text", ""))
+except Exception:
+    print("read_error"); sys.exit(0)
+if not msgs:
+    print("no_user_messages"); sys.exit(0)
+last = msgs[-1] or ""
+last = re.sub(r"<system-reminder>.*?</system-reminder>", "", last, flags=re.DOTALL|re.IGNORECASE)
+last = re.sub(r"<task-notification>.*?</task-notification>", "", last, flags=re.DOTALL|re.IGNORECASE)
+# Verbs that authorize ElevenLabs synthesis. Must be followed by
+# "audio" / "audios" / "el audio" within the same phrase to count.
+verb_pat = re.compile(
+    r"\b(genera|regenera|render|renderea|lanza|manda|haz)\s+(el\s+|los\s+)?audio[s]?\b",
+    re.IGNORECASE
+)
+for m in verb_pat.finditer(last):
+    start = max(0, m.start() - 12)
+    prefix = last[start:m.start()].lower()
+    if re.search(r"\bno\s*$", prefix) or re.search(r"\bnunca\s*$", prefix):
+        continue
+    print("ok")
+    sys.exit(0)
+print("no_verb")
+' 2>/dev/null || echo "python_error")"
+
+    if [ "$VERB_CHECK" != "ok" ]; then
+        log_audit "BLOCK_TTS_NO_VERB[$VERB_CHECK]" "$COMMAND"
+        cat >&2 <<EOF
+[safety-guard] BLOCKED: ElevenLabs TTS generation without user verb.
+
+This guard reads YOUR ACTUAL LAST MESSAGE from the Claude transcript.
+No env var bypass. ElevenLabs costs real money per character; the user
+rule is: never generate audio unless explicitly asked.
+
+To authorize this generation, type one of these phrases in your next
+message:
+  "genera audio" / "genera el audio" / "genera los audios" /
+  "regenera audio" / "lanza audio" / "manda audio" /
+  "render audio" / "renderea audio" / "haz el audio"
+
+Listing voices (GET /v1/voices, /v1/shared-voices) and downloading the
+free preview_url MP3s from googleapis.com / .../v1/voices/.../previews
+passes through this gate — those are FREE and the correct way to give
+the user voice "samples".
+
+Diagnostic: $VERB_CHECK
+Command refused:
+  $COMMAND
+EOF
+        exit 2
+    fi
+fi
+
 # 7. Hard-block: rm -rf on paths that look like the repo root or home.
 if printf '%s' "$COMMAND" | grep -qE '\brm[[:space:]]+-[rRfFv]+[[:space:]]+(/Users/[^/[:space:]]+/?[[:space:]]*$|~[[:space:]]*$|\$HOME[[:space:]]*$|\.\.[[:space:]]*$|/[[:space:]]*$|\*[[:space:]]*$)'; then
     block "rm -rf on a path that looks like \$HOME, /, or .. Never do this."
