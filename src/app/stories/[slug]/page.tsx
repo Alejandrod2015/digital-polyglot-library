@@ -543,7 +543,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
 
       {/* Player fijo al fondo */}
       {resolvedStory.audioUrl && (
-  <div className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
+  <div id="story-player-dock" className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
     <Player
       src={resolvedStory.audioUrl}
       bookSlug={resolvedStory.source}

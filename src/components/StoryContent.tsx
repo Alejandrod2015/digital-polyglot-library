@@ -76,7 +76,14 @@ function cx(...classes: Array<string | false | null | undefined>) {
 }
 
 function stripHtml(raw: string): string {
-  return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  // Strip tags only. Whitespace normalization (collapsing spaces/tabs,
+  // preserving \n, capping \n{3,}→\n\n) is the job of
+  // sanitizePlainStoryText, which always wraps this call. The old
+  // implementation collapsed \s+ → " ", which silently destroyed every
+  // newline in plain-text multi-voice stories — making
+  // detectDialogueBlocks receive one giant single-line blob and fall
+  // back to prose rendering (dialogue + narrator crushed together).
+  return raw.replace(/<[^>]+>/g, " ");
 }
 
 function stripLegacyVocabSpans(raw: string): string {

@@ -150,7 +150,10 @@ export default function StoryBackLink({
         onClick={handleBack}
         aria-label={back.label}
         title={back.label}
-        className="fixed left-3 top-3 z-50 inline-grid h-10 w-10 place-items-center rounded-full border border-white/[0.12] bg-[rgba(4,9,17,0.78)] text-white/95 backdrop-blur-md transition hover:bg-[rgba(4,9,17,0.92)] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 md:left-6 md:top-6"
+        // Mobile (no sidebar): top-left corner. Desktop: just PAST the 16rem
+        // sidebar so it sits at the left edge of the content, beside the
+        // title, not on top of the logo.
+        className="fixed left-3 top-3 z-50 inline-grid h-10 w-10 place-items-center rounded-full border border-white/[0.12] bg-[rgba(4,9,17,0.78)] text-white/95 backdrop-blur-md transition hover:bg-[rgba(4,9,17,0.92)] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 md:left-64 md:top-5"
       >
         <ArrowLeft className="h-5 w-5" />
       </button>

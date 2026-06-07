@@ -84,6 +84,12 @@ function buildBlocks(
   const blocks: RenderBlock[] = [];
   let cursor = 0;
   let wordCursor = 0;
+  // Highlight each vocab word only on its FIRST occurrence in the story (same
+  // rule as StoryContent's `seenInStory` set). Without this the karaoke reader
+  // re-pilled repeats — e.g. "mija" appearing twice in la-fonda got two pills.
+  // The active-word karaoke highlight (by index) is unaffected; this only gates
+  // the vocab pill class.
+  const seenVocab = new Set<string>();
 
   // Split on EVERY newline, not just blank-line boundaries. Multi-voice
   // dialogue stories ("Speaker: line" turns separated by single \n) must
@@ -118,7 +124,12 @@ function buildBlocks(
         pieces.push({ kind: "gap", text: text.slice(cursor, w.charStart) });
       }
       const lower = w.text.toLowerCase();
-      const vocabKey = vocabLookup.get(lower) ?? null;
+      let vocabKey = vocabLookup.get(lower) ?? null;
+      if (vocabKey) {
+        const canon = vocabKey.toLowerCase();
+        if (seenVocab.has(canon)) vocabKey = null; // repeat → no pill
+        else seenVocab.add(canon);
+      }
       pieces.push({ kind: "word", index: wordCursor, token: w, vocabKey });
       cursor = w.charEnd;
       wordCursor += 1;

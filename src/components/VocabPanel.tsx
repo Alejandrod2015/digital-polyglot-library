@@ -98,6 +98,24 @@ export default function VocabPanel({
   const [selectedSourcePath, setSelectedSourcePath] = useState<string | undefined>(undefined);
   const [isFav, setIsFav] = useState(false);
   const [loadedFavs, setLoadedFavs] = useState<FavoriteItem[]>([]);
+  // Sit the bubble ABOVE the audio player dock so it never covers the
+  // controls (desktop or mobile). Measure the real dock height at runtime
+  // (#story-player-dock) instead of a fixed guess — the old static 98px
+  // assumed a ~92px dock, but the web player is taller (waveform + controls
+  // ≈ 130-140px) so the bubble overlapped it. Fallback clears a tall dock.
+  const [dockBottom, setDockBottom] = useState<string>(
+    "max(150px, calc(140px + env(safe-area-inset-bottom) + 12px))"
+  );
+  useEffect(() => {
+    const measure = () => {
+      const dock = document.getElementById("story-player-dock");
+      const h = dock?.getBoundingClientRect().height ?? 0;
+      if (h > 0) setDockBottom(`calc(${Math.ceil(h)}px + 12px + env(safe-area-inset-bottom))`);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [selectedWord]);
   const { user, isLoaded } = useUser();
   const storyAudioSegments = coerceAudioSegments(story.audioSegments);
 
@@ -352,7 +370,7 @@ export default function VocabPanel({
       onClick={(e) => e.stopPropagation()}
       onMouseDown={(e) => e.stopPropagation()}
       style={{
-        bottom: "max(98px, calc(92px + env(safe-area-inset-bottom) + 6px))",
+        bottom: dockBottom,
         left: "50%",
         transform: "translateX(-50%)",
         width: "calc(100% - 36px)",
