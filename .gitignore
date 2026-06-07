@@ -79,3 +79,7 @@ data/vocab-shorten/
 # Safety guard runtime files (snapshots live outside repo)
 .claude/safety/audit.log
 .claude/safety/env-snapshots/
+
+# throwaway debug scripts / empty stubs
+_keys.mts
+/app.json
