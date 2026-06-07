@@ -93,6 +93,7 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "schule","klasse","unterricht","lehrer","lehrerin","schüler","schülerin","student",
   "studentin","buch","heft","stift","kugelschreiber","bleistift","gummi","lineal",
   "tafel","kreide","papier","notiz","hausaufgabe","prüfung","note","aufgabe","übung",
+  "geschichte","geschichten","korb","körbe","notizbuch","notizbücher",
   "wort","satz","buchstabe","zahl","frage","antwort","sprache","fach","kurs","semester",
   "arbeit","beruf","job","chef","chefin","kollege","kollegin","mitarbeiter","gehalt",
   "lohn","arbeitszeit","pause","sitzung","besprechung","brief","mail","bericht",

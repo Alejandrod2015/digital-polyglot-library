@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { castToCoverLines, type StoryCast } from "@/lib/storyCast";
 
 let openaiClient: OpenAI | null = null;
 function openai(): OpenAI {
@@ -58,36 +59,43 @@ export type CoverVariant = "cool-cartoon" | "warm-cartoon" | "earthy-cartoon";
 
 export const COVER_VARIANTS: CoverVariant[] = ["cool-cartoon", "warm-cartoon", "earthy-cartoon"];
 
-// DPL covers must read as literary novel covers for adults, NOT as children's
-// books or language-app mascots. The cartoon-bebé / Pixar / Duolingo
-// aesthetic is BANNED (see user memory feedback_cover_style.md +
-// docs/story-quality-spec.md §5). The FORBIDDEN block below is mandatory:
-// without it Flux defaults to cartoon-bebé because that's its training-data
-// mean for "illustration of family scene".
+// DPL covers must read as adult literary novel covers, not children's books
+// or language-app mascots (see user memory feedback_cover_style.md +
+// docs/story-quality-spec.md §5).
+//
+// Flux 2 Pro has NO negative_prompt field; everything we send is positive
+// text. Diffusion text encoders do not parse negation reliably, so listing
+// "no sepia / no somber / no cartoon" injects those exact tokens and anchors
+// the model toward them (the very sepia/somber result we got). The style is
+// therefore steered with POSITIVE anchors only: "realistic adult proportions"
+// holds cartoon-bebé at bay, "bright daylight + high saturation" holds
+// sepia/somber at bay. Never reintroduce a FORBIDDEN/NEVER word-wall here.
 //
 // (Variant identifiers retain the "-cartoon" suffix as a legacy holdover;
-// the actual rendered style is editorial literary, NOT cartoon. Renaming
-// the identifiers would touch StudioCoversClient + journeys/cover-variants
-// without changing behavior.)
+// the actual rendered style is editorial literary. Renaming the identifiers
+// would touch StudioCoversClient + journeys/cover-variants without changing
+// behavior.)
 const SHARED_CARTOON_STYLE = [
-  "STYLE: Hand-drawn editorial illustration in the register of contemporary literary fiction covers (Sally Rooney, Maira Kalman) and warm editorial magazine illustrations (New Yorker, Apartamento, Kinfolk, contemporary cookbook covers).",
-  "Visible line work with subtle paper-grain texture, NOT flat vector. Faces with realistic adult proportions and soft warm expressions (NEVER smiling directly at the viewer; restrained without being somber).",
-  "Mood: lived-in, welcoming, atmospheric, grounded, adult.",
-  "",
-  "STRICTLY FORBIDDEN: cartoon-bebé / Pixar / Disney animation; Duolingo, Babbel, Headspace, Notion, Storyset, Freepik mascot aesthetic; oversized round heads; large anime/Pixar eyes; flat pastel color blocks; saccharine wholesome smiles; characters smiling directly at the viewer; muted / desaturated palette; sepia tones; chiaroscuro shadows; somber / melancholic mood; literary-grief aesthetic (Le Monde diplomatique, NYT op-ed gloom); gray / desaturated cinematography.",
+  "STYLE: Clean, modern flat graphic editorial illustration, in the register of high-end magazine and book covers (New Yorker, Penguin).",
+  "Bold confident shapes and strong silhouettes, crisp clean edges, smooth flat color fills with minimal detail.",
+  "Adult human proportions; faces are simplified and stylized as refined graphic design, elegant and grown-up, with calm natural eyes and relaxed neutral expressions.",
+  "Skin is an even flat tone; cheeks are plain with no rosy blush circles, no pink cheek dots.",
+  "Smooth, clean digital surfaces with a polished contemporary finish.",
+  "Expressions are warm, relaxed and natural; the characters are absorbed in the scene, looking at each other or at their activity.",
+  "Keep the air clean and empty: plain background, no floating musical notes, no sound symbols, no sparkles, no emoji-like icons, no decorative doodles.",
+  "Mood: fresh, bright, contemporary, alive.",
 ].join(" ");
 
-// Bright daylight + vivid saturated is the default for every variant.
-// "Editorial adulto" does NOT equal "literary melancholic". The variant
-// names retain their legacy "-cartoon" suffix but the actual content
-// shifts hue within a warm bright register, never into muted/sepia/somber.
+// Positive-only palettes. Every variant is bright, clean midday daylight
+// with balanced warm+cool color so it never collapses into a single warm
+// (yellow/sepia/aged) cast. The variants only shift accent temperature.
 const COVER_VARIANT_PALETTE: Record<CoverVariant, string> = {
   "cool-cartoon":
-    "PALETTE: Bright daylight naturalistic with cool-leaning hues — soft sky blue, fresh sage, dusty rose, with warm amber accents catching the key props. Vivid saturated, never muted, never chiaroscuro, never somber.",
+    "PALETTE: Bright, clear midday daylight with clean white light. Vivid, fully saturated colors leaning cool and fresh — soft sky blue, fresh leaf green, clean cream-white — with warm coral or amber accents for pop. Colors read true, crisp and luminous, like a sunny modern poster.",
   "warm-cartoon":
-    "PALETTE: Bright daylight naturalistic with warm-leaning hues — warm amber, golden yellow, terracotta, fresh sage, dusty rose. Lighting is warm and inviting (midday window light, golden hour). Vivid saturated, never muted, never sepia, never somber.",
+    "PALETTE: Bright, clear daylight with clean light. Vivid, fully saturated colors leaning warm — coral, warm amber, golden — balanced with sky blue and fresh green accents so the image stays bright and true and never collapses into a single warm cast. Crisp and luminous, like a sunny modern poster.",
   "earthy-cartoon":
-    "PALETTE: Bright daylight naturalistic with earthy-leaning hues — warm ochre, mustard yellow, fresh sage, soft cream, terracotta. Vivid saturated, never muted, never sepia, never chiaroscuro.",
+    "PALETTE: Bright, clear daylight with clean light. Vivid, fully saturated natural colors — fresh green, sky blue, warm coral and clean cream — with measured terracotta accents. Crisp and luminous, like a sunny modern poster.",
 };
 
 // Strip proper nouns (character names, brand names) so Imagen-style models
@@ -112,6 +120,17 @@ function summarizeSynopsis(synopsis: string): string {
     .trim();
 }
 
+// Cast-aware summary: keeps proper nouns (the cast lines pin who's who) and
+// includes the first few sentences so the defining beat survives — e.g. the
+// "third plate at the table" in Domingo con papá lives past sentence one. The
+// "No text" rule in the prompt still prevents names being drawn as captions.
+function summarizeSynopsisKeepNames(synopsis: string): string {
+  const sentences = synopsis.split(/(?<=[.!?])\s+/).filter(Boolean);
+  const joined = sentences.slice(0, 4).join(" ");
+  const capped = joined.length > 440 ? `${joined.slice(0, 440).trim()}…` : joined;
+  return capped.replace(/\s+/g, " ").trim();
+}
+
 export function buildCoverPrompt(args: {
   title: string;
   synopsis: string;
@@ -120,21 +139,35 @@ export function buildCoverPrompt(args: {
   topic: string;
   level: string;
   variant?: CoverVariant;
+  /**
+   * Character cast (ages/genders/names). When provided, it pins the rendered
+   * ages so the cover stays in sync with the voice cast, keeps the real names,
+   * and the synopsis is used verbatim (no proper-noun stripping). Pass
+   * getStoryCast(storyId) at the call site.
+   */
+  cast?: StoryCast | null;
 }): string {
-  const { synopsis, topic, variant = "cool-cartoon" } = args;
-  const scene = summarizeSynopsis(synopsis);
+  const { synopsis, topic, variant = "cool-cartoon", cast } = args;
+  // With a cast, names carry meaning ("the third plate is the mother's"), so we
+  // keep the synopsis intact and let the explicit cast lines fix the ages. The
+  // "No text" rule below still prevents names being rendered as captions.
+  // Without a cast we fall back to the legacy proper-noun-stripped summary.
+  const scene = cast ? summarizeSynopsisKeepNames(synopsis) : summarizeSynopsis(synopsis);
   const topicHint = topic ? topic.replace(/-/g, " ") : "";
   const sceneLine = scene
     ? `Editorial book cover illustration depicting ${scene}`
     : `Editorial book cover illustration of a ${topicHint || "calm everyday scene"}`;
   return [
     sceneLine.endsWith(".") ? sceneLine : `${sceneLine}.`,
+    cast ? castToCoverLines(cast) : "",
     SHARED_CARTOON_STYLE,
     COVER_VARIANT_PALETTE[variant],
     "Depict the main characters from the scene as the focal point in mid-shot framing, faces clearly visible. The characters fill most of the frame; the environment is a clean, simple backdrop.",
     "Wide horizontal 16:9 landscape frame.",
     "No text, no letters, no captions, no logos, no borders.",
-  ].join(" ");
+  ]
+    .filter(Boolean)
+    .join(" ");
 }
 
 function readString(obj: unknown, key: string): string | null {

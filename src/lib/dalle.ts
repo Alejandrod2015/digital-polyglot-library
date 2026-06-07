@@ -114,22 +114,22 @@ function buildCoverPrompt(args: {
       ? `Strict exclusions: ${sceneHints.forbidden.join("; ")}.`
       : "";
 
-  // DPL covers must read as literary novel covers for adults, NOT as
-  // children's books or language-app mascots. The cartoon-bebé / Pixar /
-  // Duolingo aesthetic is banned (user memory feedback_cover_style.md +
-  // story-quality-spec.md §5). Without the explicit FORBIDDEN block
-  // below, Flux defaults to "cartoon family" because that's its training
-  // mean for "illustration of family scene".
+  // DPL covers must read as adult literary novel covers, not children's
+  // books or language-app mascots (user memory feedback_cover_style.md +
+  // story-quality-spec.md §5). Flux 2 Pro has NO negative_prompt field and
+  // diffusion encoders do not parse negation, so a "no sepia / no cartoon"
+  // word-wall injects those exact tokens and anchors the model toward them.
+  // Steer with POSITIVE anchors only: "realistic adult proportions" holds
+  // cartoon-bebé at bay, "bright daylight + high saturation" holds
+  // sepia/somber at bay. Never reintroduce a FORBIDDEN/NEVER word-wall.
   return [
     "Create a horizontal editorial illustration (1536x1024) grounded in the scene below.",
     "Depict one clear main moment with the main characters as the focal point, faces and body language readable.",
     "Include 2-4 representative objects or environment cues drawn from the scene.",
     "",
-    "STYLE: Hand-drawn editorial illustration in the register of contemporary literary fiction covers (Sally Rooney, Maira Kalman) and warm editorial magazine illustrations (New Yorker, Apartamento, Kinfolk, contemporary cookbook covers). Visible line work with subtle paper-grain texture, NOT flat vector. Faces with realistic adult proportions and soft warm expressions (NEVER smiling directly at the viewer; restrained without being somber). Mood: lived-in, welcoming, atmospheric, grounded, adult.",
+    "STYLE: Clean, modern flat graphic editorial illustration, in the register of high-end magazine and book covers (New Yorker, Penguin). Bold confident shapes and strong silhouettes, crisp clean edges, smooth flat color fills with minimal detail. Adult human proportions; faces are simplified and stylized as refined graphic design, elegant and grown-up, with calm natural eyes and relaxed neutral expressions. Skin is an even flat tone; cheeks are plain with no rosy blush circles, no pink cheek dots. Smooth, clean digital surfaces with a polished contemporary finish. Expressions are warm, relaxed and natural; the characters are absorbed in the scene, looking at each other or at their activity. Keep the air clean and empty: plain background, no floating musical notes, no sound symbols, no sparkles, no emoji-like icons, no decorative doodles. Mood: fresh, bright, contemporary, alive.",
     "",
-    "STRICTLY FORBIDDEN: cartoon-bebé / Pixar / Disney animation; Duolingo, Babbel, Headspace, Notion, Storyset, Freepik mascot aesthetic; oversized round heads; large anime/Pixar eyes; flat pastel color blocks; saccharine wholesome smiles; characters smiling directly at the viewer; muted / desaturated palette; sepia tones; chiaroscuro shadows; somber / melancholic mood; literary-grief aesthetic (Le Monde diplomatique, NYT op-ed gloom); gray / desaturated cinematography.",
-    "",
-    "PALETTE: Bright daylight naturalistic + vivid saturated. Warm amber, golden yellow, fresh sage, soft sky blue, terracotta, dusty rose. Lighting is warm and inviting — midday window light, golden hour glow, soft daylight. NEVER muted, NEVER sepia, NEVER chiaroscuro, NEVER somber. Composition reads warm and alive, not gray and contemplative.",
+    "PALETTE: Bright, clear midday daylight with clean white light. Vivid, fully saturated colors balanced between cool and warm — fresh sky blue, leaf green and clean cream-white, with warm amber, coral and terracotta accents. Colors read true, crisp and luminous, like a sunny modern poster; never a single warm or yellowed cast.",
     "",
     "Keep the composition simple and readable at thumbnail size, with one focal area in the center or center-left.",
     "Wide horizontal 16:9 landscape frame. No text, letters, logos, watermark, border, or book mockup. Single coherent scene.",

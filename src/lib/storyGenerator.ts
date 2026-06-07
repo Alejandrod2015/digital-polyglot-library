@@ -433,7 +433,7 @@ ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 ${titleClause}
 ${variantClause}
-Return 26-30 vocabulary items. After post-processing filters transparent cognates and invalid multi-word fragments, this must still yield at least 20 keeper items (the app's hard minimum; ideal final list is 20-25).
+Return vocabulary items scaled to the story's DENSITY, not a fixed cap: aim for roughly one teachable item per 10 words of your story body (a ~250-word story → ~25 candidates; a denser ~330-word story → ~33). After post-processing filters transparent cognates and invalid multi-word fragments, the keeper list must still be at least 20 (hard minimum) and at most max(25, round(bodyWords/9)). Only include words that genuinely earn a slot (two-functions test below); do NOT pad to hit a number.
 Vocabulary serves TWO jobs and the list must cover both:
 1. Comprehension — gloss the words that would BLOCK this reader if unknown. At A1/A2 these are the rare, concrete, scene-specific nouns (e.g. cod, apron, lemon). Include them BECAUSE they are unfamiliar; that is the point of an in-story gloss. Do NOT skip a word just because it is low-frequency or only appears in this scene.
 2. Acquisition — high-frequency, transferable verbs/adjectives/connectors the learner reuses everywhere (to need, to take, important, nice, to pay).

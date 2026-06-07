@@ -155,7 +155,7 @@ Use one of the seven values above. The field is required for every new story and
 
 ## 4. Vocab
 
-- 20 to 25 items per story. **Hard minimum 20** (raised 2026-06-04 from 18-22; ceiling lifted to 25 on 2026-06-05 to fit both the comprehension-blockers and the acquisition words; aim for 20-22, go up to 25 when a scene needs extra concrete glosses, never below 20).
+- **Count scales with body DENSITY, not a fixed cap** [2026-06-05]. **Hard minimum 20**; the ceiling = `max(25, round(bodyWords / 9))`. So a normal ~250-word story keeps the 20-25 band, while a denser/longer story earns more (e.g. a 330-word recipe-reunion like `la-fonda-de-tio-beto` → up to ~37, and genuinely wants ~30: the ingredients + the cultural terms `mija`/`marchando`/`epazote`/`guajillo` + the key verbs). Rule of thumb for the TARGET: roughly one teachable item per 10 body words. Do NOT pad to the ceiling — only highlight words that genuinely earn a slot (two-functions test below). History: 18-22 (pre-2026-06-04) → 20-25 (2026-06-04/05) → density-scaled (2026-06-05). Over-pilling is still bounded independently by the no-consecutive-pills + per-paragraph distribution rules, so a high count must still spread across the body, not cluster.
 - Each item:
   - `word`: dictionary lemma form
   - `surface` (optional): exact form as used in the text, only if different from the lemma

@@ -30,6 +30,7 @@ import {
   type CoverProvider,
   type CoverVariant,
 } from "@/lib/coverGenerator";
+import { getStoryCast } from "@/lib/storyCast";
 
 export const maxDuration = 180;
 
@@ -108,6 +109,7 @@ export async function POST(request: Request) {
         topic: story.topic,
         level: story.level,
         variant,
+        cast: getStoryCast(story.id),
       });
       const filename = `${fileBase || "story-cover"}-${variant}-${provider}-${Date.now()}.png`;
       const buffer = await generateBuffer(prompt);

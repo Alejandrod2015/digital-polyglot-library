@@ -10,6 +10,7 @@ import {
   sanitizeFileChunk,
   stripHtmlForCover,
 } from "@/lib/coverGenerator";
+import { getStoryCast } from "@/lib/storyCast";
 
 export const maxDuration = 120;
 
@@ -46,6 +47,7 @@ export async function POST(request: Request) {
       region: story.journey.variant,
       topic: story.topic,
       level: story.level,
+      cast: getStoryCast(story.id),
     });
 
     const fileBase = sanitizeFileChunk(story.title || "story-cover");

@@ -1380,12 +1380,21 @@ export async function validateGeneratedStory(
   });
 
   // ─── Vocab ─────────────────────────────────────────────
+  // Count scales with body DENSITY instead of a rigid cap [2026-06-05]. A
+  // 250-word slice-of-life and a 330-word recipe-reunion shouldn't carry the
+  // same number of pills: denser stories genuinely teach more (e.g. la-fonda
+  // wants ~30: ingredients + cultural terms `mija`/`marchando`/`epazote` +
+  // verbs). Floor stays 20; the ceiling rises ~1 item per 9 body words but
+  // never drops below 25, so normal stories keep the old 20-25 band. The
+  // over-pilling guards (vocab-no-consecutive-pills, ≤30%/paragraph
+  // distribution) still cap clustering independently of this count.
   const vocabCount = parsed.vocab.length;
+  const vocabCeiling = Math.max(25, Math.round(bodyWords / 9));
   checks.push({
     id: "vocab-count",
-    label: "Vocab has 20-25 items",
-    status: vocabCount >= 20 && vocabCount <= 25 ? "pass" : "fail",
-    detail: `${vocabCount} items`,
+    label: `Vocab has 20-${vocabCeiling} items (ceiling scales with body length)`,
+    status: vocabCount >= 20 && vocabCount <= vocabCeiling ? "pass" : "fail",
+    detail: `${vocabCount} items (body ${bodyWords}w → allowed 20-${vocabCeiling})`,
   });
 
   // Definition rules — see docs/story-quality-spec.md §4. The corrected

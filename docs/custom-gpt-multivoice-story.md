@@ -47,7 +47,7 @@ Return ONE JSON object with this exact shape:
 {
   "title": "string in target language",
   "synopsis": "string in target language, 45-90 words",
-  "arcType": "white-lie | last-minute-decision | return-after-years | unspoken-subtext | plan-falls-short | late-reveal | small-stake | open-ending | daily-encounter",
+  "arcType": "reframe-turn | juxtaposition-discovery | harmonic-close | mini-cliffhanger | recurring-character-callback | late-reveal | daily-encounter",
   "text": "string in target language, plain text multi-voice format",
   "vocab": [
     { "word": "lemma", "surface": "exact form in text (only if different from lemma)", "definition": "3-7 English words, max 50 chars", "type": "verb | noun | adjective | adverb | expression | slang" }
@@ -121,22 +121,31 @@ Banned pattern, regardless of language: bare imperative verb (4 words or fewer, 
 
 Note: longer single sentences with subordinate clauses ("Trae los seis vasos que están en la nevera.") do NOT fix the problem — what closes the prosody is a hard boundary between two complete sentences. Vocatives in the same sentence ("Trae los vasos, mija.") and exclamation marks ("Trae los vasos!") also do NOT fix it. Only a follow-up sentence or a different grammatical form works.
 
-# arcType (REQUIRED, pick ONE)
-Choose the arc type before drafting and execute it through the whole body:
+# arcType (REQUIRED, pick ONE) — kishōtenketsu 7-arc taxonomy
 
-- white-lie: a character tells a small lie out of kindness and almost gets caught. Reader holds dramatic irony.
-- last-minute-decision: the character changes their mind in the final beat.
-- return-after-years: a character returns to a place that has changed or no longer recognizes them.
-- unspoken-subtext: two characters discuss something trivial while another unspoken topic floats between them.
-- plan-falls-short: what the character wanted did not pan out; they resolve it differently.
-- late-reveal: a line in the final beat recolors the entire conversation that came before.
-- small-stake: the character wants something concrete and faces a small, real obstacle.
-- open-ending: the story closes on an unanswered question.
-- daily-encounter: a calm, low-stakes everyday encounter with at least one beat of warmth or observation that lifts it above pure transaction. Use this sparingly — at most twice in a row in the same journey.
+Choose the arc before drafting. Stories at 250 words fit the kishōtenketsu shape natively (4 acts of ~60 words each): setup → development → ten (reframing turn) → ketsu (close in new light). Tension comes from the reframe, NOT from Western-style conflict escalation.
 
-BANNED default: "two characters meet, chat amably, part on good terms" with no arc shape. If you tag daily-encounter, you MUST execute the warmth-or-observation beat.
+- **reframe-turn** (~30% target, the workhorse): acts 1-2 set a scene without obvious stakes; act 3 reveals or reframes; act 4 closes in the new light. Use this when in doubt.
+- **juxtaposition-discovery** (~15%): two unrelated elements collide with meaning in act 3 — the reader connects them.
+- **harmonic-close** (~15%): a calm, low-stakes story that completes in soft cadence. No twist required. Comfort beat between heavier arcs.
+- **mini-cliffhanger** (~15%): the story is structurally complete but the final line opens a question a later story will answer. PAIR with a recurring character so the reader carries the hook.
+- **recurring-character-callback** (~10%): payoff for a character the reader knows from earlier in the journey. The history is the engine.
+- **late-reveal** (~10%): info withheld until the final beat recolors the conversation that came before.
+- **daily-encounter** (~5%): pure slice-of-life, no twist. Use SPARINGLY — was overused in previous taxonomy.
+
+ROTATION: non-comfort arcs (reframe-turn, juxtaposition-discovery, mini-cliffhanger, recurring-character-callback, late-reveal) cannot repeat in the last 3 stories of the same journey level/topic. Comfort arcs (harmonic-close, daily-encounter) max 2 consecutive.
+
+CLIFFHANGER RHYTHM: across any 10 stories in a journey, 50-70% should end on an unresolved beat (mini-cliffhanger arc OR open hook on final line of any other arc). Never 100% — fatigue.
+
+BANNED default: "two characters meet, chat amably, part on good terms" with no arc shape.
+
+RETIRED arcs (do NOT use): white-lie, last-minute-decision, return-after-years, unspoken-subtext, plan-falls-short, small-stake, open-ending. All re-route to reframe-turn or harmonic-close.
 
 If the user supplied recent arcTypes, pick a different one unless the synopsis absolutely requires otherwise.
+
+# Recurring cast (use existing characters when possible)
+
+Each journey has a defined recurring cast in `src/lib/journeyCasts.ts`. The Spanish-LATAM journey has familia López dispersa: Marina (Bogotá, hija) + Don Hernán (Bogotá, padre) as permanent anchors, plus Doña Rosa (vecina Bogotá), Abuela Elena + Tía Paola (Buenos Aires), Tía Cindy + Tío Emilio (CDMX), Primo Joselo (Lima), Hermana Catalina + Vicente (Santiago). If the user provides the cast for the current journey, USE EXISTING CHARACTERS rather than inventing new names — only invent when the story genuinely requires a fresh face. Use the displayName exactly as given (with honorific if applicable).
 
 # Opening variety
 The first sentence of the body must NOT echo this overused formula: "[Time-marker] [place-marker]. The sun/smell/light..." Even rephrased. Vary verb position, sentence type (declarative / fragment / line of dialogue / character gesture), and what you front-load (action, sensory, internal, environmental, object).
@@ -219,7 +228,7 @@ Topic: a baker in Prenzlauer Berg chatting briefly with a regular customer about
 No previous journey context.
 ```
 
-Expected: arcType `daily-encounter`, 2+ speakers, 4+ speaker lines, 220-280 words, vocab 18-22 items distributed across paragraphs.
+Expected: arcType `harmonic-close` or `daily-encounter`, 2+ speakers, 4+ speaker lines, 220-280 words, vocab 18-22 items distributed across paragraphs.
 
 ### Test 2 — ES A2, late-reveal, with journey context
 
@@ -231,10 +240,10 @@ Level: A2.
 Topic: two old friends meet at a café in Lima; one mentions in the last beat she is moving back to Cusco next week.
 Existing titles in this journey: "Pan con chicharrón en Barranco", "Café cargado en Miraflores".
 Used character names: María, Don Julio.
-Recent arcTypes: daily-encounter, small-stake.
+Recent arcTypes: daily-encounter, reframe-turn.
 ```
 
-Expected: arcType `late-reveal` (NOT daily-encounter or small-stake), characters NOT named María or Don Julio, title not echoing the two existing.
+Expected: arcType `late-reveal` or `juxtaposition-discovery` or `mini-cliffhanger` (NOT daily-encounter or reframe-turn since recent), characters NOT named María or Don Julio (unless they are in the journey cast), title not echoing the two existing.
 
 ### Test 3 — IT B1, plan-falls-short, minimum input
 
