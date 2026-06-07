@@ -76,6 +76,8 @@ export default function StudioAudioClient() {
   const [clonedVoices, setClonedVoices] = useState<ClonedVoice[]>([]);
   const [showClonedSection, setShowClonedSection] = useState(false);
   const [showVoiceGallery, setShowVoiceGallery] = useState(false);
+  const [showDialogueCast, setShowDialogueCast] = useState(true);
+  const [showCandidates, setShowCandidates] = useState(true);
   const [showQueue, setShowQueue] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<StatusFilter>("missing");
@@ -331,6 +333,16 @@ export default function StudioAudioClient() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <DialogueCastCandidatesSection
+        open={showCandidates}
+        onToggle={() => setShowCandidates((v) => !v)}
+      />
+
+      <DialogueCastSection
+        open={showDialogueCast}
+        onToggle={() => setShowDialogueCast((v) => !v)}
+      />
+
       <VoiceGallerySection
         open={showVoiceGallery}
         onToggle={() => setShowVoiceGallery((v) => !v)}
@@ -644,6 +656,339 @@ function sampleUrl(voice: VoiceEntry | { id: string; engine: "f5" }, isCloned: b
     return `/voice-samples/f5_${id}.wav`;
   }
   return `/voice-samples/${safeVoiceId(voice.id)}.mp3`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Cast aprobado para diálogos (DPL canonical voice catalog)
+// ─────────────────────────────────────────────────────────────────────────
+// Hardcoded copy of SPANISH_DIALOGUE_VOICES + GERMAN_DIALOGUE_VOICES from
+// `src/lib/elevenlabs.ts`. We don't import elevenlabs.ts directly because
+// it pulls in `crypto` / `server-only` modules that crash a client bundle.
+// Keep these in sync manually when promoting a voice to the dialogue cast.
+type DialogueCastVoice = {
+  slot: string;       // catalog slot name (angela, horacio, …)
+  voiceId: string;
+  role: string;       // human-readable role this voice covers
+  accent: string;     // accent + gender + age summary
+  profile: string;    // short character profile / use case
+  previewUrl: string; // free ElevenLabs preview MP3
+};
+
+const DIALOGUE_CAST_SPANISH: DialogueCastVoice[] = [
+  {
+    slot: "angela",
+    voiceId: "Po9nYFo9ScA7odSuQLIW",
+    role: "Narrador",
+    accent: "LATAM neutral · F middle-aged",
+    profile: "Mature warm narrator (poetry/documentary register).",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/5c98d742b3a64cc9ace764f1f030f624/voices/Po9nYFo9ScA7odSuQLIW/xUd7Qr2rDXUbIIUk2NlR.mp3",
+  },
+  {
+    slot: "horacio",
+    voiceId: "57D8YIbQSuE3REDPO6Vm",
+    role: "Hombre adulto",
+    accent: "Colombiano · M middle-aged",
+    profile: "Natural + warm, paternal (don Hernán-type).",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/57D8YIbQSuE3REDPO6Vm/cab399de-2979-428d-8fff-86236bc92d22.mp3",
+  },
+  {
+    slot: "luna",
+    voiceId: "1ZhMG5ZZgJ6XpkOrB8Az",
+    role: "Mujer joven",
+    accent: "Colombiano · F young",
+    profile: "Conversational warm friendly (Marina-type).",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/ca5aa978cbdf45d0a5bb6025dc22b785/voices/1ZhMG5ZZgJ6XpkOrB8Az/jn86qbxh2loi5B2JRMXv.mp3",
+  },
+  {
+    slot: "alma",
+    voiceId: "3ttovAt5bt3Kk38UGIob",
+    role: "Mujer adulta",
+    accent: "LATAM neutral · F middle-aged",
+    profile: "Conversational warm (Lucía-type, sibling/peer).",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/c4a1a4b6cffe410ba65d7e02c9c25b5e/voices/3ttovAt5bt3Kk38UGIob/preview.mp3",
+  },
+  {
+    slot: "nieve",
+    voiceId: "nAFxIJGj7iSTeltygOfB",
+    role: "Abuela / mamá mayor",
+    accent: "Rioplatense · F old",
+    profile: "Argentine grandmother: candid, determined, pleasant.",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/a81cffb0e9d040f3bb0eb2db26c4603d/voices/nAFxIJGj7iSTeltygOfB/ywHX7pYF0WbKuamEHkAK.mp3",
+  },
+  {
+    slot: "paola",
+    voiceId: "PoLFkTquRWtbexdwW3Xa",
+    role: "Mujer rioplatense ~45-55",
+    accent: "Rioplatense · F middle-aged",
+    profile: "Professional neutral versatile (alternativa más joven a Nieve).",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/968825d5b11844ebbcea86fbb7b5a642/voices/PoLFkTquRWtbexdwW3Xa/kDXWCdCiodQ12VAMe5aJ.mp3",
+  },
+  {
+    slot: "mariana",
+    voiceId: "9rvdnhrYoXoUt4igKpBw",
+    role: "Mujer rioplatense con peso emocional",
+    accent: "Rioplatense · F middle-aged",
+    profile: "Intimate + assertive, deep clear emotional.",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/L2B5JJnBamUGYrPZi70BRhGxUGo2/voices/9rvdnhrYoXoUt4igKpBw/eJt2Mk4mAxdLDY9DMynR.mp3",
+  },
+  {
+    slot: "renzo",
+    voiceId: "acHf5gp7AGOY30tJjvD4",
+    role: "Hombre rioplatense joven ~25-35",
+    accent: "Rioplatense · M young",
+    profile: "Bold + urban, modern street-smart.",
+    previewUrl: "https://api.us.elevenlabs.io/v1/voices/acHf5gp7AGOY30tJjvD4/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiNWY1NDVmYmItZTBhYS00ZGZlLTk1MGUtM2NhYWU5NzE2MmRiLm1wMyIsInRpbWVzdGFtcCI6MTc4MDMxMTYwMDAwMDAwMH0%3D",
+  },
+];
+
+const DIALOGUE_CAST_GERMAN: DialogueCastVoice[] = [
+  {
+    slot: "moritz",
+    voiceId: "Ww7Sq9tx9CCOiNOwWgsx",
+    role: "Narrador",
+    accent: "Alemán nativo · M middle-aged",
+    profile: "Baritone — narrator default.",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/voices/Ww7Sq9tx9CCOiNOwWgsx/preview.mp3",
+  },
+  {
+    slot: "enniah",
+    voiceId: "WHaUUVTDq47Yqc9aDbkH",
+    role: "Mujer",
+    accent: "Alemán nativo · F middle-aged",
+    profile: "Warm — primary female.",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/voices/WHaUUVTDq47Yqc9aDbkH/preview.mp3",
+  },
+  {
+    slot: "michael",
+    voiceId: "KSEa36Zojh7KLdIkb8Qu",
+    role: "Joven / teen",
+    accent: "Alemán nativo · M young",
+    profile: "Youthful + calm narrative.",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/voices/KSEa36Zojh7KLdIkb8Qu/preview.mp3",
+  },
+  {
+    slot: "eleonore",
+    voiceId: "8SdTD5IMgFKT1jp7JbPC",
+    role: "Mujer mayor",
+    accent: "Alemán nativo · F middle-aged",
+    profile: "Mature narrator — Frau roles.",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/voices/8SdTD5IMgFKT1jp7JbPC/preview.mp3",
+  },
+];
+
+// Candidates pending audition. User clicks play, then approves by number in chat.
+// Once approved, voice moves into SPANISH_DIALOGUE_VOICES + DIALOGUE_CAST_SPANISH
+// and gets removed from this list.
+type DialogueCastCandidate = {
+  num: number;        // numero para que el user apruebe ("apruebo el 3, el 7…")
+  name: string;       // ElevenLabs voice name as shown in their library
+  voiceId: string;
+  region: string;     // "Mexicano", "Chileno", "Argentino", etc.
+  ageGender: string;  // "F young", "M middle-aged", "M old", etc.
+  fitsRole: string;   // que personaje cubriria si se aprueba
+  previewUrl: string; // free preview from /v1/shared-voices
+};
+
+const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
+  // Hueco prioritario #1: hombre mayor (abuelo) LATAM — cero voces hoy
+  {
+    num: 1,
+    name: "Ivan - Breathy, Wise-Sounding",
+    voiceId: "oqO5cdAzjE5Ik5xWIZRL",
+    region: "LATAM neutral",
+    ageGender: "M old",
+    fitsRole: "Abuelo sabio — narrativo breathy",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/KvY1FoWUsvcW7pJIBqtQgoHlSad2/voices/oqO5cdAzjE5Ik5xWIZRL/breqON7QZP0TKZiWbprM.mp3",
+  },
+  {
+    num: 2,
+    name: "Yasser - Professional and Serious",
+    voiceId: "1hB7zCGWj11SeMuBseeI",
+    region: "Cubano",
+    ageGender: "M old",
+    fitsRole: "Abuelo caribeño — profesional sereno",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/5ce745e745794994ba2cb09963f9df13/voices/1hB7zCGWj11SeMuBseeI/61a7318f-fde0-4344-b428-e0139d39c62e.mp3",
+  },
+  {
+    num: 3,
+    name: "Benjamin - Deep, Smooth and Rich",
+    voiceId: "80lPKtzJMPh1vjYMUgwe",
+    region: "Mexicano",
+    ageGender: "M old",
+    fitsRole: "Abuelo norteño — profundo suave",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/f5ece55944454e93adeeae7c95a0bccd/voices/80lPKtzJMPh1vjYMUgwe/OdLhfMeDosUS2KjiTnPS.mp3",
+  },
+  // Hueco #2: F middle-aged en regiones no-rioplatenses
+  {
+    num: 4,
+    name: "Adriana Angel - Warm, Calm & Serene",
+    voiceId: "jI8zlZKtaOjhGPBV6elt",
+    region: "Mexicano",
+    ageGender: "F middle-aged",
+    fitsRole: "Mamá en historia MX — cálida calmada serena",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/643d6ff739de47f48bc19e4fe4afd15a/voices/jI8zlZKtaOjhGPBV6elt/b3KecUcpfa1tLzBvIL2u.mp3",
+  },
+  {
+    num: 5,
+    name: "Angela (Chilean) - Warm, Calm and Assured",
+    voiceId: "prblQcKOdF08ozhxP2mk",
+    region: "Chileno",
+    ageGender: "F middle-aged",
+    fitsRole: "Mamá en historia CL — cálida segura (slot angela_cl)",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/4eEn1XHsbXPotYgXL4dl1Vkc4tp2/voices/prblQcKOdF08ozhxP2mk/205da2a0-2615-4388-afc3-ea1635f07554.mp3",
+  },
+  {
+    num: 6,
+    name: "Elena - Versátil, Natural, Cercana",
+    voiceId: "dyTONAae6PhdRb3hMKPM",
+    region: "Peruano",
+    ageGender: "F middle-aged",
+    fitsRole: "Mamá en historia Lima — versátil cercana",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/f78f937dc6ee4a439a63795ce7ff139e/voices/dyTONAae6PhdRb3hMKPM/KYUWCzwNB7uZaXav7rsL.mp3",
+  },
+  {
+    num: 7,
+    name: "Marcela - Clear and Natural Voice",
+    voiceId: "ebdrtet3LErOzR0r2i60",
+    region: "Colombiano",
+    ageGender: "F young",
+    fitsRole: "Mamá joven o hermana en historia Bogotá — clara natural profesional",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/81f58d58997f4f138c89d54f3e867004/voices/ebdrtet3LErOzR0r2i60/MmPqtEpNqIpuyP4XNOkg.mp3",
+  },
+  // Hueco #3: M young mexicano
+  {
+    num: 8,
+    name: "Tom - Kind, Sincere and Calm",
+    voiceId: "p1Q3ihQuPjyyENa1RGtl",
+    region: "Mexicano",
+    ageGender: "M young",
+    fitsRole: "Hijo/teen MX — amable sincero",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/aaPjxuXAcUd7Vh0Ph6AQ6SqqhIp1/voices/p1Q3ihQuPjyyENa1RGtl/9uChkxn9F6NdRCMmjIeD.mp3",
+  },
+  {
+    num: 9,
+    name: "Nicolás Lee - Warm, Calm and Articulate",
+    voiceId: "A1TMPwTwXl0r3bwjaTFc",
+    region: "Mexicano",
+    ageGender: "M young",
+    fitsRole: "Joven adulto MX — cálido articulado",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/XDKQ0dHQAtWYQT2DVQ4macQKcKB3/voices/A1TMPwTwXl0r3bwjaTFc/dfBtrXKCTwurOqOu5BY8.mp3",
+  },
+  // Bonus: F young rioplatense (gap medio en region desarrollada)
+  {
+    num: 10,
+    name: "Lucia - Warm, Expressive and Soothing",
+    voiceId: "yA5jrK1S9cpCAojBYyMu",
+    region: "Argentino",
+    ageGender: "F young",
+    fitsRole: "Hermana/peer BA — cálida expresiva (slot lucia_arg)",
+    previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/0Fxn4XyfXfQ0sQ4RXHblZGBnRP23/voices/yA5jrK1S9cpCAojBYyMu/6m8A8BPRqNphBM5Isxsv.mp3",
+  },
+];
+
+function DialogueCastCandidatesSection({ open, onToggle }: { open: boolean; onToggle: () => void }) {
+  return (
+    <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
+      <button
+        onClick={onToggle}
+        style={{ width: "100%", padding: "12px 16px", background: "transparent", border: "none", color: "var(--foreground)", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 13 }}
+      >
+        <span style={{ fontWeight: 600 }}>
+          Candidatos por evaluar <span style={{ color: "var(--muted)", fontWeight: 400 }}>· {DIALOGUE_CAST_CANDIDATES.length}</span>
+        </span>
+        <span style={{ color: "var(--muted)" }}>{open ? "▾" : "▸"}</span>
+      </button>
+      {open && (
+        <div style={{ padding: "10px 12px", borderTop: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 6 }}>
+          <p style={{ margin: "0 0 6px 0", fontSize: 12, color: "var(--muted)", lineHeight: 1.5 }}>
+            Audiciones pendientes — dale play a cada una y dime los números aprobados en chat. Cada aprobada se mueve a <code>SPANISH_DIALOGUE_VOICES</code> + cast aprobado abajo.
+          </p>
+          {DIALOGUE_CAST_CANDIDATES.map((c) => (
+            <div
+              key={c.voiceId}
+              style={{ display: "grid", gridTemplateColumns: "40px 1fr 260px", gap: 12, alignItems: "center", padding: "8px 10px", borderRadius: 8, backgroundColor: "var(--background)", border: "1px solid var(--card-border)", fontSize: 12 }}
+            >
+              <div style={{ fontWeight: 700, fontSize: 18, color: "var(--foreground)", textAlign: "center" }}>
+                {c.num}
+              </div>
+              <div>
+                <div style={{ color: "var(--foreground)", fontWeight: 600 }}>{c.name}</div>
+                <div style={{ color: "var(--muted)", fontSize: 11, marginTop: 2 }}>
+                  {c.region} · {c.ageGender} · <code style={{ fontSize: 10 }}>{c.voiceId}</code>
+                </div>
+                <div style={{ color: "var(--muted)", fontSize: 11, marginTop: 2, fontStyle: "italic" }}>
+                  {c.fitsRole}
+                </div>
+              </div>
+              <audio
+                controls
+                preload="none"
+                src={c.previewUrl}
+                style={{ width: 260, height: 36 }}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DialogueCastSection({ open, onToggle }: { open: boolean; onToggle: () => void }) {
+  const total = DIALOGUE_CAST_SPANISH.length + DIALOGUE_CAST_GERMAN.length;
+  return (
+    <div style={{ borderRadius: 10, backgroundColor: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
+      <button
+        onClick={onToggle}
+        style={{ width: "100%", padding: "12px 16px", background: "transparent", border: "none", color: "var(--foreground)", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 13 }}
+      >
+        <span style={{ fontWeight: 600 }}>
+          Cast aprobado para diálogos <span style={{ color: "var(--muted)", fontWeight: 400 }}>· {total}</span>
+        </span>
+        <span style={{ color: "var(--muted)" }}>{open ? "▾" : "▸"}</span>
+      </button>
+      {open && (
+        <div style={{ padding: "10px 12px", borderTop: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 14 }}>
+          <p style={{ margin: 0, fontSize: 12, color: "var(--muted)", lineHeight: 1.5 }}>
+            Voces canónicas para narrador y personajes en historias multi-voz. Cualquier historia generada via <code>generateAndUploadMultiVoiceAudio</code> debe casteárse exclusivamente desde este set. Para añadir o quitar voces, editar <code>SPANISH_DIALOGUE_VOICES</code> / <code>GERMAN_DIALOGUE_VOICES</code> en <code>src/lib/elevenlabs.ts</code>.
+          </p>
+          <DialogueCastTable lang="Spanish (LATAM)" voices={DIALOGUE_CAST_SPANISH} />
+          <DialogueCastTable lang="German" voices={DIALOGUE_CAST_GERMAN} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DialogueCastTable({ lang, voices }: { lang: string; voices: DialogueCastVoice[] }) {
+  return (
+    <div>
+      <h4 style={{ margin: "0 0 6px 0", fontSize: 12, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5 }}>{lang}</h4>
+      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        {voices.map((v) => (
+          <div
+            key={v.voiceId}
+            style={{ display: "grid", gridTemplateColumns: "110px 1fr 260px", gap: 12, alignItems: "center", padding: "8px 10px", borderRadius: 8, backgroundColor: "var(--background)", border: "1px solid var(--card-border)", fontSize: 12 }}
+          >
+            <div>
+              <div style={{ fontWeight: 600, color: "var(--foreground)" }}>{v.slot}</div>
+              <div style={{ color: "var(--muted)", fontSize: 11, marginTop: 2 }}>{v.role}</div>
+            </div>
+            <div>
+              <div style={{ color: "var(--foreground)" }}>{v.profile}</div>
+              <div style={{ color: "var(--muted)", fontSize: 11, marginTop: 2 }}>{v.accent} · <code style={{ fontSize: 10 }}>{v.voiceId}</code></div>
+            </div>
+            <audio
+              controls
+              preload="none"
+              src={v.previewUrl}
+              style={{ width: 260, height: 36 }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function VoiceGallerySection({
