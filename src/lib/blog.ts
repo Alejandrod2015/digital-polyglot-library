@@ -63,6 +63,8 @@ function parseFile(filename: string): BlogPost {
     title: String(data.title ?? slug),
     date: String(data.date ?? ""),
     excerpt: String(data.excerpt ?? ""),
+    seoTitle: data.seoTitle ? String(data.seoTitle) : undefined,
+    metaDescription: data.metaDescription ? String(data.metaDescription) : undefined,
     author: data.author as string | undefined,
     tags: Array.isArray(data.tags) ? (data.tags as string[]) : undefined,
     categories: Array.isArray(data.categories) ? (data.categories as string[]) : undefined,

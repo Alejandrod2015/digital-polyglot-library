@@ -7,6 +7,11 @@ export type BlogPostMeta = {
   title: string;
   date: string;
   excerpt: string;
+  // SEO overrides: when set, used for the <title>/<meta description> instead of
+  // title/excerpt. Lets us tune CTR for a target query without changing the
+  // visible H1 or article subtitle.
+  seoTitle?: string;
+  metaDescription?: string;
   author?: string;
   tags?: string[];
   categories?: string[];

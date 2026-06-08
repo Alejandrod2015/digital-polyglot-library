@@ -40,8 +40,8 @@ export async function generateMetadata(
   const post = getBlogPost(slug);
   if (!post) return { title: "Not found · Digital Polyglot Blog" };
   return {
-    title: `${post.title} · Digital Polyglot`,
-    description: post.excerpt,
+    title: `${post.seoTitle ?? post.title} · Digital Polyglot`,
+    description: post.metaDescription ?? post.excerpt,
   };
 }
 
