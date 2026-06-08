@@ -285,6 +285,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   // Active playback range: when the user clicked a per-row Play button
   // (block, title or selection), the player is "constrained" to a region
@@ -299,7 +300,19 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     activeRangeKeyRef.current = activeRangeKey;
   }, [activeRangeKey]);
 
-  const sourceUrl = detail.audioUrlPreview ?? detail.audioUrl;
+  // Route the R2 audio through a same-origin proxy. WaveSurfer fetches the
+  // file to decode it for the waveform, and that fetch is CORS-gated — the
+  // R2 bucket's allowlist does not include the canonical `www.` host the
+  // Studio runs on, so a direct fetch silently fails (empty waveform, 0:00).
+  // The proxy resolves the URL from the DB by id (no SSRF) and streams it
+  // back same-origin. `f` is a cache-buster derived from the real filename
+  // so a regenerated preview (new filename) forces wavesurfer to reload.
+  const realSourceUrl = detail.audioUrlPreview ?? detail.audioUrl;
+  const sourceVariant = detail.audioUrlPreview ? "preview" : "master";
+  const sourceBust = realSourceUrl ? realSourceUrl.split("/").pop() ?? "" : "";
+  const sourceUrl = `/api/studio/audio-editor/audio?id=${encodeURIComponent(
+    detail.id,
+  )}&v=${sourceVariant}&f=${encodeURIComponent(sourceBust)}`;
 
   const [startIdx, setStartIdx] = useState<number | null>(null);
   const [endIdx, setEndIdx] = useState<number | null>(null);
@@ -337,6 +350,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     setIsReady(false);
     setIsPlaying(false);
     setCurrentTime(0);
+    setLoadError(null);
 
     const ws = WaveSurfer.create({
       container: waveContainerRef.current,
@@ -355,7 +369,15 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
 
     ws.on("ready", () => {
       setIsReady(true);
+      setLoadError(null);
       setDuration(ws.getDuration());
+    });
+    // Surface load/decode failures instead of leaving an empty 0:00 player.
+    ws.on("error", (err) => {
+      setIsReady(false);
+      setLoadError(
+        err instanceof Error ? err.message : "No se pudo cargar el audio",
+      );
     });
     ws.on("play", () => setIsPlaying(true));
     ws.on("pause", () => setIsPlaying(false));
@@ -775,6 +797,21 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
         }}
       >
         <div ref={waveContainerRef} style={{ width: "100%", minWidth: 0 }} />
+        {loadError && (
+          <div
+            style={{
+              marginTop: 10,
+              padding: "8px 12px",
+              borderRadius: 6,
+              background: "rgba(239, 68, 68, 0.12)",
+              border: `1px solid ${DANGER}`,
+              color: DANGER,
+              fontSize: 12,
+            }}
+          >
+            No se pudo cargar el audio: {loadError}
+          </div>
+        )}
         <div
           style={{
             display: "flex",
