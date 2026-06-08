@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
+import RegionsPlugin from "wavesurfer.js/dist/plugins/regions.esm.js";
 import { getIsoLanguageTag } from "@/lib/languageFlags";
 
 type StoryWordToken = {
@@ -281,11 +282,15 @@ export default function AudioEditorClient() {
 function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: () => void }) {
   const waveContainerRef = useRef<HTMLDivElement | null>(null);
   const waveRef = useRef<WaveSurfer | null>(null);
+  const regionsRef = useRef<ReturnType<typeof RegionsPlugin.create> | null>(null);
   const [isReady, setIsReady] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [loadError, setLoadError] = useState<string | null>(null);
+  // Manual noise-cut region: a free time span drag-selected on the waveform
+  // (independent of word boundaries, since noises sit between/inside words).
+  const [cutRegion, setCutRegion] = useState<{ start: number; end: number } | null>(null);
 
   // Active playback range: when the user clicked a per-row Play button
   // (block, title or selection), the player is "constrained" to a region
@@ -318,7 +323,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   const [endIdx, setEndIdx] = useState<number | null>(null);
 
   const [busyAction, setBusyAction] = useState<
-    null | "preview" | "title" | "promote" | "discard" | "realign"
+    null | "preview" | "title" | "promote" | "discard" | "realign" | "cut"
   >(null);
   const [actionError, setActionError] = useState<string | null>(null);
 
@@ -351,6 +356,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     setIsPlaying(false);
     setCurrentTime(0);
     setLoadError(null);
+    setCutRegion(null);
 
     const ws = WaveSurfer.create({
       container: waveContainerRef.current,
@@ -366,6 +372,21 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
       url: sourceUrl,
     });
     waveRef.current = ws;
+
+    // Regions plugin: drag on the waveform to mark a noise span to cut.
+    // Only one region lives at a time — creating a new one replaces it.
+    const regions = ws.registerPlugin(RegionsPlugin.create());
+    regionsRef.current = regions;
+    regions.enableDragSelection({ color: "rgba(239, 68, 68, 0.25)" });
+    const syncRegion = (region: { start: number; end: number }) =>
+      setCutRegion({ start: region.start, end: region.end });
+    regions.on("region-created", (region) => {
+      for (const r of regions.getRegions()) {
+        if (r.id !== region.id) r.remove();
+      }
+      syncRegion(region);
+    });
+    regions.on("region-updated", syncRegion);
 
     ws.on("ready", () => {
       setIsReady(true);
@@ -406,6 +427,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     return () => {
       ws.destroy();
       waveRef.current = null;
+      regionsRef.current = null;
     };
   }, [sourceUrl]);
 
@@ -672,6 +694,51 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     }
   };
 
+  /* ── Manual noise cut (waveform region) ── */
+  const playCutRegion = () => {
+    if (!cutRegion) return;
+    playRangeToggle("cut-region", cutRegion.start, cutRegion.end + 0.02);
+  };
+
+  const clearCutRegion = () => {
+    regionsRef.current?.clearRegions();
+    setCutRegion(null);
+  };
+
+  const cutNoiseRegion = async () => {
+    if (!cutRegion) return;
+    if (
+      !confirm(
+        `¿Cortar el tramo ${formatTime(cutRegion.start)} → ${formatTime(cutRegion.end)} (${(
+          cutRegion.end - cutRegion.start
+        ).toFixed(2)}s)? Se elimina del audio y se une con un crossfade. Crea un preview; el master no cambia hasta "Guardar".`,
+      )
+    ) {
+      return;
+    }
+    setBusyAction("cut");
+    setActionError(null);
+    try {
+      const res = await fetch("/api/studio/audio-editor/cut", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          storyId: detail.id,
+          startSec: cutRegion.start,
+          endSec: cutRegion.end,
+        }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
+      setCutRegion(null);
+      onChanged();
+    } catch (err) {
+      setActionError(err instanceof Error ? err.message : "Error cortando el tramo");
+    } finally {
+      setBusyAction(null);
+    }
+  };
+
   /* ── Group words by block for organized rendering ── */
   const wordsByBlock = useMemo(() => {
     const grouped: Array<{ block: AudioEditorBlock; words: typeof wordsWithTimings }> = detail.blocks.map(
@@ -883,6 +950,70 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
           >
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
+        </div>
+      </div>
+
+      {/* ── Manual noise cut (waveform region) ── */}
+      <div
+        style={{
+          background: cutRegion ? "rgba(239, 68, 68, 0.10)" : "transparent",
+          border: `1px solid ${cutRegion ? DANGER : CARD_BORDER}`,
+          borderRadius: 8,
+          padding: 12,
+          display: "flex",
+          flexDirection: "column",
+          gap: 8,
+        }}
+      >
+        <div style={{ fontSize: 12, fontWeight: 600, color: cutRegion ? DANGER : "var(--muted)" }}>
+          {cutRegion
+            ? `Tramo a cortar: ${formatTime(cutRegion.start)} → ${formatTime(cutRegion.end)} (${(
+                cutRegion.end - cutRegion.start
+              ).toFixed(2)}s)`
+            : "Cortar ruido manual: arrastra sobre la onda para marcar el tramo (un clic, pop o respiración) y córtalo."}
+        </div>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <button
+            type="button"
+            disabled={!cutRegion}
+            onClick={playCutRegion}
+            style={{
+              ...btnStyle("secondary", !cutRegion),
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+            }}
+          >
+            {activeRangeKey === "cut-region" && isPlaying ? (
+              <>
+                <PauseIcon /> Pausar tramo
+              </>
+            ) : (
+              <>
+                <PlayIcon /> Reproducir tramo
+              </>
+            )}
+          </button>
+          <button
+            type="button"
+            disabled={!cutRegion}
+            onClick={clearCutRegion}
+            style={btnStyle("ghost", !cutRegion)}
+          >
+            Limpiar
+          </button>
+          <button
+            type="button"
+            disabled={!cutRegion || busyAction !== null}
+            onClick={cutNoiseRegion}
+            style={{
+              ...btnStyle("primary", !cutRegion || busyAction !== null),
+              background: cutRegion && busyAction === null ? DANGER : undefined,
+              borderColor: cutRegion && busyAction === null ? DANGER : undefined,
+            }}
+          >
+            {busyAction === "cut" ? "Cortando..." : "Cortar este tramo"}
+          </button>
         </div>
       </div>
 
