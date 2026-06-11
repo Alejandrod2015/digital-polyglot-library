@@ -384,6 +384,12 @@ export async function POST(request: Request) {
           text: softenPunctuationForTts(segmentText),
           model_id: "eleven_multilingual_v2",
           voice_settings: DEFAULT_VOICE_SETTINGS,
+          // Paridad con el pipeline (disableStitching): NO previous_text
+          // (evita la inhalación de costura) + next_text=" " como boundary,
+          // que suprime el respiro/exhalación de cola (la "cola tipo va-a-haber"
+          // que peleamos el 2026-06-11). Sin esto, una regeneración del editor
+          // puede reintroducir ese aire de cola.
+          next_text: " ",
         }),
       });
       if (!ttsRes.ok) {

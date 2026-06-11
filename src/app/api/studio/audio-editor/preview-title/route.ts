@@ -326,6 +326,10 @@ export async function POST(request: Request) {
           text: softenPunctuationForTts(cleanedTitle),
           model_id: "eleven_multilingual_v2",
           voice_settings: DEFAULT_VOICE_SETTINGS,
+          // Paridad con el pipeline (disableStitching): next_text=" " boundary
+          // que suprime el respiro de cola; sin previous_text para no meter
+          // inhalación de costura. Ver preview-segment.
+          next_text: " ",
         }),
       });
       if (!ttsRes.ok) {

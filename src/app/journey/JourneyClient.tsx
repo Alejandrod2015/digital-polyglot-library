@@ -390,6 +390,17 @@ export default function JourneyClient({
 
   const language = pillForTrack(selectedTrack);
 
+  // Volver desde el reader al MISMO journey/idioma del que entró el usuario
+  // (no a su idioma principal). StoryBackLink prioriza `?returnTo`; le pasamos
+  // la home con el variant activo, usando el mismo slug que la URL (slug ?? id).
+  const variantSlug = selectedTrack.slug ?? selectedVariantId;
+  const withReturn = (href: string) =>
+    href
+      ? `${href}${href.includes("?") ? "&" : "?"}returnTo=${encodeURIComponent(
+          `/?variant=${variantSlug}`
+        )}&returnLabel=Journey`
+      : href;
+
   return (
     <div className="dp-journey-page flex w-full flex-col gap-6 px-6 pb-20 pt-7 sm:px-10">
       <JourneyTopBar
@@ -427,7 +438,7 @@ export default function JourneyClient({
                     storyCount: topic.storyCount,
                     stories: topic.stories.map((s) => ({ slug: s.slug, title: s.title })),
                     storySlugs: topic.stories.map((s) => s.slug).filter(Boolean),
-                    ctaHref: topic.stories[0]?.href ?? null,
+                    ctaHref: topic.stories[0]?.href ? withReturn(topic.stories[0].href) : null,
                   });
                   void trackJourneyMetric(
                     "journey_topic_opened",
@@ -441,7 +452,7 @@ export default function JourneyClient({
                   <JourneyStoryCard
                     key={story.slug}
                     story={{
-                      href: story.href,
+                      href: withReturn(story.href),
                       title: story.title,
                       coverUrl: story.coverUrl ?? undefined,
                       icon: fallbackEmoji,

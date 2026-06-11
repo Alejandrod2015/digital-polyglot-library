@@ -17,12 +17,27 @@ import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 //   speed=0.9            10% slower so A1/A2 learners can follow along.
 //   use_speaker_boost    sharpens consonants for clearer foreign-word delivery.
 export const DEFAULT_VOICE_SETTINGS = {
-  stability: 0.9,
+  // 2026-06-10: bajado de stability 0.9 / style 0 (sonaba plano/monótono,
+  // el usuario lo notó en el primer render) a 0.4 / 0.3 para más emoción.
+  // Trade-off: más expresivo pero menos consistente. El cache key incluye
+  // settingsFingerprint, así que el cambio re-renderiza limpio.
+  stability: 0.4,
   similarity_boost: 0.8,
-  style: 0,
+  style: 0.3,
   speed: 0.9,
   use_speaker_boost: true,
 } as const;
+
+/** Per-voice settings override shape (mutable, unlike the `as const` defaults).
+ *  Lets one render use distinct stability/style per voice — p.ej. subir
+ *  stability solo a voces que respiran de más a baja estabilidad. */
+export type VoiceSettings = {
+  stability: number;
+  similarity_boost: number;
+  style: number;
+  speed: number;
+  use_speaker_boost: boolean;
+};
 
 // ── Eleven v3 (Alpha) ──────────────────────────────────────────────────
 // v3 supports inline audio tags ("[firm]", "[gentle]", "[whispers]") that
@@ -218,14 +233,16 @@ export const SPANISH_DIALOGUE_VOICES = {
   luna:      "1ZhMG5ZZgJ6XpkOrB8Az", // F young, colombian, conversational warm friendly — adult-young female (Marina-type)
   alma:      "3ttovAt5bt3Kk38UGIob", // F middle-aged, latin american (neutral), conversational warm — adult female sibling/peer
   // Argentine / rioplatense
-  nieve:     "nAFxIJGj7iSTeltygOfB", // F old, argentine, "Argentine grandmother" candid + determined + pleasant — abuela mayor
+  nieve:     "nAFxIJGj7iSTeltygOfB", // F old, argentine — acento CORDOBÉS (Córdoba, AR), verificado al oído por el usuario 2026-06-09 (NO porteño). Abuela mayor / Doña Sara. Ojo si la escena exige acento porteño de Buenos Aires.
   paola:     "PoLFkTquRWtbexdwW3Xa", // F middle-aged, argentine, professional neutral versatile — madre/tía rioplatense ~45-55
   mariana:   "9rvdnhrYoXoUt4igKpBw", // F middle-aged, argentine, intimate + assertive, deep clear emotional — peso emocional rioplatense
   renzo:     "acHf5gp7AGOY30tJjvD4", // M young, argentine, bold + urban, modern street-smart — hombre rioplatense joven ~25-35
   roma:      "6Mo5ciGH5nWiQacn5FYk", // F middle-aged, argentine, casual conversational — peer rioplatense (added 2026-06-01 round)
   // Mexican (added 2026-06-01)
   ana_sofia: "ewn5JTa3lNPY8QVuZJi6", // F young, mexican, casual conversational — joven adulta MX
-  cindy:     "pBabaO9WxfrjXjKADHma", // F young, mexican, neutral conversational — alternativa joven MX
+  cindy:     "pBabaO9WxfrjXjKADHma", // F young, mexican — RECHAZADA 2026-06-10 (sonó muy mal al oído). NO reusar.
+  zetian:    "P5kgBjTRY5DDGaw8gXLc", // F young, mexican — RECHAZADA 2026-06-10 ("no me convence" al oído). NO reusar.
+  ana_maria: "m7yTemJqdIqrcNleANfX", // F young, mexican (es-MX), calm/natural/clear — Renata (CDMX) + Itzel (Oaxaca). Elegida 2026-06-10 tras A/B en la línea real (ganó a cindy/zetian/camila).
   emilio:    "DV9FrN0pQkPWIoxW5dvT", // M middle-aged, mexican, calm informative — papá/tío MX
   patricio:  "77K94gl6ZCRVTHG8Gi1w", // M middle-aged, mexican, pleasant social-media — alternativa MX middle
   tom:       "p1Q3ihQuPjyyENa1RGtl", // M young, mexican, kind sincere calm — hijo/teen MX
@@ -236,6 +253,23 @@ export const SPANISH_DIALOGUE_VOICES = {
   // Peruvian (added 2026-06-01)
   elena:     "dyTONAae6PhdRb3hMKPM", // F middle-aged, peruvian, versátil natural cercana — mamá Lima
   joselo:    "UK00oAtGYBrHBUbesfMv", // M middle-aged, peruvian, confident informative — papá/tío Lima
+  // Mature female fill (added 2026-06-09, user-approved from shared library to
+  // resolve same-story voice collisions: Lupita was sharing ana_sofia with
+  // Sofía; Doña Rosa was sharing the narrator voice angela). Accent tags are
+  // creator-set and not verified by ear — confirm in audition before relying.
+  andreti:     "JW8DGEuLp9WxIS5IdxMM", // M ~50, latin american neutral, calm — NARRATOR del journey spanish-latam (elegido 2026-06-09, reemplaza a Angela). Las 3 stories viejas (La fonda, Alguien pregunta, El departamento nuevo) quedan con Angela hasta re-render.
+  azu:         "D3ws14YxTqcjPaXEOehR", // F old, mexican, calm soft melodic — señora mayor MX (Lupita)
+  maria_blanco:"HRi5Prm2B3PevwpDmVLP", // F old, colombian, airy rich pleasant — abuela/señora mayor CO (spare, no role yet)
+  lina_botero: "SnspHxfVcWQjJgnp6SL3", // F middle-aged, colombian, calm emotional — vecina/madre CO (Doña Rosa)
+  // 7-theme restructure voice bank (added 2026-06-09, user-approved al oído
+  // del preview; accent = tag del creador, no verificado más allá del timbre).
+  // Para temas nuevos: Lima/Perú, Cartagena/Colombia, Oaxaca/México.
+  sabina:    "wnQAQM2xwHFeVXM7PQOq", // F adult, peruvian, calm refined — Lima
+  terry:     "ulJB4yAMefhHYn0FWgGy", // M young, peruvian, gentle narration — Lima
+  carito:    "J8BF9c7OgbHiqagCNoEj", // F young, colombian, gentle conversational — Cartagena
+  valentina: "CUpuXTxjB4hhpAJNei6V", // F young, colombian, casual calm — Cartagena
+  juan:      "beQfcCW5PgdTQs4cETaz", // M young, colombian, natural conversation — Cartagena
+  esme:      "dZtUsFRKkioPsu9syJF6", // F middle-aged, mexican, crisp — Oaxaca / llena el hueco mid-F MX
 } as const;
 
 // v3 voice WHITELIST. v2 is the safe default for every voice; v3 is
@@ -604,17 +638,38 @@ export function parseDialogueSegments(storyText: string): DialogueSegment[] {
 function multivoiceSegmentCacheKey(
   voiceId: string,
   softenedText: string,
-  model: ElevenLabsModel = ELEVENLABS_MODEL_V2
+  model: ElevenLabsModel = ELEVENLABS_MODEL_V2,
+  settingsOverride?: VoiceSettings,
+  disableStitching?: boolean
 ): string {
   const settings =
-    model === ELEVENLABS_MODEL_V3 ? DEFAULT_VOICE_SETTINGS_V3 : DEFAULT_VOICE_SETTINGS;
+    settingsOverride ??
+    (model === ELEVENLABS_MODEL_V3 ? DEFAULT_VOICE_SETTINGS_V3 : DEFAULT_VOICE_SETTINGS);
   const settingsFingerprint = JSON.stringify(settings);
   // Model is in the fingerprint so v2 and v3 renders of the same text
   // never collide in the cache (the same speaker + line produces
   // perceptually different audio across model versions).
   const hash = crypto
     .createHash("sha256")
-    .update(`${voiceId}|${model}|${settingsFingerprint}|${softenedText}|trim-v4`)
+    // trim-v6 (2026-06-10): bump para invalidar segmentos cacheados con el
+    // trim heurístico (fallback cuando STUDIO_AUDIO_TOKEN estaba vacío → dejaba
+    // respiros de cola). Ya con el token puesto, re-genera + re-recorta con el
+    // align preciso (aeneas en Modal).
+    // trim-v7 (2026-06-11): el stitching (previous_text/next_text) hace que
+    // ElevenLabs meta una INHALACIÓN en la costura entre turnos (anticipa el
+    // next_text como si fuera a seguir hablando). El align no la agarra porque
+    // está pegada, no en el borde exacto. Ahora el stitching va en el key
+    // (`-nostitch` cuando está apagado) porque cambia el audio de verdad; sin
+    // esto, un render sin stitching reusaría el segmento con aire cacheado.
+    // -noprev (2026-06-11): disableStitching ahora apaga SOLO previous_text y
+    // mantiene next_text=" " (suprime el respiro de cola). Sufijo nuevo para
+    // no reusar los segmentos "-nostitch" previos (next_text apagado del todo)
+    // que dejaban exhalación al final de las preguntas.
+    .update(
+      `${voiceId}|${model}|${settingsFingerprint}|${softenedText}|trim-v7${
+        disableStitching ? "-noprev" : ""
+      }`
+    )
     .digest("hex")
     .slice(0, 24);
   return `media/multivoice-segments/${hash}.mp3`;
@@ -678,7 +733,14 @@ async function alignTrimSegment(args: {
   }
 
   // 3. Compute trim window. Margen 50 ms al inicio (para no cortar
-  // la primera consonante) y 30 ms al final (deja un breath natural).
+  // la primera consonante) y 8 ms al final. El +8 ms (antes +30 ms)
+  // mata la "phantom syllable": el modelo autorregresivo encadena 1-2
+  // fonemas del próximo token justo después de lastEnd; los +30 ms de
+  // "breath" que dejábamos contenían ese arranque y lo hacían audible
+  // ("como si el personaje siguiera hablando"). Cortar casi pegado a
+  // lastEnd lo elimina, y es seguro porque aeneas alinea el clip
+  // AISLADO → el fin de la última palabra es preciso (no clippea habla).
+  // La pausa de 0.45 s entre turnos ya da el espaciado natural.
   const firstStart = tokens[0]?.startSec;
   const lastEnd = tokens[tokens.length - 1]?.endSec;
   if (typeof lastEnd !== "number" || !Number.isFinite(lastEnd) || lastEnd <= 0) {
@@ -686,7 +748,7 @@ async function alignTrimSegment(args: {
     return null;
   }
   const trimStartSec = Math.max(0, (typeof firstStart === "number" ? firstStart : 0) - 0.05);
-  const trimEndSec = lastEnd + 0.03;
+  const trimEndSec = lastEnd + 0.008;
 
   // 4. ffmpeg atrim + re-encode (192 kbps libmp3lame igual que la
   // pasada anterior). asetpts para resetear timestamps y que el
@@ -833,6 +895,14 @@ async function ttsSegment(args: {
    *  inline en el texto, pero omite previous_text/next_text porque el
    *  endpoint no los soporta. */
   model?: ElevenLabsModel;
+  /** Per-voice settings override. Default: DEFAULT_VOICE_SETTINGS (v2) /
+   *  DEFAULT_VOICE_SETTINGS_V3 (v3). Va en el cache key. */
+  voiceSettings?: VoiceSettings;
+  /** Apaga previous_text en v2 (driver de la inhalación de costura) y fija
+   *  next_text=" " (boundary que suprime el respiro de cola). Para diálogo
+   *  multi-voz donde cada turno es otro hablante. Va en el cache key
+   *  (`-noprev`). */
+  disableStitching?: boolean;
 }): Promise<Buffer | null> {
   const model = args.model ?? ELEVENLABS_MODEL_V2;
   const softened = softenPunctuationForTts(args.text);
@@ -843,7 +913,7 @@ async function ttsSegment(args: {
   // Nota: previousText/nextText NO van en la cache key. Cambiarlos
   // produciría un audio ligeramente distinto pero no significativamente
   // — y meterlos rompería la propiedad "regenero solo lo que cambió".
-  const cacheKey = multivoiceSegmentCacheKey(args.voiceId, softened, model);
+  const cacheKey = multivoiceSegmentCacheKey(args.voiceId, softened, model, args.voiceSettings, args.disableStitching);
   const cacheUrl = getPublicObjectUrl(cacheKey);
   if (cacheUrl) {
     try {
@@ -861,22 +931,39 @@ async function ttsSegment(args: {
   }
 
   const voiceSettings =
-    model === ELEVENLABS_MODEL_V3 ? DEFAULT_VOICE_SETTINGS_V3 : DEFAULT_VOICE_SETTINGS;
+    args.voiceSettings ??
+    (model === ELEVENLABS_MODEL_V3 ? DEFAULT_VOICE_SETTINGS_V3 : DEFAULT_VOICE_SETTINGS);
   const requestBody: Record<string, unknown> = {
     text: softened,
     model_id: model,
     voice_settings: voiceSettings,
   };
   if (model !== ELEVENLABS_MODEL_V3) {
-    // v2 (and earlier): previous_text/next_text dan al modelo contexto
-    // sobre lo que pasa antes/después del segmento actual sin consumir
-    // caracteres del cuota. Sirve para que la prosodia fluya (previous)
-    // y para señalizar boundaries explícitos (next) — el último previene
-    // la "phantom syllable" mejor que cualquier post-process. Default a
-    // " " si no se pasa, así el modelo siempre tiene un boundary signal.
-    const prev = args.previousText?.trim();
-    if (prev) requestBody.previous_text = prev.slice(-500);
-    requestBody.next_text = args.nextText?.trim() ? args.nextText.trim().slice(0, 500) : " ";
+    // v2: previous_text/next_text dan al modelo contexto de los turnos
+    // vecinos. Los dos efectos son OPUESTOS y hay que tratarlos por separado
+    // (aprendido a oído el 2026-06-11):
+    //
+    //  · previous_text (turno anterior real) → el modelo sintetiza el
+    //    segmento como si VINIERA hablando, y mete una INHALACIÓN audible
+    //    al arranque/costura. Es el "aire" reportado. `disableStitching`
+    //    lo APAGA. En diálogo multi-voz el turno anterior es otro hablante,
+    //    así que ese contexto ni siquiera es prosódicamente correcto.
+    //
+    //  · next_text → boundary signal. Si vale " " (boundary mínimo) SUPRIME
+    //    el respiro/phantom de COLA. Si vale el próximo turno real, el modelo
+    //    "se prepara para seguir" y deja una exhalación. Por eso lo fijamos
+    //    SIEMPRE a " " cuando hay disableStitching: corta la cola sin reñir
+    //    con el inicio. (Apagar next_text del todo reintroduce el respiro de
+    //    cola — visto en la línea "¿...lleva un mole?").
+    if (!args.disableStitching) {
+      const prev = args.previousText?.trim();
+      if (prev) requestBody.previous_text = prev.slice(-500);
+    }
+    requestBody.next_text = args.disableStitching
+      ? " "
+      : args.nextText?.trim()
+        ? args.nextText.trim().slice(0, 500)
+        : " ";
   }
   // v3: no previous_text/next_text (request stitching disabled). En su
   // lugar el caller pre-prepends audio tags ("[firm]", "[gentle]") en
@@ -1107,6 +1194,15 @@ export async function generateAndUploadMultiVoiceAudio(args: {
    *  el uptalk a nivel de texto, eliminando la justificación principal
    *  de v3). v3 entra solo por whitelist explícito de voces auditadas. */
   model?: ElevenLabsModel;
+  /** Override de voice_settings por voiceId. Las voces no presentes usan
+   *  el default global. Útil para subir stability solo a las voces que
+   *  respiran de más a baja estabilidad, sin aplanar al resto. */
+  voiceSettingsMap?: Record<string, VoiceSettings>;
+  /** Apaga previous_text (inhalación de costura) y fija next_text=" "
+   *  (suprime respiro de cola) en todos los segmentos v2. Recomendado para
+   *  diálogo multi-voz: cada turno es otro hablante, el contexto del vecino
+   *  no aplica y la pausa de 0.45 s ya da el boundary. Va en el cache key. */
+  disableStitching?: boolean;
 }): Promise<{
   url: string;
   filename: string;
@@ -1190,10 +1286,12 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       text: textForTts,
       voiceId: frag.voiceId,
       apiKey,
-      previousText,
-      nextText,
+      previousText: args.disableStitching ? undefined : previousText,
+      nextText: args.disableStitching ? undefined : nextText,
       language: args.language,
       model: fragModel,
+      voiceSettings: args.voiceSettingsMap?.[frag.voiceId],
+      disableStitching: args.disableStitching,
     });
     if (!buf) return null;
     audioBuffers.push(buf);

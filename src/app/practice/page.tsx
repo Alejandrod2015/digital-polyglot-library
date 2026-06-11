@@ -406,7 +406,7 @@ export default function PracticePage() {
     isJourneyPractice && journeyLevelId && journeyTopicId
       ? explicitReturnTo && explicitReturnTo.startsWith("/") && !explicitReturnTo.startsWith("//")
         ? explicitReturnTo
-        : `/journey/${journeyLevelId}/${journeyTopicId}${journeyVariant ? `?variant=${encodeURIComponent(journeyVariant)}` : ""}`
+        : `/${journeyVariant ? `?variant=${encodeURIComponent(journeyVariant)}` : ""}`
       : null;
   const [checkpointSaveState, setCheckpointSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [checkpointToken, setCheckpointToken] = useState<string | null>(null);

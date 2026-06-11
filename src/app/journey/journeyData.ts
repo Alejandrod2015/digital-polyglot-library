@@ -361,6 +361,19 @@ async function buildLevelsForVariant(
     targetTopics.get(topicSlug)!.push(withOrder);
   }
 
+  // Topic ORDER = single source of truth en `Journey.topics` (DB), el mismo
+  // array que usa el journey-manager. El curriculum (journeyCurriculum.ts) puede
+  // quedar viejo respecto a los temas reales del journey reestructurado, así que
+  // reordenamos la lista final de temas por `Journey.topics` para que la home
+  // coincida 1:1 con el manager. (2026-06-11)
+  const journeyForOrder = await prisma.journey.findFirst({
+    where: { language: { equals: language, mode: "insensitive" }, variant: variantId },
+    orderBy: { createdAt: "asc" },
+    select: { topics: true },
+  });
+  const topicOrder = new Map<string, number>();
+  (journeyForOrder?.topics ?? []).forEach((slug, i) => topicOrder.set(slug, i));
+
   const levels: JourneyLevel[] = [];
   for (const [, meta] of Object.entries(journeyLevelMeta)) {
       const topicsMap = grouped.get(meta.id) ?? new Map<string, JourneyStoryItem[]>();
@@ -418,6 +431,21 @@ async function buildLevelsForVariant(
           if (b.storyCount !== a.storyCount) return b.storyCount - a.storyCount;
           return a.label.localeCompare(b.label);
         });
+      }
+
+      // Orden final por `Journey.topics` (DB) — fuente única compartida con el
+      // journey-manager. Los temas ausentes del array conservan su orden previo
+      // (sort estable) después de los conocidos.
+      if (topicOrder.size > 0) {
+        topics = topics
+          .map((t, i) => ({ t, i }))
+          .sort((a, b) => {
+            const ao = topicOrder.has(a.t.slug) ? topicOrder.get(a.t.slug)! : Number.MAX_SAFE_INTEGER;
+            const bo = topicOrder.has(b.t.slug) ? topicOrder.get(b.t.slug)! : Number.MAX_SAFE_INTEGER;
+            if (ao !== bo) return ao - bo;
+            return a.i - b.i;
+          })
+          .map((x) => x.t);
       }
 
       const level = {
@@ -771,7 +799,7 @@ export function buildJourneyTrackInsights(
       if (nextMilestone === "Journey cleared") {
         if (!complete) {
           const remaining = Math.max(requiredStoryCount - completedStoryCount, 0);
-          nextMilestone = `Read ${remaining} more ${remaining === 1 ? "story" : "stories"} in ${topic.label}`;
+          nextMilestone = `Complete ${remaining} more ${remaining === 1 ? "story" : "stories"} in ${topic.label}`;
         } else if (!practiced) {
           nextMilestone = `Practice ${topic.label}`;
         } else if (!checkpointPassed) {
