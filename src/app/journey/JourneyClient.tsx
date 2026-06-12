@@ -16,6 +16,7 @@ import {
 import type { JourneyTrackInsights, JourneyVariantTrack } from "./journeyData";
 import { isJourneyStoryComplete } from "@/lib/journeyUnlock";
 import type { JourneyDueReviewItem } from "@/lib/journeyProgress";
+import { formatVariantLabel } from "@/lib/languageVariant";
 import { TopicPreviewSheet } from "@/components/TopicPreviewSheet";
 import JourneyNextActionFab from "@/components/JourneyNextActionFab";
 import JourneyTopBar from "@/components/JourneyTopBar";
@@ -87,7 +88,7 @@ function topicEmoji(label: string): string {
 // expansión, "german" caía al fallback `.slice(0,2)` y mostraba "GE".
 const LANGUAGE_PILL_BY_VARIANT: Record<string, { code: string; flag: string }> = {
   // ── ISO short codes ──
-  latam: { code: "ES", flag: "🇲🇽" },
+  latam: { code: "ES", flag: "🇨🇴" },
   spain: { code: "ES", flag: "🇪🇸" },
   br: { code: "PT", flag: "🇧🇷" },
   pt: { code: "PT", flag: "🇵🇹" },
@@ -268,6 +269,24 @@ export default function JourneyClient({
     params.set("variant", slugForUrl);
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   }, [pathname, router, searchParams, selectedVariantId, tracks]);
+
+  // URL → state: si la URL trae un `?variant=` que apunta a un track DISTINTO
+  // del seleccionado, adoptarlo. Sin esto la home se queda en el journey
+  // anterior al volver del reader (`returnTo=/?variant=X`) o con back/forward:
+  // el estado solo se fijaba al montar o al clickear el selector, y el Router
+  // Cache de Next puede servir el render viejo con la URL nueva. (2026-06-11)
+  // Guardado con `lastSyncedSlugRef` + el check `matched.id !== selectedVariantId`
+  // para NO reabrir el loop state↔URL: cuando el state→URL escribe su propio
+  // `?variant=`, este efecto ve `matched === seleccionado` y hace no-op.
+  useEffect(() => {
+    const urlVariant = searchParams.get("variant");
+    if (!urlVariant) return;
+    const matched = tracks.find((t) => t.slug === urlVariant || t.id === urlVariant);
+    if (matched && matched.id !== selectedVariantId) {
+      lastSyncedSlugRef.current = matched.slug ?? matched.id;
+      setSelectedVariantId(matched.id);
+    }
+  }, [searchParams, tracks, selectedVariantId]);
 
   // Pull live progress stats for the top bar (energy / level / xp).
   // Falls back silently to zeroes if the call fails.
@@ -539,7 +558,7 @@ export default function JourneyClient({
                       className="block text-xs"
                       style={{ color: "var(--muted)" }}
                     >
-                      {pill.code} · {track.variant ?? track.slug}
+                      {pill.code} · {formatVariantLabel(track.variant) ?? track.slug}
                     </span>
                   </span>
                   {isSelected ? (

@@ -23,7 +23,7 @@ const DEFAULT_FLAG_BY_LANGUAGE: Record<string, string> = {
 };
 
 const FLAG_BY_VARIANT: Record<string, string> = {
-  latam: "🇲🇽",
+  latam: "🇨🇴",
   spain: "🇪🇸",
   us: "🇺🇸",
   uk: "🇬🇧",

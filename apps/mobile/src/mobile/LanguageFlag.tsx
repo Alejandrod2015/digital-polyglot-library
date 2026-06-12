@@ -44,8 +44,8 @@ const SPECS: Record<string, FlagSpec> = {
   French: { kind: "vBands", colors: ["#0055A4", "#FFFFFF", "#EF4135"] },
   // Spanish in SPECS holds the Spain (ES) flag — red, gold, red
   // horizontal bands, weights 1:2:1. The LATAM variant uses the
-  // Mexican flag (vBands green/white/red) and is selected by
-  // `pickSpec("Spanish", "latam")`.
+  // Colombian flag (COLOMBIA_SPEC, hBands yellow/blue/red 2:1:1) and
+  // is selected by `pickSpec("Spanish", "latam")`.
   Spanish: { kind: "hBands", colors: ["#AA151B", "#F1BF00", "#AA151B"], weights: [1, 2, 1] },
   Portuguese: { kind: "vBands", colors: ["#006600", "#FF0000"], weights: [2, 3] },
   English: { kind: "us" },

@@ -468,6 +468,17 @@ export default function StudioCoversClient() {
               setChosenByStory((cur) => ({ ...cur, [selected.story.id]: idx }))
             }
             onConfirm={confirmChoice}
+            onUploaded={(coverUrl) =>
+              setStoriesByJourney((cur) => {
+                const next = { ...cur };
+                for (const [jid, rows] of Object.entries(next)) {
+                  next[jid] = rows.map((s) =>
+                    s.id === selected.story.id ? { ...s, coverUrl, coverDone: true } : s
+                  );
+                }
+                return next;
+              })
+            }
           />
         ) : (
           <EmptyStudio />
@@ -612,6 +623,7 @@ function Studio({
   chosenIdx,
   onChooseVariant,
   onConfirm,
+  onUploaded,
 }: {
   story: Story;
   journey: Journey;
@@ -633,8 +645,31 @@ function Studio({
   chosenIdx: number | null;
   onChooseVariant: (idx: number) => void;
   onConfirm: () => void;
+  onUploaded: (coverUrl: string) => void;
 }) {
   const lang = languageCode(journey.language);
+  const [uploading, setUploading] = useState(false);
+
+  async function handleUploadCover(file: File) {
+    setUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("storyId", story.id);
+      fd.append("file", file);
+      const r = await fetch("/api/studio/journeys/cover-upload", { method: "POST", body: fd });
+      if (!r.ok) {
+        const t = await r.text();
+        alert(`Subida falló: ${r.status} ${t.slice(0, 200)}`);
+        return;
+      }
+      const data = (await r.json()) as { coverUrl?: string };
+      if (data.coverUrl) onUploaded(data.coverUrl);
+    } catch (err) {
+      alert(`Error subiendo portada: ${err}`);
+    } finally {
+      setUploading(false);
+    }
+  }
   const status = statusForStory(story, !!variants);
   const costPerImg =
     parseFloat((PROVIDERS.find((p) => p.value === model)?.cost ?? "0").replace(/[^0-9.]/g, "")) ||
@@ -660,6 +695,34 @@ function Studio({
         </div>
         <div className="studio-head__actions">
           <StatusBadge status={status} />
+          <label
+            title="Subir una portada manualmente (png/jpg/webp, máx 8 MB)"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 4,
+              fontSize: 12,
+              fontWeight: 600,
+              padding: "5px 11px",
+              borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.16)",
+              cursor: uploading || !story.id ? "default" : "pointer",
+              opacity: uploading || !story.id ? 0.55 : 1,
+            }}
+          >
+            {uploading ? "Subiendo…" : "Subir portada"}
+            <input
+              type="file"
+              accept="image/png,image/jpeg,image/webp"
+              style={{ display: "none" }}
+              disabled={uploading || !story.id}
+              onChange={(e) => {
+                const f = e.target.files?.[0];
+                e.target.value = "";
+                if (f) void handleUploadCover(f);
+              }}
+            />
+          </label>
           <button type="button" className="icon-btn" title="Más">
             <Icon name="more" size={13} />
           </button>
