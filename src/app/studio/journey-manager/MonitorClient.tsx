@@ -552,7 +552,7 @@ export default function MonitorClient() {
 
   function getTopicGroupsForJourney(journeyId: string): TopicGroup[] {
     const map = new Map<string, TopicGroup>();
-    stories.filter((s) => s.journeyId === journeyId).forEach((s) => {
+    stories.filter((s) => s.journeyId === journeyId && s.status !== "deprecated").forEach((s) => {
       const key = `${s.journeyId}:${s.level}:${s.topic}`;
       if (!map.has(key)) map.set(key, { journeyId: s.journeyId, level: s.level, topic: s.topic, label: topicLabels[s.topic] || s.topic, stories: [] });
       map.get(key)!.stories.push(s);

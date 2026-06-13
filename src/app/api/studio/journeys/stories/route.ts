@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
   if (!journeyId) return NextResponse.json({ error: "journeyId required" }, { status: 400 });
 
   const stories = await prisma.journeyStory.findMany({
-    where: { journeyId },
+    where: { journeyId, status: { not: "deprecated" } },
     orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
     select: {
       id: true, journeyId: true, slug: true, level: true, topic: true, slotIndex: true,

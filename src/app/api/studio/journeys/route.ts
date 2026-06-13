@@ -24,10 +24,11 @@ export async function GET() {
   });
 
   const result = journeys.map((j) => {
-    const total = j.stories.length;
-    const generated = j.stories.filter((s) => ["generated", "qa_pass", "approved", "published"].includes(s.status)).length;
-    const published = j.stories.filter((s) => s.status === "published").length;
-    const withCover = j.stories.filter((s) => s.coverDone).length;
+    const active = j.stories.filter((s) => s.status !== "deprecated");
+    const total = active.length;
+    const generated = active.filter((s) => ["generated", "qa_pass", "approved", "published"].includes(s.status)).length;
+    const published = active.filter((s) => s.status === "published").length;
+    const withCover = active.filter((s) => s.coverDone).length;
     return {
       id: j.id,
       name: j.name,

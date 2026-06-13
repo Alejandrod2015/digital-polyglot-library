@@ -2028,6 +2028,14 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 .jm-sdot--generated { background: var(--mx-info); }
 .jm-sdot--draft { background: rgba(255, 255, 255, 0.15); }
 .jm-sdot--fail { background: var(--mx-neg); }
+.jm-sdot--deprecated { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255,255,255,0.15); }
+
+.jm-deprecated-section { margin-top: 12px; }
+.jm-deprecated-summary { cursor: pointer; list-style: none; padding: 4px 8px; border-radius: 6px; }
+.jm-deprecated-summary::-webkit-details-marker { display: none; }
+.jm-deprecated-summary:hover { background: rgba(255,255,255,0.04); }
+.jm-deprecated-list { display: flex; flex-direction: column; gap: 4px; padding: 6px 8px 4px; }
+.jm-deprecated-row { display: flex; align-items: center; gap: 8px; padding: 3px 4px; border-radius: 4px; }
 
 /* Spinner — replaces a sdot while a story is busy */
 .jm-spinner {
