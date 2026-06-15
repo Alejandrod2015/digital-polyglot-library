@@ -21,6 +21,7 @@ const NAV_HREFS = [
   "/studio/standalone-stories",
   "/studio/catalog-books",
   "/studio/audio",
+  "/studio/audio-editor",
   "/studio/covers",
   "/studio/temas",
   "/studio/progreso",
