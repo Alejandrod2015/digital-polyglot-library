@@ -480,6 +480,48 @@ function lookupVocabToken(
   return null;
 }
 
+// Longest multi-word vocab surface starting at word index `start`. The
+// per-token `lookupVocabToken` can never match a surface like "se sirven",
+// "le encantó", "en voz baja" or "no paró de" because it only sees one
+// token at a time — so those reflexive verbs and idiomatic expressions
+// silently never render as pills. Here we join consecutive token texts
+// with single spaces and probe the lookup (which already registers the
+// full multi-word surface/word as a key in buildVocabLookup), greedy
+// longest-first so "en voz baja" wins over any shorter prefix. Returns
+// the matched item plus the exclusive end index of the span, or null.
+function matchVocabPhrase(
+  lookup: Map<string, VocabItem>,
+  words: StoryWordToken[],
+  start: number,
+  endExclusive: number,
+  maxTokens: number
+): { item: VocabItem; spanEnd: number } | null {
+  const cap = Math.min(endExclusive, start + maxTokens);
+  for (let end = cap; end >= start + 2; end -= 1) {
+    const joined = words
+      .slice(start, end)
+      .map((w) => w.text)
+      .join(" ")
+      .toLowerCase();
+    const hit = lookup.get(joined) ?? lookup.get(stripDiacritics(joined));
+    if (hit) return { item: hit, spanEnd: end };
+  }
+  return null;
+}
+
+// Largest token count across any multi-word key in the lookup, so the
+// phrase matcher knows how far ahead to probe. Single-word lookups
+// return 1 (phrase matching is then a no-op).
+function maxPhraseTokenSpan(lookup: Map<string, VocabItem>): number {
+  let max = 1;
+  for (const key of lookup.keys()) {
+    if (!key.includes(" ")) continue;
+    const n = key.split(/\s+/).length;
+    if (n > max) max = n;
+  }
+  return max;
+}
+
 // Vocab pill background per grammatical type. Each color is a saturated
 // hue at moderate opacity so white bold text reads cleanly on top, and
 // the hues are spread across the wheel so a paragraph with mixed parts
@@ -565,8 +607,10 @@ function renderKaraokeParagraph(args: {
   );
   let cursor = paragraph.charStart;
   let key = 0;
+  const maxPhrase = maxPhraseTokenSpan(vocabLookup);
 
-  for (let i = firstWordIdx; i <= lastWordIdx; i += 1) {
+  let i = firstWordIdx;
+  while (i <= lastWordIdx) {
     const w = words[i];
     if (w.charStart > cursor) {
       const gap = payloadText.slice(cursor, w.charStart).replace(/\n/g, " ");
@@ -576,6 +620,48 @@ function renderKaraokeParagraph(args: {
             {gap}
           </Text>
         );
+      }
+    }
+
+    // Multi-word vocab span first (reflexive verbs, idiomatic expressions
+    // like "se sirven", "le encantó", "en voz baja", "no paró de"). The
+    // per-token lookup below can never match these, so without this probe
+    // they silently never render as pills. Greedy longest-first; renders
+    // the whole surface as one pill so the expression reads as a unit.
+    if (maxPhrase > 1) {
+      const phrase = matchVocabPhrase(vocabLookup, words, i, lastWordIdx + 1, maxPhrase);
+      if (phrase) {
+        const canon = (phrase.item.word ?? "").toLowerCase();
+        if (canon && !alreadyHighlighted.has(canon)) {
+          alreadyHighlighted.add(canon);
+          const firstTok = words[i];
+          const lastTok = words[phrase.spanEnd - 1];
+          const spanText = payloadText
+            .slice(firstTok.charStart, lastTok.charEnd)
+            .replace(/\n/g, " ");
+          nodes.push(
+            <Pressable
+              key={`${paragraphKey}-ph-${i}`}
+              style={styles.karaokeWordOuter}
+              hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+              onPress={() => onWordPress(phrase.item, paragraph.text)}
+            >
+              <View
+                style={[
+                  styles.karaokeWordContainerVocab,
+                  { backgroundColor: vocabBackgroundForItem(phrase.item) },
+                ]}
+              >
+                <Text style={styles.karaokeWordTextVocabWhite}>{spanText}</Text>
+              </View>
+            </Pressable>
+          );
+          cursor = lastTok.charEnd;
+          i = phrase.spanEnd;
+          continue;
+        }
+        // Already pilled earlier in the story: fall through so the tokens
+        // render plain (no re-pill), same as single-word dedup.
       }
     }
 
@@ -653,6 +739,7 @@ function renderKaraokeParagraph(args: {
     }
 
     cursor = w.charEnd;
+    i += 1;
   }
 
   if (cursor < paragraph.charEnd) {

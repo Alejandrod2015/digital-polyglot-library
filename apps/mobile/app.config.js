@@ -59,6 +59,11 @@ const config = {
   newArchEnabled: false,
   orientation: "portrait",
   userInterfaceStyle: "automatic",
+  // App icon (home screen). Square dP mark, 1024x1024, opaque (no alpha —
+  // App Store rejects alpha). Source: brand square logo. The native iOS
+  // appiconset is also replaced directly for xcodebuild builds; this field
+  // keeps prebuild/EAS in sync so the icon survives a regen.
+  icon: "./assets/icon.png",
   assetBundlePatterns: ["**/*"],
   // (Native splash config moved to the `expo-splash-screen` plugin
   // below — gives us `imageWidth` so the wordmark renders at the

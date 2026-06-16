@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
 import { ChevronDown, Play, Square } from 'lucide-react';
-import { getLanguageFlag } from '@/lib/languageFlags';
+import { getLanguageCountry } from '@/lib/languageFlags';
+import Flag from '@/components/Flag';
 import { getSpeechSynthesisLang } from '@/lib/practiceExercises';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { books } from '@/data/books';
@@ -761,7 +762,7 @@ export default function FavoritesPage() {
     typeof user?.publicMetadata?.preferredVariant === 'string'
       ? (user.publicMetadata.preferredVariant as string)
       : null;
-  const activeFlag = activeLanguageName ? getLanguageFlag(activeLanguageName, activeVariantKey) : null;
+  const activeCountry = activeLanguageName ? getLanguageCountry(activeLanguageName, activeVariantKey) : null;
   // Convert "Spanish" → "ES", "es" → "ES", "es-mx" → "ES", etc.
   const activeLangShort = activeLanguageName
     ? (() => {
@@ -785,7 +786,7 @@ export default function FavoritesPage() {
       {/* ── iPhone-style hero — visible on every viewport ── */}
       <div className="mb-5">
         <div className="flex items-center gap-4 mb-3">
-          {activeFlag && activeLangShort ? (
+          {activeCountry && activeLangShort ? (
             <button
               type="button"
               onClick={() => setLanguageSwitcherOpen(true)}
@@ -793,10 +794,10 @@ export default function FavoritesPage() {
               aria-label="Switch language"
             >
               <span
-                className="rounded-full bg-black/30 grid place-items-center text-lg leading-none"
+                className="rounded-full bg-black/30 grid place-items-center leading-none"
                 style={{ width: 28, height: 28 }}
               >
-                {activeFlag}
+                <Flag code={activeCountry} size={20} title={activeLangShort} />
               </span>
               <span className="text-[13px] font-extrabold text-white">{activeLangShort}</span>
               <ChevronDown size={14} className="text-white/55" />

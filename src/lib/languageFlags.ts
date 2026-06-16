@@ -52,6 +52,33 @@ export function getLanguageFlag(language: string, variant?: string | null): stri
   return "🌐";
 }
 
+// ISO 3166-1 alpha-2 COUNTRY codes for the inline-SVG <Flag/> component.
+// Parallel to the emoji maps above, but returns a country code instead of an
+// emoji so flags render on every device (emoji flags break on Windows etc.).
+const COUNTRY_BY_VARIANT: Record<string, string> = {
+  latam: "CO", spain: "ES", us: "US", uk: "GB", brazil: "BR", portugal: "PT",
+  germany: "DE", austria: "AT", france: "FR", "canada-fr": "CA", italy: "IT",
+  "south-korea": "KR",
+};
+const DEFAULT_COUNTRY_BY_LANGUAGE: Record<string, string> = {
+  English: "US", Spanish: "ES", French: "FR", German: "DE", Italian: "IT",
+  Portuguese: "PT", Japanese: "JP", Korean: "KR", Chinese: "CN",
+};
+
+/**
+ * Best-effort ISO 3166-1 alpha-2 country code for a (language, variant) pair,
+ * for feeding the inline-SVG <Flag/> component. Variant wins; otherwise the
+ * canonical country for the language. Returns "" when unknown (Flag then
+ * renders nothing / a code fallback).
+ */
+export function getLanguageCountry(language: string, variant?: string | null): string {
+  if (variant) {
+    const byVariant = COUNTRY_BY_VARIANT[variant];
+    if (byVariant) return byVariant;
+  }
+  return DEFAULT_COUNTRY_BY_LANGUAGE[language] ?? "";
+}
+
 /**
  * Returns true if the given variant is a valid pairing with the language
  * according to the canonical domain mapping. Used at switch-time to

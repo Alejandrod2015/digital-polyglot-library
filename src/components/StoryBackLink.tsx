@@ -121,19 +121,15 @@ export default function StoryBackLink({
       return;
     }
 
+    // No returnTo: return to the ACTUAL previous page via browser history.
+    // We used to require document.referrer to be same-origin first, but some
+    // browsers / PWA contexts strip the referrer (referrer-policy, opened in a
+    // new tab), which made this fall through to the hardcoded "/explore" even
+    // when the user had really come from a journey/library page. router.back()
+    // stays inside the SPA history, so prefer it whenever there IS history.
     if (typeof window !== "undefined" && window.history.length > 1) {
-      const ref = document.referrer;
-      try {
-        if (ref) {
-          const refUrl = new URL(ref);
-          if (refUrl.origin === window.location.origin) {
-            router.back();
-            return;
-          }
-        }
-      } catch {
-        // ignore parse errors and continue to fallback
-      }
+      router.back();
+      return;
     }
 
     router.push(back.href);

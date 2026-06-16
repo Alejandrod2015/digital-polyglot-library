@@ -104,6 +104,21 @@ that ALWAYS runs before any Bash command. It does two things:
    `CLAUDE_AUTHORIZED=1` and `DPL_PUSH_AUTHORIZED=1` do **NOT** bypass
    the verb gate. The model cannot fake authorization here.
 
+6. **Batch gate (no partial deploys)**: each push to `main` is a paid
+   Vercel build, so NEVER ship while a clear deployable fix sits
+   uncommitted. The `pre-push` hook blocks any push to `main` when the
+   working tree has uncommitted/untracked changes under deployable
+   paths (`src/`, `prisma/`, root config) that are NOT in the pushed
+   commits — `apps/mobile/**` (local build, never Vercel) and
+   `scripts/_*` (scratch) are excluded. The hook lists the offending
+   files. **Before proposing any push, run `git status` and fold every
+   ready deployable change into the same commit** — do not treat a fix
+   as an isolated emergency. To consciously leave deployable WIP out,
+   the override is visible and per-command:
+   `DPL_PUSH_AUTHORIZED=1 DPL_PUSH_PARTIAL_OK=1 git push origin HEAD:main`.
+   This rule exists because on 2026-06-13 a prod hotfix shipped while a
+   ready audio-route fix sat uncommitted, costing a second build.
+
 If the guard blocks a non-push command, **DO NOT** add
 `CLAUDE_AUTHORIZED=1` on your own to bypass it. That flag is for the
 user to type, or for you ONLY after the user has said the imperative

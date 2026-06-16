@@ -6551,6 +6551,20 @@ export function MobileLibraryShell(args: {
     setWrongMatchWords([]);
     setSelection(null);
     setActiveScreen("practice");
+    // Skip mode selection: go directly to countdown, same as openPracticeMode.
+    setSpeakingPracticePromptId(null);
+    setPracticeCountdownActive(true);
+    setPracticePaused(false);
+    setPracticeTimerRemaining(10);
+    setContextAudioFinishedFor(null);
+    setLoadingPracticeAudioId(null);
+    lastAutoplayedExerciseIdRef.current = null;
+    lastContextRevealAudioIdRef.current = null;
+    revealedSlotIdRef.current = null;
+    practicePrefetchSeenRef.current.clear();
+    practiceAudioFilesRef.current.clear();
+    void stopPracticeContextClip();
+    void stopPracticeHqClip();
   }
 
   async function openStoryPractice(selection: ReaderSelection) {
@@ -13454,11 +13468,22 @@ export function MobileLibraryShell(args: {
         }
       }
     }
+    // The placement test only ran for the PRIMARY language (journeys[0]).
+    // journeyPlacementLevel is a single global field, so applying it to every
+    // track would over-unlock secondary languages (a user who is C1 in their
+    // primary would get a brand-new second language unlocked to C1 too).
+    // Scope the placement to the primary journey's language; other journeys
+    // unlock purely by real progress.
+    const primaryJourneyLanguage = preferences.journeys?.[0]?.language ?? null;
+    const isPrimaryJourneyLanguage =
+      !!primaryJourneyLanguage &&
+      (remoteJourney.language ?? "").toLowerCase() === primaryJourneyLanguage.toLowerCase();
+    const placementForTrack = isPrimaryJourneyLanguage ? preferences.journeyPlacementLevel : null;
     const unlockedLevelCount = getEffectiveUnlockedLevelCount(
       baseTrack.levels,
       completedStoryKeys,
       passedCheckpointKeys,
-      preferences.journeyPlacementLevel,
+      placementForTrack,
       baseTrack.id
     );
     return {
@@ -13472,6 +13497,7 @@ export function MobileLibraryShell(args: {
     preferences.preferredRegion,
     preferences.preferredVariant,
     preferences.journeyPlacementLevel,
+    preferences.journeys,
     remoteJourney,
     selectedJourneyTrackId,
   ]);
@@ -16336,6 +16362,10 @@ export function MobileLibraryShell(args: {
       dailyMinutes: payload.dailyMinutes,
       remindersEnabled: payload.remindersEnabled,
       reminderHour: payload.reminderHour,
+      // The onboarding time picker lets the user choose minutes (e.g. 7:30);
+      // previously only the hour was forwarded, so a 7:30 reminder saved as
+      // 7:00. The server + MobilePreferences both support reminderMinute.
+      reminderMinute: payload.reminderMinute ?? null,
       journeyPlacementLevel: placement,
       onboardingSurveyCompletedAt: new Date().toISOString(),
     });
@@ -16356,12 +16386,16 @@ export function MobileLibraryShell(args: {
       // collapses both to the same id and we'd otherwise commit
       // two entries with identical ids.
       const journeys: Journey[] = dedupeJourneysById(
-        payload.selections.map((sel) => ({
+        payload.selections.map((sel, idx) => ({
           id: journeyId(sel.language, sel.variant, journeyFocus),
           language: sel.language,
           variant: sel.variant,
           focus: journeyFocus,
-          level: preferredLevel,
+          // Only the PRIMARY (first picked) language gets the placement-derived
+          // level — the test/self-report was about that language. Secondary
+          // languages are brand new, so they start at Beginner instead of
+          // inheriting the primary's (possibly Advanced) level.
+          level: idx === 0 ? preferredLevel : "Beginner",
           createdAt,
         }))
       );

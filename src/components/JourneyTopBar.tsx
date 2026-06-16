@@ -1,5 +1,7 @@
 "use client";
 
+import Flag from "@/components/Flag";
+
 type Stats = {
   /** Energy / lightning units shown in the topbar (orange icon). */
   energy?: number;
@@ -12,8 +14,8 @@ type Stats = {
 type Language = {
   /** Short code shown in the pill (e.g. "ES", "IT"). */
   code: string;
-  /** Emoji flag or single character. */
-  flag: string;
+  /** ISO 3166-1 alpha-2 country code for the inline-SVG flag. */
+  country: string;
 };
 
 type Props = {
@@ -45,8 +47,8 @@ export default function JourneyTopBar({ language, stats, onTapLanguage, onTapSta
         onClick={onTapLanguage}
         className="inline-flex items-center gap-3 pr-4 pl-1.5 py-1.5 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] font-extrabold text-base text-[var(--foreground)] hover:bg-[var(--card-bg-hover)] transition-colors"
       >
-        <span className="w-10 h-10 rounded-full bg-[var(--bg-1)] grid place-items-center text-2xl shrink-0">
-          {language.flag}
+        <span className="w-10 h-10 rounded-full bg-[var(--bg-1)] grid place-items-center shrink-0">
+          <Flag code={language.country} size={24} title={language.code} />
         </span>
         <span className="tracking-wide">{language.code}</span>
         <span className="text-[var(--muted)] text-sm">▾</span>

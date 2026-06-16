@@ -1210,15 +1210,20 @@ export async function validateGeneratedStory(
         });
       }
 
-      // Voseo detection. User rule: español neutro siempre, tú forms,
-      // NUNCA voseo rioplatense — incluso para historias ambientadas
-      // en Buenos Aires o Montevideo. Detecta el pronombre `vos` y
-      // las formas verbales más comunes (sos/tenés/querés/decís/hacés
-      // /podés/sabés/comés/venís/salís). Imperativos voseo (sentate /
-      // mirá / pasá / vení) están omitidos porque algunas formas
-      // colisionan con presente indicativo tú o con otros tiempos —
-      // bajaría la precisión. Los pronombres + presente indicativo
-      // son señales limpias y suficientes.
+      // Voseo detection. User rule (2026-06-16): español neutro con tú
+      // forms por defecto, PERO las historias ambientadas en el Río de
+      // la Plata (Argentina / Uruguay) DEBEN ir en voseo auténtico —
+      // ese es justo el eje de "lenguaje auténtico nativo en contexto".
+      // Forzar tú a un porteño es falso. Por eso el check solo falla
+      // cuando aparece voseo en una historia NO rioplatense (voseo
+      // accidental en escenarios mexicanos/colombianos/peruanos/chilenos).
+      // Detecta el setting por marcadores en el body. Las formas: el
+      // pronombre `vos` + presente indicativo común (sos/tenés/querés/
+      // decís/hacés/podés/sabés/comés/venís/salís).
+      const RIOPLATENSE_SETTING =
+        /\b(Argentina|Uruguay|Buenos Aires|Montevideo|Rosario|La Plata|Córdoba|Palermo|San Telmo|Recoleta|La Boca|Belgrano)\b/i.test(
+          parsed.text,
+        );
       const VOSEO_PATTERNS: Array<{ re: RegExp; form: string }> = [
         { re: /\bvos\b/i,    form: "vos (pronoun)" },
         { re: /\bsos\b/i,    form: "sos (= eres)" },
@@ -1236,12 +1241,14 @@ export async function validateGeneratedStory(
       for (const { re, form } of VOSEO_PATTERNS) {
         if (re.test(parsed.text)) voseoHits.push(form);
       }
-      if (voseoHits.length > 0) {
+      // Voseo is REQUIRED-authentic in rioplatense settings, so only flag
+      // it as a problem when the story is NOT set in the Río de la Plata.
+      if (voseoHits.length > 0 && !RIOPLATENSE_SETTING) {
         checks.push({
           id: "body-voseo-forms",
-          label: "Body uses voseo (vos/tenés/sos) instead of tú forms",
+          label: "Body uses voseo (vos/tenés/sos) in a non-rioplatense setting",
           status: "fail",
-          detail: `Found ${voseoHits.length} voseo form(s): ${voseoHits.join(", ")}. The project uses español neutro with tú forms across ALL stories, including rioplatense settings (Buenos Aires, Montevideo). Rewrite with: vos → tú, sos → eres, tenés → tienes, querés → quieres, decís → dices, etc.`,
+          detail: `Found ${voseoHits.length} voseo form(s): ${voseoHits.join(", ")}. Voseo is authentic ONLY for Argentine/Uruguayan settings. This story is not set there, so use tú forms: vos → tú, sos → eres, tenés → tienes, querés → quieres, decís → dices, etc.`,
         });
       }
     }
@@ -1651,7 +1658,13 @@ export async function validateGeneratedStory(
 
   if (lang === "ES" && VALID_ES_LEVELS.has(levelKey as SpanishCheckLevel) && levelKey !== "c2") {
     const { filterSpanishWordsAtOrBelow } = await import("./cefr/spanishLevelJudge");
-    const vocabWords = parsed.vocab.map((v) => v.word);
+    // Multi-word expressions ("está bien", "por favor", "sin prisa") are not
+    // single lemmas; routing them through the per-lemma frequency judge marks
+    // them C2 by default. They are governed by their own checks (colloquial
+    // expression + vocab-min-expressions), so exempt them here.
+    const vocabWords = parsed.vocab
+      .filter((v) => (v.type ?? "").toLowerCase() !== "expression")
+      .map((v) => v.word);
     const { aboveLevel } = await filterSpanishWordsAtOrBelow(
       vocabWords,
       levelKey as SpanishCheckLevel,

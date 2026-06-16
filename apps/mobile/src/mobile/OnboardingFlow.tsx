@@ -353,9 +353,19 @@ export function OnboardingFlow({
     setStep(((step - 1) as 1 | 2 | 3 | 4));
   }
 
-  async function submit() {
+  // Single source of truth for committing the onboarding payload. The level
+  // test result path passes `testedLevelOverride` (because setTestedLevel is
+  // async and the new value isn't in state yet) + a softer `levelFallback`.
+  // Keeping ONE submit() avoids the two copies drifting (they previously did:
+  // one dropped reminderMinute, the other defaulted the level differently).
+  async function submit(opts?: {
+    testedLevelOverride?: CEFRLevel | null;
+    levelFallback?: OnboardingLevel;
+  }) {
+    const effectiveTested =
+      opts && "testedLevelOverride" in opts ? opts.testedLevelOverride ?? null : testedLevel;
     if (selectedOptions.length === 0 || !dailyMinutes) return;
-    if (!level && !testedLevel) return;
+    if (!level && !effectiveTested) return;
     setSubmitting(true);
     try {
       await onComplete({
@@ -368,9 +378,9 @@ export function OnboardingFlow({
         whys: Array.from(whys),
         // If the user skipped the test but didn't pick a level either
         // (shouldn't happen due to canContinue, but defensive), fall
-        // back to "Brand new".
-        level: level ?? "Brand new",
-        testedLevel,
+        // back to the caller's hint or "Brand new".
+        level: level ?? opts?.levelFallback ?? "Brand new",
+        testedLevel: effectiveTested,
         dailyMinutes,
         remindersEnabled,
         reminderHour: remindersEnabled ? reminderHour : null,
@@ -383,8 +393,8 @@ export function OnboardingFlow({
         languagesCount: selectedOptions.length,
         whysCount: whys.size,
         selfReportedLevel: level,
-        testedLevel,
-        tookLevelTest: testedLevel !== null,
+        testedLevel: effectiveTested,
+        tookLevelTest: effectiveTested !== null,
         dailyMinutes,
         remindersEnabled,
       });
@@ -762,56 +772,17 @@ export function OnboardingFlow({
           source="onboarding"
           onComplete={async (result) => {
             // The user tapped "Start journey" in the test result —
-            // the expectation is the journey actually starts, not
-            // that we bounce them back to step 4. We submit the
-            // onboarding payload right here with the tested level
-            // baked in, then close the runner. (Earlier this only
-            // stored testedLevel + closed the runner, which left
-            // the user on step 4 wondering why nothing happened.)
+            // the expectation is the journey actually starts. Bake the
+            // tested level in and commit through the SAME submit() the
+            // skip-test path uses (single source of truth), passing the
+            // result directly since setTestedLevel hasn't flushed yet.
             setTestedLevel(result.level);
             setLevelTestOpen(false);
             trackEvent?.("onboarding_level_test_completed", {
               language,
               cefrLevel: result.level,
             });
-            if (selectedOptions.length === 0 || !dailyMinutes) return;
-            setSubmitting(true);
-            try {
-              await onComplete({
-                selections: selectedOptions.map((option) => ({
-                  language: option.name,
-                  variant: option.variantCode ?? null,
-                })),
-                languages: Array.from(
-                  new Set(selectedOptions.map((option) => option.name))
-                ),
-                primaryVariant: selectedOptions[0]?.variantCode ?? null,
-                whys: Array.from(whys),
-                // Self-reported level is now optional when the test
-                // was taken — if the user never picked one, default
-                // to "Some" since the test showed they have skill.
-                level: level ?? "Some",
-                testedLevel: result.level,
-                dailyMinutes,
-                remindersEnabled,
-                reminderHour: remindersEnabled ? reminderHour : null,
-        reminderMinute: remindersEnabled ? reminderMinute ?? 0 : null,
-              });
-              trackEvent?.("onboarding_finished", {
-                languages: Array.from(new Set(selectedOptions.map((option) => option.name))),
-                primaryLanguage: selectedOptions[0]?.name ?? null,
-                primaryVariant: selectedOptions[0]?.variantCode ?? null,
-                languagesCount: selectedOptions.length,
-                whysCount: whys.size,
-                selfReportedLevel: level,
-                testedLevel: result.level,
-                tookLevelTest: true,
-                dailyMinutes,
-                remindersEnabled,
-              });
-            } finally {
-              setSubmitting(false);
-            }
+            await submit({ testedLevelOverride: result.level, levelFallback: "Some" });
           }}
           onCancel={() => setLevelTestOpen(false)}
         />

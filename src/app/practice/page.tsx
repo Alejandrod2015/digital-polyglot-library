@@ -18,7 +18,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
-import { getLanguageFlag } from "@/lib/languageFlags";
+import { getLanguageCountry } from "@/lib/languageFlags";
+import Flag from "@/components/Flag";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import {
   buildPracticeSession,
@@ -2539,7 +2540,7 @@ export default function PracticePage() {
     typeof user?.publicMetadata?.preferredVariant === "string"
       ? (user.publicMetadata.preferredVariant as string)
       : null;
-  const activeFlag = activeLanguageName ? getLanguageFlag(activeLanguageName, activeVariantKey) : null;
+  const activeCountry = activeLanguageName ? getLanguageCountry(activeLanguageName, activeVariantKey) : null;
   const activeLangShort = activeLanguageName
     ? (() => {
         const map: Record<string, string> = {
@@ -2570,7 +2571,7 @@ export default function PracticePage() {
         {/* Flag pill + title. Tapping the pill opens the LanguageSwitcher
             bottom sheet (same component used in MobileTabBar). */}
         <div className="flex items-center gap-4 mb-6">
-          {activeFlag && activeLangShort ? (
+          {activeCountry && activeLangShort ? (
             <button
               type="button"
               onClick={() => setLanguageSwitcherOpen(true)}
@@ -2578,10 +2579,10 @@ export default function PracticePage() {
               aria-label="Switch language"
             >
               <span
-                className="rounded-full bg-black/30 grid place-items-center text-lg leading-none"
+                className="rounded-full bg-black/30 grid place-items-center leading-none"
                 style={{ width: 28, height: 28 }}
               >
-                {activeFlag}
+                <Flag code={activeCountry} size={20} title={activeLangShort} />
               </span>
               <span className="text-[13px] font-extrabold text-white">{activeLangShort}</span>
               <ChevronDown size={14} className="text-white/55" />

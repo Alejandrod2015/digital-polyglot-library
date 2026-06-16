@@ -17,6 +17,7 @@ import type { JourneyTrackInsights, JourneyVariantTrack } from "./journeyData";
 import { isJourneyStoryComplete } from "@/lib/journeyUnlock";
 import type { JourneyDueReviewItem } from "@/lib/journeyProgress";
 import { formatVariantLabel } from "@/lib/languageVariant";
+import Flag from "@/components/Flag";
 import { TopicPreviewSheet } from "@/components/TopicPreviewSheet";
 import JourneyNextActionFab from "@/components/JourneyNextActionFab";
 import JourneyTopBar from "@/components/JourneyTopBar";
@@ -86,48 +87,49 @@ function topicEmoji(label: string): string {
 // language names completos ("german", "italian") porque el field
 // `Journey.variant` viene en formato libre desde Studio. Sin esta
 // expansión, "german" caía al fallback `.slice(0,2)` y mostraba "GE".
-const LANGUAGE_PILL_BY_VARIANT: Record<string, { code: string; flag: string }> = {
+// `country` is an ISO 3166-1 alpha-2 code fed to <Flag/> (inline SVG). We no
+// longer use flag EMOJI here: they don't render on many devices (Windows etc.)
+// and degraded to the two code letters ("CO"/"ES"). See src/components/Flag.tsx.
+const LANGUAGE_PILL_BY_VARIANT: Record<string, { code: string; country: string }> = {
   // ── ISO short codes ──
-  latam: { code: "ES", flag: "🇨🇴" },
-  spain: { code: "ES", flag: "🇪🇸" },
-  br: { code: "PT", flag: "🇧🇷" },
-  pt: { code: "PT", flag: "🇵🇹" },
-  fr: { code: "FR", flag: "🇫🇷" },
-  it: { code: "IT", flag: "🇮🇹" },
-  de: { code: "DE", flag: "🇩🇪" },
-  jp: { code: "JA", flag: "🇯🇵" },
-  ja: { code: "JA", flag: "🇯🇵" },
-  ko: { code: "KO", flag: "🇰🇷" },
-  en: { code: "EN", flag: "🇬🇧" },
+  latam: { code: "ES", country: "CO" },
+  spain: { code: "ES", country: "ES" },
+  br: { code: "PT", country: "BR" },
+  pt: { code: "PT", country: "PT" },
+  fr: { code: "FR", country: "FR" },
+  it: { code: "IT", country: "IT" },
+  de: { code: "DE", country: "DE" },
+  jp: { code: "JA", country: "JP" },
+  ja: { code: "JA", country: "JP" },
+  ko: { code: "KO", country: "KR" },
+  en: { code: "EN", country: "GB" },
   // ── Language names completos (lo que más usa Studio) ──
-  spanish: { code: "ES", flag: "🇪🇸" },
-  portuguese: { code: "PT", flag: "🇧🇷" },
-  brazilian: { code: "PT", flag: "🇧🇷" },
-  french: { code: "FR", flag: "🇫🇷" },
-  italian: { code: "IT", flag: "🇮🇹" },
-  german: { code: "DE", flag: "🇩🇪" },
-  japanese: { code: "JA", flag: "🇯🇵" },
-  korean: { code: "KO", flag: "🇰🇷" },
-  english: { code: "EN", flag: "🇬🇧" },
-  chinese: { code: "ZH", flag: "🇨🇳" },
+  spanish: { code: "ES", country: "ES" },
+  portuguese: { code: "PT", country: "BR" },
+  brazilian: { code: "PT", country: "BR" },
+  french: { code: "FR", country: "FR" },
+  italian: { code: "IT", country: "IT" },
+  german: { code: "DE", country: "DE" },
+  japanese: { code: "JA", country: "JP" },
+  korean: { code: "KO", country: "KR" },
+  english: { code: "EN", country: "GB" },
+  chinese: { code: "ZH", country: "CN" },
 };
 
-function pillForTrack(track: JourneyVariantTrack | null): { code: string; flag: string } {
-  if (!track) return { code: "??", flag: "🌐" };
+function pillForTrack(track: JourneyVariantTrack | null): { code: string; country: string } {
+  if (!track) return { code: "??", country: "" };
   // 1) Intentar primero por `variant` (latam, spain, br, etc.)
   const variantKey = (track.variant ?? "").toLowerCase();
   if (variantKey && LANGUAGE_PILL_BY_VARIANT[variantKey]) {
     return LANGUAGE_PILL_BY_VARIANT[variantKey];
   }
-  // 2) Fallback por `language` del journey ("German" → DE 🇩🇪).
-  //    Sin esto, journeys con variant=null o variant="german" caían
-  //    al substring crudo "GE" / "??" en el pill del top bar.
+  // 2) Fallback por `language` del journey ("German" → DE).
   const languageKey = (track.language ?? "").toLowerCase();
   if (languageKey && LANGUAGE_PILL_BY_VARIANT[languageKey]) {
     return LANGUAGE_PILL_BY_VARIANT[languageKey];
   }
-  // 3) Último fallback: globo + "??".
-  return { code: "??", flag: "🌐" };
+  // 3) Último fallback.
+  return { code: "??", country: "" };
 }
 
 export default function JourneyClient({
@@ -542,10 +544,10 @@ export default function JourneyClient({
                   }
                 >
                   <span
-                    className="grid h-11 w-11 shrink-0 place-items-center rounded-full text-2xl"
+                    className="grid h-11 w-11 shrink-0 place-items-center rounded-full"
                     style={{ background: "var(--card-bg-hover)" }}
                   >
-                    {pill.flag}
+                    <Flag code={pill.country} size={26} title={pill.code} />
                   </span>
                   <span className="min-w-0 flex-1">
                     <span

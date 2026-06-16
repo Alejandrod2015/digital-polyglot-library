@@ -6,13 +6,14 @@ import { useUser } from "@clerk/nextjs";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRight, Loader2, Plus, Star, Zap } from "lucide-react";
 import { formatVariantLabel } from "@/lib/languageVariant";
-import { getLanguageFlag, isVariantValidForLanguage } from "@/lib/languageFlags";
+import { getLanguageCountry, isVariantValidForLanguage } from "@/lib/languageFlags";
+import Flag from "@/components/Flag";
 
 type LanguageRow = {
   name: string;
   variant: string | null;
   variantLabel: string | null;
-  flag: string;
+  country: string;
   level: string | null;
   active: boolean;
   // Per-language stats. Default to 0 if not present in publicMetadata.
@@ -133,7 +134,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
       name,
       variant,
       variantLabel: formatVariantLabel(variant),
-      flag: getLanguageFlag(name, variant),
+      country: getLanguageCountry(name, variant),
       // NOTE: preferredLevel is global today. Showing it on every row is a
       // visual approximation. When per-language CEFR exists, swap to per-row.
       level: cefrLabelFromPreferredLevel(preferredLevel),
@@ -295,7 +296,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                           "inset 0 0 0 1.5px rgba(125,211,252,0.45), inset 0 0 0 4px var(--bg-2), inset 0 0 0 5.5px rgba(125,211,252,0.25)",
                       }}
                     >
-                      {row.flag}
+                      <Flag code={row.country} size={28} title={row.name} />
                     </div>
 
                     <div className="flex-1 min-w-0">
