@@ -475,6 +475,40 @@ export const GERMAN_TRAVELER_CAST: JourneyCast = {
     "Beta inicial: 3 ciudades alemanas (Berlin/München/Hamburg) × 3 anchors estables cada una + roles menores (Frau Hoffmann secundaria; Bäckerin y Kollegin bit roles de una escena). 21 stories totales (3 topics × 7) al nivel A1. Cada topic ambientado en una ciudad específica: home-family→Berlin, meeting-new-people→München, food-everyday-life→Hamburg. Voces: las 9 anchors usan 9 slots; el único slot libre es Marius (MASCULINO), así que NO hay voz femenina libre — los roles femeninos menores reusan voces femeninas existentes garantizando que no choquen dentro de la misma historia. Si en el futuro se necesitan más mujeres distintas, hace falta sumar una voz femenina DE al pool. NARRADOR del journey = `gjango` (GERMAN_DIALOGUE_VOICES), elegido 2026-06-05 en reemplazo de Marius (que no gustó). Al regenerar audio, voiceMap.narrator = GERMAN_DIALOGUE_VOICES.gjango.",
 };
 
+/**
+ * German "Traveler" journey, V2 (journeyId cmqfnp3tf…, created 2026-06-15).
+ * 7 themes × 3 stories at A1, one recognizable German city per theme,
+ * peer casts (no wise-elder). NARRATOR journey-wide = `gjango`. This is the
+ * live journey; GERMAN_TRAVELER_CAST above documents the ARCHIVED 3-city beta.
+ *
+ * The audio pipeline reads each story's `dialogueSpec` (speaker→voiceId),
+ * which was written from this exact map; this record is the source of truth
+ * for new stories so voices stay consistent. Within any one story every
+ * speaker maps to a DISTINCT voice (verified); voices are reused ACROSS
+ * themes (the casts never share a scene).
+ */
+export const GERMAN_TRAVELER_V2_VOICEMAP: Record<string, keyof typeof GERMAN_DIALOGUE_VOICES> = {
+  // Narrador del journey = moritz (el narrador "de siempre" del alemán,
+  // germany default + voz labeled "narrator"). gjango se descartó por
+  // feedback del usuario 2026-06-15. Kai/Ben se movieron de moritz a
+  // joerg/michael para no chocar con el narrador.
+  narrator: "moritz",
+  // food-everyday-life — Hamburg
+  lena: "ela_warm", jonas: "michael", verkäufer: "daniel_konv", pia: "eleonore",
+  // home-family — Berlin
+  petra: "enniah", stefan: "joerg", tobias: "michael",
+  // meeting-new-people — München
+  sofie: "ela_calm", max: "marius", clara: "ela_warm", ben: "michael",
+  // places-getting-around — Köln
+  greta: "jane", bernd: "daniel", nichte: "daien",
+  // community-celebrations — Nürnberg
+  anja: "eleonore", kai: "joerg", kundin: "marlena",
+  // nature-adventure — Schwarzwald
+  mia: "ela_warm", finn: "marius",
+  // legends-folklore — Heidelberg
+  hanna: "daien", lukas: "daniel",
+};
+
 /** Indexed by journey key for lookup. */
 export const JOURNEY_CASTS: Record<string, JourneyCast> = {
   "spanish-latam": SPANISH_LATAM_CAST,

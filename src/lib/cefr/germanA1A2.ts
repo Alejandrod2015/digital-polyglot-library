@@ -222,6 +222,100 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "kalt","warm","heiß","kühl",
   "moment","stück","ende","anfang","mitte","seite","teil",
   "park","straße","platz","markt","geschäft","laden",
+
+  // ── Batch added 2026-06-15 for the German "Traveler" journey. All from
+  //    the Goethe A1/A2 Wortliste (food, kitchen, home, harbor, daily life)
+  //    — the prior list was missing many first-months words. ──
+  "morgens","vormittag","hafen","boot","meer","salz","fisch","möwe",
+  "frisch","mitbewohner","bewohner","müde","becher","lachs","kabeljau",
+  "teuer","billig","verkäufer","verkäuferin","käufer","preis","preise","eis",
+  "probieren","probiert","probier","riechen","riecht","gerochen",
+  "lächeln","lächelt","kochen","kocht","gekocht","zitrone","einverstanden",
+  "schneiden","schneidet","geschnitten","zwiebel","decken","deckt","gedeckt",
+  "pfanne","teller","topf","wohnung","kräuter","kraut","glas",
+  "unbedingt","geschlossen","offen","fertig","bäcker","bäckerei","ecke",
+  "schmecken","schmeckt","geschmeckt","tankstelle","feuer","brennen","brennt",
+  "idee","schuhe","schuh","störung","passen","passt","gepasst",
+  "lieb","reichen","reicht","gereicht","freuen","freut","gefreut",
+  "allein","einladung","einladen","abgemacht","nett","still","leer","voll",
+
+  // ── Batch 2 (2026-06-15) for German "Traveler" topics 2-7: home/move,
+  //    transport, Christmas market, nature, legends. All Goethe A1/A2. ──
+  "samstag","sonntag","montag","dienstag","mittwoch","donnerstag","freitag",
+  "karton","kiste","packen","packt","gepackt","tragen","trägt","getragen",
+  "schwer","leicht","eigen","eigene","regal","buch","bücher","kleidung",
+  "erinnerung","erinnerungen","kindheit","schlüssel","treppe","stock","möbel",
+  "lampe","kissen","bild","bilder","wand","boden","decke","ziehen","zieht","umziehen",
+  "treffen","trifft","getroffen","fremd","gespräch","zusammen","einsam","nervös",
+  "freundlich","antworten","antwortet","fragen","fragt","gefragt","name",
+  "zug","bahn","bahnhof","gleis","fahrkarte","fahren","fährt","gefahren",
+  "steigen","einsteigen","aussteigen","umsteigen","verspätung","pünktlich",
+  "weg","richtung","brücke","fluss","turm","dom","straßenbahn","fahrrad","rad",
+  "weihnachten","glühwein","kerze","kerzen","licht","lichter","schnee","schneit",
+  "geschenk","geschenke","feiern","feiert","gefeiert","fest","feier","tanzen","tanzt",
+  "lied","lieder","singen","singt","gesungen","stand","stände","basteln","bastelt",
+  "wald","baum","bäume","berg","berge","see","wandern","wandert","gewandert",
+  "regen","regnet","nass","trocken","vogel","vögel","tier","tiere","pilz","pilze",
+  "verlaufen","verläuft","rucksack","weit","nah","hoch","tief",
+  "geschichte","legende","sage","schloss","burg","geist","glauben","glaubt","geglaubt",
+  "erzählen","erzählt","dunkel","hell","angst","mutig","wahr","traum","stein","steine",
+  "scheinen","scheint","geschienen","finden","findet","gefunden","suchen","sucht","gesucht",
+  "helfen","hilft","geholfen","hilfe","sonne","wolke","wolken","himmel",
+
+  // ── Batch 3 (2026-06-15): more first-year A1/A2 words surfaced while
+  //    writing the German journey (home/move + general). All Goethe A1/A2. ──
+  "vorsichtig","nummer","etage","stimmen","stimmt","gestimmt","gehören","gehört",
+  "farbe","farben","schaffen","schafft","geschafft","nackt","wagen","aufzug",
+  "möglich","unmöglich","schauen","schaut","geschaut","sache","sachen","jacke",
+  "zuhause","herein","hinauf","hinunter","hinein","stellen","stellt","gestellt",
+  "eimer","oben","bloß","mitgebracht","eingepackt","abstellen","spät","früh",
+
+  // ── Batch 4 (2026-06-15): meeting-people + general A1/A2 words. ──
+  "heißen","heißt","brezel","rund","schild","stören","stört","gestört",
+  "deshalb","runde","höflich","zögern","zögert","gezögert","gast","gäste",
+  "gruppe","weile","rufen","ruft","gerufen","klatschen","klatscht","menge",
+  "welle","wellen","echt","dick","buchstabe","buchstaben","einzig","einziges",
+  "entlang","laufen","läuft","gelaufen","selbst","reden","redet","geredet",
+  "schieben","schiebt","geschoben","mutig","einsam","freundlich","fremd",
+
+  // ── Batch 5 (2026-06-15): transport, family, celebration, nature,
+  //    legends + general A1/A2 words for journey topics 4-7. ──
+  "nichte","neffe","anschluss","lautsprecher","unruhig","anfangen","fängt","angefangen",
+  "bahnsteig","anzeigetafel","koffer","verlassen","verlässt","stimme","tafel","zahl","zahlen",
+  "dauern","dauert","gedauert","ewig","wenigstens","ständig","glänzen","glänzt",
+  "halb","halbe","lehnen","lehnt","atmen","atmet","atem","rollen","rollt","komisch",
+  "vorhin","genießen","genießt","fahrt","fahrten","trinken","trinkt","getrunken",
+  "beeilen","beeilt","wild","erstaunt","lustig","selbe","selben","umsonst","eile",
+  "manchmal","früher","kuchen","geschichte","onkel","viertel","gleich","sofort",
+  "glühwein","stollen","plätzchen","schlitten","handschuh","handschuhe","mütze","schal",
+  "kerze","kerzen","funkeln","funkelt","duften","duftet","glühen","glüht",
+  "see","seen","ufer","steg","kanu","paddel","paddeln","paddelt","rudern","retten","rettet",
+  "wandern","wandert","pfad","gipfel","tal","nebel","neblig","kühl","matsch","wurzel",
+  "burg","ritter","sage","gespenst","spuk","spukt","mauer","turm","keller","verschwinden",
+  "knarren","knarrt","schatten","mond","mutig","ängstlich","plötzlich","leise","laut",
+
+  // ── Batch 6 (2026-06-15): celebration/forest/castle scene words. A1/A2. ──
+  "zimt","bude","buden","kunde","kundin","schlange","tüte","fabrik","rezept","rezepte","ehrlich",
+  "hütte","schnüren","schnürt","tanne","tannen","steil","merken","merkt","gemerkt",
+  "dicht","kaum","teilen","teilt","geteilt","fehler","bergab","feucht","pfahl","pfeil","dorthin",
+  "tor","hexe","beißen","beißt","gebissen","eisen","eisern","enden","endet","geendet",
+  "fass","fässer","lagern","lagert","gelagert","leuchten","leuchtet","fenstersims",
+  "bewegen","bewegt","schlagen","schlägt","geschlagen","eule","fliegen","fliegt","geflogen",
+  "riesig","kerbe","spur","zahn","zähne","zähnen","fühlen","fühlt","gefühlt","beweisen","beweist",
+  "runzeln","runzelt","flügel","geräusch","ohr","ohren","lippe","lippen","dorf","verloren",
+  "hinterste","hintersten","gebirge","stelle","kreis","linie","linien","bach","stille","klar",
+  "schmal","funkeln","gold","gemeinsam","woher","stollen","wegrand","schritt","schritte","gefallen","gefällt",
+
+  // ── Batch 7 (2026-06-15): remaining A1/A2 scene words for topics 6-7. ──
+  "rauschen","rauscht","seite","seiten","nah","näher","grau","dünn","dünner",
+  "heil","klug","klüger","letzt","letzte","letzten","holzschild","stirn",
+  "lippe","lippen","leuchte","plätzchen","tüte","kundin","ältere","kerze",
+
+  // ── Batch 8 (2026-06-15): Christmas-market scene words. A1/A2. ──
+  "drängen","drängt","strom","stromausfall","murmeln","murmelt","wackeln","wackelt",
+  "schachtel","notfall","genug","zurück","achten","achtet","geachtet","schein",
+  "gemütlich","gesicht","gesichter","streichholz","streichhölzer","verkaufen","verkauft",
+  "kunde","kunden","vorne","golden","schön","dicht","kreis","lachen","lacht","warm",
 ]);
 
 export function isGermanA1A2(word: string): boolean {

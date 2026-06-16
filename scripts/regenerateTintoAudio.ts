@@ -13,6 +13,7 @@
  */
 import { prisma } from "@/lib/prisma";
 import { uploadPublicObject } from "@/lib/objectStorage";
+import { computeNarratorOffIntervals, buildAmbientStage } from "@/lib/narrationPostProcess";
 import { spawn, spawnSync } from "child_process";
 import { mkdirSync, readFileSync, readdirSync, rmSync, existsSync, writeFileSync } from "fs";
 import { join, basename } from "path";
@@ -281,8 +282,17 @@ async function processSlot(slot: number) {
   const ambientPath = story.ambientTag ? AMBIENT_BY_TAG[story.ambientTag] : null;
   if (ambientPath && existsSync(ambientPath)) {
     console.log(`Mixing ambient: ${story.ambientTag} @ ${AMBIENT_VOLUME} + loudnorm + mp3`);
+    // Silence the bed during narrator (VO) ranges (memory: feedback_ambient_not_under_narrator).
+    const { intervals, span } = computeNarratorOffIntervals(story.text ?? "", story.audioSegments);
+    const ambientStage = buildAmbientStage({
+      inLabel: "1:a",
+      outLabel: "a1",
+      volume: AMBIENT_VOLUME,
+      offIntervals: intervals,
+      scale: span > 0 ? probeDuration(concatPath) / span : 0,
+    });
     const filter =
-      `[1:a]volume=${AMBIENT_VOLUME},afade=t=in:st=0:d=1[a1];` +
+      `${ambientStage};` +
       `[0:a][a1]amix=inputs=2:duration=first:dropout_transition=2[mix];` +
       `[mix]dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5`;
     await ffmpeg([

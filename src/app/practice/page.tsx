@@ -369,6 +369,10 @@ export default function PracticePage() {
   const [sessionComplete, setSessionComplete] = useState(false);
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [pendingCountdownMode, setPendingCountdownMode] = useState<PracticeMode | null>(null);
+  // Fires once: when the user arrives from the end-of-story "Start practice"
+  // prompt, we open the session directly instead of leaving them on the
+  // dashboard hub (the intent is to practice THAT story, not browse the hub).
+  const storyAutoStartedRef = useRef(false);
   const [languageSwitcherOpen, setLanguageSwitcherOpen] = useState(false);
   const [streak, setStreak] = useState(0);
   const [lastResult, setLastResult] = useState<"correct" | "wrong" | null>(null);
@@ -1552,6 +1556,28 @@ export default function PracticePage() {
     return getRecommendedPracticeModeFromOnboarding(dueFavorites, fallback, onboardingPracticePrefs);
   }, [checkpointMissedMode, dueFavorites, onboardingPracticePrefs]);
   const reviewRecommendedLabel = getModeLabel(reviewRecommendedMode);
+
+  // Auto-open the session when the user came straight from finishing a story
+  // (source=story). Without this they land on the practice dashboard and have
+  // to tap START again — they expect to practice the story they just read.
+  // Mirrors the START button (setPendingCountdownMode → countdown → session).
+  useEffect(() => {
+    if (!isStoryPractice) return;
+    if (loadState !== "ready") return;
+    if (favorites.length === 0) return;
+    if (selectedMode || pendingCountdownMode) return;
+    if (storyAutoStartedRef.current) return;
+    storyAutoStartedRef.current = true;
+    setPendingCountdownMode(reviewRecommendedMode);
+  }, [
+    isStoryPractice,
+    loadState,
+    favorites.length,
+    selectedMode,
+    pendingCountdownMode,
+    reviewRecommendedMode,
+  ]);
+
   const preferredPracticeMinutes =
     typeof onboardingPracticePrefs.dailyMinutes === "number" && onboardingPracticePrefs.dailyMinutes > 0
       ? onboardingPracticePrefs.dailyMinutes

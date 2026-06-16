@@ -2,7 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
-import { generateAndUploadAudio } from "@/lib/elevenlabs";
+import { generateAndUploadAudio, generateAndUploadMultiVoiceAudio } from "@/lib/elevenlabs";
 import { generateWordTimingsForStory } from "@/lib/audioWordTimings";
 
 export const maxDuration = 300;
@@ -29,21 +29,57 @@ export async function POST(request: Request) {
   try {
     await prisma.journeyStory.update({ where: { id: storyId }, data: { audioStatus: "generating" } });
 
-    const result = await generateAndUploadAudio(story.text, story.title, story.journey.language, story.journey.variant);
-    if (!result) throw new Error("Audio generation returned null");
+    type DialogueSeg = { speaker: string; voice: string; text: string };
+    const spec = story.dialogueSpec as DialogueSeg[] | null;
+    const useMultiVoice = Array.isArray(spec) && spec.length > 0;
 
-    // Save audio QA data that came back from generation (generateAndUploadAudio includes audioQa)
+    let audioUrl: string;
+    let audioFilename: string;
+    let audioSegments: any[];
+    let audioQa: any;
+    let savedVoiceId: string | null;
+
+    if (useMultiVoice) {
+      // Build voiceMap from dialogueSpec: speaker.toLowerCase() → voiceId
+      const voiceMap: Record<string, string> = {};
+      for (const seg of spec!) {
+        if (seg.speaker && seg.voice) voiceMap[seg.speaker.toLowerCase()] = seg.voice;
+      }
+      const result = await generateAndUploadMultiVoiceAudio({
+        storyText: story.text,
+        title: story.title,
+        voiceMap,
+        language: story.journey.language ?? undefined,
+        disableStitching: true,
+      });
+      if (!result) throw new Error("Multi-voice audio generation returned null");
+      audioUrl = result.url;
+      audioFilename = result.filename;
+      audioSegments = result.audioSegments;
+      audioQa = result.audioQa;
+      savedVoiceId = result.speakerVoiceMap?.narrator ?? voiceMap.narrator ?? null;
+    } else {
+      const result = await generateAndUploadAudio(story.text, story.title, story.journey.language, story.journey.variant);
+      if (!result) throw new Error("Audio generation returned null");
+      audioUrl = result.url;
+      audioFilename = result.filename;
+      audioSegments = result.audioSegments;
+      audioQa = result.audioQa;
+      savedVoiceId = result.voiceId;
+    }
+
+    // Save audio QA data that came back from generation
     await prisma.journeyStory.update({
       where: { id: storyId },
       data: {
-        audioUrl: result.url,
-        audioSegments: result.audioSegments as any,
-        audioFilename: result.filename,
+        audioUrl,
+        audioSegments: audioSegments as any,
+        audioFilename,
         audioStatus: "ready",
-        voiceId: result.voiceId,
-        audioQaStatus: result.audioQa?.status ?? null,
-        audioQaScore: result.audioQa?.score ?? null,
-        audioQaNotes: result.audioQa?.notes?.join("\n") ?? null,
+        voiceId: savedVoiceId,
+        audioQaStatus: audioQa?.status ?? null,
+        audioQaScore: audioQa?.score ?? null,
+        audioQaNotes: audioQa?.notes?.join("\n") ?? null,
       },
     });
 
@@ -64,7 +100,7 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ ok: true, audioUrl: result.url, audioQa: result.audioQa, alignmentApplied });
+    return NextResponse.json({ ok: true, audioUrl, audioQa, alignmentApplied });
   } catch (error) {
     console.error("[journeys/audio] Failed:", error);
     await prisma.journeyStory.update({ where: { id: storyId }, data: { audioStatus: "failed" } }).catch(() => {});

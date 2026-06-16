@@ -24,9 +24,113 @@ import { join } from "node:path";
 import { prisma } from "@/lib/prisma";
 import { uploadPublicObject } from "@/lib/objectStorage";
 import { generateWordTimingsForStory } from "@/lib/audioWordTimings";
-import { DEFAULT_AMBIENT_VOLUME, DEFAULT_NARRATION_TEMPO } from "@/lib/elevenlabs";
+import { DEFAULT_AMBIENT_VOLUME, DEFAULT_NARRATION_TEMPO, parseDialogueSegments } from "@/lib/elevenlabs";
+import { coerceAudioSegments } from "@/lib/audioSegments";
 
-const AVAILABLE_AMBIENTS = ["mercado", "metro", "restaurante", "bar", "cafeteria", "puerto", "playa", "parque", "calle"] as const;
+// A sentence segment that opens with "Name: " is a spoken character turn;
+// continuation sentences of the same turn carry no label, so speaker is
+// resolved by aligning sentence segments against the turn sequence below.
+const SPEAKER_LABEL_RE = /^([\p{Lu}][\p{L}]+):\s/u;
+const normTokens = (s: string): string[] =>
+  (s ?? "")
+    .toLowerCase()
+    .normalize("NFC")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(" ")
+    .filter(Boolean);
+
+/**
+ * Narrator time ranges, used to silence the ambient bed while the
+ * (out-of-scene) narrator speaks — characters are in the scene, the narrator
+ * is voice-over, so the bed only plays under dialogue. See memory
+ * `feedback_ambient_not_under_narrator`.
+ *
+ * Returns the ranges in the `audioSegments` timeline plus `span` (the last
+ * segment end). Callers scale to whatever timeline they mix into by
+ * multiplying by `targetDuration / span` (see `buildAmbientStage`); this
+ * auto-corrects any uniform stretch (e.g. atempo) without assuming a factor.
+ * Returns `{ intervals: [], span: 0 }` when the inputs can't be trusted (no
+ * segments / no parsable turns) — callers then mix the bed continuously.
+ */
+export function computeNarratorOffIntervals(
+  storyText: string,
+  segmentsRaw: unknown
+): { intervals: [number, number][]; span: number } {
+  const segs = coerceAudioSegments(segmentsRaw)
+    .filter((s) => Number.isFinite(s.startSec) && Number.isFinite(s.endSec))
+    .sort((a, b) => a.startSec - b.startSec);
+  if (segs.length === 0) return { intervals: [], span: 0 };
+  const turns = parseDialogueSegments(storyText).map((t) => ({
+    speaker: t.speaker,
+    tokenCount: normTokens(t.text).length,
+  }));
+  if (turns.length === 0) return { intervals: [], span: 0 };
+
+  let ti = 0;
+  let consumed = 0;
+  const off: [number, number][] = [];
+  for (const seg of segs) {
+    const txt = (seg.text ?? "").trim();
+    const m = txt.match(SPEAKER_LABEL_RE);
+    const segTokenCount = normTokens(m ? txt.slice(m[0].length) : txt).length;
+    if (m) {
+      // A labeled sentence snaps the cursor to that speaker's next turn.
+      const name = m[1].toLowerCase();
+      let j = ti;
+      while (j < turns.length && turns[j].speaker.toLowerCase() !== name) j += 1;
+      if (j < turns.length) {
+        ti = j;
+        consumed = 0;
+      }
+    }
+    const speaker = turns[ti]?.speaker ?? "narrator";
+    if (speaker.toLowerCase() === "narrator") {
+      const last = off[off.length - 1];
+      if (last && seg.startSec - last[1] <= 0.5) last[1] = seg.endSec;
+      else off.push([seg.startSec, seg.endSec]);
+    }
+    consumed += segTokenCount;
+    if (turns[ti] && consumed >= turns[ti].tokenCount) {
+      ti = Math.min(ti + 1, turns.length - 1);
+      consumed = 0;
+    }
+  }
+
+  // The title is narrated VO before the first body segment → silence too.
+  const firstStart = segs[0].startSec;
+  if (off.length && off[0][0] <= firstStart + 0.1) off[0][0] = 0;
+  else if (firstStart > 0.05) off.unshift([0, firstStart]);
+
+  const span = segs[segs.length - 1].endSec;
+  return { intervals: off, span };
+}
+
+/**
+ * Build the ffmpeg ambient stage `[<inLabel>]...[<outLabel>]` that silences
+ * the bed during narrator ranges. `scale` maps the segment timeline to the
+ * timeline being mixed (= targetDuration / span). Falls back to a continuous
+ * mix (with a 1s fade-in) when there are no narrator ranges.
+ */
+export function buildAmbientStage(args: {
+  inLabel: string;
+  outLabel: string;
+  volume: number;
+  offIntervals: [number, number][];
+  scale: number;
+}): string {
+  const { inLabel, outLabel, volume, offIntervals, scale } = args;
+  if (offIntervals.length === 0 || !Number.isFinite(scale) || scale <= 0) {
+    return `[${inLabel}]volume=${volume},afade=t=in:st=0:d=1[${outLabel}]`;
+  }
+  const offExpr = offIntervals
+    .map(([a, b]) => `between(t,${(a * scale).toFixed(3)},${(b * scale).toFixed(3)})`)
+    .join("+");
+  return `[${inLabel}]volume='${volume}*(1-min(1,${offExpr}))':eval=frame[${outLabel}]`;
+}
+
+const AVAILABLE_AMBIENTS = ["mercado", "metro", "restaurante", "bar", "cafeteria", "puerto", "playa", "parque", "calle", "cocina"] as const;
 export type AmbientTag = (typeof AVAILABLE_AMBIENTS)[number];
 
 const LANGUAGE_TO_AMBIENT_SUFFIX: Record<string, string> = {
@@ -129,9 +233,25 @@ export async function applyNarrationPostProcess(
     const ffmpegArgs = ["-y", "-loglevel", "error", "-i", inPath];
     if (ambientFile) {
       ffmpegArgs.push("-stream_loop", "-1", "-i", ambientFile);
+      // Silence the bed while the narrator (out-of-scene VO) speaks; play it
+      // continuously under character dialogue. The segments are aligned to the
+      // pre-tempo source, atempo stretches by 1/tempo, so scale = 1/tempo.
+      const { intervals } = computeNarratorOffIntervals(story.text ?? "", story.audioSegments);
+      if (intervals.length === 0) {
+        console.warn(
+          `[narrationPostProcess] could not resolve narrator ranges for ${args.storyId}; mixing ambient continuously`
+        );
+      }
+      const ambientStage = buildAmbientStage({
+        inLabel: "1:a",
+        outLabel: "a1",
+        volume: ambientVolume,
+        offIntervals: intervals,
+        scale: 1 / tempo,
+      });
       const filter =
         `[0:a]atempo=${tempo}[s];` +
-        `[1:a]volume=${ambientVolume},afade=t=in:st=0:d=1[a1];` +
+        `${ambientStage};` +
         `[s][a1]amix=inputs=2:duration=first:dropout_transition=2[mix];` +
         `[mix]dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5`;
       ffmpegArgs.push("-filter_complex", filter);

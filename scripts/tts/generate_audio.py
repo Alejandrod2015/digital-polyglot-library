@@ -350,10 +350,12 @@ def synthesize_multivoice(
     ref_audio_default: Path | None = None,
     ref_text_default: str | None = None,
     f5_nfe_step: int = 16,
-) -> tuple[np.ndarray, int]:
+) -> tuple[np.ndarray, int, list[tuple[float, float]]]:
     """Synthesize a multi-voice script. Each segment is dict with:
         voice: 'engine/name' (kokoro/piper/f5)
         text:  string
+        speaker (optional): 'narrator' marks out-of-scene VO so the ambient
+                 bed is silenced there by the caller.
         ref_audio (optional, for f5/...): path to reference WAV
         ref_text  (optional, for f5/...): transcript of ref audio
 
@@ -364,11 +366,18 @@ def synthesize_multivoice(
         raise RuntimeError("No segments in multi-voice spec")
 
     parts: list[np.ndarray] = []
+    # Narrator (out-of-scene VO) time ranges in seconds, so the caller can
+    # silence the ambient bed there — the bed belongs to the scene the
+    # characters inhabit, not to the narrator. See memory
+    # `feedback_ambient_not_under_narrator`.
+    narrator_intervals: list[tuple[float, float]] = []
+    cursor = 0  # running sample offset into the concatenated output
     for i, seg in enumerate(segments):
         voice_id = seg["voice"]
         text = seg["text"].strip()
         if not text:
             continue
+        is_narrator = str(seg.get("speaker", "")).strip().lower() == "narrator"
         engine, name = parse_voice_id(voice_id)
         if engine == "kokoro":
             audio, sr = synthesize_kokoro(text, lang, name, speed)
@@ -387,13 +396,23 @@ def synthesize_multivoice(
 
         if sr != target_sr:
             audio = _resample(audio, sr, target_sr)
+        start_s = cursor / target_sr
+        end_s = (cursor + len(audio)) / target_sr
+        if is_narrator:
+            if narrator_intervals and start_s - narrator_intervals[-1][1] <= 0.5:
+                narrator_intervals[-1] = (narrator_intervals[-1][0], end_s)
+            else:
+                narrator_intervals.append((start_s, end_s))
         parts.append(audio)
+        cursor += len(audio)
         if i < len(segments) - 1:
-            parts.append(np.zeros(int(DIALOGUE_PAUSE_S * target_sr), dtype=np.float32))
+            pause = np.zeros(int(DIALOGUE_PAUSE_S * target_sr), dtype=np.float32)
+            parts.append(pause)
+            cursor += len(pause)
 
     if not parts:
         raise RuntimeError("Multi-voice synthesis produced no audio")
-    return np.concatenate(parts), target_sr
+    return np.concatenate(parts), target_sr, narrator_intervals
 
 
 # Maps catalog voice "name" suffix → Coqui model_id used by TTS().
@@ -462,6 +481,7 @@ def write_output(
     postprocess: bool = True,
     ambient_path: Path | None = None,
     voice_id: str | None = None,
+    narrator_intervals: list[tuple[float, float]] | None = None,
 ) -> None:
     if output.suffix.lower() != ".mp3":
         sf.write(output, audio, sample_rate)
@@ -488,7 +508,17 @@ def write_output(
         if has_ambient:
             # Loop the ambient bed, set base volume, split narration, sidechain-compress
             # the ambient against the narration so it ducks under speech, then mix.
-            filters.append(f"[1:a]aloop=loop=-1:size=2e9,volume={AMBIENT_VOLUME}[amb]")
+            # Additionally hard-gate the bed to silence during narrator (VO) ranges:
+            # the ambient belongs to the characters' scene, never under the narrator.
+            gate = ""
+            if narrator_intervals:
+                off_expr = "+".join(
+                    f"between(t,{a:.3f},{b:.3f})" for a, b in narrator_intervals
+                )
+                gate = f"*(1-min(1,{off_expr}))"
+            filters.append(
+                f"[1:a]aloop=loop=-1:size=2e9,volume='{AMBIENT_VOLUME}{gate}':eval=frame[amb]"
+            )
             filters.append(f"[{narr_label}]asplit=2[narr1][narr2]")
             filters.append("[amb][narr2]sidechaincompress=threshold=0.04:ratio=8:attack=5:release=400[ambducked]")
             filters.append("[narr1][ambducked]amix=inputs=2:duration=first:dropout_transition=0[mix]")
@@ -533,7 +563,7 @@ def main() -> int:
         total_chars = sum(len(s.get("text", "")) for s in spec)
         unique_voices = sorted({s["voice"] for s in spec if s.get("voice")})
         print(f"[tts] multi-voice spec={len(spec)} segments, voices={unique_voices}, chars={total_chars} → {args.output}")
-        audio, sr = synthesize_multivoice(
+        audio, sr, narrator_intervals = synthesize_multivoice(
             spec,
             lang=args.lang,
             speed=args.speed,
@@ -543,7 +573,14 @@ def main() -> int:
         )
         args.output.parent.mkdir(parents=True, exist_ok=True)
         # In multi-voice mode there's no single voice_id; use default chain.
-        write_output(audio, args.output, sample_rate=sr, postprocess=args.postprocess, ambient_path=args.ambient)
+        write_output(
+            audio,
+            args.output,
+            sample_rate=sr,
+            postprocess=args.postprocess,
+            ambient_path=args.ambient,
+            narrator_intervals=narrator_intervals,
+        )
         duration_s = len(audio) / sr
         print(f"[tts] done. {duration_s:.1f}s of audio")
         return 0

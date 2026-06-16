@@ -294,13 +294,16 @@ export async function POST(request: Request) {
     const rawSpec = story.dialogueSpec as unknown;
     if (Array.isArray(rawSpec) && rawSpec.length > 0) {
       const resolvedSpec = [];
-      for (const seg of rawSpec as Array<{ voice: string; text: string }>) {
+      // `speaker` is carried through so the Python mixer can silence the
+      // ambient bed during narrator (VO) ranges (memory:
+      // feedback_ambient_not_under_narrator).
+      for (const seg of rawSpec as Array<{ voice: string; text: string; speaker?: string }>) {
         if (seg.voice?.startsWith("f5/")) {
           const cv = await prisma.clonedVoice.findUnique({ where: { id: seg.voice.slice(3) } });
           if (!cv) throw new Error(`Cloned voice not found in spec: ${seg.voice}`);
-          resolvedSpec.push({ voice: seg.voice, text: seg.text, ref_audio: cv.refAudioPath, ref_text: cv.refText });
+          resolvedSpec.push({ voice: seg.voice, text: seg.text, speaker: seg.speaker, ref_audio: cv.refAudioPath, ref_text: cv.refText });
         } else {
-          resolvedSpec.push({ voice: seg.voice, text: seg.text });
+          resolvedSpec.push({ voice: seg.voice, text: seg.text, speaker: seg.speaker });
         }
       }
       specPath = join(tempDir, "spec.json");

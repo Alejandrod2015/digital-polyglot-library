@@ -14,9 +14,10 @@ import { config } from "dotenv";
 import { writeFileSync, readFileSync, mkdtempSync, rmSync, existsSync } from "fs";
 import { tmpdir } from "os";
 import path from "path";
-import { spawn } from "child_process";
+import { spawn, spawnSync } from "child_process";
 import { PrismaClient } from "../src/generated/prisma";
 import { uploadPublicObject } from "../src/lib/objectStorage";
+import { computeNarratorOffIntervals, buildAmbientStage } from "../src/lib/narrationPostProcess";
 
 config({ path: ".env.local" });
 config({ path: ".env" });
@@ -38,14 +39,27 @@ async function downloadToBuffer(url: string): Promise<Buffer> {
   return Buffer.from(await r.arrayBuffer());
 }
 
-function ffmpegMixAmbient(dialoguePath: string, ambientPath: string, outPath: string): Promise<void> {
+function ffmpegMixAmbient(
+  dialoguePath: string,
+  ambientPath: string,
+  outPath: string,
+  offIntervals: [number, number][] = [],
+): Promise<void> {
   return new Promise((resolve, reject) => {
     // 1. ambient looped indefinitely (-stream_loop -1).
-    // 2. ambient ducked to 10% volume, faded in 1s.
+    // 2. ambient at 10%, silenced under the narrator (offIntervals) — the bed
+    //    belongs to the scene, never the VO (feedback_ambient_not_under_narrator).
     // 3. amix takes both inputs; duration=first cuts to dialogue length.
     // 4. loudnorm normalizes the final mix to -16 LUFS.
+    const ambientStage = buildAmbientStage({
+      inLabel: "1:a",
+      outLabel: "a1",
+      volume: 0.1,
+      offIntervals,
+      scale: 1, // intervals already in the dialogue timeline
+    });
     const filter =
-      "[1:a]volume=0.10,afade=t=in:st=0:d=1[a1];" +
+      `${ambientStage};` +
       "[0:a][a1]amix=inputs=2:duration=first:dropout_transition=2[mix];" +
       "[mix]loudnorm=I=-16:LRA=11:TP=-1.5";
     const proc = spawn("ffmpeg", [
@@ -109,7 +123,19 @@ async function run() {
         continue;
       }
 
-      await ffmpegMixAmbient(inPath, m.ambientFile, outPath);
+      // Narrator ranges scaled to this dialogue file's actual duration.
+      const { intervals, span } = computeNarratorOffIntervals(story.text ?? "", story.audioSegments);
+      const dur = parseFloat(
+        spawnSync("ffprobe", [
+          "-v", "error", "-show_entries", "format=duration",
+          "-of", "default=nw=1:nk=1", inPath,
+        ]).stdout.toString().trim(),
+      );
+      const scale = span > 0 && Number.isFinite(dur) ? dur / span : 0;
+      const scaledOff: [number, number][] = scale > 0
+        ? intervals.map(([a, b]) => [a * scale, b * scale])
+        : [];
+      await ffmpegMixAmbient(inPath, m.ambientFile, outPath, scaledOff);
       const processed = readFileSync(outPath);
       const baseName = (story.audioFilename ?? `${m.slug}.mp3`).replace(/\.mp3$/, "");
       const newName = `${baseName.replace(/_ambient_\d+$/, "")}_ambient_${Date.now()}.mp3`;

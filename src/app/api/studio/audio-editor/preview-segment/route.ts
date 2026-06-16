@@ -16,6 +16,7 @@ import {
 import { uploadPublicObject } from "@/lib/objectStorage";
 import { deriveAudioEditorBlocks, findBlockForChar } from "@/lib/audioEditorBlocks";
 import { mergeVoiceProvenance, readVoiceProvenance } from "@/lib/voiceProvenance";
+import { computeNarratorOffIntervals, buildAmbientStage } from "@/lib/narrationPostProcess";
 
 export const maxDuration = 300;
 
@@ -413,8 +414,11 @@ export async function POST(request: Request) {
         );
       } else {
         // Legacy: match the mixed master profile (tempo + ambient + loudnorm).
+        // Ambient never plays under the narrator (out-of-scene VO), so a
+        // narrator block previews dry (memory: feedback_ambient_not_under_narrator).
         const tempo = DEFAULT_NARRATION_TEMPO;
-        if (ambientFile) {
+        const isNarratorBlock = blocks[blockIdx].speakerLabel === "narrator";
+        if (ambientFile && !isNarratorBlock) {
           ffArgs.push("-stream_loop", "-1", "-i", ambientFile);
           const filter =
             `[0:a]atempo=${tempo}[s];` +
@@ -505,6 +509,17 @@ export async function POST(request: Request) {
     let newDryUrl: string | null = null;
     let newDryFilename: string | null = null;
     if (useDryStemPath && ambientFile) {
+      // Silence the bed during narrator (VO) ranges, scaled to the spliced
+      // master's real duration (memory: feedback_ambient_not_under_narrator).
+      const { intervals, span } = computeNarratorOffIntervals(story.text ?? "", story.audioSegments);
+      const mixedDuration = await ffprobeDuration(splicedDryPath);
+      const ambientStage = buildAmbientStage({
+        inLabel: "1:a",
+        outLabel: "a1",
+        volume: DEFAULT_AMBIENT_VOLUME,
+        offIntervals: intervals,
+        scale: span > 0 ? mixedDuration / span : 0,
+      });
       const ambientMixArgs = [
         "-y",
         "-loglevel",
@@ -516,7 +531,7 @@ export async function POST(request: Request) {
         "-i",
         ambientFile,
         "-filter_complex",
-        `[1:a]volume=${DEFAULT_AMBIENT_VOLUME},afade=t=in:st=0:d=1[a1];` +
+        `${ambientStage};` +
           `[0:a][a1]amix=inputs=2:duration=first:dropout_transition=2[mix];` +
           `[mix]loudnorm=I=-16:LRA=11:TP=-1.5`,
         "-codec:a",

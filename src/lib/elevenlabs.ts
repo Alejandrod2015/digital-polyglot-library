@@ -166,6 +166,13 @@ export const GERMAN_DIALOGUE_VOICES = {
   marius:    "JDXBO1etYlVlJZRMoYzH", // M young, professional, narrative_story — alt to Michael (round 3 pick)
   daniel:    "wcqN36SUOZ0EhToc2OIu", // M older-feeling (metadata: middle-aged), "Calm & Real UGC", conversational
   gjango:    "wZUI6Qb377V1PsC35d6y", // M middle-aged, native DE, calm, narrative_story — JOURNEY NARRATOR (replaces Marius, 2026-06-05). Preview level is low but loudnorm (-16 LUFS) normalizes it on render. Shared-library voice: add to the ElevenLabs account before the first render.
+  // ── Round 4 (2026-06-15): approved for German "Traveler" V2 journey casting
+  // (user auditioned A1/A2/B1/B2/C1/C2 in localhost player). All shared-library
+  // → add each to the ElevenLabs account before the first render.
+  daien:     "9iYBWBbTzTDIt6imiMxp", // F young, native DE, pleasant, narrative_story — Hanna / Nichte
+  joerg:     "KVgqk9YVh0pWUJiWQN8j", // M middle-aged, native DE, confident, narrative_story — Stefan
+  daniel_konv:"2EkqFDbWjmOn56BMSmts", // M middle-aged, native DE, casual conversational ("Friendly Conversationalist") — Verkäufer
+  marlena:   "MTTjXkEpZepLTqO0xH0f", // F middle-aged, native DE, warm professional/conversational — Kundin
 } as const;
 
 // Approved Spanish (LATAM) voices for multi-character dialogue stories. IDs
@@ -1121,10 +1128,48 @@ async function concatMp3Buffers(buffers: Buffer[], gapSec = 0): Promise<Buffer> 
 // Mix a looped ambient track underneath an already-synthesized dialogue
 // buffer. Volume defaults to 0.15 (15%) so voices stay clearly on top.
 // Returns the original buffer if ffmpeg or the ambient file isn't available.
+// Probe an mp3 buffer's duration in seconds via ffprobe (temp file).
+// Returns 0 on failure so callers degrade gracefully.
+async function probeMp3DurationSec(buf: Buffer): Promise<number> {
+  try {
+    const { writeFile, mkdtemp, rm } = await import("fs/promises");
+    const { tmpdir } = await import("os");
+    const path = await import("path");
+    const { spawn } = await import("child_process");
+    const dir = await mkdtemp(path.join(tmpdir(), "dur-"));
+    const p = path.join(dir, "a.mp3");
+    try {
+      await writeFile(p, buf);
+      const out = await new Promise<string>((resolve, reject) => {
+        const proc = spawn("ffprobe", [
+          "-v", "error", "-show_entries", "format=duration",
+          "-of", "default=nw=1:nk=1", p,
+        ]);
+        let stdout = "";
+        let stderr = "";
+        proc.stdout.on("data", (c) => { stdout += c.toString(); });
+        proc.stderr.on("data", (c) => { stderr += c.toString(); });
+        proc.on("error", reject);
+        proc.on("close", (code) => (code === 0 ? resolve(stdout) : reject(new Error(stderr.slice(0, 200)))));
+      });
+      const n = parseFloat(out.trim());
+      return Number.isFinite(n) ? n : 0;
+    } finally {
+      await rm(dir, { recursive: true, force: true }).catch(() => {});
+    }
+  } catch {
+    return 0;
+  }
+}
+
 async function mixAmbient(
   dialogue: Buffer,
   ambientPath: string,
-  volume = 0.15
+  volume = 0.15,
+  // Narrator (out-of-scene VO) ranges in seconds within `dialogue`. When given,
+  // the bed is silenced there — it belongs to the characters' scene, never the
+  // narrator (memory: feedback_ambient_not_under_narrator).
+  narratorOffIntervals: [number, number][] = []
 ): Promise<Buffer> {
   try {
     const { writeFile, mkdtemp, rm, readFile, access } = await import("fs/promises");
@@ -1139,8 +1184,14 @@ async function mixAmbient(
       const outPath = path.join(dir, "out.mp3");
       await writeFile(inPath, dialogue);
       await new Promise<void>((resolve, reject) => {
+        const ambientStage =
+          narratorOffIntervals.length > 0
+            ? `[1:a]volume='${volume}*(1-min(1,${narratorOffIntervals
+                .map(([a, b]) => `between(t,${a.toFixed(3)},${b.toFixed(3)})`)
+                .join("+")}))':eval=frame[a1]`
+            : `[1:a]volume=${volume},afade=t=in:st=0:d=1[a1]`;
         const filter =
-          `[1:a]volume=${volume},afade=t=in:st=0:d=1[a1];` +
+          `${ambientStage};` +
           `[0:a][a1]amix=inputs=2:duration=first:dropout_transition=2[mix];` +
           `[mix]loudnorm=I=-16:LRA=11:TP=-1.5`;
         const proc = spawn("ffmpeg", [
@@ -1298,8 +1349,28 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   }
 
   // 0.45s breath between turns so dialogue doesn't sound rushed/robotic.
-  const concatBuffer = await concatMp3Buffers(audioBuffers, 0.45);
+  const DIALOGUE_GAP_SEC = 0.45;
+  const concatBuffer = await concatMp3Buffers(audioBuffers, DIALOGUE_GAP_SEC);
   const normalized = await normalizeLoudness(concatBuffer);
+
+  // Narrator (out-of-scene VO) time ranges in the concatenated timeline, so
+  // the ambient bed can be silenced there — it belongs to the characters'
+  // scene, never the narrator (memory: feedback_ambient_not_under_narrator).
+  // Built from per-fragment durations + the gap inserted between turns.
+  const narratorOffIntervals: [number, number][] = [];
+  if (args.ambientPath) {
+    let cursor = 0;
+    for (let i = 0; i < fragments.length; i += 1) {
+      const dur = await probeMp3DurationSec(audioBuffers[i]);
+      if (fragments[i].speaker.toLowerCase() === "narrator") {
+        const last = narratorOffIntervals[narratorOffIntervals.length - 1];
+        if (last && cursor - last[1] <= 0.5) last[1] = cursor + dur;
+        else narratorOffIntervals.push([cursor, cursor + dur]);
+      }
+      cursor += dur;
+      if (i < fragments.length - 1) cursor += DIALOGUE_GAP_SEC;
+    }
+  }
 
   // Upload the dry stem (voices-only, post-loudnorm, pre-ambient mix)
   // BEFORE merging ambient. The dry stem enables seam-less splices in
@@ -1333,7 +1404,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   }
 
   const combined = args.ambientPath
-    ? await mixAmbient(normalized, args.ambientPath, args.ambientVolume ?? DEFAULT_AMBIENT_VOLUME)
+    ? await mixAmbient(normalized, args.ambientPath, args.ambientVolume ?? DEFAULT_AMBIENT_VOLUME, narratorOffIntervals)
     : normalized;
   const filename = `${baseFilename}_multivoice_${ts}.mp3`;
 

@@ -16,6 +16,7 @@ import {
 import { uploadPublicObject } from "@/lib/objectStorage";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimings";
 import { deriveAudioEditorBlocks } from "@/lib/audioEditorBlocks";
+import { computeNarratorOffIntervals, buildAmbientStage } from "@/lib/narrationPostProcess";
 import { mergeVoiceProvenance, readVoiceProvenance } from "@/lib/voiceProvenance";
 
 export const maxDuration = 300;
@@ -350,22 +351,14 @@ export async function POST(request: Request) {
           `dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5`,
         );
       } else {
-        // Legacy: match mixed master profile.
+        // Legacy: match mixed master profile. The title is narrated by the
+        // narrator (out-of-scene VO), so the ambient bed never plays under it
+        // (memory: feedback_ambient_not_under_narrator) — always render dry.
         const tempo = DEFAULT_NARRATION_TEMPO;
-        if (ambientFile) {
-          ffArgs.push("-stream_loop", "-1", "-i", ambientFile);
-          const filter =
-            `[0:a]atempo=${tempo}[s];` +
-            `[1:a]volume=${DEFAULT_AMBIENT_VOLUME}[a1];` +
-            `[s][a1]amix=inputs=2:duration=first:dropout_transition=0[mix];` +
-            `[mix]dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5`;
-          ffArgs.push("-filter_complex", filter);
-        } else {
-          ffArgs.push(
-            "-af",
-            `atempo=${tempo},dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5`,
-          );
-        }
+        ffArgs.push(
+          "-af",
+          `atempo=${tempo},dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5`,
+        );
       }
       ffArgs.push("-codec:a", "libmp3lame", "-b:a", "128k", newSegProcessed);
       await runFfmpeg(ffArgs);
@@ -430,6 +423,18 @@ export async function POST(request: Request) {
     let newDryUrl: string | null = null;
     let newDryFilename: string | null = null;
     if (useDryStemPath && ambientFile) {
+      // Silence the bed during narrator (VO) ranges. Segments are scaled to
+      // the spliced master's actual duration so the gate lands correctly
+      // regardless of tempo/splice drift (memory: feedback_ambient_not_under_narrator).
+      const { intervals, span } = computeNarratorOffIntervals(story.text ?? "", story.audioSegments);
+      const mixedDuration = await ffprobeDuration(splicedDryPath);
+      const ambientStage = buildAmbientStage({
+        inLabel: "1:a",
+        outLabel: "a1",
+        volume: DEFAULT_AMBIENT_VOLUME,
+        offIntervals: intervals,
+        scale: span > 0 ? mixedDuration / span : 0,
+      });
       const ambientMixArgs = [
         "-y",
         "-loglevel",
@@ -441,7 +446,7 @@ export async function POST(request: Request) {
         "-i",
         ambientFile,
         "-filter_complex",
-        `[1:a]volume=${DEFAULT_AMBIENT_VOLUME},afade=t=in:st=0:d=1[a1];` +
+        `${ambientStage};` +
           `[0:a][a1]amix=inputs=2:duration=first:dropout_transition=2[mix];` +
           `[mix]loudnorm=I=-16:LRA=11:TP=-1.5`,
         "-codec:a",
