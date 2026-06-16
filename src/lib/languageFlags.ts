@@ -43,12 +43,15 @@ const FLAG_BY_VARIANT: Record<string, string> = {
  * a globe so the row always renders something.
  */
 export function getLanguageFlag(language: string, variant?: string | null): string {
-  if (variant) {
+  // Variant only wins when it belongs to this language (see getLanguageCountry).
+  if (variant && isVariantValidForLanguage(variant, language)) {
     const byVariant = FLAG_BY_VARIANT[variant];
     if (byVariant) return byVariant;
   }
-  const byLanguage = DEFAULT_FLAG_BY_LANGUAGE[language];
-  if (byLanguage) return byLanguage;
+  const key = Object.keys(DEFAULT_FLAG_BY_LANGUAGE).find(
+    (k) => k.toLowerCase() === language.toLowerCase(),
+  );
+  if (key) return DEFAULT_FLAG_BY_LANGUAGE[key];
   return "🌐";
 }
 
@@ -72,11 +75,19 @@ const DEFAULT_COUNTRY_BY_LANGUAGE: Record<string, string> = {
  * renders nothing / a code fallback).
  */
 export function getLanguageCountry(language: string, variant?: string | null): string {
-  if (variant) {
+  // Only honor the variant if it actually belongs to this language. A stale
+  // cross-language variant (e.g. preferredVariant="latam" left over from
+  // Spanish while the active language is German) must NOT pick the flag —
+  // that produced a Colombia flag next to a "DE" code. Fall back to the
+  // language's canonical country instead.
+  if (variant && isVariantValidForLanguage(variant, language)) {
     const byVariant = COUNTRY_BY_VARIANT[variant];
     if (byVariant) return byVariant;
   }
-  return DEFAULT_COUNTRY_BY_LANGUAGE[language] ?? "";
+  const key = Object.keys(DEFAULT_COUNTRY_BY_LANGUAGE).find(
+    (k) => k.toLowerCase() === language.toLowerCase(),
+  );
+  return key ? DEFAULT_COUNTRY_BY_LANGUAGE[key] : "";
 }
 
 /**
