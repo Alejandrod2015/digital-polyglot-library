@@ -7,6 +7,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
+import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
 import { uploadPublicObject } from "@/lib/objectStorage";
 import { buildAudioNarrationText } from "@/lib/elevenlabs";
 import { findVoice, DEFAULT_VOICE_BY_LANGUAGE } from "@/lib/voiceCatalog";
@@ -196,6 +197,10 @@ export async function POST(request: Request) {
   if (!story.text || !story.title) {
     return NextResponse.json({ error: "Story needs text and title before generating audio" }, { status: 400 });
   }
+
+  // HARD GUARD: a story with characters can NEVER be generated single-voice.
+  const guardError = multiVoiceGuardError({ storyText: story.text, dialogueSpec: story.dialogueSpec });
+  if (guardError) return NextResponse.json({ error: guardError }, { status: 400 });
 
   const langKey = story.journey.language.toLowerCase();
   // Resolve the chosen voice. If voiceId starts with "f5/", look it up in ClonedVoice;

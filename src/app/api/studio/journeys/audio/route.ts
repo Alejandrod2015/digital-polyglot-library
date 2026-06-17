@@ -4,6 +4,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateAndUploadAudio, generateAndUploadMultiVoiceAudio } from "@/lib/elevenlabs";
 import { generateWordTimingsForStory } from "@/lib/audioWordTimings";
+import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
 
 export const maxDuration = 300;
 
@@ -25,6 +26,10 @@ export async function POST(request: Request) {
   const story = await prisma.journeyStory.findUnique({ where: { id: storyId }, include: { journey: true } });
   if (!story) return NextResponse.json({ error: "Story not found" }, { status: 404 });
   if (!story.text || !story.title) return NextResponse.json({ error: "Story needs text and title before generating audio" }, { status: 400 });
+
+  // HARD GUARD: a story with characters can NEVER be generated single-voice.
+  const guardError = multiVoiceGuardError({ storyText: story.text, dialogueSpec: story.dialogueSpec });
+  if (guardError) return NextResponse.json({ error: guardError }, { status: 400 });
 
   try {
     await prisma.journeyStory.update({ where: { id: storyId }, data: { audioStatus: "generating" } });

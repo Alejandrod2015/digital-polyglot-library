@@ -1,6 +1,7 @@
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { spawn } from "node:child_process";
+import { FFMPEG_PATH, FFPROBE_PATH } from "@/lib/ffmpegBin";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -97,7 +98,7 @@ async function downloadToBuffer(url: string): Promise<Buffer> {
 
 function runFfmpeg(args: string[]): Promise<void> {
   return new Promise((resolve, reject) => {
-    const proc = spawn("ffmpeg", args);
+    const proc = spawn(FFMPEG_PATH, args);
     let stderr = "";
     proc.stderr.on("data", (c) => {
       stderr += c.toString();
@@ -112,7 +113,7 @@ function runFfmpeg(args: string[]): Promise<void> {
 
 function ffprobeDuration(filePath: string): Promise<number> {
   return new Promise((resolve, reject) => {
-    const proc = spawn("ffprobe", [
+    const proc = spawn(FFPROBE_PATH, [
       "-v",
       "error",
       "-show_entries",

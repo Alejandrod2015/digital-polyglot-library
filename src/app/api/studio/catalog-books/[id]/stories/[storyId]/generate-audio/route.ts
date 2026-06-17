@@ -13,6 +13,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateAndUploadAudio } from "@/lib/elevenlabs";
+import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
 
 export const maxDuration = 300;
 
@@ -50,6 +51,10 @@ export async function POST(_req: NextRequest, { params }: Params) {
   if (!story.title.trim()) {
     return NextResponse.json({ error: "Story needs a title before generating audio." }, { status: 400 });
   }
+
+  // HARD GUARD: a story with characters can NEVER be generated single-voice.
+  const guardError = multiVoiceGuardError({ storyText: story.text, dialogueSpec: null });
+  if (guardError) return NextResponse.json({ error: guardError }, { status: 400 });
 
   const language = story.language ?? story.book.language;
   const region = story.region ?? story.book.region ?? undefined;
