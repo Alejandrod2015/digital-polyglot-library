@@ -8,6 +8,19 @@ import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 const CONTINUE_COMPLETION_RATIO = 0.95;
 const CONTINUE_TABLE_CACHE_TTL_MS = 5 * 60 * 1000;
 const CONTINUE_PROGRESS_WRITE_THRESHOLD_SEC = 15;
+// A position below this is the start of playback, not a resume point. Clients
+// post the first sample at ~0s (and again on unmount/visibility-hidden); without
+// this floor those land as permanent progressSec=0 rows that never get corrected
+// upward, breaking "Continue listening" resume and under-reporting listen metrics.
+const CONTINUE_MIN_RESUME_SEC = 10;
+
+function isMeaningfulResume(progressSec?: number): boolean {
+  return (
+    typeof progressSec === "number" &&
+    Number.isFinite(progressSec) &&
+    progressSec >= CONTINUE_MIN_RESUME_SEC
+  );
+}
 
 let continueTableCache:
   | {
@@ -321,7 +334,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     if (!hasTable) {
       await prisma.userMetric.createMany({
-        data: active.map((pair) => ({
+        data: active.filter((pair) => isMeaningfulResume(pair.progressSec)).map((pair) => ({
           userId,
           bookSlug: pair.bookSlug,
           storySlug: pair.storySlug,
@@ -364,14 +377,19 @@ export async function POST(req: NextRequest): Promise<Response> {
       const existingByKey = new Map(
         existingRows.map((row) => [`${row.bookSlug}:${row.storySlug}`, row] as const)
       );
-      const activeToWrite = active.filter(
-        (pair) =>
-          !shouldSkipContinueWrite(
-            existingByKey.get(`${pair.bookSlug}:${pair.storySlug}`),
-            pair,
-            nowMs
-          )
-      );
+      const activeToWrite = active.filter((pair) => {
+        const existing = existingByKey.get(`${pair.bookSlug}:${pair.storySlug}`);
+        // Never create a resume point below the floor (position ~0 is not a
+        // resume point — it's the start of playback).
+        if (!existing && !isMeaningfulResume(pair.progressSec)) return false;
+        // Never downgrade an existing resume point to an earlier position.
+        if (existing) {
+          const next = normalizeProgressValue(pair.progressSec) ?? 0;
+          const prev = normalizeProgressValue(existing.progressSec ?? undefined) ?? 0;
+          if (next < prev) return false;
+        }
+        return !shouldSkipContinueWrite(existing, pair, nowMs);
+      });
       const completedToWrite = completed.filter((pair) =>
         existingByKey.has(`${pair.bookSlug}:${pair.storySlug}`)
       );
@@ -423,7 +441,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     } catch (err) {
       if (isMissingContinueTableError(err)) {
         await prisma.userMetric.createMany({
-          data: active.map((pair) => ({
+          data: active.filter((pair) => isMeaningfulResume(pair.progressSec)).map((pair) => ({
             userId,
             bookSlug: pair.bookSlug,
             storySlug: pair.storySlug,

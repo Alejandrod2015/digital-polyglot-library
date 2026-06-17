@@ -14,6 +14,7 @@ type MetricBody = {
 };
 
 const ALLOWED_EVENT_TYPES = new Set([
+  "story_opened",
   "audio_load",
   "audio_play",
   "audio_pause",

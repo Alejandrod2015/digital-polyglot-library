@@ -825,6 +825,7 @@ type AcquisitionPayload = {
     openedStory: boolean;
     listened: boolean;
     listenedSeconds: number;
+    completedStory: boolean;
     viewedPlans: boolean;
     paid: boolean;
   }>;
@@ -990,7 +991,13 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                     <td style={{ padding: "4px 6px" }}>{r.onboarded ? "✓" : "—"}</td>
                     <td style={{ padding: "4px 6px" }}>{r.openedStory ? "✓" : "—"}</td>
                     <td style={{ padding: "4px 6px" }}>
-                      {r.listened ? `✓ ${r.listenedSeconds}s` : "—"}
+                      {r.completedStory
+                        ? r.listenedSeconds > 0
+                          ? `✓ done +${r.listenedSeconds}s`
+                          : "✓ done"
+                        : r.listened
+                          ? `✓ ${r.listenedSeconds}s`
+                          : "—"}
                     </td>
                     <td style={{ padding: "4px 6px" }}>{r.viewedPlans ? "✓" : "—"}</td>
                     <td style={{ padding: "4px 6px" }}>{r.paid ? "✓" : "—"}</td>

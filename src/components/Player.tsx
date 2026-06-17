@@ -16,6 +16,7 @@ import { resolveCatalogAudioUrl, resolvePublicMediaUrl } from "@/lib/publicMedia
 import { trackGa4Event } from "@/lib/ga4";
 
 const TRACKED_PLAYER_EVENTS = new Set([
+  "story_opened",
   "audio_play",
   "audio_pause",
   "audio_complete",
@@ -23,6 +24,11 @@ const TRACKED_PLAYER_EVENTS = new Set([
 
 const CONTINUE_SYNC_INTERVAL_MS = 60_000;
 const MIN_PROGRESS_PERSIST_DELTA_SEC = 20;
+// A position below this is the start of playback, not a resume point. Without
+// this floor the first sample (and the unmount/visibility-hidden flush) lands at
+// ~0s and gets stored as a permanent progressSec=0 row. Server enforces the same
+// floor; this just avoids sending the doomed write.
+const MIN_RESUME_PROGRESS_SEC = 10;
 
 async function trackMetric(
   storySlug: string,
@@ -182,6 +188,7 @@ export default function Player({
 
   const wakeLockRef = useRef<WakeLockSentinel | null>(null);
   const lastPersistedProgressRef = useRef<number | null>(null);
+  const openedTrackedRef = useRef<string | null>(null);
   const navWL = getWakeLockNavigator();
 
   const requestWakeLock = async () => {
@@ -332,6 +339,8 @@ export default function Player({
     }
 
     const rounded = Math.max(0, Math.round(progressSec));
+    // Below the floor it's not a resume point; don't persist (mirrors the server).
+    if (rounded < MIN_RESUME_PROGRESS_SEC) return false;
     const previous = lastPersistedProgressRef.current;
     if (previous === null || Math.abs(rounded - previous) >= MIN_PROGRESS_PERSIST_DELTA_SEC) {
       lastPersistedProgressRef.current = rounded;
@@ -422,6 +431,16 @@ export default function Player({
     if (!hasPlayableAudio) return;
     // Skip noisy load tracking on Hobby.
   }, [hasPlayableAudio, storySlug, bookSlug]);
+
+  // ✅ tracking: "abrió historia". Funnel-distinct from "escuchó" (audio_play)
+  // and from the resume row. Fires once per story when the player mounts, so
+  // "Abrió" no longer depends on a progressSec=0 continue-listening row.
+  useEffect(() => {
+    if (!hasPlayableAudio || !canTrackContinueListening) return;
+    if (openedTrackedRef.current === storySlug) return;
+    openedTrackedRef.current = storySlug;
+    void trackMetric(storySlug, bookSlug, "story_opened");
+  }, [hasPlayableAudio, canTrackContinueListening, storySlug, bookSlug]);
 
   useEffect(() => {
     if (!hasPlayableAudio) return;

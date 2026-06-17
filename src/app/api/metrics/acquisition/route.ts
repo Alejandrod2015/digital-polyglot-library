@@ -26,6 +26,7 @@ type RecentSignup = {
   openedStory: boolean;
   listenedSeconds: number;
   listened: boolean;
+  completedStory: boolean;
   viewedPlans: boolean;
   paid: boolean;
 };
@@ -89,8 +90,8 @@ export async function GET(req: NextRequest): Promise<Response> {
     const [audioEvents, plansEvents, continueRows, entitlements] = await Promise.all([
       ids.length
         ? prisma.userMetric.findMany({
-            where: { userId: { in: ids }, eventType: { in: ["audio_play", "audio_complete", "audio_pause", "continue_listening"] } },
-            select: { userId: true },
+            where: { userId: { in: ids }, eventType: { in: ["story_opened", "audio_play", "audio_complete", "audio_pause", "continue_listening"] } },
+            select: { userId: true, eventType: true },
           })
         : Promise.resolve([]),
       ids.length
@@ -113,9 +114,26 @@ export async function GET(req: NextRequest): Promise<Response> {
         : Promise.resolve([]),
     ]);
 
-    const audioBy = new Set(audioEvents.map((e) => e.userId));
+    // Exclude story_opened from the audio set — it's an "opened" signal, not
+    // an actual listen.
+    const audioBy = new Set(
+      audioEvents.filter((e) => e.eventType !== "story_opened").map((e) => e.userId)
+    );
+    const completedBy = new Set(
+      audioEvents.filter((e) => e.eventType === "audio_complete").map((e) => e.userId)
+    );
+    const storyOpenedBy = new Set(
+      audioEvents.filter((e) => e.eventType === "story_opened").map((e) => e.userId)
+    );
     const plansBy = new Set(plansEvents.map((e) => e.userId));
-    const openedBy = new Set(continueRows.map((c) => c.userId));
+    // "Abrió" = explicit story_opened event (new, clean) ∪ legacy signals
+    // (resume rows / any audio event) so historical cohorts keep the step now
+    // that sub-floor resume rows are no longer written.
+    const openedBy = new Set<string>([
+      ...storyOpenedBy,
+      ...continueRows.map((c) => c.userId),
+      ...audioBy,
+    ]);
     const listenedSecondsBy = new Map<string, number>();
     for (const c of continueRows) {
       const prev = listenedSecondsBy.get(c.userId) ?? 0;
@@ -143,6 +161,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           openedStory: openedBy.has(u.id),
           listenedSeconds: secs,
           listened: audioBy.has(u.id) || secs > 0,
+          completedStory: completedBy.has(u.id),
           viewedPlans: plansBy.has(u.id),
           paid: paidBy.has(u.id),
         };

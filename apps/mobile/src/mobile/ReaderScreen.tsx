@@ -874,6 +874,7 @@ export function ReaderScreen(args: {
   onToggleFavoriteWord: (item: VocabItem, contextSentence?: string) => void;
   onTrackReaderEvent?: (
     eventType:
+      | "story_opened"
       | "vocab_clicked"
       | "word_dwell"
       | "audio_segment_replay"
@@ -1324,6 +1325,19 @@ export function ReaderScreen(args: {
     setEndOfStoryPromptVisible(true);
   }
   const lastTrackedStoryId = useRef<string | null>(null);
+  // Funnel-distinct "opened a story" signal, fired once per story on mount so
+  // "Abrió" no longer depends on a progressSec=0 continue-listening row.
+  const storyOpenedFiredForStoryRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (storyOpenedFiredForStoryRef.current === story.id) return;
+    if (!onTrackReaderEvent || !story.slug) return;
+    storyOpenedFiredForStoryRef.current = story.id;
+    onTrackReaderEvent("story_opened", {
+      storySlug: story.slug,
+      bookSlug: book.slug,
+      metadata: { progressKey: `standalone:${story.slug}`, source: "mobile_reader" },
+    });
+  }, [story.id, story.slug, book.slug, onTrackReaderEvent]);
   const lastPersistedProgressSecRef = useRef<number | null>(null);
   const lastPersistedAtRef = useRef<number>(0);
   const scrollViewRef = useRef<ScrollView | null>(null);

@@ -9371,6 +9371,7 @@ export function MobileLibraryShell(args: {
   // because /api/continue-listening filters out >= 95% rows.
   async function trackReaderEvent(
     eventType:
+      | "story_opened"
       | "vocab_clicked"
       | "word_dwell"
       | "audio_segment_replay"
