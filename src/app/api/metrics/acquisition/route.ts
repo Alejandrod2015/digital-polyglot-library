@@ -29,6 +29,7 @@ type RecentSignup = {
   completedStory: boolean;
   viewedPlans: boolean;
   paid: boolean;
+  platform: "ios" | "web" | null;
 };
 
 const TEAM_DOMAINS = ["muvn.de"];
@@ -91,7 +92,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       ids.length
         ? prisma.userMetric.findMany({
             where: { userId: { in: ids }, eventType: { in: ["story_opened", "audio_play", "audio_complete", "audio_pause", "continue_listening"] } },
-            select: { userId: true, eventType: true },
+            select: { userId: true, eventType: true, value: true, metadata: true },
           })
         : Promise.resolve([]),
       ids.length
@@ -134,14 +135,49 @@ export async function GET(req: NextRequest): Promise<Response> {
       ...continueRows.map((c) => c.userId),
       ...audioBy,
     ]);
+    // Furthest second reached per user. Decoupled from the resume row: take the
+    // max across resume rows AND audio events (audio_pause carries the exact
+    // position in `value`/metadata, continue_listening carries it in metadata),
+    // so exact seconds show even for short (<10s, sub-resume-floor) listens.
     const listenedSecondsBy = new Map<string, number>();
-    for (const c of continueRows) {
-      const prev = listenedSecondsBy.get(c.userId) ?? 0;
-      listenedSecondsBy.set(c.userId, Math.max(prev, c.progressSec ?? 0));
+    const bump = (userId: string, seconds: number) => {
+      if (!Number.isFinite(seconds) || seconds <= 0) return;
+      const prev = listenedSecondsBy.get(userId) ?? 0;
+      listenedSecondsBy.set(userId, Math.max(prev, Math.round(seconds)));
+    };
+    for (const c of continueRows) bump(c.userId, c.progressSec ?? 0);
+    for (const e of audioEvents) {
+      if (e.eventType !== "audio_pause" && e.eventType !== "continue_listening") continue;
+      const m = e.metadata && typeof e.metadata === "object" ? (e.metadata as Record<string, unknown>) : null;
+      const fromMeta = typeof m?.progressSec === "number" ? m.progressSec : null;
+      const fromValue = typeof e.value === "number" ? e.value : null;
+      bump(e.userId, fromMeta ?? fromValue ?? 0);
     }
     const paidBy = new Set(
       entitlements.filter((e) => !(e.plan ?? "").toLowerCase().includes("free")).map((e) => e.userId)
     );
+
+    // ── Platform split (iPhone app vs webapp) ──
+    // Events are now stamped with metadata.platform at write time. For users
+    // who were active before that, fall back to Clerk privateMetadata: anyone
+    // with a registered mobile push token has the iOS app installed.
+    const eventIos = new Set<string>();
+    const eventWeb = new Set<string>();
+    for (const e of audioEvents) {
+      const m = e.metadata && typeof e.metadata === "object" ? (e.metadata as Record<string, unknown>) : null;
+      const pf = typeof m?.platform === "string" ? m.platform : null;
+      if (pf === "ios" || pf === "android" || pf === "mobile") eventIos.add(e.userId);
+      else if (pf === "web") eventWeb.add(e.userId);
+    }
+    const hasMobilePushToken = (u: (typeof cohort)[number]): boolean => {
+      const pm = (u.privateMetadata ?? {}) as Record<string, unknown>;
+      return Array.isArray(pm.mobilePushTokens) && pm.mobilePushTokens.length > 0;
+    };
+    const platformFor = (u: (typeof cohort)[number]): "ios" | "web" | null => {
+      if (eventIos.has(u.id) || hasMobilePushToken(u)) return "ios";
+      if (eventWeb.has(u.id)) return "web";
+      return null;
+    };
 
     const recent: RecentSignup[] = cohort
       .sort((a, b) => b.createdAt - a.createdAt)
@@ -164,6 +200,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           completedStory: completedBy.has(u.id),
           viewedPlans: plansBy.has(u.id),
           paid: paidBy.has(u.id),
+          platform: platformFor(u),
         };
       });
 
@@ -185,6 +222,11 @@ export async function GET(req: NextRequest): Promise<Response> {
         last7d: signupsLast7d,
         last30d: signupsLast30d,
         inWindow: C,
+        byPlatform: {
+          ios: recent.filter((r) => r.platform === "ios").length,
+          web: recent.filter((r) => r.platform === "web").length,
+          unknown: recent.filter((r) => r.platform === null).length,
+        },
       },
       funnel,
       recent: recent.slice(0, 50),

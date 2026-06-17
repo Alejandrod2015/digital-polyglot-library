@@ -92,7 +92,10 @@ export async function POST(req: NextRequest): Promise<Response> {
         bookSlug: bookSlug ?? null,
         eventType,
         value,
-        metadata: (metadata as Prisma.InputJsonValue | undefined) ?? undefined,
+        metadata: {
+          ...(metadata && typeof metadata === "object" ? (metadata as Record<string, unknown>) : {}),
+          platform: "web",
+        } as Prisma.InputJsonValue,
       },
     });
 

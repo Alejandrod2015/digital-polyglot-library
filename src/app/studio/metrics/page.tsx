@@ -805,7 +805,13 @@ function AudienceView({ data }: { data: DashboardData }) {
 type AcquisitionPayload = {
   source: string;
   windowDays: number;
-  signups: { totalAllTime: number; last7d: number; last30d: number; inWindow: number };
+  signups: {
+    totalAllTime: number;
+    last7d: number;
+    last30d: number;
+    inWindow: number;
+    byPlatform?: { ios: number; web: number; unknown: number };
+  };
   funnel: {
     signups: number;
     onboarded: number;
@@ -828,6 +834,7 @@ type AcquisitionPayload = {
     completedStory: boolean;
     viewedPlans: boolean;
     paid: boolean;
+    platform: "ios" | "web" | null;
   }>;
   clerkInstance: string;
 };
@@ -961,6 +968,15 @@ function AcquisitionView({ data }: { data: DashboardData }) {
               <div className="mx-panel__eyebrow">Detalle</div>
               <h3 className="mx-panel__title">Altas recientes</h3>
             </div>
+            {acq.signups.byPlatform && (
+              <div style={{ fontSize: 12, opacity: 0.8, display: "flex", gap: 12 }}>
+                <span title="App de iPhone">📱 iOS: {acq.signups.byPlatform.ios}</span>
+                <span title="Webapp">🌐 Web: {acq.signups.byPlatform.web}</span>
+                {acq.signups.byPlatform.unknown > 0 && (
+                  <span title="Sin actividad medida aún">— s/d: {acq.signups.byPlatform.unknown}</span>
+                )}
+              </div>
+            )}
           </div>
           <div style={{ overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
@@ -969,6 +985,7 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                   <th style={{ padding: "4px 6px" }}>Fecha</th>
                   <th style={{ padding: "4px 6px" }}>Usuario</th>
                   <th style={{ padding: "4px 6px" }}>Idioma · nivel</th>
+                  <th style={{ padding: "4px 6px" }}>Plataforma</th>
                   <th style={{ padding: "4px 6px" }}>Onb.</th>
                   <th style={{ padding: "4px 6px" }}>Abrió</th>
                   <th style={{ padding: "4px 6px" }}>Escuchó</th>
@@ -988,16 +1005,32 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                       {r.targetLanguages.length ? r.targetLanguages.join("/") : "—"}
                       {r.level ? ` · ${r.level}` : ""}
                     </td>
+                    <td style={{ padding: "4px 6px" }}>
+                      {r.platform === "ios" ? (
+                        <span title="App de iPhone">📱 iOS</span>
+                      ) : r.platform === "web" ? (
+                        <span title="Webapp">🌐 Web</span>
+                      ) : (
+                        "—"
+                      )}
+                    </td>
                     <td style={{ padding: "4px 6px" }}>{r.onboarded ? "✓" : "—"}</td>
                     <td style={{ padding: "4px 6px" }}>{r.openedStory ? "✓" : "—"}</td>
                     <td style={{ padding: "4px 6px" }}>
-                      {r.completedStory
-                        ? r.listenedSeconds > 0
-                          ? `✓ done +${r.listenedSeconds}s`
-                          : "✓ done"
-                        : r.listened
-                          ? `✓ ${r.listenedSeconds}s`
-                          : "—"}
+                      {r.completedStory ? (
+                        "✓"
+                      ) : r.listenedSeconds > 0 ? (
+                        `${r.listenedSeconds}s`
+                      ) : r.listened ? (
+                        <span
+                          title="Tocó play pero no se pudo medir cuánto escuchó (cerró sin pausar y antes de 10s). No es 0s real."
+                          style={{ cursor: "help", opacity: 0.7 }}
+                        >
+                          ▶?
+                        </span>
+                      ) : (
+                        "—"
+                      )}
                     </td>
                     <td style={{ padding: "4px 6px" }}>{r.viewedPlans ? "✓" : "—"}</td>
                     <td style={{ padding: "4px 6px" }}>{r.paid ? "✓" : "—"}</td>
