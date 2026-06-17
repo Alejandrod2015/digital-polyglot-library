@@ -52,6 +52,7 @@ const AVAILABLE_AMBIENTS = [
   "playa",
   "parque",
   "calle",
+  "lluvia",
 ] as const;
 type AmbientTag = (typeof AVAILABLE_AMBIENTS)[number];
 

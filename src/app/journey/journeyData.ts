@@ -675,6 +675,17 @@ async function buildJourneyVariantsFromStudio(
         });
       }
       if (topics.length === 0) continue;
+      // Final topic order = Journey.topics[] (the order set in Studio). The
+      // topicMap insertion order above is unreliable: the seeding step only
+      // seats a topic that has a story when its GLOBAL default level matches
+      // this journey's level, so topics whose default level differs land in
+      // story-arrival order instead of the Studio order. Re-sort by
+      // Journey.topics so the home matches the journey-manager 1:1.
+      topics.sort((a, b) => {
+        const ai = topicSlugsInOrder.indexOf(a.slug);
+        const bi = topicSlugsInOrder.indexOf(b.slug);
+        return (ai < 0 ? Number.MAX_SAFE_INTEGER : ai) - (bi < 0 ? Number.MAX_SAFE_INTEGER : bi);
+      });
       levels.push({
         id: meta.id,
         title: meta.title,

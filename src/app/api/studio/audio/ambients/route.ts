@@ -4,7 +4,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { isStudioMember } from "@/lib/studio-access";
 
-const KNOWN_AMBIENTS = ["mercado", "metro", "restaurante", "bar", "cafeteria"];
+const KNOWN_AMBIENTS = ["mercado", "metro", "restaurante", "bar", "cafeteria", "lluvia"];
 
 export async function GET() {
   const { userId } = await auth();

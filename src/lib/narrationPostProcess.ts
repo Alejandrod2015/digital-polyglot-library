@@ -130,7 +130,7 @@ export function buildAmbientStage(args: {
   return `[${inLabel}]volume='${volume}*(1-min(1,${offExpr}))':eval=frame[${outLabel}]`;
 }
 
-const AVAILABLE_AMBIENTS = ["mercado", "metro", "restaurante", "bar", "cafeteria", "puerto", "playa", "parque", "calle", "cocina"] as const;
+const AVAILABLE_AMBIENTS = ["mercado", "metro", "restaurante", "bar", "cafeteria", "puerto", "playa", "parque", "calle", "cocina", "lluvia"] as const;
 export type AmbientTag = (typeof AVAILABLE_AMBIENTS)[number];
 
 const LANGUAGE_TO_AMBIENT_SUFFIX: Record<string, string> = {

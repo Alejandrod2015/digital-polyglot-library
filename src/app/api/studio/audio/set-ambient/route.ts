@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 
-const KNOWN_AMBIENTS = new Set(["mercado", "metro", "restaurante", "bar", "cafeteria"]);
+const KNOWN_AMBIENTS = new Set(["mercado", "metro", "restaurante", "bar", "cafeteria", "lluvia"]);
 
 export async function POST(request: Request) {
   const { userId } = await auth();
