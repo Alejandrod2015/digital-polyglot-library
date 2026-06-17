@@ -8,17 +8,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // ffmpeg/ffprobe binaries (ffmpeg-static / ffprobe-static) must NOT be
-  // bundled by webpack — they're native binaries we spawn at runtime.
-  serverExternalPackages: ["ffmpeg-static", "ffprobe-static"],
-  // ...and Vercel's file tracing must ship the binaries into the Studio
-  // audio-editor functions, or spawn() gets ENOENT on prod.
-  outputFileTracingIncludes: {
-    "/api/studio/audio-editor/**": [
-      "./node_modules/ffmpeg-static/ffmpeg",
-      "./node_modules/ffprobe-static/bin/**",
-    ],
-  },
   images: {
     remotePatterns: [
       // 🖼️ Sanity CDN
