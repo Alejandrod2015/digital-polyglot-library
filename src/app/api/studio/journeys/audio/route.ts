@@ -43,6 +43,8 @@ export async function POST(request: Request) {
     let audioSegments: any[];
     let audioQa: any;
     let savedVoiceId: string | null;
+    // Exact per-fragment offsets (multi-voice only); null for single-voice.
+    let audioFragments: unknown = null;
 
     if (useMultiVoice) {
       // Build voiceMap from dialogueSpec: speaker.toLowerCase() → voiceId
@@ -63,6 +65,7 @@ export async function POST(request: Request) {
       audioSegments = result.audioSegments;
       audioQa = result.audioQa;
       savedVoiceId = result.speakerVoiceMap?.narrator ?? voiceMap.narrator ?? null;
+      audioFragments = result.fragments.length > 0 ? result.fragments : null;
     } else {
       const result = await generateAndUploadAudio(story.text, story.title, story.journey.language, story.journey.variant);
       if (!result) throw new Error("Audio generation returned null");
@@ -85,6 +88,7 @@ export async function POST(request: Request) {
         audioQaStatus: audioQa?.status ?? null,
         audioQaScore: audioQa?.score ?? null,
         audioQaNotes: audioQa?.notes?.join("\n") ?? null,
+        ...(audioFragments ? { audioFragments: audioFragments as object } : {}),
       },
     });
 

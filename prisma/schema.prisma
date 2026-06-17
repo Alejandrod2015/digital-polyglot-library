@@ -315,6 +315,25 @@ model JourneyStory {
   audioQaStatus        String?
   audioQaScore         Float?
   audioQaNotes         String?
+  // Free-form operator note for the audio editor ("re-grabar bloque 3",
+  // "subir título"). Manual reminder, distinct from audioQaNotes (which
+  // automated QA overwrites). Never touched by generation/QA.
+  audioEditorNote      String?
+  // Ground-truth per-fragment offsets in the merged master timeline,
+  // captured at multi-voice generation (index 0 = title, then one per
+  // dialogue turn). The audio editor uses these as exact block
+  // boundaries instead of reconstructing them from aeneas word timings.
+  // Null for stories generated before this was added.
+  audioFragments       Json?
+  // Per-segment ElevenLabs regenerate counter for the audio editor,
+  // keyed by fragment index (e.g. {"0":2,"5":1}). Caps in-app regen
+  // spend at 3 per segment; manual uploads don't count (no API cost).
+  audioEditorRegenCounts Json?
+  // Per-segment operator comments for the audio editor, keyed by fragment
+  // index (e.g. {"0":"subí manual","5":"falta regenerar"}). Free-form
+  // reminders the worker leaves on individual blocks; never touched by
+  // generation/QA.
+  audioEditorComments  Json?
   // Vocabulary-level audit (LLM-as-judge against story.level CEFR).
   // Cleared whenever text is regenerated; refilled by /audit-level.
   auditScore           Float?

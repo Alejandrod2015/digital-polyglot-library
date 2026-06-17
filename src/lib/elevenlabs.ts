@@ -545,7 +545,7 @@ export async function generateAndUploadAudio(
 // listening level. If ffmpeg isn't available in the runtime (e.g. some
 // serverless environments) we log and return the original buffer so audio
 // generation still succeeds.
-async function normalizeLoudness(buffer: Buffer): Promise<Buffer> {
+export async function normalizeLoudness(buffer: Buffer): Promise<Buffer> {
   try {
     const { writeFile, mkdtemp, rm, readFile } = await import("fs/promises");
     const { tmpdir } = await import("os");
@@ -1125,6 +1125,23 @@ async function concatMp3Buffers(buffers: Buffer[], gapSec = 0): Promise<Buffer> 
   }
 }
 
+// Breath between turns so dialogue doesn't sound rushed/robotic. Module
+// constant so the section-rebuild path reproduces the exact same gaps as
+// the original generation.
+export const DIALOGUE_GAP_SEC = 0.45;
+
+/**
+ * Rebuild the merged master from an ordered list of section buffers,
+ * reproducing the original generation's concat + loudnorm. Used by the
+ * audio editor to replace a single section (swap its buffer, rebuild)
+ * without time-splicing — the sections are the ground truth, so there is
+ * no offset/alignment drift. Returns the new master mp3 buffer.
+ */
+export async function rebuildMasterFromSections(sectionBuffers: Buffer[]): Promise<Buffer> {
+  const concat = await concatMp3Buffers(sectionBuffers, DIALOGUE_GAP_SEC);
+  return normalizeLoudness(concat);
+}
+
 // Mix a looped ambient track underneath an already-synthesized dialogue
 // buffer. Volume defaults to 0.15 (15%) so voices stay clearly on top.
 // Returns the original buffer if ffmpeg or the ambient file isn't available.
@@ -1229,6 +1246,22 @@ async function mixAmbient(
  * Optionally mixes a looped ambient track (cafeteria, mercado, etc.)
  * underneath the dialogue at low volume.
  */
+/** Exact offset of one synthesized fragment within the merged master.
+ *  Synthesis order: index 0 = title (when present), then dialogue turns. */
+export type AudioFragmentOffset = {
+  index: number;
+  speaker: string;
+  voiceId: string;
+  startSec: number;
+  endSec: number;
+  /** R2 URL of THIS section's standalone audio (the individual TTS take,
+   *  pre-concat). This is the ground truth: the editor plays/replaces the
+   *  section file directly — no offsets, no alignment, no drift. */
+  url: string | null;
+  /** The exact text synthesized for this section (so it can be re-rendered). */
+  text: string;
+};
+
 export async function generateAndUploadMultiVoiceAudio(args: {
   storyText: string;
   title: string;
@@ -1267,6 +1300,13 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   audioSegments: AudioSegment[];
   audioQa: AudioQaResult;
   speakerVoiceMap: Record<string, string>;
+  /** GROUND-TRUTH per-fragment offsets in the final master timeline,
+   *  in synthesis order: index 0 is the title fragment (when a title was
+   *  narrated), then one per dialogue turn. Each segment is synthesized
+   *  independently and concatenated with a fixed gap, so these offsets
+   *  are exact — the audio editor uses them for block boundaries instead
+   *  of reconstructing them from (drift-prone) aeneas word timings. */
+  fragments: AudioFragmentOffset[];
 } | null> {
   const apiKey = process.env.ELEVENLABS_API_KEY;
   if (!apiKey) {
@@ -1348,27 +1388,71 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     audioBuffers.push(buf);
   }
 
-  // 0.45s breath between turns so dialogue doesn't sound rushed/robotic.
-  const DIALOGUE_GAP_SEC = 0.45;
   const concatBuffer = await concatMp3Buffers(audioBuffers, DIALOGUE_GAP_SEC);
   const normalized = await normalizeLoudness(concatBuffer);
 
-  // Narrator (out-of-scene VO) time ranges in the concatenated timeline, so
-  // the ambient bed can be silenced there — it belongs to the characters'
-  // scene, never the narrator (memory: feedback_ambient_not_under_narrator).
-  // Built from per-fragment durations + the gap inserted between turns.
-  const narratorOffIntervals: [number, number][] = [];
-  if (args.ambientPath) {
+  // Ground-truth per-fragment offsets in the merged timeline. Computed
+  // ALWAYS (not just for ambient) from each fragment's real duration +
+  // the fixed inter-turn gap. These are exact because we synthesized each
+  // fragment ourselves — the audio editor uses them as block boundaries
+  // instead of reconstructing them from drift-prone aeneas timings.
+  // loudnorm (amplitude) and amix(duration=first) don't change length,
+  // so they stay valid for the final master.
+  const sectionBase = filenameFromTitle(args.title);
+  const sectionTs = Date.now();
+  const fragmentOffsets: AudioFragmentOffset[] = [];
+  {
     let cursor = 0;
     for (let i = 0; i < fragments.length; i += 1) {
       const dur = await probeMp3DurationSec(audioBuffers[i]);
-      if (fragments[i].speaker.toLowerCase() === "narrator") {
-        const last = narratorOffIntervals[narratorOffIntervals.length - 1];
-        if (last && cursor - last[1] <= 0.5) last[1] = cursor + dur;
-        else narratorOffIntervals.push([cursor, cursor + dur]);
+      // Persist the INDIVIDUAL section take — this is the ground truth the
+      // editor uses to play/replace a section without touching the rest.
+      const secName = `${sectionBase}_sec${String(i).padStart(2, "0")}_${sectionTs}.mp3`;
+      let secUrl: string | null = null;
+      try {
+        const up = await uploadPublicObject({
+          key: `media/generated/audio/sections/${secName}`,
+          body: audioBuffers[i],
+          contentType: "audio/mpeg",
+        });
+        secUrl = up?.url ?? null;
+      } catch (err) {
+        console.warn(`[elevenlabs] section ${i} upload failed:`, err instanceof Error ? err.message : err);
       }
+      fragmentOffsets.push({
+        index: i,
+        speaker: fragments[i].speaker,
+        voiceId: fragments[i].voiceId,
+        startSec: Number(cursor.toFixed(3)),
+        endSec: Number((cursor + dur).toFixed(3)),
+        url: secUrl,
+        text: fragments[i].text,
+      });
       cursor += dur;
       if (i < fragments.length - 1) cursor += DIALOGUE_GAP_SEC;
+    }
+  }
+  // ffprobe-derived durations: if ffprobe is unavailable (e.g. Vercel
+  // runtime), probeMp3DurationSec returns 0 and every offset collapses.
+  // Only trust the offsets when every fragment has a positive duration;
+  // otherwise hand back an empty list so the editor falls back to aeneas
+  // instead of using garbage (all-zero) boundaries.
+  const fragmentsValid = fragmentOffsets.length > 0 && fragmentOffsets.every((f) => f.endSec > f.startSec);
+  if (!fragmentsValid) {
+    console.warn("[elevenlabs] fragment offsets invalid (ffprobe unavailable?); not persisting them");
+  }
+
+  // Narrator (out-of-scene VO) time ranges, so the ambient bed can be
+  // silenced there — it belongs to the characters' scene, never the
+  // narrator (memory: feedback_ambient_not_under_narrator). Derived from
+  // the same offsets.
+  const narratorOffIntervals: [number, number][] = [];
+  if (args.ambientPath) {
+    for (const f of fragmentOffsets) {
+      if (f.speaker.toLowerCase() !== "narrator") continue;
+      const last = narratorOffIntervals[narratorOffIntervals.length - 1];
+      if (last && f.startSec - last[1] <= 0.5) last[1] = f.endSec;
+      else narratorOffIntervals.push([f.startSec, f.endSec]);
     }
   }
 
@@ -1439,6 +1523,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     audioSegments: transcription.audioSegments,
     audioQa,
     speakerVoiceMap,
+    fragments: fragmentsValid ? fragmentOffsets : [],
   };
 }
 

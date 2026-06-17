@@ -42,6 +42,54 @@ export type AudioEditorBlock = {
   endChar: number;
 };
 
+const normWord = (s: string) =>
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ]/g, "");
+
+/**
+ * Build editor blocks directly from the captured `audioFragments` (the
+ * ground truth), one block per body fragment. Char ranges come from
+ * aligning each fragment's text to `storyPlainText` at the WORD level —
+ * robust where the speaker-label heuristic in `deriveAudioEditorBlocks`
+ * fails (it produced empty blocks). Never yields an empty block, so every
+ * section renders + is editable.
+ */
+export function deriveBlocksFromFragments(
+  storyPlainText: string,
+  bodyFragments: Array<{ speaker: string; voiceId: string | null; text: string }>,
+): AudioEditorBlock[] {
+  const plainTokens: { norm: string; start: number; end: number }[] = [];
+  const re = /\S+/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(storyPlainText)) !== null) {
+    const n = normWord(m[0]);
+    if (n) plainTokens.push({ norm: n, start: m.index, end: m.index + m[0].length });
+  }
+  const blocks: AudioEditorBlock[] = [];
+  let cursor = 0;
+  bodyFragments.forEach((frag, i) => {
+    const fragWords = (frag.text || "").split(/\s+/).map(normWord).filter(Boolean);
+    let startChar: number | null = null;
+    let endChar: number | null = null;
+    let j = cursor;
+    for (const fw of fragWords) {
+      let found = -1;
+      for (let k = j; k < Math.min(plainTokens.length, j + 8); k++) {
+        if (plainTokens[k].norm === fw) { found = k; break; }
+      }
+      if (found >= 0) {
+        if (startChar === null) startChar = plainTokens[found].start;
+        endChar = plainTokens[found].end;
+        j = found + 1;
+      }
+    }
+    if (startChar === null) startChar = cursor < plainTokens.length ? plainTokens[cursor].start : storyPlainText.length;
+    if (endChar === null) endChar = startChar;
+    blocks.push({ index: i, speakerLabel: frag.speaker || "narrator", voiceId: frag.voiceId, startChar, endChar });
+    cursor = j;
+  });
+  return blocks;
+}
+
 type DialogueSpecEntry = { voice?: string; text?: string };
 
 function isDialogueSpec(value: unknown): value is DialogueSpecEntry[] {

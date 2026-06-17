@@ -17,6 +17,7 @@ import {
   type AudioWordTimingsPayload,
   type StoryWordToken,
 } from "./audioWordTimingsTypes";
+import { correctAlignmentDrift } from "./correctAlignmentDrift";
 
 // Re-exportamos los tipos + parser puro para que los callers viejos
 // sigan funcionando sin tocar imports. Client components deberían
@@ -287,8 +288,28 @@ export async function alignStoryAudio(args: {
     throw new Error("Modal align returned zero usable tokens");
   }
 
+  // aeneas distributes tokens LINEARLY inside each block, so the real
+  // pauses between speaker turns / paragraphs make it place post-pause
+  // tokens earlier than they're actually spoken (e.g. it ended Pilar's
+  // "importante" at 28.56s when the real silence is 28.96→29.72s, so the
+  // editor cut mid-word). Re-anchor tokens to ffmpeg-detected silences.
+  // Needs local ffmpeg; if unavailable (e.g. Vercel runtime) we keep the
+  // raw aeneas timings rather than fail the whole alignment.
+  let alignedTokens = tokens;
+  try {
+    const corrected = await correctAlignmentDrift({ audioUrl: args.audioUrl, tokens });
+    alignedTokens = corrected.tokens;
+    if (corrected.anchors.length > 0) {
+      console.log(
+        `[alignStoryAudio] drift-corrected ${corrected.anchors.length} anchor(s), tail offset +${corrected.totalOffsetApplied.toFixed(2)}s for ${args.storyId}`,
+      );
+    }
+  } catch (err) {
+    console.warn(`[alignStoryAudio] drift correction skipped (${err instanceof Error ? err.message : err}); using raw aeneas timings`);
+  }
+
   // Strip title-prefix tokens; coords are still in alignmentPlainText space.
-  const bodyTokensInAlignmentSpace: StoryWordToken[] = tokens
+  const bodyTokensInAlignmentSpace: StoryWordToken[] = alignedTokens
     .filter((t) => t.charStart >= bodyOffset)
     .map((t) => ({
       text: t.text,

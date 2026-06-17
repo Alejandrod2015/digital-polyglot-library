@@ -17,16 +17,39 @@ type AudioEditorBlock = {
   index: number;
   speakerLabel: string;
   voiceId: string | null;
+  voiceName: string | null;
   startChar: number;
   endChar: number;
+  // Exact offsets from generation (ground truth). Null for stories
+  // generated before fragment offsets were captured → fall back to the
+  // word-timing-derived range.
+  startSec: number | null;
+  endSec: number | null;
+  // This section's standalone audio file. When present the editor plays
+  // it directly (exact, no bleed) instead of seeking inside the master.
+  sectionUrl: string | null;
+  // Previous take of this section (revert target), if any.
+  prevSectionUrl: string | null;
+  // Index into audioFragments for section replacement (null if no sections).
+  fragmentIndex: number | null;
+  // In-app ElevenLabs regenerate spend cap state for this segment.
+  regensUsed: number;
+  regenLimit: number;
+  // Operator comment left on this segment, if any.
+  comment: string | null;
 };
 
 type EligibleStory = {
   id: string;
   slug: string;
   title: string;
+  level: string;
+  topic: string;
+  slotIndex: number;
   language: string;
+  variant: string | null;
   journeyTitle: string | null;
+  journeyTopics: string[];
   audioUrl: string;
   audioDurationSec: number | null;
   voiceId: string | null;
@@ -34,6 +57,7 @@ type EligibleStory = {
   wordCount: number;
   hasPendingPreview: boolean;
   audioUrlPreview: string | null;
+  audioEditorNote: string | null;
 };
 
 type StoryDetail = EligibleStory & {
@@ -41,8 +65,18 @@ type StoryDetail = EligibleStory & {
   storyPlainText: string;
   blocks: AudioEditorBlock[];
   titleEndSec: number | null;
+  titleSectionUrl: string | null;
+  titlePrevSectionUrl: string | null;
+  titleFragmentIndex: number | null;
+  titleRegensUsed: number;
+  regenLimit: number;
+  titleComment: string | null;
   narratorVoiceId: string | null;
+  narratorVoiceName: string | null;
   isMultiVoice: boolean;
+  // False on Vercel (no system ffmpeg/ffprobe): per-segment regen/cut
+  // disabled, manual full-audio upload used instead. True locally.
+  serverCanSplice: boolean;
 };
 
 const ACCENT = "#fcd34d";
@@ -130,6 +164,130 @@ export default function AudioEditorClient() {
     );
   }, [stories, filter]);
 
+  // Group the picker by the actual journey — LANGUAGE + journey name
+  // ("Español · Traveler", "Italiano · Traveler", "Alemán ·
+  // Conversational") — so each journey is its own short list instead of
+  // 49 stories of every language piled under one "Traveler" type.
+  // Within a journey, stories follow their reading order (level → slot),
+  // not alphabetical, so the operator works top-to-bottom like the
+  // learner sees them.
+  const LANG_LABEL: Record<string, string> = {
+    spanish: "Español",
+    italian: "Italiano",
+    german: "Alemán",
+    french: "Francés",
+    portuguese: "Portugués",
+    english: "Inglés",
+  };
+  // Region label from the journey `variant`. Falls back to the raw
+  // variant uppercased so an unmapped value still shows something.
+  const REGION_LABEL: Record<string, string> = {
+    latam: "Latinoamérica",
+    es: "España",
+    spain: "España",
+    mx: "México",
+    ar: "Argentina",
+    co: "Colombia",
+    pe: "Perú",
+    cl: "Chile",
+    br: "Brasil",
+    pt: "Portugal",
+    it: "Italia",
+    de: "Alemania",
+    fr: "Francia",
+  };
+  const LEVEL_RANK: Record<string, number> = { a1: 0, a2: 1, b1: 2, b2: 3, c1: 4, c2: 5 };
+  const groupedStories = useMemo(() => {
+    if (!filteredStories) return null;
+    const groups = new Map<string, EligibleStory[]>();
+    for (const s of filteredStories) {
+      const raw = s.language || "?";
+      const lang = LANG_LABEL[s.language?.toLowerCase()] ?? raw.charAt(0).toUpperCase() + raw.slice(1);
+      const variant = (s.variant ?? "").toLowerCase();
+      const region = variant ? REGION_LABEL[variant] ?? variant.toUpperCase() : null;
+      const journey = (s.journeyTitle ?? "").trim() || "Sin journey";
+      // e.g. "Español (Latinoamérica) · Traveler"
+      const key = `${lang}${region ? ` (${region})` : ""} · ${journey}`;
+      const list = groups.get(key) ?? [];
+      list.push(s);
+      groups.set(key, list);
+    }
+    for (const list of groups.values()) {
+      // Topic order comes from the journey's own `topics[]` array (same
+      // source the reader/journey page uses), so stories run in the real
+      // curriculum order: level → topic → slot. Falls back to topic name.
+      const topicOrder = new Map<string, number>();
+      (list[0]?.journeyTopics ?? []).forEach((t, i) => topicOrder.set(t, i));
+      list.sort((a, b) => {
+        const la = LEVEL_RANK[a.level?.toLowerCase()] ?? 99;
+        const lb = LEVEL_RANK[b.level?.toLowerCase()] ?? 99;
+        if (la !== lb) return la - lb;
+        const ta = topicOrder.has(a.topic) ? topicOrder.get(a.topic)! : Number.MAX_SAFE_INTEGER;
+        const tb = topicOrder.has(b.topic) ? topicOrder.get(b.topic)! : Number.MAX_SAFE_INTEGER;
+        if (ta !== tb) return ta - tb;
+        if (a.topic !== b.topic) return a.topic.localeCompare(b.topic);
+        if (a.slotIndex !== b.slotIndex) return a.slotIndex - b.slotIndex;
+        return a.title.localeCompare(b.title);
+      });
+    }
+    return [...groups.entries()].sort((a, b) => {
+      const aNo = a[0].endsWith("Sin journey");
+      const bNo = b[0].endsWith("Sin journey");
+      if (aNo !== bNo) return aNo ? 1 : -1;
+      return a[0].localeCompare(b[0]);
+    });
+  }, [filteredStories]);
+
+  const renderChip = (s: EligibleStory) => {
+    const active = s.id === selectedId;
+    return (
+      <button
+        key={s.id}
+        type="button"
+        onClick={() => setSelectedId(s.id)}
+        title={`${s.language} · ${s.wordCount}w${s.ambientTag ? ` · amb: ${s.ambientTag}` : ""}`}
+        style={{
+          textAlign: "left",
+          background: active ? ACCENT_SOFT : "rgba(255,255,255,0.04)",
+          border: `1px solid ${active ? ACCENT : CARD_BORDER}`,
+          borderRadius: 6,
+          padding: "6px 10px",
+          cursor: "pointer",
+          color: active ? ACCENT : "var(--foreground)",
+          fontSize: 12,
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 6,
+          whiteSpace: "nowrap",
+          fontWeight: active ? 600 : 500,
+        }}
+      >
+        <span>{s.title}</span>
+        <span style={{ fontSize: 10, color: "var(--muted)", opacity: 0.7 }}>
+          · {getIsoLanguageTag(s.language)}
+        </span>
+        {s.audioEditorNote && s.audioEditorNote.trim() && (
+          <span title={`Nota: ${s.audioEditorNote}`} style={{ fontSize: 11, lineHeight: 1 }}>
+            📝
+          </span>
+        )}
+        {s.hasPendingPreview && (
+          <span
+            title="Preview pendiente"
+            style={{
+              width: 7,
+              height: 7,
+              borderRadius: "50%",
+              background: "#eab308",
+              boxShadow: "0 0 6px rgba(234, 179, 8, 0.55)",
+              display: "inline-block",
+            }}
+          />
+        )}
+      </button>
+    );
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       {/* ── Row 1: Story picker (full width, compact) ── */}
@@ -190,61 +348,39 @@ export default function AudioEditorClient() {
         <div
           style={{
             display: "flex",
-            flexWrap: "wrap",
-            gap: 6,
-            maxHeight: 132,
+            flexDirection: "column",
+            gap: 10,
+            maxHeight: 280,
             overflowY: "auto",
           }}
         >
-          {filteredStories?.length === 0 && (
+          {groupedStories?.length === 0 && (
             <div style={{ color: "var(--muted)", fontSize: 12, padding: 8 }}>
               No hay historias que coincidan.
             </div>
           )}
-          {filteredStories?.map((s) => {
-            const active = s.id === selectedId;
-            return (
-              <button
-                key={s.id}
-                type="button"
-                onClick={() => setSelectedId(s.id)}
-                title={`${s.language} · ${s.wordCount}w${s.ambientTag ? ` · amb: ${s.ambientTag}` : ""}`}
+          {groupedStories?.map(([journeyName, group]) => (
+            <div key={journeyName} style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              <div
                 style={{
-                  textAlign: "left",
-                  background: active ? ACCENT_SOFT : "rgba(255,255,255,0.04)",
-                  border: `1px solid ${active ? ACCENT : CARD_BORDER}`,
-                  borderRadius: 6,
-                  padding: "6px 10px",
-                  cursor: "pointer",
-                  color: active ? ACCENT : "var(--foreground)",
-                  fontSize: 12,
-                  display: "inline-flex",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  color: "var(--muted)",
+                  display: "flex",
                   alignItems: "center",
                   gap: 6,
-                  whiteSpace: "nowrap",
-                  fontWeight: active ? 600 : 500,
                 }}
               >
-                <span>{s.title}</span>
-                <span style={{ fontSize: 10, color: "var(--muted)", opacity: 0.7 }}>
-                  · {getIsoLanguageTag(s.language)}
-                </span>
-                {s.hasPendingPreview && (
-                  <span
-                    title="Preview pendiente"
-                    style={{
-                      width: 7,
-                      height: 7,
-                      borderRadius: "50%",
-                      background: "#eab308",
-                      boxShadow: "0 0 6px rgba(234, 179, 8, 0.55)",
-                      display: "inline-block",
-                    }}
-                  />
-                )}
-              </button>
-            );
-          })}
+                <span>{journeyName}</span>
+                <span style={{ opacity: 0.6, fontWeight: 500 }}>· {group.length}</span>
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                {group.map(renderChip)}
+              </div>
+            </div>
+          ))}
         </div>
       </aside>
 
@@ -299,7 +435,96 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   // mirror stopAt in a ref so the timeupdate listener can read it
   // without re-binding on every render.
   const [activeRangeKey, setActiveRangeKey] = useState<string | null>(null);
+  // Dedicated player for SECTION files (the ground-truth standalone takes).
+  // When a block has its own audio file we play THAT — exact, no bleed,
+  // starts at the beginning — instead of seeking inside the master.
+  const sectionAudioRef = useRef<HTMLAudioElement | null>(null);
+  const [sectionPlayingKey, setSectionPlayingKey] = useState<string | null>(null);
+  const playSection = (key: string, url: string) => {
+    const a = sectionAudioRef.current;
+    if (!a) return;
+    // Stop the master player so we never hear both at once.
+    waveRef.current?.pause();
+    if (sectionPlayingKey === key && !a.paused) {
+      a.pause();
+      return;
+    }
+    if (a.src !== url) a.src = url;
+    a.currentTime = 0;
+    setSectionPlayingKey(key);
+    void a.play().catch(() => setSectionPlayingKey(null));
+  };
+  // In-place section edits: regenerate/upload/revert update the affected
+  // section's url WITHOUT reloading the editor (screen stays put). Keyed
+  // by fragmentIndex; resets on story change.
+  const [sectionState, setSectionState] = useState<Record<number, { url: string; prevUrl: string | null }>>({});
+  useEffect(() => { setSectionState({}); }, [detail.id]);
+  // Per-segment regenerate usage, kept locally so the "X/N" badge + the
+  // disabled state update right after a regen without reloading the editor.
+  // Keyed by fragmentIndex; resets on story change.
+  const [regenState, setRegenState] = useState<Record<number, number>>({});
+  useEffect(() => { setRegenState({}); }, [detail.id]);
+  const regensUsedFor = (fragmentIndex: number | null, fallback: number): number =>
+    fragmentIndex !== null && regenState[fragmentIndex] !== undefined ? regenState[fragmentIndex] : fallback;
+  // Per-segment operator comments: which one's editor is open, the draft,
+  // and locally-saved overrides so the indicator updates without reload.
+  const [commentState, setCommentState] = useState<Record<number, string | null>>({});
+  const [openComment, setOpenComment] = useState<number | null>(null);
+  const [commentDraft, setCommentDraft] = useState("");
+  const [savingComment, setSavingComment] = useState(false);
+  useEffect(() => { setCommentState({}); setOpenComment(null); setCommentDraft(""); }, [detail.id]);
+  const commentFor = (fragmentIndex: number | null, fallback: string | null): string | null =>
+    fragmentIndex !== null && commentState[fragmentIndex] !== undefined ? commentState[fragmentIndex] : fallback;
+  const toggleComment = (fragmentIndex: number, current: string | null) => {
+    if (openComment === fragmentIndex) { setOpenComment(null); return; }
+    setOpenComment(fragmentIndex);
+    setCommentDraft(current ?? "");
+  };
+  const saveComment = async (fragmentIndex: number) => {
+    setSavingComment(true);
+    setActionError(null);
+    try {
+      const res = await fetch("/api/studio/audio-editor/comment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ storyId: detail.id, fragmentIndex, comment: commentDraft }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
+      setCommentState((s) => ({ ...s, [fragmentIndex]: json.comment ?? null }));
+      setOpenComment(null);
+    } catch (err) {
+      setActionError(err instanceof Error ? err.message : "Error guardando el comentario");
+    } finally {
+      setSavingComment(false);
+    }
+  };
+  // The section currently being worked on + elapsed seconds, for the
+  // in-row "Regenerando… Ns" progress indicator.
+  const [busyFragment, setBusyFragment] = useState<{ index: number; action: "regen" | "upload" | "revert" } | null>(null);
+  const [busyElapsed, setBusyElapsed] = useState(0);
+  useEffect(() => {
+    if (!busyFragment) { setBusyElapsed(0); return; }
+    const t0 = Date.now();
+    const id = window.setInterval(() => setBusyElapsed(Math.max(0, Math.round((Date.now() - t0) / 1000))), 500);
+    return () => window.clearInterval(id);
+  }, [busyFragment]);
+  const sectionUrlFor = (b: AudioEditorBlock): string | null =>
+    b.fragmentIndex !== null && sectionState[b.fragmentIndex] ? sectionState[b.fragmentIndex].url : b.sectionUrl;
+  const prevUrlFor = (b: AudioEditorBlock): string | null =>
+    b.fragmentIndex !== null && sectionState[b.fragmentIndex] ? sectionState[b.fragmentIndex].prevUrl : b.prevSectionUrl;
   const stopAtRef = useRef<number | null>(null);
+  // Precise pause timer. `timeupdate` from the MediaElement backend only
+  // fires ~4x/sec, so pausing from it overshoots by up to ~250ms and you
+  // hear the start of the NEXT segment. We schedule an exact setTimeout
+  // to pause at the boundary; the timeupdate check stays as a backstop.
+  const stopTimerRef = useRef<number | null>(null);
+  const clearStopTimer = useCallback(() => {
+    if (stopTimerRef.current !== null) {
+      window.clearTimeout(stopTimerRef.current);
+      stopTimerRef.current = null;
+    }
+  }, []);
   const activeRangeKeyRef = useRef<string | null>(null);
   useEffect(() => {
     activeRangeKeyRef.current = activeRangeKey;
@@ -323,9 +548,31 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   const [endIdx, setEndIdx] = useState<number | null>(null);
 
   const [busyAction, setBusyAction] = useState<
-    null | "preview" | "title" | "promote" | "discard" | "realign" | "cut"
+    null | "preview" | "title" | "promote" | "discard" | "realign" | "cut" | "upload"
   >(null);
   const [actionError, setActionError] = useState<string | null>(null);
+  // In-app confirm modal (replaces window.confirm so it matches the app's
+  // look). confirmAsync resolves true/false when the user picks.
+  const [confirmDialog, setConfirmDialog] = useState<{
+    title: string;
+    message: string;
+    confirmLabel: string;
+    danger?: boolean;
+    resolve: (ok: boolean) => void;
+  } | null>(null);
+  const confirmAsync = useCallback(
+    (opts: { title: string; message: string; confirmLabel?: string; danger?: boolean }) =>
+      new Promise<boolean>((resolve) =>
+        setConfirmDialog({ confirmLabel: "Continuar", ...opts, resolve }),
+      ),
+    [],
+  );
+  // Hidden file input driving the manual fragment upload. `uploadTarget`
+  // holds the [startSec, endSec] span the next picked file replaces — set
+  // by either the selection bar or a per-block upload button right before
+  // opening the picker.
+  const fragmentInputRef = useRef<HTMLInputElement | null>(null);
+  const uploadTargetRef = useRef<{ startSec: number; endSec: number; label: string; fragmentIndex: number | null } | null>(null);
 
   // Title state: tracks pending edit between regen and promote.
   const [titleDraft, setTitleDraft] = useState(detail.title);
@@ -334,6 +581,36 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     setTitleDraft(detail.title);
     setTitlePromotePending(false);
   }, [detail.id, detail.title]);
+
+  // Operator note ("re-grabar bloque 3", "subir título") — a manual
+  // reminder persisted on the story. Synced from detail; saved on demand.
+  const [noteDraft, setNoteDraft] = useState(detail.audioEditorNote ?? "");
+  const [savingNote, setSavingNote] = useState(false);
+  const [noteSaved, setNoteSaved] = useState(false);
+  useEffect(() => {
+    setNoteDraft(detail.audioEditorNote ?? "");
+    setNoteSaved(false);
+  }, [detail.id, detail.audioEditorNote]);
+
+  const saveNote = async () => {
+    setSavingNote(true);
+    setActionError(null);
+    try {
+      const res = await fetch("/api/studio/audio-editor/note", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ storyId: detail.id, note: noteDraft }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
+      setNoteSaved(true);
+      onChanged();
+    } catch (err) {
+      setActionError(err instanceof Error ? err.message : "Error guardando la nota");
+    } finally {
+      setSavingNote(false);
+    }
+  };
 
   const wordsWithTimings = useMemo(
     () =>
@@ -405,6 +682,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     ws.on("finish", () => {
       setIsPlaying(false);
       stopAtRef.current = null;
+      clearStopTimer();
       setActiveRangeKey(null);
     });
     ws.on("timeupdate", (t) => {
@@ -421,15 +699,17 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     // out of the constrained range so the user can scrub freely.
     ws.on("interaction", () => {
       stopAtRef.current = null;
+      clearStopTimer();
       setActiveRangeKey(null);
     });
 
     return () => {
+      clearStopTimer();
       ws.destroy();
       waveRef.current = null;
       regionsRef.current = null;
     };
-  }, [sourceUrl]);
+  }, [sourceUrl, clearStopTimer]);
 
   /* ── Skip helpers ── */
   const seekBy = (deltaSec: number) => {
@@ -498,6 +778,19 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
    * "block-3", "title", "selection"). The same key is reused by the
    * row's button to render a pause glyph while active.
    */
+  // Schedule an exact pause at `safeStop` based on wall-clock time from
+  // the current position (playbackRate is 1 here). This is what actually
+  // prevents the next-segment bleed — `timeupdate` alone is too coarse.
+  const scheduleStop = (ws: WaveSurfer, safeStop: number) => {
+    clearStopTimer();
+    const remainingMs = Math.max(0, (safeStop - ws.getCurrentTime()) * 1000);
+    stopTimerRef.current = window.setTimeout(() => {
+      const w = waveRef.current;
+      if (w && w.isPlaying()) w.pause();
+      stopTimerRef.current = null;
+    }, remainingMs);
+  };
+
   const playRangeToggle = (key: string, startSec: number, stopAt: number) => {
     const ws = waveRef.current;
     if (!ws) return;
@@ -505,6 +798,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     const sameRange = activeRangeKeyRef.current === key;
     if (sameRange) {
       if (ws.isPlaying()) {
+        clearStopTimer();
         ws.pause();
       } else {
         // Replay from the start if the cursor is past stopAt; otherwise
@@ -515,6 +809,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
         }
         stopAtRef.current = safeStop;
         ws.play();
+        scheduleStop(ws, safeStop);
       }
       return;
     }
@@ -523,19 +818,21 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     activeRangeKeyRef.current = key;
     ws.setTime(startSec);
     ws.play();
+    scheduleStop(ws, safeStop);
   };
 
   /**
-   * Stop point for a clip that ends right where the next block begins.
-   * Uses the midpoint of the inter-block silence so we capture the tail
-   * of the current block without bleeding into the next speaker's first
-   * word. Falls back to `endSec + 0.2` when no next start is known.
+   * Stop point for a block clip. We stop just before the NEXT block's
+   * start rather than at this block's last-word end, because aeneas
+   * under-times the last word before a pause (it ended "importante" at
+   * 28.56s when the word actually runs to the 28.96s silence). Stopping
+   * at nextStart−guard lets the full last word + trailing silence play
+   * without bleeding into the next speaker. Floored at endSec so a
+   * mis-ordered (drifted) nextStart never cuts the block short.
    */
-  const midpointStop = (endSec: number, nextStartSec: number | null): number => {
-    if (nextStartSec === null) return endSec + 0.2;
-    const gap = nextStartSec - endSec;
-    if (gap <= 0) return endSec; // overlapping (drift) — stop right at endSec
-    return endSec + Math.min(0.2, gap / 2);
+  const blockStopAt = (endSec: number, nextStartSec: number | null): number => {
+    if (nextStartSec === null) return endSec + 0.3;
+    return Math.max(endSec, nextStartSec - 0.04);
   };
 
   const playSelection = () => {
@@ -544,88 +841,147 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   };
 
   /* ── Actions ── */
-  const regenerateSegment = async () => {
-    if (!selection || !selectionBlock) return;
+
+  /**
+   * Re-synthesize a tramo with its ElevenLabs voice (same voice + text,
+   * a fresh take) and splice it in as a preview. Costs ElevenLabs credits
+   * — always behind an explicit confirm so it's never accidental.
+   */
+  const regenerate = async (
+    startSec: number,
+    endSec: number,
+    voiceId: string | null,
+    text: string,
+    label: string,
+    fragmentIndex: number | null,
+  ) => {
+    if (!voiceId) {
+      setActionError("Este tramo no tiene voz asignada; no se puede regenerar.");
+      return;
+    }
+    if (!text.trim()) {
+      setActionError("Este tramo no tiene texto; no se puede regenerar.");
+      return;
+    }
+    const ok = await confirmAsync({
+      title: `Regenerar ${label}`,
+      message: `Se re-sintetiza con ElevenLabs (voz ${voiceId}). Esto gasta créditos de ElevenLabs.`,
+      confirmLabel: "Regenerar",
+    });
+    if (!ok) return;
+
+    const sectionMode = fragmentIndex !== null;
+    // Section mode: update IN PLACE — the screen stays put, the section's
+    // row shows progress, and we keep the previous take for revert.
+    if (sectionMode) {
+      setBusyFragment({ index: fragmentIndex, action: "regen" });
+      setActionError(null);
+      try {
+        const res = await fetch("/api/studio/audio-editor/regenerate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ storyId: detail.id, voiceId, text, fragmentIndex }),
+        });
+        const json = await res.json();
+        if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
+        setSectionState((s) => ({ ...s, [fragmentIndex]: { url: json.sectionUrl, prevUrl: json.prevSectionUrl ?? null } }));
+        if (typeof json.regensUsed === "number") {
+          setRegenState((s) => ({ ...s, [fragmentIndex]: json.regensUsed }));
+        }
+      } catch (err) {
+        setActionError(err instanceof Error ? err.message : "Error regenerando la sección");
+      } finally {
+        setBusyFragment(null);
+      }
+      return;
+    }
+
+    // Legacy time-splice path (stories without sections): preview + reload.
     setBusyAction("preview");
     setActionError(null);
     try {
-      const res = await fetch("/api/studio/audio-editor/preview-segment", {
+      const res = await fetch("/api/studio/audio-editor/regenerate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          storyId: detail.id,
-          startSec: selection.startSec,
-          endSec: selection.endSec,
-          charStart: selection.charStart,
-          charEnd: selection.charEnd,
-        }),
+        body: JSON.stringify({ storyId: detail.id, startSec, endSec, voiceId, text }),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
       onChanged();
       clearSelection();
     } catch (err) {
-      setActionError(err instanceof Error ? err.message : "Error generando preview");
+      setActionError(err instanceof Error ? err.message : "Error regenerando el tramo");
     } finally {
       setBusyAction(null);
+    }
+  };
+
+  // Revert one section to its previous take (no ElevenLabs cost). Updates
+  // in place; toggleable.
+  const revertSectionAudio = async (fragmentIndex: number) => {
+    setBusyFragment({ index: fragmentIndex, action: "revert" });
+    setActionError(null);
+    try {
+      const res = await fetch("/api/studio/audio-editor/revert-section", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ storyId: detail.id, fragmentIndex }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
+      setSectionState((s) => ({ ...s, [fragmentIndex]: { url: json.sectionUrl, prevUrl: json.prevSectionUrl ?? null } }));
+    } catch (err) {
+      setActionError(err instanceof Error ? err.message : "Error al volver a la versión anterior");
+    } finally {
+      setBusyFragment(null);
     }
   };
 
   /**
-   * Regenerate the entire body of a block, using its current text (we
-   * don't allow inline editing of body block text — title is the only
-   * editable block). Useful when an entire speaker turn has a glitch.
+   * Manual per-fragment replacement: upload an operator-recorded mp3 for
+   * the selected tramo. The splice happens on Modal (ffmpeg), so this
+   * works on production where the local regenerate/cut routes can't.
+   * Lands as a preview; "Guardar" promotes + re-aligns.
    */
-  const regenerateBlock = async (blockIdx: number) => {
-    const block = detail.blocks[blockIdx];
-    if (!block) return;
-    const blockWords = wordsWithTimings.filter(
-      (w) => w.hasTime && w.charStart >= block.startChar && w.charEnd <= block.endChar,
-    );
-    if (blockWords.length === 0) return;
-    const first = blockWords[0];
-    const last = blockWords[blockWords.length - 1];
-    setBusyAction("preview");
-    setActionError(null);
-    try {
-      const res = await fetch("/api/studio/audio-editor/preview-segment", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          storyId: detail.id,
-          startSec: first.startSec as number,
-          endSec: last.endSec as number,
-          charStart: first.charStart,
-          charEnd: last.charEnd,
-        }),
-      });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
-      onChanged();
-    } catch (err) {
-      setActionError(err instanceof Error ? err.message : "Error regenerando bloque");
-    } finally {
-      setBusyAction(null);
-    }
+  // Open the file picker targeting a given [startSec, endSec] span. The
+  // picked file replaces exactly that span of the master.
+  const openUploadPicker = (startSec: number, endSec: number, label: string, fragmentIndex: number | null) => {
+    uploadTargetRef.current = { startSec, endSec, label, fragmentIndex };
+    fragmentInputRef.current?.click();
   };
 
-  const regenerateTitle = async () => {
-    if (!titleDraft.trim()) return;
-    setBusyAction("title");
+  const doUpload = async (file: File) => {
+    const target = uploadTargetRef.current;
+    if (!target) return;
+    const sectionMode = target.fragmentIndex !== null;
+    if (sectionMode) setBusyFragment({ index: target.fragmentIndex as number, action: "upload" });
+    else setBusyAction("upload");
     setActionError(null);
     try {
-      const res = await fetch("/api/studio/audio-editor/preview-title", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ storyId: detail.id, newTitle: titleDraft.trim() }),
-      });
+      const fd = new FormData();
+      fd.append("storyId", detail.id);
+      fd.append("startSec", String(target.startSec));
+      fd.append("endSec", String(target.endSec));
+      if (target.fragmentIndex !== null) fd.append("fragmentIndex", String(target.fragmentIndex));
+      fd.append("audio", file);
+      const res = await fetch("/api/studio/audio-editor/upload", { method: "POST", body: fd });
       const json = await res.json();
-      if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
-      setTitlePromotePending(true);
-      onChanged();
+      if (!res.ok) {
+        throw new Error(json?.details ? `${json.error} — ${json.details}` : json?.error || `HTTP ${res.status}`);
+      }
+      if (sectionMode) {
+        // In-place: update the section's url, keep the screen put.
+        const fi = target.fragmentIndex as number;
+        setSectionState((s) => ({ ...s, [fi]: { url: json.sectionUrl, prevUrl: json.prevSectionUrl ?? null } }));
+      } else {
+        onChanged();
+        clearSelection();
+      }
     } catch (err) {
-      setActionError(err instanceof Error ? err.message : "Error regenerando título");
+      setActionError(err instanceof Error ? err.message : "Error subiendo el fragmento");
     } finally {
+      uploadTargetRef.current = null;
+      setBusyFragment(null);
       setBusyAction(null);
     }
   };
@@ -634,12 +990,14 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     setBusyAction("promote");
     setActionError(null);
     try {
+      // Persist an edited title text alongside the promote when it changed.
+      const titleChanged = !!titleDraft.trim() && titleDraft.trim() !== detail.title;
       const res = await fetch("/api/studio/audio-editor/promote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           storyId: detail.id,
-          ...(titlePromotePending ? { newTitle: titleDraft.trim() } : {}),
+          ...(titleChanged ? { newTitle: titleDraft.trim() } : {}),
         }),
       });
       const json = await res.json();
@@ -653,7 +1011,11 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   };
 
   const realignTimings = async () => {
-    if (!confirm("Re-correr aeneas para refrescar los word timings? Esto puede tardar ~20-40s.")) return;
+    if (!(await confirmAsync({
+      title: "Re-alinear timings",
+      message: "Re-corre aeneas para refrescar los word timings. Puede tardar ~20-40s.",
+      confirmLabel: "Re-alinear",
+    }))) return;
     setBusyAction("realign");
     setActionError(null);
     try {
@@ -673,7 +1035,12 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   };
 
   const discard = async () => {
-    if (!confirm("¿Descartar el preview y volver al master original?")) return;
+    if (!(await confirmAsync({
+      title: "Descartar preview",
+      message: "Se descarta el preview y se vuelve al master original.",
+      confirmLabel: "Descartar",
+      danger: true,
+    }))) return;
     setBusyAction("discard");
     setActionError(null);
     try {
@@ -707,15 +1074,15 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
 
   const cutNoiseRegion = async () => {
     if (!cutRegion) return;
-    if (
-      !confirm(
-        `¿Cortar el tramo ${formatTime(cutRegion.start)} → ${formatTime(cutRegion.end)} (${(
-          cutRegion.end - cutRegion.start
-        ).toFixed(2)}s)? Se elimina del audio y se une con un crossfade. Crea un preview; el master no cambia hasta "Guardar".`,
-      )
-    ) {
-      return;
-    }
+    const ok = await confirmAsync({
+      title: "Cortar tramo",
+      message: `Cortar ${formatTime(cutRegion.start)} → ${formatTime(cutRegion.end)} (${(
+        cutRegion.end - cutRegion.start
+      ).toFixed(2)}s). Se elimina del audio y se une con un crossfade. Crea un preview; el master no cambia hasta "Guardar".`,
+      confirmLabel: "Cortar",
+      danger: true,
+    });
+    if (!ok) return;
     setBusyAction("cut");
     setActionError(null);
     try {
@@ -779,6 +1146,14 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {/* Dedicated player for section files (ground-truth standalone takes). */}
+      <audio
+        ref={sectionAudioRef}
+        style={{ display: "none" }}
+        onEnded={() => setSectionPlayingKey(null)}
+        onPause={() => setSectionPlayingKey(null)}
+      />
+      <style>{`@keyframes dplspin{to{transform:rotate(360deg)} } @keyframes dplbar{0%{left:-45%}100%{left:100%}}`}</style>
       {/* ── Story metadata header ── */}
       <div
         style={{
@@ -821,6 +1196,72 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
           <span>{busyAction === "realign" ? "Re-alineando..." : "Re-alinear timings"}</span>
         </button>
       </div>
+
+      {/* ── Operator note / reminder ── */}
+      {(() => {
+        const dirty = noteDraft.trim() !== (detail.audioEditorNote ?? "").trim();
+        return (
+          <div
+            style={{
+              background: noteDraft.trim() ? "rgba(96,165,250,0.07)" : "transparent",
+              border: `1px solid ${noteDraft.trim() ? "rgba(96,165,250,0.45)" : CARD_BORDER}`,
+              borderRadius: 8,
+              padding: 12,
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+              <span style={{ fontSize: 12, fontWeight: 600, color: "var(--muted)" }}>
+                📝 Nota / recordatorio (qué falta regenerar o subir)
+              </span>
+              {noteSaved && !dirty && (
+                <span style={{ fontSize: 11, color: SUCCESS, fontWeight: 600 }}>guardada ✓</span>
+              )}
+            </div>
+            <textarea
+              value={noteDraft}
+              onChange={(e) => { setNoteDraft(e.target.value); setNoteSaved(false); }}
+              rows={2}
+              placeholder="Ej: re-grabar el bloque de Pilar, el título suena cortado…"
+              style={{
+                width: "100%",
+                resize: "vertical",
+                minHeight: 44,
+                padding: "8px 10px",
+                background: "rgba(0,0,0,0.25)",
+                border: `1px solid ${dirty ? "#60a5fa" : CARD_BORDER}`,
+                borderRadius: 6,
+                color: "var(--foreground)",
+                fontSize: 13,
+                fontFamily: "inherit",
+                lineHeight: 1.5,
+              }}
+            />
+            <div style={{ display: "flex", gap: 8, justifyContent: "flex-end" }}>
+              {noteDraft.trim() && (
+                <button
+                  type="button"
+                  disabled={savingNote}
+                  onClick={() => { setNoteDraft(""); }}
+                  style={btnStyle("ghost", savingNote)}
+                >
+                  Borrar
+                </button>
+              )}
+              <button
+                type="button"
+                disabled={savingNote || !dirty}
+                onClick={saveNote}
+                style={btnStyle("primary", savingNote || !dirty)}
+              >
+                {savingNote ? "Guardando…" : dirty ? "Guardar nota" : "Guardada"}
+              </button>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* ── Preview indicator ── */}
       {detail.audioUrlPreview && (
@@ -912,6 +1353,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
               // constrained range so playback continues past the previous
               // block's stopAt.
               stopAtRef.current = null;
+              clearStopTimer();
               setActiveRangeKey(null);
               waveRef.current?.playPause();
             }}
@@ -1004,12 +1446,17 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
           </button>
           <button
             type="button"
-            disabled={!cutRegion || busyAction !== null}
+            disabled={!cutRegion || busyAction !== null || !detail.serverCanSplice}
             onClick={cutNoiseRegion}
+            title={
+              !detail.serverCanSplice
+                ? "Cortar ruido requiere ffmpeg y solo corre en local."
+                : "Corta el tramo marcado y une con crossfade"
+            }
             style={{
-              ...btnStyle("primary", !cutRegion || busyAction !== null),
-              background: cutRegion && busyAction === null ? DANGER : undefined,
-              borderColor: cutRegion && busyAction === null ? DANGER : undefined,
+              ...btnStyle("primary", !cutRegion || busyAction !== null || !detail.serverCanSplice),
+              background: cutRegion && busyAction === null && detail.serverCanSplice ? DANGER : undefined,
+              borderColor: cutRegion && busyAction === null && detail.serverCanSplice ? DANGER : undefined,
             }}
           >
             {busyAction === "cut" ? "Cortando..." : "Cortar este tramo"}
@@ -1078,18 +1525,47 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
           >
             Limpiar
           </button>
+          {/* Manual fragment upload — splices on Modal, so it works on
+              production. Hidden input driven by the button. */}
+          <input
+            ref={fragmentInputRef}
+            type="file"
+            accept="audio/mpeg,.mp3"
+            style={{ display: "none" }}
+            onChange={(e) => {
+              const f = e.target.files?.[0];
+              e.target.value = ""; // allow re-selecting the same file
+              if (f) void doUpload(f);
+            }}
+          />
           <button
             type="button"
             disabled={!selection || !selectionBlock || busyAction !== null}
-            onClick={regenerateSegment}
-            style={btnStyle(
-              "primary",
-              !selection || !selectionBlock || busyAction !== null,
-            )}
+            onClick={() => selection && openUploadPicker(selection.startSec, selection.endSec, "selección", selectionBlock?.fragmentIndex ?? null)}
+            title="Sube un MP3 que reemplace exactamente el tramo seleccionado"
+            style={btnStyle("primary", !selection || !selectionBlock || busyAction !== null)}
           >
-            {busyAction === "preview" ? "Regenerando..." : "Regenerar este tramo"}
+            {busyAction === "upload" ? "Subiendo..." : "Subir fragmento seleccionado"}
+          </button>
+          <button
+            type="button"
+            disabled={!selection || !selectionBlock || busyAction !== null}
+            onClick={() =>
+              selection &&
+              regenerate(selection.startSec, selection.endSec, selectionBlock?.voiceId ?? null, selection.text, "el tramo seleccionado", selectionBlock?.fragmentIndex ?? null)
+            }
+            title="Re-sintetiza este tramo con su voz de ElevenLabs (gasta créditos)"
+            style={btnStyle("secondary", !selection || !selectionBlock || busyAction !== null)}
+          >
+            {busyAction === "preview" ? "Regenerando..." : "Regenerar (ElevenLabs)"}
           </button>
         </div>
+        {!detail.serverCanSplice && (
+          <div style={{ fontSize: 11, color: "var(--muted)" }}>
+            En este servidor, cortar ruido requiere ffmpeg y solo corre en local. Para arreglar audio usa
+            <strong> subir audio</strong> (el botón ⬆ de cada bloque, o el tramo seleccionado).
+          </div>
+        )}
       </div>
 
       {/* ── Preview actions ── */}
@@ -1155,7 +1631,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
             justifyContent: "space-between",
           }}
         >
-          <span>BLOQUES DEL AUDIO (click para seleccionar tramo)</span>
+          <span>BLOQUES DEL AUDIO — ⬆ sube un MP3 para reemplazar ese bloque; o click en palabras para un tramo</span>
           <span style={{ fontWeight: 400 }}>
             título + {detail.blocks.length} bloque{detail.blocks.length !== 1 ? "s" : ""}
           </span>
@@ -1214,6 +1690,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                 </span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 4, minWidth: 0 }}>
+                <VoiceTag name={detail.narratorVoiceName} id={detail.narratorVoiceId} />
                 <input
                   type="text"
                   value={titleDraft}
@@ -1250,32 +1727,103 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                   </button>
                 )}
               </div>
-              <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-                {(() => {
-                  const titleActive = activeRangeKey === "title";
-                  const showPause = titleActive && isPlaying;
-                  return (
+              {(() => {
+                const tfi = detail.titleFragmentIndex;
+                const titleSec = tfi !== null && sectionState[tfi] ? sectionState[tfi].url : detail.titleSectionUrl;
+                const titlePrev = tfi !== null && sectionState[tfi] ? sectionState[tfi].prevUrl : detail.titlePrevSectionUrl;
+                const hasSection = !!titleSec;
+                const anyBusy = busyFragment !== null;
+                const titleBusy = tfi !== null && busyFragment?.index === tfi;
+                const titleUsed = regensUsedFor(tfi, detail.titleRegensUsed);
+                const titleAtLimit = titleUsed >= detail.regenLimit;
+                const titleCmt = commentFor(tfi, detail.titleComment);
+                const titleCmtOpen = tfi !== null && openComment === tfi;
+                const titleActive = hasSection ? sectionPlayingKey === "title" : activeRangeKey === "title";
+                const showPause = hasSection ? titleActive : titleActive && isPlaying;
+                return (
+              <div style={{ display: "flex", flexDirection: "column", gap: 5, alignItems: "flex-end", minWidth: 132 }}>
+                <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
                     <IconButton
                       icon={showPause ? "pause" : "play"}
                       title={showPause ? "Pausar título" : "Escuchar título"}
+                      disabled={anyBusy || (!hasSection && detail.titleEndSec === null)}
                       active={titleActive}
-                      onClick={playTitle}
+                      onClick={() => {
+                        if (hasSection) playSection("title", titleSec as string);
+                        else playTitle();
+                      }}
                     />
-                  );
-                })()}
+                <IconButton
+                  icon="upload"
+                  title={detail.titleEndSec === null ? "No disponible (sin timing de título)" : anyBusy ? "Ocupado…" : "Subir un MP3 que reemplace el título narrado"}
+                  disabled={detail.titleEndSec === null || anyBusy}
+                  onClick={() =>
+                    detail.titleEndSec !== null && openUploadPicker(0, detail.titleEndSec, "título", detail.titleFragmentIndex)
+                  }
+                />
                 <IconButton
                   icon="regen"
                   title={
-                    busyAction === "title"
-                      ? "Regenerando título..."
-                      : titleDraft.trim() === detail.title
-                        ? "Regenerar con el mismo texto (otra toma de TTS)"
-                        : "Regenerar título con el texto nuevo"
+                    detail.titleEndSec === null ? "No disponible (sin timing de título)"
+                      : !detail.narratorVoiceId ? "Sin voz de narrador"
+                        : titleAtLimit ? `Límite de ${detail.regenLimit} regeneraciones alcanzado — usa “Subir fragmento”`
+                          : anyBusy ? "Ocupado…"
+                            : `Regenerar el título con ElevenLabs (gasta créditos) · ${titleUsed}/${detail.regenLimit}`
                   }
-                  disabled={busyAction !== null || !titleDraft.trim()}
-                  onClick={regenerateTitle}
+                  disabled={detail.titleEndSec === null || anyBusy || !detail.narratorVoiceId || !titleDraft.trim() || titleAtLimit}
+                  onClick={() =>
+                    detail.titleEndSec !== null &&
+                    regenerate(0, detail.titleEndSec, detail.narratorVoiceId, titleDraft, "el título", detail.titleFragmentIndex)
+                  }
                 />
+                {titlePrev && (
+                  <IconButton
+                    icon="revert"
+                    title="Volver a la versión anterior del título"
+                    disabled={anyBusy}
+                    onClick={() => tfi !== null && revertSectionAudio(tfi)}
+                  />
+                )}
+                {tfi !== null && (
+                  <IconButton
+                    icon="comment"
+                    title={titleCmt ? `Comentario: ${titleCmt}` : "Agregar comentario al título"}
+                    active={!!titleCmt || titleCmtOpen}
+                    onClick={() => toggleComment(tfi, titleCmt)}
+                  />
+                )}
+                </div>
+                {tfi !== null && (titleCmtOpen || titleCmt) && (
+                  <CommentBox
+                    open={titleCmtOpen}
+                    comment={titleCmt}
+                    draft={commentDraft}
+                    saving={savingComment}
+                    onOpen={() => toggleComment(tfi, titleCmt)}
+                    onChange={setCommentDraft}
+                    onSave={() => saveComment(tfi)}
+                    onCancel={() => setOpenComment(null)}
+                  />
+                )}
+                {titleBusy && (
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 3, width: 124 }}>
+                    <span style={{ fontSize: 10, color: ACCENT, display: "inline-flex", alignItems: "center", gap: 5 }}>
+                      <Spinner />
+                      {busyFragment?.action === "regen" ? "Regenerando" : busyFragment?.action === "revert" ? "Volviendo" : "Subiendo"}… {busyElapsed}s
+                    </span>
+                    <div style={{ position: "relative", height: 3, width: "100%", background: "rgba(252,211,77,0.15)", borderRadius: 2, overflow: "hidden" }}>
+                      <div style={{ position: "absolute", top: 0, height: "100%", width: "45%", background: ACCENT, borderRadius: 2, animation: "dplbar 1.1s ease-in-out infinite" }} />
+                    </div>
+                  </div>
+                )}
+                {!titleBusy && tfi !== null && (
+                  <span style={{ fontSize: 10, color: titleAtLimit ? DANGER : "rgba(255,255,255,0.45)" }}>
+                    {titleAtLimit ? `regen ${titleUsed}/${detail.regenLimit} · sube manual` : `regen ${titleUsed}/${detail.regenLimit}`}
+                  </span>
+                )}
               </div>
+                );
+              })()}
             </div>
           )}
           {wordsByBlock.map(({ block, words }, idx) => {
@@ -1284,20 +1832,24 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
             const color = speakerColor(block.speakerLabel, colorIdx);
             const firstTimed = words.find((w) => w.hasTime);
             const lastTimed = [...words].reverse().find((w) => w.hasTime);
-            const blockStart = firstTimed?.startSec ?? null;
-            const blockEnd = lastTimed?.endSec ?? null;
-            // Next block's first timed word — used as a hard ceiling for
-            // playback so we don't bleed into the next speaker's audio.
+            // Prefer the exact generation offsets; fall back to aeneas
+            // word timings for stories without captured fragments.
+            const blockStart = block.startSec ?? firstTimed?.startSec ?? null;
+            const blockEnd = block.endSec ?? lastTimed?.endSec ?? null;
+            // Next block's start — exact offset preferred, else its first
+            // timed word. Used as the ceiling so playback doesn't bleed
+            // into the next speaker.
             let nextStart: number | null = null;
             for (let j = idx + 1; j < wordsByBlock.length; j++) {
-              const nextFirst = wordsByBlock[j].words.find((w) => w.hasTime);
+              const nb = wordsByBlock[j];
+              if (nb.block.startSec !== null) { nextStart = nb.block.startSec; break; }
+              const nextFirst = nb.words.find((w) => w.hasTime);
               if (nextFirst) {
                 nextStart = nextFirst.startSec ?? null;
                 break;
               }
             }
             const canPlay = blockStart !== null && blockEnd !== null;
-            const canRegen = canPlay && busyAction === null;
             return (
               <div
                 key={block.index}
@@ -1344,13 +1896,15 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                     </span>
                   )}
                 </div>
-                <div
-                  style={{
-                    fontSize: 14,
-                    lineHeight: 1.75,
-                    wordBreak: "break-word",
-                  }}
-                >
+                <div style={{ minWidth: 0 }}>
+                  <VoiceTag name={block.voiceName} id={block.voiceId} />
+                  <div
+                    style={{
+                      fontSize: 14,
+                      lineHeight: 1.75,
+                      wordBreak: "break-word",
+                    }}
+                  >
                   {words.map((w) => {
                     const inSelection =
                       selection && w.index >= selection.startIdx && w.index <= selection.endIdx;
@@ -1394,48 +1948,110 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                       </span>
                     );
                   })}
+                  </div>
                 </div>
-                <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-                  {(() => {
-                    const blockKey = `block-${block.index}`;
-                    const blockActive = activeRangeKey === blockKey;
-                    const showPause = blockActive && isPlaying;
-                    return (
-                      <IconButton
-                        icon={showPause ? "pause" : "play"}
-                        title={
-                          showPause
-                            ? "Pausar bloque"
-                            : blockActive
-                              ? "Reanudar bloque"
-                              : "Escuchar este bloque"
-                        }
-                        disabled={!canPlay}
-                        active={blockActive}
-                        onClick={() =>
-                          canPlay &&
-                          playRangeToggle(
-                            blockKey,
-                            blockStart as number,
-                            midpointStop(blockEnd as number, nextStart),
-                          )
-                        }
-                      />
-                    );
-                  })()}
-                  <IconButton
-                    icon="regen"
-                    title={
-                      !canRegen
-                        ? "No disponible"
-                        : busyAction === "preview"
-                          ? "Regenerando..."
-                          : "Regenerar todo este bloque con su texto actual"
-                    }
-                    disabled={!canRegen}
-                    onClick={() => regenerateBlock(idx)}
-                  />
-                </div>
+                {(() => {
+                  const blockKey = `block-${block.index}`;
+                  const fi = block.fragmentIndex;
+                  const secUrl = sectionUrlFor(block);
+                  const hasSection = !!secUrl;
+                  const prevUrl = prevUrlFor(block);
+                  const anyBusy = busyFragment !== null;
+                  const thisBusy = fi !== null && busyFragment?.index === fi;
+                  const blockUsed = regensUsedFor(fi, block.regensUsed);
+                  const blockAtLimit = fi !== null && blockUsed >= block.regenLimit;
+                  const blockCmt = commentFor(fi, block.comment);
+                  const blockCmtOpen = fi !== null && openComment === fi;
+                  const blockActive = hasSection ? sectionPlayingKey === blockKey : activeRangeKey === blockKey;
+                  const showPause = hasSection ? blockActive : blockActive && isPlaying;
+                  const playable = hasSection || canPlay;
+                  return (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 5, alignItems: "flex-end", minWidth: 132 }}>
+                      <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
+                        <IconButton
+                          icon={showPause ? "pause" : "play"}
+                          title={showPause ? "Pausar bloque" : blockActive ? "Reanudar bloque" : "Escuchar este bloque"}
+                          disabled={!playable || anyBusy}
+                          active={blockActive}
+                          onClick={() => {
+                            if (hasSection) playSection(blockKey, secUrl as string);
+                            else if (canPlay) playRangeToggle(blockKey, blockStart as number, blockStopAt(blockEnd as number, nextStart));
+                          }}
+                        />
+                        <IconButton
+                          icon="upload"
+                          title={anyBusy ? "Ocupado…" : `Subir un MP3 que reemplace el bloque de ${block.speakerLabel}`}
+                          disabled={!playable || anyBusy}
+                          onClick={() => playable && openUploadPicker(blockStart ?? 0, blockEnd ?? 0, block.speakerLabel, fi)}
+                        />
+                        <IconButton
+                          icon="regen"
+                          title={
+                            !block.voiceId ? "Sin voz asignada"
+                              : blockAtLimit ? `Límite de ${block.regenLimit} regeneraciones alcanzado — usa “Subir fragmento”`
+                                : anyBusy ? "Ocupado…"
+                                  : `Regenerar el bloque de ${block.speakerLabel} con ElevenLabs (gasta créditos) · ${blockUsed}/${block.regenLimit}`
+                          }
+                          disabled={!playable || anyBusy || !block.voiceId || blockAtLimit}
+                          onClick={() =>
+                            regenerate(
+                              blockStart ?? 0,
+                              blockEnd ?? 0,
+                              block.voiceId,
+                              detail.storyPlainText.slice(block.startChar, block.endChar),
+                              `el bloque de ${block.speakerLabel}`,
+                              fi,
+                            )
+                          }
+                        />
+                        {prevUrl && (
+                          <IconButton
+                            icon="revert"
+                            title="Volver a la versión anterior de esta sección"
+                            disabled={anyBusy}
+                            onClick={() => fi !== null && revertSectionAudio(fi)}
+                          />
+                        )}
+                        {fi !== null && (
+                          <IconButton
+                            icon="comment"
+                            title={blockCmt ? `Comentario: ${blockCmt}` : `Agregar comentario al bloque de ${block.speakerLabel}`}
+                            active={!!blockCmt || blockCmtOpen}
+                            onClick={() => toggleComment(fi, blockCmt)}
+                          />
+                        )}
+                      </div>
+                      {fi !== null && (blockCmtOpen || blockCmt) && (
+                        <CommentBox
+                          open={blockCmtOpen}
+                          comment={blockCmt}
+                          draft={commentDraft}
+                          saving={savingComment}
+                          onOpen={() => toggleComment(fi, blockCmt)}
+                          onChange={setCommentDraft}
+                          onSave={() => saveComment(fi)}
+                          onCancel={() => setOpenComment(null)}
+                        />
+                      )}
+                      {thisBusy && (
+                        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 3, width: 124 }}>
+                          <span style={{ fontSize: 10, color: ACCENT, display: "inline-flex", alignItems: "center", gap: 5 }}>
+                            <Spinner />
+                            {busyFragment?.action === "regen" ? "Regenerando" : busyFragment?.action === "revert" ? "Volviendo" : "Subiendo"}… {busyElapsed}s
+                          </span>
+                          <div style={{ position: "relative", height: 3, width: "100%", background: "rgba(252,211,77,0.15)", borderRadius: 2, overflow: "hidden" }}>
+                            <div style={{ position: "absolute", top: 0, height: "100%", width: "45%", background: ACCENT, borderRadius: 2, animation: "dplbar 1.1s ease-in-out infinite" }} />
+                          </div>
+                        </div>
+                      )}
+                      {!thisBusy && fi !== null && (
+                        <span style={{ fontSize: 10, color: blockAtLimit ? DANGER : "rgba(255,255,255,0.45)" }}>
+                          {blockAtLimit ? `regen ${blockUsed}/${block.regenLimit} · sube manual` : `regen ${blockUsed}/${block.regenLimit}`}
+                        </span>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
             );
           })}
@@ -1456,6 +2072,102 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
         bloque usa su propia voz (resolución por `dialogueSpec`). Al guardar se re-corre aeneas para
         re-alinear word timings. Nota: editar el título solo actualiza `story.title`, NO el texto narrativo
         embebido en `dialogueSpec[0]`.
+      </div>
+
+      {confirmDialog && (
+        <ConfirmModal
+          title={confirmDialog.title}
+          message={confirmDialog.message}
+          confirmLabel={confirmDialog.confirmLabel}
+          danger={confirmDialog.danger}
+          onCancel={() => { confirmDialog.resolve(false); setConfirmDialog(null); }}
+          onConfirm={() => { confirmDialog.resolve(true); setConfirmDialog(null); }}
+        />
+      )}
+    </div>
+  );
+}
+
+/** In-app confirm dialog styled to match the editor (replaces the
+ *  browser's native window.confirm). Closes on Escape / backdrop click
+ *  (treated as cancel). */
+function ConfirmModal({
+  title, message, confirmLabel, danger, onCancel, onConfirm,
+}: {
+  title: string;
+  message: string;
+  confirmLabel: string;
+  danger?: boolean;
+  onCancel: () => void;
+  onConfirm: () => void;
+}) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onCancel();
+      if (e.key === "Enter") onConfirm();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onCancel, onConfirm]);
+
+  return (
+    <div
+      onClick={onCancel}
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(0,0,0,0.55)",
+        backdropFilter: "blur(2px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1000,
+        padding: 20,
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        style={{
+          width: "min(440px, 100%)",
+          background: "#0f1729",
+          border: `1px solid ${CARD_BORDER}`,
+          borderRadius: 14,
+          padding: 22,
+          boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
+          display: "flex",
+          flexDirection: "column",
+          gap: 12,
+        }}
+      >
+        <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: "var(--foreground)" }}>{title}</h3>
+        <p style={{ margin: 0, fontSize: 13, lineHeight: 1.55, color: "var(--muted)" }}>{message}</p>
+        <div style={{ display: "flex", gap: 10, justifyContent: "flex-end", marginTop: 6 }}>
+          <button
+            type="button"
+            onClick={onCancel}
+            style={{
+              height: 36, padding: "0 16px", borderRadius: 8, fontSize: 13, fontWeight: 600,
+              background: "transparent", color: "var(--foreground)", border: `1px solid ${CARD_BORDER}`, cursor: "pointer",
+            }}
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            onClick={onConfirm}
+            autoFocus
+            style={{
+              height: 36, padding: "0 18px", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer",
+              background: danger ? DANGER : ACCENT,
+              color: danger ? "#fff" : "#0a1628",
+              border: `1px solid ${danger ? DANGER : ACCENT}`,
+            }}
+          >
+            {confirmLabel}
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -1533,6 +2245,25 @@ function RegenIcon({ size = 12 }: { size?: number }) {
     </svg>
   );
 }
+function UploadIcon({ size = 12 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M8 10.5V2.5" />
+      <polyline points="4.8 5.7 8 2.5 11.2 5.7" />
+      <path d="M2.5 11v1.5a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V11" />
+    </svg>
+  );
+}
 function SkipBackIcon({ size = 11 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 16 16" fill="currentColor" aria-hidden>
@@ -1605,8 +2336,114 @@ function TransportButton(props: {
 /** Subtle action icon used inside block rows. Low-opacity by default,
  *  brightens on hover. The action text is the title attribute so the
  *  button itself stays visually tiny. */
+function RevertIcon({ size = 12 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M3 8a5 5 0 1 0 1.5-3.6" />
+      <polyline points="2 2.5 2 5.2 4.7 5.2" />
+    </svg>
+  );
+}
+function CommentIcon({ size = 12 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M2.5 3.5h11v8h-7l-3 2.5v-2.5h-1z" />
+    </svg>
+  );
+}
+function Spinner({ size = 12 }: { size?: number }) {
+  return (
+    <span
+      style={{
+        display: "inline-block",
+        width: size,
+        height: size,
+        border: "2px solid rgba(252,211,77,0.3)",
+        borderTopColor: ACCENT,
+        borderRadius: "50%",
+        animation: "dplspin 0.8s linear infinite",
+      }}
+    />
+  );
+}
+/** Per-segment operator comment: collapsed it shows the saved text (click
+ *  to edit); open it shows a textarea + Guardar/Cancelar. */
+function CommentBox(props: {
+  open: boolean;
+  comment: string | null;
+  draft: string;
+  saving: boolean;
+  onOpen: () => void;
+  onChange: (v: string) => void;
+  onSave: () => void;
+  onCancel: () => void;
+}) {
+  const { open, comment, draft, saving, onOpen, onChange, onSave, onCancel } = props;
+  if (!open) {
+    return (
+      <button
+        type="button"
+        onClick={onOpen}
+        title="Editar comentario"
+        style={{
+          maxWidth: 200,
+          textAlign: "right",
+          background: "transparent",
+          border: "none",
+          padding: 0,
+          cursor: "pointer",
+          fontSize: 11,
+          lineHeight: 1.35,
+          color: "#60a5fa",
+          fontStyle: "italic",
+          whiteSpace: "normal",
+          overflowWrap: "anywhere",
+        }}
+      >
+        💬 {comment}
+      </button>
+    );
+  }
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 5, width: 210, alignItems: "stretch" }}>
+      <textarea
+        value={draft}
+        autoFocus
+        onChange={(e) => onChange(e.target.value)}
+        onKeyDown={(e) => {
+          if ((e.metaKey || e.ctrlKey) && e.key === "Enter") onSave();
+          if (e.key === "Escape") onCancel();
+        }}
+        rows={2}
+        placeholder="Ej: subí manual / falta regenerar…"
+        style={{
+          width: "100%",
+          resize: "vertical",
+          minHeight: 40,
+          padding: "6px 8px",
+          background: "rgba(0,0,0,0.25)",
+          border: "1px solid #60a5fa",
+          borderRadius: 6,
+          color: "var(--foreground)",
+          fontSize: 12,
+          fontFamily: "inherit",
+          lineHeight: 1.4,
+        }}
+      />
+      <div style={{ display: "flex", gap: 6, justifyContent: "flex-end" }}>
+        <button type="button" onClick={onCancel} disabled={saving} style={{ ...btnStyle("ghost", saving), padding: "3px 8px", fontSize: 11 }}>
+          Cancelar
+        </button>
+        <button type="button" onClick={onSave} disabled={saving} style={{ ...btnStyle("primary", saving), padding: "3px 8px", fontSize: 11 }}>
+          {saving ? "Guardando…" : "Guardar"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function IconButton(props: {
-  icon: "play" | "pause" | "regen";
+  icon: "play" | "pause" | "regen" | "upload" | "revert" | "comment";
   title: string;
   disabled?: boolean;
   active?: boolean;
@@ -1614,7 +2451,7 @@ function IconButton(props: {
 }) {
   const { icon, title, disabled, active, onClick } = props;
   const glyph =
-    icon === "play" ? <PlayIcon /> : icon === "pause" ? <PauseIcon /> : <RegenIcon />;
+    icon === "play" ? <PlayIcon /> : icon === "pause" ? <PauseIcon /> : icon === "upload" ? <UploadIcon /> : icon === "revert" ? <RevertIcon /> : icon === "comment" ? <CommentIcon /> : <RegenIcon />;
   const baseOpacity = active ? 1 : disabled ? 0.25 : 0.55;
   const baseColor = active ? ACCENT : "var(--muted)";
   const baseBorder = active ? `${ACCENT}66` : CARD_BORDER;
@@ -1654,6 +2491,59 @@ function IconButton(props: {
     >
       {glyph}
     </button>
+  );
+}
+
+/** Shows the voice name + ElevenLabs ID for a block, with a one-click
+ *  copy of the ID — so the operator knows which voice to generate in
+ *  ElevenLabs before uploading a replacement. */
+function VoiceTag({ name, id }: { name: string | null; id: string | null }) {
+  const [copied, setCopied] = useState(false);
+  if (!id) return null;
+  return (
+    <div
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 6,
+        flexWrap: "wrap",
+        padding: "3px 7px",
+        borderRadius: 5,
+        background: "rgba(96,165,250,0.08)",
+        border: "1px solid rgba(96,165,250,0.30)",
+        fontSize: 11,
+        marginBottom: 6,
+      }}
+    >
+      <span style={{ color: "#60a5fa" }} aria-hidden>🎙</span>
+      {name && <span style={{ fontWeight: 600, color: "var(--foreground)" }}>{name}</span>}
+      <code
+        style={{ fontSize: 10, color: "var(--muted)", fontFamily: "ui-monospace, SFMono-Regular, monospace", userSelect: "all" }}
+      >
+        {id}
+      </code>
+      <button
+        type="button"
+        onClick={() => {
+          navigator.clipboard?.writeText(id).then(
+            () => { setCopied(true); window.setTimeout(() => setCopied(false), 1200); },
+            () => {},
+          );
+        }}
+        title="Copiar ID de la voz"
+        style={{
+          fontSize: 10,
+          padding: "1px 6px",
+          borderRadius: 4,
+          border: "1px solid rgba(96,165,250,0.45)",
+          background: "transparent",
+          color: copied ? "#22c55e" : "#60a5fa",
+          cursor: "pointer",
+        }}
+      >
+        {copied ? "copiado ✓" : "copiar ID"}
+      </button>
+    </div>
   );
 }
 
