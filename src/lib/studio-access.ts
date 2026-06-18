@@ -99,6 +99,7 @@ export const ADMIN_ONLY_HREFS = new Set<string>([
   "/studio/beta-signups",
   "/studio/visits",
   "/studio/team",
+  "/studio/notificaciones",
 ]);
 
 let rolePermissionsCache: Record<StudioRole, string[]> | null = null;

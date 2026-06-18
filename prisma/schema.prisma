@@ -687,6 +687,68 @@ model EmailPreference {
   @@map("dp_email_preferences_v1")
 }
 
+// Studio-editable notification type definitions. Each row is one
+// "tipo" the mobile app can schedule (locally) and that Studio can
+// later send as a remote push (Fase 2). The hardcoded copy that used
+// to live in src/lib/reminders.ts now has an editable counterpart
+// here; if a row is missing the app falls back to the code defaults
+// in src/lib/notifications.ts.
+model NotificationTypeConfig {
+  id                    String   @id @default(cuid())
+  // Stable machine key: daily_reminder | streak_risk | new_content | practice_due
+  key                   String   @unique
+  label                 String
+  description           String?
+  // Copy templates. `title`/`body` may contain placeholders that the
+  // app/server resolve (e.g. {minutes}, {storyTitle}, {count}).
+  title                 String
+  body                  String
+  // Default delivery hour (0-23) for scheduled local types. Null = the
+  // type is event-driven (streak/new content) and has no fixed time.
+  hourDefault           Int?
+  // Whether the toggle starts ON for a user who never touched it.
+  localEnabledByDefault Boolean  @default(true)
+  // local | remote | both — where this type can be delivered.
+  channel               String   @default("local")
+  // Soft on/off for the whole type (hides the toggle in the app).
+  active                Boolean  @default(true)
+  sortOrder             Int      @default(0)
+  updatedAt             DateTime @updatedAt
+  createdAt             DateTime @default(now())
+
+  @@map("dp_notification_types_v1")
+}
+
+// Remote push campaigns (Fase 2). A campaign is one message the Studio
+// sends to a set of users, gated by their per-type opt-in
+// (`notificationPrefs`). Delivery is via APNs using the native device
+// tokens already stored in Clerk `privateMetadata.mobilePushTokens`.
+model PushCampaign {
+  id                  String    @id @default(cuid())
+  title               String
+  body                String
+  // Notification type this maps to; recipients are filtered by their
+  // opt-in for this key. Null = goes to everyone with a token.
+  notificationTypeKey String?
+  // all | type_subscribers
+  target              String    @default("type_subscribers")
+  // draft | scheduled | sending | sent | failed
+  status              String    @default("draft")
+  scheduledAt         DateTime?
+  sentAt              DateTime?
+  recipientCount      Int       @default(0)
+  deliveredCount      Int       @default(0)
+  failedCount         Int       @default(0)
+  lastError           String?
+  createdByEmail      String?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@index([status])
+  @@index([scheduledAt])
+  @@map("dp_push_campaigns_v1")
+}
+
 model ContinueListeningEntry {
   id               String   @id @default(cuid())
   userId           String

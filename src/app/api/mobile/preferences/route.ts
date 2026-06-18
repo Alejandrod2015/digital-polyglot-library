@@ -20,6 +20,10 @@ import {
   normalizeReminderMinute,
   normalizeRemindersEnabled,
 } from "@/lib/reminders";
+import {
+  normalizeNotificationPrefs,
+  sanitizeNotificationPrefsInput,
+} from "@/lib/notifications";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -236,6 +240,13 @@ function serializePreferences(metadata: Record<string, unknown>) {
       typeof metadata.reminderMinute === "number"
         ? normalizeReminderMinute(metadata.reminderMinute)
         : null,
+    // Per-type opt-in map. Falls back to per-type defaults, with the
+    // legacy global `remindersEnabled` seeding `daily_reminder` for
+    // users whose prefs predate this system.
+    notificationPrefs: normalizeNotificationPrefs(
+      metadata.notificationPrefs,
+      metadata.remindersEnabled === true,
+    ),
     journeyPlacementLevel:
       typeof metadata.journeyPlacementLevel === "string"
         ? normalizeJourneyPlacementLevel(metadata.journeyPlacementLevel)
@@ -313,6 +324,9 @@ export async function POST(req: NextRequest): Promise<Response> {
     : undefined;
   const reminderMinute = Object.prototype.hasOwnProperty.call(payload, "reminderMinute")
     ? normalizeReminderMinute(payload.reminderMinute)
+    : undefined;
+  const notificationPrefs = Object.prototype.hasOwnProperty.call(payload, "notificationPrefs")
+    ? sanitizeNotificationPrefsInput(payload.notificationPrefs)
     : undefined;
   const journeyPlacementLevel = Object.prototype.hasOwnProperty.call(payload, "journeyPlacementLevel")
     ? normalizeJourneyPlacementLevel(payload.journeyPlacementLevel)
@@ -397,6 +411,23 @@ export async function POST(req: NextRequest): Promise<Response> {
   if (reminderMinute !== undefined) {
     if (reminderMinute !== null) updatedMetadata.reminderMinute = reminderMinute;
     else delete updatedMetadata.reminderMinute;
+  }
+
+  if (notificationPrefs !== undefined && notificationPrefs !== null) {
+    const existingPrefs =
+      existing.notificationPrefs &&
+      typeof existing.notificationPrefs === "object" &&
+      !Array.isArray(existing.notificationPrefs)
+        ? (existing.notificationPrefs as Record<string, unknown>)
+        : {};
+    const merged: Record<string, unknown> = { ...existingPrefs, ...notificationPrefs };
+    updatedMetadata.notificationPrefs = merged;
+    // Keep the legacy global flag in sync with daily_reminder so the
+    // existing reminder scheduler and any old code paths still work.
+    if (typeof merged.daily_reminder === "boolean") {
+      if (merged.daily_reminder) updatedMetadata.remindersEnabled = true;
+      else delete updatedMetadata.remindersEnabled;
+    }
   }
 
   if (journeyPlacementLevel !== undefined) {
