@@ -5,13 +5,21 @@ import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
+  ArrowRight,
   BookOpenText,
   ChevronDown,
+  Clock,
+  Crown,
+  Flame,
   Headphones,
+  Home,
   MessageCircleMore,
   Play,
+  Rocket,
+  RotateCcw,
   Shapes,
   Sparkles,
+  Target,
   TrendingUp,
   Volume2,
   Zap,
@@ -276,47 +284,25 @@ const CHECKPOINT_PASS_THRESHOLD = 0.8;
 
 type FeedbackTone = "correct" | "wrong";
 
-function getCompletionTone(score: number, total: number) {
-  const ratio = total > 0 ? score / total : 0;
-
-  if (ratio === 1) {
-    return {
-      badge: "Perfect session",
-      line: "You cleared every prompt. Keep the momentum going.",
-      accent: "from-emerald-400/35 via-teal-300/25 to-transparent",
-      scoreColor: "text-emerald-300",
-      pill: "border-emerald-300/35 bg-emerald-300/14 text-emerald-100",
-    };
-  }
-
-  if (ratio >= 0.8) {
-    return {
-      badge: "Strong session",
-      line: "Your review is holding up well. One more round would lock it in.",
-      accent: "from-sky-400/30 via-cyan-300/20 to-transparent",
-      scoreColor: "text-sky-300",
-      pill: "border-sky-300/35 bg-sky-300/14 text-sky-100",
-    };
-  }
-
-  if (ratio >= 0.6) {
-    return {
-      badge: "Good progress",
-      line: "You are moving in the right direction. Another short set will help.",
-      accent: "from-amber-300/30 via-yellow-200/20 to-transparent",
-      scoreColor: "text-amber-200",
-      pill: "border-amber-200/35 bg-amber-200/14 text-amber-50",
-    };
-  }
-
-  return {
-    badge: "Keep going",
-    line: "This was still useful. A second round now will feel much easier.",
-    accent: "from-rose-300/28 via-pink-200/18 to-transparent",
-    scoreColor: "text-rose-200",
-    pill: "border-rose-200/35 bg-rose-200/12 text-rose-50",
-  };
+// Combo tiers + labels mirror the iPhone (apps/mobile getPracticeComboTier /
+// getPracticeComboLabel) so the streak celebration reads the same on both
+// clients: a toast pill appears from a 2-in-a-row streak and escalates.
+type ComboTier = 0 | 1 | 2 | 3 | 4 | 5;
+function getComboTier(streak: number): ComboTier {
+  if (streak >= 10) return 5;
+  if (streak >= 8) return 4;
+  if (streak >= 6) return 3;
+  if (streak >= 4) return 2;
+  if (streak >= 2) return 1;
+  return 0;
 }
+function getComboLabel(streak: number, tier: ComboTier): string {
+  if (tier >= 5) return `Perfect x${streak}`;
+  if (tier === 4) return `On fire x${streak}`;
+  if (tier === 3) return `Hot streak x${streak}`;
+  return `Bonus x${streak}`;
+}
+
 
 function scoreSpeechVoice(voice: SpeechSynthesisVoice, lang: string) {
   const voiceLang = (voice.lang ?? "").toLowerCase();
@@ -376,7 +362,33 @@ export default function PracticePage() {
   const storyAutoStartedRef = useRef(false);
   const [languageSwitcherOpen, setLanguageSwitcherOpen] = useState(false);
   const [streak, setStreak] = useState(0);
+  const [maxStreak, setMaxStreak] = useState(0);
   const [lastResult, setLastResult] = useState<"correct" | "wrong" | null>(null);
+  // Combo toast (iPhone parity): an animated celebration pill that pops in the
+  // header when the streak hits a tier (≥2 in a row) and auto-dismisses.
+  const [comboToast, setComboToast] = useState<{ streak: number; tier: ComboTier; label: string } | null>(null);
+  const comboDismissRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Per-exercise countdown (iPhone parity): multiple-choice gets 10 s; when it
+  // hits 0 without an answer the exercise reveals as wrong (timeout-as-wrong),
+  // mirroring the mobile flow. Match keeps its own pace and is excluded.
+  const [timerRemaining, setTimerRemaining] = useState(10);
+  // Wall-clock duration of the round, captured when the session completes so
+  // the result card can show a "time" stat like the iPhone version.
+  const [sessionDurationMs, setSessionDurationMs] = useState<number | null>(null);
+  const sessionStartRef = useRef<number | null>(null);
+  // Tracks the last context exercise whose sentence audio we auto-played on
+  // reveal, so the effect fires exactly once per reveal (iPhone parity).
+  const contextRevealAudioRef = useRef<string | null>(null);
+  // Tracks the last meaning exercise whose target word we auto-played on
+  // appearance (iPhone autoplays the word so the learner hears it while
+  // choosing the meaning). Fires once per exercise.
+  const meaningAutoplayedRef = useRef<string | null>(null);
+  // True for ~1.4s when a tier-5 combo (10-in-a-row) lands, driving the
+  // in-session confetti burst - same as the iPhone's comboBurst.
+  const [comboBurst, setComboBurst] = useState(false);
+  const comboBurstDismissRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Words the user got wrong this round (for the result card's "Fix N" action).
+  const [missedWords, setMissedWords] = useState<string[]>([]);
   const [playingClipId, setPlayingClipId] = useState<string | null>(null);
   const [speakingClipId, setSpeakingClipId] = useState<string | null>(null);
   const [hqClipId, setHqClipId] = useState<string | null>(null);
@@ -391,6 +403,10 @@ export default function PracticePage() {
     correct: null,
     wrong: null,
   });
+  // Celebratory chime reused for both combo toasts (tiered volume) and the
+  // end-of-session perfect run - same asset the iPhone uses (practice-perfect).
+  const comboSoundRef = useRef<HTMLAudioElement | null>(null);
+  const perfectChimePlayedRef = useRef(false);
   const practiceSource = searchParams.get("source");
   const storyPracticeSlug = searchParams.get("storySlug");
   const storyPracticeBookSlug = searchParams.get("bookSlug");
@@ -826,7 +842,15 @@ export default function PracticePage() {
     setScore(0);
     setSessionComplete(false);
     setStreak(0);
+    setMaxStreak(0);
     setLastResult(null);
+    setTimerRemaining(10);
+    setSessionDurationMs(null);
+    setMissedWords([]);
+    setComboToast(null);
+    setComboBurst(false);
+    perfectChimePlayedRef.current = false;
+    sessionStartRef.current = Date.now();
     setCheckpointSaveState("idle");
     setCheckpointResponses({});
     practiceStartTrackedRef.current = false;
@@ -894,6 +918,9 @@ export default function PracticePage() {
     setActiveMatchWord(null);
     setLastResult(null);
     setPlayingClipId(null);
+    setTimerRemaining(10);
+    contextRevealAudioRef.current = null;
+    meaningAutoplayedRef.current = null;
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
       window.speechSynthesis.cancel();
     }
@@ -915,13 +942,19 @@ export default function PracticePage() {
       // paridad de experiencia.
       const correct = new Audio("/sounds/practice-correct.mp3");
       const wrong = new Audio("/sounds/practice-wrong.mp3");
+      const combo = new Audio("/sounds/practice-perfect.mp3");
       correct.preload = "auto";
       wrong.preload = "auto";
+      combo.preload = "auto";
+      correct.volume = 0.8;
+      wrong.volume = 0.8;
       feedbackSoundRefs.current.correct = correct;
       feedbackSoundRefs.current.wrong = wrong;
+      comboSoundRef.current = combo;
     }
 
     const feedbackSounds = feedbackSoundRefs.current;
+    const comboSound = comboSoundRef.current;
 
     return () => {
       const audio = clipAudioRef.current;
@@ -931,8 +964,20 @@ export default function PracticePage() {
       audio?.pause();
       feedbackSounds.correct?.pause();
       feedbackSounds.wrong?.pause();
+      comboSound?.pause();
       feedbackAudioContextRef.current?.close().catch(() => {});
     };
+  }, []);
+
+  // Celebratory chime, reused for combos (tiered volume) and the perfect-run
+  // finale (full volume) - same asset + escalation curve as the iPhone.
+  const playComboChime = useCallback((volume: number) => {
+    if (typeof window === "undefined") return;
+    const sound = comboSoundRef.current;
+    if (!sound) return;
+    sound.volume = Math.max(0, Math.min(1, volume));
+    sound.currentTime = 0;
+    void sound.play().catch(() => {});
   }, []);
 
   const playGeneratedFeedbackTone = useCallback((tone: FeedbackTone) => {
@@ -1001,8 +1046,41 @@ export default function PracticePage() {
     playGeneratedFeedbackTone(tone);
   }, [playGeneratedFeedbackTone]);
 
-  const revealCurrent = () => {
+  // Combo celebration: every time the streak climbs, surface the tiered toast
+  // pill (iPhone parity). Visual ONLY — the celebration chime is reserved for
+  // the end-of-session perfect run, so it never plays mid-session. Each answer
+  // still gets its own correct/wrong sound.
+  useEffect(() => {
+    if (streak <= 0) return;
+    setMaxStreak((max) => (streak > max ? streak : max));
+    const tier = getComboTier(streak);
+    if (tier === 0) return;
+    setComboToast({ streak, tier, label: getComboLabel(streak, tier) });
+    if (comboDismissRef.current) clearTimeout(comboDismissRef.current);
+    comboDismissRef.current = setTimeout(() => setComboToast(null), 1500);
+    // Tier-5 (10-in-a-row): fire the confetti burst in-session, like iPhone.
+    if (tier >= 5) {
+      setComboBurst(true);
+      if (comboBurstDismissRef.current) clearTimeout(comboBurstDismissRef.current);
+      comboBurstDismissRef.current = setTimeout(() => setComboBurst(false), 1400);
+    }
+    return () => {
+      if (comboDismissRef.current) clearTimeout(comboDismissRef.current);
+    };
+  }, [streak, playComboChime]);
+
+  // Perfect-run finale chime, fired once when a flawless session completes.
+  useEffect(() => {
+    if (!sessionComplete) return;
+    if (exercises.length === 0 || score !== exercises.length) return;
+    if (perfectChimePlayedRef.current) return;
+    perfectChimePlayedRef.current = true;
+    playComboChime(0.95);
+  }, [sessionComplete, score, exercises.length, playComboChime]);
+
+  const revealCurrent = useCallback(() => {
     if (!currentExercise) return;
+    if (revealedIds.includes(currentExercise.id)) return;
     setRevealedIds((prev) => (prev.includes(currentExercise.id) ? prev : [...prev, currentExercise.id]));
 
     const isCorrect =
@@ -1012,6 +1090,8 @@ export default function PracticePage() {
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
+      // maxStreak is derived in the streak effect below (not inside this
+      // updater) so StrictMode's double-invoke can't inflate it.
       setStreak((prev) => prev + 1);
       setLastResult("correct");
       playFeedbackSound("correct");
@@ -1019,8 +1099,47 @@ export default function PracticePage() {
       setStreak(0);
       setLastResult("wrong");
       playFeedbackSound("wrong");
+      // Track the missed word for the result card's "Fix" action.
+      const missed =
+        currentExercise.type === "meaning_in_context"
+          ? currentExercise.word
+          : currentExercise.type === "match_meaning"
+            ? null
+            : currentExercise.answer;
+      if (missed) setMissedWords((prev) => (prev.includes(missed) ? prev : [...prev, missed]));
     }
-  };
+  }, [currentExercise, matchAnswers, playFeedbackSound, revealedIds, selectedOption]);
+
+  // Timer tick: count down once per second while a multiple-choice exercise is
+  // unanswered. Match is excluded (it paces itself). Stops on reveal/complete.
+  useEffect(() => {
+    if (!activeSession || sessionComplete) return;
+    if (!currentExercise || currentExercise.type === "match_meaning") return;
+    if (revealed) return;
+    if (timerRemaining <= 0) return;
+    const id = window.setTimeout(() => {
+      setTimerRemaining((value) => Math.max(0, value - 1));
+    }, 1000);
+    return () => window.clearTimeout(id);
+  }, [activeSession, sessionComplete, currentExercise, revealed, timerRemaining]);
+
+  // Timeout-as-wrong: when the timer reaches 0 with no answer revealed, reveal
+  // the exercise (an empty/incorrect selection grades as wrong).
+  useEffect(() => {
+    if (!activeSession || sessionComplete) return;
+    if (!currentExercise || currentExercise.type === "match_meaning") return;
+    if (revealed) return;
+    if (timerRemaining > 0) return;
+    revealCurrent();
+  }, [activeSession, sessionComplete, currentExercise, revealed, timerRemaining, revealCurrent]);
+
+  // Capture the round's wall-clock duration the moment it completes.
+  useEffect(() => {
+    if (!sessionComplete) return;
+    if (sessionDurationMs !== null) return;
+    if (sessionStartRef.current == null) return;
+    setSessionDurationMs(Date.now() - sessionStartRef.current);
+  }, [sessionComplete, sessionDurationMs]);
 
   const stopClipPlayback = useCallback(() => {
     const audio = clipAudioRef.current;
@@ -1199,7 +1318,12 @@ export default function PracticePage() {
     setMatchAnswers({});
     setRevealedIds([]);
     setScore(0);
+    setStreak(0);
+    setMaxStreak(0);
     setSessionComplete(false);
+    setComboToast(null);
+    setComboBurst(false);
+    perfectChimePlayedRef.current = false;
     setCheckpointSaveState("idle");
     setCheckpointResponses({});
     practiceStartTrackedRef.current = false;
@@ -1269,11 +1393,6 @@ export default function PracticePage() {
     playSpeechText(currentExercise.id, currentExercise.speechText, currentExercise.language);
   }, [currentExercise, playSpeechText]);
 
-  const playTtsContextClip = useCallback((clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
-    if (!clip) return;
-    playSpeechText(clipOwnerId, clip.sentence, clip.language);
-  }, [playSpeechText]);
-
   const playHqContextClip = useCallback(async (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
     if (!clip || typeof window === "undefined") return;
     const audio = clipAudioRef.current ?? new Audio();
@@ -1326,6 +1445,64 @@ export default function PracticePage() {
     }
   }, [hqClipId, hqUrlBySentence]);
 
+  // Single audio entry point for context exercises (iPhone parity: one button,
+  // not three). Prefer the real story segment when we have it, fall back to
+  // high-quality ElevenLabs TTS, then to the browser speech synth.
+  const playContextAudio = useCallback(
+    (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
+      if (!clip) return;
+      const normalizedSlug = normalizeStorySlug(clip.storySlug);
+      const storyAudio =
+        clip.storySource === "standalone"
+          ? standaloneStoryAudioBySlug[normalizedSlug]
+          : userStoryAudioBySlug[normalizedSlug];
+      const segment = findSegmentForClip(storyAudio, clip);
+      if (storyAudio?.audioUrl && segment) {
+        void playExactContextClip(clipOwnerId, clip);
+        return;
+      }
+      void playHqContextClip(clipOwnerId, clip);
+    },
+    [playExactContextClip, playHqContextClip, standaloneStoryAudioBySlug, userStoryAudioBySlug]
+  );
+
+  // True when any audio source for this context clip is currently playing.
+  const isContextAudioActive = useCallback(
+    (clipOwnerId: string) =>
+      playingClipId === clipOwnerId || hqClipId === clipOwnerId || speakingClipId === clipOwnerId,
+    [hqClipId, playingClipId, speakingClipId]
+  );
+
+  // Context-mode reveal audio (iPhone parity): no autoplay while the user is
+  // thinking, but the moment they reveal the answer we play the full sentence
+  // so they hear the word in its natural context. Fires once per reveal.
+  useEffect(() => {
+    if (!revealed || !currentExercise) return;
+    if (currentExercise.type !== "fill_blank" && currentExercise.type !== "natural_expression") return;
+    if (!currentExercise.audioClip) return;
+    if (contextRevealAudioRef.current === currentExercise.id) return;
+    contextRevealAudioRef.current = currentExercise.id;
+    playContextAudio(currentExercise.id, currentExercise.audioClip);
+  }, [revealed, currentExercise, playContextAudio]);
+
+  // Meaning-mode word autoplay (iPhone parity): when a meaning exercise
+  // appears, play the target WORD (HQ TTS, same voice as the story) so the
+  // learner hears it while choosing the meaning. Fires once per exercise.
+  useEffect(() => {
+    if (!activeSession || sessionComplete) return;
+    if (!currentExercise || currentExercise.type !== "meaning_in_context") return;
+    if (!currentExercise.audioClip) return;
+    if (meaningAutoplayedRef.current === currentExercise.id) return;
+    meaningAutoplayedRef.current = currentExercise.id;
+    void playHqContextClip(currentExercise.id, {
+      storySlug: currentExercise.storySlug ?? "",
+      sentence: currentExercise.word,
+      storySource: "standalone",
+      language: currentExercise.audioClip.language ?? null,
+      voiceId: currentExercise.audioClip.voiceId ?? null,
+    });
+  }, [activeSession, sessionComplete, currentExercise, playHqContextClip]);
+
   const assignMatchMeaning = (meaning: string) => {
     if (!currentExercise || currentExercise.type !== "match_meaning" || !activeMatchWord || revealed) return;
 
@@ -1366,100 +1543,6 @@ export default function PracticePage() {
     setActiveMatchWord((prev) => (prev === word ? null : prev));
   };
 
-  const contextBlockClass =
-    "mb-5 rounded-2xl border border-white/6 bg-white/[0.03] px-4 py-3";
-
-  const contextTextClass =
-    "text-xs leading-6 text-[var(--muted)]/75 sm:text-sm";
-
-  // iPhone-style: cards compactas, NO se estiran a llenar viewport.
-  // Altura mínima 60px (suficiente para 1 línea de respuesta), max-h auto,
-  // padding moderado. Paridad con el ReaderScreen multiple-choice del iPhone.
-  const answerButtonBase =
-    "flex min-h-[60px] w-full items-center rounded-2xl border px-5 py-3.5 text-left text-[15px] font-semibold leading-snug tracking-tight transition-colors";
-
-  const renderContextBlock = (
-    sentence: string,
-    clip: PracticeAudioClip | null | undefined,
-    clipOwnerId: string
-  ) => {
-    const normalizedSlug = clip ? normalizeStorySlug(clip.storySlug) : "";
-    const storyAudio = clip
-      ? clip.storySource === "standalone"
-        ? standaloneStoryAudioBySlug[normalizedSlug]
-        : userStoryAudioBySlug[normalizedSlug]
-      : null;
-    const exactSegment = findSegmentForClip(storyAudio, clip);
-
-    if (process.env.NODE_ENV !== "production" && clip) {
-      console.debug("[practice] context clip resolution", {
-        clipOwnerId,
-        storySlug: clip.storySlug,
-        storySource: clip.storySource,
-        targetWord: clip.targetWord ?? null,
-        segmentId: clip.segmentId ?? null,
-        sentence: clip.sentence,
-        hasStoryAudio: Boolean(storyAudio?.audioUrl),
-        audioSegmentCount: storyAudio?.audioSegments.length ?? 0,
-        resolvedSegmentId: exactSegment?.id ?? null,
-      });
-    }
-
-    const hasStorySegment = Boolean(storyAudio?.audioUrl && exactSegment);
-    const buttonClass =
-      "inline-flex items-center justify-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--foreground)] transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40";
-    return (
-      <div className={contextBlockClass}>
-        <div className="flex items-start justify-between gap-3">
-          <p className={`${contextTextClass} flex-1`}>{sentence}</p>
-          <div className="flex shrink-0 items-center gap-1.5">
-            {clip ? (
-              <>
-                <button
-                  type="button"
-                  onClick={() => playTtsContextClip(clipOwnerId, clip)}
-                  className={buttonClass}
-                  title="TTS del navegador (rápido pero robótico)"
-                >
-                  <Volume2 size={12} />
-                  {speakingClipId === clipOwnerId ? "Stop" : "TTS"}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => playExactContextClip(clipOwnerId, clip)}
-                  disabled={!hasStorySegment}
-                  className={buttonClass}
-                  title={hasStorySegment ? "Audio real de la historia" : "Sin segmentos de audio para esta historia"}
-                >
-                  <Volume2 size={12} />
-                  {playingClipId === clipOwnerId ? "Stop" : "Story"}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => playHqContextClip(clipOwnerId, clip)}
-                  className={buttonClass}
-                  title="TTS de alta calidad (ElevenLabs, primera vez tarda ~2s)"
-                >
-                  <Volume2 size={12} />
-                  {hqClipId === clipOwnerId ? "Stop" : "HQ"}
-                </button>
-              </>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const getCorrectAnswerText = (exercise: PracticeExercise | null) => {
-    if (!exercise) return "";
-    if (exercise.type === "match_meaning") {
-      return exercise.pairs.map((pair) => `${pair.word} — ${pair.answer}`).join(" · ");
-    }
-    return exercise.answer;
-  };
-
-  const correctAnswerText = getCorrectAnswerText(currentExercise);
   const modeCards = (Object.entries(modeThemeByMode) as Array<
     [PracticeMode, (typeof modeThemeByMode)[PracticeMode]]
   >).map(([mode, theme]) => ({
@@ -1471,7 +1554,6 @@ export default function PracticePage() {
     : inferredModeFromExercise
       ? modeThemeByMode[inferredModeFromExercise]
       : null;
-  const completionTone = getCompletionTone(score, exercises.length);
   const checkpointPassed = exercises.length > 0 && score / exercises.length >= CHECKPOINT_PASS_THRESHOLD;
   const checkpointNeedsSave = isJourneyCheckpoint && checkpointPassed && checkpointSaveState !== "saved";
   const checkpointMissedItems = useMemo(() => {
@@ -1560,7 +1642,7 @@ export default function PracticePage() {
 
   // Auto-open the session when the user came straight from finishing a story
   // (source=story). Without this they land on the practice dashboard and have
-  // to tap START again — they expect to practice the story they just read.
+  // to tap START again - they expect to practice the story they just read.
   // Mirrors the START button (setPendingCountdownMode → countdown → session).
   useEffect(() => {
     if (!isStoryPractice) return;
@@ -1600,20 +1682,6 @@ export default function PracticePage() {
     requestedModeParam === "match"
       ? requestedModeParam
       : null;
-  const completionBursts = useMemo(
-    () => [
-      { left: "8%", top: "18%", delay: "0ms", size: "h-2.5 w-2.5", color: "bg-emerald-300/80" },
-      { left: "18%", top: "12%", delay: "80ms", size: "h-2 w-2", color: "bg-sky-300/80" },
-      { left: "28%", top: "24%", delay: "160ms", size: "h-3 w-3", color: "bg-amber-200/85" },
-      { left: "72%", top: "16%", delay: "120ms", size: "h-2.5 w-2.5", color: "bg-cyan-200/80" },
-      { left: "82%", top: "10%", delay: "220ms", size: "h-2 w-2", color: "bg-emerald-200/80" },
-      { left: "90%", top: "22%", delay: "140ms", size: "h-3 w-3", color: "bg-sky-200/80" },
-      { left: "16%", top: "70%", delay: "260ms", size: "h-2 w-2", color: "bg-amber-200/75" },
-      { left: "84%", top: "74%", delay: "320ms", size: "h-2.5 w-2.5", color: "bg-emerald-200/75" },
-    ],
-    []
-  );
-
   useEffect(() => {
     if (!isJourneyCheckpoint || !sessionComplete || checkpointSaveState === "saving" || checkpointSaveState === "saved") {
       return;
@@ -1683,7 +1751,7 @@ export default function PracticePage() {
   }, [isJourneyCheckpoint, openSession, requestedMode, selectedMode, trackUiMetric]);
 
   // ⚠️ Reglas de hooks: este useMemo DEBE quedar antes de cualquier early
-  // return (loading, !user, error) — antes vivía hasta el render final del
+  // return (loading, !user, error) - antes vivía hasta el render final del
   // hero y eso disparaba "change in order of Hooks called by PracticePage".
   const inferredLanguageFromFavs = useMemo(() => {
     if (favorites.length === 0) return null;
@@ -1773,8 +1841,10 @@ export default function PracticePage() {
   }
 
   if (activeSession) {
+    const timerColor =
+      timerRemaining <= 2 ? "#ff5f5f" : timerRemaining <= 5 ? "#ff9a57" : "#f8c15c";
     return (
-      <div className="-mx-1 -my-6 box-border h-[calc(100dvh-env(safe-area-inset-top))] overflow-hidden px-4 py-2.5 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] text-[var(--foreground)] sm:px-5 sm:py-4 sm:pb-[calc(env(safe-area-inset-bottom)+1rem)]">
+      <div className="relative -mx-1 -my-6 box-border h-[calc(100dvh-env(safe-area-inset-top))] overflow-hidden px-4 py-2.5 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] text-[var(--foreground)] sm:px-5 sm:py-4 sm:pb-[calc(env(safe-area-inset-bottom)+1rem)]">
         <div className="mx-auto grid h-full max-w-5xl grid-rows-[auto_minmax(0,1fr)_auto] gap-2 sm:grid-rows-[auto_minmax(0,1fr)_144px]">
           {/* HEADER exacto al iPhone:
               - Back arrow rounded-square
@@ -1803,35 +1873,93 @@ export default function PracticePage() {
                   {" OF "}
                   {String(exercises.length).padStart(2, "0")}
                 </p>
-                <p className="text-[26px] font-black tracking-tight text-white leading-tight">
-                  {activeModeTheme?.title ?? "Practice"}
-                </p>
+                <div className="flex items-center gap-2.5">
+                  <p className="text-[26px] font-black tracking-tight text-white leading-tight">
+                    {activeModeTheme?.title ?? "Practice"}
+                  </p>
+                  {/* Combo toast (iPhone parity): pops in on a streak tier and
+                      auto-dismisses. Icon + color escalate with the tier. */}
+                  {comboToast ? (
+                    (() => {
+                      const t = comboToast.tier;
+                      const ComboIcon = t >= 5 ? Crown : t >= 4 ? Rocket : Flame;
+                      const pill =
+                        t >= 5
+                          ? "bg-gradient-to-r from-[#fde68a] to-[#f0abfc] text-[#3b0764]"
+                          : t >= 4
+                            ? "bg-gradient-to-r from-[#fdba74] to-[#fb7185] text-[#3a0a0a]"
+                            : t >= 3
+                              ? "bg-[#fb923c] text-[#2a1402]"
+                              : "bg-[#fcd34d] text-[#2a1a02]";
+                      const halo =
+                        t >= 5 ? "#f0abfc" : t >= 4 ? "#fb7185" : t >= 3 ? "#fb923c" : "#fcd34d";
+                      const haloStrength = t >= 5 ? 0.9 : t >= 4 ? 0.72 : t >= 3 ? 0.58 : 0.42;
+                      return (
+                        <span
+                          key={`${comboToast.tier}-${comboToast.streak}`}
+                          className="relative inline-flex shrink-0 items-center"
+                        >
+                          {/* Tier-colored glow behind the pill (iPhone halo). */}
+                          <span
+                            aria-hidden
+                            className="pointer-events-none absolute -inset-2 rounded-full blur-md"
+                            style={{
+                              background: halo,
+                              opacity: haloStrength,
+                              animation: "combo-halo 1500ms ease-out both",
+                            }}
+                          />
+                          <span
+                            className={`relative inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-black uppercase tracking-wide shadow-lg ${pill}`}
+                            style={{ animation: "combo-pop 1500ms cubic-bezier(0.22,1,0.36,1) both" }}
+                          >
+                            <ComboIcon size={12} fill="currentColor" />
+                            {comboToast.label}
+                          </span>
+                        </span>
+                      );
+                    })()
+                  ) : null}
+                </div>
               </div>
-              {!sessionComplete ? (
-                // Anillo circular: borde gold parcial = progreso, número
-                // dentro = score-per-question (10). Uso conic-gradient.
-                (() => {
-                  const ringPct = exercises.length > 0
-                    ? Math.min(100, Math.round((completedExerciseCount / exercises.length) * 100))
-                    : 0;
-                  return (
-                    <div
-                      className="relative grid h-12 w-12 shrink-0 place-items-center rounded-full"
-                      style={{
-                        background: `conic-gradient(var(--color-gold) ${ringPct}%, rgba(255,255,255,0.08) ${ringPct}% 100%)`,
-                      }}
-                    >
-                      <div className="grid h-[40px] w-[40px] place-items-center rounded-full bg-[var(--background)] text-[14px] font-black text-[var(--color-gold)]">
-                        10
-                      </div>
-                    </div>
-                  );
-                })()
+              {/* Timer badge "Xs" (iPhone parity): gold → orange → red as it
+                  drains. Hidden for match and once the answer is revealed. */}
+              {!sessionComplete &&
+              currentExercise &&
+              currentExercise.type !== "match_meaning" &&
+              !revealed ? (
+                <div
+                  className="grid h-10 min-w-[44px] shrink-0 place-items-center rounded-full border px-2.5 text-[15px] font-black tabular-nums"
+                  style={{
+                    borderColor: `${timerColor}55`,
+                    backgroundColor: `${timerColor}1f`,
+                    color: timerColor,
+                  }}
+                >
+                  {timerRemaining}s
+                </div>
               ) : null}
             </div>
 
+            {/* Timer bar: empties left-to-right over the 10 s window. Same
+                visibility rule as the badge. */}
+            {!sessionComplete &&
+            currentExercise &&
+            currentExercise.type !== "match_meaning" &&
+            !revealed ? (
+              <div className="h-1 w-full overflow-hidden rounded-full bg-white/[0.08]">
+                <div
+                  className="h-full rounded-full transition-[width] duration-1000 ease-linear"
+                  style={{
+                    width: `${Math.max(0, Math.min(100, (timerRemaining / 10) * 100))}%`,
+                    backgroundColor: timerColor,
+                  }}
+                />
+              </div>
+            ) : null}
+
             {/* Mini-segments por ejercicio (uno por exercise).
-                Sin big bar arriba — iPhone sólo muestra esta fila. */}
+                Sin big bar arriba - iPhone sólo muestra esta fila. */}
             <div className="flex gap-1.5">
               {exercises.map((_, i) => {
                 const done = i < completedExerciseCount;
@@ -1872,240 +2000,263 @@ export default function PracticePage() {
 
           <div className="min-h-0 overflow-y-auto overscroll-contain pr-1">
             {sessionComplete ? (
-              <div
-                className="relative h-full overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md sm:p-6"
-                style={{ animation: "fade-in 220ms ease-out" }}
-              >
-                <div
-                  aria-hidden="true"
-                  className={`pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b ${completionTone.accent}`}
-                />
-                {completionBursts.map((burst, index) => (
-                  <span
-                    key={`burst-${index}`}
-                    aria-hidden="true"
-                    className={`pointer-events-none absolute rounded-full ${burst.size} ${burst.color}`}
-                    style={{
-                      left: burst.left,
-                      top: burst.top,
-                      animation: `completion-pop 900ms ease-out ${burst.delay} both`,
-                    }}
-                  />
-                ))}
-                <Confetti active={score === exercises.length && exercises.length > 0} />
+              (() => {
+                // iPhone-parity result card: score ring + corner chips
+                // (XP / combo) + greeting + 2 stat cards + WHAT'S NEXT row.
+                const total = exercises.length;
+                const isPerfect = score === total && total > 0;
+                const accuracyPct = total > 0 ? Math.round((score / total) * 100) : 0;
+                const ringColor =
+                  accuracyPct >= 80 ? "#22c55e" : accuracyPct >= 50 ? "#f59e0b" : "#fb7185";
+                const xpTotal =
+                  score * 10 + Math.max(0, maxStreak - 3) * 5 + (isPerfect ? 25 : 0);
+                const totalSeconds = Math.max(0, Math.round((sessionDurationMs ?? 0) / 1000));
+                const durationLabel =
+                  totalSeconds >= 60
+                    ? `${Math.floor(totalSeconds / 60)}m ${totalSeconds % 60}s`
+                    : `${totalSeconds}s`;
+                const firstName = (user?.firstName ?? "").trim().split(/\s+/)[0] || null;
+                const greeting = isPerfect
+                  ? firstName
+                    ? `Perfect, ${firstName}.`
+                    : "Perfect run."
+                  : firstName
+                    ? `Nice run, ${firstName}.`
+                    : "Session complete.";
+                const headline = isJourneyCheckpoint
+                  ? checkpointPassed
+                    ? "Checkpoint cleared."
+                    : "Almost there. Try again."
+                  : isPerfect
+                    ? "Every answer locked in."
+                    : accuracyPct >= 70
+                      ? "You're sharper than last time."
+                      : accuracyPct >= 40
+                        ? "Solid practice. Keep going."
+                        : "These ones need another pass.";
+                const subtext = isJourneyCheckpoint
+                  ? checkpointPassed
+                    ? "Next step unlocked."
+                    : `${Math.max(0, Math.ceil(CHECKPOINT_PASS_THRESHOLD * total) - score)} more correct to pass.`
+                  : `${score} of ${total} correct.`;
 
-                <div className="relative flex h-full flex-col">
+                // Ring geometry - animate the arc from empty to score/total.
+                const RING = 168;
+                const STROKE = 16;
+                const R = (RING - STROKE) / 2;
+                const CIRC = 2 * Math.PI * R;
+                const ratio = total > 0 ? Math.max(0, Math.min(1, score / total)) : 0;
+                const dashTarget = CIRC * (1 - ratio);
+
+                // WHAT'S NEXT actions (gold primary first, then up to 2 more).
+                type ResultAction = {
+                  key: string;
+                  title: string;
+                  subtitle: string;
+                  icon: LucideIcon;
+                  primary?: boolean;
+                  href?: string;
+                  onClick?: () => void;
+                };
+                const actions: ResultAction[] = [];
+                let primaryIsReplay = false;
+                if (isJourneyCheckpoint && !checkpointPassed) {
+                  actions.push({ key: "retry", title: "Retry", subtitle: "Checkpoint", icon: RotateCcw, primary: true, onClick: restart });
+                } else if (isStoryPractice && storyNextHref) {
+                  actions.push({ key: "next-story", title: "Continue", subtitle: "Next story", icon: ArrowRight, primary: true, href: storyNextHref });
+                } else if (isJourneyPractice && journeyReturnHref) {
+                  actions.push({
+                    key: "journey",
+                    title: isJourneyCheckpoint && checkpointPassed && !checkpointNeedsSave ? "Continue" : "Journey",
+                    subtitle: explicitReturnLabel?.trim() || "Back to journey",
+                    icon: ArrowRight,
+                    primary: true,
+                    href: journeyReturnHref,
+                  });
+                } else if (isStoryPractice && storyReturnHref) {
+                  actions.push({ key: "story", title: "Done", subtitle: "Back to story", icon: Home, primary: true, href: storyReturnHref });
+                } else {
+                  primaryIsReplay = true;
+                  actions.push({ key: "replay", title: "Replay", subtitle: `Same ${total}`, icon: RotateCcw, primary: true, onClick: restart });
+                }
+                if (isJourneyCheckpoint && !checkpointPassed && checkpointRecoveryHref) {
+                  actions.push({
+                    key: "weak",
+                    title: "Fix",
+                    subtitle: "Weak spots",
+                    icon: Target,
+                    href: `${checkpointRecoveryHref}&mode=${encodeURIComponent(reviewRecommendedMode)}`,
+                    onClick: () => {
+                      void trackUiMetric("checkpoint_recovery_clicked", {
+                        recommendedMode: reviewRecommendedMode,
+                        missedWords: checkpointRecoveryWords,
+                      });
+                    },
+                  });
+                }
+                if (!primaryIsReplay && actions.length < 3) {
+                  actions.push({ key: "replay2", title: "Replay", subtitle: `Same ${total}`, icon: RotateCcw, onClick: restart });
+                }
+                if (actions.length < 3 && !isStoryPractice && !isJourneyPractice) {
+                  actions.push({ key: "favorites", title: "Words", subtitle: "Favorites", icon: BookOpenText, href: "/favorites" });
+                }
+
+                return (
                   <div
-                    className={`mb-3 inline-flex w-fit rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 ${completionTone.pill}`}
-                    style={{ animation: "fade-in 260ms ease-out" }}
+                    className="relative flex min-h-full flex-col items-center gap-4 overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md sm:p-6"
+                    style={{ animation: "practice-result-in 280ms ease-out both" }}
                   >
-                    {isJourneyCheckpoint
-                      ? checkpointPassed
-                        ? "Checkpoint cleared"
-                        : "Checkpoint result"
-                      : score === exercises.length
-                        ? "Perfect round"
-                        : completionTone.badge}
-                  </div>
-                  <div className="rounded-[1.8rem] border border-white/8 bg-white/[0.035] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                    <div className="flex items-end justify-between gap-4">
-                      <div>
-                        <p
-                          className={`text-6xl font-black leading-none tracking-tight sm:text-7xl ${completionTone.scoreColor}`}
-                          style={{ animation: "score-pop 260ms ease-out" }}
-                        >
-                          {score}/{exercises.length}
-                        </p>
-                        <h2 className="mt-3 text-[2rem] font-semibold tracking-tight sm:text-[2.4rem]">
-                          {isJourneyCheckpoint
-                            ? checkpointPassed
-                              ? "Topic unlocked"
-                              : "Try once more"
-                            : score === exercises.length
-                              ? "Flawless finish"
-                              : "Round complete"}
-                        </h2>
-                        <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)] sm:text-base">
-                          {isJourneyCheckpoint
-                            ? checkpointPassed
-                              ? checkpointSaveState === "saved"
-                                ? "Checkpoint passed. You can continue to the next topic."
-                                : checkpointSaveState === "error"
-                                  ? "Checkpoint passed, but we could not save it yet. Retry to unlock the next topic."
-                                  : "Checkpoint passed. Saving your progress..."
-                              : `${Math.max(0, Math.ceil(CHECKPOINT_PASS_THRESHOLD * exercises.length) - score)} more correct answers needed to pass.`
-                            : isJourneyPractice
-                              ? score === exercises.length
-                                ? "Strong work. Head back to your topic and keep the journey moving."
-                                : `${exercises.length - score} to revisit next time before you continue.`
-                              : score === exercises.length
-                                ? "No misses. Keep the streak alive."
-                                : `${exercises.length - score} to revisit next time.`}
-                        </p>
-                      </div>
-                      {score === exercises.length ? (
-                        <div className="hidden shrink-0 rounded-[1.4rem] border border-emerald-200/20 bg-emerald-300/10 px-4 py-3 text-right sm:block">
-                          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-100/80">
-                            Bonus
-                          </p>
-                          <p className="mt-1 text-2xl font-black text-emerald-200">+10 XP</p>
-                        </div>
-                      ) : null}
-                    </div>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/80">
-                        {exercises.length} prompts cleared
-                      </span>
-                      <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/80">
-                        {score === exercises.length ? "No misses" : `${score} correct`}
-                      </span>
-                      {streak > 1 ? (
-                        <span className="rounded-full border border-amber-200/20 bg-amber-200/10 px-3 py-1 text-[11px] font-semibold text-amber-100">
-                          {streak} in a row
-                        </span>
-                      ) : null}
-                    </div>
-                  </div>
-                  {isJourneyCheckpoint && checkpointPassed && checkpointSaveState === "error" ? (
-                    <div className="mt-3 rounded-[1.2rem] border border-amber-200/20 bg-amber-300/10 px-4 py-3 text-sm text-amber-100">
-                      Your result is good, but the unlock has not been saved yet.
-                    </div>
-                  ) : null}
-                  {isJourneyCheckpoint && !checkpointPassed && checkpointMissedItems.length > 0 ? (
-                    <div className="mt-3 rounded-[1.2rem] border border-rose-200/20 bg-rose-300/10 px-4 py-4">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-rose-100/80">
-                        Review these first
-                      </p>
-                      <p className="mt-2 text-sm text-rose-50/92">
-                        Focus on {checkpointRecoveryWords.join(" · ")} before retrying the checkpoint.
-                      </p>
-                      {checkpointMissedMode ? (
-                        <p className="mt-2 text-sm text-rose-100/84">
-                          Best next step: {getModeLabel(checkpointMissedMode)} review.
-                        </p>
-                      ) : null}
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {checkpointRecoveryWords.map((word) => (
-                          <span
-                            key={word}
-                            className="rounded-full border border-rose-200/20 bg-white/5 px-3 py-1 text-[11px] font-semibold text-rose-50"
-                          >
-                            {word}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ) : null}
-                  <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
-                    <button
-                      type="button"
-                      onClick={restart}
-                      className="inline-flex min-w-[172px] justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-black text-white shadow-[0_14px_28px_rgba(47,103,238,0.24)] hover:opacity-90"
-                    >
-                      {isJourneyCheckpoint ? "Retry checkpoint" : "Practice 10 more"}
-                    </button>
-                    {isJourneyCheckpoint && !checkpointPassed && checkpointRecoveryHref ? (
-                      <Link
-                        href={`${checkpointRecoveryHref}&mode=${encodeURIComponent(reviewRecommendedMode)}`}
-                        onClick={() => {
-                          void trackUiMetric("checkpoint_recovery_clicked", {
-                            recommendedMode: reviewRecommendedMode,
-                            missedWords: checkpointRecoveryWords,
-                          });
-                        }}
-                        className="inline-flex min-w-[172px] justify-center rounded-full border border-amber-200/20 bg-amber-300/10 px-5 py-3 text-sm font-semibold text-amber-100 hover:bg-amber-300/15"
-                      >
-                        Review weak spots
-                      </Link>
-                    ) : null}
-                    {isJourneyCheckpoint && checkpointPassed && checkpointSaveState === "error" ? (
-                      <button
-                        type="button"
-                        onClick={() => setCheckpointSaveState("idle")}
-                        className="inline-flex min-w-[172px] justify-center rounded-full border border-amber-200/20 bg-amber-300/10 px-5 py-3 text-sm font-semibold text-amber-100 hover:bg-amber-300/15"
-                      >
-                        Retry save
-                      </button>
-                    ) : null}
-                    {isJourneyPractice && journeyReturnHref ? (
-                      <Link
-                        href={journeyReturnHref}
-                        className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-                      >
-                        {isJourneyCheckpoint && checkpointPassed && !checkpointNeedsSave
-                          ? "Continue journey"
-                          : explicitReturnLabel?.trim() || "Back to journey"}
-                      </Link>
-                    ) : isStoryPractice && storyReturnHref ? (
-                      <>
-                        <Link
-                          href={storyReturnHref}
-                          className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-                        >
-                          Back to story
-                        </Link>
-                        {storyNextHref ? (
-                          <Link
-                            href={storyNextHref}
-                            className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-                          >
-                            Continue to next story
-                          </Link>
-                        ) : null}
-                      </>
-                    ) : (
-                      <Link
-                        href="/favorites"
-                        className="inline-flex min-w-[172px] justify-center rounded-full border border-[var(--card-border)] bg-[var(--bg-content)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-                      >
-                        Review favorites
-                      </Link>
-                    )}
-                  </div>
-                </div>
+                    {/* One-shot diagonal shine sweep across the card on entry
+                        (iPhone result-card shine). */}
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-y-0 left-0 w-1/3"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent)",
+                        animation: "practice-result-shine 1200ms ease-out 200ms both",
+                      }}
+                    />
+                    <Confetti active={isPerfect} />
 
-                <style jsx global>{`
-                  @keyframes completion-pop {
-                    0% {
-                      opacity: 0;
-                      transform: translateY(8px) scale(0.5);
-                    }
-                    60% {
-                      opacity: 1;
-                      transform: translateY(-6px) scale(1.08);
-                    }
-                    100% {
-                      opacity: 0;
-                      transform: translateY(-16px) scale(0.95);
-                    }
-                  }
-                  @keyframes score-pop {
-                    0% {
-                      opacity: 0;
-                      transform: translateY(12px) scale(0.96);
-                    }
-                    100% {
-                      opacity: 1;
-                      transform: translateY(0) scale(1);
-                    }
-                  }
-                  @keyframes fade-in {
-                    0% {
-                      opacity: 0;
-                      transform: translateY(10px);
-                    }
-                    100% {
-                      opacity: 1;
-                      transform: translateY(0);
-                    }
-                  }
-                `}</style>
-              </div>
+                    {/* Corner chips */}
+                    <div className="flex w-full items-center justify-between">
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5">
+                        <Zap size={13} className="text-[#ffd25f]" fill="currentColor" />
+                        <span className="text-[13px] font-black text-white">+{xpTotal}</span>
+                        <span className="ml-0.5 text-[10px] font-extrabold uppercase tracking-wider text-white/60">XP</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5">
+                        <Flame size={13} className="text-[#fb923c]" />
+                        <span className="text-[13px] font-black text-white">x{maxStreak}</span>
+                        <span className="ml-0.5 text-[10px] font-extrabold uppercase tracking-wider text-white/60">Combo</span>
+                      </span>
+                    </div>
+
+                    {/* Score ring */}
+                    <div className="relative grid place-items-center" style={{ width: RING, height: RING }}>
+                      <svg width={RING} height={RING} className="-rotate-90">
+                        <circle cx={RING / 2} cy={RING / 2} r={R} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth={STROKE} />
+                        <circle
+                          cx={RING / 2}
+                          cy={RING / 2}
+                          r={R}
+                          fill="none"
+                          stroke={ringColor}
+                          strokeWidth={STROKE}
+                          strokeLinecap="round"
+                          strokeDasharray={CIRC}
+                          strokeDashoffset={dashTarget}
+                          style={{
+                            animation: "practice-ring-fill 1100ms cubic-bezier(0.22,1,0.36,1) both",
+                            ["--ring-circ" as string]: `${CIRC}`,
+                            ["--ring-offset" as string]: `${dashTarget}`,
+                          }}
+                        />
+                      </svg>
+                      <div className="absolute flex flex-col items-center">
+                        <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/55">Score</span>
+                        <span className="mt-1 text-[52px] font-black leading-none tracking-tight text-white">
+                          {score}
+                          <span className="text-[34px] text-white/40">/{total}</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Greeting + headline + subtext */}
+                    <div className="flex flex-col items-center gap-1 px-2 text-center">
+                      <span className="text-[12px] font-extrabold uppercase tracking-[0.22em] text-emerald-300">{greeting}</span>
+                      <h2 className="text-[22px] font-black leading-tight tracking-tight text-white">{headline}</h2>
+                      <p className="text-[13px] leading-5 text-white/60">{subtext}</p>
+                    </div>
+
+                    {/* Stat cards */}
+                    <div className="flex w-full gap-2.5">
+                      <div className="flex flex-1 items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5">
+                        <Target size={20} className="text-[#9fe8ff]" />
+                        <div>
+                          <p className="text-[20px] font-black leading-none text-white">{accuracyPct}%</p>
+                          <p className="mt-1 text-[11px] font-extrabold uppercase tracking-wider text-white/60">Accuracy</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-1 items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5">
+                        <Clock size={20} className="text-[#f8c15c]" />
+                        <div>
+                          <p className="text-[20px] font-black leading-none text-white">{durationLabel}</p>
+                          <p className="mt-1 text-[11px] font-extrabold uppercase tracking-wider text-white/60">Time</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Checkpoint recovery words (only on failed checkpoint) */}
+                    {isJourneyCheckpoint && !checkpointPassed && checkpointRecoveryWords.length > 0 ? (
+                      <div className="w-full rounded-2xl border border-rose-200/20 bg-rose-300/[0.08] px-4 py-3">
+                        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-rose-100/80">Review these first</p>
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                          {checkpointRecoveryWords.map((word) => (
+                            <span key={word} className="rounded-full border border-rose-200/20 bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-rose-50">
+                              {word}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {/* WHAT'S NEXT */}
+                    <div className="mt-auto w-full">
+                      <p className="mb-2.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white/50">What&rsquo;s next</p>
+                      <div className="flex gap-2.5">
+                        {actions.slice(0, 3).map((action) => {
+                          const Icon = action.icon;
+                          const cardClass = `flex flex-1 flex-col gap-1.5 rounded-2xl border px-3 py-3.5 text-left transition ${
+                            action.primary
+                              ? "border-[var(--color-gold)] bg-[var(--color-gold)] hover:brightness-105"
+                              : "border-white/10 bg-white/[0.04] hover:bg-white/[0.07]"
+                          }`;
+                          const iconWrapClass = `grid h-8 w-8 place-items-center rounded-[10px] ${
+                            action.primary ? "bg-black/15" : "bg-white/[0.06]"
+                          }`;
+                          const titleClass = `text-[15px] font-black tracking-tight ${action.primary ? "text-[#0a1424]" : "text-white"}`;
+                          const subClass = `text-[11px] font-bold ${action.primary ? "text-[#0a1424]/70" : "text-white/60"}`;
+                          const inner = (
+                            <>
+                              <span className={iconWrapClass}>
+                                <Icon size={16} className={action.primary ? "text-[#0a1424]" : "text-white/80"} />
+                              </span>
+                              <span className={titleClass}>{action.title}</span>
+                              <span className={subClass}>{action.subtitle}</span>
+                            </>
+                          );
+                          return action.href ? (
+                            <Link key={action.key} href={action.href} onClick={action.onClick} className={cardClass}>
+                              {inner}
+                            </Link>
+                          ) : (
+                            <button key={action.key} type="button" onClick={action.onClick} className={cardClass}>
+                              {inner}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      {isJourneyCheckpoint && checkpointSaveState !== "idle" ? (
+                        <p className="mt-3 text-center text-[12px] text-white/55">
+                          {checkpointSaveState === "saving"
+                            ? "Saving checkpoint…"
+                            : checkpointSaveState === "saved"
+                              ? "Checkpoint saved · next step unlocked"
+                              : "Checkpoint passed but not saved yet"}
+                        </p>
+                      ) : null}
+                    </div>
+                  </div>
+                );
+              })()
             ) : currentExercise ? (
-              <div className="relative flex flex-col overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md">
-                {/* Card iPhone-style: padding fijo, sin h-full ni flex-1
-                    en hijos. Las opciones tienen altura natural (60px+
-                    según contenido), no estiran a llenar viewport. */}
+              <div
+                key={exerciseIndex}
+                className="relative flex flex-col overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md"
+                style={{ animation: "practice-exercise-in 280ms cubic-bezier(0.22,1,0.36,1) both" }}
+              >
                 {activeModeTheme ? (
                   <>
                     <div
@@ -2118,231 +2269,156 @@ export default function PracticePage() {
                     />
                   </>
                 ) : null}
-                {/* En `meaning_in_context` el iPhone NO muestra prompt
-                    arriba: la palabra-objetivo en píldora azul es self-
-                    explanatory. En los otros modos sí ayuda. */}
-                {currentExercise.type !== "meaning_in_context" ? (
-                  <p className="mb-[clamp(0.35rem,0.9vh,0.6rem)] shrink-0 text-[clamp(1.15rem,2.4vw,1.8rem)] font-semibold leading-tight tracking-tight">
-                    {currentExercise.prompt}
-                  </p>
-                ) : null}
 
-                {currentExercise.type === "fill_blank" ? (
-                  <div className="flex flex-col gap-3">
-                    {renderContextBlock(
-                      currentExercise.sentence,
-                      currentExercise.audioClip,
-                      currentExercise.id
-                    )}
-                    <div className="grid gap-2.5 sm:grid-cols-2">
-                      {currentExercise.options.map((option) => {
-                        const isSelected = selectedOption === option;
-                        const isCorrect = revealed && option === currentExercise.answer;
-                        const isWrong = revealed && isSelected && option !== currentExercise.answer;
-                        return (
-                          <button
-                            key={option}
-                            type="button"
-                            onClick={() => chooseOption(option)}
-                            disabled={revealed}
-                            className={`${answerButtonBase} ${
-                              isCorrect
-                                ? "border-emerald-300 bg-emerald-300 text-slate-950"
-                                : isWrong
-                                  ? "border-rose-400 bg-rose-400 text-slate-950"
-                                  : isSelected
-                                    ? "border-blue-400 bg-blue-500/20"
-                                    : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
-                            }`}
-                          >
-                            {option}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ) : null}
-
-                {currentExercise.type === "meaning_in_context" ? (
-                  <div className="flex flex-col gap-6 pt-4">
-                    {/* Prompt centrado + palabra-objetivo huge con play
-                        circular a la derecha. Yellow underline debajo. */}
-                    <div className="flex flex-col items-center gap-2">
-                      <p className="text-[13px] font-semibold text-white/55">
-                        What does this word mean?
-                      </p>
-                      {(() => {
-                        const clip = currentExercise.audioClip;
-                        const isSpeaking = speakingClipId === currentExercise.id;
-                        return (
-                          <div className="flex items-center justify-center gap-3">
-                            <span className="text-[44px] font-black tracking-tight text-white leading-none">
-                              {currentExercise.word}
-                            </span>
-                            {clip ? (
-                              <button
-                                type="button"
-                                onClick={() => playTtsContextClip(currentExercise.id, clip)}
-                                aria-label={isSpeaking ? "Stop" : "Listen"}
-                                className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#1e40af] text-white hover:bg-[#1d4ed8]"
-                              >
-                                <Play size={13} fill="currentColor" />
-                              </button>
+                {/* Unified multiple-choice render (iPhone parity): a hero block
+                    whose content depends on the mode, followed by a 2×2 grid
+                    of option cards with a colored accent pill (A/B/C/D). One
+                    audio button - no TTS/STORY/HQ debug row. */}
+                {currentExercise.type !== "match_meaning"
+                  ? (() => {
+                      const ex = currentExercise;
+                      const isMeaning = ex.type === "meaning_in_context";
+                      const isContext = ex.type === "fill_blank" || ex.type === "natural_expression";
+                      const isListening = ex.type === "listen_choose";
+                      const audioActive =
+                        isListening
+                          ? speakingClipId === ex.id
+                          : isContextAudioActive(ex.id);
+                      const accentColors = ["#fbbf24", "#60a5fa", "#a78bfa", "#34d399"];
+                      return (
+                        <div className="flex flex-col gap-6">
+                          {/* ── Hero ── */}
+                          <div className="flex flex-col items-center gap-3 pt-1">
+                            {isListening ? (
+                              <div className="flex flex-col items-center gap-3 py-3">
+                                <button
+                                  type="button"
+                                  onClick={playListenPrompt}
+                                  aria-label={audioActive ? "Stop" : "Play"}
+                                  className="grid h-24 w-24 place-items-center rounded-full border-2 transition active:scale-95"
+                                  style={{
+                                    background: "rgba(82,160,214,0.20)",
+                                    borderColor: "rgba(159,232,255,0.32)",
+                                    boxShadow: "0 0 36px rgba(159,232,255,0.22)",
+                                  }}
+                                >
+                                  <Volume2 size={40} className="text-[#9fe8ff]" />
+                                </button>
+                                <span className="text-[12px] font-black uppercase tracking-[0.2em] text-white/70">
+                                  {audioActive ? "Playing" : "Tap to listen"}
+                                </span>
+                              </div>
+                            ) : isContext ? (
+                              <div className="flex w-full items-center justify-center gap-3">
+                                <p className="flex-1 text-center text-[clamp(1.15rem,2.4vw,1.5rem)] font-extrabold leading-[1.35] tracking-tight text-white">
+                                  {revealed
+                                    ? ex.sentence.replace(/_{3,}/g, ex.answer)
+                                    : ex.sentence}
+                                </p>
+                                {revealed && ex.audioClip ? (
+                                  <button
+                                    type="button"
+                                    onClick={() => playContextAudio(ex.id, ex.audioClip)}
+                                    aria-label={audioActive ? "Stop" : "Listen"}
+                                    className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full border transition"
+                                    style={{
+                                      background: "rgba(82,160,214,0.18)",
+                                      borderColor: "rgba(159,232,255,0.14)",
+                                    }}
+                                  >
+                                    <Volume2 size={18} className="text-[#9fe8ff]" />
+                                  </button>
+                                ) : null}
+                              </div>
+                            ) : isMeaning ? (
+                              <>
+                                <p className="text-[13px] font-semibold text-white/55">
+                                  What does this word mean?
+                                </p>
+                                <div className="flex w-full items-center justify-center gap-3">
+                                  <span className="text-[clamp(2.2rem,7vw,2.9rem)] font-black leading-none tracking-tight text-white">
+                                    {ex.word}
+                                  </span>
+                                  {ex.audioClip ? (
+                                    <button
+                                      type="button"
+                                      onClick={() => playContextAudio(ex.id, ex.audioClip)}
+                                      aria-label={audioActive ? "Stop" : "Listen"}
+                                      className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full border transition"
+                                      style={{
+                                        background: "rgba(82,160,214,0.18)",
+                                        borderColor: "rgba(159,232,255,0.14)",
+                                      }}
+                                    >
+                                      <Volume2 size={18} className="text-[#9fe8ff]" />
+                                    </button>
+                                  ) : null}
+                                </div>
+                                <span
+                                  aria-hidden
+                                  className="block rounded-full"
+                                  style={{ width: 64, height: 4, background: "#f8c15c" }}
+                                />
+                                {ex.sentence ? (
+                                  <div
+                                    className="mt-1 w-full rounded-[20px] px-4 py-4"
+                                    style={{ background: "rgba(10,28,58,0.72)" }}
+                                  >
+                                    <p className="text-center text-[15px] font-semibold leading-6 text-white/[0.78]">
+                                      {ex.sentence}
+                                    </p>
+                                  </div>
+                                ) : null}
+                              </>
                             ) : null}
                           </div>
-                        );
-                      })()}
-                      {/* Yellow underline corto */}
-                      <span
-                        aria-hidden
-                        className="block rounded-full"
-                        style={{
-                          width: 64,
-                          height: 4,
-                          background: "var(--color-gold)",
-                        }}
-                      />
-                    </div>
 
-                    {/* 2x2 grid con chip A/B/C/D + barra accent vertical
-                        izquierda. Colores fijos por posición:
-                        A=gold, B=sky, C=pink, D=green. */}
-                    <div className="grid grid-cols-2 gap-3">
-                      {currentExercise.options.map((option, idx) => {
-                        const isSelected = selectedOption === option;
-                        const isCorrect = revealed && option === currentExercise.answer;
-                        const isWrong = revealed && isSelected && option !== currentExercise.answer;
-                        const accentColors = ["#fcd34d", "#7dd3fc", "#f9a8d4", "#86efac"];
-                        const accent = accentColors[idx % accentColors.length];
-                        const letter = ["A", "B", "C", "D"][idx % 4];
-                        const stateBg = isCorrect
-                          ? "rgba(52, 211, 153, 0.16)"
-                          : isWrong
-                            ? "rgba(248, 113, 113, 0.16)"
-                            : isSelected
-                              ? "rgba(255, 255, 255, 0.05)"
-                              : "rgba(255, 255, 255, 0.025)";
-                        const stateBorder = isCorrect
-                          ? "rgba(52, 211, 153, 0.5)"
-                          : isWrong
-                            ? "rgba(248, 113, 113, 0.5)"
-                            : isSelected
-                              ? accent
-                              : "rgba(255, 255, 255, 0.1)";
-                        return (
-                          <button
-                            key={option}
-                            type="button"
-                            onClick={() => chooseOption(option)}
-                            disabled={revealed}
-                            className="relative flex min-h-[140px] flex-col items-start justify-start gap-3 overflow-hidden rounded-2xl border pl-5 pr-4 py-4 text-left text-[15px] font-bold leading-snug text-white transition-colors disabled:cursor-not-allowed"
-                            style={{
-                              background: stateBg,
-                              borderColor: stateBorder,
-                            }}
-                          >
-                            {/* Vertical accent bar a la izquierda */}
-                            <span
-                              aria-hidden
-                              className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full"
-                              style={{ background: accent }}
-                            />
-                            {/* Letter chip A/B/C/D arriba-izquierda */}
-                            <span
-                              aria-hidden
-                              className="inline-flex h-6 w-6 items-center justify-center rounded-md text-[11px] font-black"
-                              style={{
-                                background: `${accent}26`,
-                                color: accent,
-                                border: `1px solid ${accent}55`,
-                              }}
-                            >
-                              {letter}
-                            </span>
-                            <span className="text-[14.5px] leading-[1.35]">
-                              {option}
-                            </span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ) : null}
-
-                {currentExercise.type === "natural_expression" ? (
-                  <div className="flex flex-col gap-3">
-                    {renderContextBlock(
-                      currentExercise.sentence,
-                      currentExercise.audioClip,
-                      currentExercise.id
-                    )}
-                    <div className="grid gap-2.5 sm:grid-cols-2">
-                      {currentExercise.options.map((option) => {
-                        const isSelected = selectedOption === option;
-                        const isCorrect = revealed && option === currentExercise.answer;
-                        const isWrong = revealed && isSelected && option !== currentExercise.answer;
-                        return (
-                          <button
-                            key={option}
-                            type="button"
-                            onClick={() => chooseOption(option)}
-                            disabled={revealed}
-                            className={`${answerButtonBase} ${
-                              isCorrect
-                                ? "border-emerald-300 bg-emerald-300 text-slate-950"
+                          {/* ── 2×2 option grid ── */}
+                          <div className="grid grid-cols-2 gap-3.5">
+                            {ex.options.map((option, idx) => {
+                              const isSelected = selectedOption === option;
+                              const isCorrect = revealed && option === ex.answer;
+                              const isWrong = revealed && isSelected && option !== ex.answer;
+                              const accent = accentColors[idx % accentColors.length];
+                              const bg = isCorrect
+                                ? "rgba(110,231,183,0.18)"
                                 : isWrong
-                                  ? "border-rose-400 bg-rose-400 text-slate-950"
+                                  ? "rgba(251,113,133,0.18)"
                                   : isSelected
-                                    ? "border-blue-400 bg-blue-500/20"
-                                    : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
-                            }`}
-                          >
-                            {option}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ) : null}
-
-                {currentExercise.type === "listen_choose" ? (
-                  <div className="flex flex-col gap-3">
-                    <button
-                      type="button"
-                      onClick={playListenPrompt}
-                      className="mx-auto mb-4 inline-flex min-w-[124px] shrink-0 items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--foreground)] transition hover:bg-white/10"
-                    >
-                      <Volume2 size={14} />
-                      {speakingClipId === currentExercise.id ? "Stop" : "Play"}
-                    </button>
-                    <div className="grid gap-2.5 sm:grid-cols-2">
-                      {currentExercise.options.map((option) => {
-                        const isSelected = selectedOption === option;
-                        const isCorrect = revealed && option === currentExercise.answer;
-                        const isWrong = revealed && isSelected && option !== currentExercise.answer;
-                        return (
-                          <button
-                            key={option}
-                            type="button"
-                            onClick={() => chooseOption(option)}
-                            disabled={revealed}
-                            className={`${answerButtonBase} ${
-                              isCorrect
-                                ? "border-emerald-300 bg-emerald-300 text-slate-950"
+                                    ? "rgba(103,181,255,0.14)"
+                                    : "rgba(19,54,107,0.92)";
+                              const border = isCorrect
+                                ? "#6ee7b7"
                                 : isWrong
-                                  ? "border-rose-400 bg-rose-400 text-slate-950"
+                                  ? "#fb7185"
                                   : isSelected
-                                    ? "border-blue-400 bg-blue-500/20"
-                                    : "border-[var(--card-border)] bg-[var(--bg-content)] hover:bg-[var(--card-bg-hover)]"
-                            }`}
-                          >
-                            {option}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ) : null}
+                                    ? "#67b5ff"
+                                    : "rgba(97,146,201,0.26)";
+                              return (
+                                <button
+                                  key={option}
+                                  type="button"
+                                  onClick={() => chooseOption(option)}
+                                  disabled={revealed}
+                                  className="flex min-h-[120px] flex-col items-center justify-center gap-3 rounded-[22px] border-[1.5px] px-4 py-4 text-center transition disabled:cursor-not-allowed"
+                                  style={{ background: bg, borderColor: border }}
+                                >
+                                  <span
+                                    aria-hidden
+                                    className="block rounded-full"
+                                    style={{ width: 44, height: 10, background: accent }}
+                                  />
+                                  <span className="text-[16px] font-extrabold leading-[1.4] text-white/95">
+                                    {option}
+                                  </span>
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })()
+                  : null}
 
                 {currentExercise.type === "match_meaning" ? (
                   <div className="flex flex-col gap-3">
@@ -2488,13 +2564,7 @@ export default function PracticePage() {
                       : "bg-rose-400 text-slate-950 hover:bg-rose-300"
                   }`}
                 >
-                  {lastResult === "correct"
-                    ? exerciseIndex >= exercises.length - 1
-                      ? "Finish"
-                      : "Continue"
-                    : currentExercise.type === "match_meaning"
-                      ? "Continue"
-                      : `Continue — ${correctAnswerText}`}
+                  {exerciseIndex >= exercises.length - 1 ? "Finish" : "Next"}
                   <span aria-hidden>→</span>
                 </button>
               ) : (
@@ -2515,12 +2585,47 @@ export default function PracticePage() {
             </div>
           ) : null}
         </div>
+        {/* In-session confetti burst for a tier-5 combo (10-in-a-row),
+            mirroring the iPhone's comboBurst. */}
+        <Confetti active={comboBurst} />
         {showExitConfirm ? (
           <PracticeExitConfirm
             onKeepGoing={() => setShowExitConfirm(false)}
             onExit={closeSession}
           />
         ) : null}
+        <style jsx global>{`
+          @keyframes practice-exercise-in {
+            0% { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes practice-result-in {
+            0% { opacity: 0; transform: translateY(10px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+          }
+          @keyframes practice-ring-fill {
+            from { stroke-dashoffset: var(--ring-circ); }
+            to { stroke-dashoffset: var(--ring-offset); }
+          }
+          @keyframes combo-pop {
+            0% { opacity: 0; transform: translateY(6px) scale(0.7); }
+            18% { opacity: 1; transform: translateY(0) scale(1.12); }
+            32% { transform: translateY(0) scale(1); }
+            82% { opacity: 1; transform: translateY(0) scale(1); }
+            100% { opacity: 0; transform: translateY(-4px) scale(0.96); }
+          }
+          @keyframes combo-halo {
+            0% { opacity: 0; transform: scale(0.7); }
+            22% { transform: scale(1.25); }
+            82% { transform: scale(1.1); }
+            100% { opacity: 0; transform: scale(1); }
+          }
+          @keyframes practice-result-shine {
+            0% { transform: translateX(-130%) skewX(-18deg); opacity: 0; }
+            18% { opacity: 0.55; }
+            100% { transform: translateX(230%) skewX(-18deg); opacity: 0; }
+          }
+        `}</style>
       </div>
     );
   }
@@ -2566,7 +2671,7 @@ export default function PracticePage() {
       className="min-h-screen p-4 pb-24 text-[var(--foreground)] sm:p-6 sm:pb-24 -mx-1 -my-6 sm:mx-0 sm:my-0 bg-[var(--bg-content)]"
     >
       <div className="mx-auto w-full max-w-[480px]">
-      {/* ── iPhone-style HERO — visible on every viewport ── */}
+      {/* ── iPhone-style HERO - visible on every viewport ── */}
       <div>
         {/* Flag pill + title. Tapping the pill opens the LanguageSwitcher
             bottom sheet (same component used in MobileTabBar). */}

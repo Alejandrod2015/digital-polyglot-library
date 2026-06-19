@@ -287,6 +287,37 @@ function getDistractorWords(
     return candidateIsMultiword === targetIsMultiword;
   });
 
+  // Language guard: a distractor from a DIFFERENT language ("grab" among
+  // Spanish options) makes the answer obvious by elimination. `getLanguagePool`
+  // already narrows the pool, but it falls back to the full mixed pool when the
+  // target item has no `language` (journey/standalone stories can carry a null
+  // language), letting other-language favorites leak in. We resolve an
+  // effective target language (the item's own, else the pool's dominant one)
+  // and keep cross-language candidates as a LAST resort only, so we never drop
+  // below the 4 options createFillBlankExercise needs.
+  const targetLangKey =
+    normalizeKey(item.language) ||
+    (() => {
+      const counts = new Map<string, number>();
+      for (const candidate of pool) {
+        const key = normalizeKey(candidate.language);
+        if (key) counts.set(key, (counts.get(key) ?? 0) + 1);
+      }
+      let best: { key: string; count: number } | null = null;
+      for (const [key, count] of counts) {
+        if (!best || count > best.count) best = { key, count };
+      }
+      return best?.key ?? "";
+    })();
+  // Same-language OR unknown-language candidates pass; only a candidate with a
+  // KNOWN, different language is held back to the final fallback tier.
+  const langOk = (candidate: PracticeFavoriteItem) => {
+    if (!targetLangKey) return true;
+    const key = normalizeKey(candidate.language);
+    return !key || key === targetLangKey;
+  };
+  const byLang = (source: PracticeFavoriteItem[]) => source.filter(langOk);
+
   const picked: string[] = [];
   const seen = new Set<string>();
   const drainFrom = (source: PracticeFavoriteItem[]) => {
@@ -299,7 +330,12 @@ function getDistractorWords(
     }
   };
 
-  drainFrom(sameShapeAndType);
+  drainFrom(byLang(sameShapeAndType));
+  if (picked.length < max) drainFrom(byLang(sameShape));
+  if (picked.length < max) drainFrom(byLang(eligible));
+  // Last resort: allow other-language candidates only if same-language ones
+  // couldn't fill the 4 options. Keeps short pools functional.
+  if (picked.length < max) drainFrom(sameShapeAndType);
   if (picked.length < max) drainFrom(sameShape);
   if (picked.length < max) drainFrom(eligible);
 
@@ -358,7 +394,13 @@ function getSentenceWithBlank(
     // verb item failed to produce a fill_blank exercise.
     const stemLen = Math.max(3, word.length - 2);
     const stem = word.slice(0, stemLen);
-    pattern = new RegExp(`\\b${escapeRegExp(stem)}\\w*`, "i");
+    // Trailing chars must include accented letters / combining marks, NOT
+    // just ASCII `\w`. With `\w*` the match stopped at the first accented
+    // char, so "levantó" matched only "levant" and the blank rendered as
+    // "_____ó" — leaving the conjugation suffix visible gave the answer
+    // away (only the past-tense option fit). `[\p{L}\p{M}\d]*` (u flag)
+    // swallows the whole inflected surface form across all languages.
+    pattern = new RegExp(`\\b${escapeRegExp(stem)}[\\p{L}\\p{M}\\d]*`, "iu");
     if (!pattern.test(sentence)) return null;
     isStemFallback = true;
   }
