@@ -191,14 +191,14 @@ export default async function StoryOfTheDayPage() {
           className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-gold)] px-6 py-3 text-[14px] font-extrabold text-[#2a1a02] hover:brightness-105 shadow-[0_10px_24px_rgba(252,211,77,0.22)]"
         >
           <Play size={15} fill="currentColor" />
-          Read today&apos;s story
+          Start today&apos;s story
         </Link>
         <Link
           href="/plans"
           className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] px-6 py-3 text-[14px] font-bold text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
         >
           <Crown size={15} className="text-[var(--color-gold)]" />
-          Unlock all stories
+          Unlock every story
         </Link>
       </div>
 

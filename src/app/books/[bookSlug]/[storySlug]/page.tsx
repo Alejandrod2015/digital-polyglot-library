@@ -237,7 +237,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
         forceAllow={hasFullAccess}
         fallback={
           <div className="relative text-center text-[var(--muted)] py-16">
-            <p className="mb-4 text-xl text-[var(--foreground)]">Unlock full access to all stories.</p>
+            <p className="mb-4 text-xl text-[var(--foreground)]">Unlock every story and master the real language inside.</p>
             <div className="flex items-center justify-center gap-3">
               {!userId ? (
                 <a

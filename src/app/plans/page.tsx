@@ -11,6 +11,8 @@ import {
   GOOGLE_PLAY_PREMIUM_MONTHLY_PRODUCT_ID,
   STRIPE_PREMIUM_ANNUAL_PRICE_ID,
   STRIPE_PREMIUM_MONTHLY_PRICE_ID,
+  STRIPE_PREMIUM_MONTHLY_PRICE_FALLBACK,
+  STRIPE_PREMIUM_ANNUAL_PRICE_FALLBACK,
 } from '@domain/billingCatalog';
 
 const LEGAL_ACCEPTANCE_KEY = 'dp_checkout_legal_acceptance_v1';
@@ -33,6 +35,16 @@ function PlansInner() {
   const [billingNotice, setBillingNotice] = useState('');
   const [playService, setPlayService] = useState<DigitalGoodsService | null>(null);
   const [playPrices, setPlayPrices] = useState<PlayPriceMap>({});
+  const [stripePrices, setStripePrices] = useState<{
+    monthly: string | null;
+    annual: string | null;
+  }>({ monthly: null, annual: null });
+  const [entitlement, setEntitlement] = useState<{
+    plan: string;
+    source: string | null;
+    productId?: string | null;
+    hasEntitlement: boolean;
+  } | null>(null);
   const chargeDate = useMemo(() => {
     const d = new Date();
     d.setDate(d.getDate() + 14);
@@ -79,6 +91,31 @@ function PlansInner() {
     }
   }, [legalAccepted]);
 
+  // Live prices from Stripe (single source of truth); falls back to the
+  // labels in billingCatalog if the lookup fails.
+  useEffect(() => {
+    if (billingMode !== 'stripe') return;
+    let cancelled = false;
+    void (async () => {
+      try {
+        const res = await fetch('/api/stripe/prices');
+        if (!res.ok) return;
+        const data: { monthly: string | null; annual: string | null } = await res.json();
+        if (!cancelled) {
+          setStripePrices({
+            monthly: data.monthly ?? null,
+            annual: data.annual ?? null,
+          });
+        }
+      } catch {
+        // keep fallback labels
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [billingMode]);
+
   useEffect(() => {
     let cancelled = false;
 
@@ -124,14 +161,27 @@ function PlansInner() {
     };
   }, []);
 
+  // Paid/creator accounts are NOT redirected away from /plans anymore. They see
+  // a status panel (with a monthly→annual nudge when relevant) and can still
+  // reveal the full plans via "See all plans". We fetch the entitlement to know
+  // the billing interval (monthly vs annual) and offer subscription management.
   useEffect(() => {
-    if (!isLoaded) return;
-    if (!isSignedIn) return;
-
-    if (plan === 'premium' || plan === 'polyglot' || plan === 'owner') {
-      router.replace('/');
-    }
-  }, [isLoaded, isSignedIn, plan, router]);
+    if (!isLoaded || !isSignedIn) return;
+    let cancelled = false;
+    void (async () => {
+      try {
+        const res = await fetch('/api/billing/entitlement');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!cancelled) setEntitlement(data);
+      } catch {
+        // keep null; status panel falls back to a generic message
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoaded, isSignedIn]);
 
   const goToStripeCheckout = async (priceId: string) => {
     try {
@@ -354,11 +404,31 @@ function PlansInner() {
   const monthlyPriceLabel =
     billingMode === 'google_play'
       ? playPrices[GOOGLE_PLAY_PREMIUM_MONTHLY_PRODUCT_ID] ?? 'Google Play price'
-      : '€14.99';
+      : stripePrices.monthly ?? STRIPE_PREMIUM_MONTHLY_PRICE_FALLBACK;
   const annualPriceLabel =
     billingMode === 'google_play'
       ? playPrices[GOOGLE_PLAY_PREMIUM_ANNUAL_PRODUCT_ID] ?? 'Google Play price'
-      : '€149';
+      : stripePrices.annual ?? STRIPE_PREMIUM_ANNUAL_PRICE_FALLBACK;
+  // Launch promo (plan B): web/Stripe only. Activated by NEXT_PUBLIC_LAUNCH_ANNUAL_PRICE
+  // (e.g. "€89"); must be set together with STRIPE_LAUNCH_COUPON_ID on the server.
+  const launchAnnualPrice = process.env.NEXT_PUBLIC_LAUNCH_ANNUAL_PRICE?.trim();
+  const annualPromoActive = billingMode === 'stripe' && !!launchAnnualPrice;
+  const annualDisplayPrice = annualPromoActive ? (launchAnnualPrice as string) : annualPriceLabel;
+  const annualStrike = annualPromoActive ? annualPriceLabel : undefined;
+  const annualUnit = annualPromoActive ? 'first year' : '/year';
+  const annualFooter =
+    billingMode === 'google_play'
+      ? 'Pricing via Google Play.'
+      : annualPromoActive
+        ? `Then ${annualPriceLabel}/year. Cancel anytime.`
+        : `Then ${annualPriceLabel}/year.`;
+  const annualFeatures = [
+    'Authentic language in every story',
+    'Audio for every story',
+    'Offline access',
+    'Personalized recommendations',
+    annualPromoActive ? 'Save €60 your first year' : 'Save 17% vs monthly',
+  ];
   const faqs = [
     {
       question: 'When will I be charged?',
@@ -381,6 +451,78 @@ function PlansInner() {
     },
   ] as const;
 
+  const planIsPaid =
+    isSignedIn && (plan === 'premium' || plan === 'polyglot' || plan === 'owner');
+  const subProductId = entitlement?.productId ?? null;
+  const subInterval: 'monthly' | 'annual' | null = !subProductId
+    ? null
+    : subProductId === STRIPE_PREMIUM_ANNUAL_PRICE_ID || subProductId.includes('annual')
+      ? 'annual'
+      : subProductId === STRIPE_PREMIUM_MONTHLY_PRICE_ID || subProductId.includes('monthly')
+        ? 'monthly'
+        : null;
+  const hasStripeSub = !!entitlement?.hasEntitlement && entitlement.source === 'stripe';
+  const hasPlaySub = !!entitlement?.hasEntitlement && entitlement.source === 'google_play';
+
+  const openBillingPortal = async () => {
+    if (hasPlaySub) {
+      window.open('https://play.google.com/store/account/subscriptions', '_blank');
+      return;
+    }
+    try {
+      setLoading('portal');
+      const res = await fetch('/api/stripe/portal', { method: 'POST' });
+      const data = await res.json();
+      if (data?.url) window.location.href = data.url as string;
+    } catch {
+      // noop
+    } finally {
+      setLoading(null);
+    }
+  };
+
+  // A real paying subscriber (Stripe/Play). Polyglot/owner are NOT managed:
+  // they keep the normal cards (only the owner has those tiers).
+  const isManaged = hasStripeSub || hasPlaySub;
+  const managedCta = (cardInterval: 'free' | 'monthly' | 'annual') => {
+    const isCurrent =
+      (cardInterval === 'annual' && subInterval === 'annual') ||
+      (cardInterval === 'monthly' && subInterval === 'monthly');
+    if (isCurrent) {
+      return (
+        <button
+          disabled
+          className="w-full rounded-full border px-4 py-3 text-[13px] font-extrabold cursor-default"
+          style={{
+            borderColor: 'var(--card-border)',
+            background: 'var(--chip-bg)',
+            color: 'var(--muted)',
+          }}
+        >
+          Current plan
+        </button>
+      );
+    }
+    return (
+      <button
+        onClick={openBillingPortal}
+        disabled={loading === 'portal'}
+        className="w-full rounded-full border px-4 py-3 text-[13px] font-extrabold transition-colors hover:bg-[var(--card-bg-hover)] disabled:opacity-60"
+        style={{
+          borderColor: 'var(--card-border)',
+          background: 'var(--card-bg)',
+          color: 'var(--foreground)',
+        }}
+      >
+        {loading === 'portal'
+          ? 'Opening…'
+          : cardInterval === 'free'
+            ? 'Cancel subscription'
+            : 'Manage subscription'}
+      </button>
+    );
+  };
+
   return (
     <div
       className="mx-auto px-4 py-10 sm:px-6 sm:py-12 text-[var(--foreground)]"
@@ -389,12 +531,23 @@ function PlansInner() {
       {/* ── Hero corto. Sin eyebrow ni billing card lateral. ── */}
       <header className="mb-8 text-center sm:mb-10">
         <h1 className="text-[28px] sm:text-[36px] font-black tracking-tight leading-tight">
-          Upgrade your learning
+          Learn the language people really speak
         </h1>
         <p className="mt-2 text-[14px] sm:text-[15px] text-[var(--muted)]">
           14-day free trial · cancel anytime.
         </p>
       </header>
+
+      {planIsPaid && !isManaged ? (
+        <PlanStatusBanner
+          plan={plan}
+          interval={subInterval}
+          manageable={hasStripeSub || hasPlaySub}
+          source={entitlement?.source ?? null}
+          loading={loading === 'portal'}
+          onManage={openBillingPortal}
+        />
+      ) : null}
 
       {/* ── 3 plan cards ── */}
       <section className="grid gap-4 sm:grid-cols-3">
@@ -409,7 +562,9 @@ function PlansInner() {
             'Lightweight library',
           ]}
           cta={
-            isSignedIn ? (
+            isManaged ? (
+              managedCta('free')
+            ) : isSignedIn ? (
               <button
                 disabled
                 className="w-full rounded-full border px-4 py-3 text-[13px] font-extrabold cursor-default"
@@ -440,17 +595,16 @@ function PlansInner() {
         {/* Premium Annual — destacado */}
         <PlanCard
           eyebrow="Annual"
-          price={annualPriceLabel}
-          unit="/year"
+          price={annualDisplayPrice}
+          strikePrice={annualStrike}
+          unit={annualUnit}
           highlighted
-          badge="BEST VALUE"
-          features={[
-            'Full library and audio',
-            'Offline access',
-            'Personalized recommendations',
-            'Save 17% vs monthly',
-          ]}
+          badge={annualPromoActive ? 'LAUNCH OFFER' : 'BEST VALUE'}
+          features={annualFeatures}
           cta={
+            isManaged ? (
+              managedCta('annual')
+            ) : (
             <button
               onClick={() => handleSubscribe(annualBillingId)}
               disabled={loading === annualBillingId}
@@ -463,12 +617,9 @@ function PlansInner() {
                   ? 'Subscribe on Play'
                   : 'Start free trial'}
             </button>
+            )
           }
-          footer={
-            billingMode === 'google_play'
-              ? 'Pricing via Google Play.'
-              : `Then ${annualPriceLabel}/year.`
-          }
+          footer={annualFooter}
         />
 
         {/* Premium Monthly */}
@@ -477,12 +628,16 @@ function PlansInner() {
           price={monthlyPriceLabel}
           unit="/month"
           features={[
-            'Full library and audio',
+            'Authentic language in every story',
+            'Audio for every story',
             'Offline access',
             'Personalized recommendations',
             'Cancel anytime',
           ]}
           cta={
+            isManaged ? (
+              managedCta('monthly')
+            ) : (
             <button
               onClick={() => handleSubscribe(monthlyBillingId)}
               disabled={loading === monthlyBillingId}
@@ -499,6 +654,7 @@ function PlansInner() {
                   ? 'Subscribe on Play'
                   : 'Start free trial'}
             </button>
+            )
           }
           footer={
             billingMode === 'google_play'
@@ -566,6 +722,81 @@ function PlansInner() {
 
 // ─────────────── Sub-components ───────────────
 
+function PlanStatusBanner({
+  plan,
+  interval,
+  manageable,
+  source,
+  loading,
+  onManage,
+}: {
+  plan: Plan;
+  interval: 'monthly' | 'annual' | null;
+  manageable: boolean;
+  source: string | null;
+  loading: boolean;
+  onManage: () => void;
+}) {
+  const planLabel =
+    plan === 'polyglot' ? 'Creator' : plan === 'owner' ? 'Owner' : 'Premium';
+  const intervalLabel =
+    interval === 'annual' ? 'Annual' : interval === 'monthly' ? 'Monthly' : null;
+  const showAnnualNudge = plan === 'premium' && interval === 'monthly' && manageable;
+
+  return (
+    <div
+      className="mb-6 flex flex-col items-center justify-between gap-3 rounded-2xl border px-5 py-3.5 text-center sm:flex-row sm:text-left"
+      style={{
+        borderColor: 'var(--color-gold)',
+        background:
+          'linear-gradient(180deg, rgba(252,211,77,0.08), var(--card-bg) 60%)',
+      }}
+    >
+      <div>
+        <p className="text-[13px] font-extrabold">
+          You&apos;re on {planLabel}
+          {intervalLabel ? ` · ${intervalLabel}` : ''} — full access.
+        </p>
+        {showAnnualNudge ? (
+          <p className="mt-0.5 text-[12px] text-[var(--muted)]">
+            Switch to Annual and pay once a year instead of every month.
+          </p>
+        ) : null}
+      </div>
+      <div className="flex shrink-0 items-center gap-2">
+        {showAnnualNudge ? (
+          <button
+            onClick={onManage}
+            disabled={loading}
+            className="rounded-full px-4 py-2 text-[12px] font-extrabold transition hover:brightness-105 disabled:opacity-60"
+            style={{ background: 'var(--color-gold)', color: '#2a1a02' }}
+          >
+            {loading ? 'Opening…' : 'Switch to Annual'}
+          </button>
+        ) : null}
+        {manageable ? (
+          <button
+            onClick={onManage}
+            disabled={loading}
+            className="rounded-full border px-4 py-2 text-[12px] font-extrabold transition-colors hover:bg-[var(--card-bg-hover)] disabled:opacity-60"
+            style={{
+              borderColor: 'var(--card-border)',
+              background: 'var(--card-bg)',
+              color: 'var(--foreground)',
+            }}
+          >
+            {loading
+              ? 'Opening…'
+              : source === 'google_play'
+                ? 'Manage in Google Play'
+                : 'Manage'}
+          </button>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
 type PlanCardProps = {
   eyebrow: string;
   price: string;
@@ -575,6 +806,7 @@ type PlanCardProps = {
   footer?: string;
   highlighted?: boolean;
   badge?: string;
+  strikePrice?: string;
 };
 
 function PlanCard({
@@ -586,6 +818,7 @@ function PlanCard({
   footer,
   highlighted,
   badge,
+  strikePrice,
 }: PlanCardProps) {
   return (
     <article
@@ -615,6 +848,11 @@ function PlanCard({
         {eyebrow}
       </p>
       <div className="mt-2 flex items-baseline gap-1.5">
+        {strikePrice ? (
+          <span className="text-[18px] font-bold text-[var(--muted)] line-through">
+            {strikePrice}
+          </span>
+        ) : null}
         <span className="text-[32px] font-black tracking-tight">{price}</span>
         <span className="text-[13px] font-bold text-[var(--muted)]">{unit}</span>
       </div>

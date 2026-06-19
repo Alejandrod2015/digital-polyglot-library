@@ -86,7 +86,7 @@ export default function ReaderClient({ book, userPlan = 'free' }: { book: Book; 
         alert(
           effectiveUserPlan === 'free'
             ? "You've reached the limit of 10 free stories."
-            : "You've read your daily story as a Basic user."
+            : "You've finished your daily story."
         );
       } else {
         addStoryToHistory(storyId);
@@ -122,10 +122,10 @@ useEffect(() => {
         <h2 className="text-2xl font-bold">
           {effectiveUserPlan === 'free'
             ? "You've reached the limit of 10 free stories."
-            : "You've read your daily story as a Basic user."}
+            : "You've finished your daily story."}
         </h2>
         <p className="text-foreground">
-          Upgrade your plan to continue enjoying full stories and audio.
+          Upgrade to keep learning real language in every story, with audio.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           <Link

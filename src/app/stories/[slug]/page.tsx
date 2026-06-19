@@ -480,7 +480,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
         fallback={
           <div className="relative z-20 -mt-10 pt-4 pb-10 flex flex-col items-center text-center">
             <p className="text-[var(--foreground)] text-xl sm:text-xl mb-3">
-              Unlock full access to all stories.
+              Unlock every story and master the real language inside.
             </p>
             <div className="flex items-center gap-3">
               {!userId ? (

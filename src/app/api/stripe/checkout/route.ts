@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
+import { STRIPE_PREMIUM_ANNUAL_PRICE_ID } from "@domain/billingCatalog";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
@@ -30,7 +31,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid priceId" }, { status: 400 });
     }
 
-    const session = await stripe.checkout.sessions.create({
+    const launchCoupon = process.env.STRIPE_LAUNCH_COUPON_ID?.trim();
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
       mode: "subscription",
       payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
@@ -45,7 +47,16 @@ export async function POST(req: Request) {
       },
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success`,
       cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/plans`,
-    });
+    };
+
+    // Launch promo (plan B): first-year discount applied ONLY to the annual plan.
+    // Inert until STRIPE_LAUNCH_COUPON_ID is set. Coupon must be: amount_off €60,00
+    // (6000), currency eur, duration "once" → first invoice €89, renews at €149.
+    if (launchCoupon && priceId === STRIPE_PREMIUM_ANNUAL_PRICE_ID) {
+      sessionParams.discounts = [{ coupon: launchCoupon }];
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams);
 
     // Internal business events for funnel visibility
     await prisma.userMetric.createMany({

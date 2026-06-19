@@ -14,6 +14,12 @@ export const GOOGLE_PLAY_PREMIUM_ANNUAL_PRODUCT_ID =
   process.env.NEXT_PUBLIC_GOOGLE_PLAY_PREMIUM_ANNUAL_PRODUCT_ID?.trim() ||
   "premium_annual";
 
+// Fallback display labels — used only if the live Stripe lookup fails.
+// Runtime source of truth is GET /api/stripe/prices (reads the price objects
+// above). Keep these roughly in sync with Stripe as a safety net.
+export const STRIPE_PREMIUM_MONTHLY_PRICE_FALLBACK = "€14.99";
+export const STRIPE_PREMIUM_ANNUAL_PRICE_FALLBACK = "€149";
+
 export function getGooglePlayPremiumProductIds() {
   return [
     GOOGLE_PLAY_PREMIUM_MONTHLY_PRODUCT_ID,
