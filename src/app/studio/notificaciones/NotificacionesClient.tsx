@@ -441,9 +441,12 @@ function CampaignsPanel({ types }: { types: NotificationType[] }) {
       });
       const data = await res.json().catch(() => null);
       if (!res.ok) throw new Error(data?.error || "Error");
+      const reason = Array.isArray(data.results)
+        ? data.results.find((r: { ok: boolean; reason?: string }) => !r.ok && r.reason)?.reason
+        : undefined;
       setTestMsg(
         `Enviado a tu dispositivo: ${data.delivered}/${data.deviceCount} entregada(s)` +
-          (data.failed ? `, ${data.failed} fallida(s).` : "."),
+          (data.failed ? `, ${data.failed} fallida(s)${reason ? ` (${reason})` : ""}.` : "."),
       );
     } catch (e) {
       setError(e instanceof Error ? e.message : "Error");

@@ -100,15 +100,51 @@ export async function sendApnsPush(
   if (!config) throw new Error("APNs is not configured");
   if (tokens.length === 0) return [];
 
-  const host = config.production
-    ? "https://api.push.apple.com"
-    : "https://api.sandbox.push.apple.com";
   const jwt = buildProviderJwt(config, Date.now());
   const bodyJson = JSON.stringify({
     aps: { alert: { title: payload.title, body: payload.body }, sound: "default" },
     ...(payload.data ?? {}),
   });
 
+  const PROD_HOST = "https://api.push.apple.com";
+  const SANDBOX_HOST = "https://api.sandbox.push.apple.com";
+  const primary = config.production ? PROD_HOST : SANDBOX_HOST;
+  const secondary = config.production ? SANDBOX_HOST : PROD_HOST;
+
+  let results = await sendBatch(primary, tokens, jwt, config, bodyJson);
+
+  // A locally-signed (development) build registers a SANDBOX token even
+  // when built Release, while TestFlight/App Store builds register
+  // PRODUCTION tokens — and the token itself doesn't reveal which. So if a
+  // token is rejected as BadDeviceToken on the primary host, retry it on
+  // the other environment. One deploy then serves both, without flipping
+  // APNS_PRODUCTION by hand.
+  const mismatched = results.filter(
+    (r) => !r.ok && (r.reason === "BadDeviceToken" || r.status === 400),
+  );
+  if (mismatched.length > 0) {
+    const retried = await sendBatch(
+      secondary,
+      mismatched.map((r) => r.token),
+      jwt,
+      config,
+      bodyJson,
+    );
+    const byToken = new Map(retried.map((r) => [r.token, r]));
+    results = results.map((r) => byToken.get(r.token) ?? r);
+  }
+
+  return results;
+}
+
+async function sendBatch(
+  host: string,
+  tokens: string[],
+  jwt: string,
+  config: ApnsConfig,
+  bodyJson: string,
+): Promise<ApnsSendResult[]> {
+  if (tokens.length === 0) return [];
   const client = http2.connect(host);
   const results: ApnsSendResult[] = [];
 
@@ -125,8 +161,7 @@ export async function sendApnsPush(
     async function worker(): Promise<void> {
       while (index < tokens.length) {
         const token = tokens[index++];
-        const result = await sendOne(client, token, jwt, config!, bodyJson);
-        results.push(result);
+        results.push(await sendOne(client, token, jwt, config, bodyJson));
       }
     }
 
