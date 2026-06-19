@@ -2254,7 +2254,7 @@ export default function PracticePage() {
             ) : currentExercise ? (
               <div
                 key={exerciseIndex}
-                className="relative flex flex-col overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md"
+                className="relative flex min-h-full flex-col overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md"
                 style={{ animation: "practice-exercise-in 280ms cubic-bezier(0.22,1,0.36,1) both" }}
               >
                 {activeModeTheme ? (
@@ -2286,7 +2286,7 @@ export default function PracticePage() {
                           : isContextAudioActive(ex.id);
                       const accentColors = ["#fbbf24", "#60a5fa", "#a78bfa", "#34d399"];
                       return (
-                        <div className="flex flex-col gap-6">
+                        <div className="flex min-h-0 flex-1 flex-col gap-6">
                           {/* ── Hero ── */}
                           <div className="flex flex-col items-center gap-3 pt-1">
                             {isListening ? (
@@ -2374,7 +2374,7 @@ export default function PracticePage() {
                           </div>
 
                           {/* ── 2×2 option grid ── */}
-                          <div className="grid grid-cols-2 gap-3.5">
+                          <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-3.5">
                             {ex.options.map((option, idx) => {
                               const isSelected = selectedOption === option;
                               const isCorrect = revealed && option === ex.answer;
@@ -2421,7 +2421,7 @@ export default function PracticePage() {
                   : null}
 
                 {currentExercise.type === "match_meaning" ? (
-                  <div className="flex flex-col gap-3">
+                  <div className="flex min-h-0 flex-1 flex-col gap-3">
                     <div className="mb-[clamp(0.2rem,0.6vh,0.45rem)] grid shrink-0 grid-cols-2 gap-[clamp(0.35rem,0.7vw,0.55rem)]">
                       <p className="px-1 text-center text-[clamp(0.68rem,1.1vw,0.8rem)] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
                         Words
