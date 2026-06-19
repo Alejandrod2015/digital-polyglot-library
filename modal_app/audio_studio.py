@@ -533,3 +533,224 @@ def align(payload: dict):
             "audioDurationSec": duration,
             "tokens": timings,
         }
+
+
+# Crossfade applied at each splice seam (matches CROSSFADE_SEC in the
+# Next route preview-segment/route.ts so manual splices sound like the
+# server-side ones).
+SPLICE_CROSSFADE_SEC = 0.2
+
+
+def _ffprobe_duration(path: str) -> float:
+    probe = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", path],
+        capture_output=True, check=False, text=True,
+    )
+    if probe.returncode != 0:
+        raise RuntimeError(f"ffprobe failed: {probe.stderr[-200:]}")
+    return float(probe.stdout.strip())
+
+
+@app.function(
+    image=image,
+    secrets=[
+        modal.Secret.from_name("polyglot-r2"),
+        modal.Secret.from_name("polyglot-audio-studio-token"),
+    ],
+    timeout=180,
+    cpu=2,
+    memory=2048,
+)
+@modal.fastapi_endpoint(method="POST", docs=False)
+def splice_upload(payload: dict):
+    """Replace the [startSec, endSec] span of a master MP3 with an
+    operator-supplied fragment, crossfading both seams, and upload the
+    result to R2. Used by the Studio audio editor's "upload fragment"
+    flow so editors can fix a single tramo on production (Vercel has no
+    ffmpeg, so the splice can't run there).
+
+    Auth: payload must include `_token` matching STUDIO_AUDIO_TOKEN.
+
+    Body:
+      {
+        "_token": str,
+        "audioUrl": str,          # public URL of the current master mp3
+        "segmentBase64": str,     # the replacement fragment, mp3 bytes b64
+        "startSec": float,        # span start in the master
+        "endSec": float,          # span end in the master
+        "filename": str,          # R2 object basename (".mp3" optional)
+      }
+
+    Response: { "url": str, "filename": str, "bytes": int }
+    """
+    import base64
+    import urllib.request
+    from fastapi import HTTPException
+
+    expected = os.environ.get("STUDIO_AUDIO_TOKEN", "")
+    presented = (payload.get("_token") or "").strip()
+    if not expected or not hmac.compare_digest(expected, presented):
+        raise HTTPException(status_code=401, detail="Unauthorized")
+
+    audio_url = (payload.get("audioUrl") or "").strip()
+    seg_b64 = (payload.get("segmentBase64") or "").strip()
+    filename = (payload.get("filename") or "").strip()
+    try:
+        start_sec = float(payload.get("startSec"))
+        end_sec = float(payload.get("endSec"))
+    except (TypeError, ValueError):
+        raise HTTPException(status_code=400, detail="startSec/endSec must be numbers")
+
+    if not audio_url:
+        raise HTTPException(status_code=400, detail="Missing audioUrl")
+    if not seg_b64:
+        raise HTTPException(status_code=400, detail="Missing segmentBase64")
+    if not filename:
+        raise HTTPException(status_code=400, detail="Missing filename")
+    if end_sec <= start_sec:
+        raise HTTPException(status_code=400, detail="endSec must be greater than startSec")
+
+    try:
+        seg_bytes = base64.b64decode(seg_b64)
+    except Exception:
+        raise HTTPException(status_code=400, detail="segmentBase64 is not valid base64")
+    if len(seg_bytes) < 1024:
+        raise HTTPException(status_code=400, detail="Fragment audio is empty or corrupt")
+
+    # crossfadeSec controls the seam: default = SPLICE_CROSSFADE_SEC (smooth,
+    # used by the legacy time-splice upload). The section editor passes 0 for
+    # a HARD cut, so the result is bit-faithful to the local spliceInPlace and
+    # the caller can compute exact per-fragment offsets from segDurationSec.
+    xfade_raw = payload.get("crossfadeSec")
+    try:
+        xfade = float(xfade_raw) if xfade_raw is not None else SPLICE_CROSSFADE_SEC
+    except (TypeError, ValueError):
+        xfade = SPLICE_CROSSFADE_SEC
+    hard_cut = xfade <= 0
+
+    with tempfile.TemporaryDirectory() as tmp_str:
+        tmp = Path(tmp_str)
+        master_path = tmp / "master.mp3"
+        seg_path = tmp / "seg.mp3"
+        out_path = tmp / "out.mp3"
+
+        try:
+            req = urllib.request.Request(audio_url, headers={"User-Agent": "polyglot-splice/1"})
+            with urllib.request.urlopen(req) as resp:
+                if resp.status != 200:
+                    raise HTTPException(status_code=502, detail=f"Master download failed: {resp.status}")
+                master_path.write_bytes(resp.read())
+        except HTTPException:
+            raise
+        except Exception as e:
+            raise HTTPException(status_code=502, detail=f"Master download error: {e}")
+
+        seg_path.write_bytes(seg_bytes)
+
+        master_dur = _ffprobe_duration(str(master_path))
+        seg_dur = _ffprobe_duration(str(seg_path))
+
+        if start_sec >= master_dur:
+            raise HTTPException(
+                status_code=400,
+                detail=f"startSec ({start_sec:.2f}s) exceeds master duration ({master_dur:.2f}s)",
+            )
+        # The last fragment's endSec can sit at (or just past) the master end;
+        # clamp so it's treated as "no after" instead of erroring.
+        end_sec = min(end_sec, master_dur)
+
+        # Edges: when start≈0 there is no "before" (title replacement);
+        # when end≈duration there is no "after". For a crossfade each retained
+        # seam needs a crossfade's worth of fragment audio; a hard cut only
+        # needs the boundaries to sit inside the inter-section silence.
+        norm = "aformat=channel_layouts=stereo:sample_rates=44100:sample_fmts=fltp"
+        edge = 0.02 if hard_cut else xfade
+        has_before = start_sec > edge
+        has_after = end_sec < master_dur - edge
+        seams = (1 if has_before else 0) + (1 if has_after else 0)
+        min_seg = 0.02 if hard_cut else (xfade * seams + 0.02)
+        if seg_dur < min_seg:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Fragment too short ({seg_dur:.2f}s); need at least {min_seg:.2f}s to splice",
+            )
+
+        # Optional segment pre-conditioning (regenerate flow): match the
+        # master's narration tempo + loudness so the fresh TTS segment
+        # doesn't sound faster/louder than the surrounding audio. Manual
+        # uploads pass neither (already mastered).
+        seg_pre = ""
+        seg_tempo = payload.get("segmentTempo")
+        try:
+            seg_tempo = float(seg_tempo) if seg_tempo is not None else None
+        except (TypeError, ValueError):
+            seg_tempo = None
+        if seg_tempo and seg_tempo != 1:
+            seg_pre += f"atempo={seg_tempo},"
+        if payload.get("segmentLoudnorm"):
+            seg_pre += "loudnorm=I=-16:LRA=11:TP=-1.5,"
+
+        parts = []
+        if has_before:
+            parts.append(f"[0:a]atrim=0:{start_sec:.3f},asetpts=PTS-STARTPTS,{norm}[before]")
+        if has_after:
+            parts.append(f"[0:a]atrim={end_sec:.3f},asetpts=PTS-STARTPTS,{norm}[after]")
+        parts.append(f"[1:a]{seg_pre}{norm}[seg]")
+        if hard_cut:
+            # Hard concat (no crossfade): boundaries stay exact, so the caller
+            # can shift later fragments by (segDur - oldSpan) with no drift.
+            order = []
+            if has_before:
+                order.append("[before]")
+            order.append("[seg]")
+            if has_after:
+                order.append("[after]")
+            if len(order) > 1:
+                parts.append(f"{''.join(order)}concat=n={len(order)}:v=0:a=1[out]")
+                out_label = "[out]"
+            else:
+                out_label = "[seg]"
+        elif has_before and has_after:
+            parts.append(f"[before][seg]acrossfade=d={xfade}:c1=tri:c2=tri[mid]")
+            parts.append(f"[mid][after]acrossfade=d={xfade}:c1=tri:c2=tri[out]")
+            out_label = "[out]"
+        elif has_before:
+            parts.append(f"[before][seg]acrossfade=d={xfade}:c1=tri:c2=tri[out]")
+            out_label = "[out]"
+        elif has_after:
+            parts.append(f"[seg][after]acrossfade=d={xfade}:c1=tri:c2=tri[out]")
+            out_label = "[out]"
+        else:
+            out_label = "[seg]"
+        filter_complex = ";".join(parts)
+
+        ff = subprocess.run(
+            ["ffmpeg", "-y", "-loglevel", "error",
+             "-i", str(master_path), "-i", str(seg_path),
+             "-filter_complex", filter_complex,
+             "-map", out_label, "-codec:a", "libmp3lame", "-b:a", "128k", str(out_path)],
+            capture_output=True, check=False,
+        )
+        if ff.returncode != 0 or not out_path.exists():
+            raise HTTPException(status_code=500, detail=f"ffmpeg splice failed: {ff.stderr.decode()[-300:]}")
+
+        out_bytes = out_path.read_bytes()
+        new_dur = _ffprobe_duration(str(out_path))
+
+    safe_name = filename if filename.endswith(".mp3") else f"{filename}.mp3"
+    safe_name = safe_name.replace("/", "_")
+    key = f"media/generated/audio/{safe_name}"
+    public_url = _r2_upload(out_bytes, key, "audio/mpeg")
+
+    # segDurationSec lets the section editor recompute per-fragment offsets
+    # without ffprobe (Vercel has none); masterDurationSec/newDurationSec are
+    # returned for completeness.
+    return {
+        "url": public_url,
+        "filename": safe_name,
+        "bytes": len(out_bytes),
+        "segDurationSec": round(seg_dur, 3),
+        "masterDurationSec": round(master_dur, 3),
+        "newDurationSec": round(new_dur, 3),
+    }

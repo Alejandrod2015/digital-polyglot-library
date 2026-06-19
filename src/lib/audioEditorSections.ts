@@ -6,6 +6,7 @@ import { join } from "node:path";
 
 import { prisma } from "@/lib/prisma";
 import { uploadPublicObject } from "@/lib/objectStorage";
+import { spliceOnModal } from "@/lib/audioEditorSplice";
 
 const GAP_SEC = 0.45;
 const MASTER_BITRATE = "192k";
@@ -291,27 +292,52 @@ async function applyInPlace(args: {
   newUrl: string;
   newPrevUrl: string | null;
   newText?: string;
+  /** Vercel-only: loudnorm the section inside the Modal splice (the local
+   *  path pre-normalizes before calling this, so it passes false). */
+  loudnorm?: boolean;
 }): Promise<SectionResult> {
   const { story, frags, fragmentIndex, sectionBuffer } = args;
   const frag = frags[fragmentIndex];
-  const newMaster = await spliceInPlace(Buffer.from(await download(story.audioUrl!)), sectionBuffer, frag.startSec, frag.endSec);
+  const base = (story.audioFilename ?? `${story.slug}.mp3`).replace(/\.mp3$/, "").replace(/_multivoice.*$/, "").replace(/[^a-zA-Z0-9_-]/g, "_");
+  const masterName = `${base}_multivoice_${Date.now()}.mp3`;
 
-  const tmp = mkdtempSync(join(tmpdir(), "dur-"));
+  let newMasterUrl: string;
   let newDur: number;
-  try { const p = join(tmp, "s.mp3"); writeFileSync(p, sectionBuffer); newDur = ffprobeDurationFile(p); } finally { rmSync(tmp, { recursive: true, force: true }); }
-  const delta = newDur - (frag.endSec - frag.startSec);
+  if (process.env.VERCEL) {
+    // No ffmpeg on Vercel → hard-cut splice on Modal (crossfadeSec: 0 keeps
+    // boundaries exact, matching the local spliceInPlace), and use the
+    // returned segment duration to shift later fragments.
+    const r = await spliceOnModal({
+      masterUrl: story.audioUrl!,
+      fragment: sectionBuffer,
+      startSec: frag.startSec,
+      endSec: frag.endSec,
+      filename: masterName,
+      process: args.loudnorm ? { loudnorm: true } : null,
+      crossfadeSec: 0,
+    });
+    if (r.segDurationSec == null) {
+      throw new Error("El servidor de audio (Modal) no devolvió segDurationSec — redeploya audio_studio.py");
+    }
+    newMasterUrl = r.url;
+    newDur = r.segDurationSec;
+  } else {
+    const newMaster = await spliceInPlace(Buffer.from(await download(story.audioUrl!)), sectionBuffer, frag.startSec, frag.endSec);
+    const tmp = mkdtempSync(join(tmpdir(), "dur-"));
+    try { const p = join(tmp, "s.mp3"); writeFileSync(p, sectionBuffer); newDur = ffprobeDurationFile(p); } finally { rmSync(tmp, { recursive: true, force: true }); }
+    const up = await uploadPublicObject({ key: `media/generated/audio/${masterName}`, body: newMaster, contentType: "audio/mpeg" });
+    if (!up?.url) throw new Error("Subida del master a R2 falló");
+    newMasterUrl = up.url;
+  }
 
+  const delta = newDur - (frag.endSec - frag.startSec);
   frags[fragmentIndex] = { ...frag, url: args.newUrl, prevUrl: args.newPrevUrl, text: args.newText ?? frag.text, endSec: frag.startSec + newDur };
   for (let k = fragmentIndex + 1; k < frags.length; k += 1) {
     frags[k] = { ...frags[k], startSec: Number((frags[k].startSec + delta).toFixed(3)), endSec: Number((frags[k].endSec + delta).toFixed(3)) };
   }
 
-  const base = (story.audioFilename ?? `${story.slug}.mp3`).replace(/\.mp3$/, "").replace(/_multivoice.*$/, "").replace(/[^a-zA-Z0-9_-]/g, "_");
-  const masterName = `${base}_multivoice_${Date.now()}.mp3`;
-  const up = await uploadPublicObject({ key: `media/generated/audio/${masterName}`, body: newMaster, contentType: "audio/mpeg" });
-  if (!up?.url) throw new Error("Subida del master a R2 falló");
-  await prisma.journeyStory.update({ where: { id: story.id }, data: { audioUrl: up.url, audioFilename: masterName, audioStatus: "ready", audioFragments: frags as unknown as object } });
-  return { audioUrl: up.url, sectionUrl: args.newUrl, prevSectionUrl: args.newPrevUrl };
+  await prisma.journeyStory.update({ where: { id: story.id }, data: { audioUrl: newMasterUrl, audioFilename: masterName, audioStatus: "ready", audioFragments: frags as unknown as object } });
+  return { audioUrl: newMasterUrl, sectionUrl: args.newUrl, prevSectionUrl: args.newPrevUrl };
 }
 
 /**
@@ -332,7 +358,11 @@ export async function replaceSectionAndRebuild(args: {
   if (args.fragmentIndex < 0 || args.fragmentIndex >= frags.length) {
     throw new Error(`fragmentIndex fuera de rango (0..${frags.length - 1})`);
   }
-  const sectionBuffer = args.normalizeSection
+  // Loudnorm a fresh TTS take. Locally we pre-normalize here (ffmpeg); on
+  // Vercel there's no ffmpeg, so we defer the loudnorm to the Modal splice
+  // (applyInPlace passes loudnorm:true) and store the raw section.
+  const loudnormOnSplice = !!args.normalizeSection && !!process.env.VERCEL;
+  const sectionBuffer = args.normalizeSection && !process.env.VERCEL
     ? await normalizeSectionAudio(args.newSectionBuffer)
     : args.newSectionBuffer;
   const base = (story.audioFilename ?? `${story.slug}.mp3`)
@@ -355,6 +385,7 @@ export async function replaceSectionAndRebuild(args: {
     newUrl: secUpload.url,
     newPrevUrl: old.url, // the take we're replacing → revert target
     newText: args.newText,
+    loudnorm: loudnormOnSplice,
   });
 }
 

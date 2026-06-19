@@ -157,14 +157,23 @@ async function spliceLocally(args: {
   }
 }
 
-async function spliceOnModal(args: {
+/**
+ * Splice a segment into a master on Modal (Vercel has no ffmpeg). Pass
+ * `crossfadeSec: 0` for a HARD cut (section editor: exact boundaries so the
+ * caller can recompute offsets); omit it for the default smooth crossfade
+ * (legacy time-splice upload). Returns `segDurationSec` when the Modal
+ * endpoint provides it (deployed build), letting the section path shift
+ * later fragments without a local ffprobe.
+ */
+export async function spliceOnModal(args: {
   masterUrl: string;
   fragment: Buffer;
   startSec: number;
   endSec: number;
   filename: string;
   process: SegmentProcess;
-}): Promise<{ url: string; filename: string }> {
+  crossfadeSec?: number;
+}): Promise<{ url: string; filename: string; segDurationSec: number | null }> {
   const token = (process.env.STUDIO_AUDIO_TOKEN || "").trim();
   if (!token) throw new Error("STUDIO_AUDIO_TOKEN no configurado");
   const spliceUrl = resolveSpliceUrl();
@@ -183,6 +192,7 @@ async function spliceOnModal(args: {
         filename: args.filename,
         segmentTempo: args.process?.tempo ?? null,
         segmentLoudnorm: !!args.process?.loudnorm,
+        ...(args.crossfadeSec != null ? { crossfadeSec: args.crossfadeSec } : {}),
       }),
     });
   } catch (err) {
@@ -192,9 +202,13 @@ async function spliceOnModal(args: {
     const detail = await res.text().catch(() => "");
     throw new Error(`El empalme en Modal falló (${res.status})${detail ? ` — ${detail.slice(0, 300)}` : ""}`);
   }
-  const json = (await res.json()) as { url?: string; filename?: string };
+  const json = (await res.json()) as { url?: string; filename?: string; segDurationSec?: number };
   if (!json?.url) throw new Error("Modal no devolvió una URL de audio");
-  return { url: json.url, filename: json.filename ?? args.filename };
+  return {
+    url: json.url,
+    filename: json.filename ?? args.filename,
+    segDurationSec: typeof json.segDurationSec === "number" ? json.segDurationSec : null,
+  };
 }
 
 /**
