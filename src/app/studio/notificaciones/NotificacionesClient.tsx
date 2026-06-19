@@ -53,6 +53,32 @@ function labelStyle(): React.CSSProperties {
   };
 }
 
+// Recommended limits for clean display on an iPhone notification banner.
+// Not hard-enforced — past these, iOS may truncate (shown in amber).
+const TITLE_MAX = 40;
+const BODY_MAX = 120;
+
+// Label row with a live character counter on the right.
+function FieldLabel({ label, value, max }: { label: string; value: string; max: number }) {
+  const over = value.length > max;
+  return (
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 4 }}>
+      <span style={{ ...labelStyle(), marginBottom: 0 }}>{label}</span>
+      <span
+        style={{
+          fontSize: 11,
+          fontWeight: 600,
+          fontVariantNumeric: "tabular-nums",
+          color: over ? "#fbbf24" : "var(--muted)",
+        }}
+        title={over ? "Puede recortarse en el iPhone" : undefined}
+      >
+        {value.length}/{max}
+      </span>
+    </div>
+  );
+}
+
 export default function NotificacionesClient() {
   const [types, setTypes] = useState<NotificationType[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -215,7 +241,7 @@ function TypesEditor({ types, error, savingKey, savedKey, update, save }: TypesE
 
           <div style={{ display: "grid", gap: 12 }}>
             <div>
-              <label style={labelStyle()}>Título</label>
+              <FieldLabel label="Título" value={t.title} max={TITLE_MAX} />
               <input
                 style={inputStyle()}
                 value={t.title}
@@ -223,7 +249,7 @@ function TypesEditor({ types, error, savingKey, savedKey, update, save }: TypesE
               />
             </div>
             <div>
-              <label style={labelStyle()}>Cuerpo</label>
+              <FieldLabel label="Cuerpo" value={t.body} max={BODY_MAX} />
               <textarea
                 style={{ ...inputStyle(), minHeight: 56, resize: "vertical" }}
                 value={t.body}
@@ -481,11 +507,11 @@ function CampaignsPanel({ types }: { types: NotificationType[] }) {
       <div style={{ background: CARD_BG, border: `1px solid ${CARD_BORDER}`, borderRadius: 12, padding: 18, display: "grid", gap: 12 }}>
         <h3 style={{ margin: 0, fontSize: 15, fontWeight: 700, color: "var(--foreground)" }}>Nueva campaña</h3>
         <div>
-          <label style={labelStyle()}>Título</label>
+          <FieldLabel label="Título" value={title} max={TITLE_MAX} />
           <input style={inputStyle()} value={title} onChange={(e) => setTitle(e.target.value)} />
         </div>
         <div>
-          <label style={labelStyle()}>Cuerpo</label>
+          <FieldLabel label="Cuerpo" value={body} max={BODY_MAX} />
           <textarea
             style={{ ...inputStyle(), minHeight: 56, resize: "vertical" }}
             value={body}
