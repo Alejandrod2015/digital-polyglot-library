@@ -35,7 +35,6 @@ export type PracticeFavoriteItem = {
 export type PracticeMode =
   | "meaning"
   | "context"
-  | "natural"
   | "listening"
   | "match";
 
@@ -55,17 +54,6 @@ export type MeaningContextExercise = {
   type: "meaning_in_context";
   prompt: string;
   word: string;
-  sentence: string;
-  storySlug?: string | null;
-  audioClip?: PracticeAudioClip | null;
-  options: string[];
-  answer: string;
-};
-
-export type NaturalExpressionExercise = {
-  id: string;
-  type: "natural_expression";
-  prompt: string;
   sentence: string;
   storySlug?: string | null;
   audioClip?: PracticeAudioClip | null;
@@ -121,7 +109,6 @@ export type PracticeAudioClip = {
 export type PracticeExercise =
   | FillBlankExercise
   | MeaningContextExercise
-  | NaturalExpressionExercise
   | ListenChooseExercise
   | MatchMeaningExercise;
 
@@ -417,6 +404,27 @@ function getSentenceWithBlank(
   return { sentence: stripOrphanLeadingPunctuation(shortened), matchedForm };
 }
 
+/**
+ * Envuelve la palabra objetivo dentro de una oración de ejemplo con
+ * marcadores `[[…]]` para que la UI la resalte. Reusa el mismo matcher
+ * literal→stem que `getSentenceWithBlank`, así el resaltado cae sobre la
+ * misma forma flexionada que el modo context blankearía (consistencia).
+ * Si la oración ya trae marcadores o no hay match, la devuelve intacta.
+ */
+export function markTargetWordInSentence(sentence: string, word: string): string {
+  if (!sentence || sentence.includes("[[")) return sentence;
+  const w = normalizeText(word);
+  if (!w) return sentence;
+  let pattern = new RegExp(escapeRegExp(w), "i");
+  if (!pattern.test(sentence)) {
+    const stemLen = Math.max(3, w.length - 2);
+    const stem = w.slice(0, stemLen);
+    pattern = new RegExp(`\\b${escapeRegExp(stem)}[\\p{L}\\p{M}\\d]*`, "iu");
+    if (!pattern.test(sentence)) return sentence;
+  }
+  return sentence.replace(pattern, (match) => `[[${match}]]`);
+}
+
 // El splitter de `audioSegments` corta oraciones inmediatamente
 // después de `.!?` (más comilla opcional), así que la "narrative
 // tail" de un diálogo (`..."Algo", sagte X.`) sale como una oración
@@ -524,14 +532,6 @@ function buildAudioClip(item: PracticeFavoriteItem, sentence: string): PracticeA
   };
 }
 
-function isExpression(item: PracticeFavoriteItem): boolean {
-  const normalizedType = normalizeVocabType(item.wordType, {
-    word: item.word,
-    definition: item.translation,
-  });
-  return normalizedType === "expression" || normalizeText(item.word).includes(" ");
-}
-
 function createFillBlankExercise(
   item: PracticeFavoriteItem,
   pool: PracticeFavoriteItem[]
@@ -582,32 +582,6 @@ function createMeaningContextExercise(
     audioClip: buildAudioClip(item, isStandaloneSourcePath(item.sourcePath, item.storySlug) ? fullSentence : sentence),
     options,
     answer: item.translation,
-  };
-}
-
-function createNaturalExpressionExercise(
-  item: PracticeFavoriteItem,
-  pool: PracticeFavoriteItem[]
-): NaturalExpressionExercise | null {
-  if (!isExpression(item)) return null;
-  const blanked = getSentenceWithBlank(item);
-  const fullSentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
-    ? getContextSentence(item)
-    : normalizeText(item.exampleSentence);
-  if (!blanked || !fullSentence) return null;
-  const answerForm = blanked.matchedForm;
-  const expressionPool = getLanguagePool(item.language, pool).filter((candidate) => isExpression(candidate));
-  const options = shuffle([answerForm, ...getDistractorWords(item, expressionPool)]);
-  if (options.length < 4) return null;
-  return {
-    id: `natural_expression:${normalizeKey(item.word)}`,
-    type: "natural_expression",
-    prompt: "Which expression sounds natural here?",
-    sentence: blanked.sentence,
-    storySlug: item.storySlug ?? null,
-    audioClip: buildAudioClip(item, isStandaloneSourcePath(item.sourcePath, item.storySlug) ? fullSentence : blanked.sentence),
-    options,
-    answer: answerForm,
   };
 }
 
@@ -755,18 +729,16 @@ export function buildPracticeSession(
       ? createMeaningContextExercise
       : mode === "context"
         ? createFillBlankExercise
-        : mode === "natural"
-          ? createNaturalExpressionExercise
-          : createListenChooseExercise;
+        : createListenChooseExercise;
 
-  // Para los modos basados en frase (context/meaning/natural) también
+  // Para los modos basados en frase (context/meaning) también
   // deduplicamos por oración subyacente. Si el usuario guardó varias
   // palabras de la misma frase, cada item arma un ejercicio distinto pero
   // sobre la misma oración — solo cambiaba la palabra con el blank y el
   // bug reportado era ver "la misma oración varias veces y solo cambia
   // la palabra". El id del ejercicio se basa en la palabra, así que el
   // dedup por id no atrapaba esto.
-  const sentenceAwareMode = mode === "context" || mode === "meaning" || mode === "natural";
+  const sentenceAwareMode = mode === "context" || mode === "meaning";
   const seenSentences = new Set<string>();
 
   for (const item of source) {
@@ -795,7 +767,6 @@ function getExerciseAnchor(exercise: PracticeExercise): string {
     case "meaning_in_context":
       return normalizeKey(exercise.word);
     case "fill_blank":
-    case "natural_expression":
     case "listen_choose":
       return normalizeKey(exercise.answer);
     case "match_meaning":
@@ -836,7 +807,7 @@ export function buildMixedPracticeSession(
 
   if (exercises.length >= maxExercises) return exercises.slice(0, maxExercises);
 
-  for (const mode of [("meaning" as const), ("context" as const), ("natural" as const), ("listening" as const)]) {
+  for (const mode of [("meaning" as const), ("context" as const), ("listening" as const), ("match" as const)]) {
     if (exercises.length >= maxExercises) break;
     const session = sessionsByMode.get(mode) ?? [];
     let index = nextIndexByMode.get(mode) ?? 0;
@@ -859,7 +830,7 @@ export function buildMixedPracticeSession(
 export function buildTopicCheckpointPracticeSession(items: PracticeFavoriteItem[]): PracticeExercise[] {
   return buildMixedPracticeSession(
     items,
-    ["meaning", "context", "listening", "meaning", "context", "listening", "natural", "meaning"],
+    ["meaning", "context", "listening", "meaning", "context", "listening", "match", "meaning"],
     8
   );
 }
@@ -876,11 +847,6 @@ export function getRecommendedPracticeModeFromOnboarding(
   const sorted = sortPracticeItemsByOnboarding(items, prefs, true);
   if (sorted.length === 0) return fallback;
 
-  if (bias === "natural") {
-    return sorted.some((item) => normalizeVocabType(item.wordType, { word: item.word, definition: item.translation }) === "expression")
-      ? "natural"
-      : fallback;
-  }
   if (bias === "context") {
     return sorted.some((item) => normalizeText(item.exampleSentence)) ? "context" : fallback;
   }

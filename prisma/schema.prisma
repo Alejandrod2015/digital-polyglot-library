@@ -378,7 +378,7 @@ model StoryPracticeExercise {
   setId      String
   set        StoryPracticeSet @relation(fields: [setId], references: [id], onDelete: Cascade)
   orderIndex Int
-  /// One of: fill_blank | meaning_in_context | listen_choose | natural_expression
+  /// One of: fill_blank | meaning_in_context | listen_choose | match_meaning
   type       String
   /// Target vocab word (the right answer for fill_blank/natural, the
   /// prompt for meaning/listening).

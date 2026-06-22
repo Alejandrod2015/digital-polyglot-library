@@ -250,21 +250,6 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
         });
         break;
       }
-      case "natural_expression": {
-        const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
-        const answer = typeof payload.answer === "string" ? payload.answer : row.word;
-        out.push({
-          id: `natural_expression:${row.id}`,
-          type: "natural_expression",
-          prompt,
-          sentence: row.sentence,
-          storySlug,
-          audioClip: audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never,
-          options,
-          answer,
-        });
-        break;
-      }
       case "listen_choose": {
         const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
         const answer = typeof payload.answer === "string" ? payload.answer : row.word;

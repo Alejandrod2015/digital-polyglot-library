@@ -221,7 +221,7 @@ async function main() {
       // alone works but produces a robotic 1-word clip. Keep as-is for
       // backwards compatibility with the mobile flow.
       //
-      // For fill_blank / natural_expression the column `sentence` is the
+      // For fill_blank the column `sentence` is the
       // display-form ("Mmm, _____!"). Sending that to Piper makes it skip
       // (or literally read) the underscores, so the audio ends up missing
       // the target word. The generator already stores the FULL sentence

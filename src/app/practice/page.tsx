@@ -34,6 +34,7 @@ import {
   getRecommendedPracticeModeFromOnboarding,
   getDuePracticeItems,
   getSpeechSynthesisLang,
+  markTargetWordInSentence,
   sortPracticeItemsByDueness,
   PracticeAudioClip,
   PracticeExercise,
@@ -159,10 +160,10 @@ function isStandaloneFavorite(item: PracticeFavoriteItem): boolean {
   return isStandaloneSourcePath(item.sourcePath, item.storySlug);
 }
 
-function isExpressionLikeFavorite(item: PracticeFavoriteItem): boolean {
-  const word = typeof item.word === "string" ? item.word.trim() : "";
-  const wordType = typeof item.wordType === "string" ? item.wordType.toLowerCase() : "";
-  return word.includes(" ") || /expression|phrase|idiom|chunk|connector/.test(wordType);
+// Per-exercise countdown duration (seconds). Match gets more time
+// because it's multiple pairs at once; the rest are single-answer.
+function timerDurationForExercise(exercise: PracticeExercise | null): number {
+  return exercise?.type === "match_meaning" ? 20 : 15;
 }
 
 function getModeLabel(mode: PracticeMode): string {
@@ -171,8 +172,6 @@ function getModeLabel(mode: PracticeMode): string {
       return "Meaning";
     case "context":
       return "Context";
-    case "natural":
-      return "Natural usage";
     case "listening":
       return "Listening";
     case "match":
@@ -233,20 +232,6 @@ const modeThemeByMode: Record<
     shellClass: "border-emerald-200/20 bg-[linear-gradient(180deg,rgba(39,78,71,0.94),rgba(34,62,64,0.98))]",
     orbClass: "bg-[radial-gradient(circle,rgba(110,231,183,0.28),transparent_68%)]",
     buttonClass: "bg-emerald-300 text-slate-950 shadow-[0_8px_20px_rgba(110,231,183,0.2)]",
-  },
-  natural: {
-    title: "Natural usage",
-    eyebrow: "Phrase flow",
-    detail: "Spot the expression that sounds right in real language.",
-    caption: "Best for phrases, connectors, and colloquial language.",
-    icon: BookOpenText,
-    iconClass: "bg-sky-300/18 text-sky-100 ring-1 ring-sky-200/30",
-    badgeClass: "border-sky-200/30 bg-sky-300/12 text-sky-100",
-    panelGlow: "from-sky-200/14 via-transparent",
-    accentBar: "from-sky-300 via-cyan-200 to-blue-200",
-    shellClass: "border-sky-200/20 bg-[linear-gradient(180deg,rgba(40,73,101,0.94),rgba(31,53,83,0.98))]",
-    orbClass: "bg-[radial-gradient(circle,rgba(125,211,252,0.28),transparent_68%)]",
-    buttonClass: "bg-sky-300 text-slate-950 shadow-[0_8px_20px_rgba(125,211,252,0.18)]",
   },
   listening: {
     title: "Listening",
@@ -368,10 +353,11 @@ export default function PracticePage() {
   // header when the streak hits a tier (≥2 in a row) and auto-dismisses.
   const [comboToast, setComboToast] = useState<{ streak: number; tier: ComboTier; label: string } | null>(null);
   const comboDismissRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  // Per-exercise countdown (iPhone parity): multiple-choice gets 10 s; when it
-  // hits 0 without an answer the exercise reveals as wrong (timeout-as-wrong),
-  // mirroring the mobile flow. Match keeps its own pace and is excluded.
-  const [timerRemaining, setTimerRemaining] = useState(10);
+  // Per-exercise countdown: 15 s for single-answer exercises, 20 s for
+  // match. When it hits 0 without an answer revealed the exercise reveals
+  // as wrong (timeout-as-wrong). Actual per-exercise value is set in the
+  // exercise-change effect via `timerDurationForExercise`.
+  const [timerRemaining, setTimerRemaining] = useState(15);
   // Wall-clock duration of the round, captured when the session completes so
   // the result card can show a "time" stat like the iPhone version.
   const [sessionDurationMs, setSessionDurationMs] = useState<number | null>(null);
@@ -421,6 +407,7 @@ export default function PracticePage() {
   const isReviewFocus = searchParams.get("review") === "1";
   const requestedModeParam = searchParams.get("mode");
   const isJourneyCheckpoint = searchParams.get("checkpoint") === "1";
+  const onlyExerciseParam = searchParams.get("ex");
   const isJourneyPractice = practiceSource === "journey" && Boolean(journeyLevelId) && Boolean(journeyTopicId);
   const isStoryPractice = practiceSource === "story" && Boolean(storyPracticeSlug);
   const journeyReturnHref =
@@ -699,22 +686,29 @@ export default function PracticePage() {
     [favorites, onboardingPracticePrefs]
   );
   const exercises = useMemo(() => {
-    if (isJourneyCheckpoint) return prefabExercises;
-    return selectedMode ? buildPracticeSession(orderedFavorites, selectedMode, onboardingPracticePrefs) : [];
-  }, [isJourneyCheckpoint, onboardingPracticePrefs, orderedFavorites, prefabExercises, selectedMode]);
+    const base = isJourneyCheckpoint
+      ? prefabExercises
+      : selectedMode
+        ? buildPracticeSession(orderedFavorites, selectedMode, onboardingPracticePrefs)
+        : [];
+    // `?ex=N` opens a single exercise (0-based) for previewing one type at a time.
+    if (onlyExerciseParam != null && onlyExerciseParam !== "") {
+      const idx = Number(onlyExerciseParam);
+      if (Number.isInteger(idx) && idx >= 0 && idx < base.length) return [base[idx]];
+    }
+    return base;
+  }, [isJourneyCheckpoint, onboardingPracticePrefs, onlyExerciseParam, orderedFavorites, prefabExercises, selectedMode]);
   const currentExercise = exercises[exerciseIndex] ?? null;
   const inferredModeFromExercise: PracticeMode | null =
     currentExercise?.type === "meaning_in_context"
       ? "meaning"
       : currentExercise?.type === "fill_blank"
         ? "context"
-        : currentExercise?.type === "natural_expression"
-          ? "natural"
-          : currentExercise?.type === "listen_choose"
-            ? "listening"
-            : currentExercise?.type === "match_meaning"
-              ? "match"
-              : null;
+        : currentExercise?.type === "listen_choose"
+          ? "listening"
+          : currentExercise?.type === "match_meaning"
+            ? "match"
+            : null;
   const activePracticeMode = selectedMode ?? inferredModeFromExercise;
   const revealed = currentExercise ? revealedIds.includes(currentExercise.id) : false;
   const activeSession = selectedMode !== null || (isJourneyCheckpoint && exercises.length > 0);
@@ -749,8 +743,18 @@ export default function PracticePage() {
       window.history.back();
       return;
     }
+    // Deep-link sessions (journey / story / checkpoint) opened with no return
+    // href have no mode picker to fall back to, so setSelectedMode(null) does
+    // nothing — navigate away instead so the back button never silently fails.
+    if (isJourneyPractice || isStoryPractice || isJourneyCheckpoint) {
+      if (typeof window !== "undefined") {
+        if (window.history.length > 1) window.history.back();
+        else window.location.href = "/";
+      }
+      return;
+    }
     setSelectedMode(null);
-  }, [isJourneyPractice, isStoryPractice, journeyReturnHref, storyReturnHref]);
+  }, [isJourneyCheckpoint, isJourneyPractice, isStoryPractice, journeyReturnHref, storyReturnHref]);
   const hasSessionProgress = revealedIds.length > 0;
   const attemptCloseSession = useCallback(() => {
     if (!sessionComplete && hasSessionProgress) {
@@ -844,7 +848,7 @@ export default function PracticePage() {
     setStreak(0);
     setMaxStreak(0);
     setLastResult(null);
-    setTimerRemaining(10);
+    setTimerRemaining(15);
     setSessionDurationMs(null);
     setMissedWords([]);
     setComboToast(null);
@@ -918,7 +922,7 @@ export default function PracticePage() {
     setActiveMatchWord(null);
     setLastResult(null);
     setPlayingClipId(null);
-    setTimerRemaining(10);
+    setTimerRemaining(timerDurationForExercise(exercises[exerciseIndex] ?? null));
     contextRevealAudioRef.current = null;
     meaningAutoplayedRef.current = null;
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
@@ -1110,11 +1114,11 @@ export default function PracticePage() {
     }
   }, [currentExercise, matchAnswers, playFeedbackSound, revealedIds, selectedOption]);
 
-  // Timer tick: count down once per second while a multiple-choice exercise is
-  // unanswered. Match is excluded (it paces itself). Stops on reveal/complete.
+  // Timer tick: count down once per second while an exercise is unanswered.
+  // Stops on reveal/complete.
   useEffect(() => {
     if (!activeSession || sessionComplete) return;
-    if (!currentExercise || currentExercise.type === "match_meaning") return;
+    if (!currentExercise) return;
     if (revealed) return;
     if (timerRemaining <= 0) return;
     const id = window.setTimeout(() => {
@@ -1127,7 +1131,7 @@ export default function PracticePage() {
   // the exercise (an empty/incorrect selection grades as wrong).
   useEffect(() => {
     if (!activeSession || sessionComplete) return;
-    if (!currentExercise || currentExercise.type === "match_meaning") return;
+    if (!currentExercise) return;
     if (revealed) return;
     if (timerRemaining > 0) return;
     revealCurrent();
@@ -1277,7 +1281,6 @@ export default function PracticePage() {
     if (exercise.type === "meaning_in_context") return exercise.word;
     if (
       exercise.type === "fill_blank" ||
-      exercise.type === "natural_expression" ||
       exercise.type === "listen_choose"
     ) {
       return exercise.answer;
@@ -1478,7 +1481,7 @@ export default function PracticePage() {
   // so they hear the word in its natural context. Fires once per reveal.
   useEffect(() => {
     if (!revealed || !currentExercise) return;
-    if (currentExercise.type !== "fill_blank" && currentExercise.type !== "natural_expression") return;
+    if (currentExercise.type !== "fill_blank") return;
     if (!currentExercise.audioClip) return;
     if (contextRevealAudioRef.current === currentExercise.id) return;
     contextRevealAudioRef.current = currentExercise.id;
@@ -1570,9 +1573,6 @@ export default function PracticePage() {
       if (exercise.type === "fill_blank") {
         return [{ label: exercise.answer, answer: exercise.answer }];
       }
-      if (exercise.type === "natural_expression") {
-        return [{ label: exercise.answer, answer: exercise.answer }];
-      }
       return [{ label: exercise.speechText, answer: exercise.answer }];
     });
   }, [checkpointResponses, exercises, isJourneyCheckpoint]);
@@ -1586,7 +1586,6 @@ export default function PracticePage() {
     const counts: Record<PracticeMode, number> = {
       meaning: 0,
       context: 0,
-      natural: 0,
       listening: 0,
       match: 0,
     };
@@ -1598,7 +1597,6 @@ export default function PracticePage() {
 
       if (exercise.type === "meaning_in_context") counts.meaning += 1;
       else if (exercise.type === "fill_blank") counts.context += 1;
-      else if (exercise.type === "natural_expression") counts.natural += 1;
       else if (exercise.type === "listen_choose") counts.listening += 1;
     }
 
@@ -1619,7 +1617,6 @@ export default function PracticePage() {
     const counts: Record<PracticeMode, number> = {
       meaning: 0,
       context: 0,
-      natural: 0,
       listening: 0,
       match: 0,
     };
@@ -1627,7 +1624,6 @@ export default function PracticePage() {
     for (const item of dueFavorites) {
       counts.meaning += 1;
       if (item.exampleSentence?.trim()) counts.context += 2;
-      if (isExpressionLikeFavorite(item)) counts.natural += 3;
       if (item.storySlug || item.language) counts.listening += 1;
     }
 
@@ -1677,7 +1673,6 @@ export default function PracticePage() {
   const requestedMode =
     requestedModeParam === "meaning" ||
     requestedModeParam === "context" ||
-    requestedModeParam === "natural" ||
     requestedModeParam === "listening" ||
     requestedModeParam === "match"
       ? requestedModeParam
@@ -1843,6 +1838,7 @@ export default function PracticePage() {
   if (activeSession) {
     const timerColor =
       timerRemaining <= 2 ? "#ff5f5f" : timerRemaining <= 5 ? "#ff9a57" : "#f8c15c";
+    const timerDuration = timerDurationForExercise(currentExercise);
     return (
       <div className="relative -mx-1 -my-6 box-border h-[calc(100dvh-env(safe-area-inset-top))] overflow-hidden px-4 py-2.5 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] text-[var(--foreground)] sm:px-5 sm:py-4 sm:pb-[calc(env(safe-area-inset-bottom)+1rem)]">
         <div className="mx-auto grid h-full max-w-5xl grid-rows-[auto_minmax(0,1fr)_auto] gap-2 sm:grid-rows-[auto_minmax(0,1fr)_144px]">
@@ -1923,10 +1919,9 @@ export default function PracticePage() {
                 </div>
               </div>
               {/* Timer badge "Xs" (iPhone parity): gold → orange → red as it
-                  drains. Hidden for match and once the answer is revealed. */}
+                  drains. Hidden once the answer is revealed. */}
               {!sessionComplete &&
               currentExercise &&
-              currentExercise.type !== "match_meaning" &&
               !revealed ? (
                 <div
                   className="grid h-10 min-w-[44px] shrink-0 place-items-center rounded-full border px-2.5 text-[15px] font-black tabular-nums"
@@ -1941,17 +1936,16 @@ export default function PracticePage() {
               ) : null}
             </div>
 
-            {/* Timer bar: empties left-to-right over the 10 s window. Same
-                visibility rule as the badge. */}
+            {/* Timer bar: empties left-to-right over the countdown window.
+                Same visibility rule as the badge. */}
             {!sessionComplete &&
             currentExercise &&
-            currentExercise.type !== "match_meaning" &&
             !revealed ? (
               <div className="h-1 w-full overflow-hidden rounded-full bg-white/[0.08]">
                 <div
                   className="h-full rounded-full transition-[width] duration-1000 ease-linear"
                   style={{
-                    width: `${Math.max(0, Math.min(100, (timerRemaining / 10) * 100))}%`,
+                    width: `${Math.max(0, Math.min(100, (timerRemaining / timerDuration) * 100))}%`,
                     backgroundColor: timerColor,
                   }}
                 />
@@ -2278,7 +2272,7 @@ export default function PracticePage() {
                   ? (() => {
                       const ex = currentExercise;
                       const isMeaning = ex.type === "meaning_in_context";
-                      const isContext = ex.type === "fill_blank" || ex.type === "natural_expression";
+                      const isContext = ex.type === "fill_blank";
                       const isListening = ex.type === "listen_choose";
                       const audioActive =
                         isListening
@@ -2309,25 +2303,51 @@ export default function PracticePage() {
                                 </span>
                               </div>
                             ) : isContext ? (
-                              <div className="flex w-full items-center justify-center gap-3">
-                                <p className="flex-1 text-center text-[clamp(1.15rem,2.4vw,1.5rem)] font-extrabold leading-[1.35] tracking-tight text-white">
-                                  {revealed
-                                    ? ex.sentence.replace(/_{3,}/g, ex.answer)
-                                    : ex.sentence}
-                                </p>
-                                {revealed && ex.audioClip ? (
-                                  <button
-                                    type="button"
-                                    onClick={() => playContextAudio(ex.id, ex.audioClip)}
-                                    aria-label={audioActive ? "Stop" : "Listen"}
-                                    className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full border transition"
-                                    style={{
-                                      background: "rgba(82,160,214,0.18)",
-                                      borderColor: "rgba(159,232,255,0.14)",
-                                    }}
+                              <div className="flex w-full flex-col items-center gap-3">
+                                {ex.prompt ? (
+                                  <p
+                                    className={`text-center ${
+                                      ex.sentence
+                                        ? "text-[13px] font-semibold text-white/55"
+                                        : "text-[clamp(1.15rem,2.4vw,1.5rem)] font-extrabold leading-[1.3] tracking-tight text-white"
+                                    }`}
                                   >
-                                    <Volume2 size={18} className="text-[#9fe8ff]" />
-                                  </button>
+                                    {ex.prompt}
+                                  </p>
+                                ) : null}
+                                {ex.sentence ? (
+                                  <div
+                                    className="flex w-full items-center justify-center gap-3 rounded-[20px] px-4 py-4"
+                                    style={{ background: "rgba(10,28,58,0.72)" }}
+                                  >
+                                    <p className="flex-1 text-center text-[clamp(1.05rem,2.2vw,1.45rem)] font-extrabold leading-[1.35] tracking-tight text-white">
+                                      {(revealed ? ex.sentence.replace(/_{3,}/g, ex.answer) : ex.sentence)
+                                        .split(/\[\[(.+?)\]\]/)
+                                        .map((part, i) =>
+                                          i % 2 === 1 ? (
+                                            <strong key={i} className="underline decoration-[#f8c15c] decoration-2 underline-offset-4">
+                                              {part}
+                                            </strong>
+                                          ) : (
+                                            part
+                                          ),
+                                        )}
+                                    </p>
+                                    {revealed && ex.audioClip ? (
+                                      <button
+                                        type="button"
+                                        onClick={() => playContextAudio(ex.id, ex.audioClip)}
+                                        aria-label={audioActive ? "Stop" : "Listen"}
+                                        className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full border transition"
+                                        style={{
+                                          background: "rgba(82,160,214,0.18)",
+                                          borderColor: "rgba(159,232,255,0.14)",
+                                        }}
+                                      >
+                                        <Volume2 size={18} className="text-[#9fe8ff]" />
+                                      </button>
+                                    ) : null}
+                                  </div>
                                 ) : null}
                               </div>
                             ) : isMeaning ? (
@@ -2365,7 +2385,15 @@ export default function PracticePage() {
                                     style={{ background: "rgba(10,28,58,0.72)" }}
                                   >
                                     <p className="text-center text-[15px] font-semibold leading-6 text-white/[0.78]">
-                                      {ex.sentence}
+                                      {markTargetWordInSentence(ex.sentence, ex.word).split(/\[\[(.+?)\]\]/).map((part, i) =>
+                                        i % 2 === 1 ? (
+                                          <strong key={i} className="font-extrabold text-white underline decoration-[#f8c15c] decoration-2 underline-offset-4">
+                                            {part}
+                                          </strong>
+                                        ) : (
+                                          part
+                                        ),
+                                      )}
                                     </p>
                                   </div>
                                 ) : null}
@@ -2422,6 +2450,9 @@ export default function PracticePage() {
 
                 {currentExercise.type === "match_meaning" ? (
                   <div className="flex min-h-0 flex-1 flex-col gap-3">
+                    <p className="shrink-0 text-center text-[13px] font-semibold text-white/60">
+                      Tap a word, then its meaning.
+                    </p>
                     <div className="mb-[clamp(0.2rem,0.6vh,0.45rem)] grid shrink-0 grid-cols-2 gap-[clamp(0.35rem,0.7vw,0.55rem)]">
                       <p className="px-1 text-center text-[clamp(0.68rem,1.1vw,0.8rem)] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
                         Words
@@ -2482,7 +2513,7 @@ export default function PracticePage() {
                               }`}
                             >
                               <div>
-                                <p className="text-[clamp(0.95rem,1.6vw,1.55rem)] font-semibold tracking-tight">
+                                <p className="text-[clamp(1.1rem,2.4vw,1.9rem)] font-semibold tracking-tight">
                                   {pair.word}
                                 </p>
                               </div>
@@ -2510,7 +2541,7 @@ export default function PracticePage() {
                                         : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
                                 } disabled:opacity-100`}
                               >
-                                <p className="text-[clamp(0.76rem,1.12vw,0.94rem)] leading-[1.22]">
+                                <p className="text-[clamp(0.95rem,1.7vw,1.3rem)] leading-[1.22]">
                                   {meaning}
                                 </p>
                               </button>
@@ -2658,8 +2689,8 @@ export default function PracticePage() {
       })()
     : null;
 
-  // iPhone parity: show the 4 main modes (no "natural") on every viewport.
-  const visibleModeCards = modeCards.filter((card) => card.mode !== "natural");
+  // iPhone parity: 4 practice modes shown on every viewport.
+  const visibleModeCards = modeCards;
   const dueCount = dueFavorites.length;
 
   return (
@@ -2781,7 +2812,7 @@ export default function PracticePage() {
         </div>
       ) : null}
 
-      {/* ── 2×2 iPhone-style skill cards (4 modes, no "natural") ── */}
+      {/* ── 2×2 iPhone-style skill cards (4 modes) ── */}
       <div className="grid grid-cols-2 gap-3">
         {visibleModeCards.map((card) => (
           <button

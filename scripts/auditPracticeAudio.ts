@@ -100,7 +100,7 @@ async function auditStory(storyId: string): Promise<void> {
   // fires pre-reveal, which has a different match flow not in scope here.
   const exercises = buildPracticeSession(items, "context");
   const audited = exercises.filter((ex): ex is typeof ex & { audioClip: PracticeAudioClip; answer: string } => {
-    return (ex.type === "fill_blank" || ex.type === "meaning_in_context" || ex.type === "natural_expression") && !!ex.audioClip;
+    return (ex.type === "fill_blank" || ex.type === "meaning_in_context") && !!ex.audioClip;
   });
 
   console.log(`\n=== ${story.title}  (${story.slug}) ===`);

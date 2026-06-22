@@ -134,7 +134,7 @@ import {
   saveStandaloneStoryOffline,
   type OfflineLibrarySnapshot,
 } from "../lib/offlineStore";
-import type { PushRegistrationState } from "../notifications/registerPush";
+import { registerPushNotifications, type PushRegistrationState } from "../notifications/registerPush";
 import { syncDailyReminderSchedule, type ReminderDestination } from "../notifications/dailyReminder";
 import {
   addFavoriteOnServer,
@@ -166,7 +166,6 @@ import {
   getJourneyTopicCheckpointKey,
 } from "../../../../src/lib/journeyUnlock";
 import {
-  buildMixedPracticeSession,
   buildPracticeSession,
   getRecommendedPracticeModeFromOnboarding,
   getDuePracticeItems,
@@ -190,6 +189,11 @@ import {
   REMINDER_MINUTE_OPTIONS,
   normalizeRemindersEnabled,
 } from "../../../../src/lib/reminders";
+import {
+  normalizeNotificationPrefs,
+  type NotificationTypeKey,
+  type ResolvedNotificationType,
+} from "../../../../src/lib/notifications";
 import {
   buildGamificationCelebrations,
   type GamificationCelebration,
@@ -514,6 +518,9 @@ type MobilePreferences = {
   reminderHour: number | null;
   /** Minuto del día (0/15/30/45). Optional; ausente se trata como :00. */
   reminderMinute?: number | null;
+  /** Per-type opt-in map (daily_reminder, streak_risk, new_content,
+   *  practice_due). daily_reminder stays mirrored with remindersEnabled. */
+  notificationPrefs: Record<NotificationTypeKey, boolean>;
   journeyPlacementLevel: string | null;
   onboardingSurveyCompletedAt: string | null;
   onboardingTourCompletedAt: string | null;
@@ -869,8 +876,8 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     key: "context",
     title: "Context",
     eyebrow: "Sentence run",
-    detail: "Complete real phrases and choose what sounds natural in context.",
-    caption: "Best for recall, sentence flow, and natural usage.",
+    detail: "Complete real phrases with the right word or expression.",
+    caption: "Best for recall and sentence-level usage.",
     accent: tokenColor.streak,
     background: "#58a700", // verde (2do topic del journey)
     icon: "message-circle",
@@ -1267,28 +1274,6 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
           sourcePath: null,
         },
       };
-    case "natural_expression":
-      return {
-        id: exercise.id,
-        mode: "context",
-        kind: "multiple-choice",
-        prompt: exercise.prompt,
-        helper: "Choose the expression that sounds natural here.",
-        sentence: exercise.sentence,
-        options: exercise.options,
-        answer: exercise.answer,
-        audioClip: exercise.audioClip ?? null,
-        favorite: {
-          word: exercise.answer,
-          translation: "",
-          wordType: null,
-          exampleSentence: exercise.sentence,
-          language: null,
-          storySlug: exercise.storySlug ?? null,
-          storyTitle: null,
-          sourcePath: null,
-        },
-      };
     case "listen_choose":
       return {
         id: exercise.id,
@@ -1355,10 +1340,7 @@ function buildPracticeExercisesFromItems(
     return a.word.localeCompare(b.word);
   });
 
-  const sharedExercises =
-    mode === "context"
-      ? buildMixedPracticeSession(prioritized, ["context", "natural"], 10, prefs)
-      : buildPracticeSession(prioritized, mode, prefs);
+  const sharedExercises = buildPracticeSession(prioritized, mode, prefs);
 
   return sharedExercises.map(mapSharedExerciseToMobile);
 }
@@ -2088,6 +2070,7 @@ export function MobileLibraryShell(args: {
     dailyMinutes: null,
     remindersEnabled: false,
     reminderHour: null,
+    notificationPrefs: normalizeNotificationPrefs(undefined, false),
     journeyPlacementLevel: null,
     onboardingSurveyCompletedAt: null,
     onboardingTourCompletedAt: null,
@@ -2105,6 +2088,7 @@ export function MobileLibraryShell(args: {
     dailyMinutes: null,
     remindersEnabled: false,
     reminderHour: null,
+    notificationPrefs: normalizeNotificationPrefs(undefined, false),
     journeyPlacementLevel: null,
     onboardingSurveyCompletedAt: null,
     onboardingTourCompletedAt: null,
@@ -2113,6 +2097,9 @@ export function MobileLibraryShell(args: {
   });
   const [preferencesStatus, setPreferencesStatus] = useState<SaveStatus>("idle");
   const [preferencesLoading, setPreferencesLoading] = useState(false);
+  // Studio-defined notification types (copy + active flags) so the
+  // settings screen can render one toggle per type. Null until loaded.
+  const [notificationTypes, setNotificationTypes] = useState<ResolvedNotificationType[] | null>(null);
   const [didHydratePreferences, setDidHydratePreferences] = useState(false);
   const [preferencesHint, setPreferencesHint] = useState<string | null>(null);
   const [reminderHint, setReminderHint] = useState<string | null>(null);
@@ -2145,6 +2132,27 @@ export function MobileLibraryShell(args: {
     const timer = setTimeout(() => setDidFirstHydrate(true), 3000);
     return () => clearTimeout(timer);
   }, [didFirstHydrate, sessionToken]);
+
+  // Register this device's APNs push token once we have a session, so
+  // the backend can deliver remote push (Studio campaigns). Without
+  // this, no token is ever stored and every campaign resolves to zero
+  // recipients. Fire-and-forget; failures are non-fatal (e.g. simulator,
+  // denied permission). Re-runs only when the session token changes.
+  const [localPushState, setLocalPushState] = useState<PushRegistrationState>({ status: "idle" });
+  useEffect(() => {
+    if (!sessionToken) return;
+    let cancelled = false;
+    void registerPushNotifications({
+      baseUrl: mobileConfig.apiBaseUrl,
+      sessionToken,
+    }).then((state) => {
+      if (!cancelled) setLocalPushState(state);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [sessionToken]);
+
   const [remoteError, setRemoteError] = useState<string | null>(null);
   // Real "am I offline" signal from the OS via NetInfo, debounced so brief
   // blips (cold-start before the first event, Wi-Fi handoff, captive
@@ -2729,6 +2737,7 @@ export function MobileLibraryShell(args: {
       dailyMinutes: null,
       remindersEnabled: false,
       reminderHour: null,
+      notificationPrefs: normalizeNotificationPrefs(undefined, false),
       journeyPlacementLevel: null,
       onboardingSurveyCompletedAt: null,
       onboardingTourCompletedAt: null,
@@ -3314,6 +3323,7 @@ export function MobileLibraryShell(args: {
           dailyMinutes: null,
           remindersEnabled: false,
           reminderHour: null,
+          notificationPrefs: normalizeNotificationPrefs(undefined, false),
           journeyPlacementLevel: null,
           onboardingSurveyCompletedAt: null,
           onboardingTourCompletedAt: null,
@@ -3853,6 +3863,10 @@ export function MobileLibraryShell(args: {
           reminderMinute: normalizeReminderMinute(
             (next as { reminderMinute?: unknown }).reminderMinute
           ),
+          notificationPrefs: normalizeNotificationPrefs(
+            (next as { notificationPrefs?: unknown }).notificationPrefs,
+            normalizeRemindersEnabled(next.remindersEnabled)
+          ),
           journeyPlacementLevel:
             typeof next.journeyPlacementLevel === "string" ? next.journeyPlacementLevel : null,
           onboardingSurveyCompletedAt:
@@ -3899,6 +3913,31 @@ export function MobileLibraryShell(args: {
 
     void hydratePreferences();
 
+    return () => {
+      cancelled = true;
+    };
+  }, [sessionToken]);
+
+  // Load the Studio-defined notification types (copy + which are active)
+  // so Settings can render one toggle per type. Best-effort: failure just
+  // leaves the per-type toggles hidden; the daily reminder card is
+  // unaffected since it does not depend on this.
+  useEffect(() => {
+    if (!sessionToken) return;
+    let cancelled = false;
+    void (async () => {
+      try {
+        const res = await apiFetch<{ types: ResolvedNotificationType[] }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/mobile/notification-types",
+          token: sessionToken,
+          method: "GET",
+        });
+        if (!cancelled) setNotificationTypes(res.types ?? []);
+      } catch {
+        if (!cancelled) setNotificationTypes([]);
+      }
+    })();
     return () => {
       cancelled = true;
     };
@@ -4348,7 +4387,7 @@ export function MobileLibraryShell(args: {
       base,
       onboardingPracticePrefs
     );
-    return personalized === "natural" ? "context" : personalized;
+    return personalized;
   }, [journeyScopedFavoriteWords, onboardingPracticePrefs]);
 
   const recommendedPracticeLabel =
@@ -5124,12 +5163,35 @@ export function MobileLibraryShell(args: {
     [commitRecordProgress]
   );
 
-  async function savePreferences() {
+  // Flip one per-type notification toggle and persist immediately. For
+  // `daily_reminder` we keep the legacy `remindersEnabled`/`reminderHour`
+  // fields mirrored so the existing local scheduler and the daily card
+  // stay consistent.
+  function toggleNotificationType(key: NotificationTypeKey, value: boolean) {
+    const current = preferences;
+    const nextPrefs = { ...current.notificationPrefs, [key]: value };
+    const next: MobilePreferences = { ...current, notificationPrefs: nextPrefs };
+    if (key === "daily_reminder") {
+      next.remindersEnabled = value;
+      next.reminderHour = value ? (current.reminderHour ?? 18) : null;
+    }
+    setPreferences(next);
+    setPreferencesStatus("idle");
+    void savePreferences(next);
+  }
+
+  async function savePreferences(override?: MobilePreferences) {
     if (!sessionToken) {
       setPreferencesStatus("error");
       setPreferencesHint("Sign in to save settings.");
       return;
     }
+
+    // `override` lets a single deliberate action (e.g. flipping a
+    // notification-type toggle) persist immediately without waiting for
+    // React state to flush — the closure-captured `preferences` would
+    // otherwise lag one render behind the setPreferences call.
+    const source = override ?? preferences;
 
     try {
       setPreferencesStatus("saving");
@@ -5138,7 +5200,7 @@ export function MobileLibraryShell(args: {
         path: "/api/mobile/preferences",
         token: sessionToken,
         method: "POST",
-        body: preferences,
+        body: source,
       });
       const normalizedTargetLanguages = normalizeLanguageSelection(next.targetLanguages ?? []);
       const resolvedJourneyFocus =
@@ -5156,8 +5218,8 @@ export function MobileLibraryShell(args: {
         typeof (next as { activeJourneyId?: unknown }).activeJourneyId === "string"
           ? ((next as { activeJourneyId?: string }).activeJourneyId ?? null)
           : null;
-      const journeys = remoteJourneys ?? preferences.journeys;
-      const activeJourneyId = remoteActiveId ?? preferences.activeJourneyId;
+      const journeys = remoteJourneys ?? source.journeys;
+      const activeJourneyId = remoteActiveId ?? source.activeJourneyId;
       const normalized: MobilePreferences = {
         targetLanguages: normalizedTargetLanguages,
         interests: normalizeInterestSelection(next.interests ?? []),
@@ -5169,6 +5231,10 @@ export function MobileLibraryShell(args: {
         dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
         remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
         reminderHour: normalizeReminderHour(next.reminderHour),
+        notificationPrefs: normalizeNotificationPrefs(
+          (next as { notificationPrefs?: unknown }).notificationPrefs,
+          normalizeRemindersEnabled(next.remindersEnabled)
+        ),
         journeyPlacementLevel:
           typeof next.journeyPlacementLevel === "string" ? next.journeyPlacementLevel : null,
         onboardingSurveyCompletedAt:
@@ -5305,6 +5371,10 @@ export function MobileLibraryShell(args: {
         dailyMinutes: normalizeDailyMinutes(next.dailyMinutes),
         remindersEnabled: normalizeRemindersEnabled(next.remindersEnabled),
         reminderHour: normalizeReminderHour(next.reminderHour),
+        notificationPrefs: normalizeNotificationPrefs(
+          (next as { notificationPrefs?: unknown }).notificationPrefs,
+          normalizeRemindersEnabled(next.remindersEnabled)
+        ),
         journeyPlacementLevel:
           typeof next.journeyPlacementLevel === "string" ? next.journeyPlacementLevel : null,
         onboardingSurveyCompletedAt:
@@ -7141,7 +7211,7 @@ export function MobileLibraryShell(args: {
     if (practiceRevealed) return;
     const exId = currentPracticeExercise?.id ?? null;
     if (!exId) return;
-    // Context mode (fill_blank / natural_expression): no autoplay.
+    // Context mode (fill_blank): no autoplay.
     // El usuario tiene que pensar la palabra correcta sin pista
     // auditiva. El audio se reproduce sólo DESPUÉS de revelar, con
     // la oración ya completada (otro effect más abajo lo dispara).
@@ -11741,7 +11811,7 @@ export function MobileLibraryShell(args: {
                   // mode-specific content, options as 2x2 grid with accent
                   // bars. Hero content:
                   //   - meaning: word grande + sentence card debajo
-                  //   - context (fill_blank, natural_expression): sentence
+                  //   - context (fill_blank): sentence
                   //     con `___` como protagonista + audio button
                   //   - listening: botón Play XL centrado (la palabra está
                   //     oculta hasta reveal)
@@ -13090,6 +13160,19 @@ export function MobileLibraryShell(args: {
                       ]
                     : [];
 
+  // Per-type toggles for every active type EXCEPT daily_reminder, which
+  // keeps its dedicated card (with the time picker) above. Hidden until
+  // the type list loads.
+  const notificationToggles = (notificationTypes ?? [])
+    .filter((type) => type.key !== "daily_reminder")
+    .map((type) => ({
+      key: type.key,
+      label: type.label,
+      description: type.description,
+      value: preferences.notificationPrefs[type.key] ?? type.localEnabledByDefault,
+      onValueChange: (next: boolean) => toggleNotificationType(type.key, next),
+    }));
+
   const settingsView = (
     <MobileSettingsScreen
       achievements={
@@ -13174,16 +13257,8 @@ export function MobileLibraryShell(args: {
             : "These settings now save directly from iPhone."
       }
       remindersEnabled={preferences.remindersEnabled}
-      onPressRemindersOn={() =>
-        setPreferences((current) => ({
-          ...current,
-          remindersEnabled: true,
-          reminderHour: current.reminderHour ?? 18,
-        }))
-      }
-      onPressRemindersOff={() =>
-        setPreferences((current) => ({ ...current, remindersEnabled: false, reminderHour: null }))
-      }
+      onPressRemindersOn={() => toggleNotificationType("daily_reminder", true)}
+      onPressRemindersOff={() => toggleNotificationType("daily_reminder", false)}
       // Un solo chip que muestra la hora actual y al tap abre el
       // TimePickerSheet (wheel picker tipo iOS). Mucho más limpio que
       // 96 chips horizontales scrolleables.
@@ -13204,8 +13279,15 @@ export function MobileLibraryShell(args: {
       reminderPreviewTitle={preferences.remindersEnabled ? reminderPreview.title : null}
       reminderPreviewBody={preferences.remindersEnabled ? reminderPreview.body : null}
       reminderHint={reminderHint ?? "Enable one short nudge a day."}
+      notificationToggles={notificationToggles}
       summaryItems={remoteSummaryItems}
-      pushMessage={pushState && "message" in pushState ? pushState.message : null}
+      pushMessage={
+        pushState && "message" in pushState
+          ? pushState.message
+          : "message" in localPushState
+            ? localPushState.message
+            : null
+      }
       showSignOut={Boolean(isSignedIn && onSignOut)}
       onPressSignOut={onSignOut ?? undefined}
       showSignIn={Boolean(!isSignedIn && onRequestSignIn)}

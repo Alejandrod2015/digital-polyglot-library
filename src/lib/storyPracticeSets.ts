@@ -16,8 +16,8 @@ import { buildPracticeItemsFromStory, rankItemsForFeatured } from "@/lib/storyPr
 import { buildMixedPracticeSession, type PracticeExercise, type PracticeMode } from "@/lib/practiceExercises";
 import { sanitizePracticeSentence } from "@/lib/sanitizePracticeSentence";
 
-const FEATURED_PLAN: PracticeMode[] = ["context", "meaning", "listening", "context", "meaning", "listening", "natural", "context", "meaning", "context"];
-const POOL_EXTENSION_PLAN: PracticeMode[] = ["context", "meaning", "listening", "natural", "context", "meaning", "listening", "natural", "context", "meaning"];
+const FEATURED_PLAN: PracticeMode[] = ["context", "meaning", "listening", "context", "meaning", "listening", "match", "context", "meaning", "context"];
+const POOL_EXTENSION_PLAN: PracticeMode[] = ["context", "meaning", "listening", "match", "context", "meaning", "listening", "match", "context", "meaning"];
 const FEATURED_SIZE = 10;
 // Hard cap on total pool size so generation cost stays bounded even for
 // stories with very rich vocab. Set generously — the actual cap per
@@ -39,12 +39,6 @@ function buildPayload(ex: PracticeExercise): { word: string; sentence: string; p
     case "meaning_in_context":
       return {
         word: ex.word,
-        sentence: ex.sentence,
-        payload: { prompt: ex.prompt, options: ex.options, answer: ex.answer, audioClip: ex.audioClip ?? null },
-      };
-    case "natural_expression":
-      return {
-        word: ex.answer,
         sentence: ex.sentence,
         payload: { prompt: ex.prompt, options: ex.options, answer: ex.answer, audioClip: ex.audioClip ?? null },
       };

@@ -44,7 +44,6 @@ type Props = {
 const TYPE_LABEL: Record<string, string> = {
   fill_blank: "Completa la frase",
   meaning_in_context: "Significado",
-  natural_expression: "Expresión natural",
   listen_choose: "Escucha y elige",
   match_meaning: "Empareja",
 };
@@ -55,7 +54,6 @@ const TYPE_LABEL: Record<string, string> = {
 const TYPE_COLOR: Record<string, string> = {
   fill_blank: "#60a5fa", // blue
   meaning_in_context: "#a78bfa", // violet
-  natural_expression: "#f59e0b", // amber
   listen_choose: "#34d399", // green
   match_meaning: "#f472b6", // pink
 };

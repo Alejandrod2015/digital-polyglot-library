@@ -276,9 +276,9 @@ export function sortPracticeItemsByOnboarding<T extends PracticeLikeItem>(
 
 export function getPracticeModeBias(
   prefs: OnboardingPracticePrefs
-): "meaning" | "context" | "natural" | "listening" | null {
+): "meaning" | "context" | "listening" | null {
   if (prefs.dailyMinutes && prefs.dailyMinutes <= 5) return "meaning";
-  if (prefs.learningGoal === "Travel") return "natural";
+  if (prefs.learningGoal === "Travel") return "context";
   if (prefs.learningGoal === "Culture") return "context";
   if (prefs.learningGoal === "Fluency") return "listening";
   return null;
