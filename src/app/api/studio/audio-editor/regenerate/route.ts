@@ -11,7 +11,7 @@ export const maxDuration = 120;
 
 // Max in-app ElevenLabs regenerations allowed per segment (spend cap).
 // Beyond this the operator falls back to manual upload (no API cost).
-const MAX_REGENS_PER_SEGMENT = 3;
+const MAX_REGENS_PER_SEGMENT = 1;
 
 // Voice ids that belong to local TTS engines (not ElevenLabs). The editor
 // can't synthesize these on the server, so regenerate is ElevenLabs-only.

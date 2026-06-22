@@ -69,9 +69,9 @@ export async function GET(request: Request) {
 
     const fragmentForBlock = (i: number) => (hasFragments ? rawFragments[i + titleOffset] : undefined);
 
-    // Per-segment in-app regenerate usage (spend cap = 3/segment). The UI
-    // shows "X/3" and disables the regenerate button at the cap.
-    const REGEN_LIMIT = 3;
+    // Per-segment in-app regenerate usage (spend cap = 1/segment). The UI
+    // shows "X/1" and disables the regenerate button at the cap.
+    const REGEN_LIMIT = 1;
     const regenCounts: Record<string, number> =
       story.audioEditorRegenCounts && typeof story.audioEditorRegenCounts === "object" && !Array.isArray(story.audioEditorRegenCounts)
         ? (story.audioEditorRegenCounts as Record<string, number>)
