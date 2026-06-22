@@ -1,9 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import PracticeSetEditor from "@/components/studio/PracticeSetEditor";
 import MiniPlayer from "@/components/studio/MiniPlayer";
-import { getIsoLanguageTag } from "@/lib/languageFlags";
 
 // ── Inline SVG icons (no emoji) ──
 type IconName =
@@ -1275,25 +1274,75 @@ export default function MonitorClient() {
       {loading && <p className="jm-dim" style={{ fontSize: 12 }}>Cargando…</p>}
 
       {/* ══ Journeys list ══ */}
-      {journeys.filter((j) => {
-        if (journeyFilter === "pending") return j.stats.published < j.stats.total;
-        if (journeyFilter === "complete") return j.stats.total > 0 && j.stats.published === j.stats.total;
-        return true;
-      }).map((j) => {
+      {/* Orden visual: idioma → región → nivel → (tema va dentro de cada
+          tarjeta, ya ordenado por el orden del journey). Idioma y región
+          usan el orden de los catálogos del Studio (sortOrder); nivel usa
+          el orden CEFR. Solo afecta la presentación, no los datos. */}
+      {[...journeys]
+        .sort((a, b) => {
+          const langRank = (code: string) => {
+            const i = allLanguages.findIndex((l) => l.code.toLowerCase() === code.toLowerCase());
+            return i < 0 ? 999 : i;
+          };
+          const regionRank = (langCode: string, variantCode: string) => {
+            const variants = allLanguages.find((l) => l.code.toLowerCase() === langCode.toLowerCase())?.variants ?? [];
+            const i = variants.findIndex((v) => v.code.toLowerCase() === variantCode.toLowerCase());
+            return i < 0 ? 999 : i;
+          };
+          const CEFR = ["a1", "a2", "b1", "b2", "c1", "c2"];
+          const levelRank = (j: JourneySummary) =>
+            Math.min(
+              ...(j.levels.length ? j.levels : ["zz"]).map((l) => {
+                const i = CEFR.indexOf(l.toLowerCase());
+                return i < 0 ? 999 : i;
+              })
+            );
+          return (
+            langRank(a.language) - langRank(b.language) ||
+            a.language.localeCompare(b.language) ||
+            regionRank(a.language, a.variant) - regionRank(b.language, b.variant) ||
+            a.variant.localeCompare(b.variant) ||
+            levelRank(a) - levelRank(b) ||
+            a.name.localeCompare(b.name)
+          );
+        })
+        .filter((j) => {
+          if (journeyFilter === "pending") return j.stats.published < j.stats.total;
+          if (journeyFilter === "complete") return j.stats.total > 0 && j.stats.published === j.stats.total;
+          return true;
+        })
+        .map((j, jIdx, jArr) => {
         const pct = j.stats.total > 0 ? Math.round((j.stats.published / j.stats.total) * 100) : 0;
-        const lang = allLanguages.find((l) => l.code === j.language);
-        const variantLabel = lang?.variants?.find((v) => v.code === j.variant)?.label || j.variant;
+        const lang = allLanguages.find((l) => l.code.toLowerCase() === j.language.toLowerCase());
+        const variantLabel = lang?.variants?.find((v) => v.code.toLowerCase() === j.variant.toLowerCase())?.label || j.variant;
         const isEditing = editingJourneyId === j.id;
         const isExpanded = expandedJourneyIds.has(j.id);
         const isComplete = j.stats.total > 0 && j.stats.published === j.stats.total;
+        const isEmpty = j.stats.total > 0 && j.stats.published === 0;
+        const statusClass =
+          j.stats.total === 0
+            ? ""
+            : isComplete
+              ? "jm-journey--complete"
+              : isEmpty
+                ? "jm-journey--pending"
+                : "jm-journey--progress";
+        // Encabezado de grupo por idioma: solo se pinta cuando cambia el
+        // idioma respecto a la tarjeta anterior (la lista ya viene ordenada
+        // idioma → región → nivel), para que el orden se lea de un vistazo.
+        const prevJourney = jIdx > 0 ? jArr[jIdx - 1] : null;
+        const showLangHeader = !prevJourney || prevJourney.language !== j.language;
 
         return (
-          <article key={j.id} className={`jm-journey ${isExpanded ? "jm-journey--open" : ""}`}>
+          <Fragment key={j.id}>
+          {showLangHeader && (
+            <div className="jm-lang-group">{(lang?.label || j.language).toUpperCase()}</div>
+          )}
+          <article className={`jm-journey ${statusClass} ${isExpanded ? "jm-journey--open" : ""}`}>
             <header className="jm-j-head" onClick={() => void toggleJourney(j)}>
               <span className={`jm-j-head__caret ${isExpanded ? "jm-j-head__caret--open" : ""}`}>
                 <Icon name="chevron" />
               </span>
-              <span className="jm-lang-tag">{getIsoLanguageTag(lang?.label || j.language)}</span>
               {isEditing ? (
                 <input
                   autoFocus
@@ -1306,29 +1355,38 @@ export default function MonitorClient() {
                   onBlur={() => void renameJourney(j.id, editName)}
                 />
               ) : (
-                <span
-                  className="jm-j-head__name"
-                  onClick={(e) => { e.stopPropagation(); setEditingJourneyId(j.id); setEditName(j.name); }}
-                  title="Click para renombrar"
-                >
-                  {j.name}
+                <span className="jm-j-head__id">
+                  <span className="jm-j-head__idtop">
+                    {variantLabel && (
+                      <span className="jm-j-head__region">{variantLabel.toUpperCase()}</span>
+                    )}
+                    <span className="jm-chip jm-chip--mono jm-chip--level">
+                      {j.levels.map((l) => l.toUpperCase()).join(", ")}
+                    </span>
+                  </span>
+                  <span className="jm-j-head__sub">
+                    <span
+                      className="jm-j-head__name-mini"
+                      onClick={(e) => { e.stopPropagation(); setEditingJourneyId(j.id); setEditName(j.name); }}
+                      title="Click para renombrar"
+                    >
+                      {j.name}
+                    </span>
+                    {" · "}{j.topics.length} temas
+                  </span>
                 </span>
               )}
-              {variantLabel && (
-                <span className="jm-chip jm-chip--teal jm-chip--mono">{variantLabel.toUpperCase()}</span>
-              )}
-              <span className="jm-j-head__meta">
-                {j.levels.map((l) => l.toUpperCase()).join(", ")} · {j.topics.length} temas
-              </span>
               <span className="jm-row__spacer" />
-              <span className="jm-j-head__count">
-                <strong>{j.stats.published}</strong>/{j.stats.total} publicadas
-              </span>
-              <div className="jm-j-head__bar">
-                <div
-                  className={`jm-j-head__bar-fill ${isComplete ? "jm-j-head__bar-fill--complete" : ""}`}
-                  style={{ width: `${pct}%` }}
-                />
+              <div className="jm-j-head__progress">
+                <span className={`jm-j-head__count ${isEmpty ? "jm-j-head__count--empty" : ""} ${isComplete ? "jm-j-head__count--complete" : ""}`}>
+                  <strong>{j.stats.published}</strong>/{j.stats.total} publicadas
+                </span>
+                <div className={`jm-j-head__bar ${isEmpty ? "jm-j-head__bar--empty" : ""}`}>
+                  <div
+                    className={`jm-j-head__bar-fill ${isComplete ? "jm-j-head__bar-fill--complete" : ""}`}
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
               </div>
               <button
                 className={`jm-btn jm-btn--icon jm-btn--ghost ${editingStructureId === j.id ? "jm-btn-tone-teal" : ""}`}
@@ -1714,6 +1772,7 @@ export default function MonitorClient() {
               );
             })()}
           </article>
+          </Fragment>
         );
       })}
     </div>

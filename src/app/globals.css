@@ -1939,6 +1939,41 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   color: var(--mx-fg);
   cursor: text;
 }
+/* Identity block (two lines): región + nivel arriba (el diferenciador
+   que manda, ya que todas las tarjetas se llaman igual), nombre +
+   nº de temas debajo en gris. */
+.jm-j-head__id { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.jm-j-head__idtop { display: flex; align-items: center; gap: 8px; }
+.jm-j-head__region {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--mx-fg);
+}
+.jm-j-head__sub {
+  font-size: 11.5px;
+  color: var(--mx-muted);
+  letter-spacing: -0.005em;
+}
+.jm-j-head__name-mini { color: var(--mx-fg-soft); cursor: pointer; }
+.jm-j-head__name-mini:hover { color: var(--mx-fg); text-decoration: underline; }
+/* Progreso agrupado a la derecha (conteo + barra alineados) */
+.jm-j-head__progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  min-width: 120px;
+}
+/* Acento de estado a la izquierda de la tarjeta */
+.jm-journey--pending { box-shadow: inset 3px 0 0 var(--mx-warn); }
+.jm-journey--progress { box-shadow: inset 3px 0 0 var(--mx-accent); }
+.jm-journey--complete { box-shadow: inset 3px 0 0 var(--mx-pos); }
+.jm-chip--level {
+  color: var(--mx-purple);
+  background: rgba(167, 139, 250, 0.10);
+  border-color: rgba(167, 139, 250, 0.28);
+}
 .jm-j-head__meta {
   font-family: var(--mx-mono);
   font-size: 11.5px;
@@ -1946,6 +1981,26 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   letter-spacing: -0.01em;
   color: var(--mx-muted);
 }
+/* Language group divider (idioma → región → nivel) */
+.jm-lang-group {
+  font-family: var(--mx-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mx-muted);
+  padding: 14px 4px 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.jm-lang-group::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--mx-border);
+}
+.jm-journey + .jm-lang-group { margin-top: 6px; }
 .jm-j-head__count {
   font-family: var(--mx-mono);
   font-size: 11.5px;
@@ -1954,8 +2009,10 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   color: var(--mx-fg-soft);
 }
 .jm-j-head__count strong { color: var(--mx-fg); font-weight: 700; }
+.jm-j-head__count--empty strong { color: var(--mx-warn); }
+.jm-j-head__count--complete strong { color: var(--mx-pos); }
 .jm-j-head__bar {
-  width: 88px; height: 4px;
+  width: 120px; height: 4px;
   background: rgba(255, 255, 255, 0.06);
   border-radius: 2px;
   overflow: hidden;
@@ -1967,6 +2024,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   transition: width 0.25s ease;
 }
 .jm-j-head__bar-fill--complete { background: var(--mx-pos); }
+.jm-j-head__bar--empty { background: rgba(251, 191, 36, 0.16); }
 
 /* Level editor (inside journey card) */
 .jm-level-editor {

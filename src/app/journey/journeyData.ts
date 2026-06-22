@@ -859,7 +859,8 @@ export function buildJourneyTrackInsights(
 export async function buildJourneyLevels(
   variantIdOrSlug?: string,
   language = DEFAULT_LANGUAGE,
-  journeyFocus: JourneyFocus = "General"
+  journeyFocus: JourneyFocus = "General",
+  levelHint?: string
 ): Promise<JourneyLevel[]> {
   const tracks = await buildJourneyVariants(language, journeyFocus);
   if (tracks.length === 0) return [];
@@ -869,10 +870,21 @@ export async function buildJourneyLevels(
   // variant raw ("latam"); aceptamos los 3 para no romper bookmarks.
   if (variantIdOrSlug) {
     const lookup = variantIdOrSlug.toLowerCase();
+    // Un `variant` ya NO es único: un mismo region/variant puede tener
+    // varios journeys, cada uno con su propio set de niveles (p.ej.
+    // LATAM A1 y LATAM A2 son journeys separados, ambos variant="latam").
+    // Cuando el lookup es por variant y hay varios tracks, desempatamos
+    // por el nivel pedido para no caer en el journey equivocado.
+    const wantedLevel = levelHint?.trim().toLowerCase();
+    const byVariant = tracks.filter((track) => track.variant === lookup);
+    const variantMatch =
+      (wantedLevel
+        ? byVariant.find((track) => track.levels.some((level) => level.id === wantedLevel))
+        : undefined) ?? byVariant[0];
     const matched =
       tracks.find((track) => track.slug === lookup) ??
       tracks.find((track) => track.id === variantIdOrSlug) ??
-      tracks.find((track) => track.variant === lookup);
+      variantMatch;
     return matched?.levels ?? [];
   }
 
@@ -1027,7 +1039,7 @@ export async function buildJourneyTopicPracticeItems(
   level: JourneyLevel;
   items: PracticeFavoriteItem[];
 } | null> {
-  const levels = await buildJourneyLevels(variantId, DEFAULT_LANGUAGE, journeyFocus);
+  const levels = await buildJourneyLevels(variantId, DEFAULT_LANGUAGE, journeyFocus, levelId);
   const level = levels.find((entry) => entry.id === levelId) ?? null;
   const topic = level?.topics.find((entry) => entry.slug === topicSlug) ?? null;
 
@@ -1077,7 +1089,7 @@ export async function buildJourneyTopicCheckpoint(
   checkpointKey: string;
   questions: JourneyCheckpointQuestion[];
 } | null> {
-  const levels = await buildJourneyLevels(variantId);
+  const levels = await buildJourneyLevels(variantId, DEFAULT_LANGUAGE, "General", levelId);
   const level = levels.find((entry) => entry.id === levelId);
   const topic = level?.topics.find((entry) => entry.slug === topicSlug);
 

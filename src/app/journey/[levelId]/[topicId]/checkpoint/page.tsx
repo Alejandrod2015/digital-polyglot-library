@@ -52,7 +52,7 @@ export default async function JourneyCheckpointPage({
   if (!checkpoint) {
     redirect("/journey");
   }
-  const level = (await buildJourneyLevels(variantId, targetLanguage, journeyFocus ?? "General")).find((entry) => entry.id === levelId) ?? null;
+  const level = (await buildJourneyLevels(variantId, targetLanguage, journeyFocus ?? "General", levelId)).find((entry) => entry.id === levelId) ?? null;
   const topic = level?.topics.find((entry) => entry.slug === topicId) ?? null;
   if (!topic || !isJourneyTopicComplete(topic, completedStoryKeys)) {
     redirect(variantId ? `/journey/${levelId}/${topicId}?variant=${encodeURIComponent(variantId)}` : `/journey/${levelId}/${topicId}`);
