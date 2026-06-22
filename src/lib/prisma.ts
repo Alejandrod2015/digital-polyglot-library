@@ -27,6 +27,15 @@ const TRANSIENT_ERROR_PATTERNS: RegExp[] = [
 
 function isTransientError(err: unknown): boolean {
   if (!err) return false;
+  // PrismaClientUnknownRequestError = el engine devolvió un error sin
+  // código conocido. En la práctica es casi siempre transitorio: el
+  // pooler de Neon (pgbouncer) corta/recicla conexiones bajo
+  // concurrencia y la query cae con un error opaco. Reintentar suele
+  // aterrizar en una conexión fresca y resolver. Los errores
+  // determinísticos (constraint, validación) son KnownRequestError /
+  // ValidationError, otra clase, así que no entran aquí.
+  const name = err instanceof Error ? err.name : "";
+  if (name === "PrismaClientUnknownRequestError") return true;
   const message =
     err instanceof Error ? err.message : typeof err === "string" ? err : String(err);
   return TRANSIENT_ERROR_PATTERNS.some((re) => re.test(message));
