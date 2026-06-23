@@ -413,12 +413,20 @@ export default function JourneyClient({
 
   // Volver desde el reader al MISMO journey/idioma del que entró el usuario
   // (no a su idioma principal). StoryBackLink prioriza `?returnTo`; le pasamos
-  // la home con el variant activo, usando el mismo slug que la URL (slug ?? id).
+  // la página del journey (`/journey?variant=`) con el variant activo, usando
+  // el mismo slug que la URL (slug ?? id).
+  //
+  // Antes apuntábamos a `/?variant=` (la home). Para usuarios polyglot la home
+  // ES el journey, así que funcionaba; pero para el resto de planes `/` renderiza
+  // HomeClient (carruseles) e ignora `?variant=`, dejándolos en la página
+  // principal teniendo que re-seleccionar journey + idioma. `/journey?variant=`
+  // renderiza JourneyClient para TODOS los planes, así que el volver es
+  // consistente. (ClickUp "Journeys: Regresar a Journey", 2026-06-23)
   const variantSlug = selectedTrack.slug ?? selectedVariantId;
   const withReturn = (href: string) =>
     href
       ? `${href}${href.includes("?") ? "&" : "?"}returnTo=${encodeURIComponent(
-          `/?variant=${variantSlug}`
+          `/journey?variant=${variantSlug}`
         )}&returnLabel=Journey`
       : href;
 
@@ -561,6 +569,9 @@ export default function JourneyClient({
                       style={{ color: "var(--muted)" }}
                     >
                       {pill.code} · {formatVariantLabel(track.variant) ?? track.slug}
+                      {track.levels?.length
+                        ? ` · ${track.levels.map((l) => l.title).join("/")}`
+                        : ""}
                     </span>
                   </span>
                   {isSelected ? (

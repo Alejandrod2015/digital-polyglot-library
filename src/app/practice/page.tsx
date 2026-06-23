@@ -2248,18 +2248,18 @@ export default function PracticePage() {
             ) : currentExercise ? (
               <div
                 key={exerciseIndex}
-                className="relative flex min-h-full flex-col overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md"
+                className="relative flex min-h-full flex-col rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md"
                 style={{ animation: "practice-exercise-in 280ms cubic-bezier(0.22,1,0.36,1) both" }}
               >
                 {activeModeTheme ? (
                   <>
                     <div
                       aria-hidden="true"
-                      className={`pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b ${activeModeTheme.panelGlow}`}
+                      className={`pointer-events-none absolute inset-x-0 top-0 h-28 rounded-t-3xl bg-gradient-to-b ${activeModeTheme.panelGlow}`}
                     />
                     <div
                       aria-hidden="true"
-                      className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${activeModeTheme.accentBar}`}
+                      className={`absolute inset-x-0 top-0 h-1 rounded-t-3xl bg-gradient-to-r ${activeModeTheme.accentBar}`}
                     />
                   </>
                 ) : null}
@@ -2280,7 +2280,7 @@ export default function PracticePage() {
                           : isContextAudioActive(ex.id);
                       const accentColors = ["#fbbf24", "#60a5fa", "#a78bfa", "#34d399"];
                       return (
-                        <div className="flex min-h-0 flex-1 flex-col gap-6">
+                        <div className="flex flex-col gap-6">
                           {/* ── Hero ── */}
                           <div className="flex flex-col items-center gap-3 pt-1">
                             {isListening ? (
@@ -2402,7 +2402,7 @@ export default function PracticePage() {
                           </div>
 
                           {/* ── 2×2 option grid ── */}
-                          <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-3.5">
+                          <div className="grid grid-cols-2 gap-3.5">
                             {ex.options.map((option, idx) => {
                               const isSelected = selectedOption === option;
                               const isCorrect = revealed && option === ex.answer;

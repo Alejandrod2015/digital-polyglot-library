@@ -184,6 +184,11 @@ export type ApplyNarrationPostProcessArgs = {
   ambientVolume?: number;
   /** Skip aeneas re-alignment (useful when caller plans to align later). */
   skipAlignment?: boolean;
+  /** Explicit narrator off-intervals (seconds, in the source/mixed timeline at
+   *  tempo=1) to silence the bed. When provided, bypasses the drift-prone
+   *  re-derivation from re-aligned `audioSegments` — pass the generator's exact
+   *  per-fragment offsets instead. Assumes tempo=1 (scale stays 1/tempo=1). */
+  narratorOffIntervals?: [number, number][];
 };
 
 export type ApplyNarrationPostProcessResult = {
@@ -236,7 +241,9 @@ export async function applyNarrationPostProcess(
       // Silence the bed while the narrator (out-of-scene VO) speaks; play it
       // continuously under character dialogue. The segments are aligned to the
       // pre-tempo source, atempo stretches by 1/tempo, so scale = 1/tempo.
-      const { intervals } = computeNarratorOffIntervals(story.text ?? "", story.audioSegments);
+      const { intervals } = args.narratorOffIntervals
+        ? { intervals: args.narratorOffIntervals }
+        : computeNarratorOffIntervals(story.text ?? "", story.audioSegments);
       if (intervals.length === 0) {
         console.warn(
           `[narrationPostProcess] could not resolve narrator ranges for ${args.storyId}; mixing ambient continuously`
@@ -253,7 +260,12 @@ export async function applyNarrationPostProcess(
         `[0:a]atempo=${tempo}[s];` +
         `${ambientStage};` +
         `[s][a1]amix=inputs=2:duration=first:dropout_transition=2[mix];` +
-        `[mix]dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5`;
+        // No dynaudnorm here: the voice track is already loudness-normalized
+        // (-16 LUFS) before this stage, and a dynamic normalizer on the
+        // voice+bed MIX rides the gain with the voice loudness, making the
+        // ambient bed audibly pump up/down ("breathe"). A single static-ish
+        // loudnorm to target is enough; the bed stays at its fixed level.
+        `[mix]loudnorm=I=-16:LRA=11:TP=-1.5`;
       ffmpegArgs.push("-filter_complex", filter);
     } else {
       ffmpegArgs.push("-af", `atempo=${tempo},loudnorm=I=-16:LRA=11:TP=-1.5`);
