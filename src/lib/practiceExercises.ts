@@ -539,6 +539,17 @@ function createFillBlankExercise(
   const fullSentence = getContextSentence(item);
   const blanked = getSentenceWithBlank(item);
   if (!blanked || !fullSentence) return null;
+  // Reject degenerate clozes: when the saved example was essentially
+  // just the target word, blanking leaves "_____" (or "_____.") with no
+  // surrounding context, so the Context card renders an empty prompt
+  // (only the answer options show). Require at least two real word
+  // tokens around the blank for a usable sentence-level cue; otherwise
+  // the item falls back to meaning/listening in buildPracticeSession.
+  const contextTokens = blanked.sentence
+    .replace(/_{3,}/g, " ")
+    .split(/\s+/)
+    .filter((token) => /\p{L}/u.test(token));
+  if (contextTokens.length < 2) return null;
   // Answer = the surface form actually present in the sentence
   // (`preparava` if the lemma is `preparare`). Showing the lemma as
   // the gap-fill answer didn't match the grammatical context the

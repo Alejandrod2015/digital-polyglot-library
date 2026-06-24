@@ -14,6 +14,14 @@ export const GOOGLE_PLAY_PREMIUM_ANNUAL_PRODUCT_ID =
   process.env.NEXT_PUBLIC_GOOGLE_PLAY_PREMIUM_ANNUAL_PRODUCT_ID?.trim() ||
   "premium_annual";
 
+export const APP_STORE_PREMIUM_MONTHLY_PRODUCT_ID =
+  process.env.NEXT_PUBLIC_APP_STORE_PREMIUM_MONTHLY_PRODUCT_ID?.trim() ||
+  "premium_monthly";
+
+export const APP_STORE_PREMIUM_ANNUAL_PRODUCT_ID =
+  process.env.NEXT_PUBLIC_APP_STORE_PREMIUM_ANNUAL_PRODUCT_ID?.trim() ||
+  "premium_annual";
+
 // Fallback display labels — used only if the live Stripe lookup fails.
 // Runtime source of truth is GET /api/stripe/prices (reads the price objects
 // above). Keep these roughly in sync with Stripe as a safety net.
@@ -24,5 +32,12 @@ export function getGooglePlayPremiumProductIds() {
   return [
     GOOGLE_PLAY_PREMIUM_MONTHLY_PRODUCT_ID,
     GOOGLE_PLAY_PREMIUM_ANNUAL_PRODUCT_ID,
+  ].filter(Boolean);
+}
+
+export function getAppStorePremiumProductIds() {
+  return [
+    APP_STORE_PREMIUM_MONTHLY_PRODUCT_ID,
+    APP_STORE_PREMIUM_ANNUAL_PRODUCT_ID,
   ].filter(Boolean);
 }

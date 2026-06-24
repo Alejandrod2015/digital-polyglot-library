@@ -49,6 +49,10 @@ const VOCAB_TYPE_BG: Record<VocabTypeKey, string> = {
   noun: "rgba(56, 189, 248, 0.65)",
   adjective: "rgba(52, 211, 153, 0.6)",
   adverb: "rgba(167, 139, 250, 0.65)",
+  pronoun: "rgba(251, 191, 36, 0.6)",
+  preposition: "rgba(45, 212, 191, 0.6)",
+  conjunction: "rgba(129, 140, 248, 0.6)",
+  number: "rgba(190, 220, 80, 0.55)",
   expression: "rgba(244, 114, 182, 0.6)",
   other: "rgba(148, 163, 184, 0.55)",
 };

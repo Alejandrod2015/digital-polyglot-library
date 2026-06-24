@@ -425,6 +425,7 @@ model StudioConfig {
 enum BillingSource {
   stripe
   google_play
+  app_store
 }
 
 enum BillingStatus {

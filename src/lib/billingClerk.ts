@@ -30,6 +30,9 @@ export async function syncClerkPlanFromEntitlement(
       googlePlayPurchaseToken: entitlement?.source === "google_play"
         ? entitlement?.purchaseToken ?? null
         : null,
+      appStoreOriginalTransactionId: entitlement?.source === "app_store"
+        ? entitlement?.purchaseToken ?? null
+        : null,
     },
   });
 }

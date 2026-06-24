@@ -11,7 +11,7 @@ import { REMINDER_HOUR_OPTIONS, REMINDER_MINUTE_OPTIONS, formatReminderHour } fr
 
 type LanguageOption = { code: string; name: string };
 type Plan = "free" | "basic" | "premium" | "polyglot" | "owner" | undefined;
-type BillingSource = "stripe" | "google_play" | null;
+type BillingSource = "stripe" | "google_play" | "app_store" | null;
 type SaveStatus = "idle" | "saving" | "saved" | "error";
 type ThemePref = "system" | "dark" | "light";
 type SettingsProgressPayload = {
@@ -710,9 +710,9 @@ export default function SettingsPage() {
           </p>
         </div>
         {hasPaidPlan ? (
-          billingSource === "google_play" ? (
+          billingSource === "google_play" || billingSource === "app_store" ? (
             <span className="shrink-0 rounded-full bg-white/[0.06] border border-white/10 px-3 py-1.5 text-[12px] font-bold text-white/75">
-              Google Play
+              {billingSource === "google_play" ? "Google Play" : "App Store"}
             </span>
           ) : (
             <button

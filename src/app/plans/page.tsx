@@ -463,10 +463,15 @@ function PlansInner() {
         : null;
   const hasStripeSub = !!entitlement?.hasEntitlement && entitlement.source === 'stripe';
   const hasPlaySub = !!entitlement?.hasEntitlement && entitlement.source === 'google_play';
+  const hasAppStoreSub = !!entitlement?.hasEntitlement && entitlement.source === 'app_store';
 
   const openBillingPortal = async () => {
     if (hasPlaySub) {
       window.open('https://play.google.com/store/account/subscriptions', '_blank');
+      return;
+    }
+    if (hasAppStoreSub) {
+      window.open('https://apps.apple.com/account/subscriptions', '_blank');
       return;
     }
     try {
@@ -481,9 +486,9 @@ function PlansInner() {
     }
   };
 
-  // A real paying subscriber (Stripe/Play). Polyglot/owner are NOT managed:
-  // they keep the normal cards (only the owner has those tiers).
-  const isManaged = hasStripeSub || hasPlaySub;
+  // A real paying subscriber (Stripe/Play/App Store). Polyglot/owner are NOT
+  // managed: they keep the normal cards (only the owner has those tiers).
+  const isManaged = hasStripeSub || hasPlaySub || hasAppStoreSub;
   const managedCta = (cardInterval: 'free' | 'monthly' | 'annual') => {
     const isCurrent =
       (cardInterval === 'annual' && subInterval === 'annual') ||
@@ -542,7 +547,7 @@ function PlansInner() {
         <PlanStatusBanner
           plan={plan}
           interval={subInterval}
-          manageable={hasStripeSub || hasPlaySub}
+          manageable={hasStripeSub || hasPlaySub || hasAppStoreSub}
           source={entitlement?.source ?? null}
           loading={loading === 'portal'}
           onManage={openBillingPortal}
@@ -789,7 +794,9 @@ function PlanStatusBanner({
               ? 'Opening…'
               : source === 'google_play'
                 ? 'Manage in Google Play'
-                : 'Manage'}
+                : source === 'app_store'
+                  ? 'Manage in App Store'
+                  : 'Manage'}
           </button>
         ) : null}
       </div>

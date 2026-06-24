@@ -19,8 +19,15 @@ const DEFAULT_GOOGLE_PLAY_PRODUCT_PLAN_MAP = {
   polyglot_annual: "polyglot",
 } as const satisfies Record<string, Exclude<Plan, "free" | "basic" | "owner" | undefined>>;
 
+const DEFAULT_APP_STORE_PRODUCT_PLAN_MAP = {
+  premium_monthly: "premium",
+  premium_annual: "premium",
+  polyglot_monthly: "polyglot",
+  polyglot_annual: "polyglot",
+} as const satisfies Record<string, Exclude<Plan, "free" | "basic" | "owner" | undefined>>;
+
 export type PaidPlan = "premium" | "polyglot";
-export type BillingSourceName = "stripe" | "google_play";
+export type BillingSourceName = "stripe" | "google_play" | "app_store";
 
 let cachedGooglePlayProductPlanMap: Record<string, PaidPlan> | null = null;
 
@@ -66,6 +73,47 @@ export function resolvePlanFromGooglePlayProductId(
 ): PaidPlan | null {
   if (!productId) return null;
   return getGooglePlayProductPlanMap()[productId] ?? null;
+}
+
+let cachedAppStoreProductPlanMap: Record<string, PaidPlan> | null = null;
+
+function parseAppStoreProductPlanMap(): Record<string, PaidPlan> {
+  if (cachedAppStoreProductPlanMap) {
+    return cachedAppStoreProductPlanMap;
+  }
+
+  const raw = process.env.APP_STORE_PRODUCT_PLAN_MAP;
+  if (!raw) {
+    cachedAppStoreProductPlanMap = { ...DEFAULT_APP_STORE_PRODUCT_PLAN_MAP };
+    return cachedAppStoreProductPlanMap;
+  }
+
+  try {
+    const parsed = JSON.parse(raw) as Record<string, unknown>;
+    const next: Record<string, PaidPlan> = {};
+    for (const [productId, plan] of Object.entries(parsed)) {
+      if ((plan === "premium" || plan === "polyglot") && productId.trim()) {
+        next[productId.trim()] = plan;
+      }
+    }
+    cachedAppStoreProductPlanMap =
+      Object.keys(next).length > 0 ? next : { ...DEFAULT_APP_STORE_PRODUCT_PLAN_MAP };
+    return cachedAppStoreProductPlanMap;
+  } catch {
+    cachedAppStoreProductPlanMap = { ...DEFAULT_APP_STORE_PRODUCT_PLAN_MAP };
+    return cachedAppStoreProductPlanMap;
+  }
+}
+
+export function getAppStoreProductPlanMap(): Record<string, PaidPlan> {
+  return parseAppStoreProductPlanMap();
+}
+
+export function resolvePlanFromAppStoreProductId(
+  productId: string | null | undefined
+): PaidPlan | null {
+  if (!productId) return null;
+  return getAppStoreProductPlanMap()[productId] ?? null;
 }
 
 export function isActiveBillingStatus(status: BillingStatus, expiresAt?: Date | null): boolean {
