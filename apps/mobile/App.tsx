@@ -443,6 +443,23 @@ function MobileAppRoot() {
     clerkLoaded && isClerkSignedIn && !sessionToken && !sessionAnchor;
   const shouldShowSplash = loadingSession || clerkHydrating || clerkSyncPending;
 
+  // Hide the native splash on the SIGNED-OUT path. The native splash is kept
+  // up by `preventAutoHideAsync()` at module load and the ONLY place that ever
+  // calls `hideAsync()` is `ExtendedSplash`, which only mounts inside
+  // `MobileLibraryShell`. A signed-out user is routed to `AuthScreen` (below),
+  // which never mounts the Shell — so the splash would stay frozen on top of
+  // the auth UI (visible but touch-transparent: the buttons underneath are
+  // tappable but hidden). Fire hideAsync here once we've left the splash gate
+  // and are NOT entering the Shell (signed-in / anchor / preview all go to the
+  // Shell, which still owns the seamless ExtendedSplash handoff). Idempotent.
+  useEffect(() => {
+    if (!shouldShowSplash && !sessionToken && !sessionAnchor && !previewModeOnly) {
+      SplashScreen.hideAsync().catch(() => {
+        // Already hidden / not configured — ignore.
+      });
+    }
+  }, [shouldShowSplash, sessionToken, sessionAnchor, previewModeOnly]);
+
   if (shouldShowSplash) {
     // Same pattern as the font-loading branch above: render an
     // empty matching-bg View while the native splash (kept up via
