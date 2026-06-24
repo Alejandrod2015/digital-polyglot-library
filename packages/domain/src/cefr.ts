@@ -7,6 +7,7 @@ const BROAD_TO_CEFR_FALLBACK: Record<Level, CefrLevel> = {
 };
 
 const CEFR_TO_BROAD_LEVEL: Record<CefrLevel, Level> = {
+  a0: "beginner",
   a1: "beginner",
   a2: "beginner",
   b1: "intermediate",
