@@ -1282,6 +1282,11 @@ export async function generateAndUploadMultiVoiceAudio(args: {
    *  el default global. Útil para subir stability solo a las voces que
    *  respiran de más a baja estabilidad, sin aplanar al resto. */
   voiceSettingsMap?: Record<string, VoiceSettings>;
+  /** Normaliza CADA segmento a −16 LUFS antes de concatenar. Sin esto, voces
+   *  del shared library con loudness crudo dispar (p.ej. una ~10 dB más baja)
+   *  quedan desparejas, porque el loudnorm del concat entero no corrige
+   *  diferencias ENTRE voces. Opt-in (default off → no cambia prod). */
+  normalizePerSegment?: boolean;
   /** Apaga previous_text (inhalación de costura) y fija next_text=" "
    *  (suprime respiro de cola) en todos los segmentos v2. Recomendado para
    *  diálogo multi-voz: cada turno es otro hablante, el contexto del vecino
@@ -1385,7 +1390,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       disableStitching: args.disableStitching,
     });
     if (!buf) return null;
-    audioBuffers.push(buf);
+    audioBuffers.push(args.normalizePerSegment ? await normalizeLoudness(buf) : buf);
   }
 
   const concatBuffer = await concatMp3Buffers(audioBuffers, DIALOGUE_GAP_SEC);

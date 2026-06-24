@@ -33,7 +33,7 @@ export type JourneyLevelLike = {
   topics: ReadonlyArray<JourneyTopicLike>;
 };
 
-export const JOURNEY_LEVEL_IDS = ["a1", "a2", "b1", "b2", "c1", "c2"] as const;
+export const JOURNEY_LEVEL_IDS = ["a0", "a1", "a2", "b1", "b2", "c1", "c2"] as const;
 export type JourneyPlacementLevelId = (typeof JOURNEY_LEVEL_IDS)[number];
 
 const LEVEL_COMPLETION_THRESHOLD = 0.75;

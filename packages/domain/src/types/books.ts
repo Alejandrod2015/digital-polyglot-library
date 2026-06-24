@@ -1,5 +1,5 @@
 export type Level = "beginner" | "intermediate" | "advanced";
-export type CefrLevel = "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
+export type CefrLevel = "a0" | "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
 export type Variant = string;
 
 export interface VocabItem {
@@ -74,6 +74,7 @@ export const LEVEL_LABELS: Record<Level, string> = {
 };
 
 export const CEFR_LEVEL_LABELS: Record<CefrLevel, string> = {
+  a0: "A0",
   a1: "A1",
   a2: "A2",
   b1: "B1",

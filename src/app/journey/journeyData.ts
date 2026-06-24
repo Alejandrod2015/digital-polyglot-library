@@ -200,6 +200,7 @@ export function getJourneyTopicPracticeKey(
 }
 
 const journeyLevelMeta: Record<CefrLevel, { id: string; title: string; subtitle: string }> = {
+  a0: { id: "a0", title: "A0", subtitle: "Start from zero" },
   a1: { id: "a1", title: "A1", subtitle: "First steps" },
   a2: { id: "a2", title: "A2", subtitle: "Building confidence" },
   b1: { id: "b1", title: "B1", subtitle: "Everyday confidence" },
@@ -502,7 +503,7 @@ const getStudioJourneysForLanguage = unstable_cache(
       },
     });
   },
-  ["studio-journeys-by-language-v4"],
+  ["studio-journeys-by-language-v5"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -522,7 +523,7 @@ const getAllStudioJourneys = unstable_cache(
       },
     });
   },
-  ["studio-journeys-all-v1"],
+  ["studio-journeys-all-v2"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
