@@ -2220,6 +2220,9 @@ export function MobileLibraryShell(args: {
   const [showCreateComeBackLater, setShowCreateComeBackLater] = useState(false);
   const [onboardingSurveyStep, setOnboardingSurveyStep] = useState(0);
   const [onboardingTourStep, setOnboardingTourStep] = useState<number | null>(null);
+  // Force-replay the tour ignoring the server `onboardingTourCompletedAt` gate
+  // (polyglot "Replay tour" menu entry — preview on an established account).
+  const [forceTourPreview, setForceTourPreview] = useState(false);
   const [onboardingError, setOnboardingError] = useState<string | null>(null);
   const practiceStartTrackedRef = useRef(false);
   const practiceCompletionTrackedRef = useRef(false);
@@ -2749,6 +2752,10 @@ export function MobileLibraryShell(args: {
     setActiveJourneyLanguage(null);
     setRemoteJourney(null);
     setOnboardingOverride(null);
+    // Drop any leftover Replay-tour preview so the REAL gate (not the preview
+    // bypass) drives the tour after onboarding — exactly the new-user path.
+    setForceTourPreview(false);
+    setOnboardingTourStep(null);
     setActiveScreen("home");
     journeyCacheByLanguageRef.current.clear();
     // Wipe disk-stored journeys too so the test reset truly starts
@@ -2778,6 +2785,9 @@ export function MobileLibraryShell(args: {
             reminderHour: null,
             journeyPlacementLevel: null,
             onboardingSurveyCompletedAt: null,
+            // Clear the tour flag too, else re-hydration closes the tour gate
+            // and Test mode wouldn't behave like a true fresh install.
+            onboardingTourCompletedAt: null,
           },
         });
       } catch (err) {
@@ -4975,37 +4985,42 @@ export function MobileLibraryShell(args: {
     Boolean(preferences.onboardingSurveyCompletedAt) &&
     !preferences.onboardingTourCompletedAt &&
     onboardingTourStep !== null;
+  // Preview path (Replay tour) bypasses the survey/tourDone gate.
+  const tourVisible = (forceTourPreview || shouldShowOnboardingTour) && onboardingTourStep !== null;
   const activeOnboardingTourMessage =
-    shouldShowOnboardingTour && onboardingTourStep !== null ? PRODUCT_TOUR_MESSAGES[onboardingTourStep] : null;
+    tourVisible && onboardingTourStep !== null ? PRODUCT_TOUR_MESSAGES[onboardingTourStep] : null;
   const activeOnboardingTourTarget = activeOnboardingTourMessage?.target ?? null;
+  const tourOnTabStep =
+    tourVisible &&
+    (activeOnboardingTourTarget === "home" ||
+      activeOnboardingTourTarget === "explore" ||
+      activeOnboardingTourTarget === "practice" ||
+      activeOnboardingTourTarget === "favorites");
 
   function tourTargetMatchesTab(tab: BottomTab) {
     if (!activeOnboardingTourTarget) return false;
-    if (activeOnboardingTourTarget === "practice-favorites") {
-      return tab === "practice" || tab === "favorites";
-    }
-    if (activeOnboardingTourTarget === "explore") return tab === "explore";
     if (activeOnboardingTourTarget === "home") return tab === "home";
+    if (activeOnboardingTourTarget === "explore") return tab === "explore";
+    if (activeOnboardingTourTarget === "practice") return tab === "practice";
+    if (activeOnboardingTourTarget === "favorites") return tab === "favorites";
     return false;
   }
 
   useEffect(() => {
     if (!activeOnboardingTourTarget) return;
-    if (activeOnboardingTourTarget === "home" || activeOnboardingTourTarget === "reader") {
-      setActiveScreen("home");
-    } else if (activeOnboardingTourTarget === "explore") {
-      setActiveScreen("explore");
-    } else if (activeOnboardingTourTarget === "practice-favorites") {
-      setActiveScreen("practice");
-    } else if (activeOnboardingTourTarget === "journey") {
-      setActiveScreen("home");
-    }
+    // Every step runs on the Journey path (home), behind one even scrim. The
+    // target is lifted ABOVE the scrim — step 1 shows the next story as a clean
+    // chip in the card; tab steps lift the nav. Nothing depends on the path's
+    // internal layout, so there's no drift to chase.
+    setActiveScreen("home");
     requestAnimationFrame(() => {
       shellScrollRef.current?.scrollTo({ y: 0, animated: true });
     });
   }, [activeOnboardingTourTarget]);
 
   useEffect(() => {
+    // Preview mode drives the step directly from the menu — don't clobber it.
+    if (forceTourPreview) return;
     if (!isSignedIn || preferencesLoading) return;
     if (!preferences.onboardingSurveyCompletedAt) {
       setOnboardingTourStep(null);
@@ -5017,6 +5032,7 @@ export function MobileLibraryShell(args: {
     }
     setOnboardingTourStep(null);
   }, [
+    forceTourPreview,
     isSignedIn,
     preferences.onboardingSurveyCompletedAt,
     preferences.onboardingTourCompletedAt,
@@ -10547,7 +10563,7 @@ export function MobileLibraryShell(args: {
           Home page feel deliberate instead of ragged. */}
       {didFirstHydrate && latestBookCards.length > 0 ? (
       <View
-        style={[styles.section, activeOnboardingTourTarget === "reader" ? styles.onboardingHighlightedSurface : null]}
+        style={styles.section}
         accessibilityLabel="qa-home-latest-books-section"
         testID="qa-home-latest-books-section"
       >
@@ -13637,6 +13653,21 @@ export function MobileLibraryShell(args: {
     return null;
   }, [activeJourneyTrack]);
 
+  // The global "next" story object (not just its id) — shown as the clean,
+  // tappable chip inside the tour's step-1 card. Rendered by us, so it never
+  // depends on the scrolling path node's position.
+  const tourNextStory = useMemo(() => {
+    if (!activeJourneyTrack || !globalJourneyNextStoryId) return null;
+    for (const level of activeJourneyTrack.levels) {
+      for (const topic of level.topics) {
+        for (const story of topic.stories) {
+          if (story.id === globalJourneyNextStoryId) return story;
+        }
+      }
+    }
+    return null;
+  }, [activeJourneyTrack, globalJourneyNextStoryId]);
+
   // Set of story ids that come AFTER the global "next" pointer in
   // the path's logical order. Tapping any of these should show the
   // placement-test offer popup instead of opening the reader —
@@ -16104,6 +16135,7 @@ export function MobileLibraryShell(args: {
       journeyFocus: preferences.journeyFocus ?? getJourneyFocusFromLearningGoal(preferences.learningGoal),
       dailyMinutes: preferences.dailyMinutes,
       onboardingSurveyCompletedAt: new Date().toISOString(),
+      onboardingTourCompletedAt: null,
     });
     if (!success) return;
     setOnboardingSurveyStep(0);
@@ -16111,6 +16143,12 @@ export function MobileLibraryShell(args: {
   }
 
   async function completeOnboardingTour() {
+    // Preview (Replay tour): just close, don't touch server state.
+    if (forceTourPreview) {
+      setForceTourPreview(false);
+      setOnboardingTourStep(null);
+      return;
+    }
     const success = await saveOnboardingPreferences({
       onboardingTourCompletedAt: new Date().toISOString(),
     });
@@ -16451,6 +16489,12 @@ export function MobileLibraryShell(args: {
       reminderMinute: payload.reminderMinute ?? null,
       journeyPlacementLevel: placement,
       onboardingSurveyCompletedAt: new Date().toISOString(),
+      // Finishing onboarding always (re)opens the tour: clear the completion
+      // flag in the SAME save so the response updates local state atomically.
+      // For a real new user it's already null (no-op); for a re-onboard (Test
+      // mode) this guarantees the tour shows without depending on a separate
+      // reset POST or Clerk metadata propagation timing.
+      onboardingTourCompletedAt: null,
     });
 
     // Override journeys client-side from `selections` — one journey
@@ -16527,14 +16571,8 @@ export function MobileLibraryShell(args: {
           // there without a one-frame Home flash.
           setActiveScreen("home");
           setOnboardingOverride(null);
-          // Drop them straight into their free story (Story of the Week)
-          // with the player ready, plus a one-time play coachmark, instead
-          // of leaving them on the Home grid to hunt for something to play.
-          const spotlight = getSpotlightSelection();
-          if (spotlight) {
-            openSelection(spotlight);
-            setShowOnboardingPlayHint(true);
-          }
+          // Land on the Journey path (not the reader): the product tour runs
+          // here next — its step 1 points the user at their first story.
           await commitOnboarding(payload);
         }}
         onCancel={
@@ -16602,6 +16640,19 @@ export function MobileLibraryShell(args: {
             <MenuScreenRow icon="settings" label="Settings" onPress={() => setActiveScreen("settings")} accent="#9cb0c9" />
             {effectivePlan === "polyglot" ? (
               <MenuScreenRow icon="settings" label="Test mode" onPress={() => { void handleTestModeReset(); }} accent="#9cb0c9" />
+            ) : null}
+            {effectivePlan === "polyglot" ? (
+              <MenuScreenRow
+                icon="settings"
+                label="Replay tour"
+                onPress={() => {
+                  setMenuOpen(false);
+                  setActiveScreen("home");
+                  setForceTourPreview(true);
+                  setOnboardingTourStep(0);
+                }}
+                accent="#f8c15c"
+              />
             ) : null}
             <MenuScreenRow icon="signout" label="Sign out" onPress={() => { onSignOut?.(); }} accent="#ef4444" />
           </View>
@@ -17393,81 +17444,114 @@ export function MobileLibraryShell(args: {
         </View>
       </Modal>
 
-      <Modal visible={shouldShowOnboardingTour} transparent animationType="fade">
-        <View style={styles.modalBackdrop}>
-          <View style={styles.onboardingModal} accessibilityLabel="qa-onboarding-tour" testID="qa-onboarding-tour">
-            <View style={styles.onboardingProgressRow}>
-              {PRODUCT_TOUR_MESSAGES.map((message, index) => (
-                <View
-                  key={message.title}
-                  style={[
-                    styles.onboardingProgressSegment,
-                    onboardingTourStep !== null && index <= onboardingTourStep ? styles.onboardingProgressSegmentActive : null,
-                  ]}
-                />
-              ))}
-            </View>
-            <View style={styles.onboardingHeaderCopy}>
-              <Text style={styles.sectionEyebrow}>
-                Product tour {onboardingTourStep !== null ? onboardingTourStep + 1 : 0}/{PRODUCT_TOUR_MESSAGES.length}
-              </Text>
-              <View style={styles.onboardingTourTargetBadge}>
-                <Text style={styles.onboardingTourTargetBadgeText}>
-                  {activeOnboardingTourMessage?.targetLabel ?? "Tour"}
-                </Text>
-              </View>
-              <Text style={styles.sectionTitle}>
-                {activeOnboardingTourMessage?.title ?? ""}
-              </Text>
-              <Text style={styles.metaLine}>
-                {activeOnboardingTourMessage?.body ?? ""}
-              </Text>
-            </View>
-            {onboardingError ? <Text style={styles.errorText}>{onboardingError}</Text> : null}
-            <View style={styles.onboardingActionRow}>
-              <View style={styles.onboardingSecondaryActions}>
-                <Pressable
-                  onPress={() => void completeOnboardingTour()}
-                  disabled={preferencesLoading}
-                  accessibilityLabel="qa-onboarding-tour-skip"
-                  testID="qa-onboarding-tour-skip"
-                  style={[styles.inlineButton, preferencesLoading ? styles.disabledActionButton : null]}
-                >
-                  <Text style={styles.inlineButtonText}>Skip</Text>
-                </Pressable>
-                <Pressable
-                  onPress={() => setOnboardingTourStep((current) => (current === null ? 0 : Math.max(0, current - 1)))}
-                  disabled={preferencesLoading || onboardingTourStep === 0}
-                  accessibilityLabel="qa-onboarding-tour-back"
-                  testID="qa-onboarding-tour-back"
-                  style={[styles.inlineButton, preferencesLoading || onboardingTourStep === 0 ? styles.disabledActionButton : null]}
-                >
-                  <Text style={styles.inlineButtonText}>Back</Text>
-                </Pressable>
-              </View>
-              <Pressable
-                onPress={() => {
-                  if (onboardingTourStep === null || onboardingTourStep >= PRODUCT_TOUR_MESSAGES.length - 1) {
-                    void completeOnboardingTour();
-                    return;
-                  }
-                  setOnboardingTourStep(onboardingTourStep + 1);
-                }}
-                disabled={preferencesLoading}
-                accessibilityLabel="qa-onboarding-tour-next"
-                testID="qa-onboarding-tour-next"
-                style={[styles.inlineButton, styles.primaryButton, preferencesLoading ? styles.disabledActionButton : null]}
+      {tourVisible && activeOnboardingTourMessage
+        ? (() => {
+            const step = onboardingTourStep ?? 0;
+            const isFirst = step === 0;
+            const isLast = step >= PRODUCT_TOUR_MESSAGES.length - 1;
+            const tabIndex =
+              activeOnboardingTourTarget === "home"
+                ? 0
+                : activeOnboardingTourTarget === "explore"
+                  ? 1
+                  : activeOnboardingTourTarget === "practice"
+                    ? 2
+                    : activeOnboardingTourTarget === "favorites"
+                      ? 3
+                      : -1;
+            const tabCount = bottomTabs.length || 5;
+            const GOLD = "#f8c15c";
+            const iconName =
+              activeOnboardingTourTarget === "home"
+                ? "home"
+                : activeOnboardingTourTarget === "explore"
+                  ? "compass"
+                  : activeOnboardingTourTarget === "practice"
+                    ? "refresh-cw"
+                    : activeOnboardingTourTarget === "favorites"
+                      ? "star"
+                      : "book-open";
+            // Tab steps point a down-arrow at the (evenly spaced) target tab.
+            const tabCenterX = (viewportWidth * (tabIndex + 0.5)) / tabCount;
+            return (
+              <View
+                pointerEvents="box-none"
+                style={styles.tourOverlay}
+                accessibilityLabel="qa-onboarding-tour"
+                testID="qa-onboarding-tour"
               >
-                <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
-                  {onboardingTourStep !== null && onboardingTourStep >= PRODUCT_TOUR_MESSAGES.length - 1 ? "Got it" : "Next"}
-                </Text>
-              </Pressable>
-            </View>
-          </View>
-        </View>
-      </Modal>
+                <Pressable onPress={() => {}} style={styles.tourScrim} />
+                <View style={[styles.tourCard, { bottom: 96 }]}>
+                  {tabIndex >= 0 ? (
+                    <View style={[styles.tourArrowDown, { left: tabCenterX - 23 }]} />
+                  ) : null}
+                  <View style={styles.tourTopRow}>
+                    <View style={styles.tourDotsRow}>
+                      {PRODUCT_TOUR_MESSAGES.map((m, i) => (
+                        <View key={m.id} style={[styles.tourDot, i === step ? styles.tourDotActive : null]} />
+                      ))}
+                    </View>
+                    <Pressable
+                      onPress={() => void completeOnboardingTour()}
+                      disabled={preferencesLoading}
+                      accessibilityLabel="qa-onboarding-tour-skip"
+                      testID="qa-onboarding-tour-skip"
+                      hitSlop={8}
+                    >
+                      <Text style={styles.tourSkip}>Skip</Text>
+                    </Pressable>
+                  </View>
+                  <View style={styles.tourTitleRow}>
+                    {activeOnboardingTourTarget === "practice" ? (
+                      // Match the bottom-nav Practice icon (brain), which is a
+                      // MaterialCommunityIcons glyph, not a Feather one.
+                      <MaterialCommunityIcons name="brain" size={21} color={GOLD} />
+                    ) : (
+                      <Feather name={iconName} size={20} color={GOLD} />
+                    )}
+                    <Text style={styles.tourTitle}>{activeOnboardingTourMessage.title}</Text>
+                  </View>
+                  <Text style={styles.tourBody}>{activeOnboardingTourMessage.body}</Text>
+                  {onboardingError ? <Text style={styles.errorText}>{onboardingError}</Text> : null}
+                  <View style={styles.tourActionsRow}>
+                    {isFirst ? (
+                      <View />
+                    ) : (
+                      <Pressable
+                        onPress={() =>
+                          setOnboardingTourStep((current) => (current === null ? 0 : Math.max(0, current - 1)))
+                        }
+                        disabled={preferencesLoading}
+                        accessibilityLabel="qa-onboarding-tour-back"
+                        testID="qa-onboarding-tour-back"
+                        hitSlop={8}
+                      >
+                        <Text style={styles.tourBack}>Back</Text>
+                      </Pressable>
+                    )}
+                    <Pressable
+                      onPress={() => {
+                        if (isLast) {
+                          void completeOnboardingTour();
+                          return;
+                        }
+                        setOnboardingTourStep(step + 1);
+                      }}
+                      disabled={preferencesLoading}
+                      accessibilityLabel="qa-onboarding-tour-next"
+                      testID="qa-onboarding-tour-next"
+                      style={[styles.tourNextBtn, preferencesLoading ? styles.disabledActionButton : null]}
+                    >
+                      <Text style={styles.tourNextText}>{isLast ? "Done" : "Next"}</Text>
+                    </Pressable>
+                  </View>
+                </View>
+              </View>
+            );
+          })()
+        : null}
 
-      <View style={styles.bottomNav}>
+      <View style={[styles.bottomNav, tourOnTabStep ? styles.bottomNavAboveTour : null]}>
         {bottomTabs.map((tab) => {
           const isActive = screenMatchesTab(tab.key);
           const isTourHighlighted = tourTargetMatchesTab(tab.key);
@@ -24661,6 +24745,135 @@ const styles = StyleSheet.create({
   },
   bottomTabTextTourHighlight: {
     color: "#fff5d6",
+  },
+  bottomNavAboveTour: {
+    zIndex: 80,
+  },
+  tourOverlay: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    zIndex: 60,
+  },
+  tourScrim: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: "rgba(7, 16, 28, 0.82)",
+  },
+  tourCard: {
+    position: "absolute",
+    left: 16,
+    right: 16,
+    backgroundColor: "#17304b",
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: "rgba(248, 193, 92, 0.5)",
+    padding: 16,
+  },
+  tourArrowDown: {
+    position: "absolute",
+    bottom: -7,
+    width: 14,
+    height: 14,
+    backgroundColor: "#17304b",
+    borderRightWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: "rgba(248, 193, 92, 0.5)",
+    transform: [{ rotate: "45deg" }],
+  },
+  tourTopRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 12,
+  },
+  tourDotsRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  tourDot: {
+    width: 7,
+    height: 7,
+    borderRadius: 4,
+    backgroundColor: "rgba(255, 255, 255, 0.28)",
+  },
+  tourDotActive: {
+    width: 18,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+  },
+  tourSkip: {
+    color: "#9fb3c8",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  tourTitleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    marginBottom: 6,
+  },
+  tourTitle: {
+    color: "#ffffff",
+    fontWeight: "700",
+    fontSize: 18,
+  },
+  tourStoryRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    backgroundColor: "#1c3a59",
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: "rgba(248, 193, 92, 0.55)",
+    padding: 10,
+    marginBottom: 12,
+  },
+  tourStoryThumb: {
+    width: 44,
+    height: 44,
+    borderRadius: 10,
+    backgroundColor: "#23415f",
+  },
+  tourStoryTitle: {
+    flex: 1,
+    color: "#ffffff",
+    fontWeight: "700",
+    fontSize: 15,
+  },
+  tourBody: {
+    color: "#b9c8d8",
+    fontSize: 14,
+    lineHeight: 21,
+    marginBottom: 14,
+  },
+  tourActionsRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  tourBack: {
+    color: "#9fb3c8",
+    fontSize: 14,
+    fontWeight: "700",
+  },
+  tourNextBtn: {
+    backgroundColor: "#f8c15c",
+    borderRadius: 999,
+    paddingVertical: 10,
+    paddingHorizontal: 24,
+    alignItems: "center",
+  },
+  tourNextText: {
+    color: "#3a2a00",
+    fontWeight: "700",
+    fontSize: 15,
   },
   bottomTabTextActive: {
     color: "#ffffff",

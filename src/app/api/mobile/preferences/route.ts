@@ -437,12 +437,14 @@ export async function POST(req: NextRequest): Promise<Response> {
 
   if (onboardingSurveyCompletedAt !== undefined) {
     if (onboardingSurveyCompletedAt) updatedMetadata.onboardingSurveyCompletedAt = onboardingSurveyCompletedAt;
-    else delete updatedMetadata.onboardingSurveyCompletedAt;
+    // Clerk's updateUserMetadata MERGES — deleting a key leaves the old value
+    // in place. To actually clear it, set null explicitly.
+    else updatedMetadata.onboardingSurveyCompletedAt = null;
   }
 
   if (onboardingTourCompletedAt !== undefined) {
     if (onboardingTourCompletedAt) updatedMetadata.onboardingTourCompletedAt = onboardingTourCompletedAt;
-    else delete updatedMetadata.onboardingTourCompletedAt;
+    else updatedMetadata.onboardingTourCompletedAt = null;
   }
 
   if (journeys !== undefined) {

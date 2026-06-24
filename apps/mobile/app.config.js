@@ -53,6 +53,10 @@ const clerkPublishableKey = resolveClerkPublishableKey(apiBaseUrl);
 /** @type {import('expo/config').ExpoConfig} */
 const config = {
   name: "Digital Polyglot",
+  // Pin the Expo account that owns this project so EAS never prompts an
+  // account chooser (which also listed the unrelated `muvn` org this login
+  // belongs to). DPL is solely under the personal account.
+  owner: "delcarpio321",
   slug: "digital-polyglot-mobile",
   scheme: "digitalpolyglot",
   version: "0.1.0",
@@ -97,7 +101,7 @@ const config = {
     // `autoIncrement: true` NO funciona aquí porque EAS no muta JS.
     // Bumpear manualmente cada release a (max submitted on App Store
     // Connect) + 1.
-    buildNumber: "263",
+    buildNumber: "264",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },

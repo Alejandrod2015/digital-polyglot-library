@@ -4,6 +4,7 @@ node_modules
 ios
 ios/build
 android
+build
 
 # monorepo build outputs / caches
 ../../.next
