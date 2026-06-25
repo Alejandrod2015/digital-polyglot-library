@@ -16,6 +16,7 @@ import {
   getLevelTestQuestions,
   levelFromScore,
 } from "./levelTest";
+import { cefrDisplayLabel, formatCefrDisplay } from "@digital-polyglot/domain";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
 /**
@@ -302,26 +303,35 @@ export function LevelTestRunner({
             contentContainerStyle={styles.scroll}
             showsVerticalScrollIndicator={false}
           >
-            <View style={styles.resultBlock}>
-              <View style={styles.resultBadge}>
-                <Text style={styles.resultBadgeText}>{levelFromScore(score)}</Text>
-              </View>
-              <Text style={styles.resultTitle}>
-                You&apos;re at {levelFromScore(score)}
-              </Text>
-              <Text style={styles.resultBody}>
-                {score} of {questions.length} correct.
-              </Text>
-              <Text style={styles.resultDescription}>
-                {/* Plain apostrophe inside the template literal —
-                    `&apos;` only works in raw JSX text, not inside
-                    a `${...}` expression, where it would render as
-                    the literal characters "&apos;". */}
-                {source === "onboarding"
-                  ? `Your ${language} journey starts at ${levelFromScore(score)}. Easier levels stay open whenever you want extra practice.`
-                  : `${levelFromScore(score)} stories are unlocked. Pick up where you wanted to go — earlier levels stay available too.`}
-              </Text>
-            </View>
+            {(() => {
+              // Friendly level name (e.g. "Intermediate") as the primary
+              // label; the CEFR code stays an optional secondary annotation.
+              const levelCode = levelFromScore(score);
+              const levelName = cefrDisplayLabel(levelCode) ?? levelCode;
+              const levelDisplay = formatCefrDisplay(levelCode);
+              return (
+                <View style={styles.resultBlock}>
+                  <View style={styles.resultBadge}>
+                    <Text style={styles.resultBadgeText}>{levelName}</Text>
+                  </View>
+                  <Text style={styles.resultTitle}>
+                    You&apos;re at {levelDisplay}
+                  </Text>
+                  <Text style={styles.resultBody}>
+                    {score} of {questions.length} correct.
+                  </Text>
+                  <Text style={styles.resultDescription}>
+                    {/* Plain apostrophe inside the template literal —
+                        `&apos;` only works in raw JSX text, not inside
+                        a `${...}` expression, where it would render as
+                        the literal characters "&apos;". */}
+                    {source === "onboarding"
+                      ? `Your ${language} journey starts at ${levelDisplay}. Easier levels stay open whenever you want extra practice.`
+                      : `${levelName} stories are unlocked. Pick up where you wanted to go — earlier levels stay available too.`}
+                  </Text>
+                </View>
+              );
+            })()}
           </ScrollView>
         ) : null}
 

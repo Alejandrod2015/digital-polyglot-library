@@ -1,9 +1,9 @@
 import { unstable_cache } from "next/cache";
 import {
-  CEFR_LEVEL_LABELS,
   type CefrLevel,
   type VocabItem,
 } from "@/types/books";
+import { CEFR_DISPLAY_LABELS, CEFR_A0_FRAMING_SUBTITLE, cefrDisplayLabel } from "@domain/cefr";
 import type { PracticeFavoriteItem } from "@/lib/practiceExercises";
 import { formatVariantLabel, resolveContentVariant } from "@/lib/languageVariant";
 import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
@@ -199,14 +199,17 @@ export function getJourneyTopicPracticeKey(
   return `${variantId ?? "default"}:${levelId}:${topicSlug}`;
 }
 
+// User-facing level titles use the friendly names (CEFR_DISPLAY_LABELS);
+// the raw CEFR code is never the primary label. a0 gets a framing subtitle
+// so "Beginner" doesn't imply prior exposure. See project_level_labels.
 const journeyLevelMeta: Record<CefrLevel, { id: string; title: string; subtitle: string }> = {
-  a0: { id: "a0", title: "A0", subtitle: "Start from zero" },
-  a1: { id: "a1", title: "A1", subtitle: "First steps" },
-  a2: { id: "a2", title: "A2", subtitle: "Building confidence" },
-  b1: { id: "b1", title: "B1", subtitle: "Everyday confidence" },
-  b2: { id: "b2", title: "B2", subtitle: "Richer expression" },
-  c1: { id: "c1", title: "C1", subtitle: "Nuanced language" },
-  c2: { id: "c2", title: "C2", subtitle: "Near-native command" },
+  a0: { id: "a0", title: CEFR_DISPLAY_LABELS.a0, subtitle: CEFR_A0_FRAMING_SUBTITLE },
+  a1: { id: "a1", title: CEFR_DISPLAY_LABELS.a1, subtitle: "First steps" },
+  a2: { id: "a2", title: CEFR_DISPLAY_LABELS.a2, subtitle: "Building confidence" },
+  b1: { id: "b1", title: CEFR_DISPLAY_LABELS.b1, subtitle: "Everyday confidence" },
+  b2: { id: "b2", title: CEFR_DISPLAY_LABELS.b2, subtitle: "Richer expression" },
+  c1: { id: "c1", title: CEFR_DISPLAY_LABELS.c1, subtitle: "Nuanced language" },
+  c2: { id: "c2", title: CEFR_DISPLAY_LABELS.c2, subtitle: "Near-native command" },
 };
 
 const DEFAULT_LANGUAGE = "Spanish";
@@ -352,7 +355,7 @@ async function buildLevelsForVariant(
       region: story.region ?? undefined,
       variant: story.variant ?? undefined,
       journeyFocus: normalizeJourneyFocus(story.journeyFocus) ?? "General",
-      levelLabel: CEFR_LEVEL_LABELS[resolvedCefrLevel],
+      levelLabel: cefrDisplayLabel(resolvedCefrLevel) ?? resolvedCefrLevel.toUpperCase(),
       topicLabel,
       text: story.text,
       vocabItems: parseStandaloneVocabRaw(story.vocabRaw),
@@ -648,7 +651,7 @@ async function buildJourneyVariantsFromStudio(
         region: journey.variant,
         variant: journey.variant,
         journeyFocus: "General",
-        levelLabel: CEFR_LEVEL_LABELS[levelId as CefrLevel] ?? levelLabel,
+        levelLabel: cefrDisplayLabel(levelId) ?? levelLabel,
         topicLabel: resolveTopicLabel(topicSlug),
         text: story.text ?? undefined,
         vocabItems: Array.isArray(story.vocab) ? (story.vocab as unknown as VocabItem[]) : undefined,

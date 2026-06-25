@@ -1,9 +1,10 @@
 "use client";
 
 import { List } from "lucide-react";
+import { formatCefrDisplay } from "@domain/cefr";
 
 type Props = {
-  /** "A1", "A2", etc. Shown as the eyebrow above the title. */
+  /** Level code ("a1", "A1", …). Rendered as a friendly label eyebrow. */
   levelId: string;
   /** Topic title shown as the big banner text. */
   title: string;
@@ -49,7 +50,7 @@ export default function JourneyTopicBanner({
           className="text-[11px] font-black tracking-[0.16em] uppercase"
           style={{ color: locked ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.8)" }}
         >
-          Level&nbsp;{levelId}{locked ? " · Locked" : ""}
+          {formatCefrDisplay(levelId)}{locked ? " · Locked" : ""}
         </span>
         <span
           className="text-[28px] font-black tracking-[-0.02em] leading-[1.1]"

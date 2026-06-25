@@ -176,16 +176,18 @@ const FEW_WORDS_BY_LANGUAGE: Record<string, string> = {
   English: "Hi, thanks…",
 };
 
+// Badges use the friendly level names (never raw CEFR codes like "A0").
+// `key` stays the internal value used to map the self-assessment to a level.
 const LEVEL_OPTIONS: LevelOption[] = [
-  { key: "Brand new", badge: "A0", title: "Brand new", hint: "Never studied it" },
+  { key: "Brand new", badge: "Beginner", title: "Brand new", hint: "Never studied it" },
   {
     key: "A few words",
-    badge: "A1",
+    badge: "Elementary",
     title: "A few words",
     hint: (language) =>
       (language && FEW_WORDS_BY_LANGUAGE[language]) || "Just a handful of phrases",
   },
-  { key: "Some", badge: "B1+", title: "I have some", hint: "I can hold a chat" },
+  { key: "Some", badge: "Intermediate+", title: "I have some", hint: "I can hold a chat" },
 ];
 
 function levelHintFor(option: LevelOption, language: string | null): string {

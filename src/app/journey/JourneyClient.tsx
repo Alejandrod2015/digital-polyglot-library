@@ -24,6 +24,7 @@ import JourneyTopBar from "@/components/JourneyTopBar";
 import BottomSheet from "@/components/ui/BottomSheet";
 import JourneyTopicBanner from "@/components/JourneyTopicBanner";
 import JourneyStoryCard, { type StoryNodeState } from "@/components/JourneyStoryCard";
+import { formatCefrDisplay } from "@domain/cefr";
 
 type JourneyClientProps = {
   tracks: JourneyVariantTrack[];
@@ -461,7 +462,7 @@ export default function JourneyClient({
                   if (topic.locked) return;
                   setPreviewTopic({
                     label: topic.label,
-                    eyebrow: `Level ${topic.levelId}`,
+                    eyebrow: formatCefrDisplay(topic.levelId),
                     description: `${topic.storyCount} ${topic.storyCount === 1 ? "story" : "stories"} in this topic.`,
                     coverUrl: topic.coverUrl,
                     storyCount: topic.storyCount,

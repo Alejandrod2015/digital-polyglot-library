@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { cefrDisplayLabel } from "@digital-polyglot/domain";
 
 type LanguageTheme = {
   flag: string;
@@ -80,7 +81,7 @@ export function JourneyLanguageHub({
                     <Text style={[styles.scoreText, { color: theme.accent }]}>{insights.score}%</Text>
                     {insights.currentLevelId ? (
                       <Text style={[styles.levelBadge, { color: theme.accent, backgroundColor: `${theme.accent}18` }]}>
-                        {insights.currentLevelId.toUpperCase()}
+                        {cefrDisplayLabel(insights.currentLevelId) ?? insights.currentLevelId.toUpperCase()}
                       </Text>
                     ) : null}
                   </View>

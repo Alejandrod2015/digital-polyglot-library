@@ -22,6 +22,7 @@ import {
   journeyIcon,
   journeyId,
 } from "./journeys";
+import { cefrDisplayLabel } from "@digital-polyglot/domain";
 import type { JourneyFocus } from "../../../../src/lib/onboarding";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
@@ -418,11 +419,10 @@ export function JourneysPanel({
               // no quede tan larga ("Portuguese · Conversational" se
               // partía a dos visuales).
               const journeyNameLabel = (journey.label ?? "").trim() || focusLabel;
-              // Level: pasamos por cefrFromCoarseLevel para que el
-              // card muestre "B1" en lugar de "Intermediate", igual
-              // que la sheet de switch idiomas. Antes había
-              // inconsistencia entre las dos vistas del mismo journey.
-              const levelLabel = cefrFromCoarseLevel(journey.level);
+              // Level: normaliza a CEFR con cefrFromCoarseLevel y luego
+              // muestra el nombre amigable (Beginner/Elementary/...) en
+              // lugar del código crudo, igual que el resto de la app.
+              const levelLabel = cefrDisplayLabel(cefrFromCoarseLevel(journey.level));
               return (
                 <Pressable
                   key={journey.id}

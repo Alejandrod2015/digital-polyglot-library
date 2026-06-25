@@ -29,8 +29,9 @@ import * as WebBrowser from "expo-web-browser";
 import { Image } from "react-native";
 import { Feather, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
-  CEFR_LEVEL_LABELS,
+  CEFR_DISPLAY_LABELS,
   LEVEL_LABELS,
+  cefrDisplayLabel,
   formatLanguage,
   formatLanguageAndRegion,
   formatLanguageCode,
@@ -10075,7 +10076,7 @@ export function MobileLibraryShell(args: {
           key: `explore-grid-${story.id}`,
           title: story.title,
           topic: (story.topic ?? book.topic ?? "") as string,
-          levelLabel: cefr ? CEFR_LEVEL_LABELS[cefr] : LEVEL_LABELS[story.level ?? book.level],
+          levelLabel: cefr ? CEFR_DISPLAY_LABELS[cefr] : LEVEL_LABELS[story.level ?? book.level],
           coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? book.cover),
           readMinutes,
           xpReward,
@@ -10096,7 +10097,7 @@ export function MobileLibraryShell(args: {
         key: standalone.key,
         title: standalone.title,
         topic,
-        levelLabel: cefr ? CEFR_LEVEL_LABELS[cefr] : broadLevel || "—",
+        levelLabel: cefr ? CEFR_DISPLAY_LABELS[cefr] : broadLevel || "—",
         coverUrl: standalone.coverUrl,
         readMinutes: 4,
         xpReward: 16,
@@ -11051,7 +11052,7 @@ export function MobileLibraryShell(args: {
                     return sum + Math.max(1, Math.round(words / 180));
                   }, 0);
                   const bookCefr = resolveCefrLevel(book.cefrLevel ?? null, book.level);
-                  const bookLevelLabel = bookCefr ? CEFR_LEVEL_LABELS[bookCefr] : LEVEL_LABELS[book.level];
+                  const bookLevelLabel = bookCefr ? CEFR_DISPLAY_LABELS[bookCefr] : LEVEL_LABELS[book.level];
                   return (
                     <Pressable
                       key={`explore-book-${book.id}`}
@@ -14289,7 +14290,7 @@ export function MobileLibraryShell(args: {
         preferences.targetLanguages[0] ??
         "Spanish";
       setLevelTestOfferOpen({
-        targetLevel: (level.id ?? "").toUpperCase() || level.title,
+        targetLevel: cefrDisplayLabel(level.id) ?? level.title,
         targetLanguage: lang,
       });
     };
@@ -15162,7 +15163,7 @@ export function MobileLibraryShell(args: {
               // dedupe siblings with identical keys and skip the
               // A2 / B1 copies, which matches the user's report
               // that "only A1 levels show up".
-              const levelLabelForSticky = `LEVEL ${(level.id ?? "").toUpperCase() || level.title}`;
+              const levelLabelForSticky = `LEVEL ${cefrDisplayLabel(level.id) ?? level.title}`;
               const bgColorForSticky = topicPanelColor(topic.slug, level.id);
               items.push(
                 <View
@@ -15287,7 +15288,7 @@ export function MobileLibraryShell(args: {
                       Boolean(sessionToken) &&
                       topic.stories.some((s) => Boolean(s.storySlug));
                     setTopicPreviewOpen({
-                      levelId: (level.id ?? "").toUpperCase() || level.title,
+                      levelId: cefrDisplayLabel(level.id) ?? level.title,
                       topicLabel: topic.label,
                       topicSlug: topic.slug,
                       bgColor: topicPanelColor(topic.slug, level.id),
@@ -15369,7 +15370,7 @@ export function MobileLibraryShell(args: {
                 >
                   <View style={styles.journeyTopicPanelTextBlock}>
                     <Text style={styles.journeyTopicPanelEyebrow}>
-                      LEVEL {(level.id ?? "").toUpperCase() || level.title}
+                      LEVEL {cefrDisplayLabel(level.id) ?? level.title}
                     </Text>
                     <Text style={styles.journeyTopicPanelTitle} numberOfLines={2}>
                       {topic.label}
@@ -15428,7 +15429,7 @@ export function MobileLibraryShell(args: {
                       }
                       setLevelTestOfferOpen({
                         targetLevel:
-                          (nextLevelInTrack.id ?? "").toUpperCase() || nextLevelInTrack.title,
+                          cefrDisplayLabel(nextLevelInTrack.id) ?? nextLevelInTrack.title,
                         targetLanguage: lang,
                       });
                     }}
@@ -15475,7 +15476,7 @@ export function MobileLibraryShell(args: {
                   // floating panel's swap point lines up with where
                   // the in-flow panel would have left the viewport.
                   ref={(node) => {
-                    const levelLabel = `LEVEL ${(level.id ?? "").toUpperCase() || level.title}`;
+                    const levelLabel = `LEVEL ${cefrDisplayLabel(level.id) ?? level.title}`;
                     const bgColor = topicPanelColor(topic.slug, level.id);
                     if (node) {
                       topicViewsRef.current.set(topic.slug, node);
@@ -15489,7 +15490,7 @@ export function MobileLibraryShell(args: {
                   }}
                   onLayout={() => {
                     const node = topicViewsRef.current.get(topic.slug);
-                    const levelLabel = `LEVEL ${(level.id ?? "").toUpperCase() || level.title}`;
+                    const levelLabel = `LEVEL ${cefrDisplayLabel(level.id) ?? level.title}`;
                     const bgColor = topicPanelColor(topic.slug, level.id);
                     if (node) measureTopicY(topic.slug, topic.label, levelLabel, bgColor, !topic.unlocked, node);
                   }}
@@ -15513,7 +15514,7 @@ export function MobileLibraryShell(args: {
                       // would just be blank.
                       if (topic.stories.length === 0) return;
                       setTopicPreviewOpen({
-                        levelId: (level.id ?? "").toUpperCase() || level.title,
+                        levelId: cefrDisplayLabel(level.id) ?? level.title,
                         topicLabel: topic.label,
                         topicSlug: topic.slug,
                         bgColor: topicPanelColor(topic.slug, level.id),
@@ -15538,7 +15539,7 @@ export function MobileLibraryShell(args: {
                   >
                     <View style={styles.journeyTopicPanelTextBlock}>
                       <Text style={styles.journeyTopicPanelEyebrow}>
-                        LEVEL {(level.id ?? "").toUpperCase() || level.title}
+                        LEVEL {cefrDisplayLabel(level.id) ?? level.title}
                       </Text>
                       <Text style={styles.journeyTopicPanelTitle} numberOfLines={2}>
                         {topic.label}
@@ -15600,7 +15601,7 @@ export function MobileLibraryShell(args: {
                         const lang = activeJourney?.language ?? activeJourneyLanguage ?? null;
                         if (lang) {
                           setLevelTestOfferOpen({
-                            targetLevel: (level.id ?? "").toUpperCase() || level.title,
+                            targetLevel: cefrDisplayLabel(level.id) ?? level.title,
                             targetLanguage: lang,
                           });
                           return;
