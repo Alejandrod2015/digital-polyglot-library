@@ -18,7 +18,7 @@ import {
   getPassedJourneyCheckpointKeys,
   getPracticedJourneyTopicKeys,
 } from "@/lib/journeyProgress";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import { getJourneyFocusFromLearningGoal, normalizeJourneyFocus } from "@/lib/onboarding";
 import { prisma } from "@/lib/prisma";
 
@@ -27,7 +27,7 @@ const clerkClient = createClerkClient({
 });
 
 export async function GET(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

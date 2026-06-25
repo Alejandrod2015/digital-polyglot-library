@@ -335,14 +335,12 @@ export function LanguageSwitchSheet({
 
                 <View style={styles.rowMeta}>
                   <View style={styles.rowTitleLine}>
-                    <Text style={styles.rowName} numberOfLines={1}>
+                    <Text style={styles.rowName} numberOfLines={2}>
                       {journey.displayName}
+                      {journey.variantLabel ? (
+                        <Text style={styles.rowVariant}>{`  ·  ${journey.variantLabel}`}</Text>
+                      ) : null}
                     </Text>
-                    {journey.variantLabel ? (
-                      <Text style={styles.rowVariant} numberOfLines={1}>
-                        · {journey.variantLabel}
-                      </Text>
-                    ) : null}
                   </View>
 
                   <View style={styles.rowStats}>

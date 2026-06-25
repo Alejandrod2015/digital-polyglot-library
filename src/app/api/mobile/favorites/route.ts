@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
 import { normalizeVocabType } from "@/lib/vocabTypes";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 
 type FavoriteBody = {
@@ -54,7 +54,7 @@ function isFavoriteReviewBody(value: unknown): value is FavoriteReviewBody {
 }
 
 export async function GET(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -81,7 +81,7 @@ export async function GET(req: NextRequest): Promise<Response> {
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -132,7 +132,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 }
 
 export async function DELETE(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -151,7 +151,7 @@ export async function DELETE(req: NextRequest): Promise<Response> {
 }
 
 export async function PATCH(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

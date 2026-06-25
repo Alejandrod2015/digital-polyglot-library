@@ -4,7 +4,7 @@ import { createClerkClient } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
 import { VARIANT_OPTIONS_BY_LANGUAGE, normalizeVariant } from "@/lib/languageVariant";
 import { normalizeJourneyPlacementLevel } from "@/app/journey/journeyData";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import {
   ONBOARDING_DAILY_MINUTES_OPTIONS,
   ONBOARDING_GOAL_OPTIONS,
@@ -264,7 +264,7 @@ function serializePreferences(metadata: Record<string, unknown>) {
 }
 
 export async function GET(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -275,7 +275,7 @@ export async function GET(req: NextRequest): Promise<Response> {
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

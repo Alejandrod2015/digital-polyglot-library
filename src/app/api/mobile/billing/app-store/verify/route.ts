@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { serializeEntitlement } from "@/lib/billing";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import { applyAppleVerifiedTransaction } from "@/lib/appStoreEntitlement";
 
 export const runtime = "nodejs";
@@ -13,7 +13,7 @@ export const runtime = "nodejs";
  */
 export async function POST(req: NextRequest): Promise<Response> {
   try {
-    const session = getMobileSessionFromRequest(req);
+    const session = await getActiveMobileSession(req);
     if (!session) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }

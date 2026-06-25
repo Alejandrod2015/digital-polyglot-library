@@ -2,13 +2,13 @@ export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
 import { getStandaloneStoriesByIds } from "@/lib/standaloneStories";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 
 type LibraryType = "book" | "story";
 
 export async function GET(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

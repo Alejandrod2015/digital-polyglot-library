@@ -1,4 +1,5 @@
 import * as WebBrowser from "expo-web-browser";
+import { Feather } from "@expo/vector-icons";
 import { useClerk, useSignIn, useSignUp, useSSO } from "@clerk/expo";
 import { useCallback, useState } from "react";
 import {
@@ -20,6 +21,11 @@ function toErrorMessage(error: unknown): string {
   return "Something went wrong. Please try again.";
 }
 
+// The Clerk "future" API returns errors instead of throwing them.
+function clerkErrorMessage(error: { message?: string; longMessage?: string } | null | undefined): string {
+  return error?.longMessage || error?.message || "Something went wrong. Please try again.";
+}
+
 type ScreenState =
   | { kind: "initial" }
   | { kind: "email-form"; mode: "signIn" | "signUp" }
@@ -36,6 +42,7 @@ export function AuthScreen(args: {
   const [error, setError] = useState<string | null>(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [code, setCode] = useState("");
 
   const { setActive } = useClerk();
@@ -71,36 +78,44 @@ export function AuthScreen(args: {
     setError(null);
     setSubmitting("password");
     try {
-      await signIn.create({
+      const { error: passwordError } = await signIn.password({
         identifier: email.trim(),
         password,
       });
-      if (signIn.status === "complete" && signIn.createdSessionId && setActive) {
-        await setActive({ session: signIn.createdSessionId });
-        onClerkSessionCreated();
-      } else if (signIn.status === "needs_first_factor") {
-        const emailCodeFactor = signIn.supportedFirstFactors?.find(
-          (f) => f.strategy === "email_code"
-        );
-        if (emailCodeFactor && "emailAddressId" in emailCodeFactor) {
-          await signIn.prepareFirstFactor({
-            strategy: "email_code",
-            emailAddressId: emailCodeFactor.emailAddressId,
-          });
-          setScreen({ kind: "verify-code", email: email.trim(), mode: "signIn" });
-        } else {
-          setError("Unable to sign in with these credentials.");
+
+      if (signIn.status === "complete") {
+        const { error: finalizeError } = await signIn.finalize();
+        if (finalizeError) {
+          setError(clerkErrorMessage(finalizeError));
+          return;
         }
-      } else {
-        setError("Sign-in incomplete. Please try again.");
+        onClerkSessionCreated();
+        return;
       }
+
+      // Account exists but has no password (e.g. created via OAuth): fall back
+      // to an email verification code as the first factor.
+      const emailCodeSupported = signIn.supportedFirstFactors?.some(
+        (f) => f.strategy === "email_code"
+      );
+      if (signIn.status === "needs_first_factor" && emailCodeSupported) {
+        const { error: sendError } = await signIn.emailCode.sendCode();
+        if (sendError) {
+          setError(clerkErrorMessage(sendError));
+          return;
+        }
+        setScreen({ kind: "verify-code", email: email.trim(), mode: "signIn" });
+        return;
+      }
+
+      setError(passwordError ? clerkErrorMessage(passwordError) : "Unable to sign in with these credentials.");
     } catch (err) {
       console.error("[auth] Password sign-in error:", err);
       setError(toErrorMessage(err));
     } finally {
       setSubmitting(null);
     }
-  }, [signIn, email, password, setActive, onClerkSessionCreated]);
+  }, [signIn, email, password, onClerkSessionCreated]);
 
   // ── Email Sign Up ───────────────────────────────────────────────────
   const handleEmailSignUp = useCallback(async () => {
@@ -108,11 +123,29 @@ export function AuthScreen(args: {
     setError(null);
     setSubmitting("signup");
     try {
-      await signUp.create({
+      const { error: createError } = await signUp.create({
         emailAddress: email.trim(),
         password,
       });
-      await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
+      if (createError) {
+        // Email already registered → don't dead-end with "try another";
+        // flip to sign-in with the email kept so they can recover.
+        const alreadyExists =
+          createError.code === "form_identifier_exists" ||
+          /taken|already.*exist|already.*registered/i.test(createError.message ?? "");
+        if (alreadyExists) {
+          setScreen({ kind: "email-form", mode: "signIn" });
+          setError("You already have an account with this email. Enter your password to sign in.");
+          return;
+        }
+        setError(clerkErrorMessage(createError));
+        return;
+      }
+      const { error: sendError } = await signUp.verifications.sendEmailCode();
+      if (sendError) {
+        setError(clerkErrorMessage(sendError));
+        return;
+      }
       setScreen({ kind: "verify-code", email: email.trim(), mode: "signUp" });
     } catch (err) {
       console.error("[auth] Sign-up error:", err);
@@ -130,20 +163,33 @@ export function AuthScreen(args: {
       if (screen.kind !== "verify-code") return;
 
       if (screen.mode === "signIn" && signIn) {
-        const result = await signIn.attemptFirstFactor({
-          strategy: "email_code",
-          code: code.trim(),
-        });
-        if (result.status === "complete" && result.createdSessionId && setActive) {
-          await setActive({ session: result.createdSessionId });
+        const { error: verifyError } = await signIn.emailCode.verifyCode({ code: code.trim() });
+        if (verifyError) {
+          setError(clerkErrorMessage(verifyError));
+          return;
+        }
+        if (signIn.status === "complete") {
+          const { error: finalizeError } = await signIn.finalize();
+          if (finalizeError) {
+            setError(clerkErrorMessage(finalizeError));
+            return;
+          }
           onClerkSessionCreated();
         } else {
           setError("Verification incomplete.");
         }
       } else if (screen.mode === "signUp" && signUp) {
-        const result = await signUp.attemptEmailAddressVerification({ code: code.trim() });
-        if (result.status === "complete" && result.createdSessionId && setActive) {
-          await setActive({ session: result.createdSessionId });
+        const { error: verifyError } = await signUp.verifications.verifyEmailCode({ code: code.trim() });
+        if (verifyError) {
+          setError(clerkErrorMessage(verifyError));
+          return;
+        }
+        if (signUp.status === "complete") {
+          const { error: finalizeError } = await signUp.finalize();
+          if (finalizeError) {
+            setError(clerkErrorMessage(finalizeError));
+            return;
+          }
           onClerkSessionCreated();
         } else {
           setError("Verification incomplete.");
@@ -154,7 +200,7 @@ export function AuthScreen(args: {
     } finally {
       setSubmitting(null);
     }
-  }, [screen, signIn, signUp, setActive, code, onClerkSessionCreated]);
+  }, [screen, signIn, signUp, code, onClerkSessionCreated]);
 
   // ── Verify Code Screen ──────────────────────────────────────────────
   if (screen.kind === "verify-code") {
@@ -206,22 +252,39 @@ export function AuthScreen(args: {
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
+            autoComplete="email"
+            textContentType="emailAddress"
             autoFocus
           />
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            placeholderTextColor="#4e6a8a"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-            returnKeyType="go"
-            onSubmitEditing={() => {
-              if (email.trim() && password) {
-                void (screen.kind === "email-form" && screen.mode === "signUp" ? handleEmailSignUp() : handlePasswordSignIn());
-              }
-            }}
-          />
+          <View style={styles.passwordRow}>
+            <TextInput
+              style={styles.passwordInput}
+              placeholder="Password"
+              placeholderTextColor="#4e6a8a"
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry={!showPassword}
+              autoCapitalize="none"
+              autoCorrect={false}
+              autoComplete={isSignUp ? "new-password" : "current-password"}
+              textContentType={isSignUp ? "newPassword" : "password"}
+              returnKeyType="go"
+              onSubmitEditing={() => {
+                if (email.trim() && password) {
+                  void (screen.kind === "email-form" && screen.mode === "signUp" ? handleEmailSignUp() : handlePasswordSignIn());
+                }
+              }}
+            />
+            <Pressable
+              onPress={() => setShowPassword((v) => !v)}
+              hitSlop={10}
+              style={styles.passwordToggle}
+              accessibilityRole="button"
+              accessibilityLabel={showPassword ? "Hide password" : "Show password"}
+            >
+              <Feather name={showPassword ? "eye-off" : "eye"} size={20} color="#7a95b3" />
+            </Pressable>
+          </View>
           <View style={styles.actions}>
             <PrimaryButton
               label={isSignUp ? "Create account" : "Sign in"}
@@ -242,9 +305,9 @@ export function AuthScreen(args: {
   return (
     <View style={styles.card}>
       <Header />
-      <Text style={styles.headline}>Read stories.{"\n"}Learn languages.</Text>
+      <Text style={styles.headline}>Speak the{"\n"}real language.</Text>
       <Text style={styles.subtext}>
-        Sign in to open your saved books, stories, and listening progress on iPhone.
+        Sign in to keep your saved words, stories, and listening progress on iPhone.
       </Text>
       <View style={styles.actions}>
         <View style={styles.socialRow}>
@@ -374,4 +437,7 @@ const styles = StyleSheet.create({
   buttonDisabled: { opacity: 0.5 },
   errorText: { color: "#ffb4ab", fontSize: 13, lineHeight: 18, marginTop: 12 },
   input: { backgroundColor: "#132238", borderRadius: 14, borderWidth: 1, borderColor: "#27405f", paddingHorizontal: 16, paddingVertical: 14, color: "#f5f7fb", fontSize: 16, marginBottom: 12 },
+  passwordRow: { position: "relative", justifyContent: "center", marginBottom: 12 },
+  passwordInput: { backgroundColor: "#132238", borderRadius: 14, borderWidth: 1, borderColor: "#27405f", paddingLeft: 16, paddingRight: 52, paddingVertical: 14, color: "#f5f7fb", fontSize: 16 },
+  passwordToggle: { position: "absolute", right: 8, top: 0, bottom: 0, width: 44, alignItems: "center", justifyContent: "center" },
 });

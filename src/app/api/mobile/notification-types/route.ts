@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import { resolveNotificationTypes } from "@/lib/notifications";
 
 // GET → the ordered set of active notification types with resolved copy,
@@ -11,7 +11,7 @@ import { resolveNotificationTypes } from "@/lib/notifications";
 // defaults if the table is missing (migration not yet applied) so the
 // app keeps working before/independently of the DB migration.
 export async function GET(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

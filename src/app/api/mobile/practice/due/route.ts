@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import { compareByDueness } from "@/lib/fsrs";
 
 const DEFAULT_LIMIT = 20;
@@ -25,7 +25,7 @@ function parseLanguage(raw: string | null): string | undefined {
 // FSRS dueness so the practice flow on mobile can load SRS-due items first.
 // Authenticates with the mobile session token, not Clerk's web cookie.
 export async function GET(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

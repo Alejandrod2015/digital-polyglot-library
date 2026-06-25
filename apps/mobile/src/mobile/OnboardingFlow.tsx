@@ -115,25 +115,29 @@ const LANGUAGE_OPTIONS: LanguageOption[] = [
   // for LATAM because its tricolor doesn't visually clash with any
   // other flag in our set (vs. Mexico's green-white-red, which is
   // indistinguishable from Italy at coin scale).
+  // `learners` is the row subtitle. It is an honest variant/region
+  // descriptor only — never a fabricated learner/speaker count. Empty
+  // string = no subtitle (the COMING SOON / variant badge carries the
+  // context on its own).
   { key: "Spanish|es", name: "Spanish", variantLabel: "SPAIN", variantCode: "es", learners: "Castilian Spanish" },
-  { key: "Spanish|latam", name: "Spanish", variantLabel: "LATAM", variantCode: "latam", learners: "12.4M learners" },
-  { key: "French", name: "French", learners: "7.1M learners" },
-  { key: "German", name: "German", learners: "4.8M learners" },
-  { key: "Italian", name: "Italian", learners: "3.2M learners" },
+  { key: "Spanish|latam", name: "Spanish", variantLabel: "LATAM", variantCode: "latam", learners: "Latin American Spanish" },
+  { key: "French", name: "French", learners: "" },
+  { key: "German", name: "German", learners: "" },
+  { key: "Italian", name: "Italian", learners: "" },
   // Portuguese: Brazilian (green field + yellow rhombus + blue circle)
   // is the default, European is the alternative.
-  { key: "Portuguese|br", name: "Portuguese", variantLabel: "BRAZIL", variantCode: "br", learners: "2.6M learners" },
+  { key: "Portuguese|br", name: "Portuguese", variantLabel: "BRAZIL", variantCode: "br", learners: "Brazilian Portuguese" },
   { key: "Portuguese|pt", name: "Portuguese", variantLabel: "PORTUGAL", variantCode: "pt", learners: "European Portuguese" },
-  { key: "Japanese", name: "Japanese", learners: "5.4M learners" },
-  { key: "Korean", name: "Korean", learners: "3.0M learners" },
+  { key: "Japanese", name: "Japanese", learners: "" },
+  { key: "Korean", name: "Korean", learners: "" },
   // Chinese added in build 68 — was previously only listed in the
   // Add-journey panel, never in onboarding. Now consistent across
   // both entry points.
-  { key: "Chinese", name: "Chinese", learners: "Mandarin · 1.1B speakers" },
+  { key: "Chinese", name: "Chinese", learners: "Mandarin" },
   // English ships two regional flags so users can pick the variant
   // that matches their target audience (US business English vs.
   // UK / Commonwealth English).
-  { key: "English|us", name: "English", variantLabel: "US", variantCode: "us", learners: "30M+ learners" },
+  { key: "English|us", name: "English", variantLabel: "US", variantCode: "us", learners: "American English" },
   { key: "English|uk", name: "English", variantLabel: "UK", variantCode: "uk", learners: "Commonwealth English" },
 ];
 
@@ -499,7 +503,9 @@ export function OnboardingFlow({
                           </View>
                         ) : null}
                       </View>
-                      <Text style={styles.languageHint}>{option.learners}</Text>
+                      {option.learners ? (
+                        <Text style={styles.languageHint}>{option.learners}</Text>
+                      ) : null}
                     </View>
                     <View
                       style={[
@@ -674,6 +680,8 @@ export function OnboardingFlow({
                       ]}
                     >
                       <Text
+                        numberOfLines={1}
+                        adjustsFontSizeToFit
                         style={[
                           styles.levelBadgeText,
                           selected ? styles.levelBadgeTextSelected : null,
@@ -1094,9 +1102,10 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(252, 211, 77, 0.08)",
   },
   levelBadge: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
+    width: 92,
+    paddingVertical: 9,
+    paddingHorizontal: 8,
+    borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "rgba(125, 211, 252, 0.12)",

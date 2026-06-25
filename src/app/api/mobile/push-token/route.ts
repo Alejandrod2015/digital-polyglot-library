@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 
 import { createClerkClient } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 
 type MobilePushTokenRecord = {
   token: string;
@@ -34,7 +34,7 @@ function isPushTokenRecordArray(value: unknown): value is MobilePushTokenRecord[
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -85,7 +85,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 }
 
 export async function DELETE(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

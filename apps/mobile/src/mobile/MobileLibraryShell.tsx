@@ -27,6 +27,7 @@ import {
 } from "react-native";
 import * as WebBrowser from "expo-web-browser";
 import { Image } from "react-native";
+import { AppStorePaywall } from "./AppStorePaywall";
 import { Feather, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   CEFR_DISPLAY_LABELS,
@@ -2219,6 +2220,7 @@ export function MobileLibraryShell(args: {
   const [createResumeNotice, setCreateResumeNotice] = useState<string | null>(null);
   const [createResumeChecked, setCreateResumeChecked] = useState(false);
   const [showCreateComeBackLater, setShowCreateComeBackLater] = useState(false);
+  const [paywallVisible, setPaywallVisible] = useState(false);
   const [onboardingSurveyStep, setOnboardingSurveyStep] = useState(0);
   const [onboardingTourStep, setOnboardingTourStep] = useState<number | null>(null);
   // Force-replay the tour ignoring the server `onboardingTourCompletedAt` gate
@@ -2717,7 +2719,16 @@ export function MobileLibraryShell(args: {
       variant: flagRegion,
       variantLabel,
       displayName: journeyDisplayName(journey),
-      level: cefrFromPreferredLevel(journey.level),
+      // The active journey prefers the fine onboarding placement (e.g. A0)
+      // over the level stored on the journey itself. Journeys created before
+      // the placement fix stored the coarse "Beginner" bucket, which resolves
+      // to A1 and hid an A0 pick — recompute from placement so existing users
+      // see the level they actually selected, not just fresh onboardings.
+      level: cefrFromPreferredLevel(
+        isActive && preferences.journeyPlacementLevel
+          ? preferences.journeyPlacementLevel
+          : journey.level
+      ),
       active: isActive,
       streak: stats.streak,
       xpTotal: stats.xpTotal,
@@ -5458,7 +5469,7 @@ export function MobileLibraryShell(args: {
 
   async function downloadStoryOffline(book: Book, story: Story) {
     if (!canDownloadOffline) {
-      void openWebPath("/plans");
+      void openPlans();
       return;
     }
     setOfflineStoryIdInFlight(story.id);
@@ -5496,7 +5507,7 @@ export function MobileLibraryShell(args: {
 
   async function downloadJourneyStoryOffline(story: MobileJourneyTopicSummary["stories"][number]) {
     if (!canDownloadOffline) {
-      void openWebPath("/plans");
+      void openPlans();
       return;
     }
     if (!story.storySlug) return;
@@ -5788,6 +5799,29 @@ export function MobileLibraryShell(args: {
     const url = new URL(path, mobileConfig.apiBaseUrl);
     await WebBrowser.openBrowserAsync(url.toString());
     setMenuOpen(false);
+  }
+
+  // Plans entry point. On iOS we MUST use the native paywall (Apple IAP) — the
+  // App Store forbids the web Stripe checkout for digital content. Everywhere
+  // else (Android/web) keep the web /plans page.
+  function openPlans(): Promise<void> {
+    if (Platform.OS === "ios") {
+      setMenuOpen(false);
+      setPaywallVisible(true);
+      return Promise.resolve();
+    }
+    return openWebPath("/plans");
+  }
+
+  function refreshEntitlementAfterPurchase() {
+    if (!sessionToken) return;
+    void apiFetch<MobileBillingEntitlement>({
+      baseUrl: mobileConfig.apiBaseUrl,
+      path: "/api/mobile/billing/entitlement",
+      token: sessionToken,
+    })
+      .then((entitlement) => setRemoteEntitlement(entitlement))
+      .catch(() => undefined);
   }
 
   function openJourneyTopicInExplore(args: {
@@ -6353,7 +6387,7 @@ export function MobileLibraryShell(args: {
     }
 
     if (effectivePlan !== "polyglot") {
-      await openWebPath("/plans");
+      await openPlans();
       return;
     }
 
@@ -10632,6 +10666,11 @@ export function MobileLibraryShell(args: {
             >
               <LanguageFlag
                 language={selectedExploreLanguage === "All" ? "Spanish" : selectedExploreLanguage}
+                variant={
+                  selectedExploreLanguage === "All" || selectedExploreLanguage === "Spanish"
+                    ? "latam"
+                    : activeJourneyFlagVariant
+                }
                 size={28}
               />
               <Text style={styles.favoritesHeroFlagCode}>
@@ -10869,16 +10908,18 @@ export function MobileLibraryShell(args: {
                         resizeMode="cover"
                       />
                       <View style={styles.exploreStoryHeroImageOverlay} />
-                      <View style={styles.exploreStoryHeroLevelBadge}>
-                        <Text style={styles.exploreStoryHeroLevelText}>{item.levelLabel}</Text>
-                      </View>
-                      <View
-                        style={[
-                          styles.exploreStoryHeroTopicPill,
-                          { backgroundColor: visual.bg },
-                        ]}
-                      >
-                        <Text style={styles.exploreStoryHeroTopicPillText}>{visual.label}</Text>
+                      <View style={styles.exploreStoryHeroBadgeRow}>
+                        <View style={styles.exploreStoryHeroLevelBadge}>
+                          <Text style={styles.exploreStoryHeroLevelText} numberOfLines={1}>{item.levelLabel}</Text>
+                        </View>
+                        <View
+                          style={[
+                            styles.exploreStoryHeroTopicPill,
+                            { backgroundColor: visual.bg },
+                          ]}
+                        >
+                          <Text style={styles.exploreStoryHeroTopicPillText} numberOfLines={1}>{visual.label}</Text>
+                        </View>
                       </View>
                       <View style={styles.exploreStoryHeroFooter}>
                         <Text style={styles.exploreStoryHeroTitle} numberOfLines={2}>
@@ -10953,16 +10994,18 @@ export function MobileLibraryShell(args: {
                         resizeMode="cover"
                       />
                       <View style={styles.exploreStoryHeroImageOverlay} />
-                      <View style={styles.exploreStoryHeroLevelBadge}>
-                        <Text style={styles.exploreStoryHeroLevelText}>{item.levelLabel}</Text>
-                      </View>
-                      <View
-                        style={[
-                          styles.exploreStoryHeroTopicPill,
-                          { backgroundColor: visual.bg },
-                        ]}
-                      >
-                        <Text style={styles.exploreStoryHeroTopicPillText}>{visual.label}</Text>
+                      <View style={styles.exploreStoryHeroBadgeRow}>
+                        <View style={styles.exploreStoryHeroLevelBadge}>
+                          <Text style={styles.exploreStoryHeroLevelText} numberOfLines={1}>{item.levelLabel}</Text>
+                        </View>
+                        <View
+                          style={[
+                            styles.exploreStoryHeroTopicPill,
+                            { backgroundColor: visual.bg },
+                          ]}
+                        >
+                          <Text style={styles.exploreStoryHeroTopicPillText} numberOfLines={1}>{visual.label}</Text>
+                        </View>
                       </View>
                       <View style={styles.exploreStoryHeroFooter}>
                         <Text style={styles.exploreStoryHeroTitle} numberOfLines={2}>
@@ -12676,9 +12719,9 @@ export function MobileLibraryShell(args: {
         </>
       ) : (
         <View style={styles.emptyCard}>
-          <Text style={styles.emptyTitle}>No saved vocabulary yet</Text>
+          <Text style={styles.emptyTitle}>No saved words yet</Text>
           <Text style={styles.metaLine}>
-            Highlighted words from the reader will appear here once you start saving them.
+            Tap a highlighted word in any story to save it, and it will show up here.
           </Text>
         </View>
       )}
@@ -13212,7 +13255,7 @@ export function MobileLibraryShell(args: {
       }
       billingCta={effectivePlan === "free" || effectivePlan === "basic" ? "See plans" : "Manage billing"}
       onPressBilling={() =>
-        void ((effectivePlan === "free" || effectivePlan === "basic") ? openWebPath("/plans") : openBillingPortal())
+        void ((effectivePlan === "free" || effectivePlan === "basic") ? openPlans() : openBillingPortal())
       }
       sessionEmail={sessionEmail}
       personalizationRows={[
@@ -15102,16 +15145,33 @@ export function MobileLibraryShell(args: {
       {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && !loadingRemote && !journeyLanguageLoading && !activeJourneyTrack ? (
         <View style={styles.section}>
           <View style={styles.emptyCard}>
-            <Text style={styles.emptyTitle}>
-              {activeJourneyLanguage ? `No ${activeJourneyLanguage} content yet` : "Journey is not available right now"}
-            </Text>
-            <Text style={styles.metaLine}>
-              {activeJourneyLanguage
-                ? "Content for this language is coming soon."
-                : remoteError?.trim()
-                  ? remoteError
-                  : "Make sure the local web server is running, then reopen Journey."}
-            </Text>
+            {!isSignedIn && !activeJourneyLanguage ? (
+              <>
+                <Text style={styles.emptyTitle}>Start your journey</Text>
+                <Text style={styles.metaLine}>
+                  Sign in to begin a guided journey, or browse stories anytime in the Explore tab.
+                </Text>
+                <Pressable
+                  onPress={onRequestSignIn}
+                  style={[styles.inlineButton, styles.primaryButton, { marginTop: 14 }]}
+                >
+                  <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Sign in</Text>
+                </Pressable>
+              </>
+            ) : (
+              <>
+                <Text style={styles.emptyTitle}>
+                  {activeJourneyLanguage ? `No ${activeJourneyLanguage} content yet` : "Journey is not available right now"}
+                </Text>
+                <Text style={styles.metaLine}>
+                  {activeJourneyLanguage
+                    ? "Content for this language is coming soon."
+                    : remoteError?.trim()
+                      ? remoteError
+                      : "We couldn't load your journey. Check your connection and try again."}
+                </Text>
+              </>
+            )}
           </View>
         </View>
       ) : null}
@@ -16523,7 +16583,14 @@ export function MobileLibraryShell(args: {
           // level — the test/self-report was about that language. Secondary
           // languages are brand new, so they start at Beginner instead of
           // inheriting the primary's (possibly Advanced) level.
-          level: idx === 0 ? preferredLevel : "Beginner",
+          //
+          // Store the FINE placement (A0 / A1 / B1 / tested CEFR) on the
+          // primary, NOT the coarse preferredLevel ("Beginner"). The coarse
+          // bucket collapsed A0 and A1 into "Beginner", which then resolved
+          // back to A1 — so a user who picked "Brand new" (A0) was shown an
+          // A1 journey. The fine value flows through cefrFromCoarseLevel
+          // (which passes CEFR codes through unchanged) to the badge + chip.
+          level: idx === 0 ? placement : "Beginner",
           createdAt,
         }))
       );
@@ -16608,7 +16675,9 @@ export function MobileLibraryShell(args: {
 
           <Text style={styles.menuScreenSectionTitle}>Create</Text>
           <View style={styles.menuScreenSection}>
-            <MenuScreenRow icon="create" label="Create story" onPress={() => setActiveScreen("create")} accent="#a892ff" />
+            {effectivePlan === "polyglot" ? (
+              <MenuScreenRow icon="create" label="Create story" onPress={() => setActiveScreen("create")} accent="#a892ff" />
+            ) : null}
             {effectivePlan === "free" ? (
               <MenuScreenRow
                 icon="story"
@@ -16636,7 +16705,7 @@ export function MobileLibraryShell(args: {
           <Text style={styles.menuScreenSectionTitle}>Account</Text>
           <View style={styles.menuScreenSection}>
             {(effectivePlan === "free" || effectivePlan === "basic") ? (
-              <MenuScreenRow icon="upgrade" label="Upgrade" onPress={() => void openWebPath("/plans")} accent="#f8c15c" />
+              <MenuScreenRow icon="upgrade" label="Upgrade" onPress={() => void openPlans()} accent="#f8c15c" />
             ) : null}
             <MenuScreenRow icon="settings" label="Settings" onPress={() => setActiveScreen("settings")} accent="#9cb0c9" />
             {effectivePlan === "polyglot" ? (
@@ -16682,7 +16751,7 @@ export function MobileLibraryShell(args: {
   if (activeScreen === "progress") content = progressView;
   if (activeScreen === "menu") content = menuView;
   if (activeScreen === "settings") content = settingsView;
-  if (activeScreen === "create") content = createView;
+  if (activeScreen === "create" && effectivePlan === "polyglot") content = createView;
   // Cuando usamos sticky nativo iOS, los hijos del ScrollView deben
   // ser un array PLANO (no un fragment con conditional-null siblings),
   // si no `stickyHeaderIndices` no resuelve correctamente las
@@ -17086,6 +17155,14 @@ export function MobileLibraryShell(args: {
           setLegalSheetOpen(false);
           void openWebPath(link.path);
         }}
+      />
+
+      <AppStorePaywall
+        visible={paywallVisible}
+        onClose={() => setPaywallVisible(false)}
+        apiBaseUrl={mobileConfig.apiBaseUrl}
+        sessionToken={sessionToken}
+        onPurchased={refreshEntitlementAfterPurchase}
       />
 
       <TimePickerSheet
@@ -17779,14 +17856,16 @@ export function MobileLibraryShell(args: {
                       setMenuOpen(false);
                     }}
                   />
-                  <MenuLink
-                    label="Create"
-                    icon="create"
-                    onPress={() => {
-                      setActiveScreen("create");
-                      setMenuOpen(false);
-                    }}
-                  />
+                  {effectivePlan === "polyglot" ? (
+                    <MenuLink
+                      label="Create"
+                      icon="create"
+                      onPress={() => {
+                        setActiveScreen("create");
+                        setMenuOpen(false);
+                      }}
+                    />
+                  ) : null}
 
                   {effectivePlan === "free" ? (
                     <MenuLink
@@ -17811,7 +17890,7 @@ export function MobileLibraryShell(args: {
                   ) : null}
 
                   {(effectivePlan === "free" || effectivePlan === "basic") ? (
-                    <MenuLink label="Upgrade" icon="upgrade" onPress={() => void openWebPath("/plans")} tone="accent" />
+                    <MenuLink label="Upgrade" icon="upgrade" onPress={() => void openPlans()} tone="accent" />
                   ) : null}
 
                   {/* Polyglot-only — internal QA tool. Wipes the
@@ -19327,15 +19406,23 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "rgba(7,15,28,0.36)",
   },
-  exploreStoryHeroLevelBadge: {
+  exploreStoryHeroBadgeRow: {
     position: "absolute",
     top: 12,
     left: 12,
+    right: 12,
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    gap: 8,
+    zIndex: 2,
+  },
+  exploreStoryHeroLevelBadge: {
+    flexShrink: 1,
     borderRadius: 8,
     paddingHorizontal: 9,
     paddingVertical: 4,
     backgroundColor: "rgba(255,255,255,0.94)",
-    zIndex: 2,
   },
   exploreStoryHeroLevelText: {
     color: "#0a1424",
@@ -19352,13 +19439,10 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   exploreStoryHeroTopicPill: {
-    position: "absolute",
-    top: 12,
-    right: 12,
+    flexShrink: 0,
     borderRadius: 999,
     paddingHorizontal: 10,
     paddingVertical: 4,
-    zIndex: 2,
   },
   exploreStoryHeroTopicPillText: {
     color: "#0a1424",

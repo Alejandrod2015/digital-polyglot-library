@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import { getProgressPayloadCached } from "@/lib/progressPayload";
 
 export async function GET(req: NextRequest) {
-  const session = await getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

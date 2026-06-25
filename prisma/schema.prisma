@@ -950,3 +950,13 @@ model StandaloneStory {
   @@index([sanityId])
   @@map("dp_standalone_stories_v1")
 }
+
+/// Userlds whose access has been revoked (e.g. the Clerk user was deleted).
+/// Written by the Clerk `user.deleted` webhook. The mobile session JWT is
+/// stateless (verified by signature + exp only), so without this table a
+/// deleted user keeps access until their token expires. `getActiveMobileSession`
+/// rejects any token whose `sub` appears here.
+model RevokedUser {
+  userId    String   @id
+  revokedAt DateTime @default(now())
+}

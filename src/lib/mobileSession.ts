@@ -1,5 +1,6 @@
 import { createHmac, timingSafeEqual } from "crypto";
 import type { NextRequest } from "next/server";
+import { prisma } from "@/lib/prisma";
 
 export type MobileSessionPayload = {
   aud: "digital-polyglot-mobile";
@@ -15,7 +16,12 @@ export type MobileSessionPayload = {
 };
 
 const MOBILE_SESSION_AUDIENCE = "digital-polyglot-mobile";
-const MOBILE_SESSION_TTL_SECONDS = 60 * 60 * 24 * 7;
+// 24h, down from 7 days. The mobile token is a stateless JWT verified by
+// signature + exp only (no per-request Clerk/DB lookup), so a long TTL means a
+// deleted/revoked Clerk user keeps access until the token expires. A shorter
+// TTL bounds that exposure; the app re-exchanges via Clerk (which fails once
+// the user is gone). Instant kill still needs the RevokedUser check.
+const MOBILE_SESSION_TTL_SECONDS = 60 * 60 * 24;
 
 function getMobileSessionSecret(): string {
   const secret =
@@ -139,4 +145,39 @@ export function getMobileSessionFromRequest(req: NextRequest): MobileSessionPayl
   }
 
   return verifyMobileSessionToken(token);
+}
+
+/**
+ * Like {@link getMobileSessionFromRequest}, but also rejects tokens whose user
+ * has been revoked (e.g. the Clerk user was deleted — see the `user.deleted`
+ * webhook). The mobile token is a stateless JWT verified by signature + exp
+ * only, so this DB-backed check is the only thing that can invalidate an
+ * already-issued token before it expires. Mobile API routes should use this
+ * instead of the sync variant.
+ *
+ * Fails OPEN on a DB error: a transient outage must not sign out every legit
+ * user. A deleted user's data is already wiped by the webhook and the token
+ * TTL is short, so brief over-permission is low-risk and self-limiting.
+ */
+export async function getActiveMobileSession(
+  req: NextRequest
+): Promise<MobileSessionPayload | null> {
+  const session = getMobileSessionFromRequest(req);
+  if (!session) {
+    return null;
+  }
+
+  try {
+    const revoked = await prisma.revokedUser.findUnique({
+      where: { userId: session.sub },
+      select: { userId: true },
+    });
+    if (revoked) {
+      return null;
+    }
+  } catch (err) {
+    console.error("[mobile-auth] revocation check failed (failing open):", err);
+  }
+
+  return session;
 }

@@ -1,7 +1,7 @@
 export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import { applyReviewToFavorite } from "@/lib/practiceReview";
 import type { FsrsGrade } from "@/lib/fsrs";
 
@@ -28,7 +28,7 @@ function isReviewBody(value: unknown): value is ReviewBody {
 // Mobile mirror of /api/practice/review. Mobile session token auth.
 // Same body and response shape as the web variant.
 export async function POST(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

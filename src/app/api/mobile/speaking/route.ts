@@ -4,7 +4,7 @@ import { createClerkClient } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 import { serializeEntitlement } from "@/lib/billing";
-import { getMobileSessionFromRequest, type MobileSessionPayload } from "@/lib/mobileSession";
+import { getActiveMobileSession, type MobileSessionPayload } from "@/lib/mobileSession";
 import { getIsoLanguageTag } from "@/lib/languageFlags";
 import { chatCompletion, extractJSON } from "@/agents/config/llmProvider";
 import { prisma } from "@/lib/prisma";
@@ -104,7 +104,7 @@ function buildReplyMessages(
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

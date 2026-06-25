@@ -94,8 +94,9 @@ export function cefrFromCoarseLevel(value?: string | null): string | null {
   if (key === "beginner") return "A1";
   if (key === "intermediate") return "B1";
   if (key === "advanced") return "C1";
-  // Si el valor ya viene en CEFR (A1/A2/B1/...), devuélvelo en upper.
-  if (/^[abc][12]$/i.test(key)) return key.toUpperCase();
+  // Si el valor ya viene en CEFR (A0/A1/A2/B1/...), devuélvelo en upper.
+  // A0 incluido: el placement de onboarding "Brand new" es A0.
+  if (/^[abc][0-2]$/i.test(key)) return key.toUpperCase();
   return null;
 }
 

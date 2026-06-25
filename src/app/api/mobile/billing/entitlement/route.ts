@@ -3,7 +3,7 @@ export const runtime = "nodejs";
 import { createClerkClient } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
 import { serializeEntitlement } from "@/lib/billing";
-import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getActiveMobileSession } from "@/lib/mobileSession";
 import type { Plan } from "@domain/access";
 import { prisma } from "@/lib/prisma";
 
@@ -26,7 +26,7 @@ function isStringArray(value: unknown): value is string[] {
 }
 
 export async function GET(req: NextRequest): Promise<Response> {
-  const session = getMobileSessionFromRequest(req);
+  const session = await getActiveMobileSession(req);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
