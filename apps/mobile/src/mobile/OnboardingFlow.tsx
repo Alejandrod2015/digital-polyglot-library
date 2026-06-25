@@ -10,7 +10,7 @@ import {
   View,
 } from "react-native";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
-import { LanguageFlag } from "./LanguageFlag";
+import { LanguageFlag, regionFamily } from "./LanguageFlag";
 import { LevelTestRunner } from "./LevelTestRunner";
 import { TimePickerSheet } from "./TimePickerSheet";
 import { type CEFRLevel, hasLevelTest } from "./levelTest";
@@ -73,6 +73,9 @@ type Props = {
    *  /api/mobile/languages — when the fetch fails we treat the set as empty
    *  and let everything be selectable rather than block onboarding. */
   comingSoonLanguages?: ReadonlySet<string>;
+  /** Variants with no journeys yet, keyed `${language}:${regionFamily}`. Disables
+   *  e.g. Spanish · Spain while Spanish · LATAM is live. */
+  unavailableVariants?: ReadonlySet<string>;
   onComplete: (payload: OnboardingPayload) => Promise<void> | void;
   onCancel?: () => void;
   /** Fire-and-forget tracker injected by the shell so OnboardingFlow
@@ -220,6 +223,7 @@ export function OnboardingFlow({
   userName,
   testMode,
   comingSoonLanguages,
+  unavailableVariants,
   onComplete,
   onCancel,
   trackEvent,
@@ -455,7 +459,13 @@ export function OnboardingFlow({
                 const selectedIndex = selectedKeys.indexOf(option.key);
                 const selected = selectedIndex >= 0;
                 const order = selected ? selectedIndex + 1 : null;
-                const comingSoon = comingSoonLanguages?.has(option.name) ?? false;
+                const variantUnavailable = option.variantCode
+                  ? unavailableVariants?.has(
+                      `${option.name.toLowerCase()}:${regionFamily(option.variantCode)}`
+                    ) ?? false
+                  : false;
+                const comingSoon =
+                  (comingSoonLanguages?.has(option.name) ?? false) || variantUnavailable;
                 return (
                   <Pressable
                     key={option.key}

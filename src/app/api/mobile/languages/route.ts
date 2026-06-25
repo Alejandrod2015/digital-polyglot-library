@@ -27,20 +27,33 @@ export async function GET(req: NextRequest): Promise<Response> {
     }),
     prisma.journey.findMany({
       where: { status: { not: "archived" } },
-      select: { language: true },
+      select: { language: true, variant: true },
     }),
   ]);
 
   const languagesWithJourneys = new Set(
     journeys.map((j) => j.language.trim().toLowerCase())
   );
+  // Per-(language, variant) availability. A language can be live overall while
+  // a specific variant has zero journeys (e.g. Spanish has LATAM content but
+  // not Spain) — the picker must be able to disable just that variant.
+  const journeyVariantPairs = new Set(
+    journeys
+      .filter((j) => j.variant)
+      .map((j) => `${j.language.trim().toLowerCase()}:${j.variant!.trim().toLowerCase()}`)
+  );
 
   const items = languages.map((lang) => {
-    const hasJourney = languagesWithJourneys.has(lang.code.toLowerCase());
+    const langKey = lang.code.toLowerCase();
+    const hasJourney = languagesWithJourneys.has(langKey);
     return {
       code: lang.code,
       label: lang.label,
-      variants: lang.variants.map((v) => ({ code: v.code, label: v.label })),
+      variants: lang.variants.map((v) => ({
+        code: v.code,
+        label: v.label,
+        comingSoon: !journeyVariantPairs.has(`${langKey}:${v.code.trim().toLowerCase()}`),
+      })),
       comingSoon: !hasJourney,
     };
   });

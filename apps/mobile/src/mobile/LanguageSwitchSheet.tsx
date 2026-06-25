@@ -372,7 +372,9 @@ export function LanguageSwitchSheet({
                     </View>
                     {journey.level ? (
                       <View style={styles.rowLevelPill}>
-                        <Text style={styles.rowLevelPillText}>{journey.level}</Text>
+                        <Text style={styles.rowLevelPillText} numberOfLines={1}>
+                          {journey.level}
+                        </Text>
                       </View>
                     ) : null}
                   </View>
@@ -555,6 +557,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.2,
   },
   rowLevelPill: {
+    flexShrink: 1,
     backgroundColor: "rgba(125, 211, 252, 0.12)",
     paddingHorizontal: 7,
     paddingVertical: 2,
@@ -564,7 +567,7 @@ const styles = StyleSheet.create({
     color: tokenColor.cyan,
     fontSize: 9.5,
     fontWeight: "900",
-    letterSpacing: 1.2,
+    letterSpacing: 0.4,
   },
   activePill: {
     backgroundColor: tokenColor.xp,

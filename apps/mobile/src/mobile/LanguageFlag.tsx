@@ -82,6 +82,23 @@ const SPAIN_REGION_CODES = new Set<string>(["es", "spain", "españa", "espana"])
 const UK_REGION_CODES = new Set<string>(["uk", "gb", "england", "britain", "united-kingdom"]);
 const PORTUGAL_REGION_CODES = new Set<string>(["pt", "portugal"]);
 
+/**
+ * Canonical region family for a variant/region code, so equivalents like
+ * "es"/"spain" or "mx"/"latam" compare equal. Used to match a picked
+ * language variant against a journey's stored variant (a Spain pick must not
+ * surface LATAM journeys). Returns the lowercased input when it doesn't
+ * belong to a known family (e.g. "br", "us" match themselves).
+ */
+export function regionFamily(code: string | null | undefined): string {
+  const v = (code ?? "").trim().toLowerCase();
+  if (!v) return "";
+  if (LATAM_REGION_CODES.has(v)) return "latam";
+  if (SPAIN_REGION_CODES.has(v)) return "spain";
+  if (UK_REGION_CODES.has(v)) return "uk";
+  if (PORTUGAL_REGION_CODES.has(v)) return "pt";
+  return v;
+}
+
 function normLang(language: string | null | undefined): string | undefined {
   if (!language) return undefined;
   const trimmed = language.trim();

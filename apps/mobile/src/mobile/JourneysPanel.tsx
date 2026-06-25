@@ -10,7 +10,7 @@ import {
   View,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { LanguageFlag } from "./LanguageFlag";
+import { LanguageFlag, regionFamily } from "./LanguageFlag";
 import {
   type Journey,
   cefrFromCoarseLevel,
@@ -31,6 +31,15 @@ import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 export type JourneysPanelTrack = {
   id: string;
   label: string;
+  /** Friendly level label (e.g. "Beginner") shown to disambiguate tracks
+   *  that share a name. By design journeys are single-level, so several
+   *  "Traveler" records differ only by their level — without this they all
+   *  render identically. Null when the level can't be resolved. */
+  levelLabel?: string | null;
+  /** Studio Journey.variant ("latam", "spain", …). The track list is fetched
+   *  by language only, so this is used to filter to the variant the user
+   *  picked (a Spain pick must not show LATAM journeys). */
+  variant?: string | null;
 };
 
 /** Default focus assigned when the user creates a journey from this
@@ -104,6 +113,9 @@ type Props = {
   /** Languages flagged as Próximamente in Studio Planning — they show up but
    *  can't be picked yet. Hydrated by the shell from /api/mobile/languages. */
   comingSoonLanguages?: ReadonlySet<string>;
+  /** Variants with no journeys yet, keyed `${language}:${regionFamily}`. Lets
+   *  the picker disable e.g. Spanish · Spain while Spanish · LATAM is live. */
+  unavailableVariants?: ReadonlySet<string>;
   /** Activate an existing journey by id and close the panel. */
   onSelect: (id: string) => void | Promise<void>;
   /** Create a new journey (language + variant + focus). The shell is
@@ -145,6 +157,7 @@ export function JourneysPanel({
   activeJourneyId,
   statsByLanguage,
   comingSoonLanguages,
+  unavailableVariants,
   onSelect,
   onCreate,
   onDelete,
@@ -351,6 +364,15 @@ export function JourneysPanel({
     );
   }
 
+  // Tracks are fetched by language only, so filter to the variant the user
+  // picked in step 1. Without this, picking Spanish · Spain shows the LATAM
+  // "Traveler" journeys (the only Spanish content that exists). When the
+  // picked language has no regional variant, show everything.
+  const pickedRegion = regionFamily(pickedLanguage?.variant);
+  const visibleTracks = pickedLanguage?.variant
+    ? availableTracks.filter((t) => regionFamily(t.variant) === pickedRegion)
+    : availableTracks;
+
   const headerTitle =
     mode === "list"
       ? journeys.length <= 1
@@ -556,7 +578,13 @@ export function JourneysPanel({
                 // for this language" without fetching the track list,
                 // so the language picker stays open and the dedup is
                 // enforced one level down (Step 2: alreadyExists).
-                const comingSoon = comingSoonLanguages?.has(option.name) ?? false;
+                const variantUnavailable = option.variant
+                  ? unavailableVariants?.has(
+                      `${option.name.toLowerCase()}:${regionFamily(option.variant)}`
+                    ) ?? false
+                  : false;
+                const comingSoon =
+                  (comingSoonLanguages?.has(option.name) ?? false) || variantUnavailable;
                 const disabled = comingSoon;
                 return (
                   <Pressable
@@ -577,10 +605,12 @@ export function JourneysPanel({
                       size={42}
                     />
                     <View style={styles.languageCardMeta}>
-                      <Text style={styles.languageCardName}>{option.name}</Text>
+                      <Text style={styles.languageCardName} numberOfLines={1}>
+                        {option.name}
+                      </Text>
                       {option.variantLabel ? (
                         <View style={styles.variantPill}>
-                          <Text style={styles.variantPillText}>
+                          <Text style={styles.variantPillText} numberOfLines={1}>
                             {option.variantLabel}
                           </Text>
                         </View>
@@ -622,12 +652,13 @@ export function JourneysPanel({
                 <Text style={styles.focusEmptyText}>
                   Loading journeys for {pickedLanguage.name}…
                 </Text>
-              ) : availableTracks.length === 0 ? (
+              ) : visibleTracks.length === 0 ? (
                 <Text style={styles.focusEmptyText}>
-                  No journeys available for {pickedLanguage.name} yet.
+                  No journeys available for {pickedLanguage.name}
+                  {pickedLanguage.variantLabel ? ` (${pickedLanguage.variantLabel})` : ""} yet.
                 </Text>
               ) : (
-                availableTracks.map((track) => {
+                visibleTracks.map((track) => {
                   const id = journeyId(
                     pickedLanguage.name,
                     track.id,
@@ -662,6 +693,9 @@ export function JourneysPanel({
                       </View>
                       <View style={{ flex: 1 }}>
                         <Text style={styles.focusCardTitle}>{track.label}</Text>
+                        {track.levelLabel ? (
+                          <Text style={styles.focusCardHint}>{track.levelLabel}</Text>
+                        ) : null}
                       </View>
                       {alreadyExists ? (
                         <Text style={styles.alreadyText}>Already started ›</Text>
@@ -913,6 +947,7 @@ const styles = StyleSheet.create({
   },
   languageCardMeta: {
     flex: 1,
+    minWidth: 0,
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
@@ -921,8 +956,10 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 16,
     fontWeight: "900",
+    flexShrink: 1,
   },
   variantPill: {
+    flexShrink: 0,
     paddingHorizontal: 6,
     paddingVertical: 2,
     borderRadius: 4,
@@ -932,7 +969,7 @@ const styles = StyleSheet.create({
     color: tokenColor.cyan,
     fontSize: 9,
     fontWeight: "900",
-    letterSpacing: 1.2,
+    letterSpacing: 0.5,
   },
   allTakenText: {
     color: "rgba(255,255,255,0.5)",
@@ -940,6 +977,7 @@ const styles = StyleSheet.create({
     fontWeight: "800",
   },
   comingSoonPill: {
+    flexShrink: 0,
     paddingHorizontal: 6,
     paddingVertical: 2,
     borderRadius: 4,
@@ -951,7 +989,7 @@ const styles = StyleSheet.create({
     color: "rgba(255,255,255,0.65)",
     fontSize: 9,
     fontWeight: "900",
-    letterSpacing: 1.2,
+    letterSpacing: 0.5,
   },
   // ─── Step 2: pick focus ───────────────────────────────────────────
   focusContextRow: {

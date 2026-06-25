@@ -59,8 +59,8 @@ import { PracticeOrbit, type PracticeModeKey as OrbitModeKey } from "./PracticeO
 import { PracticeSpeaking } from "./PracticeSpeaking";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
-import { LanguageFlag } from "./LanguageFlag";
-import { JourneysPanel } from "./JourneysPanel";
+import { LanguageFlag, regionFamily } from "./LanguageFlag";
+import { JourneysPanel, type JourneysPanelTrack } from "./JourneysPanel";
 import { LegalSheet } from "./LegalSheet";
 import { TimePickerSheet } from "./TimePickerSheet";
 import { LevelTestRunner } from "./LevelTestRunner";
@@ -2313,6 +2313,8 @@ export function MobileLibraryShell(args: {
   // language options not present in Studio at all (Japanese, Chinese) are also
   // treated as coming-soon — Studio is the source of truth.
   const [comingSoonLanguages, setComingSoonLanguages] = useState<Set<string>>(new Set());
+  // Keyed `${language}:${regionFamily}` — variants with no journeys yet.
+  const [unavailableVariants, setUnavailableVariants] = useState<Set<string>>(new Set());
   // Bottom sheet that consolidates the 5 legal links (Impressum,
   // Privacy, Cookies, Terms, Data deletion) under a single "Legal"
   // entry in the side menu. Replaces the inline list that used to
@@ -2447,7 +2449,12 @@ export function MobileLibraryShell(args: {
     void (async () => {
       try {
         const data = await apiFetch<{
-          languages: Array<{ code: string; label: string; comingSoon: boolean }>;
+          languages: Array<{
+            code: string;
+            label: string;
+            comingSoon: boolean;
+            variants?: Array<{ code: string; label: string; comingSoon?: boolean }>;
+          }>;
         }>({
           baseUrl: mobileConfig.apiBaseUrl,
           path: "/api/mobile/languages",
@@ -2478,6 +2485,22 @@ export function MobileLibraryShell(args: {
           }
         }
         setComingSoonLanguages(next);
+
+        // Per-variant unavailability, keyed `${language}:${regionFamily}` so a
+        // language that's live overall can still disable a specific variant
+        // (e.g. Spanish · Spain has no journeys while Spanish · LATAM does).
+        // regionFamily reconciles catalog codes ("spain") with the mobile
+        // option codes ("es").
+        const nextVariants = new Set<string>();
+        for (const lang of data.languages) {
+          const langKey = lang.code.trim().toLowerCase();
+          for (const v of lang.variants ?? []) {
+            if (v.comingSoon) {
+              nextVariants.add(`${langKey}:${regionFamily(v.code)}`);
+            }
+          }
+        }
+        setUnavailableVariants(nextVariants);
       } catch (err) {
         console.warn("[language-catalog] fetch failed", err);
       }
@@ -2724,10 +2747,16 @@ export function MobileLibraryShell(args: {
       // the placement fix stored the coarse "Beginner" bucket, which resolves
       // to A1 and hid an A0 pick — recompute from placement so existing users
       // see the level they actually selected, not just fresh onboardings.
-      level: cefrFromPreferredLevel(
-        isActive && preferences.journeyPlacementLevel
-          ? preferences.journeyPlacementLevel
-          : journey.level
+      //
+      // Show the friendly label ("Beginner"/"Elementary"/…), never the raw
+      // CEFR code: the rest of the app uses friendly names and the code is
+      // only ever an optional secondary annotation.
+      level: cefrDisplayLabel(
+        cefrFromPreferredLevel(
+          isActive && preferences.journeyPlacementLevel
+            ? preferences.journeyPlacementLevel
+            : journey.level
+        )
       ),
       active: isActive,
       streak: stats.streak,
@@ -3614,13 +3643,26 @@ export function MobileLibraryShell(args: {
   // NOT mutate the active journey state — the panel needs the track
   // list for an arbitrary language without disturbing what the user
   // is currently viewing on the journey screen.
+  // Single-level journeys share a name (e.g. three "Traveler" records that
+  // differ only by level), so the picker needs the level to tell them apart.
+  // Use the friendly label of the track's (single) level.
+  const trackToPanelEntry = useCallback(
+    (track: MobileJourneyTrackSummary): JourneysPanelTrack => ({
+      id: track.id,
+      label: track.label,
+      levelLabel: cefrDisplayLabel(track.levels?.[0]?.id) ?? track.levels?.[0]?.title ?? null,
+      variant: track.variant ?? null,
+    }),
+    []
+  );
+
   const getTracksForLanguage = useCallback(
-    async (language: string): Promise<{ id: string; label: string }[]> => {
+    async (language: string): Promise<JourneysPanelTrack[]> => {
       if (!sessionToken) return [];
       const cacheKey = language.toLowerCase();
       const cached = journeyCacheByLanguageRef.current.get(cacheKey);
       if (cached?.tracks?.length) {
-        return cached.tracks.map((track) => ({ id: track.id, label: track.label }));
+        return cached.tracks.map(trackToPanelEntry);
       }
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
@@ -3630,12 +3672,12 @@ export function MobileLibraryShell(args: {
         });
         journeyCacheByLanguageRef.current.set(cacheKey, payload);
         saveJourneyCacheToDisk();
-        return payload.tracks.map((track) => ({ id: track.id, label: track.label }));
+        return payload.tracks.map(trackToPanelEntry);
       } catch {
         return [];
       }
     },
-    [saveJourneyCacheToDisk, sessionToken]
+    [saveJourneyCacheToDisk, sessionToken, trackToPanelEntry]
   );
 
   // Synchronous twin of `getTracksForLanguage` — returns the cached
@@ -3644,12 +3686,12 @@ export function MobileLibraryShell(args: {
   // "Loading..." flicker when the prefetch has already populated the
   // cache.
   const getTracksForLanguageSync = useCallback(
-    (language: string): { id: string; label: string }[] | null => {
+    (language: string): JourneysPanelTrack[] | null => {
       const cached = journeyCacheByLanguageRef.current.get(language.toLowerCase());
       if (!cached?.tracks?.length) return null;
-      return cached.tracks.map((track) => ({ id: track.id, label: track.label }));
+      return cached.tracks.map(trackToPanelEntry);
     },
-    []
+    [trackToPanelEntry]
   );
 
   // Prefetch every cover once the journey payload arrives so tapping into a
@@ -16628,6 +16670,7 @@ export function MobileLibraryShell(args: {
         // does a full reset instead and runs onboarding normally.
         testMode={false}
         comingSoonLanguages={comingSoonLanguages}
+        unavailableVariants={unavailableVariants}
         trackEvent={(eventType, metadata) => {
           void trackOnboardingMetric(eventType, metadata);
         }}
@@ -17130,6 +17173,7 @@ export function MobileLibraryShell(args: {
         activeJourneyId={preferences.activeJourneyId}
         statsByLanguage={MOCK_LANG_STATS}
         comingSoonLanguages={comingSoonLanguages}
+        unavailableVariants={unavailableVariants}
         onSelect={async (id) => {
           await handleJourneySwitch(id);
           setJourneysPanelOpen(false);
