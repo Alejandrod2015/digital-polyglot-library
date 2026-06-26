@@ -53,9 +53,14 @@ export async function sendCampaign(campaignId: string): Promise<SendCampaignResu
     const results = await sendApnsPush(tokens, {
       title: campaign.title,
       body: campaign.body,
-      data: campaign.notificationTypeKey
-        ? { notificationType: campaign.notificationTypeKey }
-        : undefined,
+      // `campaignId` lets the device attribute the open back to this campaign
+      // (fires a `push_opened` UserMetric event → open rate in Studio).
+      data: {
+        campaignId: campaign.id,
+        ...(campaign.notificationTypeKey
+          ? { notificationType: campaign.notificationTypeKey }
+          : {}),
+      },
     });
 
     const delivered = results.filter((r) => r.ok).length;

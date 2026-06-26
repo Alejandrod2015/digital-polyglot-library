@@ -1,10 +1,10 @@
 export const runtime = "nodejs";
 
-import { createClerkClient } from "@clerk/backend";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
+import { resolveUserEmails } from "@/lib/metricsUserEmails";
 import { books } from "@/data/books";
 import { getStandaloneStoriesByIds, getStandaloneStoriesBySlugs } from "@/lib/standaloneStories";
 
@@ -12,8 +12,6 @@ const METRICS_DASHBOARD_CACHE_TTL_MS = 60 * 1000;
 const RECENT_TRIAL_STARTS_LIMIT = 20;
 const RECENT_REMINDER_TAPS_LIMIT = 20;
 const RECENT_REMINDER_OPENS_LIMIT = 20;
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
-const metricsUserEmailCache = new Map<string, string | null>();
 
 const metricsDashboardCache = new Map<
   string,
@@ -553,7 +551,7 @@ function matchCatalogByLegacySku(
   // Solo match estricto: el catalog slug debe empezar literalmente con el
   // SKU limpio. Probamos también dropping trailing tokens (1 a la vez)
   // para tolerar truncations, PERO solo si la cola del SKU NO contenía
-  // tokens "distintivos" como gentilicios — esos sí deberían disqualify.
+  // tokens "distintivos" como gentilicios; esos sí deberían disqualify.
   // Definimos distintivos por longitud: cualquier token >= 6 chars
   // (puerto, rican, colombian, argentinian, etc.) es load-bearing.
   const tokens = cleaned.split("-").filter(Boolean);
@@ -618,44 +616,6 @@ async function resolveStorySlugMap(storyIds: string[]): Promise<Map<string, stri
     ...polyglotStories.map((story) => [story.id, story.slug] as const),
     ...standaloneStories.map((story) => [story.id, story.slug] as const),
   ]);
-}
-
-async function resolveUserEmails(userIds: string[]): Promise<Map<string, string | null>> {
-  const uniqueUserIds = Array.from(new Set(userIds.filter(Boolean)));
-  const byUserId = new Map<string, string | null>();
-
-  await Promise.all(
-    uniqueUserIds.map(async (userId) => {
-      if (metricsUserEmailCache.has(userId)) {
-        byUserId.set(userId, metricsUserEmailCache.get(userId) ?? null);
-        return;
-      }
-
-      try {
-        const user = await clerkClient.users.getUser(userId);
-        const email = user.emailAddresses[0]?.emailAddress ?? null;
-        metricsUserEmailCache.set(userId, email);
-        byUserId.set(userId, email);
-      } catch (error) {
-        const status =
-          typeof error === "object" &&
-          error !== null &&
-          "status" in error &&
-          typeof (error as { status?: unknown }).status === "number"
-            ? (error as { status: number }).status
-            : null;
-
-        if (status !== 404) {
-          console.warn("METRICS DASHBOARD: failed to resolve Clerk user", userId, error);
-        }
-
-        metricsUserEmailCache.set(userId, null);
-        byUserId.set(userId, null);
-      }
-    })
-  );
-
-  return byUserId;
 }
 
 export async function GET(req: NextRequest): Promise<Response> {

@@ -35,6 +35,7 @@ const ALLOWED_EVENT_TYPES = new Set([
   "reminder_scheduled",
   "reminder_tapped",
   "reminder_destination_opened",
+  "push_opened",
   "trial_started",
   "trial_started_with_pm",
   "trial_converted",

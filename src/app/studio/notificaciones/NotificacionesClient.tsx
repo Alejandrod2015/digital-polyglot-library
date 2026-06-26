@@ -84,7 +84,7 @@ export default function NotificacionesClient() {
   const [error, setError] = useState<string | null>(null);
   const [savingKey, setSavingKey] = useState<string | null>(null);
   const [savedKey, setSavedKey] = useState<string | null>(null);
-  const [tab, setTab] = useState<"tipos" | "campanas">("tipos");
+  const [tab, setTab] = useState<"tipos" | "campanas" | "efectividad">("tipos");
 
   useEffect(() => {
     fetch("/api/studio/notifications")
@@ -136,7 +136,7 @@ export default function NotificacionesClient() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={{ display: "flex", gap: 8 }}>
-        {(["tipos", "campanas"] as const).map((key) => (
+        {(["tipos", "campanas", "efectividad"] as const).map((key) => (
           <button
             key={key}
             type="button"
@@ -152,12 +152,14 @@ export default function NotificacionesClient() {
               cursor: "pointer",
             }}
           >
-            {key === "tipos" ? "Tipos" : "Campañas push"}
+            {key === "tipos" ? "Tipos" : key === "campanas" ? "Campañas push" : "Efectividad"}
           </button>
         ))}
       </div>
 
-      {tab === "campanas" ? (
+      {tab === "efectividad" ? (
+        <EffectivenessPanel />
+      ) : tab === "campanas" ? (
         <CampaignsPanel types={types ?? []} />
       ) : error && !types ? (
         <p style={{ color: "#f87171", fontSize: 14 }}>{error}</p>
@@ -686,6 +688,301 @@ function CampaignsPanel({ types }: { types: NotificationType[] }) {
         })}
         </div>
       )}
+    </div>
+  );
+}
+
+// ── Efectividad tab ──────────────────────────────────────────────────────
+
+type EffectivenessRange = "7d" | "30d" | "all";
+
+type ReminderFunnel = {
+  scheduled: number;
+  tapped: number;
+  destinationOpened: number;
+  tapRateFromScheduled: number;
+  openRateFromTap: number;
+  destinationBreakdown: Array<{ destination: string; opens: number }>;
+};
+
+type CampaignEffectiveness = {
+  id: string;
+  title: string;
+  notificationTypeKey: string | null;
+  target: string;
+  sentAt: string | null;
+  recipientCount: number;
+  deliveredCount: number;
+  failedCount: number;
+  opened: number;
+  openRate: number;
+};
+
+type RecentActivityRow = {
+  userId: string;
+  email: string | null;
+  eventType: string;
+  destination: string | null;
+  campaignTitle: string | null;
+  createdAt: string;
+};
+
+type EffectivenessData = {
+  range: EffectivenessRange;
+  reminderFunnel: ReminderFunnel;
+  campaigns: CampaignEffectiveness[];
+  recentActivity: RecentActivityRow[];
+};
+
+const RANGE_LABEL: Record<EffectivenessRange, string> = {
+  "7d": "7 días",
+  "30d": "30 días",
+  all: "Todo",
+};
+
+const DESTINATION_LABEL: Record<string, string> = {
+  resumeStory: "Continuar historia",
+  practiceDue: "Práctica pendiente",
+  journey: "Journey",
+  unknown: "Desconocido",
+};
+
+const EVENT_LABEL: Record<string, string> = {
+  reminder_tapped: "Tap en reminder",
+  reminder_destination_opened: "Abrió destino",
+  push_opened: "Abrió push",
+};
+
+function statCardStyle(): React.CSSProperties {
+  return {
+    background: CARD_BG,
+    border: `1px solid ${CARD_BORDER}`,
+    borderRadius: 12,
+    padding: 16,
+    minWidth: 0,
+  };
+}
+
+function StatBlock({ value, label, sub }: { value: string | number; label: string; sub?: string }) {
+  return (
+    <div style={statCardStyle()}>
+      <div style={{ fontSize: 26, fontWeight: 800, color: "var(--foreground)", fontVariantNumeric: "tabular-nums" }}>
+        {value}
+      </div>
+      <div style={{ fontSize: 12, fontWeight: 600, color: "var(--muted)", marginTop: 2 }}>{label}</div>
+      {sub ? <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 4 }}>{sub}</div> : null}
+    </div>
+  );
+}
+
+function SectionTitle({ children, hint }: { children: React.ReactNode; hint?: string }) {
+  return (
+    <div style={{ marginBottom: 8 }}>
+      <h3 style={{ margin: 0, fontSize: 15, fontWeight: 800, color: "var(--foreground)" }}>{children}</h3>
+      {hint ? <p style={{ margin: "2px 0 0", fontSize: 12, color: "var(--muted)" }}>{hint}</p> : null}
+    </div>
+  );
+}
+
+function EffectivenessPanel() {
+  const [range, setRange] = useState<EffectivenessRange>("30d");
+  const [data, setData] = useState<EffectivenessData | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
+    fetch(`/api/studio/notifications/effectiveness?range=${range}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("No autorizado"))))
+      .then((d) => {
+        if (!cancelled) setData(d as EffectivenessData);
+      })
+      .catch((e) => {
+        if (!cancelled) setError(e instanceof Error ? e.message : "Error al cargar");
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [range]);
+
+  const funnel = data?.reminderFunnel;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+      {/* Range selector */}
+      <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <span style={{ ...labelStyle(), marginBottom: 0 }}>Rango</span>
+        {(["7d", "30d", "all"] as const).map((r) => (
+          <button
+            key={r}
+            type="button"
+            onClick={() => setRange(r)}
+            style={{
+              background: range === r ? ACCENT : INPUT_BG,
+              color: range === r ? "#0a1628" : "var(--muted)",
+              border: `1px solid ${range === r ? ACCENT : CARD_BORDER}`,
+              borderRadius: 8,
+              padding: "5px 12px",
+              fontSize: 12,
+              fontWeight: 700,
+              cursor: "pointer",
+            }}
+          >
+            {RANGE_LABEL[r]}
+          </button>
+        ))}
+        {loading ? <span style={{ fontSize: 12, color: "var(--muted)" }}>Cargando…</span> : null}
+      </div>
+
+      {error ? <p style={{ color: "#f87171", fontSize: 14 }}>{error}</p> : null}
+
+      {/* Local daily reminder funnel */}
+      <div>
+        <SectionTitle hint="Daily reminder local (agendado en el iPhone). El tap real solo se cuenta tras el build de la app con tracking de tap.">
+          Daily reminder (local)
+        </SectionTitle>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+            gap: 12,
+          }}
+        >
+          <StatBlock value={funnel?.scheduled ?? 0} label="Programados" />
+          <StatBlock
+            value={funnel?.tapped ?? 0}
+            label="Taps"
+            sub={`${funnel?.tapRateFromScheduled ?? 0}% de los programados`}
+          />
+          <StatBlock
+            value={funnel?.destinationOpened ?? 0}
+            label="Destino abierto"
+            sub={`${funnel?.openRateFromTap ?? 0}% de los taps`}
+          />
+        </div>
+        {funnel && funnel.destinationBreakdown.length > 0 ? (
+          <div style={{ marginTop: 12 }}>
+            <p style={{ ...labelStyle(), marginBottom: 6 }}>Destinos abiertos</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {funnel.destinationBreakdown.map((d) => (
+                <span
+                  key={d.destination}
+                  style={{
+                    background: INPUT_BG,
+                    border: `1px solid ${CARD_BORDER}`,
+                    borderRadius: 999,
+                    padding: "4px 12px",
+                    fontSize: 12,
+                    color: "var(--foreground)",
+                  }}
+                >
+                  {DESTINATION_LABEL[d.destination] ?? d.destination}: <strong>{d.opens}</strong>
+                </span>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
+
+      {/* Push campaigns */}
+      <div>
+        <SectionTitle hint="Campañas push enviadas. El open rate se puebla cuando el usuario abre desde la notificación (requiere build de la app).">
+          Campañas push
+        </SectionTitle>
+        {!data ? (
+          <p style={{ color: "var(--muted)", fontSize: 14 }}>Cargando…</p>
+        ) : data.campaigns.length === 0 ? (
+          <p style={{ color: "var(--muted)", fontSize: 14 }}>Aún no hay campañas enviadas en este rango.</p>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {data.campaigns.map((c) => (
+              <div
+                key={c.id}
+                style={{
+                  background: CARD_BG,
+                  border: `1px solid ${CARD_BORDER}`,
+                  borderRadius: 12,
+                  padding: 14,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  flexWrap: "wrap",
+                }}
+              >
+                <div style={{ flex: 1, minWidth: 180 }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)" }}>{c.title}</div>
+                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2 }}>
+                    {c.target === "all" ? "Todos con token" : `Tipo: ${c.notificationTypeKey ?? "-"}`}
+                    {c.sentAt ? ` · ${new Date(c.sentAt).toLocaleDateString()}` : ""}
+                  </div>
+                </div>
+                <div style={{ display: "flex", gap: 16, fontVariantNumeric: "tabular-nums" }}>
+                  <div style={{ textAlign: "right" }}>
+                    <div style={{ fontSize: 16, fontWeight: 800, color: "var(--foreground)" }}>
+                      {c.deliveredCount}/{c.recipientCount}
+                    </div>
+                    <div style={{ fontSize: 11, color: "var(--muted)" }}>entregadas</div>
+                  </div>
+                  <div style={{ textAlign: "right" }}>
+                    <div style={{ fontSize: 16, fontWeight: 800, color: ACCENT }}>{c.openRate}%</div>
+                    <div style={{ fontSize: 11, color: "var(--muted)" }}>{c.opened} abiertas</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Recent per-user activity */}
+      <div>
+        <SectionTitle hint="Últimas interacciones con notificaciones, por usuario.">Actividad reciente</SectionTitle>
+        {!data ? (
+          <p style={{ color: "var(--muted)", fontSize: 14 }}>Cargando…</p>
+        ) : data.recentActivity.length === 0 ? (
+          <p style={{ color: "var(--muted)", fontSize: 14 }}>Sin actividad en este rango.</p>
+        ) : (
+          <div
+            style={{
+              background: CARD_BG,
+              border: `1px solid ${CARD_BORDER}`,
+              borderRadius: 12,
+              overflow: "hidden",
+            }}
+          >
+            {data.recentActivity.map((row, i) => (
+              <div
+                key={`${row.userId}-${row.createdAt}-${i}`}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  padding: "10px 14px",
+                  borderTop: i === 0 ? "none" : `1px solid ${CARD_BORDER}`,
+                  flexWrap: "wrap",
+                }}
+              >
+                <span style={{ flex: 1, minWidth: 160, fontSize: 13, color: "var(--foreground)" }}>
+                  {row.email ?? row.userId}
+                </span>
+                <span style={{ fontSize: 12, color: "var(--muted)" }}>
+                  {EVENT_LABEL[row.eventType] ?? row.eventType}
+                  {row.campaignTitle ? ` · ${row.campaignTitle}` : ""}
+                  {row.destination ? ` · ${DESTINATION_LABEL[row.destination] ?? row.destination}` : ""}
+                </span>
+                <span style={{ fontSize: 11, color: "var(--muted)", fontVariantNumeric: "tabular-nums" }}>
+                  {new Date(row.createdAt).toLocaleString()}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -317,12 +317,35 @@ function MobileAppRoot() {
 
     let cancelled = false;
 
-    async function hydrateLastNotificationResponse() {
-      const response = await Notifications.getLastNotificationResponseAsync();
-      if (cancelled || !response) return;
-      const target = parseReminderDestination(response.notification.request.content.data?.target);
-      if (!target) return;
-      if (sessionToken) {
+    // A notification open is one of two things:
+    //  - a local daily reminder (carries `data.target`) → reminder_tapped
+    //  - a remote push campaign (carries `data.campaignId`) → push_opened
+    // Both fire a UserMetric event so Studio can measure tap/open effectiveness.
+    function handleNotificationOpen(data: Record<string, unknown> | undefined, source: string) {
+      const target = parseReminderDestination(data?.target);
+      if (target) {
+        if (sessionToken) {
+          void apiFetch<{ success: true }>({
+            baseUrl: mobileConfig.apiBaseUrl,
+            path: "/api/mobile/metrics",
+            token: sessionToken,
+            method: "POST",
+            body: {
+              storySlug: "daily-loop",
+              bookSlug: "mobile",
+              eventType: "reminder_tapped",
+              metadata: { targetKind: target.kind, source },
+            },
+          }).catch(() => {});
+        }
+        setPendingReminderNavigation({ key: `${Date.now()}-${source}`, target });
+        return;
+      }
+
+      const campaignId = typeof data?.campaignId === "string" ? data.campaignId : null;
+      if (campaignId && sessionToken) {
+        const notificationType =
+          typeof data?.notificationType === "string" ? data.notificationType : null;
         void apiFetch<{ success: true }>({
           baseUrl: mobileConfig.apiBaseUrl,
           path: "/api/mobile/metrics",
@@ -331,34 +354,29 @@ function MobileAppRoot() {
           body: {
             storySlug: "daily-loop",
             bookSlug: "mobile",
-            eventType: "reminder_tapped",
-            metadata: { targetKind: target.kind, source: "initial_response" },
+            eventType: "push_opened",
+            metadata: { campaignId, notificationType, source },
           },
         }).catch(() => {});
       }
-      setPendingReminderNavigation({ key: `${Date.now()}-initial`, target });
+    }
+
+    async function hydrateLastNotificationResponse() {
+      const response = await Notifications.getLastNotificationResponseAsync();
+      if (cancelled || !response) return;
+      handleNotificationOpen(
+        response.notification.request.content.data as Record<string, unknown> | undefined,
+        "initial_response",
+      );
     }
 
     void hydrateLastNotificationResponse();
 
     const subscription = Notifications.addNotificationResponseReceivedListener((response) => {
-      const target = parseReminderDestination(response.notification.request.content.data?.target);
-      if (!target) return;
-      if (sessionToken) {
-        void apiFetch<{ success: true }>({
-          baseUrl: mobileConfig.apiBaseUrl,
-          path: "/api/mobile/metrics",
-          token: sessionToken,
-          method: "POST",
-          body: {
-            storySlug: "daily-loop",
-            bookSlug: "mobile",
-            eventType: "reminder_tapped",
-            metadata: { targetKind: target.kind, source: "listener" },
-          },
-        }).catch(() => {});
-      }
-      setPendingReminderNavigation({ key: `${Date.now()}-tap`, target });
+      handleNotificationOpen(
+        response.notification.request.content.data as Record<string, unknown> | undefined,
+        "listener",
+      );
     });
 
     return () => {
